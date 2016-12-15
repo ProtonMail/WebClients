@@ -29,8 +29,6 @@ angular.module('proton.core')
     subscription,
     tools
 ) => {
-    const dirtyAddresses = [];
-
     $scope.tools = tools;
     $scope.user = authentication.user;
     $scope.isAdmin = authentication.user.Role === CONSTANTS.PAID_ADMIN;
@@ -56,7 +54,7 @@ angular.module('proton.core')
 
     // if the user subscribed to a plan during the signup process
     if ($rootScope.tempPlan && ['plus', 'visionary'].indexOf($rootScope.tempPlan.Name) !== -1 && $rootScope.tempPlan.Amount === authentication.user.Credit) {
-        const subscribe = function () {
+        const subscribe = () => {
             const deferred = $q.defer();
 
             Payment.subscribe({
@@ -74,7 +72,7 @@ angular.module('proton.core')
             return deferred.promise;
         };
 
-        const organizationKey = function () {
+        const organizationKey = () => {
             const deferred = $q.defer();
             const mailboxPassword = authentication.getPassword();
 
@@ -92,7 +90,7 @@ angular.module('proton.core')
             return deferred.promise;
         };
 
-        const createOrganization = function (parameters) {
+        const createOrganization = (parameters) => {
             const deferred = $q.defer();
 
             Organization.create(parameters)
@@ -136,6 +134,8 @@ angular.module('proton.core')
     // Initialize counters for conversation (total and unread)
     cacheCounters.query();
 
+    manageDirtryAddresses();
+
     $scope.$on('updateUser', () => {
         $scope.$applyAsync(() => {
             $scope.user = authentication.user;
@@ -155,42 +155,17 @@ angular.module('proton.core')
         hotkeys.unbind();
     });
 
-    _.each(authentication.user.Addresses, (address) => {
-        if (address.Keys.length === 0 && address.Status === 1 && authentication.user.Private === 1) {
-            dirtyAddresses.push(address);
-        }
-    });
-
-    if (dirtyAddresses.length > 0 && generateModal.active() === false) {
-        generateModal.activate({
-            params: {
-                title: 'Setting up your Addresses',
-                message: 'Before you can start sending and receiving emails from your new addresses you need to create encryption keys for them. Simply select your preferred encryption strength and click "Generate Keys".', // TODO need text
-                addresses: dirtyAddresses,
-                password: authentication.getPassword(),
-                close(success) {
-                    if (success) {
-                        eventManager.call();
-                    }
-
-                    generateModal.deactivate();
-                }
-            }
-        });
-    }
-
-    $scope.idDefined = function () {
+    $scope.idDefined = () => {
         const id = $state.params.id;
 
         return angular.isDefined(id) && id.length > 0;
     };
 
-
     /**
      * Returns a string for the storage bar
      * @return {String} "123/456 [MB/GB]"
      */
-    $scope.storageUsed = function () {
+    $scope.storageUsed = () => {
         if (authentication.user.UsedSpace && authentication.user.MaxSpace) {
             const gb = 1073741824;
             const mb = 1048576;
@@ -205,18 +180,43 @@ angular.module('proton.core')
         return '';
     };
 
-    $scope.getEmails = function (emails) {
+    $scope.getEmails = (emails) => {
         return _.map(emails, (email) => email.Address).join(',');
     };
 
     /**
      * Go to route specified
      */
-    $scope.goTo = function (route) {
+    $scope.goTo = (route) => {
         if (angular.isDefined(route)) {
             $state.go(route);
         }
     };
 
+    function manageDirtryAddresses() {
+        const dirtyAddresses = [];
 
+        authentication.user.Addresses.forEach((address) => {
+            if (!address.Keys.length && address.Status === 1 && authentication.user.Private === 1) {
+                dirtyAddresses.push(address);
+            }
+        });
+
+        if (dirtyAddresses.length && !generateModal.active()) {
+            generateModal.activate({
+                params: {
+                    title: gettextCatalog.getString('Setting up your Addresses'),
+                    message: gettextCatalog.getString('Before you can start sending and receiving emails from your new addresses you need to create encryption keys for them. Simply select your preferred encryption strength and click "Generate Keys".'),
+                    addresses: dirtyAddresses,
+                    password: authentication.getPassword(),
+                    close(success) {
+                        if (success) {
+                            eventManager.call();
+                        }
+                        generateModal.deactivate();
+                    }
+                }
+            });
+        }
+    }
 });

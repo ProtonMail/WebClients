@@ -8,8 +8,10 @@ module.exports = ({ editor, message, identifier }) => {
 
         it('should open a the composer', () => {
             editor.open()
-                .then(() => browser.sleep(1000))
-                .then(() => editor.isOpened())
+                .then(() => browser.wait(() => {
+                    return editor.isOpened()
+                        .then((test) => test === true)
+                }, 10000))
                 .then((test) => (borodin = editor.compose(), test))
                 .then(isTrue);
         });

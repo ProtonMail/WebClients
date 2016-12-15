@@ -9,7 +9,11 @@
             <ul class="list-group" ng-show="labels.length > 0">
                 <li class="list-group-item" ng-repeat="label in labels | filter: {Name: searchLabels} | orderBy: 'Order'">
                     <label>
-                        <input type="checkbox" ng-model="label.Selected" ui-indeterminate="label.Selected === null"/>
+                        <input
+                            type="checkbox"
+                            ng-model="label.Selected"
+                            class="dropdownLabels-input-label"
+                            ui-indeterminate="label.Selected === null">
                         <i class="fa fa-tag" ng-style="color(label)" ng-show="alsoArchive" ng-click="moveTo(label)" pt-tooltip-translate="Apply label and archive"></i>
                         <i class="fa fa-tag" ng-style="color(label)" ng-hide="alsoArchive" ng-click="moveTo(label)" pt-tooltip-translate="Apply label"></i>
                         <span class="label label-pm" title="{{ label.Name }}">{{ label.Name }}</span>
@@ -29,14 +33,29 @@
         </form>
         <label class="text-right alsoArchive">
             <span translate   translate-comment="Form checkbox option" class="pull-left">Also Archive</span>
-            <input type="checkbox" ng-model="alsoArchive" ng-change="changeAlsoArchive()" />
+            <input
+                type="checkbox"
+                ng-model="alsoArchive"
+                ng-change="changeAlsoArchive()"
+                class="dropdownLabels-input-archive">
         </label>
         <div class="clearfix"></div>
         <div>
-            <button class="createLabel pull-left pm_button" ng-click="toggle()" pt-tooltip-translate="Add new label" pt-tooltip-translate-context="Action">
+            <button
+                class="createLabel pull-left pm_button dropdownLabels-btn-add"
+                ng-click="toggle()"
+                pt-tooltip-translate="Add new label" pt-tooltip-translate-context="Action">
                 <i class="fa fa-plus"></i>
             </button>
-            <button ng-show="labels.length > 0" tabindex="1" type="button" class="pm_button primary pull-right" ng-click="save()" ng-disabled="networkActivity.loading()" translate-context="Action" translate>Apply</button>
+            <button
+                ng-show="labels.length > 0"
+                tabindex="1"
+                type="button"
+                class="pm_button primary pull-right dropdownLabels-btn-save"
+                ng-click="save()"
+                ng-disabled="networkActivity.loading()"
+                translate-context="Action"
+                translate>Apply</button>
         </div>
     </div>
 </div>
