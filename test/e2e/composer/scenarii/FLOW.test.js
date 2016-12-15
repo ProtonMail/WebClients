@@ -55,8 +55,7 @@ module.exports = (customSuite, { message, editor, identifier }, options = {}) =>
                     .then(() => browser.wait(() => {
                         return editor.isOpened()
                             .then((test) => test === false)
-                    }, 10000))
-                    .then(() => browser.sleep(5000))
+                    }, 20000))
                     .then(() => borodin.isOpened())
                     .then(isFalse);
             });
@@ -65,7 +64,7 @@ module.exports = (customSuite, { message, editor, identifier }, options = {}) =>
                 browser.wait(() => {
                     return notifs.isOpened()
                         .then((test) => test === true)
-                }, 10000)
+                }, 20000)
                     .then(() => notifs.message())
                     .then(assert('Message sent'));
             });
