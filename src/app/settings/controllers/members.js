@@ -143,7 +143,7 @@ angular.module('proton.settings')
      * Save the organization name
      */
     $scope.saveOrganizationName = () => {
-        Organization.update({ DisplayName: $scope.organization.DisplayName })
+        Organization.updateOrganizationName({ DisplayName: $scope.organization.DisplayName })
         .then((result) => {
             if (result.data && result.data.Code === 1000) {
                 notify({ message: gettextCatalog.getString('Organization updated', null), classes: 'notification-success' });
