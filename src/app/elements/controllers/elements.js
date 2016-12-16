@@ -306,8 +306,8 @@ angular.module('proton.elements')
 
         params.Page = ($stateParams.page || 1) - 1;
 
-        if (angular.isDefined($stateParams.trashspam) || $scope.mailbox === 'label') {
-            params.TrashSpam = $stateParams.trashspam || 0;
+        if (angular.isDefined($stateParams.trashspam)) {
+            params.TrashSpam = 0;
         }
 
         if (angular.isDefined($stateParams.filter)) {
