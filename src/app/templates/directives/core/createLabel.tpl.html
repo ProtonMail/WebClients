@@ -1,10 +1,6 @@
 <ng-form ng-show="display" ng-enter="create()" ng-click="$event.stopPropagation()" novalidate  class="pm_form">
-    <div class="pm_grid no-padding no-margin">
-        <div class="col-2-3">
-            <input type="text" placeholder-translate="Name" ng-model="labelName" />
-        </div>
-        <div class="col-1-3 text-right">
-            <button type="button" ng-click="create()" class="pm_button" translate-context="Action" translate>OK</button>
-        </div>
+    <div class="pm_single_action">
+        <input type="text" class="input" placeholder-translate="Name" ng-model="labelName" />
+        <button type="button" ng-click="create()" class="pm_button primary" translate-context="Action" translate>OK</button>
     </div>
 </ng-form>

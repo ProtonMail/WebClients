@@ -16,16 +16,12 @@
 	.alsoArchive {
 		display: block;
 		clear: both;
-		margin: 1rem -15px;
+		margin: 0rem -15px 1rem -15px;
 		border-top: 1px solid $border;
 		border-bottom: 1px solid $border;
-		padding: 0 15px;
+		padding: 0rem 15px;
 	}
 	.labelSearch {
-		clear: both;
-		height: 25px;
-		line-height: 25px;
-
 		.fa {
 			font-size: 1em;
 			color: $primary;
@@ -44,13 +40,15 @@
 			        appearance: none;
 		}
 	}
+
 	.wrapper {
-		max-height: 175px;
 		overflow: auto;
 		-webkit-overflow-scrolling: touch;
 		display: block;
 		clear: both;
 		padding-right: 15px;
+		max-height: 175px;
+
 		ul,
 		li {
 			display: block;
@@ -66,6 +64,7 @@
 			line-height: 35px;
 			height: 35px;
 			overflow: hidden;
+
 			label {
 				cursor: pointer;
 				display: block;
@@ -81,7 +80,7 @@
 			}
 			input[type="checkbox"] {
 				position: absolute;
-				right:0;
+				right: 2px; /*shadow when active*/
 				margin: 10px 0px;
 				cursor: pointer;
 			}
