@@ -50,15 +50,11 @@ angular.module('proton', [
 
     // Config
     'proton.config',
-
     'proton.ui',
-
-    // Services
     'proton.attachments',
     'proton.authentication',
     'proton.event',
     'proton.embedded',
-    // Directives
     'proton.elements',
     'proton.address',
     'proton.message',
@@ -66,10 +62,9 @@ angular.module('proton', [
     'proton.squire',
     'proton.wizard',
     'proton.contactCurrent',
-    'proton.formUtils',
+    'proton.settings',
+    'proton.formUtils'
 
-    // Controllers
-    'proton.controllers.Settings'
 ])
 
 /**
