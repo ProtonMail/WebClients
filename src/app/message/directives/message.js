@@ -24,9 +24,7 @@ angular.module('proton.message')
      * Back to element list
      */
     function back() {
-        const name = $state.$current.name;
-        const route = name.replace('.element', '');
-
+        const route = $state.$current.name.replace('.element', '');
         $state.go(route, { id: null });
     }
 
@@ -241,7 +239,6 @@ angular.module('proton.message')
              */
             scope.saveLabels = (labels, alsoArchive) => {
                 const messages = [scope.message];
-
                 $rootScope.$emit('messageActions', { action: 'label', data: { messages, labels, alsoArchive } });
             };
 
@@ -249,10 +246,13 @@ angular.module('proton.message')
              * Go to label folder + reset parameters
              * @param {String} labelID
              */
-            scope.goToLabel = (labelID = '') => {
-                const params = { page: undefined, filter: undefined, sort: undefined, label: labelID };
-
-                $state.go('secured.label', params);
+            scope.goToLabel = (label = '') => {
+                $state.go('secured.label', {
+                    page: undefined,
+                    filter: undefined,
+                    sort: undefined,
+                    label
+                });
             };
 
             /**
@@ -261,7 +261,6 @@ angular.module('proton.message')
              */
             scope.move = (mailbox) => {
                 const ids = [scope.message.ID];
-
                 $rootScope.$emit('messageActions', { action: 'move', data: { ids, mailbox } });
             };
 
@@ -270,7 +269,6 @@ angular.module('proton.message')
              */
             scope.read = () => {
                 const ids = [scope.message.ID];
-
                 scope.message.expand = true;
                 $rootScope.$emit('messageActions', { action: 'read', data: { ids } });
             };
@@ -280,7 +278,6 @@ angular.module('proton.message')
              */
             scope.unread = () => {
                 const ids = [scope.message.ID];
-
                 scope.message.expand = false;
                 $rootScope.$emit('messageActions', { action: 'unread', data: { ids } });
             };
@@ -290,7 +287,6 @@ angular.module('proton.message')
              */
             scope.delete = () => {
                 const ids = [scope.message.ID];
-
                 $rootScope.$emit('messageActions', { action: 'delete', data: { ids } });
             };
 

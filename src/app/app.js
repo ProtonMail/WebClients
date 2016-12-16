@@ -50,48 +50,20 @@ angular.module('proton', [
 
     // Config
     'proton.config',
-
     'proton.ui',
-
-    // Services
     'proton.attachments',
     'proton.authentication',
     'proton.event',
-    'proton.embedded',
-    // Directives
     'proton.elements',
     'proton.address',
     'proton.message',
     'proton.conversation',
-    'proton.drag',
-    'proton.dropdown',
-    'proton.dropzone',
-    'proton.enter',
-    'proton.height',
-    'proton.heightOutside',
-    'proton.labelHeight',
-    'proton.labels',
-    'proton.loaderTag',
-    'proton.locationTag',
-    'proton.phone',
-    'proton.responsiveComposer',
-    'proton.sidebarHeight',
     'proton.squire',
-    'proton.time',
-    'proton.toggle',
-    'proton.tooltip',
-    'proton.translate',
     'proton.wizard',
-    'proton.rightClick',
-    'proton.detectTimeWidth',
+    'proton.contactCurrent',
+    'proton.settings',
+    'proton.formUtils'
 
-    // Filters
-    'proton.filters',
-
-    // Controllers
-    'proton.controllers.Contacts',
-    'proton.controllers.Compose',
-    'proton.controllers.Settings'
 ])
 
 /**
@@ -273,7 +245,6 @@ angular.module('proton', [
         $rootScope.toState = toState.name.replace('.', '-');
 
         $('#loading_pm, #pm_slow, #pm_slow2').remove();
-
         $timeout(() => {
             $rootScope.showSidebar = false;
         }, 30);

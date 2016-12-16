@@ -21,7 +21,8 @@ module.exports = ({ editor }) => () => {
                         .then((test) => test === true);
                 }, 10000);
             })
-            .then(isTrue);
+            .then(isTrue)
+            .then(() => browser.sleep(2000));
     });
 
     it('should not display the dropzone', () => {

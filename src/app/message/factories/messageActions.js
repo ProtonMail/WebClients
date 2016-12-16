@@ -22,7 +22,7 @@ angular.module('proton.message')
         $rootScope.$on('messageActions', (event, { action = '', data = {} }) => {
             switch (action) {
                 case 'move':
-                    move(data.ids, data.mailbox);
+                    move(data);
                     break;
                 case 'star':
                     star(data.id);
@@ -73,8 +73,7 @@ angular.module('proton.message')
 
 
         // Message actions
-        function move(ids, mailbox) {
-            const context = tools.cacheContext();
+        function move({ ids, mailbox }) {
             const toTrash = mailbox === 'trash';
             const events = _.chain(ids)
                 .map((id) => {
@@ -148,7 +147,7 @@ angular.module('proton.message')
             const message = gettextCatalog.getPlural(ids.length, 'Message moved to', 'Messages moved to', null);
             const notification = `${message} ${getFolderNameTranslated(mailbox)}`;
 
-            if (context === true) {
+            if (tools.cacheContext()) {
                 cache.events(events);
                 return notifySuccess(notification);
             }

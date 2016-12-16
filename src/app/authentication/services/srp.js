@@ -150,14 +150,14 @@ angular.module('proton.authentication')
             authVersion = fallbackAuthVersion;
         }
 
-        if (authVersion < 3 && !angular.isDefined(creds.Username)) {
-            return Promise.reject({
-                error_description: 'An unexpected error has occurred. Please log out and log back in to fix it.'
-            });
+        if (authVersion < 3) {
+            creds.Username = infoResp.data.Username;
+            // See https://github.com/ProtonMail/Angular/issues/4332
+            // return Promise.reject({ error_description: 'An unexpected error has occurred. Please log out and log back in to fix it.' });
         }
 
-        if (authVersion === 2 && passwords.cleanUserName(creds.Username) !== passwords.cleanUserName(infoResp.data.UserName) ||
-            authVersion <= 1 && creds.Username.toLowerCase() !== infoResp.data.UserName.toLowerCase()) {
+        if (authVersion === 2 && passwords.cleanUsername(creds.Username) !== passwords.cleanUsername(infoResp.data.Username) ||
+            authVersion <= 1 && creds.Username.toLowerCase() !== infoResp.data.Username.toLowerCase()) {
             return Promise.reject({
                 error_description: 'Please login with just your ProtonMail username (without @protonmail.com or @protonmail.ch).'
             });
@@ -283,7 +283,7 @@ angular.module('proton.authentication')
             ret = tryRequest(method, endpoint, req, creds, headers, 2);
         }
         ret = ret.catch((err) => {
-            if (err.usedFallback === true && passwords.cleanUserName(creds.Username) !== creds.Username.toLowerCase()) {
+            if (err.usedFallback === true && passwords.cleanUsername(creds.Username) !== creds.Username.toLowerCase()) {
                 return tryRequest(method, endpoint, req, creds, headers, 1);
             }
             return Promise.reject(err);

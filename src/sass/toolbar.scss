@@ -9,6 +9,8 @@
     height: 56px;
     position: relative;
     z-index: 8;
+    display: flex;
+    .toolbarDesktop-actions-right { margin-left: auto }
     .pm_checkbox {
         float: left;
         display: block;
