@@ -1,0 +1,42 @@
+<div
+    class="pm_buttons moveElement-container"
+    ng-class="{
+        disabled: numberElementSelected === 0,
+        'moveElement-state-trash': ('secured.trash.**' | includedByState),
+        'moveElement-state-draft': ('secured.drafts.**' | includedByState),
+        'moveElement-state-inbox': ('secured.inbox.**' | includedByState),
+        'moveElement-state-sent': ('secured.sent.**' | includedByState),
+        'moveElement-state-archive': ('secured.archive.**' | includedByState),
+        'moveElement-state-spam': ('secured.spam.**' | includedByState),
+    }">
+    <a
+        href="#"
+        pt-tooltip-translate="Move to trash"
+        data-action="trash"
+        class="fa fa-trash-o toolbar-btn-trash moveElement-btn-trash"
+        pt-tooltip-translate-context="Action"></a>
+    <a
+        href="#"
+        pt-tooltip-translate="Move to inbox"
+        data-action="inbox"
+        class="fa fa-inbox toolbar-btn-inbox moveElement-btn-inbox"
+        pt-tooltip-translate-context="Action"></a>
+    <a
+        href="#"
+        pt-tooltip-translate="Move to archive"
+        data-action="archive"
+        class="fa fa-archive toolbar-btn-archive moveElement-btn-archive"
+        pt-tooltip-translate-context="Action"></a>
+    <a
+        href="#"
+        pt-tooltip-translate="Move to spam"
+        data-action="spam"
+        class="fa fa-ban toolbar-btn-spam moveElement-btn-spam"
+        pt-tooltip-translate-context="Action"></a>
+    <a
+        href="#"
+        pt-tooltip-translate="Delete"
+        data-action="delete"
+        class="fa fa-times-circle-o toolbar-btn-delete moveElement-btn-delete"
+        pt-tooltip-translate-context="Action"></a>
+</div>
