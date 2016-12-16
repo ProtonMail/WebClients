@@ -54,7 +54,6 @@ angular.module('proton', [
     'proton.attachments',
     'proton.authentication',
     'proton.event',
-    'proton.embedded',
     'proton.elements',
     'proton.address',
     'proton.message',
