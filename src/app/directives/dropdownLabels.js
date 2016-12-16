@@ -42,7 +42,6 @@ angular.module('proton.labels', ['ui.indeterminate'])
                     const messages = scope.getMessages();
 
                     scope.labelName = '';
-                    scope.displayField = false;
                     scope.alsoArchive = Boolean(authentication.user.AlsoArchive);
                     scope.labels = angular.copy(authentication.user.Labels);
 
@@ -107,16 +106,6 @@ angular.module('proton.labels', ['ui.indeterminate'])
 
             scope.labelsSelected = () => {
                 return _.where(scope.labels, { Selected: true });
-            };
-
-            scope.toggle = () => {
-                scope.displayField = !scope.displayField;
-
-                if (scope.displayField === true) {
-                    $timeout(() => {
-                        angular.element("[ng-model='labelName']").focus();
-                    }, 100);
-                }
             };
 
         }

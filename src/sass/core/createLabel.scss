@@ -1,0 +1,15 @@
+.createLabel-button {
+    height: auto;
+    font-size: 12px;
+    line-height: 20px;
+    background: transparent;
+    border: 0;
+    padding: 0;
+    color: $primary;
+    font-weight: bold;
+    box-shadow: none;
+    cursor: pointer;
+    i {
+        color:#000;
+    }
+}
