@@ -38,14 +38,7 @@
     <advanced-filter-element></advanced-filter-element>
 
     <div class="pull-right action toolbarDesktop-actions-right">
-        <span class="pm_buttons layout" id="tour-layout">
-            <a href="#" pt-tooltip-translate="Change layout" pt-tooltip-translate-context="Action" ng-class="{ 'active': user.ViewLayout === 0 }" ng-click="changeLayout('columns')">
-                <img src="/assets/img/columnview.svg" />
-            </a>
-            <a href="#" pt-tooltip-translate="Change layout" pt-tooltip-translate-context="Action" ng-class="{ 'active': user.ViewLayout === 1 }" ng-click="changeLayout('rows')">
-                <img src="/assets/img/rowview.svg" />
-            </a>
-        </span>
+        <choose-layout-btns id="tour-layout"></choose-layout-btns>
         <span class="pm_buttons" ng-show="showNextPrev()">
             <a href="#" ng-click="nextElement(conversation)" pt-tooltip-translate="Previous" pt-tooltip-translate-context="Action">
                 <i class="fa fa-chevron-left"></i>

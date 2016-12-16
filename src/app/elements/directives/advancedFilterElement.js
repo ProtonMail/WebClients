@@ -71,16 +71,16 @@ angular.module('proton.elements')
             replace: true,
             templateUrl: 'templates/elements/advancedFilterElement.tpl.html',
             link(scope, el) {
-                const $a = el.find('button');
+                const $btns = el.find('button');
                 const onClick = (e) => {
                     e.preventDefault();
                     const action = e.target.getAttribute('data-action');
                     action && ACTIONS[action](e.target.getAttribute('data-action-arg'));
                 };
-                $a.on('click', onClick);
+                $btns.on('click', onClick);
 
                 scope.$on('$destroy', () => {
-                    $a.off('click', onClick);
+                    $btns.off('click', onClick);
                 });
             }
         };
