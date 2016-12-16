@@ -1,13 +1,15 @@
 <div class="labelDropdown">
     <form novalidate role="menu" ng-submit="save()" ng-click="$event.stopPropagation()" class="pm_form">
         <p ng-show="labels.length === 0" class="alert alert-info" translate translate-context="Info">No labels</p>
-        <div ng-show="labels.length > 1" class="margin labelSearch">
-            <i class="fa fa-search"></i>
-            <input type="search" id="searchLabels" placeholder-translate="Filter labels" ng-model="searchLabels" ng-minlength="1" />
+        <div ng-show="labels.length > 1" class="margin labelSearch pm-flex-content-row alignItemsCenter">
+            <span class="pm-flex-content-autoWidth">
+                <i class="fa fa-search"></i>
+            </span>
+            <input class="labelSearchInput pm-flex-content-fillWidth" type="search" id="searchLabels" placeholder-translate="Filter labels" ng-model="searchLabels" ng-change="displayField = false" ng-minlength="1" />
         </div>
-        <div class="wrapper">
+        <div class="wrapper padding-top">
             <ul class="list-group" ng-show="labels.length > 0">
-                <li class="list-group-item" ng-repeat="label in labels | filter: {Name: searchLabels} | orderBy: 'Order'">
+                <li class="list-group-item" ng-repeat="label in (filteredLabels = (labels | filter: {Name: searchLabels} | orderBy: 'Order'))">
                     <label>
                         <input type="checkbox" ng-model="label.Selected" class="dropdownLabels-input-label" ui-indeterminate="label.Selected === null">
                         <i class="fa fa-tag" ng-style="color(label)" ng-show="alsoArchive" ng-click="moveTo(label)" pt-tooltip-translate="Apply label and archive"></i>
@@ -15,25 +17,21 @@
                         <span class="label label-pm" title="{{ label.Name }}">{{ label.Name }}</span>
                     </label>
                 </li>
+                <li class="list-group-item-empty" ng-show="filteredLabels.length === 0 && !displayField">
+                    <button type="button" class="createLabel pm_button link fullwidth" ng-click="toggle()" ng-enter="toggle()" >
+                         <strong>"{{ searchLabels }}"</strong> <small>(create new)</small>
+                    </button>
+                </li>
             </ul>
         </div>
-        <form novalidate ng-submit="create()" ng-show="displayField" class="pm_form">
-            <div class="pm_grid no-padding">
-                <div class="col-2-3">
-                    <input type="text" placeholder-translate="Name" ng-model="labelName" />
-                </div>
-                <div class="col-1-3 text-right">
-                    <button type="submit" class="pm_button" translate-context="Action" translate>OK</button>
-                </div>
-            </div>
-        </form>
+        <create-label display="displayField" labels="labels" label-name="searchLabels"></create-label>
         <label class="text-right alsoArchive">
-            <span translate   translate-comment="Form checkbox option" class="pull-left">Also Archive</span>
+            <span translate translate-comment="Form checkbox option" class="pull-left">Also Archive</span>
             <input type="checkbox" ng-model="alsoArchive" ng-change="changeAlsoArchive()" class="dropdownLabels-input-archive" />
         </label>
         <div class="clearfix"></div>
         <div>
-            <button type="button" class="createLabel pull-left pm_button dropdownLabels-btn-add" ng-click="toggle()" pt-tooltip-translate="Add new label" pt-tooltip-translate-context="Action">
+            <button type="button" class="createLabel pull-left pm_button dropdownLabels-btn-add" ng-click="toggle()" ng-enter="toggle()"  pt-tooltip-translate="Add new label" pt-tooltip-translate-context="Action">
                 <i class="fa fa-plus"></i>
             </button>
             <button

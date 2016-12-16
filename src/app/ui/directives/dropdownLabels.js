@@ -10,8 +10,7 @@ angular.module('proton.ui')
     networkActivityTracker,
     notify,
     Setting,
-    gettextCatalog,
-    tools
+    gettextCatalog
 ) => {
     return {
         restrict: 'E',
@@ -28,12 +27,6 @@ angular.module('proton.ui')
             // Functions
             const onClick = () => {
                 scope.open();
-            };
-
-            const scrollDown = () => {
-                const list = angular.element(element).find('.list-group').first();
-
-                list.scrollTop = list.scrollHeight;
             };
 
             // Listeners
@@ -125,39 +118,6 @@ angular.module('proton.ui')
                 }
             };
 
-            scope.create = () => {
-                const name = scope.labelName;
-                const colors = tools.colors();
-                const index = _.random(0, colors.length - 1);
-                const color = colors[index];
-
-                if (scope.labelName.length > 0) {
-                    const promise = Label.create({ Name: name, Color: color, Display: 1 });
-
-                    promise.then((result) => {
-                        if (result.data && result.data.Code === 1000) {
-                            return eventManager.call()
-                            .then(() => {
-                                const label = result.data.Label;
-
-                                label.Selected = true;
-
-                                scope.labels.push(label);
-                                scope.labelName = '';
-                                scope.displayField = false;
-
-                                scrollDown();
-                            });
-                        } else if (result.data && result.data.Error) {
-                            return Promise.reject(result.data.Error);
-                        }
-                    });
-
-                    networkActivityTracker.track(promise);
-                } else {
-                    scope.displayField = false;
-                }
-            };
         }
     };
 });
