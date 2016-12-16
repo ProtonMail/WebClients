@@ -1,6 +1,9 @@
-<ng-form ng-show="display" ng-enter="create()" ng-click="$event.stopPropagation()" novalidate  class="pm_form">
-    <div class="pm_single_action">
-        <input type="text" class="input" placeholder-translate="Name" ng-model="labelName" />
-        <button type="button" ng-click="create()" class="pm_button primary" translate-context="Action" translate>OK</button>
-    </div>
-</ng-form>
+<div class="pm-flex-content" >
+    <button type="button" class="createLabel-button text-left pm-flex-content-row alignItemsCenter" ng-click="create()" ng-enter="create()">
+        <span ng-show="name.length > 0">
+            <span translate translate-context="action"> Create label </span>
+            <i>"{{ name }}"</i> ?
+        </span>
+        <span ng-hide="name.length > 0" translate translate-context="action">Create a new label ?</span>
+    </button>
+</div>

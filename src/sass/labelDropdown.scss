@@ -13,16 +13,9 @@
 		display: block;
 		text-align: left;
 	}
-	.alsoArchive {
-		display: block;
-		clear: both;
-		margin: 1rem -15px;
-		border-top: 1px solid $border;
-		border-bottom: 1px solid $border;
-		padding: 0rem 15px;
-	}
+
 	.labelSearch {
-		margin-bottom: 1rem;
+		height: 25px;
 		.fa {
 			font-size: 1em;
 			color: $primary;
@@ -31,7 +24,6 @@
 		.labelSearchInput {
 			padding: 0;
 			border: none;
-			border-bottom: 1px solid $border;
 			border-radius: 0;
 			box-shadow: none;
 			background: transparent;
@@ -42,16 +34,59 @@
 		}
 	}
 
-	.wrapper {
+	.labelDropdown-item-fullwidth {
+		margin: .5rem -15px;
+		padding: 0rem 15px;
+	}
+
+	.scrollbox {
+		position: relative;
+		z-index: 1;
+		max-height: 175px;
+		padding-right: 15px;
+
 		overflow: auto;
 		-webkit-overflow-scrolling: touch;
 		display: block;
 		clear: both;
-		padding-right: 15px;
-		max-height: 175px;
+		border-top:1px solid $border;
+		border-bottom:1px solid $border;
 
-		ul,
-		li {
+	    background: #FFF no-repeat;
+	    background-image:
+	        -webkit-radial-gradient(50% 0, farthest-side, $border, rgba(0,0,0,0)),
+	        -webkit-radial-gradient(50% 100%,farthest-side, $border, rgba(0,0,0,0));
+	    background-image:
+	        -moz-radial-gradient(50% 0, farthest-side, $border, rgba(0,0,0,0)),
+	        -moz-radial-gradient(50% 100%,farthest-side, $border, rgba(0,0,0,0));
+	    background-image:
+	        radial-gradient(farthest-side at 50% 0, $border, rgba(0,0,0,0)),
+	        radial-gradient(farthest-side at 50% 100%, $border, rgba(0,0,0,0));
+	    background-position: 0 0, 0 100%;
+	    background-size: 100% 3px;
+
+		&:before,
+		&:after {
+		    content: "";
+		    position: relative;
+		    z-index: -1;
+		    display: block;
+		    height: 30px;
+		    margin: 0 0 -30px;
+		    background: -webkit-linear-gradient(top,#FFF,#FFF 30%,rgba(255,255,255,0));
+		    background:    -moz-linear-gradient(top,#FFF,#FFF 30%,rgba(255,255,255,0));
+		    background:   linear-gradient(to bottom,#FFF,#FFF 30%,rgba(255,255,255,0));
+
+	    }
+		&:after {
+		    margin: -30px 0 0;
+		    background: -webkit-linear-gradient(top,rgba(255,255,255,0),#FFF 70%,#FFF);
+		    background:    -moz-linear-gradient(top,rgba(255,255,255,0),#FFF 70%,#FFF);
+		    background:   linear-gradient(to bottom,rgba(255,255,255,0),#FFF 70%,#FFF);
+	    }
+
+		.list-group,
+		.list-group-item {
 			display: block;
 			list-style-type: none;
 			margin: 0;
@@ -61,9 +96,12 @@
 			position: relative;
 		}
 
+		.list-group { padding: 10px 0px }
+
 		.list-group-item {
-			line-height: 35px;
-			height: 35px;
+
+			line-height: 45px;
+			height: 45px;
 			overflow: hidden;
 
 			label {
@@ -95,15 +133,14 @@
 				}
 			}
 		}
-
-		.list-group-item-empty {
-			.createLabel {
-				height: auto;
-				line-height: 20px;
-				width: calc(100% + 15px)
-			}
-		}
 	}
+
+	.alsoArchive {
+		display: block;
+		clear: both;
+		border-top: 1px solid $border;
+		padding: 0rem 15px;
+	}	
 }
 
 .mobileMode {
