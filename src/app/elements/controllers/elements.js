@@ -50,11 +50,9 @@ angular.module('proton.elements')
         $scope.page = parseInt($stateParams.page || 1, 10);
         $scope.startWatchingEvent();
         $scope.refreshElements().then(() => {
-            $timeout(actionsDelayed); // If we don't use the timeout, messages seems not available (to unselect for example)
+            $scope.$applyAsync(actionsDelayed); // If we don't use the timeout, messages seems not available (to unselect for example)
             // I consider this trick like a bug in the angular application
-        }, (error) => {
-            $log.error(error);
-        });
+        }, $log.error);
     }
 
     $scope.watchElements = function () {
@@ -127,9 +125,9 @@ angular.module('proton.elements')
             isOpened = false;
         }));
 
-        $scope.$on('refreshElements', () => {
+        unsubscribes.push($rootScope.$on('refreshElements', () => {
             $scope.refreshElements();
-        });
+        }));
 
         $scope.$on('openMarked', onElement(() => {
             openElement($scope.markedElement);
@@ -571,7 +569,7 @@ angular.module('proton.elements')
         const ids = idsSelected();
 
         if (type === 'conversation') {
-            actionConversation.readConversation(ids);
+            actionConversation.read(ids);
         } else if (type === 'message') {
             $rootScope.$emit('messageActions', { action: 'read', data: { ids } });
         }
@@ -585,7 +583,7 @@ angular.module('proton.elements')
         const ids = idsSelected();
 
         if (type === 'conversation') {
-            actionConversation.unreadConversation(ids);
+            actionConversation.unread(ids);
         } else if (type === 'message') {
             $rootScope.$emit('messageActions', { action: 'unread', data: { ids } });
         }
@@ -611,7 +609,7 @@ angular.module('proton.elements')
                     const ids = idsSelected();
 
                     if (type === 'conversation') {
-                        actionConversation.deleteConversation(ids);
+                        actionConversation.remove(ids);
                     } else if (type === 'message') {
                         $rootScope.$emit('messageActions', { action: 'delete', data: { ids } });
                     }
@@ -650,7 +648,7 @@ angular.module('proton.elements')
 
         $rootScope.numberElementChecked = 0;
         if (type === 'conversation') {
-            actionConversation.moveConversation(ids, mailbox);
+            actionConversation.move(ids, mailbox);
         } else if (type === 'message') {
             $rootScope.$emit('messageActions', { action: 'move', data: { ids, mailbox } });
         }
@@ -669,7 +667,7 @@ angular.module('proton.elements')
         const ids = idsSelected();
 
         if (type === 'conversation') {
-            actionConversation.labelConversation(ids, labels, alsoArchive);
+            actionConversation.label(ids, labels, alsoArchive);
         } else if (type === 'message') {
             const messages = $scope.elementsSelected();
 

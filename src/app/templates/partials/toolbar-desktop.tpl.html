@@ -15,26 +15,55 @@
             pt-tooltip-translate="Select all messages"
             pt-tooltip-translate-context="Action">
     </label>
-    <span ng-show="messageButtons === 1" class="pm_buttons" ng-class="{ disabled: numberElementSelected === 0 }">
-        <a href="#" class="fa fa-eye-slash" pt-tooltip-translate="Mark as unread" ng-click="unread()" ng-class="{ disabled: numberElementSelected === 0 }" pt-tooltip-translate-context="Action"></a>
-        <a href="#" class="fa fa-eye" pt-tooltip-translate="Mark as read" ng-click="read()" ng-class="{ disabled: numberElementSelected === 0 }" pt-tooltip-translate-context="Action"></a>
-    </span>
-    <span ng-show="messageButtons === 0" class="pm_buttons" ng-class="{ disabled: numberElementSelected === 0 }">
-        <a href="#" class="fa fa-eye" pt-tooltip-translate="Mark as read" ng-click="read()" ng-class="{ disabled: numberElementSelected === 0 }" pt-tooltip-translate-context="Action"></a>
-        <a href="#" class="fa fa-eye-slash" pt-tooltip-translate="Mark as unread" ng-click="unread()" ng-class="{ disabled: numberElementSelected === 0 }" pt-tooltip-translate-context="Action"></a>
-    </span>
+
+    <read-unread></read-unread>
+
     <span class="pm_buttons" ng-class="{ disabled: numberElementSelected === 0 }">
-        <a href="#" pt-tooltip-translate="Move to trash" ng-click="move('trash')" ng-if="!('secured.trash.**' | includedByState) && !('secured.drafts.**' | includedByState)" ng-class="{ disabled: numberElementSelected === 0 }" class="fa fa-trash-o" pt-tooltip-translate-context="Action"></a>
-        <a href="#" pt-tooltip-translate="Move to inbox" ng-click="move('inbox')" ng-if="!('secured.inbox.**' | includedByState) && !('secured.sent.**' | includedByState)" ng-class="{ disabled: numberElementSelected === 0 }" class="fa fa-inbox" pt-tooltip-translate-context="Action"></a>
-        <a href="#" pt-tooltip-translate="Move to archive" ng-click="move('archive')" ng-if="!('secured.archive.**' | includedByState)" ng-class="{ disabled: numberElementSelected === 0 }" class="fa fa-archive" pt-tooltip-translate-context="Action"></a>
-        <a href="#" pt-tooltip-translate="Move to spam" ng-click="move('spam')" ng-if="!('secured.spam.**' | includedByState)" ng-class="{ disabled: numberElementSelected === 0 }" class="fa fa-ban" pt-tooltip-translate-context="Action"></a>
-        <a href="#" pt-tooltip-translate="Delete" ng-click="delete()" ng-if="('secured.trash.**' | includedByState) || ('secured.drafts.**' | includedByState)" ng-class="{ disabled: numberElementSelected === 0 }" class="fa fa-times-circle-o" pt-tooltip-translate-context="Action"></a>
+        <a
+            href="#"
+            pt-tooltip-translate="Move to trash"
+            ng-click="move('trash')"
+            ng-if="!('secured.trash.**' | includedByState) && !('secured.drafts.**' | includedByState)"
+            ng-class="{ disabled: numberElementSelected === 0 }"
+            class="fa fa-trash-o toolbar-btn-trash"
+            pt-tooltip-translate-context="Action"></a>
+        <a
+            href="#"
+            pt-tooltip-translate="Move to inbox"
+            ng-click="move('inbox')"
+            ng-if="!('secured.inbox.**' | includedByState) && !('secured.sent.**' | includedByState)"
+            ng-class="{ disabled: numberElementSelected === 0 }"
+            class="fa fa-inbox toolbar-btn-inbox"
+            pt-tooltip-translate-context="Action"></a>
+        <a
+            href="#"
+            pt-tooltip-translate="Move to archive"
+            ng-click="move('archive')" ng-if="!('secured.archive.**' | includedByState)"
+            ng-class="{ disabled: numberElementSelected === 0 }"
+            class="fa fa-archive toolbar-btn-archive"
+            pt-tooltip-translate-context="Action"></a>
+        <a
+            href="#"
+            pt-tooltip-translate="Move to spam"
+            ng-click="move('spam')"
+            ng-if="!('secured.spam.**' | includedByState)"
+            ng-class="{ disabled: numberElementSelected === 0 }"
+            class="fa fa-ban toolbar-btn-spam"
+            pt-tooltip-translate-context="Action"></a>
+        <a
+            href="#"
+            pt-tooltip-translate="Delete"
+            ng-click="delete()"
+            ng-if="('secured.trash.**' | includedByState) || ('secured.drafts.**' | includedByState)"
+            ng-class="{ disabled: numberElementSelected === 0 }"
+            class="fa fa-times-circle-o toolbar-btn-delete"
+            pt-tooltip-translate-context="Action"></a>
     </span>
 
     <span
-    id="tour-label-dropdown"
-    class="pm_buttons"
-    ng-class="{ disabled: numberElementSelected === 0 }">
+        id="tour-label-dropdown"
+        class="pm_buttons"
+        ng-class="{ disabled: numberElementSelected === 0 }">
         <a
         class="pm_trigger open-label"
         dropdown
