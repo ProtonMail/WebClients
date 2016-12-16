@@ -1,5 +1,4 @@
-angular.module('proton.controllers.Settings')
-
+angular.module('proton.settings')
 .controller('AccountController', (
     $log,
     $rootScope,
