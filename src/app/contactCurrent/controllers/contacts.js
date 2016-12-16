@@ -29,19 +29,19 @@ angular.module('proton.contactCurrent')
     $scope.isSafari = jQuery.browser.name === 'safari';
 
     // Listeners
-    $scope.$on('deleteContact', (event, ID) => {
+    $scope.$on('deleteContact', () => {
         $scope.updateContacts();
     });
 
-    $scope.$on('createContact', (event, ID, contact) => {
+    $scope.$on('createContact', () => {
         $scope.updateContacts();
     });
 
-    $scope.$on('updateContact', (event, ID, contact) => {
+    $scope.$on('updateContact', () => {
         $scope.updateContacts();
     });
 
-    $scope.$on('updateContacts', (event) => {
+    $scope.$on('updateContacts', () => {
         $scope.updateContacts();
     });
 
@@ -51,22 +51,20 @@ angular.module('proton.contactCurrent')
     });
 
     // Methods
-    $scope.initialization = function () {
+    $scope.initialization = () => {
         $scope.updateContacts();
     };
 
-    $scope.contactsFiltered = function (searching) {
+    $scope.contactsFiltered = (searching) => {
         const contacts = authentication.user.Contacts;
-        const pagination = function (contacts) {
-            let begin, end;
-
-            begin = ($scope.currentPage - 1) * $scope.numPerPage;
-            end = begin + $scope.numPerPage;
+        const pagination = (contacts) => {
+            const begin = ($scope.currentPage - 1) * $scope.numPerPage;
+            const end = begin + $scope.numPerPage;
 
             return contacts.slice(begin, end);
         };
 
-        const orderBy = function (contacts) {
+        const orderBy = (contacts) => {
             const result = $filter('orderBy')(contacts, $scope.sortBy);
 
             $scope.totalItems = result.length;
@@ -74,7 +72,7 @@ angular.module('proton.contactCurrent')
             return result;
         };
 
-        const search = function (contacts) {
+        const search = (contacts) => {
             const byName = $filter('filter')(contacts, { Name: $scope.params.searchContactInput });
             const byEmail = $filter('filter')(contacts, { Email: $scope.params.searchContactInput });
 
@@ -88,25 +86,22 @@ angular.module('proton.contactCurrent')
         return pagination(orderBy(search(contacts)));
     };
 
-    $scope.updateContacts = function () {
+    $scope.updateContacts = () => {
         $scope.contacts = $scope.contactsFiltered();
     };
 
-    $scope.selectPage = function (page) {
+    $scope.selectPage = (page) => {
         $scope.currentPage = page;
         $scope.refreshContacts();
     };
 
-    $scope.refreshContacts = function (searching) {
+    $scope.refreshContacts = (searching) => {
         $scope.contacts = $scope.contactsFiltered(searching);
     };
 
-    $scope.setSortBy = function (sort) {
-        if ($scope.sortBy.charAt(0) !== '-') {
-            sort = '-' + sort;
-        }
-
-        $scope.sortBy = sort;
+    $scope.setSortBy = (sort) => {
+        const sortBy = ($scope.sortBy.charAt(0) !== '-') ? ('-' + sort) : sort;
+        $scope.sortBy = sortBy;
         $scope.refreshContacts();
     };
 
@@ -124,7 +119,7 @@ angular.module('proton.contactCurrent')
         });
     }
 
-    $scope.deleteAllContacts = function () {
+    $scope.deleteAllContacts = () => {
         const title = gettextCatalog.getString('Delete all', null, 'Title');
         const message = gettextCatalog.getString('Are you sure you want to delete all your contacts?', null, 'Info');
 
@@ -134,7 +129,7 @@ angular.module('proton.contactCurrent')
                 message,
                 confirm() {
                     networkActivityTracker.track(
-                        Contact.clear().then((response) => {
+                        Contact.clear().then(() => {
                             notify({ message: gettextCatalog.getString('Contacts deleted', null, 'Info'), classes: 'notification-success' });
                             eventManager.call();
                         }, (response) => {
@@ -150,9 +145,10 @@ angular.module('proton.contactCurrent')
         });
     };
 
-    $scope.deleteContact = function (contact) {
+    $scope.deleteContact = (contact) => {
         const contactsSelected = contact ? [contact] : $scope.contactsSelected();
-        let message, title;
+        let message;
+        let title;
 
         if (contactsSelected.length === 1) {
             title = gettextCatalog.getString('Delete', null, 'Title');
@@ -178,7 +174,7 @@ angular.module('proton.contactCurrent')
                     networkActivityTracker.track(
                         Contact.delete({
                             IDs: deletedIDs
-                        }).then((response) => {
+                        }).then(() => {
                             notify({ message: gettextCatalog.getString('Contacts deleted', null, 'Info'), classes: 'notification-success' });
                             confirmModal.deactivate();
                             eventManager.call();
@@ -195,7 +191,7 @@ angular.module('proton.contactCurrent')
         });
     };
 
-    $scope.addContact = function () {
+    $scope.addContact = () => {
         openContactModal(gettextCatalog.getString('Add new contact', null, 'Action'), '', '', (name, email) => {
             const match = _.findWhere(authentication.user.Contacts, { Email: email });
 
@@ -230,7 +226,7 @@ angular.module('proton.contactCurrent')
         });
     };
 
-    $scope.editContact = function (contact) {
+    $scope.editContact = (contact) => {
         openContactModal(gettextCatalog.getString('Edit', null, 'Action'), contact.Name, contact.Email, (name, email) => {
             networkActivityTracker.track(
                 Contact.edit({
@@ -253,7 +249,7 @@ angular.module('proton.contactCurrent')
         });
     };
 
-    $scope.onSelectContact = function (event, contact) {
+    $scope.onSelectContact = (event, contact) => {
         if (!lastChecked) {
             lastChecked = contact;
         } else {
@@ -270,13 +266,13 @@ angular.module('proton.contactCurrent')
         }
     };
 
-    $scope.contactsSelected = function () {
+    $scope.contactsSelected = () => {
         return _.filter(authentication.user.Contacts, (contact) => {
             return contact.selected === true;
         });
     };
 
-    $scope.sendMessageTo = function (contact) {
+    $scope.sendMessageTo = (contact) => {
         const message = new Message();
 
         message.ToList = [{ Address: contact.Email, Name: contact.Name }];
@@ -292,7 +288,7 @@ angular.module('proton.contactCurrent')
         $rootScope.$emit('composer.new', { message, type: 'new' });
     };
 
-    $scope.uploadContacts = function () {
+    $scope.uploadContacts = () => {
         dropzoneModal.activate({
             params: {
                 import(files) {
@@ -308,13 +304,13 @@ angular.module('proton.contactCurrent')
 
                     extension = files[0].name.slice(-4);
 
-                    reader.onload = function (e) {
+                    reader.onload = () => {
                         const text = reader.result;
 
                         if (extension === '.vcf') {
                             const vcardData = vCard.parse(text);
 
-                            _.forEach(vcardData, (d, i) => {
+                            _.forEach(vcardData, (d) => {
                                 if (d.fn && d.email) {
                                     contactArray.push({ Name: String(d.fn.value), Email: String(d.email.value) });
                                 } else if (d.email) {
@@ -330,17 +326,17 @@ angular.module('proton.contactCurrent')
                                     const nameKeys = ['Name', 'First Name'];
                                     const emailKeys = ['E-mail 1 - Value', 'E-mail Address', 'Email Address', 'E-mail', 'Email'];
 
-                                    nameKey = _.find(nameKeys, (d, i) => {
+                                    const nameKey = _.find(nameKeys, (d) => {
                                         return csv[0].indexOf(d) > -1;
                                     });
 
-                                    emailKey = _.find(emailKeys, (d, i) => {
+                                    const emailKey = _.find(emailKeys, (d) => {
                                         return csv[0].indexOf(d) > -1;
                                     });
 
-                                    nameIndex = csv[0].indexOf(nameKey);
-                                    emailIndex = csv[0].indexOf(emailKey);
-                                    lastNameIndex = (nameKey === 'First Name' ? csv[0].indexOf('Last Name') : undefined);
+                                    const nameIndex = csv[0].indexOf(nameKey);
+                                    const emailIndex = csv[0].indexOf(emailKey);
+                                    const lastNameIndex = (nameKey === 'First Name' ? csv[0].indexOf('Last Name') : undefined);
 
                                     _.forEach(csv, (d, i) => {
                                         if (i > 0 && typeof (d[emailIndex]) !== 'undefined' && d[emailIndex] !== '') {
@@ -366,7 +362,7 @@ angular.module('proton.contactCurrent')
 
                     reader.readAsText(files[0], 'utf-8');
 
-                    importContacts = function (contactArray) {
+                    importContacts = (contactArray) => {
                         networkActivityTracker.track(
                             Contact.save({ Contacts: contactArray })
                             .then((result) => {
@@ -411,7 +407,7 @@ angular.module('proton.contactCurrent')
     /**
      * Open modal to alert the user that he cannot download
      */
-    $scope.openSafariWarning = function () {
+    $scope.openSafariWarning = () => {
         alertModal.activate({
             params: {
                 title: gettextCatalog.getString('Download', null, 'Title'),
@@ -424,31 +420,32 @@ angular.module('proton.contactCurrent')
         });
     };
 
-    $scope.downloadContacts = function () {
+    $scope.downloadContacts = () => {
         const contactsArray = [['Name', 'Email']];
         const csvRows = [];
         const filename = 'contacts.csv';
 
-        const escape_for_csv = function (str) {
-
+        const escapeForCSV = (str) => {
+            let result = str;
             let escape = false;
+
             if (str.indexOf(',') !== -1 || str.indexOf('\n') !== -1) {
                 escape = true;
             }
             if (str.indexOf('"') !== -1) {
-                str = str.replace(/"/g, '""');
+                result = str.replace(/"/g, '""');
                 escape = true;
             }
 
             if (escape) {
-                str = '"' + str + '"';
+                result = '"' + str + '"';
             }
 
-            return str;
+            return result;
         };
 
         _.forEach(authentication.user.Contacts, (contact) => {
-            contactsArray.push([escape_for_csv(contact.Name), escape_for_csv(contact.Email)]);
+            contactsArray.push([escapeForCSV(contact.Name), escapeForCSV(contact.Email)]);
         });
 
         for (let i = 0, l = contactsArray.length; i < l; ++i) {
@@ -458,7 +455,7 @@ angular.module('proton.contactCurrent')
         const csvString = csvRows.join('\n');
         const blob = new Blob([csvString], { type: 'data:attachment/csv;' });
 
-        saveAs(blob, filename);
+        window.saveAs(blob, filename);
     };
 
     $scope.initialization();
