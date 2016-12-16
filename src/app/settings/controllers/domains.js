@@ -232,7 +232,7 @@ angular.module('proton.settings')
                                     notify({ message: gettextCatalog.getString('Verification did not succeed, please try again in an hour.', null, 'Error'), classes: 'notification-danger' });
                                     break;
                                 case 1:
-                                    notify({ message: gettextCatalog.getString('Wrong verification code. Please make sure you copied the verification code correctly and try again. It can take up to 1 hour for changes to take affect.', null, 'Error'), classes: 'notification-danger', duration: 30000 });
+                                    notify({ message: gettextCatalog.getString('Wrong verification code. Please make sure you copied the verification code correctly and try again. It can take up to 24 hours for changes to take affect.', null, 'Error'), classes: 'notification-danger', duration: 30000 });
                                     break;
                                 case 2:
                                     notify({ message: gettextCatalog.getString('Domain verified', null), classes: 'notification-success' });
