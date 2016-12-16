@@ -22,35 +22,22 @@
 		padding: 0 15px;
 	}
 	.labelSearch {
-		position: relative;
-		display: block;
 		clear: both;
-		float: none;
-		padding-left: 30px;
 		height: 25px;
-		max-width: 80%;
 		line-height: 25px;
+
 		.fa {
-			position: absolute;
-			left: 0;
-			top: 0;
-			bottom: 0;
-			width: 30px;
-			display: block;
-			text-align: left;
 			font-size: 1em;
 			color: $primary;
-			line-height: 25px;
-			height: 25px;
+			margin-right: 10px;
 		}
-		input {
-			float: left;
+		.labelSearchInput {
 			padding: 0;
 			border: none;
 			border-bottom: 1px solid $border;
-			margin: 0 0 1rem 0;
-			height: 25px;
-			line-height: 25px;
+			border-radius: 0;
+			box-shadow: none;
+			background: transparent;
 			width: 100%;
 			-webkit-appearance: none;
 			   -moz-appearance: none;
@@ -74,7 +61,8 @@
 			text-align: left;
 			position: relative;
 		}
-		li {
+
+		.list-group-item {
 			line-height: 35px;
 			height: 35px;
 			overflow: hidden;
@@ -107,6 +95,14 @@
 				}
 			}
 		}
+
+		.list-group-item-empty {
+			.createLabel {
+				height: auto;
+				line-height: 20px;
+				width: calc(100% + 15px)
+			}
+		}
 	}
 }
 
@@ -114,7 +110,7 @@
 	.labelDropdown {
 		.wrapper {
 			padding-right: 0;
-			li {
+			.list-group-item {
 				padding: 0 15px;
 				border: 1px solid $border;
 				margin-bottom: 5px;
