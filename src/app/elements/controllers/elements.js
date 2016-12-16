@@ -55,7 +55,7 @@ angular.module('proton.elements')
         }, $log.error);
     }
 
-    $scope.watchElements = function () {
+    $scope.watchElements = () => {
         if (angular.isDefined(unbindWatcherElements)) {
             unbindWatcherElements();
         }
@@ -66,7 +66,7 @@ angular.module('proton.elements')
         }, true);
     };
 
-    $scope.senders = function (element) {
+    $scope.senders = (element) => {
         if (angular.isDefined(element.Senders)) {
             return element.Senders;
         }
@@ -74,7 +74,7 @@ angular.module('proton.elements')
         return [element.Sender];
     };
 
-    $scope.recipients = function (element) {
+    $scope.recipients = (element) => {
         if (angular.isDefined(element.Recipients)) {
             return element.Recipients;
         }
@@ -99,11 +99,11 @@ angular.module('proton.elements')
      * Return if we can display the placeholder or not
      * @param {Boolean}
      */
-    $scope.placeholder = function () {
+    $scope.placeholder = () => {
         return authentication.user.ViewLayout === CONSTANTS.COLUMN_MODE && ($scope.idDefined() === false || ($scope.idDefined() === true && $rootScope.numberElementChecked > 0));
     };
 
-    $scope.startWatchingEvent = function () {
+    $scope.startWatchingEvent = () => {
 
         let isOpened = false;
 
@@ -237,7 +237,7 @@ angular.module('proton.elements')
         });
     };
 
-    $scope.stopWatchingEvent = function () {
+    $scope.stopWatchingEvent = () => {
         angular.element($window).unbind('resize', $rootScope.mobileResponsive);
         angular.element($window).unbind('orientationchange', $rootScope.mobileResponsive);
     };
@@ -269,7 +269,7 @@ angular.module('proton.elements')
         return elementID && rowMode && context && notSpecial;
     };
 
-    $scope.conversationCount = function () {
+    $scope.conversationCount = () => {
         const context = tools.cacheContext();
 
         if (!context) {
@@ -281,7 +281,7 @@ angular.module('proton.elements')
         return (tools.typeList() === 'message') ? cacheCounters.totalMessage(label) : cacheCounters.totalConversation(label);
     };
 
-    $scope.makeDropdownPages = function () {
+    $scope.makeDropdownPages = () => {
         const ddp = [];
         const ddp2 = [];
         const count = parseInt($scope.conversationCount() - 1, 10);
@@ -305,6 +305,10 @@ angular.module('proton.elements')
         const params = {};
 
         params.Page = ($stateParams.page || 1) - 1;
+
+        if (angular.isDefined($stateParams.trashspam)) {
+            params.TrashSpam = 0;
+        }
 
         if (angular.isDefined($stateParams.filter)) {
             params.Unread = +($stateParams.filter === 'unread'); // Convert Boolean to Integer
@@ -415,7 +419,7 @@ angular.module('proton.elements')
      * @param {Object} element
      * @return {Boolean}
      */
-    $scope.active = function (element) {
+    $scope.active = (element) => {
         if ($rootScope.numberElementChecked === 0 && angular.isDefined($state.params.id)) {
             return $state.params.id === element.ConversationID || $state.params.id === element.ID;
         }
@@ -423,7 +427,7 @@ angular.module('proton.elements')
         return false;
     };
 
-    $scope.size = function (element) {
+    $scope.size = (element) => {
         if (angular.isDefined(element.TotalSize)) {
             return element.TotalSize;
         } else if (angular.isDefined(element.Size)) {
@@ -436,7 +440,7 @@ angular.module('proton.elements')
      * @param {String} id - label id
      * @return {Object} style
      */
-    $scope.getColorLabel = function (id) {
+    $scope.getColorLabel = (id) => {
         return {
             color: $scope.getLabel(id).Color,
             borderColor: $scope.getLabel(id).Color
@@ -447,7 +451,7 @@ angular.module('proton.elements')
      *
      * @return {}
      */
-    $scope.start = function () {
+    $scope.start = () => {
         return ($scope.page - 1) * $scope.conversationsPerPage + 1;
     };
 
@@ -455,7 +459,7 @@ angular.module('proton.elements')
      *
      * @return {} end
      */
-    $scope.end = function () {
+    $scope.end = () => {
         let end = $scope.start() + $scope.conversationsPerPage - 1;
 
         if (end > $scope.conversationCount()) {
@@ -469,7 +473,7 @@ angular.module('proton.elements')
      * Return if all elements are selected
      * @return {Boolean}
      */
-    $scope.allSelected = function () {
+    $scope.allSelected = () => {
         if (!Array.isArray($scope.conversations) || !$scope.conversations.length) {
             return false;
         }
@@ -479,7 +483,7 @@ angular.module('proton.elements')
     /**
      * Unselect all elements
      */
-    $scope.unselectAllElements = function () {
+    $scope.unselectAllElements = () => {
         $scope.conversations = _.map($scope.conversations, (element) => {
             element.Selected = false;
             return element;
@@ -490,7 +494,7 @@ angular.module('proton.elements')
     /**
       * Select all elements
       */
-    $scope.selectAllElements = function () {
+    $scope.selectAllElements = () => {
         _.each($scope.conversations, (element) => {
             element.Selected = true;
         });
@@ -501,7 +505,7 @@ angular.module('proton.elements')
      * Return [Element] selected
      * @return {Array} elements
      */
-    $scope.elementsSelected = function () {
+    $scope.elementsSelected = () => {
         let elements = _.where($scope.conversations, { Selected: true });
 
         if ($scope.conversations.length > 0 && elements.length === 0 && $scope.markedElement) {
@@ -564,7 +568,7 @@ angular.module('proton.elements')
     /**
      * Mark conversations selected as read
      */
-    $scope.read = function () {
+    $scope.read = () => {
         const type = tools.typeList();
         const ids = idsSelected();
 
@@ -578,7 +582,7 @@ angular.module('proton.elements')
     /**
      * Mark conversations selected as unread
      */
-    $scope.unread = function () {
+    $scope.unread = () => {
         const type = tools.typeList();
         const ids = idsSelected();
 
@@ -596,7 +600,7 @@ angular.module('proton.elements')
     /**
      * Delete elements selected
      */
-    $scope.delete = function () {
+    $scope.delete = () => {
         const title = gettextCatalog.getString('Delete', null, 'Title');
         const message = gettextCatalog.getString('Are you sure? This cannot be undone.', null, 'Info');
 
@@ -638,7 +642,7 @@ angular.module('proton.elements')
      * Move conversation to an other location
      * @param {String} mailbox
      */
-    $scope.move = function (mailbox) {
+    $scope.move = (mailbox) => {
         const type = tools.typeList();
 
         const ids = idsSelected();
@@ -662,7 +666,7 @@ angular.module('proton.elements')
      * @param {Boolean} alsoArchive
      * @return {Promise}
      */
-    $scope.saveLabels = function (labels, alsoArchive) {
+    $scope.saveLabels = (labels, alsoArchive) => {
         const type = tools.typeList();
         const ids = idsSelected();
 
@@ -678,14 +682,14 @@ angular.module('proton.elements')
     /**
      * Back to conversation / message list
      */
-    $scope.back = function () {
+    $scope.back = () => {
         $state.go('secured.' + $scope.mailbox, {
             id: null // remove ID
         });
     };
 
     // Let users change the col/row modes.
-    $scope.changeLayout = function (mode) {
+    $scope.changeLayout = (mode) => {
         let newLayout;
 
         if (mode === 'rows' && authentication.user.ViewLayout === CONSTANTS.COLUMN_MODE) {
@@ -724,14 +728,14 @@ angular.module('proton.elements')
      * @param {Object} element
      * @return {Boolean}
      */
-    $scope.draft = function (element) {
+    $scope.draft = (element) => {
         return angular.isDefined(element.LabelIDs) && element.LabelIDs.indexOf(CONSTANTS.MAILBOX_IDENTIFIERS.drafts) !== -1;
     };
 
     /**
      * Close all label dropdown
      */
-    $scope.closeLabels = function () {
+    $scope.closeLabels = () => {
         $('.pm_dropdown').removeClass('active');
     };
 
@@ -739,7 +743,7 @@ angular.module('proton.elements')
      * Emulate labels array for the drag and drop
      * @param {String} labelID
      */
-    $scope.applyLabels = function (labelID) {
+    $scope.applyLabels = (labelID) => {
         const labels = [];
 
         _.each($scope.labels, (label) => {
@@ -769,7 +773,7 @@ angular.module('proton.elements')
      * Return label object
      * @param {String} id
      */
-    $scope.getLabel = function (id) {
+    $scope.getLabel = (id) => {
         return _.findWhere(authentication.user.Labels, { ID: id });
     };
 
@@ -777,7 +781,7 @@ angular.module('proton.elements')
      * Go to label folder + reset parameters
      * @param {String} labelID
      */
-    $scope.goToLabel = function (labelID) {
+    $scope.goToLabel = (labelID) => {
         const params = { page: undefined, filter: undefined, sort: undefined, label: labelID };
 
         $state.go('secured.label', params);
@@ -835,7 +839,7 @@ angular.module('proton.elements')
      * On click on a conversation
      * @param {Object} element - Conversation or Message
      */
-    $scope.click = function ($event, element) {
+    $scope.click = ($event, element) => {
         // Prevent click onto the selecte checkbox
         if ($event.target && /ptSelectConversation/.test($event.target.className)) {
             return false;
@@ -848,7 +852,7 @@ angular.module('proton.elements')
      * Filter current list
      * @param {String}
      */
-    $scope.filterBy = function (status) {
+    $scope.filterBy = (status) => {
         $state.go($state.$current.name, _.extend({}, $state.params, {
             filter: status,
             page: undefined
@@ -858,7 +862,7 @@ angular.module('proton.elements')
     /**
      * Clear current filter
      */
-    $scope.clearFilter = function () {
+    $scope.clearFilter = () => {
         $state.go($state.$current.name, _.extend({}, $state.params, {
             filter: undefined,
             page: undefined
@@ -869,9 +873,16 @@ angular.module('proton.elements')
      * Order the list by a specific parameter
      * @param {String} criterion
      */
-    $scope.orderBy = function (criterion) {
+    $scope.orderBy = (criterion) => {
         $state.go($state.$current.name, _.extend({}, $state.params, {
             sort: criterion === '-date' ? undefined : criterion,
+            page: undefined
+        }));
+    };
+
+    $scope.toggleTrashSpam = () => {
+        $state.go($state.$current.name, _.extend({}, $state.params, {
+            trashspam: angular.isDefined($stateParams.trashspam) ? undefined : 0,
             page: undefined
         }));
     };
@@ -880,7 +891,7 @@ angular.module('proton.elements')
      * Empty specific location
      * @param {String} mailbox
      */
-    $scope.empty = function (mailbox) {
+    $scope.empty = (mailbox) => {
         const title = gettextCatalog.getString('Delete all', null, 'Title');
         const message = gettextCatalog.getString('Are you sure? This cannot be undone.', null, 'Info');
         let promise;
