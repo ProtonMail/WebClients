@@ -418,7 +418,9 @@ angular.module('proton.utils')
      * @return {Boolean}
      */
     tools.cacheContext = () => {
-        const trashSpamDefined = angular.isDefined($stateParams.trashspam);
+        const mailbox = filteredState();
+        const boxes = ['drafts', 'sent', 'label'];
+        const trashSpamDefined = angular.isDefined($stateParams.trashspam) && boxes.indexOf(mailbox) === -1;
         const filterDefined = angular.isDefined($stateParams.filter);
         const sortDefined = angular.isDefined($stateParams.sort);
         const isSearch = $state.includes('secured.search.**');
