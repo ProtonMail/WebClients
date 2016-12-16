@@ -305,10 +305,7 @@ angular.module('proton.elements')
         const params = {};
 
         params.Page = ($stateParams.page || 1) - 1;
-
-        if (angular.isDefined($stateParams.trashspam)) {
-            params.TrashSpam = 0;
-        }
+        params.TrashSpam = $stateParams.trashspam;
 
         if (angular.isDefined($stateParams.filter)) {
             params.Unread = +($stateParams.filter === 'unread'); // Convert Boolean to Integer
@@ -882,7 +879,7 @@ angular.module('proton.elements')
 
     $scope.toggleTrashSpam = () => {
         $state.go($state.$current.name, _.extend({}, $state.params, {
-            trashspam: angular.isDefined($stateParams.trashspam) ? undefined : 0,
+            trashspam: $stateParams.trashspam ? 0 : 1,
             page: undefined
         }));
     };
