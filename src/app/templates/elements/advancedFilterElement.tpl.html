@@ -1,45 +1,91 @@
-<div class="pm_buttons">
-    <a class="pm_trigger" dropdown><small translate>More</small> <i class="fa fa-angle-down"></i></a>
-    <span class="pm_dropdown wider">
-        <a href="#" ng-click="empty('drafts')" ng-show="{{ 'secured.drafts.**' | includedByState }}">
+<div class="pm_buttons advancedFilterElement-container" ng-class="{
+    'advancedFilterElement-state-drafts': ('secured.drafts.**' | includedByState),
+    'advancedFilterElement-state-spam': ('secured.spam.**' | includedByState),
+    'advancedFilterElement-state-trash': ('secured.trash.**' | includedByState)
+
+}">
+    <a class="pm_trigger advancedFilterElement-btn-dropdown" dropdown>
+        <small translate>More</small>
+        <i class="fa fa-angle-down"></i>
+    </a>
+    <div class="pm_dropdown wider advancedFilterElement-content">
+        <button
+            href="#"
+            class="advancedFilterElement-btn-drafts"
+            data-action="empty"
+            data-action-arg="drafts">
             <i class="fa fa-times-circle-o"></i>
             <span translate translate-context="Action">Empty drafts</span>
-        </a>
-        <a href="#" ng-click="empty('spam')" ng-show="{{ 'secured.spam.**' | includedByState }}">
+        </button>
+        <button
+            class="advancedFilterElement-btn-spam"
+            data-action="empty"
+            data-action-arg="spam">
             <i class="fa fa-times-circle-o"></i>
             <span translate translate-context="Action">Empty spam</span>
-        </a>
-        <a href="#" ng-click="empty('trash')" ng-show="{{ 'secured.trash.**' | includedByState }}">
+        </button>
+        <button
+            class="advancedFilterElement-btn-trash"
+            data-action="empty"
+            data-action-arg="trash">
             <i class="fa fa-times-circle-o"></i>
             <span translate translate-context="Action">Empty trash</span>
-        </a>
-        <a href="#" ng-click="orderBy('size')">
+        </button>
+        <button
+            class="advancedFilterElement-btn-size"
+            data-action="orderBy"
+            data-action-arg="size">
             <i class="fa fa-sort-amount-asc"></i>
             <span translate translate-context="Action">Size: Small to large</span>
-        </a>
-        <a href="#" ng-click="orderBy('-size')">
+        </button>
+        <button
+            class="advancedFilterElement-btn-size"
+            data-action="orderBy"
+            data-action-arg="-size">
             <i class="fa fa-sort-amount-desc"></i>
             <span translate translate-context="Action">Size: Large to small</span>
-        </a>
-        <a href="#" ng-click="orderBy('-date')">
+        </button>
+        <button
+            class="advancedFilterElement-btn-date"
+            data-action="orderBy"
+            data-action-arg="-date">
             <i class="fa fa-clock-o"></i>
             <span translate translate-context="Action">Date: New to old</span>
-        </a>
-        <a href="#" ng-click="orderBy('date')">
+        </button>
+        <button
+            class="advancedFilterElement-btn-date"
+            data-action="orderBy"
+            data-action-arg="date">
             <i class="fa fa-history"></i>
             <span translate translate-context="Action">Date: Old to new</span>
-        </a>
-        <a href="#" ng-click="clearFilter()" pt-tooltip-translate="Show all" pt-tooltip-translate-context="Action">
+        </button>
+        <button
+            class="advancedFilterElement-btn-clearFilter"
+            data-action="clearFilter"
+            pt-tooltip-translate="Show all"
+            pt-tooltip-translate-context="Action">
             <i class="fa fa-list"></i>
             <span translate translate-context="Action">Show all</span>
-        </a>
-        <a href="#" ng-click="filterBy('unread')">
+        </button>
+        <button
+            class="advancedFilterElement-btn-unread"
+            data-action="filterBy"
+            data-action-arg="unread">
             <i class="fa fa-eye-slash"></i>
             <span translate translate-context="Action">Show unread</span>
-        </a>
-        <a href="#" ng-click="filterBy('read')">
+        </button>
+        <button
+            class="advancedFilterElement-btn-read"
+            data-action="filterBy"
+            data-action-arg="read">
             <i class="fa fa-eye"></i>
             <span translate translate-context="Action">Show read</span>
-        </a>
-    </span>
+        </button>
+        <button
+            class="advancedFilterElement-btn-toggleTrashSpam"
+            data-action="toggleTrashSpam">
+            <i class="fa fa-toggle-on"></i>
+            <span translate translate-context="Action">Toggle trash spam</span>
+        </button>
+    </div>
 </div>
