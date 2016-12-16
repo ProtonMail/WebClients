@@ -16,12 +16,13 @@
 	.alsoArchive {
 		display: block;
 		clear: both;
-		margin: 0rem -15px 1rem -15px;
+		margin: 1rem -15px;
 		border-top: 1px solid $border;
 		border-bottom: 1px solid $border;
 		padding: 0rem 15px;
 	}
 	.labelSearch {
+		margin-bottom: 1rem;
 		.fa {
 			font-size: 1em;
 			color: $primary;
