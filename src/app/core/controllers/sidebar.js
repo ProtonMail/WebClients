@@ -118,10 +118,10 @@ angular.module('proton.core')
      * Open folder
      * @param {String} route
      */
-    $scope.goTo = function (route) {
+    $scope.goTo = (route) => {
         const sameRoute = $state.$current.name === route && !$stateParams.filter;
         const firstPage = $stateParams.page === 1 || angular.isUndefined($stateParams.page);
-        const params = { page: null, filter: null, sort: null };
+        const params = { page: null, filter: null, sort: null, trashspam: null };
 
         if (sameRoute === true && firstPage === true) {
             // Hide sidebar for mobile

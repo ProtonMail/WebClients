@@ -418,11 +418,12 @@ angular.module('proton.utils')
      * @return {Boolean}
      */
     tools.cacheContext = () => {
+        const trashSpamDefined = angular.isDefined($stateParams.trashspam);
         const filterDefined = angular.isDefined($stateParams.filter);
         const sortDefined = angular.isDefined($stateParams.sort);
         const isSearch = $state.includes('secured.search.**');
 
-        return !isSearch && !sortDefined && !filterDefined;
+        return !isSearch && !sortDefined && !filterDefined && !trashSpamDefined;
     };
 
     tools.countries = [
