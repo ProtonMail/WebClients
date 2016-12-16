@@ -69,7 +69,7 @@
 
     <ul class="menu" id="labelSettings">
         <li>
-            <a ui-sref="secured.labels({ trashspam: 0 })">
+            <a ui-sref="secured.labels">
                 <i class="fa fa-cog"></i>
                 <span id="tour-label-settings" translate-context="Action" translate>Label settings</span>
             </a>
@@ -80,7 +80,7 @@
         <div class="labels">
             <ul>
                 <li ng-repeat="label in labels | orderBy: 'Order'" ng-class="{'active': activeLabel(label)}">
-                    <a ui-sref="secured.label({label: '{{label.ID}}' })" title="{{ label.Name }}" class="btn">
+                    <a ui-sref="secured.label({ label: '{{label.ID}}', trashspam: 0 })" title="{{ label.Name }}" class="btn">
                         <i class="fa fa-tag" ng-style="color(label)"></i>
                         <span>{{ label.Name }}</span>
                         <em ng-bind="unread('label', label.ID)"></em>
