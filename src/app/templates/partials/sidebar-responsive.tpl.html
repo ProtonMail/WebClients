@@ -61,19 +61,19 @@
         </li>
         <li class="divider"></li>
         <li ng-class="{ active: ('secured.contacts.**' | includedByState) }">
-            <button title="Contacts" ui-sref='secured.contacts' ng-click="hideMobileSidebar()">
+            <button title="Contacts" ui-sref='secured.contacts'>
                 <i class="fa fa-users"></i>
                 <span translate-context="Title" translate-comment="Folder name" translate>Contacts</span>
             </button>
         </li>
         <li ng-class="{ active: ('secured.dashboard.**' | includedByState) }">
-            <button title="Upgrade" ui-sref="secured.dashboard" ng-click="hideMobileSidebar()">
+            <button title="Upgrade" ui-sref="secured.dashboard">
                 <i class="fa fa-arrow-up"></i>
                 <span translate-context="Title" translate-comment="Folder name" translate>Upgrade</span>
             </button>
         </li>
         <li ng-class="{ active: ('secured.account.**' | includedByState) }">
-            <button title="Settings" ui-sref='secured.account' ng-click="hideMobileSidebar()">
+            <button title="Settings" ui-sref='secured.account'>
                 <i class="fa fa-cogs"></i>
                 <span translate-context="Title" translate-comment="Folder name" translate>Settings</span>
             </button>
