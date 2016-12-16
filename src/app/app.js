@@ -63,34 +63,12 @@ angular.module('proton', [
     'proton.address',
     'proton.message',
     'proton.conversation',
-    'proton.drag',
-    'proton.dropdown',
-    'proton.dropzone',
-    'proton.enter',
-    'proton.height',
-    'proton.heightOutside',
-    'proton.labelHeight',
-    'proton.labels',
-    'proton.loaderTag',
-    'proton.locationTag',
-    'proton.phone',
-    'proton.responsiveComposer',
-    'proton.sidebarHeight',
     'proton.squire',
-    'proton.time',
-    'proton.toggle',
-    'proton.tooltip',
-    'proton.translate',
     'proton.wizard',
-    'proton.rightClick',
-    'proton.detectTimeWidth',
-
-    // Filters
-    'proton.filters',
+    'proton.contactCurrent',
+    'proton.formUtils',
 
     // Controllers
-    'proton.controllers.Contacts',
-    'proton.controllers.Compose',
     'proton.controllers.Settings'
 ])
 
