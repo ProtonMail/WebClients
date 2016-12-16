@@ -695,41 +695,6 @@ angular.module('proton.elements')
         });
     };
 
-    // Let users change the col/row modes.
-    $scope.changeLayout = (mode) => {
-        let newLayout;
-
-        if (mode === 'rows' && authentication.user.ViewLayout === CONSTANTS.COLUMN_MODE) {
-            newLayout = 1;
-        } else if (mode === 'columns' && authentication.user.ViewLayout === CONSTANTS.ROW_MODE) {
-            newLayout = 0;
-        } else if (mode === 'mobile') {
-            $rootScope.mobileMode = true;
-        }
-
-        if (angular.isDefined(newLayout)) {
-            networkActivityTracker.track(
-                Setting.setViewlayout({ ViewLayout: newLayout })
-                .then((result) => {
-                    if (result.data && result.data.Code === 1000) {
-                        $rootScope.mobileMode = false;
-                        return eventManager.call()
-                        .then(() => {
-                            tools.mobileResponsive();
-                            notify({ message: gettextCatalog.getString('Layout saved', null), classes: 'notification-success' });
-                        });
-                    } else if (result.data && result.data.Error) {
-                        notify({ message: result.data.Error, classes: 'notification-danger' });
-                    } else {
-                        notify({ message: 'Error during saving layout mode', classes: 'notification-danger' });
-                    }
-                })
-            );
-        }
-
-        angular.element('#pm_toolbar-desktop a').tooltip('hide');
-    };
-
     /**
      * Check if the current message is a draft
      * @param {Object} element
