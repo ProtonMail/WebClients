@@ -318,4 +318,16 @@
         clear: both;
     }
 
+    .pm_single_action {
+        @include flexRow();
+        .input:last-of-type {
+            border-top-right-radius: 0;
+            border-bottom-right-radius: 0;
+        }
+        .pm_button:first-of-type {
+            border-top-left-radius: 0;
+            border-bottom-left-radius: 0;
+        }
+    }
+
 }

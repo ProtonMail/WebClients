@@ -1,13 +1,13 @@
 <div class="labelDropdown">
     <form novalidate role="menu" ng-submit="save()" ng-click="$event.stopPropagation()" class="pm_form">
         <p ng-show="labels.length === 0" class="alert alert-info" translate translate-context="Info">No labels</p>
-        <div ng-show="labels.length > 1" class="margin labelSearch pm-flex-content-row alignItemsCenter">
-            <span class="pm-flex-content-autoWidth">
+        <div ng-show="labels.length > 1" class="labelSearch pm-flex-content-row alignItemsCenter">
+            <span>
                 <i class="fa fa-search"></i>
             </span>
             <input class="labelSearchInput pm-flex-content-fillWidth" type="search" id="searchLabels" placeholder-translate="Filter labels" ng-model="searchLabels" ng-change="displayField = false" ng-minlength="1" />
         </div>
-        <div class="wrapper padding-top">
+        <div class="wrapper">
             <ul class="list-group" ng-show="labels.length > 0">
                 <li class="list-group-item" ng-repeat="label in (filteredLabels = (labels | filter: {Name: searchLabels} | orderBy: 'Order'))">
                     <label>
@@ -19,12 +19,12 @@
                 </li>
                 <li class="list-group-item-empty" ng-show="filteredLabels.length === 0 && !displayField">
                     <button type="button" class="createLabel pm_button link fullwidth" ng-click="toggle()" ng-enter="toggle()" >
-                         <strong>"{{ searchLabels }}"</strong> <small>(create new)</small>
+                         <strong>"{{ searchLabels }}"</strong> <small translate translate-context="Info">(create new)</small>
                     </button>
                 </li>
             </ul>
         </div>
-        <create-label display="displayField" labels="labels" label-name="searchLabels"></create-label>
+        <create-label class="pm-flex-content padding-top padding-bottom" display="displayField" labels="labels" label-name="searchLabels"></create-label>
         <label class="text-right alsoArchive">
             <span translate translate-comment="Form checkbox option" class="pull-left">Also Archive</span>
             <input type="checkbox" ng-model="alsoArchive" ng-change="changeAlsoArchive()" class="dropdownLabels-input-archive" />
