@@ -131,8 +131,8 @@ angular.module('proton.core')
             // Call last event
             $scope.lastEvent();
         } else {
-            const box = tools.currentMailbox();
-            const trashspam = ['trash', 'spam', 'label'].indexOf(box) > -1 ? 1 : 0;
+            const box = route.replace('secured.', '');
+            const trashspam = ['trash', 'spam'].indexOf(box) > -1 ? 1 : 0;
             const params = { page: null, filter: null, sort: null, trashspam };
             $state.go(route, params); // remove the older parameters
         }
