@@ -459,12 +459,6 @@ angular.module('proton.message')
 
             const { messageIDs, conversationIDs, events } = _
                 .reduce(ids, (acc, ID) => {
-
-                    if (!cache.getMessageCached(ID)) {
-                        console.log(ID, cache);
-                        debugger;
-                    }
-
                     const { IsRead, ConversationID } = cache.getMessageCached(ID) || {};
 
                     if (IsRead === 1) {
