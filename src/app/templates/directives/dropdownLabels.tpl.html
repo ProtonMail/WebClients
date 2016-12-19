@@ -1,7 +1,7 @@
 <div class="labelDropdown">
     <form novalidate autocomplete="off" role="menu" ng-submit="save()" ng-click="$event.stopPropagation()" class="pm_form">
-        <p ng-show="labels.length === 0" class="alert alert-info" translate translate-context="Info">No labels</p>
-        <div ng-show="labels.length > 1" class="labelSearch pm-flex-content-row alignItemsCenter">
+        <p ng-show="!labels.length" class="alert alert-info" translate translate-context="Info">No labels</p>
+        <div ng-show="labels.length" class="labelSearch pm-flex-content-row alignItemsCenter">
             <span>
                 <i class="fa fa-search"></i>
             </span>
