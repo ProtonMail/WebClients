@@ -10,11 +10,12 @@ angular.module('proton.formUtils')
             compare: '='
         },
         compile(element, attrs) {
-            const { id = '', name = '', placeholder = '' } = attrs;
+            const { id = '', name = '', placeholder = '', tabindex = 0 } = attrs;
             const input = element[0].querySelector('input');
             input.setAttribute('id', id);
             input.setAttribute('name', name);
             input.setAttribute('placeholder', placeholder);
+            input.setAttribute('tabindex', tabindex);
             return (scope) => {
                 scope.message = scope.form[name].$error;
                 scope.max = CONSTANTS.LOGIN_PW_MAX_LEN;
