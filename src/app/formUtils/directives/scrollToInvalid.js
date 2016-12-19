@@ -14,10 +14,10 @@ angular.module('proton.formUtils')
                 scope.valid();
             }
 
-            element.addEventListener('submit', onSubmit);
+            element[0].addEventListener('submit', onSubmit);
 
             scope.$on('$destroy', () => {
-                element.removeEventListener('submit', onSubmit);
+                element[0].removeEventListener('submit', onSubmit);
             });
         }
     };
