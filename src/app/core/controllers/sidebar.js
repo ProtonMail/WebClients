@@ -37,11 +37,15 @@ angular.module('proton.core')
 
     $scope.appVersion = CONFIG.app_version;
 
-    $scope.hideMobileSidebar = function () {
+    $scope.hideMobileSidebar = () => {
         $rootScope.$broadcast('sidebarMobileToggle', false);
     };
 
     // Listeners
+    unsubscribe.push($rootScope.$on('$stateChangeStart', () => {
+        $scope.hideMobileSidebar();
+    }));
+
     unsubscribe.push($rootScope.$on('deleteLabel', () => {
         $scope.$applyAsync(() => {
             $scope.labels = _.sortBy(authentication.user.Labels, 'Order');
@@ -75,7 +79,7 @@ angular.module('proton.core')
     /**
      * Send request to get the last event, empty the cache for the current mailbox and then refresh the content automatically
      */
-    $scope.lastEvent = function () {
+    $scope.lastEvent = () => {
 
         // Start to spin icon on the view
         $scope.spinMe = true;
@@ -101,7 +105,7 @@ angular.module('proton.core')
      * Returns a hexidecimal string for label colors
      * @return {String} "#333" or "#cc9999"
      */
-    $scope.color = function (label) {
+    $scope.color = (label) => {
         if (label && label.Color) {
             return {
                 color: label.Color
@@ -118,17 +122,18 @@ angular.module('proton.core')
      * Open folder
      * @param {String} route
      */
-    $scope.goTo = function (route) {
+    $scope.goTo = (route) => {
         const sameRoute = $state.$current.name === route && !$stateParams.filter;
         const firstPage = $stateParams.page === 1 || angular.isUndefined($stateParams.page);
-        const params = { page: null, filter: null, sort: null };
-
-        if (sameRoute === true && firstPage === true) {
+        if (sameRoute && firstPage) {
             // Hide sidebar for mobile
             $scope.hideMobileSidebar();
             // Call last event
             $scope.lastEvent();
         } else {
+            const box = route.replace('secured.', '');
+            const trashspam = ['trash', 'spam'].indexOf(box) > -1 ? 1 : 0;
+            const params = { page: null, filter: null, sort: null, trashspam };
             $state.go(route, params); // remove the older parameters
         }
     };
@@ -137,7 +142,7 @@ angular.module('proton.core')
      * Open label folder
      * @param {Object} label
      */
-    $scope.goToLabel = function (label) {
+    $scope.goToLabel = (label) => {
         const params = { page: null, filter: null, sort: null, label: label.ID };
 
         $state.go('secured.label', params);
@@ -146,7 +151,7 @@ angular.module('proton.core')
     /**
      * Return if the folder need to be `active`
      */
-    $scope.activeLabel = function (label) {
+    $scope.activeLabel = (label) => {
         return $stateParams.label === label.ID;
     };
 
@@ -154,7 +159,7 @@ angular.module('proton.core')
      * Returns a string for the storage bar
      * @return {String} "1.25/10 GB"
      */
-    $scope.renderStorageBar = function () {
+    $scope.renderStorageBar = () => {
         return tools.renderStorageBar(authentication.user.UsedSpace, authentication.user.MaxSpace);
     };
 

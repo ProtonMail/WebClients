@@ -20,13 +20,18 @@ module.exports = ({ editor }) => () => {
         dropzone.embedded()
             .then(() => browser.sleep(1000))
             .then(() => listAttachments.isVisible())
-            .then(isTrue);
+            .then(isTrue)
+            .then(() => browser.sleep(3000));
     });
 
     it('should count 3 attachments in the list', () => {
-        listAttachments.countItems()
+        browser.wait(() => {
+            return listAttachments.countItems()
+                .then((v) => v === 3)
+        }, 20000)
+            .then(() => listAttachments.countItems())
             .then(assert(3))
-            .then(() => browser.sleep(5000));
+            .then(() => browser.sleep(3000));
     });
 
     it('should count 1 attachment', () => {

@@ -1,1 +1,1 @@
-angular.module('proton.composer', []);
+angular.module('proton.composer', ['proton.constants']);

@@ -2,7 +2,7 @@ angular.module('proton.utils')
 .factory('tools', ($log, $state, $stateParams, $filter, authentication, $compile, $templateCache, $rootScope, $q, CONSTANTS) => {
     const tools = {};
 
-    tools.hasSessionStorage = function () {
+    tools.hasSessionStorage = () => {
         const mod = 'modernizr';
 
         try {
@@ -23,11 +23,11 @@ angular.module('proton.utils')
         return str.split('').reduce((prevHash, currVal) => ((prevHash << 5) - prevHash) + currVal.charCodeAt(0), 0);
     };
 
-    tools.hasCookie = function () {
+    tools.hasCookie = () => {
         return navigator.cookieEnabled;
     };
 
-    tools.mobileResponsive = function () {
+    tools.mobileResponsive = () => {
         const bodyWidth = document.body.offsetWidth;
 
         $rootScope.$applyAsync(() => {
@@ -35,7 +35,7 @@ angular.module('proton.utils')
         });
     };
 
-    tools.colors = function () {
+    tools.colors = () => {
         return [
             '#7272a7',
             '#8989ac',
@@ -69,15 +69,15 @@ angular.module('proton.utils')
         ];
     };
 
-    tools.getBrowser = function () {
+    tools.getBrowser = () => {
         return jQuery.browser.name;
     };
 
-    tools.getBrowserVersion = function () {
+    tools.getBrowserVersion = () => {
         return jQuery.browser.version;
     };
 
-    tools.prngAvailable = function () {
+    tools.prngAvailable = () => {
         if (typeof window !== 'undefined' && window.crypto && window.crypto.getRandomValues) {
             return true;
         } else if (typeof window !== 'undefined' && typeof window.msCrypto === 'object' && typeof window.msCrypto.getRandomValues === 'function') {
@@ -87,7 +87,7 @@ angular.module('proton.utils')
         return false;
     };
 
-    tools.getOs = function () {
+    tools.getOs = () => {
         let OSName = 'other'; // Unknown OS
 
         if (navigator.appVersion) {
@@ -119,7 +119,7 @@ angular.module('proton.utils')
         return OSName;
     };
 
-    tools.getDevice = function () {
+    tools.getDevice = () => {
         const deviceName = 'other';
 
         // if (navigator.userAgent.match(/Android/i)) deviceName = "android";
@@ -131,7 +131,7 @@ angular.module('proton.utils')
         return deviceName;
     };
 
-    tools.findBootstrapEnvironment = function () {
+    tools.findBootstrapEnvironment = () => {
         const envs = ['xs', 'sm', 'md', 'lg'];
         const $el = $('<div>');
 
@@ -148,11 +148,11 @@ angular.module('proton.utils')
         }
     };
 
-    tools.changeSeparatorToComma = function (input) {
+    tools.changeSeparatorToComma = (input) => {
         return input.replace(';', ',');
     };
 
-    tools.hostReachable = function () {
+    tools.hostReachable = () => {
         // Handle IE and more capable browsers
         let xhr;
 
@@ -174,11 +174,11 @@ angular.module('proton.utils')
         }
     };
 
-    tools.is_valid_dkim = function (header) {
+    tools.is_valid_dkim = (header) => {
         return header && (header.indexOf('dkim=none') === -1) && (header.indexOf('dkim=pass') !== -1);
     };
 
-    tools.breakImages = function (input) {
+    tools.breakImages = (input) => {
 
         function replace(regex, html) {
             return html.replace(regex, (match) => 'proton-' + match);
@@ -194,7 +194,7 @@ angular.module('proton.utils')
      * Remove every protonmail attributes inside the HTML content specified
      * @param {} html
      */
-    tools.fixImages = function (input) {
+    tools.fixImages = (input) => {
         const re = new RegExp('(proton-url|proton-src|proton-svg|proton-background|proton-poster)', 'g');
         return input.replace(re, (match, $1) => $1.substring(7));
     };
@@ -203,7 +203,7 @@ angular.module('proton.utils')
     /**
      * Detect if the content is type of HTML
      */
-    tools.isHtml = function (content) {
+    tools.isHtml = (content) => {
         if (content) {
             const doc = new DOMParser().parseFromString(content, 'text/html');
 
@@ -217,13 +217,13 @@ angular.module('proton.utils')
     // Squire does this funny thing where it takes style tags, i.e.
     // <style> *my css here* </style>
     // and removes the tags but leaves the css text. Need to manually remove the text
-    tools.removeStyle = function (html) {
+    tools.removeStyle = (html) => {
         return html.replace(/<style[\s\S]*?\/style>/ig, ' '); // For squire
     };
 
     /* eslint  no-useless-escape: "off" */
     // convert html to plaintext
-    tools.plaintext = function (input) {
+    tools.plaintext = (input) => {
         const html = input
             // replace link
             .replace(/<a.*?href=["']([^"']*)["'][^>]*>(.*?)<\/a>/igm, '[$2]($1)')
@@ -248,7 +248,7 @@ angular.module('proton.utils')
     };
 
     // Replace ::marker:: by <blockquote>
-    tools.block = function (html, mode) {
+    tools.block = (html, mode) => {
         if (mode === 'start') {
             return html.replace(/<blockquote>/g, '::blockquote::open::').replace(/<\/blockquote>/g, '::blockquote::close::');
         } else if (mode === 'end') {
@@ -257,7 +257,7 @@ angular.module('proton.utils')
     };
 
     // Add '>' to the beginning of each <blockquote>
-    tools.quote = function (html) {
+    tools.quote = (html) => {
         const separator = '::blockquote::open::';
         const index = html.indexOf(separator);
         let first = '';
@@ -273,7 +273,7 @@ angular.module('proton.utils')
         return html;
     };
 
-    tools.html = function (input) {
+    tools.html = (input) => {
         // Converting images
         return input
             .replace(/!\[(.*?)\]\((.*?)\)/gi, '<img src="$2" alt="$1" title="$1" />')
@@ -282,7 +282,7 @@ angular.module('proton.utils')
     };
 
 
-    tools.fixRedirectExploits = function (input) {
+    tools.fixRedirectExploits = (input) => {
         /* #Exploits that will log a user out:
         <link rel="dns-prefetch" href="../../../../../../../../../../sign-out">
         <video poster="../../../../../../../../../../sign-out" autoplay="true" src="../../../../../../../../../../sign-out"></video>
@@ -314,13 +314,13 @@ angular.module('proton.utils')
             .replace(/@import/ig, '');
     };
 
-    tools.validEmail = function (value) {
+    tools.validEmail = (value) => {
         const filter = "^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:.[a-zA-Z0-9-]+)*$";
 
         return String(value).search(filter) !== -1;
     };
 
-    tools.isCompatible = function () {
+    tools.isCompatible = () => {
         let compatible = true;
 
         if (!tools.hasSessionStorage()) {
@@ -335,7 +335,7 @@ angular.module('proton.utils')
     };
 
     // get user max and current storage, and return a string "123.3/456.6 GB"
-    tools.renderStorageBar = function (current, max) {
+    tools.renderStorageBar = (current, max) => {
         const kb = 1024;
         const mb = kb * kb;
         const gb = mb * kb;
@@ -362,11 +362,11 @@ angular.module('proton.utils')
         return Number(cur) + '/' + Number(Math.round(max / kb / kb / kb)) + ' GB';
     };
 
-    tools.replaceLineBreaks = function (content) {
+    tools.replaceLineBreaks = (content) => {
         return content.replace(/(?:\r\n|\r|\n)/g, '<br />');
     };
 
-    tools.contactsToString = function (contacts) {
+    tools.contactsToString = (contacts) => {
         return _.map(contacts, ({ Name = '', Address = '' }) => {
             const name = $filter('nameRecipient')(Name);
 
@@ -388,7 +388,7 @@ angular.module('proton.utils')
     const filteredState = () => $state.$current.name.replace('secured.', '').replace('.element', '');
 
     tools.filteredState = filteredState;
-    tools.currentMailbox = function () {
+    tools.currentMailbox = () => {
         const mailbox = filteredState();
 
         if (_.contains(Object.keys(CONSTANTS.MAILBOX_IDENTIFIERS), mailbox)) {
@@ -418,11 +418,15 @@ angular.module('proton.utils')
      * @return {Boolean}
      */
     tools.cacheContext = () => {
-        const filterDefined = angular.isDefined($stateParams.filter);
-        const sortDefined = angular.isDefined($stateParams.sort);
-        const isSearch = $state.includes('secured.search.**');
+        const mailbox = filteredState();
+        const boxes1 = ['trash', 'spam'];
+        const boxes2 = ['inbox', 'drafts', 'sent', 'starred', 'archive', 'label'];
+        const trashSpamContext = (angular.isUndefined($stateParams.trashspam) || $stateParams.trashspam === 1) ? (boxes2.indexOf(mailbox) > -1) : (boxes1.indexOf(mailbox) > -1);
+        const filterUndefined = angular.isUndefined($stateParams.filter);
+        const sortUndefined = angular.isUndefined($stateParams.sort);
+        const isNotSearch = mailbox !== 'search';
 
-        return !isSearch && !sortDefined && !filterDefined;
+        return isNotSearch && sortUndefined && filterUndefined && trashSpamContext;
     };
 
     tools.countries = [

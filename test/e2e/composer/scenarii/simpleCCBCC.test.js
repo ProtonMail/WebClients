@@ -61,13 +61,20 @@ module.exports = ({ editor, message, identifier }) => {
 
         it('should send the message', () => {
             borodin.send()
-                .then(() => browser.sleep(5000))
+                .then(() => browser.wait(() => {
+                    return editor.isOpened()
+                        .then((test) => test === false)
+                }, 15000))
                 .then(() => borodin.isOpened())
                 .then(isFalse);
         });
 
         it('should display a notfication', () => {
-            notifs.message()
+            browser.wait(() => {
+                return notifs.isOpened()
+                    .then((test) => test === true)
+            }, 10000)
+                .then(() => notifs.message())
                 .then(assert('Message sent'));
         });
     });
