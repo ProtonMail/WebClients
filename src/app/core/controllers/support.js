@@ -43,8 +43,7 @@ angular.module('proton.core')
     $scope.params = {};
     $scope.params.recoveryEmail = '';
     $scope.params.username = '';
-
-    let passwordMode = 0;
+    $scope.passwordMode = 0;
 
     resetState();
 
@@ -117,11 +116,11 @@ angular.module('proton.core')
         .then(({ data = {} }) => {
             if (data.Code === 1000) {
 
-                passwordMode = data.PasswordMode;
+                $scope.passwordMode = data.PasswordMode;
                 $scope.addresses = data.Addresses;
 
                 $scope.resetState = $scope.states.DANGER;
-                if (passwordMode === 2 && $scope.keyPhase < 3) {
+                if ($scope.passwordMode === 2 && $scope.keyPhase < 3) {
                     $scope.resetState = $scope.states.PASSWORD;
                 }
             } else {
@@ -146,7 +145,7 @@ angular.module('proton.core')
     };
 
     function doReset() {
-        if (passwordMode === 2 && $scope.keyPhase < 3) {
+        if ($scope.passwordMode === 2 && $scope.keyPhase < 3) {
             return Reset.resetPassword($scope.tokenParams, $scope.params.password)
             .then((response = {}) => {
 
