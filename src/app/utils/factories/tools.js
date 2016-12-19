@@ -421,7 +421,7 @@ angular.module('proton.utils')
         const mailbox = filteredState();
         const boxes1 = ['trash', 'spam'];
         const boxes2 = ['inbox', 'drafts', 'sent', 'starred', 'archive', 'label'];
-        const trashSpamContext = $stateParams.trashspam ? (boxes2.indexOf(mailbox) > -1) : (boxes1.indexOf(mailbox) > -1);
+        const trashSpamContext = (angular.isUndefined($stateParams.trashspam) || $stateParams.trashspam === 1) ? (boxes2.indexOf(mailbox) > -1) : (boxes1.indexOf(mailbox) > -1);
         const filterUndefined = angular.isUndefined($stateParams.filter);
         const sortUndefined = angular.isUndefined($stateParams.sort);
         const isNotSearch = mailbox !== 'search';
