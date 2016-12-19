@@ -1,6 +1,7 @@
 angular.module('proton.formUtils')
 .directive('scrollToInvalid', () => {
     return {
+        restrict: 'A',
         scope: {
             valid: '&'
         },
