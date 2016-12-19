@@ -4,20 +4,20 @@ angular.module('proton.formUtils')
         scope: {
             valid: '&'
         },
-        link(scope, el) {
-            const onSubmit = () => {
-                const firstInvalid = el[0].querySelector('.ng-invalid');
+        link(scope, element) {
+            function onSubmit() {
+                const firstInvalid = element[0].querySelector('.ng-invalid');
                 if (firstInvalid) {
                     firstInvalid.focus();
                     return false;
                 }
                 scope.valid();
-            };
+            }
 
-            el.on('submit', onSubmit);
+            element.addEventListener('submit', onSubmit);
 
             scope.$on('$destroy', () => {
-                el.off('submit', onSubmit);
+                element.removeEventListener('submit', onSubmit);
             });
         }
     };
