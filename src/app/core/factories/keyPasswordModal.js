@@ -1,10 +1,11 @@
 angular.module('proton.core')
-.factory('keyPasswordModal', (pmModal, pmcw, notify, gettextCatalog, passwords) => {
+.factory('keyPasswordModal', (pmModal, pmcw, notify, gettextCatalog, passwords, authentication) => {
     return pmModal({
         controllerAs: 'ctrl',
         templateUrl: 'templates/modals/keyPassword.tpl.html',
         controller(params) {
             const self = this;
+            self.passwordMode = authentication.user.PasswordMode;
             self.password = '';
             const privateKey = params.privateKey;
 
