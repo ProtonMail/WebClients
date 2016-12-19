@@ -71,15 +71,15 @@
 		    position: relative;
 		    z-index: -1;
 		    display: block;
-		    height: 30px;
-		    margin: 0 0 -30px;
+		    height: 15px;
+		    margin: 0 0 -15px;
 		    background: -webkit-linear-gradient(top,#FFF,#FFF 30%,rgba(255,255,255,0));
 		    background:    -moz-linear-gradient(top,#FFF,#FFF 30%,rgba(255,255,255,0));
 		    background:   linear-gradient(to bottom,#FFF,#FFF 30%,rgba(255,255,255,0));
 
 	    }
 		&:after {
-		    margin: -30px 0 0;
+		    margin: -15px 0 0;
 		    background: -webkit-linear-gradient(top,rgba(255,255,255,0),#FFF 70%,#FFF);
 		    background:    -moz-linear-gradient(top,rgba(255,255,255,0),#FFF 70%,#FFF);
 		    background:   linear-gradient(to bottom,rgba(255,255,255,0),#FFF 70%,#FFF);
@@ -100,8 +100,8 @@
 
 		.list-group-item {
 
-			line-height: 45px;
-			height: 45px;
+			line-height: 30px;
+			height: 30px;
 			overflow: hidden;
 
 			label {
@@ -140,7 +140,7 @@
 		clear: both;
 		border-top: 1px solid $border;
 		padding: 0rem 15px;
-	}	
+	}
 }
 
 .mobileMode {
