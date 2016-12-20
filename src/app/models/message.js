@@ -252,30 +252,24 @@ angular.module('proton.models.message', ['proton.constants'])
          * @return {Promise}
          */
         decryptBody() {
-            const deferred = $q.defer();
             const privKey = authentication.getPrivateKeys(this.AddressID);
             let pubKeys = null;
             const sender = [this.Sender.Address];
 
             this.decrypting = true;
 
-            this.getPublicKeys(sender)
-                .then((result) => {
-                    if (result.data && result.data.Code === 1000) {
-                        pubKeys = result.data[sender];
+            return this.getPublicKeys(sender)
+                .then(({ data = {} } = {}) => {
+                    if (data.Code === 1000) {
+                        pubKeys = data[sender];
                     }
-                    pmcw.decryptMessageRSA(this.Body, privKey, this.Time, pubKeys)
-                    .then((result) => {
-                        this.decrypting = false;
-                        deferred.resolve(result);
-                    })
-                    .catch((error) => {
-                        this.decrypting = false;
-                        deferred.reject(error);
-                    });
+                    return pmcw.decryptMessageRSA(this.Body, privKey, this.Time, pubKeys)
+                        .then((rep) => (this.decrypting = false, rep))
+                        .catch((error) => {
+                            this.decrypting = false;
+                            throw error;
+                        });
                 });
-
-            return deferred.promise;
         },
 
         encryptPackets(keys = '', passwords = '') {
@@ -368,7 +362,8 @@ angular.module('proton.models.message', ['proton.constants'])
                             this.Signature = result.signature;
                             this.failedDecryption = false;
                             deferred.resolve(result.data);
-                        }, (err) => {
+                        })
+                        .catch((err) => {
                             this.setDecryptedBody(this.Body, false);
                             this.failedDecryption = true;
 
