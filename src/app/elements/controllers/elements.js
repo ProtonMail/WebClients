@@ -301,7 +301,7 @@ angular.module('proton.elements')
         return ddp2;
     };
 
-    function getConversationsParameters(mailbox) {
+    function forgeRequestParameters(mailbox) {
         const params = {};
 
         params.Page = ($stateParams.page || 1) - 1;
@@ -346,7 +346,7 @@ angular.module('proton.elements')
 
     $scope.refreshElements = () => {
         const deferred = $q.defer();
-        const request = getConversationsParameters($scope.mailbox);
+        const request = forgeRequestParameters($scope.mailbox);
         const context = tools.cacheContext();
         const type = tools.typeList();
         let promise;
