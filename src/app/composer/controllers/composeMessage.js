@@ -146,7 +146,10 @@ angular.module('proton.composer')
             cache.queryMessage(ID)
             .then((message) => {
                 message.clearTextBody()
-                .then(() => initMessage(message));
+                    .then(() => initMessage(message))
+                    .catch((error) => {
+                        notify({ message: error.message, classes: 'notification-danger' });
+                    });
             });
         }
     }));
