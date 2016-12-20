@@ -136,10 +136,11 @@ angular.module('proton.conversation')
         const conversation = cache.getConversationCached(ID);
 
         // Generate message changes with event
-        const events = _.reduce(cache.queryMessagesCached(ID), (acc, { ID }) => {
+        const events = _.reduce(cache.queryMessagesCached(ID), (acc, { ID, IsRead }) => {
             acc.push({
-                ID, Action: 3,
-                Message: { ID, LabelIDsRemoved }
+                ID,
+                Action: 3,
+                Message: { ID, IsRead, LabelIDsRemoved }
             });
             return acc;
         }, []);
@@ -172,10 +173,11 @@ angular.module('proton.conversation')
         const conversation = cache.getConversationCached(ID);
 
         // Generate message changes with event
-        const events = _.reduce(cache.queryMessagesCached(ID), (acc, { ID }) => {
+        const events = _.reduce(cache.queryMessagesCached(ID), (acc, { ID, IsRead }) => {
             acc.push({
-                ID, Action: 3,
-                Message: { ID, LabelIDsAdded }
+                ID,
+                Action: 3,
+                Message: { ID, IsRead, LabelIDsAdded }
             }, []);
             return acc;
         }, []);
