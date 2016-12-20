@@ -305,13 +305,13 @@ angular.module('proton.message')
         function star(id) {
             const events = [];
             const LabelIDsAdded = [CONSTANTS.MAILBOX_IDENTIFIERS.starred];
-            const { ID, ConversationID } = cache.getMessageCached(id);
+            const { ID, ConversationID, IsRead } = cache.getMessageCached(id);
             const conversation = cache.getConversationCached(ConversationID);
 
             // Messages
             events.push({
                 Action: 3, ID,
-                Message: { ID, LabelIDsAdded }
+                Message: { ID, IsRead, LabelIDsAdded }
             });
 
             // Conversation
@@ -347,7 +347,7 @@ angular.module('proton.message')
         function unstar(id) {
             const events = [];
             const LabelIDsRemoved = [CONSTANTS.MAILBOX_IDENTIFIERS.starred];
-            const { ID, ConversationID } = cache.getMessageCached(id);
+            const { ID, ConversationID, IsRead } = cache.getMessageCached(id);
             const conversation = cache.getConversationCached(ConversationID);
             const messages = cache.queryMessagesCached(ConversationID);
             const stars = _.filter(messages, ({ LabelIDs = [] }) => _.contains(LabelIDs, CONSTANTS.MAILBOX_IDENTIFIERS.starred));
@@ -355,7 +355,7 @@ angular.module('proton.message')
             // Messages
             events.push({
                 Action: 3, ID,
-                Message: { ID, LabelIDsRemoved }
+                Message: { ID, IsRead, LabelIDsRemoved }
             });
 
             // Conversation
