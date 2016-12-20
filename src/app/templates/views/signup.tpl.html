@@ -235,14 +235,14 @@
         </div>
 
         <div ng-show="verificator === 'email'" class="pm_form spacing-top spacing-bottom">
-            <div class="pm_grid" ng-show="signup.verificationSent !== true">
+            <form  ng-submit="sendVerificationCode()" class="pm_grid"ng-show="signup.verificationSent !== true">
                 <div class="col-2-3">
                     <input type="email" ng-model="account.emailVerification" placeholder-translate="Email verification" />
                 </div>
                 <div class="col-1-3">
-                    <button type="button" class="pm_button primary" ng-click="sendVerificationCode()" translate translate-context="Action">Send</button>
+                    <button type="submit" class="pm_button primary" translate translate-context="Action">Send</button>
                 </div>
-            </div>
+            </form>
 
             <div class="pm_grid" ng-show="signup.verificationSent === true">
                 <p class="alert alert-success"><strong translate-context="Info" translate>Verification code sent</strong><br /><span translate-context="Info" translate>Please check your email and enter the code below:</span></p>
@@ -256,14 +256,14 @@
         </div>
 
         <div ng-if="verificator === 'sms'" id="smsVerification" class="pm_form spacing-top spacing-bottom">
-            <div class="pm_grid" ng-show="signup.smsVerificationSent !== true">
+            <form ng-submit="!smsSending && sendSmsVerificationCode()" class="pm_grid" ng-show="signup.smsVerificationSent !== true">
                 <div class="col-2-3">
                     <input type="tel" phone class="phoneCountryCode" ng-model="account.smsVerification" />
                 </div>
                 <div class="col-1-3">
-                    <button type="button" class="pm_button primary" ng-click="sendSmsVerificationCode()" ng-disabled="smsSending" translate-context="Action" translate>Send</button>
+                    <button type="submit" class="pm_button primary" translate-context="Action" translate>Send</button>
                 </div>
-            </div>
+            </form>
             <div class="pm_grid" ng-show="signup.smsVerificationSent === true">
                 <p class="alert alert-success" translate>
                     <strong>Verification code sent</strong><br />
@@ -273,7 +273,7 @@
                     <input type="text" ng-model="account.smsCodeVerification" placeholder-translate="Code verification" />
                 </div>
                 <div class="col-1-2">
-                    <button type="button" class="pm_button link" ng-click="signup.smsVerificationSent = false" translate-context="Action" translate>Send new code</button>
+                    <button type="button" ng-click="signup.smsVerificationSent = false"  class="pm_button link" translate-context="Action" translate>Send new code</button>
                 </div>
             </div>
         </div>
