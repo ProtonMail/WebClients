@@ -272,6 +272,7 @@ angular.module('proton.message')
                     ID: message.ID,
                     Message: {
                         ID: message.ID,
+                        IsRead: message.IsRead,
                         ConversationID: message.ConversationID,
                         Selected: false,
                         LabelIDsAdded: toApply,
