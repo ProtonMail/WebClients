@@ -198,7 +198,7 @@ angular.module('proton.core')
 
     $scope.setIframeSrc = () => {
         const iframe = document.getElementById('pm_captcha');
-        const parameters = $httpParamSerializer({ token: 'signup', client: 'web', host: url.get() || window.location });
+        const parameters = $httpParamSerializer({ token: 'signup', client: 'web', host: url.host() || window.location });
         iframe.onload = window.captchaSendMessage;
         iframe.src = 'https://secure.protonmail.com/captcha/captcha.html?' + parameters;
     };
