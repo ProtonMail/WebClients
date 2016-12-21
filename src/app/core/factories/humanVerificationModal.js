@@ -1,5 +1,5 @@
 angular.module('proton.core')
-.factory('humanVerificationModal', ($http, pmModal, User) => {
+.factory('humanVerificationModal', ($http, pmModal, User, networkActivityTracker) => {
     function handleResult({ data = {} }) {
         if (data.Code === 1000) {
             return Promise.resolve(data);
@@ -14,18 +14,23 @@ angular.module('proton.core')
         controller(params) {
             const self = this;
             self.verifyMethods = [];
-            User.human()
+            const promise = User.human()
             .then(handleResult)
             .then(({ VerifyMethods, Token }) => {
                 self.verifyMethods = VerifyMethods;
                 self.token = Token;
             });
+            networkActivityTracker.track(promise);
             self.submit = () => {
-                User.check({ Token: self.token, TokenType: 'captcha' })
+                const promise = User.check({ Token: self.token, TokenType: 'captcha' })
                 .then(handleResult)
                 .then(() => {
-
+                    params.close();
+                })
+                .catch(() => {
+                    params.close();
                 });
+                networkActivityTracker.track(promise);
             };
         }
     });
