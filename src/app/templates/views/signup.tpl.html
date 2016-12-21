@@ -202,8 +202,8 @@
         <p class="help" ng-show="verificator === 'email' || verificator === 'sms'" translate-context="Info" translate>We do not permanently save your email or phone number, it is deleted after verification.</p>
         <div ng-show="showCaptcha">
             <label class="titleLabel" ng-click="setIframeSrc()">
-                <input type="radio" ng-model="verificator" value="recaptcha" />
-                <span>reCAPTCHA</span>
+                <input type="radio" ng-model="verificator" value="captcha" />
+                <span>CAPTCHA</span>
             </label>
         </div>
         <div ng-show="showEmail">
@@ -278,7 +278,7 @@
             </div>
         </div>
 
-        <div ng-show="verificator === 'recaptcha'" id="recaptchaFrame" class="spacing-top">
+        <div ng-show="verificator === 'captcha'" id="captchaFrame" class="spacing-top">
             <span class="loading"  translate>Loading...</span>
             <iframe id="pm_captcha" sandbox="allow-scripts allow-same-origin"></iframe>
         </div>
