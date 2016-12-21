@@ -7,7 +7,7 @@ angular.module('proton.formUtils')
         link(scope, element, { token }) {
             const iframe = element[0].querySelector('iframe');
             const client = 'web';
-            const host = url.get() || window.location;
+            const host = url.host();
             const parameters = $httpParamSerializer({ token, client, host });
             window.addEventListener('message', captchaReceiveMessage, false);
             iframe.onload = captchaSendMessage;
