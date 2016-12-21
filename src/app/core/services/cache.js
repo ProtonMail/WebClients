@@ -533,6 +533,7 @@ angular.module('proton.core')
             const mailbox = tools.currentMailbox();
             let messages = _.filter(messagesCached, ({ LabelIDs = [] }) => LabelIDs.indexOf(loc) !== -1);
 
+            messages = filterTrashSpam(messages);
             messages = api.orderMessage(messages);
 
             switch (mailbox) {
@@ -568,6 +569,20 @@ angular.module('proton.core')
     };
 
     /**
+     * Filter element list to remove trash and spam element if required
+     * @param  {Array}  elements - can be a message list or a conversation list
+     * @return {Array} list filtered
+     */
+    function filterTrashSpam(elements = []) {
+        const hideTrashSpam = angular.isUndefined($stateParams.trashspam) || $stateParams.trashspam === '0';
+        return _.filter(elements, ({ LabelIDs = [] }) => {
+            const notInSpam = LabelIDs.indexOf(CONSTANTS.MAILBOX_IDENTIFIERS.spam) === -1;
+            const notInTrash = LabelIDs.indexOf(CONSTANTS.MAILBOX_IDENTIFIERS.trash) === -1;
+            return hideTrashSpam ? (notInSpam && notInTrash) : true;
+        });
+    }
+
+    /**
      * Return conversation list with request specified in cache or call api
      * @param {Object} request
      * @param {Boolean} firstLoad
@@ -586,9 +601,12 @@ angular.module('proton.core')
             let total;
             let number;
             const mailbox = tools.currentMailbox();
+
             let conversations = _.filter(conversationsCached, ({ LabelIDs = [], ID }) => {
                 return LabelIDs.indexOf(loc) !== -1 && api.getTime(ID, loc);
             });
+
+            conversations = filterTrashSpam(conversations);
 
             conversations = api.orderConversation(conversations, loc);
 
