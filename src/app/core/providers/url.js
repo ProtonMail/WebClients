@@ -3,12 +3,17 @@ angular.module('proton.core')
         // Set base url from grunt config
         let base;
 
-        this.setBaseUrl = function (newUrl) {
+        this.setBaseUrl = (newUrl) => {
             base = newUrl;
         };
 
-        this.$get = function () {
+        this.$get = () => {
             return {
+                host() {
+                    const link = document.createElement('a');
+                    link.href = base;
+                    return link.host;
+                },
                 get() {
                     return base;
                 },
