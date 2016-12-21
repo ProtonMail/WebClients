@@ -11,6 +11,12 @@ angular.module('proton.models.user', [])
         get() {
             return $http.get(url.get() + '/users');
         },
+        human() {
+            return $http.get(url.get() + '/users/human');
+        },
+        check(params) {
+            return $http.post(url.get() + '/users/human', params);
+        },
         pubkeys(emails) {
             return $http.get(url.get() + '/users/pubkeys/' + window.encodeURIComponent(emails));
         },
