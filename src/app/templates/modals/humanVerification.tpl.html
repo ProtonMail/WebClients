@@ -6,6 +6,15 @@
             </div>
             <div class="modal-body pm_form">
                 <p class="alert alert-info"></p>
+                <label ng-if="ctrl.showCaptcha">
+                    <input ng-model="ctrl.verificator" value="captcha" />
+                    <span translate translate-context="Label">Captcha</span>
+                </label>
+                <captcha-view
+                    ng-if="ctrl.verificator === 'captcha'"
+                    data-token="ctrl.token" data-client="web" data-host=""
+                    callback="ctrl.setCatpchaToken"
+                ></captcha-view>
             </div>
         </div>
         <div class="modal-footer text-right">

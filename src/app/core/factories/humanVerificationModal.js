@@ -10,19 +10,21 @@ angular.module('proton.core')
     }
     return pmModal({
         controllerAs: 'ctrl',
-        templateUrl: 'templates/modals/humanVerificationModal.tpl.html',
+        templateUrl: 'templates/modals/humanVerification.tpl.html',
         controller(params) {
             const self = this;
-            self.verifyMethods = [];
+            self.verificator = 'captcha';
+            self.tokens = {};
             const promise = User.human()
             .then(handleResult)
             .then(({ VerifyMethods, Token }) => {
-                self.verifyMethods = VerifyMethods;
+                self.showCaptcha = _.contains(VerifyMethods, 'captcha');
                 self.token = Token;
             });
             networkActivityTracker.track(promise);
+            self.setCatpchaToken = (token) => self.tokens.captcha = token;
             self.submit = () => {
-                const promise = User.check({ Token: self.token, TokenType: 'captcha' })
+                const promise = User.check({ Token: self.tokens[self.verificator], TokenType: self.verificator })
                 .then(handleResult)
                 .then(() => {
                     params.close();
