@@ -1,5 +1,5 @@
 angular.module('proton.formUtils')
-.directive('captchaView', ($httpParamSerializer) => {
+.directive('captchaView', ($httpParamSerializer, url) => {
     return {
         restrict: 'E',
         templateUrl: 'templates/directives/core/captchaView.tpl.html',
@@ -7,7 +7,7 @@ angular.module('proton.formUtils')
         link(scope, element, { token }) {
             const iframe = element[0].querySelector('iframe');
             const client = 'web';
-            const host = window.location;
+            const host = url.get() || window.location;
             const parameters = $httpParamSerializer({ token, client, host });
             window.addEventListener('message', captchaReceiveMessage, false);
             iframe.onload = captchaSendMessage;
