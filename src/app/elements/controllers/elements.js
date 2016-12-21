@@ -877,18 +877,6 @@ angular.module('proton.elements')
         }));
     };
 
-    $scope.displayTrashSpam = () => {
-        const box = tools.currentMailbox();
-        return ['label', 'sent', 'drafts'].indexOf(box) > -1;
-    };
-
-    $scope.toggleTrashSpam = () => {
-        $state.go($state.$current.name, _.extend({}, $state.params, {
-            trashspam: $stateParams.trashspam === '0' ? 1 : 0,
-            page: undefined
-        }));
-    };
-
     /**
      * Empty specific location
      * @param {String} mailbox
