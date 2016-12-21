@@ -4,8 +4,10 @@ angular.module('proton.formUtils')
         restrict: 'E',
         templateUrl: 'templates/directives/core/captchaView.tpl.html',
         scope: { callback: '&' },
-        link(scope, element, { token, client, host }) {
+        link(scope, element, { token }) {
             const iframe = element[0].querySelector('iframe');
+            const client = 'web';
+            const host = window.location;
             const parameters = $httpParamSerializer({ token, client, host });
             window.addEventListener('message', captchaReceiveMessage, false);
             iframe.onload = captchaSendMessage;
