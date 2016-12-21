@@ -1,6 +1,7 @@
 angular.module('proton.core')
 .controller('SignupController', (
     $http,
+    $httpParamSerializer,
     $location,
     $log,
     $q,
@@ -12,21 +13,22 @@ angular.module('proton.core')
     $window,
     Address,
     authentication,
-    CONSTANTS,
     confirmModal,
+    CONSTANTS,
     direct,
     domains,
     gettextCatalog,
     Key,
     networkActivityTracker,
     notify,
+    passwords,
     Payment,
     plans,
-    passwords,
     pmcw,
     Reset,
     setupKeys,
     tools,
+    url,
     User
 ) => {
     let childWindow;
@@ -196,8 +198,9 @@ angular.module('proton.core')
 
     $scope.setIframeSrc = () => {
         const iframe = document.getElementById('pm_captcha');
+        const parameters = $httpParamSerializer({ token: 'signup', client: 'web', host: url.get() || window.location });
         iframe.onload = window.captchaSendMessage;
-        iframe.src = 'https://secure.protonmail.com/captcha/captcha.html?token=signup&client=web';
+        iframe.src = 'https://secure.protonmail.com/captcha/captcha.html?' + parameters;
     };
 
     $scope.notificationEmailValidation = () => {
