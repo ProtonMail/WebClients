@@ -129,9 +129,11 @@ angular.module('proton.core')
      * @param {String} type = conversation or message
      * @return {Object}
      */
-    function vector(element, unread, type) {
+    function vector({ LabelIDs = [], IsRead, NumUnread }, unread, type) {
         const result = {};
-        let condition = true;
+        let unreadCondition = true;
+        const inTrash = LabelIDs.indexOf(CONSTANTS.MAILBOX_IDENTIFIERS.trash) > -1;
+        const inSpam = LabelIDs.indexOf(CONSTANTS.MAILBOX_IDENTIFIERS.spam) > -1;
         const locs = [
             CONSTANTS.MAILBOX_IDENTIFIERS.inbox,
             CONSTANTS.MAILBOX_IDENTIFIERS.drafts,
@@ -143,14 +145,17 @@ angular.module('proton.core')
 
         if (unread === true) {
             if (type === 'message') {
-                condition = element.IsRead === 0;
+                unreadCondition = IsRead === 0;
             } else if (type === 'conversation') {
-                condition = element.NumUnread > 0;
+                unreadCondition = NumUnread > 0;
             }
         }
 
         _.each(locs, (loc) => {
-            if (angular.isDefined(element.LabelIDs) && element.LabelIDs.indexOf(loc) !== -1 && condition) {
+            const isTrash = loc === CONSTANTS.MAILBOX_IDENTIFIERS.trash;
+            const isSpam = loc === CONSTANTS.MAILBOX_IDENTIFIERS.spam;
+            const trashSpamCondition = (inTrash || inSpam) ? isTrash || isSpam : true;
+            if (LabelIDs.indexOf(loc) !== -1 && unreadCondition && trashSpamCondition) {
                 result[loc] = 1;
             } else {
                 result[loc] = 0;

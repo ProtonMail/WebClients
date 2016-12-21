@@ -315,6 +315,7 @@ angular.module('proton.conversation')
 
         const labelIDsAdded = [MAILBOX_IDENTIFIERS[mailbox]];
         const toTrash = mailbox === 'trash';
+        const toInbox = mailbox === 'inbox';
 
         // Generate cache events
         const events = _.reduce(ids, (acc, ID) => {
@@ -330,7 +331,7 @@ angular.module('proton.conversation')
                     return MAILBOX_IDS.indexOf(labelID) > -1;
                 });
 
-                if (mailbox === 'inbox') {
+                if (toInbox) {
                     /**
                      * Types definition
                      *   - 1: a draft
