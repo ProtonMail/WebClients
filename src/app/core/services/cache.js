@@ -132,7 +132,14 @@ angular.module('proton.core')
     function vector(element, unread, type) {
         const result = {};
         let condition = true;
-        const locs = ['0', '1', '2', '3', '4', '6', '10'].concat(_.map(authentication.user.Labels, ({ ID }) => ID) || []);
+        const locs = [
+            CONSTANTS.MAILBOX_IDENTIFIERS.inbox,
+            CONSTANTS.MAILBOX_IDENTIFIERS.drafts,
+            CONSTANTS.MAILBOX_IDENTIFIERS.sent,
+            CONSTANTS.MAILBOX_IDENTIFIERS.trash,
+            CONSTANTS.MAILBOX_IDENTIFIERS.archive,
+            CONSTANTS.MAILBOX_IDENTIFIERS.starred
+        ].concat(_.map(authentication.user.Labels, ({ ID }) => ID) || []);
 
         if (unread === true) {
             if (type === 'message') {
@@ -190,7 +197,14 @@ angular.module('proton.core')
         const newUnreadVector = vector(newElement, true, type);
         const newTotalVector = vector(newElement, false, type);
         const oldTotalVector = vector(oldElement, false, type);
-        const locs = ['0', '1', '2', '3', '4', '6', '10'].concat(_.map(authentication.user.Labels, ({ ID }) => ID) || []);
+        const locs = [
+            CONSTANTS.MAILBOX_IDENTIFIERS.inbox,
+            CONSTANTS.MAILBOX_IDENTIFIERS.drafts,
+            CONSTANTS.MAILBOX_IDENTIFIERS.sent,
+            CONSTANTS.MAILBOX_IDENTIFIERS.trash,
+            CONSTANTS.MAILBOX_IDENTIFIERS.archive,
+            CONSTANTS.MAILBOX_IDENTIFIERS.starred
+        ].concat(_.map(authentication.user.Labels, ({ ID }) => ID) || []);
 
         _.each(locs, (loc) => {
             const deltaUnread = newUnreadVector[loc] - oldUnreadVector[loc];
