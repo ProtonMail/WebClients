@@ -365,9 +365,11 @@ angular.module('proton.elements')
                 }
                 return map;
             }, {});
-            $scope.conversations = elements.map((element) => {
-                element.Selected = typeof selectedMap[element.ID] !== 'undefined';
-                return element;
+            $scope.$applyAsync(() => {
+                $scope.conversations = elements.map((element) => {
+                    element.Selected = typeof selectedMap[element.ID] !== 'undefined';
+                    return element;
+                });
             });
             $scope.watchElements();
             $scope.firstLoad = false;
