@@ -49,7 +49,9 @@ angular.module('proton.core')
                         params: {
                             response,
                             close() {
+                                const $http = $injector.get('$http');
                                 humanVerificationModal.deactivate();
+                                $http(response.config);
                             }
                         }
                     });
