@@ -43,6 +43,16 @@ angular.module('proton.core')
                         classes: 'notification-info',
                         message: 'The ProtonMail API is offline: ' + response.data.Error
                     });
+                } else if (response.data.Code === 9001) {
+                    const humanVerificationModal = $injector.get('humanVerificationModal');
+                    humanVerificationModal.activate({
+                        params: {
+                            response,
+                            close() {
+                                humanVerificationModal.deactivate();
+                            }
+                        }
+                    });
                 }
             }
 
