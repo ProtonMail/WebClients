@@ -14,12 +14,15 @@ angular.module('proton.core')
         controller(params) {
             const self = this;
             const unsubscribe = [];
-            self.tokens = {};
+            self.tokens = {
+                captcha: ''
+            };
             const promise = User.human()
             .then(handleResult)
             .then(({ VerifyMethods, Token }) => {
                 self.token = Token;
                 self.methods = VerifyMethods;
+                // NOTE this part need to change if we add other options
                 self.showCaptcha = _.contains(VerifyMethods, 'captcha');
                 self.verificator = 'captcha';
             });
