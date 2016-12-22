@@ -119,7 +119,7 @@
                 <i class="fa fa-eye"></i>
                 <span translate translate-context="Action">Show read</span>
             </a>
-            <toggle-trash-spam></toggle-trash-spam>
+            <toggle-trash-spam ng-if="('secured.label.**' | includedByState) || ('secured.sent.**' | includedByState) || ('secured.drafts.**' | includedByState)"></toggle-trash-spam>
         </span>
     </span>
     <div class="pull-right action toolbarDesktop-actions-right">

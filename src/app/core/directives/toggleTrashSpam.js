@@ -2,16 +2,11 @@ angular.module('proton.core')
 .directive('toggleTrashSpam', ($state, $stateParams, tools, gettextCatalog) => {
     const ON_ICON = 'fa-toggle-on';
     const OFF_ICON = 'fa-toggle-off';
-
     function onClick() {
         $state.go($state.$current.name, _.extend({}, $state.params, {
             trashspam: $stateParams.trashspam === '1' ? undefined : 1,
             page: undefined
         }));
-    }
-    function display(element) {
-        const box = tools.currentMailbox();
-        element.style.display = (['label', 'sent', 'drafts'].indexOf(box) > -1) ? 'block' : 'none';
     }
     function text(element) {
         const hideTrashSpam = angular.isUndefined($stateParams.trashspam);
@@ -36,10 +31,8 @@ angular.module('proton.core')
                 $link.removeEventListener('click', onClick, false);
             });
             scope.$on('$stateChangeSuccess', () => {
-                display($link);
                 text($span);
             });
-            display($link);
             text($span);
             icon($icon);
         }
