@@ -14,12 +14,12 @@ angular.module('proton.core')
         element.style.display = (['label', 'sent', 'drafts'].indexOf(box) > -1) ? 'block' : 'none';
     }
     function text(element) {
-        const hideTrashSpam = angular.isUndefined($stateParams.trashspam) || $stateParams.trashspam === '0';
+        const hideTrashSpam = angular.isUndefined($stateParams.trashspam);
         const text = hideTrashSpam ? gettextCatalog.getString('Show trash and spam', null, 'Action') : gettextCatalog.getString('Hide trash and spam', null, 'Action');
         element.textContent = text;
     }
     function icon(element) {
-        const hideTrashSpam = angular.isUndefined($stateParams.trashspam) || $stateParams.trashspam === '0';
+        const hideTrashSpam = angular.isUndefined($stateParams.trashspam);
         const className = hideTrashSpam ? ON_ICON : OFF_ICON;
         element.classList.add(className);
     }

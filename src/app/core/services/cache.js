@@ -593,7 +593,7 @@ angular.module('proton.core')
      * @return {Array} list filtered
      */
     function filterTrashSpam(elements = []) {
-        const hideTrashSpam = angular.isUndefined($stateParams.trashspam) || $stateParams.trashspam === '0';
+        const hideTrashSpam = angular.isUndefined($stateParams.trashspam);
         return _.filter(elements, ({ LabelIDs = [] }) => {
             const notInSpam = LabelIDs.indexOf(CONSTANTS.MAILBOX_IDENTIFIERS.spam) === -1;
             const notInTrash = LabelIDs.indexOf(CONSTANTS.MAILBOX_IDENTIFIERS.trash) === -1;
