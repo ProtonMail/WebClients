@@ -12,11 +12,12 @@
                         <span translate translate-context="Label">Captcha</span>
                     </label>
                 </div>
+                <hr />
                 <captcha-view ng-if="ctrl.verificator === 'captcha'" data-token="{{ ::ctrl.token }}"></captcha-view>
             </div>
         </div>
         <div class="modal-footer text-right">
-            <button type="submit" class="pm_button primary" translate translate-context="Action">Submit</button>
+            <button type="submit" ng-disabled="ctrl.tokens[ctrl.verificator]" class="pm_button primary" translate translate-context="Action">Submit</button>
         </div>
     </form>
     <div class="modal-overlay"></div>
