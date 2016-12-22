@@ -1,32 +1,20 @@
 angular.module('proton.formUtils')
-.directive('captchaView', ($httpParamSerializer, url) => {
+.directive('captchaView', ($httpParamSerializer, $rootScope, url) => {
     return {
         restrict: 'E',
         templateUrl: 'templates/directives/core/captchaView.tpl.html',
-        scope: { callback: '&' },
         link(scope, element, { token }) {
             const iframe = element[0].querySelector('iframe');
             const client = 'web';
             const host = url.host();
             const parameters = $httpParamSerializer({ token, client, host });
-            window.addEventListener('message', captchaReceiveMessage, false);
-            iframe.onload = captchaSendMessage;
+            window.addEventListener('message', receiveMessage, false);
             iframe.src = 'https://secure.protonmail.com/captcha/captcha.html?' + parameters;
             scope.$on('$destroy', () => {
-                window.removeEventListener('message', captchaReceiveMessage, false);
+                window.removeEventListener('message', receiveMessage, false);
             });
 
-            function captchaSendMessage() {
-                const message = {
-                    type: 'pm_captcha',
-                    language: 'en',
-                    key: '6LcWsBUTAAAAAOkRfBk-EXkGzOfcSz3CzvYbxfTn'
-                };
-
-                iframe.contentWindow.postMessage(message, 'https://secure.protonmail.com');
-            }
-
-            function captchaReceiveMessage(event) {
+            function receiveMessage(event) {
                 const { origin, originalEvent, data } = event;
 
                 if (typeof origin === 'undefined' && typeof originalEvent.origin === 'undefined') {
@@ -42,7 +30,7 @@ angular.module('proton.formUtils')
                 }
 
                 if (data.type === 'pm_captcha') {
-                    scope.callback(data.token);
+                    $rootScope.$emit('captcha.token', data.token);
                 }
 
                 if (data.type === 'pm_height') {
