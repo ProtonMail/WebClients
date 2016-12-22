@@ -80,7 +80,7 @@
         <div class="labels">
             <ul>
                 <li ng-repeat="label in labels | orderBy: 'Order'" ng-class="{'active': activeLabel(label)}">
-                    <a ui-sref="secured.label({ label: '{{label.ID}}', trashspam: 0 })" title="{{ label.Name }}" class="btn">
+                    <a ui-sref="secured.label({ label: '{{label.ID}}', trashspam: undefined })" title="{{ label.Name }}" class="btn">
                         <i class="fa fa-tag" ng-style="color(label)"></i>
                         <span>{{ label.Name }}</span>
                         <em ng-bind="unread('label', label.ID)"></em>
