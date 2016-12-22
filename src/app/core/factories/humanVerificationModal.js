@@ -19,6 +19,7 @@ angular.module('proton.core')
             .then(handleResult)
             .then(({ VerifyMethods, Token }) => {
                 self.token = Token;
+                self.methods = VerifyMethods;
                 self.showCaptcha = _.contains(VerifyMethods, 'captcha');
                 self.verificator = 'captcha';
             });
