@@ -1,0 +1,31 @@
+/*--------------------
+captchaView
+--------------------*/
+.captchaView {
+    position: relative;
+    min-height: 120px; /* avoid bouncing caused by iframe */
+
+    .loading {
+        position: absolute;
+        height: 100%;
+        left: 0;
+        right: 0;
+        z-index: 1;
+    }
+
+    iframe {
+        @include flexColumn();
+        height: 120px;
+        border:0 ;
+        outline: none;
+        border: none;
+        position: relative;
+        overflow: hidden;
+        z-index: 5;
+    }
+}
+
+&.pm_modal .captchaView iframe {
+    width: 310px;
+    margin: 0px auto;
+}

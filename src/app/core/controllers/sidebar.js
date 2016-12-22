@@ -132,7 +132,7 @@ angular.module('proton.core')
             $scope.lastEvent();
         } else {
             const box = route.replace('secured.', '');
-            const trashspam = ['trash', 'spam'].indexOf(box) > -1 ? 1 : 0;
+            const trashspam = ['trash', 'spam'].indexOf(box) > -1 ? 1 : undefined;
             const params = { page: null, filter: null, sort: null, trashspam };
             $state.go(route, params); // remove the older parameters
         }

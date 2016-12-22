@@ -5,7 +5,7 @@ angular.module('proton.core')
 
     function onClick() {
         $state.go($state.$current.name, _.extend({}, $state.params, {
-            trashspam: $stateParams.trashspam === '0' ? 1 : 0,
+            trashspam: $stateParams.trashspam === '1' ? undefined : 1,
             page: undefined
         }));
     }
