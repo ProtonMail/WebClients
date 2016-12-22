@@ -7,5 +7,8 @@ angular.module('proton.elements')
     function get() {
         return first;
     }
-    return { get };
+    function set(state) {
+        first = state;
+    }
+    return { get, set };
 });
