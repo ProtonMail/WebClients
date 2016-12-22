@@ -34,7 +34,7 @@ angular.module('proton.formUtils')
                 }
 
                 if (data.type === 'pm_height') {
-                    const height = event.data.height + 40;
+                    const height = event.data.height + 20;
                     iframe.style.height = `${height}px`;
                 }
             }
