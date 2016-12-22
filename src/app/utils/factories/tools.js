@@ -385,7 +385,7 @@ angular.module('proton.utils')
         return loc;
     };
 
-    const filteredState = () => $state.$current.name.replace('secured.', '').replace('.element', '');
+    const filteredState = (state = $state.$current.name) => state.replace('secured.', '').replace('.element', '');
 
     tools.filteredState = filteredState;
     tools.currentMailbox = () => {

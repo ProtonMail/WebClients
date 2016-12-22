@@ -1,6 +1,6 @@
 <div id="conversation-list-rows" data-pt-select-multiple-elements>
 
-    <no-results ng-if="conversations.length === 0 && firstLoad === false"></no-results>
+    <no-results ng-if="conversations.length === 0 && elementsLoaded"></no-results>
 
     <div ng-repeat="conversation in conversations track by conversation.ID" elements-container class="conversation" ng-class="{
         selected: conversation.Selected,
