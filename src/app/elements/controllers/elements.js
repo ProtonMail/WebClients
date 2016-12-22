@@ -363,6 +363,7 @@ angular.module('proton.elements')
         }
 
         promise.then((elements) => {
+            firstLoad.set(false);
             const page = $stateParams.page || 0;
             const selectedMap = $scope.conversations.reduce((map, element) => {
                 if (element.Selected) {
