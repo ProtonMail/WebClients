@@ -371,10 +371,15 @@ angular.module('proton.elements')
                 }
                 return map;
             }, {});
-            $scope.conversations = elements.map((element) => {
-                element.Selected = typeof selectedMap[element.ID] !== 'undefined';
-                return element;
+
+            $scope.$applyAsync(() => {
+                $scope.elementsLoaded = true;
+                $scope.conversations = elements.map((element) => {
+                    element.Selected = typeof selectedMap[element.ID] !== 'undefined';
+                    return element;
+                });
             });
+
             $scope.watchElements();
 
             if ($scope.conversations.length === 0 && page > 0) {
@@ -402,7 +407,7 @@ angular.module('proton.elements')
 
                 $scope.markedElement = element;
             }
-            $scope.elementsLoaded = true;
+
             deferred.resolve(elements);
         }, (error) => {
             notify({ message: gettextCatalog.getString('Error during quering conversations', null, 'Error'), classes: 'notification-danger' });
