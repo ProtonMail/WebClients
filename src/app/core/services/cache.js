@@ -8,6 +8,7 @@ angular.module('proton.core')
     authentication,
     CONSTANTS,
     Conversation,
+    firstLoad,
     Message,
     cacheCounters,
     networkActivityTracker,
@@ -536,14 +537,13 @@ angular.module('proton.core')
     /**
      * Return message list
      * @param {Object} request
-     * @param {Boolean} firstLoad
      * @return {Promise}
      */
-    api.queryMessages = (request, firstLoad = false) => {
+    api.queryMessages = (request) => {
         const loc = getLocation(request);
         const context = tools.cacheContext();
 
-        if (context && !firstLoad) {
+        if (context && !firstLoad.get()) {
             const page = request.Page || 0;
             const start = page * CONSTANTS.ELEMENTS_PER_PAGE;
             const end = start + CONSTANTS.ELEMENTS_PER_PAGE;
@@ -604,16 +604,15 @@ angular.module('proton.core')
     /**
      * Return conversation list with request specified in cache or call api
      * @param {Object} request
-     * @param {Boolean} firstLoad
      * @return {Promise}
      */
-    api.queryConversations = (request, firstLoad = false) => {
+    api.queryConversations = (request) => {
         const loc = getLocation(request);
         const context = tools.cacheContext();
         // Need data from the server
 
         // In cache context?
-        if (context && !firstLoad) {
+        if (context && !firstLoad.get()) {
             const page = request.Page || 0;
             const start = page * CONSTANTS.ELEMENTS_PER_PAGE;
             const end = start + CONSTANTS.ELEMENTS_PER_PAGE;
@@ -626,7 +625,6 @@ angular.module('proton.core')
             });
 
             conversations = filterTrashSpam(conversations);
-
             conversations = api.orderConversation(conversations, loc);
 
             switch (mailbox) {

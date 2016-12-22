@@ -1,38 +1,39 @@
 angular.module('proton.elements')
 .controller('ElementsController', (
-    $q,
+    $cookies,
+    $filter,
     $log,
+    $q,
     $rootScope,
     $scope,
     $state,
     $stateParams,
     $timeout,
-    gettextCatalog,
-    $filter,
     $window,
-    $cookies,
     actionConversation,
-    CONSTANTS,
-    Conversation,
-    Message,
-    eventManager,
-    Label,
+    AttachmentLoader,
     authentication,
     cache,
-    confirmModal,
-    Setting,
     cacheCounters,
-    networkActivityTracker,
-    AttachmentLoader,
-    notify,
+    confirmModal,
+    CONSTANTS,
+    Conversation,
     embedded,
+    eventManager,
+    firstLoad,
+    gettextCatalog,
+    Label,
+    Message,
+    networkActivityTracker,
+    notify,
     paginationModel,
+    Setting,
     tools
 ) => {
     const unsubscribes = [];
     let unbindWatcherElements;
-    $scope.firstLoad = true; // Variable used to determine if it's the first load to force the cache to call back-end result
 
+    $scope.elementsLoaded = false;
     $scope.conversations = [];
     /**
      * Method called at the initialization of this controller
@@ -54,6 +55,10 @@ angular.module('proton.elements')
             // I consider this trick like a bug in the angular application
         }, $log.error);
     }
+
+    $scope.$on('$stateChangeSuccess', () => {
+        $scope.elementsLoaded = false;
+    });
 
     $scope.watchElements = () => {
         if (angular.isDefined(unbindWatcherElements)) {
@@ -352,9 +357,9 @@ angular.module('proton.elements')
         let promise;
 
         if (type === 'message') {
-            promise = cache.queryMessages(request, $scope.firstLoad);
+            promise = cache.queryMessages(request);
         } else if (type === 'conversation') {
-            promise = cache.queryConversations(request, $scope.firstLoad);
+            promise = cache.queryConversations(request);
         }
 
         promise.then((elements) => {
@@ -370,7 +375,6 @@ angular.module('proton.elements')
                 return element;
             });
             $scope.watchElements();
-            $scope.firstLoad = false;
 
             if ($scope.conversations.length === 0 && page > 0) {
                 $scope.back();
@@ -397,7 +401,7 @@ angular.module('proton.elements')
 
                 $scope.markedElement = element;
             }
-            $scope.$applyAsync();
+            $scope.elementsLoaded = true;
             deferred.resolve(elements);
         }, (error) => {
             notify({ message: gettextCatalog.getString('Error during quering conversations', null, 'Error'), classes: 'notification-danger' });
