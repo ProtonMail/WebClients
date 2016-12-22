@@ -365,11 +365,9 @@ angular.module('proton.elements')
                 }
                 return map;
             }, {});
-            $scope.$applyAsync(() => {
-                $scope.conversations = elements.map((element) => {
-                    element.Selected = typeof selectedMap[element.ID] !== 'undefined';
-                    return element;
-                });
+            $scope.conversations = elements.map((element) => {
+                element.Selected = typeof selectedMap[element.ID] !== 'undefined';
+                return element;
             });
             $scope.watchElements();
             $scope.firstLoad = false;
@@ -399,7 +397,7 @@ angular.module('proton.elements')
 
                 $scope.markedElement = element;
             }
-
+            $scope.$applyAsync();
             deferred.resolve(elements);
         }, (error) => {
             notify({ message: gettextCatalog.getString('Error during quering conversations', null, 'Error'), classes: 'notification-danger' });
