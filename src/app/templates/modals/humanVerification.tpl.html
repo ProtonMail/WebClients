@@ -6,10 +6,12 @@
             </div>
             <div class="modal-body pm_form">
                 <p class="alert alert-info"></p>
-                <label ng-if="ctrl.showCaptcha">
-                    <input type="radio" ng-model="ctrl.verificator" value="captcha" />
-                    <span translate translate-context="Label">Captcha</span>
-                </label>
+                <div ng-if="::ctrl.methods.length > 1">
+                    <label ng-if="ctrl.showCaptcha">
+                        <input type="radio" ng-model="ctrl.verificator" value="captcha" />
+                        <span translate translate-context="Label">Captcha</span>
+                    </label>
+                </div>
                 <captcha-view ng-if="ctrl.verificator === 'captcha'" data-token="{{ ::ctrl.token }}"></captcha-view>
             </div>
         </div>
