@@ -13,7 +13,7 @@ angular.module('proton.core')
 
         const className = [];
 
-        if (($stateParams.page || 1) === 1) {
+        if ((~~$stateParams.page || 1) === 1) {
             className.push(`${CLASS_PAGINATOR_DISABLED}previous`);
         }
 
@@ -35,7 +35,7 @@ angular.module('proton.core')
      */
     const buildPages = (size = ELEMENTS_PER_PAGE) => {
         const total = Math.ceil(size / ELEMENTS_PER_PAGE);
-        const value = +$stateParams.page > total ? +$stateParams.page : total;
+        const value = ~~$stateParams.page > total ? ~~$stateParams.page : total;
         return [...new Array(value)].map((a, i) => i + 1);
     };
 
@@ -55,7 +55,7 @@ angular.module('proton.core')
         },
         link(scope, el) {
             scope.pages = [];
-            scope.page = $stateParams.page || 1;
+            scope.page = ~~$stateParams.page || 1;
             scope.generateClassNames = buildClassNames(scope);
 
             const $next = el[0].querySelector('.paginator-btn-next');

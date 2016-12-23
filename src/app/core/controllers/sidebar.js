@@ -124,7 +124,7 @@ angular.module('proton.core')
      */
     $scope.goTo = (route) => {
         const sameRoute = $state.$current.name === route && !$stateParams.filter;
-        const firstPage = $stateParams.page === 1 || angular.isUndefined($stateParams.page);
+        const firstPage = ~~$stateParams.page === 1 || angular.isUndefined($stateParams.page);
         if (sameRoute && firstPage) {
             // Hide sidebar for mobile
             $scope.hideMobileSidebar();
