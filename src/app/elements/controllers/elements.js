@@ -310,7 +310,6 @@ angular.module('proton.elements')
         const params = {};
 
         params.Page = ($stateParams.page || 1) - 1;
-        params.TrashSpam = $stateParams.trashspam || undefined;
 
         if (angular.isDefined($stateParams.filter)) {
             params.Unread = +($stateParams.filter === 'unread'); // Convert Boolean to Integer

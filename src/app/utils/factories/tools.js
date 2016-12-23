@@ -419,14 +419,11 @@ angular.module('proton.utils')
      */
     tools.cacheContext = () => {
         const mailbox = filteredState();
-        const boxes1 = ['trash', 'spam'];
-        const boxes2 = ['inbox', 'drafts', 'sent', 'starred', 'archive', 'label'];
-        const trashSpamContext = angular.isUndefined($stateParams.trashspam) ? (boxes2.indexOf(mailbox) > -1) : (boxes1.indexOf(mailbox) > -1);
         const filterUndefined = angular.isUndefined($stateParams.filter);
         const sortUndefined = angular.isUndefined($stateParams.sort);
         const isNotSearch = mailbox !== 'search';
 
-        return isNotSearch && sortUndefined && filterUndefined && trashSpamContext;
+        return isNotSearch && sortUndefined && filterUndefined;
     };
 
     tools.countries = [

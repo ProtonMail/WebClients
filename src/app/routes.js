@@ -22,8 +22,7 @@ angular.module('proton.routes', [
             'end',
             'attachments',
             'starred',
-            'reload',
-            'trashspam'
+            'reload'
         ];
 
         return parameters.join('&');
