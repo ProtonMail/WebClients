@@ -133,8 +133,6 @@ angular.module('proton.core')
     function vector({ LabelIDs = [], IsRead, NumUnread }, unread, type) {
         const result = {};
         let unreadCondition = true;
-        const inTrash = LabelIDs.indexOf(CONSTANTS.MAILBOX_IDENTIFIERS.trash) > -1;
-        const inSpam = LabelIDs.indexOf(CONSTANTS.MAILBOX_IDENTIFIERS.spam) > -1;
         const locs = [
             CONSTANTS.MAILBOX_IDENTIFIERS.inbox,
             CONSTANTS.MAILBOX_IDENTIFIERS.drafts,
@@ -153,8 +151,6 @@ angular.module('proton.core')
         }
 
         _.each(locs, (loc) => {
-            const isTrash = loc === CONSTANTS.MAILBOX_IDENTIFIERS.trash;
-            const isSpam = loc === CONSTANTS.MAILBOX_IDENTIFIERS.spam;
             if (LabelIDs.indexOf(loc) !== -1 && unreadCondition) {
                 result[loc] = 1;
             } else {
