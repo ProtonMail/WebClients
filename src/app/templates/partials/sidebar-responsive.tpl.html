@@ -59,6 +59,13 @@
                 <em ng-bind="unread('trash')"></em>
             </button>
         </li>
+        <li ng-class="{ active: ('secured.allmail.**' | includedByState) }">
+            <button title="Trash" ng-click="goTo('secured.allmail')">
+                <i class="fa"></i>
+                <span translate-context="Title" translate-comment="Folder name" translate>All Mail</span>
+                <em ng-bind="unread('allmail')"></em>
+            </button>
+        </li>
         <li class="divider"></li>
         <li ng-class="{ active: ('secured.contacts.**' | includedByState) }">
             <button title="Contacts" ui-sref='secured.contacts'>

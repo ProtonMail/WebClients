@@ -5,8 +5,8 @@ angular.module('proton.elements')
     * Check in LabelIDs to see if the conversation or message is starred
     * @param {Object} item
     */
-    function isStarred(item) {
-        return Array.isArray(item.LabelIDs) && item.LabelIDs.indexOf(CONSTANTS.MAILBOX_IDENTIFIERS.starred) !== -1;
+    function isStarred({ LabelIDs = [] }) {
+        return LabelIDs.indexOf(CONSTANTS.MAILBOX_IDENTIFIERS.starred) > -1;
     }
 
     /**
