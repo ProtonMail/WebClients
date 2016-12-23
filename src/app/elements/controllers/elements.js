@@ -48,7 +48,7 @@ angular.module('proton.elements')
         $scope.messageButtons = authentication.user.MessageButtons;
         $scope.selectedFilter = $stateParams.filter;
         $scope.selectedOrder = $stateParams.sort || '-date';
-        $scope.page = parseInt($stateParams.page || 1, 10);
+        $scope.page = ~~$stateParams.page || 1;
         $scope.startWatchingEvent();
         $scope.refreshElements().then(() => {
             $scope.$applyAsync(actionsDelayed); // If we don't use the timeout, messages seems not available (to unselect for example)
@@ -309,7 +309,7 @@ angular.module('proton.elements')
     function forgeRequestParameters(mailbox) {
         const params = {};
 
-        params.Page = ($stateParams.page || 1) - 1;
+        params.Page = (~~$stateParams.page || 1) - 1;
         params.TrashSpam = $stateParams.trashspam || undefined;
 
         if (angular.isDefined($stateParams.filter)) {
@@ -364,7 +364,7 @@ angular.module('proton.elements')
 
         promise.then((elements) => {
             firstLoad.set(false);
-            const page = $stateParams.page || 0;
+            const page = ~~$stateParams.page || 0;
             const selectedMap = $scope.conversations.reduce((map, element) => {
                 if (element.Selected) {
                     map[element.ID] = element;
@@ -771,7 +771,7 @@ angular.module('proton.elements')
     function goToPage(type = 'to') {
         $stateParams.page && $scope.unselectAllElements();
         paginationModel.setMaxPage($scope.conversationCount());
-        $scope.page = $stateParams.page || 1;
+        $scope.page = ~~$stateParams.page || 1;
         paginationModel[type]();
     }
 

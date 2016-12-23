@@ -37,7 +37,7 @@ angular.module('proton.core')
          * @return {void}
          */
         const previous = () => {
-            const pos = +($stateParams.page || 0);
+            const pos = ~~$stateParams.page || 0;
             if (pos) {
                 const page = pos - 1;
                 // If page = 1 remove it from the url
@@ -50,7 +50,7 @@ angular.module('proton.core')
          * @return {void}
          */
         const next = () => {
-            const pos = +($stateParams.page || 1);
+            const pos = ~~$stateParams.page || 1;
             const page = pos + 1;
             (page <= getMaxPage()) && switchPage({ page });
         };
@@ -61,7 +61,7 @@ angular.module('proton.core')
          * @return {Boolean}
          */
         const isMax = () => {
-            const page = +($stateParams.page || 1);
+            const page = ~~$stateParams.page || 1;
             return page >= getMaxPage();
         };
 
