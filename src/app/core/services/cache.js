@@ -155,8 +155,7 @@ angular.module('proton.core')
         _.each(locs, (loc) => {
             const isTrash = loc === CONSTANTS.MAILBOX_IDENTIFIERS.trash;
             const isSpam = loc === CONSTANTS.MAILBOX_IDENTIFIERS.spam;
-            const trashSpamCondition = (inTrash || inSpam) ? isTrash || isSpam : true;
-            if (LabelIDs.indexOf(loc) !== -1 && unreadCondition && trashSpamCondition) {
+            if (LabelIDs.indexOf(loc) !== -1 && unreadCondition) {
                 result[loc] = 1;
             } else {
                 result[loc] = 0;
