@@ -133,8 +133,6 @@ angular.module('proton.core')
     function vector({ LabelIDs = [], IsRead, NumUnread }, unread, type) {
         const result = {};
         let unreadCondition = true;
-        const inTrash = LabelIDs.indexOf(CONSTANTS.MAILBOX_IDENTIFIERS.trash) > -1;
-        const inSpam = LabelIDs.indexOf(CONSTANTS.MAILBOX_IDENTIFIERS.spam) > -1;
         const locs = [
             CONSTANTS.MAILBOX_IDENTIFIERS.inbox,
             CONSTANTS.MAILBOX_IDENTIFIERS.drafts,
@@ -153,10 +151,7 @@ angular.module('proton.core')
         }
 
         _.each(locs, (loc) => {
-            const isTrash = loc === CONSTANTS.MAILBOX_IDENTIFIERS.trash;
-            const isSpam = loc === CONSTANTS.MAILBOX_IDENTIFIERS.spam;
-            const trashSpamCondition = (inTrash || inSpam) ? isTrash || isSpam : true;
-            if (LabelIDs.indexOf(loc) !== -1 && unreadCondition && trashSpamCondition) {
+            if (LabelIDs.indexOf(loc) !== -1 && unreadCondition) {
                 result[loc] = 1;
             } else {
                 result[loc] = 0;
@@ -552,7 +547,6 @@ angular.module('proton.core')
             const mailbox = tools.currentMailbox();
             let messages = _.filter(messagesCached, ({ LabelIDs = [] }) => LabelIDs.indexOf(loc) !== -1);
 
-            messages = filterTrashSpam(messages);
             messages = api.orderMessage(messages);
 
             switch (mailbox) {
@@ -588,20 +582,6 @@ angular.module('proton.core')
     };
 
     /**
-     * Filter element list to remove trash and spam element if required
-     * @param  {Array}  elements - can be a message list or a conversation list
-     * @return {Array} list filtered
-     */
-    function filterTrashSpam(elements = []) {
-        const hideTrashSpam = angular.isUndefined($stateParams.trashspam);
-        return _.filter(elements, ({ LabelIDs = [] }) => {
-            const notInSpam = LabelIDs.indexOf(CONSTANTS.MAILBOX_IDENTIFIERS.spam) === -1;
-            const notInTrash = LabelIDs.indexOf(CONSTANTS.MAILBOX_IDENTIFIERS.trash) === -1;
-            return hideTrashSpam ? (notInSpam && notInTrash) : true;
-        });
-    }
-
-    /**
      * Return conversation list with request specified in cache or call api
      * @param {Object} request
      * @return {Promise}
@@ -624,7 +604,6 @@ angular.module('proton.core')
                 return LabelIDs.indexOf(loc) !== -1 && api.getTime(ID, loc);
             });
 
-            conversations = filterTrashSpam(conversations);
             conversations = api.orderConversation(conversations, loc);
 
             switch (mailbox) {
