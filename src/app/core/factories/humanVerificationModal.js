@@ -11,7 +11,7 @@ angular.module('proton.core')
     return pmModal({
         controllerAs: 'ctrl',
         templateUrl: 'templates/modals/humanVerification.tpl.html',
-        controller(params) {
+        controller(params, $scope) {
             const self = this;
             const unsubscribe = [];
             self.tokens = {
@@ -39,7 +39,9 @@ angular.module('proton.core')
                 networkActivityTracker.track(promise);
             };
             unsubscribe.push($rootScope.$on('captcha.token', (event, token) => {
-                self.tokens.captcha = token;
+                $scope.$applyAsync(() => {
+                    self.tokens.captcha = token;
+                });
             }));
             self.$onDestroy = () => {
                 unsubscribe.forEach((cb) => cb());
