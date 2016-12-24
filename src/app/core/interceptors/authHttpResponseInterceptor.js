@@ -48,10 +48,10 @@ angular.module('proton.core')
                     humanVerificationModal.activate({
                         params: {
                             response,
-                            close() {
+                            close(resend = false) {
                                 const $http = $injector.get('$http');
                                 humanVerificationModal.deactivate();
-                                $http(response.config);
+                                resend && $http(response.config);
                             }
                         }
                     });

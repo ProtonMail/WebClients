@@ -31,12 +31,15 @@ angular.module('proton.core')
                 const promise = User.check({ Token: self.tokens[self.verificator], TokenType: self.verificator })
                 .then(handleResult)
                 .then(() => {
-                    params.close();
+                    params.close(true);
                 })
                 .catch(() => {
-                    params.close();
+                    params.close(true);
                 });
                 networkActivityTracker.track(promise);
+            };
+            self.cancel = () => {
+                params.close(false);
             };
             unsubscribe.push($rootScope.$on('captcha.token', (event, token) => {
                 $scope.$applyAsync(() => {
