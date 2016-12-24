@@ -54,7 +54,7 @@
             href="#"
             pt-tooltip-translate="Delete"
             ng-click="delete()"
-            ng-if="('secured.trash.**' | includedByState) || ('secured.drafts.**' | includedByState)"
+            ng-if="('secured.trash.**' | includedByState) || ('secured.drafts.**' | includedByState) || ('secured.allmail.**' | includedByState)"
             ng-class="{ disabled: numberElementSelected === 0 }"
             class="fa fa-times-circle-o toolbar-btn-delete"
             pt-tooltip-translate-context="Action"></a>
