@@ -173,6 +173,8 @@ angular.module('proton.core')
         const folderID = (mailbox === 'label') ? id : CONSTANTS.MAILBOX_IDENTIFIERS[mailbox];
         const count = (type === 'conversation') ? cacheCounters.unreadConversation(folderID) : cacheCounters.unreadMessage(folderID);
 
+        console.log(count);
+
         if (count === undefined) {
             // THIS IS A BUG.
             // TODO: WHY IS THIS UNDEFINED!
