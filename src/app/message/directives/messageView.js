@@ -27,6 +27,8 @@ angular.module('proton.message')
                     scope.$applyAsync(() => {
                         message.openMe = true;
                         scope.message = message;
+                        $rootScope.numberElementSelected = 1;
+
                         unsubscribeActions = conversationListeners(scope.message);
                         unsubscribe = $rootScope.$on('message.expiration', () => back());
                     });
