@@ -11,13 +11,13 @@ angular.module('proton.settings')
     labelModal,
     networkActivityTracker,
     cacheCounters,
+    labelsModel,
     notify
 ) => {
     // Variables
     const unsubscribe = [];
-    let labelOrder = [];
 
-    $scope.labels = _.sortBy(authentication.user.Labels, 'Order');
+    $scope.labels = labelsModel.load();
 
     // Drag and Drop configuration
     $scope.labelsDragControlListeners = {
@@ -26,39 +26,34 @@ angular.module('proton.settings')
             return sourceItemHandleScope.itemScope.sortableScope.$id === destSortableScope.$id;
         },
         orderChanged() {
-            labelOrder = [];
-
-            $scope.labels.forEach((label, index) => {
-                labelOrder[index] = label.Order;
-                label.Order = index + 1;
-            });
-
-            $scope.saveLabelOrder(labelOrder);
+            const order = labelsModel.getOrder();
+            labelsModel.update();
+            $scope.saveLabelOrder(order);
         }
     };
 
     // Listeners
     unsubscribe.push($rootScope.$on('deleteLabel', () => {
         $scope.$applyAsync(() => {
-            $scope.labels = _.sortBy(authentication.user.Labels, 'Order');
+            $scope.labels = labelsModel.load();
         });
     }));
 
     unsubscribe.push($rootScope.$on('createLabel', () => {
         $scope.$applyAsync(() => {
-            $scope.labels = _.sortBy(authentication.user.Labels, 'Order');
+            $scope.labels = labelsModel.load();
         });
     }));
 
     unsubscribe.push($rootScope.$on('updateLabel', () => {
         $scope.$applyAsync(() => {
-            $scope.labels = _.sortBy(authentication.user.Labels, 'Order');
+            $scope.labels = labelsModel.load();
         });
     }));
 
     unsubscribe.push($rootScope.$on('updateLabels', () => {
         $scope.$applyAsync(() => {
-            $scope.labels = _.sortBy(authentication.user.Labels, 'Order');
+            $scope.labels = labelsModel.load();
         });
     }));
 
@@ -184,4 +179,8 @@ angular.module('proton.settings')
 
         networkActivityTracker.track(promise);
     };
+
+    $scope.$on('$destroy', () => {
+        labelsModel.clear();
+    });
 });
