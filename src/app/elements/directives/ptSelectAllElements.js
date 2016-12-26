@@ -17,6 +17,9 @@ angular.module('proton.elements')
                         $rootScope.numberElementChecked = isChecked ? scope.conversations.length : 0;
                         $rootScope.showWelcome = false;
                     });
+
+                // No keyX event if a checkbox is focused
+                _rAF(() => target.blur());
             }
             el.on('change', onChange);
 
