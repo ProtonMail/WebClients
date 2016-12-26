@@ -1,20 +1,5 @@
 angular.module('proton.message')
-.directive('message', (
-    $stateParams,
-    $state,
-    $q,
-    $rootScope,
-    $window,
-    authentication,
-    cache,
-    networkActivityTracker,
-    displayContent,
-    displayImages,
-    displayEmbedded,
-    messageScroll,
-    Message,
-    tools
-) => {
+.directive('message', ($state, $rootScope, authentication, cache, networkActivityTracker, displayContent, displayImages, displayEmbedded, messageScroll, Message, tools) => {
 
     function getRecipients({ ToList = [], CCList = [], BCCList = [] } = {}) {
         return [].concat(ToList, CCList, BCCList);
@@ -279,6 +264,7 @@ angular.module('proton.message')
             scope.unread = () => {
                 const ids = [scope.message.ID];
                 scope.message.expand = false;
+                scope.message.IsRead = 0;
                 $rootScope.$emit('messageActions', { action: 'unread', data: { ids } });
             };
 
