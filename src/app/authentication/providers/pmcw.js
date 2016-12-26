@@ -15,24 +15,13 @@ angular.module('proton.authentication')
             const keyPromise = pmcrypto.decryptPrivateKey(prKey, prKeyPassCode);
 
             keyPromise
-            .then(
-                (res) => {
+                .then((privateKey) => {
                     // this is the private key, use this and decryptMessage to get the access token
-                    const privateKey = res;
                     pmcrypto.decryptMessage(accessToken, privateKey)
-                    .then(
-                        (resp) => {
-                            return resolve({ password: prKeyPassCode, token: resp.data });
-                        },
-                        () => {
-                            return reject(new Error('Unable to get Access Token.'));
-                        }
-                    );
-                },
-                () => {
-                    return reject(new Error('Wrong Mailbox Password.'));
-                }
-            );
+                    .then(({ data }) => resolve({ password: prKeyPassCode, token: data }))
+                    .catch(() => reject(new Error('Unable to get Access Token.')));
+                })
+                .catch(() => reject(new Error('Wrong Mailbox Password.')));
         });
     };
 
