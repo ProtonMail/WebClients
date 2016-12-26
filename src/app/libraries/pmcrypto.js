@@ -395,7 +395,8 @@ const pmcrypto = (function pmcrypto() {
                         resolve({ data: decrypted.data, signature: sig });
                     }
 
-                });
+                })
+                .catch((err) => reject(err));
             } catch (err) {
                 if (err.message === 'CFB decrypt: invalid key') {
                     return reject(err.message); // Bad password, reject without Error object
