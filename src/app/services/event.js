@@ -22,7 +22,8 @@ angular.module('proton.event', ['proton.constants', 'proton.utils'])
         Label,
         notify,
         pmcw,
-        setupKeys
+        setupKeys,
+        AppModel
     ) => {
         const DELETE = 0;
         const CREATE = 1;
@@ -405,8 +406,8 @@ angular.module('proton.event', ['proton.constants', 'proton.utils'])
                 eventModel.interval();
             },
             interval() {
-                return eventModel.get().then(
-                    (result) => {
+                return eventModel.get()
+                    .then((result) => {
                         // Check for force upgrade
                         if (result.data && result.data.Code === 5003) {
                             // Force upgrade, kill event loop
@@ -417,6 +418,7 @@ angular.module('proton.event', ['proton.constants', 'proton.utils'])
                             eventModel.promiseCancel = $timeout(eventModel.interval, eventModel.milliseconds);
                             eventModel.manage(result.data);
                         }
+                        AppModel.set('onLine', true);
                     },
                     () => {
                         if (angular.isDefined(eventModel.promiseCancel)) {
@@ -424,8 +426,9 @@ angular.module('proton.event', ['proton.constants', 'proton.utils'])
                             eventModel.notification && eventModel.notification.close();
                             /* eslint operator-assignment: "off" */
                             eventModel.milliseconds = eventModel.milliseconds * 2; // We multiplie the interval by 2
-                            eventModel.promiseCancel = $timeout(eventModel.interval, eventModel.milliseconds);
+                            eventModel.promiseCancel = $timeout(eventModel.interval, eventModel.milliseconds, false);
                             eventModel.notification = notify({ templateUrl: 'templates/notifications/retry.tpl.html', duration: '0', onClick: eventModel.reset });
+                            AppModel.set('onLine', false);
                         }
                     }
                 );
@@ -438,7 +441,7 @@ angular.module('proton.event', ['proton.constants', 'proton.utils'])
             },
             start() {
                 if (angular.isUndefined(eventModel.promiseCancel)) {
-                    eventModel.promiseCancel = $timeout(eventModel.interval, 0);
+                    eventModel.promiseCancel = $timeout(eventModel.interval, 0, false);
                 }
             },
             call() {
