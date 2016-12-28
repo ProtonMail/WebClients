@@ -24,7 +24,8 @@ angular.module('proton.composer')
     messageBuilder,
     notify,
     pmcw,
-    tools
+    tools,
+    AppModel
 ) => {
 
     const unsubscribe = [];
@@ -132,10 +133,14 @@ angular.module('proton.composer')
 
     unsubscribe.push($rootScope.$on('composer.new', (event, { message, type }) => {
         const limitReached = checkComposerNumber();
-
-        if (!limitReached) {
+        if (!limitReached && AppModel.is('onLine')) {
             initMessage(messageBuilder.create(type, message));
         }
+
+        !AppModel.is('onLine') && notify({
+            message: 'No Internet connection found.',
+            classes: 'notification-danger'
+        });
     }));
 
     unsubscribe.push($rootScope.$on('composer.load', (event, { ID }) => {
@@ -377,19 +382,23 @@ angular.module('proton.composer')
         message.From = From;
         message.AddressID = AddressID;
 
-        $scope
-            .$applyAsync(() => {
-                const size = $scope.messages.unshift(message);
+        $scope.$applyAsync(() => {
+            const size = $scope.messages.unshift(message);
 
-                recordMessage(message).then(() => { // message, notification, autosaving
-                    $rootScope.$emit('composer.update', {
-                        type: 'loaded',
-                        data: { size, message }
-                    });
-                }, (error) => {
-                    $log.error(error);
+            recordMessage(message)
+            .then(() => {
+                $rootScope.$emit('composer.update', {
+                    type: 'loaded',
+                    data: { size, message }
                 });
+            })
+            .catch((error) => {
+                console.error(error);
+                const [, ...list] = $scope.messages;
+                $scope.messages = list;
             });
+
+        });
     }
 
     $scope.togglePanel = (message, panelName) => {
