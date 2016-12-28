@@ -81,9 +81,9 @@ module.exports = function editLabel() {
 
     const isArchived = () => {
         return browser.executeScript(`
-            const $checkbox = ${$container}
-                .find('${SELECTOR.archive}');
-            return $checkbox[0].checked;
+            return ${$container}
+                .find('${SELECTOR.archive}')
+                .is(':checked');
         `);
     };
 

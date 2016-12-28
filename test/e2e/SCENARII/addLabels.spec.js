@@ -42,6 +42,7 @@ module.exports = ({
         });
 
         it('should archive by default', () => {
+            browser.sleep(1000);
             dropdownLabel.isArchived()
                 .then(shouldArchivedDefault ? isTrue : isFalse);
         });
