@@ -16,6 +16,7 @@ angular.module('proton.ui')
             trash: { icon: 'fa-trash-o', text: gettextCatalog.getString('Trash', null, 'No results heading') },
             spam: { icon: 'fa-ban', text: gettextCatalog.getString('Spam', null, 'No results heading') },
             starred: { icon: 'fa-star-o', text: gettextCatalog.getString('Starred', null, 'No results heading') },
+            allmail: { icon: '', text: gettextCatalog.getString('All Mail', null, 'No results heading') },
             archive: { icon: 'fa-archive', text: gettextCatalog.getString('Archive', null, 'No results heading') },
             search: { icon: 'fa-search', text: gettextCatalog.getString('Search', null, 'No results heading') },
             label: { icon: 'fa-tag', text: gettextCatalog.getString('Label', null, 'No results heading') }

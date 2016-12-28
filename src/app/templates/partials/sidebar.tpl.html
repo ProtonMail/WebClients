@@ -65,6 +65,14 @@
                 <em ng-bind="unread('trash')"></em>
             </a>
         </li>
+        <li ng-class="{ active: ('secured.allmail.**' | includedByState) }">
+            <a href="#" title="All Mail" ng-click="goTo('secured.allmail')">
+                <button class="fa fa-repeat pull-right refresh" ng-class="{ 'spinMe': spinMe }" ng-show="'secured.allmail.**' | includedByState"></button>
+                <i class="fa"></i>
+                <span translate-context="Title" translate-comment="Folder name" translate>All Mail</span>
+                <em ng-bind="unread('allmail')"></em>
+            </a>
+        </li>
     </ul>
 
     <ul class="menu" id="labelSettings">

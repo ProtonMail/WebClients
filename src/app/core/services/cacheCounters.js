@@ -24,7 +24,16 @@ angular.module('proton.core')
         */
         api.query = () => {
             const idsLabel = _.map(authentication.user.Labels, ({ ID }) => ID) || [];
-            const locs = ['0', '1', '2', '3', '4', '6', '10'].concat(idsLabel);
+            const locs = [
+                CONSTANTS.MAILBOX_IDENTIFIERS.inbox,
+                CONSTANTS.MAILBOX_IDENTIFIERS.drafts,
+                CONSTANTS.MAILBOX_IDENTIFIERS.sent,
+                CONSTANTS.MAILBOX_IDENTIFIERS.trash,
+                CONSTANTS.MAILBOX_IDENTIFIERS.spam,
+                CONSTANTS.MAILBOX_IDENTIFIERS.allmail,
+                CONSTANTS.MAILBOX_IDENTIFIERS.archive,
+                CONSTANTS.MAILBOX_IDENTIFIERS.starred
+            ].concat(idsLabel);
 
             return $q.all({
                 message: Message.count().$promise,

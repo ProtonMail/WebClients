@@ -198,8 +198,16 @@ angular.module('proton.event', ['proton.constants', 'proton.utils'])
             },
             manageMessageCounts(counts) {
                 if (angular.isDefined(counts)) {
-                    const labelIDs = ['0', '1', '2', '3', '4', '6', '10']
-                        .concat(_.map(authentication.user.Labels || [], ({ ID }) => ID));
+                    const labelIDs = [
+                        CONSTANTS.MAILBOX_IDENTIFIERS.inbox,
+                        CONSTANTS.MAILBOX_IDENTIFIERS.drafts,
+                        CONSTANTS.MAILBOX_IDENTIFIERS.sent,
+                        CONSTANTS.MAILBOX_IDENTIFIERS.trash,
+                        CONSTANTS.MAILBOX_IDENTIFIERS.spam,
+                        CONSTANTS.MAILBOX_IDENTIFIERS.allmail,
+                        CONSTANTS.MAILBOX_IDENTIFIERS.archive,
+                        CONSTANTS.MAILBOX_IDENTIFIERS.starred
+                    ].concat(_.map(authentication.user.Labels || [], ({ ID }) => ID));
 
                     _.each(labelIDs, (labelID) => {
                         const count = _.findWhere(counts, { LabelID: labelID });
@@ -216,8 +224,16 @@ angular.module('proton.event', ['proton.constants', 'proton.utils'])
             },
             manageConversationCounts(counts) {
                 if (angular.isDefined(counts)) {
-                    const labelIDs = ['0', '1', '2', '3', '4', '6', '10']
-                        .concat(_.map(authentication.user.Labels || [], ({ ID }) => ID));
+                    const labelIDs = [
+                        CONSTANTS.MAILBOX_IDENTIFIERS.inbox,
+                        CONSTANTS.MAILBOX_IDENTIFIERS.drafts,
+                        CONSTANTS.MAILBOX_IDENTIFIERS.sent,
+                        CONSTANTS.MAILBOX_IDENTIFIERS.trash,
+                        CONSTANTS.MAILBOX_IDENTIFIERS.spam,
+                        CONSTANTS.MAILBOX_IDENTIFIERS.allmail,
+                        CONSTANTS.MAILBOX_IDENTIFIERS.archive,
+                        CONSTANTS.MAILBOX_IDENTIFIERS.starred
+                    ].concat(_.map(authentication.user.Labels || [], ({ ID }) => ID));
 
                     _.each(labelIDs, (labelID) => {
                         const count = _.findWhere(counts, { LabelID: labelID });
