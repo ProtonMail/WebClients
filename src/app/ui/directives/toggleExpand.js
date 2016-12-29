@@ -5,17 +5,18 @@ angular.module('proton.ui')
     return {
         restrict: 'E',
         replace: true,
-        template: '<button class="pm_button link fa"></button>',
-        scope: { model: '=' },
+        template: '<button class="pm_button link">{{text}} <i class="fa" /></button>',
+        scope: { model: '=', text: '@' },
         link(scope, element) {
             scope.model = scope.model || false;
+
             toggleClass();
 
             function toggleClass() {
                 const toRemove = (scope.model) ? EXPAND_CLASS : COLLAPSE_CLASS;
                 const toAdd = (scope.model) ? COLLAPSE_CLASS : EXPAND_CLASS;
-                element[0].classList.remove(toRemove);
-                element[0].classList.add(toAdd);
+                element[0].querySelector('.fa').classList.remove(toRemove);
+                element[0].querySelector('.fa').classList.add(toAdd);
             }
 
             function onClick() {

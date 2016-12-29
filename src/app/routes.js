@@ -695,6 +695,12 @@ angular.module('proton.routes', [
                 return Promise.resolve();
             }
         },
+        onEnter($rootScope) {
+            $rootScope.inboxSidebar = true;
+        },
+        onExit($rootScope) {
+            $rootScope.inboxSidebar = false;
+        },
         views: {
             'content@secured': {
                 templateUrl: 'templates/views/contacts.tpl.html',
@@ -1014,8 +1020,12 @@ angular.module('proton.routes', [
                     return Promise.resolve();
                 }
             },
+            onEnter($rootScope) {
+                $rootScope.inboxSidebar = true;
+            },
             onExit($rootScope) {
                 $rootScope.showWelcome = false;
+                $rootScope.inboxSidebar = false;
             }
         });
 
