@@ -39,7 +39,7 @@
 			                        <tbody>
 				                        <tr>
 				                            <td translate-context="Title" translate>
-                                                <span class="margin-right">Number of users</span>
+                                                <span class="margin-right" translate>Number of users</span>
                                             </td>
 				                            <td class="absorbing-column">
 				                                <span class="margin-left" translate-context="Info" translate>{{ organization.UsedMembers }} of {{ organization.MaxMembers }} used</span>
@@ -52,7 +52,7 @@
 				                        </tr>
                                         <tr>
 				                            <td translate-context="Title" translate>
-                                                <span class="margin-right">Organization storage</span>
+                                                <span class="margin-right" translate>Organization storage</span>
                                             </td>
                                             <td>
 				                                <span class="margin-left">{{ organization.MaxSpace | humanSize }}</span>
@@ -64,8 +64,8 @@
 				                            </td>
 				                        </tr>
                                         <tr>
-				                            <td translate-context="Title" translate>
-                                                <span class="margin-right">Available domains</span>
+				                            <td translate-context="Title">
+                                                <span class="margin-right" translate>Available domains</span>
                                             </td>
                                             <td>
                                                 <div class="margin-left">
@@ -108,7 +108,7 @@
                             <div class="col- pm-flex-content username">
                                 <label>
                                     <small>
-                                        <strong class="uppercase text-blue-gray">Name</strong>
+                                        <strong class="uppercase text-blue-gray" translate>Name</strong>
                                     </small>
                                 </label>
                                 <div>
@@ -118,7 +118,7 @@
     	                    <div class="col- pm-flex-content role">
                                 <label>
                                     <small>
-                                        <strong class="uppercase text-blue-gray">Role</strong>
+                                        <strong class="uppercase text-blue-gray" translate>Role</strong>
                                     </small>
                                 </label>
                                 <span ng-show="member.Self" translate>Admin</span>
@@ -127,18 +127,18 @@
                             <div class="col- pm-flex-content username">
                                 <label>
                                     <small>
-                                        <strong class="uppercase text-blue-gray">Private</strong>
+                                        <strong class="uppercase text-blue-gray" translate>Private</strong>
                                     </small>
                                 </label>
                                 <div>
-                                    <span ng-show="member.Private === 1">Yes</span>
-                                    <span ng-hide="member.Private === 1">No</span>
+                                    <span ng-show="member.Private === 1" translate>Yes</span>
+                                    <span ng-hide="member.Private === 1" translate>No</span>
                                 </div>
     	                    </div>
     	                    <div class="col- pm-flex-content storage">
                                 <label>
                                     <small>
-                                        <strong class="uppercase text-blue-gray">Storage</strong>
+                                        <strong class="uppercase text-blue-gray" translate>Storage</strong>
                                     </small>
                                 </label>
                                 <span  translate-comment="space used out of total space allowed for a member" translate>{{ member.UsedSpace | humanSize }} of {{ member.MaxSpace | humanSize }} Used</span>
@@ -147,7 +147,7 @@
                         <div class="col- margin-top">
                             <span class="pm_buttons pm-flex-content-autoWidth">
                                 <a class="wide pm_trigger" dropdown>
-                                    <span>Options</span>
+                                    <span translate>Options</span>
                                     <i class="fa fa-angle-down"></i>
                                 </a>
                                 <span class="pm_dropdown right wider">
@@ -161,13 +161,13 @@
                                             </span>
                                         </span>
                                         <button type="button" class="pm_button link text-left " ng-show="member.Private === 0" ng-click="makePrivate(member)" translate-context="Action" translate>
-                                            <i class="fa fa-user-secret margin-right"></i> Privatize
+                                            <i class="fa fa-user-secret margin-right"></i> <span translate>Privatize</span>
                                         </button>
                                         <button type="button" class="pm_button link text-left" ng-click="login(member)" ng-show="!member.Self && member.Private === 0 && member.Keys.length > 0" translate-context="Action" translate>
-                                            <i class="fa fa-sign-in margin-right"></i>  Login
+                                            <i class="fa fa-sign-in margin-right"></i>  <span translate>Login</span>
                                         </button>
                                         <button type="button" class="pm_button link text-red text-left " ng-show="!member.Self && member.Type === 1" ng-click="removeMember(member)" translate-context="Action" translate>
-                                            <i class="fa fa-trash margin-right"></i>  Delete
+                                            <i class="fa fa-trash margin-right"></i>  <span translate>Delete</span>
                                         </button>
                                         <button type="button" class="pm_button link text-left " ng-show="!member.Self && member.Type === 0" ng-click="removeMember(member)" translate-context="Action" translate>Remove</button>
                                         <button type="button" class="pm_button margin-top" ng-click="editMember(member)" translate-context="Action" translate>More...</button>
