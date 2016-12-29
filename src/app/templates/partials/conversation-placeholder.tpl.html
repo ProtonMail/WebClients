@@ -35,13 +35,4 @@
     </div>
 </div>
 
-<div id="pm_placeholder" ng-show="showWelcome === false">
-    <i class="fa fa-check-square"></i>
-    <number-element-selected number="numberElementChecked"></number-element-selected>
-    <button
-        class="pm_button conversationPlaceholder-btn-unselect"
-        ng-show="numberElementChecked > 0"
-        ng-click="unselectAllElements()"
-        translate
-        translate-context="Action">Deselect all</button>
-</div>
+<count-elements-selected id="pm_placeholder" ng-show="showWelcome === false"></count-elements-selected>
