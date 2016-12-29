@@ -148,7 +148,7 @@ angular.module('proton', [
     });
 
     $rootScope.mobileMode = false;
-    $rootScope.sidebarMode = true;
+    $rootScope.inboxSidebar = false;
     $rootScope.showWelcome = true;
     $rootScope.welcome = false;
     $rootScope.browser = tools.getBrowser();

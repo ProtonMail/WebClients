@@ -40,10 +40,13 @@ header#pm_header-desktop {
 		float: left;
 		width: $sidebarWidth;
 		text-align: center;
-		background-color: $secondary;
 		overflow: hidden;
 		display: block;
 		height: $headerHeight;
+		background-color: $secondary;
+		&.light {
+			background: $secondary-light;
+		}		
 		img {
 			display: inline-block;
 			margin: auto;

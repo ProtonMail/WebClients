@@ -58,10 +58,12 @@
             th, td {
                 white-space: nowrap;
             }
-            th.absorbing-column {
+            th.absorbing-column,
+            td.absorbing-column {
                 width: 100%;
             }
-            th.absorbing-column-half {
+            th.absorbing-column-half,
+            td.absorbing-column-half  {
                 width: 50%;
             }
         }

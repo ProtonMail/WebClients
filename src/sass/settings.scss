@@ -238,9 +238,8 @@
         margin-right: 0;
         clear: both;
         box-sizing: border-box;
-        height: calc(100% - 41px );
+        height: 100%;
         overflow: auto;
-
 
         .angular-squire-wrapper {
             border: 1px solid $border;

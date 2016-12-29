@@ -92,6 +92,7 @@ angular.module('proton.settings')
 
         if (angular.isDefined(role)) {
             member.selectRole = role;
+            console.log(member);
         }
     };
 
