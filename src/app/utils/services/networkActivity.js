@@ -1,5 +1,5 @@
 angular.module('proton.utils')
-.factory('networkActivityTracker', ($log, errorReporter, $rootScope, notify, dedentTpl) => {
+.factory('networkActivityTracker', (errorReporter, $rootScope, notify, dedentTpl) => {
 
     let promises = [];
     const DURATION = 10000; // 10 seconds
@@ -79,10 +79,10 @@ angular.module('proton.utils')
                 } else if (error.error_description) {
                     message = error.error_description;
                 } else {
-                    message = 'An error has occurred. Please try again.';
+                    message = 'An error has occurred. <br> Please try again or refresh the page.';
                 }
 
-                $log.error(formatError(error));
+                console.error(formatError(error));
 
                 notifyAlert(message);
 
