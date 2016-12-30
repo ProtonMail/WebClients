@@ -23,6 +23,12 @@
     justify-content: center;
 }
 
+.pm-flex-content-vertical-end {
+    -webkit-justify-content: flex-end;
+    justify-content: flex-end;
+}
+
+
 .pm-flex-content-autoWidth {
     -webkit-align-self: flex-start;
     align-self: flex-start

@@ -169,7 +169,7 @@ $pad: 20px;
 			flex-direction:row;
 		}
 
-		:not(.absorbing) > [class*='col-'] {
+		:not(.absorbing, .initialGrow) > [class*='col-'] {
 			-webkit-flex-grow: 1;
 		    flex-grow: 1;
 			width: auto;
@@ -185,11 +185,23 @@ $pad: 20px;
 			flex-grow: 1;
 		}
 
+		> [class*='col-'].initialGrow {
+			-webkit-flex-grow: initial;
+			flex-grow: initial;
+			& > * {
+				white-space: nowrap;
+			}
+		}
+
 		> [class*='col-']:first-child:nth-last-child(3),
 		> [class*='col-']:first-child:nth-last-child(3) ~ [class*='col-'] {
 			&.double {
 				flex: 2.3;
 			}
+		}
+
+		> .col-basis {
+			flex-basis: 200px;
 		}
 
 	}
@@ -200,6 +212,12 @@ body.mobileMode {
 	.pm_grid {
 		&.flex:not(.flex-mobileShrink) {
 			flex-direction: column;
+			> [class*='col-'] {
+				margin-bottom: 20px;
+			}
+		}
+		.col-basis {
+			flex-basis: 0px;
 		}
 		&:not(.flex) [class*='col-'] {
 			float: left;

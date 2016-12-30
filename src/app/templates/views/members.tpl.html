@@ -103,7 +103,7 @@
                     <a ui-sref="secured.domains" class="pm_button" translate-context="Action" translate>Add domain</a>
                 </p>
                 <div class="pm_flex_content">
-                    <div class="pm_grid absorbing flex flex-mobileShrink hasImbricated hasImbricatedFirst" ng-repeat-start="member in members">
+                    <div class="pm_grid absorbing flex flex-mobileShrink hasImbricated hasImbricatedFirst" ng-repeat-start="member in members"  ng-init="initRole(member)">
 	                    <div class="col- absorbe pm_grid no-margin flex flex-row">
                             <div class="col- pm-flex-content username">
                                 <label>
@@ -113,6 +113,31 @@
                                 </label>
                                 <div>
                                    <span class="emphaseText" ng-bind="member.Name"></span>
+                                </div>
+    	                    </div>
+                            <div ng-show="member.Addresses.length <= 1" class="col-basis pm-flex-content addresses">
+                                <label>
+                                    <small>
+                                        <strong class="uppercase text-blue-gray" translate>Addresse</strong>
+                                    </small>
+                                </label>
+                                <div ng-show="member.Addresses.length === 0">
+                                    -
+                                </div>
+                                <div ng-show="member.Addresses.length > 0">
+                                    {{ member.Addresses[0].Email }}
+                                    <toggle-expand class="autoHeight" data-model="member.toggle"></toggle-expand>
+                                </div>
+    	                    </div>
+                            <div ng-show="member.Addresses.length > 1" class="col-basis pm-flex-content addresses">
+                                <label>
+                                    <small>
+                                        <strong class="uppercase text-blue-gray" translate>Addresses</strong>
+                                    </small>
+                                </label>
+                                <div>
+                                    {{ member.Addresses[0].Email }}
+                                    <toggle-expand class="autoHeight" data-model="member.toggle" text="+ {{ member.Addresses.length - 1 }}"></toggle-expand>
                                 </div>
     	                    </div>
     	                    <div class="col- pm-flex-content role">
@@ -141,7 +166,7 @@
                                         <strong class="uppercase text-blue-gray" translate>Storage</strong>
                                     </small>
                                 </label>
-                                <span  translate-comment="space used out of total space allowed for a member" translate>{{ member.UsedSpace | humanSize }} of {{ member.MaxSpace | humanSize }} Used</span>
+                                <span  translate-comment="space used out of total space allowed for a member" translate>{{ member.UsedSpace | humanSize }}/{{ member.MaxSpace | humanSize }} Used</span>
                             </div>
                         </div>
                         <div class="col- margin-top">
@@ -150,51 +175,45 @@
                                     <span translate>Options</span>
                                     <i class="fa fa-angle-down"></i>
                                 </a>
-                                <span class="pm_dropdown right wider">
+                                <span class="pm_dropdown right">
                                     <!-- <a ng-repeat="option in options" ng-bind="option" ng-click="select(option)"></a> -->
-                                    <div class="pm-flex-content">
-                                        <span class="pm-flex-content-row" ng-hide="member.Self">
+                                        <!-- <span class="pm-flex-content-row" ng-hide="member.Self">
                                             <i class="fa fa-users margin-right" />
                                             <span class="pm-flex-content-fillWidth pm_select table_select margin-bottom">
                                                 <select ng-model="member.selectRole" ng-init="initRole(member)" ng-options="role.label for role in roles" ng-change="changeRole(member)"></select>
                                                 <i class="fa fa-angle-down"></i>
                                             </span>
-                                        </span>
-                                        <button type="button" class="pm_button link text-left " ng-show="member.Private === 0" ng-click="makePrivate(member)" translate-context="Action" translate>
-                                            <i class="fa fa-user-secret margin-right"></i> <span translate>Privatize</span>
-                                        </button>
-                                        <button type="button" class="pm_button link text-left" ng-click="login(member)" ng-show="!member.Self && member.Private === 0 && member.Keys.length > 0" translate-context="Action" translate>
-                                            <i class="fa fa-sign-in margin-right"></i>  <span translate>Login</span>
-                                        </button>
-                                        <button type="button" class="pm_button link text-red text-left " ng-show="!member.Self && member.Type === 1" ng-click="removeMember(member)" translate-context="Action" translate>
-                                            <i class="fa fa-trash margin-right"></i>  <span translate>Delete</span>
-                                        </button>
-                                        <button type="button" class="pm_button link text-left " ng-show="!member.Self && member.Type === 0" ng-click="removeMember(member)" translate-context="Action" translate>Remove</button>
-                                        <button type="button" class="pm_button margin-top" ng-click="editMember(member)" translate-context="Action" translate>More...</button>
-                                    </div>
+                                        </span> -->
+                                        <button type="button" class="pm_button link text-red text-left " ng-show="!member.Self && member.Type === 1" ng-click="removeMember(member, false)" translate-context="Action" translate>Delete</button>
+                                        <button type="button" class="pm_button link text-left" ng-show="!member.Self && member.Type === 0" ng-click="removeMember(member)" translate-context="Action" translate>Remove</button>
+                                        <button type="button" class="pm_button link text-left" ng-click="editMember(member)" translate-context="Action" translate>Edit Name</button>
+                                        <button type="button" class="pm_button link text-left" ng-click="editMember(member)" translate-context="Action" translate>Edit Storage</button>
+
+                                        <button type="button" class="pm_button link text-left" ng-show="member.Role === 1" ng-click="changeRole(member,2)" translate-context="Action" translate>Make Admin</button>
+                                        <button type="button" class="pm_button link text-left" ng-show="member.Role === 2" ng-click="changeRole(member,1)" translate-context="Action" translate>Revoke Admin</button>
+
+                                        <button type="button" class="pm_button link text-left" ng-click="login(member)" ng-show="!member.Self && member.Private === 0 && member.Keys.length > 0" translate-context="Action" translate>Login</button>
+                                        <button type="button" class="pm_button link text-left" ng-show="member.Private === 0" ng-click="makePrivate(member)" translate-context="Action" translate-context="Action" translate>Make Private</button>
                                 </span>
                             </span>
                         </div>
 	                </div>
                     <div ng-repeat-end ng-show="member.Addresses.length > 0">
                         <div ng-repeat="address in member.Addresses | orderBy: ['!Status','Send']">
-                            <div class="pm_grid no-margin flex flex-row absorbing imbricated" ng-show="member.toggle === true || $first">
+                            <div class="pm_grid no-margin flex flex-row absorbing imbricated" ng-show="member.toggle === true">
                                 <div class="col- pm-flex-content-row alignItemsCenter">
                                     <div>
                                         <span ng-bind="address.Email"></span>
                                     </div>
-                                    <span ng-show="member.Addresses.length > 1 && $first" >
-                                        <toggle-expand data-model="member.toggle" text="+ {{ member.Addresses.length - 1 }}"></toggle-expand>
-                                    </span>
                                 </div>
-                                <div class="col- absorbe pm-flex-content-row alignItemsCenter">
+                                <div class="col- absorbe pm_grid no-margin flex flex-row absorbing  pm-flex-content-row alignItemsCenter">
                                     <div ng-show="address.Type !== 1">
                                         <span class="pm_badge success" ng-show="address.Status === 1 && address.Receive === 1" translate translate-comment="address state badge">Enabled</span>
                                         <span class="pm_badge error" ng-show="address.Status === 0"  translate translate-comment="address state badge">Disabled</span>
                                         <span class="pm_badge warning" ng-show="address.HasKeys === 0"  translate translate-comment="address state badge">Missing keys</span>
                                         <span class="pm_badge warning" ng-show="address.DomainID === null"  translate translate-comment="address state badge">Orphan</span>
                                     </div>
-                                    <div class="col- pm-flex-content-row alignItemsCenter justifyEnd">
+                                    <div class="col- pm-flex-content-row absorbe alignItemsCenter justifyEnd">
                                         <button type="button" class="pm_button link" ng-show="address.Status === 0 && address.Type !== 1" ng-click="enableAddress(address)" translate-context="Action" translate>Enable</button>
                                         <button type="button" class="pm_button link" ng-show="address.Status === 1 && address.Type !== 1" ng-click="disableAddress(address)" translate-context="Action" translate>Disable</button>
                                         <button type="button" class="pm_button link" ng-show="address.Status === 0 && address.Type === 3" ng-click="deleteAddress(address)" translate-context="Action" translate>Delete</button>
@@ -264,8 +283,9 @@
                             <p class="clearfix">
                                 <button class="pm_button primary pull-left uppercase" ng-disabled="networkActivity.loading()" ng-click="changeOrganizationPassword()" type="button" translate-context="Action" translate>Change organization password</button>
                             </p>
-                            <p class="clearfix">
-                                <button class="pm_button primary pull-left uppercase" ng-disabled="networkActivity.loading()" ng-click="changeOrganizationKeys()" type="button" translate-context="Action" translate>Change organization keys</button>
+                            <p class="clearfix pm-flex-content-row alignItemsCenter">
+                                <button class="pm_button primary pull-left margin-right uppercase" ng-disabled="networkActivity.loading()" ng-click="changeOrganizationKeys()" type="button" translate-context="Action" translate>Change organization keys</button>
+                                <a href="https://protonmail.com/support/knowledge-base/organization-key" target="_blank" translate>Learn more</a>
                             </p>
 
                         </div>

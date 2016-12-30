@@ -14,7 +14,8 @@
     body #pm_main {
         width: calc(100% - 170px);
     }
-    body section.sidebar a.compose {
+    body section.sidebar a.compose
+     {
         padding-left: 0;
         text-align: center;
         .fa {

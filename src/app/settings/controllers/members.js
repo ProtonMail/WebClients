@@ -54,6 +54,7 @@ angular.module('proton.settings')
 
         $scope.newRecoveryPassword = '';
         $scope.confirmRecoveryPassword = '';
+
         switch ($stateParams.action) {
             case 'new':
                 $scope.addMember();
@@ -99,14 +100,15 @@ angular.module('proton.settings')
      * Inform the back-end to change member role
      * @param {Object} member
      */
-    $scope.changeRole = (member) => {
-        const payload = { Role: member.selectRole.value };
+    $scope.changeRole = (member, role) => {
+        const payload = { Role: role };
 
         let message;
-        if (member.selectRole.value === MASTER) {
-            message = gettextCatalog.getString('You must provide this member with the backup organization key password for full activation of administrator privileges.', null, 'Info');
+
+        if (role === MASTER) {
+            message = gettextCatalog.getString('You must provide this member with the Organization Password in order to fully activate administrator privileges.', null, 'Info');
         } else {
-            message = gettextCatalog.getString('By demoting this member you agree to assume any outstanding organization-related obligations the member may have.', null, 'Info');
+            message = gettextCatalog.getString('This member is currently responsible for payments for your organization. By demoting this member, you will become responsible for payments for your organization.', null, 'Info');
         }
 
         const params = {
@@ -119,6 +121,7 @@ angular.module('proton.settings')
                             notify({ message: gettextCatalog.getString('Role updated', null), classes: 'notification-success' });
 
                             member.Role = payload.Role;
+                            $scope.initRole(member);
 
                             confirmModal.deactivate();
                         } else if (data && data.Error) {
@@ -349,9 +352,10 @@ angular.module('proton.settings')
      * Remove member
      * @param {Object} member
      */
-    $scope.removeMember = (member) => {
-        const title = gettextCatalog.getString('Remove member', null, 'Title');
-        const message = gettextCatalog.getString('Are you sure you want to remove this member?', null, 'Info');
+    $scope.removeMember = (member, remove = true) => {
+
+        const title = remove ? gettextCatalog.getString('Remove member', null, 'Title') : gettextCatalog.getString('Delete member', null, 'Title');
+        const message = remove ? gettextCatalog.getString('Are you sure you want to permanently remove this member from your organization? They will lose access to any addresses belonging to your organization.', null, 'Info') : gettextCatalog.getString('Are you sure you want to permanently delete this member? The member\'s inbox and all addresses associated with this member will be deleted.', null, 'Info');
         const index = $scope.members.indexOf(member);
 
         confirmModal.activate({
