@@ -18,6 +18,7 @@ angular.module('proton.ui')
             security: gettextCatalog.getString('Security', null, 'Title'),
             appearance: gettextCatalog.getString('Appearance', null, 'Title'),
             domains: gettextCatalog.getString('Domains', null, 'Title'),
+            members: gettextCatalog.getString('Members', null, 'Title'),
             users: gettextCatalog.getString('Users', null, 'Title'),
             invoices: gettextCatalog.getString('Invoices', null, 'Title'),
             filters: gettextCatalog.getString('Filters', null, 'Title'),
