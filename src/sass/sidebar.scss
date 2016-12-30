@@ -22,7 +22,8 @@ body {
         #labelSettings {
             margin-bottom: 0;
         }
-        a.compose {
+        a.compose,
+        a.backToInbox {
             margin-bottom: 10px;
             font-size: 12px;
             padding: 0;
@@ -38,6 +39,12 @@ body {
                 display: inline-block;
                 width: 1.25rem;
             }
+        }
+
+        a.backToInbox {
+            border: 1px solid rgba(256,256,256,0.6);
+            color: #FFF;
+            text-decoration: none;
         }
         ul.menu {
             padding: 0;

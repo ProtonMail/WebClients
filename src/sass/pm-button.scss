@@ -67,6 +67,10 @@
             text-decoration: underline;
         }
     }
+    &.autoHeight {
+        height:auto;
+        line-height: initial;
+    }
     &.round {
         display: inline-block;
         height: 30px;
