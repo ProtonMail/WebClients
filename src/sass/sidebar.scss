@@ -44,6 +44,9 @@ body {
         a.backToInbox {
             border: 1px solid rgba(256,256,256,0.6);
             color: #FFF;
+            height: auto;
+            line-height: initial;
+            padding: 10px 5px;
             text-decoration: none;
         }
         ul.menu {
