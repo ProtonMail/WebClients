@@ -37,13 +37,13 @@
     </li>
     <li role="presentation" ng-class="{'active': ('secured.addresses' | includedByState) , 'hidden': mobileMode}" class="desktopOnly">
         <a ui-sref="secured.addresses" translate-context="Title">
-            <i class="fa fa-compass"></i>
+            <i class="fa fa-at"></i>
             <span translate-comment="addresses menu" translate>Addresses</span>
         </a>
     </li>
     <li role="presentation" ng-if="!isSubUser" ng-class="{'active': ('secured.domains' | includedByState)}" class="desktopOnly">
         <a ui-sref="secured.domains" translate-context="Title">
-            <i class="fa fa-bookmark-o"></i>
+            <i class="fa fa-globe"></i>
             <span translate-comment="custom domain menu" translate>Domains</span>
         </a>
     </li>
