@@ -722,6 +722,7 @@ angular.module('proton.core')
     * @return {Promise}
     */
     api.createMessage = (event) => (updateMessage(event.Message), Promise.resolve());
+    api.updateMessage = updateMessage;
 
     /**
      * Add a new conversation in the cache

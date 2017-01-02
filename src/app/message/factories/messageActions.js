@@ -454,7 +454,16 @@ angular.module('proton.message')
             cache.addToDispatcher(promise);
 
             if (!context) {
-                promise.then(() => eventManager.call());
+                promise
+                    .then(() => {
+                        // Update the cache to trigger an update (UI)
+                        _.each(ids, (id) => {
+                            const msg = cache.getMessageCached(id) || {};
+                            msg.IsRead = 0;
+                            cache.updateMessage(msg);
+                        });
+                    })
+                    .then(() => eventManager.call());
                 return networkActivityTracker.track(promise);
             }
 
