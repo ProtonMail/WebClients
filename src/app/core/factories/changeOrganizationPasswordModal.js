@@ -1,5 +1,5 @@
 angular.module('proton.core')
-.factory('changeOrganizationPassword', (pmModal) => {
+.factory('changeOrganizationPasswordModal', (pmModal) => {
     return pmModal({
         controllerAs: 'ctrl',
         templateUrl: 'templates/modals/changeOrganizationPassword.tpl.html',
