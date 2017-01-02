@@ -1,5 +1,5 @@
 angular.module('proton.ui')
-    .directive('protonmailLogo', () => {
+    .directive('protonmailLogo', (authentication) => {
         return {
             restrict: 'E',
             templateUrl: 'templates/directives/ui/protonmailLogo.tpl.html',
@@ -24,6 +24,9 @@ angular.module('proton.ui')
                     }
                     if (scope.subscription.CouponCode === 'LIFETIME') {
                         src = 'assets/img/logo/logo-lifetime.svg';
+                    }
+                    if (authentication.user.subuser) {
+                        src = 'assets/img/logo/logo.svg';
                     }
                     img.src = src;
                 }
