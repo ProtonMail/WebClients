@@ -84,7 +84,7 @@
                             <div class="pm_table">
                                 <table class="plain">
                                     <tr ng-repeat="plan in subscription.Plans | filter: {Type: 1}">
-                                        <th style="width: 10rem" translate-context="Title" translate>Plan:</th>
+                                        <th style="width: 10rem" translate-context="Title" translate>Plan</th>
                                         <td><strong>{{ plan.Title }}</strong></td>
                                         <td style="width: 12rem" class="text-right actions">
                                             <span ng-show="subscription.Cycle === 1">{{ subscription.Amount / 100 | currency: subscription.Currency }}</span>
@@ -108,7 +108,11 @@
                                         <td colspan="2"><strong> {{ count('MaxAddresses') }} <span translate-context="Title" translate>Addresses</span></strong></td>
                                     </tr>
                                     <tr>
-                                        <th translate-context="Title" translate>Total price:</th>
+                                        <th translate-context="Title" translate>Period End</th>
+                                        <td colspan="2"><strong>{{ subscription.PeriodEnd | readableTime }}</strong></td>
+                                    </tr>
+                                    <tr>
+                                        <th translate-context="Title" translate>Total price</th>
                                         <td>
                                             <strong ng-show="subscription.Cycle === 1" translate-context="Title" translate>Monthly</strong>
                                             <strong ng-show="subscription.Cycle === 12" translate-context="Title" translate>Annually</strong>
@@ -116,9 +120,7 @@
                                         <td class="text-right actions">{{ subscription.Amount / 100 | currency: subscription.Currency }}</td>
                                     </tr>
                                     <tr>
-                                        <th>
-                                            <span translate-context="Title" translate>Payment</span>:
-                                        </th>
+                                        <th translate-context="Title" translate>Payment</th>
                                         <td>
                                             <strong ng-show="methods.length === 0" translate-context="Title" translate>None</strong>
                                             <strong ng-show="methods.length > 0" translate-context="Title" translate>Credit card</strong>

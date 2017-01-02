@@ -695,41 +695,6 @@ angular.module('proton.elements')
         });
     };
 
-    // Let users change the col/row modes.
-    $scope.changeLayout = (mode) => {
-        let newLayout;
-
-        if (mode === 'rows' && authentication.user.ViewLayout === CONSTANTS.COLUMN_MODE) {
-            newLayout = 1;
-        } else if (mode === 'columns' && authentication.user.ViewLayout === CONSTANTS.ROW_MODE) {
-            newLayout = 0;
-        } else if (mode === 'mobile') {
-            $rootScope.mobileMode = true;
-        }
-
-        if (angular.isDefined(newLayout)) {
-            networkActivityTracker.track(
-                Setting.setViewlayout({ ViewLayout: newLayout })
-                .then((result) => {
-                    if (result.data && result.data.Code === 1000) {
-                        $rootScope.mobileMode = false;
-                        return eventManager.call()
-                        .then(() => {
-                            tools.mobileResponsive();
-                            notify({ message: gettextCatalog.getString('Layout saved', null), classes: 'notification-success' });
-                        });
-                    } else if (result.data && result.data.Error) {
-                        notify({ message: result.data.Error, classes: 'notification-danger' });
-                    } else {
-                        notify({ message: 'Error during saving layout mode', classes: 'notification-danger' });
-                    }
-                })
-            );
-        }
-
-        angular.element('#pm_toolbar-desktop a').tooltip('hide');
-    };
-
     /**
      * Check if the current message is a draft
      * @param {Object} element
@@ -853,84 +818,6 @@ angular.module('proton.elements')
         }
 
         openElement(element);
-    };
-
-    /**
-     * Filter current list
-     * @param {String}
-     */
-    $scope.filterBy = (status) => {
-        $state.go($state.$current.name, _.extend({}, $state.params, {
-            filter: status,
-            page: undefined
-        }));
-    };
-
-    /**
-     * Clear current filter
-     */
-    $scope.clearFilter = () => {
-        $state.go($state.$current.name, _.extend({}, $state.params, {
-            filter: undefined,
-            page: undefined
-        }));
-    };
-
-    /**
-     * Order the list by a specific parameter
-     * @param {String} criterion
-     */
-    $scope.orderBy = (criterion) => {
-        $state.go($state.$current.name, _.extend({}, $state.params, {
-            sort: criterion === '-date' ? undefined : criterion,
-            page: undefined
-        }));
-    };
-
-    /**
-     * Empty specific location
-     * @param {String} mailbox
-     */
-    $scope.empty = (mailbox) => {
-        const title = gettextCatalog.getString('Delete all', null, 'Title');
-        const message = gettextCatalog.getString('Are you sure? This cannot be undone.', null, 'Info');
-        let promise;
-
-        if (['drafts', 'spam', 'trash'].indexOf(mailbox) !== -1) {
-            confirmModal.activate({
-                params: {
-                    title,
-                    message,
-                    confirm() {
-                        if (mailbox === 'drafts') {
-                            promise = Message.emptyDraft().$promise;
-                        } else if (mailbox === 'spam') {
-                            promise = Message.emptySpam().$promise;
-                        } else if (mailbox === 'trash') {
-                            promise = Message.emptyTrash().$promise;
-                        }
-
-                        networkActivityTracker.track(
-                            promise.then((response) => {
-                                if (response.Code === 1000) {
-                                    // Call to empty cache conversation
-                                    cache.empty(mailbox);
-                                    // Close modal
-                                    confirmModal.deactivate();
-                                    // Notify user
-                                    notify({ message: gettextCatalog.getString('Folder emptied', null), classes: 'notification-success' });
-                                    // Call event manager to update the storage space
-                                    eventManager.call();
-                                }
-                            })
-                        );
-                    },
-                    cancel() {
-                        confirmModal.deactivate();
-                    }
-                }
-            });
-        }
     };
 
     // Call initialization

@@ -8,9 +8,12 @@ const SELECTOR = {
         inbox: '.toolbar-btn-inbox',
         archive: '.toolbar-btn-archive',
         spam: '.toolbar-btn-spam',
-        delete: '.toolbar-btn-delete'
+        delete: '.toolbar-btn-delete',
+        layout: {
+            column: '.chooseLayoutBtns-btn-column',
+            rows: '.chooseLayoutBtns-btn-rows'
+        }
     }
-
 };
 
 const selectAll = () => {
@@ -42,4 +45,14 @@ const moveTo = (key = 'trash') => {
     `);
 };
 
-module.exports = { selectAll, read, moveTo };
+const layout = (key = 'column') => {
+    const selector = SELECTOR.buttons.layout[key];
+
+    return browser.executeScript(`
+        $('${SELECTOR.container}')
+            .find('${selector}')
+            .click();
+    `);
+};
+
+module.exports = { selectAll, read, moveTo, layout };

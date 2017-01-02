@@ -29,20 +29,21 @@ module.exports = ({
 
         it('should select some options', () => {
             dropdownLabel.select(selected)
-                .then(() => browser.sleep(500))
+                .then(() => browser.sleep(1000))
                 .then(() => dropdownLabel.countSeleted())
                 .then(assert(countAlreadySelected + selected.length));
         });
 
         it('should unselect options', () => {
             dropdownLabel.unselect(unselected)
-                .then(() => browser.sleep(500))
+                .then(() => browser.sleep(1000))
                 .then(() => dropdownLabel.countSeleted())
                 .then(assert(countAlreadySelected + selected.length - unselected.length));
         });
 
         it('should archive by default', () => {
-            dropdownLabel.isArchived()
+            browser.sleep(1000)
+                .then(() => dropdownLabel.isArchived())
                 .then(shouldArchivedDefault ? isTrue : isFalse);
         });
 
@@ -67,8 +68,11 @@ module.exports = ({
         });
 
         it('should display a notfication', () => {
-            browser.sleep(2000)
-            notifs.message()
+            browser.wait(() => {
+                return notifs.isOpened()
+                    .then((test) => test === true);
+            }, 10000)
+                .then(() => notifs.message())
                 .then(assert('Labels Saved'));
         });
 
