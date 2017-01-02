@@ -9,7 +9,7 @@ angular.module('proton.settings')
     Address,
     activateOrganizationModal,
     authentication,
-    changeOrganizationPassword,
+    changeOrganizationPasswordModal,
     confirmModal,
     CONSTANTS,
     domains,
@@ -391,11 +391,11 @@ angular.module('proton.settings')
      * Open modal to change the organization password
      */
     $scope.changeOrganizationPassword = () => {
-        changeOrganizationPassword.activate({
+        changeOrganizationPasswordModal.activate({
             params: {
                 close(newPassword) {
                     newPassword && saveRecoveryPassword(newPassword);
-                    changeOrganizationPassword.deactivate();
+                    changeOrganizationPasswordModal.deactivate();
                 }
             }
         });
