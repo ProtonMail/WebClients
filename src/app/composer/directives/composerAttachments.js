@@ -98,23 +98,31 @@ angular.module('proton.composer')
                     break;
                 case 'cancel':
                 case 'remove.success':
-                    scope
-                        .$applyAsync(() => {
-                            scope.list = scope
-                                .list
-                                .filter((o) => o.id !== id) // Click from editor button
-                                .filter((o) => o.id !== REQUEST_ID); // Remove with SUPPR from editor
-                            !scope.list.length && actionsPanel.hide();
-                        });
+                    scope.$applyAsync(() => {
+                        scope.list = scope
+                            .list
+                            .filter((o) => o.id !== id) // Click from editor button
+                            .filter((o) => o.id !== REQUEST_ID); // Remove with SUPPR from editor
+                        !scope.list.length && actionsPanel.hide();
+                    });
                     break;
 
                 case 'uploading':
                     if (status && isStart) {
-                        scope
-                            .$applyAsync(() => {
-                                scope.list.push({ id, packet, messageID, message: scope.message });
-                            });
+                        scope.$applyAsync(() => {
+                            scope.list.push({ id, packet, messageID, message: scope.message });
+                        });
                     }
+                    break;
+
+                case 'error':
+                    scope.$applyAsync(() => {
+                        scope.list = scope.list.filter((item) => {
+                            return item.id !== id && item.message.ID !== scope.message.ID;
+                        });
+                        actionsPanel.close();
+                        !scope.list.length && actionsPanel.hide();
+                    });
                     break;
 
                 case 'upload.success':
