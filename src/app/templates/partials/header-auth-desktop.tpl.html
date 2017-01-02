@@ -62,8 +62,9 @@
                 <span class="user">
                     <strong>{{ ::user.DisplayName }}</strong>
                     <b>{{ user.Addresses[0].Email }}</b>
+                    <b>{{ organization.DisplayName }}</b>
                 </span>
-                <button class="help" ng-if="wizardEnabled === true" data-display-wizard-button>
+                <button class="help" ng-if="wizardEnabled" data-display-wizard-button>
                     <i class="fa fa-magic"></i>
                     <span translate translate-context="Action">Tutorial</span>
                 </button>
