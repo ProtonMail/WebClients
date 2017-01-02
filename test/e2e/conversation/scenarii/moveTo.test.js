@@ -1,15 +1,14 @@
-const notifs = require('../../../../e2e.utils/notifications');
-const { assert, isTrue, isFalse } = require('../../../../e2e.utils/assertions');
-const toolbar = require('../../../../e2e.utils/toolbar');
+const notifs = require('../../../e2e.utils/notifications');
+const { assert, isTrue, isFalse, greaterThan } = require('../../../e2e.utils/assertions');
+const toolbar = require('../../../e2e.utils/toolbar');
 
-module.exports = (column) => {
+module.exports = (column, isMessage = false) => {
     describe('Move to', () => {
-
 
         it('should move them all to archive', () => {
             toolbar.selectAll()
                 .then(() => toolbar.moveTo('archive'))
-                .then(() => browser.sleep(1000))
+                .then(() => browser.sleep(3000))
                 .then(() => column.count())
                 .then((total) => {
                     column.countFlag('archive')
@@ -21,14 +20,14 @@ module.exports = (column) => {
             browser.wait(() => {
                 return notifs.isOpened()
                     .then((test) => test === true);
-            }, 2000)
+            }, 5000)
                 .then(() => notifs.containsMessage('Conversations moved to Archive'))
                 .then(isTrue);
         });
 
-        it('should have unselect all', () => {
+        it(`should have ${isMessage ? 'not' : ''} unselect all`, () => {
             column.countSeleted()
-                .then(assert(0));
+                .then(isMessage ? greaterThan(0) : assert(0));
         });
 
         describe('to inbox', () => {
@@ -49,9 +48,9 @@ module.exports = (column) => {
                     .then(isTrue);
             });
 
-            it('should have unselect all', () => {
+            it(`should have ${isMessage ? 'not': ''} unselect all`, () => {
                 column.countSeleted()
-                    .then(assert(0));
+                    .then(isMessage ? greaterThan(0) : assert(0));
             });
         });
 
