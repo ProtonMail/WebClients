@@ -45,7 +45,7 @@
                 <i class="fa fa-ban"></i>
                 <span translate translate-context="Action">Move to spam</span>
             </a>
-            <a ng-click="delete()" ng-show="{{ 'secured.trash.**' | includedByState }}" ng-class="{ disabled: numberElementSelected === 0 }">
+            <a ng-click="delete()" ng-show="('secured.trash.**' | includedByState) || ('secured.drafts.**' | includedByState) || ('secured.allmail.**' | includedByState)" ng-class="{ disabled: numberElementSelected === 0 }">
                 <i class="fa fa-times-circle-o"></i>
                 <span translate translate-context="Action">Delete</span>
             </a>

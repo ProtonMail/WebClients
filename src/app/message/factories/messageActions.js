@@ -272,6 +272,7 @@ angular.module('proton.message')
                     ID: message.ID,
                     Message: {
                         ID: message.ID,
+                        IsRead: message.IsRead,
                         ConversationID: message.ConversationID,
                         Selected: false,
                         LabelIDsAdded: toApply,
@@ -304,13 +305,13 @@ angular.module('proton.message')
         function star(id) {
             const events = [];
             const LabelIDsAdded = [CONSTANTS.MAILBOX_IDENTIFIERS.starred];
-            const { ID, ConversationID } = cache.getMessageCached(id);
+            const { ID, ConversationID, IsRead } = cache.getMessageCached(id);
             const conversation = cache.getConversationCached(ConversationID);
 
             // Messages
             events.push({
                 Action: 3, ID,
-                Message: { ID, LabelIDsAdded }
+                Message: { ID, IsRead, LabelIDsAdded }
             });
 
             // Conversation
@@ -346,7 +347,7 @@ angular.module('proton.message')
         function unstar(id) {
             const events = [];
             const LabelIDsRemoved = [CONSTANTS.MAILBOX_IDENTIFIERS.starred];
-            const { ID, ConversationID } = cache.getMessageCached(id);
+            const { ID, ConversationID, IsRead } = cache.getMessageCached(id);
             const conversation = cache.getConversationCached(ConversationID);
             const messages = cache.queryMessagesCached(ConversationID);
             const stars = _.filter(messages, ({ LabelIDs = [] }) => _.contains(LabelIDs, CONSTANTS.MAILBOX_IDENTIFIERS.starred));
@@ -354,7 +355,7 @@ angular.module('proton.message')
             // Messages
             events.push({
                 Action: 3, ID,
-                Message: { ID, LabelIDsRemoved }
+                Message: { ID, IsRead, LabelIDsRemoved }
             });
 
             // Conversation
@@ -453,18 +454,21 @@ angular.module('proton.message')
             cache.addToDispatcher(promise);
 
             if (!context) {
-                promise.then(() => eventManager.call());
+                promise
+                    .then(() => {
+                        // Update the cache to trigger an update (UI)
+                        _.each(ids, (id) => {
+                            const msg = cache.getMessageCached(id) || {};
+                            msg.IsRead = 0;
+                            cache.updateMessage(msg);
+                        });
+                    })
+                    .then(() => eventManager.call());
                 return networkActivityTracker.track(promise);
             }
 
             const { messageIDs, conversationIDs, events } = _
                 .reduce(ids, (acc, ID) => {
-
-                    if (!cache.getMessageCached(ID)) {
-                        console.log(ID, cache);
-                        debugger;
-                    }
-
                     const { IsRead, ConversationID } = cache.getMessageCached(ID) || {};
 
                     if (IsRead === 1) {

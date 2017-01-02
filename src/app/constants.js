@@ -63,6 +63,7 @@ angular.module('proton.constants', [])
         sent: '2', // outbox
         trash: '3',
         spam: '4',
+        allmail: '5',
         starred: '10',
         archive: '6',
         search: '7',

@@ -1,6 +1,7 @@
 angular.module('proton.core')
 .controller('SignupController', (
     $http,
+    $httpParamSerializer,
     $location,
     $log,
     $q,
@@ -12,21 +13,22 @@ angular.module('proton.core')
     $window,
     Address,
     authentication,
-    CONSTANTS,
     confirmModal,
+    CONSTANTS,
     direct,
     domains,
     gettextCatalog,
     Key,
     networkActivityTracker,
     notify,
+    passwords,
     Payment,
     plans,
-    passwords,
     pmcw,
     Reset,
     setupKeys,
     tools,
+    url,
     User
 ) => {
     let childWindow;
@@ -93,7 +95,7 @@ angular.module('proton.core')
             const { VerifyMethods = [] } = direct;
             // determine what activation methods to show
             $scope.showEmail = _.contains(VerifyMethods, 'email');
-            $scope.showCaptcha = _.contains(VerifyMethods, 'recaptcha');
+            $scope.showCaptcha = _.contains(VerifyMethods, 'captcha');
             $scope.showSms = _.contains(VerifyMethods, 'sms');
             $scope.showPayment = _.contains(VerifyMethods, 'payment');
         }
@@ -169,7 +171,7 @@ angular.module('proton.core')
         // Captcha
         window.addEventListener('message', captchaReceiveMessage, false);
 
-        // Change this to our recaptcha key, configurable in Angular?
+        // Change this to our captcha key, configurable in Angular?
         const message = {
             type: 'pm_captcha',
             language: 'en',
@@ -185,7 +187,7 @@ angular.module('proton.core')
 
     $scope.initHumanityTest = () => {
         if ($scope.showCaptcha) {
-            $scope.verificator = 'recaptcha';
+            $scope.verificator = 'captcha';
             $scope.setIframeSrc();
         } else if ($scope.showEmail) {
             $scope.verificator = 'email';
@@ -196,8 +198,9 @@ angular.module('proton.core')
 
     $scope.setIframeSrc = () => {
         const iframe = document.getElementById('pm_captcha');
+        const parameters = $httpParamSerializer({ token: 'signup', client: 'web', host: url.host() });
         iframe.onload = window.captchaSendMessage;
-        iframe.src = 'https://secure.protonmail.com/recaptcha.html';
+        iframe.src = 'https://secure.protonmail.com/captcha/captcha.html?' + parameters;
     };
 
     $scope.notificationEmailValidation = () => {
@@ -506,7 +509,7 @@ angular.module('proton.core')
             params.TokenType = 'invite';
         } else if (angular.isDefined($scope.account.captcha_token) && $scope.account.captcha_token !== false) {
             params.Token = $scope.account.captcha_token;
-            params.TokenType = 'recaptcha';
+            params.TokenType = 'captcha';
         } else if ($scope.verifyCode) {
             params.Token = $scope.verifyCode;
             params.TokenType = 'payment';

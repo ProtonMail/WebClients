@@ -1,6 +1,6 @@
 var _ = require('lodash');
 var util = require('util');
-var appVersion = '3.6.6';
+var appVersion = '3.6.9';
 var apiVersion = '1';
 var dateVersion = new Date().toDateString();
 var clientID = 'Angular';
@@ -144,7 +144,7 @@ module.exports = function(grunt) {
         connect: {
             options: {
                 hostname: '*',
-                open: true,
+                open: !grunt.option('no-open'),
                 port: 8080,
                 middleware: function(connect, options, middlewares) {
                     var base = options.base[0];

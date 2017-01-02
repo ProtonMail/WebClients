@@ -22,8 +22,7 @@ angular.module('proton.routes', [
             'end',
             'attachments',
             'starred',
-            'reload',
-            'trashspam'
+            'reload'
         ];
 
         return parameters.join('&');
@@ -426,14 +425,15 @@ angular.module('proton.routes', [
 
                     $scope.unlock = () => {
 
-                        const promise = pmcw
-                            .decryptMessage(encryptedToken, $scope.params.MessagePassword)
+                        const promise = pmcw.decryptMessage(encryptedToken, $scope.params.MessagePassword)
                             .then((decryptedToken) => {
                                 secureSessionStorage.setItem('proton:decrypted_token', decryptedToken.data);
                                 secureSessionStorage.setItem('proton:encrypted_password', pmcw.encode_utf8_base64($scope.params.MessagePassword));
                                 $state.go('eo.message', { tag: $stateParams.tag });
-                            }, (err) => {
-                                notify({ message: err.message, classes: 'notification-danger' });
+                            })
+                            .catch((err) => {
+                                console.error(err);
+                                notify({ message: 'Wrong Mailbox Password.', classes: 'notification-danger' });
                             });
 
                         networkActivityTracker.track(promise);

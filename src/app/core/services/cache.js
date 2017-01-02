@@ -8,6 +8,7 @@ angular.module('proton.core')
     authentication,
     CONSTANTS,
     Conversation,
+    firstLoad,
     Message,
     cacheCounters,
     networkActivityTracker,
@@ -129,21 +130,28 @@ angular.module('proton.core')
      * @param {String} type = conversation or message
      * @return {Object}
      */
-    function vector(element, unread, type) {
+    function vector({ LabelIDs = [], IsRead, NumUnread }, unread, type) {
         const result = {};
-        let condition = true;
-        const locs = ['0', '1', '2', '3', '4', '6', '10'].concat(_.map(authentication.user.Labels, ({ ID }) => ID) || []);
+        let unreadCondition = true;
+        const locs = [
+            CONSTANTS.MAILBOX_IDENTIFIERS.inbox,
+            CONSTANTS.MAILBOX_IDENTIFIERS.drafts,
+            CONSTANTS.MAILBOX_IDENTIFIERS.sent,
+            CONSTANTS.MAILBOX_IDENTIFIERS.trash,
+            CONSTANTS.MAILBOX_IDENTIFIERS.archive,
+            CONSTANTS.MAILBOX_IDENTIFIERS.starred
+        ].concat(_.map(authentication.user.Labels, ({ ID }) => ID) || []);
 
         if (unread === true) {
             if (type === 'message') {
-                condition = element.IsRead === 0;
+                unreadCondition = IsRead === 0;
             } else if (type === 'conversation') {
-                condition = element.NumUnread > 0;
+                unreadCondition = NumUnread > 0;
             }
         }
 
         _.each(locs, (loc) => {
-            if (angular.isDefined(element.LabelIDs) && element.LabelIDs.indexOf(loc) !== -1 && condition) {
+            if (LabelIDs.indexOf(loc) !== -1 && unreadCondition) {
                 result[loc] = 1;
             } else {
                 result[loc] = 0;
@@ -190,7 +198,14 @@ angular.module('proton.core')
         const newUnreadVector = vector(newElement, true, type);
         const newTotalVector = vector(newElement, false, type);
         const oldTotalVector = vector(oldElement, false, type);
-        const locs = ['0', '1', '2', '3', '4', '6', '10'].concat(_.map(authentication.user.Labels, ({ ID }) => ID) || []);
+        const locs = [
+            CONSTANTS.MAILBOX_IDENTIFIERS.inbox,
+            CONSTANTS.MAILBOX_IDENTIFIERS.drafts,
+            CONSTANTS.MAILBOX_IDENTIFIERS.sent,
+            CONSTANTS.MAILBOX_IDENTIFIERS.trash,
+            CONSTANTS.MAILBOX_IDENTIFIERS.archive,
+            CONSTANTS.MAILBOX_IDENTIFIERS.starred
+        ].concat(_.map(authentication.user.Labels, ({ ID }) => ID) || []);
 
         _.each(locs, (loc) => {
             const deltaUnread = newUnreadVector[loc] - oldUnreadVector[loc];
@@ -517,14 +532,13 @@ angular.module('proton.core')
     /**
      * Return message list
      * @param {Object} request
-     * @param {Boolean} firstLoad
      * @return {Promise}
      */
-    api.queryMessages = (request, firstLoad = false) => {
+    api.queryMessages = (request) => {
         const loc = getLocation(request);
         const context = tools.cacheContext();
 
-        if (context && !firstLoad) {
+        if (context && !firstLoad.get()) {
             const page = request.Page || 0;
             const start = page * CONSTANTS.ELEMENTS_PER_PAGE;
             const end = start + CONSTANTS.ELEMENTS_PER_PAGE;
@@ -570,22 +584,22 @@ angular.module('proton.core')
     /**
      * Return conversation list with request specified in cache or call api
      * @param {Object} request
-     * @param {Boolean} firstLoad
      * @return {Promise}
      */
-    api.queryConversations = (request, firstLoad = false) => {
+    api.queryConversations = (request) => {
         const loc = getLocation(request);
         const context = tools.cacheContext();
         // Need data from the server
 
         // In cache context?
-        if (context && !firstLoad) {
+        if (context && !firstLoad.get()) {
             const page = request.Page || 0;
             const start = page * CONSTANTS.ELEMENTS_PER_PAGE;
             const end = start + CONSTANTS.ELEMENTS_PER_PAGE;
             let total;
             let number;
             const mailbox = tools.currentMailbox();
+
             let conversations = _.filter(conversationsCached, ({ LabelIDs = [], ID }) => {
                 return LabelIDs.indexOf(loc) !== -1 && api.getTime(ID, loc);
             });
@@ -708,6 +722,7 @@ angular.module('proton.core')
     * @return {Promise}
     */
     api.createMessage = (event) => (updateMessage(event.Message), Promise.resolve());
+    api.updateMessage = updateMessage;
 
     /**
      * Add a new conversation in the cache

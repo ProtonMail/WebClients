@@ -1,38 +1,39 @@
 angular.module('proton.elements')
 .controller('ElementsController', (
-    $q,
+    $cookies,
+    $filter,
     $log,
+    $q,
     $rootScope,
     $scope,
     $state,
     $stateParams,
     $timeout,
-    gettextCatalog,
-    $filter,
     $window,
-    $cookies,
     actionConversation,
-    CONSTANTS,
-    Conversation,
-    Message,
-    eventManager,
-    Label,
+    AttachmentLoader,
     authentication,
     cache,
-    confirmModal,
-    Setting,
     cacheCounters,
-    networkActivityTracker,
-    AttachmentLoader,
-    notify,
+    confirmModal,
+    CONSTANTS,
+    Conversation,
     embedded,
+    eventManager,
+    firstLoad,
+    gettextCatalog,
+    Label,
+    Message,
+    networkActivityTracker,
+    notify,
     paginationModel,
+    Setting,
     tools
 ) => {
     const unsubscribes = [];
     let unbindWatcherElements;
-    $scope.firstLoad = true; // Variable used to determine if it's the first load to force the cache to call back-end result
 
+    $scope.elementsLoaded = false;
     $scope.conversations = [];
     /**
      * Method called at the initialization of this controller
@@ -47,13 +48,17 @@ angular.module('proton.elements')
         $scope.messageButtons = authentication.user.MessageButtons;
         $scope.selectedFilter = $stateParams.filter;
         $scope.selectedOrder = $stateParams.sort || '-date';
-        $scope.page = parseInt($stateParams.page || 1, 10);
+        $scope.page = ~~$stateParams.page || 1;
         $scope.startWatchingEvent();
         $scope.refreshElements().then(() => {
             $scope.$applyAsync(actionsDelayed); // If we don't use the timeout, messages seems not available (to unselect for example)
             // I consider this trick like a bug in the angular application
         }, $log.error);
     }
+
+    $scope.$on('$stateChangeSuccess', () => {
+        $scope.elementsLoaded = false;
+    });
 
     $scope.watchElements = () => {
         if (angular.isDefined(unbindWatcherElements)) {
@@ -301,14 +306,10 @@ angular.module('proton.elements')
         return ddp2;
     };
 
-    function getConversationsParameters(mailbox) {
+    function forgeRequestParameters(mailbox) {
         const params = {};
 
-        params.Page = ($stateParams.page || 1) - 1;
-
-        if (angular.isDefined($stateParams.trashspam)) {
-            params.TrashSpam = 0;
-        }
+        params.Page = (~~$stateParams.page || 1) - 1;
 
         if (angular.isDefined($stateParams.filter)) {
             params.Unread = +($stateParams.filter === 'unread'); // Convert Boolean to Integer
@@ -349,62 +350,68 @@ angular.module('proton.elements')
 
     $scope.refreshElements = () => {
         const deferred = $q.defer();
-        const request = getConversationsParameters($scope.mailbox);
+        const request = forgeRequestParameters($scope.mailbox);
         const context = tools.cacheContext();
         const type = tools.typeList();
         let promise;
 
         if (type === 'message') {
-            promise = cache.queryMessages(request, $scope.firstLoad);
+            promise = cache.queryMessages(request);
         } else if (type === 'conversation') {
-            promise = cache.queryConversations(request, $scope.firstLoad);
+            promise = cache.queryConversations(request);
         }
 
         promise.then((elements) => {
-            const page = $stateParams.page || 0;
+            firstLoad.set(false);
+            const page = ~~$stateParams.page || 0;
             const selectedMap = $scope.conversations.reduce((map, element) => {
                 if (element.Selected) {
                     map[element.ID] = element;
                 }
                 return map;
             }, {});
-            $scope.conversations = elements.map((element) => {
-                element.Selected = typeof selectedMap[element.ID] !== 'undefined';
-                return element;
-            });
-            $scope.watchElements();
-            $scope.firstLoad = false;
 
-            if ($scope.conversations.length === 0 && page > 0) {
-                $scope.back();
-            }
+            $scope.$applyAsync(() => {
+                $scope.elementsLoaded = true;
+                $scope.conversations = elements.map((element) => {
+                    element.Selected = typeof selectedMap[element.ID] !== 'undefined';
+                    return element;
+                });
 
-            if ($scope.conversations.length > 0) {
-                let element;
+                $scope.watchElements();
 
-                if (!$scope.markedElement) {
-                    if ($state.params.id) {
-                        element = _.findWhere($scope.conversations, { ID: $state.params.id });
-                    } else {
-                        element = _.first($scope.conversations);
-                    }
-                } else {
-                    const found = _.findWhere($scope.conversations, { ID: $scope.markedElement.ID });
-
-                    if (found) {
-                        element = found;
-                    } else {
-                        element = _.first($scope.conversations);
-                    }
+                if ($scope.conversations.length === 0 && page > 0) {
+                    $scope.back();
                 }
 
-                $scope.markedElement = element;
-            }
+                if ($scope.conversations.length > 0) {
+                    let element;
+
+                    if (!$scope.markedElement) {
+                        if ($state.params.id) {
+                            element = _.findWhere($scope.conversations, { ID: $state.params.id });
+                        } else {
+                            element = _.first($scope.conversations);
+                        }
+                    } else {
+                        const found = _.findWhere($scope.conversations, { ID: $scope.markedElement.ID });
+
+                        if (found) {
+                            element = found;
+                        } else {
+                            element = _.first($scope.conversations);
+                        }
+                    }
+
+                    $scope.markedElement = element;
+                }
+            });
+
 
             deferred.resolve(elements);
         }, (error) => {
             notify({ message: gettextCatalog.getString('Error during quering conversations', null, 'Error'), classes: 'notification-danger' });
-            $log.error(error);
+            console.error(error);
         });
 
         if (context === false) {
@@ -764,7 +771,7 @@ angular.module('proton.elements')
     function goToPage(type = 'to') {
         $stateParams.page && $scope.unselectAllElements();
         paginationModel.setMaxPage($scope.conversationCount());
-        $scope.page = $stateParams.page || 1;
+        $scope.page = ~~$stateParams.page || 1;
         paginationModel[type]();
     }
 
@@ -876,13 +883,6 @@ angular.module('proton.elements')
     $scope.orderBy = (criterion) => {
         $state.go($state.$current.name, _.extend({}, $state.params, {
             sort: criterion === '-date' ? undefined : criterion,
-            page: undefined
-        }));
-    };
-
-    $scope.toggleTrashSpam = () => {
-        $state.go($state.$current.name, _.extend({}, $state.params, {
-            trashspam: angular.isDefined($stateParams.trashspam) ? undefined : 0,
             page: undefined
         }));
     };

@@ -136,10 +136,11 @@ angular.module('proton.conversation')
         const conversation = cache.getConversationCached(ID);
 
         // Generate message changes with event
-        const events = _.reduce(cache.queryMessagesCached(ID), (acc, { ID }) => {
+        const events = _.reduce(cache.queryMessagesCached(ID), (acc, { ID, IsRead }) => {
             acc.push({
-                ID, Action: 3,
-                Message: { ID, LabelIDsRemoved }
+                ID,
+                Action: 3,
+                Message: { ID, IsRead, LabelIDsRemoved }
             });
             return acc;
         }, []);
@@ -172,10 +173,11 @@ angular.module('proton.conversation')
         const conversation = cache.getConversationCached(ID);
 
         // Generate message changes with event
-        const events = _.reduce(cache.queryMessagesCached(ID), (acc, { ID }) => {
+        const events = _.reduce(cache.queryMessagesCached(ID), (acc, { ID, IsRead }) => {
             acc.push({
-                ID, Action: 3,
-                Message: { ID, LabelIDsAdded }
+                ID,
+                Action: 3,
+                Message: { ID, IsRead, LabelIDsAdded }
             }, []);
             return acc;
         }, []);
@@ -228,13 +230,12 @@ angular.module('proton.conversation')
         const events = _.chain(ids)
             .map((id) => cache.getConversationCached(id))
             .filter(Boolean)
-            .reduce((acc, { ID }) => {
+            .reduce((acc, { ID, NumUnread }) => {
                 const messages = cache.queryMessagesCached(ID);
 
                 _.each(messages, (message) => {
                     const toApply = [].concat(toApplyLabels);
                     const toRemove = [].concat(toRemoveLabels);
-                    message.LabelIDs = message.LabelIDs || [];
 
                     if (alsoArchive === true) {
                         toApply.push(MAILBOX_IDENTIFIERS.archive);
@@ -246,6 +247,7 @@ angular.module('proton.conversation')
                         ID: message.ID,
                         Message: {
                             ID: message.ID,
+                            IsRead: message.IsRead,
                             LabelIDsAdded: toApply,
                             LabelIDsRemoved: toRemove
                         }
@@ -253,9 +255,12 @@ angular.module('proton.conversation')
                 });
 
                 acc.push({
-                    Action: 3, ID,
+                    Action: 3,
+                    ID,
                     Conversation: {
-                        ID, Selected: false,
+                        ID,
+                        NumUnread,
+                        Selected: false,
                         LabelIDsAdded: toApply,
                         LabelIDsRemoved: toRemove
                     }
@@ -310,6 +315,7 @@ angular.module('proton.conversation')
 
         const labelIDsAdded = [MAILBOX_IDENTIFIERS[mailbox]];
         const toTrash = mailbox === 'trash';
+        const toInbox = mailbox === 'inbox';
 
         // Generate cache events
         const events = _.reduce(ids, (acc, ID) => {
@@ -325,7 +331,7 @@ angular.module('proton.conversation')
                     return MAILBOX_IDS.indexOf(labelID) > -1;
                 });
 
-                if (mailbox === 'inbox') {
+                if (toInbox) {
                     /**
                      * Types definition
                      *   - 1: a draft

@@ -1,0 +1,9 @@
+<div class="pm-flex-content" >
+    <button type="button" class="createLabel-button text-left pm-flex-content-row alignItemsCenter" ng-click="create()" ng-enter="create()">
+        <span ng-show="name.length > 0">
+            <span translate translate-context="action"> Create label </span>
+            <i>"{{ name }}"</i> ?
+        </span>
+        <span ng-hide="name.length > 0" translate translate-context="action">Create a new label ?</span>
+    </button>
+</div>

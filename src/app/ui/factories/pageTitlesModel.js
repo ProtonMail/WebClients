@@ -5,6 +5,7 @@ angular.module('proton.ui')
         const DISPLAY_NUMBER = ['inbox', 'drafts', 'sent', 'starred', 'archive', 'spam', 'trash'];
         const MAP = {
             inbox: gettextCatalog.getString('Inbox', null, 'Title'),
+            search: gettextCatalog.getString('Search', null, 'Title'),
             drafts: gettextCatalog.getString('Drafts', null, 'Title'),
             sent: gettextCatalog.getString('Sent', null, 'Title'),
             starred: gettextCatalog.getString('Starred', null, 'Title'),
@@ -25,7 +26,8 @@ angular.module('proton.ui')
             keys: gettextCatalog.getString('Keys', null, 'Title'),
             payments: gettextCatalog.getString('Payment methods', null, 'Title'),
             addresses: gettextCatalog.getString('Addresses', null, 'Title'),
-            login: gettextCatalog.getString('Login', null, 'Title')
+            login: gettextCatalog.getString('Login', null, 'Title'),
+            signup: gettextCatalog.getString('Signup', null, 'Title')
         };
 
         function getFirstSortedAddresses() {

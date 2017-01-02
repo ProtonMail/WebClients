@@ -54,7 +54,7 @@
             href="#"
             pt-tooltip-translate="Delete"
             ng-click="delete()"
-            ng-if="('secured.trash.**' | includedByState) || ('secured.drafts.**' | includedByState)"
+            ng-if="('secured.trash.**' | includedByState) || ('secured.drafts.**' | includedByState) || ('secured.allmail.**' | includedByState)"
             ng-class="{ disabled: numberElementSelected === 0 }"
             class="fa fa-times-circle-o toolbar-btn-delete"
             pt-tooltip-translate-context="Action"></a>
@@ -118,10 +118,6 @@
             <a href="#" ng-click="filterBy('read')">
                 <i class="fa fa-eye"></i>
                 <span translate translate-context="Action">Show read</span>
-            </a>
-            <a href="#" ng-click="toggleTrashSpam()">
-                <i class="fa fa-toggle-on"></i>
-                <span translate translate-context="Action">Toggle trash spam</span>
             </a>
         </span>
     </span>

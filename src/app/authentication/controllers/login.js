@@ -349,7 +349,7 @@ angular.module('proton.authentication')
         }
     };
 
-    $scope.enterTwoFactor = function () {
+    $scope.enterTwoFactor = () => {
         if (angular.isUndefined($scope.twoFactorCode) || $scope.twoFactorCode.length === 0) {
             notify({ message: gettextCatalog.getString('Please enter your two-factor passcode', null, 'Error'), classes: 'notification-danger' });
             return;
@@ -357,7 +357,7 @@ angular.module('proton.authentication')
         login($scope.username, $scope.password, $scope.twoFactorCode, $scope.initialInfoResponse);
     };
 
-    $scope.unlock = function (e) {
+    $scope.unlock = (e) => {
 
         e.preventDefault();
         // Blur unlock password field
@@ -370,7 +370,7 @@ angular.module('proton.authentication')
         networkActivityTracker.track(unlock(mailboxPassword, $scope.creds.authResponse));
     };
 
-    $scope.reset = function () {
+    $scope.reset = () => {
         if (CONSTANTS.KEY_PHASE > 2) {
             $rootScope.isLoggedIn = false;
             $state.go('support.reset-password');

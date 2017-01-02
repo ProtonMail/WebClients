@@ -2,7 +2,7 @@ angular.module('proton.core')
 //
 // Redirection if not authentified
 //
-.factory('authHttpResponseInterceptor', ($q, $injector, $rootScope) => {
+.factory('authHttpResponseInterceptor', ($q, $injector, $rootScope, AppModel) => {
     let notification = false;
     let upgradeNotification = false;
 
@@ -43,6 +43,18 @@ angular.module('proton.core')
                         classes: 'notification-info',
                         message: 'The ProtonMail API is offline: ' + response.data.Error
                     });
+                } else if (response.data.Code === 9001) {
+                    const humanVerificationModal = $injector.get('humanVerificationModal');
+                    humanVerificationModal.activate({
+                        params: {
+                            response,
+                            close(resend = false) {
+                                const $http = $injector.get('$http');
+                                humanVerificationModal.deactivate();
+                                resend && $http(response.config);
+                            }
+                        }
+                    });
                 }
             }
 
@@ -61,6 +73,7 @@ angular.module('proton.core')
                         classes: 'notification-danger'
                     });
                 }
+                AppModel.set('onLine', false);
             } else if (rejection.status === 401) {
                 if ($rootScope.doRefresh === true) {
                     $rootScope.doRefresh = false;

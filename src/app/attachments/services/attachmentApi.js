@@ -1,5 +1,5 @@
 angular.module('proton.attachments')
-    .factory('attachmentApi', ($http, url, $q, $rootScope, authentication, notify, pmcw, CONFIG, CONSTANTS, secureSessionStorage, gettextCatalog, $log) => {
+    .factory('attachmentApi', ($http, url, $q, $rootScope, authentication, notify, pmcw, CONFIG, CONSTANTS, secureSessionStorage, gettextCatalog) => {
 
         let pendingUpload = [];
         const notifyError = (message) => notify({ message, classes: 'notification-danger' });
@@ -75,6 +75,13 @@ angular.module('proton.attachments')
             const xhr = new XMLHttpRequest();
             const keys = authentication.getPrivateKeys(message.AddressID);
 
+            // Check the network status of the app (XHR does not auto close)
+            const unsubscribe = $rootScope.$on('AppModel', (e, { type, data = {} }) => {
+                if (type === 'onLine' && !data.value) {
+                    xhr.abort();
+                }
+            });
+
             pendingUpload.push({
                 id: REQUEST_ID,
                 messageID: message.ID,
@@ -87,6 +94,25 @@ angular.module('proton.attachments')
             xhr.upload.onprogress = (event) => {
                 const progress = (event.loaded / event.total) * 99;
                 dispatcher(progress, true);
+            };
+
+            xhr.onerror = function onerror() {
+                // remove the current request as it's resolved
+                pendingUpload = _.reject(pendingUpload, {
+                    id: REQUEST_ID,
+                    messageID: message.ID
+                });
+
+                message.uploading = _.where(pendingUpload, { messageID: message.ID }).length;
+
+                dispatch('error', {
+                    id: REQUEST_ID,
+                    messageID: message.ID,
+                    message
+                });
+
+                deferred.resolve({ id: REQUEST_ID, isError: true });
+                unsubscribe();
             };
 
             xhr.onabort = function onabort() {
@@ -105,26 +131,15 @@ angular.module('proton.attachments')
                 });
 
                 deferred.resolve({ id: REQUEST_ID, isAborted: true });
+                unsubscribe();
             };
 
             xhr.onload = function onload() {
-                dispatcher(100, false);
-                dispatch('uploaded.success', {
-                    id: REQUEST_ID,
-                    messageID: message.ID,
-                    packet: tempPacket,
-                    total
-                });
-
-                // remove the current request as it's resolved
-                pendingUpload = _.reject(pendingUpload, {
-                    id: REQUEST_ID,
-                    messageID: message.ID
-                });
 
                 const { json, isInvalid } = parseJSON(xhr);
 
                 const statusCode = this.status;
+                unsubscribe();
 
                 if (statusCode !== 200) {
                     // Error with the request
@@ -140,6 +155,20 @@ angular.module('proton.attachments')
                     notifyError(msgError);
                     return deferred.reject(json);
                 }
+
+                dispatcher(100, false);
+                dispatch('uploaded.success', {
+                    id: REQUEST_ID,
+                    messageID: message.ID,
+                    packet: tempPacket,
+                    total
+                });
+
+                // remove the current request as it's resolved
+                pendingUpload = _.reject(pendingUpload, {
+                    id: REQUEST_ID,
+                    messageID: message.ID
+                });
 
                 pmcw.decryptSessionKey(packets.keys, keys)
                     .then((sessionKey) => ({
@@ -182,7 +211,7 @@ angular.module('proton.attachments')
                 })
                 .catch((error) => {
                     notifyError(error);
-                    $log.error(error);
+                    console.error(error);
                 });
         };
 
