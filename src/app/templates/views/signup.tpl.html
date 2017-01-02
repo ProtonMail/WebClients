@@ -25,9 +25,9 @@
                     <i class="fa fa-angle-down"></i>
                 </span>
             </div>
-            <p ng-show="accountForm.username.$valid" class="alert alert-success" translate translate-context="Info">Username available</p>
-            <p ng-show="accountForm.$pending.unique" class="alert alert-info" translate translate-context="Info">Checking username</p>
-            <div ng-messages="accountForm.username.$error">
+            <p ng-show="accountForm.username.$valid" class="alert alert-success signUpProcess-about-success" translate translate-context="Info">Username available</p>
+            <p ng-show="accountForm.$pending.unique" class="alert alert-info signUpProcess-about-pending" translate translate-context="Info">Checking username</p>
+            <div ng-messages="accountForm.username.$error" class="signUpProcess-about-error">
                 <p ng-message="required" class="alert alert-danger" ng-if="accountForm.username.$dirty" translate translate-context="Error">Username required</p>
                 <p ng-message="unique" class="alert alert-danger" translate translate-context="Error">Username already taken</p>
                 <p ng-message="valid" class="alert alert-danger" translate translate-context="Error">Username invalid</p>
@@ -90,7 +90,12 @@
         </div><!--/.wrapper-->
         <div class="text-center spacing-top">
             <p><span translate translate-context="Info">By clicking Create Account, you agree to abide by</span><br /> <a href="https://protonmail.com/terms-and-conditions" target="_blank" translate-context="Title" translate>ProtonMail's Terms and Conditions</a>.</p>
-            <p><button type="submit" class="pm_button primary large" ng-disabled="networkActivity.loading()" translate-context="Action" translate>Create Account</button></p>
+            <p><button
+                type="submit"
+                class="pm_button primary large signUpProcess-btn-create"
+                ng-disabled="networkActivity.loading()"
+                translate-context="Action"
+                translate>Create Account</button></p>
             <p><a ui-sref="login" translate-context="Action" translate translate-comment="link to login">Already have an account?</a></p>
         </div>
     </form>
