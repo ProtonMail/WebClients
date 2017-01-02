@@ -574,8 +574,8 @@ angular.module('proton.settings')
      * Change organization keys
      */
     $scope.changeOrganizationKeys = () => {
-        const nonPrivate = $scope.members.filter((member) => { return member.Private === 0; });
-        const otherAdmins = $scope.members.filter((member) => { return member.Role === 2; }).length > 1;
+        const nonPrivate = $scope.members.filter((member) => member.Private === 0);
+        const otherAdmins = $scope.members.filter((member) => member.Role === 2).length > 1;
 
         if (nonPrivate.length > 0 && $scope.keyStatus > 0) {
             notify({ message: gettextCatalog.getString('You must privatize all sub-accounts before generating new organization keys', null, 'Error'), classes: 'notification-danger' });
