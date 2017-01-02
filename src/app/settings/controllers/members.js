@@ -9,7 +9,7 @@ angular.module('proton.settings')
     Address,
     activateOrganizationModal,
     authentication,
-    changeOrganizationPasswordModal,
+    changePasswordModal,
     confirmModal,
     CONSTANTS,
     domains,
@@ -349,56 +349,28 @@ angular.module('proton.settings')
     };
 
     /**
-     * Set organization key recovery password
-     * @param {String} newPassword
-     */
-    function saveRecoveryPassword(newPassword) {
-        function submit(currentPassword, twoFactorCode) {
-            loginPasswordModal.deactivate();
-
-            const creds = {
-                Password: currentPassword,
-                TwoFactorCode: twoFactorCode
-            };
-
-            const keySalt = passwords.generateKeySalt();
-
-            passwords.computeKeyPassword(newPassword, keySalt)
-            .then((keyPassword) => pmcw.encryptPrivateKey($scope.organizationKey, keyPassword))
-            .then((PrivateKey) => Organization.updateBackupKeys({ PrivateKey, KeySalt: keySalt }, creds))
-            .then((result) => {
-                if (result.data && result.data.Code === 1000) {
-                    return result.data;
-                } else if (result.data && result.data.Error) {
-                    return Promise.reject({ message: result.data.Error });
-                }
-                return Promise.reject({ message: gettextCatalog.getString('Error updating organization key recovery password', null, 'Error') });
-            }, () => {
-                return Promise.reject({ message: gettextCatalog.getString('Error updating organization key recovery password', null, 'Error') });
-            })
-            .then(() => {
-                notify({ message: gettextCatalog.getString('Organization key recovery password updated', null), classes: 'notification-success' });
-            })
-            .catch((error) => {
-                notify({ message: error.message, classes: 'notification-danger' });
-            });
-        }
-
-        passwordModal(submit);
-    }
-
-    /**
      * Open modal to change the organization password
      */
     $scope.changeOrganizationPassword = () => {
-        changeOrganizationPasswordModal.activate({
-            params: {
-                close(newPassword) {
-                    newPassword && saveRecoveryPassword(newPassword);
-                    changeOrganizationPasswordModal.deactivate();
+        function modal(creds) {
+            changePasswordModal.activate({
+                params: {
+                    phase: 0,
+                    type: 'organization',
+                    organizationKey: $scope.organizationKey,
+                    creds,
+                    close() {
+                        changePasswordModal.deactivate();
+                    }
                 }
-            }
-        });
+            });
+        }
+        function submit(currentPassword, twoFactorCode) {
+            const creds = { Password: currentPassword, TwoFactorCode: twoFactorCode };
+            loginPasswordModal.deactivate();
+            modal(creds);
+        }
+        passwordModal(submit);
     };
 
     // Call initialization
