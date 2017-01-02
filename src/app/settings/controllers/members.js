@@ -9,6 +9,7 @@ angular.module('proton.settings')
     Address,
     activateOrganizationModal,
     authentication,
+    changeOrganizationPassword,
     confirmModal,
     CONSTANTS,
     domains,
@@ -159,51 +160,6 @@ angular.module('proton.settings')
         }, () => {
             notify({ message: gettextCatalog.getString('Error updating organization name', null, 'Error'), classes: 'notification-danger' });
         });
-    };
-
-    /**
-     * Set organization key recovery password
-     */
-    $scope.saveRecoveryPassword = (form) => {
-        const newPassword = $scope.newRecoveryPassword;
-
-        function submit(currentPassword, twoFactorCode) {
-            loginPasswordModal.deactivate();
-
-            const creds = {
-                Password: currentPassword,
-                TwoFactorCode: twoFactorCode
-            };
-
-            const keySalt = passwords.generateKeySalt();
-
-            passwords.computeKeyPassword(newPassword, keySalt)
-            .then((keyPassword) => pmcw.encryptPrivateKey($scope.organizationKey, keyPassword))
-            .then((PrivateKey) => Organization.updateBackupKeys({ PrivateKey, KeySalt: keySalt }, creds))
-            .then((result) => {
-                if (result.data && result.data.Code === 1000) {
-                    return result.data;
-                } else if (result.data && result.data.Error) {
-                    return Promise.reject({ message: result.data.Error });
-                }
-                return Promise.reject({ message: gettextCatalog.getString('Error updating organization key recovery password', null, 'Error') });
-            }, () => {
-                return Promise.reject({ message: gettextCatalog.getString('Error updating organization key recovery password', null, 'Error') });
-            })
-            .then(() => {
-                // Cleanup
-                $scope.newRecoveryPassword = '';
-                $scope.confirmRecoveryPassword = '';
-                form.$setUntouched();
-                form.$setPristine();
-                notify({ message: gettextCatalog.getString('Organization key recovery password updated', null), classes: 'notification-success' });
-            })
-            .catch((error) => {
-                notify({ message: error.message, classes: 'notification-danger' });
-            });
-        }
-
-        passwordModal(submit);
     };
 
     /**
@@ -387,6 +343,59 @@ angular.module('proton.settings')
                 },
                 cancel() {
                     confirmModal.deactivate();
+                }
+            }
+        });
+    };
+
+    /**
+     * Set organization key recovery password
+     * @param {String} newPassword
+     */
+    function saveRecoveryPassword(newPassword) {
+        function submit(currentPassword, twoFactorCode) {
+            loginPasswordModal.deactivate();
+
+            const creds = {
+                Password: currentPassword,
+                TwoFactorCode: twoFactorCode
+            };
+
+            const keySalt = passwords.generateKeySalt();
+
+            passwords.computeKeyPassword(newPassword, keySalt)
+            .then((keyPassword) => pmcw.encryptPrivateKey($scope.organizationKey, keyPassword))
+            .then((PrivateKey) => Organization.updateBackupKeys({ PrivateKey, KeySalt: keySalt }, creds))
+            .then((result) => {
+                if (result.data && result.data.Code === 1000) {
+                    return result.data;
+                } else if (result.data && result.data.Error) {
+                    return Promise.reject({ message: result.data.Error });
+                }
+                return Promise.reject({ message: gettextCatalog.getString('Error updating organization key recovery password', null, 'Error') });
+            }, () => {
+                return Promise.reject({ message: gettextCatalog.getString('Error updating organization key recovery password', null, 'Error') });
+            })
+            .then(() => {
+                notify({ message: gettextCatalog.getString('Organization key recovery password updated', null), classes: 'notification-success' });
+            })
+            .catch((error) => {
+                notify({ message: error.message, classes: 'notification-danger' });
+            });
+        }
+
+        passwordModal(submit);
+    }
+
+    /**
+     * Open modal to change the organization password
+     */
+    $scope.changeOrganizationPassword = () => {
+        changeOrganizationPassword.activate({
+            params: {
+                close(newPassword) {
+                    newPassword && saveRecoveryPassword(newPassword);
+                    changeOrganizationPassword.deactivate();
                 }
             }
         });
