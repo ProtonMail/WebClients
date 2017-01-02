@@ -1,7 +1,7 @@
 angular.module('proton.utils')
     .filter('readableTime', () => {
         // Jan 17, 2016
-        return function (time) {
+        return (time) => {
             const m = moment.unix(time);
 
             if (m.isSame(moment(), 'day')) {
