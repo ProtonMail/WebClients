@@ -237,11 +237,32 @@
                 <legend translate-context="Title" translate>Security</legend>
                 <div class="pm_grid">
                     <div class="col-1-2">
+                        <p ng-show="keyStatus === 0">
+                            <button class="pm_button primary" ng-disabled="networkActivity.loading()" ng-click="changeOrganizationPassword()" type="button" translate-context="Action" translate>Change organization password</button>
+                            <button class="pm_button primary" ng-disabled="networkActivity.loading()" ng-click="changeOrganizationKeys()" type="button" translate-context="Action" translate>Change organization keys</button>
+                            <a class="pm_button link" href="https://protonmail.com/support/knowledge-base/organization-key" target="_blank" translate>Learn more</a>
+                        </p>
+                        <div ng-show="keyStatus === 1">
+                            <p class="alert alert-warning" translate translate-context="Info">You must activate your organization keys. Without activation you will not be able to create new users, add addresses to existing users, or access non-private user accounts.</p>
+                            <button class="pm_button primary" ng-disabled="networkActivity.loading()" ng-click="activateOrganizationKeys()" type="button" translate-context="Action" translate>Activate Keys</button>
+                        </div>
+                        <div ng-show="keyStatus === 2">
+                            <p class="alert alert-danger" translate translate-context="Info">You have lost access to your organization keys. Without restoration you will not be able to create new users, add addresses to existing users, or access non-private user accounts.</p>
+                            <p>
+                                <button class="pm_button" ng-disabled="networkActivity.loading()" ng-click="changeOrganizationKeys()" type="button" translate-context="Action" translate>Reset Keys</button>
+                                <button class="pm_button primary" ng-disabled="networkActivity.loading()" ng-click="activateOrganizationKeys()" type="button" translate-context="Action" translate>Restore Keys</button>
+                            </p>
+                        </div>
                         <div class="pm_table">
                             <table class="bordered absorbing">
                                 <thead>
                                     <tr>
-                                        <th translate-context="Title" translate-comment="table heading" translate>Organization Key Fingerprint</th>
+                                        <th>
+                                            <span translate-context="Title" translate-comment="table heading" translate>Organization Key Fingerprint</span>
+                                            <a href="https://protonmail.com/support/knowledge-base/organization-key" target="_blank">
+                                                <i class="fa fa-info-circle"></i>
+                                            </a>
+                                        </th>
                                         <th translate-context="Title" translate-comment="table heading" translate>Key size</th>
                                     </tr>
                                 </thead>
@@ -256,27 +277,6 @@
                                     </tr>
                                 </tbody>
                             </table>
-                        </div>
-                        <div class="clearfix" ng-show="keyStatus === 0">
-                            <p class="clearfix">
-                                <button class="pm_button primary pull-left uppercase" ng-disabled="networkActivity.loading()" ng-click="changeOrganizationPassword()" type="button" translate-context="Action" translate>Change organization password</button>
-                            </p>
-                            <p class="clearfix pm-flex-content-row alignItemsCenter">
-                                <button class="pm_button primary pull-left margin-right uppercase" ng-disabled="networkActivity.loading()" ng-click="changeOrganizationKeys()" type="button" translate-context="Action" translate>Change organization keys</button>
-                                <a href="https://protonmail.com/support/knowledge-base/organization-key" target="_blank" translate>Learn more</a>
-                            </p>
-
-                        </div>
-                        <div class="clearfix" ng-show="keyStatus === 1">
-                            <p class="alert alert-warning" translate translate-context="Info">You must activate your organization keys. Without activation you will not be able to create new users, add addresses to existing users, or access non-private user accounts.</p>
-                            <button class="pm_button primary pull-right" ng-disabled="networkActivity.loading()" ng-click="activateOrganizationKeys()" type="button" translate-context="Action" translate>Activate Keys</button>
-                        </div>
-                        <div class="clearfix" ng-show="keyStatus === 2">
-                            <p class="alert alert-danger" translate translate-context="Info">You have lost access to your organization keys. Without restoration you will not be able to create new users, add addresses to existing users, or access non-private user accounts.</p>
-                            <p class="clearfix">
-                                <button class="pm_button pull-left" ng-disabled="networkActivity.loading()" ng-click="changeOrganizationKeys()" type="button" translate-context="Action" translate>Reset Keys</button>
-                                <button class="pm_button primary pull-right" ng-disabled="networkActivity.loading()" ng-click="activateOrganizationKeys()" type="button" translate-context="Action" translate>Restore Keys</button>
-                            </p>
                         </div>
                     </div>
                 </div>
