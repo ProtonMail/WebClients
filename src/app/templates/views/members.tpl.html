@@ -108,13 +108,26 @@
                             <tr>
                                 <th translate-context="Title" translate-comment="table heading" translate>Name</th>
                                 <th translate-context="Title" translate-comment="table heading" translate>Addresses</th>
-                                <th translate-context="Title" translate-comment="table heading" translate>Role</th>
-                                <th translate-context="Title" translate-comment="table heading" translate>Private</th>
+                                <th>
+                                    <span translate-context="Title" translate-comment="table heading" translate>Role</span>
+                                    <a href="https://protonmail.com/support/knowledge-base/member-roles/" target="_blank">
+                                        <i class="fa fa-info-circle"></i>
+                                    </a>
+                                </th>
+                                <th>
+                                    <span translate-context="Title" translate-comment="table heading" translate>Private</span>
+                                    <a href="https://protonmail.com/support/knowledge-base/private-members/" target="_blank">
+                                        <i class="fa fa-info-circle"></i>
+                                    </a>
+                                </th>
                                 <th translate-context="Title" translate-comment="table heading" translate>Storage</th>
+                                <th translate-context="Title" translate-comment="table heading" translate></th>
                             </tr>
                         </thead>
                         <tbody>
-                            <tr></tr>
+                            <tr ng-repeat="member in members"  ng-init="initRole(member)">
+                                <td></td>
+                            </tr>
                         </tbody>
                     </table>
                 </div> -->
