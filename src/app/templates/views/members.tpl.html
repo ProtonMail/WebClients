@@ -258,34 +258,6 @@
                             </table>
                         </div>
                         <div class="clearfix" ng-show="keyStatus === 0">
-                            <!-- <form method="post" ng-submit="saveRecoveryForm.$valid && saveRecoveryPassword(saveRecoveryForm)" name="saveRecoveryForm" novalidate>
-                                <div class="clearfix">
-                                    <div class="col-1-2">
-                                        <label for="newRecoveryPassword" translate-context="Title" translate>Key recovery password</label>
-                                    </div>
-                                    <div class="col-1-2">
-                                        <input type="password" id="newRecoveryPassword" name="newRecoveryPassword" ng-model="newRecoveryPassword" placeholder-translate="New recovery password" required>
-                                        <div ng-messages="saveRecoveryForm.newRecoveryPassword.$error" class="text-red" ng-if="saveRecoveryForm.newRecoveryPassword.$touched || saveRecoveryForm.$submitted">
-                                            <p ng-message="required" translate-context="Error" translate>Field required</p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="clearfix">
-                                    <div class="col-1-2">
-                                        <label for="confirmRecoveryPassword" Title translate>Confirm recovery Password</label>
-                                    </div>
-                                    <div class="col-1-2">
-                                        <input type="password" id="confirmRecoveryPassword" name="confirmRecoveryPassword" ng-model="confirmRecoveryPassword" placeholder-translate="Confirm new recovery password" class="margin" required compare-to="newRecoveryPassword">
-                                        <div ng-messages="saveRecoveryForm.confirmRecoveryPassword.$error" class="text-red" ng-if="saveRecoveryForm.confirmRecoveryPassword.$touched || saveRecoveryForm.$submitted">
-                                            <p ng-message="required" translate-context="Error" translate>Field required</p>
-                                            <p ng-message="compareTo" translate-context="Error" translate>Passwords do not match</p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <p class="clearfix">
-                                    <button class="pm_button primary pull-right" ng-disabled="networkActivity.loading()" type="submit" translate-context="Action" translate>Save</button>
-                                </p>
-                            </form> -->
                             <p class="clearfix">
                                 <button class="pm_button primary pull-left uppercase" ng-disabled="networkActivity.loading()" ng-click="changeOrganizationPassword()" type="button" translate-context="Action" translate>Change organization password</button>
                             </p>
