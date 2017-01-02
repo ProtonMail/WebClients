@@ -377,35 +377,36 @@ angular.module('proton.elements')
                     element.Selected = typeof selectedMap[element.ID] !== 'undefined';
                     return element;
                 });
-            });
 
-            $scope.watchElements();
+                $scope.watchElements();
 
-            if ($scope.conversations.length === 0 && page > 0) {
-                $scope.back();
-            }
-
-            if ($scope.conversations.length > 0) {
-                let element;
-
-                if (!$scope.markedElement) {
-                    if ($state.params.id) {
-                        element = _.findWhere($scope.conversations, { ID: $state.params.id });
-                    } else {
-                        element = _.first($scope.conversations);
-                    }
-                } else {
-                    const found = _.findWhere($scope.conversations, { ID: $scope.markedElement.ID });
-
-                    if (found) {
-                        element = found;
-                    } else {
-                        element = _.first($scope.conversations);
-                    }
+                if ($scope.conversations.length === 0 && page > 0) {
+                    $scope.back();
                 }
 
-                $scope.markedElement = element;
-            }
+                if ($scope.conversations.length > 0) {
+                    let element;
+
+                    if (!$scope.markedElement) {
+                        if ($state.params.id) {
+                            element = _.findWhere($scope.conversations, { ID: $state.params.id });
+                        } else {
+                            element = _.first($scope.conversations);
+                        }
+                    } else {
+                        const found = _.findWhere($scope.conversations, { ID: $scope.markedElement.ID });
+
+                        if (found) {
+                            element = found;
+                        } else {
+                            element = _.first($scope.conversations);
+                        }
+                    }
+
+                    $scope.markedElement = element;
+                }
+            });
+
 
             deferred.resolve(elements);
         }, (error) => {
