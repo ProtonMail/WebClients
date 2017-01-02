@@ -10,7 +10,7 @@
         <div class="row" id="settingsOrganization" ng-show="isAdmin === true">
             <section class="setting pm_form full">
                 <legend translate-context="Title" translate>Organization</legend>
-                <div class="pm_grid">
+                <div class="pm_grid no-margin">
 	            	<div class="col-1-2">
 	            		<div class="clearfix">
 			            	<form method="post" name="organizationForm" ng-submit="organizationForm.$valid && saveOrganizationName()" novalidate="">
@@ -102,6 +102,22 @@
                     <button type="button" class="pm_button" ng-show="checkDomains()" ng-click="addAddress()" translate-context="Action" translate>Add address</button>
                     <a ui-sref="secured.domains" class="pm_button" translate-context="Action" translate>Add domain</a>
                 </p>
+                <!-- <div class="pm_table">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th translate-context="Title" translate-comment="table heading" translate>Name</th>
+                                <th translate-context="Title" translate-comment="table heading" translate>Addresses</th>
+                                <th translate-context="Title" translate-comment="table heading" translate>Role</th>
+                                <th translate-context="Title" translate-comment="table heading" translate>Private</th>
+                                <th translate-context="Title" translate-comment="table heading" translate>Storage</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr></tr>
+                        </tbody>
+                    </table>
+                </div> -->
                 <div class="pm_flex_content">
                     <div class="pm_grid absorbing flex flex-mobileShrink hasImbricated hasImbricatedFirst" ng-repeat-start="member in members"  ng-init="initRole(member)">
 	                    <div class="col- absorbe pm_grid no-margin flex flex-row">
