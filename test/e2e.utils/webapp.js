@@ -1,3 +1,18 @@
+const SELECTOR = {
+    layout: {
+        rows: '.chooseLayoutBtns-container-rows',
+        column: '.chooseLayoutBtns-container:not(.chooseLayoutBtns-container-rows)'
+    }
+};
+
+const isLayout = (key = 'column') => {
+    const selector = SELECTOR.layout[key];
+
+    return browser.executeScript(`
+        return !!document.body.querySelector('${selector}');
+    `);
+};
+
 const openLabel = (name) => {
     return browser.executeScript(`
         $('#sidebarLabels')
@@ -8,5 +23,5 @@ const openLabel = (name) => {
 };
 
 module.exports = {
-    openLabel
+    openLabel, isLayout
 };

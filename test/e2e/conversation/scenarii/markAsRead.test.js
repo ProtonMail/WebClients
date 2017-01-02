@@ -1,5 +1,5 @@
-const { assert, isTrue, isFalse } = require('../../../../e2e.utils/assertions');
-const toolbar = require('../../../../e2e.utils/toolbar');
+const { assert, isTrue, isFalse } = require('../../../e2e.utils/assertions');
+const toolbar = require('../../../e2e.utils/toolbar');
 
 module.exports = (column) => {
     describe('Mark as read', () => {
@@ -12,7 +12,7 @@ module.exports = (column) => {
                     .then(() => column.count())
                     .then((total) => {
                         toolbar.read()
-                            .then(() => browser.sleep(1000))
+                            .then(() => browser.sleep(2000))
                             .then(() => column.countRead())
                             .then(assert(total));
                     });
@@ -20,7 +20,7 @@ module.exports = (column) => {
 
             it('should mark all as unread', () => {
                 toolbar.read(false)
-                    .then(() => browser.sleep(100))
+                    .then(() => browser.sleep(1000))
                     .then(() => column.countRead())
                     .then(assert(0));
             });
@@ -33,14 +33,14 @@ module.exports = (column) => {
                 toolbar.selectAll()
                     .then(() => column.select(3))
                     .then(() => toolbar.read())
-                    .then(() => browser.sleep(100))
+                    .then(() => browser.sleep(1000))
                     .then(() => column.isRead(3))
                     .then(isTrue);
             });
 
             it('should mark the conversation as unread', () => {
                 toolbar.read(false)
-                    .then(() => browser.sleep(100))
+                    .then(() => browser.sleep(1000))
                     .then(() => column.isRead(3))
                     .then(isFalse);
             });
