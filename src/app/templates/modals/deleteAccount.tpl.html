@@ -21,7 +21,7 @@
                 </div>
                 <div class="margin" ng-if="ctrl.hasTwoFactor">
                     <label translate translate-context="Title">Enter two-factor passcode:</label>
-                    <two-fa-field value="ctrl.twoFactor" placeholder-translate="Two-factor passcode"></two-fa-field>
+                    <two-fa-field ng-model="ctrl.twoFactor" placeholder-translate="Two-factor passcode"></two-fa-field>
                 </div>
             </div>
         </div>
