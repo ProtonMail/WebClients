@@ -54,7 +54,7 @@
             type="submit"
             tabindex="3"
             class="pm_button primary pull-right loginForm-btn-submit"
-            ng-class="{disabled: networkActivity.loading()}"
+            ng-disabled="networkActivity.loading()"
             translate-context="Action"
             translate>Login</button>
     </div>

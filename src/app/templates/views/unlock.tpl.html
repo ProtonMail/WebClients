@@ -42,7 +42,7 @@
                 id="unlock_btn"
                 class="pm_button primary pull-right"
                 type="submit"
-                ng-class="{disabled: networkActivity.loading()}"
+                ng-disabled="networkActivity.loading()"
                 translate-context="Action"
                 translate>Unlock</button>
         </div>
