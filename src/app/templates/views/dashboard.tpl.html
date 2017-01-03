@@ -108,7 +108,7 @@
                                         <th></th>
                                         <td colspan="2"><strong> {{ count('MaxAddresses') }} <span translate-context="Title" translate>Addresses</span></strong></td>
                                     </tr>
-                                    <tr>
+                                    <tr ng-hide="subscription.CouponCode === 'LIFETIME'">
                                         <th translate-context="Title" translate>Period End</th>
                                         <td colspan="2"><strong>{{ subscription.PeriodEnd | readableTime }}</strong></td>
                                     </tr>
