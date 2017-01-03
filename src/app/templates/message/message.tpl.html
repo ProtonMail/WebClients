@@ -55,8 +55,8 @@
             <strong translate>To</strong>:
             <span
                 class="recipients-summary-label"
-                ng-repeat="email in recipients() track by email.Address"
-                title="{{ ::email | contact:'Address' }}" ng-bind="::email | contact: 'Name': true | nameRecipient"></span>
+                ng-repeat="email in recipients() track by $id(email)"
+                title="{{ ::email | contact:'Address' }}">{{::email | contact: 'Name': true | nameRecipient}}</span>
         </div>
 
         <div class="recipients-details">
