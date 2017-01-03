@@ -663,8 +663,6 @@ angular.module('proton.elements')
         } else if (type === 'message') {
             $rootScope.$emit('messageActions', { action: 'move', data: { ids, mailbox } });
         }
-
-        redirectUser();
     };
 
     /**
