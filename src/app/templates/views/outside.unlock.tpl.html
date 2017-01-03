@@ -17,10 +17,7 @@
 
     <div class="clearfix">
         <a href="https://protonmail.com/support" target="_blank" class="login-support pm_button link pull-left" translate-context="Action" translate-comment="link to support portal" translate>Need help?</a>
-        <button
-            type="submit"
-            class="pm_button primary pull-right"
-            ng-class="{disabled: networkActivity.loading()}" translate>Decrypt</button>
+        <button type="submit" class="pm_button primary pull-right" ng-disabled="networkActivity.loading()" translate>Decrypt</button>
     </div>
 
 </form>
