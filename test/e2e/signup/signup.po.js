@@ -11,6 +11,9 @@ module.exports = () => {
         },
         select: {
             domains: '.selectDomain'
+        },
+        steps(n) {
+            return `.signUpProcess-step-${n}`;
         }
     };
 
@@ -42,6 +45,12 @@ module.exports = () => {
             const $input = $('${SELECTOR.input[name]}');
             $input.val('${value}').triggerHandler('input');
             return $input.blur();
+        `);
+    };
+
+    const create = () => {
+        return browser.executeScript(`
+            $('${SELECTOR.button.create}').click();
         `);
     };
 
@@ -102,8 +111,29 @@ module.exports = () => {
     const saveEmail = (value) => (email = value);
     const getEmail = () => email;
 
+
+    const steps = (n = 1) => {
+        const STEPS = [1, 2, 3, 4];
+        const scope = SELECTOR.steps(n);
+        const others = STEPS.filter((s) => s !== n).map((s) => SELECTOR.steps(s)).join(', ');
+
+        const isVisible = () => {
+            return browser.executeScript(`
+                return $('${scope}').is(':visible');
+            `);
+        };
+        const othersHidden = () => {
+            return browser.executeScript(`
+                return !$('${others}').filter(':visible').length;
+            `);
+        };
+
+        return { isVisible, othersHidden };
+    };
+
     return {
         fillInput, usernameMsg, getErrors, toggle,
+        steps, create,
         getEmail, saveEmail
     };
 };
