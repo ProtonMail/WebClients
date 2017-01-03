@@ -1,5 +1,7 @@
 module.exports = () => {
 
+    let email = '';
+
     const SELECTOR = {
         input: {
             username: '#Username',
@@ -30,7 +32,7 @@ module.exports = () => {
         errors: {
             password: `${SELECTOR.input.password} + [ng-messages] p`,
             confirmPassword: `${SELECTOR.input.confirmPassword} + [ng-messages] p`,
-            recoveryEmail: `${SELECTOR.input.confirmPassword} + [ng-messages] p`,
+            recoveryEmail: `.signUpProcess-errors-recoveryEmail p`,
             username: '.signUpProcess-about-error p'
         }
     };
@@ -97,7 +99,11 @@ module.exports = () => {
         return { label, click };
     };
 
+    const saveEmail = (value) => (email = value);
+    const getEmail = () => email;
+
     return {
-        fillInput, usernameMsg, getErrors, toggle
+        fillInput, usernameMsg, getErrors, toggle,
+        getEmail, saveEmail
     };
 };

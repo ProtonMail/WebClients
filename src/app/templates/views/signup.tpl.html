@@ -83,7 +83,7 @@
             </label>
             <p class="help" translate-context="Info" translate>This is used to recover your account if you get locked out or forget your password.</p>
             <input id="notificationEmail" name="notificationEmail" ng-model="account.notificationEmail" type="email" class="form-control" placeholder-translate="Recovery email" valid-recovery data-username="account.username" data-domain="account.domain.value" />
-            <div ng-messages="accountForm.notificationEmail.$error">
+            <div ng-messages="accountForm.notificationEmail.$error" class="signUpProcess-errors-recoveryEmail">
                 <p ng-message="email" class="text-red" translate-context="Error" translate>Email invalid</p>
                 <p ng-message="valid" class="text-red" translate-context="Error" translate>Recovery email invalid</p>
             </div>
