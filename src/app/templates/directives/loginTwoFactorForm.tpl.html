@@ -16,7 +16,7 @@
 
     <div class="alert alert-danger" id="error521" ng-if="error">{{ error.message }}</div>
 
-    <input autofocus maxlength="{{ ::maxPW }}" autocapitalize="off" autocorrect="off" type="text" ng-model="twoFactorCode" tabindex="2" id="twoFactorCode" autocomplete="off" name="twoFactorCode" class="margin TwoFA-input" required="" placeholder-translate="Two-factor passcode" />
+    <input autofocus max="999999" autocapitalize="off" autocorrect="off" type="number" ng-model="twoFactorCode" tabindex="2" id="twoFactorCode" autocomplete="off" name="twoFactorCode" class="margin TwoFA-input" required="" placeholder-translate="Two-factor passcode" />
 
     <div class="clearfix">
         <a class="pm_button link pull-left" ng-click="displayHelpModal()" translate-context="Action" translate-comment="link for login help" translate>Need help?</a>
