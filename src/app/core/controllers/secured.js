@@ -206,7 +206,7 @@ angular.module('proton.core')
             generateModal.activate({
                 params: {
                     title: gettextCatalog.getString('Setting up your Addresses'),
-                    message: gettextCatalog.getString('Before you can start sending and receiving emails from your new addresses you need to create encryption keys for them. Simply select your preferred encryption strength and click "Generate Keys".'),
+                    message: gettextCatalog.getString('Before you can start sending and receiving emails from your new addresses you need to create encryption keys for them. 4096-bit keys only work on high performance computers. For most users, we recommend using 2048-bit keys.'),
                     addresses: dirtyAddresses,
                     password: authentication.getPassword(),
                     close(success) {

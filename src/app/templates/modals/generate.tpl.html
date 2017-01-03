@@ -3,10 +3,10 @@
         <button type="button" ng-click="ctrl.cancel()" aria-hidden="true" title-translate="Close" title-translate-context="Action" class="fa fa-times close"></button>
         <div class="modal-content">
             <div class="modal-header">
-                <h4 class="modal-title">{{ ctrl.title }}</h4>
+                <h4 class="modal-title" ng-bind="::ctrl.title"></h4>
             </div>
             <div class="modal-body pm_form" ng-hide="ctrl.process === true">
-                <p ng-show="ctrl.message">{{ ctrl.message }}</p>
+                <p ng-show="ctrl.message" ng-bind="::ctrl.message"></p>
                 <div class="pm_grid" ng-if="ctrl.askPassword">
                     <div class="col-1-2">
                         <label for="password" translate translate-context="Title">Password</label>
@@ -18,18 +18,18 @@
                 <div class="pm_grid">
                     <div class="col-1-2 text-center">
                         <label class="checkbox">
-                            <input type="radio" ng-model="ctrl.size" ng-value="2048" ng-disabled="ctrl.process === true" />
+                            <input type="radio" ng-model="ctrl.size" ng-value="2048" />
                             <strong translate translate-context="Title" translate-comment="form option heading">High security</strong> (2048-bit)
                         </label>
                     </div>
                     <div class="col-1-2 text-center">
                         <label class="checkbox">
-                            <input type="radio" ng-model="ctrl.size" ng-value="4096" ng-disabled="ctrl.process === true" />
+                            <input type="radio" ng-model="ctrl.size" ng-value="4096" />
                             <strong translate translate-context="Title" translate-comment="form option heading">Highest security</strong> (4096-bit)
                         </label>
                     </div>
                 </div>
-                <p class="alert alert-info" ng-show="ctrl.size === '4096'" translate translate-context="Info">Generating 4096-bit encryption keys may crash or freeze your browser. 4096-bit keys are only recommended for high performance computers - not recommended for tablet and mobile devices.</p>
+                <p class="alert alert-info" ng-show="ctrl.size === 4096" translate translate-context="Info">Generating 4096-bit encryption keys may crash or freeze your browser. 4096-bit keys are only recommended for high performance computers - not recommended for tablet and mobile devices.</p>
                 <div class="pm_table">
                     <table>
                         <thead>
