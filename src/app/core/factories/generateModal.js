@@ -14,7 +14,7 @@ angular.module('proton.core')
             const ERROR = 4;
 
             // Parameters
-            self.size = '2048'; // To match the [radio] value
+            self.size = 2048; // To match the [radio] value
             self.process = false;
             self.title = params.title;
             self.addresses = params.addresses;
@@ -41,7 +41,7 @@ angular.module('proton.core')
 
             // Functions
             self.submit = () => {
-                const numBits = +self.size;
+                const numBits = self.size;
 
                 self.process = true;
                 _.each(self.addresses, (address) => {
