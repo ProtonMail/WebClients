@@ -46,10 +46,9 @@ angular.module('proton.settings')
         });
     }
 
-    $scope.roles = [
-        { label: gettextCatalog.getString('Admin', null), value: MASTER },
-        { label: gettextCatalog.getString('Member', null), value: SUB }
-    ];
+    $scope.roles = [];
+    $scope.roles[MASTER] = gettextCatalog.getString('Admin', null);
+    $scope.roles[SUB] = gettextCatalog.getString('Member', null);
 
     $scope.initialization = () => {
 
@@ -84,17 +83,6 @@ angular.module('proton.settings')
         }
 
         return verified;
-    };
-
-    /**
-     * Initialize select value with role user
-     */
-    $scope.initRole = (member) => {
-        const role = _.findWhere($scope.roles, { value: member.Role });
-
-        if (angular.isDefined(role)) {
-            member.selectRole = role;
-        }
     };
 
     /**

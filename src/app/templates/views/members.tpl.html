@@ -179,7 +179,7 @@
                                     </small>
                                 </label>
                                 <span ng-show="member.Self" translate>Admin</span>
-                                <span ng-hide="member.Self" translate>{{ member.selectRole.label }}</span>
+                                <span ng-hide="member.Self" translate>{{ roles[member.Role] }}</span>
     	                    </div>
                             <div class="col- pm-flex-content username">
                                 <label>
@@ -211,21 +211,12 @@
                                     <i class="fa fa-angle-down"></i>
                                 </a>
                                 <span class="pm_dropdown right">
-                                    <!-- <a ng-repeat="option in options" ng-bind="option" ng-click="select(option)"></a> -->
-                                        <!-- <span class="pm-flex-content-row" ng-hide="member.Self">
-                                            <i class="fa fa-users margin-right" />
-                                            <span class="pm-flex-content-fillWidth pm_select table_select margin-bottom">
-                                                <select ng-model="member.selectRole" ng-init="initRole(member)" ng-options="role.label for role in roles" ng-change="changeRole(member)"></select>
-                                                <i class="fa fa-angle-down"></i>
-                                            </span>
-                                        </span> -->
                                         <button type="button" class="pm_button link text-red text-left " ng-show="!member.Self && member.Type === 1" ng-click="removeMember(member, false)" translate-context="Action" translate>Delete</button>
                                         <button type="button" class="pm_button link text-left" ng-show="!member.Self && member.Type === 0" ng-click="removeMember(member)" translate-context="Action" translate>Remove</button>
-                                        <button type="button" class="pm_button link text-left" ng-click="editMember(member)" translate-context="Action" translate>Edit Name</button>
-                                        <button type="button" class="pm_button link text-left" ng-click="editMember(member)" translate-context="Action" translate>Edit Storage</button>
+                                        <button type="button" class="pm_button link text-left" ng-click="editMember(member)" translate-context="Action" translate>Edit</button>
 
-                                        <button type="button" class="pm_button link text-left" ng-show="member.Role === 1" ng-click="changeRole(member,2)" translate-context="Action" translate>Make Admin</button>
-                                        <button type="button" class="pm_button link text-left" ng-show="member.Role === 2" ng-click="changeRole(member,1)" translate-context="Action" translate>Revoke Admin</button>
+                                        <button type="button" class="pm_button link text-left" ng-show="member.Role === 1" ng-click="changeRole(member, 2)" translate-context="Action" translate>Make Admin</button>
+                                        <button type="button" class="pm_button link text-left" ng-show="member.Role === 2" ng-click="changeRole(member, 1)" translate-context="Action" translate>Revoke Admin</button>
 
                                         <button type="button" class="pm_button link text-left" ng-click="login(member)" ng-show="!member.Self && member.Private === 0 && member.Keys.length > 0" translate-context="Action" translate>Login</button>
                                         <button type="button" class="pm_button link text-left" ng-show="member.Private === 0" ng-click="makePrivate(member)" translate-context="Action" translate-context="Action" translate>Make Private</button>
