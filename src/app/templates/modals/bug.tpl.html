@@ -93,7 +93,7 @@
             <button
                 id="confirmModalBtn"
                 class="pm_button primary"
-                ng-class="{disabled: networkActivity.loading()}"
+                ng-disabled="networkActivity.loading()"
                 ng-click="ctrl.submit()"
                 translate
                 translate-context="Action">Submit</button>
