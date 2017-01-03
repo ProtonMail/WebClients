@@ -21,7 +21,7 @@
                 </div>
                 <div class="margin" ng-if="ctrl.hasTwoFactor">
                     <label translate translate-context="Title">Enter two-factor passcode:</label>
-                    <input type="number" max="999999" ng-maxlength="6" class="TwoFA-input" ng-model="ctrl.twoFactor" placeholder-translate="Two-factor passcode"/>
+                    <input type="number" max="999999" ng-minlength="6" ng-maxlength="6" class="TwoFA-input" ng-model="ctrl.twoFactor" placeholder-translate="Two-factor passcode" />
                 </div>
             </div>
         </div>
