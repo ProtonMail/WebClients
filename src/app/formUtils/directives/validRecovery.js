@@ -6,7 +6,8 @@ angular.module('proton.formUtils')
         scope: { domain: '=', username: '=' },
         link(scope, element, attributes, ngModel) {
             function isRecoveryEmailValid(email) {
-                const current = scope.username + '@' + scope.domain;
+                const { username = '', domain = '' } = scope;
+                const current = `${username}@${domain}`;
                 return email !== current;
             }
             ngModel.$validators.valid = isRecoveryEmailValid;
