@@ -144,6 +144,31 @@
                                    <span class="emphaseText" ng-bind="member.Name"></span>
                                 </div>
     	                    </div>
+                            <div ng-show="member.Addresses.length <= 1" class="col-basis pm-flex-content addresses">
+                                <label>
+                                    <small>
+                                        <strong class="uppercase text-blue-gray" translate>Addresse</strong>
+                                    </small>
+                                </label>
+                                <div ng-show="member.Addresses.length === 0">
+                                    -
+                                </div>
+                                <div ng-show="member.Addresses.length > 0">
+                                    {{ member.Addresses[0].Email }}
+                                    <toggle-expand class="autoHeight" data-model="member.toggle"></toggle-expand>
+                                </div>
+    	                    </div>
+                            <div ng-show="member.Addresses.length > 1" class="col-basis pm-flex-content addresses">
+                                <label>
+                                    <small>
+                                        <strong class="uppercase text-blue-gray" translate>Addresses</strong>
+                                    </small>
+                                </label>
+                                <div>
+                                    {{ member.Addresses[0].Email }}
+                                    <toggle-expand class="autoHeight" data-model="member.toggle" text="+ {{ member.Addresses.length - 1 }}"></toggle-expand>
+                                </div>
+    	                    </div>
     	                    <div class="col- pm-flex-content role">
                                 <label>
                                     <small>
@@ -201,7 +226,7 @@
 	                </div>
                     <div ng-repeat-end ng-show="member.Addresses.length > 0">
                         <div ng-repeat="address in member.Addresses | orderBy: ['!Status','Send']">
-                            <div class="pm_grid no-margin flex flex-row absorbing imbricated">
+                            <div class="pm_grid no-margin flex flex-row absorbing imbricated" ng-show="member.toggle === true">
                                 <div class="col- pm-flex-content-row alignItemsCenter">
                                     <div>
                                         <span ng-bind="address.Email"></span>
