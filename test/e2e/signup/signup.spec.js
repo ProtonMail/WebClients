@@ -1,9 +1,11 @@
 const webapp = require('../../e2e.utils/webapp');
 const { isTrue } = require('../../e2e.utils/assertions');
 const utils = require('./signup.po')();
-
+const loadSuite = (name) => require(`./scenarii/${name}.test`)(utils);
 
 describe('Create an account', () => {
+
+    const currentStep = utils.steps(1);
 
     it('should load the e2e label', () => {
         webapp.openState('create/new')
@@ -11,8 +13,17 @@ describe('Create an account', () => {
         browser.sleep(2000);
     });
 
-    require('./scenarii/username.test')(utils);
-    require('./scenarii/password.test')(utils);
-    require('./scenarii/recovery.test')(utils);
+    it('should display the step 1', () => {
+        currentStep.isVisible()
+            .then(isTrue);
+    });
+
+    it('should only display the step 1', () => {
+        currentStep.othersHidden()
+            .then(isTrue);
+    });
+
+    ['username', 'password', 'recovery', 'submit']
+        .forEach(loadSuite);
 
 });
