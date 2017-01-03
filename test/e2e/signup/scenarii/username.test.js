@@ -1,11 +1,9 @@
 const { isTrue, isFalse, isLength, contains, assert } = require('../../../e2e.utils/assertions');
 
 module.exports = (utils) => {
-
-    const USERNAME = `proton${Date.now()}`;
-    utils.saveEmail(`${USERNAME}@protonmail.com`);
-
     describe('Username', () => {
+        const USERNAME = `proton${Date.now()}`;
+        utils.saveEmail(`${USERNAME}@protonmail.com`);
         const errors = utils.getErrors('username');
 
         describe('Empty', () => {

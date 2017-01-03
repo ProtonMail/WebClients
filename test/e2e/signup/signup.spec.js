@@ -23,7 +23,19 @@ describe('Create an account', () => {
             .then(isTrue);
     });
 
-    ['username', 'password', 'recovery', 'submit']
+    ['username', 'password', 'recovery']
         .forEach(loadSuite);
 
+    const submit = loadSuite('submit');
+    submit.withRecovery();
+
+    it('should load the e2e label', () => {
+        webapp.openState('create/new')
+            .then(isTrue);
+        browser.sleep(2000);
+    });
+
+    ['username', 'password', 'recovery']
+        .forEach(loadSuite);
+    submit.noRecovery();
 });
