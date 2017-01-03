@@ -4,17 +4,17 @@ const { isTrue, isFalse, assert } = require('../../../e2e.utils/assertions');
 module.exports = (utils) => {
 
 
-    describe('submit', () => {
+    function noRecovery() {
+        describe('submit without a recovery', () => {
 
-        const generateKeysStep = utils.steps(2);
-        const areYouHumanStep = utils.steps(3);
+            const formStep = utils.steps(1);
+            const generateKeysStep = utils.steps(2);
+            const areYouHumanStep = utils.steps(3);
 
-        it('should not display a modal', () => {
-            modal.isVisible()
-            .then(isFalse);
-        });
-
-        describe('Without a recovery email', () => {
+            it('should not display a modal', () => {
+                modal.isVisible()
+                    .then(isFalse);
+            });
 
             it('should display a modal', () => {
                 utils.fillInput('recoveryEmail', '')
@@ -35,9 +35,64 @@ module.exports = (utils) => {
                     .then(assert('Warning: You did not set a recovery email so account recovery is impossible if you forget your password. Proceed without recovery email?'));
             });
 
-            it('should redirect us on confirm', () => {
-                modal.confirm()
-                    .then(() => browser.sleep(100))
+            describe('Cancel', () => {
+
+                it('should not redirect us', () => {
+                    modal.cancel()
+                        .then(() => browser.sleep(100))
+                        .then(() => formStep.isVisible())
+                        .then(isTrue)
+                        .then(() => formStep.othersHidden())
+                        .then(isTrue);
+                });
+
+                it('should not display a modal', () => {
+                    modal.isVisible()
+                        .then(isFalse);
+                });
+
+            });
+
+            describe('Confirm', () => {
+
+                it('should redirect us', () => {
+                    utils.create()
+                        .then(() => browser.sleep(100))
+                        .then(() => modal.isVisible())
+                        .then(isTrue)
+                        .then(() => modal.confirm())
+                        .then(() => browser.sleep(1000))
+                        .then(() => generateKeysStep.isVisible())
+                        .then(isTrue)
+                        .then(() => generateKeysStep.othersHidden())
+                        .then(isTrue);
+                });
+
+                it('should check if we are human', () => {
+                    browser.sleep(10000)
+                        .then(() => areYouHumanStep.isVisible())
+                        .then(isTrue)
+                        .then(() => areYouHumanStep.othersHidden())
+                        .then(isTrue);
+                });
+            });
+        });
+    }
+
+    function withRecovery() {
+        describe('submit with a recovery', () => {
+
+            const generateKeysStep = utils.steps(2);
+            const areYouHumanStep = utils.steps(3);
+
+            it('should not display a modal', () => {
+                modal.isVisible()
+                    .then(isFalse);
+            });
+
+            it('should redirect us', () => {
+                utils.create()
+                    .then(() => browser.sleep(1000))
                     .then(() => generateKeysStep.isVisible())
                     .then(isTrue)
                     .then(() => generateKeysStep.othersHidden())
@@ -51,7 +106,12 @@ module.exports = (utils) => {
                     .then(() => areYouHumanStep.othersHidden())
                     .then(isTrue);
             });
-        });
 
-    });
+        });
+    }
+
+    return {
+        noRecovery,
+        withRecovery
+    };
 };
