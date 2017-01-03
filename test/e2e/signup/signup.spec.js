@@ -1,5 +1,5 @@
 const webapp = require('../../e2e.utils/webapp');
-const { isTrue, isFalse, isLength, contains, assert } = require('../../e2e.utils/assertions');
+const { isTrue } = require('../../e2e.utils/assertions');
 const utils = require('./signup.po')();
 
 
@@ -11,19 +11,8 @@ describe('Create an account', () => {
         browser.sleep(2000);
     });
 
-    // require('./scenarii/username.test')(utils);
+    require('./scenarii/username.test')(utils);
     require('./scenarii/password.test')(utils);
-
-    describe('Recovery', () => {
-        describe('Invalid email', () => {
-
-        });
-
-        describe('Same as configured', () => {
-
-        });
-
-    });
-
+    require('./scenarii/recovery.test')(utils);
 
 });

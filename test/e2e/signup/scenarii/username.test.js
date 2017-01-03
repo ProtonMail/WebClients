@@ -3,6 +3,7 @@ const { isTrue, isFalse, isLength, contains, assert } = require('../../../e2e.ut
 module.exports = (utils) => {
 
     const USERNAME = `proton${Date.now()}`;
+    utils.saveEmail(`${USERNAME}@protonmail.com`);
 
     describe('Username', () => {
         const errors = utils.getErrors('username');
