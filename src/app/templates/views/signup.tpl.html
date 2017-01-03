@@ -11,24 +11,24 @@
     <form method="post" scroll-to-invalid valid="checking(accountForm)" name="accountForm" role="form" novalidate class="pm_form">
         <div class="wrapper margin">
             <p class="alert alert-info" translate-context="Info" translate>Take back your privacy! Creating your secure email account takes less than 2 minutes.</p>
-            <label class="titleLabel" for="Username">
+            <label class="titleLabel" for="username">
                 <em class="num">1</em>
                 <span translate translate-context="Title">Username and domain</span>
             </label>
             <div class="usernameWrap">
                 <p class="help" translate-context="Info" translate>This will be your new ProtonMail email address.</p>
-                <strong ng-if="readOnlyUsername" ng-bind="account.Username"></strong>
-                <input ng-if="!readOnlyUsername" type="text" ng-model="account.Username" name="Username" autofocus placeholder-translate="Choose username" unique-username valid-username required id="Username" class="dead" ng-model-options="{ updateOn: 'default blur', debounce: { 'default': 500, 'blur': 0 } }" ng-class="{'success':goodUsername,'error':badUsername}" />
+                <strong ng-if="readOnlyUsername" ng-bind="account.username"></strong>
+                <input ng-if="!readOnlyUsername" type="text" ng-model="account.username" name="username" autofocus placeholder-translate="Choose username" unique-username valid-username required id="username" class="dead" ng-model-options="{ updateOn: 'default blur', debounce: { 'default': 500, 'blur': 0 } }" ng-class="{'success':goodUsername,'error':badUsername}" />
                 <em class="usernameDomain">@</em>
                 <span class="pm_select inline bigger">
                     <select class="selectDomain" ng-model="account.domain" ng-options="domain.label for domain in domains"></select>
                     <i class="fa fa-angle-down"></i>
                 </span>
             </div>
-            <p ng-show="accountForm.Username.$valid" class="alert alert-success" translate translate-context="Info">Username available</p>
+            <p ng-show="accountForm.username.$valid" class="alert alert-success" translate translate-context="Info">Username available</p>
             <p ng-show="accountForm.$pending.unique" class="alert alert-info" translate translate-context="Info">Checking username</p>
-            <div ng-messages="accountForm.Username.$error">
-                <p ng-message="required" class="alert alert-danger" ng-if="accountForm.Username.$dirty" translate translate-context="Error">Username required</p>
+            <div ng-messages="accountForm.username.$error">
+                <p ng-message="required" class="alert alert-danger" ng-if="accountForm.username.$dirty" translate translate-context="Error">Username required</p>
                 <p ng-message="unique" class="alert alert-danger" translate translate-context="Error">Username already taken</p>
                 <p ng-message="valid" class="alert alert-danger" translate translate-context="Error">Username invalid</p>
             </div>
@@ -82,9 +82,10 @@
                 (<span translate>Optional</span>)
             </label>
             <p class="help" translate-context="Info" translate>This is used to recover your account if you get locked out or forget your password.</p>
-            <input id="notificationEmail" name="notificationEmail" ng-model="account.notificationEmail" type="email" class="form-control" placeholder-translate="Recovery email" validator="notificationEmailValidation()" ng-required="false" />
-            <div ng-show="accountForm.notificationEmail.$error.email">
-                <p class="alert alert-danger" translate-context="Error" translate>Invalid recovery email.</p>
+            <input id="notificationEmail" name="notificationEmail" ng-model="account.notificationEmail" type="email" class="form-control" placeholder-translate="Recovery email" valid-recovery data-username="account.username" data-domain="account.domain.value" />
+            <div ng-messages="accountForm.notificationEmail.$error">
+                <p ng-message="email" class="text-red" translate-context="Error" translate>Email invalid</p>
+                <p ng-message="valid" class="text-red" translate-context="Error" translate>Recovery email invalid</p>
             </div>
         </div><!--/.wrapper-->
         <div class="text-center spacing-top">
