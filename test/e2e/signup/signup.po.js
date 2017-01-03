@@ -4,7 +4,7 @@ module.exports = () => {
 
     const SELECTOR = {
         input: {
-            username: '#Username',
+            username: '#username',
             password: '#password',
             confirmPassword: '#passwordc',
             recoveryEmail: '#notificationEmail'
