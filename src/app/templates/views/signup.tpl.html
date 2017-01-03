@@ -27,8 +27,8 @@
             </div>
             <p ng-show="accountForm.username.$valid" class="alert alert-success signUpProcess-about-success" translate translate-context="Info">Username available</p>
             <p ng-show="accountForm.$pending.unique" class="alert alert-info signUpProcess-about-pending" translate translate-context="Info">Checking username</p>
-            <div ng-messages="accountForm.username.$error" class="signUpProcess-about-error">
-                <p ng-message="required" class="alert alert-danger" ng-if="accountForm.username.$dirty" translate translate-context="Error">Username required</p>
+            <div ng-messages="accountForm.username.$error" ng-if="accountForm.username.$dirty" class="signUpProcess-about-error">
+                <p ng-message="required" class="alert alert-danger" translate translate-context="Error">Username required</p>
                 <p ng-message="unique" class="alert alert-danger" translate translate-context="Error">Username already taken</p>
                 <p ng-message="valid" class="alert alert-danger" translate translate-context="Error">Username invalid</p>
             </div>

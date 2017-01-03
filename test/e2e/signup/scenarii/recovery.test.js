@@ -5,7 +5,6 @@ module.exports = (utils) => {
     const errors = utils.getErrors('recoveryEmail');
 
     describe('Recovery', () => {
-
         describe('Invalid email', () => {
 
             it('should display an error', () => {
@@ -20,19 +19,29 @@ module.exports = (utils) => {
                     .then(isLength(1));
             });
 
-            it('should say the field is required', () => {
+            it('should say the field is invalid', () => {
                 errors.getMessage()
-                    .then(contains((t) => t === 'Invalid recovery email.'));
+                    .then(contains((t) => t === 'Email invalid'));
             });
         });
 
         describe('Same as configured', () => {
 
-            it('should display not display an error', () => {
+            it('should display display an error', () => {
                 utils.fillInput('recoveryEmail', utils.getEmail())
                     .then(() => browser.sleep(100))
                     .then(() => errors.isVisible())
-                    .then(isFalse);
+                    .then(isTrue);
+            });
+
+            it('should display 1 error', () => {
+                errors.getMessage()
+                    .then(isLength(1));
+            });
+
+            it('should say the field is invalid', () => {
+                errors.getMessage()
+                    .then(contains((t) => t === 'Recovery email invalid'));
             });
         });
 
