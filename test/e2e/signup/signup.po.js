@@ -13,13 +13,16 @@ module.exports = () => {
     };
 
     SELECTOR.button = {
-        showPassword: `${SELECTOR.input.password} ~ .togglePassword-btn-toggle`,
-        showConfirmPassword: `${SELECTOR.input.confirmPassword} ~ .togglePassword-btn-toggle`,
+        toggle: {
+            password: `${SELECTOR.input.password} ~ .togglePassword-btn-toggle`,
+            confirmPassword: `${SELECTOR.input.confirmPassword} ~ .togglePassword-btn-toggle`
+        },
         create: '.signUpProcess-btn-create'
     };
 
     SELECTOR.messages = {
         username: {
+            item: '[class*="signUpProcess-about-"]',
             available: '.signUpProcess-about-success',
             pending: '.signUpProcess-about-pending'
         },
@@ -40,9 +43,11 @@ module.exports = () => {
         `);
     };
 
-    const usernameMsg = (key = 'pending') => {
+    const usernameMsg = () => {
+        const scope = SELECTOR.messages.username;
         return browser.executeScript(`
-            return $('${SELECTOR.messages.username[key]}')
+            return $('${[scope.pending, scope.available].join(', ')}')
+                .filter(':visible')
                 .text();
         `);
     };
@@ -74,7 +79,25 @@ module.exports = () => {
         return { isVisible, count, getMessage };
     };
 
+    const toggle = (key = 'password') => {
+        const scope =  SELECTOR.button.toggle[key];
+
+        const click = () => {
+            return browser.executeScript(`
+                return $('${scope}').click();
+            `);
+        };
+
+        const label = () => {
+            return browser.executeScript(`
+                return $('${scope}').text();
+            `);
+        };
+
+        return { label, click };
+    };
+
     return {
-        fillInput, usernameMsg, getErrors
+        fillInput, usernameMsg, getErrors, toggle
     };
 };
