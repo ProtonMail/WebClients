@@ -138,6 +138,8 @@ angular.module('proton.core')
             CONSTANTS.MAILBOX_IDENTIFIERS.drafts,
             CONSTANTS.MAILBOX_IDENTIFIERS.sent,
             CONSTANTS.MAILBOX_IDENTIFIERS.trash,
+            CONSTANTS.MAILBOX_IDENTIFIERS.spam,
+            CONSTANTS.MAILBOX_IDENTIFIERS.allmail,
             CONSTANTS.MAILBOX_IDENTIFIERS.archive,
             CONSTANTS.MAILBOX_IDENTIFIERS.starred
         ].concat(_.map(authentication.user.Labels, ({ ID }) => ID) || []);
@@ -203,6 +205,8 @@ angular.module('proton.core')
             CONSTANTS.MAILBOX_IDENTIFIERS.drafts,
             CONSTANTS.MAILBOX_IDENTIFIERS.sent,
             CONSTANTS.MAILBOX_IDENTIFIERS.trash,
+            CONSTANTS.MAILBOX_IDENTIFIERS.spam,
+            CONSTANTS.MAILBOX_IDENTIFIERS.allmail,
             CONSTANTS.MAILBOX_IDENTIFIERS.archive,
             CONSTANTS.MAILBOX_IDENTIFIERS.starred
         ].concat(_.map(authentication.user.Labels, ({ ID }) => ID) || []);
