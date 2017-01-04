@@ -73,8 +73,8 @@
                 <span translate-context="Title" translate-comment="Folder name" translate>Contacts</span>
             </button>
         </li>
-        <li ng-class="{ active: ('secured.dashboard.**' | includedByState) }">
-            <button title="Upgrade" ui-sref="secured.dashboard">
+        <li ng-class="{ active: ('secured.dashboard.**' | includedByState) }" ng-if="isFree">
+            <button title="Upgrade" ui-sref="secured.dashboard({scroll: true})">
                 <i class="fa fa-arrow-up"></i>
                 <span translate-context="Title" translate-comment="Folder name" translate>Upgrade</span>
             </button>
