@@ -416,7 +416,7 @@ angular.module('proton.event', ['proton.constants', 'proton.utils'])
                             eventModel.notification && eventModel.notification.close();
                             eventModel.milliseconds = CONSTANTS.INTERVAL_EVENT_TIMER;
                             eventModel.promiseCancel = $timeout(eventModel.interval, eventModel.milliseconds);
-                            eventModel.manage(result.data);
+                            eventModel.manage(result.data || {}); // Can be null
                         }
                         AppModel.set('onLine', true);
                     },
