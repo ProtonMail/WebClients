@@ -15,12 +15,12 @@ module.exports = ({ editor }) => () => {
 
     it('should display the list', () => {
         borodin.upload();
-        browser.sleep(500);
+        browser.sleep(1000);
         dropzone.embedded()
             .then(() => browser.sleep(1000))
             .then(() => listAttachments.isVisible())
             .then(isTrue)
-            .then(() => browser.sleep(2000));
+            .then(() => browser.sleep(3000));
     });
 
     it('should not display the dropzone', () => {

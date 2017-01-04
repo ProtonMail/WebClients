@@ -33,7 +33,7 @@ module.exports = ({ editor }) => {
 
         it('should display the askEmbedded', () => {
             borodin.upload();
-            browser.sleep(500);
+            browser.sleep(1000);
 
             dropzone.isVisibleAsk()
                 .then(isTrue);

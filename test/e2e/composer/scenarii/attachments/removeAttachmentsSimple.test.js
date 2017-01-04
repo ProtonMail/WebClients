@@ -16,7 +16,7 @@ module.exports = ({ editor }) => () => {
 
     it('should remove one item', () => {
         listAttachments.remove()
-            .then(() => browser.sleep(1000))
+            .then(() => browser.sleep(2000))
             .then(() => listAttachments.countItems())
             .then(assert(1));
     });
@@ -29,10 +29,10 @@ module.exports = ({ editor }) => () => {
 
     it('should remove one item', () => {
         listAttachments.remove()
-            .then(() => browser.sleep(1000))
+            .then(() => browser.sleep(2000))
             .then(() => listAttachments.countItems())
             .then(assert(0))
-            .then(() => browser.sleep(1000));
+            .then(() => browser.sleep(2000));
     });
 
     it('should hide the list', () => {

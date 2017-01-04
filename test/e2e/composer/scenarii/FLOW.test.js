@@ -10,11 +10,12 @@ module.exports = (customSuite, { message, editor, identifier }, options = {}) =>
         let borodin;
 
         it('should open a the composer', () => {
-            editor.open()
+            browser.sleep(5000)
+                .then(() => editor.open())
                 .then(() => browser.wait(() => {
                     return editor.isOpened()
-                        .then((test) => test === true)
-                }, 10000))
+                        .then((test) => test === true);
+                }, 15000))
                 .then((test) => (borodin = editor.compose(), test))
                 .then(isTrue);
         });
@@ -55,7 +56,7 @@ module.exports = (customSuite, { message, editor, identifier }, options = {}) =>
                     .then(() => browser.wait(() => {
                         return editor.isOpened()
                             .then((test) => test === false)
-                    }, 20000))
+                    }, 25000))
                     .then(() => borodin.isOpened())
                     .then(isFalse);
             });
@@ -64,7 +65,7 @@ module.exports = (customSuite, { message, editor, identifier }, options = {}) =>
                 browser.wait(() => {
                     return notifs.isOpened()
                         .then((test) => test === true)
-                }, 20000)
+                }, 25000)
                     .then(() => notifs.message())
                     .then(assert('Message sent'));
             });

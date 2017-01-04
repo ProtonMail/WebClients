@@ -11,14 +11,14 @@ module.exports = ({ editor }) => () => {
         listAttachments = uploader.attachmentsList();
 
         borodin.upload(3);
-        browser.sleep(500)
+        browser.sleep(1000)
             .then(() => dropzone.countDroppedFiles())
             .then(assert(3));
     });
 
     it('should upload all as embedded', () => {
         dropzone.embedded()
-            .then(() => browser.sleep(1000))
+            .then(() => browser.sleep(2000))
             .then(() => listAttachments.isVisible())
             .then(isTrue)
             .then(() => browser.sleep(3000));

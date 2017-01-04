@@ -11,18 +11,18 @@ module.exports = ({ editor }) => () => {
         listAttachments = uploader.attachmentsList();
 
         borodin.upload();
-        browser.sleep(500);
+        browser.sleep(1000);
 
         dropzone.attachment()
-            .then(() => browser.sleep(1000))
+            .then(() => browser.sleep(2000))
             .then(() => {
                 return browser.wait(() => {
                     return listAttachments.isVisible()
                         .then((test) => test === true);
-                }, 10000);
+                }, 15000);
             })
             .then(isTrue)
-            .then(() => browser.sleep(2000));
+            .then(() => browser.sleep(3000));
     });
 
     it('should not display the dropzone', () => {
