@@ -28,7 +28,7 @@ describe('login an user', () => {
 
         it('should display the modal report a bug', () => {
             modal.title()
-                .then(assert('Report bug'));
+                .then(assert('Report Bug'));
         });
 
         it('should close the modal', () => {
