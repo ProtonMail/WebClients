@@ -91,13 +91,16 @@ angular.module('proton.settings')
      */
     $scope.changeRole = (member, role) => {
         const payload = { Role: role };
+        const isSubscriber = member.Subscriber === 1;
 
         let message;
 
         if (role === MASTER) {
             message = gettextCatalog.getString('You must provide this member with the Organization Password in order to fully activate administrator privileges.', null, 'Info');
-        } else {
+        } else if (isSubscriber) {
             message = gettextCatalog.getString('This member is currently responsible for payments for your organization. By demoting this member, you will become responsible for payments for your organization.', null, 'Info');
+        } else {
+            message = gettextCatalog.getString('Are you sure you want to remove administrative privileges from this member? You will become responsible for any unpaid invoices belonging to this member.', null, 'Info');
         }
 
         const params = {
