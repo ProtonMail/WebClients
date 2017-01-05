@@ -6,7 +6,6 @@ angular.module('proton', [
     'ngIcal',
     'ngMessages',
     'ngResource',
-    'ngRoute',
     'ngSanitize',
     'pikaday',
     'ui.router',
@@ -257,7 +256,7 @@ angular.module('proton', [
 //
 
 .run(($rootScope, $state, $log) => {
-    $rootScope.$on('$routeChangeError', (event, current, previous, rejection) => {
+    $rootScope.$on('$stateChangeError', (event, current, previous, rejection) => {
         $log.error(rejection);
         $state.go('support.message', {
             data: {
