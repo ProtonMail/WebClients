@@ -3,7 +3,7 @@ angular.module('proton.message')
     restrict: 'A',
     link(scope, element) {
         const type = tools.typeView();
-        const allowToggle = type === 'conversation' || $state.includes('secured.drafts.**') || $state.includes('secured.allmail.**');
+        const allowToggle = type === 'conversation' || $state.includes('secured.drafts.**') || $state.includes('secured.allmail.**') || $state.includes('secured.search.**');
 
         function selection() {
             if (window.getSelection) {
