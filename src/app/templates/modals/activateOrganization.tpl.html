@@ -8,12 +8,8 @@
             <div class="modal-body pm_form">
                 <div class="{{ ctrl.messageClass }}" ng-show="ctrl.message.length">{{ ctrl.message }}</div>
                 <p>{{ ctrl.prompt }}</p>
-                <input type="password" autofocus ng-model="ctrl.inputCode" id="inputCode" placeholder-translate="Password" name="inputCode" required/>
-                <div ng-messages="activationModalForm.inputCode.$error" class="text-red" ng-show="activationModalForm.inputCode.$touched || activationModalForm.$submitted">
-                    <p ng-message="required" translate-context="Error" translate>Field required</p>
-                </div>
-                <div ng-hide="(activationModalForm.inputCode.$touched || activationModalForm.$submitted) && !activationModalForm.$valid">
-                    <p>&nbsp;</p>
+                <div class="margin">
+                    <password data-value="ctrl.inputCode" data-id="inputCode" placeholder-translate="Password" data-name="inputCode" data-form="activationModalForm"></password>
                 </div>
                 <div class="{{ ctrl.alertClass }}" ng-show="ctrl.alert.length">{{ ctrl.alert }}</div>
             </div>
