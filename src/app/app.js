@@ -181,6 +181,7 @@ angular.module('proton', [
 .config(($httpProvider, CONFIG) => {
     // Http Intercpetor to check auth failures for xhr requests
     $httpProvider.interceptors.push('authHttpResponseInterceptor');
+    $httpProvider.interceptors.push('formatResponseInterceptor');
     $httpProvider.defaults.headers.common['x-pm-appversion'] = 'Web_' + CONFIG.app_version;
     $httpProvider.defaults.headers.common['x-pm-apiversion'] = CONFIG.api_version;
     $httpProvider.defaults.headers.common.Accept = 'application/vnd.protonmail.v1+json';
