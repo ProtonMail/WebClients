@@ -1,7 +1,7 @@
 angular.module('proton.authentication')
-.factory('handle403', ($http, $rootScope, loginPasswordModal, User, authentication, notify) => {
-    const init = angular.noop;
-    $rootScope.$on('handle403', (event, config) => {
+.factory('handle403', ($http, $q, loginPasswordModal, User, authentication, notify) => {
+    return (config) => {
+        const deferred = $q.defer();
         // Open the open to enter login password because this request require lock scope
         loginPasswordModal.activate({
             params: {
@@ -12,17 +12,17 @@ angular.module('proton.authentication')
                     .then(() => {
                         loginPasswordModal.deactivate();
                         // Resend request now
-                        $http(config);
+                        deferred.resolve($http(config));
                     }, (error) => {
                         notify({ message: error.error_description, classes: 'notification-danger' });
                     });
                 },
                 cancel() {
                     loginPasswordModal.deactivate();
+                    deferred.reject();
                 }
             }
         });
-    });
-
-    return { init };
+        return deferred.promise;
+    };
 });
