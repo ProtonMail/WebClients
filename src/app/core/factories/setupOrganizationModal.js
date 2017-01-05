@@ -1,5 +1,5 @@
 angular.module('proton.core')
-.factory('setupOrganizationModal', (pmModal, networkActivityTracker, Organization, Member, CONSTANTS) => {
+.factory('setupOrganizationModal', (authentication, pmModal, passwords, networkActivityTracker, Organization, Member, CONSTANTS, setupKeys, pmcw) => {
     return pmModal({
         controllerAs: 'ctrl',
         templateUrl: 'templates/modals/setupOrganization.tpl.html',
@@ -8,7 +8,9 @@ angular.module('proton.core')
             const base = CONSTANTS.BASE_SIZE;
             const steps = ['name', 'keys', 'password', 'storage'];
             const methods = [name, keys, password, storage];
+            const payload = {};
             let index = 0;
+            let decryptedKey;
             self.step = steps[index];
             self.size = 2048;
             self.units = [
@@ -19,14 +21,12 @@ angular.module('proton.core')
             self.space = params.space;
             self.next = () => {
                 const promise = methods[index]()
-                .then(({ data = {} }) => {
-                    if (data.Code === 1000) {
-                        return Promise.resolve();
-                    }
+                .then((result = {}) => {
+                    const { data = {} } = result;
                     if (data.Error) {
                         return Promise.reject(data.Error);
                     }
-                    return Promise.reject();
+                    return Promise.resolve();
                 })
                 .then(() => {
                     const step = steps[index];
@@ -44,19 +44,37 @@ angular.module('proton.core')
             };
             function name() {
                 const DisplayName = self.name;
+
                 return Organization.updateOrganizationName({ DisplayName });
             }
             function keys() {
-                // TODO
+                const mailboxPassword = authentication.getPassword();
+                const bitSize = self.size;
+
+                return setupKeys.generateOrganization(mailboxPassword, bitSize)
+                .then(({ privateKeyArmored }) => {
+                    payload.PrivateKey = privateKeyArmored;
+                    return privateKeyArmored;
+                })
+                .then((armored) => pmcw.decryptPrivateKey(armored, mailboxPassword))
+                .then((pkg) => decryptedKey = pkg);
             }
             function password() {
-                // const password = self.password;
-                // TODO
+                const organizationPassword = self.password;
+
+                payload.Tokens = [];
+                payload.BackupKeySalt = passwords.generateKeySalt();
+
+                return passwords.computeKeyPassword(organizationPassword, payload.BackupKeySalt)
+                .then((keyPassword) => pmcw.encryptPrivateKey(decryptedKey, keyPassword))
+                .then((armored) => payload.BackupPrivateKey = armored)
+                .then(() => Organization.setupKeys(payload));
             }
             function storage() {
                 const memberID = params.memberID;
                 const unit = self.unit.value;
                 const quota = self.quota * unit;
+
                 return Member.quota(memberID, quota);
             }
         }
