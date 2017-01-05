@@ -118,9 +118,8 @@ angular.module('proton.models.payments', [])
                         TwoFactor: 0
                     });
 
-                    if (CONSTANTS.KEY_PHASE <= 3) {
-                        json.Plans = json.Plans.filter(({ Name }) => Name !== 'business' && Name !== 'vpnbasic' && Name !== 'vpnplus');
-                    }
+                    // Hide others plans: business, vpnbasic, vpnplus
+                    json.Plans = json.Plans.filter(({ Name }) => Name !== 'business' && Name !== 'vpnbasic' && Name !== 'vpnplus');
 
                     json.Plans.forEach((plan) => {
                         switch (plan.Name) {
