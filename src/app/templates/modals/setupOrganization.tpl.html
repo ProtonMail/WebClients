@@ -1,0 +1,36 @@
+<div class="pm_modal small {{ctrl.class}}" role="dialog" style="display: block;">
+    <form class="modal-dialog" ng-submit="ctrl.next()" novalidate name="setupOrganizationForm">
+        <button type="button" ng-click="ctrl.cancel()" aria-hidden="true" title-translate="Close" title-translate-context="Action" class="fa fa-times close"></button>
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 ng-if="ctrl.step === 'name'" class="modal-title" translate translate-context="Title">Setting up your Organization</h4>
+                <h4 ng-if="ctrl.step === 'keys'" class="modal-title" translate translate-context="Title">Setting up your Keys</h4>
+                <h4 ng-if="ctrl.step === 'password'" class="modal-title" translate translate-context="Title">Set Organization Password</h4>
+                <h4 ng-if="ctrl.step === 'storage'" class="modal-title" translate translate-context="Title">Allocate Storage</h4>
+            </div>
+            <div class="modal-body pm_form">
+                <div ng-if="ctrl.step === 'name'">
+                    <p class="alert alert-info" translate-context="Info" translate>Pick a name for your Organization.</p>
+                    <input type="text" ng-model="" />
+                </div>
+                <div ng-if="ctrl.step === 'keys'">
+                    <p class="alert alert-info" translate-context="Info" translate>This will create a new encryption key for your organization. 4096-bit keys only work on high performance computers, for most users, we recommend using 2048-bit keys.</p>
+                </div>
+                <div ng-if="ctrl.step === 'password'">
+
+                </div>
+                <div ng-if="ctrl.step === 'storage'">
+                    <p class="alert alert-info" translate-context="Info" translate>Currently all available storage is allocated to the administrator account. Please reduce the admin account allocation to free up space for additional users. You can increase the total storage at any time by upgrading your account.</p>
+                </div>
+            </div>
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="pm_button" ng-click="ctrl.cancel()" ng-disabled="networkActivity.loading()" translate translate-context="Action">Cancel</button>
+            <button type="submit" class="pm_button primary pull-right" ng-disabled="networkActivity.loading()">
+                <span ng-hide="ctrl.step === 'storage'" translate translate-context="Action">Next</span>
+                <span ng-show="ctrl.step === 'storage'" translate translate-context="Action">Finish</span>
+            </button>
+        </div>
+    </form>
+    <div class="modal-overlay"></div>
+</div>

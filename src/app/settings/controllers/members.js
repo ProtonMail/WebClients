@@ -26,7 +26,8 @@ angular.module('proton.settings')
     Organization,
     organizationKeys,
     passwords,
-    pmcw
+    pmcw,
+    setupOrganizationModal
 ) => {
 
     $controller('AddressesController', { $scope, authentication, domains, members, organization, organizationKeys, pmcw });
@@ -362,6 +363,30 @@ angular.module('proton.settings')
             modal(creds);
         }
         passwordModal(submit);
+    };
+
+    /**
+     * Enable multi-member support for Visionary or Business account
+     */
+    $scope.enableMemberSupport = () => {
+        if ($scope.organization.MaxMembers === 1) {
+            notify(gettextCatalog.getString('Please upgrade to a Visionary or Business account for multi-member support.', null));
+        } else if ($scope.organization.MaxMembers > 1) {
+            setupOrganizationModal.activate({
+                params: {
+                    close() {
+                        setupOrganizationModal.deactivate();
+                    }
+                }
+            });
+        }
+    };
+
+    /**
+     * Restore administrator privileges
+     */
+    $scope.restore = () => {
+        $scope.activateOrganizationKeys();
     };
 
     // Call initialization

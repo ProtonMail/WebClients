@@ -1,13 +1,26 @@
 <div id="pm_settings">
     <div class="settings">
         <p class="alert alert-info" ng-if="mobileMode" translate-context="Info" translate-comment="responsiveness info" translate>This page is only available on larger resolution devices. If you are on a  phone, try landscape mode, or visit on a computer instead.</p>
-        <div class="row" ng-show="isFree === true">
-            <section class="setting pm_form full">
-                <legend translate translate-context="Title">Members</legend>
-                <p class="alert alert-info">Create and administer sub-accounts and assign them email addresses on your custom domain. To enable this feature, <a ui-sref="secured.dashboard({scroll: true})">upgrade to ProtonMail Business</a>.</p>
-            </section>
+        <div ng-show="keyStatus === 2">
+            <p class="alert alert-danger">
+                <span translate>Due to a password change, your organization administrator privileges have been restricted. The following actions are no longer permitted:</span><br />
+                <br />
+                <span translate>* Creating new sub-users</span><br />
+                <span translate>* Reading emails of non-private subusers</span><br />
+            </p>
+            <p>
+                <button ng-click="restore()" class="pm_button" type="button" translate-context="Action" translate>Restore administrator privileges</button>
+                <a href="https://protonmail.com/support/knowledge-base/business/" target="_blank" class="pm_button link" translate-context="Link" translate>Learn more</a>
+            </p>
         </div>
-        <div class="row" id="settingsOrganization" ng-show="isAdmin === true">
+        <div ng-show="organization.HasKeys === 0">
+            <p class="alert alert-info" translate-context="Info" translate>Create and administer sub-accounts and assign them email addresses on your custom domain.</p>
+            <p>
+                <button type="button" class="pm_button primary" ng-click="enableMemberSupport()" translate-context="Action" translate>Enable multi-member support</button>
+                <a href="https://protonmail.com/support/knowledge-base/business/" target="_blank" class="pm_button link" translate-context="Link" translate>Learn more</a>
+            </p>
+        </div>
+        <div class="row" id="settingsOrganization" ng-show="organization.HasKeys === 1">
             <section class="setting pm_form full">
                 <legend translate-context="Title" translate>Organization</legend>
                 <div class="pm_grid no-margin">
@@ -89,11 +102,9 @@
             </section>
         </div>
 
-        <div class="row" id="settingsMembers" ng-show="isAdmin === true">
+        <div class="row" id="settingsMembers" ng-show="organization.HasKeys === 1">
             <section class="setting pm_form full">
-                <legend>
-                    <span translate translate-context="Title">Members</span>
-                </legend>
+                <legend translate translate-context="Title">Members</legend>
                 <p class="alert alert-info" ng-hide="checkDomains()">
                     <span translate-context="Info" translate translate-comment="ask user to add domain before adding users">Please configure a custom domain before adding members to your organization.
                 </p>
@@ -287,7 +298,7 @@
             </section>
         </div>
 
-        <div class="row" id="securityOrganization" ng-show="isAdmin === true">
+        <div class="row" id="securityOrganization" ng-show="organization.HasKeys === 1">
             <section class="setting pm_form full">
                 <legend translate-context="Title" translate>Security</legend>
                 <div class="pm_grid">
