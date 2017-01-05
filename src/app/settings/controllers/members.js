@@ -372,8 +372,13 @@ angular.module('proton.settings')
         if ($scope.organization.MaxMembers === 1) {
             notify(gettextCatalog.getString('Please upgrade to a Visionary or Business account for multi-member support.', null));
         } else if ($scope.organization.MaxMembers > 1) {
+            const member = _.findWhere($scope.members, { Self: 1 });
+            const memberID = member.ID;
+            const space = $scope.organization.MaxSpace - $scope.organization.AssignedSpace;
             setupOrganizationModal.activate({
                 params: {
+                    memberID,
+                    space,
                     close() {
                         setupOrganizationModal.deactivate();
                     }
