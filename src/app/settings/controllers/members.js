@@ -371,8 +371,8 @@ angular.module('proton.settings')
      */
     $scope.enableMemberSupport = () => {
         function submit() {
-            const member = _.findWhere($scope.members, { Self: 1 });
-            const memberID = member.ID;
+            const selfMember = _.findWhere($scope.members, { Self: 1 });
+            const memberID = selfMember.ID;
             const space = $scope.organization.MaxSpace - $scope.organization.AssignedSpace;
 
             setupOrganizationModal.activate({
