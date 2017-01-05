@@ -15,7 +15,7 @@
                                         </td>
                                         <td style="width: 8rem" class="text-right actions"></td>
                                     </tr>
-                                    <tr ng-show="keyPhase > 3">
+                                    <!-- <tr ng-show="keyPhase > 3">
                                         <th translate-context="Title" translate>Members</th>
                                         <td>
                                             <strong ng-hide="organization.PlanName === 'free'"  translate-comment="dashboard page. how many members exist for an organization as well as the total number allowed." translate>{{ organization.UsedMembers }} of {{ organization.MaxMembers }}</strong>
@@ -25,7 +25,7 @@
                                             <a ui-sref="secured.members" class="pm_button link" ng-hide="subscription.Name === 'free'" translate-context="Action" translate>Manage</a>
                                             <a href="#" class="pm_button link" ng-show="subscription.Name === 'free'" ng-click="scrollToPlans()" translate-context="Action" translate>Upgrade</a>
                                         </td>
-                                    </tr>
+                                    </tr> -->
                                     <tr>
                                         <th translate-context="Title" translate>Domains</th>
                                         <td>
@@ -95,10 +95,10 @@
                                         <th></th>
                                         <td colspan="2"><strong>{{ count('MaxSpace') | humanSize }} <span translate-context="Title" translate>Storage</span></strong></td>
                                     </tr>
-                                    <tr ng-show="keyPhase > 3">
+                                    <!-- <tr ng-show="keyPhase > 3">
                                         <th></th>
                                         <td colspan="2"><strong>{{ count('MaxMembers') }} <span translate-context="Title" translate>Members</span></strong></td>
-                                    </tr>
+                                    </tr> -->
                                     <tr>
                                         <th></th>
                                         <td colspan="2"><strong>{{ count('MaxDomains') }} <span translate-context="Title" translate>Domains</span></strong></td>
@@ -161,14 +161,14 @@
                     </div>
                 </header>
                 <div class="pm_grid no-padding plans">
-                    <div ng-repeat="plan in plans | filter: {Type: 1, Cycle: configuration.cycle}: true | orderBy: 'Amount'" class="plan {{plan.Name + '-plan'}}" ng-class="{'col-1-4': keyPhase > 3, 'col-1-3': keyPhase <= 3}">
+                    <div ng-repeat="plan in plans | filter: {Type: 1, Cycle: configuration.cycle}: true | orderBy: 'Amount'" class="col-1-3 plan {{plan.Name + '-plan'}}">
                         <section>
                             <h3>
                                 <img src="assets/img/logo.png" alt="ProtonMail" />
                                 <span>{{ plan.Title }}</span>
                             </h3>
                             <ul class="features">
-                                <li class="tall" ng-show="keyPhase > 3">
+                                <!-- <li class="tall" ng-show="keyPhase > 3">
                                     <i class="fa fa-times" ng-show="plan.MaxMembers === 0"></i>
                                     <i class="fa fa-check" ng-show="plan.MaxMembers > 0"></i>
                                     <span class="pm_select inline" ng-show="plan.Name === 'business'">
@@ -179,7 +179,7 @@
                                     <span translate>Member</span>
                                     <strong class="cost pull-right" ng-show="selects.business.member.index * addons[plan.Cycle].member.Amount && (plan.Name === 'plus' || plan.Name === 'business')">+{{ selects.business.member.index * addons[plan.Cycle].member.Amount / 100 / plan.Cycle | fixed: 2 | currency: plan.Currency }}</strong>
                                     <span class="clear"></span>
-                                </li>
+                                </li> -->
                                 <li class="tall">
                                     <i class="fa fa-check"></i>
                                     <span class="pm_select inline" ng-show="plan.Name === 'plus' || plan.Name === 'business'">
