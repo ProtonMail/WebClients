@@ -1,5 +1,5 @@
 angular.module('proton.authentication')
-.factory(($http, $rootScope, loginPasswordModal, User, authentication, notify) => {
+.factory('handle403', ($http, $rootScope, loginPasswordModal, User, authentication, notify) => {
     $rootScope.$on('handle403', (event, config) => {
         // Open the open to enter login password because this request require lock scope
         loginPasswordModal.activate({
