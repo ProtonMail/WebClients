@@ -93,8 +93,8 @@ angular.module('proton.core')
                     $injector.get('authentication').logout(true, false);
                 }
             } else if (rejection.status === 403) {
-                $rootScope.$emit('handle403', rejection.config);
-                rejection.data = {};
+                const handle403 = $injector.get('handle403');
+                return handle403(rejection.config);
             } else if ([408, 503, 504].indexOf(rejection.status) !== -1) {
                 notification = $injector.get('notify')({
                     message: 'ProtonMail cannot be reached right now, please try again later.',

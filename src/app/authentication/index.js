@@ -5,8 +5,7 @@ angular.module('proton.authentication', [
     'proton.utils'
 ])
 // Global functions
-.run(($rootScope, authentication, handle403) => {
-    handle403.init();
+.run(($rootScope, authentication) => {
     authentication.detectAuthenticationState();
     $rootScope.isLoggedIn = authentication.isLoggedIn();
     $rootScope.isLocked = authentication.isLocked();
