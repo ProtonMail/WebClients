@@ -17,6 +17,7 @@ angular.module('proton.core')
                 { label: 'United Kingdom', value: 'GB' },
                 { label: 'Switzerland', value: 'CH' },
                 { label: 'France', value: 'FR' },
+                { label: 'Germany', value: 'DE' },
                 { label: 'Canada', value: 'CA' },
                 { label: '------------------', value: '', disabled: true }
             ].concat(tools.countries);
