@@ -346,14 +346,14 @@ angular.module('proton.settings')
      * Open modal to add a new address, used by domains and members controllers
      */
     $scope.addAddress = (domain, member) => {
-
         let showMember = true;
-
         let domains = $scope.domains;
+        let members = $scope.members;
+
         if (domain) {
             domains = [domain];
         }
-        let members = $scope.members;
+
         if (member) {
             members = [member];
 
@@ -389,6 +389,7 @@ angular.module('proton.settings')
             params: {
                 domains,
                 members,
+                organization: $scope.organization,
                 organizationKey: $scope.organizationKey,
                 showMember,
                 addMember() {
@@ -496,6 +497,7 @@ angular.module('proton.settings')
                     params: {
                         domains: pmDomains,
                         members: [self],
+                        organization: $scope.organization,
                         organizationKey: {}, // Aliases not for sub-users
                         submit() {
                             addressModal.deactivate();

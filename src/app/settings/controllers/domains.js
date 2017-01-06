@@ -303,6 +303,7 @@ angular.module('proton.settings')
             params: {
                 domains: [domain],
                 members: $scope.members,
+                organization: $scope.organization,
                 organizationPublicKey: $scope.organizationPublicKey,
                 addMember() {
                     addressModal.deactivate();
