@@ -563,23 +563,9 @@ angular.module('proton.routes', [
                     return Promise.reject();
                 });
             },
-            organization($q, user, Organization) {
-                const deferred = $q.defer();
-
-                if (user.Role > 0) {
-                    Organization.get()
-                    .then((result) => {
-                        if (result.data && result.data.Code === 1000) {
-                            deferred.resolve(result.data.Organization);
-                        }
-                    });
-                } else {
-                    deferred.resolve({
-                        PlanName: 'free'
-                    });
-                }
-
-                return deferred.promise;
+            organization(user, Organization) {
+                return Organization.get()
+                .then(({ data = {} } = {}) => Promise.resolve(data.Organization));
             }
         },
         onEnter($rootScope, authentication) {
@@ -766,10 +752,7 @@ angular.module('proton.routes', [
                 return { data: {} };
             },
             organization(user, Organization, networkActivityTracker) {
-                if (user.Role === 2) {
-                    return networkActivityTracker.track(Organization.get());
-                }
-                return { data: {} };
+                return networkActivityTracker.track(Organization.get());
             },
             organizationKeys(user, Organization, networkActivityTracker) {
                 if (user.Role === 2) {
@@ -889,10 +872,7 @@ angular.module('proton.routes', [
                 return { data: {} };
             },
             organization(user, Organization, networkActivityTracker) {
-                if (user.Role === 2) {
-                    return networkActivityTracker.track(Organization.get());
-                }
-                return { data: {} };
+                return networkActivityTracker.track(Organization.get());
             },
             organizationKeys(user, Organization, networkActivityTracker) {
                 if (user.Role === 2) {
@@ -932,10 +912,7 @@ angular.module('proton.routes', [
                 return { data: {} };
             },
             organization(user, Organization, networkActivityTracker) {
-                if (user.Role === 2) {
-                    return networkActivityTracker.track(Organization.get());
-                }
-                return { data: {} };
+                return networkActivityTracker.track(Organization.get());
             },
             organizationKeys(user, Organization, networkActivityTracker) {
                 if (user.Role === 2) {

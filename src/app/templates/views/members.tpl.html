@@ -2,12 +2,15 @@
     <div class="settings">
         <p class="alert alert-info" ng-if="mobileMode" translate-context="Info" translate-comment="responsiveness info" translate>This page is only available on larger resolution devices. If you are on a  phone, try landscape mode, or visit on a computer instead.</p>
         <restore-administrator-panel ng-if="keyStatus === 2"></restore-administrator-panel>
-        <div ng-show="organization.HasKeys === 0">
-            <p class="alert alert-info" translate-context="Info" translate>Create and administer sub-accounts and assign them email addresses on your custom domain.</p>
-            <p>
-                <button type="button" class="pm_button primary" ng-click="enableMemberSupport()" translate-context="Action" translate>Enable multi-member support</button>
-                <a href="https://protonmail.com/support/knowledge-base/business/" target="_blank" class="pm_button link" translate-context="Link" translate>Learn more</a>
-            </p>
+        <div class="row" ng-show="organization.HasKeys === 0">
+            <section class="setting pm_form full">
+                <legend translate-context="Title" translate>Members</legend>
+                <p class="alert alert-info" translate-context="Info" translate>Create and administer sub-accounts and assign them email addresses on your custom domain.</p>
+                <p>
+                    <button type="button" class="pm_button primary" ng-click="enableMemberSupport()" translate-context="Action" translate>Enable multi-member support</button>
+                    <a href="https://protonmail.com/support/knowledge-base/business/" target="_blank" class="pm_button link" translate-context="Link" translate>Learn more</a>
+                </p>
+            </section>
         </div>
         <div class="row" id="settingsOrganization" ng-show="organization.HasKeys === 1">
             <section class="setting pm_form full">

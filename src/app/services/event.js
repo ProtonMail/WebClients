@@ -102,7 +102,7 @@ angular.module('proton.event', ['proton.constants', 'proton.utils'])
 
                     if (user.Role === 0) {
                         // Necessary because there is no deletion event for organizations
-                        $rootScope.$broadcast('organizationChange', { PlanName: 'free' });
+                        $rootScope.$broadcast('organizationChange', { PlanName: 'free', HasKeys: 0 });
                     }
 
                     const subuser = angular.isDefined(user.OrganizationPrivateKey);
