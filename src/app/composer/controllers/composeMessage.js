@@ -392,7 +392,7 @@ angular.module('proton.composer')
                     data: { size, message }
                 });
             })
-            .catch((error) => {
+            .catch(() => {
                 const [, ...list] = $scope.messages;
                 $scope.messages = list;
             });
