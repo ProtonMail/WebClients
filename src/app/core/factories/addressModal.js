@@ -5,7 +5,7 @@ angular.module('proton.core')
         templateUrl: 'templates/modals/addAddress.tpl.html',
         controller(params) {
             // Variables
-            const { domains = [], organizationKey = null, members = [], showMember = true } = params;
+            const { domains = [], organization = {}, organizationKey = null, members = [], showMember = true } = params;
 
             this.domain = domains[0];
             this.domains = domains;
@@ -14,11 +14,9 @@ angular.module('proton.core')
             this.size = 2048;
             this.members = members;
             this.member = members[0];
-
             this.alias = !angular.isDefined(this.domain.ID);
-
             this.keyPhase = CONSTANTS.KEY_PHASE;
-            this.showMember = showMember && this.keyPhase > 3 && !this.alias;
+            this.showMember = showMember && organization.HasKeys === 1 && this.keyPhase > 3 && !this.alias;
 
             if (!this.showMember && this.members.length > 1) {
                 throw new Error('An unexpected error has occurred');
@@ -30,7 +28,6 @@ angular.module('proton.core')
 
             // Functions
             this.submit = () => {
-
                 const member = this.member;
 
                 if (this.member.Private === 0 && !this.organizationKey) {
