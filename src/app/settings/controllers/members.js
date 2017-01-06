@@ -189,15 +189,21 @@ angular.module('proton.settings')
         });
     };
 
+    function canLogin() {
+        if ($scope.keyStatus > 0 && CONSTANTS.KEY_PHASE > 3) {
+            notify({ message: gettextCatalog.getString('Permission denied, administrator privileges have been restricted.', null, 'Error'), classes: 'notification-danger' });
+            $state.go('secured.members');
+            return false;
+        }
+        return true;
+    }
+
     /**
      * Allow the current user to access to the mailbox of a specific member
      * @param {Object} member
      */
     $scope.login = (member) => {
-
-        if ($scope.keyStatus > 0 && CONSTANTS.KEY_PHASE > 3) {
-            notify({ message: gettextCatalog.getString('Administrator privileges must be activated', null, 'Error'), classes: 'notification-danger' });
-            $state.go('secured.members');
+        if (!canLogin()) {
             return;
         }
 
