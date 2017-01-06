@@ -249,7 +249,7 @@ angular.module('proton.core')
 
         const promise = api.getDispatcher()
         .then(() => Conversation.query(request))
-        .then(({ data }) => {
+        .then(({ data = {} }) => {
             if (data.Code === 1000) {
                 // Set total value in rootScope
                 $rootScope.Total = data.Total;
@@ -274,10 +274,8 @@ angular.module('proton.core')
                 return Promise.resolve(data.Conversations.slice(0, CONSTANTS.ELEMENTS_PER_PAGE));
             }
 
-            return Promise.reject();
-
-            /* eslint no-unreachable: "off" */
             api.clearDispatcher();
+            throw new Error('No conversations available');
         });
 
         networkActivityTracker.track(promise);
