@@ -387,8 +387,9 @@ angular.module('proton.settings')
                     memberID,
                     space,
                     close() {
-                        User.lock()
+                        const promise = User.lock()
                         .then(() => setupOrganizationModal.deactivate());
+                        networkActivityTracker.track(promise);
                     }
                 }
             });

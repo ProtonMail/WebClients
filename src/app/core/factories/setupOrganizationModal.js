@@ -1,9 +1,9 @@
 angular.module('proton.core')
-.factory('setupOrganizationModal', (authentication, pmModal, passwords, networkActivityTracker, Organization, Member, CONSTANTS, setupKeys, pmcw) => {
+.factory('setupOrganizationModal', (authentication, pmModal, passwords, eventManager, networkActivityTracker, Organization, Member, CONSTANTS, setupKeys, pmcw) => {
     return pmModal({
         controllerAs: 'ctrl',
         templateUrl: 'templates/modals/setupOrganization.tpl.html',
-        controller(params) {
+        controller(params, $scope) {
             const self = this;
             const base = CONSTANTS.BASE_SIZE;
             const steps = ['name', 'keys', 'password', 'storage'];
@@ -31,10 +31,13 @@ angular.module('proton.core')
                 .then(() => {
                     const step = steps[index];
                     if (step === 'storage') {
-                        params.close();
+                        return eventManager.call()
+                        .then(() => params.close());
                     } else {
                         index++;
-                        self.step = steps[index];
+                        $scope.$applyAsync(() => {
+                            self.step = steps[index];
+                        });
                     }
                 });
                 networkActivityTracker.track(promise);
@@ -60,7 +63,7 @@ angular.module('proton.core')
                 .then((pkg) => decryptedKey = pkg);
             }
             function password() {
-                const organizationPassword = self.password;
+                const organizationPassword = self.organizationPassword;
 
                 payload.Tokens = [];
                 payload.BackupKeySalt = passwords.generateKeySalt();
@@ -68,7 +71,7 @@ angular.module('proton.core')
                 return passwords.computeKeyPassword(organizationPassword, payload.BackupKeySalt)
                 .then((keyPassword) => pmcw.encryptPrivateKey(decryptedKey, keyPassword))
                 .then((armored) => payload.BackupPrivateKey = armored)
-                .then(() => Organization.setupKeys(payload));
+                .then(() => Organization.replaceKeys(payload)); // NOTE SRP route which seems to require credentials
             }
             function storage() {
                 const memberID = params.memberID;
