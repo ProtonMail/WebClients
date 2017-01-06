@@ -1,6 +1,7 @@
 <div id="pm_settings">
     <div class="settings">
         <p class="alert alert-info" ng-if="mobileMode" translate-context="Info" translate-comment="responsiveness info" translate>This page is only available on larger resolution devices. If you are on a  phone, try landscape mode, or visit on a computer instead.</p>
+        <restore-administrator-panel ng-if="keyStatus === 2"></restore-administrator-panel>
         <div class="row" id="settingsAddresses">
             <section class="setting full pm_form">
                 <legend>

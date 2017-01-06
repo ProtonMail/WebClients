@@ -1,18 +1,7 @@
 <div id="pm_settings">
     <div class="settings">
         <p class="alert alert-info" ng-if="mobileMode" translate-context="Info" translate-comment="responsiveness info" translate>This page is only available on larger resolution devices. If you are on a  phone, try landscape mode, or visit on a computer instead.</p>
-        <div ng-show="keyStatus === 2">
-            <p class="alert alert-danger">
-                <span translate>Due to a password change, your organization administrator privileges have been restricted. The following actions are no longer permitted:</span><br />
-                <br />
-                <span translate>* Creating new sub-users</span><br />
-                <span translate>* Reading emails of non-private subusers</span><br />
-            </p>
-            <p>
-                <button ng-click="restore()" class="pm_button" type="button" translate-context="Action" translate>Restore administrator privileges</button>
-                <a href="https://protonmail.com/support/knowledge-base/business/" target="_blank" class="pm_button link" translate-context="Link" translate>Learn more</a>
-            </p>
-        </div>
+        <restore-administrator-panel ng-if="keyStatus === 2"></restore-administrator-panel>
         <div ng-show="organization.HasKeys === 0">
             <p class="alert alert-info" translate-context="Info" translate>Create and administer sub-accounts and assign them email addresses on your custom domain.</p>
             <p>
