@@ -49,18 +49,18 @@
                 </div>
                 <div ng-if="ctrl.step === 'storage'">
                     <p class="alert alert-info" translate-context="Info" translate>Currently all available storage is allocated to the administrator account. Please reduce the admin account allocation to free up space for additional users. You can increase the total storage at any time by upgrading your account.</p>
-                    <div class="pm_grid">
-                        <div class="col-1-2">
-                            <input type="text" ng-model="ctrl.quota" class="inline" placeholder-translate="Storage quota" />
-                            <span class="pm_select inline mini">
-                                <select ng-model="ctrl.unit" ng-options="unit.label for unit in ctrl.units"></select>
-                                <i class="fa fa-angle-down"></i>
-                            </span>
-                        </div>
-                        <div class="col-1-2">
-                            <label>{{ ctrl.space | humanSize }} <span translate>available</span></label>
-                        </div>
+                    <p>
+                        <span translate>Total Storage Available:</span> {{ ctrl.space | humanSize }}
+                    </p>
+                    <div class="margin">
+                        <span>Admin Account:</span>
+                        <input type="text" ng-model="ctrl.quota" class="inline" placeholder-translate="Storage quota" />
+                        <span class="pm_select inline mini">
+                            <select ng-model="ctrl.unit" ng-options="unit.label for unit in ctrl.units"></select>
+                            <i class="fa fa-angle-down"></i>
+                        </span>
                     </div>
+                    <p>Storage for Users: {{ ( ctrl.space - ctrl.quota * unit.value) | humanSize }}</p>
                 </div>
             </div>
         </div>
