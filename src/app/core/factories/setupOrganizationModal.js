@@ -33,12 +33,11 @@ angular.module('proton.core')
                     if (step === 'storage') {
                         return eventManager.call()
                         .then(() => params.close());
-                    } else {
-                        index++;
-                        $scope.$applyAsync(() => {
-                            self.step = steps[index];
-                        });
                     }
+                    index++;
+                    $scope.$applyAsync(() => {
+                        self.step = steps[index];
+                    });
                 });
                 networkActivityTracker.track(promise);
             };
@@ -71,7 +70,7 @@ angular.module('proton.core')
                 return passwords.computeKeyPassword(organizationPassword, payload.BackupKeySalt)
                 .then((keyPassword) => pmcw.encryptPrivateKey(decryptedKey, keyPassword))
                 .then((armored) => payload.BackupPrivateKey = armored)
-                .then(() => Organization.replaceKeys(payload)); // NOTE SRP route which seems to require credentials
+                .then(() => Organization.updateOrganizationKeys(payload));
             }
             function storage() {
                 const memberID = params.memberID;
