@@ -65,11 +65,14 @@ angular.module('proton.utils')
         promises = _.union(promises, [promise]);
 
         promise.catch((error) => {
+
+            console.error(formatError(error));
+
             if (angular.isString(error)) { // Just a String
                 notifyAlert(error);
             }
 
-            if (angular.isObject(error)) { // Error Object
+            if (angular.isObject(error) && !error.noNotify) { // Error Object
                 let message;
 
                 if (error.message) {
@@ -82,7 +85,6 @@ angular.module('proton.utils')
                     message = 'An error has occurred. <br> Please try again or refresh the page.';
                 }
 
-                console.error(formatError(error));
 
                 notifyAlert(message);
 
