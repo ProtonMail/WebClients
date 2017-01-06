@@ -303,27 +303,12 @@ angular.module('proton', [
     });
 }])
 
-.config(($compileProvider, CONFIG) => {
-    // By default AngularJS attaches information about binding and scopes to DOM nodes,
-    // and adds CSS classes to data-bound elements
-    // Tools like Protractor and Batarang need this information to run,
-    // but you can disable this in production for a significant performance boost
+.config(($logProvider, $compileProvider, $qProvider, CONFIG) => {
     const debugInfo = CONFIG.debug || false;
-    // configure routeProvider as usual
-    $compileProvider.debugInfoEnabled(debugInfo);
-})
-
-.config(($logProvider, CONFIG) => {
-    // By default AngularJS attaches information about binding and scopes to DOM nodes,
-    // and adds CSS classes to data-bound elements
-    // Tools like Protractor and Batarang need this information to run,
-    // but you can disable this in production for a significant performance boost
-    const debugInfo = CONFIG.debug || false;
-    // configure routeProvider as usual
     $logProvider.debugEnabled(debugInfo);
+    $compileProvider.debugInfoEnabled(debugInfo);
+    $qProvider.errorOnUnhandledRejections(debugInfo);
 })
-
 .run(($rootScope, CONFIG) => {
     $rootScope.app_version = CONFIG.app_version;
-    $rootScope.date_version = CONFIG.date_version;
 });

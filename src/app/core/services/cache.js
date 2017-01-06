@@ -249,7 +249,7 @@ angular.module('proton.core')
 
         const promise = api.getDispatcher()
         .then(() => Conversation.query(request))
-        .then(({ data }) => {
+        .then(({ data = {} }) => {
             if (data.Code === 1000) {
                 // Set total value in rootScope
                 $rootScope.Total = data.Total;
@@ -277,7 +277,7 @@ angular.module('proton.core')
             }
 
             api.clearDispatcher();
-            return Promise.reject();
+            throw new Error('No conversations available');
         });
 
         networkActivityTracker.track(promise);
