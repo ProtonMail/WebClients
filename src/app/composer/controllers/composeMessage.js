@@ -393,7 +393,6 @@ angular.module('proton.composer')
                 });
             })
             .catch((error) => {
-                console.error(error);
                 const [, ...list] = $scope.messages;
                 $scope.messages = list;
             });
@@ -594,14 +593,16 @@ angular.module('proton.composer')
             promise = Message.createDraft(parameters).$promise;
         }
 
-        return promise.then((data = {}) => {
-            if ((data.Code === 1000 || data.Code === 15033)) {
-                return data;
-            }
-            throw new Error(data.Error || errorMessage);
-        }, () => {
-            throw new Error(errorMessage);
-        });
+        return promise
+            .then((data = {}) => {
+                if ((data.Code === 1000 || data.Code === 15033)) {
+                    return data;
+                }
+                throw new Error(data.Error || errorMessage);
+            })
+            .catch((error) => {
+                throw (error || new Error(errorMessage));
+            });
     }
 
     /**
