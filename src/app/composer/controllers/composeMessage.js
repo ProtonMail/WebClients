@@ -393,7 +393,6 @@ angular.module('proton.composer')
                 });
             })
             .catch((error) => {
-                console.error(error);
                 const [, ...list] = $scope.messages;
                 $scope.messages = list;
             });
@@ -583,7 +582,6 @@ angular.module('proton.composer')
      * @return {Promise}
      */
     function draftRequest(parameters, type) {
-        const deferred = $q.defer();
         const CREATE = 1;
         const UPDATE = 2;
         const errorMessage = gettextCatalog.getString('Saving draft failed, please try again', null, 'Info');
@@ -595,20 +593,16 @@ angular.module('proton.composer')
             promise = Message.createDraft(parameters).$promise;
         }
 
-        promise
-        .then((data) => {
-            if (data && (data.Code === 1000 || data.Code === 15033)) {
-                deferred.resolve(data);
-            } else if (data && data.Error) {
-                deferred.reject(data.Error);
-            } else {
-                deferred.reject(errorMessage);
-            }
-        }, () => {
-            deferred.reject(errorMessage);
-        });
-
-        return deferred.promise;
+        return promise
+            .then((data = {}) => {
+                if ((data.Code === 1000 || data.Code === 15033)) {
+                    return data;
+                }
+                throw new Error(data.Error || errorMessage);
+            })
+            .catch((error) => {
+                throw (error || new Error(errorMessage));
+            });
     }
 
     /**

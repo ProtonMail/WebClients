@@ -409,9 +409,8 @@ angular.module('proton.elements')
 
 
             deferred.resolve(elements);
-        }, (error) => {
+        }, () => {
             notify({ message: gettextCatalog.getString('Error during quering conversations', null, 'Error'), classes: 'notification-danger' });
-            console.error(error);
         });
 
         if (context === false) {

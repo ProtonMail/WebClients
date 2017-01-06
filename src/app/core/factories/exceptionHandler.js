@@ -3,7 +3,6 @@ angular.module('proton.core')
     let nReports = 0;
     return function (exception) {
         nReports++;
-        $log.error(exception);
 
         if (nReports < 6) {
             let debug;
