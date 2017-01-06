@@ -183,17 +183,20 @@ angular.module('proton.event', ['proton.constants', 'proton.utils'])
                     .then(({ keys, dirtyAddresses }) => {
                         if (dirtyAddresses.length && generateModal.active() === false) {
                             return generateKeys(dirtyAddresses)
-                            .then(() => Promise.reject(), () => storeKeys(keys));
+                            .then(() => Promise.reject(), (e) => {
+                                console.error(e);
+                                return storeKeys(keys);
+                            });
                         }
                         storeKeys(keys);
                     })
                     .then(mergeUser)
-                    .catch(
-                        (error) => {
-                            return $exceptionHandler(error)
-                            .then(() => Promise.reject(error));
-                        }
-                    );
+                    .catch((error) => {
+                        console.error(error);
+                        return $exceptionHandler(error)
+                        .then(() => Promise.reject(error))
+                        .catch((e) => console.error(e));
+                    });
                 }
                 return Promise.resolve();
             },
@@ -445,14 +448,13 @@ angular.module('proton.event', ['proton.constants', 'proton.utils'])
                 }
             },
             call() {
-                return eventModel.get().then((result) => {
-                    if (result.data && result.data.Code === 1000) {
-                        return eventModel.manage(result.data);
-                    } else if (result.data && result.data.Error) {
-                        return Promise.reject(result.data.Error);
-                    }
-                    return Promise.reject('Error event manager');
-                });
+                return eventModel.get()
+                    .then(({ data = {} }) => {
+                        if (data.Code === 1000) {
+                            return eventModel.manage(data);
+                        }
+                        throw new Error(data.Error || 'Error event manager');
+                    });
             },
             stop() {
                 $timeout.cancel(eventModel.promiseCancel);
