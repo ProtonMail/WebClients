@@ -61,6 +61,16 @@ angular.module('proton.models.organization', [])
         replaceKeys(params, creds) {
             return srp.performSRPRequest('PUT', '/organizations/keys', params, creds);
         },
+
+        /**
+         * Replace current organization keys and member keys
+         * @param {Object} params
+         * @return {Promise}
+         */
+        updateOrganizationKeys(params) {
+            return $http.put('/organization/keys', params);
+        },
+
         /**
          * Get organization keys
          * @param {Object} params
