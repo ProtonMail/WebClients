@@ -1,5 +1,5 @@
 angular.module('proton.core')
-.factory('setupOrganizationModal', (authentication, pmModal, passwords, eventManager, networkActivityTracker, Organization, Member, CONSTANTS, setupKeys, pmcw) => {
+.factory('setupOrganizationModal', (authentication, pmModal, passwords, networkActivityTracker, Organization, Member, CONSTANTS, setupKeys, pmcw) => {
     return pmModal({
         controllerAs: 'ctrl',
         templateUrl: 'templates/modals/setupOrganization.tpl.html',
@@ -31,13 +31,13 @@ angular.module('proton.core')
                 .then(() => {
                     const step = steps[index];
                     if (step === 'storage') {
-                        return eventManager.call()
-                        .then(() => params.close());
+                        params.close();
+                    } else {
+                        index++;
+                        $scope.$applyAsync(() => {
+                            self.step = steps[index];
+                        });
                     }
-                    index++;
-                    $scope.$applyAsync(() => {
-                        self.step = steps[index];
-                    });
                 });
                 networkActivityTracker.track(promise);
             };

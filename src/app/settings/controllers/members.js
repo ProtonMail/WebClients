@@ -388,6 +388,7 @@ angular.module('proton.settings')
                     space,
                     close() {
                         const promise = User.lock()
+                        .then(() => eventManager.call())
                         .then(() => setupOrganizationModal.deactivate());
                         networkActivityTracker.track(promise);
                     }
