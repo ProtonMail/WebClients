@@ -249,19 +249,23 @@ angular.module('proton.authentication')
     }
 
     function authInfo(Username) {
-        return $http
-            .post(url.get() + '/auth/info', {
-                Username,
-                ClientID: CONFIG.clientID,
-                ClientSecret: CONFIG.clientSecret
-            })
+        return $http.post(url.get() + '/auth/info', {
+            Username,
+            ClientID: CONFIG.clientID,
+            ClientSecret: CONFIG.clientSecret
+        })
             .then((resp) => {
-                if (resp.data.Code !== 1000) {
-                    return Promise.reject({
-                        error_description: resp.data.Error
-                    });
+                if (resp.data.Code === 1000) {
+                    return resp;
                 }
-                return resp;
+
+                if (resp.data.Error) {
+                    throw new Error(resp.data.Error);
+                }
+
+                const error = new Error('Cannot get auth information');
+                error.noNotify = true;
+                throw error;
             });
     }
 

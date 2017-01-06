@@ -260,6 +260,7 @@ angular.module('proton.authentication')
                     $scope.twoFactor = 0;
                     $timeout(selectPassword, 100, false);
                     notify({ message: result.message, classes: 'notification-danger' });
+                    console.error(result);
                 }
             )
         );

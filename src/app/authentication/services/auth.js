@@ -66,13 +66,11 @@ angular.module('proton.authentication')
         fetchUserInfo() {
 
             return networkActivityTracker.track(User.get()
-            .then((result) => {
-                if (result.data && result.data.Code === 1000) {
-                    return result.data.User;
-                } else if (angular.isDefined(result.data) && result.data.Error) {
-                    return Promise.reject({ message: result.data.Error });
+            .then(({ data = {} }) => {
+                if (data.Code === 1000) {
+                    return data.User;
                 }
-                return Promise.reject({ message: 'Error during user request' });
+                throw new Error(data.Error || 'Error during user request');
             })
             .then((user) => {
 
@@ -145,6 +143,7 @@ angular.module('proton.authentication')
                     })
                     .catch(
                         (error) => {
+                            console.error(error);
                             return $exceptionHandler(error)
                             .then(() => Promise.reject(error));
                         }
