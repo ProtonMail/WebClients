@@ -77,7 +77,8 @@ module.exports = function(grunt) {
                         api_version: apiVersion,
                         date_version: dateVersion,
                         clientID: clientID,
-                        clientSecret: clientSecret
+                        clientSecret: clientSecret,
+                        year: (new Date()).getFullYear()
                     }
                 }
             },
@@ -90,7 +91,8 @@ module.exports = function(grunt) {
                         api_version: apiVersion,
                         date_version: dateVersion,
                         clientID: clientID,
-                        clientSecret: clientSecret
+                        clientSecret: clientSecret,
+                        year: (new Date()).getFullYear()
                     }
                 }
             }
