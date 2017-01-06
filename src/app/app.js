@@ -255,13 +255,13 @@ angular.module('proton', [
 // Rejection manager
 //
 
-.run(($rootScope, $state, $log) => {
+.run(($rootScope, $state) => {
     $rootScope.$on('$stateChangeError', (event, current, previous, rejection) => {
-        $log.error(rejection);
+        console.error('stateChangeError', rejection);
         $state.go('support.message', {
             data: {
-                title: rejection.error,
-                content: rejection.error_description,
+                title: rejection.error || 'Problem loading your account',
+                content: rejection.error_description || 'ProtonMail encountered a problem loading your account. Please try again later.',
                 type: 'alert-danger'
             }
         });

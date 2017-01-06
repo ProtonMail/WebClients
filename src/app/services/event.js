@@ -183,19 +183,16 @@ angular.module('proton.event', ['proton.constants', 'proton.utils'])
                     .then(({ keys, dirtyAddresses }) => {
                         if (dirtyAddresses.length && generateModal.active() === false) {
                             return generateKeys(dirtyAddresses)
-                            .then(() => Promise.reject(), (e) => {
-                                console.error(e);
-                                return storeKeys(keys);
-                            });
+                                .then(() => {
+                                    throw new Error('Regenerate keys for addresses');
+                                }, () => storeKeys(keys));
                         }
                         storeKeys(keys);
                     })
                     .then(mergeUser)
                     .catch((error) => {
-                        console.error(error);
-                        return $exceptionHandler(error)
-                        .then(() => Promise.reject(error))
-                        .catch((e) => console.error(e));
+                        $exceptionHandler(error);
+                        throw error;
                     });
                 }
                 return Promise.resolve();
