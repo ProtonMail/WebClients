@@ -400,13 +400,6 @@ angular.module('proton.settings')
         }
     };
 
-    /**
-     * Restore administrator privileges
-     */
-    $scope.restore = () => {
-        $scope.activateOrganizationKeys();
-    };
-
     // Call initialization
     $scope.initialization();
 });

@@ -55,6 +55,7 @@ angular.module('proton', [
     'proton.authentication',
     'proton.event',
     'proton.elements',
+    'proton.members',
     'proton.address',
     'proton.message',
     'proton.conversation',
