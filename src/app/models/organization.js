@@ -1,6 +1,6 @@
 angular.module('proton.models.organization', [])
 
-.factory('Organization', ($http, $q, url, srp) => {
+.factory('Organization', ($http, $q, authentication, url, srp) => {
     return {
         /**
          * Create a new group of given parameters. Requires a subscription.
@@ -15,18 +15,20 @@ angular.module('proton.models.organization', [])
          * @return {Promise}
          */
         get() {
-            return $http.get(url.get() + '/organizations', {
-                transformResponse(data) {
-                    const json = angular.fromJson(data) || {};
-
-                    if (json.Code === 21001) {
-                        json.Code = 1000;
-                        json.Organization = null;
+            if (authentication.user.Role === 2) {
+                return $http.get(url.get() + '/organizations');
+            }
+            const fakeResult = {
+                data: {
+                    Code: 1000,
+                    Organization: {
+                        PlanName: 'free',
+                        MaxMembers: 1,
+                        HasKeys: 0
                     }
-
-                    return json;
                 }
-            });
+            };
+            return Promise.resolve(fakeResult);
         },
         /**
          * Get organization keys

@@ -47,11 +47,12 @@ angular.module('proton.settings')
         }
 
         if (organizationKeys.data && organizationKeys.data.Code === 1000) {
-
-            pmcw.keyInfo(organizationKeys.data.PublicKey)
-            .then((obj) => {
-                $scope.organizationKeyInfo = obj;
-            });
+            if (organizationKeys.data.PublicKey) {
+                pmcw.keyInfo(organizationKeys.data.PublicKey)
+                .then((obj) => {
+                    $scope.organizationKeyInfo = obj;
+                });
+            }
 
             if (!organizationKeys.data.PrivateKey) {
                 $scope.keyStatus = 1;

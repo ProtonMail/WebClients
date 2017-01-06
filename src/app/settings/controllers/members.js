@@ -376,13 +376,14 @@ angular.module('proton.settings')
      * Enable multi-member support for Visionary or Business account
      */
     $scope.enableMemberSupport = () => {
-        function submit() {
+        function modal(creds) {
             const selfMember = _.findWhere($scope.members, { Self: 1 });
             const memberID = selfMember.ID;
             const space = $scope.organization.MaxSpace - $scope.organization.AssignedSpace;
 
             setupOrganizationModal.activate({
                 params: {
+                    creds,
                     memberID,
                     space,
                     close() {
@@ -391,6 +392,22 @@ angular.module('proton.settings')
                     }
                 }
             });
+        }
+
+        function submit(currentPassword, twoFactorCode) {
+            const promise = User.password({ Password: currentPassword, TwoFactorCode: twoFactorCode })
+            .then((result) => {
+                const { data } = result;
+                if (data.Error) {
+                    return Promise.reject(data.Error);
+                }
+                return Promise.resolve(result);
+            })
+            .then(() => {
+                loginPasswordModal.deactivate();
+                modal();
+            });
+            networkActivityTracker.track(promise);
         }
 
         if ($scope.organization.MaxMembers === 1) {
