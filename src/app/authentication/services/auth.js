@@ -144,7 +144,6 @@ angular.module('proton.authentication')
                     return setupKeys.decryptUser(user, organizationKey, api.getPassword())
                         .then(({ keys }) => (storeKeys(keys), user))
                         .catch((error) => {
-                            console.error('NOPE', error);
                             $exceptionHandler(error);
                             throw error;
                         });
