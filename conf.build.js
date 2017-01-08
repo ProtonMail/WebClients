@@ -64,7 +64,8 @@ module.exports = {
       "vendor/angular-gettext/dist/angular-gettext.js",
       "vendor/awesomplete/awesomplete.js",
       "vendor/angular-ui-indeterminate/dist/indeterminate.js",
-      "vendor/bcryptjs/dist/bcrypt.js"
+      "vendor/bcryptjs/dist/bcrypt.js",
+      "vendor/nouislider/distribute/nouislider.js"
     ],
     bootstrap_components: [
       "affix",
@@ -83,7 +84,8 @@ module.exports = {
       "vendor/pikaday/css/pikaday.css",
       "vendor/dropzone/dist/dropzone.css",
       "vendor/smooth-scrollbar/dist/smooth-scrollbar.css",
-      "vendor/awesomplete/awesomplete.css"
+      "vendor/awesomplete/awesomplete.css",
+      "vendor/nouislider/distribute/nouislider.css"
     ],
 
     sass_include_dirs: [

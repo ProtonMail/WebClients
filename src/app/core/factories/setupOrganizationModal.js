@@ -13,12 +13,13 @@ angular.module('proton.core')
             let decryptedKey;
             self.step = steps[index];
             self.size = 2048;
-            self.units = [
-                { label: 'MB', value: base * base },
-                { label: 'GB', value: base * base * base }
-            ];
-            self.unit = self.units[0];
             self.space = params.space;
+            self.sliderValue = 0;
+            self.sliderOptions = {
+                start: 0,
+                step: 0.1,
+                range: { min: 0, max: 20 }
+            };
             self.next = () => {
                 const promise = methods[index]()
                 .then((result = {}) => {
@@ -74,8 +75,7 @@ angular.module('proton.core')
             }
             function storage() {
                 const memberID = params.memberID;
-                const unit = self.unit.value;
-                const quota = self.quota * unit;
+                const quota = self.sliderValue * base * base * base;
 
                 return Member.quota(memberID, quota);
             }

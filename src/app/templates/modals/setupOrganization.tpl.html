@@ -52,13 +52,9 @@
                     <p>
                         <span translate>Total Storage:</span> {{ ctrl.space | humanSize }}
                     </p>
+                    <label>Admin Account Storage: {{ ctrl.slider.value }}</label>
                     <div class="margin">
-                        <span>Admin Account:</span>
-                        <input type="text" ng-model="ctrl.quota" class="inline" placeholder-translate="Storage quota" />
-                        <span class="pm_select inline mini">
-                            <select ng-model="ctrl.unit" ng-options="unit.label for unit in ctrl.units"></select>
-                            <i class="fa fa-angle-down"></i>
-                        </span>
+                        <slider value="ctrl.sliderValue" options="ctrl.sliderOptions" class="margin"></slider>
                     </div>
                     <p>Storage for Users: {{ ( ctrl.space - ctrl.quota * unit.value) | humanSize }}</p>
                 </div>
