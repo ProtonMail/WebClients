@@ -2,7 +2,7 @@ div.noUi-target {
     display: block;
     box-shadow: none;
     border-color: $border;
-    margin-top:8px;
+    margin-top: 20px;
     border-radius: 2px;
     &.slider-withButtons {
         margin-bottom: 30px;
@@ -35,7 +35,7 @@ div.noUi-handle {
     cursor: -webkit-grab;
 }
 
-div.noUi-handle:active { 
+div.noUi-handle:active {
     cursor: grabbing;
     cursor: -moz-grabbing;
     cursor: -webkit-grabbing;
