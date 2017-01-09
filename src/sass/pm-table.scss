@@ -10,8 +10,8 @@
         if one is specified as ‘visible’ and the other is ‘scroll’ or ‘auto’, then ‘visible’ is set to ‘auto’.
         eg: a dropdown menu inside the table will be partialy hidden because of the responsive overflow-x:auto
         */
-        padding-bottom: 600px;
-        margin-bottom: -600px;
+        padding-bottom: 300px;
+        margin-bottom: -300px;
     }
     table {
         border-collapse: collapse;
