@@ -1,6 +1,7 @@
 angular.module('proton.utils')
 .factory('tools', ($log, $state, $stateParams, $filter, authentication, $compile, $templateCache, $rootScope, $q, CONSTANTS) => {
     const tools = {};
+    const MAILBOX_KEYS = Object.keys(CONSTANTS.MAILBOX_IDENTIFIERS);
 
     tools.hasSessionStorage = () => {
         const mod = 'modernizr';
@@ -391,7 +392,7 @@ angular.module('proton.utils')
     tools.currentMailbox = () => {
         const mailbox = filteredState();
 
-        if (_.contains(Object.keys(CONSTANTS.MAILBOX_IDENTIFIERS), mailbox)) {
+        if (_.contains(MAILBOX_KEYS, mailbox)) {
             return mailbox;
         }
 
