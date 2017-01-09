@@ -8,6 +8,10 @@ angular.module('proton.ui')
         link(scope, element) {
             const slider = element[0].querySelector('.slider');
 
+            if (scope.options.legend === 'GB') {
+                slider.classList.add('slider-legend-GB');
+            }
+
             noUiSlider.create(slider, scope.options);
 
             slider.noUiSlider.on('change', onChange);
@@ -20,8 +24,6 @@ angular.module('proton.ui')
                 slider.noUiSlider.off('change', onChange);
                 slider.noUiSlider.destroy();
             });
-
-            scope.legend = scope.options.legend;
 
             scope.plus = () => {
                 const newValue = Number(slider.noUiSlider.get()) + scope.options.step;
