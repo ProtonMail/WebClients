@@ -28,6 +28,19 @@ div.noUi-horizontal div.noUi-tooltip {
     font-size: .6rem;
 }
 
+div.noUi-handle {
+    cursor: move; /* fallback if grab cursor is unsupported */
+    cursor: grab;
+    cursor: -moz-grab;
+    cursor: -webkit-grab;
+}
+
+div.noUi-handle:active { 
+    cursor: grabbing;
+    cursor: -moz-grabbing;
+    cursor: -webkit-grabbing;
+}
+
 div.noUi-handle:before,
 div.noUi-handle:after {
     background: $btn;
