@@ -1,10 +1,12 @@
 angular.module('proton.ui')
 .directive('slider', () => {
     return {
+        replace: true,
         restrict: 'E',
         scope: { value: '=', options: '=' },
+        templateUrl: 'templates/directives/ui/slider.tpl.html',
         link(scope, element) {
-            const slider = element[0];
+            const slider = element[0].querySelector('.slider');
 
             noUiSlider.create(slider, scope.options);
 
@@ -18,6 +20,24 @@ angular.module('proton.ui')
                 slider.noUiSlider.off('change', onChange);
                 slider.noUiSlider.destroy();
             });
+
+            scope.plus = () => {
+                const newValue = slider.noUiSlider.get() + scope.options.step;
+
+                if (newValue <= scope.options.max) {
+                    slider.noUiSlider.set(newValue);
+                    onChange();
+                }
+            };
+
+            scope.minus = () => {
+                const newValue = slider.noUiSlider.get() - scope.options.step;
+
+                if (newValue >= scope.options.min) {
+                    slider.noUiSlider.set(newValue);
+                    onChange();
+                }
+            };
 
             function onChange() {
                 scope.$applyAsync(() => {

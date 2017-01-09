@@ -11,14 +11,19 @@ angular.module('proton.core')
             const payload = {};
             let index = 0;
             let decryptedKey;
+            self.min = authentication.user.UsedSpace;
+            self.max = params.organization.MaxSpace;
+            self.unit = base * base * base;
+            self.usedSpace = authentication.user.UsedSpace;
             self.step = steps[index];
             self.size = 2048;
-            self.space = params.space;
-            self.sliderValue = 0;
+            self.sliderValue = self.min / self.unit;
             self.sliderOptions = {
-                start: 0,
+                start: self.min / self.unit,
                 step: 0.1,
-                range: { min: 0, max: 20 }
+                connect: [true, false],
+                tooltips: true,
+                range: { min: self.min / self.unit, max: self.max / self.unit }
             };
             self.next = () => {
                 const promise = methods[index]()
@@ -75,7 +80,7 @@ angular.module('proton.core')
             }
             function storage() {
                 const memberID = params.memberID;
-                const quota = self.sliderValue * base * base * base;
+                const quota = self.sliderValue * self.unit;
 
                 return Member.quota(memberID, quota);
             }

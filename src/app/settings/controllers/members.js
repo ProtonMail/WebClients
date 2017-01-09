@@ -379,13 +379,12 @@ angular.module('proton.settings')
         function modal(creds) {
             const selfMember = _.findWhere($scope.members, { Self: 1 });
             const memberID = selfMember.ID;
-            const space = $scope.organization.MaxSpace - $scope.organization.AssignedSpace;
 
             setupOrganizationModal.activate({
                 params: {
                     creds,
                     memberID,
-                    space,
+                    organization: $scope.organization,
                     close() {
                         const promise = User.lock()
                         .then(() => eventManager.call())
