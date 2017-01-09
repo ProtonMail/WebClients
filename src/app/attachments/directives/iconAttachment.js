@@ -34,10 +34,8 @@ angular.module('proton.attachments')
                 return ['fa-picture-o', 'embedded'];
             }
 
-            const list = [];
-            list.push('fa-file-o');
+            const list = ['fa-file-o'];
             attachment.MIMEType.includes('image') && list.push('fa-image-o');
-
             return list;
         };
 
