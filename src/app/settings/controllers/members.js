@@ -268,7 +268,6 @@ angular.module('proton.settings')
         if (!$scope.canAddMember()) {
             return;
         }
-
         $scope.editMember();
     };
 

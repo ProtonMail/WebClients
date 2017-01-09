@@ -55,7 +55,9 @@ angular.module('proton.core')
                 step: 0.1,
                 connect: [true, false],
                 tooltips: true,
-                range: { min: self.min / self.unit, max: self.max / self.unit }
+                range: { min: self.min / self.unit, max: self.max / self.unit },
+                pips: { mode: 'range', stepped: true, density: 4 },
+                legend: 'GB'
             };
             self.isPrivate = false;
             self.private = false;

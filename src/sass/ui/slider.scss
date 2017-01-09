@@ -1,3 +1,46 @@
-.noUi-target {
+div.noUi-target {
     display: block;
+    box-shadow: none;
+    border-color: $border;
+    margin-top:8px;
+    border-radius: 2px;
+    &.slider-withButtons {
+        margin-bottom: 30px;
+    }
+}
+
+div.noUi-connect {
+    background: $primary;
+    box-shadow: none;
+    border:1px solid $primary;
+    margin:-1px;
+    border-radius: 4px;
+}
+
+div.noUi-handle {
+    border: 1px solid $border;
+    box-shadow: 0 1px 2px 0 rgba(0,0,0,0.1);
+    border-radius: 2px;
+}
+
+div.noUi-horizontal div.noUi-tooltip {
+    padding: 0 2px;
+    font-size: .6rem;
+}
+
+div.noUi-handle:before,
+div.noUi-handle:after {
+    background: $btn;
+}
+
+div.noUi-value {
+    margin-top: 16px;
+    font-size: .6rem;
+}
+
+div.slider-legend-GB {
+    div.noUi-value {
+        white-space: nowrap;
+        &:after { content:" GB" }
+    }
 }

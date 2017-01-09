@@ -12,6 +12,10 @@
         -webkit-align-itmes: center;
         align-items: center;
     }
+    &.justifyContentCenter {
+        -webkit-justify-content: center;
+        justify-content: center;
+    }
     &.justifyEnd {
         -webkit-justify-content: flex-end;
         justify-content:flex-end;
