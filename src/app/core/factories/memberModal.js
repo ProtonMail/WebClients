@@ -39,6 +39,7 @@ angular.module('proton.core')
             self.max = params.organization.MaxSpace;
             self.sliderValue = initValue;
             self.sliderOptions = {
+                animate: false,
                 start: initValue / self.unit,
                 step: 0.1,
                 connect: [true, false],
