@@ -20,58 +20,51 @@ angular.module('proton.core')
         templateUrl: 'templates/modals/member.tpl.html',
         controller(params) {
             // Variables
+            const self = this;
             const base = CONSTANTS.BASE_SIZE;
 
             // Default Parameters
-            this.ID = null;
-            this.step = 'member';
-            this.size = 2048;
-            this.organization = params.organization;
-            this.organizationKey = params.organizationKey;
-            this.domains = params.domains;
-            this.domain = params.domains[0];
-            this.name = '';
-            this.temporaryPassword = '';
-            this.confirmPassword = '';
-            this.address = '';
-            this.quota = 0;
-            this.units = [
-                { label: 'MB', value: base * base },
-                { label: 'GB', value: base * base * base }
-            ];
-            this.unit = this.units[0];
-
-            this.isPrivate = false;
-            this.private = false;
-            this.showAddress = true;
-            this.showKeys = true;
+            self.ID = null;
+            self.step = 'member';
+            self.size = 2048;
+            self.organization = params.organization;
+            self.organizationKey = params.organizationKey;
+            self.domains = params.domains;
+            self.domain = params.domains[0];
+            self.name = '';
+            self.temporaryPassword = '';
+            self.confirmPassword = '';
+            self.address = '';
+            self.unit = base * base * base;
+            self.min = params.organization.AssignedSpace - params.member.UsedSpace;
+            self.max = params.organization.MaxSpace;
+            self.sliderValue = params.member.MaxSpace;
+            self.sliderOptions = {
+                start: params.member.MaxSpace,
+                step: 0.1,
+                connect: [true, false],
+                tooltips: true,
+                range: { min: self.min / self.unit, max: self.max / self.unit }
+            };
+            self.isPrivate = false;
+            self.private = false;
+            self.showAddress = true;
+            self.showKeys = true;
 
             // Edit mode
             if (params.member) {
-                this.oldMember = _.extend({}, params.member);
+                self.oldMember = _.extend({}, params.member);
 
-                this.ID = params.member.ID;
-                this.name = params.member.Name;
-                this.private = Boolean(params.member.Private);
-                this.isPrivate = Boolean(params.member.Private);
-                this.quota = params.member.MaxSpace / this.unit.value;
-
-                this.showAddress = params.member.Addresses.length === 0 && params.member.Type === 1;
-                this.showKeys = params.member.Keys.length === 0 && !this.isPrivate;
-            }
-
-            if (this.quota === 0) {
-                const freeSpace = this.organization.MaxSpace - this.organization.AssignedSpace;
-                this.quota = Math.min(freeSpace, this.units[1].value) / this.unit.value;
-            }
-
-            if (this.quota % base === 0) {
-                this.unit = this.units[1];
-                this.quota = this.quota / base;
+                self.ID = params.member.ID;
+                self.name = params.member.Name;
+                self.private = Boolean(params.member.Private);
+                self.isPrivate = Boolean(params.member.Private);
+                self.showAddress = params.member.Addresses.length === 0 && params.member.Type === 1;
+                self.showKeys = params.member.Keys.length === 0 && !self.isPrivate;
             }
 
             // Functions
-            this.submit = () => {
+            self.submit = () => {
                 let mainPromise;
                 let addresses = [];
                 let notificationMessage;
@@ -79,27 +72,27 @@ angular.module('proton.core')
                 if (params.member) {
                     _.extend(member, params.member);
                 }
-                member.Name = this.name;
-                member.Private = this.private ? 1 : 0;
-                member.MaxSpace = this.quota * this.unit.value;
+                member.Name = self.name;
+                member.Private = self.private ? 1 : 0;
+                member.MaxSpace = self.sliderValue * self.unit;
 
                 const check = () => {
                     const deferred = $q.defer();
                     let error;
 
-                    if (this.name.length === 0) {
+                    if (self.name.length === 0) {
                         error = gettextCatalog.getString('Invalid name', null, 'Error');
                         deferred.reject(error);
-                    } else if ((!member.ID || (!member.Private && params.member.Keys.length === 0)) && this.temporaryPassword !== this.confirmPassword) {
+                    } else if ((!member.ID || (!member.Private && params.member.Keys.length === 0)) && self.temporaryPassword !== self.confirmPassword) {
                         error = gettextCatalog.getString('Invalid password', null, 'Error');
                         deferred.reject(error);
-                    } else if ((!member.ID || (params.member.Addresses.length === 0 && params.member.Type === 1)) && this.address.length === 0) {
+                    } else if ((!member.ID || (params.member.Addresses.length === 0 && params.member.Type === 1)) && self.address.length === 0) {
                         error = gettextCatalog.getString('Invalid address', null, 'Error');
                         deferred.reject(error);
-                    } else if (this.quota * this.unit.value > (this.organization.MaxSpace - this.organization.UsedSpace)) {
+                    } else if (self.sliderValue * self.unit > (self.organization.MaxSpace - self.organization.UsedSpace)) {
                         error = gettextCatalog.getString('Invalid storage quota', null, 'Error');
                         deferred.reject(error);
-                    } else if (!member.ID && !member.Private && !this.organizationKey) {
+                    } else if (!member.ID && !member.Private && !self.organizationKey) {
                         error = gettextCatalog.getString('Cannot decrypt organization key', null, 'Error');
                         deferred.reject(error);
                     } else {
@@ -111,16 +104,16 @@ angular.module('proton.core')
 
                 const updateName = () => {
 
-                    if (this.oldMember && this.oldMember.Name === this.name) {
+                    if (self.oldMember && self.oldMember.Name === self.name) {
                         return $q.resolve();
                     }
 
                     const deferred = $q.defer();
 
-                    Member.name(member.ID, this.name)
+                    Member.name(member.ID, self.name)
                     .then((result) => {
                         if (result.data && result.data.Code === 1000) {
-                            member.Name = this.name;
+                            member.Name = self.name;
                             deferred.resolve();
                         } else if (result.data && result.data.Error) {
                             deferred.reject(result.data.Error);
@@ -134,16 +127,16 @@ angular.module('proton.core')
 
                 const updateQuota = () => {
 
-                    if (this.oldMember && this.oldMember.MaxSpace === (this.quota * this.unit.value)) {
+                    if (self.oldMember && self.oldMember.MaxSpace === (self.sliderValue * self.unit)) {
                         return $q.resolve();
                     }
 
                     const deferred = $q.defer();
 
-                    Member.quota(member.ID, this.quota * this.unit.value)
+                    Member.quota(member.ID, self.sliderValue * self.unit)
                     .then((result) => {
                         if (result.data && result.data.Code === 1000) {
-                            member.MaxSpace = this.quota * this.unit.value;
+                            member.MaxSpace = self.sliderValue * self.unit;
                             deferred.resolve();
                         } else if (result.data && result.data.Error) {
                             deferred.reject(result.data.Error);
@@ -157,13 +150,13 @@ angular.module('proton.core')
 
                 // const updatePrivate = () => {
 
-                //     if (this.oldMember && Boolean(this.oldMember.Private) === this.private) {
+                //     if (self.oldMember && Boolean(self.oldMember.Private) === self.private) {
                 //         return $q.resolve();
                 //     }
 
                 //     const deferred = $q.defer();
 
-                //     if (this.private) {
+                //     if (self.private) {
                 //         Member.privatize(member.ID)
                 //         .then((result) => {
                 //             if (result.data && result.data.Code === 1000) {
@@ -185,7 +178,7 @@ angular.module('proton.core')
                 const memberRequest = () => {
                     const deferred = $q.defer();
 
-                    Member.create(member, this.temporaryPassword).then((result) => {
+                    Member.create(member, self.temporaryPassword).then((result) => {
                         if (result.data && result.data.Code === 1000) {
                             member = result.data.Member;
                             deferred.resolve();
@@ -204,7 +197,7 @@ angular.module('proton.core')
                         return Promise.resolve();
                     }
 
-                    return Address.create({ Local: this.address, Domain: this.domain.DomainName, MemberID: member.ID })
+                    return Address.create({ Local: self.address, Domain: self.domain.DomainName, MemberID: member.ID })
                     .then((result) => {
                         if (result.data && result.data.Code === 1000) {
                             const address = result.data.Address;
@@ -228,7 +221,7 @@ angular.module('proton.core')
                         addresses = params.member.Addresses;
                     }
 
-                    return setupKeys.generate(addresses, this.temporaryPassword, this.size);
+                    return setupKeys.generate(addresses, self.temporaryPassword, self.size);
                 };
 
                 const keyRequest = (result) => {
@@ -237,7 +230,7 @@ angular.module('proton.core')
                         return Promise.resolve();
                     }
 
-                    return setupKeys.memberSetup(result, this.temporaryPassword, member.ID, this.organizationKey)
+                    return setupKeys.memberSetup(result, self.temporaryPassword, member.ID, self.organizationKey)
                     .then((result) => {
                         member = result;
                     });
@@ -253,8 +246,8 @@ angular.module('proton.core')
                     notify({ message: error, classes: 'notification-danger' });
                 };
 
-                if (this.ID) {
-                    member.ID = this.ID;
+                if (self.ID) {
+                    member.ID = self.ID;
                     notificationMessage = gettextCatalog.getString('Member updated', null, 'Notification');
                     mainPromise = check()
                     .then(updateName)
@@ -277,7 +270,7 @@ angular.module('proton.core')
                 networkActivityTracker.track(mainPromise);
             };
 
-            this.cancel = () => {
+            self.cancel = () => {
                 params.cancel();
             };
         }

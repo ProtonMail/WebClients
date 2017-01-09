@@ -17,9 +17,9 @@ angular.module('proton.core')
             self.usedSpace = authentication.user.UsedSpace;
             self.step = steps[index];
             self.size = 2048;
-            self.sliderValue = 0;
+            self.sliderValue = self.min / self.unit;
             self.sliderOptions = {
-                start: 0,
+                start: self.min / self.unit,
                 step: 0.1,
                 connect: [true, false],
                 tooltips: true,
