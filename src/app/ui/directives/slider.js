@@ -44,6 +44,18 @@ angular.module('proton.ui')
             };
 
             function onChange() {
+                const newValue = Number(slider.noUiSlider.get());
+
+                if (newValue < scope.options.minPadding) {
+                    slider.noUiSlider.set(scope.options.minPadding);
+                    return;
+                }
+
+                if (newValue > scope.options.maxPadding) {
+                    slider.noUiSlider.set(scope.options.maxPadding);
+                    return;
+                }
+
                 scope.$applyAsync(() => {
                     scope.value = Number(slider.noUiSlider.get());
                 });
