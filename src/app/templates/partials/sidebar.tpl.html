@@ -1,23 +1,5 @@
 <section class="pm_opensans sidebar" ng-hide="inboxSidebar || (mobileMode && !showSidebar)">
-    <div ng-show="mobileMode">
-        <button class="pm_button round pull-right" ng-click="hideMobileSidebar()">
-            <i class="fa fa-times"></i>
-        </button>
-        <a class="logo">
-            <img src="assets/img/logo.png" height="20" alt="ProtonMail" />
-        </a>
-        <span class="userDisplay">
-            <em>{{ user.DisplayName }}</em>
-            <strong>{{ user.Addresses[0].Email }}</strong>
-        </span>
-    </div>
-    <div class="padding-top">
-        <a class="backToInbox" ui-sref="secured.inbox" translate-context="Title">
-            <i class="fa fa-arrow-left"></i>
-            <span translate-comment="inbox menu" translate>Back to inbox</span>
-        </a>
-        <settings-menu></settings-menu>
-    </div>
+    <settings-menu></settings-menu>
 </section>
 <section class="pm_opensans sidebar" ng-controller="SidebarController" ng-hide="mobileMode || !inboxSidebar">
     <a
