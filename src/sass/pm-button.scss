@@ -67,10 +67,6 @@
             text-decoration: underline;
         }
     }
-    &.sliderButton {
-        height: 28px;
-        line-height: 28px;
-    }
     &.autoHeight {
         height:auto;
         line-height: initial;
@@ -188,6 +184,16 @@
             &.wide {
                 padding: 0 10px;
             }
+        }
+    }
+    &.sliderButtons,
+    &.sliderButtons a {
+        display: inline-flex;
+        height: 26px;
+        line-height: 26px;
+        .fa {
+            font-size: 12px;
+            line-height: 28px;
         }
     }
     .pm_buttons {
