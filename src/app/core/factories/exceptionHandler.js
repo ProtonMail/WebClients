@@ -27,6 +27,7 @@ angular.module('proton.core')
                 const Bug = $injector.get('Bug');
                 const tools = $injector.get('tools');
                 const $state = $injector.get('$state');
+                const { user = {} } = $injector.get('authentication') || {};
                 const crashData = {
                     OS: tools.getOs(),
                     OSVersion: '',
@@ -34,6 +35,8 @@ angular.module('proton.core')
                     BrowserVersion: tools.getBrowserVersion(),
                     Client: 'Angular',
                     ClientVersion: CONFIG.app_version,
+                    ViewLayout: user.ViewLayout,
+                    ViewMode: user.ViewLayout,
                     Debug: { state: $state.$current.name, error: debug }
                 };
                 return Bug.crash(crashData).catch(angular.noop);
