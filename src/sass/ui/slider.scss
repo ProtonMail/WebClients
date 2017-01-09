@@ -35,7 +35,7 @@ div.noUi-handle {
     cursor: -webkit-grab;
 }
 
-div.noUi-handle:active { 
+div.noUi-handle:active {
     cursor: grabbing;
     cursor: -moz-grabbing;
     cursor: -webkit-grabbing;
@@ -43,7 +43,14 @@ div.noUi-handle:active {
 
 div.noUi-handle:before,
 div.noUi-handle:after {
-    background: $btn;
+    background: transparent;
+}
+
+div.noUi-handle:before {
+    content: "\2194";
+    white-space: nowrap;
+    margin-left: -4px;
+    margin-top: -1px;
 }
 
 div.noUi-value {
