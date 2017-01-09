@@ -52,11 +52,9 @@
                     <p>
                         <span translate>Total Storage:</span> {{ ctrl.space | humanSize }}
                     </p>
-                    <label>Admin Account Storage: {{ ctrl.slider.value }}</label>
-                    <div class="margin">
-                        <slider value="ctrl.sliderValue" options="ctrl.sliderOptions" class="margin"></slider>
-                    </div>
-                    <p>Storage for Users: {{ ( ctrl.space - ctrl.quota * unit.value) | humanSize }}</p>
+                    <label><span translate-context="Label" translate>Admin Account Storage:</span> {{ ctrl.sliderValue * ctrl.unit | humanSize }} ({{ ctrl.usedSpace | humanSize }} Used)</label>
+                    <slider value="ctrl.sliderValue" options="ctrl.sliderOptions" class="margin"></slider>
+                    <p><span translate-context="Label" translate>Storage for members:</span> {{ ( ctrl.max - ctrl.sliderValue * ctrl.unit) | humanSize }}</p>
                 </div>
             </div>
         </div>
