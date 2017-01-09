@@ -67,6 +67,10 @@
             text-decoration: underline;
         }
     }
+    &.sliderButton {
+        height: 28px;
+        line-height: 28px;
+    }
     &.autoHeight {
         height:auto;
         line-height: initial;
