@@ -1,74 +1,94 @@
-<ul class="menu" ng-controller="SidebarController">
-    <li role="presentation" ng-if="!isSubUser" ng-class="{'active': ('secured.dashboard' | includedByState)}">
-        <a ui-sref="secured.dashboard" translate-context="Title">
-            <i class="fa fa-tachometer"></i>
-            <span translate-comment="dashboard menu" translate>Dashboard</span>
+<div>
+    <div ng-show="mobileMode">
+        <button class="pm_button round pull-right" ng-click="hideMobileSidebar()">
+            <i class="fa fa-times"></i>
+        </button>
+        <a class="logo">
+            <img src="assets/img/logo.png" height="20" alt="ProtonMail" />
         </a>
-    </li>
-    <li role="presentation" ng-class="{'active': ('secured.account' | includedByState)}">
-        <a ui-sref="secured.account" translate-context="Title">
-            <i class="fa fa-user"></i>
-            <span translate-comment="account menu" translate>Account</span>
+        <span class="userDisplay">
+            <em>{{ user.DisplayName }}</em>
+            <strong>{{ user.Addresses[0].Email }}</strong>
+        </span>
+    </div>
+    <div class="padding-top">
+        <a class="backToInbox" ui-sref="secured.inbox" translate-context="Title">
+            <i class="fa fa-arrow-left"></i>
+            <span translate-comment="inbox menu" translate>Back to inbox</span>
         </a>
-    </li>
-    <li role="presentation" ng-class="{'active': ('secured.labels' | includedByState)}">
-        <a ui-sref="secured.labels" translate-context="Title">
-            <i class="fa fa-tags"></i>
-            <span translate-comment="labels menu" translate>Labels</span>
-        </a>
-    </li>
-    <li role="presentation" ng-class="{'active': ('secured.filters' | includedByState)}">
-        <a ui-sref="secured.filters" translate-context="Title">
-            <i class="fa fa-filter"></i>
-            <span translate-comment="filters menu" translate>Filters</span>
-        </a>
-    </li>
-    <li role="presentation" ng-class="{'active': ('secured.security' | includedByState)}">
-        <a ui-sref="secured.security" translate-context="Title">
-            <i class="fa fa-lock"></i>
-            <span translate-comment="security menu" translate>Security</span>
-        </a>
-    </li>
-    <li role="presentation" ng-class="{'active': ('secured.appearance' | includedByState)}">
-        <a ui-sref="secured.appearance" translate-context="Title">
-            <i class="fa fa-paint-brush"></i>
-            <span translate-comment="appearance menu" translate>Appearance</span>
-        </a>
-    </li>
-    <li role="presentation" ng-class="{'active': ('secured.addresses' | includedByState) , 'hidden': mobileMode}" class="desktopOnly">
-        <a ui-sref="secured.addresses" translate-context="Title">
-            <i class="fa fa-at"></i>
-            <span translate-comment="addresses menu" translate>Addresses</span>
-        </a>
-    </li>
-    <li role="presentation" ng-if="!isSubUser" ng-class="{'active': ('secured.domains' | includedByState)}" class="desktopOnly">
-        <a ui-sref="secured.domains" translate-context="Title">
-            <i class="fa fa-globe"></i>
-            <span translate-comment="custom domain menu" translate>Domains</span>
-        </a>
-    </li>
-    <li role="presentation" ng-if="!isSubUser && keyPhase > 3" ng-class="{'active': ('secured.members' | includedByState)}" class="desktopOnly">
-        <a ui-sref="secured.members" translate-context="Title">
-            <i class="fa fa-users"></i>
-            <span translate-comment="members menu" translate>Members</span>
-        </a>
-    </li>
-    <li role="presentation" ng-if="!isSubUser" ng-class="{'active': ('secured.payments' | includedByState)}">
-        <a ui-sref="secured.payments" translate-context="Title">
-            <i class="fa fa-credit-card"></i>
-            <span translate-comment="payments menu" translate>Payments</span>
-        </a>
-    </li>
-    <li role="presentation" ng-class="{'active': ('secured.keys' | includedByState)}">
-        <a ui-sref="secured.keys" translate-context="Title">
-            <i class="fa fa-key"></i>
-            <span translate-comment="keys menu" translate>Keys</span>
-        </a>
-    </li>
-    <li role="presentation">
-        <a href="#" ng-click="donate()" translate-context="Title">
-            <i class="fa fa-heart-o"></i>
-            <span translate-comment="keys menu" translate>Donate</span>
-        </a>
-    </li>
-</ul>
+        <ul class="menu" ng-controller="SidebarController">
+            <li role="presentation" ng-if="!isSubUser" ng-class="{'active': ('secured.dashboard' | includedByState)}">
+                <a ui-sref="secured.dashboard" translate-context="Title">
+                    <i class="fa fa-tachometer"></i>
+                    <span translate-comment="dashboard menu" translate>Dashboard</span>
+                </a>
+            </li>
+            <li role="presentation" ng-class="{'active': ('secured.account' | includedByState)}">
+                <a ui-sref="secured.account" translate-context="Title">
+                    <i class="fa fa-user"></i>
+                    <span translate-comment="account menu" translate>Account</span>
+                </a>
+            </li>
+            <li role="presentation" ng-class="{'active': ('secured.labels' | includedByState)}">
+                <a ui-sref="secured.labels" translate-context="Title">
+                    <i class="fa fa-tags"></i>
+                    <span translate-comment="labels menu" translate>Labels</span>
+                </a>
+            </li>
+            <li role="presentation" ng-class="{'active': ('secured.filters' | includedByState)}">
+                <a ui-sref="secured.filters" translate-context="Title">
+                    <i class="fa fa-filter"></i>
+                    <span translate-comment="filters menu" translate>Filters</span>
+                </a>
+            </li>
+            <li role="presentation" ng-class="{'active': ('secured.security' | includedByState)}">
+                <a ui-sref="secured.security" translate-context="Title">
+                    <i class="fa fa-lock"></i>
+                    <span translate-comment="security menu" translate>Security</span>
+                </a>
+            </li>
+            <li role="presentation" ng-class="{'active': ('secured.appearance' | includedByState)}">
+                <a ui-sref="secured.appearance" translate-context="Title">
+                    <i class="fa fa-paint-brush"></i>
+                    <span translate-comment="appearance menu" translate>Appearance</span>
+                </a>
+            </li>
+            <li role="presentation" ng-class="{'active': ('secured.addresses' | includedByState) , 'hidden': mobileMode}" class="desktopOnly">
+                <a ui-sref="secured.addresses" translate-context="Title">
+                    <i class="fa fa-at"></i>
+                    <span translate-comment="addresses menu" translate>Addresses</span>
+                </a>
+            </li>
+            <li role="presentation" ng-if="!isSubUser" ng-class="{'active': ('secured.domains' | includedByState)}" class="desktopOnly">
+                <a ui-sref="secured.domains" translate-context="Title">
+                    <i class="fa fa-globe"></i>
+                    <span translate-comment="custom domain menu" translate>Domains</span>
+                </a>
+            </li>
+            <li role="presentation" ng-if="!isSubUser && keyPhase > 3" ng-class="{'active': ('secured.members' | includedByState)}" class="desktopOnly">
+                <a ui-sref="secured.members" translate-context="Title">
+                    <i class="fa fa-users"></i>
+                    <span translate-comment="members menu" translate>Members</span>
+                </a>
+            </li>
+            <li role="presentation" ng-if="!isSubUser" ng-class="{'active': ('secured.payments' | includedByState)}">
+                <a ui-sref="secured.payments" translate-context="Title">
+                    <i class="fa fa-credit-card"></i>
+                    <span translate-comment="payments menu" translate>Payments</span>
+                </a>
+            </li>
+            <li role="presentation" ng-class="{'active': ('secured.keys' | includedByState)}">
+                <a ui-sref="secured.keys" translate-context="Title">
+                    <i class="fa fa-key"></i>
+                    <span translate-comment="keys menu" translate>Keys</span>
+                </a>
+            </li>
+            <li role="presentation">
+                <a href="#" ng-click="donate()" translate-context="Title">
+                    <i class="fa fa-heart-o"></i>
+                    <span translate-comment="keys menu" translate>Donate</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+</div>
