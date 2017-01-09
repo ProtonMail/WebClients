@@ -1,9 +1,11 @@
 <div>
-    <button type="button" class="pm_button" ng-click="minus()">
-        <i class="fa fa-minus"></i>
-    </button>
-    <div class="slider"></div>
-    <button type="button" class="pm_button" ng-click="plus()">
-        <i class="fa fa-plus"></i>
-    </button>
+    <div class="slider slider-withButtons" ng-class="{ 'slider-legend-GB' : legend == 'GB' }"></div>
+    <div class="pm-flex-content-row justifyContentCenter">
+        <button type="button" class="pm_button" ng-click="minus()">
+            <i class="fa fa-minus"></i>
+        </button>
+        <button type="button" class="pm_button margin-left" ng-click="plus()">
+            <i class="fa fa-plus"></i>
+        </button>
+    </div>
 </div>

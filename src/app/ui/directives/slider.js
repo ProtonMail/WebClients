@@ -21,6 +21,8 @@ angular.module('proton.ui')
                 slider.noUiSlider.destroy();
             });
 
+            scope.legend = scope.options.legend;
+
             scope.plus = () => {
                 const newValue = slider.noUiSlider.get() + scope.options.step;
 
