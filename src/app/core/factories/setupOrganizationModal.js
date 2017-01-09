@@ -19,6 +19,7 @@ angular.module('proton.core')
             self.size = 2048;
             self.sliderValue = self.min / self.unit;
             self.sliderOptions = {
+                animate: false,
                 start: self.min / self.unit,
                 step: 0.1,
                 connect: [true, false],
