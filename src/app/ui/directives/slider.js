@@ -24,18 +24,18 @@ angular.module('proton.ui')
             scope.legend = scope.options.legend;
 
             scope.plus = () => {
-                const newValue = slider.noUiSlider.get() + scope.options.step;
+                const newValue = Number(slider.noUiSlider.get()) + scope.options.step;
 
-                if (newValue <= scope.options.max) {
+                if (newValue <= scope.options.range.max) {
                     slider.noUiSlider.set(newValue);
                     onChange();
                 }
             };
 
             scope.minus = () => {
-                const newValue = slider.noUiSlider.get() - scope.options.step;
+                const newValue = Number(slider.noUiSlider.get()) - scope.options.step;
 
-                if (newValue >= scope.options.min) {
+                if (newValue >= scope.options.range.min) {
                     slider.noUiSlider.set(newValue);
                     onChange();
                 }
@@ -43,7 +43,7 @@ angular.module('proton.ui')
 
             function onChange() {
                 scope.$applyAsync(() => {
-                    scope.value = slider.noUiSlider.get();
+                    scope.value = Number(slider.noUiSlider.get());
                 });
             }
         }
