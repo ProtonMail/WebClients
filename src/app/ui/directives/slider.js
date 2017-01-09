@@ -4,7 +4,7 @@ angular.module('proton.ui')
         replace: true,
         restrict: 'E',
         scope: { value: '=', options: '=' },
-        templateUrl: 'templates/directives/ui/slider.tpl.html',
+        templateUrl: 'templates/ui/slider.tpl.html',
         link(scope, element) {
             const slider = element[0].querySelector('.slider');
 
