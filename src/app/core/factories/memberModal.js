@@ -51,7 +51,7 @@ angular.module('proton.core')
             self.max = initMax(params.organization);
             self.sliderValue = initValue(params.organization, params.member);
             self.sliderOptions = {
-                start: initStart() / self.unit,
+                start: initStart(params.organization, params.member) / self.unit,
                 step: 0.1,
                 connect: [true, false],
                 tooltips: true,
