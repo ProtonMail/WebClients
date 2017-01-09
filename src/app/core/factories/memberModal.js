@@ -21,10 +21,10 @@ angular.module('proton.core')
         return organization.MaxSpace;
     }
     function initValue(organization, member) {
-        return (member) ? member.MaxSpace : organization.AssignedSpace;
+        return (member) ? member.UsedSpace : organization.AssignedSpace;
     }
     function initStart(organization, member) {
-        return (member) ? member.MaxSpace : organization.AssignedSpace;
+        return (member) ? member.UsedSpace : organization.AssignedSpace;
     }
     return pmModal({
         controllerAs: 'ctrl',
