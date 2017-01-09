@@ -71,14 +71,10 @@
                 </div>
                 <div class="pm_grid">
                     <div class="col-1-3">
-                        <label translate translate-context="Title">Storage</label>
+                        <label translate translate-context="Title">Account storage</label>
                     </div>
                     <div class="col-1-3">
-                        <input type="text" ng-model="ctrl.quota" class="inline" placeholder-translate="Storage quota" />
-                        <span class="pm_select inline mini">
-                            <select ng-model="ctrl.unit" ng-options="unit.label for unit in ctrl.units"></select>
-                            <i class="fa fa-angle-down"></i>
-                        </span>
+                        <slider value="ctrl.sliderValue" options="ctrl.sliderOptions"></slider>
                     </div>
                     <div class="col-1-3">
                         <label>{{ (ctrl.organization.MaxSpace - ctrl.organization.AssignedSpace) | humanSize }} <span translate>available</span></label>
@@ -89,7 +85,7 @@
                 </p>
                 <p class="alert" >
                     Please give the address and temporary password to the new member so they can log in.
-                </p>                
+                </p>
             </div>
         </div>
         <div class="modal-footer text-right">
