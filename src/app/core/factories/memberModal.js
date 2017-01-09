@@ -5,7 +5,6 @@ angular.module('proton.core')
     eventManager,
     gettextCatalog,
     Member,
-    $q,
     networkActivityTracker,
     notify,
     pmcw,
@@ -87,122 +86,88 @@ angular.module('proton.core')
                 }
                 member.Name = self.name;
                 member.Private = self.private ? 1 : 0;
-                member.MaxSpace = self.sliderValue * self.unit;
+                member.MaxSpace = (self.sliderValue - self.min) * self.unit;
 
                 const check = () => {
-                    const deferred = $q.defer();
-                    let error;
-
                     if (self.name.length === 0) {
-                        error = gettextCatalog.getString('Invalid name', null, 'Error');
-                        deferred.reject(error);
+                        return Promise.reject(gettextCatalog.getString('Invalid name', null, 'Error'));
                     } else if ((!member.ID || (!member.Private && params.member.Keys.length === 0)) && self.temporaryPassword !== self.confirmPassword) {
-                        error = gettextCatalog.getString('Invalid password', null, 'Error');
-                        deferred.reject(error);
+                        return Promise.reject(gettextCatalog.getString('Invalid password', null, 'Error'));
                     } else if ((!member.ID || (params.member.Addresses.length === 0 && params.member.Type === 1)) && self.address.length === 0) {
-                        error = gettextCatalog.getString('Invalid address', null, 'Error');
-                        deferred.reject(error);
-                    } else if (self.sliderValue * self.unit > (self.organization.MaxSpace - self.organization.UsedSpace)) {
-                        error = gettextCatalog.getString('Invalid storage quota', null, 'Error');
-                        deferred.reject(error);
+                        return Promise.reject(gettextCatalog.getString('Invalid address', null, 'Error'));
+                    } else if ((self.sliderValue - self.min) * self.unit > (self.organization.MaxSpace - self.organization.UsedSpace)) {
+                        return Promise.reject(gettextCatalog.getString('Invalid storage quota', null, 'Error'));
                     } else if (!member.ID && !member.Private && !self.organizationKey) {
-                        error = gettextCatalog.getString('Cannot decrypt organization key', null, 'Error');
-                        deferred.reject(error);
-                    } else {
-                        deferred.resolve();
+                        return Promise.reject(gettextCatalog.getString('Cannot decrypt organization key', null, 'Error'));
                     }
-
-                    return deferred.promise;
+                    return Promise.resolve();
                 };
 
                 const updateName = () => {
-
                     if (self.oldMember && self.oldMember.Name === self.name) {
-                        return $q.resolve();
+                        return Promise.resolve();
                     }
 
-                    const deferred = $q.defer();
-
-                    Member.name(member.ID, self.name)
+                    return Member.name(member.ID, self.name)
                     .then((result) => {
                         if (result.data && result.data.Code === 1000) {
                             member.Name = self.name;
-                            deferred.resolve();
+                            return Promise.resolve();
                         } else if (result.data && result.data.Error) {
-                            deferred.reject(result.data.Error);
-                        } else {
-                            deferred.reject('Request error');
+                            return Promise.reject(result.data.Error);
                         }
+                        return Promise.reject('Request error');
                     });
-
-                    return deferred.promise;
                 };
 
                 const updateQuota = () => {
-
-                    if (self.oldMember && self.oldMember.MaxSpace === (self.sliderValue * self.unit)) {
-                        return $q.resolve();
+                    if (self.oldMember && self.oldMember.MaxSpace === ((self.sliderValue - self.min) * self.unit)) {
+                        return Promise.resolve();
                     }
 
-                    const deferred = $q.defer();
-
-                    Member.quota(member.ID, self.sliderValue * self.unit)
+                    return Member.quota(member.ID, (self.sliderValue - self.min) * self.unit)
                     .then((result) => {
                         if (result.data && result.data.Code === 1000) {
-                            member.MaxSpace = self.sliderValue * self.unit;
-                            deferred.resolve();
+                            member.MaxSpace = (self.sliderValue - self.min) * self.unit;
+                            Promise.resolve();
                         } else if (result.data && result.data.Error) {
-                            deferred.reject(result.data.Error);
-                        } else {
-                            deferred.reject('Request error');
+                            return Promise.reject(result.data.Error);
                         }
+                        return Promise.reject('Request error');
                     });
-
-                    return deferred.promise;
                 };
 
                 // const updatePrivate = () => {
-
                 //     if (self.oldMember && Boolean(self.oldMember.Private) === self.private) {
-                //         return $q.resolve();
+                //         return Promise.resolve();
                 //     }
-
-                //     const deferred = $q.defer();
-
+                //
                 //     if (self.private) {
-                //         Member.privatize(member.ID)
+                //         return Member.privatize(member.ID)
                 //         .then((result) => {
                 //             if (result.data && result.data.Code === 1000) {
                 //                 member.Private = 1;
-                //                 deferred.resolve();
+                //                 return Promise.resolve();
                 //             } else if (result.data && result.data.Error) {
-                //                 deferred.reject(result.data.Error);
-                //             } else {
-                //                 deferred.reject('Request error');
+                //                 return Promise.reject(result.data.Error);
                 //             }
+                //             return Promise.reject('Request error');
                 //         });
-                //     } else {
-                //         deferred.resolve();
                 //     }
-
-                //     return deferred.promise;
+                //
+                //     return Promise.resolve();
                 // };
 
                 const memberRequest = () => {
-                    const deferred = $q.defer();
-
-                    Member.create(member, self.temporaryPassword).then((result) => {
+                    return Member.create(member, self.temporaryPassword).then((result) => {
                         if (result.data && result.data.Code === 1000) {
                             member = result.data.Member;
-                            deferred.resolve();
+                            return Promise.resolve();
                         } else if (result.data && result.data.Error) {
-                            deferred.reject(result.data.Error);
-                        } else {
-                            deferred.reject('Request error');
+                            return Promise.reject(result.data.Error);
                         }
+                        return Promise.reject('Request error');
                     });
-
-                    return deferred.promise;
                 };
 
                 const addressRequest = () => {
@@ -278,7 +243,6 @@ angular.module('proton.core')
                 .then(keyRequest)
                 .then(finish)
                 .catch(error);
-
 
                 networkActivityTracker.track(mainPromise);
             };
