@@ -13,18 +13,6 @@ angular.module('proton.core')
     Address,
     setupKeys
     ) => {
-    function initMin(organization, member) {
-        return (member) ? organization.AssignedSpace - member.UsedSpace : organization.AssignedSpace;
-    }
-    function initMax(organization) {
-        return organization.MaxSpace;
-    }
-    function initValue(organization, member) {
-        return (member) ? member.UsedSpace : organization.AssignedSpace;
-    }
-    function initStart(organization, member) {
-        return (member) ? member.UsedSpace : organization.AssignedSpace;
-    }
     return pmModal({
         controllerAs: 'ctrl',
         templateUrl: 'templates/modals/member.tpl.html',
@@ -32,6 +20,7 @@ angular.module('proton.core')
             // Variables
             const self = this;
             const base = CONSTANTS.BASE_SIZE;
+            const initValue = (params.member) ? params.member.UsedSpace : params.organization.AssignedSpace;
 
             // Default Parameters
             self.ID = null;
@@ -46,15 +35,16 @@ angular.module('proton.core')
             self.confirmPassword = '';
             self.address = '';
             self.unit = base * base * base;
-            self.min = initMin(params.organization, params.member);
-            self.max = initMax(params.organization);
-            self.sliderValue = initValue(params.organization, params.member);
+            self.min = 0;
+            self.max = params.organization.MaxSpace;
+            self.sliderValue = initValue;
             self.sliderOptions = {
-                start: initStart(params.organization, params.member) / self.unit,
+                start: initValue / self.unit,
                 step: 0.1,
                 connect: [true, false],
                 tooltips: true,
                 range: { min: self.min / self.unit, max: self.max / self.unit },
+                minPadding: initValue / self.unit,
                 pips: { mode: 'range', stepped: true, density: 4 },
                 legend: 'GB'
             };
