@@ -97,7 +97,7 @@ angular.module('proton.core')
                 return handle403(rejection.config);
             } else if ([408, 503, 504].indexOf(rejection.status) !== -1) {
                 notification = $injector.get('notify')({
-                    message: 'ProtonMail cannot be reached right now, please try again later.',
+                    message: 'Request timed out, please try again.',
                     classes: 'notification-danger'
                 });
             }
