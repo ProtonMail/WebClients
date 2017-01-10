@@ -1,5 +1,5 @@
 angular.module('proton.attachments')
-    .factory('attachmentModel', ($log, $q, attachmentApi, AttachmentLoader, authentication, $rootScope, embedded, notify, networkActivityTracker, composerRequestModel) => {
+    .factory('attachmentModel', ($q, attachmentApi, AttachmentLoader, authentication, $rootScope, embedded, notify, networkActivityTracker, composerRequestModel) => {
 
         const queueMessage = {};
         let MAP_ATTACHMENTS = {};
@@ -11,10 +11,7 @@ angular.module('proton.attachments')
          * Dispatch an event for the sending button
          * @param  {Message} message
          */
-        const dispatchMessageAction = (message) => {
-            console.trace('CALL ME MAYBE');
-            $rootScope.$emit('actionMessage', message)
-        };
+        const dispatchMessageAction = (message) => $rootScope.$emit('actionMessage', message);
 
         /**
          * Create a map [<REQUEST>] = <upload>
@@ -46,10 +43,13 @@ angular.module('proton.attachments')
         };
 
         $rootScope.$on(EVENT_NAME, (e, { type, data }) => {
-            console.log({type, data});
             switch (type) {
                 case 'close':
                     attachmentApi.killUpload(data);
+                    break;
+                case 'uploading':
+                    data.message.encryptingAttachment = false;
+                    dispatchMessageAction(data.message);
                     break;
                 case 'cancel':
                     dispatchMessageAction(data.message);
@@ -105,7 +105,7 @@ angular.module('proton.attachments')
             return upload([{ file, isEmbedded: insert }], message, action, false, cid)
                 .then(([ upload ]) => (message.uploading = 0, upload))
                 .catch((err) => {
-                    $log.error(err);
+                    console.error(err);
                     throw err;
                 });
         }
@@ -153,6 +153,7 @@ angular.module('proton.attachments')
             });
 
             message.uploading = promises.length;
+            message.encryptingAttachment = true;
             dispatchMessageAction(message);
 
             composerRequestModel.save(message, deferred);
@@ -162,6 +163,7 @@ angular.module('proton.attachments')
                 .then((upload) => upload.filter(Boolean)) // will be undefined for aborted request
                 .then((upload) => {
                     message.uploading = 0;
+                    message.encryptingAttachment = false;
                     dispatchMessageAction(message);
 
                     // Create embedded and replace theses files from the upload list
@@ -323,12 +325,12 @@ angular.module('proton.attachments')
                             return { attachment, sessionKey, packets, cid, REQUEST_ID };
                         })
                         .catch((err) => {
-                            $log.error(err);
+                            console.error(err);
                             notifyError('Error during file upload');
                         });
                 })
                 .catch((err) => {
-                    $log.error(err);
+                    console.error(err);
                     notifyError('Error encrypting attachment');
                     throw err;
                 });

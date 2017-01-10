@@ -10,6 +10,9 @@ angular.module('proton.composer')
             let label;
 
             switch (!!msg) {
+                case (msg.encryptingAttachment === true):
+                    label = gettextCatalog.getString('Encrypting attachments', null, 'Action');
+                    break;
                 case (msg.uploading > 0):
                     label = gettextCatalog.getString('Uploading', null, 'Action');
                     break;
