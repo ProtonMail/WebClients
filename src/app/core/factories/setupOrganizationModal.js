@@ -11,20 +11,22 @@ angular.module('proton.core')
             const payload = {};
             let index = 0;
             let decryptedKey;
-            self.min = authentication.user.UsedSpace;
+            const initValue = authentication.user.UsedSpace;
+            self.min = 0;
             self.max = params.organization.MaxSpace;
             self.unit = base * base * base;
-            self.usedSpace = authentication.user.UsedSpace;
+            self.usedSpace = initValue;
             self.step = steps[index];
             self.size = 2048;
-            self.sliderValue = self.min / self.unit;
+            self.sliderValue = initValue / self.unit;
             self.sliderOptions = {
                 animate: false,
-                start: self.min / self.unit,
+                start: initValue / self.unit,
                 step: 0.1,
                 connect: [true, false],
                 tooltips: true,
                 range: { min: self.min / self.unit, max: self.max / self.unit },
+                minPadding: initValue / self.unit,
                 pips: { mode: 'range', stepped: true, density: 4 },
                 legend: 'GB'
             };
