@@ -2,15 +2,15 @@ angular.module('proton.attachments')
     .factory('attachmentApi', ($http, url, $q, $rootScope, authentication, notify, pmcw, CONFIG, CONSTANTS, secureSessionStorage, gettextCatalog) => {
 
         let pendingUpload = [];
+        const requestURL = url.build('attachments');
         const notifyError = (message) => notify({ message, classes: 'notification-danger' });
-
         const dispatch = (type, data) => $rootScope.$emit('attachment.upload', { type, data });
 
-        const dispatchUpload = (REQUEST_ID, { ID }, packet) => (progress, status, isStart = false) => {
+        const dispatchUpload = (REQUEST_ID, message, packet) => (progress, status, isStart = false) => {
             dispatch('uploading', {
                 id: REQUEST_ID,
-                messageID: ID,
-                status, progress, packet, isStart
+                messageID: message.ID,
+                message, status, progress, packet, isStart
             });
         };
 
@@ -66,7 +66,7 @@ angular.module('proton.attachments')
          * @param  {String} ID
          * @return {Promise}
          */
-        const get = (ID) => $http.get(`${url.get()}/attachments/${ID}`, { responseType: 'arraybuffer' });
+        const get = (ID) => $http.get(requestURL(ID), { responseType: 'arraybuffer' });
 
         const upload = (packets, message, tempPacket, total) => {
             const REQUEST_ID = `${Math.random().toString(32).slice(2, 12)}-${Date.now()}`;
@@ -180,7 +180,7 @@ angular.module('proton.attachments')
                     .catch(deferred.reject);
             };
 
-            xhr.open('post', url.get() + '/attachments/upload', true);
+            xhr.open('post', requestURL('upload'), true);
             xhr.withCredentials = true;
             xhr.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
             xhr.setRequestHeader('Accept', 'application/vnd.protonmail.v1+json');
@@ -201,7 +201,7 @@ angular.module('proton.attachments')
          * @return {Promise}
          */
         const remove = (message, attachment) => {
-            return $http.delete(url.get() + '/attachments/' + attachment.ID, { MessageID: message.ID })
+            return $http.delete(requestURL(attachment.ID), { MessageID: message.ID })
                 .then(({ data = {} }) => {
                     if (data.Code !== 1000) {
                         const error = data.Error || 'Error during the remove request';
