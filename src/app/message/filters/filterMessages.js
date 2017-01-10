@@ -1,6 +1,6 @@
 angular.module('proton.message')
     .filter('filterMessages', ($state, $rootScope, CONSTANTS) => {
-        return (messages, showTrashed, showNonTrashed) => {
+        return (messages = [], showTrashed, showNonTrashed) => {
             if (!$state.includes('secured.search.**') && !$state.includes('secured.label.**') && !$state.includes('secured.starred.**')) {
 
                 const nonTrashed = messages.filter((message) => !_.contains(message.LabelIDs, CONSTANTS.MAILBOX_IDENTIFIERS.trash));

@@ -138,6 +138,8 @@ angular.module('proton.core')
             CONSTANTS.MAILBOX_IDENTIFIERS.drafts,
             CONSTANTS.MAILBOX_IDENTIFIERS.sent,
             CONSTANTS.MAILBOX_IDENTIFIERS.trash,
+            CONSTANTS.MAILBOX_IDENTIFIERS.spam,
+            CONSTANTS.MAILBOX_IDENTIFIERS.allmail,
             CONSTANTS.MAILBOX_IDENTIFIERS.archive,
             CONSTANTS.MAILBOX_IDENTIFIERS.starred
         ].concat(_.map(authentication.user.Labels, ({ ID }) => ID) || []);
@@ -203,6 +205,8 @@ angular.module('proton.core')
             CONSTANTS.MAILBOX_IDENTIFIERS.drafts,
             CONSTANTS.MAILBOX_IDENTIFIERS.sent,
             CONSTANTS.MAILBOX_IDENTIFIERS.trash,
+            CONSTANTS.MAILBOX_IDENTIFIERS.spam,
+            CONSTANTS.MAILBOX_IDENTIFIERS.allmail,
             CONSTANTS.MAILBOX_IDENTIFIERS.archive,
             CONSTANTS.MAILBOX_IDENTIFIERS.starred
         ].concat(_.map(authentication.user.Labels, ({ ID }) => ID) || []);
@@ -245,7 +249,7 @@ angular.module('proton.core')
 
         const promise = api.getDispatcher()
         .then(() => Conversation.query(request))
-        .then(({ data }) => {
+        .then(({ data = {} }) => {
             if (data.Code === 1000) {
                 // Set total value in rootScope
                 $rootScope.Total = data.Total;
@@ -273,7 +277,7 @@ angular.module('proton.core')
             }
 
             api.clearDispatcher();
-            return Promise.reject();
+            throw new Error('No conversations available');
         });
 
         networkActivityTracker.track(promise);
@@ -294,31 +298,29 @@ angular.module('proton.core')
 
         const promise = api.getDispatcher()
         .then(() => Message.query(request).$promise)
-        .then((result) => {
-            const messages = result.Messages;
+        .then(({ Messages = [], Total = 0 } = {}) => {
+            $rootScope.Total = Total;
 
-            $rootScope.Total = result.Total;
-
-            messages.forEach((message) => {
+            Messages.forEach((message) => {
                 message.loaded = true;
                 message.Senders = [message.Sender];
                 message.Recipients = _.uniq([].concat(message.ToList || []).concat(message.CCList || []).concat(message.BCCList || []));
             });
 
             // Store messages
-            storeMessages(messages);
+            storeMessages(Messages);
 
             // Only for cache context
             if (context) {
                 // Set total value in cache
-                cacheCounters.updateMessage(loc, result.Total);
+                cacheCounters.updateMessage(loc, Total);
                 // Return messages ordered
                 api.clearDispatcher();
-                return Promise.resolve(api.orderMessage(messages.slice(0, CONSTANTS.ELEMENTS_PER_PAGE)));
+                return Promise.resolve(api.orderMessage(Messages.slice(0, CONSTANTS.ELEMENTS_PER_PAGE)));
             }
 
             api.clearDispatcher();
-            return Promise.resolve(messages.slice(0, CONSTANTS.ELEMENTS_PER_PAGE));
+            return Promise.resolve(Messages.slice(0, CONSTANTS.ELEMENTS_PER_PAGE));
 
         });
 

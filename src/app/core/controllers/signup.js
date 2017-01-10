@@ -128,15 +128,16 @@ angular.module('proton.core')
 
         // Prepoppulate the username if from an invite link and mark as read only
         if (angular.isDefined($rootScope.username)) {
-            $scope.account.Username = $rootScope.username;
+            $scope.account.username = $rootScope.username;
             $scope.readOnlyUsername = true;
         } else {
+            $scope.account.username = '';
             $scope.readOnlyUsername = false;
         }
 
         const URLparams = $location.search();
         if (URLparams.u) {
-            $scope.account.Username = URLparams.u;
+            $scope.account.username = URLparams.u;
         }
 
         // Clear auth data
@@ -203,17 +204,10 @@ angular.module('proton.core')
         iframe.src = 'https://secure.protonmail.com/captcha/captcha.html?' + parameters;
     };
 
-    $scope.notificationEmailValidation = () => {
-        if ($scope.account.notificationEmail.length > 0) {
-            return !tools.validEmail($scope.account.notificationEmail);
-        }
-        return true;
-    };
-
     $scope.sendVerificationCode = () => {
         networkActivityTracker.track(
             User.code({
-                Username: $scope.account.Username,
+                Username: $scope.account.username,
                 Type: 'email',
                 Destination: {
                     Address: $scope.account.emailVerification
@@ -232,7 +226,7 @@ angular.module('proton.core')
         $scope.smsSending = true;
         networkActivityTracker.track(
             User.code({
-                Username: $scope.account.Username,
+                Username: $scope.account.username,
                 Type: 'sms',
                 Destination: {
                     Phone: $scope.account.smsVerification
@@ -348,7 +342,7 @@ angular.module('proton.core')
 
         $log.debug('generateKeys');
 
-        const email = $scope.account.Username + '@' + $scope.account.domain.value;
+        const email = $scope.account.username + '@' + $scope.account.domain.value;
         return setupKeys.generate([{ ID: 0, Email: email }], mbpw)
         .then((result) => {
             // Save for later
@@ -392,7 +386,7 @@ angular.module('proton.core')
 
         networkActivityTracker.track(
             Payment.verify({
-                Username: $scope.account.Username,
+                Username: $scope.account.username,
                 Amount: amount,
                 Currency: currency,
                 Payment: method
@@ -498,7 +492,7 @@ angular.module('proton.core')
         $scope.createUser = true;
 
         const params = {
-            Username: $scope.account.Username,
+            Username: $scope.account.username,
             Email: $scope.account.notificationEmail,
             News: !!($scope.account.optIn),
             Referrer: $location.search().ref
@@ -528,7 +522,7 @@ angular.module('proton.core')
         if (response.data && response.data.Code === 1000) {
             $scope.logUserIn = true;
             return authentication.loginWithCredentials({
-                Username: $scope.account.Username,
+                Username: $scope.account.username,
                 Password: loginPasswordCopy
             })
             .then(({ data }) => {

@@ -1,5 +1,5 @@
 <div id="outsideMessageWrap">
-    <div ng-if="true" id="expirationMessage">
+    <div ng-if="message.ExpirationTime" id="expirationMessage">
         <span  translate>Expiring in</span>
         <time
             time-refreshed="{{ ::message.ExpirationTime }}"

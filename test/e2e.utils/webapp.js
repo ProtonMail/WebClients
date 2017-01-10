@@ -22,6 +22,16 @@ const openLabel = (name) => {
     `);
 };
 
+const openState = (state = '') => {
+    browser.ignoreSynchronization = true;
+    browser.get(`http://localhost:8080/${state}`);
+    browser.waitForAngular();
+    return browser.wait(() => {
+        return browser.getCurrentUrl()
+            .then((url) => url.indexOf(`${state}`) !== -1);
+    }, 10000);
+};
+
 module.exports = {
-    openLabel, isLayout
+    openState, openLabel, isLayout
 };

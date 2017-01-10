@@ -4,7 +4,7 @@ angular.module('proton.conversation')
         responseError(rep = {}) {
 
             // If there is an error auto clear the cache then we get the latest config via events
-            if (/\/conversations\//.test(rep.config.url)) {
+            if (/\/conversations\//.test((rep.config || {}).url)) {
                 // Prevent circular dependency
                 const cache = $injector.get('cache');
                 const eventManager = $injector.get('eventManager');

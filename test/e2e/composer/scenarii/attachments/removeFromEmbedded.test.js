@@ -11,7 +11,7 @@ module.exports = ({ editor }) => () => {
         listAttachments = uploader.attachmentsList();
 
         borodin.removeEmbedded()
-            .then(() => browser.sleep(1000))
+            .then(() => browser.sleep(2000))
             .then(() => dropzone.matchIframe())
             .then(assert(1));
     });
@@ -28,7 +28,7 @@ module.exports = ({ editor }) => () => {
 
     it('should remove another one', () => {
         borodin.removeEmbedded()
-            .then(() => browser.sleep(1000))
+            .then(() => browser.sleep(2000))
             .then(() => dropzone.matchIframe())
             .then(assert(0));
     });

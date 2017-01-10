@@ -89,7 +89,7 @@ angular.module('proton.conversation')
             }
         }
 
-        return thisOne;
+        return thisOne || {};
     }
 
     /**
@@ -156,11 +156,9 @@ angular.module('proton.conversation')
 
             const scrollToPosition = getScrollToPosition();
             let unsubscribeActions = angular.noop;
-
+            scope.messages = [];
             scope.mailbox = tools.currentMailbox();
             scope.labels = authentication.user.Labels;
-            scope.currentState = $state.$current.name;
-            scope.scrolled = false;
             scope.showTrashed = false;
             scope.showNonTrashed = false;
             $rootScope.numberElementSelected = 1;
