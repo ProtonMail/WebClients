@@ -65,9 +65,6 @@ angular.module('proton.ui')
         const getNumberMessage = () => {
             const mailbox = tools.currentMailbox();
 
-            if (mailbox === 'drafts') {
-                return cacheCounters.unreadMessage(MAILBOX_IDENTIFIERS[mailbox]);
-            }
             if (mailbox === 'label') {
                 return cacheCounters[getCounterKey()]($state.params.label);
             }
@@ -82,7 +79,7 @@ angular.module('proton.ui')
          * @return {String}
          */
         const formatNumber = (n, mailbox) => {
-            if (_.contains(DISPLAY_NUMBER, mailbox) && n) {
+            if (_.contains(DISPLAY_NUMBER, mailbox) && n > 0) {
                 return `(${n})`;
             }
             return '';

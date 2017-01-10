@@ -1,6 +1,6 @@
 var _ = require('lodash');
 var util = require('util');
-var appVersion = '3.6.9';
+var appVersion = '3.6.12';
 var apiVersion = '1';
 var dateVersion = new Date().toDateString();
 var clientID = 'Angular';
@@ -77,7 +77,8 @@ module.exports = function(grunt) {
                         api_version: apiVersion,
                         date_version: dateVersion,
                         clientID: clientID,
-                        clientSecret: clientSecret
+                        clientSecret: clientSecret,
+                        year: (new Date()).getFullYear()
                     }
                 }
             },
@@ -90,7 +91,8 @@ module.exports = function(grunt) {
                         api_version: apiVersion,
                         date_version: dateVersion,
                         clientID: clientID,
-                        clientSecret: clientSecret
+                        clientSecret: clientSecret,
+                        year: (new Date()).getFullYear()
                     }
                 }
             }

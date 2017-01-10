@@ -425,14 +425,15 @@ angular.module('proton.routes', [
 
                     $scope.unlock = () => {
 
-                        const promise = pmcw
-                            .decryptMessage(encryptedToken, $scope.params.MessagePassword)
+                        const promise = pmcw.decryptMessage(encryptedToken, $scope.params.MessagePassword)
                             .then((decryptedToken) => {
                                 secureSessionStorage.setItem('proton:decrypted_token', decryptedToken.data);
                                 secureSessionStorage.setItem('proton:encrypted_password', pmcw.encode_utf8_base64($scope.params.MessagePassword));
                                 $state.go('eo.message', { tag: $stateParams.tag });
-                            }, (err) => {
-                                notify({ message: err.message, classes: 'notification-danger' });
+                            })
+                            .catch((err) => {
+                                console.error(err);
+                                notify({ message: 'Wrong Mailbox Password.', classes: 'notification-danger' });
                             });
 
                         networkActivityTracker.track(promise);
@@ -547,7 +548,7 @@ angular.module('proton.routes', [
                 if (Object.keys(authentication.user).length > 0) {
                     return authentication.user;
                 } else if (angular.isDefined(secureSessionStorage.getItem(CONSTANTS.OAUTH_KEY + ':SessionToken'))) {
-                    $http.defaults.headers.common['x-pm-session'] = pmcw.decode_base64(secureSessionStorage.getItem(CONSTANTS.OAUTH_KEY + ':SessionToken'));
+                    $http.defaults.headers.common['x-pm-session'] = pmcw.decode_base64(secureSessionStorage.getItem(CONSTANTS.OAUTH_KEY + ':SessionToken') || '');
                 }
 
                 return authentication.fetchUserInfo(); // TODO need to rework this just for the locked page

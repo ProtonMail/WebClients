@@ -24,7 +24,8 @@ angular.module('proton.composer')
     messageBuilder,
     notify,
     pmcw,
-    tools
+    tools,
+    AppModel
 ) => {
 
     const unsubscribe = [];
@@ -132,10 +133,14 @@ angular.module('proton.composer')
 
     unsubscribe.push($rootScope.$on('composer.new', (event, { message, type }) => {
         const limitReached = checkComposerNumber();
-
-        if (!limitReached) {
+        if (!limitReached && AppModel.is('onLine')) {
             initMessage(messageBuilder.create(type, message));
         }
+
+        !AppModel.is('onLine') && notify({
+            message: 'No Internet connection found.',
+            classes: 'notification-danger'
+        });
     }));
 
     unsubscribe.push($rootScope.$on('composer.load', (event, { ID }) => {
@@ -377,19 +382,22 @@ angular.module('proton.composer')
         message.From = From;
         message.AddressID = AddressID;
 
-        $scope
-            .$applyAsync(() => {
-                const size = $scope.messages.unshift(message);
+        $scope.$applyAsync(() => {
+            const size = $scope.messages.unshift(message);
 
-                recordMessage(message).then(() => { // message, notification, autosaving
-                    $rootScope.$emit('composer.update', {
-                        type: 'loaded',
-                        data: { size, message }
-                    });
-                }, (error) => {
-                    $log.error(error);
+            recordMessage(message)
+            .then(() => {
+                $rootScope.$emit('composer.update', {
+                    type: 'loaded',
+                    data: { size, message }
                 });
+            })
+            .catch(() => {
+                const [, ...list] = $scope.messages;
+                $scope.messages = list;
             });
+
+        });
     }
 
     $scope.togglePanel = (message, panelName) => {
@@ -574,7 +582,6 @@ angular.module('proton.composer')
      * @return {Promise}
      */
     function draftRequest(parameters, type) {
-        const deferred = $q.defer();
         const CREATE = 1;
         const UPDATE = 2;
         const errorMessage = gettextCatalog.getString('Saving draft failed, please try again', null, 'Info');
@@ -586,20 +593,16 @@ angular.module('proton.composer')
             promise = Message.createDraft(parameters).$promise;
         }
 
-        promise
-        .then((data) => {
-            if (data && (data.Code === 1000 || data.Code === 15033)) {
-                deferred.resolve(data);
-            } else if (data && data.Error) {
-                deferred.reject(data.Error);
-            } else {
-                deferred.reject(errorMessage);
-            }
-        }, () => {
-            deferred.reject(errorMessage);
-        });
-
-        return deferred.promise;
+        return promise
+            .then((data = {}) => {
+                if ((data.Code === 1000 || data.Code === 15033)) {
+                    return data;
+                }
+                throw new Error(data.Error || errorMessage);
+            })
+            .catch((error) => {
+                throw (error || new Error(errorMessage));
+            });
     }
 
     /**

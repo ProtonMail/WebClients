@@ -42,7 +42,6 @@ module.exports = {
       "vendor/angular-resource/angular-resource.js",
       "vendor/angular-ui-router/release/angular-ui-router.js",
       "vendor/angular-sanitize/angular-sanitize.js",
-      "vendor/angular-route/angular-route.js",
       "vendor/moment/min/moment-with-locales.js",
       "vendor/underscore/underscore.js",
       "vendor/dompurify/src/purify.js",

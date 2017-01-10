@@ -14,7 +14,7 @@ angular.module('proton.core')
             const ERROR = 4;
 
             // Parameters
-            self.size = 2048;
+            self.size = 2048; // To match the [radio] value
             self.process = false;
             self.title = params.title;
             self.addresses = params.addresses;
@@ -22,7 +22,7 @@ angular.module('proton.core')
             // Kill this for now
             self.askPassword = false; // = params.password.length === 0;
             self.password = params.password;
-            _.each(self.addresses, (address) => { address.state = QUEUED; });
+            _.each(self.addresses, (address) => (address.state = QUEUED));
 
             // Listeners
             $scope.$on('updateUser', () => {

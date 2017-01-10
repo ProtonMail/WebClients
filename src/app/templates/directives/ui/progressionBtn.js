@@ -1,11 +1,12 @@
 angular.module('proton.ui')
     .directive('progressionBtn', ($rootScope) => ({
         replace: true,
-        template: '<a class="progressionBtn-btn"><i class="fa fa-times"></i></a>',
+        template: '<button type="button" class="progressionBtn-btn"><i class="fa fa-times"></i></button>',
         link(scope, el, { action = '' }) {
             el[0].setAttribute('data-label', action);
 
             const onClick = () => {
+                el[0].disabled = true;
                 $rootScope.$emit('attachment.upload', {
                     type: action,
                     data: scope.model

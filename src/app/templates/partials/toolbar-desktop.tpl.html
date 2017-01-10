@@ -17,48 +17,7 @@
     </label>
 
     <read-unread></read-unread>
-
-    <span class="pm_buttons" ng-class="{ disabled: numberElementSelected === 0 }">
-        <a
-            href="#"
-            pt-tooltip-translate="Move to trash"
-            ng-click="move('trash')"
-            ng-if="!('secured.trash.**' | includedByState) && !('secured.drafts.**' | includedByState)"
-            ng-class="{ disabled: numberElementSelected === 0 }"
-            class="fa fa-trash-o toolbar-btn-trash"
-            pt-tooltip-translate-context="Action"></a>
-        <a
-            href="#"
-            pt-tooltip-translate="Move to inbox"
-            ng-click="move('inbox')"
-            ng-if="!('secured.inbox.**' | includedByState) && !('secured.sent.**' | includedByState)"
-            ng-class="{ disabled: numberElementSelected === 0 }"
-            class="fa fa-inbox toolbar-btn-inbox"
-            pt-tooltip-translate-context="Action"></a>
-        <a
-            href="#"
-            pt-tooltip-translate="Move to archive"
-            ng-click="move('archive')" ng-if="!('secured.archive.**' | includedByState)"
-            ng-class="{ disabled: numberElementSelected === 0 }"
-            class="fa fa-archive toolbar-btn-archive"
-            pt-tooltip-translate-context="Action"></a>
-        <a
-            href="#"
-            pt-tooltip-translate="Move to spam"
-            ng-click="move('spam')"
-            ng-if="!('secured.spam.**' | includedByState)"
-            ng-class="{ disabled: numberElementSelected === 0 }"
-            class="fa fa-ban toolbar-btn-spam"
-            pt-tooltip-translate-context="Action"></a>
-        <a
-            href="#"
-            pt-tooltip-translate="Delete"
-            ng-click="delete()"
-            ng-if="('secured.trash.**' | includedByState) || ('secured.drafts.**' | includedByState) || ('secured.allmail.**' | includedByState)"
-            ng-class="{ disabled: numberElementSelected === 0 }"
-            class="fa fa-times-circle-o toolbar-btn-delete"
-            pt-tooltip-translate-context="Action"></a>
-    </span>
+    <move-element></move-element>
 
     <span
         id="tour-label-dropdown"
@@ -76,60 +35,10 @@
             <dropdown-labels messages="elementsSelected" save="saveLabels"></dropdown-labels>
         </span>
     </span>
-    <span class="pm_buttons">
-        <a class="pm_trigger" dropdown><small translate>More</small> <i class="fa fa-angle-down"></i></a>
-        <span class="pm_dropdown wider">
-            <a href="#" ng-click="empty('drafts')" ng-show="{{ 'secured.drafts.**' | includedByState }}">
-                <i class="fa fa-times-circle-o"></i>
-                <span translate translate-context="Action">Empty drafts</span>
-            </a>
-            <a href="#" ng-click="empty('spam')" ng-show="{{ 'secured.spam.**' | includedByState }}">
-                <i class="fa fa-times-circle-o"></i>
-                <span translate translate-context="Action">Empty spam</span>
-            </a>
-            <a href="#" ng-click="empty('trash')" ng-show="{{ 'secured.trash.**' | includedByState }}">
-                <i class="fa fa-times-circle-o"></i>
-                <span translate translate-context="Action">Empty trash</span>
-            </a>
-            <a href="#" ng-click="orderBy('size')">
-                <i class="fa fa-sort-amount-asc"></i>
-                <span translate translate-context="Action">Size: Small to large</span>
-            </a>
-            <a href="#" ng-click="orderBy('-size')">
-                <i class="fa fa-sort-amount-desc"></i>
-                <span translate translate-context="Action">Size: Large to small</span>
-            </a>
-            <a href="#" ng-click="orderBy('-date')">
-                <i class="fa fa-clock-o"></i>
-                <span translate translate-context="Action">Date: New to old</span>
-            </a>
-            <a href="#" ng-click="orderBy('date')">
-                <i class="fa fa-history"></i>
-                <span translate translate-context="Action">Date: Old to new</span>
-            </a>
-            <a href="#" ng-click="clearFilter()" pt-tooltip-translate="Show all" pt-tooltip-translate-context="Action">
-                <i class="fa fa-list"></i>
-                <span translate translate-context="Action">Show all</span>
-            </a>
-            <a href="#" ng-click="filterBy('unread')">
-                <i class="fa fa-eye-slash"></i>
-                <span translate translate-context="Action">Show unread</span>
-            </a>
-            <a href="#" ng-click="filterBy('read')">
-                <i class="fa fa-eye"></i>
-                <span translate translate-context="Action">Show read</span>
-            </a>
-        </span>
-    </span>
+    <advanced-filter-element></advanced-filter-element>
+
     <div class="pull-right action toolbarDesktop-actions-right">
-        <span class="pm_buttons layout" id="tour-layout">
-            <a href="#" pt-tooltip-translate="Change layout" pt-tooltip-translate-context="Action" ng-class="{ 'active': user.ViewLayout === 0 }" ng-click="changeLayout('columns')">
-                <img src="/assets/img/columnview.svg" />
-            </a>
-            <a href="#" pt-tooltip-translate="Change layout" pt-tooltip-translate-context="Action" ng-class="{ 'active': user.ViewLayout === 1 }" ng-click="changeLayout('rows')">
-                <img src="/assets/img/rowview.svg" />
-            </a>
-        </span>
+        <choose-layout-btns id="tour-layout"></choose-layout-btns>
         <span class="pm_buttons" ng-show="showNextPrev()">
             <a href="#" ng-click="nextElement(conversation)" pt-tooltip-translate="Previous" pt-tooltip-translate-context="Action">
                 <i class="fa fa-chevron-left"></i>

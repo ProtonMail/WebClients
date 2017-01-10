@@ -9,6 +9,7 @@
 @import "animations.scss";
 
 // Custom Modules
+@import "ui/appCopyright.scss";
 @import "embedded.scss";
 @import "general.scss";
 @import "header.scss";
@@ -84,6 +85,9 @@
 @import "pgp/pgp.scss";
 @import "ui/readUnread.scss";
 @import "elements/countElementsSelected.scss";
+@import "ui/changeLayoutBtns.scss";
+@import "element/moveElement.scss";
+@import "element/advancedFilterElement.scss";
 
 @import "print.scss";
 

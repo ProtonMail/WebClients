@@ -31,13 +31,13 @@ const noop = function() {};
 
 const editor = composer();
 
-mainSuite(noop, { editor, message, identifier: 'simple'});
+mainSuite(noop, { editor, message, identifier: 'simple' });
 simpleCCBCC({ editor, message, identifier: 'simpleCCBCC' });
 mainSuite(noSubject, { editor, message, identifier: 'noSubject' }, {
     send: false,
     subject: false
 });
-autocomplete({ editor, message, identifier: 'simpleCCBCC' });
+autocomplete({ editor, message, identifier: 'autocomplete' });
 mainSuite(addFileLink, { editor, message, identifier: 'addFileLink' });
 mainSuite(addLink, { editor, message, identifier: 'addLink' });
 mainSuite(encryption, { editor, message, identifier: 'encryption' });

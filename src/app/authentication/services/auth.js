@@ -66,13 +66,11 @@ angular.module('proton.authentication')
         fetchUserInfo() {
 
             return networkActivityTracker.track(User.get()
-            .then((result) => {
-                if (result.data && result.data.Code === 1000) {
-                    return result.data.User;
-                } else if (angular.isDefined(result.data) && result.data.Error) {
-                    return Promise.reject({ message: result.data.Error });
+            .then(({ data = {} }) => {
+                if (data.Code === 1000) {
+                    return data.User;
                 }
-                return Promise.reject({ message: 'Error during user request' });
+                throw new Error(data.Error || 'Error during user request');
             })
             .then((user) => {
 
@@ -122,12 +120,17 @@ angular.module('proton.authentication')
                         user.Labels = labels.data.Labels;
 
                         return { user, organizationKey };
-                    } else if (contacts.data && contacts.data.Error) {
-                        return Promise.reject({ message: contacts.data.Error });
-                    } else if (labels.data && labels.data.Error) {
-                        return Promise.reject({ message: labels.data.Error });
                     }
-                    return Promise.reject({ message: 'Error during label / contact request' });
+
+                    if (contacts.data && contacts.data.Error) {
+                        throw new Error(contacts.data.Error);
+                    }
+
+                    if (labels.data && labels.data.Error) {
+                        throw new Error(labels.data.Error);
+                    }
+
+                    throw new Error('Error during label / contact request');
                 })
                 .then(({ user, organizationKey }) => {
 
@@ -139,16 +142,11 @@ angular.module('proton.authentication')
                     };
 
                     return setupKeys.decryptUser(user, organizationKey, api.getPassword())
-                    .then(({ keys }) => {
-                        storeKeys(keys);
-                        return user;
-                    })
-                    .catch(
-                        (error) => {
-                            return $exceptionHandler(error)
-                            .then(() => Promise.reject(error));
-                        }
-                    );
+                        .then(({ keys }) => (storeKeys(keys), user))
+                        .catch((error) => {
+                            $exceptionHandler(error);
+                            throw error;
+                        });
                 });
             }));
         }
@@ -540,30 +538,27 @@ angular.module('proton.authentication')
 
             const promise = auth.fetchUserInfo();
 
-            return promise.then(
-                (user) => {
-                    if (user.DisplayName.length === 0) {
-                        user.DisplayName = user.Name;
-                    }
-
-                    $rootScope.isLoggedIn = true;
-                    this.user = user;
-                    $rootScope.user = user;
-
-                    return user;
-                },
-                (error) => {
-                    $state.go('support.message', {
-                        data: {
-                            title: 'Problem loading your account',
-                            content: 'ProtonMail encountered a problem loading your account. Please try again later',
-                            type: 'alert-danger'
-                        }
-                    });
-                    return Promise.reject(error);
+            return promise.then((user) => {
+                if (user.DisplayName.length === 0) {
+                    user.DisplayName = user.Name;
                 }
-                //errorReporter.catcher('Please try again later')
-            );
+
+                $rootScope.isLoggedIn = true;
+                this.user = user;
+                $rootScope.user = user;
+
+                return user;
+            })
+            .catch((error) => {
+                $state.go('support.message', {
+                    data: {
+                        title: 'Problem loading your account',
+                        content: 'ProtonMail encountered a problem loading your account. Please try again later',
+                        type: 'alert-danger'
+                    }
+                });
+                throw error;
+            });
         },
 
         params(params) {

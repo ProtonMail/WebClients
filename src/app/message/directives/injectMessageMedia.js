@@ -107,8 +107,7 @@ angular.module('proton.message')
             .reduce((acc, selector) => {
                 // Remove proton- from the selector to know which selector to use
                 const attribute = selector.substring(7);
-                const $list = [].slice.call(node.querySelectorAll(mapSelectors[selector].join(', ')));
-
+                const $list = [].slice.call(node.querySelectorAll(`[${selector}]`));
                 return reducerLoader($list, {
                     selector, attribute,
                     getValue(node) {

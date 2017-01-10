@@ -1,5 +1,5 @@
 angular.module('proton.utils')
-.factory('networkActivityTracker', ($log, errorReporter, $rootScope, notify, dedentTpl) => {
+.factory('networkActivityTracker', (errorReporter, $rootScope, notify, dedentTpl) => {
 
     let promises = [];
     const DURATION = 10000; // 10 seconds
@@ -65,11 +65,14 @@ angular.module('proton.utils')
         promises = _.union(promises, [promise]);
 
         promise.catch((error) => {
+
+            console.error(formatError(error));
+
             if (angular.isString(error)) { // Just a String
                 notifyAlert(error);
             }
 
-            if (angular.isObject(error)) { // Error Object
+            if (angular.isObject(error) && !error.noNotify) { // Error Object
                 let message;
 
                 if (error.message) {
@@ -79,10 +82,9 @@ angular.module('proton.utils')
                 } else if (error.error_description) {
                     message = error.error_description;
                 } else {
-                    message = 'An error has occurred. Please try again.';
+                    message = 'An error has occurred. <br> Please try again or refresh the page.';
                 }
 
-                $log.error(formatError(error));
 
                 notifyAlert(message);
 

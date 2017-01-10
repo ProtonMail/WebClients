@@ -3,7 +3,7 @@ angular.module('proton.message')
     restrict: 'A',
     link(scope, element) {
         const type = tools.typeView();
-        const allowToggle = type === 'conversation' || $state.includes('secured.drafts.**');
+        const allowToggle = type === 'conversation' || $state.includes('secured.drafts.**') || $state.includes('secured.allmail.**') || $state.includes('secured.search.**');
 
         function selection() {
             if (window.getSelection) {
@@ -23,6 +23,8 @@ angular.module('proton.message')
                     }
 
                     scope.message.expand = !scope.message.expand;
+                    // Force close toggle details
+                    scope.message.toggleDetails && (scope.message.toggleDetails = false);
                     $rootScope.$emit('message.open', {
                         type: 'toggle',
                         data: {

@@ -77,10 +77,10 @@ angular.module('proton.message')
             const toTrash = mailbox === 'trash';
             const events = _.chain(ids)
                 .map((id) => {
-                    const message = cache.getMessageCached(id);
+                    const message = cache.getMessageCached(id) || {};
                     let labelIDs = message.LabelIDs || [];
                     const labelIDsAdded = updateLabelsAdded(message.Type, mailbox);
-                    const labelIDsRemoved = message.LabelIDs.filter((labelID) => [
+                    const labelIDsRemoved = labelIDs.filter((labelID) => [
                         CONSTANTS.MAILBOX_IDENTIFIERS.inbox,
                         CONSTANTS.MAILBOX_IDENTIFIERS.trash,
                         CONSTANTS.MAILBOX_IDENTIFIERS.spam,
@@ -454,7 +454,16 @@ angular.module('proton.message')
             cache.addToDispatcher(promise);
 
             if (!context) {
-                promise.then(() => eventManager.call());
+                promise
+                    .then(() => {
+                        // Update the cache to trigger an update (UI)
+                        _.each(ids, (id) => {
+                            const msg = cache.getMessageCached(id) || {};
+                            msg.IsRead = 0;
+                            cache.updateMessage(msg);
+                        });
+                    })
+                    .then(() => eventManager.call());
                 return networkActivityTracker.track(promise);
             }
 

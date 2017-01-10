@@ -9,8 +9,7 @@ angular.module('proton.formUtils')
             form: '=',
             compare: '='
         },
-        compile(element, attrs) {
-            const { id = '', name = '', placeholder = '', tabindex = 0 } = attrs;
+        compile(element, { id = '', name = '', placeholder = '', tabindex = 0 }) {
             const input = element[0].querySelector('input');
             input.setAttribute('id', id);
             input.setAttribute('name', name);

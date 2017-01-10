@@ -1,0 +1,15 @@
+.advancedFilterElement-btn-drafts { display: none !important }
+.advancedFilterElement-btn-spam { display: none !important }
+.advancedFilterElement-btn-trash { display: none !important }
+
+.advancedFilterElement-state-drafts {
+    .advancedFilterElement-btn-drafts { display: inline-block !important }
+}
+.advancedFilterElement-state-spam {
+    .advancedFilterElement-btn-spam { display: inline-block !important }
+}
+.advancedFilterElement-state-trash {
+    .advancedFilterElement-btn-trash { display: inline-block !important }
+}
+
+[class*="advancedFilterElement-btn"] * { pointer-events: none }

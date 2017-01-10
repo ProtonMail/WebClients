@@ -1,5 +1,5 @@
 angular.module('proton.attachments')
-    .factory('attachmentModel', ($log, $q, attachmentApi, AttachmentLoader, authentication, $rootScope, embedded, notify, networkActivityTracker, composerRequestModel) => {
+    .factory('attachmentModel', ($q, attachmentApi, AttachmentLoader, authentication, $rootScope, embedded, notify, networkActivityTracker, composerRequestModel) => {
 
         const queueMessage = {};
         let MAP_ATTACHMENTS = {};
@@ -46,6 +46,10 @@ angular.module('proton.attachments')
             switch (type) {
                 case 'close':
                     attachmentApi.killUpload(data);
+                    break;
+                case 'uploading':
+                    data.message.encryptingAttachment = false;
+                    dispatchMessageAction(data.message);
                     break;
                 case 'cancel':
                     dispatchMessageAction(data.message);
@@ -101,7 +105,7 @@ angular.module('proton.attachments')
             return upload([{ file, isEmbedded: insert }], message, action, false, cid)
                 .then(([ upload ]) => (message.uploading = 0, upload))
                 .catch((err) => {
-                    $log.error(err);
+                    console.error(err);
                     throw err;
                 });
         }
@@ -149,6 +153,7 @@ angular.module('proton.attachments')
             });
 
             message.uploading = promises.length;
+            message.encryptingAttachment = true;
             dispatchMessageAction(message);
 
             composerRequestModel.save(message, deferred);
@@ -158,6 +163,7 @@ angular.module('proton.attachments')
                 .then((upload) => upload.filter(Boolean)) // will be undefined for aborted request
                 .then((upload) => {
                     message.uploading = 0;
+                    message.encryptingAttachment = false;
                     dispatchMessageAction(message);
 
                     // Create embedded and replace theses files from the upload list
@@ -171,7 +177,9 @@ angular.module('proton.attachments')
                     message.addAttachments(upload.map(({ attachment }) => attachment));
                     updateMapAttachments(upload);
 
-                    triggerEvent && dispatch('upload.success', { upload, message, messageID: message.ID });
+                    if (triggerEvent && upload.length) {
+                        dispatch('upload.success', { upload, message, messageID: message.ID });
+                    }
 
                     deferred.resolve();
                     return upload;
@@ -305,10 +313,10 @@ angular.module('proton.attachments')
             return AttachmentLoader.load(file, message.From.Keys[0].PublicKey, authentication.getPrivateKeys(message.From.ID))
                 .then((packets) => {
                     return attachmentApi.upload(packets, message, tempPacket, total)
-                        .then(({ attachment, sessionKey, REQUEST_ID, isAborted }) => {
+                        .then(({ attachment, sessionKey, REQUEST_ID, isAborted, isError }) => {
 
-                            if (isAborted) {
-                                return;
+                            if (isAborted || isError) {
+                                throw new Error('Request error');
                             }
 
                             // Extract content-id even if there are no headers
@@ -317,12 +325,12 @@ angular.module('proton.attachments')
                             return { attachment, sessionKey, packets, cid, REQUEST_ID };
                         })
                         .catch((err) => {
-                            $log.error(err);
+                            console.error(err);
                             notifyError('Error during file upload');
                         });
                 })
                 .catch((err) => {
-                    $log.error(err);
+                    console.error(err);
                     notifyError('Error encrypting attachment');
                     throw err;
                 });
