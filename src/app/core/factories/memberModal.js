@@ -20,7 +20,8 @@ angular.module('proton.core')
             // Variables
             const self = this;
             const base = CONSTANTS.BASE_SIZE;
-            const initValue = (params.member) ? params.member.UsedSpace : params.organization.AssignedSpace;
+            const minValue = (params.member) ? (params.organization.MaxSpace - params.organization.AssignedSpace + params.member.UsedSpace) : params.organization.MaxSpace - params.organization.AssignedSpace;
+            const startValue = (params.member) ? (params.organization.MaxSpace - params.organization.AssignedSpace + params.member.MaxSpace) : params.organization.MaxSpace - params.organization.AssignedSpace;
 
             // Default Parameters
             self.ID = null;
@@ -35,21 +36,15 @@ angular.module('proton.core')
             self.confirmPassword = '';
             self.address = '';
             self.unit = base * base * base;
-            self.min = 0;
+            self.min = minValue;
             self.max = params.organization.MaxSpace;
-            self.sliderValue = initValue;
-
-            const startValue = initValue / self.unit;
-            const minValue = self.min / self.unit;
-            const maxValue = self.max / self.unit;
-            const minPadding = initValue / self.unit;
-
             self.sliderOptions = {
-                start: startValue,
+                animate: false,
+                start: startValue / self.unit,
                 step: 0.1,
                 connect: [true, false],
                 tooltips: true,
-                range: { min: minValue, max: maxValue },
+                range: { min: self.min / self.unit, max: self.max / self.unit },
                 pips: { mode: 'range', stepped: true, density: 4 },
                 legend: 'GB',
                 usedSpace: minPadding
@@ -63,7 +58,6 @@ angular.module('proton.core')
             // Edit mode
             if (params.member) {
                 self.oldMember = _.extend({}, params.member);
-
                 self.ID = params.member.ID;
                 self.name = params.member.Name;
                 self.private = Boolean(params.member.Private);
@@ -78,12 +72,14 @@ angular.module('proton.core')
                 let addresses = [];
                 let notificationMessage;
                 let member = {};
+
                 if (params.member) {
                     _.extend(member, params.member);
                 }
+
                 member.Name = self.name;
                 member.Private = self.private ? 1 : 0;
-                member.MaxSpace = (self.sliderValue - initValue) * self.unit;
+                member.MaxSpace = (self.sliderValue - self.min) * self.unit;
 
                 const check = () => {
                     if (self.name.length === 0) {
@@ -92,7 +88,7 @@ angular.module('proton.core')
                         return Promise.reject(gettextCatalog.getString('Invalid password', null, 'Error'));
                     } else if ((!member.ID || (params.member.Addresses.length === 0 && params.member.Type === 1)) && self.address.length === 0) {
                         return Promise.reject(gettextCatalog.getString('Invalid address', null, 'Error'));
-                    } else if ((self.sliderValue - initValue) * self.unit > (self.organization.MaxSpace - self.organization.UsedSpace)) {
+                    } else if ((self.sliderValue - self.min) * self.unit > (self.organization.MaxSpace - self.organization.UsedSpace)) {
                         return Promise.reject(gettextCatalog.getString('Invalid storage quota', null, 'Error'));
                     } else if (!member.ID && !member.Private && !self.organizationKey) {
                         return Promise.reject(gettextCatalog.getString('Cannot decrypt organization key', null, 'Error'));
@@ -118,14 +114,14 @@ angular.module('proton.core')
                 };
 
                 const updateQuota = () => {
-                    if (self.oldMember && self.oldMember.MaxSpace === ((self.sliderValue - initValue) * self.unit)) {
+                    if (self.oldMember && self.oldMember.MaxSpace === ((self.sliderValue - self.min) * self.unit)) {
                         return Promise.resolve();
                     }
 
-                    return Member.quota(member.ID, (self.sliderValue - initValue) * self.unit)
+                    return Member.quota(member.ID, (self.sliderValue - self.min) * self.unit)
                     .then((result) => {
                         if (result.data && result.data.Code === 1000) {
-                            member.MaxSpace = (self.sliderValue - initValue) * self.unit;
+                            member.MaxSpace = (self.sliderValue - self.min) * self.unit;
                             Promise.resolve();
                         } else if (result.data && result.data.Error) {
                             return Promise.reject(result.data.Error);
