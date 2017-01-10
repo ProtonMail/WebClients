@@ -26,3 +26,5 @@
 
 
 .progressLoader-container .hidden {display: none}
+[class*="progressLoader-btn"] {background: none; border: 0}
+[class*="progressLoader-btn"][disabled] { opacity: .6 }

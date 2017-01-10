@@ -87,7 +87,7 @@ angular.module('proton.composer')
                 // After an action triggered by askEmbedded
                 case 'upload':
                     if (data.action !== 'cancel') {
-                        return actionsPanel.open();
+                        return;
                     }
 
                     if (scope.message.Attachments.length) {
@@ -109,6 +109,7 @@ angular.module('proton.composer')
 
                 case 'uploading':
                     if (status && isStart) {
+                        actionsPanel.open();
                         scope.$applyAsync(() => {
                             scope.list.push({ id, packet, messageID, message: scope.message });
                         });

@@ -11,7 +11,10 @@ angular.module('proton.attachments')
          * Dispatch an event for the sending button
          * @param  {Message} message
          */
-        const dispatchMessageAction = (message) => $rootScope.$emit('actionMessage', message);
+        const dispatchMessageAction = (message) => {
+            console.trace('CALL ME MAYBE');
+            $rootScope.$emit('actionMessage', message)
+        };
 
         /**
          * Create a map [<REQUEST>] = <upload>
@@ -43,6 +46,7 @@ angular.module('proton.attachments')
         };
 
         $rootScope.$on(EVENT_NAME, (e, { type, data }) => {
+            console.log({type, data});
             switch (type) {
                 case 'close':
                     attachmentApi.killUpload(data);
