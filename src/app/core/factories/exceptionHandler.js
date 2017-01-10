@@ -1,6 +1,24 @@
 angular.module('proton.core')
-.factory('$exceptionHandler', ($log, $injector, CONFIG) => {
+.factory('$exceptionHandler', ($log, $injector, CONFIG, CONSTANTS) => {
     let nReports = 0;
+
+    const getViewLayout = ({ ViewLayout }) => {
+
+        let key;
+        switch (ViewLayout) {
+            case CONSTANTS.ROW_MODE:
+                key = 'row';
+                break;
+            case CONSTANTS.COLUMN_MODE:
+                key = 'column';
+                break;
+            default:
+                key = 'unknown';
+                break;
+        }
+        return key;
+    };
+
     return function (exception) {
         nReports++;
 
@@ -35,8 +53,8 @@ angular.module('proton.core')
                     BrowserVersion: tools.getBrowserVersion(),
                     Client: 'Angular',
                     ClientVersion: CONFIG.app_version,
-                    ViewLayout: user.ViewLayout,
-                    ViewMode: user.ViewLayout,
+                    ViewLayout: getViewLayout(user),
+                    ViewMode: tools.typeList(),
                     Debug: { state: $state.$current.name, error: debug }
                 };
                 return Bug.crash(crashData).catch(angular.noop);
