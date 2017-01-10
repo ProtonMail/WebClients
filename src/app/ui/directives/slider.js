@@ -1,5 +1,5 @@
 angular.module('proton.ui')
-.directive('slider', () => {
+.directive('slider', (CONSTANTS) => {
     return {
         replace: true,
         restrict: 'E',
@@ -7,18 +7,18 @@ angular.module('proton.ui')
         templateUrl: 'templates/ui/slider.tpl.html',
         link(scope, element) {
             const slider = element[0].querySelector('.slider');
+            const base = CONSTANTS.BASE_SIZE;
+            const available = scope.options.range.max - scope.options.range.min;
+
+            scope.unit = base * base * base;
 
             if (scope.options.legend === 'GB') {
                 slider.classList.add('slider-legend-GB');
             }
 
-            if (scope.options.usedSpace) {
-                slider.classList.add('slider-with-used-space');
-                scope.usedSpace = scope.options.usedSpace;
-            }
-
             noUiSlider.create(slider, scope.options);
-            onChange();
+
+            scope.value = scope.options.start;
             slider.noUiSlider.on('change', onChange);
 
             scope.$on('$destroy', () => {
@@ -43,6 +43,33 @@ angular.module('proton.ui')
                     onChange();
                 }
             };
+
+            scope.$applyAsync(() => minMax());
+
+            function usedSpace(unit) {
+                return (unit / available) * 100 + '%';
+            }
+
+            function moveNodes(node, newParent) {
+                newParent.appendChild(node);
+            }
+
+            function minMax() {
+                const sliderBase = slider.querySelector('.noUi-base');
+
+                if (scope.options.minPadding) {
+                    const minPadding = slider.querySelector('.slider-min-padding');
+                    moveNodes(minPadding, sliderBase);
+                    minPadding.style.width = usedSpace(scope.options.minPadding);
+                }
+
+                if (scope.options.maxPadding) {
+                    const maxPadding = slider.querySelector('.slider-max-padding');
+                    moveNodes(maxPadding, sliderBase);
+                    scope.maxPadding = scope.options.range.max - scope.options.maxPadding;
+                    maxPadding.style.width = usedSpace(scope.maxPadding);
+                }
+            }
 
             function onChange() {
                 let newValue = Number(slider.noUiSlider.get());
