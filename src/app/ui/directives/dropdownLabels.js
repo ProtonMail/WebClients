@@ -1,24 +1,13 @@
 angular.module('proton.ui')
-.directive('dropdownLabels', (
-    $filter,
-    $q,
-    $rootScope,
-    $timeout,
-    authentication,
-    eventManager,
-    Label,
-    networkActivityTracker,
-    notify,
-    Setting,
-    gettextCatalog
-) => {
+.directive('dropdownLabels', ($rootScope, $timeout, authentication, eventManager, notify, Setting, gettextCatalog) => {
     return {
         restrict: 'E',
         templateUrl: 'templates/directives/dropdownLabels.tpl.html',
         replace: true,
         scope: {
             getMessages: '=messages',
-            saveLabels: '=save'
+            saveLabels: '=save',
+            message: '='
         },
         link(scope, element) {
             // Variables
@@ -26,28 +15,18 @@ angular.module('proton.ui')
 
             // Functions
             const onClick = () => {
-                scope.open();
-            };
+                scope.$applyAsync(() => {
+                    if (!angular.isFunction(scope.getMessages) && !angular.isFunction(scope.saveLabels)) {
+                        return;
+                    }
 
-            // Listeners
-            dropdown.bind('click', onClick);
-
-            scope.$on('$destroy', () => {
-                dropdown.unbind('click', onClick);
-            });
-
-            scope.open = () => {
-                if (angular.isFunction(scope.getMessages) && angular.isFunction(scope.saveLabels)) {
                     const messages = scope.getMessages();
 
                     scope.labelName = '';
                     scope.alsoArchive = Boolean(authentication.user.AlsoArchive);
                     scope.labels = angular.copy(authentication.user.Labels);
 
-                    let messagesLabels = [];
-                    messages.forEach((message) => {
-                        messagesLabels = messagesLabels.concat(message.LabelIDs);
-                    });
+                    const messagesLabels = _.reduce(messages, (acc, { LabelIDs = [] }) => acc.concat(LabelIDs), []);
 
                     scope.labels.forEach((label) => {
                         const count = messagesLabels.filter((id) => id === label.ID).length;
@@ -61,13 +40,14 @@ angular.module('proton.ui')
 
                     $timeout(() => {
                         angular.element("[ng-model='searchLabels']").focus();
-                    }, 100);
-                }
+                    }, 100, false);
+                });
             };
 
-            scope.color = ({ Color } = {}) => {
-                return Color ? { color: Color } : {};
-            };
+            // Listeners
+            dropdown.on('click', onClick);
+
+            scope.color = ({ Color } = {}) => (Color ? { color: Color } : {});
 
             scope.save = () => {
                 $rootScope.numberElementChecked = 0;
@@ -81,11 +61,7 @@ angular.module('proton.ui')
                 const archive = scope.alsoArchive ? 1 : 0;
 
                 Setting.alsoArchive({ AlsoArchive: archive })
-                .then((result) => {
-                    if (result.data && result.data.Code === 1000) {
-                        eventManager.call();
-                    }
-                });
+                    .then(({ data = {} } = {}) => (data.Code === 1000 && eventManager.call()));
             };
 
             scope.moveTo = (label) => {
@@ -106,6 +82,11 @@ angular.module('proton.ui')
             scope.labelsSelected = () => {
                 return _.where(scope.labels, { Selected: true });
             };
+
+
+            scope.$on('$destroy', () => {
+                dropdown.off('click', onClick);
+            });
 
         }
     };
