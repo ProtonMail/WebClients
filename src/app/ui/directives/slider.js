@@ -16,10 +16,6 @@ angular.module('proton.ui')
 
             slider.noUiSlider.on('change', onChange);
 
-            scope.$watch('value', (newValue) => {
-                slider.noUiSlider.set(newValue);
-            });
-
             scope.$on('$destroy', () => {
                 slider.noUiSlider.off('change', onChange);
                 slider.noUiSlider.destroy();
