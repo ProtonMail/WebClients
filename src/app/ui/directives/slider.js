@@ -13,7 +13,7 @@ angular.module('proton.ui')
             }
 
             noUiSlider.create(slider, scope.options);
-
+            onChange(); // init scope.value
             slider.noUiSlider.on('change', onChange);
 
             scope.$on('$destroy', () => {
