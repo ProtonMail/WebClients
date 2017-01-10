@@ -3,7 +3,7 @@ angular.module('proton.ui')
     return {
         replace: true,
         restrict: 'E',
-        scope: { value: '=', options: '=' },
+        scope: { options: '=' },
         templateUrl: 'templates/ui/slider.tpl.html',
         link(scope, element) {
             const slider = element[0].querySelector('.slider');
