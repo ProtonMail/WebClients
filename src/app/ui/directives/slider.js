@@ -12,6 +12,11 @@ angular.module('proton.ui')
                 slider.classList.add('slider-legend-GB');
             }
 
+            if (scope.options.usedSpace) {
+                slider.classList.add('slider-with-used-space');
+                scope.usedSpace = scope.options.usedSpace;
+            }
+
             noUiSlider.create(slider, scope.options);
 
             slider.noUiSlider.on('change', onChange);

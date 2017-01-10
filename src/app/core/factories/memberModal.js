@@ -51,7 +51,8 @@ angular.module('proton.core')
                 tooltips: true,
                 range: { min: minValue, max: maxValue },
                 pips: { mode: 'range', stepped: true, density: 4 },
-                legend: 'GB'
+                legend: 'GB',
+                usedSpace: minPadding
             };
 
             self.isPrivate = false;
