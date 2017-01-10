@@ -18,7 +18,7 @@ angular.module('proton.ui')
             }
 
             noUiSlider.create(slider, scope.options);
-            scope.value = scope.options.start;
+            scope.$applyAsync(() => scope.value = scope.options.start);
             slider.noUiSlider.on('change', onChange);
 
             scope.$on('$destroy', () => {
@@ -57,9 +57,7 @@ angular.module('proton.ui')
                     return;
                 }
 
-                scope.$applyAsync(() => {
-                    scope.value = Number(slider.noUiSlider.get());
-                });
+                scope.$applyAsync(() => scope.value = Number(slider.noUiSlider.get()));
             }
         }
     };
