@@ -20,8 +20,8 @@ angular.module('proton.core')
             // Variables
             const self = this;
             const base = CONSTANTS.BASE_SIZE;
-            const minValue = (params.member) ? (params.organization.MaxSpace - params.organization.AssignedSpace + params.member.UsedSpace) : params.organization.MaxSpace - params.organization.AssignedSpace;
-            const startValue = (params.member) ? (params.organization.MaxSpace - params.organization.AssignedSpace + params.member.MaxSpace) : params.organization.MaxSpace - params.organization.AssignedSpace;
+            const minValue = (params.member) ? (params.organization.AssignedSpace - params.member.MaxSpace + params.member.UsedSpace) : params.organization.AssignedSpace;
+            const startValue = (params.member) ? (minValue + params.member.MaxSpace - params.member.UsedSpace) : params.organization.AssignedSpace;
 
             // Default Parameters
             self.ID = null;
