@@ -118,7 +118,7 @@ angular.module('proton.event', ['proton.constants', 'proton.utils'])
                         generateModal.activate({
                             params: {
                                 title: gettextCatalog.getString('Setting up your Addresses', null, 'Title'),
-                                message: gettextCatalog.getString('Before you can start sending and receiving emails from your new addresses you need to create encryption keys for them. Simply select your preferred encryption strength and click "Generate Keys".', null, 'Info'),
+                                message: gettextCatalog.getString('Before you can start sending and receiving emails from your new addresses you need to create encryption keys for them. 4096-bit keys only work on high performance computers. For most users, we recommend using 2048-bit keys.', null, 'Info'),
                                 password: mailboxPassword,
                                 addresses,
                                 close(success) {
@@ -183,17 +183,17 @@ angular.module('proton.event', ['proton.constants', 'proton.utils'])
                     .then(({ keys, dirtyAddresses }) => {
                         if (dirtyAddresses.length && generateModal.active() === false) {
                             return generateKeys(dirtyAddresses)
-                            .then(() => Promise.reject(), () => storeKeys(keys));
+                                .then(() => {
+                                    throw new Error('Regenerate keys for addresses');
+                                }, () => storeKeys(keys));
                         }
                         storeKeys(keys);
                     })
                     .then(mergeUser)
-                    .catch(
-                        (error) => {
-                            return $exceptionHandler(error)
-                            .then(() => Promise.reject(error));
-                        }
-                    );
+                    .catch((error) => {
+                        $exceptionHandler(error);
+                        throw error;
+                    });
                 }
                 return Promise.resolve();
             },
@@ -416,7 +416,7 @@ angular.module('proton.event', ['proton.constants', 'proton.utils'])
                             eventModel.notification && eventModel.notification.close();
                             eventModel.milliseconds = CONSTANTS.INTERVAL_EVENT_TIMER;
                             eventModel.promiseCancel = $timeout(eventModel.interval, eventModel.milliseconds);
-                            eventModel.manage(result.data);
+                            eventModel.manage(result.data || {}); // Can be null
                         }
                         AppModel.set('onLine', true);
                     },
@@ -445,14 +445,13 @@ angular.module('proton.event', ['proton.constants', 'proton.utils'])
                 }
             },
             call() {
-                return eventModel.get().then((result) => {
-                    if (result.data && result.data.Code === 1000) {
-                        return eventModel.manage(result.data);
-                    } else if (result.data && result.data.Error) {
-                        return Promise.reject(result.data.Error);
-                    }
-                    return Promise.reject('Error event manager');
-                });
+                return eventModel.get()
+                    .then(({ data = {} }) => {
+                        if (data.Code === 1000) {
+                            return eventModel.manage(data);
+                        }
+                        throw new Error(data.Error || 'Error event manager');
+                    });
             },
             stop() {
                 $timeout.cancel(eventModel.promiseCancel);

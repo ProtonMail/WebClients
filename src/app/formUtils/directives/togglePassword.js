@@ -1,24 +1,31 @@
 angular.module('proton.formUtils')
 .directive('togglePassword', (gettextCatalog) => {
+    const SHOW = gettextCatalog.getString('Show', null, 'Action');
+    const HIDE = gettextCatalog.getString('Hide', null, 'Action');
+    const isIE = $.browser.msie;
+
     return {
         restrict: 'A',
         compile(element) {
-            const isIE = $.browser.msie;
             if (!isIE) {
-                const anchor = document.createElement('a');
+                const btn = document.createElement('BUTTON');
+                btn.type = 'button';
+                btn.className = 'togglePassword-btn-toggle';
+
                 const container = element[0].parentElement;
-                container.appendChild(anchor);
+                container.appendChild(btn);
+
                 return (scope, el) => {
-                    const show = gettextCatalog.getString('Show', null, 'Action');
-                    const hide = gettextCatalog.getString('Hide', null, 'Action');
-                    anchor.innerHTML = show;
+                    btn.innerHTML = SHOW;
                     const onClick = () => {
                         const type = (el[0].getAttribute('type') === 'text') ? 'password' : 'text';
                         el[0].setAttribute('type', type);
-                        anchor.innerHTML = (type === 'password') ? show : hide;
+                        btn.textContent = (type === 'password') ? SHOW : HIDE;
                     };
-                    anchor.addEventListener('click', onClick);
-                    scope.$on('$destroy', () => anchor.removeEventListener('click', onClick));
+                    btn.addEventListener('click', onClick);
+                    scope.$on('$destroy', () => {
+                        btn.removeEventListener('click', onClick);
+                    });
                 };
             }
         }

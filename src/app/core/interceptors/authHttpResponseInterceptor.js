@@ -93,36 +93,8 @@ angular.module('proton.core')
                     $injector.get('authentication').logout(true, false);
                 }
             } else if (rejection.status === 403) {
-                const $http = $injector.get('$http');
-                const loginPasswordModal = $injector.get('loginPasswordModal');
-                const User = $injector.get('User');
-                const authentication = $injector.get('authentication');
-                const notify = $injector.get('notify');
-                const deferred = $q.defer();
-
-                // Open the open to enter login password because this request require lock scope
-                loginPasswordModal.activate({
-                    params: {
-                        hasTwoFactor: authentication.user.TwoFactor,
-                        submit(loginPassword, twoFactorCode) {
-                            // Send request to unlock the current session for administrator privileges
-                            User.unlock({ Password: loginPassword, TwoFactorCode: twoFactorCode })
-                            .then(() => {
-                                loginPasswordModal.deactivate();
-                                // Resend request now
-                                deferred.resolve($http(rejection.config));
-                            }, (error) => {
-                                notify({ message: error.error_description, classes: 'notification-danger' });
-                            });
-                        },
-                        cancel() {
-                            loginPasswordModal.deactivate();
-                            deferred.reject();
-                        }
-                    }
-                });
-
-                return deferred.promise;
+                const handle403 = $injector.get('handle403');
+                return handle403(rejection.config);
             } else if ([408, 503, 504].indexOf(rejection.status) !== -1) {
                 notification = $injector.get('notify')({
                     message: 'ProtonMail cannot be reached right now, please try again later.',

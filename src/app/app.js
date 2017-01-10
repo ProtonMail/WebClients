@@ -6,7 +6,6 @@ angular.module('proton', [
     'ngIcal',
     'ngMessages',
     'ngResource',
-    'ngRoute',
     'ngSanitize',
     'pikaday',
     'ui.router',
@@ -182,6 +181,7 @@ angular.module('proton', [
 .config(($httpProvider, CONFIG) => {
     // Http Intercpetor to check auth failures for xhr requests
     $httpProvider.interceptors.push('authHttpResponseInterceptor');
+    $httpProvider.interceptors.push('formatResponseInterceptor');
     $httpProvider.defaults.headers.common['x-pm-appversion'] = 'Web_' + CONFIG.app_version;
     $httpProvider.defaults.headers.common['x-pm-apiversion'] = CONFIG.api_version;
     $httpProvider.defaults.headers.common.Accept = 'application/vnd.protonmail.v1+json';
@@ -256,13 +256,13 @@ angular.module('proton', [
 // Rejection manager
 //
 
-.run(($rootScope, $state, $log) => {
-    $rootScope.$on('$routeChangeError', (event, current, previous, rejection) => {
-        $log.error(rejection);
+.run(($rootScope, $state) => {
+    $rootScope.$on('$stateChangeError', (event, current, previous, rejection) => {
+        console.error('stateChangeError', rejection);
         $state.go('support.message', {
             data: {
-                title: rejection.error,
-                content: rejection.error_description,
+                title: rejection.error || 'Problem loading your account',
+                content: rejection.error_description || 'ProtonMail encountered a problem loading your account. Please try again later.',
                 type: 'alert-danger'
             }
         });
@@ -304,27 +304,12 @@ angular.module('proton', [
     });
 }])
 
-.config(($compileProvider, CONFIG) => {
-    // By default AngularJS attaches information about binding and scopes to DOM nodes,
-    // and adds CSS classes to data-bound elements
-    // Tools like Protractor and Batarang need this information to run,
-    // but you can disable this in production for a significant performance boost
+.config(($logProvider, $compileProvider, $qProvider, CONFIG) => {
     const debugInfo = CONFIG.debug || false;
-    // configure routeProvider as usual
-    $compileProvider.debugInfoEnabled(debugInfo);
-})
-
-.config(($logProvider, CONFIG) => {
-    // By default AngularJS attaches information about binding and scopes to DOM nodes,
-    // and adds CSS classes to data-bound elements
-    // Tools like Protractor and Batarang need this information to run,
-    // but you can disable this in production for a significant performance boost
-    const debugInfo = CONFIG.debug || false;
-    // configure routeProvider as usual
     $logProvider.debugEnabled(debugInfo);
+    $compileProvider.debugInfoEnabled(debugInfo);
+    $qProvider.errorOnUnhandledRejections(debugInfo);
 })
-
 .run(($rootScope, CONFIG) => {
     $rootScope.app_version = CONFIG.app_version;
-    $rootScope.date_version = CONFIG.date_version;
 });

@@ -409,9 +409,8 @@ angular.module('proton.elements')
 
 
             deferred.resolve(elements);
-        }, (error) => {
+        }, () => {
             notify({ message: gettextCatalog.getString('Error during quering conversations', null, 'Error'), classes: 'notification-danger' });
-            console.error(error);
         });
 
         if (context === false) {
@@ -663,8 +662,6 @@ angular.module('proton.elements')
         } else if (type === 'message') {
             $rootScope.$emit('messageActions', { action: 'move', data: { ids, mailbox } });
         }
-
-        redirectUser();
     };
 
     /**

@@ -77,10 +77,10 @@ angular.module('proton.message')
             const toTrash = mailbox === 'trash';
             const events = _.chain(ids)
                 .map((id) => {
-                    const message = cache.getMessageCached(id);
+                    const message = cache.getMessageCached(id) || {};
                     let labelIDs = message.LabelIDs || [];
                     const labelIDsAdded = updateLabelsAdded(message.Type, mailbox);
-                    const labelIDsRemoved = message.LabelIDs.filter((labelID) => [
+                    const labelIDsRemoved = labelIDs.filter((labelID) => [
                         CONSTANTS.MAILBOX_IDENTIFIERS.inbox,
                         CONSTANTS.MAILBOX_IDENTIFIERS.trash,
                         CONSTANTS.MAILBOX_IDENTIFIERS.spam,

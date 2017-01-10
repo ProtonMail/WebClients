@@ -548,7 +548,7 @@ angular.module('proton.routes', [
                 if (Object.keys(authentication.user).length > 0) {
                     return authentication.user;
                 } else if (angular.isDefined(secureSessionStorage.getItem(CONSTANTS.OAUTH_KEY + ':SessionToken'))) {
-                    $http.defaults.headers.common['x-pm-session'] = pmcw.decode_base64(secureSessionStorage.getItem(CONSTANTS.OAUTH_KEY + ':SessionToken'));
+                    $http.defaults.headers.common['x-pm-session'] = pmcw.decode_base64(secureSessionStorage.getItem(CONSTANTS.OAUTH_KEY + ':SessionToken') || '');
                 }
 
                 return authentication.fetchUserInfo(); // TODO need to rework this just for the locked page
