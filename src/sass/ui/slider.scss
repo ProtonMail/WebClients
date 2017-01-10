@@ -73,7 +73,6 @@ div.slider-legend-GB {
         position: absolute;
         z-index: 10;
         bottom:22px;
-        right:0px;
         line-height: 18px;
         font-size: 10px;
         text-align: center;
@@ -94,6 +93,7 @@ div.slider-legend-GB {
       #DB344F 10px,
       #DB344F 20px
     );
+    .slider-legend { left: 0 }
 }
 
 
@@ -110,4 +110,5 @@ div.slider-legend-GB {
       #EA432A 10px,
       #EA432A 20px
     );
+    .slider-legend { right: 0 }
 }
