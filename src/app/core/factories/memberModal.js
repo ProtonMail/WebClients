@@ -20,9 +20,9 @@ angular.module('proton.core')
             // Variables
             const self = this;
             const base = CONSTANTS.BASE_SIZE;
-            const minValue = (params.member) ? (params.organization.AssignedSpace - params.member.MaxSpace + params.member.UsedSpace) : params.organization.AssignedSpace;
-            const startValue = (params.member) ? (minValue + params.member.MaxSpace - params.member.UsedSpace) : params.organization.AssignedSpace;
-
+            const startValue = (params.member) ? params.member.MaxSpace : 0;
+            const minPadding = (params.member) ? params.member.UsedSpace : 0;
+            const maxPadding = (params.member) ? (params.organization.MaxSpace - params.organization.AssignedSpace + params.member.MaxSpace) : params.organization.MaxSpace - params.organization.AssignedSpace;
             // Default Parameters
             self.ID = null;
             self.step = 'member';
@@ -36,7 +36,7 @@ angular.module('proton.core')
             self.confirmPassword = '';
             self.address = '';
             self.unit = base * base * base;
-            self.min = minValue;
+            self.min = 0;
             self.max = params.organization.MaxSpace;
             self.sliderOptions = {
                 animate: false,
@@ -46,8 +46,9 @@ angular.module('proton.core')
                 tooltips: true,
                 range: { min: self.min / self.unit, max: self.max / self.unit },
                 pips: { mode: 'range', stepped: true, density: 4 },
-                legend: 'GB',
-                usedSpace: minValue / self.unit
+                minPadding: minPadding / self.unit,
+                maxPadding: maxPadding / self.unit,
+                legend: 'GB'
             };
 
             self.isPrivate = false;
