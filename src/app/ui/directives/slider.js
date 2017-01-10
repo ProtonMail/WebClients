@@ -3,7 +3,7 @@ angular.module('proton.ui')
     return {
         replace: true,
         restrict: 'E',
-        scope: { options: '=' },
+        scope: { value: '=', options: '=' },
         templateUrl: 'templates/ui/slider.tpl.html',
         link(scope, element) {
             const slider = element[0].querySelector('.slider');
@@ -18,7 +18,8 @@ angular.module('proton.ui')
 
             noUiSlider.create(slider, scope.options);
 
-            scope.value = scope.options.start;
+            onChange();
+
             slider.noUiSlider.on('change', onChange);
 
             scope.$on('$destroy', () => {
@@ -72,20 +73,20 @@ angular.module('proton.ui')
             }
 
             function onChange() {
-                const newValue = Number(slider.noUiSlider.get());
+                let newValue = Number(slider.noUiSlider.get());
 
                 if (newValue < scope.options.minPadding) {
-                    slider.noUiSlider.set(scope.options.minPadding);
-                    return;
+                    newValue = scope.options.minPadding;
+                    slider.noUiSlider.set(newValue);
                 }
 
                 if (newValue > scope.options.maxPadding) {
-                    slider.noUiSlider.set(scope.options.maxPadding);
-                    return;
+                    newValue = scope.options.maxPadding;
+                    slider.noUiSlider.set(newValue);
                 }
 
                 scope.$applyAsync(() => {
-                    scope.value = Number(slider.noUiSlider.get());
+                    scope.value = newValue;
                 });
             }
         }
