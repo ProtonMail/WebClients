@@ -323,10 +323,9 @@ angular.module('proton.settings')
     $scope.displayDeletion = () => {
         const role1 = authentication.user.Role === 1;
         const role2 = authentication.user.Role === 2;
-        const isSubUser = authentication.user.subuser;
         const usedMembers = $scope.organization.UsedMembers > 1;
 
-        return !role1 && !role2 && !isSubUser && !usedMembers;
+        return !role1 && !role2 && !usedMembers;
     };
 
     $scope.deleteAccount = () => {
