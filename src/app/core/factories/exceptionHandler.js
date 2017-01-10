@@ -3,7 +3,6 @@ angular.module('proton.core')
     let nReports = 0;
 
     const getViewLayout = ({ ViewLayout }) => {
-
         let key;
         switch (ViewLayout) {
             case CONSTANTS.ROW_MODE:
@@ -14,6 +13,22 @@ angular.module('proton.core')
                 break;
             default:
                 key = 'unknown';
+                break;
+        }
+        return key;
+    };
+
+    const getViewMode = ({ ViewMode }) => {
+        let key;
+        switch (ViewMode) {
+            case CONSTANTS.MESSAGE_VIEW_MODE:
+                key = 'row';
+                break;
+            case CONSTANTS.CONVERSATION_VIEW_MODE:
+                key = 'column';
+                break;
+            default:
+                key = 'undefined';
                 break;
         }
         return key;
@@ -54,7 +69,7 @@ angular.module('proton.core')
                     Client: 'Angular',
                     ClientVersion: CONFIG.app_version,
                     ViewLayout: getViewLayout(user),
-                    ViewMode: tools.typeList(),
+                    ViewMode: getViewMode(user),
                     Debug: { state: $state.$current.name, error: debug }
                 };
                 return Bug.crash(crashData).catch(angular.noop);
