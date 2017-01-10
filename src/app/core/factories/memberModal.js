@@ -45,13 +45,11 @@ angular.module('proton.core')
             const minPadding = initValue / self.unit;
 
             self.sliderOptions = {
-                animate: false,
                 start: startValue,
                 step: 0.1,
-                connect: true,
+                connect: [true, false],
                 tooltips: true,
                 range: { min: minValue, max: maxValue },
-                minPadding,
                 pips: { mode: 'range', stepped: true, density: 4 },
                 legend: 'GB'
             };
