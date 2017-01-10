@@ -6,11 +6,11 @@ angular.module('proton.attachments')
         const notifyError = (message) => notify({ message, classes: 'notification-danger' });
         const dispatch = (type, data) => $rootScope.$emit('attachment.upload', { type, data });
 
-        const dispatchUpload = (REQUEST_ID, { ID }, packet) => (progress, status, isStart = false) => {
+        const dispatchUpload = (REQUEST_ID, message, packet) => (progress, status, isStart = false) => {
             dispatch('uploading', {
                 id: REQUEST_ID,
-                messageID: ID,
-                status, progress, packet, isStart
+                messageID: message.ID,
+                message, status, progress, packet, isStart
             });
         };
 
