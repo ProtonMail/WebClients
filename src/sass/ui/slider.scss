@@ -60,3 +60,45 @@ div.slider-legend-GB {
         &:after { content:" GB" }
     }
 }
+
+/**/
+div.slider-with-used-space {
+
+    width: calc(100% - 100px);
+    float: right;
+    &:before {
+        content: "";
+        position: absolute;
+        top:-1px;
+        left:-100px;
+        width: 100px;
+        height: 18px;
+        background: repeating-linear-gradient(
+          45deg,
+          #E43D58,
+          #E43D58 10px,
+          #DB344F 10px,
+          #DB344F 20px
+        );
+        box-shadow: inset -2px 0px 1px rgba(0, 0, 0, 0.1);
+        border-radius: 2px 0px 0px 2px;
+    }
+
+    .slider-used-space {
+        position: absolute;
+        top:0;
+        left:-100px;
+        width: 100px;
+        line-height: 18px;
+        font-size: 12px;
+        text-align: center;
+        color: #FFF;
+    }
+    div.noUi-target,
+    div.noUi-connect { border-radius: 0px 2px 2px 0px }
+
+    div.noUi-pips-horizontal {
+        width: calc(100% + 100px);
+        margin-left: -100px;
+    }
+}

@@ -46,8 +46,10 @@ angular.module('proton.core')
                 tooltips: true,
                 range: { min: self.min / self.unit, max: self.max / self.unit },
                 pips: { mode: 'range', stepped: true, density: 4 },
-                legend: 'GB'
+                legend: 'GB',
+                usedSpace: minValue / self.unit
             };
+
             self.isPrivate = false;
             self.private = false;
             self.showAddress = true;
