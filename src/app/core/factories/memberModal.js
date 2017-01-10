@@ -38,17 +38,24 @@ angular.module('proton.core')
             self.min = 0;
             self.max = params.organization.MaxSpace;
             self.sliderValue = initValue;
+
+            const startValue = initValue / self.unit;
+            const minValue = self.min / self.unit;
+            const maxValue = self.max / self.unit;
+            const minPadding = initValue / self.unit;
+
             self.sliderOptions = {
                 animate: false,
-                start: initValue / self.unit,
+                start: startValue,
                 step: 0.1,
-                connect: [true, false],
+                connect: true,
                 tooltips: true,
-                range: { min: self.min / self.unit, max: self.max / self.unit },
-                minPadding: initValue / self.unit,
+                range: { min: minValue, max: maxValue },
+                minPadding,
                 pips: { mode: 'range', stepped: true, density: 4 },
                 legend: 'GB'
             };
+
             self.isPrivate = false;
             self.private = false;
             self.showAddress = true;
