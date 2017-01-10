@@ -11,7 +11,7 @@ angular.module('proton.core')
             const payload = {};
             let index = 0;
             let decryptedKey;
-            self.min = authentication.user.UsedSpace;
+            self.min = 0;
             self.max = params.organization.MaxSpace;
             self.unit = base * base * base;
             self.step = steps[index];
@@ -24,6 +24,7 @@ angular.module('proton.core')
                 tooltips: true,
                 range: { min: self.min / self.unit, max: self.max / self.unit },
                 pips: { mode: 'range', stepped: true, density: 4 },
+                minPadding: authentication.user.UsedSpace / self.unit,
                 legend: 'GB'
             };
             self.next = () => {
