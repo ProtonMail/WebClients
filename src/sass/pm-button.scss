@@ -186,11 +186,21 @@
             }
         }
     }
-    &.sliderButtons,
-    &.sliderButtons a {
+    &.sliderButtons {
         display: inline-flex;
         height: 26px;
         line-height: 26px;
+        button {
+            background-color: transparent;
+            border:0;
+            padding: 0 10px;
+            color: $btn;
+            box-shadow: 0 1px 2px 0 rgba(0,0,0,0.1);
+            cursor: pointer;
+            &:not(:first-child) {
+                border-left: 1px solid $border;
+            }
+        }
         .fa {
             font-size: 12px;
             line-height: 28px;
@@ -205,6 +215,7 @@
             border-left:1px solid $border;
         }
     }
+
     a {
         text-decoration: none;
         color: $btn;
@@ -235,10 +246,7 @@
             background: #e5e5e5;
             box-shadow: inset 0 2px 2px 0 rgba(0,0,0,0.2);
         }
-        &.secondary {
-            // white background
-            // purple font
-        }
+
     }
     strong {
         font-size: 12px;
