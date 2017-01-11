@@ -49,7 +49,7 @@ angular.module('proton.core')
                     mode: 'values',
                     values: [0, minPadding / self.unit, maxPadding / self.unit, self.max / self.unit],
                     density: 4
-            	},
+                },
                 minPadding: minPadding / self.unit,
                 maxPadding: maxPadding / self.unit
             };
