@@ -25,6 +25,11 @@ angular.module('proton.core')
             const maxPadding = (params.member) ? (params.organization.MaxSpace - params.organization.AssignedSpace + params.member.MaxSpace) : params.organization.MaxSpace - params.organization.AssignedSpace;
             // Default Parameters
             self.ID = null;
+            self.legends = [
+                { label: gettextCatalog.getString('Already used', null), color: '' },
+                { label: gettextCatalog.getString('Allocated', null), color: '' },
+                { label: gettextCatalog.getString('Already allocated', null), color: '' }
+            ];
             self.step = 'member';
             self.size = 2048;
             self.organization = params.organization;
