@@ -41,7 +41,7 @@ angular.module('proton.core')
             self.sliderOptions = {
                 animate: false,
                 start: startValue / self.unit,
-                step: 0.1,
+                step: 0.01,
                 connect: [true, false],
                 tooltips: true,
                 range: { min: self.min / self.unit, max: self.max / self.unit },
