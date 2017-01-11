@@ -216,6 +216,9 @@ body.mobileMode {
 				margin-bottom: 20px;
 			}
 		}
+		&.flex-mobileShrink > [class*='col-'] {
+			white-space: nowrap;
+		}		
 		.col-basis {
 			flex-basis: 0px;
 		}
