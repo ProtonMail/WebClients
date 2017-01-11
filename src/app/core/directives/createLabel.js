@@ -18,7 +18,6 @@ angular.module('proton.core')
             const promise = Label.create({ Name, Color, Display: 1 })
                 .then(({ data = {} } = {}) => {
                     if (data.Code === 1000) {
-                        console.log(data);
                         return eventManager.call()
                             .then(() => {
                                 labelModal.deactivate();
