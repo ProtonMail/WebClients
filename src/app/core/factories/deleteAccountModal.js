@@ -23,7 +23,7 @@ angular.module('proton.core')
         controller(params) {
             const self = this;
             self.hasTwoFactor = authentication.user.TwoFactor;
-            self.isAdmin = authentication.user.Role === CONSTANTS.PAID_ADMIN;
+            self.isAdmin = authentication.user.Role === CONSTANTS.PAID_ADMIN_ROLE;
             self.feedback = '';
             self.password = '';
             self.twoFactor = '';
