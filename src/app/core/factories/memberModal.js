@@ -59,8 +59,8 @@ angular.module('proton.core')
             const maxPaddingLegend = { label: gettextCatalog.getString('Already allocated', null), classes: 'background-yellow-striped' };
 
             self.legends = [allocatedLegend];
-            if (minPadding > 0) { self.legends.push(minPaddingLegend); }
-            if (maxPadding > 0) { self.legends.push(maxPaddingLegend); }
+            minPadding > 0 && self.legends.push(minPaddingLegend);
+            maxPadding > 0 && self.legends.push(maxPaddingLegend);
 
             self.isPrivate = false;
             self.private = false;
