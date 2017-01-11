@@ -39,7 +39,6 @@ angular.module('proton', [
     'proton.models.memberKeys',
     'proton.models.members',
     'proton.models.message',
-    'proton.models.organization',
     'proton.models.payments',
     'proton.models.reset',
     'proton.models.setting',
