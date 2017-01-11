@@ -563,8 +563,8 @@ angular.module('proton.routes', [
                     return Promise.reject();
                 });
             },
-            organization(user, Organization) {
-                return Organization.get()
+            organization(user, organizationApi) {
+                return organizationApi.get()
                 .then(({ data = {} } = {}) => Promise.resolve(data.Organization));
             }
         },
@@ -751,12 +751,12 @@ angular.module('proton.routes', [
                 }
                 return { data: {} };
             },
-            organization(user, Organization, networkActivityTracker) {
-                return networkActivityTracker.track(Organization.get());
+            organization(user, organizationApi, networkActivityTracker) {
+                return networkActivityTracker.track(organizationApi.get());
             },
-            organizationKeys(user, Organization, networkActivityTracker) {
+            organizationKeys(user, organizationApi, networkActivityTracker) {
                 if (user.Role === CONSTANTS.PAID_ADMIN_ROLE) {
-                    return networkActivityTracker.track(Organization.getKeys());
+                    return networkActivityTracker.track(organizationApi.getKeys());
                 }
                 return { data: {} };
             }
@@ -871,12 +871,12 @@ angular.module('proton.routes', [
                 }
                 return { data: {} };
             },
-            organization(user, Organization, networkActivityTracker) {
-                return networkActivityTracker.track(Organization.get());
+            organization(user, organizationApi, networkActivityTracker) {
+                return networkActivityTracker.track(organizationApi.get());
             },
-            organizationKeys(user, Organization, networkActivityTracker) {
+            organizationKeys(user, organizationApi, networkActivityTracker) {
                 if (user.Role === CONSTANTS.PAID_ADMIN_ROLE) {
-                    return networkActivityTracker.track(Organization.getKeys());
+                    return networkActivityTracker.track(organizationApi.getKeys());
                 }
                 return { data: {} };
             }
@@ -911,12 +911,12 @@ angular.module('proton.routes', [
                 }
                 return { data: {} };
             },
-            organization(user, Organization, networkActivityTracker) {
-                return networkActivityTracker.track(Organization.get());
+            organization(user, organizationApi, networkActivityTracker) {
+                return networkActivityTracker.track(organizationApi.get());
             },
-            organizationKeys(user, Organization, networkActivityTracker) {
+            organizationKeys(user, organizationApi, networkActivityTracker) {
                 if (user.Role === CONSTANTS.PAID_ADMIN_ROLE) {
-                    return networkActivityTracker.track(Organization.getKeys());
+                    return networkActivityTracker.track(organizationApi.getKeys());
                 }
                 return { data: {} };
             }
