@@ -81,30 +81,7 @@ div.noUi-value {
     background: $yellow-stripped;
 }
 
-ul.slider-legend {
-    margin:0;
-    padding:0;
-
-    > li {
-        @include flexRow();
-        -webkit-align-itmes: center;
-        align-items: center;
-
-        list-style: none;
-        margin-right: 10px;
-        font-size: 12px;
-
-        .slider-legend-square {
-            width: 30px;
-            height:18px;
-            display: block;
-            border-radius: 2px;
-        }
-    }
-}
-
 /* buttons */
-
 .pm_buttons.sliderButtons {
     display: inline-flex;
     margin-top: 15px;
