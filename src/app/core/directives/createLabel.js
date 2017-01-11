@@ -1,41 +1,61 @@
 angular.module('proton.core')
-.directive('createLabel', (labelModal, tools, gettextCatalog, eventManager, Label, notify, networkActivityTracker) => {
+.directive('createLabel', ($rootScope, labelModal, tools, gettextCatalog, eventManager, Label, notify, networkActivityTracker) => {
+
+    const COLORS_LIST = tools.colors();
+
+    const dispatch = (message, label = {}) => {
+        $rootScope.$emit('messageActions', {
+            action: 'label',
+            data: {
+                messages: [message],
+                labels: [_.extend({}, label, { Selected: true })]
+            }
+        });
+    };
+
+    function createAction(message) {
+        return (Name, Color) => {
+            const promise = Label.create({ Name, Color, Display: 1 })
+                .then(({ data = {} } = {}) => {
+                    if (data.Code === 1000) {
+                        return eventManager.call()
+                            .then(() => {
+                                labelModal.deactivate();
+                                notify({ message: gettextCatalog.getString('Label created', null), classes: 'notification-success' });
+                                message && dispatch(message, data.Label);
+                            });
+                    }
+                    if (data.Error) {
+                        throw new Error(data.Error);
+                    }
+                });
+
+            networkActivityTracker.track(promise);
+        };
+    }
+
     return {
         replace: true,
         restrict: 'E',
         templateUrl: 'templates/directives/core/createLabel.tpl.html',
         scope: {
-            name: '=labelName'
+            name: '=labelName',
+            message: '='
         },
         link(scope) {
             scope.create = () => {
                 /**
                  * Open modal to create a new label
                  */
-                const colors = tools.colors();
-                const index = _.random(0, colors.length - 1);
-                const color = colors[index];
+                const index = _.random(0, COLORS_LIST.length - 1);
+                const Color = COLORS_LIST[index];
+                const title = gettextCatalog.getString('Create new label', null, 'Title');
 
                 labelModal.activate({
                     params: {
-                        title: gettextCatalog.getString('Create new label', null, 'Title'),
-                        label: { Name: scope.name, Color: color },
-                        create(name, color) {
-                            const promise = Label.create({ Name: name, Color: color, Display: 1 })
-                            .then((result) => {
-                                if (result.data && result.data.Code === 1000) {
-                                    return eventManager.call()
-                                    .then(() => {
-                                        labelModal.deactivate();
-                                        notify({ message: gettextCatalog.getString('Label created', null), classes: 'notification-success' });
-                                    });
-                                } else if (result.data && result.data.Error) {
-                                    return Promise.reject(result.data.Error);
-                                }
-                            });
-
-                            networkActivityTracker.track(promise);
-                        },
+                        title,
+                        label: { Name: scope.name, Color },
+                        create: createAction(scope.message),
                         cancel() {
                             labelModal.deactivate();
                         }

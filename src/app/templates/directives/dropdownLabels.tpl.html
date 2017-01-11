@@ -22,7 +22,10 @@
                 </li>
             </ul>
         </div>
-        <create-label class="labelDropdown-item-fullwidth" label-name="searchLabels"></create-label>
+        <create-label
+            data-class="labelDropdown-item-fullwidth"
+            data-message="message"
+            data-label-name="searchLabels"></create-label>
         <label ng-show="labels.length > 0" class="labelDropdown-item-fullwidth text-right alsoArchive">
             <span translate translate-comment="Form checkbox option" class="pull-left">Also Archive</span>
             <input type="checkbox" ng-model="alsoArchive" ng-change="changeAlsoArchive()" class="dropdownLabels-input-archive" />
