@@ -186,27 +186,6 @@
             }
         }
     }
-    &.sliderButtons {
-        display: inline-flex;
-        margin-top: -5px;
-        height: 26px;
-        line-height: 26px;
-        button {
-            background-color: transparent;
-            border:0;
-            padding: 0 10px;
-            color: $btn;
-            box-shadow: 0 1px 2px 0 rgba(0,0,0,0.1);
-            cursor: pointer;
-            &:not(:first-child) {
-                border-left: 1px solid $border;
-            }
-        }
-        .fa {
-            font-size: 12px;
-            line-height: 28px;
-        }
-    }
     .pm_buttons {
         float:left; /* inline-block add extra space*/
         border-radius: 0;
@@ -292,8 +271,5 @@
 body.mobileMode {
     .pm_buttons {
         margin: 0 5px 0 0;
-        &.sliderButtons {
-            margin: 15px 0px 0px 10px; /* check slider responsive */
-        }
     }
 }

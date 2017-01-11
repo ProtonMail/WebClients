@@ -3,6 +3,7 @@ div.noUi-target {
     box-shadow: none;
     border-color: $border;
     border-radius: 2px;
+    margin-top: 20px;
     margin-bottom: 50px; /* pips legend */
 }
 
@@ -85,11 +86,10 @@ ul.slider-legend {
     padding:0;
 
     > li {
-
         @include flexRow();
         -webkit-align-itmes: center;
         align-items: center;
-                
+
         list-style: none;
         margin-right: 10px;
         font-size: 12px;
@@ -101,6 +101,34 @@ ul.slider-legend {
             border-radius: 2px;
         }
     }
+}
+
+/* buttons */
+
+.pm_buttons.sliderButtons {
+    display: inline-flex;
+    margin-top: 15px;
+    height: 26px;
+    line-height: 26px;
+    button {
+        background-color: transparent;
+        border:0;
+        padding: 0 10px;
+        color: $btn;
+        box-shadow: 0 1px 2px 0 rgba(0,0,0,0.1);
+        cursor: pointer;
+        &:not(:first-child) {
+            border-left: 1px solid $border;
+        }
+    }
+    .fa {
+        font-size: 12px;
+        line-height: 28px;
+    }
+}
+
+body.mobileMode .pm_buttons.sliderButtons {
+    margin: 15px 0px 0px 10px; /* overide .pm_button mobileMode */
 }
 
 body.mobileMode {
