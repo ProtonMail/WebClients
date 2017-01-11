@@ -67,6 +67,10 @@
             text-decoration: underline;
         }
     }
+    &.autoHeight {
+        height:auto;
+        line-height: initial;
+    }
     &.round {
         display: inline-block;
         height: 30px;
@@ -191,6 +195,7 @@
             border-left:1px solid $border;
         }
     }
+
     a {
         text-decoration: none;
         color: $btn;
@@ -221,10 +226,7 @@
             background: #e5e5e5;
             box-shadow: inset 0 2px 2px 0 rgba(0,0,0,0.2);
         }
-        &.secondary {
-            // white background
-            // purple font
-        }
+
     }
     strong {
         font-size: 12px;

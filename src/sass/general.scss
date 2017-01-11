@@ -50,6 +50,15 @@ html.protonmail {
 	.plus {
 		color: $light-green;
 	}
+	.background-primary {
+		background: $primary;
+	}
+	.background-red-striped {
+		background: $red-stripped;
+	}
+	.background-yellow-striped {
+		background: $yellow-stripped;
+	}
 	.bold {
 		font-weight: bold;
 	}
@@ -86,15 +95,15 @@ html.protonmail {
 	.text-purple {
 		color: $primary !important;
 	}
+	.text-blue-gray {
+		color: $blue-gray;
+	}
 	.border-panel {
 		padding: 15px;
 		border: 1px solid $border;
 	}
 	.padding-top {
 		padding-top: 10px;
-	}
-	.padding-bottom {
-		padding-bottom: 10px;
 	}
 	.margin-top {
 		margin-top: 10px;
@@ -122,6 +131,9 @@ html.protonmail {
 	}
 	.dull {
 		opacity: .5;
+	}
+	.emphaseText {
+		font-size:1rem;
 	}
 	.help {
 		font-size: 12px;

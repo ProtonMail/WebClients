@@ -1,26 +1,28 @@
 <div id="pm_settings">
-
-    <ng-include src="'templates/partials/menu.settings.tpl.html'"></ng-include>
-
     <div class="settings">
         <p class="alert alert-info" ng-if="mobileMode" translate-context="Info" translate-comment="responsiveness info" translate>This page is only available on larger resolution devices. If you are on a  phone, try landscape mode, or visit on a computer instead.</p>
-        <div class="row" ng-show="isFree === true">
+        <restore-administrator-panel ng-if="keyStatus === 2"></restore-administrator-panel>
+        <div class="row" ng-show="organization.HasKeys === 0">
             <section class="setting pm_form full">
-                <legend translate translate-context="Title">Members</legend>
-                <p class="alert alert-info">Create and administer sub-accounts and assign them email addresses on your custom domain. To enable this feature, <a ui-sref="secured.dashboard({scroll: true})">upgrade to ProtonMail Business</a>.</p>
+                <legend translate-context="Title" translate>Members</legend>
+                <p class="alert alert-info" translate-context="Info" translate>Create and administer sub-accounts and assign them email addresses on your custom domain.</p>
+                <p>
+                    <button type="button" class="pm_button primary" ng-click="enableMemberSupport()" translate-context="Action" translate>Enable multi-member support</button>
+                    <a href="https://protonmail.com/support/knowledge-base/business/" target="_blank" class="pm_button link" translate-context="Link" translate>Learn more</a>
+                </p>
             </section>
         </div>
-        <div class="row" id="settingsOrganization" ng-show="isAdmin === true">
+        <div class="row" id="settingsOrganization" ng-show="organization.HasKeys === 1">
             <section class="setting pm_form full">
                 <legend translate-context="Title" translate>Organization</legend>
-                <div class="pm_grid">
+                <div class="pm_grid no-margin">
 	            	<div class="col-1-2">
 	            		<div class="clearfix">
 			            	<form method="post" name="organizationForm" ng-submit="organizationForm.$valid && saveOrganizationName()" novalidate="">
-		            			<div class="col-3-8">
+		            			<div class="col-1-2">
 		            				<label for="orgName" translate-context="Title" translate>Organization name</label>
 		            			</div>
-		            			<div class="col-5-8">
+		            			<div class="col-1-2">
 		            				<div class="clearfix">
 			            				<input id="orgName" name="name" type="text" class="margin" ng-model="organization.DisplayName" placeholder-translate="Organization name" ng-maxlength="100" required="" />
 			                            <div ng-messages="organizationForm.name.$error" class="text-red" ng-if="organizationForm.name.$touched || organizationForm.$submitted">
@@ -34,106 +36,67 @@
 		            			</div>
 		            		</form>
 	            		</div>
-						<div class="pm_table">
-						    <table class="bordered absorbing">
-						        <thead>
-						            <tr>
-						                <th translate-context="Title" translate-comment="table heading" translate>Organization Key Fingerprint</th>
-						                <th translate-context="Title" translate-comment="table heading" translate>Key size</th>
-						            </tr>
-						        </thead>
-						        <tbody>
-						            <tr>
-						                <td>
-						                    <code>{{ organizationKeyInfo.fingerprint }}</code>
-						                </td>
-						                <td translate translate-comment="members page to show the key size">
-						                    {{ organizationKeyInfo.bitSize }} Bit
-						                </td>
-						            </tr>
-						        </tbody>
-						    </table>
-						</div>
-	            		<div class="clearfix" ng-show="keyStatus === 0">
-			                <form method="post" ng-submit="saveRecoveryForm.$valid && saveRecoveryPassword(saveRecoveryForm)" name="saveRecoveryForm" novalidate>
-			                    <div class="clearfix">
-			                        <div class="col-1-2">
-			                            <label for="newRecoveryPassword" translate-context="Title" translate>Key recovery password</label>
-			                        </div>
-			                        <div class="col-1-2">
-			                            <input type="password" id="newRecoveryPassword" name="newRecoveryPassword" ng-model="newRecoveryPassword" placeholder-translate="New recovery password" required>
-			                            <div ng-messages="saveRecoveryForm.newRecoveryPassword.$error" class="text-red" ng-if="saveRecoveryForm.newRecoveryPassword.$touched || saveRecoveryForm.$submitted">
-			                                <p ng-message="required" translate-context="Error" translate>Field required</p>
-			                            </div>
-			                        </div>
-			                    </div>
-			                    <div class="clearfix">
-			                        <div class="col-1-2">
-			                            <label for="confirmRecoveryPassword" Title translate>Confirm recovery Password</label>
-			                        </div>
-			                        <div class="col-1-2">
-			                            <input type="password" id="confirmRecoveryPassword" name="confirmRecoveryPassword" ng-model="confirmRecoveryPassword" placeholder-translate="Confirm new recovery password" class="margin" required compare-to="newRecoveryPassword">
-			                            <div ng-messages="saveRecoveryForm.confirmRecoveryPassword.$error" class="text-red" ng-if="saveRecoveryForm.confirmRecoveryPassword.$touched || saveRecoveryForm.$submitted">
-			                                <p ng-message="required" translate-context="Error" translate>Field required</p>
-			                                <p ng-message="compareTo" translate-context="Error" translate>Passwords do not match</p>
-			                            </div>
-			                        </div>
-			                    </div>
-			            		<p class="clearfix">
-				            		<button class="pm_button pull-left" ng-disabled="networkActivity.loading()" ng-click="changeOrganizationKeys()" type="button" translate-context="Action" translate>Change Keys</button>
-				            		<button class="pm_button primary pull-right" ng-disabled="networkActivity.loading()" type="submit" translate-context="Action" translate>Save</button>
-			            		</p>
-			                </form>
-	            		</div>
-	            		<div class="clearfix" ng-show="keyStatus === 1">
-    		                <p class="alert alert-warning" translate translate-context="Info">You must activate your organization keys. Without activation you will not be able to create new users, add addresses to existing users, or access non-private user accounts.</p>
-							<button class="pm_button primary pull-right" ng-disabled="networkActivity.loading()" ng-click="activateOrganizationKeys()" type="button" translate-context="Action" translate>Activate Keys</button>
-	            		</div>
-	            		<div class="clearfix" ng-show="keyStatus === 2">
-    		                <p class="alert alert-danger" translate translate-context="Info">You have lost access to your organization keys. Without restoration you will not be able to create new users, add addresses to existing users, or access non-private user accounts.</p>
-		            		<p class="clearfix">
-			            		<button class="pm_button pull-left" ng-disabled="networkActivity.loading()" ng-click="changeOrganizationKeys()" type="button" translate-context="Action" translate>Reset Keys</button>
-			            		<button class="pm_button primary pull-right" ng-disabled="networkActivity.loading()" ng-click="activateOrganizationKeys()" type="button" translate-context="Action" translate>Restore Keys</button>
-		            		</p>
-	            		</div>
 	            	</div>
 	            	<div class="col-1-2">
-	            		<div class="clearfix">
+                        <div class="clearfix">
 		            		<div class="pm_table">
-			                    <table class="plain" id="usersTable">
+			                    <table class="plain absorbing" id="usersTable">
 			                        <tbody>
 				                        <tr>
-				                            <td translate-context="Title" translate>Organization storage:</td>
-				                            <td>
-				                                <strong>{{ organization.MaxSpace | humanSize }}</strong>
+				                            <td translate-context="Title" translate>
+                                                <span class="margin-right" translate>Number of users</span>
+                                            </td>
+				                            <td class="absorbing-column">
+				                                <span class="margin-left" translate-context="Info" translate>{{ organization.UsedMembers }} of {{ organization.MaxMembers }} used</span>
 				                            </td>
 				                            <td class="text-right">
 				                                <span>
-				                                    <a ui-sref="secured.dashboard" translate-context="Action" translate-comment="link to dashboard" translate>Upgrade</a>
+				                                    <a ui-sref="secured.dashboard" class="pm_button link" translate-context="Action" translate-comment="link to dashboard" translate>Upgrade</a>
+				                                </span>
+				                            </td>
+				                        </tr>
+                                        <tr>
+				                            <td translate-context="Title" translate>
+                                                <span class="margin-right" translate>Organization storage</span>
+                                            </td>
+                                            <td>
+				                                <span class="margin-left">{{ organization.MaxSpace | humanSize }}</span>
+				                            </td>
+                                            <td class="text-right">
+				                                <span>
+				                                    <a ui-sref="secured.dashboard" class="pm_button link" translate-context="Action" translate-comment="link to dashboard" translate>Upgrade</a>
+				                                </span>
+				                            </td>
+				                        </tr>
+                                        <tr>
+				                            <td translate-context="Title">
+                                                <span class="margin-right" translate>Available domains</span>
+                                            </td>
+                                            <td>
+                                                <div class="margin-left">
+                                                    <span ng-repeat="domain in domains">
+                                                        {{ domain.DomainName }}{{ $last ? '' : ', ' }}
+                                                    </span>
+                                                </div>
+				                            </td>
+				                            <td class="text-right">
+				                                <span>
+				                                    <a ui-sref="secured.domains" class="pm_button link" translate-context="Action" translate-comment="link to domains" translate>Manage</a>
 				                                </span>
 				                            </td>
 				                        </tr>
 				                    </tbody>
 			                    </table>
 		                    </div>
-		                    <p>
-			                    <small><i class="fa fa-info-circle text-purple"></i> <span translate-context="Info" translate>ProtonMail business accounts can create sub-accounts which are used by other members of your organization.</span></small>
-		                    </p>
 	                    </div>
 	            	</div>
 	            </div>
             </section>
         </div>
 
-        <div class="row" id="settingsMembers" ng-show="isAdmin === true">
+        <div class="row" id="settingsMembers" ng-show="organization.HasKeys === 1">
             <section class="setting pm_form full">
-                <legend>
-                    <span class="pull-right small">
-                    	{{ organization.UsedMembers }} / {{ organization.MaxMembers }}
-                        <span translate-comment="how many members are in use" translate> members used,</span> {{ organization.UsedAddresses }} / {{ organization.MaxAddresses }} <span translate-comment="how many addresses are in use" translate>addresses used.</span> <a ui-sref="secured.dashboard" translate-context="Action" translate translate-comment="link to dashboard">Upgrade your plan</a>
-                    </span>
-                    <span translate translate-context="Title">Members</span>
-                </legend>
+                <legend translate translate-context="Title">Members</legend>
                 <p class="alert alert-info" ng-hide="checkDomains()">
                     <span translate-context="Info" translate translate-comment="ask user to add domain before adding users">Please configure a custom domain before adding members to your organization.
                 </p>
@@ -142,65 +105,77 @@
                     <button type="button" class="pm_button" ng-show="checkDomains()" ng-click="addAddress()" translate-context="Action" translate>Add address</button>
                     <a ui-sref="secured.domains" class="pm_button" translate-context="Action" translate>Add domain</a>
                 </p>
-                <div class="pm_table">
-	                <table>
-			            <thead>
-			                <tr>
-			                    <th class="username" translate-context="Title" translate-comment="table heading" translate>Name</th>
-			                    <th class="role" translate-context="Title" translate-comment="table heading" translate>Role</th>
-			                    <th class="storage" translate-context="Title" translate-comment="table heading" translate>Private</th>
-			                    <th class="storage" translate-context="Title" translate-comment="table heading" translate>Storage</th>
-			                    <th class="actions text-right" translate-context="Title" translate-comment="table heading" translate>Actions</th>
-			                </tr>
-			            </thead>
-			            <tbody>
-							<tr ng-repeat-start="member in members">
-			                    <td class="username">
-                                    <span class="pull-left">
-                                        <toggle-expand data-model="member.toggle"></toggle-expand>
-	                                </span>
-		                            &nbsp;
-			                        <span ng-bind="member.Name"></span>
-			                    </td>
-			                    <td class="role">
-	                                <span ng-show="member.Self" translate>Admin</span>
-			                    	<span class="pm_select" ng-hide="member.Self">
-										<select ng-model="member.selectRole" ng-init="initRole(member)" ng-options="role.label for role in roles" ng-change="changeRole(member)"></select>
-				                        <i class="fa fa-angle-down"></i>
-				                    </span>
-			                    </td>
+                <div class="pm_table visibleOverflowY">
+                    <table class="bordered absorbing withDropDown">
+                        <thead>
+                            <tr>
+                                <th translate-context="Title" translate-comment="table heading" translate>Name</th>
+                                <th class="absorbing-column" translate-context="Title" translate-comment="table heading" translate>Addresses</th>
+                                <th>
+                                    <span translate-context="Title" translate-comment="table heading" translate>Role</span>
+                                    <a href="https://protonmail.com/support/knowledge-base/member-roles/" target="_blank">
+                                        <i class="fa fa-info-circle"></i>
+                                    </a>
+                                </th>
+                                <th>
+                                    <span translate-context="Title" translate-comment="table heading" translate>Private</span>
+                                    <a href="https://protonmail.com/support/knowledge-base/private-members/" target="_blank">
+                                        <i class="fa fa-info-circle"></i>
+                                    </a>
+                                </th>
+                                <th translate-context="Title" translate-comment="table heading" translate>Storage</th>
+                                <th translate-context="Title" translate-comment="table heading" translate></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr ng-repeat-start="member in members">
                                 <td>
-	                                <span ng-show="member.Private === 1">
-	                                    <i class="fa fa-check"></i>
-	                                </span>
-                                    <button type="button" class="pm_button link" ng-click="makePrivate(member)" ng-show="member.Private === 0" translate-context="Action" translate>Privatize</button>
-			                    </td>
-			                    <td class="storage">
-	                                <span  translate-comment="space used out of total space allowed for a member" translate>{{ member.UsedSpace | humanSize }} of {{ member.MaxSpace | humanSize }} Used</span>
-	                            </td>
-			                    <td class="actions text-right">
-                                    <button type="button" class="pm_button link" ng-click="editMember(member)" translate-context="Action" translate>Edit</button>
-                                    <button type="button" class="pm_button link" ng-click="login(member)" ng-show="member.Private === 0 && member.Keys.length > 0" translate-context="Action" translate>Login</button>
-                                    <button type="button" class="pm_button link" ng-show="member.Type === 1 && !member.Self" ng-click="removeMember(member)" translate-context="Action" translate>Delete</button>
-                                    <button type="button" class="pm_button link" ng-show="member.Type === 0 && !member.Self" ng-click="removeMember(member)" translate-context="Action" translate>Remove</button>
-								</td>
-			                </tr>
+                                    <span ng-bind="member.Name"></span>
+                                </td>
+                                <td>
+                                    <span>{{ member.Addresses[0].Email }}</span>
+                                    <toggle-expand ng-if="member.Addresses.length > 1" class="autoHeight" data-model="member.toggle" text="+ {{ member.Addresses.length - 1 }}"></toggle-expand>
+                                    <toggle-expand ng-if="member.Addresses.length === 1" class="autoHeight" data-model="member.toggle"></toggle-expand>
+                                </td>
+                                <td>
+                                    <span ng-show="member.Subscriber" translate>Primary Admin</span>
+                                    <span ng-hide="member.Subscriber" translate>{{ roles[member.Role] }}</span>
+                                </td>
+                                <td>
+                                    <span ng-show="member.Private === 1" translate>Yes</span>
+                                    <span ng-hide="member.Private === 1" translate>No</span>
+                                </td>
+                                <td>
+                                    <span  translate-comment="space used out of total space allowed for a member" translate>{{ member.UsedSpace | humanSize:true }} / {{ member.MaxSpace | humanSize }} Used</span>
+                                </td>
+                                <td>
+                                    <span class="pm_buttons pull-right">
+                                        <a class="wide pm_trigger" dropdown>
+                                            <span translate>Options</span>
+                                            <i class="fa fa-angle-down"></i>
+                                        </a>
+                                        <span class="pm_dropdown right">
+                                            <button type="button" class="pm_button link text-red text-left " ng-show="!member.Self && member.Type === 1" ng-click="removeMember(member, false)" translate-context="Action" translate>Delete</button>
+                                            <button type="button" class="pm_button link text-left" ng-show="!member.Self && member.Type === 0" ng-click="removeMember(member)" translate-context="Action" translate>Remove</button>
+                                            <button type="button" class="pm_button link text-left" ng-click="editMember(member)" translate-context="Action" translate>Edit</button>
+
+                                            <button type="button" class="pm_button link text-left" ng-show="member.Role === 1" ng-click="changeRole(member, 2)" translate-context="Action" translate>Make Admin</button>
+                                            <button type="button" class="pm_button link text-left" ng-show="member.Role === 2" ng-click="changeRole(member, 1)" translate-context="Action" translate>Revoke Admin</button>
+
+                                            <button type="button" class="pm_button link text-left" ng-click="login(member)" ng-show="!member.Self && member.Private === 0 && member.Keys.length > 0" translate-context="Action" translate>Login</button>
+                                            <button type="button" class="pm_button link text-left" ng-show="member.Private === 0" ng-click="makePrivate(member)" translate-context="Action" translate-context="Action" translate>Make Private</button>
+                                        </span>
+                                    </span>
+                                </td>
+                            </tr>
                             <tr class="hasTable" ng-repeat-end ng-show="member.toggle === true && member.Addresses.length > 0">
-                                <td colspan="5">
+                                <td colspan="6">
                                     <div class="pm_table">
-                                        <table class="margin-top">
-                                            <thead>
-                                                <tr>
-                                                    <th>Address</th>
-                                                    <th>Status</th>
-                                                    <th class="text-right">Actions</th>
-                                                </tr>
-                                            </thead>
+                                        <table class="absorbing margin-top">
                                             <tbody>
                                                 <tr ng-repeat="address in member.Addresses | orderBy: ['!Status','Send']">
                                                     <td ng-bind="address.Email"></td>
-                                                    <td>
-                                                        <span class="pm_badge primary" ng-show="$first" translate translate-comment="address state badge">Default</span>
+                                                    <td class="absorbing-column">
                                                         <span class="pm_badge success" ng-show="address.Status === 1 && address.Receive === 1" translate translate-comment="address state badge">Enabled</span>
 					                                    <span class="pm_badge error" ng-show="address.Status === 0"  translate translate-comment="address state badge">Disabled</span>
 					                                    <span class="pm_badge warning" ng-show="address.HasKeys === 0"  translate translate-comment="address state badge">Missing keys</span>
@@ -217,10 +192,61 @@
                                     </div>
                                 </td>
                             </tr>
-			            </tbody>
-			        </table>
-		        </div>
+                        </tbody>
+                    </table>
+                </div>
             </section>
         </div>
+
+        <div class="row" id="securityOrganization" ng-show="organization.HasKeys === 1">
+            <section class="setting pm_form full">
+                <legend translate-context="Title" translate>Security</legend>
+                <div class="pm_grid">
+                    <div class="col-1-2">
+                        <p ng-show="keyStatus === 0">
+                            <button class="pm_button primary" ng-disabled="networkActivity.loading()" ng-click="changeOrganizationPassword()" type="button" translate-context="Action" translate>Change organization password</button>
+                            <button class="pm_button primary" ng-disabled="networkActivity.loading()" ng-click="changeOrganizationKeys()" type="button" translate-context="Action" translate>Change organization keys</button>
+                            <a class="pm_button link" href="https://protonmail.com/support/knowledge-base/organization-key" target="_blank" translate>Learn more</a>
+                        </p>
+                        <div ng-show="keyStatus === 1">
+                            <p class="alert alert-warning" translate translate-context="Info">You must activate your organization keys. Without activation you will not be able to create new users, add addresses to existing users, or access non-private user accounts.</p>
+                            <button class="pm_button primary" ng-disabled="networkActivity.loading()" ng-click="activateOrganizationKeys()" type="button" translate-context="Action" translate>Activate Keys</button>
+                        </div>
+                        <div ng-show="keyStatus === 2">
+                            <p class="alert alert-danger" translate translate-context="Info">You have lost access to your organization keys. Without restoration you will not be able to create new users, add addresses to existing users, or access non-private user accounts.</p>
+                            <p>
+                                <button class="pm_button" ng-disabled="networkActivity.loading()" ng-click="changeOrganizationKeys()" type="button" translate-context="Action" translate>Reset Keys</button>
+                                <button class="pm_button primary" ng-disabled="networkActivity.loading()" ng-click="activateOrganizationKeys()" type="button" translate-context="Action" translate>Restore Keys</button>
+                            </p>
+                        </div>
+                        <div class="pm_table">
+                            <table class="bordered absorbing">
+                                <thead>
+                                    <tr>
+                                        <th>
+                                            <span translate-context="Title" translate-comment="table heading" translate>Organization Key Fingerprint</span>
+                                            <a href="https://protonmail.com/support/knowledge-base/organization-key" target="_blank">
+                                                <i class="fa fa-info-circle"></i>
+                                            </a>
+                                        </th>
+                                        <th translate-context="Title" translate-comment="table heading" translate>Key size</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>
+                                            <code>{{ organizationKeyInfo.fingerprint }}</code>
+                                        </td>
+                                        <td translate translate-comment="members page to show the key size">
+                                            {{ organizationKeyInfo.bitSize }} Bit
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+        </div>
+
     </div>
 </div>

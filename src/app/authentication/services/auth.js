@@ -80,10 +80,10 @@ angular.module('proton.authentication')
                     return Promise.resolve(user);
                 }
 
-                const subuser = angular.isDefined(user.OrganizationPrivateKey);
+                user.subuser = angular.isDefined(user.OrganizationPrivateKey);
                 // Required for subuser
                 const decryptOrganization = () => {
-                    if (subuser === true) {
+                    if (user.subuser) {
                         return pmcw.decryptPrivateKey(user.OrganizationPrivateKey, api.getPassword());
                     }
                     return Promise.resolve();
@@ -91,7 +91,7 @@ angular.module('proton.authentication')
 
                 // Hacky fix for missing organizations
                 const fixOrganization = () => {
-                    if (user.Role === 0 && user.Subscribed === 1) {
+                    if (user.Role === CONSTANTS.FREE_USER_ROLE && user.Subscribed === 1) {
                         return setupKeys.generateOrganization(api.getPassword())
                         .then((response) => {
                             const privateKey = response.privateKeyArmored;

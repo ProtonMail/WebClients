@@ -1,12 +1,18 @@
-.responsive-container {
-    overflow-x: auto;
-}
-
 .pm_table {
     max-width: 100%;
     white-space: nowrap;
     overflow-x: auto;
     overflow-y: hidden;
+    &.visibleOverflowY {
+        /*
+        The computed values of ‘overflow-x’ and ‘overflow-y’ are the same as their specified values,
+        except that some combinations with ‘visible’ are not possible:
+        if one is specified as ‘visible’ and the other is ‘scroll’ or ‘auto’, then ‘visible’ is set to ‘auto’.
+        eg: a dropdown menu inside the table will be partialy hidden because of the responsive overflow-x:auto
+        */
+        padding-bottom: 300px;
+        margin-bottom: -300px;
+    }
     table {
         border-collapse: collapse;
         table-layout: fixed;
@@ -58,12 +64,17 @@
             th, td {
                 white-space: nowrap;
             }
-            th.absorbing-column {
+            th.absorbing-column,
+            td.absorbing-column {
                 width: 100%;
             }
-            th.absorbing-column-half {
+            th.absorbing-column-half,
+            td.absorbing-column-half  {
                 width: 50%;
             }
+        }
+        &.withDropDown {
+            > tbody > tr > td { padding: .5rem 1rem; }
         }
         &.plain {
             th, td {
@@ -126,7 +137,7 @@
                     cursor: pointer;
                 }
             }
-            span {
+            > span:not(.pm_buttons) {
                 overflow: hidden;
                 text-overflow: ellipsis;
                 white-space: nowrap;
@@ -158,6 +169,14 @@
         td {
             border-bottom: 1px solid $border;
             color: $gray;
+            .pm_select {
+                &.table_select {
+                    select {
+                        height: 30px;
+                        line-height: 30px;
+                    }
+                }
+            }
         }
         tr {
             &.hasTable{

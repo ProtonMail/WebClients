@@ -1,0 +1,67 @@
+<div class="pm_modal small {{ctrl.class}}" role="dialog" style="display: block;">
+    <form class="modal-dialog" ng-submit="ctrl.next()" novalidate name="setupOrganizationForm">
+        <button type="button" ng-click="ctrl.cancel()" aria-hidden="true" title-translate="Close" title-translate-context="Action" class="fa fa-times close"></button>
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 ng-if="ctrl.step === 'name'" class="modal-title" translate translate-context="Title">Setting up your Organization</h4>
+                <h4 ng-if="ctrl.step === 'keys'" class="modal-title" translate translate-context="Title">Setting up your Keys</h4>
+                <h4 ng-if="ctrl.step === 'password'" class="modal-title" translate translate-context="Title">Set Organization Password</h4>
+                <h4 ng-if="ctrl.step === 'storage'" class="modal-title" translate translate-context="Title">Allocate Storage</h4>
+            </div>
+            <div class="modal-body pm_form">
+                <div ng-if="ctrl.step === 'name'">
+                    <p class="alert alert-info" translate-context="Info" translate>Pick a name for your Organization.</p>
+                    <input ng-model="ctrl.name" type="text" name="name" placeholder-translate="Organization name" ng-maxlength="100" required />
+                    <div ng-messages="setupOrganizationForm.name.$error">
+                        <p ng-message="required" class="text-red" translate-context="Error" translate>Field required</p>
+                        <p ng-message="maxlength" class="text-red" translate-context="Error" translate>Name exceeds maximum length</p>
+                    </div>
+                </div>
+                <div ng-if="ctrl.step === 'keys'">
+                    <p class="alert alert-info" translate-context="Info" translate>This will create a new encryption key for your organization. 4096-bit keys only work on high performance computers, for most users, we recommend using 2048-bit keys.</p>
+                    <div class="pm_grid">
+                        <div class="col-1-2">
+                            <label class="checkbox">
+                                <input type="radio" ng-model="ctrl.size" ng-value="2048" />
+                                <strong translate translate-context="Title" translate-comment="form option heading">High security</strong> (2048-bit)
+                            </label>
+                        </div>
+                        <div class="col-1-2">
+                            <label class="checkbox">
+                                <input type="radio" ng-model="ctrl.size" ng-value="4096" ng-disabled="ctrl.process === true" />
+                                <strong translate translate-context="Title" translate-comment="form option heading">Highest security</strong> (4096-bit)
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <div ng-if="ctrl.step === 'password'">
+                    <p class="alert alert-info" translate-context="Info" translate>Your organization password can be shared with other members you wish to give administrative privileges. It is also an emergency recovery code to gain access to your organization in case you lose access to your account. Please save this password and keep it safe.</p>
+                    <div class="margin">
+                        <password data-id="organizationPassword" data-name="organizationPassword" data-value="ctrl.organizationPassword" data-form="setupOrganizationForm" placeholder-translate="Organization password"></password>
+                    </div>
+                    <div class="margin">
+                        <password data-id="confirmOrganizationPassword" data-name="confirmOrganizationPassword" data-value="ctrl.confirmOrganizationPassword" data-form="setupOrganizationForm" compare="ctrl.organizationPassword" placeholder-translate="Confirm organization password"></password>
+                    </div>
+                    <p class="alert alert-warning">
+                        <span translate-context="Info" translate>* Do NOT forget this password. If you forget it, you will not be able to manage your organization.</span><br />
+                        <span translate-context="Info" translate>* Save your password somewhere safe. Click on 'SHOW' to confirm you have typed your password correctly.</span>
+                    </p>
+                </div>
+                <div ng-if="ctrl.step === 'storage'">
+                    <p class="alert alert-info" translate-context="Info" translate>Currently all available storage is allocated to the administrator account. Please reduce the admin account allocation to free up space for additional users. You can increase the total storage at any time by upgrading your account.</p>
+                    <label><span translate-context="Label" translate>Admin Account Storage:</span> {{ ctrl.sliderValue * ctrl.unit | humanSize }} ({{ ctrl.min | humanSize }} Used)</label>
+                    <slider value="ctrl.sliderValue" options="ctrl.sliderOptions" class="margin"></slider>
+                    <label><span translate-context="Label" translate>Storage for members:</span> {{ ( ctrl.max - ctrl.sliderValue * ctrl.unit) | humanSize }}</label>
+                </div>
+            </div>
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="pm_button" ng-click="ctrl.cancel()" ng-disabled="networkActivity.loading()" translate translate-context="Action">Cancel</button>
+            <button type="submit" class="pm_button primary pull-right" ng-disabled="networkActivity.loading()">
+                <span ng-hide="ctrl.step === 'storage'" translate translate-context="Action">Next</span>
+                <span ng-show="ctrl.step === 'storage'" translate translate-context="Action">Finish</span>
+            </button>
+        </div>
+    </form>
+    <div class="modal-overlay"></div>
+</div>

@@ -1,5 +1,7 @@
-<section class="pm_opensans sidebar" ng-controller="SidebarController" ng-hide="mobileMode || !sidebarMode">
-
+<section class="pm_opensans sidebar" ng-hide="inboxSidebar || (mobileMode && !showSidebar)">
+    <settings-menu></settings-menu>
+</section>
+<section class="pm_opensans sidebar" ng-controller="SidebarController" ng-hide="mobileMode || !inboxSidebar">
     <a
         class="compose pm_button primary"
         action-message

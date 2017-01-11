@@ -9,6 +9,7 @@ angular.module('proton.settings')
     Address,
     activateOrganizationModal,
     authentication,
+    changePasswordModal,
     confirmModal,
     CONSTANTS,
     domains,
@@ -25,13 +26,12 @@ angular.module('proton.settings')
     Organization,
     organizationKeys,
     passwords,
-    pmcw
+    pmcw,
+    setupOrganizationModal,
+    User
 ) => {
 
     $controller('AddressesController', { $scope, authentication, domains, members, organization, organizationKeys, pmcw });
-
-    const MASTER = 2;
-    const SUB = 1;
 
     function passwordModal(submit) {
         loginPasswordModal.activate({
@@ -45,15 +45,15 @@ angular.module('proton.settings')
         });
     }
 
-    $scope.roles = [
-        { label: gettextCatalog.getString('Admin', null), value: MASTER },
-        { label: gettextCatalog.getString('Member', null), value: SUB }
-    ];
+    $scope.roles = [];
+    $scope.roles[CONSTANTS.PAID_ADMIN_ROLE] = gettextCatalog.getString('Admin', null);
+    $scope.roles[CONSTANTS.PAID_MEMBER_ROLE] = gettextCatalog.getString('Member', null);
 
     $scope.initialization = () => {
 
         $scope.newRecoveryPassword = '';
         $scope.confirmRecoveryPassword = '';
+
         switch ($stateParams.action) {
             case 'new':
                 $scope.addMember();
@@ -85,28 +85,21 @@ angular.module('proton.settings')
     };
 
     /**
-     * Initialize select value with role user
-     */
-    $scope.initRole = (member) => {
-        const role = _.findWhere($scope.roles, { value: member.Role });
-
-        if (angular.isDefined(role)) {
-            member.selectRole = role;
-        }
-    };
-
-    /**
      * Inform the back-end to change member role
      * @param {Object} member
      */
-    $scope.changeRole = (member) => {
-        const payload = { Role: member.selectRole.value };
+    $scope.changeRole = (member, role) => {
+        const payload = { Role: role };
+        const isSubscriber = member.Subscriber === 1;
 
         let message;
-        if (member.selectRole.value === MASTER) {
-            message = gettextCatalog.getString('You must provide this member with the backup organization key password for full activation of administrator privileges.', null, 'Info');
+
+        if (role === CONSTANTS.PAID_ADMIN_ROLE) {
+            message = gettextCatalog.getString('You must provide this member with the Organization Password in order to fully activate administrator privileges.', null, 'Info');
+        } else if (isSubscriber) {
+            message = gettextCatalog.getString('This member is currently responsible for payments for your organization. By demoting this member, you will become responsible for payments for your organization.', null, 'Info');
         } else {
-            message = gettextCatalog.getString('By demoting this member you agree to assume any outstanding organization-related obligations the member may have.', null, 'Info');
+            message = gettextCatalog.getString('Are you sure you want to remove administrative privileges from this member? You will become responsible for any unpaid invoices belonging to this member.', null, 'Info');
         }
 
         const params = {
@@ -119,6 +112,7 @@ angular.module('proton.settings')
                             notify({ message: gettextCatalog.getString('Role updated', null), classes: 'notification-success' });
 
                             member.Role = payload.Role;
+                            $scope.initRole(member);
 
                             confirmModal.deactivate();
                         } else if (data && data.Error) {
@@ -143,7 +137,7 @@ angular.module('proton.settings')
      * Save the organization name
      */
     $scope.saveOrganizationName = () => {
-        Organization.update({ DisplayName: $scope.organization.DisplayName })
+        Organization.updateOrganizationName({ DisplayName: $scope.organization.DisplayName })
         .then((result) => {
             if (result.data && result.data.Code === 1000) {
                 notify({ message: gettextCatalog.getString('Organization updated', null), classes: 'notification-success' });
@@ -156,51 +150,6 @@ angular.module('proton.settings')
         }, () => {
             notify({ message: gettextCatalog.getString('Error updating organization name', null, 'Error'), classes: 'notification-danger' });
         });
-    };
-
-    /**
-     * Set organization key recovery password
-     */
-    $scope.saveRecoveryPassword = (form) => {
-        const newPassword = $scope.newRecoveryPassword;
-
-        function submit(currentPassword, twoFactorCode) {
-            loginPasswordModal.deactivate();
-
-            const creds = {
-                Password: currentPassword,
-                TwoFactorCode: twoFactorCode
-            };
-
-            const keySalt = passwords.generateKeySalt();
-
-            passwords.computeKeyPassword(newPassword, keySalt)
-            .then((keyPassword) => pmcw.encryptPrivateKey($scope.organizationKey, keyPassword))
-            .then((PrivateKey) => Organization.updateBackupKeys({ PrivateKey, KeySalt: keySalt }, creds))
-            .then((result) => {
-                if (result.data && result.data.Code === 1000) {
-                    return result.data;
-                } else if (result.data && result.data.Error) {
-                    return Promise.reject({ message: result.data.Error });
-                }
-                return Promise.reject({ message: gettextCatalog.getString('Error updating organization key recovery password', null, 'Error') });
-            }, () => {
-                return Promise.reject({ message: gettextCatalog.getString('Error updating organization key recovery password', null, 'Error') });
-            })
-            .then(() => {
-                // Cleanup
-                $scope.newRecoveryPassword = '';
-                $scope.confirmRecoveryPassword = '';
-                form.$setUntouched();
-                form.$setPristine();
-                notify({ message: gettextCatalog.getString('Organization key recovery password updated', null), classes: 'notification-success' });
-            })
-            .catch((error) => {
-                notify({ message: error.message, classes: 'notification-danger' });
-            });
-        }
-
-        passwordModal(submit);
     };
 
     /**
@@ -237,15 +186,21 @@ angular.module('proton.settings')
         });
     };
 
+    function canLogin() {
+        if ($scope.keyStatus > 0 && CONSTANTS.KEY_PHASE > 3) {
+            notify({ message: gettextCatalog.getString('Permission denied, administrator privileges have been restricted.', null, 'Error'), classes: 'notification-danger' });
+            $state.go('secured.members');
+            return false;
+        }
+        return true;
+    }
+
     /**
      * Allow the current user to access to the mailbox of a specific member
      * @param {Object} member
      */
     $scope.login = (member) => {
-
-        if ($scope.keyStatus > 0 && CONSTANTS.KEY_PHASE > 3) {
-            notify({ message: gettextCatalog.getString('Administrator privileges must be activated', null, 'Error'), classes: 'notification-danger' });
-            $state.go('secured.members');
+        if (!canLogin()) {
             return;
         }
 
@@ -310,7 +265,6 @@ angular.module('proton.settings')
         if (!$scope.canAddMember()) {
             return;
         }
-
         $scope.editMember();
     };
 
@@ -349,9 +303,10 @@ angular.module('proton.settings')
      * Remove member
      * @param {Object} member
      */
-    $scope.removeMember = (member) => {
-        const title = gettextCatalog.getString('Remove member', null, 'Title');
-        const message = gettextCatalog.getString('Are you sure you want to remove this member?', null, 'Info');
+    $scope.removeMember = (member, remove = true) => {
+
+        const title = remove ? gettextCatalog.getString('Remove member', null, 'Title') : gettextCatalog.getString('Delete member', null, 'Title');
+        const message = remove ? gettextCatalog.getString('Are you sure you want to permanently remove this member from your organization? They will lose access to any addresses belonging to your organization.', null, 'Info') : gettextCatalog.getString('Are you sure you want to permanently delete this member? The member\'s inbox and all addresses associated with this member will be deleted.', null, 'Info');
         const index = $scope.members.indexOf(member);
 
         confirmModal.activate({
@@ -386,6 +341,77 @@ angular.module('proton.settings')
                 }
             }
         });
+    };
+
+    /**
+     * Open modal to change the organization password
+     */
+    $scope.changeOrganizationPassword = () => {
+        function modal(creds) {
+            changePasswordModal.activate({
+                params: {
+                    phase: 0,
+                    type: 'organization',
+                    organizationKey: $scope.organizationKey,
+                    creds,
+                    close() {
+                        changePasswordModal.deactivate();
+                    }
+                }
+            });
+        }
+        function submit(currentPassword, twoFactorCode) {
+            const creds = { Password: currentPassword, TwoFactorCode: twoFactorCode };
+            loginPasswordModal.deactivate();
+            modal(creds);
+        }
+        passwordModal(submit);
+    };
+
+    /**
+     * Enable multi-member support for Visionary or Business account
+     */
+    $scope.enableMemberSupport = () => {
+        function modal(creds) {
+            const selfMember = _.findWhere($scope.members, { Self: 1 });
+            const memberID = selfMember.ID;
+
+            setupOrganizationModal.activate({
+                params: {
+                    creds,
+                    memberID,
+                    organization: $scope.organization,
+                    close() {
+                        const promise = User.lock()
+                        .then(() => eventManager.call())
+                        .then(() => setupOrganizationModal.deactivate());
+                        networkActivityTracker.track(promise);
+                    }
+                }
+            });
+        }
+
+        function submit(currentPassword, twoFactorCode) {
+            const promise = User.password({ Password: currentPassword, TwoFactorCode: twoFactorCode })
+            .then((result) => {
+                const { data } = result;
+                if (data.Error) {
+                    return Promise.reject(data.Error);
+                }
+                return Promise.resolve(result);
+            })
+            .then(() => {
+                loginPasswordModal.deactivate();
+                modal();
+            });
+            networkActivityTracker.track(promise);
+        }
+
+        if ($scope.organization.MaxMembers === 1) {
+            notify(gettextCatalog.getString('Please upgrade to a Visionary or Business account for multi-member support.', null));
+        } else if ($scope.organization.MaxMembers > 1) {
+            passwordModal(submit);
+        }
     };
 
     // Call initialization

@@ -28,6 +28,7 @@ angular.module('proton.settings')
 ) => {
 
     function addressesInit() {
+        $scope.isSubUser = authentication.user.subuser;
         $scope.activeAddresses = _.where(authentication.user.Addresses, { Status: 1, Receive: 1 });
         $scope.disabledAddresses = _.difference(authentication.user.Addresses, $scope.activeAddresses);
         $scope.itemMoved = false;
@@ -46,11 +47,12 @@ angular.module('proton.settings')
         }
 
         if (organizationKeys.data && organizationKeys.data.Code === 1000) {
-
-            pmcw.keyInfo(organizationKeys.data.PublicKey)
-            .then((obj) => {
-                $scope.organizationKeyInfo = obj;
-            });
+            if (organizationKeys.data.PublicKey) {
+                pmcw.keyInfo(organizationKeys.data.PublicKey)
+                .then((obj) => {
+                    $scope.organizationKeyInfo = obj;
+                });
+            }
 
             if (!organizationKeys.data.PrivateKey) {
                 $scope.keyStatus = 1;
@@ -65,7 +67,7 @@ angular.module('proton.settings')
             }
         }
 
-        if (CONSTANTS.KEY_PHASE > 3 && $scope.keyStatus > 0) {
+        if (CONSTANTS.KEY_PHASE > 3 && $scope.organization.HasKeys === 1 && $scope.keyStatus > 0) {
             $scope.activateOrganizationKeys();
         }
     }
@@ -93,35 +95,39 @@ angular.module('proton.settings')
         return 1;
     };
 
+    /**
+     * Check organization status to know if the user can add a member
+     * @return {Boolean}
+     */
     $scope.canAddMember = () => {
 
         if ($scope.organization.MaxMembers === 1 && CONSTANTS.KEY_PHASE > 3) {
             $state.go('secured.members');
-            return 0;
+            return false;
         }
 
         if ($scope.organization.MaxMembers - $scope.organization.UsedMembers < 1) {
-            notify({ message: gettextCatalog.getString('You have used all members in your plan. Please upgrade your plan to add a new member', null, 'Error'), classes: 'notification-danger' });
-            return 0;
+            notify({ message: gettextCatalog.getString('You have used all members in your plan. Please upgrade your plan to add a new member.', null, 'Error'), classes: 'notification-danger' });
+            return false;
         }
 
         if ($scope.organization.MaxAddresses - $scope.organization.UsedAddresses < 1) {
-            notify({ message: gettextCatalog.getString('You have used all addresses in your plan. Please upgrade your plan to add a new member', null, 'Error'), classes: 'notification-danger' });
-            return 0;
+            notify({ message: gettextCatalog.getString('You have used all addresses in your plan. Please upgrade your plan to add a new member.', null, 'Error'), classes: 'notification-danger' });
+            return false;
         }
 
         if ($scope.organization.MaxSpace - $scope.organization.UsedSpace < 1) {
-            notify({ message: gettextCatalog.getString('All storage space has been allocated. Please reduce storage allocated to other members', null, 'Error'), classes: 'notification-danger' });
-            return 0;
+            notify({ message: gettextCatalog.getString('All storage space has been allocated. Please reduce storage allocated to other members.', null, 'Error'), classes: 'notification-danger' });
+            return false;
         }
 
         if ($scope.keyStatus > 0 && CONSTANTS.KEY_PHASE > 3) {
-            notify({ message: gettextCatalog.getString('Administrator privileges must be activated', null, 'Error'), classes: 'notification-danger' });
+            notify({ message: gettextCatalog.getString('Permission denied, administrator privileges have been restricted.', null, 'Error'), classes: 'notification-danger' });
             $state.go('secured.members');
-            return;
+            return false;
         }
 
-        return 1;
+        return true;
     };
 
     // Listeners
@@ -341,14 +347,14 @@ angular.module('proton.settings')
      * Open modal to add a new address, used by domains and members controllers
      */
     $scope.addAddress = (domain, member) => {
-
         let showMember = true;
-
         let domains = $scope.domains;
+        let members = $scope.members;
+
         if (domain) {
             domains = [domain];
         }
-        let members = $scope.members;
+
         if (member) {
             members = [member];
 
@@ -384,10 +390,10 @@ angular.module('proton.settings')
             params: {
                 domains,
                 members,
+                organization: $scope.organization,
                 organizationKey: $scope.organizationKey,
                 showMember,
                 addMember() {
-
                     if (!$scope.canAddMember()) {
                         return;
                     }
@@ -492,6 +498,7 @@ angular.module('proton.settings')
                     params: {
                         domains: pmDomains,
                         members: [self],
+                        organization: $scope.organization,
                         organizationKey: {}, // Aliases not for sub-users
                         submit() {
                             addressModal.deactivate();
@@ -527,7 +534,7 @@ angular.module('proton.settings')
         if ($scope.keyStatus === 1) {
             params = {
                 title: gettextCatalog.getString('Key Activation', null, 'Title'),
-                prompt: gettextCatalog.getString('Enter password:', null, 'Title'),
+                prompt: gettextCatalog.getString('Organization password:', null, 'Label'),
                 message: gettextCatalog.getString('You must activate your organization private key with the backup organization key password provided to you by your organization administrator.', null, 'Info'),
                 alert: gettextCatalog.getString('Without activation you will not be able to create new users, add addresses to existing users, or access non-private user accounts.', null, 'Info'),
                 successMessage: gettextCatalog.getString('Organization keys activated', null, 'Info'),
@@ -536,10 +543,10 @@ angular.module('proton.settings')
             };
         } else if ($scope.keyStatus === 2) {
             params = {
-                title: gettextCatalog.getString('Key Activation', null, 'Title'),
-                prompt: gettextCatalog.getString('Enter backup key password:', null, 'Title'),
-                message: gettextCatalog.getString('You have lost access to your organization private key. Please enter the backup organization key password to reactivate it, or click Reset to generate new keys.', null, 'Info'),
-                alert: gettextCatalog.getString('Without activation you will not be able to create new users, add addresses to existing users, or access non-private user accounts.', null, 'Info'),
+                title: gettextCatalog.getString('Restore Administrator Privileges', null, 'Title'),
+                prompt: gettextCatalog.getString('Organization password:', null, 'Label'),
+                message: gettextCatalog.getString('Enter the Organization Password to restore administrator privileges. <a href="https://protonmail.com/support/knowledge-base/restore-administrator/" target="_blank">Learn more</a>', null, 'Info'),
+                alert: gettextCatalog.getString('If another administrator changed this password, you will need to ask them for the new Organization Password.', null, 'Info'),
                 successMessage: gettextCatalog.getString('Organization keys restored', null, 'Info'),
                 errorMessage: gettextCatalog.getString('Error restoring organization keys', null, 'Error'),
                 reset() {
@@ -573,9 +580,8 @@ angular.module('proton.settings')
      * Change organization keys
      */
     $scope.changeOrganizationKeys = () => {
-
-        const nonPrivate = $scope.members.filter((member) => { return member.Private === 0; });
-        const otherAdmins = $scope.members.filter((member) => { return member.Role === 2; }).length > 1;
+        const nonPrivate = $scope.members.filter((member) => member.Private === 0);
+        const otherAdmins = $scope.members.filter((member) => member.Role === CONSTANTS.PAID_ADMIN_ROLE).length > 1;
 
         if (nonPrivate.length > 0 && $scope.keyStatus > 0) {
             notify({ message: gettextCatalog.getString('You must privatize all sub-accounts before generating new organization keys', null, 'Error'), classes: 'notification-danger' });

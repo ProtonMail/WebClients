@@ -118,44 +118,33 @@ angular.module('proton.models.payments', [])
                         TwoFactor: 0
                     });
 
-                    if (CONSTANTS.KEY_PHASE <= 3) {
-                        json.Plans = json.Plans.filter(({ Name }) => Name !== 'business' && Name !== 'vpnbasic' && Name !== 'vpnplus');
-                    }
+                    // Hide others plans: business, vpnbasic, vpnplus
+                    json.Plans = json.Plans.filter(({ Name }) => Name !== 'business' && Name !== 'vpnbasic' && Name !== 'vpnplus');
 
                     json.Plans.forEach((plan) => {
                         switch (plan.Name) {
                             case 'free':
-                                plan.editable = false;
-                                plan.display = true;
                                 plan.sending = '150 ' + gettextCatalog.getString('Messages per day', null);
                                 plan.labels = '20 ' + gettextCatalog.getString('Labels', null);
                                 plan.support = gettextCatalog.getString('Limited support', null);
                                 break;
                             case 'plus':
-                                plan.editable = true;
-                                plan.display = true;
                                 plan.sending = '1000 ' + gettextCatalog.getString('Messages per day', null);
                                 plan.labels = '200 ' + gettextCatalog.getString('Labels', null);
                                 plan.support = gettextCatalog.getString('Support', null);
                                 break;
                             case 'business':
-                                plan.editable = true;
-                                plan.display = false;
                                 plan.sending = '???';
                                 plan.labels = '???';
                                 plan.support = '???';
                                 break;
                             case 'visionary':
-                                plan.editable = false;
-                                plan.display = true;
                                 plan.sending = gettextCatalog.getString('Unlimited sending', null);
                                 plan.labels = gettextCatalog.getString('Unlimited labels', null);
                                 plan.support = gettextCatalog.getString('Priority support', null);
                                 break;
                             case 'vpnbasic':
                             case 'vpnplus':
-                                plan.editable = false;
-                                plan.display = false;
                                 plan.sending = '150 ' + gettextCatalog.getString('Messages per day', null);
                                 plan.labels = '20 ' + gettextCatalog.getString('Labels', null);
                                 plan.support = gettextCatalog.getString('Support', null);

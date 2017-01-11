@@ -50,11 +50,11 @@
                                     <td>
                                         <span class="pm_badge primary" ng-show="$first" translate translate-comment="key state badge">Primary</span>
                                         <span class="pm_badge success" ng-show="key.decrypted" translate translate-comment="key state badge">Active</span>
-                                        <span class="pm_badge error" ng-hide="key.decrypted"  translate translate-comment="key state badge">Inactive</span>
+                                        <span class="pm_badge error" ng-hide="key.decrypted" translate translate-comment="key state badge">Inactive</span>
                                     </td>
                                     <td class="text-center">
-                                        <button type="button" class="pm_button link" ng-hide="key.decrypted" ng-click="reactivate(key)" translate-context="Action" translate>Reactivate</button>
-                                        <span ng-show="key.decrypted" translate>None</span>
+                                        <button type="button" class="pm_button link" ng-hide="key.decrypted || isSubUser" ng-click="reactivate(key)" translate-context="Action" translate>Reactivate</button>
+                                        <span ng-show="key.decrypted || isSubUser" translate>None</span>
                                     </td>
                                 </tr>
                             </tbody>

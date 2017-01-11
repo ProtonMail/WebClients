@@ -307,6 +307,14 @@ angular.module('proton.settings')
         );
     };
 
+    $scope.displayDeletion = () => {
+        const role1 = authentication.user.Role === CONSTANTS.PAID_MEMBER_ROLE;
+        const role2 = authentication.user.Role === CONSTANTS.PAID_ADMIN_ROLE;
+        const usedMembers = $scope.organization.UsedMembers > 1;
+
+        return !role1 && !role2 && !usedMembers;
+    };
+
     $scope.deleteAccount = () => {
         deleteAccountModal.activate({
             params: {

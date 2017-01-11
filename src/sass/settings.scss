@@ -24,10 +24,8 @@
     padding-right: 2rem;
     cursor: pointer;
 }
-#addUserModal .pm_buttons a {
-    height: 31px;
-    line-height: 31px;
-}
+
+
 .pm_tabs.domainMenu {
     font-size: 1rem;
     margin-bottom: 1rem;
@@ -238,9 +236,8 @@
         margin-right: 0;
         clear: both;
         box-sizing: border-box;
-        height: calc(100% - 41px );
+        height: 100%;
         overflow: auto;
-
 
         .angular-squire-wrapper {
             border: 1px solid $border;

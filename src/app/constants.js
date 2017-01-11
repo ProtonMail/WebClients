@@ -10,11 +10,14 @@ angular.module('proton.constants', [])
     TIMEOUT: 30 * 1000, // timeout in milliseconds
     BASE_SIZE: 1024, // define the base used for byte
     PM_SIGNATURE: 'Sent with <a href="https://protonmail.com" target="_blank">ProtonMail</a> Secure Email.',
-    KEY_PHASE: 3,
+    KEY_PHASE: 5,
     MAX_OUTSIDE_REPLY: 4,
     MAILBOX_PASSWORD_KEY: 'proton:mailbox_pwd',
     OAUTH_KEY: 'proton:oauth',
     WHITELIST: ['notify@protonmail.com'],
+    FREE_USER_ROLE: 0,
+    PAID_MEMBER_ROLE: 1,
+    PAID_ADMIN_ROLE: 2,
     INBOX: 0,
     DRAFT: 1,
     SENT: 2,
@@ -23,9 +26,6 @@ angular.module('proton.constants', [])
     REPLY_ALL: 1,
     FORWARD: 2,
     FILTER_VERSION: 1,
-    FREE_USER: 0,
-    PAID_MEMBER: 1,
-    PAID_ADMIN: 2,
     ROW_MODE: 1,
     COLUMN_MODE: 0,
     ATTACHMENT_SIZE_LIMIT: 25, // MB
