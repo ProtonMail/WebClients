@@ -219,12 +219,14 @@ body.mobileMode {
 		.col-basis {
 			flex-basis: 0px;
 		}
-		&:not(.flex) [class*='col-'] {
-			float: left;
-			width: 100% !important;
-			clear: both;
-			box-sizing: border-box;
-			padding: 0;
+		&:not(.flex) {
+			> [class*='col-'] {
+				float: left;
+				width: 100% !important;
+				clear: both;
+				box-sizing: border-box;
+				padding: 0;
+			}
 		}
 
 	}

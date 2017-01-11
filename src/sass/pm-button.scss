@@ -188,6 +188,7 @@
     }
     &.sliderButtons {
         display: inline-flex;
+        margin-top: -5px;
         height: 26px;
         line-height: 26px;
         button {
@@ -291,5 +292,8 @@
 body.mobileMode {
     .pm_buttons {
         margin: 0 5px 0 0;
+        &.sliderButtons {
+            margin: 15px 0px 0px 10px; /* check slider responsive */
+        }
     }
 }

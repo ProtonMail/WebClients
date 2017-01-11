@@ -47,8 +47,7 @@ angular.module('proton.core')
                 range: { min: self.min / self.unit, max: self.max / self.unit },
                 pips: { mode: 'range', stepped: true, density: 4 },
                 minPadding: minPadding / self.unit,
-                maxPadding: maxPadding / self.unit,
-                legend: 'GB'
+                maxPadding: maxPadding / self.unit
             };
 
             self.isPrivate = false;

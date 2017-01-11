@@ -50,6 +50,15 @@ html.protonmail {
 	.plus {
 		color: $light-green;
 	}
+	.background-primary {
+		background: $primary;
+	}
+	.background-red-striped {
+		background: $red-stripped;
+	}
+	.background-orange-striped {
+		background: $orange-stripped;
+	}
 	.bold {
 		font-weight: bold;
 	}
