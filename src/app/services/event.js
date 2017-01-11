@@ -100,7 +100,7 @@ angular.module('proton.event', ['proton.constants', 'proton.utils'])
                 if (user) {
                     const mailboxPassword = authentication.getPassword();
 
-                    if (user.Role === 0) {
+                    if (user.Role === CONSTANTS.FREE_USER_ROLE) {
                         // Necessary because there is no deletion event for organizations
                         $rootScope.$broadcast('organizationChange', { PlanName: 'free', HasKeys: 0 });
                     }

@@ -17,7 +17,7 @@
             <span translate-comment="inbox menu" translate>Back to inbox</span>
         </a>
         <ul class="menu" ng-controller="SidebarController">
-            <li role="presentation" ng-if="!isSubUser" ng-class="{'active': ('secured.dashboard' | includedByState)}">
+            <li role="presentation" ng-if="!isSubUser && !isMember" ng-class="{'active': ('secured.dashboard' | includedByState)}">
                 <a ui-sref="secured.dashboard" translate-context="Title">
                     <i class="fa fa-tachometer"></i>
                     <span translate-comment="dashboard menu" translate>Dashboard</span>
@@ -59,19 +59,19 @@
                     <span translate-comment="addresses menu" translate>Addresses</span>
                 </a>
             </li>
-            <li role="presentation" ng-if="!isSubUser" ng-class="{'active': ('secured.domains' | includedByState)}" class="desktopOnly">
+            <li role="presentation" ng-if="!isSubUser && !isMember" ng-class="{'active': ('secured.domains' | includedByState)}" class="desktopOnly">
                 <a ui-sref="secured.domains" translate-context="Title">
                     <i class="fa fa-globe"></i>
                     <span translate-comment="custom domain menu" translate>Domains</span>
                 </a>
             </li>
-            <li role="presentation" ng-if="!isSubUser && keyPhase > 3" ng-class="{'active': ('secured.members' | includedByState)}" class="desktopOnly">
+            <li role="presentation" ng-if="!isSubUser && !isMember && keyPhase > 3" ng-class="{'active': ('secured.members' | includedByState)}" class="desktopOnly">
                 <a ui-sref="secured.members" translate-context="Title">
                     <i class="fa fa-users"></i>
                     <span translate-comment="members menu" translate>Members</span>
                 </a>
             </li>
-            <li role="presentation" ng-if="!isSubUser" ng-class="{'active': ('secured.payments' | includedByState)}">
+            <li role="presentation" ng-if="!isSubUser && !isMember" ng-class="{'active': ('secured.payments' | includedByState)}">
                 <a ui-sref="secured.payments" translate-context="Title">
                     <i class="fa fa-credit-card"></i>
                     <span translate-comment="payments menu" translate>Payments</span>
@@ -83,7 +83,7 @@
                     <span translate-comment="keys menu" translate>Keys</span>
                 </a>
             </li>
-            <li role="presentation">
+            <li role="presentation" ng-if="!isSubUser && !isMember">
                 <a href="#" ng-click="donate()" translate-context="Title">
                     <i class="fa fa-heart-o"></i>
                     <span translate-comment="keys menu" translate>Donate</span>

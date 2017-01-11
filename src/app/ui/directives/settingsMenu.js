@@ -6,6 +6,7 @@ angular.module('proton.ui')
         templateUrl: 'templates/directives/ui/settingsMenu.tpl.html',
         link(scope) {
             scope.isSubUser = authentication.user.subuser;
+            scope.isMember = authentication.user.Role === CONSTANTS.PAID_MEMBER_ROLE;
             scope.keyPhase = CONSTANTS.KEY_PHASE;
             scope.donate = () => {
                 const promise = Payment.methods()

@@ -32,7 +32,6 @@ angular.module('proton.settings')
     const unsubscribe = [];
     $scope.signatureContent = CONSTANTS.PM_SIGNATURE;
     $scope.keyPhase = CONSTANTS.KEY_PHASE;
-    $scope.isSubUser = authentication.user.subuser;
     updateUser();
 
     function passwordModal(submit) {
@@ -309,8 +308,8 @@ angular.module('proton.settings')
     };
 
     $scope.displayDeletion = () => {
-        const role1 = authentication.user.Role === 1;
-        const role2 = authentication.user.Role === 2;
+        const role1 = authentication.user.Role === CONSTANTS.PAID_MEMBER_ROLE;
+        const role2 = authentication.user.Role === CONSTANTS.PAID_ADMIN_ROLE;
         const usedMembers = $scope.organization.UsedMembers > 1;
 
         return !role1 && !role2 && !usedMembers;
