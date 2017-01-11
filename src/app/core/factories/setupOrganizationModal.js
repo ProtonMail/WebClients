@@ -87,7 +87,7 @@ angular.module('proton.core')
             }
             function storage() {
                 const memberID = params.memberID;
-                const quota = self.sliderValue * self.unit;
+                const quota = Math.round(self.sliderValue * self.unit);
 
                 return Member.quota(memberID, quota);
             }
