@@ -8,7 +8,7 @@ angular.module('proton.core')
         Key,
         networkActivityTracker,
         notify,
-        Organization,
+        organizationApi,
         passwords,
         pmcw,
         User
@@ -47,7 +47,7 @@ angular.module('proton.core')
 
             if (user.Role === CONSTANTS.PAID_ADMIN_ROLE) {
                 // Get organization key
-                Organization.getKeys()
+                organizationApi.getKeys()
                 .then((result) => {
                     if (result.data && result.data.Code === 1000) {
                         const encryptPrivateKey = result.data.PrivateKey;

@@ -58,6 +58,7 @@ angular.module('proton', [
     'proton.address',
     'proton.message',
     'proton.conversation',
+    'proton.organization',
     'proton.squire',
     'proton.wizard',
     'proton.contactCurrent',

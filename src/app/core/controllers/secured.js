@@ -22,7 +22,7 @@ angular.module('proton.core')
     notify,
     messageActions, // added here to initialize $rootScope.$on
     organization,
-    Organization,
+    organizationApi,
     Payment,
     setupKeys,
     pmcw,
@@ -93,7 +93,7 @@ angular.module('proton.core')
         const createOrganization = (parameters) => {
             const deferred = $q.defer();
 
-            Organization.create(parameters)
+            organizationApi.create(parameters)
             .then((result) => {
                 if (result.data && result.data.Code === 1000) {
                     deferred.resolve(result);

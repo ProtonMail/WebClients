@@ -1,5 +1,5 @@
 angular.module('proton.core')
-.factory('setupOrganizationModal', (authentication, pmModal, passwords, networkActivityTracker, Organization, Member, CONSTANTS, setupKeys, pmcw) => {
+.factory('setupOrganizationModal', (authentication, pmModal, passwords, networkActivityTracker, organizationApi, Member, CONSTANTS, setupKeys, pmcw) => {
     return pmModal({
         controllerAs: 'ctrl',
         templateUrl: 'templates/modals/setupOrganization.tpl.html',
@@ -59,7 +59,7 @@ angular.module('proton.core')
             function name() {
                 const DisplayName = self.name;
 
-                return Organization.updateOrganizationName({ DisplayName });
+                return organizationApi.updateOrganizationName({ DisplayName });
             }
             function keys() {
                 const mailboxPassword = authentication.getPassword();
@@ -82,7 +82,7 @@ angular.module('proton.core')
                 return passwords.computeKeyPassword(organizationPassword, payload.BackupKeySalt)
                 .then((keyPassword) => pmcw.encryptPrivateKey(decryptedKey, keyPassword))
                 .then((armored) => payload.BackupPrivateKey = armored)
-                .then(() => Organization.updateOrganizationKeys(payload));
+                .then(() => organizationApi.updateOrganizationKeys(payload));
             }
             function storage() {
                 const memberID = params.memberID;

@@ -1,6 +1,5 @@
-angular.module('proton.models.organization', [])
-
-.factory('Organization', ($http, $q, authentication, url, srp, CONSTANTS) => {
+angular.module('proton.organization')
+.factory('organizationApi', ($http, $q, authentication, url, srp, CONSTANTS) => {
     return {
         /**
          * Create a new group of given parameters. Requires a subscription.
