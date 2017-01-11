@@ -63,10 +63,12 @@ angular.module('proton.ui')
                         if (type === 'uploading') {
                             // On end display remove button and remove the subscribe as we cannot reupload it
                             if (data.progress === 100) {
-                                el[0].classList.remove('uploading');
-                                el[0].style.background = '';
-                                toggleBtn($btnClose, $btnRemove, data.status);
-                                unsubscribe();
+                                _rAF(() => {
+                                    el[0].classList.remove('uploading');
+                                    el[0].style.background = '';
+                                    toggleBtn($btnClose, $btnRemove);
+                                });
+                                return unsubscribe();
                             }
 
                             if (data.progress && data.progress < 100) {

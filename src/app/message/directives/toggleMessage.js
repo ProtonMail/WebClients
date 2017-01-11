@@ -23,6 +23,8 @@ angular.module('proton.message')
                     }
 
                     scope.message.expand = !scope.message.expand;
+                    // Force close toggle details
+                    scope.message.toggleDetails && (scope.message.toggleDetails = false);
                     $rootScope.$emit('message.open', {
                         type: 'toggle',
                         data: {
