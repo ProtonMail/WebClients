@@ -1,6 +1,6 @@
 <ul class="slider-legend pm-flex-content-row">
     <li ng-repeat="legend in list">
-        <span class="slider-legend-square margin-right" ng-style="{ 'background-color': ::legend.color }"></span>
+        <span class="slider-legend-square margin-right {{ ::legend.classes }}"></span>
         <span ng-bind="::legend.label">already used</span>
     </li>
 </ul>
