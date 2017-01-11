@@ -26,9 +26,9 @@ angular.module('proton.core')
             // Default Parameters
             self.ID = null;
             self.legends = [
-                { label: gettextCatalog.getString('Already used', null), color: '' },
-                { label: gettextCatalog.getString('Allocated', null), color: '' },
-                { label: gettextCatalog.getString('Already allocated', null), color: '' }
+                { label: gettextCatalog.getString('Already used', null), classes: 'background-red-striped' },
+                { label: gettextCatalog.getString('Allocated', null), classes: 'background-primary' },
+                { label: gettextCatalog.getString('Already allocated', null), classes: 'background-yellow-striped' }
             ];
             self.step = 'member';
             self.size = 2048;
