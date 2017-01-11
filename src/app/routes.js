@@ -563,9 +563,8 @@ angular.module('proton.routes', [
                     return Promise.reject();
                 });
             },
-            organization(user, organizationApi) {
-                return organizationApi.get()
-                .then(({ data = {} } = {}) => Promise.resolve(data.Organization));
+            organization(user, organizationModel) {
+                return organizationModel.fetch();
             }
         },
         onEnter($rootScope, authentication) {
@@ -751,8 +750,8 @@ angular.module('proton.routes', [
                 }
                 return { data: {} };
             },
-            organization(user, organizationApi, networkActivityTracker) {
-                return networkActivityTracker.track(organizationApi.get());
+            organization(user, organizationModel, networkActivityTracker) {
+                return networkActivityTracker.track(organizationModel.fetch());
             },
             organizationKeys(user, organizationApi, networkActivityTracker) {
                 if (user.Role === CONSTANTS.PAID_ADMIN_ROLE) {
@@ -871,8 +870,8 @@ angular.module('proton.routes', [
                 }
                 return { data: {} };
             },
-            organization(user, organizationApi, networkActivityTracker) {
-                return networkActivityTracker.track(organizationApi.get());
+            organization(user, organizationModel, networkActivityTracker) {
+                return networkActivityTracker.track(organizationModel.fetch());
             },
             organizationKeys(user, organizationApi, networkActivityTracker) {
                 if (user.Role === CONSTANTS.PAID_ADMIN_ROLE) {
@@ -911,8 +910,8 @@ angular.module('proton.routes', [
                 }
                 return { data: {} };
             },
-            organization(user, organizationApi, networkActivityTracker) {
-                return networkActivityTracker.track(organizationApi.get());
+            organization(user, organizationModel, networkActivityTracker) {
+                return networkActivityTracker.track(organizationModel.fetch());
             },
             organizationKeys(user, organizationApi, networkActivityTracker) {
                 if (user.Role === CONSTANTS.PAID_ADMIN_ROLE) {

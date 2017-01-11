@@ -21,10 +21,10 @@ angular.module('proton.settings')
     loginPasswordModal,
     networkActivityTracker,
     notify,
+    organizationModel,
     passwords,
     pmcw,
     Setting,
-    Organization,
     tools,
     User
 ) => {
@@ -320,9 +320,10 @@ angular.module('proton.settings')
     };
 
     $scope.displayDeletion = () => {
+        const organization = organizationModel.get();
         const role1 = authentication.user.Role === CONSTANTS.PAID_MEMBER_ROLE;
         const role2 = authentication.user.Role === CONSTANTS.PAID_ADMIN_ROLE;
-        const usedMembers = $scope.organization.UsedMembers > 1;
+        const usedMembers = organization.UsedMembers > 1;
 
         return !role1 && !role2 && !usedMembers;
     };
