@@ -55,8 +55,6 @@ angular.module('proton.core')
                 legend: 'GB'
             };
 
-            console.log({ values: [0, minPadding / self.unit, maxPadding / self.unit, self.max / self.unit] });
-
             self.isPrivate = false;
             self.private = false;
             self.showAddress = true;

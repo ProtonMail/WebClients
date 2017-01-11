@@ -15,7 +15,7 @@ angular.module('proton.models.organization', [])
          * @return {Promise}
          */
         get() {
-            if (authentication.user.Role === 2) {
+            if (authentication.user.Role === CONSTANTS.PAID_ADMIN_ROLE) {
                 return $http.get(url.get() + '/organizations');
             }
             const fakeResult = {

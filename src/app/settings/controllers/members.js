@@ -33,9 +33,6 @@ angular.module('proton.settings')
 
     $controller('AddressesController', { $scope, authentication, domains, members, organization, organizationKeys, pmcw });
 
-    const MASTER = 2;
-    const SUB = 1;
-
     function passwordModal(submit) {
         loginPasswordModal.activate({
             params: {
@@ -49,8 +46,8 @@ angular.module('proton.settings')
     }
 
     $scope.roles = [];
-    $scope.roles[MASTER] = gettextCatalog.getString('Admin', null);
-    $scope.roles[SUB] = gettextCatalog.getString('Member', null);
+    $scope.roles[CONSTANTS.PAID_ADMIN_ROLE] = gettextCatalog.getString('Admin', null);
+    $scope.roles[CONSTANTS.PAID_MEMBER_ROLE] = gettextCatalog.getString('Member', null);
 
     $scope.initialization = () => {
 
@@ -97,7 +94,7 @@ angular.module('proton.settings')
 
         let message;
 
-        if (role === MASTER) {
+        if (role === CONSTANTS.PAID_ADMIN_ROLE) {
             message = gettextCatalog.getString('You must provide this member with the Organization Password in order to fully activate administrator privileges.', null, 'Info');
         } else if (isSubscriber) {
             message = gettextCatalog.getString('This member is currently responsible for payments for your organization. By demoting this member, you will become responsible for payments for your organization.', null, 'Info');
