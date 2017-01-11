@@ -25,11 +25,6 @@ angular.module('proton.core')
             const maxPadding = (params.member) ? (params.organization.MaxSpace - params.organization.AssignedSpace + params.member.MaxSpace) : params.organization.MaxSpace - params.organization.AssignedSpace;
             // Default Parameters
             self.ID = null;
-            self.legends = [
-                { label: gettextCatalog.getString('Already used', null), classes: 'background-red-striped' },
-                { label: gettextCatalog.getString('Allocated', null), classes: 'background-primary' },
-                { label: gettextCatalog.getString('Already allocated', null), classes: 'background-yellow-striped' }
-            ];
             self.step = 'member';
             self.size = 2048;
             self.organization = params.organization;
@@ -58,6 +53,14 @@ angular.module('proton.core')
                 minPadding: minPadding / self.unit,
                 maxPadding: maxPadding / self.unit
             };
+
+            const allocatedLegend = { label: gettextCatalog.getString('Allocated', null), classes: 'background-primary' };
+            const minPaddingLegend = { label: gettextCatalog.getString('Already used', null), classes: 'background-red-striped' };
+            const maxPaddingLegend = { label: gettextCatalog.getString('Already allocated', null), classes: 'background-yellow-striped' };
+
+            self.legends = [allocatedLegend];
+            if (minPadding > 0) { self.legends.push(minPaddingLegend); }
+            if (maxPadding > 0) { self.legends.push(maxPaddingLegend); }
 
             self.isPrivate = false;
             self.private = false;
