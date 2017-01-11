@@ -76,6 +76,7 @@
                     <div class="col-2-3">
                         <label class="bold">{{ ctrl.sliderValue * ctrl.unit | humanSize  }}</label>
                         <slider value="ctrl.sliderValue" options="ctrl.sliderOptions"></slider>
+                        <legends list="legends"></legends>
                     </div>
                 </div>
                 <p ng-hide="ctrl.showKeys === false || ctrl.private === true" class="alert alert-warning" translate translate-context="Info">
