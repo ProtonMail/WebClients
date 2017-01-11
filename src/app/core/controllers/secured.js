@@ -30,8 +30,8 @@ angular.module('proton.core')
 ) => {
     $scope.tools = tools;
     $scope.user = authentication.user;
-    $scope.isAdmin = authentication.user.Role === CONSTANTS.PAID_ADMIN;
-    $scope.isFree = authentication.user.Role === CONSTANTS.FREE_USER;
+    $scope.isAdmin = authentication.user.Role === CONSTANTS.PAID_ADMIN_ROLE;
+    $scope.isFree = authentication.user.Role === CONSTANTS.FREE_USER_ROLE;
     $scope.keyPhase = CONSTANTS.KEY_PHASE;
     $scope.organization = organization;
     $scope.subscription = subscription;
@@ -138,8 +138,8 @@ angular.module('proton.core')
     $scope.$on('updateUser', () => {
         $scope.$applyAsync(() => {
             $scope.user = authentication.user;
-            $scope.isAdmin = authentication.user.Role === CONSTANTS.PAID_ADMIN;
-            $scope.isFree = authentication.user.Role === CONSTANTS.FREE_USER;
+            $scope.isAdmin = authentication.user.Role === CONSTANTS.PAID_ADMIN_ROLE;
+            $scope.isFree = authentication.user.Role === CONSTANTS.FREE_USER_ROLE;
         });
     });
 
