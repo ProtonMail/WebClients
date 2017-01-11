@@ -45,7 +45,7 @@ angular.module('proton.core')
         function manageOrganizationKeys(password = '', oldMailPwd = '', user = {}) {
             const deferred = $q.defer();
 
-            if (user.Role === 2) {
+            if (user.Role === CONSTANTS.PAID_ADMIN_ROLE) {
                 // Get organization key
                 Organization.getKeys()
                 .then((result) => {
