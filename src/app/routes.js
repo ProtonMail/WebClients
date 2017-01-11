@@ -739,13 +739,13 @@ angular.module('proton.routes', [
     .state('secured.addresses', {
         url: '/addresses',
         resolve: {
-            members(user, Member, networkActivityTracker, CONSTANTS) {
+            members(user, Member, networkActivityTracker) {
                 if (user.Role === CONSTANTS.PAID_ADMIN_ROLE) {
                     return networkActivityTracker.track(Member.query());
                 }
                 return { data: {} };
             },
-            domains(user, Domain, networkActivityTracker, CONSTANTS) {
+            domains(user, Domain, networkActivityTracker) {
                 if (user.Role === CONSTANTS.PAID_ADMIN_ROLE) {
                     return networkActivityTracker.track(Domain.query());
                 }
@@ -754,7 +754,7 @@ angular.module('proton.routes', [
             organization(user, Organization, networkActivityTracker) {
                 return networkActivityTracker.track(Organization.get());
             },
-            organizationKeys(user, Organization, networkActivityTracker, CONSTANTS) {
+            organizationKeys(user, Organization, networkActivityTracker) {
                 if (user.Role === CONSTANTS.PAID_ADMIN_ROLE) {
                     return networkActivityTracker.track(Organization.getKeys());
                 }
@@ -788,7 +788,7 @@ angular.module('proton.routes', [
             invoices(Payment, networkActivityTracker) {
                 return networkActivityTracker.track(Payment.invoices({ Owner: 0 }));
             },
-            organizationInvoices(user, Payment, networkActivityTracker, CONSTANTS) {
+            organizationInvoices(user, Payment, networkActivityTracker) {
                 if (user.Role === CONSTANTS.PAID_ADMIN_ROLE) {
                     return networkActivityTracker.track(Payment.invoices({ Owner: 1 }));
                 }
@@ -815,7 +815,7 @@ angular.module('proton.routes', [
             scroll: null
         },
         resolve: {
-            access(user, $state, CONSTANTS) {
+            access(user, $state) {
                 if (user.subuser || user.Role === CONSTANTS.PAID_MEMBER_ROLE) {
                     $state.go('secured.account');
                     return Promise.reject();
@@ -852,20 +852,20 @@ angular.module('proton.routes', [
             id: null
         },
         resolve: {
-            access(user, CONSTANTS, $state) {
+            access(user, $state) {
                 if (CONSTANTS.KEY_PHASE > 3 && !user.subuser && user.Role !== CONSTANTS.PAID_MEMBER_ROLE) {
                     return Promise.resolve();
                 }
                 $state.go('secured.addresses');
                 return Promise.reject();
             },
-            members(user, Member, networkActivityTracker, CONSTANTS) {
+            members(user, Member, networkActivityTracker) {
                 if (user.Role === CONSTANTS.PAID_ADMIN_ROLE) {
                     return networkActivityTracker.track(Member.query());
                 }
                 return { data: {} };
             },
-            domains(user, Domain, networkActivityTracker, CONSTANTS) {
+            domains(user, Domain, networkActivityTracker) {
                 if (user.Role === CONSTANTS.PAID_ADMIN_ROLE) {
                     return networkActivityTracker.track(Domain.query());
                 }
@@ -874,7 +874,7 @@ angular.module('proton.routes', [
             organization(user, Organization, networkActivityTracker) {
                 return networkActivityTracker.track(Organization.get());
             },
-            organizationKeys(user, Organization, networkActivityTracker, CONSTANTS) {
+            organizationKeys(user, Organization, networkActivityTracker) {
                 if (user.Role === CONSTANTS.PAID_ADMIN_ROLE) {
                     return networkActivityTracker.track(Organization.getKeys());
                 }
@@ -892,20 +892,20 @@ angular.module('proton.routes', [
     .state('secured.domains', {
         url: '/domains',
         resolve: {
-            access(user, $state, CONSTANTS) {
+            access(user, $state) {
                 if (user.subuser || user.Role === CONSTANTS.PAID_MEMBER_ROLE) {
                     $state.go('secured.addresses');
                     return Promise.reject();
                 }
                 return Promise.resolve();
             },
-            members(user, Member, networkActivityTracker, CONSTANTS) {
+            members(user, Member, networkActivityTracker) {
                 if (user.Role === CONSTANTS.PAID_ADMIN_ROLE) {
                     return networkActivityTracker.track(Member.query());
                 }
                 return { data: {} };
             },
-            domains(user, Domain, networkActivityTracker, CONSTANTS) {
+            domains(user, Domain, networkActivityTracker) {
                 if (user.Role === CONSTANTS.PAID_ADMIN_ROLE) {
                     return networkActivityTracker.track(Domain.query());
                 }
@@ -914,7 +914,7 @@ angular.module('proton.routes', [
             organization(user, Organization, networkActivityTracker) {
                 return networkActivityTracker.track(Organization.get());
             },
-            organizationKeys(user, Organization, networkActivityTracker, CONSTANTS) {
+            organizationKeys(user, Organization, networkActivityTracker) {
                 if (user.Role === CONSTANTS.PAID_ADMIN_ROLE) {
                     return networkActivityTracker.track(Organization.getKeys());
                 }
