@@ -51,8 +51,7 @@ angular.module('proton.core')
                     density: 4
             	},
                 minPadding: minPadding / self.unit,
-                maxPadding: maxPadding / self.unit,
-                legend: 'GB'
+                maxPadding: maxPadding / self.unit
             };
 
             self.isPrivate = false;

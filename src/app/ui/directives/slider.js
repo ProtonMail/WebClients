@@ -12,10 +12,6 @@ angular.module('proton.ui')
 
             scope.unit = base * base * base;
 
-            if (scope.options.legend === 'GB') {
-                slider.classList.add('slider-legend-GB');
-            }
-
             noUiSlider.create(slider, scope.options);
 
             scope.value = scope.options.start;

@@ -3,6 +3,7 @@ div.noUi-target {
     box-shadow: none;
     border-color: $border;
     border-radius: 2px;
+    margin-bottom: 50px; /* pips legend */
 }
 
 div.noUi-connect {
@@ -11,7 +12,6 @@ div.noUi-connect {
     border:1px solid $primary;
     margin:-1px;
     border-radius: 4px;
-
 }
 
 div.noUi-handle {
@@ -56,28 +56,10 @@ div.noUi-value {
     font-size: .6rem;
 }
 
-div.slider-legend-GB {
-    div.noUi-value {
-        white-space: nowrap;
-        &:after { content:" GB" }
-    }
-}
-
-
 .slider-min-padding,
 .slider-max-padding {
     position: absolute;
     z-index: 2;
-
-    .slider-legend {
-        position: absolute;
-        z-index: 10;
-        bottom:22px;
-        line-height: 18px;
-        font-size: 10px;
-        text-align: center;
-        white-space: nowrap;
-    }
 }
 
 .slider-min-padding {
@@ -86,16 +68,8 @@ div.slider-legend-GB {
     height: 18px;
     box-shadow: inset -2px 0px 1px rgba(0, 0, 0, 0.1);
     border-radius: 2px 0px 0px 2px;
-    background: repeating-linear-gradient(
-      45deg,
-      #E43D58,
-      #E43D58 10px,
-      #DB344F 10px,
-      #DB344F 20px
-    );
-    .slider-legend { left: 0 }
+    background: $red-stripped;
 }
-
 
 .slider-max-padding {
     top:-1px;
@@ -103,12 +77,32 @@ div.slider-legend-GB {
     height: 18px;
     box-shadow: inset 2px 0px 1px rgba(0, 0, 0, 0.1);
     border-radius: 0px 2px 2px 0px;
-    background: repeating-linear-gradient(
-      45deg,
-      #EC543E,
-      #EC543E 10px,
-      #EA432A 10px,
-      #EA432A 20px
-    );
-    .slider-legend { right: 0 }
+    background: $orange-stripped;
+}
+
+ul.slider-legend {
+    margin:0;
+    padding:0;
+
+    > li {
+
+        @include flexRow();
+        -webkit-align-itmes: center;
+        align-items: center;
+                
+        list-style: none;
+        margin-right: 10px;
+        font-size: 12px;
+
+        .slider-legend-square {
+            width: 30px;
+            height:18px;
+            display: block;
+            border-radius: 2px;
+        }
+    }
+}
+
+body.mobileMode {
+    div.noUi-target { margin-top: 20px }
 }
