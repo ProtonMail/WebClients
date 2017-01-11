@@ -1,0 +1,23 @@
+ul.legends {
+
+    @include flexRow();
+    margin:0;
+    padding:0;
+
+    > li {
+        @include flexRow();
+        -webkit-align-itmes: center;
+        align-items: center;
+
+        list-style: none;
+        margin-right: 10px;
+        font-size: 12px;
+
+        .legends-square {
+            width: 30px;
+            height:18px;
+            display: block;
+            border-radius: 2px;
+        }
+    }
+}
