@@ -30,6 +30,7 @@ angular.module('proton.settings')
     // Initialize variables
     $scope.configuration = {};
     $scope.subscription = {};
+    $scope.organization = organizationModel.get();
 
     // Options
     $scope.plusSpaceOptions = [
