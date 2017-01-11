@@ -1,5 +1,5 @@
 angular.module('proton.ui')
-    .directive('protonmailLogo', (authentication, CONSTANTS) => {
+    .directive('protonmailLogo', (authentication, CONSTANTS, organizationModel) => {
         return {
             restrict: 'E',
             templateUrl: 'templates/directives/ui/protonmailLogo.tpl.html',
@@ -33,8 +33,8 @@ angular.module('proton.ui')
                     }
                     img.src = src;
                 }
-                scope.$on('organizationChange', (event, organization) => updateLogo(organization));
-                updateLogo(scope.organization, scope.subscription);
+                scope.$on('organizationChange', (event, organization) => updateLogo(organization, scope.subscription));
+                updateLogo(organizationModel.get(), scope.subscription);
             }
         };
     });

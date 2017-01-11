@@ -16,6 +16,7 @@ angular.module('proton.settings')
     dkimModal,
     dmarcModal,
     Domain,
+    organizationModel,
     domainModal,
     domains,
     eventManager,
@@ -26,15 +27,13 @@ angular.module('proton.settings')
     mxModal,
     networkActivityTracker,
     notify,
-    Organization,
-    organization,
     organizationKeys,
     pmcw,
     spfModal,
     verificationModal
 ) => {
 
-    $controller('AddressesController', { $scope, authentication, domains, members, organization, organizationKeys, pmcw });
+    $controller('AddressesController', { $scope, authentication, domains, members, organizationKeys, pmcw });
 
     // Listeners
     $scope.$on('domain', (event, domain) => {
@@ -267,7 +266,6 @@ angular.module('proton.settings')
      * Open modal to add a new address
      */
     $scope.addAddresses = (domain = {}) => {
-
         if ($scope.keyStatus > 0 && CONSTANTS.KEY_PHASE > 3) {
             notify({ message: gettextCatalog.getString('Administrator privileges must be activated', null, 'Error'), classes: 'notification-danger' });
             $state.go('secured.members');
@@ -276,7 +274,6 @@ angular.module('proton.settings')
 
         const memberParams = {
             params: {
-                organization: $scope.organization,
                 organizationPublicKey: $scope.organizationPublicKey,
                 domains: [domain],
                 submit(member) {
@@ -303,7 +300,6 @@ angular.module('proton.settings')
             params: {
                 domains: [domain],
                 members: $scope.members,
-                organization: $scope.organization,
                 organizationPublicKey: $scope.organizationPublicKey,
                 addMember() {
                     addressModal.deactivate();

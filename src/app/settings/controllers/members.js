@@ -22,7 +22,6 @@ angular.module('proton.settings')
     members,
     networkActivityTracker,
     notify,
-    organization,
     organizationApi,
     organizationKeys,
     passwords,
@@ -31,7 +30,7 @@ angular.module('proton.settings')
     User
 ) => {
 
-    $controller('AddressesController', { $scope, authentication, domains, members, organization, organizationKeys, pmcw });
+    $controller('AddressesController', { $scope, authentication, domains, members, organizationKeys, pmcw });
 
     function passwordModal(submit) {
         loginPasswordModal.activate({
@@ -276,7 +275,6 @@ angular.module('proton.settings')
         memberModal.activate({
             params: {
                 member,
-                organization: $scope.organization,
                 organizationKey: $scope.organizationKey,
                 domains: $scope.domains,
                 submit(member) {
@@ -380,7 +378,6 @@ angular.module('proton.settings')
                 params: {
                     creds,
                     memberID,
-                    organization: $scope.organization,
                     close() {
                         const promise = User.lock()
                         .then(() => eventManager.call())

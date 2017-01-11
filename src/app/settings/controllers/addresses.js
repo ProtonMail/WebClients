@@ -22,7 +22,7 @@ angular.module('proton.settings')
     Member,
     networkActivityTracker,
     notify,
-    organization,
+    organizationModel,
     organizationKeys,
     pmcw
 ) => {
@@ -42,9 +42,7 @@ angular.module('proton.settings')
             $scope.domains = domains.data.Domains;
         }
 
-        if (organization.data && organization.data.Code === 1000) {
-            $scope.organization = organization.data.Organization;
-        }
+        $scope.organization = organizationModel.get();
 
         if (organizationKeys.data && organizationKeys.data.Code === 1000) {
             if (organizationKeys.data.PublicKey) {
@@ -390,7 +388,6 @@ angular.module('proton.settings')
             params: {
                 domains,
                 members,
-                organization: $scope.organization,
                 organizationKey: $scope.organizationKey,
                 showMember,
                 addMember() {
@@ -498,7 +495,6 @@ angular.module('proton.settings')
                     params: {
                         domains: pmDomains,
                         members: [self],
-                        organization: $scope.organization,
                         organizationKey: {}, // Aliases not for sub-users
                         submit() {
                             addressModal.deactivate();

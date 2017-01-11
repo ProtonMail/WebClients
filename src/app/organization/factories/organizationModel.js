@@ -1,5 +1,5 @@
 angular.module('proton.organization')
-.factory('organizationModel', (organizationApi) => {
+.factory('organizationModel', (organizationApi, $rootScope) => {
     let organization = {};
     function get() {
         return organization;
@@ -17,5 +17,8 @@ angular.module('proton.organization')
             throw new Error(data.Error || 'Organization request failed');
         });
     }
+    $rootScope.$on('organizationChange', (event, newOrganization) => {
+        set(newOrganization);
+    });
     return { set, get, fetch };
 });

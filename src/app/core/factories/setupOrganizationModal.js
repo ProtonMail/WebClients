@@ -1,5 +1,5 @@
 angular.module('proton.core')
-.factory('setupOrganizationModal', (authentication, pmModal, passwords, networkActivityTracker, organizationApi, Member, CONSTANTS, setupKeys, pmcw) => {
+.factory('setupOrganizationModal', (authentication, pmModal, passwords, networkActivityTracker, organizationApi, organizationModel, Member, CONSTANTS, setupKeys, pmcw) => {
     return pmModal({
         controllerAs: 'ctrl',
         templateUrl: 'templates/modals/setupOrganization.tpl.html',
@@ -9,10 +9,11 @@ angular.module('proton.core')
             const steps = ['name', 'keys', 'password', 'storage'];
             const methods = [name, keys, password, storage];
             const payload = {};
+            const organization = organizationModel.get();
             let index = 0;
             let decryptedKey;
             self.min = 0;
-            self.max = params.organization.MaxSpace;
+            self.max = organization.MaxSpace;
             self.unit = base * base * base;
             self.step = steps[index];
             self.size = 2048;
