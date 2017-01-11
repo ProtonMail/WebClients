@@ -1,5 +1,5 @@
 angular.module('proton.ui')
-.directive('slider', (CONSTANTS) => {
+.directive('slider', () => {
     return {
         replace: true,
         restrict: 'E',
@@ -7,10 +7,7 @@ angular.module('proton.ui')
         templateUrl: 'templates/ui/slider.tpl.html',
         link(scope, element) {
             const slider = element[0].querySelector('.slider');
-            const base = CONSTANTS.BASE_SIZE;
             const available = scope.options.range.max - scope.options.range.min;
-
-            scope.unit = base * base * base;
 
             noUiSlider.create(slider, scope.options);
 
