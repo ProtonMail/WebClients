@@ -117,15 +117,13 @@ angular.module('proton.core')
                     }
 
                     return Member.name(member.ID, self.name)
-                    .then((result) => {
-                        if (result.data && result.data.Code === 1000) {
-                            member.Name = self.name;
-                            return Promise.resolve();
-                        } else if (result.data && result.data.Error) {
-                            return Promise.reject(result.data.Error);
-                        }
-                        return Promise.reject('Request error');
-                    });
+                        .then(({ data = {} }) => {
+                            if (data.Code === 1000) {
+                                member.Name = self.name;
+                                return;
+                            }
+                            throw new Error(data.Error || 'Request error');
+                        });
                 };
 
                 const updateQuota = () => {
@@ -134,15 +132,13 @@ angular.module('proton.core')
                     }
 
                     return Member.quota(member.ID, quota)
-                    .then((result) => {
-                        if (result.data && result.data.Code === 1000) {
-                            member.MaxSpace = quota;
-                            Promise.resolve();
-                        } else if (result.data && result.data.Error) {
-                            return Promise.reject(result.data.Error);
-                        }
-                        return Promise.reject('Request error');
-                    });
+                        .then(({ data = {} }) => {
+                            if (data.Code === 1000) {
+                                member.MaxSpace = quota;
+                                return;
+                            }
+                            throw new Error(data.Error || 'Request error');
+                        });
                 };
 
                 // const updatePrivate = () => {
@@ -167,16 +163,14 @@ angular.module('proton.core')
                 // };
 
                 const memberRequest = () => {
-                    debugger;
-                    return Member.create(member, self.temporaryPassword).then((result) => {
-                        if (result.data && result.data.Code === 1000) {
-                            member = result.data.Member;
-                            return Promise.resolve();
-                        } else if (result.data && result.data.Error) {
-                            return Promise.reject(result.data.Error);
-                        }
-                        return Promise.reject('Request error');
-                    });
+                    return Member.create(member, self.temporaryPassword)
+                        .then(({ data = {} }) => {
+                            if (data.Code === 1000) {
+                                member = data.Member;
+                                return;
+                            }
+                            throw new Error(data.Error || 'Request error');
+                        });
                 };
 
                 const addressRequest = () => {
@@ -184,18 +178,19 @@ angular.module('proton.core')
                         return Promise.resolve();
                     }
 
-                    return Address.create({ Local: self.address, Domain: self.domain.DomainName, MemberID: member.ID })
-                    .then((result) => {
-                        if (result.data && result.data.Code === 1000) {
-                            const address = result.data.Address;
-                            member.Addresses.push(address);
-                            addresses.push(address);
-                            return Promise.resolve();
-                        } else if (result.data && result.data.Error) {
-                            return Promise.reject(result.data.Error);
-                        }
-                        return Promise.reject('Request error');
-                    });
+                    return Address.create({
+                        Local: self.address,
+                        Domain: self.domain.DomainName,
+                        MemberID: member.ID
+                    })
+                        .then(({ data = {} }) => {
+                            if (data.Code === 1000) {
+                                member.Addresses.push(data.Address);
+                                addresses.push(data.Address);
+                                return;
+                            }
+                            throw new Error(data.Error || 'Request error');
+                        });
                 };
 
                 const generateKey = () => {
