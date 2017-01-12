@@ -6,8 +6,8 @@ angular.module('proton.ui')
             replace: true,
             link(scope, element) {
                 const img = element[0].querySelector('img');
-                function updateLogo(organization, subscription) {
-                    const isLifetime = subscription.CouponCode === 'LIFETIME';
+                function updateLogo(organization) {
+                    const isLifetime = scope.subscription.CouponCode === 'LIFETIME';
                     const isSubuser = authentication.user.subuser;
                     const isMember = authentication.user.Role === CONSTANTS.PAID_MEMBER_ROLE;
                     let src;
@@ -34,7 +34,7 @@ angular.module('proton.ui')
                     img.src = src;
                 }
                 scope.$on('organizationChange', (event, organization) => updateLogo(organization));
-                updateLogo(scope.organization, scope.subscription);
+                updateLogo(scope.organization);
             }
         };
     });
