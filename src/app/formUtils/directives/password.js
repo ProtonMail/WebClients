@@ -16,18 +16,17 @@ angular.module('proton.formUtils')
             input.setAttribute('placeholder', placeholder);
             input.setAttribute('tabindex', tabindex);
 
-            if (compare) {
-                input.setAttribute('data-compare-to', 'compare');
-            }
+            (compare) && input.setAttribute('data-compare-to', 'compare');
+            (autofocus) && input.setAttribute('autofocus', true);
 
-            if (autofocus) {
-                input.setAttribute('autofocus', true);
-            }
-            return (scope, el) => {
+            return (scope, el, { autofocus }) => {
+                const $input = el[0].querySelector('.password-input');
                 scope.message = scope.form[name].$error;
                 scope.max = CONSTANTS.LOGIN_PW_MAX_LEN;
 
-                el.on('click', (e) => e.stopPropagation());
+                if (autofocus && document.activeElement !== $input) {
+                    _rAF(() => $input.focus());
+                }
             };
         }
     };
