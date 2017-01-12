@@ -102,6 +102,7 @@ angular.module('proton.settings')
     $scope.canAddMember = () => {
 
         if ($scope.organization.MaxMembers === 1 && CONSTANTS.KEY_PHASE > 3) {
+            notify({ message: gettextCatalog.getString('Multi-user support requires either a Business or Visionary plan.', null, 'Error'), classes: 'notification-danger' });
             $state.go('secured.members');
             return false;
         }
