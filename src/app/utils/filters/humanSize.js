@@ -1,11 +1,17 @@
 angular.module('proton.utils')
     .filter('humanSize', (CONSTANTS) => {
-        return function (input, withoutUnit) {
+        const units = {
+            KB: CONSTANTS.BASE_SIZE,
+            MB: CONSTANTS.BASE_SIZE * CONSTANTS.BASE_SIZE,
+            GB: CONSTANTS.BASE_SIZE * CONSTANTS.BASE_SIZE * CONSTANTS.BASE_SIZE
+        };
+        function transformTo(bytes, unit, withoutUnit) {
+            const value = (bytes / units[unit]).toFixed(2);
+            const suffix = (withoutUnit) ? '' : ` ${unit}`;
+            return value + suffix;
+        }
+        return (input, withoutUnit, forceUnit) => {
             let bytes;
-            let unit = '';
-            const kb = CONSTANTS.BASE_SIZE;
-            const mb = kb * kb;
-            const gb = mb * kb;
 
             if (_.isNumber(input)) {
                 bytes = input;
@@ -13,21 +19,15 @@ angular.module('proton.utils')
                 bytes = 0;
             }
 
-            if (bytes < mb) {
-                if (!withoutUnit) {
-                    unit = ' KB';
-                }
-                return (bytes / kb).toFixed(1) + unit;
-            } else if (bytes < gb) {
-                if (!withoutUnit) {
-                    unit = ' MB';
-                }
-                return (bytes / kb / kb).toFixed(2) + unit;
+            if (forceUnit) {
+                return transformTo(bytes, forceUnit, withoutUnit);
             }
-
-            if (!withoutUnit) {
-                unit = ' GB';
+            if (bytes < units.MB) {
+                return transformTo(bytes, 'KB', withoutUnit);
             }
-            return (bytes / kb / kb / kb).toFixed(2) + unit;
+            if (bytes < units.GB) {
+                return transformTo(bytes, 'MB', withoutUnit);
+            }
+            return transformTo(bytes, 'GB', withoutUnit);
         };
     });

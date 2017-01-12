@@ -144,7 +144,7 @@
                                     <span ng-hide="member.Private === 1" translate>No</span>
                                 </td>
                                 <td>
-                                    <span  translate-comment="space used out of total space allowed for a member" translate>{{ member.UsedSpace | humanSize:true }} / {{ member.MaxSpace | humanSize }} Used</span>
+                                    <span  translate-comment="space used out of total space allowed for a member" translate>{{ member.UsedSpace | humanSize:true:'GB' }} / {{ member.MaxSpace | humanSize:false:'GB' }} Used</span>
                                 </td>
                                 <td>
                                     <span class="pm_buttons pull-right">
