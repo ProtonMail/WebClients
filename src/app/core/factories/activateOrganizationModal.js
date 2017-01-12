@@ -1,5 +1,5 @@
 angular.module('proton.core')
-.factory('activateOrganizationModal', ($timeout, pmModal, networkActivityTracker, organizationApi, gettextCatalog, passwords, pmcw, authentication, notify) => {
+.factory('activateOrganizationModal', (pmModal, networkActivityTracker, Organization, gettextCatalog, passwords, pmcw, authentication, notify) => {
     return pmModal({
         controllerAs: 'ctrl',
         templateUrl: 'templates/modals/activateOrganization.tpl.html',
@@ -13,11 +13,6 @@ angular.module('proton.core')
             this.message = params.message || '';
             this.alert = params.alert || '';
             this.showReset = angular.isDefined(params.reset);
-
-            // $timeout(() => {
-            //     console.log('CO')
-            //     $('#inputCode').focus();
-            // }, 100, false);
 
             this.submit = () => {
 
@@ -67,14 +62,6 @@ angular.module('proton.core')
             this.reset = () => {
                 params.reset();
             };
-
-
-            $timeout(() => {
-                $('#polo').on('click', () => {
-                    alert('dewdwe');
-                });
-            }, 100, false)
-
         }
     });
 });
