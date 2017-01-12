@@ -14,9 +14,10 @@ angular.module('proton.core')
             this.alert = params.alert || '';
             this.showReset = angular.isDefined(params.reset);
 
-            $timeout(() => {
-                $('#inputCode').focus();
-            });
+            // $timeout(() => {
+            //     console.log('CO')
+            //     $('#inputCode').focus();
+            // }, 100, false);
 
             this.submit = () => {
 
@@ -66,6 +67,14 @@ angular.module('proton.core')
             this.reset = () => {
                 params.reset();
             };
+
+
+            $timeout(() => {
+                $('#polo').on('click', () => {
+                    alert('dewdwe');
+                });
+            }, 100, false)
+
         }
     });
 });

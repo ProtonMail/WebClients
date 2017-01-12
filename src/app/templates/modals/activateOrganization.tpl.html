@@ -9,14 +9,20 @@
                 <div class="{{ ctrl.messageClass }}" ng-show="ctrl.message.length" ng-bind-html="ctrl.message"></div>
                 <p>{{ ctrl.prompt }}</p>
                 <div class="margin">
-                    <password data-value="ctrl.inputCode" data-id="inputCode" placeholder-translate="Password" data-name="inputCode" data-form="activationModalForm"></password>
+                    <password
+                        data-autofocus="true"
+                        data-value="ctrl.inputCode"
+                        data-id="inputCode"
+                        placeholder-translate="Password"
+                        data-name="inputCode"
+                        data-form="activationModalForm"></password>
                 </div>
                 <div class="{{ ctrl.alertClass }}" ng-show="ctrl.alert.length">{{ ctrl.alert }}</div>
             </div>
         </div>
         <div class="modal-footer text-right">
             <button type="button" class="pm_button pull-left" ng-click="ctrl.cancel()" translate translate-context="Action">Cancel</button>
-            <button type="button" class="pm_button" ng-click="ctrl.reset()" ng-show="ctrl.showReset" translate translate-context="Action">Reset Keys</button>
+            <button type="button" class="pm_button" ng-click="$event.stopPropagation();ctrl.reset()" ng-show="ctrl.showReset" translate translate-context="Action" id="polo">Reset Keys</button>
             <button type="submit" class="pm_button primary" translate translate-context="Action">Submit</button>
         </div>
     </form>
