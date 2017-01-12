@@ -7,7 +7,7 @@
             </div>
             <div class="modal-body pm_form">
                 <p translate>Donate to ProtonMail</p>
-                <div class="pm_grid margin">
+                <div class="pm_grid margin flex flex-mobileShrink">
                     <div class="col-1-4">
                         <button type="button" class="pm_button fullwidth" ng-class="{ success: ctrl.amount === 5 }" ng-click="ctrl.selectAmount(5)">5</button>
                     </div>
@@ -21,7 +21,7 @@
                         <button type="button" class="pm_button fullwidth" ng-class="{ success: ctrl.amount === 50 }" ng-click="ctrl.selectAmount(50)">50</button>
                     </div>
                 </div>
-                <div class="pm_grid margin">
+                <div class="pm_grid margin flex flex-mobileShrink">
                     <div class="col-1-4">
                         <button type="button" class="pm_button fullwidth" ng-class="{success: ctrl.amount === 100}" ng-click="ctrl.selectAmount(100)">100</button>
                     </div>
