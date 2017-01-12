@@ -65,7 +65,9 @@ module.exports = {
       "vendor/awesomplete/awesomplete.js",
       "vendor/angular-ui-indeterminate/dist/indeterminate.js",
       "vendor/bcryptjs/dist/bcrypt.js",
-      "vendor/nouislider/distribute/nouislider.js"
+      "vendor/nouislider/distribute/nouislider.js",
+      "vendor/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.concat.min.js",
+      "vendor/ng-scrollbars/dist/scrollbars.min.js"
     ],
     bootstrap_components: [
       "affix",
@@ -85,7 +87,8 @@ module.exports = {
       "vendor/dropzone/dist/dropzone.css",
       "vendor/smooth-scrollbar/dist/smooth-scrollbar.css",
       "vendor/awesomplete/awesomplete.css",
-      "vendor/nouislider/distribute/nouislider.css"
+      "vendor/nouislider/distribute/nouislider.css",
+      "vendor/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.min.css"
     ],
 
     sass_include_dirs: [

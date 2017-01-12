@@ -7,6 +7,7 @@ angular.module('proton', [
     'ngMessages',
     'ngResource',
     'ngSanitize',
+    'ngScrollbars',
     'pikaday',
     'ui.router',
 
