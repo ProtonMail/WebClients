@@ -103,7 +103,7 @@ angular.module('proton.core')
                         return Promise.reject(gettextCatalog.getString('Invalid password', null, 'Error'));
                     } else if ((!member.ID || (params.member.Addresses.length === 0 && params.member.Type === 1)) && self.address.length === 0) {
                         return Promise.reject(gettextCatalog.getString('Invalid address', null, 'Error'));
-                    } else if (quota > (self.organization.MaxSpace - self.organization.AssignedSpace + params.member.MaxSpace)) {
+                    } else if (quota > maxPadding || quota < minPadding) {
                         return Promise.reject(gettextCatalog.getString('Invalid storage quota', null, 'Error'));
                     } else if (!member.ID && !member.Private && !self.organizationKey) {
                         return Promise.reject(gettextCatalog.getString('Cannot decrypt organization key', null, 'Error'));
@@ -127,7 +127,7 @@ angular.module('proton.core')
                 };
 
                 const updateQuota = () => {
-                    if (self.oldMember && self.oldMember.MaxSpace === (quota)) {
+                    if (self.oldMember && self.oldMember.MaxSpace === quota) {
                         return Promise.resolve();
                     }
 
