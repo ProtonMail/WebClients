@@ -57,7 +57,7 @@
 
 		&:after { display: none }
 
-		.listAttachments-item { padding: 0 0 0 30px }
+		.listAttachments-item { padding: 0 0 0 20px }
 
 		.size {
 			clear: none;
@@ -66,7 +66,10 @@
 			&:after { content: ")" }
 		}
 
-		[class*="listAttachments-icon"] { width: 40px }
+		[class*="listAttachments-icon"] {
+			width: 20px;
+			font-size: 16px;
+		}
 
 	}
 }
