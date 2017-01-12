@@ -8,4 +8,5 @@ div.mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar {
 
 div.mCSB_scrollTools .mCSB_draggerRail { background: $scrollbar-primary }
 div.mCSB_scrollTools .mCSB_dragger:hover .mCSB_dragger_bar,
-div.mCSB_scrollTools .mCSB_dragger:active .mCSB_dragger_bar  { background: $scrollbar-primary }
+div.mCSB_scrollTools .mCSB_dragger:active .mCSB_dragger_bar,
+div.mCSB_scrollTools .mCSB_dragger.mCSB_dragger_onDrag .mCSB_dragger_bar   { background: $scrollbar-primary }
