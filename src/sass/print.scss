@@ -45,4 +45,28 @@
 		border-radius: 0 !important;
 		box-shadow: none !important;
 	}
+
+	/* attachments */
+	.listAttachments-container .listAttachments-att.pm_button {
+		display: inline-block !important;
+		visibility: visible !important;
+		border:0;
+		height:auto;
+		line-height: auto;
+		margin-bottom: 0px;
+
+		&:after { display: none }
+
+		.listAttachments-item { padding: 0 0 0 30px }
+
+		.size {
+			clear: none;
+			display: inline-block;
+			&:before { content: "(" }
+			&:after { content: ")" }
+		}
+
+		[class*="listAttachments-icon"] { width: 40px }
+
+	}
 }
