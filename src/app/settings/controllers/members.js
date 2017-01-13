@@ -109,10 +109,7 @@ angular.module('proton.settings')
                     Member.role(member.ID, payload).then(({ data }) => { // TODO check request
                         if (data && data.Code === 1000) {
                             notify({ message: gettextCatalog.getString('Role updated', null), classes: 'notification-success' });
-
                             member.Role = payload.Role;
-                            $scope.initRole(member);
-
                             confirmModal.deactivate();
                         } else if (data && data.Error) {
                             notify({ message: data.Error, classes: 'notification-danger' });
