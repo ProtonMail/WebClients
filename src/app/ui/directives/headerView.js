@@ -3,6 +3,7 @@ angular.module('proton.ui')
     return {
         restrict: 'E',
         templateUrl: 'templates/ui/headerView.tpl.html',
+        scope: {},
         link(scope) {
             const unsubscribes = [];
             scope.organization = organizationModel.get();
