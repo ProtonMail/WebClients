@@ -37,6 +37,12 @@ angular.module('proton.core')
     return function (exception) {
         nReports++;
 
+        /**
+         * Override Angular internal service, DO NOT REMOVE THIS CONSOLE.
+         * (ಠ益ಠ)
+         */
+        console.error(exception);
+
         if (nReports < 6) {
             let debug;
             if (exception instanceof Error) {
