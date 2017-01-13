@@ -1,11 +1,12 @@
 angular.module('proton.core')
-.factory('addressModal', (pmModal, CONSTANTS, setupKeys, authentication, $rootScope, $state, $q, networkActivityTracker, notify, Address, gettextCatalog) => {
+.factory('addressModal', (pmModal, CONSTANTS, setupKeys, authentication, $rootScope, $state, $q, networkActivityTracker, notify, Address, gettextCatalog, organizationModel) => {
     return pmModal({
         controllerAs: 'ctrl',
         templateUrl: 'templates/modals/addAddress.tpl.html',
         controller(params) {
             // Variables
-            const { domains = [], organization = {}, organizationKey = null, members = [], showMember = true } = params;
+            const { domains = [], organizationKey = null, members = [], showMember = true } = params;
+            const organization = organizationModel.get();
 
             this.domain = domains[0];
             this.domains = domains;

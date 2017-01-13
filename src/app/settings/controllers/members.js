@@ -22,8 +22,7 @@ angular.module('proton.settings')
     members,
     networkActivityTracker,
     notify,
-    organization,
-    Organization,
+    organizationApi,
     organizationKeys,
     passwords,
     pmcw,
@@ -31,7 +30,7 @@ angular.module('proton.settings')
     User
 ) => {
 
-    $controller('AddressesController', { $scope, authentication, domains, members, organization, organizationKeys, pmcw });
+    $controller('AddressesController', { $scope, authentication, domains, members, organizationKeys, pmcw });
 
     function passwordModal(submit) {
         loginPasswordModal.activate({
@@ -137,7 +136,7 @@ angular.module('proton.settings')
      * Save the organization name
      */
     $scope.saveOrganizationName = () => {
-        Organization.updateOrganizationName({ DisplayName: $scope.organization.DisplayName })
+        organizationApi.updateOrganizationName({ DisplayName: $scope.organization.DisplayName })
         .then((result) => {
             if (result.data && result.data.Code === 1000) {
                 notify({ message: gettextCatalog.getString('Organization updated', null), classes: 'notification-success' });
@@ -276,7 +275,6 @@ angular.module('proton.settings')
         memberModal.activate({
             params: {
                 member,
-                organization: $scope.organization,
                 organizationKey: $scope.organizationKey,
                 domains: $scope.domains,
                 submit(member) {
@@ -380,7 +378,6 @@ angular.module('proton.settings')
                 params: {
                     creds,
                     memberID,
-                    organization: $scope.organization,
                     close() {
                         const promise = User.lock()
                         .then(() => eventManager.call())

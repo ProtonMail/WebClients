@@ -21,8 +21,7 @@ angular.module('proton.core')
     hotkeys,
     notify,
     messageActions, // added here to initialize $rootScope.$on
-    organization,
-    Organization,
+    organizationApi,
     Payment,
     setupKeys,
     pmcw,
@@ -34,7 +33,6 @@ angular.module('proton.core')
     $scope.isAdmin = authentication.user.Role === CONSTANTS.PAID_ADMIN_ROLE;
     $scope.isFree = authentication.user.Role === CONSTANTS.FREE_USER_ROLE;
     $scope.keyPhase = CONSTANTS.KEY_PHASE;
-    $scope.organization = organization;
     $scope.subscription = subscription;
     $rootScope.isLoggedIn = true; // Shouldn't be there
     $rootScope.isLocked = false; // Shouldn't be there
@@ -93,7 +91,7 @@ angular.module('proton.core')
         const createOrganization = (parameters) => {
             const deferred = $q.defer();
 
-            Organization.create(parameters)
+            organizationApi.create(parameters)
             .then((result) => {
                 if (result.data && result.data.Code === 1000) {
                     deferred.resolve(result);
@@ -141,12 +139,6 @@ angular.module('proton.core')
             $scope.user = authentication.user;
             $scope.isAdmin = authentication.user.Role === CONSTANTS.PAID_ADMIN_ROLE;
             $scope.isFree = authentication.user.Role === CONSTANTS.FREE_USER_ROLE;
-        });
-    });
-
-    $scope.$on('organizationChange', (event, organization) => {
-        $scope.$applyAsync(() => {
-            $scope.organization = organization;
         });
     });
 

@@ -14,8 +14,8 @@ angular.module('proton.settings')
     donateModal,
     networkActivityTracker,
     notify,
-    Organization,
     Payment,
+    organizationModel,
     paymentModal,
     subscription,
     methods,
@@ -30,6 +30,7 @@ angular.module('proton.settings')
     // Initialize variables
     $scope.configuration = {};
     $scope.subscription = {};
+    $scope.organization = organizationModel.get();
 
     // Options
     $scope.plusSpaceOptions = [
@@ -197,14 +198,6 @@ angular.module('proton.settings')
                 $scope.initialization(result.subscription.data.Subscription, undefined, undefined, result.methods.data.PaymentMethods);
             })
         );
-    };
-
-    /**
-    * Returns a string for the storage bar
-    * @return {String} "12.5"
-    */
-    $scope.percentage = () => {
-        // return Math.round(100 * $scope.organization.UsedSpace / $scope.organization.MaxSpace);
     };
 
     /**
@@ -467,6 +460,7 @@ angular.module('proton.settings')
             .then((results) => {
                 const methods = results[0];
                 const valid = results[1];
+                const organization = organizationModel.get();
 
                 if (methods.data && methods.data.Code === 1000 && valid.data && valid.data.Code === 1000) {
                     // Check amount first
@@ -474,7 +468,7 @@ angular.module('proton.settings')
                         paymentModal.activate({
                             params: {
                                 subscription: $scope.subscription,
-                                create: $scope.organization.PlanName === 'free',
+                                create: organization.PlanName === 'free',
                                 planIDs,
                                 plans: $scope.plans,
                                 valid: valid.data,

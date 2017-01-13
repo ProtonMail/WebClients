@@ -2,7 +2,7 @@ angular.module('proton.core')
 .factory('paymentModal', (
     notify,
     pmModal,
-    Organization,
+    organizationApi,
     gettextCatalog,
     eventManager,
     $log,
@@ -88,7 +88,7 @@ angular.module('proton.core')
              */
             function createOrganization(parameters) {
                 if (params.create === true) {
-                    return Organization.create(parameters)
+                    return organizationApi.create(parameters)
                     .then((result) => {
                         if (angular.isDefined(result.data) && result.data.Code === 1000) {
                             return Promise.resolve(result);

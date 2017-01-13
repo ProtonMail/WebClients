@@ -1,5 +1,5 @@
 angular.module('proton.core')
-.factory('setupOrganizationModal', (authentication, pmModal, passwords, networkActivityTracker, Organization, Member, CONSTANTS, setupKeys, pmcw) => {
+.factory('setupOrganizationModal', (authentication, pmModal, passwords, networkActivityTracker, organizationApi, organizationModel, Member, CONSTANTS, setupKeys, pmcw) => {
     return pmModal({
         controllerAs: 'ctrl',
         templateUrl: 'templates/modals/setupOrganization.tpl.html',
@@ -9,10 +9,11 @@ angular.module('proton.core')
             const steps = ['name', 'keys', 'password', 'storage'];
             const methods = [name, keys, password, storage];
             const payload = {};
+            const organization = organizationModel.get();
             let index = 0;
             let decryptedKey;
             self.min = 0;
-            self.max = params.organization.MaxSpace;
+            self.max = organization.MaxSpace;
             self.unit = base * base * base;
             self.step = steps[index];
             self.size = 2048;
@@ -59,7 +60,7 @@ angular.module('proton.core')
             function name() {
                 const DisplayName = self.name;
 
-                return Organization.updateOrganizationName({ DisplayName });
+                return organizationApi.updateOrganizationName({ DisplayName });
             }
             function keys() {
                 const mailboxPassword = authentication.getPassword();
@@ -82,7 +83,7 @@ angular.module('proton.core')
                 return passwords.computeKeyPassword(organizationPassword, payload.BackupKeySalt)
                 .then((keyPassword) => pmcw.encryptPrivateKey(decryptedKey, keyPassword))
                 .then((armored) => payload.BackupPrivateKey = armored)
-                .then(() => Organization.updateOrganizationKeys(payload));
+                .then(() => organizationApi.updateOrganizationKeys(payload));
             }
             function storage() {
                 const memberID = params.memberID;
