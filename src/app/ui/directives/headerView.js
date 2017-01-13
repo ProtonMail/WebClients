@@ -1,5 +1,5 @@
 angular.module('proton.ui')
-.directive('headerView', (organizationModel) => {
+.directive('headerView', () => {
     return {
         restrict: 'E',
         templateUrl: 'templates/ui/headerView.tpl.html'
