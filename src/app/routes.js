@@ -553,19 +553,11 @@ angular.module('proton.routes', [
 
                 return authentication.fetchUserInfo(); // TODO need to rework this just for the locked page
             },
-            subscription(user, Payment) {
-                return Payment.subscription()
-                .then((result = {}) => {
-                    const { data = {} } = result;
-                    if (data.Code === 1000) {
-                        return Promise.resolve(data.Subscription);
-                    }
-                    return Promise.reject();
-                });
+            subscription(user, subscriptionModel) {
+                return subscriptionModel.fetch();
             },
-            organization(user, Organization) {
-                return Organization.get()
-                .then(({ data = {} } = {}) => Promise.resolve(data.Organization));
+            organization(user, organizationModel) {
+                return organizationModel.fetch();
             }
         },
         onEnter($rootScope, authentication) {
@@ -751,12 +743,12 @@ angular.module('proton.routes', [
                 }
                 return { data: {} };
             },
-            organization(user, Organization, networkActivityTracker) {
-                return networkActivityTracker.track(Organization.get());
+            organization(user, organizationModel, networkActivityTracker) {
+                return networkActivityTracker.track(organizationModel.fetch());
             },
-            organizationKeys(user, Organization, networkActivityTracker) {
+            organizationKeys(user, organizationApi, networkActivityTracker) {
                 if (user.Role === CONSTANTS.PAID_ADMIN_ROLE) {
-                    return networkActivityTracker.track(Organization.getKeys());
+                    return networkActivityTracker.track(organizationApi.getKeys());
                 }
                 return { data: {} };
             }
@@ -871,12 +863,12 @@ angular.module('proton.routes', [
                 }
                 return { data: {} };
             },
-            organization(user, Organization, networkActivityTracker) {
-                return networkActivityTracker.track(Organization.get());
+            organization(user, organizationModel, networkActivityTracker) {
+                return networkActivityTracker.track(organizationModel.fetch());
             },
-            organizationKeys(user, Organization, networkActivityTracker) {
+            organizationKeys(user, organizationApi, networkActivityTracker) {
                 if (user.Role === CONSTANTS.PAID_ADMIN_ROLE) {
-                    return networkActivityTracker.track(Organization.getKeys());
+                    return networkActivityTracker.track(organizationApi.getKeys());
                 }
                 return { data: {} };
             }
@@ -911,12 +903,12 @@ angular.module('proton.routes', [
                 }
                 return { data: {} };
             },
-            organization(user, Organization, networkActivityTracker) {
-                return networkActivityTracker.track(Organization.get());
+            organization(user, organizationModel, networkActivityTracker) {
+                return networkActivityTracker.track(organizationModel.fetch());
             },
-            organizationKeys(user, Organization, networkActivityTracker) {
+            organizationKeys(user, organizationApi, networkActivityTracker) {
                 if (user.Role === CONSTANTS.PAID_ADMIN_ROLE) {
-                    return networkActivityTracker.track(Organization.getKeys());
+                    return networkActivityTracker.track(organizationApi.getKeys());
                 }
                 return { data: {} };
             }

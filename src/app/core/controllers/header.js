@@ -9,12 +9,14 @@ angular.module('proton.core')
     $document,
     gettextCatalog,
     authentication,
+    organizationModel,
     networkActivityTracker,
     Payment,
     CONFIG,
     CONSTANTS
 ) => {
     $scope.params = {};
+    $scope.organization = organizationModel.get();
     $scope.appVersion = CONFIG.app_version;
     $scope.wizardEnabled = CONSTANTS.WIZARD_ENABLED;
     $scope.addresses = [];
@@ -30,7 +32,7 @@ angular.module('proton.core')
     $scope.advancedSearch = false;
     $scope.starred = 2;
 
-    const addFolders = function () {
+    const addFolders = () => {
         $scope.ctrl.folders = [];
         $scope.ctrl.folders.push({ value: -1, label: gettextCatalog.getString('All', null), group: 'default' });
 
@@ -53,7 +55,7 @@ angular.module('proton.core')
      * Return parameters from String
      * @return {Object}
      */
-    const extractParameters = function () {
+    const extractParameters = () => {
         const parameters = {};
         const value = $scope.params.searchMessageInput;
         const separators = [
@@ -98,7 +100,7 @@ angular.module('proton.core')
      * Generate an special Object to reset $stateParams values
      * @return {Object}
      */
-    const resetParameters = function () {
+    const resetParameters = () => {
         return {
             address: undefined,
             page: undefined,
@@ -120,7 +122,7 @@ angular.module('proton.core')
     /**
      * Generate string from parameters set inside the URL
      */
-    const generateSearchString = function () {
+    const generateSearchString = () => {
         let result = '';
 
         if (angular.isDefined($stateParams.label)) {
@@ -170,12 +172,17 @@ angular.module('proton.core')
         $scope.ctrl.address = $scope.addresses[0];
     });
 
-    $scope.initialization = function () {
+    const unsubscribe = $rootScope.$on('organizationChange', (event, newOrganization) => {
+        $scope.organization = newOrganization;
+    });
+    $scope.$on('$destroy', () => unsubscribe());
+
+    $scope.initialization = () => {
         addFolders();
         generateSearchString();
     };
 
-    $scope.toggleAdvancedSearch = function () {
+    $scope.toggleAdvancedSearch = () => {
         if ($scope.advancedSearch === false) {
             $scope.openSearchModal();
         } else {
@@ -183,7 +190,7 @@ angular.module('proton.core')
         }
     };
 
-    $scope.openSearchModal = function () {
+    $scope.openSearchModal = () => {
         const parameters = extractParameters();
 
         $scope.labels = authentication.user.Labels;
@@ -195,20 +202,20 @@ angular.module('proton.core')
 
     };
 
-    $scope.closeSearchModal = function () {
+    $scope.closeSearchModal = () => {
         $scope.advancedSearch = false;
     };
 
-    $scope.sidebarToggle = function () {
+    $scope.sidebarToggle = () => {
         $rootScope.$broadcast('sidebarMobileToggle');
     };
 
-    $scope.blurSearch = function () {
+    $scope.blurSearch = () => {
         const inputs = angular.element('.query');
         angular.element(inputs[0]).blur();
     };
 
-    $scope.searchMessages = function () {
+    $scope.searchMessages = () => {
         const parameters = resetParameters();
         let redirection;
 
@@ -248,15 +255,15 @@ angular.module('proton.core')
         $scope.advancedSearch = false;
     };
 
-    $scope.focusStart = function () {
+    $scope.focusStart = () => {
         $('#search_start').trigger('click');
     };
 
-    $scope.focusEnd = function () {
+    $scope.focusEnd = () => {
         $('#search_end').trigger('click');
     };
 
-    $scope.setMin = function () {
+    $scope.setMin = () => {
         if ($scope.ctrl.start.getDate() === null) {
             $scope.ctrl.start = null;
         } else {
@@ -264,7 +271,7 @@ angular.module('proton.core')
         }
     };
 
-    $scope.setMax = function () {
+    $scope.setMax = () => {
         if ($scope.ctrl.end === null && $scope.ctrl.end.getDate() === null) {
             $scope.ctrl.end = null;
         } else {
@@ -272,24 +279,24 @@ angular.module('proton.core')
         }
     };
 
-    $scope.cancel = function () {
+    $scope.cancel = () => {
         if (angular.isDefined($scope.params.cancel) && angular.isFunction($scope.params.cancel)) {
             $scope.params.cancel();
         }
     };
 
-    $scope.activeSettings = function () {
+    $scope.activeSettings = () => {
         const route = $state.$current.name.replace('secured.', '');
         const settings = ['account', 'labels', 'security', 'appearance', 'domains', 'addresses', 'users', 'payments', 'keys'];
 
         return settings.indexOf(route) !== -1;
     };
 
-    $scope.searchContacts = function () {
+    $scope.searchContacts = () => {
         $rootScope.$broadcast('searchContacts', $scope.params.searchContactInput);
     };
 
-    $scope.email = function () {
+    $scope.email = () => {
         if (Object.keys(authentication.user).length > 0) {
             const address = _.findWhere(authentication.user.Addresses, { Send: 1 });
 

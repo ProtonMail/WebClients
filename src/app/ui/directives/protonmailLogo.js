@@ -1,13 +1,19 @@
 angular.module('proton.ui')
-    .directive('protonmailLogo', (authentication, CONSTANTS) => {
+    .directive('protonmailLogo', (authentication, CONSTANTS, organizationModel, subscriptionModel, $rootScope) => {
         return {
             restrict: 'E',
             templateUrl: 'templates/directives/ui/protonmailLogo.tpl.html',
             replace: true,
             link(scope, element) {
                 const img = element[0].querySelector('img');
+                const unsubscribe = $rootScope.$on('organizationChange', (event, newOrganization) => updateLogo(newOrganization));
+
+                scope.$on('$destroy', () => unsubscribe());
+                updateLogo(scope.organization);
+
                 function updateLogo(organization) {
-                    const isLifetime = scope.subscription.CouponCode === 'LIFETIME';
+                    const subscription = subscriptionModel.get();
+                    const isLifetime = subscription.CouponCode === 'LIFETIME';
                     const isSubuser = authentication.user.subuser;
                     const isMember = authentication.user.Role === CONSTANTS.PAID_MEMBER_ROLE;
                     let src;
@@ -33,8 +39,6 @@ angular.module('proton.ui')
                     }
                     img.src = src;
                 }
-                scope.$on('organizationChange', (event, organization) => updateLogo(organization));
-                updateLogo(scope.organization);
             }
         };
     });

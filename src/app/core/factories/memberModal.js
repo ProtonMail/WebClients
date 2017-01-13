@@ -8,6 +8,7 @@ angular.module('proton.core')
     networkActivityTracker,
     notify,
     pmcw,
+    organizationModel,
     MemberKey,
     authentication,
     Address,
@@ -19,10 +20,11 @@ angular.module('proton.core')
         controller(params) {
             // Variables
             const self = this;
+            const organization = organizationModel.get();
             const base = CONSTANTS.BASE_SIZE;
             const startValue = (params.member) ? params.member.MaxSpace : 0;
             const minPadding = (params.member) ? params.member.UsedSpace : 0;
-            const maxPadding = (params.member) ? (params.organization.MaxSpace - params.organization.AssignedSpace + params.member.MaxSpace) : params.organization.MaxSpace - params.organization.AssignedSpace;
+            const maxPadding = (params.member) ? (organization.MaxSpace - organization.AssignedSpace + params.member.MaxSpace) : organization.MaxSpace - organization.AssignedSpace;
             // Default Parameters
             self.ID = null;
             self.step = 'member';
@@ -37,7 +39,7 @@ angular.module('proton.core')
             self.address = '';
             self.unit = base * base * base;
             self.min = 0;
-            self.max = params.organization.MaxSpace;
+            self.max = organization.MaxSpace;
             self.sliderOptions = {
                 animate: false,
                 start: startValue / self.unit,

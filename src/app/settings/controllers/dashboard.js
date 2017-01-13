@@ -14,14 +14,14 @@ angular.module('proton.settings')
     donateModal,
     networkActivityTracker,
     notify,
-    Organization,
     Payment,
+    organizationModel,
     paymentModal,
-    subscription,
     methods,
     monthly,
     pmcw,
     status,
+    subscriptionModel,
     supportModal,
     CONSTANTS,
     tools,
@@ -30,6 +30,7 @@ angular.module('proton.settings')
     // Initialize variables
     $scope.configuration = {};
     $scope.subscription = {};
+    $scope.organization = organizationModel.get();
 
     // Options
     $scope.plusSpaceOptions = [
@@ -125,7 +126,7 @@ angular.module('proton.settings')
      * @param {Array} methods
      */
     $scope.initialization = (subscription, monthly, yearly, methods) => {
-        if (angular.isDefined(subscription)) {
+        if (subscription) {
             _.extend($scope.subscription, subscription);
             $scope.configuration.cycle = subscription.Cycle;
             $scope.configuration.currency = subscription.Currency;
@@ -190,21 +191,13 @@ angular.module('proton.settings')
     $scope.refresh = () => {
         networkActivityTracker.track(
             $q.all({
-                subscription: Payment.subscription(),
+                subscription: subscriptionModel.fetch(),
                 methods: Payment.methods()
             })
             .then((result) => {
-                $scope.initialization(result.subscription.data.Subscription, undefined, undefined, result.methods.data.PaymentMethods);
+                $scope.initialization(result.subscription, undefined, undefined, result.methods.data.PaymentMethods);
             })
         );
-    };
-
-    /**
-    * Returns a string for the storage bar
-    * @return {String} "12.5"
-    */
-    $scope.percentage = () => {
-        // return Math.round(100 * $scope.organization.UsedSpace / $scope.organization.MaxSpace);
     };
 
     /**
@@ -467,6 +460,7 @@ angular.module('proton.settings')
             .then((results) => {
                 const methods = results[0];
                 const valid = results[1];
+                const organization = organizationModel.get();
 
                 if (methods.data && methods.data.Code === 1000 && valid.data && valid.data.Code === 1000) {
                     // Check amount first
@@ -474,7 +468,7 @@ angular.module('proton.settings')
                         paymentModal.activate({
                             params: {
                                 subscription: $scope.subscription,
-                                create: $scope.organization.PlanName === 'free',
+                                create: organization.PlanName === 'free',
                                 planIDs,
                                 plans: $scope.plans,
                                 valid: valid.data,
@@ -531,5 +525,5 @@ angular.module('proton.settings')
     };
 
     // Call initialization
-    $scope.initialization(subscription, monthly.data.Plans, yearly.data.Plans, methods.data.PaymentMethods);
+    $scope.initialization(subscriptionModel.get(), monthly.data.Plans, yearly.data.Plans, methods.data.PaymentMethods);
 });

@@ -7,10 +7,10 @@ angular.module('proton.elements')
             const $btn = element[0].querySelector('button');
             const onClick = () => $rootScope.$broadcast('unselectAllElements');
 
-            $btn.on('click', onClick);
+            $btn.addEventListener('click', onClick);
 
             scope.$on('$destroy', () => {
-                $btn.off('click', onClick);
+                $btn.removeEventListener('click', onClick);
             });
         }
     };
