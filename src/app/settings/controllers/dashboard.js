@@ -17,11 +17,11 @@ angular.module('proton.settings')
     Payment,
     organizationModel,
     paymentModal,
-    subscription,
     methods,
     monthly,
     pmcw,
     status,
+    subscriptionModel,
     supportModal,
     CONSTANTS,
     tools,
@@ -126,7 +126,7 @@ angular.module('proton.settings')
      * @param {Array} methods
      */
     $scope.initialization = (subscription, monthly, yearly, methods) => {
-        if (angular.isDefined(subscription)) {
+        if (subscription) {
             _.extend($scope.subscription, subscription);
             $scope.configuration.cycle = subscription.Cycle;
             $scope.configuration.currency = subscription.Currency;
@@ -191,11 +191,11 @@ angular.module('proton.settings')
     $scope.refresh = () => {
         networkActivityTracker.track(
             $q.all({
-                subscription: Payment.subscription(),
+                subscription: subscriptionModel.fetch(),
                 methods: Payment.methods()
             })
             .then((result) => {
-                $scope.initialization(result.subscription.data.Subscription, undefined, undefined, result.methods.data.PaymentMethods);
+                $scope.initialization(result.subscription, undefined, undefined, result.methods.data.PaymentMethods);
             })
         );
     };
@@ -525,5 +525,5 @@ angular.module('proton.settings')
     };
 
     // Call initialization
-    $scope.initialization(subscription, monthly.data.Plans, yearly.data.Plans, methods.data.PaymentMethods);
+    $scope.initialization(subscriptionModel.get(), monthly.data.Plans, yearly.data.Plans, methods.data.PaymentMethods);
 });

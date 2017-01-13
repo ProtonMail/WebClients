@@ -25,7 +25,6 @@ angular.module('proton.core')
     Payment,
     setupKeys,
     pmcw,
-    subscription,
     tools
 ) => {
     $scope.tools = tools;
@@ -33,7 +32,6 @@ angular.module('proton.core')
     $scope.isAdmin = authentication.user.Role === CONSTANTS.PAID_ADMIN_ROLE;
     $scope.isFree = authentication.user.Role === CONSTANTS.FREE_USER_ROLE;
     $scope.keyPhase = CONSTANTS.KEY_PHASE;
-    $scope.subscription = subscription;
     $rootScope.isLoggedIn = true; // Shouldn't be there
     $rootScope.isLocked = false; // Shouldn't be there
 
