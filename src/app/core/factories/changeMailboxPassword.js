@@ -88,8 +88,8 @@ angular.module('proton.core')
                 promises = inputKeys.map(({ PrivateKey, ID, Token }) => {
                     // Decrypt private key with organization key and token
                     return organizationKey
-                    .then((key) => pmcw.decryptMessage(Token, key).data)
-                    .then((token) => pmcw.decryptPrivateKey(PrivateKey, token))
+                    .then((key) => pmcw.decryptMessage(Token, key))
+                    .then(({ data }) => pmcw.decryptPrivateKey(PrivateKey, data))
                     .then((pkg) => ({ ID, pkg }));
                 });
             } else {
@@ -126,7 +126,7 @@ angular.module('proton.core')
             };
 
             if (keysFiltered.length === 0) {
-                notify({ message: gettextCatalog.getString('No keys to update', null, 'Error'), classes: 'notification-danger' });
+                return Promise.reject({ message: gettextCatalog.getString('No keys to update', null, 'Error') });
             }
 
             if (organizationKey !== 0) {
