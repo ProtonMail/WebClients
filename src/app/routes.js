@@ -553,15 +553,8 @@ angular.module('proton.routes', [
 
                 return authentication.fetchUserInfo(); // TODO need to rework this just for the locked page
             },
-            subscription(user, Payment) {
-                return Payment.subscription()
-                .then((result = {}) => {
-                    const { data = {} } = result;
-                    if (data.Code === 1000) {
-                        return Promise.resolve(data.Subscription);
-                    }
-                    return Promise.reject();
-                });
+            subscription(user, subscriptionModel) {
+                return subscriptionModel.fetch();
             },
             organization(user, organizationModel) {
                 return organizationModel.fetch();
