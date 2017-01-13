@@ -67,7 +67,7 @@ angular.module('proton.organization')
          * @return {Promise}
          */
         updateOrganizationKeys(params) {
-            return $http.put('/organization/keys', params);
+            return $http.put(url.get() + '/organization/keys', params);
         },
 
         /**
