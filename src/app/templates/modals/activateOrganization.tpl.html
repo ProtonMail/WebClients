@@ -9,7 +9,13 @@
                 <div class="{{ ctrl.messageClass }}" ng-show="ctrl.message.length" ng-bind-html="ctrl.message"></div>
                 <p>{{ ctrl.prompt }}</p>
                 <div class="margin">
-                    <password data-value="ctrl.inputCode" data-id="inputCode" placeholder-translate="Password" data-name="inputCode" data-form="activationModalForm"></password>
+                    <password
+                        data-autofocus="true"
+                        data-value="ctrl.inputCode"
+                        data-id="inputCode"
+                        placeholder-translate="Password"
+                        data-name="inputCode"
+                        data-form="activationModalForm"></password>
                 </div>
                 <div class="{{ ctrl.alertClass }}" ng-show="ctrl.alert.length">{{ ctrl.alert }}</div>
             </div>
