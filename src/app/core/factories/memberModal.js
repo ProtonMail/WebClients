@@ -86,6 +86,7 @@ angular.module('proton.core')
                 let addresses = [];
                 let notificationMessage;
                 let member = {};
+                const quota = getQuota();
 
                 if (params.member) {
                     _.extend(member, params.member);
@@ -93,7 +94,7 @@ angular.module('proton.core')
 
                 member.Name = self.name;
                 member.Private = self.private ? 1 : 0;
-                member.MaxSpace = self.sliderValue * self.unit;
+                member.MaxSpace = quota;
 
                 const check = () => {
                     if (self.name.length === 0) {
@@ -102,7 +103,7 @@ angular.module('proton.core')
                         return Promise.reject(gettextCatalog.getString('Invalid password', null, 'Error'));
                     } else if ((!member.ID || (params.member.Addresses.length === 0 && params.member.Type === 1)) && self.address.length === 0) {
                         return Promise.reject(gettextCatalog.getString('Invalid address', null, 'Error'));
-                    } else if (self.sliderValue * self.unit > (self.organization.MaxSpace - self.organization.UsedSpace)) {
+                    } else if (quota > maxPadding || quota < minPadding) {
                         return Promise.reject(gettextCatalog.getString('Invalid storage quota', null, 'Error'));
                     } else if (!member.ID && !member.Private && !self.organizationKey) {
                         return Promise.reject(gettextCatalog.getString('Cannot decrypt organization key', null, 'Error'));
@@ -116,32 +117,28 @@ angular.module('proton.core')
                     }
 
                     return Member.name(member.ID, self.name)
-                    .then((result) => {
-                        if (result.data && result.data.Code === 1000) {
-                            member.Name = self.name;
-                            return Promise.resolve();
-                        } else if (result.data && result.data.Error) {
-                            return Promise.reject(result.data.Error);
-                        }
-                        return Promise.reject('Request error');
-                    });
+                        .then(({ data = {} }) => {
+                            if (data.Code === 1000) {
+                                member.Name = self.name;
+                                return;
+                            }
+                            throw new Error(data.Error || 'Request error');
+                        });
                 };
 
                 const updateQuota = () => {
-                    if (self.oldMember && self.oldMember.MaxSpace === (self.sliderValue * self.unit)) {
+                    if (self.oldMember && self.oldMember.MaxSpace === quota) {
                         return Promise.resolve();
                     }
 
-                    return Member.quota(member.ID, self.sliderValue * self.unit)
-                    .then((result) => {
-                        if (result.data && result.data.Code === 1000) {
-                            member.MaxSpace = self.sliderValue * self.unit;
-                            Promise.resolve();
-                        } else if (result.data && result.data.Error) {
-                            return Promise.reject(result.data.Error);
-                        }
-                        return Promise.reject('Request error');
-                    });
+                    return Member.quota(member.ID, quota)
+                        .then(({ data = {} }) => {
+                            if (data.Code === 1000) {
+                                member.MaxSpace = quota;
+                                return;
+                            }
+                            throw new Error(data.Error || 'Request error');
+                        });
                 };
 
                 // const updatePrivate = () => {
@@ -166,15 +163,14 @@ angular.module('proton.core')
                 // };
 
                 const memberRequest = () => {
-                    return Member.create(member, self.temporaryPassword).then((result) => {
-                        if (result.data && result.data.Code === 1000) {
-                            member = result.data.Member;
-                            return Promise.resolve();
-                        } else if (result.data && result.data.Error) {
-                            return Promise.reject(result.data.Error);
-                        }
-                        return Promise.reject('Request error');
-                    });
+                    return Member.create(member, self.temporaryPassword)
+                        .then(({ data = {} }) => {
+                            if (data.Code === 1000) {
+                                member = data.Member;
+                                return;
+                            }
+                            throw new Error(data.Error || 'Request error');
+                        });
                 };
 
                 const addressRequest = () => {
@@ -182,18 +178,19 @@ angular.module('proton.core')
                         return Promise.resolve();
                     }
 
-                    return Address.create({ Local: self.address, Domain: self.domain.DomainName, MemberID: member.ID })
-                    .then((result) => {
-                        if (result.data && result.data.Code === 1000) {
-                            const address = result.data.Address;
-                            member.Addresses.push(address);
-                            addresses.push(address);
-                            return Promise.resolve();
-                        } else if (result.data && result.data.Error) {
-                            return Promise.reject(result.data.Error);
-                        }
-                        return Promise.reject('Request error');
-                    });
+                    return Address.create({
+                        Local: self.address,
+                        Domain: self.domain.DomainName,
+                        MemberID: member.ID
+                    })
+                        .then(({ data = {} }) => {
+                            if (data.Code === 1000) {
+                                member.Addresses.push(data.Address);
+                                addresses.push(data.Address);
+                                return;
+                            }
+                            throw new Error(data.Error || 'Request error');
+                        });
                 };
 
                 const generateKey = () => {
@@ -240,7 +237,6 @@ angular.module('proton.core')
 //                    .then(updatePrivate);
                 } else {
                     notificationMessage = gettextCatalog.getString('Member created', null, 'Notification');
-
                     mainPromise = check().then(memberRequest);
                 }
 
@@ -257,6 +253,10 @@ angular.module('proton.core')
             self.cancel = () => {
                 params.cancel();
             };
+
+            function getQuota() {
+                return Math.round(self.sliderValue * self.unit);
+            }
         }
     });
 });
