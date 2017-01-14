@@ -1,6 +1,5 @@
 angular.module('proton.members')
 .factory('memberModel', ($rootScope, memberApi) => {
-    let unsubcribes = [];
     let members = [];
     function get() {
         return members;
@@ -20,18 +19,16 @@ angular.module('proton.members')
     }
     function clear() {
         members = [];
-        unsubcribes.forEach((callback) => callback());
-        unsubcribes = [];
     }
-    unsubcribes.push($rootScope.$on('deleteMember', (event, ID) => {
+    $rootScope.$on('deleteMember', (event, ID) => {
         const index = _.findIndex(members, { ID });
 
         if (index > -1) {
             members.splice(index, 1);
             $rootScope.$emit('membersChange', members);
         }
-    }));
-    unsubcribes.push($rootScope.$on('createMember', (event, ID, member) => {
+    });
+    $rootScope.$on('createMember', (event, ID, member) => {
         const index = _.findIndex(members, { ID });
 
         if (index === -1) {
@@ -40,8 +37,8 @@ angular.module('proton.members')
             _.extend(members[index], member);
         }
         $rootScope.$emit('membersChange', members);
-    }));
-    unsubcribes.push($rootScope.$on('updateMember', (event, ID, member) => {
+    });
+    $rootScope.$on('updateMember', (event, ID, member) => {
         const index = _.findIndex(members, { ID });
 
         if (index === -1) {
@@ -50,6 +47,6 @@ angular.module('proton.members')
             _.extend(members[index], member);
         }
         $rootScope.$emit('membersChange', members);
-    }));
+    });
     return { get, set, fetch, clear };
 });

@@ -17,8 +17,11 @@ angular.module('proton.organization')
             throw new Error(data.Error || 'Organization request failed');
         });
     }
+    function clear() {
+        organization = {};
+    }
     $rootScope.$on('organizationChange', (event, newOrganization) => {
         set(newOrganization);
     });
-    return { set, get, fetch };
+    return { set, get, fetch, clear };
 });
