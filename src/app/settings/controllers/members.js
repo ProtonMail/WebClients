@@ -12,14 +12,12 @@ angular.module('proton.settings')
     changePasswordModal,
     confirmModal,
     CONSTANTS,
-    domains,
     eventManager,
     generateOrganizationModal,
     gettextCatalog,
     loginPasswordModal,
-    Member,
+    memberApi,
     memberModal,
-    members,
     networkActivityTracker,
     notify,
     organizationApi,
@@ -29,8 +27,7 @@ angular.module('proton.settings')
     setupOrganizationModal,
     User
 ) => {
-
-    $controller('AddressesController', { $scope, authentication, domains, members, organizationKeys, pmcw });
+    $controller('AddressesController', { $scope, authentication, organizationKeys, pmcw });
 
     function passwordModal(submit) {
         loginPasswordModal.activate({
@@ -106,7 +103,7 @@ angular.module('proton.settings')
             message,
             confirm() {
                 networkActivityTracker.track(
-                    Member.role(member.ID, payload).then(({ data }) => { // TODO check request
+                    memberApi.role(member.ID, payload).then(({ data }) => { // TODO check request
                         if (data && data.Code === 1000) {
                             notify({ message: gettextCatalog.getString('Role updated', null), classes: 'notification-success' });
                             member.Role = payload.Role;
@@ -163,7 +160,7 @@ angular.module('proton.settings')
                 message,
                 confirm() {
                     networkActivityTracker.track(
-                        Member.privatize(member.ID)
+                        memberApi.privatize(member.ID)
                         .then((result) => {
                             if (result.data && result.data.Code === 1000) {
                                 member.Private = 1;
@@ -226,7 +223,7 @@ angular.module('proton.settings')
             const child = window.open(tab, '_blank');
 
             networkActivityTracker.track(
-                Member.authenticate(member.ID, { Password: currentPassword, TwoFactorCode: twoFactorCode })
+                memberApi.authenticate(member.ID, { Password: currentPassword, TwoFactorCode: twoFactorCode })
                 .then((result) => {
                     const sessionToken = result.data.SessionToken;
 
@@ -309,7 +306,7 @@ angular.module('proton.settings')
                 title,
                 message,
                 confirm() {
-                    networkActivityTracker.track(Member.delete(member.ID).then((result) => {
+                    networkActivityTracker.track(memberApi.delete(member.ID).then((result) => {
                         if (angular.isDefined(result.data) && result.data.Code === 1000) {
 
                             // Local changes

@@ -4,7 +4,7 @@ angular.module('proton.core')
     CONSTANTS,
     eventManager,
     gettextCatalog,
-    Member,
+    memberApi,
     networkActivityTracker,
     notify,
     pmcw,
@@ -116,7 +116,7 @@ angular.module('proton.core')
                         return Promise.resolve();
                     }
 
-                    return Member.name(member.ID, self.name)
+                    return memberApi.name(member.ID, self.name)
                         .then(({ data = {} }) => {
                             if (data.Code === 1000) {
                                 member.Name = self.name;
@@ -131,7 +131,7 @@ angular.module('proton.core')
                         return Promise.resolve();
                     }
 
-                    return Member.quota(member.ID, quota)
+                    return memberApi.quota(member.ID, quota)
                         .then(({ data = {} }) => {
                             if (data.Code === 1000) {
                                 member.MaxSpace = quota;
@@ -141,29 +141,8 @@ angular.module('proton.core')
                         });
                 };
 
-                // const updatePrivate = () => {
-                //     if (self.oldMember && Boolean(self.oldMember.Private) === self.private) {
-                //         return Promise.resolve();
-                //     }
-                //
-                //     if (self.private) {
-                //         return Member.privatize(member.ID)
-                //         .then((result) => {
-                //             if (result.data && result.data.Code === 1000) {
-                //                 member.Private = 1;
-                //                 return Promise.resolve();
-                //             } else if (result.data && result.data.Error) {
-                //                 return Promise.reject(result.data.Error);
-                //             }
-                //             return Promise.reject('Request error');
-                //         });
-                //     }
-                //
-                //     return Promise.resolve();
-                // };
-
                 const memberRequest = () => {
-                    return Member.create(member, self.temporaryPassword)
+                    return memberApi.create(member, self.temporaryPassword)
                         .then(({ data = {} }) => {
                             if (data.Code === 1000) {
                                 member = data.Member;
@@ -234,7 +213,6 @@ angular.module('proton.core')
                     mainPromise = check()
                     .then(updateName)
                     .then(updateQuota);
-//                    .then(updatePrivate);
                 } else {
                     notificationMessage = gettextCatalog.getString('Member created', null, 'Notification');
                     mainPromise = check().then(memberRequest);

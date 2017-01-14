@@ -12,7 +12,6 @@ angular.module('proton.authentication')
     CONFIG,
     CONSTANTS,
     Contact,
-    Domain,
     errorReporter,
     gettextCatalog,
     upgradePassword,

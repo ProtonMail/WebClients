@@ -290,11 +290,11 @@ angular.module('proton.event', ['proton.constants', 'proton.utils'])
                 if (angular.isDefined(members)) {
                     _.each(members, (member) => {
                         if (member.Action === DELETE) {
-                            $rootScope.$broadcast('deleteMember', member.ID);
+                            $rootScope.$emit('deleteMember', member.ID);
                         } else if (member.Action === CREATE) {
-                            $rootScope.$broadcast('createMember', member.ID, member.Member);
+                            $rootScope.$emit('createMember', member.ID, member.Member);
                         } else if (member.Action === UPDATE) {
-                            $rootScope.$broadcast('updateMember', member.ID, member.Member);
+                            $rootScope.$emit('updateMember', member.ID, member.Member);
                         }
                     });
                 }
@@ -303,11 +303,11 @@ angular.module('proton.event', ['proton.constants', 'proton.utils'])
                 if (angular.isDefined(domains)) {
                     _.each(domains, (domain) => {
                         if (domain.Action === DELETE) {
-                            $rootScope.$broadcast('deleteDomain', domain.ID);
+                            $rootScope.$emit('deleteDomain', domain.ID);
                         } else if (domain.Action === CREATE) {
-                            $rootScope.$broadcast('createDomain', domain.ID, domain.Domain);
+                            $rootScope.$emit('createDomain', domain.ID, domain.Domain);
                         } else if (domain.Action === UPDATE) {
-                            $rootScope.$broadcast('updateDomain', domain.ID, domain.Domain);
+                            $rootScope.$emit('updateDomain', domain.ID, domain.Domain);
                         }
                     });
                 }

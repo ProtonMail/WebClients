@@ -65,10 +65,10 @@ angular.module('proton.routes', [
             }
         },
         resolve: {
-            domains($q, Domain) {
+            domains($q, domainApi) {
                 const deferred = $q.defer();
 
-                Domain.available().then((result) => {
+                domainApi.available().then((result) => {
                     if (result.data && angular.isArray(result.data.Domains)) {
                         deferred.resolve(result.data.Domains);
                     } else {
@@ -271,10 +271,10 @@ angular.module('proton.routes', [
 
                 return deferred.promise;
             },
-            domains(direct, $q, Domain) {
+            domains(direct, $q, domainApi) {
                 const deferred = $q.defer();
 
-                Domain.available().then((result) => {
+                domainApi.available().then((result) => {
                     if (result.data && angular.isArray(result.data.Domains)) {
                         deferred.resolve(result.data.Domains);
                     } else {
@@ -731,15 +731,15 @@ angular.module('proton.routes', [
     .state('secured.addresses', {
         url: '/addresses',
         resolve: {
-            members(user, Member, networkActivityTracker) {
+            members(user, memberModel, networkActivityTracker) {
                 if (user.Role === CONSTANTS.PAID_ADMIN_ROLE) {
-                    return networkActivityTracker.track(Member.query());
+                    return networkActivityTracker.track(memberModel.fetch());
                 }
                 return { data: {} };
             },
-            domains(user, Domain, networkActivityTracker) {
+            domains(user, domainModel, networkActivityTracker) {
                 if (user.Role === CONSTANTS.PAID_ADMIN_ROLE) {
-                    return networkActivityTracker.track(Domain.query());
+                    return networkActivityTracker.track(domainModel.fetch());
                 }
                 return { data: {} };
             },
@@ -851,15 +851,15 @@ angular.module('proton.routes', [
                 $state.go('secured.addresses');
                 return Promise.reject();
             },
-            members(user, Member, networkActivityTracker) {
+            members(user, memberModel, networkActivityTracker) {
                 if (user.Role === CONSTANTS.PAID_ADMIN_ROLE) {
-                    return networkActivityTracker.track(Member.query());
+                    return networkActivityTracker.track(memberModel.fetch());
                 }
                 return { data: {} };
             },
-            domains(user, Domain, networkActivityTracker) {
+            domains(user, domainModel, networkActivityTracker) {
                 if (user.Role === CONSTANTS.PAID_ADMIN_ROLE) {
-                    return networkActivityTracker.track(Domain.query());
+                    return networkActivityTracker.track(domainModel.fetch());
                 }
                 return { data: {} };
             },
@@ -891,15 +891,15 @@ angular.module('proton.routes', [
                 }
                 return Promise.resolve();
             },
-            members(user, Member, networkActivityTracker) {
+            members(user, memberModel, networkActivityTracker) {
                 if (user.Role === CONSTANTS.PAID_ADMIN_ROLE) {
-                    return networkActivityTracker.track(Member.query());
+                    return networkActivityTracker.track(memberModel.fetch());
                 }
                 return { data: {} };
             },
-            domains(user, Domain, networkActivityTracker) {
+            domains(user, domainModel, networkActivityTracker) {
                 if (user.Role === CONSTANTS.PAID_ADMIN_ROLE) {
-                    return networkActivityTracker.track(Domain.query());
+                    return networkActivityTracker.track(domainModel.fetch());
                 }
                 return { data: {} };
             },
