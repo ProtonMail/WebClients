@@ -1,6 +1,5 @@
 angular.module('proton.domains')
 .factory('domainModel', ($rootScope, domainApi) => {
-    let unsubcribes = [];
     let domains = [];
     function get() {
         return domains;
@@ -20,18 +19,16 @@ angular.module('proton.domains')
     }
     function clear() {
         domains = [];
-        unsubcribes.forEach((callback) => callback());
-        unsubcribes = [];
     }
-    unsubcribes.push($rootScope.$on('deleteDomain', (event, ID) => {
+    $rootScope.$on('deleteDomain', (event, ID) => {
         const index = _.findIndex(domains, { ID });
 
         if (index > -1) {
             domains.splice(index, 1);
             $rootScope.$emit('domainsChange', domains);
         }
-    }));
-    unsubcribes.push($rootScope.$on('createDomain', (event, ID, member) => {
+    });
+    $rootScope.$on('createDomain', (event, ID, member) => {
         const index = _.findIndex(domains, { ID });
 
         if (index === -1) {
@@ -40,8 +37,8 @@ angular.module('proton.domains')
             _.extend(domains[index], member);
         }
         $rootScope.$emit('domainsChange', domains);
-    }));
-    unsubcribes.push($rootScope.$on('updateDomain', (event, ID, member) => {
+    });
+    $rootScope.$on('updateDomain', (event, ID, member) => {
         const index = _.findIndex(domains, { ID });
 
         if (index === -1) {
@@ -50,6 +47,6 @@ angular.module('proton.domains')
             _.extend(domains[index], member);
         }
         $rootScope.$emit('domainsChange', domains);
-    }));
+    });
     return { get, set, fetch, clear };
 });
