@@ -1,6 +1,5 @@
-angular.module('proton.models.members', [])
-
-.factory('Member', ($http, $q, url, srp) => {
+angular.module('proton.members')
+.factory('memberApi', ($http, $q, url, srp) => {
     return {
         // POST
         /**

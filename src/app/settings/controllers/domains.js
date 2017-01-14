@@ -15,14 +15,12 @@ angular.module('proton.settings')
     CONSTANTS,
     dkimModal,
     dmarcModal,
-    Domain,
+    domainApi,
+    domainModel,
     organizationModel,
     domainModal,
-    domains,
     eventManager,
     generateOrganizationModal,
-    Member,
-    members,
     memberModal,
     mxModal,
     networkActivityTracker,
@@ -33,7 +31,7 @@ angular.module('proton.settings')
     verificationModal
 ) => {
 
-    $controller('AddressesController', { $scope, authentication, domains, members, organizationKeys, pmcw });
+    $controller('AddressesController', { $scope, authentication, organizationKeys, pmcw });
 
     // Listeners
     $scope.$on('domain', (event, domain) => {
@@ -117,7 +115,7 @@ angular.module('proton.settings')
                 title: gettextCatalog.getString('Delete domain', null, 'Title'),
                 message: gettextCatalog.getString('Are you sure you want to delete this address?', null, 'Info'),
                 confirm() {
-                    networkActivityTracker.track(Domain.delete(domain.ID).then((result) => {
+                    networkActivityTracker.track(domainApi.delete(domain.ID).then((result) => {
                         if (angular.isDefined(result.data) && result.data.Code === 1000) {
                             notify({ message: gettextCatalog.getString('Domain deleted', null), classes: 'notification-success' });
                             $scope.domains.splice(index, 1); // Remove domain in interface
@@ -170,7 +168,7 @@ angular.module('proton.settings')
                 step: 1,
                 domain,
                 submit(name) {
-                    networkActivityTracker.track(Domain.create({ Name: name }).then((result) => {
+                    networkActivityTracker.track(domainApi.create({ Name: name }).then((result) => {
                         if (angular.isDefined(result.data) && result.data.Code === 1000) {
                             notify({ message: gettextCatalog.getString('Domain created', null), classes: 'notification-success' });
                             $scope.domains.push(result.data.Domain);
@@ -203,11 +201,11 @@ angular.module('proton.settings')
      * @param {Object} domain
      */
     $scope.refreshStatus = () => {
-        networkActivityTracker.track(Domain.query().then((result) => {
-            if (result.data && result.data.Code === 1000) {
-                $scope.domains = result.data.Domains;
-            }
-        }));
+        networkActivityTracker.track(
+            domainApi.fetch().then((domains) => {
+                $scope.domains = domains;
+            })
+        );
     };
 
     /**
@@ -222,11 +220,11 @@ angular.module('proton.settings')
                 domain,
                 step: 2,
                 submit() {
-                    networkActivityTracker.track(Domain.get(domain.ID).then((result) => {
+                    networkActivityTracker.track(domainApi.get(domain.ID).then((result) => {
                         if (angular.isDefined(result.data) && result.data.Code === 1000) {
                             // check verification code
                             // 0 is default, 1 is has code but wrong, 2 is good
-                            switch (result.data.Domain.VerifyState) {
+                            switch (result.data.domainApi.VerifyState) {
                                 case 0:
                                     notify({ message: gettextCatalog.getString('Verification did not succeed, please try again in an hour.', null, 'Error'), classes: 'notification-danger' });
                                     break;
@@ -412,7 +410,7 @@ angular.module('proton.settings')
                 domain,
                 step: 7,
                 verify() {
-                    networkActivityTracker.track(Domain.get(domain.ID).then((result) => {
+                    networkActivityTracker.track(domainApi.get(domain.ID).then((result) => {
                         if (angular.isDefined(result.data) && result.data.Code === 1000) {
                             $scope.domains[index] = result.data.Domain;
                             dmarcModal.deactivate();

@@ -1,5 +1,5 @@
 angular.module('proton.core')
-.factory('setupOrganizationModal', (authentication, pmModal, passwords, networkActivityTracker, organizationApi, organizationModel, Member, CONSTANTS, setupKeys, pmcw) => {
+.factory('setupOrganizationModal', (authentication, pmModal, passwords, networkActivityTracker, organizationApi, organizationModel, memberApi, CONSTANTS, setupKeys, pmcw) => {
     return pmModal({
         controllerAs: 'ctrl',
         templateUrl: 'templates/modals/setupOrganization.tpl.html',
@@ -89,7 +89,7 @@ angular.module('proton.core')
                 const memberID = params.memberID;
                 const quota = Math.round(self.sliderValue * self.unit);
 
-                return Member.quota(memberID, quota);
+                return memberApi.quota(memberID, quota);
             }
         }
     });

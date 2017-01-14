@@ -9,17 +9,16 @@ angular.module('proton.settings')
     activateOrganizationModal,
     addressModal,
     authentication,
-    domains,
     confirmModal,
     identityModal,
     CONSTANTS,
-    Domain,
+    domainApi,
+    domainModel,
     eventManager,
     generateModal,
     generateOrganizationModal,
     memberModal,
-    members,
-    Member,
+    memberModel,
     networkActivityTracker,
     notify,
     organizationModel,
@@ -33,16 +32,9 @@ angular.module('proton.settings')
         $scope.disabledAddresses = _.difference(authentication.user.Addresses, $scope.activeAddresses);
         $scope.itemMoved = false;
         $scope.keyStatus = 0;
-
-        if (members.data && members.data.Code === 1000) {
-            $scope.members = members.data.Members;
-        }
-
-        if (domains.data && domains.data.Code === 1000) {
-            $scope.domains = domains.data.Domains;
-        }
-
+        $scope.members = memberModel.get();
         $scope.organization = organizationModel.get();
+        $scope.domains = domainModel.get();
 
         if (organizationKeys.data && organizationKeys.data.Code === 1000) {
             if (organizationKeys.data.PublicKey) {
@@ -131,62 +123,6 @@ angular.module('proton.settings')
 
     // Listeners
     if (role === 2) {
-        $scope.$on('deleteDomain', (event, domainId) => {
-            const index = _.findIndex($scope.domains, { ID: domainId });
-
-            if (index !== -1) {
-                $scope.domains.splice(index, 1);
-            }
-        });
-
-        $scope.$on('createDomain', (event, domainId, domain) => {
-            const index = _.findIndex($scope.domains, { ID: domainId });
-
-            if (index === -1) {
-                $scope.domains.push(domain);
-            } else {
-                _.extend($scope.domains[index], domain);
-            }
-        });
-
-        $scope.$on('updateDomain', (event, domainId, domain) => {
-            const index = _.findIndex($scope.domains, { ID: domainId });
-
-            if (index === -1) {
-                $scope.domains.push(domain);
-            } else {
-                _.extend($scope.domains[index], domain);
-            }
-        });
-
-        $scope.$on('deleteMember', (event, memberId) => {
-            const index = _.findIndex($scope.members, { ID: memberId });
-
-            if (index !== -1) {
-                $scope.members.splice(index, 1);
-            }
-        });
-
-        $scope.$on('createMember', (event, memberId, member) => {
-            const index = _.findIndex($scope.members, { ID: memberId });
-
-            if (index === -1) {
-                $scope.members.push(member);
-            } else {
-                _.extend($scope.members[index], member);
-            }
-        });
-
-        $scope.$on('updateMember', (event, memberId, member) => {
-            const index = _.findIndex($scope.members, { ID: memberId });
-
-            if (index === -1) {
-                $scope.members.push(member);
-            } else {
-                _.extend($scope.members[index], member);
-            }
-        });
-
         $scope.$on('organizationChange', (event, organization) => {
             $scope.organization = organization;
         });
@@ -487,7 +423,7 @@ angular.module('proton.settings')
 
         networkActivityTracker.track(
 
-            Domain.available()
+            domainApi.available()
             .then((availableDomains) => {
 
                 const pmDomains = availableDomains.data.Domains.map((domain) => ({ DomainName: domain }));
