@@ -21,8 +21,9 @@ angular.module('proton.settings')
     memberModel,
     networkActivityTracker,
     notify,
+    organizationApi,
     organizationModel,
-    organizationKeys,
+    organizationKeysModel,
     pmcw
 ) => {
 
@@ -35,19 +36,28 @@ angular.module('proton.settings')
         $scope.members = memberModel.get();
         $scope.organization = organizationModel.get();
         $scope.domains = domainModel.get();
+        manageOrganizationKeys();
 
-        if (organizationKeys.data && organizationKeys.data.Code === 1000) {
-            if (organizationKeys.data.PublicKey) {
-                pmcw.keyInfo(organizationKeys.data.PublicKey)
+        if (CONSTANTS.KEY_PHASE > 3 && $scope.organization.HasKeys === 1 && $scope.keyStatus > 0) {
+            $scope.activateOrganizationKeys();
+        }
+    }
+
+    function manageOrganizationKeys() {
+        if (authentication.user.Role === CONSTANTS.PAID_ADMIN_ROLE) {
+            const keys = organizationKeysModel.get();
+
+            if (keys.PublicKey) {
+                pmcw.keyInfo(keys.PublicKey)
                 .then((obj) => {
                     $scope.organizationKeyInfo = obj;
                 });
             }
 
-            if (!organizationKeys.data.PrivateKey) {
+            if (!keys.PrivateKey) {
                 $scope.keyStatus = 1;
             } else {
-                pmcw.decryptPrivateKey(organizationKeys.data.PrivateKey, authentication.getPassword())
+                pmcw.decryptPrivateKey(keys.PrivateKey, authentication.getPassword())
                 .then((key) => {
                     $scope.organizationKey = key;
                 }, (error) => {
@@ -55,10 +65,6 @@ angular.module('proton.settings')
                     console.error(error);
                 });
             }
-        }
-
-        if (CONSTANTS.KEY_PHASE > 3 && $scope.organization.HasKeys === 1 && $scope.keyStatus > 0) {
-            $scope.activateOrganizationKeys();
         }
     }
 
@@ -125,6 +131,16 @@ angular.module('proton.settings')
     if (role === 2) {
         $scope.$on('organizationChange', (event, organization) => {
             $scope.organization = organization;
+            organizationKeysModel.fetch()
+            .then(() => manageOrganizationKeys());
+        });
+
+        $scope.$on('membersChange', (event, newMembers) => {
+            $scope.members = newMembers;
+        });
+
+        $scope.$on('domainsChange', (event, newDomains) => {
+            $scope.domains = newDomains;
         });
     }
 
