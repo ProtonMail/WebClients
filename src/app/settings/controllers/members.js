@@ -21,13 +21,12 @@ angular.module('proton.settings')
     networkActivityTracker,
     notify,
     organizationApi,
-    organizationKeys,
     passwords,
     pmcw,
     setupOrganizationModal,
     User
 ) => {
-    $controller('AddressesController', { $scope, authentication, organizationKeys, pmcw });
+    $controller('AddressesController', { $scope, authentication, pmcw });
 
     function passwordModal(submit) {
         loginPasswordModal.activate({

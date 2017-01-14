@@ -25,13 +25,12 @@ angular.module('proton.settings')
     mxModal,
     networkActivityTracker,
     notify,
-    organizationKeys,
     pmcw,
     spfModal,
     verificationModal
 ) => {
 
-    $controller('AddressesController', { $scope, authentication, organizationKeys, pmcw });
+    $controller('AddressesController', { $scope, authentication, pmcw });
 
     // Listeners
     $scope.$on('domain', (event, domain) => {
