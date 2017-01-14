@@ -26,6 +26,8 @@ angular.module('proton.settings')
     organizationKeysModel,
     pmcw
 ) => {
+    const unsubscribes = [];
+    const role = authentication.user.Role;
 
     function addressesInit() {
         $scope.isSubUser = authentication.user.subuser;
@@ -67,8 +69,6 @@ angular.module('proton.settings')
             }
         }
     }
-
-    const role = authentication.user.Role;
 
     $scope.getSelf = () => {
         if ($scope.members) {
@@ -129,20 +129,24 @@ angular.module('proton.settings')
 
     // Listeners
     if (role === 2) {
-        $scope.$on('organizationChange', (event, organization) => {
-            $scope.organization = organization;
+        unsubscribes.push($rootScope.$on('organizationChange', (event, newOrganization) => {
+            $scope.organization = newOrganization;
             organizationKeysModel.fetch()
             .then(() => manageOrganizationKeys());
-        });
+        }));
 
-        $scope.$on('membersChange', (event, newMembers) => {
+        unsubscribes.push($rootScope.$on('membersChange', (event, newMembers) => {
             $scope.members = newMembers;
-        });
+        }));
 
-        $scope.$on('domainsChange', (event, newDomains) => {
+        unsubscribes.push($rootScope.$on('domainsChange', (event, newDomains) => {
             $scope.domains = newDomains;
-        });
+        }));
     }
+
+    $scope.$on('$destroy', () => {
+        unsubscribes.forEach((callback) => callback());
+    });
 
     // Drag and Drop configuration
     $scope.aliasDragControlListeners = {
