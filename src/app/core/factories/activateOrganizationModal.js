@@ -45,7 +45,7 @@ angular.module('proton.core')
                                 return Promise.reject(new Error(params.errorMessage));
                             });
                         },
-                        () => Promise.reject(new Error(gettextCatalog.getString('Passcode incorrect. Please try again', null, 'Error')))
+                        () => Promise.reject(new Error(gettextCatalog.getString('Password incorrect. Please try again', null, 'Error')))
                     );
                 })
                 .catch((error) => {
