@@ -1,9 +1,20 @@
 angular.module('proton.organization')
-.factory('organizationKeysModel', (organizationApi) => {
+.factory('organizationKeysModel', (organizationApi, $rootScope) => {
+
     let keys = {};
+    const ALLOWED_STATES = ['addresses', 'domains', 'members'].map((n) => `secured.${n}`);
+
+
+    $rootScope.$on('$stateChangeStart', (e, state) => {
+        if (ALLOWED_STATES.indexOf(state.name) === -1) {
+            clear();
+        }
+    });
+
     function get() {
         return keys;
     }
+
     function fetch() {
         return organizationApi.getKeys()
         .then(({ data = {} } = {}) => {
