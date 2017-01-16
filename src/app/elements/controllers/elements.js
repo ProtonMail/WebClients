@@ -470,14 +470,6 @@ angular.module('proton.elements')
         return end;
     };
 
-
-    $scope.checkedSelectorState = () => {
-        if (!Array.isArray($scope.conversations) || !$scope.conversations.length) {
-            return false;
-        }
-        return _.every($scope.conversations, { Selected: true });
-    };
-
     /**
      * Select elements
      * @param {String} value - filter value
