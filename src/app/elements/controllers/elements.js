@@ -153,7 +153,9 @@ angular.module('proton.elements')
         });
 
         unsubscribes.push($rootScope.$on('selectElements', (event, { value, isChecked }) => {
-            $scope.selectElements(value, isChecked);
+            $scope.$applyAsync(() => {
+                $scope.selectElements(value, isChecked);
+            });
         }));
 
         $scope.$on('applyLabels', (event, LabelID) => {
