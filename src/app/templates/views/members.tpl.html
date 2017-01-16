@@ -16,60 +16,60 @@
             <section class="setting pm_form full">
                 <legend translate-context="Title" translate>Organization</legend>
                 <div class="pm_grid no-margin">
-	            	<div class="col-1-2">
-	            		<div class="clearfix">
-			            	<form method="post" name="organizationForm" ng-submit="organizationForm.$valid && saveOrganizationName()" novalidate="">
-		            			<div class="col-1-2">
-		            				<label for="orgName" translate-context="Title" translate>Organization name</label>
-		            			</div>
-		            			<div class="col-1-2">
-		            				<div class="clearfix">
-			            				<input id="orgName" name="name" type="text" class="margin" ng-model="organization.DisplayName" placeholder-translate="Organization name" ng-maxlength="100" required="" />
-			                            <div ng-messages="organizationForm.name.$error" class="text-red" ng-if="organizationForm.name.$touched || organizationForm.$submitted">
-			                                <p ng-message="required" translate-context="Error" translate>Field required</p>
-			                                <p ng-message="maxlength" translate-context="Error" translate>Name exceeds maximum length</p>
-			                            </div>
-		            				</div>
-				            		<p class="text-right clearfix">
-					            		<button class="pm_button primary" ng-disabled="networkActivity.loading()" type="submit" translate-context="Action" translate>Save</button>
-				            		</p>
-		            			</div>
-		            		</form>
-	            		</div>
-	            	</div>
-	            	<div class="col-1-2">
+                    <div class="col-1-2">
                         <div class="clearfix">
-		            		<div class="pm_table">
-			                    <table class="plain absorbing" id="usersTable">
-			                        <tbody>
-				                        <tr>
-				                            <td translate-context="Title" translate>
+                            <form method="post" name="organizationForm" ng-submit="organizationForm.$valid && saveOrganizationName()" novalidate="">
+                                <div class="col-1-2">
+                                    <label for="orgName" translate-context="Title" translate>Organization name</label>
+                                </div>
+                                <div class="col-1-2">
+                                    <div class="clearfix">
+                                        <input id="orgName" name="name" type="text" class="margin" ng-model="organization.DisplayName" placeholder-translate="Organization name" ng-maxlength="100" required="" />
+                                        <div ng-messages="organizationForm.name.$error" class="text-red" ng-if="organizationForm.name.$touched || organizationForm.$submitted">
+                                            <p ng-message="required" translate-context="Error" translate>Field required</p>
+                                            <p ng-message="maxlength" translate-context="Error" translate>Name exceeds maximum length</p>
+                                        </div>
+                                    </div>
+                                    <p class="text-right clearfix">
+                                        <button class="pm_button primary" ng-disabled="networkActivity.loading()" type="submit" translate-context="Action" translate>Save</button>
+                                    </p>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="col-1-2">
+                        <div class="clearfix">
+                            <div class="pm_table">
+                                <table class="plain absorbing" id="usersTable">
+                                    <tbody>
+                                        <tr>
+                                            <td translate-context="Title" translate>
                                                 <span class="margin-right" translate>Number of users</span>
                                             </td>
-				                            <td class="absorbing-column">
-				                                <span class="margin-left" translate-context="Info" translate>{{ organization.UsedMembers }} of {{ organization.MaxMembers }} used</span>
-				                            </td>
-				                            <td class="text-right">
-				                                <span>
-				                                    <a ui-sref="secured.dashboard" class="pm_button link" translate-context="Action" translate-comment="link to dashboard" translate>Upgrade</a>
-				                                </span>
-				                            </td>
-				                        </tr>
+                                            <td class="absorbing-column">
+                                                <span class="margin-left" translate-context="Info" translate>{{ organization.UsedMembers }} of {{ organization.MaxMembers }} used</span>
+                                            </td>
+                                            <td class="text-right">
+                                                <span>
+                                                    <a ui-sref="secured.dashboard" class="pm_button link" translate-context="Action" translate-comment="link to dashboard" translate>Upgrade</a>
+                                                </span>
+                                            </td>
+                                        </tr>
                                         <tr>
-				                            <td translate-context="Title" translate>
+                                            <td translate-context="Title" translate>
                                                 <span class="margin-right" translate>Organization storage</span>
                                             </td>
                                             <td>
-				                                <span class="margin-left">{{ organization.MaxSpace | humanSize }}</span>
-				                            </td>
+                                                <span class="margin-left">{{ organization.MaxSpace | humanSize }}</span>
+                                            </td>
                                             <td class="text-right">
-				                                <span>
-				                                    <a ui-sref="secured.dashboard" class="pm_button link" translate-context="Action" translate-comment="link to dashboard" translate>Upgrade</a>
-				                                </span>
-				                            </td>
-				                        </tr>
+                                                <span>
+                                                    <a ui-sref="secured.dashboard" class="pm_button link" translate-context="Action" translate-comment="link to dashboard" translate>Upgrade</a>
+                                                </span>
+                                            </td>
+                                        </tr>
                                         <tr>
-				                            <td translate-context="Title">
+                                            <td translate-context="Title">
                                                 <span class="margin-right" translate>Available domains</span>
                                             </td>
                                             <td>
@@ -78,19 +78,19 @@
                                                         {{ domain.DomainName }}{{ $last ? '' : ', ' }}
                                                     </span>
                                                 </div>
-				                            </td>
-				                            <td class="text-right">
-				                                <span>
-				                                    <a ui-sref="secured.domains" class="pm_button link" translate-context="Action" translate-comment="link to domains" translate>Manage</a>
-				                                </span>
-				                            </td>
-				                        </tr>
-				                    </tbody>
-			                    </table>
-		                    </div>
-	                    </div>
-	            	</div>
-	            </div>
+                                            </td>
+                                            <td class="text-right">
+                                                <span>
+                                                    <a ui-sref="secured.domains" class="pm_button link" translate-context="Action" translate-comment="link to domains" translate>Manage</a>
+                                                </span>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </section>
         </div>
 
@@ -175,14 +175,14 @@
                                                     <td ng-bind="address.Email"></td>
                                                     <td class="absorbing-column">
                                                         <span class="pm_badge success" ng-show="address.Status === 1 && address.Receive === 1" translate translate-comment="address state badge">Enabled</span>
-					                                    <span class="pm_badge error" ng-show="address.Status === 0"  translate translate-comment="address state badge">Disabled</span>
-					                                    <span class="pm_badge warning" ng-show="address.HasKeys === 0"  translate translate-comment="address state badge">Missing keys</span>
-					                                    <span class="pm_badge warning" ng-show="address.DomainID === null"  translate translate-comment="address state badge">Orphan</span>
+                                                        <span class="pm_badge error" ng-show="address.Status === 0"  translate translate-comment="address state badge">Disabled</span>
+                                                        <span class="pm_badge warning" ng-show="address.HasKeys === 0"  translate translate-comment="address state badge">Missing keys</span>
+                                                        <span class="pm_badge warning" ng-show="address.DomainID === null"  translate translate-comment="address state badge">Orphan</span>
                                                     </td>
                                                     <td class="text-right">
-					                                    <button type="button" class="pm_button link" ng-show="address.Status === 0 && address.Type !== 1" ng-click="enableAddress(address)" translate-context="Action" translate>Enable</button>
-					                                    <button type="button" class="pm_button link" ng-show="address.Status === 1 && address.Type !== 1" ng-click="disableAddress(address)" translate-context="Action" translate>Disable</button>
-					                                    <button type="button" class="pm_button link" ng-show="address.Status === 0 && address.Type === 3" ng-click="deleteAddress(address)" translate-context="Action" translate>Delete</button>
+                                                        <button type="button" class="pm_button link" ng-show="address.Status === 0 && address.Type !== 1" ng-click="enableAddress(address)" translate-context="Action" translate>Enable</button>
+                                                        <button type="button" class="pm_button link" ng-show="address.Status === 1 && address.Type !== 1" ng-click="disableAddress(address)" translate-context="Action" translate>Disable</button>
+                                                        <button type="button" class="pm_button link" ng-show="address.Status === 0 && address.Type === 3" ng-click="deleteAddress(address)" translate-context="Action" translate>Delete</button>
                                                     </td>
                                                 </tr>
                                             </tbody>
@@ -246,7 +246,6 @@
                         </div>
                     </div>
                 </div>
+            </div>
         </div>
-
     </div>
-</div>

@@ -38,38 +38,39 @@ angular.module('proton.settings')
         $scope.members = memberModel.get();
         $scope.organization = organizationModel.get();
         $scope.domains = domainModel.get();
-        manageOrganizationKeys();
+        manageOrganizationKeys()
+        .then(() => checkActivationKeys());
     }
 
-    const checkActivationKeys = () => {
+    function checkActivationKeys() {
         if (CONSTANTS.KEY_PHASE > 3 && $scope.organization.HasKeys === 1 && $scope.keyStatus > 0) {
             $scope.activateOrganizationKeys();
         }
-    };
+    }
 
     function manageOrganizationKeys() {
-
         if (authentication.user.Role === CONSTANTS.PAID_ADMIN_ROLE) {
             const keys = organizationKeysModel.get();
 
             if (keys.PublicKey) {
+                $scope.keyStatus = 0;
                 return pmcw.keyInfo(keys.PublicKey)
-                    .then((obj) => ($scope.organizationKeyInfo = obj))
-                    .then(checkActivationKeys);
+                .then((obj) => ($scope.organizationKeyInfo = obj));
             }
 
             if (!keys.PrivateKey) {
                 $scope.keyStatus = 1;
-            } else {
-                return pmcw.decryptPrivateKey(keys.PrivateKey, authentication.getPassword())
-                .then((key) => ($scope.organizationKey = key), (error) => {
-                    $scope.keyStatus = 2;
-                    console.error(error);
-                })
-                .then(checkActivationKeys);
+                return Promise.resolve();
             }
+
+            return pmcw.decryptPrivateKey(keys.PrivateKey, authentication.getPassword())
+            .then((key) => ($scope.organizationKey = key), (error) => {
+                $scope.keyStatus = 2;
+                console.error(error);
+            });
         }
-        return checkActivationKeys();
+
+        return Promise.resolve();
     }
 
     $scope.getSelf = () => {
