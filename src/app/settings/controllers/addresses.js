@@ -39,35 +39,37 @@ angular.module('proton.settings')
         $scope.organization = organizationModel.get();
         $scope.domains = domainModel.get();
         manageOrganizationKeys();
+    }
 
+    const checkActivationKeys = () => {
         if (CONSTANTS.KEY_PHASE > 3 && $scope.organization.HasKeys === 1 && $scope.keyStatus > 0) {
             $scope.activateOrganizationKeys();
         }
-    }
+    };
 
     function manageOrganizationKeys() {
+
         if (authentication.user.Role === CONSTANTS.PAID_ADMIN_ROLE) {
             const keys = organizationKeysModel.get();
 
             if (keys.PublicKey) {
-                pmcw.keyInfo(keys.PublicKey)
-                .then((obj) => {
-                    $scope.organizationKeyInfo = obj;
-                });
+                return pmcw.keyInfo(keys.PublicKey)
+                    .then((obj) => ($scope.organizationKeyInfo = obj))
+                    .then(checkActivationKeys);
             }
 
             if (!keys.PrivateKey) {
                 $scope.keyStatus = 1;
             } else {
-                pmcw.decryptPrivateKey(keys.PrivateKey, authentication.getPassword())
-                .then((key) => {
-                    $scope.organizationKey = key;
-                }, (error) => {
+                return pmcw.decryptPrivateKey(keys.PrivateKey, authentication.getPassword())
+                .then((key) => ($scope.organizationKey = key), (error) => {
                     $scope.keyStatus = 2;
                     console.error(error);
-                });
+                })
+                .then(checkActivationKeys);
             }
         }
+        return checkActivationKeys();
     }
 
     $scope.getSelf = () => {
