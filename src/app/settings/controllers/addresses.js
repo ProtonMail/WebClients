@@ -96,24 +96,25 @@ angular.module('proton.settings')
      * @return {Boolean}
      */
     $scope.canAddMember = () => {
+        const organization = organizationModel.get();
 
-        if ($scope.organization.MaxMembers === 1 && CONSTANTS.KEY_PHASE > 3) {
+        if (organization.MaxMembers === 1 && CONSTANTS.KEY_PHASE > 3) {
             notify({ message: gettextCatalog.getString('Multi-user support requires either a Business or Visionary plan.', null, 'Error'), classes: 'notification-danger' });
             $state.go('secured.members');
             return false;
         }
 
-        if ($scope.organization.MaxMembers - $scope.organization.UsedMembers < 1) {
+        if (organization.MaxMembers - organization.UsedMembers < 1) {
             notify({ message: gettextCatalog.getString('You have used all members in your plan. Please upgrade your plan to add a new member.', null, 'Error'), classes: 'notification-danger' });
             return false;
         }
 
-        if ($scope.organization.MaxAddresses - $scope.organization.UsedAddresses < 1) {
+        if (organization.MaxAddresses - organization.UsedAddresses < 1) {
             notify({ message: gettextCatalog.getString('You have used all addresses in your plan. Please upgrade your plan to add a new member.', null, 'Error'), classes: 'notification-danger' });
             return false;
         }
 
-        if ($scope.organization.MaxSpace - $scope.organization.UsedSpace < 1) {
+        if (organization.MaxSpace - organization.AssignedSpace < 1) {
             notify({ message: gettextCatalog.getString('All storage space has been allocated. Please reduce storage allocated to other members.', null, 'Error'), classes: 'notification-danger' });
             return false;
         }
