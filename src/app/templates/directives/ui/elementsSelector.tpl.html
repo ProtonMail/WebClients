@@ -1,5 +1,5 @@
 <div class="pm_buttons">
-    <a class="pm_trigger" dropdown class="pm_checkbox" ng-if="!idDefined() || user.ViewLayout === 0">
+    <a class="pm_trigger" dropdown class="pm_checkbox"  ng-class="{disabled: !conversations.length}" ng-if="!idDefined() || user.ViewLayout === 0">
         <input
             type="checkbox"
             name="selectAll"
@@ -14,24 +14,21 @@
         <i class="fa fa-angle-down"></i>
     </a>
     <span class="element-selector-set-scope pm_dropdown">
-        <button data-scope="all">
-            <span translate-context="Action">All</span>
-        </button>
         <button data-scope="unread">
             <i class="fa fa-eye-slash"></i>
-            <span translate translate-context="Action">Unread</span>
+            <span translate translate-context="Action">All unread</span>
         </button>
         <button data-scope="read">
             <i class="fa fa-eye"></i>
-            <span translate translate-context="Action">Read</span>
+            <span translate translate-context="Action">All read</span>
         </button>
         <button data-scope="starred">
             <i class="fa fa-star"></i>
-            <span translate translate-context="Action">Starred</span>
+            <span translate translate-context="Action">All starred</span>
         </button>
         <button data-scope="unstarred">
             <i class="fa fa-star-o"></i>
-            <span translate translate-context="Action">Un-starred</span>
+            <span translate translate-context="Action">All un-starred</span>
         </button>
     </span>
 </div>
