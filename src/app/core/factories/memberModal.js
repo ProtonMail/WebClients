@@ -49,7 +49,7 @@ angular.module('proton.core')
                 range: { min: self.min / self.unit, max: self.max / self.unit },
                 pips: {
                     mode: 'values',
-                    values: [0, minPadding / self.unit, maxPadding / self.unit, self.max / self.unit],
+                    values: [0, self.max / self.unit],
                     density: 4
                 },
                 minPadding: minPadding / self.unit,
