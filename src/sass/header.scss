@@ -43,10 +43,7 @@ header#pm_header-desktop {
 		overflow: hidden;
 		display: block;
 		height: $headerHeight;
-		background-color: $secondary;
-		&.light {
-			background: $secondary-light;
-		}		
+		background-color: $secondary;	
 		img {
 			display: inline-block;
 			margin: auto;
