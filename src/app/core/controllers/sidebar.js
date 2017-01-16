@@ -35,6 +35,10 @@ angular.module('proton.core')
         hoverClass: 'drop-hover'
     };
 
+    $scope.scrollbarConfig = {
+        scrollInertia: 0
+    };
+
     $scope.appVersion = CONFIG.app_version;
 
     $scope.hideMobileSidebar = () => {

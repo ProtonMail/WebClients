@@ -1,9 +1,10 @@
 div.mCSB_container_wrapper { margin-right: 0 }
-div.mCSB_scrollTools a+.mCSB_draggerContainer { margin: 0 -10px 5px 0 }
+div.mCSB_scrollTools a+.mCSB_draggerContainer { margin: 0 -5px 5px 0 }
 
 div.mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar {
     background: $scollbar-secondary;
     border:1px solid $scrollbar-primary;
+    width: 7px;
 }
 
 div.mCSB_scrollTools .mCSB_draggerRail { background: $scrollbar-primary }
