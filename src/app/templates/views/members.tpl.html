@@ -219,7 +219,7 @@
                                 <button class="pm_button primary" ng-disabled="networkActivity.loading()" ng-click="activateOrganizationKeys()" type="button" translate-context="Action" translate>Restore Keys</button>
                             </p>
                         </div>
-                        <div class="pm_table">
+                        <div class="pm_table" ng-show="keyStatus === 0">
                             <table class="bordered absorbing">
                                 <thead>
                                     <tr>
