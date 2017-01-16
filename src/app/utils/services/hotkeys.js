@@ -148,13 +148,13 @@ angular.module('proton.utils')
     };
 
     const selectAll = () => {
-        $rootScope.$broadcast('selectElements', { value: 'all', isChecked: true });
+        $rootScope.$emit('selectElements', { value: 'all', isChecked: true });
 
         return false;
     };
 
     const unselectAll = () => {
-        $rootScope.$broadcast('selectElements', { value: 'all', isChecked: false });
+        $rootScope.$emit('selectElements', { value: 'all', isChecked: false });
 
         return false;
     };

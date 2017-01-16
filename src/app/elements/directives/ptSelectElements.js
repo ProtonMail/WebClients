@@ -9,7 +9,7 @@ angular.module('proton.elements')
                 const isChecked = target.checked;
                 scope
                     .$applyAsync(() => {
-                        $rootScope.$broadcast('selectElements', { value: scope.value, isChecked });
+                        $rootScope.$emit('selectElements', { value: scope.value, isChecked });
                     });
 
                 // No keyX event if a checkbox is focused
