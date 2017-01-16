@@ -1,5 +1,5 @@
 angular.module('proton.elements')
-    .directive('ptSelectAllElements', ($rootScope) => ({
+    .directive('ptSelectElements', ($rootScope) => ({
         scope: {
             value: '='
         },
