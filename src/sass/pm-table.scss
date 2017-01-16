@@ -3,7 +3,7 @@
     white-space: nowrap;
     overflow-x: auto;
     overflow-y: hidden;
-
+    &.visibleOverflow { overflow: visible }
     table {
         border-collapse: collapse;
         table-layout: fixed;
