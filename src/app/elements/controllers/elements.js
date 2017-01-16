@@ -476,8 +476,6 @@ angular.module('proton.elements')
      * @param {Boolean} isChecked
      */
     $scope.selectElements = (value, isChecked) => {
-        $rootScope.numberElementChecked = 0;
-
         _.each($scope.conversations, (element) => {
             if (value === 'all') element.Selected = isChecked;
             if (value === 'read') element.Selected = (element.NumUnread === 0 || element.IsRead === 1) && isChecked;
@@ -488,11 +486,8 @@ angular.module('proton.elements')
 
         const selectedElements = $scope.elementsSelected(false);
 
-        if (isChecked) {
-            $rootScope.numberElementChecked = selectedElements.length;
-            $rootScope.showWelcome = false;
-        }
-
+        $rootScope.numberElementChecked = selectedElements.length;
+        $rootScope.showWelcome = false;
         $scope.checkedSelectorState = selectedElements.length === $scope.conversations.length;
     };
 
