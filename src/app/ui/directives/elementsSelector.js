@@ -15,9 +15,14 @@ angular.module('proton.ui')
             scope.value = 'all';
             scope.actions = actions;
 
-            scope.click = (value) => {
+            scope.selectAction = (value) => {
                 $rootScope.$emit('selectElements', { value, isChecked });
                 $rootScope.$emit('closeDropdown');
+            };
+
+            scope.checkedSelectorState = () => {
+                const { conversations = [] } = scope;
+                return (conversations.length) ? _.every(conversations, { Selected: true }) : false;
             };
         }
     };
