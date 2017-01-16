@@ -3,16 +3,7 @@
     white-space: nowrap;
     overflow-x: auto;
     overflow-y: hidden;
-    &.visibleOverflowY {
-        /*
-        The computed values of ‘overflow-x’ and ‘overflow-y’ are the same as their specified values,
-        except that some combinations with ‘visible’ are not possible:
-        if one is specified as ‘visible’ and the other is ‘scroll’ or ‘auto’, then ‘visible’ is set to ‘auto’.
-        eg: a dropdown menu inside the table will be partialy hidden because of the responsive overflow-x:auto
-        */
-        padding-bottom: 300px;
-        margin-bottom: -300px;
-    }
+
     table {
         border-collapse: collapse;
         table-layout: fixed;
