@@ -10,6 +10,7 @@ angular.module('proton.core')
             const methods = [name, keys, password, storage];
             const payload = {};
             const organization = organizationModel.get();
+            const marge = 5;
             let index = 0;
             let decryptedKey;
             self.min = 0;
@@ -19,7 +20,7 @@ angular.module('proton.core')
             self.size = 2048;
             self.sliderOptions = {
                 animate: false,
-                start: authentication.user.MaxSpace / self.unit,
+                start: (authentication.user.UsedSpace / self.unit) + marge,
                 step: 0.1,
                 connect: [true, false],
                 tooltips: true,
