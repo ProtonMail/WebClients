@@ -11,7 +11,8 @@ angular.module('proton.ui')
             const onClick = ({ currentTarget }) => {
                 scope
                     .$applyAsync(() => {
-                        $rootScope.$broadcast('selectElements', { value: currentTarget.dataset.scope, isChecked: 1 });
+                        const isChecked = true;
+                        $rootScope.$broadcast('selectElements', { value: currentTarget.dataset.scope, isChecked });
                         $rootScope.$emit('closeDropdown');
                     });
             };

@@ -243,7 +243,7 @@ angular.module('proton.elements')
     };
 
     function actionsDelayed() {
-        $scope.selectElements('all', 0);
+        $scope.selectElements('all', false);
 
         const $page = $('#page');
         $page.val($scope.page);
@@ -472,8 +472,10 @@ angular.module('proton.elements')
     };
 
     /**
-      * Select unread elements
-      */
+     * Select elements
+     * @param {String} value - filter value
+     * @param {Boolean} isChecked
+     */
     $scope.selectElements = (value, isChecked) => {
         $rootScope.numberElementChecked = 0;
 
@@ -484,7 +486,6 @@ angular.module('proton.elements')
             if (value === 'unread') element.Selected = (element.NumUnread > 0 || element.IsRead === 0) && isChecked;
             if (value === 'starred') element.Selected = element.LabelIDs.indexOf(CONSTANTS.MAILBOX_IDENTIFIERS.starred) > -1 && isChecked;
             if (value === 'unstarred') element.Selected = element.LabelIDs.indexOf(CONSTANTS.MAILBOX_IDENTIFIERS.starred) === -1 && isChecked;
-
         });
 
         if (isChecked) {
@@ -721,7 +722,7 @@ angular.module('proton.elements')
      * @param {Integer} page
      */
     function goToPage(type = 'to') {
-        $stateParams.page && $scope.selectElements('all', 0);
+        $stateParams.page && $scope.selectElements('all', false);
         paginationModel.setMaxPage($scope.conversationCount());
         $scope.page = ~~$stateParams.page || 1;
         paginationModel[type]();
@@ -768,7 +769,7 @@ angular.module('proton.elements')
         // Save scroll position
         $rootScope.scrollPosition = $('#content').scrollTop();
         // Unselect all elements
-        $scope.selectElements('all', 0);
+        $scope.selectElements('all', false);
 
         // it's possible that the previous conversation or message
         // had embedded images, and as blob URLs never get deallocated automatically
