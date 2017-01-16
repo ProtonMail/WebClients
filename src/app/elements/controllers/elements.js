@@ -152,15 +152,11 @@ angular.module('proton.elements')
             $scope.$apply();
         });
 
-        $scope.$on('selectAllElements', () => {
-            $scope.selectAllElements();
-            $scope.$apply();
-        });
-
-        $scope.$on('unselectAllElements', () => {
-            $scope.unselectAllElements();
-            $scope.$apply();
-        });
+        unsubscribes.push($rootScope.$on('selectElements', (event, { value, isChecked }) => {
+            $scope.$applyAsync(() => {
+                $scope.selectElements(value, isChecked);
+            });
+        }));
 
         $scope.$on('applyLabels', (event, LabelID) => {
             $scope.applyLabels(LabelID);
@@ -248,7 +244,7 @@ angular.module('proton.elements')
     };
 
     function actionsDelayed() {
-        $scope.unselectAllElements();
+        $scope.selectElements('all', false);
 
         const $page = $('#page');
         $page.val($scope.page);
@@ -476,45 +472,34 @@ angular.module('proton.elements')
     };
 
     /**
-     * Return if all elements are selected
-     * @return {Boolean}
+     * Select elements
+     * @param {String} value - filter value
+     * @param {Boolean} isChecked
      */
-    $scope.allSelected = () => {
-        if (!Array.isArray($scope.conversations) || !$scope.conversations.length) {
-            return false;
-        }
-        return _.every($scope.conversations, { Selected: true });
-    };
-
-    /**
-     * Unselect all elements
-     */
-    $scope.unselectAllElements = () => {
-        $scope.conversations = _.map($scope.conversations, (element) => {
-            element.Selected = false;
-            return element;
-        });
-        $rootScope.numberElementChecked = 0;
-    };
-
-    /**
-      * Select all elements
-      */
-    $scope.selectAllElements = () => {
+    $scope.selectElements = (value, isChecked) => {
         _.each($scope.conversations, (element) => {
-            element.Selected = true;
+            if (value === 'all') element.Selected = isChecked;
+            if (value === 'read') element.Selected = (element.NumUnread === 0 || element.IsRead === 1) && isChecked;
+            if (value === 'unread') element.Selected = (element.NumUnread > 0 || element.IsRead === 0) && isChecked;
+            if (value === 'starred') element.Selected = element.LabelIDs.indexOf(CONSTANTS.MAILBOX_IDENTIFIERS.starred) > -1 && isChecked;
+            if (value === 'unstarred') element.Selected = element.LabelIDs.indexOf(CONSTANTS.MAILBOX_IDENTIFIERS.starred) === -1 && isChecked;
         });
-        $rootScope.numberElementChecked = $scope.conversations.length;
+
+        const selectedElements = $scope.elementsSelected(false);
+
+        $rootScope.numberElementChecked = selectedElements.length;
+        $rootScope.showWelcome = false;
     };
 
     /**
      * Return [Element] selected
+     * @param {Boolean} includeMarked
      * @return {Array} elements
      */
-    $scope.elementsSelected = () => {
+    $scope.elementsSelected = (includeMarked = true) => {
         let elements = _.where($scope.conversations, { Selected: true });
 
-        if ($scope.conversations.length > 0 && elements.length === 0 && $scope.markedElement) {
+        if ($scope.conversations.length > 0 && elements.length === 0 && $scope.markedElement && includeMarked) {
             const type = tools.typeList();
             if (type === 'message') {
                 elements = _.where($scope.conversations, { ID: $scope.markedElement.ID });
@@ -731,7 +716,7 @@ angular.module('proton.elements')
      * @param {Integer} page
      */
     function goToPage(type = 'to') {
-        $stateParams.page && $scope.unselectAllElements();
+        $stateParams.page && $scope.selectElements('all', false);
         paginationModel.setMaxPage($scope.conversationCount());
         $scope.page = ~~$stateParams.page || 1;
         paginationModel[type]();
@@ -778,7 +763,7 @@ angular.module('proton.elements')
         // Save scroll position
         $rootScope.scrollPosition = $('#content').scrollTop();
         // Unselect all elements
-        $scope.unselectAllElements();
+        $scope.selectElements('all', false);
 
         // it's possible that the previous conversation or message
         // had embedded images, and as blob URLs never get deallocated automatically

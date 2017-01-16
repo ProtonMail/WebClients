@@ -267,6 +267,17 @@
     }
 }
 
+.pm_buttons, .pm_button {
+    [type=checkbox][disabled]:before {
+        content:"";
+        display:inline-block;
+        width:12px;
+        height:12px;
+        background: lighten($border, 10%);
+        border-radius: 2px;
+    }
+}
+
 
 body.mobileMode {
     .pm_buttons {

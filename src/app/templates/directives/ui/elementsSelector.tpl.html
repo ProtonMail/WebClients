@@ -1,0 +1,22 @@
+<div class="pm_buttons">
+    <a class="pm_trigger" dropdown class="pm_checkbox"  ng-class="{disabled: !conversations.length}" ng-if="!idDefined() || user.ViewLayout === 0">
+        <input
+            type="checkbox"
+            name="selectAll"
+            ng-checked="checkedSelectorState()"
+            ng-click="$event.stopPropagation()"
+            value="value"
+            data-pt-select-elements
+            class="element-selector-input"
+            ng-disabled="!conversations.length"
+            pt-tooltip-translate="Select messages"
+            pt-tooltip-translate-context="Action">
+        <i class="fa fa-angle-down"></i>
+    </a>
+    <span class="element-selector-set-scope pm_dropdown">
+        <button ng-repeat="action in actions" ng-click="selectAction(action.scope)">
+            <i class="fa" ng-class="action.icon"></i>
+            <span ng-bind="action.label"></span>
+        </button>
+    </span>
+</div>

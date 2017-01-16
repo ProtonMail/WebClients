@@ -4,8 +4,8 @@ angular.module('proton.elements')
         replace: true,
         templateUrl: 'templates/elements/countElementsSelected.tpl.html',
         link(scope, element) {
-            const $btn = element[0].querySelector('button');
-            const onClick = () => $rootScope.$broadcast('unselectAllElements');
+            const $btn = element.find('.countElementsSelected-btn-unselect');
+            const onClick = () => $rootScope.$emit('selectElements', { value: 'all', isChecked: false });
 
             $btn.addEventListener('click', onClick);
 

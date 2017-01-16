@@ -4,18 +4,7 @@
             <i class="fa fa-long-arrow-left"></i>
         </a>
     </span>
-    <label class="pm_checkbox" ng-if="!idDefined() || user.ViewLayout === 0">
-        <input
-            type="checkbox"
-            name="selectAll"
-            ng-checked="allSelected()"
-            data-pt-select-all-elements
-            class="toolBar-select-all"
-            ng-disabled="!conversations.length"
-            pt-tooltip-translate="Select all messages"
-            pt-tooltip-translate-context="Action">
-    </label>
-
+    <elements-selector></elements-selector>
     <read-unread></read-unread>
     <move-element></move-element>
 
