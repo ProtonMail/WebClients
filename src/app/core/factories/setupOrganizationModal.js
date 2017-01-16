@@ -1,5 +1,5 @@
 angular.module('proton.core')
-.factory('setupOrganizationModal', (authentication, pmModal, passwords, networkActivityTracker, organizationApi, organizationModel, memberApi, CONSTANTS, setupKeys, pmcw) => {
+.factory('setupOrganizationModal', (authentication, pmModal, passwords, networkActivityTracker, organizationApi, organizationModel, memberApi, CONSTANTS, setupKeys, pmcw, gettextCatalog) => {
     return pmModal({
         controllerAs: 'ctrl',
         templateUrl: 'templates/modals/setupOrganization.tpl.html',
@@ -18,6 +18,8 @@ angular.module('proton.core')
             self.unit = base * base * base;
             self.step = steps[index];
             self.size = 2048;
+            const minPadding = authentication.user.UsedSpace / self.unit;
+
             self.sliderOptions = {
                 animate: false,
                 start: (authentication.user.UsedSpace / self.unit) + marge,
@@ -30,9 +32,16 @@ angular.module('proton.core')
                     values: [0, authentication.user.UsedSpace / self.unit, self.max / self.unit],
                     density: 4
                 },
-                minPadding: authentication.user.UsedSpace / self.unit,
+                minPadding,
                 legend: 'GB'
             };
+
+            const allocatedLegend = { label: gettextCatalog.getString('Allocated', null), classes: 'background-primary' };
+            const minPaddingLegend = { label: gettextCatalog.getString('Already used', null), classes: 'background-red-striped' };
+
+            self.legends = [allocatedLegend];
+            minPadding > 0 && self.legends.push(minPaddingLegend);
+
             self.next = () => {
                 const promise = methods[index]()
                 .then((result = {}) => {
