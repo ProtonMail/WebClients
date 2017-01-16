@@ -469,6 +469,14 @@ angular.module('proton.elements')
         return end;
     };
 
+
+    $scope.checkedSelectorState = () => {
+        if (!Array.isArray($scope.conversations) || !$scope.conversations.length) {
+            return false;
+        }
+        return _.every($scope.conversations, { Selected: true });
+    };
+
     /**
      * Select elements
      * @param {String} value - filter value
@@ -487,7 +495,6 @@ angular.module('proton.elements')
 
         $rootScope.numberElementChecked = selectedElements.length;
         $rootScope.showWelcome = false;
-        $scope.checkedSelectorState = selectedElements.length === $scope.conversations.length;
     };
 
     /**
