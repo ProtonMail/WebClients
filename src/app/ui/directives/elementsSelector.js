@@ -1,26 +1,24 @@
 angular.module('proton.ui')
-    .directive('elementsSelector', ($rootScope) => ({
+.directive('elementsSelector', ($rootScope, authentication, gettextCatalog) => {
+    const isChecked = true;
+    const actions = [
+        { label: gettextCatalog.getString('All unread', null), icon: 'fa-eye-slash', scope: 'unread' },
+        { label: gettextCatalog.getString('All read', null), icon: 'fa-eye', scope: 'read' },
+        { label: gettextCatalog.getString('All unstarred', null), icon: 'fa-star-o', scope: 'unstarred' },
+        { label: gettextCatalog.getString('All starred', null), icon: 'fa-star', scope: 'starred' }
+    ];
+
+    return {
         replace: true,
         templateUrl: 'templates/directives/ui/elementsSelector.tpl.html',
-        link(scope, element) {
-
+        link(scope) {
             scope.value = 'all';
+            scope.actions = actions;
 
-            const $btn = element.find('.element-selector-set-scope button');
-
-            const onClick = ({ currentTarget }) => {
-                scope
-                    .$applyAsync(() => {
-                        const isChecked = true;
-                        $rootScope.$broadcast('selectElements', { value: currentTarget.dataset.scope, isChecked });
-                        $rootScope.$emit('closeDropdown');
-                    });
+            scope.click = (value) => {
+                $rootScope.$emit('selectElements', { value, isChecked });
+                $rootScope.$emit('closeDropdown');
             };
-
-            $btn.on('click', onClick);
-
-            scope.$on('$destroy', () => {
-                $btn.off('click', onClick);
-            });
         }
-    }));
+    };
+});

@@ -152,10 +152,9 @@ angular.module('proton.elements')
             $scope.$apply();
         });
 
-        $scope.$on('selectElements', (event, { value, isChecked }) => {
+        unsubscribes.push($rootScope.$on('selectElements', (event, { value, isChecked }) => {
             $scope.selectElements(value, isChecked);
-            $scope.$apply();
-        });
+        }));
 
         $scope.$on('applyLabels', (event, LabelID) => {
             $scope.applyLabels(LabelID);
@@ -480,7 +479,6 @@ angular.module('proton.elements')
         $rootScope.numberElementChecked = 0;
 
         _.each($scope.conversations, (element) => {
-
             if (value === 'all') element.Selected = isChecked;
             if (value === 'read') element.Selected = (element.NumUnread === 0 || element.IsRead === 1) && isChecked;
             if (value === 'unread') element.Selected = (element.NumUnread > 0 || element.IsRead === 0) && isChecked;
@@ -488,13 +486,14 @@ angular.module('proton.elements')
             if (value === 'unstarred') element.Selected = element.LabelIDs.indexOf(CONSTANTS.MAILBOX_IDENTIFIERS.starred) === -1 && isChecked;
         });
 
+        const selectedElements = $scope.elementsSelected(false);
+
         if (isChecked) {
-            const selectedElements = $scope.elementsSelected(false);
             $rootScope.numberElementChecked = selectedElements.length;
             $rootScope.showWelcome = false;
         }
 
-        $scope.checkedSelectorState = isChecked;
+        $scope.checkedSelectorState = selectedElements.length === $scope.conversations.length;
     };
 
     /**

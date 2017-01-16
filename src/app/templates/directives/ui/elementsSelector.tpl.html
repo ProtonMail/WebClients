@@ -14,21 +14,9 @@
         <i class="fa fa-angle-down"></i>
     </a>
     <span class="element-selector-set-scope pm_dropdown">
-        <button data-scope="unread">
-            <i class="fa fa-eye-slash"></i>
-            <span translate translate-context="Action">All unread</span>
-        </button>
-        <button data-scope="read">
-            <i class="fa fa-eye"></i>
-            <span translate translate-context="Action">All read</span>
-        </button>
-        <button data-scope="starred">
-            <i class="fa fa-star"></i>
-            <span translate translate-context="Action">All starred</span>
-        </button>
-        <button data-scope="unstarred">
-            <i class="fa fa-star-o"></i>
-            <span translate translate-context="Action">All un-starred</span>
+        <button ng-repeat="action in actions" ng-click="click(action.scope)">
+            <i class="fa" ng-class="action.icon"></i>
+            <span ng-bind="action.label"></span>
         </button>
     </span>
 </div>
