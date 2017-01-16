@@ -32,7 +32,7 @@ angular.module('proton.core')
                     values: [0, authentication.user.UsedSpace / self.unit, self.max / self.unit],
                     density: 4
                 },
-                minPadding: authentication.user.UsedSpace / self.unit,
+                minPadding,
                 legend: 'GB'
             };
 
