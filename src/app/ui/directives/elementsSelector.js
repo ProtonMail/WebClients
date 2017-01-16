@@ -1,5 +1,5 @@
 angular.module('proton.ui')
-.directive('elementsSelector', ($rootScope, authentication, gettextCatalog) => {
+.directive('elementsSelector', ($rootScope, authentication, gettextCatalog, dedentTpl) => {
     const isChecked = true;
     const actions = [
         { label: gettextCatalog.getString('All unread', null), icon: 'fa-eye-slash', action: 'unread' },
@@ -14,12 +14,12 @@ angular.module('proton.ui')
         compile(element) {
             const dropdown = element[0].querySelector('.pm_dropdown');
             const template = actions.reduce((prev, { label, icon, action }) => {
-                return prev + `
+                return prev + dedentTpl(`
                     <button data-action="${action}">
                         <i class="fa ${icon}"></i>
                         <span>${label}</span>
                     </button>
-                `;
+                `);
             }, '');
 
             dropdown.insertAdjacentHTML('beforeEnd', template);
