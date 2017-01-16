@@ -758,9 +758,6 @@ angular.module('proton.routes', [
                 templateUrl: 'templates/views/addresses.tpl.html',
                 controller: 'AddressesController'
             }
-        },
-        onExit(organizationKeysModel) {
-            organizationKeysModel.clear();
         }
     })
 
@@ -881,9 +878,6 @@ angular.module('proton.routes', [
                 templateUrl: 'templates/views/members.tpl.html',
                 controller: 'MembersController'
             }
-        },
-        onExit(organizationKeysModel) {
-            organizationKeysModel.clear();
         }
     })
 
@@ -924,9 +918,6 @@ angular.module('proton.routes', [
                 templateUrl: 'templates/views/domains.tpl.html',
                 controller: 'DomainsController'
             }
-        },
-        onExit(organizationKeysModel) {
-            organizationKeysModel.clear();
         }
     })
 
