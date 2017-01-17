@@ -275,13 +275,11 @@ angular.module('proton.settings')
                 domains: [domain],
                 submit(member) {
                     memberModal.deactivate();
-                    $scope.members.push(member);
-                    const addresses = member.Addresses;
-                    for (let i = 0; i < addresses.length; i++) {
-                        addresses[i].MemberID = member.ID;
-                    }
+                    const addresses = member.Addresses.map((address) => {
+                        address.MemberID = member.ID;
+                        return address;
+                    });
                     domain.Addresses = domain.Addresses.concat(addresses);
-
                     $scope.addAddresses(domain);
                 },
                 cancel() {
