@@ -41,7 +41,7 @@ angular.module('proton.ui')
         return orderActions()
             .reduce((prev, { label, icon, action }) => {
                 return prev + dedentTpl(`
-                    <button data-action="${action}">
+                    <button data-action="${action}" class="elementsSelector-btn-action">
                         <i class="fa ${icon}"></i>
                         <span>${label}</span>
                     </button>
@@ -57,7 +57,7 @@ angular.module('proton.ui')
             dropdown.insertAdjacentHTML('beforeEnd', getTemplate());
 
             return (scope, el) => {
-                const $btn = el.find('.element-selector-set-scope button');
+                const $btn = el.find('.elementsSelector-btn-action');
 
                 $btn.on('click', onClick);
 
