@@ -53,5 +53,9 @@
 }
 
 .pm-flex-content-fillWidth {
-    width: auto !important;
+    min-width:0px;
+}
+
+.pm-flex-content-fillHeight {
+    min-height:0px; 
 }
