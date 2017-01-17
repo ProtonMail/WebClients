@@ -49,7 +49,7 @@ div.noUi-handle:before {
     content: "\2194";
     white-space: nowrap;
     margin-left: -4px;
-    margin-top: -1px;
+    margin-top: -2px;
 }
 
 div.noUi-value {
@@ -86,8 +86,11 @@ div.noUi-value {
     display: inline-flex;
     margin-top: 15px;
     height: 26px;
-    line-height: 26px;
+
     button {
+        @include flexInline();
+        @include flexFillHeight();
+        @include flexAlignCenter();
         background-color: transparent;
         border:0;
         padding: 0 10px;
@@ -98,10 +101,7 @@ div.noUi-value {
             border-left: 1px solid $border;
         }
     }
-    .fa {
-        font-size: 12px;
-        line-height: 28px;
-    }
+    .fa { font-size: 12px }
 }
 
 body.mobileMode .pm_buttons.sliderButtons {
