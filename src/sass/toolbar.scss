@@ -10,7 +10,10 @@
     position: relative;
     z-index: 8;
     display: flex;
-    .toolbarDesktop-actions-right { margin-left: auto }
+    .toolbarDesktop-actions-right {
+        @include flexRow();
+        margin-left: auto;
+    }
     .pm_checkbox {
         float: left;
         display: block;
@@ -27,15 +30,11 @@
     .fa-check-square {
         margin: 0 5px;
     }
-    & > .pm_buttons {
-        float: none;
-        display: inline-block;
-    }
     .layout a img {
         display: block;
         height: 16px;
+        width: 16px; /* IE10 */
         position: relative;
-        top: 8px;
     }
 }
 

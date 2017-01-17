@@ -150,14 +150,14 @@
 }
 
 .pm_buttons {
+    @include flexInline();
     border: 1px solid $border;
-    border-radius: 2px;
-    display: inline-block;
     height: 33px;
-    line-height: 33px;
-    text-align: center;
     margin: 0 10px 0 0;
     position: relative;
+    border-radius: 2px;
+    text-align: center;
+
     &.inline {
         display: inline-block;
         float: none;
@@ -178,9 +178,9 @@
     }
     .fa {
         font-size: 16px;
-        line-height: 33px;
         &.fa-angle-down {
             font-size: 14px;
+            margin-left: 2px;
             &.wide {
                 padding: 0 10px;
             }
@@ -197,19 +197,19 @@
     }
 
     a {
+        @include flexInline();
+        @include flexFillHeight();
+        @include flexAlignCenter();
+
         text-decoration: none;
         color: $btn;
         padding: 0 10px;
-        height: 33px;
-        line-height: 33px;
-        display: block;
-        float: left;
         cursor: pointer;
         transition: all .3s ease-out;
         -webkit-tap-highlight-color: transparent;
-        vertical-align: middle;
         z-index: 1;
-        box-shadow: 0 1px 2px 0 rgba(0,0,0,0.1) ;
+        box-shadow: 0 1px 2px 0 rgba(0,0,0,0.1);
+
         &.fa-angle-down {
             padding: 0 3px;
             &.wide {
