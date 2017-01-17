@@ -36,9 +36,6 @@ angular.module('proton.settings')
         accept(sourceItemHandleScope, destSortableScope) {
             return sourceItemHandleScope.itemScope.sortableScope.$id === destSortableScope.$id;
         },
-        disabled() {
-            return $scope.customFilters.length === 1;
-        },
         dragStart() {
             $scope.itemMoved = true;
         },
