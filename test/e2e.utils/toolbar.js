@@ -1,6 +1,6 @@
 const SELECTOR = {
     container: '#pm_toolbar-desktop',
-    allElements: '.toolBar-select-all',
+    allElements: '.toolBar-select-all .element-selector-input',
     read: '.readUnread-btn-read',
     unread: '.readUnread-btn-unread',
     buttons: {
