@@ -201,7 +201,7 @@ angular.module('proton.settings')
      */
     $scope.refreshStatus = () => {
         networkActivityTracker.track(
-            domainApi.fetch().then((domains) => {
+            domainModel.fetch().then((domains) => {
                 $scope.domains = domains;
             })
         );
