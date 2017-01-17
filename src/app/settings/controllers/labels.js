@@ -25,6 +25,12 @@ angular.module('proton.settings')
         accept(sourceItemHandleScope, destSortableScope) {
             return sourceItemHandleScope.itemScope.sortableScope.$id === destSortableScope.$id;
         },
+        disabled() {
+            if ($scope.labels.length > 1) {
+                return false;
+            }
+            return true;
+        },
         orderChanged() {
             const order = labelsModel.getOrder();
             labelsModel.update();
