@@ -35,7 +35,7 @@
                             <p class="alert alert-info" ng-show="logs.length < 1 && haveLogs"  translate>No logs yet</p>
                             <p class="alert alert-info" ng-show="!haveLogs && doLogging !== 0"><i class="fa fa-spin fa-spinner"></i  translate>Fetching logs...</p>
                             <div class="pm_table">
-                                <table id="accessLog" ng-init="initLogs()" ng-show="logs.length>0">
+                                <table id="accessLog" class="bordered" ng-init="initLogs()" ng-show="logs.length>0">
                                     <thead>
                                         <tr>
                                             <th style="width:10rem" translate-context="Title" translate>Event</th>
