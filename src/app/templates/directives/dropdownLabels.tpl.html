@@ -11,10 +11,12 @@
             <ul class="list-group">
                 <li class="list-group-item" ng-repeat="label in (filteredLabels = (labels | filter: {Name: searchLabels} | orderBy: 'Order'))">
                     <label>
-                        <input type="checkbox" ng-model="label.Selected" class="dropdownLabels-input-label" ui-indeterminate="label.Selected === null">
-                        <i class="fa fa-tag" ng-style="color(label)" ng-show="alsoArchive" ng-click="moveTo(label)" pt-tooltip-translate="Apply label and archive"></i>
-                        <i class="fa fa-tag" ng-style="color(label)" ng-hide="alsoArchive" ng-click="moveTo(label)" pt-tooltip-translate="Apply label"></i>
-                        <span class="label label-pm" title="{{ label.Name }}">{{ label.Name }}</span>
+                        <span class="list-group-item-label">
+                            <i class="list-group-item-label-icon fa fa-tag" ng-style="color(label)" ng-show="alsoArchive" ng-click="moveTo(label)" pt-tooltip-translate="Apply label and archive"></i>
+                            <i class="list-group-item-label-icon fa fa-tag" ng-style="color(label)" ng-hide="alsoArchive" ng-click="moveTo(label)" pt-tooltip-translate="Apply label"></i>
+                            <span class="list-group-item-label-text" title="{{ label.Name }}">{{ label.Name }}</span>
+                        </span>
+                        <input type="checkbox" ng-model="label.Selected" class="list-group-item-checkbox" ui-indeterminate="label.Selected === null">
                     </label>
                 </li>
                 <li class="list-group-item-empty" ng-show="filteredLabels.length === 0" translate translate-context="Info">
