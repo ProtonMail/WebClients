@@ -51,3 +51,11 @@
     -webkit-flex-grow: 1;
     flex-grow: 1;
 }
+
+.pm-flex-content-fillWidth {
+    min-width:0px;
+}
+
+.pm-flex-content-fillHeight {
+    min-height:0px; 
+}
