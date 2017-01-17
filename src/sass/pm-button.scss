@@ -180,7 +180,7 @@
         font-size: 16px;
         &.fa-angle-down {
             font-size: 14px;
-            margin-left: 4px;
+            margin-left: 2px;
             &.wide {
                 padding: 0 10px;
             }
@@ -207,7 +207,6 @@
         cursor: pointer;
         transition: all .3s ease-out;
         -webkit-tap-highlight-color: transparent;
-        vertical-align: middle;
         z-index: 1;
         box-shadow: 0 1px 2px 0 rgba(0,0,0,0.1);
 
