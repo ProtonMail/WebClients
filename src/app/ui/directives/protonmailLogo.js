@@ -6,12 +6,19 @@ angular.module('proton.ui')
             replace: true,
             link(scope, element) {
                 const img = element[0].querySelector('img');
-                const unsubscribe = $rootScope.$on('organizationChange', (event, newOrganization) => updateLogo(newOrganization));
+                const unsubscribes = [];
 
-                scope.$on('$destroy', () => unsubscribe());
-                updateLogo(scope.organization);
+                unsubscribes.push($rootScope.$on('organizationChange', () => updateLogo()));
+                unsubscribes.push($rootScope.$on('updateUser', () => updateLogo()));
 
-                function updateLogo(organization) {
+                scope.$on('$destroy', () => {
+                    unsubscribes.forEach((callback) => callback());
+                });
+
+                updateLogo();
+
+                function updateLogo() {
+                    const organization = organizationModel.get();
                     const subscription = subscriptionModel.get();
                     const isLifetime = subscription.CouponCode === 'LIFETIME';
                     const isSubuser = authentication.user.subuser;
