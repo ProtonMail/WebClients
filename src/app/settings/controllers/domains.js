@@ -275,8 +275,6 @@ angular.module('proton.settings')
                 domains: [domain],
                 submit(member) {
                     memberModal.deactivate();
-                    eventManager.call();
-
                     $scope.members.push(member);
                     const addresses = member.Addresses;
                     for (let i = 0; i < addresses.length; i++) {
