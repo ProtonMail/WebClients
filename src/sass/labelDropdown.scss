@@ -99,39 +99,46 @@
 		.list-group { padding: 10px 0px }
 
 		.list-group-item {
-
-			line-height: 30px;
+			@include flexInline();
+			width: 100%;
 			height: 30px;
-			overflow: hidden;
 
-			label {
+			> label {
+				@include flexInline();
+				@include flexAlignCenter();
 				cursor: pointer;
-				display: block;
 				max-height: 100%;
+				width: 100%;
 
-				span {
-					white-space: nowrap;
-					display: inline-block;
-					max-width: 90px;
-					overflow: hidden;
-					text-overflow: ellipsis;
+				.list-group-item-label {
+					@include flexInline();
+					@include flexAlignCenter();
+					@include flexFillHeight();
+
+					.list-group-item-label-text {
+						white-space: nowrap;
+						display: inline-block;
+						max-width: 90px;
+						overflow: hidden;
+						text-overflow: ellipsis;
+					}
+
+					.list-group-item-label-icon {
+						margin-right: 10px;
+						width: 20px;
+						float: left;
+						display: block;
+						&:hover {
+							font-size: 20px;
+						}
+					}
+
+					.list-group-item-checkbox { cursor: pointer }
+
 				}
+
 			}
-			input[type="checkbox"] {
-				position: absolute;
-				right: 2px; /*shadow when active*/
-				margin: 10px 0px;
-				cursor: pointer;
-			}
-			.fa {
-				margin-right: 10px;
-				width: 20px;
-				float: left;
-				display: block;
-				&:hover {
-					font-size: 20px;
-				}
-			}
+
 		}
 	}
 
@@ -145,18 +152,12 @@
 
 .mobileMode {
 	.labelDropdown {
-		.wrapper {
-			padding-right: 0;
-			.list-group-item {
-				padding: 0 15px;
-				border: 1px solid $border;
-				margin-bottom: 5px;
-				input[type="checkbox"] {
-					height: initial !important;
-					width: initial !important;
-					margin: 10px;
-				}
-			}
+		.list-group-item {
+			height: 45px;
+			padding: 0 15px;
+			box-sizing: border-box;
+			border: 1px solid $border;
+			margin-bottom: 5px;
 		}
 	}
 }
