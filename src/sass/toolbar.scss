@@ -33,6 +33,7 @@
     .layout a img {
         display: block;
         height: 16px;
+        width: 16px; /* IE10 */
         position: relative;
     }
 }
