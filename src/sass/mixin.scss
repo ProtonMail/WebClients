@@ -1,7 +1,7 @@
 @mixin flexColumn() {
 
-    display:-webkit-flex !important;
-    display:flex !important;
+    display:-webkit-flex;
+    display:flex;
 
     -webkit-flex-direction:column;
     flex-direction: column;
@@ -19,6 +19,22 @@
 }
 
 @mixin flexRow() {
-    display:-webkit-flex !important;
-    display: flex !important;
+    display:-webkit-flex;
+    display: flex;
+}
+
+
+@mixin flexInline() {
+    display:-webkit-inline-flex;
+    display: inline-flex;
+}
+
+@mixin flexFillHeight() {
+    -webkit-flex-grow: 1;
+    flex-grow: 1;
+}
+
+@mixin flexAlignCenter() {
+    -webkit-align-items: center;
+    align-items: center;
 }

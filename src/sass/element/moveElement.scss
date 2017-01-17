@@ -9,13 +9,13 @@
 
 .moveElement-state-trash {
     .moveElement-btn-trash { display: none !important}
-    .moveElement-btn-delete { display: inline-block !important}
+    .moveElement-btn-delete { display: inline-flex !important}
     .moveElement-btn-inbox { border-left: 0}
 }
 
 .moveElement-state-draft {
     .moveElement-btn-trash { display: none !important}
-    .moveElement-btn-delete { display: inline-block !important}
+    .moveElement-btn-delete { display: inline-flex !important}
     .moveElement-btn-inbox { border-left: 0}
 }
 
