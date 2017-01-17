@@ -265,27 +265,18 @@ angular.module('proton.settings')
      * @param {Object} member
      */
     $scope.editMember = (member) => {
-        memberModal.activate({
-            params: {
-                member,
-                organizationKey: $scope.organizationKey,
-                domains: $scope.domains,
-                submit(member) {
-                    const index = _.findIndex($scope.members, { ID: member.ID });
-
-                    if (index === -1) {
-                        $scope.members.push(member);
-                    } else {
-                        _.extend($scope.members[index], member);
-                    }
-
-                    memberModal.deactivate();
-                },
-                cancel() {
-                    memberModal.deactivate();
-                }
+        const params = {
+            member,
+            organizationKey: $scope.organizationKey,
+            domains: $scope.domains,
+            submit() {
+                memberModal.deactivate();
+            },
+            cancel() {
+                memberModal.deactivate();
             }
-        });
+        };
+        memberModal.activate({ params });
     };
 
     /**
