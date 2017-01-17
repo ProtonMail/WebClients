@@ -159,10 +159,7 @@ angular.module('proton.settings')
             return sourceItemHandleScope.itemScope.sortableScope.$id === destSortableScope.$id;
         },
         disabled() {
-            if ($scope.activeAddresses.length > 1) {
-                return false;
-            }
-            return true;
+            return $scope.activeAddresses.length === 1;
         },
         dragStart() {
             $scope.itemMoved = true;
