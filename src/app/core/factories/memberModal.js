@@ -201,12 +201,13 @@ angular.module('proton.core')
 
                 const finish = () => {
                     notify({ message: notificationMessage, classes: 'notification-success' });
-                    params.submit(member);
+                    return eventManager.call()
+                    .then(() => params.submit(member));
                 };
 
                 const error = (error) => {
-                    eventManager.call();
                     notify({ message: error, classes: 'notification-danger' });
+                    return eventManager.call();
                 };
 
                 if (self.ID) {

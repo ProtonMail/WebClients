@@ -275,8 +275,6 @@ angular.module('proton.settings')
 
                     if (index === -1) {
                         $scope.members.push(member);
-                        $scope.organization.UsedMembers++;
-                        $scope.organization.UsedAddresses++;
                     } else {
                         _.extend($scope.members[index], member);
                     }

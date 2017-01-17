@@ -337,7 +337,6 @@ angular.module('proton.settings')
                 domains,
                 submit() {
                     memberModal.deactivate();
-                    eventManager.call();
                 },
                 cancel() {
                     memberModal.deactivate();
