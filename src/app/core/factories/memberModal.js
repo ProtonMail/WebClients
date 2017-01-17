@@ -21,10 +21,12 @@ angular.module('proton.core')
             // Variables
             const self = this;
             const organization = organizationModel.get();
-            const base = CONSTANTS.BASE_SIZE;
-            const startValue = (params.member) ? params.member.MaxSpace : 0;
+            const giga = CONSTANTS.BASE_SIZE * CONSTANTS.BASE_SIZE * CONSTANTS.BASE_SIZE;
             const minPadding = (params.member) ? params.member.UsedSpace : 0;
             const maxPadding = (params.member) ? (organization.MaxSpace - organization.AssignedSpace + params.member.MaxSpace) : organization.MaxSpace - organization.AssignedSpace;
+            const fiveGigabit = 5 * giga;
+            const startNewMember = (maxPadding > fiveGigabit) ? fiveGigabit : maxPadding;
+            const startValue = (params.member) ? params.member.MaxSpace : startNewMember;
             // Default Parameters
             self.ID = null;
             self.step = 'member';
@@ -37,7 +39,7 @@ angular.module('proton.core')
             self.temporaryPassword = '';
             self.confirmPassword = '';
             self.address = '';
-            self.unit = base * base * base;
+            self.unit = giga;
             self.min = 0;
             self.max = organization.MaxSpace;
             self.sliderOptions = {
