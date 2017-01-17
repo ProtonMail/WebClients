@@ -9,7 +9,7 @@
 .pm-flex-content-row {
     @include flexRow();
     &.alignItemsCenter {
-        -webkit-align-itmes: center;
+        -webkit-align-items: center;
         align-items: center;
     }
     &.justifyContentCenter {

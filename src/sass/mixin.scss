@@ -1,7 +1,7 @@
 @mixin flexColumn() {
 
-    display:-webkit-flex;
-    display:flex;
+    display:-webkit-flex !important;
+    display:flex !important;
 
     -webkit-flex-direction:column;
     flex-direction: column;
@@ -19,6 +19,6 @@
 }
 
 @mixin flexRow() {
-    display:-webkit-flex;
-    display: flex;
+    display:-webkit-flex !important;
+    display: flex !important;
 }
