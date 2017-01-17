@@ -54,7 +54,7 @@ angular.module('proton.settings')
 
             if (keys.PublicKey) {
                 $scope.keyStatus = 0;
-                return pmcw.keyInfo(keys.PublicKey)
+                pmcw.keyInfo(keys.PublicKey)
                 .then((obj) => ($scope.organizationKeyInfo = obj));
             }
 
