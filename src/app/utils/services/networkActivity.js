@@ -35,7 +35,7 @@ angular.module('proton.utils')
      * @param  {Error} error
      * @return {Error}
      */
-    const formatError = (error) => {
+    const formatError = (error = {}) => {
 
         if (!error.originalMessage) {
             return error;
