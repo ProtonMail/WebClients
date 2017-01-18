@@ -23,7 +23,6 @@
     display: flex;
 }
 
-
 @mixin flexInline() {
     display:-webkit-inline-flex;
     display: inline-flex;
@@ -37,20 +36,7 @@
     flex-grow: 1;
 }
 
-@mixin flexFillHeight() {
-    @include flexFill();
-    min-height: 0px;
-}
-
-@mixin flexFillWidth() {
-    @include flexFill();
-    min-width: 0px;
-}
-
-/**
-    ALIGNMENTS
-**/
-@mixin flexJusifyCenter() {
+@mixin flexJustifyCenter() {
     -webkit-justify-content: center;
     justify-content: center;
 }
