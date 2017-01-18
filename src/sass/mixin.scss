@@ -29,11 +29,27 @@
     display: inline-flex;
 }
 
-@mixin flexFillHeight() {
+/**
+    FILLINGS
+**/
+@mixin flexFill() {
     -webkit-flex-grow: 1;
     flex-grow: 1;
 }
 
+@mixin flexFillHeight() {
+    @include flexFill();
+    min-height: 0px;
+}
+
+@mixin flexFillWidth() {
+    @include flexFill();
+    min-width: 0px;
+}
+
+/**
+    ALIGNMENTS
+**/
 @mixin flexJusifyCenter() {
     -webkit-justify-content: center;
     justify-content: center;
