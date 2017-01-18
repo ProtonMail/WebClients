@@ -16,7 +16,7 @@
                             <i class="list-group-item-label-icon fa fa-tag" ng-style="color(label)" ng-hide="alsoArchive" ng-click="moveTo(label)" pt-tooltip-translate="Apply label"></i>
                             <span class="list-group-item-label-text" title="{{ label.Name }}">{{ label.Name }}</span>
                         </span>
-                        <input type="checkbox" ng-model="label.Selected" class="list-group-item-checkbox" ui-indeterminate="label.Selected === null">
+                        <input type="checkbox" ng-model="label.Selected" class="list-group-item-checkbox dropdownLabels-input-label" ui-indeterminate="label.Selected === null">
                     </label>
                 </li>
                 <li class="list-group-item-empty" ng-show="filteredLabels.length === 0" translate translate-context="Info">
