@@ -300,13 +300,20 @@
     .margin {
         margin-bottom: 10px;
     }
+
+
     label {
-        line-height: 35px;
-        display: block;
+        height: 35px;
+        @include flexRow();
+        @include flexAlignCenter();
+
+        > :not(:only-child) {
+            @include flexSelfCenter();
+        }
+
         &.larger {
             margin: 0 0 1rem 0;
             font-size: 1.2rem;
-            line-height: 135%;
         }
         &.inline {
             display: inline-block;

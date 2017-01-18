@@ -34,7 +34,17 @@
     flex-grow: 1;
 }
 
+@mixin flexJusifyCenter() {
+    -webkit-justify-content: center;
+    justify-content: center;
+}
+
 @mixin flexAlignCenter() {
     -webkit-align-items: center;
     align-items: center;
+}
+
+@mixin flexSelfCenter() {
+    -webkit-align-self: center;
+    align-self: center;
 }
