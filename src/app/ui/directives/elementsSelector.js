@@ -1,27 +1,32 @@
 angular.module('proton.ui')
 .directive('elementsSelector', ($rootScope, authentication, gettextCatalog, dedentTpl) => {
     const isChecked = true;
-    const ORDER_FALSY = ['read', 'unread', 'star', 'unstar'];
-    const ORDER_TRUTHY = ['unread', 'read', 'unstar', 'star'];
+    const ORDER_FALSY = ['all', 'read', 'unread', 'star', 'unstar'];
+    const ORDER_TRUTHY = ['all', 'unread', 'read', 'unstar', 'star'];
 
     const ACTIONS = {
+        all: {
+            label: gettextCatalog.getString('Select All', null),
+            icon: 'fa-check-square-o',
+            action: 'all'
+        },
         unread: {
-            label: gettextCatalog.getString('All unread', null),
+            label: gettextCatalog.getString('All Unread', null),
             icon: 'fa-eye-slash',
             action: 'unread'
         },
         read: {
-            label: gettextCatalog.getString('All read', null),
+            label: gettextCatalog.getString('All Read', null),
             icon: 'fa-eye',
             action: 'read'
         },
         unstar: {
-            label: gettextCatalog.getString('All unstarred', null),
+            label: gettextCatalog.getString('All Unstarred', null),
             icon: 'fa-star-o',
             action: 'unstarred'
         },
         star: {
-            label: gettextCatalog.getString('All starred', null),
+            label: gettextCatalog.getString('All Starred', null),
             icon: 'fa-star',
             action: 'starred'
         }
