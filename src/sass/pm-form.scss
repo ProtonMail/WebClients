@@ -308,21 +308,13 @@
         @include flexAlignCenter();
 
         > :not(:only-child) {
+            /* label with childs */
             @include flexSelfCenter();
-            margin-right:.5rem; 
+            margin-right:.5rem;
         }
 
-        > .label-fillWidth {
-            @include flexFillWidth();
-        }
+        > .label-fillWidth { @include flexFillWidth() }
 
-        &.larger {
-            margin: 0 0 1rem 0;
-            font-size: 1.2rem;
-        }
-        &.inline {
-            display: inline-block;
-        }
     }
     .row {
         float: left;
