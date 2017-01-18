@@ -309,6 +309,11 @@
 
         > :not(:only-child) {
             @include flexSelfCenter();
+            margin-right:.5rem; 
+        }
+
+        > .label-fillWidth {
+            @include flexFillWidth();
         }
 
         &.larger {
