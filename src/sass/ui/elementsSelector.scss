@@ -1,0 +1,20 @@
+.elements-selector-label {
+    @include flexInline();
+    @include flexFillHeight();
+    @include flexAlignCenter();
+    @include flexJustifyCenter();
+
+    width: 30px;
+    cursor: pointer;
+}
+.elements-selector-checkbox {
+    margin:0;
+    cursor: pointer;
+}
+
+.elements-selector-trigger-dropdown-fa-angle-down { padding: 0 6px }
+.element-selector-set-scope.pm_dropdown {
+    width: auto;
+    margin-left: 30px /* elements-selector-label width */
+}
+.elementsSelector-btn-action > span { padding-right: 5px }
