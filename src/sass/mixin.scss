@@ -23,7 +23,6 @@
     display: flex;
 }
 
-
 @mixin flexInline() {
     display:-webkit-inline-flex;
     display: inline-flex;
@@ -32,6 +31,11 @@
 @mixin flexFillHeight() {
     -webkit-flex-grow: 1;
     flex-grow: 1;
+}
+
+@mixin flexJustifyCenter() {
+    -webkit-justify-content: center;
+    justify-content: center;
 }
 
 @mixin flexAlignCenter() {
