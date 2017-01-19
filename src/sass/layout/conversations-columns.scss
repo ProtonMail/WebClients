@@ -15,6 +15,7 @@
     .ptSelectConversation-container {
         @include flexRow();
         @include flexAlignCenter();
+        @include flexJustifyCenter();
 
         height: 30px;
         height: 100%;

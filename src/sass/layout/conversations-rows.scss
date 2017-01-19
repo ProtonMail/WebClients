@@ -53,6 +53,10 @@ body {
             }
 
             .ptSelectConversation-container {
+                @include flexRow();
+                @include flexAlignCenter();
+                @include flexJustifyCenter();
+                
                 position: relative;
                 float: left;
                 padding: 0;
