@@ -12,11 +12,12 @@
 .customMaskInput-container,
 .customMaskInput-container * { box-sizing: border-box }
 
-.customMaskInput-input {
+[class*="customMaskInput-input"] {
     position: absolute;
     width: 100%;
     height: 100%;
-    z-index: 1;
+    margin: 0;
+    z-index: -1
 }
 
 .customMaskInput-mask {
@@ -33,15 +34,18 @@
 
 
 /* Hover and focus states */
-.customMaskInput-container:hover .customMaskInput-mask,
-.customMaskInput-input:focus + .customMaskInput-mask { border-color:#9397cd }
+.customMaskInput-container:hover [class*="customMaskInput-input"]:not(:disabled) + .customMaskInput-mask,
+[class*="customMaskInput-input"]:focus + .customMaskInput-mask { border-color:#9397cd }
 
 /* Checked state */
-.customMaskInput-input:checked + .customMaskInput-mask {
+[class*="customMaskInput-input"]:checked + .customMaskInput-mask {
     background-position: center center;
 }
 
-.customCheckbox-input:indeterminate + .customCheckbox-mask {
+[class*="customMaskInput-input"][disabled] + .customMaskInput-mask,
+[class*="customMaskInput-input"]:disabled + .customMaskInput-mask { background: #e6e6e6}
+
+[class*="customMaskInput-input"]:indeterminate + .customCheckbox-mask {
     background: linear-gradient(to bottom,
         rgba(255,255,255,1) 0%,
         rgba(255,255,255,1) 42%,
@@ -50,5 +54,3 @@
         rgba(255,255,255,1) 58%,
         rgba(255,255,255,1) 100%);
 }
-
-.customMaskInput-input:disabled + .customMaskInput-mask { background: #e6e6e6}

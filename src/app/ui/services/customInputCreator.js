@@ -44,6 +44,7 @@ angular.module('proton.ui')
                 - data-ng-click
                 - name
          * @param  {String} type type of input
+         * @param {Function} link
          * @return {Function} Compile function
          */
         const checkableCompiler = (type = '', linkCallback = angular.noop) => (el, attr) => {
