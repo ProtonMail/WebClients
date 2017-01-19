@@ -1,6 +1,16 @@
+.elements-selector-check {
+    @include flexInline();
+    @include flexFillHeight();
+    @include flexAlignCenter();
+    @include flexJustifyCenter();
 
-.elements-selector-label {
     width: 30px;
+    cursor: pointer;
+}
+
+.elements-selector-checkbox {
+    margin:0;
+    cursor: pointer;
 }
 
 .elements-selector-trigger-dropdown-fa-angle-down { padding: 0 6px }
