@@ -802,7 +802,6 @@ angular.module('proton.elements')
 
         openElement(element);
     };
-
     // Call initialization
     initialization();
 });
