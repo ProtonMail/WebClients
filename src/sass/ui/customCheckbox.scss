@@ -1,0 +1,23 @@
+.customCheckbox-input:checked + .customCheckbox-mask {
+    background-image: url(/assets/img/icons/checkmark.svg);
+}
+
+/* Hover state whilst checked */
+.customCheckbox-input:hover .customCheckbox-input:not([disabled]):checked + .custom-input_state,
+.customCheckbox-input:checked:focus + .customCheckbox-mask {
+
+}
+
+
+/* Check mark */
+.customCheckbox-mask::after { }
+/* Show check mark */
+.customCheckbox-input:checked + .customCheckbox-mask::after {}
+/* Checkbox tick */
+.customCheckbox-container .customCheckbox-mask::after {}
+/* Disabled tick colour */
+.customCheckbox-input:disabled + .customCheckbox-maslk:after {}
+/* Radio button inner circle */
+.customCheckbox-input:disabled + .customCheckbox-maslk::after { }
+/* Disabled circle colour */
+.customCheckbox-input:disabled + .customCheckbox-maslk::after {}
