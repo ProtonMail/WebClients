@@ -26,19 +26,6 @@ body.mobileMode {
 				opacity: 0;
 			}
 
-			.ptSelectConversation-input {
-				position: absolute;
-			}
-
-			.ptSelectConversation-input ~ .fa-check-square {
-				display: none !important;
-			}
-			.ptSelectConversation-input:checked ~ .fa-check-square {
-				display: inline-block !important;
-			}
-			.ptSelectConversation-input:checked ~ .fa-square-o {
-				display: none !important;
-			}
 			.labelDropdown input[type="checkbox"] {
 				display: inline-block !important;
 			}
@@ -54,12 +41,6 @@ body.mobileMode {
 				text-decoration: none;
 				color: $alt;
 				width: 2rem;
-			}
-
-			.ptSelectConversation-icon {
-				position: absolute;
-				top: calc(50% - 1rem);
-				pointer-events: none
 			}
 
 
