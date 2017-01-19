@@ -1,7 +1,6 @@
 angular.module('proton.composer')
 .controller('ComposeMessageController', (
     $filter,
-    $interval,
     $log,
     $q,
     $rootScope,
