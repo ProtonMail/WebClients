@@ -1,0 +1,67 @@
+.custom-input {
+    @include flexInline();
+    @include flexAlignCenter();
+	position: relative;
+}
+
+.custom-input input {
+	position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    outline: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    cursor: pointer;
+}
+
+.custom-input_state {
+    position: relative;
+	width: 15px;
+	height: 15px;
+    border-radius: 4px;
+	background-color: #FFF;
+    border:1px solid transparent;
+}
+
+
+.custom-input--radio .custom-input_state {
+	border-radius: 50%;
+}
+
+/* Hover and focus states */
+.custom-input:hover input ~ .custom-input_state,
+.custom-input input:focus ~ .custom-input_state {
+	border-color:#9397cd;
+}
+
+/* Checked state */
+.custom-input input:checked ~ .custom-input_state {
+	background-image:url(/assets/img/icons/checkmark.svg);
+    background-position: center center;
+}
+
+/* Hover state whilst checked */
+.custom-input:hover input:not([disabled]):checked ~ .custom-input_state,
+.custom-input input:checked:focus ~ .custom-input_state {
+
+}
+
+/* Disabled state */
+.custom-input input:disabled ~ .custom-input_state {
+	background: #e6e6e6;
+}
+
+/* Check mark */
+.custom-input_state:after { }
+/* Show check mark */
+.custom-input input:checked ~ .custom-input_state:after {}
+/* Checkbox tick */
+.custom-input--checkbox .custom-input_state:after {}
+/* Disabled tick colour */
+.custom-input--checkbox input:disabled ~ .custom-input_state:after {}
+/* Radio button inner circle */
+.custom-input--radio .custom-input_state:after { }
+/* Disabled circle colour */
+.custom-input--radio input:disabled ~ .custom-input_state:after {}
