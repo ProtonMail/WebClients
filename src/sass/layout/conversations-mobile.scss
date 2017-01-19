@@ -1,7 +1,11 @@
 body.mobileMode {
     .conversation {
         .selection {
-            width: 50px;
+            @include flexRow();
+            @include flexAlignCenter();
+            @include flexJustifyCenter();
+
+            width: 40px;
             height: 60px;
             position: absolute;
             z-index: 99;
