@@ -36,6 +36,7 @@
                                 <div class="col-1-3 text-right">
                                     <button class="pm_button link" ng-click="identity(address)" translate-context="Action" translate>Edit identity</button>
                                     <button class="pm_button link" ng-show="(address.Type === 2 || address.Type === 3) && isAdmin && !isSubUser" ng-click="disableAddress(address)" translate-context="Action" translate>Disable</button>
+                                    <button class="pm_button link" ng-show="(address.Type === 2 || address.Type === 3) && isAdmin && !isSubUser" ng-click="deleteAddress(address)" translate-context="Action" translate>Delete</button>
                                 </div>
                             </div>
                         </li>
