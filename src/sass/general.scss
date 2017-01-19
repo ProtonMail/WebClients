@@ -142,4 +142,9 @@ html.protonmail {
 	.or {
 		font-size: 75%;
 	}
+	.ellipsis {
+		display: inline-block;
+		overflow: hidden;
+		text-overflow: ellipsis;
+	}
 }

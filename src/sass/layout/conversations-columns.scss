@@ -1,5 +1,8 @@
 // DEFAULT / ALL
 .conversation {
+    @include flexRow();
+    @include flexAlignCenter();
+
     height: 60px;
     box-shadow: inset 0 -1px 0 $border;
     overflow: hidden;
@@ -10,11 +13,9 @@
 
 
     .selection {
-        float: left;
         height: 30px;
-        line-height: 20px;
         box-sizing: border-box;
-        padding: 10px 0 0 10px;
+        padding: 0 0 0 10px;
         width: 30px;
         text-align: center;
         input[type="checkbox"] {
@@ -48,12 +49,17 @@
 
     &.expiring .expiration { display: inline }
 
+    .conversation-meta {
+        @include flexColumn();
+    }
+
     .row {
         padding: 0 10px;
         line-height: 10px;
         height: 30px;
         line-height: 20px;
         box-sizing: border-box;
+
         &.top {
             padding-top: 10px;
             .location {
@@ -66,14 +72,13 @@
         }
         &.bottom {
             padding-bottom: 10px;
-            padding-left: 30px;
             cursor: pointer;
-            float: left;
-            width: 100%;
         }
         h4 {
-            display: block;
-            line-height: 20px;
+
+            @include flexRow();
+            @include flexAlignCenter();
+
             height: 20px;
             overflow: hidden;
             text-overflow: ellipsis;
@@ -82,11 +87,9 @@
             font-size: 1em;
             cursor: pointer;
             color: #000;
-            .folderConversations-container .fa {
-                display: inline-block;
-                width: 1rem;
-                text-align: center;
-            }
+
+            i { margin-right: 5px }
+
         }
         .meta,
         .pm_labels {
@@ -96,6 +99,7 @@
             width: calc(100% - 9.5rem);
             cursor: pointer;
             margin-right: -1rem;
+            @include flexInline();
         }
         .senders {
             cursor: pointer;
