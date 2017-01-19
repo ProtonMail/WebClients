@@ -89,7 +89,10 @@
             cursor: pointer;
             color: #000;
 
-            .subject-text { padding-bottom: 2px /*ellipsis*/ }
+            .subject-text {
+                padding-bottom: 2px; /*ellipsis*/
+                margin-bottom: -2px;
+            }
 
         }
         .meta,
@@ -196,6 +199,7 @@
         position: absolute;
         height: 100%;
         width: 5px;
+        top:0px;
     }
     &.active {
         background: $active;

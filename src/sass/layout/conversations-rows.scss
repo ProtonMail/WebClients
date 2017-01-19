@@ -91,7 +91,11 @@ body {
                     font-size: 1em;
                     color: #000;
                     max-width: 90%;
-                    .subject-text { padding-bottom: 2px /*ellipsis*/ }
+
+                    .subject-text {
+                        padding-bottom: 2px; /*ellipsis*/
+                        margin-bottom: -2px;
+                    }
                     .fa {
                         display: inline-block;
                         width: 1rem;
