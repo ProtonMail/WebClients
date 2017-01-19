@@ -2,10 +2,13 @@ body.mobileMode {
     .conversation {
         .selection {
             width: 50px;
-            padding-top: 15px;
             height: 60px;
             position: absolute;
             z-index: 99;
+        }
+
+        .conversation-meta {
+            max-width: 100%;
         }
 
         .row {

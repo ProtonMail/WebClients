@@ -51,7 +51,7 @@
     align-items: center;
 }
 
-@mixin flexSelfCenter() {
-    -webkit-align-self: center;
-    align-self: center;
+@mixin flexAlignEnd() {
+    -webkit-align-items: flex-end;
+    align-items: flex-end;
 }

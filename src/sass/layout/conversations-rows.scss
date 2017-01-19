@@ -27,7 +27,7 @@ body {
                 right: 0;
                 top: 0px;
                 width: 0;
-                height: 0;
+                height:x 0;
                 border-style: solid;
                 border-width: 0 2rem 2rem 0;
                 border-color: transparent #ec6446 transparent transparent;
@@ -57,7 +57,7 @@ body {
                 float: left;
                 padding: 0;
                 text-align: center;
-                width: 40px;
+                width: 44px;
                 height:auto; /*safari bounce bug*/
             }
 
@@ -80,22 +80,22 @@ body {
                 .senders-name:last-of-type::after {display: none}
             }
             .subject {
-                width: calc(84% - 19rem);
+                width: calc(84% - 17rem);
                 cursor: pointer;
                 position: relative;
                 h4 {
-                    line-height: 40px;
+                    @include flexRow();
+                    @include flexAlignCenter();
                     height: 40px;
                     margin: 0;
                     font-size: 1em;
                     color: #000;
-                    display: inline-block;
                     max-width: 90%;
-                    overflow: hidden;
-                    text-overflow: ellipsis;
+                    .subject-text { padding-bottom: 2px /*ellipsis*/ }
                     .fa {
                         display: inline-block;
                         width: 1rem;
+                        margin: 0 5px;
                         text-align: center;
                     }
                 }

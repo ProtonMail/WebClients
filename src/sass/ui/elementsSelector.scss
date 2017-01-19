@@ -1,11 +1,28 @@
-.elements-selector-check {
+.elements-selector {
+    @include flexInline();
+    position: relative;
+    height: 35px;
+    margin-right: 10px
+}
+
+.elements-selector-check,
+.elements-selector-trigger-dropdown {
     @include flexInline();
     @include flexFillHeight();
     @include flexAlignCenter();
-    @include flexJustifyCenter();
-
-    width: 30px;
     cursor: pointer;
+}
+
+.elements-selector-check { width: 34px }
+.elements-selector-trigger-dropdown {
+    position: relative;
+    z-index: 1;
+    margin-left: -5px;
+    opacity: .8
+}
+
+.elements-selector-trigger-dropdown:hover {
+    opacity: 1;
 }
 
 .elements-selector-checkbox {
@@ -13,9 +30,8 @@
     cursor: pointer;
 }
 
-.elements-selector-trigger-dropdown-fa-angle-down { padding: 0 6px }
 .element-selector-set-scope.pm_dropdown {
     width: auto;
-    margin-left: 30px /* elements-selector-label width */
+    margin-left: 25px /* elements-selector-label width */
 }
 .elementsSelector-btn-action > span { padding-right: 5px }

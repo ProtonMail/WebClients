@@ -15,6 +15,7 @@
     .ptSelectConversation-container {
         @include flexRow();
         @include flexAlignCenter();
+
         height: 30px;
         height: 100%;
         box-sizing: border-box;
@@ -54,6 +55,7 @@
 
     .conversation-meta {
         @include flexColumn();
+        max-width: calc(100% - 30px);
     }
 
     .row {
@@ -79,16 +81,15 @@
         }
         h4 {
             @include flexRow();
-            @include flexAlignCenter();
+            @include flexAlignEnd();
 
             height: 20px;
-            overflow: hidden;
-            text-overflow: ellipsis;
             float: left;
-            white-space: nowrap;
             font-size: 1em;
             cursor: pointer;
             color: #000;
+
+            .subject-text { padding-bottom: 2px /*ellipsis*/ }
 
         }
         .meta,
@@ -100,6 +101,12 @@
             cursor: pointer;
             margin-right: -1rem;
             @include flexInline();
+
+            .fa-mail-reply,
+            .fa-mail-reply-all,
+            .fa-mail-forward {
+                margin-right: 5px;
+            }
         }
         .senders {
             cursor: pointer;
