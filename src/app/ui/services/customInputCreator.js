@@ -23,6 +23,15 @@ angular.module('proton.ui')
             return (attribute.charAt(0) + attribute.slice(1).replace(/([A-Z])/g, '-$1')).toLowerCase();
         };
 
+        const getLabelInputLink = (attributes = []) => {
+            const customId = attributes.filter((attr) => attr === 'customId')[0];
+            if (customId) {
+                return { for: customId, id: customId };
+            }
+            const id = `customInput${Math.random().toString(32).slice(2, 12)}`;
+            return { for: id, id };
+        };
+
         /**
          * Custom compile function for a directive custom<Input type>
          *     - checkbox
@@ -35,14 +44,17 @@ angular.module('proton.ui')
                 - data-ng-click
                 - name
          * @param  {String} type type of input
+         * @param {Function} link
          * @return {Function} Compile function
          */
-        const checkableCompiler = (type = '') => (el, attr) => {
+        const checkableCompiler = (type = '', linkCallback = angular.noop) => (el, attr) => {
 
             const $input = el[0].querySelector(`input[type="${type}"]`);
 
             // filter attributes for the input
             const inputAttributes = Object.keys(attr).filter((attribute) => /custom[A-Z]/.test(attribute));
+
+            const link = getLabelInputLink(inputAttributes);
 
             inputAttributes.forEach((attribute) => {
                 const key = nameToAttribute(attribute);
@@ -64,6 +76,11 @@ angular.module('proton.ui')
                 el[0].removeAttribute(`data-custom-${key}`);
                 delete attr[attribute];
             });
+
+            $input.id = link.id;
+            el[0].for = link.for;
+
+            return linkCallback;
         };
 
         return { checkableCompiler };
