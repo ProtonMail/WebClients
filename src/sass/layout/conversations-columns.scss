@@ -12,8 +12,11 @@
     &.hasAttachments .conversation-icon-attachment { visibility: visible }
 
 
-    .selection {
+    .ptSelectConversation-container {
+        @include flexRow();
+        @include flexAlignCenter();
         height: 30px;
+        height: 100%;
         box-sizing: border-box;
         padding: 0 0 0 10px;
         width: 30px;
