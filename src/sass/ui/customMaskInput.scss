@@ -3,11 +3,7 @@
     @include flexAlignCenter();
     @include flexJustifyCenter();
     position: relative;
-    width: 100%;
-    height: 100%;
-    min-width: 15px;
-    min-height: 15px;
-    cursor: pointer;
+    padding:2px;
 }
 
 .customMaskInput-container,
@@ -59,5 +55,6 @@ body.mobileMode {
     .customMaskInput-mask {
         width: 30px;
         height: 30px;
+
     }
 }

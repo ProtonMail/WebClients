@@ -33,8 +33,10 @@
             <h4 ng-attr-title="{{ conversation.Subject | unescape }}">
                 <states-conversation></states-conversation>
                 <folders-element conversation="conversation"></folders-element>
-                <span ng-show="conversation.NumMessages > 1">({{ conversation.NumMessages }})</span>
-                <span class="subject-text ellipsis">{{ conversation.Subject  | unescape }}</span>
+                <span class="subject-text ellipsis">
+                    <span class="subject-num-message" ng-show="conversation.NumMessages > 1">({{ conversation.NumMessages }})</span>
+                    {{ conversation.Subject  | unescape }}
+                </span>
             </h4>
             <labels-element element="conversation"></labels-element>
         </div>
