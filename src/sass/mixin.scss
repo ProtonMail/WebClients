@@ -47,3 +47,8 @@
     -webkit-align-items: center;
     align-items: center;
 }
+
+@mixin flexAlignEnd() {
+    -webkit-align-items: flex-end;
+    align-items: flex-end;
+}
