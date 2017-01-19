@@ -231,7 +231,7 @@ angular.module('proton.settings')
     }
 
     function deleteAddress(addressID) {
-        return Address.disable(addressID)
+        return Address.delete(addressID)
         .then(({ data = {} } = {}) => {
             if (data.Code === 1000) {
                 return Promise.resolve();
