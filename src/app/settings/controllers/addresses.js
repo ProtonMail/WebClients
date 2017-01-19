@@ -211,7 +211,7 @@ angular.module('proton.settings')
                 return Promise.resolve();
             }
             if (data.Error) {
-                return Promise.resolve(data.Error);
+                return Promise.reject(data.Error);
             }
             return Promise.reject(gettextCatalog.getString('Error during disable request', null, 'Error'));
         });
@@ -224,7 +224,7 @@ angular.module('proton.settings')
                 return Promise.resolve();
             }
             if (data.Error) {
-                return Promise.resolve(data.Error);
+                return Promise.reject(data.Error);
             }
             return Promise.reject(gettextCatalog.getString('Error during enable request', null, 'Error'));
         });
@@ -237,7 +237,7 @@ angular.module('proton.settings')
                 return Promise.resolve();
             }
             if (data.Error) {
-                return Promise.resolve(data.Error);
+                return Promise.reject(data.Error);
             }
             return Promise.reject(gettextCatalog.getString('Error during deletion', null, 'Error'));
         });
