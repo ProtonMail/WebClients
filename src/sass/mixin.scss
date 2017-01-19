@@ -33,6 +33,11 @@
     flex-grow: 1;
 }
 
+@mixin flexSelfCenter() {
+    -webkit-align-self:center;
+    align-self: center;
+}
+
 @mixin flexJustifyCenter() {
     -webkit-justify-content: center;
     justify-content: center;
