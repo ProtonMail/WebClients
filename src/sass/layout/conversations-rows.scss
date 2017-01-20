@@ -57,8 +57,7 @@ body {
                 float: left;
                 padding: 0;
                 text-align: center;
-                width: 44px;
-                height:auto; /*safari bounce bug*/
+                width: 38px; /*.elements-selector-check + (.pm_toolbar padding-left/2) + .marked */
             }
 
             .fa-star-o {
