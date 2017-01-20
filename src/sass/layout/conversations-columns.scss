@@ -102,7 +102,8 @@
             }
 
             .folderConversations-container {
-                display: inherit;
+                display: block;
+                white-space: nowrap;
                 .fa { margin-right: 2px }
             }
 
@@ -112,7 +113,7 @@
             }
 
             .subject-num-message {
-                margin: 0px 2px;
+                margin-right:5px;
             }
 
         }
