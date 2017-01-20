@@ -774,7 +774,7 @@ angular.module('proton.core')
     api.updateFlagConversation = (event) => {
         const current = _.findWhere(conversationsCached, { ID: event.ID });
 
-        if (current && current.loaded === true) {
+        if (current) {
             updateConversation(event.Conversation);
             return Promise.resolve();
         }
