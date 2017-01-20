@@ -50,8 +50,8 @@
                                                 <span class="margin-left" translate-context="Info" translate>{{ organization.UsedMembers }} of {{ organization.MaxMembers }} used</span>
                                             </td>
                                             <td class="text-right">
-                                                <span>
-                                                    <a ui-sref="secured.dashboard" class="pm_button link" translate-context="Action" translate-comment="link to dashboard" translate>Upgrade</a>
+                                                <span hide-upgrade="member">
+                                                    <a ui-sref="secured.dashboard({ scroll: true })" class="pm_button link" translate-context="Action" translate-comment="link to dashboard" translate>Upgrade</a>
                                                 </span>
                                             </td>
                                         </tr>
@@ -63,8 +63,8 @@
                                                 <span class="margin-left">{{ organization.MaxSpace | humanSize }}</span>
                                             </td>
                                             <td class="text-right">
-                                                <span>
-                                                    <a ui-sref="secured.dashboard" class="pm_button link" translate-context="Action" translate-comment="link to dashboard" translate>Upgrade</a>
+                                                <span hide-upgrade="space">
+                                                    <a ui-sref="secured.dashboard({ scroll: true })" class="pm_button link" translate-context="Action" translate-comment="link to dashboard" translate>Upgrade</a>
                                                 </span>
                                             </td>
                                         </tr>

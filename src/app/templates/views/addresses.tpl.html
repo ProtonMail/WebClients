@@ -6,7 +6,7 @@
             <section class="setting full pm_form">
                 <legend>
                     <span class="pull-right small" ng-show="isAdmin">
-                        {{ organization.UsedAddresses }} / {{ organization.MaxAddresses }} <span translate-comment="how many addresses are in use" translate>addresses used.</span> <a ui-sref="secured.dashboard({scroll: true})" translate-context="Action" translate-comment="link to dashboard page" translate>Upgrade your plan</a>
+                        {{ organization.UsedAddresses }} / {{ organization.MaxAddresses }} <span translate-comment="how many addresses are in use" translate>addresses used.</span> <a ui-sref="secured.dashboard({scroll: true})" hide-upgrade="address" translate-context="Action" translate-comment="link to dashboard page" translate>Upgrade your plan</a>
                     </span>
                     <span translate-context="Title" translate translate-comment="page heading">Addresses</span>
                 </legend>
