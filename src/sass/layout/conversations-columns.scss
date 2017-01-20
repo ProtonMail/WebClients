@@ -18,9 +18,9 @@
         @include flexJustifyCenter();
 
         height: 100%;
-        width: 27px; /*.elements-selector-check + (.pm_toolbar padding-left/2) - (self.padding-left/2) */
+        width: 38px; /* .elements-selector-check + (.pm_toolbar padding-left*2) */
+        min-width: 38px;
         box-sizing: border-box;
-        padding: 0 0 0 10px;
         text-align: center;
         input[type="checkbox"] {
             margin: 0;
@@ -55,12 +55,12 @@
 
     .conversation-meta {
         @include flexColumn();
-        max-width: calc(100% - 30px);
+        max-width: calc(100% - 38px);
     }
 
     .row {
         @include flexRow();
-        padding: 0 10px;
+        padding-right: 10px;
         height: 30px;
         box-sizing: border-box;
 
