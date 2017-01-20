@@ -66,7 +66,6 @@
 
         &.top {
             @include flexAlignEnd();
-            padding-top: 10px;
             padding-bottom: 2px;
             .location {
                 width: 1.25rem;
@@ -77,8 +76,9 @@
             }
         }
         &.bottom {
-            padding-top: 2px;
+            padding-top: 4px;
             padding-bottom: 10px;
+            max-width: calc(100% - 40px); /* long senders */
             cursor: pointer;
         }
 
@@ -220,3 +220,7 @@
         }
     }
 }
+
+div.conversation .row .meta time.time { width: 86px !important; }
+div.conversation .row .meta { width: auto !important;}
+div.conversation .row h4 { width: calc(100% - 122px) !important; }
