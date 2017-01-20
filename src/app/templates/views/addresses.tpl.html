@@ -6,7 +6,7 @@
             <section class="setting full pm_form">
                 <legend>
                     <span class="pull-right small" ng-show="isAdmin">
-                        {{ organization.UsedAddresses }} / {{ organization.MaxAddresses }} <span translate-comment="how many addresses are in use" translate>addresses used.</span> <a ui-sref="secured.dashboard({scroll: true})" translate-context="Action" translate-comment="link to dashboard page" translate>Upgrade your plan</a>
+                        {{ organization.UsedAddresses }} / {{ organization.MaxAddresses }} <span translate-comment="how many addresses are in use" translate>addresses used.</span> <a ui-sref="secured.dashboard({scroll: true})" hide-upgrade="address" translate-context="Action" translate-comment="link to dashboard page" translate>Upgrade your plan</a>
                     </span>
                     <span translate-context="Title" translate translate-comment="page heading">Addresses</span>
                 </legend>
@@ -36,6 +36,7 @@
                                 <div class="col-1-3 text-right">
                                     <button class="pm_button link" ng-click="identity(address)" translate-context="Action" translate>Edit identity</button>
                                     <button class="pm_button link" ng-show="(address.Type === 2 || address.Type === 3) && isAdmin && !isSubUser" ng-click="disableAddress(address)" translate-context="Action" translate>Disable</button>
+                                    <button class="pm_button link" ng-show="(address.Type === 2 || address.Type === 3) && isAdmin && !isSubUser" ng-click="deleteAddress(address)" translate-context="Action" translate>Delete</button>
                                 </div>
                             </div>
                         </li>

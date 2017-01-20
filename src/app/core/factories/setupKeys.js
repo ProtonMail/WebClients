@@ -222,19 +222,21 @@ angular.module('proton.core')
 
             const storeKey = ({ key, pkg, address }) => {
                 key.decrypted = true; // We mark this key as decrypted
-                keyInfo(key);
-                return { address, key, pkg };
+                return keyInfo(key)
+                .then(() => ({ address, key, pkg }));
             };
 
             const skipKey = ({ key, address, index }) => {
                 key.decrypted = false; // This key is not decrypted
-                keyInfo(key);
-                // If the primary (first) key for address does not decrypt, display error.
-                if (index === 0) {
-                    address.disabled = true; // This address cannot be used
-                    notify({ message: 'Primary key for address ' + address.Email + ' cannot be decrypted. You will not be able to read or write any email from this address', classes: 'notification-danger' });
-                }
-                return { address, key, pkg: null };
+                return keyInfo(key)
+                .then(() => {
+                    // If the primary (first) key for address does not decrypt, display error.
+                    if (index === 0) {
+                        address.disabled = true; // This address cannot be used
+                        notify({ message: 'Primary key for address ' + address.Email + ' cannot be decrypted. You will not be able to read or write any email from this address', classes: 'notification-danger' });
+                    }
+                    return { address, key, pkg: null };
+                });
             };
 
             const promises = [];
