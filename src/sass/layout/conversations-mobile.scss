@@ -11,9 +11,13 @@ body.mobileMode {
             height: 100%;
         }
 
-        .conversation-meta {
-            max-width: 100%;
+        .ptSelectConversation-container {
+            margin: 0;
+            width: 50px;
+            text-align: left;
         }
+
+        .conversation-meta { max-width: 100% }
 
         .row {
             padding-left: 50px;
@@ -43,9 +47,5 @@ body.mobileMode {
             }
         }
     }
-    .ptSelectConversation-container {
-        margin: 0;
-        width: 50px;
-        text-align: left;
-    }
+
 }
