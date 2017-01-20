@@ -6,8 +6,9 @@ body.mobileMode {
             @include flexJustifyCenter();
             position: absolute;
             z-index: 99;
+            top:0;
             width: 50px; /* row padding */
-            height: 60px;
+            height: 100%;
         }
 
         .conversation-meta {
