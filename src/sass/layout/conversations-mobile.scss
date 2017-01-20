@@ -4,11 +4,10 @@ body.mobileMode {
             @include flexRow();
             @include flexAlignCenter();
             @include flexJustifyCenter();
-
-            width: 40px;
-            height: 60px;
             position: absolute;
             z-index: 99;
+            width: 50px; /* row padding */
+            height: 60px;
         }
 
         .conversation-meta {
@@ -23,7 +22,7 @@ body.mobileMode {
                 .fa-mail-reply-all,
                 .fa-mail-forward {
                     margin-right: 2px;
-                }                
+                }
             }
             .folderConversations-container {
                 display: inherit;
