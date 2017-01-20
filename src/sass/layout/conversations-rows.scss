@@ -108,7 +108,8 @@ body {
                     }
 
                     .folderConversations-container {
-                        display: inherit;
+                        display: block;
+                        white-space: nowrap;
                         .fa { margin-right: 2px }
                     }
 
