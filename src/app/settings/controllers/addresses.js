@@ -246,9 +246,8 @@ angular.module('proton.settings')
     /**
      * Delete address
      * @param {Object} address
-     * @param {Object} domain
      */
-    $scope.deleteAddress = (address = {}, domain = {}) => {
+    $scope.deleteAddress = (address = {}) => {
         const addressID = address.ID;
         const title = gettextCatalog.getString('Delete address', null, 'Title');
         const message = gettextCatalog.getString('Are you sure you want to delete this address?', null, 'Info');
