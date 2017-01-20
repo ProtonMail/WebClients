@@ -27,7 +27,7 @@ body {
                 right: 0;
                 top: 0px;
                 width: 0;
-                height:x 0;
+                height: 0;
                 border-style: solid;
                 border-width: 0 2rem 2rem 0;
                 border-color: transparent #ec6446 transparent transparent;
@@ -100,12 +100,18 @@ body {
                         padding-bottom: 2px; /*ellipsis*/
                         margin-bottom: -2px;
                     }
-                    .fa {
-                        display: inline-block;
-                        width: 1rem;
-                        margin-right:2px;
-                        text-align: center;
+
+                    .fa-mail-reply,
+                    .fa-mail-reply-all,
+                    .fa-mail-forward {
+                        margin-right: 2px;
                     }
+
+                    .folderConversations-container {
+                        display: inherit;
+                        .fa { margin-right: 2px }
+                    }
+
                 }
                 .location {
                     width: 1.25rem;

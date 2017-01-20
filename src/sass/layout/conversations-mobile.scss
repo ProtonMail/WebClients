@@ -19,11 +19,17 @@ body.mobileMode {
             padding-left: 50px;
             h4 {
                 width: calc(100% - 11rem);
+                .fa-mail-reply,
+                .fa-mail-reply-all,
+                .fa-mail-forward {
+                    margin-right: 2px;
+                }                
             }
             .folderConversations-container {
+                display: inherit;
                 i.fa {
                     width: 1rem;
-                    margin-right: 5px;
+                    margin-right: 2px;
                     text-align: center;
                 }
             }
