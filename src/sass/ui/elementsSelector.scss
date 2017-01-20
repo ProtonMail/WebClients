@@ -2,7 +2,7 @@
     @include flexInline();
     position: relative;
     height: 35px;
-    margin-right: 10px
+    margin-right: 15px
 }
 
 .elements-selector-check,
@@ -13,11 +13,13 @@
     cursor: pointer;
 }
 
-.elements-selector-check { width: 34px }
+.elements-selector-check {
+    width: 30px;
+}
 .elements-selector-trigger-dropdown {
     position: relative;
     z-index: 1;
-    margin-left: -5px;
+    margin-left: -3px;
     opacity: .8
 }
 
@@ -30,8 +32,5 @@
     cursor: pointer;
 }
 
-.element-selector-set-scope.pm_dropdown {
-    width: auto;
-    margin-left: 25px /* elements-selector-label width */
-}
+.element-selector-set-scope.pm_dropdown { width: auto }
 .elementsSelector-btn-action > span { padding-right: 5px }
