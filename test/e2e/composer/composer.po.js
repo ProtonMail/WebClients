@@ -7,6 +7,7 @@ module.exports = () => {
         ToList: '.composer-field-ToList',
         CCList: '.composer-field-CCList',
         BCCList: '.composer-field-CCList',
+        SubjectTitle: 'span.subject',
         From: '.composer-field-From',
         draft: '.composer-btn-save',
         close: '.composer-action-close',
@@ -176,5 +177,13 @@ module.exports = () => {
         };
     };
 
-    return { open, isOpened, compose, checkSignature, config };
+    const getSubject = () => {
+        return browser.executeScript(`
+            return $(document.body.querySelector('.composer'))
+                .find('${SELECTOR_MAP.SubjectTitle}')
+                .text();
+        `);
+    };
+
+    return { open, isOpened, compose, checkSignature, config, close, getSubject };
 };
