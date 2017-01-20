@@ -60,14 +60,15 @@
     }
 
     .row {
+        @include flexRow();
         padding: 0 10px;
-        line-height: 10px;
         height: 30px;
-        line-height: 20px;
         box-sizing: border-box;
 
         &.top {
+            @include flexAlignEnd();
             padding-top: 10px;
+            padding-bottom: 2px;
             .location {
                 width: 1.25rem;
                 float: left;
@@ -77,18 +78,34 @@
             }
         }
         &.bottom {
+            padding-top: 2px;
             padding-bottom: 10px;
             cursor: pointer;
         }
-        h4 {
+
+        h4,
+        .meta {
             @include flexRow();
             @include flexAlignEnd();
-
-            height: 20px;
             float: left;
+            height: 20px;
+        }
+
+        h4 {
             font-size: 1em;
             cursor: pointer;
             color: #000;
+
+            .fa-mail-reply,
+            .fa-mail-reply-all,
+            .fa-mail-forward {
+                margin-right: 2px;
+            }
+
+            .folderConversations-container {
+                display: inherit;
+                .fa { margin-right: 2px }
+            }
 
             .subject-text {
                 padding-bottom: 2px; /*ellipsis*/
@@ -96,25 +113,12 @@
             }
 
         }
+
         .meta,
         .pm_labels {
             width: 8.5rem;
         }
-        h4 {
-            width: calc(100% - 9.5rem);
-            cursor: pointer;
-            margin-right: -1rem;
-            @include flexInline();
 
-            .fa-mail-reply,
-            .fa-mail-reply-all,
-            .fa-mail-forward {
-                margin-right: 2px;
-            }
-        }
-        .folderConversations-container .fa{
-            margin-right: 5px;
-        }
         .senders {
             cursor: pointer;
             .senders-name::after {content: ', '}
@@ -126,8 +130,9 @@
             .senders-name:last-of-type::after {display: none}
         }
         .meta {
-            display: block;
-            float: right;
+            @include flexJustifyEnd();
+            @include flexFillWidth();
+
             .fa-star,
             .fa-star-o,
             .fa-paperclip {
