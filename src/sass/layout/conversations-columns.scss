@@ -5,12 +5,8 @@
 
     position: relative;
     height: 60px;
-    box-shadow: inset 0 -1px 0 $border;
+    border-bottom:1px solid $border;
     overflow: hidden;
-
-    .conversation-icon-attachment { visibility: hidden }
-    &.hasAttachments .conversation-icon-attachment { visibility: visible }
-
 
     .ptSelectConversation-container {
         @include flexRow();
@@ -26,32 +22,6 @@
             margin: 0;
         }
     }
-    .expiration {
-        position: absolute;
-        z-index: 5;
-        right: 0;
-        top: 0px;
-        width: 0;
-        height: 0;
-        border-style: solid;
-        border-width: 0 2rem 2rem 0;
-        border-color: transparent #ec6446 transparent transparent;
-        color: #fff;
-        overflow: visible;
-        display: none;
-        .fa {
-            position: absolute;
-            right: -2rem;
-            top: 0;
-            display: block;
-            text-align: center;
-            line-height: 1.25rem;
-            height: 1.25rem;
-            width: 1.25rem;
-        }
-    }
-
-    &.expiring .expiration { display: inline }
 
     .conversation-meta {
         @include flexColumn();
@@ -115,24 +85,11 @@
             .subject-num-message {
                 margin-right:5px;
             }
-
         }
 
         .meta,
-        .pm_labels {
-            width: 8.5rem;
-        }
+        .pm_labels { width: 8.5rem; }
 
-        .senders {
-            cursor: pointer;
-            .senders-name::after {content: ', '}
-            .senders-name:last-of-type::after {display: none}
-        }
-        .senders.full {
-            width: 100%;
-            .senders-name::after {content: ', '}
-            .senders-name:last-of-type::after {display: none}
-        }
         .meta {
             @include flexJustifyEnd();
             @include flexFillWidth();
@@ -143,14 +100,11 @@
                 text-decoration: none;
                 width: 1rem;
             }
-            .fa-star-o {
-                color: $gray-light;
-                cursor: pointer;
-            }
-            .fa-star {
-                color: $yellow;
-                cursor: pointer;
-            }
+
+            .fa-star, .fa-star-o { cursor: pointer }
+            .fa-star-o { color: $gray-light }
+            .fa-star { color: $yellow }
+
             time.time {
                 float: right;
                 text-align: right;
@@ -161,6 +115,7 @@
                 overflow: hidden;
             }
         }
+
         .senders {
             float: left;
             white-space: nowrap;
@@ -170,8 +125,17 @@
             font-size: .8em;
             position: relative;
             top: 1px;
+            cursor: pointer;
 
+            .senders-name::after {content: ', '}
+            .senders-name:last-of-type::after {display: none}
+            &.full {
+                width: 100%;
+                .senders-name::after {content: ', '}
+                .senders-name:last-of-type::after {display: none}
+            }
         }
+
         .pm_labels {
             position: absolute;
             right: 10px;
@@ -189,6 +153,37 @@
             }
         }
     }
+
+    .conversation-icon-attachment { visibility: hidden }
+    &.hasAttachments .conversation-icon-attachment { visibility: visible }
+
+    .expiration {
+        position: absolute;
+        z-index: 5;
+        right: 0;
+        top: 0px;
+        width: 0;
+        height: 0;
+        border-style: solid;
+        border-width: 0 2rem 2rem 0;
+        border-color: transparent #ec6446 transparent transparent;
+        color: #fff;
+        overflow: visible;
+        display: none;
+        .fa {
+            position: absolute;
+            right: -2rem;
+            top: 0;
+            display: block;
+            text-align: center;
+            line-height: 1.25rem;
+            height: 1.25rem;
+            width: 1.25rem;
+        }
+    }
+
+    &.expiring .expiration { display: inline }
+
     &.read {
         background: $read;
         h4 {
@@ -214,9 +209,8 @@
     &.active {
         background: $active;
         color: $white;
-        h4 {
-            color: $white;
-        }
+        h4 { color: $white }
+        .customMaskInput-mask { border-color: rgba(0,0,0,0.5) }
         .pm_labels {
             label {
                 background: $active;
@@ -226,6 +220,7 @@
     }
 }
 
+/* override */
 div.conversation .row .meta time.time { width: 86px !important; }
 div.conversation .row .meta { width: auto !important;}
 div.conversation .row h4 { width: calc(100% - 122px) !important; }
