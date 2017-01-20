@@ -83,6 +83,7 @@ body {
                 width: calc(84% - 17rem);
                 cursor: pointer;
                 position: relative;
+
                 h4 {
                     @include flexRow();
                     @include flexAlignCenter();
@@ -93,7 +94,7 @@ body {
                     max-width: 90%;
 
                     .subject-text {
-                        padding-bottom: 2px; /*ellipsis*/
+                        padding:0px 2px 2px 2px; /*ellipsis*/
                         margin-bottom: -2px;
                     }
 
