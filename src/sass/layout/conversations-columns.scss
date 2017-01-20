@@ -3,10 +3,10 @@
     @include flexRow();
     @include flexAlignCenter();
 
+    position: relative;
     height: 60px;
     box-shadow: inset 0 -1px 0 $border;
     overflow: hidden;
-    position: relative;
 
     .conversation-icon-attachment { visibility: hidden }
     &.hasAttachments .conversation-icon-attachment { visibility: visible }
@@ -17,11 +17,10 @@
         @include flexAlignCenter();
         @include flexJustifyCenter();
 
-        height: 30px;
         height: 100%;
+        width: 30px;
         box-sizing: border-box;
         padding: 0 0 0 10px;
-        width: 30px;
         text-align: center;
         input[type="checkbox"] {
             margin: 0;
@@ -217,32 +216,6 @@
             label {
                 background: $active;
                 box-shadow: .25rem 0 0 .25rem $active;
-            }
-        }
-    }
-    &.selected {
-
-    }
-    &.hasLabels {
-        .row .senders {
-            width: 90%;
-        }
-    }
-    &.hasAttachments {
-        .row {
-            h4 {
-                width: calc(100% - 10rem);
-                cursor: pointer;
-            }
-        }
-    }
-    &.expiring {
-        .row {
-            .meta {
-                width: 9rem;
-            }
-            .subject {
-                width: calc(100% - 10.5rem);
             }
         }
     }
