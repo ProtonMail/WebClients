@@ -10,7 +10,6 @@
     @include flexInline();
     @include flexFillHeight();
     @include flexAlignCenter();
-    cursor: pointer;
 }
 
 .elements-selector-check {
@@ -23,10 +22,6 @@
     opacity: .8
 }
 
-.elements-selector-trigger-dropdown:hover {
-    opacity: 1;
-}
-
 .elements-selector-label {
     width:100%;
     height:100%;
@@ -34,3 +29,16 @@
 
 .element-selector-set-scope.pm_dropdown { width: auto }
 .elementsSelector-btn-action > span { padding-right: 5px }
+
+
+/** States **/
+
+.elements-selector:not(.disabled) {
+    .elements-selector-check,
+    .elements-selector-trigger-dropdown {
+        cursor: pointer;
+    }
+}
+
+.elements-selector.disabled { pointer-events: none }
+.elements-selector-trigger-dropdown:hover { opacity: 1 }
