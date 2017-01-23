@@ -309,11 +309,11 @@ angular.module('proton.settings')
 
     $scope.displayDeletion = () => {
         const organization = organizationModel.get();
-        const role1 = authentication.user.Role === CONSTANTS.PAID_MEMBER_ROLE;
-        const role2 = authentication.user.Role === CONSTANTS.PAID_ADMIN_ROLE;
+        const isMember = authentication.user.Role === CONSTANTS.PAID_MEMBER_ROLE;
+        const isAdmin = authentication.user.Role === CONSTANTS.PAID_ADMIN_ROLE;
         const usedMembers = organization.UsedMembers > 1;
 
-        return !role1 && !role2 && !usedMembers;
+        return !isMember && !isAdmin && !usedMembers;
     };
 
     $scope.deleteAccount = () => {
