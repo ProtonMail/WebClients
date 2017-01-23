@@ -403,7 +403,7 @@ angular.module('proton.conversation')
                 }
             }
 
-            scope.toggleOption = function (option) {
+            scope.toggleOption = (option) => {
                 scope[option] = !scope[option];
                 refreshConversation();
             };
@@ -411,7 +411,7 @@ angular.module('proton.conversation')
             /**
              * @return {Boolean}
              */
-            scope.showNotifier = function (folder) {
+            scope.showNotifier = (folder) => {
                 const filtered = _.filter(messagesCached, (message) => _.contains(message.LabelIDs, CONSTANTS.MAILBOX_IDENTIFIERS[folder]));
                 return filtered.length < messagesCached.length && filtered.length > 0;
             };
@@ -419,7 +419,7 @@ angular.module('proton.conversation')
             /**
              * Return messages data for dropdown labels
              */
-            scope.getMessages = function () {
+            scope.getMessages = () => {
                 return scope.messages;
             };
 
@@ -427,7 +427,7 @@ angular.module('proton.conversation')
              * Mark current conversation as read
              * @param {Boolean} back
              */
-            scope.read = function () {
+            scope.read = () => {
                 const ids = [scope.conversation.ID];
 
                 actionConversation.read(ids);
@@ -436,7 +436,7 @@ angular.module('proton.conversation')
             /**
              * Mark current conversation as unread
              */
-            scope.unread = function () {
+            scope.unread = () => {
                 actionConversation.unread([scope.conversation.ID]);
                 back();
             };
@@ -444,14 +444,14 @@ angular.module('proton.conversation')
             /**
              * Delete current conversation
              */
-            scope.delete = function () {
+            scope.delete = () => {
                 actionConversation.remove([scope.conversation.ID]);
             };
 
             /**
              * Move current conversation to a specific location
              */
-            scope.move = function (mailbox) {
+            scope.move = (mailbox) => {
                 actionConversation.move([scope.conversation.ID], mailbox);
             };
 
@@ -459,14 +459,14 @@ angular.module('proton.conversation')
              * Apply labels for the current conversation
              * @return {Promise}
              */
-            scope.saveLabels = function (labels, alsoArchive) {
+            scope.saveLabels = (labels, alsoArchive) => {
                 actionConversation.label([scope.conversation.ID], labels, alsoArchive);
             };
 
             /**
              * Toggle star status for current conversation
              */
-            scope.toggleStar = function () {
+            scope.toggleStar = () => {
                 if (scope.starred() === true) {
                     scope.unstar();
                 } else {
@@ -477,14 +477,14 @@ angular.module('proton.conversation')
             /**
              * Star the current conversation
              */
-            scope.star = function () {
+            scope.star = () => {
                 actionConversation.star(scope.conversation.ID);
             };
 
             /**
              * Unstar the current conversation
              */
-            scope.unstar = function () {
+            scope.unstar = () => {
                 actionConversation.unstar(scope.conversation.ID);
             };
 
@@ -492,7 +492,7 @@ angular.module('proton.conversation')
              * Return status of the star conversation
              * @return {Boolean}
              */
-            scope.starred = function () {
+            scope.starred = () => {
                 return scope.conversation.LabelIDs.indexOf(CONSTANTS.MAILBOX_IDENTIFIERS.starred) !== -1;
             };
 
