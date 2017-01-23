@@ -794,14 +794,13 @@ angular.module('proton.elements')
      * @param {Object} element - Conversation or Message
      */
     $scope.click = ($event, element) => {
-        // Prevent click onto the selecte checkbox
-        if ($event.target && /ptSelectConversation/.test($event.target.className)) {
+        // Prevent click onto the select checkbox
+        if ($event.target && /ptSelectConversation|customMaskInput/.test($event.target.className)) {
             return false;
         }
 
         openElement(element);
     };
-
     // Call initialization
     initialization();
 });

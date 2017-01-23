@@ -1,20 +1,44 @@
-.elements-selector-label {
+.elements-selector {
+    @include flexInline();
+    position: relative;
+    height: 35px;
+    margin-right: 15px
+}
+
+.elements-selector-check,
+.elements-selector-trigger-dropdown {
     @include flexInline();
     @include flexFillHeight();
     @include flexAlignCenter();
-    @include flexJustifyCenter();
+}
 
+.elements-selector-check {
     width: 30px;
-    cursor: pointer;
 }
-.elements-selector-checkbox {
-    margin:0;
-    cursor: pointer;
+.elements-selector-trigger-dropdown {
+    position: relative;
+    z-index: 1;
+    margin-left: -3px;
+    opacity: .8
 }
 
-.elements-selector-trigger-dropdown-fa-angle-down { padding: 0 6px }
-.element-selector-set-scope.pm_dropdown {
-    width: auto;
-    margin-left: 30px /* elements-selector-label width */
+.elements-selector-label {
+    width:100%;
+    height:100%;
 }
+
+.element-selector-set-scope.pm_dropdown { width: auto }
 .elementsSelector-btn-action > span { padding-right: 5px }
+
+
+/** States **/
+
+.elements-selector:not(.disabled) {
+    .elements-selector-check,
+    .elements-selector-trigger-dropdown {
+        cursor: pointer;
+    }
+}
+
+.elements-selector.disabled { pointer-events: none }
+.elements-selector-trigger-dropdown:hover { opacity: 1 }

@@ -1,5 +1,6 @@
 <div class="selection ptSelectConversation-container">
-  <input class="ptSelectConversation-input mousetrap" type="checkbox" data-index="{{ $index }}" ng-checked="conversations[$index].Selected">
-  <span class="fa fa-square-o ptSelectConversation-icon"></span>
-  <span class="fa fa-check-square ptSelectConversation-icon"></span>
+    <custom-checkbox
+        data-custom-class="ptSelectConversation-input"
+        data-custom-ng-checked="conversations[$index].Selected"
+        data-custom-index="{{ $index }}"></custom-checkbox>
 </div>
