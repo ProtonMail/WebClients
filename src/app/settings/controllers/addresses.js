@@ -301,7 +301,10 @@ angular.module('proton.settings')
                 confirm() {
                     const promise = disableAddress(addressID)
                     .then(() => eventManager.call())
-                    .then(() => notify({ message: gettextCatalog.getString('Address disabled', null, 'Info'), classes: 'notification-success' }));
+                    .then(() => {
+                        notify({ message: gettextCatalog.getString('Address disabled', null, 'Info'), classes: 'notification-success' });
+                        confirmModal.deactivate();
+                    });
 
                     networkActivityTracker.track(promise);
                 },
