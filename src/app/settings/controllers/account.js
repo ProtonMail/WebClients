@@ -237,6 +237,7 @@ angular.module('proton.settings')
         $scope.hotkeys = authentication.user.Hotkeys;
         $scope.signature = tools.replaceLineBreaks(authentication.user.Signature);
         $scope.passwordMode = authentication.user.PasswordMode;
+        $scope.isMember = authentication.user.Role === CONSTANTS.PAID_MEMBER_ROLE;
     }
 
     function changePMSignature(event, status) {
@@ -317,15 +318,6 @@ angular.module('proton.settings')
                 }
             })
         );
-    };
-
-    $scope.displayDeletion = () => {
-        const organization = organizationModel.get();
-        const isMember = authentication.user.Role === CONSTANTS.PAID_MEMBER_ROLE;
-        const isAdmin = authentication.user.Role === CONSTANTS.PAID_ADMIN_ROLE;
-        const usedMembers = organization.UsedMembers > 1;
-
-        return !isMember && !isAdmin && !usedMembers;
     };
 
     $scope.deleteAccount = () => {
