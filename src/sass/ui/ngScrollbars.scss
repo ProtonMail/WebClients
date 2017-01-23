@@ -7,7 +7,12 @@ div.mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar {
     width: 7px;
 }
 
-div.mCSB_scrollTools .mCSB_draggerRail { background: $scrollbar-primary }
+div.mCSB_scrollTools .mCSB_draggerRail {
+    background: rgba(0,0,0, 0.3);
+    width: 9px;
+}
 div.mCSB_scrollTools .mCSB_dragger:hover .mCSB_dragger_bar,
 div.mCSB_scrollTools .mCSB_dragger:active .mCSB_dragger_bar,
-div.mCSB_scrollTools .mCSB_dragger.mCSB_dragger_onDrag .mCSB_dragger_bar   { background: $scrollbar-primary }
+div.mCSB_scrollTools .mCSB_dragger.mCSB_dragger_onDrag .mCSB_dragger_bar {
+    background: $scrollbar-primary
+}
