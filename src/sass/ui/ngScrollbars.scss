@@ -3,8 +3,8 @@ div.mCSB_scrollTools a+.mCSB_draggerContainer { margin: 0 -5px 5px 0 }
 
 div.mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar {
     background: $scollbar-secondary;
-    border:1px solid $scrollbar-primary;
-    width: 7px;
+    border: none;
+    width: 9px;
 }
 
 div.mCSB_scrollTools .mCSB_draggerRail {
@@ -14,5 +14,5 @@ div.mCSB_scrollTools .mCSB_draggerRail {
 div.mCSB_scrollTools .mCSB_dragger:hover .mCSB_dragger_bar,
 div.mCSB_scrollTools .mCSB_dragger:active .mCSB_dragger_bar,
 div.mCSB_scrollTools .mCSB_dragger.mCSB_dragger_onDrag .mCSB_dragger_bar {
-    background: $scrollbar-primary
+    background: $scrollbar-primary;
 }
