@@ -356,6 +356,14 @@ angular.module('proton.conversation')
                     return back();
                 }
 
+                if ($stateParams.filter === 'unread' && !conversation.NumUnread) {
+                    return back();
+                }
+
+                if ($stateParams.filter === 'read' && conversation.NumUnread) {
+                    return back();
+                }
+
                 if (conversation.LabelIDs.indexOf(loc) !== -1 || $state.includes('secured.search.**')) {
                     _.extend(scope.conversation, conversation);
                 } else {
