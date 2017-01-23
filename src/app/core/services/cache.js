@@ -771,10 +771,10 @@ angular.module('proton.core')
     /**
      * Update a conversation
      */
-    api.updateFlagConversation = (event) => {
+    api.updateFlagConversation = (event = {}, fromBackend = false) => {
         const current = _.findWhere(conversationsCached, { ID: event.ID });
 
-        if (current && current.loaded === true) {
+        if (current && !fromBackend) {
             updateConversation(event.Conversation);
             return Promise.resolve();
         }
@@ -882,7 +882,7 @@ angular.module('proton.core')
                         promises.push(api.updateDraftConversation(event));
                         break;
                     case UPDATE_FLAGS:
-                        promises.push(api.updateFlagConversation(event));
+                        promises.push(api.updateFlagConversation(event, fromBackend));
                         break;
                     default:
                         break;
