@@ -12,7 +12,7 @@ angular.module('proton.conversation')
                 eventManager.call();
             }
 
-            return rep || $q.reject(rep);
+            return $q.reject(rep);
         }
     };
 });
