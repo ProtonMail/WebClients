@@ -164,14 +164,6 @@ angular.module('proton.message')
             };
 
             /**
-             * Check if the sender is the current user
-             * @return {Boolean}
-             */
-            scope.senderIsMe = () => {
-                return _.findIndex(authentication.user.Addresses, { Email: scope.message.Sender.Address }) !== -1;
-            };
-
-            /**
              * Display PGP
              */
             scope.viewPgp = () => {
