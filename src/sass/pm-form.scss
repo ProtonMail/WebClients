@@ -306,11 +306,11 @@
         height: 35px;
         @include flexRow();
         @include flexAlignCenter();
-
+        > label { width: auto /*custom inputs*/ }
         > :not(:only-child) {
             /* label with childs */
             @include flexSelfCenter();
-            margin-right:.5rem;
+            margin-right:.3rem;
         }
 
         > .label-fillWidth { @include flexFillWidth() }

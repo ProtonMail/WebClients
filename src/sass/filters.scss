@@ -32,20 +32,8 @@
 			}
 
 			label {
-				display: flex;
-				/*
-				Align the baselines of the flex items
-				necessary for the radio inputs
-				*/
-				align-items: baseline;
 
-				:first-child{
-					margin-right: 0.5rem;
-				}
-
-				i{
-					margin: 0.1rem 0.5rem 0.1rem 0;
-				}
+				i { margin: 0.1rem 0.5rem 0.1rem 0 }
 
 				span{
 					white-space: nowrap;
