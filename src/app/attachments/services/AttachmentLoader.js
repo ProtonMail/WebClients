@@ -161,9 +161,20 @@ angular.module('proton.attachments')
                 }
 
                 // Bad blob support, make a data URI, don't click it
+                if (window.safari) {
+                    var popup = window.open();
+                }
+
                 const reader = new FileReader();
 
                 reader.onloadend = () => {
+                    if (popup) {
+                        try {
+                            popup.location.href = reader.result;
+                            return;
+                        } catch (e) {}
+                    }
+
                     attachment.el.href = reader.result;
                 };
 
