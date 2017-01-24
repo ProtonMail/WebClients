@@ -90,13 +90,13 @@
                     <p class="bold" ng-show="ctrl.displaySeparator()">If <span class="pm_select inline"><select ng-model="ctrl.filter.Simple.Operator" ng-options="operator.label for operator in ctrl.operators"></select><i class="fa fa-angle-down"></i></span> of the conditions above apply, do the following actions.</p>
                     <legend translate-context="Title" translate translate-context="Title">Actions</legend>
                     <label>
-                        <custom-checkbox custom-ng-model="ctrl.hasLabels" custom-id="labels" />
+                        <custom-checkbox data-custom-ng-model="ctrl.hasLabels"></custom-checkbox>
                         <span>Apply Labels</span>
                     </label>
                     <div class="alert pm_grid labelsGrid" ng-show="ctrl.hasLabels">
                         <div class="col-1-4 pm-flex-content-vertical-center" ng-repeat="label in ctrl.filter.Simple.Actions.Labels track by label.ID | orderBy: 'Order'">
                             <label>
-                                <custom-checkbox custom-ng-model="label.Selected" />
+                                <custom-checkbox data-custom-ng-model="label.Selected"></custom-checkbox>
                                 <i class="fa fa-tag" ng-style="{color: label.Color}"></i>
                                 <span>{{ label.Name }}</span>
                             </label>
@@ -106,49 +106,49 @@
                         </div>
                     </div>
                     <label>
-                        <custom-checkbox custom-ng-model="ctrl.hasMove" />
+                        <custom-checkbox data-custom-ng-model="ctrl.hasMove"></custom-checkbox>
                         <span>Move To</span>
                     </label>
                     <div class="alert pm_grid" ng-show="ctrl.hasMove">
                         <div class="col-1-4">
                             <label>
-                                <custom-radio custom-ng-model="ctrl.filter.Simple.Actions.Move" custom-ng-value="'6'" />
+                                <custom-radio data-custom-ng-model="ctrl.filter.Simple.Actions.Move" data-custom-ng-value="'6'"></custom-radio>
                                 <span translate translate-context="Label">Archive</span>
                             </label>
                         </div>
                         <div class="col-1-4">
                             <label>
-                                <custom-radio custom-ng-model="ctrl.filter.Simple.Actions.Move" custom-ng-value="'4'" />
+                                <custom-radio data-custom-ng-model="ctrl.filter.Simple.Actions.Move" data-custom-ng-value="'4'"></custom-radio>
                                 <span translate translate-context="Label">Spam</span>
                             </label>
                         </div>
                         <div class="col-1-4">
                             <label>
-                                <custom-radio custom-ng-model="ctrl.filter.Simple.Actions.Move" custom-ng-value="'3'" />
+                                <custom-radio data-custom-ng-model="ctrl.filter.Simple.Actions.Move" data-custom-ng-value="'3'"></custom-radio>
                                 <span translate translate-context="Label">Trash</span>
                             </label>
                         </div>
                         <div class="col-1-4">
                             <label>
-                                <custom-radio custom-ng-model="ctrl.filter.Simple.Actions.Move" custom-ng-value="'0'" />
+                                <custom-radio data-custom-ng-model="ctrl.filter.Simple.Actions.Move" data-custom-ng-value="'0'"></custom-radio>
                                 <span translate translate-context="Label">Inbox</span>
                             </label>
                         </div>
                     </div>
                     <label>
-                        <custom-checkbox custom-ng-model="ctrl.hasMark" />
+                        <custom-checkbox data-custom-ng-model="ctrl.hasMark"></custom-checkbox>
                         <span>Mark As</span>
                     </label>
                     <div class="alert pm_grid" ng-show="ctrl.hasMark">
                         <div class="col-1-4">
                             <label>
-                                <custom-checkbox custom-ng-model="ctrl.filter.Simple.Actions.Mark.Read" />
+                                <custom-checkbox data-custom-ng-model="ctrl.filter.Simple.Actions.Mark.Read"></custom-checkbox>
                                 <span translate translate-context="Label">Read</span>
                             </label>
                         </div>
                         <div class="col-1-4">
                             <label>
-                                <custom-checkbox custom-ng-model="ctrl.filter.Simple.Actions.Mark.Starred" />
+                                <custom-checkbox data-custom-ng-model="ctrl.filter.Simple.Actions.Mark.Starred"></custom-checkbox>
                                 <span translate translate-context="Label">Starred</span>
                             </label>
                         </div>
