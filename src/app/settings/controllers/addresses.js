@@ -204,46 +204,68 @@ angular.module('proton.settings')
         return email[1];
     };
 
+    function disableAddress(addressID) {
+        return Address.disable(addressID)
+        .then(({ data = {} } = {}) => {
+            if (data.Code === 1000) {
+                return Promise.resolve();
+            }
+            if (data.Error) {
+                return Promise.reject(data.Error);
+            }
+            return Promise.reject(gettextCatalog.getString('Error during disable request', null, 'Error'));
+        });
+    }
+
+    function enableAddress(addressID) {
+        return Address.enable(addressID)
+        .then(({ data = {} } = {}) => {
+            if (data.Code === 1000) {
+                return Promise.resolve();
+            }
+            if (data.Error) {
+                return Promise.reject(data.Error);
+            }
+            return Promise.reject(gettextCatalog.getString('Error during enable request', null, 'Error'));
+        });
+    }
+
+    function deleteAddress(addressID) {
+        return Address.delete(addressID)
+        .then(({ data = {} } = {}) => {
+            if (data.Code === 1000) {
+                return Promise.resolve();
+            }
+            if (data.Error) {
+                return Promise.reject(data.Error);
+            }
+            return Promise.reject(gettextCatalog.getString('Error during deletion', null, 'Error'));
+        });
+    }
+
     /**
      * Delete address
      * @param {Object} address
-     * @param {Object} domain
      */
-    $scope.deleteAddress = (address = {}, domain = {}) => {
+    $scope.deleteAddress = (address = {}) => {
+        const addressID = address.ID;
+        const title = gettextCatalog.getString('Delete address', null, 'Title');
+        const message = gettextCatalog.getString('Are you sure you want to delete this address?', null, 'Info');
 
         confirmModal.activate({
             params: {
-                title: gettextCatalog.getString('Delete address', null, 'Title'),
-                message: gettextCatalog.getString('Are you sure you want to delete this address?', null, 'Info'),
+                title,
+                message,
                 confirm() {
-                    networkActivityTracker.track(Address.delete(address.ID).then((result) => {
-                        if (angular.isDefined(result.data) && result.data.Code === 1000) {
-                            notify({ message: gettextCatalog.getString('Address deleted', null, 'Info'), classes: 'notification-success' });
+                    const promise = disableAddress(addressID)
+                    .then(() => deleteAddress(addressID))
+                    .then(() => eventManager.call())
+                    .then(() => {
+                        notify({ message: gettextCatalog.getString('Address deleted', null, 'Info'), classes: 'notification-success' });
+                        confirmModal.deactivate();
+                    });
 
-                            if (domain.Addresses) {
-                                const index = domain.Addresses.indexOf(address);
-                                if (index !== -1) {
-                                    domain.Addresses.splice(index, 1); // Remove address in domains UI
-                                }
-                            }
-
-                            if ($scope.disabledAddresses) {
-                                const index = $scope.disabledAddresses.indexOf(address);
-                                if (index !== -1) {
-                                    $scope.disabledAddresses.splice(index, 1); // Remove address in addresses UI
-                                }
-                            }
-
-                            eventManager.call(); // Call event log manager
-                            confirmModal.deactivate();
-                        } else if (angular.isDefined(result.data) && result.data.Error) {
-                            notify({ message: result.data.Error, classes: 'notification-danger' });
-                        } else {
-                            notify({ message: gettextCatalog.getString('Error during deletion', null, 'Error'), classes: 'notification-danger' });
-                        }
-                    }, () => {
-                        notify({ message: gettextCatalog.getString('Error during deletion', null, 'Error'), classes: 'notification-danger' });
-                    }));
+                    networkActivityTracker.track(promise);
                 },
                 cancel() {
                     confirmModal.deactivate();
@@ -256,44 +278,35 @@ angular.module('proton.settings')
      * Enable an address
      */
     $scope.enableAddress = (address) => {
-        networkActivityTracker.track(Address.enable(address.ID).then((result) => {
-            if (angular.isDefined(result.data) && result.data.Code === 1000) {
-                eventManager.call();
-                address.Status = 1;
-                notify({ message: gettextCatalog.getString('Address enabled', null, 'Info'), classes: 'notification-success' });
-            } else if (angular.isDefined(result.data) && result.data.Error) {
-                notify({ message: result.data.Error, classes: 'notification-danger' });
-            } else {
-                notify({ message: gettextCatalog.getString('Error during enable request', null, 'Error'), classes: 'notification-danger' });
-            }
-        }, () => {
-            notify({ message: gettextCatalog.getString('Error during enable request', null, 'Error'), classes: 'notification-danger' });
-        }));
+        const addressID = address.ID;
+        const promise = enableAddress(addressID)
+        .then(() => eventManager.call())
+        .then(() => notify({ message: gettextCatalog.getString('Address enabled', null, 'Info'), classes: 'notification-success' }));
+
+        networkActivityTracker.track(promise);
     };
 
     /**
      * Open a modal to disable an address
      */
     $scope.disableAddress = (address) => {
+        const addressID = address.ID;
+        const title = gettextCatalog.getString('Disable address', null, 'Title');
+        const message = gettextCatalog.getString('Are you sure you want to disable this address?', null, 'Info');
+
         confirmModal.activate({
             params: {
-                title: gettextCatalog.getString('Disable address', null, 'Title'),
-                message: gettextCatalog.getString('Are you sure you want to disable this address?', null, 'Info'),
+                title,
+                message,
                 confirm() {
-                    networkActivityTracker.track(Address.disable(address.ID).then((result) => {
-                        if (angular.isDefined(result.data) && result.data.Code === 1000) {
-                            eventManager.call();
-                            address.Status = 0;
-                            notify({ message: gettextCatalog.getString('Address disabled', null, 'Info'), classes: 'notification-success' });
-                            confirmModal.deactivate();
-                        } else if (angular.isDefined(result.data) && result.data.Error) {
-                            notify({ message: result.data.Error, classes: 'notification-danger' });
-                        } else {
-                            notify({ message: gettextCatalog.getString('Error during disable request', null, 'Error'), classes: 'notification-danger' });
-                        }
-                    }, () => {
-                        notify({ message: gettextCatalog.getString('Error during disable request', null, 'Error'), classes: 'notification-danger' });
-                    }));
+                    const promise = disableAddress(addressID)
+                    .then(() => eventManager.call())
+                    .then(() => {
+                        notify({ message: gettextCatalog.getString('Address disabled', null, 'Info'), classes: 'notification-success' });
+                        confirmModal.deactivate();
+                    });
+
+                    networkActivityTracker.track(promise);
                 },
                 cancel() {
                     confirmModal.deactivate();

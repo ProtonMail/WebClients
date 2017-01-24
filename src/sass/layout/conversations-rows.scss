@@ -5,20 +5,110 @@ body {
             height: 40px;
             line-height: 40px;
             padding: 0;
-            box-shadow: inset 0 -1px 0 $border;
+            border-bottom:1px solid $border;
 
-            & > * {
-                display: inline-block;
-                height: 40px;
-                line-height: 40px;
+            .ptSelectConversation-container {
+                @include flexRow();
+                @include flexAlignCenter();
+                @include flexJustifyCenter();
 
-                // debuging:
-                // box-shadow: inset 0 0 1px red;
+                position: relative;
+                float: left;
+                padding: 0;
+                text-align: center;
+                width: 38px; /*.elements-selector-check + (.pm_toolbar padding-left/2) + .marked */
+            }
 
-                white-space: nowrap;
-                overflow: hidden;
-                text-overflow: ellipsis;
+            .fa-star, .fa-star-o {
+                text-decoration: none;
+                width: 1rem;
+                cursor: pointer;
+            }
+            .fa-star-o { color: $gray-light }
+            .fa-star { color: $yellow }
+
+            .senders {
+                width: 16%;
+                cursor: pointer;
+                .senders-name::after {content: ', '}
+                .senders-name:last-of-type::after {display: none}
+            }
+            .subject {
+                position: relative;
                 box-sizing: border-box;
+                width: calc(84% - 17rem);
+                padding-left: 4px;
+                cursor: pointer;
+
+                h4 {
+                    @include flexRow();
+                    @include flexAlignCenter();
+                    height: 40px;
+                    margin: 0;
+                    font-size: 1em;
+                    color: #000;
+                    max-width: 90%;
+
+                    .subject-text {
+                        padding:0px 2px 2px 2px; /*ellipsis*/
+                        margin-bottom: -2px;
+                    }
+
+                    .subject-num-message { margin: 0px 2px }
+
+                    .fa-mail-reply,
+                    .fa-mail-reply-all,
+                    .fa-mail-forward {
+                        margin-right: 2px;
+                    }
+
+                    .folderConversations-container {
+                        display: block;
+                        white-space: nowrap;
+                        .fa { margin-right: 2px }
+                    }
+
+                }
+                .location {
+                    width: 1.25rem;
+                    float: left;
+                    height: 40px;
+                    line-height: 40px;
+                    color: rgba(0,0,0,.35);
+                }
+                .pm_labels {
+                    float: right;
+                    position: absolute;;
+                    top: 4px;
+                    right: 0;
+                    background: $white;
+                    height: 30px;
+                    label {
+                        margin-left: .25rem;
+                        background: $white;
+                        &.more {
+                            margin-left: 0;
+                        }
+                    }
+                }
+            }
+
+            .size,
+            .time { font-size: .9em }
+
+            .size {
+                width: 5.5rem;
+                text-align: right;
+                padding-right: 1rem;
+            }
+            time.time {
+                float: right;
+                text-align: right;
+                width: 7rem;
+                font-style: normal;
+                position: relative;
+                top: 1px;
+                padding-right: 2rem;
             }
 
             .expiration {
@@ -47,95 +137,6 @@ body {
             }
             &.expiring .expiration { display: inline-block }
 
-            .size,
-            .time {
-                font-size: .9em;
-            }
-
-            .ptSelectConversation-container {
-                position: relative;
-                float: left;
-                padding: 0;
-                margin: 0 10px;
-                height:auto; /*safari bounce bug*/
-            }
-
-            .fa-star-o {
-                color: $gray-light;
-                text-decoration: none;
-                width: 1rem;
-                cursor: pointer;
-            }
-            .fa-star {
-                color: $yellow;
-                text-decoration: none;
-                width: 1rem;
-                cursor: pointer;
-            }
-            .senders {
-                width: 16%;
-                cursor: pointer;
-                .senders-name::after {content: ', '}
-                .senders-name:last-of-type::after {display: none}
-            }
-            .subject {
-                width: calc(84% - 19rem);
-                cursor: pointer;
-                position: relative;
-                h4 {
-                    line-height: 40px;
-                    height: 40px;
-                    margin: 0;
-                    font-size: 1em;
-                    color: #000;
-                    display: inline-block;
-                    max-width: 90%;
-                    overflow: hidden;
-                    text-overflow: ellipsis;
-                    .fa {
-                        display: inline-block;
-                        width: 1rem;
-                        text-align: center;
-                    }
-                }
-                .location {
-                    width: 1.25rem;
-                    float: left;
-                    height: 40px;
-                    line-height: 40px;
-                    color: rgba(0,0,0,.35);
-                }
-                .pm_labels {
-                    float: right;
-                    position: absolute;;
-                    top: 4px;
-                    right: 0;
-                    background: $white;
-                    height: 30px;
-                    label {
-                        margin-left: .25rem;
-                        background: $white;
-                        &.more {
-                            margin-left: 0;
-                        }
-                    }
-                }
-            }
-
-            .size {
-                width: 5.5rem;
-                text-align: right;
-                padding-right: 1rem;
-            }
-            time.time {
-                float: right;
-                text-align: right;
-                width: 7rem;
-                font-style: normal;
-                position: relative;
-                top: 1px;
-                padding-right: 2rem;
-            }
             &.read {
                 background: $read;
                 .subject {
@@ -152,9 +153,7 @@ body {
                 }
             }
             &.hasLabels {
-                .subject h4 {
-                    max-width: 80%;
-                }
+                .subject h4 { max-width: 80% }
             }
         }
     }

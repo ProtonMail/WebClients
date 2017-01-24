@@ -11,10 +11,6 @@ angular.module('proton.ui')
                 unsubscribes.push($rootScope.$on('organizationChange', () => updateLogo()));
                 unsubscribes.push($rootScope.$on('updateUser', () => updateLogo()));
 
-                scope.$on('$destroy', () => {
-                    unsubscribes.forEach((callback) => callback());
-                });
-
                 updateLogo();
 
                 function updateLogo() {
@@ -46,6 +42,11 @@ angular.module('proton.ui')
                     }
                     img.src = src;
                 }
+
+                scope.$on('$destroy', () => {
+                    unsubscribes.forEach((callback) => callback());
+                    unsubscribes.length = 0;
+                });
             }
         };
     });

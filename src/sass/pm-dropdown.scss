@@ -20,6 +20,9 @@
 		right: -1px;
 		left: auto !important;
 	}
+	&.pm_dropdown-normalText {
+		> button, > span, > a { font-size: 14px }
+	}
 	&.wide {
 		width: 200px;
 		max-height: none;
@@ -40,7 +43,7 @@
 	}
 
 	> button {
-		background: inherit;
+		background: transparent;
 		color: currentColor;
 		border: 0
 	}

@@ -52,6 +52,7 @@
 @import "labelsElement.scss";
 @import "starButton.scss";
 @import "core/password.scss";
+@import "core/hideUpgrade.scss";
 @import "core/cardPanel.scss";
 @import "core/paginator.scss";
 @import "core/popover.scss";
@@ -90,6 +91,10 @@
 @import "ui/legends.scss";
 @import "ui/ngScrollbars.scss";
 @import "ui/asSortable.scss";
+@import "ui/customMaskInput.scss";
+@import "ui/customRadio.scss";
+@import "ui/customCheckbox.scss";
+@import "ui/elementsSelector.scss";
 @import "element/moveElement.scss";
 @import "element/advancedFilterElement.scss";
 

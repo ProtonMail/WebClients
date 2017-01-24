@@ -132,7 +132,6 @@
         opacity: .5;
         pointer-events: none;
         cursor: default;
-        box-shadow: none;
         box-shadow: inset 0 0 5rem 0 rgba(0, 0, 0, 0.06);
     }
     &.dead {
@@ -225,6 +224,10 @@
         &.active {
             background: #e5e5e5;
             box-shadow: inset 0 2px 2px 0 rgba(0,0,0,0.2);
+        }
+
+        &.inheritPadding {
+            padding: inherit;
         }
 
     }

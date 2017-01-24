@@ -1,0 +1,15 @@
+.customCheckbox-input + .customCheckbox-mask {
+    /* load the sprite*/
+    background-image: url(/assets/img/sprites/checkboxes-states.svg);
+}
+
+.customCheckbox-input:checked + .customCheckbox-mask {
+    background-color: $primary;
+    border-color: $primary;
+    background-position: 0 0;
+}
+
+.customCheckbox-input:disabled + .customCheckbox-mask {
+    border-color: $border;
+    background-color: rgba(0, 0, 0, 0.06);
+}
