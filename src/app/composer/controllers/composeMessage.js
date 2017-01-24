@@ -29,6 +29,19 @@ angular.module('proton.composer')
 
     const unsubscribe = [];
 
+    const MESSAGES_ERROR = {
+        stillUploading: gettextCatalog.getString('Wait for attachment to finish uploading or cancel upload.', null, 'Error'),
+        invalidEmails(total) {
+            return gettextCatalog.getString(`Invalid email(s): ${total}.`, null, 'Error');
+        },
+        maxBodyLength: gettextCatalog.getString('The maximum length of the message body is 16,000,000 characters.', null, 'Error'),
+        noRecipient: gettextCatalog.getString('Please enter at least one recipient.', null, 'Error'),
+        maxSubjectLength: gettextCatalog.getString(`The maximum length of the subject is ${CONSTANTS.MAX_TITLE_LENGTH}.`, null, 'Error'),
+        maxRecipients(total) {
+            return gettextCatalog.getString(`The maximum number (${total}) of Recipients is 25.`, null, 'Error');
+        }
+    };
+
     $scope.messages = [];
     $scope.uid = 1;
     $scope.weekOptions = [
@@ -515,44 +528,42 @@ angular.module('proton.composer')
     $scope.validate = (message) => {
         const deferred = $q.defer();
         const reject = (label) => deferred.reject(new Error(label));
-
-        angular.element('input').blur();
-
         message.setDecryptedBody(tools.fixImages(message.getDecryptedBody()));
+        angular.element('input').blur();
 
         // We delay the validation to let the time for the autocomplete
         $timeout(() => {
             // Check if there is an attachment uploading
             if (message.uploading > 0) {
-                return reject('Wait for attachment to finish uploading or cancel upload.');
+                return reject(MESSAGES_ERROR.stillUploading);
             }
 
             // Check all emails to make sure they are valid
             const allEmails = _.map(message.ToList.concat(message.CCList, message.BCCList), ({ Address = '' } = {}) => Address.trim());
             const invalidEmails = _.filter(allEmails, (email) => !tools.validEmail(email));
             const totalDestEmails = message.ToList.length + message.BCCList.length + message.CCList.length;
+
             if (invalidEmails.length > 0) {
-                return reject('Invalid email(s): ' + invalidEmails.join(',') + '.');
+                return reject(MESSAGES_ERROR.invalidEmails(invalidEmails.join(',')));
             }
 
             // MAX 25 to, cc, bcc
             if (totalDestEmails > 25) {
-                return reject(`The maximum number (${totalDestEmails}) of Recipients is 25.`);
+                return reject(MESSAGES_ERROR.maxRecipients(totalDestEmails));
             }
 
             if (totalDestEmails === 0) {
-                deferred.reject('Please enter at least one recipient.');
-                return false;
+                return reject(MESSAGES_ERROR.noRecipient);
             }
 
             // Check title length
             if (message.Subject && message.Subject.length > CONSTANTS.MAX_TITLE_LENGTH) {
-                return reject('The maximum length of the subject is ' + CONSTANTS.MAX_TITLE_LENGTH + '.');
+                return reject(MESSAGES_ERROR.maxSubjectLength);
             }
 
             // Check body length
             if (message.getDecryptedBody().length > 16000000) {
-                return reject('The maximum length of the message body is 16,000,000 characters.');
+                return reject(MESSAGES_ERROR.maxBodyLength);
             }
 
             deferred.resolve();
