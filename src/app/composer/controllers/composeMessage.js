@@ -514,6 +514,7 @@ angular.module('proton.composer')
 
     $scope.validate = (message) => {
         const deferred = $q.defer();
+        const reject = (label) => deferred.reject(new Error(label));
 
         angular.element('input').blur();
 
@@ -523,40 +524,35 @@ angular.module('proton.composer')
         $timeout(() => {
             // Check if there is an attachment uploading
             if (message.uploading > 0) {
-                deferred.reject('Wait for attachment to finish uploading or cancel upload.');
-                return false;
+                return reject('Wait for attachment to finish uploading or cancel upload.');
             }
 
             // Check all emails to make sure they are valid
-            const allEmails = _.map(message.ToList.concat(message.CCList).concat(message.BCCList), ({ Address = '' } = {}) => Address.trim());
+            const allEmails = _.map(message.ToList.concat(message.CCList, message.BCCList), ({ Address = '' } = {}) => Address.trim());
             const invalidEmails = _.filter(allEmails, (email) => !tools.validEmail(email));
-
+            const totalDestEmails = message.ToList.length + message.BCCList.length + message.CCList.length;
             if (invalidEmails.length > 0) {
-                deferred.reject('Invalid email(s): ' + invalidEmails.join(',') + '.');
-                return false;
+                return reject('Invalid email(s): ' + invalidEmails.join(',') + '.');
             }
 
             // MAX 25 to, cc, bcc
-            if ((message.ToList.length + message.BCCList.length + message.CCList.length) > 25) {
-                deferred.reject('The maximum number (25) of Recipients is 25.');
-                return false;
+            if (totalDestEmails > 25) {
+                return reject(`The maximum number (${totalDestEmails}) of Recipients is 25.`);
             }
 
-            if (message.ToList.length === 0 && message.BCCList.length === 0 && message.CCList.length === 0) {
+            if (totalDestEmails === 0) {
                 deferred.reject('Please enter at least one recipient.');
                 return false;
             }
 
             // Check title length
             if (message.Subject && message.Subject.length > CONSTANTS.MAX_TITLE_LENGTH) {
-                deferred.reject('The maximum length of the subject is ' + CONSTANTS.MAX_TITLE_LENGTH + '.');
-                return false;
+                return reject('The maximum length of the subject is ' + CONSTANTS.MAX_TITLE_LENGTH + '.');
             }
 
             // Check body length
             if (message.getDecryptedBody().length > 16000000) {
-                deferred.reject('The maximum length of the message body is 16,000,000 characters.');
-                return false;
+                return reject('The maximum length of the message body is 16,000,000 characters.');
             }
 
             deferred.resolve();
