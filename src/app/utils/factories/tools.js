@@ -1,5 +1,5 @@
 angular.module('proton.utils')
-.factory('tools', ($log, $state, $stateParams, $filter, authentication, $compile, $templateCache, $rootScope, $q, CONSTANTS) => {
+.factory('tools', ($log, $state, $stateParams, $filter, authentication, $compile, $templateCache, $rootScope, $q, CONSTANTS, regexEmail) => {
     const tools = {};
     const MAILBOX_KEYS = Object.keys(CONSTANTS.MAILBOX_IDENTIFIERS);
 
@@ -315,11 +315,7 @@ angular.module('proton.utils')
             .replace(/@import/ig, '');
     };
 
-    tools.validEmail = (value) => {
-        const filter = "^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:.[a-zA-Z0-9-]+)*$";
-
-        return String(value).search(filter) !== -1;
-    };
+    tools.validEmail = (value = '') => regexEmail.test(value);
 
     tools.isCompatible = () => {
         let compatible = true;
