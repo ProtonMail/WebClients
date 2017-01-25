@@ -34,7 +34,7 @@ angular.module('proton.composer')
          * @return {Integer}                 Create a blured component if it's not an integer
          */
         function getPositionRight({ width, margin, overlap }, index) {
-            let right = (overlap) ? (index * overlap) : (index * (width + margin) + margin);
+            const right = (overlap) ? (index * overlap) : (index * (width + margin) + margin);
             return parseInt(right, 10) || margin;
         }
 
