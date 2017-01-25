@@ -10,7 +10,7 @@ angular.module('proton.core')
             const methods = [name, keys, password, storage];
             const payload = {};
             const organization = organizationModel.get();
-            const marge = 5;
+            const defaultStorage = 5;
             let index = 0;
             let decryptedKey;
             self.min = 0;
@@ -22,7 +22,7 @@ angular.module('proton.core')
 
             self.sliderOptions = {
                 animate: false,
-                start: (authentication.user.UsedSpace / self.unit) + marge,
+                start: Math.min(Math.max(Math.round((authentication.user.UsedSpace / self.unit) + 1), defaultStorage), self.max / self.unit),
                 step: 0.1,
                 connect: [true, false],
                 tooltips: true,
