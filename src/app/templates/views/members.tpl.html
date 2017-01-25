@@ -137,7 +137,7 @@
                                 </td>
                                 <td>
                                     <span ng-show="member.Subscriber" translate>Primary Admin</span>
-                                    <span ng-hide="member.Subscriber" translate>{{ roles[member.Role] }}</span>
+                                    <span ng-hide="member.Subscriber" ng-bind="roles[member.Role]"></span>
                                 </td>
                                 <td>
                                     <span ng-show="member.Private === 1" translate>Yes</span>
