@@ -94,7 +94,7 @@ angular.module('proton.settings')
         } else if (isSubscriber) {
             message = gettextCatalog.getString('This member is currently responsible for payments for your organization. By demoting this member, you will become responsible for payments for your organization.', null, 'Info');
         } else {
-            message = gettextCatalog.getString('Are you sure you want to remove administrative privileges from this member? You will become responsible for any unpaid invoices belonging to this member.', null, 'Info');
+            message = gettextCatalog.getString('Are you sure you want to remove administrative privileges from this member?', null, 'Info');
         }
 
         const params = {
