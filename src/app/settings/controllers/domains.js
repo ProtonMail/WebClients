@@ -263,7 +263,7 @@ angular.module('proton.settings')
      * Open modal to add a new address
      */
     $scope.addAddresses = (domain = {}) => {
-        if ($scope.keyStatus > 0 && CONSTANTS.KEY_PHASE > 3) {
+        if ($scope.organization.HasKeys === 1 && $scope.keyStatus > 0 && CONSTANTS.KEY_PHASE > 3) {
             notify({ message: gettextCatalog.getString('Administrator privileges must be activated', null, 'Error'), classes: 'notification-danger' });
             $state.go('secured.members');
             return;
