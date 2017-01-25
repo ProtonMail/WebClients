@@ -101,21 +101,20 @@ angular.module('proton.settings')
             title: gettextCatalog.getString('Change Role', null, 'Error'),
             message,
             confirm() {
-                networkActivityTracker.track(
-                    memberApi.role(member.ID, payload).then(({ data }) => { // TODO check request
-                        if (data && data.Code === 1000) {
-                            notify({ message: gettextCatalog.getString('Role updated', null), classes: 'notification-success' });
-                            member.Role = payload.Role;
-                            confirmModal.deactivate();
-                        } else if (data && data.Error) {
-                            notify({ message: data.Error, classes: 'notification-danger' });
-                        } else {
-                            notify({ message: gettextCatalog.getString('Error updating role', null, 'Error'), classes: 'notification-danger' });
-                        }
-                    }, () => {
-                        notify({ message: gettextCatalog.getString('Error updating role', null, 'Error'), classes: 'notification-danger' });
-                    })
-                );
+                const promise = memberApi.role(member.ID, payload)
+                .then(({ data = {} } = {}) => {
+                    if (data.Code === 1000) {
+                        return Promise.resolve();
+                    }
+                    throw new Error(data.Error || gettextCatalog.getString('Error updating role', null, 'Error'));
+                })
+                .then(() => eventManager.call())
+                .then(() => {
+                    notify({ message: gettextCatalog.getString('Role updated', null), classes: 'notification-success' });
+                    confirmModal.deactivate();
+                });
+
+                networkActivityTracker.track(promise);
             },
             cancel() {
                 confirmModal.deactivate();
