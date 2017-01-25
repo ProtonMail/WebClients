@@ -16,7 +16,7 @@ angular.module('proton.composer')
 
             if (!isBootstrap && ((windowWidth / count) < width)) {
                 /* overlap is a ratio that will share equaly the space available between overlayed composers. */
-                overlap = ((windowWidth - width - (2 * margin)) / (count - 1));
+                overlap = ((windowWidth - width - margin) / (count - 1));
             }
 
             return {
@@ -34,7 +34,7 @@ angular.module('proton.composer')
          * @return {Integer}                 Create a blured component if it's not an integer
          */
         function getPositionRight({ width, margin, overlap }, index) {
-            const right = (overlap) ? (index * overlap) : (index * (width + margin) + margin);
+            let right = (overlap) ? (index * overlap) : (index * (width + margin) + margin);
             return parseInt(right, 10) || margin;
         }
 
@@ -64,7 +64,6 @@ angular.module('proton.composer')
 
                     // Better for rendering
                     styles.transform = `translateX(-${getPositionRight(config, index)}px)`;
-
                     if (config.isBootstrap) {
                         styles.top = '80px';
                     }
