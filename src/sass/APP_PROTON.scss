@@ -9,7 +9,9 @@
 @import "animations.scss";
 
 // Custom Modules
+@import "ui/appVersion.scss";
 @import "ui/appCopyright.scss";
+@import "layout/headerDesktop.scss";
 @import "embedded.scss";
 @import "general.scss";
 @import "header.scss";
