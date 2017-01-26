@@ -1,5 +1,5 @@
 angular.module('proton.authentication')
-.factory('srp', ($http, CONFIG, webcrypto, passwords, url) => {
+.factory('srp', ($http, CONFIG, webcrypto, passwords, url, authApi) => {
 
     /**
      * [generateProofs description]
@@ -224,7 +224,7 @@ angular.module('proton.authentication')
     }
 
     function randomVerifier(password) {
-        return $http.get(url.get() + '/auth/modulus').then((resp) => {
+        return authApi.modulus().then((resp) => {
             if (resp.data.Code !== 1000) {
                 return Promise.reject({
                     error_description: resp.data.Error
@@ -249,7 +249,7 @@ angular.module('proton.authentication')
     }
 
     function authInfo(Username) {
-        return $http.post(url.get() + '/auth/info', {
+        return authApi.info({
             Username,
             ClientID: CONFIG.clientID,
             ClientSecret: CONFIG.clientSecret
