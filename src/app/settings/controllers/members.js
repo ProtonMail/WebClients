@@ -94,28 +94,27 @@ angular.module('proton.settings')
         } else if (isSubscriber) {
             message = gettextCatalog.getString('This member is currently responsible for payments for your organization. By demoting this member, you will become responsible for payments for your organization.', null, 'Info');
         } else {
-            message = gettextCatalog.getString('Are you sure you want to remove administrative privileges from this member? You will become responsible for any unpaid invoices belonging to this member.', null, 'Info');
+            message = gettextCatalog.getString('Are you sure you want to remove administrative privileges from this member?', null, 'Info');
         }
 
         const params = {
             title: gettextCatalog.getString('Change Role', null, 'Error'),
             message,
             confirm() {
-                networkActivityTracker.track(
-                    memberApi.role(member.ID, payload).then(({ data }) => { // TODO check request
-                        if (data && data.Code === 1000) {
-                            notify({ message: gettextCatalog.getString('Role updated', null), classes: 'notification-success' });
-                            member.Role = payload.Role;
-                            confirmModal.deactivate();
-                        } else if (data && data.Error) {
-                            notify({ message: data.Error, classes: 'notification-danger' });
-                        } else {
-                            notify({ message: gettextCatalog.getString('Error updating role', null, 'Error'), classes: 'notification-danger' });
-                        }
-                    }, () => {
-                        notify({ message: gettextCatalog.getString('Error updating role', null, 'Error'), classes: 'notification-danger' });
-                    })
-                );
+                const promise = memberApi.role(member.ID, payload)
+                .then(({ data = {} } = {}) => {
+                    if (data.Code === 1000) {
+                        return Promise.resolve();
+                    }
+                    throw new Error(data.Error || gettextCatalog.getString('Error updating role', null, 'Error'));
+                })
+                .then(() => eventManager.call())
+                .then(() => {
+                    notify({ message: gettextCatalog.getString('Role updated', null), classes: 'notification-success' });
+                    confirmModal.deactivate();
+                });
+
+                networkActivityTracker.track(promise);
             },
             cancel() {
                 confirmModal.deactivate();

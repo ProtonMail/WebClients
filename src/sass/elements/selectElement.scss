@@ -1,0 +1,8 @@
+.ptSelectConversation-label {
+    @include flexInline();
+    @include flexAlignCenter();
+    @include flexJustifyCenter;
+    position: relative;
+    width: 100%;
+    height: 100%;
+}

@@ -16,7 +16,7 @@ angular.module('proton.composer')
 
             if (!isBootstrap && ((windowWidth / count) < width)) {
                 /* overlap is a ratio that will share equaly the space available between overlayed composers. */
-                overlap = ((windowWidth - width - (2 * margin)) / (count - 1));
+                overlap = ((windowWidth - width - margin) / (count - 1));
             }
 
             return {
@@ -64,7 +64,6 @@ angular.module('proton.composer')
 
                     // Better for rendering
                     styles.transform = `translateX(-${getPositionRight(config, index)}px)`;
-
                     if (config.isBootstrap) {
                         styles.top = '80px';
                     }

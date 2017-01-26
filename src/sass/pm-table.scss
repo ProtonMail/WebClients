@@ -54,6 +54,9 @@
             table-layout: auto;
             th, td {
                 white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                max-width: 100%;
             }
             th.absorbing-column,
             td.absorbing-column {

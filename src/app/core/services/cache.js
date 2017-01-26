@@ -731,7 +731,11 @@ angular.module('proton.core')
      * @param {Object} event
      * @return {Promise}
      */
-    api.createConversation = (event) => (updateConversation(event.Conversation), Promise.resolve());
+    api.createConversation = ({ Conversation }) => {
+        Conversation.loaded = true; // Mark the new conversation as loaded
+        updateConversation(Conversation);
+        return Promise.resolve();
+    };
 
     /**
      * Update draft conversation
@@ -772,14 +776,16 @@ angular.module('proton.core')
     /**
      * Update a conversation
      */
-    api.updateFlagConversation = (event = {}, fromBackend = false) => {
+    api.updateFlagConversation = (event = {}) => {
         const current = _.findWhere(conversationsCached, { ID: event.ID });
 
-        if (current && !fromBackend) {
+        if (current && current.loaded) {
             updateConversation(event.Conversation);
             return Promise.resolve();
         }
-        return getConversation(event.ID).then((conversation) => {
+
+        return getConversation(event.ID)
+        .then((conversation) => {
             conversation.LabelIDsAdded = event.Conversation.LabelIDsAdded;
             conversation.LabelIDsRemoved = event.Conversation.LabelIDsRemoved;
             updateConversation(conversation);
@@ -883,7 +889,7 @@ angular.module('proton.core')
                         promises.push(api.updateDraftConversation(event));
                         break;
                     case UPDATE_FLAGS:
-                        promises.push(api.updateFlagConversation(event, fromBackend));
+                        promises.push(api.updateFlagConversation(event));
                         break;
                     default:
                         break;
