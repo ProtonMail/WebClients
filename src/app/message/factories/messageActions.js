@@ -393,7 +393,7 @@ angular.module('proton.message')
             // Generate message event
             const { messageIDs, conversationIDs, events } = _
                 .reduce(ids, (acc, ID) => {
-                    const { IsRead, ConversationID } = cache.getMessageCached(ID);
+                    const { IsRead, ConversationID } = cache.getMessageCached(ID) || {};
 
                     if (IsRead === 0) {
                         acc.conversationIDs.push(ConversationID);
