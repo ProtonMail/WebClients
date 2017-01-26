@@ -39,7 +39,7 @@
 /* Shared state */
 [class*="customMaskInput-input"]:checked + .customMaskInput-mask,
 [class*="customMaskInput-input"]:indeterminate + .customMaskInput-mask {
-    background-size: cover;
+    background-size: 200% 200%;
 }
 
 /* Hover and focus states */

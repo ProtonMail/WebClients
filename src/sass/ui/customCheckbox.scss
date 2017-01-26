@@ -6,7 +6,7 @@
 .customCheckbox-input:checked + .customCheckbox-mask {
     background-color: $primary;
     border-color: $primary;
-    background-position: 0 0;
+    background-position: 0% 50%;
 }
 
 .customCheckbox-input:disabled + .customCheckbox-mask {
