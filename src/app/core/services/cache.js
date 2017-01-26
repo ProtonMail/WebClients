@@ -731,7 +731,11 @@ angular.module('proton.core')
      * @param {Object} event
      * @return {Promise}
      */
-    api.createConversation = (event) => (updateConversation(event.Conversation), Promise.resolve());
+    api.createConversation = ({ Conversation }) => {
+        Conversation.loaded = true; // Mark the new conversation as loaded
+        updateConversation(Conversation);
+        return Promise.resolve();
+    };
 
     /**
      * Update draft conversation
@@ -779,7 +783,9 @@ angular.module('proton.core')
             updateConversation(event.Conversation);
             return Promise.resolve();
         }
-        return getConversation(event.ID).then((conversation) => {
+
+        return getConversation(event.ID)
+        .then((conversation) => {
             conversation.LabelIDsAdded = event.Conversation.LabelIDsAdded;
             conversation.LabelIDsRemoved = event.Conversation.LabelIDsRemoved;
             updateConversation(conversation);
