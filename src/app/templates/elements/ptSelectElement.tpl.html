@@ -1,6 +1,8 @@
 <div class="selection ptSelectConversation-container">
-    <custom-checkbox
-        data-custom-class="ptSelectConversation-input"
-        data-custom-ng-model="conversations[$index].Selected"
-        data-custom-index="{{ $index }}"></custom-checkbox>
+    <label class="ptSelectConversation-label">
+        <custom-checkbox
+            data-custom-class="ptSelectConversation-input"
+            data-custom-ng-checked="conversations[$index].Selected"
+            data-custom-index="{{ $index }}"></custom-checkbox>
+    </label>
 </div>
