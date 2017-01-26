@@ -9,6 +9,7 @@ angular.module('proton.authentication')
     $timeout,
     $injector,
     $exceptionHandler,
+    authApi,
     CONFIG,
     CONSTANTS,
     Contact,
@@ -21,7 +22,7 @@ angular.module('proton.authentication')
     notify,
     pmcw,
     secureSessionStorage,
-    url,
+    organizationApi,
     User,
     passwords,
     srp,
@@ -101,7 +102,7 @@ angular.module('proton.authentication')
                             };
                         })
                         .then((params) => {
-                            return $http.post(url.get() + '/organizations', params);
+                            return organizationApi.create(params);
                         });
                     }
                     return Promise.resolve();
@@ -286,7 +287,7 @@ angular.module('proton.authentication')
 
         getRefreshCookie() {
             $log.debug('getRefreshCookie');
-            return $http.post(url.get() + '/auth/refresh', {}).then(
+            return authApi.refresh({}).then(
                 (response) => {
                     $log.debug(response);
                     if (response.data.SessionToken !== undefined) {
@@ -311,7 +312,7 @@ angular.module('proton.authentication')
 
             $log.debug('setAuthCookie');
 
-            $http.post(url.get() + '/auth/cookies', {
+            authApi.cookies({
                 ResponseType: 'token',
                 ClientID: CONFIG.clientID,
                 GrantType: 'refresh_token',
@@ -469,7 +470,7 @@ angular.module('proton.authentication')
             $rootScope.loggingOut = true;
 
             if (callApi && (angular.isDefined(sessionToken) || angular.isDefined(uid))) {
-                $http.delete(url.get() + '/auth').then(process, process);
+                authApi.revoke().then(process, process);
             } else {
                 process();
             }
