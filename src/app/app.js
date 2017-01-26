@@ -309,7 +309,4 @@ angular.module('proton', [
     $logProvider.debugEnabled(debugInfo);
     $compileProvider.debugInfoEnabled(debugInfo);
     $qProvider.errorOnUnhandledRejections(debugInfo);
-})
-.run(($rootScope, CONFIG) => {
-    $rootScope.app_version = CONFIG.app_version;
 });
