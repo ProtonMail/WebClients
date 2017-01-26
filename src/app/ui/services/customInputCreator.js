@@ -78,7 +78,6 @@ angular.module('proton.ui')
             });
 
             $input.id = link.id;
-            el[0].setAttribute('for', link.for);
 
             return linkCallback;
         };
