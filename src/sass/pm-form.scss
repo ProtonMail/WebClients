@@ -307,11 +307,14 @@
         padding: 5px 0px;
         @include flexRow();
         @include flexAlignCenter();
-        > label { width: auto /*custom inputs*/ }
+        > .customMaskInput-container {
+            /*custom inputs*/
+            width: auto;
+        }
         > :not(:only-child) {
             /* label with childs */
             @include flexSelfCenter();
-            margin-right:.3rem;
+            margin-right:.4rem;
         }
 
         > .label-fillWidth { @include flexFillWidth() }
