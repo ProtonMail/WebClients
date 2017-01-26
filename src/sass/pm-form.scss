@@ -303,7 +303,8 @@
 
 
     label {
-        height: 35px;
+        min-height: 25px;
+        padding: 5px 0px;
         @include flexRow();
         @include flexAlignCenter();
         > label { width: auto /*custom inputs*/ }
