@@ -10,7 +10,7 @@
         </thead>
         <tbody>
             <tr ng-repeat-start="address in addresses | orderBy: 'send' track by address.addressID">
-                <td>
+                <td class="absorbing-ellipsis">
                     <span class="pull-left">
                         <toggle-expand data-model="address.toggle"></toggle-expand>
                     </span>
