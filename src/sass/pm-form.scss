@@ -303,8 +303,7 @@
 
 
     label {
-        min-height: 25px;
-        padding: 5px 0px;
+        height: 35px;
         @include flexRow();
         @include flexAlignCenter();
         > .customMaskInput-container {
@@ -319,7 +318,24 @@
 
         > .label-fillWidth { @include flexFillWidth() }
 
+        &:after {
+            content:'';
+            clear: both;
+        }
     }
+
+    .multi-line-label {
+        /*
+            IE10 won't align center without a defined height
+            fix but wrapping into a flexColumn
+        */
+        @include flexColumn();
+        > label {
+            min-height: 25px;
+            padding: 5px 0px;
+        }
+    }
+
     .row {
         float: left;
         width: 100%;

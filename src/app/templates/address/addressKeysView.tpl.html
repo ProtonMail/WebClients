@@ -53,7 +53,7 @@
                                         <span class="pm_badge error" ng-hide="key.decrypted" translate translate-comment="key state badge">Inactive</span>
                                     </td>
                                     <td class="text-center">
-                                        <button type="button" class="pm_button link" ng-hide="key.decrypted || isSubUser" ng-click="reactivate(key)" translate-context="Action" translate>Reactivate</button>
+                                        <button type="button" class="pm_button link" ng-click="reactivate(key)" translate-context="Action" translate>Reactivate</button>
                                         <span ng-show="key.decrypted || isSubUser" translate>None</span>
                                     </td>
                                 </tr>
