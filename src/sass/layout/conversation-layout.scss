@@ -55,12 +55,12 @@ body {
         position: relative;
     }
     #pm_main {
-        height: calc(100% - 60px);
+        height: calc(100% - 61px); /* #pm_header-desktop height */
         float: left;
         width: calc(100% - 190px);
     }
     #wrapper {
-        height: calc(100% - 54px);
+        height: calc(100% - 56px); /* #pm_toolbar-desktop height */
         overflow: auto;
         clear: both;
     }

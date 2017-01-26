@@ -15,7 +15,7 @@ body {
         min-width: $sidebarWidth;
         box-sizing: border-box;
         float: left;
-        height: calc(100% - 60px);
+        height: calc(100% - 61px);  /* #pm_header-desktop height */
         background: $secondary;
         position: relative;
         overflow: hidden;
