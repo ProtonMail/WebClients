@@ -209,7 +209,7 @@ angular.module('proton.settings')
 
     $scope.revokeOthers = () => {
         const errorMessage = gettextCatalog.getString('Error during revoke request', null, 'Error');
-        const successMessage = gettextCatalog.getString('Others sessions revoked', null, 'Success');
+        const successMessage = gettextCatalog.getString('Other sessions revoked', null, 'Success');
         const promise = authApi.revokeOthers()
         .then(({ data = {} } = {}) => {
             if (data.Code === 1000) {
