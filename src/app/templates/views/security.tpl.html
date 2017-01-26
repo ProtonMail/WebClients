@@ -1,11 +1,16 @@
 <div id="pm_settings">
     <div class="settings">
-        <div class="row" ng-show="twoFactor === 1 || keyPhase > 2">
-            <section class="setting pm_form full">
+        <div class="row pm_grid" ng-show="twoFactor === 1 || keyPhase > 2">
+            <section class="pm_form col-1-2">
                 <legend translate-context="Title" translate-comment="two factor page heading" translate>Two-Factor Authentication</legend>
                 <button class="pm_button" ng-show="twoFactor === 1" ng-click="disableTwoFactor()" translate-context="Action" translate>Disable Two-Factor Authentication</button>
                 <button class="pm_button" ng-show="twoFactor === 0" ng-click="enableTwoFactor()" translate-context="Action" translate>Enable Two-Factor Authentication</button>
                 <a href="https://protonmail.com/support/knowledge-base/two-factor-authentication/" target="_blank" class="pm_button link" translate translate-context="Link">Learn more</a>
+            </section>
+            <section class="pm_form col-1-2">
+                <legend translate-context="Title" translate>Lorem ipsum dolor sit amet</legend>
+                <p class="alert alert-info" translate-context="Info" translate>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cum repellendus atque praesentium quaerat facilis tenetur similique tempora voluptatem sequi facere. Enim quidem laudantium porro aperiam eveniet beatae quam voluptatem saepe.</p>
+                <button class="pm_button" ng-click="revokeOthers()" translate-context="Action" translate>Revoke others sessions</button>
             </section>
         </div>
         <div class="row">

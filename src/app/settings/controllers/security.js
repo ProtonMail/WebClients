@@ -3,6 +3,7 @@ angular.module('proton.settings')
     $log,
     $rootScope,
     $scope,
+    authApi,
     twoFAIntroModal,
     gettextCatalog,
     authentication,
@@ -204,6 +205,20 @@ angular.module('proton.settings')
         const blob = new Blob([csvString], { type: 'text/csv;charset=utf-8;' });
 
         window.saveAs(blob, filename);
+    };
+
+    $scope.revokeOthers = () => {
+        const errorMessage = gettextCatalog.getString('Error during revoke request', null, 'Error');
+        const successMessage = gettextCatalog.getString('Others sessions revoked', null, 'Success');
+        const promise = authApi.revokeOthers()
+        .then(({ data = {} } = {}) => {
+            if (data.Code === 1000) {
+                return Promise.resolve();
+            }
+            throw new Error(data.Error || errorMessage);
+        })
+        .then(() => notify({ message: successMessage, classes: 'notification-success' }));
+        networkActivityTracker.track(promise);
     };
 
     $scope.setLogging = (value) => {
