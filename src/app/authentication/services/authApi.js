@@ -8,7 +8,7 @@ angular.module('proton.authentication')
              * @return {Promise}
              */
             authenticate(params = {}) {
-                return $http.post(requestURL('', params));
+                return $http.post(requestURL(), params);
             },
             /**
              * Refresh an expired token
@@ -16,7 +16,7 @@ angular.module('proton.authentication')
              * @return {Promise}
              */
             refresh(params = {}) {
-                return $http.post(requestURL('refresh', params));
+                return $http.post(requestURL('refresh'), params);
             },
             /**
              * Set secure cookies, web app only
@@ -24,14 +24,14 @@ angular.module('proton.authentication')
              * @return {Promise}
              */
             cookies(params = {}) {
-                return $http.post(requestURL('cookies', params));
+                return $http.post(requestURL('cookies'), params);
             },
             /**
              * Set up SRP authentication request
              * @return {Promise}
              */
             info(params = {}) {
-                return $http.post(requestURL('info', params));
+                return $http.post(requestURL('info'), params);
             },
             /**
              * @return {Promise}
