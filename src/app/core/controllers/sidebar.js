@@ -11,7 +11,6 @@ angular.module('proton.core')
     $filter,
     authentication,
     cache,
-    CONFIG,
     CONSTANTS,
     eventManager,
     Label,
@@ -27,7 +26,6 @@ angular.module('proton.core')
     let timeoutRefresh;
 
     $scope.labels = _.sortBy(authentication.user.Labels, 'Order');
-    $scope.dateVersion = CONFIG.date_version;
     $scope.droppedMessages = [];
     $scope.droppableOptions = {
         accept: '.ui-draggable',
@@ -38,8 +36,6 @@ angular.module('proton.core')
     $scope.scrollbarConfig = {
         scrollInertia: 0
     };
-
-    $scope.appVersion = CONFIG.app_version;
 
     $scope.hideMobileSidebar = () => {
         $rootScope.$broadcast('sidebarMobileToggle', false);
