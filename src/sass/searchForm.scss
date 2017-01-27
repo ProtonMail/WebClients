@@ -49,16 +49,19 @@
 .searchForm-action-button {
 	@include flexInline();
 	@include flexJustifyCenter();
+	@include flexAlignCenter();
 	position: relative;
 	z-index: 5;
 	width: 45px;
 	padding: 0;
 	border:0;
+	margin: 0;
 	color: #fff;
 	cursor: pointer;
 	background: transparent;
 	transition: background-color .25s ease;
 	outline:none;
+	> i { margin: 0px auto }
 }
 
 .searchForm-toggle-advanced {
