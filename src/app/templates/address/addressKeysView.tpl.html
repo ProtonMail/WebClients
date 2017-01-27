@@ -10,12 +10,11 @@
         </thead>
         <tbody>
             <tr ng-repeat-start="address in addresses | orderBy: 'send' track by address.addressID">
-                <td class="absorbing-ellipsis">
-                    <span class="pull-left">
+                <td>
+                    <span class="addressKeysView-toggle">
                         <toggle-expand data-model="address.toggle"></toggle-expand>
                     </span>
-                    &nbsp;
-                    <span><strong>{{ address.email }}</strong></span>
+                    <span class="addressKeysView-email ellipsis"><strong>{{ address.email }}</strong></span>
                 </td>
                 <td>
                     <code>{{ address.fingerprint }}</code>
