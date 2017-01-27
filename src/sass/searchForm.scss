@@ -48,7 +48,6 @@
 
 .searchForm-action-button {
 	@include flexInline();
-	@include flexJustifyCenter();
 	@include flexAlignCenter();
 	position: relative;
 	z-index: 5;
@@ -79,7 +78,7 @@
 		border-radius: 1rem 1rem 0 0;
 		.search-form-fieldset-input { visibility: hidden; }
 		.searchForm-toggle-advanced { border-radius: 1rem 0 0 }
-		.searchForm-action-button-advanced { display: block }
+		.searchForm-action-button-advanced { display: inline-flex }
 	}
 }
 
