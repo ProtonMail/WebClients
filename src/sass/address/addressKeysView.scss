@@ -3,3 +3,13 @@
     th.key-size { min-width: 80px }
     th.actions { width: 100px }
 }
+
+.addressKeysView-email-container { }
+
+.addressKeysView-toggle,
+.addressKeysView-email {
+    float: left;
+}
+
+.addressKeysView-toggle { width: 30px }
+.addressKeysView-email { width: calc(100% - 30px) }
