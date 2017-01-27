@@ -40,12 +40,11 @@ angular.module('proton.core')
         function generateAddresses(addresses = [], mailboxPassword = '', numBits = 2048) {
 
             const promises = _.map(addresses, ({ Email, ID } = {}) => {
-                return pmcw
-                    .generateKeysRSA(Email, mailboxPassword, numBits)
-                    .then(({ privateKeyArmored }) => ({
-                        AddressID: ID,
-                        PrivateKey: privateKeyArmored
-                    }));
+                return pmcw.generateKeysRSA(Email, mailboxPassword, numBits)
+                .then(({ privateKeyArmored }) => ({
+                    AddressID: ID,
+                    PrivateKey: privateKeyArmored
+                }));
             });
 
             return $q.all(promises);
