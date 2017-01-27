@@ -1,6 +1,17 @@
 angular.module('proton.organization')
 .factory('organizationModel', (organizationApi, authentication, $rootScope, CONSTANTS) => {
     let organization = {};
+    const fakeOrganization = {
+        PlanName: 'free',
+        MaxMembers: 1,
+        HasKeys: 0
+    };
+    const fakeResult = {
+        data: {
+            Code: 1000,
+            Organization: fakeOrganization
+        }
+    };
     function get() {
         return organization;
     }
@@ -9,16 +20,7 @@ angular.module('proton.organization')
     }
     function fetch() {
         if (authentication.user.Role !== CONSTANTS.PAID_ADMIN_ROLE) {
-            const fakeResult = {
-                data: {
-                    Code: 1000,
-                    Organization: {
-                        PlanName: 'free',
-                        MaxMembers: 1,
-                        HasKeys: 0
-                    }
-                }
-            };
+            organization = fakeOrganization;
             return Promise.resolve(fakeResult);
         }
         return organizationApi.get()
