@@ -5,78 +5,68 @@ angular.module('proton.core')
         templateUrl: 'templates/modals/addAddress.tpl.html',
         controller(params) {
             // Variables
+            const self = this;
             const { domains = [], organizationKey = null, members = [], showMember = true } = params;
             const organization = organizationModel.get();
 
-            this.domain = domains[0];
-            this.domains = domains;
-            this.organizationKey = organizationKey;
-            this.address = '';
-            this.size = 2048;
-            this.members = members;
-            this.member = members[0];
-            this.alias = !angular.isDefined(this.domain.ID);
-            this.keyPhase = CONSTANTS.KEY_PHASE;
-            this.showMember = showMember && organization.HasKeys === 1 && this.keyPhase > 3 && !this.alias;
+            self.domain = domains[0];
+            self.domains = domains;
+            self.organizationKey = organizationKey;
+            self.address = '';
+            self.size = 2048;
+            self.members = members;
+            self.member = members[0];
+            self.alias = !angular.isDefined(self.domain.ID);
+            self.keyPhase = CONSTANTS.KEY_PHASE;
+            self.showMember = showMember && organization.HasKeys === 1 && self.keyPhase > 3 && !self.alias;
 
-            if (!this.showMember && this.members.length > 1) {
+            if (!self.showMember && self.members.length > 1) {
                 throw new Error('An unexpected error has occurred');
             }
 
-            this.open = (name) => {
-                $rootScope.$broadcast(name, params.domain);
-            };
-
             // Functions
-            this.submit = () => {
-                const member = this.member;
+            self.addMember = () => params.addMember();
+            self.cancel = () => params.cancel();
+            self.open = (name) => $rootScope.$broadcast(name, params.domain);
+            self.submit = () => {
+                const member = self.member;
 
-                if (this.member.Private === 0 && !this.organizationKey) {
+                if (self.member.Private === 0 && !self.organizationKey) {
                     notify({ message: gettextCatalog.getString('Cannot decrypt organization key', null, 'Error'), classes: 'notification-danger' });
                     return;
                 }
 
-                networkActivityTracker.track(
-                    Address.create({ Local: this.address, Domain: this.domain.DomainName, MemberID: this.member.ID })
-                    .then((result) => {
-                        if (angular.isDefined(result.data) && result.data.Code === 1000) {
-                            const address = result.data.Address;
-                            const numBits = this.size;
+                const successMessage = gettextCatalog.getString('Address added', null, 'Info');
+                const errorMessage = gettextCatalog.getString('Address creation failed', null, 'Error');
+                const promise = Address.create({ Local: self.address, Domain: self.domain.DomainName, MemberID: self.member.ID })
+                .then(({ data = {} } = {}) => {
+                    if (data.Code === 1000) {
+                        const address = data.Address;
+                        const numBits = self.size;
 
-                            const generate = () => {
-                                return setupKeys.generateAddresses([address], 'temp', numBits);
-                            };
+                        const generate = () => {
+                            return setupKeys.generateAddresses([address], 'temp', numBits);
+                        };
 
-                            const keyRequest = ([key]) => {
-                                return setupKeys.memberKey('temp', key, member, organizationKey);
-                            };
+                        const keyRequest = ([key]) => {
+                            return setupKeys.memberKey('temp', key, member, organizationKey);
+                        };
 
-                            const finish = () => {
-                                notify({ message: gettextCatalog.getString('Address added', null, 'Info'), classes: 'notification-success' });
-                                params.submit(address);
-                            };
+                        const finish = () => {
+                            notify({ message: successMessage, classes: 'notification-success' });
+                            params.submit(address);
+                        };
 
-                            if (this.member.Private === 0) {
-                                return generate()
-                                    .then(keyRequest)
-                                    .then(finish);
-                            }
-                            return finish();
-                        } else if (angular.isDefined(result.data) && result.data.Error) {
-                            notify({ message: result.data.Error, classes: 'notification-danger' });
-                        } else {
-                            notify({ message: gettextCatalog.getString('Address creation failed', null, 'Error'), classes: 'notification-danger' });
+                        if (self.member.Private === 0) {
+                            return generate()
+                                .then(keyRequest)
+                                .then(finish);
                         }
-                    })
-                );
-            };
-
-            this.addMember = () => {
-                params.addMember();
-            };
-
-            this.cancel = () => {
-                params.cancel();
+                        return finish();
+                    }
+                    throw new Error(data.Error || errorMessage);
+                });
+                networkActivityTracker.track(promise);
             };
         }
     });

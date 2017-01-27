@@ -50,6 +50,7 @@
 /**
     ALIGNMENTS
 **/
+
 @mixin flexJustifyCenter() {
     -webkit-justify-content: center;
     justify-content: center;
@@ -69,7 +70,6 @@
     -webkit-align-items: flex-end;
     align-items: flex-end;
 }
-
 
 @mixin flexSelfCenter() {
     -webkit-align-self: center;

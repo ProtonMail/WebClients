@@ -61,11 +61,6 @@
             td.absorbing-column-half  {
                 width: 50%;
             }
-            th.absorbing-ellipsis,
-            td.absorbing-ellipsis {
-                overflow: hidden;
-                text-overflow: ellipsis;
-            }
         }
         &.withDropDown {
             > tbody > tr > td { padding: .5rem 1rem; }
