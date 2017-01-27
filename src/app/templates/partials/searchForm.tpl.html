@@ -1,18 +1,18 @@
-<form method="post" class="searchForm" ng-submit="searchMessages()" ng-class="{ 'adv': advancedSearch }" adv-search>
-    <fieldset>
-        <button  type="button" class="advanced" ng-click="toggleAdvancedSearch();" pt-tooltip-translate-context="Action" pt-tooltip-translate="Advanced search" pt-placement="bottom">
+<form method="post" class="searchForm-container" ng-submit="searchMessages()" ng-class="{ 'searchForm-container-adv': advancedSearch }" adv-search>
+    <div class="search-form-fieldset">
+        <button type="button" class="searchForm-action-button searchForm-toggle-advanced" ng-click="toggleAdvancedSearch();" pt-tooltip-translate-context="Action" pt-tooltip-translate="Advanced search" pt-placement="bottom">
             <i class="fa" ng-class="{'fa-angle-down': advancedSearch === false, 'fa-angle-up': advancedSearch === true}"></i>
         </button>
-        <input type="text" placeholder-translate="Search messages" autocomplete="off" ng-model="params.searchMessageInput" ng-keyup="$event.which === 27 && blurSearch($event)" class="query" />
-        <button type="submit" ng-show="advancedSearch !== true">
+        <input type="text" placeholder-translate="Search messages" autocomplete="off" ng-model="params.searchMessageInput" ng-keyup="$event.which === 27 && blurSearch($event)" class="search-form-fieldset-input" />
+        <button type="submit" class="searchForm-action-button searchForm-action-button-default" ng-show="advancedSearch !== true">
             <i class="fa fa-search"></i>
         </button>
-        <button type="button" id="closeAdvSearch" ng-show="advancedSearch === true" ng-click="closeSearchModal()">
+        <button type="button" class="searchForm-action-button searchForm-action-button-advanced" ng-show="advancedSearch === true" ng-click="closeSearchModal()">
             <i class="fa fa-times"></i>
         </button>
-    </fieldset>
-    <div class="pm_form pm_grid" id="advancedSearchDropdown" ng-show="advancedSearch === true">
-        <div class="wrap">
+    </div>
+    <div class="searchForm-advanced-container pm_form pm_grid" ng-show="advancedSearch === true">
+        <div class="searchForm-advanced-wrapper">
             <div class="row">
                 <div class="col-1-2">
                     <label for="search_keywords" translate translate-context="Title">Keywords</label>
@@ -62,7 +62,7 @@
                 </div>
                 <div class="col-1-2">
                     <label translate translate-context="Title" translate-comment="Search form option heading">Attachments</label>
-                    <div class="radio">
+                    <div class="radio searchFrom-advanced-radio">
                         <label for="attachments_all">
                             <input id="attachments_all" type="radio" ng-model="ctrl.attachments" value="2">
                             <span translate translate-comment="form option">All</span>
@@ -79,8 +79,7 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-1-2">&nbsp;</div>
-                <div class="col-1-2 text-right">
+                <div class="text-right">
                     <button type="submit" class="pm_button primary">
                         <i class="fa fa-search"></i>
                         <span translate translate-context="Action">Search</span>

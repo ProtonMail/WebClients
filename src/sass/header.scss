@@ -43,7 +43,7 @@ header#pm_header-desktop {
 		overflow: hidden;
 		display: block;
 		height: $headerHeight;
-		background-color: $secondary;	
+		background-color: $secondary;
 		img {
 			display: inline-block;
 			margin: auto;
@@ -187,35 +187,7 @@ header#pm_header-tablet {
             background-color: #66669a;
         }
 	}
-	form.searchForm {
-		float: none;
-		margin: 0 auto;
-		position: relative;
-		top: 13px;
-		max-width: 32%;
-		top: 10px;
-		height: 50px;
-		fieldset {
-			height: 50px;
-			line-height: 50px;
-			input.query {
-				left: 50px;
-				width: 75%;
-			}
-			button .fa,
-			button[type="submit"],
-			button[type="button"],
-			input.query {
-				height: 50px;
-				line-height: 50px;
-			}
-			button[type="submit"],
-			button[type="button"],
-			button .fa {
-				width: 50px;
-			}
-		}
-	}
+
 	a.logoMobile {
 		display: inline-block;
 		margin: 0 1rem;
