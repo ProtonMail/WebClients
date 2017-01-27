@@ -2,9 +2,7 @@
     header#pm_header-desktop ul.navigation > li > a {
         width: 100px;
     }
-    form.searchForm {
-        width: calc(100% - 650px);
-    }
+    .searchForm-container { width: calc(100% - 650px) }
     #pm_sidebar section.sidebar,
     body header#pm_header-desktop a.logo,
     body #pm_background {
@@ -39,9 +37,7 @@
     body section.sidebar a.version span {
         display: none;
     }
-    form.searchForm {
-        width: calc(100% - 600px);
-    }
+    .searchForm-container { width: calc(100% - 600px) }
     #pm_sidebar section.sidebar,
     body header#pm_header-desktop a.logo,
     body #pm_background {
@@ -67,9 +63,7 @@
     header#pm_header-desktop ul.navigation > li > a {
         width: 80px;
     }
-    form.searchForm {
-        width: calc(100% - 550px);
-    }
+    .searchForm-container { width: calc(100% - 550px) }
     #pm_sidebar section.sidebar,
     body header#pm_header-desktop a.logo,
     body #pm_background {
