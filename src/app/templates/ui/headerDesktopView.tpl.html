@@ -1,13 +1,13 @@
 <header id="pm_header-desktop" class="pm_opensans" ng-controller="HeaderController">
     <protonmail-logo></protonmail-logo>
     <ng-include src="'templates/partials/searchForm.tpl.html'" ng-if="!('secured.contacts' | includedByState)"></ng-include>
-    <form method="post" class="searchForm"class="searchForm" ng-submit="searchContacts()" ng-if="'secured.contacts' | includedByState">
-        <fieldset>
-            <input type="search" placeholder-translate="Search contacts" autocomplete="off" ng-model="params.searchContactInput" ng-change="searchContacts()" class="query searchInput" />
-            <button type="submit">
+    <form method="post" class="searchForm-container" ng-submit="searchContacts()" ng-if="'secured.contacts' | includedByState">
+        <div class="search-form-fieldset">
+            <input class="search-form-fieldset-input searchInput margin-left" type="search" placeholder-translate="Search contacts" autocomplete="off" ng-model="params.searchContactInput" ng-change="searchContacts()"  />
+            <button class="searchForm-action-button searchForm-action-button-default" type="submit">
                 <i class="fa fa-search"></i>
             </button>
-        </fieldset>
+        </div>
     </form>
     <ul class="navigation">
         <li ui-sref-active="active" ng-if="isFree">
