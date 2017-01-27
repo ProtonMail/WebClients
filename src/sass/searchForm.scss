@@ -101,6 +101,9 @@
 	width: 100%;
 	box-sizing: border-box;
 	border-radius: 0 0 1rem 1rem;
+	> .row {
+		line-height: 36px /* header#pm_header-desktop */
+	}
 }
 
 .searchFrom-advanced-radio {
