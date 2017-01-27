@@ -1,5 +1,5 @@
 angular.module('proton.organization')
-.factory('organizationApi', ($http, $q, authentication, url, srp, CONSTANTS) => {
+.factory('organizationApi', ($http, url, srp) => {
     return {
         /**
          * Create a new group of given parameters. Requires a subscription.
@@ -14,20 +14,7 @@ angular.module('proton.organization')
          * @return {Promise}
          */
         get() {
-            if (authentication.user.Role === CONSTANTS.PAID_ADMIN_ROLE) {
-                return $http.get(url.get() + '/organizations');
-            }
-            const fakeResult = {
-                data: {
-                    Code: 1000,
-                    Organization: {
-                        PlanName: 'free',
-                        MaxMembers: 1,
-                        HasKeys: 0
-                    }
-                }
-            };
-            return Promise.resolve(fakeResult);
+            return $http.get(url.get() + '/organizations');
         },
         /**
          * Get organization keys
