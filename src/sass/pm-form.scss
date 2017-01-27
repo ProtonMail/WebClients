@@ -327,7 +327,7 @@
     .multi-line-label {
         /*
             IE10 won't align center without a defined height
-            fix but wrapping into a flexColumn
+            fix by wrapping into a flexColumn
         */
         @include flexColumn();
         > label {
