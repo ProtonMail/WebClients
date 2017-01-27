@@ -74,7 +74,7 @@
 .searchForm-container-adv {
 	.search-form-fieldset {
 		border-radius: 1rem 1rem 0 0;
-		.search-form-fieldset-input { visibility: hidden }
+		.search-form-fieldset-input { visibility: hidden; }
 		.searchForm-toggle-advanced { border-radius: 1rem 0 0 }
 		.searchForm-action-button-advanced { display: block }
 	}
@@ -91,6 +91,7 @@
 	right: 0;
 	label { color: $gray }
 	.input-icon { display: block }
+
 }
 
 .searchForm-advanced-wrapper {
