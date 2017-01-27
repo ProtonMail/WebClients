@@ -300,18 +300,42 @@
     .margin {
         margin-bottom: 10px;
     }
+
+
     label {
-        line-height: 35px;
-        display: block;
-        &.larger {
-            margin: 0 0 1rem 0;
-            font-size: 1.2rem;
-            line-height: 135%;
+        height: 35px;
+        @include flexRow();
+        @include flexAlignCenter();
+        > .customMaskInput-container {
+            /*custom inputs*/
+            width: auto;
         }
-        &.inline {
-            display: inline-block;
+        > :not(:only-child) {
+            /* label with childs */
+            @include flexSelfCenter();
+            margin-right:.4rem;
+        }
+
+        > .label-fillWidth { @include flexFillWidth() }
+
+        &:after {
+            content:'';
+            clear: both;
         }
     }
+
+    .multi-line-label {
+        /*
+            IE10 won't align center without a defined height
+            fix by wrapping into a flexColumn
+        */
+        @include flexColumn();
+        > label {
+            min-height: 25px;
+            padding: 5px 0px;
+        }
+    }
+
     .row {
         float: left;
         width: 100%;
