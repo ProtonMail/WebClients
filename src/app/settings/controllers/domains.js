@@ -271,7 +271,7 @@ angular.module('proton.settings')
 
         const memberParams = {
             params: {
-                organizationPublicKey: $scope.organizationPublicKey,
+                organizationKey: $scope.organizationKey,
                 domains: [domain],
                 submit(member) {
                     memberModal.deactivate();
@@ -293,7 +293,7 @@ angular.module('proton.settings')
             params: {
                 domains: [domain],
                 members: $scope.members,
-                organizationPublicKey: $scope.organizationPublicKey,
+                organizationKey: $scope.organizationKey,
                 addMember() {
                     addressModal.deactivate();
                     memberModal.activate(memberParams);
