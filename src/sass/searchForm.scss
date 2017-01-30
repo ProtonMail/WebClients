@@ -112,6 +112,9 @@
 	line-height: 33px;
 }
 
+body:not(.mobileMode) .searchFrom-advanced-radio label {
+	display: inline-block;
+}
 
 /* MOBILE STATE */
 body.mobileMode {
