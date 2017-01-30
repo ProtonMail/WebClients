@@ -92,6 +92,13 @@ angular.module('proton.settings')
         });
     };
 
+    $scope.sortLabels = () => {
+        labelsModel.sort();
+        const order = labelsModel.getOrder();
+        labelsModel.update();
+        $scope.saveLabelOrder(order);
+    };
+
     $scope.editLabel = (label) => {
         labelModal.activate({
             params: {

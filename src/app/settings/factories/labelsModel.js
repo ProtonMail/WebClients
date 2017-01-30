@@ -22,6 +22,15 @@ angular.module('proton.settings')
         const getOrder = () => LIST.map(({ ID }) => MAP[ID]);
 
         /**
+         * Sort labels list by Name (alphabetically)
+         * @return {Array}
+         */
+        const sort = () => {
+            LIST = _.sortBy(authentication.user.Labels, 'Name');
+            return LIST;
+        };
+
+        /**
          * Update the current list and also deffered the update of the immutable map
          * @return {void}
          */
@@ -35,5 +44,5 @@ angular.module('proton.settings')
 
         const clear = () => (MAP = {}, LIST.length = 0);
 
-        return { load, update, getOrder, clear };
+        return { load, update, getOrder, sort, clear };
     });
