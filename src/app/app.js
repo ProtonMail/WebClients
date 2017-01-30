@@ -47,6 +47,7 @@ angular.module('proton', [
 
     // Config
     'proton.config',
+    'proton.search',
     'proton.ui',
     'proton.attachments',
     'proton.authentication',

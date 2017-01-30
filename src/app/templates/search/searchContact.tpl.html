@@ -1,0 +1,8 @@
+<form method="post" class="searchForm-container" ng-submit="searchContacts()" ng-if="'secured.contacts' | includedByState">
+    <div class="search-form-fieldset">
+        <input class="search-form-fieldset-input searchInput margin-left" type="search" placeholder-translate="Search contacts" autocomplete="off" ng-model="params.searchContactInput" ng-change="searchContacts()"  />
+        <button class="searchForm-action-button searchForm-action-button-default" type="submit">
+            <i class="fa fa-search"></i>
+        </button>
+    </div>
+</form>
