@@ -2,7 +2,7 @@
     header#pm_header-desktop ul.navigation > li > a {
         width: 100px;
     }
-    .searchForm-container { min-width: calc(100% - 650px) }
+    .searchForm-container { width: calc(100% - 650px) }
     #pm_sidebar section.sidebar,
     body header#pm_header-desktop a.logo,
     body #pm_background {
@@ -37,7 +37,7 @@
     body section.sidebar a.version span {
         display: none;
     }
-    .searchForm-container { min-width: calc(100% - 600px) }
+    .searchForm-container { width: calc(100% - 600px) }
     #pm_sidebar section.sidebar,
     body header#pm_header-desktop a.logo,
     body #pm_background {
@@ -63,7 +63,7 @@
     header#pm_header-desktop ul.navigation > li > a {
         width: 80px;
     }
-    .searchForm-container { min-width: calc(100% - 550px) }
+    .searchForm-container { width: calc(100% - 550px) }
     #pm_sidebar section.sidebar,
     body header#pm_header-desktop a.logo,
     body #pm_background {
