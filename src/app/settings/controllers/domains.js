@@ -223,7 +223,7 @@ angular.module('proton.settings')
                         if (angular.isDefined(result.data) && result.data.Code === 1000) {
                             // check verification code
                             // 0 is default, 1 is has code but wrong, 2 is good
-                            switch (result.data.domainApi.VerifyState) {
+                            switch (result.data.Domain.VerifyState) {
                                 case 0:
                                     notify({ message: gettextCatalog.getString('Verification did not succeed, please try again in an hour.', null, 'Error'), classes: 'notification-danger' });
                                     break;
