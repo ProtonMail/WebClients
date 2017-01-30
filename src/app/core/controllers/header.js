@@ -12,12 +12,10 @@ angular.module('proton.core')
     organizationModel,
     networkActivityTracker,
     Payment,
-    CONFIG,
     CONSTANTS
 ) => {
     $scope.params = {};
     $scope.organization = organizationModel.get();
-    $scope.appVersion = CONFIG.app_version;
     $scope.wizardEnabled = CONSTANTS.WIZARD_ENABLED;
     $scope.addresses = [];
     $scope.addresses.push({ Email: gettextCatalog.getString('All', null), ID: undefined, Send: 0, Receive: 1, Status: 1 }); // Add ALL option
