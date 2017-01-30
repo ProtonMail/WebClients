@@ -1,175 +1,143 @@
-form.searchForm {
-	display: block;
-	float: left;
-	line-height: 35px;
+.searchForm-container {
+	@include flexInline();
+	position: relative;
+	box-sizing: border-box;
+
 	height: 35px;
 	margin: 13px 0;
-	border-radius: 35px;
-	color: #fff;
 	width: calc(100% - 700px);
 	max-width: 25%;
 	margin-left: 10px;
-	box-sizing: border-box;
-	position: relative;
-	&.adv {
-		fieldset {
-			box-shadow: none;
-			border-radius: 1rem 1rem 0 0;
-			border: none;
-			button[type="button"] {
-				border-radius: 1rem 0 0 0;
-			}
-			button[type="submit"],
-			#closeAdvSearch {
-				border-radius: 0 1rem 0 0;
-				background: transparent;
-			}
-			input.query {
-				visibility: hidden;
-			}
-		}
-	}
-	fieldset {
-		position: relative;
-		background: lighten($alt, 10%);
-		z-index: 5;
-		display: block;
-		line-height: 35px;
-		height: 35px;
-		border-radius: 35px;
-		color: #fff;
-		width: 100%;
-		box-sizing: border-box;
-		border: none;
-		outline: none;
-		padding: 0;
-		margin: 0;
-		button,
-		button .fa {
-			height: 35px;
-			line-height: 35px;
-			display: block;
-		}
-		button[type="button"] {
-			padding: 0;
-			border: none;
-			display: block;
-			width: 35px;
-			color: #fff;
-			background-color: transparent;
-			border-radius: 35px 0 0 35px;
-			cursor: pointer;
-			transition: background-color .25s ease;
-			float: left;
-			&:hover {
-				background: $alt-light;
-			}
-		}
-		button[type="submit"],
-		#closeAdvSearch {
-			padding: 0;
-			border: none;
-			display: block;
-			width: 45px;
-			color: #fff;
-			background-color: transparent;
-			border-radius: 0 35px 35px 0;
-			cursor: pointer;
-			float: right;
-			position: relative;
-			z-index: 6;
-		}
-		input.query {
-			outline: none;
-			height: 33px;
-			line-height: 33px;
-			display: block;
-			border: none;
-			padding: 0;
-			-webkit-appearance: none;
-			-moz-appearance: none;
-	        appearance: none;
-			position: relative;
-			border-radius: 0;
-			padding: 0 0 0 10px;
-			background: lighten($alt, 10%);
-			color: #fff;
-			position: absolute;
-			left: 35px;
-			box-sizing: border-box;
-			top: 0;
-			right: 0;
-			bottom: 0;
-			width: 80%;
-			font-size: 14px;
-			border-radius: 35px;
-			&.searchInput {
-				left: 0;
-				width: 85%;
-			}
-		}
-		& > * {
-			line-height: 35px;
-			height: 35px;
-		}
-	}
-	::-webkit-input-placeholder {
-	   color: rgba(255,255,255,.75);
-	}
-	:-moz-placeholder {
-	   color: rgba(255,255,255,.75);
-	}
 
-	::-moz-placeholder {
-	   color: rgba(255,255,255,.75);
-	}
-	:-ms-input-placeholder {
-	   color: rgba(255,255,255,.75);
-	}
-	#advancedSearchDropdown {
-		position: absolute;
-		left: 0;
-		top: 0;
-		box-shadow: $box-shadow;
-		z-index: 2;
-		border-radius: 1rem;
-		padding: 35px 0 0;
-		right: 0;
-		label {
-			color: $gray;
-		}
-		.input-icon {
-			display: block;
-		}
-		.wrap {
-			background: #fff;
-			float: left;
-			padding: 1rem;
-			width: 100%;
-			box-sizing: border-box;
-			border-radius: 0 0 1rem 1rem;
-		}
-	}
-	a {
-		display: none;
+}
+
+.search-form-fieldset {
+	@include flexFill();
+	@include flexInline();
+	max-width: 100%;
+	height: 35px;
+	border-radius: 35px;
+	background: lighten($alt, 10%);
+	color: #fff;
+}
+
+.search-form-fieldset-input {
+	@include flexFill();
+	@include flexInline();
+	@include flexJustifyCenter();
+
+	padding: 0 0 0 10px;
+	color: #fff;
+	font-size: 14px;
+	border-radius: 35px;
+
+	/* reset */
+	background: transparent;
+	border:0;
+	outline: none;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+	min-width: 50px;
+
+	/* placeholder */
+	&::-webkit-input-placeholder {  color: rgba(255,255,255,.75) }
+	&:-moz-placeholder { color: rgba(255,255,255,.75) }
+	&::-moz-placeholder { color: rgba(255,255,255,.75) }
+	&:-ms-input-placeholder { color: rgba(255,255,255,.75) }
+}
+
+
+.searchForm-action-button {
+	@include flexInline();
+	@include flexAlignCenter();
+	position: relative;
+	z-index: 5;
+	width: 45px;
+	padding: 0;
+	border:0;
+	margin: 0;
+	color: #fff;
+	cursor: pointer;
+	background: transparent;
+	transition: background-color .25s ease;
+	outline:none;
+	> i { margin: 0px auto }
+}
+
+.searchForm-toggle-advanced {
+	width: 35px;
+	border-radius: 35px 0 0 35px;
+	&:hover { background: $alt-light }
+}
+.searchForm-action-button-advanced { display: none }
+
+
+/* ADVANCED STATE */
+
+.searchForm-container-adv {
+	.search-form-fieldset {
+		border-radius: 1rem 1rem 0 0;
+		.search-form-fieldset-input { visibility: hidden; }
+		.searchForm-toggle-advanced { border-radius: 1rem 0 0 }
+		.searchForm-action-button-advanced { display: inline-flex }
 	}
 }
 
+.searchForm-advanced-container {
+	position: absolute;
+	left: 0;
+	top: 0;
+	box-shadow: $box-shadow;
+	z-index: 2;
+	border-radius: 1rem;
+	padding: 35px 0 0;
+	right: 0;
+	label { color: $gray }
+	.input-icon { display: block }
+
+}
+
+.searchForm-advanced-wrapper {
+	background: #fff;
+	float: left;
+	padding: 1rem;
+	width: 100%;
+	box-sizing: border-box;
+	border-radius: 0 0 1rem 1rem;
+	> .row {
+		line-height: 36px /* header#pm_header-desktop */
+	}
+}
+
+.searchFrom-advanced-radio {
+	line-height: 33px;
+}
+
+body:not(.mobileMode) .searchFrom-advanced-radio label {
+	display: inline-flex;
+	margin-right: 1rem;
+}
+
+/* MOBILE STATE */
 body.mobileMode {
-	form.searchForm {
-		position: static;
-		& > fieldset {
-			display: none;
-		}
-		#advancedSearchDropdown {
-			top: 70px;
-			box-shadow: none;
-			border-radius: none;
-			padding-top: 0;
-			.wrap {
-				border-radius: 0;
-				border-bottom: 1px solid $border;
-			}
+	.searchForm-container { position: static }
+	.search-form-fieldset { display: none }
+	.searchForm-advanced-container {
+		top: 70px;
+		box-shadow: none;
+		border-radius: none;
+		padding-top: 0;
+	}
+	.searchForm-advanced-wrapper {
+		border-radius: 0;
+		border-bottom: 1px solid $border;
+		> .row 	> [class*='col-'] {
+			float: left;
+			width: 100% !important;
+			clear: both;
+			box-sizing: border-box;
+			padding: 0;
 		}
 	}
 }
