@@ -5,6 +5,7 @@
                 <legend translate translate-context="Title">Labels</legend>
                 <p>
                     <button type="button" class="pm_button primary" ng-click="createLabel()" translate-context="Action" translate>Add Label</button>
+                    <button type="button" class="pm_button" ng-click="sortLabels()" translate-context="Action" translate>Sort</button>
                 </p>
                 <p class="alert alert-info" ng-show="labels.length === 0" translate-context="Info" translate>You have no labels.</p>
                 <div class="pm_sort" ng-show="labels.length > 0">
