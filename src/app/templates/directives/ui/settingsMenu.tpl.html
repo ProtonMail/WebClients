@@ -1,4 +1,4 @@
-<div>
+<div  ng-controller="SidebarController">
     <div ng-show="mobileMode">
         <button class="pm_button round pull-right" ng-click="hideMobileSidebar()">
             <i class="fa fa-times"></i>
@@ -16,7 +16,7 @@
             <i class="fa fa-arrow-left"></i>
             <span translate-comment="inbox menu" translate>Back to inbox</span>
         </a>
-        <ul class="menu" ng-controller="SidebarController">
+        <ul class="menu">
             <li role="presentation" ng-if="!isSubUser && !isMember" ng-class="{'active': ('secured.dashboard' | includedByState)}">
                 <a ui-sref="secured.dashboard" translate-context="Title">
                     <i class="fa fa-tachometer"></i>
