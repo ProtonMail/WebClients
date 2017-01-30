@@ -77,7 +77,7 @@ cardPanel
     font-size: 3.2rem;
   }
 
-  label {
+  .cardPanel-label {
     font-size: .6rem;
     letter-spacing: .5px;
     text-shadow: none;
@@ -86,7 +86,7 @@ cardPanel
     opacity: 0.7;
     display: block;
     margin-bottom: 3px;
-    line-height: 18px;
+    height: 18px;
   }
 
 
