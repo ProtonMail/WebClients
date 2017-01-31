@@ -644,7 +644,7 @@ angular.module('proton.core')
      * Return a copy of messages cached for a specific ConversationID
      * @param {String} conversationID
      */
-    api.queryMessagesCached = (ConversationID) => {
+    api.queryMessagesCached = (ConversationID = '') => {
         const list = api.orderMessage(_.where(messagesCached, { ConversationID }));
         return list.slice(); // Create a copy
     };
