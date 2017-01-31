@@ -219,8 +219,3 @@
         }
     }
 }
-
-/* override */
-div.conversation .row .meta time.time { width: 86px !important; }
-div.conversation .row .meta { width: auto !important;}
-div.conversation .row h4 { width: calc(100% - 122px) !important; }
