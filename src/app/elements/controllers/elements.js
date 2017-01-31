@@ -489,7 +489,6 @@ angular.module('proton.elements')
         const selectedElements = $scope.elementsSelected(false);
 
         $rootScope.numberElementChecked = selectedElements.length;
-        $rootScope.showWelcome = false;
     };
 
     /**
