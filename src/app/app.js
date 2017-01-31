@@ -274,17 +274,7 @@ angular.module('proton', [
 // Console messages
 //
 
-.run(($log) => {
-    const styles = {
-        spam: 'color: #505061; font-size: 14px;',
-        strong: 'color: #505061; font-size: 14px; font-weight: bold;',
-        link: 'color: #9397cd; font-size: 14px;  '
-    };
-
-    $log.info('%cFind a %csecurity bug?%c🐛 security@protonmail.ch', styles.spam, styles.strong, styles.link);
-    $log.info('%c⛰ We\'re %chiring! %chttps://protonmail.com/careers', styles.spam, styles.strong, styles.link);
-
-})
+.run((consoleMessage) => consoleMessage())
 
 //
 // Pikaday config (datepicker)
