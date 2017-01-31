@@ -1,4 +1,4 @@
-<div id="pm_latest" ng-if="showWelcome === true">
+<div id="pm_latest" ng-if="showWelcome">
     <header translate translate-context="Title">Welcome</header>
     <section id="storageStatus" ng-show="user.UsedSpace > 0">
     	<div class="wrap">
@@ -35,4 +35,4 @@
     </div>
 </div>
 
-<count-elements-selected id="pm_placeholder" ng-show="showWelcome === false"></count-elements-selected>
+<count-elements-selected id="pm_placeholder" ng-if="!showWelcome"></count-elements-selected>
