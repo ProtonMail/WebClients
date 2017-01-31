@@ -325,6 +325,7 @@
         */
         @include flexColumn();
         > label {
+            height: auto;
             min-height: 25px;
             padding: 5px 0px;
         }
