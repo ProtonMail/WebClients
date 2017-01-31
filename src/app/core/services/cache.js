@@ -571,6 +571,7 @@ angular.module('proton.core')
                     number = CONSTANTS.ELEMENTS_PER_PAGE;
                 }
 
+                $rootScope.Total = total;
                 messages = messages.slice(start, end);
 
                 // Supposed total equal to the total cache?
@@ -628,6 +629,7 @@ angular.module('proton.core')
                     number = CONSTANTS.ELEMENTS_PER_PAGE;
                 }
 
+                $rootScope.Total = total;
                 conversations = conversations.slice(start, end);
                 // Supposed total equal to the total cache?
                 if (conversations.length === number) {
