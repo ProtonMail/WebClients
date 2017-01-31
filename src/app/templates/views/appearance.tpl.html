@@ -4,19 +4,19 @@
             <section class="setting pm_form col-1-2">
                 <legend translate-context="Title" translate>Composer</legend>
                 <p class="alert alert-info"><span translate-context="Info" translate>This sets the default composer size. Two sizes are available, a smaller popup composer, and a bigger full screen composer.</span> <a href="https://protonmail.com/support/knowledge-base/composer/" target="_blank" translate-context="Action" translate-comment="learn more link" translate>Learn more</a></p>
-                <div class="radio col-1-2">
-                    <label>
-                        <input type="radio" ng-model="appearance.ComposerMode" ng-value="0" ng-change="saveComposerMode(composerMode)" />
+                <div class="radio col-1-2 multi-line-label">
+                    <label class="visual-label">
+                        <custom-radio data-custom-ng-model="appearance.ComposerMode" data-custom-ng-value="0" data-custom-ng-change="saveComposerMode(composerMode)"></custom-radio>
                         <span  translate tranlate-comment="form option">Popup</span>
-                        <br />
+                        <span class="visual-label-lineBreak"></span>
                         <img src="assets/img/settings/pop.gif"  alt="Popup" />
                     </label>
                 </div>
-                <div class="radio col-1-2">
-                    <label>
-                        <input type="radio" ng-model="appearance.ComposerMode" ng-value="1" ng-change="saveComposerMode(composerMode)" />
+                <div class="radio col-1-2 multi-line-label">
+                    <label class="visual-label">
+                        <custom-radio data-custom-ng-model="appearance.ComposerMode" data-custom-ng-value="1" data-custom-ng-change="saveComposerMode(composerMode)" ></custom-radio>
                         <span  translate translate-comment="form option">Maximized</span>
-                        <br />
+                        <span class="visual-label-lineBreak"></span>
                         <img src="assets/img/settings/max.gif" alt="Maximized" />
                     </label>
                 </div>
@@ -24,19 +24,19 @@
             <section class="setting pm_form col-1-2">
                 <legend translate-context="Title" translate>Layout</legend>
                 <p class="alert alert-info"><span translate-context="Info" translate>ProtonMail supports both column and row layouts for the inbox. Using this setting, it is possible to change between the two layouts.</span> <a href="https://protonmail.com/support/knowledge-base/change-inbox-layout" target="_blank"  translate translate-context="Action">Learn more</a></p>
-                <div class="radio col-1-2">
-                    <label>
-                        <input type="radio" ng-model="appearance.ViewLayout" ng-value="0" ng-change="saveLayoutMode(composerMode)" />
+                <div class="radio col-1-2 multi-line-label">
+                    <label class="visual-label">
+                        <custom-radio data-custom-ng-model="appearance.ViewLayout" data-custom-ng-value="0" data-custom-ng-change="saveLayoutMode(composerMode)" ></custom-radio>
                         <span  translate translate-comment="form option">Column</span>
-                        <br />
+                        <span class="visual-label-lineBreak"></span>
                         <img src="/assets/img/settings/col.gif" alt="Column" />
                     </label>
                 </div>
-                <div class="radio col-1-2">
-                    <label>
-                        <input type="radio" ng-model="appearance.ViewLayout" ng-value="1" ng-change="saveLayoutMode(composerMode)" />
+                <div class="radio col-1-2 multi-line-label">
+                    <label class="visual-label">
+                        <custom-radio data-custom-ng-model="appearance.ViewLayout" data-custom-ng-value="1" data-custom-ng-change="saveLayoutMode(composerMode)"></custom-radio>
                         <span  translate translate-comment="form option">Row</span>
-                        <br />
+                        <span class="visual-label-lineBreak"></span>
                         <img src="/assets/img/settings/row.gif" alt="Row" />
                     </label>
                 </div>
@@ -48,15 +48,15 @@
                 <legend translate-context="Title" translate>Toolbar</legend>
                 <p class="alert alert-info" translate-context="Info" translate>Choose your prefered button order for marking messages as read / unread.</p>
                 <div class="toolbar-button-options">
-                    <label for="messageButtons1">
-                        <input id="messageButtons1" ng-change="saveButtonsPosition()" type="radio" ng-model="appearance.MessageButtons" ng-value="0" />
+                    <label>
+                        <custom-radio data-custom-ng-change="saveButtonsPosition()" data-custom-ng-model="appearance.MessageButtons" data-custom-ng-value="0"></custom-radio>
                         <span class="pm_buttons pull-left" pt-tooltip-translate="Mark as read / Mark as unread"  pt-tooltip-translate-context="Action">
                             <a href="#" class="dead"><i class="fa fa fa-eye"></i></a>
                             <a href="#" class="dead"><i class="fa fa fa-eye-slash"></i></a>
                         </span>
                     </label>
-                    <label for="messageButtons2">
-                        <input id="messageButtons2" ng-change="saveButtonsPosition()" type="radio" ng-model="appearance.MessageButtons" ng-value="1" />
+                    <label>
+                        <custom-radio data-custom-ng-change="saveButtonsPosition()" data-custom-ng-model="appearance.MessageButtons" data-custom-ng-value="1"></custom-radio>
                         <span class="pm_buttons pull-left" pt-tooltip-translate="Mark as unread / Mark as read"  pt-tooltip-translate-context="Action">
                             <a href="#" class="dead"><i class="fa fa fa-eye-slash"></i></a>
                             <a href="#" class="dead"><i class="fa fa fa-eye"></i></a>
