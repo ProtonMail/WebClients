@@ -26,7 +26,7 @@ angular.module('proton.settings')
          * @return {Array}
          */
         const sort = () => {
-            LIST = _.sortBy(authentication.user.Labels, 'Name');
+            LIST = _.sortBy(authentication.user.Labels, ({ Name = '' }) => Name.toLowerCase());
             return LIST;
         };
 
