@@ -1,5 +1,6 @@
 angular.module('proton.core')
 .factory('filterModal', ($timeout, $rootScope, pmModal, gettextCatalog, authentication, Filter, networkActivityTracker, notify, CONSTANTS, eventManager, labelModal, Label) => {
+    const labelsOrdered = _.sortBy(authentication.user.Labels, 'Order');
     return pmModal({
         controllerAs: 'ctrl',
         templateUrl: 'templates/modals/filter.tpl.html',
@@ -78,7 +79,7 @@ angular.module('proton.core')
                 ctrl.hasMark = (Mark.Read || Mark.Starred);
                 actions.Mark = Mark;
                 ctrl.hasLabels = Labels.length > 0;
-                actions.Labels = authentication.user.Labels.map((label) => {
+                actions.Labels = labelsOrdered.map((label) => {
                     label.Selected = _.findIndex(Labels, { Name: label.Name }) !== -1;
 
                     return label;
@@ -126,7 +127,7 @@ angular.module('proton.core')
                 return Status;
             }
 
-            ctrl.initialization = function () {
+            ctrl.initialization = () => {
                 ctrl.filter = {
                     ID: prepareID(params.filter),
                     Name: prepareName(params.filter),
@@ -151,7 +152,7 @@ angular.module('proton.core')
 
                     ['deleteLabel', 'createLabel', 'updateLabel', 'updateLabels'].forEach((name) => {
                         unsubscribe.push($rootScope.$on(name, () => {
-                            ctrl.filter.Simple.Actions.Labels = authentication.user.Labels;
+                            ctrl.filter.Simple.Actions.Labels = labelsOrdered;
                         }));
                     });
 
@@ -177,7 +178,7 @@ angular.module('proton.core')
                 model.Comparator = _.findWhere(ctrl.comparators, { value });
             };
 
-            ctrl.displaySeparator = function () {
+            ctrl.displaySeparator = () => {
                 if (ctrl.filter.Simple) {
                     const conditions = ctrl.filter.Simple.Conditions;
 
@@ -187,7 +188,7 @@ angular.module('proton.core')
                 return false;
             };
 
-            ctrl.valid = function () {
+            ctrl.valid = () => {
                 let pass = true;
 
                 // Check name
@@ -230,7 +231,7 @@ angular.module('proton.core')
                 return ctrl.filter.Sieve.length > 0;
             };
 
-            ctrl.addCondition = function () {
+            ctrl.addCondition = () => {
                 ctrl.filter.Simple.Conditions.push({
                     Type: _.first(ctrl.types),
                     Comparator: _.first(ctrl.comparators),
@@ -239,7 +240,7 @@ angular.module('proton.core')
                 });
             };
 
-            ctrl.addValue = function (condition) {
+            ctrl.addValue = (condition) => {
                 if (condition.Values.indexOf(condition.value) === -1) {
                     if (condition.value) {
                         condition.Values.push(condition.value);
@@ -250,7 +251,7 @@ angular.module('proton.core')
                 }
             };
 
-            ctrl.addLabel = function () {
+            ctrl.addLabel = () => {
                 labelModal.activate({
                     params: {
                         title: gettextCatalog.getString('Create new label', null, 'Title'),
@@ -277,13 +278,13 @@ angular.module('proton.core')
                 });
             };
 
-            ctrl.removeCondition = function (condition) {
+            ctrl.removeCondition = (condition) => {
                 const index = ctrl.filter.Simple.Conditions.indexOf(condition);
 
                 ctrl.filter.Simple.Conditions.splice(index, 1);
             };
 
-            ctrl.save = function () {
+            ctrl.save = () => {
                 let promise;
                 let messageSuccess;
                 const clone = angular.copy(ctrl.filter);
@@ -330,7 +331,7 @@ angular.module('proton.core')
                 );
             };
 
-            ctrl.cancel = function () {
+            ctrl.cancel = () => {
                 params.close();
             };
 

@@ -50,24 +50,24 @@ angular.module('proton.event', ['proton.constants', 'proton.utils'])
             },
             manageLabels(labels) {
                 if (angular.isDefined(labels)) {
-                    _.each(labels, (label) => {
-                        const index = _.findIndex(authentication.user.Labels, { ID: label.ID });
+                    _.each(labels, ({ Action, ID = '', Label = {} }) => {
+                        const index = _.findIndex(authentication.user.Labels, { ID });
 
-                        if (label.Action === DELETE) {
+                        if (Action === DELETE) {
                             if (index !== -1) {
                                 authentication.user.Labels.splice(index, 1);
-                                $rootScope.$emit('deleteLabel', label.ID);
+                                $rootScope.$emit('deleteLabel', ID);
                             }
-                        } else if (label.Action === CREATE) {
+                        } else if (Action === CREATE) {
                             if (index === -1) {
-                                authentication.user.Labels.push(label.Label);
-                                cacheCounters.add(label.Label.ID);
-                                $rootScope.$emit('createLabel', label.ID, label.Label);
+                                authentication.user.Labels.push(Label);
+                                cacheCounters.add(Label.ID);
+                                $rootScope.$emit('createLabel', ID, Label);
                             }
-                        } else if (label.Action === UPDATE) {
+                        } else if (Action === UPDATE) {
                             if (index !== -1) {
-                                authentication.user.Labels[index] = label.Label;
-                                $rootScope.$emit('updateLabel', label.ID, label.Label);
+                                authentication.user.Labels[index] = Label;
+                                $rootScope.$emit('updateLabel', ID, Label);
                             }
                         }
                     });

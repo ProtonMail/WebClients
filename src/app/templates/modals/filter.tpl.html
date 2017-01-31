@@ -94,11 +94,11 @@
                         <span>Apply Labels</span>
                     </label>
                     <div class="alert pm_grid labelsGrid" ng-show="ctrl.hasLabels">
-                        <div class="col-1-4 pm-flex-content-vertical-center" ng-repeat="label in ctrl.filter.Simple.Actions.Labels track by label.ID | orderBy: 'Order'">
+                        <div class="col-1-4 pm-flex-content-vertical-center" ng-repeat="label in ctrl.filter.Simple.Actions.Labels track by label.ID">
                             <label>
                                 <custom-checkbox data-custom-ng-model="label.Selected"></custom-checkbox>
                                 <i class="fa fa-tag" ng-style="{color: label.Color}"></i>
-                                <span>{{ label.Name }}</span>
+                                <span ng-bind="label.Name"></span>
                             </label>
                         </div>
                         <div class="col-1-4 pm-flex-content-vertical-center">
