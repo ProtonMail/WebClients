@@ -8,7 +8,7 @@ angular.module('proton.sidebar')
 
         return {
             replace: true,
-            template: '<button class="pm_button btnDisplayMobileSidebar-container"><i class="fa"></i></button>',
+            template: '<button class="btnDisplayMobileSidebar-container"><i class="fa"></i></button>',
             compile(element, { type = 'show' }) {
 
                 element[0].querySelector('i').classList.add(CLASS_ICONS[type]);
