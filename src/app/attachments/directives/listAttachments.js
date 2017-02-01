@@ -1,5 +1,5 @@
 angular.module('proton.attachments')
-    .directive('listAttachments', (attachmentModel, $state, $rootScope) => {
+    .directive('listAttachments', (attachmentDownloader, $state, $rootScope) => {
 
         const DECRYPTING_CLASSNAME = 'listAttachments-item-decrypt';
         const DOWNLOADED_CLASSNAME = 'listAttachments-item-download';
@@ -33,14 +33,11 @@ angular.module('proton.attachments')
                         target.classList.add(DECRYPTING_CLASSNAME);
 
                         // Cf Safari
-                        if (target.href && target.href.search(/^data.*/) !== -1) {
-                            alert('Your browser lacks features needed to download encrypted attachments directly. Please right-click on the attachment and select Save/Download As.');
-                            e.preventDefault();
-                            e.stopPropagation();
+                        if (attachmentDownloader.isNotSupported(e)) {
                             return false;
                         }
 
-                        attachmentModel
+                        attachmentDownloader
                             .download(attachment, scope.model, target)
                             .then(() => {
                                 target.classList.add(DOWNLOADED_CLASSNAME);

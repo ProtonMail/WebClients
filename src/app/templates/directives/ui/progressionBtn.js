@@ -5,7 +5,8 @@ angular.module('proton.ui')
         link(scope, el, { action = '' }) {
             el[0].setAttribute('data-label', action);
 
-            const onClick = () => {
+            const onClick = (e) => {
+                e.stopPropagation();
                 el[0].disabled = true;
                 $rootScope.$emit('attachment.upload', {
                     type: action,

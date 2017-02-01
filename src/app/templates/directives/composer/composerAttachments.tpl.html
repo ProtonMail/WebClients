@@ -13,10 +13,10 @@
         </span>
     </div>
     <div class="composerAttachments-loaders">
-        <progress-upload
+        <composer-attachments-item
             ng-repeat="attachment in list track by attachment.id"
-            class="composerAttachments-loader uploading"
-            data-model="attachment"></progress-upload>
+            class="composerAttachments-loader uploading">
+        </composer-attachments-item>
     </div>
 
 </div>

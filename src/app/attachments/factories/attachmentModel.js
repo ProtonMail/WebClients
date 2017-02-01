@@ -1,5 +1,5 @@
 angular.module('proton.attachments')
-    .factory('attachmentModel', ($q, attachmentApi, AttachmentLoader, authentication, $rootScope, embedded, notify, networkActivityTracker, composerRequestModel) => {
+    .factory('attachmentModel', ($q, attachmentApi, AttachmentLoader, authentication, $rootScope, embedded, notify, networkActivityTracker, composerRequestModel, attachmentDownloader) => {
 
         const queueMessage = {};
         let MAP_ATTACHMENTS = {};
@@ -65,6 +65,9 @@ angular.module('proton.attachments')
                     break;
                 case 'upload':
                     uploadQueue(data);
+                    break;
+                case 'download.composer':
+                    downloadFromComposer(data);
                     break;
             }
         });
@@ -336,27 +339,22 @@ angular.module('proton.attachments')
                 });
         }
 
-        /**
-         * Download an attachment
-         * @param  {Object} attachment
-         * @param  {Message} message
-         * @param  {Node} href
-         * @return {Promise}
-         */
-        const download = (attachment, message, href) => {
-            return AttachmentLoader.get(attachment, message)
-                .then((buffer) => ({
-                    data: buffer,
-                    Name: attachment.Name,
-                    MIMEType: attachment.MIMEType,
-                    el: href
-                }))
-                .then(AttachmentLoader.generateDownload);
-        };
-
         const getCurrentQueue = ({ ID }) => queueMessage[ID];
 
+        /**
+         * Download an attachment from the composer
+         * As we don't know the current atttachment we need to get it from the model itself
+         *     ->> We MUST not know the attachment inside the composer
+         * @param  {String} options.id      Packet id
+         * @param  {Message} options.message
+         * @return {void}
+         */
+        function downloadFromComposer({ id, message }) {
+            const config = MAP_ATTACHMENTS[id] || { attachment: message.getAttachment(id) };
+            if (config.attachment) {
+                attachmentDownloader.download(config.attachment, message);
+            }
+        }
 
-        return { create, download, getCurrentQueue };
-
+        return { create, getCurrentQueue };
     });
