@@ -4,20 +4,42 @@
             <div class="setting pm_form full">
                 <legend translate translate-context="Title">Labels</legend>
                 <p>
-                    <button type="button" class="pm_button primary" ng-click="createLabel()" translate-context="Action" translate>Add Label</button>
-                    <button type="button" class="pm_button" ng-click="sortLabels()" translate-context="Action" translate>Sort</button>
+                    <button type="button" class="pm_button primary labelsState-btn-add" ng-click="createLabel()" translate-context="Action" translate>Add Label</button>
+                    <button type="button" class="pm_button labelsState-btn-sort" ng-click="sortLabels()" translate-context="Action" translate>Sort</button>
                 </p>
-                <p class="alert alert-info" ng-show="labels.length === 0" translate-context="Info" translate>You have no labels.</p>
-                <div class="pm_sort" ng-show="labels.length > 0">
-                    <ul data-as-sortable="labelsDragControlListeners" is-disabled="labels.length === 1" ng-class="{ 'as-sortable-disabled': labels.length === 1 }" data-ng-model="labels">
-                        <li ng-repeat="label in labels track by label.ID" as-sortable-item="">
-                            <span as-sortable-item-handle="">
+                <p
+                    class="alert alert-info labelsState-msg-info"
+                    ng-show="!labels.length"
+                    translate-context="Info"
+                    translate>You have no labels.</p>
+
+                <div class="pm_sort" ng-if="labels.length">
+                    <ul
+                        class="labelsState-list"
+                        data-as-sortable="labelsDragControlListeners"
+                        is-disabled="labels.length === 1"
+                        ng-class="{ 'as-sortable-disabled': labels.length === 1 }"
+                        data-ng-model="labels">
+                        <li
+                            class="labelsState-item"
+                            ng-repeat="label in labels track by label.ID"
+                            data-color="{{label.Color}}"
+                            data-as-sortable-item>
+                            <span as-sortable-item-handle>
                                 <i class="fa fa-ellipsis-v as-sortable-icon"></i>
                                 <i class="fa fa-tag" ng-style="{ 'color': label.Color }"></i>
-                                <span class="label label-pm">{{ label.Name }}</span>
+                                <span class="label label-pm labelsState-item-name">{{ label.Name }}</span>
                                 <span class="pull-right">
-                                    <button type="button" class="pm_button link" ng-click="editLabel(label)" translate-context="Action" translate>Edit</button>
-                                    <button type="button" class="pm_button link" ng-click="deleteLabel(label)" translate-context="Action" translate>Delete</button>
+                                    <button
+                                        class="pm_button link labelsState-btn-edit"
+                                        ng-click="editLabel(label)"
+                                        translate-context="Action"
+                                        translate>Edit</button>
+                                    <button
+                                        class="pm_button link labelsState-btn-delete"
+                                        ng-click="deleteLabel(label)"
+                                        translate-context="Action"
+                                        translate>Delete</button>
                                 </span>
                             </span>
                         </li>

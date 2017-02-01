@@ -1,39 +1,72 @@
-<div class="pm_modal important {{ctrl.class}}" role="dialog" id="labelModal">
-    <div class="modal-dialog">
-        <button type="button" ng-click="ctrl.cancel()" aria-hidden="true" title-translate="Close" title-translate-context="Action" class="fa fa-times close"></button>
+<section
+    class="pm_modal important {{ctrl.class}} labelModal-container"
+    role="dialog"
+    id="labelModal">
+    <form class="modal-dialog" ng-submit="ctrl.create()">
+        <button
+            ng-click="ctrl.cancel()"
+            type="button"
+            aria-hidden="true"
+            title-translate="Close"
+            title-translate-context="Action"
+            class="fa fa-times close"></button>
         <div class="modal-content">
-            <div class="modal-header" ng-show="ctrl.title">
-                <h3 class="modal-title">{{ ctrl.title }}</h3>
-            </div>
+            <header class="modal-header" ng-show="ctrl.title">
+                <h3 class="modal-title">{{ ::ctrl.title }}</h3>
+            </header>
             <div class="modal-body pm_form pm_grid">
                 <div class="row">
-                    <span class="col-1-4">
-                        <label for="labelName" translate translate-context="Title">Name</label>
-                    </span><!--/.col-->
-                    <span class="col-3-4">
-                        <input tabindex="1" type="text" class="form-control" autofocus id="labelName" name="label" ng-model="ctrl.name" placeholder-translate="Label name" required="" />
-                    </span>
+                    <label for="labelName" class="col-1-4" translate translate-context="Title">Name</label>
+                    <div class="col-3-4">
+                        <input
+                            tabindex="1"
+                            type="text"
+                            class="form-control labelModal-input-name"
+                            autofocus
+                            id="labelName"
+                            name="label"
+                            ng-model="ctrl.name"
+                            placeholder-translate="Label name"
+                            required>
+                    </div>
                 </div>
                 <div class="row">
-                    <span class="col-1-4">
-                        <label translate translate-context="Title">Color</label>
-                    </span><!--/.col-->
-                    <span class="col-3-4">
-                        <div class="text-center">
-                            <ul class="palette list-inline">
-                                <li ng-repeat="c in ctrl.colors">
-                                    <a ng-click="ctrl.color = c;" class="color" ng-class="{'active': ctrl.color === c}" ng-style="{ 'background-color': c }"><i class="fa fa-check"></i></a>
-                                </li>
-                            </ul>
-                        </div>
-                    </span>
+                    <label class="col-1-4" translate translate-context="Title">Color</label>
+                    <div class="text-center col-3-4">
+                        <ul class="palette list-inline labelModal-list">
+                            <li
+                                class="labelModal-item"
+                                ng-repeat="c in ctrl.colors track by c"
+                                ng-style="{ 'color': c }">
+                                <input
+                                    tabindex="{{ 2 + $index}}"
+                                    type="radio"
+                                    ng-value="c"
+                                    name="paletteColor"
+                                    ng-model="ctrl.color"
+                                    aria-labelledby="Color {{::c}}"
+                                    class="labelModal-input-color">
+                                <div class="labelModal-item-mask"><i class="fa fa-check"></i></div>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>
-        <div class="modal-footer">
-            <button type="button" class="pm_button" ng-click="ctrl.cancel()" ng-disabled="networkActivity.loading()" translate translate-context="Action">Cancel</button>
-            <button type="button" ng-click="ctrl.create()" class="pm_button primary pull-right" ng-disabled="networkActivity.loading()" translate translate-context="Action">Save</button>
-        </div>
-    </div>
+        <footer class="modal-footer">
+            <button
+                class="pm_button labelModal-btn-cancel"
+                type="button"
+                ng-click="ctrl.cancel()"
+                ng-disabled="networkActivity.loading()"
+                translate
+                translate-context="Action">Cancel</button>
+            <button
+                class="pm_button primary pull-right labelModal-btn-save"
+                ng-disabled="networkActivity.loading()"
+                translate
+                translate-context="Action">Save</button>
+        </footer>
+    </form>
     <div class="modal-overlay"></div>
-</div>
+</section>

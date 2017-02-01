@@ -15,7 +15,7 @@ module.exports = ({
 
     describe(title, () => {
 
-        it('should not display the ', () => {
+        it('should not display the dropdown', () => {
             dropdownLabel.isOpen()
                 .then(isFalse);
         });

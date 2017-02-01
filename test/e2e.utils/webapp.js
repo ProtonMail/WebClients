@@ -1,8 +1,37 @@
 const SELECTOR = {
+    header: {
+        container: '#pm_header-desktop',
+        settings: '#tour-settings'
+    },
+    settings: {
+        container: '.settingsMenu-container',
+        dashboard: '.navigationSettings-is-dashboard > .navigationSettings-link',
+        account: '.navigationSettings-is-account > .navigationSettings-link',
+        labels: '.navigationSettings-is-labels > .navigationSettings-link',
+        filters: '.navigationSettings-is-filters > .navigationSettings-link',
+        security: '.navigationSettings-is-security > .navigationSettings-link',
+        appearance: '.navigationSettings-is-appearance > .navigationSettings-link',
+        addresses: '.navigationSettings-is-addresses > .navigationSettings-link',
+        domains: '.navigationSettings-is-domains > .navigationSettings-link',
+        members: '.navigationSettings-is-members > .navigationSettings-link',
+        payments: '.navigationSettings-is-payments > .navigationSettings-link',
+        keys: '.navigationSettings-is-keys > .navigationSettings-link',
+        donate: '.settingsMenu-item-donate'
+    },
     layout: {
         rows: '.chooseLayoutBtns-container-rows',
         column: '.chooseLayoutBtns-container:not(.chooseLayoutBtns-container-rows)'
     }
+};
+
+const goToMenu = (name = '', origin = 'settings') => {
+    const selector = SELECTOR[origin][name];
+    const container = SELECTOR[origin].container;
+    return browser.executeScript(`
+        $('${container}')
+            .find('${selector}')
+            .click();
+    `);
 };
 
 const isLayout = (key = 'column') => {
@@ -33,5 +62,5 @@ const openState = (state = '') => {
 };
 
 module.exports = {
-    openState, openLabel, isLayout
+    openState, openLabel, isLayout, goToMenu
 };

@@ -27,4 +27,12 @@ const isOpened = (type = '') => {
     `);
 };
 
-module.exports = { find, message, isOpened, containsMessage };
+const hasDisplayed = (type = '') => {
+    return browser.wait(() => {
+        return isOpened(type)
+            .then((test) => test === true);
+    }, 25000)
+        .then(() => message(type));
+};
+
+module.exports = { find, message, isOpened, containsMessage, hasDisplayed };
