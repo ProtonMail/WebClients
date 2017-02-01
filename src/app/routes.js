@@ -106,38 +106,6 @@ angular.module('proton.routes', [
         }
     })
 
-    // -------------------------------------------
-    // ACCOUNT ROUTES
-    // -------------------------------------------
-    .state('account', {
-        url: '/account/:username/:token',
-        resolve: {
-            app($stateParams, $state, $q, User) {
-                const defer = $q.defer();
-
-                User.checkInvite({
-                    username: $stateParams.username,
-                    token: $stateParams.token
-                }).$promise.then(() => {
-                    defer.resolve();
-                }, (response) => {
-                    defer.reject(response);
-                });
-
-                return defer.promise;
-            }
-        },
-        views: {
-            'main@': {
-                controller: 'ResetController',
-                templateUrl: 'templates/layout/auth.tpl.html'
-            },
-            'panel@account': {
-                templateUrl: 'templates/views/sign-up.tpl.html'
-            }
-        }
-    })
-
     .state('pre-invite', {
         url: '/pre-invite/:user/:token',
         views: {
@@ -447,8 +415,7 @@ angular.module('proton.routes', [
     .state('eo.message', {
         url: '/eo/message/:tag',
         resolve: {
-            messageData($stateParams, $q, Eo, Message, pmcw, secureSessionStorage) {
-                const deferred = $q.defer();
+            messageData($stateParams, $q, Eo, messageModel, pmcw, secureSessionStorage) {
                 const tokenId = $stateParams.tag;
                 const decryptedToken = secureSessionStorage.getItem('proton:decrypted_token');
                 const password = pmcw.decode_utf8_base64(secureSessionStorage.getItem('proton:encrypted_password'));
@@ -468,12 +435,8 @@ angular.module('proton.routes', [
                         }));
                     });
 
-                    $q.all(promises).then(() => {
-                        deferred.resolve(new Message(message));
-                    });
+                    return $q.all(promises).then(() => messageModel(message));
                 });
-
-                return deferred.promise;
             }
         },
         views: {
@@ -487,29 +450,26 @@ angular.module('proton.routes', [
     .state('eo.reply', {
         url: '/eo/reply/:tag',
         resolve: {
-            messageData($stateParams, $q, Eo, Message, pmcw, secureSessionStorage) {
-                const deferred = $q.defer();
+            messageData($stateParams, Eo, messageModel, pmcw, secureSessionStorage) {
                 const tokenId = $stateParams.tag;
                 const decryptedToken = secureSessionStorage.getItem('proton:decrypted_token');
                 const password = pmcw.decode_utf8_base64(secureSessionStorage.getItem('proton:encrypted_password'));
 
-                Eo.message(decryptedToken, tokenId)
+                return Eo.message(decryptedToken, tokenId)
                 .then((result) => {
                     const message = result.data.Message;
 
                     message.publicKey = result.data.PublicKey; // The sender’s public key
-                    pmcw.decryptMessageRSA(message.Body, password, message.Time)
+                    return pmcw.decryptMessageRSA(message.Body, password, message.Time)
                     .then((body) => {
                         const attachments = _.filter(message.Attachments, (attachment) => { return attachment.Headers && (attachment.Headers['content-id'] || attachment.Headers['content-location']); });
 
                         message.DecryptedBody = body.data;
                         message.Attachments = attachments;
                         message.NumAttachments = attachments.length;
-                        deferred.resolve(new Message(message));
+                        return messageModel(message);
                     });
                 });
-
-                return deferred.promise;
             }
         },
         views: {

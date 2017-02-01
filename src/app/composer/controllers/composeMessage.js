@@ -15,7 +15,8 @@ angular.module('proton.composer')
     CONSTANTS,
     Contact,
     hotkeys,
-    Message,
+    messageModel,
+    messageApi,
     embedded,
     networkActivityTracker,
     composerRequestModel,
@@ -473,7 +474,7 @@ angular.module('proton.composer')
     };
 
     $scope.save = (message, notification = false, autosaving = false) => {
-        const msg = new Message(message);
+        const msg = messageModel(message);
         return embedded.parser(msg, 'cid')
             .then((result) => {
                 msg.Body = result;
@@ -494,21 +495,20 @@ angular.module('proton.composer')
         let promise;
 
         if (type === UPDATE) {
-            promise = Message.updateDraft(parameters).$promise;
+            promise = messageApi.updateDraft(parameters);
         } else if (type === CREATE) {
-            promise = Message.createDraft(parameters).$promise;
+            promise = messageApi.createDraft(parameters);
         }
 
-        return promise
-            .then((data = {}) => {
-                if ((data.Code === 1000 || data.Code === 15033)) {
-                    return data;
-                }
-                throw new Error(data.Error || errorMessage);
-            })
-            .catch((error) => {
-                throw (error || new Error(errorMessage));
-            });
+        return promise.then(({ data = {} } = {}) => {
+            if ((data.Code === 1000 || data.Code === 15033)) {
+                return data;
+            }
+            throw new Error(data.Error || errorMessage);
+        })
+        .catch((error) => {
+            throw (error || new Error(errorMessage));
+        });
     }
 
     /**
@@ -658,7 +658,8 @@ angular.module('proton.composer')
                 } else if (result.Code === 15033) {
                     // Case where the user delete draft in an other terminal
                     delete parameters.id;
-                    Message.createDraft(parameters).$promise.then((result) => deferred.resolve(result.Message));
+                    messageApi.createDraft(parameters)
+                    .then(({ data = {} } = {}) => deferred.resolve(data.Message));
                 }
             });
         })
@@ -863,7 +864,7 @@ angular.module('proton.composer')
      */
     $scope.send = (msg) => {
         // Prevent mutability
-        const message = new Message(msg);
+        const message = messageModel(msg);
         const setStateSending = (is) => message.sending = msg.sending = is;
 
         message.Password = message.Password || '';
@@ -905,9 +906,9 @@ angular.module('proton.composer')
 
                 message.encrypting = false;
                 dispatchMessageAction(message);
-                return Message.send(parameters).$promise;
+                return messageApi.send(parameters);
             })
-            .then((data = {}) => {
+            .then(({ data = {} } = {}) => {
                 const { ErrorDescription, Code } = data;
                 // Check if there is an error coming from the server, then reject the process
                 if (data.Error) {
@@ -956,7 +957,7 @@ angular.module('proton.composer')
                     $rootScope.$emit('message.open', {
                         type: 'save.success',
                         data: {
-                            message: new Message(Sent)
+                            message: messageModel(Sent)
                         }
                     });
                 }, 500, false);

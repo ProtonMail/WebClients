@@ -5,7 +5,7 @@ angular.module('proton.conversation')
     tools,
     cache,
     eventManager,
-    Conversation,
+    conversationApi,
     networkActivityTracker,
     notify,
     CONSTANTS
@@ -30,7 +30,7 @@ angular.module('proton.conversation')
      * @param {ids}
      */
     function remove(ids = []) {
-        const promise = Conversation.delete(ids);
+        const promise = conversationApi.delete(ids);
         cache.addToDispatcher(promise);
 
         if (!tools.cacheContext()) {
@@ -54,7 +54,7 @@ angular.module('proton.conversation')
      * @param {Array} ids
      */
     function unread(ids = []) {
-        const promise = Conversation.unread(ids);
+        const promise = conversationApi.unread(ids);
         cache.addToDispatcher(promise);
 
         if (!tools.cacheContext()) {
@@ -92,7 +92,7 @@ angular.module('proton.conversation')
      * @param {Array} ids
      */
     function read(ids = []) {
-        const promise = Conversation.read(ids);
+        const promise = conversationApi.read(ids);
         cache.addToDispatcher(promise);
 
         if (!tools.cacheContext()) {
@@ -123,7 +123,7 @@ angular.module('proton.conversation')
      * @param {String} id - conversation id
      */
     function unstar(ID) {
-        const promise = Conversation.unstar([ID]);
+        const promise = conversationApi.unstar([ID]);
         const LabelIDsRemoved = [MAILBOX_IDENTIFIERS.starred];
 
         cache.addToDispatcher(promise);
@@ -161,7 +161,7 @@ angular.module('proton.conversation')
      * @param {String} id - conversation id
      */
     function star(ID) {
-        const promise = Conversation.star([ID]);
+        const promise = conversationApi.star([ID]);
         const LabelIDsAdded = [MAILBOX_IDENTIFIERS.starred];
         cache.addToDispatcher(promise);
 
@@ -207,7 +207,7 @@ angular.module('proton.conversation')
         const process = (events) => {
             cache.events(events);
             // Send request to archive conversations
-            (alsoArchive === true) && Conversation.archive(ids);
+            (alsoArchive === true) && conversationApi.archive(ids);
         };
 
         const getLabelsId = (list = [], cb = angular.noop) => {
@@ -271,7 +271,7 @@ angular.module('proton.conversation')
 
         const getPromises = (list, starter = [], flag = ADD) => {
             return _.reduce(list, (acc, id) => {
-                acc.push(Conversation.labels(id, flag, ids));
+                acc.push(conversationApi.labels(id, flag, ids));
                 return acc;
             }, starter);
         };
@@ -293,7 +293,7 @@ angular.module('proton.conversation')
      * @param {String} mailbox
      */
     function move(ids, mailbox) {
-        const promise = Conversation[mailbox](ids);
+        const promise = conversationApi[mailbox](ids);
         const folder = getFolderNameTranslated(mailbox);
         const displaySuccess = () => notify({ message: gettextCatalog.getPlural(ids.length, 'Conversation moved to', 'Conversations moved to', null) + ' ' + folder, classes: 'notification-success' });
 

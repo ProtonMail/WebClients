@@ -1,5 +1,5 @@
 angular.module('proton.composer')
-  .factory('composerRequestModel', (Message, $q) => {
+  .factory('composerRequestModel', ($q) => {
 
       const MAP_REQUEST = {};
 

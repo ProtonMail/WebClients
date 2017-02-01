@@ -1,5 +1,5 @@
 angular.module('proton.message')
-    .factory('messageBuilder', (gettextCatalog, prepareContent, tools, authentication, Message, $filter, signatureBuilder, CONSTANTS) => {
+    .factory('messageBuilder', (gettextCatalog, prepareContent, tools, authentication, messageModel, $filter, signatureBuilder, CONSTANTS) => {
 
         const RE_PREFIX = gettextCatalog.getString('Re:', null);
         const FW_PREFIX = gettextCatalog.getString('Fw:', null);
@@ -218,7 +218,7 @@ angular.module('proton.message')
          * @return {Message}    New message formated
          */
         function create(action = '', currentMsg = {}) {
-            let newMsg = new Message();
+            let newMsg = messageModel();
 
             setDefaultsParams(newMsg);
             newMsg = builder(action, currentMsg, newMsg);

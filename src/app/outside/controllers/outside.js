@@ -9,7 +9,6 @@ angular.module('proton.outside')
     CONSTANTS,
     Eo,
     embedded,
-    Message,
     prepareContent,
     messageData,
     notify,

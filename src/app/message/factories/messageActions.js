@@ -1,5 +1,5 @@
 angular.module('proton.message')
-    .factory('messageActions', ($q, $rootScope, tools, cache, eventManager, Message, networkActivityTracker, CONSTANTS, notify, gettextCatalog) => {
+    .factory('messageActions', ($q, $rootScope, tools, cache, eventManager, messageApi, networkActivityTracker, CONSTANTS, notify, gettextCatalog) => {
 
         const REMOVE_ID = 0;
         const ADD_ID = 1;
@@ -141,7 +141,7 @@ angular.module('proton.message')
                 .value();
 
              // Send request
-            const promise = Message[mailbox]({ IDs: ids }).$promise;
+            const promise = messageApi[mailbox]({ IDs: ids });
             cache.addToDispatcher(promise);
 
             const message = gettextCatalog.getPlural(ids.length, 'Message moved to', 'Messages moved to', null);
@@ -194,7 +194,7 @@ angular.module('proton.message')
             cache.events(events);
 
             // Send request to detach the label
-            (new Message()).updateLabels(labelID, REMOVE_ID, [messageID]);
+            messageApi.labels(labelID, REMOVE_ID, [messageID]);
         }
 
         /**
@@ -237,7 +237,7 @@ angular.module('proton.message')
                     cache.events(events2);
 
                     if (alsoArchive === true) {
-                        Message.archive({ IDs: ids }); // Send request to archive conversations
+                        messageApi.archive({ IDs: ids }); // Send request to archive conversations
                     }
                 });
             };
@@ -250,7 +250,7 @@ angular.module('proton.message')
             };
 
             const mapPromisesLabels = (list = [], Action) => {
-                return _.map(list, (id) => new Message().updateLabels(id, Action, ids));
+                return _.map(list, (id) => messageApi.labels(id, Action, ids));
             };
 
             const { events, promises } = _.reduce(messages, (acc, message) => {
@@ -328,7 +328,7 @@ angular.module('proton.message')
             }
 
             // Send request
-            const promise = Message.star({ IDs: [id] }).$promise;
+            const promise = messageApi.star({ IDs: [id] });
             cache.addToDispatcher(promise);
 
             if (tools.cacheContext() === true) {
@@ -372,7 +372,7 @@ angular.module('proton.message')
             }
 
             // Send request
-            const promise = Message.unstar({ IDs: [id] }).$promise;
+            const promise = messageApi.unstar({ IDs: [id] });
             cache.addToDispatcher(promise);
 
             if (tools.cacheContext() === true) {
@@ -431,7 +431,7 @@ angular.module('proton.message')
                 });
 
             // Send request
-            const promise = Message.read({ IDs: messageIDs }).$promise;
+            const promise = messageApi.read({ IDs: messageIDs });
             cache.addToDispatcher(promise);
 
             if (tools.cacheContext() === true) {
@@ -449,7 +449,7 @@ angular.module('proton.message')
          */
         function unread(ids = []) {
             const context = tools.cacheContext();
-            const promise = Message.unread({ IDs: ids }).$promise;
+            const promise = messageApi.unread({ IDs: ids });
 
             cache.addToDispatcher(promise);
 
@@ -548,7 +548,7 @@ angular.module('proton.message')
                 events.push({ Action: 0, ID: message.ID });
             });
 
-            const promise = Message.delete({ IDs: ids }).$promise;
+            const promise = messageApi.delete({ IDs: ids });
             cache.addToDispatcher(promise);
 
             if (tools.cacheContext() === true) {
