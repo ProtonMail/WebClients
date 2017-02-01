@@ -47,6 +47,11 @@
     min-width: 0px;
 }
 
+@mixin flexWrap() {
+    -webkit-flex-wrap: wrap;
+    flex-wrap: wrap;
+}
+
 /**
     ALIGNMENTS
 **/

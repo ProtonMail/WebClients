@@ -1,55 +1,94 @@
-#filter-modal {
-	.pm_form {
-		.alert {
-			padding-right: 55px; // space for trash icon
-
-			.if {
-				display: inline-block;
-				line-height: 34px;
-				height: 34px;
-				padding-right: .5rem;
-			}
-			input#filter-pattern {
-				width: 12rem;
-				display: inline-block;
-			}
-			button {
-				vertical-align: initial;
-			}
-			span.pm_badge {
-				line-height: 1.1rem;
-				height: initial;
-				padding: .19rem .35rem;
-				margin: 0 0 1rem 0;
-				position: relative;
-				top: -1px;
-				background: rgba(0,0,0,.1);
-				word-break: break-word;
-			}
-			form#filter-add-condition {
-				width: 15rem;
-				display: inline-block;
-			}
-
-			label {
-
-				i { margin: 0.1rem 0.5rem 0.1rem 0 }
-
-				span{
-					white-space: nowrap;
-					text-overflow: ellipsis;
-					overflow:hidden;
-					line-height: 1rem
-				}
-			}
-
-		}
-
-		.labelsGrid {
-			.pm-flex-content-vertical-center{
-				height: 3rem;
-			}
-		}
-
-	}
+.filter-modal-conditions {
+	@include flexInline();
+	@include flexWrap();
+	width: 100%;
 }
+
+.filter-modal-condition {
+	@include flexInline();
+	@include flexFill();
+	padding-right: 15px;
+}
+
+.filter-modal-condition-if {
+	@include flexInline();
+	@include flexAlignCenter();
+	height: 34px;
+	padding-right: .5rem;
+}
+
+.filter-modal-condition-attachments {
+	@include flexInline();
+}
+
+.filter-modal-condition-attachments label {
+	margin-left: .5rem;
+}
+
+.filter-modal-condition-settings {
+	@include flexInline();
+	@include flexFill();
+	@include flexWrap();
+	@include flexAlignCenter();
+}
+
+
+.filter-modal-simple-condition { width: 100% }
+.filter-modal-condition-remove {
+	@include flexInline();
+	@include flexJustifyEnd();
+	flex-basis: 55px;
+	order:1;
+}
+
+/* badges */
+.filter-modal-condition-badges {
+	@include flexInline();
+	@include flexAlignCenter();
+	height: 35px;
+}
+
+.filter-modal-condition-or {
+	margin:0 .5rem;
+	font-size: 75%;
+}
+
+/* condition pattern */
+.filter-modal-add-condition {
+	@include flexInline();
+	flex-basis: 15rem;
+}
+.filter-modal-add-condition-input { width: 12rem }
+.filter-modal-add-condition-button {
+	margin-left: .5rem;
+	width: 40px;
+}
+
+/* separator */
+.filter-modal-separator {
+	@include flexInline();
+	@include flexAlignCenter();
+	height: 35px;
+}
+
+
+/* Labels */
+
+.filter-modal-label-container {
+	@include flexRow();
+	@include flexWrap();
+}
+
+.filter-modal-label,
+.filter-modal-label-add { min-height: 3rem }
+.filter-modal-label i { margin: 0.1rem 0.5rem 0.1rem 0 }
+.filter-modal-label-add {
+	@include flexInline();
+	@include flexAlignCenter();
+}
+
+
+/* spacing */
+.filter-modal-condition-settings > *,
+.filter-modal-condition-remove,
+.filter-modal-separator > * { margin:.2rem }
