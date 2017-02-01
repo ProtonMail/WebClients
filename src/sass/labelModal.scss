@@ -1,48 +1,64 @@
-#labelModal {
-	.row {
-		margin-bottom: 1rem;
-	}
-	.pm_button.primary {
-		padding: 0 1rem;
-	}	
-	ul.palette {
-		display: block;
-		list-style-type: none;
-		padding: 0;
-		margin: 0;
-		li {
-			display: block;
-			list-style-type: none;
-			padding: 0;
-			margin: 0;
-			float: left;
-			height: 2rem;
-			width: 50%;
-			a {
-				display: block;
-				height: 2rem;
-				width: 100%;
-				cursor: pointer;
-				text-align: center;
-				.fa {
-					opacity: 0;
-					color: #fff;
-					display: inline-block;
-					line-height: 2rem;
-					height: 2rem;
-					transition: opacity .1s linear;
-				}
-				&.active {
-					.fa {
-						opacity: 1 !important;
-					}
-				}
-				&:hover {
-					.fa {
-						opacity: .25;
-					}
-				}
-			}
-		}
-	}
+.labelModal-container {
+	.row { margin-bottom: 1rem }
+	.pm_button.primary { padding: 0 1rem }
+}
+.labelModal-list,
+.labelModal-list * { box-sizing: border-box }
+
+.labelModal-list {
+    list-style-type: none;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0;
+    margin: 0;
+}
+
+.labelModal-item {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+    height: 2rem;
+    width: 50%;
+    min-width: 50%;
+    padding: 0;
+    margin: 0;
+    background-color: currentColor;
+    overflow: hidden
+}
+
+.labelModal-item .fa {
+    opacity: 0;
+    color: #fff;
+    display: inline-block;
+    line-height: 2rem;
+    height: 2rem;
+    transition: opacity .1s linear;
+}
+
+.labelModal-item:hover .fa { opacity: .25 }
+
+.labelModal-item-mask {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: currentColor;
+    border: 1px solid currentColor;
+    pointer-events: none;
+}
+
+.labelModal-input-color {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+}
+
+.labelModal-input-color:checked + .labelModal-item-mask .fa { opacity: 1 }
+
+.labelModal-input-color:focus + .labelModal-item-mask,
+.labelModal-input-color:checked + .labelModal-item-mask {
+    border-color: rgba(255, 252, 252, .1);
+    box-shadow: inset 0 0 5px rgba(255, 255, 255, .2);
 }

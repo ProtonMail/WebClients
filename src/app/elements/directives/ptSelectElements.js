@@ -5,7 +5,6 @@ angular.module('proton.elements')
             function onChange({ target }) {
                 const isChecked = target.checked;
                 $rootScope.$emit('selectElements', { value: target.value, isChecked });
-
                 // No keyX event if a checkbox is focused
                 _rAF(() => target.blur());
             }

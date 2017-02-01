@@ -78,6 +78,7 @@ exports.config = {
         composer: ['test/e2e/login/straightLogin.spec.js', 'test/e2e/unlock/straightUnlock.spec.js', 'test/e2e/composer/composer.spec.js'],
         conversation: ['test/e2e/login/straightLogin.spec.js', 'test/e2e/unlock/straightUnlock.spec.js', 'test/e2e/conversation/conversation.spec.js'],
         message: ['test/e2e/login/straightLogin.spec.js', 'test/e2e/unlock/straightUnlock.spec.js', 'test/e2e/message/message.spec.js'],
+        labels: ['test/e2e/login/straightLogin.spec.js', 'test/e2e/unlock/straightUnlock.spec.js', 'test/e2e/label/label.spec.js'],
         signup: ['test/e2e/signup/signup.spec.js']
     }
 };

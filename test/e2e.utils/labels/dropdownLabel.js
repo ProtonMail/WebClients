@@ -7,7 +7,8 @@ module.exports = function editLabel() {
         item: '.list-group-item',
         checkbox: '.dropdownLabels-input-label',
         archive: '.dropdownLabels-input-archive',
-        buttonSave: '.dropdownLabels-btn-save'
+        buttonSave: '.dropdownLabels-btn-save',
+        createLabel: '.createLabel-button'
     };
 
     const $container = `$(document.body.querySelector('${SELECTOR.buttonMain}'))`;
@@ -78,6 +79,12 @@ module.exports = function editLabel() {
         `);
     };
 
+    const createLabel = () => {
+        return browser.executeScript(`
+            ${$container}.find('${SELECTOR.createLabel}').click();
+        `);
+    };
+
 
     const isArchived = () => {
         return browser.executeScript(`
@@ -103,6 +110,7 @@ module.exports = function editLabel() {
         isArchived,
         select, unselect, countSeleted,
         archive,
-        submit
+        submit,
+        createLabel
     };
 };
