@@ -6,7 +6,7 @@ angular.module('proton.elements')
     * @param {Object} item
     */
     function isStarred({ LabelIDs = [] }) {
-        return LabelIDs.indexOf(CONSTANTS.MAILBOX_IDENTIFIERS.starred) > -1;
+        return LabelIDs.some((label) => label === CONSTANTS.MAILBOX_IDENTIFIERS.starred);
     }
 
     /**
