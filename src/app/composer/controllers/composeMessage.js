@@ -1017,9 +1017,14 @@ angular.module('proton.composer')
     };
 
     $scope.normalize = (message) => {
+
+        const width = window.innerWidth;
+        const height = window.innerHeight;
+        const isSmall = (width <= 640 || height <= 500);
+
         message.minimized = false;
-        message.maximized = false;
-        $rootScope.maximizedComposer = false;
+        message.maximized = isSmall;
+        $rootScope.maximizedComposer = isSmall;
     };
 
     $scope.openCloseModal = (message, discard = false) => {

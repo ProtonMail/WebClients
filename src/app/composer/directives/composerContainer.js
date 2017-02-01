@@ -83,7 +83,10 @@ angular.module('proton.composer')
                         }
                         default:
                             // Need to perform the rendering after the $digest to match each new composer
-                            scope.$applyAsync(() => renderList(data));
+                            scope.$applyAsync(() => {
+                                const config = _.extend({}, { size: scope.messages.length }, data);
+                                renderList(config);
+                            });
                             break;
                     }
 

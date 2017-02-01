@@ -45,8 +45,7 @@ angular.module('proton.composer')
          * @return {void}
          */
         function bindStyles(element, styles) {
-            Object
-                .keys(styles)
+            Object.keys(styles)
                 .forEach((key) => element.style[key] = styles[key]);
         }
 
@@ -57,19 +56,19 @@ angular.module('proton.composer')
          * @return {void}
          */
         function render($list, { size = 1 } = {}) {
-            $list
-                .forEach((node, index) => {
-                    const config = sizes(node, size);
-                    const styles = { visibility: 'visible' };
+            $list.forEach((node, index) => {
+                const config = sizes(node, size);
+                const styles = { visibility: 'visible' };
 
-                    // Better for rendering
-                    styles.transform = `translateX(-${getPositionRight(config, index)}px)`;
-                    if (config.isBootstrap) {
-                        styles.top = '80px';
-                    }
+                // Better for rendering
+                styles.transform = `translateX(-${getPositionRight(config, index)}px)`;
 
-                    bindStyles(node, styles);
-                });
+                if (config.isBootstrap) {
+                    styles.top = '80px';
+                }
+
+                bindStyles(node, styles);
+            });
         }
 
 
