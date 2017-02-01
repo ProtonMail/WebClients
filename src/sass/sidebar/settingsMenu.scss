@@ -1,0 +1,21 @@
+.settingsMenu-container .donateBtn-container {
+    background: transparent;
+    cursor: pointer;
+    border: 0;
+    text-align: left
+}
+
+.settingsMenu-is-member, .settingsMenu-is-subuser {
+    .navigationSettings-is-dashboard,
+    .navigationSettings-is-domains,
+    .navigationSettings-is-payments,
+    .settingsMenu-item-donate { display: none }
+}
+
+.settingsMenu-is-member, .settingsMenu-is-subuser, .settingsMenu-keyphase-active {
+    .navigationSettings-is-members { display: none }
+}
+
+
+body:not(.appConfigBody-is-mobile) .settingsMenu-about-app { display: none }
+

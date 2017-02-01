@@ -15,7 +15,8 @@ html.protonmail {
 			height: initial !important;
 		}
 		&.mobileMode {
-			height: initial;
+			height: 100vh;
+            min-height: 100%;
 			overflow: initial !important;
 			.desktopOnly {
 				display: none !important;

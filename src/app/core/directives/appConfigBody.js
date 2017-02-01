@@ -1,0 +1,21 @@
+angular.module('proton.core')
+    .directive('appConfigBody', ($rootScope, AppModel) => {
+
+        const CLASS_IS_MOBILE = 'appConfigBody-is-mobile';
+
+        return {
+            link(scope, el) {
+                AppModel.is('mobile') && el[0].classList.add(CLASS_IS_MOBILE);
+
+                $rootScope.$on('AppModel', (e, { type, data }) => {
+                    switch (type) {
+                        case 'mobile': {
+                            const method = data.value ? 'add' : 'remove';
+                            _rAF(() => el[0].classList[method](CLASS_IS_MOBILE));
+                            break;
+                        }
+                    }
+                });
+            }
+        };
+    });

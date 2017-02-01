@@ -204,9 +204,6 @@ angular.module('proton.core')
         $scope.advancedSearch = false;
     };
 
-    $scope.sidebarToggle = () => {
-        $rootScope.$broadcast('sidebarMobileToggle');
-    };
 
     $scope.blurSearch = () => {
         const inputs = angular.element('.query');
