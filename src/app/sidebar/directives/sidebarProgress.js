@@ -1,4 +1,4 @@
-angular.module('proton.core')
+angular.module('proton.sidebar')
     .directive('sidebarProgress', (authentication, organizationModel, $filter) => {
         const filter = $filter('humanSize');
         const percentage = $filter('percentage');

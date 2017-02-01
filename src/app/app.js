@@ -49,6 +49,7 @@ angular.module('proton', [
     'proton.config',
     'proton.search',
     'proton.ui',
+    'proton.sidebar',
     'proton.attachments',
     'proton.authentication',
     'proton.event',
@@ -141,11 +142,9 @@ angular.module('proton', [
     // Less than 1030 / Tablet Mode
     // can pass in show (true/false) to explicity show/hide
     $rootScope.$on('sidebarMobileToggle', (event, show) => {
-        if (typeof show !== 'undefined') {
+        $rootScope.$applyAsync(() => {
             $rootScope.showSidebar = show;
-        } else {
-            $rootScope.showSidebar = !$rootScope.showSidebar;
-        }
+        });
     });
 
     $rootScope.mobileMode = false;
@@ -247,9 +246,9 @@ angular.module('proton', [
         $rootScope.toState = toState.name.replace('.', '-');
 
         $('#loading_pm, #pm_slow, #pm_slow2').remove();
-        $timeout(() => {
+        $rootScope.$applyAsync(() => {
             $rootScope.showSidebar = false;
-        }, 30);
+        });
     });
 })
 

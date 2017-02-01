@@ -188,7 +188,7 @@ header#pm_header-tablet {
         }
 	}
 
-	a.logoMobile {
+	.logoMobile {
 		display: inline-block;
 		margin: 0 1rem;
 		font-size: 1rem;
@@ -217,7 +217,7 @@ header#pm_header-mobile {
 	font-size: 14px;
 	position: relative;
 	z-index: 999;
-	a.logoMobile {
+	.logoMobile {
 		font-size: 1rem;
 		float: left;
 		max-width: 3rem;
@@ -231,6 +231,7 @@ header#pm_header-mobile {
 		text-align: center;
 		display: inline-block;
 		color: #fff;
+        border: 0;
 		img {
 			display: inline-block;
 			vertical-align: middle;

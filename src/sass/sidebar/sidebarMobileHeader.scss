@@ -1,0 +1,20 @@
+.sidebarMobileHeader-logo {
+    display: block;
+    padding-top: 5px
+}
+
+.sidebarMobileHeader-userDisplay {
+    display: flex;
+    flex-direction: column;
+    color: $white;
+    padding: 1rem 0;
+    font-size: .9em;
+    font-style: normal;
+}
+
+[class="sidebarMobileHeader-userDisplay-"] {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-style: normal
+}

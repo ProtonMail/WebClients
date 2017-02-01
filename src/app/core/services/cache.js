@@ -833,6 +833,7 @@ angular.module('proton.core')
                  manageCounters(oldConversation, newConversation, 'conversation');
              }
          });
+
     }
 
     /**
@@ -908,6 +909,7 @@ angular.module('proton.core')
      * Second with the query call
      */
     api.callRefresh = (messageIDs = [], conversationIDs = []) => {
+        console.log('Refresh');
         $rootScope.$emit('refreshElements');
         $rootScope.$emit('updatePageName');
         $rootScope.$emit('refreshConversation', conversationIDs);

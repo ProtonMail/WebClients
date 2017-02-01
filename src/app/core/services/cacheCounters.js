@@ -2,6 +2,8 @@ angular.module('proton.core')
     .service('cacheCounters', (Message, CONSTANTS, Conversation, $q, $rootScope, authentication) => {
         const api = {};
         let counters = {};
+        const dispatch = (type, data = {}) => $rootScope.$emit('app.cacheCounters', { type, data });
+
         const exist = (loc) => {
             if (angular.isUndefined(counters[loc])) {
                 counters[loc] = {
@@ -56,6 +58,8 @@ angular.module('proton.core')
                         counters[LabelID].conversation.total = Total;
                         counters[LabelID].conversation.unread = Unread;
                     });
+                dispatch('load');
+                console.log('Load');
                 return Promise.resolve();
             }, Promise.reject);
         };

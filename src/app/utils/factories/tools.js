@@ -1,5 +1,5 @@
 angular.module('proton.utils')
-.factory('tools', ($log, $state, $stateParams, $filter, authentication, $compile, $templateCache, $rootScope, $q, CONSTANTS, regexEmail) => {
+.factory('tools', ($log, $state, $stateParams, $filter, authentication, $compile, $templateCache, $rootScope, $q, CONSTANTS, regexEmail, AppModel) => {
     const tools = {};
     const MAILBOX_KEYS = Object.keys(CONSTANTS.MAILBOX_IDENTIFIERS);
 
@@ -30,6 +30,7 @@ angular.module('proton.utils')
 
     tools.mobileResponsive = () => {
         const bodyWidth = document.body.offsetWidth;
+        AppModel.set('mobile', bodyWidth < CONSTANTS.MOBILE_BREAKPOINT);
 
         $rootScope.$applyAsync(() => {
             $rootScope.mobileMode = bodyWidth < CONSTANTS.MOBILE_BREAKPOINT;

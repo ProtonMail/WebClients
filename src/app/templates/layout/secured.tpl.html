@@ -1,7 +1,9 @@
 <header-view></header-view>
 
-<ng-include src="'templates/partials/sidebar.tpl.html'" id="pm_sidebar"></ng-include>
 
+<settings-menu ng-if="!(inboxSidebar || (mobileMode && !showSidebar))"></settings-menu>
+<sidebar id="pm_sidebar" ng-if="!(mobileMode || !inboxSidebar)"></sidebar>
+<sidebar-mobile id="pm_sidebarMobile" ng-if="showSidebar && mobileMode && inboxSidebar"></sidebar-mobile>
 <div id="pm_main" ng-class="{rows: user.ViewLayout === 1}" ui-view="content"></div>
 
 <!-- Composer controller -->

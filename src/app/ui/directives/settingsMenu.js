@@ -1,38 +1,36 @@
 angular.module('proton.ui')
-.directive('settingsMenu', (authentication, CONSTANTS, donateModal, Payment, networkActivityTracker, $rootScope) => {
+.directive('settingsMenu', (authentication, CONSTANTS, networkActivityTracker, $rootScope, sidebarSettingsModel) => {
+
+    const CLASS_SUBUSER = 'settingsMenu-is-subuser';
+    const CLASS_MEMBER = 'settingsMenu-is-member';
+    const CLASS_KEY_PHASE = 'settingsMenu-keyphase-active';
+
     return {
         replace: true,
-        restrict: 'E',
+        scope: {},
         templateUrl: 'templates/directives/ui/settingsMenu.tpl.html',
-        link(scope) {
-            scope.isSubUser = authentication.user.subuser;
-            scope.isMember = authentication.user.Role === CONSTANTS.PAID_MEMBER_ROLE;
-            scope.keyPhase = CONSTANTS.KEY_PHASE;
+        link(scope, el) {
+            const unsubscribe = [];
+            scope.listStates = Object.keys(sidebarSettingsModel.getStateConfig());
 
-            scope.donate = () => {
-                const promise = Payment.methods()
-                    .then(({ data = {} } = {}) => {
-                        const { Code, PaymentMethods } = data;
-                        if (Code === 1000) {
-                            donateModal.activate({
-                                params: {
-                                    methods: PaymentMethods,
-                                    close() {
-                                        donateModal.deactivate();
-                                    }
-                                }
-                            });
-                        }
-                    });
-                networkActivityTracker.track(promise);
-            };
+            (CONSTANTS.KEY_PHASE > 3) && el[0].classList.add(`${CLASS_KEY_PHASE}`);
+            authentication.user.subuser && el[0].classList.add(CLASS_SUBUSER);
 
-            const unsubscribe = $rootScope.$on('updateUser', () => {
-                scope.isMember = authentication.user.Role === CONSTANTS.PAID_MEMBER_ROLE;
-            });
+            if (authentication.user.Role === CONSTANTS.PAID_MEMBER_ROLE) {
+                el[0].classList.add(CLASS_MEMBER);
+            }
+
+            unsubscribe.push($rootScope.$on('updateUser', () => {
+                el[0].classList.add(CLASS_MEMBER);
+            }));
+
+            unsubscribe.push($rootScope.$on('$stateChangeStart', () => {
+                $rootScope.$emit('sidebarMobileToggle', false);
+            }));
 
             scope.$on('$destroy', () => {
-                unsubscribe();
+                unsubscribe.forEach((cb) => cb());
+                unsubscribe.length = 0;
             });
         }
     };
