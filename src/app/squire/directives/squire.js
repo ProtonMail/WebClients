@@ -17,7 +17,6 @@ angular.module('proton.squire')
             allowDataUri: '='
         },
         replace: true,
-        transclude: true,
         templateUrl: 'templates/directives/squire.tpl.html',
         link(scope, el, { typeContent = 'message', action = '' }) {
 
