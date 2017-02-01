@@ -1,6 +1,6 @@
-<header responsive-composer="message">
-    <span ng-click="normalize(message);" class="subject" ng-bind="subject(message)"></span>
-    <span class="actions text-right">
+<header responsive-composer="message" class="composerHeader-container">
+    <span ng-click="normalize(message);" class="subject composerHeader-subject">{{subject(message)}}</span>
+    <div class="composerHeader-actions actions text-right">
         <button
             type="button"
             ng-show="!!!message.minimized"
@@ -50,5 +50,5 @@
             pt-placement="top">
             <i class="fa fa-times composerHeader-btn-icon"></i>
         </button>
-    </span>
+    </div>
 </header>

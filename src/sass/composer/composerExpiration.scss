@@ -1,0 +1,10 @@
+.composerExpiration-fields-container {
+    display: inline-flex;
+    justify-content: center;
+    width: 100%
+}
+
+[class*="composerExpiration-field-"] {
+    display: inline-flex;
+    align-items: center;
+}
