@@ -28,6 +28,13 @@ angular.module('proton.event', ['proton.constants', 'proton.utils'])
         const DELETE = 0;
         const CREATE = 1;
         const UPDATE = 2;
+
+        const dispatch = (type, data = {}) => $rootScope.$emit('app.event', { type, data });
+
+        const manageActiveMessage = ({ Messages = [] }) => {
+            Messages.length && dispatch('activeMessages', { messages: Messages.map(({ Message }) => Message) });
+        };
+
         /**
          * Clean contact datas
          * @param  {Object} contact
@@ -395,6 +402,7 @@ angular.module('proton.event', ['proton.constants', 'proton.utils'])
                     this.manageOrganization(data.Organization);
                     this.manageFilters(data.Filters);
                     this.manageID(data.EventID);
+                    manageActiveMessage(data);
                     return this.manageUser(data.User);
                 }
                 return Promise.resolve();

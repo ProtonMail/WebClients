@@ -128,6 +128,27 @@ angular.module('proton.composer')
         });
     }));
 
+
+    const isSent = ({ Type } = {}) => Type === CONSTANTS.INBOX_AND_SENT || Type === CONSTANTS.SENT;
+    unsubscribe.push($rootScope.$on('app.event', (event, { type, data }) => {
+        switch (type) {
+            case 'activeMessages': {
+                // If you send the current draft from another tab/app we need to remove it from the composerList
+                const removed = $scope.messages.filter(({ ID = '' }) => {
+                    const msg = _.findWhere(data.messages, { ID });
+                    return (msg && isSent(msg));
+                });
+
+                removed.length && removed.forEach((message) => {
+                    closeComposer(message, true);
+                    notify(gettextCatalog.getString('Your message was sent from another session', null, 'Info'));
+                });
+
+                break;
+            }
+        }
+    }));
+
     // When a message is updated we try to update the message
     unsubscribe.push($rootScope.$on('message.refresh', (event, messageIDs) => {
         $scope.messages.forEach((message) => {
@@ -1143,7 +1164,8 @@ angular.module('proton.composer')
      * @param {Boolean} discard
      * @param {Boolean} save
      */
-    $scope.close = (message, discard, save) => {
+    $scope.close = closeComposer;
+    function closeComposer(message, discard, save) {
         const process = () => {
             // Remove message in composer controller
             $scope.messages = removeMessage($scope.messages, message);
@@ -1178,7 +1200,7 @@ angular.module('proton.composer')
         } else {
             process();
         }
-    };
+    }
 
     /**
      * Move draft message to trash
