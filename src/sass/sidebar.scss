@@ -44,6 +44,7 @@ $sidebarReduction: 6px;
         }
     }
 
+    .sidebar-btn-compose,
     a.backToInbox {
         border: 1px solid rgba(256,256,256,0.6);
         color: #FFF;
@@ -51,6 +52,7 @@ $sidebarReduction: 6px;
         line-height: 16px;
         padding: 12px 0px 10px;
         text-decoration: none;
+        margin-bottom: 1em
     }
 
     .footer {

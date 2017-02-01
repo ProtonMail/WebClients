@@ -90,11 +90,6 @@ angular.module('proton.message')
                 }
             }));
 
-            scope.$on('$destroy', () => {
-                unsubscribe.forEach((cb) => cb());
-                unsubscribe.length = 0;
-            });
-
             function openMessage({ expand } = {}) {
                 if (scope.message.Type === 1) {
                     if ($state.includes('secured.drafts.**')) {
@@ -163,47 +158,6 @@ angular.module('proton.message')
                 return getRecipients(scope.message);
             };
 
-            /**
-             * Display PGP
-             */
-            scope.viewPgp = () => {
-                const tab = $state.href('pgp', { messageID: scope.message.ID }, { absolute: true });
-                const url = window.location.href;
-                const arr = url.split('/');
-                const targetOrigin = arr[0] + '//' + arr[2];
-                function sendPgp(event) {
-                    if (event.data === scope.message.ID) {
-                        const content = scope.message.Header + '\n\r' + scope.message.Body;
-                        event.source.postMessage(content, targetOrigin);
-                        window.removeEventListener('message', sendPgp, false);
-                    }
-                }
-                window.addEventListener('message', sendPgp, false);
-                window.open(tab, '_blank');
-            };
-
-            /**
-             * Print current message
-             */
-            scope.print = () => {
-                const tab = $state.href('printer', { messageID: scope.message.ID }, { absolute: true });
-                const url = window.location.href;
-                const arr = url.split('/');
-                const targetOrigin = arr[0] + '//' + arr[2];
-                const sendMessage = (event) => {
-                    if (event.data === scope.message.ID) {
-                        const message = scope.message;
-                        const bodyDecrypted = element[0].querySelector('.bodyDecrypted');
-
-                        message.content = bodyDecrypted.innerHTML;
-                        event.source.postMessage(JSON.stringify(scope.message), targetOrigin);
-                        window.removeEventListener('message', sendMessage, false);
-                    }
-                };
-                window.addEventListener('message', sendMessage, false);
-                window.open(tab, '_blank');
-            };
-
             // TODO need review with label dropdown
             scope.getMessage = () => {
                 return [scope.message];
@@ -219,61 +173,10 @@ angular.module('proton.message')
                 $rootScope.$emit('messageActions', { action: 'label', data: { messages, labels, alsoArchive } });
             };
 
-            /**
-             * Go to label folder + reset parameters
-             * @param {String} labelID
-             */
-            scope.goToLabel = (label = '') => {
-                $state.go('secured.label', {
-                    page: undefined,
-                    filter: undefined,
-                    sort: undefined,
-                    label
-                });
-            };
-
-            /**
-             * Move current message
-             * @param {String} mailbox
-             */
-            scope.move = (mailbox) => {
-                const ids = [scope.message.ID];
-                $rootScope.$emit('messageActions', { action: 'move', data: { ids, mailbox } });
-            };
-
-            /**
-             * Mark current message as read
-             */
-            scope.read = () => {
-                const ids = [scope.message.ID];
-                scope.message.expand = true;
-                $rootScope.$emit('messageActions', { action: 'read', data: { ids } });
-            };
-
-            /**
-             * Mark current message as unread
-             */
-            scope.unread = () => {
-                const ids = [scope.message.ID];
-                scope.message.expand = false;
-                scope.message.IsRead = 0;
-                $rootScope.$emit('messageActions', { action: 'unread', data: { ids } });
-            };
-
-            /**
-             * Delete current message
-             */
-            scope.delete = () => {
-                const ids = [scope.message.ID];
-                $rootScope.$emit('messageActions', { action: 'delete', data: { ids } });
-            };
-
-            /**
-             * Allow the user to switch the message content between plain and html
-             */
-            scope.togglePlainHtml = () => {
-                scope.message.viewMode = (scope.message.viewMode === 'plain') ? 'html' : 'plain';
-            };
+            scope.$on('$destroy', () => {
+                unsubscribe.forEach((cb) => cb());
+                unsubscribe.length = 0;
+            });
 
         }
     };

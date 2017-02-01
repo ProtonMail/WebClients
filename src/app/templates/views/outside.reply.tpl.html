@@ -38,8 +38,8 @@
         <button
             class="pm_button"
             ng-disabled="networkActivity.loading()"
-            action-message="::message"
-            action-message-type="addFile"
+            data-action-compose="::message"
+            data-action-compose-type="addFile"
             pt-tooltip-translate="Attachments"><i class="fa fa-paperclip"></i>
         </button>
         <button class="pm_button primary" ng-disabled="networkActivity.loading()" ng-click="send()" translate-context="Action" translate>Send</button>

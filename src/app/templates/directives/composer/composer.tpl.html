@@ -59,8 +59,8 @@
     <footer ng-hide="message.minimized" ng-class="{ 'disabled': message.displayPanel }">
 
         <button class="pm_button composer-btn-attachment"
-            action-message="::message"
-            action-message-type="addFile"
+            data-action-compose="::message"
+            data-action-compose-type="addFile"
             ng-disabled="message.disableOthers() || message !== selected"
             ng-class="{
                 'active': message.displayPanel && message.panelName == 'attachments',

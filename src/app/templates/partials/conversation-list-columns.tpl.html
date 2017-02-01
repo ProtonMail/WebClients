@@ -23,11 +23,9 @@
             <div class="row top">
                 <h4 class="subject" ng-attr-title="{{ conversation.Subject | unescape }}">
                     <states-conversation></states-conversation>
-                    <folders-element conversation="conversation"></folders-element>
-                    <span class="subject-num-message" ng-show="conversation.NumMessages > 1">({{ conversation.NumMessages }})</span>
-                    <span class="subject-text ellipsis">
-                        {{ conversation.Subject | unescape }}
-                    </span>
+                    <folders-element data-conversation="conversation"></folders-element>
+                    <span class="subject-num-message" ng-if="conversation.NumMessages > 1">({{ conversation.NumMessages }})</span>
+                    <span class="subject-text ellipsis">{{ conversation.Subject | unescape }}</span>
                 </h4>
                 <span class="meta">
                     <i class="fa fa-paperclip conversation-icon-attachment"></i>
@@ -52,7 +50,7 @@
                     ng-repeat="contact in recipients(conversation)"
                     title="{{ contact.Address }}">{{ contact | contact: 'Name' | unescape}}</span>
                 </span>
-                <labels-element element="conversation"></labels-element>
+                <labels-element data-element="conversation"></labels-element>
             </div>
         </div>
     </div>

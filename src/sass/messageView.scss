@@ -99,8 +99,8 @@
         &.errorDecryption [class*="message-actionBtn-"] { display: none }
         &.errorDecryption .pm_trigger { border-left: 0 }
 
-        & > div.summary,
-        & > div.details {
+        & .summary,
+        & .details {
             float: left;
             width: 100%;
             clear: both;
@@ -114,7 +114,7 @@
         }
         &.open {
             box-shadow: 0 1px 2px rgba(0,0,0,0.1);
-            & > div.summary {
+            & .summary {
                 .meta {
                     .contact {
                         strong {
@@ -125,7 +125,7 @@
             }
         }
         &.details.open {
-            & > div.summary {
+            & .summary {
                 height: 50px;
                 .meta {
 
@@ -159,7 +159,7 @@
                 }
             }
         }
-        &.unread > div.summary {
+        &.unread .summary {
             background: $white;
             .meta .contact strong {
                 font-weight: 700;
@@ -180,7 +180,7 @@
                 }
             }
         }
-        & > div.summary {
+        & .summary {
             height: 40px;
             line-height: 40px;
             background: $read;
@@ -281,7 +281,7 @@
                 }
             }
         }
-        & > div.details {
+        & .details {
             background: $read;
             padding: 0 10px 10px;
             clear: both;
@@ -336,6 +336,8 @@
             line-height: 35px; // height of the buttons on the same line
             display: inline-block;
             font-size: .9em;
+            border: 0;
+            background: transparent;
         }
         .expiration {
             background: $exp;
@@ -393,7 +395,7 @@
 body.mobileMode {
     #conversation-view {
         .message {
-            & > div.summary {
+            & .summary {
                 height: 60px;
                 line-height: 25px;
                 position: relative;
@@ -481,7 +483,7 @@ body.mobileMode {
                 }
             }
             &.details {
-                & > div.summary {
+                & .summary {
                     margin-bottom: 0;
                     .meta {
                         position: static;
@@ -502,7 +504,7 @@ body.mobileMode {
                         }
                     }
                 }
-                &.open > div.summary {
+                &.open .summary {
                     .meta {
                         margin-top: 5px;
                         .contact {
@@ -515,8 +517,8 @@ body.mobileMode {
             }
             &.sent,
             &.draft {
-                div.details {
-                    & > .recipients-summary {
+                .details {
+                    & .recipients-summary {
                         padding-left: 2.25rem;
                         box-sizing: border-box;
                     }
