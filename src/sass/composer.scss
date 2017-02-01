@@ -148,54 +148,6 @@
           line-height:$composerRowHeight;
         }
 
-        .options {
-            position: absolute;
-            left: 0;
-            right: 0;
-            top: $composerRowHeight;
-            bottom: 0;
-            padding: 2rem 10px;
-            box-sizing: border-box;
-            z-index: 99;
-            background: #fafafa;
-            display: none;
-            &.show {
-                display: block;
-            }
-            .pm_select {
-                display: inline-block;
-                margin: 0 .5rem 0 2rem;
-            }
-            footer {
-                position: absolute;
-                left: 0;
-                right:0;
-                background: #fafafa;
-                bottom: 0;
-            }
-            .clearfix {
-                padding: 5px 0;
-            }
-            h3 {
-                display: inline-block;
-            }
-            h1, h2, h3, h4, h5 {
-                font-weight: 400;
-            }
-            input[type="range"] {
-                width: 100%;
-                margin: 2rem 0;
-            }
-            .fa {
-                color: $primary;
-            }
-            .pm_button.primary {
-                padding: 0 2rem;
-            }
-            div.text-center {
-                padding: 1rem 0 2rem 0;
-            }
-        }
 
         .fa {
             font-size: 14px;
@@ -389,36 +341,6 @@
                         0 0 2px rgba(0, 0, 0, 0.1);
             & > * {
                 opacity: .75;
-            }
-        }
-
-        header{
-          background: #505061;
-          color: white;
-
-          .subject {
-                width: 22rem;
-                max-width: 50%;
-                float:left;
-                overflow: hidden;
-                text-overflow: ellipsis;
-                white-space: nowrap;
-                padding: 0 0 0 10px;
-          }
-
-          .actions{
-                float:right;
-                .pm_button {
-                  color: #dadae5;
-                  float: left;
-                  height: 32px;
-                  line-height: 32px;
-                  margin: 0;
-                  padding: 0;
-                  text-align: center;
-                  width: 32px;
-                  i{ font-size:14; }
-                }
             }
         }
 

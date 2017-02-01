@@ -44,49 +44,6 @@ angular.module('proton.composer')
 
     $scope.messages = [];
     $scope.uid = 1;
-    $scope.weekOptions = [
-        { label: '0', value: 0 },
-        { label: '1', value: 1 },
-        { label: '2', value: 2 },
-        { label: '3', value: 3 },
-        { label: '4', value: 4 }
-    ];
-    $scope.dayOptions = [
-        { label: '0', value: 0 },
-        { label: '1', value: 1 },
-        { label: '2', value: 2 },
-        { label: '3', value: 3 },
-        { label: '4', value: 4 },
-        { label: '5', value: 5 },
-        { label: '6', value: 6 }
-
-    ];
-    $scope.hourOptions = [
-        { label: '0', value: 0 },
-        { label: '1', value: 1 },
-        { label: '2', value: 2 },
-        { label: '3', value: 3 },
-        { label: '4', value: 4 },
-        { label: '5', value: 5 },
-        { label: '6', value: 6 },
-        { label: '7', value: 7 },
-        { label: '8', value: 8 },
-        { label: '9', value: 9 },
-        { label: '10', value: 10 },
-        { label: '11', value: 11 },
-        { label: '12', value: 12 },
-        { label: '13', value: 13 },
-        { label: '14', value: 14 },
-        { label: '15', value: 15 },
-        { label: '16', value: 16 },
-        { label: '17', value: 17 },
-        { label: '18', value: 18 },
-        { label: '19', value: 19 },
-        { label: '20', value: 20 },
-        { label: '21', value: 21 },
-        { label: '22', value: 22 },
-        { label: '23', value: 23 }
-    ];
 
     // Listeners
     unsubscribe.push($scope.$watch('messages.length', () => {
@@ -212,6 +169,11 @@ angular.module('proton.composer')
 
             case 'close.message': {
                 $scope.close(data.message, false, false);
+                break;
+            }
+
+            case 'close.panel': {
+                $scope.closePanel(data.message);
                 break;
             }
         }
@@ -455,89 +417,6 @@ angular.module('proton.composer')
     $scope.closePanel = (message) => {
         message.displayPanel = false;
         message.panelName = '';
-    };
-
-    $scope.setEncrypt = (message, params) => {
-        if (params.password.length === 0) {
-            notify({ message: 'Please enter a password for this email.', classes: 'notification-danger' });
-            return false;
-        }
-
-        if (params.password !== params.confirm) {
-            notify({ message: 'Message passwords do not match.', classes: 'notification-danger' });
-            return false;
-        }
-
-        message.IsEncrypted = 1;
-        message.Password = params.password;
-        message.PasswordHint = params.hint;
-        $scope.closePanel(message);
-    };
-
-    $scope.clearEncrypt = (message, params, form) => {
-        params.password = '';
-        params.confirm = '';
-        params.hint = '';
-        form.$setUntouched();
-        delete message.PasswordHint;
-        message.IsEncrypted = 0;
-        $scope.closePanel(message);
-    };
-
-    /**
-     * Intialize the expiration panel
-     * @param {Object} message
-     * @param {Object} params
-     */
-    $scope.initExpiration = (message, params) => {
-        let hours = 0;
-        let days = 0;
-        let weeks = 0;
-
-        if (angular.isDefined(message.ExpirationTime)) {
-            const deltaHours = message.ExpirationTime / 3600;
-            const deltaDays = Math.floor(deltaHours / 24);
-            hours = deltaHours % 24;
-            weeks = Math.floor(deltaDays / 7);
-            days = deltaDays % 7;
-        }
-
-        params.expirationWeeks = _.findWhere($scope.weekOptions, { value: weeks });
-        params.expirationDays = _.findWhere($scope.dayOptions, { value: days });
-        params.expirationHours = _.findWhere($scope.hourOptions, { value: hours });
-    };
-
-    /**
-     * Set expiration time if valid value
-     * @param {Object} message
-     * @param {Object} params
-     */
-    $scope.setExpiration = (message, params) => {
-        const hours = params.expirationHours.value + params.expirationDays.value * 24 + params.expirationWeeks.value * 24 * 7;
-        let error = false;
-
-        if (parseInt(hours, 10) > CONSTANTS.MAX_EXPIRATION_TIME) { // How can we enter in this situation?
-            notify({ message: 'The maximum expiration is 4 weeks.', classes: 'notification-danger' });
-            error = true;
-        }
-
-        if (isNaN(hours)) {
-            notify({ message: 'Invalid expiration time.', classes: 'notification-danger' });
-            error = true;
-        }
-
-        if (error === false) {
-            message.ExpirationTime = hours * 3600; // seconds
-        }
-    };
-
-    /**
-     * Remove expiration time value
-     * @param {Object} message
-     */
-    $scope.clearExpiration = (message) => {
-        delete message.ExpirationTime;
-        $scope.closePanel(message);
     };
 
     /**

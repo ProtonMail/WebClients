@@ -1,0 +1,63 @@
+<form class="composerExpiration-container" name="expirationForm">
+    <header class="composerExpiration-header">
+        <h3 translate translate-context="Title">Expiration time</h3>
+        <a href="https://protonmail.com/support/knowledge-base/expiration/" target="_blank">
+            <i class="fa fa-info-circle"></i>
+        </a>
+    </header>
+
+    <p class="alert alert-info" translate>This message will expire in</p>
+    <div class="pm_form alert text-center composerExpiration-fields-container">
+
+        <div class="composerExpiration-field-weeks">
+            <div class="pm_select">
+                <select
+                    name="weeks"
+                    id="weeks"
+                    class="composer-options-select-week"
+                    ng-model="model.weeks"
+                    ng-options="option.label for option in options.week track by option.label"></select>
+                <i class="fa fa-angle-down"></i>
+            </div>
+            <label translate for="weeks">Weeks</label>
+        </div>
+
+        <div class="composerExpiration-field-days">
+            <div class="pm_select">
+                <select
+                    name="days"
+                    id="days"
+                    class="composer-options-select-day"
+                    ng-model="model.days"
+                    ng-options="option.label for option in options.day track by option.label"></select>
+                <i class="fa fa-angle-down"></i>
+            </div>
+            <label translate for="days">Days</label>
+        </div>
+
+        <div class="composerExpiration-field-hours">
+            <div class="pm_select">
+                <select
+                    name="hours"
+                    id="hours"
+                    class="composer-options-select-hour"
+                    ng-model="model.hours"
+                    ng-options="option.label for option in options.hour track by option.label"></select>
+                <i class="fa fa-angle-down"></i>
+            </div>
+            <label translate for="hours">Hours</label>
+        </div>
+    </div>
+
+    <footer class="text-right">
+        <button
+            type="button"
+            class="pm_button pull-left mobileFull composer-options-btn-cancel composerExpiration-btn-cancel"
+            translate
+            translate-context="Action">Cancel</button>
+        <button
+            class="pm_button primary mobileFull composer-options-btn-submit"
+            translate
+            translate-context="Action">Set</button>
+    </footer>
+</form>

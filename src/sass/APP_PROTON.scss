@@ -64,11 +64,14 @@
 @import "core/popover.scss";
 @import "core/createLabel.scss";
 @import "core/captchaView.scss";
+@import "composer/composerOptions.scss";
+@import "composer/composerExpiration.scss";
 @import "composer/composerAttachments.scss";
 @import "composer/composerAskEmbdded.scss";
 @import "composer/composerSelectFrom.scss";
 @import "composer/composerInputMeta.scss";
 @import "composer/progressUpload.scss";
+@import "composer/composerHeader.scss";
 @import "attachments/listAttachments.scss";
 @import "message/messageView.scss";
 @import "message/displayContentBtn.scss";

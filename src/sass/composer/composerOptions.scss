@@ -1,0 +1,49 @@
+.composerOptions-container {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: $composerRowHeight;
+    bottom: 0;
+    padding: 2rem 10px;
+    margin-bottom: 0 !important;
+    box-sizing: border-box;
+    z-index: 99;
+    background: #fafafa;
+    display: none;
+    &.show {
+        display: block;
+    }
+    .pm_select {
+        display: inline-block !important;
+        margin: 0 .5rem 0 2rem;
+    }
+    footer {
+        position: absolute;
+        left: 0;
+        right:0;
+        background: #fafafa;
+        bottom: 0;
+    }
+    .clearfix {
+        padding: 5px 0;
+    }
+    h3 {
+        display: inline-block;
+    }
+    h1, h2, h3, h4, h5 {
+        font-weight: 400;
+    }
+    input[type="range"] {
+        width: 100%;
+        margin: 2rem 0;
+    }
+    .fa {
+        color: $primary;
+    }
+    .pm_button.primary {
+        padding: 0 2rem;
+    }
+    div.text-center {
+        padding: 1rem 0 2rem 0;
+    }
+}
