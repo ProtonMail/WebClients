@@ -7,11 +7,10 @@
     </p>
 
     <hr>
-
     <p>
         <span style="width:14rem" width="14rem">
-            <span ng-show="message.Type === 2 || message.Type === 3"  translate-comment="printed message info" translate>Received:</span>
-            <span ng-show="message.Type === 0 || message.Type === 1"  translate-comment="printed message info" translate>Sent:</span>
+            <span ng-show="message.Type === 0 || message.Type === 3"  translate-comment="printed message info" translate>Received:</span>
+            <span ng-hide="message.Type === 0 || message.Type === 3"  translate-comment="printed message info" translate>Sent:</span>
         </span>
         <span>
             <i class="fa fa-reply" ng-show="message.IsReplied === 1"></i>
