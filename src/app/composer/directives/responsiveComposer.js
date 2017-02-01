@@ -1,6 +1,8 @@
 angular.module('proton.composer')
 .directive('responsiveComposer', ($rootScope, authentication) => {
 
+    const latestState = {};
+
     /**
      * Factory to compute sizes
      * @param  {$scope} scope
@@ -8,24 +10,29 @@ angular.module('proton.composer')
      */
     const computeType = (scope) => () => {
 
-        // If the composer is maximized do nothing, keep this state
-        if (scope.message.maximized) {
-            return;
-        }
-
         const width = window.innerWidth;
         const height = window.innerHeight;
         const isSmall = (width <= 640 || height <= 500);
 
-        // max
-        scope
-            .$applyAsync(() => {
-                $rootScope.small = height < 700 && height >= 600;
-                $rootScope.mini = height < 600;
+        // If the composer is maximized do nothing, keep this state
+        if (scope.message.maximized && !latestState.isSmall) {
+            return;
+        }
 
-                isSmall && scope.maximize(scope.message);
-                !isSmall && (authentication.user.ComposerMode === 0) && scope.normalize(scope.message);
-            });
+        // If the composer is minimized do nothing, keep this state
+        if (scope.message.minimized) {
+            return;
+        }
+
+        latestState.isSmall = isSmall;
+
+        scope.$applyAsync(() => {
+            $rootScope.small = height < 700 && height >= 600;
+            $rootScope.mini = height < 600;
+
+            isSmall && scope.maximize(scope.message);
+            !isSmall && (authentication.user.ComposerMode === 0) && scope.normalize(scope.message);
+        });
     };
 
     return {
