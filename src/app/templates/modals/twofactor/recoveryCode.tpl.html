@@ -6,28 +6,24 @@
                 <h4 class="modal-title" translate-comment="Title" translate>Two-factor authentication enabled</h4>
             </div>
             <div class="modal-body pm_form">
-                <p class="alert alert-info" translate-comment="Info" translate>Keep these recovery codes in a safe place. If you lose your two-factor-enabled device, these codes can be used instead of the 6-digit 2FA code to log into your account. Each code can only be used once, and they must be used in the listed order.</p>
+                <p class="alert alert-info" translate-comment="Info" translate>Keep these recovery codes in a safe place. If you lose your two-factor-enabled device, these codes can be used instead of the 6-digit 2FA code to log into your account. Each code can only be used once.</p>
                 <div class="pm_grid text-center">
                     <div class="col-4-8">
-                        <ol>
-                            <div ng-repeat="c in ctrl.recoveryCodesFirstHalf">
-                                <li>{{c}}</li>
-                            </div>
-                        </ol>
+                        <ul>
+                            <li ng-repeat="c in ctrl.recoveryCodesFirstHalf" ng-bind="c"></li>
+                        </ul>
                     </div>
                     <div class="col-4-8">
-                        <ol start="9">
-                            <div ng-repeat="c in ctrl.recoveryCodesSecondHalf">
-                                <li>{{c}}</li>
-                            </div>
-                        </ol>
+                        <ul>
+                            <li ng-repeat="c in ctrl.recoveryCodesSecondHalf" ng-bind="c"></li>
+                        </ul>
                     </div>
                 </div>
             </div>
         </div>
         <div class="modal-footer">
-            <button class="pm_button" ng-click="ctrl.download()" translate translate-context="Action">Download</button>
-            <button tabindex="1" type="button" class="pm_button primary pull-right" ng-click="ctrl.cancel()" translate translate-context="Action">Done</button>
+            <button type="button" class="pm_button" ng-click="ctrl.download()" translate translate-context="Action">Download</button>
+            <button type="button" class="pm_button primary pull-right" ng-click="ctrl.cancel()" translate translate-context="Action">Done</button>
         </div>
     </div>
     <div class="modal-overlay"></div>
