@@ -1,8 +1,8 @@
 angular.module('proton.utils')
-.factory('hotkeys', (hotkeyModal, $rootScope, $state, authentication, CONSTANTS, Message) => {
+.factory('hotkeys', (hotkeyModal, $rootScope, $state, authentication, CONSTANTS, messageModel) => {
     const composer = () => {
         const type = 'new';
-        const message = new Message();
+        const message = messageModel();
 
         $rootScope.$emit('composer.new', { message, type });
 

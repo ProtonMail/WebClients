@@ -1,5 +1,5 @@
 angular.module('proton.message')
-.directive('mailTo', ($rootScope, $location, regexEmail, Message, authentication) => ({
+.directive('mailTo', ($rootScope, $location, regexEmail, messageModel, authentication) => ({
     restrict: 'A',
     link(scope, element) {
         function toAddresses(emails) {
@@ -33,7 +33,7 @@ angular.module('proton.message')
 
             const to = mailto.substring(0, j);
             const params = $location.search(mailto.substring(j + 1)).search();
-            const message = new Message();
+            const message = messageModel();
 
             message.From = _.findWhere(authentication.user.Addresses, { ID: scope.message.AddressID });
 

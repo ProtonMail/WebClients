@@ -1,5 +1,5 @@
 angular.module('proton.core')
-    .service('cacheCounters', (Message, CONSTANTS, Conversation, $q, $rootScope, authentication) => {
+    .service('cacheCounters', (messageApi, CONSTANTS, conversationApi, $q, $rootScope, authentication) => {
         const api = {};
         let counters = {};
         const dispatch = (type, data = {}) => $rootScope.$emit('app.cacheCounters', { type, data });
@@ -38,14 +38,14 @@ angular.module('proton.core')
             ].concat(idsLabel);
 
             return $q.all({
-                message: Message.count().$promise,
-                conversation: Conversation.count()
+                message: messageApi.count(),
+                conversation: conversationApi.count()
             })
             .then(({ message = {}, conversation = {} } = {}) => {
                 // Initialize locations
                 locs.forEach(exist);
 
-                _.chain(message.Counts)
+                _.chain(message.data.Counts)
                     .filter(({ LabelID }) => counters[LabelID])
                     .each(({ LabelID, Total = 0, Unread = 0 }) => {
                         counters[LabelID].message.total = Total;

@@ -7,9 +7,10 @@ angular.module('proton.core')
     $stateParams,
     authentication,
     CONSTANTS,
-    Conversation,
+    conversationApi,
     firstLoad,
-    Message,
+    messageModel,
+    messageApi,
     cacheCounters,
     networkActivityTracker,
     tools
@@ -41,9 +42,7 @@ angular.module('proton.core')
      * @param {Array} messages
      */
     function storeMessages(messages) {
-        _.chain(messages)
-            .map((message) => new Message(message))
-            .each(updateMessage);
+        messages.forEach(updateMessage);
     }
 
     /**
@@ -61,26 +60,25 @@ angular.module('proton.core')
      * Update message cached
      * @param {Object} message
      */
-    function updateMessage(currentMsg, isSend) {
-        const current = _.findWhere(messagesCached, { ID: currentMsg.ID });
-        const message = new Message(currentMsg);
+    function updateMessage(message, isSend) {
+        const current = _.findWhere(messagesCached, { ID: message.ID });
 
         if (current) {
             messagesCached = _.map(messagesCached, (msg) => {
 
                 // Force update if it's a new message
                 if (isSend && msg.ID === message.ID) {
-                    return angular.copy(message);
+                    return message;
                 }
 
                 if (msg.ID === message.ID) {
-                    const m = _.extend(new Message(msg), message);
+                    const m = _.extend(msg, message);
                     // It can be 0
                     m.Type = message.Type;
                     return m;
                 }
 
-                return angular.copy(msg);
+                return msg;
             });
         } else {
             messagesCached.push(message);
@@ -248,7 +246,7 @@ angular.module('proton.core')
         request.Limit = request.Limit || CONSTANTS.CONVERSATION_LIMIT; // We don't call 50 conversations but 100 to improve user experience when he delete message and display quickly the next conversations
 
         const promise = api.getDispatcher()
-        .then(() => Conversation.query(request))
+        .then(() => conversationApi.query(request))
         .then(({ data = {} }) => {
             if (data.Code === 1000) {
                 // Set total value in rootScope
@@ -295,8 +293,9 @@ angular.module('proton.core')
         request.Limit = request.Limit || CONSTANTS.MESSAGE_LIMIT; // We don't call 50 messages but 100 to improve user experience when he delete message and display quickly the next messages
 
         const promise = api.getDispatcher()
-        .then(() => Message.query(request).$promise)
-        .then(({ Messages = [], Total = 0 } = {}) => {
+        .then(() => messageApi.query(request))
+        .then(({ data = {} } = {}) => {
+            const { Messages = [], Total = 0 } = data;
             $rootScope.Total = Total;
 
             Messages.forEach((message) => {
@@ -334,7 +333,7 @@ angular.module('proton.core')
      * @return {Promise}
      */
     function getConversation(conversationID = '') {
-        const promise = Conversation.get(conversationID)
+        const promise = conversationApi.get(conversationID)
             .then(({ data = {} }) => {
                 const { Code, Conversation, Messages } = data;
 
@@ -366,18 +365,15 @@ angular.module('proton.core')
     * @return {Promise}
     */
     function getMessage(messageID = '') {
-        const promise = Message.get({ id: messageID }).$promise
-        .then((data) => {
+        const promise = messageApi.get(messageID)
+        .then(({ data = {} } = {}) => {
             if (data.Code === 1000) {
-                const message = new Message(data.Message);
-
+                const message = data.Message;
                 message.loaded = true;
                 storeMessages([message]);
-
-                return Promise.resolve(angular.copy(message));
-            } else if (data.Error) {
-                return Promise.reject(data.Error);
+                return messageModel(message);
             }
+            throw new Error(data.Error);
         });
 
         networkActivityTracker.track(promise);
@@ -546,7 +542,10 @@ angular.module('proton.core')
             let total;
             let number;
             const mailbox = tools.currentMailbox();
-            let messages = _.filter(messagesCached, ({ LabelIDs = [] }) => LabelIDs.indexOf(loc) !== -1);
+            let messages = _.chain(messagesCached)
+                .filter(messagesCached, ({ LabelIDs = [] }) => LabelIDs.indexOf(loc) !== -1)
+                .map((message) => messageModel(message))
+                .value();
 
             messages = api.orderMessage(messages);
 
@@ -646,7 +645,7 @@ angular.module('proton.core')
      */
     api.queryMessagesCached = (ConversationID = '') => {
         const list = api.orderMessage(_.where(messagesCached, { ConversationID }));
-        return list.slice(); // Create a copy
+        return list.map(messageModel);
     };
 
     /**
@@ -661,7 +660,7 @@ angular.module('proton.core')
      * @param {String} messageId
      * @return {Object}
      */
-    api.getMessageCached = (ID) => angular.copy(_.findWhere(messagesCached, { ID }));
+    api.getMessageCached = (ID) => messageModel(_.findWhere(messagesCached, { ID }));
 
     /**
      * @param {String} conversationID
@@ -688,7 +687,7 @@ angular.module('proton.core')
 
         return new Promise((resolve) => {
             if (message.Body) {
-                resolve(angular.copy(message));
+                resolve(messageModel(message));
             } else {
                 resolve(api.queryMessage(ID));
             }
@@ -700,9 +699,7 @@ angular.module('proton.core')
      * @param {String} messageId
      * @return {Promise}
      */
-    api.queryMessage = (messageId) => {
-        return getMessage(messageId).then((message) => angular.copy(message));
-    };
+    api.queryMessage = getMessage;
 
     /**
     * Delete message or conversation in the cache if the element is present
@@ -758,7 +755,7 @@ angular.module('proton.core')
             return Promise.resolve();
         }
 
-        const message = _.extend(new Message(current), event.Message);
+        const message = _.extend(current, event.Message);
 
         // Manage labels
         if (Array.isArray(event.Message.LabelIDsRemoved)) {

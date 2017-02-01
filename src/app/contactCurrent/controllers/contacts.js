@@ -15,7 +15,7 @@ angular.module('proton.contactCurrent')
     dropzoneModal,
     eventManager,
     gettextCatalog,
-    Message,
+    messageModel,
     networkActivityTracker,
     notify) => {
     // Variables
@@ -273,7 +273,7 @@ angular.module('proton.contactCurrent')
     };
 
     $scope.sendMessageTo = (contact) => {
-        const message = new Message();
+        const message = messageModel();
 
         message.ToList = [{ Address: contact.Email, Name: contact.Name }];
 
@@ -282,7 +282,7 @@ angular.module('proton.contactCurrent')
 
     $scope.composeContacts = () => {
         const contactsSelected = $scope.contactsSelected();
-        const message = new Message();
+        const message = messageModel();
 
         message.ToList = contactsSelected.map(({ Email, Name }) => ({ Address: Email, Name }));
         $rootScope.$emit('composer.new', { message, type: 'new' });

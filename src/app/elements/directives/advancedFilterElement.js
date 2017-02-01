@@ -1,5 +1,5 @@
 angular.module('proton.elements')
-    .directive('advancedFilterElement', (gettextCatalog, Message, confirmModal, networkActivityTracker, cache, notify, eventManager, $state) => {
+    .directive('advancedFilterElement', (gettextCatalog, messageApi, confirmModal, networkActivityTracker, cache, notify, eventManager, $state) => {
 
         const switchState = (opt = {}) => $state.go($state.$current.name, _.extend({}, $state.params, { page: undefined }, opt));
 
@@ -26,7 +26,7 @@ angular.module('proton.elements')
                 params: {
                     title, message,
                     confirm() {
-                        const promise = Message[MAP_ACTIONS[mailbox]]().$promise
+                        const promise = messageApi[MAP_ACTIONS[mailbox]]()
                             .then((response) => {
                                 if (response.Code === 1000) {
                                     cache.empty(mailbox);

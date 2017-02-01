@@ -27,7 +27,6 @@ angular.module('proton', [
     // Models
     'proton.models.addresses',
     'proton.models.contact',
-    'proton.models.conversations',
     'proton.models.eo',
     'proton.models.events',
     'proton.models.filter',
@@ -37,7 +36,6 @@ angular.module('proton', [
     'proton.models.label',
     'proton.models.logs',
     'proton.models.memberKeys',
-    'proton.models.message',
     'proton.models.payments',
     'proton.models.reset',
     'proton.models.setting',
