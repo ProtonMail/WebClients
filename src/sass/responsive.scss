@@ -3,7 +3,7 @@
         width: 100px;
     }
     .searchForm-container { width: calc(100% - 650px) }
-    #pm_sidebar section.sidebar,
+    .sidebarApp-container,
     body header#pm_header-desktop a.logo,
     body #pm_background {
         width: calc(190px - 20px);
@@ -12,17 +12,14 @@
     body #pm_main {
         width: calc(100% - 170px);
     }
-    body section.sidebar a.compose
+    .sidebarApp-container a.compose,
      {
         padding-left: 0;
         text-align: center;
-        .fa {
-            display: none;
-        }
+        .fa { display: none }
     }
-    body section.sidebar ul.menu li a {
-        font-size: .9em;
-    }
+    .sidebarApp-menu,
+    .sidebarLabels { font-size: .9em }
 }
 
 @media (max-width: 1000px) {
@@ -34,11 +31,9 @@
     #pm_settings .pm_tabs li a.pm_button {
         padding: 0 .5rem;
     }
-    body section.sidebar a.version span {
-        display: none;
-    }
+
     .searchForm-container { width: calc(100% - 600px) }
-    #pm_sidebar section.sidebar,
+    .sidebarApp-container,
     body header#pm_header-desktop a.logo,
     body #pm_background {
         width: calc(190px - 40px);
@@ -47,16 +42,7 @@
     body #pm_main {
         width: calc(100% - 150px);
     }
-    body section.sidebar a.compose {
-        padding-left: 0;
-        text-align: center;
-        .fa {
-            display: none;
-        }
-    }
-    body section.sidebar ul.menu li a {
-        font-size: .9em;
-    }
+
 }
 
 @media (max-width: 900px) {
@@ -64,7 +50,7 @@
         width: 80px;
     }
     .searchForm-container { width: calc(100% - 550px) }
-    #pm_sidebar section.sidebar,
+    .sidebarApp-container,
     body header#pm_header-desktop a.logo,
     body #pm_background {
         width: calc(190px - 60px);
@@ -73,18 +59,9 @@
     body #pm_main {
         width: calc(100% - 130px);
     }
-    body section.sidebar a.compose {
-        padding-left: 0;
-        text-align: center;
-        font-size: .8em;
-        .fa {
-            display: none;
-        }
-    }
-    body section.sidebar ul.menu li a {
-        font-size: .9em;
-    }
-    body section.sidebar ul.menu li a em {
+
+    .sidebarApp-menu .menuLabel-counter,
+    .sidebarApp-item .navigationItem-counter {
         display: none;
     }
 

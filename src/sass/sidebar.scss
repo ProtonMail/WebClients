@@ -27,6 +27,7 @@ $sidebarReduction: 6px;
         justify-content: center;
         align-content: center;
         align-items: center;
+        box-sizing: border-box;
         margin-bottom: 10px;
         font-size: 12px;
         padding: 0;
@@ -35,10 +36,12 @@ $sidebarReduction: 6px;
         text-transform: uppercase;
         border-color: transparent;
         height: 40px;
+        min-height: 40px;
 
         letter-spacing: 1px;
         border-radius: 2px;
         .fa {
+            color: inherit;
             display: inline-block;
             width: 1.25rem;
         }
@@ -189,14 +192,13 @@ $sidebarReduction: 6px;
 .sidebarApp-item .sidebarApp-icon,
 .sidebarApp-menu .menuLabel-icon,
 .sidebarApp-item .navigationItem-icon {
-    width: 25px;
-    min-width: 25px;
+    width: 21px;
+    min-width: 21px;
     color: rgba(255, 255, 255, 0.5);
 }
 
 .sidebarApp-menu .menuLabel-counter,
 .sidebarApp-item .navigationItem-counter {
-    margin-left: .5em;
     font-style: normal;
     font-weight: 400;
     color: rgba(255,255,255,.35);
@@ -211,6 +213,7 @@ $sidebarReduction: 6px;
         color: #fff;
         font-weight: 700;
     }
+    .navigationItem-icon { color: lighten($primary, 10%) }
 }
 
 [id="labelSettings"] { margin-bottom: 0 }
@@ -261,4 +264,12 @@ $sidebarReduction: 6px;
     }
 
     .sidebarResponsive-menu-label { margin: 0 }
+
+    .sidebarApp-menu,
+    .sidebarLabels { font-size: 14px }
+
+    .sidebarApp-menu .menuLabel-counter,
+    .sidebarApp-item .navigationItem-counter {
+        display: inline-flex;
+    }
 }
