@@ -4,12 +4,11 @@ angular.module('proton.message')
     return {
         /**
          * Send a message
-         * @param  {String} messageID
          * @param  {Object} params
          * @return {Promise}
          */
-        send(messageID = '', params = {}) {
-            return $http.post(requestURL('send', messageID), params);
+        send(params = {}) {
+            return $http.post(requestURL('send', params.id), params);
         },
         /**
          * Create a new draft message
