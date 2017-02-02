@@ -33,6 +33,11 @@ h6 {
 	font-weight: 700;
 }
 
+/* buttons */
+button { font: inherit }
+button:focus,
+button:active { outline: none }
+
 code,
 kbd,
 pre,

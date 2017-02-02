@@ -60,6 +60,8 @@
 
 // All Firefox
 .ua-firefox {
+    /* remove extra padding on button */
+    button::-moz-focus-inner { padding: 0; border: 0 }
     .pm_labels {
         label {
             line-height: -moz-block-height;
