@@ -64,6 +64,7 @@ module.exports = {
       "vendor/angular-gettext/dist/angular-gettext.js",
       "vendor/awesomplete/awesomplete.js",
       "vendor/angular-ui-indeterminate/dist/indeterminate.js",
+      "vendor/fingerprintjs2/fingerprint2.js",
       "vendor/bcryptjs/dist/bcrypt.js",
       "vendor/nouislider/distribute/nouislider.js",
       "vendor/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.concat.min.js",
