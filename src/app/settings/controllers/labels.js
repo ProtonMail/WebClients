@@ -131,7 +131,7 @@ angular.module('proton.settings')
         confirmModal.activate({
             params: {
                 title: gettextCatalog.getString('Delete label', null, 'Title'),
-                message: gettextCatalog.getString('Are you sure you want to delete this label?', null, 'Info'),
+                message: gettextCatalog.getString('Are you sure you want to delete this label? Removing a label will not remove the messages with that label.', null, 'Info'),
                 confirm() {
                     const promise = Label.delete(label.ID)
                     .then((result) => {
