@@ -53,9 +53,9 @@
             </a>
             <span class="pm_dropdown wide right">
                 <span class="user">
-                    <strong>{{ ::user.DisplayName }}</strong>
-                    <b>{{ user.Addresses[0].Email }}</b>
-                    <b>{{ organization.DisplayName }}</b>
+                    <strong ng-bind="user.DisplayName"></strong>
+                    <b ng-bind="user.Addresses[0].Email"></b>
+                    <b ng-if="organization.HasKeys === 1" ng-bind="organization.DisplayName"></b>
                 </span>
                 <button class="help" ng-if="wizardEnabled" data-display-wizard-button>
                     <i class="fa fa-magic"></i>
