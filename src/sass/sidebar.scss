@@ -21,13 +21,11 @@ $sidebarReduction: 6px;
     position: relative;
     overflow: hidden;
 
-    a.compose,
-    a.backToInbox {
-        display: flex;
-        justify-content: center;
-        align-content: center;
-        align-items: center;
+    .sidebar-btn-compose,
+    .sidebar-btn-back {
         box-sizing: border-box;
+        height: 40px;
+        min-height: 40px;
         margin-bottom: 10px;
         font-size: 12px;
         padding: 0;
@@ -35,9 +33,6 @@ $sidebarReduction: 6px;
         width: 100%;
         text-transform: uppercase;
         border-color: transparent;
-        height: 40px;
-        min-height: 40px;
-
         letter-spacing: 1px;
         border-radius: 2px;
         .fa {
@@ -48,14 +43,22 @@ $sidebarReduction: 6px;
     }
 
     .sidebar-btn-compose,
-    a.backToInbox {
+    .sidebar-btn-back {
         border: 1px solid rgba(256,256,256,0.6);
         color: #FFF;
-        height: auto;
         line-height: 16px;
         padding: 12px 0px 10px;
         text-decoration: none;
         margin-bottom: 1em
+    }
+
+    .sidebar-btn-compose > div,
+    .sidebar-btn-back {
+        /* firefox dislike flex buttons */
+        display: flex;
+        justify-content: center;
+        align-content: center;
+        align-items: center;
     }
 
     .footer {

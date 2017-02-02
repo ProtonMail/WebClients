@@ -12,8 +12,7 @@
     body #pm_main {
         width: calc(100% - 170px);
     }
-    .sidebarApp-container a.compose,
-     {
+    .sidebarApp-container .sidebar-btn-compose {
         padding-left: 0;
         text-align: center;
         .fa { display: none }
