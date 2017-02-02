@@ -52,7 +52,7 @@ angular.module('proton.message')
          * @return {Promise}
          */
         updateDraft(params = {}) {
-            const messageID = params.ID;
+            const messageID = params.ID || params.id;
             return $http.put(requestURL('draft', messageID), params);
         },
         /**

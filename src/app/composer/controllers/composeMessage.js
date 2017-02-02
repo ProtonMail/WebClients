@@ -499,7 +499,7 @@ angular.module('proton.composer')
         } else if (type === CREATE) {
             promise = messageApi.createDraft(parameters);
         }
-
+        debugger;
         return promise.then(({ data = {} } = {}) => {
             if ((data.Code === 1000 || data.Code === 15033)) {
                 return data;
@@ -1050,7 +1050,8 @@ angular.module('proton.composer')
      * @param {Boolean} save
      */
     $scope.close = closeComposer;
-    function closeComposer(message, discard, save) {
+    function closeComposer(msg, discard, save) {
+        const message = messageModel(msg);
         const process = () => {
             // Remove message in composer controller
             $scope.messages = removeMessage($scope.messages, message);
