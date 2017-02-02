@@ -12,10 +12,9 @@
     .settingsMenu-item-donate { display: none }
 }
 
-.settingsMenu-is-member, .settingsMenu-is-subuser, .settingsMenu-keyphase-active {
+.settingsMenu-is-member, .settingsMenu-is-subuser {
     .navigationSettings-is-members { display: none }
 }
 
 
 body:not(.appConfigBody-is-mobile) .settingsMenu-about-app { display: none }
-

@@ -3,7 +3,6 @@ angular.module('proton.ui')
 
     const CLASS_SUBUSER = 'settingsMenu-is-subuser';
     const CLASS_MEMBER = 'settingsMenu-is-member';
-    const CLASS_KEY_PHASE = 'settingsMenu-keyphase-active';
 
     return {
         replace: true,
@@ -13,7 +12,6 @@ angular.module('proton.ui')
             const unsubscribe = [];
             scope.listStates = Object.keys(sidebarSettingsModel.getStateConfig());
 
-            (CONSTANTS.KEY_PHASE > 3) && el[0].classList.add(`${CLASS_KEY_PHASE}`);
             authentication.user.subuser && el[0].classList.add(CLASS_SUBUSER);
 
             if (authentication.user.Role === CONSTANTS.PAID_MEMBER_ROLE) {
