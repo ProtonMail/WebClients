@@ -499,7 +499,7 @@ angular.module('proton.composer')
         } else if (type === CREATE) {
             promise = messageApi.createDraft(parameters);
         }
-        debugger;
+
         return promise.then(({ data = {} } = {}) => {
             if ((data.Code === 1000 || data.Code === 15033)) {
                 return data;
