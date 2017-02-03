@@ -41,8 +41,11 @@
 
 .labelModal-item-mask {
     position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
+    z-index: 2;
     background: currentColor;
     border: 1px solid currentColor;
     pointer-events: none;
@@ -50,8 +53,11 @@
 
 .labelModal-input-color {
     position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
+    z-index: 1;
     margin: 0;
 }
 
