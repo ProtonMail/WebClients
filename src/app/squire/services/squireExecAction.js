@@ -88,16 +88,20 @@ angular.module('proton.squire')
          * @param  {File} file
          * @return {void}
          */
-        const insertImage = (message, value, file) => {
+        const insertImage = (message, { url, file, opt = {} } = {}) => {
             const { editor } = editorModel.find(message);
-            const addImage = (value, alt = '') => {
-                value && editor.insertImage(value, { class: 'proton-embedded', alt });
+            opt.class = ((opt.class || ' ') + 'proton-embedded').trim();
+
+            const addImage = (url, opt) => {
+                editor.focus();
+                url && editor.insertImage(url, _.extend({}, opt));
             };
 
             if (file) {
-                insertFile(file).then((body) => addImage(body, file.name || file.Name));
+                const config = _.extend({}, opt, { alt: file.name || file.Name });
+                insertFile(file).then((body) => addImage(body, config));
             } else {
-                addImage(value);
+                addImage(url, opt);
             }
         };
 

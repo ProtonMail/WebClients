@@ -23,7 +23,7 @@ angular.module('proton.squire')
                 }
                 switch (action) {
                     case 'update':
-                        squireExecAction.insertImage(message, form.url);
+                        squireExecAction.insertImage(message, { url: form.url });
                         break;
                     case 'close':
                         node.classList.add(CLASS_HIDDEN);
@@ -35,7 +35,7 @@ angular.module('proton.squire')
 
         const onChangeFile = (message, node) => (e) => {
             const file = e.target.files[0];
-            squireExecAction.insertImage(message, '', file);
+            squireExecAction.insertImage(message, { url: '', file });
             node.classList.add(CLASS_HIDDEN);
             // Reset input value to trigger the change event if you select the same file again
             _rAF(() => e.target.value = null);
