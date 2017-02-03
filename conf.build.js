@@ -49,7 +49,7 @@ module.exports = {
       "vendor/ng-sortable/dist/ng-sortable.js",
       "vendor/angular-notify/dist/angular-notify.js",
       "vendor/pikaday/pikaday.js",
-      "vendor/pikaday-angular/pikaday-angular.js",
+      "vendor/ng-pikaday/ng-pikaday.js",
       "vendor/Squire/build/squire.js",
       "vendor/dropzone/dist/dropzone.js",
       "vendor/vcard/src/vcard.js",

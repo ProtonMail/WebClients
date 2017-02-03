@@ -1,8 +1,9 @@
 angular.module('proton.ui')
 .directive('headerDesktopView', () => {
     return {
+        scope: {},
         replace: true,
-        restrict: 'E',
+        controller: 'HeaderController',
         templateUrl: 'templates/ui/headerDesktopView.tpl.html'
     };
 });

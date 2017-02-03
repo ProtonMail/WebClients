@@ -59,7 +59,6 @@ angular.module('proton.core')
                         counters[LabelID].conversation.unread = Unread;
                     });
                 dispatch('load');
-                console.log('Load');
                 return Promise.resolve();
             }, Promise.reject);
         };
