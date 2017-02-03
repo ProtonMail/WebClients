@@ -155,7 +155,6 @@ $sidebarReduction: 6px;
 }
 
 .sidebarApp-item .navigationItem-btn-refresh {
-    line-height: 30px;
     padding: 0;
     cursor: pointer;
     margin: 0 0 0 auto;
@@ -184,6 +183,14 @@ $sidebarReduction: 6px;
     &:hover { color: $white }
 }
 
+.sidebarApp-item .navigationItem-item {
+    display: inline-flex;
+    align-content: center;
+    align-items: center;
+    line-height: initial;
+}
+
+
 .sidebarApp-menu .menuLabel-link {
     padding: 0;
     height: 25px;
@@ -208,6 +215,8 @@ $sidebarReduction: 6px;
 
     &:hover { color: rgba(255,255,255,.35) };
 }
+
+.sidebarApp-item .navigationItem-counter { margin-left: .3em }
 
 .sidebarApp-item.active {
     .navigationItem-item, .sidebarApp-link  {
