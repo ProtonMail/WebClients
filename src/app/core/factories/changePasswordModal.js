@@ -1,16 +1,15 @@
 angular.module('proton.core')
-.factory('changePasswordModal', (authentication, changeMailboxPassword, changeOrganizationPassword, eventManager, gettextCatalog, networkActivityTracker, notify, pmModal, Setting, User) => {
+.factory('changePasswordModal', (authentication, changeMailboxPassword, eventManager, gettextCatalog, networkActivityTracker, notify, pmModal, Setting, User) => {
     return pmModal({
         controllerAs: 'ctrl',
         templateUrl: 'templates/modals/changePassword.tpl.html',
         controller(params) {
             const self = this;
-            const { type = '', phase = 0, close, creds, organizationKey } = params;
+            const { type = '', phase = 0 } = params;
             const promises = {
                 password: () => changeMailboxPassword({ newPassword: self.newPassword, onePassword: true }),
                 login: () => Setting.password(self.newPassword),
-                mailbox: () => changeMailboxPassword({ newPassword: self.newPassword, onePassword: false }),
-                organization: () => changeOrganizationPassword({ newPassword: self.newPassword, creds, organizationKey })
+                mailbox: () => changeMailboxPassword({ newPassword: self.newPassword, onePassword: false })
             };
             self.mode = authentication.user.PasswordMode;
             self.type = type;
@@ -24,13 +23,13 @@ angular.module('proton.core')
                 .then(() => {
                     const message = gettextCatalog.getString('Password updated', null);
                     notify({ message, classes: 'notification-success' });
-                    close(next);
+                    params.close(next);
                 });
                 networkActivityTracker.track(promise);
             };
             self.cancel = () => {
                 const promise = User.lock()
-                .then(() => close(false));
+                .then(() => params.close(false));
                 networkActivityTracker.track(promise);
             };
             setTimeout(() => document.getElementById('newPassword').focus(), 0);

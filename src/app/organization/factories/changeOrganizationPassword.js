@@ -1,4 +1,4 @@
-angular.module('proton.core')
+angular.module('proton.organization')
 .factory('changeOrganizationPassword', (gettextCatalog, organizationApi, passwords, pmcw) => {
     return ({ newPassword, organizationKey, creds }) => {
         const keySalt = passwords.generateKeySalt();
