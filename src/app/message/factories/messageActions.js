@@ -25,10 +25,10 @@ angular.module('proton.message')
                     move(data);
                     break;
                 case 'star':
-                    star(data.id);
+                    star(data.ids);
                     break;
                 case 'unstar':
-                    unstar(data.id);
+                    unstar(data.ids);
                     break;
                 case 'read':
                     read(data.ids);
@@ -300,88 +300,97 @@ angular.module('proton.message')
 
         /**
          * Star a message
-         * @param {String} id
+         * @param {Array} ids
          */
-        function star(id) {
-            const events = [];
+        function star(ids) {
+            const promise = messageApi.star({ IDs: ids });
             const LabelIDsAdded = [CONSTANTS.MAILBOX_IDENTIFIERS.starred];
-            const { ID, ConversationID, IsRead } = cache.getMessageCached(id);
-            const conversation = cache.getConversationCached(ConversationID);
 
-            // Messages
-            events.push({
-                Action: 3, ID,
-                Message: { ID, IsRead, LabelIDsAdded }
-            });
-
-            // Conversation
-            if (conversation) {
-                events.push({
-                    Action: 3,
-                    ID: ConversationID,
-                    Conversation: {
-                        ID: ConversationID,
-                        LabelIDsAdded,
-                        NumUnread: conversation.NumUnread
-                    }
-                });
-            }
-
-            // Send request
-            const promise = messageApi.star({ IDs: [id] });
             cache.addToDispatcher(promise);
 
-            if (tools.cacheContext() === true) {
-                return cache.events(events);
+            if (!tools.cacheContext()) {
+                promise.then(eventManager.call());
+                return networkActivityTracker.track(promise);
             }
 
-            // Send cache events
-            promise.then(() => cache.events(events));
-            networkActivityTracker.track(promise);
+            const events = _.chain(ids)
+            .map((id) => cache.getMessageCached(id))
+            .filter(Boolean)
+            .reduce((acc, { ID, ConversationID, IsRead }) => {
+                const conversation = cache.getConversationCached(ConversationID);
+
+                // Messages
+                acc.push({
+                    Action: 3, ID,
+                    Message: { ID, IsRead, LabelIDsAdded }
+                });
+
+                // Conversation
+                if (conversation) {
+                    acc.push({
+                        Action: 3,
+                        ID: ConversationID,
+                        Conversation: {
+                            ID: ConversationID,
+                            LabelIDsAdded,
+                            NumUnread: conversation.NumUnread
+                        }
+                    });
+                }
+
+                return acc;
+            }, [])
+            .value();
+
+            cache.events(events);
         }
 
         /**
          * Unstar a message
-         * @param {String} id
+         * @param {Array} ids
          */
-        function unstar(id) {
-            const events = [];
+        function unstar(ids) {
+            const promise = messageApi.unstar({ IDs: ids });
             const LabelIDsRemoved = [CONSTANTS.MAILBOX_IDENTIFIERS.starred];
-            const { ID, ConversationID, IsRead } = cache.getMessageCached(id);
-            const conversation = cache.getConversationCached(ConversationID);
-            const messages = cache.queryMessagesCached(ConversationID);
-            const stars = _.filter(messages, ({ LabelIDs = [] }) => _.contains(LabelIDs, CONSTANTS.MAILBOX_IDENTIFIERS.starred));
 
-            // Messages
-            events.push({
-                Action: 3, ID,
-                Message: { ID, IsRead, LabelIDsRemoved }
-            });
-
-            // Conversation
-            if (stars.length === 1 && conversation) {
-                events.push({
-                    Action: 3,
-                    ID: ConversationID,
-                    Conversation: {
-                        ID: ConversationID,
-                        LabelIDsRemoved,
-                        NumUnread: conversation.NumUnread
-                    }
-                });
-            }
-
-            // Send request
-            const promise = messageApi.unstar({ IDs: [id] });
             cache.addToDispatcher(promise);
 
-            if (tools.cacheContext() === true) {
-                return cache.events(events);
+            if (!tools.cacheContext()) {
+                promise.then(eventManager.call());
+                return networkActivityTracker.track(promise);
             }
 
-            // Send cache events
-            promise.then(() => cache.events(events));
-            networkActivityTracker.track(promise);
+            const events = _.chain(ids)
+            .map((id) => cache.getMessageCached(id))
+            .filter(Boolean)
+            .reduce((acc, { ID, ConversationID, IsRead }) => {
+                const conversation = cache.getConversationCached(ConversationID);
+                const messages = cache.queryMessagesCached(ConversationID);
+                const stars = _.filter(messages, ({ LabelIDs = [] }) => _.contains(LabelIDs, CONSTANTS.MAILBOX_IDENTIFIERS.starred));
+
+                // Messages
+                acc.push({
+                    Action: 3, ID,
+                    Message: { ID, IsRead, LabelIDsRemoved }
+                });
+
+                // Conversation
+                if (stars.length === 1 && conversation) {
+                    acc.push({
+                        Action: 3,
+                        ID: ConversationID,
+                        Conversation: {
+                            ID: ConversationID,
+                            LabelIDsRemoved,
+                            NumUnread: conversation.NumUnread
+                        }
+                    });
+                }
+                return acc;
+            }, [])
+            .value();
+
+            cache.events(events);
         }
 
         /**

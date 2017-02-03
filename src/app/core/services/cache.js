@@ -299,9 +299,10 @@ angular.module('proton.core')
             $rootScope.Total = Total;
 
             Messages.forEach((message) => {
+                const { ToList = [], CCList = [], BCCList = [] } = message;
                 message.loaded = true;
                 message.Senders = [message.Sender];
-                message.Recipients = _.uniq([].concat(message.ToList || []).concat(message.CCList || []).concat(message.BCCList || []));
+                message.Recipients = _.uniq([].concat(ToList, CCList, BCCList));
             });
 
             // Store messages
@@ -543,7 +544,7 @@ angular.module('proton.core')
             let number;
             const mailbox = tools.currentMailbox();
             let messages = _.chain(messagesCached)
-                .filter(messagesCached, ({ LabelIDs = [] }) => LabelIDs.indexOf(loc) !== -1)
+                .filter(({ LabelIDs = [] }) => LabelIDs.indexOf(loc) !== -1)
                 .map((message) => messageModel(message))
                 .value();
 
@@ -906,7 +907,6 @@ angular.module('proton.core')
      * Second with the query call
      */
     api.callRefresh = (messageIDs = [], conversationIDs = []) => {
-        console.log('Refresh');
         $rootScope.$emit('refreshElements');
         $rootScope.$emit('updatePageName');
         $rootScope.$emit('refreshConversation', conversationIDs);
