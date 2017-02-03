@@ -6,6 +6,7 @@ angular.module('proton.core')
         controller(params) {
             const labelsOrdered = _.sortBy(authentication.user.Labels, 'Order');
             const ctrl = this;
+            const model = angular.copy(params.filter);
 
             ctrl.hasLabels = false;
             ctrl.hasMove = false;
@@ -129,22 +130,22 @@ angular.module('proton.core')
 
             ctrl.initialization = () => {
                 ctrl.filter = {
-                    ID: prepareID(params.filter),
-                    Name: prepareName(params.filter),
-                    Status: prepareStatus(params.filter),
+                    ID: prepareID(model),
+                    Name: prepareName(model),
+                    Status: prepareStatus(model),
                     Version: CONSTANTS.FILTER_VERSION
                 };
 
                 if (params.mode === 'simple') {
                     ctrl.mode = 'simple';
                     ctrl.filter.Simple = {
-                        Operator: prepareOperator(params.filter),
-                        Conditions: prepareConditions(params.filter),
-                        Actions: prepareActions(params.filter)
+                        Operator: prepareOperator(model),
+                        Conditions: prepareConditions(model),
+                        Actions: prepareActions(model)
                     };
                 } else if (params.mode === 'complex') {
                     ctrl.mode = 'complex';
-                    ctrl.filter.Sieve = params.filter.Sieve;
+                    ctrl.filter.Sieve = model.Sieve;
                 }
 
                 if (angular.isObject(ctrl.filter.Simple)) {
