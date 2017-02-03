@@ -11,15 +11,13 @@ angular.module('proton.ui')
         link(scope, el) {
             const unsubscribe = [];
             scope.listStates = Object.keys(sidebarSettingsModel.getStateConfig());
+            const isMember = () => authentication.user.Role === CONSTANTS.PAID_MEMBER_ROLE;
 
             authentication.user.subuser && el[0].classList.add(CLASS_SUBUSER);
-
-            if (authentication.user.Role === CONSTANTS.PAID_MEMBER_ROLE) {
-                el[0].classList.add(CLASS_MEMBER);
-            }
+            isMember() && el[0].classList.add(CLASS_MEMBER);
 
             unsubscribe.push($rootScope.$on('updateUser', () => {
-                el[0].classList.add(CLASS_MEMBER);
+                isMember() && el[0].classList.add(CLASS_MEMBER);
             }));
 
             unsubscribe.push($rootScope.$on('$stateChangeStart', () => {
