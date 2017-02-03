@@ -1,10 +1,10 @@
 angular.module('proton.core')
 .factory('filterModal', ($timeout, $rootScope, pmModal, gettextCatalog, authentication, Filter, networkActivityTracker, notify, CONSTANTS, eventManager, labelModal, Label) => {
-    const labelsOrdered = _.sortBy(authentication.user.Labels, 'Order');
     return pmModal({
         controllerAs: 'ctrl',
         templateUrl: 'templates/modals/filter.tpl.html',
         controller(params) {
+            const labelsOrdered = _.sortBy(authentication.user.Labels, 'Order');
             const ctrl = this;
 
             ctrl.hasLabels = false;
@@ -152,7 +152,7 @@ angular.module('proton.core')
 
                     ['deleteLabel', 'createLabel', 'updateLabel', 'updateLabels'].forEach((name) => {
                         unsubscribe.push($rootScope.$on(name, () => {
-                            ctrl.filter.Simple.Actions.Labels = labelsOrdered;
+                            ctrl.filter.Simple.Actions.Labels = _.sortBy(authentication.user.Labels, 'Order');
                         }));
                     });
 
@@ -164,7 +164,7 @@ angular.module('proton.core')
 
                 $timeout(() => {
                     angular.element('#filterName').focus();
-                });
+                }, 100, false);
             };
 
             /**
