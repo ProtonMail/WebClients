@@ -120,10 +120,10 @@ angular.module('proton.conversation')
 
     /**
      * Unstar conversation
-     * @param {String} id - conversation id
+     * @param {Array} ids - conversation ids
      */
-    function unstar(ID) {
-        const promise = conversationApi.unstar([ID]);
+    function unstar(ids = []) {
+        const promise = conversationApi.unstar(ids);
         const LabelIDsRemoved = [MAILBOX_IDENTIFIERS.starred];
 
         cache.addToDispatcher(promise);
@@ -133,35 +133,38 @@ angular.module('proton.conversation')
             return networkActivityTracker.track(promise);
         }
 
-        const conversation = cache.getConversationCached(ID);
+        const events = _.chain(ids)
+            .map((id) => cache.getConversationCached(id))
+            .filter(Boolean)
+            .reduce((acc, { ID, NumUnread }) => {
+                const messages = cache.queryMessagesCached(ID);
 
-        // Generate message changes with event
-        const events = _.reduce(cache.queryMessagesCached(ID), (acc, { ID, IsRead }) => {
-            acc.push({
-                ID,
-                Action: 3,
-                Message: { ID, IsRead, LabelIDsRemoved }
-            });
-            return acc;
-        }, []);
+                _.each(messages, (message) => {
+                    acc.push({
+                        Action: 3,
+                        ID: message.ID,
+                        Message: { ID: message.ID, IsRead: message.IsRead, LabelIDsRemoved }
+                    });
+                });
 
-        // Generate conversation changes with event
-        events.push({
-            ID, Action: 3,
-            Conversation: {
-                ID, LabelIDsRemoved,
-                NumUnread: conversation.NumUnread
-            }
-        });
+                acc.push({
+                    Action: 3,
+                    ID,
+                    Conversation: { ID, NumUnread, LabelIDsRemoved }
+                });
+                return acc;
+            }, [])
+            .value();
+
         cache.events(events);
     }
 
     /**
      * Star conversation
-     * @param {String} id - conversation id
+     * @param {Array} ids - conversation ids
      */
-    function star(ID) {
-        const promise = conversationApi.star([ID]);
+    function star(ids = []) {
+        const promise = conversationApi.star(ids);
         const LabelIDsAdded = [MAILBOX_IDENTIFIERS.starred];
         cache.addToDispatcher(promise);
 
@@ -170,25 +173,29 @@ angular.module('proton.conversation')
             return networkActivityTracker.track(promise);
         }
 
-        const conversation = cache.getConversationCached(ID);
+        const events = _.chain(ids)
+            .map((id) => cache.getConversationCached(id))
+            .filter(Boolean)
+            .reduce((acc, { ID, NumUnread }) => {
+                const messages = cache.queryMessagesCached(ID);
 
-        // Generate message changes with event
-        const events = _.reduce(cache.queryMessagesCached(ID), (acc, { ID, IsRead }) => {
-            acc.push({
-                ID,
-                Action: 3,
-                Message: { ID, IsRead, LabelIDsAdded }
-            }, []);
-            return acc;
-        }, []);
+                _.each(messages, (message) => {
+                    acc.push({
+                        Action: 3,
+                        ID: message.ID,
+                        Message: { ID: message.ID, IsRead: message.IsRead, LabelIDsAdded }
+                    });
+                });
 
-        events.push({
-            ID, Action: 3,
-            Conversation: {
-                ID, LabelIDsAdded,
-                NumUnread: conversation.NumUnread
-            }
-        });
+                acc.push({
+                    Action: 3,
+                    ID,
+                    Conversation: { ID, NumUnread, LabelIDsAdded }
+                });
+                return acc;
+            }, [])
+            .value();
+
         cache.events(events);
     }
 

@@ -172,6 +172,10 @@ angular.module('proton.elements')
             !isOpened && $scope.unread();
         });
 
+        $scope.$on('toggleStar', () => {
+            !isOpened && $scope.toggleStar();
+        });
+
         /**
          * Scroll to the current marked conversation
 ]        */
@@ -583,6 +587,17 @@ angular.module('proton.elements')
         if (angular.isDefined($state.params.id)) {
             $scope.back();
         }
+    };
+
+    $scope.toggleStar = () => {
+        const type = tools.typeList();
+        const elementsSelected = $scope.elementsSelected();
+        const elementsStarred = _.filter(elementsSelected, ({ LabelIDs = [] }) => LabelIDs.indexOf(CONSTANTS.MAILBOX_IDENTIFIERS.starred) > -1);
+        const ids = elementsSelected.map(({ ID }) => ID);
+        if (elementsSelected.length === elementsStarred.length) {
+            return (type === 'conversation') ? actionConversation.unstar(ids) : $rootScope.$emit('messageActions', { action: 'unstar', data: { ids } });
+        }
+        return (type === 'conversation') ? actionConversation.star(ids) : $rootScope.$emit('messageActions', { action: 'star', data: { ids } });
     };
 
     /**

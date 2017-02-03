@@ -18,11 +18,11 @@ angular.module('proton.elements')
         const todoAction = isStarred(item) ? 'unstar' : 'star';
 
         if (type === 'conversation') {
-            actionConversation[todoAction](item.ID);
+            actionConversation[todoAction]([item.ID]);
         }
 
         if (type === 'message') {
-            $rootScope.$emit('messageActions', { action: todoAction, data: { id: item.ID } });
+            $rootScope.$emit('messageActions', { action: todoAction, data: { ids: [item.ID] } });
         }
     }
 
