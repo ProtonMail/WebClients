@@ -14,6 +14,8 @@ angular.module('proton.settings')
     CONSTANTS,
     eventManager,
     generateOrganizationModal,
+    changeOrganizationPassword,
+    changeOrganizationPasswordModal,
     gettextCatalog,
     loginPasswordModal,
     memberApi,
@@ -326,25 +328,25 @@ angular.module('proton.settings')
      * Open modal to change the organization password
      */
     $scope.changeOrganizationPassword = () => {
-        function modal(creds) {
-            changePasswordModal.activate({
-                params: {
-                    phase: 0,
-                    type: 'organization',
-                    organizationKey: $scope.organizationKey,
-                    creds,
-                    close() {
-                        changePasswordModal.deactivate();
+        changeOrganizationPasswordModal.activate({
+            params: {
+                close(newPassword) {
+                    changeOrganizationPasswordModal.deactivate();
+                    if (newPassword) {
+                        passwordModal((Password, TwoFactorCode) => {
+                            const creds = { Password, TwoFactorCode };
+                            const { organizationKey } = $scope;
+                            const promise = changeOrganizationPassword({ newPassword, creds, organizationKey })
+                            .then(() => {
+                                notify({ message: gettextCatalog.getString('Password updated', null), classes: 'notification-success' });
+                                loginPasswordModal.deactivate();
+                            });
+                            networkActivityTracker.track(promise);
+                        });
                     }
                 }
-            });
-        }
-        function submit(currentPassword, twoFactorCode) {
-            const creds = { Password: currentPassword, TwoFactorCode: twoFactorCode };
-            loginPasswordModal.deactivate();
-            modal(creds);
-        }
-        passwordModal(submit);
+            }
+        });
     };
 
     /**
