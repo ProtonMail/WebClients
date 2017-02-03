@@ -210,7 +210,8 @@ header#pm_header-tablet {
 	}
 }
 
-header#pm_header-mobile {
+#pm_header-mobile {
+    display: flex;
 	height: 70px;
 	line-height: 70px;
 	background: $alt;
@@ -242,8 +243,7 @@ header#pm_header-mobile {
 		font-size: 18px;
 	}
 	.searchBtn {
-		display: inline-block;
-		float: right;
+        margin-left: auto;
 		color: #fff;
 		max-width: 4rem;
 		min-width: 4rem;

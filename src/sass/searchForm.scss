@@ -11,6 +11,15 @@
 
 }
 
+.searchForm-container.searchForm-container-adv {
+    .searchForm-action-button-default { display: none }
+    .searchForm-action-button { display: none }
+}
+
+.searchForm-container:not(.searchForm-container-adv) {
+    .searchForm-action-button-advanced { display: none }
+}
+
 .search-form-fieldset {
 	@include flexFill();
 	@include flexInline();
@@ -48,7 +57,7 @@
 }
 
 
-.searchForm-action-button {
+[class*="searchForm-action-button-"] {
 	@include flexInline();
 	@include flexAlignCenter();
 	position: relative;
@@ -58,12 +67,15 @@
 	border:0;
 	margin: 0;
 	color: #fff;
+    border: 0;
 	cursor: pointer;
 	background: transparent;
 	transition: background-color .25s ease;
 	outline:none;
 	> i { margin: 0px auto }
 }
+
+.searchForm-icon { pointer-events: none }
 
 .searchForm-toggle-advanced {
 	width: 35px;

@@ -1,8 +1,9 @@
 angular.module('proton.ui')
 .directive('headerMobileView', () => {
     return {
+        scope: {},
         replace: true,
-        restrict: 'E',
+        controller: 'HeaderController',
         templateUrl: 'templates/ui/headerMobileView.tpl.html'
     };
 });
