@@ -15,7 +15,7 @@ angular.module('proton.squire')
             paramName: 'file', // The name that will be used to transfer the file
             init() {
                 this.on('addedfile', (file) => {
-                    squireExecAction.insertImage(message, '', file);
+                    squireExecAction.insertImage(message, { url: '', file });
                     this.removeAllFiles();
                     node[0].classList.remove(CLASS_DRAGGABLE);
                     node[0].classList.add(CLASS_DRAGGABLE_MASK);

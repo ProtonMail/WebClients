@@ -200,10 +200,12 @@ angular.module('proton.squire')
                     }
 
                     if (action === 'attachment.embedded') {
-                        return editor.insertImage(data.url, {
-                            'data-embedded-img': data.cid,
-                            class: 'proton-embedded',
-                            alt: data.attachment.Name
+                        return squireExecAction.insertImage(scope.message, {
+                            url: data.url,
+                            opt: {
+                                'data-embedded-img': data.cid,
+                                alt: data.attachment.Name
+                            }
                         });
                     }
 
@@ -242,7 +244,7 @@ angular.module('proton.squire')
                     attachmentFileFormat.isUploadAbleType(e) && e.preventDefault();
                     const file = e.dataTransfer.files[0];
                     if (file && /image/.test(file.type || '')) {
-                        squireExecAction.insertImage(scope.message, '', file);
+                        squireExecAction.insertImage(scope.message, { url: '', file });
                     }
                 };
 
