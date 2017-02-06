@@ -10,6 +10,7 @@ angular.module('proton.core')
     $q,
     Payment,
     authentication,
+    networkActivityTracker,
     setupKeys,
     tools,
     CONSTANTS
@@ -213,23 +214,39 @@ angular.module('proton.core')
             };
 
             self.apply = () => {
-                Payment.valid({
+                const promise = Payment.valid({
                     Currency: self.valid.Currency,
                     Cycle: self.valid.Cycle,
                     CouponCode: self.coupon,
                     PlanIDs: params.planIDs
                 })
-                .then((result) => {
-                    if (result.data && result.data.Code === 1000) {
-                        if (result.data.CouponDiscount === 0) {
-                            notify({ message: gettextCatalog.getString('Invalid coupon', null, 'Error'), classes: 'notification-danger' });
-                            self.coupon = '';
-                        } else {
-                            notify({ message: gettextCatalog.getString('Coupon accepted', null, 'Info'), classes: 'notification-success' });
-                        }
-                        self.valid = result.data;
+                .then(({ data = {} } = {}) => {
+                    if (data.CouponDiscount === 0) {
+                        self.coupon = '';
+                        throw new Error(gettextCatalog.getString('Invalid coupon', null, 'Error'));
                     }
-                });
+                    if (data.Error) {
+                        throw new Error(data.Error);
+                    }
+                    if (data.Code === 1000) {
+                        return Promise.resolve(data);
+                    }
+                })
+                .then((data) => self.valid = data)
+                .then(() => {
+                    // If the amount due is null we select the first choice to display the submit button
+                    if (!self.valid.AmountDue) {
+                        return self.choice = self.choices[0];
+                    }
+                    // If the current payment method is 'paypal' we need to reload the Paypal link to match the new amount
+                    if (self.choice.value === 'paypal') {
+                        return self.initPaypal();
+                    }
+                    return Promise.resolve();
+                })
+                .then(() => notify({ message: gettextCatalog.getString('Coupon accepted', null, 'Info'), classes: 'notification-success' }));
+
+                return networkActivityTracker.track(promise);
             };
 
             self.changeChoice = () => {
@@ -243,22 +260,23 @@ angular.module('proton.core')
             };
 
             self.initPaypal = () => {
+                self.approvalURL = false;
                 self.paypalNetworkError = false;
-
-                Payment.paypal({
+                const promise = Payment.paypal({
                     Amount: self.valid.AmountDue,
                     Currency: self.valid.Currency
-                }).then((result) => {
-                    if (result.data && result.data.Code === 1000) {
-                        if (result.data.ApprovalURL) {
-                            self.approvalURL = result.data.ApprovalURL;
+                }).then(({ data = {} } = {}) => {
+                    if (data.Code === 1000) {
+                        if (data.ApprovalURL) {
+                            self.approvalURL = data.ApprovalURL;
                         }
-                    } else if (result.data.Code === 22802) {
+                    } else if (data.Code === 22802) {
                         self.paypalNetworkError = true;
-                    } else if (result.data && result.data.Error) {
-                        notify({ message: result.data.Error, classes: 'notification-danger' });
+                    } else if (data.Error) {
+                        throw new Error(data.Error);
                     }
                 });
+                return networkActivityTracker.track(promise);
             };
 
             /**
