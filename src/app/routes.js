@@ -416,27 +416,23 @@ angular.module('proton.routes', [
         url: '/eo/message/:tag',
         resolve: {
             messageData($stateParams, $q, Eo, messageModel, pmcw, secureSessionStorage) {
-                const tokenId = $stateParams.tag;
-                const decryptedToken = secureSessionStorage.getItem('proton:decrypted_token');
                 const password = pmcw.decode_utf8_base64(secureSessionStorage.getItem('proton:encrypted_password'));
 
-                Eo.message(decryptedToken, tokenId)
-                .then((result) => {
-                    const message = result.data.Message;
-                    const promises = [];
+                return Eo.message(secureSessionStorage.getItem('proton:decrypted_token'), $stateParams.tag)
+                    .then(({ data = {} }) => {
+                        const message = data.Message;
+                        const promises = _.reduce(message.Replies, (acc, reply) => {
+                            const promise = pmcw.decryptMessageRSA(reply.Body, password, reply.Time)
+                                .then(({ data }) => (reply.DecryptedBody = data));
+                            acc.push(promise);
+                            return acc;
+                        }, [
+                            pmcw.decryptMessageRSA(message.Body, password, message.Time)
+                            .then(({ data } = {}) => (message.DecryptedBody = data))
+                        ]);
 
-                    promises.push(pmcw.decryptMessageRSA(message.Body, password, message.Time).then((body) => {
-                        message.DecryptedBody = body.data;
-                    }));
-
-                    _.each(message.Replies, (reply) => {
-                        promises.push(pmcw.decryptMessageRSA(reply.Body, password, reply.Time).then((body) => {
-                            reply.DecryptedBody = body.data;
-                        }));
+                        return $q.all(promises).then(() => messageModel(message));
                     });
-
-                    return $q.all(promises).then(() => messageModel(message));
-                });
             }
         },
         views: {
