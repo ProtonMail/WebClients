@@ -80,7 +80,7 @@ angular.module('proton.sidebar')
                         return (id = setSpinner(el[0].querySelector('.refresh'), id));
                     }
 
-                    $state.go(config.state, { pages: null, filter: null, sort: null });
+                    $state.go(config.state, { page: null, pages: null, filter: null, sort: null });
                 };
 
                 el.on('click', onClick);
