@@ -194,7 +194,7 @@ angular.module('proton.message')
             cache.events(events);
 
             // Send request to detach the label
-            messageApi.labels(labelID, REMOVE_ID, [messageID]);
+            messageApi.label(labelID, REMOVE_ID, [messageID]);
         }
 
         /**
@@ -250,7 +250,7 @@ angular.module('proton.message')
             };
 
             const mapPromisesLabels = (list = [], Action) => {
-                return _.map(list, (id) => messageApi.labels(id, Action, ids));
+                return _.map(list, (id) => messageApi.label(id, Action, ids));
             };
 
             const { events, promises } = _.reduce(messages, (acc, message) => {

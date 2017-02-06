@@ -54,6 +54,12 @@ angular.module('proton.sidebar')
                 unsubscribe.push($rootScope.$on('updateLabel', () => updateCache()));
                 unsubscribe.push($rootScope.$on('updateLabels', () => updateCache()));
 
+                // Check the current state to set the current one as active
+                unsubscribe.push($rootScope.$on('$stateChangeSuccess', () => {
+                    _rAF(() => (updateCache(), updateCounter()));
+                }));
+
+
                 scope.$on('$destroy', () => {
                     unsubscribe.forEach((cb) => cb());
                     unsubscribe.length = 0;

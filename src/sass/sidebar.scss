@@ -217,8 +217,8 @@ $sidebarReduction: 6px;
 }
 
 .sidebarApp-item .navigationItem-counter { margin-left: .3em }
-
 .sidebarApp-item.active {
+
     .navigationItem-item, .sidebarApp-link  {
         background-color: rgba(255,255,255,.06);
         border-color: transparent;
@@ -226,6 +226,10 @@ $sidebarReduction: 6px;
         font-weight: 700;
     }
     .navigationItem-icon { color: lighten($primary, 10%) }
+}
+
+.menuLabel-item.active {
+    .menuLabel-title { color: #fff }
 }
 
 [id="labelSettings"] { margin-bottom: 0 }
