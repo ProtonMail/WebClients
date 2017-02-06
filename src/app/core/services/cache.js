@@ -592,7 +592,6 @@ angular.module('proton.core')
     api.queryConversations = (request) => {
         const loc = getLocation(request);
         const context = tools.cacheContext();
-        // Need data from the server
 
         // In cache context?
         if (context && !firstLoad.get()) {
@@ -638,6 +637,7 @@ angular.module('proton.core')
             }
         }
 
+        // Need data from the server
         return queryConversations(request);
     };
 

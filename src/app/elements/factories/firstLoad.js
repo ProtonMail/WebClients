@@ -1,9 +1,12 @@
 angular.module('proton.elements')
-.factory('firstLoad', ($rootScope) => {
+.factory('firstLoad', ($rootScope, tools) => {
     let first = true;
     $rootScope.$on('$stateChangeStart', (event, toState, toParams, fromState) => {
-        first = fromState.name !== toState.name;
+        first = cleanState(fromState.name) !== cleanState(toState.name);
     });
+    function cleanState(state) {
+        return tools.filteredState(state);
+    }
     function get() {
         return first;
     }
