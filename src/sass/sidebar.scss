@@ -1,10 +1,4 @@
-// This is the modification to the sidebar menu to solve the scrolling issue. Set to 0 to undo.
-$sidebarReduction: 6px;
-
-#pm_sidebar {
-    float: left;
-    height: 100%;
-}
+#pm_sidebar { float: left }
 
 .sidebarApp-container {
     display: flex;
@@ -62,10 +56,12 @@ $sidebarReduction: 6px;
     }
 
     .footer {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
         text-align: center;
         font-size: 10px;
-        padding-top: 10px;
-        flex: 1 0 120px;
+        padding: 10px 0px 5px;
         margin-top: auto;
         .wrap {
             padding: 0;
@@ -73,6 +69,8 @@ $sidebarReduction: 6px;
         }
         div.link {
             a {
+                display: inline-block;
+                padding: 3px 0px;
                 text-transform: uppercase;
                 font-weight: bold;
                 color: $primary;
@@ -122,7 +120,8 @@ $sidebarReduction: 6px;
     .version {
         letter-spacing: 0;
         text-decoration: none;
-        color: #6e6f80;
+        font-weight: bold;
+        color: rgba(255,255,255,.8);
         &:hover {
             color: #fff;
         }
