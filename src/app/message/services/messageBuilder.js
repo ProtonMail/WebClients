@@ -143,6 +143,7 @@ angular.module('proton.message')
 
                 newMsg.ParentID = currentMsg.ID;
                 newMsg.setDecryptedBody([
+                    '<div></div><div></div>',
                     '<blockquote class="protonmail_quote" type="cite">',
                     '-------- Original Message --------<br>',
                     subject,
