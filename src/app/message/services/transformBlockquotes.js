@@ -7,7 +7,7 @@ angular.module('proton.message')
         // '.WordSection1',
         '#isForwardContent',
         '#isReplyContent',
-        '#mailcontent',
+        '#mailcontent:not(table)',
         '#origbody',
         '#reply139content',
         '#oriMsgHtmlSeperator',
