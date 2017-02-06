@@ -117,7 +117,7 @@ angular.module('proton.message')
         }
 
         getDecryptedBody() {
-            return this.DecryptedBody;
+            return this.DecryptedBody || '';
         }
 
         close() {
