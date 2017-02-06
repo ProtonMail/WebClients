@@ -222,7 +222,6 @@ angular.module('proton.message')
             const deferred = $q.defer();
 
             if (this.isDraft() || this.IsEncrypted > 0) {
-                debugger;
                 if (!this.getDecryptedBody()) {
                     try {
                         this.decryptBody()
