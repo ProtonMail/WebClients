@@ -56,6 +56,10 @@ angular.module('proton.message')
                             });
                             break;
                         }
+
+                        default:
+                            dispatch(actionMessage, actionMessageType);
+                            break;
                     }
                 }
 
