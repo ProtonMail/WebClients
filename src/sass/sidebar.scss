@@ -289,3 +289,13 @@ $sidebarReduction: 6px;
         display: inline-flex;
     }
 }
+
+@media (max-height: 500px) {
+    #pm_sidebar { overflow: auto }
+    [id="sidebarLabels"] {
+        height: initial;
+        overflow: visible;
+        min-height: auto;
+        .mCSB_container_wrapper { position: relative }
+    }
+}
