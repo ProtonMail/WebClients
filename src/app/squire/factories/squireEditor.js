@@ -57,7 +57,46 @@ angular.module('proton.squire')
             const head = doc.head || doc.getElementsByTagName('head')[0];
             const style = doc.createElement('style');
 
-            const css = "html{height:100%} body {height:100%; box-sizing:border-box; padding: 1rem 10px 1rem 10px; font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif; font-size: 14px; line-height: 1.65em; color: #222; } blockquote { padding: 0 0 0 1rem; margin: 0; border-left: 4px solid #e5e5e5; } blockquote blockquote blockquote { padding-left: 0; margin-left: 0; border: none; } .proton-embedded{ max-width:100%; height:auto; } .protonmail_signature_block-empty {display: none} .protonmail_quote {position: relative}";
+            const css = `
+            html {
+                height: 100%
+            }
+
+            body {
+                height: 100%;
+                box-sizing: border-box;
+                padding: 1rem 10px 1rem 10px;
+                font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;
+                font-size: 14px;
+                line-height: 1.65em;
+                background: #FFF;
+                color: #222;
+            }
+
+            blockquote {
+                padding: 0 0 0 1rem;
+                margin: 0;
+                border-left: 4px solid #e5e5e5;
+            }
+
+            blockquote blockquote blockquote {
+                padding-left: 0;
+                margin-left: 0;
+                border: none;
+            }
+
+            .proton-embedded {
+                max-width: 100%;
+                height: auto;
+            }
+
+            .protonmail_signature_block-empty {
+                display: none
+            }
+
+            .protonmail_quote {
+                position: relative
+            }`;
 
             style.setAttribute('type', 'text/css');
             style.setAttribute('rel', 'stylesheet');
