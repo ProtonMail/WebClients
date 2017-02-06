@@ -49,7 +49,6 @@ angular.module('proton.sidebar')
 
                 // Check if we open the current state, mark it as active
                 $state.includes(config.state) && el[0].classList.add(CLASS_ACTIVE);
-
                 render();
                 updateCounter();
 
@@ -63,8 +62,8 @@ angular.module('proton.sidebar')
                 unsubscribe.push($rootScope.$on('refreshElements', updateCounter));
 
                 // Check the current state to set the current one as active
-                unsubscribe.push($rootScope.$on('$stateChangeSuccess', (e, state) => {
-                    if (state.name === config.state) {
+                unsubscribe.push($rootScope.$on('$stateChangeSuccess', () => {
+                    if ($state.includes(config.state)) {
                         return el[0].classList.add(CLASS_ACTIVE);
                     }
 
