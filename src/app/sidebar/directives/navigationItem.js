@@ -5,9 +5,9 @@ angular.module('proton.sidebar')
         const CLASS_SPIN = 'spinMe';
         const STATES = sidebarModel.getStateConfig();
 
-        const template = (key, { label, icon = '' }) => {
+        const template = (key, { state, label, icon = '' }) => {
             const iconClassName = `sidebarApp-icon navigationItem-icon fa ${icon}`.trim();
-            return dedentTpl(`<a href="#" title="${label}" data-state="${key}" class="navigationItem-item">
+            return dedentTpl(`<a href="${$state.href(state)}" title="${label}" data-state="${key}" class="navigationItem-item">
                 <i class="${iconClassName}"></i>
                 <span class="navigationItem-title">${label}</span>
                 <em class="navigationItem-counter"></em>
@@ -80,7 +80,6 @@ angular.module('proton.sidebar')
                         return (id = setSpinner(el[0].querySelector('.refresh'), id));
                     }
 
-                    $state.go(config.state, { page: null, pages: null, filter: null, sort: null });
                 };
 
                 el.on('click', onClick);
