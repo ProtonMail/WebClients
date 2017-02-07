@@ -7,7 +7,8 @@ angular.module('proton.sidebar')
 
         const template = (key, { state, label, icon = '' }) => {
             const iconClassName = `sidebarApp-icon navigationItem-icon fa ${icon}`.trim();
-            return dedentTpl(`<a href="${$state.href(state)}" title="${label}" data-state="${key}" class="navigationItem-item">
+            const opt = { sort: null, filter: null, page: null };
+            return dedentTpl(`<a href="${$state.href(state, opt)}" title="${label}" data-state="${key}" class="navigationItem-item">
                 <i class="${iconClassName}"></i>
                 <span class="navigationItem-title">${label}</span>
                 <em class="navigationItem-counter"></em>
