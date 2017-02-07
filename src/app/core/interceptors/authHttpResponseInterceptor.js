@@ -1,13 +1,30 @@
 angular.module('proton.core')
-//
-// Redirection if not authentified
-//
 .factory('authHttpResponseInterceptor', ($q, $injector, $rootScope, AppModel) => {
     let notification = false;
     let upgradeNotification = false;
+    let NOTIFS;
+    const buildNotifs = () => {
+        const gettextCatalog = $injector.get('gettextCatalog');
+        return {
+            newVersion: gettextCatalog.getString('A new version of ProtonMail is available. Please refresh this page and then logout and log back in to automatically update.'),
+            nonIntegerVersion: gettextCatalog.getString('Non-integer API version requested.', null, 'Error'),
+            unsupported: gettextCatalog.getString('Unsupported API version.', null, 'Error'),
+            offline: gettextCatalog.getString('The ProtonMail API is offline: ', null, 'Error'),
+            noInternet: gettextCatalog.getString('No Internet connection found.', null, 'Error'),
+            noServer: gettextCatalog.getString('Could not connect to server.', null, 'Error'),
+            timeout: gettextCatalog.getString('Request timed out, please try again.', null, 'Error'),
+            noReachProton: gettextCatalog.getString('ProtonMail cannot be reached right now, please try again later.', null, 'Error')
+        };
+    };
+    const notifyError = (message) => {
+        return $injector.get('notify')({ message, classes: 'notification-danger' });
+    };
 
     return {
         response(response) {
+
+            (!NOTIFS) && (NOTIFS = buildNotifs());
+
             // Close notification if Internet wake up
             if (notification) {
                 notification.close();
@@ -23,26 +40,17 @@ angular.module('proton.core')
 
                     upgradeNotification = $injector.get('notify')({
                         classes: 'notification-info noclose',
-                        message: 'A new version of ProtonMail is available. Please refresh this page and then logout and log back in to automatically update.',
+                        message: NOTIFS.newVersion,
                         duration: '0'
                     });
                 } else if (response.data.Code === 5004) {
-                    $injector.get('notify')({
-                        classes: 'notification-danger',
-                        message: 'Non-integer API version requested.'
-                    });
+                    notifyError(NOTIFS.nonIntegerVersion);
                 } else if (response.data.Code === 5005) {
                     // unsupported api
-                    $injector.get('notify')({
-                        classes: 'notification-danger',
-                        message: 'Unsupported API version.'
-                    });
+                    notifyError(NOTIFS.unsupported);
                 } else if (response.data.Code === 7001) {
                     // site offline
-                    $injector.get('notify')({
-                        classes: 'notification-info',
-                        message: 'The ProtonMail API is offline: ' + response.data.Error
-                    });
+                    notifyError(NOTIFS.offline + response.data.Error);
                 } else if (response.data.Code === 9001) {
                     const humanVerificationModal = $injector.get('humanVerificationModal');
                     humanVerificationModal.activate({
@@ -63,15 +71,9 @@ angular.module('proton.core')
         responseError(rejection) {
             if (rejection.status === 0 || rejection.status === -1) {
                 if (navigator.onLine === true) {
-                    notification = $injector.get('notify')({
-                        message: 'Could not connect to server.',
-                        classes: 'notification-danger'
-                    });
+                    notification = notifyError(NOTIFS.noServer);
                 } else {
-                    notification = $injector.get('notify')({
-                        message: 'No Internet connection found.',
-                        classes: 'notification-danger'
-                    });
+                    notification = notifyError(NOTIFS.noInternet);
                 }
                 AppModel.set('onLine', false);
             } else if (rejection.status === 401) {
@@ -96,15 +98,10 @@ angular.module('proton.core')
                 const handle403 = $injector.get('handle403');
                 return handle403(rejection.config);
             } else if (rejection.status === 504) {
-                notification = $injector.get('notify')({
-                    message: 'Request timed out, please try again.',
-                    classes: 'notification-danger'
-                });
+                notification = notifyError(NOTIFS.timeout);
+                $rootScope.$emit('request-timeout');
             } else if ([408, 503].indexOf(rejection.status) > -1) {
-                notification = $injector.get('notify')({
-                    message: 'ProtonMail cannot be reached right now, please try again later.',
-                    classes: 'notification-danger'
-                });
+                notification = notifyError(NOTIFS.noReachProton);
             }
 
             return $q.reject(rejection);

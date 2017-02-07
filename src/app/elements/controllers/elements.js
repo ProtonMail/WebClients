@@ -32,6 +32,7 @@ angular.module('proton.elements')
 
     $scope.elementsLoaded = false;
     $scope.conversations = [];
+    $scope.requestTimeout = false;
     /**
      * Method called at the initialization of this controller
      */
@@ -55,6 +56,7 @@ angular.module('proton.elements')
 
     $scope.$on('$stateChangeSuccess', () => {
         $scope.elementsLoaded = false;
+        $scope.requestTimeout = false;
     });
 
     $scope.watchElements = () => {
@@ -125,6 +127,10 @@ angular.module('proton.elements')
 
         unsubscribes.push($rootScope.$on('conversation.close', () => {
             isOpened = false;
+        }));
+
+        unsubscribes.push($rootScope.$on('request-timeout', () => {
+            $scope.requestTimeout = true;
         }));
 
         unsubscribes.push($rootScope.$on('refreshElements', () => {
