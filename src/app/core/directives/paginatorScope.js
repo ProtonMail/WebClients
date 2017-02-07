@@ -1,5 +1,5 @@
 angular.module('proton.core')
-.directive('paginatorScope', ($timeout) => {
+.directive('paginatorScope', () => {
     return {
         restrict: 'E',
         replace: true,
@@ -43,9 +43,7 @@ angular.module('proton.core')
 
             scope.select = function (p) {
                 scope.change(p);
-                $timeout(() => {
-                    disable();
-                }, 0, true);
+                scope.$applyAsync(() => disable());
             };
 
             scope.next = function () {

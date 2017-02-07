@@ -1,5 +1,5 @@
 angular.module('proton.ui')
-.directive('dropdown', ($timeout, $document, $rootScope) => {
+.directive('dropdown', ($document, $rootScope) => {
     return function (scope, element) {
         const parent = element.parent();
         const dropdown = parent.find('.pm_dropdown');

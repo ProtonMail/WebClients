@@ -7,8 +7,6 @@ angular.module('proton.core')
     $rootScope,
     $scope,
     $state,
-    $timeout,
-    $window,
     Address,
     authentication,
     CONSTANTS,
