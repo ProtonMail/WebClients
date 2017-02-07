@@ -114,7 +114,6 @@ angular.module('proton', [
     $document,
     $rootScope,
     $state,
-    $timeout,
     $window,
     logoutManager, // Keep the logoutManager here to lunch it
     authentication,
@@ -194,7 +193,7 @@ angular.module('proton', [
     $httpProvider.defaults.headers.get['Cache-Control'] = 'no-cache';
     $httpProvider.defaults.headers.get.Pragma = 'no-cache';
 })
-.run(($rootScope, $location, $state, authentication, $log, $timeout, networkActivityTracker) => {
+.run(($rootScope, $location, $state, authentication, $log, networkActivityTracker) => {
     $rootScope.$on('$stateChangeStart', (event, toState) => {
 
         networkActivityTracker.clear();

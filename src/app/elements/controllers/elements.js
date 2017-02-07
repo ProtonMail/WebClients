@@ -8,7 +8,6 @@ angular.module('proton.elements')
     $scope,
     $state,
     $stateParams,
-    $timeout,
     $window,
     actionConversation,
     AttachmentLoader,
@@ -146,8 +145,11 @@ angular.module('proton.elements')
         }));
 
         $scope.$on('selectMark', () => {
-            $scope.markedElement.Selected = !$scope.markedElement.Selected;
-            $scope.$apply();
+            // Can be undefined when we switch to another state
+            $scope.markedElement && $scope.$applyAsync(() => {
+                $scope.markedElement.Selected = !$scope.markedElement.Selected;
+                $rootScope.numberElementChecked = _.where($scope.conversations, { Selected: true }).length;
+            });
         });
 
         unsubscribes.push($rootScope.$on('selectElements', (event, { value, isChecked }) => {
@@ -759,6 +761,12 @@ angular.module('proton.elements')
      * @param {Object} element - conversation / message
      */
     function openElement(element) {
+
+        // When we swicth to another state it can be undefined
+        if (!element) {
+            return;
+        }
+
         const view = tools.typeView();
         const list = tools.typeList();
         const name = $state.$current.name;

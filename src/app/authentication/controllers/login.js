@@ -55,7 +55,7 @@ angular.module('proton.authentication')
      * Focus specific input element
      */
     function focusInput() {
-        $timeout(() => { $('input.focus').focus(); });
+        $timeout(() => $('input.focus').focus(), 30, false);
     }
 
     /**

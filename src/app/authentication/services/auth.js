@@ -6,7 +6,6 @@ angular.module('proton.authentication')
     $q,
     $rootScope,
     $state,
-    $timeout,
     $injector,
     $exceptionHandler,
     authApi,

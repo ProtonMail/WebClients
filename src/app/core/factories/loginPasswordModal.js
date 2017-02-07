@@ -9,7 +9,7 @@ angular.module('proton.core')
             self.twoFactorCode = '';
             self.hasTwoFactor = params.hasTwoFactor;
 
-            $timeout(() => document.getElementById('loginPassword').focus());
+            $timeout(() => document.getElementById('loginPassword').focus(), 100, false);
 
             self.submit = () => {
                 params.submit(self.loginPassword, self.twoFactorCode);

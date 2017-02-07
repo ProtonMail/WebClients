@@ -6,7 +6,6 @@ angular.module('proton.core')
     $log,
     gettextCatalog,
     $q,
-    $timeout,
     $http,
     CONSTANTS,
     authentication,

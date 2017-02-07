@@ -60,7 +60,7 @@ angular.module('proton.formUtils')
             });
 
             element.on('blur keyup change', () => {
-                scope.$apply(read);
+                scope.$applyAsync(() => read());
             });
 
             scope.$on('$destroy', () => {

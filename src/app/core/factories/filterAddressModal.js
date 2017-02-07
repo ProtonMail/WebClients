@@ -28,7 +28,7 @@ angular.module('proton.core')
 
             $timeout(() => {
                 angular.element('#emailAddress').focus();
-            });
+            }, 100, false);
         }
     });
 });

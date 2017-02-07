@@ -160,8 +160,9 @@ angular.module('proton.core')
             const data = event.data;
 
             if (data.type === 'pm_captcha') {
-                $scope.account.captcha_token = data.token;
-                $scope.$apply();
+                $scope.$applyAsync(() => {
+                    $scope.account.captcha_token = data.token;
+                });
             }
 
             if (data.type === 'pm_height') {

@@ -4,7 +4,6 @@ angular.module('proton.conversation')
     $rootScope,
     $state,
     $stateParams,
-    $timeout,
     actionConversation,
     conversationListeners,
     messageActions,
