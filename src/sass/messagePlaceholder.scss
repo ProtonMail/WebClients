@@ -1,22 +1,35 @@
-#nothingToSeeHere {
-	vertical-align: middle;
+.messagePlaceholder {
+
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
 	text-align: center;
 	width: 100%;
-	height: 90%;
-	.fa {
+	min-height: 80vh;
+
+	.messagePlaceholder-icon {
 		font-size: 3rem;
-		display: block;
 		color: $border;
 	}
-	span {
+
+	.messagePlaceholder-title {
+ 		font-size: 2rem;
+		color: $border;
+		font-weight: 400;
+	}
+
+	.messagePlaceholder-text-block {
 		display: block;
 		color: $border;
 		text-transform: uppercase;
 		margin-bottom: 1rem;
 	}
-	h3 {
-		font-size: 2rem;
-		color: $border;
+
+	.timeOut-title {
+		font-size: 1.2rem;
 		font-weight: 400;
+		margin: 20px 0px;
 	}
+
 }
