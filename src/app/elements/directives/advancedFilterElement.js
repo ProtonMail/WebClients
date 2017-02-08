@@ -1,7 +1,7 @@
 angular.module('proton.elements')
     .directive('advancedFilterElement', (gettextCatalog, messageApi, confirmModal, networkActivityTracker, cache, notify, eventManager, $state) => {
-
-        const switchState = (opt = {}) => $state.go($state.$current.name, _.extend({}, $state.params, { page: undefined }, opt));
+        const clearState = (state) => state.replace('.element', '');
+        const switchState = (opt = {}) => $state.go(clearState($state.$current.name), _.extend({}, $state.params, { page: undefined, id: undefined }, opt));
 
         /**
          * Empty specific location
