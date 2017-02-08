@@ -752,10 +752,10 @@ angular.module('proton.core')
     api.updateFlagMessage = (event, isSend) => {
         const current = _.findWhere(messagesCached, { ID: event.ID });
 
-        // We need to force the update if the update is coming from a Send (new message)
-        if (!isSend && (!current || (current && event.Message.Time === current.Time))) {
-            return Promise.resolve();
-        }
+        // // We need to force the update if the update is coming from a Send (new message)
+        // if (!isSend && (!current || (current && event.Message.Time === current.Time))) {
+        //     return Promise.resolve();
+        // }
 
         const message = _.extend(current, event.Message);
 
