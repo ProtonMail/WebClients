@@ -127,11 +127,6 @@ angular.module('proton.composer')
         if (!limitReached && AppModel.is('onLine')) {
             initMessage(messageBuilder.create(type, message));
         }
-
-        !AppModel.is('onLine') && notify({
-            message: 'No Internet connection found.',
-            classes: 'notification-danger'
-        });
     }));
 
     unsubscribe.push($rootScope.$on('composer.load', (event, { ID }) => {
