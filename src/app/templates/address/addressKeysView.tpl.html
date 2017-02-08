@@ -2,9 +2,9 @@
     <table class="bordered absorbing">
         <thead>
             <tr>
-                <th translate-context="Title" translate-comment="table heading" translate>Email</th>
+                <th class="key-size absorbing-column-half" translate-context="Title" translate-comment="table heading" translate>Email</th>
                 <th class="finger-print absorbing-column-half" translate-context="Title" translate-comment="table heading" translate>Fingerprint</th>
-                <th class="key-size absorbing-column-half" translate-context="Title" translate-comment="table heading" translate>Key size</th>
+                <th translate-context="Title" translate-comment="table heading" translate>Key size</th>
                 <th class="actions text-center" translate-context="Title" translate-comment="table heading" translate>Download</th>
             </tr>
         </thead>
@@ -14,7 +14,7 @@
                     <span class="addressKeysView-toggle">
                         <toggle-expand data-model="address.toggle"></toggle-expand>
                     </span>
-                    <span class="addressKeysView-email ellipsis"><strong>{{ address.email }}</strong></span>
+                    <span class="addressKeysView-email ellipsis" title="{{ address.email }}"><strong>{{ address.email }}</strong></span>
                 </td>
                 <td>
                     <code>{{ address.fingerprint }}</code>
