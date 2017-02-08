@@ -1,16 +1,19 @@
 <form method="post" class="searchForm-container">
 
     <div class="search-form-fieldset">
-        <btn-advanced-search class="searchForm-action-button-toggle"></btn-advanced-search>
+        <button class="searchForm-action-button-default">
+            <i class="fa fa-search"></i>
+        </button>
         <input
             type="search"
             placeholder-translate="Search messages"
             autocomplete="off"
             ng-model="query"
             class="search-form-fieldset-input">
-        <button class="searchForm-action-button-default">
-            <i class="fa fa-search"></i>
-        </button>
+        <btn-advanced-search
+            pt-tooltip-translate-context="Action"
+            pt-tooltip-translate="Advanced search"
+            pt-placement="bottom" class="searchForm-action-button-toggle"></btn-advanced-search>
         <btn-advanced-search
             data-action="close"
             class="searchForm-action-button-advanced"></btn-advanced-search>

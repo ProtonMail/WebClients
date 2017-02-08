@@ -35,7 +35,7 @@
 	@include flexInline();
 	@include flexJustifyCenter();
 
-	padding: 0 0 0 10px;
+	padding: 0 0 0 2px;
 	color: #fff;
 	font-size: 14px;
 	border-radius: 35px;
@@ -62,7 +62,7 @@
 	@include flexAlignCenter();
 	position: relative;
 	z-index: 5;
-	width: 45px;
+	width: 35px;
 	padding: 0;
 	border:0;
 	margin: 0;
@@ -77,9 +77,9 @@
 
 .searchForm-icon { pointer-events: none }
 
-.searchForm-toggle-advanced {
-	width: 35px;
-	border-radius: 35px 0 0 35px;
+.searchForm-action-button-toggle,
+.searchForm-action-button-advanced {
+	border-radius: 0px 35px 35px 0px;
 	&:hover { background: $alt-light }
 }
 .searchForm-action-button-advanced { display: none }
@@ -90,8 +90,9 @@
 .searchForm-container-adv {
 	.search-form-fieldset {
 		border-radius: 1rem 1rem 0 0;
-		.search-form-fieldset-input { visibility: hidden; }
-		.searchForm-toggle-advanced { border-radius: 1rem 0 0 }
+		.search-form-fieldset-input { visibility: hidden }
+		.searchForm-action-button-toggle { display: none }
+		.searchForm-action-button-advanced { border-radius: 0 1rem 0 0 }
 		.searchForm-action-button-advanced { display: inline-flex }
 	}
 }
