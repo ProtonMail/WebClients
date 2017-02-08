@@ -10,6 +10,7 @@ angular.module('proton.utils')
         $rootScope.$on('createLabel', () => updateCache());
         $rootScope.$on('updateLabel', () => updateCache());
         $rootScope.$on('updateLabels', () => updateCache());
+        $rootScope.$on('clearLabels', () => cache = []);
 
         return (labels = []) => {
             if (authentication.user) {
