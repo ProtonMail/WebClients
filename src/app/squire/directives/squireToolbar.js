@@ -18,11 +18,11 @@ angular.module('proton.squire')
 
                     /**
                      * Find and filter selections to toogle the current action (toolbar)
+                     * Filter by whitelist
                      * Ex: isBold etc.
                      */
-                    const classNames = _
-                        .chain(p.split('>'))
-                        .filter((i) => i && !/IMG.proton-embedded|.proton-embedded|DIV.image.loading/i.test(i))
+                    const classNames = _.chain(p.split('>'))
+                        .filter((i) => i && /^i$|^u$|^b$|^ul$|^ol$|^li$|.align-(center|left|right)$/i.test(i))
                         .reduce((acc, path) => acc.concat(path.split('.')), [])
                         .filter((i) => i && !/div|html|body|span/i.test(i))
                         .reduce((acc, key) => {
