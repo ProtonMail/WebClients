@@ -5,8 +5,9 @@ angular.module('proton.utils')
         const dispatch = (type, data = {}) => $rootScope.$emit('AppModel', { type, data });
 
         const set = (key = '', value) => {
+            const previous = MODEL[key];
             MODEL[key] = value;
-            dispatch(key, { value });
+            (previous !== value) && dispatch(key, { value });
         };
         const is = (key = '') => !!MODEL[key];
 
