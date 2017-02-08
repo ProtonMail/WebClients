@@ -11,7 +11,7 @@ angular.module('proton.sidebar')
         const template = ({ ID, Color, Name }) => {
 
             const className = getClassName(ID);
-            const href = $state.href('secured.label', { label: ID });
+            const href = $state.href('secured.label', { label: ID, sort: null, filter: null, page: null });
 
             return dedentTpl(`<li class="${className}">
                 <a href="${href}" title="${Name}" class="btn menuLabel-link">
