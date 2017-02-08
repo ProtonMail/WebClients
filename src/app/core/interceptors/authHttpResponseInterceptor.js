@@ -22,7 +22,7 @@ angular.module('proton.core')
 
     return {
         response(response) {
-
+            /^(?!.*templates)/.test(response.config.url) && AppModel.set('onLine', true);
             (!NOTIFS) && (NOTIFS = buildNotifs());
 
             // Close notification if Internet wake up
