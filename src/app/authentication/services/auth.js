@@ -498,6 +498,7 @@ angular.module('proton.authentication')
             $rootScope.isLocked = this.isLocked();
             $rootScope.isSecure = this.isSecured();
             $rootScope.domoArigato = false;
+            $rootScope.$emit('clearLabels');
         },
 
         // Returns an async promise that will be successful only if the mailbox password
