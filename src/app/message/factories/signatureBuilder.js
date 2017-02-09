@@ -28,7 +28,7 @@ angular.module('proton.message')
          * @param  {String} userSignature
          * @return {Boolean}
          */
-        const isEmptyUserSignature = (userSignature) => (userSignature === '<div><br /></div>' || userSignature === '<div><br></div>');
+        const isEmptyUserSignature = (userSignature) => !userSignature || (userSignature === '<div><br /></div>' || userSignature === '<div><br></div>');
 
         /**
          * Generate a map of classNames used for the signature template
@@ -47,18 +47,39 @@ angular.module('proton.message')
         }
 
         /**
+         * Generate spaces for the signature
+         *     No signature: 1 space
+         *     userSignature: 2 spaces + userSignature
+         *     protonSignature: 2 spaces + protonSignature
+         *     user + proton signature: 2 spaces
+         * @param  {String}  userSignature
+         * @param  {String}  protonSignature
+         * @param  {Boolean} isReply
+         * @return {Object}                  {start: <String>, end: <String>}
+         */
+        const getSpaces = (userSignature, protonSignature, isReply = false) => {
+            const isEmptySignature = isEmptyUserSignature(userSignature) && !protonSignature;
+            return {
+                start: isEmptySignature ? createSpace() : (createSpace() + createSpace()),
+                end: isReply ? createSpace() : ''
+            };
+        };
+
+        /**
          * Generate the template for a signature and clean it
          * @param  {String} userSignature
          * @param  {String} protonSignature
+         * @param  {Boolean} isReply Detect if we create a new message or not
          * @return {String}
          */
-        function templateBuilder(userSignature, protonSignature) {
+        function templateBuilder(userSignature, protonSignature, isReply = false) {
             const { userClass, protonClass, containerClass } = getClassNamesSignature(userSignature, protonSignature);
+            const space = getSpaces(userSignature, protonSignature, isReply);
 
-            const template = `${createSpace()}<div class="${CLASSNAME_SIGNATURE_CONTAINER} ${containerClass}">
+            const template = `${space.start}<div class="${CLASSNAME_SIGNATURE_CONTAINER} ${containerClass}">
                 <div class="${CLASSNAME_SIGNATURE_USER} ${userClass}">${tools.replaceLineBreaks(userSignature)}</div>
                 <div class="${CLASSNAME_SIGNATURE_PROTON} ${protonClass}">${tools.replaceLineBreaks(protonSignature)}</div>
-            </div>`;
+            </div>${space.end}`;
 
             return purify(template);
         }
@@ -69,15 +90,16 @@ angular.module('proton.message')
          *     - Theses signature can be empty but the dom remains
          *
          * @param  {Message} message
-         * @param {Boolean} isAfter Append the signature at the end of the content
+         * @param {Boolean} options.isAfter Append the signature at the end of the content
+         * @param {String} options.action Type of signature to build
          * @return {String}
          */
-        function insert(message = { getDecryptedBody: angular.noop }, isAfter = false) {
+        function insert(message = { getDecryptedBody: angular.noop }, { action = 'new', isAfter = false }) {
             const { From = {} } = message;
             const position = isAfter ? 'beforeEnd' : 'afterBegin';
             const userSignature = !From.Signature ? authentication.user.Signature : From.Signature;
             const protonSignature = authentication.user.PMSignature ? CONSTANTS.PM_SIGNATURE : '';
-            const template = templateBuilder(userSignature, protonSignature);
+            const template = templateBuilder(userSignature, protonSignature, action !== 'new');
             // Parse the current message and append before it the signature
             const [ $parser ] = $.parseHTML(`<div>${message.getDecryptedBody()}</div>`);
             $parser.insertAdjacentHTML(position, template);
@@ -109,7 +131,7 @@ angular.module('proton.message')
                 // If a user deletes all the content we need to append the signature
                 if (!item) {
                     // Insert at the end because it can contains some text
-                    return insert(message, true);
+                    return insert(message, { isAfter: true });
                 }
 
                 // Hide empty one as we don't need to display and edit and extra line inside signature
