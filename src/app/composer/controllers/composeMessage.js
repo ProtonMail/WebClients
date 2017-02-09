@@ -346,12 +346,6 @@ angular.module('proton.composer')
         message.ccbcc = false;
         message.autocompletesFocussed = false;
 
-        // Mark message as read
-        if (message.IsRead === 0) {
-            const ids = [message.ID];
-            $rootScope.$emit('messageActions', { action: 'read', data: { ids } });
-        }
-
         // if tablet we maximize by default
         if (tools.findBootstrapEnvironment() === 'sm') {
             message.maximized = true;
