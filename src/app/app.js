@@ -193,7 +193,7 @@ angular.module('proton', [
     $httpProvider.defaults.headers.get['Cache-Control'] = 'no-cache';
     $httpProvider.defaults.headers.get.Pragma = 'no-cache';
 })
-.run(($rootScope, $location, $state, authentication, $log, networkActivityTracker) => {
+.run(($rootScope, $location, $state, authentication, $log, networkActivityTracker, AppModel) => {
     $rootScope.$on('$stateChangeStart', (event, toState) => {
 
         networkActivityTracker.clear();
@@ -233,6 +233,9 @@ angular.module('proton', [
     });
 
     $rootScope.$on('$stateChangeSuccess', function (event, toState) {
+
+        // Hide requestTimeout
+        AppModel.set('requestTimeout', false);
 
         // Hide all the tooltip
         $('.tooltip').not(this).hide();

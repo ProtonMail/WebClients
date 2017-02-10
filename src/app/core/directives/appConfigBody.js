@@ -2,6 +2,7 @@ angular.module('proton.core')
     .directive('appConfigBody', ($rootScope, AppModel) => {
 
         const CLASS_IS_MOBILE = 'appConfigBody-is-mobile';
+        const CLASS_TIMEOUT = 'appConfigBody-request-timeout';
 
         return {
             link(scope, el) {
@@ -12,6 +13,11 @@ angular.module('proton.core')
                         case 'mobile': {
                             const method = data.value ? 'add' : 'remove';
                             _rAF(() => el[0].classList[method](CLASS_IS_MOBILE));
+                            break;
+                        }
+                        case 'requestTimeout': {
+                            const method = data.value ? 'add' : 'remove';
+                            _rAF(() => el[0].classList[method](CLASS_TIMEOUT));
                             break;
                         }
                     }

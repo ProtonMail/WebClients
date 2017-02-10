@@ -6,7 +6,7 @@
 	align-items: center;
 	text-align: center;
 	width: 100%;
-	min-height: 80vh;
+	min-height: 100%;
 
 	.messagePlaceholder-icon {
 		font-size: 3rem;
@@ -26,10 +26,6 @@
 		margin-bottom: 1rem;
 	}
 
-	.timeOut-title {
-		font-size: 1.2rem;
-		font-weight: 400;
-		margin: 20px 0px;
-	}
-
 }
+
+.mobileMode .messagePlaceholder { min-height: 80vh }
