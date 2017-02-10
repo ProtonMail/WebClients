@@ -45,6 +45,7 @@ angular.module('proton.core')
                 if (params.subscription.CouponCode) {
                     self.displayCoupon = true;
                     self.coupon = params.subscription.CouponCode;
+                    self.apply();
                 }
 
                 if (params.methods.length > 0) {
@@ -246,7 +247,7 @@ angular.module('proton.core')
                 })
                 .then(() => notify({ message: gettextCatalog.getString('Coupon accepted', null, 'Info'), classes: 'notification-success' }));
 
-                return networkActivityTracker.track(promise);
+                networkActivityTracker.track(promise);
             };
 
             self.changeChoice = () => {
