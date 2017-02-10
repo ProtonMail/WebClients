@@ -26,7 +26,7 @@ angular.module('proton.core')
             self.isAdmin = authentication.user.Role === CONSTANTS.PAID_ADMIN_ROLE;
             self.feedback = '';
             self.password = '';
-            self.twoFactor = '';
+            self.twoFactorCode = '';
             self.submit = () => {
                 const username = authentication.user.Name;
                 const params = {
@@ -42,7 +42,7 @@ angular.module('proton.core')
                     Email: '--',
                     Description: self.feedback
                 };
-                const promise = User.delete({ Password: self.password, TwoFactorCode: self.twoFactor })
+                const promise = User.delete({ Password: self.password, TwoFactorCode: self.twoFactorCode })
                 .then(({ data = {} }) => analyse(data))
                 .then(() => report(params, self.isAdmin))
                 .then((data) => analyse(data, self.isAdmin))

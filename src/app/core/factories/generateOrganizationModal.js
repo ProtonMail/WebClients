@@ -85,8 +85,7 @@ angular.module('proton.core')
                             cancel() {
                                 loginPasswordModal.deactivate();
                                 reject();
-                            },
-                            hasTwoFactor: authentication.user.TwoFactor
+                            }
                         }
                     });
                 }))

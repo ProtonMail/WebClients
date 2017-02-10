@@ -36,8 +36,7 @@ angular.module('proton.settings')
                 submit,
                 cancel: () => {
                     loginPasswordModal.deactivate();
-                },
-                hasTwoFactor: authentication.user.TwoFactor
+                }
             }
         });
     }
