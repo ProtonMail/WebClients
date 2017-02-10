@@ -25,7 +25,8 @@ angular.module('proton.composer')
     notify,
     pmcw,
     tools,
-    AppModel
+    AppModel,
+    ComposerRequestStatus
 ) => {
 
     const unsubscribe = [];
@@ -98,7 +99,7 @@ angular.module('proton.composer')
                 });
 
                 removed.length && removed.forEach((message) => {
-                    closeComposer(message, true);
+                    closeComposer(message);
                     notify(gettextCatalog.getString('Your message was sent from another session', null, 'Info'));
                 });
 
@@ -477,7 +478,7 @@ angular.module('proton.composer')
      * @param {Integer} type
      * @return {Promise}
      */
-    function draftRequest(parameters, type) {
+    function draftRequest(parameters, message, type) {
         const CREATE = 1;
         const UPDATE = 2;
         const errorMessage = gettextCatalog.getString('Saving draft failed, please try again', null, 'Info');
@@ -490,9 +491,16 @@ angular.module('proton.composer')
         }
 
         return promise.then(({ data = {} } = {}) => {
-            if ((data.Code === 1000 || data.Code === 15033)) {
+
+            if ((data.Code === ComposerRequestStatus.SUCCESS || data.Code === ComposerRequestStatus.DRAFT_NOT_EXIST)) {
                 return data;
             }
+
+            // Message Already sent
+            if (data.Code === ComposerRequestStatus.MESSAGE_ALREADY_SEND) {
+                closeComposer(message);
+            }
+
             throw new Error(data.Error || errorMessage);
         })
         .catch((error) => {
@@ -583,9 +591,10 @@ angular.module('proton.composer')
             }
 
             // Save draft before to send
-            return draftRequest(parameters, actionType)
+            return draftRequest(parameters, message, actionType)
             .then((result) => {
-                if (result.Code === 1000) {
+
+                if (result.Code === ComposerRequestStatus.SUCCESS) {
                     const events = [];
                     const conversation = cache.getConversationCached(result.Message.ConversationID);
                     const numUnread = angular.isDefined(conversation) ? conversation.NumUnread : 0;
@@ -644,7 +653,7 @@ angular.module('proton.composer')
                     message.autosaving = false;
                     dispatchMessageAction(message);
                     deferred.resolve(result.Message);
-                } else if (result.Code === 15033) {
+                } else if (result.Code === ComposerRequestStatus.DRAFT_NOT_EXIST) {
                     // Case where the user delete draft in an other terminal
                     delete parameters.id;
                     messageApi.createDraft(parameters)
@@ -801,7 +810,7 @@ angular.module('proton.composer')
                 .getPublicKeys(emails)
                 .then(({ data = {} } = {}) => {
 
-                    if (data.Code !== 1000) {
+                    if (data.Code !== ComposerRequestStatus.SUCCESS) {
                         message.encrypting = false;
                         dispatchMessageAction(message);
                         const error = new Error('Error during get public keys user request');
@@ -904,7 +913,7 @@ angular.module('proton.composer')
                     const msg = ErrorDescription ? `${data.Error}: ${ErrorDescription}` : data.Error;
                     const error = new Error(msg);
                     error.code = Code;
-                    return Promise.reject(error);
+                    throw error;
                 }
                 return data;
             })
@@ -966,7 +975,6 @@ angular.module('proton.composer')
             deferred.reject(error);
         });
         networkActivityTracker.track(deferred.promise);
-        return deferred.promise;
     };
 
     /**
