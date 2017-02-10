@@ -22,7 +22,10 @@ angular.module('proton.core')
 
     return {
         response(response) {
-            /^(?!.*templates)/.test(response.config.url) && AppModel.set('onLine', true);
+            if (/^(?!.*templates)/.test(response.config.url)) {
+                AppModel.set('onLine', true);
+            }
+
             (!NOTIFS) && (NOTIFS = buildNotifs());
 
             // Close notification if Internet wake up
@@ -99,7 +102,7 @@ angular.module('proton.core')
                 return handle403(rejection.config);
             } else if (rejection.status === 504) {
                 notification = notifyError(NOTIFS.timeout);
-                $rootScope.$emit('request-timeout');
+                AppModel.set('requestTimeout', true);
             } else if ([408, 503].indexOf(rejection.status) > -1) {
                 notification = notifyError(NOTIFS.noReachProton);
             }

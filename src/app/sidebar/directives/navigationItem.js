@@ -1,5 +1,5 @@
 angular.module('proton.sidebar')
-    .directive('navigationItem', ($rootScope, $state, $stateParams, sidebarModel, dedentTpl, eventManager) => {
+    .directive('navigationItem', ($rootScope, $state, $stateParams, sidebarModel, dedentTpl, eventManager, AppModel) => {
 
         const CLASS_ACTIVE = 'active';
         const CLASS_SPIN = 'spinMe';
@@ -74,6 +74,8 @@ angular.module('proton.sidebar')
                 const onClick = () => {
                     const sameRoute = $state.$current.name === config.state && !$stateParams.filter;
                     const firstPage = ~~$stateParams.page === 1 || angular.isUndefined($stateParams.page);
+
+                    AppModel.set('requestTimeout', false);
 
                     if (sameRoute && firstPage) {
                         // Hide sidebar for mobile

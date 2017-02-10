@@ -1,0 +1,26 @@
+.request-timeout { display: none }
+
+.request-timeout-icon {
+    font-size: 3rem;
+    color: $border;
+}
+
+.request-timeout-title {
+    font-size: 1.2rem;
+    font-weight: 400;
+    margin: 20px 0px;
+}
+
+
+.appConfigBody-request-timeout
+.request-timeout {
+    display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	width: 100%;
+	min-height: 100%;
+}
+
+.mobileMode .request-timeout { min-height: 80vh }
