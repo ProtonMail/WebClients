@@ -31,17 +31,15 @@ angular.module('proton.core')
     * Save conversations in conversationsCached and add loc in attribute
     * @param {Array} conversations
     */
-    const storeConversations = (conversations) => {
-        _.each(conversations, (conversation) => {
-            updateConversation(conversation);
-        });
-    };
+    function storeConversations(conversations = []) {
+        conversations.forEach(updateConversation);
+    }
 
     /**
      * Save messages in cache
      * @param {Array} messages
      */
-    function storeMessages(messages) {
+    function storeMessages(messages = []) {
         messages.forEach(updateMessage);
     }
 
@@ -83,6 +81,7 @@ angular.module('proton.core')
         } else {
             messagesCached.push(message);
         }
+
         manageTimes(message.ConversationID);
 
         $rootScope.$emit('labelsElement.' + message.ID, message);
