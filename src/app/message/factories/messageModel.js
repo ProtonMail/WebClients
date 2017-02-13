@@ -140,22 +140,23 @@ angular.module('proton.message')
          * @return {Promise}
          */
         decryptBody() {
-            const privKey = authentication.getPrivateKeys(this.AddressID);
             let pubKeys = null;
-            const sender = [this.Sender.Address];
+            const self = this;
+            const privKey = authentication.getPrivateKeys(this.AddressID);
+            const sender = this.Sender.Address;
             this.decrypting = true;
-            return this.getPublicKeys(sender)
-                .then(({ data = {} } = {}) => {
-                    if (data.Code === 1000) {
-                        pubKeys = data[sender];
-                    }
-                    return pmcw.decryptMessageRSA(this.Body, privKey, this.Time, pubKeys)
-                        .then((rep) => (this.decrypting = false, rep))
-                        .catch((error) => {
-                            this.decrypting = false;
-                            throw error;
-                        });
-                });
+            return this.getPublicKeys([sender])
+            .then(({ data = {} } = {}) => {
+                if (data.Code === 1000) {
+                    pubKeys = data[sender];
+                }
+                return pmcw.decryptMessageRSA(self.Body, privKey, self.Time, pubKeys)
+                    .then((rep) => (self.decrypting = false, rep))
+                    .catch((error) => {
+                        self.decrypting = false;
+                        throw error;
+                    });
+            });
         }
 
         encryptPackets(keys = '', passwords = '') {
