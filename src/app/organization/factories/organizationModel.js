@@ -19,7 +19,7 @@ angular.module('proton.organization')
         organization = newOrganization;
     }
     function fetch() {
-        if (authentication.user.Role !== CONSTANTS.PAID_ADMIN_ROLE) {
+        if (authentication.user.Role === CONSTANTS.FREE_USER_ROLE) {
             organization = fakeOrganization;
             return Promise.resolve(fakeResult);
         }
