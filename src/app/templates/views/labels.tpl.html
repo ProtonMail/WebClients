@@ -5,7 +5,7 @@
                 <legend translate translate-context="Title">Labels</legend>
                 <p>
                     <button type="button" class="pm_button primary labelsState-btn-add" ng-click="createLabel()" translate-context="Action" translate>Add Label</button>
-                    <button type="button" class="pm_button labelsState-btn-sort" ng-click="sortLabels()" ng-show="labels.length" translate-context="Action" translate>Sort</button>
+                    <button type="button" class="pm_button labelsState-btn-sort" ng-click="sortLabels()" ng-if="labels.length > 1" translate-context="Action" translate>Sort</button>
                 </p>
                 <p
                     class="alert alert-info labelsState-msg-info"
