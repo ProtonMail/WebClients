@@ -1,13 +1,13 @@
 angular.module('proton.authentication')
 .factory('upgradePassword', (Setting, tempStorage) => {
     const key = 'auth';
+    const tenMinutes = 10 * 60 * 1000; // 10 minutes
     /**
      * Store standard Auth object
      * @param {Object} value - Auth object
      */
     function store(value) {
-        const lifetime = 10 * 60 * 1000; // 10 minutes
-        tempStorage.setItem(key, value, lifetime);
+        tempStorage.setItem(key, value, tenMinutes);
     }
     /**
      * Send upgrade credentials
