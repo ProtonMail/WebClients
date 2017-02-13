@@ -12,11 +12,15 @@
 @import "ui/appVersion.scss";
 @import "ui/appCopyright.scss";
 @import "search/btnAdvancedSearch.scss";
-@import "layout/headerDesktop.scss";
 @import "embedded.scss";
 @import "general.scss";
 @import "header.scss";
 @import "attachments.scss";
+@import "header/headerDesktop.scss";
+@import "header/headerNoAuth.scss";
+@import "navigation/navigation.scss";
+@import "navigation/navigationUser.scss";
+@import "navigation/navigationReport.scss";
 @import "sidebar/btnDisplayMobileSidebar.scss";
 @import "sidebar/sidebarMobileHeader.scss";
 @import "sidebar/navigationItem.scss";

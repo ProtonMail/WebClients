@@ -1,0 +1,33 @@
+<li class="navigationUser">
+    <a class="navigation-link navigationUser-link pm_trigger" dropdown href="#">
+        <span class="navigation-icons">
+            <i class="fa fa-user"></i>
+            <i class="fa fa-angle-down"></i>
+        </span>
+        <span class="navigation-title">{{ user.DisplayName || user.Addresses[0].Email }}</span>
+    </a>
+    <span class="pm_dropdown navigationUser-dropdown wide right">
+        <span class="navigationUser-head">
+            <strong class="navigationUser-head-display-name" ng-bind="user.DisplayName"></strong>
+            <span class="navigationUser-head-email" ng-bind="user.Addresses[0].Email"></span>
+            <span class="navigationUser-head-organization" ng-bind="organization.DisplayName"></span>
+        </span>
+        <button class="navigationUser-help" ng-if="wizardEnabled" data-display-wizard-button>
+            <i class="fa fa-magic"></i>
+            <span translate translate-context="Action">Tutorial</span>
+        </button>
+
+        <a class="navigationUser-help" target="_blank" href="https://protonmail.com/support">
+            <i class="fa fa-life-ring"></i>
+            <span translate translate-context="Action">Help &amp; answers</span>
+        </a>
+        <a class="navigationUser-help" target="_blank" href="https://shop.protonmail.com">
+            <i class="fa fa-shopping-cart"></i>
+            <span translate translate-context="Action">ProtonMail Shop</span>
+        </a>
+        <a ui-sref="login" class="pm_button primary text-center navigationUser-logout" translate translate-context="Action">Logout</a>
+        <app-version
+            class="navigationUser-version text-center"
+            data-prefix="ProtonMail "></app-version>
+    </span>
+</li>

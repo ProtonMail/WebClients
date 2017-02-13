@@ -1,9 +1,15 @@
 <header
     id="pm_header"
-    class="clearfix pm_opensans no-auth"
+    class="pm_opensans headerNoAuth"
     ng-controller="HeaderController">
-    <div class="pull-right ">
-        <new-bug-report class="reportBug"></new-bug-report>
+    <a
+        class="back headerNoAuth-btn-back"
+        href="https://protonmail.com"
+        target="_self">
+    	<i class="fa fa-chevron-left"></i> <span translate translate-context="Action">Back to protonmail.com</span>
+    </a>
+    <div>
+        <new-bug-report class="headerNoAuth-btn-report"></new-bug-report>
         <a
             class="signUp pm_button primary headerNoAuth-btn-signup"
             href="https://protonmail.com/signup"
@@ -17,10 +23,4 @@
             translate
             translate-context="Action">Log out</a>
     </div>
-    <a
-        class="back headerNoAuth-btn-back"
-        href="https://protonmail.com"
-        target="_self">
-    	<i class="fa fa-chevron-left"></i> <b translate translate-context="Action">Back to protonmail.com</b>
-    </a>
 </header>
