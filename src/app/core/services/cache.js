@@ -51,10 +51,10 @@ angular.module('proton.core')
      * @param {String} loc
      * @param {Integer} time
      */
-    const storeTime = (conversationId, loc, time) => {
+    function storeTime(conversationId, loc, time) {
         timeCached[conversationId] = timeCached[conversationId] || {};
         timeCached[conversationId][loc] = time;
-    };
+    }
 
     /**
      * Update message cached
@@ -178,7 +178,7 @@ angular.module('proton.core')
             LabelIDs.forEach((labelID) => {
                 // Get the most recent message for a specific label
                 const { Time } = _.chain(messages)
-                    .filter(({ LabelIDs }) => Array.isArray(LabelIDs) && LabelIDs.indexOf(labelID) !== -1)
+                    .filter(({ LabelIDs = [] }) => LabelIDs.indexOf(labelID) > -1)
                     .first()
                     .value() || {};
 
@@ -858,45 +858,53 @@ angular.module('proton.core')
             handleCounters(events);
         }
 
-        events.forEach((event) => {
-            if (event.Action === DELETE) { // Can be for message or conversation
-                promises.push(api.delete(event));
-                messageIDs.push(event.ID);
-                conversationIDs.push(event.ID);
-            } else if (event.Message) { // Manage message action
-                event.Message.ID = event.ID;
-                messageIDs.push(event.ID);
+        _.chain(events)
+        .filter((event) => event.Action === DELETE)
+        .each((event) => {
+            promises.push(api.delete(event));
+            messageIDs.push(event.ID);
+            conversationIDs.push(event.ID);
+        });
 
-                switch (event.Action) {
-                    case CREATE:
-                        promises.push(api.createMessage(event));
-                        break;
-                    case UPDATE_DRAFT:
-                        promises.push(api.updateFlagMessage(event, isSend));
-                        break;
-                    case UPDATE_FLAGS:
-                        promises.push(api.updateFlagMessage(event, isSend));
-                        break;
-                    default:
-                        break;
-                }
-            } else if (event.Conversation) { // Manage conversation action
-                event.Conversation.ID = event.ID;
-                conversationIDs.push(event.ID);
+        _.chain(events)
+        .filter((event) => event.Message)
+        .each((event) => {
+            event.Message.ID = event.ID;
+            messageIDs.push(event.ID);
 
-                switch (event.Action) {
-                    case CREATE:
-                        promises.push(api.createConversation(event));
-                        break;
-                    case UPDATE_DRAFT:
-                        promises.push(api.updateDraftConversation(event));
-                        break;
-                    case UPDATE_FLAGS:
-                        promises.push(api.updateFlagConversation(event));
-                        break;
-                    default:
-                        break;
-                }
+            switch (event.Action) {
+                case CREATE:
+                    promises.push(api.createMessage(event));
+                    break;
+                case UPDATE_DRAFT:
+                    promises.push(api.updateFlagMessage(event, isSend));
+                    break;
+                case UPDATE_FLAGS:
+                    promises.push(api.updateFlagMessage(event, isSend));
+                    break;
+                default:
+                    break;
+            }
+        });
+
+        _.chain((events))
+        .filter((event) => event.Conversation)
+        .each((event) => {
+            event.Conversation.ID = event.ID;
+            conversationIDs.push(event.ID);
+
+            switch (event.Action) {
+                case CREATE:
+                    promises.push(api.createConversation(event));
+                    break;
+                case UPDATE_DRAFT:
+                    promises.push(api.updateDraftConversation(event));
+                    break;
+                case UPDATE_FLAGS:
+                    promises.push(api.updateFlagConversation(event));
+                    break;
+                default:
+                    break;
             }
         });
 
@@ -914,6 +922,7 @@ angular.module('proton.core')
         $rootScope.$emit('updatePageName');
         $rootScope.$emit('refreshConversation', conversationIDs);
         $rootScope.$emit('message.refresh', messageIDs);
+        $rootScope.$emit('refreshTimeElement');
     };
 
     /**
