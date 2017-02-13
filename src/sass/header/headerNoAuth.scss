@@ -1,0 +1,26 @@
+.headerNoAuth {
+    box-sizing: border-box;
+    height: $headerHeight;
+    background: $secondary;
+    display: flex;
+    align-items: center;
+    padding: 0px 10px;
+    border-bottom-color: transparent;
+    color:#FFF
+}
+
+.headerNoAuth-btn-report {
+    color: currentColor;
+    margin: 0px 20px 0px;
+    font-size: 11px;
+}
+
+.headerNoAuth-btn-back {
+    flex: 1;
+    order: 0;
+    color: currentColor;
+    text-decoration: none;
+}
+
+
+body.mobileMode .headerNoAuth-btn-report { display: none }

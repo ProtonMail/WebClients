@@ -1,78 +1,11 @@
 // UNAUTHORIZED
 header#pm_header {
 	height: $headerHeight;
-	line-height: $headerHeight;
 	background: $secondary;
 	font-size: 12px;
 	position: relative;
 	z-index: 2;
 	overflow: hidden;
-	height: 61px;
-	line-height: 61px;
-	a, .newBugReport-container {
-		color: #fff;
-		text-decoration: none;
-		margin: 0 10px;
-		b {
-			font-weight: normal;
-		}
-	}
-	& > a.back {
-		height: 61px;
-		overflow: hidden;
-	}
-}
-
-header#pm_header-tablet {
-	height: 70px;
-	line-height: 70px;
-	background: $alt;
-	font-size: 14px;
-	position: relative;
-	z-index: 2;
-	.compose {
-		display: block;
-		height: 50px;
-        line-height: 50px;
-        border-radius: 2px;
-        background-color: $primary;
-        text-align: center;
-        color: $white;
-        text-transform: uppercase;
-        text-decoration: none;
-        font-size: 12px;
-        padding-right: .5rem;
-        width: 135px;
-        float: right;
-        margin: 10px;
-        &:hover {
-            background-color: #7e82b4;
-        }
-        &:active {
-            background-color: #66669a;
-        }
-	}
-
-	.logoMobile {
-		display: inline-block;
-		margin: 0 1rem;
-		font-size: 1rem;
-		float: left;
-		color: #fff;
-		img {
-			display: inline-block;
-			vertical-align: middle;
-			margin-top: -4px;
-		}
-	}
-	.location {
-		float: left;
-		display: block;
-		font-weight: 700;
-		font-size: 16px;
-		color: #fff;
-		text-transform: capitalize;
-	}
 }
 
 #pm_header-mobile {

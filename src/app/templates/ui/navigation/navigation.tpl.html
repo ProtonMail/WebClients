@@ -1,0 +1,23 @@
+<ul class="navigation">
+    <li ui-sref-active="active" ng-if="isFree">
+        <a class="navigation-link" ui-sref="secured.dashboard({scroll: true})">
+            <i class="navigation-icon fa fa-cubes"></i>
+            <span class="navigation-title" translate translate-context="Action">Upgrade</span>
+        </a>
+    </li>
+    <li ng-class="{'active': activeSettings()}">
+        <a id="tour-settings" class="navigation-link" ui-sref="secured.account">
+            <i class="navigation-icon fa fa-cogs"></i>
+            <span class="navigation-title" translate translate-context="Action">Settings</span>
+        </a>
+    </li>
+    <li ui-sref-active="active">
+        <a class="navigation-link" ui-sref="secured.contacts">
+            <i class="navigation-icon fa fa-users"></i>
+            <span class="navigation-title" translate translate-context="Action">Contacts</span>
+        </a>
+    </li>
+
+    <navigation-report></navigation-report>
+    <navigation-user></navigation-user>
+</ul>
