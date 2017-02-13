@@ -756,6 +756,9 @@ angular.module('proton.core')
         // if (!isSend && (!current || (current && event.Message.Time === current.Time))) {
         //     return Promise.resolve();
         // }
+        if (!current) {
+            return Promise.resolve();
+        }
 
         const message = _.extend(current, event.Message);
 
