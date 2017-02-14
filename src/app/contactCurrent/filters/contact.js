@@ -21,7 +21,10 @@ angular.module('proton.contactCurrent')
             }
         };
 
-        return ({ Name = '', Address } = {}, parameter) => {
+        return (sender, parameter) => {
+
+            // The sender might be null
+            const { Name = '', Address } = (sender || {});
 
             if (parameter === 'Address') {
                 return `<${Address}>`;

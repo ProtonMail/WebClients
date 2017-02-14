@@ -142,7 +142,6 @@ angular.module('proton.attachments')
                 .then(([{ data }, { sessionKey }]) => decrypt(data, pubKeys, sessionKey))
                 .then((data) => (cache.put(getCacheKey(attachment), data), data))
                 .catch((err) => {
-                    console.log(err);
                     throw err;
                 });
         };

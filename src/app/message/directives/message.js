@@ -1,5 +1,5 @@
 angular.module('proton.message')
-.directive('message', ($state, $rootScope, authentication, cache, networkActivityTracker, displayContent, displayImages, displayEmbedded, messageScroll, tools) => {
+.directive('message', ($state, $rootScope, cache, displayContent, messageScroll, tools) => {
 
     function getRecipients({ ToList = [], CCList = [], BCCList = [] } = {}) {
         return [].concat(ToList, CCList, BCCList);
@@ -37,8 +37,36 @@ angular.module('proton.message')
             index: '='
         },
         link(scope, element) {
+
             const unsubscribe = [];
-            initMessage();
+
+            const loadMessageBody = () => {
+                return cache.getMessage(scope.message.ID)
+                    .then((message) => _.extend(scope.message, message));
+            };
+
+            const updateMessage = (promise) => {
+                promise.then(({ type, body }) => {
+                    scope.message.expand = true;
+                    scope.message.isPlain = (type === 'plain');
+                    if (type && body) {
+                        scope.message.viewMode = 'html';
+                        scope.body = body;
+                    }
+                })
+                .catch(() => {
+                    scope.message.expand = true;
+                    scope.message.viewMode = 'plain';
+                });
+            };
+
+            const loadContent = () => updateMessage(displayContent(scope.message, scope.body, scope.index));
+
+            /**
+             * Initialize the message
+             */
+            scope.body = ''; // Here we put the content displayed inside the message content
+            (scope.message.openMe || scope.message.expand) && openMessage();
 
             unsubscribe.push($rootScope.$on('message.open', (e, { type, data }) => {
 
@@ -105,63 +133,24 @@ angular.module('proton.message')
 
                 const promise = (typeof scope.message.Body === 'undefined') ? loadMessageBody() : Promise.resolve();
 
-                promise
-                .then(() => loadContent())
-                .then(() => {
-                    // Auto focus message list when we load the message, to allow keyboard srolling
-                    scope.$applyAsync(() => {
-                        // If you switch to another conversation the container might not exist
-                        $(document.getElementById('pm_thread')).focus();
+                promise.then(loadContent)
+                    .then(() => {
+                        // Auto focus message list when we load the message, to allow keyboard srolling
+                        scope.$applyAsync(() => {
+                            // If you switch to another conversation the container might not exist
+                            $(document.getElementById('pm_thread')).focus();
+                        });
                     });
-                });
             }
-
-            /**
-             * Initialize the message
-             */
-            function initMessage() {
-                if (scope.message.openMe || scope.message.expand) {
-                    openMessage();
-                }
-            }
-
-            function loadMessageBody() {
-                return cache.getMessage(scope.message.ID).then((message) => _.extend(scope.message, message));
-            }
-
-            function updateMessage(promise) {
-                promise.then(({ type, body }) => {
-                    scope.message.expand = true;
-                    scope.message.isPlain = (type === 'plain');
-                    if (type && body) {
-                        scope.message.viewMode = 'html';
-                        scope.body = body;
-                    }
-                })
-                .catch(() => {
-                    scope.message.expand = true;
-                    scope.message.viewMode = 'plain';
-                });
-            }
-
-            function loadContent() {
-                return updateMessage(displayContent(scope.message, scope.body, scope.index));
-            }
-
-            scope.body = ''; // Here we put the content displayed inside the message content
 
             /**
              * Get all recipients
              * @return {Array} recipients
              */
-            scope.recipients = () => {
-                return getRecipients(scope.message);
-            };
+            scope.recipients = () => getRecipients(scope.message);
 
             // TODO need review with label dropdown
-            scope.getMessage = () => {
-                return [scope.message];
-            };
+            scope.getMessage = () => [scope.message];
 
             /**
              * Method call when the user submit some labels to apply to this message
