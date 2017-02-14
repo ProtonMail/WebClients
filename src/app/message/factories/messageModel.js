@@ -141,22 +141,28 @@ angular.module('proton.message')
          */
         decryptBody() {
             let pubKeys = null;
-            const self = this;
             const privKey = authentication.getPrivateKeys(this.AddressID);
-            const sender = this.Sender.Address;
+            const sender = (this.Sender || {}).Address;
             this.decrypting = true;
+
+            // Sender can be empty (╯︵╰,)
+            if (!sender) {
+                this.decrypting = false;
+                return Promise.reject(new Error('No sender address available'));
+            }
+
             return this.getPublicKeys([sender])
-            .then(({ data = {} } = {}) => {
-                if (data.Code === 1000) {
-                    pubKeys = data[sender];
-                }
-                return pmcw.decryptMessageRSA(self.Body, privKey, self.Time, pubKeys)
-                    .then((rep) => (self.decrypting = false, rep))
-                    .catch((error) => {
-                        self.decrypting = false;
-                        throw error;
-                    });
-            });
+                .then(({ data = {} } = {}) => {
+                    if (data.Code === 1000) {
+                        pubKeys = data[sender];
+                    }
+                    return pmcw.decryptMessageRSA(this.Body, privKey, this.Time, pubKeys)
+                        .then((rep) => (this.decrypting = false, rep))
+                        .catch((error) => {
+                            this.decrypting = false;
+                            throw error;
+                        });
+                });
         }
 
         encryptPackets(keys = '', passwords = '') {
@@ -214,8 +220,8 @@ angular.module('proton.message')
             return _.map(list, ({ Address } = {}) => Address);
         }
 
-        getPublicKeys(emails) {
-            const base64 = pmcw.encode_base64(emails.join(','));
+        getPublicKeys(emails = []) {
+            const base64 = pmcw.encode_base64(emails.filter(Boolean).join(','));
             return User.pubkeys(base64);
         }
 
@@ -226,20 +232,20 @@ angular.module('proton.message')
                 if (!this.getDecryptedBody()) {
                     try {
                         this.decryptBody()
-                        .then((result) => {
-                            this.setDecryptedBody(result.data);
-                            this.Signature = result.signature;
-                            this.failedDecryption = false;
-                            deferred.resolve(result.data);
-                        })
-                        .catch((err) => {
-                            this.setDecryptedBody(this.Body, false);
-                            this.failedDecryption = true;
+                            .then((result) => {
+                                this.setDecryptedBody(result.data);
+                                this.Signature = result.signature;
+                                this.failedDecryption = false;
+                                deferred.resolve(result.data);
+                            })
+                            .catch((err) => {
+                                this.setDecryptedBody(this.Body, false);
+                                this.failedDecryption = true;
 
-                            // We need to display the encrypted body to the user if it fails
-                            this.MIMEType = 'text/plain';
-                            deferred.reject(err);
-                        });
+                                // We need to display the encrypted body to the user if it fails
+                                this.MIMEType = 'text/plain';
+                                deferred.reject(err);
+                            });
                     } catch (err) {
                         this.setDecryptedBody(this.Body, false);
                         this.MIMEType = 'text/plain';
