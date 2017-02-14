@@ -251,9 +251,10 @@
 
         .angular-squire-wrapper {
             border: 1px solid $border;
-
+            display: flex;
             iframe {
-                width: 100%;
+                flex:1;
+                max-width: 100%;
             }
 
         }
