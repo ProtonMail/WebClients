@@ -69,7 +69,6 @@ angular.module('proton.squire')
                 font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;
                 font-size: 14px;
                 line-height: 1.65em;
-                background: #FFF;
                 color: #222;
             }
 
