@@ -6,6 +6,7 @@ const loadSuite = (name) => require(`./scenarii/${name}.test`)(utils);
 describe('Create an account', () => {
 
     const currentStep = utils.steps(1);
+    const submit = loadSuite('submit');
 
     it('should load the e2e label', () => {
         webapp.openState('create/new')
@@ -26,7 +27,6 @@ describe('Create an account', () => {
     ['username', 'password', 'recovery']
         .forEach(loadSuite);
 
-    const submit = loadSuite('submit');
     submit.withRecovery();
 
     it('should load the e2e label', () => {
