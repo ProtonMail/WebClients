@@ -5,9 +5,9 @@ angular.module('proton.sidebar')
 
         return {
             replace: true,
-            template: `<button class="sidebarApp-link donateBtn-container">
+            template: `<button class="sidebarApp-link donateBtn-container"><div>
                 <i class="fa fa-heart-o sidebarApp-icon donateBtn-icon"></i>
-                <span class="donateBtn-title">Donate</span>
+                <span class="donateBtn-title">Donate</span></div>
             </button>`,
             link(scope, el) {
                 const $title = el[0].querySelector('.donateBtn-title');

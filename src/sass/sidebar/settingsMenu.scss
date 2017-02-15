@@ -5,6 +5,11 @@
     text-align: left
 }
 
+.settingsMenu-container .donateBtn-container div {
+    display: inherit;
+    align-items: center;
+}
+
 .settingsMenu-is-member, .settingsMenu-is-subuser {
     .navigationSettings-is-dashboard,
     .navigationSettings-is-domains,

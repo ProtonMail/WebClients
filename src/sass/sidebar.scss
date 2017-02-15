@@ -289,7 +289,7 @@
 }
 
 @media (max-height: 500px) {
-    #pm_sidebar { overflow: auto }
+    .sidebarApp-container { overflow: auto }
     [id="sidebarLabels"] {
         height: initial;
         overflow: visible;
