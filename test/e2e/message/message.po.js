@@ -64,7 +64,7 @@ module.exports = (type = 'column') => {
                 const $title = $('${SELECTOR.message.title}');
                 return {
                     title: $title.find('span:last-of-type').text(),
-                    number: $title.find('span:first-of-type').text().split('').filter(Number).join(''),
+                    number: $title.find('span:first-of-type').text().split('').filter((i) => !isNaN(+i)).join(''),
                     full: $title.text()
                 };
             `);
