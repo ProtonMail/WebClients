@@ -57,7 +57,7 @@ module.exports = () => {
                 .then(() => formModal.chooseColor(13))
                 .then((color) => store.color = color)
                 .then(() => formModal.submit())
-                .then(() => browser.sleep(500))
+                .then(() => browser.sleep(1000))
                 .then(() => modal.isVisible())
                 .then(isFalse);
         });
@@ -111,7 +111,7 @@ module.exports = () => {
                     .then(() => formModal.chooseColor(15))
                     .then((color) => store.color = color)
                     .then(() => formModal.submit())
-                    .then(() => browser.sleep(500))
+                    .then(() => browser.sleep(1000))
                     .then(() => modal.isVisible())
                     .then(isFalse);
             });
@@ -162,13 +162,13 @@ module.exports = () => {
 
             it('should contains a question', () => {
                 modal.read()
-                    .then(assert('Are you sure you want to delete this label?'));
+                    .then(assert('Are you sure you want to delete this label? Removing a label will not remove the messages with that label.'));
             });
 
 
             it('should close the modal on cancel', () => {
                 modal.cancel()
-                    .then(() => browser.sleep(500))
+                    .then(() => browser.sleep(1000))
                     .then(() => modal.isVisible())
                     .then(isFalse);
             });
@@ -183,7 +183,7 @@ module.exports = () => {
 
             it('should close the modal on confirm', () => {
                 modal.confirm()
-                    .then(() => browser.sleep(500))
+                    .then(() => browser.sleep(1000))
                     .then(() => modal.isVisible())
                     .then(isFalse);
             });

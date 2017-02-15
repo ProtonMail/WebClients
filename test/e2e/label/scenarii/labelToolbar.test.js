@@ -55,7 +55,7 @@ module.exports = () => {
                 .then(() => formModal.chooseColor(8))
                 .then((color) => store.color = color)
                 .then(() => formModal.submit())
-                .then(() => browser.sleep(500))
+                .then(() => browser.sleep(1000))
                 .then(() => modal.isVisible())
                 .then(isFalse);
         });
