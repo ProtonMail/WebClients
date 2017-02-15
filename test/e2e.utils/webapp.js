@@ -1,6 +1,6 @@
 const SELECTOR = {
     header: {
-        container: '#pm_header-desktop',
+        container: '#pm_headerDesktop',
         settings: '#tour-settings'
     },
     settings: {
