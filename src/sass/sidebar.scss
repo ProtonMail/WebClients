@@ -214,9 +214,10 @@
     &:hover { color: rgba(255,255,255,.35) };
 }
 
-.sidebarApp-item .navigationItem-counter { margin-left: .3em }
-.sidebarApp-item.active {
+.sidebarApp-item .navigationItem-counter,
+.menuLabel-item .menuLabel-counter { margin-left: .3em }
 
+.sidebarApp-item.active {
     .navigationItem-item, .sidebarApp-link  {
         background-color: rgba(255,255,255,.06);
         border-color: transparent;
@@ -224,6 +225,12 @@
         font-weight: 700;
     }
     .navigationItem-icon { color: lighten($primary, 10%) }
+}
+
+.menuLabel-item .menuLabel-title {
+    display: inline-block;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .menuLabel-item.active {
