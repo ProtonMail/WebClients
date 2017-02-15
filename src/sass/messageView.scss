@@ -369,6 +369,7 @@
                 }
                 blockquote.protonmail_quote {
                     position: relative;
+                    overflow: auto;
                 }
                 .proton-embedded{
                     max-width: 100%;
