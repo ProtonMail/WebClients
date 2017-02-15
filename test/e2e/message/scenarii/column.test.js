@@ -220,7 +220,7 @@ module.exports = () => {
             });
 
             it('should close the message', () => {
-                browser.sleep(1000);
+                browser.sleep(3000);
                 message.isOpened()
                     .then(isFalse);
             });
