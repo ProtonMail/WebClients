@@ -26,7 +26,7 @@ angular.module('proton.formUtils')
                 return Email;
             }
 
-            return `${Name} ${OPEN_TAG_AUTOCOMPLETE}${Email}${CLOSE_TAG_AUTOCOMPLETE}`;
+            return `${encodeURIComponent(Name)} ${OPEN_TAG_AUTOCOMPLETE}${Email}${CLOSE_TAG_AUTOCOMPLETE}`;
         };
 
         /**
