@@ -45,7 +45,7 @@ angular.module('proton.core')
                         // Decrypt organization private key with the old mailbox password (current)
                         // then encrypt private key with the new mailbox password
                         // return 0 on failure to decrypt, other failures are fatal
-                        pmcw.decryptPrivateKey(encryptPrivateKey, oldMailPwd)
+                        return pmcw.decryptPrivateKey(encryptPrivateKey, oldMailPwd)
                         .then((pkg) => Promise.resolve(pmcw.encryptPrivateKey(pkg, password)), () => Promise.resolve(0));
                     }
                     throw new Error(data.Error || gettextCatalog.getString('Unable to get organization keys', null, 'Error'));
