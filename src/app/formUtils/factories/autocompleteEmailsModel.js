@@ -16,6 +16,17 @@ angular.module('proton.formUtils')
         };
 
         /**
+         * @{link https://css-tricks.com/snippets/javascript/htmlentities-for-javascript/}
+         */
+        const htmlEntities = (str = '') => {
+            return String(str)
+                .replace(/&/g, '&amp;')
+                .replace(/</g, '&lt;')
+                .replace(/>/g, '&gt;')
+                .replace(/"/g, '&quot;');
+        };
+
+        /**
          * Format the label of an address to display both the name and the address
          * @param  {String} Name
          * @param  {String} Email
@@ -26,7 +37,7 @@ angular.module('proton.formUtils')
                 return Email;
             }
 
-            return `${encodeURIComponent(Name)} ${OPEN_TAG_AUTOCOMPLETE}${Email}${CLOSE_TAG_AUTOCOMPLETE}`;
+            return `${htmlEntities(Name)} ${OPEN_TAG_AUTOCOMPLETE}${Email}${CLOSE_TAG_AUTOCOMPLETE}`;
         };
 
         /**
