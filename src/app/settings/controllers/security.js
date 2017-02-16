@@ -40,38 +40,39 @@ angular.module('proton.settings')
 
     function confirm2FAEnable(sharedSecret, qrURI) {
         function submit(loginPassword, twoFactorCode) {
-            networkActivityTracker.track(
-                Setting.enableTwoFactor({ TwoFactorSharedSecret: sharedSecret }, { TwoFactorCode: twoFactorCode, Password: loginPassword })
-                .then((result) => {
-                    if (result.data && result.data.Code === 1000) {
-                        const codes = result.data.TwoFactorRecoveryCodes;
-                        $scope.twoFactor = 1;
-                        authentication.user.TwoFactor = 1;
-                        recoveryCodes(codes);
-                    } else if (result.data && result.data.Error) {
-                        showSharedSecret(sharedSecret, qrURI);
-                        return Promise.reject(result.data.Error);
-                    }
-                })
-            );
+            const promise = Setting.enableTwoFactor({ TwoFactorSharedSecret: sharedSecret }, { TwoFactorCode: twoFactorCode, Password: loginPassword })
+            .then(({ data = {} } = {}) => {
+                if (data.Code === 1000) {
+                    return Promise.resolve(data.TwoFactorRecoveryCodes);
+                }
+                showSharedSecret(sharedSecret, qrURI);
+                return Promise.reject(data.Error);
+            })
+            .then((codes) => {
+                $scope.twoFactor = 1;
+                authentication.user.TwoFactor = 1;
+                recoveryCodes(codes);
+            });
+            networkActivityTracker.track(promise);
         }
         checkCredentials2FA(submit);
     }
 
     function confirm2FADisable() {
         function submit(loginPassword, twoFactorCode) {
-            networkActivityTracker.track(
-                Setting.disableTwoFactor({ TwoFactorCode: twoFactorCode, Password: loginPassword })
-                .then((result) => {
-                    if (result.data && result.data.Code === 1000) {
-                        $scope.twoFactor = 0;
-                        authentication.user.TwoFactor = 0;
-                        notify({ message: gettextCatalog.getString('Two-factor authentication disabled', null), classes: 'notification-success' });
-                    } else if (result.data && result.data.Error) {
-                        return Promise.reject(result.data.Error);
-                    }
-                })
-            );
+            const promise = Setting.disableTwoFactor({ TwoFactorCode: twoFactorCode, Password: loginPassword })
+            .then(({ data = {} } = {}) => {
+                if (data.Code === 1000) {
+                    return Promise.resolve();
+                }
+                return Promise.reject(data.Error);
+            })
+            .then(() => {
+                $scope.twoFactor = 0;
+                authentication.user.TwoFactor = 0;
+                notify({ message: gettextCatalog.getString('Two-factor authentication disabled', null), classes: 'notification-success' });
+            });
+            networkActivityTracker.track(promise);
         }
         checkCredentials2FA(submit);
     }
@@ -79,7 +80,7 @@ angular.module('proton.settings')
     function checkCredentials2FA(submit) {
         loginPasswordModal.activate({
             params: {
-                hasTwoFactor: 1,
+                hasTwoFactor: 1, // force the modal to ask for 2FA code
                 submit(loginPassword, twoFactorCode) {
                     loginPasswordModal.deactivate();
                     submit(loginPassword, twoFactorCode);

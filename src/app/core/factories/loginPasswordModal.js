@@ -11,14 +11,18 @@ angular.module('proton.core')
             self.submit = () => params.submit(self.loginPassword, self.twoFactorCode);
             self.cancel = () => params.cancel();
 
-            const promise = srp.info()
-            .then(({ data = {} } = {}) => {
-                if (data.Code === 1000) {
-                    self.hasTwoFactor = data.TwoFactor === 1;
-                }
-            });
+            if (params.hasTwoFactor) {
+                self.hasTwoFactor = params.hasTwoFactor === 1;
+            } else {
+                const promise = srp.info()
+                .then(({ data = {} } = {}) => {
+                    if (data.Code === 1000) {
+                        self.hasTwoFactor = data.TwoFactor === 1;
+                    }
+                });
+                networkActivityTracker.track(promise);
+            }
 
-            networkActivityTracker.track(promise);
             $timeout(() => document.getElementById('loginPassword').focus(), 100, false);
         }
     });
