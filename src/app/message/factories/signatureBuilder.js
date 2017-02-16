@@ -58,10 +58,13 @@ angular.module('proton.message')
          * @return {Object}                  {start: <String>, end: <String>}
          */
         const getSpaces = (userSignature, protonSignature, isReply = false) => {
-            const isEmptySignature = isEmptyUserSignature(userSignature) && !protonSignature;
+            const noUserSignature = isEmptyUserSignature(userSignature);
+            const isEmptySignature = noUserSignature && !protonSignature;
+
             return {
                 start: isEmptySignature ? createSpace() : (createSpace() + createSpace()),
-                end: isReply ? createSpace() : ''
+                end: isReply ? createSpace() : '',
+                between: (!noUserSignature && userSignature) ? createSpace() : ''
             };
         };
 
@@ -77,7 +80,7 @@ angular.module('proton.message')
             const space = getSpaces(userSignature, protonSignature, isReply);
 
             const template = `${space.start}<div class="${CLASSNAME_SIGNATURE_CONTAINER} ${containerClass}">
-                <div class="${CLASSNAME_SIGNATURE_USER} ${userClass}">${tools.replaceLineBreaks(userSignature)}</div>
+                <div class="${CLASSNAME_SIGNATURE_USER} ${userClass}">${tools.replaceLineBreaks(userSignature)}</div>${space.between}
                 <div class="${CLASSNAME_SIGNATURE_PROTON} ${protonClass}">${tools.replaceLineBreaks(protonSignature)}</div>
             </div>${space.end}`;
 
