@@ -16,6 +16,32 @@ angular.module('proton.conversation')
 ) => {
 
     /**
+     * Filter the list of message to find the first readable message
+     * - iterate backwards
+     * - check if the previous item is read
+     * - if the previous isRead === 1, break the iteration
+     * @param {Array} list list of messages
+     * @return {Ressoure}
+     */
+    const getMessage = (list = []) => {
+
+        // Else we open the first message unread beginning to the end list
+        let index = list.length;
+        let contains = false;
+
+        while (--index > 0) {
+            if (list[index - 1].IsRead === 1) { // Is read
+                contains = true;
+                break;
+            }
+        }
+
+        const position = contains ? index : 0;
+        // A conversation can contains only one draft
+        return list.length ? list[position] : list[0];
+    };
+
+    /**
      * Find in the message to scroll and expand
      * @param  {Array}  list List of message
      * @return {Object}
@@ -37,13 +63,16 @@ angular.module('proton.conversation')
 
             case $state.includes('secured.starred.**'):
                 // Select the last message starred
-                thisOne = filter(({ LabelIDs }) => LabelIDs.indexOf(CONSTANTS.MAILBOX_IDENTIFIERS.starred) !== -1);
+                thisOne = getMessage(_.filter(messages, ({ LabelIDs }) => LabelIDs.indexOf(CONSTANTS.MAILBOX_IDENTIFIERS.starred) !== -1));
+
+
                 break;
 
-            case $state.includes('secured.label.**'):
+            case $state.includes('secured.label.**'): {
                 // Select the last message with this label
-                thisOne = filter(({ LabelIDs }) => LabelIDs.indexOf($stateParams.label) !== -1);
+                thisOne = getMessage(_.filter(messages, ({ LabelIDs }) => LabelIDs.indexOf($stateParams.label) !== -1));
                 break;
+            }
 
             case $state.includes('secured.drafts.**'):
                 thisOne = filter(({ Type }) => Type === CONSTANTS.DRAFT);
@@ -57,33 +86,7 @@ angular.module('proton.conversation')
                     break;
                 }
 
-                /**
-                 * Filter the list of message to find the first readable message
-                 * - iterate backwards
-                 * - check if the previous item is read
-                 * - if the previous isRead === 1, break the iteration
-                 * @return {Ressoure}
-                 */
-                const getMessage = () => {
-                    const withoutDraft = messages.filter(({ Type }) => Type !== CONSTANTS.DRAFT);
-
-                    // Else we open the first message unread beginning to the end list
-                    let index = withoutDraft.length;
-                    let contains = false;
-
-                    while (--index > 0) {
-                        if (withoutDraft[index - 1].IsRead === 1) { // Is read
-                            contains = true;
-                            break;
-                        }
-                    }
-
-                    const position = contains ? index : 0;
-                    // A conversation can contains only one draft
-                    return withoutDraft.length ? withoutDraft[position] : messages[0];
-                };
-
-                thisOne = getMessage();
+                thisOne = getMessage(messages.filter(({ Type }) => Type !== CONSTANTS.DRAFT));
                 break;
             }
         }
