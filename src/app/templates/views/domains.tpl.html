@@ -33,12 +33,12 @@
                             </tr>
                         </thead>
                         <tbody ng-repeat="domain in domains">
-                            <tr ng-class="{ 'error': domain.State === 0 }">
+                            <tr ng-class="{ 'error': domain.State === 0 || domain.State === 2 }">
                                 <td class="domain">
                                     <strong>
                                         <i class="fa" ng-class="{
                                             'fa-check text-green': domain.State === 1 && domain.Addresses.length > 0 && domain.MxState === 3,
-                                            'fa-exclamation-triangle text-red': domain.State === 0 || domain.Addresses.length === 0 || domain.MxState === 1 || domain.MxState === 2
+                                            'fa-exclamation-triangle text-red': domain.State === 0 || domain.State === 2 || domain.Addresses.length === 0 || domain.MxState === 1 || domain.MxState === 2
                                         }"></i>
                                         {{ domain.DomainName }}
                                     </strong>
@@ -100,6 +100,12 @@
                                     </button>
                                 </td>
                             </tr>
+                            <tr ng-if="domain.State === 2">
+                                <td colspan="2">
+                                    <p class="alert alert-warning">Check your DNS settings.</p>
+                                </td>
+                                <td></td>
+                            </tr>
                             <tr ng-if="domain.State === 0">
                                 <td colspan="2">
                                     <p class="alert alert-warning">Setup Error: Please run the <a class="pm_button link" href="#" ng-click="wizard(domain)"><i class="fa fa-magic"></i> Setup Wizard</a> to correct configuration errors.</p>
@@ -128,11 +134,10 @@
                 </legend>
                 <div class="margin-bottom" ng-repeat="domain in domains">
                     <p>
-                        <i class="fa" ng-class="{'fa-check-circle-o text-green': domain.State === 1 || domain.State === 2, 'fa-exclamation-triangle text-red': domain.State === 0}"></i> <strong>{{ domain.DomainName }}</strong>
+                        <i class="fa" ng-class="{'fa-check-circle-o text-green': domain.State === 1, 'fa-exclamation-triangle text-red': domain.State === 0 || domain.State === 2}"></i> <strong>{{ domain.DomainName }}</strong>
                     </p>
                     <p>
                         <button type="button" class="pm_button primary" ng-click="addAddress(domain)" translate-context="Action" translate-comment="add address button on the domains page" translate>Add address</button>
-                        <!-- <a ui-sref="secured.members" class="pm_button"  translate>Add User</a> -->
                     </p>
                     <p class="alert alert-info" ng-show="domain.Addresses.length > 0">Addresses must be disabled before they can be deleted. Addresses can only be deleted if all messages associated with that address are deleted.</p>
                     <div class="pm_table">
