@@ -32,6 +32,7 @@ angular.module('proton.settings')
     const unsubscribe = [];
     $scope.signatureContent = CONSTANTS.PM_SIGNATURE;
     $scope.keyPhase = CONSTANTS.KEY_PHASE;
+    $scope.emailing = { announcements: false, features: false, newsletter: false };
     updateUser();
 
     function passwordModal(submit) {
@@ -225,6 +226,7 @@ angular.module('proton.settings')
         $scope.signature = tools.replaceLineBreaks(authentication.user.Signature);
         $scope.passwordMode = authentication.user.PasswordMode;
         $scope.isMember = authentication.user.Role === CONSTANTS.PAID_MEMBER_ROLE;
+        setEmailingValues(authentication.user.News);
     }
 
     function changePMSignature(event, status) {
@@ -315,5 +317,27 @@ angular.module('proton.settings')
                 }
             }
         });
+    };
+
+    function setEmailingValues(value = 0) {
+        _.each(Object.keys($scope.emailing), (key, index) => ($scope.emailing[key] = !!(value & (1 << index))));
+    }
+
+    function getEmailingValue() {
+        return _.reduce(Object.keys($scope.emailing), (acc, key, index) => (acc + ($scope.emailing[key] << index)), 0);
+    }
+
+    $scope.changeEmailing = () => {
+        const News = getEmailingValue();
+        const successMessage = gettextCatalog.getString('Emailing preference updated', null, 'Success');
+        const promise = Setting.setNews({ News })
+        .then(({ data = {} } = {}) => {
+            if (data.Code === 1000) {
+                return Promise.resolve();
+            }
+            throw new Error(data.Error);
+        })
+        .then(() => notify({ message: successMessage, classes: 'notification-success' }));
+        networkActivityTracker.track(promise);
     };
 });

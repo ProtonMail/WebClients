@@ -71,6 +71,9 @@ angular.module('proton.models.setting', [])
         setThreading(params) {
             return $http.put(url.get() + '/settings/threading', params);
         },
+        setNews(params) {
+            return $http.put(url.get() + '/settings/news', params);
+        },
         invoiceText(params) {
             return $http.put(url.get() + '/settings/invoicetext', params);
         },

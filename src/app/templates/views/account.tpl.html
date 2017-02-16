@@ -274,5 +274,27 @@
                 </div>
             </section>
         </div>
+
+        <div class="row pm_grid">
+            <section class="pm_form col-1-2" ng-if="!isMember">
+                <legend translate-context="Title" translate>Email Subscriptions</legend>
+                <label>
+                    <custom-checkbox data-custom-ng-checked="true" data-custom-ng-disabled="true"></custom-checkbox>
+                    <span translate-context="Label" translate>Security Information</span>
+                </label>
+                <label>
+                    <custom-checkbox data-custom-ng-model="emailing.announcements" data-custom-ng-click="changeEmailing('announcements')"></custom-checkbox>
+                    <span translate-context="Label" translate>Major Announcements (2-3 per year)</span>
+                </label>
+                <label>
+                    <custom-checkbox data-custom-ng-model="emailing.features" data-custom-ng-click="changeEmailing('features')"></custom-checkbox>
+                    <span translate-context="Label" translate>Major New Features (3-4 per year)</span>
+                </label>
+                <label>
+                    <custom-checkbox data-custom-ng-model="emailing.newsletter" data-custom-ng-click="changeEmailing('newsletter')"></custom-checkbox>
+                    <span translate-context="Label" translate>Proton Newsletter (5-6 per year)</span>
+                </label>
+            </section>
+        </div>
     </div>
 </div>
