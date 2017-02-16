@@ -27,8 +27,8 @@ angular.module('proton.elements')
                     title, message,
                     confirm() {
                         const promise = messageApi[MAP_ACTIONS[mailbox]]()
-                            .then((response) => {
-                                if (response.Code === 1000) {
+                            .then(({ data = {} } = {}) => {
+                                if (data.Code === 1000) {
                                     cache.empty(mailbox);
                                     confirmModal.deactivate();
                                     notify({ message: gettextCatalog.getString('Folder emptied', null), classes: 'notification-success' });
