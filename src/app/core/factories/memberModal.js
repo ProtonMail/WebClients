@@ -33,7 +33,7 @@ angular.module('proton.core')
             self.size = 2048;
             self.organization = params.organization;
             self.organizationKey = params.organizationKey;
-            self.domains = _.where(params.domains, { State: 1 });
+            self.domains = _.filter(params.domains, ({ State }) => State);
             self.domain = self.domains.length && self.domains[0];
             self.name = '';
             self.temporaryPassword = '';
