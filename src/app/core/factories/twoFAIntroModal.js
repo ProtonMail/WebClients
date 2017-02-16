@@ -5,12 +5,8 @@ angular.module('proton.core')
         templateUrl: 'templates/modals/twofactor/twoFAIntroModal.tpl.html',
         controller(params) {
             const self = this;
-            self.next = () => {
-                params.next();
-            };
-            self.cancel = () => {
-                params.cancel();
-            };
+            self.next = () => params.next();
+            self.cancel = () => params.cancel();
         }
     });
 });
