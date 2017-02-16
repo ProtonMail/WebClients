@@ -1,7 +1,6 @@
 angular.module('proton.core')
     .factory('changeMailboxPassword', (
         $log,
-        $q,
         authentication,
         CONSTANTS,
         gettextCatalog,
@@ -20,20 +19,13 @@ angular.module('proton.core')
          * @return {Promise}
          */
         function getUser(newMailPwd = '', keySalt = '') {
-            const deferred = $q.defer();
-
-            $q.all([passwords.computeKeyPassword(newMailPwd, keySalt), User.get()])
-            .then(([password, result]) => {
-                if (result.data && result.data.Code === 1000) {
-                    deferred.resolve({ password, user: result.data.User });
-                } else if (result.data && result.data.Error) {
-                    deferred.reject(result.data.Error);
-                } else {
-                    deferred.reject(gettextCatalog.getString('Unable to save your changes, please try again.', null, 'Error'));
+            return Promise.all([passwords.computeKeyPassword(newMailPwd, keySalt), User.get()])
+            .then(([password, { data = {} } = {}]) => {
+                if (data.Code === 1000) {
+                    return Promise.resolve({ password, user: data.User });
                 }
+                throw new Error(data.Error || gettextCatalog.getString('Unable to save your changes, please try again.', null, 'Error'));
             });
-
-            return deferred.promise;
         }
 
         /**
@@ -43,34 +35,23 @@ angular.module('proton.core')
          * @return {Promise}
          */
         function manageOrganizationKeys(password = '', oldMailPwd = '', user = {}) {
-            const deferred = $q.defer();
-
             if (user.Role === CONSTANTS.PAID_ADMIN_ROLE) {
                 // Get organization key
-                organizationApi.getKeys()
-                .then((result) => {
-                    if (result.data && result.data.Code === 1000) {
-                        const encryptPrivateKey = result.data.PrivateKey;
+                return organizationApi.getKeys()
+                .then(({ data = {} } = {}) => {
+                    if (data.Code === 1000) {
+                        const encryptPrivateKey = data.PrivateKey;
 
                         // Decrypt organization private key with the old mailbox password (current)
                         // then encrypt private key with the new mailbox password
                         // return 0 on failure to decrypt, other failures are fatal
                         pmcw.decryptPrivateKey(encryptPrivateKey, oldMailPwd)
-                        .then(
-                            (pkg) => deferred.resolve(pmcw.encryptPrivateKey(pkg, password)),
-                            () => deferred.resolve(0)
-                        );
-                    } else if (result.data && result.data.Error) {
-                        deferred.reject(result.data.Error);
-                    } else {
-                        deferred.reject(gettextCatalog.getString('Unable to get organization keys', null, 'Error'));
+                        .then((pkg) => Promise.resolve(pmcw.encryptPrivateKey(pkg, password)), () => Promise.resolve(0));
                     }
+                    throw new Error(data.Error || gettextCatalog.getString('Unable to get organization keys', null, 'Error'));
                 });
-            } else {
-                deferred.resolve(0);
             }
-
-            return deferred.promise;
+            return Promise.resolve(0);
         }
 
         function manageUserKeys(password = '', oldMailPwd = '', user = {}) {
@@ -120,13 +101,10 @@ angular.module('proton.core')
 
         function sendNewKeys({ keys = [], keySalt = '', organizationKey = 0, newLoginPassword = '' }) {
             const keysFiltered = keys.filter((key) => key !== 0);
-            const payload = {
-                KeySalt: keySalt,
-                Keys: keysFiltered
-            };
+            const payload = { KeySalt: keySalt, Keys: keysFiltered };
 
             if (keysFiltered.length === 0) {
-                return Promise.reject({ message: gettextCatalog.getString('No keys to update', null, 'Error') });
+                throw new Error(gettextCatalog.getString('No keys to update', null, 'Error'));
             }
 
             if (organizationKey !== 0) {
@@ -141,9 +119,7 @@ angular.module('proton.core')
             const keySalt = (CONSTANTS.KEY_PHASE > 1) ? passwords.generateKeySalt() : null;
             const newLoginPassword = onePassword ? newPassword : '';
             let passwordComputed;
-
-            return networkActivityTracker.track(
-                getUser(newPassword, keySalt)
+            const promise = getUser(newPassword, keySalt)
                 .then(({ password = '', user = {} }) => {
                     passwordComputed = password;
 
@@ -153,20 +129,22 @@ angular.module('proton.core')
                     promises.push(manageOrganizationKeys(passwordComputed, oldMailPwd, user));
                     collection.forEach((promise) => promises.push(promise));
 
-                    return $q.all(promises);
+                    return Promise.all(promises);
                 })
-                .then(([organizationKey, ...keys]) => sendNewKeys(
-                    {
-                        keys,
-                        keySalt,
-                        organizationKey,
-                        newLoginPassword
-                    }))
-                .then(() => {
-                    authentication.savePassword(passwordComputed);
+                .then(([organizationKey, ...keys]) => sendNewKeys({
+                    keys,
+                    keySalt,
+                    organizationKey,
+                    newLoginPassword
+                }))
+                .then(({ data = {} } = {}) => {
+                    if (data.Code === 1000) {
+                        return Promise.resolve();
+                    }
+                    throw new Error(data.Error);
                 })
-                .catch((error) => {
-                    return Promise.reject(error);
-                }));
+                .then(() => authentication.savePassword(passwordComputed));
+            networkActivityTracker.track(promise);
+            return promise;
         };
     });
