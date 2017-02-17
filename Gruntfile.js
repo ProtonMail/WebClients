@@ -54,6 +54,22 @@ module.exports = function(grunt) {
             " */\n"
         },
 
+        browserSync: {
+          default_options: {
+            bsFiles: {
+              src: [
+                  "<%= build_dir %>/assets/application.css",
+                  "<%= build_dir %>/src/app"
+              ]
+            },
+            options: {
+              open: !grunt.option('no-open'),
+              watchTask: true,
+              proxy: "localhost:8080"
+            }
+          }
+      },
+
         notify_hooks: {
             options: {
                 enabled: true,
@@ -146,7 +162,6 @@ module.exports = function(grunt) {
         connect: {
             options: {
                 hostname: '*',
-                open: !grunt.option('no-open'),
                 port: 8080,
                 middleware: function(connect, options, middlewares) {
                     var base = options.base[0];
@@ -175,7 +190,6 @@ module.exports = function(grunt) {
 
             watch: {
                 options: {
-                    livereload: 40093,
                     base: '<%= build_dir %>'
                 }
             }
@@ -399,7 +413,6 @@ module.exports = function(grunt) {
 
         delta: {
             options: {
-                livereload: 40093,
                 spawn: false
             },
 
@@ -440,7 +453,7 @@ module.exports = function(grunt) {
                 options: {
                     livereload: false
                 }
-            },
+            }
 
         },
 
@@ -522,6 +535,7 @@ module.exports = function(grunt) {
     // Project config
     grunt.initConfig(grunt.util._.extend(taskConfig, userConfig));
 
+    grunt.loadNpmTasks('grunt-browser-sync');
     grunt.renameTask('watch', 'delta');
 
     grunt.registerTask('watch', [
@@ -529,7 +543,8 @@ module.exports = function(grunt) {
         'ngconstant:dev',
         'build',
         'connect:watch',
-        'delta'
+        'browserSync',
+        'delta',
     ]);
 
     grunt.registerTask('deploy', [
