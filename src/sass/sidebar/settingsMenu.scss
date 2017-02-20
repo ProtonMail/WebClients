@@ -11,14 +11,12 @@
 }
 
 .settingsMenu-is-member, .settingsMenu-is-subuser {
+    .navigationSettings-is-members,
     .navigationSettings-is-dashboard,
     .navigationSettings-is-domains,
     .navigationSettings-is-payments,
+    .navigationSettings-is-vpn,
     .settingsMenu-item-donate { display: none }
-}
-
-.settingsMenu-is-member, .settingsMenu-is-subuser {
-    .navigationSettings-is-members { display: none }
 }
 
 

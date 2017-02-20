@@ -24,7 +24,7 @@ angular.module('proton.settings')
     organizationModel,
     passwords,
     pmcw,
-    Setting,
+    settingsApi,
     tools,
     User
 ) => {
@@ -90,7 +90,7 @@ angular.module('proton.settings')
         function submit(currentPassword, twoFactorCode) {
             loginPasswordModal.deactivate();
             const credentials = { Password: currentPassword, TwoFactorCode: twoFactorCode };
-            const promise = Setting.noticeEmail({ NotificationEmail: $scope.notificationEmail }, credentials)
+            const promise = settingsApi.noticeEmail({ NotificationEmail: $scope.notificationEmail }, credentials)
             .then(() => {
                 authentication.user.NotificationEmail = $scope.notificationEmail;
                 form.$setUntouched();
@@ -110,7 +110,7 @@ angular.module('proton.settings')
         function submit(currentPassword, twoFactorCode) {
             loginPasswordModal.deactivate();
             const credentials = { Password: currentPassword, TwoFactorCode: twoFactorCode };
-            const promise = Setting.passwordReset({ PasswordReset: $scope.passwordReset }, credentials)
+            const promise = settingsApi.passwordReset({ PasswordReset: $scope.passwordReset }, credentials)
             .then(() => {
                 authentication.user.PasswordReset = $scope.passwordReset;
                 notify({ message: gettextCatalog.getString('Preference saved', null), classes: 'notification-success' });
@@ -123,7 +123,7 @@ angular.module('proton.settings')
 
     $scope.saveDailyNotifications = () => {
         networkActivityTracker.track(
-          Setting.notify({ Notify: $scope.dailyNotifications })
+          settingsApi.notify({ Notify: $scope.dailyNotifications })
           .then((result) => {
               if (result.data && result.data.Code === 1000) {
                   authentication.user.Notify = $scope.dailyNotifications;
@@ -199,8 +199,8 @@ angular.module('proton.settings')
 
 
         $q.all({
-            displayName: Setting.display({ DisplayName: displayName }),
-            signature: Setting.signature({ Signature: signature })
+            displayName: settingsApi.display({ DisplayName: displayName }),
+            signature: settingsApi.signature({ Signature: signature })
         })
         .then((result) => {
             if (result.displayName.data.Code === 1000 && result.signature.data.Code === 1000) {
@@ -243,7 +243,7 @@ angular.module('proton.settings')
 
     function changePMSignature(event, status) {
         const PMSignature = (status) ? 1 : 0;
-        const promise = Setting.PMSignature({ PMSignature })
+        const promise = settingsApi.updatePMSignature({ PMSignature })
         .then((result) => {
             if (result.data && result.data.Code === 1000) {
                 return eventManager.call()
@@ -262,7 +262,7 @@ angular.module('proton.settings')
 
     $scope.saveAutosaveContacts = () => {
         networkActivityTracker.track(
-            Setting.autosave({ AutoSaveContacts: $scope.autosaveContacts })
+            settingsApi.autosave({ AutoSaveContacts: $scope.autosaveContacts })
             .then(() => {
                 notify({ message: gettextCatalog.getString('Preference saved', null), classes: 'notification-success' });
                 authentication.user.AutoSaveContacts = $scope.autosaveContacts;
@@ -272,7 +272,7 @@ angular.module('proton.settings')
 
     $scope.saveImages = () => {
         networkActivityTracker.track(
-            Setting.setShowImages({ ShowImages: $scope.images })
+            settingsApi.setShowImages({ ShowImages: $scope.images })
             .then(() => {
                 authentication.user.ShowImages = $scope.images;
                 notify({ message: gettextCatalog.getString('Image preferences updated', null), classes: 'notification-success' });
@@ -282,7 +282,7 @@ angular.module('proton.settings')
 
     $scope.saveEmbedded = () => {
         networkActivityTracker.track(
-            Setting.setShowEmbedded({ ShowEmbedded: $scope.embedded })
+            settingsApi.setShowEmbedded({ ShowEmbedded: $scope.embedded })
             .then(() => {
                 authentication.user.ShowEmbedded = $scope.embedded;
                 notify({ message: gettextCatalog.getString('Image preferences updated', null), classes: 'notification-success' });
@@ -302,7 +302,7 @@ angular.module('proton.settings')
 
     $scope.saveHotkeys = () => {
         networkActivityTracker.track(
-            Setting.setHotkeys({ Hotkeys: $scope.hotkeys })
+            settingsApi.setHotkeys({ Hotkeys: $scope.hotkeys })
             .then((result) => {
                 if (result.data && result.data.Code === 1000) {
                     authentication.user.Hotkeys = $scope.hotkeys;
@@ -342,7 +342,7 @@ angular.module('proton.settings')
     $scope.changeEmailing = () => {
         const News = getEmailingValue();
         const successMessage = gettextCatalog.getString('Emailing preference updated', null, 'Success');
-        const promise = Setting.setNews({ News })
+        const promise = settingsApi.setNews({ News })
         .then(({ data = {} } = {}) => {
             if (data.Code === 1000) {
                 return Promise.resolve();

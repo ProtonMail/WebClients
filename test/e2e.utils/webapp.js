@@ -16,6 +16,7 @@ const SELECTOR = {
         members: '.navigationSettings-is-members > .navigationSettings-link',
         payments: '.navigationSettings-is-payments > .navigationSettings-link',
         keys: '.navigationSettings-is-keys > .navigationSettings-link',
+        vpn: '.navigationSettings-is-vpn > .navigationSettings-link',
         donate: '.settingsMenu-item-donate'
     },
     layout: {

@@ -1,6 +1,6 @@
 angular.module('proton.authentication', [
     'proton.constants',
-    'proton.models.setting',
+    'proton.settings',
     'proton.models',
     'proton.utils'
 ])

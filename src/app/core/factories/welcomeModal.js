@@ -1,5 +1,5 @@
 angular.module('proton.core')
-.factory('welcomeModal', (pmModal, Setting, authentication, networkActivityTracker, $q) => {
+.factory('welcomeModal', (pmModal, settingsApi, authentication, networkActivityTracker, $q) => {
     return pmModal({
         controllerAs: 'ctrl',
         templateUrl: 'templates/modals/welcome.tpl.html',
@@ -16,7 +16,7 @@ angular.module('proton.core')
                 const promises = [];
 
                 if (this.displayName.length > 0) {
-                    promises.push(Setting.display({ DisplayName: this.displayName }));
+                    promises.push(settingsApi.display({ DisplayName: this.displayName }));
                     authentication.user.DisplayName = this.displayName;
                 }
 

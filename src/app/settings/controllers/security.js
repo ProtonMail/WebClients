@@ -15,7 +15,7 @@ angular.module('proton.settings')
     Logs,
     networkActivityTracker,
     notify,
-    Setting
+    settingsApi
 ) => {
     $scope.logs = [];
     $scope.logItemsPerPage = 20;
@@ -40,7 +40,7 @@ angular.module('proton.settings')
 
     function confirm2FAEnable(sharedSecret, qrURI) {
         function submit(loginPassword, twoFactorCode) {
-            const promise = Setting.enableTwoFactor({ TwoFactorSharedSecret: sharedSecret }, { TwoFactorCode: twoFactorCode, Password: loginPassword })
+            const promise = settingsApi.enableTwoFactor({ TwoFactorSharedSecret: sharedSecret }, { TwoFactorCode: twoFactorCode, Password: loginPassword })
             .then(({ data = {} } = {}) => {
                 if (data.Code === 1000) {
                     return Promise.resolve(data.TwoFactorRecoveryCodes);
@@ -60,7 +60,7 @@ angular.module('proton.settings')
 
     function confirm2FADisable() {
         function submit(loginPassword, twoFactorCode) {
-            const promise = Setting.disableTwoFactor({ TwoFactorCode: twoFactorCode, Password: loginPassword })
+            const promise = settingsApi.disableTwoFactor({ TwoFactorCode: twoFactorCode, Password: loginPassword })
             .then(({ data = {} } = {}) => {
                 if (data.Code === 1000) {
                     return Promise.resolve();
@@ -229,7 +229,7 @@ angular.module('proton.settings')
                     message: gettextCatalog.getString('Are you sure you want to clear all your logs?', null, 'Info'),
                     confirm() {
                         networkActivityTracker.track(
-                            Setting.setLogging({ LogAuth: 0 })
+                            settingsApi.setLogging({ LogAuth: 0 })
                             .then((result) => {
                                 if (result.data && result.data.Code === 1000) {
                                     $scope.doLogging = 0;
@@ -250,7 +250,7 @@ angular.module('proton.settings')
             });
         } else {
             networkActivityTracker.track(
-                Setting.setLogging({ LogAuth: value })
+                settingsApi.setLogging({ LogAuth: value })
                 .then((result) => {
                     if (result.data && result.data.Code === 1000) {
                         $scope.doLogging = value;

@@ -1,5 +1,5 @@
 angular.module('proton.core')
-.factory('customizeInvoiceModal', (pmModal, Setting, notify, authentication) => {
+.factory('customizeInvoiceModal', (pmModal, settingsApi, notify, authentication) => {
     return pmModal({
         controllerAs: 'ctrl',
         templateUrl: 'templates/modals/customizeInvoice.tpl.html',
@@ -7,7 +7,7 @@ angular.module('proton.core')
             this.text = authentication.user.InvoiceText || '';
 
             this.submit = function () {
-                Setting.invoiceText({ InvoiceText: this.text })
+                settingsApi.invoiceText({ InvoiceText: this.text })
                 .then(function (result) {
                     if (result.data && result.data.Code === 1000) {
                         authentication.user.InvoiceText = this.text;

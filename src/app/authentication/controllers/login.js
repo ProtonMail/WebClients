@@ -18,7 +18,7 @@ angular.module('proton.authentication')
     pmcw,
     tempStorage,
     tools,
-    Setting,
+    settingsApi,
     srp) => {
     $scope.maxPW = CONSTANTS.LOGIN_PW_MAX_LEN;
     $scope.twoFactor = 0;
