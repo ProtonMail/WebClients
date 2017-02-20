@@ -39,7 +39,6 @@ module.exports = {
       "vendor/angular/angular.js",
       "vendor/autofill-event/src/autofill-event.js",
       "vendor/angular-cookies/angular-cookies.js",
-      "vendor/angular-resource/angular-resource.js",
       "vendor/angular-ui-router/release/angular-ui-router.js",
       "vendor/angular-sanitize/angular-sanitize.js",
       "vendor/moment/min/moment-with-locales.js",
