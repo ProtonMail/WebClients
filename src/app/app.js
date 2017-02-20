@@ -37,7 +37,6 @@ angular.module('proton', [
     'proton.models.memberKeys',
     'proton.models.payments',
     'proton.models.reset',
-    'proton.models.setting',
     'proton.models.user',
     'proton.models',
     'proton.bugReport',
@@ -61,6 +60,7 @@ angular.module('proton', [
     'proton.wizard',
     'proton.contactCurrent',
     'proton.settings',
+    'proton.vpn',
     'proton.formUtils'
 
 ])

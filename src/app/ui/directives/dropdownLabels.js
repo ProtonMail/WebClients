@@ -1,5 +1,5 @@
 angular.module('proton.ui')
-.directive('dropdownLabels', ($rootScope, $timeout, authentication, eventManager, notify, Setting, gettextCatalog) => {
+.directive('dropdownLabels', ($rootScope, $timeout, authentication, eventManager, notify, settingsApi, gettextCatalog) => {
     return {
         restrict: 'E',
         templateUrl: 'templates/directives/dropdownLabels.tpl.html',
@@ -59,7 +59,7 @@ angular.module('proton.ui')
             scope.changeAlsoArchive = () => {
                 const archive = scope.alsoArchive ? 1 : 0;
 
-                Setting.alsoArchive({ AlsoArchive: archive })
+                settingsApi.alsoArchive({ AlsoArchive: archive })
                     .then(({ data = {} } = {}) => (data.Code === 1000 && eventManager.call()));
             };
 

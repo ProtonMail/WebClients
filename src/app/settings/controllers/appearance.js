@@ -11,7 +11,7 @@ angular.module('proton.settings')
     CONSTANTS,
     networkActivityTracker,
     eventManager,
-    Setting,
+    settingsApi,
     notify) => {
     const unsubscribe = [];
     $scope.appearance = {
@@ -40,7 +40,7 @@ angular.module('proton.settings')
         const deferred = $q.defer();
 
         networkActivityTracker.track(
-                Setting.theme({ Theme: $scope.appearance.cssTheme })
+                settingsApi.theme({ Theme: $scope.appearance.cssTheme })
                 .then((result) => {
                     if (result.data && result.data.Code === 1000) {
                         notify({ message: gettextCatalog.getString('Theme saved', null), classes: 'notification-success' });
@@ -71,7 +71,7 @@ angular.module('proton.settings')
         const value = parseInt($scope.appearance.ComposerMode, 10);
 
         networkActivityTracker.track(
-                Setting.setComposerMode({ ComposerMode: value })
+                settingsApi.setComposerMode({ ComposerMode: value })
                 .then((result) => {
                     if (result.data && result.data.Code === 1000) {
                         notify({ message: gettextCatalog.getString('Compose mode saved', null, 'Info'), classes: 'notification-success' });
@@ -87,7 +87,7 @@ angular.module('proton.settings')
         const value = $scope.appearance.ViewLayout;
 
         networkActivityTracker.track(
-                Setting.setViewlayout({ ViewLayout: value })
+                settingsApi.setViewlayout({ ViewLayout: value })
                 .then((result) => {
                     if (result.data && result.data.Code === 1000) {
                         notify({ message: gettextCatalog.getString('Layout saved', null), classes: 'notification-success' });
@@ -102,13 +102,13 @@ angular.module('proton.settings')
     $scope.saveDefaultLanguage = () => {
         const Language = $scope.appearance.locale.key;
 
-        return Setting.setLanguage({ Language })
+        return settingsApi.setLanguage({ Language })
             .then(() => $window.location.reload());
     };
 
     $scope.saveButtonsPosition = () => {
         const MessageButtons = $scope.appearance.MessageButtons;
-        const promise = Setting.setMessageStyle({ MessageButtons })
+        const promise = settingsApi.setMessageStyle({ MessageButtons })
             .then((result) => {
                 if (result.data && result.data.Code === 1000) {
                     return eventManager.call()
@@ -128,7 +128,7 @@ angular.module('proton.settings')
 
     function changeViewMode(event, viewMode) {
         const ViewMode = (viewMode) ? CONSTANTS.CONVERSATION_VIEW_MODE : CONSTANTS.MESSAGE_VIEW_MODE; // Be careful, BE is reversed
-        const promise = Setting.setViewMode({ ViewMode })
+        const promise = settingsApi.setViewMode({ ViewMode })
             .then((result) => {
                 if (result.data && result.data.Code === 1000) {
                     return eventManager.call()

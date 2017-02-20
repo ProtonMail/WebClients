@@ -24,7 +24,7 @@ angular.module('proton.elements')
     networkActivityTracker,
     notify,
     paginationModel,
-    Setting,
+    settingsApi,
     tools
 ) => {
     const unsubscribes = [];

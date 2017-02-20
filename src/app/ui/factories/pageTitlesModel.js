@@ -27,7 +27,8 @@ angular.module('proton.ui')
             payments: gettextCatalog.getString('Payment methods', null, 'Title'),
             addresses: gettextCatalog.getString('Addresses', null, 'Title'),
             login: gettextCatalog.getString('Login', null, 'Title'),
-            signup: gettextCatalog.getString('Signup', null, 'Title')
+            signup: gettextCatalog.getString('Signup', null, 'Title'),
+            vpn: gettextCatalog.getString('VPN', null, 'Title')
         };
 
         function getFirstSortedAddresses() {

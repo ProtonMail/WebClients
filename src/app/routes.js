@@ -172,8 +172,8 @@ angular.module('proton.routes', [
     .state('reset-theme', {
         url: '/reset-theme',
         resolve: {
-            reset(networkActivityTracker, Setting, notify, eventManager, gettextCatalog) {
-                const promise = Setting.theme({ Theme: '' })
+            reset(networkActivityTracker, settingsApi, notify, eventManager, gettextCatalog) {
+                const promise = settingsApi.theme({ Theme: '' })
                 .then((result = {}) => {
                     const { data } = result;
                     if (data.Code === 1000) {
@@ -753,6 +753,15 @@ angular.module('proton.routes', [
         views: {
             'content@secured': {
                 templateUrl: 'templates/views/keys.tpl.html'
+            }
+        }
+    })
+
+    .state('secured.vpn', {
+        url: '/vpn',
+        views: {
+            'content@secured': {
+                template: '<vpn-view></vpn-view>'
             }
         }
     })

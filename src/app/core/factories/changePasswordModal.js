@@ -1,5 +1,5 @@
 angular.module('proton.core')
-.factory('changePasswordModal', (authentication, changeMailboxPassword, eventManager, gettextCatalog, networkActivityTracker, notify, pmModal, Setting, User) => {
+.factory('changePasswordModal', (authentication, changeMailboxPassword, eventManager, gettextCatalog, networkActivityTracker, notify, pmModal, settingsApi, User) => {
     return pmModal({
         controllerAs: 'ctrl',
         templateUrl: 'templates/modals/changePassword.tpl.html',
@@ -8,7 +8,7 @@ angular.module('proton.core')
             const { type = '', phase = 0 } = params;
             const promises = {
                 password: () => changeMailboxPassword({ newPassword: self.newPassword, onePassword: true }),
-                login: () => Setting.password(self.newPassword),
+                login: () => settingsApi.password(self.newPassword),
                 mailbox: () => changeMailboxPassword({ newPassword: self.newPassword, onePassword: false })
             };
             self.mode = authentication.user.PasswordMode;

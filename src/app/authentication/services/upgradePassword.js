@@ -1,5 +1,5 @@
 angular.module('proton.authentication')
-.factory('upgradePassword', (Setting, tempStorage) => {
+.factory('upgradePassword', (settingsApi, tempStorage) => {
     const key = 'auth';
     const tenMinutes = 10 * 60 * 1000; // 10 minutes
     /**
@@ -17,7 +17,7 @@ angular.module('proton.authentication')
         const Auth = tempStorage.getItem(key);
         if (Auth) {
             tempStorage.removeItem(key);
-            return Setting.passwordUpgrade(Auth);
+            return settingsApi.passwordUpgrade(Auth);
         }
         return Promise.resolve();
     }

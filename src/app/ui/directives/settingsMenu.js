@@ -1,6 +1,5 @@
 angular.module('proton.ui')
 .directive('settingsMenu', (authentication, CONSTANTS, networkActivityTracker, $rootScope, sidebarSettingsModel) => {
-
     const CLASS_SUBUSER = 'settingsMenu-is-subuser';
     const CLASS_MEMBER = 'settingsMenu-is-member';
 
@@ -9,24 +8,24 @@ angular.module('proton.ui')
         scope: {},
         templateUrl: 'templates/directives/ui/settingsMenu.tpl.html',
         link(scope, el) {
-            const unsubscribe = [];
-            scope.listStates = Object.keys(sidebarSettingsModel.getStateConfig());
+            const unsubscribes = [];
             const isMember = () => authentication.user.Role === CONSTANTS.PAID_MEMBER_ROLE;
+            scope.listStates = Object.keys(sidebarSettingsModel.getStateConfig());
 
             authentication.user.subuser && el[0].classList.add(CLASS_SUBUSER);
             isMember() && el[0].classList.add(CLASS_MEMBER);
 
-            unsubscribe.push($rootScope.$on('updateUser', () => {
+            unsubscribes.push($rootScope.$on('updateUser', () => {
                 isMember() && el[0].classList.add(CLASS_MEMBER);
             }));
 
-            unsubscribe.push($rootScope.$on('$stateChangeStart', () => {
+            unsubscribes.push($rootScope.$on('$stateChangeStart', () => {
                 $rootScope.$emit('sidebarMobileToggle', false);
             }));
 
             scope.$on('$destroy', () => {
-                unsubscribe.forEach((cb) => cb());
-                unsubscribe.length = 0;
+                unsubscribes.forEach((cb) => cb());
+                unsubscribes.length = 0;
             });
         }
     };

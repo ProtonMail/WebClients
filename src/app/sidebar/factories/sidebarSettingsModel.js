@@ -56,6 +56,11 @@ angular.module('proton.sidebar')
                 state: 'secured.keys',
                 label: gettextCatalog.getString('Keys', null, 'Title'),
                 icon: 'fa-key'
+            },
+            vpn: {
+                state: 'secured.vpn',
+                label: gettextCatalog.getString('VPN', null, 'Title'),
+                icon: 'fa-shield'
             }
         };
 

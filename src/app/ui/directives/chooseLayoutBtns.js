@@ -1,5 +1,5 @@
 angular.module('proton.ui')
-    .directive('chooseLayoutBtns', (authentication, CONSTANTS, networkActivityTracker, tools, Setting, eventManager, notify, gettextCatalog) => {
+    .directive('chooseLayoutBtns', (authentication, CONSTANTS, networkActivityTracker, tools, settingsApi, eventManager, notify, gettextCatalog) => {
 
         const notif = (message = '', type = 'success') => notify({ message, classes: `notification-${type}` });
 
@@ -17,7 +17,7 @@ angular.module('proton.ui')
             const newLayout = getLayout(mode);
 
             if (angular.isDefined(newLayout)) {
-                const promise = Setting.setViewlayout({ ViewLayout: newLayout })
+                const promise = settingsApi.setViewlayout({ ViewLayout: newLayout })
                     .then(({ data = {} } = {}) => {
                         if (data.Code === 1000) {
                             return eventManager.call()
