@@ -5,7 +5,6 @@ angular.module('proton', [
     'ngCookies',
     'ngIcal',
     'ngMessages',
-    'ngResource',
     'ngSanitize',
     'ngScrollbars',
     'pikaday',
@@ -122,14 +121,7 @@ angular.module('proton', [
     notify,
     tools
 ) => {
-    // angular.element($window).bind('load', () => {
-    //     // Enable FastClick
-    //     FastClick.attach(document.body);
-
-    //     if (window.location.hash === '#spin-me-right-round') {
-    //         $('body').append('<style>body > div * {-webkit-animation: spin 10s ease-in-out infinite;-moz-animation: spin 10s ease-in-out infinite;}</style>');
-    //     }
-    // });
+    FastClick.attach(document.body);
 
     // Manage responsive changes
     window.addEventListener('resize', _.debounce(tools.mobileResponsive, 50));
