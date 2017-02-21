@@ -18,18 +18,14 @@ angular.module('proton.vpn')
             isMember() && $state.go('secured.account');
             const unsubscribes = [];
             scope.vpnEnabled = vpnAccess();
-            scope.displayCredentials = false;
             scope.VPNLogin = getFirstEmail();
-            scope.showCredentials = () => {
-                const promise = vpnModel.fetch()
+
+            vpnModel.fetch()
                 .then(({ Status, Name, Password }) => {
                     scope.VPNStatus = Status;
                     scope.VPNName = Name;
                     scope.VPNPassword = Password;
-                    scope.displayCredentials = true;
                 });
-                networkActivityTracker.track(promise);
-            };
 
             scope.changeName = () => {
                 const params = {
