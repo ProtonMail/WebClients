@@ -8,6 +8,7 @@ angular.module('proton.vpn')
         controller(params) {
             const self = this;
             self.VPNPassword = '';
+            self.passwordDefined = typeof params.password !== 'undefined';
             self.submit = () => {
                 const { VPNPassword } = self;
                 const promise = settingsApi.updateVPNPassword({ VPNPassword })

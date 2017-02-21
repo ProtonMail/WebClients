@@ -43,7 +43,7 @@
                         </div>
                         <div class="col-4-8">
                             <label class="bold">{{ VPNName }}</label>
-                            <button ng-click="changeName()" type="button" class="pm_button" translate-context="Action" translate>Change VPN ID</button>
+                            <button ng-click="changeName()" type="button" class="pm_button" translate-context="Action" translate>Change VPN Login</button>
                         </div>
                     </div>
                     <div class="clearfix">
@@ -54,8 +54,8 @@
                         </div>
                         <div class="col-4-8">
                             <button ng-click="changePassword()" type="button" class="pm_button">
-                                <span ng-if="!VPNPassword" translate-context="Action" translate>Set VPN Password</span>
-                                <span ng-if="VPNPassword" translate-context="Action" translate>Change VPN Password</span>
+                                <span ng-if="!VPNPassword" translate-context="Action" translate>Set OpenVPN Password</span>
+                                <span ng-if="VPNPassword" translate-context="Action" translate>Change OpenVPN Password</span>
                             </button>
                         </div>
                     </div>
