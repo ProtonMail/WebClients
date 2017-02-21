@@ -2,7 +2,6 @@ angular.module('proton.attachments')
     .factory('embeddedUtils', (attachmentFileFormat, tools) => {
 
         const DIV = document.createElement('DIV');
-        const REGEXP_IS_INLINE = /^inline/i;
         const REGEXP_CID_START = /^cid:/g;
 
         /**
@@ -39,10 +38,13 @@ angular.module('proton.attachments')
             return '';
         };
 
-        const isInline = (Headers = {}) => {
-            const value = Headers['content-disposition'] || '';
-            return REGEXP_IS_INLINE.test(value);
-        };
+        /**
+         * Content-disposition is inconsistent, it can be attachment too
+         * Headers is empty for an attachment
+         * @param  {Object} Headers
+         * @return {Boolean}
+         */
+        const isInline = (Headers = {}) => !!Headers['content-id'];
 
         function isEmbedded({ Headers = {}, MIMEType = '' }) {
             return isInline(Headers) && attachmentFileFormat.isEmbedded(MIMEType);
