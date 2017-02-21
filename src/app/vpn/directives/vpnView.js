@@ -21,8 +21,7 @@ angular.module('proton.vpn')
             scope.VPNLogin = getFirstEmail();
 
             vpnModel.fetch()
-                .then(({ Status, Name, Password }) => {
-                    scope.VPNStatus = Status;
+                .then(({ Name, Password }) => {
                     scope.VPNName = Name;
                     scope.VPNPassword = Password;
                 });
@@ -42,6 +41,7 @@ angular.module('proton.vpn')
 
             scope.changePassword = () => {
                 const params = {
+                    password: scope.VPNPassword,
                     close(newPassword) {
                         if (newPassword) {
                             scope.VPNPassword = newPassword;
