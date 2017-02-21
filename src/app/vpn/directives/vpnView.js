@@ -22,9 +22,10 @@ angular.module('proton.vpn')
             scope.VPNLogin = getFirstEmail();
             scope.showCredentials = () => {
                 const promise = vpnModel.fetch()
-                .then(({ Status, Name }) => {
+                .then(({ Status, Name, Password }) => {
                     scope.VPNStatus = Status;
                     scope.VPNName = Name;
+                    scope.VPNPassword = Password;
                     scope.displayCredentials = true;
                 });
                 networkActivityTracker.track(promise);
@@ -45,7 +46,10 @@ angular.module('proton.vpn')
 
             scope.changePassword = () => {
                 const params = {
-                    close() {
+                    close(newPassword) {
+                        if (newPassword) {
+                            scope.VPNPassword = newPassword;
+                        }
                         changeVPNPasswordModal.deactivate();
                     }
                 };

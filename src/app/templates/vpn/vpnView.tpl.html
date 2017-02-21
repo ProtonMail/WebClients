@@ -83,7 +83,10 @@
                             </label>
                         </div>
                         <div class="col-4-8">
-                            <button ng-click="changePassword()" type="button" class="pm_button" translate-context="Action" translate>Change VPN password</button>
+                            <button ng-click="changePassword()" type="button" class="pm_button">
+                                <span ng-if="!VPNPassword" translate-context="Action" translate>Set VPN Password</span>
+                                <span ng-if="VPNPassword" translate-context="Action" translate>Change VPN Password</span>
+                            </button>
                         </div>
                     </div>
                 </section>

@@ -18,7 +18,7 @@ angular.module('proton.vpn')
                     throw new Error(data.Error || errorMessage);
                 })
                 .then(() => eventManager.call())
-                .then(() => notify({ message: successMessage, classes: 'notification-success' }), params.close());
+                .then(() => notify({ message: successMessage, classes: 'notification-success' }), params.close(VPNPassword));
                 networkActivityTracker.track(promise);
             };
             self.cancel = () => params.close();
