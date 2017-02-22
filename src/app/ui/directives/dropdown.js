@@ -1,5 +1,8 @@
 angular.module('proton.ui')
 .directive('dropdown', ($document, $rootScope) => {
+
+    const CLASS_OPEN = 'pm_dropdown-opened';
+
     return function (scope, element) {
         const parent = element.parent();
         const dropdown = parent.find('.pm_dropdown');
@@ -7,13 +10,13 @@ angular.module('proton.ui')
         // Functions
         function showDropdown() {
             element.addClass('active');
-            dropdown.show();
+            dropdown.addClass(CLASS_OPEN);
             $document.on('click', outside);
         }
 
         function hideDropdown() {
             element.removeClass('active');
-            dropdown.hide();
+            dropdown.removeClass(CLASS_OPEN);
             $document.off('click', outside);
         }
 

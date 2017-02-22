@@ -121,35 +121,6 @@ angular.module('proton.utils')
         return OSName;
     };
 
-    tools.getDevice = () => {
-        const deviceName = 'other';
-
-        // if (navigator.userAgent.match(/Android/i)) deviceName = "android";
-        // if (navigator.userAgent.match(/BlackBerry/i)) deviceName = "blackberry";
-        // if (navigator.userAgent.match(/iPhone|iPad|iPod/i)) deviceName = "ios";
-        // if (navigator.userAgent.match(/Opera Mini/i)) deviceName = "opera";
-        // if (navigator.userAgent.match(/IEMobile/i)) deviceName = "windowsPhone"
-
-        return deviceName;
-    };
-
-    tools.findBootstrapEnvironment = () => {
-        const envs = ['xs', 'sm', 'md', 'lg'];
-        const $el = $('<div>');
-
-        $el.appendTo($('body'));
-
-        for (let i = envs.length - 1; i >= 0; i--) {
-            const env = envs[i];
-
-            $el.addClass('hidden-' + env);
-            if ($el.is(':hidden')) {
-                $el.remove();
-                return env;
-            }
-        }
-    };
-
     tools.changeSeparatorToComma = (input) => {
         return input.replace(';', ',');
     };

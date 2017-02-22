@@ -21,8 +21,11 @@ angular.module('proton.composer')
                             message.focussed = false;
 
                             const { index, composer } = composerRender.findComposer(el[0], message);
+                            // As the $digest is way too slow, the composer is not always removed from the dom.
+                            const position = (index - 1 >= 0) ? index - 1 : index;
                             const state = angular.extend({}, data, {
-                                message, composer, index,
+                                message, composer,
+                                index: position,
                                 size: scope.messages.length,
                                 keepState: false
                             });
@@ -38,6 +41,7 @@ angular.module('proton.composer')
                 window.addEventListener('orientationchange', onOrientationChange, false);
 
                 const unsubscribe = $rootScope.$on('composer.update', (e, { type, data }) => {
+
                     switch (type) {
 
                         case 'focus.click':
@@ -81,13 +85,6 @@ angular.module('proton.composer')
                             });
                             break;
                         }
-                        default:
-                            // Need to perform the rendering after the $digest to match each new composer
-                            scope.$applyAsync(() => {
-                                const config = _.extend({}, { size: scope.messages.length }, data);
-                                renderList(config);
-                            });
-                            break;
                     }
 
 

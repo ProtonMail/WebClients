@@ -11,17 +11,16 @@ angular.module('proton.attachments')
 
         /**
          * When we close the composer we need to deallocate Blobs used by this composer
-         * @param  {String} 'composer.close'     EventName
-         * @param  {Object} e                    Event from Angular
-         * @return {String} opt.ID               ID of a message/conversation
-         * @return {String} opt.ConversationID   ID of a message
          */
-        $rootScope.$on('composer.close', (e, { ID, ConversationID }) => {
-            const key = `${PREFIX_DRAFT}${ConversationID || ID}`;
+        $rootScope.$on('composer.update', (e, { type, data = {} }) => {
+            if (type === 'close') {
+                const { ID, ConversationID } = data.message;
+                const key = `${PREFIX_DRAFT}${ConversationID || ID}`;
 
-            // Clean these blobs !
-            if (MAP_BLOBS[key]) {
-                deallocateList(key);
+                // Clean these blobs !
+                if (MAP_BLOBS[key]) {
+                    deallocateList(key);
+                }
             }
         });
 
