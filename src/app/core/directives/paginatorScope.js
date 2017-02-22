@@ -1,5 +1,5 @@
 angular.module('proton.core')
-.directive('paginatorScope', () => {
+.directive('paginatorScope', ($rootScope) => {
     return {
         restrict: 'E',
         replace: true,
@@ -10,16 +10,16 @@ angular.module('proton.core')
             itemsPerPage: '=',
             change: '='
         },
-        link(scope) {
+        link(scope, el, attribute) {
             scope.pages = [];
 
-            const disable = function () {
+            const disable = () => {
                 scope.disableMain = Math.ceil(scope.totalItems / scope.itemsPerPage) === 1 || scope.totalItems === 0; // Main
                 scope.disableP = scope.page === 1 || scope.totalItems === 0; // Previous
                 scope.disableN = Math.ceil(scope.totalItems / scope.itemsPerPage) === scope.page || scope.totalItems === 0; // Next
             };
 
-            const buildPages = function () {
+            const buildPages = () => {
                 let pages;
                 const temp = [];
 
@@ -36,23 +36,27 @@ angular.module('proton.core')
                 scope.pages = temp;
             };
 
+            scope.select = (p) => {
+                scope.change(p);
+                scope.$applyAsync(() => disable());
+            };
+
+            scope.next = () => scope.change(scope.page + 1);
+            scope.previous = () => scope.change(scope.page - 1);
+
             scope.$watch('totalItems', () => {
                 disable();
                 buildPages();
             });
 
-            scope.select = function (p) {
-                scope.change(p);
-                scope.$applyAsync(() => disable());
-            };
+            const unsubscribe = $rootScope.$on('paginatorScope', (e, { type, page }) => {
+                if (type === attribute.type) {
+                    scope.page = page;
+                    disable();
+                }
+            });
 
-            scope.next = function () {
-                scope.select(scope.page + 1);
-            };
-
-            scope.previous = function () {
-                scope.select(scope.page - 1);
-            };
+            scope.$on('$destroy', () => unsubscribe());
         }
     };
 });

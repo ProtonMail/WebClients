@@ -27,6 +27,11 @@ angular.module('proton.settings')
     $scope.disabledText = gettextCatalog.getString('Disable', null, 'Action');
     $scope.haveLogs = false;
 
+    const setCurrentPage = (p) => {
+        $scope.currentLogPage = p;
+        $rootScope.$emit('paginatorScope', { type: 'logs', page: p });
+    };
+
     function recoveryCodes(codes) {
         recoveryCodeModal.activate({
             params: {
@@ -141,7 +146,7 @@ angular.module('proton.settings')
     };
 
     $scope.loadLogs = (page) => {
-        $scope.currentLogPage = page;
+        setCurrentPage(page);
     };
 
     $scope.initLogs = () => {
@@ -150,7 +155,7 @@ angular.module('proton.settings')
                 (response) => {
                     $scope.logs = _.sortBy(response.data.Logs, 'Time').reverse();
                     $scope.logCount = $scope.logs.length;
-                    $scope.currentLogPage = 1;
+                    setCurrentPage(1);
                     $scope.haveLogs = true;
                 },
                 (error) => {

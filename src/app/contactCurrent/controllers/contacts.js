@@ -21,7 +21,12 @@ angular.module('proton.contactCurrent')
     // Variables
     let lastChecked = null;
 
-    $scope.currentPage = 1;
+    const setCurrentPage = (p) => {
+        $scope.currentPage = p;
+        $rootScope.$emit('paginatorScope', { type: 'contacts', page: p });
+    };
+
+    setCurrentPage(1);
     $scope.params = { searchContactInput: '' };
     $scope.editing = false;
     $scope.numPerPage = CONSTANTS.ELEMENTS_PER_PAGE;
@@ -51,6 +56,7 @@ angular.module('proton.contactCurrent')
     });
 
     // Methods
+
     $scope.initialization = () => {
         $scope.updateContacts();
     };
@@ -80,7 +86,7 @@ angular.module('proton.contactCurrent')
         };
 
         if (searching === true) {
-            $scope.currentPage = 1;
+            setCurrentPage(1);
         }
 
         return pagination(orderBy(search(contacts)));
@@ -91,7 +97,7 @@ angular.module('proton.contactCurrent')
     };
 
     $scope.selectPage = (page) => {
-        $scope.currentPage = page;
+        setCurrentPage(page);
         $scope.refreshContacts();
     };
 
