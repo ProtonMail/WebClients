@@ -16,6 +16,9 @@ RewriteRule ^.*$ - [NC,L]
 
 RewriteRule ^(.*) /app.html [NC,L]
 
+# Error pages
+ErrorDocument 403   /assets/errors/403.html
+
 <Files app.html>
     FileETag None
     Header unset ETag
