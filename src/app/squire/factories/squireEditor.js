@@ -90,7 +90,9 @@ angular.module('proton.squire')
             }
 
             .protonmail_signature_block-empty {
-                display: none
+                opacity: 0;
+                height: 0;
+                overflow: hidden;
             }
 
             .protonmail_quote {

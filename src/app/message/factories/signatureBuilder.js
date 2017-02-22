@@ -51,7 +51,7 @@ angular.module('proton.message')
          *     No signature: 1 space
          *     userSignature: 2 spaces + userSignature
          *     protonSignature: 2 spaces + protonSignature
-         *     user + proton signature: 2 spaces
+         *     user + proton signature: 2 spaces + userSignature + 1 space + protonSignature
          * @param  {String}  userSignature
          * @param  {String}  protonSignature
          * @param  {Boolean} isReply
@@ -60,11 +60,10 @@ angular.module('proton.message')
         const getSpaces = (userSignature, protonSignature, isReply = false) => {
             const noUserSignature = isEmptyUserSignature(userSignature);
             const isEmptySignature = noUserSignature && !protonSignature;
-
             return {
                 start: isEmptySignature ? createSpace() : (createSpace() + createSpace()),
                 end: isReply ? createSpace() : '',
-                between: (!noUserSignature && userSignature) ? createSpace() : ''
+                between: (!noUserSignature && protonSignature) ? createSpace() : ''
             };
         };
 

@@ -391,7 +391,11 @@
 }
 
 
-.protonmail_signature_block-empty {display: none}
+.protonmail_signature_block-empty { /* https://github.com/ProtonMail/Angular/issues/4813 */
+    opacity: 0;
+    height: 0;
+    overflow: hidden;
+}
 
 // MOBILE
 body.mobileMode {
