@@ -542,10 +542,10 @@ angular.module('proton.authentication')
                 if ($rootScope.plainMailboxPass) {
                     checkKeysFormat(user, keys)
                     .catch(( err ) => {
-                         upgradeKeys({mailboxPassword: $rootScope.plainMailboxPass, oldSaltedPassword: this.getPassword(), user})
-                         .then(() => {
-                            $rootScope.plainMailboxPass = null;
-                         });
+                        upgradeKeys({mailboxPassword: $rootScope.plainMailboxPass, oldSaltedPassword: this.getPassword(), user})
+                        .then(() => {
+                           $rootScope.plainMailboxPass = null;
+                        });
                     });
                 }
 
