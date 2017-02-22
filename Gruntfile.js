@@ -14,7 +14,7 @@ var API_TARGETS = {
     local: 'https://protonmail.dev/api',
     build: '/api'
 };
-var autoprefixer = require("autoprefixer");
+var autoprefixer = require('autoprefixer');
 var browserslist = require('./browserslist');
 
 
@@ -393,9 +393,9 @@ module.exports = function(grunt) {
             compile: {
                 dir: '<%= compile_dir %>',
                 src: [
-                    "<%= compile_dir %>/openpgp.min.js",
-                    "<%= compile_dir %>/assets/app.js",
-                    "<%= compile_dir %>/assets/app.css"
+                    '<%= compile_dir %>/openpgp.min.js',
+                    '<%= compile_dir %>/assets/app.js',
+                    '<%= compile_dir %>/assets/app.css'
                 ],
                 deployment: true
             }
@@ -556,7 +556,7 @@ module.exports = function(grunt) {
         'build',
         'connect:watch',
         'browserSync',
-        'delta',
+        'delta'
     ]);
 
     grunt.registerTask('deploy', [
@@ -584,6 +584,7 @@ module.exports = function(grunt) {
         'html2js',
         'sass:build',
         'concat:build_css',
+        'postcss',
         'copy:build_app_assets',
         'copy:build_appjs',
         'copy:build_vendorjs',
@@ -591,7 +592,6 @@ module.exports = function(grunt) {
         'copy:build_htaccess',
         'ngAnnotate',
         'babel:dist',
-        'index:build',
-        'postcss'
+        'index:build'
     ]);
 };
