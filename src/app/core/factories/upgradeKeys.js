@@ -115,8 +115,10 @@ angular.module('proton.core')
         return ({ mailboxPassword = '', oldSaltedPassword = '', user = {} }) => {
             const keySalt = passwords.generateKeySalt();
             const loginPassword = user.PasswordMode === 1 ? mailboxPassword : '';
+            let passwordComputed = '';
             const promise = passwords.computeKeyPassword(mailboxPassword, keySalt)
-                .then((passwordComputed) => {
+                .then((password) => {
+                    passwordComputed = password;
                     const promises = [];
                     const collection = manageUserKeys(passwordComputed, oldSaltedPassword, user);
 
@@ -134,7 +136,7 @@ angular.module('proton.core')
                 .then(({ data = {} } = {}) => {
                     if (data.Code === 1000) {
                         if (!user.OrganizationPrivateKey) {
-                            secureSessionStorage.setItem(CONSTANTS.MAILBOX_PASSWORD_KEY, pmcw.encode_utf8_base64(pwd));
+                            secureSessionStorage.setItem(CONSTANTS.MAILBOX_PASSWORD_KEY, pmcw.encode_utf8_base64(passwordComputed));
                         }
                     }
                     //fail silently
