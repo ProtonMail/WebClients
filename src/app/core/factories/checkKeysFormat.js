@@ -25,10 +25,10 @@ angular.module('proton.core')
                 //If there is no matching fingerprint, we will just make sure the User ID matches the pattern "something <email>"
                 if (email === "") {
                     const split = userId.split(" ");
-                    if (split.length !== 2){
+                    if (split.length !== 2) {
                         return Promise.reject('Invalid UserID ' + userId);
                     }
-                    const emailWithBrackets = split[1]
+                    const emailWithBrackets = split[1];
                     email = emailWithBrackets.substring(1, emailWithBrackets.length - 1);
                     if (emailWithBrackets[0] !== "<" || emailWithBrackets[emailWithBrackets.length - 1] !== ">" || !regexEmail.test(email)) {
                         return Promise.reject('Invalid UserID ' + userId);
