@@ -1,5 +1,5 @@
 angular.module('proton.vpn')
-.directive('vpnView', ($rootScope, $state, CONSTANTS, authentication, changeVPNNameModal, changeVPNPasswordModal, organizationModel, networkActivityTracker, vpnModel) => {
+.directive('vpnView', ($rootScope, $state, CONSTANTS, authentication) => {
     const isMember = () => authentication.user.Role === CONSTANTS.PAID_MEMBER_ROLE;
     const vpnAccess = () => {
         const { PlanName = '', Status = 0 } = authentication.user.VPN;
@@ -19,38 +19,6 @@ angular.module('proton.vpn')
             const unsubscribes = [];
             scope.vpnEnabled = vpnAccess();
             scope.VPNLogin = getFirstEmail();
-
-            vpnModel.fetch()
-                .then(({ Name, Password }) => {
-                    scope.VPNName = Name;
-                    scope.VPNPassword = Password;
-                });
-
-            scope.changeName = () => {
-                const params = {
-                    name: scope.VPNName,
-                    close(newName) {
-                        if (newName) {
-                            scope.VPNName = newName;
-                        }
-                        changeVPNNameModal.deactivate();
-                    }
-                };
-                changeVPNNameModal.activate({ params });
-            };
-
-            scope.changePassword = () => {
-                const params = {
-                    password: scope.VPNPassword,
-                    close(newPassword) {
-                        if (newPassword) {
-                            scope.VPNPassword = newPassword;
-                        }
-                        changeVPNPasswordModal.deactivate();
-                    }
-                };
-                changeVPNPasswordModal.activate({ params });
-            };
 
             unsubscribes.push($rootScope.$on('updateUser', () => {
                 scope.VPNLogin = getFirstEmail();
