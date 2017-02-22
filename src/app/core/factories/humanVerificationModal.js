@@ -14,9 +14,9 @@ angular.module('proton.core')
         controller(params, $scope) {
             const self = this;
             const unsubscribe = [];
-            self.tokens = {
-                captcha: ''
-            };
+
+            self.tokens = { captcha: '' };
+
             const promise = User.human()
             .then(handleResult)
             .then(({ VerifyMethods, Token }) => {
@@ -26,7 +26,9 @@ angular.module('proton.core')
                 self.showCaptcha = _.contains(VerifyMethods, 'captcha');
                 self.verificator = 'captcha';
             });
+
             networkActivityTracker.track(promise);
+
             self.submit = () => {
                 const promise = User.check({ Token: self.tokens[self.verificator], TokenType: self.verificator })
                 .then(handleResult)
@@ -38,14 +40,15 @@ angular.module('proton.core')
                 });
                 networkActivityTracker.track(promise);
             };
-            self.cancel = () => {
-                params.close(false);
-            };
+
+            self.cancel = () => params.close(false);
+
             unsubscribe.push($rootScope.$on('captcha.token', (event, token) => {
                 $scope.$applyAsync(() => {
                     self.tokens.captcha = token;
                 });
             }));
+
             self.$onDestroy = () => {
                 unsubscribe.forEach((cb) => cb());
                 unsubscribe.length = 0;
