@@ -1,0 +1,32 @@
+<section class="pm_form col-1-2">
+    <legend translate-context="Title" translate>OpenVPN Login</legend>
+    <p class="alert alert-info">
+        <span translate-context="Info" translate>Use the following credentials when connecting to ProtonVPN with third party clients, for example: Tunnelblick on MacOS or OpenVPN on GNU/Linux.</span>
+        <br /><br />
+        <a href="https://protonvpn.com/support/vpn-login/" target="_blank" translate-context="Link" translate>What is the difference between ProtonVPN and OpenVPN logins?</a>
+    </p>
+    <div class="clearfix">
+        <div class="col-4-8">
+            <label>
+                <span translate-context="Label" translate>OpenVPN Login</span>
+            </label>
+        </div>
+        <div class="col-4-8">
+            <label class="bold">{{ VPNName }}</label>
+            <button ng-click="changeName()" type="button" class="pm_button" translate-context="Action" translate>Change OpenVPN Login</button>
+        </div>
+    </div>
+    <div class="clearfix">
+        <div class="col-4-8">
+            <label>
+                <span translate-context="Label" translate>OpenVPN Password</span>
+            </label>
+        </div>
+        <div class="col-4-8">
+            <button ng-click="changePassword()" type="button" class="pm_button">
+                <span ng-if="!VPNPassword" translate-context="Action" translate>Set OpenVPN Password</span>
+                <span ng-if="VPNPassword" translate-context="Action" translate>Change OpenVPN Password</span>
+            </button>
+        </div>
+    </div>
+</section>
