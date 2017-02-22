@@ -14,6 +14,9 @@ var API_TARGETS = {
     local: 'https://protonmail.dev/api',
     build: '/api'
 };
+var autoprefixer = require("autoprefixer");
+var browserslist = require('./browserslist');
+
 
 module.exports = function(grunt) {
     var serveStatic = require('serve-static');
@@ -303,14 +306,23 @@ module.exports = function(grunt) {
                 nonull: true
             }
         },
-
         cssmin: {
             compile: {
                 src: ["<%= build_dir %>/assets/**/*.css"],
                 dest: "<%= compile_dir %>/assets/app.css"
             }
         },
-
+        postcss: {
+                options: {
+                    map: true,
+                    processors: [
+                        autoprefixer(browserslist)
+                    ]
+                },
+                dist: {
+                    src: ["<%= build_dir %>/**/*.css"],
+                }
+        },
         html2js: {
             app: {
                 options: {
@@ -534,7 +546,7 @@ module.exports = function(grunt) {
 
     // Project config
     grunt.initConfig(grunt.util._.extend(taskConfig, userConfig));
-
+    grunt.loadNpmTasks('grunt-postcss');
     grunt.loadNpmTasks('grunt-browser-sync');
     grunt.renameTask('watch', 'delta');
 
@@ -579,6 +591,7 @@ module.exports = function(grunt) {
         'copy:build_htaccess',
         'ngAnnotate',
         'babel:dist',
-        'index:build'
+        'index:build',
+        'postcss'
     ]);
 };
