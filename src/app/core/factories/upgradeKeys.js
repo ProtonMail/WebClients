@@ -97,7 +97,7 @@ angular.module('proton.core')
             });
         }
 
-        function sendNewKeys({ keys = [], keySalt = '', organizationKey = 0, newLoginPassword = '' }) {
+        function sendNewKeys({ keys = [], keySalt = '', organizationKey = 0, loginPassword = '' }) {
             const keysFiltered = keys.filter((key) => key !== 0);
             const payload = { KeySalt: keySalt, Keys: keysFiltered };
 
@@ -109,7 +109,7 @@ angular.module('proton.core')
                 payload.OrganizationKey = organizationKey;
             }
 
-            return Key.upgrade(payload, newLoginPassword);
+            return Key.upgrade(payload, loginPassword);
         }
 
         return ({ mailboxPassword = '', oldSaltedPassword = '', user = {} }) => {
