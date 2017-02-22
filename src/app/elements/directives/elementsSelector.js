@@ -1,4 +1,4 @@
-angular.module('proton.ui')
+angular.module('proton.elements')
 .directive('elementsSelector', ($rootScope, authentication, gettextCatalog, dedentTpl) => {
     const isChecked = true;
     const ORDER_FALSY = ['all', 'read', 'unread', 'star', 'unstar'];
@@ -56,7 +56,7 @@ angular.module('proton.ui')
 
     return {
         replace: true,
-        templateUrl: 'templates/directives/ui/elementsSelector.tpl.html',
+        templateUrl: 'templates/elements/elementsSelector.tpl.html',
         compile(element) {
             const dropdown = element[0].querySelector('.pm_dropdown');
             dropdown.insertAdjacentHTML('beforeEnd', getTemplate());

@@ -17,8 +17,9 @@ angular.module('proton.ui')
         replace: true,
         template: '<time class="time"></time>',
         link(scope, element) {
-            const unsubscribe = $rootScope.$on('refreshTimeElement', () => displayTime());
-            scope.$on('$destroy', () => unsubscribe());
+            const unsubscribe = $rootScope.$on('elements', (e, { type }) => {
+                (type === 'refresh.time') && displayTime();
+            });
             displayTime();
             /**
              * Insert new time value inside the element
@@ -26,6 +27,7 @@ angular.module('proton.ui')
             function displayTime() {
                 element[0].textContent = getTime(scope.conversation);
             }
+            scope.$on('$destroy', () => unsubscribe());
         }
     };
 });

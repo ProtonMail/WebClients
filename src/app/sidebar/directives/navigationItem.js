@@ -60,7 +60,9 @@ angular.module('proton.sidebar')
                 }));
 
                 // Update the counter when we update it (too many updates if we update them via app.cacheCounters)
-                unsubscribe.push($rootScope.$on('refreshElements', updateCounter));
+                unsubscribe.push($rootScope.$on('elements', (e, { type }) => {
+                    (type === 'refresh') && updateCounter();
+                }));
 
                 // Check the current state to set the current one as active
                 unsubscribe.push($rootScope.$on('$stateChangeSuccess', () => {

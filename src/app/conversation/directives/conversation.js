@@ -201,7 +201,12 @@ angular.module('proton.conversation')
                 // Ensure only one event Listener
                 hotkeys.unbind(['down', 'up']);
                 hotkeys.bind(['down', 'up']);
-                $rootScope.$emit('conversation.close', scope.conversation);
+                $rootScope.$emit('elements', {
+                    type: 'close',
+                    data: {
+                        element: scope.conversation
+                    }
+                });
             });
 
             scope.$on('unmarkMessages', () => {

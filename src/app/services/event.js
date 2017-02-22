@@ -253,7 +253,6 @@ angular.module('proton.event', ['proton.constants', 'proton.utils'])
                         }
                     });
 
-                    $rootScope.$emit('conversations.counter');
                 }
             },
             manageThreadings(messages, conversations) {

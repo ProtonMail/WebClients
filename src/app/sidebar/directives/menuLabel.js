@@ -48,7 +48,9 @@ angular.module('proton.sidebar')
                 }));
 
                 // Update the counter when we update it (too many updates if we update them via app.cacheCounters)
-                unsubscribe.push($rootScope.$on('refreshElements', () => updateCounter()));
+                unsubscribe.push($rootScope.$on('elements', (e, { type }) => {
+                    (type === 'refresh') && updateCounter();
+                }));
                 unsubscribe.push($rootScope.$on('deleteLabel', () => updateCache()));
                 unsubscribe.push($rootScope.$on('createLabel', () => updateCache()));
                 unsubscribe.push($rootScope.$on('updateLabel', () => updateCache()));

@@ -29,6 +29,11 @@ angular.module('proton.elements')
 ) => {
     const unsubscribes = [];
     let unbindWatcherElements;
+    const MINUTE = 60 * 1000;
+
+    const id = setInterval(() => {
+        $rootScope.$emit('elements', { type: 'refresh.time' });
+    }, MINUTE);
 
     $scope.elementsLoaded = false;
     $scope.conversations = [];
@@ -123,12 +128,18 @@ angular.module('proton.elements')
             }
         };
 
-        unsubscribes.push($rootScope.$on('conversation.close', () => {
-            isOpened = false;
-        }));
-
-        unsubscribes.push($rootScope.$on('refreshElements', () => {
-            $scope.refreshElements();
+        unsubscribes.push($rootScope.$on('elements', (e, { type, data = {} }) => {
+            switch (type) {
+                case 'open':
+                    $scope.$applyAsync(() => openElement(data.element));
+                    break;
+                case 'close':
+                    isOpened = false;
+                    break;
+                case 'refresh':
+                    $scope.refreshElements();
+                    break;
+            }
         }));
 
         $scope.$on('openMarked', onElement(() => {
@@ -239,6 +250,8 @@ angular.module('proton.elements')
         $scope.$on('$destroy', () => {
             $scope.stopWatchingEvent();
             unsubscribes.forEach((callback) => callback());
+            unsubscribes.length = 0;
+            clearInterval(id);
         });
     };
 
@@ -769,8 +782,7 @@ angular.module('proton.elements')
 
         const view = tools.typeView();
         const list = tools.typeList();
-        const name = $state.$current.name;
-        const route = name.replace('.element', '');
+
         const params = {};
         const sameView = $state.params.id && $state.params.id === element.ConversationID;
 
@@ -798,30 +810,18 @@ angular.module('proton.elements')
         $scope.markedElement = element;
 
         if (sameView) {
-            $rootScope.$emit('message.open', {
+            return $rootScope.$emit('message.open', {
                 type: 'toggle',
                 data: {
                     message: element,
                     action: 'openElement'
                 }
             });
-        } else {
-            $state.go(route + '.element', params);
         }
+        const route = $state.$current.name.replace('.element', '');
+        $state.go(route + '.element', params);
     }
 
-    /**
-     * On click on a conversation
-     * @param {Object} element - Conversation or Message
-     */
-    $scope.click = ($event, element) => {
-        // Prevent click onto the select checkbox
-        if ($event.target && /ptSelectConversation|customMaskInput/.test($event.target.className)) {
-            return false;
-        }
-
-        openElement(element);
-    };
     // Call initialization
     initialization();
 });
