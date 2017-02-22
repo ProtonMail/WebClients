@@ -16,6 +16,8 @@
 	-webkit-overflow-scrolling: touch;
 	border-radius: 2px !important;
 	box-shadow: 4px 4px 4px rgba(0,0,0,.15);
+
+    &.pm_dropdown-opened { display: block }
 	&.right {
 		right: -1px;
 		left: auto !important;

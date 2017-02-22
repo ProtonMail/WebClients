@@ -347,16 +347,6 @@ angular.module('proton.composer')
         message.ccbcc = false;
         message.autocompletesFocussed = false;
 
-        // if tablet we maximize by default
-        if (tools.findBootstrapEnvironment() === 'sm') {
-            message.maximized = true;
-            if ($scope.messages.length > 0) {
-                notify.closeAll();
-                notify({ message: gettextCatalog.getString('Maximum composer reached', null, 'Error'), classes: 'notification-danger' });
-                return;
-            }
-        }
-
         message.uid = $scope.uid++;
         message.pendingAttachements = [];
         message.askEmbedding = false;
@@ -1052,8 +1042,6 @@ angular.module('proton.composer')
         const process = () => {
             // Remove message in composer controller
             $scope.messages = removeMessage($scope.messages, message);
-
-            $rootScope.$emit('composer.close', message);
             composerRequestModel.clear(message);
 
             // Hide all the tooltip

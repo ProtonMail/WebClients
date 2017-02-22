@@ -38,15 +38,13 @@ function generateDirective(attrName) {
 
     const normAttrName = normalizeAttributeName(attrName);
 
-    return function (gettextCatalog, $parse, $animate, $compile, $window) {
-
-        const msie = parseInt((/msie (\d+)/.exec(angular.lowercase($window.navigator.userAgent)) || [])[1], 10);
+    return function (gettextCatalog, $parse, $animate, $compile) {
 
         return {
             restrict: 'A',
             terminal: true,
             priority: 1000,
-            compile: function compile(element, attrs) {
+            compile(element, attrs) {
                 // Validate attributes
                 if (!attrs[normAttrName + 'Translate']) {
                     throw new Error('Missing ' + normAttrName + '-translate attribute!');
@@ -54,21 +52,14 @@ function generateDirective(attrName) {
                 assert(!attrs[normAttrName + 'TranslatePlural'] || attrs[normAttrName + 'TranslateN'], normAttrName + 'translate-n', normAttrName + 'translate-plural');
                 assert(!attrs[normAttrName + 'TranslateN'] || attrs[normAttrName + 'TranslatePlural'], normAttrName + 'translate-plural', normAttrName + 'translate-n');
 
-                let msgid = attrs[normAttrName + 'Translate'];
+                const msgid = attrs[normAttrName + 'Translate'];
                 const translatePlural = attrs[normAttrName + 'TranslatePlural'];
                 const translateContext = attrs[normAttrName + 'TranslateContext'];
 
-                if (msie <= 8) {
-                    // Workaround fix relating to angular adding a comment node to
-                    // anchors. angular/angular.js/#1949 / angular/angular.js/#2013
-                    if (msgid.slice(-13) === '<!--IE fix-->') {
-                        msgid = msgid.slice(0, -13);
-                    }
-                }
-
                 return {
                     pre(scope, element, attrs) {
-                        const countFn = $parse(attrs[normAttrName + 'TranslateN']);
+                        const attribute = attrs[normAttrName + 'TranslateN'];
+                        const countFn = attribute ? angular.noop : $parse(attribute);
                         let pluralScope = null;
 
                         function update() {
@@ -91,11 +82,11 @@ function generateDirective(attrName) {
                             }
 
                             // Swap in the translation
-                            element.attr(attrName, translated);
+                            element[0].setAttribute(attrName, translated);
                         }
 
-                        if (attrs[normAttrName + 'TranslateN']) {
-                            scope.$watch(attrs[normAttrName + 'TranslateN'], update);
+                        if (attribute) {
+                            scope.$watch(attribute, update);
                         }
 
                         /**

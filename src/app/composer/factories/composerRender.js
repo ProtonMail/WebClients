@@ -1,5 +1,5 @@
 angular.module('proton.composer')
-    .factory('composerRender', (tools) => {
+    .factory('composerRender', () => {
 
         /**
          * Compute some informations about a composer
@@ -11,17 +11,15 @@ angular.module('proton.composer')
             const width = element.offsetWidth;
             const margin = document.documentElement.classList.contains('ua-windows_nt') ? 40 : 20;
             const windowWidth = document.body.offsetWidth;
-            const isBootstrap = tools.findBootstrapEnvironment() === 'xs';
             let overlap = 0;
 
-            if (!isBootstrap && ((windowWidth / count) < width)) {
+            if (((windowWidth / count) < width)) {
                 /* overlap is a ratio that will share equaly the space available between overlayed composers. */
                 overlap = ((windowWidth - width - margin) / (count - 1));
             }
 
             return {
-                width, margin, windowWidth,
-                isBootstrap, overlap
+                width, margin, windowWidth, overlap
             };
         }
 
@@ -63,10 +61,6 @@ angular.module('proton.composer')
                 // Better for rendering
                 styles.transform = `translateX(-${getPositionRight(config, index)}px)`;
 
-                if (config.isBootstrap) {
-                    styles.top = '80px';
-                }
-
                 bindStyles(node, styles);
             });
         }
@@ -74,6 +68,7 @@ angular.module('proton.composer')
 
         function findComposer(node, { ID }) {
             const composer = node.querySelector(`[data-composer-id="${ID}"]`);
+
             if (!composer) {
                 return {
                     composer: angular.element(node.querySelector('.composer')),
