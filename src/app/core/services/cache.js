@@ -25,6 +25,8 @@ angular.module('proton.core')
     const UPDATE_DRAFT = 2;
     const UPDATE_FLAGS = 3;
 
+    const dispatchElements = (type, data = {}) => $rootScope.$emit('elements', { type, data });
+
     $interval(expiration, 1000, 0, false);
 
     /**
@@ -416,7 +418,7 @@ angular.module('proton.core')
             }
         }
 
-        $rootScope.$emit('refreshElements');
+        dispatchElements('refresh');
     };
 
     /**
@@ -918,11 +920,11 @@ angular.module('proton.core')
      * Second with the query call
      */
     api.callRefresh = (messageIDs = [], conversationIDs = []) => {
-        $rootScope.$emit('refreshElements');
+        dispatchElements('refresh');
         $rootScope.$emit('updatePageName');
         $rootScope.$emit('refreshConversation', conversationIDs);
         $rootScope.$emit('message.refresh', messageIDs);
-        $rootScope.$emit('refreshTimeElement');
+        dispatchElements('refresh.time');
     };
 
     /**
