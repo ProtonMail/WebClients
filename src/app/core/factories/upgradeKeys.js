@@ -135,9 +135,7 @@ angular.module('proton.core')
                 }))
                 .then(({ data = {} } = {}) => {
                     if (data.Code === 1000) {
-                        if (!user.OrganizationPrivateKey) {
-                            secureSessionStorage.setItem(CONSTANTS.MAILBOX_PASSWORD_KEY, pmcw.encode_utf8_base64(passwordComputed));
-                        }
+                        secureSessionStorage.setItem(CONSTANTS.MAILBOX_PASSWORD_KEY, pmcw.encode_utf8_base64(passwordComputed));
                     }
                     //fail silently
                     return Promise.resolve();

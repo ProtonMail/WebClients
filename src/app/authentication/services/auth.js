@@ -538,8 +538,7 @@ angular.module('proton.authentication')
                 if (user.DisplayName.length === 0) {
                     user.DisplayName = user.Name;
                 }
-
-                if ($rootScope.plainMailboxPass) {
+                if ($rootScope.plainMailboxPass && !user.OrganizationPrivateKey) {
                     checkKeysFormat(user, keys)
                     .catch(( err ) => {
                         upgradeKeys({mailboxPassword: $rootScope.plainMailboxPass, oldSaltedPassword: this.getPassword(), user})
