@@ -15,7 +15,7 @@ angular.module('proton.core')
                 const userId = privKey.users[0].userId.userid;
                 const fingerprint = privKey.primaryKey.fingerprint;
 
-                let email = ""
+                let email = "";
                 _.each(user.Addresses, (address) => {
                     const foundKey = _.findWhere(address.Keys, { Fingerprint: fingerprint });
                     if (foundKey) {
@@ -23,7 +23,7 @@ angular.module('proton.core')
                     }
                 });
                 //If there is no matching fingerprint, we will just make sure the User ID matches the pattern "something <email>"
-                if (email === ""){
+                if (email === "") {
                     const split = userId.split(" ");
                     if (split.length !== 2){
                         return Promise.reject('Invalid UserID ' + userId);
