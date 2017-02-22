@@ -9,6 +9,7 @@ angular.module('proton.authentication')
     $injector,
     $exceptionHandler,
     authApi,
+    checkKeysFormat,
     CONFIG,
     CONSTANTS,
     Contact,
@@ -20,7 +21,6 @@ angular.module('proton.authentication')
     networkActivityTracker,
     notify,
     pmcw,
-    regexEmail,
     secureSessionStorage,
     organizationApi,
     User,
@@ -261,76 +261,6 @@ angular.module('proton.authentication')
          */
         getPrivateKeys(addressID) {
             return keys[addressID];
-        },
-
-        checkKeysFormat(user){
-            const primaryKeys = keys['0'];
-            let allPrivateKeys = primaryKeys;
-            let promises = [];
-
-            //For primary keys, we will determine which email to use by comparing their fingerprints with the address keys
-            for (var i in primaryKeys) {
-                const privKey = primaryKeys[i];
-                const userId = privKey.users[0].userId.userid;
-                const fingerprint = privKey.primaryKey.fingerprint;
-
-                let email = ""
-                for (var j in user.Addresses) {
-                    const foundKey = _.findWhere(user.Addresses[j].Keys, { Fingerprint: fingerprint });
-                    if (foundKey) {
-                        email = user.Addresses[j].Email;
-                    }
-                }
-                //If there is no matching fingerprint, we will just make sure the User ID matches the pattern "something <email>"
-                if (email === ""){
-                    const split = userId.split(" ");
-                    if (split.length !== 2){
-                        return Promise.reject('Invalid UserID ' + userId);
-                    }
-                    const emailWithBrackets = split[1]
-                    email = emailWithBrackets.substring(1, emailWithBrackets.length - 1);
-                    if (emailWithBrackets[0] !== "<" || emailWithBrackets[emailWithBrackets.length - 1] !== ">" || !regexEmail.test(email)) {
-                        return Promise.reject('Invalid UserID ' + userId);
-                    }
-                }
-
-                const keyInfo =
-                    pmcw.keyInfo(privKey.armor(), email, false)
-                    .then((info) => {
-                        if (info.validationError !== null){
-                            return Promise.reject(info.validationError);
-                        }
-                    });
-                promises.push(keyInfo);
-            }
-
-            //Now we check the User IDs of the address keys
-            for (var addressID in keys) {
-                if (addressID === '0') {
-                    //These are primary keys, we already checked their user IDs earlier
-                    continue;
-                }
-                const address = _.findWhere(user.Addresses, { ID: addressID });
-                const email = address.Email;
-                let privKeys = keys[addressID];
-                allPrivateKeys = allPrivateKeys.concat(privKeys);
-
-                for (var i in privKeys){
-                    const privKey = privKeys[i];
-
-                    const keyInfo =
-                        pmcw.keyInfo(privKey.armor(), email, false)
-                        .then((info) => {
-                            if (info.validationError !== null){
-                                return Promise.reject(info.validationError);
-                            }
-                        });
-
-                    promises.push(keyInfo);
-                }
-            }
-            promises.push(pmcw.signMessage(allPrivateKeys));
-            return Promise.all(promises);
         },
 
         /**
@@ -610,7 +540,7 @@ angular.module('proton.authentication')
                 }
 
                 if ($rootScope.plainMailboxPass) {
-                    this.checkKeysFormat(user)
+                    checkKeysFormat(user, keys)
                     .catch(( err ) => {
                          upgradeKeys({mailboxPassword: $rootScope.plainMailboxPass, oldSaltedPassword: this.getPassword(), user})
                          .then(() => {
