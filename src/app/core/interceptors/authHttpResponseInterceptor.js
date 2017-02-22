@@ -55,17 +55,8 @@ angular.module('proton.core')
                     // site offline
                     notifyError(NOTIFS.offline + response.data.Error);
                 } else if (response.data.Code === 9001) {
-                    const humanVerificationModal = $injector.get('humanVerificationModal');
-                    humanVerificationModal.activate({
-                        params: {
-                            response,
-                            close(resend = false) {
-                                const $http = $injector.get('$http');
-                                humanVerificationModal.deactivate();
-                                resend && $http(response.config);
-                            }
-                        }
-                    });
+                    const handle9001 = $injector.get('handle9001');
+                    return handle9001(response.config);
                 }
             }
 
