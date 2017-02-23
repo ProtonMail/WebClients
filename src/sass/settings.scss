@@ -675,3 +675,24 @@ body.mobileMode {
         }
     }
 }
+
+[name="signature"] .squire-popover {
+    font-size: .9em;
+    width: 20em;
+
+    [class*="-panel"] {
+        padding: .5em 1em;
+        margin: 0 !important;
+    }
+    [class*="-label"] {
+        height: auto;
+        line-height: 2;
+    }
+    [class*="-input"] {
+        width: 100%;
+        margin: 0
+    }
+    [class*="-footer"] { padding: .5em 1em }
+}
+
+.ua-ie-11 [name="signature"] .squire-popover [class*="-input"] { padding: .3em 1em }

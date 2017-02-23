@@ -32,20 +32,21 @@ angular.module('proton.squire')
             };
         };
 
+
         /**
          * Create a link inside the editor
          * @param  {Message} message
          * @param  {String} link
          * @return {void}
          */
-        const makeLink = (message, link) => {
+        const makeLink = (message, link = '', title) => {
             const { editor, iframe } = editorModel.find(message);
             const node = angular.element(editor.getSelection().commonAncestorContainer).closest('a')[0];
+            const range = iframe[0].contentWindow.document.createRange();
+            const selection = iframe[0].contentWindow.getSelection();
 
             // Click inside a word select the whole word
             if (node) {
-                const range = iframe[0].contentWindow.document.createRange();
-                const selection = iframe[0].contentWindow.getSelection();
                 range.selectNodeContents(node);
                 selection.removeAllRanges();
                 selection.addRange(range);
@@ -53,9 +54,12 @@ angular.module('proton.squire')
 
             editor.makeLink(link, {
                 target: '_blank',
-                title: link,
+                title: title || link,
                 rel: 'nofollow'
             });
+
+            const newSelection = angular.element(editor.getSelection().commonAncestorContainer);
+            (newSelection.closest('a')[0] || newSelection.find('a')[0]).textContent = title;
         };
 
         /**

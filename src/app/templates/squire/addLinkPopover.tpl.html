@@ -2,17 +2,29 @@
     novalidate
     squire-popover
     name="addLinkPopover"
-    class="makeLink addLinkPopover-container addLinkPopover-hidden">
-    <div class="arrow"></div>
-    <div class="content">
-        <div class="panel">
+    class="makeLink addLinkPopover-container addLinkPopover-hidden pm_form">
+
+
+    <fieldset class="addLinkPopover-panel">
+        <legend class="addLinkPopover-legend" translate>Edit the link</legend>
+
+        <div class="addLinkPopover-field row">
+            <label for="labelLink" class="addLinkPopover-label" translate>Text to display</label>
+            <input  name="labelLink" id="labelLink" class="addLinkPopover-input">
+        </div>
+
+        <div class="addLinkPopover-field row">
+            <label for="urlLink" class="addLinkPopover-label" translate>Link or Email</label>
             <input
-                type="url"
-                name="url"
+                name="urlLink"
+                id="urlLink"
                 autocomplete="off"
                 placeholder-translate="Link URL"
-                ng-model="data.link">
+                class="addLinkPopover-input">
         </div>
+    </fieldset>
+
+    <footer class="addLinkPopover-footer">
         <button
             class="addLinkPopover-btn-remove"
             name="remove"
@@ -30,5 +42,5 @@
             class="btn primary"
             name="add"
             translate>Insert link</button>
-    </div>
+    </footer>
 </form>

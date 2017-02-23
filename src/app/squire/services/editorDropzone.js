@@ -47,9 +47,10 @@ angular.module('proton.squire')
              */
             const onDragOver = _.debounce(() => removeClass(CLASS_DRAGGABLE), 500);
 
-            const onClick = () => {
+            const onClick = ({ target }) => {
                 removeClass(CLASS_DRAGGABLE_MASK);
-                editor.focus();
+                // If you click inside a popover do nothing
+                (target.tagName !== 'INPUT') && editor.focus();
             };
 
             /**
