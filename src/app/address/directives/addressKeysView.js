@@ -4,7 +4,7 @@ angular.module('proton.address')
         restrict: 'E',
         templateUrl: 'templates/address/addressKeysView.tpl.html',
         link(scope) {
-            const isSafari = jQuery.browser.name === 'safari'; // Download doesn't work with Safari browser
+            const isSafari = $.ua.browser.name === 'Safari'; // Download doesn't work with Safari browser
             const unsubscribe = $rootScope.$on('updateUser', () => {
                 populateKeys();
             });

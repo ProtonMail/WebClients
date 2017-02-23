@@ -31,7 +31,7 @@ angular.module('proton.contactCurrent')
     $scope.editing = false;
     $scope.numPerPage = CONSTANTS.ELEMENTS_PER_PAGE;
     $scope.sortBy = 'Name';
-    $scope.isSafari = jQuery.browser.name === 'safari';
+    $scope.isSafari = $.ua.browser.name === 'Safari';
 
     // Listeners
     $scope.$on('deleteContact', () => {
