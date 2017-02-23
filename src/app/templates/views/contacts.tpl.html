@@ -64,7 +64,7 @@
                     <tr ng-repeat="contact in contacts track by contact.ID">
                         <td class="hidden-xs text-center checkbox">
                             <label>
-                                <input type="checkbox" ng-model="contact.selected" ng-click="onSelectContact($event, contact)" />
+                                <custom-checkbox data-custom-ng-model="contact.selected" data-custom-ng-click="onSelectContact($event, contact)"></custom-checkbox>
                             </label>
                         </td>
                         <td class="name">

@@ -9,12 +9,12 @@ angular.module('proton.message')
             <small><i class="fa fa-filter"></i> <i class="fa fa-angle-down"></i></small>
         </a>
         <span class="pm_dropdown wide">
-            <ul>
+            <ul class="filterButton-container">
                 <li><b>Filter on:</b></li>
-                <li class="text-right"><label><span class="pull-left">Subject</span> <input type="checkbox" ng-model="model.subject" /></label></li>
-                <li class="text-right"><label><span class="pull-left">Sender</span> <input type="checkbox" ng-model="model.sender" /></label></li>
-                <li class="text-right"><label><span class="pull-left">Recipient</span> <input type="checkbox" ng-model="model.recipient" /></label></li>
-                <li class="text-right"><label><span class="pull-left">Attachments</span> <input type="checkbox" ng-model="model.attachments" /></label></li>
+                <li class="filterButton-item"><label class="filterButton-label"><span class="filterButton-label-text">Subject</span> <custom-checkbox class="filterButton-checkbox" data-custom-ng-model="model.subject"></custom-checkbox></label></li>
+                <li class="filterButton-item"><label class="filterButton-label"><span class="filterButton-label-text">Sender</span> <custom-checkbox class="filterButton-checkbox" ng-model="model.sender"></custom-checkbox></label></li>
+                <li class="filterButton-item"><label class="filterButton-label"><span class="filterButton-label-text">Recipient</span> <custom-checkbox class="filterButton-checkbox"  ng-model="model.recipient"></custom-checkbox></label></li>
+                <li class="filterButton-item"><label class="filterButton-label"><span class="filterButton-label-text">Attachments</span> <custom-checkbox class="filterButton-checkbox" ng-model="model.attachments"></custom-checkbox></label></li>
             </ul>
             <div>
                 <p></p>

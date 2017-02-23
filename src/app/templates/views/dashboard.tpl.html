@@ -243,7 +243,7 @@
                             <div class="cycle pm_grid monthly" ng-hide="plan.Name === 'free'">
                                 <div class="col-1-2">
                                     <label>
-                                        <input type="radio" ng-model="configuration.cycle" ng-value="1" />
+                                        <custom-radio data-custom-ng-model="configuration.cycle" data-custom-ng-value="1"></custom-radio>
                                         <span translate translate-comment="form option">Pay monthly</span>
                                     </label>
                                 </div>
@@ -260,7 +260,7 @@
                                 </span>
                                 <div class="col-1-2">
                                     <label>
-                                        <input type="radio" ng-model="configuration.cycle" ng-value="12" />
+                                        <custom-radio data-custom-ng-model="configuration.cycle" data-custom-ng-value="12"></custom-radio>
                                         <span translate translate-comment="form option">Pay annually</span>
                                     </label>
                                 </div>

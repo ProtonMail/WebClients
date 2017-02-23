@@ -120,10 +120,8 @@
                 width: 35px;
                 padding: 0;
                 label {
-                    padding: 0 1rem 0 0;
-                    line-height: $rowHeight;
-                    display: block;
-                    cursor: pointer;
+                    display: inline-flex;
+                    width: 100%;
                 }
             }
             > span:not(.pm_buttons) {
