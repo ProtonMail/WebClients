@@ -2,7 +2,7 @@ angular.module('proton.formUtils')
 .directive('togglePassword', (gettextCatalog) => {
     const SHOW = gettextCatalog.getString('Show', null, 'Action');
     const HIDE = gettextCatalog.getString('Hide', null, 'Action');
-    const isIE = $.browser.msie;
+    const isIE = $.ua.browser.name === 'IE';
 
     return {
         restrict: 'A',

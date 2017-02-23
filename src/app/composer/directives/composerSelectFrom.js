@@ -1,7 +1,7 @@
 angular.module('proton.composer')
     .directive('composerSelectFrom', (notify, authentication, editorModel) => {
 
-        const isIE = $.browser.msie && $.browser.versionNumber === 11;
+        const isIE = $.ua.browser.name === 'IE' && $.ua.browser.major === '11';
         const listAddress = () => {
             return _.chain(authentication.user.Addresses)
                 .where({ Status: 1, Receive: 1 })

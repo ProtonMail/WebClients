@@ -3,8 +3,8 @@ angular.module('proton.attachments')
 
         const embedded = ['image/gif', 'image/jpeg', 'image/png', 'image/bmp'];
 
-        const isIE = () => $.browser.msie && $.browser.versionNumber === 11;
-        const isSafari = () => $.browser.safari;
+        const isIE = () => $.ua.browser.name === 'IE' && $.ua.browser.major === '11';
+        const isSafari = () => $.ua.browser.name === 'Safari';
         const isEmbedded = (key) => _.contains(embedded, key);
         const getEmbedded = () => embedded;
 
