@@ -714,13 +714,12 @@ const pmcrypto = (function pmcrypto() {
                 expires: keys[0].getExpirationTime(),
                 encrypt: packetInfo(keys[0].getEncryptionKeyPacket(), keys[0]),
                 sign: packetInfo(keys[0].getSigningKeyPacket(), keys[0]),
-                decrypted: keys[0].primaryKey.isDecrypted, //null if public key
-                expectEncrypted,
+                decrypted: keys[0].primaryKey.isDecrypted, // null if public key
                 validationError: null
             };
 
             try {
-                keyCheck(obj, email);
+                keyCheck(obj, email, expectEncrypted);
             } catch (err) {
                 obj.validationError = err.message;
             }
@@ -736,8 +735,9 @@ const pmcrypto = (function pmcrypto() {
         });
     }
 
-    function keyCheck(info, email) {
-        if (info.decrypted && info.expectEncrypted) {
+    function keyCheck(info, email, expectEncrypted) {
+
+        if (info.decrypted && expectEncrypted) {
             throw new Error('Expected encrypted key but got decrypted key');
         }
 
