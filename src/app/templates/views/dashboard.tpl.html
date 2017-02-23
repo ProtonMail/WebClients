@@ -44,7 +44,7 @@
                                             <strong ng-show="organization.PlanName === 'free'">1</strong>
                                         </td>
                                         <td class="text-right actions">
-                                            <a ui-sref="secured.addresses" class="pm_button link" ng-hide="subscription.Name === 'free'" translate-context="Action" translate>Manage</a>
+                                            <a ui-sref="secured.identities" class="pm_button link" ng-hide="subscription.Name === 'free'" translate-context="Action" translate>Manage</a>
                                             <a href="#" class="pm_button link" ng-show="subscription.Name === 'free'" ng-click="scrollToPlans()" translate-context="Action" translate>Upgrade</a>
                                         </td>
                                     </tr>
@@ -176,7 +176,7 @@
                                         <i class="fa fa-angle-down"></i>
                                     </span>
                                     <span ng-show="plan.Name !== 'business'">{{ plan.MaxMembers }}</span>
-                                    <span translate>Member</span>
+                                    <span translate>User</span>
                                     <strong class="cost pull-right" ng-show="selects.business.member.index * addons[plan.Cycle].member.Amount && (plan.Name === 'plus' || plan.Name === 'business')">+{{ selects.business.member.index * addons[plan.Cycle].member.Amount / 100 / plan.Cycle | fixed: 2 | currency: plan.Currency }}</strong>
                                     <span class="clear"></span>
                                 </li> -->

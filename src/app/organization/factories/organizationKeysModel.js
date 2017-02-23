@@ -2,7 +2,7 @@ angular.module('proton.organization')
 .factory('organizationKeysModel', (organizationApi, $rootScope) => {
 
     let keys = {};
-    const ALLOWED_STATES = ['addresses', 'domains', 'members'].map((n) => `secured.${n}`);
+    const ALLOWED_STATES = ['identities', 'domains', 'members'].map((n) => `secured.${n}`);
 
 
     $rootScope.$on('$stateChangeStart', (e, state) => {

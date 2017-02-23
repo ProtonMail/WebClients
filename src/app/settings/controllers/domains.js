@@ -30,7 +30,7 @@ angular.module('proton.settings')
     verificationModal
 ) => {
 
-    $controller('AddressesController', { $scope, authentication, pmcw });
+    $controller('IdentitiesController', { $scope, authentication, pmcw });
 
     // Listeners
     $scope.$on('domain', (event, domain) => {

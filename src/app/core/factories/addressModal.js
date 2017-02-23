@@ -1,12 +1,12 @@
 angular.module('proton.core')
-.factory('addressModal', (pmModal, CONSTANTS, setupKeys, authentication, $rootScope, $state, $q, networkActivityTracker, notify, Address, gettextCatalog, organizationModel) => {
+.factory('addressModal', (pmModal, setupKeys, authentication, $rootScope, $state, $q, networkActivityTracker, notify, Address, gettextCatalog, organizationModel) => {
     return pmModal({
         controllerAs: 'ctrl',
         templateUrl: 'templates/modals/addAddress.tpl.html',
         controller(params) {
             // Variables
             const self = this;
-            const { domains = [], organizationKey = null, members = [], showMember = true } = params;
+            const { domains = [], organizationKey = null, members = [] } = params;
             const organization = organizationModel.get();
 
             self.domain = domains[0];
@@ -16,13 +16,7 @@ angular.module('proton.core')
             self.size = 2048;
             self.members = members;
             self.member = members[0];
-            self.alias = !angular.isDefined(self.domain.ID);
-            self.keyPhase = CONSTANTS.KEY_PHASE;
-            self.showMember = showMember && organization.HasKeys === 1 && self.keyPhase > 3 && !self.alias;
-
-            if (!self.showMember && self.members.length > 1) {
-                throw new Error('An unexpected error has occurred');
-            }
+            self.showAddMember = organization.HasKeys === 1 && $state.is('secured.domains');
 
             // Functions
             self.addMember = () => params.addMember();
