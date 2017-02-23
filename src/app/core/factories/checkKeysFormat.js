@@ -8,10 +8,9 @@ angular.module('proton.core')
         return (user, keys) => {
             const primaryKeys = keys['0'];
             let allPrivateKeys = primaryKeys;
-            let promises = [];
 
             //For primary keys, we will determine which email to use by comparing their fingerprints with the address keys
-            _.each(primaryKeys, (privKey) => {
+            let promises = _.reduce(primaryKeys, (acc, privKey) => {
                 const userId = privKey.users[0].userId.userid;
                 const fingerprint = privKey.primaryKey.fingerprint;
 
@@ -26,12 +25,14 @@ angular.module('proton.core')
                 if (!email.length) {
                     const split = userId.split(' ');
                     if (split.length !== 2) {
-                        return Promise.reject('Invalid UserID ' + userId);
+                        acc.push(Promise.reject('Invalid UserID ' + userId));
+                        return;
                     }
                     const emailWithBrackets = split[1];
                     email = emailWithBrackets.substring(1, emailWithBrackets.length - 1);
                     if (emailWithBrackets[0] !== '<' || emailWithBrackets[emailWithBrackets.length - 1] !== '>' || !regexEmail.test(email)) {
-                        return Promise.reject('Invalid UserID ' + userId);
+                        acc.push(Promise.reject('Invalid UserID ' + userId));
+                        return;
                     }
                 }
 
@@ -42,11 +43,12 @@ angular.module('proton.core')
                             return Promise.reject(info.validationError);
                         }
                     });
-                promises.push(keyInfo);
-            });
+                acc.push(keyInfo);
+                return acc;
+            }, []);
 
             //Now we check the User IDs of the address keys
-            _.each(keys, function(privKeys, addressID) {
+            promises = _.reduce(keys, (acc, privKeys, addressID) => {
                 if (addressID !== '0') {
                     const address = _.findWhere(user.Addresses, { ID: addressID });
                     const email = address.Email;
@@ -60,11 +62,12 @@ angular.module('proton.core')
                                     return Promise.reject(info.validationError);
                                 }
                             });
-
-                        promises.push(keyInfo);
+                        acc.push(keyInfo);
                     });
                 }
-            });
+                return acc;
+            }, promises);
+
             promises.push(pmcw.signMessage(allPrivateKeys));
             return Promise.all(promises);
         };
