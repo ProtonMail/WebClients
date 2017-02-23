@@ -3,14 +3,18 @@
     squire-popover
     name="addFilePopover"
     ng-class="{'addFilePopover-allow-uri':allowDataUri, 'addFilePopover-allow-embedded':allowEmbedded}"
-    class="insertImage addFilePopover-container addFilePopover-hidden">
-    <div class="arrow"></div>
-    <div class="content">
-        <div class="panel">
+    class="insertImage addFilePopover-container addFilePopover-hidden pm_form">
+
+    <fieldset class="addFilePopover-panel">
+        <legend class="addFilePopover-legend" translate>Insert an image</legend>
+
+        <div class="addFilePopover-field row">
+            <label for="url" class="addFilePopover-label" translate>URL image</label>
             <input
                 type="url"
                 name="url"
                 autocomplete="off"
+                class="addFilePopover-input-url"
                 placeholder-translate="URL to image"
                 ng-model="data.image">
             <input
@@ -18,7 +22,9 @@
                 type="file"
                 accept="image/*">
         </div>
+    </fieldset>
 
+    <footer class="addFilePopover-footer">
         <button
             type="button"
             class="btn primary addFilePopover-btn-embedded"
@@ -37,5 +43,5 @@
             class="btn primary addFilePopover-btn-url"
             translate-context="Action"
             translate>Insert URL</button>
-    </div>
+    </footer>
 </form>

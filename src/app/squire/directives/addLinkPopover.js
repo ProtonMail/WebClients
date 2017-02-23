@@ -1,8 +1,8 @@
 angular.module('proton.squire')
-    .directive('addLinkPopover', ($rootScope, editorModel, CONSTANTS, squireExecAction) => {
+    .directive('addLinkPopover', ($rootScope, editorModel, CONSTANTS, squireExecAction, regexEmail) => {
 
         const { DEFAULT_SQUIRE_VALUE } = CONSTANTS;
-        const LINK_DEFAULT = DEFAULT_SQUIRE_VALUE.LINK_DEFAULT;
+        const LINK_DEFAULT = DEFAULT_SQUIRE_VALUE.LINK;
         const CLASS_HIDDEN = 'addLinkPopover-hidden';
         const CLASS_UPDATE = 'addLinkPopover-editable';
 
@@ -17,17 +17,43 @@ angular.module('proton.squire')
             return ID === currentID;
         };
 
+        /**
+         * Get the current link at the cursor or the current selected item
+         * @param  {Message} message
+         * @return {Object}         {href: textContent};
+         */
         function getLinkAtCursor(message) {
             const { editor } = editorModel.find(message);
+            const config = { href: LINK_DEFAULT, textContent: LINK_DEFAULT };
             if (!editor) {
-                return LINK_DEFAULT;
+                return config;
             }
-            return angular.element(editor.getSelection().commonAncestorContainer).closest('a').attr('href');
+            const selection = editor.getSelection();
+            return angular.element(selection.commonAncestorContainer).closest('a')[0] || _.extend({}, config, {
+                textContent: selection.toString()
+            });
         }
+
+        /**
+         * Format a link to append a mailto or http before it
+         * @param  {String} input
+         * @return {String}
+         */
+        const formatLink = (input = '') => {
+            if (regexEmail.test(input)) {
+                return /mailto/.test(input) ? input : `mailto:${input}`.trim();
+            }
+
+            if (/^http(|s):/.test(input)) {
+                return input;
+            }
+
+            return `http://${input}`;
+        };
 
         const isUpdate = (link = LINK_DEFAULT) => (link && link !== LINK_DEFAULT);
 
-        const onPopover = (message, node, scope) => {
+        const onPopover = (message, node) => {
             return ({ action, form, name }, formName) => {
                 if (formName !== name) {
                     return;
@@ -35,12 +61,13 @@ angular.module('proton.squire')
 
                 switch (action) {
                     case 'update':
-                        squireExecAction.makeLink(message, form.url);
+                        squireExecAction.makeLink(message, formatLink(form.urlLink), form.labelLink);
                         break;
                     case 'close':
                         node.classList.add(CLASS_HIDDEN);
                         node.classList.remove(CLASS_UPDATE);
-                        scope.$applyAsync(() => scope.data.link = LINK_DEFAULT);
+                        node.urlLink.value = LINK_DEFAULT;
+                        node.labelLink.value = '';
                         break;
                     case 'remove':
                         squireExecAction.removeLink(message);
@@ -65,15 +92,13 @@ angular.module('proton.squire')
                     }
 
                     if (type === 'squireActions' && data.action === 'makeLink') {
-                        return scope.$applyAsync(() => {
-                            scope.data.link = getLinkAtCursor(scope.message);
+                        const link = getLinkAtCursor(scope.message);
+                        el[0].urlLink.value = link.href;
+                        el[0].labelLink.value = link.textContent;
+                        el[0].classList.toggle(CLASS_HIDDEN);
 
-                            el[0].classList.toggle(CLASS_HIDDEN);
-                            isUpdate(scope.data.link) && el[0].classList.toggle(CLASS_UPDATE);
-
-                            _rAF(() => el[0].querySelector('input').focus());
-
-                        });
+                        isUpdate(el[0].urlLink.value) && el[0].classList.toggle(CLASS_UPDATE);
+                        _rAF(() => el[0].querySelector('input').focus());
                     }
                 };
 
