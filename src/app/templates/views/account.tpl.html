@@ -86,12 +86,14 @@
                     <div class="col-5-8">
                         <div class="col-1-2">
                             <label>
-                                <input type="radio" ng-model="passwordReset" ng-value="1" ng-change="savePasswordReset()" /> <span translate-context="Action" translate>Enabled</span>
+                                <custom-radio data-custom-ng-model="passwordReset" data-custom-ng-value="1" data-custom-ng-change="savePasswordReset()"></custom-radio>
+                                <span translate-context="Action" translate>Enabled</span>
                             </label>
                         </div>
                         <div class="col-1-2">
                             <label>
-                                <input type="radio" ng-model="passwordReset" ng-value="0" ng-change="savePasswordReset()" /> <span translate-context="Action" translate>Disabled</span>
+                                <custom-radio data-custom-ng-model="passwordReset" data-custom-ng-value="0" data-custom-ng-change="savePasswordReset()"></custom-radio>
+                                <span translate-context="Action" translate>Disabled</span>
                             </label>
                         </div>
                     </div>
@@ -105,12 +107,14 @@
                     <div class="col-5-8">
                         <div class="col-1-2">
                             <label>
-                                <input type="radio" ng-model="dailyNotifications" name="dailyNotifications" ng-value="1" ng-change="saveDailyNotifications()" /> <span translate-context="Action" translate translate-comment="notification settings option">Enabled</span>
+                                <custom-radio data-custom-ng-model="dailyNotifications" data-custom-name="dailyNotifications" data-custom-ng-value="1" data-custom-ng-change="saveDailyNotifications()"></custom-radio>
+                                <span translate-context="Action" translate translate-comment="notification settings option">Enabled</span>
                             </label>
                         </div>
                         <div class="col-1-2">
                             <label>
-                                <input type="radio" ng-model="dailyNotifications" name="dailyNotifications" ng-value="0" ng-change="saveDailyNotifications()" /> <span translate-context="Action" translate translate-comment="notification settings option">Disabled</span>
+                                <custom-radio data-custom-ng-model="dailyNotifications" data-custom-name="dailyNotifications" data-custom-ng-value="0" data-custom-ng-change="saveDailyNotifications()"></custom-radio>
+                                <span translate-context="Action" translate translate-comment="notification settings option">Disabled</span>
                             </label>
                         </div>
                         <p>
@@ -180,13 +184,13 @@
                     <div class="col-5-8">
                         <div class="col-1-2">
                             <label>
-                                <input type="radio" ng-model="autosaveContacts" ng-value="1" ng-change="saveAutosaveContacts()" />
+                                <custom-radio data-custom-ng-model="autosaveContacts" data-custom-ng-value="1" data-custom-ng-change="saveAutosaveContacts()"></custom-radio>
                                 <span  translate translate-comment="form option">Enabled</span>
                             </label>
                         </div>
                         <div class="col-1-2">
                             <label>
-                                <input type="radio" ng-model="autosaveContacts" ng-value="0" ng-change="saveAutosaveContacts()" />
+                                <custom-radio data-custom-ng-model="autosaveContacts" data-custom-ng-value="0" data-custom-ng-change="saveAutosaveContacts()"></custom-radio>
                                 <span  translate translate-comment="form option">Disabled</span>
                             </label>
                         </div>
@@ -207,12 +211,14 @@
                     <div class="col-5-8">
                         <div class="col-1-2">
                             <label>
-                                <input ng-change="saveImages()" type="radio" ng-model="images" ng-value="1" /> <span translate-comment="form option" translate-context="Action" translate>Auto</span>
+                                <custom-radio data-custom-ng-change="saveImages()" data-custom-ng-model="images" data-custom-ng-value="1"></custom-radio>
+                                <span translate-comment="form option" translate-context="Action" translate>Auto</span>
                             </label>
                         </div>
                         <div class="col-1-2">
                             <label>
-                                <input ng-change="saveImages()" type="radio" ng-model="images" ng-value="0" /> <span translate-comment="form option" translate-context="Action" translate>Manual</span>
+                                <custom-radio data-custom-ng-change="saveImages()" data-custom-ng-model="images" data-custom-ng-value="0"></custom-radio>
+                                <span translate-comment="form option" translate-context="Action" translate>Manual</span>
                             </label>
                         </div>
                         <p>
@@ -227,12 +233,14 @@
                     <div class="col-5-8">
                         <div class="col-1-2">
                             <label>
-                                <input ng-change="saveEmbedded()" type="radio" ng-model="embedded" ng-value="1" /> <span translate-comment="form option" translate-context="Action" translate>Auto</span>
+                                <custom-radio data-custom-ng-change="saveEmbedded()" data-custom-ng-model="embedded" data-custom-ng-value="1"></custom-radio>
+                                <span translate-comment="form option" translate-context="Action" translate>Auto</span>
                             </label>
                         </div>
                         <div class="col-1-2">
                             <label>
-                                <input ng-change="saveEmbedded()" type="radio" ng-model="embedded" ng-value="0" /> <span translate-comment="form option" translate-context="Action" translate>Manual</span>
+                                <custom-radio data-custom-ng-change="saveEmbedded()" data-custom-ng-model="embedded" data-custom-ng-value="0"></custom-radio>
+                                <span translate-comment="form option" translate-context="Action" translate>Manual</span>
                             </label>
                         </div>
                     </div>
@@ -256,12 +264,14 @@
                     <div class="col-5-8">
                         <div class="col-1-2">
                             <label>
-                                <input type="radio" ng-change="saveHotkeys()" ng-model="hotkeys" ng-value="1"/> <span translate-context="Action" translate>Enabled<span>
+                                <custom-radio data-custom-ng-change="saveHotkeys()" data-custom-ng-model="hotkeys" data-custom-ng-value="1"></custom-radio>
+                                <span translate-context="Action" translate>Enabled<span>
                             </label>
                         </div>
                         <div class="col-1-2">
                             <label>
-                                <input type="radio" ng-change="saveHotkeys()" ng-model="hotkeys" ng-value="0"/> <span translate-context="Action" translate>Disabled<span>
+                                <custom-radio data-custom-ng-change="saveHotkeys()" data-custom-ng-model="hotkeys" data-custom-ng-value="0"></custom-radio>
+                                <span translate-context="Action" translate>Disabled<span>
                             </label>
                         </div>
                     </div>

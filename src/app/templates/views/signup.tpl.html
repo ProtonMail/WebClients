@@ -198,7 +198,7 @@
     </form>
 </div>
 
-<div class="pm_panel wide signUpProcess-step-3" ng-if="humanityTest" ng-init="initHumanityTest()">
+<div class="pm_panel pm_form wide signUpProcess-step-3" ng-if="humanityTest" ng-init="initHumanityTest()">
     <div ng-show="!preInvited" class="wrapper" id="verification-panel">
         <label class="titleLabel" for="password">
             <em class="num">5</em><span translate translate-context="Title" translate-comment="Antispam section of account creation">Are you human?</span>
@@ -206,28 +206,28 @@
         <p class="help" translate-context="Info" translate>To fight spam, please verify you are human.</p>
         <p class="help" ng-show="verificator === 'email' || verificator === 'sms'" translate-context="Info" translate>We do not permanently save your email or phone number, it is deleted after verification.</p>
         <div ng-show="showCaptcha">
-            <label class="titleLabel" ng-click="setIframeSrc()">
-                <input type="radio" ng-model="verificator" value="captcha" />
-                <span>CAPTCHA</span>
+            <label ng-click="setIframeSrc()" class="signup-radio-label">
+                <custom-radio data-custom-ng-model="verificator" data-custom-value="captcha"></custom-radio>
+                <strong class="signup-radio-label-text">CAPTCHA</strong>
             </label>
         </div>
         <div ng-show="showEmail">
-            <label class="titleLabel" >
-                <input type="radio" ng-model="verificator" value="email" />
-                <span translate translate-context="Title">Email</span>
+            <label class="signup-radio-label">
+                <custom-radio data-custom-ng-model="verificator" data-custom-value="email"></custom-radio>
+                <strong class="signup-radio-label-text" translate translate-context="Title">Email</strong>
             </label>
         </div>
         <div ng-show="showSms">
             <span ng-show="!showCaptcha && !showEmail" class="pull-right">(<a href="#" ng-click="whySMS = !whySMS" translate>Why is this required?</a>)</span>
-            <label class="titleLabel" >
-                <input type="radio" ng-model="verificator" value="sms" />
-                <span translate translate-context="Title">SMS</span>
+            <label class="signup-radio-label">
+                <custom-radio data-custom-ng-model="verificator" data-custom-value="sms"></custom-radio>
+                <strong class="signup-radio-label-text" translate translate-context="Title">SMS</strong>
             </label>
         </div>
         <div ng-show="showPayment">
-            <label class="titleLabel">
-                <input type="radio" ng-model="verificator" value="donation" />
-                <span translate translate-context="Title">Donate</span>
+            <label class="signup-radio-label">
+                <custom-radio data-custom-ng-model="verificator" data-custom-value="donation"></custom-radio>
+                <strong class="signup-radio-label-text" translate translate-context="Title">Donate</strong>
             </label>
         </div>
 

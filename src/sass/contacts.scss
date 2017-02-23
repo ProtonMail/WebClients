@@ -3,12 +3,7 @@
 	.pm_table {
 		td {
 			vertical-align: middle;
-			label {
-				padding-left: 10px;
-			}
-			line-height: 40px;
 			span {
-				line-height: 40px;
 				overflow: hidden;
 				text-overflow: ellipsis;
 				display: block;
@@ -26,6 +21,8 @@
 		th.name {
 			width: initial;
 		}
+
+		.checkbox label { height: 3.5rem }
 	}
 }
 
@@ -66,9 +63,10 @@ body.mobileMode {
 			tr {
 				margin: 0;
 			}
-			th.checkbox {
+			.checkbox {
 				width: 4rem;
 				label {
+					height: 4rem;
 					width: 4rem;
 					text-align: center;
 					box-sizing: border-box;

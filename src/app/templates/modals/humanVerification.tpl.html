@@ -9,7 +9,7 @@
                 <p class="alert alert-info" translate translate-context="Info">For security reasons, please verify that you are not a robot.</p>
                 <div ng-if="::ctrl.methods.length > 1">
                     <label ng-if="ctrl.showCaptcha">
-                        <input type="radio" ng-model="ctrl.verificator" value="captcha" />
+                        <custom-radio data-custom-ng-model="ctrl.verificator" data-custom-value="captcha"></custom-radio>
                         <span translate translate-context="Label">Captcha</span>
                     </label>
                     <hr />
