@@ -1,0 +1,10 @@
+.autocompleteEmail-container {
+    .awesomplete {
+        font-size: 13px
+    }
+
+    .awesomplete ul { overflow-x: hidden }
+    .awesomplete [aria-selected] {
+        padding: .6em .5em
+    }
+}

@@ -44,19 +44,19 @@
             <div class="row margin">
                 <div class="col-1-2">
                     <label for="search_sender" translate translate-context="Title">Sender</label>
-                    <input
-                        type="text"
-                        id="search_sender"
-                        ng-model="model.from"
-                        placeholder-translate="From">
+                    <autocomplete-email
+                        class="searchForm-autocomplete"
+                        data-email="model.from"
+                        data-custom-id="search_sender"
+                        data-custom-placeholder="{{'From' | translate}}"></autocomplete-email>
                 </div>
                 <div class="col-1-2">
                     <label for="search_recipient" translate translate-context="Title">Recipient</label>
-                    <input
-                        type="text"
-                        id="search_recipient"
-                        ng-model="model.to"
-                        placeholder-translate="To">
+                    <autocomplete-email
+                        class="searchForm-autocomplete"
+                        data-email="model.to"
+                        data-custom-id="search_recipient"
+                        data-custom-placeholder="{{'To' | translate}}"></autocomplete-email>
                 </div>
             </div>
             <div class="row margin">

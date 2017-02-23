@@ -1,5 +1,5 @@
 angular.module('proton.formUtils')
-.directive('autocompleteEmails', (autocompleteEmailsModel, regexEmail) => {
+.directive('autocompleteEmails', (autocompleteEmailsModel, regexEmail, autocompleteBuilder) => {
 
     const TAB_KEY = 9;
     const BACKSPACE_KEY = 8;
@@ -31,7 +31,6 @@ angular.module('proton.formUtils')
      */
     const getFormValue = (target) => {
 
-        const api = {};
         if (target.nodeName === 'FORM') {
             const input = target.querySelector('input');
             return {
@@ -42,10 +41,12 @@ angular.module('proton.formUtils')
             };
         }
 
-        api.value = target.value;
-        api.clear = () => (target.value = '');
-
-        return api;
+        return {
+            value: target.value,
+            clear() {
+                target.value = '';
+            }
+        };
     };
 
     /**
@@ -64,7 +65,7 @@ angular.module('proton.formUtils')
     const splitEmails = (value = '') => value.split(/,|;/).filter(Boolean).map((txt) => txt.trim());
 
 
-    const link = (scope, el) => {
+    const link = (scope, el, { awesomplete }) => {
 
         // Model for this autocomplete
         const model = autocompleteEmailsModel(scope.emails);
@@ -75,29 +76,6 @@ angular.module('proton.formUtils')
          */
         const syncModel = () => scope.$applyAsync(() => (scope.emails = model.all()));
 
-        /**
-         * @link {https://leaverou.github.io/awesomplete/#basic-usage}
-         */
-        let awesomplete = new Awesomplete(el[0].querySelector('input'), {
-            minChars: 1,
-            autoFirst: true,
-            list: []
-        });
-
-        let previousScrollIndex = 0;
-
-        const onHighlight = () => {
-            if (previousScrollIndex !== awesomplete.index) {
-                previousScrollIndex = awesomplete.index;
-                const node = awesomplete.ul.children[previousScrollIndex];
-                /**
-                 * Compat with Boolean
-                 * {@link http://caniuse.com/#search=scrollIntoView}
-                 * {@link https://developer.mozilla.org/en-US/docs/Web/API/Element/scrollIntoView}
-                 */
-                node && node.scrollIntoView(false);
-            }
-        };
 
         const onInput = ({ target }) => {
             // Only way to clear the input if you add a comma.
@@ -204,7 +182,6 @@ angular.module('proton.formUtils')
          * Auto scroll will be available with the 1.2
          * Patch extracted from {@link https://github.com/LeaVerou/awesomplete/issues/16875}
          */
-        awesomplete.input.addEventListener('awesomplete-highlight', onHighlight);
         awesomplete.input.addEventListener('blur', onSubmit);
         /**
          * Update the model when an user select an option
@@ -225,34 +202,20 @@ angular.module('proton.formUtils')
         el.on('input', onInput);
         el.on('submit', onSubmit);
 
-        scope
-            .$on('$destroy', () => {
-                el.off('keydown', onKeyDown);
-                el.off('click', onClick);
-                el.off('input', onInput);
-                el.off('submit', onInput);
-                awesomplete.input.removeEventListener('awesomplete-highlight', onHighlight);
-                awesomplete = null;
-            });
+        scope.$on('$destroy', () => {
+            el.off('keydown', onKeyDown);
+            el.off('click', onClick);
+            el.off('input', onInput);
+            el.off('submit', onSubmit);
+            awesomplete.input.removeEventListener('blur', onSubmit);
+        });
     };
-
-    const compile = () => ({
-        pre(scope, element, { name, placeholder = '' }) {
-            // Bind self configuration for this input (uniq)
-            const $input = element[0].querySelector('input');
-            const id = $input.name + Math.random().toString(32).slice(2, 10);
-            $input.name = $input.id = (name || id);
-            $input.placeholder = placeholder;
-        },
-        post: link
-    });
-
     return {
         scope: {
             emails: '='
         },
         replace: true,
         templateUrl: 'templates/formUtils/autocompleteEmails.tpl.html',
-        compile
+        compile: autocompleteBuilder(link)
     };
 });

@@ -108,6 +108,16 @@
 	label { color: $gray }
 	.input-icon { display: block }
 
+    .autocompleteEmail-container .awesomplete {
+        display: inline-block !important;
+        position: relative !important;
+        margin: 0;
+    }
+
+    .autocompleteEmail-container [aria-selected] {
+        line-height: 1.3;
+    }
+
 }
 
 .searchForm-advanced-wrapper {
