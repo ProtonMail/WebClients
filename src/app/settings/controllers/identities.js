@@ -239,15 +239,13 @@ angular.module('proton.settings')
     }
 
     function deleteAddress(addressID) {
+        const errorMessage = gettextCatalog.getString('Error during deletion', null, 'Error');
         return Address.delete(addressID)
         .then(({ data = {} } = {}) => {
             if (data.Code === 1000) {
                 return Promise.resolve();
             }
-            if (data.Error) {
-                return Promise.reject(data.Error);
-            }
-            return Promise.reject(gettextCatalog.getString('Error during deletion', null, 'Error'));
+            throw new Error(data.Error || errorMessage);
         });
     }
 
