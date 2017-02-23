@@ -3,11 +3,39 @@ angular.module('proton.message')
 
         const RE_PREFIX = gettextCatalog.getString('Re:', null);
         const FW_PREFIX = gettextCatalog.getString('Fw:', null);
+        const normalLinebreaks = (input = '') => input.replace(/\r\n?/g, '\n');
+        const convertLinebreaks = (input = '') => input.replace(/\n/g, '<br />');
+
+        function escapeHTML(input = '') {
+            return input
+                .replace(/&/g, '&amp;')
+                .replace(/</g, '&lt;')
+                .replace(/>/g, '&gt;')
+                .replace(/'/g, '&quot;')
+                .replace(/'/g, '&#39;');
+        }
 
         function formatSubject(subject = '', prefix = RE_PREFIX) {
             const hasPrefix = subject.toLowerCase().indexOf(prefix.toLowerCase()) === 0;
 
             return hasPrefix ? subject : `${prefix} ${subject}`;
+        }
+
+        /**
+         * Convert string content to HTML
+         * @param  {String} input
+         * @param  {Object} message
+         * @return {String}
+         */
+        function convertContent(input = '', { MIMEType = '' } = {}) {
+            if (MIMEType === 'text/plain') {
+                return _.reduce([
+                    normalLinebreaks,
+                    escapeHTML,
+                    convertLinebreaks
+                ], (acc, fn) => fn(acc), input);
+            }
+            return input;
         }
 
         /**
@@ -18,7 +46,8 @@ angular.module('proton.message')
          * @return {String}
          */
         function prepareBody(input, message) {
-            return prepareContent(input, message, {
+            const content = convertContent(input, message);
+            return prepareContent(content, message, {
                 blacklist: ['*']
             });
         }
