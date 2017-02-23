@@ -186,6 +186,12 @@ angular.module('proton.authentication')
         autoLogin();
     }
 
+    function resetLoginInputs() {
+        $scope.username = '';
+        $scope.password = '';
+        $scope.twoFactorCode = '';
+    }
+
     function login(username, password, twoFactorCode, initialInfoResponse) {
 
         networkActivityTracker.track(
@@ -249,8 +255,10 @@ angular.module('proton.authentication')
                         const error = (result.data.ErrorDescription) ? result.data.ErrorDescription : result.data.Error;
 
                         notify({ message: error, classes: 'notification-danger' });
+                        resetLoginInputs();
                     } else {
                         notify({ message: 'Unable to log you in.', classes: 'notification-danger' });
+                        resetLoginInputs();
                     }
                 },
                 (result) => {
@@ -261,6 +269,7 @@ angular.module('proton.authentication')
                     $timeout(selectPassword, 100, false);
                     notify({ message: result.message, classes: 'notification-danger' });
                     console.error(result);
+                    resetLoginInputs();
                 }
             )
         );
