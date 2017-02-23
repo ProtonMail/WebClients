@@ -140,22 +140,27 @@ angular.module('proton.message')
          * @return {Promise}
          */
         decryptBody() {
-            let pubKeys = null;
             const privKey = authentication.getPrivateKeys(this.AddressID);
             const sender = (this.Sender || {}).Address;
             this.decrypting = true;
 
-            // Sender can be empty (╯︵╰,)
-            if (!sender) {
-                this.decrypting = false;
-                return Promise.reject(new Error('No sender address available'));
-            }
+            const getPubKeys = (sender) => {
+                // Sender can be empty (╯︵╰,)
+                // if so, do not look up public key
+                if (!sender) {
+                    return Promise.resolve(null);
+                }
+                return this.getPublicKeys([sender])
+                    .then(({ data = {} } = {}) => {
+                        if (data.Code === 1000 && data[sender].length > 0) {
+                            return data[sender];
+                        }
+                        return null;
+                    });
+            };
 
-            return this.getPublicKeys([sender])
-                .then(({ data = {} } = {}) => {
-                    if (data.Code === 1000) {
-                        pubKeys = data[sender];
-                    }
+            return getPubKeys(sender)
+                .then((pubKeys) => {
                     return pmcw.decryptMessageRSA(this.Body, privKey, this.Time, pubKeys)
                         .then((rep) => (this.decrypting = false, rep))
                         .catch((error) => {
