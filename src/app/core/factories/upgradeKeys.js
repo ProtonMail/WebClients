@@ -140,7 +140,6 @@ angular.module('proton.core')
                     //fail silently
                     return Promise.resolve();
                 });
-            networkActivityTracker.track(promise);
             return promise;
         };
     });
