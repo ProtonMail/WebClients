@@ -3,7 +3,7 @@ angular.module('proton.core')
     return pmModal({
         controllerAs: 'ctrl',
         templateUrl: 'templates/modals/dropzone.tpl.html',
-        controller(params, notify, $timeout) {
+        controller(params, notify, $timeout, $scope) {
             let files = [];
             let extension;
             const self = this;
@@ -20,8 +20,11 @@ angular.module('proton.core')
                         self.hover = false;
                     } else {
                         files = e.dataTransfer.files;
-                        self.fileDropped = files[0].name;
-                        self.hover = false;
+
+                        $scope.$applyAsync(() => {
+                            self.fileDropped = files[0].name;
+                            self.hover = false;
+                        });
                     }
                 };
 
