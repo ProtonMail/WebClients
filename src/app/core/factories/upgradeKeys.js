@@ -59,26 +59,11 @@ angular.module('proton.core')
                 });
             });
             // Reformat all keys, if they can be decrypted
-            let promises = [];
-            if (user.OrganizationPrivateKey) {
-                // Admin logged in as sub-user
-                const organizationKey = pmcw.decryptPrivateKey(user.OrganizationPrivateKey, oldSaltedPassword);
-
-                promises = inputKeys.map(({ PrivateKey, ID, Token }) => {
-                    // Decrypt private key with organization key and token
-                    return organizationKey
-                    .then((key) => pmcw.decryptMessage(Token, key))
-                    .then(({ data }) => pmcw.decryptPrivateKey(PrivateKey, data))
-                    .then((pkg) => ({ ID, pkg }));
-                });
-            } else {
-                // Not sub-user
-                promises = inputKeys.map(({ PrivateKey, ID }) => {
-                    // Decrypt private key with the old mailbox password
-                    return pmcw.decryptPrivateKey(PrivateKey, oldSaltedPassword)
-                    .then((pkg) => ({ ID, pkg }));
-                });
-            }
+            let promises = inputKeys.map(({ PrivateKey, ID }) => {
+                // Decrypt private key with the old mailbox password
+                return pmcw.decryptPrivateKey(PrivateKey, oldSaltedPassword)
+                .then((pkg) => ({ ID, pkg }));
+            });
 
             return promises.map((promise) => {
                 return promise
