@@ -40,6 +40,18 @@ angular.module('proton.authentication')
             return contact;
         });
     }
+    /**
+     * Clean label datas received from the BE
+     * @param  {Array} labels
+     * @return {Array}
+     */
+    function cleanLabels(labels = []) {
+        return labels.map((label) => {
+            label.Name = DOMPurify.sanitize(label.Name);
+            label.Color = DOMPurify.sanitize(label.Color);
+            return label;
+        });
+    }
     const auth = {
         headersSet: false,
         // These headers are used just once for the /cookies route, then we forget them and use cookies and x-pm-session header instead.
@@ -116,7 +128,7 @@ angular.module('proton.authentication')
                 .then(({ contacts, labels, organizationKey }) => {
                     if (contacts.data && contacts.data.Code === 1000 && labels.data && labels.data.Code === 1000) {
                         user.Contacts = cleanContacts(contacts.data.Contacts);
-                        user.Labels = labels.data.Labels;
+                        user.Labels = cleanLabels(labels.data.Labels);
 
                         return { user, organizationKey };
                     }
