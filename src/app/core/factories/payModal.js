@@ -21,7 +21,7 @@ angular.module('proton.core')
                         this.choices.push({ value: 'card', label: gettextCatalog.getString('Credit card', null) });
                     }
 
-                    if (params.status.Paypal === true && ($.browser.msie !== true || $.browser.edge === true)) { // IE11 doesn't support PayPal
+                    if (params.status.Paypal === true && ($.ua.browser.name === 'IE' !== true || $.ua.browser.name === 'Edge')) { // IE11 doesn't support PayPal
                         this.choices.push({ value: 'paypal', label: 'PayPal' });
                     }
 
