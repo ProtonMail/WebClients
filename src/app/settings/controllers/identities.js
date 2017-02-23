@@ -1,5 +1,5 @@
 angular.module('proton.settings')
-.controller('AddressesController', (
+.controller('IdentitiesController', (
     $q,
     $rootScope,
     $scope,
@@ -24,10 +24,18 @@ angular.module('proton.settings')
     organizationApi,
     organizationModel,
     organizationKeysModel,
-    pmcw
+    pmcw,
+    pmDomainModel
 ) => {
     const unsubscribes = [];
     const role = authentication.user.Role;
+
+    function expandSelfMember(members = []) {
+        return _.map(members, (member) => {
+            member.toggle = member.Self === 1;
+            return member;
+        });
+    }
 
     function addressesInit() {
         $scope.isSubUser = authentication.user.subuser;
@@ -35,7 +43,7 @@ angular.module('proton.settings')
         $scope.disabledAddresses = _.difference(authentication.user.Addresses, $scope.activeAddresses);
         $scope.itemMoved = false;
         $scope.keyStatus = 0;
-        $scope.members = memberModel.get();
+        $scope.members = expandSelfMember(memberModel.get());
         $scope.organization = organizationModel.get();
         $scope.domains = domainModel.get();
         manageOrganizationKeys()
@@ -185,7 +193,7 @@ angular.module('proton.settings')
         }
 
         if (authentication.user.Role !== role) {
-            $state.go('secured.addresses');
+            $state.go('secured.identities');
         }
     });
 
@@ -318,21 +326,10 @@ angular.module('proton.settings')
     /**
      * Open modal to add a new address, used by domains and members controllers
      */
-    $scope.addAddress = (domain, member) => {
-        let showMember = true;
-        let domains = $scope.domains;
-        let members = $scope.members;
-
-        if (domain) {
-            domains = [domain];
-        }
-
-        if (member) {
-            members = [member];
-
-            // Do not show Add Member button if specific member requested
-            showMember = false;
-        }
+    $scope.addAddress = (domain = {}, member = {}) => {
+        const pmDomains = (member.Type === 0) ? pmDomainModel.get().map((domain) => ({ DomainName: domain })) : [];
+        const domains = (domain.ID) ? [domain] : [].concat(pmDomains, $scope.domains);
+        const members = (member.ID) ? [member] : $scope.members;
 
         if (!domains || domains.length === 0) {
             $state.go('secured.domains');
@@ -362,7 +359,6 @@ angular.module('proton.settings')
                 domains,
                 members,
                 organizationKey: $scope.organizationKey,
-                showMember,
                 addMember() {
                     if (!$scope.canAddMember()) {
                         return;
@@ -443,43 +439,6 @@ angular.module('proton.settings')
                 }
             }
         });
-    };
-
-    $scope.addAlias = () => {
-
-        const self = $scope.getSelf();
-        if (self.Type !== 0) {
-            notify({ message: gettextCatalog.getString('Only users with existing ProtonMail addresses can add ProtonMail aliases', null, 'Error'), classes: 'notification-danger' });
-            return;
-        }
-
-        if (!$scope.canAddAddress()) {
-            return;
-        }
-
-        networkActivityTracker.track(
-
-            domainApi.available()
-            .then((availableDomains) => {
-
-                const pmDomains = availableDomains.data.Domains.map((domain) => ({ DomainName: domain }));
-
-                addressModal.activate({
-                    params: {
-                        domains: pmDomains,
-                        members: [self],
-                        organizationKey: {}, // Aliases not for sub-users
-                        submit() {
-                            addressModal.deactivate();
-                            eventManager.call();
-                        },
-                        cancel() {
-                            addressModal.deactivate();
-                        }
-                    }
-                });
-            })
-        );
     };
 
     $scope.saveOrder = (order) => {

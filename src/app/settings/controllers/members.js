@@ -28,7 +28,7 @@ angular.module('proton.settings')
     setupOrganizationModal,
     User
 ) => {
-    $controller('AddressesController', { $scope, authentication, pmcw });
+    $controller('IdentitiesController', { $scope, authentication, pmcw });
 
     function passwordModal(submit) {
         loginPasswordModal.activate({
@@ -46,7 +46,6 @@ angular.module('proton.settings')
     $scope.roles[CONSTANTS.PAID_MEMBER_ROLE] = gettextCatalog.getString('Member', null);
 
     $scope.initialization = () => {
-
         $scope.newRecoveryPassword = '';
         $scope.confirmRecoveryPassword = '';
 

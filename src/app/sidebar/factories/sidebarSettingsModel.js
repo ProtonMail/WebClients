@@ -32,20 +32,20 @@ angular.module('proton.sidebar')
                 label: gettextCatalog.getString('Appearance', null, 'Title'),
                 icon: 'fa-paint-brush'
             },
-            addresses: {
-                state: 'secured.addresses',
-                label: gettextCatalog.getString('Addresses', null, 'Title'),
+            identities: {
+                state: 'secured.identities',
+                label: gettextCatalog.getString('Identities', null, 'Title'),
                 icon: 'fa-at'
+            },
+            members: {
+                state: 'secured.members',
+                label: gettextCatalog.getString('Addresses/Users', null, 'Title'),
+                icon: 'fa-users'
             },
             domains: {
                 state: 'secured.domains',
                 label: gettextCatalog.getString('Domains', null, 'Title'),
                 icon: 'fa-globe'
-            },
-            members: {
-                state: 'secured.members',
-                label: gettextCatalog.getString('Members', null, 'Title'),
-                icon: 'fa-users'
             },
             payments: {
                 state: 'secured.payments',

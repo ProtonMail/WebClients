@@ -4,7 +4,7 @@
         <restore-administrator-panel ng-if="keyStatus === 2"></restore-administrator-panel>
         <div class="row" ng-show="organization.HasKeys === 0">
             <section class="setting pm_form full">
-                <legend translate-context="Title" translate>Members</legend>
+                <legend translate-context="Title" translate>Multi-User Support</legend>
                 <p class="alert alert-info" translate-context="Info" translate>Create and administer sub-accounts and assign them email addresses on your custom domain.</p>
                 <p>
                     <button type="button" class="pm_button primary" ng-click="enableMemberSupport()" translate-context="Action" translate>Enable multi-member support</button>
@@ -94,13 +94,12 @@
             </section>
         </div>
 
-        <div class="row" id="settingsMembers" ng-show="organization.HasKeys === 1">
+        <div class="row" id="settingsMembers">
             <section class="setting pm_form full">
-                <legend translate translate-context="Title">Members</legend>
+                <legend translate translate-context="Title">Users</legend>
                 <p class="alert alert-info" ng-hide="checkDomains()" translate-context="Info" translate translate-comment="ask user to add domain before adding users">Please configure a custom domain before adding members to your organization.</p>
                 <p>
-                    <button type="button" class="pm_button primary" ng-show="checkDomains()" ng-click="addMember()" translate-context="Action" translate>Add member</button>
-                    <button type="button" class="pm_button" ng-show="checkDomains()" ng-click="addAddress()" translate-context="Action" translate>Add address</button>
+                    <button type="button" class="pm_button primary" ng-show="checkDomains() && organization.HasKeys === 1" ng-click="addMember()" translate-context="Action" translate>Add user</button>
                     <a ui-sref="secured.domains" class="pm_button" translate-context="Action" translate>Add domain</a>
                 </p>
                 <div class="pm_table visibleOverflow">
@@ -149,11 +148,12 @@
                                 <td>
                                     <span class="pm_buttons pull-right">
                                         <a class="wide pm_trigger" dropdown>
-                                            <span translate>Options</span>
+                                            <span translate>Actions</span>
                                             <i class="fa fa-angle-down"></i>
                                         </a>
                                         <span class="pm_dropdown right">
                                             <button type="button" class="pm_button link text-red text-left " ng-show="!member.Self && member.Type === 1" ng-click="removeMember(member, false)" translate-context="Action" translate>Delete</button>
+                                            <button type="button" class="pm_button link text-left" ng-click="addAddress(undefined, member)" translate-context="Action" translate>Add Address</button>
                                             <button type="button" class="pm_button link text-left" ng-show="!member.Self && member.Type === 0" ng-click="removeMember(member)" translate-context="Action" translate>Remove</button>
                                             <button type="button" class="pm_button link text-left" ng-click="editMember(member)" translate-context="Action" translate>Edit</button>
                                             <button type="button" class="pm_button link text-left" ng-show="member.Role === 1" ng-click="changeRole(member, 2)" translate-context="Action" translate>Make Admin</button>
@@ -191,6 +191,7 @@
                         </tbody>
                     </table>
                 </div>
+                <p class="help" translate-context="Help" translate>To re-order your addresses or change your signature(s), go to <a ui-sref="secured.identities">Identities</a></p>
             </section>
         </div>
 

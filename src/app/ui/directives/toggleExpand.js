@@ -1,7 +1,7 @@
 angular.module('proton.ui')
 .directive('toggleExpand', () => {
     const EXPAND_CLASS = 'fa-chevron-down';
-    const COLLAPSE_CLASS = 'fa-chevron-up';
+    const COLLAPSE_CLASS = 'fa-chevron-right';
     return {
         restrict: 'E',
         replace: true,
@@ -13,8 +13,8 @@ angular.module('proton.ui')
             toggleClass();
 
             function toggleClass() {
-                const toRemove = (scope.model) ? EXPAND_CLASS : COLLAPSE_CLASS;
-                const toAdd = (scope.model) ? COLLAPSE_CLASS : EXPAND_CLASS;
+                const toAdd = (scope.model) ? EXPAND_CLASS : COLLAPSE_CLASS;
+                const toRemove = (scope.model) ? COLLAPSE_CLASS : EXPAND_CLASS;
                 element[0].querySelector('.fa').classList.remove(toRemove);
                 element[0].querySelector('.fa').classList.add(toAdd);
             }

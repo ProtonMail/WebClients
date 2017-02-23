@@ -65,20 +65,8 @@ angular.module('proton.routes', [
             }
         },
         resolve: {
-            domains($q, domainApi) {
-                const deferred = $q.defer();
-
-                domainApi.available().then((result) => {
-                    if (result.data && angular.isArray(result.data.Domains)) {
-                        deferred.resolve(result.data.Domains);
-                    } else {
-                        deferred.reject();
-                    }
-                }, () => {
-                    deferred.reject();
-                });
-
-                return deferred.promise;
+            domains(pmDomainModel) {
+                return pmDomainModel.fetch();
             },
             user(User) {
                 return User.get()
@@ -239,20 +227,8 @@ angular.module('proton.routes', [
 
                 return deferred.promise;
             },
-            domains(direct, $q, domainApi) {
-                const deferred = $q.defer();
-
-                domainApi.available().then((result) => {
-                    if (result.data && angular.isArray(result.data.Domains)) {
-                        deferred.resolve(result.data.Domains);
-                    } else {
-                        deferred.reject();
-                    }
-                }, () => {
-                    deferred.reject();
-                });
-
-                return deferred.promise;
+            domains(direct, pmDomainModel) {
+                return pmDomainModel.fetch();
             },
             direct($q, $state, $rootScope, User) {
                 const deferred = $q.defer();
@@ -684,8 +660,8 @@ angular.module('proton.routes', [
         }
     })
 
-    .state('secured.addresses', {
-        url: '/addresses',
+    .state('secured.identities', {
+        url: '/identities',
         resolve: {
             members(user, memberModel, networkActivityTracker) {
                 if (user.Role === CONSTANTS.PAID_ADMIN_ROLE) {
@@ -699,6 +675,9 @@ angular.module('proton.routes', [
                 }
                 return { data: {} };
             },
+            pmDomains(pmDomainModel, networkActivityTracker) {
+                return networkActivityTracker.track(pmDomainModel.fetch());
+            },
             organization(user, organizationModel, networkActivityTracker) {
                 return networkActivityTracker.track(organizationModel.fetch());
             },
@@ -711,8 +690,8 @@ angular.module('proton.routes', [
         },
         views: {
             'content@secured': {
-                templateUrl: 'templates/views/addresses.tpl.html',
-                controller: 'AddressesController'
+                templateUrl: 'templates/views/identities.tpl.html',
+                controller: 'IdentitiesController'
             }
         }
     })
@@ -813,7 +792,7 @@ angular.module('proton.routes', [
                 if (CONSTANTS.KEY_PHASE > 3 && !user.subuser && user.Role !== CONSTANTS.PAID_MEMBER_ROLE) {
                     return Promise.resolve();
                 }
-                $state.go('secured.addresses');
+                $state.go('secured.identities');
                 return Promise.reject();
             },
             members(user, memberModel, networkActivityTracker) {
@@ -827,6 +806,9 @@ angular.module('proton.routes', [
                     return networkActivityTracker.track(domainModel.fetch());
                 }
                 return { data: {} };
+            },
+            pmDomains(pmDomainModel, networkActivityTracker) {
+                return networkActivityTracker.track(pmDomainModel.fetch());
             },
             organization(user, organizationModel, networkActivityTracker) {
                 return networkActivityTracker.track(organizationModel.fetch());
@@ -851,7 +833,7 @@ angular.module('proton.routes', [
         resolve: {
             access(user, $state) {
                 if (user.subuser || user.Role === CONSTANTS.PAID_MEMBER_ROLE) {
-                    $state.go('secured.addresses');
+                    $state.go('secured.identities');
                     return Promise.reject();
                 }
                 return Promise.resolve();
@@ -867,6 +849,9 @@ angular.module('proton.routes', [
                     return networkActivityTracker.track(domainModel.fetch());
                 }
                 return { data: {} };
+            },
+            pmDomains(pmDomainModel, networkActivityTracker) {
+                return networkActivityTracker.track(pmDomainModel.fetch());
             },
             organization(user, organizationModel, networkActivityTracker) {
                 return networkActivityTracker.track(organizationModel.fetch());
