@@ -15,7 +15,7 @@ angular.module('proton.core')
                 const userId = privKey.users[0].userId.userid;
                 const fingerprint = privKey.primaryKey.fingerprint;
 
-                let email = "";
+                let email = '';
                 _.each(user.Addresses, (address) => {
                     const foundKey = _.findWhere(address.Keys, { Fingerprint: fingerprint });
                     if (foundKey) {
@@ -23,14 +23,14 @@ angular.module('proton.core')
                     }
                 });
                 //If there is no matching fingerprint, we will just make sure the User ID matches the pattern "something <email>"
-                if (email === "") {
-                    const split = userId.split(" ");
+                if (!email.length) {
+                    const split = userId.split(' ');
                     if (split.length !== 2) {
                         return Promise.reject('Invalid UserID ' + userId);
                     }
                     const emailWithBrackets = split[1];
                     email = emailWithBrackets.substring(1, emailWithBrackets.length - 1);
-                    if (emailWithBrackets[0] !== "<" || emailWithBrackets[emailWithBrackets.length - 1] !== ">" || !regexEmail.test(email)) {
+                    if (emailWithBrackets[0] !== '<' || emailWithBrackets[emailWithBrackets.length - 1] !== '>' || !regexEmail.test(email)) {
                         return Promise.reject('Invalid UserID ' + userId);
                     }
                 }
@@ -38,7 +38,7 @@ angular.module('proton.core')
                 const keyInfo =
                     pmcw.keyInfo(privKey.armor(), email, false)
                     .then((info) => {
-                        if (info.validationError !== null) {
+                        if (info.validationError) {
                             return Promise.reject(info.validationError);
                         }
                     });
@@ -56,7 +56,7 @@ angular.module('proton.core')
                         const keyInfo =
                             pmcw.keyInfo(privKey.armor(), email, false)
                             .then((info) => {
-                                if (info.validationError !== null){
+                                if (info.validationError) {
                                     return Promise.reject(info.validationError);
                                 }
                             });
