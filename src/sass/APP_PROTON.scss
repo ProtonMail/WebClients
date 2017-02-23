@@ -53,7 +53,7 @@
 @import "notification.scss";
 @import "scrollbars.scss";
 @import "latest.scss";
-@import "autocomplete.scss";
+@import "formUtils/autocomplete.scss";
 @import "feedback.scss";
 @import "keys.scss";
 @import "tour.scss";
@@ -113,6 +113,7 @@
 @import "ui/requestTimeout.scss";
 @import "element/moveElement.scss";
 @import "element/advancedFilterElement.scss";
+@import "formUtils/autocompleteEmail.scss";
 
 @import "print.scss";
 

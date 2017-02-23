@@ -4,11 +4,9 @@ angular.module('proton.ui')
         /**
          * {@link https://www.w3.org/TR/html5/forms.html#concept-input-apply}
          */
-        const DEFAULT_ATTRIBUTES = {
-            checkable: ['id', 'class', 'value', 'checked', 'name', 'disabled', 'required']
-        };
+        const DEFAULT_ATTRIBUTES = ['id', 'class', 'value', 'checked', 'name', 'disabled', 'required', 'placeholder'];
 
-        const isDefaultAttribute = (key, name = '') => DEFAULT_ATTRIBUTES[key].some((key) => key === name);
+        const isDefaultAttribute = (name = '') => DEFAULT_ATTRIBUTES.some((key) => key === name);
 
         /**
          * Convert a name from the dataSet to a valid HTML attribute
@@ -32,6 +30,40 @@ angular.module('proton.ui')
             return { for: id, id };
         };
 
+        const removeWatcher = (node, key) => node.removeAttribute(`data-custom-${key}`);
+
+        const bindAttributes = (node, el, attr = {}) => {
+            // filter attributes for the input
+            const inputAttributes = Object.keys(attr).filter((attribute) => /custom[A-Z]/.test(attribute));
+
+            const link = getLabelInputLink(inputAttributes);
+            attr[link.id] && (node.id = attr[link.id]);
+
+            inputAttributes.forEach((attribute) => {
+                const key = nameToAttribute(attribute);
+
+                // Do not put default attributes into the dataset
+                if (/aria/.test(key) || isDefaultAttribute(key)) {
+
+                    // Extend className
+                    if (key === 'class') {
+                        removeWatcher(el[0], key);
+                        return node.classList.add(...attr[attribute].split(' '));
+                    }
+
+                    node.setAttribute(key, attr[attribute]);
+                } else {
+                    node.setAttribute(`data-${key}`, attr[attribute]);
+                }
+
+                // Remove useless watchers
+                removeWatcher(el[0], key);
+                delete attr[attribute];
+            });
+
+            return inputAttributes;
+        };
+
         /**
          * Custom compile function for a directive custom<Input type>
          *     - checkbox
@@ -47,40 +79,11 @@ angular.module('proton.ui')
          * @param {Function} link
          * @return {Function} Compile function
          */
-        const checkableCompiler = (type = '', linkCallback = angular.noop) => (el, attr) => {
-
+        const compiler = (type = '', { pre, post = angular.noop } = {}) => (el, attr) => {
             const $input = el[0].querySelector(`input[type="${type}"]`);
-
-            // filter attributes for the input
-            const inputAttributes = Object.keys(attr).filter((attribute) => /custom[A-Z]/.test(attribute));
-
-            const link = getLabelInputLink(inputAttributes);
-
-            inputAttributes.forEach((attribute) => {
-                const key = nameToAttribute(attribute);
-
-                // Do not put default attributes into the dataset
-                if (/aria/.test(key) || isDefaultAttribute('checkable', key)) {
-
-                    // Extend className
-                    if (key === 'class') {
-                        return $input.classList.add(...attr[attribute].split(' '));
-                    }
-
-                    $input.setAttribute(key, attr[attribute]);
-                } else {
-                    $input.setAttribute(`data-${key}`, attr[attribute]);
-                }
-
-                // Remove useless watchers
-                el[0].removeAttribute(`data-custom-${key}`);
-                delete attr[attribute];
-            });
-
-            $input.id = link.id;
-
-            return linkCallback;
+            bindAttributes($input, el, attr);
+            return pre ? ({ pre, post }) : post;
         };
 
-        return { checkableCompiler };
+        return compiler;
     });

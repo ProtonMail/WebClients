@@ -125,6 +125,7 @@ angular.module('proton.formUtils')
                 .map(({ Address = '', Name = '' }) => ({ Name: Name || Address, Address }));
 
             const all = () => list;
+            const clear = () => (list.length = 0);
 
             /**
              * Add a new contact to the list
@@ -165,7 +166,8 @@ angular.module('proton.formUtils')
             return {
                 filterContact,
                 formatInput: relaceTagAutocomplete,
-                all, add, remove, removeLast, isEmpty
+                all, add, remove, removeLast, isEmpty,
+                clear
             };
         };
     });
