@@ -585,7 +585,7 @@ const pmcrypto = (function pmcrypto() {
 
     function verifyMessage(pubKeys, signedMessage) {
         return new Promise((resolve, reject) => {
-            if (signedMessage === undefined || signedMessage === '') {
+            if (!signedMessage) {
                 return reject(new Error('Missing signed message'));
             }
 
