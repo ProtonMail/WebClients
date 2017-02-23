@@ -275,37 +275,29 @@ angular.module('proton.settings')
      * @param {Object} member
      */
     $scope.removeMember = (member, remove = true) => {
-
         const title = remove ? gettextCatalog.getString('Remove member', null, 'Title') : gettextCatalog.getString('Delete member', null, 'Title');
         const message = remove ? gettextCatalog.getString('Are you sure you want to permanently remove this member from your organization? They will lose access to any addresses belonging to your organization.', null, 'Info') : gettextCatalog.getString('Are you sure you want to permanently delete this member? The member\'s inbox and all addresses associated with this member will be deleted.', null, 'Info');
-        const index = $scope.members.indexOf(member);
+        const successMessage = gettextCatalog.getString('Member removed', null, 'Info');
+        const errorMessage = gettextCatalog.getString('Error during deletion', null, 'Error');
 
         confirmModal.activate({
             params: {
                 title,
                 message,
                 confirm() {
-                    networkActivityTracker.track(memberApi.delete(member.ID).then((result) => {
-                        if (angular.isDefined(result.data) && result.data.Code === 1000) {
-
-                            // Local changes
-                            $scope.members.splice(index, 1); // Remove member in the members list
-                            $scope.organization.UsedMembers--;
-                            $scope.organization.UsedAddresses -= member.Addresses.filter((address) => address.Type !== 0).length;
-
-                            // Event loop
-                            eventManager.call();
-
-                            confirmModal.deactivate(); // Close the modal
-                            notify({ message: gettextCatalog.getString('Member removed', null), classes: 'notification-success' }); // Display notification
-                        } else if (angular.isDefined(result.data) && angular.isDefined(result.data.Error)) {
-                            notify({ message: result.data.Error, classes: 'notification-danger' });
-                        } else {
-                            notify({ message: gettextCatalog.getString('Error during deletion', null, 'Error'), classes: 'notification-danger' });
+                    const promise = memberApi.delete(member.ID)
+                    .then(({ data = {} } = {}) => {
+                        if (data.Code === 1000) {
+                            return Promise.resolve();
                         }
-                    }, () => {
-                        notify({ message: gettextCatalog.getString('Error during deletion', null, 'Error'), classes: 'notification-danger' });
-                    }));
+                        throw new Error(data.Error || errorMessage);
+                    })
+                    .then(() => eventManager.call())
+                    .then(() => {
+                        confirmModal.deactivate();
+                        notify({ message: successMessage, classes: 'notification-success' });
+                    });
+                    networkActivityTracker.track(promise);
                 },
                 cancel() {
                     confirmModal.deactivate();
