@@ -23,14 +23,8 @@ angular.module('proton.squire')
             const iframe = $iframe[0];
             const iframeDoc = (iframe.contentDocument || iframe.contentWindow) && iframe.contentWindow.document;
 
-            const { webkit, opera, chrome } = (jQuery.browser || {});
-            const hasClass = (name) => document.body.classList.contains(name);
-
             // Check if browser is Webkit (Safari/Chrome) or Opera
-            if (
-                (webkit || opera || chrome) ||
-                (hasClass('ua-safari') || hasClass('ua-opera') || hasClass('ua-chrome'))
-            ) {
+            if ($.ua.engine.name === 'WebKit') {
                 // Start timer when loaded.
                 $iframe.load(() => cb($iframe));
 

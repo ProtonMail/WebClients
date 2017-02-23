@@ -72,11 +72,11 @@ angular.module('proton.utils')
     };
 
     tools.getBrowser = () => {
-        return jQuery.browser.name;
+        return $.ua.browser.name;
     };
 
     tools.getBrowserVersion = () => {
-        return jQuery.browser.version;
+        return $.ua.browser.version;
     };
 
     tools.prngAvailable = () => {

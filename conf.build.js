@@ -66,6 +66,7 @@ module.exports = {
       "vendor/fingerprintjs2/fingerprint2.js",
       "vendor/bcryptjs/dist/bcrypt.js",
       "vendor/nouislider/distribute/nouislider.js",
+      "vendor/ua-parser-js/dist/ua-parser.min.js",
       "vendor/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.concat.min.js",
       "vendor/ng-scrollbars/dist/scrollbars.min.js"
     ],
