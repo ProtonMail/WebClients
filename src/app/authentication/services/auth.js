@@ -29,6 +29,7 @@ angular.module('proton.authentication')
     labelsModel,
     setupKeys,
     AppModel,
+    tempStorage,
     upgradeKeys
 ) => {
     let keys = {}; // Store decrypted keys
@@ -502,7 +503,7 @@ angular.module('proton.authentication')
             const req = $q.defer();
             if (pwd) {
 
-                $rootScope.plainMailboxPass = pwd;
+                tempStorage.setItem('plainMailboxPass', pwd);
                 passwords.computeKeyPassword(pwd, KeySalt)
                 .then((pwd) => pmcw.checkMailboxPassword(PrivateKey, pwd, AccessToken))
                 .then(
@@ -538,13 +539,13 @@ angular.module('proton.authentication')
                 if (user.DisplayName.length === 0) {
                     user.DisplayName = user.Name;
                 }
-                if ($rootScope.plainMailboxPass && !user.OrganizationPrivateKey) {
+                const plainMailboxPass = tempStorage.getItem('plainMailboxPass');
+                tempStorage.removeItem('plainMailboxPass');
+
+                if (plainMailboxPass && !user.OrganizationPrivateKey) {
                     checkKeysFormat(user, keys)
                     .catch(( err ) => {
-                        upgradeKeys({mailboxPassword: $rootScope.plainMailboxPass, oldSaltedPassword: this.getPassword(), user})
-                        .then(() => {
-                           $rootScope.plainMailboxPass = null;
-                        });
+                        upgradeKeys({mailboxPassword: plainMailboxPass, oldSaltedPassword: this.getPassword(), user});
                     });
                 }
 
