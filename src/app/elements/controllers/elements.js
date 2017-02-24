@@ -446,6 +446,15 @@ angular.module('proton.elements')
         return false;
     };
 
+    $scope.isDisabled = () => {
+
+        if ($scope.markedElement) {
+            return false;
+        }
+
+        return !$rootScope.numberElementChecked && !angular.isDefined($state.params.id);
+    };
+
     $scope.size = (element) => {
         if (angular.isDefined(element.TotalSize)) {
             return element.TotalSize;
