@@ -25,14 +25,14 @@ angular.module('proton.core')
             self.submit = () => {
                 const member = self.member;
 
-                if (self.member.Private === 0 && !self.organizationKey) {
+                if (member.Private === 0 && !self.organizationKey) {
                     notify({ message: gettextCatalog.getString('Cannot decrypt organization key', null, 'Error'), classes: 'notification-danger' });
                     return;
                 }
 
                 const successMessage = gettextCatalog.getString('Address added', null, 'Info');
                 const errorMessage = gettextCatalog.getString('Address creation failed', null, 'Error');
-                const promise = Address.create({ Local: self.address, Domain: self.domain.DomainName, MemberID: self.member.ID })
+                const promise = Address.create({ Local: self.address, Domain: self.domain.DomainName, MemberID: member.ID })
                 .then(({ data = {} } = {}) => {
                     if (data.Code === 1000) {
                         const address = data.Address;
@@ -51,7 +51,7 @@ angular.module('proton.core')
                             params.submit(address);
                         };
 
-                        if (self.member.Private === 0) {
+                        if (member.Private === 0) {
                             return generate()
                                 .then(keyRequest)
                                 .then(finish);

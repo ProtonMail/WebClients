@@ -188,11 +188,11 @@ angular.module('proton.event', ['proton.constants', 'proton.utils'])
                     return organizationKeyPromise
                     .then((organizationKey) => setupKeys.decryptUser(user, organizationKey, mailboxPassword))
                     .then(({ keys, dirtyAddresses }) => {
-                        if (dirtyAddresses.length && generateModal.active() === false) {
+                        if (dirtyAddresses.length && !generateModal.active()) {
                             return generateKeys(dirtyAddresses)
-                                .then(() => {
-                                    throw new Error('Regenerate keys for addresses');
-                                }, () => storeKeys(keys));
+                            .then(() => {
+                                throw new Error('Regenerate keys for addresses');
+                            }, () => storeKeys(keys));
                         }
                         storeKeys(keys);
                     })

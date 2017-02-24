@@ -28,7 +28,6 @@ angular.module('proton.settings')
     pmDomainModel
 ) => {
     const unsubscribes = [];
-    const role = authentication.user.Role;
 
     function expandSelfMember(members = []) {
         return _.map(members, (member) => {
@@ -37,13 +36,28 @@ angular.module('proton.settings')
         });
     }
 
+    function getSelf() {
+        return [{
+            Self: 1,
+            Name: authentication.user.Name,
+            Addresses: authentication.user.Addresses,
+            UsedSpace: authentication.user.UsedSpace,
+            MaxSpace: authentication.user.MaxSpace
+        }];
+    }
+
+    function getMembers() {
+        const members = (authentication.user.Role === CONSTANTS.FREE_USER_ROLE) ? getSelf() : memberModel.get();
+        return expandSelfMember(members);
+    }
+
     function addressesInit() {
         $scope.isSubUser = authentication.user.subuser;
         $scope.activeAddresses = _.where(authentication.user.Addresses, { Status: 1, Receive: 1 });
         $scope.disabledAddresses = _.difference(authentication.user.Addresses, $scope.activeAddresses);
         $scope.itemMoved = false;
         $scope.keyStatus = 0;
-        $scope.members = expandSelfMember(memberModel.get());
+        $scope.members = getMembers();
         $scope.organization = organizationModel.get();
         $scope.domains = domainModel.get();
         manageOrganizationKeys()
@@ -88,12 +102,14 @@ angular.module('proton.settings')
     };
 
     $scope.canAddAddress = () => {
-        if ($scope.organization.MaxAddresses - $scope.organization.UsedAddresses < 1) {
+        const organization = organizationModel.get();
+
+        if (organization.MaxAddresses - organization.UsedAddresses < 1) {
             notify({ message: gettextCatalog.getString('You have used all addresses in your plan. Please upgrade your plan to add a new address', null, 'Error'), classes: 'notification-danger' });
             return 0;
         }
 
-        if ($scope.organization.HasKeys === 1 && $scope.keyStatus > 0 && CONSTANTS.KEY_PHASE > 3) {
+        if (organization.HasKeys === 1 && $scope.keyStatus > 0) {
             notify({ message: gettextCatalog.getString('Administrator privileges must be activated', null, 'Error'), classes: 'notification-danger' });
             $state.go('secured.members');
             return;
@@ -140,7 +156,7 @@ angular.module('proton.settings')
     };
 
     // Listeners
-    if (role === 2) {
+    if (authentication.user.Role === CONSTANTS.PAID_ADMIN_ROLE) {
         unsubscribes.push($rootScope.$on('organizationChange', (event, newOrganization) => {
             $scope.organization = newOrganization;
             organizationKeysModel.fetch()
@@ -191,10 +207,6 @@ angular.module('proton.settings')
             $scope.activeAddresses = _.where(authentication.user.Addresses, { Status: 1, Receive: 1 });
             $scope.disabledAddresses = _.difference(authentication.user.Addresses, $scope.activeAddresses);
         }
-
-        if (authentication.user.Role !== role) {
-            $state.go('secured.identities');
-        }
     });
 
     // $scope.$on('createUser', () => {
@@ -213,28 +225,24 @@ angular.module('proton.settings')
     };
 
     function disableAddress(addressID) {
+        const errorMessage = gettextCatalog.getString('Error during disable request', null, 'Error');
         return Address.disable(addressID)
         .then(({ data = {} } = {}) => {
             if (data.Code === 1000) {
                 return Promise.resolve();
             }
-            if (data.Error) {
-                return Promise.reject(data.Error);
-            }
-            return Promise.reject(gettextCatalog.getString('Error during disable request', null, 'Error'));
+            throw new Error(data.Error || errorMessage);
         });
     }
 
     function enableAddress(addressID) {
+        const errorMessage = gettextCatalog.getString('Error during enable request', null, 'Error');
         return Address.enable(addressID)
         .then(({ data = {} } = {}) => {
             if (data.Code === 1000) {
-                return Promise.resolve();
+                return Promise.resolve(data.Address);
             }
-            if (data.Error) {
-                return Promise.reject(data.Error);
-            }
-            return Promise.reject(gettextCatalog.getString('Error during enable request', null, 'Error'));
+            throw new Error(data.Error || errorMessage);
         });
     }
 
