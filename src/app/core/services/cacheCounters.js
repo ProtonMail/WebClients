@@ -139,5 +139,12 @@ angular.module('proton.core')
             counters = {};
         };
 
+        api.currentState = (value = 0) => {
+            counters.CURRENT_STATE_VALUE = value;
+            dispatch('refresh.currentState', { value });
+        };
+
+        api.getCurrentState = () => counters.CURRENT_STATE_VALUE || 0;
+
         return api;
     });
