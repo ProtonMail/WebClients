@@ -47,6 +47,7 @@ angular.module('proton.sidebar')
 
                 updateCache();
                 updateCounter();
+                const refresh = () => (updateCache(), updateCounter());
 
                 // Update the counter when we load then
                 unsubscribe.push($rootScope.$on('app.cacheCounters', (e, { type }) => {
@@ -57,14 +58,14 @@ angular.module('proton.sidebar')
                 unsubscribe.push($rootScope.$on('elements', (e, { type }) => {
                     (type === 'refresh') && updateCounter();
                 }));
-                unsubscribe.push($rootScope.$on('deleteLabel', () => updateCache()));
-                unsubscribe.push($rootScope.$on('createLabel', () => updateCache()));
-                unsubscribe.push($rootScope.$on('updateLabel', () => updateCache()));
-                unsubscribe.push($rootScope.$on('updateLabels', () => updateCache()));
+                unsubscribe.push($rootScope.$on('deleteLabel', refresh));
+                unsubscribe.push($rootScope.$on('createLabel', refresh));
+                unsubscribe.push($rootScope.$on('updateLabel', refresh));
+                unsubscribe.push($rootScope.$on('updateLabels', refresh));
 
                 // Check the current state to set the current one as active
                 unsubscribe.push($rootScope.$on('$stateChangeSuccess', () => {
-                    _rAF(() => (updateCache(), updateCounter()));
+                    _rAF(refresh);
                 }));
 
 
