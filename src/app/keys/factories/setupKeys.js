@@ -1,5 +1,16 @@
-angular.module('proton.commons')
-    .factory('setupKeys', ($log, $q, CONSTANTS, gettextCatalog, Key, MemberKey, notify, passwords, pmcw, webcrypto) => {
+angular.module('proton.keys')
+    .factory('setupKeys', (
+        $log,
+        $q,
+        CONSTANTS,
+        gettextCatalog,
+        Key,
+        MemberKey,
+        notify,
+        passwords,
+        pmcw,
+        webcrypto
+    ) => {
 
         function generate(addresses = [], password = '', numBits = 2048) {
 
@@ -13,7 +24,8 @@ angular.module('proton.commons')
             return passwordPromise
                 .then((pass) => {
                     const keyPromises = _.map(addresses, ({ Email, ID } = {}) => {
-                        return pmcw.generateKeysRSA(Email, pass, numBits)
+                        return pmcw
+                            .generateKeysRSA(Email, pass, numBits)
                             .then(({ privateKeyArmored }) => ({
                                 AddressID: ID,
                                 PrivateKey: privateKeyArmored
@@ -29,10 +41,10 @@ angular.module('proton.commons')
 
             const promises = _.map(addresses, ({ Email, ID } = {}) => {
                 return pmcw.generateKeysRSA(Email, mailboxPassword, numBits)
-                    .then(({ privateKeyArmored }) => ({
-                        AddressID: ID,
-                        PrivateKey: privateKeyArmored
-                    }));
+                .then(({ privateKeyArmored }) => ({
+                    AddressID: ID,
+                    PrivateKey: privateKeyArmored
+                }));
             });
 
             return $q.all(promises);
@@ -44,17 +56,17 @@ angular.module('proton.commons')
 
         function decryptMemberToken(key = {}, signingKey = {}) {
             return pmcw.decryptMessage(key.Token || key.Activation, signingKey, false, null, signingKey.toPublic().armor())
-                    .then(({ data: decryptedToken, signature }) => {
-                        if (signature !== 1) {
-                            return $q.reject({ message: 'Signature verification failed' });
-                        }
-                        return { PrivateKey: key.PrivateKey, decryptedToken };
-                    });
+            .then(({ data: decryptedToken, signature }) => {
+                if (signature !== 1) {
+                    return $q.reject({ message: 'Signature verification failed' });
+                }
+                return { PrivateKey: key.PrivateKey, decryptedToken };
+            });
         }
 
         function decryptMemberKey(key = {}, signingKey = {}) {
             return decryptMemberToken(key, signingKey)
-                .then(({ PrivateKey, decryptedToken }) => pmcw.decryptPrivateKey(PrivateKey, decryptedToken));
+            .then(({ PrivateKey, decryptedToken }) => pmcw.decryptPrivateKey(PrivateKey, decryptedToken));
         }
 
         function getPrimaryKey(member = {}, organizationKey = {}) {
@@ -81,29 +93,42 @@ angular.module('proton.commons')
                 newPassword = password;
             }
 
-            return { payload, newPassword };
+            return {
+                payload,
+                newPassword
+            };
         }
 
-        function processMemberKey(mailboxPassword = '', key = {}, organizationKey = {}) {
+        function processMemberKey(mailboxPassword = '', key = '', organizationKey = {}) {
 
             const randomString = pmcrypto.encode_base64(pmcrypto.arrayToBinaryString(webcrypto.getRandomValues(new Uint8Array(128))));
+            let memberKey;
 
             return pmcw.decryptPrivateKey(key.PrivateKey, mailboxPassword)
-                .then((data) => pmcw.encryptPrivateKey(data, randomString))
-                .then((MemberKey) => {
-                    return pmcw.encryptMessage(randomString, organizationKey.toPublic().armor(), [], [organizationKey])
-                        .then((Token) => {
-                            return {
-                                AddressID: key.AddressID,
-                                UserKey: key.PrivateKey,
-                                MemberKey, Token
-                            };
-                        });
-                });
+            .then((result) => {
+                return pmcw.encryptPrivateKey(result, randomString);
+            })
+            .then((result) => {
+                memberKey = result;
+                return pmcw.encryptMessage(randomString, organizationKey.toPublic().armor(), [], [organizationKey]);
+            })
+            .then((token) => {
+                return {
+                    AddressID: key.AddressID,
+                    UserKey: key.PrivateKey,
+                    MemberKey: memberKey,
+                    Token: token
+                };
+            });
         }
 
         function processMemberKeys(mailboxPassword = '', keys = [], organizationKey = {}) {
-            const promises = _.map(keys, (key) => processMemberKey(mailboxPassword, key, organizationKey));
+
+            const promises = [];
+            _.each(keys, (key) => {
+                promises.push(processMemberKey(mailboxPassword, key, organizationKey));
+            });
+
             return $q.all(promises);
         }
 
@@ -122,7 +147,7 @@ angular.module('proton.commons')
             rv.payload = _.extend(rv.payload, params);
 
             return Key.reset(rv.payload, rv.newPassword)
-                .then(errorHandler);
+            .then(errorHandler);
         }
 
         function setup({ keySalt, keys }, password = '') {
@@ -130,46 +155,49 @@ angular.module('proton.commons')
             const rv = prepareSetupPayload(keySalt, keys, password);
 
             return Key.setup(rv.payload, rv.newPassword)
-                .then(errorHandler);
+            .then(errorHandler);
         }
 
         function memberSetup({ mailboxPassword, keySalt, keys }, password = '', memberID = '', organizationKey = {}) {
 
             return processMemberKeys(mailboxPassword, keys, organizationKey)
-                .then((result) => {
-                    return MemberKey.setup({
-                        MemberID: memberID,
-                        KeySalt: keySalt,
-                        AddressKeys: result,
-                        PrimaryKey: result[0]
-                    }, password);
-                })
-                .then(errorHandler);
+            .then((result) => {
+                return MemberKey.setup({
+                    MemberID: memberID,
+                    KeySalt: keySalt,
+                    AddressKeys: result,
+                    PrimaryKey: result[0]
+                }, password);
+            })
+            .then(errorHandler);
         }
 
         function key(key) {
-            return Key.create(key).then(errorHandler);
+
+            return Key.create(key)
+            .then(errorHandler);
         }
 
         function memberKey(tempPassword = '', key = '', member = {}, organizationKey = {}) {
 
             return getPrimaryKey(member, organizationKey)
-                .then((primaryKey) => {
-                    return $q.all({
-                        user: processMemberKey(tempPassword, key, primaryKey),
-                        org: processMemberKey(tempPassword, key, organizationKey)
-                    });
-                })
-                .then(({ user, org }) => {
-                    const payload = _.extend({}, org, {
-                        MemberID: member.ID,
-                        Activation: user.Token,
-                        UserKey: user.MemberKey
-                    });
+            .then((primaryKey) => {
+                return $q.all({
+                    user: processMemberKey(tempPassword, key, primaryKey),
+                    org: processMemberKey(tempPassword, key, organizationKey)
+                });
+            })
+            .then(({ user, org }) => {
 
-                    return MemberKey.create(payload);
-                })
-                .then(errorHandler);
+                const payload = _.extend(org, {
+                    MemberID: member.ID,
+                    Activation: user.Token,
+                    UserKey: user.MemberKey
+                });
+
+                return MemberKey.create(payload);
+            })
+            .then(errorHandler);
         }
 
         function decryptUser(user = {}, organizationKey = {}, mailboxPassword) {
@@ -210,17 +238,25 @@ angular.module('proton.commons')
                 });
             };
 
+            const promises = [];
+
             // All user key are decrypted and stored
             const address = { ID: CONSTANTS.MAIN_KEY };
-            const promises = _.map(user.Keys, (key, index) => {
+            _.each(user.Keys, (key, index) => {
                 if (subuser === true) {
-                    return decryptMemberKey(key, organizationKey)
-                        .then((pkg) => storeKey({ key, pkg, address }));
-                }
-
-                return pmcw.decryptPrivateKey(key.PrivateKey, mailboxPassword)
+                    promises.push(
+                        decryptMemberKey(key, organizationKey)
                         .then((pkg) => storeKey({ key, pkg, address }))
-                        .catch(() => skipKey({ key, address, index }));
+                        );
+                } else {
+                    promises.push(
+                        pmcw.decryptPrivateKey(key.PrivateKey, mailboxPassword)
+                        .then(
+                            (pkg) => storeKey({ key, pkg, address }),
+                            () => skipKey({ key, address, index })
+                            )
+                        );
+                }
             });
 
             return $q.all(promises).then((primaryKeys) => {

@@ -544,7 +544,7 @@ angular.module('proton.authentication')
 
                 if (plainMailboxPass && !user.OrganizationPrivateKey) {
                     checkKeysFormat(user, keys)
-                    .catch(( err ) => {
+                    .catch(() => {
                         upgradeKeys({mailboxPassword: plainMailboxPass, oldSaltedPassword: this.getPassword(), user});
                     });
                 }
