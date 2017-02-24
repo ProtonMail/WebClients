@@ -72,15 +72,6 @@ angular.module('proton.settings')
     };
 
     /**
-     * We check if we have custom domains
-     * @return {Boolean}
-     */
-    $scope.checkMembers = () => {
-        const { domains = [] } = $scope;
-        return Boolean(domains.length);
-    };
-
-    /**
      * Inform the back-end to change member role
      * @param {Object} member
      */
@@ -129,19 +120,16 @@ angular.module('proton.settings')
      * Save the organization name
      */
     $scope.saveOrganizationName = () => {
-        organizationApi.updateOrganizationName({ DisplayName: $scope.organization.DisplayName })
-        .then((result) => {
-            if (result.data && result.data.Code === 1000) {
+        const errorMessage = gettextCatalog.getString('Error updating organization name', null, 'Error');
+        const promise = organizationApi.updateOrganizationName({ DisplayName: $scope.organization.DisplayName })
+        .then(({ data = {} } = {}) => {
+            if (data.Code === 1000) {
                 notify({ message: gettextCatalog.getString('Organization updated', null), classes: 'notification-success' });
-            } else if (result.data && result.data.Error) {
-                notify({ message: result.data.Error, classes: 'notification-danger' });
-
             } else {
-                notify({ message: gettextCatalog.getString('Error updating organization name', null, 'Error'), classes: 'notification-danger' });
+                throw new Error(data.Error || errorMessage);
             }
-        }, () => {
-            notify({ message: gettextCatalog.getString('Error updating organization name', null, 'Error'), classes: 'notification-danger' });
         });
+        networkActivityTracker.track(promise);
     };
 
     /**

@@ -185,6 +185,10 @@
         border-radius: 0;
         margin: 0 !important; /* overide unknow margin for mobileMode */
         border:none;
+        &.pm_button {
+            height: 33px;
+            line-height: 36px;
+        }
         &:not(:first-of-type){
             border-left:1px solid $border;
         }
