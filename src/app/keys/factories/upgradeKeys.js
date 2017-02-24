@@ -13,8 +13,9 @@ angular.module('proton.keys')
         User
     ) => {
         /**
-         * Change organization keys
+         * Reformat organization keys
          * @param  {String} password
+         * @param  {String} oldSaltedPassword
          * @param  {Object} user
          * @return {Promise}
          */
@@ -33,7 +34,13 @@ angular.module('proton.keys')
             }
             return Promise.resolve(0);
         }
-
+        /**
+         * Reformat user keys
+         * @param  {String} password
+         * @param  {String} oldSaltedPassword
+         * @param  {Object} user
+         * @return {Promise}
+         */
         function manageUserKeys(password = '', oldSaltedPassword = '', user = {}) {
             const inputKeys = [];
             const emailAddresses = {};
@@ -81,7 +88,14 @@ angular.module('proton.keys')
                 );
             });
         }
-
+        /**
+         * Send newly reformatted keys to backend
+         * @param  {Array} keys
+         * @param  {String} keySalt
+         * @param  {Object} organizationKey
+         * @param  {String} loginPassword
+         * @return {Promise}
+         */
         function sendNewKeys({ keys = [], keySalt = '', organizationKey = 0, loginPassword = '' }) {
             const keysFiltered = keys.filter((key) => key !== 0);
             const payload = { KeySalt: keySalt, Keys: keysFiltered };

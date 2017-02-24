@@ -5,7 +5,12 @@ angular.module('proton.keys')
         pmcw,
         regexEmail
     ) => {
-
+        /**
+         * Get email address corresponding to a key fingerprint
+         * @param  {Array} addresses
+         * @param  {String} fingerprint
+         * @return {String} email
+         */
         function getEmailFromFingerprint(addresses = [], fingerprint = '') {
             let email = '';
             _.each(addresses, (address) => {
@@ -16,7 +21,11 @@ angular.module('proton.keys')
             });
             return email;
         }
-
+        /**
+         * Validate a key's userID without a known email
+         * @param  {String} userId
+         * @return {bool}
+         */
         function validUserIDUnknownEmail(userId = '') {
             const split = userId.split(' ');
             if (split.length !== 2) {
@@ -29,7 +38,12 @@ angular.module('proton.keys')
             }
             return true;
         }
-
+        /**
+         * Get the validation promises corresponding to the primary keys
+         * @param  {Array} primaryKeys
+         * @param  {Array} addresses
+         * @return {Array}
+         */
         function getPrimaryKeyPromises(primaryKeys = [], addresses = []) {
             //For primary keys, we will determine which email to use by comparing their fingerprints with the address keys
             return _.reduce(primaryKeys, (acc, privKey) => {
@@ -57,7 +71,12 @@ angular.module('proton.keys')
                 return acc;
             }, []);
         }
-
+        /**
+         * Get the validation promises corresponding to the address keys
+         * @param  {Array} addressKeys
+         * @param  {Array} addresses
+         * @return {Array}
+         */
         function getAddressKeyPromises(keys = [], addresses = []) {
             let allPrivateKeys = [];
 
