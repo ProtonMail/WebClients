@@ -39,7 +39,7 @@ angular.module('proton.sidebar')
             },
             members: {
                 state: 'secured.members',
-                label: gettextCatalog.getString('Addresses/Users', null, 'Title'),
+                label: gettextCatalog.getString('Addresses / Users', null, 'Title'),
                 icon: 'fa-users'
             },
             domains: {
