@@ -1,4 +1,4 @@
-angular.module('proton.core')
+angular.module('proton.keys')
     .factory('upgradeKeys', (
         $log,
         CONSTANTS,
@@ -123,7 +123,6 @@ angular.module('proton.core')
                         secureSessionStorage.setItem(CONSTANTS.MAILBOX_PASSWORD_KEY, pmcw.encode_utf8_base64(passwordComputed));
                     }
                     //fail silently
-                    return Promise.resolve();
                 });
             return promise;
         };

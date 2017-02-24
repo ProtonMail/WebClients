@@ -1,6 +1,9 @@
 angular.module('proton.authentication', [
     'proton.constants',
     'proton.utils'
+    'proton.settings',
+    'proton.models',
+    'proton.keys'
 ])
 // Global functions
 .run(($rootScope, authentication) => {
