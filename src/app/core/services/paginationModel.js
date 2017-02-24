@@ -1,5 +1,5 @@
 angular.module('proton.core')
-    .factory('paginationModel', (CONSTANTS, $rootScope, $state, $stateParams) => {
+    .factory('paginationModel', (CONSTANTS, cacheCounters, $rootScope, $state, $stateParams) => {
 
         const { ELEMENTS_PER_PAGE } = CONSTANTS;
         let currentState = '';
@@ -11,7 +11,7 @@ angular.module('proton.core')
          * Get the max page where an user can go
          * @return {Integer}
          */
-        const getMaxPage = () => pageMax || Math.ceil($rootScope.Total / ELEMENTS_PER_PAGE);
+        const getMaxPage = () => pageMax || Math.ceil(cacheCounters.getCurrentState() / ELEMENTS_PER_PAGE);
 
         /**
          * Set the max page number where an user can go based on the total
@@ -20,7 +20,7 @@ angular.module('proton.core')
          * @return {void}
          */
         const setMaxPage = (total) => {
-            const value = total || $rootScope.Total;
+            const value = total || cacheCounters.getCurrentState();
             pageMax = Math.ceil(value / ELEMENTS_PER_PAGE);
         };
 

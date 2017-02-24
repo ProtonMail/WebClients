@@ -291,7 +291,7 @@ angular.module('proton.elements')
         const context = tools.cacheContext();
 
         if (!context) {
-            return $rootScope.Total;
+            return cacheCounters.getCurrentState();
         }
 
         const label = ($scope.mailbox === 'label') ? $stateParams.label : CONSTANTS.MAILBOX_IDENTIFIERS[$scope.mailbox];

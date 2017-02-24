@@ -250,10 +250,9 @@ angular.module('proton.core')
         .then(() => conversationApi.query(request))
         .then(({ data = {} }) => {
             if (data.Code === 1000) {
-                // Set total value in rootScope
-                $rootScope.Total = data.Total;
+                cacheCounters.currentState(data.Total);
 
-                data.Conversations.forEach((conversation) => {
+                _.each(data.Conversations, (conversation) => {
                     conversation.loaded = true; // Mark this conversation as loaded
                     storeTime(conversation.ID, loc, conversation.Time); // Store time value
                 });
@@ -297,9 +296,9 @@ angular.module('proton.core')
         .then(() => messageApi.query(request))
         .then(({ data = {} } = {}) => {
             const { Messages = [], Total = 0 } = data;
-            $rootScope.Total = Total;
+            cacheCounters.currentState(Total);
 
-            Messages.forEach((message) => {
+            _.each(Messages, (message) => {
                 const { ToList = [], CCList = [], BCCList = [] } = message;
                 message.loaded = true;
                 message.Senders = [message.Sender];
@@ -569,9 +568,9 @@ angular.module('proton.core')
                     number = total % CONSTANTS.ELEMENTS_PER_PAGE;
                 } else {
                     number = CONSTANTS.ELEMENTS_PER_PAGE;
-                }
 
-                $rootScope.Total = total;
+
+                cacheCounters.currentState(total);
                 messages = messages.slice(start, end);
 
                 // Supposed total equal to the total cache?
@@ -628,7 +627,7 @@ angular.module('proton.core')
                     number = CONSTANTS.ELEMENTS_PER_PAGE;
                 }
 
-                $rootScope.Total = total;
+                cacheCounters.currentState(total);
                 conversations = conversations.slice(start, end);
                 // Supposed total equal to the total cache?
                 if (conversations.length === number) {
