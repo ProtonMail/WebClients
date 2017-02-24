@@ -7,7 +7,7 @@
                 <legend translate-context="Title" translate>Multi-User Support</legend>
                 <p class="alert alert-info" translate-context="Info" translate>Create and administer sub-accounts and assign them email addresses on your custom domain.</p>
                 <p>
-                    <button type="button" class="pm_button primary" ng-click="enableMemberSupport()" translate-context="Action" translate>Enable multi-member support</button>
+                    <button type="button" class="pm_button primary" ng-click="enableMemberSupport()" translate-context="Action" translate>Enable multi-user support</button>
                     <a href="https://protonmail.com/support/knowledge-base/business/" target="_blank" class="pm_button link" translate-context="Link" translate>Learn more</a>
                 </p>
             </section>
@@ -94,7 +94,7 @@
             </section>
         </div>
 
-        <div class="row" id="settingsMembers">
+        <div class="row" id="settingsMembers" ng-if="checkMembers()">
             <section class="setting pm_form full">
                 <legend translate translate-context="Title">Users</legend>
                 <p class="alert alert-info" ng-hide="checkDomains()" translate-context="Info" translate translate-comment="ask user to add domain before adding users">Please configure a custom domain before adding members to your organization.</p>
