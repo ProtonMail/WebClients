@@ -1,10 +1,10 @@
-<header id="pm_header" class="clearfix pm_opensans no-auth" ng-controller="HeaderController">
-    <div class="pull-right">
-        <new-bug-report class="reportBug"></new-bug-report>
+<header id="pm_header" class="pm_opensans headerNoAuth" ng-controller="HeaderController">
+    <a  class="back headerNoAuth-btn-back"  href="/inbox" title="Inbox">
+        <i class="fa fa-chevron-left"></i>
+        <span translate translate-context="Action">Back to inbox</span>
+    </a>
+    <div>
+        <new-bug-report class="headerNoAuth-btn-report"></new-bug-report>
         <a class="logOut pm_button primary" ui-sref="login" ng-if="isLoggedIn" translate translate-context="Action">Log out</a>
     </div>
-    <a href="/inbox" title="Inbox">
-        <i class="fa fa-chevron-left"></i>
-        <b translate translate-context="Action">Back to inbox</b>
-    </a>
 </header>
