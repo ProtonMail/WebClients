@@ -72,6 +72,15 @@ angular.module('proton.settings')
     };
 
     /**
+     * We check if we have custom domains
+     * @return {Boolean}
+     */
+    $scope.checkMembers = () => {
+        const { domains = [] } = $scope;
+        return Boolean(domains.length);
+    };
+
+    /**
      * Inform the back-end to change member role
      * @param {Object} member
      */
@@ -332,7 +341,7 @@ angular.module('proton.settings')
     };
 
     /**
-     * Enable multi-member support for Visionary or Business account
+     * Enable multi-user support for Visionary or Business account
      */
     $scope.enableMemberSupport = () => {
         function modal(creds) {
@@ -370,7 +379,7 @@ angular.module('proton.settings')
         }
 
         if ($scope.organization.MaxMembers === 1) {
-            notify(gettextCatalog.getString('Please upgrade to a Visionary or Business account for multi-member support.', null));
+            notify(gettextCatalog.getString('Please upgrade to a Visionary or Business account for multi-user support.', null));
         } else if ($scope.organization.MaxMembers > 1) {
             passwordModal(submit);
         }
