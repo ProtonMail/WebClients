@@ -569,7 +569,7 @@ angular.module('proton.core')
                     number = total % CONSTANTS.ELEMENTS_PER_PAGE;
                 } else {
                     number = CONSTANTS.ELEMENTS_PER_PAGE;
-
+                }
 
                 cacheCounters.currentState(total);
                 messages = messages.slice(start, end);
