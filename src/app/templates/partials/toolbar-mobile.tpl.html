@@ -6,8 +6,8 @@
         </a>
     </span>
 
-    <span class="pm_buttons" ng-class="{ disabled: numberElementSelected === 0 }">
-        <a class="pm_trigger" dropdown ng-disabled="numberElementSelected === 0">
+    <span class="pm_buttons" ng-class="{ disabled: isDisabled()}">
+        <a class="pm_trigger" dropdown ng-disabled="isDisabled()">
             <em><i class="fa fa-eye-slash"></i>
             <i class="fa fa-angle-down"></i></em>
         </a>
@@ -23,8 +23,8 @@
         </span>
     </span>
 
-    <span class="pm_buttons" ng-class="{ disabled: numberElementSelected === 0 }">
-        <a class="pm_trigger" dropdown ng-disabled="numberElementSelected === 0">
+    <span class="pm_buttons" ng-class="{ disabled: isDisabled() }">
+        <a class="pm_trigger" dropdown ng-disabled="isDisabled()">
             <em><i class="fa fa-trash-o"></i>
             <i class="fa fa-angle-down"></i></em>
         </a>
@@ -37,27 +37,27 @@
                 <i class="fa fa-inbox"></i>
                 <span translate translate-context="Action">Move to inbox</span>
             </a>
-            <a ng-click="move('archive')" ng-hide="{{ 'secured.archive.**' | includedByState }}" ng-class="{ disabled: numberElementSelected === 0 }">
+            <a ng-click="move('archive')" ng-hide="{{ 'secured.archive.**' | includedByState }}" ng-class="{ disabled: isDisabled() }">
                 <i class="fa fa-archive"></i>
                 <span translate translate-context="Action">Move to archive</span>
             </a>
-            <a ng-click="move('spam')" ng-hide="{{ 'secured.spam.**' | includedByState }}" ng-class="{ disabled: numberElementSelected === 0 }">
+            <a ng-click="move('spam')" ng-hide="{{ 'secured.spam.**' | includedByState }}" ng-class="{ disabled: isDisabled() }">
                 <i class="fa fa-ban"></i>
                 <span translate translate-context="Action">Move to spam</span>
             </a>
-            <a ng-click="delete()" ng-show="('secured.trash.**' | includedByState) || ('secured.drafts.**' | includedByState) || ('secured.allmail.**' | includedByState)" ng-class="{ disabled: numberElementSelected === 0 }">
+            <a ng-click="delete()" ng-show="('secured.trash.**' | includedByState) || ('secured.drafts.**' | includedByState) || ('secured.allmail.**' | includedByState)" ng-class="{ disabled: isDisabled() }">
                 <i class="fa fa-times-circle-o"></i>
                 <span translate translate-context="Action">Delete</span>
             </a>
-            <a ng-click="move('inbox')" ng-show="{{ 'secured.spam.**' | includedByState }}" ng-class="{ disabled: numberElementSelected === 0 }">
+            <a ng-click="move('inbox')" ng-show="{{ 'secured.spam.**' | includedByState }}" ng-class="{ disabled: isDisabled() }">
                 <i class="fa fa-check"></i>
                 <span translate translate-context="Action">Not spam</span>
             </a>
         </span>
     </span>
 
-    <span class="pm_buttons" ng-class="{ disabled: numberElementSelected === 0 }">
-        <a href="#" class="pm_trigger open-label" dropdown ng-class="{ disabled: numberElementSelected === 0 }" pt-tooltip-translate="Labels">
+    <span class="pm_buttons" ng-class="{ disabled: isDisabled() }">
+        <a href="#" class="pm_trigger open-label" dropdown ng-class="{ disabled: isDisabled() }" pt-tooltip-translate="Labels">
             <i class="fa fa-tag"></i>
             <i class="fa fa-angle-down"></i>
         </a>

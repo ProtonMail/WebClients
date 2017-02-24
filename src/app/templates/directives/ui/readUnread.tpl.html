@@ -1,6 +1,6 @@
 <span
     class="pm_buttons readUnread-container"
-    data-ng-class="{ disabled: numberElementSelected === 0, 'readUnread-container-ur': messageButtons === 1 }">
+    data-ng-class="{ disabled: isDisabled(), 'readUnread-container-ur': messageButtons === 1 }">
     <a
         href="#"
         class="fa fa-eye readUnread-btn-read"
