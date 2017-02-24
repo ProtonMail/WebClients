@@ -782,7 +782,7 @@ angular.module('proton.routes', [
     })
 
     .state('secured.members', {
-        url: '/addresses/users',
+        url: '/members',
         params: {
             action: null,
             id: null
