@@ -248,7 +248,7 @@ angular.module('proton.core')
 
         const promise = api.getDispatcher()
         .then(() => conversationApi.query(request))
-        .then(({ data = {} }) => {
+        .then(({ data = {} } = {}) => {
             if (data.Code === 1000) {
                 cacheCounters.currentState(data.Total);
 
@@ -335,7 +335,7 @@ angular.module('proton.core')
      */
     function getConversation(conversationID = '') {
         const promise = conversationApi.get(conversationID)
-            .then(({ data = {} }) => {
+            .then(({ data = {} } = {}) => {
                 const { Code, Conversation, Messages } = data;
 
                 if (Code === 1000) {
