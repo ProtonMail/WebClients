@@ -128,6 +128,9 @@ angular.module('proton.message')
 
                 // Default there is no expand, this key is coming from toggleMessage
                 if (expand === false) {
+                    // Default are undefined, only bind the value if they were set.
+                    _.has(scope.message, 'showEmbedded') && (scope.message.showEmbedded = false);
+                    _.has(scope.message, 'showImages') && (scope.message.showImages = false);
                     return;
                 }
 
