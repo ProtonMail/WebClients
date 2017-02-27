@@ -11,6 +11,7 @@ angular.module('proton.contactCurrent')
     confirmModal,
     CONSTANTS,
     Contact,
+    tools,
     contactModal,
     dropzoneModal,
     eventManager,
@@ -31,7 +32,7 @@ angular.module('proton.contactCurrent')
     $scope.editing = false;
     $scope.numPerPage = CONSTANTS.ELEMENTS_PER_PAGE;
     $scope.sortBy = 'Name';
-    $scope.isSafari = $.ua.browser.name === 'Safari';
+    $scope.isSafari = tools.isSafari();
 
     // Listeners
     $scope.$on('deleteContact', () => {

@@ -1,10 +1,10 @@
 angular.module('proton.attachments')
-    .factory('attachmentFileFormat', () => {
+    .factory('attachmentFileFormat', (tools) => {
 
         const embedded = ['image/gif', 'image/jpeg', 'image/png', 'image/bmp'];
 
         const isIE = () => $.ua.browser.name === 'IE' && $.ua.browser.major === '11';
-        const isSafari = () => $.ua.browser.name === 'Safari';
+        const isSafari = () => tools.isSafari();
         const isEmbedded = (key) => _.contains(embedded, key);
         const getEmbedded = () => embedded;
 

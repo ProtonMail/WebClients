@@ -510,8 +510,8 @@ angular.module('proton.routes', [
         views: {
             'main@': {
                 templateUrl: 'templates/views/pgp.tpl.html',
-                controller($scope, $rootScope, messageID) {
-                    $scope.isSafari = $.ua.browser.name === 'Safari'; // Download doesn't work with Safari browser
+                controller($scope, $rootScope, messageID, tools) {
+                    $scope.isSafari = tools.isSafari(); // Download doesn't work with Safari browser
                     $rootScope.isBlank = true;
 
                     function viewPgp(event) {
