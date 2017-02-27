@@ -68,7 +68,7 @@ angular.module('proton.commons')
          * @param {Object} params
          * @return {Promise}
          */
-        upgrade (params = {}, newPassword = '') {
+        upgrade(params = {}, newPassword = '') {
             if (newPassword.length) {
                 return srp.getPasswordParams(newPassword, params)
                 .then((authParams) => $http.put(url.get() + '/keys/private/upgrade', authParams));
