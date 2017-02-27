@@ -3,7 +3,7 @@ angular.module('proton.composer')
         scope: {
             model: '=actionCompose'
         },
-        link(scope, el, { actionComposeType }) {
+        link(scope, element, { actionComposeType }) {
             function onClick(e) {
                 e.preventDefault();
 
@@ -17,10 +17,10 @@ angular.module('proton.composer')
                 $rootScope.$emit('composer.new', { type: actionComposeType, message: scope.model });
             }
 
-            el.on('click', onClick);
+            element[0].addEventListener('click', onClick);
 
             scope.$on('$destroy', () => {
-                el.off('click', onClick);
+                element[0].removeEventListener('click', onClick);
             });
         }
     }));
