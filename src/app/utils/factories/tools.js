@@ -75,6 +75,11 @@ angular.module('proton.utils')
         return $.ua.browser.name;
     };
 
+    tools.isSafari = () => {
+        const browsers = ['Safari', 'Mobile Safari'];
+        return _.contains(browsers, $.ua.browser.name);
+    };
+
     tools.getBrowserVersion = () => {
         return $.ua.browser.version;
     };

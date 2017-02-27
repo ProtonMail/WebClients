@@ -1,10 +1,10 @@
 angular.module('proton.address')
-    .directive('addressKeysView', ($rootScope, authentication, gettextCatalog, notify, Key, keyPasswordModal, pmcw, networkActivityTracker, eventManager) => ({
+    .directive('addressKeysView', ($rootScope, authentication, gettextCatalog, tools, notify, Key, keyPasswordModal, pmcw, networkActivityTracker, eventManager) => ({
         replace: true,
         restrict: 'E',
         templateUrl: 'templates/address/addressKeysView.tpl.html',
         link(scope) {
-            const isSafari = $.ua.browser.name === 'Safari'; // Download doesn't work with Safari browser
+            const isSafari = tools.isSafari(); // Download doesn't work with Safari browser
             const unsubscribe = $rootScope.$on('updateUser', () => {
                 populateKeys();
             });
