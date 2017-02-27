@@ -17,6 +17,7 @@ angular.module('proton.settings')
     changeOrganizationPassword,
     changeOrganizationPasswordModal,
     gettextCatalog,
+    domainModel,
     loginPasswordModal,
     memberApi,
     memberModal,
@@ -66,9 +67,9 @@ angular.module('proton.settings')
      * @return {Boolean}
      */
     $scope.checkDomains = () => {
-        const { domains = [] } = $scope;
+        const domains = domainModel.get();
         const verifiedDomains = _.filter(domains, ({ State }) => State); // State value can be 1 (verified) or 2 (dns issue)
-        return domains.length === verifiedDomains.length;
+        return domains.length && domains.length === verifiedDomains.length;
     };
 
     /**
