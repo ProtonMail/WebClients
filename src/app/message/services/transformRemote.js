@@ -10,7 +10,7 @@ angular.module('proton.message')
             }
             return key;
         }).join('|');
-        return new RegExp(`(${str})`, 'g');
+        return `(${str})`;
     })();
 
     /**
@@ -67,7 +67,7 @@ angular.module('proton.message')
         const content = html.innerHTML;
 
         // Bind the boolean only if there are something
-        if (REGEXP_FIXER.test(content)) {
+        if (new RegExp(REGEXP_FIXER, 'g').test(content)) {
             message.showImages = showImages;
         }
 
