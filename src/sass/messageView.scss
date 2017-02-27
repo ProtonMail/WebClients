@@ -354,6 +354,7 @@
             border-top: 1px solid $border;
             overflow: auto;
             zoom: 1;
+            clear: left;
 
             .bodyDecrypted {word-wrap: break-word}
 
