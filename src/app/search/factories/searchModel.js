@@ -80,7 +80,7 @@ angular.module('proton.search')
                 keyword: model.keyword,
                 attachments: isNaN(attachments) ? undefined : attachments,
                 address: (model.address || {}).ID,
-                label: getLabel(model.folder)
+                label: model.label || getLabel(model.folder)
             }, date);
         };
 
