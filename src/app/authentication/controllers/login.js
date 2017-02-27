@@ -187,7 +187,6 @@ angular.module('proton.authentication')
     }
 
     function resetLoginInputs() {
-        $scope.username = '';
         $scope.password = '';
         $scope.twoFactorCode = '';
     }
