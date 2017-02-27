@@ -77,9 +77,12 @@ angular.module('proton.core')
             $previous.addEventListener('click', onPrevious, false);
             $dropdown.addEventListener('click', onSelect, false);
 
-            const unsubscribe = $rootScope.$watch('Total', (val) => {
-                paginationModel.setMaxPage(val);
-                scope.pages = buildPages(val);
+            const unsubscribe = $rootScope.$on('app.cacheCounters', (event, { type, data }) => {
+                if (type === 'refresh.currentState') {
+                    const { value } = data;
+                    paginationModel.setMaxPage(value);
+                    scope.pages = buildPages(value);
+                }
             });
 
             scope.$on('$destroy', () => {
