@@ -791,18 +791,6 @@ const pmcrypto = (function pmcrypto() {
             if (info.user.hash[0] !== openpgp.enums.hash.sha256) {
                 throw new Error('Preferred hash algorithm must be SHA256');
             }
-
-            let sha1 = false;
-            for (let i = 1; i < info.user.hash.length; i++) {
-                if (info.user.hash[i] === openpgp.enums.hash.sha1) {
-                    sha1 = true;
-                    break;
-                }
-            }
-
-            if (!sha1) {
-                throw new Error('SHA1 must be in the list of preferred hash algorithms');
-            }
         } else {
             throw new Error('Key missing preferred hash algorithms');
         }
