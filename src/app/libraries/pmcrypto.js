@@ -685,6 +685,10 @@ const pmcrypto = (function pmcrypto() {
                     return null;
                 }
 
+                if (!primary.user) {
+                    return null;
+                }
+
                 if (!primary.selfCertificate) {
                     return null;
                 }
