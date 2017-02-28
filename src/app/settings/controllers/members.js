@@ -273,9 +273,9 @@ angular.module('proton.settings')
      * @param {Object} member
      */
     $scope.removeMember = (member, remove = true) => {
-        const title = remove ? gettextCatalog.getString('Remove member', null, 'Title') : gettextCatalog.getString('Delete member', null, 'Title');
-        const message = remove ? gettextCatalog.getString('Are you sure you want to permanently remove this member from your organization? They will lose access to any addresses belonging to your organization.', null, 'Info') : gettextCatalog.getString('Are you sure you want to permanently delete this member? The member\'s inbox and all addresses associated with this member will be deleted.', null, 'Info');
-        const successMessage = gettextCatalog.getString('Member removed', null, 'Info');
+        const title = remove ? gettextCatalog.getString('Remove user', null, 'Title') : gettextCatalog.getString('Delete user', null, 'Title');
+        const message = remove ? gettextCatalog.getString('Are you sure you want to permanently remove this user from your organization? They will lose access to any addresses belonging to your organization.', null, 'Info') : gettextCatalog.getString('Are you sure you want to permanently delete this user? The user\'s inbox and all addresses associated with this member will be deleted.', null, 'Info');
+        const successMessage = gettextCatalog.getString('User removed', null, 'Info');
         const errorMessage = gettextCatalog.getString('Error during deletion', null, 'Error');
 
         confirmModal.activate({
