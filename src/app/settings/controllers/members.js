@@ -42,6 +42,12 @@ angular.module('proton.settings')
         });
     }
 
+    function scrollToUsers() {
+        $('.settings').animate({
+            scrollTop: $('#settingsMembers').offset().top
+        }, 1000);
+    }
+
     $scope.roles = [];
     $scope.roles[CONSTANTS.PAID_ADMIN_ROLE] = gettextCatalog.getString('Admin', null);
     $scope.roles[CONSTANTS.PAID_MEMBER_ROLE] = gettextCatalog.getString('Member', null);
@@ -56,6 +62,9 @@ angular.module('proton.settings')
                 break;
             case 'edit':
                 $scope.editMember(_.findWhere($scope.members, { ID: $stateParams.id }));
+                break;
+            case 'scroll':
+                scrollToUsers();
                 break;
             default:
                 break;

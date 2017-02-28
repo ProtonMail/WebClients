@@ -747,9 +747,7 @@ angular.module('proton.routes', [
 
     .state('secured.dashboard', {
         url: '/dashboard',
-        params: {
-            scroll: null
-        },
+        params: { scroll: null },
         resolve: {
             access(user, $state) {
                 if (user.subuser || user.Role === CONSTANTS.PAID_MEMBER_ROLE) {
