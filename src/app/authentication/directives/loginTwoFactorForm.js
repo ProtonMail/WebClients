@@ -1,5 +1,5 @@
 angular.module('proton.authentication')
   .directive('loginTwoFactorForm', () => ({
       replace: true,
-      templateUrl: 'templates/directives/loginTwoFactorForm.tpl.html'
+      templateUrl: 'templates/authentication/loginTwoFactorForm.tpl.html'
   }));

@@ -151,7 +151,7 @@ angular.module('proton.settings')
 
     $scope.initLogs = () => {
         networkActivityTracker.track(
-            Logs.getLogs().then(
+            Logs.get().then(
                 (response) => {
                     $scope.logs = _.sortBy(response.data.Logs, 'Time').reverse();
                     $scope.logCount = $scope.logs.length;
@@ -176,7 +176,7 @@ angular.module('proton.settings')
                 message,
                 confirm() {
                     networkActivityTracker.track(
-                        Logs.clearLogs()
+                        Logs.clear()
                         .then((result) => {
                             if (result.data && result.data.Code === 1000) {
                                 $scope.logs = [];

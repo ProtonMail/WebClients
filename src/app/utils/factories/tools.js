@@ -1,19 +1,9 @@
 angular.module('proton.utils')
-.factory('tools', ($log, $state, $stateParams, $filter, authentication, $compile, $templateCache, $rootScope, $q, CONSTANTS, regexEmail, AppModel) => {
+.factory('tools', ($log, $state, $stateParams, $filter, authentication, $compile, $templateCache, $rootScope, $q, CONSTANTS, aboutClient, regexEmail, AppModel) => {
     const tools = {};
     const MAILBOX_KEYS = Object.keys(CONSTANTS.MAILBOX_IDENTIFIERS);
 
-    tools.hasSessionStorage = () => {
-        const mod = 'modernizr';
-
-        try {
-            sessionStorage.setItem(mod, mod);
-            sessionStorage.removeItem(mod);
-            return true;
-        } catch (error) {
-            return false;
-        }
-    };
+    tools.hasSessionStorage = aboutClient.hasSessionStorage;
 
     /**
      * Generate a hash
@@ -24,9 +14,7 @@ angular.module('proton.utils')
         return str.split('').reduce((prevHash, currVal) => ((prevHash << 5) - prevHash) + currVal.charCodeAt(0), 0);
     };
 
-    tools.hasCookie = () => {
-        return navigator.cookieEnabled;
-    };
+    tools.hasCookie = aboutClient.hasCookie;
 
     tools.mobileResponsive = () => {
         const bodyWidth = document.body.offsetWidth;
@@ -71,62 +59,12 @@ angular.module('proton.utils')
         ];
     };
 
-    tools.getBrowser = () => {
-        return $.ua.browser.name;
-    };
-
-    tools.isSafari = () => {
-        const browsers = ['Safari', 'Mobile Safari'];
-        return _.contains(browsers, $.ua.browser.name);
-    };
-
-    tools.isSafariMobile = () => $.ua.browser.name === 'Mobile Safari';
-
-    tools.getBrowserVersion = () => {
-        return $.ua.browser.version;
-    };
-
-    tools.prngAvailable = () => {
-        if (typeof window !== 'undefined' && window.crypto && window.crypto.getRandomValues) {
-            return true;
-        } else if (typeof window !== 'undefined' && typeof window.msCrypto === 'object' && typeof window.msCrypto.getRandomValues === 'function') {
-            return true;
-        }
-
-        return false;
-    };
-
-    tools.getOs = () => {
-        let OSName = 'other'; // Unknown OS
-
-        if (navigator.appVersion) {
-            if (navigator.appVersion.indexOf('Win') !== -1) {
-                OSName = 'windows';
-            }
-
-            if (navigator.appVersion.indexOf('Mac') !== -1) {
-                OSName = 'osx';
-            }
-
-            if (navigator.appVersion.indexOf('X11') !== -1) {
-                OSName = 'linux';
-            }
-
-            if (navigator.appVersion.indexOf('Linux') !== -1) {
-                OSName = 'linux';
-
-                if (navigator.appVersion.indexOf('Android') !== -1) {
-                    OSName = 'android';
-                }
-            }
-        }
-
-        if (navigator.userAgent && /(iPad|iPhone|iPod)/g.test(navigator.userAgent)) {
-            OSName = 'ios';
-        }
-
-        return OSName;
-    };
+    tools.getBrowser = aboutClient.getBrowser;
+    tools.getBrowserVersion = aboutClient.getBrowserVersion;
+    tools.prngAvailable = aboutClient.prngAvailable;
+    tools.getOs = aboutClient.getOS;
+    tools.isSafari = aboutClient.isSafari;
+    tools.isSafariMobile = aboutClient.isSafariMobile;
 
     tools.changeSeparatorToComma = (input) => {
         return input.replace(';', ',');
