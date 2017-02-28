@@ -11,7 +11,7 @@
                     <span translate-context="Title" translate translate-comment="page heading">Identities</span>
                 </legend>
                 <div class="margin" ng-show="isAdmin === true">
-                    <a ng-hide="isSubUser" class="pm_button" ui-sref="secured.members" translate-context="Link" translate>Add address</a>
+                    <a ng-hide="isSubUser" class="pm_button" ui-sref="secured.members({ action: 'scroll' })" translate-context="Link" translate>Add address</a>
                 </div>
                 <p class="alert alert-info" ng-show="isAdmin">
                     <span translate-context="Info" translate translate-comment="informs the user about permanance of custom addresses">Non-original <strong>@protonmail</strong> addresses can never be deleted (only disabled). This means that once you create an address it will always count towards your address limit. Custom domain addresses must be disabled before they can be deleted. Custom domain addresses can only be deleted if all messages associated with that address are deleted.</span> <a href="https://protonmail.com/support/knowledge-base/aliases-within-protonmail/" target="_blank" translate translate-context="Action">Learn more</a>.
