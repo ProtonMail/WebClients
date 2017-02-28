@@ -13,13 +13,18 @@ module.exports = (type = 'column') => {
             item: '.message',
             body: '.bodyDecrypted',
             details: '.recipients-details',
+            displayButtons: {
+                remote: '.displayContentBtn-container[data-action="remote"]',
+                embedded: '.displayContentBtn-container[data-action="embedded"]'
+            },
             button: {
                 toggleDetails: '.toggleDetails',
                 composeToFrom: '.message-contact-sender',
                 composeToTo: '.messageContacts-btn-compose',
                 reply: '.message-actionBtn-reply',
                 replyall: '.message-actionBtn-replyall',
-                forward: '.message-actionBtn-forward'
+                forward: '.message-actionBtn-forward',
+                blockquote: '.proton-message-blockquote-toggle'
             }
         }
     };
@@ -143,6 +148,7 @@ module.exports = (type = 'column') => {
             return browser.executeScript(`
                 return ${SCOPE}
                     .find('${SELECTOR.message.button[type]}')
+                    .get(0)
                     .click();
             `);
         };
@@ -152,11 +158,48 @@ module.exports = (type = 'column') => {
             return browser.executeScript(`
                 return ${SCOPE}
                     .find('${SELECTOR.message.button[selector]}')
+                    .get(0)
                     .click();
             `);
         };
 
-        return { isOpened, open, isDetailsVisible, toggleDetails, reply, composeTo };
+        const loadContent = (type) => {
+            const selector = `${SCOPE}.find('${SELECTOR.message.displayButtons[type]}')`;
+
+            const isVisible = () => {
+                return browser.executeScript(`
+                    return ${selector}.is(':visible');
+                `);
+            };
+
+            const click = () => {
+                return browser.executeScript(`
+                    return ${selector}.click();
+                `);
+            };
+
+            const hasLoaded = () => {
+                const selector = `${SCOPE}.find('${SELECTOR.message.body}')`;
+                if (type === 'embedded') {
+                    return browser.executeScript(`
+                        const img = ${selector}[0]
+                            .querySelector('img[proton-src^="cid:"]');
+                        return (img && /blob:http/.test(img.src));
+                    `);
+                }
+
+
+                return browser.executeScript(`
+                    const img = ${selector}[0]
+                        .querySelector('img[proton-src^="http"]');
+                    return (img && img.src === img.getAttribute('proton-src'));
+                `);
+            };
+
+            return { isVisible, click, hasLoaded };
+        };
+
+        return { isOpened, open, isDetailsVisible, toggleDetails, reply, composeTo, loadContent };
     };
 
     return { open, isOpened, conversation, message };
