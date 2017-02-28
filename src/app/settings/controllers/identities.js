@@ -128,18 +128,19 @@ angular.module('proton.settings')
         const verifiedDomains = _.filter(domains, ({ State }) => State);
 
         if (organization.MaxMembers === 1) {
-            notify({ message: gettextCatalog.getString('Multi-user support requires either a Business or Visionary plan.', null, 'Error'), classes: 'notification-danger' });
+            notify(gettextCatalog.getString('Multi-user support requires either a Business or Visionary plan.', null, 'Info'));
             $state.go('secured.members');
             return false;
         }
 
         if (!organization.HasKeys) {
-            notify({ message: gettextCatalog.getString('Please enable multi-user support before adding users to your organization', null, 'Error'), classes: 'notification-danger' });
+            notify(gettextCatalog.getString('Please enable multi-user support before adding users to your organization', null, 'Info'));
+            $state.go('secured.members');
             return false;
         }
 
         if (!verifiedDomains.length) {
-            notify({ message: gettextCatalog.getString('Please configure a custom domain before adding users to your organization.', null, 'Error'), classes: 'notification-danger' });
+            notify(gettextCatalog.getString('Please configure a custom domain before adding users to your organization.', null, 'Info'));
             return false;
         }
 
