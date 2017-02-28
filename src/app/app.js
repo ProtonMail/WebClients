@@ -35,6 +35,7 @@ angular.module('proton', [
     'proton.authentication',
     'proton.elements',
     'proton.members',
+    'proton.labels',
     'proton.domains',
     'proton.address',
     'proton.message',

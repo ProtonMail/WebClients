@@ -107,12 +107,12 @@
                         <div class="col-1-4" ng-repeat="label in ctrl.filter.Simple.Actions.Labels track by label.ID | orderBy: 'Order'">
                             <label class="filter-modal-label">
                                 <custom-checkbox data-custom-ng-model="label.Selected"></custom-checkbox>
-                                <i class="fa fa-tag" ng-style="{color: label.Color}"></i>
+                                <i class="fa" ng-class="{ 'fa-folder': label.Exclusive, 'fa-tag': !label.Exclusive }" ng-style="{color: label.Color}"></i>
                                 <span class="ellipsis" ng-bind="label.Name">{{ label.Name }}</span>
                             </label>
                         </div>
                         <div class="col-1-4 filter-modal-label-add">
-                            <button class="pm_button" ng-click="ctrl.addLabel()" translate translate-context="Action">Add Label</button>
+                            <button class="pm_button" ng-click="ctrl.addLabel()" translate translate-context="Action">Add label</button>
                         </div>
                     </div>
                     <label>
@@ -122,27 +122,36 @@
                     <div class="alert pm_grid" ng-show="ctrl.hasMove">
                         <div class="col-1-4">
                             <label>
+                                <custom-radio data-custom-ng-model="ctrl.filter.Simple.Actions.Move" data-custom-ng-value="'0'"></custom-radio>
+                                <span class="ellipsis" translate translate-context="Label">Inbox</span>
+                            </label>
+                        </div>
+                        <div class="col-1-4">
+                            <label>
                                 <custom-radio data-custom-ng-model="ctrl.filter.Simple.Actions.Move" data-custom-ng-value="'6'"></custom-radio>
-                                <span translate translate-context="Label">Archive</span>
+                                <span class="ellipsis" translate translate-context="Label">Archive</span>
                             </label>
                         </div>
                         <div class="col-1-4">
                             <label>
                                 <custom-radio data-custom-ng-model="ctrl.filter.Simple.Actions.Move" data-custom-ng-value="'4'"></custom-radio>
-                                <span translate translate-context="Label">Spam</span>
+                                <span class="ellipsis" translate translate-context="Label">Spam</span>
                             </label>
                         </div>
                         <div class="col-1-4">
                             <label>
                                 <custom-radio data-custom-ng-model="ctrl.filter.Simple.Actions.Move" data-custom-ng-value="'3'"></custom-radio>
-                                <span translate translate-context="Label">Trash</span>
+                                <span class="ellipsis" translate translate-context="Label">Trash</span>
                             </label>
                         </div>
-                        <div class="col-1-4">
+                        <div class="col-1-4" ng-repeat="folder in ctrl.folders track by folder.ID">
                             <label>
-                                <custom-radio data-custom-ng-model="ctrl.filter.Simple.Actions.Move" data-custom-ng-value="'0'"></custom-radio>
-                                <span translate translate-context="Label">Inbox</span>
+                                <custom-radio data-custom-ng-model="ctrl.filter.Simple.Actions.Move" data-custom-value="{{ ::folder.ID }}"></custom-radio>
+                                <span class="ellipsis" translate translate-context="Label">{{ ::folder.Name }}</span>
                             </label>
+                        </div>
+                        <div class="col-1-4 filter-modal-folder-add">
+                            <button class="pm_button" ng-click="ctrl.addFolder()" translate translate-context="Action">Add folder</button>
                         </div>
                     </div>
                     <label>
@@ -153,13 +162,13 @@
                         <div class="col-1-4">
                             <label>
                                 <custom-checkbox data-custom-ng-model="ctrl.filter.Simple.Actions.Mark.Read"></custom-checkbox>
-                                <span translate translate-context="Label">Read</span>
+                                <span class="ellipsis" translate translate-context="Label">Read</span>
                             </label>
                         </div>
                         <div class="col-1-4">
                             <label>
                                 <custom-checkbox data-custom-ng-model="ctrl.filter.Simple.Actions.Mark.Starred"></custom-checkbox>
-                                <span translate translate-context="Label">Starred</span>
+                                <span class="ellipsis" translate translate-context="Label">Starred</span>
                             </label>
                         </div>
                     </div>

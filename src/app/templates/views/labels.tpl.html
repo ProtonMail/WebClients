@@ -2,11 +2,13 @@
     <div class="settings" id="labelContainer">
         <div class="row">
             <div class="setting pm_form full">
-                <legend translate translate-context="Title">Labels</legend>
+                <legend translate-context="Title" translate>Folders / Labels</legend>
                 <p>
-                    <button type="button" class="pm_button primary labelsState-btn-add" ng-click="createLabel()" translate-context="Action" translate>Add Label</button>
-                    <button type="button" class="pm_button labelsState-btn-sort" ng-click="sortLabels()" ng-if="labels.length > 1" translate-context="Action" translate>Sort</button>
+                    <button type="button" class="pm_button primary" ng-click="createFolder()" translate-context="Action" translate>Add folder</button>
+                    <button type="button" class="pm_button primary labelsState-btn-add" ng-click="createLabel()" translate-context="Action" translate>Add label</button>
+                    <button type="button" class="pm_button labelsState-btn-sort" ng-click="sortLabels()" translate-context="Action" translate>Sort</button>
                 </p>
+                <p class="alert alert-info" translate-context="Info" translate>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Temporibus odit, officiis mollitia tenetur esse. Quod illo minima, minus alias corporis! Molestiae fugiat, error commodi, obcaecati nobis fuga. Voluptatum, ex. Magnam.</p>
                 <p
                     class="alert alert-info labelsState-msg-info"
                     ng-show="!labels.length"
@@ -26,8 +28,8 @@
                             data-color="{{label.Color}}"
                             data-as-sortable-item>
                             <span as-sortable-item-handle>
-                                <i class="fa fa-ellipsis-v as-sortable-icon"></i>
-                                <i class="fa fa-tag" ng-style="{ 'color': label.Color }"></i>
+                                <i class="labelsState-item-icon fa fa-ellipsis-v as-sortable-icon"></i>
+                                <i class="labelsState-item-icon fa" ng-class="{ 'fa-folder': label.Exclusive, 'fa-tag': !label.Exclusive }" ng-style="{ color: label.Color }"></i>
                                 <span class="label label-pm labelsState-item-name">{{ label.Name }}</span>
                                 <span class="pull-right">
                                     <button

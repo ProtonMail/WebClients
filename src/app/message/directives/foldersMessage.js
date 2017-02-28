@@ -13,6 +13,9 @@ angular.module('proton.message')
         spam: {
             className: 'fa-ban',
             tooltip: gettextCatalog.getString('In spam', null)
+        },
+        folder: {
+            className: 'fa-folder'
         }
     };
 

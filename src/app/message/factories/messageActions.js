@@ -1,5 +1,5 @@
 angular.module('proton.message')
-    .factory('messageActions', ($q, $rootScope, tools, cache, eventManager, messageApi, networkActivityTracker, CONSTANTS, notify, gettextCatalog) => {
+    .factory('messageActions', ($q, $rootScope, authentication, tools, cache, eventManager, messageApi, networkActivityTracker, CONSTANTS, notify, gettextCatalog) => {
 
         const REMOVE_ID = 0;
         const ADD_ID = 1;
@@ -45,10 +45,21 @@ angular.module('proton.message')
                 case 'label':
                     addLabel(data.messages, data.labels, data.alsoArchive);
                     break;
+                case 'folder':
+                    folder(data.messageIDs, data.folderID);
+                    break;
                 default:
                     break;
             }
         });
+
+        function folder(messageIDs = [], folderID = '') {
+            const displaySuccess = () => notifySuccess(gettextCatalog.getPlural(messageIDs.length, 'Message moved', 'Messages moved', null));
+            const promise = messageApi.label(folderID, 1, messageIDs)
+            .then(() => eventManager.call())
+            .then(() => displaySuccess());
+            networkActivityTracker.track(promise);
+        }
 
         function updateLabelsAdded(Type, mailbox) {
             const list = [CONSTANTS.MAILBOX_IDENTIFIERS[mailbox]];
@@ -74,18 +85,20 @@ angular.module('proton.message')
 
         // Message actions
         function move({ ids, mailbox }) {
+            const exclusiveLabels = _.chain(authentication.user.Labels).where({ Exclusive: 1 }).map(({ ID }) => ID).value();
+            const folderIDs = [
+                CONSTANTS.MAILBOX_IDENTIFIERS.inbox,
+                CONSTANTS.MAILBOX_IDENTIFIERS.trash,
+                CONSTANTS.MAILBOX_IDENTIFIERS.spam,
+                CONSTANTS.MAILBOX_IDENTIFIERS.archive
+            ].concat(exclusiveLabels);
             const toTrash = mailbox === 'trash';
             const events = _.chain(ids)
                 .map((id) => {
                     const message = cache.getMessageCached(id) || {};
                     let labelIDs = message.LabelIDs || [];
                     const labelIDsAdded = updateLabelsAdded(message.Type, mailbox);
-                    const labelIDsRemoved = labelIDs.filter((labelID) => [
-                        CONSTANTS.MAILBOX_IDENTIFIERS.inbox,
-                        CONSTANTS.MAILBOX_IDENTIFIERS.trash,
-                        CONSTANTS.MAILBOX_IDENTIFIERS.spam,
-                        CONSTANTS.MAILBOX_IDENTIFIERS.archive
-                    ].indexOf(labelID) > -1);
+                    const labelIDsRemoved = labelIDs.filter((labelID) => folderIDs.indexOf(labelID) > -1);
 
                     if (Array.isArray(labelIDsRemoved)) {
                         labelIDs = _.difference(labelIDs, labelIDsRemoved);

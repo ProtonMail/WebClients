@@ -1,6 +1,6 @@
 angular.module('proton.elements')
-.directive('labelsElement', ($rootScope, $filter, $state) => {
-    const toLabels = $filter('labels');
+.directive('labelsElement', ($rootScope, authentication, $state) => {
+    const toLabels = (labelIDs = []) => _.filter(authentication.user.Labels, (label) => labelIDs.indexOf(label.ID) > -1 && !label.Exclusive);
     const HIDE_CLASSNAME = 'labelsElement-hidden';
 
     const moreVisibility = (node) => ({

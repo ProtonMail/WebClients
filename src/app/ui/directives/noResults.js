@@ -1,5 +1,5 @@
 angular.module('proton.ui')
-.directive('noResults', (tools, gettextCatalog) => {
+.directive('noResults', (tools, gettextCatalog, authentication, $stateParams) => {
 
     const TYPES = {
         inbox: {
@@ -41,10 +41,26 @@ angular.module('proton.ui')
         label: {
             icon: 'fa-tag',
             text: gettextCatalog.getString('Label', null, 'No results heading')
+        },
+        folder: {
+            icon: 'fa-folder',
+            text: gettextCatalog.getString('Folder', null, 'No results heading')
         }
     };
 
-    const getBoxDetails = (box) => TYPES[box] || {};
+    const getBoxDetails = (box) => {
+        let mailbox = box;
+
+        if (mailbox === 'label') {
+            const label = _.findWhere(authentication.user.Labels, { ID: $stateParams.label }) || {};
+
+            if (label.Exclusive === 1) {
+                mailbox = 'folder';
+            }
+        }
+
+        return TYPES[mailbox] || {};
+    };
 
     const getLabel = (type) => {
         if (type === 'conversation') {

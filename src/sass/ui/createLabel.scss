@@ -1,12 +1,18 @@
 .createLabel-button {
-    height: auto;
-    font-size: 12px;
-    line-height: 20px;
-    background: transparent;
-    border: 0;
-    padding: 0;
-    color: $primary;
+	box-sizing: border-box;
+	height: initial;
+	min-height: 25px;
+	width: 100%;
+    padding: 0px;
+	border:0;
+	line-height: 16px;
     font-weight: bold;
+	background: transparent;
+    word-wrap: break-word;
+    text-transform: none;
+	text-align: left;
+	color: $primary;
+	cursor: pointer;
     box-shadow: none;
     cursor: pointer;
     i {

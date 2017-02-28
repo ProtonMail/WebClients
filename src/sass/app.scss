@@ -78,6 +78,7 @@
 @import "ui/formUtils/autocompleteEmail";
 @import "ui/intlTelInput";
 @import "ui/starButton";
+@import "ui/scrollbox";
 
 
 //===  Custom Components ================//
@@ -155,9 +156,14 @@
 @import "components/outside/composer";
 
 //== Labels
-@import "components/labels/labelDropdown";
 @import "components/labels/labelModal";
 @import "components/labels/labelsElement";
+@import "components/labels/labelsState";
+
+//== Dropdowns
+@import "components/dropdowns/dropdownFolder";
+@import "components/dropdowns/dropdownLabel";
+
 
 //== Filters
 @import "components/filters/filtersModal";

@@ -1,9 +1,9 @@
 angular.module('proton.ui')
 .directive('dropdown', ($document, $rootScope) => {
-
     const CLASS_OPEN = 'pm_dropdown-opened';
 
-    return function (scope, element) {
+    return (scope, element) => {
+
         const parent = element.parent();
         const dropdown = parent.find('.pm_dropdown');
 

@@ -1,16 +1,18 @@
 angular.module('proton.core')
-.factory('filterModal', ($timeout, $rootScope, pmModal, gettextCatalog, authentication, Filter, networkActivityTracker, notify, CONSTANTS, eventManager, labelModal, Label) => {
+.factory('filterModal', ($timeout, $rootScope, pmModal, gettextCatalog, authentication, Filter, networkActivityTracker, notify, CONSTANTS, eventManager, labelModal) => {
     return pmModal({
         controllerAs: 'ctrl',
         templateUrl: 'templates/modals/filter.tpl.html',
         controller(params) {
-            const labelsOrdered = _.sortBy(authentication.user.Labels, 'Order');
+            const labelsOrdered = _.chain(authentication.user.Labels).where({ Exclusive: 0 }).sortBy('Order').value();
+            const foldersOrdered = _.chain(authentication.user.Labels).where({ Exclusive: 1 }).sortBy('Order').value();
             const ctrl = this;
             const model = angular.copy(params.filter);
 
             ctrl.hasLabels = false;
             ctrl.hasMove = false;
             ctrl.hasMark = false;
+            ctrl.folders = foldersOrdered;
 
             ctrl.types = [
                 { label: gettextCatalog.getString('Select', null), value: 'select' },
@@ -37,6 +39,21 @@ angular.module('proton.core')
                 { label: gettextCatalog.getString('all', null), value: 'all' },
                 { label: gettextCatalog.getString('any', null), value: 'any' }
             ];
+
+            /**
+             * Open a modal to create a new folder / label
+             * @param  {Number} [Exclusive=0]
+             */
+            function openLabelModal(Exclusive = 0) {
+                labelModal.activate({
+                    params: {
+                        label: { Exclusive },
+                        close() {
+                            labelModal.deactivate();
+                        }
+                    }
+                });
+            }
 
             /**
              * Prepare the Conditions Model
@@ -127,6 +144,9 @@ angular.module('proton.core')
             function prepareStatus({ Status = 1 } = {}) {
                 return Status;
             }
+
+            ctrl.addLabel = () => openLabelModal(0);
+            ctrl.addFolder = () => openLabelModal(1);
 
             ctrl.initialization = () => {
                 ctrl.filter = {
@@ -250,33 +270,6 @@ angular.module('proton.core')
                 } else {
                     notify({ message: gettextCatalog.getString('Text or pattern already included', null), classes: 'notification-danger' });
                 }
-            };
-
-            ctrl.addLabel = () => {
-                labelModal.activate({
-                    params: {
-                        title: gettextCatalog.getString('Create new label', null, 'Title'),
-                        create(name, color) {
-                            networkActivityTracker.track(
-                                Label.create({
-                                    Name: name,
-                                    Color: color,
-                                    Display: 1
-                                }).then((result) => {
-                                    if (result.data && result.data.Code === 1000) {
-                                        eventManager.call();
-                                        labelModal.deactivate();
-                                    } else if (result.data && result.data.Error) {
-                                        notify({ message: result.data.Error, classes: 'notification-danger' });
-                                    }
-                                })
-                            );
-                        },
-                        cancel() {
-                            labelModal.deactivate();
-                        }
-                    }
-                });
             };
 
             ctrl.removeCondition = (condition) => {
