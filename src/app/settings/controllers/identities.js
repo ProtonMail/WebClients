@@ -124,10 +124,22 @@ angular.module('proton.settings')
      */
     $scope.canAddMember = () => {
         const organization = organizationModel.get();
+        const domains = domainModel.get();
+        const verifiedDomains = _.filter(domains, ({ State }) => State);
 
         if (organization.MaxMembers === 1) {
             notify({ message: gettextCatalog.getString('Multi-user support requires either a Business or Visionary plan.', null, 'Error'), classes: 'notification-danger' });
             $state.go('secured.members');
+            return false;
+        }
+
+        if (!organization.HasKeys) {
+            notify({ message: gettextCatalog.getString('Please enable multi-user support before adding users to your organization', null, 'Error'), classes: 'notification-danger' });
+            return false;
+        }
+
+        if (!verifiedDomains.length) {
+            notify({ message: gettextCatalog.getString('Please configure a custom domain before adding users to your organization.', null, 'Error'), classes: 'notification-danger' });
             return false;
         }
 
