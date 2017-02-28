@@ -23,22 +23,7 @@ angular.module('proton', [
     'proton.routes',
     'proton.composer',
 
-    // Models
-    'proton.models.addresses',
-    'proton.models.contact',
-    'proton.models.eo',
-    'proton.models.events',
-    'proton.models.filter',
-    'proton.models.incomingDefaults',
-    'proton.models.invite',
-    'proton.models.keys',
-    'proton.models.label',
-    'proton.models.logs',
-    'proton.models.memberKeys',
-    'proton.models.payments',
-    'proton.models.reset',
-    'proton.models.user',
-    'proton.models',
+    'proton.commons',
     'proton.bugReport',
 
     // Config
@@ -48,7 +33,6 @@ angular.module('proton', [
     'proton.sidebar',
     'proton.attachments',
     'proton.authentication',
-    'proton.event',
     'proton.elements',
     'proton.members',
     'proton.domains',

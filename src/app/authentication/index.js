@@ -1,7 +1,5 @@
 angular.module('proton.authentication', [
     'proton.constants',
-    'proton.settings',
-    'proton.models',
     'proton.utils'
 ])
 // Global functions

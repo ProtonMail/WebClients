@@ -1,5 +1,5 @@
 angular.module('proton.authentication')
   .directive('loginForm', () => ({
       replace: true,
-      templateUrl: 'templates/directives/loginForm.tpl.html'
+      templateUrl: 'templates/authentication/loginForm.tpl.html'
   }));

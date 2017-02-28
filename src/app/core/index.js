@@ -1,3 +1,3 @@
-angular.module('proton.core', ['proton.constants', 'proton.utils', 'proton.models'])
+angular.module('proton.core', ['proton.constants', 'proton.utils'])
     .run((paginationModel) => paginationModel.init());
 
