@@ -1,0 +1,552 @@
+message-view {
+    @include flexColumn();
+}
+
+
+@keyframes nodeInserted {
+    from { opacity: 0.99; }
+    to { opacity: 1; }
+}
+
+#conversation-view {
+    .fa-star {
+        color: $yellow;
+    }
+    header {
+
+        display:-webkit-flex;
+        display: flex;
+
+        -webkit-flex-direction:column;
+        flex-direction: column;
+
+        -webkit-backface-visibility: hidden; /* fix safari issue on containsMessage not diplayed properly */
+
+        /*
+        Supercalifragilisticexpialidocious h1
+		avoid child shrink which is accomplished here by min-content
+		*/
+		min-height: -moz-min-content;
+	    min-height: -webkit-min-content;
+        min-height: min-content;
+        border-bottom: 1px solid $border;
+        padding: 0px 10px;
+
+        h1 {
+            position: relative;
+            font-size: 24px;
+            font-weight: 400;
+            color: set-invert-color($main-background,$black);
+            line-height: 35px;
+            margin: 0;
+            letter-spacing: .04rem;
+            display: inline-block;
+            word-wrap: break-word;
+            padding: 0 10px;
+            padding: 14px 30px 14px 0px; /* star */
+            min-height: 35px;
+
+            .starButton {
+                position: absolute;
+                right: -10px;
+                top: 14px;
+                border: none;
+                margin-right: 0;
+                box-shadow: none;
+                a {
+                    background: transparent !important;
+                    line-height: 33px;
+                    height: 33px;
+                    padding: 0 10px;
+                    display: block;
+                    font-size: 1.5rem;
+                    box-shadow: none;
+                    border: 0;
+                }
+            }
+        }
+        .containsMessage {
+            p {
+                margin: 0px 0px 13px 0px;
+            }
+        }
+    }
+    .message {
+        border: 1px solid $border;
+        border-radius: 2px;
+        margin: 10px;
+        box-sizing: border-box;
+        clear: both;
+
+        &:not(.open) {
+            .message-frame,
+            .recipients-details-bccGroup,
+            .message-contact-sender,
+            .recipients-details-ccGroup { display: none !important }
+
+            .summary { overflow: hidden }
+        }
+
+        &:not(.details) {
+            .time-readable,
+            .recipients-details,
+            .toggleDetails-label-hide { display: none !important }
+        }
+
+        &.details {
+            .time-machine,
+            .recipients-summary,
+            .message-summary-folder,
+            .toggleDetails-label-show,
+            .message-summary-labels { display: none !important }
+        }
+
+        &.errorDecryption [class*="message-actionBtn-"] { display: none }
+        &.errorDecryption .pm_trigger { border-left: 0 }
+        &:not(.hasSender) .message-contact {display: none}
+
+        & .summary,
+        & .details {
+            float: left;
+            width: 100%;
+            clear: both;
+            box-sizing: border-box;
+        }
+        .message-contact-sender { color: $primary }
+        &.marked {
+            .summary, .details {
+                box-shadow: inset 5px 0 0 $primary;
+            }
+        }
+        &.open {
+            box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+            & .summary {
+                .meta {
+                    .contact {
+                        strong {
+                            font-weight: 700;
+                        }
+                    }
+                }
+            }
+        }
+        &.details.open {
+            & .summary {
+                height: 50px;
+                .meta {
+
+                    .history {
+                        float: left;
+                        margin: 0 .5rem 0 0;
+                        display: inline-block;
+                        height: 40px;
+                        line-height: 40px;
+                    }
+                    .contact {
+                        span.from {
+                            width: 3rem;
+                            text-align: left;
+                        }
+                        em {
+                            display:-webkit-flex;
+                            display: flex;
+                            position: absolute;
+                            bottom:5px;
+                            line-height: 20px;
+                            height: 1rem;
+
+                            a {
+                                line-height: 20px;
+                                padding: 0px 3px;
+                                display: inline-block;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        &.unread .summary {
+            background: $white;
+            .meta .contact strong {
+                font-weight: 700;
+            }
+            .time,
+            .status,
+            .labels {
+                background: $white !important;
+            }
+            .time::after {
+                background: $white !important;
+            }
+            .labels {
+                .pm_labels {
+                    label {
+                        box-shadow: .25rem 0 0 .25rem $white;
+                    }
+                }
+            }
+        }
+        & .summary {
+            height: 40px;
+            line-height: 40px;
+            background: $tertiary;
+            border-radius: $border-radius;
+            padding: 0 10px;
+            text-align: right;
+            font-size: .9em;
+            cursor: pointer;
+            position: relative;
+            span i.fa {
+                margin-left: .5rem;
+            }
+            .pull-left {
+                position: absolute;
+                left: 10px;
+                top: 0;
+                z-index: 1;
+                height: 100%;
+                width: 80%;
+                overflow: hidden;
+
+                .meta,
+                .location {
+                    float: left;
+                }
+            }
+            .labels,
+            .time,
+            .status {
+                display: inline-block;
+                margin-left: .85rem;
+                position: relative;
+                z-index: 2;
+                background: $tertiary;
+            }
+            .time {
+                position: relative;
+                padding-left: 1rem;
+                &::after {
+                    content: "";
+                    display: block;
+                    position: absolute;
+                    left: -1rem;
+                    width: 1rem;
+                    height: 25px;
+                    top: 0;
+                    background: linear-gradient(to right,  rgba($white,0) 0%, $tertiary 100%);
+                }
+                .fa-paperclip {
+                    display: inline-block;
+                    width: 1rem;
+                    text-align: left;
+                    position: absolute;
+                    left: 0;
+                    top: 0;
+                    line-height: 40px;
+                    height: 40px;
+                }
+            }
+            .meta {
+                white-space: nowrap; /* single line for long from */
+                .contact {
+                    strong {
+                        font-weight: normal;
+                    }
+                    span {
+                        color: $default-color-medium;
+                    }
+                }
+            }
+            .location {
+                .loc {
+                    color: rgba(0,0,0,.5);
+                    margin-left: .25rem;
+                }
+            }
+            .status {
+                .fa {
+                    display: inline-block;
+                    text-align: right;
+                    width: 1rem;
+                    &.pgp {
+                        color: $pgp;
+                    }
+                }
+            }
+            .labels {
+                .pm_labels {
+                    position: relative;
+                    top: 4px;
+                    label {
+                        margin-left: .25rem;
+                        box-shadow: .25rem 0 0 .25rem $tertiary;
+                    }
+                }
+            }
+        }
+        & .details {
+            background: $tertiary;
+            padding: 0 10px 10px;
+            clear: both;
+            position: relative;
+            .pull-right .pm_buttons {
+                margin: 0 0 0 4px;
+            }
+            .pm_buttons {
+                a {
+                    background: $white;
+                }
+            }
+            .recipients-details {
+                font-size: .9em;
+                line-height: 20px;
+                width: 100%;
+            }
+            .recipients-summary {
+                display: block;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                line-height: 20px;
+
+                .recipients-summary-label + .recipients-summary-label::before {
+                        content: ', ';
+                }
+
+                strong {
+                    display: inline-block;
+                    color: $default-color-medium;
+                    font-weight: normal;
+                    display: inline-block;
+                }
+                font-size: .9em;
+                .from {
+                    width: 3rem;
+                    color: $default-color-medium;
+                }
+            }
+            .action-row {
+                padding: 10px 0;
+                clear: both;
+                float: left;
+                width: 100%;
+            }
+        }
+        .toggleDetails {
+            color: $primary;
+            cursor: pointer;
+            height: 35px;
+            line-height: 35px; // height of the buttons on the same line
+            display: inline-block;
+            font-size: .9em;
+            border: 0;
+            background: transparent;
+        }
+        .expiration {
+            background: $exp;
+            color: $white;
+            padding: .5rem 10px;
+            line-height: 1rem;
+            clear: both;
+            text-align: center;
+            font-size: .9em;
+        }
+        .frame {
+            padding: 15px 30px;
+            border-top: 1px solid $border;
+            overflow: auto;
+            zoom: 1;
+            clear: left;
+
+            .bodyDecrypted {word-wrap: break-word}
+
+            .email {
+                position: relative;
+                .pm_button.more {
+                    line-height: 1rem;
+                    height: 1rem;
+                    background: $tertiary;
+                    margin-top: 1rem;
+                    margin-bottom: 1rem;
+                    display: block;
+                }
+                blockquote.protonmail_quote {
+                    position: relative;
+                    overflow: auto;
+                }
+                .proton-embedded{
+                    max-width: 100%;
+                    height: auto;
+                }
+            }
+
+            .plain {
+                white-space: pre-wrap;
+            }
+        }
+
+        .bodyDecrypted {
+            will-change: transform;
+            animation: nodeInserted;
+            animation-duration: 0.001s;
+        }
+    }
+}
+
+
+.protonmail_signature_block-empty { /* https://github.com/ProtonMail/Angular/issues/4813 */
+    opacity: 0;
+    height: 0;
+    overflow: hidden;
+}
+
+// MOBILE
+body.mobileMode {
+    #conversation-view {
+        .message {
+            & .summary {
+                height: 60px;
+                line-height: 25px;
+                position: relative;
+                .pull-left {
+                    position: static;
+                }
+                .meta {
+                    position: absolute;
+                    left: 10px;
+                    top: 5px;
+                    max-width: initial;
+                    white-space: nowrap;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    text-align: left;
+                    .contact {
+                        strong {
+                            font-weight: normal;
+                        }
+                        .from {
+                            display: none;
+                        }
+                    }
+                }
+                .location {
+                    position: absolute;
+                    left: 10px;
+                    bottom: 5px;
+                    z-index: 5;
+                    .pm_tag {
+                        margin: 0;
+                    }
+                }
+                .labels {
+                    position: absolute;
+                    right: 50px;
+                    bottom: 5px;
+                    z-index: 5;
+                }
+                .time {
+                    position: absolute;
+                    right: 10px;
+                    top: 5px;
+                    background: $tertiary;
+                    max-width: 45%;
+                    min-width: 150px;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    white-space: nowrap;
+                    span {
+                        white-space: nowrap;
+                        overflow: hidden;
+                        text-overflow: ellipsis;
+                        display: inline-block;
+                        float: right;
+                        width: 100%;
+                    }
+                    .fa.fa-paperclip {
+                        height: 25px;
+                        line-height: 25px;
+                    }
+                }
+                .status {
+                    position: absolute;
+                    right: 10px;
+                    bottom: 5px;
+                    .fa {
+                        display: inline-block;
+                        text-align: right;
+                        width: 1rem;
+                    }
+                }
+            }
+            & > div.details {
+                & > .recipients-summary {
+                    position: relative;
+                    top: -27px;
+                    max-width: 85%;
+                }
+                .contact {
+                    em {
+                        display: block;
+                        padding-bottom: .5rem;
+                    }
+                }
+            }
+            &.details {
+                & .summary {
+                    margin-bottom: 0;
+                    .meta {
+                        position: static;
+                        left: initial;
+                        top: initial;
+                        .contact {
+                            strong {
+                                position: absolute;
+                                left: 10px;
+                                top: 5px;
+                            }
+                            em {
+                                position: absolute;
+                                left: 10px;
+                                bottom: 10px;
+                                color: $default-color-medium;
+                            }
+                        }
+                    }
+                }
+                &.open .summary {
+                    .meta {
+                        margin-top: 5px;
+                        .contact {
+                            strong {
+                                position: static;
+                            }
+                        }
+                    }
+                }
+            }
+            &.sent,
+            &.draft {
+                .details {
+                    & .recipients-summary {
+                        padding-left: 2.25rem;
+                        box-sizing: border-box;
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+.proton-message-blockquote-toggle ~ * {display: none}
+.print .proton-message-blockquote-toggle {
+    display: none;
+    ~ * {
+        display: block
+    }
+}
+
+.print .protonmail_quote {
+    /* 72 DPI will let us margin 2 blockquote */
+    min-width:595px;
+}

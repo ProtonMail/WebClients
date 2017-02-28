@@ -1,0 +1,33 @@
+.messagePlaceholder {
+
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	width: 100%;
+	min-height: 100%;
+	color: $message-placeholder-color;
+
+	.messagePlaceholder-icon {
+		font-size: 3rem;
+		color: inherit;
+	}
+
+	.messagePlaceholder-title {
+ 		font-size: 2rem;
+		color: inherit;
+		font-weight: 400;
+	}
+
+	.messagePlaceholder-text-block {
+		display: block;
+		margin-bottom: 1rem;
+		margin-top: .5rem;
+		color: inherit;
+		text-transform: uppercase;
+	}
+
+}
+
+.mobileMode .messagePlaceholder { min-height: 80vh }

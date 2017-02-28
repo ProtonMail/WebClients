@@ -1,0 +1,31 @@
+&.secure:not(.light) {
+    background: $body-background !important; /* override general .body */
+    background-size: cover !important;
+
+    &:before {
+        position: absolute;
+        content:"";
+        left:0px;
+        top:0px;
+        width: 100vw;
+        height: 100vh;
+        z-index: -1;
+        box-shadow: $main-shadow;
+    }
+}
+
+#pm_main {
+    background: $main-background;
+    color: $main-color;
+    border-radius: $main-radius;
+}
+
+#conversation-view .frame {
+    background: $message-backgroud;
+}
+
+.composer-container,
+.squire-container {
+    background: $composer-background;
+    color: $composer-color;
+}

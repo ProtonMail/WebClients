@@ -24,7 +24,7 @@ div.noUi-handle {
 div.noUi-horizontal div.noUi-tooltip {
     padding: 0 2px;
     font-size: .6rem;
-    box-shadow: 0px 0px 2px 3px #FFF
+    box-shadow: 0px 0px 2px 3px $white
 }
 
 div.noUi-handle {
@@ -94,7 +94,7 @@ div.noUi-value {
         background-color: transparent;
         border:0;
         padding: 0 10px;
-        color: $btn;
+        color: $button-color;
         box-shadow: 0 1px 2px 0 rgba(0,0,0,0.1);
         cursor: pointer;
         &:not(:first-child) {
