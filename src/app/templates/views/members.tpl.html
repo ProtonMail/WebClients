@@ -97,7 +97,7 @@
         <div class="row" id="settingsMembers">
             <section class="setting pm_form full">
                 <legend translate translate-context="Title">Users</legend>
-                <p class="alert alert-info" ng-hide="checkDomains()" translate-context="Info" translate translate-comment="ask user to add domain before adding users">Please configure a custom domain before adding members to your organization.</p>
+                <p class="alert alert-info" ng-hide="checkDomains()" translate-context="Info" translate translate-comment="ask user to add domain before adding users">Please configure a custom domain before adding users to your organization.</p>
                 <p>
                     <button type="button" class="pm_button primary" ng-show="checkDomains() && organization.HasKeys === 1" ng-click="addMember()" translate-context="Action" translate>Add user</button>
                 </p>
