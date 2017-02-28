@@ -1,0 +1,65 @@
+.scrollbox-container {
+    position: relative;
+    z-index: 1;
+    max-height: 175px;
+    padding-right: 15px;
+
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
+    display: block;
+    clear: both;
+    border-top:1px solid $border;
+    border-bottom:1px solid $border;
+
+    background: #FFF no-repeat;
+    background-image:
+        -webkit-radial-gradient(50% 0, farthest-side, $border, rgba(0,0,0,0)),
+        -webkit-radial-gradient(50% 100%,farthest-side, $border, rgba(0,0,0,0));
+    background-image:
+        -moz-radial-gradient(50% 0, farthest-side, $border, rgba(0,0,0,0)),
+        -moz-radial-gradient(50% 100%,farthest-side, $border, rgba(0,0,0,0));
+    background-image:
+        radial-gradient(farthest-side at 50% 0, $border, rgba(0,0,0,0)),
+        radial-gradient(farthest-side at 50% 100%, $border, rgba(0,0,0,0));
+    background-position: 0 0, 0 100%;
+    background-size: 100% 3px;
+
+    &:before,
+    &:after {
+        content: "";
+        position: relative;
+        z-index: -1;
+        display: block;
+        height: 15px;
+        margin: 0 0 -15px;
+        background: -webkit-linear-gradient(top,#FFF,#FFF 30%,rgba(255,255,255,0));
+        background:    -moz-linear-gradient(top,#FFF,#FFF 30%,rgba(255,255,255,0));
+        background:   linear-gradient(to bottom,#FFF,#FFF 30%,rgba(255,255,255,0));
+
+    }
+    &:after {
+        margin: -15px 0 0;
+        background: -webkit-linear-gradient(top,rgba(255,255,255,0),#FFF 70%,#FFF);
+        background:    -moz-linear-gradient(top,rgba(255,255,255,0),#FFF 70%,#FFF);
+        background:   linear-gradient(to bottom,rgba(255,255,255,0),#FFF 70%,#FFF);
+    }
+
+    .scrollbox-container-group,
+    .scrollbox-container-group-item {
+        display: block;
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        clear: both;
+        text-align: left;
+        position: relative;
+    }
+
+    .scrollbox-container-group { padding: 10px 0px }
+
+    .scrollbox-container-group-item {
+        @include flexInline();
+        @include flexAlignCenter();
+        width: 100%;
+    }
+}

@@ -14,7 +14,7 @@ angular.module('proton.sidebar')
             },
             labels: {
                 state: 'secured.labels',
-                label: gettextCatalog.getString('Labels', null, 'Title'),
+                label: gettextCatalog.getString('Folders / Labels', null, 'Title'),
                 icon: 'fa-tags'
             },
             filters: {

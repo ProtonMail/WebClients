@@ -72,7 +72,7 @@ angular.module('proton.core')
                 }
 
                 if (msg.ID === message.ID) {
-                    const m = _.extend(msg, message);
+                    const m = _.extend({}, msg, message);
                     // It can be 0
                     m.Type = message.Type;
                     return m;
@@ -99,20 +99,18 @@ angular.module('proton.core')
         const current = _.findWhere(conversationsCached, { ID: conversation.ID });
 
         if (current) {
-            let labelIDs = conversation.LabelIDs || current.LabelIDs || [];
+            conversationsCached = _.map(conversationsCached, (conv) => {
+                if (conv.ID === conversation.ID) {
+                    const c = _.extend({}, conv, conversation);
+                    c.LabelIDs = getLabelsId(conv, conversation);
+                    delete c.LabelIDsAdded;
+                    delete c.LabelIDsRemoved;
 
-            if (Array.isArray(conversation.LabelIDsRemoved)) {
-                labelIDs = _.difference(labelIDs, conversation.LabelIDsRemoved);
-                delete conversation.LabelIDsRemoved;
-            }
+                    return c;
+                }
 
-            if (Array.isArray(conversation.LabelIDsAdded)) {
-                labelIDs = _.uniq(labelIDs.concat(conversation.LabelIDsAdded));
-                delete conversation.LabelIDsAdded;
-            }
-
-            conversation.LabelIDs = labelIDs;
-            _.extend(current, conversation);
+                return conv;
+            });
         } else {
             conversationsCached.push(conversation);
         }
@@ -759,18 +757,12 @@ angular.module('proton.core')
             return Promise.resolve();
         }
 
-        const message = _.extend(current, event.Message);
+        const message = _.extend({}, current, event.Message);
 
         // Manage labels
-        if (Array.isArray(event.Message.LabelIDsRemoved)) {
-            message.LabelIDs = _.difference(message.LabelIDs, event.Message.LabelIDsRemoved);
-            delete message.LabelIDsRemoved;
-        }
-
-        if (Array.isArray(event.Message.LabelIDsAdded)) {
-            message.LabelIDs = _.uniq(message.LabelIDs.concat(event.Message.LabelIDsAdded));
-            delete message.LabelIDsAdded;
-        }
+        message.LabelIDs = getLabelsId(current, event.Message);
+        delete message.LabelIDsRemoved;
+        delete message.LabelIDsAdded;
 
         return Promise.resolve(updateMessage(message, isSend));
     };

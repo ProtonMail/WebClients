@@ -1,14 +1,15 @@
 angular.module('proton.conversation')
 .factory('actionConversation', (
     $rootScope,
-    gettextCatalog,
-    tools,
+    authentication,
     cache,
-    eventManager,
+    CONSTANTS,
     conversationApi,
+    eventManager,
+    gettextCatalog,
     networkActivityTracker,
     notify,
-    CONSTANTS
+    tools
 ) => {
 
     const { MAILBOX_IDENTIFIERS } = CONSTANTS;
@@ -294,22 +295,30 @@ angular.module('proton.conversation')
         networkActivityTracker.track(promise);
     }
 
+    function folder(conversationIDs = [], labelID = '') {
+        const displaySuccess = () => notify({ message: gettextCatalog.getPlural(conversationIDs.length, 'Conversation moved', 'Conversations moved', null), classes: 'notification-success' });
+        const promise = conversationApi.labels(labelID, 1, conversationIDs)
+        .then(() => eventManager.call())
+        .then(() => displaySuccess());
+        networkActivityTracker.track(promise);
+    }
+
     /**
      * Move conversation
      * @param {Array} ids
      * @param {String} mailbox
      */
     function move(ids, mailbox) {
+        const exclusiveLabels = _.chain(authentication.user.Labels).where({ Exclusive: 1 }).map(({ ID }) => ID).value();
         const promise = conversationApi[mailbox](ids);
         const folder = getFolderNameTranslated(mailbox);
         const displaySuccess = () => notify({ message: gettextCatalog.getPlural(ids.length, 'Conversation moved to', 'Conversations moved to', null) + ' ' + folder, classes: 'notification-success' });
-
-        const MAILBOX_IDS = [
+        const folderIDs = [
             MAILBOX_IDENTIFIERS.inbox,
             MAILBOX_IDENTIFIERS.trash,
             MAILBOX_IDENTIFIERS.spam,
             MAILBOX_IDENTIFIERS.archive
-        ];
+        ].concat(exclusiveLabels);
 
         cache.addToDispatcher(promise);
 
@@ -328,15 +337,11 @@ angular.module('proton.conversation')
         const events = _.reduce(ids, (acc, ID) => {
             const conversation = cache.getConversationCached(ID);
             const messages = cache.queryMessagesCached(ID);
-            const labelIDsRemoved = conversation.LabelIDs.filter((labelID) => {
-                return MAILBOX_IDS.indexOf(labelID) > -1;
-            });
+            const labelIDsRemoved = conversation.LabelIDs.filter((labelID) => folderIDs.indexOf(labelID) > -1);
 
             _.each(messages, ({ Type, LabelIDs, ID, IsRead }) => {
                 const copyLabelIDsAdded = labelIDsAdded.slice(); // Copy
-                const copyLabelIDsRemoved = LabelIDs.filter((labelID) => {
-                    return MAILBOX_IDS.indexOf(labelID) > -1;
-                });
+                const copyLabelIDsRemoved = LabelIDs.filter((labelID) => folderIDs.indexOf(labelID) > -1);
 
                 if (toInbox) {
                     /**
@@ -393,5 +398,5 @@ angular.module('proton.conversation')
         displaySuccess();
     }
 
-    return { remove, unread, read, unstar, star, label, move };
+    return { remove, unread, read, unstar, star, label, folder, move };
 });

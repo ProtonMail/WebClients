@@ -144,4 +144,22 @@ html.protonmail {
 		text-overflow: ellipsis;
 		white-space: nowrap;
 	}
+
+	::-webkit-input-placeholder { color: #aaaabf }
+	:-moz-placeholder { color: #aaaabf }
+	::-moz-placeholder {  color: #aaaabf }
+	input:-ms-input-placeholder { color: #aaaabf }
+	::-ms-input-placeholder { color: #aaaabf }
+	:-ms-input-placeholder { color: #aaaabf }
+
+	.placeholder-white {
+		&::-webkit-input-placeholder { color: rgba(255,255,255,.75) }
+		&:-moz-placeholder { color: rgba(255,255,255,.75) }
+		&::-moz-placeholder {  color: rgba(255,255,255,.75) }
+		&input:-ms-input-placeholder { color: rgba(255,255,255,.75) }
+		&::-ms-input-placeholder { color: rgba(255,255,255,.75) }
+		&:-ms-input-placeholder { color: rgba(255,255,255,.75) }
+	}
+
+
 }

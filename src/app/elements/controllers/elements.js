@@ -686,6 +686,8 @@ angular.module('proton.elements')
         }
     };
 
+    $scope.getElements = () => $scope.elementsSelected();
+
     /**
      * Complex method to apply labels on element selected
      * @param {Array} labels

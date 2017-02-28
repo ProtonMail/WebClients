@@ -1,4 +1,4 @@
-angular.module('proton.ui')
+angular.module('proton.labels')
 .directive('dropdownLabels', ($rootScope, $timeout, authentication, eventManager, notify, settingsApi, gettextCatalog) => {
     return {
         restrict: 'E',
@@ -21,10 +21,11 @@ angular.module('proton.ui')
                     }
 
                     const messages = scope.getMessages();
+                    const labels = _.where(authentication.user.Labels, { Exclusive: 0 });
 
                     scope.labelName = '';
                     scope.alsoArchive = Boolean(authentication.user.AlsoArchive);
-                    scope.labels = angular.copy(authentication.user.Labels);
+                    scope.labels = angular.copy(labels);
 
                     const messagesLabels = _.reduce(messages, (acc, { LabelIDs = [] }) => acc.concat(LabelIDs), []);
 

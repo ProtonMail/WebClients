@@ -14,14 +14,16 @@ angular.module('proton.sidebar')
             return holder.innerHTML;
         };
 
-        const template = ({ ID, Color, Name }) => {
+        const template = ({ ID, Color, Name, Exclusive }) => {
 
             const className = getClassName(ID);
             const href = $state.href('secured.label', { label: ID, sort: null, filter: null, page: null });
             const cleanName = stripHTML(Name);
+            const classIcon = (Exclusive === 1) ? 'fa-folder' : 'fa-tag';
+
             return dedentTpl(`<li class="${className}">
                 <a href="${href}" title="${cleanName}" class="btn menuLabel-link">
-                    <i class="fa fa-tag menuLabel-icon" style="color: ${Color || '#CCC'}"></i>
+                    <i class="fa ${classIcon} menuLabel-icon" style="color: ${Color || '#CCC'}"></i>
                     <span class="menuLabel-title">${cleanName}</span>
                     <em class="menuLabel-counter" data-label-id="${ID}"></em>
                 </a>

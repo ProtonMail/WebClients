@@ -1,5 +1,5 @@
 angular.module('proton.message')
-.factory('messageModel', ($q, $filter, $timeout, pmcw, User, gettextCatalog, authentication, AttachmentLoader) => {
+.factory('messageModel', ($q, $timeout, pmcw, User, gettextCatalog, authentication, AttachmentLoader) => {
     const defaultMessage = {
         ID: '',
         Order: 0,
@@ -58,10 +58,6 @@ angular.module('proton.message')
 
         plainText() {
             return this.getDecryptedBody();
-        }
-
-        labels() {
-            $filter('labels')(this.LabelIDs);
         }
 
         disableOthers() {

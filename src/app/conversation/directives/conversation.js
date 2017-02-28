@@ -167,6 +167,7 @@ angular.module('proton.conversation')
             $rootScope.showWelcome = false;
             scope.inTrash = $state.includes('secured.trash.**');
             scope.inSpam = $state.includes('secured.spam.**');
+            scope.getElements = () => [scope.conversation];
 
             // Listeners
             unsubscribe.push($rootScope.$on('refreshConversation', (event, conversationIDs) => {
@@ -363,7 +364,7 @@ angular.module('proton.conversation')
                     return back();
                 }
 
-                if (conversation.LabelIDs.indexOf(loc) !== -1 || $state.includes('secured.search.**')) {
+                if (conversation.LabelIDs.indexOf(loc) > -1 || $state.includes('secured.search.**')) {
                     _.extend(scope.conversation, conversation);
                 } else {
                     return back();

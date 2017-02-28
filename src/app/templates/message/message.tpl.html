@@ -87,20 +87,25 @@
             <div class="action-row">
 
                 <div class="actions pull-right" ng-if="message.decrypting === false">
-                    <span class="pm_buttons">
+                    <div class="pm_buttons">
                         <filter-button data-message="message"></filter-button>
-                        <span class="pm_buttons">
-                            <a class="pm_trigger open-label pull-left" pt-tooltip-translate="Add" pt-tooltip-translate-context="Action" pt-tooltip-translate-comment="Tooltip" dropdown ng-click="message.labelDropdownOpen = !message.labelDropdownOpen">
+                        <div class="pm_buttons">
+                            <a class="pm_trigger open-folder pull-left" pt-tooltip-translate="Add" pt-tooltip-translate-context="Action" pt-tooltip-translate-comment="Tooltip" dropdown>
+                                <small><i class="fa fa-folder"></i> <i class="fa fa-angle-down"></i></small>
+                            </a>
+                            <div class="pm_dropdown right wide pull-left">
+                                <dropdown-folders data-elements="getElements"></dropdown-folders>
+                            </div>
+                        </div>
+                        <div class="pm_buttons">
+                            <a class="pm_trigger open-label pull-left" pt-tooltip-translate="Add" pt-tooltip-translate-context="Action" pt-tooltip-translate-comment="Tooltip" dropdown>
                                 <small><i class="fa fa-tag"></i> <i class="fa fa-angle-down"></i></small>
                             </a>
-                            <span class="pm_dropdown right wide pull-left">
-                                <dropdown-labels
-                                    data-messages="getMessage"
-                                    data-message="message"
-                                    data-save="saveLabels"></dropdown-labels>
-                            </span>
-                        </span>
-                    </span>
+                            <div class="pm_dropdown right wide pull-left">
+                                <dropdown-labels data-messages="getMessage" data-message="message" data-save="saveLabels"></dropdown-labels>
+                            </div>
+                        </div>
+                    </div>
                     <nav class="pm_buttons">
                         <a
                             class="message-actionBtn-reply"
@@ -130,29 +135,9 @@
                             <i class="fa fa-angle-down"></i>
                         </a>
                         <div class="pm_dropdown wide right">
-                            <button
-                                data-action-message="move"
-                                data-action-message-type="inbox"
-                                ng-hide="message.Type === 2 || message.Type === 3">
-                                <i class="fa fa-inbox"></i>
-                                <span translate translate-context="Action">Move to inbox</span>
-                            </button>
-                            <button
-                                data-action-message="move"
-                                data-action-message-type="trash">
-                                <i class="fa fa-trash-o"></i>
-                                <span translate translate-context="Action">Move to trash</span>
-                            </button>
                             <button data-action-message="unread">
                                 <i class="fa fa-eye-slash"></i>
                                 <span translate translate-context="Action">Mark as unread</span>
-                            </button>
-                            <button
-                                data-action-message="move"
-                                data-action-message-type="spam"
-                                ng-hide="'secured.spam.**' | includedByState">
-                                <i class="fa fa-ban"></i>
-                                <span translate translate-context="Action">Mark as spam</span>
                             </button>
                             <button
                                 data-action-message="delete"

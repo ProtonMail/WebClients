@@ -62,34 +62,37 @@ angular.module('proton.settings')
         unsubscribe.length = 0;
     });
 
-    /**
-     * Open modal to create a new label
-     */
-    $scope.createLabel = () => {
+    function openLabelModal(label) {
         labelModal.activate({
             params: {
-                title: gettextCatalog.getString('Create new label', null, 'Title'),
-                create(name, color) {
-                    const promise = Label.create({ Name: name, Color: color, Display: 1 })
-                    .then((result) => {
-                        if (result.data && result.data.Code === 1000) {
-                            return eventManager.call()
-                            .then(() => {
-                                labelModal.deactivate();
-                                notify({ message: gettextCatalog.getString('Label created', null), classes: 'notification-success' });
-                            });
-                        } else if (result.data && result.data.Error) {
-                            return Promise.reject(result.data.Error);
-                        }
-                    });
-
-                    networkActivityTracker.track(promise);
-                },
-                cancel() {
+                label,
+                close() {
                     labelModal.deactivate();
                 }
             }
         });
+    }
+
+    /**
+     * Open modal to create a new label
+     */
+    $scope.createLabel = () => {
+        openLabelModal({ Exclusive: 0 });
+    };
+
+    /**
+     * Open modal to create a new folder
+     */
+    $scope.createFolder = () => {
+        openLabelModal({ Exclusive: 1 });
+    };
+
+    /**
+     * Open modal to edit label / folder
+     * @param {Object} label
+     */
+    $scope.editLabel = (label) => {
+        openLabelModal(label);
     };
 
     $scope.sortLabels = () => {
@@ -99,53 +102,34 @@ angular.module('proton.settings')
         $scope.saveLabelOrder(order);
     };
 
-    $scope.editLabel = (label) => {
-        labelModal.activate({
-            params: {
-                title: gettextCatalog.getString('Edit label', null, 'Title'),
-                label,
-                create(name, color) {
-                    const promise = Label.update({ ID: label.ID, Name: name, Color: color, Display: label.Display })
-                    .then((result) => {
-                        if (result.data && result.data.Code === 1000) {
-                            return eventManager.call()
-                            .then(() => {
-                                labelModal.deactivate();
-                                notify({ message: gettextCatalog.getString('Label edited', null), classes: 'notification-success' });
-                            });
-                        } else if (result.data && result.data.Error) {
-                            return Promise.reject(result.data.Error);
-                        }
-                    });
+    function getTitleDeleteLabel({ Exclusive }) {
+        return (Exclusive) ? gettextCatalog.getString('Delete folder', null, 'Title') : gettextCatalog.getString('Delete label', null, 'Title');
+    }
 
-                    networkActivityTracker.track(promise);
-                },
-                cancel() {
-                    labelModal.deactivate();
-                }
-            }
-        });
-    };
+    function getMessageDeleteLabel({ Exclusive }) {
+        return (Exclusive) ? gettextCatalog.getString('Are you sure you want to delete this folder? Messages in the folders aren’t deleted if the folder is deleted, they can still be found in all mail. If you want to delete all messages in a folder, move them to trash.', null, 'Info') : gettextCatalog.getString('Are you sure you want to delete this label? Removing a label will not remove the messages with that label.', null, 'Info');
+    }
 
     $scope.deleteLabel = (label) => {
+        const title = getTitleDeleteLabel(label);
+        const message = getMessageDeleteLabel(label);
         confirmModal.activate({
             params: {
-                title: gettextCatalog.getString('Delete label', null, 'Title'),
-                message: gettextCatalog.getString('Are you sure you want to delete this label? Removing a label will not remove the messages with that label.', null, 'Info'),
+                title,
+                message,
                 confirm() {
                     const promise = Label.delete(label.ID)
-                    .then((result) => {
-                        if (result.data && result.data.Code === 1000) {
-                            return eventManager.call()
-                            .then(() => {
-                                confirmModal.deactivate();
-                                notify({ message: gettextCatalog.getString('Label deleted', null), classes: 'notification-success' });
-                            });
-                        } else if (result.data && result.data.Error) {
-                            return Promise.reject(result.data.Error);
+                    .then(({ data = {} } = {}) => {
+                        if (data.Code === 1000) {
+                            return Promise.resolve();
                         }
+                        throw new Error(data.Error);
+                    })
+                    .then(() => eventManager.call())
+                    .then(() => {
+                        confirmModal.deactivate();
+                        notify({ message: gettextCatalog.getString('Label deleted', null), classes: 'notification-success' });
                     });
-
                     networkActivityTracker.track(promise);
                 },
                 cancel() {

@@ -1,5 +1,5 @@
 angular.module('proton.elements')
-.directive('foldersElement', ($rootScope, $state, CONSTANTS, gettextCatalog, $compile, mailboxIdentifersTemplate) => {
+.directive('foldersElement', ($rootScope, $state, gettextCatalog, $compile, mailboxIdentifersTemplate) => {
     const allowedStates = ['secured.sent.**', 'secured.drafts.**', 'secured.search.**', 'secured.starred.**', 'secured.allmail.**', 'secured.label.**'];
     const isAllowedState = () => allowedStates.some((key) => $state.includes(key));
     const MAP_LABELS = {
@@ -26,6 +26,9 @@ angular.module('proton.elements')
         spam: {
             className: 'fa-ban',
             tooltip: gettextCatalog.getString('In spam', null)
+        },
+        folder: {
+            className: 'fa-folder'
         }
     };
 

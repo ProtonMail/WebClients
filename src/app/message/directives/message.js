@@ -147,6 +147,12 @@ angular.module('proton.message')
             }
 
             /**
+             * Used for dropdown-folders, return the current message model inside an array
+             * @return {Array}
+             */
+            scope.getElements = () => [scope.message];
+
+            /**
              * Get all recipients
              * @return {Array} recipients
              */
