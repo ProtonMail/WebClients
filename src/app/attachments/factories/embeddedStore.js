@@ -3,11 +3,10 @@ angular.module('proton.attachments')
 
         const Blobs = {};
         const MAP_BLOBS = {};
-        let CIDList = {};
+        const CIDList = {};
 
         const PREFIX_DRAFT = 'draft_';
         const urlCreator = () => window.URL || window.webkitURL;
-
 
         /**
          * When we close the composer we need to deallocate Blobs used by this composer
@@ -16,6 +15,11 @@ angular.module('proton.attachments')
             if (type === 'close') {
                 const { ID, ConversationID } = data.message;
                 const key = `${PREFIX_DRAFT}${ConversationID || ID}`;
+
+                // CLEAN ALL THE THINGS
+                if (CIDList[ID]) {
+                    delete CIDList[ID];
+                }
 
                 // Clean these blobs !
                 if (MAP_BLOBS[key]) {
@@ -143,7 +147,6 @@ angular.module('proton.attachments')
             hasBlob,
             getBlobValue,
             cid: {
-                init: () => (CIDList = {}),
                 contains: containsMessageCIDs,
                 exist: existMessageCID,
                 add: addMessageCID,
