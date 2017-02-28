@@ -77,7 +77,11 @@ angular.module('proton.settings')
             if (keys.PublicKey) {
                 $scope.keyStatus = 0;
                 pmcw.keyInfo(keys.PublicKey)
-                .then((obj) => ($scope.organizationKeyInfo = obj));
+                .then((obj) => {
+                    $scope.$applyAsync(() => {
+                        $scope.organizationKeyInfo = obj;
+                    });
+                });
             }
 
             if (!keys.PrivateKey) {
