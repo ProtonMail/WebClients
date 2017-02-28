@@ -2,6 +2,8 @@ angular.module('proton.ui')
     .directive('progressUpload', ($rootScope, CONSTANTS) => {
 
         const { UPLOAD_GRADIENT_DARK, UPLOAD_GRADIENT_LIGHT } = CONSTANTS;
+        const CLASS_UPLOADED = 'progressUpload-uploaded';
+        const CLASS_UPLOADING = 'progressUpload-uploading';
 
         /**
          * Compute the gradient
@@ -12,19 +14,19 @@ angular.module('proton.ui')
             return `linear-gradient(90deg, rgba(${UPLOAD_GRADIENT_DARK}, 1) ${progress}%, rgba(${UPLOAD_GRADIENT_LIGHT}, 1) 0%)`;
         };
 
-        const toggleBtn = (close, remove) => {
-            remove.classList.remove('hidden');
-            close.classList.add('hidden');
-        };
-
         /**
          * Check if this is the current attachment for the current message
          * @param  {Object} { id, messageID }) From the scope.model
          * @return {Function}       A function taking the data from the subscriber
          */
-        const isAttachementOfMessage = ({ id, messageID }) => (data) => {
-            return (data.messageID === messageID) && (data.id === id);
-        };
+        const isAttachementOfMessage = ({ id, messageID }) => ({
+            isAttachment(data) {
+                return (data.messageID === messageID) && (data.id === id);
+            },
+            isMessage(data) {
+                return data.messageID === messageID;
+            }
+        });
 
         return {
             scope: {
@@ -33,11 +35,7 @@ angular.module('proton.ui')
             replace: true,
             templateUrl: 'templates/directives/ui/progressBar.tpl.html',
             link(scope, el) {
-
-                const $btnClose = el[0].querySelector('.progressLoader-btn-close');
-                const $btnRemove = el[0].querySelector('.progressLoader-btn-remove');
-                const isValidAttachment = isAttachementOfMessage(scope.model);
-
+                const tester = isAttachementOfMessage(scope.model);
 
                 /**
                  * If you do a reply it can contain attachment,
@@ -46,7 +44,8 @@ angular.module('proton.ui')
                  * Also no need to susbcribe to the event.
                  */
                 if (!scope.model.packet.uploading) {
-                    return toggleBtn($btnClose, $btnRemove);
+                    el[0].classList.remove(CLASS_UPLOADING);
+                    return el[0].classList.add(CLASS_UPLOADED);
                 }
 
                 // UX response, the user can see it's uploading even with a slow co
@@ -55,20 +54,18 @@ angular.module('proton.ui')
                 const unsubscribe = $rootScope
                     .$on('attachment.upload', (e, { type, data = {} }) => {
 
-                        // Can upload many attachments at the same time do something only for the current one
-                        if (!isValidAttachment(data)) {
-                            return;
+                        if (type === 'upload.success' && tester.isMessage(data)) {
+                            el[0].classList.add(CLASS_UPLOADED);
+                            return unsubscribe();
                         }
 
-                        if (type === 'uploading') {
+                        if (type === 'uploading' && tester.isAttachment(data)) {
                             // On end display remove button and remove the subscribe as we cannot reupload it
                             if (data.progress === 100) {
-                                _rAF(() => {
-                                    el[0].classList.remove('uploading');
+                                return _rAF(() => {
+                                    el[0].classList.remove(CLASS_UPLOADING);
                                     el[0].style.background = '';
-                                    toggleBtn($btnClose, $btnRemove);
                                 });
-                                return unsubscribe();
                             }
 
                             if (data.progress && data.progress < 100) {
