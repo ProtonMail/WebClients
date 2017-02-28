@@ -125,7 +125,7 @@ angular.module('proton.settings')
     $scope.canAddMember = () => {
         const organization = organizationModel.get();
 
-        if (organization.MaxMembers === 1 && CONSTANTS.KEY_PHASE > 3) {
+        if (organization.MaxMembers === 1) {
             notify({ message: gettextCatalog.getString('Multi-user support requires either a Business or Visionary plan.', null, 'Error'), classes: 'notification-danger' });
             $state.go('secured.members');
             return false;
@@ -146,7 +146,7 @@ angular.module('proton.settings')
             return false;
         }
 
-        if ($scope.keyStatus > 0 && CONSTANTS.KEY_PHASE > 3) {
+        if ($scope.keyStatus > 0) {
             notify({ message: gettextCatalog.getString('Permission denied, administrator privileges have been restricted.', null, 'Error'), classes: 'notification-danger' });
             $state.go('secured.members');
             return false;
