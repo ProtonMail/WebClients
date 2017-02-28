@@ -1,0 +1,186 @@
+.pm_table {
+    max-width: 100%;
+    white-space: nowrap;
+    overflow-x: auto;
+    overflow-y: hidden;
+    &.visibleOverflow { overflow: visible }
+    table {
+        border-collapse: collapse;
+        table-layout: fixed;
+        width: 100%;
+        margin-bottom: 1rem;
+        thead {
+            border-top: 1px solid $border;
+        }
+        &.print {
+            em {
+                font-style: normal;
+                border: 1px solid $border;
+                padding: 1px 4px;
+                margin-right: 4px;
+                border-radius: 2px;
+            }
+            th {
+                width: 4rem;
+                background-color: transparent;
+                text-transform: none;
+            }
+            tr {
+                border: none;
+            }
+            table {
+                border-width: 0 0 1px 0;
+            }
+        }
+        &.limited {
+            display: table;
+            width: 100%;
+            tbody {
+                float: left;
+                width: 100%;
+                overflow: auto;
+                max-height: 300px;
+
+                tr {
+                    width: 100%;
+                    display: table;
+                }
+            }
+        }
+        &.bordered {
+            border: 1px solid $border;
+        }
+        &.absorbing {
+            table-layout: auto;
+            th, td { white-space: nowrap }
+            th.absorbing-column,
+            td.absorbing-column {
+                width: 100%;
+            }
+            th.absorbing-column-half,
+            td.absorbing-column-half  {
+                width: 50%;
+            }
+        }
+        &.withDropDown {
+            > tbody > tr > td { padding: .5rem 1rem; }
+        }
+        &.plain {
+            th, td {
+                line-height: initial;
+                padding: 0;
+                text-align: left;
+                border: none;
+                &.text-center {
+                    text-align: center;
+                }
+                &.text-right {
+                    text-align: right;
+                }
+            }
+            th {
+                color: $default-color;
+                background: transparent;
+                text-transform: none;
+            }
+            th, td {
+                line-height: 1.75rem;
+                height: 1.75rem;
+                vertical-align: top;
+            }
+            td strong {
+                font-weight: 700;
+            }
+        }
+        th, td {
+            line-height: $rowHeight;
+            padding: 0 1rem;
+            text-align: left;
+            vertical-align: top;
+            .fa.fa-sort {
+                color: $default-color-medium;
+                margin-right: .25rem;
+                cursor: pointer;
+            }
+            .pm_button {
+                margin: 0;
+                height: 36px;
+                line-height: 36px;
+                &.round {
+                    width: 36px;
+                }
+            }
+            .pm_select {
+                margin: 4px 0 -11px 0;
+            }
+            .pm_badge {
+                margin: 0;
+            }
+            &.checkbox {
+                width: 35px;
+                padding: 0;
+                label {
+                    display: inline-flex;
+                    width: 100%;
+                }
+            }
+            > span:not(.pm_buttons) {
+                overflow: hidden;
+                text-overflow: ellipsis;
+                white-space: nowrap;
+                max-width: 100%;
+
+                &.pm_badge {
+                    /*
+                        badges are inline-block
+                        force align with the overflow hidden ellipsis
+                    */
+                    vertical-align: middle;
+                }
+            }
+        }
+        th {
+            background: $tertiary;
+            border-bottom: 1px solid $border;
+            color: $default-color-medium;
+            font-weight: 400;
+            text-transform: uppercase;
+            a {
+                font-weight: 700;
+                color: $primary;
+            }
+            .fa {
+                color: $primary;
+            }
+        }
+        td {
+            border-bottom: 1px solid $border;
+            color: $default-color;
+            .pm_select {
+                &.table_select {
+                    select {
+                        height: 30px;
+                        line-height: 30px;
+                    }
+                }
+            }
+        }
+        tr {
+            &.hasTable{
+                background-color: rgba(0,0,0,0.05);
+                table{
+                    background-color: $white
+                }
+            }
+
+            &.disabled {
+                td {
+                    color: $default-color-medium;
+                }
+            }
+        }
+    }
+}
+
+
+body.mobileMode {}

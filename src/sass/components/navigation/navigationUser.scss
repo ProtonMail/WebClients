@@ -1,0 +1,47 @@
+.navigationUser-dropdown {
+    color: $default-color;
+}
+
+.navigationUser-head {
+    text-align: left;
+    line-height: 1rem;
+    margin-bottom: 1rem;
+    float: left;
+    display: block;
+    width: 100%;
+}
+
+.navigationUser-head-display-name,
+.navigationUser-head-email,
+.navigationUser-head-organization
+{
+    display: block;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.navigationUser-head-display-name {
+    text-transform: uppercase;
+}
+
+.navigationUser-help {
+    text-decoration: none;
+    color: inherit;
+    & > i { font-size: 16px }
+}
+
+.pm_dropdown
+.navigationUser-logout {
+    margin-top: 1rem;
+    &:hover {
+        background: darken($primary, 5%) !important;
+        color: $white !important;
+    }
+}
+.navigationUser-version {
+    margin-bottom: -15px;
+    font-size: .8em;
+    color: currentColor;
+    text-decoration: none;
+}

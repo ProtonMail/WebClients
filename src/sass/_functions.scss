@@ -1,0 +1,16 @@
+// Handle font constrast via background
+@function set-color($bg, $apply) {
+  @if (lightness($bg) > 70) {
+    @return darken($apply, 80%); // darker color
+  } @else {
+    @return $apply;
+  }
+}
+
+@function set-invert-color($bg, $apply) {
+  @if (lightness($bg) < 50) {
+    @return invert(lighten($apply, 10)); // darker color
+  } @else {
+    @return $apply;
+  }
+}

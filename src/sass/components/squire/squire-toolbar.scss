@@ -1,0 +1,89 @@
+.squireToolbar-container {
+    display: flex;
+    height: $composerRowHeight;
+    line-height: $composerRowHeight;
+    min-height: $composerRowHeight; /* mobile devices */
+    border: 1px solid $border;
+    background-color: $tertiary;
+    border-width: 0 0 1px 0
+}
+.squireToolbar-container,
+.squireToolbar-container * { box-sizing: border-box }
+
+.squireToolbar-container.b .squireToolbar-action-bold,
+.squireToolbar-container.i .squireToolbar-action-italic,
+.squireToolbar-container.u .squireToolbar-action-underline,
+.squireToolbar-container.ul.li .squireToolbar-action-ulist,
+.squireToolbar-container.ol.li .squireToolbar-action-olist,
+.squireToolbar-container.align-left .squireToolbar-action-aleft,
+.squireToolbar-container.align-center .squireToolbar-action-acenter,
+.squireToolbar-container.align-right .squireToolbar-action-aright { background: rgba(0, 0, 0, .1) }
+
+[class*="squireToolbar-action-"] {
+    border: 0;
+    padding: 0;
+    background: transparent;
+    width: 40px;
+}
+
+[class*="squireToolbar-action-"] + .squireToolbar-separator {border-left: 1px solid $border}
+
+.squire-popover {
+    position: absolute;
+    z-index: 1005;
+    background: $white;
+    border: 1px solid $border;
+    white-space: nowrap;
+    right: 10px !important;
+    padding: 0;
+    width: 22em;
+    top: 1em;
+    text-align: right;
+    display: block;
+
+    &, & * { box-sizing: border-box }
+    input {
+        line-height: 2em;
+        border: 1px solid #e1e1ef;
+        color: $text;
+        border-radius: 2px;
+        position: relative;
+        resize: none;
+        margin-bottom: .8em;
+        padding: 0 1em;
+    }
+
+    [class*="-panel"] {
+        padding: 1em;
+        border: 0;
+        margin: .5em 0 0 !important;
+    }
+
+    [class*="-label"] { padding-right: 0 }
+    [class*="-input"] {
+        width: 62%;
+        margin-left: auto
+    }
+    [class*="-field"] {
+        padding: 0 !important;
+        border: 0 !important;
+    }
+    [class*="-legend"] { display: none !important }
+
+    [class*="-btn-"] {
+        text-decoration: none;
+        padding: 0 10px;
+        height: 2.6em;
+        line-height: 2.6em;
+        border: 1px solid $border;
+        border-radius: 2px;
+        box-sizing: border-box;
+        display: inline-block;
+        cursor: pointer;
+        transition: background-color .25s linear, border-color    .25s linear;
+        background-color: $primary;
+        border-color: $primary;
+        color: $white;
+        margin: 0;
+    }
+}

@@ -18,7 +18,7 @@ module.exports = {
     jse2e: ["src/**/*.scenario.js"],
     atpl: ["src/app/**/*.tpl.html"],
     html: ["src/app.html"],
-    sass: ["src/sass/APP_PROTON.scss"]
+    sass: ["src/sass/app.scss"]
   },
   external_files: {
     openpgp: ["vendor/openpgp/dist/openpgp.worker.min.js", "vendor/openpgp/dist/openpgp.min.js"],

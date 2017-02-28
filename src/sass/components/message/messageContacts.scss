@@ -1,0 +1,20 @@
+.messageContacts-container { display: flex }
+
+.messageContacts-where {
+    margin-right: .5em;
+    color: $default-color-medium
+}
+.messageContacts-where::after { content: ': '}
+
+.messageContacts-list {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+.messageContacts-email {
+    font-style: italic;
+    color: $default-color-medium;
+}
+
+.messageContacts-btn-compose { color: $primary }

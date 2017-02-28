@@ -1,0 +1,24 @@
+// REGULAR
+.headerDesktop-container {
+    display: flex;
+    align-items: center;
+    height: $headerHeight;
+    background: $header-background;
+    color: $header-font-color;
+    font-size: 12px;
+    position: relative;
+    z-index: 100;  /* less or equal to 100 for responsive composer*/
+}
+
+.headerDesktop-logo {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: $sidebarWidth;
+    height: $headerHeight;
+    background: $logo-background;
+    img {
+        display: inline-block;
+        width: 130px;
+    }
+}

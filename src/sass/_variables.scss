@@ -1,0 +1,109 @@
+// ProtonMail Theme variables 🎨
+//============================= Breakpoints =============================//
+$desktop:			1200px;
+$tablet-landscape:	1030px;
+$tablet-portrait:	800px;
+$mobile-landscape: 	640px;
+
+//============================= Sizes =============================//
+$sidebarWidth: 		190px;
+$sidebarMobWidth: 	220px;
+$sidebarRowHeight:	36px;
+$headerHeight: 		61px;
+$toolbarHeight: 	63px;
+$rowHeight: 		36px;
+$composerRowHeight: 32px;
+$inputHeight: 		32px;
+$toggleWidth: 		8rem;
+$short: 			700px;
+$panel:				400px;
+$pm_loading: 		50px;
+$maxHeight: 		auto;
+$sidebar-padding:   0 20px;
+
+//============================= Generic =============================//
+$white: 			#FFF;
+$black:             #000;
+$light: 			#f4f4f4;
+$orange:			#e7d360;
+$dark:				#4d4c5d;
+$blue: 				#93b9cc;
+$light-blue:        #5fdefb;
+$blue-gray:         #AEAEBA;
+$green:				#a6cc93;
+$light-green: 		#d3f422;
+$red:				#cc9393;
+$yellow:			#dfdf19;
+$exp:				#ec6446;
+$text:				#222;
+$pgp:				#090;
+$tags:				#d4d7dc;
+$tour:				#34cc69;
+$red-stripped:      repeating-linear-gradient(45deg, #F35D5D, #F35D5D 10px, #EC424A 10px, #EC424A 20px);
+$yellow-stripped:   repeating-linear-gradient(45deg, #FCF785, #FCF785 10px, #EFEA62 10px, #EFEA62 20px);
+
+
+//============================= Backgrounds =============================//
+$primary: 			       #9397cd;
+$primary-light:            lighten($primary, 23);
+$secondary: 		       #505061;
+$tertiary:		           #e6eaf0;
+
+//== Component Specific
+$body-background:          $secondary;
+$main-background:          #FFF;
+$message-backgroud:        #FFF;
+$header-background:		   #6a6f7c;
+$search-form-background:   set-invert-color($header-background, darken(rgba($header-background, .1), 50));
+$sidebar-background:       $secondary;
+$logo-background:		   $sidebar-background;
+$composer-btn-background:  $primary;
+$composer-background:      #FFF;
+$composer-header-backgourd:$secondary;
+$read-background:          $tertiary;
+$active-background:		   #828895;
+$scrollbar-primary:        #E6EAF0;
+$scollbar-secondary:       #848995;
+$button-background:        #FFFFFF;
+$button-background-focus:  #f2f2f2;
+$button-background-active: #e5e5e5;
+
+
+
+//============================= Typography =============================//
+$default-color:             #555;
+$default-color-medium:      lighten($default-color, 10);
+$default-color-light:       lighten($default-color, 55);
+//==  Component Specific
+$main-color:                set-invert-color($tertiary, $default-color);
+$composer-color:            set-invert-color($composer-background, $default-color);
+$sidebar-color:             set-color($sidebar-background, $white);
+$header-font-color:         set-color($header-background,$white);
+$search-placeholder-color:  rgba($header-font-color, .75);
+$button-color:              $default-color-medium;
+$button-color-focus:        #222;
+$message-placeholder-color: #acb0bf;
+
+
+//============================= Borders =============================//
+$border: 			    set-color($main-background, rgba($default-color,.3));
+$border-radius:         2px;
+$border-radius-large:   4px;
+// --- Component Specific
+$main-radius:           0;
+
+
+//============================= Shadows =============================//
+$box-shadow:		    1px 1px 3px rgba($border, 0.33), 0 0 2px rgba($border, 0.33);
+//== Component Specific
+$main-shadow:           0;
+
+
+//============================= BG IMAGE =============================//
+// Tooltip: IMG as background
+// $body-background:       url("/assets/img/login.jpg");
+// $header-background:	    transparent;
+// $sidebar-background:    transparent;
+// $logo-background:       transparent;
+// $main-shadow:           inset 0 0 5rem #000;
+// $main-radius:           $border-radius 0 0 0;

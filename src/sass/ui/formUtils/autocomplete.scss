@@ -1,0 +1,108 @@
+.autocompleteEmails-container {
+    box-sizing: border-box;
+    color: $default-color;
+    font-size: 13px;
+    width: 100%;
+}
+
+.autocompleteEmails-admin {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    min-height: 30px;
+    line-height: 30px;
+    padding: 0;
+    vertical-align: middle;
+    width: 100%;
+    position: relative;
+}
+
+.autocompleteEmails-admin, .autocompleteEmails-admin * {box-sizing: border-box}
+
+
+.autocompleteEmails-item {
+    border: 1px solid $default-color-light;
+    background-color: $tertiary;
+    margin-top: 5px;
+    text-shadow: none;
+    border-radius: 2px;
+    padding-left: 5px;
+    margin-right: 5px;
+    display: flex;
+    flex-direction: row;
+    line-height: 22px;
+    height: 22px;
+    max-width: 85%;
+    min-width: 0
+}
+
+.autocompleteEmails-item-invalid {
+    border-color: $red;
+    color: $red;
+}
+
+.autocompleteEmails-label {
+    text-overflow: ellipsis;
+    word-wrap: break-word;
+    overflow: hidden;
+    white-space: nowrap
+}
+
+.autocompleteEmails-field {
+    flex: 1;
+    min-width: 15%
+}
+
+.autocomplete-container {
+    .awesomplete {
+        display: block;
+        position: static;
+
+        input {width: 100%}
+
+        ul {
+            border-radius: 0;
+            max-height: 150px;
+            overflow: auto;
+            z-index: 999;
+            border: 1px solid $border;
+            background-color: $white;
+            box-shadow: none;
+            transform: scale(1) !important;
+            transition-duration: 0s !important;
+        }
+
+        ul[hidden] {pointer-events: none;}
+
+        ul:empty {display: none}
+
+        ul::before {display: none}
+
+        li[aria-selected="true"], li[aria-selected="true"]:hover {background-color: $default-color-light}
+
+        li:hover {background-color: $light}
+
+        li,
+        li:hover,
+        li[aria-selected="true"],
+        li[aria-selected="true"]:hover {color: $default-color }
+
+        mark,
+        li:hover mark,
+        li[aria-selected="true"] mark {
+            color: inherit;
+            background-color: transparent;
+            font-weight: bold
+        }
+    }
+}
+
+.autocompleteEmails-btn-remove {
+    cursor: pointer;
+    background: transparent;
+    border: 0
+}
+
+.autocompleteEmails-btn-remove:focus, .autocompleteEmails-btn-remove:active {
+    color: $active-background;
+}

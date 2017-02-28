@@ -5,7 +5,6 @@
 
     position: relative;
     height: 60px;
-    border-bottom:1px solid $border;
     overflow: hidden;
 
     .ptSelectConversation-container {
@@ -63,7 +62,7 @@
         h4 {
             font-size: 1em;
             cursor: pointer;
-            color: #000;
+            color: set-invert-color($main-background, $black);
 
             .fa-mail-reply,
             .fa-mail-reply-all,
@@ -102,8 +101,9 @@
             }
 
             .fa-star, .fa-star-o { cursor: pointer }
-            .fa-star-o { color: $gray-light }
-            .fa-star { color: $yellow }
+            .fa-star-o { color: inherit; opacity:.5 }
+            .fa-star { color: $yellow; }
+            .fa-start, .fa-star-o:hover { opacity: 1 }
 
             time.time {
                 float: right;
@@ -149,7 +149,7 @@
 
             label {
                 margin-left: .25rem;
-                background: $white;
+                background: inherit;
             }
         }
     }
@@ -167,7 +167,7 @@
         border-style: solid;
         border-width: 0 2rem 2rem 0;
         border-color: transparent #ec6446 transparent transparent;
-        color: #fff;
+        color: $white;
         overflow: visible;
         display: none;
         .fa {
@@ -185,16 +185,10 @@
     &.expiring .expiration { display: inline }
 
     &.read {
-        background: $read;
-        h4 {
-            color: $gray;
-            font-weight: normal;
-        }
+        background: $read-background;
+        h4 { font-weight: normal; color: inherit; }
         .pm_labels {
-            label {;
-                box-shadow: .25rem 0 0 .25rem $read;
-                background: $read;
-            }
+            label { background: $read-background; }
         }
     }
     &.marked::before {
@@ -207,17 +201,18 @@
         top:0px;
     }
     &.active {
-        background: $active;
-        color: $white;
-        h4 { color: $white }
+        background: $active-background;
+        color: set-color($active-background,$white);
+        h4 { color: inherit }
         .customMaskInput-mask { border-color: rgba(0,0,0,0.5) }
         .pm_labels {
             label {
-                background: $active;
-                box-shadow: .25rem 0 0 .25rem $active;
+                background: $active-background;
             }
         }
     }
+
+    &:not(.active) { border-bottom:1px solid darken($read-background, 10) }
 }
 
 

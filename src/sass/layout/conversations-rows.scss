@@ -24,7 +24,7 @@ body {
                 width: 1rem;
                 cursor: pointer;
             }
-            .fa-star-o { color: $gray-light }
+            .fa-star-o { color: $default-color-light }
             .fa-star { color: $yellow }
 
             .senders {
@@ -46,7 +46,7 @@ body {
                     height: 40px;
                     margin: 0;
                     font-size: 1em;
-                    color: #000;
+                    color: $black;
                     max-width: 90%;
 
                     .subject-text {
@@ -85,7 +85,7 @@ body {
                     height: 30px;
                     label {
                         margin-left: .25rem;
-                        background: $white;
+                        background: inherit;
                         &.more {
                             margin-left: 0;
                         }
@@ -121,7 +121,7 @@ body {
                 border-style: solid;
                 border-width: 0 2rem 2rem 0;
                 border-color: transparent #ec6446 transparent transparent;
-                color: #fff;
+                color: $white;
                 overflow: visible;
                 display: none;
                 .fa {
@@ -138,16 +138,16 @@ body {
             &.expiring .expiration { display: inline-block }
 
             &.read {
-                background: $read;
+                background: $tertiary;
                 .subject {
                     h4 {
                         font-weight: normal;
-                        color: $gray;
+                        color: inherit;
                     }
                     .pm_labels {
-                        background: $read;
+                        background: inherit;
                         label {
-                            background: $read;
+                            background: inherit;
                         }
                     }
                 }
