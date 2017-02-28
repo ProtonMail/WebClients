@@ -73,7 +73,7 @@ angular.module('proton.message')
 
         if (showImages) {
 
-            html.innerHTML = content.replace(REGEXP_FIXER, (match, $1) => $1.substring(7));
+            html.innerHTML = content.replace(new RegExp(REGEXP_FIXER, 'g'), (match, $1) => $1.substring(7));
 
             // If load:manual we use a custom directive to inject the content
             if (action === 'user.inject') {
