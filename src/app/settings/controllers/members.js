@@ -69,7 +69,7 @@ angular.module('proton.settings')
     $scope.checkDomains = () => {
         const domains = domainModel.get();
         const verifiedDomains = _.filter(domains, ({ State }) => State); // State value can be 1 (verified) or 2 (dns issue)
-        return domains.length && domains.length === verifiedDomains.length;
+        return verifiedDomains.length > 0;
     };
 
     /**
