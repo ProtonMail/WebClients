@@ -5,7 +5,7 @@ angular.module('proton.attachments')
 
     /**
      * Parse a message in order to
-     *     - Find an lot its attachments
+     *     - Find all of its attachments
      *     - Store blobs per attachment
      *     - Bind blobs or cid to the body
      * @param  {Message} message
@@ -14,7 +14,6 @@ angular.module('proton.attachments')
      * @return {Promise}
      */
     const parser = (message, direction = 'blob', text = '') => {
-        embeddedStore.cid.init();
 
         const content = text || message.getDecryptedBody();
 
