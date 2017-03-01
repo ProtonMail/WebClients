@@ -2,14 +2,26 @@
     <div class="settings">
         <div ng-if="!vpnEnabled" class="row">
             <section class="pm_form">
-                <legend translate-context="Title" translate>ProtonVPN</legend>
+                <header-block class="settingsVpn-header-about">
+                    <h2
+                        class="settingsVpn-title-about"
+                        translate
+                        translate-context="Title">ProtonVPN</h2>
+                </header-block>
+
                 <p class="alert alert-info" translate-context="Info" translate>ProtonVPN beta is currently available for Visioniary users. If you're interested in participating in the ProtonVPN beta, consider <a ui-sref="secured.dashboard({ scroll: true })">upgrading to a Visionary plan</a>.</p>
             </section>
         </div>
         <div ng-if="vpnEnabled">
             <div class="row pm_grid">
                 <section class="pm_form col-1-2">
-                    <legend translate-context="Title" translate>ProtonVPN Login</legend>
+                    <header-block class="settingsVpn-header-login">
+                        <h2
+                            class="settingsVpn-title-login"
+                            translate
+                            translate-context="Title">ProtonVPN Login</h2>
+                    </header-block>
+
                     <p class="alert alert-info" translate-context="Info" translate>Use the following credentials to log into the <a href="https://protonvpn.com/download" target="_blank">ProtonVPN native clients</a>.</p>
                     <div class="clearfix">
                         <div class="col-4-8">
@@ -32,7 +44,14 @@
             </div>
             <div class="row pm_grid">
                 <section class="pm_form col-1-2">
-                    <legend translate-context="Title" translate>ProtonVPN Resources</legend>
+
+                    <header-block class="settingsVpn-header-resources">
+                        <h2
+                            class="settingsVpn-title-resources"
+                            translate
+                            translate-context="Title">ProtonVPN Resources</h2>
+                    </header-block>
+
                     <div class="clearfix">
                         <div class="col-4-8">
                             <label translate-context="Label" translate>Download ProtonVPN</label>

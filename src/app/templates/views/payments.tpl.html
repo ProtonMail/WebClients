@@ -2,7 +2,13 @@
     <div class="settings">
         <div class="row">
             <section class="setting full pm_form">
-                <legend translate-context="Title" translate>Payment methods</legend>
+                <header-block class="settingsPayment-header-method">
+                    <h2
+                        class="settingsPayment-title-method"
+                        translate
+                        translate-context="Title">Payment methods</h2>
+                </header-block>
+
                 <div class="margin">
                     <button type="button" class="pm_button primary" ng-click="add()" translate-context="Action" translate>Add Payment Method</button>
                 </div>
@@ -37,7 +43,13 @@
                 </div>
             </section>
             <section class="setting full pm_form">
-                <legend translate-context="Title" translate>Invoices</legend>
+                <header-block class="settingsPayment-header-invoices">
+                    <h2
+                        class="settingsPayment-title-invoices"
+                        translate
+                        translate-context="Title">Invoices</h2>
+                </header-block>
+
                 <div class="margin">
                     <button type="button" class="pm_button" ng-click="customize()" translate-context="Action" translate>Customize</button>
                     <span class="pm_buttons pull-right" ng-show="user.Role === 2">

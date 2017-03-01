@@ -4,20 +4,37 @@
         <restore-administrator-panel ng-if="keyStatus === 2"></restore-administrator-panel>
         <div class="row" ng-show="isFree === true">
             <section class="setting pm_form full">
-                <legend translate translate-context="Title">Domains</legend>
+                <header-block class="settingsDomains-header-free">
+                    <h2
+                        class="settingsDomains-title-free"
+                        translate
+                        translate-context="Title">Domains</h2>
+                </header-block>
+
                 <p class="alert alert-info">Use your own domain with ProtonMail and use your own email address, e.g. yourname@yourdomain.com. To enable this feature, <a ui-sref="secured.dashboard({scroll: true})">upgrade to ProtonMail Plus</a>.</p>
             </section>
         </div>
 
         <div class="row" id="settingsDomains" ng-show="isAdmin === true">
             <section class="setting pm_form full">
-                <legend>
-                    <span class="pull-right small">
-                        <span translate-comment="how many domains are in use" translate>{{ organization.UsedDomains }} / {{ organization.MaxDomains }} domains used.</span>
-                        <a ui-sref="secured.dashboard" hide-upgrade="domain" translate-context="Action" translate translate-comment="link to dashboard">Upgrade your plan</a>
-                    </span>
-                    <span translate translate-context="Title">Domains</span>
-                </legend>
+
+                <header-block class="settingsDomains-header-domain">
+                    <h2
+                        class="settingsDomains-title-domain"
+                        translate
+                        translate-context="Title">Domains</h2>
+
+                    <small class="settingsDomains-details-domain" ng-if="isAdmin">
+                        {{ organization.UsedDomains }} / {{ organization.MaxDomains }} <span translate-comment="how many domains are in use" translate>domains used.</span>
+                        <a
+                            class="settingsDomains-link-domain"
+                            ui-sref="secured.dashboard({scroll: true})"
+                            data-hide-upgrade="domain"
+                            translate-context="Action"
+                            translate-comment="link to dashboard page" translate>Upgrade your plan</a>
+                    </small>
+                </header-block>
+
                 <p class="alert alert-info" ng-show="organization.UsedDomains === organization.MaxDomains">You have reached your custom domain limit. <a ui-sref="secured.dashboard">Click here</a> to upgrade your plan to add more.</p>
                 <div class="margin">
                     <button ng-hide="organization.UsedDomains === organization.MaxDomains" type="button" class="pm_button primary" ng-click="addDomain()" translate-context="Action" translate-comment="button to add custom domains" translate>Add custom domain</button>
@@ -124,14 +141,25 @@
             </section>
             <p>&nbsp;</p>
             <section class="setting pm_form full">
-                <legend>
-                    <span class="pull-right small">
+
+                <header-block class="settingsDomains-header-custom">
+                    <h2
+                        class="settingsDomains-title-custom"
+                        translate
+                        translate-context="Title">Custom domain</h2>
+
+                    <small class="settingsDomains-details-custom" ng-if="isAdmin">
                         {{ organization.UsedAddresses }} / {{ organization.MaxAddresses }}
                         <span translate-comment="how many addresses are in use" translate>addresses used.</span>
-                        <a ui-sref="secured.dashboard" hide-upgrade="address" translate-comment="link to dashboard" translate-context="Action" translate>Upgrade your plan</a>
-                    </span>
-                    <span translate translate-context="Title">Custom domain addresses</span>
-                </legend>
+                        <a
+                            class="settingsDomains-link-custom"
+                            ui-sref="secured.dashboard({scroll: true})"
+                            data-hide-upgrade="domain"
+                            translate-context="Action"
+                            translate-comment="link to dashboard page" translate>Upgrade your plan</a>
+                    </small>
+                </header-block>
+
                 <div class="margin-bottom" ng-repeat="domain in domains">
                     <p>
                         <i class="fa" ng-class="{'fa-check-circle-o text-green': domain.State === 1, 'fa-exclamation-triangle text-red': domain.State === 0 || domain.State === 2}"></i> <strong>{{ domain.DomainName }}</strong>

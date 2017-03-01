@@ -4,10 +4,14 @@
         <div class="row pm_grid">
 
             <section class="pm_form col-1-2">
-                <legend>
-                <span translate translate-comment="Account page heading">Identity</span>
+                <header-block class="settingsAccount-header-identity">
+                    <h2
+                        class="settingsAccount-title-identity"
+                        translate
+                        translate-comment="Account page heading"
+                        translate-context="Title">Identity</h2>
+                </header-block>
 
-                </legend>
                 <div class="clearfix">
                     <div class="col-3-8">
                         <label for="displayName">
@@ -57,7 +61,15 @@
             </section>
 
             <section class="pm_form col-1-2">
-                <legend  translate translate-comment="notifications heading on account page">Notifications</legend>
+                <header-block class="settingsAccount-header-notifications">
+                    <h2
+                        class="settingsAccount-title-notifications"
+                        translate
+                        translate-comment="notifications heading on account page"
+                        translate-context="Title">Notifications</h2>
+                </header-block>
+
+
                 <form method="post" ng-submit="noticeForm.$valid && saveNotification(noticeForm)" name="noticeForm" novalidate>
                     <div class="clearfix">
                         <div class="col-3-8">
@@ -143,7 +155,14 @@
         <div class="row pm_grid">
 
             <section class="pm_form col-1-2" ng-show="passwordMode === 2 || keyPhase < 2">
-                <legend translate-context="Title" translate translate-comment="change login password heading">Login password</legend>
+                <header-block class="settingsAccount-header-login">
+                    <h2
+                        class="settingsAccount-title-login"
+                        translate
+                        translate-comment="change login password heading"
+                        translate-context="Title">Login password</h2>
+                </header-block>
+
                 <p>
                     <button type="button" class="pm_button" ng-click="changePassword('login', 0)" translate-context="Action" translate>Change login password</button>
                 </p>
@@ -154,14 +173,27 @@
             </section>
 
             <section class="pm_form col-1-2" ng-show="passwordMode === 2 || keyPhase < 2">
-                <legend translate-context="Title" translate translate-comment="form heading for changing mailbox password">Mailbox password</legend>
+                <header-block class="settingsAccount-header-mailbox">
+                    <h2
+                        class="settingsAccount-title-mailbox"
+                        translate
+                        translate-comment="form heading for changing mailbox password"
+                        translate-context="Title">Mailbox password</h2>
+                </header-block>
+
                 <p>
                     <button type="button" class="pm_button" ng-click="changePassword('mailbox', 0)" translate-context="Action" translate>Change mailbox password</button>
                 </p>
             </section>
 
             <section class="pm_form col-1-2" ng-show="passwordMode === 1 && keyPhase > 1">
-                <legend translate-context="Title" translate translate-comment="form heading for changing single password">Password</legend>
+                <header-block class="settingsAccount-header-password">
+                    <h2
+                        class="settingsAccount-title-password"
+                        translate
+                        translate-comment="form heading for changing single password"
+                        translate-context="Title">Password</h2>
+                </header-block>
                 <p>
                     <button type="button" class="pm_button" ng-click="changePassword('password', 0)" translate-context="Action" translate>Change password</button>
                 </p>
@@ -176,7 +208,15 @@
         <div class="row pm_grid">
 
             <section class="pm_form col-1-2">
-                <legend translate-context="Title" translate-comment="Section heading" translate>Automatically save contacts</legend>
+
+                <header-block class="settingsAccount-header-contacts">
+                    <h2
+                        class="settingsAccount-title-contacts"
+                        translate
+                        translate-comment="Section heading"
+                        translate-context="Title">Automatically save contacts</h2>
+                </header-block>
+
                 <div class="clearfix">
                     <div class="col-3-8">
                         <label translate-context="Title" translate-comment="Settings/Account page form heading for enabling or disabling autosave contacts" translate>Automatically save contacts</label>
@@ -202,7 +242,12 @@
             </section>
 
             <section class="pm_form col-1-2">
-                <legend translate-context="Title" translate>Email Content</legend>
+                <header-block class="settingsAccount-header-email">
+                    <h2
+                        class="settingsAccount-title-email"
+                        translate
+                        translate-context="Title">Email Content</h2>
+                </header-block>
 
                 <div class="clearfix">
                     <div class="col-3-8">
@@ -252,11 +297,24 @@
 
         <div class="row pm_grid">
             <section class="pm_form col-1-2" ng-if="!isMember">
-                <legend translate-context="Title" translate>Delete Account</legend>
+
+                <header-block class="settingsAccount-header-delete">
+                    <h2
+                        class="settingsAccount-title-delete"
+                        translate
+                        translate-context="Title">Delete Account</h2>
+                </header-block>
+
                 <button class="pm_button error" ng-click="deleteAccount()" translate-context="Action" translate>Delete your account</button>
             </section>
             <section class="pm_form col-1-2">
-                <legend translate-context="Title" translate>Keyboard Shortcuts</legend>
+                <header-block class="settingsAccount-header-keyboard">
+                    <h2
+                        class="settingsAccount-title-keyboard"
+                        translate
+                        translate-context="Title">Keyboard Shortcuts</h2>
+                </header-block>
+
                 <div class="pm_grid">
                     <div class="col-3-8">
                         <label translate-context="Title" translate>Keyboard Shortcuts</label>
@@ -287,7 +345,12 @@
 
         <div class="row pm_grid">
             <section class="pm_form col-1-2" ng-if="!isMember">
-                <legend translate-context="Title" translate>Email Subscriptions</legend>
+                <header-block class="settingsAccount-header-subscriptions">
+                    <h2
+                        class="settingsAccount-title-subscriptions"
+                        translate
+                        translate-context="Title">Email Subscriptions</h2>
+                </header-block>
                 <label>
                     <custom-checkbox data-custom-ng-checked="true" data-custom-ng-disabled="true"></custom-checkbox>
                     <span translate-context="Label" translate>Security Information</span>
