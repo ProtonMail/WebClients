@@ -83,11 +83,7 @@ angular.module('proton.squire')
                 height: auto;
             }
 
-            .protonmail_signature_block-empty {
-                opacity: 0;
-                height: 0;
-                overflow: hidden;
-            }
+            .protonmail_signature_block-empty { display: none }
 
             .protonmail_quote {
                 position: relative
