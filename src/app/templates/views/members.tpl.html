@@ -2,9 +2,15 @@
     <div class="settings">
         <p class="alert alert-info" ng-if="mobileMode" translate-context="Info" translate-comment="responsiveness info" translate>This page is only available on larger resolution devices. If you are on a  phone, try landscape mode, or visit on a computer instead.</p>
         <restore-administrator-panel ng-if="keyStatus === 2"></restore-administrator-panel>
+
         <div class="row" ng-show="organization.HasKeys === 0">
             <section class="setting pm_form full">
-                <legend translate-context="Title" translate>Multi-User Support</legend>
+                <header-block class="settingsUsers-header-identities">
+                    <h2
+                        class="settingsUsers-title-identities"
+                        translate
+                        translate-context="Title">Multi-User Support</h2>
+                </header-block>
                 <p class="alert alert-info" translate-context="Info" translate>Create and administer sub-accounts and assign them email addresses on your custom domain.</p>
                 <p>
                     <button type="button" class="pm_button primary" ng-click="enableMemberSupport()" translate-context="Action" translate>Enable multi-user support</button>
@@ -14,7 +20,13 @@
         </div>
         <div class="row" id="settingsOrganization" ng-show="organization.HasKeys === 1">
             <section class="setting pm_form full">
-                <legend translate-context="Title" translate>Organization</legend>
+                <header-block class="settingsUsers-header-organization">
+                    <h2
+                        class="settingsUsers-title-organization"
+                        translate
+                        translate-context="Title">Organization</h2>
+                </header-block>
+
                 <div class="pm_grid no-margin">
                     <div class="col-1-2">
                         <div class="clearfix">
@@ -96,12 +108,24 @@
 
         <div class="row" id="settingsMembers">
             <section class="setting pm_form full">
-                <legend>
-                    <span class="pull-right small" ng-show="isAdmin">
-                        {{ organization.UsedAddresses }} / {{ organization.MaxAddresses }} <span translate-comment="how many addresses are in use" translate>addresses used.</span> <a ui-sref="secured.dashboard({scroll: true})" hide-upgrade="address" translate-context="Action" translate-comment="link to dashboard page" translate>Upgrade your plan</a>
-                    </span>
-                    <span translate-context="Title" translate translate-comment="page heading">Identities</span>
-                </legend>
+
+                <header-block class="settingsUsers-header-identities">
+                    <h2
+                        class="settingsUsers-title-identities"
+                        translate
+                        translate-context="Title">Identities</h2>
+
+                    <small class="settingsUsers-details-identities" ng-if="isAdmin">
+                        {{ organization.UsedAddresses }} / {{ organization.MaxAddresses }} <span translate-comment="how many addresses are in use" translate>addresses used.</span>
+                        <a
+                            class="settingsUsers-link-identities"
+                            ui-sref="secured.dashboard({scroll: true})"
+                            data-hide-upgrade="address"
+                            translate-context="Action"
+                            translate-comment="link to dashboard page" translate>Upgrade your plan</a>
+                    </small>
+                </header-block>
+
                 <p>
                     <button type="button" class="pm_button primary" ng-click="addMember()" translate-context="Action" translate>Add user</button>
                 </p>
@@ -197,7 +221,14 @@
 
         <div class="row" id="securityOrganization" ng-show="organization.HasKeys === 1">
             <section class="setting pm_form full">
-                <legend translate-context="Title" translate>Security</legend>
+
+                <header-block class="settingsUsers-header-security">
+                    <h2
+                        class="settingsUsers-title-security"
+                        translate
+                        translate-context="Title">Security</h2>
+                </header-block>
+
                 <div class="pm_grid">
                     <div class="col-2-3">
                         <p ng-show="keyStatus === 0">

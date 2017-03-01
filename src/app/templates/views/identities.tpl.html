@@ -2,14 +2,27 @@
     <div class="settings">
         <p class="alert alert-info" ng-if="mobileMode" translate-context="Info" translate-comment="responsiveness info" translate>This page is only available on larger resolution devices. If you are on a  phone, try landscape mode, or visit on a computer instead.</p>
         <restore-administrator-panel ng-if="keyStatus === 2"></restore-administrator-panel>
+
         <div class="row" id="settingsAddresses">
             <section class="setting full pm_form">
-                <legend>
-                    <span class="pull-right small" ng-show="isAdmin">
-                        {{ organization.UsedAddresses }} / {{ organization.MaxAddresses }} <span translate-comment="how many addresses are in use" translate>addresses used.</span> <a ui-sref="secured.dashboard({scroll: true})" hide-upgrade="address" translate-context="Action" translate-comment="link to dashboard page" translate>Upgrade your plan</a>
-                    </span>
-                    <span translate-context="Title" translate translate-comment="page heading">Identities</span>
-                </legend>
+
+                <header-block class="settingsIdentities-header-identities">
+                    <h2
+                        class="settingsIdentities-title-identities"
+                        translate
+                        translate-context="Title">Identities</h2>
+
+                    <small class="settingsIdentities-details-identities" ng-if="isAdmin">
+                        {{ organization.UsedAddresses }} / {{ organization.MaxAddresses }} <span translate-comment="how many addresses are in use" translate>addresses used.</span>
+                        <a
+                            class="settingsIdentities-link-identities"
+                            ui-sref="secured.dashboard({scroll: true})"
+                            data-hide-upgrade="address"
+                            translate-context="Action"
+                            translate-comment="link to dashboard page" translate>Upgrade your plan</a>
+                    </small>
+                </header-block>
+
                 <div class="margin" ng-show="isAdmin === true">
                     <a ng-hide="isSubUser" class="pm_button" ui-sref="secured.members({ action: 'scroll' })" translate-context="Link" translate>Add address</a>
                 </div>

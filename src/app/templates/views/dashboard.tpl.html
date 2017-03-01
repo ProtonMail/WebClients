@@ -4,7 +4,12 @@
             <section class="pm_form">
                 <div class="pm_grid flex flex-row">
                     <div class="col-1-2 pm-flex-content">
-                        <legend translate-context="Title" translate>Overview</legend>
+                        <header-block class="settingsDashboard-header-overview">
+                            <h2
+                                class="settingsDashboard-title-overview"
+                                translate
+                                translate-context="Title">Overview</h2>
+                        </header-block>
                         <div class="well pm-flex-content-fillHeight">
                             <div class="pm_table">
                                 <table class="plain">
@@ -79,7 +84,15 @@
                         </div>
                     </div>
                     <div class="col-1-2 pm-flex-content" ng-hide="subscription.Name === 'free'">
-                        <legend translate-context="Title" translate>My subscription</legend>
+
+
+                        <header-block class="settingsDashboard-header-subscription">
+                            <h2
+                                class="settingsDashboard-title-subscription"
+                                translate
+                                translate-context="Title">My subscription</h2>
+                        </header-block>
+
                         <div class="well pm-flex-content-fillHeight">
                             <div class="pm_table">
                                 <table class="plain">
@@ -134,7 +147,12 @@
                         </div>
                     </div>
                     <div class="col-1-2 donate pm-flex-content" ng-show="subscription.Name === 'free'">
-                        <legend translate translate-context="Title">Donate</legend>
+                        <header-block class="settingsDashboard-header-donate">
+                            <h2
+                                class="settingsDashboard-title-donate"
+                                translate
+                                translate-context="Title">Donate</h2>
+                        </header-block>
                         <div class="well pm-flex-content-fillHeight text-center">
                             <p  translate>Upgrading to a paid account is the best way to support ProtonMail, but you can also donate any amount.</p>
                             <p><strong  translate>Your donation helps us support more users and continue to develop ProtonMail as free and open source software.</strong></p>
@@ -148,8 +166,13 @@
         </div>
         <div class="row">
             <section class="setting pm_form full" id="plans">
-                <legend  translate>Plans and prices</legend>
-                <header>
+                <header-block class="settingsDashboard-header-plans">
+                    <h2
+                        class="settingsDashboard-title-plans"
+                        translate
+                        translate-context="Title">Plans and prices</h2>
+                </header-block>
+                <div class="settingsDashboard-plans-devise">
                     <a href="https://protonmail.com/support/knowledge-base/paid-plans/" target="_blank" class="pm_button link pull-right" translate-context="Action" translate>Learn more</a>
                     <div class="group">
                         <label class="pull-left"  translate>Currency</label>
@@ -159,7 +182,7 @@
                             <a href="#" ng-click="changeCurrency('CHF')" ng-class="{'active': configuration.currency === 'CHF'}">CHF</a>
                         </div>
                     </div>
-                </header>
+                </div>
                 <div class="pm_grid no-padding plans">
                     <div ng-repeat="plan in plans | filter: {Type: 1, Cycle: configuration.cycle}: true | orderBy: 'Amount'" class="col-1-3 plan {{plan.Name + '-plan'}}">
                         <section>

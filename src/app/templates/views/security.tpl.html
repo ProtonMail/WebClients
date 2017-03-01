@@ -2,20 +2,41 @@
     <div class="settings">
         <div class="row pm_grid" ng-show="twoFactor === 1 || keyPhase > 2">
             <section class="pm_form col-1-2">
-                <legend translate-context="Title" translate-comment="two factor page heading" translate>Two-Factor Authentication</legend>
+                <header-block class="settingsSecurity-header-2fa">
+                    <h2
+                        class="settingsSecurity-title-2fa"
+                        translate
+                        translate-comment="two factor page heading"
+                        translate-context="Title">Two-Factor Authentication</h2>
+                </header-block>
+
                 <button class="pm_button" ng-show="twoFactor === 1" ng-click="disableTwoFactor()" translate-context="Action" translate>Disable Two-Factor Authentication</button>
                 <button class="pm_button" ng-show="twoFactor === 0" ng-click="enableTwoFactor()" translate-context="Action" translate>Enable Two-Factor Authentication</button>
                 <a href="https://protonmail.com/support/knowledge-base/two-factor-authentication/" target="_blank" class="pm_button link" translate translate-context="Link">Learn more</a>
             </section>
+
             <section class="pm_form col-1-2">
-                <legend translate-context="Title" translate-comment="other sessions page heading" translate>Session Management</legend>
+                <header-block class="settingsSecurity-header-session">
+                    <h2
+                        class="settingsSecurity-title-session"
+                        translate
+                        translate-comment="other sessions page heading"
+                        translate-context="Title">Session Management</h2>
+                </header-block>
+
                 <button class="pm_button" ng-click="revokeOthers()" translate-context="Action" translate>Log out all other sessions</button>
             </section>
         </div>
         <div class="row">
             <section class="setting pm_form full">
                 <form method="post">
-                    <legend translate-context="Title" translate-comment="logs page heading" translate>Authentication Logs</legend>
+                    <header-block class="settingsSecurity-header-logs">
+                        <h2
+                            class="settingsSecurity-title-logs"
+                            translate
+                             translate-comment="logs page heading"
+                            translate-context="Title">Authentication Logs</h2>
+                    </header-block>
                         <div class="pull-right" id="logActions" ng-hide="doLogging === 0">
                             <button class="pm_button pull-left" ng-click="clearLogs()" translate-context="Action" translate>Wipe</button>
                             <button class="pm_button pull-left" ng-click="downloadLogs()" translate-context="Action" translate>Download</button>
