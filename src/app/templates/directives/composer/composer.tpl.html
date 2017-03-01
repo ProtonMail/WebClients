@@ -57,8 +57,8 @@
     <composer-attachments data-model="message"></composer-attachments>
 
     <footer ng-hide="message.minimized" ng-class="{ 'disabled': message.displayPanel }">
-
-        <button class="pm_button composer-btn-attachment"
+        <!-- needsClick is required to prevent fastClick (Safari Mobile click bug #4834) -->
+        <button class="pm_button composer-btn-attachment needsclick"
             data-action-compose="::message"
             data-action-compose-type="addFile"
             ng-disabled="message.disableOthers() || message !== selected"
