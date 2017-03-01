@@ -4,7 +4,6 @@ angular.module('proton.composer')
 
         const { BASE_SIZE, ATTACHMENT_SIZE_LIMIT, ATTACHMENT_NUMBER_LIMIT } = CONSTANTS;
         const ATTACHMENT_MAX_SIZE = ATTACHMENT_SIZE_LIMIT * BASE_SIZE * BASE_SIZE;
-        const isSafariMobile = tools.isSafariMobile();
 
         const dropMessages = {
             [ATTACHMENT_NUMBER_LIMIT]: `Messages are limited to ${ATTACHMENT_NUMBER_LIMIT} attachments`,
@@ -152,20 +151,13 @@ angular.module('proton.composer')
                     });
                 };
                 const dropzone = new Dropzone(el[0], getConfig(scope.message, dispatchAction));
-                const triggerDropzone = () => {
-                    // dropzone.element.click doesn't work on Safari Mobile
-                    if (isSafariMobile) {
-                        return dropzone.hiddenFileInput.click();
-                    }
-                    return dropzone.element.click();
-                };
 
                 // Adding a message from the toolbar
                 const unsubscribe = $rootScope
                     .$on('addFile', (e, { asEmbedded, message }) => {
                         if (message.ID === scope.message.ID) {
                             scope.message.asEmbedded = asEmbedded;
-                            triggerDropzone();
+                            dropzone.element.click();
                         }
                     });
 
