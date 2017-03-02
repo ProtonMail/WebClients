@@ -4,7 +4,7 @@
     <div
       class="autocompleteEmails-item"
       ng-class="{'autocompleteEmails-item-invalid': email.invalid}"
-      ng-repeat="email in emails track by email.Address">
+      ng-repeat="email in emails track by email.$id">
         <span class="autocompleteEmails-label">{{ ::email | labelAutocomplete }}</span>
         <button
           class="autocompleteEmails-btn-remove fa fa-times"

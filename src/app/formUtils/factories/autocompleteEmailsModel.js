@@ -8,6 +8,8 @@ angular.module('proton.formUtils')
             CLOSE_TAG_AUTOCOMPLETE_RAW
         } = CONSTANTS.EMAIL_FORMATING;
 
+        const getID = () => `${Math.random().toString(32).slice(2, 12)}-${Date.now()}`;
+
         const matchEscapeAutocomplete = () => new RegExp(`${OPEN_TAG_AUTOCOMPLETE_RAW}|${CLOSE_TAG_AUTOCOMPLETE_RAW}`, 'ig');
 
         const MAP_TAGS = {
@@ -122,7 +124,11 @@ angular.module('proton.formUtils')
 
             // Prevent empty names if we only have the address (new email, no contact yet for this one)
             let list = angular.copy(previousList)
-                .map(({ Address = '', Name = '' }) => ({ Name: Name || Address, Address }));
+                .map(({ Address = '', Name = '' }) => ({
+                    $id: getID(),
+                    Name: Name || Address,
+                    Address
+                }));
 
             const all = () => list;
             const clear = () => (list.length = 0);
@@ -139,6 +145,7 @@ angular.module('proton.formUtils')
                 // If the mail is not already inside the collection, add it
                 if (!list.some(({ Address }) => Address === data.Address)) {
                     list.push(angular.extend({}, data, {
+                        $id: getID(),
                         invalid: !regexEmail.test(data.Address) || checkTypoEmails(data.Address)
                     }));
                 }
