@@ -77,7 +77,7 @@
                                 </span>
                                 <form class="filter-modal-add-condition-settings-item filter-modal-add-condition" ng-show="condition.Type.value === 'subject'" ng-submit="ctrl.addValue(condition)">
                                     <input class="filter-modal-add-condition-input" type="text" ng-model="condition.value" placeholder-translate="Text or pattern" ng-blur="ctrl.addValue(condition)"  />
-                                    <button class="filter-modal-add-condition-button pm_button primary" type="submit">
+                                    <button class="filter-modal-add-condition-button pm_button" type="submit">
                                         <i class="fa fa-plus"></i>
                                     </button>
                                 </form>
@@ -87,7 +87,7 @@
                                     <autocomplete-email
                                         class="filter-modal-add-condition-input"
                                         data-email="condition.value"></autocomplete-email>
-                                    <button class="filter-modal-add-condition-button pm_button primary" type="submit">
+                                    <button class="filter-modal-add-condition-button pm_button" type="submit">
                                         <i class="fa fa-plus"></i>
                                     </button>
                                 </form>
