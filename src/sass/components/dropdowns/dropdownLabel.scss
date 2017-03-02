@@ -49,15 +49,20 @@
 	align-items: center;
 }
 
+.dropdown-label-scrollbox-label-text { pointer-events: none }
+
 .dropdown-label-scrollbox-label-checkbox,
 .dropdown-label-alsoArchive-checkbox  { width: 16px }
 
-.dropdown-label-scrollbox-label-icon {
+[class*="dropdown-label-scrollbox-label-icon"] {
 	margin-right: 10px;
 	font-size: 16px;
 }
 
-.dropdown-label-scrollbox-label-text-ellipsis { max-width: calc(100% - 40px) }
+.dropdown-label-scrollbox-label-text-ellipsis {
+    max-width: calc(100% - 40px);
+    color: $default-color;
+}
 
 .dropdown-label-alsoArchive {
 	@include flexRow();
@@ -71,6 +76,11 @@
 
 
 .dropdown-label-apply { width: 100% }
+
+.dropdown-label-container.dropdown-label-hasLabels .alert-info,
+.dropdown-label-container:not(.dropdown-label-hasLabels) .dropdown-label-search,
+.dropdown-label-container:not(.dropdown-label-hasLabels) .dropdown-label-apply { display: none }
+
 
 
 .mobileMode {

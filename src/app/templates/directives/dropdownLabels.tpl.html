@@ -1,48 +1,68 @@
-<div class="dropdown-label-container">
-    <form novalidate autocomplete="off" role="menu" ng-submit="save()" ng-click="$event.stopPropagation()">
-        <p ng-show="!labels.length" class="alert alert-info" translate translate-context="Info">No labels</p>
-        <div ng-show="labels.length" class="dropdown-label-search">
-            <span>
-                <i class="fa fa-search dropdown-label-search-icon"></i>
-            </span>
-            <input class="dropdown-label-search-input" type="search" placeholder-translate="Filter labels" ng-model="searchLabels" ng-minlength="1" />
+<form
+    novalidate
+    class="dropdown-label-container"
+    ng-class="{'dropdown-label-hasLabels': labels.length}"
+    autocomplete="off">
+
+    <p class="alert alert-info" translate translate-context="Info">No labels</p>
+
+    <div class="dropdown-label-search">
+        <i class="fa fa-search dropdown-label-search-icon"></i>
+        <input
+            class="dropdown-label-search-input"
+            type="search"
+            placeholder-translate="Filter labels"
+            ng-model="searchLabels"
+            ng-minlength="1">
+    </div>
+
+    <div class="dropdown-label-scrollbox scrollbox-container"  ng-if="labels.length > 0">
+        <ul class="scrollbox-container-group">
+            <li
+                class="scrollbox-container-group-item"
+                ng-repeat="label in (filteredLabels = (labels | filter: {Name: searchLabels} | orderBy: 'Order')) track by label.ID"
+                data-label-id="{{::label.ID}}">
+
+                <label class="dropdown-label-scrollbox-label" data-label-id="{{::label.ID}}">
+                    <span class="dropdown-label-scrollbox-label-text" ng-style="::color(label)">
+                        <i class="dropdown-label-scrollbox-label-icon fa fa-tag"></i>
+                        <span class="dropdown-label-scrollbox-label-text-ellipsis ellipsis">{{ ::label.Name }}</span>
+                    </span>
+                    <div class="dropdown-label-scrollbox-label-checkbox">
+                        <custom-checkbox
+                            data-custom-ng-model="label.Selected"
+                            data-custom-class="scrollbox-container-group-item-empty"
+                            data-custom-ui-indeterminate="label.Selected === null"></custom-checkbox>
+                    </div>
+                </label>
+            </li>
+            <li
+                class="scrollbox-container-group-item-empty"
+                ng-show="filteredLabels.length === 0"
+                translate
+                translate-context="Info">no label found</li>
+        </ul>
+    </div>
+
+    <create-label
+        data-class="dropdown-label-create"
+        data-message="message"
+        data-label-name="searchLabels"></create-label>
+
+    <label ng-if="labels.length > 0" class="dropdown-label-alsoArchive">
+        <span class="dropdown-label-alsoArchive-txt label-fillWidth" translate translate-comment="Form checkbox option">Also Archive</span>
+        <div class="dropdown-label-alsoArchive-checkbox">
+            <custom-checkbox
+                data-custom-ng-model="alsoArchive"
+                data-custom-ng-change="changeAlsoArchive()"
+                data-custom-class="dropdownLabels-input-archive"></custom-checkbox>
         </div>
-        <div class="dropdown-label-scrollbox scrollbox-container"  ng-if="labels.length > 0">
-            <ul class="scrollbox-container-group">
-                <li class="scrollbox-container-group-item" ng-repeat="label in (filteredLabels = (labels | filter: {Name: searchLabels} | orderBy: 'Order')) track by label.ID">
-                    <label class="dropdown-label-scrollbox-label">
-                        <span class="dropdown-label-scrollbox-label-text">
-                            <i class="dropdown-label-scrollbox-label-icon fa fa-tag" ng-style="color(label)" ng-show="alsoArchive" ng-click="moveTo(label)" pt-tooltip-translate="Apply label and archive"></i>
-                            <i class="dropdown-label-scrollbox-label-icon fa fa-tag" ng-style="color(label)" ng-hide="alsoArchive" ng-click="moveTo(label)" pt-tooltip-translate="Apply label"></i>
-                            <span class="dropdown-label-scrollbox-label-text-ellipsis ellipsis" title="{{ label.Name }}">{{ label.Name }}</span>
-                        </span>
-                        <div class="dropdown-label-scrollbox-label-checkbox">
-                            <custom-checkbox data-custom-ng-model="label.Selected" data-custom-class="scrollbox-container-group-item-empty" data-custom-ui-indeterminate="label.Selected === null"></custom-checkbox>
-                        </div>
-                    </label>
-                </li>
-                <li class="scrollbox-container-group-item-empty" ng-show="filteredLabels.length === 0" translate translate-context="Info">
-                    no label found
-                </li>
-            </ul>
-        </div>
-        <create-label
-            data-class="dropdown-label-create"
-            data-message="message"
-            data-label-name="searchLabels"></create-label>
-        <label ng-show="labels.length > 0" class="dropdown-label-alsoArchive">
-            <span class="dropdown-label-alsoArchive-txt" translate translate-comment="Form checkbox option" class="label-fillWidth">Also Archive</span>
-            <div class="dropdown-label-alsoArchive-checkbox">
-                <custom-checkbox data-custom-ng-model="alsoArchive" data-custom-ng-change="changeAlsoArchive()" data-custom-class="dropdownLabels-input-archive" /></custom-checkbox>
-            </div>
-        </label>
-        <button
-            type="submit"
-            class="pm_button primary dropdown-label-apply"
-            ng-show="labels.length > 0"
-            tabindex="1"
-            ng-disabled="networkActivity.loading()"
-            translate-context="Action"
-            translate>Apply</button>
-    </form>
-</div>
+    </label>
+
+    <button
+        class="pm_button primary dropdown-label-apply"
+        tabindex="1"
+        ng-disabled="networkActivity.loading()"
+        translate-context="Action"
+        translate>Apply</button>
+</form>
