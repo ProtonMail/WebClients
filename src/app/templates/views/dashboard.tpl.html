@@ -59,9 +59,9 @@
                                             <strong ng-hide="organization.PlanName === 'free'"  translate-comment="show used storage for an account" translate>{{ organization.UsedSpace | humanSize }} of {{ organization.MaxSpace | humanSize }}</strong>
                                             <strong ng-show="organization.PlanName === 'free'"  translate-comment="show used storage for an account" translate>{{ user.UsedSpace | humanSize }} of {{ user.MaxSpace | humanSize }}</strong>
                                             <br>
-                                            <div class="bar">
-                                                <em ng-hide="organization.PlanName === 'free'" style="width: {{ organization.UsedSpace / organization.MaxSpace * 100 }}%"></em>
-                                                <em ng-show="organization.PlanName === 'free'" style="width: {{ user.UsedSpace / user.MaxSpace * 100 }}%"></em>
+                                            <div class="storageBar">
+                                                <div class="storageBar-progress" ng-hide="organization.PlanName === 'free'" style="width: {{ organization.UsedSpace / organization.MaxSpace * 100 }}%"></div>
+                                                <div class="storageBar-progress" ng-show="organization.PlanName === 'free'" style="width: {{ user.UsedSpace / user.MaxSpace * 100 }}%"></div>
                                             </div>
                                         </td>
                                     </tr>

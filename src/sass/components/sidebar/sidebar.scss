@@ -112,23 +112,10 @@
             text-decoration: none;
             font-weight: 700;
         }
-        .bar {
-            height: 1px;
-            background-color: rgba(255,255,255,.1);
+
+        .storageBar {
             width: 90%;
-            display: block;
-            position: relative;
-            margin: .5rem auto;
-            em {
-                display: block;
-                position: absolute;
-                left: 0;
-                top: 0;
-                bottom: 0;
-                height: 1px;
-                z-index: 2;
-                background-color: $primary;
-            }
+            background-color: rgba(255,255,255,.1);
         }
     }
 

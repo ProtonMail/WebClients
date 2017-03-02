@@ -1,0 +1,13 @@
+.storageBar {
+    height: 6px;
+    background-color: $border;
+    display: block;
+    position: relative;
+    margin: .5rem auto;
+    border-radius: 12px;
+    .storageBar-progress {
+        height: 100%;
+        background-color: $primary;
+        border-radius: 12px;
+    }
+}

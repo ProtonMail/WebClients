@@ -1,7 +1,7 @@
 <div class="storageArea">
     <span class="current">{{ ::usedSpace }}</span>
-    <div class="bar">
-        <em ng-style="::storageStyle()"></em>
+    <div class="storageBar">
+        <div class="storageBar-progress" ng-style="::storageStyle()"></div>
     </div>
     <span class="total">{{ ::maxSpace }}</span>
 </div>
