@@ -45,6 +45,8 @@
 .dropdown-label-scrollbox-label-text,
 .dropdown-label-alsoArchive-txt {
 	@include flexFill();
+	display: flex;
+	align-items: center;
 }
 
 .dropdown-label-scrollbox-label-checkbox,
@@ -81,6 +83,7 @@
 			margin-bottom: 5px;
 		}
 	}
+
 	.dropdown-label-scrollbox-label-checkbox,
 	.dropdown-label-alsoArchive-checkbox { width: 32px }
 }

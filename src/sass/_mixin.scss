@@ -35,16 +35,15 @@
 @mixin flexFill() {
     -webkit-flex-grow: 1;
     flex-grow: 1;
+    overflow: hidden;
 }
 
 @mixin flexFillHeight() {
     @include flexFill();
-    min-height: 0px;
 }
 
 @mixin flexFillWidth() {
     @include flexFill();
-    min-width: 0px;
 }
 
 @mixin flexWrap() {
