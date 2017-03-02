@@ -3,6 +3,7 @@ angular.module('proton.core')
     pmModal,
     CONSTANTS,
     eventManager,
+    memberModel,
     gettextCatalog,
     memberApi,
     networkActivityTracker,
@@ -13,7 +14,7 @@ angular.module('proton.core')
     authentication,
     Address,
     setupKeys
-    ) => {
+) => {
     return pmModal({
         controllerAs: 'ctrl',
         templateUrl: 'templates/modals/member.tpl.html',
@@ -98,6 +99,24 @@ angular.module('proton.core')
                 member.Private = self.private ? 1 : 0;
                 member.MaxSpace = quota;
 
+                /**
+                * Check if the address is already associated to a member
+                * @return {Boolean}
+                */
+                const existingActiveAddress = () => {
+                    const address = self.address + '@' + self.domain.DomainName;
+                    const addresses = _.reduce(memberModel.get(), (acc, { Addresses = [] }) => {
+                        return _.reduce(Addresses, (acc, { Status, Email = '' }) => {
+                            // filter by active address
+                            if (Status === 1) {
+                                acc[Email] = Email;
+                            }
+                            return acc;
+                        }, acc);
+                    }, {});
+                    return !!addresses[address];
+                };
+
                 const check = () => {
                     if (self.name.length === 0) {
                         return Promise.reject(gettextCatalog.getString('Invalid name', null, 'Error'));
@@ -109,6 +128,8 @@ angular.module('proton.core')
                         return Promise.reject(gettextCatalog.getString('Invalid storage quota', null, 'Error'));
                     } else if (!member.ID && !member.Private && !self.organizationKey) {
                         return Promise.reject(gettextCatalog.getString('Cannot decrypt organization key', null, 'Error'));
+                    } else if (!member.ID && existingActiveAddress()) {
+                        return Promise.reject(gettextCatalog.getString('Address already associate to a member', null, 'Error'));
                     }
                     return Promise.resolve();
                 };
@@ -119,13 +140,13 @@ angular.module('proton.core')
                     }
 
                     return memberApi.name(member.ID, self.name)
-                        .then(({ data = {} }) => {
-                            if (data.Code === 1000) {
-                                member.Name = self.name;
-                                return;
-                            }
-                            throw new Error(data.Error || 'Request error');
-                        });
+                    .then(({ data = {} }) => {
+                        if (data.Code === 1000) {
+                            member.Name = self.name;
+                            return;
+                        }
+                        throw new Error(data.Error || 'Request error');
+                    });
                 };
 
                 const updateQuota = () => {
@@ -134,24 +155,24 @@ angular.module('proton.core')
                     }
 
                     return memberApi.quota(member.ID, quota)
-                        .then(({ data = {} }) => {
-                            if (data.Code === 1000) {
-                                member.MaxSpace = quota;
-                                return;
-                            }
-                            throw new Error(data.Error || 'Request error');
-                        });
+                    .then(({ data = {} }) => {
+                        if (data.Code === 1000) {
+                            member.MaxSpace = quota;
+                            return;
+                        }
+                        throw new Error(data.Error || 'Request error');
+                    });
                 };
 
                 const memberRequest = () => {
                     return memberApi.create(member, self.temporaryPassword)
-                        .then(({ data = {} }) => {
-                            if (data.Code === 1000) {
-                                member = data.Member;
-                                return;
-                            }
-                            throw new Error(data.Error || 'Request error');
-                        });
+                    .then(({ data = {} }) => {
+                        if (data.Code === 1000) {
+                            member = data.Member;
+                            return;
+                        }
+                        throw new Error(data.Error || 'Request error');
+                    });
                 };
 
                 const addressRequest = () => {
@@ -164,14 +185,14 @@ angular.module('proton.core')
                         Domain: self.domain.DomainName,
                         MemberID: member.ID
                     })
-                        .then(({ data = {} }) => {
-                            if (data.Code === 1000) {
-                                member.Addresses.push(data.Address);
-                                addresses.push(data.Address);
-                                return;
-                            }
-                            throw new Error(data.Error || 'Request error');
-                        });
+                    .then(({ data = {} }) => {
+                        if (data.Code === 1000) {
+                            member.Addresses.push(data.Address);
+                            addresses.push(data.Address);
+                            return;
+                        }
+                        throw new Error(data.Error || 'Request error');
+                    });
                 };
 
                 const generateKey = () => {
