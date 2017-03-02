@@ -1,0 +1,36 @@
+<div class="pm_buttons">
+    <a href="#" class="pm_trigger open-label" pt-tooltip-translate="Custom Filter" pt-tooltip-translate-context="Action" pt-tooltip-translate-comment="Tooltip"  dropdown>
+        <small><i class="fa fa-filter"></i> <i class="fa fa-angle-down"></i></small>
+    </a>
+    <div class="pm_dropdown wide">
+        <ul class="filterButton-container">
+            <li><b>Filter on:</b></li>
+            <li class="filterButton-item">
+                <label class="filterButton-label">
+                <span class="filterButton-label-text">Subject</span>
+                <custom-checkbox class="filterButton-checkbox" data-custom-ng-model="model.subject"></custom-checkbox>
+                </label>
+            </li>
+            <li class="filterButton-item">
+                <label class="filterButton-label">
+                    <span class="filterButton-label-text">Sender</span>
+                    <custom-checkbox class="filterButton-checkbox" data-custom-ng-model="model.sender"></custom-checkbox>
+                </label>
+            </li>
+            <li class="filterButton-item">
+                <label class="filterButton-label">
+                    <span class="filterButton-label-text">Recipient</span>
+                    <custom-checkbox class="filterButton-checkbox"  data-custom-ng-model="model.recipient"></custom-checkbox>
+                </label>
+            </li>
+            <li class="filterButton-item">
+                <label class="filterButton-label"><span class="filterButton-label-text">Attachments</span>
+                    <custom-checkbox class="filterButton-checkbox" data-custom-ng-model="model.attachments"></custom-checkbox>
+                </label>
+            </li>
+        </ul>
+        <footer class="filterButton-footer">
+            <button class="pm_button primary filterButton-btn-next">Next</button>
+        </footer>
+    </div>
+</div>

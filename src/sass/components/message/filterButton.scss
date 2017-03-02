@@ -1,13 +1,12 @@
 .filterButton-container {
-
-    .filterButton-item {  }
     .filterButton-label {
         @include flexInline();
         @include flexAlignCenter();
         width: 100%
     }
-
-    .filterButton-label-text { @include flexFill() }
-    .filterButton-checkbox { width: 20px }
-
 }
+
+
+.filterButton-label-text { @include flexFill() }
+.filterButton-checkbox { width: 20px }
+.filterButton-footer {margin-top: 1em;}

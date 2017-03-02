@@ -89,22 +89,22 @@
                 <div class="actions pull-right" ng-if="message.decrypting === false">
                     <div class="pm_buttons">
                         <filter-button data-message="message"></filter-button>
-                        <span class="pm_buttons">
+                        <div class="pm_buttons">
                             <a class="pm_trigger open-folder pull-left" pt-tooltip-translate="Add" pt-tooltip-translate-context="Action" pt-tooltip-translate-comment="Tooltip" dropdown>
                                 <small><i class="fa fa-folder"></i> <i class="fa fa-angle-down"></i></small>
                             </a>
                             <div class="pm_dropdown right wide pull-left">
                                 <dropdown-folders data-elements="getElements"></dropdown-folders>
                             </div>
-                        </span>
-                        <span class="pm_buttons">
+                        </div>
+                        <div class="pm_buttons">
                             <a class="pm_trigger open-label pull-left" pt-tooltip-translate="Add" pt-tooltip-translate-context="Action" pt-tooltip-translate-comment="Tooltip" dropdown>
                                 <small><i class="fa fa-tag"></i> <i class="fa fa-angle-down"></i></small>
                             </a>
                             <div class="pm_dropdown right wide pull-left">
                                 <dropdown-labels data-messages="getMessage" data-message="message" data-save="saveLabels"></dropdown-labels>
                             </div>
-                        </span>
+                        </div>
                     </div>
                     <nav class="pm_buttons">
                         <a
