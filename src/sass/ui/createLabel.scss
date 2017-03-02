@@ -15,7 +15,12 @@
 	cursor: pointer;
     box-shadow: none;
     cursor: pointer;
+
     i {
-        color:$black;
+        color: $black;
     }
+
 }
+
+.createLabel-button:not(.createLabel-withName) .createLabel-new-name,
+.createLabel-button.createLabel-withName .createLabel-new-label { display: none }

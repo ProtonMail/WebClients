@@ -1,5 +1,6 @@
-angular.module('proton.core')
+angular.module('proton.labels')
 .directive('createLabel', ($rootScope, labelModal) => {
+
     const dispatch = (message, label = {}) => {
         $rootScope.$emit('messageActions', {
             action: 'label',
@@ -13,16 +14,20 @@ angular.module('proton.core')
     return {
         replace: true,
         restrict: 'E',
-        templateUrl: 'templates/directives/core/createLabel.tpl.html',
+        templateUrl: 'templates/labels/createLabel.tpl.html',
         scope: {
             name: '=labelName',
             message: '='
         },
-        link(scope) {
-            scope.create = () => {
+        link(scope, el) {
+
+            const onClick = () => {
                 labelModal.activate({
                     params: {
-                        label: { Name: scope.name, Exclusive: 0 },
+                        label: {
+                            Name: scope.name,
+                            Exclusive: 0
+                        },
                         close(label) {
                             labelModal.deactivate();
                             scope.message && label && dispatch(scope.message, label);
@@ -30,6 +35,12 @@ angular.module('proton.core')
                     }
                 });
             };
+
+            el.on('click', onClick);
+
+            scope.$on('$destroy', () => {
+                el.off('click', onClick);
+            });
         }
     };
 });

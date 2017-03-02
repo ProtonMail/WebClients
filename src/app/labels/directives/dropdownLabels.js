@@ -1,5 +1,13 @@
 angular.module('proton.labels')
 .directive('dropdownLabels', ($rootScope, $timeout, authentication, eventManager, notify, settingsApi, gettextCatalog) => {
+
+    const NOTIFS = {
+        LABELS_SAVED: gettextCatalog.getString('Labels Saved', null),
+        LABEL_SAVED: gettextCatalog.getString('Label Saved', null)
+    };
+    const notifSuccess = (message = '') => notify({ message, classes: 'notification-success' });
+    const close = () => $rootScope.$emit('closeDropdown');
+
     return {
         restrict: 'E',
         templateUrl: 'templates/directives/dropdownLabels.tpl.html',
@@ -10,11 +18,10 @@ angular.module('proton.labels')
             message: '='
         },
         link(scope, element) {
-            // Variables
             const dropdown = angular.element(element).closest('.pm_buttons').find('.open-label');
+            const $search = angular.element(element[0].querySelector('.dropdown-label-search-input'));
 
-            // Functions
-            const onClick = () => {
+            const onClickDropdown = () => {
                 scope.$applyAsync(() => {
                     if (!angular.isFunction(scope.getMessages) && !angular.isFunction(scope.saveLabels)) {
                         return;
@@ -39,53 +46,50 @@ angular.module('proton.labels')
                         }
                     });
 
-                    $timeout(() => {
-                        angular.element("[ng-model='searchLabels']").focus();
-                    }, 100, false);
+                    $timeout(() => $search.focus(), 100, false);
                 });
             };
 
-            // Listeners
-            dropdown.on('click', onClick);
-
-            scope.color = ({ Color } = {}) => (Color ? { color: Color } : {});
-
-            scope.save = () => {
-                $rootScope.numberElementChecked = 0;
-                scope.saveLabels(scope.labels, scope.alsoArchive);
-                scope.close();
-                notify({ message: gettextCatalog.getString('Labels Saved', null), classes: 'notification-success' });
+            const onSubmit = (e) => {
+                e.stopPropagation();
+                scope.$applyAsync(() => {
+                    $rootScope.numberElementChecked = 0;
+                    scope.saveLabels(scope.labels, scope.alsoArchive);
+                    close();
+                    notifSuccess(NOTIFS.LABELS_SAVED);
+                });
             };
 
-            scope.changeAlsoArchive = () => {
-                const archive = scope.alsoArchive ? 1 : 0;
+            const onClick = (e) => {
+                if (e.target.nodeName !== 'LI' || e.target.nodeName !== 'LABEL') {
+                    return;
+                }
+                const ID = e.target.getAttribute('data-label-id');
+                // If we don't find a label via the search we click on the "not found" li
+                ID && scope.$applyAsync(() => {
+                    const label = _.findWhere(scope.labels, { ID });
+                    label.Selected = true;
+                    scope.saveLabels(scope.labels, scope.alsoArchive);
+                    close();
+                    notifSuccess(NOTIFS.LABEL_SAVED);
+                });
+            };
 
-                settingsApi.alsoArchive({ AlsoArchive: archive })
+            element.on('submit', onSubmit);
+            element.on('click', onClick);
+            dropdown.on('click', onClickDropdown);
+
+            scope.color = ({ Color: color = 'inherit' } = {}) => ({ color });
+
+            scope.changeAlsoArchive = () => {
+                settingsApi.alsoArchive({ AlsoArchive: +scope.alsoArchive })
                     .then(({ data = {} } = {}) => (data.Code === 1000 && eventManager.call()));
             };
 
-            scope.moveTo = (label) => {
-                // Select just one
-                label.Selected = true;
-                // Save
-                scope.saveLabels(scope.labels, scope.alsoArchive);
-                // Close
-                scope.close();
-                // Notify the user
-                notify({ message: gettextCatalog.getString('Label Saved', null), classes: 'notification-success' });
-            };
-
-            scope.close = () => {
-                $rootScope.$emit('closeDropdown');
-            };
-
-            scope.labelsSelected = () => {
-                return _.where(scope.labels, { Selected: true });
-            };
-
-
             scope.$on('$destroy', () => {
-                dropdown.off('click', onClick);
+                dropdown.off('click', onClickDropdown);
+                element.off('submit', onSubmit);
+                element.off('click', onClick);
             });
 
         }

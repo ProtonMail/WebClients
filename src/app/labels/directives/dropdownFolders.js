@@ -6,6 +6,9 @@ angular.module('proton.labels')
         { Name: gettextCatalog.getString('Spam', null), ID: CONSTANTS.MAILBOX_IDENTIFIERS.spam, Order: 0, className: 'fa-ban' },
         { Name: gettextCatalog.getString('Trash', null), ID: CONSTANTS.MAILBOX_IDENTIFIERS.trash, Order: 0, className: 'fa-trash-o' }
     ];
+
+    const close = () => $rootScope.$emit('closeDropdown');
+
     function moveTo(elements = [], type = '', folderID = '') {
         const elementIDs = elements.map(({ ID }) => ID);
 
@@ -32,8 +35,7 @@ angular.module('proton.labels')
         },
         link(scope, element) {
             const dropdown = angular.element(element).closest('.pm_buttons').find('.open-folder');
-            const list = element[0].querySelector('.scrollbox-container-group');
-            const search = element[0].querySelector('input[type="search"]');
+            const search = element[0].querySelector('.dropdown-folder-search-input');
 
             function onClickDropdown() {
                 const exclusiveLabels = _
@@ -51,37 +53,41 @@ angular.module('proton.labels')
             }
 
             function onClickList(event) {
-                if (event.target.tagName === 'BUTTON') {
-                    event.preventDefault();
-                    const folderID = event.target.getAttribute('data-folder-id');
-                    const elements = scope.getElements();
-                    const type = getType(elements);
-                    moveTo(elements, type, folderID);
-                    scope.close();
+
+                if (event.target.tagName !== 'BUTTON') {
+                    return;
+                }
+
+                if (event.target.classList.contains('dropdown-folder-scrollbox-group-item-button')) {
+                    scope.$applyAsync(() => {
+                        const folderID = event.target.getAttribute('data-folder-id');
+                        const elements = scope.getElements();
+                        const type = getType(elements);
+                        moveTo(elements, type, folderID);
+                        close();
+                    });
+                }
+
+                if (event.target.classList.contains('dropdown-folder-create-button')) {
+                    labelModal.activate({
+                        params: {
+                            label: { Exclusive: 1 },
+                            close() {
+                                labelModal.deactivate();
+                            }
+                        }
+                    });
                 }
             }
 
             dropdown.on('click', onClickDropdown);
-            list.addEventListener('click', onClickList);
+            element.on('click', onClickList);
 
-            scope.createNewFolder = () => {
-                labelModal.activate({
-                    params: {
-                        label: { Exclusive: 1 },
-                        close() {
-                            labelModal.deactivate();
-                        }
-                    }
-                });
-            };
-
-            scope.close = () => {
-                $rootScope.$emit('closeDropdown');
-            };
+            scope.color = ({ Color: color = 'inherit' } = {}) => ({ color });
 
             scope.$on('$destroy', () => {
                 dropdown.off('click', onClickDropdown);
-                list.removeEventListener('click', onClickList);
+                element.off('click', onClickList);
             });
         }
     };
