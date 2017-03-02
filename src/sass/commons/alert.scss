@@ -2,9 +2,7 @@
 	padding: 15px 35px;
 	border-radius: 4px;
 	background: #f7f7f7;
-	a {
-		color: $primary;
-	}
+	a { color: $primary }
 	&.alert-info {
 		background: $primary-light;
 		a {
@@ -33,9 +31,7 @@
         	color: $black;
         }
     }
-	.pm_button {
-        background: $white;
-    }
+
     input[type="text"],
     input[type="number"],
     input[type="password"],
