@@ -103,27 +103,10 @@
 	            opacity: .5;
 	        }
 	    }
-	    .bar {
-	        height: 12px;
-	        background-color: $border;
-	        width: 100%;
-	        display: block;
-	        position: relative;
-	        margin: 0;
-	        top: .6rem;
-	        border-radius: 12px;
-	        em {
-	            display: block;
-	            position: absolute;
-	            left: 0;
-	            top: 0;
-	            bottom: 0;
-	            height: 12px;
-	            z-index: 2;
-	            background-color: $primary;
-	            border-radius: 12px;
-	        }
-	    }
+		.storageBar {
+			height: 12px;
+			top: .6rem;
+		}
     }
 
 }
