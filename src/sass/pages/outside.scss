@@ -1,6 +1,6 @@
-html.protonmail body.light {
-	background-color: $light;
-}
+html.protonmail body.light { background-color: $light }
+html.protonmail body.blank { background-color: $white }
+
 body#eo-message {
 	overflow: initial;
 	background: $dark;

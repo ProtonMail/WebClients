@@ -3,6 +3,7 @@ html.protonmail {
 	body {
 		background: $secondary;
 		height: 100%;
+		.blank { background: $white }
 		.mobileOnly { 	display: none }
 		&.scroll {
 			overflow-y: initial;
