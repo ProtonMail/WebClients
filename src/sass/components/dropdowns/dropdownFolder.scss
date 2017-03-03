@@ -1,9 +1,22 @@
-.dropdown-folder-container { margin-bottom: -5px }
+.dropdown-folder-container { margin:-15px 0px -15px }
+
+.dropdown-folder-title {
+	margin: 0px -15px 0px;
+	padding: 0px 15px;
+	border-bottom: 1px solid rgba($border, .1);
+}
+
+.dropdown-folder-title > p {
+	height: 11px;
+	line-height: 14px;
+}
 
 .dropdown-folder-search {
 	@include flexRow();
 	@include flexAlignCenter();
-	height: 25px;
+	margin: 0px -5px;
+	padding: 0px 5px;
+
 
 	.fa.dropdown-folder-search-icon {
 		font-size: 1em;
@@ -13,6 +26,7 @@
 
 	.dropdown-folder-search-input {
 		@include flexFill();
+		height: 30px;
 		padding: 0;
 		border: none;
 		border-radius: 0;
@@ -30,7 +44,7 @@
 .dropdown-folder-fullwidth,
 .dropdown-folder-create.pm_button {
 	display: block;
-	margin: .5rem -15px;
+	margin: 0 -15px;
 	padding: 0rem 15px;
 }
 
@@ -62,7 +76,7 @@
 .dropdown-folder-create-button {
 	box-sizing: border-box;
 	height: initial;
-	min-height: 25px;
+	min-height: 40px;
 	width: 100%;
     padding: 0px;
 	border:0;

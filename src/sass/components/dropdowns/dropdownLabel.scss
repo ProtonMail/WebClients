@@ -1,7 +1,21 @@
+.dropdown-label-container { margin:-15px 0px -15px }
+
+.dropdown-label-title {
+	margin: 0px -15px 0px;
+	padding: 0px 15px;
+	border-bottom: 1px solid rgba($border, .1);
+}
+
+.dropdown-label-title > p {
+	height: 11px;
+	line-height: 14px;
+}
+
 .dropdown-label-search {
 	@include flexRow();
 	@include flexAlignCenter();
-	height: 25px;
+	margin: 0px -15px;
+	padding: 0px 15px;
 
 	.fa.dropdown-label-search-icon {
 		font-size: 1em;
@@ -11,6 +25,7 @@
 
 	.dropdown-label-search-input {
 		@include flexFill();
+		height: 30px;
 		padding: 0;
 		border: none;
 		border-radius: 0;
@@ -28,7 +43,7 @@
 .dropdown-label-alsoArchive,
 .dropdown-label-scrollbox {
 	display: block;
-	margin: .5rem -15px;
+	margin: 0rem -15px;
 	padding: 0rem 15px;
 }
 
@@ -75,14 +90,18 @@
 }
 
 
-.dropdown-label-apply { width: 100% }
+.dropdown-label-apply {
+	width: 100%;
+	margin-bottom: 10px;
+}
 
 .dropdown-label-container.dropdown-label-hasLabels .alert-info,
 .dropdown-label-container:not(.dropdown-label-hasLabels) .dropdown-label-search,
 .dropdown-label-container:not(.dropdown-label-hasLabels) .dropdown-label-alsoArchive,
-.dropdown-label-container:not(.dropdown-label-hasLabels) .dropdown-label-apply { display: none }
+.dropdown-label-container:not(.dropdown-label-hasLabels) .dropdown-label-apply,
+.dropdown-label-container:not(.dropdown-label-hasLabels) .dropdown-label-title-hasLabels { display: none }
 
-
+.dropdown-label-container:not(.dropdown-label-hasLabels) .createLabel-button { min-height: 40px }
 
 .mobileMode {
 	.dropdown-label-scrollbox {

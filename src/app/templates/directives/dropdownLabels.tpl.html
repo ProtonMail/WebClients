@@ -4,9 +4,12 @@
     ng-class="{'dropdown-label-hasLabels': labels.length}"
     autocomplete="off">
 
-    <p class="alert alert-info" translate translate-context="Info">No labels</p>
+    <div class="dropdown-label-title">
+        <p class="dropdown-label-title-hasLabels" translate translate-context="title">Label as</p>
+        <p class="alert alert-info" translate translate-context="Info">No labels</p>
+    </div>
 
-    <div class="dropdown-label-search">
+    <label class="dropdown-label-search">
         <i class="fa fa-search dropdown-label-search-icon"></i>
         <input
             class="dropdown-label-search-input"
@@ -14,7 +17,7 @@
             placeholder-translate="Filter labels"
             ng-model="searchLabels"
             ng-minlength="1">
-    </div>
+    </label>
 
     <div class="dropdown-label-scrollbox scrollbox-container"  ng-if="labels.length > 0">
         <ul class="scrollbox-container-group">
