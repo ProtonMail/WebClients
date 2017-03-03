@@ -178,13 +178,6 @@ message-view {
             .time::after {
                 background: $white !important;
             }
-            .labels {
-                .pm_labels {
-                    label {
-                        box-shadow: .25rem 0 0 .25rem $white;
-                    }
-                }
-            }
         }
         & .summary {
             height: 40px;
@@ -270,16 +263,6 @@ message-view {
                     width: 1rem;
                     &.pgp {
                         color: $pgp;
-                    }
-                }
-            }
-            .labels {
-                .pm_labels {
-                    position: relative;
-                    top: 4px;
-                    label {
-                        margin-left: .25rem;
-                        box-shadow: .25rem 0 0 .25rem $tertiary;
                     }
                 }
             }
@@ -538,6 +521,33 @@ body.mobileMode {
     }
 }
 
+.message-summary-labels { padding-left: .2em; }
+.message-summary-labels-list {
+    max-width: 100%;
+    height: 20px;
+    flex-wrap: nowrap;
+
+    .labelsMessage-label {
+        margin-top: 0;
+        margin-right: .25em;
+    }
+
+    .labelsMessage-label:not(:first-of-type) {
+      max-width: .5rem;
+      padding-right: 0;
+      overflow: hidden;
+      border-left-width: 0 !important;
+      border-radius: 0 3px 3px 0;
+    }
+
+    .labelsMessage-label:not(:first-of-type):hover {
+      border-left-width: 2px !important;
+      border-radius: 3px;
+      max-width: 8rem;
+      line-height: 14px;
+      padding: 0 .4rem;
+    }
+}
 
 .proton-message-blockquote-toggle ~ * {display: none}
 .print .proton-message-blockquote-toggle {

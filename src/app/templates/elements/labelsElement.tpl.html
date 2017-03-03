@@ -1,10 +1,13 @@
-<span class="pm_labels labelsElement-container">
-    <label
+<div class="pm_labels labelsElement-container" data-format="stack">
+    <div
       ng-repeat="label in labels track by label.ID"
       data-label-id="{{ ::label.ID }}"
       title="{{ ::label.Name }}"
-      class="pm_label labelsElement-label"
-      ng-style="{color: label.Color}">{{ ::label.Name }}</label>
-    <label
-      class="pm_label closed more labelsElement-more labelsElement-hidden" pt-tooltip-translate="More labels">&hellip;</label>
-</span>
+      class="labelsElement-label"
+      ng-style="::color(label)">
+        <span class="labelsElement-name">{{ ::label.Name }}</span>
+        <button class="labelsElement-btn-remove fa fa-times" data-label-id="{{::label.ID}}"></button>
+      </div>
+    <div
+      class="labelsElement-more labelsElement-hidden" pt-tooltip-translate="More labels">&hellip;</div>
+</div>
