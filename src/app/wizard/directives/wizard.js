@@ -1,5 +1,5 @@
 angular.module('proton.wizard')
-    .directive('wizard', ($rootScope, $timeout, $state, welcomeModal, wizardBuilder) => {
+    .directive('wizard', ($rootScope, $stateParams, $timeout, $state, welcomeModal, wizardBuilder) => {
         return {
             restrict: 'E',
             replace: true,
@@ -23,8 +23,7 @@ angular.module('proton.wizard')
 
                 // Initialization
                 $timeout(() => {
-                    if ($rootScope.welcome === true) {
-                        $rootScope.welcome = false;
+                    if ($stateParams.welcome) {
                         welcome();
                     }
                 }, 0);

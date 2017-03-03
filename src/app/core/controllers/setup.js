@@ -136,24 +136,17 @@ angular.module('proton.core')
     }
 
     function doGetUserInfo() {
-
         $log.debug('getUserInfo');
         $scope.getUserInfo = true;
-
         return authentication.fetchUserInfo();
     }
 
     function finishRedirect() {
-
         $log.debug('finishRedirect');
         $scope.finishCreation = true;
 
-        if (CONSTANTS.WIZARD_ENABLED === true) {
-            $rootScope.welcome = true; // Display welcome modal
-        }
-
         if (authentication.user.Delinquent < 3) {
-            $state.go('secured.inbox');
+            $state.go('secured.inbox', { welcome: CONSTANTS.WIZARD_ENABLED });
         } else {
             $state.go('secured.dashboard');
         }
