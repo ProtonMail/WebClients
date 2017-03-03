@@ -5,7 +5,6 @@ angular.module('proton.core')
     $rootScope,
     $state,
     $stateParams,
-    authentication,
     CONSTANTS,
     conversationApi,
     firstLoad,
@@ -13,17 +12,16 @@ angular.module('proton.core')
     messageApi,
     cacheCounters,
     networkActivityTracker,
-    tools
+    tools,
+    labelsModel
 ) => {
     const api = {};
     let messagesCached = []; // In this array we store the messages cached
     let conversationsCached = []; // In this array we store the conversations cached
     let dispatcher = [];
     const timeCached = {};
-    const DELETE = 0;
-    const CREATE = 1;
-    const UPDATE_DRAFT = 2;
-    const UPDATE_FLAGS = 3;
+
+    const { DELETE, CREATE, UPDATE_DRAFT, UPDATE_FLAGS } = CONSTANTS.STATUS;
 
     const dispatchElements = (type, data = {}) => $rootScope.$emit('elements', { type, data });
 
@@ -139,7 +137,7 @@ angular.module('proton.core')
             CONSTANTS.MAILBOX_IDENTIFIERS.allmail,
             CONSTANTS.MAILBOX_IDENTIFIERS.archive,
             CONSTANTS.MAILBOX_IDENTIFIERS.starred
-        ].concat(_.map(authentication.user.Labels, ({ ID }) => ID) || []);
+        ].concat(labelsModel.ids());
 
         if (unread === true) {
             if (type === 'message') {
@@ -206,7 +204,7 @@ angular.module('proton.core')
             CONSTANTS.MAILBOX_IDENTIFIERS.allmail,
             CONSTANTS.MAILBOX_IDENTIFIERS.archive,
             CONSTANTS.MAILBOX_IDENTIFIERS.starred
-        ].concat(_.map(authentication.user.Labels, ({ ID }) => ID) || []);
+        ].concat(labelsModel.ids());
 
         _.each(locs, (loc) => {
             const deltaUnread = newUnreadVector[loc] - oldUnreadVector[loc];

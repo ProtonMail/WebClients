@@ -1,10 +1,31 @@
 angular.module('proton.labels')
-.directive('dropdownFolders', (authentication, $rootScope, actionConversation, Label, labelModal, CONSTANTS, gettextCatalog) => {
+.directive('dropdownFolders', (labelsModel, $rootScope, actionConversation, labelModal, CONSTANTS, gettextCatalog) => {
+
     const mailboxes = [
-        { Name: gettextCatalog.getString('Inbox', null), ID: CONSTANTS.MAILBOX_IDENTIFIERS.inbox, Order: 0, className: 'fa-inbox' },
-        { Name: gettextCatalog.getString('Archive', null), ID: CONSTANTS.MAILBOX_IDENTIFIERS.archive, Order: 0, className: 'fa-archive' },
-        { Name: gettextCatalog.getString('Spam', null), ID: CONSTANTS.MAILBOX_IDENTIFIERS.spam, Order: 0, className: 'fa-ban' },
-        { Name: gettextCatalog.getString('Trash', null), ID: CONSTANTS.MAILBOX_IDENTIFIERS.trash, Order: 0, className: 'fa-trash-o' }
+        {
+            Name: gettextCatalog.getString('Inbox', null),
+            ID: CONSTANTS.MAILBOX_IDENTIFIERS.inbox,
+            Order: 0,
+            className: 'fa-inbox'
+        },
+        {
+            Name: gettextCatalog.getString('Archive', null),
+            ID: CONSTANTS.MAILBOX_IDENTIFIERS.archive,
+            Order: 0,
+            className: 'fa-archive'
+        },
+        {
+            Name: gettextCatalog.getString('Spam', null),
+            ID: CONSTANTS.MAILBOX_IDENTIFIERS.spam,
+            Order: 0,
+            className: 'fa-ban'
+        },
+        {
+            Name: gettextCatalog.getString('Trash', null),
+            ID: CONSTANTS.MAILBOX_IDENTIFIERS.trash,
+            Order: 0,
+            className: 'fa-trash-o'
+        }
     ];
 
     const close = () => $rootScope.$emit('closeDropdown');
@@ -38,18 +59,15 @@ angular.module('proton.labels')
             const search = element[0].querySelector('.dropdown-folder-search-input');
 
             function onClickDropdown() {
-                const exclusiveLabels = _
-                    .chain(authentication.user.Labels)
-                    .where({ Exclusive: 1 })
+                const exclusiveLabels = labelsModel.get('folders')
                     .map((folder) => {
                         folder.className = 'fa-folder';
                         return folder;
-                    })
-                    .value();
+                    });
                 scope.$applyAsync(() => {
                     scope.labels = mailboxes.concat(exclusiveLabels);
                 });
-                setTimeout(() => search.focus(), 100);
+                const id = setTimeout(() => (search.focus(), clearTimeout(id)), 100);
             }
 
             function onClickList(event) {

@@ -9,7 +9,8 @@ angular.module('proton.conversation')
     gettextCatalog,
     networkActivityTracker,
     notify,
-    tools
+    tools,
+    labelsModel
 ) => {
 
     const { MAILBOX_IDENTIFIERS } = CONSTANTS;
@@ -309,7 +310,8 @@ angular.module('proton.conversation')
      * @param {String} mailbox
      */
     function move(ids, mailbox) {
-        const exclusiveLabels = _.chain(authentication.user.Labels).where({ Exclusive: 1 }).map(({ ID }) => ID).value();
+        const exclusiveLabels = labelsModel.ids('folders');
+
         const promise = conversationApi[mailbox](ids);
         const folder = getFolderNameTranslated(mailbox);
         const displaySuccess = () => notify({ message: gettextCatalog.getPlural(ids.length, 'Conversation moved to', 'Conversations moved to', null) + ' ' + folder, classes: 'notification-success' });

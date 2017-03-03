@@ -1,5 +1,5 @@
 angular.module('proton.ui')
-    .factory('pageTitlesModel', (CONSTANTS, cacheCounters, gettextCatalog, authentication, $state, tools) => {
+    .factory('pageTitlesModel', (CONSTANTS, cacheCounters, gettextCatalog, authentication, $state, tools, labelsModel) => {
 
         const { MAILBOX_IDENTIFIERS } = CONSTANTS;
         const DISPLAY_NUMBER = ['inbox', 'drafts', 'sent', 'starred', 'archive', 'spam', 'trash'];
@@ -44,8 +44,7 @@ angular.module('proton.ui')
          * @return {String}
          */
         const getLabelState = () => {
-            const { Name = '' } = _.findWhere(authentication.user.Labels, { ID: $state.params.label }) || {};
-
+            const { Name = '' } = labelsModel.read($state.params.label) || {};
             return Name || gettextCatalog.getString('Label', null, 'Title');
         };
 

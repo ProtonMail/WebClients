@@ -1,20 +1,15 @@
 angular.module('proton.conversation')
-.factory('mailboxIdentifersTemplate', ($rootScope, CONSTANTS, authentication) => {
-    let exclusiveFolders = [];
+.factory('mailboxIdentifersTemplate', ($rootScope, CONSTANTS, labelsModel) => {
 
     const contains = (key, labels) => _.contains(labels, CONSTANTS.MAILBOX_IDENTIFIERS[key]);
     const templateTag = (className, tooltip) => `<i class="${className}" translate>${tooltip}</i>`;
-    const templateLabel = (className, tooltip, color) => ((color) ? `<i class="fa ${className}" pt-tooltip="${tooltip}" style="color: ${color}"></i>` : `<i class="fa ${className}" pt-tooltip="${tooltip}"></i>`);
-    const getFolder = (labelIDs) => _.find(exclusiveFolders, (folder) => labelIDs.indexOf(folder.ID) > -1) || {};
-    const updateCache = () => {
-        exclusiveFolders = _.where(authentication.user.Labels, { Exclusive: 1 });
+    const templateLabel = (className = '', tooltip = '', color = '') => (color ? `<i class="fa ${className}" pt-tooltip="${tooltip}" style="color: ${color}"></i>` : `<i class="fa ${className}" pt-tooltip="${tooltip}"></i>`);
+
+    const getFolder = (labelIDs = []) => {
+        const id = _.find(labelIDs, (id) => labelsModel.contains(id, 'folders'));
+        return labelsModel.read(id, 'folders') || {};
     };
 
-    $rootScope.$on('deleteLabel', () => updateCache());
-    $rootScope.$on('createLabel', () => updateCache());
-    $rootScope.$on('updateLabel', () => updateCache());
-    $rootScope.$on('updateLabels', () => updateCache());
-    $rootScope.$on('clearLabels', () => exclusiveFolders = []);
     /**
     * Compile a template with its className and the tooltip to display
     * @param  {String} options.className
@@ -39,7 +34,7 @@ angular.module('proton.conversation')
     * @return {Object}                    {getTemplateLabels, getTemplateTags}
     */
     return ({ MAP_LABELS, MAP_TYPES }) => {
-        !exclusiveFolders.length && updateCache();
+
         /**
         * Take a list of labels and check if they exist inside MAILBOX_IDENTIFIERS
         * Then create a template for the icon matching this label based on MAP_LABELS
@@ -51,8 +46,8 @@ angular.module('proton.conversation')
             .keys(MAP_LABELS)
             .reduce((acc, key) => {
                 if (key === 'folder') {
-                    const folder = getFolder(labels);
-                    return acc + icon(_.extend({}, MAP_LABELS[key], { tooltip: folder.Name, color: folder.Color }));
+                    const { Color: color, Name: tooltip } = getFolder(labels);
+                    return acc + icon(_.extend({}, MAP_LABELS[key], { tooltip, color }));
                 }
                 if (contains(key, labels)) {
                     return acc + icon(MAP_LABELS[key]);

@@ -1,5 +1,5 @@
 angular.module('proton.settings')
-    .factory('labelsModel', (authentication) => {
+    .factory('labelsEditorModel', (labelsModel) => {
 
         let LIST = [];
         let MAP = {};
@@ -10,8 +10,8 @@ angular.module('proton.settings')
          * @return {Array}
          */
         const load = () => {
-            LIST = _.sortBy(authentication.user.Labels, 'Order');
-            MAP = _.reduce(LIST, (acc, { ID, Order }) => (acc[ID] = Order, acc), {});
+            LIST = _.sortBy(labelsModel.get(), 'Order');
+            MAP = _.reduce(LIST, (acc, { ID, Order }) => (acc[ID] = Order, acc), Object.create(null));
             return LIST;
         };
 
@@ -26,7 +26,7 @@ angular.module('proton.settings')
          * @return {Array}
          */
         const sort = () => {
-            LIST = _.sortBy(authentication.user.Labels, ({ Name = '' }) => Name.toLowerCase());
+            LIST = _.sortBy(labelsModel.get(), ({ Name = '' }) => Name.toLowerCase());
             return LIST;
         };
 

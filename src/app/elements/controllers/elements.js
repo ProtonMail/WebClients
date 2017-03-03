@@ -12,6 +12,7 @@ angular.module('proton.elements')
     actionConversation,
     AttachmentLoader,
     authentication,
+    labelsModel,
     cache,
     cacheCounters,
     confirmModal,
@@ -46,7 +47,7 @@ angular.module('proton.elements')
         $scope.markedElement = undefined;
         $scope.mailbox = tools.currentMailbox();
         $scope.conversationsPerPage = authentication.user.NumMessagePerPage;
-        $scope.labels = authentication.user.Labels;
+        $scope.labels = labelsModel.get();
         $scope.messageButtons = authentication.user.MessageButtons;
         $scope.selectedFilter = $stateParams.filter;
         $scope.selectedOrder = $stateParams.sort || '-date';
@@ -464,18 +465,6 @@ angular.module('proton.elements')
     };
 
     /**
-     * Return style to color tag label
-     * @param {String} id - label id
-     * @return {Object} style
-     */
-    $scope.getColorLabel = (id) => {
-        return {
-            color: $scope.getLabel(id).Color,
-            borderColor: $scope.getLabel(id).Color
-        };
-    };
-
-    /**
      *
      * @return {}
      */
@@ -759,15 +748,6 @@ angular.module('proton.elements')
         $scope.page = ~~$stateParams.page || 1;
         paginationModel[type]();
     }
-
-
-    /**
-     * Return label object
-     * @param {String} id
-     */
-    $scope.getLabel = (id) => {
-        return _.findWhere(authentication.user.Labels, { ID: id });
-    };
 
     /**
      * Go to label folder + reset parameters
