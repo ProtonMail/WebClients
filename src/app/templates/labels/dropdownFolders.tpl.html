@@ -1,6 +1,8 @@
 <div class="dropdown-folder-container">
-
-    <div class="dropdown-folder-search">
+    <div class="dropdown-folder-title">
+        <p translate translate-context="title">Move to</p>
+    </div>
+    <label class="dropdown-folder-search">
         <i class="fa fa-search dropdown-folder-search-icon"></i>
         <input
             class="dropdown-folder-search-input"
@@ -8,8 +10,7 @@
             placeholder-translate="Filter folders"
             ng-model="searchValue"
             ng-minlength="1">
-    </div>
-
+    </label>
     <div class="dropdown-folder-fullwidth scrollbox-container" ng-if="labels.length > 0">
         <ul class="scrollbox-container-group">
             <li
