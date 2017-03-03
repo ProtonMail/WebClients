@@ -135,9 +135,29 @@
                             <i class="fa fa-angle-down"></i>
                         </a>
                         <div class="pm_dropdown wide right">
+                            <button
+                                data-action-message="move"
+                                data-action-message-type="inbox"
+                                ng-hide="message.Type === 2 || message.Type === 3">
+                                <i class="fa fa-inbox"></i>
+                                <span translate translate-context="Action">Move to inbox</span>
+                            </button>
+                            <button
+                                data-action-message="move"
+                                data-action-message-type="trash">
+                                <i class="fa fa-trash-o"></i>
+                                <span translate translate-context="Action">Move to trash</span>
+                            </button>
                             <button data-action-message="unread">
                                 <i class="fa fa-eye-slash"></i>
                                 <span translate translate-context="Action">Mark as unread</span>
+                            </button>
+                            <button
+                                data-action-message="move"
+                                data-action-message-type="spam"
+                                ng-hide="'secured.spam.**' | includedByState">
+                                <i class="fa fa-ban"></i>
+                                <span translate translate-context="Action">Mark as spam</span>
                             </button>
                             <button
                                 data-action-message="delete"
