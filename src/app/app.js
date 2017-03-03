@@ -124,7 +124,6 @@ angular.module('proton', [
     $rootScope.mobileMode = false;
     $rootScope.inboxSidebar = false;
     $rootScope.showWelcome = true;
-    $rootScope.welcome = false;
     $rootScope.browser = tools.getBrowser();
     $rootScope.terminal = false;
     // $rootScope.updateMessage = false;

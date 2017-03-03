@@ -24,17 +24,6 @@ angular.module('proton.authentication')
     $scope.twoFactor = 0;
     $scope.showOld = window.location.hostname !== 'old.protonmail.com';
 
-    // FIXME: this part seems useless or bad coded
-    // if ($rootScope.isLoggedIn && $rootScope.isLocked === false && $rootScope.user === undefined) {
-    //     try {
-    //         $rootScope.user = authentication.fetchUserInfo();
-    //     }
-    //     catch(err) {
-    //         $log.error('appjs',err);
-    //         alert(err);
-    //     }
-    // }
-
     /**
      * Clean notifications
      */

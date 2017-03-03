@@ -101,25 +101,19 @@ angular.module('proton.routes', [
                 templateUrl: 'templates/layout/pre.tpl.html'
             }
         },
-        onEnter($state, $stateParams, $rootScope, notify, Invite) {
-            const token = $stateParams.token;
-            const username = $stateParams.user;
+        onEnter($state, $stateParams, $rootScope, notify, Invite, gettextCatalog) {
+            const { token, user } = $stateParams;
+            const errorMessage = gettextCatalog.getString('Invalid invite link', null, 'Error');
 
             $rootScope.loggingOut = false;
 
-            Invite.check(token, username)
-            .then((result) => {
-                if (result.data && result.data.Valid === 1) {
-                    $rootScope.allowedNewAccount = true;
-                    $rootScope.inviteToken = $stateParams.token;
+            Invite.check(token, user)
+            .then(({ data = {} } = {}) => {
+                if (data.Valid === 1) {
                     $rootScope.preInvited = true;
-                    $rootScope.username = $stateParams.user;
-                    $state.go('signup');
-                } else if (result.data && result.data.Error) {
-                    notify({ message: result.data.Error, classes: 'notification-danger' });
-                    $state.go('login');
+                    $state.go('signup', { inviteToken: $stateParams.token, username: $stateParams.user });
                 } else {
-                    notify({ message: 'Invalid Invite Link.', classes: 'notification-danger' });
+                    notify({ message: data.Error || errorMessage, classes: 'notification-danger' });
                     $state.go('login');
                 }
             });
@@ -129,30 +123,23 @@ angular.module('proton.routes', [
     .state('invite', {
         url: '/invite',
         resolve: {
-            direct($http, $q, $state, $rootScope, url, User) {
-                const deferred = $q.defer();
-
+            direct($state, $rootScope, User) {
                 if (!$rootScope.preInvited) {
-                    User.direct()
-                    .then((result) => {
-                        if (result.data && result.data.Code === 1000) {
-                            if (result.data.Direct === 1) {
-                                $state.go('signup');
-                                deferred.resolve();
-                            } else {
-                                window.location.href = 'https://protonmail.com/invite';
-                                deferred.reject();
-                            }
-                        } else {
-                            $state.go('login');
-                            deferred.reject();
+                    return User.direct()
+                    .then(({ data = {} } = {}) => {
+                        if (data.Direct === 1) {
+                            $state.go('signup');
+                            return Promise.resolve();
                         }
+                        if (data.Code === 1000) {
+                            window.location.href = 'https://protonmail.com/invite';
+                            return Promise.reject();
+                        }
+                        $state.go('login');
+                        return Promise.reject();
                     });
-                } else {
-                    deferred.resolve();
                 }
-
-                return deferred.promise;
+                return Promise.resolve();
             }
         }
     })
@@ -161,17 +148,15 @@ angular.module('proton.routes', [
         url: '/reset-theme',
         resolve: {
             reset(networkActivityTracker, settingsApi, notify, eventManager, gettextCatalog) {
+                const errorMessage = gettextCatalog.getString('Unable to reset theme', null, 'Error');
                 const promise = settingsApi.theme({ Theme: '' })
                 .then((result = {}) => {
                     const { data } = result;
                     if (data.Code === 1000) {
                         notify({ message: gettextCatalog.getString('Theme reset! Redirecting...', null), classes: 'notification-success' });
                         return eventManager.call();
-                    } else if (data.Error) {
-                        return Promise.reject(data.Error);
                     }
-                    const errorMessage = gettextCatalog.getString('Unable to reset theme', null, 'Error');
-                    return Promise.reject(errorMessage);
+                    return Promise.reject(data.Error || errorMessage);
                 });
                 networkActivityTracker.track(promise);
             }
@@ -185,6 +170,8 @@ angular.module('proton.routes', [
     .state('signup', {
         url: '/create/new?plan&billing&currency',
         params: {
+            username: undefined, // set by invite
+            inviteToken: undefined, // set by invite
             plan: null, // 'free' / 'plus' / 'visionary'
             billing: null, // 1 / 12
             currency: null // 'CHF' / 'EUR' / 'USD'
@@ -230,29 +217,22 @@ angular.module('proton.routes', [
             domains(direct, pmDomainModel) {
                 return pmDomainModel.fetch();
             },
-            direct($q, $state, $rootScope, User) {
-                const deferred = $q.defer();
-
+            direct($state, $rootScope, User) {
                 if (!$rootScope.preInvited) {
-                    User.direct()
-                    .then((result) => {
-                        if (result.data && result.data.Code === 1000) {
-                            if (result.data.Direct === 1) {
-                                deferred.resolve(result.data);
-                            } else {
-                                window.location.href = 'https://protonmail.com/invite';
-                                deferred.reject();
-                            }
-                        } else {
-                            $state.go('login');
-                            deferred.reject();
+                    return User.direct()
+                    .then(({ data = {} } = {}) => {
+                        if (data.Direct === 1) {
+                            return Promise.resolve(data);
                         }
+                        if (data.Code === 1000) {
+                            window.location.href = 'https://protonmail.com/invite';
+                            return Promise.reject();
+                        }
+                        $state.go('login');
+                        return Promise.reject();
                     });
-                } else {
-                    deferred.resolve();
                 }
-
-                return deferred.promise;
+                return Promise.resolve();
             }
         }
     })
@@ -949,7 +929,7 @@ angular.module('proton.routes', [
         $stateProvider.state(childState, {
             url: '/{id}',
             views: elementView,
-            params: { id: '', messageID: null },
+            params: { id: '', messageID: null, welcome: null },
             onExit($rootScope) {
                 $rootScope.$broadcast('unactiveMessages');
                 $rootScope.$broadcast('unmarkMessages');
