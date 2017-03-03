@@ -124,15 +124,13 @@
 @import "components/sidebar/settingsMenu";
 
 //== Message
-@import "components/message/messageView";
 @import "components/message/messagePlaceholder";
-@import "components/message/messageView";
 @import "components/message/displayContentBtn";
-@import "components/message/labelsMessage";
 @import "components/message/allMessageLabels";
 @import "components/message/messageContacts";
 @import "components/message/messageComposeTo";
 @import "components/message/filterButton";
+@import "components/message/messageView";
 
 //== Conversations
 @import "components/conversation/conversation";

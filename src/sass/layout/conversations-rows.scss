@@ -35,6 +35,9 @@ body {
             }
             .subject {
                 position: relative;
+                display: inline-flex;
+                justify-content: space-between;
+                align-items: center;
                 box-sizing: border-box;
                 width: calc(84% - 17rem);
                 padding-left: 4px;
@@ -76,21 +79,7 @@ body {
                     line-height: 40px;
                     color: rgba(0,0,0,.35);
                 }
-                .pm_labels {
-                    float: right;
-                    position: absolute;;
-                    top: 4px;
-                    right: 0;
-                    background: $white;
-                    height: 30px;
-                    label {
-                        margin-left: .25rem;
-                        background: inherit;
-                        &.more {
-                            margin-left: 0;
-                        }
-                    }
-                }
+                .labelsElement-container { height: 22px }
             }
 
             .size,

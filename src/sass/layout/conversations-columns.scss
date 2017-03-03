@@ -2,6 +2,7 @@
 .conversation {
     @include flexRow();
     @include flexAlignCenter();
+    background: $white;
 
     position: relative;
     height: 60px;
@@ -25,6 +26,7 @@
     .conversation-meta {
         @include flexColumn();
         max-width: calc(100% - 38px);
+        background: inherit
     }
 
     .row {
@@ -49,6 +51,7 @@
             padding-bottom: 10px;
             max-width: calc(100% - 40px); /* long senders */
             cursor: pointer;
+            background: inherit
         }
 
         h4,
@@ -85,9 +88,6 @@
                 margin-right:5px;
             }
         }
-
-        .meta,
-        .pm_labels { width: 8.5rem; }
 
         .meta {
             @include flexJustifyEnd();
@@ -136,21 +136,13 @@
             }
         }
 
-        .pm_labels {
+        .labelsElement-container {
             position: absolute;
             right: 10px;
             bottom: 10px;
             z-index: 2;
-            height: 18px;
             width: auto;
-            display:inline-block;
-            white-space: nowrap;
-            text-align: right;
-
-            label {
-                margin-left: .25rem;
-                background: inherit;
-            }
+            height: 18px
         }
     }
 
@@ -187,9 +179,6 @@
     &.read {
         background: $read-background;
         h4 { font-weight: normal; color: inherit; }
-        .pm_labels {
-            label { background: $read-background; }
-        }
     }
     &.marked::before {
         background-color: $primary;
@@ -205,11 +194,6 @@
         color: set-color($active-background,$white);
         h4 { color: inherit }
         .customMaskInput-mask { border-color: rgba(0,0,0,0.5) }
-        .pm_labels {
-            label {
-                background: $active-background;
-            }
-        }
     }
 
     &:not(.active) { border-bottom:1px solid darken($read-background, 10) }
