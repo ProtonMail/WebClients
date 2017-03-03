@@ -1,5 +1,5 @@
 angular.module('proton.message')
-    .factory('messageActions', ($q, $rootScope, authentication, tools, cache, eventManager, messageApi, networkActivityTracker, CONSTANTS, notify, gettextCatalog) => {
+    .factory('messageActions', ($q, $rootScope, tools, cache, eventManager, messageApi, networkActivityTracker, CONSTANTS, notify, gettextCatalog, labelsModel) => {
 
         const REMOVE_ID = 0;
         const ADD_ID = 1;
@@ -85,7 +85,7 @@ angular.module('proton.message')
 
         // Message actions
         function move({ ids, mailbox }) {
-            const exclusiveLabels = _.chain(authentication.user.Labels).where({ Exclusive: 1 }).map(({ ID }) => ID).value();
+            const exclusiveLabels = labelsModel.ids('folders');
             const folderIDs = [
                 CONSTANTS.MAILBOX_IDENTIFIERS.inbox,
                 CONSTANTS.MAILBOX_IDENTIFIERS.trash,

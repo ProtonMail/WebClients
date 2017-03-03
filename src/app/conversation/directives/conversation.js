@@ -12,7 +12,8 @@ angular.module('proton.conversation')
     cache,
     CONSTANTS,
     tools,
-    hotkeys
+    hotkeys,
+    labelsModel
 ) => {
 
     /**
@@ -160,7 +161,7 @@ angular.module('proton.conversation')
             let unsubscribeActions = angular.noop;
             scope.messages = [];
             scope.mailbox = tools.currentMailbox();
-            scope.labels = authentication.user.Labels;
+            scope.labels = labelsModel.get();
             scope.showTrashed = false;
             scope.showNonTrashed = false;
             $rootScope.numberElementSelected = 1;

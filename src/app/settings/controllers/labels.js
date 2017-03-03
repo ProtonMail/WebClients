@@ -11,13 +11,13 @@ angular.module('proton.settings')
     labelModal,
     networkActivityTracker,
     cacheCounters,
-    labelsModel,
+    labelsEditorModel,
     notify
 ) => {
     // Variables
     const unsubscribe = [];
 
-    $scope.labels = labelsModel.load();
+    $scope.labels = labelsEditorModel.load();
 
     // Drag and Drop configuration
     $scope.labelsDragControlListeners = {
@@ -26,35 +26,17 @@ angular.module('proton.settings')
             return sourceItemHandleScope.itemScope.sortableScope.$id === destSortableScope.$id;
         },
         orderChanged() {
-            const order = labelsModel.getOrder();
-            labelsModel.update();
+            const order = labelsEditorModel.getOrder();
+            labelsEditorModel.update();
             $scope.saveLabelOrder(order);
         }
     };
 
     // Listeners
-    unsubscribe.push($rootScope.$on('deleteLabel', () => {
-        $scope.$applyAsync(() => {
-            $scope.labels = labelsModel.load();
-        });
-    }));
-
-    unsubscribe.push($rootScope.$on('createLabel', () => {
-        $scope.$applyAsync(() => {
-            $scope.labels = labelsModel.load();
-        });
-    }));
-
-    unsubscribe.push($rootScope.$on('updateLabel', () => {
-        $scope.$applyAsync(() => {
-            $scope.labels = labelsModel.load();
-        });
-    }));
-
-    unsubscribe.push($rootScope.$on('updateLabels', () => {
-        $scope.$applyAsync(() => {
-            $scope.labels = labelsModel.load();
-        });
+    unsubscribe.push($rootScope.$on('labelsModel', (e, { type }) => {
+        if (type === 'cache.update' || type === 'cache.refresh') {
+            $scope.$applyAsync(() => ($scope.labels = labelsEditorModel.load()));
+        }
     }));
 
     $scope.$on('$destroy', () => {
@@ -96,9 +78,9 @@ angular.module('proton.settings')
     };
 
     $scope.sortLabels = () => {
-        labelsModel.sort();
-        const order = labelsModel.getOrder();
-        labelsModel.update();
+        labelsEditorModel.sort();
+        const order = labelsEditorModel.getOrder();
+        labelsEditorModel.update();
         $scope.saveLabelOrder(order);
     };
 
@@ -172,6 +154,6 @@ angular.module('proton.settings')
     };
 
     $scope.$on('$destroy', () => {
-        labelsModel.clear();
+        labelsEditorModel.clear();
     });
 });

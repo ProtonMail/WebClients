@@ -78,6 +78,13 @@ angular.module('proton.constants', [])
         OPEN_TAG_AUTOCOMPLETE_RAW: '<',
         CLOSE_TAG_AUTOCOMPLETE_RAW: '>'
     },
+    STATUS: {
+        DELETE: 0,
+        CREATE: 1,
+        UPDATE: 2,
+        UPDATE_DRAFT: 2,
+        UPDATE_FLAGS: 3
+    },
     DEFAULT_SQUIRE_VALUE: {
         LINK: '',
         IMAGE: '',

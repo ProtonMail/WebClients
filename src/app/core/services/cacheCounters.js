@@ -1,5 +1,5 @@
 angular.module('proton.core')
-    .service('cacheCounters', (messageApi, CONSTANTS, conversationApi, $q, $rootScope, authentication) => {
+    .service('cacheCounters', (messageApi, CONSTANTS, conversationApi, $q, $rootScope, authentication, labelsModel) => {
         const api = {};
         let counters = {};
         const dispatch = (type, data = {}) => $rootScope.$emit('app.cacheCounters', { type, data });
@@ -19,13 +19,23 @@ angular.module('proton.core')
             }
         };
 
+        $rootScope.$on('labelsModel', (e, { type, data }) => {
+            if (type === 'cache.update') {
+                data.create.forEach(({ ID }) => exist(ID));
+                Object.keys(data.remove)
+                    .forEach((ID) => {
+                        delete counters[ID];
+                    });
+            }
+        });
+
         /**
         * Query unread and total
         * Find the total and unread items per message and conversation
         * @return {Promise}
         */
         api.query = () => {
-            const idsLabel = _.map(authentication.user.Labels, ({ ID }) => ID) || [];
+            const idsLabel = _.map(labelsModel.get(), ({ ID }) => ID) || [];
             const locs = [
                 CONSTANTS.MAILBOX_IDENTIFIERS.inbox,
                 CONSTANTS.MAILBOX_IDENTIFIERS.drafts,

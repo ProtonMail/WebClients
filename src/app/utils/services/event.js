@@ -23,11 +23,11 @@ angular.module('proton.utils')
         notify,
         pmcw,
         setupKeys,
-        AppModel
+        AppModel,
+        labelsModel
     ) => {
-        const DELETE = 0;
-        const CREATE = 1;
-        const UPDATE = 2;
+
+        const { DELETE, CREATE, UPDATE } = CONSTANTS.STATUS;
 
         const dispatch = (type, data = {}) => $rootScope.$emit('app.event', { type, data });
 
@@ -54,31 +54,6 @@ angular.module('proton.utils')
             },
             isDifferent(eventID) {
                 return this.ID !== eventID;
-            },
-            manageLabels(labels) {
-                if (angular.isDefined(labels)) {
-                    _.each(labels, ({ Action, ID = '', Label = {} }) => {
-                        const index = _.findIndex(authentication.user.Labels, { ID });
-
-                        if (Action === DELETE) {
-                            if (index !== -1) {
-                                authentication.user.Labels.splice(index, 1);
-                                $rootScope.$emit('deleteLabel', ID);
-                            }
-                        } else if (Action === CREATE) {
-                            if (index === -1) {
-                                authentication.user.Labels.push(Label);
-                                cacheCounters.add(Label.ID);
-                                $rootScope.$emit('createLabel', ID, Label);
-                            }
-                        } else if (Action === UPDATE) {
-                            if (index !== -1) {
-                                authentication.user.Labels[index] = Label;
-                                $rootScope.$emit('updateLabel', ID, Label);
-                            }
-                        }
-                    });
-                }
             },
             manageContacts(contacts = []) {
                 contacts.forEach((contact) => {
@@ -215,7 +190,7 @@ angular.module('proton.utils')
                         CONSTANTS.MAILBOX_IDENTIFIERS.allmail,
                         CONSTANTS.MAILBOX_IDENTIFIERS.archive,
                         CONSTANTS.MAILBOX_IDENTIFIERS.starred
-                    ].concat(_.map(authentication.user.Labels || [], ({ ID }) => ID));
+                    ].concat(labelsModel.ids());
 
                     _.each(labelIDs, (labelID) => {
                         const count = _.findWhere(counts, { LabelID: labelID });
@@ -241,7 +216,7 @@ angular.module('proton.utils')
                         CONSTANTS.MAILBOX_IDENTIFIERS.allmail,
                         CONSTANTS.MAILBOX_IDENTIFIERS.archive,
                         CONSTANTS.MAILBOX_IDENTIFIERS.starred
-                    ].concat(_.map(authentication.user.Labels || [], ({ ID }) => ID));
+                    ].concat(labelsModel.ids());
 
                     _.each(labelIDs, (labelID) => {
                         const count = _.findWhere(counts, { LabelID: labelID });
@@ -383,13 +358,13 @@ angular.module('proton.utils')
                     .then(() => {
                         $rootScope.$broadcast('updateUser');
                         $rootScope.$broadcast('updateContacts');
-                        $rootScope.$emit('updateLabels');
+                        labelsModel.refresh();
                     });
                 } else if (data.Reload === 1) {
                     $window.location.reload();
                     return Promise.resolve();
                 } else if (this.isDifferent(data.EventID)) {
-                    this.manageLabels(data.Labels);
+                    labelsModel.sync(data.Labels);
                     this.manageContacts(data.Contacts);
                     this.manageThreadings(data.Messages, data.Conversations);
                     this.manageDesktopNotifications(data.Messages);

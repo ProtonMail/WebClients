@@ -1,5 +1,5 @@
 angular.module('proton.search')
-    .factory('searchModel', (authentication, CONSTANTS, gettextCatalog) => {
+    .factory('searchModel', (authentication, CONSTANTS, gettextCatalog, labelsModel) => {
 
         const getFolderList = () => {
             const list = _.reduce(Object.keys(CONSTANTS.MAILBOX_IDENTIFIERS), (acc, label) => {
@@ -14,11 +14,9 @@ angular.module('proton.search')
                 group: 'default'
             }]);
 
-            if (Object.keys(authentication.user).length > 0) {
-                _.each(authentication.user.Labels, ({ ID, Name }) => {
-                    list.push({ value: ID, label: Name, group: 'label' });
-                });
-            }
+            _.each(labelsModel.get(), ({ ID: value, Name: label }) => {
+                list.push({ value, label, group: 'label' });
+            });
             return list;
         };
 

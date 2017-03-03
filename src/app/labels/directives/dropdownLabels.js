@@ -1,5 +1,5 @@
 angular.module('proton.labels')
-.directive('dropdownLabels', ($rootScope, $timeout, authentication, eventManager, notify, settingsApi, gettextCatalog) => {
+.directive('dropdownLabels', ($rootScope, $timeout, labelsModel, authentication, eventManager, notify, settingsApi, gettextCatalog) => {
 
     const NOTIFS = {
         LABELS_SAVED: gettextCatalog.getString('Labels Saved', null),
@@ -7,6 +7,13 @@ angular.module('proton.labels')
     };
     const notifSuccess = (message = '') => notify({ message, classes: 'notification-success' });
     const close = () => $rootScope.$emit('closeDropdown');
+
+    const mapLabelsMessage = (messages = []) => {
+        return _.reduce(messages, (acc, { LabelIDs = [] }) => {
+            LabelIDs.forEach((id) => (!acc[id] ? acc[id] = 1 : acc[id]++));
+            return acc;
+        }, {});
+    };
 
     return {
         restrict: 'E',
@@ -28,17 +35,14 @@ angular.module('proton.labels')
                     }
 
                     const messages = scope.getMessages();
-                    const labels = _.where(authentication.user.Labels, { Exclusive: 0 });
+                    const messagesLabels = mapLabelsMessage(messages);
 
                     scope.labelName = '';
+                    scope.labels = labelsModel.get('labels');
                     scope.alsoArchive = Boolean(authentication.user.AlsoArchive);
-                    scope.labels = angular.copy(labels);
-
-                    const messagesLabels = _.reduce(messages, (acc, { LabelIDs = [] }) => acc.concat(LabelIDs), []);
 
                     scope.labels.forEach((label) => {
-                        const count = messagesLabels.filter((id) => id === label.ID).length;
-
+                        const count = messagesLabels[label.ID] || 0;
                         if (count > 0 && count < messages.length) {
                             label.Selected = null;
                         } else {

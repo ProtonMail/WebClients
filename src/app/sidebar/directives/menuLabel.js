@@ -1,5 +1,5 @@
 angular.module('proton.sidebar')
-    .directive('menuLabel', ($rootScope, authentication, $stateParams, dedentTpl, $state, sidebarModel) => {
+    .directive('menuLabel', ($rootScope, labelsModel, $stateParams, dedentTpl, $state, sidebarModel) => {
 
         const getClassName = (ID) => {
             const isActiveLabel = $stateParams.label === ID;
@@ -36,7 +36,7 @@ angular.module('proton.sidebar')
             link(scope, el) {
                 const unsubscribe = [];
                 const updateCache = () => {
-                    el[0].innerHTML = _.sortBy(authentication.user.Labels, 'Order')
+                    el[0].innerHTML = _.sortBy(labelsModel.get(), 'Order')
                         .reduce((acc, label) => acc + template(label), '');
                 };
 
@@ -60,10 +60,12 @@ angular.module('proton.sidebar')
                 unsubscribe.push($rootScope.$on('elements', (e, { type }) => {
                     (type === 'refresh') && updateCounter();
                 }));
-                unsubscribe.push($rootScope.$on('deleteLabel', refresh));
-                unsubscribe.push($rootScope.$on('createLabel', refresh));
-                unsubscribe.push($rootScope.$on('updateLabel', refresh));
-                unsubscribe.push($rootScope.$on('updateLabels', refresh));
+
+                unsubscribe.push($rootScope.$on('labelsModel', (e, { type }) => {
+                    if (type === 'cache.refesh' || type === 'cache.update') {
+                        refresh();
+                    }
+                }));
 
                 // Check the current state to set the current one as active
                 unsubscribe.push($rootScope.$on('$stateChangeSuccess', () => {

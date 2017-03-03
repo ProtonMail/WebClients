@@ -1,7 +1,15 @@
 angular.module('proton.elements')
-.directive('labelsElement', ($rootScope, authentication, $state) => {
-    const toLabels = (labelIDs = []) => _.filter(authentication.user.Labels, (label) => labelIDs.indexOf(label.ID) > -1 && !label.Exclusive);
+.directive('labelsElement', ($rootScope, labelsModel, authentication, $state) => {
+
     const HIDE_CLASSNAME = 'labelsElement-hidden';
+
+    const toLabels = (list = []) => {
+        return list.reduce((acc, id) => {
+            const item = labelsModel.read(id, 'labels');
+            item && acc.push(item);
+            return acc;
+        }, []);
+    };
 
     const moreVisibility = (node) => ({
         hide() {
@@ -25,11 +33,10 @@ angular.module('proton.elements')
 
             const build = (e, { LabelIDs }) => {
                 moreToggle.hide();
-
-        // Check if there is custom labels
+                // Check if there is custom labels
                 if (Array.isArray(LabelIDs)) {
                     const labels = toLabels(LabelIDs);
-                    scope.labels = labels.slice(0, 4);
+                    scope.labels = labels.length ? angular.copy(labels.slice(0, 4)) : [];
                     labels.length > 4 && moreToggle.show();
                 }
             };
@@ -37,9 +44,8 @@ angular.module('proton.elements')
             const onClick = (e) => {
                 e.stopPropagation();
 
-                const { target } = e;
-                if (target.nodeName === 'LABEL') {
-                    const label = target.getAttribute('data-label-id');
+                if (e.target.nodeName === 'LABEL') {
+                    const label = e.target.getAttribute('data-label-id');
                     $state.go('secured.label', { label });
                 }
             };
@@ -50,11 +56,10 @@ angular.module('proton.elements')
 
             el.on('click', onClick);
 
-            scope
-        .$on('$destroy', () => {
-            el.off('click', onClick);
-            unsubscribe();
-        });
+            scope.$on('$destroy', () => {
+                el.off('click', onClick);
+                unsubscribe();
+            });
         }
     };
 });

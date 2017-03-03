@@ -54,7 +54,7 @@ angular.module('proton.commons')
             if (element.length === 0) {
                 throw new Error('The template contains no elements; you need to wrap text nodes');
             }
-            scope = $rootScope.$new();
+            scope = $rootScope.$new(true);
             if (controller) {
                 if (!locals) {
                     /* eslint  { "no-param-reassign": "off"} */
@@ -85,6 +85,16 @@ angular.module('proton.commons')
             return $animate.leave(element).then(() => {
                 Mousetrap.unbind('escape');
                 scope.$destroy();
+                /**
+                 * Fuck you Enkular
+                 * > Called on a controller when its containing scope is destroyed.
+                 * https://docs.angularjs.org/api/ng/service/$compile#life-cycle-hooks
+                 * Et mon cul c'est du poulet alors ? (╯ὸ︹ό）╯︵ ┻━┻
+                 *
+                 * So we need to do it for you...
+                 * cf https://github.com/angular/angular.js/issues/14376#issuecomment-205926098
+                 */
+                (scope[controllerAs].$onDestroy || angular.noop)();
                 scope = null;
                 element.remove();
                 element = null;

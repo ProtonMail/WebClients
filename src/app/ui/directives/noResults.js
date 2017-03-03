@@ -1,5 +1,5 @@
 angular.module('proton.ui')
-.directive('noResults', (tools, gettextCatalog, authentication, $stateParams) => {
+.directive('noResults', (tools, gettextCatalog, labelsModel, $stateParams) => {
 
     const TYPES = {
         inbox: {
@@ -52,7 +52,7 @@ angular.module('proton.ui')
         let mailbox = box;
 
         if (mailbox === 'label') {
-            const label = _.findWhere(authentication.user.Labels, { ID: $stateParams.label }) || {};
+            const label = labelsModel.read($stateParams.label) || {};
 
             if (label.Exclusive === 1) {
                 mailbox = 'folder';

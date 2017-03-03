@@ -1,11 +1,11 @@
 angular.module('proton.core')
-.factory('filterModal', ($timeout, $rootScope, pmModal, gettextCatalog, authentication, Filter, networkActivityTracker, notify, CONSTANTS, eventManager, labelModal) => {
+.factory('filterModal', ($timeout, $rootScope, pmModal, gettextCatalog, Filter, networkActivityTracker, notify, CONSTANTS, eventManager, labelModal, labelsModel) => {
     return pmModal({
         controllerAs: 'ctrl',
         templateUrl: 'templates/modals/filter.tpl.html',
         controller(params) {
-            const labelsOrdered = _.chain(authentication.user.Labels).where({ Exclusive: 0 }).sortBy('Order').value();
-            const foldersOrdered = _.chain(authentication.user.Labels).where({ Exclusive: 1 }).sortBy('Order').value();
+            const labelsOrdered = labelsModel.get('labels');
+            const foldersOrdered = labelsModel.get('folders');
             const ctrl = this;
             const model = angular.copy(params.filter);
 
@@ -169,17 +169,14 @@ angular.module('proton.core')
                 }
 
                 if (angular.isObject(ctrl.filter.Simple)) {
-                    const unsubscribe = [];
-
-                    ['deleteLabel', 'createLabel', 'updateLabel', 'updateLabels'].forEach((name) => {
-                        unsubscribe.push($rootScope.$on(name, () => {
-                            ctrl.filter.Simple.Actions.Labels = _.sortBy(authentication.user.Labels, 'Order');
-                        }));
+                    const unsubscribe = $rootScope.$on('labelsModel', (e, { type }) => {
+                        if (type === 'cache.update') {
+                            ctrl.filter.Simple.Actions.Labels = _.sortBy(labelModal.get(), 'Order');
+                        }
                     });
 
                     ctrl.$onDestroy = () => {
-                        unsubscribe.forEach((cb) => cb());
-                        unsubscribe.length = 0;
+                        unsubscribe();
                     };
                 }
 
