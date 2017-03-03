@@ -14,8 +14,11 @@ angular.module('proton.search')
                 group: 'default'
             }]);
 
-            _.each(labelsModel.get(), ({ ID: value, Name: label }) => {
-                list.push({ value, label, group: 'label' });
+            _.each(labelsModel.get(), ({ ID: value, Name: label, Exclusive }) => {
+                list.push({
+                    value, label,
+                    group: (Exclusive === 1) ? 'folder' : 'label'
+                });
             });
             return list;
         };
