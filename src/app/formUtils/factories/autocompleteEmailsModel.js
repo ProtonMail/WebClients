@@ -8,6 +8,8 @@ angular.module('proton.formUtils')
             CLOSE_TAG_AUTOCOMPLETE_RAW
         } = CONSTANTS.EMAIL_FORMATING;
 
+        let TEMP_LABELS = {};
+
         const getID = () => `${Math.random().toString(32).slice(2, 12)}-${Date.now()}`;
 
         const matchEscapeAutocomplete = () => new RegExp(`${OPEN_TAG_AUTOCOMPLETE_RAW}|${CLOSE_TAG_AUTOCOMPLETE_RAW}`, 'ig');
@@ -82,11 +84,14 @@ angular.module('proton.formUtils')
                 .map(({ Name, Email }) => {
                     const value = Email;
                     const label = formatLabel(Name, Email);
-                    return { label, value };
+                    return { label, value, Name };
                 })
                 .filter(({ label }) => label.toLowerCase().includes(value))
                 .first(10)
                 .value();
+
+            // it creates a map <escaped>:<label> because the lib does not support more keys than label/value and we need the unescaped value #4901
+            TEMP_LABELS = collection.reduce((acc, { label, Name }) => (acc[label] = Name, acc), {});
 
             return {
                 list: filterList(collection, value, strictEquality),
@@ -140,7 +145,7 @@ angular.module('proton.formUtils')
              * @return {Number}
              */
             const add = ({ label, value } = {}) => {
-                const data = formatNewEmail(label, value);
+                const data = formatNewEmail(TEMP_LABELS[label] || label, value);
 
                 // If the mail is not already inside the collection, add it
                 if (!list.some(({ Address }) => Address === data.Address)) {
