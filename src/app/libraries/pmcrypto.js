@@ -719,6 +719,7 @@ const pmcrypto = (function pmcrypto() {
                 encrypt: packetInfo(keys[0].getEncryptionKeyPacket(), keys[0]),
                 sign: packetInfo(keys[0].getSigningKeyPacket(), keys[0]),
                 decrypted: keys[0].primaryKey.isDecrypted, // null if public key
+                revocationSignature: keys[0].revocationSignature,
                 validationError: null
             };
 
@@ -773,6 +774,10 @@ const pmcrypto = (function pmcrypto() {
 
         if (info.encrypt.expires) {
             throw new Error('Key will expire');
+        }
+
+        if (info.revocationSignature !== null) {
+            throw new Error('Key is revoked');
         }
 
         if (!info.sign) {
