@@ -26,21 +26,21 @@ angular.module('proton.search')
             templateUrl: 'templates/search/searchForm.tpl.html',
             link(scope, el) {
                 const unsubscribe = [];
-                const folders = searchModel.getFolderList();
+                let folders = searchModel.getFolderList();
                 const addresses = searchModel.getAddresses();
                 scope.model = {
                     folder: folders[0],
                     address: addresses[0],
                     attachments: '2'
                 };
-                scope.folders = folders;
-                scope.addresses = addresses;
                 scope.query = searchValue.generateSearchString(folders);
 
                 const onOpen = () => {
                     // Auto get data from the query
                     const parameters = _.extend({}, searchValue.extractParameters(scope.query, folders), $stateParams);
 
+                    scope.addresses = addresses;
+                    scope.folders = folders;
                     scope.model.keyword = parameters.keyword;
                     scope.model.from = parameters.from;
                     scope.model.to = parameters.to;
@@ -66,6 +66,11 @@ angular.module('proton.search')
                             onOpen();
                             scope.advancedSearch = data.visible;
                         });
+                    }
+                }));
+                unsubscribe.push($rootScope.$on('labelsModel', (e, { type }) => {
+                    if (type === 'cache.update' || type === 'cache.refresh') {
+                        folders = searchModel.getFolderList();
                     }
                 }));
 

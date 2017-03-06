@@ -1,26 +1,24 @@
 angular.module('proton.search')
     .factory('searchModel', (authentication, CONSTANTS, gettextCatalog, labelsModel) => {
 
-        const getFolderList = () => {
-            const list = _.reduce(Object.keys(CONSTANTS.MAILBOX_IDENTIFIERS), (acc, label) => {
-                if (label !== 'search' && label !== 'label') {
-                    const value = CONSTANTS.MAILBOX_IDENTIFIERS[label];
-                    acc.push({ value, label, group: 'folder' });
-                }
-                return acc;
-            }, [{
-                value: -1,
-                label: gettextCatalog.getString('All', null),
-                group: 'default'
-            }]);
+        const LIST_LOCATIONS = _.reduce(Object.keys(CONSTANTS.MAILBOX_IDENTIFIERS), (acc, label) => {
+            if (label !== 'search' && label !== 'label') {
+                const value = CONSTANTS.MAILBOX_IDENTIFIERS[label];
+                acc.push({ value, label, group: 'folder' });
+            }
+            return acc;
+        }, [{
+            value: -1,
+            label: gettextCatalog.getString('All', null),
+            group: 'default'
+        }]);
 
-            _.each(labelsModel.get(), ({ ID: value, Name: label, Exclusive }) => {
-                list.push({
-                    value, label,
-                    group: (Exclusive === 1) ? 'folder' : 'label'
-                });
-            });
-            return list;
+        const getFolderList = () => {
+            const list = _.map(labelsModel.get(), ({ ID: value, Name: label, Exclusive }) => ({
+                value, label,
+                group: (Exclusive === 1) ? 'folder' : 'label'
+            }));
+            return LIST_LOCATIONS.concat(list);
         };
 
         const getAddresses = () => {
