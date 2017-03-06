@@ -219,15 +219,15 @@
 .sidebarApp-item .navigationItem-counter,
 .menuLabel-item .menuLabel-counter { margin-left: .3em }
 
-.sidebarApp-item.active {
-    .navigationItem-item, .sidebarApp-link  {
-        background-color: rgba( $sidebar-color , .06);
-        border-color: transparent;
-        color: $sidebar-color;
-        font-weight: 700;
-    }
-    .navigationItem-icon { color: lighten($primary, 6); }
+.sidebarApp-item.active .navigationItem-item,
+.sidebarApp-item.active .sidebarApp-link,
+.menuLabel-item.active .menuLabel-link {
+    background-color: rgba( $sidebar-color , .06);
+    border-color: transparent;
+    color: $sidebar-color;
+    font-weight: 700;
 }
+.sidebarApp-item.active .navigationItem-icon { color: lighten($primary, 6); }
 
 .menuLabel-item .menuLabel-title {
     display: inline-block;
@@ -247,12 +247,20 @@
     min-height: 50px;
     flex: 1 1 auto;
     height: calc(100% - 400px);
+    margin: 0 -20px 10px -20px;
+
+    /* Allow select item to go from right to left */
+    .mCSB_container_wrapper>.mCSB_container { padding-right: 0 }
+    /* scroll bar with a small margin half/margin padding */
+    .mCSB_container_wrapper.mCS_no_scrollbar_x.mCS_x_hidden+.mCSB_scrollTools.mCSB_scrollTools_vertical { right: 10px }
 
     .menuLabel-container {
         padding: 0;
         margin: 0;
         box-sizing: border-box
     }
+
+    .menuLabel-link { padding: 0 20px }
 }
 
 .mobileMode .sidebarApp-container {
