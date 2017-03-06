@@ -65,18 +65,16 @@ angular.module('proton.labels')
             };
 
             const onClick = (e) => {
-                if (e.target.nodeName !== 'LI' || e.target.nodeName !== 'LABEL') {
-                    return;
+                if (e.target.nodeName === 'I') {
+                    const ID = e.target.getAttribute('data-label-id');
+                    ID && scope.$applyAsync(() => {
+                        const label = _.findWhere(scope.labels, { ID });
+                        label.Selected = true;
+                        scope.saveLabels(scope.labels, scope.alsoArchive);
+                        close();
+                        notifSuccess(NOTIFS.LABEL_SAVED);
+                    });
                 }
-                const ID = e.target.getAttribute('data-label-id');
-                // If we don't find a label via the search we click on the "not found" li
-                ID && scope.$applyAsync(() => {
-                    const label = _.findWhere(scope.labels, { ID });
-                    label.Selected = true;
-                    scope.saveLabels(scope.labels, scope.alsoArchive);
-                    close();
-                    notifSuccess(NOTIFS.LABEL_SAVED);
-                });
             };
 
             element.on('submit', onSubmit);
