@@ -1,5 +1,5 @@
 angular.module('proton.core')
-.factory('loginPasswordModal', ($timeout, pmModal, srp, networkActivityTracker) => {
+.factory('loginPasswordModal', ($timeout, pmModal, srp, networkActivityTracker, authentication) => {
     return pmModal({
         controllerAs: 'ctrl',
         templateUrl: 'templates/authentication/modals/loginPassword.tpl.html',
@@ -8,6 +8,7 @@ angular.module('proton.core')
 
             self.loginPassword = '';
             self.twoFactorCode = '';
+            self.userPasswordMode = authentication.user.PasswordMode;
             self.submit = () => params.submit(self.loginPassword, self.twoFactorCode);
             self.cancel = () => params.cancel();
 
