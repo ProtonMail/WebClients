@@ -5,31 +5,33 @@
 }
 
 .filter-modal-condition {
-	@include flexInline();
-	@include flexFill();
-	padding-right: 15px;
+    @include flexInline();
+    @include flexFill();
+    padding-right: 15px;
+    overflow: initial
 }
 
 .filter-modal-condition-if {
-	@include flexInline();
-	@include flexAlignCenter();
-	height: 34px;
-	padding-right: .5rem;
+    @include flexInline();
+    @include flexAlignCenter();
+    height: 34px;
+    padding-right: .5rem;
 }
 
 .filter-modal-condition-attachments {
-	@include flexInline();
+    @include flexInline();
 }
 
 .filter-modal-condition-attachments label {
-	margin-left: .5rem;
+    margin-left: .5rem;
 }
 
 .filter-modal-condition-settings {
-	@include flexInline();
-	@include flexFill();
-	@include flexWrap();
-	@include flexAlignCenter();
+    @include flexInline();
+    @include flexFill();
+    @include flexWrap();
+    @include flexAlignCenter();
+    overflow: initial
 }
 
 .filter-modal-add-condition-autocomplete { position: relative }
