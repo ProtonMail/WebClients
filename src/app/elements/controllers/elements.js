@@ -140,6 +140,12 @@ angular.module('proton.elements')
                 case 'refresh':
                     $scope.refreshElements();
                     break;
+                case 'switchTo.next':
+                    nextElement(data.conversation);
+                    break;
+                case 'switchTo.previous':
+                    previousElement(data.conversation);
+                    break;
             }
         }));
 
@@ -241,11 +247,11 @@ angular.module('proton.elements')
         }, false));
 
         $scope.$on('nextElement', () => {
-            $scope.nextElement();
+            nextElement();
         });
 
         $scope.$on('previousElement', () => {
-            $scope.previousElement();
+            previousElement();
         });
 
         $scope.$on('$destroy', () => {
@@ -277,16 +283,6 @@ angular.module('proton.elements')
 
         $rootScope.$emit('updatePageName');
     }
-
-    $scope.showNextPrev = () => {
-        const specialBoxes = ['drafts', 'search', 'sent'];
-        const box = tools.currentMailbox();
-        const elementID = $state.params.id;
-        const rowMode = authentication.user.ViewLayout === CONSTANTS.ROW_MODE;
-        const context = tools.cacheContext();
-        const notSpecial = specialBoxes.indexOf(box) === -1;
-        return elementID && rowMode && context && notSpecial;
-    };
 
     $scope.conversationCount = () => {
         const context = tools.cacheContext();
@@ -541,7 +537,7 @@ angular.module('proton.elements')
     /**
      * Go to the next conversation
      */
-    $scope.nextElement = () => {
+    function nextElement() {
         const current = $state.$current.name;
         const elementID = $state.params.id;
         const elementTime = $scope.markedElement.Time;
@@ -552,12 +548,12 @@ angular.module('proton.elements')
             $state.go(current, { id });
             $scope.markedElement = element;
         });
-    };
+    }
 
     /**
      * Go to the previous conversation
      */
-    $scope.previousElement = () => {
+    function previousElement() {
         const current = $state.$current.name;
         const elementID = $state.params.id;
         const elementTime = $scope.markedElement.Time;

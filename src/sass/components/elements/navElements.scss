@@ -1,0 +1,20 @@
+.navElements-container *{
+    box-sizing: border-box;
+}
+
+.navElements-container:not(.navElements-displayed) {
+    display: none
+}
+
+[class*="navElements-btn"] {
+    box-shadow: none;
+    border: 0;
+    height: 100%;
+    font-size: 14px
+}
+
+[class*="navElements-btn"] * { pointer-events: none }
+[class*="navElements-btn"] + [class*="navElements-btn"] {
+    border-left: 1px solid $border;
+}
+
