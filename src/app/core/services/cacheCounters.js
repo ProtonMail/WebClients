@@ -35,7 +35,6 @@ angular.module('proton.core')
         * @return {Promise}
         */
         api.query = () => {
-            const idsLabel = _.map(labelsModel.get(), ({ ID }) => ID) || [];
             const locs = [
                 CONSTANTS.MAILBOX_IDENTIFIERS.inbox,
                 CONSTANTS.MAILBOX_IDENTIFIERS.drafts,
@@ -45,7 +44,7 @@ angular.module('proton.core')
                 CONSTANTS.MAILBOX_IDENTIFIERS.allmail,
                 CONSTANTS.MAILBOX_IDENTIFIERS.archive,
                 CONSTANTS.MAILBOX_IDENTIFIERS.starred
-            ].concat(idsLabel);
+            ].concat(labelsModel.ids());
 
             return $q.all({
                 message: messageApi.count(),
@@ -77,9 +76,9 @@ angular.module('proton.core')
          * Add a new location
          * @param {String} loc
          */
-        api.add = (loc = '') => {
-            exist(loc);
-        };
+        api.add = (loc = '') => exist(loc);
+
+        api.status = () => dispatch('update.counters', { counters });
 
         /**
         * Update the total / unread for a specific loc
@@ -155,6 +154,7 @@ angular.module('proton.core')
         };
 
         api.getCurrentState = () => counters.CURRENT_STATE_VALUE || 0;
+        api.getCounter = (location) => counters[location];
 
         return api;
     });

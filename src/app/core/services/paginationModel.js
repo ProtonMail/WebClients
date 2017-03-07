@@ -1,17 +1,35 @@
 angular.module('proton.core')
-    .factory('paginationModel', (CONSTANTS, cacheCounters, $rootScope, $state, $stateParams) => {
+    .factory('paginationModel', (CONSTANTS, cacheCounters, $rootScope, $state, $stateParams, authentication) => {
 
-        const { ELEMENTS_PER_PAGE } = CONSTANTS;
+        const { ELEMENTS_PER_PAGE, MESSAGE_VIEW_MODE } = CONSTANTS;
         let currentState = '';
         let pageMax = 1;
 
         $rootScope.$on('$stateChangeSuccess', (e, state) => (currentState = state.name));
 
+        const getLayout = () => {
+            if (authentication.user.ViewMode === MESSAGE_VIEW_MODE) {
+                return 'message';
+            }
+            return 'conversation';
+        };
+
         /**
          * Get the max page where an user can go
+         * If we load a label we need to compute the total page using the cache counter.
+         * The currentState does not refresh as the list of messages/converstations might be already inside the cache itself.
          * @return {Integer}
          */
-        const getMaxPage = () => pageMax || Math.ceil(cacheCounters.getCurrentState() / ELEMENTS_PER_PAGE);
+        const getMaxPage = () => {
+
+            const counter = cacheCounters.getCounter($stateParams.label);
+
+            if ($stateParams.label && counter) {
+                return Math.ceil(counter[getLayout()].total / ELEMENTS_PER_PAGE);
+            }
+
+            return pageMax || Math.ceil(cacheCounters.getCurrentState() / ELEMENTS_PER_PAGE);
+        };
 
         /**
          * Set the max page number where an user can go based on the total

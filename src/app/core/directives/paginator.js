@@ -9,7 +9,7 @@ angular.module('proton.core')
      * @param  {$scope} scope  Current scope
      * @return {Function}
      */
-    const buildClassNames = (scope) => () => {
+    const buildClassNames = (scope) => {
 
         const className = [];
 
@@ -28,6 +28,8 @@ angular.module('proton.core')
         return className.join(' ');
     };
 
+    const buildPageList = (size = 1) => _.range(1, size + 1);
+
     /**
      * Build a list of page where we can go
      * @param  {Number} size Total of data displayable
@@ -36,7 +38,7 @@ angular.module('proton.core')
     const buildPages = (size = ELEMENTS_PER_PAGE) => {
         const total = Math.ceil(size / ELEMENTS_PER_PAGE);
         const value = ~~$stateParams.page > total ? ~~$stateParams.page : total;
-        return [...new Array(value)].map((a, i) => i + 1);
+        return buildPageList(value);
     };
 
     /**
@@ -54,9 +56,10 @@ angular.module('proton.core')
             totalItems: '='
         },
         link(scope, el) {
-            scope.pages = [];
+            scope.pages = buildPageList(paginationModel.getMaxPage());
             scope.page = ~~$stateParams.page || 1;
-            scope.generateClassNames = buildClassNames(scope);
+            const rawClassNames = el[0].className; // create a ghost as we need to update them later (onLoad)
+            el[0].className += ` ${buildClassNames(scope)}`;
 
             const $next = el[0].querySelector('.paginator-btn-next');
             const $previous = el[0].querySelector('.paginator-btn-previous');
@@ -81,7 +84,10 @@ angular.module('proton.core')
                 if (type === 'refresh.currentState') {
                     const { value } = data;
                     paginationModel.setMaxPage(value);
-                    scope.pages = buildPages(value);
+                    scope.$applyAsync(() => {
+                        scope.pages = buildPages(value);
+                        el[0].className = `${rawClassNames} ${buildClassNames(scope)}`;
+                    });
                 }
             });
 

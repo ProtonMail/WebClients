@@ -805,26 +805,27 @@ angular.module('proton.core')
      */
     function handleCounters(events = []) {
         _.chain(events)
-         .filter((event) => event.Message)
-         .map((event) => event.Message)
-         .each((newMessage) => {
-             const oldMessage = _.findWhere(messagesCached, { ID: newMessage.ID });
-             if (oldMessage) {
-                 newMessage.LabelIDs = getLabelsId(oldMessage, newMessage);
-                 manageCounters(oldMessage, newMessage, 'message');
-             }
-         });
+            .filter((event) => event.Message)
+            .map((event) => event.Message)
+            .each((newMessage) => {
+                const oldMessage = _.findWhere(messagesCached, { ID: newMessage.ID });
+                if (oldMessage) {
+                    newMessage.LabelIDs = getLabelsId(oldMessage, newMessage);
+                    manageCounters(oldMessage, newMessage, 'message');
+                }
+            });
         _.chain(events)
-         .filter((event) => event.Conversation)
-         .map((event) => event.Conversation)
-         .each((newConversation) => {
-             const oldConversation = _.findWhere(conversationsCached, { ID: newConversation.ID });
-             if (oldConversation) {
-                 newConversation.LabelIDs = getLabelsId(oldConversation, newConversation);
-                 manageCounters(oldConversation, newConversation, 'conversation');
-             }
-         });
+            .filter((event) => event.Conversation)
+            .map((event) => event.Conversation)
+            .each((newConversation) => {
+                const oldConversation = _.findWhere(conversationsCached, { ID: newConversation.ID });
+                if (oldConversation) {
+                    newConversation.LabelIDs = getLabelsId(oldConversation, newConversation);
+                    manageCounters(oldConversation, newConversation, 'conversation');
+                }
+            });
 
+        cacheCounters.status();
     }
 
     /**
