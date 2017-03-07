@@ -104,6 +104,17 @@ body#reset {
     :-ms-input-placeholder {
        color: $white;
     }
+
+	&.loadingUnlock {
+		padding:0;
+	}
+	.loadingUnlock-loader-container {
+		display: flex;
+		height: 100%;
+		width: 100%;
+		justify-content: center;
+		align-items: center;
+	}
 }
 
 #pm_footer {

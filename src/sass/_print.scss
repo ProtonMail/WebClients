@@ -1,5 +1,16 @@
 @media print {
 
+	* {
+	  word-break: break-word;
+	}
+	blockquote {
+		margin-left: 1rem !important;
+		padding: 0 !important;
+	}
+	blockquote blockquote blockquote {
+		margin-left: 0 !important;
+	}
+
 	#secured-print {
 		* {
 			word-break: break-word;
@@ -31,7 +42,6 @@
 	#pm_list,
 	#conversation-list-columns,
 	#pm_header-desktop,
-	#pm_background,
 	#pm_view article.closed
 	 {
 		display: none !important;
