@@ -101,7 +101,7 @@ angular.module('proton.composer')
 
                 removed.length && removed.forEach((message) => {
                     closeComposer(message);
-                    notify(gettextCatalog.getString('Your message was sent from another session', null, 'Info'));
+                    !message.sending && notify(gettextCatalog.getString('Your message was sent from another session', null, 'Info'));
                 });
 
                 break;
