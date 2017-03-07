@@ -13,7 +13,7 @@
 .customCheckbox-input:disabled + .customCheckbox-mask,
 .customCheckbox-input:indeterminate + .customCheckbox-mask {
     border-color: $border;
-    background-color: rgba(0, 0, 0, 0.06);
+    background-color: lighten($tertiary, 4%);
 }
 
 .customCheckbox-input:indeterminate + .customCheckbox-mask,

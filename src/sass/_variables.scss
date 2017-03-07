@@ -80,7 +80,8 @@ $composer-color:            set-invert-color($composer-background, $default-colo
 $sidebar-color:             set-color($sidebar-background, $white);
 $header-font-color:         set-color($header-background,$white);
 $search-placeholder-color:  rgba($header-font-color, .75);
-$button-color:              $default-color-medium;
+$button-color:              #666;
+$button-color-disabled:     #acb0bf;
 $button-color-focus:        #222;
 $message-placeholder-color: #acb0bf;
 
