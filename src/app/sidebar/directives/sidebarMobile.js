@@ -1,5 +1,5 @@
 angular.module('proton.sidebar')
-    .directive('sidebarMobile', (sidebarModel, $rootScope, authentication, CONSTANTS) => ({
+    .directive('sidebarMobile', (sidebarModel, $rootScope, authentication, CONSTANTS, AppModel) => ({
         replace: true,
         scope: {},
         templateUrl: 'templates/partials/sidebar-responsive.tpl.html',
@@ -13,13 +13,13 @@ angular.module('proton.sidebar')
             // Hide the sidebar with a delay for better perf on repaint
             scope.hideMobileSidebar = () => {
                 const id = setTimeout(() => {
-                    $rootScope.$emit('sidebarMobileToggle', false);
+                    AppModel.set('showSidebar', false);
                     clearTimeout(id);
                 }, 1000);
             };
 
             unsubscribes.push($rootScope.$on('$stateChangeStart', () => {
-                $rootScope.$emit('sidebarMobileToggle', false);
+                AppModel.set('showSidebar', false);
             }));
 
             unsubscribes.push($rootScope.$on('updateUser', () => {

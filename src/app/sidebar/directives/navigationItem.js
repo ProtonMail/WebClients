@@ -80,8 +80,7 @@ angular.module('proton.sidebar')
                     AppModel.set('requestTimeout', false);
 
                     if (sameRoute && firstPage) {
-                        // Hide sidebar for mobile
-                        $rootScope.$emit('sidebarMobileToggle', false);
+                        AppModel.set('showSidebar', false);
                         return (id = setSpinner(el[0].querySelector('.refresh'), id));
                     }
 

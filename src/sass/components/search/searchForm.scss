@@ -136,12 +136,12 @@
 	line-height: 33px;
 }
 
-body:not(.mobileMode) .searchFrom-advanced-radio label {
+body:not(.appConfigBody-is-mobile) .searchFrom-advanced-radio label {
 	display: inline-flex;
 }
 
 /* MOBILE STATE */
-body.mobileMode {
+body.appConfigBody-is-mobile {
 	.searchForm-container { position: static }
 	.search-form-fieldset { display: none }
 	.searchForm-advanced-container {

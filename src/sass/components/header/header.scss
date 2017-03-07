@@ -70,8 +70,8 @@ header#pm_header {
 	}
 }
 
-.mobileMode.activeComposer {
-	header#pm_header-mobile {
+.appConfigBody-is-mobile.appConfigBody-activeComposer {
+	#pm_header-mobile {
 		display: none;
 	}
 }

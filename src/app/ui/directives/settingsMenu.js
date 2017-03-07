@@ -1,5 +1,5 @@
 angular.module('proton.ui')
-.directive('settingsMenu', (authentication, CONSTANTS, networkActivityTracker, $rootScope, sidebarSettingsModel) => {
+.directive('settingsMenu', (authentication, CONSTANTS, networkActivityTracker, $rootScope, sidebarSettingsModel, AppModel) => {
     const CLASS_SUBUSER = 'settingsMenu-is-subuser';
     const CLASS_MEMBER = 'settingsMenu-is-member';
 
@@ -20,7 +20,7 @@ angular.module('proton.ui')
             }));
 
             unsubscribes.push($rootScope.$on('$stateChangeStart', () => {
-                $rootScope.$emit('sidebarMobileToggle', false);
+                AppModel.set('showSidebar', false);
             }));
 
             scope.$on('$destroy', () => {

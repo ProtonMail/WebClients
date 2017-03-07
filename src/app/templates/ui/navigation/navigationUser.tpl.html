@@ -4,13 +4,13 @@
             <i class="fa fa-user"></i>
             <i class="fa fa-angle-down"></i>
         </span>
-        <span class="navigation-title">{{ user.DisplayName || user.Addresses[0].Email }}</span>
+        <span class="navigation-title">{{ user.DisplayName || user.Email }}</span>
     </a>
     <span class="pm_dropdown navigationUser-dropdown wide right">
         <span class="navigationUser-head">
-            <strong class="navigationUser-head-display-name" ng-bind="user.DisplayName"></strong>
-            <span class="navigationUser-head-email" ng-bind="user.Addresses[0].Email"></span>
-            <span class="navigationUser-head-organization" ng-bind="organization.DisplayName"></span>
+            <strong class="navigationUser-head-display-name">{{user.DisplayName}}</strong>
+            <span class="navigationUser-head-email">{{user.Addresses[0].Email}}</span>
+            <span class="navigationUser-head-organization">{{organization.DisplayName}}</span>
         </span>
         <button class="navigationUser-help" ng-if="wizardEnabled" data-display-wizard-button>
             <i class="fa fa-magic"></i>

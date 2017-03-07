@@ -1,5 +1,5 @@
 angular.module('proton.wizard')
-    .directive('wizard', ($rootScope, $stateParams, $timeout, $state, welcomeModal, wizardBuilder) => {
+    .directive('wizard', ($rootScope, $stateParams, $timeout, $state, welcomeModal, wizardBuilder, AppModel) => {
         return {
             restrict: 'E',
             replace: true,
@@ -65,8 +65,9 @@ angular.module('proton.wizard')
 
                 function tourStart() {
                     $state.go('secured.inbox');
+                    AppModel.set('tourActive', true);
                     scope.$applyAsync(() => {
-                        $rootScope.tourActive = true; // used for body class and CSS.
+                        scope.tourActive = true; // used for body class and CSS.
                         element[0].classList.remove('wizardStep-hidden'); // Display the wizard
                         $timeout(() => element[0].focus(), 0, false); // Prevent $digest
                     });
@@ -76,8 +77,9 @@ angular.module('proton.wizard')
 
                 function tourEnd() {
                     element[0].classList.add('wizardStep-hidden'); // Hide the wizard
+                    AppModel.set('tourActive', false);
                     scope.$applyAsync(() => {
-                        $rootScope.tourActive = false;
+                        scope.tourActive = false;
                         wizardBuilder.hideTooltips();
                     });
                 }

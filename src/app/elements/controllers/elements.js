@@ -26,6 +26,7 @@ angular.module('proton.elements')
     notify,
     paginationModel,
     settingsApi,
+    AppModel,
     tools
 ) => {
     const unsubscribes = [];
@@ -54,7 +55,9 @@ angular.module('proton.elements')
         $scope.page = ~~$stateParams.page || 1;
         $scope.startWatchingEvent();
         $scope.refreshElements().then(() => {
-            $scope.$applyAsync(actionsDelayed); // If we don't use the timeout, messages seems not available (to unselect for example)
+            $scope.$applyAsync(() => {
+                $scope.selectElements('all', false);
+            }); // If we don't use the timeout, messages seems not available (to unselect for example)
             // I consider this trick like a bug in the angular application
         }, $log.error);
     }
@@ -104,12 +107,44 @@ angular.module('proton.elements')
     };
 
     /**
-     * Return if we can display the placeholder or not
-     * @param {Boolean}
+     * Check if we should display the component
+     * @param  {String} type
+     * @return {Boolean}
      */
-    $scope.placeholder = () => {
-        return authentication.user.ViewLayout === CONSTANTS.COLUMN_MODE && ($scope.idDefined() === false || ($scope.idDefined() === true && $rootScope.numberElementChecked > 0));
+    const displayType = (type) => {
+
+        let test = false;
+        const isColumnsMode = authentication.user.ViewLayout === CONSTANTS.COLUMN_MODE;
+        const isRowsMode = authentication.user.ViewLayout === CONSTANTS.ROW_MODE;
+
+        switch (type) {
+            case 'rows': {
+                test = !AppModel.is('mobile') && isRowsMode && !$scope.idDefined();
+                break;
+            }
+
+            case 'columns': {
+                test = isColumnsMode && !AppModel.is('mobile');
+                break;
+            }
+
+            case 'placeholder': {
+                const idDefined = $scope.idDefined();
+                const shouldDisplay = isColumnsMode && (!idDefined || (idDefined && $rootScope.numberElementChecked > 0));
+                test = shouldDisplay && !AppModel.is('mobile');
+                break;
+            }
+
+            case 'mobile': {
+                test = !$scope.idDefined() && AppModel.is('mobile');
+                break;
+            }
+        }
+
+        return test;
     };
+
+    $scope.displayType = displayType;
 
     $scope.startWatchingEvent = () => {
 
@@ -200,15 +235,15 @@ angular.module('proton.elements')
          * Scroll to the current marked conversation
 ]        */
         function scrollToConversationPos() {
-            const $convRows = document.getElementById('conversation-list-rows');
             const $convCols = document.getElementById('conversation-list-columns');
 
             if ($convCols) {
                 const $marked = $convCols.querySelector('.conversation.marked');
                 const scrollTo = (cols, marked) => () => cols.scrollTop = marked.offsetTop - cols.offsetHeight / 2;
-                $marked && _rAF(scrollTo($convCols, $marked));
+                return ($marked && _rAF(scrollTo($convCols, $marked)));
             }
 
+            const $convRows = document.getElementById('conversation-list-rows');
             if ($convRows) {
                 const $marked = $convRows.querySelector('.conversation.marked');
                 const scrollTo = (rows, marked) => () => rows.scrollTop = marked.offsetTop - rows.offsetHeight / 2;
@@ -255,36 +290,13 @@ angular.module('proton.elements')
         });
 
         $scope.$on('$destroy', () => {
-            $scope.stopWatchingEvent();
             unsubscribes.forEach((callback) => callback());
             unsubscribes.length = 0;
             clearInterval(id);
         });
     };
 
-    $scope.stopWatchingEvent = () => {
-        angular.element($window).unbind('resize', $rootScope.mobileResponsive);
-        angular.element($window).unbind('orientationchange', $rootScope.mobileResponsive);
-    };
-
-    function actionsDelayed() {
-        $scope.selectElements('all', false);
-
-        const $page = $('#page');
-        $page.val($scope.page);
-        $page.change(() => {
-            goToPage();
-        });
-
-        if ($rootScope.scrollPosition) {
-            $('#content').scrollTop($rootScope.scrollPosition);
-            $rootScope.scrollPosition = null;
-        }
-
-        $rootScope.$emit('updatePageName');
-    }
-
-    $scope.conversationCount = () => {
+    function conversationCount() {
         const context = tools.cacheContext();
 
         if (!context) {
@@ -294,32 +306,12 @@ angular.module('proton.elements')
         const label = ($scope.mailbox === 'label') ? $stateParams.label : CONSTANTS.MAILBOX_IDENTIFIERS[$scope.mailbox];
 
         return (tools.typeList() === 'message') ? cacheCounters.totalMessage(label) : cacheCounters.totalConversation(label);
-    };
-
-    $scope.makeDropdownPages = () => {
-        const ddp = [];
-        const ddp2 = [];
-        const count = parseInt($scope.conversationCount() - 1, 10);
-
-        for (let i = 0; i <= count; i++) {
-            ddp[i] = i;
-        }
-
-        function makeRange(element, index) {
-            if (index % CONSTANTS.ELEMENTS_PER_PAGE === 0) {
-                ddp2.push((index + 1) + ' - ' + (index + CONSTANTS.ELEMENTS_PER_PAGE));
-            }
-        }
-
-        ddp.forEach(makeRange);
-
-        return ddp2;
-    };
+    }
 
     function forgeRequestParameters(mailbox) {
-        const params = {};
-
-        params.Page = (~~$stateParams.page || 1) - 1;
+        const params = {
+            Page: (~~$stateParams.page || 1) - 1
+        };
 
         if (angular.isDefined($stateParams.filter)) {
             params.Unread = +($stateParams.filter === 'unread'); // Convert Boolean to Integer
@@ -352,8 +344,6 @@ angular.module('proton.elements')
         } else {
             params.Label = CONSTANTS.MAILBOX_IDENTIFIERS[mailbox];
         }
-
-        _.pick(params, _.identity);
 
         return params;
     }
@@ -452,6 +442,8 @@ angular.module('proton.elements')
         return !$rootScope.numberElementChecked && !angular.isDefined($state.params.id);
     };
 
+    $scope.isCacheContext = () => tools.cacheContext();
+
     $scope.size = (element) => {
         if (angular.isDefined(element.TotalSize)) {
             return element.TotalSize;
@@ -461,41 +453,30 @@ angular.module('proton.elements')
     };
 
     /**
-     *
-     * @return {}
-     */
-    $scope.start = () => {
-        return ($scope.page - 1) * $scope.conversationsPerPage + 1;
-    };
-
-    /**
-     *
-     * @return {} end
-     */
-    $scope.end = () => {
-        let end = $scope.start() + $scope.conversationsPerPage - 1;
-
-        if (end > $scope.conversationCount()) {
-            end = $scope.conversationCount();
-        }
-
-        return end;
-    };
-
-    /**
      * Select elements
      * @param {String} value - filter value
      * @param {Boolean} isChecked
      */
     $scope.selectElements = (value, isChecked) => {
-        _.each($scope.conversations, (element) => {
-            if (value === 'all') element.Selected = isChecked;
-            if (value === 'read') element.Selected = (element.NumUnread === 0 || element.IsRead === 1) && isChecked;
-            if (value === 'unread') element.Selected = (element.NumUnread > 0 || element.IsRead === 0) && isChecked;
-            if (value === 'starred') element.Selected = element.LabelIDs.indexOf(CONSTANTS.MAILBOX_IDENTIFIERS.starred) > -1 && isChecked;
-            if (value === 'unstarred') element.Selected = element.LabelIDs.indexOf(CONSTANTS.MAILBOX_IDENTIFIERS.starred) === -1 && isChecked;
-        });
+        const actions = {
+            all(element) {
+                element.Selected = isChecked;
+            },
+            read(element) {
+                element.Selected = (element.NumUnread === 0 || element.IsRead === 1) && isChecked;
+            },
+            unread(element) {
+                element.Selected = (element.NumUnread > 0 || element.IsRead === 0) && isChecked;
+            },
+            starred(element) {
+                element.Selected = element.LabelIDs.indexOf(CONSTANTS.MAILBOX_IDENTIFIERS.starred) > -1 && isChecked;
+            },
+            unstarred(element) {
+                element.Selected = element.LabelIDs.indexOf(CONSTANTS.MAILBOX_IDENTIFIERS.starred) === -1 && isChecked;
+            }
+        };
 
+        _.each($scope.conversations, (element) => actions[value](element));
         const selectedElements = $scope.elementsSelected(false);
 
         $rootScope.numberElementChecked = selectedElements.length;
@@ -564,7 +545,7 @@ angular.module('proton.elements')
             $state.go(current, { id });
             $scope.markedElement = element;
         });
-    };
+    }
 
     /**
      * Mark conversations selected as read
@@ -740,7 +721,7 @@ angular.module('proton.elements')
      */
     function goToPage(type = 'to') {
         $stateParams.page && $scope.selectElements('all', false);
-        paginationModel.setMaxPage($scope.conversationCount());
+        paginationModel.setMaxPage(conversationCount());
         $scope.page = ~~$stateParams.page || 1;
         paginationModel[type]();
     }
@@ -779,8 +760,6 @@ angular.module('proton.elements')
             params.id = element.ID;
         }
 
-        // Save scroll position
-        $rootScope.scrollPosition = $('#content').scrollTop();
         // Unselect all elements
         $scope.selectElements('all', false);
 

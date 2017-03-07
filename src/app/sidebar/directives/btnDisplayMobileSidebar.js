@@ -1,5 +1,5 @@
 angular.module('proton.sidebar')
-    .directive('btnDisplayMobileSidebar', ($rootScope) => {
+    .directive('btnDisplayMobileSidebar', (AppModel) => {
 
         const CLASS_ICONS = {
             show: 'fa-bars',
@@ -14,7 +14,7 @@ angular.module('proton.sidebar')
                 element[0].querySelector('i').classList.add(CLASS_ICONS[type]);
 
                 return (scope, el, { type = 'show' }) => {
-                    const onClick = () => $rootScope.$emit('sidebarMobileToggle', type === 'show');
+                    const onClick = () => AppModel.set('showSidebar', type === 'show');
                     el.on('click', onClick);
 
                     scope.$on('$destroy', () => {

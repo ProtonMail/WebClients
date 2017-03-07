@@ -459,7 +459,7 @@
         transform: translateX(0) !important
     }
 
-    .activeComposer {
+    .appConfigBody-activeComposer {
         #pm_composer {
             display: block;
         }
@@ -467,14 +467,14 @@
     html.protonmail {
         overflow: auto !important;
         height: initial;
-        body.modalOpen,
-        body.activeComposer {
+        .appConfigBody-modalOpen,
+        .appConfigBody-activeComposer {
             overflow: auto !important;
             height: initial;
             min-height: initial;
         }
     }
-    body.maximizedComposer {
+    .appConfigBody-maximizedComposer {
         #pm_main,
         #pm_header,
         #pm_sidebar {
@@ -497,8 +497,8 @@
         }
     }
 
-    .mobileMode #outsideMessageWrap footer .pm_button span {display: block}
-    .mobileMode#eo-reply #message-body .squire-toolbar {padding: 0}
+    .appConfigBody-is-mobile #outsideMessageWrap footer .pm_button span {display: block}
+    .appConfigBody-is-mobile#eo-reply #message-body .squire-toolbar {padding: 0}
 }
 
 @media screen and (max-width: $tablet-landscape) {

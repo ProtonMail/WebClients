@@ -208,7 +208,7 @@ $pad: 20px;
 
 }
 
-body.mobileMode {
+body.appConfigBody-is-mobile {
 	.pm_grid {
 		&.flex:not(.flex-mobileShrink) {
 			flex-direction: column;
@@ -218,7 +218,7 @@ body.mobileMode {
 		}
 		&.flex-mobileShrink > [class*='col-'] {
 			white-space: nowrap;
-		}		
+		}
 		.col-basis {
 			flex-basis: 0px;
 		}

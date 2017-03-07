@@ -245,7 +245,7 @@ body#eo-reply {
 	}
 }
 
-body.mobileMode {
+body.appConfigBody-is-mobile {
 	#pm_login.pm_panel,
 	#reset .pm_panel {
 		margin: 2rem auto;
@@ -322,7 +322,7 @@ body.mobileMode {
 }
 
 
-body.mobileMode {
+body.appConfigBody-is-mobile {
 	.outside {
 		padding: 0;
 	}

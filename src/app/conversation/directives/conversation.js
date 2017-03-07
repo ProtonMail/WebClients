@@ -149,6 +149,7 @@ angular.module('proton.conversation')
 
     return {
         restrict: 'E',
+        replace: true,
         scope: {
             conversation: '='
         },
