@@ -1,6 +1,5 @@
 <span
-    class="pm_buttons paginator paginator-container"
-    ng-class="generateClassNames()">
+    class="pm_buttons paginator paginator-container">
     <a
         pt-tooltip-translate="Previous" pt-tooltip-translate-context="Action"
         class="paginator-btn-previous">
@@ -12,7 +11,7 @@
             dropdown
             pt-tooltip-translate="Page number"
             pt-tooltip-translate-context="Action">
-            <small>{{ page }}</small>
+            <small>{{ ::page }}</small>
             <i class="fa fa-angle-down"></i>
         </a>
         <span class="pm_dropdown right">
