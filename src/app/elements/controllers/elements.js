@@ -380,8 +380,11 @@ angular.module('proton.elements')
 
                 $scope.watchElements();
 
+                /**
+                 * Redirect the user if there are no elements to display for the current state
+                 */
                 if ($scope.conversations.length === 0 && page > 0) {
-                    $scope.back();
+                    return $scope.back();
                 }
 
                 if ($scope.conversations.length > 0) {
@@ -674,10 +677,13 @@ angular.module('proton.elements')
 
     /**
      * Back to conversation / message list
+     * Or to the previous page.
      */
     $scope.back = () => {
-        $state.go('secured.' + $scope.mailbox, {
-            id: null // remove ID
+        $state.go($state.$current.name.replace('.element', ''), {
+            id: null,
+            page: $stateParams.page > 2 ? $stateParams.page - 1 : null,
+            label: $stateParams.label
         });
     };
 
@@ -783,8 +789,7 @@ angular.module('proton.elements')
                 }
             });
         }
-        const route = $state.$current.name.replace('.element', '');
-        $state.go(route + '.element', params);
+        $state.go($state.$current.name, params);
     }
 
     // Call initialization
