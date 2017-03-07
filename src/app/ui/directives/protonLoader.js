@@ -2,7 +2,7 @@ angular.module('proton.core')
     .directive('protonLoader', ($rootScope) => ({
         replace: true,
         scope: {},
-        templateUrl: 'templates/directives/core/protonLoader.tpl.html',
+        templateUrl: 'templates/directives/ui/protonLoader.tpl.html',
         link(scope, el) {
             $rootScope
                 .$on('networkActivity', (e, type) => {

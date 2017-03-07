@@ -1,0 +1,45 @@
+.protonLoader {
+
+    display: flex;
+    position: fixed;
+    z-index: 9999;
+    left: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    transform: translateY(32px);
+    margin-left: -($pm_loading / 2);
+    width: $pm_loading;
+    height: $pm_loading;
+    background: $white;
+    border-radius: $pm_loading;
+    box-shadow: $box-shadow;
+    opacity: 0;
+    transition: all .5s linear;
+    animation-delay: 1.2s;
+
+
+    &:after {
+        position: absolute;
+        content:"";
+        width: 100%;
+        height: 100%;
+        top:0px;
+        left: 0px;
+        box-sizing: border-box;
+        border-radius: 50%;
+        border: 4px solid transparent;
+        border-top-color: $primary;
+        animation: load8 1s infinite linear;
+    }
+
+
+    &.show {
+        transform: translateY(35px);
+        opacity: 1;
+    }
+
+    .protonLoaderIcon { transform: scale(1.1) }
+
+}

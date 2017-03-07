@@ -1,0 +1,70 @@
+.atomLoader-container {
+  position: relative;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  width: 130px;
+  height: 130px;
+  margin-bottom: 20px;
+  animation: atomRotate 25s linear infinite;
+}
+
+
+.atomLoader-item,
+.atomLoader-item2,
+.atomLoader-item3 {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0px;
+  left: -8px;
+  border-right: 6px solid $white;
+  border-left: 6px solid $white;
+  border-radius: 100%;
+}
+
+.atomLoader-item {
+  animation: atomLoader-item 2s linear infinite;
+}
+
+.atomLoader-item2 {
+  animation: atomLoader-item2 3s linear infinite;
+  animation-delay: -1s
+}
+
+.atomLoader-item3 {
+  animation: atomLoader-item3 4s linear infinite;
+}
+
+.atomLoader-proton {
+  width:10px;
+  height:10px;
+  border-radius:50%;
+  background: $white;
+  animation: atomRotate 20s linear infinite reverse;
+}
+
+.atomLoader-text {
+    text-align: center;
+    color: $white;
+}
+
+
+@keyframes atomLoader-item {
+  from { transform: rotateZ(120deg) rotateX(70deg) rotateZ(0deg) }
+  to { transform: rotateZ(120deg) rotateX(70deg) rotateZ(360deg) }
+}
+
+@keyframes atomLoader-item2 {
+  from { transform: rotateZ(60deg) rotateX(70deg) rotateZ(0deg) }
+  to { transform: rotateZ(60deg) rotateX(70deg) rotateZ(360deg) }
+}
+
+@keyframes atomLoader-item3 {
+  from { transform: rotateZ(360deg) rotateX(70deg) rotateZ(0deg) }
+  to { transform: rotateZ(360deg) rotateX(70deg) rotateZ(360deg) }
+}
+
+@keyframes atomRotate {
+  to { transform:rotate(360deg) }
+}

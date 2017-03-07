@@ -2,6 +2,7 @@
     method="post"
     id="pm_login"
     class="pm_panel pm_form alt"
+    ng-class="{'loadingUnlock': domoArigato }"
     novalidate
     role="form"
     autocomplete="on"
@@ -49,13 +50,7 @@
 
     </div>
 
-    <div ng-show="domoArigato"  class="text-center unlock-loader-container">
-        <img
-            src="/assets/img/logo.png"
-            height="20"
-            alt="ProtonMail"
-            class="logo unlock-loader-logo">
-        <img src="/assets/img/decrypt.gif" class="loader unlock-loader-item">
-        <p><span translate>Decrypting</span>...</p>
+    <div ng-show="domoArigato" class="loadingUnlock-loader-container">
+        <atom-loader text="Decrypting ..."></atom-loader>
     </div>
 </form>

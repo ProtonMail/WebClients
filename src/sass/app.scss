@@ -27,6 +27,7 @@
 
 
 //=== 👉 Common =============================//
+@import "commons/loaders";
 @import "commons/pm-button";
 @import "commons/pm-checkbox";
 @import "commons/pm-dropdown";
@@ -38,7 +39,6 @@
 @import "commons/pm-toggle";
 @import "commons/pm-tabs";
 @import "commons/pm-sort";
-@import "commons/pm-loader";
 @import "commons/pm-grid";
 @import "commons/pm-range";
 @import "commons/pm-tag";
@@ -55,6 +55,8 @@
 //=== 👉 UI Components =====================//
 @import "ui/appVersion";
 @import "ui/appCopyright";
+@import "ui/atomLoader";
+@import "ui/protonLoader";
 @import "ui/readUnread";
 @import "ui/changeLayoutBtns";
 @import "ui/slider";
@@ -80,6 +82,7 @@
 @import "ui/starButton";
 @import "ui/storageBar";
 @import "ui/scrollbox";
+
 
 // === Settings UI
 @import "settings-ui/headerBlock.scss";
