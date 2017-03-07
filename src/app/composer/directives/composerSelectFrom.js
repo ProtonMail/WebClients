@@ -1,7 +1,6 @@
 angular.module('proton.composer')
-    .directive('composerSelectFrom', (notify, authentication, editorModel) => {
+    .directive('composerSelectFrom', (notify, authentication, editorModel, tools) => {
 
-        const isIE = $.ua.browser.name === 'IE' && $.ua.browser.major === '11';
         const listAddress = () => {
             return _.chain(authentication.user.Addresses)
                 .where({ Status: 1, Receive: 1 })
@@ -42,13 +41,13 @@ angular.module('proton.composer')
                  * cause a rendering bug of the options widths
                  */
                 const onMouseDown = () => $select.focus();
-                isIE && $select.on('mousedown', onMouseDown);
+                tools.isIE11 && $select.on('mousedown', onMouseDown);
 
                 el.on('click', onClick);
                 el.on('change', onChange);
 
                 scope.$on('$destroy', () => {
-                    isIE && $select.off('mousedown', onMouseDown);
+                    tools.isIE11 && $select.off('mousedown', onMouseDown);
                     el.off('click', onClick);
                     el.off('change', onChange);
                 });

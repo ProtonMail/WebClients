@@ -2,8 +2,6 @@ angular.module('proton.attachments')
     .factory('attachmentFileFormat', (tools) => {
 
         const embedded = ['image/gif', 'image/jpeg', 'image/png', 'image/bmp'];
-
-        const isIE = () => $.ua.browser.name === 'IE' && $.ua.browser.major === '11';
         const isSafari = () => tools.isSafari();
         const isEmbedded = (key) => _.contains(embedded, key);
         const getEmbedded = () => embedded;
@@ -15,7 +13,7 @@ angular.module('proton.attachments')
          */
         const isUploadMIMEType = (type) => {
             // Prehistory, with IE you can be Files or Text.
-            if (isIE()) {
+            if (tools.isIE11) {
                 return type !== 'Text';
             }
             return type !== 'text/html' && type !== 'text/plain' && type !== 'text/uri-list';
@@ -34,7 +32,7 @@ angular.module('proton.attachments')
             const list = [...(dataTransfer.types || [])];
 
             // Can be a drag and drop of an image inside the composer
-            if (isIE() && !list.length) {
+            if (tools.isIE11 && !list.length) {
                 return false;
             }
 
