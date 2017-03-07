@@ -120,7 +120,7 @@ angular.module('proton.core')
 
         if (plans.length > 0) {
             $scope.plan = _.findWhere(plans, { Name: $stateParams.plan, Cycle: parseInt($stateParams.billing, 10), Currency: $stateParams.currency });
-            $scope.paypalSupport = parseInt($stateParams.billing, 10) === 12 && ($.ua.browser.name === 'IE' !== true || $.ua.browser.name === 'Edge');  // IE11 doesn't support PayPal
+            $scope.paypalSupport = parseInt($stateParams.billing, 10) === 12 && !tools.isIE11;  // IE11 doesn't support PayPal
         }
 
         $scope.account = {

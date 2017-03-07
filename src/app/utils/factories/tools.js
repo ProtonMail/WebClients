@@ -14,6 +14,7 @@ angular.module('proton.utils')
         return str.split('').reduce((prevHash, currVal) => ((prevHash << 5) - prevHash) + currVal.charCodeAt(0), 0);
     };
 
+    tools.isIE11 = $.ua.browser.name === 'IE' && $.ua.browser.major === '11';
     tools.hasCookie = aboutClient.hasCookie;
 
     tools.mobileResponsive = () => {
