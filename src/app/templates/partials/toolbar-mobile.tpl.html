@@ -77,16 +77,7 @@
     </span>
 
     <div class="pull-right">
-
-        <span class="pm_buttons" ng-show="idDefined() && tools.cacheContext()">
-            <a href="#" ng-click="nextElement(conversation)">
-                <i class="fa fa-chevron-left"></i>
-            </a>
-            <a href="#" ng-click="previousElement(conversation)">
-                <i class="fa fa-chevron-right"></i>
-            </a>
-        </span>
-
+        <nav-elements></nav-elements>
         <paginator ng-hide="idDefined()"></paginator>
 
     </div>
