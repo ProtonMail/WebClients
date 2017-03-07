@@ -4,6 +4,8 @@ angular.module('proton.sidebar')
         scope: {},
         templateUrl: 'templates/partials/sidebar-responsive.tpl.html',
         link(scope) {
+            const unsubscribes = [];
+
             scope.isAdmin = authentication.user.Role === CONSTANTS.PAID_ADMIN_ROLE;
             scope.isFree = authentication.user.Role === CONSTANTS.FREE_USER_ROLE;
             scope.listStates = Object.keys(sidebarModel.getStateConfig());
@@ -16,12 +18,18 @@ angular.module('proton.sidebar')
                 }, 1000);
             };
 
-            const unsubscribe = $rootScope.$on('$stateChangeStart', () => {
+            unsubscribes.push($rootScope.$on('$stateChangeStart', () => {
                 $rootScope.$emit('sidebarMobileToggle', false);
-            });
+            }));
+
+            unsubscribes.push($rootScope.$on('updateUser', () => {
+                scope.isAdmin = authentication.user.Role === CONSTANTS.PAID_ADMIN_ROLE;
+                scope.isFree = authentication.user.Role === CONSTANTS.FREE_USER_ROLE;
+            }));
 
             scope.$on('$destroy', () => {
-                unsubscribe();
+                unsubscribes.forEach((cb) => cb());
+                unsubscribes.length = 0;
             });
         }
     }));
