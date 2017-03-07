@@ -113,22 +113,7 @@ angular.module('proton', [
     window.addEventListener('orientationchange', tools.mobileResponsive);
     tools.mobileResponsive();
 
-    // Less than 1030 / Tablet Mode
-    // can pass in show (true/false) to explicity show/hide
-    $rootScope.$on('sidebarMobileToggle', (event, show) => {
-        $rootScope.$applyAsync(() => {
-            $rootScope.showSidebar = show;
-        });
-    });
-
-    $rootScope.mobileMode = false;
-    $rootScope.inboxSidebar = false;
     $rootScope.showWelcome = true;
-    $rootScope.browser = tools.getBrowser();
-    $rootScope.terminal = false;
-    // $rootScope.updateMessage = false;
-    $rootScope.showSidebar = false;
-    $rootScope.themeJason = false;
 
     // SVG Polyfill for Edge
     window.svg4everybody();
@@ -139,7 +124,6 @@ angular.module('proton', [
     moment.relativeTimeThreshold('h', 23); // h hours   least number of hours to be considered a day
 
     $rootScope.networkActivity = networkActivityTracker;
-    $rootScope.toggleSidebar = false;
 
     // notification service config
     // https://github.com/cgross/angular-notify
@@ -208,7 +192,7 @@ angular.module('proton', [
         }
     });
 
-    $rootScope.$on('$stateChangeSuccess', function (event, toState) {
+    $rootScope.$on('$stateChangeSuccess', function () {
 
         // Hide requestTimeout
         AppModel.set('requestTimeout', false);
@@ -218,13 +202,7 @@ angular.module('proton', [
 
         // Close navbar on mobile
         $('.navbar-toggle').click();
-
-        $rootScope.toState = toState.name.replace('.', '-');
-
         $('#loading_pm, #pm_slow, #pm_slow2').remove();
-        $rootScope.$applyAsync(() => {
-            $rootScope.showSidebar = false;
-        });
     });
 })
 

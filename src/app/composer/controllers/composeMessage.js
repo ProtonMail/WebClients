@@ -50,13 +50,14 @@ angular.module('proton.composer')
     // Listeners
     unsubscribe.push($scope.$watch('messages.length', () => {
         if ($scope.messages.length > 0) {
-            $rootScope.activeComposer = true;
+            AppModel.set('activeComposer', true);
+
             window.onbeforeunload = () => {
                 return gettextCatalog.getString('By leaving now, you will lose what you have written in this email. You can save a draft if you want to come back to it later on.', null);
             };
             hotkeys.unbind(); // Disable hotkeys
         } else {
-            $rootScope.activeComposer = false;
+            AppModel.set('activeComposer', false);
             window.onbeforeunload = undefined;
 
             if (authentication.user.Hotkeys === 1) {
@@ -201,7 +202,7 @@ angular.module('proton.composer')
      * @return {Boolean}
      */
     function checkComposerNumber() {
-        const limit = ($scope.messages.length >= CONSTANTS.MAX_NUMBER_COMPOSER) || ($scope.messages.length === 1 && $rootScope.mobileMode);
+        const limit = ($scope.messages.length >= CONSTANTS.MAX_NUMBER_COMPOSER) || ($scope.messages.length === 1 && AppModel.is('mobile'));
 
         if (limit) {
             notify({ message: gettextCatalog.getString('Maximum composer reached', null, 'Error'), classes: 'notification-danger' });
@@ -340,7 +341,7 @@ angular.module('proton.composer')
 
         if (authentication.user.ComposerMode === 1) {
             message.maximized = true;
-            $rootScope.maximizedComposer = true;
+            AppModel.set('maximizedComposer', true);
         }
 
         message.attachmentsToggle = (message.Attachments.length - message.NumEmbedded) > 0 && (message.Attachments.length > message.NumEmbedded);
@@ -986,7 +987,7 @@ angular.module('proton.composer')
         message.previousMaximized = message.maximized;
         message.maximized = false;
         message.ccbcc = false;
-        $rootScope.maximizedComposer = false;
+        AppModel.set('maximizedComposer', false);
         // Hide all the tooltip
         $('.tooltip').not(this).hide();
         $scope.focusFirstComposer(message);
@@ -1001,7 +1002,7 @@ angular.module('proton.composer')
 
     $scope.maximize = (message) => {
         message.maximized = true;
-        $rootScope.maximizedComposer = true;
+        AppModel.set('maximizedComposer', true);
     };
 
     $scope.normalize = (message) => {
@@ -1012,7 +1013,8 @@ angular.module('proton.composer')
 
         message.minimized = false;
         message.maximized = isSmall;
-        $rootScope.maximizedComposer = isSmall;
+        AppModel.set('maximizedComposer', isSmall);
+
     };
 
     $scope.openCloseModal = (message, discard = false) => {
@@ -1062,8 +1064,8 @@ angular.module('proton.composer')
             $rootScope.$emit('messageActions', { action: 'delete', data: { ids } });
         }
 
-        $rootScope.activeComposer = false;
-        $rootScope.maximizedComposer = false;
+        AppModel.set('activeComposer', false);
+        AppModel.set('maximizedComposer', false);
         $timeout.cancel(message.defferredSaveLater);
 
         if (save === true) {

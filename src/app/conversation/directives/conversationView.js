@@ -1,7 +1,8 @@
 angular.module('proton.conversation')
 .directive('conversationView', ($state, $stateParams, cache, tools) => ({
     restrict: 'E',
-    template: '<conversation ng-if="conversation" data-conversation="conversation"></conversation>',
+    replace: true,
+    template: '<div class="conversationView-container"><conversation ng-if="conversation" data-conversation="conversation"></conversation></div>',
     link(scope) {
         const conversationID = $stateParams.id;
         const loc = tools.currentLocation();

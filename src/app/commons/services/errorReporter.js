@@ -22,7 +22,4 @@ angular.module('proton.commons')
             resolve: resolver,
             notify: newNotification
         };
-    })
-    .run(($rootScope) => {
-        $rootScope.errorReporter = {};
     });

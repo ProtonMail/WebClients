@@ -1,26 +1,33 @@
 angular.module('proton.commons')
     .directive('appConfigBody', ($rootScope, AppModel) => {
 
-        const CLASS_IS_MOBILE = 'appConfigBody-is-mobile';
-        const CLASS_TIMEOUT = 'appConfigBody-request-timeout';
+        const className = (key = '') => `appConfigBody-${key}`;
+        const mapClassNames = {
+            mobile: className('is-mobile'),
+            requestTimeout: className('request-timeout'),
+            tourActive: className('tourActive'),
+            activeComposer: className('activeComposer'),
+            maximizedComposer: className('maximizedComposer'),
+            modalOpen: className('modalOpen'),
+            showSidebar: className('showSidebar')
+        };
 
         return {
             link(scope, el) {
-                AppModel.is('mobile') && el[0].classList.add(CLASS_IS_MOBILE);
+                AppModel.is('mobile') && el[0].classList.add(mapClassNames.mobile);
+
+                const toggleClass = (className, data = {}) => {
+                    const method = data.value ? 'add' : 'remove';
+                    _rAF(() => el[0].classList[method](className));
+                };
 
                 $rootScope.$on('AppModel', (e, { type, data }) => {
-                    switch (type) {
-                        case 'mobile': {
-                            const method = data.value ? 'add' : 'remove';
-                            _rAF(() => el[0].classList[method](CLASS_IS_MOBILE));
-                            break;
-                        }
-                        case 'requestTimeout': {
-                            const method = data.value ? 'add' : 'remove';
-                            _rAF(() => el[0].classList[method](CLASS_TIMEOUT));
-                            break;
-                        }
-                    }
+                    const className = mapClassNames[type];
+                    className && toggleClass(className, data);
+                });
+
+                $rootScope.$on('$stateChangeSuccess', (e, toState) => {
+                    el[0].id = toState.name.replace('.', '-');
                 });
             }
         };

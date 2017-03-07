@@ -29,11 +29,11 @@
 	}
 }
 
-body.tourActive {
+.appConfigBody-tourActive {
 	section.sidebar ul.menu li a {
 		overflow: visible;
 	}
-	header#pm_header {
+	#pm_header {
 		z-index: 5;
 	}
 }

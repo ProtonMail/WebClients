@@ -17,12 +17,7 @@ angular.module('proton.utils')
     tools.hasCookie = aboutClient.hasCookie;
 
     tools.mobileResponsive = () => {
-        const bodyWidth = document.body.offsetWidth;
-        AppModel.set('mobile', bodyWidth < CONSTANTS.MOBILE_BREAKPOINT);
-
-        $rootScope.$applyAsync(() => {
-            $rootScope.mobileMode = bodyWidth < CONSTANTS.MOBILE_BREAKPOINT;
-        });
+        AppModel.set('mobile', document.body.offsetWidth < CONSTANTS.MOBILE_BREAKPOINT);
     };
 
     tools.colors = () => {

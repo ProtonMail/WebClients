@@ -1,8 +1,8 @@
 angular.module('proton.ui')
-.directive('ptTooltip', ($rootScope) => {
+.directive('ptTooltip', (AppModel) => {
     return {
         link(scope, element, attrs) {
-            if (!$rootScope.mobileMode) {
+            if (!AppModel.is('mobile')) {
                 const title = attrs.ptTooltip;
                 element.attr('title', title);
                 element.attr('aria-label', title);

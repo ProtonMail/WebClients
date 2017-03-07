@@ -149,7 +149,9 @@ angular.module('proton.labels')
             dispatch('cache.refresh');
         };
 
-        $rootScope.$on('clearLabels', () => set());
+        $rootScope.$on('AppModel', (e, { type, data = {} }) => {
+            (type === 'loggedIn' && !data.value) && set();
+        });
 
         return { get, set, contains, sync, read, ids, refresh };
     });

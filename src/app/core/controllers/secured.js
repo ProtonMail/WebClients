@@ -22,9 +22,11 @@ angular.module('proton.core')
     organizationApi,
     Payment,
     pmcw,
-    tools
+    AppModel
 ) => {
-    $scope.tools = tools;
+    $scope.inboxSidebar = AppModel.is('inboxSidebar');
+    $scope.showSidebar = AppModel.is('showSidebar');
+    $scope.mobileMode = AppModel.is('mobile');
     $scope.user = authentication.user;
     $scope.isAdmin = authentication.user.Role === CONSTANTS.PAID_ADMIN_ROLE;
     $scope.isFree = authentication.user.Role === CONSTANTS.FREE_USER_ROLE;
@@ -32,7 +34,14 @@ angular.module('proton.core')
     $rootScope.isLoggedIn = true; // Shouldn't be there
     $rootScope.isLocked = false; // Shouldn't be there
 
-    // Set language used for the application
+    const bindAppValue = (key, { value }) => $scope.$applyAsync(() => $scope[key] = value);
+    const unsubscribe = $rootScope.$on('AppModel', (e, { type, data = {} }) => {
+        (type === 'inboxSidebar') && bindAppValue(type, data);
+        (type === 'mobile') && bindAppValue('mobileMode', data);
+        (type === 'showSidebar') && bindAppValue(type, data);
+    });
+
+    // Set language used for the application-name
     gettextCatalog.setCurrentLanguage(authentication.user.Language);
 
     // Request for desktop notification
@@ -137,48 +146,9 @@ angular.module('proton.core')
         });
     });
 
-    $scope.$on('$destroy', () => {
-        // Disable hotkeys
-        hotkeys.unbind();
-    });
+    $scope.idDefined = () => ($state.params.id && $state.params.id.length > 0);
+    $scope.isMobile = () => AppModel.is('mobile');
 
-    $scope.idDefined = () => {
-        const id = $state.params.id;
-
-        return angular.isDefined(id) && id.length > 0;
-    };
-
-    /**
-     * Returns a string for the storage bar
-     * @return {String} "123/456 [MB/GB]"
-     */
-    $scope.storageUsed = () => {
-        if (authentication.user.UsedSpace && authentication.user.MaxSpace) {
-            const gb = 1073741824;
-            const mb = 1048576;
-            const units = (authentication.user.MaxSpace >= gb) ? 'GB' : 'MB';
-            const isGB = units === 'GB';
-            const used = (authentication.user.UsedSpace / (isGB ? gb : mb));
-            const total = (authentication.user.MaxSpace / (isGB ? gb : mb));
-
-            return used.toFixed(1) + '/' + total + ' ' + units;
-        }
-
-        return '';
-    };
-
-    $scope.getEmails = (emails) => {
-        return _.map(emails, (email) => email.Address).join(',');
-    };
-
-    /**
-     * Go to route specified
-     */
-    $scope.goTo = (route) => {
-        if (angular.isDefined(route)) {
-            $state.go(route);
-        }
-    };
 
     function manageDirtryAddresses() {
         const dirtyAddresses = [];
@@ -206,4 +176,9 @@ angular.module('proton.core')
             });
         }
     }
+
+    $scope.$on('$destroy', () => {
+        hotkeys.unbind();
+        unsubscribe();
+    });
 });

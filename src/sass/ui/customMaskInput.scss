@@ -53,7 +53,7 @@
 [class*="customMaskInput-input"]:disabled + .customMaskInput-mask { background-color: #e6e6e6}
 
 /* Mobile mode */
-body.mobileMode {
+body.appConfigBody-is-mobile {
     .customMaskInput-mask {
         width: 30px;
         height: 30px;

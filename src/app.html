@@ -33,24 +33,29 @@
     <% styles.forEach(function (file) { %>
         <link rel="stylesheet" type="text/css" href="/<%= file %>" />
     <% }); %>
-    <!--- Custom theme  --->
-    <ng-include src="'templates/partials/custom-theme.tpl.html'"></ng-include>
+    <style type="text/css">
+    @media print {
+        * {
+          word-break: break-word;
+        }
+        blockquote {
+            margin-left: 1rem !important;
+            padding: 0 !important;
+        }
+        blockquote blockquote blockquote {
+            margin-left: 0 !important;
+        }
+    }
+    </style>
+    <custom-theme ng-if="(isLoggedIn && !isLocked)"></custom-theme>
 </head>
-<body class="" id="{{ toState }}" ng-class="{
+<body ng-class="{
     locked: (isLoggedIn && isLocked) || ('login'|isState) || ('login.unlock'|isState) || ('eo.unlock'|isState) || ('eo.message'|isState) || ('reset'|isState) || ('eo.reply'|isState) || ('reset'|isState),
     login:!isLoggedIn,
     unlock:isLocked,
     secure:isSecure,
-    blank:!!isBlank,
-    activeComposer:activeComposer,
-    maximizedComposer:maximizedComposer,
     light: ('support.reset-password'|isState) || ('signup'|isState) || ('login.setup'|isState) || ('pre-invite'|isState) || ('support.message'|isState),
-    scroll: ('signup'|isState) || ('login.setup'|isState) || ('secured.print'|isState),
-    modalOpen: modalOpen,
-    mobileMode: mobileMode,
-    tourActive: tourActive,
-    themeJason: themeJason,
-    mobileSidebarActive: (showSidebar && mobileMode)
+    scroll: ('signup'|isState) || ('login.setup'|isState) || ('secured.print'|isState)
 }" data-detect-time-width data-app-config-body>
 
 <!--- Loaders --->

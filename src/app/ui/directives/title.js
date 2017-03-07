@@ -7,11 +7,6 @@ angular.module('proton.ui')
             restrict: 'E',
             scope: {},
             link(scope, el) {
-
-                $rootScope.$on('updatePageName', () => {
-                    bindTitle(el, pageTitlesModel.find());
-                });
-
                 $rootScope.$on('$stateChangeSuccess', (e, state) => {
                     bindTitle(el, pageTitlesModel.find(state));
                 });

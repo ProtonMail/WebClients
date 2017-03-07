@@ -104,10 +104,10 @@ div.noUi-value {
     .fa { font-size: 12px }
 }
 
-body.mobileMode .pm_buttons.sliderButtons {
-    margin: 15px 0px 0px 10px; /* overide .pm_button mobileMode */
+body.appConfigBody-is-mobile .pm_buttons.sliderButtons {
+    margin: 15px 0px 0px 10px; /* overide .pm_button appConfigBody-is-mobile */
 }
 
-body.mobileMode {
+body.appConfigBody-is-mobile {
     div.noUi-target { margin-top: 20px }
 }

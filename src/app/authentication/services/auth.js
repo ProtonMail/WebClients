@@ -26,7 +26,8 @@ angular.module('proton.authentication')
     passwords,
     srp,
     labelsModel,
-    setupKeys
+    setupKeys,
+    AppModel
 ) => {
     let keys = {}; // Store decrypted keys
     /**
@@ -499,7 +500,7 @@ angular.module('proton.authentication')
             $rootScope.isLocked = this.isLocked();
             $rootScope.isSecure = this.isSecured();
             $rootScope.domoArigato = false;
-            $rootScope.$emit('clearLabels');
+            AppModel.set('loggedIn', false);
         },
 
         // Returns an async promise that will be successful only if the mailbox password

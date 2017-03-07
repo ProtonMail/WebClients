@@ -375,6 +375,8 @@ message-view {
     }
 }
 
+#conversation-view:empty { display: none }
+
 
 .protonmail_signature_block-empty { /* https://github.com/ProtonMail/Angular/issues/4813 */
     opacity: 0;
@@ -383,7 +385,7 @@ message-view {
 }
 
 // MOBILE
-body.mobileMode {
+body.appConfigBody-is-mobile {
     #conversation-view {
         .message {
             & .summary {

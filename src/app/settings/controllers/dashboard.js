@@ -1,15 +1,12 @@
 angular.module('proton.settings')
 .controller('DashboardController', (
-    $filter,
     $rootScope,
     $scope,
     $stateParams,
     gettextCatalog,
     $q,
-    $window,
     eventManager,
     authentication,
-    cardModal,
     confirmModal,
     donateModal,
     networkActivityTracker,
@@ -23,9 +20,9 @@ angular.module('proton.settings')
     status,
     subscriptionModel,
     supportModal,
-    CONSTANTS,
     tools,
-    yearly
+    yearly,
+    dashboardOptions
 ) => {
     // Initialize variables
     $scope.configuration = {};
@@ -33,76 +30,11 @@ angular.module('proton.settings')
     $scope.organization = organizationModel.get();
 
     // Options
-    $scope.plusSpaceOptions = [
-        { label: '5 GB', index: 0, value: 5 * CONSTANTS.BASE_SIZE * CONSTANTS.BASE_SIZE * CONSTANTS.BASE_SIZE },
-        { label: '6 GB', index: 1, value: 6 * CONSTANTS.BASE_SIZE * CONSTANTS.BASE_SIZE * CONSTANTS.BASE_SIZE },
-        { label: '7 GB', index: 2, value: 7 * CONSTANTS.BASE_SIZE * CONSTANTS.BASE_SIZE * CONSTANTS.BASE_SIZE },
-        { label: '8 GB', index: 3, value: 8 * CONSTANTS.BASE_SIZE * CONSTANTS.BASE_SIZE * CONSTANTS.BASE_SIZE },
-        { label: '9 GB', index: 4, value: 9 * CONSTANTS.BASE_SIZE * CONSTANTS.BASE_SIZE * CONSTANTS.BASE_SIZE },
-        { label: '10 GB', index: 5, value: 10 * CONSTANTS.BASE_SIZE * CONSTANTS.BASE_SIZE * CONSTANTS.BASE_SIZE },
-        { label: '11 GB', index: 6, value: 11 * CONSTANTS.BASE_SIZE * CONSTANTS.BASE_SIZE * CONSTANTS.BASE_SIZE },
-        { label: '12 GB', index: 7, value: 12 * CONSTANTS.BASE_SIZE * CONSTANTS.BASE_SIZE * CONSTANTS.BASE_SIZE },
-        { label: '13 GB', index: 8, value: 13 * CONSTANTS.BASE_SIZE * CONSTANTS.BASE_SIZE * CONSTANTS.BASE_SIZE },
-        { label: '14 GB', index: 9, value: 14 * CONSTANTS.BASE_SIZE * CONSTANTS.BASE_SIZE * CONSTANTS.BASE_SIZE },
-        { label: '15 GB', index: 10, value: 15 * CONSTANTS.BASE_SIZE * CONSTANTS.BASE_SIZE * CONSTANTS.BASE_SIZE },
-        { label: '16 GB', index: 11, value: 16 * CONSTANTS.BASE_SIZE * CONSTANTS.BASE_SIZE * CONSTANTS.BASE_SIZE },
-        { label: '17 GB', index: 12, value: 17 * CONSTANTS.BASE_SIZE * CONSTANTS.BASE_SIZE * CONSTANTS.BASE_SIZE },
-        { label: '18 GB', index: 13, value: 18 * CONSTANTS.BASE_SIZE * CONSTANTS.BASE_SIZE * CONSTANTS.BASE_SIZE },
-        { label: '19 GB', index: 14, value: 19 * CONSTANTS.BASE_SIZE * CONSTANTS.BASE_SIZE * CONSTANTS.BASE_SIZE },
-        { label: '20 GB', index: 15, value: 20 * CONSTANTS.BASE_SIZE * CONSTANTS.BASE_SIZE * CONSTANTS.BASE_SIZE }
-    ];
-
-    $scope.businessSpaceOptions = [
-        { label: '10 GB', index: 0, value: 10 * CONSTANTS.BASE_SIZE * CONSTANTS.BASE_SIZE * CONSTANTS.BASE_SIZE },
-        { label: '11 GB', index: 1, value: 11 * CONSTANTS.BASE_SIZE * CONSTANTS.BASE_SIZE * CONSTANTS.BASE_SIZE },
-        { label: '12 GB', index: 2, value: 12 * CONSTANTS.BASE_SIZE * CONSTANTS.BASE_SIZE * CONSTANTS.BASE_SIZE },
-        { label: '13 GB', index: 3, value: 13 * CONSTANTS.BASE_SIZE * CONSTANTS.BASE_SIZE * CONSTANTS.BASE_SIZE },
-        { label: '14 GB', index: 4, value: 14 * CONSTANTS.BASE_SIZE * CONSTANTS.BASE_SIZE * CONSTANTS.BASE_SIZE },
-        { label: '15 GB', index: 5, value: 15 * CONSTANTS.BASE_SIZE * CONSTANTS.BASE_SIZE * CONSTANTS.BASE_SIZE },
-        { label: '16 GB', index: 6, value: 16 * CONSTANTS.BASE_SIZE * CONSTANTS.BASE_SIZE * CONSTANTS.BASE_SIZE },
-        { label: '17 GB', index: 7, value: 17 * CONSTANTS.BASE_SIZE * CONSTANTS.BASE_SIZE * CONSTANTS.BASE_SIZE },
-        { label: '18 GB', index: 8, value: 18 * CONSTANTS.BASE_SIZE * CONSTANTS.BASE_SIZE * CONSTANTS.BASE_SIZE },
-        { label: '19 GB', index: 9, value: 19 * CONSTANTS.BASE_SIZE * CONSTANTS.BASE_SIZE * CONSTANTS.BASE_SIZE },
-        { label: '20 GB', index: 10, value: 20 * CONSTANTS.BASE_SIZE * CONSTANTS.BASE_SIZE * CONSTANTS.BASE_SIZE }
-    ];
-
-    $scope.domainOptions = [
-        { label: '1', index: 0, value: 1 },
-        { label: '2', index: 1, value: 2 },
-        { label: '3', index: 2, value: 3 },
-        { label: '4', index: 3, value: 4 },
-        { label: '5', index: 4, value: 5 },
-        { label: '6', index: 5, value: 6 },
-        { label: '7', index: 6, value: 7 },
-        { label: '8', index: 7, value: 8 },
-        { label: '9', index: 8, value: 9 },
-        { label: '10', index: 9, value: 10 }
-    ];
-
-    $scope.addressOptions = [
-        { label: '5', index: 0, value: 5 },
-        { label: '10', index: 1, value: 10 },
-        { label: '15', index: 2, value: 15 },
-        { label: '20', index: 3, value: 20 },
-        { label: '25', index: 4, value: 25 },
-        { label: '30', index: 5, value: 30 },
-        { label: '35', index: 6, value: 35 },
-        { label: '40', index: 7, value: 40 },
-        { label: '45', index: 8, value: 45 },
-        { label: '50', index: 9, value: 50 }
-    ];
-
-    $scope.memberOptions = [
-        { label: '2', index: 0, value: 2 },
-        { label: '3', index: 1, value: 3 },
-        { label: '4', index: 2, value: 4 },
-        { label: '5', index: 3, value: 5 },
-        { label: '6', index: 4, value: 6 },
-        { label: '7', index: 5, value: 7 },
-        { label: '8', index: 6, value: 8 },
-        { label: '9', index: 7, value: 9 },
-        { label: '10', index: 8, value: 10 }
-    ];
+    $scope.plusSpaceOptions = dashboardOptions.get('space');
+    $scope.businessSpaceOptions = dashboardOptions.get('businessSpace');
+    $scope.domainOptions = dashboardOptions.get('domain');
+    $scope.addressOptions = dashboardOptions.get('address');
+    $scope.memberOptions = dashboardOptions.get('member');
 
     $scope.selects = {
         plus: {

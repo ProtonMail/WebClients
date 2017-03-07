@@ -492,7 +492,6 @@ angular.module('proton.routes', [
                 templateUrl: 'templates/views/pgp.tpl.html',
                 controller($scope, $rootScope, messageID, tools) {
                     $scope.isSafari = tools.isSafari(); // Download doesn't work with Safari browser
-                    $rootScope.isBlank = true;
 
                     function viewPgp(event) {
                         $scope.$applyAsync(() => {
@@ -542,7 +541,6 @@ angular.module('proton.routes', [
             'main@': {
                 templateUrl: 'templates/views/message.print.tpl.html',
                 controller($scope, $rootScope, $sce, messageID) {
-                    $rootScope.isBlank = true;
                     $scope.loading = true;
 
                     if (window.opener) {
@@ -585,11 +583,11 @@ angular.module('proton.routes', [
                 return Promise.resolve();
             }
         },
-        onEnter($rootScope) {
-            $rootScope.inboxSidebar = true;
+        onEnter(AppModel) {
+            AppModel.set('inboxSidebar', true);
         },
-        onExit($rootScope) {
-            $rootScope.inboxSidebar = false;
+        onExit(AppModel) {
+            AppModel.set('inboxSidebar', false);
         },
         views: {
             'content@secured': {
@@ -917,12 +915,12 @@ angular.module('proton.routes', [
                     return Promise.resolve();
                 }
             },
-            onEnter($rootScope) {
-                $rootScope.inboxSidebar = true;
+            onEnter(AppModel) {
+                AppModel.set('inboxSidebar', true);
             },
-            onExit($rootScope) {
+            onExit(AppModel, $rootScope) {
                 $rootScope.showWelcome = false;
-                $rootScope.inboxSidebar = false;
+                AppModel.set('inboxSidebar', false);
             }
         });
 

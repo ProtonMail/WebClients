@@ -6,8 +6,10 @@ angular.module('proton.commons')
     $controller,
     $q,
     $http,
+    AppModel,
     $templateCache
 ) => {
+    const $body = $('#body');
     return function modalFactory(config) {
         if (!(!config.template ^ !config.templateUrl)) {
             throw new Error('Expected modal to have exacly one of either template or templateUrl');
@@ -35,12 +37,13 @@ angular.module('proton.commons')
                     attach(html, locals);
                 }
 
-                $('#body').append('<div class="modal-backdrop fade in"></div>');
-                $rootScope.modalOpen = true;
-                setTimeout(() => {
+                $body.append('<div class="modal-backdrop fade in"></div>');
+                AppModel.set('modalOpen', true);
+                const id = setTimeout(() => {
                     $('.modal').addClass('in');
                     window.scrollTo(0, 0);
                     Mousetrap.bind('escape', () => deactivate());
+                    clearTimeout(id);
                 }, 100);
 
                 unsubscribeLogoutListener = $rootScope.$on('logout', () => {
@@ -98,7 +101,7 @@ angular.module('proton.commons')
                 scope = null;
                 element.remove();
                 element = null;
-                $rootScope.modalOpen = false;
+                AppModel.set('modalOpen', false);
                 $('.modal-backdrop').remove();
             });
         }

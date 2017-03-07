@@ -395,7 +395,7 @@
     }
 }
 
-body.mobileMode {
+body.appConfigBody-is-mobile {
     #pm_settings {
 
         .settings .row .setting {
@@ -472,7 +472,7 @@ body.mobileMode {
     }
 }
 
-body.mobileMode {
+body.appConfigBody-is-mobile {
 
     #newUser{
         .newUser {
@@ -574,7 +574,7 @@ body.mobileMode {
     }
 }
 
-body.mobileMode {
+body.appConfigBody-is-mobile {
     &#secured-invoices,
     &#secured-keys,
     &#secured-members,
@@ -587,7 +587,7 @@ body.mobileMode {
         overflow: initial;
     }
 }
-body.mobileMode {
+body.appConfigBody-is-mobile {
     #pm_settings {
         .settings {
             table.pm_table {
@@ -642,7 +642,7 @@ body.mobileMode {
 }
 
 
-body.mobileMode {
+body.appConfigBody-is-mobile {
     #invoicesList {
         &, li {
             display: block;

@@ -74,7 +74,7 @@ body {
 }
 
 // MOBILE
-body.mobileMode {
+body.appConfigBody-is-mobile {
     &, #body {
         height: 100%;
         overflow: hidden;
