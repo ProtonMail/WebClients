@@ -5,6 +5,8 @@ angular.module('proton.core')
     $scope.user = authentication.user;
     $scope.organization = organizationModel.get();
     $scope.wizardEnabled = CONSTANTS.WIZARD_ENABLED;
+    $scope.isAdmin = authentication.user.Role === CONSTANTS.PAID_ADMIN_ROLE;
+    $scope.isFree = authentication.user.Role === CONSTANTS.FREE_USER_ROLE;
     $scope.ctrl = {};
     $scope.starred = 2;
 
