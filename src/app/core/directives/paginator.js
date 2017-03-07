@@ -12,6 +12,7 @@ angular.module('proton.core')
     const buildClassNames = (scope) => {
 
         const className = [];
+        const maxPageNumber = paginationModel.getMaxPage();
 
         if ((~~$stateParams.page || 1) === 1) {
             className.push(`${CLASS_PAGINATOR_DISABLED}previous`);
@@ -20,8 +21,7 @@ angular.module('proton.core')
         if (paginationModel.isMax() || scope.totalItems === 0) {
             className.push(`${CLASS_PAGINATOR_DISABLED}next`);
         }
-
-        if (paginationModel.getMaxPage() === 1 || scope.totalItems === 0) {
+        if (maxPageNumber === 0 || maxPageNumber === 1 || scope.totalItems === 0) {
             className.push(`${CLASS_PAGINATOR_DISABLED}main`);
         }
 
