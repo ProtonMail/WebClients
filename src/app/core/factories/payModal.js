@@ -5,45 +5,44 @@ angular.module('proton.core')
         templateUrl: 'templates/modals/pay.tpl.html',
         controller(params) {
             // Variables
-            this.amount = params.amount;
-            this.amountDue = params.amountDue;
-            this.credit = params.credit;
-            this.currency = params.currency;
-            this.methods = params.methods;
-            this.invoice = params.invoice;
-            this.choices = [];
+            const self = this;
+            self.amount = params.amount;
+            self.amountDue = params.amountDue;
+            self.credit = params.credit;
+            self.currency = params.currency;
+            self.methods = params.methods;
+            self.invoice = params.invoice;
+            self.choices = [];
 
             // Functions
-            this.initialization = function () {
-                if (this.amountDue > 0) {
-                    if (params.status.Stripe === true && this.methods.length > 0) {
-                        this.method = this.methods[0];
-                        this.choices.push({ value: 'card', label: gettextCatalog.getString('Credit card', null) });
+            self.initialization = () => {
+                if (self.amountDue > 0) {
+                    if (params.status.Stripe === true && self.methods.length > 0) {
+                        self.method = self.methods[0];
+                        self.choices.push({ value: 'card', label: gettextCatalog.getString('Credit card', null) });
                     }
 
                     if (params.status.Paypal === true && !tools.isIE11) { // IE11 doesn't support PayPal
-                        this.choices.push({ value: 'paypal', label: 'PayPal' });
+                        self.choices.push({ value: 'paypal', label: 'PayPal' });
                     }
 
-                    if (this.choices.length > 0) {
-                        this.choice = this.choices[0];
-                        this.changeChoice();
+                    if (self.choices.length > 0) {
+                        self.choice = self.choices[0];
+                        self.changeChoice();
                     }
                 }
-            }.bind(this);
-
-            this.label = function (method) {
-                return '•••• •••• •••• ' + method.Details.Last4;
             };
 
-            this.submit = function () {
+            self.label = (method) => '•••• •••• •••• ' + method.Details.Last4;
+
+            self.submit = () => {
                 const parameters = {
                     Amount: params.amountDue,
                     Currency: params.currency
                 };
 
-                if (this.amountDue > 0 && this.choice.value === 'card' && this.methods.length > 0) {
-                    parameters.PaymentMethodID = this.method.ID;
+                if (self.amountDue > 0 && self.choice.value === 'card' && self.methods.length > 0) {
+                    parameters.PaymentMethodID = self.method.ID;
                 }
 
                 Payment.pay(params.invoice.ID, parameters)
@@ -56,37 +55,35 @@ angular.module('proton.core')
                         notify({ message: result.data.Error, classes: 'notification-danger' });
                     }
                 });
-            }.bind(this);
-
-            this.cancel = function () {
-                params.close();
             };
 
-            this.changeChoice = function () {
-                if (this.choice.value === 'paypal') {
-                    this.initPaypal();
+            self.cancel = () => params.close();
+
+            self.changeChoice = () => {
+                if (self.choice.value === 'paypal') {
+                    self.initPaypal();
                 }
             };
 
-            this.initPaypal = function () {
+            self.initPaypal = () => {
                 Payment.paypal({
                     Amount: params.amountDue,
                     Currency: params.currency
                 }).then((result) => {
                     if (result.data && result.data.Code === 1000) {
-                        this.approvalURL = result.data.ApprovalURL;
+                        self.approvalURL = result.data.ApprovalURL;
                     } else if (result.data && result.data.Error) {
                         notify({ message: result.data.Error, classes: 'notification-danger' });
                     }
                 });
-            }.bind(this);
-
-            this.openPaypalTab = function () {
-                this.childWindow = window.open(this.approvalURL, 'PayPal');
-                window.addEventListener('message', this.receivePaypalMessage, false);
             };
 
-            this.receivePaypalMessage = function (event) {
+            self.openPaypalTab = () => {
+                self.childWindow = window.open(self.approvalURL, 'PayPal');
+                window.addEventListener('message', self.receivePaypalMessage, false);
+            };
+
+            self.receivePaypalMessage = (event) => {
                 const origin = event.origin || event.originalEvent.origin; // For Chrome, the origin property is in the event.originalEvent object.
 
                 if (origin !== 'https://secure.protonmail.com') {
@@ -116,11 +113,11 @@ angular.module('proton.core')
                     }
                 });
 
-                this.childWindow.close();
-                window.removeEventListener('message', this.receivePaypalMessage, false);
-            }.bind(this);
+                self.childWindow.close();
+                window.removeEventListener('message', self.receivePaypalMessage, false);
+            };
 
-            this.initialization();
+            self.initialization();
         }
     });
 });
