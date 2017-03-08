@@ -789,7 +789,8 @@ angular.module('proton.elements')
                 }
             });
         }
-        $state.go($state.$current.name, params);
+        const route = $state.$current.name.replace('.element', '');
+        $state.go(route + '.element', params);
     }
 
     // Call initialization
