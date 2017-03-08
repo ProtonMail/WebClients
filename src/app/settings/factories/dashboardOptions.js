@@ -7,11 +7,11 @@ angular.module('proton.settings')
                 label: `${size} GB`,
                 value: size * CONSTANTS.BASE_SIZE * CONSTANTS.BASE_SIZE * CONSTANTS.BASE_SIZE
             })),
-            domain: _.range(11).map((value, index) => ({
+            domain: _.range(1, 11).map((value, index) => ({
                 index, value,
                 label: `${value}`
             })),
-            address: _.range(0, 55, 5).map((value, index) => ({
+            address: _.range(5, 55, 5).map((value, index) => ({
                 index, value,
                 label: `${value}`
             })),
@@ -20,7 +20,7 @@ angular.module('proton.settings')
                 label: `${value}`
             }))
         };
-        options.businessSpace = options.space.slice(5);
+        options.businessSpace = options.space.slice(5); // TODO this is wrong
 
         const get = (key) => options[key];
 
