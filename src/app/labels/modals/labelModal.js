@@ -10,7 +10,9 @@ angular.module('proton.labels')
         LABEL_UPDATED: gettextCatalog.getString('Label updated', null),
         FOLDER_CREATED: gettextCatalog.getString('Folder created', null),
         LABEL_CREATED: gettextCatalog.getString('Label created', null),
-        ERROR_MESSAGE: gettextCatalog.getString('Error when saving label', null)
+        ERROR_MESSAGE: gettextCatalog.getString('Error when saving label', null),
+        ERROR_FOLDER_NAME: gettextCatalog.getString('Invalid folder name', null),
+        ERROR_LABEL_NAME: gettextCatalog.getString('Invalid label name', null)
     };
     /**
      * Get title for label modal
@@ -37,6 +39,21 @@ angular.module('proton.labels')
         }
         return Exclusive ? TRANSLATIONS.FOLDER_CREATED : TRANSLATIONS.LABEL_CREATED;
     }
+    /**
+     * Get error color name for label modal
+     * @param  {Number} Exclusive
+     * @return {String}
+     */
+    function getErrorColorName({ Exclusive = 0 }) {
+        return Exclusive ? TRANSLATIONS.ERROR_FOLDER_NAME : TRANSLATIONS.ERROR_LABEL_NAME;
+    }
+
+    const cleanInput = (color = {}) => {
+        return _.extend({}, color, {
+            Name: DOMPurify.sanitize(color.Name),
+            Color: DOMPurify.sanitize(color.Color)
+        });
+    };
 
     /**
      * Save label
@@ -52,7 +69,7 @@ angular.module('proton.labels')
         return Label[action]({ ID, Name, Color, Display, Exclusive })
         .then(({ data = {} } = {}) => {
             if (data.Code === 1000) {
-                return Promise.resolve(data.Label);
+                return data.Label;
             }
             throw new Error(data.Error || TRANSLATIONS.ERROR_MESSAGE);
         })
@@ -75,12 +92,20 @@ angular.module('proton.labels')
             hotkeys.unbind();
 
             self.create = () => {
-                const promise = save({ ID, Name: self.name, Color: self.color, Exclusive })
-                .then((label) => {
-                    notify({ message: successMessage, classes: 'notification-success' });
-                    hotkeys.bind();
-                    params.close(label);
-                });
+                const data = cleanInput({ ID, Name: self.name, Color: self.color, Exclusive });
+
+                // Can be empty for an XSS
+                if (!data.Name) {
+                    self.name = data.Name;
+                    return notify({ message: getErrorColorName(data), classes: 'notification-danger' });
+                }
+
+                const promise = save(data)
+                    .then((label) => {
+                        notify({ message: successMessage, classes: 'notification-success' });
+                        hotkeys.bind();
+                        params.close(label);
+                    });
                 networkActivityTracker.track(promise);
             };
 
