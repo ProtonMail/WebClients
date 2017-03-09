@@ -21,6 +21,7 @@ angular.module('proton.contactCurrent')
     notify) => {
     // Variables
     let lastChecked = null;
+    const INVALID_CONTACT_NAME = gettextCatalog.getString('Invalid contact name', null);
 
     const setCurrentPage = (p) => {
         $scope.currentPage = p;
@@ -210,11 +211,15 @@ angular.module('proton.contactCurrent')
                     Name: DOMPurify.sanitize(name),
                     Email: DOMPurify.sanitize(email)
                 };
-                const contactList = [];
-                contactList.push(newContact);
+
+                // Can be empty for an XSS
+                if (!newContact.Name) {
+                    return notify({ message: INVALID_CONTACT_NAME, classes: 'notification-danger' });
+                }
+
                 networkActivityTracker.track(
                     Contact.save({
-                        Contacts: contactList
+                        Contacts: [newContact]
                     }).then((response) => {
                         if (response.data.Code === 1001) {
                             notify({ message: gettextCatalog.getString('Contact added', null), classes: 'notification-success' });
