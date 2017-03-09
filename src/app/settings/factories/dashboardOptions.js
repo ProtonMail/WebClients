@@ -20,7 +20,8 @@ angular.module('proton.settings')
                 label: `${value}`
             }))
         };
-        options.businessSpace = options.space.slice(5); // TODO this is wrong
+
+        options.businessSpace = options.space.slice(5).map((item, i) => (item.index = i, item));
 
         const get = (key) => options[key];
 
