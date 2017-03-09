@@ -16,7 +16,7 @@ angular.module('proton.message')
             return `${tagOpen}<br /></div>`;
         }
 
-        function purify(html) {
+        function purify(html = '') {
             return DOMPurify.sanitize(html, {
                 ADD_ATTR: ['target'],
                 FORBID_TAGS: ['style', 'input', 'form']
@@ -74,7 +74,7 @@ angular.module('proton.message')
          * @param  {Boolean} isReply Detect if we create a new message or not
          * @return {String}
          */
-        function templateBuilder(userSignature, protonSignature, isReply = false) {
+        function templateBuilder(userSignature = '', protonSignature = '', isReply = false) {
             const { userClass, protonClass, containerClass } = getClassNamesSignature(userSignature, protonSignature);
             const space = getSpaces(userSignature, protonSignature, isReply);
 

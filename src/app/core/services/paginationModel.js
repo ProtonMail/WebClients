@@ -25,7 +25,6 @@ angular.module('proton.core')
         const getMaxPage = () => {
 
             const counter = cacheCounters.getCounter($stateParams.label);
-
             if ($stateParams.label && counter) {
                 return Math.ceil(counter[getLayout()].total / ELEMENTS_PER_PAGE);
             }
@@ -61,7 +60,7 @@ angular.module('proton.core')
             if (pos) {
                 const page = pos - 1;
                 // If page = 1 remove it from the url
-                switchPage({ page: page === 1 ? undefined : page });
+                switchPage({ page: (page <= 1) ? undefined : page });
             }
         };
 
