@@ -13,7 +13,6 @@ html.protonmail {
 		&.appConfigBody-is-mobile {
 			height: 100vh;
             min-height: 100%;
-			overflow: initial !important;
 			.desktopOnly {
 				display: none !important;
 			}
@@ -36,7 +35,7 @@ html.protonmail {
 				height: initial;
 				overflow: initial !important;
 				#pm_main {
-					height: calc(100vh - 75px);
+					height: calc(100vh - 70px);
 				}
 			}
 		}

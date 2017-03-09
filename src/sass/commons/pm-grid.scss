@@ -212,7 +212,7 @@ body.appConfigBody-is-mobile {
 	.pm_grid {
 		&.flex:not(.flex-mobileShrink) {
 			flex-direction: column;
-			> [class*='col-'] {
+			[class*='col-'] {
 				margin-bottom: 20px;
 			}
 		}
@@ -223,12 +223,13 @@ body.appConfigBody-is-mobile {
 			flex-basis: 0px;
 		}
 		&:not(.flex) {
-			> [class*='col-'] {
+			[class*='col-'] {
 				float: left;
 				width: 100% !important;
 				clear: both;
 				box-sizing: border-box;
 				padding: 0;
+				margin-bottom: 10px;
 			}
 		}
 
