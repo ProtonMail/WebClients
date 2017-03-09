@@ -6,9 +6,6 @@
 @import "_mixin";
 @import "_animations";
 
-//== Breakpoints
-@import "_responsive";
-
 //== Typography and Colors
 @import "_typography";
 @import "_fontawesome";
@@ -201,6 +198,8 @@
 @import "pages/signup";
 @import "pages/outside";
 
+//== 👉 Responsive override ==============================//
+@import "_responsive";
 
 //=== 💣 Dangerous ========================//
 @import "_dangerous";
