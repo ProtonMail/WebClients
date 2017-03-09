@@ -5,7 +5,9 @@ angular.module('proton.core')
         let currentState = '';
         let pageMax = 1;
 
-        $rootScope.$on('$stateChangeSuccess', (e, state) => (currentState = state.name));
+        $rootScope.$on('$stateChangeSuccess', (e, state) => {
+            currentState = state.name.replace('.element', '');
+        });
 
         const getLayout = () => {
             if (authentication.user.ViewMode === MESSAGE_VIEW_MODE) {
@@ -47,7 +49,7 @@ angular.module('proton.core')
          * @param  {Object} opts    Custom options
          */
         const switchPage = (opts = {}) => {
-            $state.go(currentState, angular.extend({ id: undefined }, opts));
+            $state.go(currentState, _.extend({ id: null }, opts));
         };
 
         /**

@@ -927,7 +927,7 @@ angular.module('proton.routes', [
         $stateProvider.state(childState, {
             url: '/{id}',
             views: elementView,
-            params: { id: '', messageID: null, welcome: null },
+            params: { id: null, messageID: null, welcome: null },
             onExit($rootScope) {
                 $rootScope.$broadcast('unactiveMessages');
                 $rootScope.$broadcast('unmarkMessages');
