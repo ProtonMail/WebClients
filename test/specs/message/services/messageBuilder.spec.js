@@ -1,4 +1,4 @@
-describe('messageBuilder factory', () => {
+fdescribe('messageBuilder factory', () => {
 
     let factory, rootScope, authentication, tools, CONSTANTS, messageModel;
     let signatureBuilder, gettextCatalog;
@@ -8,6 +8,7 @@ describe('messageBuilder factory', () => {
     let spyMessageModelMock = jasmine.createSpy();
     let spyLocalReadableTime = jasmine.createSpy();
     let spyUtcReadableTime = jasmine.createSpy();
+    let spyPrepareContent = jasmine.createSpy();
 
     let userMock = { Signature: '' };
 
@@ -60,7 +61,10 @@ describe('messageBuilder factory', () => {
         $provide.factory('tools', () => ({
             contactsToString: angular.noop
         }));
-        $provide.factory('prepareContent', () => jasmine.createSpy('spyPrepareContent'));
+        $provide.factory('prepareContent', () => (...args) => {
+            spyPrepareContent(...args);
+            return 'prepareContent';
+        });
         $provide.factory('messageModel', () => messageModelMock);
 
         $provide.factory('signatureBuilder', () => ({
@@ -211,7 +215,7 @@ describe('messageBuilder factory', () => {
 
     });
 
-    describe('Create a message', () => {
+    fdescribe('Create a message', () => {
 
         describe('A new message from nothing', () => {
             let item;
@@ -220,6 +224,7 @@ describe('messageBuilder factory', () => {
             let DEFAULT_MESSAGE_COPY;
 
             beforeEach(() => {
+                spyPrepareContent = jasmine.createSpy();
                 spyLocalReadableTime = jasmine.createSpy();
                 spyUtcReadableTime = jasmine.createSpy();
                 spyGetDecryptedBody = jasmine.createSpy();
@@ -237,6 +242,10 @@ describe('messageBuilder factory', () => {
             it('should build a new message', () => {
                 expect(spyMessageModelMock).toHaveBeenCalledWith(undefined);
                 expect(spyMessageModelMock).toHaveBeenCalledTimes(1);
+            });
+
+            it('should not prepareContent', () => {
+                expect(spyPrepareContent).not.toHaveBeenCalled();
             });
 
             it('should create a new signature', () => {
@@ -517,9 +526,10 @@ describe('messageBuilder factory', () => {
             const match = { Status: 1, Send: 1, ID: 2 };
             let DEFAULT_MESSAGE_COPY;
 
-            const DEFAULT_MESSAGE_REPLY = '<blockquote class="protonmail_quote" type="cite">-------- Original Message --------<br>Subject: polo<br>Local Time: localReadableTime<br>UTC Time: utcReadableTime<br>From: polo@test.com<br>To: <br><br></blockquote><br>';
+            const DEFAULT_MESSAGE_REPLY = '<blockquote class="protonmail_quote" type="cite">-------- Original Message --------<br>Subject: polo<br>Local Time: localReadableTime<br>UTC Time: utcReadableTime<br>From: polo@test.com<br>To: <br><br>prepareContent</blockquote><br>';
 
             beforeEach(() => {
+                spyPrepareContent = jasmine.createSpy();
                 spyLocalReadableTime = jasmine.createSpy();
                 spyUtcReadableTime = jasmine.createSpy();
                 spyGetDecryptedBody = jasmine.createSpy();
@@ -528,7 +538,7 @@ describe('messageBuilder factory', () => {
                 userMock.Addresses = [TESTABLE_ADDRESS_DEFAULT, { Status: 2 }, match];
                 spyOn(signatureBuilder, 'insert').and.returnValue(USER_SIGNATURE);
                 spyOn(tools, 'contactsToString').and.returnValue('');
-                spyOn(message, 'getDecryptedBody').and.returnValue(DEFAULT_MESSAGE);
+                spyOn(message, 'getDecryptedBody').and.returnValue(MESSAGE_BODY);
                 spyOn(DOMPurify, 'sanitize').and.callFake(_.identity);
 
                 DEFAULT_MESSAGE_COPY = _.extend({}, DEFAULT_MESSAGE, {
@@ -555,6 +565,15 @@ describe('messageBuilder factory', () => {
             it('should build a new message', () => {
                 expect(spyMessageModelMock).toHaveBeenCalledWith(undefined);
                 expect(spyMessageModelMock).toHaveBeenCalledTimes(1);
+            });
+
+
+            it('should prepareContent', () => {
+                expect(spyPrepareContent).toHaveBeenCalledTimes(1);
+                const [ content, message, options ] = spyPrepareContent.calls.argsFor(0);
+                expect(content).toBe(MESSAGE_BODY);
+                expect(message.ParentID).toBe(DEFAULT_MESSAGE_COPY.ID)
+                expect(options).toEqual({ blacklist: ['*'] });
             });
 
             it('should have called the filter localReadableTime ', () => {
@@ -703,7 +722,7 @@ describe('messageBuilder factory', () => {
 
             it('should return an instance of Message', () => {
                 expect(item.constructor).toMatch(/Message/);
-            });
+            });;
 
         });
 
@@ -713,9 +732,10 @@ describe('messageBuilder factory', () => {
             const match = { Status: 1, Send: 1, ID: 2 };
             let DEFAULT_MESSAGE_COPY;
 
-            const DEFAULT_MESSAGE_REPLY = '<blockquote class="protonmail_quote" type="cite">-------- Original Message --------<br>Subject: polo<br>Local Time: localReadableTime<br>UTC Time: utcReadableTime<br>From: polo@test.com<br>To: <br><br></blockquote><br>';
+            const DEFAULT_MESSAGE_REPLY = '<blockquote class="protonmail_quote" type="cite">-------- Original Message --------<br>Subject: polo<br>Local Time: localReadableTime<br>UTC Time: utcReadableTime<br>From: polo@test.com<br>To: <br><br>prepareContent</blockquote><br>';
 
             beforeEach(() => {
+                spyPrepareContent = jasmine.createSpy();
                 spyLocalReadableTime = jasmine.createSpy();
                 spyUtcReadableTime = jasmine.createSpy();
                 spyGetDecryptedBody = jasmine.createSpy();
@@ -724,7 +744,7 @@ describe('messageBuilder factory', () => {
                 userMock.Addresses = [TESTABLE_ADDRESS_DEFAULT, { Status: 2 }, match];
                 spyOn(signatureBuilder, 'insert').and.returnValue(USER_SIGNATURE);
                 spyOn(tools, 'contactsToString').and.returnValue('');
-                spyOn(message, 'getDecryptedBody').and.returnValue(DEFAULT_MESSAGE);
+                spyOn(message, 'getDecryptedBody').and.returnValue(MESSAGE_BODY);
                 spyOn(DOMPurify, 'sanitize').and.callFake(_.identity);
 
                 DEFAULT_MESSAGE_COPY = _.extend({}, DEFAULT_MESSAGE, {
@@ -751,6 +771,14 @@ describe('messageBuilder factory', () => {
             it('should build a new message', () => {
                 expect(spyMessageModelMock).toHaveBeenCalledWith(undefined);
                 expect(spyMessageModelMock).toHaveBeenCalledTimes(1);
+            });
+
+            it('should prepareContent', () => {
+                expect(spyPrepareContent).toHaveBeenCalledTimes(1);
+                const [ content, message, options ] = spyPrepareContent.calls.argsFor(0);
+                expect(content).toBe(MESSAGE_BODY);
+                expect(message.ParentID).toBe(DEFAULT_MESSAGE_COPY.ID);
+                expect(options).toEqual({ blacklist: ['*'] });
             });
 
             it('should have called the filter localReadableTime ', () => {
@@ -908,9 +936,10 @@ describe('messageBuilder factory', () => {
             const match = { Status: 1, Send: 1, ID: 2 };
             let DEFAULT_MESSAGE_COPY;
 
-            const DEFAULT_MESSAGE_REPLY = '<blockquote class="protonmail_quote" type="cite">-------- Original Message --------<br>Subject: polo<br>Local Time: localReadableTime<br>UTC Time: utcReadableTime<br>From: polo@test.com<br>To: <br><br></blockquote><br>';
+            const DEFAULT_MESSAGE_REPLY = '<blockquote class="protonmail_quote" type="cite">-------- Original Message --------<br>Subject: polo<br>Local Time: localReadableTime<br>UTC Time: utcReadableTime<br>From: polo@test.com<br>To: <br><br>prepareContent</blockquote><br>';
 
             beforeEach(() => {
+                spyPrepareContent = jasmine.createSpy();
                 spyLocalReadableTime = jasmine.createSpy();
                 spyUtcReadableTime = jasmine.createSpy();
                 spyGetDecryptedBody = jasmine.createSpy();
@@ -919,7 +948,7 @@ describe('messageBuilder factory', () => {
                 userMock.Addresses = [TESTABLE_ADDRESS_DEFAULT, { Status: 2 }, match];
                 spyOn(signatureBuilder, 'insert').and.returnValue(USER_SIGNATURE);
                 spyOn(tools, 'contactsToString').and.returnValue('');
-                spyOn(message, 'getDecryptedBody').and.returnValue(DEFAULT_MESSAGE);
+                spyOn(message, 'getDecryptedBody').and.returnValue(MESSAGE_BODY);
                 spyOn(DOMPurify, 'sanitize').and.callFake(_.identity);
 
                 DEFAULT_MESSAGE_COPY = _.extend({}, DEFAULT_MESSAGE, {
@@ -946,6 +975,14 @@ describe('messageBuilder factory', () => {
             it('should build a new message', () => {
                 expect(spyMessageModelMock).toHaveBeenCalledWith(undefined);
                 expect(spyMessageModelMock).toHaveBeenCalledTimes(1);
+            });
+
+            it('should prepareContent', () => {
+                expect(spyPrepareContent).toHaveBeenCalledTimes(1);
+                const [ content, message, options ] = spyPrepareContent.calls.argsFor(0);
+                expect(content).toBe(MESSAGE_BODY);
+                expect(message.ParentID).toBe(DEFAULT_MESSAGE_COPY.ID);
+                expect(options).toEqual({ blacklist: ['*'] });
             });
 
             it('should have called the filter localReadableTime ', () => {
