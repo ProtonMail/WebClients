@@ -13,10 +13,19 @@ angular.module('proton.message')
     const syntaxHighlighterFilter = (dom) => {
         const $pre = dom.querySelectorAll('.pre, pre');
         _.each($pre, (node) => {
-            const $code = node.querySelector('.code, code');
+            const $codeRaw = node.querySelector('code');
+
+            // Tag <code> exist we can unescape everything
+            if ($codeRaw) {
+                $codeRaw.innerHTML = $codeRaw.innerHTML.replace(/proton-/g, '');
+                return;
+            }
+
+            const $code = node.querySelector('.code');
             if (!$code) {
                 return;
             }
+
             _.each($code.querySelectorAll('span'), (node) => {
                 if (node.querySelector('*')) {
                     return;

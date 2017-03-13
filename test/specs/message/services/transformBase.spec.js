@@ -1,4 +1,4 @@
-fdescribe('transformBase service', () => {
+describe('transformBase service', () => {
 
     let factory;
     const URL_PROTON = 'https://protonmail.com';
