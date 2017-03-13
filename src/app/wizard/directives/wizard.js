@@ -14,8 +14,8 @@ angular.module('proton.wizard')
                             },
                             next() {
                                 welcomeModal.deactivate();
-                                                // Start tour
-                                tourStart();
+                                // Start tour if not mobile mode
+                                !AppModel.is('mobile') && tourStart();
                             }
                         }
                     });
