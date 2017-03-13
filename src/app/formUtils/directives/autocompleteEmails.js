@@ -67,15 +67,19 @@ angular.module('proton.formUtils')
 
     const link = (scope, el, { awesomplete }) => {
 
+        scope.emails = [];
+
         // Model for this autocomplete
-        const model = autocompleteEmailsModel(scope.emails);
+        const model = autocompleteEmailsModel(scope.list);
 
         /**
          * Sync the model, bind emails selected
          * @return {void}
          */
-        const syncModel = () => scope.$applyAsync(() => (scope.emails = model.all()));
-
+        const syncModel = () => scope.$applyAsync(() => {
+            scope.emails = scope.list = model.all();
+        });
+        syncModel();
 
         const onInput = ({ target }) => {
             // Only way to clear the input if you add a comma.
@@ -212,7 +216,7 @@ angular.module('proton.formUtils')
     };
     return {
         scope: {
-            emails: '='
+            list: '=emails'
         },
         replace: true,
         templateUrl: 'templates/formUtils/autocompleteEmails.tpl.html',
