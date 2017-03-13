@@ -45,6 +45,7 @@ angular.module('proton.settings')
     $scope.passwordMode = authentication.user.PasswordMode;
     $scope.keyPhase = CONSTANTS.KEY_PHASE;
     $scope.emailing = { announcements: false, features: false, newsletter: false };
+    const EMAILING_KEYS = Object.keys($scope.emailing);
     updateUser();
 
     function passwordModal(submit) {
@@ -332,19 +333,23 @@ angular.module('proton.settings')
     };
 
     function setEmailingValues(value = 0) {
-        _.each(Object.keys($scope.emailing), (key, index) => ($scope.emailing[key] = !!(value & (1 << index))));
+        _.each(EMAILING_KEYS, (key, index) => {
+            $scope.emailing[key] = !!(value & (1 << index));
+        });
     }
 
     function getEmailingValue() {
-        return _.reduce(Object.keys($scope.emailing), (acc, key, index) => (acc + ($scope.emailing[key] << index)), 0);
+        return _.reduce(EMAILING_KEYS, (acc, key, index) => (acc + ($scope.emailing[key] << index)), 0);
     }
 
     $scope.changeEmailing = () => {
         const News = getEmailingValue();
         const successMessage = gettextCatalog.getString('Emailing preference updated', null, 'Success');
+
         const promise = settingsApi.setNews({ News })
         .then(({ data = {} } = {}) => {
             if (data.Code === 1000) {
+                authentication.user.News = News;
                 return Promise.resolve();
             }
             throw new Error(data.Error);
