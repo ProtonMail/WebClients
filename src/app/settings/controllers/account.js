@@ -48,12 +48,13 @@ angular.module('proton.settings')
     const EMAILING_KEYS = Object.keys($scope.emailing);
     updateUser();
 
-    function passwordModal(submit) {
+    function passwordModal(submit = angular.noop, onCancel = angular.noop) {
         loginPasswordModal.activate({
             params: {
                 submit,
                 cancel() {
                     loginPasswordModal.deactivate();
+                    onCancel();
                 }
             }
         });
@@ -108,18 +109,18 @@ angular.module('proton.settings')
     };
 
     $scope.savePasswordReset = () => {
-        function submit(currentPassword, twoFactorCode) {
+        function submit(Password, TwoFactorCode) {
             loginPasswordModal.deactivate();
-            const credentials = { Password: currentPassword, TwoFactorCode: twoFactorCode };
+            const credentials = { Password, TwoFactorCode };
             const promise = settingsApi.passwordReset({ PasswordReset: $scope.passwordReset }, credentials)
-            .then(() => {
-                authentication.user.PasswordReset = $scope.passwordReset;
-                notify({ message: gettextCatalog.getString('Preference saved', null), classes: 'notification-success' });
-            });
+                .then(() => {
+                    authentication.user.PasswordReset = $scope.passwordReset;
+                    notify({ message: gettextCatalog.getString('Preference saved', null), classes: 'notification-success' });
+                });
             networkActivityTracker.track(promise);
         }
-
-        passwordModal(submit);
+        const onCancel = () => ($scope.passwordReset = +!$scope.passwordReset);
+        passwordModal(submit, onCancel);
     };
 
     $scope.saveDailyNotifications = () => {
