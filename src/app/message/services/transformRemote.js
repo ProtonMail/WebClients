@@ -72,17 +72,16 @@ angular.module('proton.message')
         }
 
         if (showImages) {
-
             html.innerHTML = content.replace(new RegExp(REGEXP_FIXER, 'g'), (match, $1) => $1.substring(7));
 
             // If load:manual we use a custom directive to inject the content
             if (action === 'user.inject') {
                 const list = prepareInjection(html, content, action);
-
-                if (list.length) {
+                const hasSVG = /svg/.test(html.innerHTML);
+                if (list.length || hasSVG) {
                     $rootScope.$emit('message.open', {
                         type: 'remote.injected',
-                        data: { action, list, message }
+                        data: { action, list, message, hasSVG }
                     });
                 }
             }
