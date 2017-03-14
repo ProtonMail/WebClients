@@ -1,4 +1,4 @@
-angular.module('proton.core')
+angular.module('proton.keys')
 .factory('keyPasswordModal', (pmModal, pmcw, notify, gettextCatalog, passwords, authentication) => {
     return pmModal({
         controllerAs: 'ctrl',

@@ -1,4 +1,4 @@
-angular.module('proton.core')
+angular.module('proton.keys')
     .factory('changeMailboxPassword', (
         $log,
         authentication,

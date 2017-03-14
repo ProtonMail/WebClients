@@ -9,6 +9,7 @@ angular.module('proton.authentication')
     $injector,
     $exceptionHandler,
     authApi,
+    checkKeysFormat,
     CONFIG,
     CONSTANTS,
     Contact,
@@ -27,7 +28,9 @@ angular.module('proton.authentication')
     srp,
     labelsModel,
     setupKeys,
-    AppModel
+    AppModel,
+    tempStorage,
+    upgradeKeys
 ) => {
     let keys = {}; // Store decrypted keys
     /**
@@ -250,15 +253,6 @@ angular.module('proton.authentication')
             }
 
             return string;
-        },
-
-        getPrivateKey() {
-            const pw = pmcw.decode_utf8_base64(secureSessionStorage.getItem(CONSTANTS.MAILBOX_PASSWORD_KEY));
-
-            return pmcw.decryptPrivateKey(this.user.EncPrivateKey, pw).catch((err) => {
-                $log.error(this.user.EncPrivateKey);
-                throw err;
-            });
         },
 
         /**
@@ -509,6 +503,7 @@ angular.module('proton.authentication')
             const req = $q.defer();
             if (pwd) {
 
+                tempStorage.setItem('plainMailboxPass', pwd);
                 passwords.computeKeyPassword(pwd, KeySalt)
                 .then((pwd) => pmcw.checkMailboxPassword(PrivateKey, pwd, AccessToken))
                 .then(
@@ -543,6 +538,15 @@ angular.module('proton.authentication')
             return promise.then((user) => {
                 if (user.DisplayName.length === 0) {
                     user.DisplayName = user.Name;
+                }
+                const plainMailboxPass = tempStorage.getItem('plainMailboxPass');
+                tempStorage.removeItem('plainMailboxPass');
+
+                if (plainMailboxPass && !user.OrganizationPrivateKey) {
+                    checkKeysFormat(user, keys)
+                    .catch(() => {
+                        upgradeKeys({mailboxPassword: plainMailboxPass, oldSaltedPassword: this.getPassword(), user});
+                    });
                 }
 
                 $rootScope.isLoggedIn = true;

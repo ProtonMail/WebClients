@@ -64,6 +64,18 @@ angular.module('proton.commons')
             return $http.put(url.get() + '/keys/private', params);
         },
         /**
+         * Upgrade private key with incorrect metadata
+         * @param {Object} params
+         * @return {Promise}
+         */
+        upgrade(params = {}, newPassword = '') {
+            if (newPassword.length) {
+                return srp.getPasswordParams(newPassword, params)
+                .then((authParams) => $http.put(url.get() + '/keys/private/upgrade', authParams));
+            }
+            return $http.put(url.get() + '/keys/private/upgrade', params);
+        },
+        /**
          * Delete key
          * @param {String} keyID
          * @return {Promise}

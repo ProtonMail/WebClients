@@ -1,4 +1,4 @@
-angular.module('proton.core')
+angular.module('proton.keys')
 .factory('changePasswordModal', (authentication, changeMailboxPassword, eventManager, gettextCatalog, networkActivityTracker, notify, pmModal, settingsApi, User) => {
     return pmModal({
         controllerAs: 'ctrl',
