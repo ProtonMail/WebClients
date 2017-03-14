@@ -25,7 +25,10 @@ angular.module('proton.message')
 
         elements.forEach(({ selector, attribute }) => {
             [].slice.call(html.querySelectorAll(selector)).forEach((el) => {
-                el[attribute] = baseUrl + el.getAttribute(attribute);
+                const value = el.getAttribute(attribute) || '';
+                // Ensure we don't add a useless / if we already have one
+                const url = (value.charAt(0) === '/') ? value.slice(1) : value;
+                el[attribute] = baseUrl + url;
             });
         });
 

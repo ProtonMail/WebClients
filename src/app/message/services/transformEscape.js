@@ -13,10 +13,19 @@ angular.module('proton.message')
     const syntaxHighlighterFilter = (dom) => {
         const $pre = dom.querySelectorAll('.pre, pre');
         _.each($pre, (node) => {
-            const $code = node.querySelector('.code, code');
+            const $codeRaw = node.querySelector('code');
+
+            // Tag <code> exist we can unescape everything
+            if ($codeRaw) {
+                $codeRaw.innerHTML = $codeRaw.innerHTML.replace(/proton-/g, '');
+                return;
+            }
+
+            const $code = node.querySelector('.code');
             if (!$code) {
                 return;
             }
+
             _.each($code.querySelectorAll('span'), (node) => {
                 if (node.querySelector('*')) {
                     return;
@@ -47,10 +56,17 @@ angular.module('proton.message')
         return dom;
     };
 
-
-    const REGEXP_IS_BREAK = new RegExp('(<svg|xlink:href|srcset|src=|background=|poster=)', 'g');
+    const REGEXP_IS_BREAK = new RegExp('(<svg|/svg|xlink:href|srcset|src=|background=|poster=)', 'g');
     const REGEXP_IS_URL = new RegExp(/url\(/ig);
-    const replace = (regex, input) => input.replace(regex, (match) => `proton-${match}`);
+    const replace = (regex, input) => input.replace(regex, (match) => {
+        if (match !== '<svg' && match !== '/svg') {
+            return `proton-${match}`;
+        }
+
+        // Escape svg tag
+        const prefix = match.slice(0, 1);
+        return `${prefix}proton-${match.slice(1)}`;
+    });
 
     return (html, message, { content = '' }) => {
         html.innerHTML = replace(REGEXP_IS_URL, replace(REGEXP_IS_BREAK, content));

@@ -93,7 +93,8 @@ angular.module('proton.message')
      * @param  {Array} options.list Collection of content [ {<proton-x:String>:<url:String>} ]
      * @return {void}
      */
-    function injectInlineRemote(el, { list }) {
+    function injectInlineRemote(el, { list, hasSVG }) {
+
         const node = el[0];
         const mapSelectors = list.reduce((acc, map) => {
             return Object.keys(map)
@@ -116,6 +117,11 @@ angular.module('proton.message')
                     }
                 }, acc);
             }, []);
+
+        // No need to replace the current node for each svg
+        if (hasSVG) {
+            node.innerHTML = node.innerHTML.replace(/proton-svg/g, 'svg');
+        }
 
         Promise.all(promises).then(removeLoader(node));
     }
