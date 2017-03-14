@@ -7,7 +7,10 @@
                     <h4 class="modal-title" translate translate-context="Title">Change OpenVPN Login</h4>
                 </div>
                 <div class="modal-body pm_form">
-                    <label for="VPNName" translate-context="Label" translate>OpenVPN Login</label>
+                    <label for="VPNName" translate-context="Label" translate>Enter new OpenVPN login</label>
+                    <div class="alert alert-info margin-top margin-bottom">
+                        <p translate-context="Info" translate>Valid characters are A-Z, a-z, 0-9, . (full stop), _ (underscore) and - (hyphen). The login must start and end with an alphanumeric character.</p>
+                    </div>
                     <input type="text" id="VPNName" ng-model="ctrl.VPNName" required />
                 </div>
             </div>
