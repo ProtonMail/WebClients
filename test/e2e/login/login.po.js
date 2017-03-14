@@ -4,7 +4,7 @@ module.exports = () => {
         form: '.loginForm-containter',
         error: '[id="error521"]',
         username: '.loginForm-input-username',
-        password: '.loginForm-input-password',
+        password: '.loginForm-input-password input',
         anchorHelp: '.loginForm-btn-help',
         buttonSubmit: '.loginForm-btn-submit',
         buttonModal: '.newBugReport-container',

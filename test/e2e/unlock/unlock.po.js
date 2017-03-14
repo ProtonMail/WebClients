@@ -1,7 +1,7 @@
 module.exports = () => {
     const SELECTOR = {
         container: '#pm_login',
-        password: '.unlock-input-password',
+        password: '.unlock-input-password input',
         buttonSubmit: '[id="unlock_btn"]',
         buttonForgotPassword: '.unlock-btn-forgot',
         header: {
