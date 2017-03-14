@@ -38,21 +38,35 @@
         data-maxlength="{{ ::maxPW }}"
         placeholder-translate="Password"></password>
 
-    <div class="clearfix">
-        <a
-            class="pm_button link pull-left loginForm-btn-help"
-            ng-click="displayHelpModal()"
-            translate-context="Action"
-            translate-comment="link for login help"
-            translate>Need help?</a>
-        <button
-            id="login_btn"
-            type="submit"
-            tabindex="3"
-            class="pm_button primary pull-right loginForm-btn-submit"
-            ng-disabled="networkActivity.loading()"
-            translate-context="Action"
-            translate>Login</button>
+    <div class="loginForm-actions">
+        <div class="loginForm-actions-row">
+            <div class="loginForm-actions-left">
+                <button
+                    class="loginForm-btn-help"
+                    ng-click="displayHelpModal()"
+                    translate-context="Action"
+                    translate-comment="link for login help"
+                    translate>Need help?</button>
+            </div>
+            <div class="loginForm-actions-right">
+                <button
+                    id="login_btn"
+                    type="submit"
+                    tabindex="3"
+                    class="pm_button primary pull-right loginForm-btn-submit"
+                    ng-disabled="networkActivity.loading()"
+                    translate-context="Action"
+                    translate>Login</button>
+            </div>
+        </div>
+        <div class="loginForm-actions-row">
+            <a
+                class="loginForm-link-signup"
+                href="https://protonmail.com/signup"
+                translate-context="Action"
+                translate-comment="link for login signup"
+                translate>Create Account</a>
+        </div>
     </div>
 
     <input type="hidden" id="hashed_pw" name="hashed_pw" />
