@@ -171,7 +171,7 @@ angular.module('proton.core')
                 if (angular.isObject(ctrl.filter.Simple)) {
                     const unsubscribe = $rootScope.$on('labelsModel', (e, { type }) => {
                         if (type === 'cache.update') {
-                            ctrl.filter.Simple.Actions.Labels = _.sortBy(labelModal.get(), 'Order');
+                            ctrl.filter.Simple.Actions.Labels = _.sortBy(labelsModel.get(), 'Order');
                         }
                     });
 
