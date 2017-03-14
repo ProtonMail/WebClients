@@ -1,0 +1,33 @@
+.loginForm-actions {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.loginForm-actions-row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.loginForm-actions-left {
+    display: flex;
+    flex:1;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+
+.loginForm-btn-help {
+    background: none;
+    border: none;
+    padding: 0;
+    margin: 10px 0px;
+    text-decoration: underline;
+}
+
+.loginForm-link-signup {
+    text-transform: none;
+    margin: 20px 0px;
+}
