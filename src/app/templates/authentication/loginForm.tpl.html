@@ -29,18 +29,14 @@
         class="margin loginForm-input-username"
         required="" />
 
-    <input
-        maxlength="{{ ::maxPW }}"
-        autocapitalize="off"
-        autocorrect="off"
-        type="password"
-        ng-model="password"
-        tabindex="2"
-        id="password"
-        name="password"
+    <password
         class="margin loginForm-input-password"
-        required=""
-        placeholder-translate="Password" />
+        data-id="password"
+        data-name="password"
+        data-value="password"
+        data-tabindex="2"
+        data-maxlength="{{ ::maxPW }}"
+        placeholder-translate="Password"></password>
 
     <div class="clearfix">
         <a
