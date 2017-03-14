@@ -61,7 +61,7 @@ angular.module('proton.conversation')
 
         if (!tools.cacheContext()) {
             promise.then(eventManager.call());
-            return networkActivityTracker.track(promise);
+            networkActivityTracker.track(promise);
         }
 
         const events = ids.reduce((acc, ID) => {
@@ -99,7 +99,7 @@ angular.module('proton.conversation')
 
         if (!tools.cacheContext()) {
             promise.then(eventManager.call());
-            return networkActivityTracker.track(promise);
+            networkActivityTracker.track(promise);
         }
 
         const events = ids.reduce((acc, ID) => {
