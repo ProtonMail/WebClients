@@ -122,31 +122,31 @@
                     <div class="alert pm_grid" ng-show="ctrl.hasMove">
                         <div class="col-1-4">
                             <label>
-                                <custom-radio data-custom-ng-model="ctrl.filter.Simple.Actions.Move" data-custom-ng-value="'0'"></custom-radio>
+                                <custom-radio data-custom-ng-model="ctrl.filter.Simple.Actions.Move" data-custom-value="inbox"></custom-radio>
                                 <span class="ellipsis" translate translate-context="Label">Inbox</span>
                             </label>
                         </div>
                         <div class="col-1-4">
                             <label>
-                                <custom-radio data-custom-ng-model="ctrl.filter.Simple.Actions.Move" data-custom-ng-value="'6'"></custom-radio>
+                                <custom-radio data-custom-ng-model="ctrl.filter.Simple.Actions.Move" data-custom-value="archive"></custom-radio>
                                 <span class="ellipsis" translate translate-context="Label">Archive</span>
                             </label>
                         </div>
                         <div class="col-1-4">
                             <label>
-                                <custom-radio data-custom-ng-model="ctrl.filter.Simple.Actions.Move" data-custom-ng-value="'4'"></custom-radio>
+                                <custom-radio data-custom-ng-model="ctrl.filter.Simple.Actions.Move" data-custom-value="spam"></custom-radio>
                                 <span class="ellipsis" translate translate-context="Label">Spam</span>
                             </label>
                         </div>
                         <div class="col-1-4">
                             <label>
-                                <custom-radio data-custom-ng-model="ctrl.filter.Simple.Actions.Move" data-custom-ng-value="'3'"></custom-radio>
+                                <custom-radio data-custom-ng-model="ctrl.filter.Simple.Actions.Move" data-custom-value="trash"></custom-radio>
                                 <span class="ellipsis" translate translate-context="Label">Trash</span>
                             </label>
                         </div>
                         <div class="col-1-4" ng-repeat="folder in ctrl.folders track by folder.ID">
                             <label>
-                                <custom-radio data-custom-ng-model="ctrl.filter.Simple.Actions.Move" data-custom-value="{{ ::folder.ID }}"></custom-radio>
+                                <custom-radio data-custom-ng-model="ctrl.filter.Simple.Actions.Move" data-custom-value="{{ ::folder.Name }}"></custom-radio>
                                 <span class="ellipsis" translate translate-context="Label">{{ ::folder.Name }}</span>
                             </label>
                         </div>
