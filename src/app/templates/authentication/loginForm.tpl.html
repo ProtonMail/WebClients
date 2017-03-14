@@ -1,6 +1,7 @@
 <form
     method="post"
     id="pm_login"
+    name="loginForm"
     class="pm_panel alt pm_form loginForm-containter"
     novalidate role="form"
     autocomplete="on"
@@ -36,6 +37,7 @@
         data-value="password"
         data-tabindex="2"
         data-maxlength="{{ ::maxPW }}"
+        data-form="loginForm"
         placeholder-translate="Password"></password>
 
     <div class="loginForm-actions">
