@@ -14,7 +14,7 @@
     height: $pm_loading;
     background: $white;
     border-radius: $pm_loading;
-    box-shadow: $box-shadow;
+    box-shadow: 1px 1px 3px rgba($border, 0.33), 0 0 2px rgba($border, 0.33);
     opacity: 0;
     transition: all .5s linear;
     animation-delay: 1.2s;
@@ -29,7 +29,7 @@
         left: 0px;
         box-sizing: border-box;
         border-radius: 50%;
-        border: 4px solid transparent;
+        border: 5px solid #f2f2f2;
         border-top-color: $primary;
         animation: load8 1s infinite linear;
     }
