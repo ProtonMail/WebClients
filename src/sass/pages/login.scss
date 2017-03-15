@@ -83,13 +83,8 @@ body#reset {
 
 	.password-container { line-height: 38px }
 
-	.loginForm-input-password.togglePasswordBehavior .password-messages,
+	.loginForm-input-password .password-messages,
 	.unlock-input-password .password-messages { display: none }
-
-	.loginForm-input-password.togglePasswordBehavior .password-input[type="password"],
-	.unlock-input-password .password-input[type="password"] {
-		padding: 10px 30px 10px 0px;
-	}
 
 	p {
 		text-transform: initial;
@@ -191,4 +186,10 @@ body.appConfigBody-is-mobile {
 	#pm_footer {
 		position: static;
 	}
+}
+
+
+:not(.ua-ie) .loginForm-input-password .password-input[type="password"],
+:not(.ua-ie) .unlock-input-password .password-input[type="password"] {
+	padding: 10px 30px 10px 0px;
 }
