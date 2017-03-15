@@ -590,18 +590,15 @@ const pmcrypto = (function pmcrypto() {
             }
 
             if (pubKeys === undefined || pubKeys.length < 1) {
-                return reject(new Error('Missing private keys'));
+                return reject(new Error('Missing public keys'));
             }
 
-            const keys = getKeys(pubKeys);
-            if (keys instanceof Error) return reject(keys);
-
-            const message = openpgp.message.readArmored(signedMessage.trim());
+            const message = openpgp.cleartext.readArmored(signedMessage.trim());
             if (message instanceof Error) return reject(message);
 
             const options = {
-                data: message,
-                publicKeys: keys,
+                message: message,
+                publicKeys: pubKeys,
             };
 
             openpgp.verify(options).then((signedMsg) => {
@@ -760,8 +757,8 @@ const pmcrypto = (function pmcrypto() {
             }
         }
 
-        if (info.bitSize < 2048) {
-            throw new Error('Key is less than 2048 bits');
+        if (info.bitSize < 1024) {
+            throw new Error('Key is less than 1024 bits');
         }
 
         if (info.expires) {
