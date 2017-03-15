@@ -275,24 +275,40 @@ angular.module('proton.core')
                 ctrl.filter.Simple.Conditions.splice(index, 1);
             };
 
+            /**
+             * Create a list of place to move the message
+             * @param  {Array}  options.FileInto
+             * @param  {String} options.Move
+             * @param  {Array}  labels
+             * @return {Array}
+             */
+            const bindFileInto = ({ FileInto = [], Move = '' } = {}, labels = []) => {
+                return _.uniq([Move].filter(Boolean).concat(FileInto, labels));
+            };
+
             ctrl.save = () => {
                 let promise;
                 let messageSuccess;
                 const clone = angular.copy(ctrl.filter);
 
                 if (angular.isObject(ctrl.filter.Simple) && Object.keys(ctrl.filter.Simple).length > 0) {
-                    if (ctrl.hasLabels === true) {
-                        clone.Simple.Actions.Labels = _.filter(clone.Simple.Actions.Labels, ({ Selected }) => Selected === true);
-                    } else {
-                        clone.Simple.Actions.Labels = [];
-                    }
 
                     if (ctrl.hasMove === false) {
-                        clone.Simple.Actions.Fileinto = null;
+                        clone.Simple.Actions.Move = '';
                     }
 
                     if (ctrl.hasMark === false) {
                         clone.Simple.Actions.Mark = { Read: false, Starred: false };
+                    }
+
+                    if (ctrl.hasLabels === true) {
+                        const labels = _.filter(clone.Simple.Actions.Labels, ({ Selected }) => Selected === true)
+                            .map(({ Name }) => Name);
+                        const fileInto = bindFileInto(clone.Simple.Actions, labels);
+                        clone.Simple.Actions.FileInto = fileInto;
+                        delete clone.Simple.Actions.Labels;
+                    } else {
+                        delete clone.Simple.Actions.Labels;
                     }
                 }
 
@@ -303,6 +319,8 @@ angular.module('proton.core')
                     promise = Filter.create(clone);
                     messageSuccess = gettextCatalog.getString('Filter created', null, 'Notification');
                 }
+
+                clone.Simple.Actions.FileInto = bindFileInto(clone.Simple.Actions);
 
                 const request = promise.then((result) => {
                     if (result.data && result.data.Code === 1000) {
