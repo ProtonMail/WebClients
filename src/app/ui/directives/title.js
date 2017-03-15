@@ -1,5 +1,5 @@
 angular.module('proton.ui')
-    .directive('title', ($rootScope, pageTitlesModel) => {
+    .directive('title', ($rootScope, pageTitlesModel, $state) => {
 
         const bindTitle = (el, title) => el.text(title);
 
@@ -9,6 +9,11 @@ angular.module('proton.ui')
             link(scope, el) {
                 $rootScope.$on('$stateChangeSuccess', (e, state) => {
                     bindTitle(el, pageTitlesModel.find(state));
+                });
+
+                // Update the counter
+                $rootScope.$on('elements', (e, { type }) => {
+                    (type === 'refresh') && bindTitle(el, pageTitlesModel.find($state.current));
                 });
             }
         };
