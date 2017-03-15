@@ -899,7 +899,7 @@ angular.module('proton.routes', [
         };
 
         elementView['view@secured.' + box] = {
-            template: '<element-view ng-class="{hasSelection: numberElementChecked}"></element-view>'
+            template: '<element-view></element-view>'
         };
 
         $stateProvider.state(parentState, {
