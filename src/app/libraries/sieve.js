@@ -7,18 +7,6 @@
 
     var DEBUG = true;
 
-    var MAILBOX_IDENTIFIERS = {
-        "inbox"  : '0',
-        "drafts" : '1',
-        "sent"   : '2',
-        "trash"  : '3',
-        "spam"   : '4',
-        "archive": '6',
-        "search" : '7',
-        "label"  : '8',
-        "starred": '10'
-    };
-
     var MATCH_KEYS = {
         "is"      : "Is",
         "contains": "Contains",
@@ -58,11 +46,8 @@
      */
     function mergeObjects(object1, object2) {
         var merged = {};
-        var attrname;
-
-        for (attrname in object1) { merged[attrname] = object1[attrname]; }
+        for (var attrname in object1) { merged[attrname] = object1[attrname]; }
         for (attrname in object2) { merged[attrname] = object2[attrname]; }
-
         return merged;
     }
 
@@ -79,7 +64,7 @@
         }
 
         pass = pass && simple.Operator   instanceof Object;
-        pass = pass && Array.isArray(simple.Conditions);
+        pass = pass && simple.Conditions instanceof Array;
         pass = pass && simple.Actions    instanceof Object;
 
         if (!pass) {
@@ -93,27 +78,26 @@
             throw { name: 'InvalidInput', message: 'Invalid simple operator' };
         }
 
-        simple.Conditions.forEach(function(condition) {
+        for (var index in simple.Conditions) {
+            var condition = simple.Conditions[index];
+
             pass = pass && condition.hasOwnProperty('Type');
             pass = pass && condition.Type.hasOwnProperty('label');
             pass = pass && condition.Type.hasOwnProperty('value');
+
             pass = pass && condition.hasOwnProperty('Comparator');
             pass = pass && condition.Comparator.hasOwnProperty('label');
             pass = pass && condition.Comparator.hasOwnProperty('value');
+
             pass = pass && condition.hasOwnProperty('Values');
-        });
+        }
 
         if (!pass) {
             throw { name: 'InvalidInput', message: 'Invalid simple conditions' };
         }
 
-        pass = pass && simple.Actions.hasOwnProperty('Labels');
-
-        simple.Actions.Labels.forEach(function (label) {
-            pass = pass && label.hasOwnProperty('Name');
-        });
-
-        pass = pass && simple.Actions.hasOwnProperty('Move');
+        pass = pass && simple.Actions.hasOwnProperty('FileInto');
+        pass = pass && simple.Actions.FileInto instanceof Array;
 
         pass = pass && simple.Actions.hasOwnProperty('Mark');
         pass = pass && simple.Actions.Mark.hasOwnProperty('Read');
@@ -136,8 +120,9 @@
         var tests = [];
         var thens = [];
 
-        simple.Conditions.forEach(function(condition) {
-
+        for (var index in simple.Conditions)
+        {
+            condition = simple.Conditions[index];
             var comparator = condition.Comparator.value;
             var test = null;
             var negate = false;
@@ -164,8 +149,9 @@
                     throw { name: 'InvalidInput', message: 'Unrecognized simple condition: ' + condition.Comparator.value};
             }
 
-            condition.Values.forEach(function(value, v) {
-
+            for (var v in condition.Values)
+            {
+                var value = condition.Values[v];
                 // Escape on Simple rep. "matches", "begins" and "ends" which maps to Tree "Matches"
                 switch (comparator)
                 {
@@ -181,8 +167,7 @@
                         condition.Values[v] = "".concat("*", value);
                         break;
                 }
-
-            });
+            }
 
             var match = MATCH_KEYS[comparator];
             var values = unique(condition.Values);
@@ -212,18 +197,12 @@
 
             if (negate) test = buildTestNegate(test);
             tests.push(test);
+        }
 
-        });
-
-        // Labels:
-        simple.Actions.Labels.forEach(function(label) {
-            then = buildFileintoThen(label.Name);
-            thens.push(then);
-        });
-
-        // Move:
-        if (simple.Actions.Move !== null) {
-            var destination = invert(MAILBOX_IDENTIFIERS)[simple.Actions.Move];
+        // FileInto:
+        for (var index in simple.Actions.FileInto)
+        {
+            var destination = simple.Actions.FileInto[index];
             if (destination !== null) {
                 then = buildFileintoThen(destination);
                 thens.push(then);
@@ -312,9 +291,10 @@
     {
         var conditions = [];
 
-        array.forEach(function(element) {
-            var negate = false;
+        for (var index in array) {
+            var element = array[index];
 
+            var negate = false;
             if (element.Type === "Not") {
                 negate = true;
                 element = element.Test;
@@ -323,7 +303,8 @@
             var type = null;
             var params = null;
 
-            switch (element.Type) {
+            switch (element.Type)
+            {
                 case "Exists":
                     if (element.Headers.indexOf("X-Attached") >= 0) {
                         type = "attachments";
@@ -365,7 +346,7 @@
 
             condition = buildSimpleCondition(type, comparator, params);
             conditions.push(condition);
-        });
+        }
 
         return conditions;
     }
@@ -373,52 +354,33 @@
     function iterateAction(array)
     {
         var actions = buildSimpleActions();
-        var labels = [];
         var labelindex = null;
 
-        array.forEach(function(element, index) {
+        for (var index in array) {
             var skip = false;
+            var element = array[index];
+
             var type = null;
             var params = null;
 
-            switch (element.Type) {
+            switch (element.Type)
+            {
                 case "Reject":
                     throw { name: 'UnsupportedRepresentation', message: 'Unsupported filter representation: Reject' };
 
-                    case "Redirect":
+                case "Redirect":
                     throw { name: 'UnsupportedRepresentation', message: 'Unsupported filter representation: Redirect' };
 
-                    case "Keep":
+                case "Keep":
                     break;
 
                 case "Discard":
-                    actions.Move = MAILBOX_IDENTIFIERS.trash;
+                    actions.FileInto.push("trash");
                     break;
 
                 case "FileInto":
                     var name = element.Name;
-
-                    switch (name) {
-                        case "inbox":
-                        case "drafts":
-                        case "sent":
-                        case "starred":
-                        case "archive":
-                        case "spam":
-                        case "trash":
-                            actions.Move = MAILBOX_IDENTIFIERS[name];
-                            break;
-
-                        default:
-                            label = {
-                                "Name": name
-                            };
-                            labels.push(label);
-                            if (labelindex === null) labelindex = index; // preserve the index of the first label action
-                            skip = true;
-                            break;
-                    }
-
+                    actions.FileInto.push(name);
                     break;
 
                 case "AddFlag":
@@ -436,10 +398,9 @@
                 default:
                     throw { name: 'UnsupportedRepresentation', message: 'Unsupported filter representation: ' + element.Type };
             }
-        });
 
-        // Append labels action
-        actions.Labels = labels;
+            if (skip) continue;
+        }
 
         return actions;
     }
@@ -455,7 +416,7 @@
         try {
             tree = toTree(modal);
         } catch (exception) {
-            if (DEBUG) console.error(exception);
+            if (DEBUG) console.log(exception.message);
             tree = [];
         }
 
@@ -470,7 +431,7 @@
         try {
             modal = fromTree(tree);
         } catch (exception) {
-            if (DEBUG) console.error(exception);
+            if (DEBUG) console.log(exception.message);
             modal = {};
         }
 
@@ -593,9 +554,9 @@
         };
     }
 
-    function buildFileintoThen(label) {
+    function buildFileintoThen(name) {
         return {
-            "Name": label,
+            "Name": name,
             "Type": "FileInto"
         };
     }
@@ -635,8 +596,7 @@
     function buildSimpleActions()
     {
         return {
-            "Labels": [],
-            "Move": null,
+            "FileInto": [],
             "Mark": {
                 "Read": false,
                 "Starred": false
