@@ -1,7 +1,7 @@
 angular.module('proton.formUtils')
 .directive('togglePassword', (gettextCatalog, dedentTpl) => {
 
-    const hasNativeButton = $.ua.browser.name === 'IE' || $.ua.browser.name === 'EDGE';
+    const hasNativeButton = $.ua.browser.name === 'IE' || $.ua.browser.name === 'Edge';
     const CLASS_DISPLAY_PASSWORD = 'togglePassword-btn-display';
     const TOOLTIPS = {
         SHOW: gettextCatalog.getString('Show password', null, 'toggle password'),
@@ -22,7 +22,7 @@ angular.module('proton.formUtils')
 
             const container = el[0].parentElement;
             container.insertAdjacentHTML('beforeEnd', template);
-            container.classList.add('togglePasswordBehavior');
+            container.classList.add('customPasswordToggler');
 
             return (scope, el) => {
                 const btn = el[0].parentElement.querySelector('.togglePassword-btn-toggle');
