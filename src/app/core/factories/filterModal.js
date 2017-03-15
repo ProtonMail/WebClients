@@ -88,9 +88,9 @@ angular.module('proton.core')
              */
             function prepareActions({ Simple = {} } = {}) {
                 const { Actions = {} } = Simple;
-                const { Move, Mark = { Read: false, Starred: false }, Labels = [] } = Actions;
+                const { Fileinto, Mark = { Read: false, Starred: false }, Labels = [] } = Actions;
                 const actions = {};
-                const move = Move || '';
+                const move = Fileinto || '';
 
                 ctrl.hasMove = move.length > 0;
                 actions.Move = (move.length) ? move : CONSTANTS.MAILBOX_IDENTIFIERS.inbox;
@@ -282,13 +282,13 @@ angular.module('proton.core')
 
                 if (angular.isObject(ctrl.filter.Simple) && Object.keys(ctrl.filter.Simple).length > 0) {
                     if (ctrl.hasLabels === true) {
-                        clone.Simple.Actions.Labels = _.filter(clone.Simple.Actions.Labels, (label) => { return label.Selected === true; });
+                        clone.Simple.Actions.Labels = _.filter(clone.Simple.Actions.Labels, ({ Selected }) => Selected === true);
                     } else {
                         clone.Simple.Actions.Labels = [];
                     }
 
                     if (ctrl.hasMove === false) {
-                        clone.Simple.Actions.Move = null;
+                        clone.Simple.Actions.Fileinto = null;
                     }
 
                     if (ctrl.hasMark === false) {
@@ -304,22 +304,21 @@ angular.module('proton.core')
                     messageSuccess = gettextCatalog.getString('Filter created', null, 'Notification');
                 }
 
-                networkActivityTracker.track(
-                    promise.then((result) => {
-                        if (result.data && result.data.Code === 1000) {
-                            notify({ message: messageSuccess, classes: 'notification-success' });
+                const request = promise.then((result) => {
+                    if (result.data && result.data.Code === 1000) {
+                        notify({ message: messageSuccess, classes: 'notification-success' });
+                        eventManager.call();
+                        params.close();
+                    } else if (result.data && result.data.Error) {
+                        notify({ message: result.data.Error, classes: 'notification-danger' });
+
+                        if (result.data.Code === 50016) {
                             eventManager.call();
                             params.close();
-                        } else if (result.data && result.data.Error) {
-                            notify({ message: result.data.Error, classes: 'notification-danger' });
-
-                            if (result.data.Code === 50016) {
-                                eventManager.call();
-                                params.close();
-                            }
                         }
-                    })
-                );
+                    }
+                });
+                networkActivityTracker.track(request);
             };
 
             ctrl.cancel = () => {
