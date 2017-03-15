@@ -1,5 +1,35 @@
 angular.module('proton.core')
 .factory('filterModal', ($timeout, $rootScope, pmModal, gettextCatalog, Filter, networkActivityTracker, notify, CONSTANTS, eventManager, labelModal, labelsModel) => {
+
+    const TRANSLATIONS = {
+        TYPES: [
+            { label: gettextCatalog.getString('Select', null), value: 'select' },
+            { label: gettextCatalog.getString('Subject', null), value: 'subject' },
+            { label: gettextCatalog.getString('Sender', null), value: 'sender' },
+            { label: gettextCatalog.getString('Recipient', null), value: 'recipient' },
+            { label: gettextCatalog.getString('Attachments', null), value: 'attachments' }
+        ],
+        COMPARATORS: [
+            { label: gettextCatalog.getString('contains', null), value: 'contains' },
+            { label: gettextCatalog.getString('is exactly', null), value: 'is' },
+            { label: gettextCatalog.getString('begins with', null), value: 'starts' },
+            { label: gettextCatalog.getString('ends with', null), value: 'ends' },
+            { label: gettextCatalog.getString('matches', null), value: 'matches' },
+            { label: gettextCatalog.getString('does not contain', null), value: '!contains' },
+            { label: gettextCatalog.getString('is not', null), value: '!is' },
+            { label: gettextCatalog.getString('does not begin with', null), value: '!starts' },
+            { label: gettextCatalog.getString('does not end with', null), value: '!ends' },
+            { label: gettextCatalog.getString('does not match', null), value: '!matches' }
+        ],
+        OPERATORS: [
+            { label: gettextCatalog.getString('all', null), value: 'all' },
+            { label: gettextCatalog.getString('any', null), value: 'any' }
+        ],
+        ERROR_PATTERN: gettextCatalog.getString('Text or pattern already included', null),
+        FILTER_UPDATED_SUCCESS: gettextCatalog.getString('Filter updated', null, 'Notification'),
+        FILTER_CREATED_SUCCESS: gettextCatalog.getString('Filter created', null, 'Notification')
+    };
+
     return pmModal({
         controllerAs: 'ctrl',
         templateUrl: 'templates/modals/filter.tpl.html',
@@ -14,32 +44,9 @@ angular.module('proton.core')
             ctrl.hasMark = false;
             ctrl.folders = foldersOrdered;
 
-            ctrl.types = [
-                { label: gettextCatalog.getString('Select', null), value: 'select' },
-                { label: gettextCatalog.getString('Subject', null), value: 'subject' },
-                { label: gettextCatalog.getString('Sender', null), value: 'sender' },
-                { label: gettextCatalog.getString('Recipient', null), value: 'recipient' },
-                { label: gettextCatalog.getString('Attachments', null), value: 'attachments' }
-            ];
-
-            ctrl.comparators = [
-                { label: gettextCatalog.getString('contains', null), value: 'contains' },
-                { label: gettextCatalog.getString('is exactly', null), value: 'is' },
-                { label: gettextCatalog.getString('begins with', null), value: 'starts' },
-                { label: gettextCatalog.getString('ends with', null), value: 'ends' },
-                { label: gettextCatalog.getString('matches', null), value: 'matches' },
-                { label: gettextCatalog.getString('does not contain', null), value: '!contains' },
-                { label: gettextCatalog.getString('is not', null), value: '!is' },
-                { label: gettextCatalog.getString('does not begin with', null), value: '!starts' },
-                { label: gettextCatalog.getString('does not end with', null), value: '!ends' },
-                { label: gettextCatalog.getString('does not match', null), value: '!matches' }
-            ];
-
-            ctrl.operators = [
-                { label: gettextCatalog.getString('all', null), value: 'all' },
-                { label: gettextCatalog.getString('any', null), value: 'any' }
-            ];
-
+            ctrl.types = angular.copy(TRANSLATIONS.TYPES);
+            ctrl.comparators = angular.copy(TRANSLATIONS.COMPARATORS);
+            ctrl.operators = angular.copy(TRANSLATIONS.OPERATORS);
             /**
              * Open a modal to create a new folder / label
              * @param  {Number} [Exclusive=0]
@@ -87,22 +94,21 @@ angular.module('proton.core')
              * @return {Object} actions
              */
             function prepareActions({ Simple = {} } = {}) {
-                const { Actions = {} } = Simple;
-                const { Move, Mark = { Read: false, Starred: false }, Labels = [] } = Actions;
-                const actions = {};
-                const move = Move || '';
+                const { FileInto = [], Mark = { Read: false, Starred: false } } = Simple.Actions || {};
+                const move = _.find(FileInto, (key) => CONSTANTS.MAILBOX_IDENTIFIERS[key]) || '';
+                ctrl.hasMove = !!move;
+                ctrl.hasMark = Mark.Read || Mark.Starred;
 
-                ctrl.hasMove = move.length > 0;
-                actions.Move = (move.length) ? move : CONSTANTS.MAILBOX_IDENTIFIERS.inbox;
-                ctrl.hasMark = (Mark.Read || Mark.Starred);
-                actions.Mark = Mark;
-                ctrl.hasLabels = Labels.length > 0;
-                actions.Labels = labelsOrdered.map((label) => {
-                    label.Selected = _.findIndex(Labels, { Name: label.Name }) !== -1;
+                const actions = {
+                    Labels: labelsOrdered.map((label) => {
+                        label.Selected = FileInto.indexOf(label.Name) !== -1;
+                        return label;
+                    }),
+                    Move: move || CONSTANTS.MAILBOX_IDENTIFIERS.inbox,
+                    Mark
+                };
 
-                    return label;
-                });
-
+                ctrl.hasLabels = !!_.where(actions.Labels, { Selected: true }).length;
                 return actions;
             }
 
@@ -112,9 +118,7 @@ angular.module('proton.core')
              * @return {Object}
              */
             function prepareOperator({ Simple = {} } = {}) {
-                const { Operator = {} } = Simple;
-                const { value = 'all' } = Operator;
-
+                const { value = 'all' } = Simple.Operator || {};
                 return _.findWhere(ctrl.operators, { value });
             }
 
@@ -199,7 +203,6 @@ angular.module('proton.core')
             ctrl.displaySeparator = () => {
                 if (ctrl.filter.Simple) {
                     const conditions = ctrl.filter.Simple.Conditions;
-
                     return conditions.length > 0 && conditions[0].Type.value !== 'select';
                 }
 
@@ -212,7 +215,7 @@ angular.module('proton.core')
                 // Check name
                 pass = ctrl.filter.Name.length > 0;
 
-                if (angular.isObject(ctrl.filter.Simple) && Object.keys(ctrl.filter.Simple).length > 0) {
+                if (Object.keys(ctrl.filter.Simple || {}).length > 0) {
                     // Simple mode
                     // Check conditions
                     let attachmentsCondition = 0;
@@ -265,61 +268,78 @@ angular.module('proton.core')
                         condition.value = '';
                     }
                 } else {
-                    notify({ message: gettextCatalog.getString('Text or pattern already included', null), classes: 'notification-danger' });
+                    notify({ message: TRANSLATIONS.ERROR_PATTERN, classes: 'notification-danger' });
                 }
             };
 
             ctrl.removeCondition = (condition) => {
                 const index = ctrl.filter.Simple.Conditions.indexOf(condition);
-
                 ctrl.filter.Simple.Conditions.splice(index, 1);
             };
 
+            /**
+             * Create a list of place to move the message
+             * @param  {Array}  options.FileInto
+             * @param  {String} options.Move
+             * @param  {Array}  labels
+             * @return {Array}
+             */
+            const bindFileInto = ({ FileInto = [], Move = '' } = {}, labels = []) => {
+                return _.uniq([Move].filter(Boolean).concat(FileInto, labels));
+            };
+
+            const requestUpdate = (data = {}) => {
+
+                const onSuccess = (message = '') => (result) => {
+                    if (result.data && result.data.Code === 1000) {
+                        notify({ message, classes: 'notification-success' });
+                        eventManager.call();
+                        params.close();
+                    } else if (result.data && result.data.Error) {
+                        notify({ message: result.data.Error, classes: 'notification-danger' });
+
+                        if (result.data.Code === 50016) {
+                            eventManager.call();
+                            params.close();
+                        }
+                    }
+                };
+
+                if (data.ID) {
+                    return Filter.update(data).then(onSuccess(TRANSLATIONS.FILTER_UPDATED_SUCCESS));
+                }
+                return Filter.create(data).then(onSuccess(TRANSLATIONS.FILTER_CREATED_SUCCESS));
+            };
+
             ctrl.save = () => {
-                let promise;
-                let messageSuccess;
+
                 const clone = angular.copy(ctrl.filter);
 
-                if (angular.isObject(ctrl.filter.Simple) && Object.keys(ctrl.filter.Simple).length > 0) {
-                    if (ctrl.hasLabels === true) {
-                        clone.Simple.Actions.Labels = _.filter(clone.Simple.Actions.Labels, (label) => { return label.Selected === true; });
-                    } else {
-                        clone.Simple.Actions.Labels = [];
-                    }
+                if (Object.keys(ctrl.filter.Simple || {}).length > 0) {
 
                     if (ctrl.hasMove === false) {
-                        clone.Simple.Actions.Move = null;
+                        clone.Simple.Actions.Move = '';
                     }
 
                     if (ctrl.hasMark === false) {
                         clone.Simple.Actions.Mark = { Read: false, Starred: false };
                     }
+
+                    if (ctrl.hasLabels === true) {
+                        const labels = _.filter(clone.Simple.Actions.Labels, ({ Selected }) => Selected === true)
+                            .map(({ Name }) => Name);
+                        const fileInto = bindFileInto(clone.Simple.Actions, labels);
+                        clone.Simple.Actions.FileInto = fileInto;
+                        delete clone.Simple.Actions.Labels;
+                    } else {
+                        delete clone.Simple.Actions.Labels;
+                    }
                 }
 
-                if (clone.ID) {
-                    promise = Filter.update(clone);
-                    messageSuccess = gettextCatalog.getString('Filter updated', null, 'Notification');
-                } else {
-                    promise = Filter.create(clone);
-                    messageSuccess = gettextCatalog.getString('Filter created', null, 'Notification');
-                }
+                clone.Simple.Actions.FileInto = bindFileInto(clone.Simple.Actions);
+                delete clone.Simple.Actions.Move;
 
-                networkActivityTracker.track(
-                    promise.then((result) => {
-                        if (result.data && result.data.Code === 1000) {
-                            notify({ message: messageSuccess, classes: 'notification-success' });
-                            eventManager.call();
-                            params.close();
-                        } else if (result.data && result.data.Error) {
-                            notify({ message: result.data.Error, classes: 'notification-danger' });
-
-                            if (result.data.Code === 50016) {
-                                eventManager.call();
-                                params.close();
-                            }
-                        }
-                    })
-                );
+                networkActivityTracker.track(requestUpdate(clone));
             };
 
             ctrl.cancel = () => {
