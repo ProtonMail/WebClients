@@ -1,3 +1,5 @@
 element-view {
     @include flexColumn();
+
+    .hasSelection { display: none }
 }
