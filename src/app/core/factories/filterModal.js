@@ -94,7 +94,7 @@ angular.module('proton.core')
              * @return {Object} actions
              */
             function prepareActions({ Simple = {} } = {}) {
-                const { FileInto = [], Mark = { Read: false, Starred: false } } = Simple.Actions;
+                const { FileInto = [], Mark = { Read: false, Starred: false } } = Simple.Actions || {};
                 const move = _.find(FileInto, (key) => CONSTANTS.MAILBOX_IDENTIFIERS[key]) || '';
                 ctrl.hasMove = !!move;
                 ctrl.hasMark = Mark.Read || Mark.Starred;

@@ -68,7 +68,8 @@ module.exports = {
       "vendor/nouislider/distribute/nouislider.js",
       "vendor/ua-parser-js/dist/ua-parser.min.js",
       "vendor/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.concat.min.js",
-      "vendor/ng-scrollbars/dist/scrollbars.min.js"
+      "vendor/ng-scrollbars/dist/scrollbars.min.js",
+      "vendor/sieve/sieve.js"
     ],
     bootstrap_components: [
       "affix",
