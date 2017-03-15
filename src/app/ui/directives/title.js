@@ -13,7 +13,7 @@ angular.module('proton.ui')
 
                 // Update the counter
                 $rootScope.$on('elements', (e, { type }) => {
-                    (type === 'refresh') && bindTitle(el, pageTitlesModel.find($state.current));
+                    (type === 'refresh' && !$state.is('secured.label.element')) && bindTitle(el, pageTitlesModel.find($state.current));
                 });
             }
         };
