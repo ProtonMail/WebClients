@@ -25,8 +25,10 @@ angular.module('proton.core')
         const getMaxPage = () => {
 
             const counter = cacheCounters.getCounter($stateParams.label);
+
             if ($stateParams.label && counter) {
-                return Math.ceil(counter[getLayout()].total / ELEMENTS_PER_PAGE);
+                const key = ($stateParams.filter === 'unread') ? 'unread' : 'total';
+                return Math.ceil(counter[getLayout()][key] / ELEMENTS_PER_PAGE);
             }
 
             return pageMax || Math.ceil(cacheCounters.getCurrentState() / ELEMENTS_PER_PAGE);
