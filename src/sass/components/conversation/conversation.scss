@@ -1,3 +1,4 @@
 .conversation-container {
     @include flexColumn();
 }
+.hasElementsSelected [id="conversation-view"] { display: none !important }
