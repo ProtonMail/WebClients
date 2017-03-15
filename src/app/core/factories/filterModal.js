@@ -94,22 +94,21 @@ angular.module('proton.core')
              * @return {Object} actions
              */
             function prepareActions({ Simple = {} } = {}) {
-                const { Actions = {} } = Simple;
-                const { Fileinto, Mark = { Read: false, Starred: false }, Labels = [] } = Actions;
-                const actions = {};
-                const move = Fileinto || '';
+                const { FileInto = [], Mark = { Read: false, Starred: false } } = Simple.Actions;
+                const move = _.find(FileInto, (key) => CONSTANTS.MAILBOX_IDENTIFIERS[key]) || '';
+                ctrl.hasMove = !!move;
+                ctrl.hasMark = Mark.Read || Mark.Starred;
 
-                ctrl.hasMove = move.length > 0;
-                actions.Move = (move.length) ? move : CONSTANTS.MAILBOX_IDENTIFIERS.inbox;
-                ctrl.hasMark = (Mark.Read || Mark.Starred);
-                actions.Mark = Mark;
-                ctrl.hasLabels = Labels.length > 0;
-                actions.Labels = labelsOrdered.map((label) => {
-                    label.Selected = _.findIndex(Labels, { Name: label.Name }) !== -1;
+                const actions = {
+                    Labels: labelsOrdered.map((label) => {
+                        label.Selected = FileInto.indexOf(label.Name) !== -1;
+                        return label;
+                    }),
+                    Move: move || CONSTANTS.MAILBOX_IDENTIFIERS.inbox,
+                    Mark
+                };
 
-                    return label;
-                });
-
+                ctrl.hasLabels = !!_.where(actions.Labels, { Selected: true }).length;
                 return actions;
             }
 
