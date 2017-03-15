@@ -80,6 +80,9 @@ body#reset {
 			color: $white;
 		}
 	}
+	.loginForm-input-password .password-messages,
+	.unlock-input-password .password-messages { display: none }
+
 	p {
 		text-transform: initial;
 	}
