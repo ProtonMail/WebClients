@@ -83,10 +83,10 @@ body#reset {
 
 	.password-container { line-height: 38px }
 
-	.loginForm-input-password .password-messages,
+	.loginForm-input-password.togglePasswordBehavior .password-messages,
 	.unlock-input-password .password-messages { display: none }
 
-	.loginForm-input-password .password-input[type="password"],
+	.loginForm-input-password.togglePasswordBehavior .password-input[type="password"],
 	.unlock-input-password .password-input[type="password"] {
 		padding: 10px 30px 10px 0px;
 	}

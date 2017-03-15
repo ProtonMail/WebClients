@@ -22,6 +22,7 @@ angular.module('proton.formUtils')
 
             const container = el[0].parentElement;
             container.insertAdjacentHTML('beforeEnd', template);
+            container.classList.add('togglePasswordBehavior');
 
             return (scope, el) => {
                 const btn = el[0].parentElement.querySelector('.togglePassword-btn-toggle');
