@@ -321,6 +321,7 @@ angular.module('proton.core')
                 }
 
                 clone.Simple.Actions.FileInto = bindFileInto(clone.Simple.Actions);
+                delete clone.Simple.Actions.Move;
 
                 const request = promise.then((result) => {
                     if (result.data && result.data.Code === 1000) {
