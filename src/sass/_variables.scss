@@ -55,7 +55,7 @@ $body-background-size:     cover;
 $main-background:          #FFF;
 $message-backgroud:        #FFF;
 $header-background:		   #6a6f7c;
-$search-form-background:   set-invert-color($header-background, darken(rgba($header-background, .1), 50));
+$search-form-background:   set-invert-color($header-background, darken(rgba($header-background, .2), 50));
 $sidebar-background:       $secondary;
 $logo-background:		   $sidebar-background;
 $composer-btn-background:  $primary;
@@ -88,7 +88,7 @@ $message-placeholder-color: #acb0bf;
 
 
 //============================= Borders =============================//
-$border: 			    set-color($main-background, rgba($default-color,.3));
+$border: 			    #acb0bf;
 $border-radius:         2px;
 $border-radius-large:   4px;
 // --- Component Specific
@@ -96,7 +96,7 @@ $main-radius:           0;
 
 
 //============================= Shadows =============================//
-$box-shadow:		    1px 1px 3px rgba($border, 0.33), 0 0 2px rgba($border, 0.33);
+$box-shadow:		    1px 1px 3px rgba($black, 0.33), 0 0 2px rgba($black, 0.33);
 //== Component Specific
 $main-shadow:           0;
 
