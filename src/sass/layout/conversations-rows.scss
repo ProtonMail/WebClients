@@ -24,7 +24,7 @@ body {
                 width: 1rem;
                 cursor: pointer;
             }
-            .fa-star-o { color: $default-color-light }
+            .fa-star-o { color: inherit; opacity: .3 }
             .fa-star { color: $yellow }
 
             .senders {
