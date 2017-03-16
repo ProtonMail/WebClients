@@ -134,7 +134,7 @@
 .sidebarApp-link {
     background: transparent;
     border: 0;
-    text-align: left
+    text-align: left;
 }
 
 .sidebarApp-container a {cursor: pointer}
@@ -144,7 +144,7 @@
     display: block;
     list-style-type: none;
     font-size: 14px;
-    margin: 0 -20px 10px -20px;
+    margin: 0 -20px 10px -25px;
 }
 
 .sidebarApp-menu a {cursor: pointer}
@@ -191,6 +191,10 @@
     line-height: initial;
 }
 
+.sidebarApp-item .sidebarApp-label {
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
 
 .sidebarApp-menu .menuLabel-link {
     padding: 0;
@@ -260,7 +264,7 @@
         box-sizing: border-box
     }
 
-    .menuLabel-link { padding: 0 20px }
+    .menuLabel-link { padding: 0 25px 0px 15px }
 }
 
 .appConfigBody-is-mobile .sidebarApp-container {
