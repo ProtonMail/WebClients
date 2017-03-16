@@ -146,7 +146,7 @@
                         </div>
                         <div class="col-1-4" ng-repeat="folder in ctrl.folders track by folder.ID">
                             <label>
-                                <custom-radio data-custom-ng-model="ctrl.filter.Simple.Actions.Move" data-custom-value="{{ ::folder.ID }}"></custom-radio>
+                                <custom-radio data-custom-ng-model="ctrl.filter.Simple.Actions.Move" data-custom-value="{{ ::folder.Name }}"></custom-radio>
                                 <span class="ellipsis" translate translate-context="Label">{{ ::folder.Name }}</span>
                             </label>
                         </div>

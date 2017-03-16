@@ -88,6 +88,13 @@ angular.module('proton.core')
                 return conditions;
             }
 
+            const findCurrentMoveFolder = (list = []) => {
+                const map = labelsModel.get('folders')
+                    .reduce((acc, label) => (acc[label.Name] = label, acc), {});
+                const folder = _.find(list, (key) => CONSTANTS.MAILBOX_IDENTIFIERS[key] || map[key]);
+                return folder || '';
+            };
+
             /**
              * Prepare the Actions Model
              * @param {Object}
@@ -95,7 +102,7 @@ angular.module('proton.core')
              */
             function prepareActions({ Simple = {} } = {}) {
                 const { FileInto = [], Mark = { Read: false, Starred: false } } = Simple.Actions || {};
-                const move = _.find(FileInto, (key) => CONSTANTS.MAILBOX_IDENTIFIERS[key]) || '';
+                const move = findCurrentMoveFolder(FileInto);
                 ctrl.hasMove = !!move;
                 ctrl.hasMark = Mark.Read || Mark.Starred;
 
@@ -175,7 +182,8 @@ angular.module('proton.core')
                 if (angular.isObject(ctrl.filter.Simple)) {
                     const unsubscribe = $rootScope.$on('labelsModel', (e, { type }) => {
                         if (type === 'cache.update') {
-                            ctrl.filter.Simple.Actions.Labels = _.sortBy(labelsModel.get(), 'Order');
+                            ctrl.filter.Simple.Actions.Labels = labelsModel.get('labels');
+                            ctrl.folders = labelsModel.get('folders');
                         }
                     });
 
