@@ -133,6 +133,12 @@
         font-size: 1rem;
     }
 
+    .genNewKeys-loader-container,
+    .creating-loader-container {
+        display: flex;
+        justify-content: center;
+    }
+
 }
 
 body.appConfigBody-is-mobile {

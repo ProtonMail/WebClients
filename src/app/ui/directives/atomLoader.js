@@ -12,10 +12,15 @@ angular.module('proton.ui')
     return {
         replace: true,
         templateUrl: 'templates/ui/atomLoader.tpl.html',
-        link(scope, el, { translationKey }) {
+        link(scope, el, { translationKey, loaderTheme }) {
 
-            const $textLoader = el[0].querySelector('.atomLoader-text');
-            $textLoader.textContent = getTranslatedText(translationKey);
+            loaderTheme && el[0].classList.add(loaderTheme);
+
+            if (translationKey) {
+                const $textLoader = el[0].querySelector('.atomLoader-text');
+                $textLoader.textContent = getTranslatedText(translationKey);
+            }
+
         }
     };
 });

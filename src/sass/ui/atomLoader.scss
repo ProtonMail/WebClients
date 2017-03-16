@@ -1,3 +1,5 @@
+.atomLoader { color: $white }
+
 .atomLoader-container {
   position: relative;
   display:flex;
@@ -46,9 +48,24 @@
 
 .atomLoader-text {
     text-align: center;
-    color: $white;
+    color: inherit;
 }
 
+.atomLoader.primary {
+    color: $primary;
+    .atomLoader-proton { background: $primary }
+    .atomLoader-item,
+    .atomLoader-item2,
+    .atomLoader-item3 { border-color: $primary }
+}
+
+.atomLoader.dark {
+    color: $secondary;
+    .atomLoader-proton { background: $secondary }
+    .atomLoader-item,
+    .atomLoader-item2,
+    .atomLoader-item3 { border-color: $secondary }
+}
 
 @keyframes atomLoader-item {
   from { transform: rotateZ(120deg) rotateX(70deg) rotateZ(0deg) }
