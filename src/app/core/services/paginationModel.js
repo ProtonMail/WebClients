@@ -3,7 +3,6 @@ angular.module('proton.core')
 
         const { ELEMENTS_PER_PAGE, MESSAGE_VIEW_MODE } = CONSTANTS;
         let currentState = '';
-        let pageMax = 1;
 
         $rootScope.$on('$stateChangeSuccess', (e, state) => {
             currentState = state.name.replace('.element', '');
@@ -31,18 +30,7 @@ angular.module('proton.core')
                 return Math.ceil(counter[getLayout()][key] / ELEMENTS_PER_PAGE);
             }
 
-            return pageMax || Math.ceil(cacheCounters.getCurrentState() / ELEMENTS_PER_PAGE);
-        };
-
-        /**
-         * Set the max page number where an user can go based on the total
-         * of items displayable
-         * @param  {Number} total
-         * @return {void}
-         */
-        const setMaxPage = (total) => {
-            const value = total || cacheCounters.getCurrentState();
-            pageMax = Math.ceil(value / ELEMENTS_PER_PAGE);
+            return Math.ceil(cacheCounters.getCurrentState() / ELEMENTS_PER_PAGE);
         };
 
         /**
@@ -89,7 +77,7 @@ angular.module('proton.core')
         const init = angular.noop;
         return {
             init, next, previous,
-            setMaxPage, getMaxPage, isMax,
+            getMaxPage, isMax,
             to: switchPage
         };
 

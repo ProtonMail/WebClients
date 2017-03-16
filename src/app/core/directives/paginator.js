@@ -82,10 +82,8 @@ angular.module('proton.core')
 
             const unsubscribe = $rootScope.$on('app.cacheCounters', (event, { type, data }) => {
                 if (type === 'refresh.currentState') {
-                    const { value } = data;
-                    paginationModel.setMaxPage(value);
                     scope.$applyAsync(() => {
-                        scope.pages = buildPages(value);
+                        scope.pages = buildPages(data.value);
                         el[0].className = `${rawClassNames} ${buildClassNames(scope)}`;
                     });
                 }
