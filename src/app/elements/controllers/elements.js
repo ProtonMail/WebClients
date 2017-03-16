@@ -296,18 +296,6 @@ angular.module('proton.elements')
         });
     };
 
-    function conversationCount() {
-        const context = tools.cacheContext();
-
-        if (!context) {
-            return cacheCounters.getCurrentState();
-        }
-
-        const label = ($scope.mailbox === 'label') ? $stateParams.label : CONSTANTS.MAILBOX_IDENTIFIERS[$scope.mailbox];
-
-        return (tools.typeList() === 'message') ? cacheCounters.totalMessage(label) : cacheCounters.totalConversation(label);
-    }
-
     function forgeRequestParameters(mailbox) {
         const params = {
             Page: (~~$stateParams.page || 1) - 1
@@ -727,7 +715,6 @@ angular.module('proton.elements')
      */
     function goToPage(type = 'to') {
         $stateParams.page && $scope.selectElements('all', false);
-        paginationModel.setMaxPage(conversationCount());
         $scope.page = ~~$stateParams.page || 1;
         paginationModel[type]();
     }
