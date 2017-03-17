@@ -3,6 +3,7 @@
 	border-radius: 4px;
 	background: #f7f7f7;
 	a { color: $primary }
+	.pm_button { background: $white }
 	&.alert-info {
 		background: $primary-light;
 		a {
