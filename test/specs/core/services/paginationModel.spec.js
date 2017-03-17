@@ -79,14 +79,14 @@ describe('paginationModel factory', () => {
                 spyOn(cacheCounters, 'getCounter').and.returnValue();
                 spyOn(cacheCounters, 'getCurrentState').and.returnValue(10);
                 total = factory.getMaxPage();
-            })
+            });
 
             it('should get counters', () => {
                 expect(cacheCounters.getCounter).toHaveBeenCalledWith(undefined);
             });
 
-            it('should not get counters for the current state', () => {
-                expect(cacheCounters.getCurrentState).not.toHaveBeenCalled();
+            it('should get counters for the current state', () => {
+                expect(cacheCounters.getCurrentState).toHaveBeenCalledTimes(1);
             });
 
             it('should return the default pageMax', () => {
@@ -106,14 +106,14 @@ describe('paginationModel factory', () => {
                 });
                 spyOn(cacheCounters, 'getCurrentState').and.returnValue(10);
                 total = factory.getMaxPage();
-            })
+            });
 
             it('should get counters', () => {
                 expect(cacheCounters.getCounter).toHaveBeenCalledWith(undefined);
             });
 
-            it('should not get counters for the current state', () => {
-                expect(cacheCounters.getCurrentState).not.toHaveBeenCalled();
+            it('should get counters for the current state', () => {
+                expect(cacheCounters.getCurrentState).toHaveBeenCalledTimes(1);
             });
 
             it('should return the default pageMax', () => {
@@ -130,7 +130,7 @@ describe('paginationModel factory', () => {
                 spyOn(cacheCounters, 'getCounter').and.returnValue();
                 spyOn(cacheCounters, 'getCurrentState').and.returnValue(10);
                 total = factory.getMaxPage();
-            })
+            });
 
             it('should get counters', () => {
                 expect(cacheCounters.getCounter).toHaveBeenCalledWith('monique');
@@ -140,8 +140,8 @@ describe('paginationModel factory', () => {
                 expect(total).toBe(1);
             });
 
-            it('should not get counters for the current state', () => {
-                expect(cacheCounters.getCurrentState).not.toHaveBeenCalled();
+            it('should get counters for the current state', () => {
+                expect(cacheCounters.getCurrentState).toHaveBeenCalledTimes(1);
             });
         });
 
@@ -208,9 +208,8 @@ describe('paginationModel factory', () => {
                 spyOn(cacheCounters, 'getCounter').and.returnValue();
                 spyOn(cacheCounters, 'getCurrentState').and.returnValue(CONSTANTS.ELEMENTS_PER_PAGE + 1);
                 delete stateParamsMock.label;
-                factory.setMaxPage();
                 total = factory.getMaxPage();
-            })
+            });
 
             it('should get counters for the current state', () => {
                 expect(cacheCounters.getCurrentState).toHaveBeenCalled();
@@ -227,62 +226,6 @@ describe('paginationModel factory', () => {
 
         });
 
-        describe('State custom total', () => {
-            let total;
-            beforeEach(() => {
-                spyOn(cacheCounters, 'getCounter').and.returnValue();
-                spyOn(cacheCounters, 'getCurrentState').and.returnValue(1000);
-                delete stateParamsMock.label;
-                factory.setMaxPage(CONSTANTS.ELEMENTS_PER_PAGE * 3);
-                total = factory.getMaxPage();
-            })
-
-            it('should not get counters for the current state', () => {
-                expect(cacheCounters.getCurrentState).not.toHaveBeenCalled();
-            });
-
-            it('should get counters', () => {
-                expect(cacheCounters.getCounter).toHaveBeenCalledWith(undefined);
-            });
-
-            it('should return the default pageMax', () => {
-                expect(total).toBe(3);
-            });
-
-        });
-
-        describe('State custom total null and async currentState', () => {
-            let total;
-            let i;
-            beforeEach(() => {
-                i = 0;
-                spyOn(cacheCounters, 'getCounter').and.returnValue();
-                spyOn(cacheCounters, 'getCurrentState').and.callFake(() => {
-                    i++;
-                    if (i === 2) {
-                        return CONSTANTS.ELEMENTS_PER_PAGE * 5
-                    }
-                    return 0;
-                });
-                delete stateParamsMock.label;
-                factory.setMaxPage();
-                total = factory.getMaxPage();
-            })
-
-            it('should get counters for the current state', () => {
-                expect(cacheCounters.getCurrentState).toHaveBeenCalled();
-                expect(cacheCounters.getCurrentState).toHaveBeenCalledTimes(2);
-            });
-
-            it('should get counters', () => {
-                expect(cacheCounters.getCounter).toHaveBeenCalledWith(undefined);
-            });
-
-            it('should custom page max', () => {
-                expect(total).toBe(5);
-            });
-
-        });
     });
 
     describe('Previous page', () => {
@@ -412,8 +355,7 @@ describe('paginationModel factory', () => {
             beforeEach(() => {
                 spyOn(cacheCounters, 'getCurrentState').and.returnValue(CONSTANTS.ELEMENTS_PER_PAGE * 10);
                 delete stateParamsMock.page;
-                factory.setMaxPage();
-            })
+            });
 
             describe('No page', () => {
 
@@ -500,7 +442,16 @@ describe('paginationModel factory', () => {
         describe('Default page max 1', () => {
 
             beforeEach(() => {
+                spyOn(cacheCounters, 'getCurrentState').and.returnValue(1);
+                spyOn(cacheCounters, 'getCounter').and.returnValue();
                 spyOn(state, 'go');
+            });
+
+            it('should compare to the current state', () => {
+                stateParamsMock.page = 1;
+                expect(factory.isMax()).toBe(true);
+                expect(cacheCounters.getCounter).toHaveBeenCalledTimes(1);
+                expect(cacheCounters.getCurrentState).toHaveBeenCalledTimes(1);
             });
 
             it('should return true if page is > 1', () => {
@@ -524,7 +475,6 @@ describe('paginationModel factory', () => {
             beforeEach(() => {
                 spyOn(cacheCounters, 'getCurrentState').and.returnValue(CONSTANTS.ELEMENTS_PER_PAGE * 10);
                 delete stateParamsMock.page;
-                factory.setMaxPage();
                 spyOn(state, 'go');
             });
 
@@ -549,7 +499,7 @@ describe('paginationModel factory', () => {
             });
 
         });
-    })
+    });
 
 
 });
