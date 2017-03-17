@@ -48,6 +48,14 @@ angular.module('proton.settings')
         labelModal.activate({
             params: {
                 label,
+                onSuccess() {
+                    // Auto Scroll to the latest item
+                    const id = setTimeout(() => {
+                        const $li = document.querySelector('.labelsState-item:last-child');
+                        $li && $li.scrollIntoView();
+                        clearTimeout(id);
+                    }, 500);
+                },
                 close() {
                     labelModal.deactivate();
                 }

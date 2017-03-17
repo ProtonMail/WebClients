@@ -104,6 +104,7 @@ angular.module('proton.labels')
                     .then((label) => {
                         notify({ message: successMessage, classes: 'notification-success' });
                         hotkeys.bind();
+                        (params.onSuccess || angular.noop)(label);
                         params.close(label);
                     });
                 networkActivityTracker.track(promise);
