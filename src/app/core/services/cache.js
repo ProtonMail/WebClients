@@ -97,22 +97,17 @@ angular.module('proton.core')
         const current = _.findWhere(conversationsCached, { ID: conversation.ID });
 
         if (current) {
-            conversationsCached = _.map(conversationsCached, (conv) => {
-                if (conv.ID === conversation.ID) {
-                    const c = _.extend({}, conv, conversation);
-                    c.LabelIDs = getLabelsId(conv, conversation);
-                    delete c.LabelIDsAdded;
-                    delete c.LabelIDsRemoved;
-
-                    return c;
-                }
-
-                return conv;
-            });
-        } else {
-            conversationsCached.push(conversation);
+            _.extend(current, conversation);
+            delete current.LabelIDsAdded;
+            delete current.LabelIDsRemoved;
+            current.LabelIDs = getLabelsId(current, conversation);
+            manageTimes(current.ID);
+            $rootScope.$emit('labelsElement.' + current.ID, current);
+            $rootScope.$emit('foldersElement.' + current.ID, current);
+            return;
         }
 
+        conversationsCached.push(conversation);
         manageTimes(conversation.ID);
         $rootScope.$emit('labelsElement.' + conversation.ID, conversation);
         $rootScope.$emit('foldersElement.' + conversation.ID, conversation);
