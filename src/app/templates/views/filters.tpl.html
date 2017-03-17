@@ -21,7 +21,7 @@
                         <ul data-as-sortable="filterDragControlListeners"  is-disabled="customFilters.length === 1" ng-class="{ 'as-sortable-disabled': customFilters.length === 1 }" data-ng-model="customFilters">
                             <li ng-repeat="filter in customFilters | orderBy: 'Priority'" as-sortable-item="">
                                 <div as-sortable-item-handle="" class="pm_grid" ng-class="{ 'flex flex-row flex-mobileShrink': mobileMode }">
-                                    <div class="col-1-2 ellipsis" title="f{{ filter.Name }}">
+                                    <div class="col-1-2 ellipsis" title="{{ filter.Name }}">
                                         <i class="fa fa-ellipsis-v as-sortable-icon"></i> {{ filter.Name }}
                                     </div>
                                     <div class="col-1-4 desktopOnly">
