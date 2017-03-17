@@ -9,32 +9,12 @@ angular.module('proton.keys')
         const { EMAIL_FORMATING } = CONSTANTS;
 
         /**
-         * Get email address corresponding to a key fingerprint
-         * @param  {Array} addresses
-         * @param  {String} fingerprint
-         * @return {String} email
-         */
-        function getEmailFromFingerprint(addresses = [], fingerprint = '') {
-            let email = '';
-            _.each(addresses, (address) => {
-                const foundKey = _.findWhere(address.Keys, { Fingerprint: fingerprint });
-                if (foundKey) {
-                    email = address.Email;
-                }
-            });
-            return email;
-        }
-        /**
          * Validate a key's userID without a known email
          * @param  {String} userId
          * @return {bool}
          */
         function validUserIDUnknownEmail(userId = '') {
             const split = userId.split(' ');
-            if (split.length < 1) {
-                return false;
-            }
-
             const emailWithBrackets = split[split.length - 1];
             const emailWithoutBrackets = emailWithBrackets.substring(1, emailWithBrackets.length - 1);
             if (emailWithBrackets[0] !== EMAIL_FORMATING.OPEN_TAG_AUTOCOMPLETE_RAW || emailWithBrackets[emailWithBrackets.length - 1] !== EMAIL_FORMATING.CLOSE_TAG_AUTOCOMPLETE_RAW || !regexEmail.test(emailWithoutBrackets)) {
@@ -56,7 +36,7 @@ angular.module('proton.keys')
          * @param  {Array} addresses
          * @return {Array}
          */
-        function getPrimaryKeyPromises(primaryKeys = [], addresses = []) {
+        function getPrimaryKeyPromises(primaryKeys = []) {
             // For primary keys, we will determine which email to use by comparing their fingerprints with the address keys
             return _.reduce(primaryKeys, (acc, privKey) => {
                 const userId = privKey.users[0].userId.userid;
@@ -106,7 +86,7 @@ angular.module('proton.keys')
 
         return (user, keys) => {
             const primaryKeys = keys['0'];
-            const primaryKeyPromises = getPrimaryKeyPromises(primaryKeys, user.Addresses);
+            const primaryKeyPromises = getPrimaryKeyPromises(primaryKeys);
             const addressKeyPromises = getAddressKeyPromises(keys, user.Addresses);
 
             return Promise.all(primaryKeyPromises.concat(addressKeyPromises));
