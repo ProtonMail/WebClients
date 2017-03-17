@@ -45,7 +45,7 @@ angular.module('proton.keys')
                     }
                 });
 
-                if (foundKey != null) {
+                if (foundKey === null) {
                     acc.emails[key.ID] = Addresses[0].Email;
                 }
                 return acc;
