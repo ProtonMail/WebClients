@@ -31,11 +31,11 @@ angular.module('proton.keys')
          */
         function validUserIDUnknownEmail(userId = '') {
             const split = userId.split(' ');
-            if (split.length !== 2) {
+            if (split.length < 1) {
                 return false;
             }
 
-            const emailWithBrackets = split[1];
+            const emailWithBrackets = split[split.length - 1];
             const emailWithoutBrackets = emailWithBrackets.substring(1, emailWithBrackets.length - 1);
             if (emailWithBrackets[0] !== EMAIL_FORMATING.OPEN_TAG_AUTOCOMPLETE_RAW || emailWithBrackets[emailWithBrackets.length - 1] !== EMAIL_FORMATING.CLOSE_TAG_AUTOCOMPLETE_RAW || !regexEmail.test(emailWithoutBrackets)) {
                 return false;
@@ -60,17 +60,16 @@ angular.module('proton.keys')
             // For primary keys, we will determine which email to use by comparing their fingerprints with the address keys
             return _.reduce(primaryKeys, (acc, privKey) => {
                 const userId = privKey.users[0].userId.userid;
-                const fingerprint = privKey.primaryKey.fingerprint;
 
-                const email = getEmailFromFingerprint(addresses, fingerprint);
-
-                // If there is no matching fingerprint, we will just make sure the User ID matches the pattern "something <email>"
-                if (!email.length) {
-                    if (!validUserIDUnknownEmail(userId)) {
-                        acc.push(Promise.reject(new Error('Invalid UserID ' + userId)));
-                        return acc;
-                    }
+                // Make sure the User ID matches the pattern "something <email>"
+                if (!validUserIDUnknownEmail(userId)) {
+                    acc.push(Promise.reject(new Error('Invalid UserID ' + userId)));
+                    return acc;
                 }
+
+                const split = userId.split(' ');
+                const emailWithBrackets = split[split.length - 1];
+                const email = emailWithBrackets.substring(1, emailWithBrackets.length - 1);
 
                 const keyInfo = pmcw.keyInfo(privKey.armor(), email, false)
                     .then(onValidationError);
