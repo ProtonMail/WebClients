@@ -111,7 +111,7 @@ angular.module('proton.core')
                         label.Selected = FileInto.indexOf(label.Name) !== -1;
                         return label;
                     }),
-                    Move: move || CONSTANTS.MAILBOX_IDENTIFIERS.inbox,
+                    Move: move || 'inbox',
                     Mark
                 };
 
@@ -251,6 +251,10 @@ angular.module('proton.core')
 
                     if (ctrl.hasMark === true) {
                         pass = pass && (ctrl.filter.Simple.Actions.Mark.Starred || ctrl.filter.Simple.Actions.Mark.Read);
+                    }
+
+                    if (ctrl.hasMove === true) {
+                        pass = pass && !!ctrl.filter.Simple.Actions.Move;
                     }
 
                     return pass;
