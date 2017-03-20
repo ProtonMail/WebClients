@@ -1,6 +1,7 @@
 angular.module('proton.sidebar')
     .directive('menuLabel', ($rootScope, labelsModel, $stateParams, dedentTpl, $state, sidebarModel) => {
 
+        const CLEANER = document.createElement('div');
         const getClassName = (ID) => {
             const isActiveLabel = $stateParams.label === ID;
             return ['menuLabel-item', isActiveLabel && 'active']
@@ -8,20 +9,22 @@ angular.module('proton.sidebar')
                 .join(' ');
         };
 
+        /**
+         * Remove HTML inside a string, prevent XSS
+         * @param  {String} s
+         * @return {String}
+         */
         const stripHTML = (s) => {
-            const holder = document.createElement('div');
-            holder.innerText = s;
-            return holder.innerHTML;
+            CLEANER.innerText = s || '';
+            return CLEANER.innerHTML;
         };
-
-        const stripAttr = (s) => s.split('"').join('');
 
         const template = ({ ID, Color, Name, Exclusive }) => {
 
             const className = getClassName(ID);
             const href = $state.href('secured.label', { label: ID, sort: null, filter: null, page: null });
             const cleanName = stripHTML(Name);
-            const cleanAttr = stripAttr(cleanName);
+            const cleanAttr = encodeURI(cleanName);
 
             const classIcon = (Exclusive === 1) ? 'fa-folder' : 'fa-tag';
 
