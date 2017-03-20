@@ -6,7 +6,7 @@ angular.module('proton.ui')
     };
 
     const getTranslatedText = (translationKey) => {
-        return `${translations[translationKey]} ...`;
+        return `${translations[translationKey]}`;
     };
 
     return {
