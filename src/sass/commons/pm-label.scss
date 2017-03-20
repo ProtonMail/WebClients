@@ -18,6 +18,7 @@
         box-sizing: border-box;
         border: 2px solid currentColor;
         transition: max-width .25s ease;
+        line-height: 1;
         max-height: 100% /* Prevent wrong height on Edge ~ row mode */
     }
     [class*="-label"]:last-of-type {margin-right: 0}
