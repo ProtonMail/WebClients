@@ -86,7 +86,7 @@ angular.module('proton.settings')
                 form.$setUntouched();
                 form.$setPristine();
                 notify({
-                    message: gettextCatalog.getString('Notification email saved', null),
+                    message: gettextCatalog.getString('Recovery/Notification email saved', null),
                     classes: 'notification-success'
                 });
             });
