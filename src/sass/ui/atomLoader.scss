@@ -47,9 +47,20 @@
 }
 
 .atomLoader-text {
+    position: relative;
     text-align: center;
     color: inherit;
 }
+
+.atomLoader-text:after {
+    position: absolute;
+    overflow: hidden;
+    display: inline-block;
+    animation: ellipsis steps(4,end) 900ms infinite;
+    content: "\2026"; /* ascii code for the ellipsis character */
+    width: 0px;
+}
+
 
 .atomLoader.primary {
     color: $primary;
@@ -84,4 +95,12 @@
 
 @keyframes atomRotate {
   to { transform:rotate(360deg) }
+}
+
+@keyframes ellipsis {
+  to { width: 1.25em }
+}
+
+@-webkit-keyframes ellipsis {
+  to { width: 1.25em }
 }
