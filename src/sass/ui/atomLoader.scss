@@ -52,6 +52,8 @@
     color: inherit;
 }
 
+.atomLoader-text:empty { display: none }
+
 .atomLoader-text:after {
     position: absolute;
     overflow: hidden;
