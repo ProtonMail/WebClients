@@ -5,27 +5,33 @@
 
 .progressLoader-container.pm_button {
     background: white;
+    padding: 0px;
 }
 
 .progressLoader-attachment {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    overflow: hidden
+    overflow: hidden;
+    padding-left: 10px;
 }
 
 .progressLoader-name {
-    padding: 0 1em;
-    line-height: 1;
+    padding: 0 0 0 10px;
     word-wrap: break-word;
     text-overflow: ellipsis;
     overflow: hidden;
+    line-height: 16px;
     text-transform: none;
     white-space: pre;
 }
 
+[class*="progressLoader-btn"] {
+    background: none;
+    border: 0;
+    padding: 0 10px;
+}
 
-[class*="progressLoader-btn"] {background: none; border: 0}
 [class*="progressLoader-btn"][disabled] { opacity: .6 }
 
 .progressLoader-container:not(.progressUpload-uploading) .progressLoader-btn-close,
