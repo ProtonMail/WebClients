@@ -54,12 +54,16 @@ angular.module('proton.ui')
                 const unsubscribe = $rootScope
                     .$on('attachment.upload', (e, { type, data = {} }) => {
 
-                        if (type === 'upload.success' && tester.isMessage(data)) {
+                        if (!tester.isMessage(data) || !tester.isAttachment(data)) {
+                            return;
+                        }
+
+                        if (type === 'upload.success') {
                             el[0].classList.add(CLASS_UPLOADED);
                             return unsubscribe();
                         }
 
-                        if (type === 'uploading' && tester.isAttachment(data)) {
+                        if (type === 'uploading') {
                             // On end display remove button and remove the subscribe as we cannot reupload it
                             if (data.progress === 100) {
                                 return _rAF(() => {
