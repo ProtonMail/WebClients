@@ -373,9 +373,6 @@
                         max-width: 100%;
                     }
                 }
-                #logArea {
-                    padding: 1rem 0;
-                }
                 #logActions {
                     .pm_button.pull-left {
                         margin: 0 0 0 5px;
@@ -686,5 +683,3 @@ body.appConfigBody-is-mobile {
 }
 
 .ua-ie-11 [name="signature"] .squire-popover [class*="-input"] { padding: .3em 1em }
-
-
