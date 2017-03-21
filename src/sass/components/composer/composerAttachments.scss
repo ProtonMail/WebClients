@@ -10,6 +10,8 @@
     height: 32px;
     padding: 0 10px;
     cursor: pointer;
+    border-top: 1px solid $border;
+
 }
 
 .composerAttachments-header * { pointer-events: none }
@@ -20,18 +22,20 @@
     max-height: 85px;
     overflow: auto;
     padding: 10px;
-    border-top: 1px solid #acb0bf;
+    border-top: 1px solid $border;
 }
 
 .composerAttachments-loader {
     margin-top: 10px;
-    width: 45%
+    width: 50%;
+    box-sizing: border-box;
 }
 
 .composerAttachments-loader:first-child,
 .composerAttachments-loader:nth-child(2) {margin-top: 0}
 
-.composerAttachments-loader:nth-child(even) {margin-left: 1em}
+.composerAttachments-loader:nth-child(even) { padding-left: 5px }
+.composerAttachments-loader:nth-child(odd) { padding-right: 5px }
 
 .composerAttachments-size {margin-right: 1em}
 .composerAttachments-action {margin-left: auto}
