@@ -7,7 +7,7 @@
     position: relative;
     height: 60px;
     overflow: hidden;
-    border-bottom: 1px solid transparent;
+    border-bottom: 1px solid darken($read-background, 10);
 
     .ptSelectConversation-container {
         @include flexRow();
@@ -193,11 +193,11 @@
     &.active {
         background: $active-background;
         color: set-color($active-background,$white);
+        border-bottom-color: $active-background;
         h4 { color: inherit }
         .customMaskInput-mask { border-color: rgba(0,0,0,0.5) }
     }
 
-    &:not(.active) { border-bottom-color: darken($read-background, 10) }
 }
 
 
