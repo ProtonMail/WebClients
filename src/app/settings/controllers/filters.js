@@ -66,7 +66,7 @@ angular.module('proton.settings')
         }
     };
 
-    $rootScope.$on('$destroy', () => {
+    $scope.$on('$destroy', () => {
         unsubscribe.forEach((cb) => cb());
         unsubscribe.length = 0;
     });
