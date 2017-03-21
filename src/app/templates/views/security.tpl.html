@@ -1,5 +1,8 @@
 <div id="pm_settings">
-    <div class="settings">
+    <div ng-class="{
+        'noLog': doLogging === 0,
+        'activeLog': doLogging === 1,
+        'activeLogAdvanced': doLogging === 2}" class="settings securityContainer" >
         <div class="row pm_grid" ng-show="twoFactor === 1 || keyPhase > 2">
             <section class="pm_form col-1-2">
                 <header-block class="settingsSecurity-header-2fa">
@@ -37,28 +40,28 @@
                              translate-comment="logs page heading"
                             translate-context="Title">Authentication Logs</h2>
                     </header-block>
-                        <div class="pull-right" id="logActions" ng-hide="doLogging === 0">
+                        <div class="pull-right securtiyLogActions onlyActive">
                             <button class="pm_button pull-left" ng-click="clearLogs()" translate-context="Action" translate>Wipe</button>
                             <button class="pm_button pull-left" ng-click="downloadLogs()" translate-context="Action" translate>Download</button>
                             <span ng-show="(logCount > logItemsPerPage)">
                                 <paginator-scope data-type="logs" page="currentLogPage" total-items="logCount" items-per-page="logItemsPerPage" change="loadLogs" />
                             </span>
                         </div>
-                        <div class="pm_buttons pull-left">
-                            <a ng-class="{'active': doLogging === 0}" ng-click="setLogging(0)">{{ disabledText }}</a>
-                            <a ng-class="{'active': doLogging === 1}" ng-click="setLogging(1)" translate-context="Action" translate>Basic</a>
-                            <a ng-class="{'active': doLogging === 2}" ng-click="setLogging(2)" translate-context="Action" translate>Advanced</a>
+                        <div class="pm_buttons pull-left margin-bottom">
+                            <a class="noLogBtn" ng-click="setLogging(0)">{{ disabledText }}</a>
+                            <a class="activeLogBtn" ng-click="setLogging(1)" translate-context="Action" translate>Basic</a>
+                            <a class="activeLogAdvancedBtn" ng-click="setLogging(2)" translate-context="Action" translate>Advanced</a>
                         </div>
-                        <a class="pm_button pull-left" id="logRefresh" ng-hide="doLogging === 0" ng-click="initLogs()">
+                        <a class="securityLogRefresh pm_button onlyActive" ng-click="initLogs()">
                             <i class="fa fa-rotate-right"></i>
                         </a>
-                        <div class="clear" ng-show="doLogging == 0">
-                            <p>&nbsp;</p>
-                            <p class="alert alert-info" translate translate-context="Info">You can enable authentication logging to see when your account is accessed, and from which IP. We will record the IP address that accesses the account and the time, as well as failed attempts.</p>
+                        <div class="clear">
+                            <p class="noLog alert alert-info" translate translate-context="Info">You can enable authentication logging to see when your account is accessed, and from which IP. We will record the IP address that accesses the account and the time, as well as failed attempts.</p>
+                            <p class="onlyActive alert alert-info" translate translate-context="Info">Logs include authentication attempts for all Proton services that use your ProtonMail credentials.</p>
                         </div>
-                        <div id="logArea" ng-show="doLogging != 0" class="clear">
-                            <p class="alert alert-info" ng-show="logs.length < 1 && haveLogs"  translate>No logs yet</p>
-                            <p class="alert alert-info" ng-show="!haveLogs && doLogging !== 0"><i class="fa fa-spin fa-spinner"></i  translate>Fetching logs...</p>
+                        <div class="clear onlyActive">
+                            <p class="alert alert-info onlyActive" ng-show="logs.length < 1"  translate>No logs yet</p>
+                            <p class="alert alert-info onlyActive" ng-show="!haveLogs"><i class="fa fa-spin fa-spinner"></i  translate>Fetching logs...</p>
                             <div class="pm_table">
                                 <table id="accessLog" class="bordered" ng-init="initLogs()" ng-show="logs.length>0">
                                     <thead>
