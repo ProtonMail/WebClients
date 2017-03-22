@@ -110,6 +110,9 @@
             background: lighten($green, 2%);
         }
     }
+    &.white {
+        background: #FFFFFF;
+    }
     &.error {
         background-color: $red;
         border-color: darken($red, 10%);
