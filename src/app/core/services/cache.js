@@ -90,17 +90,39 @@ angular.module('proton.core')
     }
 
     /**
+     * Refresh the list of senders for a conversation
+     * The current does not contain the previous list, so we need to
+     * merge them.
+     * @param  {Array}  previous Previous list of senders
+     * @param  {Array}  current  Current list of senders
+     * @return {Array}           Current list
+     */
+    const filterSenderConversation = (previous = [], current = []) => {
+        const { list } = previous.concat(current).reduce((acc, sender) => {
+            if (!acc.map[sender.Address]) {
+                acc.list.push(sender);
+                acc.map[sender.Address] = true;
+            }
+            return acc;
+        }, { list: [], map: {} });
+
+        return list;
+    };
+
+    /**
      * Update conversation cached
      * @param {Object} conversation
      */
     function updateConversation(conversation) {
         const current = _.findWhere(conversationsCached, { ID: conversation.ID });
-
+        const { Senders: SendersConversation = [] } = (conversation || {});
         if (current) {
-            _.extend(current, conversation);
+            const { Senders = [] } = (current || {});
+            _.extend(current || {}, conversation);
             delete current.LabelIDsAdded;
             delete current.LabelIDsRemoved;
             current.LabelIDs = getLabelsId(current, conversation);
+            current.Senders = filterSenderConversation(Senders, SendersConversation);
             manageTimes(current.ID);
             $rootScope.$emit('labelsElement.' + current.ID, current);
             $rootScope.$emit('foldersElement.' + current.ID, current);
