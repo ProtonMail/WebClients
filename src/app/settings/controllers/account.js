@@ -32,7 +32,7 @@ angular.module('proton.settings')
     const unsubscribe = [];
     $scope.signatureContent = CONSTANTS.PM_SIGNATURE;
     $scope.keyPhase = CONSTANTS.KEY_PHASE;
-    $scope.emailing = { announcements: false, features: false, newsletter: false };
+    $scope.emailing = { announcements: false, features: false, newsletter: false, beta: false };
     const EMAILING_KEYS = Object.keys($scope.emailing);
     updateUser();
 
