@@ -18,9 +18,8 @@ angular.module('proton.utils')
 
           if (width > 0) {
               const style = `<style>
-              .conversation .time { width: ${width + 5}px !important; }
-              .conversation .row .meta { width: ${width + 55}px !important;}
-              .conversation .row h4 { width: calc(100% - ${width + 80}px) !important; }
+              .conversation .time { width: ${width + 5}px; }
+              .conversation .row .meta { width: ${width + 55}px;}
               </style>`;
 
               document.body.insertAdjacentHTML('beforeEnd', style);
