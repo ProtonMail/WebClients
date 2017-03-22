@@ -91,13 +91,13 @@ body {
                 padding-right: 1rem;
             }
             time.time {
+                box-sizing: border-box;
                 float: right;
                 text-align: right;
-                width: 7rem;
                 font-style: normal;
                 position: relative;
-                top: 1px;
-                padding-right: 2rem;
+                padding-left: 5px;
+                white-space: nowrap;
             }
 
             .expiration {

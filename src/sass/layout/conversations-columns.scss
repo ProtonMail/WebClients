@@ -7,7 +7,7 @@
     position: relative;
     height: 60px;
     overflow: hidden;
-    border-bottom: 1px solid darken($read-background, 10);
+    border-bottom: 1px solid $border;
 
     .ptSelectConversation-container {
         @include flexRow();
@@ -50,7 +50,7 @@
         &.bottom {
             padding-top: 4px;
             padding-bottom: 10px;
-            max-width: calc(100% - 40px); /* long senders */
+            max-width: 100%; /* long senders */
             cursor: pointer;
             background: inherit
         }
@@ -59,11 +59,12 @@
         .meta {
             @include flexRow();
             @include flexAlignEnd();
-            float: left;
             height: 20px;
         }
 
         h4 {
+            flex-grow: 1;
+            min-width: 1px;
             font-size: 1em;
             cursor: pointer;
             color: set-invert-color($main-background, $black);
@@ -92,7 +93,6 @@
 
         .meta {
             @include flexJustifyEnd();
-            @include flexFillWidth();
 
             .fa-star,
             .fa-star-o,
@@ -109,11 +109,9 @@
             time.time {
                 float: right;
                 text-align: right;
-                width: 6rem;
                 font-style: normal;
                 font-size: .9em;
                 white-space: nowrap;
-                overflow: hidden;
             }
         }
 
