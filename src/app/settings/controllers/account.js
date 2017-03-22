@@ -44,7 +44,7 @@ angular.module('proton.settings')
     $scope.signature = tools.replaceLineBreaks(authentication.user.Signature);
     $scope.passwordMode = authentication.user.PasswordMode;
     $scope.keyPhase = CONSTANTS.KEY_PHASE;
-    $scope.emailing = { announcements: false, features: false, newsletter: false };
+    $scope.emailing = { announcements: false, features: false, newsletter: false, beta: false };
     const EMAILING_KEYS = Object.keys($scope.emailing);
     updateUser();
 
