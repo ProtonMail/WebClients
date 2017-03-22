@@ -33,7 +33,7 @@ angular.module('proton.core')
     return pmModal({
         controllerAs: 'ctrl',
         templateUrl: 'templates/modals/filter.tpl.html',
-        controller(params) {
+        controller(params, $scope) {
             const labelsOrdered = labelsModel.get('labels');
             const foldersOrdered = labelsModel.get('folders');
             const ctrl = this;
@@ -180,10 +180,12 @@ angular.module('proton.core')
                 }
 
                 if (angular.isObject(ctrl.filter.Simple)) {
-                    const unsubscribe = $rootScope.$on('labelsModel', (e, { type }) => {
+                    const unsubscribe = $rootScope.$on('labelsModel', (e, { type, data }) => {
                         if (type === 'cache.update') {
-                            ctrl.filter.Simple.Actions.Labels = labelsModel.get('labels');
-                            ctrl.folders = labelsModel.get('folders');
+                            $scope.$applyAsync(() => {
+                                ctrl.filter.Simple.Actions.Labels = ctrl.filter.Simple.Actions.Labels.concat(angular.copy(data.create));
+                                ctrl.folders = ctrl.folders.concat(angular.copy(data.create));
+                            });
                         }
                     });
 
