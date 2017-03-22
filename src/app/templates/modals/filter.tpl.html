@@ -33,7 +33,7 @@
                         </p>
                         <div class="filter-modal-condition alert" style="position: relative;">
                             <div class="filter-modal-condition-remove">
-                                <button type="button" title="Remove" ng-hide="ctrl.filter.Simple.Conditions.length === 1" ng-click="ctrl.removeCondition(condition)" class="pm_button">
+                                <button type="button" title="Remove" ng-hide="ctrl.filter.Simple.Conditions.length === 1" ng-click="ctrl.removeCondition(condition)" class="pm_button white">
                                     <i class="fa fa-trash"></i>
                                 </button>
                             </div>
@@ -77,7 +77,7 @@
                                 </span>
                                 <form class="filter-modal-add-condition-settings-item filter-modal-add-condition" ng-show="condition.Type.value === 'subject'" ng-submit="ctrl.addValue(condition)">
                                     <input class="filter-modal-add-condition-input" type="text" ng-model="condition.value" placeholder-translate="Text or pattern" ng-blur="ctrl.addValue(condition)"  />
-                                    <button class="filter-modal-add-condition-button pm_button" type="submit">
+                                    <button class="filter-modal-add-condition-button pm_button white" type="submit">
                                         <i class="fa fa-plus"></i>
                                     </button>
                                 </form>
@@ -87,7 +87,7 @@
                                     <autocomplete-email
                                         class="filter-modal-add-condition-input"
                                         data-email="condition.value"></autocomplete-email>
-                                    <button class="filter-modal-add-condition-button pm_button" type="submit">
+                                    <button class="filter-modal-add-condition-button pm_button white" type="submit">
                                         <i class="fa fa-plus"></i>
                                     </button>
                                 </form>
@@ -112,7 +112,7 @@
                             </label>
                         </div>
                         <div class="col-1-4 filter-modal-label-add">
-                            <button class="pm_button" ng-click="ctrl.addLabel()" translate translate-context="Action">Add label</button>
+                            <button class="pm_button white" ng-click="ctrl.addLabel()" translate translate-context="Action">Add label</button>
                         </div>
                     </div>
                     <label>
@@ -151,7 +151,7 @@
                             </label>
                         </div>
                         <div class="col-1-4 filter-modal-folder-add">
-                            <button class="pm_button" ng-click="ctrl.addFolder()" translate translate-context="Action">Add folder</button>
+                            <button class="pm_button white" ng-click="ctrl.addFolder()" translate translate-context="Action">Add folder</button>
                         </div>
                     </div>
                     <label>
