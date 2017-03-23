@@ -28,6 +28,7 @@ angular.module('proton.search')
                 const unsubscribe = [];
                 let folders = searchModel.getFolderList();
                 const addresses = searchModel.getAddresses();
+                const $input = el[0].querySelector('.search-form-fieldset-input');
                 scope.model = {
                     folder: folders[0],
                     address: addresses[0],
@@ -53,6 +54,10 @@ angular.module('proton.search')
 
                 unsubscribe.push($rootScope.$on('updateUser', () => {
                     scope.addresses = searchModel.getAddresses();
+                }));
+
+                unsubscribe.push($rootScope.$on('hotkeys', (e, { type }) => {
+                    (type === 'slash') && $input.focus();
                 }));
 
                 unsubscribe.push($rootScope.$on('$stateChangeSuccess', () => {
