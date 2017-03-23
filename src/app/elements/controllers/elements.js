@@ -566,7 +566,7 @@ angular.module('proton.elements')
         }
 
         if (angular.isDefined($state.params.id)) {
-            $scope.back();
+            $scope.back(true);
         }
     };
 
@@ -666,8 +666,15 @@ angular.module('proton.elements')
     /**
      * Back to conversation / message list
      * Or to the previous page.
+     * @param refresh Boolean refresh the current state without it's id if true
      */
-    $scope.back = () => {
+    $scope.back = (refresh = false) => {
+
+        if (refresh) {
+            const opt = _.extend({}, $stateParams, { id: null });
+            return $state.go($state.$current.name.replace('.element', ''), opt);
+        }
+
         $state.go($state.$current.name.replace('.element', ''), {
             id: null,
             page: $stateParams.page > 2 ? $stateParams.page - 1 : null,
