@@ -86,7 +86,8 @@ angular.module('proton.squire')
             .protonmail_signature_block-empty { display: none }
 
             .protonmail_quote {
-                position: relative
+                position: relative;
+                overflow: auto
             }`;
 
             style.setAttribute('type', 'text/css');
