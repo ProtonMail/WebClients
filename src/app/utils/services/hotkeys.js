@@ -1,5 +1,8 @@
 angular.module('proton.utils')
 .factory('hotkeys', (hotkeyModal, $rootScope, $state, authentication, CONSTANTS, messageModel) => {
+
+    const dispatch = (type, data = {}) => $rootScope.$emit('hotkeys', { type, data });
+
     const composer = () => {
         const type = 'new';
         const message = messageModel();
@@ -196,10 +199,7 @@ angular.module('proton.utils')
     };
 
     const slash = () => {
-        const inputs = angular.element('.query');
-
-        inputs[0].focus();
-
+        dispatch('slash');
         return false;
     };
 
