@@ -98,7 +98,7 @@ angular.module('proton.core')
      * @return {Array}           Current list
      */
     const filterSenderConversation = (previous = [], current = []) => {
-        const { list } = previous.concat(current).reduce((acc, sender) => {
+        const { list } = current.concat(previous).reduce((acc, sender) => {
             if (!acc.map[sender.Address]) {
                 acc.list.push(sender);
                 acc.map[sender.Address] = true;
