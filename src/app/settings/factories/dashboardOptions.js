@@ -1,12 +1,16 @@
 angular.module('proton.settings')
     .factory('dashboardOptions', (CONSTANTS) => {
 
-        const options = {
-            space: _.range(5, 21).map((size, index) => ({
+        const spaceBuilder = (start = 5, end = 21) => {
+            return _.range(start, end).map((size, index) => ({
                 index,
                 label: `${size} GB`,
                 value: size * CONSTANTS.BASE_SIZE * CONSTANTS.BASE_SIZE * CONSTANTS.BASE_SIZE
-            })),
+            }));
+        };
+
+        const options = {
+            space: spaceBuilder(),
             domain: _.range(1, 11).map((value, index) => ({
                 index, value,
                 label: `${value}`
@@ -21,9 +25,9 @@ angular.module('proton.settings')
             }))
         };
 
-        options.businessSpace = options.space.slice(5).map((item, i) => (item.index = i, item));
+        options.businessSpace = spaceBuilder(10, 21);
 
-        const get = (key) => options[key];
+        const get = (key) => angular.copy(options[key]);
 
         return { get };
     });
