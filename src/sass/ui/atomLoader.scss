@@ -1,13 +1,13 @@
 .atomLoader { color: $white }
 
 .atomLoader-container {
+  margin: 0 auto 20px auto;
   position: relative;
   display:flex;
   align-items:center;
   justify-content:center;
   width: 130px;
   height: 130px;
-  margin-bottom: 20px;
   animation: atomRotate 25s linear infinite;
 }
 
