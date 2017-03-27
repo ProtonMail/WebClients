@@ -58,7 +58,7 @@ angular.module('proton.ui')
                             return;
                         }
 
-                        if (type === 'upload.success') {
+                        if (type === 'uploaded.success') {
                             el[0].classList.add(CLASS_UPLOADED);
                             return unsubscribe();
                         }
