@@ -5,9 +5,9 @@
     position: relative;
     margin: .5rem auto;
     border-radius: 12px;
+    overflow: hidden;
     .storageBar-progress {
         height: 100%;
         background-color: $primary;
-        border-radius: 12px;
     }
 }
