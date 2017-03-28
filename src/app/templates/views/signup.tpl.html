@@ -17,7 +17,7 @@
             </label>
             <div class="usernameWrap">
                 <p class="help" translate-context="Info" translate>This will be your new ProtonMail email address.</p>
-                <input type="text" ng-model="account.username" name="username" autofocus placeholder-translate="Choose username" unique-username valid-username required id="username" class="dead" ng-model-options="{ updateOn: 'default blur', debounce: { 'default': 500, 'blur': 0 } }" ng-class="{'success':goodUsername,'error':badUsername}" />
+                <input  type="text" ng-model="account.username" name="username" autofocus placeholder-translate="Choose username" unique-username unique-error="accountForm.uniqueUsernameError" valid-username required id="username" class="dead" ng-model-options="{ updateOn: 'default blur', debounce: { 'default': 500, 'blur': 0 } }" ng-class="{'success':goodUsername,'error':badUsername}" />
                 <em class="usernameDomain">@</em>
                 <span class="pm_select inline bigger">
                     <select class="selectDomain" ng-model="account.domain" ng-options="domain.label for domain in domains"></select>
@@ -28,7 +28,7 @@
             <p ng-show="accountForm.$pending.unique" class="alert alert-info signUpProcess-about-pending" translate translate-context="Info">Checking username</p>
             <div ng-messages="accountForm.username.$error" ng-if="accountForm.username.$dirty" class="signUpProcess-about-error">
                 <p ng-message="required" class="alert alert-danger" translate translate-context="Error">Username required</p>
-                <p ng-message="unique" class="alert alert-danger" translate translate-context="Error">Username already taken</p>
+                <p ng-message="unique" class="alert alert-danger">{{ accountForm.uniqueUsernameError }}</p>
                 <p ng-message="valid" class="alert alert-danger" translate translate-context="Error">Username invalid</p>
             </div>
             <div ng-if="keyPhase < 3">
