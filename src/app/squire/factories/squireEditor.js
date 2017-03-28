@@ -87,7 +87,6 @@ angular.module('proton.squire')
 
             .protonmail_quote {
                 position: relative;
-                overflow: auto
             }`;
 
             style.setAttribute('type', 'text/css');
