@@ -95,23 +95,23 @@ angular.module('proton.routes', [
     })
 
     .state('pre-invite', {
-        url: '/pre-invite/:user/:token',
+        url: '/pre-invite/:selector/:token',
         views: {
             'main@': {
                 templateUrl: 'templates/layout/pre.tpl.html'
             }
         },
         onEnter($state, $stateParams, $rootScope, notify, Invite, gettextCatalog) {
-            const { token, user } = $stateParams;
+            const { token, selector } = $stateParams;
             const errorMessage = gettextCatalog.getString('Invalid invite link', null, 'Error');
 
             $rootScope.loggingOut = false;
 
-            Invite.check(token, user)
+            Invite.check(token, selector, CONSTANTS.INVITE_MAIL)
             .then(({ data = {} } = {}) => {
                 if (data.Valid === 1) {
                     $rootScope.preInvited = true;
-                    $state.go('signup', { inviteToken: $stateParams.token, username: $stateParams.user });
+                    $state.go('signup', { inviteToken: $stateParams.token, inviteSelector: $stateParams.selector });
                 } else {
                     notify({ message: data.Error || errorMessage, classes: 'notification-danger' });
                     $state.go('login');
@@ -170,7 +170,7 @@ angular.module('proton.routes', [
     .state('signup', {
         url: '/create/new?plan&billing&currency',
         params: {
-            username: undefined, // set by invite
+            inviteSelector: undefined, // set by invite
             inviteToken: undefined, // set by invite
             plan: null, // 'free' / 'plus' / 'visionary'
             billing: null, // 1 / 12

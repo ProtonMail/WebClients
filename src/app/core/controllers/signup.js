@@ -124,15 +124,13 @@ angular.module('proton.core')
         }
 
         $scope.account = {
-            username: initUsername(), // Prepoppulate the username if from an invite link
+            username: initUsername(), // Prepopulate the username if desired
             domain: $scope.domains[0], // Select the first domain
             codeVerification: '', // Initialize verification code
             captcha_token: false, // Initialize captcha token
             smsCodeVerification: '', // Initialize sms verification code
             emailVerification: ''
         };
-
-        $scope.readOnlyUsername = $scope.account.username.length > 0; // username is initialize by signupModel
 
         // Clear auth data
         authentication.logout(false, authentication.isLoggedIn());
@@ -439,7 +437,7 @@ angular.module('proton.core')
         };
 
         if ($stateParams.inviteToken) {
-            params.Token = $stateParams.inviteToken;
+            params.Token = $stateParams.inviteSelector + ':' + $stateParams.inviteToken;
             params.TokenType = 'invite';
         } else if (angular.isDefined($scope.account.captcha_token) && $scope.account.captcha_token !== false) {
             params.Token = $scope.account.captcha_token;
