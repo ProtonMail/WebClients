@@ -6,6 +6,7 @@ body {
             line-height: 40px;
             padding: 0;
             border-bottom:1px solid $border;
+            background: $white;
 
             .ptSelectConversation-container {
                 @include flexRow();
@@ -41,6 +42,7 @@ body {
                 box-sizing: border-box;
                 width: calc(84% - 17rem);
                 padding-left: 4px;
+                background: inherit;
                 cursor: pointer;
 
                 h4 {
@@ -79,7 +81,11 @@ body {
                     line-height: 40px;
                     color: rgba(0,0,0,.35);
                 }
-                .labelsElement-container { height: 22px }
+                .labelsElement-container {
+                    position: absolute;
+                    right: 0;
+                    height: 22px;
+                }
             }
 
             .size,
@@ -132,12 +138,6 @@ body {
                     h4 {
                         font-weight: normal;
                         color: inherit;
-                    }
-                    .pm_labels {
-                        background: inherit;
-                        label {
-                            background: inherit;
-                        }
                     }
                 }
             }
