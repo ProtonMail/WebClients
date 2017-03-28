@@ -1,6 +1,8 @@
 angular.module('proton.labels')
     .factory('labelsModel', ($rootScope, CONSTANTS) => {
 
+        const IS_LABEL = 0;
+        const IS_FOLDER = 1;
         const ACTIONS = {
             [CONSTANTS.STATUS.DELETE]: 'remove',
             [CONSTANTS.STATUS.CREATE]: 'create',
@@ -52,14 +54,14 @@ angular.module('proton.labels')
 
         const syncLabels = () => {
             CACHE.labels = _.chain(CACHE.all)
-                .where({ Exclusive: 0 })
+                .where({ Exclusive: IS_LABEL })
                 .sortBy('Order')
                 .value();
         };
 
         const syncFolders = () => {
             CACHE.folders = _.chain(CACHE.all)
-                .where({ Exclusive: 1 })
+                .where({ Exclusive: IS_FOLDER })
                 .sortBy('Order')
                 .value();
         };
@@ -153,5 +155,8 @@ angular.module('proton.labels')
             (type === 'loggedIn' && !data.value) && set();
         });
 
-        return { get, set, contains, sync, read, ids, refresh };
+        return {
+            get, set, contains, sync, read, ids, refresh,
+            IS_LABEL, IS_FOLDER
+        };
     });
