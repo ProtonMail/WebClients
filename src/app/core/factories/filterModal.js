@@ -30,6 +30,16 @@ angular.module('proton.core')
         FILTER_CREATED_SUCCESS: gettextCatalog.getString('Filter created', null, 'Notification')
     };
 
+    /**
+     * Filter the list of new Label by type
+     * @param  {Array}  options.create List of new label
+     * @param  {Integer} type           flag
+     * @return {Array}                Copy of the array as we don't want to work on the ref
+     */
+    const filterNewLabel = ({ create = [] } = {}, type = labelsModel.IS_LABEL) => {
+        return angular.copy(create).filter(({ Exclusive }) => Exclusive === type);
+    };
+
     return pmModal({
         controllerAs: 'ctrl',
         templateUrl: 'templates/modals/filter.tpl.html',
@@ -180,11 +190,12 @@ angular.module('proton.core')
                 }
 
                 if (angular.isObject(ctrl.filter.Simple)) {
+
                     const unsubscribe = $rootScope.$on('labelsModel', (e, { type, data }) => {
                         if (type === 'cache.update') {
                             $scope.$applyAsync(() => {
-                                ctrl.filter.Simple.Actions.Labels = ctrl.filter.Simple.Actions.Labels.concat(angular.copy(data.create));
-                                ctrl.folders = ctrl.folders.concat(angular.copy(data.create));
+                                ctrl.filter.Simple.Actions.Labels = ctrl.filter.Simple.Actions.Labels.concat(filterNewLabel(data));
+                                ctrl.folders = ctrl.folders.concat(filterNewLabel(data, labelsModel.IS_FOLDER));
                             });
                         }
                     });
