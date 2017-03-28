@@ -15,6 +15,8 @@ angular.module('proton.constants', [])
     MAILBOX_PASSWORD_KEY: 'proton:mailbox_pwd',
     OAUTH_KEY: 'proton:oauth',
     WHITELIST: ['notify@protonmail.com'],
+    INVITE_MAIL: 1,
+    INVITE_VPN: 2,
     FREE_USER_ROLE: 0,
     PAID_MEMBER_ROLE: 1,
     PAID_ADMIN_ROLE: 2,

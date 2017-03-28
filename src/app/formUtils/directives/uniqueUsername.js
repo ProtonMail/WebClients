@@ -1,6 +1,13 @@
 angular.module('proton.formUtils')
-.directive('uniqueUsername', (User) => {
+.directive('uniqueUsername', (User, $stateParams) => {
+    const cleanUsername = (username = '') => username.toLowerCase().replace('.', '').replace('_', '').replace('-', '');
     function isUsernameAvailable(username) {
+        const usernameCleaned = cleanUsername(username);
+        // Temporary hack, remove along with $stateParams dependence once invite system migration complete
+        if (usernameCleaned === $stateParams.inviteSelector) {
+            return Promise.resolve();
+        }
+
         return User.available(username)
         .then(({ data = {} }) => {
             const { Code, Error, Available } = data;

@@ -7,7 +7,7 @@ angular.module('proton.commons')
      * @param {String} Username
      * @return {Promise}
      */
-    const check = (Token, Username) => $http.post(requestURL('check'), { Token, Username });
+    const check = (Token, Selector, Type) => $http.post(requestURL('check'), { Token, Selector, Type });
 
     return { check };
 });

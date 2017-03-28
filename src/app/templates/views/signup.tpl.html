@@ -17,8 +17,7 @@
             </label>
             <div class="usernameWrap">
                 <p class="help" translate-context="Info" translate>This will be your new ProtonMail email address.</p>
-                <strong ng-if="readOnlyUsername" ng-bind="account.username"></strong>
-                <input ng-if="!readOnlyUsername" type="text" ng-model="account.username" name="username" autofocus placeholder-translate="Choose username" unique-username valid-username required id="username" class="dead" ng-model-options="{ updateOn: 'default blur', debounce: { 'default': 500, 'blur': 0 } }" ng-class="{'success':goodUsername,'error':badUsername}" />
+                <input type="text" ng-model="account.username" name="username" autofocus placeholder-translate="Choose username" unique-username valid-username required id="username" class="dead" ng-model-options="{ updateOn: 'default blur', debounce: { 'default': 500, 'blur': 0 } }" ng-class="{'success':goodUsername,'error':badUsername}" />
                 <em class="usernameDomain">@</em>
                 <span class="pm_select inline bigger">
                     <select class="selectDomain" ng-model="account.domain" ng-options="domain.label for domain in domains"></select>
