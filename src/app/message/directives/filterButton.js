@@ -1,7 +1,10 @@
 angular.module('proton.message')
 .directive('filterButton', (filterModal) => {
     const recipients = ({ ToList = [], CCList = [], BCCList = [] }) => {
-        return [].concat(ToList, CCList, BCCList).map(({ Address }) => Address);
+        return _.chain([].concat(ToList, CCList, BCCList))
+            .map(({ Address }) => Address)
+            .uniq()
+            .value();
     };
 
     const attachments = ({ Attachments = [] }) => (Attachments.length ? 'contains' : '!contains');
