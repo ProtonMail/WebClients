@@ -215,8 +215,8 @@ angular.module('proton.elements')
             $scope.applyLabels(LabelID);
         });
 
-        $scope.$on('move', (event, name) => {
-            !isOpened && $scope.move(name);
+        $scope.$on('move', (event, mailbox) => {
+            !isOpened && $scope.move(mailbox);
         });
 
         $scope.$on('read', () => {
@@ -628,17 +628,19 @@ angular.module('proton.elements')
      */
     $scope.move = (mailbox) => {
         const type = tools.typeList();
-
         const ids = idsSelected();
+        const labelID = CONSTANTS.MAILBOX_IDENTIFIERS[mailbox];
+
         if (ids.length === 0) {
             return;
         }
 
         $rootScope.numberElementChecked = 0;
+
         if (type === 'conversation') {
-            actionConversation.move(ids, mailbox);
+            actionConversation.move(ids, labelID);
         } else if (type === 'message') {
-            $rootScope.$emit('messageActions', { action: 'move', data: { ids, mailbox } });
+            $rootScope.$emit('messageActions', { action: 'move', data: { ids, labelID } });
         }
     };
 

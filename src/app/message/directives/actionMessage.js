@@ -1,10 +1,10 @@
 angular.module('proton.message')
-    .directive('actionMessage', ($rootScope, openStatePostMessage) => {
+    .directive('actionMessage', ($rootScope, CONSTANTS, openStatePostMessage) => {
 
         const dispatcher = (message = {}) => (action = '', mailbox = '') => {
             $rootScope.$emit('messageActions', {
                 action,
-                data: { ids: [message.ID], mailbox }
+                data: { ids: [message.ID], labelID: CONSTANTS.MAILBOX_IDENTIFIERS[mailbox] }
             });
         };
 

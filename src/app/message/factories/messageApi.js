@@ -136,7 +136,9 @@ angular.module('proton.message')
         },
         /**
          * Label/unlabel an array of messages
-         * @param {Object} params
+         * @param {String} LabelID
+         * @param {Integer} Action
+         * @param {Array} MessageIDs
          * @return {Promise}
          */
         label(LabelID, Action, MessageIDs) {

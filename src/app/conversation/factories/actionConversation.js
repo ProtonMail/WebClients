@@ -14,17 +14,18 @@ angular.module('proton.conversation')
 ) => {
 
     const { MAILBOX_IDENTIFIERS } = CONSTANTS;
-    function getFolderNameTranslated(mailbox) {
-        const mailboxs = {
-            inbox: gettextCatalog.getString('Inbox', null),
-            spam: gettextCatalog.getString('Spam', null),
-            drafts: gettextCatalog.getString('Drafts', null),
-            sent: gettextCatalog.getString('Sent', null),
-            trash: gettextCatalog.getString('Trash', null),
-            archive: gettextCatalog.getString('Archive', null)
-        };
+    const mailboxes = {
+        [MAILBOX_IDENTIFIERS.inbox]: gettextCatalog.getString('Inbox', null),
+        [MAILBOX_IDENTIFIERS.spam]: gettextCatalog.getString('Spam', null),
+        [MAILBOX_IDENTIFIERS.drafts]: gettextCatalog.getString('Drafts', null),
+        [MAILBOX_IDENTIFIERS.sent]: gettextCatalog.getString('Sent', null),
+        [MAILBOX_IDENTIFIERS.trash]: gettextCatalog.getString('Trash', null),
+        [MAILBOX_IDENTIFIERS.archive]: gettextCatalog.getString('Archive', null)
+    };
 
-        return mailboxs[mailbox];
+    function getFolderNameTranslated(labelID = '') {
+        const { Name } = labelsModel.read(labelID, 'folders') || {};
+        return mailboxes[labelID] || Name;
     }
 
     /**
@@ -296,25 +297,17 @@ angular.module('proton.conversation')
         networkActivityTracker.track(promise);
     }
 
-    function folder(conversationIDs = [], labelID = '') {
-        const displaySuccess = () => notify({ message: gettextCatalog.getPlural(conversationIDs.length, 'Conversation moved', 'Conversations moved', null), classes: 'notification-success' });
-        const promise = conversationApi.labels(labelID, 1, conversationIDs)
-        .then(() => eventManager.call())
-        .then(() => displaySuccess());
-        networkActivityTracker.track(promise);
-    }
-
     /**
      * Move conversation
-     * @param {Array} ids
-     * @param {String} mailbox
+     * @param {Array} conversationIDs
+     * @param {String} labelID
      */
-    function move(ids, mailbox) {
+    function move(conversationIDs = [], labelID = '') {
         const exclusiveLabels = labelsModel.ids('folders');
-
-        const promise = conversationApi[mailbox](ids);
-        const folder = getFolderNameTranslated(mailbox);
-        const displaySuccess = () => notify({ message: gettextCatalog.getPlural(ids.length, 'Conversation moved to', 'Conversations moved to', null) + ' ' + folder, classes: 'notification-success' });
+        const promise = conversationApi.labels(labelID, 1, conversationIDs);
+        const folderName = getFolderNameTranslated(labelID);
+        const successMessage = gettextCatalog.getPlural(conversationIDs.length, 'Conversation moved to', 'Conversations moved to', null);
+        const displaySuccess = () => notify({ message: `${successMessage} ${folderName}`, classes: 'notification-success' });
         const folderIDs = [
             MAILBOX_IDENTIFIERS.inbox,
             MAILBOX_IDENTIFIERS.trash,
@@ -331,12 +324,12 @@ angular.module('proton.conversation')
             return networkActivityTracker.track(promise);
         }
 
-        const labelIDsAdded = [MAILBOX_IDENTIFIERS[mailbox]];
-        const toTrash = mailbox === 'trash';
-        const toInbox = mailbox === 'inbox';
+        const labelIDsAdded = [labelID];
+        const toTrash = labelID === MAILBOX_IDENTIFIERS.trash;
+        const toInbox = labelID === MAILBOX_IDENTIFIERS.inbox;
 
         // Generate cache events
-        const events = _.reduce(ids, (acc, ID) => {
+        const events = _.reduce(conversationIDs, (acc, ID) => {
             const conversation = cache.getConversationCached(ID);
             const messages = cache.queryMessagesCached(ID);
             const labelIDsRemoved = conversation.LabelIDs.filter((labelID) => folderIDs.indexOf(labelID) > -1);
@@ -400,5 +393,5 @@ angular.module('proton.conversation')
         displaySuccess();
     }
 
-    return { remove, unread, read, unstar, star, label, folder, move };
+    return { remove, unread, read, unstar, star, label, move };
 });
