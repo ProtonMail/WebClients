@@ -40,8 +40,8 @@ body {
     #pm_thread {
         overflow-y: auto;
         overflow-x: hidden;
-        -webkit-flex:1;
         flex:1;
+        -webkit-transform: translate3d(0, 0, 0);
 
         &:focus {
             /* hotkey remove browser focus styling */
