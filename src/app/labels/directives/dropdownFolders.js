@@ -30,13 +30,13 @@ angular.module('proton.labels')
 
     const close = () => $rootScope.$emit('closeDropdown');
 
-    function moveTo(elements = [], type = '', folderID = '') {
+    function moveTo(elements = [], type = '', labelID = '') {
         const elementIDs = elements.map(({ ID }) => ID);
 
         if (type === 'conversation') {
-            actionConversation.folder(elementIDs, folderID);
+            actionConversation.move(elementIDs, labelID);
         } else if (type === 'message') {
-            $rootScope.$emit('messageActions', { action: 'folder', data: { messageIDs: elementIDs, folderID } });
+            $rootScope.$emit('messageActions', { action: 'move', data: { ids: elementIDs, labelID } });
         }
     }
 

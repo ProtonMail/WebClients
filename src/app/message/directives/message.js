@@ -1,9 +1,7 @@
 angular.module('proton.message')
 .directive('message', ($state, $rootScope, cache, displayContent, messageScroll, tools) => {
 
-    function getRecipients({ ToList = [], CCList = [], BCCList = [] } = {}) {
-        return [].concat(ToList, CCList, BCCList);
-    }
+    const getRecipients = ({ ToList = [], CCList = [], BCCList = [] } = {}) => [].concat(ToList, CCList, BCCList);
 
     /**
      * Back to element list

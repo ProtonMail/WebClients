@@ -5,18 +5,18 @@ angular.module('proton.message')
         const ADD_ID = 1;
 
         const notifySuccess = (message) => notify({ message, classes: 'notification-success' });
+        const mailboxes = {
+            [CONSTANTS.MAILBOX_IDENTIFIERS.inbox]: gettextCatalog.getString('Inbox', null),
+            [CONSTANTS.MAILBOX_IDENTIFIERS.spam]: gettextCatalog.getString('Spam', null),
+            [CONSTANTS.MAILBOX_IDENTIFIERS.drafts]: gettextCatalog.getString('Drafts', null),
+            [CONSTANTS.MAILBOX_IDENTIFIERS.sent]: gettextCatalog.getString('Sent', null),
+            [CONSTANTS.MAILBOX_IDENTIFIERS.trash]: gettextCatalog.getString('Trash', null),
+            [CONSTANTS.MAILBOX_IDENTIFIERS.archive]: gettextCatalog.getString('Archive', null)
+        };
 
-        function getFolderNameTranslated(mailbox) {
-            const mailboxs = {
-                inbox: gettextCatalog.getString('Inbox', null),
-                spam: gettextCatalog.getString('Spam', null),
-                drafts: gettextCatalog.getString('Drafts', null),
-                sent: gettextCatalog.getString('Sent', null),
-                trash: gettextCatalog.getString('Trash', null),
-                archive: gettextCatalog.getString('Archive', null)
-            };
-
-            return mailboxs[mailbox];
+        function getFolderNameTranslated(labelID = '') {
+            const { Name } = labelsModel.read(labelID, 'folders') || {};
+            return mailboxes[labelID] || Name;
         }
 
         $rootScope.$on('messageActions', (event, { action = '', data = {} }) => {
@@ -46,23 +46,15 @@ angular.module('proton.message')
                     addLabel(data.messages, data.labels, data.alsoArchive);
                     break;
                 case 'folder':
-                    folder(data.messageIDs, data.folderID);
+                    move(data);
                     break;
                 default:
                     break;
             }
         });
 
-        function folder(messageIDs = [], folderID = '') {
-            const displaySuccess = () => notifySuccess(gettextCatalog.getPlural(messageIDs.length, 'Message moved', 'Messages moved', null));
-            const promise = messageApi.label(folderID, 1, messageIDs)
-            .then(() => eventManager.call())
-            .then(() => displaySuccess());
-            networkActivityTracker.track(promise);
-        }
-
-        function updateLabelsAdded(Type, mailbox) {
-            const list = [CONSTANTS.MAILBOX_IDENTIFIERS[mailbox]];
+        function updateLabelsAdded(Type, labelID) {
+            const list = [labelID];
             switch (Type) {
                 // This message is a draft, if you move it to trash and back to inbox, it will go to draft instead
                 case CONSTANTS.DRAFT: {
@@ -84,7 +76,7 @@ angular.module('proton.message')
 
 
         // Message actions
-        function move({ ids, mailbox }) {
+        function move({ ids, labelID }) {
             const exclusiveLabels = labelsModel.ids('folders');
             const folderIDs = [
                 CONSTANTS.MAILBOX_IDENTIFIERS.inbox,
@@ -92,12 +84,12 @@ angular.module('proton.message')
                 CONSTANTS.MAILBOX_IDENTIFIERS.spam,
                 CONSTANTS.MAILBOX_IDENTIFIERS.archive
             ].concat(exclusiveLabels);
-            const toTrash = mailbox === 'trash';
+            const toTrash = labelID === CONSTANTS.MAILBOX_IDENTIFIERS.trash;
             const events = _.chain(ids)
                 .map((id) => {
                     const message = cache.getMessageCached(id) || {};
                     let labelIDs = message.LabelIDs || [];
-                    const labelIDsAdded = updateLabelsAdded(message.Type, mailbox);
+                    const labelIDsAdded = updateLabelsAdded(message.Type, labelID);
                     const labelIDsRemoved = labelIDs.filter((labelID) => folderIDs.indexOf(labelID) > -1);
 
                     if (Array.isArray(labelIDsRemoved)) {
@@ -154,11 +146,11 @@ angular.module('proton.message')
                 .value();
 
              // Send request
-            const promise = messageApi[mailbox]({ IDs: ids });
+            const promise = messageApi.label(labelID, 1, ids);
             cache.addToDispatcher(promise);
 
             const message = gettextCatalog.getPlural(ids.length, 'Message moved to', 'Messages moved to', null);
-            const notification = `${message} ${getFolderNameTranslated(mailbox)}`;
+            const notification = `${message} ${getFolderNameTranslated(labelID)}`;
 
             if (tools.cacheContext()) {
                 cache.events(events);

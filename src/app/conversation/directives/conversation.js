@@ -448,8 +448,8 @@ angular.module('proton.conversation')
             /**
              * Move current conversation to a specific location
              */
-            scope.move = (mailbox) => {
-                actionConversation.move([scope.conversation.ID], mailbox);
+            scope.move = (labelID) => {
+                actionConversation.move([scope.conversation.ID], labelID);
             };
 
             /**
