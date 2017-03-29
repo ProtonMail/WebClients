@@ -280,6 +280,7 @@ angular.module('proton.settings')
      */
     $scope.deleteAddress = (address = {}) => {
         const addressID = address.ID;
+        const isDisabled = address.Status === 0;
         const title = gettextCatalog.getString('Delete address', null, 'Title');
         const message = gettextCatalog.getString('Are you sure you want to delete this address?', null, 'Info');
 
@@ -288,8 +289,8 @@ angular.module('proton.settings')
                 title,
                 message,
                 confirm() {
-                    const promise = disableAddress(addressID)
-                    .then(() => deleteAddress(addressID))
+                    const promise = (isDisabled) ? Promise.resolve() : disableAddress(addressID);
+                    promise.then(() => deleteAddress(addressID))
                     .then(() => eventManager.call())
                     .then(() => {
                         notify({ message: gettextCatalog.getString('Address deleted', null, 'Info'), classes: 'notification-success' });
