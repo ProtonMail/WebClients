@@ -88,9 +88,9 @@ angular.module('proton.routes', [
                 templateUrl: 'templates/views/unlock.tpl.html'
             }
         },
-        onEnter: ($rootScope) => {
+        onEnter: ($rootScope, AppModel) => {
             $rootScope.isLoggedIn = true;
-            $rootScope.domoArigato = true;
+            AppModel.set('domoArigato', true);
         }
     })
 

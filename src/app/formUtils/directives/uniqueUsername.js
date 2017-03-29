@@ -26,19 +26,19 @@ angular.module('proton.formUtils')
                         scope.uniqueError = alreadyTaken;
                         return Promise.reject(alreadyTaken);
                     }
-                    
+
                     if (data.Error === 429) {
                         scope.uniqueError = tooMuch;
                         return Promise.reject(tooMuch);
                     }
-                    
+
                     if (data.Error) {
                         scope.uniqueError = data.Error;
                         return Promise.reject(data.Error);
                     }
-                    
+
                     scope.uniqueError = requestFailed;
-                    
+
                     return Promise.reject(requestFailed);
                 });
             }
