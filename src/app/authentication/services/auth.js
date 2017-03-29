@@ -322,7 +322,7 @@ angular.module('proton.authentication')
                     if (result.data.Code === 1000) {
                         $log.debug('/auth/cookies:', result);
                         $log.debug('/auth/cookies1: resolved');
-                        $rootScope.domoArigato = true;
+                        AppModel.set('domoArigato', true);
                         // forget the old headers, set the new ones
                         $log.debug('/auth/cookies2: resolved');
                         deferred.resolve(200);
@@ -493,7 +493,7 @@ angular.module('proton.authentication')
             $rootScope.isLoggedIn = this.isLoggedIn();
             $rootScope.isLocked = this.isLocked();
             $rootScope.isSecure = this.isSecured();
-            $rootScope.domoArigato = false;
+            AppModel.set('domoArigato', false);
             AppModel.set('loggedIn', false);
         },
 
@@ -539,19 +539,21 @@ angular.module('proton.authentication')
                 if (user.DisplayName.length === 0) {
                     user.DisplayName = user.Name;
                 }
-                const plainMailboxPass = tempStorage.getItem('plainMailboxPass');
-                tempStorage.removeItem('plainMailboxPass');
-
-                if (plainMailboxPass && !user.OrganizationPrivateKey) {
-                    checkKeysFormat(user, keys)
-                    .catch(() => {
-                        upgradeKeys({mailboxPassword: plainMailboxPass, oldSaltedPassword: this.getPassword(), user});
-                    });
-                }
 
                 $rootScope.isLoggedIn = true;
                 this.user = user;
                 $rootScope.user = user;
+
+                const plainMailboxPass = tempStorage.getItem('plainMailboxPass');
+                tempStorage.removeItem('plainMailboxPass');
+
+                if (plainMailboxPass && !user.OrganizationPrivateKey) {
+                    if (!checkKeysFormat(user)) {
+                        AppModel.set('upgradingKeys', true);
+                        return upgradeKeys({mailboxPassword: plainMailboxPass, oldSaltedPassword: this.getPassword(), user})
+                            .then(() => Promise.resolve(user));
+                    }
+                }
 
                 return user;
             })

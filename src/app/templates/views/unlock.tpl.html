@@ -3,13 +3,12 @@
     id="pm_login"
     name="unlockForm"
     class="pm_panel pm_form alt"
-    ng-class="{'loadingUnlock': domoArigato }"
+    ng-class="{ loadingUnlock: domoArigato }"
     novalidate
     role="form"
     autocomplete="on"
     ng-submit="unlock($event)">
-
-    <div ng-hide="domoArigato">
+    <div class="unlock-panel">
 
         <img src="/assets/img/logo.png" height="20" alt="ProtonMail" class="logo" />
 
@@ -49,7 +48,7 @@
 
     </div>
 
-    <div ng-show="domoArigato" class="loadingUnlock-loader-container">
+    <div class="loadingUnlock-loader-container">
         <atom-loader data-translation-key="decrypting"></atom-loader>
     </div>
 </form>

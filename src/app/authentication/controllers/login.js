@@ -15,6 +15,7 @@ angular.module('proton.authentication')
     networkActivityTracker,
     notify,
     helpLoginModal,
+    AppModel,
     pmcw,
     tempStorage,
     tools,
@@ -23,6 +24,17 @@ angular.module('proton.authentication')
     $scope.maxPW = CONSTANTS.LOGIN_PW_MAX_LEN;
     $scope.twoFactor = 0;
     $scope.showOld = window.location.hostname !== 'old.protonmail.com';
+    $scope.domoArigato = true;
+
+    const unsubscribe = $rootScope.$on('AppModel', (event, { type, data }) => {
+        switch (type) {
+            case 'domoArigato':
+                $scope.domoArigato = data.value;
+                break;
+        }
+    });
+
+    $scope.$on('$destroy', () => unsubscribe());
 
     /**
      * Clean notifications
@@ -107,11 +119,11 @@ angular.module('proton.authentication')
             }
 
             if ($scope.creds.authResponse.PasswordMode === 1) {
-                $rootScope.domoArigato = true;
                 return unlock($scope.creds.password, $scope.creds.authResponse);
             }
-        } else if ($state.is('login.sub')) {
 
+            AppModel.set('domoArigato', false);
+        } else if ($state.is('login.sub')) {
             const url = window.location.href;
             const arr = url.split('/');
             const domain = arr[0] + '//' + arr[2];
@@ -167,6 +179,7 @@ angular.module('proton.authentication')
      * Function called at the initialization of this controller
      */
     function initialization() {
+        AppModel.set('domoArigato', true);
         setLoggedIn();
         focusInput();
         checkHelpTag();
@@ -233,7 +246,7 @@ angular.module('proton.authentication')
                         };
 
                         if (result.data.PasswordMode === 1) {
-                            $rootScope.domoArigato = true;
+                            AppModel.set('domoArigato', true);
                         }
                         tempStorage.setItem('creds', creds);
                         $state.go('login.unlock');
@@ -281,7 +294,7 @@ angular.module('proton.authentication')
             });
         })
         .catch((error) => {
-            $log.error('unlock', error);
+            $log.error('login.unlock', error);
 
             // clear password for user
             selectPassword();
