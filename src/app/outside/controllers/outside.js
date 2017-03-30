@@ -98,7 +98,7 @@ angular.module('proton.outside')
             notify({ message });
         }
 
-        const process = embedded.parser($scope.message, 'cid')
+        const process = embedded.parser($scope.message, { direction: 'cid' })
             .then((result) => Promise.all([
                 pmcw.encryptMessage(result, $scope.message.publicKey),
                 pmcw.encryptMessage(result, [], password),

@@ -30,6 +30,7 @@ angular.module('proton.composer')
 ) => {
 
     const unsubscribe = [];
+    const outsidersMap = {};
 
     const MESSAGES_ERROR = {
         stillUploading: gettextCatalog.getString('Wait for attachment to finish uploading or cancel upload.', null, 'Error'),
@@ -456,7 +457,7 @@ angular.module('proton.composer')
 
     $scope.save = (message, notification = false, autosaving = false) => {
         const msg = messageModel(message);
-        return embedded.parser(msg, 'cid')
+        return embedded.parser(msg, { direction: 'cid' })
             .then((result) => {
                 msg.Body = result;
                 return recordMessage(msg, { notification, autosaving });
@@ -560,7 +561,10 @@ angular.module('proton.composer')
                 message.ID = ID;
                 parameters.id = ID;
             }
-            return embedded.parser(message, 'cid');
+            return embedded.parser(message, {
+                direction: 'cid',
+                isOutside: outsidersMap[message.ID]
+            });
         })
         .then((body) => (message.setDecryptedBody(body), message))
         .then(() => {
@@ -676,16 +680,15 @@ angular.module('proton.composer')
      * @return {Array}            Merge
      */
     function syncAttachmentsRemote(collection, list) {
-        return list
-            .reduce((acc, att = {}) => {
-                // Find if attachement already exists
-                const item = _.filter(collection, ({ AttachmentID, ID }) => ID === att.ID || AttachmentID === att.ID)[0];
+        return list.reduce((acc, att = {}) => {
+            // Find if attachement already exists
+            const item = _.filter(collection, ({ AttachmentID, ID }) => ID === att.ID || AttachmentID === att.ID)[0];
 
-                const data = angular.extend({}, item, att);
+            const data = angular.extend({}, item, att);
 
-                acc.push(data);
-                return acc;
-            }, []);
+            acc.push(data);
+            return acc;
+        }, []);
     }
 
     /**
@@ -733,33 +736,30 @@ angular.module('proton.composer')
 
     function encryptUserBody(message, deferred, Packages) {
         const insideUser = (key, Address) => {
-            return Promise
-                .all([message.encryptBody(key), message.encryptPackets(key)])
+            return Promise.all([message.encryptBody(key), message.encryptPackets(key)])
                 .then(([Body, KeyPackets]) => (Packages.push({ Address, Type: 1, Body, KeyPackets }), Body))
                 .catch(deferred.reject);
         };
 
         const outsideUser = (Token, Address) => {
 
-            return Promise
-                .all([
-                    pmcw.encryptMessage(Token, [], message.Password),
-                    pmcw.encryptMessage(message.getDecryptedBody(), [], message.Password),
-                    message.encryptPackets('', message.Password)
-                ])
-                .then(([EncToken, Body, KeyPackets]) => {
-                    return Packages
-                        .push({
-                            Type: 2,
-                            PasswordHint: message.PasswordHint,
-                            Address, Token, Body, KeyPackets, EncToken
-                        });
-                })
-                .catch((error) => {
-                    message.encrypting = false;
-                    dispatchMessageAction(message);
-                    $log.error(error);
+            return Promise.all([
+                pmcw.encryptMessage(Token, [], message.Password),
+                pmcw.encryptMessage(message.getDecryptedBody(), [], message.Password),
+                message.encryptPackets('', message.Password)
+            ])
+            .then(([EncToken, Body, KeyPackets]) => {
+                return Packages.push({
+                    Type: 2,
+                    PasswordHint: message.PasswordHint,
+                    Address, Token, Body, KeyPackets, EncToken
                 });
+            })
+            .catch((error) => {
+                message.encrypting = false;
+                dispatchMessageAction(message);
+                $log.error(error);
+            });
         };
 
 
@@ -797,8 +797,7 @@ angular.module('proton.composer')
 
         // Wrap the promise to isolate its chaining
         return new Promise((resolve, reject) => {
-            message
-                .getPublicKeys(emails)
+            message.getPublicKeys(emails)
                 .then(({ data = {} } = {}) => {
 
                     if (data.Code !== ComposerRequestStatus.SUCCESS) {
@@ -817,6 +816,9 @@ angular.module('proton.composer')
 
                     const outsiders = encryptingBody.outsiders; // Initialize to false a Boolean variable to know if there are outsiders email in recipients list
 
+                    // The message won't keep the ref
+                    outsidersMap[message.ID] = outsiders;
+
                     const promises = encryptingBody.promises;
 
                     // If there are some outsiders
@@ -827,8 +829,7 @@ angular.module('proton.composer')
                         if (message.Attachments.length > 0) {
                             // Add clear attachments packet in parameter
                             promises.push(
-                                message
-                                    .clearPackets()
+                                message.clearPackets()
                                     .then((packets) => parameters.AttachmentKeys = packets)
                                     .catch(deferred.reject)
                             );
@@ -1045,6 +1046,7 @@ angular.module('proton.composer')
             // Remove message in composer controller
             $scope.messages = removeMessage($scope.messages, message);
             composerRequestModel.clear(message);
+            delete outsidersMap[message.ID];
 
             // Hide all the tooltip
             $('.tooltip').not(this).hide();

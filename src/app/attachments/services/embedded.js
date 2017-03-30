@@ -13,11 +13,22 @@ angular.module('proton.attachments')
      * @param  {String} text      Alternative body to parse
      * @return {Promise}
      */
-    const parser = (message, direction = 'blob', text = '') => {
+    const parser = (message, { direction = 'blob', text = '', isOutside = false } = {}) => {
 
         const content = text || message.getDecryptedBody();
 
         if (!embeddedFinder.find(message)) {
+
+            /**
+             * cf #5088 we need to escape the body again if we forgot to set the password First.
+             * Prevent unescaped HTML.
+             *
+             * Don't do it everytime because it's "slow" and we don't want to slow down the process.
+             */
+            if (isOutside) {
+                return Promise.resolve(embeddedParser.escapeHTML(message, direction, content));
+            }
+
             return Promise.resolve(content);
         }
 
@@ -66,6 +77,7 @@ angular.module('proton.attachments')
         getCid: embeddedUtils.readCID,
         getBlob: embeddedStore.getBlobValue,
         deallocator: embeddedStore.deallocate,
+        clean: embeddedStore.cleanMemory,
         removeEmbedded: embeddedParser.removeEmbeddedHTML,
         exist: embeddedStore.cid.exist,
         generateCid: embeddedUtils.generateCid
