@@ -54,24 +54,23 @@ angular.module('proton.message')
         });
 
         function updateLabelsAdded(Type, labelID) {
-            const list = [labelID];
-            switch (Type) {
-                // This message is a draft, if you move it to trash and back to inbox, it will go to draft instead
-                case CONSTANTS.DRAFT: {
-                    list.push(CONSTANTS.MAILBOX_IDENTIFIERS.drafts);
-                    break;
+            const toInbox = labelID === CONSTANTS.MAILBOX_IDENTIFIERS.inbox;
+
+            if (toInbox) {
+                switch (Type) {
+                    // This message is a draft, if you move it to trash and back to inbox, it will go to draft instead
+                    case CONSTANTS.DRAFT:
+                        return [CONSTANTS.MAILBOX_IDENTIFIERS.drafts];
+                    // This message is sent, if you move it to trash and back, it will go back to sent
+                    case CONSTANTS.SENT:
+                        return [CONSTANTS.MAILBOX_IDENTIFIERS.sent];
+                    // Type 3 is inbox and sent, (a message sent to yourself), if you move it from trash to inbox, it will acquire both the inbox and sent labels ( 0 and 2 ).
+                    case CONSTANTS.INBOX_AND_SENT:
+                        return [CONSTANTS.MAILBOX_IDENTIFIERS.inbox, CONSTANTS.MAILBOX_IDENTIFIERS.sent];
                 }
-                // This message is sent, if you move it to trash and back, it will go back to sent
-                case CONSTANTS.SENT: {
-                    list.push(CONSTANTS.MAILBOX_IDENTIFIERS.sent);
-                    break;
-                }
-                // Type 3 is inbox and sent, (a message sent to yourself), if you move it from trash to inbox, it will acquire both the inbox and sent labels ( 0 and 2 ).
-                case CONSTANTS.INBOX_AND_SENT:
-                    list.push(CONSTANTS.MAILBOX_IDENTIFIERS.sent);
-                    break;
             }
-            return list;
+
+            return [labelID];
         }
 
 
