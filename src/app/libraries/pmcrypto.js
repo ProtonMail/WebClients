@@ -146,24 +146,28 @@ const pmcrypto = (function pmcrypto() {
         return openpgp.crypto.generateSessionKey('aes256');
     }
 
-    function reformatKey(privKey, email = '', passphrase = '') {
+    function reformatKey(privKey, email = '', passphrase= '') {
+        return new Promise((resolve, reject) => {
 
-        if (passphrase.length === 0) {
-            return Promise.reject('Missing private key passcode');
-        }
+            if (passphrase.length === 0) {
+                return Promise.reject('Missing private key passcode');
+            }
 
-        const user = {
-            name: email,
-            email
-        };
+            const user = {
+                name: email,
+                email
+            };
 
-        const options = {
-            privateKey: privKey,
-            userIds: [user],
-            passphrase
-        };
+            const options = {
+                privateKey: privKey,
+                userIds: [user],
+                passphrase
+            };
 
-        return openpgp.reformatKey(options).then((reformattedKey) => reformattedKey.privateKeyArmored);
+            openpgp.reformatKey(options).then((reformattedKey) => {
+                resolve(reformattedKey.privateKeyArmored);
+            });
+        });
     }
 
     function getKeys(armoredKeys = '') {
@@ -396,7 +400,7 @@ const pmcrypto = (function pmcrypto() {
                     if (binary) {
                         if (decrypted.signatures == null || decrypted.signatures[0] == null) {
                             if (config.debug) {
-                                console.log('No attachment signature present');
+                                console.log('No attachment signature present or no public keys provided');
                             }
                             sig = 0;
                         } else if (decrypted.signatures[0].valid) {
@@ -414,7 +418,7 @@ const pmcrypto = (function pmcrypto() {
                     } else {
                         if (decrypted.signatures == null || decrypted.signatures[0] == null) {
                             if (config.debug) {
-                                console.log('No message signature present');
+                                console.log('No message signature present or no public keys provided');
                             }
                             sig = 0;
                         } else if (decrypted.signatures[0].valid) {

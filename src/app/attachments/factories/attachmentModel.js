@@ -313,7 +313,7 @@ angular.module('proton.attachments')
 
             message.attachmentsToggle = true;
 
-            return AttachmentLoader.load(file, message.From.Keys[0].PublicKey)
+            return AttachmentLoader.load(file, message.From.Keys[0].PublicKey, authentication.getPrivateKeys(message.From.ID))
                 .then((packets) => {
                     return attachmentApi.upload(packets, message, tempPacket, total)
                         .then(({ attachment, sessionKey, REQUEST_ID, isAborted, isError }) => {
