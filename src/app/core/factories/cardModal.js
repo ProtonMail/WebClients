@@ -1,5 +1,5 @@
 angular.module('proton.core')
-.factory('cardModal', (pmModal, Payment, notify, pmcw, tools, gettextCatalog, $q, networkActivityTracker) => {
+.factory('cardModal', (pmModal, Payment, notify, pmcw, tools, gettextCatalog, $q, cardModel, networkActivityTracker) => {
     return pmModal({
         controllerAs: 'ctrl',
         templateUrl: 'templates/modals/card.tpl.html',
@@ -30,20 +30,11 @@ angular.module('proton.core')
                 const deferred = $q.defer();
 
                 if (self.mode === 'edition') {
-                    const { number, month, year, cvc, fullname, zip } = self.card;
-                    const country = self.card.country.value;
+                    const card = cardModel(self.card);
 
                     Payment.updateMethod({
                         Type: 'card',
-                        Details: {
-                            Number: number,
-                            ExpMonth: month,
-                            ExpYear: (year.length === 2) ? '20' + year : year,
-                            CVC: cvc,
-                            Name: fullname,
-                            Country: country,
-                            ZIP: zip
-                        }
+                        Details: card.details()
                     }).then((result) => {
                         if (result.data && result.data.Code === 1000) {
                             deferred.resolve(result.data.PaymentMethod);

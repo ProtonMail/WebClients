@@ -14,6 +14,7 @@ angular.module('proton.core')
     Address,
     authentication,
     confirmModal,
+    cardModel,
     CONSTANTS,
     direct,
     domains,
@@ -358,21 +359,12 @@ angular.module('proton.core')
     };
 
     $scope.donate = () => {
-        const { number, month, year, fullname, cvc, zip } = $scope.donationCard;
-        const country = $scope.donationCard.country.value;
+        const card = cardModel($scope.donationCard);
         const amount = ($scope.donationDetails.otherAmount || $scope.donationDetails.amount) * 100; // Don't be afraid
         const currency = $scope.donationDetails.currency.value;
         const method = {
             Type: 'card',
-            Details: {
-                Number: number,
-                ExpMonth: month,
-                ExpYear: (year.length === 2) ? '20' + year : year,
-                CVC: cvc,
-                Name: fullname,
-                Country: country,
-                ZIP: zip
-            }
+            Details: card.details()
         };
         verify(method, amount, currency);
     };
@@ -409,19 +401,10 @@ angular.module('proton.core')
     };
 
     $scope.pay = () => {
-        const { number, month, year, fullname, cvc, zip } = $scope.card;
-        const country = $scope.card.country.value;
+        const card = cardModel($scope.card);
         const method = {
             Type: 'card',
-            Details: {
-                Number: number,
-                ExpMonth: month,
-                ExpYear: (year.length === 2) ? '20' + year : year,
-                CVC: cvc,
-                Name: fullname,
-                Country: country,
-                ZIP: zip
-            }
+            Details: card.details()
         };
 
         verify(method, $scope.plan.Amount, $scope.plan.Currency);

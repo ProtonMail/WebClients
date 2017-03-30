@@ -8,6 +8,7 @@ angular.module('proton.core')
     $log,
     $window,
     $q,
+    cardModel,
     Payment,
     authentication,
     networkActivityTracker,
@@ -107,21 +108,12 @@ angular.module('proton.core')
 
             function method() {
                 if (self.methods.length === 0 && self.valid.AmountDue > 0) {
-                    const { number, month, year, cvc, fullname, zip } = self.card;
-                    const country = self.card.country.value;
+                    const card = cardModel(self.card);
 
                     // Add payment method
                     return Payment.updateMethod({
                         Type: 'card',
-                        Details: {
-                            Number: number,
-                            ExpMonth: month,
-                            ExpYear: (year.length === 2) ? '20' + year : year,
-                            CVC: cvc,
-                            Name: fullname,
-                            Country: country,
-                            ZIP: zip
-                        }
+                        Details: card.details()
                     }).then((result) => {
                         if (result.data && result.data.Code === 1000) {
                             return Promise.resolve(result.data.PaymentMethod.ID);

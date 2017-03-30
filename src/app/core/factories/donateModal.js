@@ -1,5 +1,5 @@
 angular.module('proton.core')
-.factory('donateModal', (authentication, pmModal, Payment, notify, tools, networkActivityTracker, gettextCatalog, $q) => {
+.factory('donateModal', (authentication, pmModal, Payment, notify, tools, cardModel, networkActivityTracker, gettextCatalog, $q) => {
     return pmModal({
         controllerAs: 'ctrl',
         templateUrl: 'templates/modals/donate.tpl.html',
@@ -23,8 +23,7 @@ angular.module('proton.core')
             // Functions
             const donation = () => {
                 const amount = self.otherAmount || self.amount;
-                const { number, month, year, cvc, fullname, zip } = self.card;
-                const country = self.card.country.value;
+                const card = cardModel(self.card);
                 const currency = self.currency.value;
 
                 self.process = true;
@@ -34,15 +33,7 @@ angular.module('proton.core')
                     Currency: currency,
                     Payment: {
                         Type: 'card',
-                        Details: {
-                            Number: number,
-                            ExpMonth: month,
-                            ExpYear: (year.length === 2) ? '20' + year : year,
-                            CVC: cvc,
-                            Name: fullname,
-                            Country: country,
-                            ZIP: zip
-                        }
+                        Details: card.details()
                     }
                 });
             };
