@@ -1,5 +1,5 @@
 angular.module('proton.core')
-.factory('saleModal', (pmModal, Payment, gettextCatalog, networkActivityTracker, authentication, eventManager) => {
+.factory('saleModal', (pmModal, Payment, gettextCatalog, networkActivityTracker, cardModel, authentication, eventManager) => {
     return pmModal({
         controllerAs: 'ctrl',
         templateUrl: 'templates/modals/sale.tpl.html',
@@ -40,6 +40,7 @@ angular.module('proton.core')
                 close();
             };
             function getParameters() {
+                const card = cardModel(self.card);
                 const currency = self.currency.value;
                 const parameters = {
                     Amount: self.amount * 100,
@@ -49,15 +50,7 @@ angular.module('proton.core')
                     case 'new_card':
                         parameters.Payment = {
                             Type: 'card',
-                            Details: {
-                                Number: self.card.number,
-                                ExpMonth: self.card.month,
-                                ExpYear: (self.card.year.length === 2) ? '20' + self.card.year : self.card.year,
-                                CVC: self.card.cvc,
-                                Name: self.card.fullname,
-                                Country: self.card.country.value,
-                                ZIP: self.card.zip
-                            }
+                            Details: card.details()
                         };
                         break;
                     case 'card':
