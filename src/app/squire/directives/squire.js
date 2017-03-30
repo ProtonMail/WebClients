@@ -59,8 +59,7 @@ angular.module('proton.squire')
 
                 if (isMessage(typeContent)) {
                     // On load we parse the body of the message in order to load its embedded images
-                    embedded
-                        .parser(scope.message)
+                    embedded.parser(scope.message)
                         .then((body) => editor.setHTML(body))
                         .then(() => unsubscribe = listen(updateModel, editor));
                 } else {
