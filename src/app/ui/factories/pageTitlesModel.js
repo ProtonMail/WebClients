@@ -29,7 +29,9 @@ angular.module('proton.ui')
             identities: gettextCatalog.getString('Identities', null, 'Title'),
             login: gettextCatalog.getString('Login', null, 'Title'),
             signup: gettextCatalog.getString('Signup', null, 'Title'),
-            vpn: gettextCatalog.getString('VPN', null, 'Title')
+            vpn: gettextCatalog.getString('VPN', null, 'Title'),
+            'eo.message': gettextCatalog.getString('Encrypted Message', null, 'Title'),
+            'eo.reply': gettextCatalog.getString('Encrypted Reply', null, 'Title')
         };
 
         function getFirstSortedAddresses() {
