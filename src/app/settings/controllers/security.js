@@ -10,6 +10,7 @@ angular.module('proton.settings')
     confirmModal,
     CONSTANTS,
     sharedSecretModal,
+    downloadFile,
     loginPasswordModal,
     recoveryCodeModal,
     Logs,
@@ -210,7 +211,7 @@ angular.module('proton.settings')
         const csvString = csvRows.join('\r\n');
         const blob = new Blob([csvString], { type: 'text/csv;charset=utf-8;' });
 
-        window.saveAs(blob, filename);
+        downloadFile(blob, filename);
     };
 
     $scope.revokeOthers = () => {

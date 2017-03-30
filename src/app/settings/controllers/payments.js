@@ -11,6 +11,7 @@ angular.module('proton.settings')
     confirmModal,
     invoices,
     methods,
+    downloadFile,
     notify,
     networkActivityTracker,
     organizationInvoices,
@@ -155,14 +156,14 @@ angular.module('proton.settings')
      * Download invoice
      * @param {Object} invoice
      */
-    $scope.download = function (invoice) {
+    $scope.download = (invoice) => {
         networkActivityTracker.track(
             Payment.invoice(invoice.ID)
             .then((result) => {
                 const filename = 'ProtonMail Invoice ' + invoice.ID + '.pdf';
                 const blob = new Blob([result.data], { type: 'application/pdf' });
 
-                window.saveAs(blob, filename);
+                downloadFile(blob, filename);
             })
         );
     };

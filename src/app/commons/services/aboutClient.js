@@ -21,6 +21,8 @@ angular.module('proton.commons')
         };
         const isSafariMobile = () => $.ua.browser.name === 'Mobile Safari';
 
+        const isFileSaverSupported = () => 'download' in document.createElement('a') || navigator.msSaveOrOpenBlob;
+
         const prngAvailable = () => {
             if (typeof window !== 'undefined' && window.crypto && window.crypto.getRandomValues) {
                 return true;
@@ -71,6 +73,7 @@ angular.module('proton.commons')
             getBrowserVersion,
             isSafari,
             isSafariMobile,
+            isFileSaverSupported,
             prngAvailable
         };
     });

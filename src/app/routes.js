@@ -490,8 +490,7 @@ angular.module('proton.routes', [
         views: {
             'main@': {
                 templateUrl: 'templates/views/pgp.tpl.html',
-                controller($scope, $rootScope, messageID, tools) {
-                    $scope.isSafari = tools.isSafari(); // Download doesn't work with Safari browser
+                controller($scope, $rootScope, messageID, downloadFile) {
 
                     function viewPgp(event) {
                         $scope.$applyAsync(() => {
@@ -503,11 +502,7 @@ angular.module('proton.routes', [
                     $scope.download = () => {
                         const blob = new Blob([$scope.content], { type: 'data:text/plain;charset=utf-8;' });
                         const filename = 'pgp.txt';
-                        try {
-                            window.saveAs(blob, filename);
-                        } catch (error) {
-                            console.error(error);
-                        }
+                        downloadFile(blob, filename);
                     };
 
                     $scope.print = () => {

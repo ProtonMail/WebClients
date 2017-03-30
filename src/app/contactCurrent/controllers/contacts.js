@@ -13,6 +13,7 @@ angular.module('proton.contactCurrent')
     Contact,
     tools,
     contactModal,
+    downloadFile,
     dropzoneModal,
     eventManager,
     gettextCatalog,
@@ -33,7 +34,6 @@ angular.module('proton.contactCurrent')
     $scope.editing = false;
     $scope.numPerPage = CONSTANTS.ELEMENTS_PER_PAGE;
     $scope.sortBy = 'Name';
-    $scope.isSafari = tools.isSafari();
 
     // Listeners
     $scope.$on('deleteContact', () => {
@@ -467,7 +467,7 @@ angular.module('proton.contactCurrent')
         const csvString = csvRows.join('\n');
         const blob = new Blob([csvString], { type: 'data:attachment/csv;' });
 
-        window.saveAs(blob, filename);
+        downloadFile(blob, filename);
     };
 
     $scope.initialization();
