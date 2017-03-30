@@ -1,10 +1,9 @@
 angular.module('proton.address')
-    .directive('addressKeysView', ($rootScope, authentication, gettextCatalog, tools, notify, Key, keyPasswordModal, pmcw, networkActivityTracker, eventManager) => ({
+    .directive('addressKeysView', ($rootScope, downloadFile, authentication, gettextCatalog, tools, notify, Key, keyPasswordModal, pmcw, networkActivityTracker, eventManager) => ({
         replace: true,
         restrict: 'E',
         templateUrl: 'templates/address/addressKeysView.tpl.html',
         link(scope) {
-            const isSafari = tools.isSafari(); // Download doesn't work with Safari browser
             const unsubscribe = $rootScope.$on('updateUser', () => {
                 populateKeys();
             });
@@ -31,19 +30,10 @@ angular.module('proton.address')
              * @param {String} type - 'public' or 'private'
              */
             scope.download = (key, email, type) => {
-                if (isSafari) {
-                    const message = gettextCatalog.getString("Safari doesn't support downloading of keys.", null);
-                    const classes = 'notification-danger';
-                    notify({ message, classes });
-                } else {
-                    const blob = new Blob([key], { type: 'data:text/plain;charset=utf-8;' });
-                    const filename = type + 'key.' + email + '.txt';
-                    try {
-                        window.saveAs(blob, filename);
-                    } catch (error) {
-                        console.error(error);
-                    }
-                }
+                const blob = new Blob([key], { type: 'data:text/plain;charset=utf-8;' });
+                const filename = type + 'key.' + email + '.txt';
+
+                downloadFile(blob, filename);
             };
             /**
              * Reactivate key

@@ -1,7 +1,7 @@
 angular.module('proton.attachments')
-    .factory('AttachmentLoader', ($cacheFactory, $log, $q, pmcw, authentication, $state, $stateParams, Eo, secureSessionStorage, attachmentApi) => {
+    .factory('AttachmentLoader', ($cacheFactory, $log, $q, aboutClient, pmcw, authentication, $state, $stateParams, Eo, secureSessionStorage, attachmentApi) => {
 
-        const isFileSaverSupported = !!(('download' in document.createElement('a')) || navigator.msSaveOrOpenBlob);
+        const isFileSaverSupported = aboutClient.isFileSaverSupported();
         const cache = $cacheFactory('attachments');
         const getCacheKey = ({ ID }) => `attachment.${ID}`;
         const isOutside = () => $state.is('eo.message') || $state.is('eo.reply');

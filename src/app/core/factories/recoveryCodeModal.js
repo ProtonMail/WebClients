@@ -1,5 +1,5 @@
 angular.module('proton.core')
-.factory('recoveryCodeModal', (pmModal) => {
+.factory('recoveryCodeModal', (pmModal, downloadFile) => {
     return pmModal({
         controllerAs: 'ctrl',
         templateUrl: 'templates/modals/twofactor/recoveryCode.tpl.html',
@@ -8,7 +8,9 @@ angular.module('proton.core')
             this.recoveryCodesSecondHalf = params.recoveryCodes.slice(8, 16);
             this.download = () => {
                 const blob = new Blob([params.recoveryCodes.join('\r\n')], { type: 'text/plain;charset=utf-8;' });
-                window.saveAs(blob, 'protonmail_recovery_codes.txt');
+                const filename = 'protonmail_recovery_codes.txt';
+
+                downloadFile(blob, filename);
             };
             this.done = () => {
                 params.close();
