@@ -52,15 +52,16 @@ angular.module('proton.outside')
             });
         }
 
-        embedded.parser(message).then((result) => {
-            message.setDecryptedBody(result);
-            message.expand = true;
-            message.From = {
-                Keys: [{ PublicKey: message.publicKey }]
-            };
-            $scope.message = message;
-            $scope.body = message.getDecryptedBody();
-        });
+        embedded.parser(message)
+            .then((result) => {
+                message.setDecryptedBody(result);
+                message.expand = true;
+                message.From = {
+                    Keys: [{ PublicKey: message.publicKey }]
+                };
+                $scope.message = message;
+                $scope.body = message.getDecryptedBody();
+            });
 
 
         // start timer ago

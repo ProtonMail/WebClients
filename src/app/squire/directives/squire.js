@@ -33,8 +33,7 @@ angular.module('proton.squire')
 
                     if (isMessage(typeContent)) {
                         // Replace the embedded images with CID to keep the model updated
-                        return embedded
-                            .parser(scope.message, 'cid', value)
+                        return embedded.parser(scope.message, { direction: 'cid', text: value })
                             .then((body) => {
                                 scope.message.setDecryptedBody(body);
 
