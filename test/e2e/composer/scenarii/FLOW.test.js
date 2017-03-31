@@ -23,7 +23,8 @@ module.exports = (customSuite, { message, editor, identifier }, options = {}) =>
         it('should create a new message', () => {
             borodin.content(message.body)
                 .then(assert(message.body))
-                .then(() => editor.checkSignature());
+                .then(() => editor.checkSignature())
+                .then(isTrue);
         });
 
         it('should not display CC and BCC fields', () => {

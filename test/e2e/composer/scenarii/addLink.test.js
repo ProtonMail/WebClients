@@ -1,4 +1,4 @@
-const { isTrue, isFalse } = require('../../../e2e.utils/assertions');
+const { isTrue, isFalse, assert } = require('../../../e2e.utils/assertions');
 
 module.exports = ({ editor, message }) => {
 
@@ -24,6 +24,22 @@ module.exports = ({ editor, message }) => {
 
         it('should add a link', () => {
             popover.matchIframe(message.linkImage)
+                .then(isTrue);
+        });
+
+        it('should update the link', () => {
+            popover.openForm()
+                .then(() => popover.readInput())
+                .then(assert({ label: message.linkImage, link: message.linkImage }))
+                .then(() => browser.sleep(300));
+        });
+
+        it('should add a link with a label', () => {
+            popover.bindLink(message.linkImage)
+                .then(() => popover.bindLabel(message.linkLabel))
+                .then(() => popover.submit())
+                .then(() => browser.sleep(300))
+                .then(() => popover.matchIframe(message.linkImage, message.linkLabel))
                 .then(isTrue);
         });
     });
