@@ -1,15 +1,14 @@
 angular.module('proton.core')
 .factory('checkTypoEmails', () => {
     const addresses = [
-        'gmail.',
-        'yahoo.',
         'prontonmail.',
         'prtonmail.',
         'protomail.',
         'protonmai.',
         'protonmsil.',
         'ptotonmail.'
-    ].reduce((previousValue, currentValue) => previousValue.concat([currentValue + 'ch', currentValue + 'com', currentValue + 'co']), []);
+    ].reduce((previousValue, currentValue) => previousValue.concat([currentValue + 'ch', currentValue + 'com']), [])
+    .concat(['gmail.co', 'yahoo.co']);
     /**
      * Check ProtonMail typo in email value
      * @param {String} email
