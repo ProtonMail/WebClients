@@ -19,6 +19,7 @@ const message = {
     BCCList: 'qatest123+monique@protonmail.com',
     body: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos aperiam debitis, ipsam numquam eius unde cupiditate atque enim, deleniti amet, quidem itaque. Voluptatum quisquam voluptates neque, numquam molestiae! Molestiae, aliquam?',
     linkImage: 'https://i.imgur.com/WScAnHr.jpg',
+    linkLabel: 'Hey monique !',
     expiration: {
         hours: 5,
         days: 3,

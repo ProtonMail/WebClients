@@ -59,7 +59,7 @@ angular.module('proton.squire')
             });
 
             const newSelection = angular.element(editor.getSelection().commonAncestorContainer);
-            (newSelection.closest('a')[0] || newSelection.find('a')[0]).textContent = title;
+            (newSelection.closest('a')[0] || newSelection.find('a')[0]).textContent = title || link;
         };
 
         /**
