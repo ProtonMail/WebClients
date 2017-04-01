@@ -38,12 +38,12 @@
                 <states-conversation></states-conversation>
                 <folders-element conversation="conversation"></folders-element>
                 <span class="subject-num-message" ng-if="conversation.NumMessages > 1">({{ conversation.NumMessages }})</span>
-                <span class="subject-text ellipsis">{{ conversation.Subject  | unescape }}</span>
+                <span class="subject-text ellipsis" role="button">{{ conversation.Subject  | unescape }}</span>
             </h4>
             <labels-element element="conversation"></labels-element>
         </div>
         <span class="size">{{ size(conversation)| bytes }}</span>
         <i class="fa fa-paperclip conversation-icon-attachment"></i>
-        <time-element></time-element>
+        <time-element role="button"></time-element>
     </div>
 </div>
