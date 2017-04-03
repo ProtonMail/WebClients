@@ -1,5 +1,5 @@
 angular.module('proton.commons')
-.factory('Payment', ($http, $q, gettextCatalog, authentication, CONSTANTS, url) => {
+.factory('Payment', ($http, $q, gettextCatalog, authentication, CONSTANTS, url, brick) => {
 
     const transformRepBillingCycle = (data) => {
         const json = angular.fromJson(data);
@@ -19,6 +19,28 @@ angular.module('proton.commons')
         return json || {};
     };
 
+    function generateFingerprint(params) {
+        const paymentMethodID = params.PaymentMethodID;
+        let payment;
+        if (params.Payment) {
+            payment = params.Payment;
+        } else if (params.PaymentMethod) {
+            payment = params.PaymentMethod;
+        } else {
+            payment = params;
+        }
+        return new Promise((resolve) => {
+            if (typeof paymentMethodID === 'undefined' && payment.Type === 'card') {
+                brick.getFingerprint((fingerprint) => {
+                    payment.Fingerprint = fingerprint;
+                    resolve(params);
+                });
+            } else {
+                resolve(params);
+            }
+        });
+    }
+
     return {
         /**
         * Credit account
@@ -29,10 +51,11 @@ angular.module('proton.commons')
         },
         /**
         * Donate for perks. Does not require authentication.
-        * @param {Object} Obj
+        * @param {Object} params
         */
-        donate(Obj) {
-            return $http.post(url.get() + '/payments/donate', Obj);
+        donate(params) {
+            return generateFingerprint(params)
+            .then((params) => $http.post(url.get() + '/payments/donate', params));
         },
         /**
         * Cancel given subscription.
@@ -55,7 +78,8 @@ angular.module('proton.commons')
          * @param {Promise}
          */
         verify(params) {
-            return $http.post(url.get() + '/payments/verify', params);
+            return generateFingerprint(params)
+            .then((params) => $http.post(url.get() + '/payments/verify', params));
         },
         /**
          * Get payment method status
@@ -91,7 +115,8 @@ angular.module('proton.commons')
           * @return {Promise}
           */
         pay(id, params) {
-            return $http.post(url.get() + '/payments/invoices/' + id, params);
+            return generateFingerprint(params)
+            .then((params) => $http.post(url.get() + '/payments/invoices/' + id, params));
         },
 
         /**
@@ -183,20 +208,21 @@ angular.module('proton.commons')
                     }
                 });
             }
+            const sub = {
+                Name: 'free',
+                Title: 'ProtonMail Free',
+                MaxDomains: 0,
+                CouponCode: null,
+                MaxAddresses: 1,
+                MaxSpace: 5368709120, // 500 MB
+                MaxMembers: 1,
+                Cycle: 12,
+                Currency: authentication.user.Currency
+            };
             return Promise.resolve({
                 data: {
                     Code: 1000,
-                    Subscription: {
-                        Name: 'free',
-                        Title: 'ProtonMail Free',
-                        MaxDomains: 0,
-                        CouponCode: null,
-                        MaxAddresses: 1,
-                        MaxSpace: 5368709120, // 500 MB
-                        MaxMembers: 1,
-                        Cycle: 12,
-                        Currency: authentication.user.Currency
-                    }
+                    Subscription: sub
                 }
             });
         },
@@ -207,7 +233,8 @@ angular.module('proton.commons')
             return $http.post(url.get() + '/payments/subscription/check', params);
         },
         updateMethod(params) {
-            return $http.post(url.get() + '/payments/methods', params);
+            return generateFingerprint(params)
+            .then((params) => $http.post(url.get() + '/payments/methods', params));
         },
         deleteMethod(id) {
             return $http.delete(url.get() + '/payments/methods/' + id);
@@ -228,7 +255,8 @@ angular.module('proton.commons')
          * Create a subscription
          */
         subscribe(params) {
-            return $http.post(url.get() + '/payments/subscription', params);
+            return generateFingerprint(params)
+            .then((params) => $http.post(url.get() + '/payments/subscription', params));
         },
         /**
          * Delete current subscription, locked

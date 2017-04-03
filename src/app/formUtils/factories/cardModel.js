@@ -1,12 +1,24 @@
 angular.module('proton.formUtils')
     .factory('cardModel', () => {
-        const clean = (value) => value.replace(/\s/g, '');
+        const clean = (value) => String(value).replace(/\s+/g, '');
+        /**
+         * Add a 0 before the month number to match the API format
+         * 1 => 01
+         * 10 => 10
+         * @param  {Number} number
+         * @return {String}
+         */
+        const formatMonth = (number = 1) => `0${number}`.slice(-2);
+        const formatYear = (year) => {
+            const pre = (String(year).length === 2) ? '20' : '';
+            return `${pre}${year}`;
+        };
 
         return (data = {}) => {
             const card = angular.copy(data);
             const number = () => clean(card.number);
-            const month = () => card.month;
-            const year = () => ((year.length === 2) ? '20' + card.year : card.year);
+            const month = () => formatMonth(card.month);
+            const year = () => formatYear(card.year);
             const cvc = () => clean(card.cvc);
             const fullname = () => card.fullname;
             const zip = () => clean(card.zip);
