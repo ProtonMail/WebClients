@@ -97,16 +97,26 @@ angular.module('proton.settings')
     }
 
     function getMessageDeleteLabel({ Exclusive }) {
-        return (Exclusive) ? gettextCatalog.getString('Are you sure you want to delete this folder? Messages in the folders aren’t deleted if the folder is deleted, they can still be found in all mail. If you want to delete all messages in a folder, move them to trash.', null, 'Info') : gettextCatalog.getString('Are you sure you want to delete this label? Removing a label will not remove the messages with that label.', null, 'Info');
+        if (Exclusive) {
+            return {
+                CONFIRM: gettextCatalog.getString('Are you sure you want to delete this folder? Messages in the folders aren’t deleted if the folder is deleted, they can still be found in all mail. If you want to delete all messages in a folder, move them to trash.', null, 'Info'),
+                NOTIF: gettextCatalog.getString('Folder deleted', null)
+            };
+        }
+
+        return {
+            CONFIRM: gettextCatalog.getString('Are you sure you want to delete this label? Removing a label will not remove the messages with that label.', null, 'Info'),
+            NOTIF: gettextCatalog.getString('Label deleted', null)
+        };
     }
 
     $scope.deleteLabel = (label) => {
         const title = getTitleDeleteLabel(label);
-        const message = getMessageDeleteLabel(label);
+        const { CONFIRM, NOTIF } = getMessageDeleteLabel(label);
         confirmModal.activate({
             params: {
                 title,
-                message,
+                message: CONFIRM,
                 confirm() {
                     const promise = Label.delete(label.ID)
                     .then(({ data = {} } = {}) => {
@@ -118,7 +128,7 @@ angular.module('proton.settings')
                     .then(() => eventManager.call())
                     .then(() => {
                         confirmModal.deactivate();
-                        notify({ message: gettextCatalog.getString('Label deleted', null), classes: 'notification-success' });
+                        notify({ message: NOTIF, classes: 'notification-success' });
                     });
                     networkActivityTracker.track(promise);
                 },
