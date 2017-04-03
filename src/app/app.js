@@ -28,6 +28,7 @@ angular.module('proton', [
 
     // Config
     'proton.config',
+    'proton.payment',
     'proton.search',
     'proton.ui',
     'proton.sidebar',
