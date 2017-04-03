@@ -17,7 +17,7 @@ angular.module('proton.core')
             // Functions
             self.initialization = () => {
                 if (self.amountDue > 0) {
-                    if (params.status.Stripe === true && self.methods.length > 0) {
+                    if ((params.status.Stripe || params.status.Paymentwall) && self.methods.length > 0) {
                         self.method = self.methods[0];
                         self.choices.push({ value: 'card', label: gettextCatalog.getString('Credit card', null) });
                     }

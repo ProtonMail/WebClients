@@ -26,7 +26,7 @@ angular.module('proton.settings')
 ) => {
     // Initialize variables
     $scope.configuration = {};
-    $scope.subscription = {};
+    $scope.subscription = subscriptionModel.get();
     $scope.organization = organizationModel.get();
 
     // Options
@@ -50,6 +50,54 @@ angular.module('proton.settings')
         }
     };
 
+    function updateSubscription() {
+        const subscription = subscriptionModel.get();
+        _.extend($scope.subscription, subscription);
+        $scope.configuration.cycle = subscription.Cycle;
+        $scope.configuration.currency = subscription.Currency;
+
+        if ($scope.subscription.Name === 'plus') {
+            $scope.selects.plus.space = _.findWhere($scope.plusSpaceOptions, { value: $scope.count('MaxSpace') });
+            $scope.selects.plus.domain = _.findWhere($scope.domainOptions, { value: $scope.count('MaxDomains') });
+            $scope.selects.plus.address = _.findWhere($scope.addressOptions, { value: $scope.count('MaxAddresses') });
+        } else if ($scope.subscription.Name === 'business') {
+            $scope.selects.business.space = _.findWhere($scope.businessSpaceOptions, { value: $scope.count('MaxSpace') });
+            $scope.selects.business.domain = _.findWhere($scope.domainOptions, { value: $scope.count('MaxDomains') });
+            $scope.selects.business.address = _.findWhere($scope.addressOptions, { value: $scope.count('MaxAddresses') });
+            $scope.selects.business.member = _.findWhere($scope.memberOptions, { value: $scope.count('MaxMembers') });
+        } else {
+            $scope.selects.plus.space = $scope.plusSpaceOptions[0];
+            $scope.selects.plus.domain = $scope.domainOptions[0];
+            $scope.selects.plus.address = $scope.addressOptions[0];
+            $scope.selects.business.member = $scope.memberOptions[0];
+            $scope.selects.business.space = $scope.businessSpaceOptions[0];
+            $scope.selects.business.domain = $scope.domainOptions[0];
+            $scope.selects.business.address = $scope.addressOptions[0];
+        }
+    }
+
+    function updatePlans(monthly, yearly) {
+        $scope.plans = monthly.concat(yearly);
+        $scope.addons = {
+            1: {
+                space: _.findWhere(monthly, { Name: '1gb' }),
+                domain: _.findWhere(monthly, { Name: '1domain' }),
+                address: _.findWhere(monthly, { Name: '5address' }),
+                member: _.findWhere(monthly, { Name: '1member' })
+            },
+            12: {
+                space: _.findWhere(yearly, { Name: '1gb' }),
+                domain: _.findWhere(yearly, { Name: '1domain' }),
+                address: _.findWhere(yearly, { Name: '5address' }),
+                member: _.findWhere(yearly, { Name: '1member' })
+            }
+        };
+    }
+
+    function updateMethods(methods) {
+        $scope.methods = methods;
+    }
+
     /**
      * Method called at the initialization of this controller
      * @param {Object} subscription
@@ -57,59 +105,15 @@ angular.module('proton.settings')
      * @param {Object} yearly
      * @param {Array} methods
      */
-    $scope.initialization = (subscription, monthly, yearly, methods) => {
-        if (subscription) {
-            _.extend($scope.subscription, subscription);
-            $scope.configuration.cycle = subscription.Cycle;
-            $scope.configuration.currency = subscription.Currency;
-
-            if ($scope.subscription.Name === 'plus') {
-                $scope.selects.plus.space = _.findWhere($scope.plusSpaceOptions, { value: $scope.count('MaxSpace') });
-                $scope.selects.plus.domain = _.findWhere($scope.domainOptions, { value: $scope.count('MaxDomains') });
-                $scope.selects.plus.address = _.findWhere($scope.addressOptions, { value: $scope.count('MaxAddresses') });
-            } else if ($scope.subscription.Name === 'business') {
-                $scope.selects.business.space = _.findWhere($scope.businessSpaceOptions, { value: $scope.count('MaxSpace') });
-                $scope.selects.business.domain = _.findWhere($scope.domainOptions, { value: $scope.count('MaxDomains') });
-                $scope.selects.business.address = _.findWhere($scope.addressOptions, { value: $scope.count('MaxAddresses') });
-                $scope.selects.business.member = _.findWhere($scope.memberOptions, { value: $scope.count('MaxMembers') });
-            } else {
-                $scope.selects.plus.space = $scope.plusSpaceOptions[0];
-                $scope.selects.plus.domain = $scope.domainOptions[0];
-                $scope.selects.plus.address = $scope.addressOptions[0];
-                $scope.selects.business.member = $scope.memberOptions[0];
-                $scope.selects.business.space = $scope.businessSpaceOptions[0];
-                $scope.selects.business.domain = $scope.domainOptions[0];
-                $scope.selects.business.address = $scope.addressOptions[0];
-            }
-        }
-
-        if (angular.isDefined(monthly) && angular.isDefined(yearly)) {
-            $scope.plans = monthly.concat(yearly);
-            $scope.addons = {
-                1: {
-                    space: _.findWhere(monthly, { Name: '1gb' }),
-                    domain: _.findWhere(monthly, { Name: '1domain' }),
-                    address: _.findWhere(monthly, { Name: '5address' }),
-                    member: _.findWhere(monthly, { Name: '1member' })
-                },
-                12: {
-                    space: _.findWhere(yearly, { Name: '1gb' }),
-                    domain: _.findWhere(yearly, { Name: '1domain' }),
-                    address: _.findWhere(yearly, { Name: '5address' }),
-                    member: _.findWhere(yearly, { Name: '1member' })
-                }
-            };
-
-        }
-
-        if (angular.isDefined(methods)) {
-            $scope.methods = methods;
-        }
+    function initialization(monthly, yearly, methods) {
+        updateSubscription();
+        updatePlans(monthly, yearly);
+        updateMethods(methods);
 
         if ($stateParams.scroll === true) {
             $scope.scrollToPlans();
         }
-    };
+    }
 
     /**
      * Scroll to the plans section
@@ -127,7 +131,8 @@ angular.module('proton.settings')
                 methods: Payment.methods()
             })
             .then((result) => {
-                $scope.initialization(result.subscription, undefined, undefined, result.methods.data.PaymentMethods);
+                updateSubscription();
+                updateMethods(result.methods.data.PaymentMethods);
             })
         );
     };
@@ -205,7 +210,7 @@ angular.module('proton.settings')
             })
             .then((result) => {
                 $scope.configuration.currency = currency;
-                $scope.initialization(undefined, result.monthly.data.Plans, result.yearly.data.Plans);
+                updatePlans(result.monthly.data.Plans, result.yearly.data.Plans);
                 deferred.resolve();
             });
 
@@ -267,7 +272,7 @@ angular.module('proton.settings')
      * Open donate modal
      */
     $scope.donate = () => {
-        if (status.data.Stripe === true) {
+        if (status.data.Stripe || status.data.Paymentwall) {
             networkActivityTracker.track(
                 Payment.methods()
                 .then((result) => {
@@ -457,5 +462,5 @@ angular.module('proton.settings')
     };
 
     // Call initialization
-    $scope.initialization(subscriptionModel.get(), monthly.data.Plans, yearly.data.Plans, methods.data.PaymentMethods);
+    initialization(monthly.data.Plans, yearly.data.Plans, methods.data.PaymentMethods);
 });

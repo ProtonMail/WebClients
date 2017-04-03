@@ -13,6 +13,7 @@ var API_TARGETS = {
     dev: 'https://dev.protonmail.com/api',
     v2: 'https://v2.protonmail.com/api',
     local: 'https://protonmail.dev/api',
+    host: 'https://protonmail.host/api',
     build: '/api'
 };
 var autoprefixer = require('autoprefixer');

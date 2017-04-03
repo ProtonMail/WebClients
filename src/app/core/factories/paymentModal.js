@@ -42,6 +42,7 @@ angular.module('proton.core')
             self.organizationName = gettextCatalog.getString('My organization', null, 'Title'); // TODO set self value for the business plan
 
             // Functions
+            const isIE11 = () => $.ua.browser.name === 'IE' && $.ua.browser.major === '11';
             function initialization() {
                 if (params.subscription.CouponCode) {
                     self.displayCoupon = true;
@@ -54,11 +55,11 @@ angular.module('proton.core')
                     self.method = self.methods[0];
                 }
 
-                if (params.status.Stripe === true) {
+                if (params.status.Stripe || params.status.Paymentwall) {
                     self.choices.push({ value: 'card', label: gettextCatalog.getString('Credit card', null) });
                 }
 
-                if (params.status.Paypal === true && !tools.isIE11) { // IE11 doesn't support PayPal
+                if (params.status.Paypal && !isIE11()) { // IE11 doesn't support PayPal
                     self.choices.push({ value: 'paypal', label: 'PayPal' });
                 }
 
@@ -127,18 +128,39 @@ angular.module('proton.core')
                 return Promise.resolve();
             }
 
-            function subscribe(methodID) {
-                return Payment.subscribe({
+            function subscribe() {
+                const parameters = {
                     Amount: self.valid.AmountDue,
                     Currency: self.valid.Currency,
-                    PaymentMethodID: methodID,
                     CouponCode: self.coupon,
                     PlanIDs: params.planIDs
-                }).then((result) => {
-                    if (result.data && result.data.Code === 1000) {
-                        return Promise.resolve(result.data);
-                    } else if (result.data && result.data.Error) {
-                        return Promise.reject(result.data.Error);
+                };
+                if (self.valid.AmountDue) {
+                    if (self.methods.length) {
+                        parameters.PaymentMethodID = self.method.ID;
+                    } else {
+                        const { number, month, year, cvc, fullname, zip } = self.card;
+                        const country = self.card.country.value;
+                        parameters.Payment = {
+                            Type: 'card',
+                            Details: {
+                                Number: number,
+                                ExpMonth: month,
+                                ExpYear: (year.length === 2) ? '20' + year : year,
+                                CVC: cvc,
+                                Name: fullname,
+                                Country: country,
+                                ZIP: zip
+                            }
+                        };
+                    }
+                }
+                return Payment.subscribe(parameters)
+                .then(({ data = {} }) => {
+                    if (data.Code === 1000) {
+                        return Promise.resolve(data);
+                    } else if (data.Error) {
+                        return Promise.reject(data.Error);
                     }
                     return Promise.reject('Error subscribing');
                 });
@@ -175,8 +197,7 @@ angular.module('proton.core')
                 // Change process status true to disable input fields
                 self.step = 'process';
 
-                method()
-                .then(subscribe)
+                subscribe()
                 .then(organizationKey)
                 .then(createOrganization)
                 .then(eventManager.call)
