@@ -36,7 +36,7 @@ angular.module('proton.ui')
                 networkActivityTracker.track(promise);
             }
 
-            angular.element('#pm_toolbar-desktop').find('a').tooltip('hide');
+            angular.element('.toolbarDesktop-container').find('a').tooltip('hide');
         };
 
         return {

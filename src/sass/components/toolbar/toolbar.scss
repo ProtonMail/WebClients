@@ -8,7 +8,7 @@
     }
 }
 
-#pm_toolbar-desktop {
+.toolbarDesktop-container {
     height: 56px;
     position: relative;
     z-index: 8;
@@ -41,7 +41,7 @@
     }
 }
 
-#pm_toolbar-mobile {
+.toolbarMobile-container {
     height: 70px;
     padding: 10px;
 
@@ -50,7 +50,7 @@
         height: 48px;
     }
     .pm_buttons a {
-        padding: 0 10px;
+        padding: 0 8px;
     }
     & > .pm_buttons,
     & > .pull-right {

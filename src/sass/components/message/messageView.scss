@@ -392,12 +392,9 @@ body.appConfigBody-is-mobile {
                 height: 60px;
                 line-height: 25px;
                 position: relative;
-                .pull-left {
-                    position: static;
-                }
                 .meta {
                     position: absolute;
-                    left: 10px;
+                    left: 0px;
                     top: 5px;
                     max-width: initial;
                     white-space: nowrap;
@@ -519,6 +516,7 @@ body.appConfigBody-is-mobile {
             }
         }
     }
+    .message .details .action-row .pm_buttons a  { padding: 0 8px }
 }
 
 .message-summary-labels { padding-left: .2em; }
