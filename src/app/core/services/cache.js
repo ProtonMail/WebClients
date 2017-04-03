@@ -13,7 +13,8 @@ angular.module('proton.core')
     cacheCounters,
     networkActivityTracker,
     tools,
-    labelsModel
+    labelsModel,
+    cachePages
 ) => {
     const api = {};
     let messagesCached = []; // In this array we store the messages cached
@@ -33,6 +34,16 @@ angular.module('proton.core')
     */
     function storeConversations(conversations = []) {
         conversations.forEach(updateConversation);
+    }
+
+    /**
+     * From the request API we return an array of the pages cached
+     * @param  {Number} Page
+     * @param  {Number} Limit
+     * @return {Array}
+     */
+    function getPages({ Page = 0, Limit = CONSTANTS.CONVERSATION_LIMIT }) {
+        return _.range(Page, Page + (Limit / CONSTANTS.ELEMENTS_PER_PAGE), 1);
     }
 
     /**
@@ -256,9 +267,7 @@ angular.module('proton.core')
     const queryConversations = (request) => {
         const loc = getLocation(request);
         const context = tools.cacheContext();
-
         request.Limit = request.Limit || CONSTANTS.CONVERSATION_LIMIT; // We don't call 50 conversations but 100 to improve user experience when he delete message and display quickly the next conversations
-
         const promise = api.getDispatcher()
         .then(() => conversationApi.query(request))
         .then(({ data = {} } = {}) => {
@@ -275,9 +284,14 @@ angular.module('proton.core')
                     // Set total value in cache
                     const total = data.Total;
                     const unread = (data.Total === 0) ? 0 : data.Unread;
+                    const pages = getPages(request);
+
                     cacheCounters.updateConversation(loc, total, unread);
                     // Store conversations
                     storeConversations(data.Conversations);
+                    // Add pages to the cache
+                    pages.forEach((page) => !cachePages.inside(page) && cachePages.add(page));
+                    api.clearDispatcher();
                     // Return conversations ordered
                     return Promise.resolve(api.orderConversation(data.Conversations.slice(0, CONSTANTS.ELEMENTS_PER_PAGE), loc));
                 }
@@ -604,10 +618,10 @@ angular.module('proton.core')
     api.queryConversations = (request) => {
         const loc = getLocation(request);
         const context = tools.cacheContext();
+        const page = request.Page || 0;
 
         // In cache context?
-        if (context && !firstLoad.get()) {
-            const page = request.Page || 0;
+        if (context && !firstLoad.get() && cachePages.inside(page)) {
             const start = page * CONSTANTS.ELEMENTS_PER_PAGE;
             const end = start + CONSTANTS.ELEMENTS_PER_PAGE;
             let total;
