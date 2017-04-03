@@ -107,27 +107,6 @@ angular.module('proton.core')
                 return Promise.resolve();
             }
 
-            function method() {
-                if (self.methods.length === 0 && self.valid.AmountDue > 0) {
-                    const card = cardModel(self.card);
-
-                    // Add payment method
-                    return Payment.updateMethod({
-                        Type: 'card',
-                        Details: card.details()
-                    }).then((result) => {
-                        if (result.data && result.data.Code === 1000) {
-                            return Promise.resolve(result.data.PaymentMethod.ID);
-                        } else if (result.data && result.data.Error) {
-                            return Promise.reject(result.data.Error);
-                        }
-                    });
-                } else if (self.valid.AmountDue > 0) {
-                    return Promise.resolve(self.method.ID);
-                }
-                return Promise.resolve();
-            }
-
             function subscribe() {
                 const parameters = {
                     Amount: self.valid.AmountDue,
@@ -139,24 +118,15 @@ angular.module('proton.core')
                     if (self.methods.length) {
                         parameters.PaymentMethodID = self.method.ID;
                     } else {
-                        const { number, month, year, cvc, fullname, zip } = self.card;
-                        const country = self.card.country.value;
+                        const card = cardModel(self.card);
                         parameters.Payment = {
                             Type: 'card',
-                            Details: {
-                                Number: number,
-                                ExpMonth: month,
-                                ExpYear: (year.length === 2) ? '20' + year : year,
-                                CVC: cvc,
-                                Name: fullname,
-                                Country: country,
-                                ZIP: zip
-                            }
+                            Details: card.details()
                         };
                     }
                 }
                 return Payment.subscribe(parameters)
-                .then(({ data = {} }) => {
+                .then(({ data = {} } = {}) => {
                     if (data.Code === 1000) {
                         return Promise.resolve(data);
                     } else if (data.Error) {
