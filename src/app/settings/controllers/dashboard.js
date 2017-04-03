@@ -22,6 +22,7 @@ angular.module('proton.settings')
     supportModal,
     tools,
     yearly,
+    paymentModel,
     dashboardOptions
 ) => {
     // Initialize variables
@@ -200,12 +201,12 @@ angular.module('proton.settings')
             deferred.resolve();
         } else {
             $q.all({
-                monthly: Payment.plans(currency, 1),
-                yearly: Payment.plans(currency, 12)
+                monthly: paymentModel.plans(currency, 1),
+                yearly: paymentModel.plans(currency, 12)
             })
-            .then((result) => {
+            .then(({ monthly = {}, yearly = {} } = {}) => {
                 $scope.configuration.currency = currency;
-                $scope.initialization(undefined, result.monthly.data.Plans, result.yearly.data.Plans);
+                $scope.initialization(undefined, monthly.Plans, yearly.Plans);
                 deferred.resolve();
             });
 
@@ -457,5 +458,5 @@ angular.module('proton.settings')
     };
 
     // Call initialization
-    $scope.initialization(subscriptionModel.get(), monthly.data.Plans, yearly.data.Plans, methods.data.PaymentMethods);
+    $scope.initialization(subscriptionModel.get(), monthly.Plans, yearly.Plans, methods.data.PaymentMethods);
 });
