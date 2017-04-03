@@ -60,7 +60,7 @@ angular.module('proton.core')
             const deferred = $q.defer();
 
             Payment.subscribe({
-                Amount: 0, // pay before subscription
+                Amount: 0,
                 Currency: $rootScope.tempPlan.Currency,
                 PlanIDs: [$rootScope.tempPlan.ID]
             }).then((result) => {

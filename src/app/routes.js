@@ -186,7 +186,7 @@ angular.module('proton.routes', [
             }
         },
         resolve: {
-            plans(direct, $q, $stateParams, paymentModel) {
+            plans(direct, $q, $stateParams, Payment) {
                 const deferred = $q.defer();
                 const currencies = ['USD', 'EUR', 'CHF'];
                 const cycles = ['1', '12'];
@@ -199,10 +199,10 @@ angular.module('proton.routes', [
                     if (plan === 'free') {
                         deferred.resolve([]);
                     } else {
-                        paymentModel.plans(currency, cycle)
-                        .then((data) => {
-                            if (data.Code === 1000) {
-                                deferred.resolve(data.Plans);
+                        Payment.plans(currency, cycle)
+                        .then((result) => {
+                            if (result.data && result.data.Code === 1000) {
+                                deferred.resolve(result.data.Plans);
                             } else {
                                 deferred.reject();
                             }
@@ -730,12 +730,12 @@ angular.module('proton.routes', [
                 return Promise.resolve();
             },
             // Return yearly plans
-            yearly(subscription, user, paymentModel, networkActivityTracker) {
-                return networkActivityTracker.track(paymentModel.plans(subscription.Currency, 12));
+            yearly(subscription, user, Payment, networkActivityTracker) {
+                return networkActivityTracker.track(Payment.plans(subscription.Currency, 12));
             },
             // Return monthly plans
-            monthly(subscription, user, paymentModel, networkActivityTracker) {
-                return networkActivityTracker.track(paymentModel.plans(subscription.Currency, 1));
+            monthly(subscription, user, Payment, networkActivityTracker) {
+                return networkActivityTracker.track(Payment.plans(subscription.Currency, 1));
             },
             methods(user, Payment, networkActivityTracker) {
                 return networkActivityTracker.track(Payment.methods());
