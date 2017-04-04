@@ -5,25 +5,25 @@ angular.module('proton.labels')
         {
             Name: gettextCatalog.getString('Inbox', null),
             ID: CONSTANTS.MAILBOX_IDENTIFIERS.inbox,
-            Order: 0,
+            Order: 9999,
             className: 'fa-inbox'
         },
         {
             Name: gettextCatalog.getString('Archive', null),
             ID: CONSTANTS.MAILBOX_IDENTIFIERS.archive,
-            Order: 0,
+            Order: 9999,
             className: 'fa-archive'
         },
         {
             Name: gettextCatalog.getString('Spam', null),
             ID: CONSTANTS.MAILBOX_IDENTIFIERS.spam,
-            Order: 0,
+            Order: 9999,
             className: 'fa-ban'
         },
         {
             Name: gettextCatalog.getString('Trash', null),
             ID: CONSTANTS.MAILBOX_IDENTIFIERS.trash,
-            Order: 0,
+            Order: 9999,
             className: 'fa-trash-o'
         }
     ];
