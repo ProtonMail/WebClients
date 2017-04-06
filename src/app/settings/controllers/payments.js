@@ -52,34 +52,24 @@ angular.module('proton.settings')
         }));
     };
 
-    $scope.add = function () {
+    $scope.add = () => {
         cardModal.activate({
             params: {
-                close(method) {
+                close() {
                     cardModal.deactivate();
-
-                    if (angular.isDefined(method)) {
-                        // Add the new method to the top of the methods list
-                        // Because this new payment method is marked as default
-                        $scope.methods.unshift(method);
-                    }
+                    $scope.refresh();
                 }
             }
         });
     };
 
-    $scope.edit = function (method) {
-        const index = $scope.methods.indexOf(method);
-
+    $scope.edit = (method) => {
         cardModal.activate({
             params: {
                 method,
-                close(method) {
+                close() {
                     cardModal.deactivate();
-
-                    if (angular.isDefined(method)) {
-                        $scope.methods[index] = method;
-                    }
+                    $scope.refresh();
                 }
             }
         });
