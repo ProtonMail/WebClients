@@ -337,8 +337,11 @@ angular.module('proton.core')
 
             // Only for cache context
             if (context) {
+                const pages = getPages(request);
                 // Set total value in cache
                 cacheCounters.updateMessage(loc, Total);
+                // Add pages to the cache
+                pages.forEach((page) => !cachePages.inside(page) && cachePages.add(page));
                 // Return messages ordered
                 api.clearDispatcher();
                 return Promise.resolve(api.orderMessage(Messages.slice(0, CONSTANTS.ELEMENTS_PER_PAGE)));
@@ -562,9 +565,10 @@ angular.module('proton.core')
     api.queryMessages = (request) => {
         const loc = getLocation(request);
         const context = tools.cacheContext();
+        const page = request.Page || 0;
 
-        if (context && !firstLoad.get()) {
-            const page = request.Page || 0;
+        // In cache context?
+        if (context && !firstLoad.get() && cachePages.inside(page)) {
             const start = page * CONSTANTS.ELEMENTS_PER_PAGE;
             const end = start + CONSTANTS.ELEMENTS_PER_PAGE;
             let total;
