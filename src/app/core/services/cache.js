@@ -568,7 +568,7 @@ angular.module('proton.core')
         const page = request.Page || 0;
 
         // In cache context?
-        if (context && !firstLoad.get() && cachePages.inside(page)) {
+        if (context && !firstLoad.get() && cachePages.consecutive(page)) {
             const start = page * CONSTANTS.ELEMENTS_PER_PAGE;
             const end = start + CONSTANTS.ELEMENTS_PER_PAGE;
             let total;
@@ -625,16 +625,13 @@ angular.module('proton.core')
         const page = request.Page || 0;
 
         // In cache context?
-        if (context && !firstLoad.get() && cachePages.inside(page)) {
+        if (context && !firstLoad.get() && cachePages.consecutive(page)) {
             const start = page * CONSTANTS.ELEMENTS_PER_PAGE;
             const end = start + CONSTANTS.ELEMENTS_PER_PAGE;
             let total;
             let number;
             const mailbox = tools.currentMailbox();
-
-            let conversations = _.filter(conversationsCached, ({ LabelIDs = [], ID }) => {
-                return LabelIDs.indexOf(loc) !== -1 && api.getTime(ID, loc);
-            });
+            let conversations = _.filter(conversationsCached, ({ LabelIDs = [], ID }) => LabelIDs.indexOf(loc) !== -1 && api.getTime(ID, loc));
 
             conversations = api.orderConversation(conversations, loc);
 
