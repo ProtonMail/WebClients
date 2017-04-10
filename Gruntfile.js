@@ -511,6 +511,9 @@ module.exports = function(grunt) {
             },
             lint: {
                 command: 'npm run lint'
+            },
+            i18n: {
+                command: 'npm run i18n'
             }
 
         },
@@ -563,6 +566,8 @@ module.exports = function(grunt) {
 
     grunt.registerTask('deploy', [
         'clean:dist', // clean dist directory
+        'nggettext_extract', // extract key inside JS and HTML files
+        'nggettext_compile', // transform po file to translations.js
         'shell:setup_dist',
         'ngconstant:prod', // set prod variables
         'shell:lint',
@@ -576,13 +581,12 @@ module.exports = function(grunt) {
         'index:compile', // index CSS and JS
         'cachebreaker', // Append an MD5 hash of file contents to JS and CSS references
         'shell:push', // push code to deploy branch
-        'wait:push'
+        'wait:push',
+        'shell:i18n'
     ]);
 
     grunt.registerTask('build', [
         'clean:build',
-        'nggettext_extract', // extract key inside JS and HTML files
-        'nggettext_compile', // transform po file to translations.js
         'html2js',
         'sass:build',
         'concat:build_css',
