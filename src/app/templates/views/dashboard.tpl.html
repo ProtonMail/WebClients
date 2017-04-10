@@ -248,14 +248,19 @@
                                     <i class="fa fa-check"></i>
                                     <span ng-bind="plan.labels"></span>
                                 </li>
+                                <li>
+                                    <i class="fa fa-check"></i>
+                                    <span ng-bind="plan.support"></span>
+                                </li>
                                 <li ng-class="{disabled: plan.Name === 'free'}">
                                     <i class="fa fa-times" ng-show="plan.MaxDomains === 0"></i>
                                     <i class="fa fa-check" ng-show="plan.MaxDomains > 0"></i>
                                     <span>Custom Email Filters</span>
                                 </li>
-                                <li>
-                                    <i class="fa fa-check"></i>
-                                    <span ng-bind="plan.support"></span>
+                                <li ng-class="{disabled: plan.Name !== 'visionary'}">
+                                    <i class="fa" ng-class="{ 'fa-times': plan.Name !== 'visionary', 'fa-check': plan.Name === 'visionary' } "></i>
+                                    <span ng-show="plan.Name !== 'visionary'"><s>Sub-Users</s></span>
+                                    <span ng-show="plan.Name === 'visionary'">5 Sub-Users</span>
                                 </li>
                             </ul>
                         </section>
