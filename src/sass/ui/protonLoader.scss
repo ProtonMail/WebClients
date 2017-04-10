@@ -1,5 +1,4 @@
 .protonLoader {
-    display: flex;
     position: fixed;
     z-index: 9999;
     left: 50%;
@@ -17,8 +16,9 @@
     opacity: 0;
     transition: all .5s linear;
     animation-delay: 1.2s;
+    will-change: transform;
 
-    &:after {
+    &::after {
         position: absolute;
         content:"";
         width: 100%;
@@ -30,6 +30,7 @@
         border: 5px solid #f2f2f2;
         border-top-color: $primary;
         animation: load8 1s infinite linear;
+        will-change: transform;
     }
 
     &.show {
@@ -40,6 +41,8 @@
     .protonLoaderIcon { transform: scale(1.1) }
 
 }
+
+.protonLoader:not(.show)::after { display: none }
 
 @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
 	.protonLoader {
