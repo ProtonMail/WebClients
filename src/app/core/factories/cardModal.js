@@ -34,7 +34,7 @@ angular.module('proton.core')
                     return Payment.updateMethod({ Type: 'card', Details: card.details() })
                     .then(({ data = {} } = {}) => {
                         if (data.Code === 1000) {
-                            return Promise.resolve(data.PaymentMethod);
+                            return data.PaymentMethod;
                         }
                         throw new Error(data.Error);
                     });
