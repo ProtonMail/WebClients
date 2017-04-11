@@ -278,29 +278,22 @@ angular.module('proton.core')
                     return;
                 }
 
-                const paypalObject = event.data;
-
-                // we need to capitalize some stuff
-                if (paypalObject.payerID && paypalObject.paymentID) {
-                    paypalObject.PayerID = paypalObject.payerID;
-                    paypalObject.PaymentID = paypalObject.paymentID;
-
-                    // delete unused
-                    delete paypalObject.payerID;
-                    delete paypalObject.paymentID;
-                }
+                const { payerID, paymentID, cancel } = event.data;
 
                 self.step = 'process';
+                const paypalError = gettextCatalog.getString('Problem communicating with PayPal servers, please try again in a few minutes', null, 'Error');
+                const promise = (cancel) ? Promise.reject(paypalError) : Promise.resolve({ PayerID: payerID, PaymentID: paymentID, Cancel: cancel });
 
-                chargePaypal(paypalObject)
-                .then(organizationKey)
-                .then(createOrganization)
-                .then(eventManager.call)
-                .then(finish)
-                .catch((error) => {
-                    notify({ message: error, classes: 'notification-danger' });
-                    self.step = 'payment';
-                });
+                promise
+                    .then(chargePaypal)
+                    .then(organizationKey)
+                    .then(createOrganization)
+                    .then(eventManager.call)
+                    .then(finish)
+                    .catch((error) => {
+                        notify({ message: error, classes: 'notification-danger' });
+                        self.step = 'payment';
+                    });
 
                 self.childWindow.close();
                 window.removeEventListener('message', self.receivePaypalMessage, false);

@@ -90,28 +90,25 @@ angular.module('proton.core')
                     return;
                 }
 
-                const paypalObject = event.data;
+                const { paymentID, payerID, cancel } = event.data;
+                const paypalError = gettextCatalog.getString('Problem communicating with PayPal servers, please try again in a few minutes', null, 'Error');
+                const promise = (cancel) ? Promise.reject(paypalError) : Promise.resolve({ PayerID: payerID, PaymentID: paymentID });
 
-                paypalObject.PayerID = paypalObject.payerID;
-                paypalObject.PaymentID = paypalObject.paymentID;
-                delete paypalObject.payerID;
-                delete paypalObject.paymentID;
-
-                Payment.pay(params.invoice.ID, {
-                    Amount: params.amountDue,
-                    Currency: params.currency,
-                    Payment: {
-                        Type: 'paypal',
-                        Details: paypalObject
-                    }
-                }).then((result) => {
-                    if (result.data && result.data.Code === 1000) {
-                        eventManager.call();
-                        params.close(true);
-                    } else if (result.data && result.data.Error) {
-                        notify({ message: result.data.Error, classes: 'notification-danger' });
-                    }
-                });
+                promise
+                    .then((details) => Payment.pay(params.invoice.ID, {
+                        Amount: params.amountDue,
+                        Currency: params.currency,
+                        Payment: { Type: 'paypal', Details: details }
+                    }))
+                    .then(({ data = {} } = {}) => {
+                        if (data.Code === 1000) {
+                            return Promise.resolve();
+                        }
+                        throw new Error(data.Error);
+                    })
+                    .then(() => eventManager.call())
+                    .then(() => params.close(true))
+                    .catch((error) => notify({ message: error, classes: 'notification-danger' }));
 
                 self.childWindow.close();
                 window.removeEventListener('message', self.receivePaypalMessage, false);
