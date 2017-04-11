@@ -1,5 +1,5 @@
 angular.module('proton.core')
-.factory('cardModal', (pmModal, Payment, notify, pmcw, tools, gettextCatalog, $q, cardModel, networkActivityTracker) => {
+.factory('cardModal', (pmModal, Payment, notify, pmcw, tools, gettextCatalog, cardModel, networkActivityTracker) => {
     return pmModal({
         controllerAs: 'ctrl',
         templateUrl: 'templates/modals/card.tpl.html',
@@ -8,6 +8,7 @@ angular.module('proton.core')
             const self = this;
             self.process = false;
             self.card = {};
+
             if (params.method) {
                 self.text = gettextCatalog.getString('Update your credit card information.', null);
                 self.mode = 'display';
@@ -27,31 +28,21 @@ angular.module('proton.core')
 
             // Functions
             const method = () => {
-                const deferred = $q.defer();
-
                 if (self.mode === 'edition') {
                     const card = cardModel(self.card);
 
-                    Payment.updateMethod({
-                        Type: 'card',
-                        Details: card.details()
-                    }).then((result) => {
-                        if (result.data && result.data.Code === 1000) {
-                            deferred.resolve(result.data.PaymentMethod);
-                        } else if (result.data && result.data.Error) {
-                            deferred.reject(new Error(result.data.Error));
+                    return Payment.updateMethod({ Type: 'card', Details: card.details() })
+                    .then(({ data = {} } = {}) => {
+                        if (data.Code === 1000) {
+                            return Promise.resolve(data.PaymentMethod);
                         }
+                        throw new Error(data.Error);
                     });
-                } else {
-                    deferred.resolve();
                 }
-
-                return deferred.promise;
+                return Promise.resolve();
             };
 
-            const finish = (method) => {
-                params.close(method);
-            };
+            const finish = (method) => params.close(method);
 
             self.edit = () => {
                 self.card.fullname = self.panel.fullname;
@@ -61,19 +52,17 @@ angular.module('proton.core')
             self.submit = () => {
                 self.process = true;
 
-                networkActivityTracker.track(
-                    method()
+                const promise = method()
                     .then(finish)
                     .catch((error) => {
                         notify({ message: error, classes: 'notification-danger' });
                         self.process = false;
-                    })
-                );
+                    });
+
+                networkActivityTracker.track(promise);
             };
 
-            self.cancel = () => {
-                params.close();
-            };
+            self.cancel = () => params.close();
         }
     });
 });
