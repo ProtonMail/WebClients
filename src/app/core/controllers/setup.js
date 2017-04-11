@@ -49,8 +49,6 @@ angular.module('proton.core')
             $scope.domains.push({ label: domain, value: domain });
         });
 
-        $scope.maxPW = CONSTANTS.LOGIN_PW_MAX_LEN;
-
         // Username
         $scope.username = user.Name;
 

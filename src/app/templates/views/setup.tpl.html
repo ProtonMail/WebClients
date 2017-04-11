@@ -36,7 +36,7 @@
                 </label>
                 <p class="help" translate-context="Info" translate>This is used to encrypt and decrypt
             your messages. Do not lose this password--we cannot recover it.</p>
-                <input id="password" name="password" ng-model="$parent.password" type="password" class="form-control margin" placeholder-translate="Choose a mailbox password" maxlength="{{ maxPW }}" required />
+                <input id="password" name="password" ng-model="$parent.password" type="password" class="form-control margin" placeholder-translate="Choose a mailbox password" required />
                 <div ng-show="$parent.setup.$submitted || $parent.setup.password.$touched">
                     <p ng-show="$parent.setup.$submitted && $parent.setup.password.$error.required" class="alert alert-danger" translate-context="Error" translate>Login password is required.</p>
                 </div>
@@ -54,7 +54,7 @@
                 </label>
                 <p class="help" translate-context="Info" translate>This is used to encrypt and decrypt
             your messages. Do not lose this password--we cannot recover it.</p>
-                <input id="password" name="password" ng-model="$parent.password" type="password" class="form-control margin" placeholder-translate="Choose a new password" maxlength="{{ maxPW }}" required />
+                <input id="password" name="password" ng-model="$parent.password" type="password" class="form-control margin" placeholder-translate="Choose a new password" required />
                 <div ng-show="$parent.setup.$submitted || $parent.setup.password.$touched">
                     <p ng-show="$parent.setup.$submitted && $parent.setup.password.$error.required" class="alert alert-danger" translate-context="Error" translate>Password is required.</p>
                 </div>
