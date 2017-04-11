@@ -375,19 +375,8 @@ angular.module('proton.core')
             return;
         }
 
-        const paypalObject = event.data;
-
-        // we need to capitalize some stuff
-        if (paypalObject.payerID && paypalObject.paymentID) {
-            paypalObject.PayerID = paypalObject.payerID;
-            paypalObject.PaymentID = paypalObject.paymentID;
-
-            // delete unused
-            delete paypalObject.payerID;
-            delete paypalObject.paymentID;
-        }
-
-        const method = { Type: 'paypal', Details: paypalObject };
+        const { payerID, paymentID, cancel } = event.data;
+        const method = { Type: 'paypal', Details: { PayerID: payerID, PaymentID: paymentID, Cancel: cancel } };
 
         verify(method, $scope.plan.Amount, $scope.plan.Currency);
         childWindow.close();
@@ -401,10 +390,7 @@ angular.module('proton.core')
 
     $scope.pay = () => {
         const card = cardModel($scope.card);
-        const method = {
-            Type: 'card',
-            Details: card.details()
-        };
+        const method = { Type: 'card', Details: card.details() };
 
         verify(method, $scope.plan.Amount, $scope.plan.Currency);
     };
