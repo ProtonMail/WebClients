@@ -68,7 +68,6 @@ angular.module('proton.core')
     $scope.approvalURL = false;
     $scope.generating = false;
     $scope.paypalNetworkError = false;
-    $scope.maxPW = CONSTANTS.LOGIN_PW_MAX_LEN;
     $scope.method = 'card';
     $scope.months = _.range(1, 13);
     $scope.years = _.range(currentYear, currentYear + 12);
