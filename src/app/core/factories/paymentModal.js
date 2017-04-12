@@ -246,20 +246,17 @@ angular.module('proton.core')
             self.initPaypal = () => {
                 self.approvalURL = false;
                 self.paypalNetworkError = false;
-                const promise = Payment.paypal({
-                    Amount: self.valid.AmountDue,
-                    Currency: self.valid.Currency
-                }).then(({ data = {} } = {}) => {
-                    if (data.Code === 1000) {
-                        if (data.ApprovalURL) {
-                            self.approvalURL = data.ApprovalURL;
+                const promise = Payment.paypal({ Amount: self.valid.AmountDue, Currency: self.valid.Currency })
+                    .then(({ data = {} } = {}) => {
+                        if (data.Code === 1000) {
+                            return Promise.resolve(data);
                         }
-                    } else if (data.Code === 22802) {
-                        self.paypalNetworkError = true;
-                    } else if (data.Error) {
-                        throw new Error(data.Error);
-                    }
-                });
+                        if (data.Code === 22802) {
+                            self.paypalNetworkError = true;
+                        }
+                        throw new Error(data.Error || gettextCatalog.getString('Error connecting to PayPal.', null));
+                    })
+                    .then(({ ApprovalURL }) => self.approvalURL = ApprovalURL);
                 return networkActivityTracker.track(promise);
             };
 

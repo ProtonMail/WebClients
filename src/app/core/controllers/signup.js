@@ -305,20 +305,17 @@ angular.module('proton.core')
     $scope.initPaypal = () => {
         $scope.paypalNetworkError = false;
 
-        Payment.paypal({
-            Amount: $scope.plan.Amount,
-            Currency: $scope.plan.Currency
-        }).then((result) => {
-            if (result.data && result.data.Code === 1000) {
-                if (result.data.ApprovalURL) {
-                    $scope.approvalURL = result.data.ApprovalURL;
+        Payment.paypal({ Amount: $scope.plan.Amount, Currency: $scope.plan.Currency })
+            .then(({ data = {} } = {}) => {
+                if (data.Code === 1000) {
+                    return Promise.resolve(data);
                 }
-            } else if (result.data.Code === 22802) {
-                $scope.paypalNetworkError = true;
-            } else if (result.data && result.data.Error) {
-                notify({ message: result.data.Error, classes: 'notification-danger' });
-            }
-        });
+                if (data.Code === 22802) {
+                    $scope.paypalNetworkError = true;
+                }
+                throw new Error(data.Error || gettextCatalog.getString('Error connecting to PayPal.', null));
+            })
+            .then(({ ApprovalURL }) => $scope.approvalURL = ApprovalURL);
     };
 
     function verify(method, amount, currency) {
