@@ -5,7 +5,8 @@ angular.module('proton.message')
         'transformLinks',
         'transformEmbedded',
         'transformWelcome',
-        'transformBlockquotes'
+        'transformBlockquotes',
+        'transformStylesheet'
     ].map((name) => ({ name, action: $injector.get(name) }));
 
     /**
