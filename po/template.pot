@@ -520,14 +520,6 @@ msgctxt "Title"
 msgid "Additional themes"
 msgstr ""
 
-#: src/app/templates/modals/member.tpl.html:58
-#: src/app/templates/modals/payment/payment.tpl.html:22
-#: src/app/templates/views/dashboard.tpl.html:238
-msgid "Address"
-msgid_plural "Addresses"
-msgstr[0] ""
-msgstr[1] ""
-
 #. table heading
 #. table heading for the domains page table listing of addresses
 #: src/app/templates/modals/domain/address.tpl.html:20
@@ -538,6 +530,14 @@ msgstr[1] ""
 msgctxt "Title"
 msgid "Address"
 msgstr ""
+
+#: src/app/templates/modals/member.tpl.html:58
+#: src/app/templates/modals/payment/payment.tpl.html:22
+#: src/app/templates/views/dashboard.tpl.html:238
+msgid "Address"
+msgid_plural "Addresses"
+msgstr[0] ""
+msgstr[1] ""
 
 #: src/app/core/factories/addressModal.js:33
 msgctxt "Info"
@@ -779,11 +779,6 @@ msgstr ""
 msgid "and"
 msgstr ""
 
-#: src/app/templates/views/invoices.tpl.html:29
-#: src/app/templates/views/invoices.tpl.html:59
-msgid "Annually"
-msgstr ""
-
 #: src/app/templates/views/dashboard.tpl.html:131
 msgctxt "Title"
 msgid "Annually"
@@ -791,6 +786,11 @@ msgstr ""
 
 #: src/app/templates/views/signup.tpl.html:130
 msgctxt "Info"
+msgid "Annually"
+msgstr ""
+
+#: src/app/templates/views/invoices.tpl.html:29
+#: src/app/templates/views/invoices.tpl.html:59
 msgid "Annually"
 msgstr ""
 
@@ -815,8 +815,11 @@ msgctxt "Action"
 msgid "Apply"
 msgstr ""
 
-#: src/app/ui/directives/noResults.js:35
-msgctxt "No results heading"
+#. location tag
+#: src/app/sidebar/factories/sidebarModel.js:27
+#: src/app/templates/directives/location-tag.tpl.html:7
+#: src/app/ui/factories/pageTitlesModel.js:13
+msgctxt "Title"
 msgid "Archive"
 msgstr ""
 
@@ -825,11 +828,8 @@ msgctxt "Label"
 msgid "Archive"
 msgstr ""
 
-#. location tag
-#: src/app/sidebar/factories/sidebarModel.js:27
-#: src/app/templates/directives/location-tag.tpl.html:7
-#: src/app/ui/factories/pageTitlesModel.js:13
-msgctxt "Title"
+#: src/app/ui/directives/noResults.js:35
+msgctxt "No results heading"
 msgid "Archive"
 msgstr ""
 
@@ -962,13 +962,13 @@ msgstr ""
 msgid "Available domains"
 msgstr ""
 
-#: src/app/templates/partials/header-auth-simple.tpl.html:4
-msgctxt "Action"
+#. inbox menu
+#: src/app/templates/directives/ui/settingsMenu.tpl.html:6
 msgid "Back to inbox"
 msgstr ""
 
-#. inbox menu
-#: src/app/templates/directives/ui/settingsMenu.tpl.html:6
+#: src/app/templates/partials/header-auth-simple.tpl.html:4
+msgctxt "Action"
 msgid "Back to inbox"
 msgstr ""
 
@@ -1000,12 +1000,12 @@ msgctxt "Info"
 msgid "Before you can receive emails for your custom domain addresses at ProtonMail, you need to add the following MX record to your DNS. This can typically be done in the control panel of your domain name registrar."
 msgstr ""
 
-#: src/app/utils/services/event.js:103
-msgctxt "Info"
+#: src/app/core/controllers/secured.js:167
 msgid "Before you can start sending and receiving emails from your new addresses you need to create encryption keys for them. 4096-bit keys only work on high performance computers. For most users, we recommend using 2048-bit keys."
 msgstr ""
 
-#: src/app/core/controllers/secured.js:167
+#: src/app/utils/services/event.js:103
+msgctxt "Info"
 msgid "Before you can start sending and receiving emails from your new addresses you need to create encryption keys for them. 4096-bit keys only work on high performance computers. For most users, we recommend using 2048-bit keys."
 msgstr ""
 
@@ -1326,13 +1326,13 @@ msgctxt "Title"
 msgid "Clear"
 msgstr ""
 
-#: src/app/settings/controllers/filters.js:126
-msgctxt "Title"
+#: src/app/templates/views/filters.tpl.html:15
+msgctxt "Action"
 msgid "Clear All"
 msgstr ""
 
-#: src/app/templates/views/filters.tpl.html:15
-msgctxt "Action"
+#: src/app/settings/controllers/filters.js:126
+msgctxt "Title"
 msgid "Clear All"
 msgstr ""
 
@@ -1509,15 +1509,20 @@ msgstr ""
 msgid "Confirm organization password"
 msgstr ""
 
+#: src/app/templates/modals/switchPasswordMode.tpl.html:21
+msgctxt "Label"
+msgid "Confirm password"
+msgstr ""
+
 #: src/app/templates/composer/composerEncrypt.tpl.html:33
 #: src/app/templates/views/setup.tpl.html:61
 #: src/app/templates/views/signup.tpl.html:72
 msgid "Confirm password"
 msgstr ""
 
-#: src/app/templates/modals/switchPasswordMode.tpl.html:21
-msgctxt "Label"
-msgid "Confirm password"
+#: src/app/templates/composer/composerEncrypt.tpl.html:28
+msgctxt "Title"
+msgid "Confirm Password"
 msgstr ""
 
 #: src/app/templates/modals/member.tpl.html:50
@@ -1527,11 +1532,6 @@ msgstr ""
 #: src/app/templates/modals/changeOrganizationPassword.tpl.html:13
 #: src/app/templates/modals/changePassword.tpl.html:24
 msgctxt "Label"
-msgid "Confirm Password"
-msgstr ""
-
-#: src/app/templates/composer/composerEncrypt.tpl.html:28
-msgctxt "Title"
 msgid "Confirm Password"
 msgstr ""
 
@@ -1575,15 +1575,15 @@ msgctxt "Info"
 msgid "Contact us at <a href=\"mailto:security@protonmail.com\">security@protonmail.com</a> for critical security issues."
 msgstr ""
 
-#: src/app/templates/ui/navigation/navigation.tpl.html:17
-msgctxt "Action"
-msgid "Contacts"
-msgstr ""
-
 #. Folder name
 #: src/app/templates/partials/sidebar-responsive.tpl.html:12
 #: src/app/ui/factories/pageTitlesModel.js:16
 msgctxt "Title"
+msgid "Contacts"
+msgstr ""
+
+#: src/app/templates/ui/navigation/navigation.tpl.html:17
+msgctxt "Action"
 msgid "Contacts"
 msgstr ""
 
@@ -1624,7 +1624,7 @@ msgid_plural "conversations selected"
 msgstr[0] ""
 msgstr[1] ""
 
-#: src/app/authentication/controllers/login.js:103
+#: src/app/authentication/controllers/login.js:102
 msgctxt "Error"
 msgid ""
 "Cookies are disabled.\n"
@@ -1722,6 +1722,11 @@ msgstr ""
 msgid "Creating new account"
 msgstr ""
 
+#. payment type badge
+#: src/app/templates/views/payments.tpl.html:93
+msgid "Credit"
+msgstr ""
+
 #: src/app/templates/modals/pay.tpl.html:17
 #: src/app/templates/modals/payment/payment.tpl.html:47
 #: src/app/templates/views/dashboard.tpl.html:69
@@ -1729,18 +1734,13 @@ msgctxt "Title"
 msgid "Credit"
 msgstr ""
 
-#. payment type badge
-#: src/app/templates/views/payments.tpl.html:93
-msgid "Credit"
+#: src/app/core/factories/paymentModal.js:59
+#: src/app/core/factories/payModal.js:22
+msgid "Credit card"
 msgstr ""
 
 #: src/app/templates/views/dashboard.tpl.html:139
 msgctxt "Title"
-msgid "Credit card"
-msgstr ""
-
-#: src/app/core/factories/paymentModal.js:59
-#: src/app/core/factories/payModal.js:22
 msgid "Credit card"
 msgstr ""
 
@@ -1779,17 +1779,17 @@ msgctxt "Title"
 msgid "Custom"
 msgstr ""
 
-#: src/app/templates/views/domains.tpl.html:146
-msgctxt "Title"
-msgid "Custom domain"
-msgstr ""
-
 #: src/app/templates/modals/payment/payment.tpl.html:21
 #: src/app/templates/views/dashboard.tpl.html:226
 msgid "Custom domain"
 msgid_plural "Custom domains"
 msgstr[0] ""
 msgstr[1] ""
+
+#: src/app/templates/views/domains.tpl.html:146
+msgctxt "Title"
+msgid "Custom domain"
+msgstr ""
 
 #. Tooltip
 #: src/app/templates/message/filterButton.tpl.html:2
@@ -1930,9 +1930,10 @@ msgctxt "Title"
 msgid "Default signature"
 msgstr ""
 
-#: src/app/composer/controllers/composeMessage.js:1086
-#: src/app/templates/views/filters.tpl.html:112
-#: src/app/templates/views/filters.tpl.html:79
+#: src/app/contactCurrent/controllers/contacts.js:162
+#: src/app/contactCurrent/controllers/contacts.js:165
+#: src/app/elements/controllers/elements.js:588
+msgctxt "Title"
 msgid "Delete"
 msgstr ""
 
@@ -1955,10 +1956,9 @@ msgctxt "Action"
 msgid "Delete"
 msgstr ""
 
-#: src/app/contactCurrent/controllers/contacts.js:162
-#: src/app/contactCurrent/controllers/contacts.js:165
-#: src/app/elements/controllers/elements.js:588
-msgctxt "Title"
+#: src/app/composer/controllers/composeMessage.js:1086
+#: src/app/templates/views/filters.tpl.html:112
+#: src/app/templates/views/filters.tpl.html:79
 msgid "Delete"
 msgstr ""
 
@@ -1977,15 +1977,15 @@ msgctxt "Title"
 msgid "Delete address"
 msgstr ""
 
-#. contacts toolbar menu option
-#: src/app/templates/views/contacts.tpl.html:11
-msgctxt "Action"
-msgid "Delete all"
-msgstr ""
-
 #: src/app/contactCurrent/controllers/contacts.js:131
 #: src/app/elements/directives/advancedFilterElement.js:12
 msgctxt "Title"
+msgid "Delete all"
+msgstr ""
+
+#. contacts toolbar menu option
+#: src/app/templates/views/contacts.tpl.html:11
+msgctxt "Action"
 msgid "Delete all"
 msgstr ""
 
@@ -2059,14 +2059,21 @@ msgctxt "Title"
 msgid "Disable address"
 msgstr ""
 
+#: src/app/settings/controllers/security.js:132
+msgctxt "Title"
+msgid "Disable Two-Factor Authentication"
+msgstr ""
+
 #: src/app/templates/views/security.tpl.html:16
 msgctxt "Action"
 msgid "Disable Two-Factor Authentication"
 msgstr ""
 
-#: src/app/settings/controllers/security.js:132
-msgctxt "Title"
-msgid "Disable Two-Factor Authentication"
+#. notification settings option
+#: src/app/templates/views/account.tpl.html:107
+#: src/app/templates/views/account.tpl.html:128
+msgctxt "Action"
+msgid "Disabled"
 msgstr ""
 
 #. address state badge
@@ -2076,13 +2083,6 @@ msgstr ""
 #: src/app/templates/views/domains.tpl.html:189
 #: src/app/templates/views/identities.tpl.html:63
 #: src/app/templates/views/members.tpl.html:200
-msgid "Disabled"
-msgstr ""
-
-#. notification settings option
-#: src/app/templates/views/account.tpl.html:107
-#: src/app/templates/views/account.tpl.html:128
-msgctxt "Action"
 msgid "Disabled"
 msgstr ""
 
@@ -2261,10 +2261,7 @@ msgctxt "Action"
 msgid "Downgrade to Plus"
 msgstr ""
 
-#. table heading
-#: src/app/contactCurrent/controllers/contacts.js:425
-#: src/app/templates/address/addressKeysView.tpl.html:8
-msgctxt "Title"
+#: src/app/templates/directives/attachments/listAttachments.tpl.html:23
 msgid "Download"
 msgstr ""
 
@@ -2278,7 +2275,10 @@ msgctxt "Action"
 msgid "Download"
 msgstr ""
 
-#: src/app/templates/directives/attachments/listAttachments.tpl.html:23
+#. table heading
+#: src/app/contactCurrent/controllers/contacts.js:425
+#: src/app/templates/address/addressKeysView.tpl.html:8
+msgctxt "Title"
 msgid "Download"
 msgstr ""
 
@@ -2313,21 +2313,15 @@ msgctxt "Title"
 msgid "Downloading"
 msgstr ""
 
-#. location tag
-#: src/app/templates/directives/location-tag.tpl.html:3
-msgctxt "Title"
-msgid "Draft"
-msgstr ""
-
 #: src/app/message/directives/foldersMessage.js:25
 #: src/app/templates/message/allMessageLabels.tpl.html:20
 msgid "Draft"
 msgstr ""
 
-#: src/app/sidebar/factories/sidebarModel.js:12
-#: src/app/ui/factories/pageTitlesModel.js:10
+#. location tag
+#: src/app/templates/directives/location-tag.tpl.html:3
 msgctxt "Title"
-msgid "Drafts"
+msgid "Draft"
 msgstr ""
 
 #: src/app/ui/directives/noResults.js:11
@@ -2337,6 +2331,12 @@ msgstr ""
 
 #: src/app/conversation/factories/actionConversation.js:20
 #: src/app/message/factories/messageActions.js:11
+msgid "Drafts"
+msgstr ""
+
+#: src/app/sidebar/factories/sidebarModel.js:12
+#: src/app/ui/factories/pageTitlesModel.js:10
+msgctxt "Title"
 msgid "Drafts"
 msgstr ""
 
@@ -2432,12 +2432,12 @@ msgctxt "Title"
 msgid "Email address"
 msgstr ""
 
-#: src/app/templates/modals/filterAddress.tpl.html:10
+#: src/app/templates/views/setup.tpl.html:19
+msgctxt "Title"
 msgid "Email Address"
 msgstr ""
 
-#: src/app/templates/views/setup.tpl.html:19
-msgctxt "Title"
+#: src/app/templates/modals/filterAddress.tpl.html:10
 msgid "Email Address"
 msgstr ""
 
@@ -2513,19 +2513,19 @@ msgctxt "Action"
 msgid "Enable Two-Factor Authentication"
 msgstr ""
 
-#. notification settings option
-#: src/app/templates/views/account.tpl.html:101
-#: src/app/templates/views/account.tpl.html:122
-msgctxt "Action"
-msgid "Enabled"
-msgstr ""
-
 #. address state badge
 #. form option
 #: src/app/templates/views/account.tpl.html:227
 #: src/app/templates/views/domains.tpl.html:188
 #: src/app/templates/views/identities.tpl.html:42
 #: src/app/templates/views/members.tpl.html:199
+msgid "Enabled"
+msgstr ""
+
+#. notification settings option
+#: src/app/templates/views/account.tpl.html:101
+#: src/app/templates/views/account.tpl.html:122
+msgctxt "Action"
 msgid "Enabled"
 msgstr ""
 
@@ -2646,12 +2646,12 @@ msgstr ""
 msgid "Enter the word 'DANGER' here."
 msgstr ""
 
-#: src/app/templates/authentication/modals/loginPassword.tpl.html:24
+#: src/app/templates/modals/deleteAccount.tpl.html:23
+msgctxt "Title"
 msgid "Enter two-factor passcode:"
 msgstr ""
 
-#: src/app/templates/modals/deleteAccount.tpl.html:23
-msgctxt "Title"
+#: src/app/templates/authentication/modals/loginPassword.tpl.html:24
 msgid "Enter two-factor passcode:"
 msgstr ""
 
@@ -2677,14 +2677,14 @@ msgstr ""
 msgid "Enter your previous password from before your account was reset:"
 msgstr ""
 
-#. key generation progrss
-#: src/app/templates/modals/generate.tpl.html:49
-msgctxt "Error"
+#: src/app/templates/views/outside.unlock.tpl.html:33
+msgctxt "Title"
 msgid "Error"
 msgstr ""
 
-#: src/app/templates/views/outside.unlock.tpl.html:33
-msgctxt "Title"
+#. key generation progrss
+#: src/app/templates/modals/generate.tpl.html:49
+msgctxt "Error"
 msgid "Error"
 msgstr ""
 
@@ -2702,6 +2702,12 @@ msgstr ""
 #: src/app/templates/modals/payment/payment.tpl.html:98
 #: src/app/templates/views/signup.tpl.html:182
 msgctxt "Error"
+msgid "Error connecting to PayPal."
+msgstr ""
+
+#: src/app/core/controllers/signup.js:316
+#: src/app/core/directives/paypalView.js:25
+#: src/app/core/factories/paymentModal.js:257
 msgid "Error connecting to PayPal."
 msgstr ""
 
@@ -2840,13 +2846,13 @@ msgctxt "Action"
 msgid "Expand"
 msgstr ""
 
-#: src/app/templates/views/payments.tpl.html:22
-msgctxt "Title"
+#: src/app/templates/directives/composer/composer.tpl.html:101
+msgctxt "Action"
 msgid "Expiration"
 msgstr ""
 
-#: src/app/templates/directives/composer/composer.tpl.html:101
-msgctxt "Action"
+#: src/app/templates/views/payments.tpl.html:22
+msgctxt "Title"
 msgid "Expiration"
 msgstr ""
 
@@ -2894,7 +2900,7 @@ msgstr ""
 #: src/app/templates/directives/core/cardView.tpl.html:44
 #: src/app/templates/directives/core/cardView.tpl.html:55
 #: src/app/templates/directives/core/cardView.tpl.html:8
-#: src/app/templates/directives/core/password.tpl.html:14
+#: src/app/templates/directives/core/password.tpl.html:13
 #: src/app/templates/modals/keyPassword.tpl.html:15
 #: src/app/templates/modals/setupOrganization.tpl.html:16
 #: src/app/templates/views/members.tpl.html:41
@@ -3404,8 +3410,9 @@ msgctxt "Title"
 msgid "Inactive addresses"
 msgstr ""
 
-#: src/app/ui/directives/noResults.js:7
-msgctxt "No results heading"
+#: src/app/conversation/factories/actionConversation.js:18
+#: src/app/labels/directives/dropdownFolders.js:6
+#: src/app/message/factories/messageActions.js:9
 msgid "Inbox"
 msgstr ""
 
@@ -3417,14 +3424,13 @@ msgctxt "Title"
 msgid "Inbox"
 msgstr ""
 
-#: src/app/conversation/factories/actionConversation.js:18
-#: src/app/labels/directives/dropdownFolders.js:6
-#: src/app/message/factories/messageActions.js:9
+#: src/app/templates/modals/filter.tpl.html:126
+msgctxt "Label"
 msgid "Inbox"
 msgstr ""
 
-#: src/app/templates/modals/filter.tpl.html:126
-msgctxt "Label"
+#: src/app/ui/directives/noResults.js:7
+msgctxt "No results heading"
 msgid "Inbox"
 msgstr ""
 
@@ -3572,7 +3578,7 @@ msgctxt "Info"
 msgid "It can take up to a day for DNS changes to update."
 msgstr ""
 
-#: src/app/core/controllers/signup.js:263
+#: src/app/core/controllers/signup.js:262
 msgid "It currently isn't possible to subscribe to a Paid ProtonMail plan."
 msgstr ""
 
@@ -3663,14 +3669,18 @@ msgctxt "Title"
 msgid "Keywords"
 msgstr ""
 
+#: src/app/ui/factories/pageTitlesModel.js:51
+msgctxt "Title"
+msgid "Label"
+msgstr ""
+
 #: src/app/ui/directives/noResults.js:43
 msgctxt "No results heading"
 msgid "Label"
 msgstr ""
 
-#: src/app/ui/factories/pageTitlesModel.js:51
-msgctxt "Title"
-msgid "Label"
+#: src/app/templates/partials/toolbar-desktop.tpl.html:26
+msgid "Label as"
 msgstr ""
 
 #: src/app/templates/directives/dropdownLabels.tpl.html:8
@@ -3681,10 +3691,6 @@ msgstr ""
 #. Tooltip
 #: src/app/templates/message/message.tpl.html:104
 msgctxt "Action"
-msgid "Label as"
-msgstr ""
-
-#: src/app/templates/partials/toolbar-desktop.tpl.html:26
 msgid "Label as"
 msgstr ""
 
@@ -3758,6 +3764,10 @@ msgctxt "Link"
 msgid "Learn more"
 msgstr ""
 
+#: src/app/templates/views/members.tpl.html:237
+msgid "Learn more"
+msgstr ""
+
 #. learn more link
 #: src/app/templates/modals/domain/dkim.tpl.html:16
 #: src/app/templates/modals/domain/dmarc.tpl.html:12
@@ -3770,10 +3780,6 @@ msgstr ""
 #: src/app/templates/views/dashboard.tpl.html:176
 #: src/app/templates/views/identities.tpl.html:30
 msgctxt "Action"
-msgid "Learn more"
-msgstr ""
-
-#: src/app/templates/views/members.tpl.html:237
 msgid "Learn more"
 msgstr ""
 
@@ -3885,15 +3891,15 @@ msgstr ""
 msgid "Logging preference updated"
 msgstr ""
 
-#: src/app/ui/factories/pageTitlesModel.js:30
-msgctxt "Title"
-msgid "Login"
-msgstr ""
-
 #: src/app/templates/authentication/loginForm.tpl.html:54
 #: src/app/templates/authentication/loginTwoFactorForm.tpl.html:26
 #: src/app/templates/views/members.tpl.html:185
 msgctxt "Action"
+msgid "Login"
+msgstr ""
+
+#: src/app/ui/factories/pageTitlesModel.js:30
+msgctxt "Title"
 msgid "Login"
 msgstr ""
 
@@ -3951,15 +3957,15 @@ msgctxt "Info"
 msgid "Logs include authentication attempts for all Proton services that use your ProtonMail credentials."
 msgstr ""
 
+#: src/app/templates/modals/switchPasswordMode.tpl.html:48
+#: src/app/templates/views/unlock.tpl.html:23
+msgid "Mailbox password"
+msgstr ""
+
 #. form heading for changing mailbox password
 #: src/app/templates/views/account.tpl.html:176
 #: src/app/templates/views/signup.tpl.html:48
 msgctxt "Title"
-msgid "Mailbox password"
-msgstr ""
-
-#: src/app/templates/modals/switchPasswordMode.tpl.html:48
-#: src/app/templates/views/unlock.tpl.html:23
 msgid "Mailbox password"
 msgstr ""
 
@@ -4145,8 +4151,8 @@ msgstr ""
 msgid "MM/DD/YYYY"
 msgstr ""
 
-#: src/app/templates/views/dashboard.tpl.html:130
-msgctxt "Title"
+#: src/app/templates/views/signup.tpl.html:129
+msgctxt "Info"
 msgid "Monthly"
 msgstr ""
 
@@ -4155,13 +4161,9 @@ msgstr ""
 msgid "Monthly"
 msgstr ""
 
-#: src/app/templates/views/signup.tpl.html:129
-msgctxt "Info"
+#: src/app/templates/views/dashboard.tpl.html:130
+msgctxt "Title"
 msgid "Monthly"
-msgstr ""
-
-#: src/app/templates/elements/advancedFilterElement.tpl.html:8
-msgid "More"
 msgstr ""
 
 #: src/app/templates/message/message.tpl.html:137
@@ -4169,16 +4171,20 @@ msgctxt "Action"
 msgid "More"
 msgstr ""
 
+#: src/app/templates/elements/advancedFilterElement.tpl.html:8
+msgid "More"
+msgstr ""
+
 #: src/app/templates/elements/labelsElement.tpl.html:11
 msgid "More labels"
 msgstr ""
 
-#: src/app/templates/labels/dropdownFolders.tpl.html:3
-msgctxt "title"
+#: src/app/templates/partials/toolbar-desktop.tpl.html:13
 msgid "Move to"
 msgstr ""
 
-#: src/app/templates/partials/toolbar-desktop.tpl.html:13
+#: src/app/templates/labels/dropdownFolders.tpl.html:3
+msgctxt "title"
 msgid "Move to"
 msgstr ""
 
@@ -4249,13 +4255,13 @@ msgctxt "Title"
 msgid "My subscription"
 msgstr ""
 
-#. table heading / link to sort table
-#: src/app/templates/views/contacts.tpl.html:42
-msgctxt "Action"
+#: src/app/templates/modals/label.tpl.html:21
 msgid "Name"
 msgstr ""
 
-#: src/app/templates/modals/label.tpl.html:21
+#. table heading / link to sort table
+#: src/app/templates/views/contacts.tpl.html:42
+msgctxt "Action"
 msgid "Name"
 msgstr ""
 
@@ -4476,12 +4482,12 @@ msgctxt "Info"
 msgid "Non-original <strong>@protonmail</strong> addresses can never be deleted (only disabled). This means that once you create an address it will always count towards your address limit. Custom domain addresses must be disabled before they can be deleted. Custom domain addresses can only be deleted if all messages associated with that address are deleted."
 msgstr ""
 
-#: src/app/templates/address/addressKeysView.tpl.html:56
+#: src/app/templates/views/dashboard.tpl.html:138
+msgctxt "Title"
 msgid "None"
 msgstr ""
 
-#: src/app/templates/views/dashboard.tpl.html:138
-msgctxt "Title"
+#: src/app/templates/address/addressKeysView.tpl.html:56
 msgid "None"
 msgstr ""
 
@@ -4689,12 +4695,12 @@ msgstr ""
 msgid "Orphan"
 msgstr ""
 
-#: src/app/templates/modals/bug.tpl.html:34
+#: src/app/templates/modals/bug.tpl.html:31
+msgctxt "Title"
 msgid "OS version"
 msgstr ""
 
-#: src/app/templates/modals/bug.tpl.html:31
-msgctxt "Title"
+#: src/app/templates/modals/bug.tpl.html:34
 msgid "OS version"
 msgstr ""
 
@@ -4751,16 +4757,6 @@ msgstr ""
 msgid "Paid"
 msgstr ""
 
-#. form heading for changing single password
-#: src/app/templates/modals/generate.tpl.html:12
-#: src/app/templates/modals/member.tpl.html:44
-#: src/app/templates/views/account.tpl.html:190
-#: src/app/templates/views/setup.tpl.html:53
-#: src/app/templates/views/signup.tpl.html:64
-msgctxt "Title"
-msgid "Password"
-msgstr ""
-
 #: src/app/templates/modals/switchPasswordMode.tpl.html:13
 msgctxt "Label"
 msgid "Password"
@@ -4772,6 +4768,16 @@ msgstr ""
 #: src/app/templates/modals/activateOrganization.tpl.html:12
 #: src/app/templates/modals/keyPassword.tpl.html:13
 #: src/app/templates/modals/member.tpl.html:47
+msgid "Password"
+msgstr ""
+
+#. form heading for changing single password
+#: src/app/templates/modals/generate.tpl.html:12
+#: src/app/templates/modals/member.tpl.html:44
+#: src/app/templates/views/account.tpl.html:190
+#: src/app/templates/views/setup.tpl.html:53
+#: src/app/templates/views/signup.tpl.html:64
+msgctxt "Title"
 msgid "Password"
 msgstr ""
 
@@ -4800,12 +4806,12 @@ msgstr ""
 msgid "Password updated"
 msgstr ""
 
-#: src/app/authentication/controllers/login.js:339
+#: src/app/authentication/controllers/login.js:338
 msgctxt "Error"
 msgid "Passwords are limited to  characters"
 msgstr ""
 
-#: src/app/templates/directives/core/password.tpl.html:15
+#: src/app/templates/directives/core/password.tpl.html:14
 msgctxt "Error"
 msgid "Passwords do not match"
 msgstr ""
@@ -5007,12 +5013,12 @@ msgstr ""
 msgid "Please enter your organization recovery password:"
 msgstr ""
 
-#: src/app/authentication/controllers/login.js:365
+#: src/app/authentication/controllers/login.js:364
 msgctxt "Error"
 msgid "Please enter your two-factor passcode"
 msgstr ""
 
-#: src/app/authentication/controllers/login.js:328
+#: src/app/authentication/controllers/login.js:327
 msgctxt "Error"
 msgid "Please enter your username and password"
 msgstr ""
@@ -5103,6 +5109,12 @@ msgstr ""
 
 #: src/app/settings/controllers/members.js:150
 msgid "Privatize Member"
+msgstr ""
+
+#: src/app/core/factories/paymentModal.js:281
+#: src/app/core/factories/payModal.js:94
+msgctxt "Error"
+msgid "Problem communicating with PayPal servers, please try again in a few minutes"
 msgstr ""
 
 #: src/app/templates/modals/payment/payment.tpl.html:39
@@ -5254,12 +5266,12 @@ msgstr ""
 msgid "Received:"
 msgstr ""
 
-#: src/app/core/factories/filterModal.js:9
+#: src/app/templates/search/searchForm.tpl.html:54
+msgctxt "Title"
 msgid "Recipient"
 msgstr ""
 
-#: src/app/templates/search/searchForm.tpl.html:54
-msgctxt "Title"
+#: src/app/core/factories/filterModal.js:9
 msgid "Recipient"
 msgstr ""
 
@@ -5378,12 +5390,12 @@ msgctxt "Action"
 msgid "Reset"
 msgstr ""
 
-#: src/app/templates/views/reset-login-password.tpl.html:28
+#: src/app/templates/views/reset-mailbox-password.tpl.html:32
+msgctxt "Title"
 msgid "Reset code"
 msgstr ""
 
-#: src/app/templates/views/reset-mailbox-password.tpl.html:32
-msgctxt "Title"
+#: src/app/templates/views/reset-login-password.tpl.html:28
 msgid "Reset code"
 msgstr ""
 
@@ -5403,13 +5415,13 @@ msgctxt "Action"
 msgid "Reset Keys"
 msgstr ""
 
-#: src/app/templates/views/reset-mailbox-password.tpl.html:46
-msgctxt "Title"
+#: src/app/templates/views/reset-mailbox-password.tpl.html:39
+msgctxt "Action"
 msgid "Reset mailbox"
 msgstr ""
 
-#: src/app/templates/views/reset-mailbox-password.tpl.html:39
-msgctxt "Action"
+#: src/app/templates/views/reset-mailbox-password.tpl.html:46
+msgctxt "Title"
 msgid "Reset mailbox"
 msgstr ""
 
@@ -5425,6 +5437,12 @@ msgctxt "Action"
 msgid "Reset password"
 msgstr ""
 
+#: src/app/templates/views/reset-login-password.tpl.html:24
+#: src/app/templates/views/reset-login-password.tpl.html:76
+msgctxt "Title"
+msgid "Reset Password"
+msgstr ""
+
 #. button to reset login password
 #. button to reset password
 #: src/app/templates/views/reset-login-password.tpl.html:17
@@ -5435,12 +5453,6 @@ msgstr ""
 
 #: src/app/templates/views/reset-login-password.tpl.html:4
 msgctxt "Info"
-msgid "Reset Password"
-msgstr ""
-
-#: src/app/templates/views/reset-login-password.tpl.html:24
-#: src/app/templates/views/reset-login-password.tpl.html:76
-msgctxt "Title"
 msgid "Reset Password"
 msgstr ""
 
@@ -5617,13 +5629,13 @@ msgctxt "Title"
 msgid "Search"
 msgstr ""
 
-#: src/app/templates/search/searchForm.tpl.html:137
-msgctxt "Action"
+#: src/app/ui/directives/noResults.js:39
+msgctxt "No results heading"
 msgid "Search"
 msgstr ""
 
-#: src/app/ui/directives/noResults.js:39
-msgctxt "No results heading"
+#: src/app/templates/search/searchForm.tpl.html:137
+msgctxt "Action"
 msgid "Search"
 msgstr ""
 
@@ -5650,12 +5662,12 @@ msgctxt "Title"
 msgid "Security"
 msgstr ""
 
-#: src/app/core/directives/cvcTooltip.js:5
+#: src/app/templates/directives/core/cardView.tpl.html:39
+msgctxt "Label"
 msgid "Security Code"
 msgstr ""
 
-#: src/app/templates/directives/core/cardView.tpl.html:39
-msgctxt "Label"
+#: src/app/core/directives/cvcTooltip.js:5
 msgid "Security Code"
 msgstr ""
 
@@ -5731,16 +5743,16 @@ msgctxt "Action"
 msgid "Sending"
 msgstr ""
 
-#: src/app/ui/directives/noResults.js:15
-msgctxt "No results heading"
-msgid "Sent"
-msgstr ""
-
 #. location tag
 #: src/app/sidebar/factories/sidebarModel.js:17
 #: src/app/templates/directives/location-tag.tpl.html:4
 #: src/app/ui/factories/pageTitlesModel.js:11
 msgctxt "Title"
+msgid "Sent"
+msgstr ""
+
+#: src/app/ui/directives/noResults.js:15
+msgctxt "No results heading"
 msgid "Sent"
 msgstr ""
 
@@ -5789,13 +5801,13 @@ msgctxt "Title"
 msgid "Set Organization Password"
 msgstr ""
 
-#. Title
-#: src/app/templates/modals/twofactor/twoFAIntroModal.tpl.html:6
+#: src/app/templates/modals/twofactor/sharedSecret.tpl.html:6
+msgctxt "Title"
 msgid "Set Up Two Factor Authentication"
 msgstr ""
 
-#: src/app/templates/modals/twofactor/sharedSecret.tpl.html:6
-msgctxt "Title"
+#. Title
+#: src/app/templates/modals/twofactor/twoFAIntroModal.tpl.html:6
 msgid "Set Up Two Factor Authentication"
 msgstr ""
 
@@ -5832,14 +5844,14 @@ msgctxt "Title"
 msgid "Setting up your Organization"
 msgstr ""
 
-#. Folder name
-#: src/app/templates/partials/sidebar-responsive.tpl.html:24
-msgctxt "Title"
+#: src/app/templates/ui/navigation/navigation.tpl.html:11
+msgctxt "Action"
 msgid "Settings"
 msgstr ""
 
-#: src/app/templates/ui/navigation/navigation.tpl.html:11
-msgctxt "Action"
+#. Folder name
+#: src/app/templates/partials/sidebar-responsive.tpl.html:24
+msgctxt "Title"
 msgid "Settings"
 msgstr ""
 
@@ -5950,12 +5962,12 @@ msgctxt "Title"
 msgid "SMS"
 msgstr ""
 
-#: src/app/core/controllers/signup.js:214
+#: src/app/core/controllers/signup.js:213
 msgctxt "Error"
 msgid "Something went wrong"
 msgstr ""
 
-#: src/app/core/controllers/signup.js:464
+#: src/app/core/controllers/signup.js:446
 msgctxt "Error"
 msgid "Something went wrong during address creation"
 msgstr ""
@@ -5975,6 +5987,12 @@ msgctxt "Action"
 msgid "Sort alphabetically"
 msgstr ""
 
+#: src/app/conversation/factories/actionConversation.js:19
+#: src/app/labels/directives/dropdownFolders.js:18
+#: src/app/message/factories/messageActions.js:10
+msgid "Spam"
+msgstr ""
+
 #: src/app/templates/modals/filter.tpl.html:138
 msgctxt "Label"
 msgid "Spam"
@@ -5990,12 +6008,6 @@ msgstr ""
 #: src/app/templates/directives/location-tag.tpl.html:6
 #: src/app/ui/factories/pageTitlesModel.js:14
 msgctxt "Title"
-msgid "Spam"
-msgstr ""
-
-#: src/app/conversation/factories/actionConversation.js:19
-#: src/app/labels/directives/dropdownFolders.js:18
-#: src/app/message/factories/messageActions.js:10
 msgid "Spam"
 msgstr ""
 
@@ -6031,9 +6043,8 @@ msgstr ""
 msgid "Star"
 msgstr ""
 
-#: src/app/sidebar/factories/sidebarModel.js:22
-#: src/app/ui/factories/pageTitlesModel.js:12
-msgctxt "Title"
+#: src/app/templates/modals/filter.tpl.html:171
+msgctxt "Label"
 msgid "Starred"
 msgstr ""
 
@@ -6042,8 +6053,9 @@ msgctxt "No results heading"
 msgid "Starred"
 msgstr ""
 
-#: src/app/templates/modals/filter.tpl.html:171
-msgctxt "Label"
+#: src/app/sidebar/factories/sidebarModel.js:22
+#: src/app/ui/factories/pageTitlesModel.js:12
+msgctxt "Title"
 msgid "Starred"
 msgstr ""
 
@@ -6072,16 +6084,16 @@ msgstr ""
 msgid "Status Updated"
 msgstr ""
 
+#: src/app/templates/modals/payment/payment.tpl.html:20
+#: src/app/templates/views/dashboard.tpl.html:214
+msgid "Storage"
+msgstr ""
+
 #. table heading
 #: src/app/templates/views/dashboard.tpl.html:109
 #: src/app/templates/views/dashboard.tpl.html:57
 #: src/app/templates/views/members.tpl.html:150
 msgctxt "Title"
-msgid "Storage"
-msgstr ""
-
-#: src/app/templates/modals/payment/payment.tpl.html:20
-#: src/app/templates/views/dashboard.tpl.html:214
 msgid "Storage"
 msgstr ""
 
@@ -6362,12 +6374,6 @@ msgctxt "Title"
 msgid "Time"
 msgstr ""
 
-#: src/app/templates/message/message.tpl.html:61
-#: src/app/templates/search/searchForm.tpl.html:59
-#: src/app/templates/views/outside.reply.tpl.html:18
-msgid "To"
-msgstr ""
-
 #. message metadata
 #. printed message info
 #: src/app/message/directives/messageContacts.js:7
@@ -6376,6 +6382,12 @@ msgstr ""
 #: src/app/templates/views/message.print.tpl.html:31
 #: src/app/templates/views/outside.message.tpl.html:32
 msgctxt "Title"
+msgid "To"
+msgstr ""
+
+#: src/app/templates/message/message.tpl.html:61
+#: src/app/templates/search/searchForm.tpl.html:59
+#: src/app/templates/views/outside.reply.tpl.html:18
 msgid "To"
 msgstr ""
 
@@ -6421,8 +6433,14 @@ msgctxt "Title"
 msgid "Total price"
 msgstr ""
 
-#: src/app/ui/directives/noResults.js:19
-msgctxt "No results heading"
+#: src/app/templates/modals/filter.tpl.html:144
+msgctxt "Label"
+msgid "Trash"
+msgstr ""
+
+#: src/app/conversation/factories/actionConversation.js:22
+#: src/app/labels/directives/dropdownFolders.js:24
+#: src/app/message/factories/messageActions.js:13
 msgid "Trash"
 msgstr ""
 
@@ -6434,14 +6452,8 @@ msgctxt "Title"
 msgid "Trash"
 msgstr ""
 
-#: src/app/templates/modals/filter.tpl.html:144
-msgctxt "Label"
-msgid "Trash"
-msgstr ""
-
-#: src/app/conversation/factories/actionConversation.js:22
-#: src/app/labels/directives/dropdownFolders.js:24
-#: src/app/message/factories/messageActions.js:13
+#: src/app/ui/directives/noResults.js:19
+msgctxt "No results heading"
 msgid "Trash"
 msgstr ""
 
@@ -6620,12 +6632,6 @@ msgstr ""
 msgid "Update your credit card information."
 msgstr ""
 
-#. Folder name
-#: src/app/templates/partials/sidebar-responsive.tpl.html:18
-msgctxt "Title"
-msgid "Upgrade"
-msgstr ""
-
 #. link to dashboard
 #: src/app/templates/ui/navigation/navigation.tpl.html:5
 #: src/app/templates/views/dashboard.tpl.html:42
@@ -6633,6 +6639,12 @@ msgstr ""
 #: src/app/templates/views/members.tpl.html:66
 #: src/app/templates/views/members.tpl.html:79
 msgctxt "Action"
+msgid "Upgrade"
+msgstr ""
+
+#. Folder name
+#: src/app/templates/partials/sidebar-responsive.tpl.html:18
+msgctxt "Title"
 msgid "Upgrade"
 msgstr ""
 
@@ -6744,12 +6756,12 @@ msgctxt "Label"
 msgid "User:"
 msgstr ""
 
-#: src/app/templates/authentication/loginForm.tpl.html:20
+#: src/app/templates/views/dashboard.tpl.html:17
+msgctxt "Title"
 msgid "Username"
 msgstr ""
 
-#: src/app/templates/views/dashboard.tpl.html:17
-msgctxt "Title"
+#: src/app/templates/authentication/loginForm.tpl.html:20
 msgid "Username"
 msgstr ""
 
@@ -6821,14 +6833,14 @@ msgctxt "Error"
 msgid "Verification did not succeed, please try again in an hour."
 msgstr ""
 
-#: src/app/templates/modals/domain/verification.tpl.html:37
-msgctxt "Action"
-msgid "Verify"
-msgstr ""
-
 #: src/app/templates/modals/domain/menu.tpl.html:12
 #: src/app/templates/modals/domain/verification.tpl.html:10
 msgctxt "Title"
+msgid "Verify"
+msgstr ""
+
+#: src/app/templates/modals/domain/verification.tpl.html:37
+msgctxt "Action"
 msgid "Verify"
 msgstr ""
 
@@ -6907,7 +6919,7 @@ msgctxt "Error"
 msgid "Wait for attachment to finish uploading or cancel upload."
 msgstr ""
 
-#: src/app/core/controllers/signup.js:228
+#: src/app/core/controllers/signup.js:227
 #: src/app/templates/views/reset-login-password.tpl.html:47
 #: src/app/templates/views/reset-mailbox-password.tpl.html:4
 msgctxt "Title"
@@ -6920,7 +6932,7 @@ msgctxt "Info"
 msgid "WARNING: DELETION IS PERMANENT"
 msgstr ""
 
-#: src/app/core/controllers/signup.js:229
+#: src/app/core/controllers/signup.js:228
 msgctxt "Warning"
 msgid "Warning: You did not set a recovery email so account recovery is impossible if you forget your password. Proceed without recovery email?"
 msgstr ""
@@ -7059,7 +7071,7 @@ msgctxt "Error"
 msgid "You are doing this too much, please try again later"
 msgstr ""
 
-#: src/app/authentication/controllers/login.js:92
+#: src/app/authentication/controllers/login.js:91
 msgctxt "Error"
 msgid ""
 "You are in Private Mode or have Session Storage disabled.\n"
@@ -7226,7 +7238,7 @@ msgctxt "Info"
 msgid "Your organization password can be shared with other users you wish to give administrative privileges. It is also an emergency recovery code to gain access to your organization in case you lose access to your account. Please save this password and keep it safe."
 msgstr ""
 
-#: src/app/authentication/controllers/login.js:335
+#: src/app/authentication/controllers/login.js:334
 msgid "Your password is missing"
 msgstr ""
 
