@@ -244,12 +244,12 @@ angular.module('proton.settings')
     function disableAddress(addressID) {
         const errorMessage = gettextCatalog.getString('Error during disable request', null, 'Error');
         return Address.disable(addressID)
-        .then(({ data = {} } = {}) => {
-            if (data.Code === 1000) {
-                return Promise.resolve();
-            }
-            throw new Error(data.Error || errorMessage);
-        });
+            .then(({ data = {} } = {}) => {
+                if (data.Code === 1000) {
+                    return Promise.resolve();
+                }
+                throw new Error(data.Error || errorMessage);
+            });
     }
 
     function enableAddress(addressID) {
@@ -266,12 +266,24 @@ angular.module('proton.settings')
     function deleteAddress(addressID) {
         const errorMessage = gettextCatalog.getString('Error during deletion', null, 'Error');
         return Address.delete(addressID)
-        .then(({ data = {} } = {}) => {
-            if (data.Code === 1000) {
-                return Promise.resolve();
-            }
-            throw new Error(data.Error || errorMessage);
-        });
+            .then(({ data = {} } = {}) => {
+                if (data.Code === 1000) {
+                    return Promise.resolve();
+                }
+                throw new Error(data.Error || errorMessage);
+            });
+    }
+
+    /**
+     * Disable the address first if the status equals 0
+     * @param  {Object} address
+     * @return {Promise}
+     */
+    function disableFirst({ ID, Status }) {
+        if (Status === 0) {
+            return Promise.resolve();
+        }
+        return disableAddress(ID);
     }
 
     /**
@@ -280,7 +292,6 @@ angular.module('proton.settings')
      */
     $scope.deleteAddress = (address = {}) => {
         const addressID = address.ID;
-        const isDisabled = address.Status === 0;
         const title = gettextCatalog.getString('Delete address', null, 'Title');
         const message = gettextCatalog.getString('Are you sure you want to delete this address?', null, 'Info');
 
@@ -289,13 +300,13 @@ angular.module('proton.settings')
                 title,
                 message,
                 confirm() {
-                    const promise = (isDisabled) ? Promise.resolve() : disableAddress(addressID);
-                    promise.then(() => deleteAddress(addressID))
-                    .then(() => eventManager.call())
-                    .then(() => {
-                        notify({ message: gettextCatalog.getString('Address deleted', null, 'Info'), classes: 'notification-success' });
-                        confirmModal.deactivate();
-                    });
+                    const promise = disableFirst(address)
+                        .then(() => deleteAddress(addressID))
+                        .then(() => eventManager.call())
+                        .then(() => {
+                            notify({ message: gettextCatalog.getString('Address deleted', null, 'Info'), classes: 'notification-success' });
+                            confirmModal.deactivate();
+                        });
 
                     networkActivityTracker.track(promise);
                 },
