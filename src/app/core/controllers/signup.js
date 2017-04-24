@@ -185,15 +185,19 @@ angular.module('proton.core')
             Username: accountCopy.username,
             Type: 'sms',
             Destination: { Phone: $scope.account.smsVerification }
-        }).then(({ data = {} } = {}) => {
-            $scope.smsSending = false;
-            if (data.Error) {
+        })
+            .then(({ data = {} } = {}) => {
+                $scope.smsSending = false;
+                if (data.Code === 1000) {
+                    $scope.signup.smsVerificationSent = true;
+                    return Promise.resolve();
+                }
                 throw new Error(data.Error);
-            }
-            if (data.Code === 1000) {
-                $scope.signup.smsVerificationSent = true;
-            }
-        });
+            })
+            .catch((error) => {
+                $scope.smsSending = false;
+                return error;
+            });
         networkActivityTracker.track(promise);
     };
 
