@@ -168,14 +168,14 @@ angular.module('proton.core')
             Username: accountCopy.username,
             Type: 'email',
             Destination: { Address: $scope.account.emailVerification }
-        }).then(({ data = {} } = {}) => {
-            if (data.Error) {
+        })
+            .then(({ data = {} } = {}) => {
+                if (data.Code === 1000) {
+                    $scope.signup.verificationSent = true;
+                    return Promise.resolve();
+                }
                 throw new Error(data.Error);
-            }
-            if (data.Code === 1000) {
-                $scope.signup.verificationSent = true;
-            }
-        });
+            });
         networkActivityTracker.track(promise);
     };
 
@@ -196,7 +196,7 @@ angular.module('proton.core')
             })
             .catch((error) => {
                 $scope.smsSending = false;
-                return error;
+                throw error;
             });
         networkActivityTracker.track(promise);
     };
