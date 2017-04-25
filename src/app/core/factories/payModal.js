@@ -92,7 +92,7 @@ angular.module('proton.core')
 
                 const { paymentID, payerID, cancel } = event.data;
                 const paypalError = gettextCatalog.getString('Problem communicating with PayPal servers, please try again in a few minutes', null, 'Error');
-                const promise = (cancel) ? Promise.reject(paypalError) : Promise.resolve({ PayerID: payerID, PaymentID: paymentID });
+                const promise = (cancel === '0') ? Promise.reject(paypalError) : Promise.resolve({ PayerID: payerID, PaymentID: paymentID });
 
                 promise
                     .then((details) => Payment.pay(params.invoice.ID, {
