@@ -37,6 +37,8 @@ module.exports = function(grunt) {
         return api;
     }
 
+    const isDistRelease = () => ['prod', 'beta'].indexOf(apiUrl) !== -1;
+
     // Expose each supported browser as a command-line option
     function browsers() {
         var selected = _.filter(BROWSERS, function(browser) {
@@ -513,7 +515,13 @@ module.exports = function(grunt) {
                 command: 'npm run lint'
             },
             i18n: {
-                command: 'npm run i18n'
+                command() {
+
+                    if (isDistRelease()) {
+                        return  'npm run i18n';
+                    }
+                    return 'echo "no i18n for dev/blue etc."';
+                }
             }
 
         },
