@@ -5204,7 +5204,7 @@ msgstr ""
 
 #: src/app/templates/vpn/vpnView.tpl.html:12
 msgctxt "Info"
-msgid "ProtonVPN beta is currently available for Visionary users. If you're interested in participating in the ProtonVPN beta, consider <a ui-sref=\"secured.dashboard({ scroll: true })\">upgrading to a Visionary plan</a>."
+msgid "ProtonVPN beta is currently available for Visionary and Plus users. If you're interested in participating in the ProtonVPN beta, consider <a ui-sref=\"secured.dashboard({ scroll: true })\">upgrading to a paid plan</a>."
 msgstr ""
 
 #: src/app/templates/vpn/vpnView.tpl.html:70
@@ -5212,9 +5212,9 @@ msgctxt "Label"
 msgid "ProtonVPN Homepage"
 msgstr ""
 
-#: src/app/templates/vpn/vpnView.tpl.html:17
+#: src/app/templates/vpn/vpnView.tpl.html:18
 msgctxt "Info"
-msgid "ProtonVPN is now available for free for ProtonMail Plus users during the beta period!"
+msgid "ProtonVPN is now available for free during the beta period!"
 msgstr ""
 
 #: src/app/templates/vpn/vpnView.tpl.html:24
