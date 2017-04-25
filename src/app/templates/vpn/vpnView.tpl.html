@@ -9,15 +9,15 @@
                         translate-context="Title">ProtonVPN</h2>
                 </header-block>
 
-                <p class="alert alert-info" translate-context="Info" translate>ProtonVPN beta is currently available for Visionary users. If you're interested in participating in the ProtonVPN beta, consider <a ui-sref="secured.dashboard({ scroll: true })">upgrading to a Visionary plan</a>.</p>
-            </section>
-        </div>
-        <div ng-if="isPlus" class="row">
-            <section class="pm_form">
-                <p class="alert alert-info" translate-context="Info" translate>ProtonVPN is now available for free for ProtonMail Plus users during the beta period!</p>
+                <p class="alert alert-info" translate-context="Info" translate>ProtonVPN beta is currently available for Visionary and Plus users. If you're interested in participating in the ProtonVPN beta, consider <a ui-sref="secured.dashboard({ scroll: true })">upgrading to a paid plan</a>.</p>
             </section>
         </div>
         <div ng-if="vpnEnabled">
+            <div ng-if="isPlusFree" class="row">
+                <section class="pm_form">
+                    <p class="alert alert-info" translate-context="Info" translate>ProtonVPN is now available for free during the beta period!</p>
+                </section>
+            </div>
             <div class="row pm_grid">
                 <section class="pm_form col-1-2">
                     <header-block class="settingsVpn-header-login">
