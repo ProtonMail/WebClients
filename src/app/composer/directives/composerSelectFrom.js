@@ -41,13 +41,13 @@ angular.module('proton.composer')
                  * cause a rendering bug of the options widths
                  */
                 const onMouseDown = () => $select.focus();
-                tools.isIE11 && $select.on('mousedown', onMouseDown);
+                tools.isIE11() && $select.on('mousedown', onMouseDown);
 
                 el.on('click', onClick);
                 el.on('change', onChange);
 
                 scope.$on('$destroy', () => {
-                    tools.isIE11 && $select.off('mousedown', onMouseDown);
+                    tools.isIE11() && $select.off('mousedown', onMouseDown);
                     el.off('click', onClick);
                     el.off('change', onChange);
                 });
