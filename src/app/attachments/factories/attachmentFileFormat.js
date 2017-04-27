@@ -13,7 +13,7 @@ angular.module('proton.attachments')
          */
         const isUploadMIMEType = (type) => {
             // Prehistory, with IE you can be Files or Text.
-            if (tools.isIE11) {
+            if (tools.isIE11()) {
                 return type !== 'Text';
             }
             return type !== 'text/html' && type !== 'text/plain' && type !== 'text/uri-list';
@@ -32,7 +32,7 @@ angular.module('proton.attachments')
             const list = [...(dataTransfer.types || [])];
 
             // Can be a drag and drop of an image inside the composer
-            if (tools.isIE11 && !list.length) {
+            if (tools.isIE11() && !list.length) {
                 return false;
             }
 
