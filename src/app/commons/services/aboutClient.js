@@ -21,6 +21,8 @@ angular.module('proton.commons')
         };
         const isSafariMobile = () => $.ua.browser.name === 'Mobile Safari';
 
+        const isIE11 = () => $.ua.browser.name === 'IE' && $.ua.browser.major === '11';
+
         const isFileSaverSupported = () => 'download' in document.createElement('a') || navigator.msSaveOrOpenBlob;
 
         const prngAvailable = () => {
@@ -71,6 +73,7 @@ angular.module('proton.commons')
             getOS,
             getBrowser,
             getBrowserVersion,
+            isIE11,
             isSafari,
             isSafariMobile,
             isFileSaverSupported,
