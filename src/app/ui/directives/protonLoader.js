@@ -4,10 +4,9 @@ angular.module('proton.core')
         scope: {},
         templateUrl: 'templates/directives/ui/protonLoader.tpl.html',
         link(scope, el) {
-            $rootScope
-                .$on('networkActivity', (e, type) => {
-                    (type === 'load') && _rAF(() => el[0].classList.add('show'));
-                    (type === 'close') && _rAF(() => el[0].classList.remove('show'));
-                });
+            $rootScope.$on('networkActivity', (e, type) => {
+                (type === 'load') && _rAF(() => el[0].classList.add('show'));
+                (type === 'close') && _rAF(() => el[0].classList.remove('show'));
+            });
         }
     }));
