@@ -12,4 +12,8 @@
     .advancedFilterElement-btn-trash { display: inline-block !important }
 }
 
-[class*="advancedFilterElement-btn"] * { pointer-events: none }
+[class*="advancedFilterElement-btn"] > div {
+    pointer-events: none;
+    display: inline-flex;
+    align-items: center;
+}
