@@ -16,7 +16,8 @@ angular.module('proton.message')
         }
 
         function formatSubject(subject = '', prefix = RE_PREFIX) {
-            const hasPrefix = subject.toLowerCase().indexOf(prefix.toLowerCase()) === 0;
+            const combinaisons = (prefix === RE_PREFIX) ? [RE_PREFIX, `${FW_PREFIX} ${RE_PREFIX}`] : [FW_PREFIX, `${RE_PREFIX} ${FW_PREFIX}`];
+            const hasPrefix = _.find(combinaisons, (pre) => subject.toLowerCase().indexOf(pre.toLowerCase()) === 0);
 
             return hasPrefix ? subject : `${prefix} ${subject}`;
         }
