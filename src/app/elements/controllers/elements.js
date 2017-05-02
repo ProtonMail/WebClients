@@ -66,7 +66,7 @@ angular.module('proton.elements')
         $scope.elementsLoaded = false;
     });
 
-    $scope.watchElements = () => {
+    function watchElements() {
         if (angular.isDefined(unbindWatcherElements)) {
             unbindWatcherElements();
         }
@@ -75,7 +75,7 @@ angular.module('proton.elements')
             $rootScope.numberElementSelected = $scope.elementsSelected().length;
             $rootScope.numberElementUnread = cacheCounters.unreadConversation(tools.currentLocation());
         }, true);
-    };
+    }
 
     $scope.senders = (element) => {
         if (angular.isDefined(element.Senders)) {
@@ -366,7 +366,7 @@ angular.module('proton.elements')
                     return element;
                 });
 
-                $scope.watchElements();
+                watchElements();
 
                 /**
                  * Redirect the user if there are no elements to display for the current state
@@ -468,9 +468,8 @@ angular.module('proton.elements')
         };
 
         _.each($scope.conversations, (element) => actions[value](element));
-        const selectedElements = $scope.elementsSelected(false);
 
-        $rootScope.numberElementChecked = selectedElements.length;
+        $rootScope.numberElementChecked = _.where($scope.conversations, { Selected: true }).length;
     };
 
     /**
