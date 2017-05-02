@@ -66,6 +66,10 @@ Run a scenario:
 $ protractor protractor_conf.js --suite=login
 ```
 
+### Deploy a new version
+
+You can edit the article link with the flag `--article`
+
 ### License
 
 Copyright (c) 2013-2016
