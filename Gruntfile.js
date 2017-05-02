@@ -23,6 +23,7 @@ var browserslist = require('./browserslist');
 module.exports = function(grunt) {
     var serveStatic = require('serve-static');
 
+
     grunt.loadTasks('tasks');
     require('load-grunt-tasks')(grunt);
 
@@ -101,6 +102,7 @@ module.exports = function(grunt) {
                         date_version: dateVersion,
                         clientID: clientID,
                         clientSecret: clientSecret,
+                        articleLink: grunt.option('article') || 'https://protonmail.com/blog/protonmail-v3-8-release-notes/',
                         year: (new Date()).getFullYear()
                     }
                 }
