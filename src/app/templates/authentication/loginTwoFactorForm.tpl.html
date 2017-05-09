@@ -21,7 +21,7 @@
         <two-fa-field ng-model="twoFactorCode" autofocus tabindex="2" id="twoFactorCode" name="twoFactorCode" placeholder-translate="Two-factor passcode"></two-fa-field>
     </div>
 
-    <div class="clearfix">
+    <div>
         <a class="pm_button link pull-left" ng-click="displayHelpModal()" translate-context="Action" translate-comment="link for login help" translate>Need help?</a>
         <button id="login_btn" type="submit" tabindex="3" class="pm_button primary pull-right" ng-disabled="networkActivity.loading() || loginTwoFactorForm.$invalid" translate-context="Action" translate>Login</button>
     </div>
