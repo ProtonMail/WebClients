@@ -6,11 +6,12 @@ angular.module('proton.composer')
         const ATTACHMENT_MAX_SIZE = ATTACHMENT_SIZE_LIMIT * BASE_SIZE * BASE_SIZE;
 
         const dropMessages = {
-            [ATTACHMENT_NUMBER_LIMIT]: `Messages are limited to ${ATTACHMENT_NUMBER_LIMIT} attachments`,
-            [ATTACHMENT_SIZE_LIMIT]: `Attachments are limited to ${ATTACHMENT_SIZE_LIMIT} MB.`,
+            0: gettextCatalog.getString('Empty attachment', null, 'Composer'),
+            [ATTACHMENT_NUMBER_LIMIT]: gettextCatalog.getString(`Messages are limited to ${ATTACHMENT_NUMBER_LIMIT} attachments`, null, 'Composer'),
+            [ATTACHMENT_SIZE_LIMIT]: gettextCatalog.getString(`Attachments are limited to ${ATTACHMENT_SIZE_LIMIT} MB.`, null, 'Composer'),
             [ATTACHMENT_MAX_SIZE](bytes) {
                 const total = Math.round(10 * bytes / BASE_SIZE / BASE_SIZE) / 10;
-                return `Attachments are limited to ${ATTACHMENT_SIZE_LIMIT} MB. Total attached would be: ${total} MB.`;
+                return gettextCatalog.getString(`Attachments are limited to ${ATTACHMENT_SIZE_LIMIT} MB. Total attached would be: ${total} MB.`, null, 'Composer');
             }
         };
 
@@ -58,7 +59,7 @@ angular.module('proton.composer')
                 }
 
                 if (currentSize === 0) {
-                    const msg = dropMessages[ATTACHMENT_SIZE_LIMIT];
+                    const msg = dropMessages[0];
                     /* file is too big */
                     dropzone.removeFile(file);
                     notifyError(msg);
