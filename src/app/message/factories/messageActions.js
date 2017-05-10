@@ -258,10 +258,10 @@ angular.module('proton.message')
             };
 
             const { events, promises } = _.reduce(messages, (acc, message) => {
-
                 const msgLabels = (message.LabelIDs || []).filter((v) => isNaN(+v));
-                const toApply = filterLabelsID(labels, ({ ID, Selected }) => Selected && !_.contains(msgLabels, ID));
-                const toRemove = filterLabelsID(labels, ({ ID, Selected }) => !Selected && _.contains(msgLabels, ID));
+                // Selected can equals to true / false / null
+                const toApply = filterLabelsID(labels, ({ ID, Selected }) => Selected === true && !_.contains(msgLabels, ID));
+                const toRemove = filterLabelsID(labels, ({ ID, Selected }) => Selected === false && _.contains(msgLabels, ID));
 
                 if (alsoArchive === true) {
                     toApply.push(CONSTANTS.MAILBOX_IDENTIFIERS.archive);

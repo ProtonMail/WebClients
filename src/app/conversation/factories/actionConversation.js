@@ -227,6 +227,7 @@ angular.module('proton.conversation')
                .value() || [];
         };
 
+        // Selected can equals to true / false / null
         const toApplyLabels = getLabelsId(labels, ({ Selected }) => Selected === true);
         const toRemoveLabels = getLabelsId(labels, ({ Selected }) => Selected === false);
         const toApply = [].concat(toApplyLabels);
