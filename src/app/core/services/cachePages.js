@@ -1,5 +1,5 @@
 angular.module('proton.core')
-.factory('cachePages', ($rootScope) => {
+.factory('cachePages', ($rootScope, tools) => {
     const pages = [];
     const inside = (page) => pages.indexOf(page) > -1;
     const add = (page) => pages.push(page);
@@ -14,7 +14,7 @@ angular.module('proton.core')
     };
 
     $rootScope.$on('$stateChangeStart', (event, toState, toParams, fromState) => {
-        if (fromState !== toState) {
+        if (tools.filteredState(fromState) !== tools.filteredState(toState)) {
             clear();
         }
     });
