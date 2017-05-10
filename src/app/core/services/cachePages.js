@@ -14,7 +14,7 @@ angular.module('proton.core')
     };
 
     $rootScope.$on('$stateChangeStart', (event, toState, toParams, fromState) => {
-        if (tools.filteredState(fromState) !== tools.filteredState(toState)) {
+        if (tools.filteredState(fromState.name) !== tools.filteredState(toState.name)) {
             clear();
         }
     });
