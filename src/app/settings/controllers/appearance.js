@@ -16,7 +16,8 @@ angular.module('proton.settings')
     const unsubscribe = [];
     $scope.appearance = {
         locales: [
-                { label: gettextCatalog.getString('English', null), key: 'en_US' }
+                { label: gettextCatalog.getString('English', null), key: 'en_US' },
+                { label: gettextCatalog.getString('French', null), key: 'fr_FR' }
         ],
         cssTheme: authentication.user.Theme,
         ComposerMode: authentication.user.ComposerMode,
@@ -102,8 +103,12 @@ angular.module('proton.settings')
     $scope.saveDefaultLanguage = () => {
         const Language = $scope.appearance.locale.key;
 
-        return settingsApi.setLanguage({ Language })
+        const promise = settingsApi.setLanguage({ Language })
             .then(() => $window.location.reload());
+
+        networkActivityTracker.track(promise);
+
+        return promise;
     };
 
     $scope.saveButtonsPosition = () => {
