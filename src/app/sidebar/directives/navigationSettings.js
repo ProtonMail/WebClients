@@ -1,11 +1,7 @@
 angular.module('proton.sidebar')
     .directive('navigationSettings', ($rootScope, $state, sidebarSettingsModel, dedentTpl) => {
 
-
         const CLASS_ACTIVE = 'active';
-        const STATES = sidebarSettingsModel.getStateConfig();
-
-
         const template = (key, { label, icon = '', state }) => {
             const iconClassName = `sidebarApp-icon navigationSettings-icon fa ${icon}`.trim();
             const href = $state.href(state);
@@ -19,6 +15,7 @@ angular.module('proton.sidebar')
             replace: true,
             template: '<li class="navigationSettings-container"></li>',
             link(scope, el, { key }) {
+                const STATES = sidebarSettingsModel.getStateConfig();
                 const config = STATES[key];
                 el[0].innerHTML = template(key, config);
                 el[0].classList.add(`navigationSettings-is-${key}`);

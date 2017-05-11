@@ -1,7 +1,7 @@
 angular.module('proton.sidebar')
     .factory('sidebarModel', (CONSTANTS, tools, cacheCounters, gettextCatalog) => {
 
-        const CONFIG = {
+        const getStateConfig = () => ({
             inbox: {
                 state: 'secured.inbox',
                 label: gettextCatalog.getString('Inbox', null, 'Title'),
@@ -41,9 +41,7 @@ angular.module('proton.sidebar')
                 state: 'secured.allmail',
                 label: gettextCatalog.getString('All Mail', null, 'Title')
             }
-        };
-
-        const getStateConfig = () => CONFIG;
+        });
 
         const getFolderID = (mailbox, id) => {
             return (mailbox === 'label') ? id : CONSTANTS.MAILBOX_IDENTIFIERS[mailbox];

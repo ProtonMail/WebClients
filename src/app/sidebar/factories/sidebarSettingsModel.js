@@ -1,7 +1,7 @@
 angular.module('proton.sidebar')
     .factory('sidebarSettingsModel', (gettextCatalog) => {
 
-        const CONFIG = {
+        const getStateConfig = () => ({
             dashboard: {
                 state: 'secured.dashboard',
                 label: gettextCatalog.getString('Dashboard', null, 'Title'),
@@ -62,9 +62,7 @@ angular.module('proton.sidebar')
                 label: gettextCatalog.getString('VPN', null, 'Title'),
                 icon: 'fa-shield'
             }
-        };
-
-        const getStateConfig = () => CONFIG;
+        });
 
         return { getStateConfig };
     });
