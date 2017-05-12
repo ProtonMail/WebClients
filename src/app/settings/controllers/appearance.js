@@ -15,10 +15,6 @@ angular.module('proton.settings')
     notify) => {
     const unsubscribe = [];
     $scope.appearance = {
-        locales: [
-                { label: gettextCatalog.getString('English', null), key: 'en_US' },
-                { label: gettextCatalog.getString('French', null), key: 'fr_FR' }
-        ],
         cssTheme: authentication.user.Theme,
         ComposerMode: authentication.user.ComposerMode,
         ViewLayout: authentication.user.ViewLayout,
@@ -26,7 +22,6 @@ angular.module('proton.settings')
         viewMode: !(authentication.user.ViewMode) // BE data is reversed
     };
 
-    $scope.appearance.locale = _.findWhere($scope.appearance.locales, { key: gettextCatalog.getCurrentLanguage() });
     unsubscribe.push($rootScope.$on('changeViewMode', changeViewMode));
     $scope.$on('$destroy', () => {
         unsubscribe.forEach((cb) => cb());
@@ -98,17 +93,6 @@ angular.module('proton.settings')
                     }
                 })
             );
-    };
-
-    $scope.saveDefaultLanguage = () => {
-        const Language = $scope.appearance.locale.key;
-
-        const promise = settingsApi.setLanguage({ Language })
-            .then(() => $window.location.reload());
-
-        networkActivityTracker.track(promise);
-
-        return promise;
     };
 
     $scope.saveButtonsPosition = () => {
