@@ -3,6 +3,7 @@ angular.module('proton.settings')
     $log,
     $rootScope,
     $scope,
+    $window,
     $timeout,
     $state,
     CONSTANTS,
@@ -45,6 +46,11 @@ angular.module('proton.settings')
     $scope.passwordMode = authentication.user.PasswordMode;
     $scope.keyPhase = CONSTANTS.KEY_PHASE;
     $scope.emailing = { announcements: false, features: false, newsletter: false, beta: false };
+    $scope.locales = [
+        { label: gettextCatalog.getString('English', null), key: 'en_US' },
+        { label: gettextCatalog.getString('French', null), key: 'fr_FR' }
+    ];
+    $scope.locale = _.findWhere($scope.locales, { key: gettextCatalog.getCurrentLanguage() });
     const EMAILING_KEYS = Object.keys($scope.emailing);
     updateUser();
 
@@ -71,6 +77,17 @@ angular.module('proton.settings')
         unsubscribe.forEach((cb) => cb());
         unsubscribe.length = 0;
     });
+
+    $scope.saveDefaultLanguage = () => {
+        const Language = $scope.locale.key;
+
+        const promise = settingsApi.setLanguage({ Language })
+            .then(() => $window.location.reload());
+
+        networkActivityTracker.track(promise);
+
+        return promise;
+    };
 
     $scope.enableDesktopNotifications = () => {
         desktopNotifications.request(() => {

@@ -371,6 +371,19 @@
                     <span translate-context="Label" translate>Proton Beta (~ 10-12 per year)</span>
                 </label>
             </section>
+            <section class="pm_form col-1-2">
+                <header-block class="settingsAccount-header-internationalization">
+                    <h2
+                        class="settingsAccount-title-internationalization"
+                        translate
+                        translate-context="Title">Internationalization</h2>
+                </header-block>
+                <label for="selectDefaultLanguage"  translate translate-comment="form option">Choose your default language.</label>
+                <span class="pm_select">
+                    <select id="selectDefaultLanguage" ng-model="locale" ng-options="locale.label for locale in locales" ng-change="saveDefaultLanguage()"></select>
+                    <i class="fa fa-angle-down"></i>
+                </span>
+            </section>
         </div>
     </div>
 </div>
