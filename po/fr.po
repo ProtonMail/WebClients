@@ -11,7 +11,7 @@ msgstr ""
 "Last-Translator: PMtranslator <contact@protonmail.ch>\n"
 "Language-Team: French\n"
 "Language: fr_FR\n"
-"PO-Revision-Date: 2017-05-12 04:08-0400\n"
+"PO-Revision-Date: 2017-05-12 04:26-0400\n"
 
 #: src/app/templates/modals/filter.tpl.html:150
 msgctxt "Label"
@@ -210,7 +210,7 @@ msgstr "<kbd>g</kbd> puis <kbd>.</kbd> Aller au <strong>dossier favoris</strong>
 #: src/app/templates/modals/hotkey.tpl.html:53
 msgctxt "Info"
 msgid "<kbd>g</kbd> then <kbd>a</kbd> Goes to <strong>archive</strong>."
-msgstr "<kbd>g</kbd> puis <kbd>a</kbd> Aller au <strong>dossier archive</strong>."
+msgstr "<kbd>g</kbd> puis <kbd>a</kbd> Aller au <strong>dossier archives</strong>."
 
 #: src/app/templates/modals/hotkey.tpl.html:50
 msgctxt "Info"
@@ -830,23 +830,23 @@ msgstr "Appliquer"
 #: src/app/ui/factories/pageTitlesModel.js:13
 msgctxt "Title"
 msgid "Archive"
-msgstr "Archiver"
+msgstr "Archives"
 
 #: src/app/templates/modals/filter.tpl.html:132
 msgctxt "Label"
 msgid "Archive"
-msgstr "Archive"
+msgstr "Archives"
 
 #: src/app/ui/directives/noResults.js:35
 msgctxt "No results heading"
 msgid "Archive"
-msgstr "Archive"
+msgstr "Archives"
 
 #: src/app/conversation/factories/actionConversation.js:23
 #: src/app/labels/directives/dropdownFolders.js:12
 #: src/app/message/factories/messageActions.js:14
 msgid "Archive"
-msgstr "Archiver"
+msgstr "Archives"
 
 #. Antispam section of account creation
 #: src/app/templates/views/signup.tpl.html:203
@@ -3379,7 +3379,7 @@ msgstr "Important : Assurez-vous que vous avez enregistré les codes de récup�
 #: src/app/message/directives/foldersMessage.js:7
 #: src/app/templates/message/allMessageLabels.tpl.html:8
 msgid "In archive"
-msgstr "Dans archive"
+msgstr "Dans archives"
 
 #: src/app/elements/directives/foldersElement.js:16
 msgid "In drafts"
@@ -4205,7 +4205,7 @@ msgstr "Déplacer vers"
 #: src/app/templates/partials/toolbar-mobile.tpl.html:42
 msgctxt "Action"
 msgid "Move to archive"
-msgstr "Déplacer vers archive"
+msgstr "Déplacer vers archives"
 
 #: src/app/templates/elements/moveElement.tpl.html:19
 #: src/app/templates/message/message.tpl.html:146
@@ -5743,7 +5743,7 @@ msgstr "Expéditeur"
 #: src/app/templates/views/filters.tpl.html:48
 msgctxt "Info"
 msgid "Sender specific spam rules can be applied here. Whitelist addresses always go to Inbox while Blacklist addresses always go to Spam. Marking a message as spam adds the address to the Blacklist. Marking a message as not spam adds the address to the Whitelist."
-msgstr "Des régles de gestion des émetteurs de spams peuvent être appliquées. Les adresses en liste blanche sont dirigées vers votre boite de réception tandis que les adresses en liste noire sont toujours dirigés vers votre dossier Spam. Le fait de marquer un message en tant que pourriel ajoute automatiquement l'adresse de l'expéditeur dans la liste noire. Le fait de marquer un message comme n'étant pas un pourriel ajoute automatiquement l'adresse de l'expéditeur dans la liste blanche."
+msgstr "Des régles de gestion des émetteurs de spams peuvent être appliquées. Les adresses en liste blanche sont dirigées vers votre boite de réception tandis que les adresses en liste noire sont toujours dirigés vers votre dossier Spam. Le fait de marquer un message en tant que spam ajoute automatiquement l'adresse de l'expéditeur dans la liste noire. Le fait de marquer un message comme n'étant pas un spam ajoute automatiquement l'adresse de l'expéditeur dans la liste blanche."
 
 #: src/app/composer/directives/btnSendMessage.js:26
 msgctxt "Action"
@@ -6058,13 +6058,13 @@ msgstr "Favoris"
 #: src/app/ui/directives/noResults.js:27
 msgctxt "No results heading"
 msgid "Starred"
-msgstr "Ajouté aux favoris"
+msgstr "Favoris"
 
 #: src/app/sidebar/factories/sidebarModel.js:22
 #: src/app/ui/factories/pageTitlesModel.js:12
 msgctxt "Title"
 msgid "Starred"
-msgstr "Ajouté aux favoris"
+msgstr "Favoris"
 
 #: src/app/templates/search/searchForm.tpl.html:64
 msgctxt "Title"
