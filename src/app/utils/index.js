@@ -1,1 +1,2 @@
-angular.module('proton.utils', ['proton.constants']);
+angular.module('proton.utils', ['proton.constants'])
+    .run((resurrecter) => resurrecter.init());
