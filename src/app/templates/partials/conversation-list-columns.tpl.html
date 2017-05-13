@@ -9,10 +9,10 @@
         ng-class="{
             selected: conversation.Selected,
             active: active(conversation),
-            read: conversation.NumUnread === 0 || conversation.IsRead === 1,
+            read: isRead(conversation),
             marked: conversation.ID === markedElement.ID,
             hasLabels: (conversation.LabelIDs | labels).length > 0,
-            hasAttachments: (conversation.NumAttachments > 0),
+            hasAttachments: hasAttachments(conversation),
             expiring: (conversation.ExpirationTime > 0)
         }">
         <span class="expiration"><i class="fa fa-clock-o"></i></span>

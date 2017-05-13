@@ -121,6 +121,25 @@ angular.module('proton.core')
     };
 
     /**
+     * Search NumUnread depending on current location
+     * @param {Object}
+     *  @param {Array} Labels - defined if the event is coming from the API
+     *  @param {Integer} ContextNumUnread - defined if the event is coming from the FE client
+     * @return {Integer} ContextNumUnread
+     */
+    function extractContextNumUnread({ Labels = [], ContextNumUnread = 0 }) {
+        const ID = tools.currentLocation();
+
+        if (Labels.length) {
+            const { NumUnread = 0 } = _.findWhere(Labels, { ID }) || {};
+
+            return NumUnread;
+        }
+
+        return ContextNumUnread;
+    }
+
+    /**
      * Update conversation cached
      * @param {Object} conversation
      */
@@ -130,8 +149,10 @@ angular.module('proton.core')
         if (current) {
             const { Senders = [] } = (current || {});
             _.extend(current || {}, conversation);
+            current.ContextNumUnread = extractContextNumUnread(conversation);
             delete current.LabelIDsAdded;
             delete current.LabelIDsRemoved;
+            delete current.Labels;
             current.LabelIDs = getLabelsId(current, conversation);
             current.Senders = filterSenderConversation(Senders, SendersConversation);
             manageTimes(current.ID);
@@ -153,7 +174,7 @@ angular.module('proton.core')
      * @param {String} type = conversation or message
      * @return {Object}
      */
-    function vector({ LabelIDs = [], IsRead, NumUnread }, unread, type) {
+    function vector({ LabelIDs = [], IsRead, ContextNumUnread }, unread, type) {
         const result = {};
         let unreadCondition = true;
         const locs = [
@@ -171,7 +192,7 @@ angular.module('proton.core')
             if (type === 'message') {
                 unreadCondition = IsRead === 0;
             } else if (type === 'conversation') {
-                unreadCondition = NumUnread > 0;
+                unreadCondition = ContextNumUnread > 0;
             }
         }
 
@@ -276,7 +297,7 @@ angular.module('proton.core')
 
                 _.each(data.Conversations, (conversation) => {
                     conversation.loaded = true; // Mark this conversation as loaded
-                    storeTime(conversation.ID, loc, conversation.Time); // Store time value
+                    storeTime(conversation.ID, loc, conversation.ContextTime); // Store time value
                 });
 
                 // Only for cache context
@@ -554,7 +575,7 @@ angular.module('proton.core')
         if (timeCached[conversationId] && angular.isNumber(timeCached[conversationId][loc])) {
             return timeCached[conversationId][loc];
         }
-        return (api.getConversationCached(conversationId) || {}).Time || '';
+        return (api.getConversationCached(conversationId) || {}).ContextTime || '';
     };
 
     /**

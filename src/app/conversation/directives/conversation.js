@@ -62,32 +62,20 @@ angular.module('proton.conversation')
                 thisOne = _.findWhere(messages, { ID: $stateParams.messageID });
                 break;
 
-            case $state.includes('secured.starred.**'):
-                // Select the last message starred
-                thisOne = getMessage(_.filter(messages, ({ LabelIDs }) => LabelIDs.indexOf(CONSTANTS.MAILBOX_IDENTIFIERS.starred) !== -1));
-
-
-                break;
-
-            case $state.includes('secured.label.**'): {
-                // Select the last message with this label
-                thisOne = getMessage(_.filter(messages, ({ LabelIDs }) => LabelIDs.indexOf($stateParams.label) !== -1));
-                break;
-            }
-
             case $state.includes('secured.drafts.**'):
                 thisOne = filter(({ Type }) => Type === CONSTANTS.DRAFT);
                 break;
 
             default: {
                 const latest = filter(({ Type }) => Type !== CONSTANTS.DRAFT);
+                const currentLocation = tools.currentLocation();
 
                 if (latest && latest.IsRead === 1) {
                     thisOne = latest;
                     break;
                 }
 
-                thisOne = getMessage(messages.filter(({ Type }) => Type !== CONSTANTS.DRAFT));
+                thisOne = getMessage(_.filter(messages, ({ LabelIDs, Type }) => LabelIDs.indexOf(currentLocation) > -1 && Type !== CONSTANTS.DRAFT));
                 break;
             }
         }

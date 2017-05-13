@@ -424,6 +424,30 @@ angular.module('proton.elements')
         return false;
     };
 
+    $scope.hasAttachments = (element) => {
+        if (element.ConversationID) { // is a message
+            return element.NumAttachments > 0;
+        }
+        // is a conversation
+        return element.ContextNumAttachments > 0;
+    };
+
+    $scope.isRead = (element) => {
+        if (element.ConversationID) { // is a message
+            return element.IsRead === 1;
+        }
+        // is a conversation
+        return element.ContextNumUnread === 0;
+    };
+
+    $scope.size = (element) => {
+        if (element.ConversationID) { // is a message
+            return element.Size;
+        }
+        // is a conversation
+        return element.ContextSize;
+    };
+
     $scope.isDisabled = () => {
 
         if ($scope.markedElement) {
@@ -434,14 +458,6 @@ angular.module('proton.elements')
     };
 
     $scope.isCacheContext = () => tools.cacheContext();
-
-    $scope.size = (element) => {
-        if (angular.isDefined(element.TotalSize)) {
-            return element.TotalSize;
-        } else if (angular.isDefined(element.Size)) {
-            return element.Size;
-        }
-    };
 
     /**
      * Select elements
@@ -454,10 +470,10 @@ angular.module('proton.elements')
                 element.Selected = isChecked;
             },
             read(element) {
-                element.Selected = (element.NumUnread === 0 || element.IsRead === 1) && isChecked;
+                element.Selected = (element.ContextNumUnread === 0 || element.IsRead === 1) && isChecked;
             },
             unread(element) {
-                element.Selected = (element.NumUnread > 0 || element.IsRead === 0) && isChecked;
+                element.Selected = (element.ContextNumUnread > 0 || element.IsRead === 0) && isChecked;
             },
             starred(element) {
                 element.Selected = element.LabelIDs.indexOf(CONSTANTS.MAILBOX_IDENTIFIERS.starred) > -1 && isChecked;

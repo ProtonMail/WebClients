@@ -337,7 +337,7 @@ angular.module('proton.message')
                         Conversation: {
                             ID: ConversationID,
                             LabelIDsAdded,
-                            NumUnread: conversation.NumUnread
+                            ContextNumUnread: conversation.ContextNumUnread
                         }
                     });
                 }
@@ -386,7 +386,7 @@ angular.module('proton.message')
                         Conversation: {
                             ID: ConversationID,
                             LabelIDsRemoved,
-                            NumUnread: conversation.NumUnread
+                            ContextNumUnread: conversation.ContextNumUnread
                         }
                     });
                 }
@@ -402,7 +402,7 @@ angular.module('proton.message')
          * @param {Array} ids
          */
         function read(ids = []) {
-
+            const currentLocation = tools.currentLocation();
             // Generate message event
             const { messageIDs, conversationIDs, events } = _
                 .reduce(ids, (acc, ID) => {
@@ -431,14 +431,14 @@ angular.module('proton.message')
                 .filter(Boolean)
                 .each((conversation) => {
                     const messages = cache.queryMessagesCached(conversation.ID);
-                    const filtered = _.filter(messages, ({ ID }) => _.contains(messageIDs, ID));
+                    const filtered = _.filter(messages, ({ ID, LabelIDs }) => _.contains(messageIDs, ID) && _.contains(LabelIDs, currentLocation));
 
                     events.push({
                         Action: 3,
                         ID: conversation.ID,
                         Conversation: {
                             ID: conversation.ID,
-                            NumUnread: conversation.NumUnread - filtered.length
+                            ContextNumUnread: conversation.ContextNumUnread - filtered.length
                         }
                     });
                 });
@@ -463,6 +463,7 @@ angular.module('proton.message')
         function unread(ids = []) {
             const context = tools.cacheContext();
             const promise = messageApi.unread({ IDs: ids });
+            const currentLocation = tools.currentLocation();
 
             cache.addToDispatcher(promise);
 
@@ -506,14 +507,14 @@ angular.module('proton.message')
                     .filter(Boolean)
                     .each((conversation) => {
                         const messages = cache.queryMessagesCached(conversation.ID);
-                        const filtered = _.filter(messages, ({ ID }) => _.contains(messageIDs, ID));
+                        const filtered = _.filter(messages, ({ ID, LabelIDs }) => _.contains(messageIDs, ID) && _.contains(LabelIDs, currentLocation));
 
                         events.push({
                             Action: 3,
                             ID: conversation.ID,
                             Conversation: {
                                 ID: conversation.ID,
-                                NumUnread: conversation.NumUnread + filtered.length
+                                ContextNumUnread: conversation.ContextNumUnread + filtered.length
                             }
                         });
                     });

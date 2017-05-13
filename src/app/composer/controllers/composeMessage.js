@@ -592,7 +592,7 @@ angular.module('proton.composer')
                 if (result.Code === ComposerRequestStatus.SUCCESS) {
                     const events = [];
                     const conversation = cache.getConversationCached(result.Message.ConversationID);
-                    const numUnread = angular.isDefined(conversation) ? conversation.NumUnread : 0;
+                    const contextNumUnread = angular.isDefined(conversation) ? conversation.ContextNumUnread : 0;
                     let numMessages;
 
                     if (actionType === CREATE) {
@@ -631,7 +631,7 @@ angular.module('proton.composer')
                         Conversation: angular.extend({
                             NumAttachments: result.Message.Attachments.length, // it's fine
                             NumMessages: numMessages,
-                            NumUnread: numUnread,
+                            ContextNumUnread: contextNumUnread,
                             ID: result.Message.ConversationID,
                             LabelIDsAdded: [CONSTANTS.MAILBOX_IDENTIFIERS.drafts]
                         }, numMessages === 1 ? firstConversation : {})
@@ -914,7 +914,7 @@ angular.module('proton.composer')
                 const events = [];
                 const conversation = cache.getConversationCached(Sent.ConversationID);
                 const numMessages = angular.isDefined(conversation) ? conversation.NumMessages : 1;
-                const numUnread = angular.isDefined(conversation) ? conversation.NumUnread : 0;
+                const contextNumUnread = angular.isDefined(conversation) ? conversation.ContextNumUnread : 0;
 
                 Sent.Senders = [Sent.Sender]; // The back-end doesn't return Senders so need a trick
                 Sent.Recipients = _.uniq(message.ToList.concat(message.CCList).concat(message.BCCList)); // The back-end doesn't return Recipients
@@ -929,7 +929,7 @@ angular.module('proton.composer')
                     ID: Sent.ConversationID,
                     Conversation: {
                         NumMessages: numMessages,
-                        NumUnread: numUnread,
+                        ContextNumUnread: contextNumUnread,
                         Recipients: Sent.Recipients,
                         Senders: Sent.Senders,
                         Subject: Sent.Subject,
