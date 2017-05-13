@@ -11,7 +11,7 @@ msgstr ""
 "Last-Translator: PMtranslator <contact@protonmail.ch>\n"
 "Language-Team: French\n"
 "Language: fr_FR\n"
-"PO-Revision-Date: 2017-05-12 09:52-0400\n"
+"PO-Revision-Date: 2017-05-13 02:38-0400\n"
 
 #: src/app/templates/modals/filter.tpl.html:150
 msgctxt "Label"
@@ -512,7 +512,7 @@ msgstr "Ajouter à la liste noire"
 #: src/app/templates/modals/filterAddress.tpl.html:6
 msgctxt "Title"
 msgid "Add to Whitelist"
-msgstr "Ajouter à la Liste Blanche"
+msgstr "Ajouter à la liste blanche"
 
 #. button
 #: src/app/templates/modals/addAddress.tpl.html:23
@@ -2000,7 +2000,7 @@ msgstr "Supprimer le compte"
 #: src/app/templates/views/account.tpl.html:301
 msgctxt "Title"
 msgid "Delete Account"
-msgstr "Supprimer Compte"
+msgstr "Supprimer le compte"
 
 #: src/app/settings/controllers/identities.js:295
 msgctxt "Title"
@@ -2454,7 +2454,7 @@ msgstr "Modifier le lien"
 #: src/app/templates/views/contacts.tpl.html:52
 msgctxt "Action"
 msgid "Email"
-msgstr "Courriel"
+msgstr "Email"
 
 #. table heading
 #: src/app/templates/address/addressKeysView.tpl.html:5
@@ -2462,7 +2462,7 @@ msgstr "Courriel"
 #: src/app/templates/views/signup.tpl.html:216
 msgctxt "Title"
 msgid "Email"
-msgstr "Courriel"
+msgstr "Email"
 
 #: src/app/templates/modals/bug.tpl.html:53
 msgctxt "Title"
@@ -3123,7 +3123,7 @@ msgstr "Plein écran"
 
 #: src/app/message/services/messageBuilder.js:5
 msgid "Fw:"
-msgstr "Fw :"
+msgstr "Tr :"
 
 #: src/app/settings/controllers/identities.js:460
 msgctxt "Info"
@@ -4283,7 +4283,7 @@ msgstr "Le support multi-utilisateurs nécessite un abonnement Business ou Visio
 #: src/app/templates/views/labels.tpl.html:25
 msgctxt "Info"
 msgid "Multiple Labels can be applied to a single message, but a message can only be in a single Folder. You can drag and drop to rearrange the order of Labels/Folders."
-msgstr "Plusieurs labels peuvent être appliqués à un seul message, mais un message ne peut être que dans un seul dossier. Vous pouvez glisser et déposer pour réorganiser l’ordre des labels/dossiers."
+msgstr "Plusieurs labels peuvent être appliqués à un seul message, mais un message ne peut être présent que dans un seul dossier. Vous pouvez glisser et déposer pour réorganiser l’ordre des labels/dossiers."
 
 #: src/app/templates/modals/domain/menu.tpl.html:24
 msgctxt "Title"
@@ -4495,7 +4495,7 @@ msgstr "Pas de labels"
 
 #: src/app/templates/views/security.tpl.html:63
 msgid "No logs yet"
-msgstr "Pas encore de journaux"
+msgstr "Aucun logs"
 
 #: src/app/ui/directives/noResults.js:69
 msgctxt "Title"
@@ -5786,7 +5786,7 @@ msgstr "Expéditeur"
 #: src/app/templates/views/filters.tpl.html:48
 msgctxt "Info"
 msgid "Sender specific spam rules can be applied here. Whitelist addresses always go to Inbox while Blacklist addresses always go to Spam. Marking a message as spam adds the address to the Blacklist. Marking a message as not spam adds the address to the Whitelist."
-msgstr "Des régles de gestion des émetteurs de spams peuvent être appliquées. Les adresses en liste blanche sont dirigées vers votre boite de réception tandis que les adresses en liste noire sont toujours dirigés vers votre dossier Spam. Le fait de marquer un message en tant que spam ajoute automatiquement l'adresse de l'expéditeur dans la liste noire. Le fait de marquer un message comme n'étant pas un spam ajoute automatiquement l'adresse de l'expéditeur dans la liste blanche."
+msgstr "Des règles de gestion des émetteurs de spams peuvent être appliquées. Les adresses en liste blanche sont dirigées vers votre boite de réception tandis que les adresses en liste noire sont toujours dirigés vers votre dossier Spam. Le fait de marquer un message en tant que spam ajoute automatiquement l'adresse de l'expéditeur dans la liste noire. Le fait de marquer un message comme n'étant pas un spam ajoute automatiquement l'adresse de l'expéditeur dans la liste blanche."
 
 #: src/app/composer/directives/btnSendMessage.js:26
 msgctxt "Action"
@@ -6222,7 +6222,7 @@ msgstr "Passer en mode un seul mot de passe"
 #: src/app/templates/views/account.tpl.html:200
 msgctxt "Action"
 msgid "Switch to two-password mode"
-msgstr "Passer en mode deux mots de passe"
+msgstr "Passer en validation à deux étapes"
 
 #: src/app/templates/modals/changePassword.tpl.html:10
 #: src/app/templates/modals/changePassword.tpl.html:12
@@ -6243,7 +6243,7 @@ msgstr "Reprenez votre vie privée en main! Créer votre compte pour un email s�
 
 #: src/app/templates/views/account.tpl.html:142
 msgid "Test notification"
-msgstr "Envoyer une notification de test"
+msgstr "Envoyer un test de notification"
 
 #: src/app/templates/modals/filter.tpl.html:79
 msgid "Text or pattern"
@@ -6662,7 +6662,7 @@ msgstr "Mettre à jour"
 #: src/app/settings/controllers/dashboard.js:254
 msgctxt "Action"
 msgid "Update Business"
-msgstr "Mise à jour Business"
+msgstr "Mettre à jour l'offre Business"
 
 #: src/app/templates/squire/addLinkPopover.tpl.html:35
 msgctxt "Action"
@@ -6672,7 +6672,7 @@ msgstr "Mettre à jour le lien"
 #: src/app/settings/controllers/dashboard.js:246
 msgctxt "Action"
 msgid "Update Plus"
-msgstr "Mise à jour Plus"
+msgstr "Mettre à jour l'offre Plus"
 
 #: src/app/templates/modals/member.tpl.html:7
 msgctxt "Title"
@@ -6682,7 +6682,7 @@ msgstr "Mettre à jour l'utilisateur"
 #: src/app/settings/controllers/dashboard.js:262
 msgctxt "Action"
 msgid "Update Visionary"
-msgstr "Mise à jour Visionary"
+msgstr "Mettre à jour l'offre Visionary"
 
 #: src/app/core/factories/cardModal.js:12
 msgid "Update your credit card information."
