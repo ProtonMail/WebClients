@@ -42,7 +42,7 @@ angular.module('proton.labels')
 
     function getType(elements = []) {
         if (elements.length) {
-            return (typeof elements[0].NumUnread !== 'undefined') ? 'conversation' : 'message';
+            return (typeof elements[0].ConversationID !== 'undefined') ? 'message' : 'conversation';
         }
         return false;
     }

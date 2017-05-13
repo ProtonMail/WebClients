@@ -57,7 +57,8 @@ angular.module('proton.conversation')
      * @param {Array} ids
      */
     function unread(ids = []) {
-        const promise = conversationApi.unread(ids);
+        const currentLocation = tools.currentLocation();
+        const promise = conversationApi.unread(ids, currentLocation);
         cache.addToDispatcher(promise);
 
         if (!tools.cacheContext()) {
@@ -69,7 +70,7 @@ angular.module('proton.conversation')
             const messages = cache.queryMessagesCached(ID);
             const conversation = cache.getConversationCached(ID);
 
-            if (messages.length > 0) {
+            if (messages.length) {
                 const { ID } = _.chain(messages)
                     .sortBy(({ Time }) => Time)
                     .last()
@@ -82,7 +83,7 @@ angular.module('proton.conversation')
 
             acc.push({
                 Action: 3, ID,
-                Conversation: { ID, NumUnread: conversation.NumUnread + 1 }
+                Conversation: { ID, ContextNumUnread: conversation.ContextNumUnread + 1 } // we don't care about the correct value for ContextNumUnread, the API will fix it with the next event
             });
             return acc;
         }, []);
@@ -113,7 +114,7 @@ angular.module('proton.conversation')
 
             acc.push({
                 Action: 3, ID,
-                Conversation: { ID, NumUnread: 0 }
+                Conversation: { ID, ContextNumUnread: 0 }
             });
             return acc;
         }, []);
@@ -139,7 +140,7 @@ angular.module('proton.conversation')
         const events = _.chain(ids)
             .map((id) => cache.getConversationCached(id))
             .filter(Boolean)
-            .reduce((acc, { ID, NumUnread }) => {
+            .reduce((acc, { ID, ContextNumUnread }) => {
                 const messages = cache.queryMessagesCached(ID);
 
                 _.each(messages, (message) => {
@@ -153,7 +154,7 @@ angular.module('proton.conversation')
                 acc.push({
                     Action: 3,
                     ID,
-                    Conversation: { ID, NumUnread, LabelIDsRemoved }
+                    Conversation: { ID, ContextNumUnread, LabelIDsRemoved }
                 });
                 return acc;
             }, [])
@@ -179,7 +180,7 @@ angular.module('proton.conversation')
         const events = _.chain(ids)
             .map((id) => cache.getConversationCached(id))
             .filter(Boolean)
-            .reduce((acc, { ID, NumUnread }) => {
+            .reduce((acc, { ID, ContextNumUnread }) => {
                 const messages = cache.queryMessagesCached(ID);
 
                 _.each(messages, (message) => {
@@ -193,7 +194,7 @@ angular.module('proton.conversation')
                 acc.push({
                     Action: 3,
                     ID,
-                    Conversation: { ID, NumUnread, LabelIDsAdded }
+                    Conversation: { ID, ContextNumUnread, LabelIDsAdded }
                 });
                 return acc;
             }, [])
@@ -241,7 +242,7 @@ angular.module('proton.conversation')
         const events = _.chain(ids)
             .map((id) => cache.getConversationCached(id))
             .filter(Boolean)
-            .reduce((acc, { ID, NumUnread }) => {
+            .reduce((acc, { ID, ContextNumUnread }) => {
                 const messages = cache.queryMessagesCached(ID);
 
                 _.each(messages, (message) => {
@@ -270,7 +271,7 @@ angular.module('proton.conversation')
                     ID,
                     Conversation: {
                         ID,
-                        NumUnread,
+                        ContextNumUnread,
                         Selected: false,
                         LabelIDsAdded: toApply,
                         LabelIDsRemoved: toRemove
@@ -382,7 +383,7 @@ angular.module('proton.conversation')
                 Action: 3, ID,
                 Conversation: {
                     ID, Selected: false,
-                    NumUnread: (toTrash) ? 0 : conversation.NumUnread,
+                    ContextNumUnread: (toTrash) ? 0 : conversation.ContextNumUnread,
                     LabelIDsRemoved: labelIDsRemoved, // Remove current location
                     LabelIDsAdded: labelIDsAdded // Add new location
                 }

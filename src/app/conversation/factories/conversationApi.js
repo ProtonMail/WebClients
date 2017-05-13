@@ -56,10 +56,11 @@ angular.module('proton.conversation')
         /**
         * Mark an array of conversations as unread
         * @param {Array} IDs
+        * @param {String} LabelID
         * @return {Promise}
         */
-        unread(IDs = []) {
-            return $http.put(requestURL('unread'), { IDs });
+        unread(IDs = [], LabelID) {
+            return $http.put(requestURL('unread'), { IDs, LabelID });
         },
         /**
          * Move an array of conversations to trash

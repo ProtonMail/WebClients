@@ -11,8 +11,8 @@
             active: active(conversation),
             marked: conversation.ID === markedElement.ID,
             hasLabels: (conversation.LabelIDs | labels).length > 0,
-            read: conversation.NumUnread === 0 || conversation.IsRead === 1,
-            hasAttachments: (conversation.NumAttachments > 0),
+            read: isRead(conversation),
+            hasAttachments: hasAttachments(conversation),
             expiring: (conversation.ExpirationTime > 0)
         }">
         <span class="expiration"><i class="fa fa-clock-o"></i></span>
