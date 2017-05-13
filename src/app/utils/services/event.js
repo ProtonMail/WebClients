@@ -27,6 +27,7 @@ angular.module('proton.utils')
         labelsModel
     ) => {
 
+        const FIBONACCI = [1, 1, 2, 3, 5, 8];
         const { DELETE, CREATE, UPDATE } = CONSTANTS.STATUS;
 
         const dispatch = (type, data = {}) => $rootScope.$emit('app.event', { type, data });
@@ -381,6 +382,7 @@ angular.module('proton.utils')
                 }
                 return Promise.resolve();
             },
+            index: 0,
             milliseconds: CONSTANTS.INTERVAL_EVENT_TIMER,
             reset: () => {
                 $timeout.cancel(eventModel.promiseCancel);
@@ -407,7 +409,10 @@ angular.module('proton.utils')
                             $timeout.cancel(eventModel.promiseCancel);
                             eventModel.notification && eventModel.notification.close();
                             /* eslint operator-assignment: "off" */
-                            eventModel.milliseconds = eventModel.milliseconds * 2; // We multiplie the interval by 2
+                            if (eventModel.index < (FIBONACCI.length - 1)) {
+                                eventModel.index++;
+                            }
+                            eventModel.milliseconds = eventModel.milliseconds * FIBONACCI[eventModel.index];
                             eventModel.promiseCancel = $timeout(eventModel.interval, eventModel.milliseconds, false);
                             eventModel.notification = notify({ templateUrl: 'templates/notifications/retry.tpl.html', duration: '0', onClick: eventModel.reset });
                             AppModel.set('onLine', false);
