@@ -678,7 +678,7 @@ angular.module('proton.elements')
 
         $state.go($state.$current.name.replace('.element', ''), {
             id: null,
-            page: $stateParams.page,
+            page: ~~$stateParams.page || 1,
             label: $stateParams.label
         });
     };
