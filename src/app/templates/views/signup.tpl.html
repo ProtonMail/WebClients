@@ -274,7 +274,7 @@
                     Please check <strong>{{ account.smsVerification }}</strong> and enter the code below:
                 </p>
                 <div class="col-1-2" ng-show="signup.smsVerificationSent === true">
-                    <input type="text" ng-model="account.smsCodeVerification" placeholder-translate="Code verification" />
+                    <input type="text" ng-model="account.smsCodeVerification" placeholder-translate="Verification code" />
                 </div>
                 <div class="col-1-2">
                     <button type="button" ng-click="signup.smsVerificationSent = false"  class="pm_button link" translate-context="Action" translate>Send new code</button>
