@@ -56,7 +56,7 @@ angular.module('proton.ui')
          * @return {String}
          */
         const getCounterKey = () => {
-            if (tools.typeList() === 'message') {
+            if (tools.getTypeList() === 'message') {
                 return 'unreadMessage';
             }
             return 'unreadConversation';

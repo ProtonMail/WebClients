@@ -78,7 +78,7 @@ angular.module('proton.ui')
             const $span = element[0].querySelector('span');
             const $h3 = element[0].querySelector('h3');
             const box = tools.currentMailbox();
-            const type = tools.typeList();
+            const type = tools.getTypeList();
 
             if (box) {
                 const { icon, text } = getBoxDetails(box);

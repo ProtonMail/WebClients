@@ -48,7 +48,7 @@ angular.module('proton.sidebar')
         };
 
         const getTotal = (mailbox, id) => {
-            const type = tools.typeList(mailbox);
+            const type = tools.getTypeList(mailbox);
             const key = (type === 'conversation') ? 'Conversation' : 'Message';
             return cacheCounters[`unread${key}`](id);
         };

@@ -308,11 +308,12 @@ angular.module('proton.utils')
         return false;
     };
 
-    tools.typeList = (name) => {
+    tools.getTypeList = (name) => {
         const specialBoxes = ['drafts', 'search', 'sent'];
         const box = name || tools.currentMailbox();
+        const threadingIsOff = authentication.user.ViewMode === CONSTANTS.MESSAGE_VIEW_MODE;
 
-        if (authentication.user.ViewMode === CONSTANTS.MESSAGE_VIEW_MODE || specialBoxes.indexOf(box) > -1) {
+        if (threadingIsOff || _.contains(specialBoxes, box)) {
             return 'message';
         }
 
