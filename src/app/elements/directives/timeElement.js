@@ -5,7 +5,7 @@ angular.module('proton.ui')
     * @return {String}
     */
     function getTime({ ID, Time }) {
-        const type = tools.typeList();
+        const type = tools.getTypeList();
         const loc = tools.currentLocation();
         const time = (type === 'conversation') ? cache.getTime(ID, loc) : Time;
         const m = moment.unix(time);

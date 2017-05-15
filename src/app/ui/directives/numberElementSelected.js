@@ -7,7 +7,7 @@ angular.module('proton.ui')
         link(scope) {
             scope.text = () => {
                 const { number } = scope;
-                const type = tools.typeList();
+                const type = tools.getTypeList();
                 const element = (type === 'conversation') ? gettextCatalog.getPlural(number, 'conversation selected', 'conversations selected') : gettextCatalog.getPlural(number, 'message selected', 'messages selected');
                 return `${number} ${element}`;
             };

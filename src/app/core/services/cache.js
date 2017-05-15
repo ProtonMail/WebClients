@@ -1004,7 +1004,7 @@ angular.module('proton.core')
      * @return {Promise}
      */
     api.more = (elementID, elementTime, action) => {
-        const type = tools.typeList();
+        const type = tools.getTypeList();
         const elementsCached = (type === 'conversation') ? conversationsCached : messagesCached;
         const loc = tools.currentLocation();
         const callApi = () => {

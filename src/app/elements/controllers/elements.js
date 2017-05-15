@@ -340,7 +340,7 @@ angular.module('proton.elements')
         const deferred = $q.defer();
         const request = forgeRequestParameters($scope.mailbox);
         const context = tools.cacheContext();
-        const type = tools.typeList();
+        const type = tools.getTypeList();
         let promise;
 
         if (type === 'message') {
@@ -380,7 +380,7 @@ angular.module('proton.elements')
 
                     if (!$scope.markedElement) {
                         if ($state.params.id) {
-                            element = _.findWhere($scope.conversations, { ID: $state.params.id });
+                            element = _.find($scope.conversations, ({ ID, ConversationID }) => $state.params.id === ConversationID || $state.params.id === ID);
                         } else {
                             element = _.first($scope.conversations);
                         }
@@ -494,19 +494,15 @@ angular.module('proton.elements')
      * @return {Array} elements
      */
     $scope.elementsSelected = (includeMarked = true) => {
-        let elements = _.where($scope.conversations, { Selected: true });
-
-        if ($scope.conversations.length > 0 && elements.length === 0 && $scope.markedElement && includeMarked) {
-            const type = tools.typeList();
-            if (type === 'message') {
-                elements = _.where($scope.conversations, { ID: $scope.markedElement.ID });
-            } else if (type === 'conversation') {
-                elements = _.where($scope.conversations, { ID: $scope.markedElement.ID });
-            }
-        }
+        const { conversations = [] } = $scope; // conversations can contains message list or conversation list
+        const elements = _.where(conversations, { Selected: true });
 
         if ($state.params.id && authentication.user.ViewLayout === CONSTANTS.ROW_MODE) {
-            elements = _.where($scope.conversations, { ID: $state.params.id });
+            return _.filter(conversations, ({ ID, ConversationID }) => ID === $state.params.id || ConversationID === $state.params.id);
+        }
+
+        if (!elements.length && $scope.markedElement && includeMarked) {
+            return _.filter(conversations, ({ ID, ConversationID }) => ID === $scope.markedElement.ID || ConversationID === $scope.markedElement.ID);
         }
 
         return elements;
@@ -519,6 +515,20 @@ angular.module('proton.elements')
     function idsSelected() {
         const elementsSelected = $scope.elementsSelected();
         return elementsSelected.map(({ ID }) => ID);
+    }
+
+    /**
+     * Get type of the elements selected
+     * @return {String}
+     */
+    function getTypeSelected() {
+        const elementsSelected = $scope.elementsSelected();
+
+        if (elementsSelected.length) {
+            return elementsSelected[0].ConversationID ? 'message' : 'conversation';
+        }
+
+        return '';
     }
 
     /**
@@ -557,7 +567,7 @@ angular.module('proton.elements')
      * Mark conversations selected as read
      */
     $scope.read = () => {
-        const type = tools.typeList();
+        const type = getTypeSelected();
         const ids = idsSelected();
 
         if (type === 'conversation') {
@@ -571,7 +581,7 @@ angular.module('proton.elements')
      * Mark conversations selected as unread
      */
     $scope.unread = () => {
-        const type = tools.typeList();
+        const type = getTypeSelected();
         const ids = idsSelected();
 
         if (type === 'conversation') {
@@ -586,7 +596,7 @@ angular.module('proton.elements')
     };
 
     $scope.toggleStar = () => {
-        const type = tools.typeList();
+        const type = getTypeSelected();
         const elementsSelected = $scope.elementsSelected();
         const elementsStarred = _.filter(elementsSelected, ({ LabelIDs = [] }) => LabelIDs.indexOf(CONSTANTS.MAILBOX_IDENTIFIERS.starred) > -1);
         const ids = elementsSelected.map(({ ID }) => ID);
@@ -608,7 +618,7 @@ angular.module('proton.elements')
                 title,
                 message,
                 confirm() {
-                    const type = tools.typeList();
+                    const type = getTypeSelected();
                     const ids = idsSelected();
 
                     if (type === 'conversation') {
@@ -642,7 +652,7 @@ angular.module('proton.elements')
      * @param {String} mailbox
      */
     $scope.move = (mailbox) => {
-        const type = tools.typeList();
+        const type = getTypeSelected();
         const ids = idsSelected();
         const labelID = CONSTANTS.MAILBOX_IDENTIFIERS[mailbox];
 
@@ -668,7 +678,7 @@ angular.module('proton.elements')
      * @return {Promise}
      */
     $scope.saveLabels = (labels, alsoArchive) => {
-        const type = tools.typeList();
+        const type = getTypeSelected();
         const ids = idsSelected();
 
         if (type === 'conversation') {
@@ -765,7 +775,7 @@ angular.module('proton.elements')
         }
 
         const view = tools.typeView();
-        const list = tools.typeList();
+        const list = tools.getTypeList();
 
         const params = {};
         const sameView = $state.params.id && $state.params.id === element.ConversationID;

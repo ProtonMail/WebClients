@@ -34,7 +34,7 @@ angular.module('proton.elements')
         templateUrl: 'templates/elements/ptStar.tpl.html',
         link(scope, el, attr) {
 
-            const customType = attr.ptStarType || tools.typeList();
+            const customType = attr.ptStarType || tools.getTypeList();
 
             scope.isStarred = () => isStarred(scope.model);
 
