@@ -1,9 +1,11 @@
 angular.module('proton.composer')
-    .directive('composerDropzone', ($rootScope, attachmentFileFormat, tools, attachmentModel, notify, gettextCatalog, CONSTANTS) => {
+    .directive('composerDropzone', ($rootScope, attachmentFileFormat, tools, attachmentModel, notify, gettextCatalog, CONSTANTS, $state) => {
         Dropzone.autoDiscover = false;
 
         const { BASE_SIZE, ATTACHMENT_SIZE_LIMIT, ATTACHMENT_NUMBER_LIMIT } = CONSTANTS;
         const ATTACHMENT_MAX_SIZE = ATTACHMENT_SIZE_LIMIT * BASE_SIZE * BASE_SIZE;
+
+        const isEO = $state.includes('eo.*');
 
         const dropMessages = {
             0: gettextCatalog.getString('Empty attachment', null, 'Composer'),
@@ -14,6 +16,8 @@ angular.module('proton.composer')
                 return gettextCatalog.getString(`Attachments are limited to ${ATTACHMENT_SIZE_LIMIT} MB. Total attached would be: ${total} MB.`, null, 'Composer');
             }
         };
+
+        const ERROR_EO_NUMBER_ATT = gettextCatalog.getString('Maximum number of attachments (10) exceeded.', null, 'Composer');
 
         const dictDefaultMessage = gettextCatalog.getString('Drop a file here to upload', null, 'Info');
 
@@ -125,8 +129,15 @@ angular.module('proton.composer')
                             files: [],
                             size: 0
                         });
+
+
                     this.removeAllFiles();
                     queue.hasEmbedded = queue.files.some(({ isEmbedded }) => isEmbedded);
+
+                    if (isEO && (queue.files.length + message.Attachments.length) > 10) {
+                        dispatchAction(message, queue, 'attachments.limit.error');
+                        return notifyError(ERROR_EO_NUMBER_ATT);
+                    }
                     dispatchAction(message, queue);
                 });
             }
@@ -142,9 +153,9 @@ angular.module('proton.composer')
                  * @param  {Message} message
                  * @param  {Array}  queue
                  */
-                const dispatchAction = (message, queue = []) => {
+                const dispatchAction = (message, queue = [], type = 'drop') => {
                     $rootScope.$emit(key, {
-                        type: 'drop',
+                        type,
                         data: {
                             messageID: message.ID,
                             message, queue

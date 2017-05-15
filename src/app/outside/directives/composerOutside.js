@@ -34,6 +34,7 @@ angular.module('proton.outside')
                 case 'upload':
                     addDragleaveClassName(el);
                     break;
+                case 'attachments.limit.error':
                 case 'upload.success':
                     _rAF(() => addDragleaveClassName(el));
                     break;
