@@ -259,7 +259,7 @@ angular.module('proton.utils')
             if (angular.isDefined(messages)) {
                 _.each(messages, (message) => {
                     if (message.Action === 1 && message.Message.IsRead === 0 && message.Message.LabelIDs.indexOf(CONSTANTS.MAILBOX_IDENTIFIERS.inbox) !== -1) {
-                        const title = gettextCatalog.getString('New mail from', null, 'Info') + ' ' + message.Message.Sender.Name || message.Message.Sender.Address;
+                        const title = gettextCatalog.getString('New mail from', null, 'Info') + ' ' + message.Message.Sender.Name || message.Message.SenderAddress;
 
                         desktopNotifications.create(title, {
                             body: message.Message.Subject,
