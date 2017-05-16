@@ -79,14 +79,14 @@ angular.module('proton.formUtils')
          */
         const filterContact = (val = '', strictEquality = false) => {
 
-            const value = relaceTagAutocomplete(val.toLowerCase().trim());
+            const value = relaceTagAutocomplete(val.trim());
             const collection = _.chain(authentication.user.Contacts)
                 .map(({ Name, Email }) => {
                     const value = Email;
                     const label = formatLabel(Name, Email);
                     return { label, value, Name };
                 })
-                .filter(({ label }) => label.toLowerCase().includes(value))
+                .filter(({ label }) => label.includes(value))
                 .first(10)
                 .value();
 
