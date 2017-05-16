@@ -32,6 +32,7 @@ angular.module('proton.elements')
     const unsubscribes = [];
     let unbindWatcherElements;
     const MINUTE = 60 * 1000;
+    const VIEW_MODE = tools.typeView();
 
     const id = setInterval(() => {
         $rootScope.$emit('elements', { type: 'refresh.time' });
@@ -160,7 +161,10 @@ angular.module('proton.elements')
         const onElement = (cb, value = true) => (...arg) => {
             if (!isOpened) {
                 cb(...arg);
-                isOpened = value;
+
+                if (VIEW_MODE === 'conversation') {
+                    isOpened = value;
+                }
             }
         };
 
@@ -220,11 +224,11 @@ angular.module('proton.elements')
         });
 
         $scope.$on('read', () => {
-            !isOpened && $scope.read();
+            $scope.read();
         });
 
         $scope.$on('unread', () => {
-            !isOpened && $scope.unread();
+            $scope.unread();
         });
 
         $scope.$on('toggleStar', () => {
@@ -763,6 +767,7 @@ angular.module('proton.elements')
         $state.go('secured.label', params);
     };
 
+
     /**
      * open a specific element
      * @param {Object} element - conversation / message
@@ -774,13 +779,12 @@ angular.module('proton.elements')
             return;
         }
 
-        const view = tools.typeView();
         const list = tools.getTypeList();
 
         const params = {};
         const sameView = $state.params.id && $state.params.id === element.ConversationID;
 
-        if (view === 'conversation' && list === 'message') {
+        if (VIEW_MODE === 'conversation' && list === 'message') {
             params.id = element.ConversationID;
             params.messageID = element.ID;
         } else {

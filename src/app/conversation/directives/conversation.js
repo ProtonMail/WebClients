@@ -205,6 +205,19 @@ angular.module('proton.conversation')
                 unsubscribeActions();
             });
 
+            scope.$on('move', (e, mailbox) => {
+
+                unsubscribeActions();
+
+                const labelID = CONSTANTS.MAILBOX_IDENTIFIERS[mailbox];
+                if (scope.markedMessage) {
+                    return $rootScope.$emit('messageActions', {
+                        action: 'move',
+                        data: { ids: [scope.markedMessage.ID], labelID } });
+                }
+                scope.move(labelID);
+            });
+
 
             scope.$on('markPrevious', () => {
                 unsubscribeActions();
@@ -241,7 +254,16 @@ angular.module('proton.conversation')
             });
 
             scope.$on('toggleStar', () => {
-                scope.toggleStar();
+                const data = {
+                    model: scope.conversation,
+                    type: 'conversation'
+                };
+
+                if (scope.markedMessage) {
+                    data.model = scope.markedMessage;
+                    data.type = 'message';
+                }
+                $rootScope.$emit('elements', { type: 'toggleStar', data });
             });
 
             // We don't need to check these events if we didn't choose to focus onto a specific message
@@ -446,39 +468,6 @@ angular.module('proton.conversation')
              */
             scope.saveLabels = (labels, alsoArchive) => {
                 actionConversation.label([scope.conversation.ID], labels, alsoArchive);
-            };
-
-            /**
-             * Toggle star status for current conversation
-             */
-            scope.toggleStar = () => {
-                if (scope.starred() === true) {
-                    scope.unstar();
-                } else {
-                    scope.star();
-                }
-            };
-
-            /**
-             * Star the current conversation
-             */
-            scope.star = () => {
-                actionConversation.star(scope.conversation.ID);
-            };
-
-            /**
-             * Unstar the current conversation
-             */
-            scope.unstar = () => {
-                actionConversation.unstar(scope.conversation.ID);
-            };
-
-            /**
-             * Return status of the star conversation
-             * @return {Boolean}
-             */
-            scope.starred = () => {
-                return scope.conversation.LabelIDs.indexOf(CONSTANTS.MAILBOX_IDENTIFIERS.starred) !== -1;
             };
 
             // Call initialization

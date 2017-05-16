@@ -1,49 +1,10 @@
 angular.module('proton.utils')
 .factory('hotkeys', (hotkeyModal, $rootScope, $state, authentication, CONSTANTS, messageModel) => {
 
-    const dispatch = (type, data = {}) => $rootScope.$emit('hotkeys', { type, data });
-
-    const composer = () => {
-        const type = 'new';
-        const message = messageModel();
-
-        $rootScope.$emit('composer.new', { message, type });
-
-        return false;
-    };
-
-
-    const reply = function () {
-        $rootScope.$emit('replyConversation');
-
-        return false;
-    };
-
-
-    const replyAll = function () {
-        $rootScope.$emit('replyAllConversation');
-
-        return false;
-    };
-
-
-    const forward = function () {
-        $rootScope.$emit('forwardConversation');
-
-        return false;
-    };
-
-    const nextElement = () => {
-        $rootScope.$broadcast('nextElement');
-
-        return false;
-    };
-
-    const previousElement = () => {
-        $rootScope.$broadcast('previousElement');
-
-        return false;
-    };
+    const action = (cb) => () => (cb(), false);
+    const redirect = (state) => () => $state.go(state);
+    const emit = (action, data = {}) => () => $rootScope.$emit(action, data);
+    const broadcast = (action, data = {}) => () => $rootScope.$broadcast(action, data);
 
     const openMarked = (event) => {
         $rootScope.$broadcast('openMarked');
@@ -52,48 +13,6 @@ angular.module('proton.utils')
         // browser from executing the default action otherwise it will
         // trigger a click on the currently focused element.
         event.preventDefault();
-    };
-
-    const read = () => {
-        $rootScope.$broadcast('read');
-
-        return false;
-    };
-
-    const unread = () => {
-        $rootScope.$broadcast('unread');
-
-        return false;
-    };
-
-    const toggleStar = () => {
-        $rootScope.$broadcast('toggleStar');
-
-        return false;
-    };
-
-    const inbox = () => {
-        $rootScope.$broadcast('move', 'inbox');
-
-        return false;
-    };
-
-    const trash = () => {
-        $rootScope.$broadcast('move', 'trash');
-
-        return false;
-    };
-
-    const archive = () => {
-        $rootScope.$broadcast('move', 'archive');
-
-        return false;
-    };
-
-    const spam = () => {
-        $rootScope.$broadcast('move', 'spam');
-
-        return false;
     };
 
     const help = () => {
@@ -108,100 +27,37 @@ angular.module('proton.utils')
         return false;
     };
 
-    const goToInbox = () => {
-        $state.go('secured.inbox');
+    const goToInbox = action(redirect('secured.inbox'));
+    const goToDrafts = action(redirect('secured.drafts'));
+    const goToSent = action(redirect('secured.sent'));
+    const goToStarred = action(redirect('secured.starred'));
+    const goToArchive = action(redirect('secured.archive'));
+    const goToSpam = action(redirect('secured.spam'));
+    const goToTrash = action(redirect('secured.trash'));
 
-        return false;
-    };
+    const composer = action(emit('composer.new', { message: messageModel(), type: 'new' }));
+    const reply = action(emit('replyConversation'));
+    const replyAll = action(emit('replyAllConversation'));
+    const forward = action(emit('forwardConversation'));
+    const selectAll = action(emit('selectElements', { value: 'all', isChecked: true }));
+    const unselectAll = action(emit('selectElements', { value: 'all', isChecked: false }));
+    const slash = action(emit('hotkeys', { type: 'slash' }));
 
-    const goToDrafts = () => {
-        $state.go('secured.drafts');
-
-        return false;
-    };
-
-    const goToSent = () => {
-        $state.go('secured.sent');
-
-        return false;
-    };
-
-    const goToStarred = () => {
-        $state.go('secured.starred');
-
-        return false;
-    };
-
-    const goToArchive = () => {
-        $state.go('secured.archive');
-
-        return false;
-    };
-
-    const goToSpam = () => {
-        $state.go('secured.spam');
-
-        return false;
-    };
-
-    const goToTrash = () => {
-        $state.go('secured.trash');
-
-        return false;
-    };
-
-    const selectAll = () => {
-        $rootScope.$emit('selectElements', { value: 'all', isChecked: true });
-
-        return false;
-    };
-
-    const unselectAll = () => {
-        $rootScope.$emit('selectElements', { value: 'all', isChecked: false });
-
-        return false;
-    };
-
-    const selectMark = () => {
-        $rootScope.$broadcast('selectMark');
-
-        return false;
-    };
-
-    const markPrevious = () => {
-        $rootScope.$broadcast('markPrevious');
-
-        return false;
-    };
-
-    const markNext = () => {
-        $rootScope.$broadcast('markNext');
-
-        return false;
-    };
-
-    const escape = () => {
-        $rootScope.$broadcast('escape');
-
-        return false;
-    };
-
-    const left = () => {
-        $rootScope.$broadcast('left');
-
-        return false;
-    };
-
-    const right = () => {
-        $rootScope.$broadcast('right');
-
-        return false;
-    };
-
-    const slash = () => {
-        dispatch('slash');
-        return false;
-    };
+    const selectMark = action(broadcast('selectMark'));
+    const markPrevious = action(broadcast('markPrevious'));
+    const markNext = action(broadcast('markNext'));
+    const escape = action(broadcast('escape'));
+    const left = action(broadcast('left'));
+    const right = action(broadcast('right'));
+    const read = action(broadcast('read'));
+    const unread = action(broadcast('unread'));
+    const toggleStar = action(broadcast('toggleStar'));
+    const inbox = action(broadcast('move', 'inbox'));
+    const trash = action(broadcast('move', 'trash'));
+    const archive = action(broadcast('move', 'archive'));
+    const spam = action(broadcast('move', 'spam'));
+    const nextElement = action(broadcast('nextElement'));
+    const previousElement = action(broadcast('previousElement'));
 
     const keys = [
         { keyboard: 'c', callback: composer },
