@@ -287,6 +287,9 @@
     }
 }
 
+.pm_buttons,
+.pm_button,
+.pm_trigger { user-select: none }
 
 body.appConfigBody-is-mobile {
     .pm_buttons { margin: 0 5px 0 0 }
