@@ -26,6 +26,12 @@ angular.module('proton.elements')
         }
     }
 
+    $rootScope.$on('elements', (e, { type, data = {} }) => {
+        if (type === 'toggleStar') {
+            toggleStar(data.model, data.type);
+        }
+    });
+
     return {
         scope: {
             model: '='
