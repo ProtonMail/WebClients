@@ -18,17 +18,17 @@ angular.module('proton.conversation')
             }
 
             const node = nodeMessage || document.getElementById(`message${index}`);
+            const previous = document.getElementById(`message${index - 1}`);
 
             const headerOffset = $header ? ($header.getBoundingClientRect().top + $header.offsetHeight) : 0;
             const amountScrolled = $thread ? $thread.scrollTop : 0;
             const paddingTop = ~~$thread.style.paddingTop.replace('px', '');
-            const $messageReference = document.getElementById('message0');
-            const messagesHeight = $messageReference.getBoundingClientRect().height;
+            const summaryHeight = document.getElementsByClassName('summary')[0].getBoundingClientRect().height;
             const messageMargin = 10;
 
             let scrollTop = node ? (node.getBoundingClientRect().top + amountScrolled - headerOffset - paddingTop) : 0;
 
-            scrollTop -= ((index === 1) ? (messagesHeight / 2) + messageMargin : (1.5 * messagesHeight) + (2 * messageMargin));
+            scrollTop -= ((index === 1 || previous.classList.contains('open')) ? (summaryHeight / 2) + messageMargin : (1.5 * summaryHeight) + (2 * messageMargin));
 
             $($thread).animate({ scrollTop }, 200);
         }
