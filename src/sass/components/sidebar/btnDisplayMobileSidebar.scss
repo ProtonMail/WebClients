@@ -2,12 +2,15 @@
     background: transparent;
     border: 0;
     margin: 0;
+    padding: 0;
     cursor: pointer;
     outline: none;
 
-    &.round {
-        @include flexInline();
-        @include flexJustifyCenter();
+    &.round i {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
         height: 30px;
         width: 30px;
         background: rgba(255,255,255,.1);
