@@ -1,0 +1,11 @@
+.messageSpamScore-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: .5rem 10px;
+    font-size: .9em;
+    background: $exp;
+    color: $white;
+}
+
+.messageSpamScore-icon { margin-right: 5px }
