@@ -5,20 +5,22 @@ angular.module('proton.authentication')
         // Open the open to enter login password because this request require lock scope
         loginPasswordModal.activate({
             params: {
-                submit(loginPassword, twoFactorCode) {
+                submit(Password, TwoFactorCode) {
                     // Send request to unlock the current session for administrator privileges
-                    User.unlock({ Password: loginPassword, TwoFactorCode: twoFactorCode })
-                    .then(() => {
-                        loginPasswordModal.deactivate();
-                        // Resend request now
-                        deferred.resolve($http(config));
-                    }, (error) => {
-                        notify({ message: error.error_description, classes: 'notification-danger' });
-                    });
+                    User.unlock({ Password, TwoFactorCode })
+                        .then(() => {
+                            loginPasswordModal.deactivate();
+                            // Resend request now
+                            deferred.resolve($http(config));
+                        }, (error) => {
+                            notify({ message: error.error_description, classes: 'notification-danger' });
+                        });
                 },
                 cancel() {
                     loginPasswordModal.deactivate();
-                    deferred.reject();
+
+                    // usefull for networkManager tracker
+                    deferred.reject(new Error('loginPassword:cancel'));
                 }
             }
         });

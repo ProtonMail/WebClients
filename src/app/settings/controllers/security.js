@@ -230,44 +230,39 @@ angular.module('proton.settings')
 
     $scope.setLogging = (value) => {
         if (value === 0) {
-            confirmModal.activate({
+            return confirmModal.activate({
                 params: {
                     message: gettextCatalog.getString('Are you sure you want to clear all your logs?', null, 'Info'),
                     confirm() {
-                        networkActivityTracker.track(
-                            settingsApi.setLogging({ LogAuth: 0 })
-                            .then((result) => {
-                                if (result.data && result.data.Code === 1000) {
-                                    $scope.doLogging = 0;
-                                    authentication.user.LogAuth = 0;
-                                    notify({ message: gettextCatalog.getString('Logging preference updated', null), classes: 'notification-success' });
-                                    confirmModal.deactivate();
-                                    $scope.disabledText = gettextCatalog.getString('Disabled', null);
-                                } else if (result.data && result.data.Error) {
-                                    notify({ message: result.data.Error, classes: 'notification-danger' });
-                                }
-                            })
-                        );
+                        const promise = settingsApi.setLogging({ LogAuth: 0 })
+                            .then(() => {
+                                $scope.doLogging = 0;
+                                authentication.user.LogAuth = 0;
+                                notify({
+                                    message: gettextCatalog.getString('Logging preference updated', null, 'Dashboard/security'),
+                                    classes: 'notification-success'
+                                });
+                                confirmModal.deactivate();
+                                $scope.disabledText = gettextCatalog.getString('Disabled', null);
+                            });
+                        networkActivityTracker.track(promise);
                     },
                     cancel() {
                         confirmModal.deactivate();
                     }
                 }
             });
-        } else {
-            networkActivityTracker.track(
-                settingsApi.setLogging({ LogAuth: value })
-                .then((result) => {
-                    if (result.data && result.data.Code === 1000) {
-                        $scope.doLogging = value;
-                        authentication.user.LogAuth = value;
-                        notify({ message: gettextCatalog.getString('Logging preference updated', null), classes: 'notification-success' });
-                        $scope.disabledText = gettextCatalog.getString('Disable', null, 'Action');
-                    } else if (result.data && result.data.Error) {
-                        notify({ message: result.data.Error, classes: 'notification-danger' });
-                    }
-                })
-            );
         }
+
+        const promise = settingsApi.setLogging({ LogAuth: value })
+            .then(() => {
+                notify({
+                    message: gettextCatalog.getString('Logging preference updated', null, 'Dashboard/security'),
+                    classes: 'notification-success'
+                });
+                $scope.disabledText = gettextCatalog.getString('Disable', null, 'Action');
+            });
+
+        networkActivityTracker.track(promise);
     };
 });
