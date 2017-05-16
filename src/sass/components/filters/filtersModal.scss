@@ -1,3 +1,11 @@
+.filter-modal-input-name + .filter-modal-alert {
+	display: none
+}
+
+.filter-modal-input-name.ng-empty:not(:focus) ~ .filter-modal-alert {
+	display: block;
+}
+
 .filter-modal-conditions {
 	@include flexInline();
 	@include flexWrap();
@@ -64,9 +72,24 @@
 }
 .filter-modal-add-condition-input { width: 12rem }
 .filter-modal-add-condition-button {
-	margin-left: .5rem;
+	margin-left: -4px;
 	width: 40px;
-	background: $white;
+	background: $primary;
+	border-color: transparent;
+	color: $white;
+}
+
+.filter-modal-add-condition-button:hover {
+	background: $primary;
+	border-color: transparent;
+	color: $white;
+}
+
+.filter-modal-add-condition-button[disabled] {
+	background: darken(#f7f7f7, 5);
+	border-color: rgba(0,0,0,0.2);
+	opacity: 1;
+	color: rgba(0,0,0,0.4)
 }
 
 /* separator */
