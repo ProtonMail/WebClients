@@ -41,7 +41,7 @@ angular.module('proton.core')
 
     $scope.activeSettings = () => {
         const route = $state.$current.name.replace('secured.', '');
-        const settings = ['account', 'labels', 'security', 'appearance', 'domains', 'identities', 'users', 'payments', 'keys'];
+        const settings = ['dashboard', 'account', 'labels', 'filters', 'security', 'appearance', 'domains', 'identities', 'members', 'payments', 'keys', 'vpn'];
 
         return settings.indexOf(route) !== -1;
     };
