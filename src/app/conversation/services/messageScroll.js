@@ -22,10 +22,13 @@ angular.module('proton.conversation')
             const headerOffset = $header ? ($header.getBoundingClientRect().top + $header.offsetHeight) : 0;
             const amountScrolled = $thread ? $thread.scrollTop : 0;
             const paddingTop = ~~$thread.style.paddingTop.replace('px', '');
+            const $messageReference = document.getElementById('message0');
+            const messagesHeight = $messageReference.getBoundingClientRect().height;
+            const messageMargin = 10;
 
             let scrollTop = node ? (node.getBoundingClientRect().top + amountScrolled - headerOffset - paddingTop) : 0;
 
-            scrollTop -= ((index === 1) ? 15 : 68);
+            scrollTop -= ((index === 1) ? (messagesHeight / 2) + messageMargin : (1.5 * messagesHeight) + (2 * messageMargin));
 
             $($thread).animate({ scrollTop }, 200);
         }
