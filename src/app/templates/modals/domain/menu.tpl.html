@@ -21,24 +21,24 @@
         <a class="pm_button" ng-class="{
             'dead': ctrl.step === 4,
             'disabled': ctrl.domain.State === 0 || !ctrl.domain.DomainName
-        }" ng-click="ctrl.open('mx')">4.<br><span translate translate-context="Title">MX</span></a>
+        }" ng-click="ctrl.open('mx')">4.<br><span>MX</span></a>
     </li>
     <li ng-class="{ 'active': ctrl.step === 5 }">
         <a class="pm_button" ng-class="{
             'dead': ctrl.step === 5,
             'disabled': ctrl.domain.State === 0 || !ctrl.domain.DomainName
-        }" ng-click="ctrl.open('spf')">5.<br><span translate translate-context="Title">SPF</span></a>
+        }" ng-click="ctrl.open('spf')">5.<br><span>SPF</span></a>
     </li>
     <li ng-class="{ 'active': ctrl.step === 6 }">
         <a class="pm_button" ng-class="{
             'dead': ctrl.step === 6,
             'disabled': ctrl.domain.State === 0 || !ctrl.domain.DomainName
-        }" ng-click="ctrl.open('dkim')">6.<br><span translate translate-context="Title">DKIM</span></a>
+        }" ng-click="ctrl.open('dkim')">6.<br><span>DKIM</span></a>
     </li>
     <li ng-class="{ 'active': ctrl.step === 7 }">
         <a class="pm_button" ng-class="{
             'dead': ctrl.step === 7,
             'disabled': ctrl.domain.State === 0 || !ctrl.domain.DomainName
-        }" ng-click="ctrl.open('dmarc')">7.<br><span translate translate-context="Title">DMARC</span></a>
+        }" ng-click="ctrl.open('dmarc')">7.<br><span>DMARC</span></a>
     </li>
 </ul>
