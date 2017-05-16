@@ -1,0 +1,11 @@
+.activeAddresses-container ul li,
+.inactiveAddresses-container ul li {
+    height: auto /* override pm_sort ul li */
+}
+
+.activeAddresses-container ul li.highlight .fa.fa-ellipsis-v,
+.inactiveAddresses-container ul li.highlight .fa.fa-ellipsis-v { color: rgba(0,0,0,0.2) }
+
+
+body.appConfigBody-is-mobile .activeAddresses-container .pm_grid [class*='col-'],
+body.appConfigBody-is-mobile .inactive-container .pm_grid [class*='col-'] { margin-bottom: 0 }
