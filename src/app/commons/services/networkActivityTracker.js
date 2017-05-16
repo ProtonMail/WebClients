@@ -68,11 +68,11 @@ angular.module('proton.commons')
 
             console.error(formatError(error));
 
-            if (angular.isString(error)) { // Just a String
+            if (angular.isString(error)) {
                 notifyAlert(error);
             }
 
-            if (angular.isObject(error) && !error.noNotify) { // Error Object
+            if (angular.isObject(error) && !error.noNotify) {
                 let message;
 
                 if (error.message) {
@@ -85,8 +85,10 @@ angular.module('proton.commons')
                     message = 'An error has occurred. <br> Please try again or refresh the page.';
                 }
 
+                if (message !== 'loginPassword:cancel') {
+                    notifyAlert(message);
+                }
 
-                notifyAlert(message);
 
                 return Promise.reject(error);
             }

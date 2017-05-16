@@ -46,7 +46,13 @@ angular.module('proton.settings')
             return $http.put(getUrl('language'), params);
         },
         setLogging(params) {
-            return $http.put(getUrl('logauth'), params);
+            return $http.put(getUrl('logauth'), params)
+                .then(({ data = {} }) => {
+                    if (data.Code === 1000) {
+                        return data;
+                    }
+                    throw new Error(data.Error);
+                });
         },
         setComposerMode(params) {
             return $http.put(getUrl('composermode'), params);
