@@ -205,7 +205,7 @@
             <time time-refreshed="{{ ::message.ExpirationTime }}"></time>
         </div>
 
-        <message-spam-score ng-if="message.SpamScore === 100 || message.SpamScore === 101" data-score="message.SpamScore"></message-spam-score>
+        <message-spam-score ng-if="message.SpamScore === 100 || message.SpamScore === 101" data-score="{{ ::message.SpamScore }}"></message-spam-score>
 
         <display-content-btn data-action="remote"></display-content-btn>
         <display-content-btn data-action="embedded"></display-content-btn>
