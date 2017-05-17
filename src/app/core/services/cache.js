@@ -121,22 +121,26 @@ angular.module('proton.core')
     };
 
     /**
-     * Search NumUnread depending on current location
-     * @param {Object}
-     *  @param {Array} Labels - defined if the event is coming from the API
-     *  @param {Integer} ContextNumUnread - defined if the event is coming from the FE client
-     * @return {Integer} ContextNumUnread
+     * Search context datas to update the conversation
+     * @param {Object} conversation
+     * @param {Array} conversation.Labels - defined if the event is coming from the API
+     * @param {Integer} conversation.ContextNumUnread - defined if the event is coming from the FE client
+     * @param {Integer} conversation.ContextNumMessages - defined if the event is coming from the FE client
+     * @param {Integer} conversation.ContextNumAttachments - defined if the event is coming from the FE client
+     * @param {Integer} conversation.ContextSize - defined if the event is coming from the FE client
+     * @param {Integer} conversation.ContextTime - defined if the event is coming from the FE client
+     * @return {Object}
      */
-    function extractContextNumUnread({ Labels = [], ContextNumUnread = 0 }) {
+    function extractContextDatas({ Labels = [], ContextNumUnread, ContextNumMessages, ContextNumAttachments, ContextSize, ContextTime }) {
         const ID = tools.currentLocation();
 
         if (Labels.length) {
-            const { NumUnread = 0 } = _.findWhere(Labels, { ID }) || {};
+            const { NumUnread = 0, NumMessages = 0, NumAttachments = 0, Size = 0, Time = 0 } = _.findWhere(Labels, { ID }) || {};
 
-            return NumUnread;
+            return { ContextNumUnread: NumUnread, ContextNumMessages: NumMessages, ContextNumAttachments: NumAttachments, ContextSize: Size, ContextTime: Time };
         }
 
-        return ContextNumUnread;
+        return { ContextNumUnread, ContextNumMessages, ContextNumAttachments, ContextSize, ContextTime };
     }
 
     /**
@@ -148,8 +152,7 @@ angular.module('proton.core')
         const { Senders: SendersConversation = [] } = (conversation || {});
         if (current) {
             const { Senders = [] } = (current || {});
-            _.extend(current || {}, conversation);
-            current.ContextNumUnread = extractContextNumUnread(conversation);
+            Object.assign(current, conversation, extractContextDatas(conversation));
             delete current.LabelIDsAdded;
             delete current.LabelIDsRemoved;
             delete current.Labels;
