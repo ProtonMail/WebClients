@@ -1,5 +1,5 @@
 angular.module('proton.core')
-    .factory('paginationModel', (CONSTANTS, cacheCounters, $rootScope, $state, $stateParams, authentication) => {
+    .factory('paginationModel', (CONSTANTS, cacheCounters, $rootScope, $state, $stateParams, authentication, tools) => {
 
         const { ELEMENTS_PER_PAGE, MESSAGE_VIEW_MODE } = CONSTANTS;
         let currentState = '';
@@ -23,9 +23,8 @@ angular.module('proton.core')
          */
         const getMaxPage = () => {
 
-            const counter = cacheCounters.getCounter($stateParams.label);
-
-            if ($stateParams.label && counter) {
+            const counter = cacheCounters.getCounter(tools.currentLocation());
+            if (tools.cacheContext() && counter) {
                 const key = ($stateParams.filter === 'unread') ? 'unread' : 'total';
                 return Math.ceil(counter[getLayout()][key] / ELEMENTS_PER_PAGE);
             }
