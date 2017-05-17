@@ -536,10 +536,10 @@ angular.module('proton.message')
                 const conversation = cache.getConversationCached(message.ConversationID);
 
                 if (angular.isDefined(conversation)) {
-                    if (conversation.NumMessages === 1) {
+                    if (conversation.ContextNumMessages === 1) {
                         // Delete conversation
                         events.push({ Action: 0, ID: conversation.ID });
-                    } else if (conversation.NumMessages > 1) {
+                    } else if (conversation.ContextNumMessages > 1) {
                         const messages = cache.queryMessagesCached(conversation.ID);
                         const labelIDs = _.chain(messages)
                             .filter(({ ID }) => ID !== id)
@@ -553,7 +553,7 @@ angular.module('proton.message')
                             Conversation: {
                                 ID: conversation.ID,
                                 LabelIDs: labelIDs, // Forge LabelIDs
-                                NumMessages: conversation.NumMessages - 1 // Decrease the number of message
+                                ContextNumMessages: conversation.ContextNumMessages - 1 // Decrease the number of message
                             }
                         });
                     }
