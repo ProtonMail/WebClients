@@ -5,7 +5,7 @@ angular.module('proton.conversation')
     template: '<div class="conversationView-container"><conversation ng-if="conversation" data-conversation="conversation"></conversation></div>',
     link(scope) {
         const conversationID = $stateParams.id;
-        const loc = tools.currentLocation();
+        const ID = tools.currentLocation();
 
         function back() {
             const route = $state.$current.name.replace('.element', '');
@@ -14,7 +14,8 @@ angular.module('proton.conversation')
 
         cache.getConversation(conversationID)
             .then((conversation) => {
-                if (conversation.LabelIDs.indexOf(loc) > -1 || $state.includes('secured.search.**')) {
+                const labelID = _.findWhere(conversation.Labels, { ID });
+                if (labelID || $state.includes('secured.search.**')) {
                     return scope.conversation = conversation;
                 }
                 return back();
