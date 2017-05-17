@@ -1,7 +1,7 @@
 <section class="conversation-container">
     <header id="conversationHeader">
         <h1>
-            <span ng-if="conversation.ContextNumMessages > 1">({{ conversation.ContextNumMessages }})</span>
+            <span ng-if="conversation.NumMessages > 1">({{ conversation.NumMessages }})</span>
             <span>{{ conversation.Subject | unescape }}</span>
             <pt-star data-model="conversation" data-pt-star-type="conversation" class="pm_buttons"></pt-star>
         </h1>

@@ -596,10 +596,10 @@ angular.module('proton.composer')
                     let numMessages;
 
                     if (actionType === CREATE) {
-                        numMessages = angular.isDefined(conversation) ? (conversation.ContextNumMessages + 1) : 1;
+                        numMessages = angular.isDefined(conversation) ? (conversation.NumMessages + 1) : 1;
                         message.ID = result.Message.ID;
                     } else if (actionType === UPDATE) {
-                        numMessages = angular.isDefined(conversation) ? conversation.ContextNumMessages : 1;
+                        numMessages = angular.isDefined(conversation) ? conversation.NumMessages : 1;
                     }
 
                     message.IsRead = result.Message.IsRead;
@@ -630,7 +630,7 @@ angular.module('proton.composer')
                         ID: result.Message.ConversationID,
                         Conversation: angular.extend({
                             NumAttachments: result.Message.Attachments.length, // it's fine
-                            ContextNumMessages: numMessages,
+                            NumMessages: numMessages,
                             ContextNumUnread: contextNumUnread,
                             ID: result.Message.ConversationID,
                             LabelIDsAdded: [CONSTANTS.MAILBOX_IDENTIFIERS.drafts]
@@ -913,7 +913,7 @@ angular.module('proton.composer')
                 const { Parent, Sent = {} } = data;
                 const events = [];
                 const conversation = cache.getConversationCached(Sent.ConversationID);
-                const numMessages = angular.isDefined(conversation) ? conversation.ContextNumMessages : 1;
+                const numMessages = angular.isDefined(conversation) ? conversation.NumMessages : 1;
                 const contextNumUnread = angular.isDefined(conversation) ? conversation.ContextNumUnread : 0;
 
                 result.Sent.Senders = [Sent.Sender]; // The back-end doesn't return Senders so need a trick
@@ -928,7 +928,7 @@ angular.module('proton.composer')
                     Action: 3,
                     ID: Sent.ConversationID,
                     Conversation: {
-                        ContextNumMessages: numMessages,
+                        NumMessages: numMessages,
                         ContextNumUnread: contextNumUnread,
                         Recipients: Sent.Recipients,
                         Senders: Sent.Senders,

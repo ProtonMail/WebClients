@@ -125,22 +125,21 @@ angular.module('proton.core')
      * @param {Object} conversation
      * @param {Array} conversation.Labels - defined if the event is coming from the API
      * @param {Integer} conversation.ContextNumUnread - defined if the event is coming from the FE client
-     * @param {Integer} conversation.ContextNumMessages - defined if the event is coming from the FE client
      * @param {Integer} conversation.ContextNumAttachments - defined if the event is coming from the FE client
      * @param {Integer} conversation.ContextSize - defined if the event is coming from the FE client
      * @param {Integer} conversation.ContextTime - defined if the event is coming from the FE client
      * @return {Object}
      */
-    function extractContextDatas({ Labels = [], ContextNumUnread, ContextNumMessages, ContextNumAttachments, ContextSize, ContextTime }) {
+    function extractContextDatas({ Labels = [], ContextNumUnread, ContextNumAttachments, ContextSize, ContextTime }) {
         const ID = tools.currentLocation();
 
         if (Labels.length) {
-            const { NumUnread = 0, NumMessages = 0, NumAttachments = 0, Size = 0, Time = 0 } = _.findWhere(Labels, { ID }) || {};
+            const { NumUnread = 0, NumAttachments = 0, Size = 0, Time = 0 } = _.findWhere(Labels, { ID }) || {};
 
-            return { ContextNumUnread: NumUnread, ContextNumMessages: NumMessages, ContextNumAttachments: NumAttachments, ContextSize: Size, ContextTime: Time };
+            return { ContextNumUnread: NumUnread, ContextNumAttachments: NumAttachments, ContextSize: Size, ContextTime: Time };
         }
 
-        return { ContextNumUnread, ContextNumMessages, ContextNumAttachments, ContextSize, ContextTime };
+        return { ContextNumUnread, ContextNumAttachments, ContextSize, ContextTime };
     }
 
     /**
@@ -723,7 +722,7 @@ angular.module('proton.core')
         const conversation = _.findWhere(conversationsCached, { ID }) || {};
         const messages = api.queryMessagesCached(ID); // messages are ordered by -Time
 
-        if (conversation.loaded === true && messages.length === conversation.ContextNumMessages) {
+        if (conversation.loaded === true && messages.length === conversation.NumMessages) {
             return Promise.resolve(angular.copy(conversation));
         }
 
