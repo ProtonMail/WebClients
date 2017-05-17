@@ -152,7 +152,7 @@ angular.module('proton.core')
         const { Senders: SendersConversation = [] } = (conversation || {});
         if (current) {
             const { Senders = [] } = (current || {});
-            Object.assign(current, conversation, extractContextDatas(conversation));
+            _.extend(current || {}, conversation, extractContextDatas(conversation));
             delete current.LabelIDsAdded;
             delete current.LabelIDsRemoved;
             delete current.Labels;
