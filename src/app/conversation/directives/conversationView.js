@@ -14,10 +14,12 @@ angular.module('proton.conversation')
 
         cache.getConversation(conversationID)
             .then((conversation) => {
-                const labelID = _.findWhere(conversation.Labels, { ID });
-                if (labelID || $state.includes('secured.search.**')) {
+                const { LabelIDs = [] } = conversation;
+
+                if (_.contains(LabelIDs, ID) || $state.includes('secured.search.**')) {
                     return scope.conversation = conversation;
                 }
+
                 return back();
             });
     }
