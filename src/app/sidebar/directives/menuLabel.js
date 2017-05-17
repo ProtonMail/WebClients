@@ -24,7 +24,8 @@ angular.module('proton.sidebar')
             const className = getClassName(ID);
             const href = $state.href('secured.label', { label: ID, sort: null, filter: null, page: null });
             const cleanName = stripHTML(Name);
-            const cleanAttr = encodeURI(cleanName);
+            // Prevent XSS as we can break the title
+            const cleanAttr = cleanName.replace(/"|'/g, '');
 
             const classIcon = (Exclusive === 1) ? 'fa-folder' : 'fa-tag';
 
