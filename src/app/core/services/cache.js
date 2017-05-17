@@ -720,7 +720,7 @@ angular.module('proton.core')
         const conversation = _.findWhere(conversationsCached, { ID }) || {};
         const messages = api.queryMessagesCached(ID); // messages are ordered by -Time
 
-        if (conversation.loaded === true && messages.length === conversation.NumMessages) {
+        if (conversation.loaded === true && messages.length === conversation.ContextNumMessages) {
             return Promise.resolve(angular.copy(conversation));
         }
 
