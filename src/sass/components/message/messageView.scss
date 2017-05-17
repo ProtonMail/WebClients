@@ -165,7 +165,7 @@ message-view {
                 }
             }
         }
-        &.unread .summary {
+        &.unread:not(.open) .summary {
             background: $white;
             .meta .contact strong {
                 font-weight: 700;
