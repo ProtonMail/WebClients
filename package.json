@@ -67,6 +67,8 @@
     "e2e": "protractor protractor_conf.js",
     "test": "cross-env NODE_ENV=test karma start test/karma.conf.js",
     "testwatch": "npm test -- --auto-watch --no-single-run",
-    "i18n": "./tasks/commitI18n.sh"
+    "i18n": "./tasks/commitI18n.sh",
+    "build:i18n": "grunt nggettext_extract nggettext_compile",
+    "postbuild:i18n": "npm run i18n"
   }
 }

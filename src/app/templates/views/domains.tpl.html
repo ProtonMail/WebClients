@@ -11,7 +11,7 @@
                         translate-context="Title">Domains</h2>
                 </header-block>
 
-                <p class="alert alert-info">Use your own domain with ProtonMail and use your own email address, e.g. yourname@yourdomain.com. To enable this feature, <a ui-sref="secured.dashboard({scroll: true})">upgrade to ProtonMail Plus</a>.</p>
+                <p class="alert alert-info" translate>Use your own domain with ProtonMail and use your own email address, e.g. yourname@yourdomain.com. To enable this feature, <a ui-sref="secured.dashboard({scroll: true})">upgrade to ProtonMail Plus</a>.</p>
             </section>
         </div>
 
@@ -119,7 +119,7 @@
                             </tr>
                             <tr ng-if="domain.State === 2">
                                 <td colspan="2">
-                                    <p class="alert alert-warning">Check your DNS settings.</p>
+                                    <p class="alert alert-warning" translate>Check your DNS settings.</p>
                                 </td>
                                 <td></td>
                             </tr>
@@ -134,9 +134,9 @@
                 </div>
                 <div class="alert alert-info" ng-show="domains.length === 0">
                     <p>
-                        <strong  translate>No custom domain found</strong>
+                        <strong translate>No custom domain found</strong>
                     </p>
-                    <p>Click on 'ADD CUSTOM DOMAIN' button to add it.</p>
+                    <p translate>Click on 'ADD CUSTOM DOMAIN' button to add it.</p>
                 </div>
             </section>
             <p>&nbsp;</p>

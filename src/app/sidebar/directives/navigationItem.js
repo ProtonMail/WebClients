@@ -3,8 +3,6 @@ angular.module('proton.sidebar')
 
         const CLASS_ACTIVE = 'active';
         const CLASS_SPIN = 'spinMe';
-        const STATES = sidebarModel.getStateConfig();
-
         const template = (key, { state, label, icon = '' }) => {
             const iconClassName = `sidebarApp-icon navigationItem-icon fa ${icon}`.trim();
             const opt = { sort: null, filter: null, page: null };
@@ -40,6 +38,7 @@ angular.module('proton.sidebar')
             template: '<li class="navigationItem-container"></li>',
             link(scope, el, { key }) {
                 let id;
+                const STATES = sidebarModel.getStateConfig();
                 const config = STATES[key];
                 const unsubscribe = [];
                 const render = () => (el[0].innerHTML = template(key, config));
