@@ -14,7 +14,7 @@
     border-radius: $pm_loading;
     box-shadow: $box-shadow;
     opacity: 0;
-    transition: all .5s linear;
+    transition: opacity .5s linear, transform .5s linear;
     animation-delay: 1.2s;
     will-change: transform;
 
