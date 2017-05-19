@@ -36,7 +36,10 @@ angular.module('proton.settings')
     $scope.emailing = { announcements: false, features: false, newsletter: false, beta: false };
     $scope.locales = [
         { label: gettextCatalog.getString('English', null), key: 'en_US' },
-        { label: gettextCatalog.getString('French', null), key: 'fr_FR' }
+        { label: gettextCatalog.getString('French', null), key: 'fr_FR' },
+        { label: gettextCatalog.getString('German', null), key: 'de_DE' },
+        { label: gettextCatalog.getString('Russian', null), key: 'ru_RU' },
+        { label: gettextCatalog.getString('Turkish', null), key: 'tr_TR' }
     ];
     $scope.locale = _.findWhere($scope.locales, { key: gettextCatalog.getCurrentLanguage() });
     const EMAILING_KEYS = Object.keys($scope.emailing);
