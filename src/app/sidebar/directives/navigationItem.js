@@ -6,7 +6,7 @@ angular.module('proton.sidebar')
         const template = (key, { state, label, icon = '' }) => {
             const iconClassName = `sidebarApp-icon navigationItem-icon fa ${icon}`.trim();
             const opt = { sort: null, filter: null, page: null };
-            return dedentTpl(`<a href="${$state.href(state, opt)}" title="${label}" data-state="${key}" class="navigationItem-item">
+            return dedentTpl(`<a href="${$state.href(state, opt)}" title="${label}" data-label="${label}" data-state="${key}" class="navigationItem-item">
                 <i class="${iconClassName}"></i>
                 <span class="navigationItem-title">${label}</span>
                 <em class="navigationItem-counter"></em>
@@ -43,8 +43,11 @@ angular.module('proton.sidebar')
                 const unsubscribe = [];
                 const render = () => (el[0].innerHTML = template(key, config));
                 const updateCounter = () => {
-                    const $counter = el[0].querySelector('.navigationItem-counter');
-                    $counter.textContent = sidebarModel.unread(key);
+                    const $anchor = el[0].querySelector('.navigationItem-item');
+                    const $counter = $anchor.querySelector('.navigationItem-counter');
+                    const total = sidebarModel.unread(key);
+                    $anchor.title = `${$anchor.getAttribute('data-label')} ${total}`;
+                    $counter.textContent = total;
                 };
 
                 // Check if we open the current state, mark it as active
