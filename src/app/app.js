@@ -87,9 +87,33 @@ angular.module('proton', [
 })
 
 .run((CONFIG, gettextCatalog) => {
-    const locale = window.navigator.userLanguage || window.navigator.language;
+
+    /**
+     * Format the locale to a valid format for gettext
+     * {@link https://www.gnu.org/software/gettext/manual/gettext.html#Header-Entry}
+     * @param  {String} locale
+     * @return {String}        xx_XX
+     */
+    const formatLocale = (locale) => {
+        return (locale || window.navigator.userLanguage || window.navigator.language)
+            .replace('-', '_');
+    };
+
+    const getLocale = () => {
+
+        // Doesn't work on IE11 ;)
+        try {
+            const queryParams = new window.URL(window.location).searchParams;
+            return formatLocale(queryParams.get('language'));
+        } catch (e) {
+            const [, locale] = location.search.match(/language=([a-z]{2,}(_|-)[A-Z]{2,})/) || [];
+            return formatLocale(locale);
+        }
+    };
+
+    const locale = getLocale();
     gettextCatalog.debugPrefix = '';
-    gettextCatalog.setCurrentLanguage('en_US');
+    gettextCatalog.setCurrentLanguage(locale);
     gettextCatalog.debug = CONFIG.debug || false;
     moment.locale(locale);
 })
