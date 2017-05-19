@@ -457,14 +457,18 @@ angular.module('proton.routes', [
         },
         resolve: {
             // Contains also labels and contacts
-            user(authentication, $http, pmcw, secureSessionStorage) {
+            user(authentication, $http, pmcw, secureSessionStorage, i18nLoader) {
                 if (Object.keys(authentication.user).length > 0) {
                     return authentication.user;
                 } else if (angular.isDefined(secureSessionStorage.getItem(CONSTANTS.OAUTH_KEY + ':SessionToken'))) {
                     $http.defaults.headers.common['x-pm-session'] = pmcw.decode_base64(secureSessionStorage.getItem(CONSTANTS.OAUTH_KEY + ':SessionToken') || '');
                 }
 
-                return authentication.fetchUserInfo(); // TODO need to rework this just for the locked page
+                return authentication.fetchUserInfo()
+                    .then((data) => {
+                        return i18nLoader(data.Language)
+                            .then(() => data);
+                    });
             },
             subscription(user, subscriptionModel) {
                 return subscriptionModel.fetch();

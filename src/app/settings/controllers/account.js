@@ -3,7 +3,6 @@ angular.module('proton.settings')
     $log,
     $rootScope,
     $scope,
-    $window,
     $timeout,
     $state,
     CONSTANTS,
@@ -71,9 +70,8 @@ angular.module('proton.settings')
 
     $scope.saveDefaultLanguage = () => {
         const Language = $scope.locale.key;
-
         const promise = settingsApi.setLanguage({ Language })
-            .then(() => $window.location.reload());
+            .then(() => window.location.reload());
 
         networkActivityTracker.track(promise);
 
