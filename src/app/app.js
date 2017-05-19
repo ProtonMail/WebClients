@@ -97,6 +97,7 @@ angular.module('proton', [
     const formatLocale = (locale) => {
         const value = (locale || window.navigator.userLanguage || window.navigator.language).replace('-', '_');
 
+        // OS is in French (France) => navigator.language === fr
         if (value.length === 2) {
             return `${value}_${value.toUpperCase()}`;
         }
