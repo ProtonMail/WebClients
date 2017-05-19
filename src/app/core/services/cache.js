@@ -122,22 +122,19 @@ angular.module('proton.core')
 
     /**
      * Search context datas to update the conversation
-     * @param {Object} conversation
-     * @param {Array} conversation.Labels - defined if the event is coming from the API
-     * @param {Integer} conversation.ContextNumUnread - defined if the event is coming from the FE client
-     * @param {Integer} conversation.ContextNumAttachments - defined if the event is coming from the FE client
-     * @param {Integer} conversation.ContextSize - defined if the event is coming from the FE client
-     * @param {Integer} conversation.ContextTime - defined if the event is coming from the FE client
+     * @param {Object} oldElement
+     * @param {Object} newElement
      * @return {Object}
      */
-    function extractContextDatas({ Labels = [], ContextNumUnread, ContextNumAttachments, ContextSize, ContextTime }) {
+    function extractContextDatas(oldElement, newElement) {
+        const { Labels = [] } = newElement;
         const ID = tools.currentLocation();
-
-        if (Labels.length) {
-            const { NumUnread = 0, NumAttachments = 0, Size = 0, Time = 0 } = _.findWhere(Labels, { ID }) || {};
-
-            return { ContextNumUnread: NumUnread, ContextNumAttachments: NumAttachments, ContextSize: Size, ContextTime: Time };
-        }
+        const {
+            ContextNumUnread = oldElement.ContextNumUnread,
+            ContextNumAttachments = oldElement.ContextNumAttachments,
+            ContextSize = oldElement.ContextSize,
+            ContextTime = oldElement.ContextTime
+        } = (Labels.length) ? (_.findWhere(Labels, { ID }) || {}) : newElement;
 
         return { ContextNumUnread, ContextNumAttachments, ContextSize, ContextTime };
     }
@@ -148,21 +145,23 @@ angular.module('proton.core')
      */
     function updateConversation(conversation) {
         const current = _.findWhere(conversationsCached, { ID: conversation.ID });
-        const { Senders: SendersConversation = [] } = (conversation || {});
+
         if (current) {
-            const { Senders = [] } = (current || {});
-            _.extend(current || {}, conversation, extractContextDatas(conversation));
+            _.extend(
+                current,
+                conversation,
+                { Labels: getLabels(current, conversation), Senders: filterSenderConversation(current.Senders, conversation.Senders) },
+                extractContextDatas(current, conversation)
+            );
             delete current.LabelIDsAdded;
             delete current.LabelIDsRemoved;
-            delete current.Labels;
-            current.LabelIDs = getLabelsId(current, conversation);
-            current.Senders = filterSenderConversation(Senders, SendersConversation);
             manageTimes(current.ID);
             $rootScope.$emit('labelsElement.' + current.ID, current);
             $rootScope.$emit('foldersElement.' + current.ID, current);
             return;
         }
 
+        _.extend(conversation, extractContextDatas(conversation, conversation));
         conversationsCached.push(conversation);
         manageTimes(conversation.ID);
         $rootScope.$emit('labelsElement.' + conversation.ID, conversation);
@@ -176,8 +175,9 @@ angular.module('proton.core')
      * @param {String} type = conversation or message
      * @return {Object}
      */
-    function vector({ LabelIDs = [], IsRead, ContextNumUnread }, unread, type) {
+    function vector({ LabelIDs = [], Labels = [], IsRead, ContextNumUnread }, unread, type) {
         const result = {};
+        const labelIDs = (type === 'message') ? LabelIDs : _.map(Labels, ({ ID }) => ID);
         let unreadCondition = true;
         const locs = [
             CONSTANTS.MAILBOX_IDENTIFIERS.inbox,
@@ -199,7 +199,7 @@ angular.module('proton.core')
         }
 
         _.each(locs, (loc) => {
-            if (LabelIDs.indexOf(loc) !== -1 && unreadCondition) {
+            if (_.contains(labelIDs, loc) && unreadCondition) {
                 result[loc] = 1;
             } else {
                 result[loc] = 0;
@@ -219,18 +219,18 @@ angular.module('proton.core')
             return;
         }
 
-        const { LabelIDs = [] } = api.getConversationCached(conversationID) || {};
+        const { Labels = [] } = api.getConversationCached(conversationID) || {};
         const messages = api.queryMessagesCached(conversationID); // messages are ordered by -Time
 
         if (messages.length) {
-            LabelIDs.forEach((labelID) => {
+            Labels.forEach(({ ID }) => {
                 // Get the most recent message for a specific label
                 const { Time } = _.chain(messages)
-                    .filter(({ LabelIDs = [] }) => LabelIDs.indexOf(labelID) > -1)
+                    .filter(({ LabelIDs = [] }) => _.contains(LabelIDs, ID))
                     .first()
                     .value() || {};
 
-                Time && storeTime(conversationID, labelID, Time);
+                Time && storeTime(conversationID, ID, Time);
             });
         }
     }
@@ -462,9 +462,10 @@ angular.module('proton.core')
         const loc = CONSTANTS.MAILBOX_IDENTIFIERS[mailbox];
 
         for (let index = conversationsCached.length - 1; index >= 0; index--) {
-            const { LabelIDs = [] } = conversationsCached[index] || {};
+            const { Labels = [] } = conversationsCached[index] || {};
+            const label = _.findWhere(Labels, { ID: loc });
 
-            if (LabelIDs.indexOf(loc) !== -1) {
+            if (label) {
                 conversationsCached.splice(index, 1);
             }
         }
@@ -654,7 +655,7 @@ angular.module('proton.core')
             let total;
             let number;
             const mailbox = tools.currentMailbox();
-            let conversations = _.filter(conversationsCached, ({ LabelIDs = [], ID }) => LabelIDs.indexOf(loc) !== -1 && api.getTime(ID, loc));
+            let conversations = _.filter(conversationsCached, ({ Labels = [], ID }) => _.findWhere(Labels, { ID: loc }) && api.getTime(ID, loc));
 
             conversations = api.orderConversation(conversations, loc);
 
@@ -854,6 +855,17 @@ angular.module('proton.core')
         return labelIDs;
     }
 
+    function getLabels(old, { Labels = [], LabelIDsRemoved = [], LabelIDsAdded = [] }) {
+        if (LabelIDsAdded.length || LabelIDsRemoved.length) {
+            const toAdd = _.map(LabelIDsAdded, (ID) => ({ ID }));
+            return _.chain(old.Labels.concat(toAdd))
+                .filter(({ ID }) => !_.contains(LabelIDsRemoved, ID))
+                .uniq(({ ID }) => ID)
+                .value();
+        }
+        return _.uniq(Labels.concat(old.Labels || []), ({ ID }) => ID);
+    }
+
     /**
      * Set new counters value from FE events
      * @param  {Array} events
@@ -861,7 +873,7 @@ angular.module('proton.core')
     function handleCounters(events = []) {
         _.chain(events)
             .filter((event) => event.Message)
-            .map((event) => event.Message)
+            .map((event) => angular.copy(event.Message))
             .each((newMessage) => {
                 const oldMessage = _.findWhere(messagesCached, { ID: newMessage.ID });
                 if (oldMessage) {
@@ -871,11 +883,11 @@ angular.module('proton.core')
             });
         _.chain(events)
             .filter((event) => event.Conversation)
-            .map((event) => event.Conversation)
+            .map((event) => angular.copy(event.Conversation))
             .each((newConversation) => {
                 const oldConversation = _.findWhere(conversationsCached, { ID: newConversation.ID });
                 if (oldConversation) {
-                    newConversation.LabelIDs = getLabelsId(oldConversation, newConversation);
+                    newConversation.Labels = getLabels(oldConversation, newConversation);
                     manageCounters(oldConversation, newConversation, 'conversation');
                 }
             });

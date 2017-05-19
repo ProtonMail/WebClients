@@ -10,7 +10,7 @@
             selected: conversation.Selected,
             active: active(conversation),
             marked: conversation.ID === markedElement.ID,
-            hasLabels: (conversation.LabelIDs | labels).length > 0,
+            hasLabels: hasLabels(conversation),
             read: isRead(conversation),
             hasAttachments: hasAttachments(conversation),
             expiring: (conversation.ExpirationTime > 0)

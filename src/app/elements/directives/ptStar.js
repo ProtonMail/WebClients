@@ -2,10 +2,13 @@ angular.module('proton.elements')
 .directive('ptStar', ($rootScope, CONSTANTS, gettextCatalog, tools, actionConversation) => {
 
     /**
-    * Check in LabelIDs to see if the conversation or message is starred
+    * Check in LabelIDs and Labels to see if the conversation or message is starred
     * @param {Object} item
     */
-    function isStarred({ LabelIDs = [] }) {
+    function isStarred({ LabelIDs = [], Labels = [] }) {
+        if (Labels.length) {
+            return _.findWhere(Labels, { ID: CONSTANTS.MAILBOX_IDENTIFIERS.starred });
+        }
         return LabelIDs.some((label) => label === CONSTANTS.MAILBOX_IDENTIFIERS.starred);
     }
 

@@ -42,9 +42,10 @@ angular.module('proton.elements')
         },
         link(scope, el) {
 
-            const build = (event, { LabelIDs }) => {
-                if (Array.isArray(LabelIDs) && isAllowedState()) {
-                    const tpl = $compile(getTemplateLabels(LabelIDs))(scope);
+            const build = (event, { LabelIDs = [], Labels = [] }) => {
+                if ((LabelIDs.length || Labels.length) && isAllowedState()) {
+                    const labelIDs = (Labels.length) ? _.map(Labels, ({ ID }) => ID) : LabelIDs;
+                    const tpl = $compile(getTemplateLabels(labelIDs))(scope);
                     el.empty().append(tpl);
                 }
             };
