@@ -239,6 +239,14 @@ module.exports = function(grunt) {
                     expand: true
                 }]
             },
+            i18n_compile: {
+                files: [{
+                    src: ["*.json"],
+                    dest: "<%= compile_dir %>/i18n/",
+                    cwd: "src/i18n",
+                    expand: true
+                }]
+            },
             build_app_assets: {
                 files: [{
                     src: ["**"],
@@ -627,6 +635,7 @@ module.exports = function(grunt) {
         'copy:compile_assets', // copy assets
         'copy:compile_htaccess', // copy htaccess file
         'copy:i18n',
+        'copy:i18n_compile',
         'cssmin', // minify CSS
         'concat:compile_js', // concat JS
         'uglify', // minify JS
