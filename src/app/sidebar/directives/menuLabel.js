@@ -51,7 +51,11 @@ angular.module('proton.sidebar')
                 const updateCounter = () => {
                     _.each(el[0].querySelectorAll('.menuLabel-counter'), (node) => {
                         const id = node.getAttribute('data-label-id');
-                        node.textContent = sidebarModel.unread('label', id);
+                        const total = sidebarModel.unread('label', id);
+
+                        if (total) {
+                            node.textContent = `(${total})`;
+                        }
                     });
                 };
 
