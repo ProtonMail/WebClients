@@ -142,6 +142,7 @@ module.exports = function(grunt) {
                         'src/app/*.js',
                         'src/app/**/*.js',
                         'src/app/**/**/*.js',
+                        '!src/app/translations.js',
                         '!src/app/libraries/**/*.js',
                         'src/app/libraries/pmcrypto.js', // Do babel on pmcrypto
                         '!src/app/templates/templates-app.js'
@@ -157,6 +158,7 @@ module.exports = function(grunt) {
                     src: [
                         '<%= build_dir %>/src/app/**/*.js',
                         '!<%= build_dir %>/src/app/libraries/**/*.js',
+                        '!<%= build_dir %>/src/app/translations.js',
                         '<%= build_dir %>/src/app/libraries/pmcrypto.js', // Do babel on pmcrypto
                         '!<%= build_dir %>/src/app/templates/templates-app.js'
                     ],
