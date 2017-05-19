@@ -86,47 +86,8 @@ angular.module('proton', [
     urlProvider.setBaseUrl(CONFIG.apiUrl);
 })
 
-.run((CONFIG, gettextCatalog) => {
-
-    /**
-     * Format the locale to a valid format for gettext
-     * {@link https://www.gnu.org/software/gettext/manual/gettext.html#Header-Entry}
-     * @param  {String} locale
-     * @return {String}        xx_XX
-     */
-    const formatLocale = (locale) => {
-        const value = (locale || window.navigator.userLanguage || window.navigator.language).replace('-', '_');
-
-        // OS is in French (France) => navigator.language === fr
-        if (value.length === 2) {
-            return `${value}_${value.toUpperCase()}`;
-        }
-        return value;
-    };
-
-    const getLocale = () => {
-
-        // Doesn't work on IE11 ;)
-        try {
-            const queryParams = new window.URL(window.location).searchParams;
-            return formatLocale(queryParams.get('language'));
-        } catch (e) {
-            const [, locale] = location.search.match(/language=([a-z]{2,}(_|-)[A-Z]{2,})/) || [];
-            return formatLocale(locale);
-        }
-    };
-
-    const locale = getLocale();
-    gettextCatalog.debugPrefix = '';
-    gettextCatalog.setCurrentLanguage(locale);
-
-    // If the translation is not available it seems to crash (CPU 100%)
-    if (CONFIG.translations.indexOf(locale) !== -1) {
-        gettextCatalog.loadRemote(`/i18n/${locale}.json`);
-    }
-
-    gettextCatalog.debug = CONFIG.debug || false;
-    moment.locale(locale);
+.run((i18nLoader, $state) => {
+    !$state.includes('secured') && i18nLoader();
 })
 
 .run((
