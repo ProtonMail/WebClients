@@ -858,10 +858,8 @@ angular.module('proton.core')
     function getLabels(old, { Labels = [], LabelIDsRemoved = [], LabelIDsAdded = [] }) {
         if (LabelIDsAdded.length || LabelIDsRemoved.length) {
             const toAdd = _.map(LabelIDsAdded, (ID) => ({ ID }));
-            return _.chain(old.Labels.concat(toAdd))
-                .filter(({ ID }) => !_.contains(LabelIDsRemoved, ID))
-                .uniq(({ ID }) => ID)
-                .value();
+            const filtered = _.filter(old.Labels, ({ ID }) => !_.contains(LabelIDsRemoved, ID));
+            return _.uniq(filtered.concat(toAdd), ({ ID }) => ID);
         }
         return _.uniq(Labels.concat(old.Labels || []), ({ ID }) => ID);
     }
