@@ -31,11 +31,12 @@ angular.module('proton.elements')
 
             const moreToggle = moreVisibility(el[0].querySelector('.labelsElement-more'));
 
-            const build = (e, { LabelIDs }) => {
+            const build = (e, { LabelIDs = [], Labels = [] }) => {
                 moreToggle.hide();
                 // Check if there is custom labels
-                if (Array.isArray(LabelIDs)) {
-                    const labels = toLabels(LabelIDs);
+                if (LabelIDs.length || Labels.length) {
+                    const labelIDs = (Labels.length) ? _.map(Labels, ({ ID }) => ID) : LabelIDs;
+                    const labels = toLabels(labelIDs);
 
                     if (limit !== 'none') {
                         scope.labels = labels.length ? angular.copy(labels.slice(0, limit)) : [];

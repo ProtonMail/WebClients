@@ -428,6 +428,8 @@ angular.module('proton.elements')
         return false;
     };
 
+    $scope.hasLabels = ({ LabelIDs = [], Labels = [] }) => LabelIDs.length || Labels.length;
+
     $scope.hasAttachments = (element) => {
         if (element.ConversationID) { // is a message
             return element.NumAttachments > 0;
@@ -480,10 +482,10 @@ angular.module('proton.elements')
                 element.Selected = (element.ContextNumUnread > 0 || element.IsRead === 0) && isChecked;
             },
             starred(element) {
-                element.Selected = element.LabelIDs.indexOf(CONSTANTS.MAILBOX_IDENTIFIERS.starred) > -1 && isChecked;
+                element.Selected = isStarred(element) && isChecked;
             },
             unstarred(element) {
-                element.Selected = element.LabelIDs.indexOf(CONSTANTS.MAILBOX_IDENTIFIERS.starred) === -1 && isChecked;
+                element.Selected = !isStarred(element) && isChecked;
             }
         };
 
@@ -491,6 +493,13 @@ angular.module('proton.elements')
 
         $rootScope.numberElementChecked = _.where($scope.conversations, { Selected: true }).length;
     };
+
+    function isStarred({ LabelIDs = [], Labels = [] }) {
+        if (Labels.length) {
+            return _.contains(LabelIDs, CONSTANTS.MAILBOX_IDENTIFIERS.starred);
+        }
+        return Boolean(_.findWhere(Labels, { ID: CONSTANTS.MAILBOX_IDENTIFIERS.starred }));
+    }
 
     /**
      * Return [Element] selected
@@ -602,7 +611,7 @@ angular.module('proton.elements')
     $scope.toggleStar = () => {
         const type = getTypeSelected();
         const elementsSelected = $scope.elementsSelected();
-        const elementsStarred = _.filter(elementsSelected, ({ LabelIDs = [] }) => LabelIDs.indexOf(CONSTANTS.MAILBOX_IDENTIFIERS.starred) > -1);
+        const elementsStarred = _.filter(elementsSelected, (element) => isStarred(element));
         const ids = elementsSelected.map(({ ID }) => ID);
         if (elementsSelected.length === elementsStarred.length) {
             return (type === 'conversation') ? actionConversation.unstar(ids) : $rootScope.$emit('messageActions', { action: 'unstar', data: { ids } });
@@ -711,15 +720,6 @@ angular.module('proton.elements')
             page: ~~$stateParams.page || 1,
             label: $stateParams.label
         });
-    };
-
-    /**
-     * Check if the current message is a draft
-     * @param {Object} element
-     * @return {Boolean}
-     */
-    $scope.draft = (element) => {
-        return angular.isDefined(element.LabelIDs) && element.LabelIDs.indexOf(CONSTANTS.MAILBOX_IDENTIFIERS.drafts) !== -1;
     };
 
     /**

@@ -361,7 +361,7 @@ angular.module('proton.conversation')
 
                 const conversation = cache.getConversationCached($stateParams.id);
                 const messages = cache.queryMessagesCached($stateParams.id);
-                const loc = tools.currentLocation();
+                const labelID = tools.currentLocation();
 
                 messagesCached = messages;
                 scope.trashed = messagesCached.some(({ LabelIDs = [] }) => _.contains(LabelIDs, CONSTANTS.MAILBOX_IDENTIFIERS.trash));
@@ -371,7 +371,9 @@ angular.module('proton.conversation')
                     return back();
                 }
 
-                if (conversation.LabelIDs.indexOf(loc) > -1 || $state.includes('secured.search.**')) {
+                const label = _.findWhere(conversation.Labels, { ID: labelID });
+
+                if (label || $state.includes('secured.search.**')) {
                     _.extend(scope.conversation, conversation);
                 } else {
                     return back();

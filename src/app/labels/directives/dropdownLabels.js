@@ -8,8 +8,12 @@ angular.module('proton.labels')
     const notifSuccess = (message = '') => notify({ message, classes: 'notification-success' });
     const close = () => $rootScope.$emit('closeDropdown');
 
-    const mapLabelsMessage = (messages = []) => {
-        return _.reduce(messages, (acc, { LabelIDs = [] }) => {
+    const mapLabelsMessage = (elements = []) => {
+        return _.reduce(elements, (acc, { LabelIDs = [], Labels = [] }) => {
+            if (Labels.length) {
+                Labels.forEach(({ ID }) => (!acc[ID] ? acc[ID] = 1 : acc[ID]++));
+                return acc;
+            }
             LabelIDs.forEach((id) => (!acc[id] ? acc[id] = 1 : acc[id]++));
             return acc;
         }, {});

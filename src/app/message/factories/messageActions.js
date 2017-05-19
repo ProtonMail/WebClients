@@ -76,14 +76,12 @@ angular.module('proton.message')
 
         // Message actions
         function move({ ids, labelID }) {
-            const exclusiveLabels = labelsModel.ids('folders');
-            const folderIDs = [
-                CONSTANTS.MAILBOX_IDENTIFIERS.inbox,
-                CONSTANTS.MAILBOX_IDENTIFIERS.trash,
-                CONSTANTS.MAILBOX_IDENTIFIERS.spam,
-                CONSTANTS.MAILBOX_IDENTIFIERS.archive
-            ].concat(exclusiveLabels);
+            const basicFolders = [CONSTANTS.MAILBOX_IDENTIFIERS.inbox, CONSTANTS.MAILBOX_IDENTIFIERS.trash, CONSTANTS.MAILBOX_IDENTIFIERS.spam, CONSTANTS.MAILBOX_IDENTIFIERS.archive];
+            const folders = labelsModel.ids('folders');
+            const labels = labelsModel.ids('labels');
             const toTrash = labelID === CONSTANTS.MAILBOX_IDENTIFIERS.trash;
+            const toSpam = labelID === CONSTANTS.MAILBOX_IDENTIFIERS.spam;
+            const folderIDs = (toSpam || toTrash) ? basicFolders.concat(folders).concat(labels) : basicFolders.concat(folders);
             const events = _.chain(ids)
                 .map((id) => {
                     const message = cache.getMessageCached(id) || {};
@@ -121,12 +119,13 @@ angular.module('proton.message')
                     acc.push(event);
 
                     if (conversation && Array.isArray(messages)) {
-                        const labelIDs = _.chain(messages)
-                            .reduce((acc, { ID, LabelIDs }) => {
+                        const Labels = _.chain(messages)
+                            .reduce((acc, { ID, LabelIDs = [] }) => {
                                 const list = eventList[ID] ? eventList[ID].Message.LabelIDs : LabelIDs;
                                 return acc.concat(list);
                             }, [])
                             .uniq()
+                            .map((ID) => ({ ID }))
                             .value();
 
                         acc.push({
@@ -134,7 +133,7 @@ angular.module('proton.message')
                             ID: conversation.ID,
                             Conversation: {
                                 ID: conversation.ID,
-                                LabelIDs: labelIDs
+                                Labels
                             }
                         });
                     }
@@ -175,7 +174,7 @@ angular.module('proton.message')
             // Generate event for the message
             events.push({ Action: 3, ID: messageID, Message: { ID: messageID, LabelIDsRemoved: [labelID] } });
 
-            const LabelIDs = _.chain(messages)
+            const Labels = _.chain(messages)
                 .reduce((acc, { ID, LabelIDs = [] }) => {
                     if (ID === messageID) {
                         return acc.concat(LabelIDs.filter((id) => id !== labelID));
@@ -183,6 +182,7 @@ angular.module('proton.message')
                     return acc.concat(LabelIDs);
                 }, [])
                 .uniq()
+                .map((ID) => ({ ID }))
                 .value();
 
             events.push({
@@ -190,7 +190,7 @@ angular.module('proton.message')
                 ID: conversationID,
                 Conversation: {
                     ID: conversationID,
-                    LabelIDs
+                    Labels
                 }
             });
 
@@ -214,36 +214,37 @@ angular.module('proton.message')
             const ids = _.map(messages, ({ ID }) => ID);
 
             const process = (events) => {
-                cache.events(events).then(() => {
-                    const getLabelsIDS = ({ ConversationID }) => {
-                        return _.chain(cache.queryMessagesCached(ConversationID) || [])
-                            .reduce((acc, { LabelIDs = [] }) => acc.concat(LabelIDs), [])
-                            .uniq()
-                            .value();
-                    };
+                cache.events(events)
+                    .then(() => {
+                        const getLabels = ({ ID }) => {
+                            return _.chain(cache.queryMessagesCached(ID) || [])
+                                .reduce((acc, { LabelIDs = [] }) => acc.concat(LabelIDs), [])
+                                .uniq()
+                                .map((ID) => ({ ID }))
+                                .value();
+                        };
 
-                    const events2 = _.chain((messages))
-                        .map((message) => ({
-                            message,
-                            conversation: cache.getConversationCached(message.ConversationID)
-                        }))
-                        .filter(({ conversation }) => conversation)
-                        .map(({ message, conversation }) => {
-                            conversation.LabelIDs = getLabelsIDS(message);
-                            return {
-                                Action: 3,
-                                ID: conversation.ID,
-                                Conversation: conversation
-                            };
-                        })
-                        .value();
+                        const events2 = _.reduce(messages, (acc, { ConversationID }) => {
+                            const conversation = cache.getConversationCached(ConversationID);
 
-                    cache.events(events2);
+                            if (conversation) {
+                                conversation.Labels = getLabels(conversation);
+                                acc.push({
+                                    Action: 3,
+                                    ID: conversation.ID,
+                                    Conversation: conversation
+                                });
+                            }
 
-                    if (alsoArchive === true) {
-                        messageApi.archive({ IDs: ids }); // Send request to archive conversations
-                    }
-                });
+                            return acc;
+                        }, []);
+
+                        cache.events(events2);
+
+                        if (alsoArchive === true) {
+                            messageApi.archive({ IDs: ids }); // Send request to archive conversations
+                        }
+                    });
             };
 
             const filterLabelsID = (list = [], cb = angular.noop) => {
@@ -541,10 +542,11 @@ angular.module('proton.message')
                         events.push({ Action: 0, ID: conversation.ID });
                     } else if (conversation.NumMessages > 1) {
                         const messages = cache.queryMessagesCached(conversation.ID);
-                        const labelIDs = _.chain(messages)
+                        const Labels = _.chain(messages)
                             .filter(({ ID }) => ID !== id)
                             .reduce((acc, { LabelIDs = [] }) => acc.concat(LabelIDs), [])
                             .uniq()
+                            .map((ID) => ({ ID }))
                             .value();
 
                         events.push({
@@ -552,7 +554,7 @@ angular.module('proton.message')
                             ID: conversation.ID,
                             Conversation: {
                                 ID: conversation.ID,
-                                LabelIDs: labelIDs, // Forge LabelIDs
+                                Labels,
                                 NumMessages: conversation.NumMessages - 1 // Decrease the number of message
                             }
                         });

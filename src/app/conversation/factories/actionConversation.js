@@ -57,8 +57,8 @@ angular.module('proton.conversation')
      * @param {Array} ids
      */
     function unread(ids = []) {
-        const currentLocation = tools.currentLocation();
-        const promise = conversationApi.unread(ids, currentLocation);
+        const labelID = tools.currentLocation();
+        const promise = conversationApi.unread(ids, labelID);
         cache.addToDispatcher(promise);
 
         if (!tools.cacheContext()) {
@@ -305,17 +305,17 @@ angular.module('proton.conversation')
      * @param {String} labelID
      */
     function move(conversationIDs = [], labelID = '') {
-        const exclusiveLabels = labelsModel.ids('folders');
+        const basicFolders = [MAILBOX_IDENTIFIERS.inbox, MAILBOX_IDENTIFIERS.trash, MAILBOX_IDENTIFIERS.spam, MAILBOX_IDENTIFIERS.archive];
+        const folders = labelsModel.ids('folders');
+        const labels = labelsModel.ids('labels');
+        const toTrash = labelID === MAILBOX_IDENTIFIERS.trash;
+        const toSpam = labelID === MAILBOX_IDENTIFIERS.spam;
+        const toInbox = labelID === MAILBOX_IDENTIFIERS.inbox;
         const promise = conversationApi.labels(labelID, 1, conversationIDs);
         const folderName = getFolderNameTranslated(labelID);
         const successMessage = gettextCatalog.getPlural(conversationIDs.length, 'Conversation moved to', 'Conversations moved to', null);
         const displaySuccess = () => notify({ message: `${successMessage} ${folderName}`, classes: 'notification-success' });
-        const folderIDs = [
-            MAILBOX_IDENTIFIERS.inbox,
-            MAILBOX_IDENTIFIERS.trash,
-            MAILBOX_IDENTIFIERS.spam,
-            MAILBOX_IDENTIFIERS.archive
-        ].concat(exclusiveLabels);
+        const folderIDs = (toSpam || toTrash) ? basicFolders.concat(folders).concat(labels) : basicFolders.concat(folders);
 
         cache.addToDispatcher(promise);
 
@@ -327,18 +327,19 @@ angular.module('proton.conversation')
         }
 
         const labelIDsAdded = [labelID];
-        const toTrash = labelID === MAILBOX_IDENTIFIERS.trash;
-        const toInbox = labelID === MAILBOX_IDENTIFIERS.inbox;
 
         // Generate cache events
         const events = _.reduce(conversationIDs, (acc, ID) => {
             const conversation = cache.getConversationCached(ID);
             const messages = cache.queryMessagesCached(ID);
-            const labelIDsRemoved = conversation.LabelIDs.filter((labelID) => folderIDs.indexOf(labelID) > -1);
+            const labelIDsRemoved = _.chain(conversation.Labels)
+                .filter(({ ID }) => _.contains(folderIDs, ID))
+                .map(({ ID }) => ID)
+                .value();
 
-            _.each(messages, ({ Type, LabelIDs, ID, IsRead }) => {
+            _.each(messages, ({ Type, LabelIDs = [], ID, IsRead }) => {
                 const copyLabelIDsAdded = labelIDsAdded.slice(); // Copy
-                const copyLabelIDsRemoved = LabelIDs.filter((labelID) => folderIDs.indexOf(labelID) > -1);
+                const copyLabelIDsRemoved = _.filter(LabelIDs, (labelID) => _.contains(folderIDs, labelID));
 
                 if (toInbox) {
                     /**

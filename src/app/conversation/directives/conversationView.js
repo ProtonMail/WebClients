@@ -14,9 +14,9 @@ angular.module('proton.conversation')
 
         cache.getConversation(conversationID)
             .then((conversation) => {
-                const { LabelIDs = [] } = conversation;
+                const label = _.findWhere(conversation.Labels, { ID });
 
-                if (_.contains(LabelIDs, ID) || $state.includes('secured.search.**')) {
+                if (label || $state.includes('secured.search.**')) {
                     return scope.conversation = conversation;
                 }
 
