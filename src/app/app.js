@@ -119,6 +119,12 @@ angular.module('proton', [
     const locale = getLocale();
     gettextCatalog.debugPrefix = '';
     gettextCatalog.setCurrentLanguage(locale);
+
+    // If the translation is not available it seems to crash (CPU 100%)
+    if (CONFIG.translations.indexOf(locale) !== -1) {
+        gettextCatalog.loadRemote(`/i18n/${locale}.json`);
+    }
+
     gettextCatalog.debug = CONFIG.debug || false;
     moment.locale(locale);
 })

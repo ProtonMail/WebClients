@@ -1,5 +1,7 @@
 var _ = require('lodash');
+var fs = require('fs');
 var util = require('util');
+var path = require('path');
 var appVersion = '3.8.8';
 var apiVersion = '1';
 var dateVersion = new Date().toDateString();
@@ -18,6 +20,26 @@ var API_TARGETS = {
 };
 var autoprefixer = require('autoprefixer');
 var browserslist = require('./browserslist');
+
+const getCountry = (lang) => {
+    const key = (lang === 'en') ? 'us' : lang;
+    return key.toUpperCase();
+};
+
+
+/**
+ * Create a list of available translations for the applications
+ * Format: xx_XX
+ * @return {Array}
+ */
+const listAvailableTranslations = () => {
+    return fs.readdirSync(path.relative(__dirname, './po'))
+        .filter((file) => path.extname(file) === '.po')
+        .map((file) => path.basename(file, '.po'))
+        .map((name) => `${name}_${getCountry(name)}`);
+};
+
+const TRANSLATIONS_APP = listAvailableTranslations();
 
 
 module.exports = function(grunt) {
@@ -103,7 +125,8 @@ module.exports = function(grunt) {
                         clientID: clientID,
                         clientSecret: clientSecret,
                         articleLink: grunt.option('article') || 'https://protonmail.com/blog/protonmail-v3-8-release-notes/',
-                        year: (new Date()).getFullYear()
+                        year: (new Date()).getFullYear(),
+                        translations: TRANSLATIONS_APP
                     }
                 }
             },
@@ -117,7 +140,8 @@ module.exports = function(grunt) {
                         date_version: dateVersion,
                         clientID: clientID,
                         clientSecret: clientSecret,
-                        year: (new Date()).getFullYear()
+                        year: (new Date()).getFullYear(),
+                        translations: TRANSLATIONS_APP
                     }
                 }
             }
@@ -207,6 +231,14 @@ module.exports = function(grunt) {
         },
 
         copy: {
+            i18n: {
+                files: [{
+                    src: ["*.json"],
+                    dest: "<%= build_dir %>/i18n/",
+                    cwd: "src/i18n",
+                    expand: true
+                }]
+            },
             build_app_assets: {
                 files: [{
                     src: ["**"],
@@ -522,7 +554,7 @@ module.exports = function(grunt) {
                 command() {
 
                     if (isDistRelease()) {
-                        return  'npm run i18n';
+                        return 'npm run i18n';
                     }
                     return 'echo "no i18n for dev/blue etc."';
                 }
@@ -552,11 +584,19 @@ module.exports = function(grunt) {
         nggettext_compile: {
             all: {
                 options: {
-                    module: 'proton'
+                    format: 'json'
                 },
-                files: {
-                    'src/app/translations.js': ['po/*.po']
-                }
+                files: [{
+                    expand: true,
+                    src: 'po/*.po',
+                    flatten: true,
+                    dest: 'src/i18n/',
+                    ext: '.json',
+                    rename(dest, matchedSrcPath) {
+                        const [ lang, ext ] = matchedSrcPath.split('.');
+                        return path.join(dest, `${lang}_${getCountry(lang)}.${ext}`);
+                    }
+                }]
             }
         }
     };
@@ -586,6 +626,7 @@ module.exports = function(grunt) {
         'build',
         'copy:compile_assets', // copy assets
         'copy:compile_htaccess', // copy htaccess file
+        'copy:i18n',
         'cssmin', // minify CSS
         'concat:compile_js', // concat JS
         'uglify', // minify JS
@@ -608,6 +649,7 @@ module.exports = function(grunt) {
         'copy:build_vendorjs',
         'copy:build_external',
         'copy:build_htaccess',
+        'copy:i18n',
         'ngAnnotate',
         'babel:dist',
         'index:build'
