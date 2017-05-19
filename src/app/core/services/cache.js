@@ -862,15 +862,19 @@ angular.module('proton.core')
             return _.uniq(filtered.concat(toAdd), ({ ID }) => ID);
         }
 
-        return _.map(Labels, (label) => {
-            const oldLabel = _.findWhere(old.Labels || [], { ID: label.ID });
+        if (Labels.length) {
+            return _.map(Labels, (label) => {
+                const oldLabel = _.findWhere(old.Labels || [], { ID: label.ID });
 
-            if (oldLabel) {
-                return _.extend(oldLabel, label);
-            }
+                if (oldLabel) {
+                    return _.extend(oldLabel, label);
+                }
 
-            return label;
-        });
+                return label;
+            });
+        }
+
+        return old.Labels || [];
     }
 
     /**
