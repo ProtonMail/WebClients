@@ -861,7 +861,16 @@ angular.module('proton.core')
             const filtered = _.filter(old.Labels, ({ ID }) => !_.contains(LabelIDsRemoved, ID));
             return _.uniq(filtered.concat(toAdd), ({ ID }) => ID);
         }
-        return _.uniq(Labels.concat(old.Labels || []), ({ ID }) => ID);
+
+        return _.map(Labels, (label) => {
+            const oldLabel = _.findWhere(old.Labels || [], { ID: label.ID });
+
+            if (oldLabel) {
+                return _.extend(oldLabel, label);
+            }
+
+            return label;
+        });
     }
 
     /**

@@ -586,7 +586,7 @@ angular.module('proton.message')
 
         return {
             move,
-            detachLabel, addLabel,
+            addLabel,
             star, unstar,
             read, unread,
             destroy, discardMessage
