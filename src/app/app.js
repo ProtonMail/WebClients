@@ -95,8 +95,12 @@ angular.module('proton', [
      * @return {String}        xx_XX
      */
     const formatLocale = (locale) => {
-        return (locale || window.navigator.userLanguage || window.navigator.language)
-            .replace('-', '_');
+        const value = (locale || window.navigator.userLanguage || window.navigator.language).replace('-', '_');
+
+        if (value.length === 2) {
+            return `${value}_${value.toUpperCase()}`;
+        }
+        return value;
     };
 
     const getLocale = () => {
