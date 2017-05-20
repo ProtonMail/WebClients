@@ -463,9 +463,13 @@ angular.module('proton.core')
 
         messagesCached = _.filter(messagesCached, ({ LabelIDs = [] }) => LabelIDs.indexOf(labelID) === -1);
 
+        cacheCounters.updateMessage(labelID, 0);
+
         _.each(conversationsCached, (conversation) => {
             conversation.Labels = _.filter(conversation.Labels, ({ ID }) => ID !== labelID);
         });
+
+        cacheCounters.updateConversation(labelID, 0);
 
         dispatchElements('refresh');
     };
