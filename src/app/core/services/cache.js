@@ -459,16 +459,13 @@ angular.module('proton.core')
     };
 
     api.empty = (mailbox) => {
-        const loc = CONSTANTS.MAILBOX_IDENTIFIERS[mailbox];
+        const labelID = CONSTANTS.MAILBOX_IDENTIFIERS[mailbox];
 
-        for (let index = conversationsCached.length - 1; index >= 0; index--) {
-            const { Labels = [] } = conversationsCached[index] || {};
-            const label = _.findWhere(Labels, { ID: loc });
+        messagesCached = _.filter(messagesCached, ({ LabelIDs = [] }) => LabelIDs.indexOf(labelID) === -1);
 
-            if (label) {
-                conversationsCached.splice(index, 1);
-            }
-        }
+        _.each(conversationsCached, (conversation) => {
+            conversation.Labels = _.filter(conversation.Labels, ({ ID }) => ID !== labelID);
+        });
 
         dispatchElements('refresh');
     };
