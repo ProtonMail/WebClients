@@ -72,6 +72,7 @@ angular.module('proton.conversation')
 
             if (messages.length) {
                 const { ID } = _.chain(messages)
+                    .filter(({ LabelIDs = [] }) => _.contains(LabelIDs, labelID))
                     .sortBy(({ Time }) => Time)
                     .last()
                     .value();
