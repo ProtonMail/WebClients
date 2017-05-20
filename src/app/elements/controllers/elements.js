@@ -729,6 +729,8 @@ angular.module('proton.elements')
         $('.pm_dropdown').removeClass('active');
     };
 
+    $scope.displayPaginator = () => !$state.params.id || authentication.user.ViewLayout === 0;
+
     /**
      * Emulate labels array for the drag and drop
      * @param {String} labelID
