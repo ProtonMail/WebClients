@@ -506,16 +506,20 @@ angular.module('proton.message')
                     .uniq()
                     .map((id) => cache.getConversationCached(id))
                     .filter(Boolean)
-                    .each((conversation) => {
-                        const messages = cache.queryMessagesCached(conversation.ID);
-                        const filtered = _.filter(messages, ({ ID, LabelIDs }) => _.contains(messageIDs, ID) && _.contains(LabelIDs, currentLocation));
+                    .each(({ ID, Labels = [] }) => {
+                        const messages = cache.queryMessagesCached(ID) || [];
 
                         events.push({
                             Action: 3,
-                            ID: conversation.ID,
+                            ID,
                             Conversation: {
-                                ID: conversation.ID,
-                                ContextNumUnread: conversation.ContextNumUnread + filtered.length
+                                ID,
+                                Labels: _.map(Labels, (label) => {
+                                    if (label.ID === currentLocation) {
+                                        label.ContextNumUnread = _.filter(messages, ({ LabelIDs = [], IsRead }) => _.contains(LabelIDs, currentLocation) && IsRead === 0).length;
+                                    }
+                                    return label;
+                                })
                             }
                         });
                     });
