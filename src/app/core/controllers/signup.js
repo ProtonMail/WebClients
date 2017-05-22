@@ -30,6 +30,7 @@ angular.module('proton.core')
     setupKeys,
     tools,
     url,
+    settingsApi,
     User
 ) => {
     let childWindow;
@@ -208,6 +209,7 @@ angular.module('proton.core')
         doCreateUser()
         .then(doLogUserIn)
         .then(doAccountSetup)
+        .then(setUserLanguage)
         .then(doGetUserInfo)
         .then(finishRedirect)
         .catch((err) => {
@@ -423,6 +425,14 @@ angular.module('proton.core')
         }
 
         return User.create(params, accountCopy.loginPassword);
+    }
+
+    function setUserLanguage(data) {
+        if ($location.search().language) {
+            return settingsApi.setLanguage({ Language: DOMPurify.sanitize($location.search().language) })
+                .then(() => data);
+        }
+        return data;
     }
 
     function doLogUserIn(response) {
