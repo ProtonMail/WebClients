@@ -6,7 +6,7 @@ angular.module('proton.authentication')
     const buildNotifs = () => {
         const gettextCatalog = $injector.get('gettextCatalog');
         return {
-            newVersion: gettextCatalog.getString('A new version of ProtonMail is available. Please refresh this page and then logout and log back in to automatically update.'),
+            newVersion: gettextCatalog.getString('A new version of ProtonMail is available. Please refresh this page.'),
             nonIntegerVersion: gettextCatalog.getString('Non-integer API version requested.', null, 'Error'),
             unsupported: gettextCatalog.getString('Unsupported API version.', null, 'Error'),
             offline: gettextCatalog.getString('The ProtonMail API is offline: ', null, 'Error'),
