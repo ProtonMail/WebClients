@@ -115,6 +115,11 @@
           flex-direction: column;
         }
 
+        .angular-squire-wrapper {
+            overflow: auto;
+            -webkit-overflow-scrolling: touch;
+        }
+
         .composeEditor{
             position: relative; /* dropzone parent which is absolute */
         }
