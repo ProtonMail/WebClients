@@ -431,7 +431,7 @@ angular.module('proton.message')
                 .map((id) => cache.getConversationCached(id))
                 .filter(Boolean)
                 .each(({ ID, Labels = [] }) => {
-                    const messages = cache.queryMessagesCached(ID) || [];
+                    const messages = _.filter(cache.queryMessagesCached(ID) || [], ({ ID, LabelIDs }) => _.contains(messageIDs, ID) && _.contains(LabelIDs, currentLocation));
 
                     events.push({
                         Action: 3,
@@ -440,7 +440,7 @@ angular.module('proton.message')
                             ID,
                             Labels: _.map(Labels, (label) => {
                                 if (label.ID === currentLocation) {
-                                    label.ContextNumUnread = _.filter(messages, ({ LabelIDs = [], ID }) => _.contains(messageIDs, ID) && _.contains(LabelIDs, currentLocation)).length;
+                                    label.ContextNumUnread -= messages.length;
                                 }
                                 return label;
                             })
@@ -511,7 +511,7 @@ angular.module('proton.message')
                     .map((id) => cache.getConversationCached(id))
                     .filter(Boolean)
                     .each(({ ID, Labels = [] }) => {
-                        const messages = cache.queryMessagesCached(ID) || [];
+                        const messages = _.filter(cache.queryMessagesCached(ID) || [], ({ ID, LabelIDs }) => _.contains(messageIDs, ID) && _.contains(LabelIDs, currentLocation));
 
                         events.push({
                             Action: 3,
@@ -520,7 +520,7 @@ angular.module('proton.message')
                                 ID,
                                 Labels: _.map(Labels, (label) => {
                                     if (label.ID === currentLocation) {
-                                        label.ContextNumUnread = _.filter(messages, ({ LabelIDs = [], ID }) => _.contains(messageIDs, ID) && _.contains(LabelIDs, currentLocation)).length;
+                                        label.ContextNumUnread += messages.length;
                                     }
                                     return label;
                                 })

@@ -57,8 +57,8 @@ angular.module('proton.conversation')
      * @param {Array} ids
      */
     function unread(ids = []) {
-        const labelID = tools.currentLocation();
-        const promise = conversationApi.unread(ids, labelID);
+        const currentLocation = tools.currentLocation();
+        const promise = conversationApi.unread(ids, currentLocation);
         cache.addToDispatcher(promise);
 
         if (!tools.cacheContext()) {
@@ -68,11 +68,11 @@ angular.module('proton.conversation')
 
         const events = ids.reduce((acc, ID) => {
             const messages = cache.queryMessagesCached(ID);
-            const conversation = cache.getConversationCached(ID);
+            const { Labels = [] } = cache.getConversationCached(ID);
 
             if (messages.length) {
                 const { ID } = _.chain(messages)
-                    .filter(({ LabelIDs = [] }) => _.contains(LabelIDs, labelID))
+                    .filter(({ LabelIDs = [] }) => _.contains(LabelIDs, currentLocation))
                     .sortBy(({ Time }) => Time)
                     .last()
                     .value();
@@ -84,7 +84,12 @@ angular.module('proton.conversation')
 
             acc.push({
                 Action: 3, ID,
-                Conversation: { ID, ContextNumUnread: conversation.ContextNumUnread + 1 } // we don't care about the correct value for ContextNumUnread, the API will fix it with the next event
+                Conversation: { ID, Labels: _.map(Labels, (label) => {
+                    if (label.ID === currentLocation) {
+                        label.ContextNumUnread++; // FIXME calculate the correct number
+                    }
+                    return label;
+                }) }
             });
             return acc;
         }, []);
@@ -97,6 +102,7 @@ angular.module('proton.conversation')
      * @param {Array} ids
      */
     function read(ids = []) {
+        const currentLocation = tools.currentLocation();
         const promise = conversationApi.read(ids);
         cache.addToDispatcher(promise);
 
@@ -106,6 +112,8 @@ angular.module('proton.conversation')
         }
 
         const events = ids.reduce((acc, ID) => {
+            const { Labels = [] } = cache.getConversationCached(ID);
+
             _.each(cache.queryMessagesCached(ID), ({ ID }) => {
                 acc.push({
                     ID, Action: 3,
@@ -115,7 +123,12 @@ angular.module('proton.conversation')
 
             acc.push({
                 Action: 3, ID,
-                Conversation: { ID, ContextNumUnread: 0 }
+                Conversation: { ID, Labels: _.map(Labels, (label) => {
+                    if (label.ID === currentLocation) {
+                        label.ContextNumUnread = 0;
+                    }
+                    return label;
+                }) }
             });
             return acc;
         }, []);
