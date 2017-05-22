@@ -257,6 +257,7 @@ angular.module('proton.utils')
 
         function manageDesktopNotifications(messages) {
             if (angular.isDefined(messages)) {
+                const threadingIsOff = authentication.user.ViewMode === CONSTANTS.MESSAGE_VIEW_MODE;
                 _.each(messages, (message) => {
                     if (message.Action === 1 && message.Message.IsRead === 0 && message.Message.LabelIDs.indexOf(CONSTANTS.MAILBOX_IDENTIFIERS.inbox) !== -1) {
                         const title = gettextCatalog.getString('New mail from', null, 'Info') + ' ' + message.Message.Sender.Name || message.Message.SenderAddress;
@@ -266,6 +267,13 @@ angular.module('proton.utils')
                             icon: '/assets/img/notification-badge.gif',
                             onClick() {
                                 window.focus();
+
+                                if (threadingIsOff) {
+                                    return $state.go('secured.inbox.element', { id: message.Message.ID });
+                                }
+
+                                $state.go('secured.inbox.element', { id: message.Message.ConversationID, messageID: message.Message.ID });
+
                             }
                         });
                     }
