@@ -1627,7 +1627,7 @@ msgctxt "Info"
 msgid "Conversation Grouping automatically groups messages in the same conversation together."
 msgstr ""
 
-#: src/app/conversation/factories/actionConversation.js:316
+#: src/app/conversation/factories/actionConversation.js:317
 msgid "Conversation moved to"
 msgid_plural "Conversations moved to"
 msgstr[0] ""
@@ -1910,13 +1910,13 @@ msgctxt "atom text loader"
 msgid "Decrypting"
 msgstr ""
 
-#: src/app/templates/message/message.tpl.html:217
+#: src/app/templates/message/message.tpl.html:216
 #: src/app/templates/views/outside.reply.tpl.html:25
 msgctxt "Error"
 msgid "Decryption error"
 msgstr ""
 
-#: src/app/templates/message/message.tpl.html:218
+#: src/app/templates/message/message.tpl.html:217
 #: src/app/templates/views/outside.reply.tpl.html:26
 msgctxt "Error"
 msgid "Decryption of this message's encryption content failed."
@@ -1947,7 +1947,7 @@ msgstr ""
 
 #. contacts toolbar menu option
 #: src/app/templates/elements/moveElement.tpl.html:37
-#: src/app/templates/message/message.tpl.html:169
+#: src/app/templates/message/message.tpl.html:168
 #: src/app/templates/modals/deleteAccount.tpl.html:29
 #: src/app/templates/partials/toolbar-mobile.tpl.html:50
 #: src/app/templates/views/contacts.tpl.html:24
@@ -2470,7 +2470,7 @@ msgstr ""
 msgid "Email verification"
 msgstr ""
 
-#: src/app/settings/controllers/account.js:356
+#: src/app/settings/controllers/account.js:354
 msgctxt "Success"
 msgid "Emailing preference updated"
 msgstr ""
@@ -2613,7 +2613,7 @@ msgstr ""
 msgid "ends with"
 msgstr ""
 
-#: src/app/settings/controllers/account.js:38
+#: src/app/settings/controllers/account.js:37
 msgid "English"
 msgstr ""
 
@@ -3061,7 +3061,7 @@ msgctxt "Info"
 msgid "Free ProtonMail accounts are limited to 1 custom filter. Please <a ui-sref=\"secured.dashboard({scroll: true})\">upgrade</a> to get unlimited filters."
 msgstr ""
 
-#: src/app/settings/controllers/account.js:39
+#: src/app/settings/controllers/account.js:38
 msgid "French"
 msgstr ""
 
@@ -3132,7 +3132,7 @@ msgstr ""
 msgid "Generating new keys"
 msgstr ""
 
-#: src/app/settings/controllers/account.js:40
+#: src/app/settings/controllers/account.js:39
 msgid "German"
 msgstr ""
 
@@ -3190,7 +3190,7 @@ msgctxt "Action"
 msgid "Hide"
 msgstr ""
 
-#: src/app/templates/message/message.tpl.html:196
+#: src/app/templates/message/message.tpl.html:195
 msgctxt "Action"
 msgid "Hide details"
 msgstr ""
@@ -3253,7 +3253,7 @@ msgctxt "Title"
 msgid "Hotkeys"
 msgstr ""
 
-#: src/app/settings/controllers/account.js:326
+#: src/app/settings/controllers/account.js:324
 msgid "Hotkeys preferences updated"
 msgstr ""
 
@@ -3286,7 +3286,7 @@ msgctxt "Title"
 msgid "Identity"
 msgstr ""
 
-#: src/app/settings/controllers/account.js:217
+#: src/app/settings/controllers/account.js:215
 msgid "Identity saved"
 msgstr ""
 
@@ -3360,8 +3360,8 @@ msgctxt "Info"
 msgid "If you wish to delete in order to combine this account with another one, do NOT delete your account. You need to instead follow"
 msgstr ""
 
-#: src/app/settings/controllers/account.js:288
-#: src/app/settings/controllers/account.js:298
+#: src/app/settings/controllers/account.js:286
+#: src/app/settings/controllers/account.js:296
 msgid "Image preferences updated"
 msgstr ""
 
@@ -4042,13 +4042,13 @@ msgctxt "Action"
 msgid "Mark as read / Mark as unread"
 msgstr ""
 
-#: src/app/templates/message/message.tpl.html:163
+#: src/app/templates/message/message.tpl.html:162
 msgctxt "Action"
 msgid "Mark as spam"
 msgstr ""
 
 #: src/app/templates/directives/ui/readUnread.tpl.html:11
-#: src/app/templates/message/message.tpl.html:156
+#: src/app/templates/message/message.tpl.html:155
 #: src/app/templates/partials/toolbar-mobile.tpl.html:17
 msgctxt "Action"
 msgid "Mark as unread"
@@ -4213,7 +4213,7 @@ msgid "Move to archive"
 msgstr ""
 
 #: src/app/templates/elements/moveElement.tpl.html:19
-#: src/app/templates/message/message.tpl.html:146
+#: src/app/templates/message/message.tpl.html:145
 #: src/app/templates/partials/toolbar-mobile.tpl.html:38
 msgctxt "Action"
 msgid "Move to inbox"
@@ -4226,7 +4226,7 @@ msgid "Move to spam"
 msgstr ""
 
 #: src/app/templates/elements/moveElement.tpl.html:13
-#: src/app/templates/message/message.tpl.html:152
+#: src/app/templates/message/message.tpl.html:151
 #: src/app/templates/partials/toolbar-mobile.tpl.html:34
 msgctxt "Action"
 msgid "Move to trash"
@@ -4590,7 +4590,7 @@ msgctxt "Title"
 msgid "Operating system"
 msgstr ""
 
-#: src/app/settings/controllers/account.js:153
+#: src/app/settings/controllers/account.js:151
 msgid "Operation timed out for security reasons, please try again"
 msgstr ""
 
@@ -5046,9 +5046,9 @@ msgstr ""
 msgid "Popup"
 msgstr ""
 
-#: src/app/settings/controllers/account.js:126
-#: src/app/settings/controllers/account.js:140
-#: src/app/settings/controllers/account.js:277
+#: src/app/settings/controllers/account.js:124
+#: src/app/settings/controllers/account.js:138
+#: src/app/settings/controllers/account.js:275
 msgid "Preference saved"
 msgstr ""
 
@@ -5078,7 +5078,7 @@ msgstr ""
 msgid "Primary Admin"
 msgstr ""
 
-#: src/app/templates/message/message.tpl.html:188
+#: src/app/templates/message/message.tpl.html:187
 #: src/app/templates/views/pgp.tpl.html:10
 msgctxt "Action"
 msgid "Print"
@@ -5308,7 +5308,7 @@ msgctxt "Title"
 msgid "Recovery/notification email"
 msgstr ""
 
-#: src/app/settings/controllers/account.js:109
+#: src/app/settings/controllers/account.js:107
 msgid "Recovery/Notification email saved"
 msgstr ""
 
@@ -5542,7 +5542,7 @@ msgstr ""
 msgid "Row"
 msgstr ""
 
-#: src/app/settings/controllers/account.js:41
+#: src/app/settings/controllers/account.js:40
 msgid "Russian"
 msgstr ""
 
@@ -5879,7 +5879,7 @@ msgctxt "Action"
 msgid "Show all"
 msgstr ""
 
-#: src/app/templates/message/message.tpl.html:195
+#: src/app/templates/message/message.tpl.html:194
 msgctxt "Action"
 msgid "Show details"
 msgstr ""
@@ -5940,7 +5940,7 @@ msgctxt "Title"
 msgid "Signature"
 msgstr ""
 
-#: src/app/settings/controllers/account.js:261
+#: src/app/settings/controllers/account.js:259
 msgctxt "Info"
 msgid "Signature updated"
 msgstr ""
@@ -6325,7 +6325,7 @@ msgid "This member is currently responsible for payments for your organization. 
 msgstr ""
 
 #: src/app/templates/composer/composerExpiration.tpl.html:9
-#: src/app/templates/message/message.tpl.html:204
+#: src/app/templates/message/message.tpl.html:203
 msgid "This message will expire in"
 msgstr ""
 
@@ -6469,7 +6469,7 @@ msgctxt "Action"
 msgid "Try again"
 msgstr ""
 
-#: src/app/settings/controllers/account.js:42
+#: src/app/settings/controllers/account.js:41
 msgid "Turkish"
 msgstr ""
 
@@ -6533,8 +6533,8 @@ msgid "Unable to reset theme"
 msgstr ""
 
 #: src/app/keys/factories/changeMailboxPassword.js:27
-#: src/app/settings/controllers/account.js:226
-#: src/app/settings/controllers/account.js:230
+#: src/app/settings/controllers/account.js:224
+#: src/app/settings/controllers/account.js:228
 #: src/app/settings/controllers/appearance.js:50
 #: src/app/settings/controllers/filters.js:62
 #: src/app/settings/controllers/identities.js:488
@@ -6544,7 +6544,7 @@ msgctxt "Error"
 msgid "Unable to save your changes, please try again."
 msgstr ""
 
-#: src/app/settings/controllers/account.js:223
+#: src/app/settings/controllers/account.js:221
 msgctxt "Error"
 msgid "Unable to save your changes, your signature is too large."
 msgstr ""
@@ -6872,7 +6872,7 @@ msgstr ""
 msgid "Version"
 msgstr ""
 
-#: src/app/templates/message/message.tpl.html:183
+#: src/app/templates/message/message.tpl.html:182
 msgctxt "Action"
 msgid "View headers"
 msgstr ""
@@ -6887,17 +6887,17 @@ msgctxt "Info"
 msgid "View mode saved"
 msgstr ""
 
-#: src/app/templates/message/message.tpl.html:184
+#: src/app/templates/message/message.tpl.html:183
 msgctxt "Action"
 msgid "View original"
 msgstr ""
 
-#: src/app/templates/message/message.tpl.html:178
+#: src/app/templates/message/message.tpl.html:177
 msgctxt "Action"
 msgid "View rendered HTML"
 msgstr ""
 
-#: src/app/templates/message/message.tpl.html:174
+#: src/app/templates/message/message.tpl.html:173
 msgctxt "Action"
 msgid "View source code"
 msgstr ""
@@ -7105,7 +7105,7 @@ msgctxt "Info"
 msgid "You can enable authentication logging to see when your account is accessed, and from which IP. We will record the IP address that accesses the account and the time, as well as failed attempts."
 msgstr ""
 
-#: src/app/settings/controllers/account.js:90
+#: src/app/settings/controllers/account.js:88
 msgctxt "Info"
 msgid "You have a new email"
 msgstr ""
@@ -7208,8 +7208,8 @@ msgid "You're upgrading your account. Once we successfully process payment, we'l
 msgstr ""
 
 #: src/app/composer/controllers/composeMessage.js:339
-#: src/app/routes.js:575
-#: src/app/routes.js:909
+#: src/app/routes.js:579
+#: src/app/routes.js:913
 #: src/app/templates/views/payments.tpl.html:64
 msgctxt "Info"
 msgid "Your account currently has an overdue invoice. Please pay all unpaid invoices."
