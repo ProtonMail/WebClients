@@ -176,7 +176,7 @@ message-view {
                 background: $white !important;
             }
             .time::after {
-                background: $white !important;
+                background: linear-gradient(to right,  rgba($white,0) 0%, $white 100%);
             }
         }
         & .summary {
@@ -227,7 +227,7 @@ message-view {
                     width: 1rem;
                     height: 34px;
                     top: 0;
-                    background: linear-gradient(to right,  rgba($white,0) 0%, $tertiary 100%);
+                    background: linear-gradient(to right,  rgba($tertiary,0) 0%, $tertiary 100%);
                 }
                 .fa-paperclip {
                     display: inline-block;
