@@ -186,7 +186,7 @@
         </div>
         <div ng-hide="method === 'paypal'">
             <div class="text-center">
-                <p class="alert alert-info" ng-show="errorPay">Would you like to create a free ProtonMail account instead? <a href="#" ng-click="payment = false;humanityTest = true;">Yes</a> <a href="https://protonmail.com/signup">No</a></p>
+                <p class="alert alert-info" ng-show="errorPay">Would you like to create a free ProtonMail account instead? <a href="#" ng-click="payment = false;humanityTest = true;">Yes</a> <signup-link data-key="no"></signup-link></p>
                 <p>
                     <button ng-hide="errorPay" class="pm_button primary large" type="submit" ng-disabled="networkActivity.loading()" translate translate-context="Action"><i class="fa fa-lock"></i> Submit</button>
                     <button ng-show="errorPay" class="pm_button primary large" type="submit" ng-disabled="networkActivity.loading()" translate translate-context="Action">Retry</button>
