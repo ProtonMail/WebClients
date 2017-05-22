@@ -429,7 +429,7 @@ angular.module('proton.core')
 
     function setUserLanguage(data) {
         if ($location.search().language) {
-            return settingsApi.setLanguage({ Language: DOMPurify.sanitize($location.search().language) })
+            return settingsApi.setLanguage({ Language: gettextCatalog.getCurrentLanguage() })
                 .then(() => data);
         }
         return data;
