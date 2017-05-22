@@ -44,6 +44,11 @@ angular.module('proton.routes', [
                 controller: 'LoginController',
                 templateUrl: 'templates/views/login.tpl.html'
             }
+        },
+        resolve: {
+            lang(i18nLoader) {
+                return i18nLoader();
+            }
         }
     })
 
@@ -148,6 +153,9 @@ angular.module('proton.routes', [
     .state('reset-theme', {
         url: '/reset-theme',
         resolve: {
+            lang(i18nLoader) {
+                return i18nLoader();
+            },
             reset(networkActivityTracker, settingsApi, notify, eventManager, gettextCatalog) {
                 const errorMessage = gettextCatalog.getString('Unable to reset theme', null, 'Error');
                 const promise = settingsApi.theme({ Theme: '' })
@@ -187,6 +195,9 @@ angular.module('proton.routes', [
             }
         },
         resolve: {
+            lang(i18nLoader) {
+                return i18nLoader();
+            },
             plans(direct, $q, $stateParams, Payment) {
                 const deferred = $q.defer();
                 const currencies = ['USD', 'EUR', 'CHF'];
@@ -248,6 +259,11 @@ angular.module('proton.routes', [
             },
             'panel@reset': {
                 templateUrl: 'templates/views/reset-mailbox-password.tpl.html'
+            }
+        },
+        resolve: {
+            lang(i18nLoader) {
+                return i18nLoader();
             }
         },
         onEnter($rootScope, $state) {
@@ -326,6 +342,11 @@ angular.module('proton.routes', [
         views: {
             'main@': {
                 templateUrl: 'templates/layout/outside.tpl.html'
+            }
+        },
+        resolve: {
+            lang(i18nLoader) {
+                return i18nLoader();
             }
         }
     })

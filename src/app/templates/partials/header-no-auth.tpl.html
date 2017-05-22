@@ -10,12 +10,11 @@
     </a>
     <div>
         <new-bug-report class="headerNoAuth-btn-report"></new-bug-report>
-        <a
-            class="signUp pm_button primary headerNoAuth-btn-signup"
-            href="https://protonmail.com/signup"
+        <signup-link
+            data-key="forFree"
             ng-if="!isLoggedIn"
-            translate
-            translate-context="Action">Sign up for free</a>
+            class="signUp pm_button primary headerNoAuth-btn-signup"
+            class="loginForm-link-signup"></signup-link>
         <a
             class="logOut pm_button primary headerNoAuth-btn-logout"
             ui-sref="login"

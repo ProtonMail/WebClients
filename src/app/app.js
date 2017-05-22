@@ -86,10 +86,6 @@ angular.module('proton', [
     urlProvider.setBaseUrl(CONFIG.apiUrl);
 })
 
-.run((i18nLoader, $state) => {
-    !$state.includes('secured') && i18nLoader();
-})
-
 .run((
     $document,
     $rootScope,
