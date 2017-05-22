@@ -24,7 +24,8 @@ angular.module('proton.commons')
                 const queryParams = new window.URL(window.location).searchParams;
                 return formatLocale(queryParams.get('language'));
             } catch (e) {
-                const [, locale] = location.search.match(/language=([a-z]{2,}(_|-)[A-Z]{2,})/) || [];
+                // Match: xx_XX xx-XX xx 1192
+                const [, locale] = location.search.match(/language=(([a-z]{2,}(_|-)[A-Z]{2,})|([a-z]{2,}))/) || [];
                 return formatLocale(locale);
             }
         };
