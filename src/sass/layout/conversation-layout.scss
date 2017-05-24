@@ -58,7 +58,7 @@ body {
     #pm_main {
         height: calc(100% - 61px); /* #pm_header-desktop height */
         float: left;
-        width: calc(100% - 190px);
+        width: calc(100% - #{$sidebarWidth});
     }
     #wrapper {
         height: calc(100% - 56px); /* #pm_toolbar-desktop height */

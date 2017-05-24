@@ -36,6 +36,7 @@ angular.module('proton.commons')
             gettextCatalog.setCurrentLanguage(locale);
             gettextCatalog.debug = CONFIG.debug || false;
             moment.locale(locale);
+            document.documentElement.lang = locale.split('_')[0];
 
             // If the translation is not available it seems to crash (CPU 100%)
             if (CONFIG.translations.indexOf(locale) !== -1) {
