@@ -1,0 +1,9 @@
+[lang="fr"] {
+    .sidebarApp-container, .headerDesktop-logo {
+        width: $sidebarWidth + 30px
+    }
+
+    #pm_main {
+        width: calc(100% - #{$sidebarWidth} - 30px) !important;
+    }
+}

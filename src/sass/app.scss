@@ -204,8 +204,12 @@
 @import "pages/unlockForm";
 @import "pages/security";
 
+
 //== 👉 Responsive override ==============================//
 @import "_responsive";
+
+//=== i18n custom ========================//
+@import "_lang";
 
 //=== 💣 Dangerous ========================//
 @import "_dangerous";
