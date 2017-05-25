@@ -69,7 +69,11 @@ angular.module('proton.sidebar')
                 return '';
             }
 
-            return count;
+            if (count > 1000) {
+                return '(999+)';
+            }
+
+            return `(${count})`;
         };
 
         return { unread, getStateConfig };

@@ -43,15 +43,11 @@ angular.module('proton.sidebar')
                 const unsubscribe = [];
                 const render = () => (el[0].innerHTML = template(key, config));
                 const updateCounter = () => {
-                    const total = sidebarModel.unread(key);
-                    if (!total) {
-                        return;
-                    }
                     const $anchor = el[0].querySelector('.navigationItem-item');
                     const $counter = $anchor.querySelector('.navigationItem-counter');
-                    const formatedTotal = `(${total})`;
-                    $anchor.title = `${$anchor.getAttribute('data-label')} ${formatedTotal}`;
-                    $counter.textContent = (total > 1000) ? '(999+)' : formatedTotal;
+                    const total = sidebarModel.unread(key);
+                    $anchor.title = `${$anchor.getAttribute('data-label')} ${total}`;
+                    $counter.textContent = total;
                 };
 
                 // Check if we open the current state, mark it as active
