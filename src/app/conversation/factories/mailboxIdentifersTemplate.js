@@ -1,9 +1,26 @@
 angular.module('proton.conversation')
 .factory('mailboxIdentifersTemplate', ($rootScope, CONSTANTS, labelsModel) => {
 
+    const CLEANER = document.createElement('div');
     const contains = (key, labels) => _.contains(labels, CONSTANTS.MAILBOX_IDENTIFIERS[key]);
+    /**
+     * Remove HTML inside a string, prevent XSS
+     * @param  {String} s
+     * @return {String}
+     */
+    const stripHTML = (s) => {
+        CLEANER.innerText = s || '';
+        return CLEANER.innerHTML;
+    };
+
     const templateTag = (className, tooltip) => `<i class="${className}" translate>${tooltip}</i>`;
-    const templateLabel = (className = '', tooltip = '', color = '') => (color ? `<i class="fa ${className}" pt-tooltip="${tooltip}" style="color: ${color}"></i>` : `<i class="fa ${className}" pt-tooltip="${tooltip}"></i>`);
+    const templateLabel = (className = '', tooltip = '', color = '') => {
+        const ptTooltip = stripHTML(tooltip).replace(/"|'/g, '');
+        if (color) {
+            return `<i class="fa ${className}" pt-tooltip="${ptTooltip}" style="color: ${color}"></i>`;
+        }
+        return `<i class="fa ${className}" pt-tooltip="${ptTooltip}"></i>`;
+    };
 
     const getFolder = (labelIDs = []) => {
         const id = _.find(labelIDs, (id) => labelsModel.contains(id, 'folders'));
