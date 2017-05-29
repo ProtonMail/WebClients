@@ -175,10 +175,8 @@ angular.module('proton.core')
      * @param {String} type = conversation or message
      * @return {Object}
      */
-    function vector({ LabelIDs = [], Labels = [], IsRead, ContextNumUnread }, unread, type) {
-        const result = {};
-        const labelIDs = (type === 'message') ? LabelIDs : _.map(Labels, ({ ID }) => ID);
-        let unreadCondition = true;
+    function vector({ LabelIDs = [], Labels = [], IsRead }, unread, type) {
+        const toInt = (value) => +!!value;
         const locs = [
             CONSTANTS.MAILBOX_IDENTIFIERS.inbox,
             CONSTANTS.MAILBOX_IDENTIFIERS.drafts,
@@ -190,23 +188,19 @@ angular.module('proton.core')
             CONSTANTS.MAILBOX_IDENTIFIERS.starred
         ].concat(labelsModel.ids());
 
-        if (unread === true) {
+        return _.reduce(locs, (acc, loc) => {
             if (type === 'message') {
-                unreadCondition = IsRead === 0;
-            } else if (type === 'conversation') {
-                unreadCondition = ContextNumUnread > 0;
+                const test = _.contains(LabelIDs, loc);
+                acc[loc] = toInt(unread ? (test && IsRead === 1) : test);
             }
-        }
 
-        _.each(locs, (loc) => {
-            if (_.contains(labelIDs, loc) && unreadCondition) {
-                result[loc] = 1;
-            } else {
-                result[loc] = 0;
+            if (type === 'conversation') {
+                const label = _.findWhere(Labels, { ID: loc });
+                acc[loc] = toInt(unread ? (label && label.ContextNumUnread > 0) : label);
             }
-        });
 
-        return result;
+            return acc;
+        }, {});
     }
 
     /**
@@ -868,7 +862,7 @@ angular.module('proton.core')
                 const oldLabel = _.findWhere(old.Labels || [], { ID: label.ID });
 
                 if (oldLabel) {
-                    return _.extend(oldLabel, label);
+                    return _.extend({}, oldLabel, label);
                 }
 
                 return label;
