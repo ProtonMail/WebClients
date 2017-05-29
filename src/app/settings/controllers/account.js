@@ -50,6 +50,7 @@ angular.module('proton.settings')
         { label: gettextCatalog.getString('French', null), key: 'fr_FR' },
         { label: gettextCatalog.getString('German', null), key: 'de_DE' },
         { label: gettextCatalog.getString('Russian', null), key: 'ru_RU' },
+        { label: gettextCatalog.getString('Spanish', null), key: 'es_ES' },
         { label: gettextCatalog.getString('Turkish', null), key: 'tr_TR' }
     ];
     $scope.locale = _.findWhere($scope.locales, { key: gettextCatalog.getCurrentLanguage() }) || $scope.locales[0];
