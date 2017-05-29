@@ -1,6 +1,7 @@
 angular.module('proton.commons')
     .factory('i18nLoader', (CONFIG, gettextCatalog) => {
 
+        const upperCaseLocale = (locale = '') => ((locale === 'en') ? 'us' : locale).toUpperCase();
         /**
          * Format the locale to a valid format for gettext
          * {@link https://www.gnu.org/software/gettext/manual/gettext.html#Header-Entry}
@@ -12,7 +13,7 @@ angular.module('proton.commons')
 
             // OS is in French (France) => navigator.language === fr
             if (value.length === 2) {
-                return `${value}_${value.toUpperCase()}`;
+                return `${value}_${upperCaseLocale(value)}`;
             }
             return value;
         };
