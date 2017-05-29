@@ -52,7 +52,7 @@ angular.module('proton.settings')
         { label: gettextCatalog.getString('Russian', null), key: 'ru_RU' },
         { label: gettextCatalog.getString('Turkish', null), key: 'tr_TR' }
     ];
-    $scope.locale = _.findWhere($scope.locales, { key: gettextCatalog.getCurrentLanguage() });
+    $scope.locale = _.findWhere($scope.locales, { key: gettextCatalog.getCurrentLanguage() }) || $scope.locales[0];
     const EMAILING_KEYS = Object.keys($scope.emailing);
     updateUser();
 
