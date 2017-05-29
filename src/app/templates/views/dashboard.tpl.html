@@ -12,13 +12,13 @@
                         </header-block>
                         <div class="well pm-flex-content-fillHeight">
                             <div class="pm_table">
-                                <table class="plain">
+                                <table class="settings-dashboard-info-table plain">
                                     <tr>
-                                        <th style="width: 6rem" translate-context="Title" translate>Username</th>
+                                        <th translate-context="Title" translate>Username</th>
                                         <td>
                                             <strong>{{ user.Name }}</strong>
                                         </td>
-                                        <td style="width: 8rem" class="text-right actions"></td>
+                                        <td  class="text-right actions"></td>
                                     </tr>
                                     <!-- <tr ng-show="keyPhase > 3">
                                         <th translate-context="Title" translate>Members</th>
@@ -95,11 +95,11 @@
 
                         <div class="well pm-flex-content-fillHeight">
                             <div class="pm_table">
-                                <table class="plain">
+                                <table class="settings-dashboard-info-table plain">
                                     <tr ng-repeat="plan in subscription.Plans | filter: {Type: 1}">
-                                        <th style="width: 10rem" translate-context="Title" translate>Plan</th>
+                                        <th translate-context="Title" translate>Plan</th>
                                         <td><strong>{{ plan.Title }}</strong></td>
-                                        <td style="width: 12rem" class="text-right actions">
+                                        <td class="text-right actions">
                                             <span ng-show="subscription.Cycle === 1">{{ subscription.Amount / 100 | currency: subscription.Currency }}</span>
                                             <span ng-show="subscription.Cycle === 12">{{ subscription.Amount / 100 / 12 | fixed: 2 | currency: subscription.Currency }}/mo</span>
                                         </td>

@@ -1,9 +1,18 @@
-[lang="fr"] {
-    .sidebarApp-container, .headerDesktop-logo {
-        width: $sidebarWidth + 30px
+[lang="fr"],
+[lang="ru"] {
+    /* ovveride _responsive */
+    @media (min-width: 1100px) {
+        .sidebarApp-container,
+        .headerDesktop-logo { width: $sidebarWidth + 30px }
+        #pm_main { width: calc(100% - #{$sidebarWidth} - 30px) }
     }
 
-    #pm_main {
-        width: calc(100% - #{$sidebarWidth} - 30px) !important;
+    @media (max-width: 1100px) {
+        .sidebarApp-container,
+        .headerDesktop-logo { width: 210px }
+        .sidebarApp-container .sidebar-btn-compose .fa { display: block }
+        #pm_main { width: calc(100% - 210px) }
     }
+
+
 }
