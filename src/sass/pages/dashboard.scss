@@ -27,6 +27,10 @@
     }
 }
 
+#pm_settings {
+    .settings-dashboard-info-table tbody tr { white-space: normal }
+}
+
 #plans {
     &.pm_form {
         label {
