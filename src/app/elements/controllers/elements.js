@@ -73,7 +73,7 @@ angular.module('proton.elements')
         }
 
         unbindWatcherElements = $scope.$watch('conversations', () => {
-            $rootScope.numberElementSelected = $scope.elementsSelected().length;
+            $rootScope.numberElementSelected = getElementsSelected().length;
             $rootScope.numberElementUnread = cacheCounters.unreadConversation(tools.currentLocation());
         }, true);
     }
@@ -231,9 +231,17 @@ angular.module('proton.elements')
             $scope.unread();
         });
 
-        $scope.$on('toggleStar', () => {
-            !isOpened && $scope.toggleStar();
-        });
+        unsubscribes.push($rootScope.$on('toggleStar', toggleStar));
+
+        function toggleStar() {
+            const type = getTypeSelected();
+            getElementsSelected().forEach((model) => {
+                $rootScope.$emit('elements', {
+                    type: 'toggleStar',
+                    data: { type, model }
+                });
+            });
+        }
 
         /**
          * Scroll to the current marked conversation
@@ -498,7 +506,7 @@ angular.module('proton.elements')
         if (Labels.length) {
             return _.contains(LabelIDs, CONSTANTS.MAILBOX_IDENTIFIERS.starred);
         }
-        return Boolean(_.findWhere(Labels, { ID: CONSTANTS.MAILBOX_IDENTIFIERS.starred }));
+        return !!_.findWhere(Labels, { ID: CONSTANTS.MAILBOX_IDENTIFIERS.starred });
     }
 
     /**
@@ -506,7 +514,7 @@ angular.module('proton.elements')
      * @param {Boolean} includeMarked
      * @return {Array} elements
      */
-    $scope.elementsSelected = (includeMarked = true) => {
+    function getElementsSelected(includeMarked = true) {
         const { conversations = [] } = $scope; // conversations can contains message list or conversation list
         const elements = _.where(conversations, { Selected: true });
 
@@ -519,14 +527,14 @@ angular.module('proton.elements')
         }
 
         return elements;
-    };
+    }
 
     /**
      * Return [IDs]
      * @return {Array}
      */
     function idsSelected() {
-        const elementsSelected = $scope.elementsSelected();
+        const elementsSelected = getElementsSelected();
         return elementsSelected.map(({ ID }) => ID);
     }
 
@@ -535,7 +543,7 @@ angular.module('proton.elements')
      * @return {String}
      */
     function getTypeSelected() {
-        const elementsSelected = $scope.elementsSelected();
+        const elementsSelected = getElementsSelected();
 
         if (elementsSelected.length) {
             return elementsSelected[0].ConversationID ? 'message' : 'conversation';
@@ -608,17 +616,6 @@ angular.module('proton.elements')
         }
     };
 
-    $scope.toggleStar = () => {
-        const type = getTypeSelected();
-        const elementsSelected = $scope.elementsSelected();
-        const elementsStarred = _.filter(elementsSelected, (element) => isStarred(element));
-        const ids = elementsSelected.map(({ ID }) => ID);
-        if (elementsSelected.length === elementsStarred.length) {
-            return (type === 'conversation') ? actionConversation.unstar(ids) : $rootScope.$emit('messageActions', { action: 'unstar', data: { ids } });
-        }
-        return (type === 'conversation') ? actionConversation.star(ids) : $rootScope.$emit('messageActions', { action: 'star', data: { ids } });
-    };
-
     /**
      * Delete elements selected
      */
@@ -682,7 +679,7 @@ angular.module('proton.elements')
         }
     };
 
-    $scope.getElements = () => $scope.elementsSelected();
+    $scope.getElements = () => getElementsSelected();
 
     /**
      * Complex method to apply labels on element selected
@@ -697,7 +694,7 @@ angular.module('proton.elements')
         if (type === 'conversation') {
             actionConversation.label(ids, labels, alsoArchive);
         } else if (type === 'message') {
-            const messages = $scope.elementsSelected();
+            const messages = getElementsSelected();
 
             $rootScope.$emit('messageActions', { action: 'label', data: { messages, labels, alsoArchive } });
         }
