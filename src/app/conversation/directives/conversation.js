@@ -253,7 +253,7 @@ angular.module('proton.conversation')
                 }
             });
 
-            scope.$on('toggleStar', () => {
+            unsubscribe.push($rootScope.$on('toggleStar', () => {
                 const data = {
                     model: scope.conversation,
                     type: 'conversation'
@@ -264,7 +264,7 @@ angular.module('proton.conversation')
                     data.type = 'message';
                 }
                 $rootScope.$emit('elements', { type: 'toggleStar', data });
-            });
+            }));
 
             // We don't need to check these events if we didn't choose to focus onto a specific message
             hotkeys.unbind(['down', 'up']);

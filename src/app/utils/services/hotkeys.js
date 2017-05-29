@@ -42,6 +42,7 @@ angular.module('proton.utils')
     const selectAll = action(emit('selectElements', { value: 'all', isChecked: true }));
     const unselectAll = action(emit('selectElements', { value: 'all', isChecked: false }));
     const slash = action(emit('hotkeys', { type: 'slash' }));
+    const toggleStar = action(emit('toggleStar'));
 
     const selectMark = action(broadcast('selectMark'));
     const markPrevious = action(broadcast('markPrevious'));
@@ -51,7 +52,6 @@ angular.module('proton.utils')
     const right = action(broadcast('right'));
     const read = action(broadcast('read'));
     const unread = action(broadcast('unread'));
-    const toggleStar = action(broadcast('toggleStar'));
     const inbox = action(broadcast('move', 'inbox'));
     const trash = action(broadcast('move', 'trash'));
     const archive = action(broadcast('move', 'archive'));
