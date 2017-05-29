@@ -19,7 +19,8 @@
 
 @media (max-width: 1000px) {
     .navigation-title { font-size: .9em }
-
+    .sidebarApp-menu .menuLabel-counter,
+    .sidebarApp-item .navigationItem-counter { font-size: .9em }
     #pm_settings .pm_tabs li a.pm_button {
         padding: 0 .5rem;
     }

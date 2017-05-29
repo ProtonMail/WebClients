@@ -69,11 +69,8 @@ angular.module('proton.sidebar')
                 return '';
             }
 
-            if (count > 1000) {
-                return '(999+)';
-            }
-
-            return `(${count})`;
+            const formatedTotal = new Intl.NumberFormat().format(count);
+            return `(${formatedTotal})`;
         };
 
         return { unread, getStateConfig };
