@@ -174,7 +174,7 @@
     width: 100%;
     height: 31px;
     text-decoration: none;
-    padding: 0 20px;
+    padding: 0 10px 0 20px;
     position: relative;
     white-space: nowrap;
     text-overflow: ellipsis;
@@ -222,6 +222,12 @@
 
 .sidebarApp-item .navigationItem-counter,
 .menuLabel-item .menuLabel-counter { margin-left: .3em }
+
+.sidebarApp-item .navigationItem-counter {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin-right: .3em;
+}
 
 .sidebarApp-item.active .navigationItem-item,
 .sidebarApp-item.active .sidebarApp-link,
