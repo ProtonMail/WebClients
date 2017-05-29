@@ -231,7 +231,9 @@ angular.module('proton.elements')
             $scope.unread();
         });
 
-        unsubscribes.push($rootScope.$on('toggleStar', toggleStar));
+        unsubscribes.push($rootScope.$on('toggleStar', () => {
+            !isOpened && toggleStar();
+        }));
 
         function toggleStar() {
             const type = getTypeSelected();
