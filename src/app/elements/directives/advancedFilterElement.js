@@ -11,6 +11,7 @@ angular.module('proton.elements')
 
             const title = gettextCatalog.getString('Delete all', null, 'Title');
             const message = gettextCatalog.getString('Are you sure? This cannot be undone.', null, 'Info');
+            const errorMessage = gettextCatalog.getString('Empty request failed', null, 'Error shows when the empty folder request failed');
 
             if (['drafts', 'spam', 'trash'].indexOf(mailbox) === -1) {
                 return;
@@ -34,6 +35,7 @@ angular.module('proton.elements')
                                     notify({ message: gettextCatalog.getString('Folder emptied', null), classes: 'notification-success' });
                                     eventManager.call();
                                 }
+                                throw new Error(data.Error || errorMessage);
                             });
                         networkActivityTracker.track(promise);
                     },
