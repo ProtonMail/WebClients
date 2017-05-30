@@ -18,7 +18,6 @@
     .sidebar-btn-compose,
     .sidebar-btn-back {
         box-sizing: border-box;
-        height: 40px;
         min-height: 40px;
         margin-bottom: 10px;
         font-size: 12px;
@@ -56,6 +55,7 @@
     .sidebar-btn-back {
         border: 1px solid set-color($sidebar-background, rgba($white,.6));
         color: set-color($sidebar-background, $white);
+        text-align: left;
     }
 
     .sidebar-btn-compose {
@@ -213,6 +213,22 @@
     text-align: center;
 }
 
+.navigationItem-title {
+    overflow: hidden;
+    padding-right: 10px;
+}
+
+.sidebarApp-item .navigationItem-aside {
+    position: relative; /*IE11*/
+    pointer-events: none;
+    display: flex;
+    align-items: center;
+    margin-left: -10px; /* .navigationItem-title */
+    background: linear-gradient(to right, rgba($sidebar-background, 0) 0%, $sidebar-background 4px);
+}
+
+.sidebarApp-item.active .navigationItem-aside { background: linear-gradient(to right, rgba($sidebar-active, 0), $sidebar-active 4px) }
+
 .sidebarApp-menu .menuLabel-counter,
 .sidebarApp-item .navigationItem-counter {
     font-style: normal;
@@ -223,11 +239,7 @@
 .sidebarApp-item .navigationItem-counter,
 .menuLabel-item .menuLabel-counter { margin-left: .3em }
 
-.sidebarApp-item .navigationItem-counter {
-    overflow: hidden;
-    text-overflow: ellipsis;
-    margin-right: .3em;
-}
+.sidebarApp-item .navigationItem-counter { margin-right: .3em }
 
 .sidebarApp-item.active .navigationItem-item,
 .sidebarApp-item.active .sidebarApp-link,

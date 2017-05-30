@@ -1,4 +1,4 @@
-.navElements-container *{
+.navElements-container * {
     box-sizing: border-box;
 }
 
@@ -18,3 +18,8 @@
     border-left: 1px solid $border;
 }
 
+.navElements-container.navElements-no-previous .navElements-btn-previous,
+.navElements-container.navElements-no-next .navElements-btn-next {
+    opacity: .5;
+    pointer-events: none
+}

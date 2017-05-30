@@ -2,6 +2,7 @@ angular.module('proton.elements')
     .directive('navElements', ($rootScope, $state, authentication, tools, CONSTANTS) => {
 
         const CLASS_DISPLAY = 'navElements-displayed';
+        const CLASS_ERROR = 'navElements-no-';
         const SPECIAL_BOXES = ['drafts', 'search', 'sent'];
 
         const dispatch = (type, data = {}) => $rootScope.$emit('elements', { type, data });
@@ -19,14 +20,33 @@ angular.module('proton.elements')
             templateUrl: 'templates/elements/navElements.tpl.html',
             link(scope, el) {
 
+                const unsubscribe = [];
+
                 const toggleClass = () => {
                     const action = showNextPrev() ? 'add' : 'remove';
                     el[0].classList[action](CLASS_DISPLAY);
                 };
 
+                const toggleClassError = (name, type) => {
+                    if (type === 'success') {
+                        el[0].classList.remove(CLASS_ERROR + 'previous');
+                        el[0].classList.remove(CLASS_ERROR + 'next');
+                    }
+                    if (type === 'error') {
+                        el[0].classList.add(CLASS_ERROR + name);
+                    }
+                };
+
                 toggleClass();
 
-                const unsubscribe = $rootScope.$on('$stateChangeSuccess', toggleClass);
+                unsubscribe.push($rootScope.$on('$stateChangeSuccess', toggleClass));
+                unsubscribe.push($rootScope.$on('elements', (e, { type }) => {
+
+                    if (/(previous|next)\.(error|success)$/.test(type)) {
+                        const [, name, flag ] = type.split('.');
+                        toggleClassError(name, flag);
+                    }
+                }));
 
                 const onClick = ({ target }) => {
                     dispatch(`switchTo.${target.getAttribute('data-dest')}`, {
@@ -37,7 +57,8 @@ angular.module('proton.elements')
 
                 scope.$on('$destroy', () => {
                     el.off('click', onClick);
-                    unsubscribe();
+                    unsubscribe.forEach((cb) => cb());
+                    unsubscribe.length = 0;
                 });
             }
         };
