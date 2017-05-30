@@ -32,7 +32,6 @@ angular.module('proton.elements')
     const unsubscribes = [];
     let unbindWatcherElements;
     const MINUTE = 60 * 1000;
-    const VIEW_MODE = tools.typeView();
 
     const id = setInterval(() => {
         $rootScope.$emit('elements', { type: 'refresh.time' });
@@ -162,7 +161,7 @@ angular.module('proton.elements')
             if (!isOpened) {
                 cb(...arg);
 
-                if (VIEW_MODE === 'conversation') {
+                if (tools.typeView() === 'conversation') {
                     isOpened = value;
                 }
             }
@@ -780,16 +779,15 @@ angular.module('proton.elements')
             return;
         }
 
-        const list = tools.getTypeList();
-
         const params = {};
         const sameView = $state.params.id && $state.params.id === element.ConversationID;
 
-        if (VIEW_MODE === 'conversation' && list === 'message') {
+        if (tools.typeView() === 'conversation' && tools.getTypeList() === 'message') {
             params.id = element.ConversationID;
             params.messageID = element.ID;
         } else {
             params.id = element.ID;
+            params.messageID = null;
         }
 
         // Unselect all elements
