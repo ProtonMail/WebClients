@@ -9,8 +9,10 @@ angular.module('proton.sidebar')
             return dedentTpl(`<a href="${$state.href(state, opt)}" title="${label}" data-label="${label}" data-state="${key}" class="navigationItem-item">
                 <i class="${iconClassName}"></i>
                 <span class="navigationItem-title">${label}</span>
-                <em class="navigationItem-counter"></em>
-                <button class="fa fa-repeat pull-right refresh navigationItem-btn-refresh"></button>
+                <div class="navigationItem-aside">
+                    <em class="navigationItem-counter"></em>
+                    <button class="fa fa-repeat pull-right refresh navigationItem-btn-refresh"></button>
+                </div>
             </a>`);
         };
 
