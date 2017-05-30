@@ -33,7 +33,7 @@ angular.module('proton.elements')
                                     cache.empty(mailbox);
                                     confirmModal.deactivate();
                                     notify({ message: gettextCatalog.getString('Folder emptied', null), classes: 'notification-success' });
-                                    eventManager.call();
+                                    return eventManager.call();
                                 }
                                 throw new Error(data.Error || errorMessage);
                             });
