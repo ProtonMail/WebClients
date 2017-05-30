@@ -561,12 +561,17 @@ angular.module('proton.elements')
         const elementID = $state.params.id;
         const elementTime = $scope.markedElement.Time;
         const conversationMode = authentication.user.ViewMode === CONSTANTS.CONVERSATION_VIEW_MODE;
+
         cache.more(elementID, elementTime, 'next')
-        .then((element) => {
-            const id = (conversationMode) ? (element.ConversationID || element.ID) : element.ID;
-            $state.go(current, { id });
-            $scope.markedElement = element;
-        });
+            .then((element) => {
+                const id = (conversationMode) ? (element.ConversationID || element.ID) : element.ID;
+                $state.go(current, { id });
+                $scope.markedElement = element;
+                $rootScope.$emit('elements', { type: 'switchTo.next.success', data: element });
+            })
+            .catch((data) => {
+                $rootScope.$emit('elements', { type: 'switchTo.next.error', data });
+            });
     }
 
     /**
@@ -577,12 +582,17 @@ angular.module('proton.elements')
         const elementID = $state.params.id;
         const elementTime = $scope.markedElement.Time;
         const conversationMode = authentication.user.ViewMode === CONSTANTS.CONVERSATION_VIEW_MODE;
+
         cache.more(elementID, elementTime, 'previous')
-        .then((element) => {
-            const id = (conversationMode) ? (element.ConversationID || element.ID) : element.ID;
-            $state.go(current, { id });
-            $scope.markedElement = element;
-        });
+            .then((element) => {
+                const id = (conversationMode) ? (element.ConversationID || element.ID) : element.ID;
+                $state.go(current, { id });
+                $scope.markedElement = element;
+                $rootScope.$emit('elements', { type: 'switchTo.previous.success', data: element });
+            })
+            .catch((data) => {
+                $rootScope.$emit('elements', { type: 'switchTo.previous.error', data });
+            });
     }
 
     /**
