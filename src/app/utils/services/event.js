@@ -255,24 +255,24 @@ angular.module('proton.utils')
             }
         }
 
-        function manageDesktopNotifications(messages) {
-            if (angular.isDefined(messages)) {
-                const threadingIsOff = authentication.user.ViewMode === CONSTANTS.MESSAGE_VIEW_MODE;
-                _.each(messages, (message) => {
-                    if (message.Action === 1 && message.Message.IsRead === 0 && message.Message.LabelIDs.indexOf(CONSTANTS.MAILBOX_IDENTIFIERS.inbox) !== -1) {
-                        const title = gettextCatalog.getString('New mail from', null, 'Info') + ' ' + message.Message.Sender.Name || message.Message.SenderAddress;
+        function manageDesktopNotifications(messages = []) {
+            if (messages.length) {
+                const threadingIsOn = authentication.user.ViewMode === CONSTANTS.CONVERSATION_VIEW_MODE;
+                _.each(messages, ({ Action, Message }) => {
+                    if (Action === 1 && Message.IsRead === 0 && Message.LabelIDs.indexOf(CONSTANTS.MAILBOX_IDENTIFIERS.inbox) !== -1) {
+                        const title = gettextCatalog.getString('New mail from', null, 'Info') + ' ' + Message.Sender.Name || Message.SenderAddress;
 
                         desktopNotifications.create(title, {
-                            body: message.Message.Subject,
+                            body: Message.Subject,
                             icon: '/assets/img/notification-badge.gif',
                             onClick() {
                                 window.focus();
 
-                                if (threadingIsOff) {
-                                    return $state.go('secured.inbox.element', { id: message.Message.ID });
+                                if (threadingIsOn) {
+                                    return $state.go('secured.inbox.element', { id: Message.ConversationID, messageID: Message.ID });
                                 }
 
-                                $state.go('secured.inbox.element', { id: message.Message.ConversationID, messageID: message.Message.ID });
+                                $state.go('secured.inbox.element', { id: Message.ID });
 
                             }
                         });
