@@ -305,7 +305,6 @@ angular.module('proton.contactCurrent')
             params: {
                 import(files) {
                     const contactArray = [];
-                    let extension = '';
                     const reader = new FileReader();
                     let importContacts;
 
@@ -314,7 +313,7 @@ angular.module('proton.contactCurrent')
                         return;
                     }
 
-                    extension = files[0].name.slice(-4);
+                    const extension = files[0].name.toLowerCase().slice(-4);
 
                     reader.onload = () => {
                         const text = reader.result;
