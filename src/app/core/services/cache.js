@@ -310,10 +310,11 @@ angular.module('proton.core')
                     pages.forEach((page) => !cachePages.inside(page) && cachePages.add(page));
                     api.clearDispatcher();
                     // Return conversations ordered
-                    return Promise.resolve(api.orderConversation(data.Conversations.slice(0, CONSTANTS.ELEMENTS_PER_PAGE), loc));
+                    return api.orderConversation(data.Conversations.slice(0, CONSTANTS.ELEMENTS_PER_PAGE), loc);
                 }
 
-                return Promise.resolve(data.Conversations.slice(0, CONSTANTS.ELEMENTS_PER_PAGE));
+                api.clearDispatcher();
+                return data.Conversations.slice(0, CONSTANTS.ELEMENTS_PER_PAGE);
             }
 
             api.clearDispatcher();
@@ -361,11 +362,11 @@ angular.module('proton.core')
                 pages.forEach((page) => !cachePages.inside(page) && cachePages.add(page));
                 // Return messages ordered
                 api.clearDispatcher();
-                return Promise.resolve(api.orderMessage(Messages.slice(0, CONSTANTS.ELEMENTS_PER_PAGE)));
+                return api.orderMessage(Messages.slice(0, CONSTANTS.ELEMENTS_PER_PAGE));
             }
 
             api.clearDispatcher();
-            return Promise.resolve(Messages.slice(0, CONSTANTS.ELEMENTS_PER_PAGE));
+            return Messages.slice(0, CONSTANTS.ELEMENTS_PER_PAGE);
 
             api.clearDispatcher();
         });
@@ -396,7 +397,7 @@ angular.module('proton.core')
                     storeConversations([conversation]);
                     storeMessages(messages);
 
-                    return Promise.resolve(angular.copy(conversation));
+                    return angular.copy(conversation);
                 }
 
                 return Promise.reject(data.Error);
@@ -832,7 +833,7 @@ angular.module('proton.core')
             conversation.LabelIDsAdded = event.Conversation.LabelIDsAdded;
             conversation.LabelIDsRemoved = event.Conversation.LabelIDsRemoved;
             updateConversation(conversation);
-            return Promise.resolve();
+            return;
         });
     };
 
@@ -1024,9 +1025,11 @@ angular.module('proton.core')
      * @return {Promise}
      */
     api.more = (elementID, elementTime, action) => {
+
         const type = tools.getTypeList();
         const elementsCached = (type === 'conversation') ? conversationsCached : messagesCached;
         const loc = tools.currentLocation();
+
         const callApi = () => {
             const Label = loc;
             const request = { Label };
@@ -1044,10 +1047,10 @@ angular.module('proton.core')
             return promise.then((elements = []) => {
                 if (elements.length) {
                     const index = (action === 'next') ? (elements.length - 1) : 0;
-                    return Promise.resolve(elements[index]);
+                    return elements[index];
                 }
 
-                return Promise.reject();
+                throw new Error('No elements found');
             });
         };
 
@@ -1059,7 +1062,9 @@ angular.module('proton.core')
             const currentIndex = _.findIndex(elementsOrdered, { ID: elementID });
             if (action === 'previous' && elementsOrdered[currentIndex + 1]) {
                 return Promise.resolve(elementsOrdered[currentIndex + 1]);
-            } else if (action === 'next' && elementsOrdered[currentIndex - 1]) {
+            }
+
+            if (action === 'next' && elementsOrdered[currentIndex - 1]) {
                 return Promise.resolve(elementsOrdered[currentIndex - 1]);
             }
         }
