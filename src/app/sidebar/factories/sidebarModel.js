@@ -1,6 +1,7 @@
 angular.module('proton.sidebar')
-    .factory('sidebarModel', (CONSTANTS, tools, cacheCounters, gettextCatalog) => {
+    .factory('sidebarModel', (CONSTANTS, tools, cacheCounters, gettextCatalog, $filter) => {
 
+        const filterNumber = $filter('i18nNumber');
         const getStateConfig = () => ({
             inbox: {
                 state: 'secured.inbox',
@@ -69,8 +70,7 @@ angular.module('proton.sidebar')
                 return '';
             }
 
-            const formatedTotal = new Intl.NumberFormat().format(count);
-            return `(${formatedTotal})`;
+            return `(${filterNumber(count)})`;
         };
 
         return { unread, getStateConfig };
