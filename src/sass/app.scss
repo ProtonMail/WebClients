@@ -189,8 +189,6 @@
 //== Promote
 @import "components/sale/index";
 
-
-
 //=== 📄 Pages =============================//
 @import "pages/dashboard";
 @import "pages/login";
@@ -211,6 +209,9 @@
 
 //=== i18n custom ========================//
 @import "_lang";
+
+//=== 👻 Reset default behavior to facilitate users theming
+@import "_theme";
 
 //=== 💣 Dangerous ========================//
 @import "_dangerous";
