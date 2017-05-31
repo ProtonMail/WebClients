@@ -191,7 +191,7 @@ angular.module('proton.core')
         return _.reduce(locs, (acc, loc) => {
             if (type === 'message') {
                 const test = _.contains(LabelIDs, loc);
-                acc[loc] = toInt(unread ? (test && IsRead === 1) : test);
+                acc[loc] = toInt(unread ? (test && IsRead === 0) : test);
             }
 
             if (type === 'conversation') {
