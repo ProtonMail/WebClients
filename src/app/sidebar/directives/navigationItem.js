@@ -11,7 +11,7 @@ angular.module('proton.sidebar')
                 <span class="navigationItem-title">${label}</span>
                 <div class="navigationItem-aside">
                     <em class="navigationItem-counter"></em>
-                    <button class="fa fa-repeat pull-right refresh navigationItem-btn-refresh"></button>
+                    <button class="fa fa-repeat refresh navigationItem-btn-refresh"></button>
                 </div>
             </a>`);
         };

@@ -219,15 +219,21 @@
 }
 
 .sidebarApp-item .navigationItem-aside {
+    flex: 1;
     position: relative; /*IE11*/
     pointer-events: none;
     display: flex;
     align-items: center;
+    justify-content: space-between;
     margin-left: -10px; /* .navigationItem-title */
+    /* check _theme reset */
     background: linear-gradient(to right, rgba($sidebar-background, 0) 0%, $sidebar-background 4px);
 }
 
-.sidebarApp-item.active .navigationItem-aside { background: linear-gradient(to right, rgba($sidebar-active, 0), $sidebar-active 4px) }
+.sidebarApp-item.active .navigationItem-aside {
+    /* check _theme reset */
+    background: linear-gradient(to right, rgba($sidebar-active, 0), $sidebar-active 4px)
+}
 
 .sidebarApp-menu .menuLabel-counter,
 .sidebarApp-item .navigationItem-counter {
