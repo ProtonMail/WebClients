@@ -18,7 +18,7 @@ angular.module('proton.authentication')
     AppModel,
     pmcw,
     tempStorage,
-    tools,
+    aboutClient,
     settingsApi,
     srp) => {
     $scope.twoFactor = 0;
@@ -87,7 +87,7 @@ angular.module('proton.authentication')
      * or notify the user
      */
     function testSessionStorage() {
-        if (tools.hasSessionStorage() === false) {
+        if (aboutClient.hasSessionStorage() === false) {
             notify({ message: gettextCatalog.getString('You are in Private Mode or have Session Storage disabled.\nPlease deactivate Private Mode and then reload the page.\n<a href="https://protonmail.com/support/knowledge-base/enabling-cookies/" target="_blank">More information here</a>.', null, 'Error'), classes: 'notification-danger', duration: '0' });
         }
     }
@@ -98,7 +98,7 @@ angular.module('proton.authentication')
      */
     function testCookie() {
         //
-        if (tools.hasCookie() === false) {
+        if (aboutClient.hasCookie() === false) {
             notify({ message: gettextCatalog.getString('Cookies are disabled.\nPlease activate it and then reload the page.\n<a href="https://protonmail.com/support/knowledge-base/enabling-cookies/" target="_blank">More information here</a>.', null, 'Error'), classes: 'notification-danger', duration: '0' });
         }
     }

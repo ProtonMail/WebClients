@@ -1,6 +1,5 @@
 angular.module('proton.core')
 .controller('SecuredController', (
-    $cookies,
     $filter,
     $q,
     $rootScope,

@@ -1,5 +1,5 @@
 angular.module('proton.core')
-.factory('feedbackModal', (pmModal, $cookies, Bug, notify) => {
+.factory('feedbackModal', (pmModal, Bug, notify) => {
     return pmModal({
         controllerAs: 'ctrl',
         templateUrl: 'templates/modals/feedback.tpl.html',

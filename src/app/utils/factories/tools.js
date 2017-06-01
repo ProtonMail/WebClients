@@ -52,19 +52,7 @@ angular.module('proton.utils')
         ];
     };
 
-    tools.isIE11 = aboutClient.isIE11;
-    tools.hasSessionStorage = aboutClient.hasSessionStorage;
-    tools.hasCookie = aboutClient.hasCookie;
-    tools.getBrowser = aboutClient.getBrowser;
-    tools.getBrowserVersion = aboutClient.getBrowserVersion;
-    tools.prngAvailable = aboutClient.prngAvailable;
-    tools.getOs = aboutClient.getOS;
-    tools.isSafari = aboutClient.isSafari;
-    tools.isSafariMobile = aboutClient.isSafariMobile;
-
-    tools.changeSeparatorToComma = (input) => {
-        return input.replace(';', ',');
-    };
+    tools.changeSeparatorToComma = (input) => input.replace(';', ',');
 
     tools.hostReachable = () => {
         // Handle IE and more capable browsers
@@ -233,11 +221,11 @@ angular.module('proton.utils')
     tools.isCompatible = () => {
         let compatible = true;
 
-        if (!tools.hasSessionStorage()) {
+        if (!aboutClient.hasSessionStorage()) {
             compatible = false;
         }
 
-        if (!tools.prngAvailable()) {
+        if (!aboutClient.prngAvailable()) {
             compatible = false;
         }
 

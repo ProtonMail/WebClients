@@ -1,5 +1,5 @@
 angular.module('proton.bugReport')
-    .factory('bugReportApi', (Bug, CONFIG, $state, tools, authentication, gettextCatalog, networkActivityTracker, notify) => {
+    .factory('bugReportApi', (Bug, CONFIG, $state, aboutClient, authentication, gettextCatalog, networkActivityTracker, notify) => {
         const LAYOUTS = ['column', 'row'];
         const MODES = ['conversation', 'message'];
 
@@ -11,13 +11,13 @@ angular.module('proton.bugReport')
             const { Name = '', Addresses = [], ViewLayout = '', ViewMode = '' } = authentication.user;
             const [{ Email = '' } = {}] = _.sortBy(Addresses, 'Send');
             return {
-                OS: tools.getOs(),
+                OS: aboutClient.getOS(),
                 OSVersion: '',
                 DisplayMode: angular.isNumber(ViewLayout) ? LAYOUTS[ViewLayout] : '',
                 ViewMode: angular.isNumber(ViewMode) ? MODES[ViewMode] : '',
                 Resolution: `${window.innerHeight} x ${window.innerWidth}`,
-                Browser: tools.getBrowser(),
-                BrowserVersion: tools.getBrowserVersion(),
+                Browser: aboutClient.getBrowser(),
+                BrowserVersion: aboutClient.getBrowserVersion(),
                 Client: 'Angular',
                 ClientVersion: CONFIG.app_version,
                 Title: `[Angular] Bug [${$state.$current.name}]`,
