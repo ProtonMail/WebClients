@@ -48,7 +48,7 @@ angular.module('proton.sidebar')
                     const $anchor = el[0].querySelector('.navigationItem-item');
                     const $counter = $anchor.querySelector('.navigationItem-counter');
                     const total = sidebarModel.unread(key);
-                    $anchor.title = `${$anchor.getAttribute('data-label')} ${total}`;
+                    $anchor.title = `${$anchor.getAttribute('data-label')} ${total}`.trim();
                     $counter.textContent = total;
                 };
 

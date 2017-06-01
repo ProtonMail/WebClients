@@ -315,7 +315,8 @@
     }
 
     .active .navigationItem-item,
-    .active .sidebarApp-link { background: transparent }
+    .active .sidebarApp-link,
+    .navigationItem-aside { background: transparent }
 
     .sidebarApp-divider {
         height: 1px;
