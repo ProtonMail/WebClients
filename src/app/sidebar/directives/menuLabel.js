@@ -30,7 +30,7 @@ angular.module('proton.sidebar')
             const classIcon = (Exclusive === 1) ? 'fa-folder' : 'fa-tag';
 
             return dedentTpl(`<li class="${className}">
-                <a href="${href}" title="${cleanAttr}" class="btn menuLabel-link">
+                <a href="${href}" title="${cleanAttr}" data-label="${cleanAttr}" class="btn menuLabel-link">
                     <i class="fa ${classIcon} menuLabel-icon" style="color: ${Color || '#CCC'}"></i>
                     <span class="menuLabel-title">${cleanName}</span>
                     <em class="menuLabel-counter" data-label-id="${ID}"></em>
@@ -51,7 +51,10 @@ angular.module('proton.sidebar')
                 const updateCounter = () => {
                     _.each(el[0].querySelectorAll('.menuLabel-counter'), (node) => {
                         const id = node.getAttribute('data-label-id');
-                        node.textContent = sidebarModel.unread('label', id);
+                        const $anchor = node.parentElement;
+                        const total = sidebarModel.unread('label', id);
+                        node.textContent = total;
+                        $anchor.title = `${$anchor.getAttribute('data-label')} ${total}`.trim();
                     });
                 };
 
