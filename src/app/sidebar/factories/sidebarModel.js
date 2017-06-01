@@ -1,7 +1,6 @@
 angular.module('proton.sidebar')
-    .factory('sidebarModel', (CONSTANTS, tools, cacheCounters, gettextCatalog, $filter) => {
+    .factory('sidebarModel', (CONSTANTS, tools, cacheCounters, gettextCatalog) => {
 
-        const filterNumber = $filter('i18nNumber');
         const getStateConfig = () => ({
             inbox: {
                 state: 'secured.inbox',
@@ -70,7 +69,7 @@ angular.module('proton.sidebar')
                 return '';
             }
 
-            return `(${filterNumber(count)})`;
+            return `(${count})`;
         };
 
         return { unread, getStateConfig };
