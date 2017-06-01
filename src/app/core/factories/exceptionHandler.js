@@ -64,14 +64,14 @@ angular.module('proton.core')
 
             try {
                 const Bug = $injector.get('Bug');
-                const tools = $injector.get('tools');
+                const aboutClient = $injector.get('aboutClient');
                 const $state = $injector.get('$state');
                 const { user = {} } = $injector.get('authentication') || {};
                 const crashData = {
-                    OS: tools.getOs(),
+                    OS: aboutClient.getOS(),
                     OSVersion: '',
-                    Browser: tools.getBrowser(),
-                    BrowserVersion: tools.getBrowserVersion(),
+                    Browser: aboutClient.getBrowser(),
+                    BrowserVersion: aboutClient.getBrowserVersion(),
                     Client: 'Angular',
                     ClientVersion: CONFIG.app_version,
                     ViewLayout: getViewLayout(user),

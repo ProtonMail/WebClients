@@ -1,5 +1,5 @@
 angular.module('proton.core')
-.factory('payModal', (pmModal, Payment, notify, eventManager, gettextCatalog, tools) => {
+.factory('payModal', (pmModal, Payment, notify, eventManager, gettextCatalog, aboutClient) => {
     return pmModal({
         controllerAs: 'ctrl',
         templateUrl: 'templates/modals/pay.tpl.html',
@@ -22,7 +22,7 @@ angular.module('proton.core')
                         self.choices.push({ value: 'card', label: gettextCatalog.getString('Credit card', null) });
                     }
 
-                    if (params.status.Paypal && !tools.isIE11()) { // IE11 doesn't support PayPal
+                    if (params.status.Paypal && !aboutClient.isIE11()) { // IE11 doesn't support PayPal
                         self.choices.push({ value: 'paypal', label: 'PayPal' });
                     }
 

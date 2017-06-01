@@ -1,7 +1,7 @@
 describe('paginationModel factory', () => {
 
-    let factory, rootScope, cacheCounters, authentication, state, CONSTANTS;
-    let userMock = {};
+    let factory, rootScope, cacheCounters, authentication, state, CONSTANTS, tools;
+    let userMock = { ViewMode: 0 };
     let stateParamsMock = {};
 
     beforeEach(module('proton.core', 'proton.constants', 'proton.config', ($provide) => {
@@ -9,14 +9,41 @@ describe('paginationModel factory', () => {
             user: userMock
         }));
 
+        $provide.factory('AppModel', () => ({
+            is: angular.noop,
+            set: angular.noop
+        }));
+
+        $provide.factory('aboutClient', () => ({
+            hasSessionStorage: angular.noop,
+            prngAvailable: angular.noop
+        }));
+
         $provide.factory('$state', () => ({
             go: angular.noop
+        }));
+
+        $provide.factory('$cookies', () => ({
+            get: angular.noop,
+            put: angular.noop
+        }));
+        $provide.factory('eventManager', () => ({
+            setEventID: angular.noop,
+            start: angular.noop,
+            call: angular.noop,
+            stop: angular.noop
         }));
 
         $provide.factory('cacheCounters', () => ({
             getCurrentState: angular.noop,
             getCounter: angular.noop
         }));
+
+        $provide.factory('tools', () => ({
+            currentLocation: angular.noop,
+            cacheContext: angular.noop
+        }));
+
         $provide.factory('$stateParams', () => stateParamsMock);
     }));
 
@@ -27,6 +54,7 @@ describe('paginationModel factory', () => {
         authentication = $injector.get('authentication');
         state = $injector.get('$state');
         factory = $injector.get('paginationModel');
+        tools = $injector.get('tools');
         factory.init();
     }));
 
@@ -68,21 +96,30 @@ describe('paginationModel factory', () => {
                 expect(state.go).toHaveBeenCalledWith('monique', { id: null, label: 'polo' });
             });
         });
-
     });
 
     describe('Page max', () => {
 
-        describe('State default no counter', () => {
+        describe('No counters, not a cache context', () => {
             let total;
             beforeEach(() => {
-                spyOn(cacheCounters, 'getCounter').and.returnValue();
+                spyOn(tools, 'cacheContext').and.returnValue(false);
+                spyOn(tools, 'currentLocation').and.returnValue('ici');
+                spyOn(cacheCounters, 'getCounter').and.returnValue(0);
                 spyOn(cacheCounters, 'getCurrentState').and.returnValue(10);
                 total = factory.getMaxPage();
             });
 
+            it('should get check the cache context', () => {
+                expect(tools.cacheContext).toHaveBeenCalledTimes(1);
+            });
+            it('should get the current location', () => {
+                expect(tools.currentLocation).toHaveBeenCalledTimes(1);
+            });
+
             it('should get counters', () => {
-                expect(cacheCounters.getCounter).toHaveBeenCalledWith(undefined);
+                expect(cacheCounters.getCounter).toHaveBeenCalledWith('ici');
+                expect(cacheCounters.getCounter).toHaveBeenCalledTimes(1);
             });
 
             it('should get counters for the current state', () => {
@@ -92,24 +129,29 @@ describe('paginationModel factory', () => {
             it('should return the default pageMax', () => {
                 expect(total).toBe(1);
             });
-
         });
 
-        describe('State default and counter', () => {
+        describe('No counters, and a cache context', () => {
             let total;
             beforeEach(() => {
-                userMock = { ViewMode: CONSTANTS.MESSAGE_VIEW_MODE };
-                spyOn(cacheCounters, 'getCounter').and.returnValue({
-                    message: {
-                        total: 110
-                    }
-                });
+                spyOn(tools, 'cacheContext').and.returnValue(true);
+                spyOn(tools, 'currentLocation').and.returnValue('ici');
+                spyOn(cacheCounters, 'getCounter').and.returnValue(0);
                 spyOn(cacheCounters, 'getCurrentState').and.returnValue(10);
                 total = factory.getMaxPage();
             });
 
+            it('should check the cache context', () => {
+                expect(tools.cacheContext).toHaveBeenCalledTimes(1);
+            });
+
+            it('should get the current location', () => {
+                expect(tools.currentLocation).toHaveBeenCalledTimes(1);
+            });
+
             it('should get counters', () => {
-                expect(cacheCounters.getCounter).toHaveBeenCalledWith(undefined);
+                expect(cacheCounters.getCounter).toHaveBeenCalledWith('ici');
+                expect(cacheCounters.getCounter).toHaveBeenCalledTimes(1);
             });
 
             it('should get counters for the current state', () => {
@@ -119,113 +161,233 @@ describe('paginationModel factory', () => {
             it('should return the default pageMax', () => {
                 expect(total).toBe(1);
             });
-
         });
 
-        describe('State label no counter', () => {
+        describe('Counters, and not a cache context', () => {
             let total;
             beforeEach(() => {
-                userMock = { ViewMode: CONSTANTS.MESSAGE_VIEW_MODE };
-                stateParamsMock.label = 'monique';
-                spyOn(cacheCounters, 'getCounter').and.returnValue();
+                spyOn(tools, 'cacheContext').and.returnValue(false);
+                spyOn(tools, 'currentLocation').and.returnValue('ici');
+                spyOn(cacheCounters, 'getCounter').and.returnValue(100);
                 spyOn(cacheCounters, 'getCurrentState').and.returnValue(10);
                 total = factory.getMaxPage();
             });
 
-            it('should get counters', () => {
-                expect(cacheCounters.getCounter).toHaveBeenCalledWith('monique');
+            it('should check the cache context', () => {
+                expect(tools.cacheContext).toHaveBeenCalledTimes(1);
             });
 
-            it('should return the default pageMax', () => {
-                expect(total).toBe(1);
+            it('should get the current location', () => {
+                expect(tools.currentLocation).toHaveBeenCalledTimes(1);
+            });
+
+            it('should get counters', () => {
+                expect(cacheCounters.getCounter).toHaveBeenCalledWith('ici');
+                expect(cacheCounters.getCounter).toHaveBeenCalledTimes(1);
             });
 
             it('should get counters for the current state', () => {
                 expect(cacheCounters.getCurrentState).toHaveBeenCalledTimes(1);
             });
-        });
-
-        describe('State label and counter', () => {
-            let total;
-            beforeEach(() => {
-                userMock = { ViewMode: CONSTANTS.MESSAGE_VIEW_MODE };
-                stateParamsMock.label = 'monique';
-                spyOn(cacheCounters, 'getCounter').and.returnValue({
-                    message: {
-                        total: 110
-                    }
-                });
-                spyOn(cacheCounters, 'getCurrentState').and.returnValue(10);
-                total = factory.getMaxPage();
-            })
-
-            it('should get counters', () => {
-                expect(cacheCounters.getCounter).toHaveBeenCalledWith('monique');
-            });
 
             it('should return the default pageMax', () => {
-                expect(total).toBe(Math.ceil(110 / CONSTANTS.ELEMENTS_PER_PAGE));
-            });
-
-            it('should not get counters for the current state', () => {
-                expect(cacheCounters.getCurrentState).not.toHaveBeenCalled();
+                expect(total).toBe(1);
             });
         });
 
-        describe('State label and counter (converstations)', () => {
+        describe('Counters:converstations, and a cache context', () => {
             let total;
+
             beforeEach(() => {
-                userMock = { ViewMode: CONSTANTS.CONVERSATION_VIEW_MODE };
-                stateParamsMock.label = 'monique';
+                userMock.ViewMode = CONSTANTS.CONVERSATION_VIEW_MODE;
+                spyOn(tools, 'cacheContext').and.returnValue(true);
+                spyOn(tools, 'currentLocation').and.returnValue('ici');
                 spyOn(cacheCounters, 'getCounter').and.returnValue({
-                    message: {
-                        total: 110
-                    },
                     conversation: {
-                        total: CONSTANTS.ELEMENTS_PER_PAGE * 10
+                        unread: CONSTANTS.ELEMENTS_PER_PAGE * 10,
+                        total: CONSTANTS.ELEMENTS_PER_PAGE * 15
                     }
                 });
-                spyOn(cacheCounters, 'getCurrentState').and.returnValue(1);
-                total = factory.getMaxPage();
-            })
-
-            it('should get counters', () => {
-                expect(cacheCounters.getCounter).toHaveBeenCalledWith('monique');
+                spyOn(cacheCounters, 'getCurrentState').and.returnValue(10);
+                rootScope.$digest();
             });
 
-            it('should total of pages', () => {
-                expect(total).toBe(10);
+            describe('Filter unread', () => {
+
+                beforeEach(() => {
+                    stateParamsMock.filter = 'unread';
+                    total = factory.getMaxPage();
+                });
+
+                it('should check the cache context', () => {
+                    expect(tools.cacheContext).toHaveBeenCalledTimes(1);
+                });
+
+                it('should get the current location', () => {
+                    expect(tools.currentLocation).toHaveBeenCalledTimes(1);
+                });
+
+                it('should get counters', () => {
+                    expect(cacheCounters.getCounter).toHaveBeenCalledWith('ici');
+                    expect(cacheCounters.getCounter).toHaveBeenCalledTimes(1);
+                });
+
+                it('should not get counter for the current state', () => {
+                    expect(cacheCounters.getCurrentState).not.toHaveBeenCalled();
+                });
+
+                it('should return 10 pages', () => {
+                    expect(total).toBe(10);
+                });
             });
 
-            it('should not get counters for the current state', () => {
-                expect(cacheCounters.getCurrentState).not.toHaveBeenCalled();
+            describe('Filter total', () => {
+
+                beforeEach(() => {
+                    stateParamsMock.filter = 'total';
+                    total = factory.getMaxPage();
+                });
+
+                it('should check the cache context', () => {
+                    expect(tools.cacheContext).toHaveBeenCalledTimes(1);
+                });
+
+                it('should get the current location', () => {
+                    expect(tools.currentLocation).toHaveBeenCalledTimes(1);
+                });
+
+                it('should get counters', () => {
+                    expect(cacheCounters.getCounter).toHaveBeenCalledWith('ici');
+                    expect(cacheCounters.getCounter).toHaveBeenCalledTimes(1);
+                });
+
+                it('should not get counter for the current state', () => {
+                    expect(cacheCounters.getCurrentState).not.toHaveBeenCalled();
+                });
+
+                it('should return 15 pages', () => {
+                    expect(total).toBe(15);
+                });
             });
         });
 
-        describe('State custom total empty', () => {
+        describe('Counters:messages, and a cache context', () => {
             let total;
+
             beforeEach(() => {
-                spyOn(cacheCounters, 'getCounter').and.returnValue();
-                spyOn(cacheCounters, 'getCurrentState').and.returnValue(CONSTANTS.ELEMENTS_PER_PAGE + 1);
-                delete stateParamsMock.label;
-                total = factory.getMaxPage();
+                userMock.ViewMode = CONSTANTS.MESSAGE_VIEW_MODE;
+                spyOn(tools, 'cacheContext').and.returnValue(true);
+                spyOn(tools, 'currentLocation').and.returnValue('ici');
+                spyOn(cacheCounters, 'getCounter').and.returnValue({
+                    message: {
+                        unread: CONSTANTS.ELEMENTS_PER_PAGE * 10,
+                        total: CONSTANTS.ELEMENTS_PER_PAGE * 15
+                    }
+                });
+                spyOn(cacheCounters, 'getCurrentState').and.returnValue(10);
+                rootScope.$digest();
             });
 
-            it('should get counters for the current state', () => {
-                expect(cacheCounters.getCurrentState).toHaveBeenCalled();
-                expect(cacheCounters.getCurrentState).toHaveBeenCalledTimes(1);
+            describe('Filter unread', () => {
+
+                beforeEach(() => {
+                    stateParamsMock.filter = 'unread';
+                    total = factory.getMaxPage();
+                });
+
+                it('should check the cache context', () => {
+                    expect(tools.cacheContext).toHaveBeenCalledTimes(1);
+                });
+
+                it('should get the current location', () => {
+                    expect(tools.currentLocation).toHaveBeenCalledTimes(1);
+                });
+
+                it('should get counters', () => {
+                    expect(cacheCounters.getCounter).toHaveBeenCalledWith('ici');
+                    expect(cacheCounters.getCounter).toHaveBeenCalledTimes(1);
+                });
+
+                it('should not get counter for the current state', () => {
+                    expect(cacheCounters.getCurrentState).not.toHaveBeenCalled();
+                });
+
+                it('should return 10 pages', () => {
+                    expect(total).toBe(10);
+                });
             });
 
-            it('should get counters', () => {
-                expect(cacheCounters.getCounter).toHaveBeenCalledWith(undefined);
-            });
+            describe('Filter total', () => {
 
-            it('should return the default pageMax', () => {
-                expect(total).toBe(2);
-            });
+                beforeEach(() => {
+                    stateParamsMock.filter = 'total';
+                    total = factory.getMaxPage();
+                });
 
+                it('should check the cache context', () => {
+                    expect(tools.cacheContext).toHaveBeenCalledTimes(1);
+                });
+
+                it('should get the current location', () => {
+                    expect(tools.currentLocation).toHaveBeenCalledTimes(1);
+                });
+
+                it('should get counters', () => {
+                    expect(cacheCounters.getCounter).toHaveBeenCalledWith('ici');
+                    expect(cacheCounters.getCounter).toHaveBeenCalledTimes(1);
+                });
+
+                it('should not get counter for the current state', () => {
+                    expect(cacheCounters.getCurrentState).not.toHaveBeenCalled();
+                });
+
+                it('should return 15 pages', () => {
+                    expect(total).toBe(15);
+                });
+            });
         });
 
+        describe('Always return an integer', () => {
+
+            describe('Via counters', () => {
+                let total;
+
+                beforeEach(() => {
+                    userMock.ViewMode = CONSTANTS.MESSAGE_VIEW_MODE;
+                    spyOn(tools, 'cacheContext').and.returnValue(true);
+                    spyOn(tools, 'currentLocation').and.returnValue('ici');
+                    spyOn(cacheCounters, 'getCounter').and.returnValue({
+                        message: {
+                            unread: CONSTANTS.ELEMENTS_PER_PAGE * 10,
+                            total: 1337
+                        }
+                    });
+                    spyOn(cacheCounters, 'getCurrentState').and.returnValue(10);
+                    stateParamsMock.filter = 'total';
+                    total = factory.getMaxPage();
+                });
+
+                it('should return 27 pages', () => {
+                    expect(total).toBe(~~(1337 / CONSTANTS.ELEMENTS_PER_PAGE + 1));
+                });
+            });
+
+            describe('Via state total', () => {
+                let total;
+
+                beforeEach(() => {
+                    spyOn(tools, 'cacheContext').and.returnValue(false);
+                    spyOn(tools, 'currentLocation').and.returnValue('ici');
+                    spyOn(cacheCounters, 'getCounter').and.returnValue(false);
+                    spyOn(cacheCounters, 'getCurrentState').and.returnValue(1337);
+                    total = factory.getMaxPage();
+                });
+
+                it('should return 27 pages', () => {
+                    expect(total).toBe(~~(1337 / CONSTANTS.ELEMENTS_PER_PAGE + 1));
+                });
+            });
+        });
     });
 
     describe('Previous page', () => {

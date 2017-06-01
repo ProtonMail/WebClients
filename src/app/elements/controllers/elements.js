@@ -1,6 +1,5 @@
 angular.module('proton.elements')
 .controller('ElementsController', (
-    $cookies,
     $filter,
     $log,
     $q,
