@@ -8,6 +8,7 @@ angular.module('proton.core')
     CONSTANTS,
     conversationApi,
     firstLoad,
+    gettextCatalog,
     messageModel,
     messageApi,
     cacheCounters,
@@ -21,8 +22,13 @@ angular.module('proton.core')
     let conversationsCached = []; // In this array we store the conversations cached
     let dispatcher = [];
     const timeCached = {};
+    const INVALID_SEARCH_ERROR_CODE = 15225;
 
     const { DELETE, CREATE, UPDATE_DRAFT, UPDATE_FLAGS } = CONSTANTS.STATUS;
+    const I18N = {
+        errorMessages: gettextCatalog.getString('No messages available', null, 'Error'),
+        errorConversations: gettextCatalog.getString('No conversations available', null, 'Error')
+    };
 
     const dispatchElements = (type, data = {}) => $rootScope.$emit('elements', { type, data });
 
@@ -281,100 +287,117 @@ angular.module('proton.core')
      * @param {Object} request
      * @return {Promise}
      */
-    const queryConversations = (request) => {
+    function queryConversations(request) {
         const loc = getLocation(request);
         const context = tools.cacheContext();
         request.Limit = request.Limit || CONSTANTS.CONVERSATION_LIMIT; // We don't call 50 conversations but 100 to improve user experience when he delete message and display quickly the next conversations
         const promise = api.getDispatcher()
-        .then(() => conversationApi.query(request))
-        .then(({ data = {} } = {}) => {
-            if (data.Code === 1000) {
-                cacheCounters.currentState(data.Total);
+            .then(() => conversationApi.query(request))
+            .then(({ data = {} } = {}) => {
+                if (data.Code === 1000) {
+                    cacheCounters.currentState(data.Limit);
+                    $rootScope.$emit('elements', { type: 'setLimit', data: { limit: data.Limit, total: data.Total } });
 
-                _.each(data.Conversations, (conversation) => {
-                    conversation.loaded = true; // Mark this conversation as loaded
-                    storeTime(conversation.ID, loc, conversation.ContextTime); // Store time value
-                });
+                    _.each(data.Conversations, (conversation) => {
+                        conversation.loaded = true; // Mark these conversations as loaded
+                        storeTime(conversation.ID, loc, conversation.ContextTime); // Store time value
+                    });
 
-                // Only for cache context
-                if (context) {
-                    // Set total value in cache
-                    const total = data.Total;
-                    const unread = (data.Total === 0) ? 0 : data.Unread;
-                    const pages = getPages(request);
+                    // Only for cache context
+                    if (context) {
+                        // Set total value in cache
+                        const total = data.Limit;
+                        const unread = (total === 0) ? 0 : data.Unread;
+                        const pages = getPages(request);
 
-                    cacheCounters.updateConversation(loc, total, unread);
-                    // Store conversations
-                    storeConversations(data.Conversations);
-                    // Add pages to the cache
-                    pages.forEach((page) => !cachePages.inside(page) && cachePages.add(page));
+                        cacheCounters.updateConversation(loc, total, unread);
+                        // Store conversations
+                        storeConversations(data.Conversations);
+                        // Add pages to the cache
+                        pages.forEach((page) => !cachePages.inside(page) && cachePages.add(page));
+                        api.clearDispatcher();
+                        // Return conversations ordered
+                        return api.orderConversation(data.Conversations.slice(0, CONSTANTS.ELEMENTS_PER_PAGE), loc);
+                    }
+
                     api.clearDispatcher();
-                    // Return conversations ordered
-                    return api.orderConversation(data.Conversations.slice(0, CONSTANTS.ELEMENTS_PER_PAGE), loc);
+                    return data.Conversations.slice(0, CONSTANTS.ELEMENTS_PER_PAGE);
                 }
 
                 api.clearDispatcher();
-                return data.Conversations.slice(0, CONSTANTS.ELEMENTS_PER_PAGE);
-            }
+                $rootScope.$emit('elements', { type: 'error', data: { code: data.Code, error: data.Error } });
 
-            api.clearDispatcher();
-            throw new Error('No conversations available');
-        });
+                if (data.Code === INVALID_SEARCH_ERROR_CODE) {
+                    return [];
+                }
+
+                throw new Error(data.Error || I18N.errorConversations);
+            });
 
         networkActivityTracker.track(promise);
 
         return promise;
-    };
+    }
 
     /**
      * Query api to get messages
      * @param {Object} request
      * @return {Promise}
      */
-    const queryMessages = (request) => {
+    function queryMessages(request) {
         const loc = getLocation(request);
         const context = tools.cacheContext();
 
         request.Limit = request.Limit || CONSTANTS.MESSAGE_LIMIT; // We don't call 50 messages but 100 to improve user experience when he delete message and display quickly the next messages
 
         const promise = api.getDispatcher()
-        .then(() => messageApi.query(request))
-        .then(({ data = {} } = {}) => {
-            const { Messages = [], Total = 0 } = data;
-            cacheCounters.currentState(Total);
+            .then(() => messageApi.query(request))
+            .then(({ data = {} } = {}) => {
+                if (data.Code === 1000) {
+                    const { Messages = [], Total = 0, Limit = 0 } = data;
+                    cacheCounters.currentState(Limit);
+                    $rootScope.$emit('elements', { type: 'setLimit', data: { limit: Limit, total: Total } });
 
-            _.each(Messages, (message) => {
-                const { ToList = [], CCList = [], BCCList = [] } = message;
-                message.loaded = true;
-                message.Senders = [message.Sender];
-                message.Recipients = _.uniq([].concat(ToList, CCList, BCCList));
-            });
+                    _.each(Messages, (message) => {
+                        const { ToList = [], CCList = [], BCCList = [] } = message;
+                        message.loaded = true;
+                        message.Senders = [message.Sender];
+                        message.Recipients = _.uniq([].concat(ToList, CCList, BCCList));
+                    });
 
-            // Store messages
-            storeMessages(Messages);
+                    // Store messages
+                    storeMessages(Messages);
 
-            // Only for cache context
-            if (context) {
-                const pages = getPages(request);
-                // Set total value in cache
-                cacheCounters.updateMessage(loc, Total);
-                // Add pages to the cache
-                pages.forEach((page) => !cachePages.inside(page) && cachePages.add(page));
-                // Return messages ordered
+                    // Only for cache context
+                    if (context) {
+                        const pages = getPages(request);
+                        // Set total value in cache
+                        cacheCounters.updateMessage(loc, Limit);
+                        // Add pages to the cache
+                        pages.forEach((page) => !cachePages.inside(page) && cachePages.add(page));
+                        // Return messages ordered
+                        api.clearDispatcher();
+                        return api.orderMessage(Messages.slice(0, CONSTANTS.ELEMENTS_PER_PAGE));
+                    }
+
+                    api.clearDispatcher();
+                    return Messages.slice(0, CONSTANTS.ELEMENTS_PER_PAGE);
+                }
+
                 api.clearDispatcher();
-                return api.orderMessage(Messages.slice(0, CONSTANTS.ELEMENTS_PER_PAGE));
-            }
+                $rootScope.$emit('elements', { type: 'error', data: { code: data.Code, error: data.Error } });
 
-            api.clearDispatcher();
-            return Messages.slice(0, CONSTANTS.ELEMENTS_PER_PAGE);
+                if (data.Code === INVALID_SEARCH_ERROR_CODE) {
+                    return [];
+                }
 
-            api.clearDispatcher();
-        });
+                throw new Error(data.Error || I18N.errorMessages);
+            });
 
         networkActivityTracker.track(promise);
 
         return promise;
-    };
+    }
 
     /**
      * Get conversation from back-end and store it in the cache
@@ -400,7 +423,7 @@ angular.module('proton.core')
                     return angular.copy(conversation);
                 }
 
-                return Promise.reject(data.Error);
+                throw new Error(data.Error);
             });
 
         networkActivityTracker.track(promise);
@@ -422,6 +445,7 @@ angular.module('proton.core')
                 storeMessages([message]);
                 return messageModel(message);
             }
+
             throw new Error(data.Error);
         });
 
