@@ -12,6 +12,7 @@ angular.module('proton.elements')
     AttachmentLoader,
     authentication,
     labelsModel,
+    limitElementsModel,
     cache,
     cacheCounters,
     confirmModal,
@@ -37,6 +38,7 @@ angular.module('proton.elements')
     }, MINUTE);
 
     $scope.elementsLoaded = false;
+    $scope.limitReached = false;
     $scope.conversations = [];
     /**
      * Method called at the initialization of this controller
@@ -53,16 +55,18 @@ angular.module('proton.elements')
         $scope.selectedOrder = $stateParams.sort || '-date';
         $scope.page = ~~$stateParams.page || 1;
         $scope.startWatchingEvent();
-        $scope.refreshElements().then(() => {
-            $scope.$applyAsync(() => {
-                $scope.selectElements('all', false);
-            }); // If we don't use the timeout, messages seems not available (to unselect for example)
-            // I consider this trick like a bug in the angular application
-        }, $log.error);
+        $scope.refreshElements()
+            .then(() => {
+                $scope.$applyAsync(() => {
+                    $scope.selectElements('all', false);
+                }); // If we don't use the timeout, messages seems not available (to unselect for example)
+                // I consider this trick like a bug in the angular application
+            }, $log.error);
     }
 
     $scope.$on('$stateChangeSuccess', () => {
         $scope.elementsLoaded = false;
+        $scope.limitReached = false;
     });
 
     function watchElements() {
@@ -349,19 +353,11 @@ angular.module('proton.elements')
     }
 
     $scope.refreshElements = () => {
-        const deferred = $q.defer();
         const request = forgeRequestParameters($scope.mailbox);
-        const context = tools.cacheContext();
         const type = tools.getTypeList();
-        let promise;
+        const promise = (type === 'message') ? cache.queryMessages(request) : cache.queryConversations(request);
 
-        if (type === 'message') {
-            promise = cache.queryMessages(request);
-        } else if (type === 'conversation') {
-            promise = cache.queryConversations(request);
-        }
-
-        promise.then((elements) => {
+        return promise.then((elements) => {
             firstLoad.set(false);
             const page = ~~$stateParams.page || 0;
             const selectedMap = $scope.conversations.reduce((map, element) => {
@@ -379,6 +375,7 @@ angular.module('proton.elements')
                 });
 
                 watchElements();
+                $scope.limitReached = limitElementsModel.isReached() && paginationModel.isMax();
 
                 /**
                  * Redirect the user if there are no elements to display for the current state
@@ -410,17 +407,12 @@ angular.module('proton.elements')
                 }
             });
 
-
-            deferred.resolve(elements);
+            return elements;
         }, () => {
-            notify({ message: gettextCatalog.getString('Error during quering conversations', null, 'Error'), classes: 'notification-danger' });
+            // If the request failed
+            $scope.elementsLoaded = true;
+            $scope.conversations = [];
         });
-
-        if (context === false) {
-            networkActivityTracker.track(promise);
-        }
-
-        return deferred.promise;
     };
 
     /**

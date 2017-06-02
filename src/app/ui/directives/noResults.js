@@ -1,5 +1,6 @@
 angular.module('proton.ui')
-.directive('noResults', (tools, gettextCatalog, labelsModel, $stateParams) => {
+.directive('noResults', (elementsError, tools, gettextCatalog, labelsModel, $stateParams) => {
+    const INVALID_SEARCH_ERROR_CODE = 15225;
 
     const TYPES = {
         inbox: {
@@ -79,6 +80,7 @@ angular.module('proton.ui')
             const $h3 = element[0].querySelector('h3');
             const box = tools.currentMailbox();
             const type = tools.getTypeList();
+            const { code, error } = elementsError.last();
 
             if (box) {
                 const { icon, text } = getBoxDetails(box);
@@ -86,7 +88,7 @@ angular.module('proton.ui')
                 $span.textContent = text;
             }
 
-            $h3.textContent = getLabel(type);
+            $h3.textContent = (code === INVALID_SEARCH_ERROR_CODE) ? error : getLabel(type);
         }
     };
 });
