@@ -67,8 +67,8 @@ angular.module('proton.conversation')
                 break;
 
             default: {
-                const latest = filter(({ Type }) => Type !== CONSTANTS.DRAFT);
                 const currentLocation = tools.currentLocation();
+                const latest = filter(({ LabelIDs, Type }) => LabelIDs.indexOf(currentLocation) > -1 && Type !== CONSTANTS.DRAFT);
 
                 if (latest && latest.IsRead === 1) {
                     thisOne = latest;
