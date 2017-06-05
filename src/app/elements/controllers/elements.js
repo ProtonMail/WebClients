@@ -172,6 +172,16 @@ angular.module('proton.elements')
 
         unsubscribes.push($rootScope.$on('elements', (e, { type, data = {} }) => {
             switch (type) {
+                case 'mark': {
+                    const thisElement = _.findWhere($scope.conversations, { ID: data.id });
+
+                    if (thisElement && $scope.markedElement !== thisElement) {
+                        $scope.$applyAsync(() => {
+                            $scope.markedElement = thisElement;
+                        });
+                    }
+                    break;
+                }
                 case 'open':
                     $scope.$applyAsync(() => openElement(data.element));
                     break;
