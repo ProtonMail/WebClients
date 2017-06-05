@@ -14,6 +14,8 @@ angular.module('proton.message')
             [CONSTANTS.MAILBOX_IDENTIFIERS.archive]: gettextCatalog.getString('Archive', null)
         };
 
+        const basicFolders = [CONSTANTS.MAILBOX_IDENTIFIERS.inbox, CONSTANTS.MAILBOX_IDENTIFIERS.trash, CONSTANTS.MAILBOX_IDENTIFIERS.spam, CONSTANTS.MAILBOX_IDENTIFIERS.archive];
+
         function getFolderNameTranslated(labelID = '') {
             const { Name } = labelsModel.read(labelID, 'folders') || {};
             return mailboxes[labelID] || Name;
@@ -76,7 +78,6 @@ angular.module('proton.message')
 
         // Message actions
         function move({ ids, labelID }) {
-            const basicFolders = [CONSTANTS.MAILBOX_IDENTIFIERS.inbox, CONSTANTS.MAILBOX_IDENTIFIERS.trash, CONSTANTS.MAILBOX_IDENTIFIERS.spam, CONSTANTS.MAILBOX_IDENTIFIERS.archive];
             const folders = labelsModel.ids('folders');
             const labels = labelsModel.ids('labels');
             const toTrash = labelID === CONSTANTS.MAILBOX_IDENTIFIERS.trash;
@@ -209,8 +210,8 @@ angular.module('proton.message')
          */
         function addLabel(messages, labels, alsoArchive) {
             const context = tools.cacheContext();
-            const current = tools.currentLocation();
-            const currentMailbox = tools.currentMailbox();
+            const currentLocation = tools.currentLocation();
+            const isStateAllowedRemove = _.contains(basicFolders, currentLocation) || labelsModel.contains(currentLocation, 'folders');
             const ids = _.map(messages, ({ ID }) => ID);
 
             const process = (events) => {
@@ -267,8 +268,8 @@ angular.module('proton.message')
                 if (alsoArchive === true) {
                     toApply.push(CONSTANTS.MAILBOX_IDENTIFIERS.archive);
 
-                    if (currentMailbox !== 'label' && currentMailbox !== 'starred') {
-                        toRemove.push(current);
+                    if (isStateAllowedRemove) {
+                        toRemove.push(currentLocation);
                     }
                 }
 

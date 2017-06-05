@@ -224,8 +224,9 @@ angular.module('proton.conversation')
      * @param {Boolean} alsoArchive
      */
     function label(ids, labels, alsoArchive) {
-        const currentMailbox = tools.currentMailbox();
-        const isStateAllowedRemove = currentMailbox !== 'label' && currentMailbox !== 'starred';
+        const basicFolders = [MAILBOX_IDENTIFIERS.inbox, MAILBOX_IDENTIFIERS.trash, MAILBOX_IDENTIFIERS.spam, MAILBOX_IDENTIFIERS.archive];
+        const currentLocation = tools.currentLocation();
+        const isStateAllowedRemove = _.contains(basicFolders, currentLocation) || labelsModel.contains(currentLocation, 'folders');
         const REMOVE = 0;
         const ADD = 1;
         const current = tools.currentLocation();
