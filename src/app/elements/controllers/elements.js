@@ -378,6 +378,8 @@ angular.module('proton.elements')
             }, {});
 
             $scope.$applyAsync(() => {
+                const previousConversations = angular.copy($scope.conversations);
+
                 $scope.elementsLoaded = true;
                 $scope.conversations = elements.map((element) => {
                     element.Selected = typeof selectedMap[element.ID] !== 'undefined';
@@ -409,7 +411,8 @@ angular.module('proton.elements')
                         if (found) {
                             element = found;
                         } else {
-                            element = _.first($scope.conversations);
+                            const previousIndexMarked = _.findIndex(previousConversations, { ID: $scope.markedElement.ID }) || 0;
+                            element = $scope.conversations[previousIndexMarked] || _.first($scope.conversations);
                         }
                     }
 
