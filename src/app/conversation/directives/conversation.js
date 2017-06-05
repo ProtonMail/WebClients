@@ -349,6 +349,8 @@ angular.module('proton.conversation')
                     if (authentication.user.ViewLayout === CONSTANTS.ROW_MODE) {
                         scope.markedMessage = $rootScope.expandMessage;
                     }
+
+                    $rootScope.$emit('elements', { type: 'mark', data: { id: $stateParams.id } });
                 } else {
                     back();
                 }
