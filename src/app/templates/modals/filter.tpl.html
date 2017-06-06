@@ -98,7 +98,7 @@
                     <p>
                         <a href="#" class="pm_button link" ng-click="ctrl.addCondition()" translate translate-context="Action">Add Condition</a>
                     </p>
-                    <p class="bold filter-modal-separator" ng-show="ctrl.displaySeparator()">If <span class="pm_select inline"><select ng-model="ctrl.filter.Simple.Operator" ng-options="operator.label for operator in ctrl.operators"></select><i class="fa fa-angle-down"></i></span> of the conditions above apply, do the following actions.</p>
+                    <p class="bold filter-modal-separator" ng-show="ctrl.displaySeparator()"><span translate>If</span> <span class="pm_select inline"><select ng-model="ctrl.filter.Simple.Operator" ng-options="operator.label for operator in ctrl.operators"></select><i class="fa fa-angle-down"></i></span> <span translate-context="Filter modal - If one of the conditions ..." translate>of the conditions above apply, do the following actions.</span></p>
                     <legend translate-context="Title" translate translate-context="Title">Actions</legend>
                     <label>
                         <custom-checkbox data-custom-ng-model="ctrl.hasLabels"></custom-checkbox>
