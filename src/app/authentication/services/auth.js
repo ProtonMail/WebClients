@@ -312,6 +312,7 @@ angular.module('proton.authentication')
                 ClientID: CONFIG.clientID,
                 GrantType: 'refresh_token',
                 RefreshToken: authResponse.RefreshToken,
+                Uid: authResponse.Uid,
                 RedirectURI: 'https://protonmail.com',
                 State: this.randomString(24)
             })
