@@ -10,6 +10,7 @@
             <div class="modal-body pm_form">
                 <p><span translate-comment="label for adding a new custom domain" translate translate-context="Info">Add a domain that you own to your ProtonMail account.</span> <a target="_blank" href="https://protonmail.com/support/knowledge-base/custom-domains/" translate translate-context="Action">Learn more</a></p>
                 <input ng-hide="ctrl.domain" type="text" autofocus ng-model="ctrl.name" placeholder-translate="Domain name" />
+                <p class="alert alert-warning" ng-show="ctrl.beginsWith('www.')" translate>'www' subdomains are typically not used for email. Are you sure you not want to use this domain value?</p>
                 <textarea rows="1" ng-show="ctrl.domain" readonly ng-bind="::ctrl.domain.DomainName"></textarea>
             </div>
         </div>
