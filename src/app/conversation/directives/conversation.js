@@ -51,6 +51,7 @@ angular.module('proton.conversation')
         let thisOne;
 
         const filter = (cb) => _.chain(messages).filter(cb).last().value();
+        const currentLocation = tools.currentLocation();
 
         switch (true) {
             // If we open a conversation in the sent folder
@@ -62,20 +63,24 @@ angular.module('proton.conversation')
                 thisOne = _.findWhere(messages, { ID: $stateParams.messageID });
                 break;
 
+            case $state.includes('secured.starred.**'):
+            case $state.includes('secured.label.**'):
+                thisOne = getMessage(_.filter(messages, ({ LabelIDs, Type }) => LabelIDs.indexOf(currentLocation) > -1 && Type !== CONSTANTS.DRAFT));
+                break;
+
             case $state.includes('secured.drafts.**'):
                 thisOne = filter(({ Type }) => Type === CONSTANTS.DRAFT);
                 break;
 
             default: {
-                const currentLocation = tools.currentLocation();
-                const latest = filter(({ LabelIDs, Type }) => LabelIDs.indexOf(currentLocation) > -1 && Type !== CONSTANTS.DRAFT);
+                const latest = filter(({ Type }) => Type !== CONSTANTS.DRAFT);
 
                 if (latest && latest.IsRead === 1) {
                     thisOne = latest;
                     break;
                 }
 
-                thisOne = getMessage(_.filter(messages, ({ LabelIDs, Type }) => LabelIDs.indexOf(currentLocation) > -1 && Type !== CONSTANTS.DRAFT));
+                thisOne = getMessage(_.filter(messages, ({ Type }) => Type !== CONSTANTS.DRAFT));
                 break;
             }
         }
