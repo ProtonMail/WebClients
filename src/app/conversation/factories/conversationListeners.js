@@ -1,5 +1,5 @@
 angular.module('proton.conversation')
-.factory('conversationListeners', ($rootScope, cache, CONSTANTS) => {
+.factory('conversationListeners', ($rootScope, CONSTANTS) => {
 
     const composerMapActions = {
         replyConversation: 'reply',
@@ -8,25 +8,30 @@ angular.module('proton.conversation')
     };
 
     const isDraft = ({ Type }) => Type === CONSTANTS.DRAFT;
-    function openComposer(type = '', message = {}) {
-        !isDraft(message) && $rootScope.$emit('composer.new', { message, type });
-    }
+    const isDecrypted = ({ failedDecryption }) => !failedDecryption;
+
+    const openComposer = (key, message = {}) => () => {
+        if (!isDraft(message) && isDecrypted(message)) {
+            const type = composerMapActions[key];
+            $rootScope.$emit('composer.new', { message, type });
+        }
+    };
 
     /**
-     * Bind some eventListeners for every action specifics to a message
+     * Listen to hotkeys and proxy the call to emit a composer event based on
+     * 2 conditions:
+     *     - not a draft
+     *     - decrypt:success
      * @param  {Message} message
      * @return {Function}         unsubscribe
      */
     function watch(message) {
-        const listeners = Object
-            .keys(composerMapActions)
-            .map((key) => {
-                return $rootScope
-                    .$on(key, () => openComposer(composerMapActions[key], message));
-            });
+        const listeners = Object.keys(composerMapActions)
+            .map((key) => $rootScope.$on(key, openComposer(key, message)));
 
         return () => {
             listeners.forEach((cb) => cb());
+            listeners.length = 0;
         };
     }
 
