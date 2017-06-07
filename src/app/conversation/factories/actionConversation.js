@@ -345,12 +345,7 @@ angular.module('proton.conversation')
 
         // Generate cache events
         const events = _.reduce(conversationIDs, (acc, ID) => {
-            const conversation = cache.getConversationCached(ID);
             const messages = cache.queryMessagesCached(ID);
-            const labelIDsRemoved = _.chain(conversation.Labels)
-                .filter(({ ID }) => _.contains(folderIDs, ID))
-                .map(({ ID }) => ID)
-                .value();
 
             _.each(messages, ({ Type, LabelIDs = [], ID, IsRead }) => {
                 const copyLabelIDsAdded = labelIDsAdded.slice(); // Copy
@@ -395,15 +390,25 @@ angular.module('proton.conversation')
                 });
             });
 
-            acc.push({
-                Action: 3, ID,
-                Conversation: {
-                    ID, Selected: false,
-                    ContextNumUnread: (toTrash) ? 0 : conversation.ContextNumUnread,
-                    LabelIDsRemoved: labelIDsRemoved, // Remove current location
-                    LabelIDsAdded: labelIDsAdded // Add new location
-                }
-            });
+            const conversation = cache.getConversationCached(ID);
+
+            if (conversation) {
+                const labelIDsRemoved = _.chain(conversation.Labels)
+                    .filter(({ ID }) => _.contains(folderIDs, ID))
+                    .map(({ ID }) => ID)
+                    .value();
+
+                acc.push({
+                    Action: 3, ID,
+                    Conversation: {
+                        ID, Selected: false,
+                        ContextNumUnread: (toTrash) ? 0 : conversation.ContextNumUnread,
+                        LabelIDsRemoved: labelIDsRemoved, // Remove current location
+                        LabelIDsAdded: labelIDsAdded // Add new location
+                    }
+                });
+            }
+
             return acc;
         }, []);
 
