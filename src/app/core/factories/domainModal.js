@@ -4,32 +4,38 @@ angular.module('proton.core')
         controllerAs: 'ctrl',
         templateUrl: 'templates/modals/domain/domain.tpl.html',
         controller(params) {
-            // Variables
-            this.step = params.step;
-            this.domain = params.domain;
-            this.name = '';
+            const self = this;
+
+            self.step = params.step;
+            self.domain = params.domain;
+            self.name = '';
 
             // Functions
-            this.open = (name) => {
+            self.open = (name) => {
                 $rootScope.$broadcast(name, params.domain);
             };
 
-            this.submit = () => {
+            self.submit = () => {
                 if (angular.isDefined(params.submit) && angular.isFunction(params.submit)) {
-                    params.submit(this.name);
+                    params.submit(self.name);
                 }
             };
 
-            this.next = () => {
+            self.next = () => {
                 if (angular.isDefined(params.next) && angular.isFunction(params.next)) {
                     params.next();
                 }
             };
 
-            this.cancel = () => {
+            self.cancel = () => {
                 if (angular.isDefined(params.cancel) && angular.isFunction(params.cancel)) {
                     params.cancel();
                 }
+            };
+
+            self.beginsWith = (value = '') => {
+                const { name = '' } = self;
+                return name.substring(0, value.length) === value;
             };
         }
     });
