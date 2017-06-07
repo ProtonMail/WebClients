@@ -67,6 +67,12 @@ angular.module('proton.composer')
                         });
                     }
 
+                    if (/squireToolbar/.test(target.classList.toString())) {
+                        scope.$applyAsync(() => {
+                            scope.message.ccbcc = false;
+                        });
+                    }
+
                 };
 
                 const onDragEnter = ({ originalEvent }) => {

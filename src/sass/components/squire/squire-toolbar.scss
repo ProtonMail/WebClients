@@ -26,6 +26,7 @@
     width: 40px;
 }
 
+[class*="squireToolbar-action-"] .fa { pointer-events: none }
 [class*="squireToolbar-action-"] + .squireToolbar-separator {border-left: 1px solid $border}
 
 .squire-popover {
