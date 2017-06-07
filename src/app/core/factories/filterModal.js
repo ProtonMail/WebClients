@@ -4,10 +4,10 @@ angular.module('proton.core')
     const TRANSLATIONS = {
         TYPES: [
             { label: gettextCatalog.getString('Select', null), value: 'select' },
-            { label: gettextCatalog.getString('Subject', null), value: 'subject' },
-            { label: gettextCatalog.getString('Sender', null), value: 'sender' },
-            { label: gettextCatalog.getString('Recipient', null), value: 'recipient' },
-            { label: gettextCatalog.getString('Attachments', null), value: 'attachments' }
+            { label: gettextCatalog.getString('the subject', null), value: 'subject' },
+            { label: gettextCatalog.getString('the sender', null), value: 'sender' },
+            { label: gettextCatalog.getString('the recipient', null), value: 'recipient' },
+            { label: gettextCatalog.getString('the attachments', null), value: 'attachments' }
         ],
         COMPARATORS: [
             { label: gettextCatalog.getString('contains', null), value: 'contains' },
@@ -337,7 +337,6 @@ angular.module('proton.core')
             };
 
             ctrl.save = () => {
-
                 const clone = angular.copy(ctrl.filter);
 
                 if (Object.keys(ctrl.filter.Simple || {}).length > 0) {
