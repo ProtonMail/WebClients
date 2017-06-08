@@ -11,7 +11,11 @@ msgstr ""
 "Last-Translator: PMtranslator <contact@protonmail.ch>\n"
 "Language-Team: Turkish\n"
 "Language: tr_TR\n"
-"PO-Revision-Date: 2017-05-31 04:44-0400\n"
+"PO-Revision-Date: 2017-06-08 04:31-0400\n"
+
+#: src/app/templates/modals/domain/domain.tpl.html:13
+msgid "'www' subdomains are typically not used for email. Are you sure you not want to use this domain value?"
+msgstr ""
 
 #: src/app/templates/modals/filter.tpl.html:151
 msgctxt "Label"
@@ -534,14 +538,6 @@ msgctxt "Title"
 msgid "Additional themes"
 msgstr "Ek temalar"
 
-#: src/app/templates/modals/member.tpl.html:58
-#: src/app/templates/modals/payment/payment.tpl.html:22
-#: src/app/templates/views/dashboard.tpl.html:238
-msgid "Address"
-msgid_plural "Addresses"
-msgstr[0] "Adres"
-msgstr[1] "Adresler"
-
 #. table heading
 #. table heading for the domains page table listing of addresses
 #: src/app/templates/modals/domain/address.tpl.html:20
@@ -552,6 +548,14 @@ msgstr[1] "Adresler"
 msgctxt "Title"
 msgid "Address"
 msgstr "Adres"
+
+#: src/app/templates/modals/member.tpl.html:58
+#: src/app/templates/modals/payment/payment.tpl.html:22
+#: src/app/templates/views/dashboard.tpl.html:238
+msgid "Address"
+msgid_plural "Addresses"
+msgstr[0] "Adres"
+msgstr[1] "Adresler"
 
 #: src/app/core/factories/addressModal.js:33
 msgctxt "Info"
@@ -672,14 +676,14 @@ msgstr "tümü"
 msgid "All"
 msgstr "Tümü"
 
-#: src/app/ui/directives/noResults.js:31
-msgctxt "No results heading"
+#: src/app/sidebar/factories/sidebarModel.js:42
+#: src/app/ui/factories/pageTitlesModel.js:7
+msgctxt "Title"
 msgid "All Mail"
 msgstr "Tüm Postalar"
 
-#: src/app/sidebar/factories/sidebarModel.js:43
-#: src/app/ui/factories/pageTitlesModel.js:7
-msgctxt "Title"
+#: src/app/ui/directives/noResults.js:32
+msgctxt "No results heading"
 msgid "All Mail"
 msgstr "Tüm Postalar"
 
@@ -793,6 +797,11 @@ msgstr "Alacak / Verecek"
 msgid "and"
 msgstr "ve"
 
+#: src/app/templates/views/invoices.tpl.html:29
+#: src/app/templates/views/invoices.tpl.html:59
+msgid "Annually"
+msgstr "Yıllık"
+
 #: src/app/templates/views/signup.tpl.html:130
 msgctxt "Info"
 msgid "Annually"
@@ -800,11 +809,6 @@ msgstr "Yıllık"
 
 #: src/app/templates/views/dashboard.tpl.html:131
 msgctxt "Title"
-msgid "Annually"
-msgstr "Yıllık"
-
-#: src/app/templates/views/invoices.tpl.html:29
-#: src/app/templates/views/invoices.tpl.html:59
 msgid "Annually"
 msgstr "Yıllık"
 
@@ -835,19 +839,19 @@ msgstr "Uygula"
 msgid "Archive"
 msgstr "Arşiv"
 
-#: src/app/sidebar/factories/sidebarModel.js:28
-#: src/app/ui/factories/pageTitlesModel.js:13
-msgctxt "Title"
-msgid "Archive"
-msgstr "Arşiv"
-
 #: src/app/templates/modals/filter.tpl.html:133
 msgctxt "Label"
 msgid "Archive"
 msgstr "Arşiv"
 
-#: src/app/ui/directives/noResults.js:35
+#: src/app/ui/directives/noResults.js:36
 msgctxt "No results heading"
+msgid "Archive"
+msgstr "Arşiv"
+
+#: src/app/sidebar/factories/sidebarModel.js:27
+#: src/app/ui/factories/pageTitlesModel.js:13
+msgctxt "Title"
 msgid "Archive"
 msgstr "Arşiv"
 
@@ -924,7 +928,7 @@ msgctxt "Info"
 msgid "Are you sure you want to remove administrative privileges from this member?"
 msgstr "Bu üyeden yönetici ayrıcalıklarını kaldırmak istediğinize emin misiniz?"
 
-#: src/app/elements/controllers/elements.js:635
+#: src/app/elements/controllers/elements.js:639
 #: src/app/elements/directives/advancedFilterElement.js:13
 msgctxt "Info"
 msgid "Are you sure? This cannot be undone."
@@ -936,7 +940,6 @@ msgctxt "Title"
 msgid "Attach screenshot"
 msgstr "Bir ekran görüntüsü ekleyin"
 
-#: src/app/core/factories/filterModal.js:10
 #: src/app/templates/directives/composer/composer.tpl.html:61
 #: src/app/templates/directives/composer/composerAskEmbedded.tpl.html:8
 #: src/app/templates/views/outside.reply.tpl.html:38
@@ -974,13 +977,13 @@ msgstr "Kişiler otomatik kaydet"
 msgid "Available domains"
 msgstr "Müsait alan adları"
 
-#. inbox menu
-#: src/app/templates/directives/ui/settingsMenu.tpl.html:6
+#: src/app/templates/partials/header-auth-simple.tpl.html:4
+msgctxt "Action"
 msgid "Back to inbox"
 msgstr "Gelen kutusuna dön"
 
-#: src/app/templates/partials/header-auth-simple.tpl.html:4
-msgctxt "Action"
+#. inbox menu
+#: src/app/templates/directives/ui/settingsMenu.tpl.html:6
 msgid "Back to inbox"
 msgstr "Gelen kutusuna dön"
 
@@ -1017,7 +1020,7 @@ msgctxt "Info"
 msgid "Before you can start sending and receiving emails from your new addresses you need to create encryption keys for them. 4096-bit keys only work on high performance computers. For most users, we recommend using 2048-bit keys."
 msgstr "Yeni adreslerinizden e-posta göndermeye ve almaya başlamadan önce onlar için şifreleme anahtarları oluşturmanız gerekir. 4096 bitlik anahtarlar yalnızca yüksek performanslı bilgisayarlarda çalışır. Çoğu kullanıcı için 2048 bitlik tuşları kullanmanızı öneririz."
 
-#: src/app/core/controllers/secured.js:167
+#: src/app/core/controllers/secured.js:166
 msgid "Before you can start sending and receiving emails from your new addresses you need to create encryption keys for them. 4096-bit keys only work on high performance computers. For most users, we recommend using 2048-bit keys."
 msgstr "Yeni adreslerinizden e-posta göndermeye ve almaya başlamadan önce onlar için şifreleme anahtarları oluşturmanız gerekir. 4096 bitlik anahtarlar yalnızca yüksek performanslı bilgisayarlarda çalışır. Çoğu kullanıcı için 2048 bitlik tuşları kullanmanızı öneririz."
 
@@ -1029,6 +1032,12 @@ msgstr "başlangıç"
 msgctxt "Info"
 msgid "Below are optional settings you can use to customize your account. You can always find these on your Settings page."
 msgstr "Aşağıda, hesabınızı özelleştirmek için kullanabileceğiniz isteğe bağlı ayarlar verilmektedir. Bunları her zaman Ayarlar sayfanızda bulabilirsiniz."
+
+#. reset warning 3/3
+#: src/app/templates/views/reset-login-password.tpl.html:53
+msgctxt "To continue, type DANGER below:"
+msgid "below:"
+msgstr ""
 
 #. payment status badge
 #: src/app/templates/views/payments.tpl.html:100
@@ -1055,13 +1064,13 @@ msgctxt "Action"
 msgid "Bold"
 msgstr "Kalın"
 
-#: src/app/templates/modals/bug.tpl.html:39
-msgctxt "Title"
+#: src/app/templates/modals/bug.tpl.html:42
+#: src/app/templates/views/upgrade.tpl.html:41
 msgid "Browser"
 msgstr "Tarayıcı"
 
-#: src/app/templates/modals/bug.tpl.html:42
-#: src/app/templates/views/upgrade.tpl.html:41
+#: src/app/templates/modals/bug.tpl.html:39
+msgctxt "Title"
 msgid "Browser"
 msgstr "Tarayıcı"
 
@@ -1144,7 +1153,7 @@ msgstr "Şimdi ayrılırsanız, bu e-postada yazdıklarınızı kaybedeceksiniz.
 #: src/app/templates/modals/twofactor/sharedSecret.tpl.html:37
 #: src/app/templates/modals/twofactor/twoFAIntroModal.tpl.html:19
 #: src/app/templates/views/outside.reply.tpl.html:31
-#: src/app/templates/views/reset-login-password.tpl.html:69
+#: src/app/templates/views/reset-login-password.tpl.html:71
 #: src/app/templates/views/reset-mailbox-password.tpl.html:19
 #: src/app/templates/views/reset-mailbox-password.tpl.html:61
 #: src/app/templates/views/signup.tpl.html:194
@@ -1314,7 +1323,7 @@ msgstr "Yeni bir parola seçin"
 msgid "Choose a mailbox password"
 msgstr "Yeni bir posta kutusu parolası seçin"
 
-#: src/app/templates/views/reset-login-password.tpl.html:82
+#: src/app/templates/views/reset-login-password.tpl.html:84
 #: src/app/templates/views/setup.tpl.html:57
 msgid "Choose a new password"
 msgstr "Yeni bir parola seçin"
@@ -1347,13 +1356,13 @@ msgctxt "Title"
 msgid "Clear"
 msgstr "Temizle"
 
-#: src/app/templates/views/filters.tpl.html:15
-msgctxt "Action"
+#: src/app/settings/controllers/filters.js:126
+msgctxt "Title"
 msgid "Clear All"
 msgstr "Tümünü Temizle"
 
-#: src/app/settings/controllers/filters.js:126
-msgctxt "Title"
+#: src/app/templates/views/filters.tpl.html:15
+msgctxt "Action"
 msgid "Clear All"
 msgstr "Tümünü Temizle"
 
@@ -1409,7 +1418,7 @@ msgstr "<strong>Kaydet</strong>'i tıklamak şifreleme anahtarları oluşturur v
 #: src/app/templates/modals/domain/dkim.tpl.html:37
 #: src/app/templates/modals/domain/dmarc.tpl.html:3
 #: src/app/templates/modals/domain/dmarc.tpl.html:35
-#: src/app/templates/modals/domain/domain.tpl.html:17
+#: src/app/templates/modals/domain/domain.tpl.html:18
 #: src/app/templates/modals/domain/domain.tpl.html:3
 #: src/app/templates/modals/domain/mx.tpl.html:3
 #: src/app/templates/modals/domain/mx.tpl.html:41
@@ -1526,7 +1535,7 @@ msgstr "Giriş parolasını onayla"
 msgid "Confirm mailbox password"
 msgstr "Posta kutusu parolasını onayla"
 
-#: src/app/templates/views/reset-login-password.tpl.html:85
+#: src/app/templates/views/reset-login-password.tpl.html:93
 msgid "Confirm new password"
 msgstr "Yeni parolayı onayla"
 
@@ -1545,10 +1554,6 @@ msgctxt "Label"
 msgid "Confirm password"
 msgstr "Parolayı onayla"
 
-#: src/app/templates/modals/member.tpl.html:50
-msgid "Confirm Password"
-msgstr "Parolayı Onayla"
-
 #: src/app/templates/composer/composerEncrypt.tpl.html:28
 msgctxt "Title"
 msgid "Confirm Password"
@@ -1557,6 +1562,10 @@ msgstr "Parolayı Onayla"
 #: src/app/templates/modals/changeOrganizationPassword.tpl.html:13
 #: src/app/templates/modals/changePassword.tpl.html:24
 msgctxt "Label"
+msgid "Confirm Password"
+msgstr "Parolayı Onayla"
+
+#: src/app/templates/modals/member.tpl.html:50
 msgid "Confirm Password"
 msgstr "Parolayı Onayla"
 
@@ -1637,7 +1646,7 @@ msgctxt "Info"
 msgid "Conversation Grouping automatically groups messages in the same conversation together."
 msgstr "Konuşma gruplandırma, aynı görüşmedeki iletileri otomatik olarak gruplar."
 
-#: src/app/conversation/factories/actionConversation.js:330
+#: src/app/conversation/factories/actionConversation.js:331
 msgid "Conversation moved to"
 msgid_plural "Conversations moved to"
 msgstr[0] "Konuşma şuraya taşındı:"
@@ -1647,7 +1656,7 @@ msgstr[1] "Konuşmalar şuraya taşındı:"
 msgid "conversation selected"
 msgid_plural "conversations selected"
 msgstr[0] "konuşma seçildi"
-msgstr[1] "konuşmalar seçildi"
+msgstr[1] "konuşma seçildi"
 
 #: src/app/authentication/controllers/login.js:102
 msgctxt "Error"
@@ -1668,13 +1677,13 @@ msgctxt "Label"
 msgid "Country"
 msgstr "Ülke"
 
-#: src/app/templates/modals/payment/payment.tpl.html:124
-msgid "Coupon"
-msgstr "Kupon"
-
 #: src/app/templates/modals/payment/payment.tpl.html:43
 #: src/app/templates/views/dashboard.tpl.html:76
 msgctxt "Title"
+msgid "Coupon"
+msgstr "Kupon"
+
+#: src/app/templates/modals/payment/payment.tpl.html:124
 msgid "Coupon"
 msgstr "Kupon"
 
@@ -1759,13 +1768,13 @@ msgstr "Kredi"
 msgid "Credit"
 msgstr "Kredi"
 
-#: src/app/core/factories/paymentModal.js:59
-#: src/app/core/factories/payModal.js:22
+#: src/app/templates/views/dashboard.tpl.html:139
+msgctxt "Title"
 msgid "Credit card"
 msgstr "Kredi kartı"
 
-#: src/app/templates/views/dashboard.tpl.html:139
-msgctxt "Title"
+#: src/app/core/factories/paymentModal.js:59
+#: src/app/core/factories/payModal.js:22
 msgid "Credit card"
 msgstr "Kredi kartı"
 
@@ -1804,17 +1813,17 @@ msgctxt "Title"
 msgid "Custom"
 msgstr "Özel"
 
+#: src/app/templates/views/domains.tpl.html:146
+msgctxt "Title"
+msgid "Custom domain"
+msgstr "Özel alan adı"
+
 #: src/app/templates/modals/payment/payment.tpl.html:21
 #: src/app/templates/views/dashboard.tpl.html:226
 msgid "Custom domain"
 msgid_plural "Custom domains"
 msgstr[0] "Özel alan adı"
 msgstr[1] "Özel alan adları"
-
-#: src/app/templates/views/domains.tpl.html:146
-msgctxt "Title"
-msgid "Custom domain"
-msgstr "Özel alan adı"
 
 #. Tooltip
 #: src/app/templates/message/filterButton.tpl.html:2
@@ -1955,13 +1964,6 @@ msgctxt "Title"
 msgid "Default signature"
 msgstr "Varsayılan imza"
 
-#: src/app/contactCurrent/controllers/contacts.js:162
-#: src/app/contactCurrent/controllers/contacts.js:165
-#: src/app/elements/controllers/elements.js:634
-msgctxt "Title"
-msgid "Delete"
-msgstr "Sil"
-
 #. contacts toolbar menu option
 #: src/app/templates/elements/moveElement.tpl.html:37
 #: src/app/templates/message/message.tpl.html:168
@@ -1984,6 +1986,13 @@ msgstr "Sil"
 #: src/app/composer/controllers/composeMessage.js:1086
 #: src/app/templates/views/filters.tpl.html:112
 #: src/app/templates/views/filters.tpl.html:79
+msgid "Delete"
+msgstr "Sil"
+
+#: src/app/contactCurrent/controllers/contacts.js:162
+#: src/app/contactCurrent/controllers/contacts.js:165
+#: src/app/elements/controllers/elements.js:638
+msgctxt "Title"
 msgid "Delete"
 msgstr "Sil"
 
@@ -2092,23 +2101,15 @@ msgctxt "Title"
 msgid "Disable address"
 msgstr "Adresi devre dışı bırak"
 
-#: src/app/templates/views/security.tpl.html:16
-msgctxt "Action"
-msgid "Disable Two-Factor Authentication"
-msgstr "İki Adımlı Doğrulama'yı Devre Dışı Bırak"
-
 #: src/app/settings/controllers/security.js:132
 msgctxt "Title"
 msgid "Disable Two-Factor Authentication"
 msgstr "İki Adımlı Doğrulama'yı Devre Dışı Bırak"
 
-#. notification settings option
-#: src/app/templates/views/account.tpl.html:107
-#: src/app/templates/views/account.tpl.html:128
-#: src/app/templates/views/account.tpl.html:331
+#: src/app/templates/views/security.tpl.html:16
 msgctxt "Action"
-msgid "Disabled"
-msgstr "Devre Dışı"
+msgid "Disable Two-Factor Authentication"
+msgstr "İki Adımlı Doğrulama'yı Devre Dışı Bırak"
 
 #. address state badge
 #. form option
@@ -2117,6 +2118,14 @@ msgstr "Devre Dışı"
 #: src/app/templates/views/domains.tpl.html:189
 #: src/app/templates/views/identities.tpl.html:64
 #: src/app/templates/views/members.tpl.html:200
+msgid "Disabled"
+msgstr "Devre Dışı"
+
+#. notification settings option
+#: src/app/templates/views/account.tpl.html:107
+#: src/app/templates/views/account.tpl.html:128
+#: src/app/templates/views/account.tpl.html:331
+msgctxt "Action"
 msgid "Disabled"
 msgstr "Devre Dışı"
 
@@ -2132,13 +2141,13 @@ msgctxt "Action"
 msgid "Display invoice"
 msgstr "Faturayı görüntüle"
 
-#: src/app/templates/modals/identity.tpl.html:26
-#: src/app/templates/modals/identity.tpl.html:43
-msgctxt "Title"
+#: src/app/templates/modals/welcome.tpl.html:19
 msgid "Display name"
 msgstr "Görünen ad"
 
-#: src/app/templates/modals/welcome.tpl.html:19
+#: src/app/templates/modals/identity.tpl.html:26
+#: src/app/templates/modals/identity.tpl.html:43
+msgctxt "Title"
 msgid "Display name"
 msgstr "Görünen ad"
 
@@ -2147,7 +2156,7 @@ msgctxt "Title"
 msgid "DKIM"
 msgstr "DKIM"
 
-#: src/app/templates/views/reset-login-password.tpl.html:89
+#: src/app/templates/views/reset-login-password.tpl.html:104
 msgid "Do NOT forget this password. If you forget it, you will not be able to login or decrypt your messages."
 msgstr "Bu parolayı ASLA unutmayın. Unutursanız, mesajlarınıza giriş yapamaz veya şifresini çözemezsiniz."
 
@@ -2222,6 +2231,12 @@ msgstr "Alan adları"
 msgid "domains used."
 msgstr "alan adı kullanıldı."
 
+#: src/app/templates/modals/donate.tpl.html:57
+#: src/app/templates/views/dashboard.tpl.html:160
+msgctxt "Action"
+msgid "Donate"
+msgstr "Bağışta Bulun"
+
 #: src/app/sidebar/directives/donateBtn.js:4
 #: src/app/templates/modals/donate.tpl.html:6
 #: src/app/templates/views/dashboard.tpl.html:151
@@ -2229,12 +2244,6 @@ msgstr "alan adı kullanıldı."
 msgctxt "Title"
 msgid "Donate"
 msgstr "Bağış"
-
-#: src/app/templates/modals/donate.tpl.html:57
-#: src/app/templates/views/dashboard.tpl.html:160
-msgctxt "Action"
-msgid "Donate"
-msgstr "Bağışta Bulun"
 
 #: src/app/templates/modals/donate.tpl.html:9
 msgid "Donate to ProtonMail"
@@ -2282,14 +2291,14 @@ msgctxt "Action"
 msgid "Downgrade to Plus"
 msgstr "Plus'a Düşür"
 
+#: src/app/templates/directives/attachments/listAttachments.tpl.html:23
+msgid "Download"
+msgstr "İndir"
+
 #. table heading
 #: src/app/contactCurrent/controllers/contacts.js:424
 #: src/app/templates/address/addressKeysView.tpl.html:8
 msgctxt "Title"
-msgid "Download"
-msgstr "İndir"
-
-#: src/app/templates/directives/attachments/listAttachments.tpl.html:23
 msgid "Download"
 msgstr "İndir"
 
@@ -2339,19 +2348,19 @@ msgstr "İndiriliyor"
 msgid "Draft"
 msgstr "Taslak"
 
-#: src/app/ui/directives/noResults.js:11
-msgctxt "No results heading"
+#: src/app/conversation/factories/actionConversation.js:20
+#: src/app/message/factories/messageActions.js:11
 msgid "Drafts"
 msgstr "Taslaklar"
 
-#: src/app/sidebar/factories/sidebarModel.js:13
+#: src/app/sidebar/factories/sidebarModel.js:12
 #: src/app/ui/factories/pageTitlesModel.js:10
 msgctxt "Title"
 msgid "Drafts"
 msgstr "Taslaklar"
 
-#: src/app/conversation/factories/actionConversation.js:20
-#: src/app/message/factories/messageActions.js:11
+#: src/app/ui/directives/noResults.js:12
+msgctxt "No results heading"
 msgid "Drafts"
 msgstr "Taslaklar"
 
@@ -2590,12 +2599,12 @@ msgctxt "Action"
 msgid "Encrypting attachments"
 msgstr "Ekler şifreleniyor"
 
-#: src/app/templates/directives/composer/composer.tpl.html:86
-msgctxt "Title"
+#: src/app/templates/directives/composer/composer.tpl.html:74
 msgid "Encryption"
 msgstr "Şifreleme"
 
-#: src/app/templates/directives/composer/composer.tpl.html:74
+#: src/app/templates/directives/composer/composer.tpl.html:86
+msgctxt "Title"
 msgid "Encryption"
 msgstr "Şifreleme"
 
@@ -2660,7 +2669,7 @@ msgctxt "Info"
 msgid "Enter the Organization Password to restore administrator privileges. <a href=\"https://protonmail.com/support/knowledge-base/restore-administrator/\" target=\"_blank\">Learn more</a>"
 msgstr "Yönetici ayrıcalıklarını geri yüklemek için kuruluş parolasını girin. <a href=\"https://protonmail.com/support/knowledge-base/restore-administrator/\" target=\"_blank\">Daha fazla bilgi için</a>"
 
-#: src/app/templates/views/reset-login-password.tpl.html:54
+#: src/app/templates/views/reset-login-password.tpl.html:56
 #: src/app/templates/views/reset-mailbox-password.tpl.html:9
 msgid "Enter the word 'DANGER' here."
 msgstr "Buraya 'TEHLİKE' kelimesini girin."
@@ -2696,14 +2705,14 @@ msgstr "Hesabınızı sıfırlamadan önce bir önceki posta kutunuzun parolası
 msgid "Enter your previous password from before your account was reset:"
 msgstr "Hesabınızı sıfırlamadan önce bir önceki posta kutunuzun parolasını girin:"
 
-#. key generation progrss
-#: src/app/templates/modals/generate.tpl.html:49
-msgctxt "Error"
+#: src/app/templates/views/outside.unlock.tpl.html:33
+msgctxt "Title"
 msgid "Error"
 msgstr "Hata"
 
-#: src/app/templates/views/outside.unlock.tpl.html:33
-msgctxt "Title"
+#. key generation progrss
+#: src/app/templates/modals/generate.tpl.html:49
+msgctxt "Error"
 msgid "Error"
 msgstr "Hata"
 
@@ -2717,16 +2726,16 @@ msgctxt "Error"
 msgid "Error changing organization keys"
 msgstr "Organizasyon anahtarlarını değiştirme hatası"
 
-#: src/app/core/controllers/signup.js:322
-#: src/app/core/directives/paypalView.js:25
-#: src/app/core/factories/paymentModal.js:257
-msgid "Error connecting to PayPal."
-msgstr "PayPal'a bağlanırken hata oluştu."
-
 #: src/app/templates/directives/core/paypalView.tpl.html:4
 #: src/app/templates/modals/payment/payment.tpl.html:98
 #: src/app/templates/views/signup.tpl.html:182
 msgctxt "Error"
+msgid "Error connecting to PayPal."
+msgstr "PayPal'a bağlanırken hata oluştu."
+
+#: src/app/core/controllers/signup.js:323
+#: src/app/core/directives/paypalView.js:25
+#: src/app/core/factories/paymentModal.js:257
 msgid "Error connecting to PayPal."
 msgstr "PayPal'a bağlanırken hata oluştu."
 
@@ -2754,18 +2763,13 @@ msgctxt "Error"
 msgid "Error during enable request"
 msgstr "Etkinleştirme isteği sırasında hata oluştu"
 
-#: src/app/core/controllers/secured.js:106
-#: src/app/core/controllers/secured.js:109
+#: src/app/core/controllers/secured.js:105
+#: src/app/core/controllers/secured.js:108
 #: src/app/core/factories/paymentModal.js:102
 #: src/app/core/factories/paymentModal.js:104
 msgctxt "Error"
 msgid "Error during organization request"
 msgstr "Organizasyon isteği sırasında hata oluştu"
-
-#: src/app/elements/controllers/elements.js:417
-msgctxt "Error"
-msgid "Error during quering conversations"
-msgstr "Konuşmaları sorgulama sırasında bir hata oluştu"
 
 #: src/app/settings/controllers/security.js:218
 msgctxt "Error"
@@ -2980,7 +2984,7 @@ msgctxt "Action"
 msgid "Finish"
 msgstr "Bitir"
 
-#: src/app/ui/directives/noResults.js:47
+#: src/app/ui/directives/noResults.js:48
 msgctxt "No results heading"
 msgid "Folder"
 msgstr "Klasör"
@@ -3001,14 +3005,14 @@ msgstr "Klasör boşaltıldı"
 msgid "Folder updated"
 msgstr "Klasör güncellendi"
 
-#: src/app/sidebar/factories/sidebarSettingsModel.js:17
-#: src/app/templates/views/labels.tpl.html:6
-msgctxt "Title"
+#: src/app/templates/partials/sidebar.tpl.html:23
+msgctxt "Action"
 msgid "Folders / Labels"
 msgstr "Klasörler / Etiketler"
 
-#: src/app/templates/partials/sidebar.tpl.html:23
-msgctxt "Action"
+#: src/app/sidebar/factories/sidebarSettingsModel.js:17
+#: src/app/templates/views/labels.tpl.html:6
+msgctxt "Title"
 msgid "Folders / Labels"
 msgstr "Klasörler / Etiketler"
 
@@ -3109,13 +3113,13 @@ msgctxt "fileSize format"
 msgid "GB"
 msgstr "GB"
 
-#: src/app/settings/controllers/identities.js:460
-msgctxt "Info"
+#: src/app/settings/controllers/identities.js:459
+msgctxt "Title"
 msgid "Generate key pair"
 msgstr "Anahtar çifti oluştur"
 
-#: src/app/settings/controllers/identities.js:459
-msgctxt "Title"
+#: src/app/settings/controllers/identities.js:460
+msgctxt "Info"
 msgid "Generate key pair"
 msgstr "Anahtar çifti oluştur"
 
@@ -3136,13 +3140,13 @@ msgctxt "Info"
 msgid "Generating 4096-bit encryption keys may crash or freeze your browser. 4096-bit keys are only recommended for high performance computers - not recommended for tablet and mobile devices."
 msgstr "4096 bitlik şifreleme anahtarları üretmek tarayıcınızı kilitleyebilir veya dondurabilir. 4096 bitlik anahtarlar yalnızca yüksek performanslı bilgisayarlar için önerilir. Tablet ve mobil cihazlar için önerilmez."
 
-#: src/app/templates/views/reset-login-password.tpl.html:120
+#: src/app/templates/views/reset-login-password.tpl.html:135
 #: src/app/templates/views/setup.tpl.html:99
 #: src/app/templates/views/signup.tpl.html:360
 msgid "Generating keys"
 msgstr "Anahtarlar oluşturuluyor"
 
-#: src/app/templates/views/reset-login-password.tpl.html:104
+#: src/app/templates/views/reset-login-password.tpl.html:119
 #: src/app/templates/views/setup.tpl.html:81
 #: src/app/templates/views/signup.tpl.html:342
 msgid "Generating keys..."
@@ -3310,6 +3314,7 @@ msgstr "Kimlik"
 msgid "Identity saved"
 msgstr "Kimlik kaydedildi"
 
+#: src/app/templates/modals/filter.tpl.html:101
 #: src/app/templates/modals/filter.tpl.html:42
 msgid "If"
 msgstr "Eğer"
@@ -3324,7 +3329,7 @@ msgctxt "Info"
 msgid "If this domain is currently actively receiving emails, create all used email addresses in Step 3 before changing MX record to ensure a smooth transition."
 msgstr "Bu alan adı şu anda aktif olarak e-posta alıyorsa, sorunsuz bir geçiş sağlamak için MX kaydını değiştirmeden önce 3. adımda kullanılan tüm e-posta adreslerini oluşturun."
 
-#: src/app/templates/views/reset-login-password.tpl.html:65
+#: src/app/templates/views/reset-login-password.tpl.html:67
 #: src/app/templates/views/reset-mailbox-password.tpl.html:15
 msgid "If you are resetting the Login password only, old messages can be recovered later if you know your existing Mailbox Password. <a href=\"https://protonmail.com/support/knowledge-base/restoring-encrypted-mailbox/\" target=\"_blank\">Learn More</a>."
 msgstr "Yalnızca giriş parolanızı sıfırlarsanız, mevcut posta kutusu parolanızı biliyorsanız daha sonra eski mesajları kurtarılabilirsiniz. <a href=\"https://protonmail.com/support/knowledge-base/restoring-encrypted-mailbox/\" target=\"_blank\">Daha fazla bilgi edinin</a>."
@@ -3366,7 +3371,7 @@ msgstr "Parolanızı kaybederseniz, e-postalarınızı okumanız mümkün olmaya
 msgid "If you lose your two-factor-enabled device, these codes can be used instead of the 6-digit 2FA code to log into your account. Each code can only be used once."
 msgstr "İki adımlı doğrulama cihazınızı kaybederseniz, bu kodlar hesabınıza girmek için 6 basamaklı 2FA kodu yerine kullanılabilir. Her kod yalnızca bir kez kullanılabilir."
 
-#: src/app/templates/views/reset-login-password.tpl.html:58
+#: src/app/templates/views/reset-login-password.tpl.html:60
 msgid "If you remember your old password later, you can recover your existing messages. <a href=\"https://protonmail.com/support/knowledge-base/restoring-encrypted-mailbox/\" target=\"_blank\">Learn More</a>."
 msgstr "Eski parolanızı daha sonradan hatırlarsanız, mevcut mesajlarınızı kurtarılabilirsiniz. <a href=\"https://protonmail.com/support/knowledge-base/restoring-encrypted-mailbox/\" target=\"_blank\">Daha fazla bilgi edinin</a>."
 
@@ -3444,12 +3449,12 @@ msgstr "Etkin olmayan adresler"
 msgid "Inbox"
 msgstr "Gelen Kutusu"
 
-#: src/app/ui/directives/noResults.js:7
+#: src/app/ui/directives/noResults.js:8
 msgctxt "No results heading"
 msgid "Inbox"
 msgstr "Gelen Kutusu"
 
-#: src/app/sidebar/factories/sidebarModel.js:8
+#: src/app/sidebar/factories/sidebarModel.js:7
 #: src/app/ui/factories/pageTitlesModel.js:8
 msgctxt "Title"
 msgid "Inbox"
@@ -3484,12 +3489,12 @@ msgctxt "Action"
 msgid "Insert image"
 msgstr "Resim ekle"
 
-#: src/app/templates/squire/squireToolbar.tpl.html:75
-msgctxt "Action"
+#: src/app/templates/squire/addLinkPopover.tpl.html:40
 msgid "Insert link"
 msgstr "Bağlantı ekle"
 
-#: src/app/templates/squire/addLinkPopover.tpl.html:40
+#: src/app/templates/squire/squireToolbar.tpl.html:75
+msgctxt "Action"
 msgid "Insert link"
 msgstr "Bağlantı ekle"
 
@@ -3599,7 +3604,7 @@ msgctxt "Info"
 msgid "It can take up to a day for DNS changes to update."
 msgstr "DNS değişikliklerinin güncellenmesi bir gün sürebilir."
 
-#: src/app/core/controllers/signup.js:268
+#: src/app/core/controllers/signup.js:269
 msgid "It currently isn't possible to subscribe to a Paid ProtonMail plan."
 msgstr "Halen ücretli bir ProtonMail planına abone olmak mümkün değildir."
 
@@ -3623,7 +3628,7 @@ msgctxt "fileSize format"
 msgid "KB"
 msgstr "KB"
 
-#: src/app/templates/views/reset-login-password.tpl.html:79
+#: src/app/templates/views/reset-login-password.tpl.html:81
 msgctxt "Info"
 msgid "Keep this password safe--it cannot be recovered."
 msgstr "Bu parolayı koruyun. Sonradan kurtarılamaz."
@@ -3695,15 +3700,20 @@ msgctxt "Title"
 msgid "Keywords"
 msgstr "Anahtar Kelimeler"
 
-#: src/app/ui/directives/noResults.js:43
-msgctxt "No results heading"
-msgid "Label"
-msgstr "Etiket"
-
 #: src/app/ui/factories/pageTitlesModel.js:51
 msgctxt "Title"
 msgid "Label"
 msgstr "Etiket"
+
+#: src/app/ui/directives/noResults.js:44
+msgctxt "No results heading"
+msgid "Label"
+msgstr "Etiket"
+
+#: src/app/templates/directives/dropdownLabels.tpl.html:8
+msgctxt "title"
+msgid "Label as"
+msgstr "Etiketle"
 
 #. Tooltip
 #: src/app/templates/message/message.tpl.html:104
@@ -3712,11 +3722,6 @@ msgid "Label as"
 msgstr "Etiketle"
 
 #: src/app/templates/partials/toolbar-desktop.tpl.html:26
-msgid "Label as"
-msgstr "Etiketle"
-
-#: src/app/templates/directives/dropdownLabels.tpl.html:8
-msgctxt "title"
 msgid "Label as"
 msgstr "Etiketle"
 
@@ -3748,7 +3753,7 @@ msgstr "Etiket güncellendi"
 #: src/app/commons/models/payments.js:157
 #: src/app/commons/models/payments.js:173
 msgid "Labels"
-msgstr "Etiketler"
+msgstr "Etiket"
 
 #: src/app/ui/factories/pageTitlesModel.js:19
 msgctxt "Title"
@@ -3795,6 +3800,10 @@ msgctxt "Link"
 msgid "Learn more"
 msgstr "Daha fazla bilgi edinin"
 
+#: src/app/templates/views/members.tpl.html:237
+msgid "Learn more"
+msgstr "Daha fazla bilgi edinin"
+
 #. learn more link
 #: src/app/templates/modals/domain/dkim.tpl.html:16
 #: src/app/templates/modals/domain/dmarc.tpl.html:12
@@ -3807,10 +3816,6 @@ msgstr "Daha fazla bilgi edinin"
 #: src/app/templates/views/dashboard.tpl.html:176
 #: src/app/templates/views/identities.tpl.html:30
 msgctxt "Action"
-msgid "Learn more"
-msgstr "Daha fazla bilgi edinin"
-
-#: src/app/templates/views/members.tpl.html:237
 msgid "Learn more"
 msgstr "Daha fazla bilgi edinin"
 
@@ -3854,13 +3859,13 @@ msgctxt "Action"
 msgid "Load edison theme"
 msgstr "Edison temasını yükle"
 
-#: src/app/templates/views/account.tpl.html:275
-msgctxt "Title"
+#: src/app/message/directives/displayContentBtn.js:5
+msgctxt "Action"
 msgid "Load embedded images"
 msgstr "Gömülü resimleri yükle"
 
-#: src/app/message/directives/displayContentBtn.js:5
-msgctxt "Action"
+#: src/app/templates/views/account.tpl.html:275
+msgctxt "Title"
 msgid "Load embedded images"
 msgstr "Gömülü resimleri yükle"
 
@@ -3913,7 +3918,7 @@ msgstr "Diğer oturumlardan çıkış yap"
 msgid "Logging in to new account"
 msgstr "Yeni hesaba giriş yapılıyor"
 
-#: src/app/templates/views/reset-login-password.tpl.html:128
+#: src/app/templates/views/reset-login-password.tpl.html:143
 msgid "Logging in to your account"
 msgstr "Hesabınıza giriş yapılıyor"
 
@@ -3970,13 +3975,13 @@ msgstr "Oturum açma parolası gereklidir."
 msgid "Login success"
 msgstr "Oturum açma başarılı"
 
-#: src/app/templates/ui/navigation/navigationUser.tpl.html:28
-msgctxt "Action"
+#. auth log entry
+#: src/app/templates/views/security.tpl.html:84
 msgid "Logout"
 msgstr "Çıkış"
 
-#. auth log entry
-#: src/app/templates/views/security.tpl.html:84
+#: src/app/templates/ui/navigation/navigationUser.tpl.html:28
+msgctxt "Action"
 msgid "Logout"
 msgstr "Çıkış"
 
@@ -4131,7 +4136,7 @@ msgctxt "Title"
 msgid "Message headers"
 msgstr "İleti başlığı"
 
-#: src/app/message/factories/messageActions.js:150
+#: src/app/message/factories/messageActions.js:151
 msgid "Message moved to"
 msgid_plural "Messages moved to"
 msgstr[0] "İleti şuraya taşındı"
@@ -4193,11 +4198,6 @@ msgstr "Eksik anahtarlar"
 msgid "MM/DD/YYYY"
 msgstr "AA/GG/YYYY"
 
-#: src/app/templates/views/dashboard.tpl.html:130
-msgctxt "Title"
-msgid "Monthly"
-msgstr "Aylık"
-
 #: src/app/templates/views/signup.tpl.html:129
 msgctxt "Info"
 msgid "Monthly"
@@ -4208,12 +4208,17 @@ msgstr "Aylık"
 msgid "Monthly"
 msgstr "Aylık"
 
-#: src/app/templates/elements/advancedFilterElement.tpl.html:8
-msgid "More"
-msgstr "Daha"
+#: src/app/templates/views/dashboard.tpl.html:130
+msgctxt "Title"
+msgid "Monthly"
+msgstr "Aylık"
 
 #: src/app/templates/message/message.tpl.html:137
 msgctxt "Action"
+msgid "More"
+msgstr "Daha"
+
+#: src/app/templates/elements/advancedFilterElement.tpl.html:8
 msgid "More"
 msgstr "Daha"
 
@@ -4227,12 +4232,12 @@ msgctxt "Action"
 msgid "Move to"
 msgstr "Şuraya taşı"
 
-#: src/app/templates/partials/toolbar-desktop.tpl.html:13
+#: src/app/templates/labels/dropdownFolders.tpl.html:3
+msgctxt "title"
 msgid "Move to"
 msgstr "Şuraya taşı"
 
-#: src/app/templates/labels/dropdownFolders.tpl.html:3
-msgctxt "title"
+#: src/app/templates/partials/toolbar-desktop.tpl.html:13
 msgid "Move to"
 msgstr "Şuraya taşı"
 
@@ -4287,6 +4292,10 @@ msgctxt "Title"
 msgid "My subscription"
 msgstr "Aboneliklerim"
 
+#: src/app/templates/modals/label.tpl.html:21
+msgid "Name"
+msgstr "Ad"
+
 #. table heading
 #. table heading for the domains page table listing of addresses
 #: src/app/templates/modals/contact.tpl.html:12
@@ -4302,10 +4311,6 @@ msgstr "Ad"
 #. table heading / link to sort table
 #: src/app/templates/views/contacts.tpl.html:42
 msgctxt "Action"
-msgid "Name"
-msgstr "Ad"
-
-#: src/app/templates/modals/label.tpl.html:21
 msgid "Name"
 msgstr "Ad"
 
@@ -4380,7 +4385,7 @@ msgctxt "Label"
 msgid "New Password"
 msgstr "Yeni Parola"
 
-#: src/app/templates/views/reset-login-password.tpl.html:81
+#: src/app/templates/views/reset-login-password.tpl.html:83
 msgctxt "Title"
 msgid "New password:"
 msgstr "Yeni parola:"
@@ -4391,8 +4396,8 @@ msgstr "Yeni parola:"
 #: src/app/templates/modals/changePassword.tpl.html:41
 #: src/app/templates/modals/domain/address.tpl.html:36
 #: src/app/templates/modals/domain/dkim.tpl.html:36
-#: src/app/templates/modals/domain/domain.tpl.html:18
 #: src/app/templates/modals/domain/domain.tpl.html:19
+#: src/app/templates/modals/domain/domain.tpl.html:20
 #: src/app/templates/modals/domain/mx.tpl.html:40
 #: src/app/templates/modals/domain/spf.tpl.html:35
 #: src/app/templates/modals/domain/verification.tpl.html:38
@@ -4424,10 +4429,15 @@ msgstr "Hayır"
 msgid "No"
 msgstr "Hayır"
 
-#: src/app/ui/directives/noResults.js:67
+#: src/app/ui/directives/noResults.js:68
 msgctxt "Title"
 msgid "No conversations"
 msgstr "Konuşma yok"
+
+#: src/app/core/services/cache.js:30
+msgctxt "Error"
+msgid "No conversations available"
+msgstr ""
 
 #: src/app/templates/views/domains.tpl.html:137
 #: src/app/templates/views/domains.tpl.html:204
@@ -4484,10 +4494,15 @@ msgstr "Etiket yok"
 msgid "No logs yet"
 msgstr "Henüz günlük yok"
 
-#: src/app/ui/directives/noResults.js:69
+#: src/app/ui/directives/noResults.js:70
 msgctxt "Title"
 msgid "No messages"
 msgstr "Mesaj yok"
+
+#: src/app/core/services/cache.js:29
+msgctxt "Error"
+msgid "No messages available"
+msgstr ""
 
 #: src/app/templates/views/contacts.tpl.html:33
 msgctxt "Info"
@@ -4575,6 +4590,11 @@ msgstr "Numara"
 msgid "Number of users"
 msgstr "Kullanıcı sayısı"
 
+#: src/app/templates/modals/filter.tpl.html:101
+msgctxt "Filter modal - If one of the conditions ..."
+msgid "of the conditions above apply, do the following actions."
+msgstr ""
+
 #. dkim status badge
 #: src/app/templates/modals/domain/dkim.tpl.html:10
 msgid "Off"
@@ -4595,13 +4615,13 @@ msgctxt "Info"
 msgid "On December 1st, we will send an email with instructions on how to upgrade your account to a <strong>Lifetime Account</strong>."
 msgstr "1 Aralık tarihinde hesabınızı bir <strong>Yaşamboyu Hesabı</strong>'na nasıl yükselteceğinizle ilgili talimatları içeren bir e-posta göndereceğiz."
 
-#: src/app/templates/vpn/openVpnSection.tpl.html:3
-msgctxt "Title"
+#: src/app/templates/vpn/openVpnSection.tpl.html:17
+msgctxt "Label"
 msgid "OpenVPN Login"
 msgstr "OpenVPN Giriş"
 
-#: src/app/templates/vpn/openVpnSection.tpl.html:17
-msgctxt "Label"
+#: src/app/templates/vpn/openVpnSection.tpl.html:3
+msgctxt "Title"
 msgid "OpenVPN Login"
 msgstr "OpenVPN Giriş"
 
@@ -4732,12 +4752,12 @@ msgstr "Kurum güncellendi"
 msgid "Orphan"
 msgstr "Yetim"
 
-#: src/app/templates/modals/bug.tpl.html:31
-msgctxt "Title"
+#: src/app/templates/modals/bug.tpl.html:34
 msgid "OS version"
 msgstr "OS Versiyonu"
 
-#: src/app/templates/modals/bug.tpl.html:34
+#: src/app/templates/modals/bug.tpl.html:31
+msgctxt "Title"
 msgid "OS version"
 msgstr "OS Versiyonu"
 
@@ -4794,11 +4814,6 @@ msgstr "Sayfa numarası"
 msgid "Paid"
 msgstr "Ücretli"
 
-#: src/app/templates/modals/switchPasswordMode.tpl.html:13
-msgctxt "Label"
-msgid "Password"
-msgstr "Parola"
-
 #: src/app/templates/authentication/loginForm.tpl.html:33
 #: src/app/templates/authentication/modals/loginPassword.tpl.html:11
 #: src/app/templates/composer/composerEncrypt.tpl.html:15
@@ -4815,6 +4830,11 @@ msgstr "Parola"
 #: src/app/templates/views/setup.tpl.html:53
 #: src/app/templates/views/signup.tpl.html:64
 msgctxt "Title"
+msgid "Password"
+msgstr "Parola"
+
+#: src/app/templates/modals/switchPasswordMode.tpl.html:13
+msgctxt "Label"
 msgid "Password"
 msgstr "Parola"
 
@@ -4988,7 +5008,7 @@ msgstr "Abonelik planı"
 #: src/app/templates/views/dashboard.tpl.html:170
 msgctxt "Title"
 msgid "Plans and prices"
-msgstr "Planlar ve fiyatlar"
+msgstr "Planlar ve ücretlendirme"
 
 #: src/app/templates/views/domains.tpl.html:206
 msgid "Please add a custom domain before configuring addresses."
@@ -5308,10 +5328,6 @@ msgctxt "Title"
 msgid "Recipient"
 msgstr "Alıcı"
 
-#: src/app/core/factories/filterModal.js:9
-msgid "Recipient"
-msgstr "Alıcı"
-
 #: src/app/templates/directives/composer/composerInputMeta.tpl.html:4
 msgctxt "Title"
 msgid "Recipients"
@@ -5347,7 +5363,7 @@ msgstr "Kurtarma/bildirim e-postası"
 msgid "Recovery/Notification email saved"
 msgstr "Kurtarma/Bildirim e-postası kaydedildi"
 
-#: src/app/templates/views/reset-login-password.tpl.html:132
+#: src/app/templates/views/reset-login-password.tpl.html:147
 #: src/app/templates/views/reset-mailbox-password.tpl.html:84
 #: src/app/templates/views/setup.tpl.html:111
 #: src/app/templates/views/signup.tpl.html:380
@@ -5421,7 +5437,7 @@ msgstr "İstek zaman aşımına uğradı, lütfen tekrar deneyin."
 msgid "Required"
 msgstr "Gerekli"
 
-#: src/app/templates/views/reset-login-password.tpl.html:70
+#: src/app/templates/views/reset-login-password.tpl.html:72
 #: src/app/templates/views/reset-mailbox-password.tpl.html:21
 msgctxt "Action"
 msgid "Reset"
@@ -5452,13 +5468,13 @@ msgctxt "Action"
 msgid "Reset Keys"
 msgstr "Anahtarları Sıfırla"
 
-#: src/app/templates/views/reset-mailbox-password.tpl.html:39
-msgctxt "Action"
+#: src/app/templates/views/reset-mailbox-password.tpl.html:46
+msgctxt "Title"
 msgid "Reset mailbox"
 msgstr "Posta kutusunu sıfırla"
 
-#: src/app/templates/views/reset-mailbox-password.tpl.html:46
-msgctxt "Title"
+#: src/app/templates/views/reset-mailbox-password.tpl.html:39
+msgctxt "Action"
 msgid "Reset mailbox"
 msgstr "Posta kutusunu sıfırla"
 
@@ -5469,21 +5485,10 @@ msgstr "Şimdi sıfırla"
 
 #. button to reset password
 #: src/app/templates/authentication/modals/helpLoginModal.tpl.html:10
-#: src/app/templates/views/reset-login-password.tpl.html:94
+#: src/app/templates/views/reset-login-password.tpl.html:109
 msgctxt "Action"
 msgid "Reset password"
 msgstr "Parolayı sıfırla"
-
-#: src/app/templates/views/reset-login-password.tpl.html:24
-#: src/app/templates/views/reset-login-password.tpl.html:78
-msgctxt "Title"
-msgid "Reset Password"
-msgstr "Parolayı Sıfırla"
-
-#: src/app/templates/views/reset-login-password.tpl.html:4
-msgctxt "Info"
-msgid "Reset Password"
-msgstr "Parolayı Sıfırla"
 
 #. button to reset login password
 #. button to reset password
@@ -5493,17 +5498,28 @@ msgctxt "Action"
 msgid "Reset Password"
 msgstr "Parolayı Sıfırla"
 
+#: src/app/templates/views/reset-login-password.tpl.html:4
+msgctxt "Info"
+msgid "Reset Password"
+msgstr "Parolayı Sıfırla"
+
+#: src/app/templates/views/reset-login-password.tpl.html:24
+#: src/app/templates/views/reset-login-password.tpl.html:80
+msgctxt "Title"
+msgid "Reset Password"
+msgstr "Parolayı Sıfırla"
+
 #: src/app/templates/views/appearance.tpl.html:123
 msgctxt "Action"
 msgid "Reset theme"
 msgstr "Temayı sıfırla"
 
-#: src/app/templates/views/reset-login-password.tpl.html:64
+#: src/app/templates/views/reset-login-password.tpl.html:66
 #: src/app/templates/views/reset-mailbox-password.tpl.html:14
 msgid "Resetting either Login or Mailbox password will make old messages unreadable."
 msgstr "Giriş veya Posta kutusu şifresinin sıfırlanması eski mesajları okunamayacak hale getirecektir."
 
-#: src/app/templates/views/reset-login-password.tpl.html:63
+#: src/app/templates/views/reset-login-password.tpl.html:65
 #: src/app/templates/views/reset-mailbox-password.tpl.html:13
 msgid "Resetting either Login or Mailbox password will switch you to <a href=\"https://protonmail.com/support/knowledge-base/single-password/\" target=\"_blank\">Single Password Mode</a>."
 msgstr "Giriş veya Posta kutusu şifresinin sıfırlanması sizi <a href=\"https://protonmail.com/support/knowledge-base/single-password/\" target=\"_blank\">Tek Şifre Modu</a>'na geçirecektir."
@@ -5513,8 +5529,8 @@ msgctxt "Title"
 msgid "Resetting mailbox"
 msgstr "Posta kutusu sıfırlanıyor"
 
-#: src/app/templates/views/reset-login-password.tpl.html:114
-#: src/app/templates/views/reset-login-password.tpl.html:124
+#: src/app/templates/views/reset-login-password.tpl.html:129
+#: src/app/templates/views/reset-login-password.tpl.html:139
 msgid "Resetting your password"
 msgstr "Parolanız sıfırlanıyor"
 
@@ -5625,7 +5641,7 @@ msgstr "Kaydet"
 msgid "Save 20% with the annual plan!"
 msgstr "Yıllık plan ile %20 tasarruf edin!"
 
-#: src/app/templates/views/reset-login-password.tpl.html:90
+#: src/app/templates/views/reset-login-password.tpl.html:105
 msgid "Save your password somewhere safe. Click on <i class=\"fa fa-eye\"></i> icon to confirm you that have typed your password correctly."
 msgstr "Parolanızı güvenli bir yerde saklayın. Parolanızı doğru yazdığınızdan emin olmak için <i class=\"fa fa-eye\"></i> simgesine tıklayın."
 
@@ -5665,18 +5681,18 @@ msgstr "QR kodunu tara"
 msgid "Scan this QR code with your two factor authentication device to set up your account."
 msgstr "Hesabınızı oluşturmak için bu QR kodunu iki adımlı kimlik doğrulama cihazınızla taratın."
 
-#: src/app/templates/search/searchForm.tpl.html:137
-msgctxt "Action"
-msgid "Search"
-msgstr "Ara"
-
-#: src/app/ui/directives/noResults.js:39
+#: src/app/ui/directives/noResults.js:40
 msgctxt "No results heading"
 msgid "Search"
 msgstr "Ara"
 
 #: src/app/ui/factories/pageTitlesModel.js:9
 msgctxt "Title"
+msgid "Search"
+msgstr "Ara"
+
+#: src/app/templates/search/searchForm.tpl.html:137
+msgctxt "Action"
 msgid "Search"
 msgstr "Ara"
 
@@ -5703,12 +5719,12 @@ msgctxt "Title"
 msgid "Security"
 msgstr "Güvenlik"
 
-#: src/app/core/directives/cvcTooltip.js:5
+#: src/app/templates/directives/core/cardView.tpl.html:39
+msgctxt "Label"
 msgid "Security Code"
 msgstr "Güvenlik Kodu"
 
-#: src/app/templates/directives/core/cardView.tpl.html:39
-msgctxt "Label"
+#: src/app/core/directives/cvcTooltip.js:5
 msgid "Security Code"
 msgstr "Güvenlik Kodu"
 
@@ -5765,10 +5781,6 @@ msgstr "Yeni kod gönder"
 msgid "Send up to 1000 messages per day"
 msgstr "Günde 1000 adete kadar mesaj gönderin"
 
-#: src/app/core/factories/filterModal.js:8
-msgid "Sender"
-msgstr "Gönderen"
-
 #: src/app/templates/search/searchForm.tpl.html:46
 msgctxt "Title"
 msgid "Sender"
@@ -5784,6 +5796,11 @@ msgctxt "Action"
 msgid "Sending"
 msgstr "Gönderiliyor"
 
+#: src/app/ui/directives/noResults.js:16
+msgctxt "No results heading"
+msgid "Sent"
+msgstr "Gönderilen"
+
 #: src/app/conversation/factories/actionConversation.js:21
 #: src/app/message/directives/foldersMessage.js:29
 #: src/app/message/factories/messageActions.js:12
@@ -5791,12 +5808,7 @@ msgstr "Gönderiliyor"
 msgid "Sent"
 msgstr "Gönderilen"
 
-#: src/app/ui/directives/noResults.js:15
-msgctxt "No results heading"
-msgid "Sent"
-msgstr "Gönderilen"
-
-#: src/app/sidebar/factories/sidebarModel.js:18
+#: src/app/sidebar/factories/sidebarModel.js:17
 #: src/app/ui/factories/pageTitlesModel.js:11
 msgctxt "Title"
 msgid "Sent"
@@ -5813,25 +5825,25 @@ msgctxt "Title"
 msgid "Session Management"
 msgstr "Oturum Yönetimi"
 
-#: src/app/templates/composer/composerEncrypt.tpl.html:72
-#: src/app/templates/composer/composerExpiration.tpl.html:58
-msgctxt "Action"
-msgid "Set"
-msgstr "Uygula"
-
 #. DMARC status badge
 #: src/app/templates/modals/domain/dmarc.tpl.html:8
 #: src/app/templates/modals/domain/domain.tpl.html:7
 msgid "Set"
 msgstr "Uygula"
 
-#: src/app/templates/vpn/openVpnSection.tpl.html:33
+#: src/app/templates/composer/composerEncrypt.tpl.html:72
+#: src/app/templates/composer/composerExpiration.tpl.html:58
 msgctxt "Action"
-msgid "Set OpenVPN Password"
-msgstr "OpenVPN Parolasını Belirle"
+msgid "Set"
+msgstr "Uygula"
 
 #: src/app/templates/vpn/changeVPNPasswordModal.tpl.html:7
 msgctxt "Title"
+msgid "Set OpenVPN Password"
+msgstr "OpenVPN Parolasını Belirle"
+
+#: src/app/templates/vpn/openVpnSection.tpl.html:33
+msgctxt "Action"
 msgid "Set OpenVPN Password"
 msgstr "OpenVPN Parolasını Belirle"
 
@@ -5840,13 +5852,13 @@ msgctxt "Title"
 msgid "Set Organization Password"
 msgstr "Kuruluş Parolasını Belirle"
 
-#: src/app/templates/modals/twofactor/sharedSecret.tpl.html:6
-msgctxt "Title"
+#. Title
+#: src/app/templates/modals/twofactor/twoFAIntroModal.tpl.html:6
 msgid "Set Up Two Factor Authentication"
 msgstr "İki Adımlı Kimlik Doğrulama'yı Etkinleştir"
 
-#. Title
-#: src/app/templates/modals/twofactor/twoFAIntroModal.tpl.html:6
+#: src/app/templates/modals/twofactor/sharedSecret.tpl.html:6
+msgctxt "Title"
 msgid "Set Up Two Factor Authentication"
 msgstr "İki Adımlı Kimlik Doğrulama'yı Etkinleştir"
 
@@ -5864,12 +5876,12 @@ msgstr "Hesap oluşturuluyor"
 msgid "Setting up new account"
 msgstr "Yeni hesap oluşturuluyor"
 
-#: src/app/utils/services/event.js:108
-msgctxt "Title"
+#: src/app/core/controllers/secured.js:165
 msgid "Setting up your Addresses"
 msgstr "Adresleriniz ayarlanıyor"
 
-#: src/app/core/controllers/secured.js:166
+#: src/app/utils/services/event.js:108
+msgctxt "Title"
 msgid "Setting up your Addresses"
 msgstr "Adresleriniz ayarlanıyor"
 
@@ -5883,14 +5895,14 @@ msgctxt "Title"
 msgid "Setting up your Organization"
 msgstr "Kuruluşunuz ayarlanıyor"
 
-#. Folder name
-#: src/app/templates/partials/sidebar-responsive.tpl.html:24
-msgctxt "Title"
+#: src/app/templates/ui/navigation/navigation.tpl.html:11
+msgctxt "Action"
 msgid "Settings"
 msgstr "Ayarlar"
 
-#: src/app/templates/ui/navigation/navigation.tpl.html:11
-msgctxt "Action"
+#. Folder name
+#: src/app/templates/partials/sidebar-responsive.tpl.html:24
+msgctxt "Title"
 msgid "Settings"
 msgstr "Ayarlar"
 
@@ -6000,12 +6012,12 @@ msgctxt "Title"
 msgid "SMS"
 msgstr "SMS"
 
-#: src/app/core/controllers/signup.js:219
+#: src/app/core/controllers/signup.js:220
 msgctxt "Error"
 msgid "Something went wrong"
 msgstr "Bir şeyler ters gitti"
 
-#: src/app/core/controllers/signup.js:460
+#: src/app/core/controllers/signup.js:461
 msgctxt "Error"
 msgid "Something went wrong during address creation"
 msgstr "Adres oluşturulurken bir sorun oluştu"
@@ -6025,7 +6037,7 @@ msgctxt "Action"
 msgid "Sort alphabetically"
 msgstr "Alfabetik olarak sırala"
 
-#: src/app/ui/directives/noResults.js:23
+#: src/app/ui/directives/noResults.js:24
 msgctxt "No results heading"
 msgid "Spam"
 msgstr "Spam"
@@ -6036,14 +6048,14 @@ msgstr "Spam"
 msgid "Spam"
 msgstr "Spam"
 
-#: src/app/sidebar/factories/sidebarModel.js:33
-#: src/app/ui/factories/pageTitlesModel.js:14
-msgctxt "Title"
+#: src/app/templates/modals/filter.tpl.html:139
+msgctxt "Label"
 msgid "Spam"
 msgstr "Spam"
 
-#: src/app/templates/modals/filter.tpl.html:139
-msgctxt "Label"
+#: src/app/sidebar/factories/sidebarModel.js:32
+#: src/app/ui/factories/pageTitlesModel.js:14
+msgctxt "Title"
 msgid "Spam"
 msgstr "Spam"
 
@@ -6066,7 +6078,7 @@ msgstr "Spam Filtreleri"
 
 #: src/app/settings/controllers/account.js:41
 msgid "Spanish"
-msgstr ""
+msgstr "İspanyolca"
 
 #: src/app/templates/modals/domain/spf.tpl.html:10
 msgctxt "Title"
@@ -6082,19 +6094,19 @@ msgstr "SPF, alan alanı için kimlerin e-posta gönderebileceğini belirtmek i�
 msgid "Star"
 msgstr "Yıldızla"
 
-#: src/app/templates/modals/filter.tpl.html:172
-msgctxt "Label"
-msgid "Starred"
-msgstr "Yıldızlı"
-
-#: src/app/ui/directives/noResults.js:27
+#: src/app/ui/directives/noResults.js:28
 msgctxt "No results heading"
 msgid "Starred"
 msgstr "Yıldızlı"
 
-#: src/app/sidebar/factories/sidebarModel.js:23
+#: src/app/sidebar/factories/sidebarModel.js:22
 #: src/app/ui/factories/pageTitlesModel.js:12
 msgctxt "Title"
+msgid "Starred"
+msgstr "Yıldızlı"
+
+#: src/app/templates/modals/filter.tpl.html:172
+msgctxt "Label"
 msgid "Starred"
 msgstr "Yıldızlı"
 
@@ -6123,16 +6135,16 @@ msgstr "Durum güncellendi"
 msgid "Status Updated"
 msgstr "Durum Güncellendi"
 
+#: src/app/templates/modals/payment/payment.tpl.html:20
+#: src/app/templates/views/dashboard.tpl.html:214
+msgid "Storage"
+msgstr "Depolama"
+
 #. table heading
 #: src/app/templates/views/dashboard.tpl.html:109
 #: src/app/templates/views/dashboard.tpl.html:57
 #: src/app/templates/views/members.tpl.html:150
 msgctxt "Title"
-msgid "Storage"
-msgstr "Depolama"
-
-#: src/app/templates/modals/payment/payment.tpl.html:20
-#: src/app/templates/views/dashboard.tpl.html:214
 msgid "Storage"
 msgstr "Depolama"
 
@@ -6145,15 +6157,9 @@ msgstr "Üyeler için depolama alanı:"
 msgid "Stored encrypted"
 msgstr "Depolanan şifrelenmiş"
 
-#: src/app/core/factories/filterModal.js:7
 #: src/app/templates/directives/composer/composerSubject.tpl.html:2
 msgid "Subject"
 msgstr "Konu"
-
-#: src/app/templates/modals/pay.tpl.html:63
-msgctxt "Info"
-msgid "Submit"
-msgstr "Gönder"
 
 #: src/app/templates/authentication/modals/loginPassword.tpl.html:37
 #: src/app/templates/modals/activateOrganization.tpl.html:26
@@ -6170,6 +6176,11 @@ msgstr "Gönder"
 #: src/app/templates/vpn/changeVPNNameModal.tpl.html:19
 #: src/app/templates/vpn/changeVPNPasswordModal.tpl.html:17
 msgctxt "Action"
+msgid "Submit"
+msgstr "Gönder"
+
+#: src/app/templates/modals/pay.tpl.html:63
+msgctxt "Info"
 msgid "Submit"
 msgstr "Gönder"
 
@@ -6262,6 +6273,10 @@ msgctxt "Title"
 msgid "Thank You!"
 msgstr "Teşekkür ederiz!"
 
+#: src/app/core/factories/filterModal.js:10
+msgid "the attachments"
+msgstr ""
+
 #: src/app/templates/views/account.tpl.html:80
 msgctxt "Error"
 msgid "The email address is invalid"
@@ -6287,10 +6302,22 @@ msgctxt "Error"
 msgid "The ProtonMail API is offline:"
 msgstr "ProtonMail API çevrimdışı:"
 
+#: src/app/core/factories/filterModal.js:9
+msgid "the recipient"
+msgstr ""
+
 #: src/app/formUtils/directives/uniqueUsername.js:4
 msgctxt "Error"
 msgid "The request failed"
 msgstr "İstek başarısız oldu"
+
+#: src/app/core/factories/filterModal.js:8
+msgid "the sender"
+msgstr ""
+
+#: src/app/core/factories/filterModal.js:7
+msgid "the subject"
+msgstr ""
 
 #: src/app/routes.js:165
 msgid "Theme reset! Redirecting..."
@@ -6300,7 +6327,7 @@ msgstr "Tema sıfırlandı! Yönlendiriliyor..."
 msgid "Theme saved"
 msgstr "Tema kaydedildi"
 
-#: src/app/templates/views/reset-login-password.tpl.html:106
+#: src/app/templates/views/reset-login-password.tpl.html:121
 #: src/app/templates/views/setup.tpl.html:83
 #: src/app/templates/views/signup.tpl.html:344
 msgctxt "Info"
@@ -6415,6 +6442,12 @@ msgctxt "Title"
 msgid "Time"
 msgstr "Zaman"
 
+#: src/app/templates/message/message.tpl.html:61
+#: src/app/templates/search/searchForm.tpl.html:59
+#: src/app/templates/views/outside.reply.tpl.html:18
+msgid "To"
+msgstr "Kime"
+
 #. message metadata
 #. printed message info
 #: src/app/message/directives/messageContacts.js:7
@@ -6426,14 +6459,13 @@ msgctxt "Title"
 msgid "To"
 msgstr "Kime"
 
-#: src/app/templates/message/message.tpl.html:61
-#: src/app/templates/search/searchForm.tpl.html:59
-#: src/app/templates/views/outside.reply.tpl.html:18
-msgid "To"
-msgstr "Kime"
+#. reset warning 3/3
+#: src/app/templates/views/reset-login-password.tpl.html:53
+msgctxt "To continue, type DANGER below:"
+msgid "To continue, type"
+msgstr ""
 
 #. reset warning 3/3
-#: src/app/templates/views/reset-login-password.tpl.html:52
 #: src/app/templates/views/reset-mailbox-password.tpl.html:7
 msgctxt "Info"
 msgid "To continue, type <kbd>DANGER</kbd> below:"
@@ -6479,7 +6511,7 @@ msgctxt "Title"
 msgid "Total price"
 msgstr "Toplam fiyat"
 
-#: src/app/sidebar/factories/sidebarModel.js:38
+#: src/app/sidebar/factories/sidebarModel.js:37
 #: src/app/ui/factories/pageTitlesModel.js:15
 msgctxt "Title"
 msgid "Trash"
@@ -6490,14 +6522,14 @@ msgctxt "Label"
 msgid "Trash"
 msgstr "Çöp Kutusu"
 
-#: src/app/conversation/factories/actionConversation.js:22
-#: src/app/labels/directives/dropdownFolders.js:24
-#: src/app/message/factories/messageActions.js:13
+#: src/app/ui/directives/noResults.js:20
+msgctxt "No results heading"
 msgid "Trash"
 msgstr "Çöp Kutusu"
 
-#: src/app/ui/directives/noResults.js:19
-msgctxt "No results heading"
+#: src/app/conversation/factories/actionConversation.js:22
+#: src/app/labels/directives/dropdownFolders.js:24
+#: src/app/message/factories/messageActions.js:13
 msgid "Trash"
 msgstr "Çöp Kutusu"
 
@@ -6808,12 +6840,12 @@ msgctxt "Label"
 msgid "User:"
 msgstr "Kullanıcı:"
 
-#: src/app/templates/authentication/loginForm.tpl.html:20
+#: src/app/templates/views/dashboard.tpl.html:17
+msgctxt "Title"
 msgid "Username"
 msgstr "Kullanıcı adı"
 
-#: src/app/templates/views/dashboard.tpl.html:17
-msgctxt "Title"
+#: src/app/templates/authentication/loginForm.tpl.html:20
 msgid "Username"
 msgstr "Kullanıcı adı"
 
@@ -6886,14 +6918,14 @@ msgctxt "Error"
 msgid "Verification did not succeed, please try again in an hour."
 msgstr "Doğrulama başarısız oldu, lütfen bir saat içinde tekrar deneyin."
 
-#: src/app/templates/modals/domain/verification.tpl.html:37
-msgctxt "Action"
-msgid "Verify"
-msgstr "Doğrula"
-
 #: src/app/templates/modals/domain/menu.tpl.html:12
 #: src/app/templates/modals/domain/verification.tpl.html:10
 msgctxt "Title"
+msgid "Verify"
+msgstr "Doğrula"
+
+#: src/app/templates/modals/domain/verification.tpl.html:37
+msgctxt "Action"
 msgid "Verify"
 msgstr "Doğrula"
 
@@ -6972,7 +7004,7 @@ msgctxt "Error"
 msgid "Wait for attachment to finish uploading or cancel upload."
 msgstr "Ekin yüklenmesini bekleyin veya yüklemeyi iptal edin."
 
-#: src/app/core/controllers/signup.js:233
+#: src/app/core/controllers/signup.js:234
 #: src/app/templates/views/reset-login-password.tpl.html:49
 #: src/app/templates/views/reset-mailbox-password.tpl.html:4
 msgctxt "Title"
@@ -6985,7 +7017,7 @@ msgctxt "Info"
 msgid "WARNING: DELETION IS PERMANENT"
 msgstr "UYARI: SİLME İŞLEMİ KALICIDIR"
 
-#: src/app/core/controllers/signup.js:234
+#: src/app/core/controllers/signup.js:235
 msgctxt "Warning"
 msgid "Warning: You did not set a recovery email so account recovery is impossible if you forget your password. Proceed without recovery email?"
 msgstr "Uyarı: Bir kurtarma e-postası ayarlamadınız, yani şifrenizi unuttuğunuzda hesabınızı kurtarmanız imkânsız olacak. Kurtarma e-postası olmadan devam edilsin mi?"
@@ -7108,14 +7140,14 @@ msgctxt "Error"
 msgid "Wrong verification code. Please make sure you copied the verification code correctly and try again. It can take up to 24 hours for changes to take affect."
 msgstr "Yanlış doğrulama kodu. Doğrulama kodunu doğru bir şekilde kopyaladığınızdan emin olun ve tekrar deneyin. Değişikliklerin geçerli olması 24 saati bulabilir."
 
-#: src/app/ui/directives/toggle.js:15
-msgctxt "Title"
-msgid "Yes"
-msgstr "Evet"
-
 #. form option
 #: src/app/templates/search/searchForm.tpl.html:121
 #: src/app/templates/views/members.tpl.html:169
+msgid "Yes"
+msgstr "Evet"
+
+#: src/app/ui/directives/toggle.js:15
+msgctxt "Title"
 msgid "Yes"
 msgstr "Evet"
 
@@ -7295,6 +7327,11 @@ msgstr "Kuruluşunuzun parolası, yönetici ayrıcalıkları vermek istediğiniz
 #: src/app/authentication/controllers/login.js:334
 msgid "Your password is missing"
 msgstr "Parolanız eksik"
+
+#: src/app/elements/directives/searchLimitReached.js:3
+msgctxt "Inform the user that he reach the search limit"
+msgid "Your search matched too many results. Please limit your search and try again."
+msgstr ""
 
 #: src/app/templates/modals/sale.tpl.html:55
 msgctxt "Info"
