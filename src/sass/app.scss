@@ -191,7 +191,7 @@
 @import "components/sale/index";
 
 //=== 📄 Pages =============================//
-@import "pages/dashboard";
+@import "pages/dashboard/_dashboard";
 @import "pages/login";
 @import "pages/pgp";
 @import "pages/identities";
@@ -203,6 +203,7 @@
 @import "pages/loginForm";
 @import "pages/unlockForm";
 @import "pages/security";
+@import "pages/members";
 
 
 //== 👉 Responsive override ==============================//

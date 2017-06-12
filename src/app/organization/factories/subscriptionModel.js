@@ -1,21 +1,51 @@
 angular.module('proton.organization')
-.factory('subscriptionModel', (Payment) => {
-    let subscription = {};
-    function get() {
+.factory('subscriptionModel', ($rootScope, gettextCatalog, Payment) => {
+    const CACHE = [];
+    const ERROR_SUBSCRIPTION = gettextCatalog.getString('Subscription request failed', null, 'Error');
+    const get = () => angular.copy(CACHE.subscription || {});
+    const PAID_TYPES = {
+        mail: ['plus', 'visionary'],
+        vpn: ['vpnbasic', 'vpnplus', 'visionary']
+    };
+
+    const hasFactory = (plans = []) => () => {
+        const { Plans = [] } = (CACHE.subscription || {});
+        return _.some(Plans, ({ Name }) => plans.indexOf(Name) > -1);
+    };
+
+    const hasPaid = (type) => hasFactory(PAID_TYPES[type])();
+
+    function prependProtonMail(subscription = {}) {
+        subscription.Plans = (subscription.Plans || []).map((plan) => {
+            if (/^(plus|visionary)$/.test(plan.Name)) {
+                plan.Title = `ProtonMail ${plan.Title}`;
+            }
+            return plan;
+        });
         return subscription;
     }
-    function set(newSubscription = {}) {
-        subscription = newSubscription;
+
+    function set(subscription = {}, noEvent = false) {
+        CACHE.subscription = angular.copy(prependProtonMail(subscription));
+        !noEvent && $rootScope.$emit('subscription', { type: 'update', data: { subscription } });
     }
+
+    function coupon() {
+        const { CouponCode = '' } = get();
+        return CouponCode;
+    }
+
     function fetch() {
         return Payment.subscription()
-        .then(({ data = {} } = {}) => {
-            if (data.Code === 1000) {
-                subscription = data.Subscription;
-                return data.Subscription;
-            }
-            throw new Error(data.Error || 'Subscription request failed');
-        });
+            .then(({ data = {} } = {}) => {
+                if (data.Code === 1000) {
+                    set(data.Subscription);
+                    return get();
+                }
+                throw new Error(data.Error || ERROR_SUBSCRIPTION);
+            });
     }
-    return { set, get, fetch };
+
+
+    return { set, get, fetch, hasPaid, coupon };
 });

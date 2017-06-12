@@ -1,0 +1,57 @@
+.settingsDashboard-vpn-discount {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    box-sizing: border-box;
+    width: 100%;
+    padding: .5em;
+    font-size: 1.1em;
+    color: #000;
+
+}
+
+.settingsDashboard-vpn-discount-amount {
+    position: relative;
+    margin: 0 .5em;
+}
+
+.settingsDashboard-vpn-discount-amount:before {
+    content: "🎁";
+    margin-right: .2em;
+}
+
+.settingsDashboard-vpn-discount-amount:after {
+    content: "";
+    position: absolute;
+    right: -5%;
+    bottom: 5%;
+    width: 110%;
+    height: 60%;
+    background: rgba(#56B366, .2);
+    transform: skewX(1deg) rotate(-4deg);
+}
+
+
+.settingsDashboard-vpn-discount .settingsDashboard-vpn-discount-underline,
+.settingsDashboard-vpn-discount .settingsDashboard-vpn-discount-info {
+    opacity: .7;
+}
+
+
+[class*='settingsDashboard-vpn-discount-logo'] {
+    height: 50px;
+    width: 150px;
+    display: inline-block;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 120px;
+}
+
+.settingsDashboard-vpn-discount-logo-pmplus {
+    background-position: center 70%;
+    background-image: url('/assets/img/logo/logo-dark.svg')
+}
+
+.settingsDashboard-vpn-discount-logo-vpn {
+    background-image: url('/assets/img/logo/protonvpn-dark.svg')
+}

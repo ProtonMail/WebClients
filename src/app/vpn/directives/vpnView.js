@@ -1,13 +1,8 @@
 angular.module('proton.vpn')
-.directive('vpnView', ($rootScope, $state, CONSTANTS, authentication, organizationModel) => {
-    const isMember = () => authentication.user.Role === CONSTANTS.PAID_MEMBER_ROLE;
-    const isPlusFree = () => {
-        const { PlanName } = organizationModel.get();
-        return PlanName === 'plus' || PlanName === 'free';
-    };
-    const vpnAccess = () => {
+.directive('vpnView', ($rootScope, $state, CONSTANTS, authentication) => {
+    const vpnStatus = () => {
         const { Status = 0 } = authentication.user.VPN;
-        return Status === 1;
+        return Status;
     };
     const getFirstEmail = () => {
         const { Addresses = [] } = authentication.user;
@@ -19,12 +14,10 @@ angular.module('proton.vpn')
         scope: {},
         templateUrl: 'templates/vpn/vpnView.tpl.html',
         link(scope) {
-            isMember() && $state.go('secured.account');
             const unsubscribes = [];
             const update = () => {
                 scope.VPNLogin = getFirstEmail();
-                scope.vpnEnabled = vpnAccess();
-                scope.isPlusFree = isPlusFree();
+                scope.vpnEnabled = vpnStatus();
             };
 
             unsubscribes.push($rootScope.$on('updateUser', () => update()));

@@ -1,0 +1,9 @@
+<label class="selectVpn-container">
+    <span class="selectVpn-label">ProtonVPN</span>
+    <div class="pm_select selectVpn-select-container">
+        <select
+            class="pm_select selectVpn-select"
+            ng-model="model.vpnOption" ng-options="plan.label for plan in plans[model.cycle] track by plan.ID"></select>
+        <i class="fa fa-angle-down"></i>
+    </div>
+</label>

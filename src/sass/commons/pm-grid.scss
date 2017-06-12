@@ -222,15 +222,14 @@ body.appConfigBody-is-mobile {
 		.col-basis {
 			flex-basis: 0px;
 		}
-		&:not(.flex) {
-			[class*='col-'] {
-				float: left;
-				width: 100% !important;
-				clear: both;
-				box-sizing: border-box;
-				padding: 0;
-				margin-bottom: 10px;
-			}
+
+		[class*='col-'] {
+			float: left;
+			width: 100% !important;
+			clear: both;
+			box-sizing: border-box;
+			padding: 0;
+			margin-bottom: 10px;
 		}
 
 	}

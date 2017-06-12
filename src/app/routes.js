@@ -755,15 +755,8 @@ angular.module('proton.routes', [
                 }
                 return Promise.resolve();
             },
-            // Return yearly plans
-            yearly(subscription, user, Payment, networkActivityTracker, subscriptionModel) {
-                const sub = subscriptionModel.get();
-                return networkActivityTracker.track(Payment.plans(sub.Currency, 12));
-            },
-            // Return monthly plans
-            monthly(subscription, user, Payment, networkActivityTracker, subscriptionModel) {
-                const sub = subscriptionModel.get();
-                return networkActivityTracker.track(Payment.plans(sub.Currency, 1));
+            dashboardPlans(subscription, dashboardModel) {
+                return dashboardModel.loadPlans(subscription.Currency);
             },
             methods(user, Payment, networkActivityTracker) {
                 return networkActivityTracker.track(Payment.methods());

@@ -45,7 +45,9 @@ angular.module('proton', [
     'proton.wizard',
     'proton.contactCurrent',
     'proton.settings',
+    'proton.dashboard',
     'proton.vpn',
+    'proton.payment',
     'proton.formUtils'
 
 ])
@@ -203,8 +205,8 @@ angular.module('proton', [
 //
 
 .run(($rootScope, $state) => {
-    $rootScope.$on('$stateChangeError', (event, current, previous, rejection) => {
-        console.error('stateChangeError', rejection);
+    $rootScope.$on('$stateChangeError', (event, current, previous, rejection, ...arg) => {
+        console.error('stateChangeError', event, current, previous, rejection, arg);
         $state.go('support.message', {
             data: {
                 title: rejection.error || 'Problem loading your account',

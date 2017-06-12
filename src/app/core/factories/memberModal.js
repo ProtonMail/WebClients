@@ -40,10 +40,17 @@ angular.module('proton.core')
             self.temporaryPassword = '';
             self.confirmPassword = '';
             self.address = '';
+
+            // sliders legends
+            const allocatedLegend = { label: gettextCatalog.getString('Allocated', null), classes: 'background-primary' };
+            const minPaddingLegend = { label: gettextCatalog.getString('Already used', null), classes: 'background-red-striped' };
+            const maxPaddingLegend = { label: gettextCatalog.getString('Already allocated', null), classes: 'background-yellow-striped' };
+
+            // Quota
             self.unit = giga;
             self.min = 0;
             self.max = organization.MaxSpace;
-            self.sliderOptions = {
+            self.storageSliderOptions = {
                 animate: false,
                 start: startValue / self.unit,
                 step: 0.1,
@@ -58,19 +65,39 @@ angular.module('proton.core')
                 minPadding: minPadding / self.unit,
                 maxPadding: maxPadding / self.unit
             };
+            self.storageLegends = [allocatedLegend];
+            minPadding > 0 && self.storageLegends.push(minPaddingLegend);
+            maxPadding > 0 && self.storageLegends.push(maxPaddingLegend);
 
-            const allocatedLegend = { label: gettextCatalog.getString('Allocated', null), classes: 'background-primary' };
-            const minPaddingLegend = { label: gettextCatalog.getString('Already used', null), classes: 'background-red-striped' };
-            const maxPaddingLegend = { label: gettextCatalog.getString('Already allocated', null), classes: 'background-yellow-striped' };
+            // VPN
+            const allocatedVPN = (params.member) ? params.member.MaxVPN : 0;
+            const UsedVPN = organization.UsedVPN;
+            const maxVPNPadding = (organization.MaxVPN - UsedVPN + allocatedVPN);
+            self.availableVPN = (maxVPNPadding > 0) ? allocatedVPN : (organization.MaxVPN - UsedVPN + allocatedVPN);
 
-            self.legends = [allocatedLegend];
-            minPadding > 0 && self.legends.push(minPaddingLegend);
-            maxPadding > 0 && self.legends.push(maxPaddingLegend);
+            self.vpnSliderOptions = {
+                animate: false,
+                start: allocatedVPN,
+                step: 1,
+                connect: [true, false],
+                tooltips: true,
+                range: { min: 0, max: organization.MaxVPN },
+                pips: {
+                    mode: 'values',
+                    values: [0, organization.MaxVPN],
+                    density: organization.MaxVPN
+                },
+                minPadding: 0,
+                maxPadding: maxVPNPadding - 0.0000001 /* remove a small int to avoid a maxPadding === MaxVPN */
+            };
+            self.vpnLegends = [allocatedLegend];
+            maxVPNPadding < organization.MaxVPN && self.vpnLegends.push(maxPaddingLegend);
 
             self.isPrivate = false;
             self.private = false;
             self.showAddress = true;
             self.showKeys = true;
+
 
             // Edit mode
             if (params.member) {
@@ -90,6 +117,7 @@ angular.module('proton.core')
                 let notificationMessage;
                 let member = {};
                 const quota = getQuota();
+                const vpn = getVPN();
 
                 if (params.member) {
                     _.extend(member, params.member);
@@ -98,6 +126,7 @@ angular.module('proton.core')
                 member.Name = self.name;
                 member.Private = self.private ? 1 : 0;
                 member.MaxSpace = quota;
+                member.MaxVPN = vpn;
 
                 /**
                 * Check if the address is already associated to a member
@@ -126,6 +155,8 @@ angular.module('proton.core')
                         return Promise.reject(gettextCatalog.getString('Invalid address', null, 'Error'));
                     } else if (quota > maxPadding || quota < minPadding) {
                         return Promise.reject(gettextCatalog.getString('Invalid storage quota', null, 'Error'));
+                    } else if (vpn > maxVPNPadding) {
+                        return Promise.reject(gettextCatalog.getString('Invalid VPN quota', null, 'Error'));
                     } else if (!member.ID && !member.Private && !self.organizationKey) {
                         return Promise.reject(gettextCatalog.getString('Cannot decrypt organization key', null, 'Error'));
                     } else if (!member.ID && existingActiveAddress()) {
@@ -164,6 +195,20 @@ angular.module('proton.core')
                     });
                 };
 
+                const updateVPN = () => {
+                    if (self.oldMember && self.oldMember.MaxVPN === vpn) {
+                        return Promise.resolve();
+                    }
+
+                    return memberApi.vpn(member.ID, vpn)
+                    .then(({ data = {} }) => {
+                        if (data.Code === 1000) {
+                            member.MaxVPN = vpn;
+                            return;
+                        }
+                        throw new Error(data.Error || 'Request error');
+                    });
+                };
                 const memberRequest = () => {
                     return memberApi.create(member, self.temporaryPassword)
                     .then(({ data = {} }) => {
@@ -236,7 +281,8 @@ angular.module('proton.core')
                     notificationMessage = gettextCatalog.getString('Member updated', null, 'Notification');
                     mainPromise = check()
                     .then(updateName)
-                    .then(updateQuota);
+                    .then(updateQuota)
+                    .then(updateVPN);
                 } else {
                     notificationMessage = gettextCatalog.getString('Member created', null, 'Notification');
                     mainPromise = check().then(memberRequest);
@@ -257,7 +303,11 @@ angular.module('proton.core')
             };
 
             function getQuota() {
-                return Math.round(self.sliderValue * self.unit);
+                return Math.round(self.storageSliderValue * self.unit);
+            }
+
+            function getVPN() {
+                return Math.round(self.vpnSliderValue);
             }
         }
     });
