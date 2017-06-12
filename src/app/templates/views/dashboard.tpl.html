@@ -1,5 +1,5 @@
 <div id="pm_settings">
-    <div class="settings">
+    <div class="settings settingsDashboard-container">
         <div class="row">
             <section class="pm_form">
                 <div class="pm_grid flex flex-row">
@@ -83,68 +83,16 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-1-2 pm-flex-content" ng-hide="subscription.Name === 'free'">
-
-
+                    <div class="settingsDashboard-subscription-section col-1-2" ng-hide="subscription.Name === 'free'">
                         <header-block class="settingsDashboard-header-subscription">
                             <h2
                                 class="settingsDashboard-title-subscription"
                                 translate
                                 translate-context="Title">My subscription</h2>
                         </header-block>
-
-                        <div class="well pm-flex-content-fillHeight">
-                            <div class="pm_table">
-                                <table class="settings-dashboard-info-table plain">
-                                    <tr ng-repeat="plan in subscription.Plans | filter: {Type: 1}">
-                                        <th translate-context="Title" translate>Plan</th>
-                                        <td><strong>{{ plan.Title }}</strong></td>
-                                        <td class="text-right actions">
-                                            <span ng-show="subscription.Cycle === 1">{{ subscription.Amount / 100 | currency: subscription.Currency }}</span>
-                                            <span ng-show="subscription.Cycle === 12">{{ subscription.Amount / 100 / 12 | fixed: 2 | currency: subscription.Currency }}/mo</span>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <th></th>
-                                        <td colspan="2"><strong>{{ count('MaxSpace') | humanSize }} <span translate-context="Title" translate>Storage</span></strong></td>
-                                    </tr>
-                                    <!-- <tr ng-show="keyPhase > 3">
-                                        <th></th>
-                                        <td colspan="2"><strong>{{ count('MaxMembers') }} <span translate-context="Title" translate>Members</span></strong></td>
-                                    </tr> -->
-                                    <tr>
-                                        <th></th>
-                                        <td colspan="2"><strong>{{ count('MaxDomains') }} <span translate-context="Title" translate>Domains</span></strong></td>
-                                    </tr>
-                                    <tr>
-                                        <th></th>
-                                        <td colspan="2"><strong> {{ count('MaxAddresses') }} <span translate-context="Title" translate>Addresses</span></strong></td>
-                                    </tr>
-                                    <tr ng-hide="subscription.CouponCode === 'LIFETIME'">
-                                        <th translate-context="Title" translate>Renewal Date</th>
-                                        <td colspan="2"><strong>{{ subscription.PeriodEnd | readableTime }}</strong></td>
-                                    </tr>
-                                    <tr>
-                                        <th translate-context="Title" translate>Total price</th>
-                                        <td>
-                                            <strong ng-show="subscription.Cycle === 1" translate-context="Title" translate>Monthly</strong>
-                                            <strong ng-show="subscription.Cycle === 12" translate-context="Title" translate>Annually</strong>
-                                        </td>
-                                        <td class="text-right actions">{{ subscription.Amount / 100 | currency: subscription.Currency }}</td>
-                                    </tr>
-                                    <tr>
-                                        <th translate-context="Title" translate>Payment</th>
-                                        <td>
-                                            <strong ng-show="methods.length === 0" translate-context="Title" translate>None</strong>
-                                            <strong ng-show="methods.length > 0" translate-context="Title" translate>Credit card</strong>
-                                        </td>
-                                        <td class="text-right actions">
-                                            <a class="pm_button link" ui-sref="secured.payments" translate-context="Action" translate>Manage</a>
-                                        </td>
-                                    </tr>
-                                </table>
-                            </div>
-                        </div>
+                        <section class="settingsDashboard-subscription-section-table-container">
+                            <subscription-section class="" methods="methods"></subscription-section>
+                        </section>
                     </div>
                     <div class="col-1-2 donate pm-flex-content" ng-show="subscription.Name === 'free'">
                         <header-block class="settingsDashboard-header-donate">
@@ -172,24 +120,36 @@
                         translate
                         translate-context="Title">Plans and prices</h2>
                 </header-block>
-                <div class="settingsDashboard-plans-devise">
-                    <a href="https://protonmail.com/support/knowledge-base/paid-plans/" target="_blank" class="pm_button link pull-right" translate-context="Action" translate>Learn more</a>
-                    <div class="group">
-                        <label class="pull-left"  translate>Currency</label>
-                        <div class="pm_buttons pull-left">
-                            <a href="#" ng-click="changeCurrency('EUR')" ng-class="{'active': configuration.currency === 'EUR'}">EUR</a>
-                            <a href="#" ng-click="changeCurrency('USD')" ng-class="{'active': configuration.currency === 'USD'}">USD</a>
-                            <a href="#" ng-click="changeCurrency('CHF')" ng-class="{'active': configuration.currency === 'CHF'}">CHF</a>
+                <div class="settingsDashboard-plans-devise-discount">
+                    <div class="settingsDashboard-plans-devise">
+                        <div class="group">
+                            <div class="settingsDashboard-plans-devise-header">
+                                <label class="pull-left">Currency</label>
+                                <a href="https://protonmail.com/support/knowledge-base/paid-plans/" target="_blank" class="pm_button link pull-right" translate-context="Action" translate>Learn more</a>
+                            </div>
+                            <div class="pm_buttons pull-left">
+                                <a href="#" ng-click="changeCurrency('EUR')" ng-class="{'active': configuration.currency === 'EUR'}">EUR</a>
+                                <a href="#" ng-click="changeCurrency('USD')" ng-class="{'active': configuration.currency === 'USD'}">USD</a>
+                                <a href="#" ng-click="changeCurrency('CHF')" ng-class="{'active': configuration.currency === 'CHF'}">CHF</a>
+                            </div>
                         </div>
                     </div>
+                    <div class="settingsDashboard-vpn-discount">
+                        <strong translate translate-context="Discount displayed in the dashboard">Proton Bundle Discount: </strong>
+                        <strong class="settingsDashboard-vpn-discount-amount" translate translate-context="Discount displayed in the dashboard">Get 20% off</strong>
+                        <span translate translate-context="Discount displayed in the dashboard">when you get both</span>
+                        <span class="settingsDashboard-vpn-discount-logo-pmplus"></span>
+                        <span translate>and</span>
+                        <span class="settingsDashboard-vpn-discount-logo-vpn"></span>
+                        <span class="settingsDashboard-vpn-discount-info" translate-context="Discount displayed in the dashboard">(discount shown at checkout)</span>
+                    </div>
                 </div>
-                <div class="pm_grid no-padding plans">
-                    <div ng-repeat="plan in plans | filter: {Type: 1, Cycle: configuration.cycle}: true | orderBy: 'Amount'" class="col-1-3 plan {{plan.Name + '-plan'}}">
+                <div class="plans" ng-class="{
+                    'withVPN': configuration.vpnOption.ID
+                }">
+                    <div ng-repeat="plan in plans | filter: {Type: 1, Cycle: configuration.cycle}: true | orderBy: 'Amount'" class="plan {{plan.Name + '-plan'}}">
                         <section>
-                            <h3>
-                                <img src="assets/img/logo.png" alt="ProtonMail" />
-                                <span>{{ plan.Title }}</span>
-                            </h3>
+                            <h3 class="plan-title"></h3>
                             <ul class="features">
                                 <!-- <li class="tall" ng-show="keyPhase > 3">
                                     <i class="fa fa-times" ng-show="plan.MaxMembers === 0"></i>
@@ -203,7 +163,7 @@
                                     <strong class="cost pull-right" ng-show="selects.business.member.index * addons[plan.Cycle].member.Amount && (plan.Name === 'plus' || plan.Name === 'business')">+{{ selects.business.member.index * addons[plan.Cycle].member.Amount / 100 / plan.Cycle | fixed: 2 | currency: plan.Currency }}</strong>
                                     <span class="clear"></span>
                                 </li> -->
-                                <li class="tall">
+                                <li class="dashboard-plan-storage tall">
                                     <i class="fa fa-check"></i>
                                     <span class="pm_select inline" ng-show="plan.Name === 'plus' || plan.Name === 'business'">
                                         <select ng-if="plan.Name === 'plus'" ng-model="selects[plan.Name].space" ng-options="option.label for option in plusSpaceOptions"></select>
@@ -212,10 +172,9 @@
                                     </span>
                                     <span ng-hide="plan.Name === 'plus' || plan.Name === 'business'">{{ plan.MaxSpace | humanSize }}</span>
                                     <span translate>Storage</span>
-                                    <strong class="cost pull-right" ng-show="selects[plan.Name].space.index * addons[plan.Cycle].space.Amount && (plan.Name === 'plus' || plan.Name === 'business')">+{{ selects[plan.Name].space.index * addons[plan.Cycle].space.Amount / 100 / plan.Cycle | fixed: 2 | currency: plan.Currency }}</strong>
-                                    <span class="clear"></span>
+                                    <strong class="cost" ng-show="selects[plan.Name].space.index * addons[plan.Cycle].space.Amount && (plan.Name === 'plus' || plan.Name === 'business')">+{{ selects[plan.Name].space.index * addons[plan.Cycle].space.Amount / 100 / plan.Cycle | fixed: 2 | currency: plan.Currency }}</strong>
                                 </li>
-                                <li ng-class="{disabled: plan.MaxDomains === 0}" class="tall">
+                                <li ng-class="{disabled: plan.MaxDomains === 0}" class="dashboard-plan-custom-domain tall">
                                     <i class="fa fa-times" ng-show="plan.MaxDomains === 0"></i>
                                     <i class="fa fa-check" ng-show="plan.MaxDomains > 0"></i>
                                     <span class="pm_select inline" ng-show="plan.Name === 'plus' || plan.Name === 'business'">
@@ -223,22 +182,24 @@
                                         <i class="fa fa-angle-down"></i>
                                     </span>
                                     <span ng-hide="plan.Name === 'plus' || plan.Name === 'business'">{{ plan.MaxDomains }}</span>
-                                    <span translate translate-n="plan.MaxDomains" translate-plural="Custom domains">Custom domain</span>
-                                    <i class="fa fa-info-circle" pt-tooltip-translate="Allows you to host emails for your own domain(s) at ProtonMail, e.g. <u>john@smith.com</u>" pt-tooltip-translate-context="Info" pt-html="true"></i>
-                                    <strong class="cost pull-right" ng-show="selects[plan.Name].domain.index * addons[plan.Cycle].domain.Amount && (plan.Name === 'plus' || plan.Name === 'business')">+{{ selects[plan.Name].domain.index * addons[plan.Cycle].domain.Amount / 100 / plan.Cycle | fixed: 2 | currency: plan.Currency }}</strong>
-                                    <span class="clear"></span>
+                                    <div>
+                                        <span translate translate-n="plan.MaxDomains" translate-plural="Custom domains">Custom domain</span>
+                                        <i class="fa fa-info-circle" pt-tooltip-translate="Allows you to host emails for your own domain(s) at ProtonMail, e.g. <u>john@smith.com</u>" pt-tooltip-translate-context="Info" pt-html="true"></i>
+                                    </div>
+                                    <strong class="cost" ng-show="selects[plan.Name].domain.index * addons[plan.Cycle].domain.Amount && (plan.Name === 'plus' || plan.Name === 'business')">+{{ selects[plan.Name].domain.index * addons[plan.Cycle].domain.Amount / 100 / plan.Cycle | fixed: 2 | currency: plan.Currency }}</strong>
                                 </li>
-                                <li class="tall">
+                                <li class="tall dashboard-plan-address">
                                     <i class="fa fa-check"></i>
                                     <span class="pm_select inline" ng-show="plan.Name === 'plus' || plan.Name === 'business'">
                                         <select ng-model="selects[plan.Name].address" ng-options="option.label for option in addressOptions"></select>
                                         <i class="fa fa-angle-down"></i>
                                     </span>
                                     <span ng-hide="plan.Name === 'plus' || plan.Name === 'business'">{{ plan.MaxAddresses }}</span>
-                                    <span translate translate-n="plan.MaxAddresses" translate-plural="Addresses">Address</span>
-                                    <i class="fa fa-info-circle" pt-tooltip-translate="Add additional addresses to your account like <u>username2@protonmail.com</u>" pt-tooltip-translate-context="Info" pt-html="true"></i>
-                                    <strong class="cost pull-right" ng-show="selects[plan.Name].address.index * addons[plan.Cycle].address.Amount && (plan.Name === 'plus' || plan.Name === 'business')">+{{ selects[plan.Name].address.index * addons[plan.Cycle].address.Amount / 100 / plan.Cycle | fixed: 2 | currency: plan.Currency }}</strong>
-                                    <span class="clear"></span>
+                                    <div>
+                                        <span translate translate-n="plan.MaxAddresses" translate-plural="Addresses">Address</span>
+                                        <i class="fa fa-info-circle" pt-tooltip-translate="Add additional addresses to your account like <u>username2@protonmail.com</u>" pt-tooltip-translate-context="Info" pt-html="true"></i>
+                                    </div>
+                                    <strong class="cost" ng-show="selects[plan.Name].address.index * addons[plan.Cycle].address.Amount && (plan.Name === 'plus' || plan.Name === 'business')">+{{ selects[plan.Name].address.index * addons[plan.Cycle].address.Amount / 100 / plan.Cycle | fixed: 2 | currency: plan.Currency }}</strong>
                                 </li>
                                 <li>
                                     <i class="fa fa-check"></i>
@@ -262,13 +223,24 @@
                                     <span ng-show="plan.Name !== 'visionary'"><s>Sub-Users</s></span>
                                     <span ng-show="plan.Name === 'visionary'">5 Sub-Users</span>
                                 </li>
+                                <li>
+                                    <div class="dashboardSelectVPN-container">
+                                        <span ng-if="plan.Name === 'visionary'">ProtonVPN included</span>
+                                        <select-vpn
+                                            data-plan="plan"
+                                            class="dashboardSelectVPN-select"
+                                            data-model="configuration"
+                                            ng-if="plan.Name !== 'visionary'"></select-vpn>
+                                        <a href="https://protonvpn.com/vpn-price" class="dashboardSelectVPN-link text-purple" target="_blank">Learn more</a>
+                                    </div>
+                                </li>
                             </ul>
                         </section>
                         <footer>
-                            <div class="cycle text-center" ng-show="plan.Name === 'free'">
+                            <div class="cycle free-cycle text-center" ng-if="plan.Name === 'free' && !configuration.vpnOption.ID">
                                 <strong  translate>Free</strong>
                             </div>
-                            <div class="cycle pm_grid monthly" ng-hide="plan.Name === 'free'">
+                            <label class="cycle pm_grid monthly" ng-if="plan.Name !== 'free' || configuration.vpnOption.ID">
                                 <div class="col-1-2">
                                     <label>
                                         <custom-radio data-custom-ng-model="configuration.cycle" data-custom-ng-value="1"></custom-radio>
@@ -281,8 +253,8 @@
                                         <span  translate-comment="price per month for a plan" translate>/Month</span>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="cycle pm_grid" ng-hide="plan.Name === 'free'">
+                            </label>
+                            <label class="cycle pm_grid" ng-if="plan.Name !== 'free' || configuration.vpnOption.ID">
                                 <span class="discount">
                                     <span>-20%</span>
                                 </span>
@@ -301,16 +273,31 @@
                                         <small>Billed as {{ total(plan, 12) / 100 | fixed: 2 | currency: plan.Currency }} per year</small>
                                     </div>
                                 </div>
-                            </div>
+                            </label>
                             <div class="action">
-                                <button type="button" ng-click="choose(plan)" class="pm_button" ng-class="{
+                                <button type="button" ng-click="choose(plan)" class="pm_button large" ng-class="{
                                     primary: plan.Name !== subscription.Name,
-                                    dead: plan.Name === subscription.Name && subscription.Name === 'free'
+                                    'dead link': plan.Name === subscription.Name && subscription.Name === 'free' && !configuration.vpnOption.ID
                                 }" ng-bind="text(plan)"></button>
+                            </div>
+
+                            <div class="dashboard-action-addVPN">
+                                <button
+                                    ng-if="plan.Name !== 'visionary'"
+                                    type="button"
+                                    ng-click="addVPN(plan)"
+                                    class="dashboard-action-addVPN-button pm_button">
+                                        <div class="dashboard-action-addVPN-button-container">
+                                            <span class="dashboard-action-addVPN-sign"></span>
+                                            <span class="dashboard-action-addVPN-button-txt" translate translate-context="dashboard plan">Add ProtonVPN</span>
+                                        </div>
+                                    </button>
+                                <span
+                                    ng-if="plan.Name === 'visionary'"
+                                    class="dashboardSelectVPN-label-visionary"><i translate translate-context="dashboard plan">ProtonVPN included</i></span>
                             </div>
                         </footer>
                     </div>
-                    <div class="clear"></div>
                 </div>
             </section>
         </div>

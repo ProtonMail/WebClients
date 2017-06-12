@@ -1,6 +1,6 @@
 <div id="pm_settings">
     <div class="settings">
-        <div ng-if="!vpnEnabled" class="row">
+        <div ng-if="vpnEnabled !== 1" class="row">
             <section class="pm_form">
                 <header-block class="settingsVpn-header-about">
                     <h2
@@ -8,16 +8,12 @@
                         translate
                         translate-context="Title">ProtonVPN</h2>
                 </header-block>
-
-                <p class="alert alert-info" translate-context="Info" translate>ProtonVPN beta is currently available for Visionary and Plus users. If you're interested in participating in the ProtonVPN beta, consider <a ui-sref="secured.dashboard({ scroll: true })">upgrading to a paid plan</a>.</p>
+                <p ng-if="vpnEnabled === 0" class="alert alert-info" translate-context="Info" translate>Your account is currently not eligible for ProtonVPN access. If you are part of an Organization, please contact your account administrator.</p>
+                <p ng-if="vpnEnabled === 2" class="alert alert-info" translate-context="Info" translate>Your VPN account has not yet been activated, go to <a href="https://account.protonvpn.com/signup" target="_blank">https://account.protonvpn.com/signup</a> to sign up and activate your account.</p>
+                <p ng-if="vpnEnabled === 3" class="alert alert-info" translate-context="Info" translate>Your ProtonVPN account request has been received. You're already on the waitlist, we'll contact you once capacity becomes available.</p>
             </section>
         </div>
-        <div ng-if="vpnEnabled">
-            <div ng-if="isPlusFree" class="row">
-                <section class="pm_form">
-                    <p class="alert alert-info" translate-context="Info" translate>ProtonVPN is now available for free during the beta period!</p>
-                </section>
-            </div>
+        <div ng-if="vpnEnabled === 1">
             <div class="row pm_grid">
                 <section class="pm_form col-1-2">
                     <header-block class="settingsVpn-header-login">

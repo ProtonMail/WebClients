@@ -1,0 +1,42 @@
+<table class="subscriptionSection-table">
+    <tbody class="subscriptionSection-tbody-plans">
+        <tr>
+            <td translate colspan="3">
+                <strong translate>Plans</strong>
+            </td>
+        </tr>
+        <tr ng-repeat="plan in subscription.Plans | filter: { Type: 1 } track by plan.ID">
+            <td colspan="2">{{ plan.Title }}</td>
+            <td>{{ plan.Amount / 100 / plan.Cycle | currency: plan.Currency }}/mo</td>
+        </tr>
+    </tbody>
+    <tbody class="subscriptionSection-tbody-addons">
+        <tr ng-repeat="(key, plan) in addons track by plan.ID">
+            <td colspan="2">{{ plan.Title }}</td>
+            <td>{{ plan.Amount / 100 / plan.Cycle | currency: plan.Currency }}/mo</td>
+        </tr>
+    </tbody>
+    <tbody class="subscriptionSection-tbody-billing">
+        <tr ng-hide="subscription.CouponCode === 'LIFETIME'">
+            <td colspan="2">
+                <strong translate>Period end</strong>
+            </td>
+            <td>{{ subscription.PeriodEnd | readableTime }}</td>
+        </tr>
+        <tr>
+            <td>
+                <strong translate>Total price</strong> ({{ subscription.cycle }}) <span ng-if="subscription.CouponCode" translate>(with coupon)</span>
+            </td>
+            <td>{{ (subscription.Amount || 0) / 100 | currency: subscription.Currency }} ({{ subscription.cycle }})</td>
+        </tr>
+        <tr>
+            <td>
+                <strong translate>Payment</strong>
+            </td>
+            <td>{{ method }}</td>
+            <td>
+                <a ui-sref="secured.payments" class="text-purple" translate>Manage</a>
+            </td>
+        </tr>
+    </tbody>
+</table>

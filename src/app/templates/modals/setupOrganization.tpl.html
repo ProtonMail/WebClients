@@ -7,6 +7,7 @@
                 <h4 ng-if="ctrl.step === 'keys'" class="modal-title" translate translate-context="Title">Setting up your Keys</h4>
                 <h4 ng-if="ctrl.step === 'password'" class="modal-title" translate translate-context="Title">Set Organization Password</h4>
                 <h4 ng-if="ctrl.step === 'storage'" class="modal-title" translate translate-context="Title">Allocate Storage</h4>
+                <h4 ng-if="ctrl.step === 'vpn'" class="modal-title" translate translate-context="Title">Allocate VPN Connections</h4>
             </div>
             <div class="modal-body pm_form">
                 <div ng-if="ctrl.step === 'name'">
@@ -49,18 +50,33 @@
                 </div>
                 <div ng-if="ctrl.step === 'storage'">
                     <p class="alert alert-info" translate-context="Info" translate>Currently all available storage is allocated to the administrator account. Please reduce the admin account allocation to free up space for additional users. You can increase the total storage at any time by upgrading your account.</p>
-                    <label><span translate-context="Label" translate>Admin Account Storage:</span> {{ ctrl.sliderValue * ctrl.unit | humanSize }} ({{ ctrl.min | humanSize }} Used)</label>
+                    <label>
+                        <strong translate-context="Label" translate>Admin Account Storage:</strong> {{ ctrl.sliderValue * ctrl.unit | humanSize }} ({{ ctrl.min | humanSize }} Used)
+                    </label>
+                    <label class="margin">
+                        <strong translate-context="Label" translate>Storage for members:</strong> {{ ( ctrl.max - ctrl.sliderValue * ctrl.unit) | humanSize }}
+                    </label>
                     <slider value="ctrl.sliderValue" options="ctrl.sliderOptions" class="margin"></slider>
                     <legends list="ctrl.legends"></legends>
-                    <label><span translate-context="Label" translate>Storage for members:</span> {{ ( ctrl.max - ctrl.sliderValue * ctrl.unit) | humanSize }}</label>
+                </div>
+                <div ng-if="ctrl.step === 'vpn'">
+                    <p class="alert alert-info" translate-context="Info" translate>Currently all available VPN connections are allocated to the administrator account. Please select the number of connections you want to reserve for additional users.</p>
+                    <label>
+                        <strong translate-context="Label" translate>Admin VPN Connections:</strong> {{ ctrl.sliderVPNValue }}
+                    </label>
+                    <label class="margin">
+                        <strong translate-context="Label" translate>VPN Connections for members:</strong> {{ ctrl.maxVPN - ctrl.sliderVPNValue  }}
+                    </label>
+                    <slider value="ctrl.sliderVPNValue" options="ctrl.sliderVPNOptions" class="margin"></slider>
+                    <legends list="ctrl.legendsVPN"></legends>
                 </div>
             </div>
         </div>
         <div class="modal-footer">
             <button type="button" class="pm_button" ng-click="ctrl.cancel()" ng-disabled="networkActivity.loading()" translate translate-context="Action">Cancel</button>
             <button type="submit" class="pm_button primary pull-right" ng-disabled="networkActivity.loading()">
-                <span ng-hide="ctrl.step === 'storage'" translate translate-context="Action">Next</span>
-                <span ng-show="ctrl.step === 'storage'" translate translate-context="Action">Finish</span>
+                <span ng-hide="ctrl.step === 'vpn'" translate translate-context="Action">Next</span>
+                <span ng-show="ctrl.step === 'vpn'" translate translate-context="Action">Finish</span>
             </button>
         </div>
     </form>

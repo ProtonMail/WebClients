@@ -6,18 +6,26 @@ angular.module('proton.core')
         controller(params, $scope) {
             const self = this;
             const base = CONSTANTS.BASE_SIZE;
-            const steps = ['name', 'keys', 'password', 'storage'];
-            const methods = [name, keys, password, storage];
+            const steps = ['name', 'keys', 'password', 'storage', 'vpn'];
+            const methods = [name, keys, password, storage, vpn];
             const payload = {};
             const organization = organizationModel.get();
             const defaultStorage = 5;
+            const defaultVPN = 3;
             let index = 0;
             let decryptedKey;
+
+            self.step = steps[index];
+            self.size = 2048;
+
+            const allocatedLegend = { label: gettextCatalog.getString('Allocated to admin', null), classes: 'background-primary' };
+            const minPaddingLegend = { label: gettextCatalog.getString('Already used', null), classes: 'background-red-striped' };
+
+            // Quotas
             self.min = 0;
             self.max = organization.MaxSpace;
             self.unit = base * base * base;
-            self.step = steps[index];
-            self.size = 2048;
+
             const minPadding = authentication.user.UsedSpace / self.unit;
 
             self.sliderOptions = {
@@ -36,11 +44,30 @@ angular.module('proton.core')
                 legend: 'GB'
             };
 
-            const allocatedLegend = { label: gettextCatalog.getString('Allocated', null), classes: 'background-primary' };
-            const minPaddingLegend = { label: gettextCatalog.getString('Already used', null), classes: 'background-red-striped' };
-
             self.legends = [allocatedLegend];
             minPadding > 0 && self.legends.push(minPaddingLegend);
+
+
+            // VPN
+            self.min = 0;
+            self.maxVPN = organization.MaxVPN;
+
+            self.sliderVPNOptions = {
+                animate: false,
+                start: defaultVPN,
+                step: 1,
+                connect: [true, false],
+                tooltips: true,
+                range: { min: 0, max: self.maxVPN },
+                pips: {
+                    mode: 'values',
+                    values: [0, self.maxVPN],
+                    density: self.maxVPN
+                }
+            };
+
+            self.legendsVPN = [allocatedLegend];
+
 
             self.next = () => {
                 const promise = methods[index]()
@@ -53,7 +80,7 @@ angular.module('proton.core')
                 })
                 .then(() => {
                     const step = steps[index];
-                    if (step === 'storage') {
+                    if (step === 'vpn') {
                         params.close();
                     } else {
                         index++;
@@ -100,6 +127,11 @@ angular.module('proton.core')
                 const quota = Math.round(self.sliderValue * self.unit);
 
                 return memberApi.quota(memberID, quota);
+            }
+            function vpn() {
+                const memberID = params.memberID;
+                const vpn = Math.round(self.sliderVPNValue);
+                return memberApi.vpn(memberID, vpn);
             }
         }
     });

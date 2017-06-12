@@ -72,9 +72,19 @@
                         <label translate translate-context="Title">Account storage</label>
                     </div>
                     <div class="col-2-3">
-                        <label class="bold">{{ ctrl.sliderValue * ctrl.unit | humanSize  }}</label>
-                        <slider value="ctrl.sliderValue" options="ctrl.sliderOptions"></slider>
-                        <legends list="ctrl.legends"></legends>
+                        <label class="bold">{{ ctrl.storageSliderValue * ctrl.unit | humanSize  }}</label>
+                        <slider value="ctrl.storageSliderValue" options="ctrl.storageSliderOptions"></slider>
+                        <legends list="ctrl.storageLegends"></legends>
+                    </div>
+                </div>
+                <div class="pm_grid padding-top">
+                    <div class="col-1-3">
+                        <label translate translate-context="Title">VPN Connections</label>
+                    </div>
+                    <div class="col-2-3">
+                        <label class="bold">{{ ctrl.vpnSliderValue | number:0 }}</label>
+                        <slider value="ctrl.vpnSliderValue" options="ctrl.vpnSliderOptions"></slider>
+                        <legends list="ctrl.vpnLegends"></legends>
                     </div>
                 </div>
                 <p ng-if="ctrl.showKeys && !ctrl.private" class="alert alert-warning" translate translate-context="Info">

@@ -16,6 +16,11 @@ angular.module('proton.core')
     tools,
     CONSTANTS
 ) => {
+
+    const formatPlanMap = (plans = []) => {
+        return plans.reduce((acc, plan) => (acc[plan.ID] = plan, acc), {});
+    };
+
     return pmModal({
         controllerAs: 'ctrl',
         templateUrl: 'templates/modals/payment/modal.tpl.html',
@@ -36,18 +41,19 @@ angular.module('proton.core')
             self.childWindow = null;
             self.status = params.status;
             self.plans = _.chain(params.plans)
-                .filter((plan) => { return params.planIDs.indexOf(plan.ID) !== -1; })
+                .filter((plan) => params.planIDs.indexOf(plan.ID) !== -1)
                 .uniq()
                 .value();
+
+            const PLANS_MAP = formatPlanMap(params.plans);
             self.organizationName = gettextCatalog.getString('My organization', null, 'Title'); // TODO set self value for the business plan
 
             // Functions
             const isIE11 = () => $.ua.browser.name === 'IE' && $.ua.browser.major === '11';
             function initialization() {
-                if (params.subscription.CouponCode) {
+                if (params.valid.Coupon) {
                     self.displayCoupon = true;
-                    self.coupon = params.subscription.CouponCode;
-                    self.apply();
+                    self.coupon = params.valid.Coupon.Code;
                 }
 
                 if (params.methods.length > 0) {
@@ -179,18 +185,10 @@ angular.module('proton.core')
             };
 
             self.count = (type) => {
-                let count = 0;
-                const plans = [];
-
-                _.each(params.planIDs, (planID) => {
-                    plans.push(_.findWhere(params.plans, { ID: planID }));
-                });
-
-                _.each(plans, (plan) => {
-                    count += plan[type];
-                });
-
-                return count;
+                return params.planIDs
+                    .map((ID) => PLANS_MAP[ID])
+                    .filter(Boolean)
+                    .reduce((acc, plan) => (acc + (plan[type] || 0)), 0);
             };
 
             self.switch = (cycle, currency) => {

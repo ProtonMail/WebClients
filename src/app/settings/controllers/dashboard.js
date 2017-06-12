@@ -1,5 +1,6 @@
 angular.module('proton.settings')
 .controller('DashboardController', (
+    CONSTANTS,
     $rootScope,
     $scope,
     $stateParams,
@@ -15,20 +16,22 @@ angular.module('proton.settings')
     organizationModel,
     paymentModal,
     methods,
-    monthly,
     pmcw,
     status,
     subscriptionModel,
     supportModal,
     tools,
-    yearly,
-    dashboardOptions
+    dashboardOptions,
+    dashboardPlans,
+    dashboardModel
 ) => {
     // Initialize variables
     $scope.configuration = {};
+    const { PLANS_TYPE } = CONSTANTS;
     $scope.subscription = subscriptionModel.get();
     $scope.organization = organizationModel.get();
 
+    const { monthly, yearly } = dashboardPlans;
     // Options
     $scope.plusSpaceOptions = dashboardOptions.get('space');
     $scope.businessSpaceOptions = dashboardOptions.get('businessSpace');
@@ -52,6 +55,9 @@ angular.module('proton.settings')
 
     function updateSubscription() {
         const subscription = subscriptionModel.get();
+        $scope.hasPaidMail = subscriptionModel.hasPaid('mail');
+        $scope.hasPaidVPN = subscriptionModel.hasPaid('vpn');
+
         _.extend($scope.subscription, subscription);
         $scope.configuration.cycle = subscription.Cycle;
         $scope.configuration.currency = subscription.Currency;
@@ -74,22 +80,24 @@ angular.module('proton.settings')
             $scope.selects.business.domain = $scope.domainOptions[0];
             $scope.selects.business.address = $scope.addressOptions[0];
         }
+
+        console.log($scope.subscription);
     }
 
     function updatePlans(monthly, yearly) {
-        $scope.plans = monthly.concat(yearly);
+        $scope.plans = monthly.list.concat(yearly.list);
         $scope.addons = {
             1: {
-                space: _.findWhere(monthly, { Name: '1gb' }),
-                domain: _.findWhere(monthly, { Name: '1domain' }),
-                address: _.findWhere(monthly, { Name: '5address' }),
-                member: _.findWhere(monthly, { Name: '1member' })
+                space: monthly.addons['1gb'],
+                domain: monthly.addons['1domain'],
+                address: monthly.addons['5address'],
+                member: monthly.addons['1member']
             },
             12: {
-                space: _.findWhere(yearly, { Name: '1gb' }),
-                domain: _.findWhere(yearly, { Name: '1domain' }),
-                address: _.findWhere(yearly, { Name: '5address' }),
-                member: _.findWhere(yearly, { Name: '1member' })
+                space: yearly.addons['1gb'],
+                domain: yearly.addons['1domain'],
+                address: yearly.addons['5address'],
+                member: yearly.addons['1member']
             }
         };
     }
@@ -109,6 +117,14 @@ angular.module('proton.settings')
         updateSubscription();
         updatePlans(monthly, yearly);
         updateMethods(methods);
+
+        const vpn = _.where(subscriptionModel.get().Plans, { Type: PLANS_TYPE.PLAN })
+            .filter(({ Name }) => /^vpn/.test(Name))[0];
+
+        // Force binding AFTER linking with the default value
+        $scope.$applyAsync(() => {
+            $scope.configuration.vpnOption = vpn;
+        });
 
         if ($stateParams.scroll === true) {
             $scope.scrollToPlans();
@@ -174,11 +190,14 @@ angular.module('proton.settings')
     * @param {String} name
     * @param {Integer} cycle
     */
-    $scope.total = ({ Name }, Cycle) => {
+    $scope.total = ({ Name }, Cycle, includeVPN = true) => {
         let total = 0;
 
+        const vpnPlan = $scope.configuration.vpnOption || {};
         // Base price for this plan
         const plan = _.findWhere($scope.plans, { Name, Cycle });
+        // We compute the price for the VPN based on the arg Cycle not the selected cycle
+        const { vpn } = dashboardModel.get(Cycle === 12 ? 'yearly' : 'monthly');
         total += plan.Amount;
 
         // Add addons
@@ -192,33 +211,44 @@ angular.module('proton.settings')
             }
         }
 
+        if (vpnPlan.ID && plan.Name !== 'visionary' && includeVPN) {
+            return total + vpn[vpnPlan.Name].Amount;
+        }
+
+        // Custom case for the view if we are free and with a VPN
+        if (plan.Name === 'free' && vpnPlan.ID) {
+            return vpn[vpnPlan.Name].Amount;
+        }
+
         return total;
     };
 
+    const updateVPN = (cycle, { yearly, monthly } = dashboardModel.get()) => {
+        const { Name } = $scope.configuration.vpnOption || {};
+        if (cycle === 12) {
+            return ($scope.configuration.vpnOption = yearly.vpn[Name]);
+        }
+        return ($scope.configuration.vpnOption = monthly.vpn[Name]);
+    };
     /**
      * Change current currency
      */
     $scope.changeCurrency = (currency) => {
-        const deferred = $q.defer();
 
-        if ($scope.configuration.Currency === currency) {
-            deferred.resolve();
-        } else {
-            $q.all({
-                monthly: Payment.plans(currency, 1),
-                yearly: Payment.plans(currency, 12)
-            })
-            .then((result) => {
-                $scope.configuration.currency = currency;
-                updatePlans(result.monthly.data.Plans, result.yearly.data.Plans);
-                deferred.resolve();
-            });
-
-            networkActivityTracker.track(deferred.promise);
+        if ($scope.configuration.currency === currency) {
+            return Promise.resolve();
         }
 
-        return deferred.promise;
+        return dashboardModel.loadPlans(currency)
+            .then(({ yearly, monthly }) => {
+                $scope.$applyAsync(() => {
+                    $scope.configuration.currency = currency;
+                    updatePlans(yearly, monthly);
+                    updateVPN($scope.configuration.cycle, { yearly, monthly });
+                });
+            });
     };
+
 
     /**
      * Change current cycle
@@ -233,39 +263,54 @@ angular.module('proton.settings')
      * @return {string} text
      */
     $scope.text = (plan) => {
-        let text;
 
         if (plan.Name === 'free') {
-            if ($scope.subscription.Name === plan.Name) {
-                text = gettextCatalog.getString('Already subscribed', null, 'Info');
-            } else {
-                text = gettextCatalog.getString('Downgrade to Free', null, 'Action');
+
+            if (($scope.configuration.vpnOption || {}).ID) {
+                return gettextCatalog.getString('Update', null, 'Action');
             }
-        } else if (plan.Name === 'plus') {
+
             if ($scope.subscription.Name === plan.Name) {
-                text = gettextCatalog.getString('Update Plus', null, 'Action');
-            } else if ($scope.subscription.Name === 'free') {
-                text = gettextCatalog.getString('Upgrade to Plus', null, 'Action');
-            } else if ($scope.subscription.Name === 'business' || $scope.subscription.Name === 'visionary') {
-                text = gettextCatalog.getString('Downgrade to Plus', null, 'Action');
+                return gettextCatalog.getString('Already subscribed', null, 'Info');
             }
-        } else if (plan.Name === 'business') {
+
+            return gettextCatalog.getString('Downgrade to Free', null, 'Action');
+        }
+
+        if (plan.Name === 'plus') {
             if ($scope.subscription.Name === plan.Name) {
-                text = gettextCatalog.getString('Update Business', null, 'Action');
-            } else if ($scope.subscription.Name === 'free' || $scope.subscription.Name === 'plus') {
-                text = gettextCatalog.getString('Upgrade to Business', null, 'Action');
-            } else if ($scope.subscription.Name === 'visionary') {
-                text = gettextCatalog.getString('Downgrade to Business', null, 'Action');
+                return gettextCatalog.getString('Update Plus', null, 'Action');
             }
-        } else if (plan.Name === 'visionary') {
-            if ($scope.subscription.Name === plan.Name) {
-                text = gettextCatalog.getString('Update Visionary', null, 'Action');
-            } else {
-                text = gettextCatalog.getString('Upgrade to Visionary', null, 'Action');
+
+            if ($scope.subscription.Name === 'free' || /^vpn/.test($scope.subscription.Name)) {
+                return gettextCatalog.getString('Upgrade to Plus', null, 'Action');
+            }
+
+            if ($scope.subscription.Name === 'business' || $scope.subscription.Name === 'visionary') {
+                return gettextCatalog.getString('Downgrade to Plus', null, 'Action');
             }
         }
 
-        return text;
+        if (plan.Name === 'business') {
+            if ($scope.subscription.Name === plan.Name) {
+                return gettextCatalog.getString('Update Business', null, 'Action');
+            }
+            if ($scope.subscription.Name === 'free' || $scope.subscription.Name === 'plus') {
+                return gettextCatalog.getString('Upgrade to Business', null, 'Action');
+            }
+            if ($scope.subscription.Name === 'visionary') {
+                return gettextCatalog.getString('Downgrade to Business', null, 'Action');
+            }
+        }
+
+        if (plan.Name === 'visionary') {
+            if ($scope.subscription.Name === plan.Name) {
+                return gettextCatalog.getString('Update Visionary', null, 'Action');
+            }
+            return gettextCatalog.getString('Upgrade to Visionary', null, 'Action');
+        }
+
+        return '';
     };
 
     /**
@@ -295,17 +340,15 @@ angular.module('proton.settings')
     };
 
     function unsubscribe() {
-        return Payment.delete().then((result) => {
-            if (result.data && result.data.Code === 1000) {
+        return Payment.delete()
+            .then(({ data = {} }) => {
+
+                if (data.Code !== 1000) {
+                    throw new Error(data.Error || gettextCatalog.getString('Error processing payment.', null, 'Error'));
+                }
+
                 return eventManager.call();
-            } else if (result.data && result.data.Error) {
-                return Promise.reject(result.data.Error);
-            }
-            return Promise.reject(gettextCatalog.getString('Error processing payment.', null, 'Error'));
-        },
-        (error) => {
-            Promise.reject(error);
-        });
+            });
     }
 
     /**
@@ -348,83 +391,118 @@ angular.module('proton.settings')
         });
     };
 
+    const buildPlanIDs = (plan) => {
+
+        const planIDs = [plan.ID];
+
+        if (plan.Name !== 'visionary') {
+            planIDs.push(($scope.configuration.vpnOption || {}).ID);
+        }
+
+        let i;
+
+        plan.quantity = 1;
+
+        if (plan.Name === 'plus' || plan.Name === 'business') {
+            for (i = 0; i < $scope.selects[plan.Name].space.index; i++) {
+                planIDs.push($scope.addons[$scope.configuration.cycle].space.ID);
+            }
+
+            for (i = 0; i < $scope.selects[plan.Name].domain.index; i++) {
+                planIDs.push($scope.addons[$scope.configuration.cycle].domain.ID);
+            }
+
+            for (i = 0; i < $scope.selects[plan.Name].address.index; i++) {
+                planIDs.push($scope.addons[$scope.configuration.cycle].address.ID);
+            }
+
+            if (plan.Name === 'business') {
+                for (i = 0; i < $scope.selects.business.member.index; i++) {
+                    planIDs.push($scope.addons[$scope.configuration.cycle].member.ID);
+                }
+            }
+        }
+
+        return planIDs.filter(Boolean);
+    };
+
+    $scope.addVPN = ({ Name, Cycle }) => {
+        const key = (Cycle === 12) ? 'yearly' : 'monthly';
+        const { vpn } = dashboardModel.get(key);
+        if (Name === 'free') {
+            return ($scope.configuration.vpnOption = vpn.vpnbasic);
+        }
+
+        return ($scope.configuration.vpnOption = vpn.vpnplus);
+    };
+
     /**
     * Open modal to pay the plan configured
     * @param {Object} plan
     */
     $scope.choose = (plan, choice) => {
-        if (plan.Name === 'free') {
-            $scope.free();
-        } else {
-            const name = plan.Name;
-            const promises = [];
-            const planIDs = [plan.ID];
-            let i;
 
-            plan.quantity = 1;
+        if (plan.Name === 'free' && !($scope.configuration.vpnOption || {}).ID) {
+            return $scope.free();
+        }
+        const name = plan.Name;
+        const promises = [];
+        const PlanIDs = buildPlanIDs(plan);
 
-            if (plan.Name === 'plus' || plan.Name === 'business') {
-                for (i = 0; i < $scope.selects[plan.Name].space.index; i++) {
-                    planIDs.push($scope.addons[$scope.configuration.cycle].space.ID);
+        // Get payment methods
+        promises.push(Payment.methods());
+        // Valid plan
+        promises.push(Payment.valid({
+            Currency: $scope.configuration.currency,
+            Cycle: $scope.configuration.cycle,
+            CouponCode: subscriptionModel.coupon(),
+            PlanIDs
+        }));
+
+        const promise = Promise.all(promises)
+            .then(([ { data: methods = {} }, { data: valid = {} } ]) => {
+
+                if (methods.Error || valid.Error) {
+                    throw new Error(methods.Error || valid.Error);
                 }
 
-                for (i = 0; i < $scope.selects[plan.Name].domain.index; i++) {
-                    planIDs.push($scope.addons[$scope.configuration.cycle].domain.ID);
-                }
+                if (methods.Code === 1000 && valid.Code === 1000) {
 
-                for (i = 0; i < $scope.selects[plan.Name].address.index; i++) {
-                    planIDs.push($scope.addons[$scope.configuration.cycle].address.ID);
-                }
-
-                if (plan.Name === 'business') {
-                    for (i = 0; i < $scope.selects.business.member.index; i++) {
-                        planIDs.push($scope.addons[$scope.configuration.cycle].member.ID);
+                    if ($scope.total(plan, plan.Cycle) !== valid.Amount) {
+                        throw new Error(gettextCatalog.getString('Amount mismatch', null, 'Error'));
                     }
-                }
-            }
 
-            // Get payment methods
-            promises.push(Payment.methods());
-            // Valid plan
-            promises.push(Payment.valid({
-                Currency: $scope.configuration.currency,
-                Cycle: $scope.configuration.cycle,
-                CouponCode: '',
-                PlanIDs: planIDs
-            }));
+                    const organization = organizationModel.get();
+                    paymentModal.activate({
+                        params: {
+                            subscription: $scope.subscription,
+                            create: organization.PlanName === 'free',
+                            planIDs: PlanIDs,
+                            plans: $scope.plans.concat($scope.configuration.vpnOption || {}),
+                            valid,
+                            choice,
+                            status: status.data,
+                            methods: methods.PaymentMethods,
+                            change() {
+                                $scope.refresh();
+                                paymentModal.deactivate();
+                                if (plan.Name === 'visionary') {
+                                    $scope.configuration.vpnOption = undefined;
+                                }
+                            },
+                            switch(cycle, currency) {
+                                // Set default values
+                                const currentCycle = cycle || $scope.configuration.cycle;
+                                const currentCurrency = currency || $scope.configuration.currency;
+                                // Close payment modal
+                                paymentModal.deactivate();
 
-            networkActivityTracker.track($q.all(promises)
-            .then((results) => {
-                const methods = results[0];
-                const valid = results[1];
-                const organization = organizationModel.get();
+                                if (plan.Name === 'visionary') {
+                                    $scope.configuration.vpnOption = undefined;
+                                }
 
-                if (methods.data && methods.data.Code === 1000 && valid.data && valid.data.Code === 1000) {
-                    // Check amount first
-                    if ($scope.total(plan, plan.Cycle) === valid.data.Amount) {
-                        paymentModal.activate({
-                            params: {
-                                subscription: $scope.subscription,
-                                create: organization.PlanName === 'free',
-                                planIDs,
-                                plans: $scope.plans,
-                                valid: valid.data,
-                                choice,
-                                status: status.data,
-                                methods: methods.data.PaymentMethods,
-                                change() {
-                                    $scope.refresh();
-                                    paymentModal.deactivate();
-                                },
-                                switch(cycle, currency) {
-                                    // Set default values
-                                    const currentCycle = cycle || $scope.configuration.cycle;
-                                    const currentCurrency = currency || $scope.configuration.currency;
-                                    // Close payment modal
-                                    paymentModal.deactivate();
-
-                                    $scope.changeCycle(currentCycle);
-                                    $scope.changeCurrency(currentCurrency)
+                                $scope.changeCycle(currentCycle);
+                                $scope.changeCurrency(currentCurrency)
                                     .then(() => {
                                         $scope.choose(_.findWhere($scope.plans, {
                                             Name: name,
@@ -432,22 +510,18 @@ angular.module('proton.settings')
                                             Currency: currentCurrency
                                         }), 'paypal');
                                     });
-                                },
-                                cancel() {
-                                    paymentModal.deactivate();
-                                }
+                            },
+                            cancel() {
+                                paymentModal.deactivate();
                             }
-                        });
-                    } else {
-                        notify({ message: gettextCatalog.getString('Amount mismatch', null, 'Error'), classes: 'notification-danger' });
-                    }
-                } else if (methods.data && methods.data.Error) {
-                    notify({ message: methods.data.Error, classes: 'notification-danger' });
-                } else if (valid.data && valid.data.Error) {
-                    notify({ message: valid.data.Error, classes: 'notification-danger' });
+                        }
+                    });
+
                 }
-            }));
-        }
+
+            });
+
+        networkActivityTracker.track(promise);
     };
 
     /**
@@ -462,5 +536,5 @@ angular.module('proton.settings')
     };
 
     // Call initialization
-    initialization(monthly.data.Plans, yearly.data.Plans, methods.data.PaymentMethods);
+    initialization(monthly, yearly, methods.data.PaymentMethods);
 });

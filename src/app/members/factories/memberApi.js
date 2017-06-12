@@ -53,6 +53,17 @@ angular.module('proton.members')
             });
         },
         /**
+         * Update vpn allocated
+         * @param {String} memberID
+         * @param {Integer} space
+         * @return {Promise}
+         */
+        vpn(memberID, maxVPN) {
+            return $http.put(url.get() + '/members/' + memberID + '/vpn', {
+                MaxVPN: maxVPN
+            });
+        },
+        /**
          * Update role
          * @param {String} memberID
          * @param {Object} params

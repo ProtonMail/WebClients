@@ -6,6 +6,24 @@ angular.module('proton.constants', [])
 // Constants definition
 //
 .constant('CONSTANTS', {
+    PLANS: {
+        PLAN: {
+            PLUS: 'plus',
+            VISIONARY: 'visionary',
+            VPN_BASIC: 'vpnbasic',
+            VPN_PLUS: 'vpnplus'
+        },
+        ADDON: {
+            ADDRESS: '5address',
+            MEMBER: '1member',
+            DOMAIN: '1domain',
+            SPACE: '1gb'
+        }
+    },
+    PLANS_TYPE: {
+        PLAN: 1,
+        ADDON: 0
+    },
     MAIN_KEY: '0',
     TIMEOUT: 30 * 1000, // timeout in milliseconds
     BASE_SIZE: 1024, // define the base used for byte

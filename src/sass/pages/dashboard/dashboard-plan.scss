@@ -1,0 +1,219 @@
+#plans .plan {
+    .plan-title {
+        height: 80px;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: 120px;
+        background-color: $primary;
+        margin: -1px -1px 0;
+    }
+
+    &.free-plan .plan-title {
+        background-image: url('/assets/img/logo/protonmail-free.svg')
+    }
+
+    &.plus-plan .plan-title {
+        background-image: url('/assets/img/logo/protonmail-plus.svg')
+    }
+
+    &.visionary-plan .plan-title {
+        background-image: url('/assets/img/logo/protonmail-visionary.svg')
+    }
+
+    > section {
+        ul {
+            background: #FFF;
+            margin: 0
+        }
+        ul, li {
+            padding: 0;
+            list-style-type: none;
+        }
+        ul li {
+            display: flex;
+            align-items: center;
+            min-height: 35px;
+            padding: 0 10px;
+            border-bottom: 1px solid $border;
+            & > * {
+                margin-right: .5em;
+            }
+            &.disabled {
+                color: $default-color-medium;
+                background: rgba(0,0,0,.1);
+                > span {
+                    text-decoration: line-through;
+                }
+            }
+            &.tall {
+                min-height: 55px;
+                flex-wrap: wrap;
+            }
+
+            &.tall .pm_select.inline { width: 5.5em }
+
+            .cost {
+                position: absolute;
+                right: 0;
+                bottom: 0;
+                display: flex;
+                align-items: center;
+                height: 100%;
+            }
+
+        }
+    }
+
+    &.plus-plan .dashboard-plan-storage,
+    &.plus-plan .dashboard-plan-custom-domain,
+    &.plus-plan .dashboard-plan-address {
+        position: relative; /* cost */
+        padding-right: 50px;  /* cost */
+    }
+
+    footer {
+        border: 1px solid $border;
+        position: relative;
+        z-index: 2;
+        border-top: none;
+        .cycle {
+            min-height: 55px;
+            box-sizing: border-box;
+            margin-bottom: 0;
+            border-bottom: 1px solid $border;
+            padding: 10px 2rem 10px 1rem;
+            color: $default-color-medium;
+            position: relative;
+            cursor: pointer;
+
+            &.free-cycle {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                height: 110px;
+            }
+
+            .discount {
+                position: absolute;
+                z-index: 5;
+                right: 0;
+                top: 0px;
+                margin: 0;
+                width: 0;
+                height: 0;
+                border-style: solid;
+                border-width: 0 3rem 3rem 0;
+                border-color: transparent $green transparent transparent;
+                color: $white;
+                overflow: visible;
+                span {
+                    -webkit-transform: rotate(45deg);
+                    transform: rotate(45deg);
+                    position: absolute;
+                    width: 100%;
+                    display: block;
+                    font-weight: 700;
+                    font-size: 90%;
+                    text-align: center;
+                    top: -.25rem;
+                    right: -1.5rem;
+                }
+            }
+            label {
+                color: $text;
+                line-height: 30px;
+                font-size: 90%;
+            }
+            strong {
+                font-size: 1.1rem;
+                color: $primary;
+                margin-right: .5rem;
+            }
+            &.monthly {
+                .text-right {
+                    line-height: 30px;
+                }
+            }
+        }
+
+        .action {
+            padding: 1rem 0px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            white-space: nowrap;
+        }
+    }
+
+    // borders
+
+    > section,
+    > footer {
+        border-color: $border;
+        border-style: solid;
+    }
+
+    > section { border-width: 0px 0px 0px 1px }
+    &:last-of-type > section { border-width: 0px 1px 0px 1px }
+
+    > footer { border-width: 0px 0px 1px 1px }
+    &:last-of-type > footer { border-width: 0px 1px 1px 1px }
+
+    &:not(:last-of-type), &:not(:first-of-type) {
+        > section h3 { box-shadow: inset 0 0 1px rgba(0,0,0,.5) }
+    }
+
+    .dashboardSelectVPN-container {
+        width: 100%;
+        padding: .5em 0;
+        line-height: 1;
+    }
+
+    .dashboardSelectVPN-container,
+    .selectVpn-container {
+        display: flex;
+        flex-wrap: wrap;
+        min-height: 60px;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+
+    .dashboardSelectVPN-select,
+    .selectVpn-select-container { flex: 1 }
+
+    .selectVpn-select-container { min-width: 120px }
+
+    .dashboard-action-addVPN {
+        display: flex;
+        height: 40px;
+        padding: 0 0 1em 0;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .dashboard-action-addVPN-button-txt:before { content: "+ " }
+
+    .dashboard-action-addVPN-button {
+        color: #5CB85C;
+        font-weight: bold;
+        font-size: 1em;
+        padding: 0;
+        height: auto;
+    }
+
+    .dashboard-action-addVPN-button-container {
+        display: flex;
+        align-items: center;
+        padding: .3em 1em .2em .5em;
+    }
+
+    .dashboard-action-addVPN-sign {
+        flex:1;
+        display: inline-block;
+        background: url('/assets/img/logo/protonvpn-sign-green.svg') no-repeat 35% 0%;
+        background-size: 3em;
+        height: 2em;
+        width: 2em;
+    }
+}

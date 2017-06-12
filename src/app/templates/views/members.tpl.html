@@ -59,7 +59,7 @@
                                                 <span class="margin-right" translate>Number of users</span>
                                             </td>
                                             <td class="absorbing-column">
-                                                <span class="margin-left" translate-context="Info" translate>{{ organization.UsedMembers }} of {{ organization.MaxMembers }} used</span>
+                                                <span class="margin-left">{{ organization.UsedMembers }} <span translate-context="Info" translate>of</span> {{ organization.MaxMembers }} <span translate-context="Info" translate>used</span></span>
                                             </td>
                                             <td class="text-right">
                                                 <span hide-upgrade="member">
@@ -76,6 +76,19 @@
                                             </td>
                                             <td class="text-right">
                                                 <span hide-upgrade="space">
+                                                    <a ui-sref="secured.dashboard({ scroll: true })" class="pm_button link" translate-context="Action" translate-comment="link to dashboard" translate>Upgrade</a>
+                                                </span>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td translate-context="Title" translate>
+                                                <span class="margin-right" translate>Available VPN connections</span>
+                                            </td>
+                                            <td class="absorbing-column">
+                                                <span class="margin-left" translate-context="Info" translate>{{ organization.MaxVPN - organization.UsedVPN }} </span>
+                                            </td>
+                                            <td class="text-right">
+                                                <span hide-upgrade="member">
                                                     <a ui-sref="secured.dashboard({ scroll: true })" class="pm_button link" translate-context="Action" translate-comment="link to dashboard" translate>Upgrade</a>
                                                 </span>
                                             </td>
@@ -130,7 +143,7 @@
                     <button type="button" class="pm_button primary" ng-click="addMember()" translate-context="Action" translate>Add user</button>
                 </p>
                 <div class="pm_table visibleOverflow">
-                    <table class="bordered absorbing withDropDown">
+                    <table class="members-table bordered absorbing withDropDown">
                         <thead>
                             <tr>
                                 <th translate-context="Title" translate-comment="table heading" translate>Name</th>
@@ -147,11 +160,11 @@
                                         <i class="fa fa-info-circle"></i>
                                     </a>
                                 </th>
-                                <th translate-context="Title" translate-comment="table heading" translate>Storage</th>
+                                <th></th>
                                 <th translate-context="Title" translate-comment="table heading" translate>Actions</th>
                             </tr>
                         </thead>
-                        <tbody>
+                        <tbody class="members-table-tbody">
                             <tr ng-repeat-start="member in members">
                                 <td>
                                     <span ng-bind="member.Name"></span>
@@ -170,7 +183,16 @@
                                     <span ng-hide="member.Private === 1" translate>No</span>
                                 </td>
                                 <td>
-                                    <span  translate-comment="space used out of total space allowed for a member" translate>{{ member.UsedSpace | humanSize:true:'GB' }} / {{ member.MaxSpace | humanSize:false:'GB' }} Used</span>
+                                    <div class="members-table-usage">
+                                        <i class="fa fa-hdd-o"></i>
+                                        {{ member.UsedSpace | humanSize:true:'GB' }} / {{ member.MaxSpace | humanSize:false:'GB' }}
+                                        <span translate-comment="space used out of total space allowed for a member" translate>Used</span>
+                                    </div>
+                                    <div class="members-table-usage">
+                                        <i class="fa fa-shield"></i>
+                                        {{ member.MaxVPN  }}
+                                        <span translate-comment="vpn connection used" translate>VPN Connections</span>
+                                    </div>
                                 </td>
                                 <td>
                                     <div class="pm_buttons">
