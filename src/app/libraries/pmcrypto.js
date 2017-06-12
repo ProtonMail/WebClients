@@ -494,16 +494,19 @@ const pmcrypto = (function pmcrypto() {
             }
 
             try {
-                openpgp.decryptSessionKey(options).then((result) => {
-                    const data = result.data;
-                    if (data === undefined) {
-                        // unencrypted attachment?
-                        return reject(new Error('Undefined session key'));
-                    } else if (data.length !== 32) {
-                        return reject(new Error('Invalid session key length'));
-                    }
-                    resolve({ key: data, algo: result.algorithm });
-                });
+                openpgp.decryptSessionKey(options)
+                    .then((result) => {
+                        const data = result.data;
+                        if (data === undefined) {
+                            // unencrypted attachment?
+                            return reject(new Error('Undefined session key'));
+                        } else if (data.length !== 32) {
+                            return reject(new Error('Invalid session key length'));
+                        }
+                        resolve({ key: data, algo: result.algorithm });
+                    }, (err) => {
+                        reject(err);
+                    });
             } catch (err) {
                 if (err.message === 'CFB decrypt: invalid key') {
                     return reject(err.message); // Bad password, reject without Error object
