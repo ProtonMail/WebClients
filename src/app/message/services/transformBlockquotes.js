@@ -11,7 +11,6 @@ angular.module('proton.message')
         '#origbody',
         '#reply139content',
         '#oriMsgHtmlSeperator',
-        '#OLK_SRC_BODY_SECTION',
         'blockquote[type="cite"]'
     ].join(',');
 
