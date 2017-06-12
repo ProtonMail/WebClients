@@ -1,7 +1,14 @@
 .proton-embedded {
-	max-width: 100%;
 	position: relative;
 	display: block;
+
+	&:not([width]) {
+		/* Responsiveness of our embedded images
+			1. do not handle responsivess if there is a width attribute
+			2. do not set auto height as long as it's not need to handle our embedded images (no height attribute)
+		*/
+		max-width: 100%;
+	}
 
 	&:before {
 		display:block;

@@ -78,10 +78,8 @@ angular.module('proton.squire')
                 border: none;
             }
 
-            .proton-embedded {
-                max-width: 100%;
-                height: auto;
-            }
+            /* see embedded.scss rules */
+            .proton-embedded:not([width]) { max-width: 100% }
 
             .protonmail_signature_block-empty { display: none }
 
