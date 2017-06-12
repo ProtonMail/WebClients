@@ -2,14 +2,6 @@
 	position: relative;
 	display: block;
 
-	&:not([width]) {
-		/* Responsiveness of our embedded images
-			1. do not handle responsivess if there is a width attribute
-			2. do not set auto height as long as it's not need to handle our embedded images (no height attribute)
-		*/
-		max-width: 100%;
-	}
-
 	&:before {
 		display:block;
 	  	position: relative;
@@ -28,4 +20,13 @@
 	  border:1px solid;
 	  border-color: #444 #CCC #CCC #444
 	}
+}
+
+/* Responsiveness of our embedded images */
+
+.proton-embedded:not([width]):not([style*="width"]) {
+	/*	1. do not handle responsivess if there is a width attribute / inline width style
+		2. do not set auto height as long as it's not need to handle our embedded images (no height attribute)
+	*/
+	max-width: 100%;
 }
