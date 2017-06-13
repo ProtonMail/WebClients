@@ -13,6 +13,7 @@ angular.module('proton.utils')
         authentication,
         cache,
         cacheCounters,
+        cachePages,
         CONSTANTS,
         Contact,
         desktopNotifications,
@@ -371,6 +372,7 @@ angular.module('proton.utils')
             } else if (data.Refresh === 1) {
                 manageID(data.EventID);
                 cache.reset();
+                cachePages.clear();
                 cacheCounters.reset();
                 cache.callRefresh();
                 cacheCounters.query();
