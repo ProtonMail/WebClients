@@ -125,18 +125,12 @@
             }
             label {
                 color: $text;
-                line-height: 30px;
                 font-size: 90%;
             }
             strong {
                 font-size: 1.1rem;
                 color: $primary;
                 margin-right: .5rem;
-            }
-            &.monthly {
-                .text-right {
-                    line-height: 30px;
-                }
             }
         }
 
