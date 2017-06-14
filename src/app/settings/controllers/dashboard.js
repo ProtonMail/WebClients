@@ -80,8 +80,6 @@ angular.module('proton.settings')
             $scope.selects.business.domain = $scope.domainOptions[0];
             $scope.selects.business.address = $scope.addressOptions[0];
         }
-
-        console.log($scope.subscription);
     }
 
     function updatePlans(monthly, yearly) {
