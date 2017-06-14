@@ -14,7 +14,7 @@ angular.module('proton.message')
 
             function mouseup(event) {
 
-                if (selection() && event.target.nodeName !== 'A') {
+                if (selection() && event.target.nodeName !== 'A' && !event.target.classList.contains('labelsElement-btn-remove')) {
 
                     scope.$applyAsync(() => {
                         // Open the message in composer if it's a draft
