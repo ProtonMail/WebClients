@@ -20,18 +20,6 @@
     margin-right: .2em;
 }
 
-.settingsDashboard-vpn-discount-amount:after {
-    content: "";
-    position: absolute;
-    right: -5%;
-    bottom: 5%;
-    width: 110%;
-    height: 60%;
-    background: rgba(#56B366, .2);
-    transform: skewX(1deg) rotate(-4deg);
-}
-
-
 .settingsDashboard-vpn-discount .settingsDashboard-vpn-discount-underline,
 .settingsDashboard-vpn-discount .settingsDashboard-vpn-discount-info {
     opacity: .7;
