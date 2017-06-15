@@ -29,7 +29,10 @@
             justify-content: space-between;
             padding: 0 10px;
 
-            & > td { padding: .5em }
+            & > td {
+                display: block;
+                padding: .5em
+            }
         }
     }
 
