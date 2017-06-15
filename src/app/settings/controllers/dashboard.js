@@ -427,6 +427,7 @@ angular.module('proton.settings')
     $scope.addVPN = ({ Name, Cycle }) => {
         const key = (Cycle === 12) ? 'yearly' : 'monthly';
         const { vpn } = dashboardModel.get(key);
+
         if (Name === 'free') {
             return ($scope.configuration.vpnOption = vpn.vpnbasic);
         }
