@@ -755,8 +755,9 @@ angular.module('proton.routes', [
                 }
                 return Promise.resolve();
             },
-            dashboardPlans(subscription, dashboardModel) {
-                return dashboardModel.loadPlans(subscription.Currency);
+            dashboardPlans(dashboardModel, subscriptionModel) {
+                return subscriptionModel.fetch()
+                    .then(({ Currency }) => dashboardModel.loadPlans(Currency));
             },
             methods(user, Payment, networkActivityTracker) {
                 return networkActivityTracker.track(Payment.methods());
