@@ -67,7 +67,7 @@ angular.module('proton.dashboard')
             templateUrl: 'templates/dashboard/subscriptionSection.tpl.html',
             link(scope) {
                 const subscription = subscriptionModel.get();
-                const unsubscribe = $rootScope.$on('subscription', ({ type, data = {} }) => {
+                const unsubscribe = $rootScope.$on('subscription', (event, { type, data = {} }) => {
                     if (type === 'update') {
                         scope.$applyAsync(() => {
                             scope.subscription = formatSubscription(data.subscription);
