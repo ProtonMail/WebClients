@@ -15,18 +15,8 @@ angular.module('proton.organization')
 
     const hasPaid = (type) => hasFactory(PAID_TYPES[type])();
 
-    function prependProtonMail(subscription = {}) {
-        subscription.Plans = (subscription.Plans || []).map((plan) => {
-            if (/^(plus|visionary)$/.test(plan.Name)) {
-                plan.Title = `ProtonMail ${plan.Title}`;
-            }
-            return plan;
-        });
-        return subscription;
-    }
-
     function set(subscription = {}, noEvent = false) {
-        CACHE.subscription = angular.copy(prependProtonMail(subscription));
+        CACHE.subscription = angular.copy(subscription);
         !noEvent && $rootScope.$emit('subscription', { type: 'update', data: { subscription } });
     }
 
