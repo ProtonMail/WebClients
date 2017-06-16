@@ -50,6 +50,7 @@ angular.module('proton.core')
             self.unit = giga;
             self.min = 0;
             self.max = organization.MaxSpace;
+            self.maxVPN = organization.MaxVPN;
             self.storageSliderOptions = {
                 animate: false,
                 start: startValue / self.unit,
