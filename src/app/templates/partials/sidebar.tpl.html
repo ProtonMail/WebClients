@@ -1,4 +1,4 @@
-<section class="pm_opensans sidebar sidebarApp-container" >
+<section class="pm_opensans sidebar sidebarApp-container" data-pt-dropzone-container>
     <button
         class="compose pm_button sidebar-btn-compose"
         action-compose
@@ -15,7 +15,6 @@
             data-key="{{::state}}"
             ng-repeat="state in listStates track by $id(state)"></navigation-item>
     </ul>
-
     <ul class="menu sidebarApp-menu" id="labelSettings">
         <li class="sidebarApp-item">
             <a ui-sref="secured.labels" class="sidebarApp-link">
@@ -28,6 +27,7 @@
             </a>
         </li>
     </ul>
+
 
     <div id="sidebarLabels" ng-scrollbars ng-scrollbars-config="::scrollbarConfig">
         <div class="labels">

@@ -539,8 +539,7 @@ angular.module('proton.elements')
      * @return {Array}
      */
     function idsSelected() {
-        const elementsSelected = getElementsSelected();
-        return elementsSelected.map(({ ID }) => ID);
+        return _.pluck(getElementsSelected(), 'ID');
     }
 
     /**
