@@ -212,13 +212,13 @@ angular.module('proton.routes', [
                         deferred.resolve([]);
                     } else {
                         Payment.plans(currency, cycle)
-                        .then((result) => {
-                            if (result.data && result.data.Code === 1000) {
-                                deferred.resolve(result.data.Plans);
-                            } else {
-                                deferred.reject();
-                            }
-                        });
+                            .then(({ data = {} }) => {
+                                if (data.Code === 1000) {
+                                    deferred.resolve(data.Plans);
+                                } else {
+                                    deferred.reject();
+                                }
+                            });
                     }
                 } else {
                     deferred.resolve([]);
