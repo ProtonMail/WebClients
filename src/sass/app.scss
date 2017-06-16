@@ -49,6 +49,7 @@
 @import "commons/toggle-switch";
 @import "commons/embedded";
 @import "commons/pm-noscript";
+@import "commons/ptDnd";
 
 
 //=== 👉 UI Components =====================//
@@ -135,6 +136,7 @@
 @import "components/message/filterButton";
 @import "components/message/messageView";
 @import "components/message/messageSpamScore";
+@import "components/message/messagePgpAttachments";
 
 //== Conversations
 @import "components/conversation/conversation";

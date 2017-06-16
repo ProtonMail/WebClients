@@ -44,27 +44,26 @@ angular.module('proton.elements')
 
                     const isChecked = target.checked;
 
-                    scope
-                        .$applyAsync(() => {
-                            scope.conversations[index].Selected = isChecked;
-                            $rootScope.numberElementChecked = countChecked(scope.conversations);
+                    scope.$applyAsync(() => {
+                        scope.conversations[index].Selected = isChecked;
+                        $rootScope.numberElementChecked = countChecked(scope.conversations);
 
-                            if (shiftKey && previous) {
-                                const from = Math.min(index, previous.index);
-                                const to = Math.max(index, previous.index);
-                                conversationsToSelect(previous, from, to);
+                        if (shiftKey && previous) {
+                            const from = Math.min(index, previous.index);
+                            const to = Math.max(index, previous.index);
+                            conversationsToSelect(previous, from, to);
 
-                                // Unselect the latest click if we unselect a list of checkbox
-                                target.checked = previous.conversation.Selected;
-                            }
+                            // Unselect the latest click if we unselect a list of checkbox
+                            target.checked = previous.conversation.Selected;
+                        }
 
-                            $rootScope.showWelcome = false;
+                        $rootScope.showWelcome = false;
 
-                            previous = {
-                                index,
-                                conversation: scope.conversations[index]
-                            };
-                        });
+                        previous = {
+                            index,
+                            conversation: scope.conversations[index]
+                        };
+                    });
 
                 }
 

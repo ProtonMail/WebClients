@@ -12,36 +12,6 @@ angular.module('proton.message')
             return { body, type };
         }
 
-        function parse(decryptedBody) {
-            const deferred = $q.defer();
-            const mailparser = new MailParser({ defaultCharset: 'UTF-8' });
-
-            mailparser.on('end', (mail) => {
-                let type = 'html';
-                let body = '';
-
-                if (mail.html) {
-                    body = mail.html;
-                } else if (mail.text) {
-                    type = 'plain';
-                    body = mail.text;
-                } else {
-                    body = 'Empty Message';
-                }
-
-                if (mail.attachments) {
-                    body = "<div class='alert alert-danger'><span class='pull-left fa fa-exclamation-triangle'></span><strong>PGP/MIME Attachments Not Supported</strong><br>This message contains attachments which currently are not supported by ProtonMail.</div><br>" + body;
-                }
-
-                deferred.resolve({ type, body });
-            });
-
-            mailparser.write(decryptedBody);
-            mailparser.end();
-
-            return deferred.promise;
-        }
-
         function clean(content) {
             // Clear content with DOMPurify before anything happen!
             content.body = DOMPurify.sanitize(content.body, {
@@ -73,7 +43,7 @@ angular.module('proton.message')
             }
 
             return decrypt(message)
-                .then((body) => ((message.IsEncrypted === 8) ? parse(body) : withType(body, message)))
+                .then((body) => withType(body, message))
                 .then((content) => clean(content))
                 .then((content) => prepare(content, message))
                 .then((content) => (read(message), content));
