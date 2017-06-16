@@ -24,7 +24,7 @@ angular.module('proton.payment')
                     Cycle,
                     Currency,
                     Name: 'free',
-                    Title: 'Free',
+                    Title: 'ProtonMail Free',
                     Amount: 0,
                     MaxDomains: 0,
                     MaxAddresses: 1,
