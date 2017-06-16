@@ -20,7 +20,7 @@ angular.module('proton.dashboard')
             }
 
             return Payment.plans(currency, cycle)
-                .then((data = {}) => {
+                .then(({ data = {} }) => {
                     if (data.Code !== 1000) {
                         throw new Error(data.Error);
                     }
