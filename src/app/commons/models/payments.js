@@ -137,7 +137,8 @@ angular.module('proton.commons')
          */
         plans(Currency, Cycle) {
             return $http.get(requestUrl('plans'), { params: { Currency, Cycle } })
-                .then(paymentPlansFormator(Currency, Cycle));
+                .then(paymentPlansFormator(Currency, Cycle))
+                .then((data) => ({ data }));
         },
         /**
         * Get current subscription
