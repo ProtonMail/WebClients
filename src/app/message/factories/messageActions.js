@@ -212,7 +212,7 @@ angular.module('proton.message')
             const context = tools.cacheContext();
             const currentLocation = tools.currentLocation();
             const isStateAllowedRemove = _.contains(basicFolders, currentLocation) || labelsModel.contains(currentLocation, 'folders');
-            const ids = _.map(messages, ({ ID }) => ID);
+            const ids = _.pluck(messages, 'ID');
 
             const process = (events) => {
                 cache.events(events)
