@@ -35,6 +35,7 @@ angular.module('proton.message')
         gettextCatalog.getString('End to end encrypted using PGP', null),
         gettextCatalog.getString('End to end encrypted using PGP/MIME', null)
     ];
+    const emptyMessage = gettextCatalog.getString('Message empty', null, 'Message content if empty');
 
     class Message {
 
@@ -131,6 +132,31 @@ angular.module('proton.message')
                 });
         }
 
+        parse(content) {
+            const deferred = $q.defer();
+            const mailparser = new MailParser({ defaultCharset: 'UTF-8' });
+
+            mailparser.on('end', (mail) => {
+                if (mail.attachments) {
+                    this.PgpMimeWithAttachments = true; // Used to display an alert on the message view
+                }
+
+                if (mail.html) {
+                    deferred.resolve(mail.html);
+                } else if (mail.text) {
+                    this.MIMEType = 'text/plain';
+                    deferred.resolve(mail.text);
+                } else {
+                    deferred.resolve(emptyMessage);
+                }
+            });
+
+            mailparser.write(content);
+            mailparser.end();
+
+            return deferred.promise;
+        }
+
         /**
          * Decrypt the body
          * @return {Promise}
@@ -138,6 +164,7 @@ angular.module('proton.message')
         decryptBody() {
             const privKey = authentication.getPrivateKeys(this.AddressID);
             const sender = (this.Sender || {}).Address;
+
             this.decrypting = true;
 
             const getPubKeys = (sender) => {
@@ -158,7 +185,14 @@ angular.module('proton.message')
             return getPubKeys(sender)
                 .then((pubKeys) => {
                     return pmcw.decryptMessageRSA(this.Body, privKey, this.Time, pubKeys)
-                        .then((rep) => (this.decrypting = false, rep))
+                        .then((rep) => {
+                            this.decrypting = false;
+                            if (this.IsEncrypted === 8) {
+                                return this.parse(rep.data)
+                                    .then((data) => ({ data }));
+                            }
+                            return rep;
+                        })
                         .catch((error) => {
                             this.decrypting = false;
                             throw error;
