@@ -256,6 +256,7 @@ angular.module('proton.settings')
 
         const promise = settingsApi.setLogging({ LogAuth: value })
             .then(() => {
+                $scope.doLogging = value;
                 notify({
                     message: gettextCatalog.getString('Logging preference updated', null, 'Dashboard/security'),
                     classes: 'notification-success'

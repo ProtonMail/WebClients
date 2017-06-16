@@ -29,12 +29,14 @@ angular.module('proton.dashboard')
             templateUrl: 'templates/dashboard/selectVpn.tpl.html',
             link(scope) {
                 const { monthly, yearly } = dashboardModel.get();
+
                 scope.plans = {
-                    1: formatList(monthly.vpn, true),
+                    1: formatList(monthly.vpn),
                     12: formatList(yearly.vpn)
                 };
 
                 const { Name } = scope.model.vpnOption || {};
+
                 if (Name) {
                     if (scope.model.cycle === 12) {
                         return (scope.model.vpnOption = yearly.vpn[Name]);
@@ -43,7 +45,7 @@ angular.module('proton.dashboard')
                 }
 
                 // Default case on Load
-                scope.model.vpnOption = scope.plans[scope.model.cycle][1];
+                scope.model.vpnOption = scope.plans[scope.model.cycle][0];
             }
         };
     });

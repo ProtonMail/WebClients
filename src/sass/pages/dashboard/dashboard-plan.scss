@@ -177,21 +177,19 @@
         justify-content: space-between;
     }
 
+    .dashboardSelectVPN-container i { margin-right: 5px }
+
 
     .dashboardSelectVPN-select,
     .selectVpn-select-container { flex: 1 }
 
-    .selectVpn-select-container { min-width: 120px }
-
-    .dashboard-action-addVPN {
-        display: flex;
-        height: 40px;
-        padding: 0 0 1em 0;
-        align-items: center;
-        justify-content: center;
+    .selectVpn-select-container {
+        max-width: 160px;
+        margin-right: auto; /* override space-bettwen used for ProtonVPN included <--> link */
     }
 
-    .dashboard-action-addVPN-button-txt:before { content: "+ " }
+    .dashboardSelectVPN-link { margin-left: auto }
+
 
     .dashboard-action-addVPN-button {
         color: #5CB85C;
@@ -206,6 +204,17 @@
         align-items: center;
         padding: .3em 1em .2em .5em;
     }
+
+    .dashboard-action-addVPN {
+        display: flex;
+        height: 40px;
+        padding: 0 0 1em 0;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .dashboard-action-addVPN-button-txt-add:before { content: "+ " }
+
 
     .dashboard-action-addVPN-sign {
         display: inline-block;
