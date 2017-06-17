@@ -238,11 +238,11 @@ angular.module('proton.settings')
         }
 
         return dashboardModel.loadPlans(currency)
-            .then(({ yearly, monthly }) => {
+            .then(({ monthly, yearly }) => {
                 $scope.$applyAsync(() => {
                     $scope.configuration.currency = currency;
-                    updatePlans(yearly, monthly);
-                    updateVPN($scope.configuration.cycle, { yearly, monthly });
+                    updatePlans(monthly, yearly);
+                    updateVPN($scope.configuration.cycle, { monthly, yearly });
                 });
             });
     };
