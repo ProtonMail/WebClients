@@ -1,5 +1,5 @@
 angular.module('proton.dnd')
-    .directive('ptDraggable', (ptDndModel, ptDndUtils, PTDNDCONSTANTS, ptDndNotification, aboutClient) => {
+    .directive('ptDraggable', (ptDndModel, ptDndUtils, PTDNDCONSTANTS, ptDndNotification) => {
 
         const { CLASSNAME, DROPZONE_ATTR_ID } = PTDNDCONSTANTS;
         let getSelected = angular.noop;

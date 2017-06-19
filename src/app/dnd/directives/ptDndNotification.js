@@ -50,7 +50,7 @@ angular.module('proton.dnd')
             }
 
             (!isIE11 && !isEdge) && show();
-        }
+        };
 
         return { init: angular.noop, show, hide, onDragStart };
     });
