@@ -17,21 +17,21 @@ angular.module('proton.elements')
     * @param {Object} element - conversation or message
     * @param {String} type Type of message, conversation or message
     */
-    function toggleStar({ model, type }) {
-        const action = isStarred(model) ? 'unstar' : 'star';
+    function toggleStar(item, type) {
+        const todoAction = isStarred(item) ? 'unstar' : 'star';
 
         if (type === 'conversation') {
-            actionConversation[action]([model.ID]);
+            actionConversation[todoAction]([item.ID]);
         }
 
         if (type === 'message') {
-            $rootScope.$emit('messageActions', { action, data: { ids: [model.ID] } });
+            $rootScope.$emit('messageActions', { action: todoAction, data: { ids: [item.ID] } });
         }
     }
 
     $rootScope.$on('elements', (e, { type, data = {} }) => {
         if (type === 'toggleStar') {
-            toggleStar(data);
+            toggleStar(data.model, data.type);
         }
     });
 
@@ -43,7 +43,7 @@ angular.module('proton.elements')
         templateUrl: 'templates/elements/ptStar.tpl.html',
         link(scope, el, attr) {
 
-            const type = attr.ptStarType || tools.getTypeList();
+            const customType = attr.ptStarType || tools.getTypeList();
 
             scope.isStarred = () => isStarred(scope.model);
 
@@ -51,7 +51,7 @@ angular.module('proton.elements')
                 if (e.target.nodeName === 'A') {
                     e.preventDefault();
                     e.stopPropagation();
-                    toggleStar({ model: scope.model, type });
+                    toggleStar(scope.model, customType);
                 }
             }
 
