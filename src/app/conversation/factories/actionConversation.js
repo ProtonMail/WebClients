@@ -330,7 +330,7 @@ angular.module('proton.conversation')
         const folderName = getFolderNameTranslated(labelID);
         const successMessage = gettextCatalog.getPlural(conversationIDs.length, 'Conversation moved to', 'Conversations moved to', null);
         const displaySuccess = () => notify({ message: `${successMessage} ${folderName}`, classes: 'notification-success' });
-        const folderIDs = basicFolders.concat(folders).concat((toSpam || toTrash) ? labels : []);
+        const folderIDs = (toSpam || toTrash) ? basicFolders.concat(folders).concat(labels) : basicFolders.concat(folders);
 
         cache.addToDispatcher(promise);
 

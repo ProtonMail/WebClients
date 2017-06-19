@@ -30,7 +30,6 @@ angular.module('proton', [
     'proton.config',
     'proton.search',
     'proton.ui',
-    'proton.dnd',
     'proton.sidebar',
     'proton.attachments',
     'proton.authentication',
