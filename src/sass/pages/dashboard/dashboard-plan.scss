@@ -1,11 +1,17 @@
 #plans .plan {
     .plan-title {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
         height: 80px;
+        padding-right: 20px;
         background-repeat: no-repeat;
         background-position: center;
         background-size: 120px;
         background-color: $primary;
         margin: -1px -1px 0;
+        color: $white;
+        font-weight: normal;
     }
 
     &.free-plan .plan-title {

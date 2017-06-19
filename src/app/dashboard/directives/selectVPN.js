@@ -1,15 +1,10 @@
 angular.module('proton.dashboard')
-    .directive('selectVpn', ($rootScope, dashboardModel, gettextCatalog) => {
-
-        const currencyMap = {
-            EUR: '€',
-            USD: '$',
-            CHF: 'chf'
-        };
+    .directive('selectVpn', ($rootScope, dashboardModel, gettextCatalog, $filter) => {
 
         const formatTitle = ({ Title, Amount, Currency, Cycle }) => {
             const I18N_MONTH = gettextCatalog.getString('month', null, 'dashboard plan');
-            return `${Title.replace('ProtonVPN', '').trim()} +(${Amount / 100 / Cycle} ${currencyMap[Currency]}/${I18N_MONTH})`;
+            const amount = $filter('currency')(Amount / 100 / Cycle, Currency);
+            return `${Title.replace('ProtonVPN', '').trim()} (+ ${amount}/${I18N_MONTH})`;
         };
 
         const formatList = (map = {}) => {
