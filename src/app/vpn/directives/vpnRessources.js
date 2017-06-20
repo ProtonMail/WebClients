@@ -1,5 +1,5 @@
 angular.module('proton.vpn')
-.directive('vpnRessources', ($rootScope, $state, CONSTANTS, authentication) => {
+.directive('vpnRessources', () => {
     return {
         scope: {},
         restrict: 'E',
