@@ -1,5 +1,8 @@
 angular.module('proton.bugReport')
-.factory('Bug', ($http, $q, url) => {
+.factory('Bug', ($http, $q, url, gettextCatalog) => {
+
+    const ERROR_REPORT = gettextCatalog.getString('Error communicating with the server', null, 'Report bug request');
+
     return {
         crash(data) {
             return $http.post(url.get() + '/bugs/crash', data);
@@ -20,7 +23,7 @@ angular.module('proton.bugReport')
                 })
                 .catch((err) => {
                     err.originalMessage = err.message;
-                    err.message = 'Error during the sending request';
+                    err.message = ERROR_REPORT;
                     return Promise.reject(err);
                 });
         },
