@@ -5,8 +5,8 @@ var path = require('path');
 var appVersion = '3.8.16';
 var apiVersion = '1';
 var dateVersion = new Date().toDateString();
-var clientID = 'Angular';
-var clientSecret = '00a11965ac0b47782ec7359c5af4dd79';
+var clientID = 'Web';
+var clientSecret = '4957cc9a2e0a2a49d02475c9d013478d';
 var BROWSERS = ['PhantomJS', 'Chrome', 'Firefox', 'Safari'];
 var API_TARGETS = {
     blue: 'https://protonmail.blue/api',
