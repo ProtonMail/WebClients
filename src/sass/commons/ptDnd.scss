@@ -1,4 +1,10 @@
 .ptdnd-dragstart {
+
+    cursor: move;
+    cursor: -webkit-grabbing;
+    cursor: -moz-grabbing;
+    cursor: grabbing;
+
     .mCSB_scrollTools_vertical,
     .conversation *,
     [data-pt-dropzone-item] * { pointer-events: none }
