@@ -1,4 +1,5 @@
 .settingsDashboard-container {
+    @import "dashboard-overview";
     @import "dashboard-subscription";
     @import "dashboard-vpn-discount";
     @import "dashboard-plans";
