@@ -9,7 +9,6 @@ angular.module('proton.core')
             this.form.attachScreenshot = false; // Do not attach screenshot by default
             // Functions
             this.submit = () => {
-
                 if (!this.form.Email) {
                     return notify({
                         message: gettextCatalog.getString('You need to specify an email', null),
