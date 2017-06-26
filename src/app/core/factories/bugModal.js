@@ -1,5 +1,5 @@
 angular.module('proton.core')
-.factory('bugModal', (pmModal, gettextCatalog) => {
+.factory('bugModal', (pmModal) => {
     return pmModal({
         controllerAs: 'ctrl',
         templateUrl: 'templates/modals/bug.tpl.html',
