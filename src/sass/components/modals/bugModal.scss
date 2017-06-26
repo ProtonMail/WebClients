@@ -1,0 +1,75 @@
+body #bugModal {
+    /* ng-message(s) */
+    .ng-message-wrapper {
+        position: relative;
+        margin-bottom: .4em;
+    }
+
+    [ng-messages] {
+        position: absolute;
+        top: 100%;
+        left: 0px;
+        width: 100%;
+        z-index: 2;
+
+        display: inline-flex;
+        flex-direction: row;
+        align-items: center;
+        box-sizing: border-box;
+        padding: .7em;
+        font-weight: bold;
+        font-size: .8em;
+        line-height: .9em;
+        color: $red;
+    }
+
+    [ng-messages] [ng-message] { margin: 0 }
+
+    [ng-messages] * [ng-message]:not(:last-of-type):after {
+        content:", ";
+        margin-right: .4em;
+    }
+
+    /* inputs */
+
+    input,
+    textarea { padding: .8em }
+
+    input:focus,
+    textarea:focus,
+    form .pm_select select:focus {
+        border-color: $primary;
+        box-shadow: inset 0 1px 2px rgba($primary, .3), 0 0 0 0.2em rgba($primary, .3)
+    }
+
+    input:focus,
+    textarea:focus { background-color: #FFF }
+
+
+    /* STATES */
+
+    .ng-valid + [ng-messages],
+    .ng-dirty + [ng-messages],
+    .ng-untouched + [ng-messages],
+    .ng-invalid [ng-message-warning] { display: none }
+
+    /* touched inputs || submitted form */
+    .ng-touched.ng-invalid:not(:focus) ~ [ng-messages],
+    .ng-submitted .ng-invalid:not(:focus) ~ [ng-messages],
+    .ng-touched[class*='ng-warning']:not(:focus) ~ [ng-messages],
+    .ng-submitted [class*='ng-warning']:not(:focus) ~ [ng-messages]  { display: flex }
+
+    /* inputs colors */
+    .ng-touched.ng-invalid:not(:focus),
+    .ng-submitted .ng-invalid:not(:focus) {
+        border-color: $red;
+        box-shadow: inset 0 1px 2px rgba($red, .3), 0 0 0 0.2em rgba($red, .3);
+    }
+
+    .ng-touched[class*='ng-warning']:not(:focus),
+    .ng-submitted [class*='ng-warning']:not(:focus) {
+        border-color: orange;
+        box-shadow: inset 0 1px 2px rgba(orange, .3), 0 0 0 0.2em rgba(orange, .3);
+        & + [ng-messages] { color: orange }
+    }
+}
