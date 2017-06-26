@@ -10,21 +10,10 @@ angular.module('proton.bugReport')
         report(data) {
             return $http.post(url.get() + '/bugs', data)
                 .then(({ data = {} } = {}) => {
-                    // Format the error
-                    if (data.Error) {
-                        let error = data.Error;
-                        if (angular.isString(data.Error)) {
-                            error = new Error(data.Error);
-                        }
-                        error.code = data.Code;
-                        throw error;
+                    if (data.Code === 1000) {
+                        return data;
                     }
-                    return data;
-                })
-                .catch((err) => {
-                    err.originalMessage = err.message;
-                    err.message = ERROR_REPORT;
-                    return Promise.reject(err);
+                    throw new Error(data.Error || ERROR_REPORT);
                 });
         },
         uploadScreenshot(image, form) {

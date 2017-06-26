@@ -56,15 +56,7 @@ angular.module('proton.bugReport')
          */
         const send = (form) => {
             return Bug.report(form)
-                .then((data) => {
-                    if (data.Code === 1000) {
-                        notify({
-                            message: gettextCatalog.getString('Bug reported', null),
-                            classes: 'notification-success'
-                        });
-                    }
-                    return data;
-                });
+                .then(() => notify({ message: gettextCatalog.getString('Bug reported', null), classes: 'notification-success' }));
         };
 
         /**
