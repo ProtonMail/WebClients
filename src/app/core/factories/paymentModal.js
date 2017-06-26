@@ -18,7 +18,12 @@ angular.module('proton.core')
 ) => {
 
     const formatPlanMap = (plans = []) => {
-        return plans.reduce((acc, plan) => (acc[plan.ID] = plan, acc), {});
+        return plans.reduce((acc, plan) => {
+            if (plan.ID) { // ID is not defined for free
+                acc[plan.ID] = plan;
+            }
+            return acc;
+        }, {});
     };
 
     return pmModal({
@@ -187,7 +192,6 @@ angular.module('proton.core')
             self.count = (type) => {
                 return params.planIDs
                     .map((ID) => PLANS_MAP[ID])
-                    .filter(Boolean)
                     .reduce((acc, plan) => (acc + (plan[type] || 0)), 0);
             };
 
