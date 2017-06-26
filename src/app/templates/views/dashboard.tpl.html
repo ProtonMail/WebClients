@@ -10,78 +10,9 @@
                                 translate
                                 translate-context="Title">Overview</h2>
                         </header-block>
-                        <div class="well pm-flex-content-fillHeight">
-                            <div class="pm_table">
-                                <table class="settings-dashboard-info-table plain">
-                                    <tr>
-                                        <th translate-context="Title" translate>Username</th>
-                                        <td>
-                                            <strong>{{ user.Name }}</strong>
-                                        </td>
-                                        <td  class="text-right actions"></td>
-                                    </tr>
-                                    <!-- <tr ng-show="keyPhase > 3">
-                                        <th translate-context="Title" translate>Members</th>
-                                        <td>
-                                            <strong ng-hide="organization.PlanName === 'free'"  translate-comment="dashboard page. how many members exist for an organization as well as the total number allowed." translate>{{ organization.UsedMembers }} of {{ organization.MaxMembers }}</strong>
-                                            <strong ng-show="organization.PlanName === 'free'">0</strong>
-                                        </td>
-                                        <td class="text-right actions">
-                                            <a ui-sref="secured.members" class="pm_button link" ng-hide="subscription.Name === 'free'" translate-context="Action" translate>Manage</a>
-                                            <a href="#" class="pm_button link" ng-show="subscription.Name === 'free'" ng-click="scrollToPlans()" translate-context="Action" translate>Upgrade</a>
-                                        </td>
-                                    </tr> -->
-                                    <tr>
-                                        <th translate-context="Title" translate>Domains</th>
-                                        <td>
-                                            <strong ng-hide="organization.PlanName === 'free'"  translate-comment="dashboard page. how many domains exist for an organization as well as the total number allowed." translate>{{ organization.UsedDomains }} of {{ organization.MaxDomains }}</strong>
-                                            <strong ng-show="organization.PlanName === 'free'">0</strong>
-                                        </td>
-                                        <td class="text-right actions">
-                                            <a ui-sref="secured.domains" class="pm_button link" ng-hide="subscription.Name === 'free'" translate-context="Action" translate>Manage</a>
-                                            <a href="#" class="pm_button link" ng-show="subscription.Name === 'free'" ng-click="scrollToPlans()" translate-context="Action" translate>Upgrade</a>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <th translate-context="Title" translate>Addresses</th>
-                                        <td>
-                                            <strong ng-hide="organization.PlanName === 'free'"  translate-comment="dashboard page. how many addresses exist for an organization as well as the total number allowed." translate>{{ organization.UsedAddresses }} of {{ organization.MaxAddresses }}</strong>
-                                            <strong ng-show="organization.PlanName === 'free'">1</strong>
-                                        </td>
-                                        <td class="text-right actions">
-                                            <a ui-sref="secured.identities" class="pm_button link" ng-hide="subscription.Name === 'free'" translate-context="Action" translate>Manage</a>
-                                            <a href="#" class="pm_button link" ng-show="subscription.Name === 'free'" ng-click="scrollToPlans()" translate-context="Action" translate>Upgrade</a>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <th translate-context="Title" translate>Storage</th>
-                                        <td colspan="2">
-                                            <strong ng-hide="organization.PlanName === 'free'"  translate-comment="show used storage for an account" translate>{{ organization.UsedSpace | humanSize }} of {{ organization.MaxSpace | humanSize }}</strong>
-                                            <strong ng-show="organization.PlanName === 'free'"  translate-comment="show used storage for an account" translate>{{ user.UsedSpace | humanSize }} of {{ user.MaxSpace | humanSize }}</strong>
-                                            <br>
-                                            <div class="storageBar">
-                                                <div class="storageBar-progress" ng-hide="organization.PlanName === 'free'" style="width: {{ organization.UsedSpace / organization.MaxSpace * 100 }}%"></div>
-                                                <div class="storageBar-progress" ng-show="organization.PlanName === 'free'" style="width: {{ user.UsedSpace / user.MaxSpace * 100 }}%"></div>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    <tr ng-show="user.Credit">
-                                        <th translate-context="Title" translate>Credit</th>
-                                        <td>
-                                            <strong>{{ user.Credit / 100 | currency: user.Currency }}</strong>
-                                        </td>
-                                        <td>&nbsp;</td>
-                                    </tr>
-                                    <tr ng-show="subscription.CouponCode">
-                                        <th translate-context="Title" translate>Coupon</th>
-                                        <td>
-                                            <strong>{{ subscription.CouponCode }}</strong>
-                                        </td>
-                                        <td>&nbsp;</td>
-                                    </tr>
-                                </table>
-                            </div>
-                        </div>
+                        <section class="settingsDashboard-overview-section-table-container">
+                            <overview-section></overview-section>
+                        </section>
                     </div>
                     <div class="settingsDashboard-subscription-section col-1-2" ng-hide="subscription.Name === 'free'">
                         <header-block class="settingsDashboard-header-subscription">
@@ -91,7 +22,7 @@
                                 translate-context="Title">My subscription</h2>
                         </header-block>
                         <section class="settingsDashboard-subscription-section-table-container">
-                            <subscription-section class="" methods="methods"></subscription-section>
+                            <subscription-section methods="methods"></subscription-section>
                         </section>
                     </div>
                     <div class="col-1-2 donate pm-flex-content" ng-show="subscription.Name === 'free'">

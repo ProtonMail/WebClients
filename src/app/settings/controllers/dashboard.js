@@ -1,7 +1,6 @@
 angular.module('proton.settings')
 .controller('DashboardController', (
     CONSTANTS,
-    $rootScope,
     $scope,
     $stateParams,
     gettextCatalog,
