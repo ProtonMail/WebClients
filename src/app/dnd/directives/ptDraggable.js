@@ -47,6 +47,10 @@ angular.module('proton.dnd')
             }
         });
 
+        document.addEventListener('dragend', () => {
+            document.body.classList.remove(CLASSNAME.BODY);
+        });
+
         return {
             link(scope, el) {
 
