@@ -1,5 +1,5 @@
 angular.module('proton.dnd')
-    .factory('actionDnd', ($rootScope, $state, CONSTANTS, ptDndModel, actionConversation, labelsModel, gettextCatalog, notify, ptDndNotification) => {
+    .factory('actionDnd', ($rootScope, $state, CONSTANTS, ptDndModel, actionConversation, labelsModel, gettextCatalog, notify, ptDndNotification, authentication) => {
 
         const NOTIFS = {
             APPLY_LABEL: gettextCatalog.getString('Apply label', null, 'notification drag and drop'),
@@ -68,7 +68,14 @@ angular.module('proton.dnd')
                 selectedList = undefined;
 
                 if (data.type === 'label') {
-                    return label(list, type, data.value);
+
+                    label(list, type, data.value);
+
+                    if (authentication.user.AlsoArchive) {
+                        return move(ids, type, CONSTANTS.MAILBOX_IDENTIFIERS.archive);
+                    }
+
+                    return;
                 }
 
                 if (data.value === 'starred') {
