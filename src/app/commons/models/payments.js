@@ -145,7 +145,7 @@ angular.module('proton.commons')
         * @return {Promise}
         */
         subscription() {
-            if (authentication.user.Subscribed) {
+            if (authentication.user.Role !== 1) {
                 return $http.get(requestUrl('subscription'), {
                     transformResponse(datas) {
                         const json = angular.fromJson(datas);
