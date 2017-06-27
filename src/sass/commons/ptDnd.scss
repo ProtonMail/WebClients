@@ -23,11 +23,4 @@
 }
 
 .ptdnd-notification-firefox { z-index: 0 }
-
-.ptdnd-notification::before {
-    content: '(' attr(data-total) ')';
-    margin-right: .2em;
-    font-weight: bold
-}
-
 .ptdnd-notification:not(.ptdnd-notification-active) { display: none }

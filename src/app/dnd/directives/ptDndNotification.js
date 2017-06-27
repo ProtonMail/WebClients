@@ -2,7 +2,22 @@ angular.module('proton.dnd')
     .factory('ptDndNotification', (PTDNDCONSTANTS, gettextCatalog, $rootScope, aboutClient) => {
 
         const { CLASSNAME } = PTDNDCONSTANTS;
-        const SELECTED_ITEM = gettextCatalog.getString('selected item(s)', null, 'notification drag and drop');
+
+        /**
+         * Translate notification based on the quantity and the type of item
+         * @param  {Number} total How many item ?
+         * @param  {String} item  Type of dnd item
+         * @return {String}
+         */
+        const getMessage = (total, item) => {
+            const message = gettextCatalog.getPlural(total, 'message', 'messages');
+            const conversation = gettextCatalog.getPlural(total, 'conversation', 'conversations');
+            return gettextCatalog.getString('Move {{total}} {{type}}', {
+                type: (item === 'conversation') ? conversation : message,
+                total
+            }, 'notification drag and drop');
+        };
+
         const isIE11 = aboutClient.isIE11();
         const isEdge = aboutClient.isEdge();
         const isFirefox = aboutClient.isFirefox();
@@ -11,7 +26,6 @@ angular.module('proton.dnd')
         const makeNotification = () => {
             const $notif = document.createElement('SPAN');
             $notif.className = CLASSNAME.NOTIF;
-            $notif.textContent = SELECTED_ITEM;
             document.body.appendChild($notif);
             return $notif;
         };
@@ -33,9 +47,9 @@ angular.module('proton.dnd')
             hide();
         });
 
-        const onDragStart = (e, eventData) => {
+        const onDragStart = (e, eventData, type) => {
 
-            $notif.setAttribute('data-total', $rootScope.numberElementChecked || 1);
+            $notif.textContent = getMessage($rootScope.numberElementChecked || 1, type);
 
             if (!isIE11 && !isEdge && !isFirefox) {
                 const img = new Image();
