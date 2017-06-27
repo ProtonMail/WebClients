@@ -301,7 +301,6 @@
     .navigationItem-aside { transition: opacity .2s ease-in }
 
     &.ptdnd-drag-hover {
-        height: 31px; /* improve usability for labels */
         box-shadow: inset 1px 2px 4px rgba(0,0,0,0.2), inset 1px -2px 4px rgba(0,0,0,0.2);
         background-color: darken($sidebar-background, 10);
 
@@ -309,7 +308,8 @@
         .navigationItem-title,
         .menuLabel-title { color: #FFF }
 
-        .sidebarApp-icon { transform: scale(1.25) }
+        .sidebarApp-icon,
+        .menuLabel-icon { transform: scale(1.25) }
 
         .menuLabel-counter,
         .navigationItem-aside {
