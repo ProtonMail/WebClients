@@ -3,6 +3,7 @@
 	z-index: 99999;
 	opacity: 0;
 	transition: opacity .1s linear;
+	border: 0; /* .pm_buttons > * */
 	&.in {
 		opacity: 1;
 	}

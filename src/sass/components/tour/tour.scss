@@ -30,9 +30,7 @@
 }
 
 .appConfigBody-tourActive {
-	section.sidebar ul.menu li a {
-		overflow: visible;
-	}
+	.sidebarApp-link[href='/labels'] { overflow: visible }
 	#pm_header {
 		z-index: 5;
 	}
