@@ -3,7 +3,14 @@ angular.module('proton.dnd')
 
         const NOTIFS = {
             APPLY_LABEL: gettextCatalog.getString('Apply label', null, 'notification drag and drop'),
-            STAR: gettextCatalog.getString('Star ==value== element(s)', null, 'notification drag and drop')
+            star(total, type) {
+                const message = gettextCatalog.getPlural(total, 'message', 'messages');
+                const conversation = gettextCatalog.getPlural(total, 'conversation', 'conversations');
+                return gettextCatalog.getString('Star {{total}} {{type}}', {
+                    type: (type === 'conversation') ? conversation : message,
+                    total
+                }, 'notification drag and drop');
+            }
         };
 
         ptDndNotification.init();
@@ -49,7 +56,7 @@ angular.module('proton.dnd')
                     data: { model, type }
                 });
             });
-            notifySuccess(NOTIFS.STAR.replace('==value==', list.length));
+            notifySuccess(NOTIFS.star(list.length, type));
         };
 
         let selectedList;
