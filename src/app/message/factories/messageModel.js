@@ -57,6 +57,10 @@ angular.module('proton.message')
             return encryptionTypes[this.IsEncrypted];
         }
 
+        isPlainText() {
+            return this.MIMEType === 'text/plain';
+        }
+
         plainText() {
             return this.getDecryptedBody();
         }
@@ -268,7 +272,7 @@ angular.module('proton.message')
                     try {
                         this.decryptBody()
                             .then((result) => {
-                                this.setDecryptedBody(result.data);
+                                this.setDecryptedBody(result.data, !this.isPlainText());
                                 this.Signature = result.signature;
                                 this.failedDecryption = false;
                                 deferred.resolve(result.data);
