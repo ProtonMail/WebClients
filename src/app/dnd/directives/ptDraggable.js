@@ -65,14 +65,37 @@ angular.module('proton.dnd')
                     model: scope.conversation,
                     type: scope.conversation.ConversationID ? 'message' : 'conversation',
                     hookDragStart(target, event) {
-                        !scope.conversation.Selected && $rootScope.numberElementChecked++;
+
+                        const value = $rootScope.numberElementChecked;
+
+                        if (scope.conversation.Selected) {
+                            // To keep the $scope up to date as we cannot display the notifcation after the digest
+                            return scope.$applyAsync(() => {
+                                scope.conversation.Selected = true;
+                                $rootScope.numberElementChecked = value;
+                                this.onDragStart(target, event, getSelected());
+                            });
+                        }
+
+                        /**
+                         * Same behavior as gmail
+                         * - 3 selected, select a 4th item, only select it and unselect others. On dragend, re-select the 3 others
+                         */
+                        $rootScope.$emit('dnd', {
+                            type: 'hook.dragstart',
+                            data: {
+                                before: {
+                                    number: value,
+                                    ids: _.pluck(getSelected(), 'ID')
+                                }
+                            }
+                        });
 
                         // To keep the $scope up to date as we cannot display the notifcation after the digest
-                        const value = $rootScope.numberElementChecked;
                         scope.$applyAsync(() => {
                             scope.conversation.Selected = true;
-                            $rootScope.numberElementChecked = value;
-                            this.onDragStart(target, event, getSelected());
+                            $rootScope.numberElementChecked = 1;
+                            this.onDragStart(target, event, [ scope.conversation ]);
                         });
                     }
                 });
