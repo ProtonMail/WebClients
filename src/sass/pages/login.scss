@@ -1,8 +1,13 @@
 body#reset {
 	background: $dark;
-	.alert {
+	.alert:not(.alert-danger) {
 		color: $black;
 	}
+	.pm_panel {
+		display: flex;
+		align-items: center;
+	}
+
 }
 body#login-unlock,
 body#login-sub {
@@ -63,9 +68,6 @@ body#reset {
 		height: 20px;
 		width: auto;
 		margin: 0 auto;
-	}
-	.pm_button.primary {
-		padding: 0 25px;
 	}
 	input[type="text"],
 	input[type="number"],
@@ -170,6 +172,26 @@ body#reset {
 		}
 	}
 }
+
+#pm_login,
+#pm_loginTwoFactor,
+body#reset,
+body#support-reset-password {
+	.alert-danger {
+		font-weight: bold;
+		color: #FFF;
+	}
+
+	.alert ul {
+		padding: 0;
+		font-size: .9em;
+	}
+
+	.alert ul li {
+		margin-bottom: .5em;
+	}
+}
+
 
 body.appConfigBody-is-mobile {
 	#pm_login {

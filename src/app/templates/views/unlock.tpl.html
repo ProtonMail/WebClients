@@ -29,21 +29,23 @@
             data-autofocus="true"
             placeholder-translate="Mailbox password"></password>
 
-        <div>
-            <button
-                type="button"
-                ng-click="reset()"
-                class="login-support pm_button link pull-left unlock-btn-forgot"
-                translate-context="Action"
-                translate
-                translate-comment="link to reset mailbox">Forgot password?</button>
-            <button
-                id="unlock_btn"
-                class="pm_button primary pull-right"
-                type="submit"
-                ng-disabled="networkActivity.loading()"
-                translate-context="Action"
-                translate>Unlock</button>
+        <div class="loginForm-actions">
+            <div class="loginForm-actions-column">
+                <button
+                    id="unlock_btn"
+                    class="loginForm-actions-main pm_button primary pull-right"
+                    type="submit"
+                    ng-disabled="networkActivity.loading()"
+                    translate-context="Action"
+                    translate>Unlock</button>
+                <button
+                    type="button"
+                    ng-click="reset()"
+                    class="login-support pm_button link pull-left unlock-btn-forgot"
+                    translate-context="Action"
+                    translate
+                    translate-comment="link to reset mailbox">Forgot password?</button>
+            </div>
         </div>
 
     </div>
