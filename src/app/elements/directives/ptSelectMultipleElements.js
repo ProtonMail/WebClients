@@ -1,6 +1,7 @@
 angular.module('proton.elements')
     .directive('ptSelectMultipleElements', ($rootScope) => {
 
+        const CACHE = {};
         const countChecked = (conversations) => _.where(conversations, { Selected: true }).length;
 
         /**
@@ -34,6 +35,19 @@ angular.module('proton.elements')
             link(scope, el) {
                 let previous = null;
                 const conversationsToSelect = selectConversations(scope);
+
+                // cache the previous selected items
+                const unsubscribe = $rootScope.$on('dnd', (e, { type, data }) => {
+                    if (type === 'hook.dragstart') {
+                        CACHE.number = data.before.number;
+                        CACHE.ids = data.before.ids;
+
+                        $rootScope.numberElementChecked = 1;
+                        _.each(scope.conversations, (item) => {
+                            item.Selected = false;
+                        });
+                    }
+                });
 
                 function onClick({ target, shiftKey }) {
                     const index = +target.getAttribute('data-index');
@@ -71,9 +85,20 @@ angular.module('proton.elements')
                     _rAF(() => {
                         scope.$applyAsync(() => {
                             _.each(scope.conversations, (item) => {
-                                item.Selected = false;
+
+                                if (CACHE.ids) {
+                                    item.Selected = CACHE.ids.indexOf(item.ID) !== -1;
+                                }
+                                // Auto check drag item, we uncheck it at the end
+                                if ($rootScope.numberElementChecked === 1 && !CACHE.number) {
+                                    item.Selected = false;
+                                }
+
                             });
-                            $rootScope.numberElementChecked = 0;
+                            $rootScope.numberElementChecked = CACHE.number || countChecked(scope.conversations);
+
+                            delete CACHE.number;
+                            delete CACHE.ids;
                         });
                     });
                 };
@@ -84,6 +109,9 @@ angular.module('proton.elements')
                 scope.$on('$destroy', () => {
                     el.off('click', onClick);
                     document.removeEventListener('dragend', onDragEnd);
+                    unsubscribe();
+                    delete CACHE.number;
+                    delete CACHE.ids;
                 });
             }
         };
