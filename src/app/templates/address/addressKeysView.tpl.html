@@ -19,8 +19,8 @@
                 <td>
                     <code>{{ address.fingerprint }}</code>
                 </td>
-                <td translate translate-comment="keys page to show the key size for an address">
-                    {{ address.bitSize }} Bit <i class="fa fa-info-circle cursor-pointer" pt-tooltip="The ability to change key strength will be coming in a future ProtonMail release"></i>
+                <td>
+                    {{ address.bitSize }} Bit <i class="fa fa-info-circle cursor-pointer" pt-tooltip-translate-context="address key bit size tooltip" pt-tooltip-translate="The ability to change key strength will be coming in a future ProtonMail release"></i>
                 </td>
                 <td class="text-center">
                     <button class="pm_button link" ng-click="download(address.publicKey, address.email, 'public')" translate-context="Action" translate>Public key</button>
@@ -43,7 +43,7 @@
                                     <td>
                                         <code>{{ key.fingerprint }}</code>
                                     </td>
-                                    <td translate translate-comment="keys page to show the key size for an address">
+                                    <td>
                                         {{ key.bitSize }} Bit
                                     </td>
                                     <td>
