@@ -4,32 +4,60 @@
     flex-direction: column;
 }
 
-.loginForm-actions-row {
+.loginForm-actions-row,
+.loginForm-actions-column {
     display: flex;
     align-items: center;
     justify-content: center;
     width: 100%;
 }
 
-.loginForm-actions-left {
-    display: flex;
-    flex:1;
+.loginForm-actions-column {
     flex-direction: column;
-    align-items: flex-start;
 }
+
+.loginForm-actions-row {
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.loginForm-actions-row > *,
+.loginForm-actions-column > * {
+    flex-grow: 1;
+    flex-shrink: 0;
+    margin: .5em .5em 1em 0;
+    align-items: center;
+    text-align: center;
+    &:last-child { margin-right: 0 }
+}
+
+
+.loginForm-actions-row > * {
+    white-space: nowrap;
+}
+
+.loginForm-actions-main {
+    width: 100%;
+    font-weight: bold;
+    font-size: 1em;
+    height: auto;
+    min-height: 45px; /*safari*/
+    line-height: 1.3em;
+    padding: .5em;
+}
+
 
 
 .loginForm-btn-help {
     background: none;
     border: none;
     padding: 0;
-    margin: 10px 0px;
     text-decoration: underline;
 }
 
 .loginForm-link-signup {
     text-transform: none;
-    margin: 20px 0px;
+    font-weight: bold;
 }
 
 .loginForm-input-password .togglePassword-btn-toggle,

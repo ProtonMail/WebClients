@@ -113,6 +113,7 @@
     &.white {
         background: #FFFFFF;
     }
+    &.dark:hover { background: rgba(0,0,0,0.2) }
     &.error {
         background-color: $red;
         border-color: darken($red, 10%);

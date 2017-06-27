@@ -40,8 +40,16 @@
         placeholder-translate="Password"></password>
 
     <div class="loginForm-actions">
-        <div class="loginForm-actions-row">
-            <div class="loginForm-actions-left">
+        <div class="loginForm-actions-column">
+            <button
+                id="login_btn"
+                type="submit"
+                tabindex="3"
+                class="loginForm-actions-main pm_button primary pull-right loginForm-btn-submit"
+                ng-disabled="networkActivity.loading()"
+                translate-context="Action"
+                translate>Login</button>
+            <div class="loginForm-actions-row">
                 <button
                     class="loginForm-btn-help"
                     ng-click="displayHelpModal()"
@@ -49,20 +57,8 @@
                     translate-context="Action"
                     translate-comment="link for login help"
                     translate>Need help?</button>
+                <signup-link class="loginForm-link-signup loginForm-actions-right"></signup-link>
             </div>
-            <div class="loginForm-actions-right">
-                <button
-                    id="login_btn"
-                    type="submit"
-                    tabindex="3"
-                    class="pm_button primary pull-right loginForm-btn-submit"
-                    ng-disabled="networkActivity.loading()"
-                    translate-context="Action"
-                    translate>Login</button>
-            </div>
-        </div>
-        <div class="loginForm-actions-row">
-            <signup-link class="loginForm-link-signup"></signup-link>
         </div>
     </div>
 

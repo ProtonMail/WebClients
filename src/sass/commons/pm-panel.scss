@@ -13,9 +13,7 @@
 		padding: 50px 70px 0 70px;
 		box-sizing: border-box;
 		min-height: 350px;
-		a {
-			color: $white;
-		}
+		a { color: $white }
 	}
 	&.wide {
 		width: ($panel * 1.5);
