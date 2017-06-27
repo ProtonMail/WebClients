@@ -1,7 +1,6 @@
 angular.module('proton.settings')
 .controller('DashboardController', (
     CONSTANTS,
-    $rootScope,
     $scope,
     $stateParams,
     gettextCatalog,
@@ -477,7 +476,7 @@ angular.module('proton.settings')
                             subscription: $scope.subscription,
                             create: organization.PlanName === 'free',
                             planIDs: PlanIDs,
-                            plans: $scope.plans.concat($scope.configuration.vpnOption || {}),
+                            plans: dashboardModel.query($scope.configuration.currency, $scope.configuration.cycle),
                             valid,
                             choice,
                             status: status.data,

@@ -12,6 +12,13 @@ angular.module('proton.dashboard')
             return key ? cache[key] : cache;
         };
 
+        const query = (currency = 'USD', cycle = YEARLY) => {
+            const key = `plans-${currency}-${cycle}`;
+            const { Plans = [] } = CACHE_API[key] || {};
+
+            return Plans;
+        };
+
         const fetchPlans = (currency = 'USD', cycle = YEARLY) => {
             const key = `plans-${currency}-${cycle}`;
 
@@ -79,5 +86,5 @@ angular.module('proton.dashboard')
             return promise;
         };
 
-        return { loadPlans, get };
+        return { loadPlans, get, query };
     });

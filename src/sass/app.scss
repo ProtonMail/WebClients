@@ -49,6 +49,7 @@
 @import "commons/toggle-switch";
 @import "commons/embedded";
 @import "commons/pm-noscript";
+@import "commons/ptDnd";
 
 
 //=== 👉 UI Components =====================//
@@ -172,7 +173,6 @@
 @import "components/dropdowns/dropdownFolder";
 @import "components/dropdowns/dropdownLabel";
 
-
 //== Filters
 @import "components/filters/filtersModal";
 
@@ -190,6 +190,9 @@
 
 //== Promote
 @import "components/sale/index";
+
+//== Modals
+@import "components/modals/index";
 
 //=== 📄 Pages =============================//
 @import "pages/dashboard/_dashboard";

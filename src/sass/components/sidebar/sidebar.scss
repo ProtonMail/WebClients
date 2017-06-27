@@ -13,7 +13,6 @@
     height: calc(100% - 61px);  /* #pm_header-desktop height */
     background: $sidebar-background;
     position: relative;
-    overflow: hidden;
 
     .sidebar-btn-compose,
     .sidebar-btn-back {
@@ -289,6 +288,36 @@
     }
 
     .menuLabel-link { padding: 0 25px 0px 15px }
+}
+
+/* DnD */
+
+.sidebarApp-container .navigationItem-item,
+.sidebarApp-container .menuLabel-link {
+
+    .sidebarApp-icon  { transition: all .2s ease-in }
+
+    .menuLabel-counter,
+    .navigationItem-aside { transition: opacity .2s ease-in }
+
+    &.ptdnd-drag-hover {
+        box-shadow: inset 1px 2px 4px rgba(0,0,0,0.2), inset 1px -2px 4px rgba(0,0,0,0.2);
+        background-color: darken($sidebar-background, 10);
+
+        .sidebarApp-icon,
+        .navigationItem-title,
+        .menuLabel-title { color: #FFF }
+
+        .sidebarApp-icon,
+        .menuLabel-icon { transform: scale(1.25) }
+
+        .menuLabel-counter,
+        .navigationItem-aside {
+            opacity: 0;
+            filter: blur(10px);
+            background-color: transparent;
+        }
+    }
 }
 
 .appConfigBody-is-mobile .sidebarApp-container {

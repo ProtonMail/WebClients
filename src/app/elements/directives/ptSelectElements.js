@@ -13,8 +13,7 @@ angular.module('proton.elements')
 
             scope.$watch('value', () => el.change());
 
-            scope
-            .$on('$destroy', () => {
+            scope.$on('$destroy', () => {
                 el.off('change', onChange);
             });
         }

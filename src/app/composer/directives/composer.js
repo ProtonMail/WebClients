@@ -1,5 +1,5 @@
 angular.module('proton.composer')
-    .directive('composer', ($rootScope, embedded, attachmentFileFormat) => {
+    .directive('composer', (AppModel, $rootScope, embedded, attachmentFileFormat) => {
 
         const CLASS_DRAGGABLE = 'composer-draggable';
         const CLASS_DRAGGABLE_EDITOR = 'composer-draggable-editor';
@@ -99,6 +99,9 @@ angular.module('proton.composer')
 
                         unsubscribeEditor();
                         unsubscribeAtt();
+
+                        AppModel.set('activeComposer', false);
+                        AppModel.set('maximizedComposer', false);
                         scope.selected = undefined;
                     });
             }

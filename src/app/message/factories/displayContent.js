@@ -12,7 +12,12 @@ angular.module('proton.message')
             return { body, type };
         }
 
-        function clean(content) {
+        function clean(content = {}) {
+            // Don't sanitize if plain text
+            if (content.type === 'plain') {
+                return content;
+            }
+
             // Clear content with DOMPurify before anything happen!
             content.body = DOMPurify.sanitize(content.body, {
                 ADD_ATTR: ['target'],
