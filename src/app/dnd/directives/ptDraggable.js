@@ -21,9 +21,10 @@ angular.module('proton.dnd')
 
 
             if (ptDndModel.draggable.has(target.dataset.ptId)) {
-                ptDndModel.draggable.get(target.dataset.ptId).hookDragStart(target, event);
+                const item = ptDndModel.draggable.get(target.dataset.ptId);
+                item.hookDragStart(target, event);
+                ptDndNotification.onDragStart(event, eventData, item.type);
             }
-            ptDndNotification.onDragStart(event, eventData);
 
             return false;
         });

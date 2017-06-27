@@ -67,10 +67,23 @@ angular.module('proton.elements')
 
                 }
 
+                const onDragEnd = () => {
+                    _rAF(() => {
+                        scope.$applyAsync(() => {
+                            _.each(scope.conversations, (item) => {
+                                item.Selected = false;
+                            });
+                            $rootScope.numberElementChecked = 0;
+                        });
+                    });
+                };
+
                 el.on('click', onClick);
+                document.addEventListener('dragend', onDragEnd);
 
                 scope.$on('$destroy', () => {
                     el.off('click', onClick);
+                    document.removeEventListener('dragend', onDragEnd);
                 });
             }
         };
