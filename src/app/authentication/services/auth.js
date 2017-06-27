@@ -96,7 +96,7 @@ angular.module('proton.authentication')
 
                 // Hacky fix for missing organizations
                 const fixOrganization = () => {
-                    if (user.Role === CONSTANTS.FREE_USER_ROLE && user.Subscribed === 1) {
+                    if (user.Role === CONSTANTS.FREE_USER_ROLE && user.Subscribed) {
                         return setupKeys.generateOrganization(api.getPassword())
                         .then((response) => {
                             const privateKey = response.privateKeyArmored;

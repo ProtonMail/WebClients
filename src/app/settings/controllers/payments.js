@@ -18,7 +18,7 @@ angular.module('proton.settings')
     Payment
 ) => {
     $scope.methods = methods.data.PaymentMethods;
-    $scope.subscribed = authentication.user.Subscribed === 1;
+    $scope.subscribed = authentication.user.Subscribed;
     $scope.invoices = invoices.data.Invoices;
     $scope.total = invoices.data.Total;
     $scope.delinquent = authentication.user.Delinquent >= 3;
@@ -26,7 +26,7 @@ angular.module('proton.settings')
     $scope.role = authentication.user.Role;
 
     $scope.$on('updateUser', () => {
-        $scope.subscribed = authentication.user.Subscribed === 1;
+        $scope.subscribed = authentication.user.Subscribed;
         $scope.delinquent = authentication.user.Delinquent >= 3;
 
         if (authentication.user.Role !== $scope.role) {
