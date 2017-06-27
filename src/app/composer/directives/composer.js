@@ -100,7 +100,8 @@ angular.module('proton.composer')
                         unsubscribeEditor();
                         unsubscribeAtt();
 
-                        AppModel.is('mobile') && AppModel.set('maximizedComposer', false);
+                        AppModel.set('activeComposer', false);
+                        AppModel.set('maximizedComposer', false);
                         scope.selected = undefined;
                     });
             }

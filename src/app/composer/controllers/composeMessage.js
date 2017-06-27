@@ -1066,8 +1066,6 @@ angular.module('proton.composer')
             $rootScope.$emit('messageActions', { action: 'delete', data: { ids } });
         }
 
-        AppModel.set('activeComposer', false);
-        AppModel.set('maximizedComposer', false);
         $timeout.cancel(message.defferredSaveLater);
 
         if (save === true) {
