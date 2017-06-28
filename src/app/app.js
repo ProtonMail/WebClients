@@ -208,13 +208,7 @@ angular.module('proton', [
 .run(($rootScope, $state) => {
     $rootScope.$on('$stateChangeError', (event, current, previous, rejection, ...arg) => {
         console.error('stateChangeError', event, current, previous, rejection, arg);
-        $state.go('support.message', {
-            data: {
-                title: rejection.error || 'Problem loading your account',
-                content: rejection.error_description || 'ProtonMail encountered a problem loading your account. Please try again later.',
-                type: 'alert-danger'
-            }
-        });
+        $state.go('support.message', { data: {} });
     });
 })
 
