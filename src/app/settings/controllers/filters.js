@@ -5,6 +5,7 @@ angular.module('proton.settings')
     $rootScope,
     $filter,
     $scope,
+    authentication,
     CONSTANTS,
     gettextCatalog,
     IncomingDefault,
@@ -108,7 +109,7 @@ angular.module('proton.settings')
     $scope.addCustomFilter = () => {
         const activeCustomFilters = _.where($scope.customFilters, { Status: 1 });
 
-        if ($scope.isFree && activeCustomFilters.length === 1) {
+        if (!authentication.hasPaidMail() && activeCustomFilters.length === 1) {
             notify(gettextCatalog.getString('Free ProtonMail accounts are limited to 1 custom filter. Please <a href="/dashboard">upgrade</a> to get unlimited filters.', null, 'Info'));
         } else {
             filterModal.activate({
