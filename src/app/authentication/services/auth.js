@@ -426,6 +426,14 @@ angular.module('proton.authentication')
             return this.isLoggedIn() === false || angular.isUndefined(this.getPassword());
         },
 
+        hasPaidMail() {
+            return this.user.Subscribed & 1;
+        },
+
+        hasPaidVpn() {
+            return this.user.Subscribed & 4;
+        },
+
         isSecured() {
             return this.isLoggedIn() && angular.isDefined(this.getPassword());
         },
