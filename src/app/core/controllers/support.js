@@ -18,6 +18,12 @@ angular.module('proton.core')
     networkActivityTracker
 ) => {
 
+    const GENERIC_MESSAGE = {
+        title: gettextCatalog.getString('Problem loading your account'),
+        content: gettextCatalog.getString('ProtonMail encountered a problem loading your account. Please refresh the page and try again later.'),
+        type: gettextCatalog.getString('alert-danger')
+    };
+
     function resetState() {
         $scope.params.resetToken = '';
         $scope.params.danger = '';
@@ -53,15 +59,15 @@ angular.module('proton.core')
     $scope.finishInstall = false;
 
     $scope.getMessageTitle = () => {
-        return $state.params.data.title || '';
+        return $state.params.data.title || GENERIC_MESSAGE.title;
     };
 
     $scope.getMessageContent = () => {
-        return $state.params.data.content || '';
+        return $state.params.data.content || GENERIC_MESSAGE.content;
     };
 
     $scope.getMessageType = () => {
-        return $state.params.data.type || '';
+        return $state.params.data.type || GENERIC_MESSAGE.type;
     };
 
     $scope.confirmResetLostPassword = () => {

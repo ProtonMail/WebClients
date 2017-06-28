@@ -567,13 +567,7 @@ angular.module('proton.authentication')
                 return user;
             })
             .catch((error) => {
-                $state.go('support.message', {
-                    data: {
-                        title: 'Problem loading your account',
-                        content: 'ProtonMail encountered a problem loading your account. Please try again later',
-                        type: 'alert-danger'
-                    }
-                });
+                $state.go('support.message', { data: {} });
                 throw error;
             });
         },
