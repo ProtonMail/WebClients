@@ -32,7 +32,7 @@ angular.module('proton.dnd')
             document.body.classList.remove(CLASSNAME.BODY);
 
             // Drop only in dropZone container
-            if (e.target.hasAttribute(DROPZONE_ATTR_ID)) {
+            if (e.target.hasAttribute(DROPZONE_ATTR_ID) && ptDndModel.draggable.has('currentId')) {
 
                 const dragElmId = e.target.getAttribute(DROPZONE_ATTR_ID);
                 const { id } = JSON.parse((e.dataTransfer || e.originalEvent.dataTransfer).getData('Text'));
@@ -81,6 +81,12 @@ angular.module('proton.dnd')
                 unsubscribe.push($rootScope.$on('$stateChangeSuccess', () => {
                     _rAF(refresh);
                 }));
+
+
+                scope.$on('$destroy', () => {
+                    unsubscribe.forEach((cb) => cb());
+                    unsubscribe.length = 0;
+                });
             }
         };
     });
