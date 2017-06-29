@@ -90,7 +90,7 @@ angular.module('proton.formUtils')
                     return { label, value, Name };
                 })
                 .filter(({ label }) => label.toLowerCase().includes(input))
-                .first(10)
+                .first(CONSTANTS.AWESOMEPLETE_MAX_ITEMS)
                 .value();
 
             // it creates a map <escaped>:<label> because the lib does not support more keys than label/value and we need the unescaped value #4901

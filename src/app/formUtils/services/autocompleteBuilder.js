@@ -1,5 +1,5 @@
 angular.module('proton.formUtils')
-    .factory('autocompleteBuilder', (customInputCreator) => {
+    .factory('autocompleteBuilder', (CONSTANTS, customInputCreator) => {
 
         return (post = angular.noop, pre = angular.noop) => {
 
@@ -13,6 +13,7 @@ angular.module('proton.formUtils')
                  */
                 let awesomplete = new Awesomplete(el[0].querySelector('input'), {
                     minChars: 1,
+                    maxItems: CONSTANTS.AWESOMEPLETE_MAX_ITEMS,
                     autoFirst: true,
                     list: []
                 });
