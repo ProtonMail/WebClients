@@ -63,7 +63,13 @@ angular.module('proton.composer')
                     scope.containsRecipient = containsRecipient(scope);
                     scope.containsInvalid = containsInvalid;
 
-                    const onClick = () => {
+                    const onClick = ({ target }) => {
+
+                        // Allow the user to select the text inside the autocomplete box cf WebClient#41
+                        if (target.classList.contains('autocompleteEmails-label')) {
+                            return;
+                        }
+
                         scope.$applyAsync(() => {
                             scope.selected.autocompletesFocussed = true;
 

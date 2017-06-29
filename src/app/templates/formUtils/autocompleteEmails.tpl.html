@@ -1,30 +1,30 @@
 <form class="autocompleteEmails-container" novalidate>
 
-  <div class="autocompleteEmails-admin">
-    <div
-      class="autocompleteEmails-item"
-      ng-class="{'autocompleteEmails-item-invalid': email.invalid}"
-      ng-repeat="email in emails track by email.$id">
-        <span class="autocompleteEmails-label">{{ ::email | labelAutocomplete }}</span>
-        <button
-          class="autocompleteEmails-btn-remove fa fa-times"
-          type="button"
-          aria-label="Remove"
-          data-address="{{ ::email.Address }}">
-        </button>
-      </div>
+    <div class="autocompleteEmails-admin">
+        <div
+            class="autocompleteEmails-item"
+            ng-class="{'autocompleteEmails-item-invalid': email.invalid}"
+            ng-repeat="email in emails track by email.$id">
+                <span class="autocompleteEmails-label">{{ ::email | labelAutocomplete }}</span>
+                <button
+                    class="autocompleteEmails-btn-remove fa fa-times"
+                    type="button"
+                    aria-label="Remove"
+                    data-address="{{ ::email.Address }}">
+                </button>
+            </div>
 
-      <div class="autocompleteEmails-field autocomplete-container">
-        <input
-          id="autocomplete"
-          name="autocomplete"
-          autofocus
-          autocomplete="off"
-          spellcheck="false"
-          autocapitalize="off"
-          class="autocompleteEmails-input">
-      </div>
+            <div class="autocompleteEmails-field autocomplete-container">
+                <input
+                    id="autocomplete"
+                    name="autocomplete"
+                    autofocus
+                    autocomplete="off"
+                    spellcheck="false"
+                    autocapitalize="off"
+                    class="autocompleteEmails-input">
+            </div>
 
-  </div>
+    </div>
 
 </form>
