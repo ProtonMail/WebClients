@@ -15,7 +15,7 @@ angular.module('proton.dnd')
             const get = (id) => (CACHE[type] || {})[id];
             const set = (id, value) => {
                 CACHE[type] = CACHE[type] || {};
-                if (type === 'draggable') {
+                if (type === 'draggable' && id !== 'currentId') {
                     CACHE[type][id] = _.extend({
                         selectedList: [],
                         onDragStart(target, event, selectedList = []) {
@@ -35,6 +35,10 @@ angular.module('proton.dnd')
                             });
                         }
                     }, value);
+                }
+
+                if (type === 'draggable' && id === 'currentId') {
+                    CACHE[type][id] = value;
                 }
 
                 if (type === 'dropzone') {

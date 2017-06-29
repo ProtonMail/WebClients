@@ -8,6 +8,12 @@ angular.module('proton.dnd')
 
             // Check drag a draggable item
             const target = ptDndUtils.getDragInitiatorNode(event.target);
+
+            // Not a ptDraggable item
+            if (!target) {
+                return ptDndModel.draggable.set('currentId', null);
+            }
+
             const eventData = (event.dataTransfer || event.originalEvent.dataTransfer);
 
             document.body.classList.add(CLASSNAME.BODY);
@@ -50,6 +56,7 @@ angular.module('proton.dnd')
 
         document.addEventListener('dragend', () => {
             document.body.classList.remove(CLASSNAME.BODY);
+            ptDndModel.draggable.set('currentId', null);
         });
 
         return {
