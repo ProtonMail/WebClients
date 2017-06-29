@@ -60,7 +60,7 @@ const getVersion = ({ major, minor, patch, version }) => {
 const getConfig = (grunt) => {
 
     const CONFIG = extend({}, APP, {
-        debug: !!grunt.option('debug'),
+        debug: !!grunt.option('debug-app'),
         apiUrl: apiUrl(grunt.option('api')),
         app_version: getVersion({
             version: grunt.option('app-version'),

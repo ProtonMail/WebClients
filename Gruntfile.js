@@ -9,7 +9,7 @@ const { getConfig, AUTOPREFIXER_CONFIG, PACKAGE } = require('./env/config');
 const { getCountry } = require('./env/translationsLoader');
 
 module.exports = function (grunt) {
-    grunt.option('debug', grunt.cli.tasks.indexOf('deploy') === -1);
+    grunt.option('debug-app', grunt.cli.tasks.indexOf('deploy') === -1);
     const { CONFIG, isDistRelease, syncPackage } = getConfig(grunt);
     grunt.loadTasks('tasks');
     loadTasks(grunt);
