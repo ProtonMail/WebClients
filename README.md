@@ -1,18 +1,18 @@
-ProtonMail Web Client
-=======
+# ProtonMail Web Client
+
 
 Official AngularJS web client for the [ProtonMail secure email service](https://protonmail.com). ProtonMail also makes use of [OpenPGPjs](https://github.com/openpgpjs/openpgpjs) as our message crytography is PGP compliant.
 
-### Translations
+## Translations
 
 To assist with the ProtonMail Translation Project, please visit our dedicated translation repository: [translations repository](https://github.com/ProtonMail/translations).
 
-### Basic Installation
+## Basic Installation
 
-#### If you have node >= 0.12 installed locally
+> :warning: You must have node.js >= v6
 
-- `npm install` (requires nodejs)
-- `npm start` to start the app locally at `http://localhost:8080`
+- `$ npm install`
+- `$ npm start`
 
 #### If you have docker, and prefer to not install node (or anything else) locally
 
@@ -23,11 +23,19 @@ There is a very good chance you won't be able to use the app locally because of 
 
 We are still in Beta and will have a more refined build process, installation instructions, unit tests, and all that good stuff once we exit Beta.
 
-### Development
+## Development
 
 We are very open to bug reports via Issues as well as Pull Requests.
 
-### End to end testing for AngularJS
+## Tests
+
+```shell
+$ npm test
+```
+
+> To edit test it's better to run `$ npm run testwatch` (_tests with a watcher_)
+
+## End to end testing for AngularJS
 
 Installation:
 
@@ -57,20 +65,33 @@ $ npm run e2e -- --params.password1 "XXX" --params.password2 "XXX"
 
 
 ```shell
-$ protractor protractor_conf.js
+$ npm run e2e
 ```
 
 Run a scenario:
 
 ```shell
-$ protractor protractor_conf.js --suite=login
+$ npm run e2e -- --suite=login
 ```
 
-### Deploy a new version
+## CLI Flags
 
-You can edit the article link with the flag `--article`
+- `--dest` : Deploy dest
+- `--api` : Set an API for the app (_dev, live, etc._)
+- `--article` : Change the path to the article (_for a custom version_)
+- `--api-version` : Set a custom api version
+- `--app-version` : Set a custom version (_ex: --app-version=3.8.20)
+- `--patch` : Change version, increment patch
+- `--minor` : Change version, increment minor
+- `--major` : Change version, increment major
 
-### License
+> --major|minor|patch come from [The semantic versioner for npm](https://github.com/npm/node-semver)
+
+### Dev flag
+
+- `--no-open`: Do not open the browser on dev
+
+## License
 
 Copyright (c) 2013-2016
 
