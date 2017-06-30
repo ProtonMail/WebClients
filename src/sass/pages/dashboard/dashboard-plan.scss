@@ -196,7 +196,14 @@
 
     .dashboardSelectVPN-link { margin-left: auto }
 
-
+    .dashboard-action-addVPN {
+        display: flex;
+        height: 40px;
+        padding: 0 0 1em 0;
+        align-items: center;
+        justify-content: center;
+    }
+    
     .dashboard-action-addVPN-button {
         color: #5CB85C;
         font-weight: bold;
@@ -211,15 +218,7 @@
         padding: .3em 1em .2em .5em;
     }
 
-    .dashboard-action-addVPN {
-        display: flex;
-        height: 40px;
-        padding: 0 0 1em 0;
-        align-items: center;
-        justify-content: center;
-    }
-
-    .dashboard-action-addVPN-button-txt-add:before { content: "+ " }
+    .dashboard-action-addVPN-button-txt:before { content: "+ " }
 
 
     .dashboard-action-addVPN-sign {
