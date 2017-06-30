@@ -1,5 +1,5 @@
 angular.module('proton.settings')
-.controller('IdentitiesController', (
+.controller('SignaturesController', (
     $q,
     $rootScope,
     $scope,
@@ -10,7 +10,7 @@ angular.module('proton.settings')
     addressModal,
     authentication,
     confirmModal,
-    identityModal,
+    signatureModal,
     CONSTANTS,
     domainApi,
     domainModel,
@@ -416,10 +416,10 @@ angular.module('proton.settings')
     /**
      * Open a modal to edit an address
      */
-    $scope.identity = (address) => {
-        identityModal.activate({
+    $scope.editSignature = (address) => {
+        signatureModal.activate({
             params: {
-                title: gettextCatalog.getString('Edit address', null, 'Title'),
+                title: gettextCatalog.getString('Name / Signature', null, 'Title'),
                 address,
                 confirm(address) {
                     if (address.custom === false) {
@@ -433,7 +433,7 @@ angular.module('proton.settings')
                             if (angular.isDefined(result.data) && result.data.Code === 1000) {
                                 eventManager.call();
                                 notify({ message: gettextCatalog.getString('Address updated', null, 'Info'), classes: 'notification-success' });
-                                identityModal.deactivate();
+                                signatureModal.deactivate();
                             } else if (angular.isDefined(result.data) && result.data.Error) {
                                 notify({ message: result.data.Error, classes: 'notification-danger' });
                             } else {
@@ -445,7 +445,7 @@ angular.module('proton.settings')
                     );
                 },
                 cancel() {
-                    identityModal.deactivate();
+                    signatureModal.deactivate();
                 }
             }
         });

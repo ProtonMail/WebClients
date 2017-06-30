@@ -1,5 +1,5 @@
 <div id="pm_settings">
-    <div class="settings" id="labelContainer">
+    <div class="settings settingsLabels-container" id="labelContainer">
         <div class="row">
             <div class="setting pm_form full">
                 <header-block class="settingsLabels-header-label">
@@ -22,45 +22,44 @@
                         translate-context="Action"
                         translate>Sort</button>
                 </p>
-                <p class="alert alert-info" translate-context="Info" translate>Multiple Labels can be applied to a single message, but a message can only be in a single Folder. You can drag and drop to rearrange the order of Labels/Folders.</p>
+                <p class="alert alert-info" translate-context="Info" translate>Multiple Labels can be applied to a single message, but a message can only be in a single Folder.</p>
+                <p class="help-dnd" ng-if="labels.length">You can drag and drop to rearrange the order of Labels/Folders.</p>
                 <p
                     class="alert alert-info labelsState-msg-info"
                     ng-show="!labels.length"
                     translate-context="Info"
                     translate>You have no labels.</p>
 
-                <div class="pm_sort" ng-if="labels.length">
-                    <ul
-                        class="labelsState-list"
-                        data-as-sortable="labelsDragControlListeners"
-                        is-disabled="labels.length === 1"
-                        ng-class="{ 'as-sortable-disabled': labels.length === 1 }"
-                        data-ng-model="labels">
-                        <li
-                            class="labelsState-item"
-                            ng-repeat="label in labels track by label.ID"
-                            data-color="{{label.Color}}"
-                            data-as-sortable-item>
-                            <span as-sortable-item-handle>
-                                <i class="labelsState-item-icon fa fa-ellipsis-v as-sortable-icon"></i>
+                <ul ng-if="labels.length" class="labelsState-list pm_sort-container"
+                    data-as-sortable="labelsDragControlListeners"
+                    is-disabled="labels.length === 1"
+                    ng-class="{ 'as-sortable-disabled': labels.length === 1 }"
+                    data-ng-model="labels">
+                    <li
+                        class="labelsState-item pm_sort-item"
+                        ng-repeat="label in labels track by label.ID"
+                        data-color="{{label.Color}}"
+                        data-as-sortable-item>
+                        <div class="pm_sort-item-content" as-sortable-item-handle>
+                            <div>
                                 <i class="labelsState-item-icon fa" ng-class="{ 'fa-folder': label.Exclusive, 'fa-tag': !label.Exclusive }" ng-style="{ color: label.Color }"></i>
-                                <span class="label label-pm labelsState-item-name">{{ label.Name }}</span>
-                                <span class="pull-right">
-                                    <button
-                                        class="pm_button link labelsState-btn-edit"
-                                        ng-click="editLabel(label)"
-                                        translate-context="Action"
-                                        translate>Edit</button>
-                                    <button
-                                        class="pm_button link labelsState-btn-delete"
-                                        ng-click="deleteLabel(label)"
-                                        translate-context="Action"
-                                        translate>Delete</button>
-                                </span>
-                            </span>
-                        </li>
-                    </ul>
-                </div>
+                                <span class="label label-pm labelsState-item-name ellipsis">{{ label.Name }}</span>
+                            </div>
+                            <div>
+                                <button
+                                    class="pm_button link labelsState-btn-edit"
+                                    ng-click="editLabel(label)"
+                                    translate-context="Action"
+                                    translate>Edit</button>
+                                <button
+                                    class="pm_button link text-red labelsState-btn-delete"
+                                    ng-click="deleteLabel(label)"
+                                    translate-context="Action"
+                                    translate>Delete</button>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
             </div>
         </div>
     </div>

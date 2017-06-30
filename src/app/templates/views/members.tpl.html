@@ -5,9 +5,9 @@
 
         <div class="row" ng-show="organization.HasKeys === 0">
             <section class="setting pm_form full">
-                <header-block class="settingsUsers-header-identities">
+                <header-block class="settingsUsers-header-signatures">
                     <h2
-                        class="settingsUsers-title-identities"
+                        class="settingsUsers-title-signatures"
                         translate
                         translate-context="Title">Multi-User Support</h2>
                 </header-block>
@@ -122,16 +122,16 @@
         <div class="row" id="settingsMembers">
             <section class="setting pm_form full">
 
-                <header-block class="settingsUsers-header-identities">
+                <header-block class="settingsUsers-header-signatures">
                     <h2
-                        class="settingsUsers-title-identities"
+                        class="settingsUsers-title-signatures"
                         translate
                         translate-context="Title">Users</h2>
 
-                    <small class="settingsUsers-details-identities" ng-if="isAdmin">
+                    <small class="settingsUsers-details-signatures" ng-if="isAdmin">
                         {{ organization.UsedAddresses }} / {{ organization.MaxAddresses }} <span translate-comment="how many addresses are in use" translate>addresses used.</span>
                         <a
-                            class="settingsUsers-link-identities"
+                            class="settingsUsers-link-signatures"
                             ui-sref="secured.dashboard({scroll: true})"
                             data-hide-upgrade="address"
                             translate-context="Action"
@@ -237,7 +237,7 @@
                         </tbody>
                     </table>
                 </div>
-                <p class="help" translate-context="Help" translate>To re-order your addresses or change your signature(s), <a ui-sref="secured.identities">go to Identities</a></p>
+                <p class="help" translate-context="Help" translate>To re-order your addresses or change your signature(s), <a ui-sref="secured.signatures">go to signatures</a></p>
             </section>
         </div>
 

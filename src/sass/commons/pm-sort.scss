@@ -1,75 +1,62 @@
-.pm_sort {
-	ul, li {
-		display: block;
-		margin: 0;
-		list-style-type: none;
-	}
-	ul {
-		padding: 0;
-		list-style-type: none;
-		border: 1px solid $border;
-		border-bottom-width: 0;
-		margin-bottom: 20px;
-		li {
-			padding: 5px 1rem;
-			line-height: 32px;
-			list-style-type: none;
-			border-bottom: 1px solid $border;
-			position: relative;
-			background: $white;
-			height: 32px;
-			&.highlight {
-				background-color: $primary-light;
-			}
-			.fa.fa-ellipsis-v {
-				margin-right: .5rem;
-				color: $default-color-light;
-				line-height: 32px;
-				float: left;
-			}
-			.fa.fa-tag {
-				line-height: 32px;
-				float: left;
-			}
-			.fa.fa-check {
-				position: absolute;
-				right: 0;
-				top: 5px;
-				bottom: 5px;
-				line-height: 32px;
-				padding: 0 1rem;
-				background: $white;
-				color: $primary;
-			}
-		}
+.pm_sort-container {
+	padding: 0;
+	margin: 0;
+	list-style-type: none;
+	border: 1px solid $border;
+	border-bottom: 0;
+}
+
+.pm_sort-item {
+	list-style-type: none;
+	position: relative;
+	&.highlight {
+		background-color: $primary-light;
+		font-weight: bold;
 	}
 }
 
-.as-sortable-placeholder {
-	background: $border !important;
-	box-sizing: border-box;
+
+.pm_sort-item-content,
+.pm_sort-item-content > * {
+	display: flex;
+	align-items: center;
+	justify-content: flex-start;
+	flex-wrap: wrap;
 }
-.as-sortable-dragging {
-	border: 1px solid $border;
-	line-height: 32px;
-	background: $white;
-	box-sizing: border-box;
-	overflow: hidden;
+
+
+.pm_sort-item-content {
 	padding: 5px 1rem;
-	.fa-check {
-		line-height: 32px;
-	    padding: 0 1rem;
-	    background: $white;
-	    color: #9397cd;
-		position: absolute;
-	    right: 0;
-	    top: 5px;
-	    bottom: 5px;
+	min-height: 32px;
+	border-bottom: 1px solid $border;
+}
+
+.pm_sort-item-content > :first-child {
+	flex-wrap: nowrap; /* ellipsis instead */
+	width: 40%;
+	min-width: 200px;
+	margin-right: auto;
+}
+
+.pm_sort-item-content > :last-child {
+	flex-grow: 1;
+	justify-content: flex-end;
+}
+
+.pm_sort-item-content {
+	white-space: nowrap;
+	.pm_badge { margin-left: 5px }
+}
+
+.appConfigBody-is-mobile {
+	.pm_sort-container[data-as-sortable] {
+		border-right: 40px solid rgba($secondary, 0.4);
 	}
-	.fa-ellipsis-v {
-		line-height: 32px;
-		float: left;
-		margin-right: .5rem;
-		color: $default-color-light;
+	.pm_sort-item-content > :first-child {
+		margin-right: auto;
+		font-weight: bold;
+	}
+	.pm_sort-item-content > :last-child {
+		width: 100%;
 	}
 }

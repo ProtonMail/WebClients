@@ -30,7 +30,6 @@ angular.module('proton.settings')
 ) => {
     let promisePasswordModal;
     const unsubscribe = [];
-    $scope.signatureContent = CONSTANTS.PM_SIGNATURE;
     $scope.keyPhase = CONSTANTS.KEY_PHASE;
     $scope.emailing = { announcements: false, features: false, newsletter: false, beta: false };
     $scope.locales = [
@@ -62,8 +61,8 @@ angular.module('proton.settings')
     };
 
     // Listeners
-    unsubscribe.push($rootScope.$on('changePMSignature', changePMSignature));
-    unsubscribe.push($rootScope.$on('updateUser', updateUser));
+
+
     $scope.$on('$destroy', () => {
         unsubscribe.forEach((cb) => cb());
         unsubscribe.length = 0;
@@ -199,43 +198,7 @@ angular.module('proton.settings')
         passwordModal(submit);
     };
 
-    $scope.saveIdentity = () => {
-        const deferred = $q.defer();
-        const displayName = $scope.displayName;
-        let signature = $scope.signature;
-
-        signature = signature.replace(/\n/g, '<br />');
-
-
-        $q.all({
-            displayName: settingsApi.display({ DisplayName: displayName }),
-            signature: settingsApi.signature({ Signature: signature })
-        })
-        .then((result) => {
-            if (result.displayName.data.Code === 1000 && result.signature.data.Code === 1000) {
-                notify({ message: gettextCatalog.getString('Identity saved', null), classes: 'notification-success' });
-                eventManager.call()
-                .then(() => {
-                    deferred.resolve();
-                });
-            } else if (result.signature.data.Code === 12010) {
-                notify({ message: gettextCatalog.getString('Unable to save your changes, your signature is too large.', null, 'Error'), classes: 'notification-danger' });
-                deferred.reject();
-            } else {
-                notify({ message: gettextCatalog.getString('Unable to save your changes, please try again.', null, 'Error'), classes: 'notification-danger' });
-                deferred.reject();
-            }
-        }, () => {
-            notify({ message: gettextCatalog.getString('Unable to save your changes, please try again.', null, 'Error'), classes: 'notification-danger' });
-            deferred.reject();
-        });
-
-        return networkActivityTracker.track(deferred.promise);
-    };
-
     function updateUser() {
-        $scope.displayName = authentication.user.DisplayName;
-        $scope.PMSignature = Boolean(authentication.user.PMSignature);
         $scope.notificationEmail = authentication.user.NotificationEmail;
         $scope.passwordReset = authentication.user.PasswordReset;
         $scope.dailyNotifications = authentication.user.Notify;
@@ -244,29 +207,9 @@ angular.module('proton.settings')
         $scope.images = authentication.user.ShowImages;
         $scope.embedded = authentication.user.ShowEmbedded;
         $scope.hotkeys = authentication.user.Hotkeys;
-        $scope.signature = tools.replaceLineBreaks(authentication.user.Signature);
         $scope.passwordMode = authentication.user.PasswordMode;
         $scope.isMember = authentication.user.Role === CONSTANTS.PAID_MEMBER_ROLE;
         setEmailingValues(authentication.user.News);
-    }
-
-    function changePMSignature(event, status) {
-        const PMSignature = (status) ? 1 : 0;
-        const promise = settingsApi.updatePMSignature({ PMSignature })
-        .then((result) => {
-            if (result.data && result.data.Code === 1000) {
-                return eventManager.call()
-                .then(() => {
-                    notify({ message: gettextCatalog.getString('Signature updated', null, 'Info'), classes: 'notification-success' });
-                });
-            } else if (result.data && result.data.Error) {
-                return Promise.reject(result.data.Error);
-            }
-        });
-
-        networkActivityTracker.track(promise);
-
-        return promise;
     }
 
     $scope.saveAutosaveContacts = () => {

@@ -1,4 +1,22 @@
+.as-sortable-item-handle::before {
+    content: "\F0C9";
+    font-family: FontAwesome;
+    margin-right: .5em;
+    opacity: .2
+}
+
+.as-sortable-item-handle:hover::before { opacity: 1 }
+
 .as-sortable-disabled {
     .as-sortable-item-handle { cursor: default }
     .as-sortable-icon { display: none }
+}
+
+.as-sortable-placeholder {background: $border }
+
+.as-sortable-dragging > * {
+	background: $white;
+	font-weight: bold;
+	box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+    opacity: .9;
 }
