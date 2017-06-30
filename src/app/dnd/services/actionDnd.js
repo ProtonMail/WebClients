@@ -36,6 +36,10 @@ angular.module('proton.dnd')
                 return move(ids, type, labelID);
             }
 
+            if (authentication.user.AlsoArchive) {
+                move(ids, type, CONSTANTS.MAILBOX_IDENTIFIERS.archive);
+            }
+
             if (type === 'conversation') {
                 actionConversation.label(ids, labels);
             } else {
@@ -44,7 +48,6 @@ angular.module('proton.dnd')
                     data: { messages: list, labels }
                 });
             }
-
 
             notifySuccess(`${NOTIFS.APPLY_LABEL} ${label.Name}`);
         };
@@ -75,14 +78,7 @@ angular.module('proton.dnd')
                 selectedList = undefined;
 
                 if (data.type === 'label') {
-
-                    label(list, type, data.value);
-
-                    if (authentication.user.AlsoArchive) {
-                        return move(ids, type, CONSTANTS.MAILBOX_IDENTIFIERS.archive);
-                    }
-
-                    return;
+                    return label(list, type, data.value);
                 }
 
                 if (data.value === 'starred') {
