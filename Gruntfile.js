@@ -10,7 +10,7 @@ const { getCountry } = require('./env/translationsLoader');
 
 module.exports = function (grunt) {
     grunt.option('debug-app', grunt.cli.tasks.indexOf('deploy') === -1);
-    const { CONFIG, isDistRelease, syncPackage } = getConfig(grunt);
+    const { CONFIG, isDistRelease, syncPackage, getEnv } = getConfig(grunt);
     grunt.loadTasks('tasks');
     loadTasks(grunt);
 
@@ -263,7 +263,8 @@ module.exports = function (grunt) {
                     banner: '<%= meta.banner %>'
                 },
                 files: {
-                    '<%= compile_dir %>/assets/app.js': ['<%= vendor_files.js %>',
+                    '<%= compile_dir %>/assets/app.js': [
+                        '<%= vendor_files.js %>',
                         '<%= build_dir %>/src/app/**/index.js',
                         '<%= build_dir %>/src/app/**/*.js'
                     ]
@@ -503,6 +504,27 @@ module.exports = function (grunt) {
 
         },
 
+        replace: {
+            build: {
+                options: {
+                    patterns: [
+                        {
+                            match: /NODE_ENV/g,
+                            replacement: getEnv()
+                        }
+                    ]
+                },
+                files: [
+                    {
+                        expand: true,
+                        flatten: true,
+                        src: [ '<%= build_dir %>/src/app/app.js' ],
+                        dest: '<%= build_dir %>/src/app/'
+                    }
+                ]
+            }
+        },
+
         wait: {
             push: {
                 options: {
@@ -565,6 +587,7 @@ module.exports = function (grunt) {
         'ngconstant:prod', // set prod variables
         'shell:lint',
         'build',
+        'replace:build',
         'copy:compile_assets', // copy assets
         'copy:compile_htaccess', // copy htaccess file
         'copy:i18n',

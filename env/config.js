@@ -74,17 +74,19 @@ const getConfig = (grunt) => {
 
     const isDistRelease = () => ['prod', 'beta'].indexOf(grunt.option('api')) !== -1;
 
+    const getEnv = () => grunt.option('api') || 'local';
+
     const syncPackage = () => {
         if (PACKAGE.version !== CONFIG.app_version) {
             PACKAGE.version = CONFIG.app_version;
-            fs.writeFileSync('./package.json', JSON.stringify(PACKAGE, null, 4));
+            fs.writeFileSync('./package.json', JSON.stringify(PACKAGE, null, 2));
             console.log(`== Package.json updated to version ${CONFIG.app_version} ==`);
             return true;
         }
     };
 
 
-    return { CONFIG, isDistRelease, syncPackage };
+    return { CONFIG, isDistRelease, syncPackage, getEnv };
 };
 
 module.exports = { AUTOPREFIXER_CONFIG, getConfig, PACKAGE };
