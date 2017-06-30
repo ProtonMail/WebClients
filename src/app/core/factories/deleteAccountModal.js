@@ -1,22 +1,22 @@
 angular.module('proton.core')
 .factory('deleteAccountModal', (pmModal, Bug, User, networkActivityTracker, authentication, $state, CONSTANTS) => {
-    function analyse(data = {}, check = true) {
-        if (check) {
-            if (data.Code === 1000) {
-                return Promise.resolve();
-            } else if (data.Error) {
-                return Promise.reject(data.Error);
-            }
-            return Promise.reject('Error');
-        }
-        return Promise.resolve();
-    }
     function report(params, isAdmin) {
         if (isAdmin) {
             return Bug.report(params);
         }
         return Promise.resolve();
     }
+
+    function deleteUser(params) {
+        return User.delete(params)
+            .then(({ data = {} }) => {
+                if (data.Code === 1000) {
+                    return data;
+                }
+                throw new Error(data.Error);
+            });
+    }
+
     return pmModal({
         controllerAs: 'ctrl',
         templateUrl: 'templates/modals/deleteAccount.tpl.html',
@@ -42,11 +42,11 @@ angular.module('proton.core')
                     Email: '--',
                     Description: self.feedback
                 };
-                const promise = User.delete({ Password: self.password, TwoFactorCode: self.twoFactorCode })
-                .then(({ data = {} }) => analyse(data))
-                .then(() => report(params, self.isAdmin))
-                .then((data) => analyse(data, self.isAdmin))
-                .then(() => $state.go('login'));
+
+                const promise = report(params, self.isAdmin)
+                    .then(() => deleteUser({ Password: self.password, TwoFactorCode: self.twoFactorCode }))
+                    .then(() => $state.go('login'));
+
                 networkActivityTracker.track(promise);
             };
             self.cancel = () => {
