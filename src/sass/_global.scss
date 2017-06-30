@@ -144,6 +144,17 @@ html.protonmail {
 		white-space: nowrap;
 	}
 
+	.help-dnd {
+		font-style: italic;
+		opacity: .8
+	}
+	.help-dnd:before {
+		margin-right: .5em;
+	    font-family: FontAwesome;
+		font-style: normal;
+		content: "\F047";
+	}
+
 	::-webkit-input-placeholder { color: #aaaabf }
 	:-moz-placeholder { color: #aaaabf }
 	::-moz-placeholder {  color: #aaaabf }

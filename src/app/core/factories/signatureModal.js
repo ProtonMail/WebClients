@@ -1,8 +1,8 @@
 angular.module('proton.core')
-.factory('identityModal', (pmModal, authentication) => {
+.factory('signatureModal', (pmModal, authentication) => {
     return pmModal({
         controllerAs: 'ctrl',
-        templateUrl: 'templates/modals/identity.tpl.html',
+        templateUrl: 'templates/modals/signature.tpl.html',
         controller(params) {
             this.defaultDisplayName = authentication.user.DisplayName;
             this.defaultSignature = authentication.user.Signature;

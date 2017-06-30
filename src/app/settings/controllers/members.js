@@ -29,7 +29,7 @@ angular.module('proton.settings')
     setupOrganizationModal,
     User
 ) => {
-    $controller('IdentitiesController', { $scope, authentication, pmcw });
+    $controller('SignaturesController', { $scope, authentication, pmcw });
 
     function passwordModal(submit) {
         loginPasswordModal.activate({

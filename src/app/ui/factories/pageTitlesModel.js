@@ -26,7 +26,7 @@ angular.module('proton.ui')
             filters: gettextCatalog.getString('Filters', null, 'Title'),
             keys: gettextCatalog.getString('Keys', null, 'Title'),
             payments: gettextCatalog.getString('Payment methods', null, 'Title'),
-            identities: gettextCatalog.getString('Identities', null, 'Title'),
+            signatures: gettextCatalog.getString('Name / Signature', null, 'Title'),
             login: gettextCatalog.getString('Login', null, 'Title'),
             signup: gettextCatalog.getString('Signup', null, 'Title'),
             vpn: gettextCatalog.getString('VPN', null, 'Title'),

@@ -3,7 +3,7 @@
         <button type="button" ng-click="ctrl.cancel()" aria-hidden="true" title-translate="Close" title-translate-context="Action" class="fa fa-times close"></button>
         <div class="modal-content">
             <div class="modal-header">
-                <h4 class="modal-title" translate translate-context="Title">Identity</h4>
+                <h4 class="modal-title" translate translate-context="Title">Name / Signature</h4>
             </div>
             <div class="modal-body pm_form">
                 <p class="alert alert-info"><strong>{{ ctrl.address.Email }}</strong></p>
@@ -11,13 +11,13 @@
                     <div class="col-1-2">
                         <label>
                             <custom-radio data-custom-ng-model="ctrl.address.custom" data-custom-ng-value="false"></custom-radio>
-                            <strong translate translate-context="Title" translate-comment="form label">Default</strong>
+                            <strong translate translate-context="Title" translate-comment="form label">Default Signature</strong>
                         </label>
                     </div>
                     <div class="col-1-2">
                         <label>
                             <custom-radio data-custom-ng-model="ctrl.address.custom" data-custom-ng-value="true"></custom-radio>
-                            <strong translate translate-context="Title" translate-comment="form label">Custom</strong>
+                            <strong translate translate-context="Title" translate-comment="form label">Custom Name / Signature</strong>
                         </label>
                     </div>
                 </div>
@@ -40,11 +40,11 @@
                 </div>
                 <div ng-show="ctrl.address.custom === false">
                     <section>
-                        <label translate translate-context="Title">Display name</label>
+                        <label translate translate-context="Title">Default Display name</label>
                         <div class="alert alert-info" ng-bind="ctrl.defaultDisplayName"></div>
                     </section>
                     <section>
-                        <label translate translate-context="Title">Signature</label>
+                        <label translate translate-context="Title">Default Signature</label>
                         <div class="alert alert-info" ng-bind-html="ctrl.defaultSignature" style="overflow: auto;"></div>
                     </section>
                 </div>

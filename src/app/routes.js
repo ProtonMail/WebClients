@@ -659,8 +659,8 @@ angular.module('proton.routes', [
         }
     })
 
-    .state('secured.identities', {
-        url: '/identities',
+    .state('secured.signatures', {
+        url: '/signatures',
         resolve: {
             members(user, memberModel, networkActivityTracker) {
                 if (user.Role === CONSTANTS.PAID_ADMIN_ROLE) {
@@ -689,8 +689,8 @@ angular.module('proton.routes', [
         },
         views: {
             'content@secured': {
-                templateUrl: 'templates/views/identities.tpl.html',
-                controller: 'IdentitiesController'
+                templateUrl: 'templates/views/signatures.tpl.html',
+                controller: 'SignaturesController'
             }
         }
     })
@@ -785,7 +785,7 @@ angular.module('proton.routes', [
                 if (CONSTANTS.KEY_PHASE > 3 && !user.subuser && user.Role !== CONSTANTS.PAID_MEMBER_ROLE) {
                     return Promise.resolve();
                 }
-                $state.go('secured.identities');
+                $state.go('secured.signatures');
                 return Promise.reject();
             },
             members(user, memberModel, networkActivityTracker) {
@@ -826,7 +826,7 @@ angular.module('proton.routes', [
         resolve: {
             access(user, $state) {
                 if (user.subuser || user.Role === CONSTANTS.PAID_MEMBER_ROLE) {
-                    $state.go('secured.identities');
+                    $state.go('secured.signatures');
                     return Promise.reject();
                 }
                 return Promise.resolve();
