@@ -57,6 +57,24 @@ angular.module('proton', [
  * Check if the current browser owns some requirements
  */
 .config(() => {
+
+    // Bind env on deploy
+    const env = 'NODE_ENV';
+
+    // Available env to run the APP
+    const test = {
+        prod: window.location.host === 'mail.protonmail.com',
+        beta: window.location.host === 'beta.protonmail.com',
+        host: window.location.host === 'protonmail.host',
+        dev: (window.location.host === 'dev.protonmail.com' || /protonmail\.blue$/.test(window.location.host)),
+        blue: /protonmail\.blue$/.test(window.location.host),
+        NODE_ENV: true // localhost
+    };
+
+    if (!test[env]) {
+        throw new Error('You shall not pass !');
+    }
+
     const isGoodPrngAvailable = function () {
         if (typeof window !== 'undefined' && window.crypto && window.crypto.getRandomValues) {
             return true;
