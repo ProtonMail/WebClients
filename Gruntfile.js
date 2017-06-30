@@ -256,14 +256,6 @@ module.exports = function (grunt) {
                 files: {
                     '<%= build_dir %>/assets/application.css': '<%= app_files.sass %>'
                 }
-            },
-            build_fa: {
-                options: {
-                    data: '$fa-font-path: "fonts"; @import "<%= vendor_files.fa_location%>"',
-                },
-                files: {
-                    '<%= build_dir %>/assets/vendor.css': ['/dev/null']
-                }
             }
         },
 
@@ -624,7 +616,6 @@ module.exports = function (grunt) {
     grunt.registerTask('build', [
         'clean:build',
         'html2js',
-        'sass:build_fa',
         'sass:build',
         'concat:build_css',
         'postcss',
