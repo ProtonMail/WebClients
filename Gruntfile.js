@@ -236,6 +236,15 @@ module.exports = function (grunt) {
                     cwd: './src',
                     nonull: true
                 }]
+            },
+            fonts: {
+                files: [{
+                    src: ['<%= vendor_files.fonts %>'],
+                    dest: '<%= build_dir %>/assets/fonts',
+                    flatten: true,
+                    cwd: '.',
+                    expand: true
+                }]
             }
         },
 
@@ -247,13 +256,21 @@ module.exports = function (grunt) {
                 files: {
                     '<%= build_dir %>/assets/application.css': '<%= app_files.sass %>'
                 }
+            },
+            build_fa: {
+                options: {
+                    data: '$fa-font-path: "fonts"; @import "<%= vendor_files.fa_location%>"',
+                },
+                files: {
+                    '<%= build_dir %>/assets/vendor.css': ['/dev/null']
+                }
             }
         },
 
         concat: {
             build_css: {
                 files: {
-                    '<%= build_dir %>/assets/vendor.css': ['<%= vendor_files.css %>']
+                    '<%= build_dir %>/assets/vendor.css': ['<%= build_dir %>/assets/vendor.css', '<%= vendor_files.css %>']
                 },
                 nonull: true
             },
@@ -607,6 +624,7 @@ module.exports = function (grunt) {
     grunt.registerTask('build', [
         'clean:build',
         'html2js',
+        'sass:build_fa',
         'sass:build',
         'concat:build_css',
         'postcss',
@@ -616,6 +634,7 @@ module.exports = function (grunt) {
         'copy:build_external',
         'copy:build_htaccess',
         'copy:i18n',
+        'copy:fonts',
         'ngAnnotate',
         'babel:dist',
         'index:build'
