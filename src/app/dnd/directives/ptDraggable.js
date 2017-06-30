@@ -56,6 +56,11 @@ angular.module('proton.dnd')
 
         document.addEventListener('dragend', () => {
             document.body.classList.remove(CLASSNAME.BODY);
+            angular.element(document.querySelectorAll(`.${CLASSNAME.DROPZONE_HOVER}`))
+                .removeClass(CLASSNAME.DROPZONE_HOVER);
+
+            angular.element(document.querySelectorAll(`.${CLASSNAME.DRAG_HOVER}`))
+                .removeClass(CLASSNAME.DRAG_HOVER);
             ptDndModel.draggable.set('currentId', null);
         });
 
