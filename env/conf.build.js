@@ -93,6 +93,12 @@ module.exports = {
       "vendor/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.min.css"
     ],
 
+    fonts: [
+      "vendor/components-font-awesome/fonts/*"
+    ],
+
+    fa_location: "vendor/components-font-awesome/scss/font-awesome.scss",
+
     sass_include_dirs: [
       "vendor/bourbon/dist",
       "vendor/bootstrap-sass-official/assets/stylesheets"
