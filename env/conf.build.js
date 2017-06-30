@@ -97,8 +97,6 @@ module.exports = {
       "vendor/components-font-awesome/fonts/*"
     ],
 
-    fa_location: "vendor/components-font-awesome/scss/font-awesome.scss",
-
     sass_include_dirs: [
       "vendor/bourbon/dist",
       "vendor/bootstrap-sass-official/assets/stylesheets"
