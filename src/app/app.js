@@ -25,6 +25,7 @@ angular.module('proton', [
 
     'proton.commons',
     'proton.bugReport',
+    'proton.browserSupport',
 
     // Config
     'proton.config',
