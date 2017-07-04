@@ -18,6 +18,6 @@ angular.module('proton.browserSupport')
         ];
 
         const applyFixes = () => _.each(fixes, (fix) => fix());
-        
+
         return { isCurrentBrowser: aboutClient.isSafari, applyFixes };
     });
