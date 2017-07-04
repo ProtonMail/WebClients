@@ -543,7 +543,7 @@ body.appConfigBody-is-mobile {
     }
 }
 
-.proton-message-blockquote-toggle ~ * {display: none}
+.proton-message-blockquote-toggle ~ * {display: none !important}
 .print .proton-message-blockquote-toggle {
     display: none;
     ~ * {
