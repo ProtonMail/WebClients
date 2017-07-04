@@ -10,8 +10,7 @@ body {
         width: 40%;
         float: left;
         height: 100%;
-        overflow-y: scroll;
-        overflow-x: hidden;
+        overflow: auto;
         position: relative;
         border-right:1px solid $border;
     }
@@ -49,11 +48,9 @@ body {
         }
     }
     #conversation-list-rows {
-        overflow-y: scroll;
-        overflow-x: hidden;
-        -webkit-overflow-scrolling: touch;
         height: 100%;
         position: relative;
+        overflow: auto;
     }
     #pm_main {
         height: calc(100% - 61px); /* #pm_header-desktop height */
