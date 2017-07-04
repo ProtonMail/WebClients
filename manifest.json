@@ -1,5 +1,6 @@
 {
 	"name": "ProtonMail",
+	"short_name": "ProtonMail",
 	"icons": [
 		{
 			"src": "\/assets\/favicons\/android-chrome-36x36.png",
@@ -38,6 +39,12 @@
 			"density": 4
 		}
 	],
+	"related_applications": [
+	  {
+	  "platform": "play",
+	  "id": "ch.protonmail.android"
+	  }
+  	],
 	"start_url": "https:\/\/mail.protonmail.com",
 	"display": "standalone"
 }
