@@ -1,7 +1,7 @@
 .alert {
 	padding: 15px 35px;
 	border-radius: 4px;
-	background: #f7f7f7;
+	background: $alert;
 	a { color: $primary }
 	&.alert-info {
 		background: $primary-light;

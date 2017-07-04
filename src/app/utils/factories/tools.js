@@ -297,7 +297,7 @@ angular.module('proton.utils')
     };
 
     tools.getTypeList = (name) => {
-        const specialBoxes = ['drafts', 'search', 'sent'];
+        const specialBoxes = ['drafts', 'search', 'sent', 'allDrafts', 'allSent'];
         const box = name || tools.currentMailbox();
         const threadingIsOff = authentication.user.ViewMode === CONSTANTS.MESSAGE_VIEW_MODE;
 

@@ -185,7 +185,9 @@ angular.module('proton.core')
         const toInt = (value) => +!!value;
         const locs = [
             CONSTANTS.MAILBOX_IDENTIFIERS.inbox,
+            CONSTANTS.MAILBOX_IDENTIFIERS.allDrafts,
             CONSTANTS.MAILBOX_IDENTIFIERS.drafts,
+            CONSTANTS.MAILBOX_IDENTIFIERS.allSent,
             CONSTANTS.MAILBOX_IDENTIFIERS.sent,
             CONSTANTS.MAILBOX_IDENTIFIERS.trash,
             CONSTANTS.MAILBOX_IDENTIFIERS.spam,
@@ -248,7 +250,9 @@ angular.module('proton.core')
         const oldTotalVector = vector(oldElement, false, type);
         const locs = [
             CONSTANTS.MAILBOX_IDENTIFIERS.inbox,
+            CONSTANTS.MAILBOX_IDENTIFIERS.allDrafts,
             CONSTANTS.MAILBOX_IDENTIFIERS.drafts,
+            CONSTANTS.MAILBOX_IDENTIFIERS.allSent,
             CONSTANTS.MAILBOX_IDENTIFIERS.sent,
             CONSTANTS.MAILBOX_IDENTIFIERS.trash,
             CONSTANTS.MAILBOX_IDENTIFIERS.spam,

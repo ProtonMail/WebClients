@@ -1,4 +1,18 @@
 .conversation-container {
     @include flexColumn();
 }
+.conversation-wrapper {
+    height: 100%;
+    box-sizing: border-box;
+    overflow: auto;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+/* context */
+.movedPanel-container + .conversation-wrapper {
+    height: calc(100% - 64px); /* .movedPanel-container height */
+    margin-top: 64px;
+}
 .hasElementsSelected [id="conversation-view"] { display: none !important }

@@ -14,11 +14,12 @@ angular.module('proton.conversation')
 ) => {
 
     const { MAILBOX_IDENTIFIERS } = CONSTANTS;
+    const basicFolders = [MAILBOX_IDENTIFIERS.inbox, MAILBOX_IDENTIFIERS.trash, MAILBOX_IDENTIFIERS.spam, MAILBOX_IDENTIFIERS.archive, MAILBOX_IDENTIFIERS.sent, MAILBOX_IDENTIFIERS.drafts];
     const mailboxes = {
         [MAILBOX_IDENTIFIERS.inbox]: gettextCatalog.getString('Inbox', null),
         [MAILBOX_IDENTIFIERS.spam]: gettextCatalog.getString('Spam', null),
-        [MAILBOX_IDENTIFIERS.drafts]: gettextCatalog.getString('Drafts', null),
-        [MAILBOX_IDENTIFIERS.sent]: gettextCatalog.getString('Sent', null),
+        [MAILBOX_IDENTIFIERS.allDrafts]: gettextCatalog.getString('Drafts', null),
+        [MAILBOX_IDENTIFIERS.allSent]: gettextCatalog.getString('Sent', null),
         [MAILBOX_IDENTIFIERS.trash]: gettextCatalog.getString('Trash', null),
         [MAILBOX_IDENTIFIERS.archive]: gettextCatalog.getString('Archive', null)
     };
@@ -224,7 +225,6 @@ angular.module('proton.conversation')
      * @param {Boolean} alsoArchive
      */
     function label(ids, labels, alsoArchive) {
-        const basicFolders = [MAILBOX_IDENTIFIERS.inbox, MAILBOX_IDENTIFIERS.trash, MAILBOX_IDENTIFIERS.spam, MAILBOX_IDENTIFIERS.archive];
         const currentLocation = tools.currentLocation();
         const isStateAllowedRemove = _.contains(basicFolders, currentLocation) || labelsModel.contains(currentLocation, 'folders');
         const REMOVE = 0;
@@ -320,7 +320,6 @@ angular.module('proton.conversation')
      * @param {String} labelID
      */
     function move(conversationIDs = [], labelID = '') {
-        const basicFolders = [MAILBOX_IDENTIFIERS.inbox, MAILBOX_IDENTIFIERS.trash, MAILBOX_IDENTIFIERS.spam, MAILBOX_IDENTIFIERS.archive];
         const folders = labelsModel.ids('folders');
         const labels = labelsModel.ids('labels');
         const toTrash = labelID === MAILBOX_IDENTIFIERS.trash;
@@ -365,17 +364,17 @@ angular.module('proton.conversation')
                         case 1: {
                             const index = copyLabelIDsAdded.indexOf(MAILBOX_IDENTIFIERS.inbox);
                             copyLabelIDsAdded.splice(index, 1);
-                            copyLabelIDsAdded.push(MAILBOX_IDENTIFIERS.drafts);
+                            copyLabelIDsAdded.push(MAILBOX_IDENTIFIERS.allDrafts);
                             break;
                         }
                         case 2: {
                             const index = copyLabelIDsAdded.indexOf(MAILBOX_IDENTIFIERS.inbox);
                             copyLabelIDsAdded.splice(index, 1);
-                            copyLabelIDsAdded.push(MAILBOX_IDENTIFIERS.sent);
+                            copyLabelIDsAdded.push(MAILBOX_IDENTIFIERS.allSent);
                             break;
                         }
                         case 3:
-                            copyLabelIDsAdded.push(MAILBOX_IDENTIFIERS.sent);
+                            copyLabelIDsAdded.push(MAILBOX_IDENTIFIERS.allSent);
                             break;
                     }
                 }
