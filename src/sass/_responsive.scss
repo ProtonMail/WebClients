@@ -2,7 +2,7 @@
     .navigation-link { width: 100px }
     .searchForm-container { width: calc(100% - 650px) }
     .sidebarApp-container,
-    .headerDesktop-logo {
+    .headerSecuredDesktop-logo {
         width: calc(190px - 20px);
         min-width: calc(190px - 20px);
     }
@@ -24,13 +24,9 @@
     .navigation-title { font-size: .9em }
     .sidebarApp-menu .menuLabel-counter,
     .sidebarApp-item .navigationItem-counter { font-size: .9em }
-    #pm_settings .pm_tabs li a.pm_button {
-        padding: 0 .5rem;
-    }
-
     .searchForm-container { width: calc(100% - 600px) }
     .sidebarApp-container,
-    .headerDesktop-logo {
+    .headerSecuredDesktop-logo {
         width: calc(190px - 40px);
         min-width: calc(190px - 40px);
     }
@@ -44,7 +40,7 @@
     .navigation-link { width: 80px }
     .searchForm-container { width: calc(100% - 550px) }
     .sidebarApp-container,
-    .headerDesktop-logo {
+    .headerSecuredDesktop-logo {
         width: calc(190px - 60px);
         min-width: calc(190px - 60px);
     }
