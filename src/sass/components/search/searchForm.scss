@@ -109,7 +109,6 @@
 	.input-icon { display: block }
 
     .autocompleteEmail-container .awesomplete {
-        display: inline-block !important;
         position: relative !important;
         margin: 0;
     }
@@ -121,19 +120,39 @@
 }
 
 .searchForm-advanced-wrapper {
-	background: $white;
+	background: #F2F2F2;
 	float: left;
-	padding: 1rem;
+	padding: .5rem 1rem 1rem;
 	width: 100%;
 	box-sizing: border-box;
 	border-radius: 0 0 1rem 1rem;
 	> .row {
 		line-height: 36px /* header#pm_header-desktop */
 	}
+	input[type],
+	.pm_select { background: #FFF }
 }
 
-.searchFrom-advanced-radio {
-	line-height: 33px;
+.searchForm-advanced-main {
+	display: flex;
+	flex-direction: column;
+	padding: 1rem 1rem 0rem 1rem;
+	background: $white;
+	position: relative;
+	box-shadow: 0 4px 4px -4px rgba(0,0,0,0.1);
+}
+
+.searchForm-advanced-wildcard-container {
+	display: flex;
+	justify-content: flex-end;
+	cursor: pointer;
+}
+
+.searchFrom-advanced-radio { line-height: 33px }
+
+.searchForm-advanced-submit {
+	margin-top: .5em;
+	width: 100%;
 }
 
 body:not(.appConfigBody-is-mobile) .searchFrom-advanced-radio label {

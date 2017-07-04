@@ -21,6 +21,7 @@ angular.module('proton.routes', [
             'begin',
             'end',
             'attachments',
+            'wildcard',
             'starred',
             'reload',
             'welcome'

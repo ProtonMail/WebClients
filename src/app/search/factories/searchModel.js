@@ -48,6 +48,7 @@ angular.module('proton.search')
             begin: undefined,
             end: undefined,
             attachments: undefined,
+            wildcard: undefined,
             starred: undefined,
             reload: undefined
         });
@@ -68,6 +69,7 @@ angular.module('proton.search')
         const build = (data = {}) => {
             const model = angular.copy(data);
             const attachments = +model.attachments;
+            const wildcard = +model.wildcard;
             const date = {
                 begin: extractDate(model.begin),
                 end: extractDate(model.end)
@@ -77,12 +79,12 @@ angular.module('proton.search')
                 to: model.to,
                 from: model.from,
                 keyword: model.keyword,
+                wildcard: isNaN(wildcard) ? undefined : wildcard,
                 attachments: isNaN(attachments) ? undefined : attachments,
                 address: (model.address || {}).ID,
                 label: model.label || getLabel(model.folder)
             }, date);
         };
-
 
         return { getFolderList, getAddresses, resetParameters, build };
     });

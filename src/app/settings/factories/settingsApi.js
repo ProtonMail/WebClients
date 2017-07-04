@@ -103,6 +103,9 @@ angular.module('proton.settings')
         },
         updateVPNPassword(params) {
             return $http.put(getUrl('vpnpassword'), params);
+        },
+        updateAutowildcard(params) {
+            return $http.put(getUrl('autowildcard'), params);
         }
     };
 });
