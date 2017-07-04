@@ -79,11 +79,9 @@ angular.module('proton.elements')
                     const action = e.target.getAttribute('data-action');
                     action && ACTIONS[action](e.target.getAttribute('data-action-arg'));
                 };
-                $btns.on('click', onClick);
 
-                scope.$on('$destroy', () => {
-                    $btns.off('click', onClick);
-                });
+                $btns.on('click', onClick);
+                scope.$on('$destroy', () => $btns.off('click', onClick));
             }
         };
     });

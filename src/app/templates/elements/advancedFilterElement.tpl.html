@@ -98,5 +98,11 @@
                 <span translate translate-context="Action">Show read</span>
             </div>
         </button>
+        <moved-button ng-if="
+            ('secured.drafts.**' | includedByState) ||
+            ('secured.allDrafts.**' | includedByState) ||
+            ('secured.sent.**' | includedByState) ||
+            ('secured.allSent.**' | includedByState)
+        "></moved-button>
     </div>
 </div>

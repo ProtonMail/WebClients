@@ -12,8 +12,4 @@
     -webkit-overflow-scrolling: touch;
 }
 /* context */
-.movedPanel-container + .conversation-wrapper {
-    height: calc(100% - 64px); /* .movedPanel-container height */
-    margin-top: 64px;
-}
 .hasElementsSelected [id="conversation-view"] { display: none !important }
