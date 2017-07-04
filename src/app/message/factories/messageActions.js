@@ -9,12 +9,21 @@ angular.module('proton.message')
             [CONSTANTS.MAILBOX_IDENTIFIERS.inbox]: gettextCatalog.getString('Inbox', null),
             [CONSTANTS.MAILBOX_IDENTIFIERS.spam]: gettextCatalog.getString('Spam', null),
             [CONSTANTS.MAILBOX_IDENTIFIERS.drafts]: gettextCatalog.getString('Drafts', null),
+            [CONSTANTS.MAILBOX_IDENTIFIERS.allDrafts]: gettextCatalog.getString('Drafts', null),
             [CONSTANTS.MAILBOX_IDENTIFIERS.sent]: gettextCatalog.getString('Sent', null),
+            [CONSTANTS.MAILBOX_IDENTIFIERS.allSent]: gettextCatalog.getString('Sent', null),
             [CONSTANTS.MAILBOX_IDENTIFIERS.trash]: gettextCatalog.getString('Trash', null),
             [CONSTANTS.MAILBOX_IDENTIFIERS.archive]: gettextCatalog.getString('Archive', null)
         };
 
-        const basicFolders = [CONSTANTS.MAILBOX_IDENTIFIERS.inbox, CONSTANTS.MAILBOX_IDENTIFIERS.trash, CONSTANTS.MAILBOX_IDENTIFIERS.spam, CONSTANTS.MAILBOX_IDENTIFIERS.archive];
+        const basicFolders = [
+            CONSTANTS.MAILBOX_IDENTIFIERS.inbox,
+            CONSTANTS.MAILBOX_IDENTIFIERS.trash,
+            CONSTANTS.MAILBOX_IDENTIFIERS.spam,
+            CONSTANTS.MAILBOX_IDENTIFIERS.archive,
+            CONSTANTS.MAILBOX_IDENTIFIERS.sent,
+            CONSTANTS.MAILBOX_IDENTIFIERS.drafts
+        ];
 
         function getFolderNameTranslated(labelID = '') {
             const { Name } = labelsModel.read(labelID, 'folders') || {};
@@ -62,13 +71,13 @@ angular.module('proton.message')
                 switch (Type) {
                     // This message is a draft, if you move it to trash and back to inbox, it will go to draft instead
                     case CONSTANTS.DRAFT:
-                        return [CONSTANTS.MAILBOX_IDENTIFIERS.drafts];
+                        return [CONSTANTS.MAILBOX_IDENTIFIERS.allDrafts];
                     // This message is sent, if you move it to trash and back, it will go back to sent
                     case CONSTANTS.SENT:
-                        return [CONSTANTS.MAILBOX_IDENTIFIERS.sent];
+                        return [CONSTANTS.MAILBOX_IDENTIFIERS.allSent];
                     // Type 3 is inbox and sent, (a message sent to yourself), if you move it from trash to inbox, it will acquire both the inbox and sent labels ( 0 and 2 ).
                     case CONSTANTS.INBOX_AND_SENT:
-                        return [CONSTANTS.MAILBOX_IDENTIFIERS.inbox, CONSTANTS.MAILBOX_IDENTIFIERS.sent];
+                        return [CONSTANTS.MAILBOX_IDENTIFIERS.inbox, CONSTANTS.MAILBOX_IDENTIFIERS.allSent];
                 }
             }
 

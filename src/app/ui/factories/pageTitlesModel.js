@@ -2,13 +2,15 @@ angular.module('proton.ui')
     .factory('pageTitlesModel', (CONSTANTS, cacheCounters, gettextCatalog, authentication, $state, tools, labelsModel) => {
 
         const { MAILBOX_IDENTIFIERS } = CONSTANTS;
-        const DISPLAY_NUMBER = ['inbox', 'drafts', 'sent', 'starred', 'archive', 'spam', 'trash', 'allmail'];
+        const DISPLAY_NUMBER = ['inbox', 'drafts', 'sent', 'starred', 'archive', 'spam', 'trash', 'allmail', 'allDrafts', 'allSent'];
         const MAP = {
             allmail: gettextCatalog.getString('All Mail', null, 'Title'),
             inbox: gettextCatalog.getString('Inbox', null, 'Title'),
             search: gettextCatalog.getString('Search', null, 'Title'),
+            allDrafts: gettextCatalog.getString('Drafts', null, 'Title'),
             drafts: gettextCatalog.getString('Drafts', null, 'Title'),
             sent: gettextCatalog.getString('Sent', null, 'Title'),
+            allSent: gettextCatalog.getString('Sent', null, 'Title'),
             starred: gettextCatalog.getString('Starred', null, 'Title'),
             archive: gettextCatalog.getString('Archive', null, 'Title'),
             spam: gettextCatalog.getString('Spam', null, 'Title'),

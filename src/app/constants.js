@@ -84,15 +84,17 @@ angular.module('proton.constants', [])
     WIZARD_ENABLED: true, // true / false
     MAILBOX_IDENTIFIERS: {
         inbox: '0',
-        drafts: '1',
-        sent: '2', // outbox
+        allDrafts: '1',
+        allSent: '2',
         trash: '3',
         spam: '4',
         allmail: '5',
         starred: '10',
         archive: '6',
-        search: '7',
-        label: '8'
+        sent: '7',
+        drafts: '8',
+        search: 'search',
+        label: 'label'
     },
     EMAIL_FORMATING: {
         OPEN_TAG_AUTOCOMPLETE: '‹',

@@ -1,0 +1,34 @@
+.movedPanel-container {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    font-size: 1.1em;
+    justify-content: center;
+    padding: 10px 10px;
+    height: 64px; /* conversation header */
+    box-sizing: border-box;
+    background: #FFF;
+    border-bottom: 1px solid $border;
+    box-shadow: inset 0px 2px 2px rgba(0,0,0,0.05), 0px 1px 2px rgba(0,0,0,0.05);
+    font-size: .9em;
+}
+
+.movedPanel-link {
+    padding: 10px;
+    border-radius: 4px;
+    text-transform: uppercase;
+    text-decoration: underline;
+}
+
+
+.movedPanel-link,
+.movedPanel-help {
+    color: $primary;
+    text-transform: uppercase;
+    cursor: pointer;
+    &:hover {
+        text-decoration: none;
+        color: $secondary
+    }
+}

@@ -3,7 +3,7 @@ angular.module('proton.elements')
 
         const CLASS_DISPLAY = 'navElements-displayed';
         const CLASS_ERROR = 'navElements-no-';
-        const SPECIAL_BOXES = ['drafts', 'search', 'sent'];
+        const SPECIAL_BOXES = ['drafts', 'search', 'sent', 'allDrafts', 'allSent'];
 
         const dispatch = (type, data = {}) => $rootScope.$emit('elements', { type, data });
 

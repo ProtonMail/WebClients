@@ -52,12 +52,25 @@ angular.module('proton.sidebar')
                     $anchor.title = `${$anchor.getAttribute('data-label')} ${total}`.trim();
                     $counter.textContent = total;
                 };
+                const updateActive = () => {
+                    const { states = [], state = '' } = config;
+                    const addActive = () => el[0].classList.add(CLASS_ACTIVE);
 
-                // Check if we open the current state, mark it as active
-                $state.includes(config.state) && el[0].classList.add(CLASS_ACTIVE);
+                    // Sent and Drafts have each 2 states
+                    if (states.length && _.find(states, (route) => $state.includes(route))) {
+                        return addActive();
+                    }
+
+                    if ($state.includes(state)) {
+                        return addActive();
+                    }
+
+                    el[0].classList.remove(CLASS_ACTIVE);
+                };
+
+                updateActive(); // Check if we open the current state, mark it as active
                 render();
                 updateCounter();
-
 
                 // Update the counter when we load then
                 unsubscribe.push($rootScope.$on('app.cacheCounters', (e, { type }) => {
@@ -71,11 +84,7 @@ angular.module('proton.sidebar')
 
                 // Check the current state to set the current one as active
                 unsubscribe.push($rootScope.$on('$stateChangeSuccess', () => {
-                    if ($state.includes(config.state)) {
-                        return el[0].classList.add(CLASS_ACTIVE);
-                    }
-
-                    el[0].classList.remove(CLASS_ACTIVE);
+                    updateActive();
                 }));
 
                 const onClick = () => {

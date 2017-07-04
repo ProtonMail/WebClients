@@ -633,7 +633,7 @@ angular.module('proton.composer')
                             NumMessages: numMessages,
                             ContextNumUnread: contextNumUnread,
                             ID: result.Message.ConversationID,
-                            LabelIDsAdded: [CONSTANTS.MAILBOX_IDENTIFIERS.drafts]
+                            LabelIDsAdded: [CONSTANTS.MAILBOX_IDENTIFIERS.allDrafts, CONSTANTS.MAILBOX_IDENTIFIERS.drafts]
                         }, numMessages === 1 ? firstConversation : {})
                     });
 
@@ -934,8 +934,8 @@ angular.module('proton.composer')
                         Senders: Sent.Senders,
                         Subject: Sent.Subject,
                         ID: Sent.ConversationID,
-                        LabelIDsAdded: [CONSTANTS.MAILBOX_IDENTIFIERS.sent],
-                        LabelIDsRemoved: [CONSTANTS.MAILBOX_IDENTIFIERS.drafts]
+                        LabelIDsAdded: [CONSTANTS.MAILBOX_IDENTIFIERS.allSent, CONSTANTS.MAILBOX_IDENTIFIERS.sent],
+                        LabelIDsRemoved: [CONSTANTS.MAILBOX_IDENTIFIERS.allDrafts, CONSTANTS.MAILBOX_IDENTIFIERS.drafts]
                     }
                 });
 

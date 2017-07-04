@@ -1,6 +1,6 @@
 angular.module('proton.elements')
 .directive('foldersElement', ($rootScope, $state, gettextCatalog, $compile, mailboxIdentifersTemplate) => {
-    const allowedStates = ['secured.sent.**', 'secured.drafts.**', 'secured.search.**', 'secured.starred.**', 'secured.allmail.**', 'secured.label.**'];
+    const allowedStates = ['secured.allSent.**', 'secured.sent.**', 'secured.allDrafts.**', 'secured.drafts.**', 'secured.search.**', 'secured.starred.**', 'secured.allmail.**', 'secured.label.**'];
     const isAllowedState = () => allowedStates.some((key) => $state.includes(key));
     const MAP_LABELS = {
         inbox: {

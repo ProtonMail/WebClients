@@ -95,6 +95,9 @@ angular.module('proton.settings')
             return srp.performSRPRequest('PUT', '/settings/2fa', {}, creds)
             .catch((error = {}) => Promise.reject(error.error_description || error));
         },
+        updateMoved(params) {
+            return $http.put(getUrl('moved'), params);
+        },
         updateVPNName(params) {
             return $http.put(getUrl('vpnname'), params);
         },
