@@ -1,10 +1,5 @@
 // All versions of IE
 .ua-ie {
-    #pm_header {
-        .pm_dropdown {
-            top: 200%;
-        }
-    }
     body.scroll {
         overflow-y: auto !important;
         -webkit-overflow-scrolling: touch;
@@ -130,16 +125,6 @@
     .pm_button,
     .pm_buttons a {
         overflow: hidden;
-    }
-    header#pm_header .pull-right {
-        height: 61px;
-        overflow: hidden;
-        a {
-            float: left;
-        }
-        .pm_button.primary {
-            margin-top: 14px;
-        }
     }
 }
 

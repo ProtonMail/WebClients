@@ -1,0 +1,68 @@
+// REGULAR
+.headerSecured-container {
+    display: block;
+    background: $header-background;
+    color: $header-font-color;
+    font-size: 12px;
+    position: relative;
+    z-index: 100;  /* less or equal to 100 for responsive composer*/
+    font-family: sans-serif;
+}
+
+.headerSecuredDesktop-container,
+.headerSecuredMobile-container {
+    display: flex;
+    width: 100%;
+    height: $headerHeight;
+    align-items: center;
+}
+
+.headerSecuredDesktop-logo {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: $sidebarWidth;
+    height: $headerHeight;
+    background: $logo-background;
+    img {
+        display: inline-block;
+        width: 130px;
+    }
+}
+
+
+// MOBILE
+body.appConfigBody-is-mobile .headerSecuredMobile-container { height: 70px }
+
+.headerSecuredMobile-toggleSidebar,
+.headerSecuredMobile-searchBtn,
+.headerSecuredMobile-compose {
+    height: 100%;
+    font-size: 1.6em;
+    width: 2em;
+}
+
+.headerSecuredMobile-toggleSidebar {
+    margin-right: auto;
+    font-size: 2em
+}
+
+.headerSecuredMobile-searchBtn { width: 3em }
+
+.headerSecuredMobile-compose {
+    background: transparent;
+    border: 0;
+    color: $white;
+    max-width: 4rem;
+    min-width: 4rem;
+    text-align: center;
+    width: auto;
+    &:hover { background: transparent }
+}
+
+// Composer maximized
+.appConfigBody-is-mobile.appConfigBody-activeComposer {
+    .headerSecured-container {
+        pointer-events: none
+    }
+}

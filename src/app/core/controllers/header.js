@@ -25,14 +25,6 @@ angular.module('proton.core')
         unsubscribes.length = 0;
     });
 
-    // $scope.toggleAdvancedSearch = () => {
-    //     if ($scope.advancedSearch === false) {
-    //         $scope.openSearchModal();
-    //     } else {
-    //         $scope.closeSearchModal();
-    //     }
-    // };
-
     $scope.cancel = () => {
         if (angular.isDefined($scope.params.cancel) && angular.isFunction($scope.params.cancel)) {
             $scope.params.cancel();

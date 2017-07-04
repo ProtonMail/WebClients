@@ -165,6 +165,8 @@ body.appConfigBody-is-mobile {
 	.search-form-fieldset { display: none }
 	.searchForm-advanced-container {
 		top: 70px;
+		max-height: calc(100vh - 70px);
+		overflow: auto;
 		box-shadow: none;
 		border-radius: none;
 		padding-top: 0;

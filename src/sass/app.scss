@@ -101,9 +101,8 @@
 @import "components/composer/composerHeader";
 
 //== Header
-@import "components/header/header";
-@import "components/header/headerDesktop";
 @import "components/header/headerNoAuth";
+@import "components/header/headerSecured";
 
 //== Bug report
 @import "components/bugReport/newBugReport";
