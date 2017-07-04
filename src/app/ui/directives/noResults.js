@@ -1,6 +1,7 @@
 angular.module('proton.ui')
 .directive('noResults', (elementsError, tools, gettextCatalog, labelsModel, $stateParams) => {
     const INVALID_SEARCH_ERROR_CODE = 15225;
+    const learnMore = gettextCatalog.getString('Learn more', null, 'Link');
 
     const TYPES = {
         inbox: {
@@ -88,7 +89,7 @@ angular.module('proton.ui')
                 $span.textContent = text;
             }
 
-            $h3.textContent = (code === INVALID_SEARCH_ERROR_CODE) ? error : getLabel(type);
+            $h3.innerHTML = (code === INVALID_SEARCH_ERROR_CODE) ? `${error}.<br /><a href="https://protonmail.com/support/knowledge-base/search/" target="_blank">${learnMore}</a>` : getLabel(type);
         }
     };
 });

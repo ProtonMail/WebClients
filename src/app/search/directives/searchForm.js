@@ -1,5 +1,5 @@
 angular.module('proton.search')
-    .directive('searchForm', ($rootScope, $state, $stateParams, searchModel, searchValue) => {
+    .directive('searchForm', ($rootScope, $state, $stateParams, authentication, searchModel, searchValue) => {
 
         const CLASS_OPEN = 'searchForm-container-adv';
         const dispatch = (type, data = {}) => $rootScope.$emit('advancedSearch', { type, data });
@@ -26,10 +26,12 @@ angular.module('proton.search')
             templateUrl: 'templates/search/searchForm.tpl.html',
             link(scope, el) {
                 const unsubscribe = [];
+
                 let folders = searchModel.getFolderList();
                 const addresses = searchModel.getAddresses();
                 const $input = el[0].querySelector('.search-form-fieldset-input');
                 scope.model = {
+                    wildcard: Boolean(authentication.user.AutoWildcardSearch),
                     folder: folders[0],
                     address: addresses[0],
                     attachments: '2'

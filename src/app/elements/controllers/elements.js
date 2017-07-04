@@ -322,6 +322,14 @@ angular.module('proton.elements')
         });
     };
 
+    function getWildCard() {
+        if (angular.isDefined($stateParams.wildcard)) {
+            return $stateParams.wildcard;
+        }
+
+        return authentication.user.AutoWildcardSearch;
+    }
+
     function forgeRequestParameters(mailbox) {
         const params = {
             Page: (~~$stateParams.page || 1) - 1
@@ -353,6 +361,7 @@ angular.module('proton.elements')
             params.Begin = $stateParams.begin;
             params.End = $stateParams.end;
             params.Attachments = $stateParams.attachments;
+            params.AutoWildcard = getWildCard();
         } else if (mailbox === 'label') {
             params.Label = $stateParams.label;
         } else {

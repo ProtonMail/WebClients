@@ -1,1 +1,2 @@
-angular.module('proton.search', []);
+angular.module('proton.search', [])
+    .run((wildcardModel) => wildcardModel.init());
