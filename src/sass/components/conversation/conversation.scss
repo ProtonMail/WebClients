@@ -4,11 +4,12 @@
 .conversation-wrapper {
     height: 100%;
     box-sizing: border-box;
-    overflow: auto;
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
+    overflow-y: scroll;
+    -webkit-overflow-scrolling: touch;
 }
 /* context */
 .movedPanel-container + .conversation-wrapper {

@@ -218,7 +218,7 @@
 }
 
 .sidebarApp-item .navigationItem-aside {
-    flex: 1;
+    flex-grow: 1;
     position: relative; /*IE11*/
     pointer-events: none;
     display: flex;
@@ -368,7 +368,7 @@
 @media (max-height: 500px) {
     .sidebarApp-container { overflow: auto }
     [id="sidebarLabels"] {
-        height: initial;
+        height: auto;
         overflow: visible;
         min-height: auto;
         .mCSB_container_wrapper { position: relative }
