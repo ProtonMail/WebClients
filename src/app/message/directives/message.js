@@ -104,6 +104,14 @@ angular.module('proton.message')
                 }
             }));
 
+            unsubscribe.push($rootScope.$on('message', (event, { type = '', data = {} }) => {
+                if (type === 'unsubscribed' && data.message.ID === scope.message.ID) {
+                    scope.$applyAsync(() => {
+                        scope.unsubscribed = unsubscribeModel.already(scope.message.getListUnsubscribe());
+                    });
+                }
+            }));
+
             unsubscribe.push($rootScope.$on('message.refresh', (event, messageIDs) => {
                 if (messageIDs.indexOf(scope.message.ID) > -1) {
                     const message = cache.getMessageCached(scope.message.ID);

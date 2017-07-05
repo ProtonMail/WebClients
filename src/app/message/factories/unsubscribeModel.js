@@ -58,6 +58,7 @@ angular.module('proton.message')
             });
 
             LIST.push(list);
+            $rootScope.$emit('message', { type: 'unsubscribed', data: { message } });
         }
 
         $rootScope.$on('message', (event, { type, data = {} }) => {
