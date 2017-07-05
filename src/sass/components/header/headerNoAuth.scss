@@ -1,5 +1,6 @@
 .headerNoAuth-container {
     box-sizing: border-box;
+    height: 0; /* IE */
     min-height: $headerHeight;
     background: $secondary;
     display: flex;
@@ -21,10 +22,10 @@
 }
 
 .headerNoAuth-list > [class*='headerNoAuth-item'] {
-    padding: 10px 0px; /* wrap for long translations */
-    white-space: nowrap;
+    height: 35px;
     max-width: 100%; /* ellipsis */
     overflow: hidden;
+    white-space: nowrap;
     text-overflow: ellipsis;
 }
 
