@@ -114,5 +114,6 @@ angular.module('proton.constants', [])
         IMAGE: '',
         HEADER_CLASS: 'h4',
         IFRAMECLASSNAME: 'angular-squire-iframe'
-    }
+    },
+    URL_INFO: 'https://mail.protonmail.com/assets/host.png'
 });

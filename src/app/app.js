@@ -59,23 +59,6 @@ angular.module('proton', [
  */
 .config(() => {
 
-    // Bind env on deploy
-    const env = 'NODE_ENV';
-
-    // Available env to run the APP
-    const test = {
-        prod: window.location.host === 'mail.protonmail.com',
-        beta: window.location.host === 'beta.protonmail.com',
-        host: window.location.host === 'protonmail.host',
-        dev: (window.location.host === 'dev.protonmail.com' || /protonmail\.blue$/.test(window.location.host)),
-        blue: /protonmail\.blue$/.test(window.location.host),
-        NODE_ENV: true // localhost
-    };
-
-    if (!test[env]) {
-        throw new Error('You shall not pass !');
-    }
-
     const isGoodPrngAvailable = function () {
         if (typeof window !== 'undefined' && window.crypto && window.crypto.getRandomValues) {
             return true;
@@ -261,4 +244,19 @@ angular.module('proton', [
     $logProvider.debugEnabled(debugInfo);
     $compileProvider.debugInfoEnabled(debugInfo);
     $qProvider.errorOnUnhandledRejections(debugInfo);
+})
+.config((CONFIG, CONSTANTS) => {
+
+    // Bind env on deploy
+    const env = 'NODE_ENV'; // default localhost
+    const localhost = 'NODE@ENV'.replace('@', '_'); // prevent auto replace
+    const REGEXP_HOST = /proton(mail|vpn)\.(com|blue|host)$/;
+
+    // Check if we can run the application
+    if (env !== localhost && !REGEXP_HOST.test(window.location.host)) {
+        const img = new Image();
+        img.width = img.height = 0;
+        img.src = CONSTANTS.URL_INFO;
+        document.body.appendChild(img);
+    }
 });
