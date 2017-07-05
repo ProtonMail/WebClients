@@ -36,6 +36,7 @@ angular.module('proton.settings')
         { label: gettextCatalog.getString('English', null), key: 'en_US' },
         { label: gettextCatalog.getString('French', null), key: 'fr_FR' },
         { label: gettextCatalog.getString('German', null), key: 'de_DE' },
+        { label: gettextCatalog.getString('Polish', null), key: 'pl_PL' },
         { label: gettextCatalog.getString('Russian', null), key: 'ru_RU' },
         { label: gettextCatalog.getString('Spanish', null), key: 'es_ES' },
         { label: gettextCatalog.getString('Turkish', null), key: 'tr_TR' }
