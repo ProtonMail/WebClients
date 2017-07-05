@@ -121,6 +121,10 @@ angular.module('proton.message')
             return this.DecryptedBody || '';
         }
 
+        getListUnsubscribe() {
+            return this.ParsedHeaders['List-Unsubscribe'] || '';
+        }
+
         close() {
             if (angular.isDefined(this.timeoutSaving)) {
                 $timeout.cancel(this.timeoutSaving);
@@ -136,20 +140,22 @@ angular.module('proton.message')
                 });
         }
 
-        parse(content) {
+        parse(content = '') {
             const deferred = $q.defer();
             const mailparser = new MailParser({ defaultCharset: 'UTF-8' });
 
             mailparser.on('end', (mail) => {
-                if (mail.attachments) {
+                const { attachments, text = '', html = '' } = mail;
+
+                if (attachments) {
                     this.PgpMimeWithAttachments = true; // Used to display an alert on the message view
                 }
 
-                if (mail.html) {
-                    deferred.resolve(mail.html);
-                } else if (mail.text) {
+                if (html) {
+                    deferred.resolve(html);
+                } else if (text) {
                     this.MIMEType = 'text/plain';
-                    deferred.resolve(mail.text);
+                    deferred.resolve(text);
                 } else {
                     deferred.resolve(emptyMessage);
                 }
@@ -161,10 +167,6 @@ angular.module('proton.message')
             return deferred.promise;
         }
 
-        /**
-         * Decrypt the body
-         * @return {Promise}
-         */
         decryptBody() {
             const privKey = authentication.getPrivateKeys(this.AddressID);
             const sender = (this.Sender || {}).Address;
@@ -191,10 +193,12 @@ angular.module('proton.message')
                     return pmcw.decryptMessageRSA(this.Body, privKey, this.Time, pubKeys)
                         .then((rep) => {
                             this.decrypting = false;
+
                             if (this.IsEncrypted === 8) {
                                 return this.parse(rep.data)
                                     .then((data) => ({ data }));
                             }
+
                             return rep;
                         })
                         .catch((error) => {
