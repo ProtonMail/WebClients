@@ -71,13 +71,13 @@ angular.module('proton.message')
                 switch (Type) {
                     // This message is a draft, if you move it to trash and back to inbox, it will go to draft instead
                     case CONSTANTS.DRAFT:
-                        return [CONSTANTS.MAILBOX_IDENTIFIERS.allDrafts];
+                        return [CONSTANTS.MAILBOX_IDENTIFIERS.allDrafts, CONSTANTS.MAILBOX_IDENTIFIERS.drafts];
                     // This message is sent, if you move it to trash and back, it will go back to sent
                     case CONSTANTS.SENT:
-                        return [CONSTANTS.MAILBOX_IDENTIFIERS.allSent];
+                        return [CONSTANTS.MAILBOX_IDENTIFIERS.allSent, CONSTANTS.MAILBOX_IDENTIFIERS.sent];
                     // Type 3 is inbox and sent, (a message sent to yourself), if you move it from trash to inbox, it will acquire both the inbox and sent labels ( 0 and 2 ).
                     case CONSTANTS.INBOX_AND_SENT:
-                        return [CONSTANTS.MAILBOX_IDENTIFIERS.inbox, CONSTANTS.MAILBOX_IDENTIFIERS.allSent];
+                        return [CONSTANTS.MAILBOX_IDENTIFIERS.inbox, CONSTANTS.MAILBOX_IDENTIFIERS.allSent, CONSTANTS.MAILBOX_IDENTIFIERS.sent];
                 }
             }
 
