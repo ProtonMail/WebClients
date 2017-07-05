@@ -218,20 +218,26 @@
 }
 
 .sidebarApp-item .navigationItem-aside {
-    flex-grow: 1;
     position: relative; /*IE11*/
-    pointer-events: none;
+    flex-grow: 1;
+    flex-shrink: 0;
     display: flex;
     align-items: center;
     justify-content: space-between;
     margin-left: -10px; /* .navigationItem-title */
     /* check _theme reset */
     background: linear-gradient(to right, rgba($sidebar-background, 0) 0%, $sidebar-background 4px);
+    pointer-events: none;
 }
 
 .sidebarApp-item.active .navigationItem-aside {
     /* check _theme reset */
     background: linear-gradient(to right, rgba($sidebar-active, 0), $sidebar-active 4px)
+}
+
+.navigationItem-counter {
+    flex: 1;
+    margin-right: .3em;
 }
 
 .sidebarApp-menu .menuLabel-counter,
@@ -244,7 +250,6 @@
 .sidebarApp-item .navigationItem-counter,
 .menuLabel-item .menuLabel-counter { margin-left: .3em }
 
-.sidebarApp-item .navigationItem-counter { margin-right: .3em }
 
 .sidebarApp-item.active .navigationItem-item,
 .sidebarApp-item.active .sidebarApp-link,
@@ -366,7 +371,10 @@
 }
 
 @media (max-height: 500px) {
-    .sidebarApp-container { overflow: auto }
+    .sidebarApp-container {
+        display: block;
+        overflow: auto;
+    }
     [id="sidebarLabels"] {
         height: auto;
         overflow: visible;
