@@ -18,7 +18,9 @@ angular.module('proton.conversation')
     const mailboxes = {
         [MAILBOX_IDENTIFIERS.inbox]: gettextCatalog.getString('Inbox', null),
         [MAILBOX_IDENTIFIERS.spam]: gettextCatalog.getString('Spam', null),
+        [MAILBOX_IDENTIFIERS.drafts]: gettextCatalog.getString('Drafts', null),
         [MAILBOX_IDENTIFIERS.allDrafts]: gettextCatalog.getString('Drafts', null),
+        [MAILBOX_IDENTIFIERS.sent]: gettextCatalog.getString('Sent', null),
         [MAILBOX_IDENTIFIERS.allSent]: gettextCatalog.getString('Sent', null),
         [MAILBOX_IDENTIFIERS.trash]: gettextCatalog.getString('Trash', null),
         [MAILBOX_IDENTIFIERS.archive]: gettextCatalog.getString('Archive', null)
