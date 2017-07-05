@@ -116,7 +116,6 @@ angular.module('proton.message')
 
                     return Promise.all(promises)
                         .then(() => {
-                            debugger;
                             if (outsiders === true && message.Password.length === 0 && message.ExpirationTime) {
                                 throw new Error('Expiring emails to non-ProtonMail recipients require a message password to be set. For more information, <a href="https://protonmail.com/support/knowledge-base/expiration/" target="_blank">click here</a>.');
                             }
