@@ -1,7 +1,7 @@
 angular.module('proton.elements')
     .directive('movedButton', ($state, gettextCatalog, tools) => {
         const ACTIVE_CLASS = 'active';
-        const showMoved = gettextCatalog.getString('Show moved messages', null, 'Link');
+        const includeMovedMessages = gettextCatalog.getString('Include moved messages', null, 'Link');
         const MAP = {
             sent: 'secured.allSent',
             allSent: 'secured.sent',
@@ -17,7 +17,7 @@ angular.module('proton.elements')
             <button class="movedButton-container">
                 <div>
                     <i class="movedButton-icon fa fa-share-square-o"></i>
-                    <span class="movedButton-text">${showMoved}</span>
+                    <span class="movedButton-text">${includeMovedMessages}</span>
                 </div>
             </button>
             `,
