@@ -1,1 +1,2 @@
-angular.module('proton.message', ['ngSanitize']);
+angular.module('proton.message', ['ngSanitize'])
+    .run((unsubscribeModel) => unsubscribeModel.init());

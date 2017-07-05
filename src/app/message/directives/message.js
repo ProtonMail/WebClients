@@ -1,5 +1,5 @@
 angular.module('proton.message')
-.directive('message', ($state, $rootScope, cache, displayContent, messageScroll, tools) => {
+.directive('message', ($state, $rootScope, cache, displayContent, messageScroll, tools, unsubscribeModel) => {
 
     const getRecipients = ({ ToList = [], CCList = [], BCCList = [] } = {}) => [].concat(ToList, CCList, BCCList);
 
@@ -64,6 +64,7 @@ angular.module('proton.message')
              * Initialize the message
              */
             scope.body = ''; // Here we put the content displayed inside the message content
+            scope.unsubscribed = unsubscribeModel.already(scope.message.getListUnsubscribe());
             (scope.message.openMe || scope.message.expand) && openMessage();
 
             unsubscribe.push($rootScope.$on('message.open', (e, { type, data }) => {

@@ -1,0 +1,26 @@
+.unsubscribePanel-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-sizing: border-box;
+    width: 100%;
+    padding: 5px 10px;
+    border-top: 1px solid $border;
+    background: darken($tertiary, 4);
+    color: $secondary;
+    font-size: .9em;
+}
+
+.unsubscribePanel-notice { font-weight: bold }
+
+.unsubscribePanel-notice,
+.unsubscribePanel-notice::before {
+    margin-right: 5px;
+}
+
+.unsubscribePanel-notice::before {
+    content: "\f1ea";
+    font-family: FontAwesome;
+}
+
+.unsubscribePanel-button { background: $white }
