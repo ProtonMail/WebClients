@@ -122,7 +122,8 @@ angular.module('proton.message')
         }
 
         getListUnsubscribe() {
-            return this.ParsedHeaders['List-Unsubscribe'] || '';
+            const { ParsedHeaders = {} } = this;
+            return ParsedHeaders['List-Unsubscribe'] || '';
         }
 
         close() {
