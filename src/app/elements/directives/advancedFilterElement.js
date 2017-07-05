@@ -1,5 +1,15 @@
 angular.module('proton.elements')
-    .directive('advancedFilterElement', (gettextCatalog, messageApi, confirmModal, networkActivityTracker, cache, notify, eventManager, $state) => {
+    .directive('advancedFilterElement', ($stateParams, gettextCatalog, messageApi, confirmModal, networkActivityTracker, cache, notify, eventManager, $state) => {
+        const ACTIVE_CLASS = 'active';
+        const BUTTONS_CLASS = {
+            'advancedFilterElement-btn-small-to-large': () => $stateParams.sort === 'size',
+            'advancedFilterElement-btn-large-to-small': () => $stateParams.sort === '-size',
+            'advancedFilterElement-btn-old-to-new': () => !$stateParams.sort || $stateParams.sort === '-date',
+            'advancedFilterElement-btn-new-to-old': () => $stateParams.sort === 'date',
+            'advancedFilterElement-btn-show-all': () => (!$stateParams.sort || $stateParams.sort === '-date') && !$stateParams.filter,
+            'advancedFilterElement-btn-unread': () => $stateParams.filter === 'unread',
+            'advancedFilterElement-btn-read': () => $stateParams.filter === 'read'
+        };
         const clearState = (state) => state.replace('.element', '');
         const switchState = (opt = {}) => $state.go(clearState($state.$current.name), _.extend({}, $state.params, { page: undefined, id: undefined }, opt));
 
@@ -79,6 +89,11 @@ angular.module('proton.elements')
                     const action = e.target.getAttribute('data-action');
                     action && ACTIONS[action](e.target.getAttribute('data-action-arg'));
                 };
+
+                _.each($btns, (button) => {
+                    const cssClass = button.classList.item(0);
+                    BUTTONS_CLASS[cssClass] && BUTTONS_CLASS[cssClass]() && button.classList.add(ACTIVE_CLASS);
+                });
 
                 $btns.on('click', onClick);
                 scope.$on('$destroy', () => $btns.off('click', onClick));

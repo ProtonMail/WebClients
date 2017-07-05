@@ -40,6 +40,7 @@
 	&.open {
 		display: block;
 	}
+	&.noPadding { padding: 0 }
 
 	> button {
 		background: transparent;

@@ -8,7 +8,7 @@
         <small translate>More</small>
         <i class="fa fa-angle-down"></i>
     </a>
-    <div class="pm_dropdown pm_dropdown-normalText wider advancedFilterElement-content">
+    <div class="pm_dropdown widest noPadding advancedFilterElement-content">
         <button
             class="advancedFilterElement-btn-drafts"
             data-action="empty"
@@ -37,7 +37,7 @@
             </div>
         </button>
         <button
-            class="advancedFilterElement-btn-size"
+            class="advancedFilterElement-btn-small-to-large"
             data-action="orderBy"
             data-action-arg="size">
             <div>
@@ -46,7 +46,7 @@
             </div>
         </button>
         <button
-            class="advancedFilterElement-btn-size"
+            class="advancedFilterElement-btn-large-to-small"
             data-action="orderBy"
             data-action-arg="-size">
             <div>
@@ -55,7 +55,7 @@
             </div>
         </button>
         <button
-            class="advancedFilterElement-btn-date"
+            class="advancedFilterElement-btn-new-to-old"
             data-action="orderBy"
             data-action-arg="-date">
             <div>
@@ -64,7 +64,7 @@
             </div>
         </button>
         <button
-            class="advancedFilterElement-btn-date"
+            class="advancedFilterElement-btn-old-to-new"
             data-action="orderBy"
             data-action-arg="date">
             <div>
@@ -73,7 +73,7 @@
             </div>
         </button>
         <button
-            class="advancedFilterElement-btn-clearFilter"
+            class="advancedFilterElement-btn-show-all"
             data-action="clearFilter">
             <div>
                 <i class="fa fa-list"></i>
@@ -98,7 +98,7 @@
                 <span translate translate-context="Action">Show read</span>
             </div>
         </button>
-        <moved-button ng-if="
+        <moved-button class="advancedFilterElement-btn-moved" ng-if="
             ('secured.drafts.**' | includedByState) ||
             ('secured.allDrafts.**' | includedByState) ||
             ('secured.sent.**' | includedByState) ||
