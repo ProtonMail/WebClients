@@ -42,6 +42,8 @@
 }
 
 .navigation-icons i {
+    flex-grow: 1;
+    flex-shrink: 0;
     display: inline-block;
 
     &.fa-angle-down {
