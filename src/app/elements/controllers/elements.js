@@ -27,6 +27,7 @@ angular.module('proton.elements')
     paginationModel,
     settingsApi,
     AppModel,
+    markedScroll,
     tools
 ) => {
     const unsubscribes = [];
@@ -257,26 +258,6 @@ angular.module('proton.elements')
             });
         }
 
-        /**
-         * Scroll to the current marked conversation
-]        */
-        function scrollToConversationPos() {
-            const $convCols = document.getElementById('conversation-list-columns');
-
-            if ($convCols) {
-                const $marked = $convCols.querySelector('.conversation.marked');
-                const scrollTo = (cols, marked) => () => cols.scrollTop = marked.offsetTop - cols.offsetHeight / 2;
-                return ($marked && _rAF(scrollTo($convCols, $marked)));
-            }
-
-            const $convRows = document.getElementById('conversation-list-rows');
-            if ($convRows) {
-                const $marked = $convRows.querySelector('.conversation.marked');
-                const scrollTo = (rows, marked) => () => rows.scrollTop = marked.offsetTop - rows.offsetHeight / 2;
-                $marked && _rAF(scrollTo($convRows, $marked));
-            }
-        }
-
         $scope.$on('markPrevious', onElement(() => {
             if ($scope.conversations) {
                 const index = $scope.conversations.indexOf($scope.markedElement);
@@ -285,7 +266,7 @@ angular.module('proton.elements')
                     $scope.$applyAsync(() => {
                         $scope.markedElement = $scope.conversations[index - 1];
                     });
-                    return scrollToConversationPos();
+                    return markedScroll.follow(true);
                 }
 
                 goToPage('previous');
@@ -300,7 +281,7 @@ angular.module('proton.elements')
                     $scope.$applyAsync(() => {
                         $scope.markedElement = $scope.conversations[index + 1];
                     });
-                    return scrollToConversationPos();
+                    return markedScroll.follow();
                 }
 
                 goToPage('next');
@@ -319,6 +300,7 @@ angular.module('proton.elements')
             unsubscribes.forEach((callback) => callback());
             unsubscribes.length = 0;
             clearInterval(id);
+            markedScroll.clear();
         });
     };
 
