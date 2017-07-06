@@ -1,7 +1,7 @@
 angular.module('proton.search')
 .directive('wildcardCheckbox', ($rootScope, authentication, gettextCatalog) => {
     const I18N = {
-        info: gettextCatalog.getString('Automatically add wildcards to simple searches.', null, 'Label'),
+        info: gettextCatalog.getString('Do not require exact match', null, 'Label'),
         learn: gettextCatalog.getString('Learn more', null, 'Link')
     };
 
@@ -12,16 +12,11 @@ angular.module('proton.search')
         template: `
         <label class="wildcardCheckbox-container">
             <custom-checkbox data-custom-ng-model="wildcard" data-custom-ng-click="onClick()"></custom-checkbox>
-            <span class="wildcardCheckbox-info"></span>
-            <a href="https://protonmail.com/support/knowledge-base/search/" target="_blank" class="wildcardCheckbox-link pm_button link"></a>
+            <span class="wildcardCheckbox-info">${I18N.info}</span>
+            <a href="https://protonmail.com/support/knowledge-base/search/" target="_blank" class="wildcardCheckbox-link pm_button link">${I18N.learn}</a>
         </label>
         `,
-        link(scope, element) {
-            const $info = element.find('.wildcardCheckbox-info');
-            const $link = element.find('.wildcardCheckbox-link');
-
-            $info.text(I18N.info);
-            $link.text(I18N.learn);
+        link(scope) {
             scope.wildcard = Boolean(authentication.user.AutoWildcardSearch);
             scope.onClick = () => $rootScope.$emit('settings', { type: 'autowildcard.update', data: { AutoWildcardSearch: (scope.wildcard ? 1 : 0) } });
         }
