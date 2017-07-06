@@ -162,21 +162,20 @@
 
         <div class="row pm_grid">
             <section class="pm_form col-1-2">
-                <header-block class="settingsAccount-header-search">
+                <header-block class="settingsAccount-header-language">
                     <h2
-                    class="settingsAccount-title-search"
-                    translate
-                    translate-comment="Section heading"
-                    translate-context="Title">Search</h2>
+                        class="settingsAccount-title-language"
+                        translate
+                        translate-context="Title">Language</h2>
                 </header-block>
-                <wildcard-checkbox></wildcard-checkbox>
+                <label for="selectDefaultLanguage"  translate translate-comment="form option">Choose your default language.</label>
+                <span class="pm_select">
+                    <select id="selectDefaultLanguage" ng-model="locale" ng-options="locale.label for locale in locales" ng-change="saveDefaultLanguage()"></select>
+                    <i class="fa fa-angle-down"></i>
+                </span>
             </section>
-        </div>
-
-        <div class="row pm_grid">
 
             <section class="pm_form col-1-2">
-
                 <header-block class="settingsAccount-header-contacts">
                     <h2
                         class="settingsAccount-title-contacts"
@@ -184,7 +183,6 @@
                         translate-comment="Section heading"
                         translate-context="Title">Automatically save contacts</h2>
                 </header-block>
-
                 <div class="clearfix">
                     <div class="col-3-8">
                         <label translate-context="Title" translate-comment="Settings/Account page form heading for enabling or disabling autosave contacts" translate>Automatically save contacts</label>
@@ -208,7 +206,9 @@
                     </div>
                 </div>
             </section>
+        </div><!--/.row-->
 
+        <div class="row pm_grid">
             <section class="pm_form col-1-2">
                 <header-block class="settingsAccount-header-email">
                     <h2
@@ -259,22 +259,6 @@
                     </div>
                 </div>
             </section>
-
-        </div><!--/.row-->
-
-
-        <div class="row pm_grid">
-            <section class="pm_form col-1-2" ng-if="!isMember">
-
-                <header-block class="settingsAccount-header-delete">
-                    <h2
-                        class="settingsAccount-title-delete"
-                        translate
-                        translate-context="Title">Delete Account</h2>
-                </header-block>
-
-                <button class="pm_button error" ng-click="deleteAccount()" translate-context="Action" translate>Delete your account</button>
-            </section>
             <section class="pm_form col-1-2">
                 <header-block class="settingsAccount-header-keyboard">
                     <h2
@@ -309,7 +293,29 @@
                     </div>
                 </div>
             </section>
-        </div>
+        </div><!--/.row-->
+
+        <div class="row pm_grid">
+            <section class="pm_form col-1-2" ng-if="!isMember">
+                <header-block class="settingsAccount-header-delete">
+                    <h2
+                        class="settingsAccount-title-delete"
+                        translate
+                        translate-context="Title">Delete Account</h2>
+                </header-block>
+                <button class="pm_button error" ng-click="deleteAccount()" translate-context="Action" translate>Delete your account</button>
+            </section>
+            <section class="pm_form col-1-2">
+                <header-block class="settingsAccount-header-search">
+                    <h2
+                    class="settingsAccount-title-search"
+                    translate
+                    translate-comment="Section heading"
+                    translate-context="Title">Search</h2>
+                </header-block>
+                <wildcard-checkbox></wildcard-checkbox>
+            </section>
+        </div><!--/.row-->
 
         <div class="row pm_grid">
             <section class="pm_form col-1-2" ng-if="!isMember">
@@ -340,19 +346,6 @@
                     <span translate-context="Label" translate>Proton Beta (~ 10-12 per year)</span>
                 </label>
             </section>
-            <section class="pm_form col-1-2">
-                <header-block class="settingsAccount-header-language">
-                    <h2
-                        class="settingsAccount-title-language"
-                        translate
-                        translate-context="Title">Language</h2>
-                </header-block>
-                <label for="selectDefaultLanguage"  translate translate-comment="form option">Choose your default language.</label>
-                <span class="pm_select">
-                    <select id="selectDefaultLanguage" ng-model="locale" ng-options="locale.label for locale in locales" ng-change="saveDefaultLanguage()"></select>
-                    <i class="fa fa-angle-down"></i>
-                </span>
-            </section>
-        </div>
+        </div><!--/.row-->
     </div>
 </div>

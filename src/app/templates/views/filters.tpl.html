@@ -15,7 +15,6 @@
                 <div class="settingsFilters-actions">
                     <section class="settingsFilters-actions-buttons">
                         <button class="pm_button primary" translate translate-context="Action" ng-click="addCustomFilter()">Add Filter</button>
-                        <button class="pm_button" translate translate-context="Action" ng-click="clearCustomFilters()">Clear All</button>
                     </section>
                     <section class="settingsFilters-actions-notice help-dnd" ng-if="customFilters.length > 0" translate-context="Help" translate>You can drag and drop custom filter to order them.</section>
                 </div>
@@ -37,6 +36,8 @@
                     </ul>
                 </div>
             </div>
+        </div>
+        <div class="row">
             <div class="setting pm_form full">
                 <header-block class="settingsLabels-header-spam">
                     <h2
