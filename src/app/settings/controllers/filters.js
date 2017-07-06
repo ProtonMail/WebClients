@@ -123,35 +123,6 @@ angular.module('proton.settings')
         }
     };
 
-    $scope.clearCustomFilters = () => {
-        const title = gettextCatalog.getString('Clear All', null, 'Title');
-        const message = gettextCatalog.getString('Are you sure you want to clear all custom filters?', null, 'Info');
-
-        confirmModal.activate({
-            params: {
-                title,
-                message,
-                confirm() {
-                    networkActivityTracker.track(
-                        Filter.clear()
-                        .then((result) => {
-                            if (result.data && result.data.Code === 1000) {
-                                $scope.customFilters = [];
-                                confirmModal.deactivate();
-                                notify({ message: gettextCatalog.getString('Custom filters cleared', null, 'Info'), classes: 'notification-success' });
-                            } else if (result.data && result.data.Error) {
-                                notify({ message: result.data.Error, classes: 'notification-danger' });
-                            }
-                        })
-                    );
-                },
-                cancel() {
-                    confirmModal.deactivate();
-                }
-            }
-        });
-    };
-
     $scope.editCustomFilter = (filter) => {
         filterModal.activate({
             params: {

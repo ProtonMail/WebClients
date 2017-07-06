@@ -12,6 +12,7 @@
     .advancedFilterElement-btn-trash { display: inline-block !important }
 }
 
+[class*="advancedFilterElement-btn"] { overflow: hidden }
 
 [class*="advancedFilterElement-btn"] > div {
     width: 100%;
