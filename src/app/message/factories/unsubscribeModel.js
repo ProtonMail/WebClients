@@ -1,5 +1,5 @@
 angular.module('proton.message')
-    .factory('unsubscribeModel', ($location, $rootScope, authentication, gettextCatalog, messageModel, notify, simpleSend) => {
+    .factory('unsubscribeModel', ($rootScope, authentication, gettextCatalog, messageModel, notify, parseUrl, simpleSend) => {
         const LIST = [];
         const UNSUBSCRIBE_REGEX = /<(.*?)>/g;
         const openTab = (url = '') => window.open(url, '_blank');
@@ -22,7 +22,7 @@ angular.module('proton.message')
             }
 
             const to = mailto.substring(0, j);
-            const params = $location.search(mailto.substring(j + 1)).search();
+            const { searchObject = {} } = parseUrl(mailto.substring(j + 1));
 
             message.From = authentication.user.Addresses[0];
             message.Password = '';
@@ -31,12 +31,12 @@ angular.module('proton.message')
                 message.ToList = to.split(',').map((email) => ({ Address: email, Name: email }));
             }
 
-            if (params.subject) {
-                message.Subject = params.subject;
+            if (searchObject.subject) {
+                message.Subject = searchObject.subject;
             }
 
-            if (params.body) {
-                message.setDecryptedBody(params.body);
+            if (searchObject.body) {
+                message.setDecryptedBody(searchObject.body);
             }
 
             return simpleSend(message)
@@ -53,7 +53,7 @@ angular.module('proton.message')
             });
 
             _.each(matches, (value = '') => {
-                value.startsWith('mailto') && sendMessage(value);
+                value.startsWith('mailto:') && sendMessage(value);
                 value.startsWith('http') && openTab(value);
             });
 
