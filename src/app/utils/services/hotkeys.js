@@ -36,6 +36,7 @@ angular.module('proton.utils')
     const goToTrash = action(redirect('secured.trash'));
 
     const composer = action(emit('composer.new', { message: messageModel(), type: 'new' }));
+    const composerSave = action(emit('composer.update', { type: 'key.autosave' }));
     const reply = action(emit('replyConversation'));
     const replyAll = action(emit('replyAllConversation'));
     const forward = action(emit('forwardConversation'));
@@ -61,6 +62,7 @@ angular.module('proton.utils')
 
     const keys = [
         { keyboard: 'c', callback: composer },
+        { keyboard: 'meta+s', callback: composerSave },
         { keyboard: 'shift+r', callback: reply },
         { keyboard: 'shift+a', callback: replyAll },
         { keyboard: 'shift+f', callback: forward },
