@@ -1,5 +1,5 @@
 angular.module('proton.message')
-    .directive('unsubscribePanel', ($rootScope, $timeout, gettextCatalog) => {
+    .directive('unsubscribePanel', ($rootScope, gettextCatalog) => {
         const I18N = {
             notice: gettextCatalog.getString('This message is from a mailing list.', null, 'Info'),
             kb: gettextCatalog.getString('Learn more', null, 'Info'),
@@ -15,14 +15,12 @@ angular.module('proton.message')
                         <span class="unsubscribePanel-notice-text">${I18N.notice}</span>
                         <a class="unsubscribePanel-notice-link" href="https://protonmail.com/support/knowledge-base/auto-unsubscribe" target="_blank">${I18N.kb}</a>
                     </div>
-                    <button class="unsubscribePanel-button pm_button">${I18N.button}</button>
+                    <button type="button" class="unsubscribePanel-button pm_button">${I18N.button}</button>
                 </div>
             `,
             link(scope, element) {
                 const $button = element.find('.unsubscribePanel-button');
-                const onClick = () => {
-                    $rootScope.$emit('message', { type: 'unsubscribe', data: { message: scope.message } });
-                };
+                const onClick = () => $rootScope.$emit('message', { type: 'unsubscribe', data: { message: scope.message } });
 
                 $button.on('click', onClick);
                 scope.$on('$destroy', () => $button.off('click', onClick));
