@@ -1,5 +1,5 @@
 angular.module('proton.message')
-.directive('mailTo', ($rootScope, $location, regexEmail, messageModel, authentication) => ({
+.directive('mailTo', ($rootScope, regexEmail, messageModel, parseUrl, authentication) => ({
     restrict: 'A',
     link(scope, element) {
         function toAddresses(emails) {
@@ -32,7 +32,7 @@ angular.module('proton.message')
             }
 
             const to = mailto.substring(0, j);
-            const params = $location.search(mailto.substring(j + 1)).search();
+            const { searchObject = {} } = parseUrl(mailto.substring(j + 1));
             const message = messageModel();
 
             message.From = _.findWhere(authentication.user.Addresses, { ID: scope.message.AddressID });
@@ -41,20 +41,20 @@ angular.module('proton.message')
                 message.ToList = toAddresses(to.split(','));
             }
 
-            if (params.subject) {
-                message.Subject = params.subject;
+            if (searchObject.subject) {
+                message.Subject = searchObject.subject;
             }
 
-            if (params.cc) {
-                message.CCList = toAddresses(params.cc.split(','));
+            if (searchObject.cc) {
+                message.CCList = toAddresses(searchObject.cc.split(','));
             }
 
-            if (params.bcc) {
-                message.BCCList = toAddresses(params.bcc.split(','));
+            if (searchObject.bcc) {
+                message.BCCList = toAddresses(searchObject.bcc.split(','));
             }
 
-            if (params.body) {
-                message.DecryptedBody = params.body;
+            if (searchObject.body) {
+                message.DecryptedBody = searchObject.body;
             }
 
             $rootScope.$emit('composer.new', { message, type: 'new' });
