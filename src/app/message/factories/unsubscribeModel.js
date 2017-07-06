@@ -45,12 +45,8 @@ angular.module('proton.message')
 
 
         function unsubscribe(message = {}) {
-            const matches = [];
             const list = message.getListUnsubscribe();
-
-            list.replace(UNSUBSCRIBE_REGEX, (...args) => {
-                matches.push(args[1]);
-            });
+            const matches = (list.match(UNSUBSCRIBE_REGEX) || []).map((m) => m.replace('<', '').replace('>', ''));
 
             _.each(matches, (value = '') => {
                 value.startsWith('mailto:') && sendMessage(value);
