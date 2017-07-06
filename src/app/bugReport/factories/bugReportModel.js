@@ -5,17 +5,27 @@ angular.module('proton.bugReport')
             (type === 'new') && open();
         });
 
+        const takeScreenshot = ({ attachScreenshot }) => {
+            if (attachScreenshot) {
+                return bugReportApi.takeScreenshot();
+            }
+            return Promise.resolve();
+        };
+
         /**
          * Generate the configuration for the modal
          * @param  {String} screenshot screenshot of the page
          * @return {Object}
          */
-        const getModalParam = (screenshot) => ({
+        const getModalParam = () => ({
             params: {
                 form: bugReportApi.getForm(),
-                submit(form) {
-                    bugReportApi.report(form, screenshot)
-                        .then(bugModal.deactivate);
+                submit(data) {
+                    const form = angular.copy(data);
+
+                    bugModal.deactivate();
+                    takeScreenshot(form)
+                        .then((screenshot) => bugReportApi.report(form, screenshot));
                 },
                 cancel() {
                     bugModal.deactivate();
@@ -28,10 +38,7 @@ angular.module('proton.bugReport')
          * @return {void}
          */
         function open() {
-            bugReportApi.takeScreenshot()
-                .then((screenshot) => {
-                    bugModal.activate(getModalParam(screenshot));
-                });
+            bugModal.activate(getModalParam());
         }
 
         return { init: angular.noop };
