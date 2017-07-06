@@ -57,6 +57,7 @@ angular.module('proton.composer')
                 return gettextCatalog.getString('By leaving now, you will lose what you have written in this email. You can save a draft if you want to come back to it later on.', null);
             };
             hotkeys.unbind(); // Disable hotkeys
+            hotkeys.bind(['meta+s']);
         } else {
             AppModel.set('activeComposer', false);
             window.onbeforeunload = undefined;
@@ -150,6 +151,14 @@ angular.module('proton.composer')
 
     unsubscribe.push($rootScope.$on('composer.update', (e, { type, data }) => {
         switch (type) {
+
+            case 'key.autosave':
+                $scope.$applyAsync(() => {
+                    recordMessage(_.find($scope.messages, { focussed: true }), {
+                        autosaving: true
+                    });
+                });
+                break;
 
             case 'editor.focus': {
                 const { message, isMessage } = data;

@@ -133,9 +133,19 @@ angular.module('proton.squire')
                 });
             }, CONSTANTS.SAVE_TIMEOUT_TIME);
 
+            // proxy for autosave as Mousetrap doesn't work with iframe
+            const onKeyDown = (e) => {
+                if ((e.ctrlKey || e.metaKey) && e.keyCode === 83) {
+                    e.preventDefault();
+                    Mousetrap.trigger('meta+s');
+                }
+            };
+
             editor.addEventListener('input', onInput);
             editor.addEventListener('blur', onBlur);
             editor.addEventListener('focus', onFocus);
+            // eslint-disable-next-line no-underscore-dangle
+            editor._doc.addEventListener('keydown', onKeyDown);
 
             return () => {
                 editor.removeEventListener('input', onInput);
