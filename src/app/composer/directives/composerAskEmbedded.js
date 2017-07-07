@@ -1,8 +1,10 @@
 angular.module('proton.composer')
-    .directive('composerAskEmbedded', ($rootScope) => {
+    .directive('composerAskEmbedded', ($rootScope, gettextCatalog) => {
 
-
-        const buildTitle = (node, pending) => node.textContent = `${pending} images detected`;
+        const buildTitle = (node, pending) => {
+            const counterTranslateKey = gettextCatalog.getPlural(pending, 'image detected', 'images detected', null);
+            node.textContent = `${pending} ${counterTranslateKey}`;
+        };
 
         return {
             replace: true,
@@ -17,10 +19,9 @@ angular.module('proton.composer')
                 const unsubscribe = $rootScope.$on(key, (e, { type, data }) => {
                     if (type === 'drop') {
                         // Compute how many upload do we have and render it
-                        buildTitle($title, data.queue.files.length);
+                        buildTitle($title, data.queue.files.filter(({ isEmbedded }) => isEmbedded).length);
                     }
                 });
-
 
                 /**
                  * Trigger an action onclick
