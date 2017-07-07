@@ -196,34 +196,6 @@ body#eo-reply {
 		padding-left: 35px;
 		padding-right: 35px;
 	}
-	.display-image,
-	.display-embedded {
-	    margin: 0px 0px -1rem 10px;
-	    line-height: 35px;
-	    height: auto;
-	    width: auto;
-	    background: $white;
-	    box-sizing: initial;
-	    text-transform: uppercase;
-		border: 1px solid $border;
-        border-radius: 2px;
-        border-bottom-right-radius: 0;
-        border-bottom-left-radius: 0;
-        border-bottom: 0;
-	    -webkit-transition: padding .1s ease;
-	       -moz-transition: padding .1s ease;
-	        -ms-transition: padding .1s ease;
-	         -o-transition: padding .1s ease;
-	            transition: padding .1s ease;
-		text-decoration: none;
-        color: $primary;
-        &:focus {
-            background: $white;
-        }
-        &:hover {
-			text-decoration: underline;
-	    }
-	}
 	.message-metadata {
 		margin-bottom: 0;
 		padding-bottom: 1rem;

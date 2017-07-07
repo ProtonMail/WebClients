@@ -1,9 +1,9 @@
 angular.module('proton.message')
 .directive('displayContentBtn', ($rootScope, gettextCatalog) => {
 
-    const LABELS = {
-        embedded: gettextCatalog.getString('Load embedded images', null, 'Action'),
-        remote: gettextCatalog.getString('Load remote content', null, 'Action')
+    const NOTICES = {
+        embedded: gettextCatalog.getString('This message contain embedded images', null, 'Action'),
+        remote: gettextCatalog.getString('This message contain remote content', null, 'Action')
     };
 
     const getClassName = (name) => `displayContentBtn-type-${name}`;
@@ -12,8 +12,9 @@ angular.module('proton.message')
         replace: true,
         templateUrl: 'templates/message/displayContentBtn.tpl.html',
         link(scope, el, { action = 'remote' }) {
-            const $label = el[0].querySelector('.displayContentBtn-label');
-            $label.textContent = LABELS[action];
+            const $notice = el[0].querySelector('.displayContentBtn-notice-text');
+            const $btn = el.find('.displayContentBtn-button');
+            $notice.textContent = NOTICES[action];
 
             const onClick = () => {
                 $rootScope.$emit('message.open', {
@@ -26,10 +27,10 @@ angular.module('proton.message')
                 el[0].classList.remove(getClassName(action));
             };
 
-            el.on('click', onClick);
+            $btn.on('click', onClick);
 
             scope.$on('$destroy', () => {
-                el.off('click', onClick);
+                $btn.off('click', onClick);
             });
         }
     };

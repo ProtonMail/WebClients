@@ -9,7 +9,6 @@ angular.module('proton.message')
     return {
         replace: true,
         template: `<div class="messageSpamScore-container">
-                        <i class="messageSpamScore-icon fa fa-ban"></i>
                         <span class="messageSpamScore-notice"></span>
                     </div>`,
         link(scope, el, { score }) {
