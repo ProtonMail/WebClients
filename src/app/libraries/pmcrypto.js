@@ -639,11 +639,10 @@ const pmcrypto = (function pmcrypto() {
                 return reject(new Error('No data packets found'));
             }
 
-            const obj = {
+            resolve({
                 keys: nonData.write(),
                 data: data.write()
-            };
-            resolve(obj);
+            });
         });
     }
 

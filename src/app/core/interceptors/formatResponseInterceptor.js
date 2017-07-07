@@ -1,6 +1,5 @@
 angular.module('proton.core')
 .factory('formatResponseInterceptor', ($q) => {
-
     return {
         responseError(rejection) {
             // Prevent null response coming from Enkular

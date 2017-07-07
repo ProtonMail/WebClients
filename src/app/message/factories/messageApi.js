@@ -8,7 +8,9 @@ angular.module('proton.message')
          * @return {Promise}
          */
         send(params = {}) {
-            return $http.post(requestURL('send', params.id), params);
+            return $http.post(requestURL('send', params.id), params, {
+                headers: { 'x-pm-apiversion': 3 }
+            });
         },
         /**
          * Create a new draft message
