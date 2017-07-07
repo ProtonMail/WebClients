@@ -135,10 +135,11 @@ angular.module('proton.message')
         encryptBody(pubKey) {
             const privKey = authentication.getPrivateKeys(this.From.ID);
             return pmcw.encryptMessage(this.getDecryptedBody(), pubKey, [], privKey)
-                .catch((error) => {
-                    error.message = gettextCatalog.getString('Error encrypting message');
-                    throw error;
-                });
+            .then((body) => (this.Body = body, body))
+            .catch((error) => {
+                error.message = gettextCatalog.getString('Error encrypting message');
+                throw error;
+            });
         }
 
         parse(content = '') {
@@ -209,54 +210,50 @@ angular.module('proton.message')
                 });
         }
 
-        encryptPackets(keys = '', passwords = '') {
-            const keysPackets = keys !== '' ? keys : [];
-            const passwordsPackets = passwords !== '' ? passwords : [];
+        encryptAttachmentKeyPackets(publicKeys = [], passwords = []) {
+            const packets = {};
 
-            const promises = this.Attachments.map((attachment) => {
-                return AttachmentLoader.getSessionKey(this, attachment)
+            return Promise.all(
+                this.Attachments.map((attachment) => {
+                    return AttachmentLoader.getSessionKey(this, attachment)
                     .then(({ sessionKey = {}, AttachmentID, ID } = {}) => {
-                        // Update the ref
-                        attachment.sessionKey = sessionKey;
+                        attachment.sessionKey = sessionKey; // Update the ref
                         const { key, algo } = sessionKey;
-                        return pmcw.encryptSessionKey(key, algo, keysPackets, passwordsPackets)
-                            .then((keyPacket) => ({
-                                ID: AttachmentID || ID,
-                                KeyPackets: pmcw.encode_base64(pmcw.arrayToBinaryString(keyPacket))
-                            }));
+                        return pmcw.encryptSessionKey(key, algo, publicKeys, passwords)
+                        .then((keyPacket) => {
+                            packets[AttachmentID || ID] = pmcw.encode_base64(pmcw.arrayToBinaryString(keyPacket));
+                        });
                     });
-            });
-
-            return Promise.all(promises);
+                })
+            )
+            .then(() => packets);
         }
 
-        clearPackets() {
-            const packets = [];
-            const promises = [];
-            const keys = authentication.getPrivateKeys(this.AddressID);
+        cleartextAttachmentKeyPackets() {
+            const packets = {};
 
-            _.each(this.Attachments, (element) => {
-                if (element.sessionKey === undefined) {
-                    const keyPackets = pmcw.binaryStringToArray(pmcw.decode_base64(element.KeyPackets));
+            return Promise.all(
+                this.Attachments.map((attachment) => {
+                    return AttachmentLoader.getSessionKey(this, attachment)
+                    .then(({ sessionKey = {}, AttachmentID, ID } = {}) => {
+                        attachment.sessionKey = sessionKey; // Update the ref
+                        packets[AttachmentID || ID] = pmcw.encode_base64(pmcw.arrayToBinaryString(sessionKey.key));
+                    });
+                })
+            )
+            .then(() => packets);
+        }
 
-                    promises.push(pmcw.decryptSessionKey(keyPackets, keys).then((key) => {
-                        element.sessionKey = key;
-                        packets.push({
-                            ID: element.ID,
-                            Key: pmcw.encode_base64(pmcw.arrayToBinaryString(element.sessionKey.key)),
-                            Algo: element.sessionKey.algo
-                        });
-                    }));
-                } else {
-                    promises.push(packets.push({
-                        ID: element.AttachmentID || element.ID,
-                        Key: pmcw.encode_base64(pmcw.arrayToBinaryString(element.sessionKey.key)),
-                        Algo: element.sessionKey.algo
-                    }));
-                }
+        cleartextBodyPackets() {
+            const privateKeys = authentication.getPrivateKeys(this.AddressID);
+
+            return pmcw.splitFile(this.Body)
+            .then(({ keys, data }) => {
+                const dataPacket = pmcw.encode_base64(pmcw.arrayToBinaryString(data));
+
+                return pmcw.decryptSessionKey(keys, privateKeys)
+                .then((sessionKey) => ({ sessionKey, dataPacket }));
             });
-
-            return $q.all(promises).then(() => packets);
         }
 
         emailsToString() {

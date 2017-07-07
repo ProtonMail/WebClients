@@ -26,7 +26,8 @@ angular.module('proton.composer')
     pmcw,
     tools,
     AppModel,
-    ComposerRequestStatus
+    ComposerRequestStatus,
+    srp
 ) => {
 
     const unsubscribe = [];
@@ -561,7 +562,6 @@ angular.module('proton.composer')
         }
 
         parameters.Message.AddressID = message.AddressID;
-        parameters.Message.Packages = [];
 
         // Encrypt message body with the first public key for the From address
         composerRequestModel.chain(message)
@@ -576,14 +576,7 @@ angular.module('proton.composer')
             });
         })
         .then((body) => (message.setDecryptedBody(body), message))
-        .then(() => {
-            if (autosaving && message.Attachments.length && message.Attachments.every(({ uploading }) => uploading !== true)) {
-                return encryptUserBody(message, deferred, parameters.Message.Packages)
-                    .insideUser(message.From.Keys[0].PublicKey, message.From.Email);
-            }
-
-            return message.encryptBody(message.From.Keys[0].PublicKey);
-        })
+        .then(() => message.encryptBody(message.From.Keys[0].PublicKey))
         .then((result) => {
             // Set encrypted body
             parameters.Message.Body = result;
@@ -743,117 +736,156 @@ angular.module('proton.composer')
         $rootScope.$emit('actionMessage', message);
     }
 
-    function encryptUserBody(message, deferred, Packages) {
-        const insideUser = (key, Address) => {
-            return Promise.all([message.encryptBody(key), message.encryptPackets(key)])
-                .then(([Body, KeyPackets]) => (Packages.push({ Address, Type: 1, Body, KeyPackets }), Body))
-                .catch(deferred.reject);
-        };
+    // Encrypt a message, given a list of emails and their public keys.
+    // Returns an object containing a cleartext field set to true if the
+    // message is sent unencrypted to some recipients, and an encrypt function
+    // that encrypts the message and returns a list of package sets.
+    function encryptFromPublicKeys(message, emails, publicKeys) {
+        // First get the body's session key and data packet
+        return message.cleartextBodyPackets()
+        .then(({ sessionKey, dataPacket }) => {
+            // Encrypt the body's session key.
+            function encryptBodyKeyPacket(publicKeys = [], passwords = []) {
+                return pmcw.encryptSessionKey(sessionKey.key, sessionKey.algo, publicKeys, passwords)
+                .then((keyPacket) => pmcw.encode_base64(pmcw.arrayToBinaryString(keyPacket)));
+            }
 
-        const outsideUser = (Token, Address) => {
+            // Return the cleartext body session key.
+            function cleartextBodyKeyPacket() {
+                return Promise.resolve(
+                    pmcw.encode_base64(pmcw.arrayToBinaryString(sessionKey.key))
+                );
+            }
 
-            return Promise.all([
-                pmcw.encryptMessage(Token, [], message.Password),
-                pmcw.encryptMessage(message.getDecryptedBody(), [], message.Password),
-                message.encryptPackets('', message.Password)
-            ])
-            .then(([EncToken, Body, KeyPackets]) => {
-                return Packages.push({
-                    Type: 2,
-                    PasswordHint: message.PasswordHint,
-                    Address, Token, Body, KeyPackets, EncToken
+            // Encrypt for a ProtonMail user.
+            function insideUser(publicKey) {
+                return Promise.all([
+                    encryptBodyKeyPacket(publicKey),
+                    message.encryptAttachmentKeyPackets(publicKey)
+                ])
+                .then(([BodyKeyPacket, AttachmentKeyPackets]) => {
+                    return { Type: 1, BodyKeyPacket, AttachmentKeyPackets };
                 });
-            })
-            .catch((error) => {
-                message.encrypting = false;
-                dispatchMessageAction(message);
-                $log.error(error);
-            });
-        };
+            }
 
+            // Encrypt for outside (EO).
+            function encryptedOutsideUser(Token) {
+                // TODO: SRP support
 
-        const getPromises = (emails, keys = {}) => {
-
-            let outsiders = false;
-            // We remove duplicatas
-            const promises = _.chain(emails)
-                .uniq()
-                .reduce((acc, email) => {
-                    // Inside user
-                    if (keys[email] && keys[email].length > 0) {
-                        // Encrypt content body in with the public key user
-                        acc.push(insideUser(keys[email], email));
-                        return acc;
-                    }
-                    // Outside user
-                    outsiders = true;
-
-                    if (message.IsEncrypted === 1) {
-                        acc.push(outsideUser(message.generateReplyToken(), email));
-                    }
-
-                    return acc;
-                }, [])
-                .value();
-
-            return { outsiders, promises };
-        };
-
-        return { getPromises, insideUser };
-    }
-
-    function encryptBodyFromEmails(message, emails, parameters, deferred) {
-
-        // Wrap the promise to isolate its chaining
-        return new Promise((resolve, reject) => {
-            message.getPublicKeys(emails)
-                .then(({ data = {} } = {}) => {
-
-                    if (data.Code !== ComposerRequestStatus.SUCCESS) {
-                        message.encrypting = false;
-                        dispatchMessageAction(message);
-                        const error = new Error('Error during get public keys user request');
-                        deferred.reject(error);
-                        return reject(error);
-                    }
-
-                    const keys = data; // Save result in keys variables
-                    parameters.Packages = [];
-
-                    const encryptingBody = encryptUserBody(message, deferred, parameters.Packages)
-                        .getPromises(emails, keys);
-
-                    const outsiders = encryptingBody.outsiders; // Initialize to false a Boolean variable to know if there are outsiders email in recipients list
-
-                    // The message won't keep the ref
-                    outsidersMap[message.ID] = outsiders;
-
-                    const promises = encryptingBody.promises;
-
-                    // If there are some outsiders
-                    if (outsiders === true && message.Password.length === 0) {
-                        parameters.AttachmentKeys = [];
-                        parameters.ClearBody = message.getDecryptedBody(); // Add a clear body in parameter
-
-                        if (message.Attachments.length > 0) {
-                            // Add clear attachments packet in parameter
-                            promises.push(
-                                message.clearPackets()
-                                    .then((packets) => parameters.AttachmentKeys = packets)
-                                    .catch(deferred.reject)
-                            );
-                        }
-                    }
-
-                    resolve({ outsiders, promises });
+                // Encrypt the token, the body session key and each attachment's
+                // session key.
+                return Promise.all([
+                    pmcw.encryptMessage(Token, [], message.Password),
+                    encryptBodyKeyPacket(undefined, message.Password),
+                    message.encryptAttachmentKeyPackets(undefined, message.Password),
+                    srp.randomVerifier(message.Password)
+                ])
+                .then(([EncToken, BodyKeyPacket, AttachmentKeyPackets, verifier]) => {
+                    return {
+                        Type: 2,
+                        PasswordHint: message.PasswordHint,
+                        Auth: verifier.Auth,
+                        Token, EncToken,
+                        BodyKeyPacket, AttachmentKeyPackets
+                    };
                 })
-                .catch((error) => {
+                .catch((err) => {
                     message.encrypting = false;
                     dispatchMessageAction(message);
-                    error.message = 'Error getting the public key';
-                    deferred.reject(error);
-                    reject(error);
+                    console.error(err);
+                    throw err;
                 });
+            }
+
+            // Unencrypted for outside.
+            function cleartextUser() {
+                // TODO: Signature
+                return Promise.resolve({
+                    Type: 4,
+                    Signature: 0
+                });
+            }
+
+            // Build a package set for the message.
+            // TODO: PGP/MIME packages will need to be added to another package
+            // set, but is not yet implemented.
+            const packageSet = {
+                Type: 0,
+                Addresses: {},
+                MIMEType: 'text/html',
+                Body: dataPacket
+            };
+
+            let cleartext = false;
+
+            // Process each recipient
+            const promises = emails.map((email) => {
+                let promise;
+                if (publicKeys[email] && publicKeys[email].length > 0) {
+                    // Inside user
+                    promise = insideUser(publicKeys[email]);
+                } else if (message.IsEncrypted === 1) {
+                    // Encrypted for outside (EO)
+                    promise = encryptedOutsideUser(message.generateReplyToken());
+                } else {
+                    // Cleartext for outside
+                    cleartext = true;
+                    promise = cleartextUser();
+                }
+
+                return promise.then((pkg) => {
+                    packageSet.Addresses[email] = pkg;
+                    packageSet.Type |= pkg.Type;
+                });
+            });
+
+            if (cleartext) {
+                // Add cleartext body & attachments keys only if necessary
+                promises.push(
+                    Promise.all([
+                        cleartextBodyKeyPacket(),
+                        message.cleartextAttachmentKeyPackets()
+                    ])
+                    .then(([bodyKey, attachmentKeys]) => {
+                        packageSet.BodyKey = bodyKey;
+                        packageSet.AttachmentKeys = attachmentKeys;
+                    })
+                );
+            }
+
+            // The message won't keep the ref
+            outsidersMap[message.ID] = cleartext;
+
+            return {
+                cleartext,
+                encrypt() {
+                    return Promise.all(promises)
+                    .then(() => [packageSet]);
+                }
+            };
+        });
+    }
+
+    // Encrypt a message given a list of recipients. This function has the same
+    // return value as encryptFromPublicKeys.
+    function encryptFromEmails(message, emails) {
+        // Remove duplicates
+        const uniqueEmails = _.chain(emails).uniq().value();
+
+        return message.getPublicKeys(uniqueEmails)
+        .then(({ data = {} }) => {
+            if (data.Code !== ComposerRequestStatus.SUCCESS) {
+                throw new Error(data.Error || 'Cannot get public keys');
+            }
+
+            const publicKeys = data;
+            return encryptFromPublicKeys(message, uniqueEmails, publicKeys);
+        })
+        .catch((err) => {
+            console.log('Cannot encrypt message', err);
+            message.encrypting = false;
+            dispatchMessageAction(message);
+            throw err;
         });
     }
 
@@ -872,10 +904,9 @@ angular.module('proton.composer')
 
         dispatchMessageAction(message);
 
-        const deferred = $q.defer();
         const parameters = {};
 
-        $scope.validate(message)
+        const promise = $scope.validate(message)
         .then(() => checkSubject(message))
         .then(() => extractDataURI(message))
         .then(() => recordMessage(message))
@@ -887,38 +918,27 @@ angular.module('proton.composer')
             parameters.ExpirationTime = message.ExpirationTime;
             return message.emailsToString();
         })
-        .then((emails) => encryptBodyFromEmails(message, emails, parameters, deferred))
-        .then(({ promises = [], outsiders }) => {
-            // When all promises are complete
-            $q.all(promises).then(() => {
-                if (outsiders === true && message.Password.length === 0 && message.ExpirationTime) {
-                    $log.error(message);
-                    message.encrypting = false;
-                    setStateSending(false);
-                    dispatchMessageAction(message);
+        .then((emails) => encryptFromEmails(message, emails))
+        .then(({ encrypt, cleartext }) => {
+            if (cleartext === true && message.Password.length === 0 && message.ExpirationTime) {
+                // Reject the error => to see the notification, and break the sending process
+                throw new Error('Expiring emails to non-ProtonMail recipients require a message password to be set. For more information, <a href="https://protonmail.com/support/knowledge-base/expiration/" target="_blank">click here</a>.');
+            }
 
-                    // Reject the error => to see the notification, and break the sending process
-                    const error = new Error('Expiring emails to non-ProtonMail recipients require a message password to be set. For more information, <a href="https://protonmail.com/support/knowledge-base/expiration/" target="_blank">click here</a>.');
-                    deferred.reject(error);
-                    throw error;
-                }
+            return encrypt().then((packages) => {
+                parameters.Packages = packages;
 
                 message.encrypting = false;
                 dispatchMessageAction(message);
                 return messageApi.send(parameters);
             })
-            .then(({ data = {} } = {}) => {
-                const { ErrorDescription, Code } = data;
-                // Check if there is an error coming from the server, then reject the process
-                if (data.Error) {
-                    const msg = ErrorDescription ? `${data.Error}: ${ErrorDescription}` : data.Error;
-                    const error = new Error(msg);
-                    error.code = Code;
-                    throw error;
-                }
-                return data;
+            .catch(({ data = {} }) => {
+                // Check if there is an error coming from the server
+                const err = new Error(data.ErrorDescription || data.Error || 'Cannot send message');
+                err.code = data.Code;
+                throw err;
             })
-            .then((data = {}) => {
+            .then(({ data }) => {
                 const { Parent, Sent = {} } = data;
                 const events = [];
                 const conversation = cache.getConversationCached(Sent.ConversationID);
@@ -960,31 +980,23 @@ angular.module('proton.composer')
                         }
                     });
                 }, 500, false);
-                deferred.resolve(data); // Resolve finally the promise
-            })
-            .catch((error) => {
-                setStateSending(false);
-                message.encrypting = false;
-                dispatchMessageAction(message);
-                deferred.reject(error);
+
+                return data; // Resolve finally the promise
             });
         })
-        .catch((error) => {
+        .catch((err) => {
             setStateSending(false);
             message.encrypting = false;
             dispatchMessageAction(message);
-            deferred.reject(error);
+            throw err;
         });
-        networkActivityTracker.track(deferred.promise);
+        networkActivityTracker.track(promise);
     };
 
     /**
      * Focus the first not minimized composer window
      * @param {Object} message
-     * @param {Boolean} discard
-     * @param {Boolean} save
      */
-
     $scope.focusFirstComposer = (message) => {
         $rootScope.$emit('composer.update', {
             type: 'focus.first',
