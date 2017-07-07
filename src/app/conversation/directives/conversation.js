@@ -164,6 +164,27 @@ angular.module('proton.conversation')
             scope.inSpam = $state.includes('secured.spam.**');
             scope.getElements = () => [scope.conversation];
 
+            const openMarked = (message) => () => {
+                const msg = message || scope.markedMessage;
+
+                if (!msg) {
+                    return;
+                }
+
+                if (msg.Type === CONSTANTS.DRAFT) {
+                    return $rootScope.$emit('composer.load', msg);
+                }
+
+                $rootScope.$emit('message.open', {
+                    type: 'toggle',
+                    data: {
+                        action: 'openMarked',
+                        message: msg
+                    }
+                });
+
+            };
+
             // Listeners
             unsubscribe.push($rootScope.$on('refreshConversation', (event, conversationIDs) => {
                 if (conversationIDs.indexOf(scope.conversation.ID) > -1) {
@@ -190,21 +211,6 @@ angular.module('proton.conversation')
                 }
             }));
 
-            scope.$on('$destroy', () => {
-                unsubscribe.forEach((cb) => cb());
-                unsubscribe.length = 0;
-                unsubscribeActions();
-                // Ensure only one event Listener
-                hotkeys.unbind(['down', 'up']);
-                hotkeys.bind(['down', 'up']);
-                $rootScope.$emit('elements', {
-                    type: 'close',
-                    data: {
-                        element: scope.conversation
-                    }
-                });
-            });
-
             scope.$on('unmarkMessages', () => {
                 scope.markedMessage = undefined;
                 unsubscribeActions();
@@ -223,6 +229,31 @@ angular.module('proton.conversation')
                 scope.move(labelID);
             });
 
+            const onNextPrevElement = (type) => () => {
+                const index = _.findIndex(scope.messages, { expand: true });
+                const pos = (type === 'DOWN') ? index + 1 : index - 1;
+                const message = scope.messages[pos];
+
+                // Last item
+                if (type === 'DOWN' && pos === scope.messages.length) {
+                    return;
+                }
+
+                // First item
+                if (type === 'UP' && !index) {
+                    return;
+                }
+
+                scope.$applyAsync(() => {
+                    scope.messages[index].expand = false;
+                    scrollToPosition(pos, scope.messages.length, type);
+                    unsubscribeActions = conversationListeners(message);
+                    openMarked(message)();
+                });
+            };
+
+            scope.$on('nextElement', onNextPrevElement('DOWN'));
+            scope.$on('previousElement', onNextPrevElement('UP'));
 
             scope.$on('markPrevious', () => {
                 unsubscribeActions();
@@ -230,12 +261,11 @@ angular.module('proton.conversation')
                     const index = scope.messages.indexOf(scope.markedMessage);
                     if (index > 0) {
                         const pos = index - 1;
-                        scope
-                            .$applyAsync(() => {
-                                scope.markedMessage = scope.messages[pos];
-                                scrollToPosition(pos, scope.messages.length, 'UP');
-                                unsubscribeActions = conversationListeners(scope.markedMessage);
-                            });
+                        scope.$applyAsync(() => {
+                            scope.markedMessage = scope.messages[pos];
+                            scrollToPosition(pos, scope.messages.length, 'UP');
+                            unsubscribeActions = conversationListeners(scope.markedMessage);
+                        });
                     }
                 }
             });
@@ -246,12 +276,11 @@ angular.module('proton.conversation')
                     const index = scope.messages.indexOf(scope.markedMessage);
                     if (index < (scope.messages.length - 1)) {
                         const pos = index + 1;
-                        scope
-                            .$applyAsync(() => {
-                                scope.markedMessage = scope.messages[pos];
-                                scrollToPosition(pos, scope.messages.length, 'DOWN');
-                                unsubscribeActions = conversationListeners(scope.markedMessage);
-                            });
+                        scope.$applyAsync(() => {
+                            scope.markedMessage = scope.messages[pos];
+                            scrollToPosition(pos, scope.messages.length, 'DOWN');
+                            unsubscribeActions = conversationListeners(scope.markedMessage);
+                        });
 
 
                     }
@@ -276,21 +305,7 @@ angular.module('proton.conversation')
 
             // Restore them to allow custom keyboard navigation
             scope.$on('left', () => hotkeys.bind(['down', 'up']));
-            scope.$on('openMarked', () => {
-                if (scope.markedMessage) {
-                    if (scope.markedMessage.Type === CONSTANTS.DRAFT) {
-                        return $rootScope.$emit('composer.load', scope.markedMessage);
-                    }
-                    $rootScope.$emit('message.open', {
-                        type: 'toggle',
-                        data: {
-                            action: 'openMarked',
-                            message: scope.markedMessage
-                        }
-                    });
-                }
-
-            });
+            scope.$on('openMarked', openMarked());
 
             scope.$on('right', () => {
                 unsubscribeActions();
@@ -481,6 +496,23 @@ angular.module('proton.conversation')
 
             // Call initialization
             initialization();
+
+
+            scope.$on('$destroy', () => {
+                unsubscribe.forEach((cb) => cb());
+                unsubscribe.length = 0;
+                unsubscribeActions();
+                // Ensure only one event Listener
+                hotkeys.unbind(['down', 'up']);
+                hotkeys.bind(['down', 'up']);
+                $rootScope.$emit('elements', {
+                    type: 'close',
+                    data: {
+                        element: scope.conversation
+                    }
+                });
+            });
+
         }
     };
 });
