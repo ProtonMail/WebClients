@@ -204,12 +204,7 @@
             <time time-refreshed="{{ ::message.ExpirationTime }}"></time>
         </div>
 
-        <message-spam-score ng-if="message.SpamScore === 100 || message.SpamScore === 101" data-score="{{ ::message.SpamScore }}"></message-spam-score>
-        <message-pgp-attachments ng-if="message.PgpMimeWithAttachments"></message-pgp-attachments>
-        <unsubscribe-panel ng-if="!unsubscribed && message.getListUnsubscribe()"></unsubscribe-panel>
-
-        <display-content-btn data-action="remote"></display-content-btn>
-        <display-content-btn data-action="embedded"></display-content-btn>
+        <message-extra></message-extra>
 
         <div class="frame message-frame" data-embedded-img-loader data-inject-message-media>
             <loader-tag ng-if="message.decrypting === true"></loader-tag>

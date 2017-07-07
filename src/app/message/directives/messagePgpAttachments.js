@@ -7,9 +7,9 @@ angular.module('proton.message')
             restrict: 'E',
             template: `
                 <div class="messagePgpAttachments-container">
-                    <i class="messageSpamScore-icon fa fa-paperclip"></i>
-                    <div class="messagePgpAttachments-content">
-                        <strong>${title}</strong> ${message}
+                    <div class="messagePgpAttachments-notice">
+                        <span class="messagePgpAttachments-notice-text">${title}</span>
+                        <div class="messagePgpAttachments-notice-sub">${message}</div>
                     </div>
                 </div>
             `
