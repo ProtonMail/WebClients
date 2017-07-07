@@ -258,7 +258,7 @@ angular.module('proton.elements')
             });
         }
 
-        $scope.$on('markPrevious', onElement(() => {
+        const markPrevious = onElement(() => {
             if ($scope.conversations) {
                 const index = $scope.conversations.indexOf($scope.markedElement);
 
@@ -271,9 +271,9 @@ angular.module('proton.elements')
 
                 goToPage('previous');
             }
-        }, false));
+        }, false);
 
-        $scope.$on('markNext', onElement(() => {
+        const markNext = onElement(() => {
             if ($scope.conversations) {
                 const index = $scope.conversations.indexOf($scope.markedElement);
 
@@ -286,7 +286,76 @@ angular.module('proton.elements')
 
                 goToPage('next');
             }
-        }, false));
+        }, false);
+
+        /**
+         * Go to the next conversation
+         */
+        function nextElement() {
+            const elementID = $state.params.id;
+
+            if (!elementID) {
+                return markNext();
+            }
+
+            const isMessageMode = authentication.user.ViewLayout === CONSTANTS.ROW_MODE;
+            if (elementID && isMessageMode) {
+                return;
+            }
+
+            const current = $state.$current.name;
+            const elementTime = $scope.markedElement.Time;
+            const conversationMode = authentication.user.ViewMode === CONSTANTS.CONVERSATION_VIEW_MODE;
+
+            cache.more(elementID, elementTime, 'next')
+                .then((element) => {
+                    const id = (conversationMode) ? (element.ConversationID || element.ID) : element.ID;
+                    $state.go(current, { id });
+                    $scope.markedElement = element;
+                    $rootScope.$emit('elements', { type: 'switchTo.next.success', data: element });
+                    !isMessageMode && markedScroll.follow();
+                })
+                .catch((data) => {
+                    $rootScope.$emit('elements', { type: 'switchTo.next.error', data });
+                });
+        }
+
+        /**
+         * Go to the previous conversation
+         */
+        function previousElement() {
+            const elementID = $state.params.id;
+
+
+            if (!elementID) {
+                return markPrevious();
+            }
+
+            const isMessageMode = authentication.user.ViewLayout === CONSTANTS.ROW_MODE;
+
+            if (elementID && isMessageMode) {
+                return;
+            }
+
+            const current = $state.$current.name;
+            const elementTime = $scope.markedElement.Time;
+            const conversationMode = authentication.user.ViewMode === CONSTANTS.CONVERSATION_VIEW_MODE;
+
+            cache.more(elementID, elementTime, 'previous')
+                .then((element) => {
+                    const id = (conversationMode) ? (element.ConversationID || element.ID) : element.ID;
+                    $state.go(current, { id });
+                    $scope.markedElement = element;
+                    $rootScope.$emit('elements', { type: 'switchTo.previous.success', data: element });
+                    !isMessageMode && markedScroll.follow();
+                })
+                .catch((data) => {
+                    $rootScope.$emit('elements', { type: 'switchTo.previous.error', data });
+                });
+        }
+
+        $scope.$on('markPrevious', markPrevious);
+        $scope.$on('markNext', markNext);
 
         $scope.$on('nextElement', () => {
             nextElement();
@@ -547,47 +616,6 @@ angular.module('proton.elements')
         return '';
     }
 
-    /**
-     * Go to the next conversation
-     */
-    function nextElement() {
-        const current = $state.$current.name;
-        const elementID = $state.params.id;
-        const elementTime = $scope.markedElement.Time;
-        const conversationMode = authentication.user.ViewMode === CONSTANTS.CONVERSATION_VIEW_MODE;
-
-        cache.more(elementID, elementTime, 'next')
-            .then((element) => {
-                const id = (conversationMode) ? (element.ConversationID || element.ID) : element.ID;
-                $state.go(current, { id });
-                $scope.markedElement = element;
-                $rootScope.$emit('elements', { type: 'switchTo.next.success', data: element });
-            })
-            .catch((data) => {
-                $rootScope.$emit('elements', { type: 'switchTo.next.error', data });
-            });
-    }
-
-    /**
-     * Go to the previous conversation
-     */
-    function previousElement() {
-        const current = $state.$current.name;
-        const elementID = $state.params.id;
-        const elementTime = $scope.markedElement.Time;
-        const conversationMode = authentication.user.ViewMode === CONSTANTS.CONVERSATION_VIEW_MODE;
-
-        cache.more(elementID, elementTime, 'previous')
-            .then((element) => {
-                const id = (conversationMode) ? (element.ConversationID || element.ID) : element.ID;
-                $state.go(current, { id });
-                $scope.markedElement = element;
-                $rootScope.$emit('elements', { type: 'switchTo.previous.success', data: element });
-            })
-            .catch((data) => {
-                $rootScope.$emit('elements', { type: 'switchTo.previous.error', data });
-            });
-    }
 
     /**
      * Mark conversations selected as read
