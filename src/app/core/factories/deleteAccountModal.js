@@ -24,6 +24,7 @@ angular.module('proton.core')
             const self = this;
             self.hasTwoFactor = authentication.user.TwoFactor;
             self.isAdmin = authentication.user.Role === CONSTANTS.PAID_ADMIN_ROLE;
+            self.email = '';
             self.feedback = '';
             self.password = '';
             self.twoFactorCode = '';
@@ -39,7 +40,7 @@ angular.module('proton.core')
                     ClientVersion: '--',
                     Title: `[DELETION FEEDBACK] ${username}`,
                     Username: username,
-                    Email: '--',
+                    Email: self.email || authentication.user.Addresses[0].Email,
                     Description: self.feedback
                 };
 
