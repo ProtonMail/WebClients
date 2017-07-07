@@ -11,16 +11,20 @@
                     <p><span translate translate-context="Info">If you wish to delete in order to combine this account with another one, do NOT delete your account. You need to instead follow</span> <a href="https://protonmail.com/support/knowledge-base/combine-accounts/" target="_blank" translate translate-context="Link">the procedure</a>.</p>
                 </div>
                 <div class="margin" ng-if="ctrl.isAdmin">
-                    <label translate translate-context="Title">We are sorry to see you go!</label>
-                    <label translate translate-context="Title">Please tell us why you are leaving:</label>
+                    <label translate translate-context="Label">We are sorry to see you go!</label>
+                    <label translate translate-context="Label">Please tell us why you are leaving:</label>
                     <textarea ng-model="ctrl.feedback" placeholder-translate="Feedback"></textarea>
                 </div>
                 <div class="margin">
-                    <label translate translate-context="Title">Enter your login password to confirm your identity:</label>
+                    <label translate translate-context="Label">Please give us a way to contact you:</label>
+                    <input type="email" ng-model="ctrl.email" placeholder-translate="Email" />
+                </div>
+                <div class="margin">
+                    <label translate translate-context="Label">Enter your login password to confirm your identity:</label>
                     <input type="password" ng-model="ctrl.password" placeholder-translate="Login password"/>
                 </div>
                 <div class="margin" ng-if="ctrl.hasTwoFactor">
-                    <label translate translate-context="Title">Enter two-factor passcode:</label>
+                    <label translate translate-context="Label">Enter two-factor passcode:</label>
                     <two-fa-field ng-model="ctrl.twoFactorCode" placeholder-translate="Two-factor passcode"></two-fa-field>
                 </div>
             </div>
