@@ -142,6 +142,10 @@ input:-moz-ui-invalid {
     #conversation-list-rows .conversation .subject .pm_labels,
     #conversation-view .message > div.summary .labels .pm_labels { top: 0 }
 }
+// IE11
+.ua-ie-11 {
+    #conversation-list-rows .conversation .subject { display: inline-block }
+}
 
 /* 2FA inputs*/
 /* only apply to tested browser cause placeholder styling is tricky*/
