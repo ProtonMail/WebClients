@@ -135,7 +135,8 @@ angular.module('proton.squire')
 
             // proxy for autosave as Mousetrap doesn't work with iframe
             const onKeyDown = (e) => {
-                if ((e.ctrlKey || e.metaKey) && e.keyCode === 83) {
+                // Check alt too cf Polis S #5476
+                if (!e.altKey && (e.ctrlKey || e.metaKey) && e.keyCode === 83) {
                     e.preventDefault();
                     Mousetrap.trigger('meta+s');
                 }
