@@ -11,7 +11,7 @@ msgstr ""
 "Last-Translator: PMtranslator <contact@protonmail.ch>\n"
 "Language-Team: Polish\n"
 "Language: pl_PL\n"
-"PO-Revision-Date: 2017-07-07 05:15-0400\n"
+"PO-Revision-Date: 2017-07-11 11:52-0400\n"
 
 #: src/app/templates/modals/domain/domain.tpl.html:13
 msgid "'www' subdomains are typically not used for email. Are you sure you not want to use this domain value?"
@@ -83,7 +83,7 @@ msgstr "<kbd>?</kbd> Pokaż <strong>okno pomocy</strong>."
 #: src/app/templates/modals/hotkey.tpl.html:33
 msgctxt "Info"
 msgid "<kbd>.</kbd> Marks or unmarks the message/conversation as <strong>starred</strong>."
-msgstr "<kbd>.</kbd> Oznacza lub odznacza wiadomość/rozmowę jako <strong>oznaczoną gwiazdką</strong>."
+msgstr "<kbd>.</kbd> Oznacza lub odznacza wiadomość/rozmowę jako <strong>wyróżnionych</strong>."
 
 #: src/app/templates/modals/hotkey.tpl.html:28
 msgctxt "Info"
@@ -168,7 +168,7 @@ msgstr "<kbd>escape</kbd> Zamyka aktywne <strong>okno edycji</strong>."
 #: src/app/templates/modals/hotkey.tpl.html:52
 msgctxt "Info"
 msgid "<kbd>g</kbd> then <kbd>.</kbd> Goes to <strong>starred</strong>."
-msgstr "<kbd>g</kbd> następnie <kbd>.</kbd> Idź do oznaczonych <strong>gwiazdką</strong>."
+msgstr "<kbd>g</kbd> następnie <kbd>.</kbd> Idź do oznaczonych <strong>wyróżnionych</strong>."
 
 #: src/app/templates/modals/hotkey.tpl.html:53
 msgctxt "Info"
@@ -183,7 +183,7 @@ msgstr "<kbd>g</kbd> następnie <kbd>d</kbd> Idź do <strong>szkiców</strong>."
 #: src/app/templates/modals/hotkey.tpl.html:49
 msgctxt "Info"
 msgid "<kbd>g</kbd> then <kbd>i</kbd> Goes to <strong>inbox</strong>."
-msgstr "<kbd>g</kbd> następnie <kbd>i</kbd> Idź do <strong>skrzynki odbiorczej</strong>."
+msgstr "<kbd>g</kbd> następnie <kbd>i</kbd> Idź do <strong>odebranych</strong>."
 
 #: src/app/templates/modals/hotkey.tpl.html:51
 msgctxt "Info"
@@ -203,7 +203,7 @@ msgstr "<kbd>g</kbd> następnie <kbd>d</kbd> Idź do <strong>katalogu ze spamem<
 #: src/app/templates/modals/hotkey.tpl.html:34
 msgctxt "Info"
 msgid "<kbd>i</kbd> Moves the message/conversation to <strong>inbox</strong>."
-msgstr "<kbd>i</kbd> Przenosi wiadomość/rozmowę do <strong>skrzynki odbiorczej</strong>."
+msgstr "<kbd>i</kbd> Przenosi wiadomość/rozmowę do <strong>odebranych</strong>."
 
 #: src/app/templates/modals/hotkey.tpl.html:64
 msgctxt "Info"
@@ -650,7 +650,7 @@ msgstr "Wszystko"
 #: src/app/ui/factories/pageTitlesModel.js:7
 msgctxt "Title"
 msgid "All Mail"
-msgstr "Wszystkie wiadomości"
+msgstr "Wszystkie"
 
 #: src/app/ui/directives/noResults.js:33
 msgctxt "No results heading"
@@ -659,11 +659,11 @@ msgstr "Wszystkie wiadomości"
 
 #: src/app/elements/directives/elementsSelector.js:19
 msgid "All Read"
-msgstr "Wszystkie przeczytane"
+msgstr "Przeczytane"
 
 #: src/app/elements/directives/elementsSelector.js:29
 msgid "All Starred"
-msgstr "Wszystkie oznaczone gwiazdką"
+msgstr "Wszystkie wyróżnione"
 
 #: src/app/settings/controllers/signatures.js:162
 msgctxt "Error"
@@ -676,7 +676,7 @@ msgstr "Wszystkie nieprzeczytane"
 
 #: src/app/elements/directives/elementsSelector.js:24
 msgid "All Unstarred"
-msgstr "Wszystkie nieoznaczone gwiazdką"
+msgstr "Wszystkie niewyróżnione"
 
 #. reset warning 2/3
 #: src/app/templates/views/reset-login-password.tpl.html:61
@@ -891,7 +891,7 @@ msgstr "Czy na pewno chcesz wyłączyć uwierzytelnianie dwuskładnikowe?"
 #: src/app/settings/controllers/members.js:286
 msgctxt "Info"
 msgid "Are you sure you want to permanently delete this user? The user's inbox and all addresses associated with this member will be deleted."
-msgstr "Czy na pewno chcesz trwale usunąć tego użytkownika? Skrzynki pocztowe i wszystkie adresy z nim skojarzone zostaną usunięte."
+msgstr "Czy na pewno chcesz trwale usunąć tego użytkownika? Skrzynka pocztowa i wszystkie adresy z nim skojarzone zostaną usunięte."
 
 #: src/app/settings/controllers/members.js:286
 msgctxt "Info"
@@ -964,12 +964,12 @@ msgstr "Dostępne połączenia sieci VPN"
 #. inbox menu
 #: src/app/templates/directives/ui/settingsMenu.tpl.html:6
 msgid "Back to inbox"
-msgstr "Powrót do skrzynki odbiorczej"
+msgstr "Powrót"
 
 #: src/app/templates/ui/header/headerNoAuth.tpl.html:16
 msgctxt "Action"
 msgid "Back to inbox"
-msgstr "Powrót do skrzynki odbiorczej"
+msgstr "Powrót"
 
 #: src/app/templates/partials/toolbar-desktop.tpl.html:4
 msgctxt "Action"
@@ -1042,7 +1042,7 @@ msgstr "Dane do faktury"
 #: src/app/templates/views/filters.tpl.html:93
 msgctxt "Title"
 msgid "Blacklist"
-msgstr "Lista wykluczonych"
+msgstr "Lista zabronionych"
 
 #: src/app/templates/squire/squireToolbar.tpl.html:3
 msgctxt "Action"
@@ -1339,7 +1339,7 @@ msgstr "Wybierz preferowaną kolejność przycisków do oznaczania wiadomości j
 #: src/app/settings/controllers/security.js:171
 msgctxt "Title"
 msgid "Clear"
-msgstr "Wyczyść"
+msgstr "Wymaż"
 
 #: src/app/templates/squire/squireToolbar.tpl.html:93
 msgctxt "Action"
@@ -1468,7 +1468,7 @@ msgstr "Zakończ konfigurację"
 #: src/app/templates/views/contacts.tpl.html:27
 msgctxt "Action"
 msgid "Compose"
-msgstr "Napisz wiadomość"
+msgstr "Napisz"
 
 #: src/app/settings/controllers/appearance.js:73
 msgctxt "Info"
@@ -1865,7 +1865,7 @@ msgstr "NIEBEZPIECZEŃSTWO"
 #: src/app/ui/factories/pageTitlesModel.js:19
 msgctxt "Title"
 msgid "Dashboard"
-msgstr "Pulpit nawigacyjny"
+msgstr "Pulpit"
 
 #. Table heading
 #: src/app/templates/views/invoices.tpl.html:17
@@ -3021,18 +3021,18 @@ msgstr "Folder zaktualizowany"
 
 #: src/app/payment/services/paymentPlansFormator.js:7
 msgid "Folders"
-msgstr "Foldery"
+msgstr "Foldery(ów)"
 
 #: src/app/sidebar/factories/sidebarSettingsModel.js:17
 #: src/app/templates/views/labels.tpl.html:6
 msgctxt "Title"
 msgid "Folders / Labels"
-msgstr "Foldery / etykiety"
+msgstr "Foldery / Etykiety"
 
 #: src/app/templates/partials/sidebar.tpl.html:22
 msgctxt "Action"
 msgid "Folders / Labels"
-msgstr "Foldery / etykiety"
+msgstr "Foldery / Etykiety"
 
 #: src/app/templates/modals/welcome.tpl.html:29
 msgctxt "Title"
@@ -3304,7 +3304,7 @@ msgstr "Wskazówka"
 #: src/app/templates/vpn/vpnView.tpl.html:77
 msgctxt "Link"
 msgid "Homepage"
-msgstr "Strona domowa"
+msgstr "Strona główna"
 
 #: src/app/templates/modals/domain/dkim.tpl.html:21
 #: src/app/templates/modals/domain/dmarc.tpl.html:18
@@ -3449,7 +3449,7 @@ msgstr "W szkicach"
 
 #: src/app/elements/directives/foldersElement.js:8
 msgid "In inbox"
-msgstr "W skrzynce odbiorczej"
+msgstr "W odebranych"
 
 #: src/app/elements/directives/foldersElement.js:12
 msgid "In sent"
@@ -3478,23 +3478,23 @@ msgstr "Nieaktywny"
 #: src/app/ui/factories/pageTitlesModel.js:8
 msgctxt "Title"
 msgid "Inbox"
-msgstr "Skrzynka odbiorcza"
+msgstr "Odebrane"
 
 #: src/app/templates/modals/filter.tpl.html:127
 msgctxt "Label"
 msgid "Inbox"
-msgstr "Skrzynka odbiorcza"
+msgstr "Odebrane"
 
 #: src/app/ui/directives/noResults.js:9
 msgctxt "No results heading"
 msgid "Inbox"
-msgstr "Skrzynka odbiorcza"
+msgstr "Odebrane"
 
 #: src/app/conversation/factories/actionConversation.js:19
 #: src/app/labels/directives/dropdownFolders.js:6
 #: src/app/message/factories/messageActions.js:9
 msgid "Inbox"
-msgstr "Skrzynka odbiorcza"
+msgstr "Odebrane"
 
 #: src/app/elements/directives/movedSelect.js:4
 msgctxt "Option"
@@ -3797,7 +3797,7 @@ msgstr "Zmieniono etykietę"
 
 #: src/app/payment/services/paymentPlansFormator.js:6
 msgid "Labels"
-msgstr "Etykiety"
+msgstr "Etykiet"
 
 #: src/app/ui/factories/pageTitlesModel.js:21
 msgctxt "Title"
@@ -3811,7 +3811,7 @@ msgstr "Etykiety i filtry niestandardowe"
 #: src/app/templates/partials/wizard.tpl.html:29
 msgctxt "Info"
 msgid "Labels are a powerful tool to manage your inbox. You can add and remove labels from selected emails by clicking the Label button <strong>(1)</strong>. You can also add, delete, and edit labels by clicking on <em>Labels / Folders</em> <strong>(2)</strong>."
-msgstr "Etykiety są potężnym narzędziem do zarządzania skrzynką odbiorczą. Można dodawać i usuwać etykiety dla wybranych wiadomości klikając przycisk Etykieta<strong>(1)</strong>. Można również dodawać, usuwać i edytować etykiety, klikając na <em>Etykiety / Foldery</em> <strong>(2)</strong>."
+msgstr "Etykiety są potężnym narzędziem do zarządzania skrzynką. Można dodawać i usuwać etykiety dla wybranych wiadomości klikając przycisk Etykieta<strong>(1)</strong>. Można również dodawać, usuwać i edytować etykiety, klikając na <em>Etykiety / Foldery</em> <strong>(2)</strong>."
 
 #: src/app/labels/directives/dropdownLabels.js:5
 msgid "Labels Saved"
@@ -3923,12 +3923,12 @@ msgstr "Załaduj osadzone obrazki"
 #: src/app/templates/views/account.tpl.html:222
 msgctxt "Title"
 msgid "Load remote content"
-msgstr "Ładowanie zawartości zdalnej"
+msgstr "Załaduj zawartość zdalną"
 
 #: src/app/message/directives/displayContentBtn.js:6
 msgctxt "Action"
 msgid "Load remote content"
-msgstr "Ładowanie zawartości zdalnej"
+msgstr "Załaduj zawartość zdalną"
 
 #: src/app/templates/views/pgp.tpl.html:4
 msgctxt "Title"
@@ -4033,7 +4033,7 @@ msgstr "Wyloguj"
 #. auth log entry
 #: src/app/templates/views/security.tpl.html:84
 msgid "Logout"
-msgstr "Wyloguj"
+msgstr "Wylogowano"
 
 #: src/app/settings/controllers/security.js:185
 msgid "Logs cleared"
@@ -4249,7 +4249,7 @@ msgstr "Wiadomość wysłana"
 
 #: src/app/payment/services/paymentPlansFormator.js:5
 msgid "Messages per day"
-msgstr "Wiadomości dziennie"
+msgstr "Wiadomości wysyłanych dziennie"
 
 #: src/app/templates/directives/composer/composer-header.tpl.html:4
 msgctxt "Action"
@@ -4332,7 +4332,7 @@ msgstr "Przenieś do archiwum"
 #: src/app/templates/partials/toolbar-mobile.tpl.html:38
 msgctxt "Action"
 msgid "Move to inbox"
-msgstr "Przejdź do skrzynki odbiorczej"
+msgstr "Przenieś do odebranych"
 
 #: src/app/templates/elements/moveElement.tpl.html:31
 #: src/app/templates/partials/toolbar-mobile.tpl.html:46
@@ -4411,7 +4411,7 @@ msgstr "Nazwa przekracza maksymalną długość"
 #: src/app/templates/directives/core/cardView.tpl.html:3
 msgctxt "Label"
 msgid "Name on card"
-msgstr "Nazwisko właściciela karty"
+msgstr "Właściciel karty"
 
 #. safari attachment instructions
 #: src/app/templates/partials/safari.attachment.warning.tpl.html:19
@@ -4892,7 +4892,7 @@ msgstr "ProtonMail wymaga nowoczesnej przeglądarki."
 #: src/app/templates/views/signup.tpl.html:115
 msgctxt "Title"
 msgid "Overview"
-msgstr "Przegląd"
+msgstr "Podsumowanie"
 
 #. current page dropdown in paginator
 #: src/app/templates/directives/paginator.tpl.html:19
@@ -4989,12 +4989,12 @@ msgstr "Zapłać"
 #: src/app/templates/dashboard/amountRows.tpl.html:15
 #: src/app/templates/views/dashboard.tpl.html:197
 msgid "Pay annually"
-msgstr "Płać corocznie"
+msgstr "Plan roczny"
 
 #: src/app/templates/modals/payment/payment.tpl.html:62
 msgctxt "Action"
 msgid "Pay annually"
-msgstr "Płać corocznie"
+msgstr "Plan roczny"
 
 #: src/app/templates/modals/pay.tpl.html:6
 msgctxt "Title"
@@ -5005,7 +5005,7 @@ msgstr "Opłać fakturę"
 #: src/app/templates/dashboard/amountRows.tpl.html:7
 #: src/app/templates/views/dashboard.tpl.html:180
 msgid "Pay monthly"
-msgstr "Płać co miesiąc"
+msgstr "Plan miesięczny"
 
 #: src/app/templates/views/signup.tpl.html:168
 msgctxt "Link"
@@ -5349,7 +5349,7 @@ msgstr "Sklep ProtonMail"
 #: src/app/templates/views/appearance.tpl.html:39
 msgctxt "Info"
 msgid "ProtonMail supports both column and row layouts for the inbox. Using this setting, it is possible to change between the two layouts."
-msgstr "ProtonMail obsługuje oba układy kolumn i wierszy w skrzynce odbiorczej. Za pomocą tego ustawienia, można przełączać się pomiędzy nimi."
+msgstr "ProtonMail obsługuje oba układy kolumn i wierszy w skrzynce. Za pomocą tego ustawienia, można przełączać się pomiędzy nimi."
 
 #: src/app/templates/modals/domain/dkim.tpl.html:14
 msgid "ProtonMail supports DKIM signing for custom domains! To use DKIM authentication, please add the following TXT record into your DNS for this domain. This can typically be done in the control panel of your domain name registrar."
@@ -5392,7 +5392,7 @@ msgstr "ProtonVPN"
 #: src/app/templates/vpn/vpnView.tpl.html:74
 msgctxt "Label"
 msgid "ProtonVPN Homepage"
-msgstr "Strona domowa ProtonVPN"
+msgstr "Strona główna ProtonVPN"
 
 #: src/app/templates/views/dashboard.tpl.html:230
 msgctxt "dashboard plan"
@@ -5736,7 +5736,7 @@ msgstr "Wyprzedaż"
 #: src/app/templates/vpn/vpnView.tpl.html:48
 msgctxt "Info"
 msgid "Same as ProtonMail login password"
-msgstr "Takie samo jak hasło logowania ProtonMail"
+msgstr "Takie jak hasło logowania ProtonMail"
 
 #. Save button for updating default identity on account page
 #: src/app/templates/directives/composer/composer.tpl.html:117
@@ -5861,7 +5861,7 @@ msgstr "Informacje dotyczące zabezpieczeń"
 
 #: src/app/core/factories/filterModal.js:6
 msgid "Select"
-msgstr "Zaznacz"
+msgstr "Wybierz"
 
 #: src/app/elements/directives/elementsSelector.js:9
 msgid "Select All"
@@ -5919,7 +5919,7 @@ msgstr "Nadawca"
 #: src/app/templates/views/filters.tpl.html:49
 msgctxt "Info"
 msgid "Sender specific spam rules can be applied here. Whitelist addresses always go to Inbox while Blacklist addresses always go to Spam. Marking a message as spam adds the address to the Blacklist. Marking a message as not spam adds the address to the Whitelist."
-msgstr "Tutaj możesz ustawić swoje preferencje dla nadawców spamu. Wiadomości od adresatów z białej listy zawsze są dostarczane do skrzynki odbiorczej, podczas gdy z czarnej zawsze przenoszone do spamu. Oznaczenie wiadomości jako spam dodaje adres nadawcy do czarnej listy, jednak oznaczenie wiadomości jako wolną od spamu nie dodaje adresu nadawcy do białej listy."
+msgstr "Tutaj możesz ustawić swoje preferencje dla nadawców spamu. Wiadomości od adresatów z listy dozwolonych zawsze są dostarczane do skrzynki odbiorczej, podczas gdy z zabronionych zawsze przenoszone do spamu. Oznaczenie wiadomości jako spam dodaje adres nadawcy do listy zabronionych, jednak oznaczenie wiadomości jako wolną od spamu nie dodaje adresu nadawcy do listy dozwolonych."
 
 #: src/app/composer/directives/btnSendMessage.js:26
 msgctxt "Action"
@@ -6113,7 +6113,7 @@ msgstr "Pokaż nieprzeczytane"
 #: src/app/templates/modals/filter.tpl.html:21
 msgctxt "Title"
 msgid "Sieve Script"
-msgstr "Skrypt sita"
+msgstr "Skrypt Sieve"
 
 #: src/app/templates/views/signup.tpl.html:353
 msgctxt "Error"
@@ -6246,17 +6246,17 @@ msgstr "Gwiazdek {{total}} {{type}}"
 #: src/app/ui/factories/pageTitlesModel.js:14
 msgctxt "Title"
 msgid "Starred"
-msgstr "Oznaczone gwiazdką"
+msgstr "Wyróżnione"
 
 #: src/app/ui/directives/noResults.js:29
 msgctxt "No results heading"
 msgid "Starred"
-msgstr "Oznaczone gwiazdką"
+msgstr "Wyróżnione"
 
 #: src/app/templates/modals/filter.tpl.html:172
 msgctxt "Label"
 msgid "Starred"
-msgstr "Oznaczone gwiazdką"
+msgstr "Wyróżnione"
 
 #: src/app/templates/search/searchForm.tpl.html:74
 msgctxt "Title"
@@ -6286,7 +6286,7 @@ msgstr "Uaktualniono status"
 #: src/app/templates/modals/payment/payment.tpl.html:20
 #: src/app/templates/views/dashboard.tpl.html:105
 msgid "Storage"
-msgstr "Przestrzeń dyskowa"
+msgstr "Przestrzeni dyskowej"
 
 #: src/app/templates/dashboard/overviewSection.tpl.html:32
 msgctxt "Title"
@@ -6796,7 +6796,7 @@ msgstr "Wiadomość niezaszyfrowana"
 
 #: src/app/payment/services/paymentPlansFormator.js:8
 msgid "Unlimited Folders / Unlimited labels"
-msgstr "Nieograniczona ilość katalogów / nieograniczona ilość etykiet"
+msgstr "Nieograniczona ilość folderów / nieograniczona ilość etykiet"
 
 #: src/app/payment/services/paymentPlansFormator.js:12
 msgid "Unlimited sending"
@@ -6893,13 +6893,13 @@ msgstr "Zaktualizuj dane karty płatniczej."
 #: src/app/templates/views/members.tpl.html:92
 msgctxt "Action"
 msgid "Upgrade"
-msgstr "Aktualizuj"
+msgstr "Ulepsz"
 
 #. Folder name
 #: src/app/templates/partials/sidebar-responsive.tpl.html:18
 msgctxt "Title"
 msgid "Upgrade"
-msgstr "Aktualizuj"
+msgstr "Ulepsz"
 
 #: src/app/templates/partials/conversation-placeholder.tpl.html:18
 msgctxt "Action"
@@ -7396,7 +7396,7 @@ msgstr "Można przeciągać i upuszczać niestandardowe filtry, by je posortowa�
 #: src/app/templates/views/security.tpl.html:59
 msgctxt "Info"
 msgid "You can enable authentication logging to see when your account is accessed, and from which IP. We will record the IP address that accesses the account and the time, as well as failed attempts."
-msgstr "Możesz włączyć logowanie autentykacji, by widzieć udane i nieudane próby logowania, oraz adres IP z których próby te następowały. Będziemy zapisywać adresy IP i czas, jak i nieudane próby."
+msgstr "Możesz włączyć logowanie autentykacji by widzieć udane i nieudane próby logowania, oraz adres IP z których próby te następowały."
 
 #: src/app/settings/controllers/account.js:89
 msgctxt "Info"
