@@ -11,7 +11,7 @@ msgstr ""
 "Last-Translator: PMtranslator <contact@protonmail.ch>\n"
 "Language-Team: French\n"
 "Language: fr_FR\n"
-"PO-Revision-Date: 2017-07-07 05:14-0400\n"
+"PO-Revision-Date: 2017-07-11 11:52-0400\n"
 
 #: src/app/templates/modals/domain/domain.tpl.html:13
 msgid "'www' subdomains are typically not used for email. Are you sure you not want to use this domain value?"
@@ -787,7 +787,7 @@ msgstr "Annuellement"
 
 #: src/app/core/factories/filterModal.js:26
 msgid "any"
-msgstr "tout"
+msgstr "n'importe quel"
 
 #: src/app/sidebar/factories/sidebarSettingsModel.js:32
 #: src/app/ui/factories/pageTitlesModel.js:23
@@ -1093,7 +1093,7 @@ msgstr "En cliquant sur Créer un compte, vous acceptez de respecter les obligat
 #: src/app/templates/modals/payment/payment.tpl.html:131
 msgctxt "Info"
 msgid "By clicking Submit, you agree to abide by"
-msgstr "En cliquant sur Soumettre, vous acceptez de respecter"
+msgstr "En cliquant sur Envoyer, vous acceptez de respecter les"
 
 #: src/app/composer/controllers/composeMessage.js:57
 #: src/app/routes.js:458
@@ -1825,7 +1825,7 @@ msgstr "Nom personnalisé / Signature"
 #. Account identity info
 #: src/app/templates/views/account.tpl.html:15
 msgid "Custom signatures for specific addresses can override the default signature. <a ui-sref=\"secured.signatures\">Click here</a> to set address specific signatures."
-msgstr ""
+msgstr "Des signatures personnalisées peuvent remplacer la signature par défaut de vos adresses emails. <a ui-sref=\"secured.signatures\">Cliquez-ici</a> pour définir les signatures de vos adresses emails."
 
 #: src/app/templates/views/appearance.tpl.html:112
 msgctxt "Title"
@@ -1935,7 +1935,7 @@ msgstr "Nom d’affichage par défaut"
 #: src/app/templates/views/signatures.tpl.html:8
 msgctxt "Title"
 msgid "Default Name / Signature"
-msgstr ""
+msgstr "Nom / Signature par défaut"
 
 #. Signature heading on account page
 #: src/app/templates/directives/core/defaultSignature.tpl.html:15
@@ -1952,7 +1952,7 @@ msgstr "Signature par défaut"
 
 #: src/app/core/directives/defaultSignature.js:58
 msgid "Defaut Name / Signature saved"
-msgstr ""
+msgstr "Nom / Signature enregistré(e)"
 
 #. contacts toolbar menu option
 #: src/app/templates/elements/moveElement.tpl.html:37
@@ -4048,12 +4048,12 @@ msgstr "Mot de passe de la boîte mail"
 #: src/app/templates/modals/switchPasswordMode.tpl.html:48
 #: src/app/templates/views/unlock.tpl.html:23
 msgid "Mailbox password"
-msgstr "Mot de passe de la boîte aux lettres"
+msgstr "Mot de passe de la boîte mail"
 
 #: src/app/templates/views/setup.tpl.html:35
 msgctxt "Title"
 msgid "Mailbox Password"
-msgstr "Mot de passe de la boîte aux lettres"
+msgstr "Mot de passe de la boîte mail"
 
 #: src/app/templates/views/account.tpl.html:334
 msgctxt "Label"
@@ -4351,7 +4351,7 @@ msgstr "Le support multi-utilisateurs nécessite un abonnement Business ou Visio
 #: src/app/templates/views/labels.tpl.html:25
 msgctxt "Info"
 msgid "Multiple Labels can be applied to a single message, but a message can only be in a single Folder."
-msgstr ""
+msgstr "Différents labels peuvent être appliqués à un seul message, toutefois un message ne peut être que dans un seul dossier."
 
 #: src/app/core/factories/paymentModal.js:54
 msgctxt "Title"
@@ -4451,7 +4451,7 @@ msgstr "Nouveau mot de passe de boîte mail"
 #: src/app/templates/modals/changePassword.tpl.html:21
 msgctxt "Label"
 msgid "New Mailbox Password"
-msgstr "Nouveau mot de passe de boîte de réception"
+msgstr "Nouveau mot de passe de boîte mail"
 
 #: src/app/composer/controllers/composeMessage.js:698
 msgctxt "Title"
@@ -5329,7 +5329,7 @@ msgstr "ProtonMail est actuellement indisponible, veuillez réessayer plus tard.
 
 #: src/app/core/controllers/support.js:23
 msgid "ProtonMail encountered a problem loading your account. Please refresh the page and try again later."
-msgstr ""
+msgstr "ProtonMail a rencontré un problème lors du chargement de votre compte. Rafraîchissez la page et réessayez plus tard."
 
 #: src/app/templates/partials/sidebar-responsive.tpl.html:30
 #: src/app/templates/ui/navigation/navigationUser.tpl.html:26
@@ -5942,7 +5942,7 @@ msgstr "Envoyés"
 #: src/app/templates/views/appearance.tpl.html:150
 msgctxt "Title"
 msgid "Sent / Drafts folders appearance"
-msgstr ""
+msgstr "Messages envoyés & Brouillons"
 
 #. printed message info
 #: src/app/templates/views/message.print.tpl.html:13
@@ -6000,7 +6000,7 @@ msgstr "Configurez votre compte"
 #: src/app/templates/views/appearance.tpl.html:156
 msgctxt "Bubbule info in appearance sent and drafts folders"
 msgid "Setting to 'Include Moved' means that sent / drafts messages that have been moved to other folders will continue to appear in the Sent/Drafts folder."
-msgstr ""
+msgstr "« Inclure les messages déplacés » signifie que vos messages envoyés / brouillons déplacés dans d'autres dossiers continuerons d'apparaître dans les dossiers Envoyés/Brouillons."
 
 #: src/app/templates/views/setup.tpl.html:103
 #: src/app/templates/views/setup.tpl.html:91
@@ -6421,7 +6421,7 @@ msgstr "Merci pour vos commentaires!"
 #: src/app/templates/address/addressKeysView.tpl.html:23
 msgctxt "address key bit size tooltip"
 msgid "The ability to change key strength will be coming in a future ProtonMail release"
-msgstr ""
+msgstr "La possibilité de modifier la taille de la clé PGP sera bientôt disponible"
 
 #: src/app/core/factories/filterModal.js:10
 msgid "the attachments"
@@ -6647,7 +6647,7 @@ msgstr "Pour payer avec des Bitcoins, veuillez suivre les <a href=\"https://prot
 #: src/app/templates/views/members.tpl.html:240
 msgctxt "Help"
 msgid "To re-order your addresses or change your signature(s), <a ui-sref=\"secured.signatures\">go to signatures</a>"
-msgstr ""
+msgstr "Pour réorganiser vos adresses ou changer leurs signatures, <a ui-sref=\"secured.signatures\">allez dans signatures</a>"
 
 #: src/app/templates/views/appearance.tpl.html:62
 msgctxt "Title"
