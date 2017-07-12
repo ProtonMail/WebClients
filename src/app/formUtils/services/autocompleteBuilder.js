@@ -43,6 +43,7 @@ angular.module('proton.formUtils')
 
                 scope.$on('$destroy', () => {
                     awesomplete.input.removeEventListener('awesomplete-highlight', onHighlight);
+                    awesomplete.destroy();
                     awesomplete = null;
                 });
             };
