@@ -27,6 +27,15 @@ We are still in Beta and will have a more refined build process, installation in
 
 We are very open to bug reports via Issues as well as Pull Requests.
 
+## Branch naming conventions
+
+For a fix
+- `fix/<your feature>`
+
+For a feature
+- `feat/<your feature>`
+- or `feature/<your feature>`
+
 ## Tests
 
 ```shell
