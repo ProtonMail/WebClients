@@ -1,12 +1,16 @@
-
 <div class="pm_modal {{ctrl.class}} filter-modal-container" role="dialog">
+
     <div class="modal-dialog">
         <button type="button" ng-click="ctrl.cancel()" aria-hidden="true" title-translate="Close" title-translate-context="Action" class="fa fa-times close"></button>
+
         <div class="modal-content">
+
             <div class="modal-header">
-                <h3 class="modal-title">Custom Filter</h3>
+                <h3 class="modal-title" translate-context="Filter modal title" translate>Custom Filter</h3>
             </div>
+
             <div class="modal-body pm_form">
+
                 <div class="pm_grid">
                     <div class="col-1-8">
                         <label for="filterName" translate translate-context="Title">Name</label>
@@ -16,6 +20,7 @@
                         <p class="filter-modal-alert text-red" translate-context="Error" translate>Field required</p>
                     </div>
                 </div>
+
                 <div ng-show="ctrl.mode === 'complex'" class="pm_grid">
                     <div class="col-1-4">
                         <label for="filterScript" translate translate-context="Title">Sieve Script</label>
@@ -24,26 +29,34 @@
                         <textarea id="filterScript" ng-model="ctrl.filter.Sieve" placeholder="Sieve Script"></textarea>
                     </div>
                 </div>
+
                 <p translate translate-context="Info" class="alert alert-info">Custom filters work on all new emails, including incoming emails as well as sent emails</p>
+
                 <div ng-show="ctrl.mode === 'simple'">
+
                     <legend translate-context="Title" translate translate-context="Title">Conditions</legend>
+
                     <div class="filter-modal-conditions" ng-repeat="condition in ctrl.filter.Simple.Conditions">
                         <p class="filter-modal-simple-condition bold text-center" ng-hide="$index === 0">
                             <span translate ng-show="ctrl.filter.Simple.Operator.value === 'all'">and</span>
                             <span translate ng-show="ctrl.filter.Simple.Operator.value === 'any'">or</span>
                         </p>
+
                         <div class="filter-modal-condition alert" style="position: relative;">
+
                             <div class="filter-modal-condition-remove">
                                 <button type="button" title="Remove" ng-hide="ctrl.filter.Simple.Conditions.length === 1" ng-click="ctrl.removeCondition(condition)" class="pm_button white">
                                     <i class="fa fa-trash"></i>
                                 </button>
                             </div>
+
                             <div class="filter-modal-condition-settings">
                                 <span class="filter-modal-condition-if bold" translate>If</span>
                                 <span class="pm_select inline">
                                     <select ng-model="condition.Type" ng-options="type.label for type in ctrl.types"></select>
                                     <i class="fa fa-angle-down"></i>
                                 </span>
+
                                 <span class="filter-modal-condition-attachments" ng-if="condition.Type.value === 'attachments'">
                                         <label>
                                             <custom-radio
@@ -53,6 +66,7 @@
                                                 data-custom-value="contains"></custom-radio>
                                             <span translate translate-context="Title">With Attachments</span>
                                         </label>
+
                                         <label>
                                             <custom-radio
                                                 data-custom-ng-change="ctrl.onChangeAttachements(condition, '!contains')"
@@ -62,20 +76,23 @@
                                             <span translate translate-context="Title">Without Attachments</span>
                                         </label>
                                 </span>
+
                                 <span class="pm_select inline" ng-show="condition.Type.value === 'subject' || condition.Type.value === 'sender' || condition.Type.value === 'recipient'">
                                     <select class="autoWidth" ng-model="condition.Comparator" ng-options="comparator.label for comparator in ctrl.comparators"></select>
                                     <i class="fa fa-angle-down"></i>
                                 </span>
+
                                 <span class="filter-modal-condition-settings-item" ng-show="condition.Type.value === 'subject' || condition.Type.value === 'sender' || condition.Type.value === 'recipient'">
                                     <span ng-show="condition.Values.length > 0">
                                         <span class="filter-modal-condition-badges" ng-repeat="value in condition.Values">
                                             <span class="filter-modal-condition-badge pm_badge default none">
                                                 {{ value }} <a href="#" ng-click="condition.Values.splice($index, 1)"><i class="fa fa-times"></i></a>
                                             </span>
-                                            <span class="filter-modal-condition-or">or</span>
+                                            <span class="filter-modal-condition-or" translate-context="Filter modal value OR value" translate>or</span>
                                         </span>
                                     </span>
                                 </span>
+
                                 <form class="filter-modal-add-condition-settings-item filter-modal-add-condition" ng-show="condition.Type.value === 'subject'" ng-submit="ctrl.addValue(condition)">
                                     <input class="filter-modal-add-condition-input" type="text" ng-model="condition.value" placeholder-translate="Text or pattern" ng-blur="ctrl.addValue(condition)"  />
                                     <button class="filter-modal-add-condition-button pm_button" ng-disabled="!condition.value" type="submit">
@@ -92,18 +109,23 @@
                                         <i class="fa fa-check"></i>
                                     </button>
                                 </form>
+
                             </div>
                         </div>
                     </div>
+
                     <p>
                         <a href="#" class="pm_button link" ng-click="ctrl.addCondition()" translate translate-context="Action">Add Condition</a>
                     </p>
+
                     <p class="bold filter-modal-separator" ng-show="ctrl.displaySeparator()"><span translate>If</span> <span class="pm_select inline"><select ng-model="ctrl.filter.Simple.Operator" ng-options="operator.label for operator in ctrl.operators"></select><i class="fa fa-angle-down"></i></span> <span translate-context="Filter modal - If one of the conditions ..." translate>of the conditions above apply, do the following actions.</span></p>
+
                     <legend translate-context="Title" translate translate-context="Title">Actions</legend>
                     <label>
                         <custom-checkbox data-custom-ng-model="ctrl.hasLabels"></custom-checkbox>
-                        <span>Apply Labels</span>
+                        <span translate-context="Filter modal label" translate>Apply Labels</span>
                     </label>
+
                     <div class="alert pm_grid filter-modal-label-container" ng-show="ctrl.hasLabels">
                         <div class="col-1-4" ng-repeat="label in ctrl.filter.Simple.Actions.Labels track by label.ID | orderBy: 'Order'">
                             <label class="filter-modal-label">
@@ -116,49 +138,59 @@
                             <button class="pm_button white" ng-click="ctrl.addLabel()" translate translate-context="Action">Add label</button>
                         </div>
                     </div>
+
                     <label>
                         <custom-checkbox data-custom-ng-model="ctrl.hasMove"></custom-checkbox>
-                        <span>Move To</span>
+                        <span translate-context="Filter modal label" translate>Move To</span>
                     </label>
+
                     <div class="alert pm_grid" ng-show="ctrl.hasMove">
+
                         <div class="col-1-4">
                             <label>
                                 <custom-radio data-custom-ng-model="ctrl.filter.Simple.Actions.Move" data-custom-value="inbox"></custom-radio>
                                 <span class="ellipsis" translate translate-context="Label">Inbox</span>
                             </label>
                         </div>
+
                         <div class="col-1-4">
                             <label>
                                 <custom-radio data-custom-ng-model="ctrl.filter.Simple.Actions.Move" data-custom-value="archive"></custom-radio>
                                 <span class="ellipsis" translate translate-context="Label">Archive</span>
                             </label>
                         </div>
+
                         <div class="col-1-4">
                             <label>
                                 <custom-radio data-custom-ng-model="ctrl.filter.Simple.Actions.Move" data-custom-value="spam"></custom-radio>
                                 <span class="ellipsis" translate translate-context="Label">Spam</span>
                             </label>
                         </div>
+
                         <div class="col-1-4">
                             <label>
                                 <custom-radio data-custom-ng-model="ctrl.filter.Simple.Actions.Move" data-custom-value="trash"></custom-radio>
                                 <span class="ellipsis" translate translate-context="Label">Trash</span>
                             </label>
                         </div>
+
                         <div class="col-1-4" ng-repeat="folder in ctrl.folders track by folder.ID">
                             <label>
                                 <custom-radio data-custom-ng-model="ctrl.filter.Simple.Actions.Move" data-custom-value="{{ ::folder.Name }}"></custom-radio>
                                 <span class="ellipsis">{{ ::folder.Name }}</span>
                             </label>
                         </div>
+
                         <div class="col-1-4 filter-modal-folder-add">
                             <button class="pm_button white" ng-click="ctrl.addFolder()" translate translate-context="Action">Add folder</button>
                         </div>
                     </div>
+
                     <label>
                         <custom-checkbox data-custom-ng-model="ctrl.hasMark"></custom-checkbox>
-                        <span>Mark As</span>
+                        <span translate-context="Filter modal label" translate>Mark As</span>
                     </label>
+
                     <div class="alert pm_grid" ng-show="ctrl.hasMark">
                         <div class="col-1-4">
                             <label>
@@ -166,17 +198,20 @@
                                 <span class="ellipsis" translate translate-context="Label">Read</span>
                             </label>
                         </div>
+
                         <div class="col-1-4">
                             <label>
                                 <custom-checkbox data-custom-ng-model="ctrl.filter.Simple.Actions.Mark.Starred"></custom-checkbox>
                                 <span class="ellipsis" translate translate-context="Label">Starred</span>
                             </label>
                         </div>
+
                     </div>
 
                 </div>
             </div>
         </div>
+
         <div class="modal-footer">
             <button type="button" class="pm_button" ng-click="ctrl.cancel()" ng-disabled="networkActivity.loading()" translate translate-context="Action">Cancel</button>
             <button

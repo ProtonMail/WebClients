@@ -22,8 +22,13 @@
                         translate-context="Action"
                         translate>Sort</button>
                 </p>
-                <p class="alert alert-info" translate-context="Info" translate>Multiple Labels can be applied to a single message, but a message can only be in a single Folder.</p>
-                <p class="help-dnd" ng-if="labels.length">You can drag and drop to rearrange the order of Labels/Folders.</p>
+                <p class="alert alert-info" translate-context="Label information" translate>Multiple Labels can be applied to a single message, but a message can only be in a single Folder.</p>
+
+                <p
+                    class="help-dnd"
+                    ng-if="labels.length"
+                    translate-context="Label information"
+                    translate>You can drag and drop to rearrange the order of Labels/Folders.</p>
                 <p
                     class="alert alert-info labelsState-msg-info"
                     ng-show="!labels.length"
