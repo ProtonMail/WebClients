@@ -35,7 +35,10 @@
                     </small>
                 </header-block>
 
-                <p class="alert alert-info" ng-show="organization.UsedDomains === organization.MaxDomains">You have reached your custom domain limit. <a ui-sref="secured.dashboard">Click here</a> to upgrade your plan to add more.</p>
+                <p
+                    class="alert alert-info"
+                    ng-show="organization.UsedDomains === organization.MaxDomains"
+                    translate-context="Domains information" translate>You have reached your custom domain limit. <a ui-sref="secured.dashboard">Click here</a> to upgrade your plan to add more.</p>
                 <div class="margin">
                     <button ng-hide="organization.UsedDomains === organization.MaxDomains" type="button" class="pm_button primary" ng-click="addDomain()" translate-context="Action" translate-comment="button to add custom domains" translate>Add custom domain</button>
                     <button type="button" class="pm_button" ng-click="refreshStatus()" translate-context="Action" translate>Refresh domain status</button>
@@ -167,7 +170,10 @@
                     <p>
                         <button type="button" class="pm_button primary" ng-click="addAddress(domain)" translate-context="Action" translate-comment="add address button on the domains page" translate>Add address</button>
                     </p>
-                    <p class="alert alert-info" ng-show="domain.Addresses.length > 0">Addresses must be disabled before they can be deleted. Addresses can only be deleted if all messages associated with that address are deleted.</p>
+                    <p
+                        class="alert alert-info"
+                        ng-show="domain.Addresses.length > 0"
+                        translate-context="Domains information" translate>Addresses must be disabled before they can be deleted. Addresses can only be deleted if all messages associated with that address are deleted.</p>
                     <div class="pm_table">
                         <table class="pm_form bordered" ng-show="domain.Addresses.length > 0">
                             <thead>
