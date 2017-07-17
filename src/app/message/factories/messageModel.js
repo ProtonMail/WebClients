@@ -196,7 +196,7 @@ angular.module('proton.message')
                         .then((rep) => {
                             this.decrypting = false;
 
-                            if (this.IsEncrypted === 8) {
+                            if (this.IsEncrypted === 8 || this.MIMEType === 'multipart/mixed') {
                                 return this.parse(rep.data)
                                     .then((data) => ({ data }));
                             }
