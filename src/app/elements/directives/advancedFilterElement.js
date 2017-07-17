@@ -8,7 +8,7 @@ angular.module('proton.elements')
             [getClass('btn-large-to-small')]: () => $stateParams.sort === '-size',
             [getClass('btn-old-to-new')]: () => $stateParams.sort === '-date',
             [getClass('btn-new-to-old')]: () => !$stateParams.sort || $stateParams.sort === 'date',
-            [getClass('btn-show-all')]: () => (!$stateParams.sort || $stateParams.sort === '-date') && !$stateParams.filter,
+            [getClass('btn-show-all')]: () => (!$stateParams.sort || $stateParams.sort === 'date') && !$stateParams.filter,
             [getClass('btn-unread')]: () => $stateParams.filter === 'unread',
             [getClass('btn-read')]: () => $stateParams.filter === 'read'
         };
