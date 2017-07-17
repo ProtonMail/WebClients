@@ -13,7 +13,17 @@ if (typeof module !== 'undefined' && module.exports) {
 } else {
     // Browser
     openpgp.config.integrity_protect = true;
-    openpgp.initWorker({ path: 'openpgp.worker.min.js' });
+
+    /*
+     * The safari tab seems to crash sometimes when using a webworker. This is a bug that was filed to Apple.
+     * But until Apple fixes this bug we can turn off the webworker to prevent this from happening.
+     * As soon as Apple fixes their bug we should use the webworker again, as it can causes the browser to hang
+     * when the user has a lot of addresses/public keys.
+     */
+    const browsers = ['Safari', 'Mobile Safari'];
+    if(!_.contains(browsers, $.ua.browser.name)) {
+        openpgp.initWorker({path: 'openpgp.worker.min.js'});
+    }
 }
 
 openpgp.config.integrity_protect = true;
