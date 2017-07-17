@@ -1,0 +1,10 @@
+.donateModal-container.donateModal-type-donation {
+    [class$="-topUp"] { display: none }
+}
+
+.donateModal-container.donateModal-type-topUp {
+    [class$="-donate"] { display: none }
+}
+
+.donateModal-group-btn { display: flex }
+.donateModal-btn-cancel { margin-right: auto }

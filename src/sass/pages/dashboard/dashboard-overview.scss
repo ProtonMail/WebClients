@@ -1,3 +1,5 @@
+@import '../../components/dashboard/overviewSection';
+
 .settingsDashboard-overview-section {
     display: flex;
     flex-direction: column;
@@ -9,6 +11,8 @@
     flex-direction: column;
     border: 1px solid $border;
 }
+
+.settingsDashboard-btn-donation .donateBtn-icon { display: none }
 
 .settingsDashboard-overview-section-table-container .overviewSection-container {
     flex: 1;

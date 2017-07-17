@@ -721,8 +721,8 @@ angular.module('proton.routes', [
                 }
                 return {};
             },
-            methods(Payment, networkActivityTracker) {
-                return networkActivityTracker.track(Payment.methods());
+            methods(paymentModel, networkActivityTracker) {
+                return networkActivityTracker.track(paymentModel.getMethods());
             }
         }
     })
@@ -760,11 +760,11 @@ angular.module('proton.routes', [
                 return subscriptionModel.fetch()
                     .then(({ Currency }) => dashboardModel.loadPlans(Currency));
             },
-            methods(user, Payment, networkActivityTracker) {
-                return networkActivityTracker.track(Payment.methods());
+            methods(user, paymentModel, networkActivityTracker) {
+                return networkActivityTracker.track(paymentModel.getMethods());
             },
-            status(user, Payment, networkActivityTracker) {
-                return networkActivityTracker.track(Payment.status());
+            status(user, paymentModel, networkActivityTracker) {
+                return networkActivityTracker.track(paymentModel.getStatus());
             }
         },
         views: {
