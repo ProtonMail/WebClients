@@ -1,13 +1,35 @@
 <div class="pm_modal small {{ctrl.class}}" role="dialog" style="display: block;">
-    <form class="modal-dialog" novalidate ng-submit="donateForm.$valid && ctrl.donate()" name="donateForm">
-        <button type="button" ng-click="ctrl.close()" aria-hidden="true" title-translate="Close" title-translate-context="Action" class="fa fa-times close"></button>
+
+    <form
+        class="modal-dialog donateModal-container donateModal-type-{{::ctrl.typeOfModal}}"
+        novalidate
+        ng-class="{
+            'donateModal-mode-paypal': ctrl.method.value === 'paypal'
+        }"
+        ng-submit="donateForm.$valid && ctrl.donate()"
+        name="donateForm">
+
+        <button
+            type="button"
+            ng-click="ctrl.close()"
+            aria-hidden="true"
+            title-translate="Close"
+            title-translate-context="Action"
+            class="fa fa-times close"></button>
+
         <div class="modal-content">
+
             <div class="modal-header">
-                <h4 class="modal-title" translate translate-context="Title">Donate</h4>
+                <h4 class="modal-title donateModal-title-donate" translate translate-context="Title">Donate</h4>
+                <h4 class="modal-title donateModal-title-topUp" translate translate-context="Title">Add credits</h4>
             </div>
+
             <div class="modal-body pm_form">
-                <p translate>Donate to ProtonMail</p>
-                <div class="pm_grid margin flex flex-mobileShrink">
+
+                <p class="donateModal-choose-title donateModal-chapo-donate" translate>Donate to ProtonMail</p>
+                <p class="donateModal-choose-title donateModal-chapo-topUp" translate>Credits to add</p>
+
+                <div class="pm_grid margin flex flex-mobileShrink donateModal-choose-amount">
                     <div class="col-1-4">
                         <button type="button" class="pm_button fullwidth" ng-class="{ success: ctrl.amount === 5 }" ng-click="ctrl.selectAmount(5)">5</button>
                     </div>
@@ -21,40 +43,97 @@
                         <button type="button" class="pm_button fullwidth" ng-class="{ success: ctrl.amount === 50 }" ng-click="ctrl.selectAmount(50)">50</button>
                     </div>
                 </div>
-                <div class="pm_grid margin flex flex-mobileShrink">
+                <div class="pm_grid margin flex flex-mobileShrink donateModal-choose-amount">
+
                     <div class="col-1-4">
                         <button type="button" class="pm_button fullwidth" ng-class="{success: ctrl.amount === 100}" ng-click="ctrl.selectAmount(100)">100</button>
                     </div>
+
                     <div class="col-1-4">
                         <button type="button" class="pm_button fullwidth" ng-class="{success: ctrl.amount === 250}" ng-click="ctrl.selectAmount(250)">250</button>
                     </div>
-                    <div class="col-1-4">
-                        <input type="number" min="2" max="99999999" name="otherAmount" ng-model="ctrl.otherAmount" ng-focus="ctrl.onFocusOtherAmount()" placeholder-translate="Other" />
+
+                    <div class="col-1-4 donateModal-choose-otheramount">
+                        <input
+                            type="number"
+                            min="2"
+                            max="99999999"
+                            name="otherAmount"
+                            ng-model="ctrl.otherAmount"
+                            ng-focus="ctrl.onFocusOtherAmount()"
+                            ng-change="ctrl.changeValue()"
+                            placeholder-translate="Other">
                     </div>
-                    <div class="col-1-4">
-                        <span class="pm_select">
-                            <select ng-model="ctrl.currency" ng-options="currency.label for currency in ctrl.currencies"></select>
+
+                    <div class="col-1-4 donateModal-choose-currency">
+                        <div class="pm_select">
+                            <select
+                                ng-model="ctrl.currency"
+                                ng-change="ctrl.changeValue()"
+                                ng-options="currency.label for currency in ctrl.currencies"></select>
                             <i class="fa fa-angle-down"></i>
-                        </span>
+                        </div>
                     </div>
                 </div>
-                <div ng-messages="donateForm.otherAmount.$error">
+
+                <div class="donateModal-choose-errors" ng-messages="donateForm.otherAmount.$error">
                     <p ng-message="number" class="alert alert-danger" translate-context="Error" translate>Invalid number</p>
                     <p ng-message="min" class="alert alert-danger" translate-context="Error" translate>Due to credit card processing fees, we cannot accept donations smaller than 2.</p>
                 </div>
+
+
                 <div ng-if="ctrl.methods.length > 0">
                     <label for="paymentMethod" class="margin" translate-context="Title">Select payment method:</label>
-                    <span class="pm_select">
-                        <select id="paymentMethod" ng-model="ctrl.method" ng-options="ctrl.label(method) for method in ctrl.methods"></select>
+                    <div class="pm_select">
+                        <select
+                            id="paymentMethod"
+                            ng-model="ctrl.method"
+                            ng-options="method.label for method in ctrl.methods"></select>
                         <i class="fa fa-angle-down"></i>
-                    </span>
+                    </div>
                 </div>
-                <card-view card="ctrl.card" ng-if="ctrl.methods.length === 0" form="donateForm"></card-view>
-                <p class="alert alert-info"><span translate translate-context="Info">It's also possible to donate with</span> <a href="https://protonmail.com/donate" target="_blank" translate translate-context="Link">PayPal or Bitcoin</a>.</p>
+
+
+                <card-view
+                    data-card="ctrl.card"
+                    ng-if="ctrl.method.value === 'card'"
+                    data-form="donateForm"></card-view>
+
+                <paypal-view
+                    ng-if="ctrl.method.value === 'paypal'"
+                    data-amount="ctrl.getAmount()"
+                    data-currency="ctrl.currency.value"
+                    data-callback="ctrl.paypalCallback"></paypal-view>
+
+                <p class="alert alert-info">
+                    <span translate translate-context="Info">It's also possible to donate with</span> <a href="https://protonmail.com/donate" target="_blank" translate translate-context="Link">Bitcoin</a>.
+                </p>
             </div>
         </div>
-        <div class="modal-footer text-right">
-            <button type="submit" ng-disabled="ctrl.process === true" class="pm_button primary" translate translate-context="Action">Donate</button>
+
+        <div class="modal-footer text-right  donateModal-group-btn">
+
+            <button
+                type="button"
+                class="pm_button donateModal-btn-cancel"
+                ng-click="ctrl.close()"
+                translate
+                translate-context="Action">Cancel</button>
+
+            <button
+                type="submit"
+                ng-disabled="ctrl.process === true"
+                ng-if="ctrl.method.value !== 'paypal'"
+                class="pm_button primary donateModal-btn-donation">
+                    <span
+                        class="donateModal-action-donate"
+                        translate-context="Action"
+                        translate>Donate</span>
+                    <span
+                        class="donateModal-action-topUp"
+                        translate-context="Action"
+                        translate>top Up</span>
+                </button>
         </div>
     </form>
     <div class="modal-overlay"></div>

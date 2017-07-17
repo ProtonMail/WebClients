@@ -1,3 +1,19 @@
 .overviewSection-container {
-    // TODO
+    .topUp-button .donateBtn-icon { display: none }
+}
+
+.overviewSection-container:not(.overviewSection-plan-free) {
+    .overviewSection-domains-free,
+    .overviewSection-link-upgrade,
+    .overviewSection-addresses-free,
+    .overviewSection-link-signatureUpgrade,
+    .overviewSection-storage-free { display: none }
+}
+
+.overviewSection-container.overviewSection-plan-free {
+    .overviewSection-domains-name,
+    .overviewSection-link-manage,
+    .overviewSection-addresses-total,
+    .overviewSection-link-signatureManager,
+    .overviewSection-storage-size { display: none }
 }

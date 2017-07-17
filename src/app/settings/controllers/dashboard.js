@@ -8,7 +8,6 @@ angular.module('proton.settings')
     eventManager,
     authentication,
     confirmModal,
-    donateModal,
     networkActivityTracker,
     notify,
     Payment,
@@ -310,32 +309,6 @@ angular.module('proton.settings')
         return '';
     };
 
-    /**
-     * Open donate modal
-     */
-    $scope.donate = () => {
-        if (status.data.Stripe || status.data.Paymentwall) {
-            networkActivityTracker.track(
-                Payment.methods()
-                .then((result) => {
-                    if (result.data && result.data.Code === 1000) {
-                        donateModal.activate({
-                            params: {
-                                methods: result.data.PaymentMethods,
-                                close() {
-                                    // Close donate modal
-                                    donateModal.deactivate();
-                                }
-                            }
-                        });
-                    }
-                })
-            );
-        } else {
-            notify({ message: gettextCatalog.getString('Donations are currently not available, please try again later', null, 'Info') });
-        }
-    };
-
     function unsubscribe() {
         return Payment.delete()
             .then(({ data = {} }) => {
@@ -477,9 +450,7 @@ angular.module('proton.settings')
                             create: organization.PlanName === 'free',
                             planIDs: PlanIDs,
                             plans: dashboardModel.query($scope.configuration.currency, $scope.configuration.cycle),
-                            valid,
-                            choice,
-                            status: status.data,
+                            valid, choice, status,
                             methods: methods.PaymentMethods,
                             change() {
                                 $scope.refresh();
@@ -532,7 +503,6 @@ angular.module('proton.settings')
             element.select = option;
         }
     };
-
     // Call initialization
-    initialization(monthly, yearly, methods.data.PaymentMethods);
+    initialization(monthly, yearly, methods);
 });

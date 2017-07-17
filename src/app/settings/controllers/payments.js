@@ -15,9 +15,10 @@ angular.module('proton.settings')
     notify,
     networkActivityTracker,
     organizationInvoices,
-    Payment
+    Payment,
+    paymentModel
 ) => {
-    $scope.methods = methods.data.PaymentMethods;
+    $scope.methods = methods;
     $scope.subscribed = authentication.user.Subscribed;
     $scope.invoices = invoices.data.Invoices;
     $scope.total = invoices.data.Total;
@@ -43,21 +44,12 @@ angular.module('proton.settings')
         $scope.invoiceOwner = owner;
     };
 
-    $scope.refresh = function () {
-        networkActivityTracker.track(Payment.methods()
-        .then((result) => {
-            if (result.data && result.data.Code === 1000) {
-                $scope.methods = result.data.PaymentMethods;
-            }
-        }));
-    };
-
     $scope.add = () => {
         cardModal.activate({
             params: {
-                close() {
+                close({ methods, method } = {}) {
                     cardModal.deactivate();
-                    $scope.refresh();
+                    method && ($scope.methods = methods);
                 }
             }
         });
@@ -67,9 +59,9 @@ angular.module('proton.settings')
         cardModal.activate({
             params: {
                 method,
-                close() {
+                close({ methods, method } = {}) {
                     cardModal.deactivate();
-                    $scope.refresh();
+                    method && ($scope.methods = methods);
                 }
             }
         });
@@ -108,19 +100,26 @@ angular.module('proton.settings')
                 title,
                 message,
                 confirm() {
-                    networkActivityTracker.track(
-                        Payment.deleteMethod(method.ID)
-                        .then((result) => {
-                            if (result.data && result.data.Code === 1000) {
-                                confirmModal.deactivate();
-                                $scope.methods.splice($scope.methods.indexOf(method), 1);
-                                notify({ message: gettextCatalog.getString('Payment method deleted', null), classes: 'notification-success' });
-                            } else if (result.data && result.data.Error) {
-                                confirmModal.deactivate();
-                                notify({ message: result.data.Error, classes: 'notification-danger' });
+                    const promise = Payment.deleteMethod(method.ID)
+                        .then(({ data = {} }) => {
+                            if (data.Code === 1000) {
+                                return paymentModel.getMethods(true);
+                            }
+
+                            if (data.Error) {
+                                throw new Error(data.Error);
                             }
                         })
-                    );
+                        .then(confirmModal.deactivate)
+                        .then(() => {
+                            $scope.methods.splice($scope.methods.indexOf(method), 1);
+                            notify({ message: gettextCatalog.getString('Payment method deleted', null), classes: 'notification-success' });
+                        })
+                        .catch((e) => {
+                            confirmModal.deactivate();
+                            notify({ message: e.message, classes: 'notification-danger' });
+                        });
+                    networkActivityTracker.track(promise);
                 },
                 cancel() {
                     confirmModal.deactivate();

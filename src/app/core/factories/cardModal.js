@@ -1,5 +1,5 @@
 angular.module('proton.core')
-    .factory('cardModal', (pmModal, Payment, gettextCatalog, cardModel, networkActivityTracker) => {
+    .factory('cardModal', (pmModal, Payment, gettextCatalog, cardModel, networkActivityTracker, paymentModel) => {
         return pmModal({
             controllerAs: 'ctrl',
             templateUrl: 'templates/modals/card.tpl.html',
@@ -40,7 +40,6 @@ angular.module('proton.core')
                     return Promise.resolve();
                 };
 
-                const finish = (method) => params.close(method);
 
                 self.edit = () => {
                     self.card.fullname = self.panel.fullname;
@@ -48,11 +47,16 @@ angular.module('proton.core')
                 };
 
                 self.submit = () => {
-                    const promise = method().then(finish);
+                    const promise = method()
+                        .then((method) => {
+                            return paymentModel.getMethods(true)
+                                .then((methods) => ({ method, methods }));
+                        })
+                        .then(params.close);
                     networkActivityTracker.track(promise);
                 };
 
-                self.cancel = () => params.close();
+                self.cancel = params.close;
             }
         });
     });

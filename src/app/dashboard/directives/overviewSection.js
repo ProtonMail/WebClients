@@ -9,19 +9,7 @@ angular.module('proton.dashboard')
                 const unsubscribe = [];
                 const $buttons = element.find('.scroll');
 
-                $buttons.on('click', onClick());
-
-                unsubscribe.push($rootScope.$on('updateUser', () => {
-                    updateUser();
-                }));
-
-                unsubscribe.push($rootScope.$on('organizationChange', (event, organization) => {
-                    updateOrganization(organization);
-                }));
-
-                unsubscribe.push($rootScope.$on('subscription', (event, { type, data = {} }) => {
-                    (type === 'update') && updateSubscription(data.subscription);
-                }));
+                $buttons.on('click', onClick);
 
                 function updateUser() {
                     scope.$applyAsync(() => {
@@ -47,12 +35,33 @@ angular.module('proton.dashboard')
                     }, 1000);
                 }
 
+                const refreshUser = () => {
+                    authentication.fetchUserInfo()
+                        .then((data) => scope.user = data);
+                };
+
+                unsubscribe.push($rootScope.$on('updateUser', () => {
+                    updateUser();
+                }));
+
+                unsubscribe.push($rootScope.$on('organizationChange', (e, organization) => {
+                    updateOrganization(organization);
+                }));
+
+                unsubscribe.push($rootScope.$on('subscription', (e, { type, data = {} }) => {
+                    (type === 'update') && updateSubscription(data.subscription);
+                }));
+
+                unsubscribe.push($rootScope.$on('payments', (e, { type }) => {
+                    (type === 'topUp.success') && refreshUser();
+                }));
+
                 updateUser();
                 updateOrganization(organizationModel.get());
                 updateSubscription(subscriptionModel.get());
 
                 scope.$on('$destroy', () => {
-                    $buttons.off('click', onClick());
+                    $buttons.off('click', onClick);
                     _.each(unsubscribe, (cb) => cb());
                     unsubscribe.length = 0;
                 });

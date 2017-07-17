@@ -115,5 +115,6 @@ angular.module('proton.constants', [])
         HEADER_CLASS: 'h4',
         IFRAMECLASSNAME: 'angular-squire-iframe'
     },
-    URL_INFO: 'https://mail.protonmail.com/assets/host.png'
+    URL_INFO: 'https://mail.protonmail.com/assets/host.png',
+    MIN_PAYPAL_AMOUNT: 500
 });

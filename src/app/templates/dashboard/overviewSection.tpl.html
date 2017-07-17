@@ -1,4 +1,6 @@
-<table class="overviewSection-container">
+<table class="overviewSection-container" ng-class="{
+    'overviewSection-plan-free': organization.PlanName === 'free'
+}">
     <tbody class="overviewSection-tbody">
         <tr>
             <th translate-context="Title" translate>Username</th>
@@ -9,43 +11,60 @@
         <tr>
             <th translate-context="Title" translate>Domains</th>
             <td>
-                <strong ng-hide="organization.PlanName === 'free'">{{ organization.UsedDomains }} <span translate-comment="dashboard page. how many domains exist for an organization as well as the total number allowed." translate>of</span> {{ organization.MaxDomains }}</strong>
-                <strong ng-show="organization.PlanName === 'free'">0</strong>
+                <strong class="overviewSection-domains-name" >{{ organization.UsedDomains }} <span translate-comment="dashboard page. how many domains exist for an organization as well as the total number allowed." translate>of</span> {{ organization.MaxDomains }}</strong>
+                <strong class="overviewSection-domains-free">0</strong>
             </td>
             <td class="text-right actions">
-                <a ui-sref="secured.domains" class="text-purple" ng-hide="subscription.Name === 'free'" translate-context="Action" translate>Manage</a>
-                <a href="#" class="text-purple scroll" ng-show="subscription.Name === 'free'" translate-context="Action" translate>Upgrade</a>
+                <a
+                    ui-sref="secured.domains"
+                    class="text-purple overviewSection-link-manage"
+                    translate-context="Action"
+                    translate>Manage</a>
+                <a
+                    href="#"
+                    class="text-purple scroll overviewSection-link-upgrade"
+                    translate-context="Action"
+                    translate>Upgrade</a>
             </td>
         </tr>
         <tr>
             <th translate-context="Title" translate>Addresses</th>
             <td>
-                <strong ng-hide="organization.PlanName === 'free'">{{ organization.UsedAddresses }} <span translate-comment="dashboard page. how many addresses exist for an organization as well as the total number allowed." translate>of</span> {{ organization.MaxAddresses }}</strong>
-                <strong ng-show="organization.PlanName === 'free'">1</strong>
+                <strong class="overviewSection-addresses-total">{{ organization.UsedAddresses }} <span translate-comment="dashboard page. how many addresses exist for an organization as well as the total number allowed." translate>of</span> {{ organization.MaxAddresses }}</strong>
+                <strong class="overviewSection-addresses-free">1</strong>
             </td>
             <td class="text-right actions">
-                <a ui-sref="secured.signatures" class="text-purple" ng-hide="subscription.Name === 'free'" translate-context="Action" translate>Manage</a>
-                <a href="#" class="text-purple scroll" ng-show="subscription.Name === 'free'" translate-context="Action" translate>Upgrade</a>
+                <a
+                    ui-sref="secured.signatures"
+                    class="text-purple overviewSection-link-signatureManager"
+                    translate-context="Action"
+                    translate>Manage</a>
+                <a
+                    href="#"
+                    class="text-purple scroll overviewSection-link-signatureUpgrade"
+                    translate-context="Action"
+                    translate>Upgrade</a>
             </td>
         </tr>
         <tr>
             <th translate-context="Title" translate>Storage</th>
             <td colspan="2" class="overviewSection-storage">
-                <strong ng-hide="organization.PlanName === 'free'">{{ organization.UsedSpace | humanSize }} <span translate-comment="show used storage for an account" translate>of</span> {{ organization.MaxSpace | humanSize }}</strong>
-                <strong ng-show="organization.PlanName === 'free'">{{ user.UsedSpace | humanSize }} <span translate-comment="show used storage for an account" translate>of</span> {{ user.MaxSpace | humanSize }}</strong>
+                <strong class="overviewSection-storage-size">{{ organization.UsedSpace | humanSize }} <span translate-comment="show used storage for an account" translate>of</span> {{ organization.MaxSpace | humanSize }}</strong>
+                <strong class="overviewSection-storage-free">{{ user.UsedSpace | humanSize }} <span translate-comment="show used storage for an account" translate>of</span> {{ user.MaxSpace | humanSize }}</strong>
                 <br>
                 <div class="storageBar">
-                    <div class="storageBar-progress" ng-hide="organization.PlanName === 'free'" style="width: {{ organization.UsedSpace / organization.MaxSpace * 100 }}%"></div>
-                    <div class="storageBar-progress" ng-show="organization.PlanName === 'free'" style="width: {{ user.UsedSpace / user.MaxSpace * 100 }}%"></div>
+                    <div class="storageBar-progress" ng-if="organization.PlanName !== 'free'" style="width: {{ organization.UsedSpace / organization.MaxSpace * 100 }}%"></div>
+                    <div class="storageBar-progress" ng-if="organization.PlanName === 'free'" style="width: {{ user.UsedSpace / user.MaxSpace * 100 }}%"></div>
                 </div>
             </td>
         </tr>
     </tbody>
     <tbody class="overviewSection-tbody-billing">
-        <tr ng-if="user.Credit">
+        <tr>
             <th translate-context="Title" translate>Credit</th>
             <td colspan="2">
-                <strong>{{ user.Credit / 100 | currency: user.Currency }}</strong>
+                <strong>{{ (user.Credit || 0) / 100 | currency: user.Currency }}</strong>
+                <donate-btn class="pm_button link topUp-button" data-item="topUp"></donate-btn>
             </td>
         </tr>
         <tr ng-if="subscription.CouponCode">
