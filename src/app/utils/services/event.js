@@ -265,7 +265,7 @@ angular.module('proton.utils')
                 const threadingIsOn = authentication.user.ViewMode === CONSTANTS.CONVERSATION_VIEW_MODE;
                 _.each(messages, ({ Action, Message }) => {
                     if (Action === 1 && Message.IsRead === 0 && Message.LabelIDs.indexOf(CONSTANTS.MAILBOX_IDENTIFIERS.inbox) !== -1) {
-                        const title = gettextCatalog.getString('New mail from', null, 'Info') + ' ' + Message.Sender.Name || Message.SenderAddress;
+                        const title = gettextCatalog.getString('New mail from', null, 'Info') + ' ' + Message.SenderName || Message.SenderAddress;
 
                         desktopNotifications.create(title, {
                             body: Message.Subject,
