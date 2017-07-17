@@ -1,5 +1,5 @@
 angular.module('proton.composer')
-    .directive('composer', (AppModel, $rootScope, embedded, attachmentFileFormat) => {
+    .directive('composer', (AppModel, $rootScope, embedded, attachmentFileFormat, authentication) => {
 
         const CLASS_DRAGGABLE = 'composer-draggable';
         const CLASS_DRAGGABLE_EDITOR = 'composer-draggable-editor';
@@ -84,9 +84,27 @@ angular.module('proton.composer')
                     target.classList.contains('composer-dropzone') && addDragleaveClassName(el[0]);
                 }, 16);
 
+                const onKeydown = ({ keyCode }) => {
+                    // ESC
+                    if (keyCode === 27) {
+
+                        // Autocomplete input
+                        if (document.activeElement && document.activeElement.classList.contains('autocompleteEmails-input')) {
+                            return;
+                        }
+                        if (authentication.user.Hotkeys === 1) {
+                            $rootScope.$emit('composer.update', {
+                                type: 'close.message',
+                                data: { message: scope.message }
+                            });
+                        }
+                    }
+                };
+
                 el.on('dragenter', onDragEnter);
                 el.on('dragleave', onDragLeave);
                 el.on('click', onClick);
+                el.on('keydown', onKeydown);
 
                 const unsubscribeEditor = $rootScope.$on('editor.draggable', onAction(scope, el[0]));
                 const unsubscribeAtt = $rootScope.$on('attachment.upload', onAction(scope, el[0]));
@@ -96,6 +114,7 @@ angular.module('proton.composer')
                         el.off('dragenter', onDragEnter);
                         el.off('dragleave', onDragLeave);
                         el.off('click', onClick);
+                        el.off('keydown', onKeydown);
 
                         unsubscribeEditor();
                         unsubscribeAtt();
