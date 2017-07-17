@@ -1,17 +1,24 @@
 angular.module('proton.elements')
     .directive('advancedFilterElement', ($stateParams, gettextCatalog, messageApi, confirmModal, networkActivityTracker, cache, notify, eventManager, $state) => {
+
+        const getClass = (name) => `advancedFilterElement-${name}`;
         const ACTIVE_CLASS = 'active';
         const BUTTONS_CLASS = {
-            'advancedFilterElement-btn-small-to-large': () => $stateParams.sort === 'size',
-            'advancedFilterElement-btn-large-to-small': () => $stateParams.sort === '-size',
-            'advancedFilterElement-btn-old-to-new': () => !$stateParams.sort || $stateParams.sort === '-date',
-            'advancedFilterElement-btn-new-to-old': () => $stateParams.sort === 'date',
-            'advancedFilterElement-btn-show-all': () => (!$stateParams.sort || $stateParams.sort === '-date') && !$stateParams.filter,
-            'advancedFilterElement-btn-unread': () => $stateParams.filter === 'unread',
-            'advancedFilterElement-btn-read': () => $stateParams.filter === 'read'
+            [getClass('btn-small-to-large')]: () => $stateParams.sort === 'size',
+            [getClass('btn-large-to-small')]: () => $stateParams.sort === '-size',
+            [getClass('btn-old-to-new')]: () => $stateParams.sort === '-date',
+            [getClass('btn-new-to-old')]: () => !$stateParams.sort || $stateParams.sort === 'date',
+            [getClass('btn-show-all')]: () => (!$stateParams.sort || $stateParams.sort === '-date') && !$stateParams.filter,
+            [getClass('btn-unread')]: () => $stateParams.filter === 'unread',
+            [getClass('btn-read')]: () => $stateParams.filter === 'read'
         };
         const clearState = (state) => state.replace('.element', '');
-        const switchState = (opt = {}) => $state.go(clearState($state.$current.name), _.extend({}, $state.params, { page: undefined, id: undefined }, opt));
+        const switchState = (opt = {}) => {
+            $state.go(clearState($state.$current.name), _.extend({}, $state.params, {
+                page: undefined,
+                id: undefined
+            }, opt));
+        };
 
         /**
          * Empty specific location
