@@ -2,8 +2,8 @@ angular.module('proton.message')
 .directive('displayContentBtn', ($rootScope, gettextCatalog) => {
 
     const NOTICES = {
-        embedded: gettextCatalog.getString('This message contain embedded images', null, 'Action'),
-        remote: gettextCatalog.getString('This message contain remote content', null, 'Action')
+        embedded: gettextCatalog.getString('This message contains embedded images', null, 'Action'),
+        remote: gettextCatalog.getString('This message contains remote content', null, 'Action')
     };
 
     const getClassName = (name) => `displayContentBtn-type-${name}`;
