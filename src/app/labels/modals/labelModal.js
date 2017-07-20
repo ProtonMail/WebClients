@@ -28,6 +28,20 @@ angular.module('proton.labels')
     }
 
     /**
+     * Get notify value for the toggle
+     * @param {Number} Exclusive
+     * @param {Number} Notify
+     * @return {Boolean}
+     */
+    function getNotify({ Exclusive = 0, Notify }) {
+        if (angular.isDefined(Notify)) {
+            return !!Notify;
+        }
+
+        return !!Exclusive;
+    }
+
+    /**
      * Get success message for label modal
      * @param  {String} ID        Label ID
      * @param  {Number} Exclusive
@@ -64,16 +78,17 @@ angular.module('proton.labels')
      * @param  {Number} [Exclusive=0 }]            Folder (1) or Label (0)
      * @return {Promise}
      */
-    function save({ ID, Name = '', Color = '', Display = 1, Exclusive = 0 }) {
+    function save({ ID, Name = '', Color = '', Display = 1, Exclusive = 0, Notify = 0 }) {
         const action = ID ? 'update' : 'create';
-        return Label[action]({ ID, Name, Color, Display, Exclusive })
-        .then(({ data = {} } = {}) => {
-            if (data.Code === 1000) {
-                return data.Label;
-            }
-            throw new Error(data.Error || TRANSLATIONS.ERROR_MESSAGE);
-        })
-        .then((newLabel) => eventManager.call().then(() => newLabel));
+
+        return Label[action]({ ID, Name, Color, Display, Exclusive, Notify })
+            .then(({ data = {} } = {}) => {
+                if (data.Code === 1000) {
+                    return data.Label;
+                }
+                throw new Error(data.Error || TRANSLATIONS.ERROR_MESSAGE);
+            })
+            .then((newLabel) => eventManager.call().then(() => newLabel));
     }
 
     return pmModal({
@@ -84,15 +99,17 @@ angular.module('proton.labels')
             const { ID, Name = '', Color = '', Exclusive = 0 } = params.label;
             const successMessage = getSuccessMessage(params.label);
             const index = _.random(0, COLORS_LIST.length - 1);
+            self.ID = ID;
             self.title = getTitle(params.label);
             self.name = Name || '';
+            self.notify = getNotify(params.label);
             self.colors = COLORS_LIST;
             self.color = Color || COLORS_LIST[index];
 
             hotkeys.unbind();
 
             self.create = () => {
-                const data = cleanInput({ ID, Name: self.name, Color: self.color, Exclusive });
+                const data = cleanInput({ ID, Name: self.name, Color: self.color, Exclusive, Notify: self.notify ? 1 : 0 });
 
                 // Can be empty for an XSS
                 if (!data.Name) {
