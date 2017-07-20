@@ -18,18 +18,16 @@ angular.module('proton.sidebar')
                 $title.textContent = I18N[item];
 
                 const onClick = () => {
-                    const { Stripe, Paymentwall } = paymentModel.get('status') || {};
-                    if (Stripe || Paymentwall) {
-                        return donateModal.activate({
-                            params: {
-                                type: item,
-                                methods: paymentModel.get('methods'),
-                                close: donateModal.deactivate
-                            }
-                        });
+                    if (!paymentModel.canPay()) {
+                        return notify({ message: I18N.notAvailable });
                     }
 
-                    notify({ message: I18N.notAvailable });
+                    donateModal.activate({
+                        params: {
+                            type: item,
+                            close: donateModal.deactivate
+                        }
+                    });
                 };
 
                 el.on('click', onClick);

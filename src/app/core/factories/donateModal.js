@@ -1,5 +1,5 @@
 angular.module('proton.core')
-.factory('donateModal', (authentication, pmModal, Payment, notify, cardModel, networkActivityTracker, gettextCatalog, $rootScope, aboutClient) => {
+.factory('donateModal', (authentication, pmModal, Payment, notify, cardModel, networkActivityTracker, gettextCatalog, $rootScope, paymentUtils) => {
 
     const CURRENCIES = [
         { label: 'USD', value: 'USD' },
@@ -18,14 +18,6 @@ angular.module('proton.core')
         topUp: {
             success: gettextCatalog.getString('Credits added', null, 'topUp modal')
         }
-    };
-
-    const cardNumber = ({ Last4 = '' } = {}) => `•••• •••• •••• ${Last4}`;
-    const formatMethods = (methods = []) => {
-        return methods.map(({ ID = '', Details = {} }) => ({
-            ID, label: cardNumber(Details),
-            value: 'use.card'
-        }));
     };
 
     const donate = (options = {}) => {
@@ -65,25 +57,10 @@ angular.module('proton.core')
             this.currency = _.findWhere(this.currencies, { value: authentication.user.Currency });
             this.card = {};
 
-            this.methods = [
-                {
-                    value: 'card',
-                    label: gettextCatalog.getString('Credit card', null)
-                }
-            ];
+            const { list, selected } = paymentUtils.generateMethods();
 
-            !aboutClient.isIE11() && this.methods.push({
-                label: 'Paypal',
-                value: 'paypal'
-            });
-
-            this.method = this.methods[0];
-
-            if (params.methods && params.methods.length) {
-                const size = this.methods.length;
-                this.methods = this.methods.concat(formatMethods(params.methods));
-                this.method = this.methods[size];
-            }
+            this.methods = list;
+            this.method = selected;
             this.close = params.close;
 
             const getParameters = () => {
