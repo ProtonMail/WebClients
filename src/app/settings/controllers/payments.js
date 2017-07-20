@@ -168,6 +168,11 @@ angular.module('proton.settings')
             status: Payment.status()
         };
 
+        // Payment.check(invoice.ID)
+        //     .then(({ data }) => {
+        //         console.log('--', data)
+        //     })
+
         networkActivityTracker.track(
              $q.all(promises)
              .then((result) => {
@@ -191,6 +196,7 @@ angular.module('proton.settings')
                          amount: result.check.data.Amount,
                          credit: result.check.data.Credit,
                          amountDue: result.check.data.AmountDue,
+                         checkInvoice: result.check.data,
                          close(result) {
                              payModal.deactivate();
 

@@ -11,6 +11,18 @@ angular.module('proton.dashboard')
 
                 $buttons.on('click', onClick);
 
+                unsubscribe.push($rootScope.$on('updateUser', () => {
+                    updateUser();
+                }));
+
+                unsubscribe.push($rootScope.$on('organizationChange', (event, organization) => {
+                    updateOrganization(organization);
+                }));
+
+                unsubscribe.push($rootScope.$on('subscription', (event, { type, data = {} }) => {
+                    (type === 'update') && updateSubscription(data.subscription);
+                }));
+
                 function updateUser() {
                     scope.$applyAsync(() => {
                         scope.user = angular.copy(authentication.user);

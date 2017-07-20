@@ -626,6 +626,14 @@ angular.module('proton.routes', [
                 templateUrl: 'templates/views/account.tpl.html',
                 controller: 'AccountController'
             }
+        },
+        resolve: {
+            methods(user, paymentModel, networkActivityTracker) {
+                return networkActivityTracker.track(paymentModel.getMethods());
+            },
+            status(user, paymentModel, networkActivityTracker) {
+                return networkActivityTracker.track(paymentModel.getStatus());
+            }
         }
     })
 
@@ -635,6 +643,14 @@ angular.module('proton.routes', [
             'content@secured': {
                 templateUrl: 'templates/views/labels.tpl.html',
                 controller: 'LabelsController'
+            }
+        },
+        resolve: {
+            methods(user, paymentModel, networkActivityTracker) {
+                return networkActivityTracker.track(paymentModel.getMethods());
+            },
+            status(user, paymentModel, networkActivityTracker) {
+                return networkActivityTracker.track(paymentModel.getStatus());
             }
         }
     })
@@ -646,6 +662,14 @@ angular.module('proton.routes', [
                 templateUrl: 'templates/views/security.tpl.html',
                 controller: 'SecurityController'
             }
+        },
+        resolve: {
+            methods(user, paymentModel, networkActivityTracker) {
+                return networkActivityTracker.track(paymentModel.getMethods());
+            },
+            status(user, paymentModel, networkActivityTracker) {
+                return networkActivityTracker.track(paymentModel.getStatus());
+            }
         }
     })
 
@@ -656,6 +680,14 @@ angular.module('proton.routes', [
             'content@secured': {
                 templateUrl: 'templates/views/appearance.tpl.html',
                 controller: 'AppearanceController'
+            }
+        },
+        resolve: {
+            methods(user, paymentModel, networkActivityTracker) {
+                return networkActivityTracker.track(paymentModel.getMethods());
+            },
+            status(user, paymentModel, networkActivityTracker) {
+                return networkActivityTracker.track(paymentModel.getStatus());
             }
         }
     })
@@ -686,6 +718,12 @@ angular.module('proton.routes', [
                     return networkActivityTracker.track(organizationKeysModel.fetch());
                 }
                 return Promise.resolve();
+            },
+            methods(user, paymentModel, networkActivityTracker) {
+                return networkActivityTracker.track(paymentModel.getMethods());
+            },
+            status(user, paymentModel, networkActivityTracker) {
+                return networkActivityTracker.track(paymentModel.getStatus());
             }
         },
         views: {
@@ -723,6 +761,9 @@ angular.module('proton.routes', [
             },
             methods(paymentModel, networkActivityTracker) {
                 return networkActivityTracker.track(paymentModel.getMethods());
+            },
+            status(paymentModel, networkActivityTracker) {
+                return networkActivityTracker.track(paymentModel.getStatus());
             }
         }
     })
@@ -733,6 +774,14 @@ angular.module('proton.routes', [
             'content@secured': {
                 templateUrl: 'templates/views/keys.tpl.html'
             }
+        },
+        resolve: {
+            methods(user, paymentModel, networkActivityTracker) {
+                return networkActivityTracker.track(paymentModel.getMethods());
+            },
+            status(user, paymentModel, networkActivityTracker) {
+                return networkActivityTracker.track(paymentModel.getStatus());
+            }
         }
     })
 
@@ -741,6 +790,14 @@ angular.module('proton.routes', [
         views: {
             'content@secured': {
                 template: '<vpn-view></vpn-view>'
+            }
+        },
+        resolve: {
+            methods(user, paymentModel, networkActivityTracker) {
+                return networkActivityTracker.track(paymentModel.getMethods());
+            },
+            status(user, paymentModel, networkActivityTracker) {
+                return networkActivityTracker.track(paymentModel.getStatus());
             }
         }
     })
@@ -812,6 +869,12 @@ angular.module('proton.routes', [
                     return networkActivityTracker.track(organizationKeysModel.fetch());
                 }
                 return Promise.resolve();
+            },
+            methods(user, paymentModel, networkActivityTracker) {
+                return networkActivityTracker.track(paymentModel.getMethods());
+            },
+            status(user, paymentModel, networkActivityTracker) {
+                return networkActivityTracker.track(paymentModel.getStatus());
             }
         },
         views: {
@@ -855,6 +918,12 @@ angular.module('proton.routes', [
                     return networkActivityTracker.track(organizationKeysModel.fetch());
                 }
                 return Promise.resolve();
+            },
+            methods(user, paymentModel, networkActivityTracker) {
+                return networkActivityTracker.track(paymentModel.getMethods());
+            },
+            status(user, paymentModel, networkActivityTracker) {
+                return networkActivityTracker.track(paymentModel.getStatus());
             }
         },
         views: {
@@ -895,6 +964,12 @@ angular.module('proton.routes', [
                 });
 
                 return networkActivityTracker.track(deferred.promise);
+            },
+            methods(user, paymentModel, networkActivityTracker) {
+                return networkActivityTracker.track(paymentModel.getMethods());
+            },
+            status(user, paymentModel, networkActivityTracker) {
+                return networkActivityTracker.track(paymentModel.getStatus());
             }
         },
         views: {

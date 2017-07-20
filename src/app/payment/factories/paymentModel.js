@@ -39,6 +39,10 @@ angular.module('proton.payment')
 
         const getStatus = load('status', loadStatus);
         const getMethods = load('methods', loadMethods);
+        const canPay = () => {
+            const { Stripe, Paymentwall } = get('status') || {};
+            return Stripe || Paymentwall;
+        };
 
-        return { getStatus, getMethods, get };
+        return { getStatus, getMethods, get, canPay };
     });
