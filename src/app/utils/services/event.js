@@ -29,6 +29,7 @@ angular.module('proton.utils')
     ) => {
 
         const FIBONACCI = [1, 1, 2, 3, 5, 8];
+        const { inbox, starred } = CONSTANTS.MAILBOX_IDENTIFIERS;
         const { DELETE, CREATE, UPDATE } = CONSTANTS.STATUS;
         const dispatch = (type, data = {}) => $rootScope.$emit('app.event', { type, data });
         const MODEL = {
@@ -263,8 +264,15 @@ angular.module('proton.utils')
         function manageDesktopNotifications(messages = []) {
             if (messages.length) {
                 const threadingIsOn = authentication.user.ViewMode === CONSTANTS.CONVERSATION_VIEW_MODE;
+                const { all } = labelsModel.get('map');
+
+                all[inbox] = { Notify: 1 };
+                all[starred] = { Notify: 1 };
+
                 _.each(messages, ({ Action, Message }) => {
-                    if (Action === 1 && Message.IsRead === 0 && Message.LabelIDs.indexOf(CONSTANTS.MAILBOX_IDENTIFIERS.inbox) !== -1) {
+                    const onlyNotify = _.chain(Message.LabelIDs).map((ID) => all[ID] || {}).filter(({ Notify }) => Notify).value();
+
+                    if (Action === 1 && Message.IsRead === 0 && onlyNotify.length) {
                         const title = gettextCatalog.getString('New mail from', null, 'Info') + ' ' + (Message.Sender.Name || Message.Sender.Address);
 
                         desktopNotifications.create(title, {
