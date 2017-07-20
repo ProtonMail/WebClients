@@ -16,7 +16,7 @@
             </header>
             <div class="modal-body pm_form pm_grid">
                 <div class="row">
-                    <label for="labelName" class="col-1-4" translate translate-context="Title">Name</label>
+                    <label for="labelName" class="col-1-4" translate translate-context="Label">Name</label>
                     <div class="col-3-4">
                         <input
                             tabindex="1"
@@ -31,7 +31,7 @@
                     </div>
                 </div>
                 <div class="row">
-                    <label class="col-1-4" translate translate-context="Title">Color</label>
+                    <label class="col-1-4" translate translate-context="Label">Color</label>
                     <div class="text-center col-3-4">
                         <ul class="palette list-inline labelModal-list">
                             <li
@@ -49,6 +49,12 @@
                                 <div class="labelModal-item-mask"><i class="fa fa-check"></i></div>
                             </li>
                         </ul>
+                    </div>
+                </div>
+                <div class="row" ng-if="ctrl.ID">
+                    <label for="labelNotify" class="col-1-4" translate translate-context="Title">Desktop notification</label>
+                    <div class="col-3-4">
+                        <toggle status="ctrl.notify" on="ON" off="OFF" id="labelNotify"></toggle>
                     </div>
                 </div>
             </div>
