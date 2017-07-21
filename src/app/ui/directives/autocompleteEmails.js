@@ -1,4 +1,4 @@
-angular.module('proton.formUtils')
+angular.module('proton.ui')
 .directive('autocompleteEmails', (autocompleteEmailsModel, regexEmail, autocompleteBuilder) => {
 
     const TAB_KEY = 9;
@@ -219,7 +219,7 @@ angular.module('proton.formUtils')
             list: '=emails'
         },
         replace: true,
-        templateUrl: 'templates/formUtils/autocompleteEmails.tpl.html',
+        templateUrl: 'templates/ui/autocompleteEmails.tpl.html',
         compile: autocompleteBuilder(link)
     };
 });
