@@ -1,4 +1,4 @@
-angular.module('proton.formUtils')
+angular.module('proton.ui')
     .factory('autocompleteBuilder', (CONSTANTS, customInputCreator) => {
 
         return (post = angular.noop, pre = angular.noop) => {

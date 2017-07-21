@@ -1,4 +1,4 @@
-angular.module('proton.core')
+angular.module('proton.formUtils')
 .directive('cvcTooltip', (gettextCatalog) => {
     const line1 = gettextCatalog.getString('For Visa, MasterCard and Discover, the 3 digits on the back of your card.', null);
     const line2 = gettextCatalog.getString('For American Express, the 4 digits on the front of your card.', null);

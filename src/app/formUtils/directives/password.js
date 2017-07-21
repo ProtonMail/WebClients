@@ -3,7 +3,7 @@ angular.module('proton.formUtils')
         return {
             restrict: 'E',
             replace: true,
-            templateUrl: 'templates/directives/core/password.tpl.html',
+            templateUrl: 'templates/formUtils/password.tpl.html',
             scope: {
                 value: '=',
                 form: '=',

@@ -262,7 +262,7 @@
         <div ng-if="verificator === 'sms'" id="smsVerification" class="pm_form spacing-top spacing-bottom">
             <form ng-submit="!smsSending && sendSmsVerificationCode()" class="pm_grid" ng-show="signup.smsVerificationSent !== true">
                 <div class="col-2-3">
-                    <input type="tel" phone class="phoneCountryCode" ng-model="account.smsVerification" />
+                    <input type="tel" data-phone class="phoneCountryCode" ng-model="account.smsVerification" />
                 </div>
                 <div class="col-1-3">
                     <button type="submit" class="pm_button primary" translate-context="Action" translate>Send</button>

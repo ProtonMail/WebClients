@@ -2,7 +2,7 @@ angular.module('proton.formUtils')
 .directive('captchaView', ($httpParamSerializer, $rootScope, url) => {
     return {
         restrict: 'E',
-        templateUrl: 'templates/directives/core/captchaView.tpl.html',
+        templateUrl: 'templates/formUtils/captchaView.tpl.html',
         link(scope, element, { token }) {
             const iframe = element[0].querySelector('iframe');
             const client = 'web';

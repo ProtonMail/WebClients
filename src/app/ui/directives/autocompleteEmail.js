@@ -1,4 +1,4 @@
-angular.module('proton.formUtils')
+angular.module('proton.ui')
 .directive('autocompleteEmail', (autocompleteEmailsModel, regexEmail, autocompleteBuilder) => {
 
     /**
@@ -84,7 +84,7 @@ angular.module('proton.formUtils')
             email: '='
         },
         replace: true,
-        templateUrl: 'templates/formUtils/autocompleteEmail.tpl.html',
+        templateUrl: 'templates/ui/autocompleteEmail.tpl.html',
         compile: autocompleteBuilder(link)
     };
 });
