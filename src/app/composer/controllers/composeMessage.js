@@ -216,7 +216,7 @@ angular.module('proton.composer')
         const limit = ($scope.messages.length >= CONSTANTS.MAX_NUMBER_COMPOSER) || ($scope.messages.length === 1 && AppModel.is('mobile'));
 
         if (limit) {
-            notify({ message: gettextCatalog.getString('Maximum composer reached', null, 'Error'), classes: 'notification-danger' });
+            notify({ message: gettextCatalog.getString('Maximum composer reached', null, `Notify the user when he try to open more than ${CONSTANTS.MAX_NUMBER_COMPOSER} composer`), classes: 'notification-danger' });
         }
 
         return limit;
