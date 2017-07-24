@@ -169,7 +169,7 @@
             </div>
         </div>
         <div class="pm_grid" ng-show="method === 'paypal'">
-            <div class="col-1-4 bold" translate translate-context="Title">Paypal</div>
+            <div class="col-1-4 bold" translate translate-context="Title">PayPal</div>
             <div class="col-3-4">
                 <p class="alert alert-info text-center" ng-show="approvalURL === false" translate>Loading...</p>
                 <p ng-hide="approvalURL === false">
@@ -324,12 +324,12 @@
             </div>
             <card-view card="donationCard" form="donationForm"></card-view>
             <p class="text-center spacing-top">
-                <button type="submit" class="pm_button primary large" ng-disabled="networkActivity.loading()" translate translate-context="Action">Complete setup</button>
+                <button type="submit" class="pm_button primary large" ng-disabled="networkActivity.loading()" translate translate-context="Final submit button for the account creation">Complete setup</button>
             </p>
         </form>
 
         <p class="text-center" ng-hide="verificator === 'donation'">
-            <button type="button" class="pm_button primary large" ng-click="createAccount()" ng-disabled="account.codeVerification === '' && account.captcha_token === false && account.smsCodeVerification === ''" translate translate-context="Action">Complete setup</button>
+            <button type="button" class="pm_button primary large" ng-click="createAccount()" ng-disabled="account.codeVerification === '' && account.captcha_token === false && account.smsCodeVerification === ''" translate translate-context="Final submit button for the account creation">Complete setup</button>
         </p>
     </div>
 </div>

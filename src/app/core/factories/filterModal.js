@@ -10,16 +10,16 @@ angular.module('proton.core')
             { label: gettextCatalog.getString('the attachments', null), value: 'attachments' }
         ],
         COMPARATORS: [
-            { label: gettextCatalog.getString('contains', null), value: 'contains' },
-            { label: gettextCatalog.getString('is exactly', null), value: 'is' },
-            { label: gettextCatalog.getString('begins with', null), value: 'starts' },
-            { label: gettextCatalog.getString('ends with', null), value: 'ends' },
-            { label: gettextCatalog.getString('matches', null), value: 'matches' },
-            { label: gettextCatalog.getString('does not contain', null), value: '!contains' },
-            { label: gettextCatalog.getString('is not', null), value: '!is' },
-            { label: gettextCatalog.getString('does not begin with', null), value: '!starts' },
-            { label: gettextCatalog.getString('does not end with', null), value: '!ends' },
-            { label: gettextCatalog.getString('does not match', null), value: '!matches' }
+            { label: gettextCatalog.getString('contains', null, 'Condition for custom filter'), value: 'contains' },
+            { label: gettextCatalog.getString('is exactly', null, 'Condition for custom filter'), value: 'is' },
+            { label: gettextCatalog.getString('begins with', null, 'Condition for custom filter'), value: 'starts' },
+            { label: gettextCatalog.getString('ends with', null, 'Condition for custom filter'), value: 'ends' },
+            { label: gettextCatalog.getString('matches', null, 'Condition for custom filter'), value: 'matches' },
+            { label: gettextCatalog.getString('does not contain', null, 'Condition for custom filter'), value: '!contains' },
+            { label: gettextCatalog.getString('is not', null, 'Condition for custom filter'), value: '!is' },
+            { label: gettextCatalog.getString('does not begin with', null, 'Condition for custom filter'), value: '!starts' },
+            { label: gettextCatalog.getString('does not end with', null, 'Condition for custom filter'), value: '!ends' },
+            { label: gettextCatalog.getString('does not match', null, 'Condition for custom filter'), value: '!matches' }
         ],
         OPERATORS: [
             { label: gettextCatalog.getString('all', null), value: 'all' },

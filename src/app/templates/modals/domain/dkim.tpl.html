@@ -5,9 +5,9 @@
             <div class="modal-header">
                 <ng-include src="'templates/modals/domain/menu.tpl.html'"></ng-include>
                 <span ng-show="ctrl.domain.DkimState === 0" class="pull-right pm_badge error" translate>Not set</span>
-                <span ng-show="ctrl.domain.DkimState === 1 || ctrl.domain.DkimState === 2 || ctrl.domain.DkimState === 3" class="pull-right pm_badge error" translate  translate-comment="dkim status badge">Not set properly</span>
-                <span ng-show="ctrl.domain.DkimState === 4" class="pull-right pm_badge success" translate  translate-comment="dkim status badge">On</span>
-                <span ng-show="ctrl.domain.DkimState === 5" class="pull-right pm_badge success" translate  translate-comment="dkim status badge">Off</span>
+                <span ng-show="ctrl.domain.DkimState === 1 || ctrl.domain.DkimState === 2 || ctrl.domain.DkimState === 3" class="pull-right pm_badge error" translate translate-context="DKIM configuration status badge">Not set properly</span>
+                <span ng-show="ctrl.domain.DkimState === 4" class="pull-right pm_badge success" translate translate-context="DKIM configuration status badge">On</span>
+                <span ng-show="ctrl.domain.DkimState === 5" class="pull-right pm_badge success" translate translate-context="DKIM configuration status badge">Off</span>
                 <h4 class="modal-title">6. <span translate translate-context="Title">DKIM</span> <em translate>Recommended</em></h4>
             </div>
             <div class="modal-body pm_form">
