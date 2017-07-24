@@ -25,11 +25,13 @@ angular.module('proton.settings')
     $scope.customFilters = customFilters;
     $scope.itemMoved = false;
 
-    customFilters.forEach((filter) => {
-        unsubscribe.push($rootScope.$on('changeCustomFilterStatus.' + filter.ID, (event, status) => {
+    unsubscribe.push($rootScope.$on('changeCustomFilterStatus', (event, { id, status }) => {
+        const filter = _.findWhere($scope.customFilters, { ID: id });
+
+        if (filter) {
             changeCustomFilterStatus(filter, status);
-        }));
-    });
+        }
+    }));
 
     // Drag and Drop configuration
     $scope.filterDragControlListeners = {

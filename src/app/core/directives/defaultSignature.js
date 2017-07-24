@@ -14,7 +14,7 @@ angular.module('proton.core')
                 scope.signature = tools.replaceLineBreaks(authentication.user.Signature);
             };
 
-            const changePMSignature = (event, status) => {
+            const changePMSignature = (event, { status }) => {
                 const PMSignature = (status) ? 1 : 0;
                 const promise = settingsApi.updatePMSignature({ PMSignature })
                 .then((result) => {

@@ -17,7 +17,29 @@ angular.module('proton.settings')
     // Variables
     const unsubscribe = [];
 
-    $scope.labels = labelsEditorModel.load();
+    const changeNotify = (event, { id, status }) => {
+        const promise = Label.update({ ID: id, Notify: status ? 1 : 0 })
+            .then(({ data = {} } = {}) => {
+                if (data.Code === 1000) {
+                    return eventManager.call();
+                }
+                throw new Error(data.Error);
+            })
+            .then(() => notify({ message: gettextCatalog.getString('Label updated', null), classes: 'notification-success' }));
+
+        networkActivityTracker.track(promise);
+    };
+
+    const formatLabels = (labels) => _.map(labels, (label) => {
+        label.notify = !!label.Notify;
+        return label;
+    });
+
+    const setLabels = () => {
+        $scope.labels = formatLabels(labelsEditorModel.load());
+    };
+
+    setLabels();
 
     // Drag and Drop configuration
     $scope.labelsDragControlListeners = {
@@ -33,9 +55,10 @@ angular.module('proton.settings')
     };
 
     // Listeners
+    unsubscribe.push($rootScope.$on('changeNotifyLabel', changeNotify));
     unsubscribe.push($rootScope.$on('labelsModel', (e, { type }) => {
         if (type === 'cache.update' || type === 'cache.refresh') {
-            $scope.$applyAsync(() => ($scope.labels = labelsEditorModel.load()));
+            $scope.$applyAsync(() => setLabels());
         }
     }));
 
@@ -119,17 +142,17 @@ angular.module('proton.settings')
                 message: CONFIRM,
                 confirm() {
                     const promise = Label.delete(label.ID)
-                    .then(({ data = {} } = {}) => {
-                        if (data.Code === 1000) {
-                            return Promise.resolve();
-                        }
-                        throw new Error(data.Error);
-                    })
-                    .then(() => eventManager.call())
-                    .then(() => {
-                        confirmModal.deactivate();
-                        notify({ message: NOTIF, classes: 'notification-success' });
-                    });
+                        .then(({ data = {} } = {}) => {
+                            if (data.Code === 1000) {
+                                return eventManager.call();
+                            }
+                            throw new Error(data.Error);
+                        })
+                        .then(() => {
+                            confirmModal.deactivate();
+                            notify({ message: NOTIF, classes: 'notification-success' });
+                        });
+
                     networkActivityTracker.track(promise);
                 },
                 cancel() {
@@ -141,32 +164,15 @@ angular.module('proton.settings')
 
     $scope.saveLabelOrder = (labelOrder) => {
         const promise = Label.order({ Order: labelOrder })
-        .then((result) => {
-            if (result.data && result.data.Code === 1000) {
-                return eventManager.call()
-                .then(() => {
-                    notify({ message: gettextCatalog.getString('Label order saved', null), classes: 'notification-success' });
-                });
-            } else if (result.data && result.data.Error) {
-                return Promise.reject(result.data.Error);
-            }
-        });
-
-        networkActivityTracker.track(promise);
-    };
-
-    $scope.toggleDisplayLabel = (label) => {
-        const promise = Label.update({ ID: label.ID, Name: label.Name, Color: label.Color, Display: Number(label.Display) })
-        .then((result) => {
-            if (result.data && result.data.Code === 1000) {
-                return eventManager.call()
-                .then(() => {
-                    notify({ message: gettextCatalog.getString('Label edited', null), classes: 'notification-success' });
-                });
-            } else if (result.data && result.data.Error) {
-                return Promise.reject(result.data.Error);
-            }
-        });
+            .then(({ data = {} } = {}) => {
+                if (data.Code === 1000) {
+                    return eventManager.call();
+                }
+                throw new Error(data.Error);
+            })
+            .then(() => {
+                notify({ message: gettextCatalog.getString('Label order saved', null), classes: 'notification-success' });
+            });
 
         networkActivityTracker.track(promise);
     };

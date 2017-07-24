@@ -115,8 +115,8 @@ angular.module('proton.settings')
         return promise;
     };
 
-    function changeViewMode(event, viewMode) {
-        const ViewMode = (viewMode) ? CONSTANTS.CONVERSATION_VIEW_MODE : CONSTANTS.MESSAGE_VIEW_MODE; // Be careful, BE is reversed
+    function changeViewMode(event, { status }) {
+        const ViewMode = status ? CONSTANTS.CONVERSATION_VIEW_MODE : CONSTANTS.MESSAGE_VIEW_MODE; // Be careful, BE is reversed
         const promise = settingsApi.setViewMode({ ViewMode })
             .then((result) => {
                 if (result.data && result.data.Code === 1000) {
