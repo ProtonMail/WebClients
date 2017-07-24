@@ -18,7 +18,8 @@ angular.module('proton.settings')
     const unsubscribe = [];
 
     const changeNotify = (event, { id, status }) => {
-        const promise = Label.update({ ID: id, Notify: status ? 1 : 0 })
+        const { Name, Color, Display, Exclusive } = _.findWhere($scope.labels, { ID: id });
+        const promise = Label.update({ ID: id, Name, Color, Display, Exclusive, Notify: status ? 1 : 0 })
             .then(({ data = {} } = {}) => {
                 if (data.Code === 1000) {
                     return eventManager.call();
