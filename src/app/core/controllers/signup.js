@@ -221,7 +221,9 @@ angular.module('proton.core')
             }
 
             notify({ classes: 'notification-danger', message: err });
-            $scope.signupError = true;
+            if (typeof err.verbose === 'undefined') {
+                $scope.signupError = true;
+            }
         });
     };
 
@@ -425,7 +427,18 @@ angular.module('proton.core')
             params.TokenType = 'email';
         }
 
-        return User.create(params, accountCopy.loginPassword);
+        return User.create(params, accountCopy.loginPassword)
+            .then((rep) => {
+                // Failed Human verification
+                if (rep.data.Code === 12087) {
+                    $scope.creating = false;
+                    $scope.humanityTest = true;
+                    const err = new Error(rep.data.Error);
+                    err.verbose = false;
+                    throw err;
+                }
+                return rep;
+            });
     }
 
     function setUserLanguage(data) {
