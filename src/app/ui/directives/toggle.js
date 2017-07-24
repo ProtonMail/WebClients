@@ -5,6 +5,7 @@ angular.module('proton.ui')
         replace: true,
         templateUrl: 'templates/directives/toggle.tpl.html',
         scope: {
+            id: '@', // ID if uniq logic needed
             status: '=', // status value
             name: '@', // event name called
             on: '@', // text for on
@@ -23,7 +24,7 @@ angular.module('proton.ui')
                 scope.$applyAsync(() => {
                     scope.status = !scope.status;
                     if (scope.name) {
-                        $rootScope.$emit(scope.name, scope.status);
+                        $rootScope.$emit(scope.name, { status: scope.status, id: scope.id });
                     }
                 });
             }

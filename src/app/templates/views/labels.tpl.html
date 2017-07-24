@@ -51,6 +51,10 @@
                                 <span class="label label-pm labelsState-item-name ellipsis">{{ label.Name }}</span>
                             </div>
                             <div>
+                                <label class="labelsState-toggle-label" translate-context="Label" translate>Desktop notification</label>
+                                <toggle data-status="label.notify" data-on="ON" data-off="OFF" data-name="changeNotifyLabel" data-id="{{ label.ID }}"></toggle>
+                            </div>
+                            <div>
                                 <button
                                     class="pm_button link labelsState-btn-edit"
                                     ng-click="editLabel(label)"
