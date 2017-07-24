@@ -78,7 +78,7 @@ angular.module('proton.elements')
         /**
          * Clear current filter
          */
-        const clearFilter = () => switchState({ filter: undefined });
+        const clearFilter = () => switchState({ filter: undefined, sort: undefined });
 
         const toggleTrashSpam = () => switchState({
             trashspam: angular.isDefined($state.params.trashspam) ? undefined : 0
