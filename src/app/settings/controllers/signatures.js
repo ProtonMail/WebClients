@@ -59,7 +59,7 @@ angular.module('proton.settings')
         $scope.keyStatus = 0;
         $scope.members = getMembers();
         $scope.organization = organizationModel.get();
-        $scope.domains = domainModel.get();
+        $scope.domains = domainModel.query();
         manageOrganizationKeys()
         .then(() => checkActivationKeys());
     }
@@ -128,7 +128,7 @@ angular.module('proton.settings')
      */
     $scope.canAddMember = () => {
         const organization = organizationModel.get();
-        const domains = domainModel.get();
+        const domains = domainModel.query();
         const verifiedDomains = _.filter(domains, ({ State }) => State);
 
         if (organization.MaxMembers === 1) {
