@@ -9,13 +9,13 @@ angular.module('proton.members')
     }
     function fetch() {
         return memberApi.query()
-        .then(({ data = {} } = {}) => {
-            if (data.Code === 1000) {
-                members = data.Members;
-                return data.Members;
-            }
-            throw new Error(data.Error || 'Member request failed');
-        });
+            .then(({ data = {} } = {}) => {
+                if (data.Code === 1000) {
+                    members = data.Members;
+                    return data.Members;
+                }
+                throw new Error(data.Error || 'Member request failed');
+            });
     }
     function clear() {
         members = [];

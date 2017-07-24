@@ -136,6 +136,21 @@ angular.module('proton.settings')
         });
     };
 
+    $scope.catchallSupport = ({ Type }) => Type === CONSTANTS.CUSTOM_DOMAIN_ADDRESS && ($scope.organization.Features & 1);
+
+    $scope.changeCatchall = ({ catchall, DomainID, ID }, { Addresses = [] }) => {
+        if (catchall) {
+            _.each(Addresses, (address) => (address.catchall = address.ID === ID));
+        }
+
+        const promise = domainModel.catchall(DomainID, catchall ? ID : null)
+            .then(() => {
+                notify({ message: gettextCatalog.getString('Catch-all address updated', null), classes: 'notification-success' });
+            });
+
+        networkActivityTracker.track(promise);
+    };
+
     /**
      * Check if this address is owned by the current user
      * @param {Object} address
