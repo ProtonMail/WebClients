@@ -262,7 +262,6 @@ angular.module('proton.utils')
         }
 
 
-
         function manageDesktopNotifications(messages = []) {
             if (messages.length) {
                 const threadingIsOn = authentication.user.ViewMode === CONSTANTS.CONVERSATION_VIEW_MODE;
