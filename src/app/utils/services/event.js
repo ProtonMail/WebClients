@@ -261,16 +261,26 @@ angular.module('proton.utils')
             }
         }
 
+
+
         function manageDesktopNotifications(messages = []) {
             if (messages.length) {
                 const threadingIsOn = authentication.user.ViewMode === CONSTANTS.CONVERSATION_VIEW_MODE;
                 const { all } = labelsModel.get('map');
 
+                const filterNotify = ({ LabelIDs = [] }) => {
+                    return LabelIDs
+                        .map((ID) => all[ID] || {})
+                        .filter(({ Notify }) => Notify);
+                };
+
+                // @todo move them to the model itself
+                // @todo rename constants to UPPERCASE
                 all[inbox] = { Notify: 1 };
                 all[starred] = { Notify: 1 };
 
-                _.each(messages, ({ Action, Message }) => {
-                    const onlyNotify = _.chain(Message.LabelIDs).map((ID) => all[ID] || {}).filter(({ Notify }) => Notify).value();
+                _.each(messages, ({ Action, Message = {} }) => {
+                    const onlyNotify = filterNotify(Message);
 
                     if (Action === 1 && Message.IsRead === 0 && onlyNotify.length) {
                         const title = gettextCatalog.getString('New mail from', null, 'Info') + ' ' + (Message.Sender.Name || Message.Sender.Address);
