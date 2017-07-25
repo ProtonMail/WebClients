@@ -1,7 +1,8 @@
 angular.module('proton.commons')
-    .factory('i18nLoader', (CONFIG, gettextCatalog) => {
+    .factory('i18nLoader', (CONFIG, gettextCatalog, dateUtils, pikadayConfiguration) => {
 
         const upperCaseLocale = (locale = '') => ((locale === 'en') ? 'us' : locale).toUpperCase();
+
         /**
          * Format the locale to a valid format for gettext
          * {@link https://www.gnu.org/software/gettext/manual/gettext.html#Header-Entry}
@@ -9,7 +10,10 @@ angular.module('proton.commons')
          * @return {String}        xx_XX
          */
         const formatLocale = (locale) => {
-            const value = (locale || window.navigator.userLanguage || window.navigator.language).replace('-', '_');
+            // in this case we want to try to get the fr-CA string instead of the fr-fr string
+            // the way to get this is to try to retrieve it from the window.navigator.languages.
+            const firstLanguage = window.navigator.languages && window.navigator.languages.length ? window.navigator.languages[0] : null;
+            const value = (locale || firstLanguage || window.navigator.userLanguage || window.navigator.language).replace('-', '_');
 
             // OS is in French (France) => navigator.language === fr
             if (value.length === 2) {
@@ -31,20 +35,122 @@ angular.module('proton.commons')
             }
         };
 
-        const load = (lang) => {
-            const locale = lang || getLocale();
+        const selectLocale = (baseLocale, navigatorLocale) => {
+            // select one of the locales that have the same language as the base locale
+            // and has the same settings as the navigator locale.
+
+            const navigatorLocaleData = moment.localeData(navigatorLocale);
+            const normalizedNavLocale = navigatorLocale.toLowerCase().replace('_', '-');
+
+            if (navigatorLocaleData !== null) {
+                const possibleLocales = moment.locales().filter((val) => val.lastIndexOf(baseLocale, 0) === 0)
+                        .sort((a, b) => {
+                            const aData = moment.localeData(a);
+                            const bData = moment.localeData(b);
+
+                            const afdow = aData.firstDayOfWeek();
+                            const bfdow = bData.firstDayOfWeek();
+                            const nfdow = navigatorLocaleData.firstDayOfWeek();
+
+                            // first try to match the first day of week = most important
+                            if (afdow !== bfdow && (afdow === nfdow || bfdow === nfdow)) {
+                                return afdow === nfdow ? -1 : 1;
+                            }
+
+                            // then try to match long date format (exact)
+                            const alformat = aData.longDateFormat('L');
+                            const blformat = bData.longDateFormat('L');
+                            const nlformat = navigatorLocaleData.longDateFormat('L');
+
+                            if (alformat !== blformat && (alformat === nlformat || blformat === nlformat)) {
+                                return alformat === nlformat ? -1 : 1;
+                            }
+
+                            // maybe match them without symbols?
+                            const woSymbols = (str) => str.replace(/[^a-zA-Z]/g, '');
+                            const alWformat = woSymbols(alformat);
+                            const blWformat = woSymbols(blformat);
+                            const nlWformat = woSymbols(nlformat);
+
+                            if (alWformat !== blWformat && (alWformat === nlWformat || blWformat === nlWformat)) {
+                                return alWformat === nlWformat ? -1 : 1;
+                            }
+
+                            return a.length - b.length;
+                        });
+
+                // chose the navigator locale if possible
+                if (_.contains(possibleLocales, normalizedNavLocale)) {
+                    return normalizedNavLocale;
+                }
+                if (possibleLocales.length) {
+                    return possibleLocales[0];
+                }
+            }
+            return baseLocale;
+        };
+
+        const localizePikaday = (response) => {
+
+            /*
+             Localize pikaday
+             american days means that the translated string is in american order:
+             sunday, monday, tuesday, wednesday
+             This is because pikaday expects this order. The actual order of the days is set by the firstday parameter.
+             */
+            const americanDays = _.sortBy(dateUtils.I18N.days.slice(), (day) => day.value);
+            const locale = {
+                previousMonth: gettextCatalog.getString('Previous Month', null, 'Pikaday'),
+                nextMonth: gettextCatalog.getString('Next Month', null, 'Pikaday'),
+                months: dateUtils.I18N.months,
+                weekdays: americanDays.map((day) => day.longLabel),
+                weekdaysShort: americanDays.map((day) => day.shortLabel)
+            };
+
+            pikadayConfiguration.update({ i18n: locale, firstDay: moment.localeData().firstDayOfWeek() });
+
+            return response;
+        };
+
+        const loadGettextCatalog = (lang) => {
+            const navigatorLocale = getLocale();
+            const locale = lang || navigatorLocale;
             gettextCatalog.debugPrefix = '';
             gettextCatalog.setCurrentLanguage(locale);
             gettextCatalog.debug = CONFIG.debug || false;
-            moment.locale(locale);
-            document.documentElement.lang = locale.split('_')[0];
+
+            const [ shortLocale ] = locale.split('_');
+
+            // We want to use a more specific locale because a language isn't directly connect to a language:
+            // e.g. English is used by U.S./Canada and U.K. but U.S./Canada use Sunday as the first day and
+            // the U.K. uses Monday. It's also better if you consider that all untranslated languages use English.
+            // moment.localeData() uses the selected language in the interface.
+
+            // Note that this doesn't only apply to the English language, the same occurs when considering:
+            // French-Canada and France (Both French but: Sunday/Monday);
+            // Brazil and Portugal (Both Portugese but: Sunday/Monday);
+            // Spain and Hispanic-America (Both Spanish but: Sunday/Monday);
+            // Iraq, Saudi-Arabia and Maroc (Both Arabic but: Saturday/Sunday/Monday).
+            moment.locale(selectLocale(shortLocale, navigatorLocale));
+
+            document.documentElement.lang = shortLocale;
 
             // If the translation is not available it seems to crash (CPU 100%)
             if (CONFIG.translations.indexOf(locale) !== -1) {
                 return gettextCatalog.loadRemote(`/i18n/${locale}.json`);
             }
 
+            // Try again, but only match on the language, not on the locale.
+            const languageMatch = _.find(CONFIG.translations, (lang) => lang.substr(0, 2) === shortLocale);
+            if (languageMatch) {
+                return gettextCatalog.loadRemote(`/i18n/${languageMatch}.json`);
+            }
+
             return Promise.resolve();
+        };
+
+        const load = (lang) => {
+            return loadGettextCatalog(lang).then(localizePikaday);
         };
 
         return load;

@@ -33,7 +33,9 @@ angular.module('proton.message')
         gettextCatalog.getString('Stored encrypted', null),
         gettextCatalog.getString('End to end encrypted for outside reply', null),
         gettextCatalog.getString('End to end encrypted using PGP', null),
-        gettextCatalog.getString('End to end encrypted using PGP/MIME', null)
+        gettextCatalog.getString('End to end encrypted using PGP/MIME', null),
+        null /* reserved */,
+        gettextCatalog.getString('End to end encrypted auto-reply', null)
     ];
     const emptyMessage = gettextCatalog.getString('Message empty', null, 'Message content if empty');
 

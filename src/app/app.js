@@ -38,6 +38,7 @@ angular.module('proton', [
     'proton.elements',
     'proton.members',
     'proton.labels',
+    'proton.autoresponder',
     'proton.domains',
     'proton.address',
     'proton.message',

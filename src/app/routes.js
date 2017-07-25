@@ -978,6 +978,14 @@ angular.module('proton.routes', [
                 controller: 'FiltersController'
             }
         }
+    })
+    .state('secured.autoresponder', {
+        url: '/autoresponder',
+        views: {
+            'content@secured': {
+                template: '<autoresponder-view></autoresponder-view>'
+            }
+        }
     });
 
     Object.keys(CONSTANTS.MAILBOX_IDENTIFIERS).forEach((box) => {

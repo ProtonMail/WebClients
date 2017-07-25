@@ -45,7 +45,6 @@ describe('Search messages', () => {
     });
 
     describe('advanced', () => {
-
         it('should display it on toggle', () => {
             advanced.toggle()
                 .then(() => browser.sleep(300))

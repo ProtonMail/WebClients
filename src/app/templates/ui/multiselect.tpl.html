@@ -1,0 +1,11 @@
+<div class="multiselectContainer">
+    <span class="pm_multiselect">
+        <label class="multiselectLabel" ng-repeat="option in options">
+            <custom-checkbox
+                data-custom-class="multiselectCheckbox"
+                type="checkbox"
+                data-custom-ng-model="selected[option.value]"
+                data-custom-ng-value="option.value"
+                data-custom-ng-disabled="disabled"></custom-checkbox>{{option.label}}</label>
+    </span>
+</div>

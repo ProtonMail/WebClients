@@ -81,6 +81,9 @@ angular.module('proton.settings')
         setNews(params) {
             return $http.put(getUrl('news'), params);
         },
+        setAutoresponder(params) {
+            return $http.put(getUrl('autoresponder'), params);
+        },
         invoiceText(params) {
             return $http.put(getUrl('invoicetext'), params);
         },

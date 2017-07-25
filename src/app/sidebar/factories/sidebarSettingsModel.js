@@ -22,6 +22,11 @@ angular.module('proton.sidebar')
                 label: gettextCatalog.getString('Filters', null, 'Title'),
                 icon: 'fa-filter'
             },
+            autoresponder: {
+                state: 'secured.autoresponder',
+                label: gettextCatalog.getString('Auto-Reply', null, 'Title'),
+                icon: 'fa-envelope-open'
+            },
             security: {
                 state: 'secured.security',
                 label: gettextCatalog.getString('Security', null, 'Title'),

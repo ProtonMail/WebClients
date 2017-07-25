@@ -61,12 +61,15 @@ angular.module('proton.constants', [])
     CONVERSATION_VIEW_MODE: 0,
     MESSAGE_LIMIT: 100,
     CONVERSATION_LIMIT: 100,
-    ENC_NONE: 0,
-    ENC_INTERNAL: 1, // all within ProtonMail
-    ENC_EXTERNAL: 2, // encrypted from outside
-    ENC_OUT_ENC: 3, // encrypted for outside
-    ENC_OUT_PLAIN: 4, // sent plain but stored enc
-    ENC_STORED_ENC: 5, // such as draft
+    ENCRYPTED_STATUS: {
+        NONE: 0,
+        INTERNAL: 1,
+        EXTERNAL: 2,
+        OUT_ENC: 3,
+        OUT_PLAIN: 4,
+        STORED_ENC: 5,
+        AUTOREPLY: 10
+    },
     INTERVAL_EVENT_TIMER: 30 * 1000, // time between querying the event log (every 30 seconds)
     TIMEOUT_PRELOAD_MESSAGE: 500, // milliseconds
     UPLOAD_GRADIENT_DARK: '147, 145, 209', // dark rgb color for upload progress bar

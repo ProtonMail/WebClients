@@ -26,3 +26,8 @@
     align-content: center;
     align-items: center;
 }
+
+.pm_invalid .angular-squire-wrapper {
+    border-color: $red !important;
+    border-width: 2rem;
+}
