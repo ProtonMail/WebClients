@@ -10,7 +10,9 @@ exports.config = {
   // Capabilities to be passed to the webdriver instance.
     multiCapabilities: [
   // {browserName: 'firefox'},
-    { browserName: 'chrome' }
+        {
+            browserName: 'chrome',
+        }
     ],
 
   // The params object will be passed directly to the Protractor instance,
@@ -79,6 +81,7 @@ exports.config = {
         conversation: ['test/e2e/login/straightLogin.spec.js', 'test/e2e/unlock/straightUnlock.spec.js', 'test/e2e/conversation/conversation.spec.js'],
         message: ['test/e2e/login/straightLogin.spec.js', 'test/e2e/unlock/straightUnlock.spec.js', 'test/e2e/message/message.spec.js'],
         search: ['test/e2e/login/straightLogin.spec.js', 'test/e2e/unlock/straightUnlock.spec.js', 'test/e2e/search/search.spec.js'],
+        autoresponder: ['test/e2e/autoresponder/autoresponder.spec.js'],
         labels: ['test/e2e/login/straightLogin.spec.js', 'test/e2e/unlock/straightUnlock.spec.js', 'test/e2e/label/label.spec.js'],
         signup: ['test/e2e/signup/signup.spec.js']
     }

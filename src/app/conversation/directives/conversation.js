@@ -13,80 +13,9 @@ angular.module('proton.conversation')
     CONSTANTS,
     tools,
     hotkeys,
-    labelsModel
+    labelsModel,
+    findExpendableMessage
 ) => {
-
-    /**
-     * Filter the list of message to find the first readable message
-     * - iterate backwards
-     * - check if the previous item is read
-     * - if the previous isRead === 1, break the iteration
-     * @param {Array} list list of messages
-     * @return {Ressoure}
-     */
-    const getMessage = (list = []) => {
-
-        // Else we open the first message unread beginning to the end list
-        let index = list.length;
-        let contains = false;
-
-        while (--index > 0) {
-            if (list[index - 1].IsRead === 1) { // Is read
-                contains = true;
-                break;
-            }
-        }
-
-        const position = contains ? index : 0;
-        // A conversation can contains only one draft
-        return list.length ? list[position] : list[0];
-    };
-
-    /**
-     * Find in the message to scroll and expand
-     * @param  {Array}  list List of message
-     * @return {Object}
-     */
-    function findExpendableMessage(messages = []) {
-        let thisOne;
-
-        const filter = (cb) => _.chain(messages).filter(cb).last().value();
-        const currentLocation = tools.currentLocation();
-
-        switch (true) {
-            // If we open a conversation in the sent folder
-            case tools.typeView() === 'message':
-                thisOne = _.last(messages);
-                break;
-
-            case !!$stateParams.messageID:
-                thisOne = _.findWhere(messages, { ID: $stateParams.messageID });
-                break;
-
-            case $state.includes('secured.starred.**'):
-            case $state.includes('secured.label.**'):
-                thisOne = getMessage(_.filter(messages, ({ LabelIDs, Type }) => LabelIDs.indexOf(currentLocation) > -1 && Type !== CONSTANTS.DRAFT));
-                break;
-
-            case $state.includes('secured.drafts.**'):
-                thisOne = filter(({ Type }) => Type === CONSTANTS.DRAFT);
-                break;
-
-            default: {
-                const latest = filter(({ Type }) => Type !== CONSTANTS.DRAFT);
-
-                if (latest && latest.IsRead === 1) {
-                    thisOne = latest;
-                    break;
-                }
-
-                thisOne = getMessage(_.filter(messages, ({ Type }) => Type !== CONSTANTS.DRAFT));
-                break;
-            }
-        }
-
-        return thisOne || {};
-    }
 
     /**
      * Find the position of the scrollable item
@@ -338,7 +267,7 @@ angular.module('proton.conversation')
              */
             function expandMessage(messages = []) {
 
-                const message = findExpendableMessage(messages);
+                const message = findExpendableMessage.find(messages);
                 messages.length && (message.openMe = true);
                 return messages;
             }

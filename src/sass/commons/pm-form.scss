@@ -64,6 +64,9 @@
             -webkit-appearance: none;
                -moz-appearance: none;
                     appearance: none;
+            &[disabled] {
+                background: rgba(0,0,0,0);
+            }
         }
         .fa {
             position: absolute;
@@ -86,6 +89,12 @@
                 appearance: none;
         cursor: pointer;
         background: $white;
+        &.ng-invalid.ng-touched,
+        &.ng-invalid.ng-touched:focus,
+        &.ng-invalid.always-show-ng-invalid,
+        &.ng-invalid.always-show-ng-invalid:focus {
+            color: $red;
+        }
     }
 
     textarea.code {
@@ -194,7 +203,8 @@
         appearance: none;
         & + [ng-messages] { display: none }
         &.ng-invalid.ng-touched + [ng-messages] { display: block }
-        &.ng-invalid.ng-touched { border-color: $red }
+        &.ng-invalid.ng-touched { border-color: $red; }
+        &.ng-invalid.always-show-ng-invalid { border-color: $red; }
         &.inline {
             display: inline-block;
             width: 8rem;

@@ -1,0 +1,43 @@
+
+.autoresponderCharacters {
+    display: none;
+}
+.autoresponderMessageTooLong {
+    color: $red;
+}
+
+.autoresponderFull > .autoresponderMessageTooLong,
+.autoresponderHalfFull > .autoresponderLengthWarning {
+    display: block;
+}
+
+.autoresponderFull.autoresponderHalfFull > .autoresponderLengthWarning {
+    display: none;
+}
+
+.autoresponderCharacterCount {
+    font-weight: bold;
+}
+
+.autoresponderCharacters {
+    text-align: right;
+}
+
+.autoresponderMessageDisabler {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    z-index: 2000;
+    background: rgba(255, 255, 255, 0.7);
+    margin: 1px;
+}
+
+.autoresponderMessageContainer {
+    position: relative;
+
+    .squireToolbar-action-image {
+        display: none;
+    }
+}

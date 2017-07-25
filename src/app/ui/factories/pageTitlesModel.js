@@ -26,6 +26,7 @@ angular.module('proton.ui')
             users: gettextCatalog.getString('Users', null, 'Title'),
             invoices: gettextCatalog.getString('Invoices', null, 'Title'),
             filters: gettextCatalog.getString('Filters', null, 'Title'),
+            autoresponder: gettextCatalog.getString('Automatic Replies', null, 'Title'),
             keys: gettextCatalog.getString('Keys', null, 'Title'),
             payments: gettextCatalog.getString('Payment methods', null, 'Title'),
             signatures: gettextCatalog.getString('Name / Signature', null, 'Title'),

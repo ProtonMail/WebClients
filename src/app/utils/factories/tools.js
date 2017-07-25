@@ -1,5 +1,5 @@
 angular.module('proton.utils')
-.factory('tools', ($log, $state, $stateParams, $filter, authentication, $compile, $templateCache, $rootScope, $q, CONSTANTS, aboutClient, regexEmail, AppModel) => {
+.factory('tools', ($log, $state, $stateParams, $filter, authentication, $compile, $templateCache, $rootScope, $q, CONSTANTS, aboutClient, regexEmail, gettextCatalog, AppModel) => {
     const tools = {};
     const MAILBOX_KEYS = Object.keys(CONSTANTS.MAILBOX_IDENTIFIERS);
 

@@ -1,0 +1,33 @@
+<div class="autoresponder-container">
+<section class="pm_form" ng-if="!mock">
+    <p class="alert alert-info" translate-context="Info" translate>Use automatic replies to let others know that you're on holiday or can't respond to you emails.
+        Please note that the message is stored unencrypted on the server.</p>
+</section>
+<form name="autoresponderForm" novalidate>
+    <div class="row pm_grid">
+        <autoresponder-time-section
+            data-mock="{{ ::mock }}"
+            data-form="autoresponderForm"></autoresponder-time-section>
+        <section class="pm_form col-1-2">
+            <div class="clearfix" ng-if="model.isEnabled">
+                <div class="col-3-8">
+                    <label for="subject-prefix" translate-context="Label" translate>Subject prefix</label>
+                </div>
+                <div class="col-5-8">
+                    <subject-prefix subject="{{ ::model.subject }}" data-disable-input="{{ ::mock }}"></subject-prefix>
+                </div>
+            </div>
+            <div class="clearfix" ng-if="model.isEnabled">
+                <div class="col-3-8">
+                    <label for="autoresponder-message" translate-context="Label" translate>Response message</label>
+                </div>
+                <div class="col-5-8">
+                    <autoresponder-message data-message="model.message" data-disabled="{{ ::mock }}"></autoresponder-message>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <button class="pm_button primary" id="autoresponder-save" translate ng-disabled="!isValid() || mock || submitting" type="submit">Save</button>
+</form>
+</div>

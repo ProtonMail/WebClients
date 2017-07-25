@@ -1,0 +1,12 @@
+.pm_multiselect > label > input {
+    margin-right: 3px;
+}
+.pm_multiselect > label {
+    display: inline-flex;
+    margin-top: 7px;
+    margin-right: 7px;
+}
+
+.multiselectCheckbox+.customCheckbox-mask {
+    margin: 3px 0.5ex;
+}

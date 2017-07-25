@@ -12,6 +12,22 @@
         transform-origin: right center;
     }
 
+    &.disabled {
+        pointer-events: none;
+
+        &.on {
+            span.on {
+                background-color: $primary-light;
+            }
+        }
+
+        &.off {
+             span.off {
+                 background-color: $primary-light;
+             }
+         }
+    }
+
     span {
         position: absolute;
         width: ($toggleWidth / 2);

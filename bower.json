@@ -45,11 +45,12 @@
     "ical.js": "~1.1.2",
     "jquery.payment": "~1.3.2",
     "jquery": "~2.2.0",
-    "moment": "~2.11.1",
+    "moment": "~2.18.1",
+    "moment-timezone": ">0.5.0",
     "ng-sortable": "~1.3.2",
     "open-sans-fontface": "~1.4.2",
     "papaparse": "~4.1.2",
-    "pikaday": "~1.4.0",
+    "pikaday": "~1.6.0",
     "Squire": "https://github.com/ProtonMail/Squire.git#stable",
     "svg4everybody": "~2.0.0",
     "svgeezy": "^1.0.0",
@@ -65,12 +66,14 @@
     "nouislider": "^9.1.0",
     "ng-scrollbars": "^0.0.11",
     "malihu-custom-scrollbar-plugin": "^3.1.5",
-    "ng-pikaday": "^2.0.2",
+    "ng-pikaday": "https://github.com/ProtonMail/ng-pikaday.git#master",
     "ua-parser-js": "^0.7.12",
+    "jquery-timepicker-wvega": "https://github.com/KAYLukas/timepicker.git#patch-1",
     "components-font-awesome": "^4.7.0"
   },
   "resolutions": {
     "angular": "~1.6.2",
-    "angular-cookies": "~1.6.1"
+    "angular-cookies": "~1.6.1",
+    "moment": ">= 2.9.0"
   }
 }
