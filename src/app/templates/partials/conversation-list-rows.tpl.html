@@ -24,12 +24,12 @@
             <span class="senders ellipsis">
                 &nbsp;
                 <span
-                ng-hide="('secured.sent.**' | includedByState) || ('secured.drafts.**' | includedByState)"
+                ng-if="!(('secured.sent.**' | includedByState) || ('secured.drafts.**' | includedByState) || ('secured.allSent.**' | includedByState) || ('secured.allDrafts.**' | includedByState))"
                 class="senders-name"
                 ng-repeat="contact in senders(conversation)"
                 title="{{ contact.Address }}">{{ contact | contact: 'Name'  | unescape}}</span>
                 <span
-                ng-if="('secured.sent.**' | includedByState) || ('secured.drafts.**' | includedByState)"
+                ng-if="('secured.sent.**' | includedByState) || ('secured.drafts.**' | includedByState) || ('secured.allSent.**' | includedByState) || ('secured.allDrafts.**' | includedByState)"
                 class="senders-name"
                 ng-repeat="contact in recipients(conversation)"
                 title="{{ contact.Address }}">{{ contact | contact: 'Name'  | unescape}}</span>
