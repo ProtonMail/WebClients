@@ -1,7 +1,7 @@
 angular.module('proton.payment')
     .directive('paymentForm', (notify, gettextCatalog, eventManager, cardModel, paymentModel, paymentUtils, dashboardModel, organizationModel, paymentModalModel, $rootScope, CONSTANTS) => {
 
-        const { PLANS_TYPE } =  CONSTANTS;
+        const { PLANS_TYPE } = CONSTANTS;
 
         const dispatcher = (plan) => (type, data = {}) => {
             $rootScope.$emit('modal.payment', {
