@@ -3,7 +3,6 @@ angular.module('proton.core')
 
     const { MIN_PAYPAL_AMOUNT } = CONSTANTS;
     const I18N = {
-        minAmount: gettextCatalog.getString('Amount below minimum.', null, 'Paypal component'),
         down: gettextCatalog.getString('Error connecting to PayPal.', null, 'Paypal component')
     };
 
@@ -22,11 +21,15 @@ angular.module('proton.core')
             let childWindow;
 
             scope.initPaypal = () => {
+                scope.errorDetails = null;
                 scope.paypalNetworkError = false;
                 const Amount = scope.amount * 100;
 
                 if (Amount < MIN_PAYPAL_AMOUNT) {
-                    return notifyDanger(`${I18N.minAmount} (${MIN_PAYPAL_AMOUNT / 100} ${scope.currency})`);
+                    return scope.errorDetails = {
+                        type: 'validator.amount',
+                        minAmount: MIN_PAYPAL_AMOUNT
+                    };
                 }
 
                 Payment.paypal({ Amount, Currency: scope.currency })

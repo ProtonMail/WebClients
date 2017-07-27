@@ -1,231 +1,157 @@
-#plans .plan {
-    .plan-title {
-        display: flex;
-        justify-content: flex-end;
-        align-items: center;
-        height: 80px;
-        padding-right: 20px;
-        background-repeat: no-repeat;
-        background-position: center;
-        background-size: 120px;
-        background-color: $primary;
-        margin: -1px -1px 0;
-        color: $white;
-        font-weight: normal;
-    }
 
-    &.free-plan .plan-title {
-        background-image: url('/assets/img/logo/protonmail-free.svg')
-    }
+[class*='Column-container'] {
+    display: flex;
+    flex-direction: column;
+}
 
-    &.plus-plan .plan-title {
-        background-image: url('/assets/img/logo/protonmail-plus.svg')
-    }
+[class*='Column-container'] > * {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    height: 45px;
+    padding: 0px 10px;
+    box-sizing: border-box;
+}
 
-    &.visionary-plan .plan-title {
-        background-image: url('/assets/img/logo/protonmail-visionary.svg')
-    }
+[class*='Column-header'] {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100px;
+}
 
-    > section {
-        ul.features {
-            display: flex;
-            flex-direction: column;
-        }
-        ul {
-            background: #FFF;
-            margin: 0
-        }
-        ul, li {
-            padding: 0;
-            list-style-type: none;
-        }
-        ul li {
-            display: flex;
-            align-items: center;
-            min-height: 35px;
-            padding: 0 10px;
-            border-bottom: 1px solid $border;
-            & > * {
-                margin-right: .5em;
-            }
-            &.disabled {
-                color: $default-color-medium;
-                background: rgba(0,0,0,.1);
-                > span {
-                    text-decoration: line-through;
-                }
-            }
-            &.tall {
-                min-height: 55px;
-                flex-wrap: wrap;
-            }
+[class*='Column-header'] > h1 {
+    text-transform: uppercase;
+    font-size: 1.3em;
+}
 
-            &.tall .pm_select.inline { width: 5.5em }
+[class*='Column-header'] > .totalPlan {
+    font-size: 1.2em;
+    font-weight: 100;
+    margin: .5em 0;
+}
 
-            .cost {
-                position: absolute;
-                right: 0;
-                bottom: 0;
-                display: flex;
-                align-items: center;
-                height: 100%;
-            }
+/* row */
 
-        }
-    }
+[class*='Column-container'] > * > *:not(:last-child) { margin-right: 5px }
+[class*='Column-container'] [class*='-customize'],
+[class*='Column-container'] .fa-info-circle {
+    margin-left: auto;
+    text-align: center;
+}
 
-    &.plus-plan .dashboard-plan-storage,
-    &.plus-plan .dashboard-plan-custom-domain,
-    &.plus-plan .dashboard-plan-address {
-        position: relative; /* cost */
-        padding-right: 50px;  /* cost */
-    }
+[class*='Column-container'] [class*='-customize'] { width: auto }
 
-    footer {
-        border: 1px solid $border;
-        position: relative;
-        z-index: 2;
-        border-top: none;
-        .cycle {
-            min-height: 55px;
-            box-sizing: border-box;
-            margin-bottom: 0;
-            border-bottom: 1px solid $border;
-            padding: 10px 2rem 10px 1rem;
-            color: $default-color-medium;
-            position: relative;
-            cursor: pointer;
-
-            &.free-cycle {
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                height: 110px;
-            }
-
-            .discount {
-                position: absolute;
-                z-index: 5;
-                right: 0;
-                top: 0px;
-                margin: 0;
-                width: 0;
-                height: 0;
-                border-style: solid;
-                border-width: 0 3rem 3rem 0;
-                border-color: transparent $green transparent transparent;
-                color: $white;
-                overflow: visible;
-                span {
-                    -webkit-transform: rotate(45deg);
-                    transform: rotate(45deg);
-                    position: absolute;
-                    width: 100%;
-                    display: block;
-                    font-weight: 700;
-                    font-size: 90%;
-                    text-align: center;
-                    top: -.25rem;
-                    right: -1.5rem;
-                }
-            }
-            label {
-                color: $text;
-                font-size: 90%;
-            }
-            strong {
-                font-size: 1.1rem;
-                color: $primary;
-                margin-right: .5rem;
-            }
-        }
-
-        .action {
-            padding: 1rem 0px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            white-space: nowrap;
-        }
-    }
-
-    // borders
-
-    > section,
-    > footer {
-        border-color: $border;
-        border-style: solid;
-    }
-
-    > section { border-width: 0px 0px 0px 1px }
-    &:last-of-type > section { border-width: 0px 1px 0px 1px }
-
-    > footer { border-width: 0px 0px 1px 1px }
-    &:last-of-type > footer { border-width: 0px 1px 1px 1px }
-
-    &:not(:last-of-type), &:not(:first-of-type) {
-        > section h3 { box-shadow: inset 0 0 1px rgba(0,0,0,.5) }
-    }
-
-    .dashboardSelectVPN-container {
-        width: 100%;
-        height: 100%; /* IE11 flex align require height*/
-        padding: .5em 0;
-        line-height: 1;
-    }
-
-    .dashboardSelectVPN-container,
-    .selectVpn-container {
-        display: flex;
-        flex-wrap: wrap;
-        min-height: 60px;
-        align-items: center;
-        justify-content: space-between;
-    }
-
-    .dashboardSelectVPN-container i { margin-right: 5px }
+[class*='Column-container'] [class*='addonRow-container'] {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+[class*='Column-container'] [class*='addonRow'] .addonRow-vpn { margin-right: 5px }
+[class*='Column-container'] [class*='addonRow'] .pm_select { flex: 1 }
+[class*='Column-container'] [class*='addonRow'] .pm_select select { width: 100% }
+[class*='Column-container'] .addonRow-price:not(:empty) { margin-left: 5px }
 
 
-    .dashboardSelectVPN-select,
-    .selectVpn-select-container { flex: 1 }
+/* borders and spacing */
+[class*='Column-container'] {
+    border: 1px solid $border;
+    border-radius: $border-radius;
+    overflow: hidden;
+}
 
-    .selectVpn-select-container {
-        max-width: 160px;
-        margin-right: auto; /* override space-bettwen used for ProtonVPN included <--> link */
-    }
+[class*='Column-container']:not(:last-of-type) {
+    margin-right: 5px;
+}
 
-    .dashboardSelectVPN-link { margin-left: auto }
+[class*='Column-container'] > *:not(:last-child) {
+    border-bottom: 1px solid lighten($border, 20);
+}
 
-    .dashboard-action-addVPN {
-        display: flex;
-        height: 40px;
-        padding: 0 0 1em 0;
-        align-items: center;
-        justify-content: center;
-    }
-    
-    .dashboard-action-addVPN-button {
-        color: #5CB85C;
-        font-weight: bold;
-        font-size: 1em;
-        padding: 0;
-        height: auto;
-    }
+[class*='Column-header'] {
+    padding-top: 1em;
+    margin: -1px;
+    border-bottom: 0;
+    border-radius: $border-radius $border-radius 0 0;
+}
 
-    .dashboard-action-addVPN-button-container {
-        display: flex;
-        align-items: center;
-        padding: .3em 1em .2em .5em;
-    }
+.totalRows-container > label:not(:first-of-type) { position: relative }
+.totalRows-container > label:not(:first-of-type):before {
+    content: '';
+    position: absolute;
+    left: -10px;
+    top: 0;
+    border-top: 1px solid $border;
+    width: calc(100% + 20px);
+}
 
-    .dashboard-action-addVPN-button-txt:before { content: "+ " }
+.totalRows-container,
+.freeColumn-free {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex: 1;
+    min-height: 130px;
+}
 
+.freeColumn-free {
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    color: $primary;
+    font-size: 1.1rem;
+    font-weight: bold;
+}
 
-    .dashboard-action-addVPN-sign {
-        display: inline-block;
-        background: url('/assets/img/logo/protonvpn-sign-green.svg') no-repeat 35% 0%;
-        background-size: 3em;
-        height: 2em;
-        width: 2em;
+.totalRows-container > label {
+    flex: 1;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+[class*='Column-footer'] {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-sizing: content-box;
+    justify-content: space-between;
+    height: 110px;
+    padding: 10px;
+    @import "selectPlan";
+    @import "addVpn-button";
+}
+
+[class*='Column-footer'] .selectPlan-button { margin-bottom: 10px }
+[class*='Column-footer'] .vpnIncluded {
+    display: flex;
+    align-items: center;
+    height: 48px;
+}
+
+/* contexts */
+
+[class*='Column-container'] > *:not([class*='Column-header']):not([class*='Column-footer']):not(.totalRows-container):not(.freeColumn-free):not(.disabled)::before {
+    content: "\f00c";
+    font-family: FontAwesome;
+    margin-right: .5em;
+}
+
+[class*='Column-container'] > .disabled {
+    color: lighten($border, 5);
+    background: lighten($border, 25);
+    border-bottom-color: lighten($border, 20);
+    &::before {
+        content:"\f00d";
+        font-family: FontAwesome;
+        margin-right: .5em;
     }
 }
+
+.plusColumn-header { color: #94C346 }
+.professionalColumn-header { color: #D4B46E }
+.visionaryColumn-header { color: #5FDEFB }

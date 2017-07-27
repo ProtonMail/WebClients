@@ -1,0 +1,30 @@
+<div class="totalRows-container">
+    <label class="totalRows-label-monthly">
+        <div class="totalRows-label-monthly-left">
+            <custom-radio data-custom-ng-model="cycle" data-custom-ng-value="1" data-custom-ng-change="onChange()"></custom-radio>
+            <span class="totalRows-cycle" translate>Pay monthly</span>
+        </div>
+        <div class="totalRows-label-monthly-right">
+            <div class="totalRows-monthly-wrapper">
+                <strong class="totalRows-monthly-price"></strong>
+                <span translate translate-context="month price">/Month</span>
+            </div>
+        </div>
+    </label>
+    <label class="totalRows-label-yearly">
+        <div class="totalRows-label-yearly-left">
+            <custom-radio data-custom-ng-model="cycle" data-custom-ng-value="12" data-custom-ng-change="onChange()"></custom-radio>
+            <span class="totalRows-cycle" translate>Pay annually</span>
+        </div>
+        <div class="totalRows-label-yearly-right">
+            <div class="totalRows-yearly-wrapper">
+                <strong class="totalRows-yearly-price"></strong>
+                <span translate translate-context="month price">/Month</span>
+            </div>
+            <small class="totalRows-billed-price"></small>
+            <i class="totalRows-discount">
+                <span>-20%</span>
+            </i>
+        </div>
+    </label>
+</div>

@@ -1,9 +1,67 @@
-<div class="pm_modal {{ctrl.class}}" role="dialog" style="display: block;">
+<form
+    class="paymentsModal-container pm_modal {{::ctrl.class}}"
+    ng-class="{
+        'paymentsModal-enough-credit': !ctrl.valid.AmountDue,
+        'paymentsModal-method-paypal': ctrl.method.value === 'paypal',
+        'paymentsModal-method-card': ctrl.method.value === 'card',
+        'paymentsModal-step-pay': ctrl.step === 'payment',
+        'paymentsModal-step-process': ctrl.step === 'process',
+        'paymentsModal-step-thanks': ctrl.step === 'thanks'
+    }"
+    name="paymentsModalForm"
+    role="dialog"
+    novalidate
+    ng-submit="ctrl.submit()">
+
     <div class="modal-dialog" id="paymentsModal">
-        <button type="button" ng-click="ctrl.cancel()" aria-hidden="true" title-translate="Close" title-translate-context="Action" class="fa fa-times close"></button>
-        <ng-include src="'templates/modals/payment/payment.tpl.html'" ng-show="ctrl.step === 'payment'"></ng-include>
-        <ng-include src="'templates/modals/payment/process.tpl.html'" ng-show="ctrl.step === 'process'"></ng-include>
-        <ng-include src="'templates/modals/payment/thanks.tpl.html'" ng-show="ctrl.step === 'thanks'"></ng-include>
+        <button
+            type="button"
+            ng-click="ctrl.cancel()"
+            aria-hidden="true"
+            title-translate="Close"
+            title-translate-context="Action"
+            class="fa fa-times close"></button>
+
+        <div class="modal-content">
+            <header class="modal-header">
+                <h4 class="modal-title paymentsModal-title" translate translate-context="Title">Payment</h4>
+            </header>
+
+            <payment-form
+                data-form="paymentsModalForm"
+                data-ctrl="ctrl"
+                class="modal-body paymentsModal-paymentForm"></payment-form>
+
+                <div class="modal-body text-center paymentsModal-process">
+                    <p>&nbsp;</p>
+                    <p class="alert alert-info" translate translate-context="Info">You're upgrading your account. Once we successfully process payment, we'll immediately upgrade your account. Thanks for choosing to become a paying customer!</p>
+                    <p>&nbsp;</p>
+                    <p translate translate-context="Info">Your account is being updated, this may take up to 30 seconds.</p>
+                    <p>&nbsp;</p>
+                    <loader-tag></loader-tag>
+                </div>
+
+                <div class="modal-body text-center paymentsModal-thanks">
+                    <h4 translate translate-context="Title">Thank you for your subscription.</h4>
+                    <p translate>Your new features are now available.</p>
+                </div>
+        </div>
+
+        <div class="modal-footer">
+            <button
+                type="button"
+                class="pm_button"
+                ng-click="ctrl.cancel()"
+                translate
+                translate-context="Action">Cancel</button>
+            <button
+                type="submit"
+                class="pm_button primary pull-right paymentsModal-btn-submit"
+                translate
+                translate-context="Action">Submit</button>
+        </div>
+
     </div>
+
     <div class="modal-overlay"></div>
 </div>

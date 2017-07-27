@@ -45,6 +45,11 @@ angular.module('proton.payment')
                             plan.labels = numberLabels(20, 200);
                             plan.support = I18N.SUPPORT;
                             break;
+                        case 'professional':
+                            plan.sending = I18N.UNLIMITED_SENDING;
+                            plan.labels = I18N.UNLIMITED_LABELS;
+                            plan.support = I18N.PRIORITY_SUPPORT;
+                            break;
                         case 'business':
                             plan.sending = '???';
                             plan.labels = '???';

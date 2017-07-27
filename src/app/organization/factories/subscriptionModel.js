@@ -4,6 +4,9 @@ angular.module('proton.organization')
     const ERROR_SUBSCRIPTION = gettextCatalog.getString('Subscription request failed', null, 'Error');
     const get = () => angular.copy(CACHE.subscription || {});
     const PAID_TYPES = {
+        plus: ['plus'],
+        professional: ['professional'],
+        visionary: ['visionary'],
         mail: ['plus', 'visionary'],
         vpn: ['vpnbasic', 'vpnplus', 'visionary']
     };
@@ -36,6 +39,36 @@ angular.module('proton.organization')
             });
     }
 
+    function name() {
+        if (hasPaid('plus')) {
+            return 'plus';
+        }
 
-    return { set, get, fetch, hasPaid, coupon };
+        if (hasPaid('professional')) {
+            return 'professional';
+        }
+
+        if (hasPaid('visionary')) {
+            return 'visionary';
+        }
+
+        return 'free';
+    }
+
+    function count(addon) {
+        switch (addon) {
+            case 'address':
+                return _.where(CACHE.subscription.Plans, { Name: '5address' }).length;
+            case 'storage':
+                return _.where(CACHE.subscription.Plans, { Name: '1gb' }).length;
+            case 'domain':
+                return _.where(CACHE.subscription.Plans, { Name: '1domain' }).length;
+            case 'member':
+                return _.where(CACHE.subscription.Plans, { Name: '1member' }).length;
+            default:
+                return 0;
+        }
+    }
+
+    return { set, get, name, fetch, hasPaid, coupon, count };
 });

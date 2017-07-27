@@ -1,0 +1,14 @@
+.settingsDashboard-plans-devise {
+    display: flex;
+    flex-direction: column;
+}
+
+.settingsDashboard-plans-devise-label {
+    display: flex;
+    align-items: center;
+}
+
+.settingsDashboard-plans-devise-label > label {
+    flex-grow: 1;
+    font-weight: bold;
+}

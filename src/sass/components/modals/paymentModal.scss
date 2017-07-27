@@ -1,0 +1,26 @@
+.paymentForm-cycle-year {
+    .paymentForm-paypal-about-month,
+    .paymentForm-about-month { display: none }
+}
+
+.paymentsModal-step-process,
+.paymentsModal-method-paypal:not(.paymentsModal-enough-credit) {
+    .paymentsModal-btn-submit { display: none }
+}
+
+.paymentsModal-container:not(.paymentsModal-step-pay) {
+    .paymentsModal-paymentForm { display: none }
+}
+
+.paymentsModal-container:not(.paymentsModal-step-process) {
+    .paymentsModal-process { display: none }
+}
+
+.paymentsModal-container:not(.paymentsModal-step-thanks) {
+    .paymentsModal-thanks { display: none }
+}
+
+.paymentsModal-container.paymentsModal-step-thanks {
+    .paymentsModal-title { display: none }
+    .paymentsModal-btn-submit { display: none }
+}

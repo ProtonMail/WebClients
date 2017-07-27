@@ -1,19 +1,45 @@
-.settingsDashboard-plans-devise-discount {
+// dashbard plans
+
+.settingsDashboard-plans-subheader {
     display: flex;
-    justify-content: space-between;
     margin-bottom: 1em;
 }
 
-.settingsDashboard-plans-devise {
-    order:1;
+.settingsDashboard-plans {
     display: flex;
-    flex-direction: column;
+    width: 100%;
+    overflow: auto;
+    padding-bottom: 2em;
+    @import "dashboard-plan";
 }
 
-.settingsDashboard-plans-devise-header {
-    display: flex;
-    align-items: center;
-    white-space: nowrap;
+[class*='Column-container'] {
+    flex: 1;
+    min-width: 275px;
 }
 
-.settingsDashboard-plans-devise label { margin-right: .5em }
+/* context */
+.settingsDashboard-plans.showVpn {
+    .totalRows-container[data-plan='free'] { display: flex }
+    .freeColumn-free { display: none }
+    [class*='Column-footer'] {
+        height: inherit;
+        .addVpn-button,
+        .vpnIncluded { display: none }
+    }
+}
+.settingsDashboard-plans:not(.showVpn) {
+    .totalRows-container[data-plan='free'] { display: none }
+    .freeColumn-free { display: flex }
+}
+
+.settingsDashboard-plans:not(.showVpn) .freeColumn-header .totalPlan { display: none }
+
+.settingsDashboard-plans.free-active .freeColumn-container,
+.settingsDashboard-plans.plus-active .plusColumn-container,
+.settingsDashboard-plans.professional-active .professionalColumn-container,
+.settingsDashboard-plans.visionary-active .visionaryColumn-container {
+    border-width: 2px;
+    border-color: $primary;
+    box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+}
