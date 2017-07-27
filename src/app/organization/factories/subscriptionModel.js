@@ -10,7 +10,14 @@ angular.module('proton.organization')
         mail: ['plus', 'visionary'],
         vpn: ['vpnbasic', 'vpnplus', 'visionary']
     };
+    const MAP_ADDONS = {
+        address: '5address',
+        storage: '1gb',
+        domain: '1domain',
+        member: '1member'
+    };
 
+    const count = (addon) => _.where(CACHE.subscription.Plans, { Name: MAP_ADDONS[addon] }).length;
     const hasFactory = (plans = []) => () => {
         const { Plans = [] } = (CACHE.subscription || {});
         return _.some(Plans, ({ Name }) => plans.indexOf(Name) > -1);
@@ -53,21 +60,6 @@ angular.module('proton.organization')
         }
 
         return 'free';
-    }
-
-    function count(addon) {
-        switch (addon) {
-            case 'address':
-                return _.where(CACHE.subscription.Plans, { Name: '5address' }).length;
-            case 'storage':
-                return _.where(CACHE.subscription.Plans, { Name: '1gb' }).length;
-            case 'domain':
-                return _.where(CACHE.subscription.Plans, { Name: '1domain' }).length;
-            case 'member':
-                return _.where(CACHE.subscription.Plans, { Name: '1member' }).length;
-            default:
-                return 0;
-        }
     }
 
     return { set, get, name, fetch, hasPaid, coupon, count };

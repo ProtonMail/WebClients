@@ -1,14 +1,15 @@
 angular.module('proton.dashboard')
-    .factory('customProPlanModel', ($rootScope, CONSTANTS, dashboardModel) => {
-        const MAX_MEMBER = 50;
-        const { MEMBER } = CONSTANTS.PLANS.ADDON;
-        const { PROFESSIONAL } = CONSTANTS.PLANS.PLAN;
-        const BASE = CONSTANTS.BASE_SIZE;
-        const fromBase = (value) => (value / (BASE * BASE * BASE));
+    .factory('customProPlanModel', ($rootScope, CONSTANTS, dashboardConfiguration, dashboardModel) => {
+        const { PLANS, BASE_SIZE, MAX_MEMBER } = CONSTANTS;
+        const { PLAN, ADDON } = PLANS;
+        const { MEMBER } = ADDON;
+        const { PROFESSIONAL } = PLAN;
+
+        const fromBase = (value) => (value / Math.pow(BASE_SIZE, 3));
         const CACHE = {};
         const refreshSlider = (type) => $rootScope.$emit('refresh.slider', { type, data: { value: CACHE[type] } });
         const send = () => {
-            const { plan } = dashboardModel.get(dashboardModel.cycle());
+            const { plan } = dashboardModel.get(dashboardConfiguration.cycle());
             const professionalPlan = plan[PROFESSIONAL];
 
             $rootScope.$emit('dashboard', { type: 'change.addon', data: { plan: 'professional', addon: 'member', value: CACHE.members - professionalPlan.MaxMembers } });
@@ -22,10 +23,10 @@ angular.module('proton.dashboard')
         }
 
         function getSliderParameters(type) {
-            const { plan, addons } = dashboardModel.get(dashboardModel.cycle());
+            const { plan, addons } = dashboardModel.get(dashboardConfiguration.cycle());
             const professionalPlan = plan[PROFESSIONAL];
             const memberAddon = addons[MEMBER];
-            const { professional } = dashboardModel.config();
+            const { professional } = dashboardConfiguration.get();
 
             let step;
             let start;
@@ -81,7 +82,7 @@ angular.module('proton.dashboard')
         }
 
         $rootScope.$on('slider.updated', (event, { type, data = {} }) => {
-            const { addons } = dashboardModel.get(dashboardModel.cycle());
+            const { addons } = dashboardModel.get(dashboardConfiguration.cycle());
             const memberAddon = addons[MEMBER];
 
             switch (type) {
