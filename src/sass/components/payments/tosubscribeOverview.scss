@@ -1,0 +1,72 @@
+.tosubscribeOverview-head {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 1em;
+    background: $tertiary;
+    border-top: 1px solid $border;
+    border-bottom: 1px solid $border;
+    color: $default-color-medium;
+    font-weight: 400;
+    text-transform: uppercase;
+
+    /* Fuck da specificity */
+    [class*="tosubscribeOverview-title"][class*="tosubscribeOverview-title"][class*="tosubscribeOverview-title"] {
+        font-size: 1em;
+        color: inherit;
+    }
+}
+
+.tosubscribeOverview-list {
+    padding: 0;
+    margin: 0
+}
+
+.tosubscribeOverview-list-about {
+    padding: 0;
+    margin-left: 1em;
+}
+
+.tosubscribeOverview-item + .tosubscribeOverview-item,
+.tosubscribeOverview-item:first-child {
+    border-bottom: 1px solid $border;
+}
+
+
+.tosubscribeOverview-item {
+    list-style: none;
+    margin: 0;
+    padding: 0 1em;
+}
+
+.tosubscribeOverview-item-title {
+    line-height: initial !important;
+    font-weight: normal !important;
+    font-size: 1em !important;
+    color: inherit !important;
+}
+
+.tosubscribeOverview-item-header, .tosubscribeOverview-item:not([data-plan]), [class*="tosubscribeOverview-about"] {
+    display: flex;
+    justify-content: space-between;
+    height: 36px;
+    align-items: center
+}
+
+[class*="tosubscribeOverview-about"] {
+    justify-content: flex-start;
+    span {
+        padding: 0 .5em;
+    }
+}
+
+.tosubscribeOverview-price { margin-left: auto }
+
+.tosubscribeOverview-item[data-cycle="1"],
+.tosubscribeOverview-item[data-valid-cycle="1"] {
+    [class*="-yearly"] { display: none }
+}
+
+.tosubscribeOverview-item[data-cycle="12"],
+.tosubscribeOverview-item[data-valid-cycle="12"] {
+    [class*="-monthly"] { display: none }
+}

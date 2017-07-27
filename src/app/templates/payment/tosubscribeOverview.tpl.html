@@ -1,73 +1,74 @@
-<table class="tosubscribeOverview-container">
-    <thead>
-        <tr>
-            <th class="desc" translate translate-context="Title" translate-comment="table heading">Plan</th>
-            <th style="width: 4rem" class="price text-right" translate translate-context="Title" translate-comment="table heading">Price</th>
-        </tr>
-    </thead>
+<div class="tosubscribeOverview-container">
 
-    <tbody>
-        <tr ng-repeat="plan in ctrl.plans | filter: {Type: 1}" data-plan="{{ ::plan.Name}}" class="planInfo-row">
-            <td class="desc">
-                <div>{{ plan.Title }} <span translate translate-context="Title">Plan</span></div>
-                <div>
-                    <span class="space"></span>{{ ::ctrl.count('MaxSpace') | humanSize }}
+    <header class="tosubscribeOverview-head">
+        <h2 class="tosubscribeOverview-title-plan">Plan</h2>
+        <h2 class="tosubscribeOverview-title-price">Price</h2>
+    </header>
+
+    <ul class="tosubscribeOverview-list">
+        <li
+            class="tosubscribeOverview-item"
+            ng-repeat="plan in ctrl.plans | filter: {Type: 1}"
+            data-cycle="{{ ::plan.Cycle}}"
+            data-plan="{{ ::plan.Name}}">
+
+            <header class="tosubscribeOverview-item-header">
+                <h3 class="tosubscribeOverview-item-title">{{ ::plan.Title }}</h3>
+                <strong class="tosubscribeOverview-price-monthly">{{ plan.Amount / 100 | currency: plan.Currency }}</strong>
+                <strong class="tosubscribeOverview-price-yearly">{{ plan.Amount / 100 / 12 | fixed: 2 | currency: plan.Currency }}/mo</strong>
+            </header>
+
+            <ul class="tosubscribeOverview-list-about">
+                <li class="tosubscribeOverview-about-space">
+                    {{ ::ctrl.count('MaxSpace') | humanSize }}
                     <span translate>Storage</span>
-                    <span ng-if="ctrl.price('space')" class="tosubscribeOverview-price">{{ ::ctrl.price('space') / 100  }} {{ ::plan.Currency }}</span>
-                </div>
-                <div>
-                    <span class="space"></span>{{ ::ctrl.count('MaxDomains') }}
+                    <strong ng-if="ctrl.price('space')" class="tosubscribeOverview-price">{{ ::ctrl.price('space') / 100 | currency: plan.Currency  }}</strong>
+                </li>
+                <li class="tosubscribeOverview-about-domains">
+                    {{ ::ctrl.count('MaxDomains') }}
                     <span translate translate-n="ctrl.count('MaxDomains')" translate-plural="Custom domains">Custom domain</span>
-                    <span ng-if="ctrl.price('domain')" class="tosubscribeOverview-price">{{ ::ctrl.price('domain') / 100  }} {{ ::plan.Currency }}</span>
-                </div>
+                    <strong ng-if="ctrl.price('domain')" class="tosubscribeOverview-price">{{ ::ctrl.price('domain') / 100 | currency: plan.Currency }}</strong>
+                </li>
 
-                <div>
-                    <span class="space"></span>{{ ::ctrl.count('MaxMembers') }}
+                <li class="tosubscribeOverview-about-members">
+                    {{ ::ctrl.count('MaxMembers') }}
                     <span translate translate-n="ctrl.count('MaxMembers')" translate-plural="Custom members">Custom member</span>
-                    <span ng-if="ctrl.price('member')" class="tosubscribeOverview-price">{{ ::ctrl.price('member') / 100  }} {{ ::plan.Currency }}</span>
-                </div>
+                    <strong ng-if="ctrl.price('member')" class="tosubscribeOverview-price">{{ ::ctrl.price('member') / 100 | currency: plan.Currency }}</strong>
+                </li>
 
-                <div>
-                    <span class="space"></span>{{ ::ctrl.count('MaxAddresses') }}
+                <li class="tosubscribeOverview-about-addresses">
+                    {{ ::ctrl.count('MaxAddresses') }}
                     <span translate translate translate-n="ctrl.count('MaxAddresses')" translate-plural="Addresses">Address</span>
-                    <span ng-if="ctrl.price('address')" class="tosubscribeOverview-price">{{ ::ctrl.price('address') / 100  }} {{ ::plan.Currency }}</span>
-                </div>
-            </td>
-            <td class="price text-right">
-                <strong ng-show="plan.Cycle === 1">{{ plan.Amount / 100 | currency: plan.Currency }}</strong>
-                <strong ng-show="plan.Cycle === 12">{{ plan.Amount / 100 / 12 | fixed: 2 | currency: plan.Currency }}/mo</strong>
-            </td>
-        </tr>
+                    <strong ng-if="ctrl.price('address')" class="tosubscribeOverview-price">{{ ::ctrl.price('address') / 100 | currency: plan.Currency }}</strong>
+                </li>
+            </ul>
+        </li>
 
-        <tr>
-            <td class="desc">
-                <strong ng-show="ctrl.valid.Cycle === 1" tranlate translate-context="Title">Total per month (incl. taxes)</strong>
-                <strong ng-show="ctrl.valid.Cycle === 12" translate translate-context="Title">Total per year (incl. taxes)</strong>
-            </td>
-            <td class="price text-right">
-                <strong>{{ ctrl.valid.Amount / 100 | currency: ctrl.valid.Currency }}</strong>
-            </td>
-        </tr>
+        <li class="tosubscribeOverview-item" data-valid-cycle="{{ ::ctrl.valid.Cycle }}">
+            <strong class="tosubscribeOverview-item-valid-monthly" tranlate translate-context="Title">Total per month (incl. taxes)</strong>
+            <strong class="tosubscribeOverview-item-valid-yearly" translate translate-context="Title">Total per year (incl. taxes)</strong>
+            <strong>{{ ctrl.valid.Amount / 100 | currency: ctrl.valid.Currency }}</strong>
+        </li>
 
-        <tr ng-show="ctrl.valid.Proration !== 0">
-            <td class="desc" translate translate-context="Title">Proration</td>
-            <td class="text-green price text-right"><strong>{{ ctrl.valid.Proration / 100 | currency: ctrl.valid.Currency }}</strong></td>
-        </tr>
+        <li class="tosubscribeOverview-item" ng-if="ctrl.valid.Proration !== 0">
+            <span class="desc" translate translate-context="Title">Proration</span>
+            <strong  class="text-green">{{ ctrl.valid.Proration / 100 | currency: ctrl.valid.Currency }}</strong>
+        </li>
 
-        <tr ng-show="ctrl.valid.CouponDiscount !== 0">
-            <td class="desc" translate translate-context="Title">Coupon</td>
-            <td class="text-green price text-right"><strong>{{ ctrl.valid.CouponDiscount / 100 | currency: ctrl.valid.Currency }}</strong></td>
-        </tr>
+        <li class="tosubscribeOverview-item" ng-if="ctrl.valid.CouponDiscount !== 0">
+            <span class="desc" translate translate-context="Title">Coupon</span>
+            <strong>{{ ctrl.valid.CouponDiscount / 100 | currency: ctrl.valid.Currency }}</strong>
+        </li>
 
-        <tr ng-show="ctrl.valid.Credit !== 0">
-            <td class="desc" translate translate-context="Title">Credit</td>
-            <td class="text-green price text-right"><strong>{{ ctrl.valid.Credit / 100 | currency: ctrl.valid.Currency }}</strong></td>
-        </tr>
+        <li class="tosubscribeOverview-item" ng-if="ctrl.valid.Credit !== 0">
+            <span class="desc" translate translate-context="Title">Credit</span>
+            <strong class="text-green">{{ ctrl.valid.Credit / 100 | currency: ctrl.valid.Currency }}</strong>
+        </li>
 
-        <tr>
-            <td class="desc"><strong translate translate-context="Title">Amount due</strong></td>
-            <td class="price text-right"><strong>{{ ctrl.valid.AmountDue / 100 | currency: ctrl.valid.Currency }}</strong></td>
-        </tr>
+        <li class="tosubscribeOverview-item">
+            <strong translate translate-context="Title">Amount due</strong>
+            <strong>{{ ctrl.valid.AmountDue / 100 | currency: ctrl.valid.Currency }}</strong>
+        </li>
 
-    </tbody>
-</table>
+    </ul>
+</div>
