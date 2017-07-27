@@ -90,7 +90,8 @@ angular.module('proton.payment')
 
                 const { list, selected } = paymentUtils.generateMethods({
                     choice: params.choice,
-                    Cycle: params.valid.Cycle
+                    Cycle: params.valid.Cycle,
+                    Amount: params.valid.AmountDue
                 });
                 ctrl.methods = list;
                 ctrl.method = selected;
