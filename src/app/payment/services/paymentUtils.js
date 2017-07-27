@@ -24,8 +24,10 @@ angular.module('proton.payment')
                 label: gettextCatalog.getString('Credit card', null)
             }];
 
+            // Min amount to activate it if monthly is 50
+            const isMonthlyValid = (Amount > 5000 && Cycle === 1);
             // Paypal doesn't work with IE11 ??? === For payment modal we cannot pay monthly via paypal
-            if (!aboutClient.isIE11() && (Cycle === 12 ||  Amount > 5000 && Cycle === 1 )) {
+            if (!aboutClient.isIE11() && (Cycle === 12 || isMonthlyValid)) {
                 list.push({
                     label: 'Paypal',
                     value: 'paypal'
