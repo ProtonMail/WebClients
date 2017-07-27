@@ -14,6 +14,18 @@ module.exports = function (grunt) {
     grunt.loadTasks('tasks');
     loadTasks(grunt);
 
+    const getGhostModeBrowserSync = () => {
+        if (grunt.option('no-ghost')) {
+            return false;
+        }
+
+        return {
+            clicks: true,
+            forms: true,
+            scroll: true
+        };
+    };
+
 
     const taskConfig = {
         pkg: PACKAGE,
@@ -37,7 +49,9 @@ module.exports = function (grunt) {
                 options: {
                     open: !grunt.option('no-open'),
                     watchTask: true,
-                    proxy: 'localhost:8080'
+                    proxy: 'localhost:8080',
+                    ghostMode: getGhostModeBrowserSync()
+
                 }
             }
         },

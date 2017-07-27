@@ -27,6 +27,11 @@ We are still in Beta and will have a more refined build process, installation in
 
 We are very open to bug reports via Issues as well as Pull Requests.
 
+### CLI Flags
+
+- `--no-open`: Stop the browser from automatically opening 
+- `--no-ghost`: Switch off Clicks, Scrolls & Form inputs on any device
+
 ## Branch naming conventions
 
 For a fix
