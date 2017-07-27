@@ -36,21 +36,21 @@ angular.module('proton.dashboard')
             switch (type) {
                 case 'members':
                     step = memberAddon.MaxMembers;
-                    start = ~~professional.member + professionalPlan.MaxMembers;
+                    start = (~~professional.member + professionalPlan.MaxMembers) * step;
                     min = professionalPlan.MaxMembers;
-                    max = MAX_MEMBER;
+                    max = (MAX_MEMBER - 1) * step + professionalPlan.MaxMembers;
                     break;
                 case 'storage':
                     step = fromBase(memberAddon.MaxSpace);
                     start = (~~professional.member + professionalPlan.MaxMembers) * step;
                     min = fromBase(professionalPlan.MaxSpace);
-                    max = MAX_MEMBER * step;
+                    max = (MAX_MEMBER - 1) * step + fromBase(professionalPlan.MaxSpace);
                     break;
                 case 'addresses':
                     step = memberAddon.MaxAddresses;
                     start = (~~professional.member + professionalPlan.MaxMembers) * step;
                     min = professionalPlan.MaxAddresses;
-                    max = MAX_MEMBER * step;
+                    max = (MAX_MEMBER - 1) * step + professionalPlan.MaxAddresses;
                     break;
             }
 
@@ -82,37 +82,24 @@ angular.module('proton.dashboard')
         }
 
         $rootScope.$on('slider.updated', (event, { type, data = {} }) => {
-            const { addons } = dashboardModel.get(dashboardConfiguration.cycle());
+            const { plan, addons } = dashboardModel.get(dashboardConfiguration.cycle());
+            const professionalPlan = plan[PROFESSIONAL];
             const memberAddon = addons[MEMBER];
+            const OPTIONS = _.range(0, MAX_MEMBER).map((value) => ({
+                members: (value * memberAddon.MaxMembers) + professionalPlan.MaxMembers,
+                storage: (value * fromBase(memberAddon.MaxSpace)) + fromBase(professionalPlan.MaxSpace),
+                addresses: (value * memberAddon.MaxAddresses) + professionalPlan.MaxAddresses
+            }));
 
-            switch (type) {
-                case 'members':
-                    CACHE.members = data.value;
-                    CACHE.storage = (data.value * fromBase(memberAddon.MaxSpace)) / memberAddon.MaxMembers;
-                    CACHE.addresses = (data.value * memberAddon.MaxAddresses) / memberAddon.MaxMembers;
+            const { members, storage, addresses } = _.findWhere(OPTIONS, { [type]: data.value });
 
-                    refreshSlider('storage');
-                    refreshSlider('addresses');
-                    break;
-                case 'storage':
-                    CACHE.storage = data.value;
-                    CACHE.members = (data.value * memberAddon.MaxMembers) / fromBase(memberAddon.MaxSpace);
-                    CACHE.addresses = (data.value * memberAddon.MaxAddresses) / fromBase(memberAddon.MaxSpace);
+            CACHE.members = members;
+            CACHE.storage = storage;
+            CACHE.addresses = addresses;
 
-                    refreshSlider('members');
-                    refreshSlider('addresses');
-                    break;
-                case 'addresses':
-                    CACHE.addresses = data.value;
-                    CACHE.storage = (data.value * fromBase(memberAddon.MaxSpace)) / memberAddon.MaxAddresses;
-                    CACHE.members = (data.value * memberAddon.MaxMembers) / memberAddon.MaxAddresses;
-
-                    refreshSlider('storage');
-                    refreshSlider('members');
-                    break;
-                default:
-                    break;
-            }
+            refreshSlider('members');
+            refreshSlider('storage');
+            refreshSlider('addresses');
         });
 
         return { init: angular.noop, getSliders, send };

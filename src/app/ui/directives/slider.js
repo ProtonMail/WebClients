@@ -46,6 +46,7 @@ angular.module('proton.ui')
                     unsubscribe.push($rootScope.$on('refresh.slider', (event, { type, data = {} }) => {
                         if (scope.options.type === type) {
                             slider.noUiSlider.set(data.value);
+                            scope.$applyAsync(() => scope.value = data.value);
                         }
                     }));
                 }
