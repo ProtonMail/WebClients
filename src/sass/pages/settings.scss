@@ -541,21 +541,6 @@ body.appConfigBody-is-mobile {
 }
 
 #paymentsModal {
-    th.desc,
-    td.desc {
-        padding-right: 0;
-        .space {
-            width: 20px;
-            display: inline-block;
-        }
-    }
-
-    th.price,
-    td.price {
-        padding-left: 0;
-        width: 65px;
-    }
-
     .disabled {
         input,
         select {
