@@ -14,20 +14,23 @@ angular.module('proton.payment')
          * Return the selected method:
          *     - card (first one) if no payment methods for the user
          *     - 1st payment method if the user has custom payment methods
-         * @param  {Array} methods custom list default -> API methods
+         * @param  {Array} config.methods custom list default -> API methods
+         * @param  {String} config.choice custom selected choice
          * @return {Object}         { selected, list }
          */
-        const generateMethods = (methods = paymentModel.get('methods')) => {
+        const generateMethods = ({ methods = paymentModel.get('methods'), choice, Cycle = 12 } = {}) => {
             const list = [{
                 value: 'card',
                 label: gettextCatalog.getString('Credit card', null)
             }];
 
-            // Paypal doesn't work with IE11 ???
-            !aboutClient.isIE11() && list.push({
-                label: 'Paypal',
-                value: 'paypal'
-            });
+            // Paypal doesn't work with IE11 ??? === For payment modal we cannot pay monthly via paypal
+            if (!aboutClient.isIE11() && Cycle === 12) {
+                list.push({
+                    label: 'Paypal',
+                    value: 'paypal'
+                });
+            }
 
             let selected = list[0];
 
@@ -35,6 +38,10 @@ angular.module('proton.payment')
                 const size = list.length;
                 list.push(...formatMethods(methods));
                 selected = list[size];
+            }
+
+            if (choice) {
+                selected = _.findWhere(list, { value: choice });
             }
 
             return { list, selected };

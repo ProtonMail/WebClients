@@ -1,0 +1,98 @@
+<div class="pm_form paymentForm-container" ng-class="{
+    'paymentForm-cycle-month': ctrl.valid.Cycle === 1,
+    'paymentForm-cycle-year': ctrl.valid.Cycle === 12
+}">
+    <div class="pm_grid">
+        <div class="col-1-2">
+            <div class="pm_table">
+                <tosubscribe-overview class="margin"></tosubscribe-overview>
+            </div>
+
+            <div class="text-center alert alert-info paymentForm-about-month">
+                <p>
+                    <strong translate>Save 20% with the annual plan!</strong>
+                </p>
+                <p>
+                    <button type="button" class="pm_button primary paymentForm-btn-payAnnualy" translate translate-context="Action">Pay annually</button>
+                </p>
+            </div>
+
+        </div>
+
+        <div class="col-1-2">
+            <p class="alert alert-danger" ng-show="!ctrl.status.Paypal" translate translate-context="Info">PayPal is currently not available, please try again later.</p>
+            <p class="alert alert-danger" ng-show="!ctrl.status.Stripe && !ctrl.status.Paymentwall" translate translate-context="Info">Credit card payment is currently not available, please try again later.</p>
+
+            <div ng-if="ctrl.valid.AmountDue">
+
+                <div class="pm_grid margin">
+                    <div class="col-1-2">
+                        <label for="paymentMethod" translate translate-context="Title" translate-comment="form label">Payment method:</label>
+                    </div>
+                    <div class="col-1-2">
+                        <div class="pm_select">
+                            <select
+                                id="paymentMethod"
+                                ng-model="ctrl.method"
+                                ng-options="method.label for method in ctrl.methods"></select>
+                            <i class="fa fa-angle-down"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <card-view
+                    data-card="ctrl.card"
+                    ng-if="ctrl.method.value === 'card'"
+                    data-form="donateForm"></card-view>
+
+                <div ng-if="ctrl.method.value === 'paypal'">
+
+                    <p class="alert alert-warning paymentForm-paypal-about-month">
+                        <span translate-context="Info" translate>We only accept PayPal for annual subscriptions, click the link to switch to an annual subscription.</span>
+                        <button
+                            type="button"
+                            class="paymentForm-btn-payAnnualy"
+                            translate-context="Action"
+                            translate>Change subscription</button>
+                    </p>
+
+                    <p class="alert alert-warning paymentForm-paypal-error-amount" ng-if="paypalError">
+                        <span translate-context="Paypal error">Amount below minimum.</span> ({{ ::paypalError.minAmount / 100 }} {{ ::paypalError.Currency }})
+                    </p>
+
+                    <paypal-view
+                        ng-if="ctrl.valid.Cycle === 12"
+                        data-amount="ctrl.getAmountPaypal()"
+                        data-currency="ctrl.valid.Currency"
+                        data-callback="ctrl.paypalCallback"></paypal-view>
+                </div>
+
+                <div ng-if="ctrl.method.value === 'bitcoin'">
+                    <p class="alert alert-info" translate translate-context="Info">To pay with Bitcoin, please follow the <a href="https://protonmail.com/support/knowledge-base/paying-with-bitcoin" target="_blank">instructions here</a>. To pay via Cash, please email us at <strong>contact@protonmail.ch</strong> for instructions.</p>
+                </div>
+                <hr />
+
+            </div>
+
+            <p ng-if="!ctrl.displayCoupon">
+                <a href="#" ng-click="ctrl.displayCoupon = true" translate translate-context="Action" translate-comment="payment modal add coupon button">Add coupon</a>
+            </p>
+
+            <div class="pm_grid" ng-if="ctrl.displayCoupon">
+                <div class="col-2-3">
+                    <div class="input-icon">
+                        <i class="fa fa-tag"></i>
+                        <input type="text" ng-model="ctrl.coupon" placeholder-translate="Coupon">
+                    </div>
+                </div>
+                <div class="col-1-3">
+                    <button type="button" class="pm_button primary" ng-click="ctrl.apply()" translate translate-context="Action">Apply</button>
+                </div>
+            </div>
+
+            <p><span translate translate-context="Info">By clicking Submit, you agree to abide by</span> <a href="https://protonmail.com/terms-and-conditions" target="_blank" translate translate-context="Link">ProtonMail's Terms and Conditions</a>.</p>
+        </div>
+    </div>
+</div>
+
+

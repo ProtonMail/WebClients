@@ -9,6 +9,7 @@ angular.module('proton.constants', [])
     PLANS: {
         PLAN: {
             PLUS: 'plus',
+            PROFESSIONAL: 'professional',
             VISIONARY: 'visionary',
             VPN_BASIC: 'vpnbasic',
             VPN_PLUS: 'vpnplus'

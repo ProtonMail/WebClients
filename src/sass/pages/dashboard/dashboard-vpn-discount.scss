@@ -1,32 +1,29 @@
-.settingsDashboard-vpn-discount {
+.vpnDiscountPanel-container {
     display: flex;
     align-items: center;
     flex-wrap: wrap;
     box-sizing: border-box;
     width: 100%;
-    padding: .5em;
+    padding: .5em 0;
     font-size: 1.1em;
     color: #000;
 
 }
 
-.settingsDashboard-vpn-discount-amount {
+.vpnDiscountPanel-amount {
     position: relative;
     margin: 0 .5em;
 }
 
-.settingsDashboard-vpn-discount-amount:before {
+.vpnDiscountPanel-amount:before {
     content: "🎁";
     margin-right: .2em;
 }
 
-.settingsDashboard-vpn-discount .settingsDashboard-vpn-discount-underline,
-.settingsDashboard-vpn-discount .settingsDashboard-vpn-discount-info {
-    opacity: .7;
-}
+.vpnDiscountPanel .vpnDiscountPanel-underline,
+.vpnDiscountPanel .vpnDiscountPanel-info { opacity: .7 }
 
-
-[class*='settingsDashboard-vpn-discount-logo'] {
+[class*='vpnDiscountPanel-logo'] {
     height: 50px;
     width: 150px;
     display: inline-block;
@@ -35,11 +32,17 @@
     background-size: 120px;
 }
 
-.settingsDashboard-vpn-discount-logo-pmplus {
+.vpnDiscountPanel-logo-pmplus {
     background-position: center 70%;
     background-image: url('/assets/img/logo/logo-dark.svg')
 }
 
-.settingsDashboard-vpn-discount-logo-vpn {
+.vpnDiscountPanel-logo-vpn {
     background-image: url('/assets/img/logo/protonvpn-dark.svg')
+}
+
+
+// mobile
+body.appConfigBody-is-mobile {
+    .vpnDiscountPanel-container { display: none }
 }

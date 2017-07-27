@@ -1,0 +1,43 @@
+.customInputNumber-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 35px;
+    box-sizing: border-box;
+    border: 1px solid $border;
+    border-radius: $border-radius;
+    overflow: hidden;
+}
+
+.customInputNumber-input {
+    width: 100%;
+    border-radius: 0;
+    text-align: center;
+    background: transparent;
+}
+
+.customInputNumber-button {
+    height: 35px;
+    width: 35px;
+    border: 0;
+    background: #FFF;
+    color: #444;
+    font-size: 1.5em;
+}
+
+.customInputNumber-button:active {
+    background: #CCC
+}
+
+.customInputNumber-minus { border-radius: $border-radius 0 0 $border-radius }
+.customInputNumber-plus { border-radius: 0 $border-radius $border-radius 0 }
+
+/* form validation colors */
+.pm_form .customInputNumber-input.ng-touched.ng-invalid:focus { border-color: $primary }
+.pm_form .customInputNumber-input.ng-touched.ng-invalid:not(:focus) {
+    border-color: $red;
+    color: $red;
+    font-weight: bold;
+    box-shadow: inset 0 1px 2px rgba($red, .3), 0 0 0 0.2em rgba($red, .3);
+}
