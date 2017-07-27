@@ -1,5 +1,5 @@
 angular.module('proton.dashboard')
-    .directive('professionalColumn', ($rootScope, CONSTANTS, customProPlanModal, dashboardModel, gettextCatalog, subscriptionModel) => {
+    .directive('professionalColumn', ($rootScope, CONSTANTS, customProPlanModal, dashboardConfiguration, dashboardModel, gettextCatalog, subscriptionModel) => {
         const PROFESSIONAL = CONSTANTS.PLANS.PLAN.PROFESSIONAL;
         const MEMBER = CONSTANTS.PLANS.ADDON.MEMBER;
         const BASE = CONSTANTS.BASE_SIZE;
@@ -14,7 +14,7 @@ angular.module('proton.dashboard')
                 const $buttons = element.find('.professionalColumn-customize');
                 const $space = element.find('.professionalColumn-space-value');
                 const $address = element.find('.professionalColumn-address-value');
-                const { addons, plan } = dashboardModel.get(dashboardModel.cycle());
+                const { addons, plan } = dashboardModel.get(dashboardConfiguration.cycle());
                 const professional = plan[PROFESSIONAL];
                 const member = addons[MEMBER];
                 const unsubscribe = $rootScope.$on('dashboard', (event, { type, data = {} }) => {

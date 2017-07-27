@@ -1,6 +1,7 @@
 angular.module('proton.dashboard')
-    .directive('activePlan', ($rootScope, subscriptionModel) => {
-        const PLANS = ['free', 'plus', 'professional', 'visionary'];
+    .directive('activePlan', ($rootScope, CONSTANTS, subscriptionModel) => {
+        const { PLUS, PROFESSIONAL, VISIONARY } = CONSTANTS.PLANS.PLAN;
+        const PLANS = ['free', PLUS, PROFESSIONAL, VISIONARY];
 
         return {
             restrict: 'A',

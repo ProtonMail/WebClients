@@ -1,5 +1,5 @@
 angular.module('proton.dashboard')
-    .directive('totalPlan', ($filter, $rootScope, dashboardModel, gettextCatalog) => {
+    .directive('totalPlan', ($filter, $rootScope, dashboardConfiguration, dashboardModel, gettextCatalog) => {
         const amount = (plan, cycle, currency) => $filter('currency')(dashboardModel.total(plan, cycle) / 100 / cycle, currency);
         const types = ['addon.updated', 'cycle.updated', 'currency.updated'];
         const month = gettextCatalog.getString('month', null);
@@ -12,7 +12,7 @@ angular.module('proton.dashboard')
             link(scope, element, { plan }) {
                 function update() {
                     scope.$applyAsync(() => {
-                        element.text(`${amount(plan, dashboardModel.cycle(), dashboardModel.currency())}/${month}`);
+                        element.text(`${amount(plan, dashboardConfiguration.cycle(), dashboardConfiguration.currency())}/${month}`);
                     });
                 }
 

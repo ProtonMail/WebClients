@@ -1,7 +1,7 @@
 angular.module('proton.dashboard')
-    .directive('addonRow', ($filter, $rootScope, dashboardModel, dashboardOptions, gettextCatalog, subscriptionModel) => {
+    .directive('addonRow', ($filter, $rootScope, dashboardConfiguration, dashboardModel, dashboardOptions, gettextCatalog, subscriptionModel) => {
         const types = ['addon.updated', 'currency.updated', 'cycle.updated'];
-        const filter = (amount) => $filter('currency')(amount / 100 / dashboardModel.cycle(), dashboardModel.currency());
+        const filter = (amount) => $filter('currency')(amount / 100 / dashboardConfiguration.cycle(), dashboardConfiguration.currency());
         const initValue = (addon) => {
             if (addon === 'vpn') {
                 const { Plans = [] } = subscriptionModel.get();
@@ -23,23 +23,17 @@ angular.module('proton.dashboard')
             restrict: 'E',
             replace: true,
             scope: {},
-            template: `
-                <div class="addonRow-container">
-                    <div class="pm_select inline">
-                        <select class="addonRow-select"></select>
-                        <i class="fa fa-angle-down"></i>
-                    </div>
-                    <strong class="addonRow-price"></strong>
-                </div>
-            `,
+            templateUrl: 'templates/dashboard/addonRow.tpl.html',
             compile(element, { addon, plan }) {
                 const $select = element.find('.addonRow-select');
                 const $price = element.find('.addonRow-price');
+                const options = _.reduce(dashboardOptions.get(plan, addon), (acc, { label, value }) => {
+                    return acc + `<option value="${value}">${label}</option>`;
+                }, '');
 
-                _.each(dashboardOptions.get(plan, addon), ({ label, value }) => {
-                    $select.append(`<option value="${value}">${label}</option>`);
-                });
+                $select.append(options);
 
+                // For VPN addon row we need to add a ProtonVPN String
                 if (addon === 'vpn') {
                     element.find('.pm_select').before('<span class="addonRow-vpn">ProtonVPN</span>');
                 }
