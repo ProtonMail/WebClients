@@ -266,8 +266,7 @@ angular.module('proton.dashboard')
                 const promise = Promise.all([
                     subscriptionModel.fetch(),
                     paymentModel.getMethods(true)
-                ])
-                    .then(paymentModal.deactivate);
+                ]);
                 networkActivityTracker.track(promise);
             }
 
