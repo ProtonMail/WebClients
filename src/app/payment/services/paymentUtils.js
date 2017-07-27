@@ -18,14 +18,14 @@ angular.module('proton.payment')
          * @param  {String} config.choice custom selected choice
          * @return {Object}         { selected, list }
          */
-        const generateMethods = ({ methods = paymentModel.get('methods'), choice, Cycle = 12 } = {}) => {
+        const generateMethods = ({ methods = paymentModel.get('methods'), choice, Cycle = 12, Amount } = {}) => {
             const list = [{
                 value: 'card',
                 label: gettextCatalog.getString('Credit card', null)
             }];
 
             // Paypal doesn't work with IE11 ??? === For payment modal we cannot pay monthly via paypal
-            if (!aboutClient.isIE11() && Cycle === 12) {
+            if (!aboutClient.isIE11() && (Cycle === 12 ||  Amount > 5000 && Cycle === 1 )) {
                 list.push({
                     label: 'Paypal',
                     value: 'paypal'
