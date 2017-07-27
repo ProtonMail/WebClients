@@ -6,11 +6,11 @@ angular.module('proton.dashboard')
             if (addon === 'vpn') {
                 const { Plans = [] } = subscriptionModel.get();
 
-                if (Plans.indexOf('vpnbasic') > -1) {
+                if (_.findWhere(Plans, { Name: 'vpnbasic' })) {
                     return 'vpnbasic';
                 }
 
-                if (Plans.indexOf('vpnplus') > -1) {
+                if (_.findWhere(Plans, { Name: 'vpnplus' })) {
                     return 'vpnplus';
                 }
 
