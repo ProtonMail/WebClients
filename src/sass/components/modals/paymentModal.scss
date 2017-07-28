@@ -17,10 +17,16 @@
 }
 
 .paymentsModal-container:not(.paymentsModal-step-thanks) {
-    .paymentsModal-thanks { display: none }
+    .paymentsModal-thanks,
+    .paymentsModal-btn-close { display: none }
 }
 
 .paymentsModal-container.paymentsModal-step-thanks {
-    .paymentsModal-title { display: none }
+    .paymentsModal-title,
+    .paymentsModal-btn-cancel,
     .paymentsModal-btn-submit { display: none }
+
+    .paymentsModal-group-btn { display: flex }
+    .paymentsModal-btn-close { margin-left: auto  }
+
 }
