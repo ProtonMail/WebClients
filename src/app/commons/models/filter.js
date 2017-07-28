@@ -38,6 +38,16 @@ angular.module('proton.commons')
                 });
             },
             /**
+         * Check filter syntax
+         * @param {Object} filter
+         * @return {Promise}
+         */
+            check(filter) {
+                return $http.post(url.get() + '/filters/check', filter, {
+                    transformRequest: transformRequestFilter
+                });
+            },
+            /**
          * Get filters owned by the current user
          * @return {Promise}
          */

@@ -1,5 +1,5 @@
 angular.module('proton.ui')
-    .directive('autocompleteEmail', (autocompleteEmailsModel, regexEmail, autocompleteBuilder) => {
+    .directive('autocompleteEmail', ($rootScope, autocompleteEmailsModel, regexEmail, autocompleteBuilder) => {
 
     /**
      * Get the selected input value configuration
@@ -20,9 +20,11 @@ angular.module('proton.ui')
             return { label: value, value };
         };
 
-        const link = (scope, el, { awesomplete }) => {
+        const link = (scope, el, { awesomplete, attr }) => {
 
-        // Model for this autocomplete
+            const dispatch = (type, data) => $rootScope.$emit('autocompleteEmail', { type, data });
+
+            // Model for this autocomplete
             const model = autocompleteEmailsModel();
 
             /**
@@ -59,6 +61,14 @@ angular.module('proton.ui')
                 }
             };
 
+            const onBlur = () => {
+                if (attr.eventType) {
+                    scope.$applyAsync(() => {
+                        dispatch('input.blur', { value: scope.email, type: attr.eventType, eventData: attr.eventData });
+                    });
+                }
+            };
+
             /**
          * Update the model when an user select an option
          */
@@ -73,10 +83,12 @@ angular.module('proton.ui')
 
             el.on('click', onClick);
             el.on('input', onInput);
+            el.find('input').on('blur', onBlur);
 
             scope.$on('$destroy', () => {
                 el.off('click', onClick);
                 el.off('input', onInput);
+                el.off('blur', onBlur);
             });
         };
         return {

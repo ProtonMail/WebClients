@@ -1,4 +1,4 @@
-angular.module('proton.core')
+angular.module('proton.filter')
     .factory('filterModal', ($timeout, $rootScope, pmModal, gettextCatalog, Filter, networkActivityTracker, notify, CONSTANTS, eventManager, labelModal, labelsModel) => {
 
         const TRANSLATIONS = {
@@ -42,7 +42,7 @@ angular.module('proton.core')
 
         return pmModal({
             controllerAs: 'ctrl',
-            templateUrl: 'templates/modals/filter.tpl.html',
+            templateUrl: 'templates/filter/modal.tpl.html',
             controller(params, $scope) {
                 const labelsOrdered = labelsModel.get('labels');
                 const foldersOrdered = labelsModel.get('folders');
@@ -186,24 +186,35 @@ angular.module('proton.core')
                         };
                     } else if (params.mode === 'complex') {
                         ctrl.mode = 'complex';
-                        ctrl.filter.Sieve = model.Sieve;
+                        ctrl.filter.Sieve = model ? model.Sieve : '';
                     }
+
+                    const unsubscribe = [];
 
                     if (angular.isObject(ctrl.filter.Simple)) {
 
-                        const unsubscribe = $rootScope.$on('labelsModel', (e, { type, data }) => {
+                        unsubscribe.push($rootScope.$on('labelsModel', (e, { type, data }) => {
                             if (type === 'cache.update') {
                                 $scope.$applyAsync(() => {
                                     ctrl.filter.Simple.Actions.Labels = ctrl.filter.Simple.Actions.Labels.concat(filterNewLabel(data));
                                     ctrl.folders = ctrl.folders.concat(filterNewLabel(data, labelsModel.IS_FOLDER));
                                 });
                             }
-                        });
+                        }));
 
-                        ctrl.$onDestroy = () => {
-                            unsubscribe();
-                        };
+                        unsubscribe.push($rootScope.$on('autocompleteEmail', (e, { type, data }) => {
+                            if (type === 'input.blur' && data.type === 'filter-modal-add-condition-input') {
+                                ctrl.addValue(ctrl.filter.Simple.Conditions[Number(data.eventData)]);
+                            }
+                        }));
+
+
                     }
+
+                    $scope.$on('$destroy', () => {
+                        _.each(unsubscribe, (cb) => cb());
+                        unsubscribe.length = 0;
+                    });
 
                     $timeout(() => {
                         angular.element('#filterName').focus();
@@ -337,6 +348,15 @@ angular.module('proton.core')
                 };
 
                 ctrl.save = () => {
+                    if (params.mode === 'complex') {
+                    // we need to wait on codemirror to update the ng-model
+                        $timeout(() => {
+                            const clone = angular.copy(ctrl.filter);
+                            networkActivityTracker.track(requestUpdate(clone));
+                        }, 100, false);
+                        return;
+                    }
+
                     const clone = angular.copy(ctrl.filter);
 
                     if (Object.keys(ctrl.filter.Simple || {}).length > 0) {
@@ -358,10 +378,11 @@ angular.module('proton.core')
                         } else {
                             delete clone.Simple.Actions.Labels;
                         }
+
+                        clone.Simple.Actions.FileInto = bindFileInto(clone.Simple.Actions);
+                        delete clone.Simple.Actions.Move;
                     }
 
-                    clone.Simple.Actions.FileInto = bindFileInto(clone.Simple.Actions);
-                    delete clone.Simple.Actions.Move;
 
                     networkActivityTracker.track(requestUpdate(clone));
                 };

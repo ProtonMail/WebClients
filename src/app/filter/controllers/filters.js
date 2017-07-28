@@ -1,4 +1,4 @@
-angular.module('proton.settings')
+angular.module('proton.filter')
     .controller('FiltersController', (
         $log,
         $q,
@@ -125,12 +125,31 @@ angular.module('proton.settings')
             }
         };
 
-        $scope.editCustomFilter = (filter) => {
+        $scope.addSieveFilter = () => {
+            const activeCustomFilters = _.where($scope.customFilters, { Status: 1 });
+
+            if (!authentication.hasPaidMail() && activeCustomFilters.length === 1) {
+                notify(gettextCatalog.getString('Free ProtonMail accounts are limited to 1 custom filter. Please <a href="/dashboard">upgrade</a> to get unlimited filters.', null, 'Info'));
+            } else {
+                filterModal.activate({
+                    params: {
+                        mode: 'complex',
+                        close() {
+                            filterModal.deactivate();
+                        }
+                    }
+                });
+            }
+        };
+
+        $scope.isSimple = (filter) => filter.Simple && Object.keys(filter.Simple).length;
+
+        $scope.editCustomFilter = function (filter, complex = false) {
             filterModal.activate({
                 params: {
-                    mode: (filter.Simple && Object.keys(filter.Simple).length) ? 'simple' : 'complex',
+                    mode: !complex && $scope.isSimple(filter) ? 'simple' : 'complex',
                     filter,
-                    close() {
+                    close: function close() {
                         filterModal.deactivate();
                     }
                 }
