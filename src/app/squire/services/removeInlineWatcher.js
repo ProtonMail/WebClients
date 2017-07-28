@@ -32,7 +32,7 @@ angular.module('proton.squire')
             latest.CID = cids;
         };
 
-       /**
+        /**
         * Watcher onInput to find and remove attachements if we remove an embedded
         * image from the input
         * @return {Function} Taking message as param

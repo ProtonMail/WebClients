@@ -84,7 +84,7 @@ angular.module('proton.autoresponder')
             const body = autoresponderLanguage.DEFAULT_BODY;
 
             const bodyPlusSig = signatureBuilder.insert({ getDecryptedBody: () => body }, { action: 'new', isAfter: true })
-                        .replace(/<img[^>]*>/g, '');
+                .replace(/<img[^>]*>/g, '');
 
             if (bodyPlusSig > constants.MAX_MESSAGE_LENGTH) {
                 defaultAutoresponder.message = body;
@@ -140,7 +140,7 @@ angular.module('proton.autoresponder')
 
                 if (startTime !== null) {
                     newAutoresponder.startTime = Number(moment.tz(moment.tz(startTime * 1000, oldZone)
-                            .format('YYYY-MM-DDTHH:mm:ss'), newZone).format('X'));
+                        .format('YYYY-MM-DDTHH:mm:ss'), newZone).format('X'));
                 }
                 if (endTime !== null) {
                     newAutoresponder.endTime = Number(moment.tz(moment.tz(endTime * 1000, oldZone)

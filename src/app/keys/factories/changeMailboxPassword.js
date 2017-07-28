@@ -20,12 +20,12 @@ angular.module('proton.keys')
          */
         function getUser(newMailPwd = '', keySalt = '') {
             return Promise.all([passwords.computeKeyPassword(newMailPwd, keySalt), User.get()])
-            .then(([password, { data = {} } = {}]) => {
-                if (data.Code === 1000) {
-                    return Promise.resolve({ password, user: data.User });
-                }
-                throw new Error(data.Error || gettextCatalog.getString('Unable to save your changes, please try again.', null, 'Error'));
-            });
+                .then(([password, { data = {} } = {}]) => {
+                    if (data.Code === 1000) {
+                        return Promise.resolve({ password, user: data.User });
+                    }
+                    throw new Error(data.Error || gettextCatalog.getString('Unable to save your changes, please try again.', null, 'Error'));
+                });
         }
 
         /**
@@ -38,18 +38,18 @@ angular.module('proton.keys')
             if (user.Role === CONSTANTS.PAID_ADMIN_ROLE) {
                 // Get organization key
                 return organizationApi.getKeys()
-                .then(({ data = {} } = {}) => {
-                    if (data.Code === 1000) {
-                        const encryptPrivateKey = data.PrivateKey;
+                    .then(({ data = {} } = {}) => {
+                        if (data.Code === 1000) {
+                            const encryptPrivateKey = data.PrivateKey;
 
-                        // Decrypt organization private key with the old mailbox password (current)
-                        // then encrypt private key with the new mailbox password
-                        // return 0 on failure to decrypt, other failures are fatal
-                        return pmcw.decryptPrivateKey(encryptPrivateKey, oldMailPwd)
-                        .then((pkg) => Promise.resolve(pmcw.encryptPrivateKey(pkg, password)), () => Promise.resolve(0));
-                    }
-                    throw new Error(data.Error || gettextCatalog.getString('Unable to get organization keys', null, 'Error'));
-                });
+                            // Decrypt organization private key with the old mailbox password (current)
+                            // then encrypt private key with the new mailbox password
+                            // return 0 on failure to decrypt, other failures are fatal
+                            return pmcw.decryptPrivateKey(encryptPrivateKey, oldMailPwd)
+                                .then((pkg) => Promise.resolve(pmcw.encryptPrivateKey(pkg, password)), () => Promise.resolve(0));
+                        }
+                        throw new Error(data.Error || gettextCatalog.getString('Unable to get organization keys', null, 'Error'));
+                    });
             }
             return Promise.resolve(0);
         }
@@ -69,33 +69,33 @@ angular.module('proton.keys')
                 promises = inputKeys.map(({ PrivateKey, ID, Token }) => {
                     // Decrypt private key with organization key and token
                     return organizationKey
-                    .then((key) => pmcw.decryptMessage(Token, key))
-                    .then(({ data }) => pmcw.decryptPrivateKey(PrivateKey, data))
-                    .then((pkg) => ({ ID, pkg }));
+                        .then((key) => pmcw.decryptMessage(Token, key))
+                        .then(({ data }) => pmcw.decryptPrivateKey(PrivateKey, data))
+                        .then((pkg) => ({ ID, pkg }));
                 });
             } else {
                 // Not sub-user
                 promises = inputKeys.map(({ PrivateKey, ID }) => {
                     // Decrypt private key with the old mailbox password
                     return pmcw.decryptPrivateKey(PrivateKey, oldMailPwd)
-                    .then((pkg) => ({ ID, pkg }));
+                        .then((pkg) => ({ ID, pkg }));
                 });
             }
 
             return promises.map((promise) => {
                 return promise
                 // Encrypt the key with the new mailbox password
-                .then(
-                    ({ ID, pkg }) => {
-                        return pmcw.encryptPrivateKey(pkg, password)
-                        .then((PrivateKey) => ({ ID, PrivateKey }));
-                    },
-                    (error) => {
+                    .then(
+                        ({ ID, pkg }) => {
+                            return pmcw.encryptPrivateKey(pkg, password)
+                                .then((PrivateKey) => ({ ID, PrivateKey }));
+                        },
+                        (error) => {
                         // Cannot decrypt, return 0 (not an error)
-                        $log.error(error);
-                        return 0;
-                    }
-                );
+                            $log.error(error);
+                            return 0;
+                        }
+                    );
             });
         }
 

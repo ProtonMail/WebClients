@@ -57,7 +57,7 @@ angular.module('proton.composer')
 
                     const hours = computeHours(scope.model);
 
-                     // How can we enter in this situation?
+                    // How can we enter in this situation?
                     if (parseInt(hours, 10) > CONSTANTS.MAX_EXPIRATION_TIME) {
                         return notifError(MESSAGES.maxEpiration);
                     }

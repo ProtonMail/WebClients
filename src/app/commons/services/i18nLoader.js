@@ -44,40 +44,40 @@ angular.module('proton.commons')
 
             if (navigatorLocaleData !== null) {
                 const possibleLocales = moment.locales().filter((val) => val.lastIndexOf(baseLocale, 0) === 0)
-                        .sort((a, b) => {
-                            const aData = moment.localeData(a);
-                            const bData = moment.localeData(b);
+                    .sort((a, b) => {
+                        const aData = moment.localeData(a);
+                        const bData = moment.localeData(b);
 
-                            const afdow = aData.firstDayOfWeek();
-                            const bfdow = bData.firstDayOfWeek();
-                            const nfdow = navigatorLocaleData.firstDayOfWeek();
+                        const afdow = aData.firstDayOfWeek();
+                        const bfdow = bData.firstDayOfWeek();
+                        const nfdow = navigatorLocaleData.firstDayOfWeek();
 
-                            // first try to match the first day of week = most important
-                            if (afdow !== bfdow && (afdow === nfdow || bfdow === nfdow)) {
-                                return afdow === nfdow ? -1 : 1;
-                            }
+                        // first try to match the first day of week = most important
+                        if (afdow !== bfdow && (afdow === nfdow || bfdow === nfdow)) {
+                            return afdow === nfdow ? -1 : 1;
+                        }
 
-                            // then try to match long date format (exact)
-                            const alformat = aData.longDateFormat('L');
-                            const blformat = bData.longDateFormat('L');
-                            const nlformat = navigatorLocaleData.longDateFormat('L');
+                        // then try to match long date format (exact)
+                        const alformat = aData.longDateFormat('L');
+                        const blformat = bData.longDateFormat('L');
+                        const nlformat = navigatorLocaleData.longDateFormat('L');
 
-                            if (alformat !== blformat && (alformat === nlformat || blformat === nlformat)) {
-                                return alformat === nlformat ? -1 : 1;
-                            }
+                        if (alformat !== blformat && (alformat === nlformat || blformat === nlformat)) {
+                            return alformat === nlformat ? -1 : 1;
+                        }
 
-                            // maybe match them without symbols?
-                            const woSymbols = (str) => str.replace(/[^a-zA-Z]/g, '');
-                            const alWformat = woSymbols(alformat);
-                            const blWformat = woSymbols(blformat);
-                            const nlWformat = woSymbols(nlformat);
+                        // maybe match them without symbols?
+                        const woSymbols = (str) => str.replace(/[^a-zA-Z]/g, '');
+                        const alWformat = woSymbols(alformat);
+                        const blWformat = woSymbols(blformat);
+                        const nlWformat = woSymbols(nlformat);
 
-                            if (alWformat !== blWformat && (alWformat === nlWformat || blWformat === nlWformat)) {
-                                return alWformat === nlWformat ? -1 : 1;
-                            }
+                        if (alWformat !== blWformat && (alWformat === nlWformat || blWformat === nlWformat)) {
+                            return alWformat === nlWformat ? -1 : 1;
+                        }
 
-                            return a.length - b.length;
-                        });
+                        return a.length - b.length;
+                    });
 
                 // chose the navigator locale if possible
                 if (_.contains(possibleLocales, normalizedNavLocale)) {

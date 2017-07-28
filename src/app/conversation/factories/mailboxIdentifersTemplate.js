@@ -1,56 +1,56 @@
 angular.module('proton.conversation')
-.factory('mailboxIdentifersTemplate', ($rootScope, CONSTANTS, labelsModel) => {
+    .factory('mailboxIdentifersTemplate', ($rootScope, CONSTANTS, labelsModel) => {
 
-    const CLEANER = document.createElement('div');
-    const contains = (key, labels) => _.contains(labels, CONSTANTS.MAILBOX_IDENTIFIERS[key]);
-    /**
+        const CLEANER = document.createElement('div');
+        const contains = (key, labels) => _.contains(labels, CONSTANTS.MAILBOX_IDENTIFIERS[key]);
+        /**
      * Remove HTML inside a string, prevent XSS
      * @param  {String} s
      * @return {String}
      */
-    const stripHTML = (s) => {
-        CLEANER.innerText = s || '';
-        return CLEANER.innerHTML;
-    };
+        const stripHTML = (s) => {
+            CLEANER.innerText = s || '';
+            return CLEANER.innerHTML;
+        };
 
-    const templateTag = (className, tooltip) => `<i class="${className}" translate>${tooltip}</i>`;
-    const templateLabel = (className = '', tooltip = '', color = '') => {
-        const ptTooltip = stripHTML(tooltip).replace(/"|'/g, '');
-        if (color) {
-            return `<i class="fa ${className}" pt-tooltip="${ptTooltip}" style="color: ${color}"></i>`;
-        }
-        return `<i class="fa ${className}" pt-tooltip="${ptTooltip}"></i>`;
-    };
+        const templateTag = (className, tooltip) => `<i class="${className}" translate>${tooltip}</i>`;
+        const templateLabel = (className = '', tooltip = '', color = '') => {
+            const ptTooltip = stripHTML(tooltip).replace(/"|'/g, '');
+            if (color) {
+                return `<i class="fa ${className}" pt-tooltip="${ptTooltip}" style="color: ${color}"></i>`;
+            }
+            return `<i class="fa ${className}" pt-tooltip="${ptTooltip}"></i>`;
+        };
 
-    const getFolder = (labelIDs = []) => {
-        const id = _.find(labelIDs, (id) => labelsModel.contains(id, 'folders'));
-        return labelsModel.read(id, 'folders') || {};
-    };
+        const getFolder = (labelIDs = []) => {
+            const id = _.find(labelIDs, (id) => labelsModel.contains(id, 'folders'));
+            return labelsModel.read(id, 'folders') || {};
+        };
 
-    /**
+        /**
     * Compile a template with its className and the tooltip to display
     * @param  {String} options.className
     * @param  {String} options.tooltip
     * @param  {Function} templateMaker          Custom funciton to build a template function(className, tooltip)
     * @return {String}                   template
     */
-    const icon = ({ className = '', tooltip = '', color = '' }, templateMaker) => {
-        if (className && tooltip) {
-            if (templateMaker) {
-                return templateMaker(className, tooltip, color);
+        const icon = ({ className = '', tooltip = '', color = '' }, templateMaker) => {
+            if (className && tooltip) {
+                if (templateMaker) {
+                    return templateMaker(className, tooltip, color);
+                }
+                return templateLabel(className, tooltip, color);
             }
-            return templateLabel(className, tooltip, color);
-        }
-        return '';
-    };
+            return '';
+        };
 
-    /**
+        /**
     * Returm a factory to expose a context
     * @param  {Object} options.MAP_LABELS map {<label> : {tootlip: <string:translated>, className: <string> }}
     * @param  {Object} options.MAP_TAGS   {<tag> : {tootlip: <string:translated>, className: <string> }}
     * @return {Object}                    {getTemplateLabels, getTemplateTags}
     */
-    return ({ MAP_LABELS, MAP_TYPES }) => {
+        return ({ MAP_LABELS, MAP_TYPES }) => {
 
         /**
         * Take a list of labels and check if they exist inside MAILBOX_IDENTIFIERS
@@ -58,36 +58,36 @@ angular.module('proton.conversation')
         * @param  {Array} labels
         * @return {String}       Template
         */
-        const getTemplateLabels = (labels) => {
-            return Object
-            .keys(MAP_LABELS)
-            .reduce((acc, key) => {
-                if (key === 'folder') {
-                    const { Color: color, Name: tooltip } = getFolder(labels);
-                    return acc + icon(_.extend({}, MAP_LABELS[key], { tooltip, color }));
-                }
-                if (contains(key, labels)) {
-                    return acc + icon(MAP_LABELS[key]);
-                }
-                return acc;
-            }, '');
-        };
+            const getTemplateLabels = (labels) => {
+                return Object
+                    .keys(MAP_LABELS)
+                    .reduce((acc, key) => {
+                        if (key === 'folder') {
+                            const { Color: color, Name: tooltip } = getFolder(labels);
+                            return acc + icon(_.extend({}, MAP_LABELS[key], { tooltip, color }));
+                        }
+                        if (contains(key, labels)) {
+                            return acc + icon(MAP_LABELS[key]);
+                        }
+                        return acc;
+                    }, '');
+            };
 
-        /**
+            /**
         * Take the type of message and build the template matching the number
         * @param  {Number} type
         * @return {String}       Template
         */
-        const getTemplateType = (type) => {
-            if (type === 2 || type === 3) {
-                return icon(MAP_TYPES.sent, templateTag);
-            }
-            if (type === 1) {
-                return icon(MAP_TYPES.drafts, templateTag);
-            }
-            return '';
-        };
+            const getTemplateType = (type) => {
+                if (type === 2 || type === 3) {
+                    return icon(MAP_TYPES.sent, templateTag);
+                }
+                if (type === 1) {
+                    return icon(MAP_TYPES.drafts, templateTag);
+                }
+                return '';
+            };
 
-        return { getTemplateLabels, getTemplateType };
-    };
-});
+            return { getTemplateLabels, getTemplateType };
+        };
+    });

@@ -152,7 +152,7 @@ angular.module('proton.attachments')
             const promises = _.map(queue, ({ file, isEmbedded }, i, list) => {
                 // required for BE to get a cid-header
                 file.inline = +(isEmbedded && action === 'inline');
-                return addAttachment(file, message, isEmbedded, list.length, cid);
+                return addAttachment(file, message, list.length, cid);
             });
 
             message.uploading = promises.length;
@@ -293,11 +293,10 @@ angular.module('proton.attachments')
          * Add a new attachment, upload it to the server
          * @param {File} file
          * @param {Message} message
-         * @param {Boolean} insert Embedded or not
          * @param {Number} total Total of attachments
          * @param {String} cid Content ID
          */
-        function addAttachment(file, message, insert = true, total = 1, cid = '') {
+        function addAttachment(file, message, total = 1, cid = '') {
             const tempPacket = {
                 filename: file.name,
                 uploading: true,

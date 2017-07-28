@@ -5,7 +5,7 @@ angular.module('proton.dashboard')
         const { MEMBER } = ADDON;
         const { PROFESSIONAL } = PLAN;
 
-        const fromBase = (value) => (value / Math.pow(BASE_SIZE, 3));
+        const fromBase = (value) => (value / (BASE_SIZE ** 3));
         const CACHE = {};
         const refreshSlider = (type) => $rootScope.$emit('refresh.slider', { type, data: { value: CACHE[type] } });
         const send = () => {

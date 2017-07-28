@@ -52,26 +52,26 @@ angular.module('proton.core')
                 message: messageApi.count(),
                 conversation: conversationApi.count()
             })
-            .then(({ message = {}, conversation = {} } = {}) => {
+                .then(({ message = {}, conversation = {} } = {}) => {
                 // Initialize locations
-                locs.forEach(exist);
+                    locs.forEach(exist);
 
-                _.chain(message.data.Counts)
-                    .filter(({ LabelID }) => counters[LabelID])
-                    .each(({ LabelID, Total = 0, Unread = 0 }) => {
-                        counters[LabelID].message.total = Total;
-                        counters[LabelID].message.unread = Unread;
-                    });
+                    _.chain(message.data.Counts)
+                        .filter(({ LabelID }) => counters[LabelID])
+                        .each(({ LabelID, Total = 0, Unread = 0 }) => {
+                            counters[LabelID].message.total = Total;
+                            counters[LabelID].message.unread = Unread;
+                        });
 
-                _.chain(conversation.data.Counts)
-                    .filter(({ LabelID }) => counters[LabelID])
-                    .each(({ LabelID, Total = 0, Unread = 0 }) => {
-                        counters[LabelID].conversation.total = Total;
-                        counters[LabelID].conversation.unread = Unread;
-                    });
-                dispatch('load');
-                return Promise.resolve();
-            }, Promise.reject);
+                    _.chain(conversation.data.Counts)
+                        .filter(({ LabelID }) => counters[LabelID])
+                        .each(({ LabelID, Total = 0, Unread = 0 }) => {
+                            counters[LabelID].conversation.total = Total;
+                            counters[LabelID].conversation.unread = Unread;
+                        });
+                    dispatch('load');
+                    return Promise.resolve();
+                }, Promise.reject);
         };
 
         /**

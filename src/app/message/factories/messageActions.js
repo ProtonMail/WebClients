@@ -153,7 +153,7 @@ angular.module('proton.message')
                 }, [])
                 .value();
 
-             // Send request
+            // Send request
             const promise = messageApi.label(labelID, 1, ids);
             cache.addToDispatcher(promise);
 
@@ -329,33 +329,33 @@ angular.module('proton.message')
             }
 
             const events = _.chain(ids)
-            .map((id) => cache.getMessageCached(id))
-            .filter(Boolean)
-            .reduce((acc, { ID, ConversationID, IsRead }) => {
-                const conversation = cache.getConversationCached(ConversationID);
+                .map((id) => cache.getMessageCached(id))
+                .filter(Boolean)
+                .reduce((acc, { ID, ConversationID, IsRead }) => {
+                    const conversation = cache.getConversationCached(ConversationID);
 
-                // Messages
-                acc.push({
-                    Action: 3, ID,
-                    Message: { ID, IsRead, LabelIDsAdded }
-                });
-
-                // Conversation
-                if (conversation) {
+                    // Messages
                     acc.push({
-                        Action: 3,
-                        ID: ConversationID,
-                        Conversation: {
-                            ID: ConversationID,
-                            LabelIDsAdded,
-                            ContextNumUnread: conversation.ContextNumUnread
-                        }
+                        Action: 3, ID,
+                        Message: { ID, IsRead, LabelIDsAdded }
                     });
-                }
 
-                return acc;
-            }, [])
-            .value();
+                    // Conversation
+                    if (conversation) {
+                        acc.push({
+                            Action: 3,
+                            ID: ConversationID,
+                            Conversation: {
+                                ID: ConversationID,
+                                LabelIDsAdded,
+                                ContextNumUnread: conversation.ContextNumUnread
+                            }
+                        });
+                    }
+
+                    return acc;
+                }, [])
+                .value();
 
             cache.events(events);
         }
@@ -376,34 +376,34 @@ angular.module('proton.message')
             }
 
             const events = _.chain(ids)
-            .map((id) => cache.getMessageCached(id))
-            .filter(Boolean)
-            .reduce((acc, { ID, ConversationID, IsRead }) => {
-                const conversation = cache.getConversationCached(ConversationID);
-                const messages = cache.queryMessagesCached(ConversationID);
-                const stars = _.filter(messages, ({ LabelIDs = [] }) => _.contains(LabelIDs, CONSTANTS.MAILBOX_IDENTIFIERS.starred));
+                .map((id) => cache.getMessageCached(id))
+                .filter(Boolean)
+                .reduce((acc, { ID, ConversationID, IsRead }) => {
+                    const conversation = cache.getConversationCached(ConversationID);
+                    const messages = cache.queryMessagesCached(ConversationID);
+                    const stars = _.filter(messages, ({ LabelIDs = [] }) => _.contains(LabelIDs, CONSTANTS.MAILBOX_IDENTIFIERS.starred));
 
-                // Messages
-                acc.push({
-                    Action: 3, ID,
-                    Message: { ID, IsRead, LabelIDsRemoved }
-                });
-
-                // Conversation
-                if (stars.length === 1 && conversation) {
+                    // Messages
                     acc.push({
-                        Action: 3,
-                        ID: ConversationID,
-                        Conversation: {
-                            ID: ConversationID,
-                            LabelIDsRemoved,
-                            ContextNumUnread: conversation.ContextNumUnread
-                        }
+                        Action: 3, ID,
+                        Message: { ID, IsRead, LabelIDsRemoved }
                     });
-                }
-                return acc;
-            }, [])
-            .value();
+
+                    // Conversation
+                    if (stars.length === 1 && conversation) {
+                        acc.push({
+                            Action: 3,
+                            ID: ConversationID,
+                            Conversation: {
+                                ID: ConversationID,
+                                LabelIDsRemoved,
+                                ContextNumUnread: conversation.ContextNumUnread
+                            }
+                        });
+                    }
+                    return acc;
+                }, [])
+                .value();
 
             cache.events(events);
         }

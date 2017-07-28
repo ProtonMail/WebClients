@@ -1,5 +1,5 @@
 angular.module('proton.conversation', [])
-.config(($httpProvider) => {
+    .config(($httpProvider) => {
     // Http Intercpetor to check auth failures for xhr requests
-    $httpProvider.interceptors.push('conversationsInterceptor');
-});
+        $httpProvider.interceptors.push('conversationsInterceptor');
+    });

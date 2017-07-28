@@ -2,21 +2,21 @@ angular.module('proton.ui')
     .directive('saleLink', ($interval, networkActivityTracker, Payment, saleModal) => {
         function onClick() {
             const promise = Payment.methods()
-            .then((result = {}) => {
-                const { data = {} } = result;
-                if (data.Code === 1000) {
-                    saleModal.activate({
-                        params: {
-                            methods: data.PaymentMethods,
-                            close() {
-                                saleModal.deactivate();
+                .then((result = {}) => {
+                    const { data = {} } = result;
+                    if (data.Code === 1000) {
+                        saleModal.activate({
+                            params: {
+                                methods: data.PaymentMethods,
+                                close() {
+                                    saleModal.deactivate();
+                                }
                             }
-                        }
-                    });
-                } else if (data.Error) {
-                    return Promise.reject(data.Error);
-                }
-            });
+                        });
+                    } else if (data.Error) {
+                        return Promise.reject(data.Error);
+                    }
+                });
             networkActivityTracker.track(promise);
         }
         function repeat(element) {

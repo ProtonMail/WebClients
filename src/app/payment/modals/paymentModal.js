@@ -1,15 +1,15 @@
 angular.module('proton.payment')
-.factory('paymentModal', (pmModal, paymentModalModel) => {
+    .factory('paymentModal', (pmModal, paymentModalModel) => {
 
-    return pmModal({
-        controllerAs: 'ctrl',
-        templateUrl: 'templates/modals/payment/modal.tpl.html',
-        controller(params) {
-            paymentModalModel.set(params);
-            // submit:Function is coming from the form inside the modal
-            this.$onDestroy = () => {
-                paymentModalModel.clear();
-            };
-        }
+        return pmModal({
+            controllerAs: 'ctrl',
+            templateUrl: 'templates/modals/payment/modal.tpl.html',
+            controller(params) {
+                paymentModalModel.set(params);
+                // submit:Function is coming from the form inside the modal
+                this.$onDestroy = () => {
+                    paymentModalModel.clear();
+                };
+            }
+        });
     });
-});

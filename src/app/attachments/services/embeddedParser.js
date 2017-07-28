@@ -100,7 +100,7 @@ angular.module('proton.attachments')
 
 
             if (!promise.length) {
-              // all cid was already stored, we can resolve
+                // all cid was already stored, we can resolve
                 return Promise.resolve({});
             }
 
