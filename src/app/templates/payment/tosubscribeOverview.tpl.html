@@ -5,7 +5,7 @@
         <h2 class="tosubscribeOverview-title-price">Price</h2>
     </header>
 
-    <ul class="tosubscribeOverview-list">
+    <ul class="tosubscribeOverview-list" data-valid-cycle-master="{{::ctrl.valid.Cycle}}">
         <li
             class="tosubscribeOverview-item"
             ng-repeat="plan in ctrl.plans | filter: {Type: 1}"
@@ -21,31 +21,60 @@
             <ul class="tosubscribeOverview-list-about">
                 <li class="tosubscribeOverview-about-space">
                     {{ ::ctrl.count('MaxSpace') | humanSize }}
-                    <span translate>Storage</span>
-                    <strong ng-if="ctrl.price('space')" class="tosubscribeOverview-price">{{ ::ctrl.price('space') / 100 | currency: plan.Currency  }}</strong>
+                    <span class="tosubscribeOverview-about-type" translate>Storage</span>
+                    <strong ng-if="ctrl.price('space')" class="tosubscribeOverview-price">{{ ::ctrl.price('space') / 100 / 12 | fixed: 2 | currency: plan.Currency  }}
+                        <span
+                            class="tosubscribeOverview-price-scope"
+                            translate-context="Price per month"
+                            translate>/mo</span>
+                    </strong>
                 </li>
                 <li class="tosubscribeOverview-about-domains">
                     {{ ::ctrl.count('MaxDomains') }}
-                    <span translate translate-n="ctrl.count('MaxDomains')" translate-plural="Custom domains">Custom domain</span>
-                    <strong ng-if="ctrl.price('domain')" class="tosubscribeOverview-price">{{ ::ctrl.price('domain') / 100 | currency: plan.Currency }}</strong>
+                    <span class="tosubscribeOverview-about-type" translate translate-n="ctrl.count('MaxDomains')" translate-plural="Custom domains">Custom domain</span>
+                    <strong ng-if="ctrl.price('domain')" class="tosubscribeOverview-price">{{ ::ctrl.price('domain') / 100 / 12 | fixed: 2 | currency: plan.Currency }}
+                        <span
+                            class="tosubscribeOverview-price-scope"
+                            translate-context="Price per month"
+                            translate>/mo</span>
+                    </strong>
                 </li>
 
                 <li class="tosubscribeOverview-about-members">
                     {{ ::ctrl.count('MaxMembers') }}
-                    <span translate translate-n="ctrl.count('MaxMembers')" translate-plural="Custom members">Custom member</span>
-                    <strong ng-if="ctrl.price('member')" class="tosubscribeOverview-price">{{ ::ctrl.price('member') / 100 | currency: plan.Currency }}</strong>
+                    <span class="tosubscribeOverview-about-type" translate translate-n="ctrl.count('MaxMembers')" translate-plural="Custom members">Custom member</span>
+                    <strong ng-if="ctrl.price('member')" class="tosubscribeOverview-price">{{ ::ctrl.price('member') / 100 / 12 | fixed: 2 | currency: plan.Currency }}
+                        <span
+                            class="tosubscribeOverview-price-scope"
+                            translate-context="Price per month"
+                            translate>/mo</span>
+                    </strong>
                 </li>
 
                 <li class="tosubscribeOverview-about-addresses">
                     {{ ::ctrl.count('MaxAddresses') }}
-                    <span translate translate translate-n="ctrl.count('MaxAddresses')" translate-plural="Addresses">Address</span>
-                    <strong ng-if="ctrl.price('address')" class="tosubscribeOverview-price">{{ ::ctrl.price('address') / 100 | currency: plan.Currency }}</strong>
+                    <span class="tosubscribeOverview-about-type" translate translate translate-n="ctrl.count('MaxAddresses')" translate-plural="Addresses">Address</span>
+                    <strong ng-if="ctrl.price('address')" class="tosubscribeOverview-price">{{ ::ctrl.price('address') / 100 / 12 | fixed: 2 | currency: plan.Currency }}
+                        <span
+                            class="tosubscribeOverview-price-scope"
+                            translate-context="Price per month"
+                            translate>/mo</span>
+                    </strong>
                 </li>
             </ul>
         </li>
 
-        <li class="tosubscribeOverview-item" data-valid-cycle="{{ ::ctrl.valid.Cycle }}">
+        <li class="tosubscribeOverview-item tosubscribeOverview-total-monthly" data-valid-cycle="1:1">
             <strong class="tosubscribeOverview-item-valid-monthly" tranlate translate-context="Title">Total per month (incl. taxes)</strong>
+            <strong>{{ ctrl.valid.Amount / 100 | currency: ctrl.valid.Currency }}</strong>
+        </li>
+
+        <li class="tosubscribeOverview-item tosubscribeOverview-total-monthly" data-valid-cycle="12:1">
+            <strong class="tosubscribeOverview-item-valid-monthly" translate translate-context="Title">Total per month (incl. taxes)</strong>
+            <strong>{{ ctrl.valid.Amount / 100 / 12 | fixed:2 | currency: ctrl.valid.Currency }}</strong>
+        </li>
+
+        <li class="tosubscribeOverview-item tosubscribeOverview-total-yearly" data-valid-cycle="12:12">
             <strong class="tosubscribeOverview-item-valid-yearly" translate translate-context="Title">Total per year (incl. taxes)</strong>
             <strong>{{ ctrl.valid.Amount / 100 | currency: ctrl.valid.Currency }}</strong>
         </li>

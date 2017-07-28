@@ -52,21 +52,27 @@
     align-items: center
 }
 
-[class*="tosubscribeOverview-about"] {
-    justify-content: flex-start;
-    span {
-        padding: 0 .5em;
-    }
-}
-
+[class*="tosubscribeOverview-about"] { justify-content: flex-start }
+.tosubscribeOverview-about-type { padding: 0 .5em }
 .tosubscribeOverview-price { margin-left: auto }
 
-.tosubscribeOverview-item[data-cycle="1"],
-.tosubscribeOverview-item[data-valid-cycle="1"] {
+.tosubscribeOverview-item[data-cycle="1"]{
     [class*="-yearly"] { display: none }
 }
 
-.tosubscribeOverview-item[data-cycle="12"],
-.tosubscribeOverview-item[data-valid-cycle="12"] {
+.tosubscribeOverview-item[data-cycle="12"] {
     [class*="-monthly"] { display: none }
 }
+
+[data-valid-cycle-master="1"] {
+    [data-valid-cycle^="12"] {
+        display: none
+    }
+}
+
+[data-valid-cycle-master="12"] {
+    [data-valid-cycle="1:1"] {
+        display: none
+    }
+}
+
