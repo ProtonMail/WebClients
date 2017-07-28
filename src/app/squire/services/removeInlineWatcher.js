@@ -2,14 +2,16 @@ angular.module('proton.squire')
     .factory('removeInlineWatcher', ($state, $rootScope) => {
 
         const getCIDs = (input, message, { latest, dispatch }) => {
-            // Extract CID per embedded image
+            // Extract CID per embedded image (with compat mode for old embedded)
             const cids = (input.match(/(rel=("([^"]|"")*"))|(data-embedded-img=("([^"]|"")*"))/g) || [])
-                .map((value) => value.split(/rel="|data-embedded-img="/)[1].slice(0, -1));
+                .filter((key) => key !== 'rel="noreferrer nofollow noopener"') // we don't care about links
+                .map((key) => key.replace(/rel="|data-embedded-img="/, ''))
+                .map((key) => key.slice(0, -1));
+
             // If we add or remove an embedded image, the diff is true
             if (cids.length < latest.CID.length) {
                 // Find attachements not in da input
-                const list = message
-                    .Attachments
+                const list = message.Attachments
                     .filter(({ uploading, Headers = {} }) => {
 
                         // If the file is uploading it means: its first time
