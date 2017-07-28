@@ -30,38 +30,61 @@
             </div>
 
             <div ng-if="keyPhase < 3">
+
                 <label class="titleLabel" for="password">
                     <em class="num" ng-if="chooseDomain">2</em>
                     <span translate translate-context="Title">Mailbox Password</span>
                 </label>
+
                 <p class="help" translate-context="Info" translate>This is used to encrypt and decrypt
             your messages. Do not lose this password--we cannot recover it.</p>
-                <input id="password" name="password" ng-model="$parent.password" type="password" class="form-control margin" placeholder-translate="Choose a mailbox password" required />
-                <div ng-show="$parent.setup.$submitted || $parent.setup.password.$touched">
-                    <p ng-show="$parent.setup.$submitted && $parent.setup.password.$error.required" class="alert alert-danger" translate-context="Error" translate>Login password is required.</p>
-                </div>
-                <input id="passwordc" name="passwordc" ng-model="$parent.passwordConfirm" type="password" class="form-control" placeholder-translate="Confirm mailbox password" required compare-to="$parent.password">
-                <div ng-show="$parent.setup.$submitted || $parent.setup.passwordc.$touched">
-                    <p ng-show="$parent.password !== $parent.passwordConfirm" class="alert alert-danger" translate-context="Error" translate>Passwords do not match.</p>
-                </div>
+                <password
+                    class="loginSetup-field-password"
+                    data-id="password"
+                    data-name="password"
+                    data-value="$parent.password"
+                    placeholder-translate="Choose a mailbox password"
+                    data-form="setup"></password>
+
+                <password
+                    class="loginSetup-field-password"
+                    data-id="passwordc"
+                    data-name="passwordc"
+                    data-value="$parent.passwordConfirm"
+                    data-compare="$parent.password"
+                    placeholder-translate="Confirm mailbox password"
+                    data-form="setup"></password>
+
                 <p class="alert alert-info" translate-context="Info" translate>If you lose your mailbox password, you will not be able to read your emails. We cannot recover this password for you.</p>
             </div>
 
             <div ng-if="keyPhase > 2">
+
                 <label class="titleLabel" for="password">
                     <em class="num" ng-if="chooseDomain">2</em>
                     <span translate translate-context="Title">Password</span>
                 </label>
+
                 <p class="help" translate-context="Info" translate>This is used to encrypt and decrypt
             your messages. Do not lose this password--we cannot recover it.</p>
-                <input id="password" name="password" ng-model="$parent.password" type="password" class="form-control margin" placeholder-translate="Choose a new password" required />
-                <div ng-show="$parent.setup.$submitted || $parent.setup.password.$touched">
-                    <p ng-show="$parent.setup.$submitted && $parent.setup.password.$error.required" class="alert alert-danger" translate-context="Error" translate>Password is required.</p>
-                </div>
-                <input id="passwordc" name="passwordc" ng-model="$parent.passwordConfirm" type="password" class="form-control" placeholder-translate="Confirm password" required compare-to="$parent.password">
-                <div ng-show="$parent.setup.$submitted || $parent.setup.passwordc.$touched">
-                    <p ng-show="$parent.password !== $parent.passwordConfirm" class="alert alert-danger" translate-context="Error" translate>Passwords do not match.</p>
-                </div>
+
+                <password
+                    class="loginSetup-field-password"
+                    data-id="password"
+                    data-name="password"
+                    data-value="$parent.password"
+                    placeholder-translate="Choose a mailbox password"
+                    data-form="setup"></password>
+
+                <password
+                    class="loginSetup-field-password"
+                    data-id="passwordc"
+                    data-name="passwordc"
+                    data-value="$parent.passwordConfirm"
+                    data-compare="$parent.password"
+                    placeholder-translate="Confirm mailbox password"
+                    data-form="setup"></password>
+
                 <p class="alert alert-info" translate-context="Info" translate>If you lose your password, you will not be able to read your emails.</p>
             </div>
             <p>&nbsp;</p>
