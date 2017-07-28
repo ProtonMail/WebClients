@@ -109,13 +109,13 @@ angular.module('proton.payment')
                 const getParameters = () => {
 
                     const parameters = {
-                        Amount: params.valid.AmountDue,
-                        Currency: params.valid.Currency,
+                        Amount: ctrl.valid.AmountDue,
+                        Currency: ctrl.valid.Currency,
                         CouponCode: ctrl.coupon,
                         PlanIDs: params.planIDs
                     };
 
-                    if (!params.valid.AmountDue) {
+                    if (!ctrl.valid.AmountDue) {
                         return parameters;
                     }
 
