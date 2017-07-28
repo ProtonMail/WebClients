@@ -1,4 +1,4 @@
-<div class="pm_modal {{ctrl.class}} filter-modal-container" role="dialog">
+<div class="pm_modal {{ctrl.class}} filter-modal-container" ng-class="ctrl.mode === 'complex' ? 'filter-modal-complex' : 'filter-modal-simple'" role="dialog">
 
     <div class="modal-dialog">
         <button type="button" ng-click="ctrl.cancel()" aria-hidden="true" title-translate="Close" title-translate-context="Action" class="fa fa-times close"></button>
@@ -10,7 +10,7 @@
             </div>
 
             <div class="modal-body pm_form">
-
+                <p translate translate-context="Info" class="alert alert-info filter-complex-only">Find out how to write Sieve filters, <a target="_blank" href="https://protonmail.com/support/knowledge-base/sieve/">here</a>.</p>
                 <div class="pm_grid">
                     <div class="col-1-8">
                         <label for="filterName" translate translate-context="Title">Name</label>
@@ -21,18 +21,11 @@
                     </div>
                 </div>
 
-                <div ng-show="ctrl.mode === 'complex'" class="pm_grid">
-                    <div class="col-1-4">
-                        <label for="filterScript" translate translate-context="Title">Sieve Script</label>
-                    </div>
-                    <div class="col-3-4">
-                        <textarea id="filterScript" ng-model="ctrl.filter.Sieve" placeholder="Sieve Script"></textarea>
-                    </div>
-                </div>
+                <sieve-label-input sieve="ctrl.filter.Sieve"></sieve-label-input>
 
                 <p translate translate-context="Info" class="alert alert-info">Custom filters work on all new emails, including incoming emails as well as sent emails</p>
 
-                <div ng-show="ctrl.mode === 'simple'">
+                <div class="filter-simple-only">
 
                     <legend translate-context="Title" translate translate-context="Title">Conditions</legend>
 
@@ -104,7 +97,9 @@
 
                                     <autocomplete-email
                                         class="filter-modal-add-condition-input"
-                                        data-email="condition.value"></autocomplete-email>
+                                        data-email="condition.value"
+                                        data-event-type="filter-modal-add-condition-input"
+                                        data-event-data="{{$index}}"></autocomplete-email>
                                     <button class="filter-modal-add-condition-button pm_button" ng-disabled="!condition.value" type="submit">
                                         <i class="fa fa-check"></i>
                                     </button>

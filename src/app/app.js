@@ -9,6 +9,7 @@ angular.module('proton', [
     'ngScrollbars',
     'pikaday',
     'ui.router',
+    'ui.codemirror',
 
     // Constant
     'proton.constants',
@@ -39,6 +40,7 @@ angular.module('proton', [
     'proton.members',
     'proton.labels',
     'proton.autoresponder',
+    'proton.filter',
     'proton.domains',
     'proton.address',
     'proton.message',

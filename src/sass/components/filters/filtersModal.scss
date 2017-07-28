@@ -120,3 +120,79 @@
 .filter-modal-condition-settings > *,
 .filter-modal-condition-remove,
 .filter-modal-separator > * { margin:.2rem }
+
+.filter-modal-simple .filter-complex-only  {
+        display: none;
+}
+
+/* float switching to give each column there own rows doesn't work in flex boxes */
+body.appConfigBody-is-mobile .filter-modal-complex {
+
+    .sieve-script {
+        flex-direction: column;
+    }
+
+    .modal-dialog {
+        height: 100%;
+        min-height: 700px;
+    }
+
+}
+
+
+.filter-modal-complex {
+
+    .filter-simple-only {
+        display: none;
+    }
+
+    .modal-dialog,
+    .modal-content,
+    .modal-body,
+    .sieve-script,
+    .sieve-script #filterScriptContainer {
+        display: flex;
+    }
+
+    .modal-dialog,
+    .modal-content,
+    .modal-body  {
+        flex-direction: column;
+    }
+
+    .modal-dialog {
+        height: calc(100% - 6rem);
+        /*
+            Needed to make the responsive layout still work
+         */
+        min-height: 600px;
+    }
+
+    .modal-content,
+    .modal-body,
+    .sieve-script,
+    .sieve-script #filterScriptContainer {
+        flex-grow: 1;
+    }
+
+    .CodeMirror {
+        height: 100%;
+    }
+
+    /*
+     * Get out of the flex chain, we use position: relative instead of height: 100%, because for some reason, height doesn't
+     * work on iOS.
+     */
+    #filterScriptContainer {
+        position: relative;
+    }
+
+    #filterScript {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+    }
+
+}

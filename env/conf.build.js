@@ -40,6 +40,11 @@ module.exports = {
       "vendor/autofill-event/src/autofill-event.js",
       "vendor/angular-cookies/angular-cookies.js",
       "vendor/angular-ui-router/release/angular-ui-router.js",
+      "vendor/codemirror/lib/codemirror.js",
+      "vendor/codemirror/addon/display/autorefresh.js",
+      "vendor/codemirror/mode/sieve/sieveSyntax.js",
+      "vendor/codemirror/addon/lint/lint.js",
+      "vendor/angular-ui-codemirror/ui-codemirror.js",
       "vendor/angular-sanitize/angular-sanitize.js",
       "vendor/moment/min/moment-with-locales.js",
       "vendor/moment-timezone/builds/moment-timezone-with-data.js",
@@ -92,7 +97,9 @@ module.exports = {
       "vendor/smooth-scrollbar/dist/smooth-scrollbar.css",
       "vendor/awesomplete/awesomplete.css",
       "vendor/nouislider/distribute/nouislider.css",
-      "vendor/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.min.css"
+      "vendor/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.min.css",
+      "vendor/codemirror/lib/codemirror.css",
+      "vendor/codemirror/addon/lint/lint.css"
     ],
 
     fonts: [

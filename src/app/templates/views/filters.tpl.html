@@ -15,6 +15,7 @@
                 <div class="settingsFilters-actions">
                     <section class="settingsFilters-actions-buttons">
                         <button class="pm_button primary" translate translate-context="Action" ng-click="addCustomFilter()">Add Filter</button>
+                        <button class="pm_button link" translate translate-context="Action" ng-click="addSieveFilter()">Add Sieve Filter</button>
                     </section>
                     <section class="settingsFilters-actions-notice help-dnd" ng-if="customFilters.length > 0" translate-context="Help" translate>You can drag and drop custom filter to order them.</section>
                 </div>
@@ -28,7 +29,8 @@
                                 </div>
                                 <toggle class="settingsFilters-sort-toggle" data-status="filter.Status" data-on="ON" data-off="OFF" data-name="changeCustomFilterStatus" data-id="{{ filter.ID }}"></toggle>
                                 <div>
-                                    <button class="pm_button link" ng-click="editCustomFilter(filter)">Edit</button>
+                                    <button class="pm_button link" ng-show="isSimple(filter)" ng-click="editCustomFilter(filter)">Edit</button>
+                                    <button class="pm_button link" ng-click="editCustomFilter(filter, true)">Edit sieve</button>
                                     <button class="pm_button link text-red" ng-click="deleteCustomFilter(filter)">Delete</button>
                                 </div>
                             </div>
