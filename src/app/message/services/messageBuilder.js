@@ -35,7 +35,7 @@ angular.module('proton.message')
                     escapeHTML,
                     convertLinebreaks
                 ], (acc, fn) => fn(acc), input)
-                .trim();
+                    .trim();
             }
             return input;
         }

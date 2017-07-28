@@ -8,7 +8,7 @@ angular.module('proton.utils')
             }
             const number = Math.floor(Math.log(bytes) / Math.log(KB));
             const digits = (number === 0) ? 0 : precision;
-            const value = (bytes / Math.pow(KB, Math.floor(number))).toFixed(digits);
+            const value = (bytes / (KB ** Math.floor(number))).toFixed(digits);
             return `${value} ${UNITS[number]}`;
         };
     });

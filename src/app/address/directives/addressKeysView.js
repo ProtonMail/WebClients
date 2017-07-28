@@ -41,41 +41,41 @@ angular.module('proton.address')
              */
             scope.reactivate = (key) => {
                 Key.salts()
-                .then(({ data = {} }) => {
-                    const keySalt = _.findWhere(data.KeySalts, { ID: key.ID }) || {};
-                    const salt = keySalt.KeySalt;
-                    const privateKey = key.PrivateKey;
-                    const params = {
-                        salt,
-                        privateKey,
-                        submit(decryptedKey) {
-                            keyPasswordModal.deactivate();
-                            const promise = pmcw.encryptPrivateKey(decryptedKey, authentication.getPassword())
-                            .then((PrivateKey) => Key.reactivate(key.ID, { PrivateKey }))
-                            .then(({ data }) => {
-                                if (data.Code === 1000) {
-                                    key.decrypted = true;
-                                    notify({ message: gettextCatalog.getString('Key reactivated', null), classes: 'notification-success' });
-                                    eventManager.call();
-                                } else if (data.Error) {
-                                    return Promise.reject(data.Error);
-                                } else {
-                                    return Promise.reject(gettextCatalog.getString('Error reactivating key. Please try again', null, 'Error'));
-                                }
-                            }, () => {
-                                return Promise.reject(gettextCatalog.getString('Error reactivating key. Please try again', null, 'Error'));
-                            });
-                            networkActivityTracker.track(promise);
-                        },
-                        cancel() {
-                            keyPasswordModal.deactivate();
-                        }
-                    };
+                    .then(({ data = {} }) => {
+                        const keySalt = _.findWhere(data.KeySalts, { ID: key.ID }) || {};
+                        const salt = keySalt.KeySalt;
+                        const privateKey = key.PrivateKey;
+                        const params = {
+                            salt,
+                            privateKey,
+                            submit(decryptedKey) {
+                                keyPasswordModal.deactivate();
+                                const promise = pmcw.encryptPrivateKey(decryptedKey, authentication.getPassword())
+                                    .then((PrivateKey) => Key.reactivate(key.ID, { PrivateKey }))
+                                    .then(({ data }) => {
+                                        if (data.Code === 1000) {
+                                            key.decrypted = true;
+                                            notify({ message: gettextCatalog.getString('Key reactivated', null), classes: 'notification-success' });
+                                            eventManager.call();
+                                        } else if (data.Error) {
+                                            return Promise.reject(data.Error);
+                                        } else {
+                                            return Promise.reject(gettextCatalog.getString('Error reactivating key. Please try again', null, 'Error'));
+                                        }
+                                    }, () => {
+                                        return Promise.reject(gettextCatalog.getString('Error reactivating key. Please try again', null, 'Error'));
+                                    });
+                                networkActivityTracker.track(promise);
+                            },
+                            cancel() {
+                                keyPasswordModal.deactivate();
+                            }
+                        };
 
-                    keyPasswordModal.activate({ params });
-                }, () => {
-                    // Nothing
-                });
+                        keyPasswordModal.activate({ params });
+                    }, () => {
+                        // Nothing
+                    });
             };
             scope.$on('$destroy', () => {
                 unsubscribe();

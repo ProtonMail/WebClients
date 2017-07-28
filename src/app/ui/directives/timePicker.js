@@ -9,7 +9,7 @@ angular.module('proton.ui')
             templateUrl: 'templates/ui/timePicker.tpl.html',
             require: '?ngModel',
             scope: { },
-            link(scope, elem, { eventKey, labelId, disableInput }, modelCtrl) {
+            link(scope, elem, { eventKey }, modelCtrl) {
 
                 const unsubscribe = [];
 

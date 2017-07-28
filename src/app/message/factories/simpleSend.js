@@ -42,13 +42,13 @@ angular.module('proton.message')
                     pmcw.encryptMessage(message.getDecryptedBody(), [], message.Password),
                     message.encryptPackets('', message.Password)
                 ])
-                .then(([EncToken, Body, KeyPackets]) => {
-                    return Packages.push({
-                        Type: 2,
-                        PasswordHint: message.PasswordHint,
-                        Address, Token, Body, KeyPackets, EncToken
+                    .then(([EncToken, Body, KeyPackets]) => {
+                        return Packages.push({
+                            Type: 2,
+                            PasswordHint: message.PasswordHint,
+                            Address, Token, Body, KeyPackets, EncToken
+                        });
                     });
-                });
             };
 
 

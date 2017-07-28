@@ -1,7 +1,7 @@
 angular.module('proton.commons')
-.directive('placeholderTranslate', generateDirective('placeholder'))
-.directive('titleTranslate', generateDirective('title'))
-.directive('ptTooltipTranslate', generateDirective('pt-tooltip'));
+    .directive('placeholderTranslate', generateDirective('placeholder'))
+    .directive('titleTranslate', generateDirective('title'))
+    .directive('ptTooltipTranslate', generateDirective('pt-tooltip'));
 
 // Adapted from https://github.com/rubenv/angular-gettext/blob/master/src/directive.js
 function generateDirective(attrName) {

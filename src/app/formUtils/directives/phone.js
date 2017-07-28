@@ -1,72 +1,72 @@
 angular.module('proton.formUtils')
-.directive('phone', ($timeout) => {
-    return {
-        restrict: 'A',
-        require: '^ngModel',
-        scope: {
-            ngModel: '=',
-            country: '='
-        },
-        link(scope, element, attrs, ctrl) {
-            if (element.val() !== '') {
-                $timeout(() => {
-                    element.intlTelInput('setNumber', element.val());
+    .directive('phone', ($timeout) => {
+        return {
+            restrict: 'A',
+            require: '^ngModel',
+            scope: {
+                ngModel: '=',
+                country: '='
+            },
+            link(scope, element, attrs, ctrl) {
+                if (element.val() !== '') {
+                    $timeout(() => {
+                        element.intlTelInput('setNumber', element.val());
 
-                    return ctrl.$setViewValue(element.val());
-                }, 0);
-            }
+                        return ctrl.$setViewValue(element.val());
+                    }, 0);
+                }
 
-            const read = function () {
-                const value = element.intlTelInput('getNumber');
+                const read = function () {
+                    const value = element.intlTelInput('getNumber');
 
-                ctrl.$setViewValue(value);
-            };
+                    ctrl.$setViewValue(value);
+                };
 
-            const watchOnce = scope.$watch('ngModel', (newValue) => {
-                return scope.$$postDigest(() => {
+                const watchOnce = scope.$watch('ngModel', (newValue) => {
+                    return scope.$$postDigest(() => {
+                        if (newValue) {
+                            ctrl.$modelValue = (newValue[0] !== '+') ? `+ ${newValue}` : newValue;
+                        }
+
+                        element.intlTelInput();
+                        element.intlTelInput('loadUtils', '/src/app/libraries/utils.js');
+
+                        return watchOnce();
+                    });
+                });
+
+                scope.$watch('country', (newValue) => {
                     if (newValue) {
-                        ctrl.$modelValue = (newValue[0] !== '+') ? `+ ${newValue}` : newValue;
+                        return element.intlTelInput('selectCountry', newValue);
+                    }
+                });
+
+                ctrl.$formatters.push((value) => {
+                    if (!value) {
+                        return value;
                     }
 
-                    element.intlTelInput();
-                    element.intlTelInput('loadUtils', '/src/app/libraries/utils.js');
+                    element.intlTelInput('setNumber', value);
 
-                    return watchOnce();
+                    return element.val();
                 });
-            });
 
-            scope.$watch('country', (newValue) => {
-                if (newValue) {
-                    return element.intlTelInput('selectCountry', newValue);
-                }
-            });
+                ctrl.$parsers.push((value) => {
+                    if (!value) {
+                        return value;
+                    }
 
-            ctrl.$formatters.push((value) => {
-                if (!value) {
-                    return value;
-                }
+                    return value.replace(/[^\d|+]/g, '');
+                });
 
-                element.intlTelInput('setNumber', value);
+                element.on('blur keyup change', () => {
+                    scope.$applyAsync(() => read());
+                });
 
-                return element.val();
-            });
-
-            ctrl.$parsers.push((value) => {
-                if (!value) {
-                    return value;
-                }
-
-                return value.replace(/[^\d|+]/g, '');
-            });
-
-            element.on('blur keyup change', () => {
-                scope.$applyAsync(() => read());
-            });
-
-            scope.$on('$destroy', () => {
-                element.intlTelInput('destroy');
-                element.off('blur keyup change');
-            });
-        }
-    };
-});
+                scope.$on('$destroy', () => {
+                    element.intlTelInput('destroy');
+                    element.off('blur keyup change');
+                });
+            }
+        };
+    });

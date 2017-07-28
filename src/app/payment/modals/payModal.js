@@ -1,78 +1,78 @@
 angular.module('proton.payment')
-.factory('payModal', (pmModal, Payment, notify, eventManager, gettextCatalog, paymentUtils, networkActivityTracker, cardModel) => {
+    .factory('payModal', (pmModal, Payment, notify, eventManager, gettextCatalog, paymentUtils, networkActivityTracker, cardModel) => {
 
-    const I18N = {
-        success: gettextCatalog.getString('Invoice paid', null, 'Info')
-    };
+        const I18N = {
+            success: gettextCatalog.getString('Invoice paid', null, 'Info')
+        };
 
-    const pay = (ID, options = {}) => {
-        const promise = Payment.pay(ID, options)
-            .then(({ data = {} }) => {
-                if (data.Error) {
-                    throw new Error(data.Error);
-                }
-            });
-        networkActivityTracker.track(promise);
-        return promise;
-    };
+        const pay = (ID, options = {}) => {
+            const promise = Payment.pay(ID, options)
+                .then(({ data = {} }) => {
+                    if (data.Error) {
+                        throw new Error(data.Error);
+                    }
+                });
+            networkActivityTracker.track(promise);
+            return promise;
+        };
 
-    return pmModal({
-        controllerAs: 'ctrl',
-        templateUrl: 'templates/modals/pay.tpl.html',
-        controller(params) {
+        return pmModal({
+            controllerAs: 'ctrl',
+            templateUrl: 'templates/modals/pay.tpl.html',
+            controller(params) {
 
-            this.checkInvoice = params.checkInvoice;
-            this.invoice = params.invoice;
-            this.cancel = params.close;
+                this.checkInvoice = params.checkInvoice;
+                this.invoice = params.invoice;
+                this.cancel = params.close;
 
-            const { list, selected } = paymentUtils.generateMethods();
-            this.methods = list;
-            this.method = selected;
+                const { list, selected } = paymentUtils.generateMethods();
+                this.methods = list;
+                this.method = selected;
 
-            const getParameters = () => {
-                const Amount = this.checkInvoice.AmountDue;
-                const Currency = this.checkInvoice.Currency;
-                const parameters = { Amount, Currency };
+                const getParameters = () => {
+                    const Amount = this.checkInvoice.AmountDue;
+                    const Currency = this.checkInvoice.Currency;
+                    const parameters = { Amount, Currency };
 
-                if (this.method.value === 'use.card') {
-                    parameters.PaymentMethodID = this.method.ID;
-                }
+                    if (this.method.value === 'use.card') {
+                        parameters.PaymentMethodID = this.method.ID;
+                    }
 
-                if (this.method.value === 'card') {
-                    parameters.Payment = {
-                        Type: 'card',
-                        Details: cardModel(this.card).details()
-                    };
-                }
+                    if (this.method.value === 'card') {
+                        parameters.Payment = {
+                            Type: 'card',
+                            Details: cardModel(this.card).details()
+                        };
+                    }
 
-                if (this.method.value === 'paypal') {
-                    parameters.Payment = {
-                        Type: 'paypal',
-                        Details: this.paypalConfig
-                    };
-                }
+                    if (this.method.value === 'paypal') {
+                        parameters.Payment = {
+                            Type: 'paypal',
+                            Details: this.paypalConfig
+                        };
+                    }
 
-                return parameters;
-            };
+                    return parameters;
+                };
 
-            this.getPaypalAmount = () => this.checkInvoice.AmountDue / 100;
-            this.paypalCallback = (config) => {
-                this.paypalConfig = config;
-                this.submit();
-            };
+                this.getPaypalAmount = () => this.checkInvoice.AmountDue / 100;
+                this.paypalCallback = (config) => {
+                    this.paypalConfig = config;
+                    this.submit();
+                };
 
-            this.submit = () => {
-                this.process = true;
-                pay(params.invoice.ID, getParameters())
-                    .then(eventManager.call)
-                    .then(() => (this.process = false))
-                    .then(() => params.close(true))
-                    .then(() => notify({
-                        message: I18N.success,
-                        classes: 'notification-success'
-                    }));
-            };
+                this.submit = () => {
+                    this.process = true;
+                    pay(params.invoice.ID, getParameters())
+                        .then(eventManager.call)
+                        .then(() => (this.process = false))
+                        .then(() => params.close(true))
+                        .then(() => notify({
+                            message: I18N.success,
+                            classes: 'notification-success'
+                        }));
+                };
 
-        }
+            }
+        });
     });
-});

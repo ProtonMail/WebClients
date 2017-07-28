@@ -22,14 +22,14 @@ angular.module('proton.keys')
             if (user.Role === CONSTANTS.PAID_ADMIN_ROLE) {
                 // Get organization key
                 return organizationApi.getKeys()
-                .then(({ data = {} } = {}) => {
-                    if (data.Code === 1000) {
-                        const encryptPrivateKey = data.PrivateKey;
-                        return pmcw.decryptPrivateKey(encryptPrivateKey, oldSaltedPassword)
-                        .then((pkg) => pmcw.reformatKey(pkg, user.Addresses[0].Email, password), () => 0);
-                    }
-                    throw new Error(data.Error || gettextCatalog.getString('Unable to get organization keys', null, 'Error'));
-                });
+                    .then(({ data = {} } = {}) => {
+                        if (data.Code === 1000) {
+                            const encryptPrivateKey = data.PrivateKey;
+                            return pmcw.decryptPrivateKey(encryptPrivateKey, oldSaltedPassword)
+                                .then((pkg) => pmcw.reformatKey(pkg, user.Addresses[0].Email, password), () => 0);
+                        }
+                        throw new Error(data.Error || gettextCatalog.getString('Unable to get organization keys', null, 'Error'));
+                    });
             }
             return Promise.resolve(0);
         }
@@ -80,18 +80,18 @@ angular.module('proton.keys')
             const promises = inputKeys.map(({ PrivateKey, ID }) => {
                 // Decrypt private key with the old mailbox password
                 return pmcw.decryptPrivateKey(PrivateKey, oldSaltedPassword)
-                .then((pkg) => ({ ID, pkg }));
+                    .then((pkg) => ({ ID, pkg }));
             });
 
             return promises.map((promise) => {
                 return promise
                 // Encrypt the key with the new mailbox password
-                .then(({ ID, pkg }) => {
-                    return pmcw.reformatKey(pkg, emailAddresses[ID], password)
-                        .then((PrivateKey) => ({ ID, PrivateKey }));
-                })
+                    .then(({ ID, pkg }) => {
+                        return pmcw.reformatKey(pkg, emailAddresses[ID], password)
+                            .then((PrivateKey) => ({ ID, PrivateKey }));
+                    })
                 // Cannot decrypt, return 0 (not an error)
-                .then(null, (error) => ($log.error(error), 0));
+                    .then(null, (error) => ($log.error(error), 0));
             });
         }
         /**

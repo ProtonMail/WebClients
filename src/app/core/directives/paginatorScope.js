@@ -1,62 +1,62 @@
 angular.module('proton.core')
-.directive('paginatorScope', ($rootScope) => {
-    return {
-        restrict: 'E',
-        replace: true,
-        templateUrl: 'templates/directives/paginatorScope.tpl.html',
-        scope: {
-            page: '=',
-            totalItems: '=',
-            itemsPerPage: '=',
-            change: '='
-        },
-        link(scope, el, attribute) {
-            scope.pages = [];
+    .directive('paginatorScope', ($rootScope) => {
+        return {
+            restrict: 'E',
+            replace: true,
+            templateUrl: 'templates/directives/paginatorScope.tpl.html',
+            scope: {
+                page: '=',
+                totalItems: '=',
+                itemsPerPage: '=',
+                change: '='
+            },
+            link(scope, el, attribute) {
+                scope.pages = [];
 
-            const disable = () => {
-                scope.disableMain = Math.ceil(scope.totalItems / scope.itemsPerPage) === 1 || scope.totalItems === 0; // Main
-                scope.disableP = scope.page === 1 || scope.totalItems === 0; // Previous
-                scope.disableN = Math.ceil(scope.totalItems / scope.itemsPerPage) === scope.page || scope.totalItems === 0; // Next
-            };
+                const disable = () => {
+                    scope.disableMain = Math.ceil(scope.totalItems / scope.itemsPerPage) === 1 || scope.totalItems === 0; // Main
+                    scope.disableP = scope.page === 1 || scope.totalItems === 0; // Previous
+                    scope.disableN = Math.ceil(scope.totalItems / scope.itemsPerPage) === scope.page || scope.totalItems === 0; // Next
+                };
 
-            const buildPages = () => {
-                let pages;
-                const temp = [];
+                const buildPages = () => {
+                    let pages;
+                    const temp = [];
 
-                if ((scope.totalItems % scope.itemsPerPage) === 0) {
-                    pages = scope.totalItems / scope.itemsPerPage;
-                } else {
-                    pages = Math.floor(scope.totalItems / scope.itemsPerPage) + 1;
-                }
+                    if ((scope.totalItems % scope.itemsPerPage) === 0) {
+                        pages = scope.totalItems / scope.itemsPerPage;
+                    } else {
+                        pages = Math.floor(scope.totalItems / scope.itemsPerPage) + 1;
+                    }
 
-                for (let i = 1; i <= pages; ++i) {
-                    temp.push(i);
-                }
+                    for (let i = 1; i <= pages; ++i) {
+                        temp.push(i);
+                    }
 
-                scope.pages = temp;
-            };
+                    scope.pages = temp;
+                };
 
-            scope.select = (p) => {
-                scope.change(p);
-                scope.$applyAsync(() => disable());
-            };
+                scope.select = (p) => {
+                    scope.change(p);
+                    scope.$applyAsync(() => disable());
+                };
 
-            scope.next = () => scope.change(scope.page + 1);
-            scope.previous = () => scope.change(scope.page - 1);
+                scope.next = () => scope.change(scope.page + 1);
+                scope.previous = () => scope.change(scope.page - 1);
 
-            scope.$watch('totalItems', () => {
-                disable();
-                buildPages();
-            });
-
-            const unsubscribe = $rootScope.$on('paginatorScope', (e, { type, page }) => {
-                if (type === attribute.type) {
-                    scope.page = page;
+                scope.$watch('totalItems', () => {
                     disable();
-                }
-            });
+                    buildPages();
+                });
 
-            scope.$on('$destroy', () => unsubscribe());
-        }
-    };
-});
+                const unsubscribe = $rootScope.$on('paginatorScope', (e, { type, page }) => {
+                    if (type === attribute.type) {
+                        scope.page = page;
+                        disable();
+                    }
+                });
+
+                scope.$on('$destroy', () => unsubscribe());
+            }
+        };
+    });

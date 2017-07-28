@@ -169,21 +169,21 @@ angular.module('proton.utils')
                 };
 
                 return organizationKeyPromise
-                .then((organizationKey) => setupKeys.decryptUser(user, organizationKey, mailboxPassword))
-                .then(({ keys, dirtyAddresses }) => {
-                    if (dirtyAddresses.length && !generateModal.active()) {
-                        return generateKeys(dirtyAddresses)
-                        .then(() => {
-                            throw new Error('Regenerate keys for addresses');
-                        }, () => storeKeys(keys));
-                    }
-                    storeKeys(keys);
-                })
-                .then(mergeUser)
-                .catch((error) => {
-                    $exceptionHandler(error);
-                    throw error;
-                });
+                    .then((organizationKey) => setupKeys.decryptUser(user, organizationKey, mailboxPassword))
+                    .then(({ keys, dirtyAddresses }) => {
+                        if (dirtyAddresses.length && !generateModal.active()) {
+                            return generateKeys(dirtyAddresses)
+                                .then(() => {
+                                    throw new Error('Regenerate keys for addresses');
+                                }, () => storeKeys(keys));
+                        }
+                        storeKeys(keys);
+                    })
+                    .then(mergeUser)
+                    .catch((error) => {
+                        $exceptionHandler(error);
+                        throw error;
+                    });
             }
             return Promise.resolve();
         }
@@ -464,7 +464,7 @@ angular.module('proton.utils')
                         AppModel.set('onLine', false);
                     }
                 }
-            );
+                );
         }
 
         function start() {

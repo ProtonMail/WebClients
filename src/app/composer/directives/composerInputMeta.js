@@ -74,7 +74,8 @@ angular.module('proton.composer')
                             scope.selected.autocompletesFocussed = true;
 
                             if (containsBCC(scope.selected)) {
-                                scope.message.ccbcc = scope.message.attachmentsToggle = true;
+                                scope.message.ccbcc = true;
+                                scope.message.attachmentsToggle = true;
                             }
                             _rAF(() => el.find('input').focus());
                         });
