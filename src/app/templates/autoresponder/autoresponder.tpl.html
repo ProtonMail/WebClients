@@ -9,10 +9,13 @@
             data-form="autoresponderForm"></autoresponder-time-section>
         <section class="pm_form col-1-2">
             <div class="clearfix" ng-if="model.isEnabled">
-                <div class="col-1-1">
-                    <label for="autoresponder-message" translate-context="Label" translate>Response message</label>
+                <div class="col-1-1"></div>
+            </div>
+            <div class="clearfix" ng-if="model.isEnabled">
+                <div class="col-1-4">
+                    <label for="autoresponder-message" translate-context="Label" translate>Response</label>
                 </div>
-                <div class="col-1-1">
+                <div class="col-3-4">
                     <autoresponder-message data-message="model.message" data-disabled="{{ ::mock }}"></autoresponder-message>
                 </div>
             </div>
