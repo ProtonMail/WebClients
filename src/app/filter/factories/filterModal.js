@@ -1,5 +1,5 @@
 angular.module('proton.filter')
-    .factory('filterModal', ($timeout, $rootScope, pmModal, gettextCatalog, Filter, networkActivityTracker, notify, CONSTANTS, eventManager, labelModal, labelsModel) => {
+    .factory('filterModal', ($timeout, $rootScope, pmModal, gettextCatalog, Filter, networkActivityTracker, notify, CONSTANTS, eventManager, labelModal, labelsModel, sieveLint) => {
 
         const TRANSLATIONS = {
             TYPES: [
@@ -177,6 +177,8 @@ angular.module('proton.filter')
                         Version: CONSTANTS.FILTER_VERSION
                     };
 
+                    sieveLint.resetLastCheck();
+
                     if (params.mode === 'simple') {
                         ctrl.mode = 'simple';
                         ctrl.filter.Simple = {
@@ -285,7 +287,7 @@ angular.module('proton.filter')
                     }
                     // Complex mode
                     // Check sieve script content
-                    return ctrl.filter.Sieve.length > 0;
+                    return ctrl.filter.Sieve.length > 0 && sieveLint.lastCheckWasValid();
                 };
 
                 ctrl.addCondition = () => {
@@ -352,6 +354,9 @@ angular.module('proton.filter')
                     // we need to wait on codemirror to update the ng-model
                         $timeout(() => {
                             const clone = angular.copy(ctrl.filter);
+                            // Disable the old Simple data
+                            delete clone.Simple;
+                            delete clone.Tree;
                             networkActivityTracker.track(requestUpdate(clone));
                         }, 100, false);
                         return;
