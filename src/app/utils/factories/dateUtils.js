@@ -17,7 +17,7 @@ angular.module('proton.utils')
                 },
                 {
                     narrowLabel: gettextCatalog.getString('W', null, 'Single letter code Wednesday'),
-                    shortLabel: gettextCatalog.getString('Wen', null, 'Three letter code Wednesday'),
+                    shortLabel: gettextCatalog.getString('Wed', null, 'Three letter code Wednesday'),
                     longLabel: gettextCatalog.getString('Wednesday', null, 'Full day name'),
                     value: 3
                 },
