@@ -19,7 +19,12 @@ angular.module('proton.commons')
 
             if (json && json.Code === 1000) {
                 _.each(json.Filters, (filter) => {
-                    filter.Simple = Sieve.fromTree(filter.Tree);
+                    const simple = Sieve.fromTree(filter.Tree);
+                    if (_.isEqual(filter.Tree, Sieve.toTree(simple))) {
+                        filter.Simple = simple;
+                    } else {
+                        delete filter.Simple;
+                    }
                 });
             }
 

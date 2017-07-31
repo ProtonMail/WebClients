@@ -91,7 +91,8 @@ angular.module('proton.filter')
                 if (index === -1) {
                     $scope.customFilters.push(filter);
                 } else {
-                    _.extend($scope.customFilters[index], filter);
+                    // We need to override everything so it loses the simple tag if the filter is not simple anymore
+                    $scope.customFilters[index] = filter;
                 }
             }
         });
@@ -103,7 +104,8 @@ angular.module('proton.filter')
                 if (index === -1) {
                     $scope.customFilters.push(filter);
                 } else {
-                    _.extend($scope.customFilters[index], filter);
+                    // We need to override everything so it loses the simple tag if the filter is not simple anymore
+                    $scope.customFilters[index] = filter;
                 }
             }
         });
