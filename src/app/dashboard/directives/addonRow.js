@@ -25,13 +25,14 @@ angular.module('proton.dashboard')
                 return '';
             }
 
+            const cycle = dashboardConfiguration.cycle() === 12 ? '/mo' : '';
             const amounts = dashboardModel.amounts();
 
             if (value === 'vpnbasic' || value === 'vpnplus') {
-                return `+ ${filter(amounts[value])}`;
+                return `+ ${filter(amounts[value])}${cycle}`;
             }
 
-            return `+ ${filter(amounts[MAP_ADDONS[addon]] * value)}`;
+            return `+ ${filter(amounts[MAP_ADDONS[addon]] * value)}${cycle}`;
         };
         return {
             restrict: 'E',
