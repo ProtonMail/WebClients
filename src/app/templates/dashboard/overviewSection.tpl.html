@@ -62,9 +62,11 @@
     <tbody class="overviewSection-tbody-billing">
         <tr>
             <th translate-context="Title" translate>Credit</th>
-            <td colspan="2">
+            <td>
                 <strong>{{ (user.Credit || 0) / 100 | currency: user.Currency }}</strong>
-                <donate-btn class="pm_button link topUp-button" data-item="topUp"></donate-btn>
+            </td>
+            <td>
+                <donate-btn class="topUp-button" data-item="topUp"></donate-btn>
             </td>
         </tr>
         <tr ng-if="subscription.CouponCode">
