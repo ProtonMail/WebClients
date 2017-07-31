@@ -1,6 +1,5 @@
 angular.module('proton.dashboard')
     .directive('addonRow', ($filter, $rootScope, CONSTANTS, dashboardConfiguration, dashboardModel, dashboardOptions, gettextCatalog, subscriptionModel) => {
-        const types = ['addon.updated', 'currency.updated', 'cycle.updated'];
         const filter = (amount) => $filter('currency')(amount / 100 / dashboardConfiguration.cycle(), dashboardConfiguration.currency());
         const { MEMBER, ADDRESS, DOMAIN, SPACE } = CONSTANTS.PLANS.ADDON;
         const MAP_ADDONS = { member: MEMBER, address: ADDRESS, domain: DOMAIN, space: SPACE };
@@ -41,6 +40,7 @@ angular.module('proton.dashboard')
             templateUrl: 'templates/dashboard/addonRow.tpl.html',
             compile(element, { addon, plan }) {
                 const $select = element.find('.addonRow-select');
+                const set = (value = initValue(addon)) => $select.val(value);
 
                 function buildOptions() {
                     const options = _.reduce(dashboardOptions.get(plan, addon), (acc, { label, value }) => {
@@ -58,7 +58,6 @@ angular.module('proton.dashboard')
                 buildOptions();
 
                 return (scope) => {
-                    const value = initValue(addon);
                     const onChange = () => {
                         if (addon === 'vpn') {
                             $rootScope.$emit('dashboard', { type: 'change.addon', data: { addon, plan: 'free', value: $select.val() } });
@@ -70,14 +69,21 @@ angular.module('proton.dashboard')
                         $rootScope.$emit('dashboard', { type: 'change.addon', data: { addon, plan, value: $select.val() } });
                     };
                     const unsubscribe = $rootScope.$on('dashboard', (event, { type, data = {} }) => {
-                        if (types.indexOf(type) > -1 && data.addon === addon && data.plan === plan) {
+                        if (type === 'addon.updated' && data.addon === addon && data.plan === plan) {
                             buildOptions();
-                            $select.val(data.value);
+                            set(data.value);
+                        }
+
+                        if (type === 'currency.updated' || type === 'cycle.updated') {
+                            const value = $select.val();
+
+                            buildOptions();
+                            set(value);
                         }
                     });
 
                     $select.on('change', onChange);
-                    $select.val(value);
+                    set();
                     onChange();
 
                     scope.$on('$destroy', () => {
