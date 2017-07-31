@@ -6,7 +6,7 @@ angular.module('proton.core')
             controller(params, $scope) {
                 const self = this;
                 const base = CONSTANTS.BASE_SIZE;
-                const steps = ['name', 'keys', 'password', 'storage', 'vpn'];
+                const steps = ['name', 'keys', 'password', 'storage'];
                 const methods = [name, keys, password, storage, vpn];
                 const payload = {};
                 const organization = organizationModel.get();
@@ -14,6 +14,11 @@ angular.module('proton.core')
                 const defaultVPN = 3;
                 let index = 0;
                 let decryptedKey;
+
+                // Add the vpn step only for paid VPN subscription
+                if (authentication.hasPaidVpn()) {
+                    steps.push('vpn');
+                }
 
                 self.step = steps[index];
                 self.size = 2048;
@@ -67,7 +72,7 @@ angular.module('proton.core')
                 };
 
                 self.legendsVPN = [allocatedLegend];
-
+                self.isLastStep = () => self.step === _.last(steps);
 
                 self.next = () => {
                     const promise = methods[index]()
@@ -79,8 +84,7 @@ angular.module('proton.core')
                             return Promise.resolve();
                         })
                         .then(() => {
-                            const step = steps[index];
-                            if (step === 'vpn') {
+                            if (self.isLastStep()) {
                                 params.close();
                             } else {
                                 index++;
