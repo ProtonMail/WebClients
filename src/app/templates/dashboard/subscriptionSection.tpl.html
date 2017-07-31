@@ -18,8 +18,8 @@
     </tbody>
     <tbody class="subscriptionSection-tbody-billing">
         <tr ng-hide="subscription.CouponCode === 'LIFETIME'">
-            <td colspan="2">
-                <strong translate>Period end</strong>
+            <td>
+                <strong translate>Billing cycle end</strong>
             </td>
             <td>{{ subscription.PeriodEnd | readableTime }}</td>
         </tr>
@@ -33,9 +33,8 @@
             <td>
                 <strong translate>Payment</strong>
             </td>
-            <td>{{ method }}</td>
             <td>
-                <a ui-sref="secured.payments" class="text-purple" translate>Manage</a>
+                {{ method }} <a ui-sref="secured.payments" class="text-purple" translate>Manage</a>
             </td>
         </tr>
     </tbody>

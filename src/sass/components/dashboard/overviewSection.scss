@@ -17,3 +17,10 @@
     .overviewSection-link-signatureManager,
     .overviewSection-storage-size { display: none }
 }
+
+.overviewSection-container .topUp-button {
+    border: 0;
+    background: transparent;
+    color: $primary;
+    text-decoration: underline
+}
