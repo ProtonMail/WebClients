@@ -5,7 +5,8 @@ angular.module('proton.ui')
             templateUrl: 'templates/directives/ui/protonmailLogo.tpl.html',
             replace: true,
             link(scope, element) {
-                const img = element[0].querySelector('img');
+                const { PLUS, PROFESSIONAL, VISIONARY } = CONSTANTS.PLANS.PLAN;
+                const PLANS = ['free', PLUS, PROFESSIONAL, VISIONARY];
                 const unsubscribes = [];
 
                 unsubscribes.push($rootScope.$on('organizationChange', () => updateLogo()));
@@ -19,28 +20,13 @@ angular.module('proton.ui')
                     const isLifetime = subscription.CouponCode === 'LIFETIME';
                     const isSubuser = authentication.user.subuser;
                     const isMember = authentication.user.Role === CONSTANTS.PAID_MEMBER_ROLE;
-                    let src;
-                    switch (organization.PlanName) {
-                        case 'free':
-                            src = 'assets/img/logo/logo.svg';
-                            break;
-                        case 'plus':
-                            src = 'assets/img/logo/logo-plus.svg';
-                            break;
-                        case 'visionary':
-                            src = 'assets/img/logo/logo-visionary.svg';
-                            break;
-                        default:
-                            src = 'assets/img/logo/logo.svg';
-                            break;
-                    }
-                    if (isLifetime) {
-                        src = 'assets/img/logo/logo-lifetime.svg';
-                    }
-                    if (isSubuser || isMember) {
-                        src = 'assets/img/logo/logo.svg';
-                    }
-                    img.src = src;
+                    let planName = organization.PlanName;
+
+                    if (isLifetime) { planName = 'lifetime'; }
+                    if (isSubuser || isMember) { planName = '' }
+
+                    element.removeClass(PLANS).addClass(planName);
+                    element.attr('data-plan-name', planName);
                 }
 
                 scope.$on('$destroy', () => {
