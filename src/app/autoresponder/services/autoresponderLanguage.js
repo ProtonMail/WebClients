@@ -6,11 +6,11 @@ angular.module('proton.autoresponder')
         const AUTORESPONDER_INSTALLED_MESSAGE = gettextCatalog.getString('Autoresponder installed', null, 'Success');
         const AUTORESPONDER_REMOVED_MESSAGE = gettextCatalog.getString('Autoresponder removed', null, 'Success');
 
-        const DEFAULT_SUBJECT_PREFIX = gettextCatalog.getString('auto', null, 'Default autoresponder message prefix');
+        // Not translated: it's not editable, foreign people doing international business wouldn't want it to be translated
+        // if we make it editable we can translate it again.
+        const DEFAULT_SUBJECT_PREFIX = 'Auto';
         const DEFAULT_BODY = gettextCatalog.getString(
-            `<div>Dear,<br></div>
-<div><br></div>
-<div>I'm out of the office with limited access to my email.</div>`, null, 'Default autoresponder message without signature (no regards, etcetera)');
+            '<div>I\'m out of the office with limited access to my email.</div>', null, 'Default autoresponder message without signature (no regards, etcetera)');
 
 
         const DURATION_FOREVER = gettextCatalog.getString('Permanent', null, 'Duration/repetition of autoresponder');

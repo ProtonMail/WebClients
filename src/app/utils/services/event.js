@@ -349,10 +349,20 @@ angular.module('proton.utils')
                     if (filter.Action === DELETE) {
                         $rootScope.$broadcast('deleteFilter', filter.ID);
                     } else if (filter.Action === CREATE) {
-                        filter.Filter.Simple = Sieve.fromTree(filter.Filter.Tree);
+                        const simple = Sieve.fromTree(filter.Filter.Tree);
+                        if (_.isEqual(filter.Filter.Tree, Sieve.toTree(simple))) {
+                            filter.Filter.Simple = simple;
+                        } else {
+                            delete filter.Filter.Simple;
+                        }
                         $rootScope.$broadcast('createFilter', filter.ID, filter.Filter);
                     } else if (filter.Action === UPDATE) {
-                        filter.Filter.Simple = Sieve.fromTree(filter.Filter.Tree);
+                        const simple = Sieve.fromTree(filter.Filter.Tree);
+                        if (_.isEqual(filter.Filter.Tree, Sieve.toTree(simple))) {
+                            filter.Filter.Simple = simple;
+                        } else {
+                            delete filter.Filter.Simple;
+                        }
                         $rootScope.$broadcast('updateFilter', filter.ID, filter.Filter);
                     }
                 });

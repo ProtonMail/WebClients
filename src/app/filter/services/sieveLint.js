@@ -6,6 +6,8 @@
 angular.module('proton.filter')
     .factory('sieveLint', (Filter, CONSTANTS) => {
 
+        let wasValid = true;
+
         function register() {
             window.CodeMirror.registerHelper('lint', 'sieve', (text) => {
                 if (text.trim() === '') {
@@ -23,11 +25,20 @@ angular.module('proton.filter')
                     if (response.status !== 200) {
                         return [];
                     }
+                    wasValid = response.data.Issues.length === 0;
                     return response.data.Issues;
                 });
             });
         }
 
+        function lastCheckWasValid() {
+            return wasValid;
+        }
 
-        return { init: register };
+        function resetLastCheck() {
+            wasValid = true;
+        }
+
+
+        return { init: register, lastCheckWasValid, resetLastCheck };
     });
