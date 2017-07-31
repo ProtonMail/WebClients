@@ -85,13 +85,13 @@ angular.module('proton.core')
                         })
                         .then(() => {
                             if (self.isLastStep()) {
-                                params.close();
-                            } else {
-                                index++;
-                                $scope.$applyAsync(() => {
-                                    self.step = steps[index];
-                                });
+                                return params.close();
                             }
+
+                            index++;
+                            $scope.$applyAsync(() => {
+                                self.step = steps[index];
+                            });
                         });
                     networkActivityTracker.track(promise);
                 };
