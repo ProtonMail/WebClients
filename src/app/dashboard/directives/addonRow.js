@@ -52,7 +52,7 @@ angular.module('proton.dashboard')
 
                 // For VPN addon row we need to add a ProtonVPN String
                 if (addon === 'vpn') {
-                    element.find('.pm_select').before('<span class="addonRow-vpn">ProtonVPN</span>');
+                    element.find('.pm_select').before('<a href="https://protonvpn.com" target="_blank" class="addonRow-vpn text-purple">ProtonVPN</a>');
                 }
 
                 buildOptions();
