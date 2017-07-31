@@ -1,18 +1,18 @@
 <section class="pm_form col-1-2">
     <div class="clearfix">
-        <div class="col-3-8">
+        <div class="col-1-4">
             <label for="enable" translate-context="Label" translate>Enable</label>
         </div>
-        <div class="col-5-8">
+        <div class="col-3-4">
             <toggle class="disabled" name="autoresponder.toggle" status="model.isEnabled" on="ON" off="OFF" ng-if="mock"></toggle>
             <toggle name="autoresponder.isEnabled" status="model.isEnabled" on="ON" off="OFF" ng-if="!mock"></toggle>
         </div>
     </div>
     <div class="clearfix" ng-if="model.isEnabled">
-        <div class="col-3-8">
+        <div class="col-1-4">
             <label for="select-duration" translate-context="Label" translate>Duration</label>
         </div>
-        <div class="col-5-8">
+        <div class="col-3-4">
             <div class="pm_grid no-padding no-margin">
                 <div class="col-1-2">
                     <div class="pm_select">
@@ -55,15 +55,15 @@
         </div>
     </div>
     <div class="clearfix" ng-if="model.repeat === constants.DAILY && model.isEnabled">
-        <div class="col-3-8">
+        <div class="col-1-4">
             <label translate-context="Label" translate>Days</label>
         </div>
-        <div class="col-5-8">
+        <div class="col-3-4">
             <multiselect name="autoresponder.daysSelected" id="enabledDays" data-options="days" data-selected="model.daysSelected" data-disabled="{{ ::mock }}"></multiselect>
         </div>
     </div>
     <div class="clearfix" ng-if="model.repeat !== constants.FOREVER && model.isEnabled">
-        <div class="col-3-8">
+        <div class="col-1-4">
             <label translate-context="Label" translate for="startTime">Start time</label>
         </div>
         <autoresponder-time-picker data-date-picker-key="datetimepickerStartTime"
@@ -76,7 +76,7 @@
                                    data-form="form"></autoresponder-time-picker>
     </div>
     <div class="clearfix" ng-if="model.repeat !== constants.FOREVER && model.isEnabled">
-        <div class="col-3-8">
+        <div class="col-1-4">
             <label translate-context="Label" translate for="endTime">End time</label>
         </div>
         <autoresponder-time-picker data-date-picker-key="datetimepickerEndTime"
@@ -89,10 +89,10 @@
                                    data-form="form"></autoresponder-time-picker>
     </div>
     <div class="clearfix" ng-if="model.repeat !== constants.FOREVER && model.isEnabled">
-        <div class="col-3-8">
+        <div class="col-1-4">
             <label for="time-zone" translate-context="Label" translate>Time zone</label>
         </div>
-        <div class="col-5-8">
+        <div class="col-3-4">
             <div class="pm_grid  no-padding no-margin">
                 <div class="col-1-2">
                     <div class="pm_select">
