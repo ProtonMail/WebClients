@@ -394,29 +394,37 @@ angular.module('proton.utils')
 
         function manage(data) {
             manageNotices(data.Notices);
-            // Check if eventID is sent
+
             if (data.Error) {
                 return Events.getLatestID()
                     .then((result) => {
                         manageID(result.data.EventID);
                     });
-            } else if (data.Refresh === 1) {
+            }
+
+            if (data.Refresh === 1) {
                 manageID(data.EventID);
                 cache.reset();
                 cachePages.clear();
                 cacheCounters.reset();
                 cache.callRefresh();
                 cacheCounters.query();
+
                 return authentication.fetchUserInfo()
                     .then(() => {
                         $rootScope.$broadcast('updateUser');
                         $rootScope.$broadcast('updateContacts');
                         labelsModel.refresh();
                     });
-            } else if (data.Reload === 1) {
+            }
+
+            if (data.Reload === 1) {
                 $window.location.reload();
+
                 return Promise.resolve();
-            } else if (isDifferent(data.EventID)) {
+            }
+
+            if (isDifferent(data.EventID)) {
                 labelsModel.sync(data.Labels);
                 manageContacts(data.Contacts);
                 manageThreadings(data.Messages, data.Conversations);
@@ -430,11 +438,17 @@ angular.module('proton.utils')
                 manageFilters(data.Filters);
                 manageID(data.EventID);
                 manageActiveMessage(data);
-                return manageUser(data.User);
+
+                return manageUser(data.User)
+                    .then(() => {
+                        if (data.More === 1) {
+                            return call();
+                        }
+
+                        return Promise.resolve();
+                    });
             }
-            if (data.More === 1) {
-                return call();
-            }
+
             return Promise.resolve();
         }
 
