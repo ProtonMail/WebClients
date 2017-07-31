@@ -23,7 +23,7 @@ angular.module('proton.ui')
                     let planName = organization.PlanName;
 
                     if (isLifetime) { planName = 'lifetime'; }
-                    if (isSubuser || isMember) { planName = '' }
+                    if (isSubuser || isMember) { planName = ''; }
 
                     element.removeClass(PLANS).addClass(planName);
                     element.attr('data-plan-name', planName);
