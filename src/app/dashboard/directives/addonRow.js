@@ -1,7 +1,9 @@
 angular.module('proton.dashboard')
-    .directive('addonRow', ($filter, $rootScope, dashboardConfiguration, dashboardModel, dashboardOptions, gettextCatalog, subscriptionModel) => {
+    .directive('addonRow', ($filter, $rootScope, CONSTANTS, dashboardConfiguration, dashboardModel, dashboardOptions, gettextCatalog, subscriptionModel) => {
         const types = ['addon.updated', 'currency.updated', 'cycle.updated'];
         const filter = (amount) => $filter('currency')(amount / 100 / dashboardConfiguration.cycle(), dashboardConfiguration.currency());
+        const { MEMBER, ADDRESS, DOMAIN, SPACE } = CONSTANTS.PLANS.ADDON;
+        const MAP_ADDONS = { member: MEMBER, address: ADDRESS, domain: DOMAIN, space: SPACE };
         const initValue = (addon) => {
             if (addon === 'vpn') {
                 const { Plans = [] } = subscriptionModel.get();
@@ -19,6 +21,19 @@ angular.module('proton.dashboard')
 
             return `${subscriptionModel.count(addon)}`;
         };
+        const getPrice = ({ addon, value }) => {
+            if (!value || value === 'none') {
+                return '';
+            }
+
+            const amounts = dashboardModel.amounts();
+
+            if (value === 'vpnbasic' || value === 'vpnplus') {
+                return `+ ${filter(amounts[value])}`;
+            }
+
+            return `+ ${filter(amounts[MAP_ADDONS[addon]] * value)}`;
+        };
         return {
             restrict: 'E',
             replace: true,
@@ -26,17 +41,21 @@ angular.module('proton.dashboard')
             templateUrl: 'templates/dashboard/addonRow.tpl.html',
             compile(element, { addon, plan }) {
                 const $select = element.find('.addonRow-select');
-                const $price = element.find('.addonRow-price');
-                const options = _.reduce(dashboardOptions.get(plan, addon), (acc, { label, value }) => {
-                    return acc + `<option value="${value}">${label}</option>`;
-                }, '');
 
-                $select.append(options);
+                function buildOptions() {
+                    const options = _.reduce(dashboardOptions.get(plan, addon), (acc, { label, value }) => {
+                        return acc + `<option value="${value}">${label} ${getPrice({ addon, value })}</option>`;
+                    }, '');
+
+                    $select.html(options);
+                }
 
                 // For VPN addon row we need to add a ProtonVPN String
                 if (addon === 'vpn') {
                     element.find('.pm_select').before('<span class="addonRow-vpn">ProtonVPN</span>');
                 }
+
+                buildOptions();
 
                 return (scope) => {
                     const value = initValue(addon);
@@ -51,10 +70,9 @@ angular.module('proton.dashboard')
                         $rootScope.$emit('dashboard', { type: 'change.addon', data: { addon, plan, value: $select.val() } });
                     };
                     const unsubscribe = $rootScope.$on('dashboard', (event, { type, data = {} }) => {
-                        if (types.indexOf(type) > -1) {
-                            data.addon === addon && data.plan === plan && $select.val(data.value);
-                            const amount = dashboardModel.amount({ plan, addon });
-                            $price.text(amount > 0 ? `+ ${filter(amount)}` : '');
+                        if (types.indexOf(type) > -1 && data.addon === addon && data.plan === plan) {
+                            buildOptions();
+                            $select.val(data.value);
                         }
                     });
 

@@ -176,7 +176,14 @@ angular.module('proton.dashboard')
         };
 
         /**
-         * Get addon amount
+         * Get amounts for each plans
+         * @param  {Number} cycle
+         * @return {Object}
+         */
+        const amounts = (cycle = dashboardConfiguration.cycle()) => angular.copy(CACHE_PLAN[cycle].amounts);
+
+        /**
+         * Get addon amount for the current dashboard configuration
          * @param  {Object}
          * @return {Integer}
          */
@@ -277,5 +284,5 @@ angular.module('proton.dashboard')
             }
         });
 
-        return { init: angular.noop, loadPlans, get, query, amount, total };
+        return { init: angular.noop, loadPlans, get, query, amount, amounts, total };
     });
