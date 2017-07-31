@@ -7,7 +7,7 @@ angular.module('proton.organization')
             plus: ['plus'],
             professional: ['professional'],
             visionary: ['visionary'],
-            mail: ['plus', 'visionary'],
+            mail: ['plus', 'professional', 'visionary'],
             vpn: ['vpnbasic', 'vpnplus', 'visionary']
         };
         const MAP_ADDONS = {
