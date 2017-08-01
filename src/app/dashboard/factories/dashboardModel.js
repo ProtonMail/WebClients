@@ -72,6 +72,11 @@ angular.module('proton.dashboard')
                 Coupon: subscriptionModel.coupon()
             })
                 .then(({ data: valid = {} } = {}) => {
+
+                    if (valid.Error) {
+                        throw new Error(valid.Error);
+                    }
+
                     paymentModal.activate({
                         params: {
                             planIDs: PlanIDs,
