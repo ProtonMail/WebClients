@@ -2,12 +2,15 @@ angular.module('proton.dashboard')
     .directive('planPrice', ($filter, $rootScope, dashboardConfiguration, dashboardModel, gettextCatalog) => {
         const types = ['cycle.updated', 'currency.updated'];
         const I18N = {
+            user: gettextCatalog.getString('user', null),
             month: gettextCatalog.getString('month', null)
         };
         const amount = (plan, cycle, currency) => {
             const amounts = dashboardModel.amounts(cycle);
+            const month = `/${I18N.month}`;
+            const user = plan === 'professional' ? `/${I18N.user}` : '';
 
-            return `${$filter('currency')(amounts[plan] / 100 / cycle, currency)}/${I18N.month}`;
+            return `${$filter('currency')(amounts[plan] / 100 / cycle, currency)}${month}${user}`;
         };
 
         return {
