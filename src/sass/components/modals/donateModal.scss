@@ -3,7 +3,8 @@
 }
 
 .donateModal-container.donateModal-type-topUp {
-    [class$="-donate"] { display: none }
+    [class$="-donate"],
+    .donateModal-about-bitcoin { display: none }
 }
 
 .donateModal-group-btn { display: flex }
