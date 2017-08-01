@@ -136,9 +136,17 @@ angular.module('proton.settings')
             });
         };
 
-        $scope.catchallSupport = ({ Type }) => Type === CONSTANTS.CUSTOM_DOMAIN_ADDRESS && ($scope.organization.Features & 1);
+        const catchallSupport = (type) => type === CONSTANTS.CUSTOM_DOMAIN_ADDRESS && ($scope.organization.Features & 1);
 
-        $scope.changeCatchall = ({ catchall, DomainID, ID }, { Addresses = [] }) => {
+        $scope.changeCatchall = (address, { Addresses = [] }) => {
+            const { catchall, DomainID, ID, Type } = address;
+
+            if (!catchallSupport(Type)) {
+                notify(gettextCatalog.getString('This feature is only available for ProtonMail Professional plans or higher'));
+                address.catchall = !catchall;
+                return;
+            }
+
             if (catchall) {
                 _.each(Addresses, (address) => (address.catchall = address.ID === ID));
             }
