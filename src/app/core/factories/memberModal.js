@@ -13,7 +13,8 @@ angular.module('proton.core')
         MemberKey,
         authentication,
         Address,
-        setupKeys
+        setupKeys,
+        subscriptionModel
     ) => {
         return pmModal({
             controllerAs: 'ctrl',
@@ -50,7 +51,7 @@ angular.module('proton.core')
                 self.unit = giga;
                 self.min = 0;
                 self.max = organization.MaxSpace;
-                self.maxVPN = organization.MaxVPN;
+                self.hasVPN = organization.MaxVPN && subscriptionModel.hasPaid('vpn');
                 self.storageSliderOptions = {
                     animate: false,
                     start: startValue / self.unit,
