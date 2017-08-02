@@ -629,7 +629,7 @@ angular.module('proton.routes', [
                 },
                 resolve: {
                     methods(user, paymentModel, networkActivityTracker) {
-                        return networkActivityTracker.track(paymentModel.getMethods());
+                        return networkActivityTracker.track(paymentModel.getMethods(null, user));
                     },
                     status(user, paymentModel, networkActivityTracker) {
                         return networkActivityTracker.track(paymentModel.getStatus());
@@ -647,7 +647,7 @@ angular.module('proton.routes', [
                 },
                 resolve: {
                     methods(user, paymentModel, networkActivityTracker) {
-                        return networkActivityTracker.track(paymentModel.getMethods());
+                        return networkActivityTracker.track(paymentModel.getMethods(null, user));
                     },
                     status(user, paymentModel, networkActivityTracker) {
                         return networkActivityTracker.track(paymentModel.getStatus());
@@ -665,7 +665,7 @@ angular.module('proton.routes', [
                 },
                 resolve: {
                     methods(user, paymentModel, networkActivityTracker) {
-                        return networkActivityTracker.track(paymentModel.getMethods());
+                        return networkActivityTracker.track(paymentModel.getMethods(null, user));
                     },
                     status(user, paymentModel, networkActivityTracker) {
                         return networkActivityTracker.track(paymentModel.getStatus());
@@ -684,7 +684,7 @@ angular.module('proton.routes', [
                 },
                 resolve: {
                     methods(user, paymentModel, networkActivityTracker) {
-                        return networkActivityTracker.track(paymentModel.getMethods());
+                        return networkActivityTracker.track(paymentModel.getMethods(null, user));
                     },
                     status(user, paymentModel, networkActivityTracker) {
                         return networkActivityTracker.track(paymentModel.getStatus());
@@ -720,7 +720,7 @@ angular.module('proton.routes', [
                         return Promise.resolve();
                     },
                     methods(user, paymentModel, networkActivityTracker) {
-                        return networkActivityTracker.track(paymentModel.getMethods());
+                        return networkActivityTracker.track(paymentModel.getMethods(null, user));
                     },
                     status(user, paymentModel, networkActivityTracker) {
                         return networkActivityTracker.track(paymentModel.getStatus());
@@ -760,7 +760,7 @@ angular.module('proton.routes', [
                         return {};
                     },
                     methods(paymentModel, networkActivityTracker) {
-                        return networkActivityTracker.track(paymentModel.getMethods());
+                        return networkActivityTracker.track(paymentModel.getMethods(null, user));
                     },
                     status(paymentModel, networkActivityTracker) {
                         return networkActivityTracker.track(paymentModel.getStatus());
@@ -777,7 +777,7 @@ angular.module('proton.routes', [
                 },
                 resolve: {
                     methods(user, paymentModel, networkActivityTracker) {
-                        return networkActivityTracker.track(paymentModel.getMethods());
+                        return networkActivityTracker.track(paymentModel.getMethods(null, user));
                     },
                     status(user, paymentModel, networkActivityTracker) {
                         return networkActivityTracker.track(paymentModel.getStatus());
@@ -794,7 +794,7 @@ angular.module('proton.routes', [
                 },
                 resolve: {
                     methods(user, paymentModel, networkActivityTracker) {
-                        return networkActivityTracker.track(paymentModel.getMethods());
+                        return networkActivityTracker.track(paymentModel.getMethods(null, user));
                     },
                     status(user, paymentModel, networkActivityTracker) {
                         return networkActivityTracker.track(paymentModel.getStatus());
@@ -818,7 +818,7 @@ angular.module('proton.routes', [
                             .then(({ Currency }) => dashboardModel.loadPlans(Currency));
                     },
                     methods(user, paymentModel, networkActivityTracker) {
-                        return networkActivityTracker.track(paymentModel.getMethods());
+                        return networkActivityTracker.track(paymentModel.getMethods(null, user));
                     },
                     status(user, paymentModel, networkActivityTracker) {
                         return networkActivityTracker.track(paymentModel.getStatus());
@@ -871,7 +871,7 @@ angular.module('proton.routes', [
                         return Promise.resolve();
                     },
                     methods(user, paymentModel, networkActivityTracker) {
-                        return networkActivityTracker.track(paymentModel.getMethods());
+                        return networkActivityTracker.track(paymentModel.getMethods(null, user));
                     },
                     status(user, paymentModel, networkActivityTracker) {
                         return networkActivityTracker.track(paymentModel.getStatus());
@@ -920,7 +920,7 @@ angular.module('proton.routes', [
                         return Promise.resolve();
                     },
                     methods(user, paymentModel, networkActivityTracker) {
-                        return networkActivityTracker.track(paymentModel.getMethods());
+                        return networkActivityTracker.track(paymentModel.getMethods(null, user));
                     },
                     status(user, paymentModel, networkActivityTracker) {
                         return networkActivityTracker.track(paymentModel.getStatus());
@@ -966,7 +966,7 @@ angular.module('proton.routes', [
                         return networkActivityTracker.track(deferred.promise);
                     },
                     methods(user, paymentModel, networkActivityTracker) {
-                        return networkActivityTracker.track(paymentModel.getMethods());
+                        return networkActivityTracker.track(paymentModel.getMethods(null, user));
                     },
                     status(user, paymentModel, networkActivityTracker) {
                         return networkActivityTracker.track(paymentModel.getStatus());
