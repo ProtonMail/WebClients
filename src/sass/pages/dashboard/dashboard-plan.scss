@@ -82,7 +82,7 @@
 }
 
 [class*='Column-container'] > *:not(:last-child) {
-    border-bottom: 1px solid lighten($border, 20);
+    border-bottom: 1px solid $border;
 }
 
 
@@ -90,7 +90,6 @@
     height: 80px;
     border-bottom: 0;
     border-radius: $border-radius $border-radius 0 0;
-
 }
 
 
@@ -112,7 +111,7 @@
 [class*='Column-container'] [class*='Column-vpn'] { margin-top: 15px; }
 
 [class*='Column-container'] [class*='Column-vpn'] {
-    border-top: 1px solid lighten($border, 20);
+    border-top: 1px solid $border;
 }
 
 .totalRows-container > label:not(:first-of-type) { position: relative }
@@ -157,8 +156,8 @@
     align-items: center;
     box-sizing: content-box;
     justify-content: space-between;
-    height: 110px;
-    padding: 40px 10px 10px 10px;
+    height: 100px;
+    padding: 10px;
     @import "selectPlan";
     @import "addVpn-button";
 }
@@ -184,7 +183,7 @@
 [class*='Column-container'] .isCurrent {
     position: absolute;
     left: -1px;
-    top: 0;
+    top: -36px;
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -194,15 +193,12 @@
     font-weight: bold;
     color: $white;
     background: $primary;
-}
-
-[class*='Column-container'] [class*='Column-header'] .isCurrent {
-    top: -30px;
     border-radius: $border-radius $border-radius 0 0;
     box-shadow: 0px 0px 8px $primary,
                 0px 0px 0px 2px $primary;
     border-bottom: 1px solid $primary;
 }
+
 
 .plusColumn-header { color: #C6E422 }
 .professionalColumn-header { color: #D4B46E }

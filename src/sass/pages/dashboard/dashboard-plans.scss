@@ -9,10 +9,10 @@
     display: flex;
     width: 100%;
     box-sizing: border-box;
-    overflow: auto;
-    padding: 32px 0; /* isCurrent */
+    padding: 34px 0; /* isCurrent */
     @import "dashboard-plan";
 }
+
 
 [class*='Column-container'] {
     flex: 1;
@@ -44,6 +44,7 @@
     border-color: $primary;
     box-shadow: 0px 0px 8px $primary,
                 0px 0px 0px 2px $primary;
+    border-radius: 0 0 $border-radius $border-radius;
 }
 
 .settingsDashboard-plans .isCurrent { display: none }
@@ -53,4 +54,37 @@
 .settingsDashboard-plans.professional-active .professionalColumn-container .isCurrent,
 .settingsDashboard-plans.visionary-active .visionaryColumn-container .isCurrent {
     display: flex;
+}
+
+
+/* gradient */
+
+#pm_settings .settings.settingsDashboard-container,
+#pm_settings .settings .row:last-of-type { padding-bottom: 0 }
+
+.settingsDashboard-plans {
+    position: relative;
+    display: flex;
+    align-items: center;
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
+    background: #FFF no-repeat;
+    background-image:
+        radial-gradient(farthest-side at 0 50%, $border, rgba(0,0,0,0)),
+        radial-gradient(farthest-side at 100% 50%, $border, rgba(0,0,0,0));
+    background-position: 0 50%, 100% 50%;
+    background-size: 25px 400px;
+    margin: 0 -25px;
+    width: calc(100% + 50px);
+}
+
+/* overlay of no scrolling */
+.settingsDashboard-plans::before,
+.settingsDashboard-plans::after {
+        content: "";
+        height: 400px;
+        position: static;
+        min-width: 25px;
+        width: 25px;
+        background: #FFF;
 }
