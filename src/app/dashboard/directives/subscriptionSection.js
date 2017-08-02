@@ -1,5 +1,5 @@
 angular.module('proton.dashboard')
-    .directive('subscriptionSection', ($rootScope, subscriptionModel, gettextCatalog) => {
+    .directive('subscriptionSection', ($rootScope, CONSTANTS, subscriptionModel, gettextCatalog) => {
         const I18N = {
             addresses: gettextCatalog.getString('addresses', null),
             domain: gettextCatalog.getString('domain', null),
@@ -22,20 +22,21 @@ angular.module('proton.dashboard')
         };
 
         const getFirstMethodType = (methods = []) => ((methods.length) ? I18N.methods[methods[0].Type] : 'None');
+        const fromBase = (value) => value / (CONSTANTS.BASE_SIZE ** 3);
 
         function formatTitle(plan = {}) {
             switch (plan.Name) {
                 case '1gb':
-                    plan.Title = `+ ${plan.time} GB`;
+                    plan.Title = `+ ${plan.time * fromBase(plan.MaxSpace)} GB`;
                     break;
                 case '5address':
-                    plan.Title = `+ ${plan.time * 5} ${I18N.addresses}`;
+                    plan.Title = `+ ${plan.time * plan.MaxAddresses} ${I18N.addresses}`;
                     break;
                 case '1domain':
-                    plan.Title = `+ ${plan.time} ${(plan.time > 1) ? I18N.domains : I18N.domain}`;
+                    plan.Title = `+ ${plan.time * plan.MaxDomains} ${(plan.time > 1) ? I18N.domains : I18N.domain}`;
                     break;
                 case '1member':
-                    plan.Title = `+ ${plan.time} ${(plan.time > 1) ? I18N.members : I18N.member}`;
+                    plan.Title = `+ ${plan.time * plan.MaxMembers} ${(plan.time > 1) ? I18N.members : I18N.member}`;
                     break;
                 default:
                     break;

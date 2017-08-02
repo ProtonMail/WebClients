@@ -1,9 +1,9 @@
 angular.module('proton.dashboard')
-    .factory('dashboardConfiguration', () => {
+    .factory('dashboardConfiguration', (authentication) => {
         const YEARLY = 12;
         const CONFIGURATION = {
-            currency: 'EUR',
-            cycle: YEARLY,
+            currency: authentication.user.Currency || 'EUR',
+            cycle: authentication.user.Cycle || YEARLY,
             free: {}, // Store free addons
             plus: {}, // Store plus addons
             professional: {} // Store professional addons

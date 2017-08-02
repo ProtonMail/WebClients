@@ -8,13 +8,15 @@
 .settingsDashboard-plans {
     display: flex;
     width: 100%;
+    box-sizing: border-box;
     overflow: auto;
-    padding-bottom: 2em;
+    padding: 32px 0; /* isCurrent */
     @import "dashboard-plan";
 }
 
 [class*='Column-container'] {
     flex: 1;
+    margin: 4px 4px 0 0; /*shadow+ parent overflow*/
     min-width: 275px;
 }
 
@@ -39,7 +41,16 @@
 .settingsDashboard-plans.plus-active .plusColumn-container,
 .settingsDashboard-plans.professional-active .professionalColumn-container,
 .settingsDashboard-plans.visionary-active .visionaryColumn-container {
-    border-width: 2px;
     border-color: $primary;
-    box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+    box-shadow: 0px 0px 8px $primary,
+                0px 0px 0px 2px $primary;
+}
+
+.settingsDashboard-plans .isCurrent { display: none }
+
+.settingsDashboard-plans.free-active .freeColumn-container .isCurrent,
+.settingsDashboard-plans.plus-active .plusColumn-container .isCurrent,
+.settingsDashboard-plans.professional-active .professionalColumn-container .isCurrent,
+.settingsDashboard-plans.visionary-active .visionaryColumn-container .isCurrent {
+    display: flex;
 }
