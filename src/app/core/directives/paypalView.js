@@ -23,7 +23,7 @@ angular.module('proton.core')
                 scope.initPaypal = () => {
                     scope.errorDetails = null;
                     scope.paypalNetworkError = false;
-                    const Amount = scope.amount * 100;
+                    const Amount = scope.amount;
 
                     if (Amount < MIN_PAYPAL_AMOUNT) {
                         return scope.errorDetails = {

@@ -100,7 +100,6 @@ angular.module('proton.payment')
                 ctrl.count = (type) => MAP_TOTAL.total[type];
                 ctrl.price = (type) => MAP_TOTAL.price[type];
 
-                ctrl.getAmountPaypal = () => params.valid.AmountDue / 100;
                 ctrl.paypalCallback = (config) => {
                     ctrl.paypalConfig = config;
                     ctrl.submit();

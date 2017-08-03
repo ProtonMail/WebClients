@@ -47,22 +47,9 @@
 
                 <div ng-if="ctrl.method.value === 'paypal'">
 
-                    <p class="alert alert-warning paymentForm-paypal-about-month">
-                        <span translate-context="Info" translate>We only accept PayPal for annual subscriptions, click the link to switch to an annual subscription.</span>
-                        <button
-                            type="button"
-                            class="paymentForm-btn-payAnnualy"
-                            translate-context="Action"
-                            translate>Change subscription</button>
-                    </p>
-
-                    <p class="alert alert-warning paymentForm-paypal-error-amount" ng-if="paypalError">
-                        <span translate-context="Paypal error">Amount below minimum.</span> ({{ ::paypalError.minAmount / 100 }} {{ ::paypalError.Currency }})
-                    </p>
-
                     <paypal-view
                         ng-if="ctrl.valid.Cycle === 12"
-                        data-amount="ctrl.getAmountPaypal()"
+                        data-amount="ctrl.valid.AmountDue"
                         data-currency="ctrl.valid.Currency"
                         data-callback="ctrl.paypalCallback"></paypal-view>
                 </div>

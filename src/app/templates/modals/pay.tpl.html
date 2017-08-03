@@ -67,7 +67,7 @@
 
                     <paypal-view
                         ng-if="ctrl.method.value === 'paypal'"
-                        data-amount="ctrl.getPaypalAmount()"
+                        data-amount="ctrl.checkInvoice.AmounDue"
                         data-currency="ctrl.checkInvoice.Currency"
                         data-callback="ctrl.paypalCallback"></paypal-view>
 

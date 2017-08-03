@@ -101,7 +101,7 @@
 
                 <paypal-view
                     ng-if="ctrl.method.value === 'paypal'"
-                    data-amount="ctrl.getAmount()"
+                    data-amount="ctrl.getAmount() * 100"
                     data-currency="ctrl.currency.value"
                     data-callback="ctrl.paypalCallback"></paypal-view>
 
