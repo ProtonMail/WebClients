@@ -24,7 +24,10 @@ angular.module('proton.payment')
         };
 
 
-        const loadMethods = () => {
+        const loadMethods = ({ subuser } = {}) => {
+            if (subuser) {
+                return Promise.resolve([]);
+            }
             return Payment.methods()
                 .then(({ data = {} }) => {
                     if (data.Error) {
@@ -35,12 +38,12 @@ angular.module('proton.payment')
                 .then((data) => set('methods', data));
         };
 
-        const load = (type, cb) => (refresh) => {
+        const load = (type, cb) => (refresh, data) => {
             refresh && clear(type);
             if (get(type)) {
                 return Promise.resolve(get(type));
             }
-            return cb();
+            return cb(data);
         };
 
         const getStatus = load('status', loadStatus);

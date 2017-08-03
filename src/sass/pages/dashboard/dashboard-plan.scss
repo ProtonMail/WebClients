@@ -42,6 +42,8 @@
 [class*='Column-container'] .fa-info-circle {
     position: absolute;
     right: 18px;
+    top: 15px;
+    margin: 0;
     z-index: 10;
 }
 
@@ -78,7 +80,7 @@
 }
 
 [class*='Column-container']:not(:last-of-type) {
-    margin-right: 5px;
+    margin-right: 4px;
 }
 
 [class*='Column-container'] > *:not(:last-child) {
@@ -105,6 +107,10 @@
     .fa-info-circle {
         position: static; /* reset */
     }
+}
+[class*='Column-container'] > .professionalColumn-space,
+[class*='Column-container'] > .professionalColumn-address  {
+    padding-right: 35px;
 }
 
 [class*='Column-container'] [class*='Column-sending'],
