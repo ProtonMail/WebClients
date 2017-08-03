@@ -5,17 +5,24 @@
                 <strong translate>Plans</strong>
             </td>
         </tr>
-        <tr ng-repeat="plan in subscription.Plans | filter: { Type: 1 } track by plan.ID">
-            <td colspan="2">{{ plan.Title }}</td>
-            <td>{{ plan.Amount / 100 / plan.Cycle | currency: plan.Currency }}/mo</td>
-        </tr>
+        <tr
+            ng-repeat="plan in subscription.Plans | filter: { Type: 1 } track by plan.ID"
+            class="subscriptionSection-list">
+            <td colspan="2" class="subscriptionSection-item-title">{{ plan.Title }}</td>
+            <td class="subscriptionSection-item-price">{{ plan.Amount / 100 / plan.Cycle | currency: plan.Currency }}/mo</td>
+
+            <td class="subscriptionSection-item-addons">
+                <table class="subscriptionSection-addons" ng-if="plan.Name.indexOf('vpn') === -1">
+                    <tbody class="subscriptionSection-tbody-addons">
+                        <tr ng-repeat="(key, plan) in addons track by plan.ID">
+                            <td class="subscriptionSection-item-title">{{ plan.Title }}</td>
+                            <td class="subscriptionSection-item-price">{{ plan.Amount / 100 / plan.Cycle | currency: plan.Currency }}/mo</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </td>
     </tbody>
-    <tbody class="subscriptionSection-tbody-addons">
-        <tr ng-repeat="(key, plan) in addons track by plan.ID">
-            <td colspan="2">{{ plan.Title }}</td>
-            <td>{{ plan.Amount / 100 / plan.Cycle | currency: plan.Currency }}/mo</td>
-        </tr>
-    </tbody>
+
     <tbody class="subscriptionSection-tbody-billing">
         <tr ng-hide="subscription.CouponCode === 'LIFETIME'">
             <td>
