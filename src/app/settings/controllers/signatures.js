@@ -149,7 +149,7 @@ angular.module('proton.settings')
             }
 
             if (organization.MaxMembers - organization.UsedMembers < 1) {
-                notify({ message: gettextCatalog.getString('You have used all members in your plan. Please upgrade your plan to add a new member.', null, 'Error'), classes: 'notification-danger' });
+                notify({ message: gettextCatalog.getString('You have used all members in your plan. Please upgrade your plan to add a new user.', null, 'Error'), classes: 'notification-danger' });
                 return false;
             }
 
