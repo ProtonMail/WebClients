@@ -18,7 +18,7 @@
                 <strong class="tosubscribeOverview-price-yearly">{{ plan.Amount / 100 / 12 | fixed: 2 | currency: plan.Currency }}/mo</strong>
             </header>
 
-            <ul class="tosubscribeOverview-list-about" ng-if="!isVPN(plan)">
+            <ul class="tosubscribeOverview-list-about" ng-if="plan.Name.indexOf('vpn') === -1">
                 <li class="tosubscribeOverview-about-space">
                     {{ ::ctrl.count('MaxSpace') | humanSize }}
                     <span class="tosubscribeOverview-about-type" translate>Storage</span>
