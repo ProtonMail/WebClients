@@ -74,11 +74,15 @@
         radial-gradient(farthest-side at 100% 50%, $border, rgba(0,0,0,0));
     background-position: 0 50%, 100% 50%;
     background-size: 25px 400px;
+}
+
+/* overlay of no scrolling */
+
+.settingsDashboard-plans {
     margin: 0 -25px;
     width: calc(100% + 50px);
 }
 
-/* overlay of no scrolling */
 .settingsDashboard-plans::before,
 .settingsDashboard-plans::after {
         content: "";
@@ -88,3 +92,19 @@
         width: 25px;
         background: #FFF;
 }
+
+/* arrow to scroll */
+
+[class*="settingsDashboard-arrowToScroll"] { position: relative }
+
+[class*="settingsDashboard-arrowToScroll"] .arrowsToScroll-button {
+    position: absolute;
+    top: calc(50% - 15px);
+    border-radius: $border-radius;
+    background: rgba($secondary, .9);
+}
+
+[class*="settingsDashboard-arrowToScroll"] .arrowsToScroll-button:hover { background: $secondary }
+
+[class*="settingsDashboard-arrowToScroll"] .arrowsToScroll-button[data-direction='left'] { left: -10px }
+[class*="settingsDashboard-arrowToScroll"] .arrowsToScroll-button[data-direction='right'] { right: -10px }

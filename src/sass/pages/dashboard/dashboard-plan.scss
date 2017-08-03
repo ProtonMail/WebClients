@@ -10,7 +10,6 @@
     flex-direction: row;
     align-items: center;
     height: 45px;
-    padding: 0px 10px;
     box-sizing: border-box;
 }
 
@@ -83,9 +82,18 @@
     margin-right: 4px;
 }
 
+[class*='Column-container'] > * {
+    padding: 0px 10px;
+}
+
 [class*='Column-container'] > *:not(:last-child) {
     border-bottom: 1px solid $border;
 }
+
+/* align numbers with selects */
+[class*='Column-container'] > .plusColumn-user,
+[class*='Column-container'] > .professionalColumn-space,
+[class*='Column-container'] > .professionalColumn-address  { padding: 0px 10px 0px 20px }
 
 
 [class*='Column-header'] {
