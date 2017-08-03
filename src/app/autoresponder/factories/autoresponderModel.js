@@ -86,7 +86,7 @@ angular.module('proton.autoresponder')
             const bodyPlusSig = signatureBuilder.insert({ getDecryptedBody: () => body }, { action: 'new', isAfter: true })
                 .replace(/<img[^>]*>/g, '');
 
-            if (bodyPlusSig > constants.MAX_MESSAGE_LENGTH) {
+            if (bodyPlusSig.length > constants.MAX_MESSAGE_LENGTH) {
                 defaultAutoresponder.message = body;
             } else {
                 defaultAutoresponder.message = bodyPlusSig;
