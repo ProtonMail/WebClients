@@ -15,14 +15,16 @@ angular.module('proton.ui')
                 return (scope, element) => {
                     const container = element.find(`.${CONTAINER_CLASS}`);
                     const $buttons = element.find(`.${BUTTON_CLASS}`);
-
-                    const onScroll = () => {
+                    const $left = element.find('[data-direction="left"]');
+                    const $right = element.find('[data-direction="right"]');
+                    const onResize = _.debounce(() => $buttons.prop('disabled', container.get(0).scrollWidth < container.get(0).clientWidth), 300);
+                    const onScroll = _.debounce(() => {
                         const position = container.scrollLeft();
                         const maxScrollLeft = container.get(0).scrollWidth - container.get(0).clientWidth;
 
-                        element.find('[data-direction="left"]').prop('disabled', !position);
-                        element.find('[data-direction="right"]').prop('disabled', position === maxScrollLeft);
-                    };
+                        $left.prop('disabled', !position);
+                        $right.prop('disabled', position === maxScrollLeft);
+                    }, 300);
                     const onClick = (event) => {
                         if (event.target.classList.contains(BUTTON_CLASS)) {
                             const direction = event.target.getAttribute('data-direction');
@@ -41,14 +43,15 @@ angular.module('proton.ui')
                     };
 
                     container.on('scroll', onScroll);
-                    angular.element(window).on('resize', onScroll);
+                    angular.element(window).on('resize', onResize);
                     $buttons.on('click', onClick);
 
-                    setTimeout(() => onScroll(), 1000);
+                    onResize();
+                    onScroll();
 
                     scope.$on('$destroy', () => {
                         container.off('scroll', onScroll);
-                        angular.element(window).off('resize', onScroll);
+                        angular.element(window).off('resize', onResize);
                         $buttons.off('click', onClick);
                     });
                 };
