@@ -31,6 +31,7 @@ angular.module('proton.labels')
             return labels.map((label) => {
                 label.Name = DOMPurify.sanitize(label.Name);
                 label.Color = DOMPurify.sanitize(label.Color);
+                label.notify = !!label.Notify;
                 return label;
             });
         }

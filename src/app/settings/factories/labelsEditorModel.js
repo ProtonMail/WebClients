@@ -1,8 +1,11 @@
 angular.module('proton.settings')
     .factory('labelsEditorModel', (labelsModel) => {
 
-        let LIST = [];
-        let MAP = {};
+        const CACHE = {
+            LIST: [],
+            MAP: {}
+        };
+
 
         /**
          * Load current labels ordered by Order
@@ -10,24 +13,24 @@ angular.module('proton.settings')
          * @return {Array}
          */
         const load = () => {
-            LIST = _.sortBy(labelsModel.get(), 'Order');
-            MAP = _.reduce(LIST, (acc, { ID, Order }) => (acc[ID] = Order, acc), Object.create(null));
-            return LIST;
+            CACHE.LIST = _.sortBy(labelsModel.get(), 'Order');
+            CACHE.MAP = _.reduce(CACHE.LIST, (acc, { ID, Order }) => (acc[ID] = Order, acc), Object.create(null));
+            return CACHE.LIST;
         };
 
         /**
          * Get the order of the list via immutable map instead of the current item (the list is mutable, prevent Invalid input with duplicates Order)
          * @return {Array}
          */
-        const getOrder = () => LIST.map(({ ID }) => MAP[ID]);
+        const getOrder = () => CACHE.LIST.map(({ ID }) => CACHE.MAP[ID]);
 
         /**
          * Sort labels list by Name (alphabetically)
          * @return {Array}
          */
         const sort = () => {
-            LIST = _.sortBy(labelsModel.get(), ({ Name = '' }) => Name.toLowerCase());
-            return LIST;
+            CACHE.LIST = _.sortBy(labelsModel.get(), ({ Name = '' }) => Name.toLowerCase());
+            return CACHE.LIST;
         };
 
         /**
@@ -35,14 +38,13 @@ angular.module('proton.settings')
          * @return {void}
          */
         const update = () => {
-            LIST = LIST.map((item, pos) => (item.Order = pos + 1, item));
-            const id = setTimeout(() => {
-                MAP = _.reduce(LIST, (acc, { ID, Order }) => (acc[ID] = Order, acc), {});
-                clearTimeout(id);
-            }, 200);
+            CACHE.LIST = CACHE.LIST.map((item, pos) => (item.Order = pos + 1, item));
+            _.delay(() => {
+                CACHE.MAP = _.reduce(CACHE.LIST, (acc, { ID, Order }) => (acc[ID] = Order, acc), {});
+            }, 300);
         };
 
-        const clear = () => (MAP = {}, LIST.length = 0);
+        const clear = () => (CACHE.MAP = {}, CACHE.LIST.length = 0);
 
         return { load, update, getOrder, sort, clear };
     });
