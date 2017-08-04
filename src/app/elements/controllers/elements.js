@@ -193,10 +193,10 @@ angular.module('proton.elements')
                         $scope.refreshElements();
                         break;
                     case 'switchTo.next':
-                        nextElement(data.conversation);
+                        nextElement(data.from);
                         break;
                     case 'switchTo.previous':
-                        previousElement(data.conversation);
+                        previousElement(data.from);
                         break;
                 }
             }));
@@ -291,15 +291,17 @@ angular.module('proton.elements')
             /**
          * Go to the next conversation
          */
-            function nextElement() {
+            function nextElement(from) {
                 const elementID = $state.params.id;
+                const fromButton = from === 'button';
 
                 if (!elementID) {
                     return markNext();
                 }
 
-                const isMessageMode = authentication.user.ViewLayout === CONSTANTS.ROW_MODE;
-                if (elementID && isMessageMode) {
+                const isRowMode = authentication.user.ViewLayout === CONSTANTS.ROW_MODE;
+
+                if (elementID && isRowMode && !fromButton) {
                     return;
                 }
 
@@ -313,7 +315,7 @@ angular.module('proton.elements')
                         $state.go(current, { id });
                         $scope.markedElement = element;
                         $rootScope.$emit('elements', { type: 'switchTo.next.success', data: element });
-                        !isMessageMode && markedScroll.follow();
+                        !isRowMode && markedScroll.follow();
                     })
                     .catch((data) => {
                         $rootScope.$emit('elements', { type: 'switchTo.next.error', data });
@@ -323,17 +325,17 @@ angular.module('proton.elements')
             /**
          * Go to the previous conversation
          */
-            function previousElement() {
+            function previousElement(from) {
                 const elementID = $state.params.id;
-
+                const fromButton = from === 'button';
 
                 if (!elementID) {
                     return markPrevious();
                 }
 
-                const isMessageMode = authentication.user.ViewLayout === CONSTANTS.ROW_MODE;
+                const isRowMode = authentication.user.ViewLayout === CONSTANTS.ROW_MODE;
 
-                if (elementID && isMessageMode) {
+                if (elementID && isRowMode && !fromButton) {
                     return;
                 }
 
@@ -347,7 +349,7 @@ angular.module('proton.elements')
                         $state.go(current, { id });
                         $scope.markedElement = element;
                         $rootScope.$emit('elements', { type: 'switchTo.previous.success', data: element });
-                        !isMessageMode && markedScroll.follow();
+                        !isRowMode && markedScroll.follow();
                     })
                     .catch((data) => {
                         $rootScope.$emit('elements', { type: 'switchTo.previous.error', data });
