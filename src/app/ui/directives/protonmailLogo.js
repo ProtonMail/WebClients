@@ -6,7 +6,7 @@ angular.module('proton.ui')
             replace: true,
             link(scope, element) {
                 const { PLUS, PROFESSIONAL, VISIONARY } = CONSTANTS.PLANS.PLAN;
-                const PLANS = ['free', PLUS, PROFESSIONAL, VISIONARY];
+                const PLANS = [PLUS, PROFESSIONAL, VISIONARY].join(' ');
                 const unsubscribes = [];
 
                 unsubscribes.push($rootScope.$on('organizationChange', () => updateLogo()));
@@ -23,8 +23,7 @@ angular.module('proton.ui')
                     let planName = organization.PlanName;
 
                     if (isLifetime) { planName = 'lifetime'; }
-                    if (isSubuser || isMember) { planName = ''; }
-
+                    if (isSubuser || isMember || planName === 'free') { planName = ''; }
                     element.removeClass(PLANS).addClass(planName);
                     element.attr('data-plan-name', planName);
                 }
