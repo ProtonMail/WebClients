@@ -14,7 +14,7 @@ angular.module('proton.settings')
         labelsEditorModel,
         notify
     ) => {
-    // Variables
+
         const unsubscribe = [];
 
         const changeNotify = (event, { id, status }) => {
@@ -31,14 +31,7 @@ angular.module('proton.settings')
             networkActivityTracker.track(promise);
         };
 
-        const formatLabels = (labels) => _.map(labels, (label) => {
-            label.notify = !!label.Notify;
-            return label;
-        });
-
-        const setLabels = () => {
-            $scope.labels = formatLabels(labelsEditorModel.load());
-        };
+        const setLabels = () => $scope.labels = labelsEditorModel.load();
 
         setLabels();
 
