@@ -1,6 +1,6 @@
 <div class="autoresponderMessageContainer" ng-class="{
     autoresponderHalfFull: message.length > halfMessageLength,
-    autoresponderFull: message.length > maxMessageLength
+    autoresponderFull: message.length >= maxMessageLength
     }">
     <div class="autoresponderMessageDisabler" ng-if="disabled"></div>
     <squire

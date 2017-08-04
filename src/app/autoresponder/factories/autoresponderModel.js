@@ -18,8 +18,8 @@ angular.module('proton.autoresponder')
             WEEKLY: 2,
             MONTHLY: 3,
             FOREVER: 4,
-            HALF_MESSAGE_LENGTH: 512,
-            MAX_MESSAGE_LENGTH: 1024,
+            HALF_MESSAGE_LENGTH: 2048,
+            MAX_MESSAGE_LENGTH: 4096,
             HOUR: 60 * 60,
             DAY: 24 * 60 * 60
         };
