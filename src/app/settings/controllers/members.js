@@ -377,7 +377,7 @@ angular.module('proton.settings')
             }
 
             if ($scope.organization.MaxMembers === 1) {
-                notify(gettextCatalog.getString('Please upgrade to a Visionary or Business account for multi-user support.', null));
+                notify(gettextCatalog.getString('Please upgrade to a Professional plan with more than 1 user, or a Visionary account, to get multi-user support.', null));
             } else if ($scope.organization.MaxMembers > 1) {
                 passwordModal(submit);
             }
