@@ -1,5 +1,5 @@
 angular.module('proton.ui')
-    .directive('chooseLayoutBtns', (authentication, CONSTANTS, networkActivityTracker, tools, settingsApi, eventManager, notify, gettextCatalog) => {
+    .directive('chooseLayoutBtns', ($rootScope, authentication, CONSTANTS, networkActivityTracker, tools, settingsApi, eventManager, notify, gettextCatalog) => {
 
         const notif = (message = '', type = 'success') => notify({ message, classes: `notification-${type}` });
 
@@ -22,6 +22,7 @@ angular.module('proton.ui')
                         if (data.Code === 1000) {
                             return eventManager.call()
                                 .then(() => {
+                                    $rootScope.$emit('settings', { type: 'viewLayout.updated', data: { viewLayout: newLayout } });
                                     tools.mobileResponsive();
                                     notif(gettextCatalog.getString('Layout saved', null));
                                 });

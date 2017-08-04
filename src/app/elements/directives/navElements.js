@@ -40,6 +40,9 @@ angular.module('proton.elements')
                 toggleClass();
 
                 unsubscribe.push($rootScope.$on('$stateChangeSuccess', toggleClass));
+                unsubscribe.push($rootScope.$on('settings', (event, { type }) => {
+                    (type === 'viewLayout.updated') && toggleClass();
+                }));
                 unsubscribe.push($rootScope.$on('elements', (e, { type }) => {
 
                     if (/(previous|next)\.(error|success)$/.test(type)) {
@@ -50,7 +53,8 @@ angular.module('proton.elements')
 
                 const onClick = ({ target }) => {
                     dispatch(`switchTo.${target.getAttribute('data-dest')}`, {
-                        conversation: scope.conversation
+                        conversation: scope.conversation,
+                        from: 'button'
                     });
                 };
                 el.on('click', onClick);
