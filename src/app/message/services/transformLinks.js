@@ -1,11 +1,23 @@
 angular.module('proton.message')
     .factory('transformLinks', () => {
+
         return (html) => {
-            const links = [].slice.call(html.querySelectorAll('a[href^="http"]'));
+
+            const links = [].slice.call(html.querySelectorAll('[href]'));
             const linksRelative = [].slice.call(html.querySelectorAll('a[href]:not([href^="http:"]):not([href^="https:"]):not([href^="mailto"])'));
 
             _.each(links, (link) => {
-                link.setAttribute('target', '_blank');
+                /**
+                 * Prevent attack via the referrer
+                 *  > area with a target blank and a redirect on window.opener
+                 * {@link https://www.jitbit.com/alexblog/256-targetblank---the-most-underestimated-vulnerability-ever/}
+                 * {@link https://mathiasbynens.github.io/rel-noopener/}
+                 */
+                link.setAttribute('rel', 'noreferrer nofollow noopener');
+
+                if ((link.href || '').indexOf('http') === 0) {
+                    link.setAttribute('target', '_blank');
+                }
             });
 
             _.each(linksRelative, (link) => {

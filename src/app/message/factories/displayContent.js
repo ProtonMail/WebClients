@@ -27,10 +27,13 @@ angular.module('proton.message')
         }
 
         function prepare(content, message) {
+
             if (content.type === 'html') {
                 content.body = prepareContent(content.body, message);
             } else {
-                content.body = $filter('linky')(content.body, '_blank');
+                content.body = $filter('linky')(content.body, '_blank', {
+                    rel: 'noreferrer nofollow noopener'
+                });
             }
 
             return content;
