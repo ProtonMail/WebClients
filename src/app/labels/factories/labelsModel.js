@@ -27,13 +27,13 @@ angular.module('proton.labels')
          * @param  {Array} labels
          * @return {Array}
          */
-        function cleanLabels(labels = []) {
-            return labels.map((label) => {
-                label.Name = DOMPurify.sanitize(label.Name);
-                label.Color = DOMPurify.sanitize(label.Color);
-                label.notify = !!label.Notify;
-                return label;
-            });
+        const cleanLabels = (labels = []) => labels.map((label) => cleanLabel(label));
+
+        function cleanLabel(label) {
+            label.Name = DOMPurify.sanitize(label.Name);
+            label.Color = DOMPurify.sanitize(label.Color);
+            label.notify = !!label.Notify;
+            return label;
         }
 
         /**
@@ -133,7 +133,7 @@ angular.module('proton.labels')
             }, { update: {}, create: [], remove: {} });
 
             CACHE.all = _.chain(CACHE.all)
-                .map((label) => todo.update[label.ID] || label)
+                .map((label) => cleanLabel(todo.update[label.ID] || label))
                 .filter(({ ID }) => !todo.remove[ID])
                 .value()
                 .concat(todo.create);
