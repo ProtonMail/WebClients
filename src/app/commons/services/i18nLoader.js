@@ -1,5 +1,5 @@
 angular.module('proton.commons')
-    .factory('i18nLoader', (CONFIG, gettextCatalog, dateUtils, pikadayConfiguration) => {
+    .factory('i18nLoader', (CONFIG, gettextCatalog, pikadayConfiguration, dateUtils) => {
 
         const upperCaseLocale = (locale = '') => ((locale === 'en') ? 'us' : locale).toUpperCase();
 
@@ -107,9 +107,18 @@ angular.module('proton.commons')
                 weekdaysShort: americanDays.map((day) => day.shortLabel)
             };
 
-            pikadayConfiguration.update({ i18n: locale, firstDay: moment.localeData().firstDayOfWeek() });
+            pikadayConfiguration.update({
+                i18n: locale,
+                firstDay: moment.localeData().firstDayOfWeek(),
+                format: moment.localeData().longDateFormat('L')
+            });
 
             return response;
+        };
+
+        const localizeDateUtils = () => {
+            dateUtils.init();
+            return Promise.resolve();
         };
 
         const loadGettextCatalog = (lang) => {
@@ -150,7 +159,7 @@ angular.module('proton.commons')
         };
 
         const load = (lang) => {
-            return loadGettextCatalog(lang).then(localizePikaday);
+            return loadGettextCatalog(lang).then(localizeDateUtils).then(localizePikaday);
         };
 
         return load;

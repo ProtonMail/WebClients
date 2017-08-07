@@ -41,11 +41,17 @@ angular.module('proton.message')
 
         class Message {
 
+
             constructor(msg) {
                 _.extend(this, angular.copy(msg));
+
+
+                const autoreplyHeaders = ['X-Autoreply', 'X-Autorespond', 'X-Autoreply-From', 'X-Mail-Autoreply'];
+                const { ParsedHeaders = {}} = msg;
+                this.isAutoReply =  autoreplyHeaders.some((header) => header in ParsedHeaders);
+
                 return this;
             }
-
             isDraft() {
                 return this.Type === 1;
             }

@@ -1,4 +1,4 @@
-angular.module('proton.ui').directive('dateTimePicker', ($rootScope, datetimeErrorCombiner, timepickerModel) => {
+angular.module('proton.ui').directive('dateTimePicker', ($rootScope, datetimeErrorCombiner, timepickerModel, dateUtils) => {
     const minDate = new Date(1970, 1, 1);
 
     const dispatch = (type, data) => $rootScope.$emit('timepicker', { type, data });
@@ -17,8 +17,8 @@ angular.module('proton.ui').directive('dateTimePicker', ($rootScope, datetimeErr
 
             const format = moment.localeData().longDateFormat('L');
             const datepicker = elem[0].querySelector('.datepicker');
-            datepicker.setAttribute('format', format);
-            datepicker.setAttribute('placeholder', format);
+
+            datepicker.setAttribute('placeholder', dateUtils.I18N.localizedDatePlaceholder);
 
             return (scope, elem, { datePickerKey, timestamp, disableInput, labelId, zone }) => {
 
