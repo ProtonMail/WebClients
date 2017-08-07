@@ -2,6 +2,7 @@
     <message-spam-score class="messageExtra-container-error" ng-if="message.SpamScore === 100 || message.SpamScore === 101" data-score="{{ ::message.SpamScore }}"></message-spam-score>
     <message-pgp-attachments class="messageExtra-container-error" ng-if="message.PgpMimeWithAttachments"></message-pgp-attachments>
     <unsubscribe-panel ng-if="!unsubscribed && message.getListUnsubscribe()"></unsubscribe-panel>
+    <message-auto-generated ng-if="message.isAutoReply"></message-auto-generated>
     <display-content-btn data-action="remote"></display-content-btn>
     <display-content-btn data-action="embedded"></display-content-btn>
 </section>

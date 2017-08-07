@@ -223,25 +223,6 @@ angular.module('proton', [
 
     .run((consoleMessage) => consoleMessage())
 
-//
-// Pikaday config (datepicker)
-//
-
-    .config(['pikadayConfigProvider', (pikaday) => {
-        let format;
-        const language = window.navigator.userLanguage || window.navigator.language;
-
-        if (language === 'en-US') {
-            format = 'MM/DD/YYYY';
-        } else {
-            format = 'DD/MM/YYYY';
-        }
-
-        pikaday.setConfig({
-            format
-        });
-    }])
-
     .config(($logProvider, $compileProvider, $qProvider, CONFIG) => {
         const debugInfo = CONFIG.debug || false;
         $logProvider.debugEnabled(debugInfo);
