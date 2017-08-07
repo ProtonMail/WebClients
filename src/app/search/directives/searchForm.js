@@ -26,8 +26,8 @@ angular.module('proton.search')
             templateUrl: 'templates/search/searchForm.tpl.html',
             compile(elem) {
 
-                const search_date = elem.find('.search-date');
-                search_date.attr('placeholder', dateUtils.I18N.localizedDatePlaceholder);
+                const searchDate = elem.find('.search-date');
+                searchDate.attr('placeholder', dateUtils.I18N.localizedDatePlaceholder);
 
                 return (scope, el) => {
                     const unsubscribe = [];
@@ -58,14 +58,14 @@ angular.module('proton.search')
                         scope.model.begin = dateTS(parameters.begin);
                         scope.model.endRaw = dateISO(parameters.end);
                         scope.model.end = dateTS(parameters.end);
-                        scope.model.folder = _.findWhere(folders, {value: parameters.label}) || folders[0];
+                        scope.model.folder = _.findWhere(folders, { value: parameters.label }) || folders[0];
                     };
 
                     unsubscribe.push($rootScope.$on('updateUser', () => {
                         scope.addresses = searchModel.getAddresses();
                     }));
 
-                    unsubscribe.push($rootScope.$on('hotkeys', (e, {type}) => {
+                    unsubscribe.push($rootScope.$on('hotkeys', (e, { type }) => {
                         (type === 'slash') && $input.focus();
                     }));
 
@@ -73,7 +73,7 @@ angular.module('proton.search')
                         scope.query = searchValue.generateSearchString(folders);
                     }));
 
-                    unsubscribe.push($rootScope.$on('advancedSearch', (e, {type, data}) => {
+                    unsubscribe.push($rootScope.$on('advancedSearch', (e, { type, data }) => {
                         if (type === 'open') {
                             el[0].classList[data.visible ? 'add' : 'remove'](CLASS_OPEN);
                             scope.$applyAsync(() => {
@@ -82,7 +82,7 @@ angular.module('proton.search')
                             });
                         }
                     }));
-                    unsubscribe.push($rootScope.$on('labelsModel', (e, {type}) => {
+                    unsubscribe.push($rootScope.$on('labelsModel', (e, { type }) => {
                         if (type === 'cache.update' || type === 'cache.refresh') {
                             folders = searchModel.getFolderList();
                         }
@@ -90,7 +90,7 @@ angular.module('proton.search')
 
                     const go = (state, data) => {
                         $state.go(state, data);
-                        dispatch('open', {visible: false});
+                        dispatch('open', { visible: false });
                     };
 
                     const onSubmit = () => {
@@ -113,7 +113,7 @@ angular.module('proton.search')
                         unsubscribe.forEach((cb) => cb());
                         unsubscribe.length = 0;
                     });
-                }
+                };
             }
         };
     });

@@ -47,8 +47,8 @@ angular.module('proton.message')
 
 
                 const autoreplyHeaders = ['X-Autoreply', 'X-Autorespond', 'X-Autoreply-From', 'X-Mail-Autoreply'];
-                const { ParsedHeaders = {}} = msg;
-                this.isAutoReply =  autoreplyHeaders.some((header) => header in ParsedHeaders);
+                const { ParsedHeaders = {} } = msg;
+                this.isAutoReply = autoreplyHeaders.some((header) => header in ParsedHeaders);
 
                 return this;
             }
