@@ -238,3 +238,13 @@ Inpiration from 'esjay'
     transform: scale(1.0);
   }
 }
+
+
+@keyframes highlight {
+ 	0% {
+ 		background: $secondary;
+ 	}
+ 	100% {
+ 		background: none;
+ 	}
+}

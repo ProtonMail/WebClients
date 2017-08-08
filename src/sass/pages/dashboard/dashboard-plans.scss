@@ -2,8 +2,11 @@
 
 .settingsDashboard-plans-subheader {
     display: flex;
+    justify-content: space-between;
     margin-bottom: 1em;
 }
+
+.settingsDashboard-plans-subheader .vpnDiscountPanel-container { margin-right: 1em }
 
 .settingsDashboard-plans {
     display: flex;
@@ -108,3 +111,16 @@
 
 [class*="settingsDashboard-arrowToScroll"] .arrowsToScroll-button[data-direction='left'] { left: -10px }
 [class*="settingsDashboard-arrowToScroll"] .arrowsToScroll-button[data-direction='right'] { right: -10px }
+
+/* animations */
+
+/* animations */
+.showVpn [class*='Column-container'] [class*='Column-vpn']:not(.visionaryColumn-vpn) {
+    animation: highlight 1.2s;
+}
+
+/* mobile */
+body.appConfigBody-is-mobile {
+    .settingsDashboard-plans-subheader  { flex-direction: column }
+    .settingsDashboard-plans-subheader .vpnDiscountPanel-container { margin-right: 0 }
+}
