@@ -2,20 +2,23 @@ angular.module('proton.elements')
     .directive('moveElement', () => ({
         replace: true,
         templateUrl: 'templates/elements/moveElement.tpl.html',
-        link(scope, el) {
-            const $a = el.find('a');
-            const onClick = (e) => {
-                e.preventDefault();
-                const action = e.target.getAttribute('data-action');
-                if (action === 'delete') {
-                    return scope.delete();
+        link(scope, element) {
+            function onClick(event) {
+                if (event.target.tagName === 'BUTTON') {
+                    const action = event.target.getAttribute('data-action');
+
+                    if (action === 'delete') {
+                        return scope.delete();
+                    }
+
+                    scope.move(action);
                 }
-                scope.move(action);
-            };
-            $a.on('click', onClick);
+            }
+
+            element.on('click', onClick);
 
             scope.$on('$destroy', () => {
-                $a.off('click', onClick);
+                element.off('click', onClick);
             });
         }
     }));
