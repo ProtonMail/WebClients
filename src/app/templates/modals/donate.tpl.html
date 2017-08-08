@@ -4,7 +4,8 @@
         class="modal-dialog donateModal-container donateModal-type-{{::ctrl.typeOfModal}}"
         novalidate
         ng-class="{
-            'donateModal-mode-paypal': ctrl.method.value === 'paypal'
+            'donateModal-mode-paypal': ctrl.method.value === 'paypal',
+            'donateModal-mode-bitcoin': ctrl.method.value === 'bitcoin'
         }"
         ng-submit="donateForm.$valid && ctrl.donate()"
         name="donateForm">
@@ -105,9 +106,15 @@
                     data-currency="ctrl.currency.value"
                     data-callback="ctrl.paypalCallback"></paypal-view>
 
-                <p class="alert alert-info donateModal-about-bitcoin">
-                    <span translate translate-context="Info">It's also possible to donate with</span> <a href="https://protonmail.com/donate" target="_blank" translate translate-context="Link">Bitcoin</a>.
-                </p>
+               <bitcoin-view
+                   ng-if="ctrl.method.value === 'bitcoin'"
+                   class="donateModal-bitcoin"
+                   data-type="donation"
+                   data-currency="ctrl.currency.value"
+                   data-amount="ctrl.getAmount(100)"></bitcoin-view>
+
+
+               <p translate translate-context="Info">To pay via Cash, please email us at <strong>contact@protonmail.ch</strong> for instructions.</p>
             </div>
         </div>
 

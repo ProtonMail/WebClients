@@ -121,5 +121,7 @@ angular.module('proton.constants', [])
             IFRAMECLASSNAME: 'angular-squire-iframe'
         },
         URL_INFO: 'https://mail.protonmail.com/assets/host.png',
-        MIN_PAYPAL_AMOUNT: 500
+        MIN_PAYPAL_AMOUNT: 500,
+        MIN_BITCOIN_AMOUNT: 500,
+        BTC_DONATION_ADDRESS: '1Q1nhq1NbxPYAbw1BppwKbCqg58ZqMb9A8'
     });

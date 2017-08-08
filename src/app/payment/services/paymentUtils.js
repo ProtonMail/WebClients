@@ -22,6 +22,9 @@ angular.module('proton.payment')
             const list = [{
                 value: 'card',
                 label: gettextCatalog.getString('Credit card', null)
+            }, {
+                value: 'bitcoin',
+                label: 'Bitcoin'
             }];
 
             // Min amount to activate it if monthly is 50

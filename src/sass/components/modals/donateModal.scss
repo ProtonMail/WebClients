@@ -9,3 +9,30 @@
 
 .donateModal-group-btn { display: flex }
 .donateModal-btn-cancel { margin-right: auto }
+
+.donateModal-container.donateModal-mode-bitcoin {
+    [class*="donateModal-choose"],
+    .donateModal-btn-donate {
+        display: none;
+        pointer-events: none
+    }
+
+    .bitcoinView-qrcode {
+        display: flex;
+        justify-content: center;
+    }
+
+    .bitcoinDetails-label-address::after { content: ' :' }
+    .bitcoinDetails-item-address {
+        display: block;
+        text-align: center;
+        margin-top: .5em;
+    }
+}
+
+.donateModal-container:not(.donateModal-mode-bitcoin) {
+    .donateModal-btn-cancel {
+        display: none;
+        pointer-events: none
+    }
+}
