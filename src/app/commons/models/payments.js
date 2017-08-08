@@ -1,5 +1,5 @@
 angular.module('proton.commons')
-    .factory('Payment', ($http, $q, authentication, url, brick, paymentPlansFormator) => {
+    .factory('Payment', ($http, authentication, url, brick, paymentPlansFormator) => {
 
         const requestUrl = url.build('payments');
         const transformRepBillingCycle = (data) => {
@@ -234,8 +234,6 @@ angular.module('proton.commons')
             });
         };
 
-        const cardType = (number) => Promise.resolve($.payment.cardType(number));
-
         const btc = (Amount, Currency) => $http.post(requestUrl('bcinfo'), { Amount, Currency });
 
         return {
@@ -246,7 +244,6 @@ angular.module('proton.commons')
             updateMethod, deleteMethod, methods,
             subscribe, unsubscribe,
             delete: destroy,
-            btc, organization, user,
-            cardType
+            btc, organization, user
         };
     });

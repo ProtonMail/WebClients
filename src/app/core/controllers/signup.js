@@ -1,22 +1,17 @@
 angular.module('proton.core')
     .controller('SignupController', (
-        $http,
-        $httpParamSerializer,
         $location,
         $log,
-        $q,
         $rootScope,
         $scope,
         $state,
         $stateParams,
         $timeout,
-        $window,
         Address,
         authentication,
         confirmModal,
         cardModel,
         CONSTANTS,
-        direct,
         domains,
         gettextCatalog,
         Key,
@@ -29,29 +24,16 @@ angular.module('proton.core')
         Reset,
         setupKeys,
         tools,
-        aboutClient,
         url,
         settingsApi,
-        User
+        User,
+        AppModel,
+        signupModel,
+        paymentUtils
     ) => {
-        let childWindow;
-        let accountCopy;
-        const currentYear = new Date().getFullYear();
-        // Change this to our captcha key, configurable in Angular?
-        const captchaMessage = {
-            type: 'pm_captcha',
-            language: 'en',
-            key: '6LcWsBUTAAAAAOkRfBk-EXkGzOfcSz3CzvYbxfTn'
-        };
+        const unsubscribe = [];
+
         $scope.keyPhase = CONSTANTS.KEY_PHASE;
-        $scope.card = {};
-        $scope.donationCard = {};
-        $scope.donationCurrencies = [
-            { label: 'USD', value: 'USD' },
-            { label: 'EUR', value: 'EUR' },
-            { label: 'CHF', value: 'CHF' }
-        ];
-        $scope.donationDetails = { amount: 5, currency: $scope.donationCurrencies[1] };
         $scope.compatibility = tools.isCompatible();
         $scope.showFeatures = false;
         $scope.filling = true;
@@ -65,43 +47,10 @@ angular.module('proton.core')
         $scope.setupAccount = false;
         $scope.getUserInfo = false;
         $scope.finishCreation = false;
-        $scope.verifyCode = false;
         $scope.errorPay = false;
-        $scope.approvalURL = false;
         $scope.generating = false;
-        $scope.paypalNetworkError = false;
-        $scope.method = 'card';
-        $scope.months = _.range(1, 13);
-        $scope.years = _.range(currentYear, currentYear + 12);
-        $scope.domains = _.map(domains, (domain) => ({ label: domain, value: domain }));
-        $scope.signup = { verificationSent: false, smsVerificationSent: false };
-
-        // FIX ME - Bart. Jan 18, 2016. Mon 2:29 PM.
-        function captchaReceiveMessage(event) {
-            if (typeof event.origin === 'undefined' && typeof event.originalEvent.origin === 'undefined') {
-                return;
-            }
-
-            // For Chrome, the origin property is in the event.originalEvent object.
-            const origin = event.origin || event.originalEvent.origin;
-
-            // Change window.location.origin to wherever this is hosted ( 'https://secure.protonmail.com:443' )
-            if (origin !== 'https://secure.protonmail.com') {
-                return;
-            }
-
-            const data = event.data;
-
-            if (data.type === 'pm_captcha') {
-                $scope.$applyAsync(() => {
-                    $scope.account.captcha_token = data.token;
-                });
-            }
-
-            if (data.type === 'pm_height') {
-                $('#pm_captcha').height(event.data.height + 40);
-            }
-        }
+        $scope.domains = _.map(domains, (value) => ({ label: value, value }));
+        $scope.isFromInvitation = AppModel.is('preInvited');
 
         function initUsername() {
             const URLparams = $location.search();
@@ -110,19 +59,17 @@ angular.module('proton.core')
         }
 
         function initialization() {
-        // direct comes from the resolve in route, sometimes
-            if (direct) {
-                const { VerifyMethods = [] } = direct;
-                // determine what activation methods to show
-                $scope.showEmail = _.contains(VerifyMethods, 'email');
-                $scope.showCaptcha = _.contains(VerifyMethods, 'captcha');
-                $scope.showSms = _.contains(VerifyMethods, 'sms');
-                $scope.showPayment = _.contains(VerifyMethods, 'payment');
-            }
+
 
             if (plans.length > 0) {
                 $scope.plan = _.findWhere(plans, { Name: $stateParams.plan, Cycle: parseInt($stateParams.billing, 10), Currency: $stateParams.currency });
-                $scope.paypalSupport = parseInt($stateParams.billing, 10) === 12 && !aboutClient.isIE11(); // IE11 doesn't support PayPal
+
+                const { list, selected } = paymentUtils.generateMethods({
+                    Cycle: +$stateParams.billing
+                });
+
+                $scope.methods = list;
+                $scope.method = selected;
             }
 
             $scope.account = {
@@ -136,72 +83,7 @@ angular.module('proton.core')
 
             // Clear auth data
             authentication.logout(false, authentication.isLoggedIn());
-
-            // Captcha
-            window.addEventListener('message', captchaReceiveMessage, false);
-
-            // Change window.location.origin to wherever this is hosted ( 'https://secure.protonmail.com:443' )
-            window.captchaSendMessage = () => {
-                const iframe = document.getElementById('pm_captcha');
-                iframe.contentWindow.postMessage(captchaMessage, 'https://secure.protonmail.com');
-            };
         }
-
-        $scope.initHumanityTest = () => {
-            if ($scope.showCaptcha) {
-                $scope.verificator = 'captcha';
-                $scope.setIframeSrc();
-            } else if ($scope.showEmail) {
-                $scope.verificator = 'email';
-            } else if ($scope.showSms) {
-                $scope.verificator = 'sms';
-            }
-        };
-
-        $scope.setIframeSrc = () => {
-            const iframe = document.getElementById('pm_captcha');
-            const parameters = $httpParamSerializer({ token: 'signup', client: 'web', host: url.host() });
-            iframe.onload = window.captchaSendMessage;
-            iframe.src = 'https://secure.protonmail.com/captcha/captcha.html?' + parameters;
-        };
-
-        $scope.sendVerificationCode = () => {
-            const promise = User.code({
-                Username: accountCopy.username,
-                Type: 'email',
-                Destination: { Address: $scope.account.emailVerification }
-            })
-                .then(({ data = {} } = {}) => {
-                    if (data.Code === 1000) {
-                        $scope.signup.verificationSent = true;
-                        return Promise.resolve();
-                    }
-                    throw new Error(data.Error);
-                });
-            networkActivityTracker.track(promise);
-        };
-
-        $scope.sendSmsVerificationCode = () => {
-            $scope.smsSending = true;
-            const promise = User.code({
-                Username: accountCopy.username,
-                Type: 'sms',
-                Destination: { Phone: $scope.account.smsVerification }
-            })
-                .then(({ data = {} } = {}) => {
-                    $scope.smsSending = false;
-                    if (data.Code === 1000) {
-                        $scope.signup.smsVerificationSent = true;
-                        return Promise.resolve();
-                    }
-                    throw new Error(data.Error);
-                })
-                .catch((error) => {
-                    $scope.smsSending = false;
-                    throw error;
-                });
-            networkActivityTracker.track(promise);
-        };
 
         $scope.createAccount = () => {
             $scope.humanityTest = false;
@@ -253,181 +135,106 @@ angular.module('proton.core')
 
             // Save variables to prevent extensions/etc
             // from modifying them during setup process
-            accountCopy = angular.copy($scope.account);
+            signupModel.store($scope.account);
+            signupModel.set('Type', CONSTANTS.INVITE_MAIL);
 
-            networkActivityTracker.track(
-                generateNewKeys()
-                    .then(() => {
-                        $timeout(() => {
-                            $scope.genNewKeys = false;
+            const promise = generateNewKeys()
+                .then(() => {
+                    $timeout(() => {
+                        $scope.genNewKeys = false;
 
-                            if ($rootScope.preInvited) {
-                                $scope.createAccount();
-                            } else if (plans.length > 0) {
-                                if ($scope.showPayment) {
-                                    $scope.payment = true;
-                                } else {
-                                    $scope.humanityTest = true;
-                                    const message = gettextCatalog.getString("It currently isn't possible to subscribe to a Paid ProtonMail plan.", null);
-                                    notify(message);
-                                }
+                        if (AppModel.is('preInvited')) {
+                            return $scope.createAccount();
+                        }
+
+                        if (plans.length > 0) {
+                            if (signupModel.optionsHumanCheck('payment')) {
+                                $scope.payment = true;
                             } else {
                                 $scope.humanityTest = true;
+                                const message = gettextCatalog.getString("It currently isn't possible to subscribe to a Paid ProtonMail plan.", null);
+                                notify(message);
                             }
-                        }, 2000);
-                    })
-            );
+                        } else {
+                            $scope.humanityTest = true;
+                        }
+                    }, 2000);
+                });
+            networkActivityTracker.track(promise);
         }
 
         function generateNewKeys() {
 
             $scope.genNewKeys = true;
 
-            let mbpw = accountCopy.mailboxPassword;
+            let password = signupModel.get('mailboxPassword');
 
             if ($scope.keyPhase > 2) {
-                mbpw = accountCopy.loginPassword;
+                password = signupModel.get('loginPassword');
             }
 
             $log.debug('generateKeys');
-
-            const email = accountCopy.username + '@' + accountCopy.domain.value;
-            return setupKeys.generate([{ ID: 0, Email: email }], mbpw)
+            return setupKeys.generate([{
+                ID: 0,
+                Email: signupModel.getEmail()
+            }], password)
                 .then((result) => {
-                    // Save for later
+                // Save for later
                     $scope.setupPayload = result;
                 });
         }
 
-        $scope.chooseCard = () => {
-            $scope.method = 'card';
-        };
-
-        $scope.choosePaypal = () => {
-            $scope.method = 'paypal';
-
-            if ($scope.approvalURL === false) {
-                $scope.initPaypal();
-            }
-        };
-
-        $scope.initPaypal = () => {
-            $scope.paypalNetworkError = false;
-
-            Payment.paypal({ Amount: $scope.plan.Amount, Currency: $scope.plan.Currency })
-                .then(({ data = {} } = {}) => {
-                    if (data.Code === 1000) {
-                        return Promise.resolve(data);
-                    }
-                    if (data.Code === 22802) {
-                        $scope.paypalNetworkError = true;
-                    }
-                    throw new Error(data.Error || gettextCatalog.getString('Error connecting to PayPal.', null));
-                })
-                .then(({ ApprovalURL }) => $scope.approvalURL = ApprovalURL);
+        // $scope.chooseCard = () => {
+        $scope.choosMethod = (type) => {
+            $scope.method = type;
         };
 
         function verify(method, amount, currency) {
             $scope.errorPay = false;
+            const promise = Payment.verify({
+                Username: signupModel.get('username'),
+                Amount: amount,
+                Currency: currency,
+                Payment: method
+            })
+                .then(({ data = {} } = {}) => {
+                    if (data.Code === 1000) {
+                        signupModel.set('VerifyCode', data.VerifyCode);
+                        $scope.payment = false;
+                        $rootScope.tempPlan = $scope.plan; // We need to subcribe this user later
+                        $rootScope.tempMethod = method; // We save this payment method to save it later
+                        return $scope.createAccount();
+                    }
 
-            networkActivityTracker.track(
-                Payment.verify({
-                    Username: accountCopy.username,
-                    Amount: amount,
-                    Currency: currency,
-                    Payment: method
-                })
-                    .then((result) => {
-                        if (result.data && result.data.Code === 1000) {
-                            $scope.verifyCode = result.data.VerifyCode;
-                            $scope.payment = false;
-                            $rootScope.tempPlan = $scope.plan; // We need to subcribe this user later
-                            $rootScope.tempMethod = method; // We save this payment method to save it later
-                            $scope.createAccount();
-                        } else if (result.data && result.data.Error) {
-                            notify({ message: result.data.Error, classes: 'notification-danger' }); // We were unable to successfully charge your card. Please try a different card or contact your bank for assistance.
-                            $scope.errorPay = true;
-                        } else {
-                            $scope.errorPay = true;
-                        }
-                    })
-            );
+                    $scope.errorPay = true;
+                    if (data.Error) {
+                        // We were unable to successfully charge your card. Please try a different card or contact your bank for assistance.
+                        throw new Error(data.Error);
+                    }
+                });
+            networkActivityTracker.track(promise);
         }
 
-        $scope.selectAmount = (amount) => {
-            $scope.donationDetails.otherAmount = null;
-            $scope.donationDetails.amount = amount;
-        };
-
-        $scope.onFocusOtherAmount = () => {
-            $scope.donationDetails.amount = null;
-        };
-
-        $scope.donate = () => {
-            const card = cardModel($scope.donationCard);
-            const amount = ($scope.donationDetails.otherAmount || $scope.donationDetails.amount) * 100; // Don't be afraid
-            const currency = $scope.donationDetails.currency.value;
-            const method = {
-                Type: 'card',
-                Details: card.details()
-            };
-            verify(method, amount, currency);
-        };
-
-        function receivePaypalMessage(event) {
-            const origin = event.origin || event.originalEvent.origin; // For Chrome, the origin property is in the event.originalEvent object.
-
-            if (origin !== 'https://secure.protonmail.com') {
-                return;
-            }
-
-            const { payerID, paymentID, cancel } = event.data;
-            const method = { Type: 'paypal', Details: { PayerID: payerID, PaymentID: paymentID, Cancel: cancel } };
-
-            verify(method, $scope.plan.Amount, $scope.plan.Currency);
-            childWindow.close();
-            window.removeEventListener('message', receivePaypalMessage, false);
-        }
-
-        $scope.openPaypalTab = () => {
-            childWindow = window.open($scope.approvalURL, 'PayPal');
-            window.addEventListener('message', receivePaypalMessage, false);
+        const donate = ({ options = {} }) => {
+            const { Payment, Amount, Currency } = options;
+            verify(Payment, Amount, Currency);
         };
 
         $scope.pay = () => {
-            const card = cardModel($scope.card);
+            const card = cardModel($scope.account.card);
             const method = { Type: 'card', Details: card.details() };
 
             verify(method, $scope.plan.Amount, $scope.plan.Currency);
         };
 
+        $scope.onPaypalSuccess = (Details) => {
+            verify({ Type: 'paypal', Details }, $scope.plan.Amount, $scope.plan.Currency);
+        };
+
         function doCreateUser() {
             $scope.createUser = true;
 
-            const params = {
-                Username: accountCopy.username,
-                Email: accountCopy.notificationEmail,
-                Referrer: $location.search().ref
-            };
-
-            if ($stateParams.inviteToken) {
-                params.Token = $stateParams.inviteSelector + ':' + $stateParams.inviteToken;
-                params.TokenType = 'invite';
-            } else if (angular.isDefined($scope.account.captcha_token) && $scope.account.captcha_token !== false) {
-                params.Token = $scope.account.captcha_token;
-                params.TokenType = 'captcha';
-            } else if ($scope.verifyCode) {
-                params.Token = $scope.verifyCode;
-                params.TokenType = 'payment';
-            } else if ($scope.signup.smsVerificationSent !== false) {
-                params.Token = $scope.account.smsCodeVerification;
-                params.TokenType = 'sms';
-            } else if ($scope.signup.verificationSent !== false) {
-                params.Token = $scope.account.codeVerification;
-                params.TokenType = 'email';
-            }
-
-            return User.create(params, accountCopy.loginPassword)
+            return signupModel.createUser($scope.account)
                 .then((rep) => {
                 // Failed Human verification
                     if (rep.data.Code === 12087) {
@@ -453,8 +260,8 @@ angular.module('proton.core')
             if (response.data && response.data.Code === 1000) {
                 $scope.logUserIn = true;
                 return authentication.loginWithCredentials({
-                    Username: accountCopy.username,
-                    Password: accountCopy.loginPassword
+                    Username: signupModel.get('username'),
+                    Password: signupModel.get('loginPassword')
                 })
                     .then(({ data }) => {
                         authentication.receivedCredentials(data);
@@ -476,13 +283,13 @@ angular.module('proton.core')
 
             $scope.setupAccount = true;
 
-            return Address.setup({ Domain: accountCopy.domain.value })
+            return Address.setup({ Domain: signupModel.getDomain() })
                 .then(({ data = {} } = {}) => {
                     if (data.Code === 1000) {
                         // Replace 0 with correct address ID
                         $scope.setupPayload.keys[0].AddressID = data.Address.ID;
 
-                        return setupKeys.setup($scope.setupPayload, accountCopy.loginPassword)
+                        return setupKeys.setup($scope.setupPayload, signupModel.get('loginPassword'))
                             .then(() => {
                                 authentication.savePassword($scope.setupPayload.mailboxPassword);
 
@@ -516,6 +323,21 @@ angular.module('proton.core')
                 $state.go('secured.dashboard');
             }
         }
+
+        unsubscribe.push($rootScope.$on('humanVerification', (e, { type, data = {} }) => {
+            if (type === 'captcha') {
+                $scope.$applyAsync(() => {
+                    $scope.account.captcha_token = data.token;
+                });
+            }
+        }));
+
+        unsubscribe.push($rootScope.$on('payments', (e, { type, data = {} }) => {
+            if (type === 'create.account') {
+                (data.type !== 'donation') && $scope.createAccount();
+                (data.type === 'donation') && donate(data);
+            }
+        }));
 
         initialization();
     });

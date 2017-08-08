@@ -30,9 +30,15 @@
     }
 }
 
-.donateModal-container:not(.donateModal-mode-bitcoin) {
-    .donateModal-btn-cancel {
-        display: none;
-        pointer-events: none
-    }
+.donateModal-container .donationForm-info,
+.donateModal-container .donationForm-footer { display: none  }
+
+
+.donateModal-mode-bitcoin {
+    [for="otherAmount"] { display: none }
+
+}
+.donateModal-mode-paypal, .donateModal-mode-bitcoin {
+    .donateModal-btn-cancel { margin-left: auto; margin-right: 0 }
+    .donateModal-btn-donation { display: none }
 }

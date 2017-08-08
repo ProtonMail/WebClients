@@ -123,5 +123,10 @@ angular.module('proton.constants', [])
         URL_INFO: 'https://mail.protonmail.com/assets/host.png',
         MIN_PAYPAL_AMOUNT: 500,
         MIN_BITCOIN_AMOUNT: 500,
-        BTC_DONATION_ADDRESS: '1Q1nhq1NbxPYAbw1BppwKbCqg58ZqMb9A8'
+        BTC_DONATION_ADDRESS: '1Q1nhq1NbxPYAbw1BppwKbCqg58ZqMb9A8',
+        CURRENCIES: ['USD', 'EUR', 'CHF'],
+        BILLING_CYCLE: [1, 12],
+        IFRAME_SECURE_ORIGIN: 'https://secure.protonmail.com',
+        INVITE_URL: 'https://protonmail.com/invite',
+        DEFAULT_CURRENCY: 'EUR'
     });

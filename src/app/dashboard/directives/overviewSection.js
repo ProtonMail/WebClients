@@ -65,7 +65,7 @@ angular.module('proton.dashboard')
                 }));
 
                 unsubscribe.push($rootScope.$on('payments', (e, { type }) => {
-                    (type === 'topUp.success') && refreshUser();
+                    (type === 'topUp.request.success') && refreshUser();
                 }));
 
                 updateUser();
