@@ -277,6 +277,36 @@
     }
 }
 
+/* pm_buttons with child button */
+.pm_buttons .pm_buttons-child {
+    border-width: 0 0 0 1px;
+    padding: 0;
+    box-shadow: 0 1px 2px 0 rgba(0,0,0,0.1);
+    background: $button-background;
+}
+
+.pm_buttons .pm_buttons-child:hover,
+.pm_buttons .pm_buttons-child:focus {
+    background-color: $button-background-focus;
+    color: $button-color-focus;
+}
+
+.pm_buttons .pm_buttons-child:active {
+    background: $button-background-active;
+    box-shadow: inset 0 2px 2px 0 rgba(0,0,0,0.2);
+}
+
+.pm_buttons > .pm_buttons-child.fa::before,
+.pm_buttons > .pm_buttons-child > div {
+    display: inline-flex;
+    flex-grow: 1;
+    align-items: center;
+    padding: 0 10px;
+    cursor: pointer;
+    transition: all .3s ease-out;
+    pointer-events: none;
+}
+
 .pm_buttons, .pm_button {
     [type=checkbox][disabled]:before {
         content:"";
@@ -291,6 +321,7 @@
 .pm_buttons,
 .pm_button,
 .pm_trigger { user-select: none }
+
 
 body.appConfigBody-is-mobile {
     .pm_buttons { margin: 0 5px 0 0 }
