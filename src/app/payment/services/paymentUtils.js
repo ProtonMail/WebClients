@@ -1,5 +1,5 @@
 angular.module('proton.payment')
-    .factory('paymentUtils', (gettextCatalog, aboutClient, paymentModel) => {
+    .factory('paymentUtils', (gettextCatalog, aboutClient, paymentModel, $state) => {
 
         const cardNumber = ({ Last4 = '' } = {}) => `•••• •••• •••• ${Last4}`;
         const formatMethods = (methods = []) => {
@@ -22,10 +22,14 @@ angular.module('proton.payment')
             const list = [{
                 value: 'card',
                 label: gettextCatalog.getString('Credit card', null)
-            }, {
-                value: 'bitcoin',
-                label: 'Bitcoin'
             }];
+
+            if (!$state.is('signup')) {
+                list.push({
+                    value: 'bitcoin',
+                    label: 'Bitcoin'
+                });
+            }
 
             // Min amount to activate it if monthly is 50
             const isMonthlyValid = (Amount > 5000 && Cycle === 1);

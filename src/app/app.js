@@ -16,6 +16,7 @@ angular.module('proton', [
     'proton.core',
     'proton.outside',
     'proton.utils',
+    'proton.user',
 
     // templates
     'templates-app',
@@ -231,7 +232,7 @@ angular.module('proton', [
     })
     .config((CONFIG, CONSTANTS) => {
 
-    // Bind env on deploy
+        // Bind env on deploy
         const env = 'NODE_ENV'; // default localhost
         const localhost = 'NODE@ENV'.replace('@', '_'); // prevent auto replace
         const REGEXP_HOST = /proton(mail|vpn)\.(com|blue|host)$/;
@@ -245,3 +246,19 @@ angular.module('proton', [
             document.body.appendChild(img);
         }
     });
+
+
+/**
+     * The requestAnimationFrame polyfill
+     * Paul Irish.
+     * {@link http://www.paulirish.com/2011/requestanimationframe-for-smart-animating/}
+     */
+/*  eslint no-underscore-dangle: "off" */
+window._rAF = window._rAF || (function () {
+    return window.requestAnimationFrame ||
+         window.webkitRequestAnimationFrame ||
+         window.mozRequestAnimationFrame ||
+         function (callback) {
+             window.setTimeout(callback, 16);
+         };
+}());

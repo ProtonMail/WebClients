@@ -108,21 +108,20 @@ angular.module('proton.routes', [
                         templateUrl: 'templates/layout/pre.tpl.html'
                     }
                 },
-                onEnter($state, $stateParams, $rootScope, notify, Invite, gettextCatalog) {
-                    const { token, selector } = $stateParams;
+                onEnter($state, $stateParams, $rootScope, notify, Invite, gettextCatalog, AppModel) {
+                    const { token: inviteToken, selector: inviteSelector } = $stateParams;
                     const errorMessage = gettextCatalog.getString('Invalid invite link', null, 'Error');
 
                     $rootScope.loggingOut = false;
 
-                    Invite.check(token, selector, CONSTANTS.INVITE_MAIL)
+                    Invite.check(inviteToken, inviteSelector, CONSTANTS.INVITE_MAIL)
                         .then(({ data = {} } = {}) => {
                             if (data.Valid === 1) {
-                                $rootScope.preInvited = true;
-                                $state.go('signup', { inviteToken: $stateParams.token, inviteSelector: $stateParams.selector });
-                            } else {
-                                notify({ message: data.Error || errorMessage, classes: 'notification-danger' });
-                                $state.go('login');
+                                AppModel.set('preInvited', true);
+                                return $state.go('signup', { inviteToken, inviteSelector });
                             }
+                            notify({ message: data.Error || errorMessage, classes: 'notification-danger' });
+                            $state.go('login');
                         });
                 }
             })
@@ -130,16 +129,16 @@ angular.module('proton.routes', [
             .state('invite', {
                 url: '/invite',
                 resolve: {
-                    direct($state, $rootScope, User) {
-                        if (!$rootScope.preInvited) {
+                    direct($state, User, AppModel, CONSTANTS) {
+                        if (!AppModel.is('preInvited')) {
                             return User.direct()
                                 .then(({ data = {} } = {}) => {
                                     if (data.Direct === 1) {
                                         $state.go('signup');
-                                        return Promise.resolve();
+                                        return;
                                     }
                                     if (data.Code === 1000) {
-                                        window.location.href = 'https://protonmail.com/invite';
+                                        window.location.href = CONSTANTS.INVITE_URL;
                                         return Promise.reject();
                                     }
                                     $state.go('login');
@@ -199,53 +198,31 @@ angular.module('proton.routes', [
                     lang(i18nLoader) {
                         return i18nLoader();
                     },
-                    plans(direct, $q, $stateParams, Payment) {
-                        const deferred = $q.defer();
-                        const currencies = ['USD', 'EUR', 'CHF'];
-                        const cycles = ['1', '12'];
-                        const plans = ['free', 'plus', 'visionary'];
-                        const currency = $stateParams.currency;
-                        const cycle = $stateParams.billing;
-                        const plan = $stateParams.plan;
+                    plans(CONSTANTS, $stateParams, Payment) {
+                        const isValid = (test, list = []) => list.indexOf(test) !== -1;
+                        const { currency, billing: cycle, plan } = $stateParams;
 
-                        if (cycles.indexOf(cycle) !== -1 && currencies.indexOf(currency) !== -1 && plans.indexOf(plan) !== -1) {
+                        const isValidCurrency = isValid(currency, CONSTANTS.CURRENCIES);
+                        const isValidCycle = isValid(+cycle, CONSTANTS.BILLING_CYCLE);
+                        // @todo -> add professionnal plan
+                        const isValidPlan = isValid(plan, ['free', 'plus', 'visionary']);
+
+                        if (isValidCycle && isValidCurrency && isValidPlan) {
+
                             if (plan === 'free') {
-                                deferred.resolve([]);
-                            } else {
-                                Payment.plans(currency, cycle)
-                                    .then(({ data = {} }) => {
-                                        if (data.Code === 1000) {
-                                            deferred.resolve(data.Plans);
-                                        } else {
-                                            deferred.reject();
-                                        }
-                                    });
+                                return Promise.resolve([]);
                             }
-                        } else {
-                            deferred.resolve([]);
+
+                            return Payment.plans(currency, cycle).then(({ data }) => data.Plans);
                         }
 
-                        return deferred.promise;
+                        return Promise.resolve([]);
                     },
-                    domains(direct, pmDomainModel) {
+                    optionsHumanCheck(signupModel) {
+                        return signupModel.getOptionsVerification();
+                    },
+                    domains(pmDomainModel) {
                         return pmDomainModel.fetch();
-                    },
-                    direct($state, $rootScope, User) {
-                        if (!$rootScope.preInvited) {
-                            return User.direct()
-                                .then(({ data = {} } = {}) => {
-                                    if (data.Direct === 1) {
-                                        return Promise.resolve(data);
-                                    }
-                                    if (data.Code === 1000) {
-                                        window.location.href = 'https://protonmail.com/invite';
-                                        return Promise.reject();
-                                    }
-                                    $state.go('login');
-                                    return Promise.reject();
-                                });
-                        }
-                        return Promise.resolve();
                     }
                 }
             })

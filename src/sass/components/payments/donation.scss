@@ -1,0 +1,14 @@
+.donationForm-container.donationForm-is-invalid {
+    &[class*="ng-invalid-"] .ng-invalid {
+       border: 1px solid $red
+    }
+}
+
+.donationForm-container {
+    [ng-message] { margin: .5em 0 0 }
+}
+
+.donationForm-amount-row-2 { margin-bottom: 0 }
+.donationForm-cardView { margin-top: 1em }
+
+.donationForm-method-payal .donationForm-btn-submit { display: none }

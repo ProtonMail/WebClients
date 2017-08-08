@@ -88,12 +88,16 @@
 @import "ui/scrollbox";
 @import "ui/arrowsToScroll";
 
-
 // === Settings UI
 @import "settings-ui/headerBlock.scss";
 
 
 //===  Custom Components ================//
+
+// === User
+@import "components/user/humanVerification";
+
+
 //== Composer
 @import "components/composer/composer";
 @import "components/composer/composerOptions";
@@ -189,6 +193,7 @@
 
 //== Payments
 @import "components/payments/tosubscribeOverview";
+@import "components/payments/donation";
 
 //== FeedBack
 @import "components/feedback/feedback";

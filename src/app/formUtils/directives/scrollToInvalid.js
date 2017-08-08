@@ -3,13 +3,12 @@ angular.module('proton.formUtils')
         return {
             restrict: 'A',
             scope: {
-                valid: '&'
+                valid: '&scrollToInvalidOnValid'
             },
-            link(scope, element) {
-                const form = element[0];
+            link(scope, el) {
 
                 function onSubmit() {
-                    const firstInvalid = form.querySelector('.ng-invalid');
+                    const firstInvalid = el[0].querySelector('.ng-invalid');
                     if (firstInvalid) {
                         firstInvalid.focus();
                         return false;
@@ -17,10 +16,10 @@ angular.module('proton.formUtils')
                     scope.valid();
                 }
 
-                form.addEventListener('submit', onSubmit);
+                el.on('submit', onSubmit);
 
                 scope.$on('$destroy', () => {
-                    form.removeEventListener('submit', onSubmit);
+                    el.off('submit', onSubmit);
                 });
             }
         };

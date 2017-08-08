@@ -1,1 +1,1 @@
-angular.module('proton.formUtils', []);
+angular.module('proton.formUtils', ['ngIntlTelInput']);

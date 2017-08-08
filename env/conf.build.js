@@ -76,7 +76,10 @@ module.exports = {
       "vendor/ua-parser-js/dist/ua-parser.min.js",
       "vendor/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.concat.min.js",
       "vendor/ng-scrollbars/dist/scrollbars.min.js",
-      "vendor/sieve/sieve.js"
+      "vendor/sieve/sieve.js",
+      'vendor/intl-tel-input/build/js/intlTelInput.js',
+      'vendor/intl-tel-input/build/js/utils.js',
+      'vendor/ng-intl-tel-input/dist/ng-intl-tel-input.js',
     ],
     bootstrap_components: [
       "affix",
