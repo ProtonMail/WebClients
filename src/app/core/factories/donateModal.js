@@ -116,7 +116,7 @@ angular.module('proton.core')
                 this.changeValue = () => {
                     const ghost = this.method.value;
 
-                    if (ghost === 'paypal') {
+                    if (ghost === 'paypal' || ghost === 'bitcoin') {
                         this.method.value = '';
                         _rAF(() => {
                             $rootScope.$applyAsync(() => (this.method.value = ghost));
@@ -124,7 +124,7 @@ angular.module('proton.core')
                     }
                 };
 
-                this.getAmount = () => (this.otherAmount || this.amount || 0);
+                this.getAmount = (multi = 1) => (this.otherAmount || this.amount || 0) * multi;
                 this.paypalCallback = (config) => {
                     this.paypalConfig = config;
                     this.donate();

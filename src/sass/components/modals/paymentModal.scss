@@ -30,3 +30,20 @@
     .paymentsModal-btn-close { margin-left: auto  }
 
 }
+
+.paymentsModal-container.paymentsModal-method-bitcoin {
+
+    .bitcoinView-qrcode {
+        display: flex;
+        justify-content: center;
+    }
+
+    [class*="bitcoinDetails-label-"]::after { content: ' :'; margin-right: .5em }
+    .bitcoinDetails-item-address {
+        text-align: center;
+        margin-top: .5em;
+    }
+
+    .bitcoinDetails-label-address { display: block }
+    .bitcoinDetails-label-amount {display: inline-block}
+}
