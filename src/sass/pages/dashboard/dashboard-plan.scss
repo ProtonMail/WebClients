@@ -59,7 +59,10 @@
     margin: 0;
 }
 [class*='Column-container'] [class*='addonRow'] .addonRow-vpn { margin-right: 5px }
-[class*='Column-container'] [class*='addonRow'] .pm_select { flex: 1 }
+[class*='Column-container'] [class*='addonRow'] .pm_select {
+    flex: 1;
+    background: #FFF; /* highlight background*/
+}
 [class*='Column-container'] [class*='addonRow'] .pm_select select {
     width: 100%;
     padding-right: 40px /* info circle*/
