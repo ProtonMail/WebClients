@@ -80,6 +80,13 @@ module.exports = {
       'vendor/intl-tel-input/build/js/intlTelInput.js',
       'vendor/intl-tel-input/build/js/utils.js',
       'vendor/ng-intl-tel-input/dist/ng-intl-tel-input.js',
+      'vendor/blobjs/Blob.js',
+      'vendor/file-saver/FileSaver.js',
+      'vendor/base32/dist/base32.js',
+      'vendor/qrcodejs/qrcode.js',
+      'vendor/mailparser/mailparser.js',
+      'vendor/cssua/cssua.js',
+      'vendor/asmcrypto/asmcrypto.js'
     ],
     bootstrap_components: [
       "affix",

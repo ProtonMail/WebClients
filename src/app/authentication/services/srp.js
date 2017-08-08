@@ -16,7 +16,7 @@ angular.module('proton.authentication')
             for (let i = 0; i < arr.length; i++) {
                 reversed[arr.length - i - 1] = arr[i];
             }
-            return new asmCrypto_bn.BigNumber(reversed);
+            return new asmCrypto.BigNumber(reversed);
         }
 
         function fromBN(bn) {
@@ -28,7 +28,7 @@ angular.module('proton.authentication')
             return reversed;
         }
 
-        const generator = new asmCrypto_bn.BigNumber(2);
+        const generator = new asmCrypto.BigNumber(2);
 
         let multiplier = toBN(hash(openpgp.util.concatUint8Array([fromBN(generator), modulus])));
 
@@ -42,7 +42,7 @@ angular.module('proton.authentication')
             return { Type: 'Error', Description: 'SRP modulus has incorrect size' };
         }
 
-        modulus = new asmCrypto_bn.Modulus(modulus);
+        modulus = new asmCrypto.Modulus(modulus);
         multiplier = modulus.reduce(multiplier);
 
         if (multiplier.compare(1) <= 0 || multiplier.compare(modulusMinusOne) >= 0) {
@@ -105,7 +105,7 @@ angular.module('proton.authentication')
             for (let i = 0; i < arr.length; i++) {
                 reversed[arr.length - i - 1] = arr[i];
             }
-            return new asmCrypto_bn.BigNumber(reversed);
+            return new asmCrypto.BigNumber(reversed);
         }
 
         function fromBN(bn) {
@@ -117,9 +117,9 @@ angular.module('proton.authentication')
             return reversed;
         }
 
-        const generator = new asmCrypto_bn.BigNumber(2);
+        const generator = new asmCrypto.BigNumber(2);
 
-        modulus = new asmCrypto_bn.Modulus(toBN(modulus));
+        modulus = new asmCrypto.Modulus(toBN(modulus));
         hashedPassword = toBN(hashedPassword);
 
         const verifier = modulus.power(generator, hashedPassword);
