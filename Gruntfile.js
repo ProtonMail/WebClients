@@ -98,8 +98,8 @@ module.exports = function (grunt) {
                         'src/app/**/*.js',
                         'src/app/**/**/*.js',
                         '!src/app/translations.js',
-                        '!src/app/libraries/**/*.js',
-                        'src/app/libraries/pmcrypto.js', // Do babel on pmcrypto
+                        '!src/libraries/**/*.js',
+                        'src/libraries/pmcrypto.js', // Do babel on pmcrypto
                         '!src/app/templates/templates-app.js'
                     ],
                     dest: '<%= build_dir %>',
@@ -112,9 +112,9 @@ module.exports = function (grunt) {
                 files: [{
                     src: [
                         '<%= build_dir %>/src/app/**/*.js',
-                        '!<%= build_dir %>/src/app/libraries/**/*.js',
+                        '!<%= build_dir %>/src/libraries/**/*.js',
                         '!<%= build_dir %>/src/app/translations.js',
-                        '<%= build_dir %>/src/app/libraries/pmcrypto.js', // Do babel on pmcrypto
+                        '<%= build_dir %>/src/libraries/pmcrypto.js', // Do babel on pmcrypto
                         '!<%= build_dir %>/src/app/templates/templates-app.js'
                     ],
                     dest: '.',
@@ -286,8 +286,12 @@ module.exports = function (grunt) {
                     banner: '<%= meta.banner %>'
                 },
                 files: {
-                    '<%= compile_dir %>/assets/app.js': [
+                    '<%= compile_dir %>/assets/vendor.js': [
                         '<%= vendor_files.js %>',
+                        '!<%= build_dir %>/src/libraries/mailparser.js',
+                        '<%= build_dir %>/src/libraries/*.js'
+                    ],
+                    '<%= compile_dir %>/assets/app.js': [
                         '<%= build_dir %>/src/app/**/index.js',
                         '<%= build_dir %>/src/app/**/*.js'
                     ]
@@ -348,7 +352,6 @@ module.exports = function (grunt) {
                 mangle: false,
                 sourceMap: true,
                 sourceMapIncludeSources: true,
-                sourceMapIn: '<%= compile_dir %>/assets/app.js.map',
                 preserveComments: false,
                 report: 'min'
             },
@@ -357,7 +360,8 @@ module.exports = function (grunt) {
                     banner: '<%= meta.banner %>'
                 },
                 files: {
-                    '<%= compile_dir %>/assets/app.js': '<%= compile_dir %>/assets/app.js'
+                    '<%= compile_dir %>/assets/app.js': '<%= compile_dir %>/assets/app.js',
+                    '<%= compile_dir %>/assets/vendor.js': '<%= compile_dir %>/assets/vendor.js'
                 }
             }
         },
@@ -383,6 +387,7 @@ module.exports = function (grunt) {
                 dir: '<%= compile_dir %>',
                 src: [
                     '<%= compile_dir %>/openpgp.min.js',
+                    '<%= compile_dir %>/assets/vendor.js',
                     '<%= compile_dir %>/assets/app.js',
                     '<%= compile_dir %>/assets/app.css'
                 ],
@@ -396,6 +401,7 @@ module.exports = function (grunt) {
                     match: [{
                         'assets/app.css': '<%= compile_dir %>/assets/app.css',
                         'assets/app.js': '<%= compile_dir %>/assets/app.js',
+                        'assets/vendor.js': '<%= compile_dir %>/assets/vendor.js',
                         'openpgp.min.js': '<%= build_dir %>/openpgp.min.js', // 'build' is correct here
                         'openpgp.worker.min.js': '<%= build_dir %>/openpgp.worker.min.js' // 'build' is correct here
                     }],
@@ -404,6 +410,7 @@ module.exports = function (grunt) {
                 files: { // This breaks if the 'cwd' option is used. I don't know why.
                     src: [
                         '<%= compile_dir %>/app.html',
+                        '<%= compile_dir %>/assets/vendor.js',
                         '<%= compile_dir %>/assets/app.js',
                         '<%= compile_dir %>/openpgp.min.js',
                         '<%= compile_dir %>/openpgp.worker.min.js'
@@ -602,7 +609,7 @@ module.exports = function (grunt) {
         'delta'
     ]);
 
-    grunt.registerTask('deploy', [
+    const deployTasks = [
         'clean:dist', // clean dist directory
         'nggettext_extract', // extract key inside JS and HTML files
         'nggettext_compile', // transform po file to translations.js
@@ -625,7 +632,10 @@ module.exports = function (grunt) {
         'wait:push',
         'shell:i18n',
         'shell:syncPackage'
-    ]);
+    ];
+
+    const listTasksDeploy = isDistRelease() ? deployTasks : deployTasks.filter((key) => key !== 'nggettext_extract');
+    grunt.registerTask('deploy', listTasksDeploy);
 
     grunt.registerTask('build', [
         'clean:build',

@@ -247,18 +247,3 @@ angular.module('proton', [
         }
     });
 
-
-/**
-     * The requestAnimationFrame polyfill
-     * Paul Irish.
-     * {@link http://www.paulirish.com/2011/requestanimationframe-for-smart-animating/}
-     */
-/*  eslint no-underscore-dangle: "off" */
-window._rAF = window._rAF || (function () {
-    return window.requestAnimationFrame ||
-         window.webkitRequestAnimationFrame ||
-         window.mozRequestAnimationFrame ||
-         function (callback) {
-             window.setTimeout(callback, 16);
-         };
-}());
