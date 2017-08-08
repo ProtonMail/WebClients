@@ -3,11 +3,12 @@ angular.module('proton.conversation')
 
         const CLEANER = document.createElement('div');
         const contains = (key, labels) => _.contains(labels, CONSTANTS.MAILBOX_IDENTIFIERS[key]);
+
         /**
-     * Remove HTML inside a string, prevent XSS
-     * @param  {String} s
-     * @return {String}
-     */
+         * Remove HTML inside a string, prevent XSS
+         * @param  {String} s
+         * @return {String}
+         */
         const stripHTML = (s) => {
             CLEANER.innerText = s || '';
             return CLEANER.innerHTML;
@@ -28,12 +29,12 @@ angular.module('proton.conversation')
         };
 
         /**
-    * Compile a template with its className and the tooltip to display
-    * @param  {String} options.className
-    * @param  {String} options.tooltip
-    * @param  {Function} templateMaker          Custom funciton to build a template function(className, tooltip)
-    * @return {String}                   template
-    */
+         * Compile a template with its className and the tooltip to display
+         * @param  {String} options.className
+         * @param  {String} options.tooltip
+         * @param  {Function} templateMaker          Custom funciton to build a template      function(className, tooltip)
+         * @return {String}                   template
+         */
         const icon = ({ className = '', tooltip = '', color = '' }, templateMaker) => {
             if (className && tooltip) {
                 if (templateMaker) {
@@ -45,26 +46,41 @@ angular.module('proton.conversation')
         };
 
         /**
-    * Returm a factory to expose a context
-    * @param  {Object} options.MAP_LABELS map {<label> : {tootlip: <string:translated>, className: <string> }}
-    * @param  {Object} options.MAP_TAGS   {<tag> : {tootlip: <string:translated>, className: <string> }}
-    * @return {Object}                    {getTemplateLabels, getTemplateTags}
-    */
-        return ({ MAP_LABELS, MAP_TYPES }) => {
+         * Escape the tooltip because as pt-tooltip is a directive Angular
+         * will parse the attribute. We cannot limit this via Angular itself
+         * Let's add an empty space `u8203` between {{
+         * Angular won't parse it and it doesn't break the label's Name
+         *
+         * ==> Don't worry there is an empty space, but you cannot see it
+         * (⌐■_■)
+         * @param  {String} input
+         * @return {String}
+         */
+        const escapeTooltip = (input = '') => input.replace(/^{{/g, '{​{');
 
         /**
-        * Take a list of labels and check if they exist inside MAILBOX_IDENTIFIERS
-        * Then create a template for the icon matching this label based on MAP_LABELS
-        * @param  {Array} labels
-        * @return {String}       Template
-        */
+         * Returm a factory to expose a context
+         * @param  {Object} options.MAP_LABELS map {<label> : {tootlip: < string:translated>, className: <string> }}
+         * @param  {Object} options.MAP_TAGS   {<tag> : {tootlip: <string:translated>,  className: <string> }}
+         * @return {Object}                    {getTemplateLabels, getTemplateTags}
+         */
+        return ({ MAP_LABELS, MAP_TYPES }) => {
+
+            /**
+             * Take a list of labels and check if they exist inside MAILBOX_IDENTIFIERS
+             * Then create a template for the icon matching this label based on  MAP_LABELS
+             * @param  {Array} labels
+             * @return {String}       Template
+             */
             const getTemplateLabels = (labels) => {
-                return Object
-                    .keys(MAP_LABELS)
+                return Object.keys(MAP_LABELS)
                     .reduce((acc, key) => {
                         if (key === 'folder') {
                             const { Color: color, Name: tooltip } = getFolder(labels);
-                            return acc + icon(_.extend({}, MAP_LABELS[key], { tooltip, color }));
+                            return acc + icon(_.extend({}, MAP_LABELS[key], {
+                                tooltip: escapeTooltip(tooltip),
+                                color
+                            }));
                         }
                         if (contains(key, labels)) {
                             return acc + icon(MAP_LABELS[key]);
@@ -74,10 +90,10 @@ angular.module('proton.conversation')
             };
 
             /**
-        * Take the type of message and build the template matching the number
-        * @param  {Number} type
-        * @return {String}       Template
-        */
+            * Take the type of message and build the template matching the number
+            * @param  {Number} type
+            * @return {String}       Template
+            */
             const getTemplateType = (type) => {
                 if (type === 2 || type === 3) {
                     return icon(MAP_TYPES.sent, templateTag);
