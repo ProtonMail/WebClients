@@ -1,40 +1,44 @@
 angular.module('proton.message')
     .factory('transformEscape', () => {
 
-    /**
-     * Unescape the textContent only and inside a synthax Highlighting block
-     * Compat
-     *     - fontawesome
-     *     - prism
-     *     - etc.
-     * @param  {Node} dom
-     * @return {Node}
-     */
+
+        /**
+         * Prevent escape url on the textContent if you display some code
+         * inside the message
+         * @param  {Node} node
+         * @return {void}
+         */
+        const recursiveCleanerCode = (node) => {
+            _.each(node.querySelectorAll('*'), (node) => {
+                if (node.childElementCount) {
+                    return recursiveCleanerCode(node);
+                }
+
+                if (/proton-/g.test(node.textContent)) {
+                    node.textContent = node.textContent.replace(/proton-/g, '');
+                }
+            });
+        };
+
+        /**
+         * Unescape the textContent only and inside a synthax Highlighting block
+         * Compat
+         *     - fontawesome
+         *     - prism
+         *     - etc.
+         * @param  {Node} dom
+         * @return {Node}
+         */
         const syntaxHighlighterFilter = (dom) => {
-            const $pre = dom.querySelectorAll('.pre, pre');
+            const $pre = dom.querySelectorAll('.pre, pre, code');
             _.each($pre, (node) => {
-                const $codeRaw = node.querySelector('code');
 
-                // Tag <code> exist we can unescape everything
-                if ($codeRaw) {
-                    $codeRaw.innerHTML = $codeRaw.innerHTML.replace(/proton-/g, '');
+                if ((node.nodeName === 'PRE' || node.nodeName === 'CODE') && !node.childElementCount) {
+                    node.textContent = node.textContent.replace(/proton-/g, '');
                     return;
                 }
 
-                const $code = node.querySelector('.code');
-                if (!$code) {
-                    return;
-                }
-
-                _.each($code.querySelectorAll('span'), (node) => {
-                    if (node.querySelector('*')) {
-                        return;
-                    }
-
-                    if (/proton-/.test(node.textContent)) {
-                        node.textContent = node.textContent.replace(/proton-/, '');
-                    }
-                });
+                recursiveCleanerCode(node);
             });
 
             return dom;
@@ -53,6 +57,7 @@ angular.module('proton.message')
         });
 
         return (html, message, { content = '' }) => {
+
             html.innerHTML = replace(REGEXP_IS_URL, replace(REGEXP_IS_BREAK, content));
             return syntaxHighlighterFilter(html);
         };
