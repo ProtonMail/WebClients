@@ -27,7 +27,7 @@ angular.module('proton.utils')
 
             const currencyLocale = currency === 'USD' ? 'en' : i18nLoader.langCountry;
 
-            if(!Intl.NumberFormat) {
+            if (!Intl.NumberFormat) {
                 return (amount) => fallbackFormat(amount, currency);
             }
 
@@ -38,7 +38,7 @@ angular.module('proton.utils')
                 maximumFractionDigits: 2
             });
 
-            if(!formatter.format){
+            if (!formatter.format) {
                 return (amount) => fallbackFormat(amount, currency);
             }
 
@@ -51,7 +51,7 @@ angular.module('proton.utils')
                 return fallbackFormat(amount, currency);
             }
 
-            if(currency && !(currency in FORMATTERS)) {
+            if (currency && !(currency in FORMATTERS)) {
                 FORMATTERS[currency] = getFormatter(currency);
             }
 
