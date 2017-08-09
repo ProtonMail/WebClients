@@ -1,4 +1,10 @@
-.bitcoinView-type-payment {
+.bitcoinView-container:not(.bitcoinView-type-invoice) {
+  .bitcoinView-about-invoice { display: none }
+}
+
+.bitcoinView-type-invoice .bitcoinView-about { display: none }
+
+.bitcoinView-type-payment, .bitcoinView-type-invoice {
 
     .bitcoinView-qrcode {
         display: flex;
@@ -23,6 +29,6 @@
       text-decoration: underline
 }
 
-.bitcoinView-btn-reload:hover {
-    text-decoration: none
-}
+.bitcoinView-btn-reload:hover { text-decoration: none }
+
+

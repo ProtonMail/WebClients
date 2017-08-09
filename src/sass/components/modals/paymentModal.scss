@@ -30,3 +30,19 @@
     .paymentsModal-btn-close { margin-left: auto  }
 
 }
+
+.paymentsModal-group-btn {
+    display: flex;
+    justify-content: space-between;
+}
+
+.paymentsModal-step-process, .paymentsModal-method-bitcoin, .paymentsModal-method-paypal {
+    .paymentsModal-group-btn { justify-content: flex-end }
+}
+
+.paymentsModal-container.paymentsModal-method-bitcoin {
+    .paymentsModal-btn-cancel,
+    .paymentsModal-btn-submit { display: none }
+
+    .paymentsModal-btn-close { display: inline-block }
+}

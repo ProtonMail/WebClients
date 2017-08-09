@@ -12,9 +12,9 @@ angular.module('proton.payment')
             },
             replace: true,
             templateUrl: 'templates/payment/bitcoinView.tpl.html',
-            link(scope, el, { type }) {
+            link(scope, el, { type = 'payment' }) {
 
-                el[0].classList.add(`bitcoinView-type-${type || 'payment'}`);
+                el[0].classList.add(`bitcoinView-type-${type}`);
 
                 const load = () => {
                     $rootScope.$emit('payment', {

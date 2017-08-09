@@ -1,8 +1,13 @@
 .donateModal-container.donateModal-type-donation {
     [class$="-topUp"] { display: none }
 }
+
 .donateModal-container {
     .donationForm-cardView .pm_grid { margin-bottom: 0 }
+}
+
+.donateModal-container:not(.donateModal-mode-bitcoin) {
+    .donateModal-btn-close { display: none }
 }
 
 .donateModal-container.donateModal-type-topUp {
@@ -10,11 +15,19 @@
     .donateModal-about-bitcoin { display: none }
 }
 
-.donateModal-group-btn { display: flex }
-.donateModal-btn-cancel { margin-right: auto }
+.donateModal-group-btn {
+    display: flex;
+    justify-content: space-between
+}
 
-.donateModal-container.donateModal-mode-bitcoin {
+.donateModal-container .donationForm-info,
+.donateModal-container .donationForm-footer { display: none  }
+
+
+.donateModal-mode-bitcoin {
     [class*="donateModal-choose"],
+    [for="otherAmount"],
+    .donateModal-btn-cancel,
     .donateModal-btn-donate {
         display: none;
         pointer-events: none
@@ -31,17 +44,10 @@
         text-align: center;
         margin-top: .5em;
     }
-}
-
-.donateModal-container .donationForm-info,
-.donateModal-container .donationForm-footer { display: none  }
-
-
-.donateModal-mode-bitcoin {
-    [for="otherAmount"] { display: none }
 
 }
 .donateModal-mode-paypal, .donateModal-mode-bitcoin {
-    .donateModal-btn-cancel { margin-left: auto; margin-right: 0 }
+
+    .donateModal-group-btn { justify-content: flex-end }
     .donateModal-btn-donation { display: none }
 }
