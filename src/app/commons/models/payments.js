@@ -58,7 +58,10 @@ angular.module('proton.commons')
         * Credit account
         * @param {Object} Obj
         */
-        const credit = (opt) => $http.post(requestUrl('credit'), opt);
+        const credit = (params) => {
+            return generateFingerprint(params)
+                .then((params) => $http.post(requestUrl('credit'), params));
+        };
 
         /**
         * Donate for perks. Does not require authentication.
