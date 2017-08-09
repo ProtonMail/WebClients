@@ -173,10 +173,9 @@ angular.module('proton.commons')
 
         const load = (lang) => {
             return loadGettextCatalog(lang)
-                .then(localizeDateUtils)                
+                .then(localizeDateUtils)
                 .then(localizePikaday)
                 .then(() => load.langCountry = moment.locale());
-            return loadGettextCatalog(lang).then(localizeDateUtils).then(localizePikaday);
         };
 
         return load;
