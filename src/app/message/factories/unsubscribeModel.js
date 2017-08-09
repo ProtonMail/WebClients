@@ -24,6 +24,7 @@ angular.module('proton.message')
             const to = mailto.substring(0, j);
             const { searchObject = {} } = parseUrl(mailto.substring(j + 1));
 
+            message.AddressID = authentication.user.Addresses[0].ID;
             message.From = authentication.user.Addresses[0];
             message.Password = '';
 
