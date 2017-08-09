@@ -1,7 +1,7 @@
 <div class="pm_modal payInvoiceModal-container small {{ctrl.class}}" role="dialog" style="display: block;">
 
     <form
-        class="modal-dialog"
+        class="modal-dialog payInvoiceModal-form"
         novalidate
         ng-class="{
             'payInvoiceModal-method-card': ctrl.method.value === 'use.card',
@@ -78,6 +78,7 @@
                         data-callback="ctrl.paypalCallback"></paypal-view>
 
                     <bitcoin-view
+                        data-type="invoice"
                         ng-if="ctrl.method.value === 'bitcoin'"
                         data-currency="ctrl.checkInvoice.Currency"
                         data-amount="ctrl.checkInvoice.AmountDue"></bitcoin-view>
@@ -90,10 +91,17 @@
         <div class="modal-footer payInvoiceModal-group-btn">
             <button
                 type="button"
-                class="pm_button"
+                class="pm_button payInvoiceModal-btn-cancel"
                 ng-click="ctrl.cancel()"
                 translate
                 translate-context="Action">Cancel</button>
+
+            <button
+                type="button"
+                class="pm_button payInvoiceModal-btn-close"
+                ng-click="ctrl.cancel()"
+                translate
+                translate-context="Action">Close</button>
             <button
                 type="submit"
                 class="pm_button primary pull-right payInvoiceModal-btn-submit"
