@@ -204,8 +204,7 @@ angular.module('proton.routes', [
 
                         const isValidCurrency = isValid(currency, CONSTANTS.CURRENCIES);
                         const isValidCycle = isValid(+cycle, CONSTANTS.BILLING_CYCLE);
-                        // @todo -> add professionnal plan
-                        const isValidPlan = isValid(plan, ['free', 'plus', 'visionary']);
+                        const isValidPlan = isValid(plan, ['free', 'plus', 'visionary', 'professional']);
 
                         if (isValidCycle && isValidCurrency && isValidPlan) {
 
