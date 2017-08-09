@@ -14,6 +14,8 @@ angular.module('proton.payment')
             templateUrl: 'templates/payment/bitcoinView.tpl.html',
             link(scope, el, { type }) {
 
+                el[0].classList.add(`bitcoinView-type-${type || 'payment'}`);
+
                 const load = () => {
                     $rootScope.$emit('payment', {
                         type: 'bitcoin.submit',
