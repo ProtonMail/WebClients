@@ -11,9 +11,7 @@ angular.module('proton.payment')
 
         donateModel.init();
         const CURRENCIES = CONSTANTS.CURRENCIES.map((value) => ({ label: value, value }));
-        const FORM_INVALID_NOTIF = gettextCatalog.getString('Invalid form, please check the content of the donation form', null, 'Error');
 
-        const notifyError = (message = '') => notify({ message, classes: 'notification-danger' });
         const dispatch = (type, data = {}) => $rootScope.$emit('payments', { type, data });
         const loadDonation = (type, action) => (options) => dispatch('donate.submit', { type, options, action });
 
@@ -69,13 +67,8 @@ angular.module('proton.payment')
                 scope.methods = list;
 
                 const onSubmit = (e) => {
-
                     e.preventDefault();
-                    if (scope.donationForm.$invalid) {
-                        return notifyError(FORM_INVALID_NOTIF);
-                    }
-
-                    donate(buildRequestOption());
+                    scope.donationForm.$valid && donate(buildRequestOption());
                 };
 
                 /**
@@ -129,7 +122,7 @@ angular.module('proton.payment')
                     }
 
                     if (type === 'donation.input.submit') {
-                        el.triggerHandler('submit');
+                        _rAF(() => el.triggerHandler('submit'));
                     }
                 });
 

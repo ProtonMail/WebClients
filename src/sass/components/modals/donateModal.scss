@@ -1,6 +1,9 @@
 .donateModal-container.donateModal-type-donation {
     [class$="-topUp"] { display: none }
 }
+.donateModal-container {
+    .donationForm-cardView .pm_grid { margin-bottom: 0 }
+}
 
 .donateModal-container.donateModal-type-topUp {
     [class$="-donate"],

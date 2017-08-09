@@ -203,6 +203,7 @@
         appearance: none;
         & + [ng-messages] { display: none }
         &.ng-invalid.ng-touched + [ng-messages] { display: block }
+        &.ng-invalid.ng-submitted + [ng-messages] { display: block }
         &.ng-invalid.ng-touched { border-color: $red; }
         &.ng-invalid.always-show-ng-invalid { border-color: $red; }
         &.inline {
