@@ -66,7 +66,7 @@ angular.module('proton.settings')
                 params: {
                     label,
                     onSuccess() {
-                    // Auto Scroll to the latest item
+                        // Auto Scroll to the latest item
                         const id = setTimeout(() => {
                             const $li = document.querySelector('.labelsState-item:last-child');
                             $li && $li.scrollIntoView();
@@ -84,14 +84,14 @@ angular.module('proton.settings')
      * Open modal to create a new label
      */
         $scope.createLabel = () => {
-            openLabelModal({ Exclusive: 0 });
+            openLabelModal({ Exclusive: 0, Notify: 1 });
         };
 
         /**
      * Open modal to create a new folder
      */
         $scope.createFolder = () => {
-            openLabelModal({ Exclusive: 1 });
+            openLabelModal({ Exclusive: 1, Notify: 0 });
         };
 
         /**

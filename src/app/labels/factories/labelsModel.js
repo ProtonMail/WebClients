@@ -136,7 +136,7 @@ angular.module('proton.labels')
                 .map((label) => cleanLabel(todo.update[label.ID] || label))
                 .filter(({ ID }) => !todo.remove[ID])
                 .value()
-                .concat(todo.create);
+                .concat(todo.create.map((label) => cleanLabel(label)));
 
             syncMap();
             syncLabels();
