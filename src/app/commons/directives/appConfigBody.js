@@ -27,7 +27,7 @@ angular.module('proton.commons')
                 });
 
                 $rootScope.$on('$stateChangeSuccess', (e, toState) => {
-                    el[0].id = toState.name.replace('.', '-');
+                    el[0].id = toState.name.replace(/[.]+/g, '-');
                 });
             }
         };
