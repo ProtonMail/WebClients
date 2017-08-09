@@ -132,7 +132,7 @@ angular.module('proton.settings')
             const verifiedDomains = _.filter(domains, ({ State }) => State);
 
             if (organization.MaxMembers === 1) {
-                notify(gettextCatalog.getString('Multi-user support requires either a Business or Visionary plan.', null, 'Info'));
+                notify(gettextCatalog.getString('Multi-user support requires either a Professional or Visionary plan.', null, 'Info'));
                 $state.go('secured.members');
                 return false;
             }
