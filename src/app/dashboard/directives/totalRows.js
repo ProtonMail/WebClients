@@ -21,7 +21,7 @@ angular.module('proton.dashboard')
                     scope.$applyAsync(() => {
                         monthly.text(amount(plan, MONTHLY, dashboardConfiguration.currency(), MONTHLY));
                         yearly.text(amount(plan, YEARLY, dashboardConfiguration.currency(), YEARLY));
-                        billed.text(`Billed as ${amount(plan, YEARLY, dashboardConfiguration.currency(), MONTHLY)} per year`);
+                        billed.text(`Billed as ${amount(plan, YEARLY, dashboardConfiguration.currency(), MONTHLY)} /yr`);
                         scope.cycle = dashboardConfiguration.cycle();
                     });
                 }
