@@ -14,7 +14,7 @@
                             <overview-section></overview-section>
                         </section>
                     </div>
-                    <div class="settingsDashboard-subscription-section col-1-2" ng-if="hasPaidMail">
+                    <div class="settingsDashboard-subscription-section col-1-2" ng-if="isPaidUser">
                         <header-block class="settingsDashboard-header-subscription">
                             <h2
                                 class="settingsDashboard-title-subscription"
@@ -25,7 +25,7 @@
                             <subscription-section methods="methods"></subscription-section>
                         </section>
                     </div>
-                    <div class="col-1-2 donate pm-flex-content" ng-if="!hasPaidMail">
+                    <div class="col-1-2 donate pm-flex-content" ng-if="!isPaidUser">
                         <header-block class="settingsDashboard-header-donate">
                             <h2
                                 class="settingsDashboard-title-donate"

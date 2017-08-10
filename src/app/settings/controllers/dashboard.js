@@ -1,17 +1,17 @@
 angular.module('proton.settings')
-    .controller('DashboardController', ($rootScope, $scope, $stateParams, methods, subscriptionModel) => {
+    .controller('DashboardController', ($rootScope, $scope, $stateParams, methods, authentication) => {
         const scrollToPlans = () => $('.settings').animate({ scrollTop: $('#plans').offset().top }, 1000);
-        const updateSubscription = () => $scope.hasPaidMail = subscriptionModel.hasPaid('mail');
+        const updateUser = () => $scope.isPaidUser = authentication.user.Subscribed;
         const updateMethods = (methods) => $scope.methods = methods;
-        const unsubscribe = $rootScope.$on('subscription', (event, { type, data = {} }) => {
-            (type === 'update') && $scope.$applyAsync(() => updateSubscription(data.subscription));
+        const unsubscribe = $rootScope.$on('updateUser', () => {
+            $scope.$applyAsync(() => updateUser());
         });
 
         if ($stateParams.scroll === true) {
             scrollToPlans();
         }
 
-        updateSubscription(subscriptionModel.get());
+        updateUser();
         updateMethods(methods);
 
         $scope.$on('$destroy', () => {
