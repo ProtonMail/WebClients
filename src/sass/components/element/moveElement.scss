@@ -7,15 +7,14 @@
 
 .moveElement-btn-delete { display: none }
 
-body#secured-trash,
-body#secured-drafts {
+body[id^="secured-trash"],
+body[id^="secured-drafts"] {
     .moveElement-btn-trash { display: none }
     .moveElement-btn-delete { display: inline-block; }
     .moveElement-btn-inbox { border-left: 0 }
 }
 
-
-body#secured-inbox .moveElement-btn-inbox { display: none  }
-body#secured-sent .moveElement-btn-inbox { display: none  }
-body#secured-archive .moveElement-btn-archive { display: none  }
-body#secured-spam .moveElement-btn-spam { display: none  }
+body[id^="secured-inbox"] .moveElement-btn-inbox { display: none  }
+body[id^="secured-sent"] .moveElement-btn-inbox { display: none  }
+body[id^="secured-archive"] .moveElement-btn-archive { display: none  }
+body[id^="secured-spam"] .moveElement-btn-spam { display: none  }
