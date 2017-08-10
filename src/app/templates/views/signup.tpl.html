@@ -202,7 +202,7 @@
                     data-amount="plan.Amount"></paypal-view>
             </div>
         </div>
-        <div ng-hide="method === 'paypal'">
+        <div ng-if="method.value !== 'paypal'">
             <div class="text-center">
                 <p class="alert alert-info" ng-show="errorPay">Would you like to create a free ProtonMail account instead? <a href="#" ng-click="payment = false;humanityTest = true;">Yes</a> <signup-link data-key="no"></signup-link></p>
                 <p>
