@@ -41,7 +41,15 @@ describe('transformBase service', () => {
         return doc;
     };
 
-    beforeEach(module('proton.message', 'proton.constants', 'proton.config', 'proton.commons'));
+
+    beforeEach(module('proton.message', 'proton.constants', 'proton.config', 'proton.commons', ($provide) => {
+
+        $provide.factory('unsubscribeModel', () => ({
+            init: angular.noop
+        }));
+
+    }));
+
 
     beforeEach(inject(($injector) => {
        factory = $injector.get('transformBase');

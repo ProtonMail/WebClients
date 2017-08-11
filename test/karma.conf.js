@@ -9,7 +9,9 @@ module.exports = (config) => {
         files: [
             '../build/vendor/angular.js',
             '../build/vendor/jquery.js',
-            '../src/app/libraries/*.js',
+            '../build/vendor/codemirror.js',
+            '../build/vendor/moment-with-locales.js',
+            '../src/libraries/*.js',
             '../build/vendor/*.js',
             '../node_modules/angular-mocks/angular-mocks.js',
             '../src/app/config.js',
@@ -24,11 +26,12 @@ module.exports = (config) => {
 
 
         // list of files to exclude
-        exclude: ['**/*.min.js', '../src/app/libraries/*.js'],
+        exclude: ['**/*.min.js', '../src/libraries/*.js'],
         preprocessors: {
             '../src/app/templates/**/*.html': ['ng-html2js'],
             '../src/app/**/**/*.js': ['babel'],
             '../src/app/**/*.js': ['babel'],
+            '../src/libraries/pmcrypto.js': ['babel'],
             'specs/**/*.js': ['babel']
         },
 
