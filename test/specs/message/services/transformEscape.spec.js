@@ -30,10 +30,20 @@ describe('transformEscape service', () => {
     <div style="box-sizing: border-box;white-space: normal;" class="pre"><div style="box-sizing: border-box;color: #fff;max-width: 100%;font-size: 16px;line-height: 1.3;" class="code"><span style="box-sizing: border-box;color: #DDDDDF;" class="nt">&lt;script</span> <span style="box-sizing: border-box;color: #84868B;" class="na">src="</span><span style="box-sizing: border-box;color: #68BEA2;" class="s"><span class="s">https<span>://</span>use.fontawesome<span>.</span>com/f0d8991ea9.js</span><span style="box-sizing: border-box;color: #84868B;" class="na">"</span><span style="box-sizing: border-box;color: #DDDDDF;" class="nt">&gt;</span><span style="box-sizing: border-box;color: #DDDDDF;" class="nt">&lt;/script&gt;</span></span></div></div><div class="pre"></div>
 `;
     const CODE_HTML = `<pre><code><img src="polo.fr"></code></pre>`;
+    const CODE_HTML_ESCAPED = `<pre><code><img proton-src="polo.fr"></code></pre>`;
+    const CODE_TEXT = `<pre><code>{ background: url('monique.jpg') }</code></pre>`;
 
     let output;
 
-    beforeEach(module('proton.message', 'proton.constants', 'proton.config', 'proton.commons'));
+
+    beforeEach(module('proton.message', 'proton.constants', 'proton.config', 'proton.commons', ($provide) => {
+
+        $provide.factory('unsubscribeModel', () => ({
+            init: angular.noop
+        }));
+
+    }));
+
 
     beforeEach(inject(($injector) => {
        factory = $injector.get('transformEscape');
@@ -48,8 +58,16 @@ describe('transformEscape service', () => {
                 });
             });
 
-            it('should not escape inside a <code> tag', () => {
-                expect(output.innerHTML).toBe(CODE_HTML);
+            it('should escape inside a <code> tag', () => {
+                expect(output.innerHTML).toBe(CODE_HTML_ESCAPED);
+            });
+
+
+            it('should not escape text inside a <code> tag', () => {
+                const demo = factory(document.createElement('DIV'), null, {
+                    content: CODE_TEXT
+                });
+                expect(demo.innerHTML).toBe(CODE_TEXT);
             });
 
         });
@@ -67,27 +85,6 @@ describe('transformEscape service', () => {
 
         });
 
-    });
-
-    describe('Escape <a>', () => {
-
-        beforeEach(() => {
-            output = factory(document.createElement('DIV'), null, {
-                content: DOM
-            });
-            getAttribute = (attribute) => {
-                return [].slice.call(output.querySelectorAll(`[${attribute}]`));
-            };
-        });
-
-        it('should add rel attribute to every [href]', () => {
-            const list = getAttribute('href');
-            expect(list.length).toBe(3);
-            const [ rel1, rel2, rel3 ] = list.map((node) => node.getAttribute('rel'));
-            expect(rel1).toBe('noreferrer nofollow noopener');
-            expect(rel2).toBe('noreferrer nofollow noopener');
-            expect(rel3).toBe('noreferrer nofollow noopener');
-        });
     });
 
     describe('Escape everything with proton-', () => {

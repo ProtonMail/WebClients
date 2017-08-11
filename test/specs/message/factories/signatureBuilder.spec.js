@@ -31,6 +31,11 @@ describe('signatureBuilder factory', () => {
         $provide.factory('tools', () => ({
             replaceLineBreaks: _.identity
         }));
+
+
+        $provide.factory('unsubscribeModel', () => ({
+            init: angular.noop
+        }));
     }));
 
     beforeEach(inject(($injector) => {

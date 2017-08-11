@@ -50,6 +50,10 @@ Est-ce que tu vas bien ?
             user: userMock
         }));
 
+        $provide.factory('unsubscribeModel', () => ({
+            init: angular.noop
+        }));
+
         $provide.factory('gettextCatalog', () => ({
             getString: _.identity
         }));

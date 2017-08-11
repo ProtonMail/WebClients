@@ -8,35 +8,47 @@ describe('labelsModel factory', () => {
         {
             Name: XSS_NAME,
             Color: XSS_COLOR,
-            Exclusive: 0
+            Exclusive: 0,
+            Notify: false,
+            notify: false
         },
         {
             Name: 'luis',
             Color: '',
-            Exclusive: 1
+            Exclusive: 1,
+            Notify: false,
+            notify: false
         },
         {
             Name: 'jeanne',
             Color: '',
-            Exclusive: 0
+            Exclusive: 0,
+            Notify: false,
+            notify: false
         },
         {
             Name: 'serge',
             Color: '',
-            Exclusive: 0
+            Exclusive: 0,
+            Notify: false,
+            notify: false
         },
         {
             Name: 'jeanne de test',
             Color: '',
-            Exclusive: 0
+            Exclusive: 0,
+            Notify: false,
+            notify: false
         },
         {
             Name: 'roma',
             Color: '',
-            Exclusive: 1
+            Exclusive: 1,
+            Notify: true,
+            notify: true
         }
     ].map((item, i) => ((item.ID = getID(), item.Order = i + 1), item));
-    const mapMock = mockList.reduce((acc, item) => (acc[item.Name] = item, acc), {});
+    const mapMock = mockList.reduce((acc, item) => (acc[item.Name] = _.extend({}, item), acc), {});
 
     let TODO_CREATE, TODO_UPDATE, TODO_IDS, TODO_DELETE;
 
@@ -422,6 +434,18 @@ describe('labelsModel factory', () => {
             item.Name = '42 lol';
             expect(item).not.toEqual(factory.get()[0]);
         });
+    });
+
+    describe('Notify', () => {
+
+        it('should contains 1 notify: true', () => {
+            expect(mockList.filter(({ notify }) => notify).length).toBe(1);
+        });
+
+        it('should set notfy:true for roma', () => {
+            expect(mapMock.roma.notify).toBe(true);
+        });
+
     });
 
 });
