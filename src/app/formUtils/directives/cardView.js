@@ -3,7 +3,7 @@ angular.module('proton.formUtils')
 
         const countries = countriesListModel();
         const currentYear = new Date().getFullYear();
-        const months = _.range(1, 13);
+        const months = _.range(1, 13).map((i) => `0${i}`.slice(-2));
         const years = _.range(currentYear, currentYear + 12);
 
         return {
