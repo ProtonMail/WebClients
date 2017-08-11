@@ -218,19 +218,6 @@ angular.module('proton.utils')
 
         tools.validEmail = (value = '') => regexEmail.test(value);
 
-        tools.isCompatible = () => {
-            let compatible = true;
-
-            if (!aboutClient.hasSessionStorage()) {
-                compatible = false;
-            }
-
-            if (!aboutClient.prngAvailable()) {
-                compatible = false;
-            }
-
-            return compatible;
-        };
 
         // get user max and current storage, and return a string "123.3/456.6 GB"
         tools.renderStorageBar = (current, max) => {

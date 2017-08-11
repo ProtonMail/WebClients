@@ -33,7 +33,6 @@ angular.module('proton.core')
 
             // Variables
             $scope.tools = tools;
-            $scope.compatibility = tools.isCompatible();
             $scope.filling = true;
             $scope.creating = false;
             $scope.genKeys = false;

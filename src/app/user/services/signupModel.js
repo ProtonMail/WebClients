@@ -1,13 +1,19 @@
 angular.module('proton.user')
-    .factory('signupModel', (User, $state, $stateParams, $location, CONSTANTS) => {
+    .factory('signupModel', (User, $state, $stateParams, $location, CONSTANTS, Payment, networkActivityTracker, $rootScope) => {
 
         const CACHE = {};
+        const dispatch = (type, data = {}) => $rootScope.$emit('signup', { type, data });
 
         const get = (key, type = 'model') => {
             const item = angular.copy(CACHE[type]);
-            return key ? item[key] : item;
+            return key ? (item || {})[key] : item;
         };
 
+        const clear = () => {
+            _.keys(CACHE).forEach((key) => {
+                delete CACHE[key];
+            });
+        };
 
         /**
          * Save variables to prevent extensions/etc
@@ -20,6 +26,11 @@ angular.module('proton.user')
         const getEmail = () => {
             const item = get();
             return `${item.username}@${item.domain.value}`;
+        };
+
+        const getPassword = () => {
+            const { login } = get();
+            return login.password;
         };
 
         const getDomain = () => {
@@ -84,12 +95,42 @@ angular.module('proton.user')
                 params.Token = model.codeVerification;
                 params.TokenType = 'email';
             }
-            return User.create(params, get('loginPassword'));
+            return User.create(params, getPassword());
         };
 
+        /*
+            { Amount, Currency, Payment } === data
+            $rootScope.tempPlan = $scope.plan; // We need to subcribe this user later
+            $rootScope.tempMethod = data.Payment; // We save this payment method to save it later
+
+         */
+        function verify(opt, plan) {
+            const promise = Payment.verify(_.extend({}, opt, { Username: get('username') }))
+                .then(({ data = {} } = {}) => {
+                    if (data.Code === 1000) {
+                        set('VerifyCode', data.VerifyCode);
+                        set('temp.plan', plan);
+                        set('temp.method', opt.Payment);
+                        return data;
+                    }
+
+                    if (data.Error) {
+                        // We were unable to successfully charge your card. Please try a different card or contact your bank for assistance.
+                        throw new Error(data.Error);
+                    }
+                })
+                .catch((error) => {
+                    dispatch('payment.verify.error', { error });
+                    throw error;
+                });
+            networkActivityTracker.track(promise);
+            return promise;
+        }
+
         return {
-            all, get, set, store,
-            getEmail, getDomain, getOptionsVerification, optionsHumanCheck,
-            createUser
+            all, get, set, store, clear,
+            getEmail, getDomain, getPassword,
+            getOptionsVerification, optionsHumanCheck,
+            createUser, verify
         };
     });

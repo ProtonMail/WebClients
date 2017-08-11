@@ -1,14 +1,13 @@
 angular.module('proton.formUtils')
     .directive('validUsername', () => {
-        const pattern = new RegExp(/^[A-Za-z0-9]+(?:[_.-][A-Za-z0-9]+)*$/);
-        function isUsernameValid(username) {
-            return pattern.test(username);
-        }
+
+        const IS_VALID = new RegExp(/^[A-Za-z0-9]+(?:[_.-][A-Za-z0-9]+)*$/);
+
         return {
             require: 'ngModel',
             restrict: 'A',
-            link(scope, element, attributes, ngModel) {
-                ngModel.$validators.valid = isUsernameValid;
+            link(scope, el, attr, ngModel) {
+                ngModel.$validators.valid = (input) => IS_VALID.test(input);
             }
         };
     });

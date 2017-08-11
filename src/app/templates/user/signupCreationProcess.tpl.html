@@ -1,0 +1,45 @@
+<div
+    class="signupCreationProcess-container"
+    ng-class="{
+        'signupCreationProcess-error': signupError
+    }">
+
+    <header class="text-center header">
+        <div class="creating-loader-container">
+            <atom-loader data-loader-theme="primary"></atom-loader>
+        </div>
+        <h2 class="text-center signupCreationProcess-title" translate>Creating account</h2>
+        <h2 class="text-center signupCreationProcess-error-title" translate-context="Error" translate>Sign up failed</h2>
+    </header>
+
+    <p class="alert alert-danger signupCreationProcess-error-msg">An error occured while trying to create your account. To see common problems and solutions <a target="_blank" href="https://protonmail.com/support/knowledge-base/common-sign-up-problems-and-solutions/">click here</a>.</p>
+
+    <div class="wrapper text-left">
+        <ol id="creationList">
+            <li class="done">
+                <i class="show fa fa-check"></i>
+                <span translate>Generating keys</span>
+            </li>
+            <li ng-class="{ 'done': flow.creation }">
+                <i ng-class="{ 'show': flow.creation  }" class="show fa fa-check"></i>
+                <span translate>Creating new account</span>
+            </li>
+            <li ng-class="{ 'done': flow.loggedin }">
+                <i ng-class="{ 'show': flow.loggedin }" class="fa fa-check"></i>
+                <span translate>Logging in to new account</span>
+            </li>
+            <li ng-class="{ 'done': flow.setupaccount }">
+                <i ng-class="{ 'show': flow.setupaccount }" class="fa fa-check"></i>
+                <span translate>Setting up new account</span>
+            </li>
+            <li ng-class="{ 'done': flow.userready }">
+                <i ng-class="{ 'show': flow.userready }" class="fa fa-check"></i>
+                <span translate>Done</span>
+            </li>
+            <li ng-class="{ 'done': flow.done }">
+                <i ng-class="{ 'show': flow.done }" class="fa fa-check"></i>
+                <span translate>Redirecting</span>
+            </li>
+        </ol>
+    </div>
+</div>

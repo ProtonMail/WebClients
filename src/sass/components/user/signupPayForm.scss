@@ -1,0 +1,23 @@
+.signupPayForm-container:not(.signupPayForm-show-features) {
+    .signupPayForm-view-features,
+    .signupPayForm-btn-features .fa-angle-up { display: none }
+}
+
+.signupPayForm-container:not(.signupPayForm-error) {
+    .signupPayForm-msg-error,
+    .signupPayForm-btn-retry { display: none }
+}
+
+.signupPayForm-method-paypal .signupPayForm-footer,
+.signupPayForm-error .signupPayForm-btn-submit,
+.signupPayForm-cycle-year .signupPayForm-selection-monthly,
+.signupPayForm-cycle-month .signupPayForm-selection-annually,
+.signupPayForm-show-features .signupPayForm-btn-features .fa-angle-down,
+.signupPayForm-plan-visionary .signupPayForm-feature-plus,
+.signupPayForm-plan-plus .signupPayForm-feature-visionary { display: none }
+
+.signupPayForm-footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}

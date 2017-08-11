@@ -1,0 +1,4 @@
+.signupCreationProcess-container:not(.signupCreationProcess-error) {
+    [class*="signupCreationProcess-error-"] { display: none }
+}
+.signupCreationProcess-error .signupCreationProcess-title { display: none }

@@ -29,7 +29,6 @@ angular.module('proton.core')
 
             // Variables
             $scope.tools = tools;
-            $scope.compatibility = tools.isCompatible();
             $scope.resetMailboxToken = undefined;
             $scope.account = [];
             $scope.addresses = [];
