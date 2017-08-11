@@ -58,6 +58,7 @@ angular.module('proton.user')
             templateUrl: 'templates/user/humanVerification.tpl.html',
             link(scope, el, { offerType = CONSTANTS.INVITE_MAIL }) {
 
+                const unsubscribe = [];
                 const $formSMS = el[0].querySelector(SELECTOR.FORM_SMS);
                 const $formEMAIL = el[0].querySelector(SELECTOR.FORM_EMAIL);
                 const $btnSetup = el.find(SELECTOR.BTN_COMPLETE_SETUP);
@@ -104,11 +105,19 @@ angular.module('proton.user')
                     dispatch('create.account');
                 };
 
-                const unsubscribe = $rootScope.$on('payments', (e, { type, data = {} }) => {
+                unsubscribe.push($rootScope.$on('payments', (e, { type, data = {} }) => {
                     if (type === 'donate.submit' && data.action === 'humanVerification') {
                         dispatch('create.account', data);
                     }
-                });
+                }));
+
+                unsubscribe.push($rootScope.$on('humanVerification', (e, { type, data = {} }) => {
+                    if (type === 'captcha') {
+                        scope.$applyAsync(() => {
+                            scope.model.captcha_token = data.token;
+                        });
+                    }
+                }));
 
                 $btnSetup.on('click', onClickCompleteSetup);
                 $formSMS.addEventListener('submit', onSubmitSMS);
@@ -118,7 +127,8 @@ angular.module('proton.user')
                     $btnSetup.off('click', onClickCompleteSetup);
                     $formSMS.removeEventListener('submit', onSubmitSMS);
                     $formEMAIL.removeEventListener('submit', onSubmitEmail);
-                    unsubscribe();
+                    unsubscribe.forEach((cb) => cb());
+                    unsubscribe.length = 0;
                 });
             }
         };

@@ -1,28 +1,19 @@
 angular.module('proton.core')
     .controller('SecuredController', (
-        $filter,
-        $q,
         $rootScope,
         $scope,
         $state,
-        $stateParams,
         authentication,
-        cache,
         cacheCounters,
         CONSTANTS,
         desktopNotifications,
         eventManager,
-        feedbackModal,
         generateModal,
         gettextCatalog,
         hotkeys,
-        notify,
         messageActions, // added here to initialize $rootScope.$on
-        organizationApi,
-        Payment,
-        setupKeys,
-        pmcw,
-        AppModel
+        AppModel,
+        attachSignupSubscription
     ) => {
         $scope.inboxSidebar = AppModel.is('inboxSidebar');
         $scope.showSidebar = AppModel.is('showSidebar');
@@ -54,81 +45,7 @@ angular.module('proton.core')
             hotkeys.unbind();
         }
 
-        // if the user subscribed to a plan during the signup process
-        if ($rootScope.tempPlan && ['plus', 'visionary'].indexOf($rootScope.tempPlan.Name) !== -1 && $rootScope.tempPlan.Amount === authentication.user.Credit) {
-            const subscribe = () => {
-                const deferred = $q.defer();
-
-                Payment.subscribe({
-                    Amount: 0,
-                    Currency: $rootScope.tempPlan.Currency,
-                    PlanIDs: [$rootScope.tempPlan.ID]
-                }).then((result) => {
-                    if (result.data && result.data.Code === 1000) {
-                        deferred.resolve();
-                    } else if (result.data && result.data.Error) {
-                        deferred.reject(new Error(result.data.Error));
-                    }
-                });
-
-                return deferred.promise;
-            };
-
-            const organizationKey = () => {
-                const deferred = $q.defer();
-                const mailboxPassword = authentication.getPassword();
-
-                setupKeys.generateOrganization(mailboxPassword)
-                    .then((response) => {
-                        const privateKey = response.privateKeyArmored;
-
-                        deferred.resolve({
-                            PrivateKey: privateKey
-                        });
-                    }, () => {
-                        deferred.reject(new Error('Error during the generation of new organization keys'));
-                    });
-
-                return deferred.promise;
-            };
-
-            const createOrganization = (parameters) => {
-                const deferred = $q.defer();
-
-                organizationApi.create(parameters)
-                    .then((result) => {
-                        if (result.data && result.data.Code === 1000) {
-                            deferred.resolve(result);
-                        } else if (result.data && result.data.Error) {
-                            deferred.reject(new Error(result.data.Error));
-                        } else {
-                            deferred.reject(new Error(gettextCatalog.getString('Error during organization request', null, 'Error')));
-                        }
-                    }, () => {
-                        deferred.reject(new Error(gettextCatalog.getString('Error during organization request', null, 'Error')));
-                    });
-
-                return deferred.promise;
-            };
-
-            subscribe()
-                .then(organizationKey)
-                .then(createOrganization)
-                .then(eventManager.call)
-                .catch((error) => {
-                    notify({ message: error, classes: 'notification-danger' });
-                });
-        }
-
-        // We save the payment method used during the subscription
-        if ($rootScope.tempMethod && $rootScope.tempMethod.Type === 'card') {
-            Payment.updateMethod($rootScope.tempMethod)
-                .then((result) => {
-                    if (result.data && result.data.Code === 1000) {
-                        delete $rootScope.tempMethod;
-                    }
-                });
-        }
+        attachSignupSubscription();
 
         // Set event ID
         eventManager.start(authentication.user.EventID);

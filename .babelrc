@@ -1,5 +1,6 @@
 {
   "presets": ["es2015", "stage-0"],
+  "plugins": ["transform-regenerator"],
   "env": {
         "test": {
             "plugins": ["istanbul"]

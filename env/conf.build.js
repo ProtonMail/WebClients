@@ -86,7 +86,8 @@ module.exports = {
       'vendor/qrcodejs/qrcode.js',
       'vendor/mailparser/mailparser.js',
       'vendor/cssua/cssua.js',
-      'vendor/asmcrypto/asmcrypto.js'
+      'vendor/asmcrypto/asmcrypto.js',
+      'vendor/babel-polyfill/dist/polyfill.js'
     ],
     bootstrap_components: [
       "affix",

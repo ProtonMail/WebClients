@@ -1,4 +1,4 @@
-angular.module('proton.ui')
+angular.module('proton.user')
     .directive('signupLink', (gettextCatalog) => {
 
         const getURL = (lang = '') => ['https://protonmail.com', lang, 'signup'].filter(Boolean).join('/');

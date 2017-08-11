@@ -1,0 +1,71 @@
+angular.module('proton.user')
+    .factory('attachSignupSubscription', (signupModel, authentication, setupKeys, organizationApi, gettextCatalog, eventManager, notify, Payment) => {
+
+        const I18N = {
+            ERROR_ORGA_KEY_GENERATION: gettextCatalog.getString('Error during the generation of new organization keys', null, 'Error'),
+            ERROR_ORGA_REQUEST: gettextCatalog.getString('Error during organization request', null, 'Error')
+        };
+
+        const processPlan = async () => {
+            const { Name, Amount, Currency, ID } = signupModel.get('temp.plan') || {};
+
+            // if the user subscribed to a plan during the signup process
+            if (['plus', 'visionary'].includes(Name) && Amount === authentication.user.Credit) {
+                const subscribe = () => {
+                    return Payment.subscribe({ Amount: 0, Currency, PlanIDs: [ ID ] })
+                        .then(({ data = {} }) => {
+                            if (data.Error) {
+                                throw new Error(data.Error);
+                            }
+                        });
+                };
+
+                const organizationKey = () => {
+                    return setupKeys.generateOrganization(authentication.getPassword())
+                        .then(({ privateKeyArmored: PrivateKey }) => ({ PrivateKey }))
+                        .catch(() => {
+                            throw new Error(I18N.ERROR_ORGA_KEY_GENERATION);
+                        });
+
+                };
+
+                const createOrganization = (parameters) => {
+                    return organizationApi.create(parameters)
+                        .then(({ data = {} }) => {
+                            if (data.Error) {
+                                throw new Error(data.Error || I18N.ERROR_ORGA_REQUEST);
+                            }
+                        });
+                };
+
+                return subscribe()
+                    .then(organizationKey)
+                    .then(createOrganization)
+                    .then(eventManager.call);
+            }
+        };
+
+        const processPaymentMethod = async () => {
+            const method = signupModel.get('temp.method') || {};
+            // We save the payment method used during the subscription
+            if (method.Type === 'card') {
+                return Payment.updateMethod(method)
+                    .then(({ data = {} }) => {
+                        if (data.Error) {
+                            throw new Error(data.Error);
+                        }
+                    });
+            }
+        };
+
+        return () => {
+            Promise.all([ processPlan(), processPaymentMethod() ])
+                .then(() => signupModel.clear())
+                .catch((error) => {
+                    notify({ message: error.message, classes: 'notification-danger' });
+                    signupModel.clear();
+                });
+        };
+
+    });
+

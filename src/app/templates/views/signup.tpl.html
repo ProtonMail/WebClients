@@ -1,232 +1,11 @@
-<div class="pm_panel wide signUpProcess-step-1" ng-show="filling" >
-    <div class="text-center header">
-        <div>
-            <img src="/assets/img/logo-dark.png" height="20" />
-        </div>
-        <h2>
-            <i class="fa fa-user"></i>
-            <span translate translate-context="Title">Create your account</span>
-        </h2>
-    </div>
-    <form
-        method="post"
-        data-scroll-to-invalid
-        data-scroll-to-invalid-on-valid="checking(accountForm)"
-        name="accountForm"
-        role="form"
-        novalidate
-        class="pm_form">
-        <div class="wrapper margin">
-            <p class="alert alert-info" translate-context="Info" translate>Take back your privacy! Creating your secure email account takes less than 2 minutes.</p>
-            <label class="titleLabel" for="username">
-                <em class="num">1</em>
-                <span translate translate-context="Title">Username and domain</span>
-            </label>
-            <div class="usernameWrap">
-                <p class="help" translate-context="Info" translate>This will be your new ProtonMail email address.</p>
-                <input  type="text" ng-model="account.username" name="username" autofocus placeholder-translate="Choose username" unique-username unique-error="accountForm.uniqueUsernameError" valid-username required id="username" class="dead" ng-model-options="{ updateOn: 'default blur', debounce: { 'default': 500, 'blur': 0 } }" ng-class="{'success':goodUsername,'error':badUsername}" />
-                <em class="usernameDomain">@</em>
-                <span class="pm_select inline bigger">
-                    <select class="selectDomain" ng-model="account.domain" ng-options="domain.label for domain in domains"></select>
-                    <i class="fa fa-angle-down"></i>
-                </span>
-            </div>
-            <p ng-show="accountForm.username.$valid" class="alert alert-success signUpProcess-about-success" translate translate-context="Info">Username available</p>
-            <p ng-show="accountForm.$pending.unique" class="alert alert-info signUpProcess-about-pending" translate translate-context="Info">Checking username</p>
-            <div ng-messages="accountForm.username.$error" ng-if="accountForm.username.$dirty" class="signUpProcess-about-error">
-                <p ng-message="required" class="alert alert-danger" translate translate-context="Error">Username required</p>
-                <p ng-message="unique" class="alert alert-danger">{{ accountForm.uniqueUsernameError }}</p>
-                <p ng-message="valid" class="alert alert-danger" translate translate-context="Error">Username invalid</p>
-            </div>
-            <div ng-if="keyPhase < 3">
-                <label class="titleLabel" for="password">
-                    <em class="num">2</em>
-                    <span translate translate-context="Title">Login password</span>
-                </label>
-                <p class="help" translate-context="Info" translate>This is used to login to our servers.</p>
-                <div class="margin">
-                    <password data-id="password" data-name="password" data-value="$parent.account.loginPassword" data-form="$parent.accountForm" placeholder-translate="Choose a login password"></password>
-                </div>
-                <div class="margin">
-                    <password data-id="passwordc" data-name="passwordc" data-value="$parent.account.loginPasswordConfirm" data-form="$parent.accountForm" compare="$parent.account.loginPassword" placeholder-translate="Confirm login password"></password>
-                </div>
-                <label class="titleLabel" for="MBpassword">
-                    <em class="num">3</em>
-                    <span translate translate-context="Title">Mailbox password</span>
-                </label>
-                <p class="help" translate-context="Info" translate>This is used to encrypt and decrypt
-            your messages. Do not lose this password--we cannot recover it.</p>
-                <div class="margin">
-                    <password data-id="MBpassword" data-name="MBpassword" data-value="$parent.account.mailboxPassword" data-form="$parent.accountForm" placeholder-translate="Choose a mailbox password"></password>
-                </div>
-                <div class="margin">
-                    <password data-id="MBpasswordc" data-name="MBpasswordc" data-value="$parent.account.mailboxPasswordConfirm" data-form="$parent.accountForm" compare="$parent.account.mailboxPassword" placeholder-translate="Confirm mailbox password"></password>
-                </div>
-                <p class="alert alert-info" translate-context="Info" translate>If you lose your mailbox password, you will not be able to read your emails. We cannot recover this password for you.</p>
-            </div>
+<signup-user-form
+    class="pm_panel wide signUpProcess-step-1"
+    ng-if="step === 1"
+    data-plans="plans"
+    data-account="account"
+    data-domains="domains"></signup-user-form>
 
-            <div ng-if="keyPhase > 2">
-                <label class="titleLabel" for="password">
-                    <em class="num">2</em>
-                    <span translate translate-context="Title">Password</span>
-                </label>
-                <p class="help" translate-context="Info" translate>This is used to encrypt and decrypt
-            your messages. Do not lose this password, we cannot recover it.</p>
-                <div class="margin">
-                    <password data-id="password" data-name="password" data-value="$parent.account.loginPassword" data-form="$parent.accountForm" placeholder-translate="Choose a password"></password>
-                </div>
-                <div class="margin">
-                    <password data-id="passwordc" data-name="passwordc" data-value="$parent.account.loginPasswordConfirm" data-form="$parent.accountForm" compare="$parent.account.loginPassword" placeholder-translate="Confirm password"></password>
-                </div>
-                <p class="alert alert-info" translate-context="Info" translate>If you lose your password, you will not be able to read your emails.</p>
-            </div>
-
-            <label class="titleLabel" for="notificationEmail">
-                <em class="num" ng-if="keyPhase < 3">4</em>
-                <em class="num" ng-if="keyPhase > 2">3</em>
-                <span translate translate-context="Title">Recovery email (optional)</span>
-            </label>
-            <p class="help" translate-context="Info" translate>This is used to recover your account if you get locked out or forget your password.</p>
-            <input id="notificationEmail" name="notificationEmail" ng-model="account.notificationEmail" type="email" class="form-control" placeholder-translate="Recovery email" valid-recovery data-username="account.username" data-domain="account.domain.value" />
-            <div ng-messages="accountForm.notificationEmail.$error" class="signUpProcess-errors-recoveryEmail">
-                <p ng-message="email" class="text-red" translate-context="Error" translate>Email invalid</p>
-                <p ng-message="valid" class="text-red" translate-context="Error" translate>Recovery email invalid</p>
-            </div>
-        </div><!--/.wrapper-->
-        <div class="text-center spacing-top">
-            <p><span translate translate-context="Info">By clicking Create Account, you agree to abide by</span><br /> <a href="https://protonmail.com/terms-and-conditions" target="_blank" translate-context="Title" translate>ProtonMail's Terms and Conditions</a>.</p>
-            <p><button
-                type="submit"
-                class="pm_button primary large signUpProcess-btn-create"
-                ng-disabled="networkActivity.loading()"
-                translate-context="Action"
-                translate>Create Account</button></p>
-            <p><a ui-sref="login" translate-context="Action" translate translate-comment="link to login">Already have an account?</a></p>
-        </div>
-    </form>
-</div>
-
-<div class="pm_panel wide signUpProcess-step-4" ng-if="payment">
-    <div class="text-center header">
-        <div>
-            <img src="/assets/img/logo-dark.png" height="20" />
-        </div>
-        <h2>
-            <i class="fa fa-money"></i>
-            <span translate translate-context="Title">Billing Information</span>
-        </h2>
-        <p class="uppercase" translate translate-context="Title">Thank you for your support!</p>
-    </div>
-    <hr />
-    <div class="pm_grid">
-        <div class="col-1-4 bold" translate translate-context="Title">Overview</div>
-        <div class="col-3-4 pm_table">
-            <table class="print">
-                <tbody>
-                    <tr>
-                        <th translate translate-context="Title">Plan</th>
-                        <td>
-                            <strong ng-show="plan.Name === 'plus'" class="plus">ProtonMail PLUS</strong>
-                            <strong ng-show="plan.Name === 'visionary'" class="visionary">ProtonMail VISIONARY</strong>
-                        </td>
-                    </tr>
-                    <tr>
-                        <th translate translate-context="Title">Billing</th>
-                        <td>
-                            <strong ng-show="plan.Cycle === 1" translate translate-context="Info">Monthly</strong>
-                            <strong ng-show="plan.Cycle === 12" translate translate-context="Info">Annually</strong>
-                        </td>
-                    </tr>
-                    <tr>
-                        <th translate translate-context="Title">Price</th>
-                        <td>
-                            <strong ng-bind="plan.Amount / 100 | currency: plan.Currency"></strong> <i ng-show="plan.Cycle === 12">({{ plan.Amount / 100 / 12 | fixed: 2 | currency: plan.Currency }} / month)</i>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
-            <p>
-                <a href="#" ng-click="showFeatures = !showFeatures">
-                    <span translate-context="Action" translate>Show features</span> <i class="fa" ng-class="{'fa-angle-down': !showFeatures, 'fa-angle-up': showFeatures}"></i>
-                </a>
-            </p>
-            <ul ng-show="showFeatures === true">
-                <li ng-show="plan.Name === 'plus'" translate>5GB storage</li>
-                <li ng-show="plan.Name === 'visionary'" translate>20GB storage</li>
-                <li ng-show="plan.Name === 'plus'" translate>Send up to 1000 messages per day</li>
-                <li ng-show="plan.Name === 'visionary'" translate>No sending limits</li>
-                <li translate>Labels and Custom Filters</li>
-                <li translate>Send encrypted messages to external recipients</li>
-                <li translate>Use your own domain (ex: thomas@anderson.com)</li>
-                <li ng-show="plan.Name === 'plus'" translate>Up to 5 email aliases</li>
-                <li ng-show="plan.Name === 'visionary'" translate>Up to 50 email aliases</li>
-                <li ng-show="plan.Name === 'visionary'" translate>Support for up to 5 domains</li>
-                <li translate>Priority Customer Support</li>
-                <li ng-show="plan.Name === 'visionary'" translate>Early access to new features</li>
-                <li ng-show="plan.Name === 'visionary'" translate>Help pick new features through Visionary only polls</li>
-            </ul>
-        </div>
-    </div>
-    <form method="post" ng-submit="pay()" name="payForm" role="form" novalidate class="pm_form">
-
-        <div class="pm_grid margin">
-            <div class="col-1-2">
-                <label for="paymentMethod" translate translate-context="Title" translate-comment="form label">Payment method:</label>
-            </div>
-            <div class="col-1-2">
-                <div class="pm_select">
-                    <select
-                        id="paymentMethod"
-                        ng-model="method"
-                        ng-options="method.label for method in methods"></select>
-                    <i class="fa fa-angle-down"></i>
-                </div>
-            </div>
-        </div>
-
-        <div class="pm_grid" ng-if="method.value === 'card'">
-            <div class="col-1-4 bold" translate translate-context="Title">Credit Card</div>
-            <div class="col-3-4">
-                <card-view
-                    data-card="account.card"
-                    data-form="payForm"></card-view>
-            </div>
-        </div>
-
-        <div class="pm_grid" ng-if="method.value === 'paypal'">
-            <div class="col-1-4 bold" translate translate-context="Title">PayPal</div>
-            <div class="col-3-4">
-                <paypal-view
-                    data-callback="onPaypalSuccess"
-                    data-currency="plan.Currency"
-                    data-amount="plan.Amount"></paypal-view>
-            </div>
-        </div>
-        <div ng-if="method.value !== 'paypal'">
-            <div class="text-center">
-                <p class="alert alert-info" ng-show="errorPay">Would you like to create a free ProtonMail account instead? <a href="#" ng-click="payment = false;humanityTest = true;">Yes</a> <signup-link data-key="no"></signup-link></p>
-                <p>
-                    <button ng-hide="errorPay" class="pm_button primary large" type="submit" ng-disabled="networkActivity.loading()" translate translate-context="Action"><i class="fa fa-lock"></i> Submit</button>
-                    <button ng-show="errorPay" class="pm_button primary large" type="submit" ng-disabled="networkActivity.loading()" translate translate-context="Action">Retry</button>
-                </p>
-                <p><button class="pm_button link" type="button" ng-click="errorPay = true" ng-disabled="networkActivity.loading()" translate translate-context="Action">Cancel</button></p>
-            </div>
-        </div>
-    </form>
-</div>
-
-<form
-    ng-submit="createAccount()"
-    name="humanVerificationStepForm"
-    novalidate
-    class="pm_form">
-        <human-verification
-            data-model="account"
-            class="signUpProcess-step-3"
-            ng-if="!isFromInvitation && humanityTest"></human-verification>
-    </form>
-
-<div class="pm_panel wide signUpProcess-step-2" ng-show="genNewKeys">
+<div class="pm_panel wide signUpProcess-step-2" ng-show="step === 2">
     <div class="text-center header">
         <div class="genNewKeys-loader-container">
             <atom-loader data-loader-theme="primary"></atom-loader>
@@ -236,44 +15,20 @@
     <p class="alert" translate-context="Info" translate>This can take a few seconds or a few minutes depending on your device.</p>
 </div>
 
-<div class="pm_panel wide" ng-show="creating" id="signUpProcess">
-    <div class="text-center header">
-        <div class="creating-loader-container">
-            <atom-loader data-loader-theme="primary"></atom-loader>
-        </div>
-        <h2 class="text-center" ng-show="!signupError"  translate>Creating account</h2>
-        <h2 class="text-center" ng-show="signupError" translate-context="Error" translate>Sign up failed</h2>
-    </div>
-    <p class="alert alert-danger" ng-show="signupError">An error occured while trying to create your account. To see common problems and solutions <a target="_blank" href="https://protonmail.com/support/knowledge-base/common-sign-up-problems-and-solutions/">click here</a>.</p>
-    <div class="wrapper text-left">
-        <ol id="creationList">
-            <li class="done">
-                <i class="show fa fa-check"></i>
-                <span translate>Generating keys</span>
-            </li>
-            <li ng-class="{ 'done': createAccount }">
-                <i ng-class="{ 'show': createAccount }" class="fa fa-check"></i>
-                <span translate>Creating new account</span>
-            </li>
-            <li ng-class="{ 'done': logUserIn }">
-                <i ng-class="{ 'show': logUserIn }" class="fa fa-check"></i>
-                <span translate>Logging in to new account</span>
-            </li>
-            <li ng-class="{ 'done': setupAccount }">
-                <i ng-class="{ 'show': setupAccount }" class="fa fa-check"></i>
-                <span translate>Setting up new account</span>
-            </li>
-            <li ng-class="{ 'done': getUserInfo }">
-                <i ng-class="{ 'show': getUserInfo }" class="fa fa-check"></i>
-                <span translate>Done</span>
-            </li>
-            <li ng-class="{ 'done': finishCreation }">
-                <i ng-class="{ 'show': finishCreation }" class="fa fa-check"></i>
-                <span translate>Redirecting</span>
-            </li>
-        </ol>
-    </div>
-</div>
-<div id="pm_footer" class="static">
+<signup-human-form
+    data-account="account"
+    class="signUpProcess-step-3"
+    ng-if="!isFromInvitation && step === 3"></signup-human-form>
+
+
+<signup-pay-form
+    data-plan="plan"
+    data-account="account"
+    class="pm_panel wide signUpProcess-step-4"
+    ng-if="step === 4"></signup-pay-form>
+
+<signup-creation-process class="pm_panel wide" ng-show="step === 5" id="signUpProcess"></signup-creation-process>
+
+<footer id="pm_footer" class="static">
     <app-copyright></app-copyright>
-</div>
+</footer>
