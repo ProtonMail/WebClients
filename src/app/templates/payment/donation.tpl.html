@@ -98,6 +98,11 @@
         </div>
     </div>
 
+    <p
+        class="donationForm-about-cash help"
+        translate-context="Info"
+        translate>To pay via Cash, please email us at <strong>contact@protonmail.ch</strong> for instructions.</p>
+
     <card-view
         ng-if="model.method.value === 'card'"
         class="donationForm-cardView"
@@ -116,8 +121,6 @@
         data-type="donation"
         data-currency="model.currency.value"
         data-amount="getAmount()"></bitcoin-view>
-
-   <p translate translate-context="Info">To pay via Cash, please email us at <strong>contact@protonmail.ch</strong> for instructions.</p>
 
     <footer class="text-center spacing-top donationForm-footer">
         <button
