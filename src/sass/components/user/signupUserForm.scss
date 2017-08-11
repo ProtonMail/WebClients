@@ -1,0 +1,10 @@
+.signupUserForm-footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    a { color: $primary }
+    a:hover { color: $secondary; text-decoration: none }
+}
+
+.signUpProcess-btn-create { margin-bottom: 1em; }
