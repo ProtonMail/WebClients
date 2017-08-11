@@ -3,10 +3,6 @@
 
 Official AngularJS web client for the [ProtonMail secure email service](https://protonmail.com). ProtonMail also makes use of [OpenPGPjs](https://github.com/openpgpjs/openpgpjs) as our message crytography is PGP compliant.
 
-## Translations
-
-To assist with the ProtonMail Translation Project, please visit our dedicated translation repository: [translations repository](https://github.com/ProtonMail/translations).
-
 ## Basic Installation
 
 > :warning: You must have node.js >= v6
@@ -29,7 +25,7 @@ We are very open to bug reports via Issues as well as Pull Requests.
 
 ### CLI Flags
 
-- `--no-open`: Stop the browser from automatically opening 
+- `--no-open`: Stop the browser from automatically opening
 - `--no-ghost`: Switch off Clicks, Scrolls & Form inputs on any device
 
 ## Branch naming conventions
