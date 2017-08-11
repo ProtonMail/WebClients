@@ -34,6 +34,11 @@ angular.module('proton.payment')
                     const Currency = this.checkInvoice.Currency;
                     const parameters = { Amount, Currency };
 
+                    // If the user has enough credits, just send the parameters
+                    if (!Amount) {
+                        return parameters;
+                    }
+
                     if (this.method.value === 'use.card') {
                         parameters.PaymentMethodID = this.method.ID;
                     }
