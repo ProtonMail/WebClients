@@ -21,15 +21,8 @@ angular.module('proton.payment')
         const generateMethods = ({ methods = paymentModel.get('methods'), choice, Cycle = 12, Amount } = {}) => {
             const list = [{
                 value: 'card',
-                label: gettextCatalog.getString('Credit card', null)
+                label: gettextCatalog.getString('Credit Card', null)
             }];
-
-            if (!$state.is('signup')) {
-                list.push({
-                    value: 'bitcoin',
-                    label: 'Bitcoin'
-                });
-            }
 
             // Min amount to activate it if monthly is 50
             const isMonthlyValid = (Amount > 5000 && Cycle === 1);
@@ -40,6 +33,18 @@ angular.module('proton.payment')
                     value: 'paypal'
                 });
             }
+
+            if (!$state.is('signup')) {
+                list.push({
+                    value: 'bitcoin',
+                    label: 'Bitcoin'
+                });
+            }
+
+            list.push({
+                value: 'cash',
+                label: 'Cash'
+            });
 
             let selected = list[0];
 
