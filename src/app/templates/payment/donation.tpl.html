@@ -99,7 +99,8 @@
     </div>
 
     <p
-        class="donationForm-about-cash help"
+        ng-if="model.method.value === 'cash'"
+        class="donationForm-about-cash"
         translate-context="Info"
         translate>To pay via Cash, please email us at <strong>contact@protonmail.ch</strong> for instructions.</p>
 
