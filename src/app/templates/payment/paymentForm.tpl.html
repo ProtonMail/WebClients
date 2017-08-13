@@ -60,7 +60,11 @@
                     data-currency="ctrl.valid.Currency"
                     data-amount="ctrl.valid.AmountDue"></bitcoin-view>
 
-                <p translate translate-context="Info">To pay via Cash, please email us at <strong>contact@protonmail.ch</strong> for instructions.</p>
+                <p
+                    ng-if="ctrl.method.value === 'cash'"
+                    class="alert alert-info"
+                    translate
+                    translate-context="Info">To pay via Cash, please email us at <strong>contact@protonmail.ch</strong> for instructions.</p>
 
                 <hr />
 
@@ -86,5 +90,3 @@
         </div>
     </div>
 </div>
-
-
