@@ -29,7 +29,7 @@ angular.module('proton.payment')
             // Paypal doesn't work with IE11 ??? === For payment modal we cannot pay monthly via paypal
             if (!aboutClient.isIE11() && (Cycle === 12 || isMonthlyValid)) {
                 list.push({
-                    label: 'Paypal',
+                    label: 'PayPal',
                     value: 'paypal'
                 });
             }
