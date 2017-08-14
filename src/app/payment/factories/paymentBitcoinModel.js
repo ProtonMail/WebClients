@@ -6,7 +6,7 @@ angular.module('proton.payment')
         const TYPE_DONATION = 'donation';
         const { MIN_BITCOIN_AMOUNT } = CONSTANTS;
 
-        const dispacth = (type, data = {}) => $rootScope.$emit('payment', { type, data });
+        const dispatch = (type, data = {}) => $rootScope.$emit('payment', { type, data });
 
         const set = (key, value) => (CACHE[key] = value);
         const get = (key) => angular.copy(key ? CACHE[key] : CACHE);
@@ -20,7 +20,11 @@ angular.module('proton.payment')
             set('input', { amount, currency, type });
 
             if (amount < MIN_BITCOIN_AMOUNT) {
-                return dispacth('bitcoin.validator.error', { type: 'amount' });
+                return dispatch('bitcoin.validator.error', { type: 'amount' });
+            }
+
+            if (type === TYPE_DONATION) {
+                return dispatch('bitcoin.success', { isDonation: true });
             }
 
             const promise = Payment.btc(amount, currency)
@@ -31,9 +35,9 @@ angular.module('proton.payment')
                     return data;
                 })
                 .then((data) => (set('payment', data), data))
-                .then((data) => dispacth('bitcoin.success', data))
+                .then((data) => dispatch('bitcoin.success', data))
                 .catch((error) => {
-                    dispacth('bitcoin.error', error);
+                    dispatch('bitcoin.error', error);
                     throw error;
                 });
 

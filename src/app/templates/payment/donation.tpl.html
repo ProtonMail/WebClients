@@ -120,7 +120,7 @@
     <bitcoin-view
         ng-if="model.method.value === 'bitcoin'"
         class="donateModal-bitcoin"
-        data-type="donation"
+        data-type="{{::type}}"
         data-currency="model.currency.value"
         data-amount="getAmount()"></bitcoin-view>
 
