@@ -1,6 +1,9 @@
 angular.module('proton.payment')
     .factory('paymentUtils', (gettextCatalog, aboutClient, paymentModel, $state) => {
-
+        const I18N = {
+            cash: gettextCatalog.getString('Cash', null, 'Payment method'),
+            card: gettextCatalog.getString('Credit Card', null, 'Payment method')
+        };
         const cardNumber = ({ Last4 = '' } = {}) => `•••• •••• •••• ${Last4}`;
         const formatMethods = (methods = []) => {
             return methods.map(({ ID = '', Details = {} }) => ({
@@ -21,8 +24,18 @@ angular.module('proton.payment')
         const generateMethods = ({ methods = paymentModel.get('methods'), choice, Cycle = 12, Amount } = {}) => {
             const list = [{
                 value: 'card',
-                label: gettextCatalog.getString('Credit card', null)
+                label: I18N.card
             }];
+
+            // Min amount to activate it if monthly is 50
+            const isMonthlyValid = (Amount > 5000 && Cycle === 1);
+            // Paypal doesn't work with IE11 ??? === For payment modal we cannot pay monthly via paypal
+            if (!aboutClient.isIE11() && (Cycle === 12 || isMonthlyValid)) {
+                list.push({
+                    label: 'PayPal',
+                    value: 'paypal'
+                });
+            }
 
             if (!$state.is('signup')) {
                 list.push({
@@ -31,15 +44,10 @@ angular.module('proton.payment')
                 });
             }
 
-            // Min amount to activate it if monthly is 50
-            const isMonthlyValid = (Amount > 5000 && Cycle === 1);
-            // Paypal doesn't work with IE11 ??? === For payment modal we cannot pay monthly via paypal
-            if (!aboutClient.isIE11() && (Cycle === 12 || isMonthlyValid)) {
-                list.push({
-                    label: 'Paypal',
-                    value: 'paypal'
-                });
-            }
+            list.push({
+                value: 'cash',
+                label: I18N.cash
+            });
 
             let selected = list[0];
 

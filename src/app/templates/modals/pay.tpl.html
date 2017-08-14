@@ -7,7 +7,8 @@
             'payInvoiceModal-method-card': ctrl.method.value === 'use.card',
             'payInvoiceModal-method-paypal': ctrl.method.value === 'paypal',
             'payInvoiceModal-method-bitcoin': ctrl.method.value === 'bitcoin',
-            'payInvoiceModal-method-newcard': ctrl.method.value === 'card'
+            'payInvoiceModal-method-newcard': ctrl.method.value === 'card',
+            'payInvoiceModal-method-cash': ctrl.method.value === 'cash'
         }"
         ng-submit="payForm.$valid && ctrl.submit()"
         name="payForm">
@@ -82,6 +83,12 @@
                         ng-if="ctrl.method.value === 'bitcoin'"
                         data-currency="ctrl.checkInvoice.Currency"
                         data-amount="ctrl.checkInvoice.AmountDue"></bitcoin-view>
+
+                    <p
+                        ng-if="ctrl.method.value === 'cash'"
+                        class="alert alert-info"
+                        translate-context="Info"
+                        translate>To pay via Cash, please email us at <strong>contact@protonmail.ch</strong> for instructions.</p>
 
                 </div>
 

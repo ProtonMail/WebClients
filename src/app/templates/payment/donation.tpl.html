@@ -4,7 +4,8 @@
     ng-class="{
         'donationForm-method-card': model.method.value === 'use.card',
         'donationForm-method-payal': model.method.value === 'paypal',
-        'donationForm-method-newcard': model.method.value === 'card'
+        'donationForm-method-newcard': model.method.value === 'card',
+        'donationForm-method-cash': model.method.value === 'cash'
     }"
     data-form-is-invalid
     novalidate>
@@ -99,7 +100,8 @@
     </div>
 
     <p
-        class="donationForm-about-cash help"
+        ng-if="model.method.value === 'cash'"
+        class="donationForm-about-cash alert alert-info"
         translate-context="Info"
         translate>To pay via Cash, please email us at <strong>contact@protonmail.ch</strong> for instructions.</p>
 
