@@ -11,7 +11,7 @@
         justify-content: center;
     }
 
-    [class*="bitcoinDetails-label-"]::after { content: ' :'; margin-right: .5em }
+    [class*="bitcoinDetails-label-"]::after { content: ':'; margin-right: .5em }
     .bitcoinDetails-item-address {
         text-align: center;
         margin-top: .5em;
