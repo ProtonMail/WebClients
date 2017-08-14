@@ -24,7 +24,7 @@
 .donateModal-container .donationForm-footer { display: none  }
 
 
-.donateModal-mode-bitcoin {
+.donateModal-mode-bitcoin, .donateModal-mode-cash {
     [class*="donateModal-choose"],
     [for="otherAmount"],
     .donateModal-btn-cancel,
@@ -51,3 +51,4 @@
     .donateModal-group-btn { justify-content: flex-end }
     .donateModal-btn-donation { display: none }
 }
+
