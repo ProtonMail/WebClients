@@ -19,10 +19,6 @@ angular.module('proton.payment')
             reset();
             set('input', { amount, currency, type });
 
-            if (type === TYPE_DONATION) {
-                return dispacth('bitcoin.success', { isDonation: true });
-            }
-
             if (amount < MIN_BITCOIN_AMOUNT) {
                 return dispacth('bitcoin.validator.error', { type: 'amount' });
             }
