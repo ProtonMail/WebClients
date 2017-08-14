@@ -42,12 +42,13 @@ angular.module('proton.payment')
                     value: 'bitcoin',
                     label: 'Bitcoin'
                 });
+
+                list.push({
+                    value: 'cash',
+                    label: I18N.cash
+                });
             }
 
-            list.push({
-                value: 'cash',
-                label: I18N.cash
-            });
 
             let selected = list[0];
 
