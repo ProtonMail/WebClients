@@ -3,7 +3,7 @@
     <p class="alert alert-info" ng-show="!paypalNetworkError" translate-context="Info" translate>You will need to login to your PayPal account to complete this transaction. We will open a new tab with PayPal for you. If you use any pop-up blockers, please disable them to continue.</p>
 
     <p class="alert alert-danger" ng-show="paypalNetworkError">
-        <span translate-context="Error" translate>Error connecting to PayPal.</span> <a href="#" ng-click="initPaypal()" translate-context="Action" translate>Click here to try again<a>.
+        <span translate-context="Error" translate>Error connecting to PayPal.</span> <a href="#" ng-click="initPaypal()" translate-context="Action" translate>Click here to try again</a>.
     </p>
 
     <p class="alert alert-danger paypal-error-amount" ng-if="errorDetails">
