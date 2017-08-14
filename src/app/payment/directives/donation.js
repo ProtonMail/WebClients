@@ -50,7 +50,8 @@ angular.module('proton.payment')
             templateUrl: 'templates/payment/donation.tpl.html',
             link(scope, el, { type = 'donation', action = '' }) {
 
-                const $items = el.find(`${SELECTOR.INPUT_OTHER}, ${SELECTOR.SELECT_CURRENCY}`);
+                const $items = el.find(SELECTOR.SELECT_CURRENCY);
+                const $other = el.find(SELECTOR.INPUT_OTHER);
                 const $methods = el.find(SELECTOR.SELECT_METHOD);
                 const { list, selected } = paymentUtils.generateMethods();
                 const buildRequestOption = getParameters(scope);
@@ -103,6 +104,7 @@ angular.module('proton.payment')
 
                 };
 
+                const onInput = () => scope.$applyAsync(changeValue);
                 const onChange = () => scope.$applyAsync(changeValue);
                 const onChangeMethod = () => scope.$applyAsync(() => scope.method = scope.model.method);
 
@@ -110,6 +112,7 @@ angular.module('proton.payment')
                 el.on('submit', onSubmit);
                 $items.on('change', onChange);
                 $methods.on('change', onChangeMethod);
+                $other.on('input', onInput);
 
                 const unsubscribe = $rootScope.$on('payments', (e, { type }) => {
 
@@ -129,9 +132,9 @@ angular.module('proton.payment')
                 scope.$on('$destroy', () => {
                     el.off('click', onClick);
                     el.off('submit', onSubmit);
-                    $items.on('change', onChange);
-                    $methods.on('change', onChangeMethod);
-
+                    $items.off('change', onChange);
+                    $methods.off('change', onChangeMethod);
+                    $other.off('input', onInput);
                     unsubscribe();
                 });
             }

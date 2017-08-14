@@ -24,7 +24,7 @@
 .donateModal-container .donationForm-footer { display: none  }
 
 
-.donateModal-mode-bitcoin, .donateModal-mode-cash {
+.donateModal-mode-cash {
     [class*="donateModal-choose"],
     [for="otherAmount"],
     .donateModal-btn-cancel,
@@ -32,6 +32,12 @@
         display: none;
         pointer-events: none
     }
+
+}
+
+.donateModal-mode-bitcoin {
+
+    .donateModal-bitcoin { height: 430px }
 
     .bitcoinView-qrcode {
         display: flex;
@@ -45,7 +51,13 @@
         margin-top: .5em;
     }
 
+    .donateModal-btn-cancel,
+    .donateModal-btn-donate {
+        display: none;
+        pointer-events: none
+    }
 }
+
 .donateModal-mode-paypal, .donateModal-mode-bitcoin, .donateModal-mode-cash {
 
     .donateModal-group-btn { justify-content: flex-end }
