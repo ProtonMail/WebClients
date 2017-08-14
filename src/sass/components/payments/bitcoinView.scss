@@ -4,7 +4,7 @@
 
 .bitcoinView-type-invoice .bitcoinView-about { display: none }
 
-.bitcoinView-type-payment, .bitcoinView-type-invoice {
+.bitcoinView-type-payment, .bitcoinView-type-invoice, .bitcoinView-type-donation {
 
     .bitcoinView-qrcode {
         display: flex;
