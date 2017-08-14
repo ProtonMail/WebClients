@@ -36,11 +36,13 @@
     justify-content: space-between;
 }
 
-.paymentsModal-step-process, .paymentsModal-method-bitcoin, .paymentsModal-method-paypal {
+.paymentsModal-step-process, .paymentsModal-method-bitcoin,
+.paymentsModal-method-paypal, .paymentsModal-method-cash {
     .paymentsModal-group-btn { justify-content: flex-end }
 }
 
-.paymentsModal-container.paymentsModal-method-bitcoin {
+.paymentsModal-container.paymentsModal-method-bitcoin,
+.paymentsModal-container.paymentsModal-method-cash {
     .paymentsModal-btn-cancel,
     .paymentsModal-btn-submit { display: none }
 
