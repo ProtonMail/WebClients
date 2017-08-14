@@ -45,17 +45,18 @@ angular.module('proton.payment')
             replace: true,
             scope: {
                 processing: '=?',
-                method: '=?'
+                method: '=?',
+                type: '@'
             },
             templateUrl: 'templates/payment/donation.tpl.html',
-            link(scope, el, { type = 'donation', action = '' }) {
+            link(scope, el, { action = '' }) {
 
                 const $items = el.find(SELECTOR.SELECT_CURRENCY);
                 const $other = el.find(SELECTOR.INPUT_OTHER);
                 const $methods = el.find(SELECTOR.SELECT_METHOD);
                 const { list, selected } = paymentUtils.generateMethods();
                 const buildRequestOption = getParameters(scope);
-                const donate = loadDonation(type, action);
+                const donate = loadDonation(scope.type, action);
 
                 scope.model = {
                     card: {},
