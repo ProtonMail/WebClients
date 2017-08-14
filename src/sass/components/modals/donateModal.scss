@@ -6,7 +6,7 @@
     .donationForm-cardView .pm_grid { margin-bottom: 0 }
 }
 
-.donateModal-container:not(.donateModal-mode-bitcoin) {
+.donateModal-container:not(.donateModal-mode-bitcoin):not(.donateModal-mode-cash) {
     .donateModal-btn-close { display: none }
 }
 
