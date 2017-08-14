@@ -24,19 +24,23 @@
 .donateModal-container .donationForm-footer { display: none  }
 
 
-.donateModal-mode-cash, .donateModal-mode-bitcoin {
+.donateModal-mode-cash,
+.donateModal-mode-bitcoin.donateModal-type-donation {
     [class*="donateModal-choose"],
     [for="otherAmount"],
+    .bitcoinView-about,
     .donateModal-btn-cancel,
     .donateModal-btn-donate {
         display: none;
         pointer-events: none
     }
-
 }
 
+.donateModal-mode-bitcoin .donateModal-btn-cancel { display: none }
 
-.donateModal-mode-paypal, .donateModal-mode-bitcoin, .donateModal-mode-cash {
+.donateModal-mode-paypal,
+.donateModal-mode-bitcoin,
+.donateModal-mode-cash {
 
     .donateModal-group-btn { justify-content: flex-end }
     .donateModal-btn-donation { display: none }
