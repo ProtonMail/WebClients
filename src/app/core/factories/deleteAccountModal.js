@@ -1,5 +1,8 @@
 angular.module('proton.core')
-    .factory('deleteAccountModal', (pmModal, Bug, User, networkActivityTracker, authentication, $state, CONSTANTS) => {
+    .factory('deleteAccountModal', (pmModal, Bug, User, networkActivityTracker, authentication, $state, CONSTANTS, gettextCatalog, notify) => {
+        const I18N = {
+            invalidForm: gettextCatalog.getString('Invalid form', null, 'Error reported when the delete account form is invalid')
+        };
         function report(params, isAdmin) {
             if (isAdmin) {
                 return Bug.report(params);
@@ -20,7 +23,7 @@ angular.module('proton.core')
         return pmModal({
             controllerAs: 'ctrl',
             templateUrl: 'templates/modals/deleteAccount.tpl.html',
-            controller(params) {
+            controller(params, $scope) {
                 const self = this;
                 self.hasTwoFactor = authentication.user.TwoFactor;
                 self.isAdmin = authentication.user.Role === CONSTANTS.PAID_ADMIN_ROLE;
@@ -29,6 +32,11 @@ angular.module('proton.core')
                 self.password = '';
                 self.twoFactorCode = '';
                 self.submit = () => {
+                    if ($scope.deleteForm.$invalid) {
+                        notify({ message: I18N.invalidForm, classes: 'notification-danger' });
+                        return;
+                    }
+
                     const username = authentication.user.Name;
                     const params = {
                         OS: '--',
