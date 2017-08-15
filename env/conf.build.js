@@ -82,7 +82,7 @@ module.exports = {
       'vendor/ng-intl-tel-input/dist/ng-intl-tel-input.js',
       'vendor/blobjs/Blob.js',
       'vendor/file-saver/FileSaver.js',
-      'vendor/base32/dist/base32.js',
+      'vendor/hi-base32/build/base32.min.js',
       'vendor/qrcodejs/qrcode.js',
       'vendor/mailparser/mailparser.js',
       'vendor/cssua/cssua.js',
