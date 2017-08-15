@@ -173,12 +173,15 @@ angular.module('proton.payment')
                             if (!ctrl.valid.AmountDue) {
                                 return ctrl.method = ctrl.methods[0];
                             }
-                            // If the current payment method is 'paypal' we need to reload the Paypal link to match the new amount
-                            if (ctrl.method.value === 'paypal') {
+                            // If the current payment method is 'paypal' or 'bitcoin' we need to reload the component to match with the new amount
+                            if (ctrl.method.value === 'paypal' || ctrl.method.value === 'bitcoin') {
+                                const currentMethod = ctrl.method.value;
+
                                 ctrl.method.value = '';
+
                                 _rAF(() => {
                                     scope.$applyAsync(() => {
-                                        ctrl.method.value = 'paypal';
+                                        ctrl.method.value = currentMethod;
                                     });
                                 });
                             }
