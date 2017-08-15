@@ -5,13 +5,11 @@ cp vendor/codemirror/mode/sieve/sieve.js vendor/codemirror/mode/sieve/sieveSynta
 cp -r node_modules/babel-polyfill  vendor/babel-polyfill
 
 DEST_BLOB='vendor/blobjs'
-DEST_BASE32='vendor/base32'
 DEST_QRCODE='vendor/qrcodejs'
 DEST_CSSUA='vendor/cssua'
 DEST_MAILPARSER='vendor/mailparser'
 
 rm -rf $DEST_BLOB
-rm -rf $DEST_BASE32
 rm -rf $DEST_CSSUA
 rm -rf $DEST_QRCODE
 rm -rf $DEST_MAILPARSER
@@ -22,12 +20,6 @@ cp src/libraries/mailparser.js vendor/mailparser/mailparser.js
 git clone git@github.com:eligrey/Blob.js.git \
   --branch master \
   --single-branch $DEST_BLOB \
-  --depth 1
-
-# There is a bower.json but it's not available
-git clone git@github.com:agnoster/base32-js.git \
-  --branch master \
-  --single-branch $DEST_BASE32 \
   --depth 1
 
 # There is a bower.json but it's not available
@@ -44,7 +36,6 @@ git clone git@github.com:davidshimjs/qrcodejs.git \
 
 rm -rf $DEST_BLOB/.git
 rm -rf $DEST_CSSUA/.git
-rm -rf $DEST_BASE32/.git
 rm -rf $DEST_QRCODE/.git
 
 echo
