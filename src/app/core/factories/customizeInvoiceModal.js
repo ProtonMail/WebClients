@@ -1,26 +1,30 @@
 angular.module('proton.core')
-    .factory('customizeInvoiceModal', (pmModal, settingsApi, notify, authentication) => {
+    .factory('customizeInvoiceModal', (eventManager, pmModal, settingsApi, notify, authentication, networkActivityTracker) => {
         return pmModal({
             controllerAs: 'ctrl',
             templateUrl: 'templates/modals/customizeInvoice.tpl.html',
             controller(params) {
-                this.text = authentication.user.InvoiceText || '';
+                const self = this;
 
-                this.submit = function () {
-                    settingsApi.invoiceText({ InvoiceText: this.text })
-                        .then(function (result) {
-                            if (result.data && result.data.Code === 1000) {
-                                authentication.user.InvoiceText = this.text;
-                                notify({ message: 'Invoice customized', classes: 'notification-success' });
-                                params.cancel();
-                            } else if (result.data && result.data.Error) {
-                                notify({ message: result.data.Error, classes: 'notification-danger' });
+                self.text = authentication.user.InvoiceText || '';
+                self.cancel = () => params.cancel();
+
+                self.submit = () => {
+                    const promise = settingsApi.invoiceText({ InvoiceText: self.text })
+                        .then(({ data = {} } = {}) => {
+                            if (data.Error) {
+                                throw new Error(data.Error);
                             }
-                        });
-                }.bind(this);
 
-                this.cancel = function () {
-                    params.cancel();
+                            return data;
+                        })
+                        .then(() => eventManager.call())
+                        .then(() => {
+                            notify({ message: 'Invoice customized', classes: 'notification-success' });
+                            params.cancel();
+                        });
+
+                    networkActivityTracker.track(promise);
                 };
             }
         });
