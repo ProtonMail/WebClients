@@ -12,6 +12,7 @@ angular.module('proton.message')
 
             images.forEach((image) => {
                 const src = image.getAttribute('proton-src');
+                image.setAttribute('referrerPolicy', 'no-referrer');
                 const attachment = embedded.getAttachment(message, src);
 
                 if (!image.classList.contains(EMBEDDED_CLASSNAME)) {
