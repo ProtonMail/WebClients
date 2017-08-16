@@ -1,7 +1,7 @@
 angular.module('proton.ui')
     .directive('appVersion', (CONFIG) => {
 
-        const URL = 'https://protonmail.com/blog/protonmail-v3-10-release-notes/';
+        const URL = 'https://protonmail.com/blog/protonmail-v3-11-release-notes/';
 
         return {
             replace: true,
