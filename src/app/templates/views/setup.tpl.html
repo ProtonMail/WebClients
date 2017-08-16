@@ -36,14 +36,12 @@
                     <span translate translate-context="Title">Mailbox Password</span>
                 </label>
 
-                <p class="help" translate-context="Info" translate>This is used to encrypt and decrypt
-            your messages. Do not lose this password--we cannot recover it.</p>
                 <password
                     class="loginSetup-field-password"
                     data-id="password"
                     data-name="password"
                     data-value="$parent.password"
-                    placeholder-translate="Choose a mailbox password"
+                    placeholder-translate="Choose a password"
                     data-form="setup"></password>
 
                 <password
@@ -52,7 +50,7 @@
                     data-name="passwordc"
                     data-value="$parent.passwordConfirm"
                     data-compare="$parent.password"
-                    placeholder-translate="Confirm mailbox password"
+                    placeholder-translate="Confirm password"
                     data-form="setup"></password>
 
                 <p class="alert alert-info" translate-context="Info" translate>If you lose your mailbox password, you will not be able to read your emails. We cannot recover this password for you.</p>
