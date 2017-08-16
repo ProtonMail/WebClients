@@ -91,10 +91,9 @@ angular.module('proton.core')
 
         unsubscribe.push($rootScope.$on('payments', (e, { type, data = {} }) => {
             if (type === 'create.account') {
+                (data.action !== 'humanVerification') && createAccount();
 
-                (data.type !== 'donation') && createAccount();
-
-                if (data.type === 'donation') {
+                if (data.action === 'humanVerification') {
                     const { Payment, Amount, Currency } = data.options;
                     verify(Payment, Amount, Currency);
                 }
