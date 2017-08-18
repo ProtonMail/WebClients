@@ -6,9 +6,9 @@
         translate>Username and domain</span>
     </label>
 
-    <div class="usernameWrap">
-        <p class="help" translate-context="Info" translate>This will be your new ProtonMail email address.</p>
+    <p class="help" translate-context="Info" translate>This will be your new ProtonMail email address.</p>
 
+    <div class="usernameWrap">
         <input
             type="text"
             ng-model="model.username"
@@ -17,7 +17,7 @@
             data-valid-username
             required
             id="username"
-            class="dead"
+            class="dead usernameInput"
             ng-model-options="{
                 updateOn: 'default blur',
                 debounce: { 'default': 500, 'blur': 0 }

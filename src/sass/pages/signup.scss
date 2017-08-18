@@ -1,179 +1,164 @@
-#signup {
-
-    #mainContainer {
-        margin-top:3rem;
-    }
-    iframe#pm_captcha {
-        outline: none;
-        border: none;
-        width: 100%;
-        position: relative;
-        left: -8px;
-        height: 120px;
-        overflow: hidden;
-        z-index: 5;
-    }
-    #verification-panel {
-        width: 315px;
-        margin: auto;
-    }
-    .pm_panel {
-        margin-bottom: 2rem;
-        img {
-            margin: 1rem 0;
-        }
-        h3 {
-            margin-bottom: 1rem;
-        }
-    }
-    #captchaFrame {
-        position: relative;
-        .loading {
-            position: absolute;
-            left: 0;
-            right: 0;
-            top: 4rem;
-            text-align: center;
-            z-index: 1;
-            display: block;
-        }
-    }
-    h2 {
-        text-transform: uppercase;
-        margin-bottom: 1rem;
-        .fa {
-            margin-bottom: .5rem;
-        }
-    }
-    .spinner.large {
-        height: 14rem;
-        .spinner1, .spinner2, .spinner3 {
-            background-color: $primary;
-        }
-    }
-    ol#creationList,
-    ol#creationList li {
-        display: display;
-        list-style-type: none;
-        .fa {
-            width: 1.5rem;
-            display: inline-block;
-            opacity: 0;
-            -webkit-transition: opacity 1s ease;
-               -moz-transition: opacity 1s ease;
-                -ms-transition: opacity 1s ease;
-                 -o-transition: opacity 1s ease;
-                    transition: opacity 1s ease;
-            &.show {
-                opacity: 1;
-            }
-        }
-    }
-    .pm_button.primary {
-        padding: 0 2rem;
-    }
-    .wrapper {
-        padding: 0 65px;
-        position: relative;
-        text-align: initial;
-    }
-
-    .usernameWrap {
-        strong {
-            float: left;
-            line-height: 2rem;
-        }
-        input {
-            width: 11rem;
-            display: inline-block;
-            float: left;
-        }
-        em {
-            font-style: normal;
-            width: 2rem;
-            text-align: center;
-            line-height: 2rem;
-            float: left;
-        }
-    }
-
-    .titleLabel {
-        font-weight: 700;
-        text-align: left;
-        position: relative;
-        margin: 2rem 0 -.5rem 0;
-        color: $text;
-        font-weight: 700;
-        font-size: 1.1rem;
-        &.optIn {
-            font-weight: normal;
-        }
-        span {
-        }
-    }
-
-    [data-step] { position: relative;  }
-
-    [data-step]::before {
-        content: attr(data-step);
-    }
-
-    .titleLabel .num, [data-step]::before {
-        position: absolute;
-        width: 2rem;
-        left: -65px;
-        font-weight: 700;
-        border-radius: 2rem;
-        background-color: $light;
-        text-align: center;
-        line-height: 2rem;
-        display: block;
-        height: 2rem;
-        font-size: .8rem;
-        font-style: normal;
-        color: $default-color
-    }
-
-    .signup-radio-label { height: 1.5rem }
-    .signup-radio-label-text {
-        color: #000;
-        font-size: 1rem;
-    }
-
-    .genNewKeys-loader-container,
-    .creating-loader-container {
-        display: flex;
-        justify-content: center;
-    }
-
+[class*='signUpProcess-step-'] {
+    margin-bottom: 2rem;
+    margin-top: 3rem;
 }
 
+[class*='signUpProcess-step-'] .wrapper {
+    padding: 0 65px;
+    position: relative;
+    text-align: initial;
+}
+
+.signupUserForm-container .usernameDomain-container,
+.signupUserForm-container .usernamePassword-container,
+.signupUserForm-container .notificationEmail-container,
+.humanVerification-container .humanVerification-wrapper { margin-top: 2rem }
+
+/* HEADER */
+
+[class*='signUpProcess-step-'] > .header { margin-top: 1rem }
+
+.signupPayForm-header-title,
+.signupUserForm-header-title {
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+}
+
+[class*='signUpProcess-step-'] [data-step] { position: relative;  }
+[class*='signUpProcess-step-'] [data-step]::before { content: attr(data-step) }
+
+[class*='signUpProcess-step-'] [data-step]::before {
+    position: absolute;
+    width: 2rem;
+    left: -65px;
+    font-weight: 700;
+    border-radius: 2rem;
+    background-color: $light;
+    text-align: center;
+    line-height: 2rem;
+    display: block;
+    height: 2rem;
+    font-size: .8rem;
+    font-style: normal;
+    color: $default-color
+}
+
+[class*='signUpProcess-step-'] .titleLabel {
+    position: relative;
+    font-weight: 700;
+    text-align: left;
+    color: $text;
+    font-weight: 700;
+    font-size: 1.1rem;
+}
+
+.signupUserForm-container .usernameDomain-container > .help,
+.signupUserForm-container .notificationEmail-container > .help,
+.humanVerification-container .humanVerification-wrapper > .help { margin-top: 0 }
+
+
+/* FOOTER */
+
+.signupUserForm-footer {
+    text-align: center;
+    margin-top: 3rem;
+}
+
+/* STEP-1 */
+
+.signUpProcess-step-1 .usernameWrap {
+    display: flex;
+    align-items: center;
+}
+
+.signUpProcess-step-1  .usernameWrap .usernameInput { flex-grow: 1 }
+.signUpProcess-step-1  .usernameWrap .usernameDomain { padding: 0 5px }
+
+/* humanVerification */
+
+.humanVerification-wrapper {
+    width: 375px;
+    margin: 0px auto;
+}
+
+/* creationList  */
+
+[class*='signUpProcess-step-'] ol#creationList,
+[class*='signUpProcess-step-'] ol#creationList li {
+    display: display;
+    list-style-type: none;
+    .fa {
+        width: 1.5rem;
+        display: inline-block;
+        opacity: 0;
+        -webkit-transition: opacity 1s ease;
+           -moz-transition: opacity 1s ease;
+            -ms-transition: opacity 1s ease;
+             -o-transition: opacity 1s ease;
+                transition: opacity 1s ease;
+        &.show {
+            opacity: 1;
+        }
+    }
+}
+
+
+/* IFRAME */
+[class*='signUpProcess-step-'] iframe#pm_captcha {
+    outline: none;
+    border: none;
+    width: 100%;
+    position: relative;
+    left: -8px;
+    height: 120px;
+    overflow: hidden;
+    z-index: 5;
+}
+
+[class*='signUpProcess-step-'] #captchaFrame {
+    position: relative;
+    .loading {
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 4rem;
+        text-align: center;
+        z-index: 1;
+        display: block;
+    }
+}
+
+[class*='signUpProcess-step-'] .spinner.large {
+    height: 14rem;
+    .spinner1, .spinner2, .spinner3 {
+        background-color: $primary;
+    }
+}
+
+[class*='signUpProcess-step-'] .signup-radio-label { height: 1.5rem }
+[class*='signUpProcess-step-'] .signup-radio-label-text {
+    color: #000;
+    font-size: 1rem;
+}
+
+[class*='signUpProcess-step-'] .genNewKeys-loader-container,
+[class*='signUpProcess-step-'] .creating-loader-container {
+    display: flex;
+    justify-content: center;
+}
+
+
+/* RESPONSIVE */
+
 body.appConfigBody-is-mobile {
-    &#signup {
-        #mainContainer {
-            margin-top:0;
-        }
-        .wrapper {
-            padding: 0;
-            label {
-                margin-top: 4rem;
-                em.num {
-                    left: 0;
-                    top: -2rem;
-                }
-            }
-        }
-        .pm_panel{
-            margin: 0;
-            padding-top: 3rem !important;
-            form {
-                .pm_button.primary {
-                    width: 100%;
-                    text-align: center;
-                    line-height: 4rem;
-                    height: 4rem;
-                }
-            }
-        }
+    [class*='signUpProcess-step-'],
+    [class*='signUpProcess-step-'] .pm_panel { margin: 0 }
+    [class*='signUpProcess-step-'] [data-step]::before { display: none }
+    [class*='signUpProcess-step-'] .wrapper { padding: 0 }
+    [class*='signUpProcess-step-'] .wrapper label { margin-top: 3rem }
+    .signUpProcess-btn-create {
+        width: 100%;
+        height: 4rem;
+        line-height: 4rem;
     }
 }
