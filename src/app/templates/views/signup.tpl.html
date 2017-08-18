@@ -6,7 +6,7 @@
     data-domains="domains"></signup-user-form>
 
 <div class="pm_panel wide signUpProcess-step-2" ng-show="step === 2">
-    <div class="text-center header">
+    <div class="text-center">
         <div class="genNewKeys-loader-container">
             <atom-loader data-loader-theme="primary"></atom-loader>
         </div>
@@ -27,7 +27,9 @@
     class="pm_panel wide signUpProcess-step-4"
     ng-if="step === 4"></signup-pay-form>
 
-<signup-creation-process class="pm_panel wide" ng-show="step === 5" id="signUpProcess"></signup-creation-process>
+<signup-creation-process
+    class="pm_panel wide signUpProcess-step-5"
+    ng-show="step === 5"></signup-creation-process>
 
 <footer id="pm_footer" class="static">
     <app-copyright></app-copyright>
