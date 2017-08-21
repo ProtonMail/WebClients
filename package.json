@@ -6,6 +6,9 @@
   "name": "protonmail-web",
   "author": "Proton Technologies AG",
   "description": "Angular frontend for protonmail.com",
+  "engines": {
+    "node": "^6.10"
+  },
   "devDependencies": {
     "angular-mocks": "^1.6.2",
     "autoprefixer": "^6.7.5",
@@ -66,9 +69,9 @@
   },
   "license": "MIT",
   "scripts": {
-    "postinstall": "bower install && ./tasks/privateDependencies.sh",
+    "postinstall": "bower install --allow-root && ./tasks/privateDependencies.sh",
     "start": "grunt watch --api=dev",
-    "lint": "eslint $(find src/app -type f -name '*.js')  --quiet",
+    "lint": "eslint $(find src/app -type f -name '*.js') --quiet",
     "e2e": "protractor protractor_conf.js",
     "test": "cross-env NODE_ENV=test karma start test/karma.conf.js",
     "testwatch": "npm test -- --auto-watch --no-single-run",

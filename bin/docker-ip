@@ -1,12 +1,10 @@
 #!/bin/bash
 set -e
 
-if hash docker-machine 2> /dev/null; then
+if hash docker-machine &> /dev/null && docker-machine active &> /dev/null; then
 	echo $(docker-machine ip `docker-machine active`)
-elif hash boot2docker 2> /dev/null; then
-	echo $(boot2docker ip)
 elif hash docker 2> /dev/null; then
-	echo "localhost"
+	echo "127.0.0.1"
 else
 	echo >&2 "Failed to get the IP of your docker host."
 	exit 1

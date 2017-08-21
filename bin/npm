@@ -1,0 +1,9 @@
+#!/usr/bin/env sh
+set -eu
+
+IMAGE=$(cat bin/npm.Dockerfile | docker build --quiet -)
+
+# if [ -z "${1-}" ]; then CMD="bash"; else CMD="npm $@"; fi
+if [ "${1-}" != 'bash' ]; then CMD="npm $@"; else CMD="$@"; fi
+
+./bin/crun "$IMAGE" $CMD

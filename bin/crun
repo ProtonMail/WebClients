@@ -22,12 +22,10 @@ if ! docker inspect --format="{{.Id}}" $image > /dev/null; then
   docker pull $image
 fi
 
-BASH_PATH=$(dirname "${BASH_SOURCE[0]}")
-if hash realpath 2> /dev/null; then
-  REPO_ROOT=$(realpath "${BASH_PATH}/../")
-else
-  REPO_ROOT=$(readlink -f "${BASH_PATH}/../")
-fi
+pushd $(dirname "${BASH_SOURCE[0]}")/.. > /dev/null
+REPO_ROOT=$(pwd -P)
+popd > /dev/null
+
 CONTAINER_HOME=$REPO_ROOT
 STANDARD_PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
 
@@ -37,7 +35,7 @@ if [ "$NO_DOCKER_RM" ]; then
 fi
 
 set -x
-docker run -v $REPO_ROOT:$CONTAINER_HOME -v /tmp:/tmp -v /var/run/docker.sock:/var/run/docker.sock \
+docker run -v $REPO_ROOT:$CONTAINER_HOME -v /var/run/docker.sock:/var/run/docker.sock \
   -e HOME=$CONTAINER_HOME -w $CONTAINER_HOME \
   -e PATH="./node_modules/.bin/:./node_modules/grunt-cli/bin/:$STANDARD_PATH" \
-  $DOCKER_OPTS $SPECIAL_OPTS -ti --sig-proxy=true "$image" "$@"
+  $DOCKER_OPTS $SPECIAL_OPTS -ti "$image" "$@"

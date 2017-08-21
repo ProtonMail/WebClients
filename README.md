@@ -5,7 +5,7 @@ Official AngularJS web client for the [ProtonMail secure email service](https://
 
 ## Basic Installation
 
-> :warning: You must have node.js >= v6
+> :warning: You must have node.js >= v6 _and_ npm 5
 
 - `$ npm install`
 - `$ npm start`
