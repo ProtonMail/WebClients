@@ -11,7 +11,7 @@ angular.module('proton.core')
         generateModal,
         gettextCatalog,
         hotkeys,
-        messageActions, // added here to initialize $rootScope.$on
+        messageActions,
         AppModel,
         attachSignupSubscription
     ) => {

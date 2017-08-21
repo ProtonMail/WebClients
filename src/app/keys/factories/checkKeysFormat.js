@@ -1,7 +1,5 @@
 angular.module('proton.keys')
-    .factory('checkKeysFormat', (
-        CONSTANTS
-    ) => {
+    .factory('checkKeysFormat', (CONSTANTS) => {
 
         return (user) => {
             for (let i = 0; i < user.Keys.length; i++) {
