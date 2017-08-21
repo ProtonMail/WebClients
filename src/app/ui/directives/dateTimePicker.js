@@ -2,6 +2,7 @@ angular.module('proton.ui')
     .directive('dateTimePicker', ($rootScope, datetimeErrorCombiner, timepickerModel, dateUtils) => {
 
         const minDate = new Date(1970, 1, 1);
+
         const dispatch = (type, data) => $rootScope.$emit('timepicker', { type, data });
 
         return {

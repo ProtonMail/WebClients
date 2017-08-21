@@ -1,6 +1,6 @@
-// Used in the dashboard plans to scroll on the left or right
 angular.module('proton.ui')
     .directive('arrowsToScroll', () => {
+
         const BUTTON_CLASS = 'arrowsToScroll-button';
         const CONTAINER_CLASS = 'settingsDashboard-plans';
 
