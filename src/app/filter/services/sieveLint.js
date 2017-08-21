@@ -1,13 +1,12 @@
-
-/**
- * Uses the protonmail API to find errors in the sieve code.
- */
-
 angular.module('proton.filter')
     .factory('sieveLint', (Filter, CONSTANTS) => {
 
         let wasValid = true;
 
+
+        /**
+         * Uses the protonmail API to find errors in the sieve code.
+         */
         function register() {
             window.CodeMirror.registerHelper('lint', 'sieve', (text) => {
                 if (text.trim() === '') {

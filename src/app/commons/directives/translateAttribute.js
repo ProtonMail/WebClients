@@ -38,7 +38,7 @@ function generateDirective(attrName) {
 
     const normAttrName = normalizeAttributeName(attrName);
 
-    return function (gettextCatalog, $parse, $animate, $compile) {
+    return ['gettextCatalog', '$parse', '$animate', '$compile', function (gettextCatalog, $parse, $animate, $compile) {
 
         return {
             restrict: 'A',
@@ -106,6 +106,6 @@ function generateDirective(attrName) {
                 };
             }
         };
-    };
+    }];
 }
 

@@ -20,6 +20,7 @@ angular.module('proton.ui')
                 const timePickerKey = Math.floor(1e16 * Math.random()).toString(36);
                 elem[0].querySelector('.timepicker').setAttribute('data-event-key', timePickerKey);
 
+
                 return (scope, elem, { datePickerKey, timestamp, disableInput, labelId }) => {
 
                     // definitions
