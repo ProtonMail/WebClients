@@ -334,10 +334,6 @@ angular.module('proton.authentication')
                     throw new Error(gettextCatalog.getString('Your password is missing'));
                 }
 
-                if (passwordEncoded.length > CONSTANTS.LOGIN_PW_MAX_LEN) {
-                    throw new Error(gettextCatalog.getString('Passwords are limited to ' + CONSTANTS.LOGIN_PW_MAX_LEN + ' characters', null, 'Error'));
-                }
-
                 networkActivityTracker.track(
                     srp.info(usernameLowerCase).then((resp) => {
                         $scope.initialInfoResponse = resp;
