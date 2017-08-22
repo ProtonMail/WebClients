@@ -81,7 +81,6 @@ angular.module('proton.constants', [])
         SAVE_THROTTLE_TIME: 10000, // 10 seconds
         MAX_EXPIRATION_TIME: 672, // hours
         ELEMENTS_PER_PAGE: 50,
-        LOGIN_PW_MAX_LEN: 500,
         HD_BREAKPOINT: 1920,
         DESKTOP_BREAKPOINT: 1200,
         ROW_BREAKPOINT: 960,
