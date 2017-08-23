@@ -3,7 +3,7 @@
         <button type="button" ng-click="ctrl.cancel()" aria-hidden="true" title-translate="Close" title-translate-context="Action" class="fa fa-times close"></button>
         <div class="modal-content">
             <div class="modal-header">
-                <ng-include src="'templates/modals/domain/menu.tpl.html'"></ng-include>
+                <domains-menu-step></domains-menu-step>
                 <span ng-show="ctrl.domain.DomainName" class="pull-right pm_badge success" translate>Set</span>
                 <h4 class="modal-title">1. <span translate translate-context="Title">Domain</span></h4>
             </div>
