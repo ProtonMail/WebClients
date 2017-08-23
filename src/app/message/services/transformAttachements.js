@@ -1,5 +1,5 @@
 angular.module('proton.message')
-    .factory('transformAttachement', (embedded, $rootScope) => {
+    .factory('transformAttachements', (embedded, $rootScope) => {
         return (body, message, action) => {
 
             /**

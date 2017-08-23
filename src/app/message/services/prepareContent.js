@@ -1,5 +1,5 @@
 angular.module('proton.message')
-    .factory('prepareContent', ($injector, transformAttachement, transformRemote, transformEscape) => {
+    .factory('prepareContent', ($injector, transformAttachements, transformRemote, transformEscape) => {
         const filters = [
             'transformBase',
             'transformLinks',
