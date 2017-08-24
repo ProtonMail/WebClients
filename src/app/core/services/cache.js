@@ -930,86 +930,71 @@ angular.module('proton.core')
             cacheCounters.status();
         }
 
-        /**
-    * Manage the cache when a new event comes
-    * @param {Array} events - Object managing interaction with messages and conversations stored
-    * @param {Boolean} fromBackend - indicate if the events come from the back-end
-    * @return {Promise}
-    */
-        api.events = (events = [], fromBackend = false, isSend) => {
-            const promises = [];
-            const messageIDs = [];
-            const conversationIDs = [];
-
-            if (fromBackend) {
-                console.log('events from the back-end', events);
-            } else {
-                console.log('events from the front-end', events);
-            }
-
-            if (!fromBackend) {
-                handleCounters(events);
-            }
-
-            _.chain(events)
-                .filter((event) => event.Action === DELETE)
-                .each((event) => {
-                    promises.push(api.delete(event));
-                    messageIDs.push(event.ID);
-                    conversationIDs.push(event.ID);
-                });
-
-            _.chain(events)
-                .filter((event) => event.Message)
-                .each((event) => {
-                    event.Message.ID = event.ID;
-                    messageIDs.push(event.ID);
-
-                    switch (event.Action) {
-                        case CREATE:
-                            promises.push(api.createMessage(event));
-                            break;
-                        case UPDATE_DRAFT:
-                            promises.push(api.updateFlagMessage(event, isSend));
-                            break;
-                        case UPDATE_FLAGS:
-                            promises.push(api.updateFlagMessage(event, isSend));
-                            break;
-                        default:
-                            break;
-                    }
-                });
-
-            _.chain((events))
-                .filter((event) => event.Conversation)
-                .each((event) => {
-                    event.Conversation.ID = event.ID;
-                    conversationIDs.push(event.ID);
-
-                    switch (event.Action) {
-                        case CREATE:
-                            promises.push(api.createConversation(event));
-                            break;
-                        case UPDATE_DRAFT:
-                            promises.push(api.updateDraftConversation(event));
-                            break;
-                        case UPDATE_FLAGS:
-                            promises.push(api.updateFlagConversation(event));
-                            break;
-                        default:
-                            break;
-                    }
-                });
-
-            return Promise.all(promises)
-                .then(() => api.callRefresh(messageIDs, conversationIDs));
+        const formatCreate = (list = []) => {
+            return Promise.all(list.map(({ event, type }) => api[`create${type}`](event)));
         };
 
+        const formatUpdate = (list = []) => {
+            const promise = list.map(({ event, type, isSend, item }) => {
+                const key = (type === 'Message') ? 'updateFlagMessage' : `update${item}${type}`;
+                return api[key](event, isSend);
+            });
+            return Promise.all(promise);
+        };
+
+        const formatDelete = (list = []) => Promise.all(list.map(api.delete));
+
         /**
-     * Ask to the message list controller to refresh the messages
-     * First with the cache
-     * Second with the query call
-     */
+          * Manage the cache when a new event comes
+          * @param {Array} events - Object managing interaction with messages and conversations stored
+          * @param {Boolean} fromBackend - indicate if the events come from the back-end
+          * @return {Promise}
+          */
+        const eventProcess = (events = [], fromBackend = false, isSend) => {
+
+            console.log(`[events] from the ${fromBackend ? 'back' : 'front'}-end`, events);
+
+            !fromBackend && handleCounters(events);
+
+            const { flow, MessageIDs, ConversationIDs } = _.chain(events)
+                .filter((event) => event.Message || event.Conversation)
+                .reduce((acc, event) => {
+
+                    const type = event.Message ? 'Message' : 'Conversation';
+
+                    event[type].ID = event.ID;
+                    acc[`${type}IDs`].push(event.ID);
+                    (event.Action === CREATE) && acc.flow.create.push({ event, type });
+                    (event.Action === UPDATE_DRAFT) && acc.flow.update.push({ event, type, isSend, item: 'Draft' });
+                    (event.Action === UPDATE_FLAGS) && acc.flow.update.push({ event, type, isSend, item: 'Flag' });
+                    (event.Action === DELETE) && acc.flow.delete.push(event);
+
+                    return acc;
+                }, {
+                    flow: {
+                        create: [],
+                        update: [],
+                        delete: []
+                    },
+                    MessageIDs: [],
+                    ConversationIDs: []
+                })
+                .value();
+
+            return formatCreate(flow.create)
+                .then(() => formatUpdate(flow.update))
+                .then(() => formatDelete(flow.delete))
+                .then(() => api.callRefresh(MessageIDs, ConversationIDs));
+
+        };
+
+        api.events = eventProcess;
+
+        /**
+         * Ask to the message list controller to refresh the messages
+         * First with the cache
+         * Second with the query call
+         */
         api.callRefresh = (messageIDs = [], conversationIDs = []) => {
             dispatchElements('refresh');
             $rootScope.$emit('updatePageName');
