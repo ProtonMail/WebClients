@@ -1,7 +1,8 @@
 angular.module('proton.commons')
-    .factory('i18nLoader', (CONFIG, gettextCatalog, pikadayConfiguration, dateUtils) => {
+    .factory('i18nLoader', (CONFIG, $rootScope, gettextCatalog, pikadayConfiguration, dateUtils) => {
 
         const upperCaseLocale = (locale = '') => ((locale === 'en') ? 'us' : locale).toUpperCase();
+        const dispatch = (type, data = {}) => $rootScope.$emit('i18n', { type, data });
 
         /**
          * Format the locale to a valid format for gettext
@@ -175,7 +176,8 @@ angular.module('proton.commons')
             return loadGettextCatalog(lang)
                 .then(localizeDateUtils)
                 .then(localizePikaday)
-                .then(() => load.langCountry = moment.locale());
+                .then(() => load.langCountry = moment.locale())
+                .then(() => dispatch('load', { lang: load.langCountry }));
         };
 
         return load;

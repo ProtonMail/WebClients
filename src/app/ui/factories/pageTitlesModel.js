@@ -1,9 +1,8 @@
 angular.module('proton.ui')
-    .factory('pageTitlesModel', (CONSTANTS, cacheCounters, gettextCatalog, authentication, $state, tools, labelsModel) => {
+    .factory('pageTitlesModel', (CONSTANTS, $rootScope, cacheCounters, gettextCatalog, authentication, $state, tools, labelsModel) => {
 
         const { MAILBOX_IDENTIFIERS } = CONSTANTS;
         const DISPLAY_NUMBER = ['inbox', 'drafts', 'sent', 'starred', 'archive', 'spam', 'trash', 'allmail', 'allDrafts', 'allSent'];
-        let MAP;
 
         const loadI18N = () => ({
             allmail: gettextCatalog.getString('All Mail', null, 'Title'),
@@ -38,6 +37,8 @@ angular.module('proton.ui')
             'eo.message': gettextCatalog.getString('Encrypted Message', null, 'Title'),
             'eo.reply': gettextCatalog.getString('Encrypted Reply', null, 'Title')
         });
+
+        let MAP = loadI18N();
 
         function getFirstSortedAddresses() {
             return _.chain(authentication.user.Addresses)
@@ -108,6 +109,12 @@ angular.module('proton.ui')
                 .join(' | ');
         };
 
+        $rootScope.$on('i18n', (event, { type }) => {
+            if (type === 'load') {
+                MAP = loadI18N();
+            }
+        });
+
         /**
          * Find the current page title
          * @param  {String} options.name
@@ -115,8 +122,6 @@ angular.module('proton.ui')
          */
         const find = ({ name } = {}) => {
             const mailbox = tools.currentMailbox() || tools.filteredState();
-
-            !MAP && (MAP = loadI18N());
 
             if (/login|reset-password/.test(mailbox || name)) {
                 return formatTitle(MAP.login);
