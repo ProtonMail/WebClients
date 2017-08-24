@@ -3,7 +3,9 @@ angular.module('proton.ui')
 
         const { MAILBOX_IDENTIFIERS } = CONSTANTS;
         const DISPLAY_NUMBER = ['inbox', 'drafts', 'sent', 'starred', 'archive', 'spam', 'trash', 'allmail', 'allDrafts', 'allSent'];
-        const MAP = {
+        let MAP;
+
+        const loadI18N = () => ({
             allmail: gettextCatalog.getString('All Mail', null, 'Title'),
             inbox: gettextCatalog.getString('Inbox', null, 'Title'),
             search: gettextCatalog.getString('Search', null, 'Title'),
@@ -35,7 +37,7 @@ angular.module('proton.ui')
             vpn: gettextCatalog.getString('VPN', null, 'Title'),
             'eo.message': gettextCatalog.getString('Encrypted Message', null, 'Title'),
             'eo.reply': gettextCatalog.getString('Encrypted Reply', null, 'Title')
-        };
+        });
 
         function getFirstSortedAddresses() {
             return _.chain(authentication.user.Addresses)
@@ -113,6 +115,8 @@ angular.module('proton.ui')
          */
         const find = ({ name } = {}) => {
             const mailbox = tools.currentMailbox() || tools.filteredState();
+
+            !MAP && (MAP = loadI18N());
 
             if (/login|reset-password/.test(mailbox || name)) {
                 return formatTitle(MAP.login);
