@@ -1,8 +1,12 @@
 angular.module('proton.dashboard')
-    .directive('addonRow', ($filter, $rootScope, CONSTANTS, dashboardConfiguration, dashboardModel, dashboardOptions, gettextCatalog, subscriptionModel) => {
-        const filter = (amount) => $filter('currency')(amount / 100 / dashboardConfiguration.cycle(), dashboardConfiguration.currency());
+    .directive('addonRow', ($filter, $rootScope, CONSTANTS, dashboardConfiguration, dashboardModel, dashboardOptions, gettextCatalog, subscriptionModel, customProPlanModel) => {
+
+        customProPlanModel.init();
         const { MEMBER, ADDRESS, DOMAIN, SPACE } = CONSTANTS.PLANS.ADDON;
         const MAP_ADDONS = { member: MEMBER, address: ADDRESS, domain: DOMAIN, space: SPACE };
+
+        const filter = (amount) => $filter('currency')(amount / 100 / dashboardConfiguration.cycle(), dashboardConfiguration.currency());
+
         const initValue = (addon) => {
             if (addon === 'vpn') {
                 const { Plans = [] } = subscriptionModel.get();

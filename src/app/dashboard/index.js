@@ -1,2 +1,1 @@
-angular.module('proton.dashboard', [])
-    .run((customProPlanModel) => customProPlanModel.init());
+angular.module('proton.dashboard', []);

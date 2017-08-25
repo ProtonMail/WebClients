@@ -789,7 +789,7 @@ angular.module('proton.routes', [
                         }
                         return Promise.resolve();
                     },
-                    dashboardPlans(dashboardModel, subscriptionModel) {
+                    dashboardPlans(user, dashboardModel, subscriptionModel) {
                         return subscriptionModel.fetch()
                             .then(({ Currency }) => dashboardModel.loadPlans(Currency));
                     },
