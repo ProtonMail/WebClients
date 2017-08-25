@@ -10,9 +10,11 @@ angular.module('proton.conversation')
         networkActivityTracker,
         notify,
         tools,
-        labelsModel
+        labelsModel,
+        $filter
     ) => {
 
+        const unicodeTagView = $filter('unicodeTagView');
         const { MAILBOX_IDENTIFIERS } = CONSTANTS;
         const basicFolders = [MAILBOX_IDENTIFIERS.inbox, MAILBOX_IDENTIFIERS.trash, MAILBOX_IDENTIFIERS.spam, MAILBOX_IDENTIFIERS.archive, MAILBOX_IDENTIFIERS.sent, MAILBOX_IDENTIFIERS.drafts];
         const mailboxes = {
@@ -327,10 +329,19 @@ angular.module('proton.conversation')
             const toTrash = labelID === MAILBOX_IDENTIFIERS.trash;
             const toSpam = labelID === MAILBOX_IDENTIFIERS.spam;
             const toInbox = labelID === MAILBOX_IDENTIFIERS.inbox;
+
             const promise = conversationApi.labels(labelID, 1, conversationIDs);
+
             const folderName = getFolderNameTranslated(labelID);
+
             const successMessage = gettextCatalog.getPlural(conversationIDs.length, 'Conversation moved to', 'Conversations moved to', null);
-            const displaySuccess = () => notify({ message: `${successMessage} ${folderName}`, classes: 'notification-success' });
+            const displaySuccess = () => {
+                notify({
+                    message: `${successMessage} ${unicodeTagView(folderName)}`,
+                    classes: 'notification-success'
+                });
+            };
+
             const folderIDs = basicFolders.concat(folders).concat((toSpam || toTrash) ? labels : []);
 
             cache.addToDispatcher(promise);

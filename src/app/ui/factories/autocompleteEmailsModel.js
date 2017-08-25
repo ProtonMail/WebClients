@@ -3,21 +3,13 @@ angular.module('proton.ui')
 
         const {
             OPEN_TAG_AUTOCOMPLETE,
-            CLOSE_TAG_AUTOCOMPLETE,
-            OPEN_TAG_AUTOCOMPLETE_RAW,
-            CLOSE_TAG_AUTOCOMPLETE_RAW
+            CLOSE_TAG_AUTOCOMPLETE
         } = CONSTANTS.EMAIL_FORMATING;
 
         let TEMP_LABELS = {};
+        const unicodeTagView = $filter('unicodeTagView');
 
         const getID = () => `${Math.random().toString(32).slice(2, 12)}-${Date.now()}`;
-
-        const matchEscapeAutocomplete = () => new RegExp(`${OPEN_TAG_AUTOCOMPLETE_RAW}|${CLOSE_TAG_AUTOCOMPLETE_RAW}`, 'ig');
-
-        const MAP_TAGS = {
-            [OPEN_TAG_AUTOCOMPLETE_RAW]: OPEN_TAG_AUTOCOMPLETE,
-            [CLOSE_TAG_AUTOCOMPLETE_RAW]: CLOSE_TAG_AUTOCOMPLETE
-        };
 
         /**
          * @{link https://css-tricks.com/snippets/javascript/htmlentities-for-javascript/}
@@ -42,16 +34,6 @@ angular.module('proton.ui')
             }
 
             return `${htmlEntities(Name)} ${OPEN_TAG_AUTOCOMPLETE}${Email}${CLOSE_TAG_AUTOCOMPLETE}`;
-        };
-
-        /**
-         * Replace unicode with <>
-         * @param  {String} input
-         * @return {String}
-         */
-        const relaceTagAutocomplete = (input = '') => {
-            return input
-                .replace(matchEscapeAutocomplete(), (match) => MAP_TAGS[match] || '');
         };
 
         /**
@@ -80,7 +62,7 @@ angular.module('proton.ui')
         const filterContact = (val = '', strictEquality = false) => {
 
             // Do not lowercase value as it might get used by the UI directy via filterList
-            const value = relaceTagAutocomplete(val.trim());
+            const value = unicodeTagView(val.trim());
             const input = value.toLowerCase();
 
             const collection = _.chain(authentication.user.Contacts)
@@ -180,7 +162,7 @@ angular.module('proton.ui')
 
             return {
                 filterContact,
-                formatInput: relaceTagAutocomplete,
+                formatInput: unicodeTagView,
                 all, add, remove, removeLast, isEmpty,
                 clear
             };
