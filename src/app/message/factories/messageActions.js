@@ -1,10 +1,17 @@
 angular.module('proton.message')
-    .factory('messageActions', ($q, $rootScope, tools, cache, eventManager, messageApi, networkActivityTracker, CONSTANTS, notify, gettextCatalog, labelsModel) => {
+    .factory('messageActions', ($q, $rootScope, tools, cache, eventManager, messageApi, networkActivityTracker, CONSTANTS, notify, gettextCatalog, labelsModel, $filter) => {
 
         const REMOVE_ID = 0;
         const ADD_ID = 1;
 
-        const notifySuccess = (message) => notify({ message, classes: 'notification-success' });
+        const unicodeTagView = $filter('unicodeTagView');
+        const notifySuccess = (message) => {
+            notify({
+                message: unicodeTagView(message),
+                classes: 'notification-success'
+            });
+        };
+
         const mailboxes = {
             [CONSTANTS.MAILBOX_IDENTIFIERS.inbox]: gettextCatalog.getString('Inbox', null),
             [CONSTANTS.MAILBOX_IDENTIFIERS.spam]: gettextCatalog.getString('Spam', null),
