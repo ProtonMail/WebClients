@@ -87,7 +87,8 @@ module.exports = {
       'vendor/mailparser/mailparser.js',
       'vendor/cssua/cssua.js',
       'vendor/asmcrypto/asmcrypto.js',
-      'vendor/babel-polyfill/dist/polyfill.js'
+      'vendor/babel-polyfill/dist/polyfill.js',
+      'vendor/pmcrypto/build/index.js'
     ],
     bootstrap_components: [
       "affix",
