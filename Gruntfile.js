@@ -99,7 +99,6 @@ module.exports = function (grunt) {
                         'src/app/**/**/*.js',
                         '!src/app/translations.js',
                         '!src/libraries/**/*.js',
-                        'src/libraries/pmcrypto.js', // Do babel on pmcrypto
                         '!src/app/templates/templates-app.js'
                     ],
                     dest: '<%= build_dir %>',
@@ -114,7 +113,6 @@ module.exports = function (grunt) {
                         '<%= build_dir %>/src/app/**/*.js',
                         '!<%= build_dir %>/src/libraries/**/*.js',
                         '!<%= build_dir %>/src/app/translations.js',
-                        '<%= build_dir %>/src/libraries/pmcrypto.js', // Do babel on pmcrypto
                         '!<%= build_dir %>/src/app/templates/templates-app.js'
                     ],
                     dest: '.',
@@ -280,6 +278,20 @@ module.exports = function (grunt) {
                 },
                 nonull: true
             },
+            build_js: {
+                options: {
+                    sourceMap: false,
+                    banner: '<%= meta.banner %>'
+                },
+                files: {
+                    '<%= build_dir %>/vendor.js': [
+                        '<%= vendor_files.js %>',
+                        '!src/libraries/mailparser.js',
+                        'src/libraries/*.js'
+                    ]
+                },
+                nonull: true
+            },
             compile_js: {
                 options: {
                     sourceMap: true,
@@ -374,9 +386,9 @@ module.exports = function (grunt) {
                 dir: '<%= build_dir %>',
                 src: [
                     '<%= build_dir %>/openpgp.min.js',
+                    '<%= build_dir %>/vendor.js',
                     '<%= build_dir %>/src/**/index.js',
                     '<%= build_dir %>/src/**/*.js',
-                    '<%= vendor_files.included_js %>',
                     '<%= build_dir %>/assets/application.css',
                     '<%= build_dir %>/assets/vendor.css'
                 ],
@@ -645,6 +657,7 @@ module.exports = function (grunt) {
         'postcss',
         'copy:build_app_assets',
         'copy:build_appjs',
+        'concat:build_js',
         'copy:build_vendorjs',
         'copy:build_external',
         'copy:build_htaccess',

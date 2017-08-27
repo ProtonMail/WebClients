@@ -3,6 +3,7 @@
 cp vendor/codemirror/mode/sieve/sieve.js vendor/codemirror/mode/sieve/sieveSyntax.js
 # Cannot inject a file from node_modules with the current grunt setup ლ(ಠ益ಠლ
 cp -r node_modules/babel-polyfill  vendor/babel-polyfill
+cp -r node_modules/pmcrypto vendor/pmcrypto
 
 DEST_BLOB='vendor/blobjs'
 DEST_QRCODE='vendor/qrcodejs'
