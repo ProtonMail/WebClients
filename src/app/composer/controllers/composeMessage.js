@@ -32,6 +32,7 @@ angular.module('proton.composer')
 
         const unsubscribe = [];
         const outsidersMap = {};
+        const ACTION_STATUS = CONSTANTS.STATUS;
 
         const MESSAGES_ERROR = {
             stillUploading: gettextCatalog.getString('Wait for attachment to finish uploading or cancel upload.', null, 'Error'),
@@ -628,7 +629,7 @@ angular.module('proton.composer')
 
                                 // Generate conversation event
                                 events.push({
-                                    Action: 3,
+                                    Action: ACTION_STATUS.UPDATE_FLAGS,
                                     ID: result.Message.ConversationID,
                                     Conversation: angular.extend({
                                         NumAttachments: result.Message.Attachments.length, // it's fine
@@ -947,14 +948,14 @@ angular.module('proton.composer')
 
                             Sent.Senders = [Sent.Sender]; // The back-end doesn't return Senders so need a trick
                             Sent.Recipients = _.uniq(message.ToList.concat(message.CCList).concat(message.BCCList)); // The back-end doesn't return Recipients
-                            events.push({ Action: 3, ID: Sent.ID, Message: Sent }); // Generate event for this message
+                            events.push({ Action: ACTION_STATUS.UPDATE_FLAGS, ID: Sent.ID, Message: Sent }); // Generate event for this message
 
                             if (Parent) {
-                                events.push({ Action: 3, ID: Parent.ID, Message: Parent });
+                                events.push({ Action: ACTION_STATUS.UPDATE_FLAGS, ID: Parent.ID, Message: Parent });
                             }
 
                             events.push({
-                                Action: 3,
+                                Action: ACTION_STATUS.UPDATE_FLAGS,
                                 ID: Sent.ConversationID,
                                 Conversation: {
                                     NumMessages: numMessages,

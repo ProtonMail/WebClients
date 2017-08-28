@@ -957,16 +957,18 @@ angular.module('proton.core')
             !fromBackend && handleCounters(events);
 
             const { flow, MessageIDs, ConversationIDs } = _.chain(events)
-                .filter((event) => event.Message || event.Conversation)
                 .reduce((acc, event) => {
-
+                    const hasType = event.Message || event.Conversation;
                     const type = event.Message ? 'Message' : 'Conversation';
 
-                    event[type].ID = event.ID;
-                    acc[`${type}IDs`].push(event.ID);
-                    (event.Action === CREATE) && acc.flow.create.push({ event, type });
-                    (event.Action === UPDATE_DRAFT) && acc.flow.update.push({ event, type, isSend, item: 'Draft' });
-                    (event.Action === UPDATE_FLAGS) && acc.flow.update.push({ event, type, isSend, item: 'Flag' });
+                    if (hasType) {
+                        event[type].ID = event.ID;
+                        acc[`${type}IDs`].push(event.ID);
+                        (event.Action === CREATE) && acc.flow.create.push({ event, type });
+                        (event.Action === UPDATE_DRAFT) && acc.flow.update.push({ event, type, isSend, item: 'Draft' });
+                        (event.Action === UPDATE_FLAGS) && acc.flow.update.push({ event, type, isSend, item: 'Flag' });
+                    }
+
                     (event.Action === DELETE) && acc.flow.delete.push(event);
 
                     return acc;
