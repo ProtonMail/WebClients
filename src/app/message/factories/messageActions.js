@@ -4,6 +4,9 @@ angular.module('proton.message')
         const REMOVE_ID = 0;
         const ADD_ID = 1;
 
+        const ACTION_STATUS = CONSTANTS.STATUS;
+
+
         const unicodeTagView = $filter('unicodeTagView');
         const notifySuccess = (message) => {
             notify({
@@ -553,19 +556,18 @@ angular.module('proton.message')
          * Delete a list of messages
          * @param {Array} ids
          */
-        function destroy(ids) {
-            const events = [];
+        function destroy(IDs) {
 
-            // Generate cache events
-            _.each(ids, (id) => {
+            const events = _.reduce(IDs, (acc, id) => {
                 const message = cache.getMessageCached(id);
                 const conversation = cache.getConversationCached(message.ConversationID);
 
-                if (angular.isDefined(conversation)) {
+                if (conversation) {
                     if (conversation.NumMessages === 1) {
-                        // Delete conversation
-                        events.push({ Action: 0, ID: conversation.ID });
-                    } else if (conversation.NumMessages > 1) {
+                        acc.push({ Action: ACTION_STATUS.DELETE, ID: conversation.ID });
+                    }
+
+                    if (conversation.NumMessages > 1) {
                         const messages = cache.queryMessagesCached(conversation.ID);
                         const Labels = _.chain(messages)
                             .filter(({ ID }) => ID !== id)
@@ -574,8 +576,8 @@ angular.module('proton.message')
                             .map((ID) => ({ ID }))
                             .value();
 
-                        events.push({
-                            Action: 3,
+                        acc.push({
+                            Action: ACTION_STATUS.UPDATE_FLAGS,
                             ID: conversation.ID,
                             Conversation: {
                                 ID: conversation.ID,
@@ -586,10 +588,11 @@ angular.module('proton.message')
                     }
                 }
 
-                events.push({ Action: 0, ID: message.ID });
-            });
+                acc.push({ Action: ACTION_STATUS.DELETE, ID: message.ID });
+                return acc;
+            }, []);
 
-            const promise = messageApi.delete({ IDs: ids });
+            const promise = messageApi.delete({ IDs });
             cache.addToDispatcher(promise);
 
             if (tools.cacheContext() === true) {
