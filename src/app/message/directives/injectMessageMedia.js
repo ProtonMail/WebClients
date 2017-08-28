@@ -126,6 +126,12 @@ angular.module('proton.message')
             Promise.all(promises).then(removeLoader(node));
         }
 
+        function injectAttributeStyles(element) {
+            _.each(element[0].querySelectorAll('[style]'), (node) => {
+                node.setAttribute('style', node.getAttribute('style').replace(/proton-(url)/g, '$1'))
+            });
+        }
+
         return {
             link(scope, el) {
                 const unsubscribe = $rootScope.$on('message.open', (e, { type, data }) => {
@@ -145,6 +151,7 @@ angular.module('proton.message')
 
                         case 'remote.injected':
                             if (data.action === 'user.inject') {
+                                injectAttributeStyles(el);
                                 return injectInlineRemote(el, data);
                             }
                             break;
