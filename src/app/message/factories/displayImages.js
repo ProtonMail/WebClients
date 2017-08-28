@@ -9,7 +9,7 @@ angular.module('proton.message')
                     'transformEmbedded',
                     'transformWelcome',
                     'transformBlockquotes',
-                    'transformAttachement'
+                    'transformAttachements'
                 ],
                 action
             });

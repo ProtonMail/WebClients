@@ -46,8 +46,8 @@ angular.module('proton.message')
 
             const body = transformers.reduceRight((html, transformer) => transformer.action(html, message, action), div);
 
-            if (!_.contains(blacklist, 'transformAttachement')) {
-                transformAttachement(body, message, action);
+            if (!_.contains(blacklist, 'transformAttachements')) {
+                transformAttachements(body, message, action);
             }
 
             return transformRemote(body, message, { action }).innerHTML;
