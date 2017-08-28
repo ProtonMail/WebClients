@@ -56,19 +56,17 @@
                 </div>
                 <div class="pm_grid">
                     <div class="col-1-2">
-                        <div class="pm_grid margin">
-                            <div class="col-1-2">
-                                <header-block data-level="2" class="settingsLabels-header-whitelist no-margin">
-                                    <h2
-                                        class="settingsLabels-title-whitelist"
-                                        translate
-                                        translate-context="Title">Whitelist</h2>
-                                </header-block>
-                            </div>
-                            <div class="col-1-2 text-right">
-                                <button class="pm_button primary" translate translate-context="Action" ng-click="addSpamFilter(0)">Add</button>
-                            </div>
-                        </div>
+                        <header-block data-level="2" class="settingsLabels-header-whitelist">
+                            <h2
+                                class="settingsLabels-title-whitelist margin-bottom"
+                                translate
+                                translate-context="Title">Whitelist</h2>
+                            <button
+                                class="pm_button primary"
+                                translate
+                                translate-context="Action"
+                                ng-click="addSpamFilter(0)">Add</button>
+                        </header-block>
                         <p class="alert alert-info" ng-show="empty(0)" translate translate-context="Info">No emails in Whitelist, click Add Filter to add addresses to the Whitelist.</p>
                         <div class="pm_table" ng-hide="empty(0)">
                             <table class="bordered limited">
@@ -89,19 +87,17 @@
                         </div>
                     </div>
                     <div class="col-1-2">
-                        <div class="pm_grid margin">
-                            <div class="col-1-2">
-                                <header-block data-level="2" class="settingsLabels-header-blacklist no-margin">
-                                    <h2
-                                        class="settingsLabels-title-blacklist"
-                                        translate
-                                        translate-context="Title">Blacklist</h2>
-                                </header-block>
-                            </div>
-                            <div class="col-1-2 text-right">
-                                <button class="pm_button primary" translate translate-context="Action" ng-click="addSpamFilter(4)">Add</button>
-                            </div>
-                        </div>
+                        <header-block data-level="2" class="settingsLabels-header-blacklist">
+                            <h2
+                                class="settingsLabels-title-blacklist margin-bottom"
+                                translate
+                                translate-context="Title">Blacklist</h2>
+                            <button
+                                class="pm_button primary"
+                                translate
+                                translate-context="Action"
+                                ng-click="addSpamFilter(4)">Add</button>
+                        </header-block>
                         <p class="alert alert-info" ng-show="empty(4)" translate translate-context="Info">No emails in Blacklist, click Add Filter to add addresses to the Blacklist.</p>
                         <div class="pm_table" ng-hide="empty(4)">
                             <table class="bordered limited">
