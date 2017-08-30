@@ -12,7 +12,7 @@ angular.module('proton.message')
             '#reply139content',
             '#oriMsgHtmlSeperator',
             'blockquote[type="cite"]'
-        ].join(',');
+        ].map((selector) => `${selector}:not(:empty)`).join(',');
 
         return (html) => {
             const blockquotes = [].slice.call(html.querySelectorAll(quotes));
