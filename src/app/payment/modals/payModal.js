@@ -25,7 +25,7 @@ angular.module('proton.payment')
                 this.invoice = params.invoice;
                 this.cancel = params.close;
 
-                const { list, selected } = paymentUtils.generateMethods();
+                const { list, selected } = paymentUtils.generateMethods({ modal: 'invoice' });
                 this.methods = list;
                 this.method = selected;
 

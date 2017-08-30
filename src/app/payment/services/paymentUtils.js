@@ -21,7 +21,7 @@ angular.module('proton.payment')
          * @param  {String} config.choice custom selected choice
          * @return {Object}         { selected, list }
          */
-        const generateMethods = ({ methods = paymentModel.get('methods'), choice, Cycle = 12, Amount } = {}) => {
+        const generateMethods = ({ methods = paymentModel.get('methods'), choice, Cycle = 12, Amount, modal = '' } = {}) => {
             const list = [{
                 value: 'card',
                 label: I18N.card
@@ -29,8 +29,9 @@ angular.module('proton.payment')
 
             // Min amount to activate it if monthly is 50
             const isMonthlyValid = (Amount > 5000 && Cycle === 1);
-            // Paypal doesn't work with IE11 ??? === For payment modal we cannot pay monthly via paypal
-            if (!aboutClient.isIE11() && (Cycle === 12 || isMonthlyValid)) {
+            const isInvoiceModal = modal === 'invoice';
+            // Paypal doesn't work with IE11. For the payment modal we cannot pay monthly via paypal
+            if (!aboutClient.isIE11() && (Cycle === 12 || isMonthlyValid || isInvoiceModal)) {
                 list.push({
                     label: 'PayPal',
                     value: 'paypal'
