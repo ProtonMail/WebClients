@@ -31,6 +31,7 @@ angular.module('proton', [
 
     // Config
     'proton.config',
+    'proton.analytics',
     'proton.search',
     'proton.ui',
     'proton.dnd',
