@@ -5,7 +5,7 @@
     color: $header-font-color;
     font-size: 12px;
     position: relative;
-    z-index: 100;  /* less or equal to 100 for responsive composer*/
+    z-index: 101; /* overlay composer */
     font-family: sans-serif;
 }
 
@@ -83,5 +83,10 @@ body.appConfigBody-is-mobile .headerSecuredMobile-container { height: 70px }
 .appConfigBody-is-mobile.appConfigBody-activeComposer {
     .headerSecured-container {
         pointer-events: none
+    }
+}
+@media screen and (max-width: $tablet-landscape) {
+    .headerSecured-container {
+        z-index: 100; /* underlay composer */
     }
 }
