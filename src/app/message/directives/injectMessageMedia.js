@@ -128,7 +128,7 @@ angular.module('proton.message')
 
         function injectAttributeStyles(element) {
             _.each(element[0].querySelectorAll('[style]'), (node) => {
-                node.setAttribute('style', node.getAttribute('style').replace(/proton-(url)/g, '$1'))
+                node.setAttribute('style', node.getAttribute('style').replace(/proton-(url)/g, '$1'));
             });
         }
 
