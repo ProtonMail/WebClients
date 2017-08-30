@@ -69,8 +69,10 @@
   },
   "license": "MIT",
   "scripts": {
-    "postinstall": "bower install --allow-root && ./tasks/privateDependencies.sh",
+    ".postinstall": "bower install --allow-root && ./tasks/privateDependencies.sh",
+    "bower-install": "bower install --allow-root",
     "start": "grunt watch --api=dev",
+    "start-prod": "grunt watch --api=prod",
     "lint": "eslint $(find src/app -type f -name '*.js') --quiet",
     "e2e": "protractor protractor_conf.js",
     "test": "cross-env NODE_ENV=test karma start test/karma.conf.js",
