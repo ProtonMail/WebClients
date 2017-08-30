@@ -120,7 +120,7 @@ angular.module('proton.ui')
          * @param  {String} options.name
          * @return {String}
          */
-        const find = ({ name } = {}) => {
+        const find = ({ name } = {}, withEmail = true) => {
             const mailbox = tools.currentMailbox() || tools.filteredState();
 
             if (/login|reset-password/.test(mailbox || name)) {
@@ -129,7 +129,7 @@ angular.module('proton.ui')
 
             const isLabelState = mailbox === 'label';
             const number = formatNumber(getNumberMessage(), mailbox);
-            const { Email = '' } = getFirstSortedAddresses();
+            const { Email = '' } = withEmail ? getFirstSortedAddresses() : {};
 
             if (MAP[mailbox] || isLabelState) {
                 const value = !isLabelState ? MAP[mailbox] : getLabelState();

@@ -69,7 +69,13 @@ angular.module('proton.commons')
             return OSName;
         };
 
+        const doNotTrack = () => {
+            return navigator.doNotTrack === '1' || navigator.doNotTrack === 'yes'
+            || navigator.msDoNotTrack === '1' || window.doNotTrack === '1';
+        };
+
         return {
+            doNotTrack,
             hasSessionStorage,
             hasCookie,
             getOS,

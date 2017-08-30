@@ -1,5 +1,7 @@
 angular.module('proton.user')
-    .factory('attachSignupSubscription', (signupModel, authentication, setupKeys, organizationApi, gettextCatalog, eventManager, notify, Payment) => {
+    .factory('attachSignupSubscription', ($rootScope, signupModel, authentication, setupKeys, organizationApi, gettextCatalog, eventManager, notify, Payment) => {
+
+        const dispatch = (type, data = {}) => $rootScope.$emit('signup', { type, data });
 
         const I18N = {
             ERROR_ORGA_KEY_GENERATION: gettextCatalog.getString('Error during the generation of new organization keys', null, 'Error'),
@@ -60,6 +62,11 @@ angular.module('proton.user')
 
         return () => {
             Promise.all([ processPlan(), processPaymentMethod() ])
+                .then(() => {
+                    if (signupModel.get()) {
+                        dispatch('user.subscription.finished', { plan: signupModel.get('temp.plan') });
+                    }
+                })
                 .then(() => signupModel.clear())
                 .catch((error) => {
                     notify({ message: error.message, classes: 'notification-danger' });

@@ -127,5 +127,14 @@ angular.module('proton.constants', [])
         BILLING_CYCLE: [1, 12],
         IFRAME_SECURE_ORIGIN: 'https://secure.protonmail.com',
         INVITE_URL: 'https://protonmail.com/invite',
-        DEFAULT_CURRENCY: 'EUR'
+        DEFAULT_CURRENCY: 'EUR',
+        TRACKER_ROUTE: 'piwik.php',
+        PIWIK_SCRIPT: 'piwik.js',
+        METRIC_GOALS: {
+            SIGNUP_ALL: 2,
+            SIGNUP_FREE: 4,
+            SIGNUP_PAID: 3,
+            SIGNUP_PLUS: 6,
+            SIGNUP_VISIONARY: 5
+        }
     });

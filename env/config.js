@@ -5,6 +5,9 @@ const PACKAGE = require('../package');
 const { TRANSLATIONS_APP } = require('./translationsLoader');
 
 const APP_VERSION = PACKAGE.version || '3.8.18';
+const SITE_ID = 5;
+const AB_SITE_ID = 8;
+
 
 const AUTOPREFIXER_CONFIG = {
     browsers: [
@@ -26,6 +29,33 @@ const API_TARGETS = {
     build: '/api'
 };
 
+const PROD_STAT_MACHINE = {
+    isEnabled: true,
+    statsHost: 'stats.protonmail.com',
+    domains: ['*.protonmail.com', '*.mail.protonmail.com'],
+    cookieDomain: '*.protonmail.com',
+    siteId: 5, // the id of the global (total) piwik site
+    abSiteId: 8 // the id of the piwik site that is configured to only track requests that touch this FE version
+};
+
+const HOST_STAT_MACHINE = {
+    isEnabled: true,
+    statsHost: 'stats.protonmail.host',
+    domains: ['*.protonmail.host', '*.mail.protonmail.host'],
+    cookieDomain: '*.protonmail.host',
+    siteId: 5, // the id of the global (total) piwik site
+    abSiteId: 8 // the id of the piwik site that is configured to only track requests that touch this FE version
+};
+
+const NO_STAT_MACHINE = { isEnabled: false };
+
+const STATS_CONFIG = {
+    beta: PROD_STAT_MACHINE,
+    prod: PROD_STAT_MACHINE,
+    dev: PROD_STAT_MACHINE,
+    host: HOST_STAT_MACHINE
+};
+
 const APP = {
     app_version: APP_VERSION,
     api_version: '1',
@@ -36,6 +66,11 @@ const APP = {
     articleLink: 'https://protonmail.com/blog/protonmail-v3-11-release-notes/',
     translations: TRANSLATIONS_APP
 };
+
+const getStatsConfig = (deployBranch = '') => {
+    const [, host = 'dev'] = deployBranch.split('-');
+    return STATS_CONFIG[host] || NO_STAT_MACHINE;
+}
 
 const apiUrl = (type) => {
     if (type && API_TARGETS[type]) {
@@ -70,7 +105,8 @@ const getConfig = (grunt) => {
             major: !!grunt.option('major')
         }),
         api_version: `${grunt.option('api-version') || APP.api_version}`,
-        articleLink: grunt.option('article') || APP.articleLink
+        articleLink: grunt.option('article') || APP.articleLink,
+        statsConfig: getStatsConfig(grunt.option('dest'))
     });
 
     const isDistRelease = () => ['prod', 'beta'].indexOf(grunt.option('api')) !== -1;
