@@ -16,14 +16,16 @@ body #bugModal {
         flex-direction: row;
         align-items: center;
         box-sizing: border-box;
-        padding: .7em;
+        padding: .4em .8em;
         font-weight: bold;
-        font-size: .8em;
         line-height: .9em;
         color: $red;
     }
 
-    [ng-messages] [ng-message] { margin: 0 }
+    [ng-messages] [ng-message] {
+        margin: 0;
+        font-size: .8em;
+    }
 
     [ng-messages] * [ng-message]:not(:last-of-type):after {
         content:", ";
@@ -32,8 +34,8 @@ body #bugModal {
 
     /* inputs */
 
-    input,
-    textarea { padding: .8em }
+    input { padding: 0 .8em }
+    textarea { padding: .4em .8em }
 
     input:focus,
     textarea:focus,
