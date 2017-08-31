@@ -191,7 +191,7 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr ng-repeat="address in domain.Addresses | orderBy: 'Send'" ng-class="{'disabled': address.Status === 0}">
+                                <tr ng-repeat="address in domain.Addresses | orderBy: 'Order'" ng-class="{'disabled': address.Status === 0}">
                                     <td ng-if="keyPhase > 3">
                                         <a ui-sref="secured.members({action: 'edit', id: address.MemberID})" ng-bind="member(address.MemberID).Name" class="text-purple"></a>
                                     </td>

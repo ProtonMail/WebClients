@@ -149,7 +149,7 @@ angular.module('proton.message')
         }
 
         function builder(action, currentMsg = {}, newMsg = {}) {
-            const addresses = _.chain(authentication.user.Addresses).where({ Status: 1, Receive: 1 }).sortBy('Send').value();
+            const addresses = _.chain(authentication.user.Addresses).where({ Status: 1, Receive: 1 }).sortBy('Order').value();
 
             (action === 'new') && newCopy(newMsg, currentMsg);
             (action === 'reply') && reply(newMsg, currentMsg);
@@ -200,7 +200,7 @@ angular.module('proton.message')
             const enabledAddresses = _
                 .chain(authentication.user.Addresses)
                 .where({ Status: 1 })
-                .sortBy('Send')
+                .sortBy('Order')
                 .value();
 
             let sender = enabledAddresses[0];

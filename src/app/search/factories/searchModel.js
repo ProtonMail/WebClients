@@ -25,7 +25,7 @@ angular.module('proton.search')
             return [{
                 Email: gettextCatalog.getString('All', null),
                 ID: undefined,
-                Send: 0,
+                Order: 0,
                 Receive: 1,
                 Status: 1
             }].concat(authentication.user.Addresses);

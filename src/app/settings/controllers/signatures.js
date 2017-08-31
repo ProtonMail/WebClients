@@ -210,8 +210,8 @@ angular.module('proton.settings')
                 const order = [];
 
                 _.each(addresses, (address, index) => {
-                    order[index] = address.Send;
-                    address.Send = index + 1;
+                    order[index] = address.Order;
+                    address.Order = index + 1;
                 });
 
                 $scope.saveOrder(order);

@@ -9,7 +9,7 @@ angular.module('proton.bugReport')
          */
         const getForm = () => {
             const { Name = '', Addresses = [], ViewLayout = '', ViewMode = '' } = authentication.user;
-            const [{ Email = '' } = {}] = _.sortBy(Addresses, 'Send');
+            const [{ Email = '' } = {}] = _.sortBy(Addresses, 'Order');
             return {
                 OS: aboutClient.getOS(),
                 OSVersion: '',
