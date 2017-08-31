@@ -20,10 +20,9 @@ angular.module('proton.core')
         const api = {};
         let messagesCached = []; // In this array we store the messages cached
         let conversationsCached = []; // In this array we store the conversations cached
-        let dispatcher = [];
+        const dispatcher = [];
         const timeCached = {};
         const INVALID_SEARCH_ERROR_CODE = 15225;
-
         const { DELETE, CREATE, UPDATE_DRAFT, UPDATE_FLAGS } = CONSTANTS.STATUS;
         const I18N = {
             errorMessages: gettextCatalog.getString('No messages available', null, 'Error'),
@@ -32,56 +31,60 @@ angular.module('proton.core')
 
         const dispatchElements = (type, data = {}) => $rootScope.$emit('elements', { type, data });
 
+        api.addToDispatcher = (action) => dispatcher.push(action);
+        api.clearDispatcher = () => (dispatcher.length = 0);
+        api.getDispatcher = () => Promise.all(dispatcher);
+
         $interval(expiration, 1000, 0, false);
 
         /**
-    * Save conversations in conversationsCached and add loc in attribute
-    * @param {Array} conversations
-    */
+        * Save conversations in conversationsCached and add loc in attribute
+        * @param {Array} conversations
+        */
         function storeConversations(conversations = []) {
             conversations.forEach(updateConversation);
         }
 
         /**
-     * From the request API we return an array of the pages cached
-     * @param  {Number} Page
-     * @param  {Number} Limit
-     * @return {Array}
-     */
+        * From the request API we return an array of the pages cached
+        * @param  {Number} Page
+        * @param  {Number} Limit
+        * @return {Array}
+        */
         function getPages({ Page = 0, Limit = CONSTANTS.CONVERSATION_LIMIT }) {
             return _.range(Page, Page + (Limit / CONSTANTS.ELEMENTS_PER_PAGE), 1);
         }
 
         /**
-     * Save messages in cache
-     * @param {Array} messages
-     */
+        * Save messages in cache
+        * @param {Array} messages
+        */
         function storeMessages(messages = []) {
             messages.forEach(updateMessage);
         }
 
         /**
-     * Store time for conversation per location
-     * @param {String} conversationId
-     * @param {String} loc
-     * @param {Integer} time
-     */
+        * Store time for conversation per location
+        * @param {String} conversationId
+        * @param {String} loc
+        * @param {Integer} time
+        */
         function storeTime(conversationId, loc, time) {
             timeCached[conversationId] = timeCached[conversationId] || {};
             timeCached[conversationId][loc] = time;
         }
 
         /**
-     * Update message cached
-     * @param {Object} message
-     */
+        * Update message cached
+        * @param {Object} message
+        */
         function updateMessage(message, isSend) {
             const current = _.findWhere(messagesCached, { ID: message.ID });
 
             if (current) {
                 messagesCached = _.map(messagesCached, (msg) => {
 
-                // Force update if it's a new message
+                    // Force update if it's a new message
                     if (isSend && msg.ID === message.ID) {
                         return message;
                     }
@@ -107,13 +110,13 @@ angular.module('proton.core')
         }
 
         /**
-     * Refresh the list of senders for a conversation
-     * The current does not contain the previous list, so we need to
-     * merge them.
-     * @param  {Array}  previous Previous list of senders
-     * @param  {Array}  current  Current list of senders
-     * @return {Array}           Current list
-     */
+        * Refresh the list of senders for a conversation
+        * The current does not contain the previous list, so we need to
+        * merge them.
+        * @param  {Array}  previous Previous list of senders
+        * @param  {Array}  current  Current list of senders
+        * @return {Array}           Current list
+        */
         const filterSenderConversation = (previous = [], current = []) => {
             const { list } = current.concat(previous).reduce((acc, sender) => {
                 if (!acc.map[sender.Address]) {
@@ -127,11 +130,11 @@ angular.module('proton.core')
         };
 
         /**
-     * Search context datas to update the conversation
-     * @param {Object} oldElement
-     * @param {Object} newElement
-     * @return {Object}
-     */
+        * Search context datas to update the conversation
+        * @param {Object} oldElement
+        * @param {Object} newElement
+        * @return {Object}
+        */
         function extractContextDatas(oldElement, newElement) {
             const { Labels = [] } = newElement;
             const ID = tools.currentLocation();
@@ -146,9 +149,9 @@ angular.module('proton.core')
         }
 
         /**
-     * Update conversation cached
-     * @param {Object} conversation
-     */
+        * Update conversation cached
+        * @param {Object} conversation
+        */
         function updateConversation(conversation) {
             const current = _.findWhere(conversationsCached, { ID: conversation.ID });
 
@@ -175,12 +178,12 @@ angular.module('proton.core')
         }
 
         /**
-     * Return a vector to calculate the counters
-     * @param {Object} element - element to analyse (conversation or message)
-     * @param {Boolean} unread - true if unread case
-     * @param {String} type = conversation or message
-     * @return {Object}
-     */
+        * Return a vector to calculate the counters
+        * @param {Object} element - element to analyse (conversation or message)
+        * @param {Boolean} unread - true if unread case
+        * @param {String} type = conversation or message
+        * @return {Object}
+        */
         function vector({ LabelIDs = [], Labels = [], IsRead }, unread, type) {
             const toInt = (value) => +!!value;
             const locs = [
@@ -212,9 +215,9 @@ angular.module('proton.core')
         }
 
         /**
-     * Update time for conversation
-     * @param {String} conversationID
-     */
+        * Update time for conversation
+        * @param {String} conversationID
+        */
         function manageTimes(conversationID) {
 
             if (!conversationID) {
@@ -226,7 +229,7 @@ angular.module('proton.core')
 
             if (messages.length) {
                 Labels.forEach(({ ID }) => {
-                // Get the most recent message for a specific label
+                    // Get the most recent message for a specific label
                     const { Time } = _.chain(messages)
                         .filter(({ LabelIDs = [] }) => _.contains(LabelIDs, ID))
                         .first()
@@ -238,11 +241,11 @@ angular.module('proton.core')
         }
 
         /**
-     * Manage the updating to calcultate the total number of messages and unread messages
-     * @param {Object} oldElement
-     * @param {Object} newElement
-     * @param {String} type - 'message' or 'conversation'
-     */
+        * Manage the updating to calcultate the total number of messages and unread messages
+        * @param {Object} oldElement
+        * @param {Object} newElement
+        * @param {String} type - 'message' or 'conversation'
+        */
         function manageCounters(oldElement, newElement, type) {
             const oldUnreadVector = vector(oldElement, true, type);
             const newUnreadVector = vector(newElement, true, type);
@@ -280,17 +283,17 @@ angular.module('proton.core')
         }
 
         /**
-     * Return loc specified in the request
-     * @param {Object} request
-     * @return {String} loc
-     */
+        * Return loc specified in the request
+        * @param {Object} request
+        * @return {String} loc
+        */
         const getLocation = ({ Label } = {}) => Label;
 
         /**
-     * Call API to get the list of conversations
-     * @param {Object} request
-     * @return {Promise}
-     */
+        * Call API to get the list of conversations
+        * @param {Object} request
+        * @return {Promise}
+        */
         function queryConversations(request) {
             const loc = getLocation(request);
             const context = tools.cacheContext();
@@ -309,7 +312,7 @@ angular.module('proton.core')
 
                         // Only for cache context
                         if (context) {
-                        // Set total value in cache
+                            // Set total value in cache
                             const total = data.Limit;
                             const unread = (total === 0) ? 0 : data.Unread;
                             const pages = getPages(request);
@@ -344,10 +347,10 @@ angular.module('proton.core')
         }
 
         /**
-     * Query api to get messages
-     * @param {Object} request
-     * @return {Promise}
-     */
+        * Query api to get messages
+        * @param {Object} request
+        * @return {Promise}
+        */
         function queryMessages(request) {
             const loc = getLocation(request);
             const context = tools.cacheContext();
@@ -404,10 +407,10 @@ angular.module('proton.core')
         }
 
         /**
-     * Get conversation from back-end and store it in the cache
-     * @param {String} conversationID
-     * @return {Promise}
-     */
+        * Get conversation from back-end and store it in the cache
+        * @param {String} conversationID
+        * @return {Promise}
+        */
         function getConversation(conversationID = '') {
             const promise = conversationApi.get(conversationID)
                 .then(({ data = {} } = {}) => {
@@ -436,10 +439,10 @@ angular.module('proton.core')
         }
 
         /**
-    * Call the API to get message
-    * @param {String} messageID
-    * @return {Promise}
-    */
+        * Call the API to get message
+        * @param {String} messageID
+        * @return {Promise}
+        */
         function getMessage(messageID = '') {
             const promise = messageApi.get(messageID)
                 .then(({ data = {} } = {}) => {
@@ -458,29 +461,6 @@ angular.module('proton.core')
             return promise;
         }
 
-        /**
-     * Add action promise to the dispatcher
-     * @param {Promise} action
-     */
-        api.addToDispatcher = (action) => {
-            dispatcher.push(action);
-        };
-
-        /**
-     * Clear the dispatcher
-     */
-        api.clearDispatcher = () => {
-            dispatcher = [];
-        };
-
-        /**
-     * Return the promises state of the dispatcher
-     * @return {Promise}
-     */
-        api.getDispatcher = () => {
-            return $q.all(dispatcher);
-        };
-
         api.empty = (mailbox) => {
             const labelID = CONSTANTS.MAILBOX_IDENTIFIERS[mailbox];
 
@@ -498,11 +478,11 @@ angular.module('proton.core')
         };
 
         /**
-     * Return a list of conversations reordered by Time for a specific location
-     * @param {Array} conversations
-     * @param {String} loc
-     * @return {Array} don't miss this array is reversed
-     */
+        * Return a list of conversations reordered by Time for a specific location
+        * @param {Array} conversations
+        * @param {String} loc
+        * @return {Array} don't miss this array is reversed
+        */
         api.orderConversation = (conversations = [], loc = '') => {
             return reverse(conversations.sort((a, b) => {
                 if (api.getTime(a.ID, loc) < api.getTime(b.ID, loc)) {
@@ -530,43 +510,42 @@ angular.module('proton.core')
         }
 
         /**
-     * Return a list of messages reordered by Time
-     * @param {Array} messages
-     * @return {Array} don't miss this array is reversed
-     */
+        * Return a list of messages reordered by Time
+        * @param {Array} messages
+        * @return {Array} don't miss this array is reversed
+        */
         api.orderMessage = (messages = [], doReverse = true) => {
-            const list = messages
-                .sort((a, b) => {
-                    if (a.Time < b.Time) {
-                        return -1;
-                    }
+            const list = messages.sort((a, b) => {
+                if (a.Time < b.Time) {
+                    return -1;
+                }
 
-                    if (a.Time > b.Time) {
-                        return 1;
-                    }
+                if (a.Time > b.Time) {
+                    return 1;
+                }
 
-                    if (a.Order < b.Order) {
-                        return -1;
-                    }
+                if (a.Order < b.Order) {
+                    return -1;
+                }
 
-                    if (a.Order > b.Order) {
-                        return 1;
-                    }
+                if (a.Order > b.Order) {
+                    return 1;
+                }
 
-                    return 0;
-                });
+                return 0;
+            });
 
             return doReverse ? reverse(list) : list;
         };
 
         /**
-     * Elements ordered
-     * @param  {Array}   [elements=[]]    [description]
-     * @param  {String}  [type='message'] [description]
-     * @param  {Boolean} [doReverse=true] [description]
-     * @param  {String}  [loc='']         [description]
-     * @return {Array}
-     */
+        * Elements ordered
+        * @param  {Array}   [elements=[]]    [description]
+        * @param  {String}  [type='message'] [description]
+        * @param  {Boolean} [doReverse=true] [description]
+        * @param  {String}  [loc='']         [description]
+        * @return {Array}
+        */
         api.orderElements = (elements = [], type = 'message', doReverse = true, loc = '') => {
             const list = elements.sort((a, b) => {
                 const timeA = (type === 'message') ? a.Time : api.getTime(a.ID, loc);
@@ -595,9 +574,9 @@ angular.module('proton.core')
         };
 
         /**
-     * Return time for a specific conversation and location
-     * @return {Integer}
-     */
+        * Return time for a specific conversation and location
+        * @return {Integer}
+        */
         api.getTime = (conversationId, loc) => {
             if (timeCached[conversationId] && angular.isNumber(timeCached[conversationId][loc])) {
                 return timeCached[conversationId][loc];
@@ -606,10 +585,10 @@ angular.module('proton.core')
         };
 
         /**
-     * Return message list
-     * @param {Object} request
-     * @return {Promise}
-     */
+        * Return message list
+        * @param {Object} request
+        * @return {Promise}
+        */
         api.queryMessages = (request) => {
             const loc = getLocation(request);
             const context = tools.cacheContext();
@@ -663,10 +642,10 @@ angular.module('proton.core')
         };
 
         /**
-     * Return conversation list with request specified in cache or call api
-     * @param {Object} request
-     * @return {Promise}
-     */
+        * Return conversation list with request specified in cache or call api
+        * @param {Object} request
+        * @return {Promise}
+        */
         api.queryConversations = (request) => {
             const loc = getLocation(request);
             const context = tools.cacheContext();
@@ -717,32 +696,32 @@ angular.module('proton.core')
         };
 
         /**
-     * Return a copy of messages cached for a specific ConversationID
-     * @param {String} conversationID
-     */
+        * Return a copy of messages cached for a specific ConversationID
+        * @param {String} conversationID
+        */
         api.queryMessagesCached = (ConversationID = '') => {
             const list = api.orderMessage(_.where(messagesCached, { ConversationID }));
             return list.map(messageModel);
         };
 
         /**
-     * Return conversation cached
-     * @param {String} conversationId
-     * @return {Object}
-     */
+        * Return conversation cached
+        * @param {String} conversationId
+        * @return {Object}
+        */
         api.getConversationCached = (ID) => angular.copy(_.findWhere(conversationsCached, { ID }));
 
         /**
-     * Return message cached
-     * @param {String} messageId
-     * @return {Object}
-     */
+        * Return message cached
+        * @param {String} messageId
+        * @return {Object}
+        */
         api.getMessageCached = (ID) => messageModel(_.findWhere(messagesCached, { ID }));
 
         /**
-     * @param {String} conversationID
-     * @return {Promise}
-     */
+        * @param {String} conversationID
+        * @return {Promise}
+        */
         api.getConversation = (ID) => {
             const conversation = _.findWhere(conversationsCached, { ID }) || {};
             const messages = api.queryMessagesCached(ID); // messages are ordered by -Time
@@ -755,10 +734,10 @@ angular.module('proton.core')
         };
 
         /**
-    * Return the message specified by the id from the cache or the back-end
-    * @param {String} ID - Message ID
-    * @return {Promise}
-    */
+        * Return the message specified by the id from the cache or the back-end
+        * @param {String} ID - Message ID
+        * @return {Promise}
+        */
         api.getMessage = (ID = '') => {
             const message = _.findWhere(messagesCached, { ID }) || {};
 
@@ -772,19 +751,19 @@ angular.module('proton.core')
         };
 
         /**
-     * Call the BE to get the message from a specific id
-     * @param {String} messageId
-     * @return {Promise}
-     */
+        * Call the BE to get the message from a specific id
+        * @param {String} messageId
+        * @return {Promise}
+        */
         api.queryMessage = getMessage;
 
         /**
-    * Delete message or conversation in the cache if the element is present
-    * @param {Object} event
-    * @return {Promise}
-    */
+        * Delete message or conversation in the cache if the element is present
+        * @param {Object} event
+        * @return {Promise}
+        */
         api.delete = (event) => {
-        // Delete message
+            // Delete message
             messagesCached = messagesCached.filter(({ ID }) => ID !== event.ID);
 
             // Delete conversation
@@ -794,18 +773,18 @@ angular.module('proton.core')
         };
 
         /**
-    * Add a new message in the cache
-    * @param {Object} event
-    * @return {Promise}
-    */
+        * Add a new message in the cache
+        * @param {Object} event
+        * @return {Promise}
+        */
         api.createMessage = (event) => (updateMessage(event.Message), Promise.resolve());
         api.updateMessage = updateMessage;
 
         /**
-     * Add a new conversation in the cache
-     * @param {Object} event
-     * @return {Promise}
-     */
+        * Add a new conversation in the cache
+        * @param {Object} event
+        * @return {Promise}
+        */
         api.createConversation = ({ Conversation }) => {
             Conversation.loaded = true; // Mark the new conversation as loaded
             updateConversation(Conversation);
@@ -813,17 +792,17 @@ angular.module('proton.core')
         };
 
         /**
-     * Update draft conversation
-     * @param {Object}
-     * @return {Promise}
-     */
+        * Update draft conversation
+        * @param {Object}
+        * @return {Promise}
+        */
         api.updateDraftConversation = (event) => (updateConversation(event.Conversation), Promise.resolve());
 
         /**
-    * Update message attached to the id specified
-    * @param {Object} event
-    * @return {Promise}
-    */
+        * Update message attached to the id specified
+        * @param {Object} event
+        * @return {Promise}
+        */
         api.updateFlagMessage = (event, isSend) => {
             const current = _.findWhere(messagesCached, { ID: event.ID });
 
@@ -846,8 +825,8 @@ angular.module('proton.core')
         };
 
         /**
-     * Update a conversation
-     */
+        * Update a conversation
+        */
         api.updateFlagConversation = (event = {}) => {
             const current = _.findWhere(conversationsCached, { ID: event.ID });
 
@@ -902,9 +881,9 @@ angular.module('proton.core')
         }
 
         /**
-     * Set new counters value from FE events
-     * @param  {Array} events
-     */
+        * Set new counters value from FE events
+        * @param  {Array} events
+        */
         function handleCounters(events = []) {
             _.chain(events)
                 .filter((event) => event.Message)
@@ -916,6 +895,7 @@ angular.module('proton.core')
                         manageCounters(oldMessage, newMessage, 'message');
                     }
                 });
+
             _.chain(events)
                 .filter((event) => event.Conversation)
                 .map((event) => angular.copy(event.Conversation))
@@ -945,12 +925,17 @@ angular.module('proton.core')
         const formatDelete = (list = []) => Promise.all(list.map(api.delete));
 
         /**
-          * Manage the cache when a new event comes
-          * @param {Array} events - Object managing interaction with messages and conversations stored
-          * @param {Boolean} fromBackend - indicate if the events come from the back-end
-          * @return {Promise}
-          */
+        * Manage the cache when a new event comes
+        * @param {Array} events - Array of event managing interaction with messages and conversations stored
+        * @param {Boolean} fromBackend - indicate if the events come from the back-end
+        * @return {Promise}
+        */
         const eventProcess = (events = [], fromBackend = false, isSend) => {
+            // Delay handle BE events until the changing request is done to avoid flickering issue
+            if (fromBackend && dispatcher.length) {
+                return Promise.all(dispatcher)
+                    .then(() => eventProcess(events, true, isSend));
+            }
 
             console.log(`[events] from the ${fromBackend ? 'back' : 'front'}-end`, events);
 
@@ -993,10 +978,10 @@ angular.module('proton.core')
         api.events = eventProcess;
 
         /**
-         * Ask to the message list controller to refresh the messages
-         * First with the cache
-         * Second with the query call
-         */
+        * Ask to the message list controller to refresh the messages
+        * First with the cache
+        * Second with the query call
+        */
         api.callRefresh = (messageIDs = [], conversationIDs = []) => {
             dispatchElements('refresh');
             $rootScope.$emit('updatePageName');
@@ -1006,16 +991,16 @@ angular.module('proton.core')
         };
 
         /**
-     * Reset cache and hash then preload inbox and sent
-     */
+        * Reset cache and hash then preload inbox and sent
+        */
         api.reset = () => {
             conversationsCached.length = 0;
             messagesCached.length = 0;
         };
 
         /**
-     * Manage expiration time for messages in the cache
-     */
+        * Manage expiration time for messages in the cache
+        */
         function expiration() {
             const now = moment().unix();
             const { list, removeList } = messagesCached
@@ -1032,13 +1017,13 @@ angular.module('proton.core')
         }
 
         /**
-     * Return previous ID of message specified
-     * @param {String} elementID - can be a message ID or a conversation ID
-     * @param {Integer} elementTime - UNIX timestamp of the current element
-     * @param {String} action - 'next' or 'previous'
-     * @param {String} type - 'conversation' or 'message'
-     * @return {Promise}
-     */
+        * Return previous ID of message specified
+        * @param {String} elementID - can be a message ID or a conversation ID
+        * @param {Integer} elementTime - UNIX timestamp of the current element
+        * @param {String} action - 'next' or 'previous'
+        * @param {String} type - 'conversation' or 'message'
+        * @return {Promise}
+        */
         api.more = (elementID, elementTime, action) => {
 
             const type = tools.getTypeList();
