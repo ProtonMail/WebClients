@@ -117,17 +117,20 @@ angular.module('proton.settings')
 
         function changeViewMode(event, { status }) {
             const ViewMode = status ? CONSTANTS.CONVERSATION_VIEW_MODE : CONSTANTS.MESSAGE_VIEW_MODE; // Be careful, BE is reversed
+
+            $rootScope.$emit('appearance', { type: 'changingViewMode' });
+
             const promise = settingsApi.setViewMode({ ViewMode })
-                .then((result) => {
-                    if (result.data && result.data.Code === 1000) {
-                        return eventManager.call()
-                            .then(() => {
-                                notify({ message: gettextCatalog.getString('View mode saved', null, 'Info'), classes: 'notification-success' });
-                                return Promise.resolve();
-                            });
-                    } else if (result.data && result.data.Error) {
-                        return Promise.reject(result.data.Error);
+                .then(({ data = {} } = {}) => {
+                    if (data.Error) {
+                        throw new Error(data.Error);
                     }
+                    return data;
+                })
+                .then(() => eventManager.call())
+                .then(() => {
+                    notify({ message: gettextCatalog.getString('View mode saved', null, 'Info'), classes: 'notification-success' });
+                    $rootScope.$emit('appearance', { type: 'viewModeChanged' });
                 });
 
             networkActivityTracker.track(promise);
