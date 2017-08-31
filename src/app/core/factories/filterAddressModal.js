@@ -1,34 +1,33 @@
 angular.module('proton.core')
-    .factory('filterAddressModal', ($timeout, pmModal, IncomingDefault, networkActivityTracker, notify) => {
+    .factory('filterAddressModal', (pmModal, IncomingDefault, networkActivityTracker) => {
+        function create(filter) {
+            IncomingDefault.add(filter)
+                .then(({ data = {} } = {}) => {
+                    if (data.Error) {
+                        throw new Error(data.Error);
+                    }
+                    return data;
+                });
+        }
+
         return pmModal({
             controllerAs: 'ctrl',
             templateUrl: 'templates/modals/filterAddress.tpl.html',
             controller(params) {
-                this.filter = {
-                    Email: '',
-                    Location: params.location
+                const self = this;
+
+                self.filter = { Email: '', Location: params.location };
+                self.cancel = () => params.close();
+                self.create = () => {
+                    const promise = create(self.filter)
+                        .then((data) => params.add(data.IncomingDefault));
+
+                    networkActivityTracker.track(promise);
                 };
 
-                this.create = function () {
-                    networkActivityTracker.track(
-                        IncomingDefault.add(this.filter)
-                            .then((result) => {
-                                if (result.data && result.data.Code === 1000) {
-                                    params.add(result.data.IncomingDefault);
-                                } else if (result.data && result.data.Error) {
-                                    notify({ message: result.data.Error, classes: 'notification-danger' });
-                                }
-                            })
-                    );
-                }.bind(this);
-
-                this.cancel = function () {
-                    params.close();
-                };
-
-                $timeout(() => {
+                setTimeout(() => {
                     angular.element('#emailAddress').focus();
-                }, 100, false);
+                }, 100);
             }
         });
     });
