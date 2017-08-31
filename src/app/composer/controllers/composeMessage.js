@@ -33,6 +33,9 @@ angular.module('proton.composer')
         const unsubscribe = [];
         const outsidersMap = {};
         const ACTION_STATUS = CONSTANTS.STATUS;
+        const I18N = {
+            cannotSendMessage: gettextCatalog.getString('Cannot send message')
+        };
 
         const MESSAGES_ERROR = {
             stillUploading: gettextCatalog.getString('Wait for attachment to finish uploading or cancel upload.', null, 'Error'),
@@ -890,6 +893,18 @@ angular.module('proton.composer')
                 });
         }
 
+        function getSendError(data) {
+            if (data.ErrorDescription) {
+                return new Error(`${data.Error}: ${data.ErrorDescription}`);
+            }
+
+            if (data.Error) {
+                return new Error(data.Error);
+            }
+
+            return new Error(I18N.cannotSendMessage);
+        }
+
         /**
      * Try to send message specified
      * @param {Object} message
@@ -935,7 +950,7 @@ angular.module('proton.composer')
                     })
                         .catch(({ data = {} }) => {
                             // Check if there is an error coming from the server
-                            const err = new Error(data.ErrorDescription || data.Error || 'Cannot send message');
+                            const err = getSendError(data);
                             err.code = data.Code;
                             throw err;
                         })
