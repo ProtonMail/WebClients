@@ -11,7 +11,8 @@ angular.module('proton.core')
                 self.confirm = () => params.confirm();
                 self.cancel = () => params.cancel();
 
-                setTimeout(() => angular.element('#confirmModalBtn').focus());
+                // The button is not directly available
+                setTimeout(() => angular.element('#confirmModalBtn').focus(), 100);
             }
         });
     });
