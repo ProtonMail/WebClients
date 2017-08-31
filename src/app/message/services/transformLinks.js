@@ -15,7 +15,12 @@ angular.module('proton.message')
                  */
                 link.setAttribute('rel', 'noreferrer nofollow noopener');
 
-                if ((link.href || '').indexOf('http') === 0) {
+                const href = (link.href || '');
+
+                // I can have a src inside the url etc.
+                link.href = href.replace(/proton-/g, '');
+
+                if (href.indexOf('http') === 0) {
                     link.setAttribute('target', '_blank');
                 }
             });
