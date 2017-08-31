@@ -3,7 +3,8 @@ angular.module('proton.core')
         return pmModal({
             controllerAs: 'ctrl',
             templateUrl: 'templates/modals/addAddress.tpl.html',
-            controller(params) {
+            /* @ngInject */
+            controller: function (params) {
             // Variables
                 const self = this;
                 const { domains = [], organizationKey = null, members = [] } = params;

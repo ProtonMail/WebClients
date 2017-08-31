@@ -3,7 +3,8 @@ angular.module('proton.keys')
         return pmModal({
             controllerAs: 'ctrl',
             templateUrl: 'templates/modals/keyPassword.tpl.html',
-            controller(params) {
+            /* @ngInject */
+            controller: function (params) {
                 const self = this;
                 self.passwordMode = authentication.user.PasswordMode;
                 self.password = '';

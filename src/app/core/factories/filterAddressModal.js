@@ -13,13 +13,13 @@ angular.module('proton.core')
         return pmModal({
             controllerAs: 'ctrl',
             templateUrl: 'templates/modals/filterAddress.tpl.html',
-            controller(params) {
-                const self = this;
+            /* @ngInject */
+            controller: function (params) {
 
-                self.filter = { Email: '', Location: params.location };
-                self.cancel = () => params.close();
-                self.create = () => {
-                    const promise = create(self.filter)
+                this.filter = { Email: '', Location: params.location };
+                this.cancel = () => params.close();
+                this.create = () => {
+                    const promise = create(this.filter)
                         .then((data) => params.add(data.IncomingDefault));
 
                     networkActivityTracker.track(promise);

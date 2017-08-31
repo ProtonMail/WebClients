@@ -3,7 +3,8 @@ angular.module('proton.core')
         return pmModal({
             controllerAs: 'ctrl',
             templateUrl: 'templates/modals/twofactor/sharedSecret.tpl.html',
-            controller(params) {
+            /* @ngInject */
+            controller: function (params) {
                 const self = this;
                 const randomBytes = webcrypto.getRandomValues(new Uint8Array(20));
                 const sharedSecret = base32.encode(randomBytes);

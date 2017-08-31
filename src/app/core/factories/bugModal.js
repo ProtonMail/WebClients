@@ -3,7 +3,8 @@ angular.module('proton.core')
         return pmModal({
             controllerAs: 'ctrl',
             templateUrl: 'templates/modals/bug.tpl.html',
-            controller(params) {
+            /* @ngInject */
+            controller: function (params) {
             // Variables
                 this.form = params.form;
                 this.form.attachScreenshot = false; // Do not attach screenshot by default

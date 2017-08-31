@@ -11,7 +11,8 @@ angular.module('proton.core')
         return pmModal({
             controllerAs: 'ctrl',
             templateUrl: 'templates/modals/humanVerification.tpl.html',
-            controller(params, $scope) {
+            /* @ngInject */
+            controller: function (params, $scope) {
                 const self = this;
                 const unsubscribe = [];
 

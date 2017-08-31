@@ -1,7 +1,8 @@
 angular.module('proton.core')
     .factory('contactModal', (pmModal) => {
         return pmModal({
-            controller(params, $timeout) {
+            /* @ngInject */
+            controller: function (params, $timeout) {
                 this.name = params.name;
                 this.email = params.email;
                 this.title = params.title;

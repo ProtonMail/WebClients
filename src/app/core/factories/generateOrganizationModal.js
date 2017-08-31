@@ -3,7 +3,8 @@ angular.module('proton.core')
         return pmModal({
             controllerAs: 'ctrl',
             templateUrl: 'templates/modals/generateOrganization.tpl.html',
-            controller(params) {
+            /* @ngInject */
+            controller: function (params) {
 
             // Parameters
                 this.size = 2048;

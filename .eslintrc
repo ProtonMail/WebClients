@@ -35,6 +35,7 @@
     "_": true
   },
   "rules": {
+    "object-shorthand": "off",
     "indent": ["error", 4, {"SwitchCase": 1}],
     "arrow-parens": ["error", "always"],
     "comma-dangle": ["error", "never"],

@@ -23,7 +23,8 @@ angular.module('proton.core')
         return pmModal({
             controllerAs: 'ctrl',
             templateUrl: 'templates/modals/deleteAccount.tpl.html',
-            controller(params, $scope) {
+            /* @ngInject */
+            controller: function (params, $scope) {
                 const self = this;
                 self.hasTwoFactor = authentication.user.TwoFactor;
                 self.isAdmin = authentication.user.Role === CONSTANTS.PAID_ADMIN_ROLE;

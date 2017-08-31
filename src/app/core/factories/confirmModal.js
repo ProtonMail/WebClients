@@ -3,7 +3,9 @@ angular.module('proton.core')
         return pmModal({
             controllerAs: 'ctrl',
             templateUrl: 'templates/modals/confirm.tpl.html',
-            controller(params) {
+            /* @ngInject */
+            controller: function (params) {
+
                 this.title = params.title;
                 this.message = params.message;
                 this.confirm = () => params.confirm();

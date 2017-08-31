@@ -3,7 +3,8 @@ angular.module('proton.core')
         return pmModal({
             controllerAs: 'ctrl',
             templateUrl: 'templates/modals/support.tpl.html',
-            controller(params) {
+            /* @ngInject */
+            controller: function (params) {
                 this.cancel = () => {
                     if (params.cancel) {
                         params.cancel();

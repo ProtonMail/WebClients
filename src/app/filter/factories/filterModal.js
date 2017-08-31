@@ -43,7 +43,8 @@ angular.module('proton.filter')
         return pmModal({
             controllerAs: 'ctrl',
             templateUrl: 'templates/filter/modal.tpl.html',
-            controller(params, $scope) {
+            /* @ngInject */
+            controller: function (params, $scope) {
                 const labelsOrdered = labelsModel.get('labels');
                 const foldersOrdered = labelsModel.get('folders');
                 const ctrl = this;

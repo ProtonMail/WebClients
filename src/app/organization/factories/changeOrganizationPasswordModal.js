@@ -3,7 +3,8 @@ angular.module('proton.organization')
         return pmModal({
             controllerAs: 'ctrl',
             templateUrl: 'templates/modals/changeOrganizationPassword.tpl.html',
-            controller(params) {
+            /* @ngInject */
+            controller: function (params) {
                 const self = this;
                 self.newPassword = '';
                 self.confirmPassword = '';

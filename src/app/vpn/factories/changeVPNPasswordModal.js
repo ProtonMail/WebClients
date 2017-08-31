@@ -7,7 +7,8 @@ angular.module('proton.vpn')
         return pmModal({
             controllerAs: 'ctrl',
             templateUrl: 'templates/vpn/changeVPNPasswordModal.tpl.html',
-            controller(params) {
+            /* @ngInject */
+            controller: function (params) {
                 const self = this;
                 self.VPNPassword = '';
                 self.passwordDefined = params.password;

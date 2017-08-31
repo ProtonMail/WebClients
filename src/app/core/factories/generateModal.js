@@ -3,7 +3,8 @@ angular.module('proton.core')
         return pmModal({
             controllerAs: 'ctrl',
             templateUrl: 'templates/modals/generate.tpl.html',
-            controller(params, $scope) {
+            /* @ngInject */
+            controller: function (params, $scope) {
             // Variables
                 const self = this;
                 const promises = [];
