@@ -12,7 +12,7 @@ angular.module('proton.message')
             return false;
         }
 
-        function sendMessage(value = '') {
+        function sendMessage(value = '', addressID) {
             const message = messageModel();
             const mailto = value.replace('mailto:', '');
             let j = mailto.indexOf('?');
@@ -24,8 +24,8 @@ angular.module('proton.message')
             const to = mailto.substring(0, j);
             const { searchObject = {} } = parseUrl(mailto.substring(j + 1));
 
-            message.AddressID = authentication.user.Addresses[0].ID;
-            message.From = authentication.user.Addresses[0];
+            message.AddressID = addressID || authentication.user.Addresses[0].ID;
+            message.From = _.findWhere(authentication.user.Addresses, { ID: message.AddressID });
             message.Password = '';
 
             if (to) {
@@ -48,9 +48,10 @@ angular.module('proton.message')
         function unsubscribe(message = {}) {
             const list = message.getListUnsubscribe();
             const matches = (list.match(UNSUBSCRIBE_REGEX) || []).map((m) => m.replace('<', '').replace('>', ''));
+            const addressID = message.AddressID;
 
             _.each(matches, (value = '') => {
-                value.startsWith('mailto:') && sendMessage(value);
+                value.startsWith('mailto:') && sendMessage(value, addressID);
                 value.startsWith('http') && openTab(value);
             });
 
