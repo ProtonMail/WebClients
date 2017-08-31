@@ -19,7 +19,8 @@ angular.module('proton.payment')
         return pmModal({
             controllerAs: 'ctrl',
             templateUrl: 'templates/modals/pay.tpl.html',
-            controller(params) {
+            /* @ngInject */
+            controller: function (params) {
 
                 this.checkInvoice = params.checkInvoice;
                 this.invoice = params.invoice;

@@ -1,7 +1,8 @@
 angular.module('proton.core')
     .factory('alertModal', (pmModal) => {
         return pmModal({
-            controller(params) {
+            /* @ngInject */
+            controller: function (params) {
                 this.title = params.title;
                 this.message = params.message;
                 this.alert = params.alert || 'alert-info';

@@ -3,7 +3,8 @@ angular.module('proton.core')
         return pmModal({
             controllerAs: 'ctrl',
             templateUrl: 'templates/modals/signature.tpl.html',
-            controller(params) {
+            /* @ngInject */
+            controller: function (params) {
                 this.defaultDisplayName = authentication.user.DisplayName;
                 this.defaultSignature = authentication.user.Signature;
                 this.address = params.address;

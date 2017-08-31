@@ -3,7 +3,8 @@ angular.module('proton.core')
         return pmModal({
             controllerAs: 'ctrl',
             templateUrl: 'templates/modals/domain/domain.tpl.html',
-            controller(params) {
+            /* @ngInject */
+            controller: function (params) {
                 const self = this;
 
                 self.step = params.step;

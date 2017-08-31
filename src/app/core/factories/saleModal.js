@@ -3,7 +3,8 @@ angular.module('proton.core')
         return pmModal({
             controllerAs: 'ctrl',
             templateUrl: 'templates/modals/sale.tpl.html',
-            controller(params) {
+            /* @ngInject */
+            controller: function (params) {
                 const { close, methods } = params;
                 const self = this;
                 self.amount = 1337;

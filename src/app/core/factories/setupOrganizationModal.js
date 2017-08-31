@@ -3,7 +3,8 @@ angular.module('proton.core')
         return pmModal({
             controllerAs: 'ctrl',
             templateUrl: 'templates/modals/setupOrganization.tpl.html',
-            controller(params, $scope) {
+            /* @ngInject */
+            controller: function (params, $scope) {
                 const self = this;
                 const base = CONSTANTS.BASE_SIZE;
                 const steps = ['name', 'keys', 'password', 'storage'];

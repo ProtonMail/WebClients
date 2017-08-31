@@ -3,7 +3,8 @@ angular.module('proton.core')
         return pmModal({
             controllerAs: 'ctrl',
             templateUrl: 'templates/modals/twofactor/recoveryCode.tpl.html',
-            controller(params) {
+            /* @ngInject */
+            controller: function (params) {
                 this.recoveryCodesFirstHalf = params.recoveryCodes.slice(0, 8);
                 this.recoveryCodesSecondHalf = params.recoveryCodes.slice(8, 16);
                 this.download = () => {

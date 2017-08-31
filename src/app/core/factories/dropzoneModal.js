@@ -3,7 +3,8 @@ angular.module('proton.core')
         return pmModal({
             controllerAs: 'ctrl',
             templateUrl: 'templates/modals/dropzone.tpl.html',
-            controller(params, notify, $timeout, $scope) {
+            /* @ngInject */
+            controller: function (params, notify, $timeout, $scope) {
                 let files = [];
                 let extension;
                 const self = this;

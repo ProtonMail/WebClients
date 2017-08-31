@@ -3,7 +3,8 @@ angular.module('proton.core')
         return pmModal({
             controllerAs: 'ctrl',
             templateUrl: 'templates/modals/hotkey.tpl.html',
-            controller(params) {
+            /* @ngInject */
+            controller: function (params) {
                 this.isMac = navigator.userAgent.indexOf('Mac OS X') !== -1;
 
                 if (authentication.user.ViewLayout === CONSTANTS.ROW_MODE) {

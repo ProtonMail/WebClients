@@ -3,7 +3,8 @@ angular.module('proton.core')
         return pmModal({
             controllerAs: 'ctrl',
             templateUrl: 'templates/modals/welcome.tpl.html',
-            controller(params) {
+            /* @ngInject */
+            controller: function (params) {
                 this.displayName = authentication.user.DisplayName;
 
                 this.cancel = () => {

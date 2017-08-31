@@ -7,7 +7,8 @@ angular.module('proton.vpn')
         return pmModal({
             controllerAs: 'ctrl',
             templateUrl: 'templates/vpn/changeVPNNameModal.tpl.html',
-            controller(params) {
+            /* @ngInject */
+            controller: function (params) {
                 const self = this;
                 self.VPNName = params.name || '';
                 self.submit = () => {

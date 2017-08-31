@@ -3,7 +3,8 @@ angular.module('proton.core')
         return pmModal({
             controllerAs: 'ctrl',
             templateUrl: 'templates/modals/twofactor/twoFAIntroModal.tpl.html',
-            controller(params) {
+            /* @ngInject */
+            controller: function (params) {
                 const self = this;
                 self.next = () => params.next();
                 self.cancel = () => params.cancel();

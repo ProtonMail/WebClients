@@ -3,7 +3,8 @@ angular.module('proton.core')
         return pmModal({
             controllerAs: 'ctrl',
             templateUrl: 'templates/authentication/modals/helpLoginModal.tpl.html',
-            controller(params) {
+            /* @ngInject */
+            controller: function (params) {
                 const self = this;
                 self.cancel = () => {
                     params.close();

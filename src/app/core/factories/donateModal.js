@@ -4,7 +4,8 @@ angular.module('proton.core')
         return pmModal({
             controllerAs: 'ctrl',
             templateUrl: 'templates/modals/donate.tpl.html',
-            controller(params) {
+            /* @ngInject */
+            controller: function (params) {
                 this.typeOfModal = params.type;
                 this.close = params.close;
 

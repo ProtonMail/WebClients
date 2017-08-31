@@ -1,14 +1,5 @@
 angular.module('proton.commons')
-    .factory('pmModal', (
-        $animate,
-        $compile,
-        $rootScope,
-        $controller,
-        $q,
-        $http,
-        AppModel,
-        $templateCache
-    ) => {
+    .factory('pmModal', ($animate, $compile, $rootScope, $controller, $q, $http, AppModel, $templateCache) => {
         const $body = $('#body');
         return function modalFactory(config) {
             if (!(!config.template ^ !config.templateUrl)) {

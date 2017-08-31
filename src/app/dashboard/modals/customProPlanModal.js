@@ -14,7 +14,8 @@ angular.module('proton.dashboard')
         return pmModal({
             controllerAs: 'ctrl',
             templateUrl: 'templates/dashboard/customProPlanModal.tpl.html',
-            controller(params) {
+            /* @ngInject */
+            controller: function (params) {
                 this.sliders = customProPlanModel.getSliders();
                 this.format = (type) => I18N[type](this.sliders[type].value);
                 this.close = () => params.close();
