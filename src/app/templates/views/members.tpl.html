@@ -215,7 +215,7 @@
                                     <div class="pm_table member-table-addresses-pmTable">
                                         <table class="member-table-addresses absorbing">
                                             <tbody>
-                                                <tr ng-repeat="address in member.Addresses | orderBy: ['!Status','Send']">
+                                                <tr ng-repeat="address in member.Addresses | orderBy: ['!Status','Order']">
                                                     <td ng-bind="address.Email"></td>
                                                     <td class="absorbing-column">
                                                         <span class="pm_badge success" ng-show="address.Status === 1 && address.Receive === 1" translate translate-comment="address state badge">Enabled</span>

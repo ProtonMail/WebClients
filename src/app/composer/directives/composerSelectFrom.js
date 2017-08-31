@@ -4,7 +4,7 @@ angular.module('proton.composer')
         const listAddress = () => {
             return _.chain(authentication.user.Addresses)
                 .where({ Status: 1, Receive: 1 })
-                .sortBy('Send')
+                .sortBy('Order')
                 .value();
         };
 

@@ -43,7 +43,7 @@ angular.module('proton.ui')
         function getFirstSortedAddresses() {
             return _.chain(authentication.user.Addresses)
                 .where({ Status: 1, Receive: 1 })
-                .sortBy('Send')
+                .sortBy('Order')
                 .first()
                 .value() || {};
         }

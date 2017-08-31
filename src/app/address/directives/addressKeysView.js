@@ -10,11 +10,11 @@ angular.module('proton.address')
             scope.isSubUser = authentication.user.subuser;
             scope.addresses = [];
             function populateKeys() {
-                authentication.user.Addresses.forEach(({ Keys = [], ID = '', Email = '', Send }) => {
+                authentication.user.Addresses.forEach(({ Keys = [], ID = '', Email = '', Order }) => {
                     if (Keys.length) {
                         const { fingerprint, created, bitSize, PublicKey } = Keys[0];
                         const index = _.findIndex(scope.addresses, { addressID: ID });
-                        const address = { send: Send, addressID: ID, email: Email, fingerprint, created, bitSize, publicKey: PublicKey, keys: Keys };
+                        const address = { order: Order, addressID: ID, email: Email, fingerprint, created, bitSize, publicKey: PublicKey, keys: Keys };
                         if (index > -1) {
                             angular.extend(scope.addresses[index], address);
                         } else {

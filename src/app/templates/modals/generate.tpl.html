@@ -39,7 +39,7 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr ng-repeat="address in ctrl.addresses | orderBy: 'Send'">
+                            <tr ng-repeat="address in ctrl.addresses | orderBy: 'Order'">
                                 <td>{{ address.Email }}</td>
                                 <td class="text-right">
                                     <span ng-show="address.state === 0" class="pm_badge" translate translate-comment="key generation progrss">Queued</span>

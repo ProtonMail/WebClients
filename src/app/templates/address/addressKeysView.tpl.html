@@ -9,7 +9,7 @@
             </tr>
         </thead>
         <tbody>
-            <tr ng-repeat-start="address in addresses | orderBy: 'send' track by address.addressID">
+            <tr ng-repeat-start="address in addresses | orderBy: 'order' track by address.addressID">
                 <td>
                     <span class="addressKeysView-toggle">
                         <toggle-expand data-model="address.toggle"></toggle-expand>

@@ -323,7 +323,7 @@ angular.module('proton.composer')
 
             const addresses = _.chain(authentication.user.Addresses)
                 .where({ Status: 1, Receive: 1 })
-                .sortBy('Send')
+                .sortBy('Order')
                 .value();
 
             if (AddressID) {

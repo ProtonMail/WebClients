@@ -33,7 +33,7 @@
                 </label>
                 <div class="activeAddresses-container">
                     <ul class="pm_sort-container" data-as-sortable="aliasDragControlListeners" is-disabled="activeAddresses.length === 1" ng-class="{ 'as-sortable-disabled': activeAddresses.length === 1 }" data-ng-model="activeAddresses">
-                        <li class="pm_sort-item" ng-repeat="address in activeAddresses | orderBy: 'Send'" as-sortable-item="" ng-class="{'highlight': address.Type === 1, 'unsortable': true}">
+                        <li class="pm_sort-item" ng-repeat="address in activeAddresses | orderBy: 'Order'" as-sortable-item="" ng-class="{'highlight': address.Type === 1, 'unsortable': true}">
                             <div class="pm_sort-item-content" as-sortable-item-handle="">
                                 <div class="activeAddresses-email">
                                     <span class="ellipsis">{{ address.Email }}</span>
