@@ -78,5 +78,5 @@
     "build:i18n": "grunt nggettext_extract nggettext_compile",
     "postbuild:i18n": "npm run i18n"
   },
-  "version": "3.11.1"
+  "version": "3.11.2"
 }
