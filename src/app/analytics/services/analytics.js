@@ -32,7 +32,7 @@ angular.module('proton.analytics')
         piwikScript.type = 'text/javascript';
         piwikScript.async = true;
         piwikScript.defer = true;
-        piwikScript.src = `//${statsHost}/${CONSTANTS.PIWIK_SCRIPT}`;
+        piwikScript.src = `https://${statsHost}/${CONSTANTS.PIWIK_SCRIPT}`;
         document.head.appendChild(piwikScript);
 
         function getTrackerAsync() {
