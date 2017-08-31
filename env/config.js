@@ -31,7 +31,7 @@ const API_TARGETS = {
 
 const PROD_STAT_MACHINE = {
     isEnabled: true,
-    statsHost: 'stats.protonmail.com',
+    statsHost: 'stats.protonmail.ch',
     domains: ['*.protonmail.com', '*.mail.protonmail.com'],
     cookieDomain: '*.protonmail.com',
     siteId: 5, // the id of the global (total) piwik site
