@@ -1,27 +1,17 @@
 angular.module('proton.core')
     .factory('confirmModal', (pmModal) => {
         return pmModal({
-            controller(params) {
-                this.message = params.message;
-                this.title = params.title;
-
-                Mousetrap.bind('enter', () => {
-                    this.confirm();
-
-                    return false;
-                });
-
-                this.confirm = () => {
-                    Mousetrap.unbind('enter');
-                    params.confirm();
-                };
-
-                this.cancel = () => {
-                    Mousetrap.unbind('enter');
-                    params.cancel();
-                };
-            },
             controllerAs: 'ctrl',
-            templateUrl: 'templates/modals/confirm.tpl.html'
+            templateUrl: 'templates/modals/confirm.tpl.html',
+            controller(params) {
+                const self = this;
+
+                self.title = params.title;
+                self.message = params.message;
+                self.confirm = () => params.confirm();
+                self.cancel = () => params.cancel();
+
+                setTimeout(() => angular.element('#confirmModalBtn').focus());
+            }
         });
     });

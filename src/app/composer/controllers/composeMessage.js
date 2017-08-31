@@ -710,30 +710,28 @@ angular.module('proton.composer')
      * @param {Object} message
      */
         function checkSubject({ Subject }) {
-            const deferred = $q.defer();
             const title = gettextCatalog.getString('No subject', null, 'Title');
-            const text = gettextCatalog.getString('No subject, send anyway?', null, 'Info');
+            const message = gettextCatalog.getString('No subject, send anyway?', null, 'Info');
 
-            if (!Subject) {
-                confirmModal.activate({
-                    params: {
-                        title,
-                        message: text,
-                        confirm() {
-                            confirmModal.deactivate();
-                            deferred.resolve();
-                        },
-                        cancel() {
-                            confirmModal.deactivate();
-                            deferred.reject();
+            return new Promise((resolve, reject) => {
+                if (!Subject) {
+                    confirmModal.activate({
+                        params: {
+                            title, message,
+                            confirm() {
+                                confirmModal.deactivate();
+                                resolve();
+                            },
+                            cancel() {
+                                confirmModal.deactivate();
+                                reject();
+                            }
                         }
-                    }
-                });
-            } else {
-                deferred.resolve();
-            }
-
-            return deferred.promise;
+                    });
+                } else {
+                    resolve();
+                }
+            });
         }
 
         function dispatchMessageAction(message) {
