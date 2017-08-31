@@ -931,12 +931,6 @@ angular.module('proton.core')
         * @return {Promise}
         */
         const eventProcess = (events = [], fromBackend = false, isSend) => {
-            // Delay handle BE events until the changing request is done to avoid flickering issue
-            if (fromBackend && dispatcher.length) {
-                return Promise.all(dispatcher)
-                    .then(() => eventProcess(events, true, isSend));
-            }
-
             console.log(`[events] from the ${fromBackend ? 'back' : 'front'}-end`, events);
 
             !fromBackend && handleCounters(events);
