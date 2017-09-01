@@ -126,7 +126,7 @@ angular.module('proton.commons')
             { value: 'LT', label: 'Lithuania' },
             { value: 'LU', label: 'Luxembourg' },
             { value: 'MO', label: 'Macao' },
-            { value: 'MK', label: 'Macedonia (The Former Yugoslav Republic of)' },
+            { value: 'MK', label: 'Macedonia' },
             { value: 'MG', label: 'Madagascar' },
             { value: 'MW', label: 'Malawi' },
             { value: 'MY', label: 'Malaysia' },
