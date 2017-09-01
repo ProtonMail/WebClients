@@ -44,7 +44,8 @@ angular.module('proton.message')
             return dom;
         };
 
-        const REGEXP_IS_BREAK = new RegExp('(svg|xlink:href|srcset=|src=|background=|poster=)(?=(([^"><\\]|\\[^><])|"([^"><\\]|\\[^><])*")*>)', 'g');
+
+        const REGEXP_IS_BREAK = new RegExp('(svg|xlink:href|srcset=|src=|background=|poster=)(?=(([^"><\\\\]|\\\\[^><])|"([^"><\\\\]|\\\\[^><])*")*>)', 'g');
         const REGEXP_IS_URL = new RegExp(/(url\()/ig);
         const replace = (regex, input) => input.replace(regex, 'proton-$1');
 
