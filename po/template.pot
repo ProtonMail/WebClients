@@ -1907,7 +1907,7 @@ msgctxt "Title"
 msgid "Conditions"
 msgstr ""
 
-#: src/app/templates/modals/confirm.tpl.html:19
+#: src/app/templates/modals/confirm.tpl.html:14
 #: src/app/templates/modals/signature.tpl.html:55
 msgctxt "Action"
 msgid "Confirm"
@@ -2432,7 +2432,7 @@ msgctxt "Title"
 msgid "Default Signature"
 msgstr ""
 
-#: src/app/composer/controllers/composeMessage.js:1121
+#: src/app/composer/controllers/composeMessage.js:1119
 #: src/app/templates/views/filters.tpl.html:111
 #: src/app/templates/views/filters.tpl.html:80
 msgid "Delete"
@@ -2971,7 +2971,7 @@ msgstr ""
 msgid "Email verification"
 msgstr ""
 
-#: src/app/settings/controllers/account.js:299
+#: src/app/settings/controllers/account.js:300
 msgctxt "Success"
 msgid "Emailing preference updated"
 msgstr ""
@@ -3836,7 +3836,7 @@ msgctxt "Title"
 msgid "Hotkeys"
 msgstr ""
 
-#: src/app/settings/controllers/account.js:269
+#: src/app/settings/controllers/account.js:270
 msgid "Hotkeys preferences updated"
 msgstr ""
 
@@ -3942,8 +3942,8 @@ msgid_plural "images detected"
 msgstr[0] ""
 msgstr[1] ""
 
-#: src/app/settings/controllers/account.js:231
-#: src/app/settings/controllers/account.js:241
+#: src/app/settings/controllers/account.js:232
+#: src/app/settings/controllers/account.js:242
 msgid "Image preferences updated"
 msgstr ""
 
@@ -4737,7 +4737,7 @@ msgid_plural "messages"
 msgstr[0] ""
 msgstr[1] ""
 
-#: src/app/composer/controllers/composeMessage.js:1130
+#: src/app/composer/controllers/composeMessage.js:1128
 msgid "Message discarded"
 msgstr ""
 
@@ -4781,7 +4781,7 @@ msgid_plural "messages selected"
 msgstr[0] ""
 msgstr[1] ""
 
-#: src/app/composer/controllers/composeMessage.js:988
+#: src/app/composer/controllers/composeMessage.js:986
 #: src/app/outside/controllers/outside.js:129
 msgid "Message sent"
 msgstr ""
@@ -5170,12 +5170,12 @@ msgstr ""
 msgid "No sending limits"
 msgstr ""
 
-#: src/app/composer/controllers/composeMessage.js:714
+#: src/app/composer/controllers/composeMessage.js:713
 msgctxt "Title"
 msgid "No subject"
 msgstr ""
 
-#: src/app/composer/controllers/composeMessage.js:715
+#: src/app/composer/controllers/composeMessage.js:714
 msgctxt "Info"
 msgid "No subject, send anyway?"
 msgstr ""
@@ -5330,7 +5330,7 @@ msgctxt "Title"
 msgid "Operating system"
 msgstr ""
 
-#: src/app/settings/controllers/account.js:152
+#: src/app/settings/controllers/account.js:153
 msgid "Operation timed out for security reasons, please try again"
 msgstr ""
 
@@ -5654,7 +5654,7 @@ msgctxt "Duration/repetition of autoresponder"
 msgid "Permanent"
 msgstr ""
 
-#: src/app/composer/controllers/composeMessage.js:1122
+#: src/app/composer/controllers/composeMessage.js:1120
 msgid "Permanently delete this draft?"
 msgstr ""
 
@@ -5836,9 +5836,9 @@ msgstr ""
 msgid "Popup"
 msgstr ""
 
-#: src/app/settings/controllers/account.js:125
-#: src/app/settings/controllers/account.js:139
-#: src/app/settings/controllers/account.js:220
+#: src/app/settings/controllers/account.js:126
+#: src/app/settings/controllers/account.js:140
+#: src/app/settings/controllers/account.js:221
 msgid "Preference saved"
 msgstr ""
 
@@ -6101,7 +6101,7 @@ msgctxt "Error"
 msgid "Recovery email invalid"
 msgstr ""
 
-#: src/app/settings/controllers/account.js:108
+#: src/app/settings/controllers/account.js:109
 msgid "Recovery/Notification email saved"
 msgstr ""
 
@@ -8184,7 +8184,7 @@ msgctxt "Info"
 msgid "You can enable authentication logging to see when your account is accessed, and from which IP. We will record the IP address that accesses the account and the time, as well as failed attempts."
 msgstr ""
 
-#: src/app/settings/controllers/account.js:89
+#: src/app/settings/controllers/account.js:90
 msgctxt "Info"
 msgid "You have a new email"
 msgstr ""
