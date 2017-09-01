@@ -1,7 +1,7 @@
 angular.module('proton.analytics')
     .factory('eventListener', (CONSTANTS, CONFIG, $rootScope, analytics, pageTitlesModel) => {
 
-        const TRACKED_STATES = ['signup', 'secured.dashboard'];
+        const TRACKED_STATES = ['signup', 'secured.dashboard', 'login', 'secured.inbox'];
 
         const state = { lastLocation: document.referrer };
 
