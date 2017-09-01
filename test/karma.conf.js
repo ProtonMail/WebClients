@@ -28,7 +28,7 @@ module.exports = (config) => {
 
 
         // list of files to exclude
-        exclude: ['**/*.min.js', '../src/libraries/*.js'],
+        exclude: ['**/*.min.js', '../src/libraries/*.js', '../build/vendor/index.js'],
         preprocessors: {
             '../src/app/templates/**/*.html': ['ng-html2js'],
             '../src/app/**/**/*.js': ['babel'],
