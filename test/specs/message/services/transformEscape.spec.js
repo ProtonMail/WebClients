@@ -29,9 +29,19 @@ describe('transformEscape service', () => {
     const CODE_HTML_HIGHLIGHT = `
     <div style="box-sizing: border-box;white-space: normal;" class="pre"><div style="box-sizing: border-box;color: #fff;max-width: 100%;font-size: 16px;line-height: 1.3;" class="code"><span style="box-sizing: border-box;color: #DDDDDF;" class="nt">&lt;script</span> <span style="box-sizing: border-box;color: #84868B;" class="na">src="</span><span style="box-sizing: border-box;color: #68BEA2;" class="s"><span class="s">https<span>://</span>use.fontawesome<span>.</span>com/f0d8991ea9.js</span><span style="box-sizing: border-box;color: #84868B;" class="na">"</span><span style="box-sizing: border-box;color: #DDDDDF;" class="nt">&gt;</span><span style="box-sizing: border-box;color: #DDDDDF;" class="nt">&lt;/script&gt;</span></span></div></div><div class="pre"></div>
 `;
+    const HTML_LINKS = `<div>
+  <a href="http://www.dewdwesrcset-dewdw.com/?srcset=de&srcset=Dewdwe"></a>
+  <a href="http://www.dewdwesrc-dewdw.com/?src=de&src=Dewdwe"></a>
+  <a href="http://www.dewdwebackground-dewdw.com/?background=de&background=Dewdwe"></a>
+  <a href="http://www.dewdweposter-dewdw.com/?poster=de&poster=Dewdwe"></a>
+  <a href="http://www.google.nl/?url=a"></a>
+  <a href="http://www.google.nl/?src=a&srcset=dew"></a>
+</div>`;
     const CODE_HTML = `<pre><code><img src="polo.fr"></code></pre>`;
     const CODE_HTML_ESCAPED = `<pre><code><img proton-src="polo.fr"></code></pre>`;
     const CODE_TEXT = `<pre><code>{ background: url('monique.jpg') }</code></pre>`;
+    const TEXT = `<p>salut monique est ceque tu as un src="lol" dans la poche ?</p><span>src=</span>`;
+
 
     let output;
 
@@ -84,7 +94,6 @@ describe('transformEscape service', () => {
             });
 
         });
-
     });
 
     describe('Escape everything with proton-', () => {
@@ -164,6 +173,32 @@ describe('transformEscape service', () => {
         it('should correctly escape svg', () => {
             expect(output.innerHTML).toMatch(/\/proton-svg>/);
             expect(output.innerHTML).toMatch(/<proton-svg/);
+        });
+    });
+
+    describe('No escape inside URL', () => {
+
+        beforeEach(() => {
+            output = factory(document.createElement('DIV'), null, {
+                content: HTML_LINKS
+            });
+        });
+
+        it('should not escape the content of an anchor tag', () => {
+            expect(output.innerHTML).not.toMatch(/proton-/);
+        });
+
+    });
+    describe('No escape TXT', () => {
+
+        beforeEach(() => {
+            output = factory(document.createElement('DIV'), null, {
+                content: TEXT
+            });
+        });
+
+        it('should not escape txt', () => {
+            expect(output.innerHTML).not.toMatch(/proton-/);
         });
 
     });
