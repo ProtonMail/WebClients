@@ -23,52 +23,48 @@ angular.module('proton.attachments')
         };
 
         /**
-         * Get the private keys to decrypt attachments base on the context
-         * @param  {Object} message
-         * @return {String}
-         */
-        const getPrivateKeys = (message) => {
-            // get user's pk
-            if (isOutside()) {
-                return pmcw.decode_utf8_base64(secureSessionStorage.getItem('proton:encrypted_password'));
-            }
-
-            return authentication.getPrivateKeys(message.AddressID);
-        };
-
-        /**
          * Decrypt an attachment
          * @param  {ArrayBuffer} attachment
          * @param  {String} options.key
          * @param  {String} options.algo
          * @return {Promise}
          */
-        const decrypt = (attachment, pubKey, { key, algo } = {}) => {
-            // create new Uint8Array to store decryted attachment
-            let at = new Uint8Array(attachment);
+        const decrypt = (attachment, pubKey, sessionKey = {}) => {
+            // create new Uint8Array to store decrypted attachment
+            const at = new Uint8Array(attachment);
             // decrypt the att
-            return pmcw
-                .decryptMessage(at, key, true, algo, pubKey)
-                .then(({ data }) => (at = null, data))
+            return pmcw.decryptMessage({
+                message: pmcw.getMessage(at),
+                sessionKey,
+                format: 'binary',
+                publicKeys: pubKey ? pmcw.getKeys(pubKey) : []
+            })
+                .then(({ data }) => data)
                 .catch((err) => ($log.error(err), err));
         };
 
-        const encrypt = (attachment, pubKeys, privKey, { name, type, size, inline } = {}) => {
+        const encrypt = (attachment, publicKeys, privateKeys, { name, type, size, inline } = {}) => {
 
-            const at = new Uint8Array(attachment);
-
-            return pmcw.encryptFile(at, pubKeys, [], name, privKey)
-                .then((packets) => angular.extend({}, packets, {
+            const data = new Uint8Array(attachment);
+            return pmcw.encryptMessage({
+                passwords: [],
+                filename: name,
+                armor: false,
+                data,
+                publicKeys: pmcw.getKeys(publicKeys),
+                privateKeys
+            }).then(({ message }) => {
+                const { asymmetric, encrypted } = pmcw.splitMessage(message);
+                return {
                     Filename: name,
                     MIMEType: type,
                     FileSize: size,
                     Inline: inline,
-                    Preview: at
-                }))
-                .catch((err) => {
-                    $log.error(err);
-                    throw err;
-                });
+                    Preview: data,
+                    keys: asymmetric[0],
+                    data: encrypted[0]
+                };
+            });
         };
 
         // read the file locally, and encrypt it. return the encrypted file.
@@ -106,10 +102,15 @@ angular.module('proton.attachments')
             if (attachment.sessionKey) {
                 return Promise.resolve(attachment);
             }
-
             const keyPackets = pmcw.binaryStringToArray(pmcw.decode_base64(attachment.KeyPackets));
+            const options = { message: pmcw.getMessage(keyPackets) };
+            if (isOutside()) {
+                options.password = pmcw.decode_utf8_base64(secureSessionStorage.getItem('proton:encrypted_password'));
+            } else {
+                options.privateKeys = authentication.getPrivateKeys(message.AddressID);
+            }
             return pmcw
-                .decryptSessionKey(keyPackets, getPrivateKeys(message))
+                .decryptSessionKey(options)
                 .then((sessionKey) => angular.extend({}, attachment, { sessionKey }));
         };
 

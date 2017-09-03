@@ -98,11 +98,10 @@ angular.module('proton.outside')
                 const message = gettextCatalog.getString("ProtonMail's Encrypted Outside feature only allows replying 5 times. <a href=\"https://protonmail.com/signup\" target=\"_blank\">You can sign up for ProtonMail for seamless and unlimited end-to-end encryption</a>.", null, 'Notification');
                 notify({ message });
             }
-
             const process = embedded.parser($scope.message, { direction: 'cid' })
-                .then((result) => Promise.all([
-                    pmcw.encryptMessage(result, $scope.message.publicKey),
-                    pmcw.encryptMessage(result, [], password),
+                .then((data) => Promise.all([
+                    pmcw.encryptMessage({ data, publicKeys: pmcw.getKeys($scope.message.publicKey) }),
+                    pmcw.encryptMessage({ data, passwords: password }),
                     attachmentModelOutside.encrypt($scope.message)
                         .then((attachments) => {
                             return attachments.reduce((acc, { Filename, DataPacket, MIMEType, KeyPackets, CID = '' }) => {
@@ -115,7 +114,7 @@ angular.module('proton.outside')
                             }, { Filename: [], DataPacket: [], MIMEType: [], KeyPackets: [], ContentID: [] });
                         })
                 ]))
-                .then(([ Body, ReplyBody, Packages ]) => {
+                .then(([ { data: Body }, { data: ReplyBody }, Packages]) => {
                     return Eo.reply(decryptedToken, tokenId, {
                         Body, ReplyBody,
                         'Filename[]': Packages.Filename,

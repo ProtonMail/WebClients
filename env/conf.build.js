@@ -88,7 +88,7 @@ module.exports = {
       'vendor/cssua/cssua.js',
       'vendor/asmcrypto/asmcrypto.js',
       'vendor/babel-polyfill/dist/polyfill.js',
-      'vendor/pmcrypto/build/index.js'
+      'vendor/pmcrypto/build/pmcrypto.js'
     ],
     bootstrap_components: [
       "affix",

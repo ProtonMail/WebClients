@@ -29,14 +29,20 @@ angular.module('proton.message')
                 .then(({ sessionKey, dataPacket }) => {
                     // Encrypt the body's session key.
                     function encryptBodyKeyPacket(publicKeys = [], passwords = []) {
-                        return pmcw.encryptSessionKey(sessionKey.key, sessionKey.algo, publicKeys, passwords)
-                            .then((keyPacket) => pmcw.encode_base64(pmcw.arrayToBinaryString(keyPacket)));
+                        return pmcw.encryptSessionKey({
+                            data: sessionKey.data,
+                            algorithm: sessionKey.algorithm,
+                            publicKeys: publicKeys.length > 0 ? pmcw.getKeys(publicKeys) : [],
+                            passwords
+                        }).then(({ message }) => {
+                            return pmcw.encode_base64(pmcw.arrayToBinaryString(message.packets.write()));
+                        });
                     }
 
                     // Return the cleartext body session key.
                     function cleartextBodyKeyPacket() {
                         return Promise.resolve(
-                            pmcw.encode_base64(pmcw.arrayToBinaryString(sessionKey.key))
+                            pmcw.encode_base64(pmcw.arrayToBinaryString(sessionKey.data))
                         );
                     }
 
@@ -58,17 +64,18 @@ angular.module('proton.message')
                         // Encrypt the token, the body session key and each attachment's
                         // session key.
                         return Promise.all([
-                            pmcw.encryptMessage(Token, [], message.Password),
-                            encryptBodyKeyPacket(undefined, message.Password),
-                            message.encryptAttachmentKeyPackets(undefined, message.Password),
+                            pmcw.encryptMessage({ data: Token, publicKeys: [], passwords: [message.Password] }),
+                            encryptBodyKeyPacket([], [message.Password]),
+                            message.encryptAttachmentKeyPackets([], [message.Password]),
                             srp.randomVerifier(message.Password)
                         ])
-                            .then(([EncToken, BodyKeyPacket, AttachmentKeyPackets, verifier]) => {
+                            .then(([{ data }, BodyKeyPacket, AttachmentKeyPackets, verifier]) => {
                                 return {
                                     Type: 2,
                                     PasswordHint: message.PasswordHint,
                                     Auth: verifier.Auth,
-                                    Token, EncToken,
+                                    Token,
+                                    EncToken: data,
                                     BodyKeyPacket, AttachmentKeyPackets
                                 };
                             })
@@ -95,7 +102,7 @@ angular.module('proton.message')
                         Type: 0,
                         Addresses: {},
                         MIMEType: 'text/html',
-                        Body: dataPacket
+                        Body: pmcw.encode_base64(pmcw.arrayToBinaryString(dataPacket[0]))
                     };
 
                     let cleartext = false;
