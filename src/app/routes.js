@@ -348,7 +348,8 @@ angular.module('proton.routes', [
 
                             $scope.unlock = () => {
 
-                                const promise = pmcw.decryptMessage(encryptedToken, $scope.params.MessagePassword)
+                                const message = pmcw.getMessage(encryptedToken);
+                                const promise = pmcw.decryptMessage({ message, password: $scope.params.MessagePassword })
                                     .then((decryptedToken) => {
                                         secureSessionStorage.setItem('proton:decrypted_token', decryptedToken.data);
                                         secureSessionStorage.setItem('proton:encrypted_password', pmcw.encode_utf8_base64($scope.params.MessagePassword));
@@ -377,13 +378,20 @@ angular.module('proton.routes', [
                             .then(({ data = {} }) => {
                                 const message = data.Message;
                                 const promises = _.reduce(message.Replies, (acc, reply) => {
-                                    const promise = pmcw.decryptMessageRSA(reply.Body, password, reply.Time)
+                                    const promise = pmcw.decryptMessageLegacy({
+                                        message: pmcw.getMessage(reply.Body),
+                                        password,
+                                        messageTime: reply.Time
+                                    })
                                         .then(({ data }) => (reply.DecryptedBody = data));
                                     acc.push(promise);
                                     return acc;
                                 }, [
-                                    pmcw.decryptMessageRSA(message.Body, password, message.Time)
-                                        .then(({ data } = {}) => (message.DecryptedBody = data))
+                                    pmcw.decryptMessageLegacy({
+                                        message: pmcw.getMessage(message.Body),
+                                        password,
+                                        messageTime: message.Time
+                                    }).then(({ data } = {}) => (message.DecryptedBody = data))
                                 ]);
 
                                 return $q.all(promises).then(() => messageModel(message));
@@ -411,7 +419,11 @@ angular.module('proton.routes', [
                                 const message = result.data.Message;
 
                                 message.publicKey = result.data.PublicKey; // The sender’s public key
-                                return pmcw.decryptMessageRSA(message.Body, password, message.Time)
+                                return pmcw.decryptMessageLegacy({
+                                    message: pmcw.getMessage(message.Body),
+                                    password,
+                                    messageTime: message.Time
+                                })
                                     .then((body) => {
                                         const attachments = _.filter(message.Attachments, (attachment) => { return attachment.Headers && (attachment.Headers['content-id'] || attachment.Headers['content-location']); });
 

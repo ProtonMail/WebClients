@@ -136,5 +136,13 @@ angular.module('proton.constants', [])
             SIGNUP_PAID: 3,
             SIGNUP_PLUS: 6,
             SIGNUP_VISIONARY: 5
+        },
+        SEND_TYPES: {
+            SEND_PM: 1,
+            SEND_EO: 2,
+            SEND_CLEAR: 4,
+            SEND_PGP_INLINE: 8,
+            SEND_PGP_MIME: 16,
+            SEND_MIME: 32
         }
     });

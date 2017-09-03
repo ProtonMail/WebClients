@@ -64,10 +64,12 @@ angular.module('proton.core')
             return passwords.computeKeyPassword(mbpw, keySalt)
                 .then((newMailboxPwd) => {
                     _.each($scope.addresses, (address) => {
-                        const userID = address.Email;
                         promises.push(
-                            pmcw.generateKeysRSA(userID, newMailboxPwd).then(
-                                (response) => {
+                            pmcw.generateKey({
+                                userIds: [{ name: address.Email, email: address.Email }],
+                                passphrase: newMailboxPwd
+                            })
+                                .then((response) => {
                                     return {
                                         AddressID: address.ID,
                                         PrivateKey: response.privateKeyArmored
@@ -78,8 +80,7 @@ angular.module('proton.core')
                                     $log.error(err);
                                     $scope.error = err;
                                     return Promise.reject(err);
-                                }
-                            )
+                                })
                         );
                     });
 

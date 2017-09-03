@@ -58,7 +58,7 @@ angular.module('proton.message')
 
             generateReplyToken() {
             // Use a base64-encoded AES256 session key as the reply token
-                return pmcw.encode_base64(pmcw.arrayToBinaryString(pmcw.generateKeyAES()));
+                return pmcw.encode_base64(pmcw.arrayToBinaryString(pmcw.generateSessionKey('aes256')));
             }
 
             encryptionType() {
@@ -140,10 +140,15 @@ angular.module('proton.message')
                 }
             }
 
-            encryptBody(pubKey) {
-                const privKey = authentication.getPrivateKeys(this.From.ID);
-                return pmcw.encryptMessage(this.getDecryptedBody(), pubKey, [], privKey)
-                    .then((body) => (this.Body = body, body))
+            encryptBody(publicKeys) {
+                const privateKeys = authentication.getPrivateKeys(this.From.ID)[0];
+                return pmcw.encryptMessage({
+                    data: this.getDecryptedBody(),
+                    publicKeys: pmcw.getKeys(publicKeys),
+                    privateKeys,
+                    format: 'utf8'
+                })
+                    .then(({ data }) => (this.Body = data, data))
                     .catch((error) => {
                         error.message = gettextCatalog.getString('Error encrypting message');
                         throw error;
@@ -178,17 +183,20 @@ angular.module('proton.message')
             }
 
             decryptBody() {
-                const privKey = authentication.getPrivateKeys(this.AddressID);
-                const sender = (this.Sender || {}).Address;
+                const privateKeys = authentication.getPrivateKeys(this.AddressID);
+                const message = pmcw.getMessage(this.Body);
 
                 this.decrypting = true;
 
+                const sender = (this.Sender || {}).Address;
+
                 const getPubKeys = (sender) => {
-                // Sender can be empty (╯︵╰,)
-                // if so, do not look up public key
+                    // Sender can be empty
+                    // if so, do not look up public key
                     if (!sender) {
                         return Promise.resolve(null);
                     }
+
                     return this.getPublicKeys([sender])
                         .then(({ data = {} } = {}) => {
                             if (data.Code === 1000 && data[sender].length > 0) {
@@ -200,21 +208,23 @@ angular.module('proton.message')
 
                 return getPubKeys(sender)
                     .then((pubKeys) => {
-                        return pmcw.decryptMessageRSA(this.Body, privKey, this.Time, pubKeys)
-                            .then((rep) => {
-                                this.decrypting = false;
+                        return pmcw.decryptMessageLegacy({
+                            message,
+                            privateKeys,
+                            publicKeys: pubKeys ? pmcw.getKeys(pubKeys) : [],
+                            messageTime: this.Time
+                        }).then((rep) => {
+                            this.decrypting = false;
 
-                                if (this.IsEncrypted === 8 || this.MIMEType === 'multipart/mixed') {
-                                    return this.parse(rep.data)
-                                        .then((data) => ({ data }));
-                                }
-
-                                return rep;
-                            })
-                            .catch((error) => {
-                                this.decrypting = false;
-                                throw error;
-                            });
+                            if (this.IsEncrypted === 8 || this.MIMEType === 'multipart/mixed') {
+                                return this.parse(rep.data)
+                                    .then((data) => ({ data }));
+                            }
+                            return rep;
+                        }).catch((error) => {
+                            this.decrypting = false;
+                            throw error;
+                        });
                     });
             }
 
@@ -226,11 +236,14 @@ angular.module('proton.message')
                         return AttachmentLoader.getSessionKey(this, attachment)
                             .then(({ sessionKey = {}, AttachmentID, ID } = {}) => {
                                 attachment.sessionKey = sessionKey; // Update the ref
-                                const { key, algo } = sessionKey;
-                                return pmcw.encryptSessionKey(key, algo, publicKeys, passwords)
-                                    .then((keyPacket) => {
-                                        packets[AttachmentID || ID] = pmcw.encode_base64(pmcw.arrayToBinaryString(keyPacket));
-                                    });
+                                return pmcw.encryptSessionKey({
+                                    data: sessionKey.data,
+                                    algorithm: sessionKey.algorithm,
+                                    publicKeys: publicKeys.length > 0 ? pmcw.getKeys(publicKeys) : [],
+                                    passwords
+                                }).then(({ message }) => {
+                                    packets[AttachmentID || ID] = pmcw.encode_base64(pmcw.arrayToBinaryString(message.packets.write()));
+                                });
                             });
                     })
                 )
@@ -245,7 +258,7 @@ angular.module('proton.message')
                         return AttachmentLoader.getSessionKey(this, attachment)
                             .then(({ sessionKey = {}, AttachmentID, ID } = {}) => {
                                 attachment.sessionKey = sessionKey; // Update the ref
-                                packets[AttachmentID || ID] = pmcw.encode_base64(pmcw.arrayToBinaryString(sessionKey.key));
+                                packets[AttachmentID || ID] = pmcw.encode_base64(pmcw.arrayToBinaryString(sessionKey.data));
                             });
                     })
                 )
@@ -254,14 +267,11 @@ angular.module('proton.message')
 
             cleartextBodyPackets() {
                 const privateKeys = authentication.getPrivateKeys(this.AddressID);
+                const { asymmetric, encrypted } = pmcw.splitMessage(this.Body);
+                const message = pmcw.getMessage(asymmetric[0]);
 
-                return pmcw.splitFile(this.Body)
-                    .then(({ keys, data }) => {
-                        const dataPacket = pmcw.encode_base64(pmcw.arrayToBinaryString(data));
-
-                        return pmcw.decryptSessionKey(keys, privateKeys)
-                            .then((sessionKey) => ({ sessionKey, dataPacket }));
-                    });
+                return pmcw.decryptSessionKey({ message, privateKeys })
+                    .then((sessionKey) => ({ sessionKey, dataPacket: encrypted }));
             }
 
             emailsToString() {

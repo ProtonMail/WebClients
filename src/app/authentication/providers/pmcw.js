@@ -16,8 +16,9 @@ angular.module('proton.authentication')
 
                 keyPromise
                     .then((privateKey) => {
-                    // this is the private key, use this and decryptMessage to get the access token
-                        pmcrypto.decryptMessage(accessToken, privateKey)
+                        const message = pmcrypto.getMessage(accessToken);
+                        // this is the private key, use this and decryptMessage to get the access token
+                        pmcrypto.decryptMessage({ message, privateKey })
                             .then(({ data }) => resolve({ password: prKeyPassCode, token: data }))
                             .catch(() => reject(new Error('Unable to get Access Token.')));
                     })

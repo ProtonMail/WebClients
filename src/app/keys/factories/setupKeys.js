@@ -22,10 +22,14 @@ angular.module('proton.keys')
             };
 
             return passwordPromise
-                .then((pass) => {
+                .then((passphrase) => {
                     const keyPromises = _.map(addresses, ({ Email, ID } = {}) => {
                         return pmcw
-                            .generateKeysRSA(Email, pass, numBits)
+                            .generateKey({
+                                userIds: [{ name: Email, email: Email }],
+                                passphrase,
+                                numBits
+                            })
                             .then(({ privateKeyArmored }) => ({
                                 AddressID: ID,
                                 PrivateKey: privateKeyArmored
@@ -40,7 +44,11 @@ angular.module('proton.keys')
         function generateAddresses(addresses = [], mailboxPassword = '', numBits = 2048) {
 
             const promises = _.map(addresses, ({ Email, ID } = {}) => {
-                return pmcw.generateKeysRSA(Email, mailboxPassword, numBits)
+                return pmcw.generateKey({
+                    userIds: [{ name: Email, email: Email }],
+                    passphrase: mailboxPassword,
+                    numBits
+                })
                     .then(({ privateKeyArmored }) => ({
                         AddressID: ID,
                         PrivateKey: privateKeyArmored
@@ -51,11 +59,21 @@ angular.module('proton.keys')
         }
 
         function generateOrganization(password, numBits) {
-            return pmcw.generateKeysRSA('not_for_email_use@domain.tld', password, numBits);
+            return pmcw.generateKey({
+                userIds: [{ name: 'not_for_email_use@domain.tld', email: 'not_for_email_use@domain.tld' }],
+                passphrase: password,
+                numBits
+            });
         }
 
         function decryptMemberToken(key = {}, signingKey = {}) {
-            return pmcw.decryptMessage(key.Token || key.Activation, signingKey, false, null, signingKey.toPublic().armor())
+            const token = key.Token || key.Activation;
+
+            return pmcw.decryptMessage({
+                message: pmcw.getMessage(token),
+                privateKey: signingKey,
+                publicKeys: signingKey.toPublic()
+            })
                 .then(({ data: decryptedToken, signature }) => {
                     if (signature !== 1) {
                         return $q.reject({ message: 'Signature verification failed' });
@@ -110,9 +128,13 @@ angular.module('proton.keys')
                 })
                 .then((result) => {
                     memberKey = result;
-                    return pmcw.encryptMessage(randomString, organizationKey.toPublic().armor(), [], [organizationKey]);
+                    return pmcw.encryptMessage({
+                        data: randomString,
+                        publicKeys: organizationKey.toPublic(),
+                        privateKeys: organizationKey
+                    });
                 })
-                .then((token) => {
+                .then(({ data: token }) => {
                     return {
                         AddressID: key.AddressID,
                         UserKey: key.PrivateKey,

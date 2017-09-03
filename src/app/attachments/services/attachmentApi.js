@@ -170,7 +170,8 @@ angular.module('proton.attachments')
                     messageID: message.ID
                 });
 
-                pmcw.decryptSessionKey(packets.keys, keys)
+                const msg = pmcw.getMessage(packets.keys);
+                pmcw.decryptSessionKey({ message: msg, privateKeys: keys })
                     .then((sessionKey) => ({
                         REQUEST_ID,
                         sessionKey,
