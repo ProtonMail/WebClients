@@ -1,0 +1,31 @@
+<div class="row">
+    <div class="setting pm_form full">
+        <header-block class="settingsLabels-header-filter">
+            <h2
+                class="settingsLabels-title-filter"
+                translate
+                translate-context="Title">Custom Filters</h2>
+        </header-block>
+
+        <p translate="" translate-context="Info" class="alert alert-info">
+            Add a custom filter to perform actions such as automatically labeling or archiving messages.
+        </p>
+        <p class="alert alert-info ng-hide" translate="" translate-context="Info">
+            Free ProtonMail accounts are limited to 1 custom filter.
+            Please <a ui-sref="secured.dashboard({scroll: true})" href="/dashboard">upgrade</a> to get unlimited filters.
+        </p>
+
+        <div class="settingsFilters-actions">
+            <section class="settingsFilters-actions-buttons">
+                <button class="pm_button primary" translate="" translate-context="Action">Add Filter</button>
+                <button class="pm_button link" translate="" translate-context="Action">Add Sieve Filter</button>
+            </section>
+            <section class="settingsFilters-actions-notice help-dnd" translate-context="Help" translate="">
+                You can drag and drop custom filter to order them.
+            </section>
+        </div>
+        <p class="alert alert-info ng-hide" translate="" translate-context="Info">
+            You have no custom filters.
+        </p>
+    </div>
+</div>

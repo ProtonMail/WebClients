@@ -1,0 +1,13 @@
+<div>
+    <p class="alert alert-info" translate translate-context="Info">
+        No emails in the <span class="email-block-list-name"></span>, click Add to add addresses to the <span class="email-block-list-name"></span>.
+    </p>
+    <div class="pm_table">
+        <table class="bordered limited">
+            <tbody>
+            <email-block-list-entry ng-repeat="filter in spamFilters | filter: {Location: 0} | spam:searchSpamFilter track by filter.ID">
+            </email-block-list-entry>
+            </tbody>
+        </table>
+    </div>
+</div>
