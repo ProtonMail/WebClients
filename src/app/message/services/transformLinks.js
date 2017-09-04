@@ -36,8 +36,10 @@ angular.module('proton.message')
             // make links open in a new tab
             const httpInNewTab = (html) => {
 
-                // don't select in querySelector: we need to check the browser `href` instead of the attribute
-                // (i.e. where the browser will actually link to)
+                /*
+                 * Don't select in querySelector: we need to check the browser `href` instead of the attribute
+                 * (i.e. where the browser will actually link to)
+                 */
                 const links = [].slice.call(html.querySelectorAll('[href]' + EXCLUDE_ANCHORS));
                 _.each(links, (link) => {
                     if ((link.href || '').indexOf('http') === 0) {
@@ -64,8 +66,10 @@ angular.module('proton.message')
                 });
             };
 
-            // anchors will work on the whole protonmail page, so we need to disable them
-            // opening them in a new tab will just open a empty page.
+            /*
+             * Anchors will work on the whole protonmail page, so we need to disable them
+             * opening them in a new tab will just open a empty page.
+             */
             const disableAnchors = (html) => {
 
                 const links = [].slice.call(html.querySelectorAll('[href]'));
