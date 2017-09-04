@@ -30,6 +30,7 @@ angular.module('proton.authentication')
     setupKeys,
     AppModel,
     tempStorage,
+    sanitize,
     upgradeKeys
 ) => {
     let keys = {}; // Store decrypted keys
@@ -40,8 +41,8 @@ angular.module('proton.authentication')
      */
     function cleanContacts(contacts = []) {
         return contacts.map((contact) => {
-            contact.Name = DOMPurify.sanitize(contact.Name);
-            contact.Email = DOMPurify.sanitize(contact.Email);
+            contact.Name = sanitize.input(contact.Name);
+            contact.Email = sanitize.input(contact.Email);
             return contact;
         });
     }

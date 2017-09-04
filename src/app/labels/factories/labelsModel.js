@@ -1,5 +1,5 @@
 angular.module('proton.labels')
-    .factory('labelsModel', ($rootScope, CONSTANTS) => {
+    .factory('labelsModel', ($rootScope, CONSTANTS, sanitize) => {
 
         const IS_LABEL = 0;
         const IS_FOLDER = 1;
@@ -30,8 +30,8 @@ angular.module('proton.labels')
         const cleanLabels = (labels = []) => labels.map((label) => cleanLabel(label));
 
         function cleanLabel(label) {
-            label.Name = DOMPurify.sanitize(label.Name);
-            label.Color = DOMPurify.sanitize(label.Color);
+            label.Name = sanitize.input(label.Name);
+            label.Color = sanitize.input(label.Color);
             label.notify = !!label.Notify;
             return label;
         }

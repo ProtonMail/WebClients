@@ -1,5 +1,5 @@
 angular.module('proton.message')
-    .factory('messageModel', ($q, $timeout, pmcw, User, gettextCatalog, authentication, AttachmentLoader) => {
+    .factory('messageModel', ($q, $timeout, pmcw, User, gettextCatalog, authentication, AttachmentLoader, sanitize) => {
         const defaultMessage = {
             ID: '',
             Order: 0,
@@ -119,10 +119,7 @@ angular.module('proton.message')
             }
 
             setDecryptedBody(input = '', purify = true) {
-                this.DecryptedBody = !purify ? input : DOMPurify.sanitize(input, {
-                    ADD_ATTR: ['target'],
-                    FORBID_TAGS: ['style', 'input', 'form']
-                });
+                this.DecryptedBody = !purify ? input : sanitize.message(input);
             }
 
             getDecryptedBody() {

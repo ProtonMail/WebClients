@@ -1,5 +1,5 @@
 angular.module('proton.message')
-    .factory('signatureBuilder', (authentication, CONSTANTS, tools) => {
+    .factory('signatureBuilder', (authentication, CONSTANTS, tools, sanitize) => {
 
         const CLASSNAME_SIGNATURE_CONTAINER = 'protonmail_signature_block';
         const CLASSNAME_SIGNATURE_USER = 'protonmail_signature_block-user';
@@ -14,13 +14,6 @@ angular.module('proton.message')
         function createSpace(className = '') {
             const tagOpen = (className) ? `<div class="${className}">` : '<div>';
             return `${tagOpen}<br /></div>`;
-        }
-
-        function purify(html = '') {
-            return DOMPurify.sanitize(html, {
-                ADD_ATTR: ['target'],
-                FORBID_TAGS: ['style', 'input', 'form']
-            });
         }
 
         /**
@@ -83,7 +76,7 @@ angular.module('proton.message')
                 <div class="${CLASSNAME_SIGNATURE_PROTON} ${protonClass}">${tools.replaceLineBreaks(protonSignature)}</div>
             </div>${space.end}`;
 
-            return purify(template);
+            return sanitize.message(template);
         }
 
         /**
@@ -119,8 +112,8 @@ angular.module('proton.message')
             const { From = {} } = message;
             const content = !From.Signature ? authentication.user.Signature : From.Signature;
 
-            const [ dom ] = $.parseHTML(`<div>${purify(body || message.getDecryptedBody())}</div>`) || [];
-            const [ userSignature ] = $.parseHTML(`<div>${purify(content)}</div>`) || [];
+            const [ dom ] = $.parseHTML(`<div>${sanitize.message(body || message.getDecryptedBody())}</div>`) || [];
+            const [ userSignature ] = $.parseHTML(`<div>${sanitize.message(content)}</div>`) || [];
 
             /**
              * Update the signature for a user if it exists

@@ -1,5 +1,5 @@
 angular.module('proton.squire')
-    .directive('squire', (squireEditor, embedded, editorListener, $rootScope) => {
+    .directive('squire', (squireEditor, embedded, editorListener, $rootScope, sanitize) => {
 
     /**
      * Check if this squire instance is for a message or not
@@ -25,7 +25,7 @@ angular.module('proton.squire')
 
                 function updateModel(val, dispatchAction = false) {
 
-                    const value = DOMPurify.sanitize(val || '');
+                    const value = sanitize.input(val || '');
                     scope.$applyAsync(() => {
 
                         const isEmpty = !value.trim().length;
