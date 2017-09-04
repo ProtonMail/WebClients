@@ -1,0 +1,33 @@
+<div class="row">
+    <div class="setting pm_form full">
+        <header-block class="settingsLabels-header-spam">
+        <h2
+            class="settingsLabels-title-spam"
+            translate
+            translate-context="Title">Spam Filters</h2>
+        </header-block>
+
+        <p class="alert alert-info">
+            <span translate="" translate-context="Info">
+                Sender specific spam rules can be applied here.
+                Whitelist addresses always go to Inbox while Blacklist addresses always go to Spam.
+                Marking a message as spam adds the address to the Blacklist.
+                Marking a message as not spam adds the address to the Whitelist.
+            </span>
+            <a href="https://protonmail.com/support/knowledge-base/spam-filtering/" target="_blank" translate="" translate-context="Link">Learn More</a>
+        </p>
+        <div class="pm_grid">
+            <div class="col-1-1">
+                <input type="search" class="search ng-pristine ng-untouched ng-valid ng-empty" placeholder="Search Whitelist and Blacklist">
+            </div>
+        </div>
+        <div class="pm_grid">
+            <div class="col-1-2">
+                <spam-white-list></spam-white-list>
+            </div>
+            <div class="col-1-2">
+                <spam-black-list></spam-black-list>
+            </div>
+        </div>
+    </div>
+</div>

@@ -962,8 +962,7 @@ angular.module('proton.routes', [
                 },
                 views: {
                     'content@secured': {
-                        templateUrl: 'templates/views/filters.tpl.html',
-                        controller: 'FiltersController'
+                        template: '<filter-view></filter-view>'
                     }
                 }
             })
