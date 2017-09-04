@@ -25,7 +25,8 @@ angular.module('proton.utils')
         pmcw,
         setupKeys,
         AppModel,
-        labelsModel
+        labelsModel,
+        sanitize
     ) => {
 
         const FIBONACCI = [1, 1, 2, 3, 5, 8];
@@ -50,8 +51,8 @@ angular.module('proton.utils')
          * @return {Object}
          */
         function cleanContact(contact = {}) {
-            contact.Name = DOMPurify.sanitize(contact.Name);
-            contact.Email = DOMPurify.sanitize(contact.Email);
+            contact.Name = sanitize.input(contact.Name);
+            contact.Email = sanitize.input(contact.Email);
             return contact;
         }
 

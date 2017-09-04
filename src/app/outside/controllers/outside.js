@@ -15,7 +15,8 @@ angular.module('proton.outside')
         pmcw,
         networkActivityTracker,
         secureSessionStorage,
-        attachmentModelOutside
+        attachmentModelOutside,
+        sanitize
     ) => {
 
     // Variables
@@ -25,9 +26,8 @@ angular.module('proton.outside')
         const message = messageData;
 
         function clean(body) {
-            let content = angular.copy(body);
 
-            content = DOMPurify.sanitize(content, {
+            let content = sanitize.message(body, {
                 ADD_ATTR: ['target'],
                 FORBID_TAGS: ['style', 'input', 'form']
             });

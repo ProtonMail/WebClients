@@ -44,7 +44,7 @@ angular.module('proton.squire')
             const node = angular.element(editor.getSelection().commonAncestorContainer).closest('a')[0];
             const range = iframe[0].contentWindow.document.createRange();
             const selection = iframe[0].contentWindow.getSelection();
-
+            debugger
             // Click inside a word select the whole word
             if (node) {
                 range.selectNodeContents(node);
@@ -125,8 +125,7 @@ angular.module('proton.squire')
                 return;
             }
 
-            const actions = Object
-                .keys(tests.tests)
+            const actions = Object.keys(tests.tests)
                 .filter((key) => tests.tests[key]);
 
             // Remove an action: ex italic

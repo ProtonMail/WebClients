@@ -1,5 +1,5 @@
 angular.module('proton.labels')
-    .factory('labelModal', (pmModal, tools, hotkeys, gettextCatalog, networkActivityTracker, eventManager, Label, notify) => {
+    .factory('labelModal', (pmModal, tools, hotkeys, gettextCatalog, networkActivityTracker, eventManager, Label, notify, sanitize) => {
         const COLORS_LIST = tools.colors();
         const TRANSLATIONS = {
             EDIT_FOLDER: gettextCatalog.getString('Edit folder', null, 'Title'),
@@ -64,8 +64,8 @@ angular.module('proton.labels')
 
         const cleanInput = (color = {}) => {
             return _.extend({}, color, {
-                Name: DOMPurify.sanitize(color.Name),
-                Color: DOMPurify.sanitize(color.Color)
+                Name: sanitize.input(color.Name),
+                Color: sanitize.input(color.Color)
             });
         };
 
