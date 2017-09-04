@@ -925,6 +925,12 @@ angular.module('proton.routes', [
             .state('secured.filters', {
                 url: '/filters',
                 resolve: {
+
+                    loadModel(filterModel, networkActivityTracker) {
+                        return networkActivityTracker.track(filterModel.loadCache());
+                    },
+                    /*
+
                     customFilters($q, Filter, networkActivityTracker) {
                         const deferred = $q.defer();
 
@@ -952,7 +958,7 @@ angular.module('proton.routes', [
                             });
 
                         return networkActivityTracker.track(deferred.promise);
-                    },
+                    }, */
                     methods(user, paymentModel, networkActivityTracker) {
                         return networkActivityTracker.track(paymentModel.getMethods(null, user));
                     },
