@@ -56,7 +56,7 @@ module.exports = {
       "vendor/pikaday/pikaday.js",
       "vendor/ng-pikaday/ng-pikaday.js",
       "vendor/jquery-timepicker-wvega/jquery.timepicker.js",
-      "vendor/Squire/build/squire.js",
+      "vendor/Squire/build/squire-raw.js",
       "vendor/dropzone/dist/dropzone.js",
       "vendor/vcard/src/vcard.js",
       "vendor/html2canvas/build/html2canvas.js",
