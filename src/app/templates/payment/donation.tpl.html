@@ -99,7 +99,6 @@
             <i class="fa fa-angle-down"></i>
         </div>
     </div>
-
     <p
         ng-if="model.method.value === 'cash'"
         class="donationForm-about-cash alert alert-info"
@@ -113,7 +112,7 @@
         data-form="donationForm"></card-view>
 
     <paypal-view
-        ng-if="model.method.value === 'paypal'"
+        ng-if="model.method.value === 'paypal' && !donationForm.otherAmount.$error.max"
         data-amount="getAmount()"
         data-currency="model.currency.value"
         data-callback="paypalCallback"></paypal-view>
