@@ -1,7 +1,7 @@
 angular.module('proton.core')
     .directive('paypalView', (notify, Payment, gettextCatalog, CONSTANTS) => {
 
-        const { MIN_PAYPAL_AMOUNT } = CONSTANTS;
+        const { MIN_PAYPAL_AMOUNT, MAX_PAYPAL_AMOUNT } = CONSTANTS;
         const I18N = {
             down: gettextCatalog.getString('Error connecting to PayPal.', null, 'Paypal component')
         };
@@ -28,7 +28,15 @@ angular.module('proton.core')
                     if (Amount < MIN_PAYPAL_AMOUNT) {
                         return scope.errorDetails = {
                             type: 'validator.amount',
-                            minAmount: MIN_PAYPAL_AMOUNT
+                            validator: 'min',
+                            amount: MIN_PAYPAL_AMOUNT
+                        };
+                    }
+                    if (Amount > MAX_PAYPAL_AMOUNT) {
+                        return scope.errorDetails = {
+                            type: 'validator.amount',
+                            validator: 'max',
+                            amount: MAX_PAYPAL_AMOUNT
                         };
                     }
 

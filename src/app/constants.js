@@ -121,6 +121,7 @@ angular.module('proton.constants', [])
         },
         URL_INFO: 'https://mail.protonmail.com/assets/host.png',
         MIN_PAYPAL_AMOUNT: 500,
+        MAX_PAYPAL_AMOUNT: 999999999,
         MIN_BITCOIN_AMOUNT: 500,
         BTC_DONATION_ADDRESS: '1Q1nhq1NbxPYAbw1BppwKbCqg58ZqMb9A8',
         CURRENCIES: ['USD', 'EUR', 'CHF'],
