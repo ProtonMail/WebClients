@@ -926,8 +926,11 @@ angular.module('proton.routes', [
                 url: '/filters',
                 resolve: {
 
-                    loadModel(filterModel, networkActivityTracker) {
-                        return networkActivityTracker.track(filterModel.loadCache());
+                    loadSpamLists($q, spamListModel, networkActivityTracker) {
+                        return $q.all([
+                            networkActivityTracker.track(spamListModel.getList('blacklist').reload()),
+                            networkActivityTracker.track(spamListModel.getList('whitelist').reload())
+                        ]);
                     },
                     /*
 

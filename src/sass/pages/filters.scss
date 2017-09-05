@@ -24,3 +24,7 @@
     padding: 10px 0;
 }
 .appConfigBody-is-mobile  .pm_sort-item-content > :last-child { width: auto }
+
+.block-list.empty {
+    display: none;
+}
