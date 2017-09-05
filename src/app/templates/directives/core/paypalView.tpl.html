@@ -6,8 +6,15 @@
         <span translate-context="Error" translate>Error connecting to PayPal.</span> <a href="#" ng-click="initPaypal()" translate-context="Action" translate>Click here to try again</a>.
     </p>
 
-    <p class="alert alert-danger paypal-error-amount" ng-if="errorDetails">
-        <span translate-context="Paypal error">Amount below minimum.</span> ({{ ::errorDetails.minAmount / 100 }} {{ currency }})
+    <p class="alert alert-danger paypal-error-amount" ng-if="errorDetails" data-type="{{errorDetails.validator}}">
+        <span
+            class="paypal-error-max"
+            translate-context="Paypal error"
+            translate>Amount above the maximum.</span>
+        <span
+            class="paypal-error-min"
+            translate-context="Paypal error"
+            translate>Amount below minimum.</span> ({{ errorDetails.amount / 100 }} {{ currency }})
     </p>
 
     <div class="text-center" ng-show="!approvalURL && !paypalNetworkError && !errorDetails">
