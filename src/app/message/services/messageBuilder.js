@@ -1,5 +1,5 @@
 angular.module('proton.message')
-    .factory('messageBuilder', (gettextCatalog, prepareContent, tools, authentication, messageModel, $filter, signatureBuilder, CONSTANTS) => {
+    .factory('messageBuilder', (gettextCatalog, prepareContent, tools, authentication, messageModel, $filter, signatureBuilder, CONSTANTS, sanitize) => {
 
         const RE_PREFIX = gettextCatalog.getString('Re:', null);
         const FW_PREFIX = gettextCatalog.getString('Fw:', null);
@@ -169,7 +169,7 @@ angular.module('proton.message')
             newMsg.NumEmbedded = 0;
 
             if (action !== 'new') {
-                const subject = DOMPurify.sanitize('Subject: ' + currentMsg.Subject + '<br>');
+                const subject = sanitize.input(`Subject: ${currentMsg.Subject}<br>`);
                 const cc = tools.contactsToString(Array.isArray(currentMsg.CCList) ? currentMsg.CCList : [currentMsg.CCList]);
 
                 newMsg.ParentID = currentMsg.ID;

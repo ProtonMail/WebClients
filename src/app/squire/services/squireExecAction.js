@@ -125,8 +125,7 @@ angular.module('proton.squire')
                 return;
             }
 
-            const actions = Object
-                .keys(tests.tests)
+            const actions = Object.keys(tests.tests)
                 .filter((key) => tests.tests[key]);
 
             // Remove an action: ex italic

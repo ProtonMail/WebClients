@@ -36,6 +36,7 @@ angular.module('proton.composer')
         const I18N = {
             cannotSendMessage: gettextCatalog.getString('Cannot send message')
         };
+        const unicodeTagView = $filter('unicodeTagView');
 
         const MESSAGES_ERROR = {
             stillUploading: gettextCatalog.getString('Wait for attachment to finish uploading or cancel upload.', null, 'Error'),
@@ -1006,11 +1007,11 @@ angular.module('proton.composer')
                             return data; // Resolve finally the promise
                         });
                 })
-                .catch((err) => {
+                .catch((error) => {
                     setStateSending(false);
                     message.encrypting = false;
                     dispatchMessageAction(message);
-                    throw err;
+                    throw new Error(unicodeTagView(error.message));
                 });
             networkActivityTracker.track(promise);
         };

@@ -1,5 +1,5 @@
 angular.module('proton.message')
-    .factory('displayContent', ($rootScope, $q, $filter, prepareContent) => {
+    .factory('displayContent', ($rootScope, $q, $filter, prepareContent, sanitize) => {
 
         function decrypt(message) {
             message.decrypting = true;
@@ -19,10 +19,7 @@ angular.module('proton.message')
             }
 
             // Clear content with DOMPurify before anything happen!
-            content.body = DOMPurify.sanitize(content.body, {
-                ADD_ATTR: ['target'],
-                FORBID_TAGS: ['style', 'input', 'form']
-            });
+            content.body = sanitize.message(content.body);
             return content;
         }
 
