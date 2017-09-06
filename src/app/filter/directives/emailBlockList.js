@@ -1,7 +1,7 @@
 angular.module('proton.filter')
     .directive('emailBlockList', ($rootScope, spamListModel) => {
 
-        // In ms
+        // In milliseconds
         const SCROLL_THROTTLE = 100;
         // fetch when less than TRIGGER_BOUNDARY entries are below the bottom of the table view
         const TRIGGER_BOUNDARY = 50;

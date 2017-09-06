@@ -1,7 +1,6 @@
 angular.module('proton.filter')
     .directive('emailBlockButton', (filterAddressModal, notify, gettextCatalog, spamListModel) => {
 
-
         return {
             replace: true,
             restrict: 'E',
