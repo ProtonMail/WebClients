@@ -1,20 +1,17 @@
 angular.module('proton.message')
     .factory('transformLinks', () => {
 
-        const PROTOCOLS = ['ftp://', 'http://', 'https://', 'xmpp:', 'tel:', 'callto:', 'mailto:'];
-
-        const PROTO_ALLOWS_NO_URI = ['mailto:'];
-
+        const PROTOCOLS = ['ftp://', 'http://', 'https://', 'xmpp:', 'tel:', 'callto:'];
+        const ALL_PROTOCOLS = PROTOCOLS.concat(['mailto:']);
+        const MAP = PROTOCOLS.reduce((acc, key) => (acc[key] = true, acc), {});
         const EXCLUDE_ANCHORS = ':not([href=""]):not([href^="#"])';
 
         const getNormalizedHref = (link) => link.getAttribute('href').trim().toLowerCase();
-        const linkUsesProtocols = (protos, link) => protos.some((proto) => getNormalizedHref(link).startsWith(proto));
+        const linkUsesProtocols = (link) => ALL_PROTOCOLS.some((proto) => getNormalizedHref(link).startsWith(proto));
 
         const isAnchor = (link) => {
             const href = getNormalizedHref(link);
-
-            return href === '' || href[0] === '#'
-                || _.difference(PROTOCOLS, PROTO_ALLOWS_NO_URI).some((proto) => href === proto);
+            return href === '' || href[0] === '#' || MAP[href];
         };
 
         return (html) => {
@@ -55,7 +52,7 @@ angular.module('proton.message')
                 const links = [].slice.call(html.querySelectorAll('a[href]' + EXCLUDE_ANCHORS));
 
                 // we need to do the filtering without the querySelector as the querySelector is case sensitive.
-                const relativeLinks = _.filter(links, (link) => !linkUsesProtocols(PROTOCOLS, link));
+                const relativeLinks = _.filter(links, (link) => !linkUsesProtocols(link));
 
                 _.each(relativeLinks, (link) => {
                     // link.href is the absolute value of the link: mail.protonmail.com is prepended, use getAttribute
@@ -75,9 +72,7 @@ angular.module('proton.message')
                 const links = [].slice.call(html.querySelectorAll('[href]'));
 
                 // we can't do the filtering in querySelectorAll this needs to be case insensitive.
-                const anchors = _.filter(links, (link) => isAnchor(link));
-
-                _.each(anchors, (link) => {
+                _.each(_.filter(links, isAnchor), (link) => {
                     link.style.pointerEvents = 'none';
                 });
             };

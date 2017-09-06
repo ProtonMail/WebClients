@@ -1,6 +1,6 @@
 describe('messageBuilder factory', () => {
 
-    let factory, rootScope, authentication, tools, CONSTANTS, messageModel;
+    let factory, rootScope, authentication, tools, CONSTANTS, messageModel, sanitize;
     let signatureBuilder, gettextCatalog;
     let spyUpdateSignature = jasmine.createSpy();
     let spyGetDecryptedBody = jasmine.createSpy();
@@ -62,6 +62,10 @@ Est-ce que tu vas bien ?
             spyLocalReadableTime(...args);
             return 'localReadableTime';
         });
+        $provide.factory('sanitize', () => ({
+            input: _.identity,
+            message: _.identity
+        }));
         $provide.factory('utcReadableTimeFilter', () => (...args) => {
             spyUtcReadableTime(...args);
             return 'utcReadableTime';
@@ -85,6 +89,7 @@ Est-ce que tu vas bien ?
     }));
 
     beforeEach(inject(($injector) => {
+        sanitize = $injector.get('sanitize');
         rootScope = $injector.get('$rootScope');
         CONSTANTS = $injector.get('CONSTANTS');
         tools = $injector.get('tools');
@@ -169,9 +174,9 @@ Est-ce que tu vas bien ?
         describe('Addresses valid but no match', () => {
 
             let output;
-            const match = { Status: 1, Send: 1, ID: 2 };
+            const match = { Status: 1, Order: 1, ID: 2 };
             beforeEach(() => {
-                userMock.Addresses = [{ Status: 2 }, match, { Status: 1, Send: 2, ID: 3 }];
+                userMock.Addresses = [{ Status: 2 }, match, { Status: 1, Order: 2, ID: 3 }];
                 output = factory.findSender({ AddressID: 1 });
             });
 
@@ -184,9 +189,9 @@ Est-ce que tu vas bien ?
         describe('Addresses order valid but no match', () => {
 
             let output;
-            const match = { Status: 1, Send: 1, ID: 2 };
+            const match = { Status: 1, Order: 1, ID: 2 };
             beforeEach(() => {
-                userMock.Addresses = [{ Status: 2, ID: 1, Send: 0 }, { Status: 1, Send: 2, ID: 3 }, match];
+                userMock.Addresses = [{ Status: 2, ID: 1, Order: 0 }, { Status: 1, Order: 2, ID: 3 }, match];
                 output = factory.findSender({ AddressID: 1 });
             });
 
@@ -199,8 +204,8 @@ Est-ce que tu vas bien ?
         describe('Addresses order valid  match', () => {
 
             let output;
-            const match = { Status: 1, Send: 1, ID: 2 };
-            const matchMessage = { Status: 1, Send: 2, ID: 1 };
+            const match = { Status: 1, Order: 1, ID: 2 };
+            const matchMessage = { Status: 1, Order: 2, ID: 1 };
             beforeEach(() => {
                 userMock.Addresses = [{ Status: 2 }, matchMessage, match];
                 output = factory.findSender({ AddressID: 1 });
@@ -242,7 +247,7 @@ Est-ce que tu vas bien ?
                 userMock.Addresses = [TESTABLE_ADDRESS_DEFAULT, { Status: 2 }, match];
                 spyOn(signatureBuilder, 'insert').and.returnValue(USER_SIGNATURE);
                 spyOn(tools, 'contactsToString').and.returnValue('');
-                spyOn(DOMPurify, 'sanitize').and.callFake(_.identity);
+                spyOn(sanitize, 'input').and.callFake(_.identity);
 
                 DEFAULT_MESSAGE_COPY = _.extend({}, DEFAULT_MESSAGE);
                 item = factory.create('new');
@@ -366,7 +371,7 @@ Est-ce que tu vas bien ?
             });
 
             it('should not have sanitize data ', () => {
-                expect(DOMPurify.sanitize).not.toHaveBeenCalled();
+                expect(sanitize.input).not.toHaveBeenCalled();
             });
 
         });
@@ -385,7 +390,7 @@ Est-ce que tu vas bien ?
                 userMock.Addresses = [TESTABLE_ADDRESS_DEFAULT, { Status: 2 }, match];
                 spyOn(signatureBuilder, 'insert').and.returnValue(USER_SIGNATURE);
                 spyOn(tools, 'contactsToString').and.returnValue('');
-                spyOn(DOMPurify, 'sanitize').and.callFake(_.identity);
+                spyOn(sanitize, 'input').and.callFake(_.identity);
 
                 DEFAULT_MESSAGE_COPY = _.extend({}, DEFAULT_MESSAGE, {
                     Subject: 'polo',
@@ -526,7 +531,7 @@ Est-ce que tu vas bien ?
             });
 
             it('should not have sanitize data ', () => {
-                expect(DOMPurify.sanitize).not.toHaveBeenCalled();
+                expect(sanitize.input).not.toHaveBeenCalled();
             });
         });
 
@@ -550,7 +555,7 @@ Est-ce que tu vas bien ?
                 spyOn(signatureBuilder, 'insert').and.returnValue(USER_SIGNATURE);
                 spyOn(tools, 'contactsToString').and.returnValue('');
                 spyOn(message, 'getDecryptedBody').and.returnValue(MESSAGE_BODY);
-                spyOn(DOMPurify, 'sanitize').and.callFake(_.identity);
+                spyOn(sanitize, 'input').and.callFake(_.identity);
 
                 DEFAULT_MESSAGE_COPY = _.extend({}, DEFAULT_MESSAGE, {
                     Subject: 'polo',
@@ -608,8 +613,8 @@ Est-ce que tu vas bien ?
             });
 
             it('should sanitize data ', () => {
-                expect(DOMPurify.sanitize).toHaveBeenCalledWith(`Subject: ${currentMsg.Subject}<br>`);
-                expect(DOMPurify.sanitize).toHaveBeenCalledTimes(1);
+                expect(sanitize.input).toHaveBeenCalledWith(`Subject: ${currentMsg.Subject}<br>`);
+                expect(sanitize.input).toHaveBeenCalledTimes(1);
             });
 
             it('should create a new signature', () => {
@@ -754,7 +759,7 @@ Est-ce que tu vas bien ?
                 spyOn(signatureBuilder, 'insert').and.returnValue(USER_SIGNATURE);
                 spyOn(tools, 'contactsToString').and.returnValue('');
                 spyOn(message, 'getDecryptedBody').and.returnValue(MESSAGE_BODY_PLAIN);
-                spyOn(DOMPurify, 'sanitize').and.callFake(_.identity);
+                spyOn(sanitize, 'input').and.callFake(_.identity);
 
                 DEFAULT_MESSAGE_COPY = _.extend({}, DEFAULT_MESSAGE, {
                     Subject: 'polo',
@@ -813,8 +818,8 @@ Est-ce que tu vas bien ?
             });
 
             it('should sanitize data ', () => {
-                expect(DOMPurify.sanitize).toHaveBeenCalledWith(`Subject: ${currentMsg.Subject}<br>`);
-                expect(DOMPurify.sanitize).toHaveBeenCalledTimes(1);
+                expect(sanitize.input).toHaveBeenCalledWith(`Subject: ${currentMsg.Subject}<br>`);
+                expect(sanitize.input).toHaveBeenCalledTimes(1);
             });
 
             it('should create a new signature', () => {
@@ -959,7 +964,7 @@ Est-ce que tu vas bien ?
                 spyOn(signatureBuilder, 'insert').and.returnValue(USER_SIGNATURE);
                 spyOn(tools, 'contactsToString').and.returnValue('');
                 spyOn(message, 'getDecryptedBody').and.returnValue(MESSAGE_BODY_PLAIN);
-                spyOn(DOMPurify, 'sanitize').and.callFake(_.identity);
+                spyOn(sanitize, 'input').and.callFake(_.identity);
 
                 DEFAULT_MESSAGE_COPY = _.extend({}, DEFAULT_MESSAGE, {
                     Subject: 'Re: polo',
@@ -1018,8 +1023,8 @@ Est-ce que tu vas bien ?
             });
 
             it('should sanitize data ', () => {
-                expect(DOMPurify.sanitize).toHaveBeenCalledWith(`Subject: ${currentMsg.Subject}<br>`);
-                expect(DOMPurify.sanitize).toHaveBeenCalledTimes(1);
+                expect(sanitize.input).toHaveBeenCalledWith(`Subject: ${currentMsg.Subject}<br>`);
+                expect(sanitize.input).toHaveBeenCalledTimes(1);
             });
 
             it('should create a new signature', () => {
@@ -1177,7 +1182,7 @@ Est-ce que tu vas bien ?
                 spyOn(signatureBuilder, 'insert').and.returnValue(USER_SIGNATURE);
                 spyOn(tools, 'contactsToString').and.returnValue('');
                 spyOn(message, 'getDecryptedBody').and.returnValue(MESSAGE_BODY);
-                spyOn(DOMPurify, 'sanitize').and.callFake(_.identity);
+                spyOn(sanitize, 'input').and.callFake(_.identity);
 
                 DEFAULT_MESSAGE_COPY = _.extend({}, DEFAULT_MESSAGE, {
                     Subject: 'polo',
@@ -1238,8 +1243,8 @@ Est-ce que tu vas bien ?
             });
 
             it('should sanitize data ', () => {
-                expect(DOMPurify.sanitize).toHaveBeenCalledWith(`Subject: ${currentMsg.Subject}<br>`);
-                expect(DOMPurify.sanitize).toHaveBeenCalledTimes(1);
+                expect(sanitize.input).toHaveBeenCalledWith(`Subject: ${currentMsg.Subject}<br>`);
+                expect(sanitize.input).toHaveBeenCalledTimes(1);
             });
 
             it('should create a new signature', () => {
@@ -1397,7 +1402,7 @@ Est-ce que tu vas bien ?
                 spyOn(signatureBuilder, 'insert').and.returnValue(USER_SIGNATURE);
                 spyOn(tools, 'contactsToString').and.returnValue('ashes2ashes@dust2dust.earth');
                 spyOn(message, 'getDecryptedBody').and.returnValue(MESSAGE_BODY);
-                spyOn(DOMPurify, 'sanitize').and.callFake(_.identity);
+                spyOn(sanitize, 'input').and.callFake(_.identity);
 
                 DEFAULT_MESSAGE_COPY = _.extend({}, DEFAULT_MESSAGE, {
                     Subject: 'polo',
@@ -1458,8 +1463,8 @@ Est-ce que tu vas bien ?
             });
 
             it('should sanitize data ', () => {
-                expect(DOMPurify.sanitize).toHaveBeenCalledWith(`Subject: ${currentMsg.Subject}<br>`);
-                expect(DOMPurify.sanitize).toHaveBeenCalledTimes(1);
+                expect(sanitize.input).toHaveBeenCalledWith(`Subject: ${currentMsg.Subject}<br>`);
+                expect(sanitize.input).toHaveBeenCalledTimes(1);
             });
 
             it('should create a new signature', () => {
@@ -1612,7 +1617,7 @@ Est-ce que tu vas bien ?
                 spyOn(signatureBuilder, 'insert').and.returnValue(USER_SIGNATURE);
                 spyOn(tools, 'contactsToString').and.returnValue('');
                 spyOn(message, 'getDecryptedBody').and.returnValue(MESSAGE_BODY);
-                spyOn(DOMPurify, 'sanitize').and.callFake(_.identity);
+                spyOn(sanitize, 'input').and.callFake(_.identity);
 
                 DEFAULT_MESSAGE_COPY = _.extend({}, DEFAULT_MESSAGE, {
                     Subject: 'polo',
@@ -1675,8 +1680,8 @@ Est-ce que tu vas bien ?
             });
 
             it('should sanitize data ', () => {
-                expect(DOMPurify.sanitize).toHaveBeenCalledWith(`Subject: ${currentMsg.Subject}<br>`);
-                expect(DOMPurify.sanitize).toHaveBeenCalledTimes(1);
+                expect(sanitize.input).toHaveBeenCalledWith(`Subject: ${currentMsg.Subject}<br>`);
+                expect(sanitize.input).toHaveBeenCalledTimes(1);
             });
 
             it('should create a new signature', () => {
@@ -1823,7 +1828,7 @@ Est-ce que tu vas bien ?
                 spyOn(signatureBuilder, 'insert').and.returnValue(USER_SIGNATURE);
                 spyOn(tools, 'contactsToString').and.returnValue('');
                 spyOn(message, 'getDecryptedBody').and.returnValue(MESSAGE_BODY);
-                spyOn(DOMPurify, 'sanitize').and.callFake(_.identity);
+                spyOn(sanitize, 'input').and.callFake(_.identity);
 
                 DEFAULT_MESSAGE_COPY = _.extend({}, DEFAULT_MESSAGE, {
                     Subject: 'polo',
@@ -1880,8 +1885,8 @@ Est-ce que tu vas bien ?
             });
 
             it('should sanitize data ', () => {
-                expect(DOMPurify.sanitize).toHaveBeenCalledWith(`Subject: ${currentMsg.Subject}<br>`);
-                expect(DOMPurify.sanitize).toHaveBeenCalledTimes(1);
+                expect(sanitize.input).toHaveBeenCalledWith(`Subject: ${currentMsg.Subject}<br>`);
+                expect(sanitize.input).toHaveBeenCalledTimes(1);
             });
 
             it('should create a new signature', () => {
@@ -2027,7 +2032,7 @@ Est-ce que tu vas bien ?
                 spyOn(signatureBuilder, 'insert').and.returnValue(USER_SIGNATURE);
                 spyOn(tools, 'contactsToString').and.returnValue('');
                 spyOn(message, 'getDecryptedBody').and.returnValue(MESSAGE_BODY);
-                spyOn(DOMPurify, 'sanitize').and.callFake(_.identity);
+                spyOn(sanitize, 'input').and.callFake(_.identity);
 
                 DEFAULT_MESSAGE_COPY = _.extend({}, DEFAULT_MESSAGE, {
                     Subject: 'polo',
@@ -2084,8 +2089,8 @@ Est-ce que tu vas bien ?
             });
 
             it('should sanitize data ', () => {
-                expect(DOMPurify.sanitize).toHaveBeenCalledWith(`Subject: ${currentMsg.Subject}<br>`);
-                expect(DOMPurify.sanitize).toHaveBeenCalledTimes(1);
+                expect(sanitize.input).toHaveBeenCalledWith(`Subject: ${currentMsg.Subject}<br>`);
+                expect(sanitize.input).toHaveBeenCalledTimes(1);
             });
 
             it('should create a new signature', () => {
@@ -2231,7 +2236,7 @@ Est-ce que tu vas bien ?
                 spyOn(signatureBuilder, 'insert').and.returnValue(USER_SIGNATURE);
                 spyOn(tools, 'contactsToString').and.returnValue('');
                 spyOn(message, 'getDecryptedBody').and.returnValue(MESSAGE_BODY);
-                spyOn(DOMPurify, 'sanitize').and.callFake(_.identity);
+                spyOn(sanitize, 'input').and.callFake(_.identity);
 
                 DEFAULT_MESSAGE_COPY = _.extend({}, DEFAULT_MESSAGE, {
                     Subject: 'polo',
@@ -2294,8 +2299,8 @@ Est-ce que tu vas bien ?
             });
 
             it('should sanitize data ', () => {
-                expect(DOMPurify.sanitize).toHaveBeenCalledWith(`Subject: ${currentMsg.Subject}<br>`);
-                expect(DOMPurify.sanitize).toHaveBeenCalledTimes(1);
+                expect(sanitize.input).toHaveBeenCalledWith(`Subject: ${currentMsg.Subject}<br>`);
+                expect(sanitize.input).toHaveBeenCalledTimes(1);
             });
 
             it('should create a new signature', () => {
@@ -2441,7 +2446,7 @@ Est-ce que tu vas bien ?
                 spyOn(signatureBuilder, 'insert').and.returnValue(USER_SIGNATURE);
                 spyOn(tools, 'contactsToString').and.returnValue('');
                 spyOn(message, 'getDecryptedBody').and.returnValue(MESSAGE_BODY);
-                spyOn(DOMPurify, 'sanitize').and.callFake(_.identity);
+                spyOn(sanitize, 'input').and.callFake(_.identity);
 
                 DEFAULT_MESSAGE_COPY = _.extend({}, DEFAULT_MESSAGE, {
                     Subject: 'polo',
@@ -2498,8 +2503,8 @@ Est-ce que tu vas bien ?
             });
 
             it('should sanitize data ', () => {
-                expect(DOMPurify.sanitize).toHaveBeenCalledWith(`Subject: ${currentMsg.Subject}<br>`);
-                expect(DOMPurify.sanitize).toHaveBeenCalledTimes(1);
+                expect(sanitize.input).toHaveBeenCalledWith(`Subject: ${currentMsg.Subject}<br>`);
+                expect(sanitize.input).toHaveBeenCalledTimes(1);
             });
 
             it('should create a new signature', () => {

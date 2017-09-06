@@ -1,6 +1,6 @@
 describe('labelsModel factory', () => {
 
-    let factory, rootScope;
+    let factory, rootScope, sanitize;
     const XSS_NAME = 'monique <script>alert("youhou")</script>';
     const XSS_COLOR = '<a href="javascript:dew">deww</a>';
     const getID = () => `${Math.random().toString(32).slice(2, 12)}-${Date.now()}`;
@@ -52,14 +52,20 @@ describe('labelsModel factory', () => {
 
     let TODO_CREATE, TODO_UPDATE, TODO_IDS, TODO_DELETE;
 
-    beforeEach(module('proton.labels', 'proton.constants'));
+    beforeEach(module('proton.labels', 'proton.constants', ($provide) => {
+        $provide.factory('sanitize', () => ({
+            input: _.identity,
+            message: _.identity
+        }));
+    }));
 
     beforeEach(inject(($injector) => {
+        sanitize = $injector.get('sanitize');
         rootScope = $injector.get('$rootScope');
         const constants = $injector.get('CONSTANTS');
         spyOn(rootScope, '$on').and.callThrough();
         factory = $injector.get('labelsModel');
-        spyOn(DOMPurify, 'sanitize').and.callThrough();
+        spyOn(sanitize, 'input').and.callThrough();
 
         TODO_IDS = [getID(), getID()];
 
@@ -147,12 +153,12 @@ describe('labelsModel factory', () => {
         describe('Clean data', () => {
 
             it('should purify the data on set', () => {
-                expect(DOMPurify.sanitize).toHaveBeenCalledTimes(12);
+                expect(sanitize.input).toHaveBeenCalledTimes(12);
             });
 
             it('should remove potential XSS', () => {
-                expect(DOMPurify.sanitize).toHaveBeenCalledWith(XSS_NAME);
-                expect(DOMPurify.sanitize).toHaveBeenCalledWith(XSS_COLOR);
+                expect(sanitize.input).toHaveBeenCalledWith(XSS_NAME);
+                expect(sanitize.input).toHaveBeenCalledWith(XSS_COLOR);
             });
 
         });
@@ -235,11 +241,6 @@ describe('labelsModel factory', () => {
             it('should check if a label exist by its id inside a scope', () => {
                 expect(factory.contains(mapMock.jeanne.ID, 'folders')).toBe(false);
                 expect(factory.contains(mapMock.jeanne.ID, 'labels')).toBe(true);
-            });
-
-            it('should have removed potential xss', () => {
-                expect(factory.read(mapMock[XSS_NAME].ID).Name).not.toBe(XSS_NAME);
-                expect(factory.read(mapMock[XSS_NAME].ID).Color).not.toBe(XSS_COLOR);
             });
 
         });
