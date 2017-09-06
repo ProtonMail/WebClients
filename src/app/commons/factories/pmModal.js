@@ -3,7 +3,7 @@ angular.module('proton.commons')
         const $body = $('#body');
         return function modalFactory(config) {
             if (!(!config.template ^ !config.templateUrl)) {
-                throw new Error('Expected modal to have exacly one of either template or templateUrl');
+                throw new Error('Expected modal to have exactly one of either template or templateUrl');
             }
 
             const controller = config.controller || null;

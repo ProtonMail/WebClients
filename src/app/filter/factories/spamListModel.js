@@ -1,44 +1,54 @@
 angular.module('proton.filter')
-    .factory('spamListModel', ($q, $rootScope, CONSTANTS, notify, gettextCatalog, IncomingDefault) => {
+    .factory('spamListModel', ($q, $rootScope, CONSTANTS, notify, gettextCatalog, IncomingDefault, filterLanguage) => {
 
         const dispatch = (type, data) => $rootScope.$emit('filter', { type, data });
 
         const PAGE_SIZE = 100;
 
-        const EMAIL_LISTS = {
-        };
+        const EMAIL_LISTS = { };
 
-        const getEventData = (type) => {
-            return { name: EMAIL_LISTS[type].name, entries: EMAIL_LISTS[type].entries };
-        };
+        const triggerUpdateList = (type) => dispatch('spamlist.update',
+            {
+                name: EMAIL_LISTS[type].name,
+                entries: angular.copy(EMAIL_LISTS[type].entries)
+            });
 
-        const triggerUpdateList = (type) => dispatch('spamlist.update', getEventData(type));
+        const triggerAppendList = (type, appended) => dispatch('spamlist.update',
+            {
+                name: EMAIL_LISTS[type].name,
+                entries: angular.copy(EMAIL_LISTS[type].entries),
+                appended: angular.copy(appended)
+            });
 
-        const deleteEntry = async (id) => {
-
-            const { data = {} } = await IncomingDefault.delete({ IDs: [id] });
-
+        const requestAndNotify = (request, successMessage) => request.then((result) => {
+            const { data } = result;
             if (data.Error) {
                 notify({ message: data.Error, classes: 'notification-danger' });
                 throw new Error(data.Error);
             }
 
-            notify({
-                message: gettextCatalog.getString('Spam Filter Deleted', null, 'Incoming Defaults'),
-                classes: 'notification-success'
-            });
+            notify({ message: successMessage, classes: 'notification-success' });
 
-            // Matching types
-            const types = _.keys(EMAIL_LISTS).filter((type) => _.findWhere(EMAIL_LISTS[type], { ID: id }));
+            return result;
+        });
 
+        // returns the modified lists
+        const deleteInternal = (id) => {
+            const result = _.keys(EMAIL_LISTS).filter((type) => _.findWhere(EMAIL_LISTS[type].entries, { ID: id }));
             // This works as of https://github.com/jashkenas/underscore/pull/1582
-            _.each(EMAIL_LISTS, (list) => list.entries = _.reject(list, { ID: id }));
-
-            _.each(types, triggerUpdateList);
+            _.each(EMAIL_LISTS, (list) => list.entries = _.reject(list.entries, { ID: id }));
+            return result;
         };
 
-        const getList = (type) => {
-            return EMAIL_LISTS[type].object;
+        const deleteEntry = async (id) => {
+
+            await requestAndNotify(IncomingDefault.delete({ IDs: [id] }),
+                gettextCatalog.getString('Spam Filter Deleted', null, 'Incoming Defaults'));
+
+            // Matching types
+            const modifiedLists = deleteInternal(id);
+
+            _.each(modifiedLists, triggerUpdateList);
         };
 
         const constructList = (type, location) => {
@@ -50,43 +60,24 @@ angular.module('proton.filter')
                 nextElement: null,
                 endReached: false,
                 isFetchingData: false,
-                object: {},
-                location,
-                cache: null
+                object: {}
             };
 
             const matchesQuery = ({ Email }) => listData.q === null || Email.includes(listData.q);
 
-            function sleep(ms) {
-                return new Promise((resolve) => setTimeout(resolve, ms));
-            }
-
             const fetchEntries = async (start, amountRequested) => {
-                if (listData.cache) {
-                    try {
-                        listData.isFetchingData = true;
-                        await sleep(200);
-                        const data = Object.assign({}, listData.cache);
-                        data.IncomingDefaults = data.IncomingDefaults.slice(start, start + amountRequested);
-                        return data;
-                    } finally {
-                        listData.isFetchingData = false;
-                    }
-                }
                 try {
                     listData.isFetchingData = true;
-                    const { data = {} } = await IncomingDefault.get();
-                    if (!data.Error) {
-                        // this will be done on the back end
-                        const baseList = _.sortBy(_.where(data.IncomingDefaults, { Location: listData.location }), 'Time').reverse();
-                        const filteredList = baseList.filter(matchesQuery);
-                        listData.cache = Object.assign({}, data, { IncomingDefaults: filteredList });
-                        // end things that should be done on the back end
 
-                        // retrieve from cache
-                        const newdata = Object.assign({}, listData.cache);
-                        newdata.IncomingDefaults = newdata.IncomingDefaults.slice(start, start + amountRequested);
-                        return newdata;
+                    const { data = {} } = await IncomingDefault.get();
+
+                    if (!data.Error) {
+                        // This will be done on the back end
+                        const baseList = _.sortBy(_.where(data.IncomingDefaults, { Location: location }), 'Time').reverse();
+                        const filteredList = baseList.filter(matchesQuery);
+                        // End things that should be done on the back end
+                        data.IncomingDefaults = filteredList.slice(start, start + amountRequested);
+                        return data;
                     }
 
                     return data;
@@ -97,160 +88,99 @@ angular.module('proton.filter')
 
             const ensureList = async (search, amount) => {
 
-                if (listData.q !== search) {
+                const isAppend = listData.q === search;
+                if (!isAppend) {
                     Object.assign(listData, { q: search, entries: [], endReached: false });
                 }
 
                 if (listData.entries.length > amount || listData.endReached) {
-                    return;
+                    return [];
                 }
 
                 const start = listData.entries.length;
                 const amountNeeded = amount - listData.entries.length;
                 /*
-                 Always request one extra, which we discard: if this one is present we know that there is more than amount
-                 We discard it so you don't scroll down, load and then don't load anything extra
+                 * Always request one extra, which we discard: if this one is present we know that there is more than amount
+                 * We discard it so you don't scroll down, load and then don't load anything extra
                  */
                 const amountRequested = amountNeeded + 1;
 
                 const data = await fetchEntries(start, amountRequested);
 
                 if (data.Error) {
-                    throw new Error(data.Error || 'Error in filterModal.getList');
+                    throw new Error(data.Error || 'Error in getEntries');
                 }
 
                 const list = data.IncomingDefaults;
 
                 listData.endReached = list.length !== amountRequested;
                 listData.nextElement = list[amountRequested - 1] || null;
+                const appended = list.slice(0, amountNeeded);
 
-                listData.entries.push(...list.slice(0, amountNeeded));
+                listData.entries.push(...appended);
+
+                return appended;
             };
 
-            const hasMoreData = () => {
-                return !listData.endReached;
-            };
+            const triggerAppend = _.partial(triggerAppendList, type);
 
-            const isFetchingData = () => {
-                return listData.isFetchingData;
-            };
+            const triggerUpdate = _.partial(triggerUpdateList, type);
 
-            const fetchMoreData = async () => {
-                await ensureList(listData.q, listData.entries.length === 0 ? 2.5 * PAGE_SIZE : listData.entries.length + PAGE_SIZE);
+            const hasMoreData = () => !listData.endReached;
 
-                triggerUpdateList(type);
-                return listData.entries;
-            };
+            const isFetchingData = () => listData.isFetchingData;
 
-            const search = async (search) => {
-                await ensureList(search, PAGE_SIZE);
+            const getEntries = () => angular.copy(listData.entries);
 
-                triggerUpdateList(type);
-                return listData.entries;
-            };
+            const fetchMoreData = () => ensureList(listData.q, listData.entries.length + PAGE_SIZE).then(triggerAppend);
 
-            const reload = async () => {
+            const search = (search) => ensureList(search, PAGE_SIZE).then(triggerUpdate);
+
+            const reload = () => {
                 // discard all data:
                 Object.assign(listData, { q: null, entries: [], endReached: false });
 
                 // load data
-                await ensureList(null, PAGE_SIZE);
-
-                triggerUpdateList(type);
-                return listData.entries;
+                return ensureList(null, PAGE_SIZE).then(triggerUpdate);
             };
 
-            const getEntries = () => {
-                return listData.entries;
-            };
 
             const add = async (email) => {
 
-                const { data = {} } = await IncomingDefault.add({
-                    Email: email,
-                    Location: location
-                });
+                const request = IncomingDefault.add({ Email: email, Location: location });
 
-                if (data.Error) {
-                    notify({ message: data.Error, classes: 'notification-danger' });
-                    throw new Error(data.Error);
-                }
-
-                notify({
-                    message: gettextCatalog.getString('Spam Filter Added'),
-                    classes: 'notification-success'
-                });
+                const { data = {} } = await requestAndNotify(request, filterLanguage.BLOCK_FILTER_ADDED);
 
                 // Emails are always added the start of the email list
                 if (matchesQuery(data.IncomingDefault)) {
                     listData.entries.unshift(data.IncomingDefault);
-                    return data.IncomingDefault;
                 }
 
                 triggerUpdateList(type);
-                return data.IncomingDefault;
             };
 
-            /*
-             * Updates the internal lists, such that the list in the same state as the BE after switching the designated
-             * list entry
-             */
-            const adoptInternal = (entry) => {
-
-                // First remove the filter everywhere
-                _.each(EMAIL_LISTS, (list) => list.entries = _.reject(list.entries, { ID: entry.ID }));
-
-                // check if we can actually place in it in the right order, or it falls outside of the list
-                if (listData.nextElement !== null && listData.nextElement.Time > entry.Time) {
-                    // it falls below the next element: ignore.
-                    return;
-                }
-
-                if (listData.entries.length === 0) {
-                    listData.entries.push(entry);
-                    return;
-                }
-
-                const closestBy = _.sortBy(listData.entries, (entry) => Math.abs(entry.Time - entry.Time));
-
-                const closestEntry = closestBy[0];
-                const index = _.indexOf(listData.entries, closestEntry);
-
-                // insert after if the entry is before the actual filter
-                listData.entries.splice(index + (closestEntry.Time > entry.Time ? 1 : 0), 0, entry);
-            };
 
             const adopt = async (id) => {
 
-                // Matching types
+                // Find modified locations
                 const types = _.keys(EMAIL_LISTS).filter((type) => _.findWhere(EMAIL_LISTS[type].entries, { ID: id }));
                 types.push(type);
 
-                const { data = {} } = await IncomingDefault.update({
-                    ID: id,
-                    Location: EMAIL_LISTS[type].location
-                });
+                const request = IncomingDefault.update({ ID: id, Location: location });
 
-                if (data.Error) {
-                    notify({ message: data.Error, classes: 'notification-danger' });
-                    throw new Error(data.Error);
-                }
-
-                notify({
-                    message: gettextCatalog.getString('Spam Filter Updated', null, 'Incoming Defaults'),
-                    classes: 'notification-success'
-                });
-
-                // Update our own data
-                const entry = data.IncomingDefault;
+                const { data = {} } = await requestAndNotify(request, filterLanguage.BLOCK_FILTER_UPDATED);
 
                 // We need to update our internally state without re-requesting the complete list
-                adoptInternal(entry);
+                const entry = data.IncomingDefault;
 
-                // trigger the required events
+                const modifiedLists = deleteInternal(id);
+                modifiedLists.push(type);
+
+                // Entries always are sorted on modified time, so this one will be at the start of the list
+                listData.entries.unshift(entry);
+
+                // Trigger the required events
                 _.each(types, triggerUpdateList);
-
-                return entry;
             };
 
 
@@ -263,10 +193,16 @@ angular.module('proton.filter')
             return listData;
         };
 
+        const getList = (type) => EMAIL_LISTS[type].object;
+
+        const getLists = () => _.pluck(_.values(EMAIL_LISTS), 'object');
+
+        const reload = () => $q.all(_.map(getLists(), (list) => list.reload()));
+
         Object.assign(EMAIL_LISTS, {
             blacklist: constructList('blacklist', Number(CONSTANTS.MAILBOX_IDENTIFIERS.spam)),
             whitelist: constructList('whitelist', Number(CONSTANTS.MAILBOX_IDENTIFIERS.inbox))
         });
 
-        return { init: angular.noop, getList, deleteEntry };
+        return { init: angular.noop, getList, getLists, deleteEntry, reload };
     });
