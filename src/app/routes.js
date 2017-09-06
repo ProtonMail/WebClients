@@ -929,36 +929,6 @@ angular.module('proton.routes', [
                     loadSpamLists(spamListModel, networkActivityTracker) {
                         return networkActivityTracker.track(spamListModel.reload());
                     },
-                    /*
-
-                    customFilters($q, Filter, networkActivityTracker) {
-                        const deferred = $q.defer();
-
-                        Filter.query()
-                            .then((result) => {
-                                if (result.data && result.data.Code === 1000) {
-                                    deferred.resolve(result.data.Filters);
-                                } else {
-                                    deferred.reject();
-                                }
-                            });
-
-                        return networkActivityTracker.track(deferred.promise);
-                    },
-                    incomingDefaults($q, IncomingDefault, networkActivityTracker) {
-                        const deferred = $q.defer();
-
-                        IncomingDefault.get()
-                            .then((result) => {
-                                if (result.data && result.data.Code === 1000) {
-                                    deferred.resolve(result.data.IncomingDefaults);
-                                } else {
-                                    deferred.reject();
-                                }
-                            });
-
-                        return networkActivityTracker.track(deferred.promise);
-                    }, */
                     methods(user, paymentModel, networkActivityTracker) {
                         return networkActivityTracker.track(paymentModel.getMethods(null, user));
                     },
