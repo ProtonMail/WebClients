@@ -1,6 +1,6 @@
 describe('signatureBuilder factory', () => {
 
-    let factory, rootScope, authentication, tools, CONSTANTS;
+    let factory, rootScope, authentication, tools, CONSTANTS, sanitize;
     let userMock = { Signature: '' };
     const message = { getDecryptedBody: angular.noop };
     const CLASS_EMPTY = 'protonmail_signature_block-empty';
@@ -36,9 +36,15 @@ describe('signatureBuilder factory', () => {
         $provide.factory('unsubscribeModel', () => ({
             init: angular.noop
         }));
+
+        $provide.factory('sanitize', () => ({
+            input: _.identity,
+            message: _.identity
+        }));
     }));
 
     beforeEach(inject(($injector) => {
+        sanitize = $injector.get('sanitize');
         rootScope = $injector.get('$rootScope');
         CONSTANTS = $injector.get('CONSTANTS');
         tools = $injector.get('tools');
@@ -55,7 +61,7 @@ describe('signatureBuilder factory', () => {
                 let string;
                 beforeEach(() => {
                     spyOn(tools, 'replaceLineBreaks').and.callThrough();
-                    spyOn(DOMPurify, 'sanitize').and.callThrough();
+                    spyOn(sanitize, 'message').and.callThrough();
                     spyOn(message, 'getDecryptedBody').and.returnValue(MESSAGE_BODY);
                     string = factory.insert(message, {});
                 });
@@ -71,15 +77,12 @@ describe('signatureBuilder factory', () => {
                 });
 
                 it('should try to clean the signature', () => {
-                    expect(DOMPurify.sanitize).toHaveBeenCalledTimes(1);
-                    expect(DOMPurify.sanitize).toHaveBeenCalledWith(jasmine.any(String), {
-                        ADD_ATTR: ['target'],
-                        FORBID_TAGS: ['style', 'input', 'form']
-                    });
+                    expect(sanitize.message).toHaveBeenCalledTimes(1);
+                    expect(sanitize.message).toHaveBeenCalledWith(jasmine.any(String));
                 });
 
                 it('should clean the signature', () => {
-                    const html = DOMPurify.sanitize.calls.argsFor(0)[0];
+                    const html = sanitize.message.calls.argsFor(0)[0];
                     expect(html).toMatch(/<div><br \/><\/div>/);
                     expect(html).toContain(noSignatures);
                     expect(html).toContain(noSignatureUser);
@@ -134,7 +137,7 @@ describe('signatureBuilder factory', () => {
                 let string;
                 beforeEach(() => {
                     spyOn(tools, 'replaceLineBreaks').and.callThrough();
-                    spyOn(DOMPurify, 'sanitize').and.callThrough();
+                    spyOn(sanitize, 'message').and.callThrough();
                     spyOn(message, 'getDecryptedBody').and.returnValue(MESSAGE_BODY);
                     string = factory.insert(message, { isAfter: true });
                 });
@@ -150,15 +153,12 @@ describe('signatureBuilder factory', () => {
                 });
 
                 it('should try to clean the signature', () => {
-                    expect(DOMPurify.sanitize).toHaveBeenCalledWith(jasmine.any(String), {
-                        ADD_ATTR: ['target'],
-                        FORBID_TAGS: ['style', 'input', 'form']
-                    });
+                    expect(sanitize.message).toHaveBeenCalledWith(jasmine.any(String));
 
                 });
 
                 it('should clean the signature', () => {
-                    const html = DOMPurify.sanitize.calls.argsFor(0)[0];
+                    const html = sanitize.message.calls.argsFor(0)[0];
                     expect(html).toMatch(/<div><br \/><\/div>/);
                     expect(html).toContain(noSignatures);
                     expect(html).toContain(noSignatureUser);
@@ -219,7 +219,7 @@ describe('signatureBuilder factory', () => {
                         PMSignature: true
                     };
                     spyOn(tools, 'replaceLineBreaks').and.callThrough();
-                    spyOn(DOMPurify, 'sanitize').and.callThrough();
+                    spyOn(sanitize, 'message').and.callThrough();
                     spyOn(message, 'getDecryptedBody').and.returnValue(MESSAGE_BODY);
                     string = factory.insert(message, {});
                 });
@@ -235,15 +235,12 @@ describe('signatureBuilder factory', () => {
                 });
 
                 it('should try to clean the signature', () => {
-                    expect(DOMPurify.sanitize).toHaveBeenCalledTimes(1);
-                    expect(DOMPurify.sanitize).toHaveBeenCalledWith(jasmine.any(String), {
-                        ADD_ATTR: ['target'],
-                        FORBID_TAGS: ['style', 'input', 'form']
-                    });
+                    expect(sanitize.message).toHaveBeenCalledTimes(1);
+                    expect(sanitize.message).toHaveBeenCalledWith(jasmine.any(String));
                 });
 
                 it('should clean the signature', () => {
-                    const html = DOMPurify.sanitize.calls.argsFor(0)[0];
+                    const html = sanitize.message.calls.argsFor(0)[0];
                     expect(html).toMatch(/<div><br \/><\/div>/);
                     expect(html).not.toContain(noSignatures);
                     expect(html).toContain(noSignatureUser);
@@ -301,7 +298,7 @@ describe('signatureBuilder factory', () => {
                         PMSignature: true
                     };
                     spyOn(tools, 'replaceLineBreaks').and.callThrough();
-                    spyOn(DOMPurify, 'sanitize').and.callThrough();
+                    spyOn(sanitize, 'message').and.callThrough();
                     spyOn(message, 'getDecryptedBody').and.returnValue(MESSAGE_BODY);
                     string = factory.insert(message, { isAfter: true });
                 });
@@ -319,15 +316,12 @@ describe('signatureBuilder factory', () => {
 
 
                 it('should try to clean the signature', () => {
-                    expect(DOMPurify.sanitize).toHaveBeenCalledTimes(1);
-                    expect(DOMPurify.sanitize).toHaveBeenCalledWith(jasmine.any(String), {
-                        ADD_ATTR: ['target'],
-                        FORBID_TAGS: ['style', 'input', 'form']
-                    });
+                    expect(sanitize.message).toHaveBeenCalledTimes(1);
+                    expect(sanitize.message).toHaveBeenCalledWith(jasmine.any(String));
                 });
 
                 it('should clean the signature', () => {
-                    const html = DOMPurify.sanitize.calls.argsFor(0)[0];
+                    const html = sanitize.message.calls.argsFor(0)[0];
                     expect(html).toMatch(/<div><br \/><\/div>/);
                     expect(html).not.toContain(noSignatures);
                     expect(html).toContain(noSignatureUser);
@@ -389,7 +383,7 @@ describe('signatureBuilder factory', () => {
                     };
                     userMock = { PMSignature: false };
                     spyOn(tools, 'replaceLineBreaks').and.callThrough();
-                    spyOn(DOMPurify, 'sanitize').and.callThrough();
+                    spyOn(sanitize, 'message').and.callThrough();
                     spyOn(message, 'getDecryptedBody').and.returnValue(MESSAGE_BODY);
                     string = factory.insert(message, {});
                 });
@@ -405,15 +399,12 @@ describe('signatureBuilder factory', () => {
                 });
 
                 it('should try to clean the signature', () => {
-                    expect(DOMPurify.sanitize).toHaveBeenCalledTimes(1);
-                    expect(DOMPurify.sanitize).toHaveBeenCalledWith(jasmine.any(String), {
-                        ADD_ATTR: ['target'],
-                        FORBID_TAGS: ['style', 'input', 'form']
-                    });
+                    expect(sanitize.message).toHaveBeenCalledTimes(1);
+                    expect(sanitize.message).toHaveBeenCalledWith(jasmine.any(String));
                 });
 
                 it('should clean the signature', () => {
-                    const html = DOMPurify.sanitize.calls.argsFor(0)[0];
+                    const html = sanitize.message.calls.argsFor(0)[0];
                     expect(html).toMatch(/<div><br \/><\/div>/);
                     expect(html).not.toContain(noSignatures);
                     expect(html).not.toContain(noSignatureUser);
@@ -472,7 +463,7 @@ describe('signatureBuilder factory', () => {
                     };
                     userMock = { PMSignature: false };
                     spyOn(tools, 'replaceLineBreaks').and.callThrough();
-                    spyOn(DOMPurify, 'sanitize').and.callThrough();
+                    spyOn(sanitize, 'message').and.callThrough();
                     spyOn(message, 'getDecryptedBody').and.returnValue(MESSAGE_BODY);
                     string = factory.insert(message, { isAfter: true });
                 });
@@ -488,15 +479,12 @@ describe('signatureBuilder factory', () => {
                 });
 
                 it('should try to clean the signature', () => {
-                    expect(DOMPurify.sanitize).toHaveBeenCalledTimes(1);
-                    expect(DOMPurify.sanitize).toHaveBeenCalledWith(jasmine.any(String), {
-                        ADD_ATTR: ['target'],
-                        FORBID_TAGS: ['style', 'input', 'form']
-                    });
+                    expect(sanitize.message).toHaveBeenCalledTimes(1);
+                    expect(sanitize.message).toHaveBeenCalledWith(jasmine.any(String));
                 });
 
                 it('should clean the signature', () => {
-                    const html = DOMPurify.sanitize.calls.argsFor(0)[0];
+                    const html = sanitize.message.calls.argsFor(0)[0];
                     expect(html).toMatch(/<div><br \/><\/div>/);
                     expect(html).not.toContain(noSignatures);
                     expect(html).not.toContain(noSignatureUser);
@@ -557,7 +545,7 @@ describe('signatureBuilder factory', () => {
                     };
                     userMock = { PMSignature: true };
                     spyOn(tools, 'replaceLineBreaks').and.callThrough();
-                    spyOn(DOMPurify, 'sanitize').and.callThrough();
+                    spyOn(sanitize, 'message').and.callThrough();
                     spyOn(message, 'getDecryptedBody').and.returnValue(MESSAGE_BODY);
                     string = factory.insert(message, {});
                 });
@@ -573,15 +561,12 @@ describe('signatureBuilder factory', () => {
                 });
 
                 it('should try to clean the signature', () => {
-                    expect(DOMPurify.sanitize).toHaveBeenCalledTimes(1);
-                    expect(DOMPurify.sanitize).toHaveBeenCalledWith(jasmine.any(String), {
-                        ADD_ATTR: ['target'],
-                        FORBID_TAGS: ['style', 'input', 'form']
-                    });
+                    expect(sanitize.message).toHaveBeenCalledTimes(1);
+                    expect(sanitize.message).toHaveBeenCalledWith(jasmine.any(String));
                 });
 
                 it('should clean the signature', () => {
-                    const html = DOMPurify.sanitize.calls.argsFor(0)[0];
+                    const html = sanitize.message.calls.argsFor(0)[0];
                     expect(html).toMatch(/<div><br \/><\/div>/);
                     expect(html).not.toContain(noSignatures);
                     expect(html).not.toContain(noSignatureUser);
@@ -644,7 +629,7 @@ describe('signatureBuilder factory', () => {
                     };
                     userMock = { PMSignature: true };
                     spyOn(tools, 'replaceLineBreaks').and.callThrough();
-                    spyOn(DOMPurify, 'sanitize').and.callThrough();
+                    spyOn(sanitize, 'message').and.callThrough();
                     spyOn(message, 'getDecryptedBody').and.returnValue(MESSAGE_BODY);
                     string = factory.insert(message, { isAfter: true });
                 });
@@ -660,15 +645,12 @@ describe('signatureBuilder factory', () => {
                 });
 
                 it('should try to clean the signature', () => {
-                    expect(DOMPurify.sanitize).toHaveBeenCalledTimes(1);
-                    expect(DOMPurify.sanitize).toHaveBeenCalledWith(jasmine.any(String), {
-                        ADD_ATTR: ['target'],
-                        FORBID_TAGS: ['style', 'input', 'form']
-                    });
+                    expect(sanitize.message).toHaveBeenCalledTimes(1);
+                    expect(sanitize.message).toHaveBeenCalledWith(jasmine.any(String));
                 });
 
                 it('should clean the signature', () => {
-                    const html = DOMPurify.sanitize.calls.argsFor(0)[0];
+                    const html = sanitize.message.calls.argsFor(0)[0];
                     expect(html).toMatch(/<div><br \/><\/div>/);
                     expect(html).not.toContain(noSignatures);
                     expect(html).not.toContain(noSignatureUser);
@@ -738,7 +720,7 @@ describe('signatureBuilder factory', () => {
                 let string;
                 beforeEach(() => {
                     spyOn(tools, 'replaceLineBreaks').and.callThrough();
-                    spyOn(DOMPurify, 'sanitize').and.callThrough();
+                    spyOn(sanitize, 'message').and.callThrough();
                     spyOn(message, 'getDecryptedBody').and.returnValue(MESSAGE_BODY);
                     string = factory.insert(message, { action: 'reply' });
                 });
@@ -754,15 +736,12 @@ describe('signatureBuilder factory', () => {
                 });
 
                 it('should try to clean the signature', () => {
-                    expect(DOMPurify.sanitize).toHaveBeenCalledTimes(1);
-                    expect(DOMPurify.sanitize).toHaveBeenCalledWith(jasmine.any(String), {
-                        ADD_ATTR: ['target'],
-                        FORBID_TAGS: ['style', 'input', 'form']
-                    });
+                    expect(sanitize.message).toHaveBeenCalledTimes(1);
+                    expect(sanitize.message).toHaveBeenCalledWith(jasmine.any(String));
                 });
 
                 it('should clean the signature', () => {
-                    const html = DOMPurify.sanitize.calls.argsFor(0)[0];
+                    const html = sanitize.message.calls.argsFor(0)[0];
                     expect(html).toMatch(/<div><br \/><\/div>/);
                     expect(html).toContain(noSignatures);
                     expect(html).toContain(noSignatureUser);
@@ -821,7 +800,7 @@ describe('signatureBuilder factory', () => {
                 let string;
                 beforeEach(() => {
                     spyOn(tools, 'replaceLineBreaks').and.callThrough();
-                    spyOn(DOMPurify, 'sanitize').and.callThrough();
+                    spyOn(sanitize, 'message').and.callThrough();
                     spyOn(message, 'getDecryptedBody').and.returnValue(MESSAGE_BODY);
                     string = factory.insert(message, { isAfter: true });
                 });
@@ -837,15 +816,12 @@ describe('signatureBuilder factory', () => {
                 });
 
                 it('should try to clean the signature', () => {
-                    expect(DOMPurify.sanitize).toHaveBeenCalledWith(jasmine.any(String), {
-                        ADD_ATTR: ['target'],
-                        FORBID_TAGS: ['style', 'input', 'form']
-                    });
+                    expect(sanitize.message).toHaveBeenCalledWith(jasmine.any(String));
 
                 });
 
                 it('should clean the signature', () => {
-                    const html = DOMPurify.sanitize.calls.argsFor(0)[0];
+                    const html = sanitize.message.calls.argsFor(0)[0];
                     expect(html).toMatch(/<div><br \/><\/div>/);
                     expect(html).toContain(noSignatures);
                     expect(html).toContain(noSignatureUser);
@@ -906,7 +882,7 @@ describe('signatureBuilder factory', () => {
                         PMSignature: true
                     };
                     spyOn(tools, 'replaceLineBreaks').and.callThrough();
-                    spyOn(DOMPurify, 'sanitize').and.callThrough();
+                    spyOn(sanitize, 'message').and.callThrough();
                     spyOn(message, 'getDecryptedBody').and.returnValue(MESSAGE_BODY);
                     string = factory.insert(message, { action: 'reply' });
                 });
@@ -922,15 +898,12 @@ describe('signatureBuilder factory', () => {
                 });
 
                 it('should try to clean the signature', () => {
-                    expect(DOMPurify.sanitize).toHaveBeenCalledTimes(1);
-                    expect(DOMPurify.sanitize).toHaveBeenCalledWith(jasmine.any(String), {
-                        ADD_ATTR: ['target'],
-                        FORBID_TAGS: ['style', 'input', 'form']
-                    });
+                    expect(sanitize.message).toHaveBeenCalledTimes(1);
+                    expect(sanitize.message).toHaveBeenCalledWith(jasmine.any(String));
                 });
 
                 it('should clean the signature', () => {
-                    const html = DOMPurify.sanitize.calls.argsFor(0)[0];
+                    const html = sanitize.message.calls.argsFor(0)[0];
                     expect(html).toMatch(/<div><br \/><\/div>/);
                     expect(html).not.toContain(noSignatures);
                     expect(html).toContain(noSignatureUser);
@@ -991,7 +964,7 @@ describe('signatureBuilder factory', () => {
                         PMSignature: true
                     };
                     spyOn(tools, 'replaceLineBreaks').and.callThrough();
-                    spyOn(DOMPurify, 'sanitize').and.callThrough();
+                    spyOn(sanitize, 'message').and.callThrough();
                     spyOn(message, 'getDecryptedBody').and.returnValue(MESSAGE_BODY);
                     string = factory.insert(message, { isAfter: true });
                 });
@@ -1009,15 +982,12 @@ describe('signatureBuilder factory', () => {
 
 
                 it('should try to clean the signature', () => {
-                    expect(DOMPurify.sanitize).toHaveBeenCalledTimes(1);
-                    expect(DOMPurify.sanitize).toHaveBeenCalledWith(jasmine.any(String), {
-                        ADD_ATTR: ['target'],
-                        FORBID_TAGS: ['style', 'input', 'form']
-                    });
+                    expect(sanitize.message).toHaveBeenCalledTimes(1);
+                    expect(sanitize.message).toHaveBeenCalledWith(jasmine.any(String));
                 });
 
                 it('should clean the signature', () => {
-                    const html = DOMPurify.sanitize.calls.argsFor(0)[0];
+                    const html = sanitize.message.calls.argsFor(0)[0];
                     expect(html).toMatch(/<div><br \/><\/div>/);
                     expect(html).not.toContain(noSignatures);
                     expect(html).toContain(noSignatureUser);
@@ -1079,7 +1049,7 @@ describe('signatureBuilder factory', () => {
                     };
                     userMock = { PMSignature: false };
                     spyOn(tools, 'replaceLineBreaks').and.callThrough();
-                    spyOn(DOMPurify, 'sanitize').and.callThrough();
+                    spyOn(sanitize, 'message').and.callThrough();
                     spyOn(message, 'getDecryptedBody').and.returnValue(MESSAGE_BODY);
                     string = factory.insert(message, { action: 'reply' });
                 });
@@ -1095,15 +1065,12 @@ describe('signatureBuilder factory', () => {
                 });
 
                 it('should try to clean the signature', () => {
-                    expect(DOMPurify.sanitize).toHaveBeenCalledTimes(1);
-                    expect(DOMPurify.sanitize).toHaveBeenCalledWith(jasmine.any(String), {
-                        ADD_ATTR: ['target'],
-                        FORBID_TAGS: ['style', 'input', 'form']
-                    });
+                    expect(sanitize.message).toHaveBeenCalledTimes(1);
+                    expect(sanitize.message).toHaveBeenCalledWith(jasmine.any(String));
                 });
 
                 it('should clean the signature', () => {
-                    const html = DOMPurify.sanitize.calls.argsFor(0)[0];
+                    const html = sanitize.message.calls.argsFor(0)[0];
                     expect(html).toMatch(/<div><br \/><\/div>/);
                     expect(html).not.toContain(noSignatures);
                     expect(html).not.toContain(noSignatureUser);
@@ -1165,7 +1132,7 @@ describe('signatureBuilder factory', () => {
                     };
                     userMock = { PMSignature: false };
                     spyOn(tools, 'replaceLineBreaks').and.callThrough();
-                    spyOn(DOMPurify, 'sanitize').and.callThrough();
+                    spyOn(sanitize, 'message').and.callThrough();
                     spyOn(message, 'getDecryptedBody').and.returnValue(MESSAGE_BODY);
                     string = factory.insert(message, { isAfter: true });
                 });
@@ -1181,15 +1148,12 @@ describe('signatureBuilder factory', () => {
                 });
 
                 it('should try to clean the signature', () => {
-                    expect(DOMPurify.sanitize).toHaveBeenCalledTimes(1);
-                    expect(DOMPurify.sanitize).toHaveBeenCalledWith(jasmine.any(String), {
-                        ADD_ATTR: ['target'],
-                        FORBID_TAGS: ['style', 'input', 'form']
-                    });
+                    expect(sanitize.message).toHaveBeenCalledTimes(1);
+                    expect(sanitize.message).toHaveBeenCalledWith(jasmine.any(String));
                 });
 
                 it('should clean the signature', () => {
-                    const html = DOMPurify.sanitize.calls.argsFor(0)[0];
+                    const html = sanitize.message.calls.argsFor(0)[0];
                     expect(html).toMatch(/<div><br \/><\/div>/);
                     expect(html).not.toContain(noSignatures);
                     expect(html).not.toContain(noSignatureUser);
@@ -1250,7 +1214,7 @@ describe('signatureBuilder factory', () => {
                     };
                     userMock = { PMSignature: true };
                     spyOn(tools, 'replaceLineBreaks').and.callThrough();
-                    spyOn(DOMPurify, 'sanitize').and.callThrough();
+                    spyOn(sanitize, 'message').and.callThrough();
                     spyOn(message, 'getDecryptedBody').and.returnValue(MESSAGE_BODY);
                     string = factory.insert(message, { action: 'reply' });
                 });
@@ -1266,15 +1230,12 @@ describe('signatureBuilder factory', () => {
                 });
 
                 it('should try to clean the signature', () => {
-                    expect(DOMPurify.sanitize).toHaveBeenCalledTimes(1);
-                    expect(DOMPurify.sanitize).toHaveBeenCalledWith(jasmine.any(String), {
-                        ADD_ATTR: ['target'],
-                        FORBID_TAGS: ['style', 'input', 'form']
-                    });
+                    expect(sanitize.message).toHaveBeenCalledTimes(1);
+                    expect(sanitize.message).toHaveBeenCalledWith(jasmine.any(String));
                 });
 
                 it('should clean the signature', () => {
-                    const html = DOMPurify.sanitize.calls.argsFor(0)[0];
+                    const html = sanitize.message.calls.argsFor(0)[0];
                     expect(html).toMatch(/<div><br \/><\/div>/);
                     expect(html).not.toContain(noSignatures);
                     expect(html).not.toContain(noSignatureUser);
@@ -1341,7 +1302,7 @@ describe('signatureBuilder factory', () => {
                     };
                     userMock = { PMSignature: true };
                     spyOn(tools, 'replaceLineBreaks').and.callThrough();
-                    spyOn(DOMPurify, 'sanitize').and.callThrough();
+                    spyOn(sanitize, 'message').and.callThrough();
                     spyOn(message, 'getDecryptedBody').and.returnValue(MESSAGE_BODY);
                     string = factory.insert(message, { isAfter: true });
                 });
@@ -1357,15 +1318,12 @@ describe('signatureBuilder factory', () => {
                 });
 
                 it('should try to clean the signature', () => {
-                    expect(DOMPurify.sanitize).toHaveBeenCalledTimes(1);
-                    expect(DOMPurify.sanitize).toHaveBeenCalledWith(jasmine.any(String), {
-                        ADD_ATTR: ['target'],
-                        FORBID_TAGS: ['style', 'input', 'form']
-                    });
+                    expect(sanitize.message).toHaveBeenCalledTimes(1);
+                    expect(sanitize.message).toHaveBeenCalledWith(jasmine.any(String));
                 });
 
                 it('should clean the signature', () => {
-                    const html = DOMPurify.sanitize.calls.argsFor(0)[0];
+                    const html = sanitize.message.calls.argsFor(0)[0];
                     expect(html).toMatch(/<div><br \/><\/div>/);
                     expect(html).not.toContain(noSignatures);
                     expect(html).not.toContain(noSignatureUser);
@@ -1436,7 +1394,7 @@ describe('signatureBuilder factory', () => {
                 let string;
                 beforeEach(() => {
                     spyOn(tools, 'replaceLineBreaks').and.callThrough();
-                    spyOn(DOMPurify, 'sanitize').and.callThrough();
+                    spyOn(sanitize, 'message').and.callThrough();
                     spyOn(message, 'getDecryptedBody').and.returnValue(MESSAGE_BODY);
                     string = factory.insert(message, { action: 'replyall' });
                 });
@@ -1452,15 +1410,12 @@ describe('signatureBuilder factory', () => {
                 });
 
                 it('should try to clean the signature', () => {
-                    expect(DOMPurify.sanitize).toHaveBeenCalledTimes(1);
-                    expect(DOMPurify.sanitize).toHaveBeenCalledWith(jasmine.any(String), {
-                        ADD_ATTR: ['target'],
-                        FORBID_TAGS: ['style', 'input', 'form']
-                    });
+                    expect(sanitize.message).toHaveBeenCalledTimes(1);
+                    expect(sanitize.message).toHaveBeenCalledWith(jasmine.any(String));
                 });
 
                 it('should clean the signature', () => {
-                    const html = DOMPurify.sanitize.calls.argsFor(0)[0];
+                    const html = sanitize.message.calls.argsFor(0)[0];
                     expect(html).toMatch(/<div><br \/><\/div>/);
                     expect(html).toContain(noSignatures);
                     expect(html).toContain(noSignatureUser);
@@ -1519,7 +1474,7 @@ describe('signatureBuilder factory', () => {
                 let string;
                 beforeEach(() => {
                     spyOn(tools, 'replaceLineBreaks').and.callThrough();
-                    spyOn(DOMPurify, 'sanitize').and.callThrough();
+                    spyOn(sanitize, 'message').and.callThrough();
                     spyOn(message, 'getDecryptedBody').and.returnValue(MESSAGE_BODY);
                     string = factory.insert(message, { isAfter: true });
                 });
@@ -1535,15 +1490,12 @@ describe('signatureBuilder factory', () => {
                 });
 
                 it('should try to clean the signature', () => {
-                    expect(DOMPurify.sanitize).toHaveBeenCalledWith(jasmine.any(String), {
-                        ADD_ATTR: ['target'],
-                        FORBID_TAGS: ['style', 'input', 'form']
-                    });
+                    expect(sanitize.message).toHaveBeenCalledWith(jasmine.any(String));
 
                 });
 
                 it('should clean the signature', () => {
-                    const html = DOMPurify.sanitize.calls.argsFor(0)[0];
+                    const html = sanitize.message.calls.argsFor(0)[0];
                     expect(html).toMatch(/<div><br \/><\/div>/);
                     expect(html).toContain(noSignatures);
                     expect(html).toContain(noSignatureUser);
@@ -1604,7 +1556,7 @@ describe('signatureBuilder factory', () => {
                         PMSignature: true
                     };
                     spyOn(tools, 'replaceLineBreaks').and.callThrough();
-                    spyOn(DOMPurify, 'sanitize').and.callThrough();
+                    spyOn(sanitize, 'message').and.callThrough();
                     spyOn(message, 'getDecryptedBody').and.returnValue(MESSAGE_BODY);
                     string = factory.insert(message, { action: 'replyall' });
                 });
@@ -1620,15 +1572,12 @@ describe('signatureBuilder factory', () => {
                 });
 
                 it('should try to clean the signature', () => {
-                    expect(DOMPurify.sanitize).toHaveBeenCalledTimes(1);
-                    expect(DOMPurify.sanitize).toHaveBeenCalledWith(jasmine.any(String), {
-                        ADD_ATTR: ['target'],
-                        FORBID_TAGS: ['style', 'input', 'form']
-                    });
+                    expect(sanitize.message).toHaveBeenCalledTimes(1);
+                    expect(sanitize.message).toHaveBeenCalledWith(jasmine.any(String));
                 });
 
                 it('should clean the signature', () => {
-                    const html = DOMPurify.sanitize.calls.argsFor(0)[0];
+                    const html = sanitize.message.calls.argsFor(0)[0];
                     expect(html).toMatch(/<div><br \/><\/div>/);
                     expect(html).not.toContain(noSignatures);
                     expect(html).toContain(noSignatureUser);
@@ -1689,7 +1638,7 @@ describe('signatureBuilder factory', () => {
                         PMSignature: true
                     };
                     spyOn(tools, 'replaceLineBreaks').and.callThrough();
-                    spyOn(DOMPurify, 'sanitize').and.callThrough();
+                    spyOn(sanitize, 'message').and.callThrough();
                     spyOn(message, 'getDecryptedBody').and.returnValue(MESSAGE_BODY);
                     string = factory.insert(message, { isAfter: true });
                 });
@@ -1707,15 +1656,12 @@ describe('signatureBuilder factory', () => {
 
 
                 it('should try to clean the signature', () => {
-                    expect(DOMPurify.sanitize).toHaveBeenCalledTimes(1);
-                    expect(DOMPurify.sanitize).toHaveBeenCalledWith(jasmine.any(String), {
-                        ADD_ATTR: ['target'],
-                        FORBID_TAGS: ['style', 'input', 'form']
-                    });
+                    expect(sanitize.message).toHaveBeenCalledTimes(1);
+                    expect(sanitize.message).toHaveBeenCalledWith(jasmine.any(String));
                 });
 
                 it('should clean the signature', () => {
-                    const html = DOMPurify.sanitize.calls.argsFor(0)[0];
+                    const html = sanitize.message.calls.argsFor(0)[0];
                     expect(html).toMatch(/<div><br \/><\/div>/);
                     expect(html).not.toContain(noSignatures);
                     expect(html).toContain(noSignatureUser);
@@ -1777,7 +1723,7 @@ describe('signatureBuilder factory', () => {
                     };
                     userMock = { PMSignature: false };
                     spyOn(tools, 'replaceLineBreaks').and.callThrough();
-                    spyOn(DOMPurify, 'sanitize').and.callThrough();
+                    spyOn(sanitize, 'message').and.callThrough();
                     spyOn(message, 'getDecryptedBody').and.returnValue(MESSAGE_BODY);
                     string = factory.insert(message, { action: 'replyall' });
                 });
@@ -1793,15 +1739,12 @@ describe('signatureBuilder factory', () => {
                 });
 
                 it('should try to clean the signature', () => {
-                    expect(DOMPurify.sanitize).toHaveBeenCalledTimes(1);
-                    expect(DOMPurify.sanitize).toHaveBeenCalledWith(jasmine.any(String), {
-                        ADD_ATTR: ['target'],
-                        FORBID_TAGS: ['style', 'input', 'form']
-                    });
+                    expect(sanitize.message).toHaveBeenCalledTimes(1);
+                    expect(sanitize.message).toHaveBeenCalledWith(jasmine.any(String));
                 });
 
                 it('should clean the signature', () => {
-                    const html = DOMPurify.sanitize.calls.argsFor(0)[0];
+                    const html = sanitize.message.calls.argsFor(0)[0];
                     expect(html).toMatch(/<div><br \/><\/div>/);
                     expect(html).not.toContain(noSignatures);
                     expect(html).not.toContain(noSignatureUser);
@@ -1863,7 +1806,7 @@ describe('signatureBuilder factory', () => {
                     };
                     userMock = { PMSignature: false };
                     spyOn(tools, 'replaceLineBreaks').and.callThrough();
-                    spyOn(DOMPurify, 'sanitize').and.callThrough();
+                    spyOn(sanitize, 'message').and.callThrough();
                     spyOn(message, 'getDecryptedBody').and.returnValue(MESSAGE_BODY);
                     string = factory.insert(message, { isAfter: true });
                 });
@@ -1879,15 +1822,12 @@ describe('signatureBuilder factory', () => {
                 });
 
                 it('should try to clean the signature', () => {
-                    expect(DOMPurify.sanitize).toHaveBeenCalledTimes(1);
-                    expect(DOMPurify.sanitize).toHaveBeenCalledWith(jasmine.any(String), {
-                        ADD_ATTR: ['target'],
-                        FORBID_TAGS: ['style', 'input', 'form']
-                    });
+                    expect(sanitize.message).toHaveBeenCalledTimes(1);
+                    expect(sanitize.message).toHaveBeenCalledWith(jasmine.any(String));
                 });
 
                 it('should clean the signature', () => {
-                    const html = DOMPurify.sanitize.calls.argsFor(0)[0];
+                    const html = sanitize.message.calls.argsFor(0)[0];
                     expect(html).toMatch(/<div><br \/><\/div>/);
                     expect(html).not.toContain(noSignatures);
                     expect(html).not.toContain(noSignatureUser);
@@ -1948,7 +1888,7 @@ describe('signatureBuilder factory', () => {
                     };
                     userMock = { PMSignature: true };
                     spyOn(tools, 'replaceLineBreaks').and.callThrough();
-                    spyOn(DOMPurify, 'sanitize').and.callThrough();
+                    spyOn(sanitize, 'message').and.callThrough();
                     spyOn(message, 'getDecryptedBody').and.returnValue(MESSAGE_BODY);
                     string = factory.insert(message, { action: 'replyall' });
                 });
@@ -1964,15 +1904,12 @@ describe('signatureBuilder factory', () => {
                 });
 
                 it('should try to clean the signature', () => {
-                    expect(DOMPurify.sanitize).toHaveBeenCalledTimes(1);
-                    expect(DOMPurify.sanitize).toHaveBeenCalledWith(jasmine.any(String), {
-                        ADD_ATTR: ['target'],
-                        FORBID_TAGS: ['style', 'input', 'form']
-                    });
+                    expect(sanitize.message).toHaveBeenCalledTimes(1);
+                    expect(sanitize.message).toHaveBeenCalledWith(jasmine.any(String));
                 });
 
                 it('should clean the signature', () => {
-                    const html = DOMPurify.sanitize.calls.argsFor(0)[0];
+                    const html = sanitize.message.calls.argsFor(0)[0];
                     expect(html).toMatch(/<div><br \/><\/div>/);
                     expect(html).not.toContain(noSignatures);
                     expect(html).not.toContain(noSignatureUser);
@@ -2039,7 +1976,7 @@ describe('signatureBuilder factory', () => {
                     };
                     userMock = { PMSignature: true };
                     spyOn(tools, 'replaceLineBreaks').and.callThrough();
-                    spyOn(DOMPurify, 'sanitize').and.callThrough();
+                    spyOn(sanitize, 'message').and.callThrough();
                     spyOn(message, 'getDecryptedBody').and.returnValue(MESSAGE_BODY);
                     string = factory.insert(message, { isAfter: true });
                 });
@@ -2055,15 +1992,12 @@ describe('signatureBuilder factory', () => {
                 });
 
                 it('should try to clean the signature', () => {
-                    expect(DOMPurify.sanitize).toHaveBeenCalledTimes(1);
-                    expect(DOMPurify.sanitize).toHaveBeenCalledWith(jasmine.any(String), {
-                        ADD_ATTR: ['target'],
-                        FORBID_TAGS: ['style', 'input', 'form']
-                    });
+                    expect(sanitize.message).toHaveBeenCalledTimes(1);
+                    expect(sanitize.message).toHaveBeenCalledWith(jasmine.any(String));
                 });
 
                 it('should clean the signature', () => {
-                    const html = DOMPurify.sanitize.calls.argsFor(0)[0];
+                    const html = sanitize.message.calls.argsFor(0)[0];
                     expect(html).toMatch(/<div><br \/><\/div>/);
                     expect(html).not.toContain(noSignatures);
                     expect(html).not.toContain(noSignatureUser);
@@ -2133,7 +2067,7 @@ describe('signatureBuilder factory', () => {
                 let string;
                 beforeEach(() => {
                     spyOn(tools, 'replaceLineBreaks').and.callThrough();
-                    spyOn(DOMPurify, 'sanitize').and.callThrough();
+                    spyOn(sanitize, 'message').and.callThrough();
                     spyOn(message, 'getDecryptedBody').and.returnValue(MESSAGE_BODY);
                     string = factory.insert(message, { action: 'forward' });
                 });
@@ -2149,15 +2083,12 @@ describe('signatureBuilder factory', () => {
                 });
 
                 it('should try to clean the signature', () => {
-                    expect(DOMPurify.sanitize).toHaveBeenCalledTimes(1);
-                    expect(DOMPurify.sanitize).toHaveBeenCalledWith(jasmine.any(String), {
-                        ADD_ATTR: ['target'],
-                        FORBID_TAGS: ['style', 'input', 'form']
-                    });
+                    expect(sanitize.message).toHaveBeenCalledTimes(1);
+                    expect(sanitize.message).toHaveBeenCalledWith(jasmine.any(String));
                 });
 
                 it('should clean the signature', () => {
-                    const html = DOMPurify.sanitize.calls.argsFor(0)[0];
+                    const html = sanitize.message.calls.argsFor(0)[0];
                     expect(html).toMatch(/<div><br \/><\/div>/);
                     expect(html).toContain(noSignatures);
                     expect(html).toContain(noSignatureUser);
@@ -2216,7 +2147,7 @@ describe('signatureBuilder factory', () => {
                 let string;
                 beforeEach(() => {
                     spyOn(tools, 'replaceLineBreaks').and.callThrough();
-                    spyOn(DOMPurify, 'sanitize').and.callThrough();
+                    spyOn(sanitize, 'message').and.callThrough();
                     spyOn(message, 'getDecryptedBody').and.returnValue(MESSAGE_BODY);
                     string = factory.insert(message, { isAfter: true });
                 });
@@ -2232,15 +2163,12 @@ describe('signatureBuilder factory', () => {
                 });
 
                 it('should try to clean the signature', () => {
-                    expect(DOMPurify.sanitize).toHaveBeenCalledWith(jasmine.any(String), {
-                        ADD_ATTR: ['target'],
-                        FORBID_TAGS: ['style', 'input', 'form']
-                    });
+                    expect(sanitize.message).toHaveBeenCalledWith(jasmine.any(String));
 
                 });
 
                 it('should clean the signature', () => {
-                    const html = DOMPurify.sanitize.calls.argsFor(0)[0];
+                    const html = sanitize.message.calls.argsFor(0)[0];
                     expect(html).toMatch(/<div><br \/><\/div>/);
                     expect(html).toContain(noSignatures);
                     expect(html).toContain(noSignatureUser);
@@ -2301,7 +2229,7 @@ describe('signatureBuilder factory', () => {
                         PMSignature: true
                     };
                     spyOn(tools, 'replaceLineBreaks').and.callThrough();
-                    spyOn(DOMPurify, 'sanitize').and.callThrough();
+                    spyOn(sanitize, 'message').and.callThrough();
                     spyOn(message, 'getDecryptedBody').and.returnValue(MESSAGE_BODY);
                     string = factory.insert(message, { action: 'forward' });
                 });
@@ -2317,15 +2245,12 @@ describe('signatureBuilder factory', () => {
                 });
 
                 it('should try to clean the signature', () => {
-                    expect(DOMPurify.sanitize).toHaveBeenCalledTimes(1);
-                    expect(DOMPurify.sanitize).toHaveBeenCalledWith(jasmine.any(String), {
-                        ADD_ATTR: ['target'],
-                        FORBID_TAGS: ['style', 'input', 'form']
-                    });
+                    expect(sanitize.message).toHaveBeenCalledTimes(1);
+                    expect(sanitize.message).toHaveBeenCalledWith(jasmine.any(String));
                 });
 
                 it('should clean the signature', () => {
-                    const html = DOMPurify.sanitize.calls.argsFor(0)[0];
+                    const html = sanitize.message.calls.argsFor(0)[0];
                     expect(html).toMatch(/<div><br \/><\/div>/);
                     expect(html).not.toContain(noSignatures);
                     expect(html).toContain(noSignatureUser);
@@ -2386,7 +2311,7 @@ describe('signatureBuilder factory', () => {
                         PMSignature: true
                     };
                     spyOn(tools, 'replaceLineBreaks').and.callThrough();
-                    spyOn(DOMPurify, 'sanitize').and.callThrough();
+                    spyOn(sanitize, 'message').and.callThrough();
                     spyOn(message, 'getDecryptedBody').and.returnValue(MESSAGE_BODY);
                     string = factory.insert(message, { isAfter: true });
                 });
@@ -2404,15 +2329,12 @@ describe('signatureBuilder factory', () => {
 
 
                 it('should try to clean the signature', () => {
-                    expect(DOMPurify.sanitize).toHaveBeenCalledTimes(1);
-                    expect(DOMPurify.sanitize).toHaveBeenCalledWith(jasmine.any(String), {
-                        ADD_ATTR: ['target'],
-                        FORBID_TAGS: ['style', 'input', 'form']
-                    });
+                    expect(sanitize.message).toHaveBeenCalledTimes(1);
+                    expect(sanitize.message).toHaveBeenCalledWith(jasmine.any(String));
                 });
 
                 it('should clean the signature', () => {
-                    const html = DOMPurify.sanitize.calls.argsFor(0)[0];
+                    const html = sanitize.message.calls.argsFor(0)[0];
                     expect(html).toMatch(/<div><br \/><\/div>/);
                     expect(html).not.toContain(noSignatures);
                     expect(html).toContain(noSignatureUser);
@@ -2474,7 +2396,7 @@ describe('signatureBuilder factory', () => {
                     };
                     userMock = { PMSignature: false };
                     spyOn(tools, 'replaceLineBreaks').and.callThrough();
-                    spyOn(DOMPurify, 'sanitize').and.callThrough();
+                    spyOn(sanitize, 'message').and.callThrough();
                     spyOn(message, 'getDecryptedBody').and.returnValue(MESSAGE_BODY);
                     string = factory.insert(message, { action: 'forward' });
                 });
@@ -2490,15 +2412,12 @@ describe('signatureBuilder factory', () => {
                 });
 
                 it('should try to clean the signature', () => {
-                    expect(DOMPurify.sanitize).toHaveBeenCalledTimes(1);
-                    expect(DOMPurify.sanitize).toHaveBeenCalledWith(jasmine.any(String), {
-                        ADD_ATTR: ['target'],
-                        FORBID_TAGS: ['style', 'input', 'form']
-                    });
+                    expect(sanitize.message).toHaveBeenCalledTimes(1);
+                    expect(sanitize.message).toHaveBeenCalledWith(jasmine.any(String));
                 });
 
                 it('should clean the signature', () => {
-                    const html = DOMPurify.sanitize.calls.argsFor(0)[0];
+                    const html = sanitize.message.calls.argsFor(0)[0];
                     expect(html).toMatch(/<div><br \/><\/div>/);
                     expect(html).not.toContain(noSignatures);
                     expect(html).not.toContain(noSignatureUser);
@@ -2560,7 +2479,7 @@ describe('signatureBuilder factory', () => {
                     };
                     userMock = { PMSignature: false };
                     spyOn(tools, 'replaceLineBreaks').and.callThrough();
-                    spyOn(DOMPurify, 'sanitize').and.callThrough();
+                    spyOn(sanitize, 'message').and.callThrough();
                     spyOn(message, 'getDecryptedBody').and.returnValue(MESSAGE_BODY);
                     string = factory.insert(message, { isAfter: true });
                 });
@@ -2576,15 +2495,12 @@ describe('signatureBuilder factory', () => {
                 });
 
                 it('should try to clean the signature', () => {
-                    expect(DOMPurify.sanitize).toHaveBeenCalledTimes(1);
-                    expect(DOMPurify.sanitize).toHaveBeenCalledWith(jasmine.any(String), {
-                        ADD_ATTR: ['target'],
-                        FORBID_TAGS: ['style', 'input', 'form']
-                    });
+                    expect(sanitize.message).toHaveBeenCalledTimes(1);
+                    expect(sanitize.message).toHaveBeenCalledWith(jasmine.any(String));
                 });
 
                 it('should clean the signature', () => {
-                    const html = DOMPurify.sanitize.calls.argsFor(0)[0];
+                    const html = sanitize.message.calls.argsFor(0)[0];
                     expect(html).toMatch(/<div><br \/><\/div>/);
                     expect(html).not.toContain(noSignatures);
                     expect(html).not.toContain(noSignatureUser);
@@ -2645,7 +2561,7 @@ describe('signatureBuilder factory', () => {
                     };
                     userMock = { PMSignature: true };
                     spyOn(tools, 'replaceLineBreaks').and.callThrough();
-                    spyOn(DOMPurify, 'sanitize').and.callThrough();
+                    spyOn(sanitize, 'message').and.callThrough();
                     spyOn(message, 'getDecryptedBody').and.returnValue(MESSAGE_BODY);
                     string = factory.insert(message, { action: 'forward' });
                 });
@@ -2661,15 +2577,12 @@ describe('signatureBuilder factory', () => {
                 });
 
                 it('should try to clean the signature', () => {
-                    expect(DOMPurify.sanitize).toHaveBeenCalledTimes(1);
-                    expect(DOMPurify.sanitize).toHaveBeenCalledWith(jasmine.any(String), {
-                        ADD_ATTR: ['target'],
-                        FORBID_TAGS: ['style', 'input', 'form']
-                    });
+                    expect(sanitize.message).toHaveBeenCalledTimes(1);
+                    expect(sanitize.message).toHaveBeenCalledWith(jasmine.any(String));
                 });
 
                 it('should clean the signature', () => {
-                    const html = DOMPurify.sanitize.calls.argsFor(0)[0];
+                    const html = sanitize.message.calls.argsFor(0)[0];
                     expect(html).toMatch(/<div><br \/><\/div>/);
                     expect(html).not.toContain(noSignatures);
                     expect(html).not.toContain(noSignatureUser);
@@ -2736,7 +2649,7 @@ describe('signatureBuilder factory', () => {
                     };
                     userMock = { PMSignature: true };
                     spyOn(tools, 'replaceLineBreaks').and.callThrough();
-                    spyOn(DOMPurify, 'sanitize').and.callThrough();
+                    spyOn(sanitize, 'message').and.callThrough();
                     spyOn(message, 'getDecryptedBody').and.returnValue(MESSAGE_BODY);
                     string = factory.insert(message, { isAfter: true });
                 });
@@ -2752,15 +2665,12 @@ describe('signatureBuilder factory', () => {
                 });
 
                 it('should try to clean the signature', () => {
-                    expect(DOMPurify.sanitize).toHaveBeenCalledTimes(1);
-                    expect(DOMPurify.sanitize).toHaveBeenCalledWith(jasmine.any(String), {
-                        ADD_ATTR: ['target'],
-                        FORBID_TAGS: ['style', 'input', 'form']
-                    });
+                    expect(sanitize.message).toHaveBeenCalledTimes(1);
+                    expect(sanitize.message).toHaveBeenCalledWith(jasmine.any(String));
                 });
 
                 it('should clean the signature', () => {
-                    const html = DOMPurify.sanitize.calls.argsFor(0)[0];
+                    const html = sanitize.message.calls.argsFor(0)[0];
                     expect(html).toMatch(/<div><br \/><\/div>/);
                     expect(html).not.toContain(noSignatures);
                     expect(html).not.toContain(noSignatureUser);
@@ -2825,7 +2735,7 @@ describe('signatureBuilder factory', () => {
                 message.From = {};
                 userMock = { PMSignature: false };
                 spyOn(tools, 'replaceLineBreaks').and.callThrough();
-                spyOn(DOMPurify, 'sanitize').and.callThrough();
+                spyOn(sanitize, 'message').and.callThrough();
                 spyOn(message, 'getDecryptedBody').and.returnValue(MESSAGE_BODY);
                 string = factory.update(message);
             });
@@ -2843,25 +2753,22 @@ describe('signatureBuilder factory', () => {
             });
 
             it('should try to clean the signature', () => {
-                expect(DOMPurify.sanitize).toHaveBeenCalledTimes(3);
-                expect(DOMPurify.sanitize).toHaveBeenCalledWith(jasmine.any(String), {
-                    ADD_ATTR: ['target'],
-                    FORBID_TAGS: ['style', 'input', 'form']
-                });
+                expect(sanitize.message).toHaveBeenCalledTimes(3);
+                expect(sanitize.message).toHaveBeenCalledWith(jasmine.any(String));
             });
 
             it('should clean the message first', () => {
-                const html = DOMPurify.sanitize.calls.argsFor(0)[0];
+                const html = sanitize.message.calls.argsFor(0)[0];
                 expect(html).toBe(MESSAGE_BODY);
             });
 
             it('should clean the user signature', () => {
-                const html = DOMPurify.sanitize.calls.argsFor(1)[0];
+                const html = sanitize.message.calls.argsFor(1)[0];
                 expect(html).toBe('');
             });
 
             it('should clean the new signature', () => {
-                const html = DOMPurify.sanitize.calls.argsFor(2)[0];
+                const html = sanitize.message.calls.argsFor(2)[0];
                 expect(html).toMatch(/<div><br \/><\/div>/);
                 expect(html).toContain(noSignatures);
                 expect(html).toContain(noSignatureUser);
@@ -2917,7 +2824,7 @@ describe('signatureBuilder factory', () => {
                 };
                 userMock = { PMSignature: false };
                 spyOn(tools, 'replaceLineBreaks').and.callThrough();
-                spyOn(DOMPurify, 'sanitize').and.callThrough();
+                spyOn(sanitize, 'message').and.callThrough();
                 spyOn(message, 'getDecryptedBody').and.returnValue(MESSAGE_BODY_UPDATE);
                 string = factory.update(message);
             });
@@ -2933,20 +2840,17 @@ describe('signatureBuilder factory', () => {
             });
 
             it('should try to clean the signature', () => {
-                expect(DOMPurify.sanitize).toHaveBeenCalledTimes(2);
-                expect(DOMPurify.sanitize).toHaveBeenCalledWith(jasmine.any(String), {
-                    ADD_ATTR: ['target'],
-                    FORBID_TAGS: ['style', 'input', 'form']
-                });
+                expect(sanitize.message).toHaveBeenCalledTimes(2);
+                expect(sanitize.message).toHaveBeenCalledWith(jasmine.any(String));
             });
 
             it('should clean the message first', () => {
-                const html = DOMPurify.sanitize.calls.argsFor(0)[0];
+                const html = sanitize.message.calls.argsFor(0)[0];
                 expect(html).toBe(MESSAGE_BODY_UPDATE);
             });
 
             it('should clean the user signature', () => {
-                const html = DOMPurify.sanitize.calls.argsFor(1)[0];
+                const html = sanitize.message.calls.argsFor(1)[0];
                 expect(html).toBe(USER_SIGNATURE);
             });
 
@@ -2977,7 +2881,7 @@ describe('signatureBuilder factory', () => {
                 message.From = {};
                 userMock = { PMSignature: false, Signature: USER_SIGNATURE };
                 spyOn(tools, 'replaceLineBreaks').and.callThrough();
-                spyOn(DOMPurify, 'sanitize').and.callThrough();
+                spyOn(sanitize, 'message').and.callThrough();
                 spyOn(message, 'getDecryptedBody').and.returnValue(MESSAGE_BODY_UPDATE);
                 string = factory.update(message);
             });
@@ -2993,20 +2897,17 @@ describe('signatureBuilder factory', () => {
             });
 
             it('should try to clean the signature', () => {
-                expect(DOMPurify.sanitize).toHaveBeenCalledTimes(2);
-                expect(DOMPurify.sanitize).toHaveBeenCalledWith(jasmine.any(String), {
-                    ADD_ATTR: ['target'],
-                    FORBID_TAGS: ['style', 'input', 'form']
-                });
+                expect(sanitize.message).toHaveBeenCalledTimes(2);
+                expect(sanitize.message).toHaveBeenCalledWith(jasmine.any(String));
             });
 
             it('should clean the message first', () => {
-                const html = DOMPurify.sanitize.calls.argsFor(0)[0];
+                const html = sanitize.message.calls.argsFor(0)[0];
                 expect(html).toBe(MESSAGE_BODY_UPDATE);
             });
 
             it('should clean the user signature', () => {
-                const html = DOMPurify.sanitize.calls.argsFor(1)[0];
+                const html = sanitize.message.calls.argsFor(1)[0];
                 expect(html).toBe(USER_SIGNATURE);
             });
 
@@ -3038,7 +2939,7 @@ describe('signatureBuilder factory', () => {
                 message.From = {};
                 userMock = { PMSignature: true, Signature: USER_SIGNATURE };
                 spyOn(tools, 'replaceLineBreaks').and.callThrough();
-                spyOn(DOMPurify, 'sanitize').and.callThrough();
+                spyOn(sanitize, 'message').and.callThrough();
                 spyOn(message, 'getDecryptedBody').and.returnValue(MESSAGE_BODY_UPDATE);
                 string = factory.update(message);
             });
@@ -3054,20 +2955,17 @@ describe('signatureBuilder factory', () => {
             });
 
             it('should try to clean the signature', () => {
-                expect(DOMPurify.sanitize).toHaveBeenCalledTimes(2);
-                expect(DOMPurify.sanitize).toHaveBeenCalledWith(jasmine.any(String), {
-                    ADD_ATTR: ['target'],
-                    FORBID_TAGS: ['style', 'input', 'form']
-                });
+                expect(sanitize.message).toHaveBeenCalledTimes(2);
+                expect(sanitize.message).toHaveBeenCalledWith(jasmine.any(String));
             });
 
             it('should clean the message first', () => {
-                const html = DOMPurify.sanitize.calls.argsFor(0)[0];
+                const html = sanitize.message.calls.argsFor(0)[0];
                 expect(html).toBe(MESSAGE_BODY_UPDATE);
             });
 
             it('should clean the user signature', () => {
-                const html = DOMPurify.sanitize.calls.argsFor(1)[0];
+                const html = sanitize.message.calls.argsFor(1)[0];
                 expect(html).toBe(USER_SIGNATURE);
             });
 
@@ -3099,7 +2997,7 @@ describe('signatureBuilder factory', () => {
                 message.From = {};
                 userMock = { PMSignature: true, Signature: USER_SIGNATURE2 };
                 spyOn(tools, 'replaceLineBreaks').and.callThrough();
-                spyOn(DOMPurify, 'sanitize').and.callThrough();
+                spyOn(sanitize, 'message').and.callThrough();
                 spyOn(message, 'getDecryptedBody').and.returnValue(MESSAGE_BODY_UPDATE);
                 string = factory.update(message);
             });
@@ -3115,20 +3013,17 @@ describe('signatureBuilder factory', () => {
             });
 
             it('should try to clean the signature', () => {
-                expect(DOMPurify.sanitize).toHaveBeenCalledTimes(2);
-                expect(DOMPurify.sanitize).toHaveBeenCalledWith(jasmine.any(String), {
-                    ADD_ATTR: ['target'],
-                    FORBID_TAGS: ['style', 'input', 'form']
-                });
+                expect(sanitize.message).toHaveBeenCalledTimes(2);
+                expect(sanitize.message).toHaveBeenCalledWith(jasmine.any(String));
             });
 
             it('should clean the message first', () => {
-                const html = DOMPurify.sanitize.calls.argsFor(0)[0];
+                const html = sanitize.message.calls.argsFor(0)[0];
                 expect(html).toBe(MESSAGE_BODY_UPDATE);
             });
 
             it('should clean the user signature', () => {
-                const html = DOMPurify.sanitize.calls.argsFor(1)[0];
+                const html = sanitize.message.calls.argsFor(1)[0];
                 expect(html).toBe(USER_SIGNATURE2);
             });
 
@@ -3161,7 +3056,7 @@ describe('signatureBuilder factory', () => {
                 message.From = {};
                 userMock = { PMSignature: true, Signature: USER_SIGNATURE2 };
                 spyOn(tools, 'replaceLineBreaks').and.callThrough();
-                spyOn(DOMPurify, 'sanitize').and.callThrough();
+                spyOn(sanitize, 'message').and.callThrough();
                 spyOn(message, 'getDecryptedBody').and.returnValue('');
                 string = factory.update(message, MESSAGE_BODY_UPDATE);
             });
@@ -3175,20 +3070,17 @@ describe('signatureBuilder factory', () => {
             });
 
             it('should try to clean the signature', () => {
-                expect(DOMPurify.sanitize).toHaveBeenCalledTimes(2);
-                expect(DOMPurify.sanitize).toHaveBeenCalledWith(jasmine.any(String), {
-                    ADD_ATTR: ['target'],
-                    FORBID_TAGS: ['style', 'input', 'form']
-                });
+                expect(sanitize.message).toHaveBeenCalledTimes(2);
+                expect(sanitize.message).toHaveBeenCalledWith(jasmine.any(String));
             });
 
             it('should clean the message first', () => {
-                const html = DOMPurify.sanitize.calls.argsFor(0)[0];
+                const html = sanitize.message.calls.argsFor(0)[0];
                 expect(html).toBe(MESSAGE_BODY_UPDATE);
             });
 
             it('should clean the user signature', () => {
-                const html = DOMPurify.sanitize.calls.argsFor(1)[0];
+                const html = sanitize.message.calls.argsFor(1)[0];
                 expect(html).toBe(USER_SIGNATURE2);
             });
 
