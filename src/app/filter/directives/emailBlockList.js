@@ -20,6 +20,12 @@ angular.module('proton.filter')
                 const filterNameNodes = elem[0].querySelectorAll('.email-block-list-name');
                 _.each(filterNameNodes, (node) => node.textContent = filterName);
 
+
+                const tbody = elem[0].querySelector('.block-list > table > tbody');
+                const row = tbody.querySelector('.block-list tr');
+                tbody.removeChild(row);
+
+
                 // const table = elem[0].querySelector('[data-email-block-list-entry]');
                 // table.dataset.switchTo = switchTo;
                 // table.dataset.listType = listType;
@@ -30,16 +36,42 @@ angular.module('proton.filter')
 
                     const list = spamListModel.getList(listType);
 
+                    let oldEntries = [];
+                    const renderList = () => {
+
+                        // update the table really quickly.
+
+                        // loop over each element. if not in new entries -> remove
+                        // otherwise advance
+                        //
+
+                        const html = _.map(_.difference(scope.entries, oldEntries),
+                            (entry) => `<tr>
+                        <td class="blocklist-email-value">${entry.Email}</td>
+                        <td class="text-right">
+                            <button class="pm_button link blocklist-email-switch" pt-tooltip-translate="Switch">
+                                <i class="fa fa-arrows-h"></i>
+                            </button>
+                            <button class="pm_button link blocklist-email-delete" pt-tooltip-translate="Delete">
+                                <i class="fa fa-times text-red"></i>
+                            </button>
+                        </td>
+                    </tr>`).join('');
+
+                        tbody.insertAdjacentHTML('beforeend', html);
+                        oldEntries = scope.entries.slice();
+                    };
                     // we need to use the scope here because of ng-repeat.
                     scope.entries = list.getEntries();
+
+                    renderList();
 
                     $rootScope.$on('filter', (event, { type, data = {} }) => {
                         if (type === 'spamlist.update' && listType === data.name) {
                             scope.entries = data.entries;
+                            renderList();
                         }
                     });
-
-                    const tbody = elem[0].querySelector('.block-list > table > tbody');
 
                     const onScroll = _.throttle(() => {
 
