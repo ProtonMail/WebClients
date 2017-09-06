@@ -7,12 +7,14 @@ module.exports = (config) => {
 
         // list of files / patterns to load in the browser
         files: [
+            'mock.js',
             '../build/vendor/angular.js',
             '../build/vendor/jquery.js',
             '../build/vendor/codemirror.js',
             '../build/vendor/moment-with-locales.js',
             '../src/libraries/*.js',
             '../build/vendor/*.js',
+            '../build/vendor/pmcrypto.js',
             '../node_modules/angular-mocks/angular-mocks.js',
             '../src/app/config.js',
             '../src/app/constants.js',
@@ -31,7 +33,6 @@ module.exports = (config) => {
             '../src/app/templates/**/*.html': ['ng-html2js'],
             '../src/app/**/**/*.js': ['babel'],
             '../src/app/**/*.js': ['babel'],
-            '../src/libraries/pmcrypto.js': ['babel'],
             'specs/**/*.js': ['babel']
         },
 

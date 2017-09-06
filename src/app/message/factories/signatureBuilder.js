@@ -110,8 +110,7 @@ angular.module('proton.message')
         function update(message = { getDecryptedBody: angular.noop }, body = '') {
 
             const { From = {} } = message;
-            const content = !From.Signature ? authentication.user.Signature : From.Signature;
-
+            const content = (!From.Signature ? authentication.user.Signature : From.Signature) || '';
             const [ dom ] = $.parseHTML(`<div>${sanitize.message(body || message.getDecryptedBody())}</div>`) || [];
             const [ userSignature ] = $.parseHTML(`<div>${sanitize.message(content)}</div>`) || [];
 
