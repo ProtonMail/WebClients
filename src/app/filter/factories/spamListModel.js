@@ -3,7 +3,7 @@ angular.module('proton.filter')
 
         const dispatch = (type, data) => $rootScope.$emit('filter', { type, data });
 
-        const PAGE_SIZE = 250;
+        const PAGE_SIZE = 100;
 
         const EMAIL_LISTS = {
         };
@@ -124,7 +124,7 @@ angular.module('proton.filter')
                 listData.endReached = list.length !== amountRequested;
                 listData.nextElement = list[amountRequested - 1] || null;
 
-                listData.entries = listData.entries.concat(list.slice(0, amountNeeded));
+                listData.entries.push(...list.slice(0, amountNeeded));
             };
 
             const hasMoreData = () => {
@@ -136,17 +136,17 @@ angular.module('proton.filter')
             };
 
             const fetchMoreData = async () => {
-                await ensureList(listData.q, listData.entries.length + PAGE_SIZE);
+                await ensureList(listData.q, listData.entries.length === 0 ? 2.5 * PAGE_SIZE : listData.entries.length + PAGE_SIZE);
 
                 triggerUpdateList(type);
-                return angular.copy(listData.entries);
+                return listData.entries;
             };
 
             const search = async (search) => {
                 await ensureList(search, PAGE_SIZE);
 
                 triggerUpdateList(type);
-                return angular.copy(listData.entries);
+                return listData.entries;
             };
 
             const reload = async () => {
@@ -157,11 +157,11 @@ angular.module('proton.filter')
                 await ensureList(null, PAGE_SIZE);
 
                 triggerUpdateList(type);
-                return angular.copy(listData.entries);
+                return listData.entries;
             };
 
             const getEntries = () => {
-                return angular.copy(listData.entries);
+                return listData.entries;
             };
 
             const add = async (email) => {
