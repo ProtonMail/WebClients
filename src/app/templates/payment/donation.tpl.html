@@ -86,6 +86,7 @@
     <div class="donateModal-choose-errors" ng-messages="donationForm.otherAmount.$error">
         <p ng-message="number" class="text-red" translate-context="Error" translate>Invalid number</p>
         <p ng-message="min" class="text-red" translate-context="Error" translate>Due to credit card processing fees, we cannot accept donations smaller than 2.</p>
+        <p ng-message="max" class="text-red" translate-context="Error" translate>Thank you for your willingness to donate. The maximum we can accept in single donations is 99 999 999 at this moment. Thank you</p>
     </div>
 
     <div>
@@ -98,7 +99,6 @@
             <i class="fa fa-angle-down"></i>
         </div>
     </div>
-
     <p
         ng-if="model.method.value === 'cash'"
         class="donationForm-about-cash alert alert-info"
@@ -112,7 +112,7 @@
         data-form="donationForm"></card-view>
 
     <paypal-view
-        ng-if="model.method.value === 'paypal'"
+        ng-if="model.method.value === 'paypal' && !donationForm.otherAmount.$error.max"
         data-amount="getAmount()"
         data-currency="model.currency.value"
         data-callback="paypalCallback"></paypal-view>
