@@ -1,8 +1,5 @@
 #!/usr/bin/env sh
 set -eu
 
-IMAGE=$(cat bin/npm.Dockerfile | docker build --quiet -)
-
 if [ "${1-}" != 'bash' -a "${1-}" != 'node' ]; then CMD="npm $@"; else CMD="$@"; fi
-
-./bin/crun "$IMAGE" $CMD
+./bin/crun-node $CMD

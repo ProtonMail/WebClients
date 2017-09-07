@@ -3,9 +3,6 @@
 
 all: install test
 
-npm-image:
-	cat bin/npm.Dockerfile | docker build -
-
 npm-install:
 	./bin/npm install --loglevel warn --no-progress
 
@@ -29,6 +26,7 @@ versions:
 	bash --version
 	docker version
 	docker info
+	./bin/npm version
 
 circle.dependencies: versions npm-image install
 circle.test: test
