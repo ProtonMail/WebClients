@@ -1,0 +1,3 @@
+.emailBlockList-row { pointer-events: none }
+[class*="emailBlockList-btn"] { pointer-events: all }
+[class*="emailBlockList-btn"] * { pointer-events: none }
