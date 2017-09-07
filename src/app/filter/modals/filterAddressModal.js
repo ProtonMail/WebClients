@@ -1,5 +1,5 @@
 angular.module('proton.filter')
-    .factory('filterAddressModal', (pmModal) => {
+    .factory('filterAddressModal', (pmModal, spamListModel) => {
 
         return pmModal({
             controllerAs: 'ctrl',
@@ -8,9 +8,10 @@ angular.module('proton.filter')
 
                 this.filter = { Email: '' };
                 this.cancel = params.close;
-                this.list = params.list;
+                this.type = params.type;
                 this.create = () => {
-                    params.add(this.filter.Email);
+                    spamListModel.add(this.filter.Email, params.type);
+                    params.close();
                 };
 
                 setTimeout(() => {
