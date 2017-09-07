@@ -10,7 +10,7 @@ angular.module('proton.filter')
                 this.cancel = params.close;
                 this.type = params.type;
                 this.create = () => {
-                    spamListModel.add(this.filter.Email, params.type);
+                    spamListModel.add(this.filter.Email, spamListModel.getType(params.type));
                     params.close();
                 };
 

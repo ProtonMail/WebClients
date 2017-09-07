@@ -25,7 +25,9 @@ angular.module('proton.filter')
             const promise = IncomingDefault.update({ ID, Location })
                 .then(({ data = {} }) => {
                     if (data.Error) {
-                        throw new Error(data.Error);
+                        const error = new Error(data.Error);
+                        error.Code = data.Code;
+                        throw error;
                     }
                     notifySuccess(I18N.UPDATE_SUCCESS);
                     return data.IncomingDefault;
@@ -47,8 +49,8 @@ angular.module('proton.filter')
             return promise;
         };
 
-        const create = (Email, Location) => {
-            const promise = IncomingDefault.add({ Email, Location })
+        const create = (params) => {
+            const promise = IncomingDefault.add(params)
                 .then(({ data = {} }) => {
                     if (data.Error) {
                         throw new Error(data.Error);

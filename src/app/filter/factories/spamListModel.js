@@ -7,23 +7,40 @@ angular.module('proton.filter')
         const PAGE_SIZE = 100;
 
         const CACHE = {
+            MAP: Object.create(null),
             [`${BLACKLIST_TYPE}_TO`]: 0,
             [`${WHITELIST_TYPE}_TO`]: 0,
             [BLACKLIST_TYPE]: [],
             [WHITELIST_TYPE]: []
         };
 
-        const getTypeID = (type) => (type === 'whitelist' ? WHITELIST_TYPE : BLACKLIST_TYPE);
         const dispatch = (type, data = {}) => $rootScope.$emit('filters', { type, data });
+        const getType = (type) => (type === 'whitelist' ? WHITELIST_TYPE : BLACKLIST_TYPE);
 
-        const getIndex = (type) => `${getTypeID(type)}_TO`;
-        const extendIndex = (type, value) => CACHE[`${getTypeID(type)}_TO`] += value;
+        const getKey = (type, suffix) => `${type}.${suffix}`;
+        const getIndex = (type) => getKey(type, 'TO');
+        const getEndingKey = (type) => getKey(type, 'ending');
+        const extendIndex = (type, value) => CACHE[getIndex(type)] += value;
+        const setLoader = (type, value) => (CACHE[getKey(type, 'loading')] = value);
+
         const resetIndex = (type) => {
             if (type) {
-                return (CACHE[type || getIndex(type)] = 0);
+                if (CACHE[getEndingKey(WHITELIST_TYPE)]) {
+                    CACHE[getIndex(WHITELIST_TYPE)] = 0;
+                    CACHE[getEndingKey(WHITELIST_TYPE)] = false;
+                }
+
+                if (CACHE[getEndingKey(BLACKLIST_TYPE)]) {
+                    CACHE[getIndex(BLACKLIST_TYPE)] = 0;
+                    CACHE[getEndingKey(BLACKLIST_TYPE)] = false;
+                }
+
+                return (CACHE[getIndex(type)] = 0);
             }
-            CACHE[getIndex('whitelist')] = 0;
-            CACHE[getIndex('blacklistl')] = 0;
+            CACHE[getIndex(WHITELIST_TYPE)] = 0;
+            CACHE[getIndex(BLACKLIST_TYPE)] = 0;
+            CACHE[getEndingKey(WHITELIST_TYPE)] = false;
+            CACHE[getEndingKey(BLACKLIST_TYPE)] = false;
         };
 
         /**
@@ -33,16 +50,19 @@ angular.module('proton.filter')
          */
         const loadList = async (params) => {
             const list = await incomingModel.get(params);
-            CACHE[params.Location] = list;
+            !CACHE[getEndingKey(params.Location)] && (CACHE[params.Location] = list);
             return list;
         };
 
         /**
          * Update the cache MAP
          */
-        const updateCache = () => {
-            CACHE.MAP = CACHE[BLACKLIST_TYPE].concat(CACHE[WHITELIST_TYPE])
+        const updateCache = (reset) => {
+            reset && (CACHE.MAP = Object.create(null));
+
+            const map = CACHE[BLACKLIST_TYPE].concat(CACHE[WHITELIST_TYPE])
                 .reduce((acc, item) => (acc[item.ID] = item, acc), Object.create(null));
+            _.extend(CACHE.MAP, map);
         };
 
         /**
@@ -51,14 +71,18 @@ angular.module('proton.filter')
          * @return {void}
          */
         const load = async (params = {}, noEvent) => {
-            CACHE.isLoading = true;
             const config = { Start: 0, Amount: PAGE_SIZE };
+
+            setLoader(WHITELIST_TYPE, true);
+            setLoader(BLACKLIST_TYPE, true);
+
             await Promise.all([
                 loadList(_.extend({ Location: BLACKLIST_TYPE }, config, params)),
                 loadList(_.extend({ Location: WHITELIST_TYPE }, config, params))
             ]);
 
-            CACHE.isLoading = false;
+            setLoader(WHITELIST_TYPE, false);
+            setLoader(BLACKLIST_TYPE, false);
             updateCache();
             !noEvent && resetIndex();
             !noEvent && dispatch('change', { type: 'load' });
@@ -73,26 +97,27 @@ angular.module('proton.filter')
          * @param  {Integer} length Size of the list you want to load
          * @return {Array}
          */
-        const getList = async (type = 'whitelist', length = PAGE_SIZE) => {
+        const getList = async (type = WHITELIST_TYPE, length = PAGE_SIZE) => {
             const indexFrom = CACHE[getIndex(type)];
             extendIndex(type, length);
-            CACHE.isLoading = true;
+            setLoader(type, true);
 
             if (indexFrom === 0) {
-                CACHE.isLoading = false;
-                return angular.copy(CACHE[getTypeID(type)]);
+                setLoader(type, false);
+                CACHE[getEndingKey(type)] = CACHE[type].length < PAGE_SIZE;
+                return angular.copy(CACHE[type]);
             }
 
             const list = await loadList({
-                Location: getTypeID(type),
+                Location: type,
                 Start: indexFrom,
                 Search: CACHE.query,
                 Amount: length
             });
 
             updateCache();
-            CACHE.isLoading = false;
-            CACHE.isEnding = list.length < PAGE_SIZE;
+            setLoader(type, false);
+            CACHE[getEndingKey(type)] = list.length < PAGE_SIZE;
             return list;
         };
 
@@ -112,19 +137,26 @@ angular.module('proton.filter')
          * Move an item from a list to another and update its ref inside the map
          * If search context, we update the search to match the new item
          * @param  {String} id   Id of the email to move
-         * @param  {String} type Type of list
+         * @param  {String} location Type of list
          * @return {void}
          */
-        const move = async (id, type) => {
-            const location = getTypeID(type);
-            const data = await incomingModel.update(id, location);
-            const item = CACHE.MAP[id];
-            const index = _.findIndex(CACHE[item.Location], (o) => o.ID === item.ID);
-            CACHE[item.Location].splice(index, 1);
-            CACHE[location].unshift(data);
-            CACHE.MAP[item.ID] = data;
-            resetIndex();
-            refresh();
+        const move = async (id, location) => {
+            try {
+                const data = await incomingModel.update(id, location);
+                const item = CACHE.MAP[id];
+                const index = _.findIndex(CACHE[item.Location], (o) => o.ID === item.ID);
+                CACHE[item.Location].splice(index, 1);
+                CACHE[location].unshift(data);
+                CACHE.MAP[item.ID] = data;
+                resetIndex();
+                refresh();
+            } catch (e) {
+                // Trying to move an item already deleted -> refresh the list
+                if (e.Code === 35023) {
+                    delete CACHE.MAP[id];
+                    load({ Search: CACHE.query });
+                }
+            }
         };
 
         /**
@@ -147,13 +179,13 @@ angular.module('proton.filter')
          * Add an item from the list by adding its ref to the cache
          * Update the search too if we need to
          * @param  {String} Email
-         * @param  {String} type Type of list
+         * @param  {String} Location Type of list
          * @return {void}
          */
-        const add = async (Email, type) => {
-            const item = await incomingModel.create({ Email, Location: getTypeID(type) });
-            CACHE[item.Location].unshift(item.IncomingDefault);
-            CACHE.MAP[item.ID] = item.IncomingDefault;
+        const add = async (Email, location) => {
+            const item = await incomingModel.create({ Email, Location: location });
+            CACHE[item.Location].unshift(item);
+            CACHE.MAP[item.ID] = item;
             resetIndex(item.Location);
             refresh();
         };
@@ -168,9 +200,9 @@ angular.module('proton.filter')
             dispatch('change', { type: 'refresh' });
         }
 
-        const isLoading = () => !!CACHE.isLoading;
-        const isEnding = () => !!CACHE.isEnding;
+        const isLoading = (type) => !!CACHE[getKey(type, 'loading')];
+        const isEnding = (type) => !!CACHE[getEndingKey(type)];
 
-        return { load, search, getList, move, destroy, isLoading, isEnding, add };
+        return { load, search, getList, move, destroy, isLoading, isEnding, add, getType };
 
     });
