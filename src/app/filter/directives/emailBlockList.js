@@ -49,7 +49,7 @@ angular.module('proton.filter')
                             scope.$applyAsync(() => {
                                 scope.entries = data.entries;
 
-                                $('.tooltip').not(this).hide();
+                                $('.tooltip').hide();
                             });
                         }
                     }));
