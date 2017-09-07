@@ -35,6 +35,17 @@ angular.module('proton.filter')
             CACHE[getIndex('blacklistl')] = 0;
         };
 
+        const loadList = async (Location, Start, Amount) => {
+            const list = await incomingModel.get({ Location, Start, Amount });
+            CACHE[Location] = list;
+            return list;
+        };
+
+        const updateCache = () => {
+            CACHE.MAP = CACHE[BLACKLIST_TYPE].concat(CACHE[WHITELIST_TYPE])
+                .reduce((acc, item) => (acc[item.ID] = item, acc), Object.create(null));
+        };
+
         /**
          * Load Incoming filters and format a CACHE object by type
          * via references and a map.
@@ -42,17 +53,13 @@ angular.module('proton.filter')
          */
         const load = async () => {
             CACHE.isLoading = true;
-            const list = await incomingModel.get();
-            const data = _.chain(list)
-                .sortBy('Time')
-                .reduce((acc, email) => (acc[email.Location].push(email), acc), CACHE)
-                .value();
+            await Promise.all([
+                loadList(BLACKLIST_TYPE, 0, PAGE_SIZE),
+                loadList(WHITELIST_TYPE, 0, PAGE_SIZE)
+            ]);
 
             CACHE.isLoading = false;
-            data[BLACKLIST_TYPE].reverse();
-            data[WHITELIST_TYPE].reverse();
-            CACHE.MAP = data[BLACKLIST_TYPE].concat(data[WHITELIST_TYPE])
-                .reduce((acc, item) => (acc[item.ID] = item, acc), Object.create(null));
+            updateCache();
             resetIndex();
             dispatch('change', { type: 'load' });
         };
@@ -66,10 +73,20 @@ angular.module('proton.filter')
          * @param  {Integer} length Size of the list you want to load
          * @return {Array}
          */
-        const getList = (type = 'whitelist', length = PAGE_SIZE) => {
+        const getList = async (type = 'whitelist', length = PAGE_SIZE) => {
             const indexFrom = CACHE[getIndex(type)];
-            extendIndex(type, length);
-            return angular.copy(getCache(type).slice(indexFrom, CACHE[getIndex(type)]));
+            extendIndex(type, !indexFrom ? length + 1 : length);
+            CACHE.isLoading = true;
+
+            if (indexFrom === 0) {
+                CACHE.isLoading = false;
+                return angular.copy(getCache(type).slice(indexFrom, CACHE[getIndex(type)]));
+            }
+
+            const list = await loadList(getTypeID(type), indexFrom, length);
+            updateCache();
+            CACHE.isLoading = false;
+            return list;
         };
 
         /**

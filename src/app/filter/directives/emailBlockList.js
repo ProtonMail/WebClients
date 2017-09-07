@@ -29,7 +29,11 @@ angular.module('proton.filter')
                 const unsubscribe = [];
                 const tbody = elem[0].querySelector(`.${CLASSNAMES.LIST}`);
 
-                scope.entries = spamListModel.getList(scope.listType);
+                spamListModel.getList(scope.listType)
+                    .then((list) => {
+                        scope.$applyAsync(() => scope.entries = list);
+                    });
+
 
                 unsubscribe.push($rootScope.$on('filters', () => {
                     scope.$applyAsync(() => {
@@ -50,9 +54,12 @@ angular.module('proton.filter')
 
                     // check if we have reached the last TRIGGER_BOUNDARY elements
                     if (scrollBottom / tbody.scrollHeight > triggerFetch / elementCount) {
-                        scope.$applyAsync(() => {
-                            scope.entries = scope.entries.concat(spamListModel.getList(scope.listType));
-                        });
+                        spamListModel.getList(scope.listType)
+                            .then((list) => {
+                                scope.$applyAsync(() => {
+                                    scope.entries = scope.entries.concat(list);
+                                });
+                            });
                     }
 
                 }, SCROLL_THROTTLE);
