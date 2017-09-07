@@ -22,9 +22,7 @@ if ! docker inspect --format="{{.Id}}" $image > /dev/null; then
   docker pull $image
 fi
 
-pushd $(dirname "${BASH_SOURCE[0]}")/.. > /dev/null
-REPO_ROOT=$(pwd -P)
-popd > /dev/null
+REPO_ROOT=$(cd "$(dirname "${BASH_SOURCE[0]}")"/.. && pwd)
 
 CONTAINER_HOME=$REPO_ROOT
 STANDARD_PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
