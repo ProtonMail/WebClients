@@ -92,6 +92,7 @@ angular.module('proton.filter')
 
             updateCache();
             CACHE.isLoading = false;
+            CACHE.isEnding = list.length < PAGE_SIZE;
             return list;
         };
 
@@ -168,7 +169,8 @@ angular.module('proton.filter')
         }
 
         const isLoading = () => !!CACHE.isLoading;
+        const isEnding = () => !!CACHE.isEnding;
 
-        return { load, search, getList, move, destroy, isLoading, add };
+        return { load, search, getList, move, destroy, isLoading, isEnding, add };
 
     });

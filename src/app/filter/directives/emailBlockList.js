@@ -47,7 +47,7 @@ angular.module('proton.filter')
 
 
                 const onScroll = _.throttle(() => {
-                    if (spamListModel.isLoading()) {
+                    if (spamListModel.isLoading() || spamListModel.isEnding()) {
                         return;
                     }
 
