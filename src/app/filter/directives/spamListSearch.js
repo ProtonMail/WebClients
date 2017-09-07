@@ -3,31 +3,23 @@ angular.module('proton.filter')
 
         const DEBOUNCE_TIME = 500;
 
-        const onEvent = (element, type, callback) => {
-            element.addEventListener(type, callback);
-            return () => element.removeEventListener(type, callback);
-        };
-
         return {
             replace: true,
             restrict: 'E',
             templateUrl: 'templates/filter/spamListSearch.tpl.html',
             scope: {},
-            link(scope, elem) {
+            link(scope, el) {
 
-                const input = elem[0].querySelector('input');
+                const $input = el.find('input');
 
-                const unsubscribe = [];
+                const onInput = _.debounce(({ target }) => {
+                    spamListModel.search(target.value.trim());
+                }, DEBOUNCE_TIME);
 
-                const lists = spamListModel.getLists();
-
-                const onInput = () => _.each(lists, (list) => list.search(input.value.trim() || null));
-
-                unsubscribe.push(onEvent(input, 'input', _.debounce(onInput, DEBOUNCE_TIME)));
+                $input.on('input', onInput);
 
                 scope.$on('$destroy', () => {
-                    _.each(unsubscribe, (cb) => cb());
-                    unsubscribe.length = 0;
+                    $input.off('input', onInput);
                 });
             }
         };

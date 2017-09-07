@@ -1,208 +1,165 @@
 angular.module('proton.filter')
-    .factory('spamListModel', ($q, $rootScope, CONSTANTS, notify, gettextCatalog, IncomingDefault, filterLanguage) => {
+    .factory('spamListModel', ($q, $rootScope, CONSTANTS, incomingModel) => {
 
-        const dispatch = (type, data) => $rootScope.$emit('filter', { type, data });
-
+        const { MAILBOX_IDENTIFIERS } = CONSTANTS;
+        const BLACKLIST_TYPE = +MAILBOX_IDENTIFIERS.spam;
+        const WHITELIST_TYPE = +MAILBOX_IDENTIFIERS.inbox;
         const PAGE_SIZE = 100;
 
-        const EMAIL_LISTS = { };
+        const CACHE = {
+            [`${BLACKLIST_TYPE}_TO`]: 0,
+            [`${WHITELIST_TYPE}_TO`]: 0,
+            [`${WHITELIST_TYPE}.search`]: [],
+            [`${WHITELIST_TYPE}.search`]: [],
+            [BLACKLIST_TYPE]: [],
+            [WHITELIST_TYPE]: []
+        };
 
-        const triggerUpdateList = (type) => dispatch('spamlist.update',
-            {
-                name: EMAIL_LISTS[type].name,
-                entries: angular.copy(EMAIL_LISTS[type].entries)
-            });
+        const getTypeID = (type) => (type === 'whitelist' ? WHITELIST_TYPE : BLACKLIST_TYPE);
+        const dispatch = (type, data = {}) => $rootScope.$emit('filters', { type, data });
 
-        const triggerAppendList = (type, appended) => dispatch('spamlist.update',
-            {
-                name: EMAIL_LISTS[type].name,
-                entries: angular.copy(EMAIL_LISTS[type].entries),
-                appended: angular.copy(appended)
-            });
+        /**
+         * Get type of cache based on the context
+         * @param  {String} type
+         * @return {Array}
+         */
+        const getCache = (type) => (!CACHE.query ? CACHE[getTypeID(type)] : CACHE[`${getTypeID(type)}.search`]);
 
-        const requestAndNotify = (request, successMessage) => request.then((result) => {
-            const { data } = result;
-            if (data.Error) {
-                notify({ message: data.Error, classes: 'notification-danger' });
-                throw new Error(data.Error);
+        const getIndex = (type) => `${getTypeID(type)}_TO`;
+        const extendIndex = (type, value) => CACHE[`${getTypeID(type)}_TO`] += value;
+        const resetIndex = (type) => {
+            if (type) {
+                return (CACHE[type || getIndex(type)] = 0);
             }
-
-            notify({ message: successMessage, classes: 'notification-success' });
-
-            return result;
-        });
-
-        // returns the modified lists
-        const deleteInternal = (id) => {
-            const result = _.keys(EMAIL_LISTS).filter((type) => _.findWhere(EMAIL_LISTS[type].entries, { ID: id }));
-            // This works as of https://github.com/jashkenas/underscore/pull/1582
-            _.each(EMAIL_LISTS, (list) => list.entries = _.reject(list.entries, { ID: id }));
-            return result;
+            CACHE[getIndex('whitelist')] = 0;
+            CACHE[getIndex('blacklistl')] = 0;
         };
 
-        const deleteEntry = async (id) => {
+        /**
+         * Load Incoming filters and format a CACHE object by type
+         * via references and a map.
+         * @return {void}
+         */
+        const load = async () => {
+            CACHE.isLoading = true;
+            const list = await incomingModel.get();
+            const data = _.chain(list)
+                .sortBy('Time')
+                .reduce((acc, email) => (acc[email.Location].push(email), acc), CACHE)
+                .value();
 
-            await requestAndNotify(IncomingDefault.delete({ IDs: [id] }),
-                gettextCatalog.getString('Spam Filter Deleted', null, 'Incoming Defaults'));
-
-            // Matching types
-            const modifiedLists = deleteInternal(id);
-
-            _.each(modifiedLists, triggerUpdateList);
+            CACHE.isLoading = false;
+            data[BLACKLIST_TYPE].reverse();
+            data[WHITELIST_TYPE].reverse();
+            CACHE.MAP = data[BLACKLIST_TYPE].concat(data[WHITELIST_TYPE])
+                .reduce((acc, item) => (acc[item.ID] = item, acc), Object.create(null));
+            resetIndex();
+            dispatch('change', { type: 'load' });
         };
 
-        const constructList = (type, location) => {
-
-            const listData = {
-                name: type,
-                q: null,
-                entries: [],
-                nextElement: null,
-                endReached: false,
-                isFetchingData: false,
-                object: {}
-            };
-
-            const matchesQuery = ({ Email }) => listData.q === null || Email.includes(listData.q);
-
-            const fetchEntries = async (start, amountRequested) => {
-                try {
-                    listData.isFetchingData = true;
-
-                    const { data = {} } = await IncomingDefault.get();
-
-                    if (!data.Error) {
-                        // This will be done on the back end
-                        const baseList = _.sortBy(_.where(data.IncomingDefaults, { Location: location }), 'Time').reverse();
-                        const filteredList = baseList.filter(matchesQuery);
-                        // End things that should be done on the back end
-                        data.IncomingDefaults = filteredList.slice(start, start + amountRequested);
-                        return data;
-                    }
-
-                    return data;
-                } finally {
-                    listData.isFetchingData = false;
-                }
-            };
-
-            const ensureList = async (search, amount) => {
-
-                const isAppend = listData.q === search;
-                if (!isAppend) {
-                    Object.assign(listData, { q: search, entries: [], endReached: false });
-                }
-
-                if (listData.entries.length > amount || listData.endReached) {
-                    return [];
-                }
-
-                const start = listData.entries.length;
-                const amountNeeded = amount - listData.entries.length;
-                /*
-                 * Always request one extra, which we discard: if this one is present we know that there is more than amount
-                 * We discard it so you don't scroll down, load and then don't load anything extra
-                 */
-                const amountRequested = amountNeeded + 1;
-
-                const data = await fetchEntries(start, amountRequested);
-
-                if (data.Error) {
-                    throw new Error(data.Error || 'Error in getEntries');
-                }
-
-                const list = data.IncomingDefaults;
-
-                listData.endReached = list.length !== amountRequested;
-                listData.nextElement = list[amountRequested - 1] || null;
-                const appended = list.slice(0, amountNeeded);
-
-                listData.entries.push(...appended);
-
-                return appended;
-            };
-
-            const triggerAppend = _.partial(triggerAppendList, type);
-
-            const triggerUpdate = _.partial(triggerUpdateList, type);
-
-            const hasMoreData = () => !listData.endReached;
-
-            const isFetchingData = () => listData.isFetchingData;
-
-            const getEntries = () => angular.copy(listData.entries);
-
-            const fetchMoreData = () => ensureList(listData.q, listData.entries.length + PAGE_SIZE).then(triggerAppend);
-
-            const search = (search) => ensureList(search, PAGE_SIZE).then(triggerUpdate);
-
-            const reload = () => {
-                // discard all data:
-                Object.assign(listData, { q: null, entries: [], endReached: false });
-
-                // load data
-                return ensureList(null, PAGE_SIZE).then(triggerUpdate);
-            };
-
-
-            const add = async (email) => {
-
-                const request = IncomingDefault.add({ Email: email, Location: location });
-
-                const { data = {} } = await requestAndNotify(request, filterLanguage.BLOCK_FILTER_ADDED);
-
-                // Emails are always added the start of the email list
-                if (matchesQuery(data.IncomingDefault)) {
-                    listData.entries.unshift(data.IncomingDefault);
-                }
-
-                triggerUpdateList(type);
-            };
-
-
-            const adopt = async (id) => {
-
-                // Find modified locations
-                const types = _.keys(EMAIL_LISTS).filter((type) => _.findWhere(EMAIL_LISTS[type].entries, { ID: id }));
-                types.push(type);
-
-                const request = IncomingDefault.update({ ID: id, Location: location });
-
-                const { data = {} } = await requestAndNotify(request, filterLanguage.BLOCK_FILTER_UPDATED);
-
-                // We need to update our internally state without re-requesting the complete list
-                const entry = data.IncomingDefault;
-
-                const modifiedLists = deleteInternal(id);
-                modifiedLists.push(type);
-
-                // Entries always are sorted on modified time, so this one will be at the start of the list
-                listData.entries.unshift(entry);
-
-                // Trigger the required events
-                _.each(types, triggerUpdateList);
-            };
-
-
-            Object.assign(listData.object, {
-                reload, getEntries, add,
-                adopt, fetchMoreData, hasMoreData,
-                isFetchingData, search, matchesQuery
-            });
-
-            return listData;
+        /**
+         * Get list of items based on
+         *     - Current context (search or not)
+         *     - Pagination (next call will get next items)
+         * @todo  Use a Promise as output to be able to load data from the API instead of the cache
+         * @param  {String} type   Type of list (black|white)list
+         * @param  {Integer} length Size of the list you want to load
+         * @return {Array}
+         */
+        const getList = (type = 'whitelist', length = PAGE_SIZE) => {
+            const indexFrom = CACHE[getIndex(type)];
+            extendIndex(type, length);
+            return angular.copy(getCache(type).slice(indexFrom, CACHE[getIndex(type)]));
         };
 
-        const getList = (type) => EMAIL_LISTS[type].object;
+        /**
+         * Build the search list cache
+         * Flush the cache if we don't are in a search context
+         * @param  {String} type type of list
+         * @return {void}
+         */
+        const buildSearch = (type) => {
+            if (!CACHE.query) {
+                return (CACHE[`${type}.search`].length = 0);
+            }
+            CACHE[`${type}.search`] = _.filter(CACHE[type], ({ Email }) => Email.includes(CACHE.query));
+        };
 
-        const getLists = () => _.pluck(_.values(EMAIL_LISTS), 'object');
+        /**
+         * Perform the search and reset previous index
+         * @param  {String} query
+         * @return {void}
+         */
+        const search = (query) => {
+            CACHE.query = query;
+            resetIndex();
+            buildSearch(BLACKLIST_TYPE);
+            buildSearch(WHITELIST_TYPE);
+            dispatch('search');
+        };
 
-        const reload = () => $q.all(_.map(getLists(), (list) => list.reload()));
+        /**
+         * Move an item from a list to another and update its ref inside the map
+         * If search context, we update the search to match the new item
+         * @param  {String} id   Id of the email to move
+         * @param  {String} type Type of list
+         * @return {void}
+         */
+        const move = async (id, type) => {
+            const location = getTypeID(type);
+            const data = await incomingModel.update(id, location);
+            const item = CACHE.MAP[id];
+            const index = _.findIndex(CACHE[item.Location], (o) => o.ID === item.ID);
+            CACHE[item.Location].splice(index, 1);
+            CACHE[location].unshift(data);
+            CACHE.MAP[item.ID] = data;
+            resetIndex();
+            refresh();
+        };
 
-        Object.assign(EMAIL_LISTS, {
-            blacklist: constructList('blacklist', Number(CONSTANTS.MAILBOX_IDENTIFIERS.spam)),
-            whitelist: constructList('whitelist', Number(CONSTANTS.MAILBOX_IDENTIFIERS.inbox))
-        });
+        /**
+         * Remove an tem from the list and remove its reference from the cache
+         * Update the search too if we need to
+         * @param  {String} id Email item id
+         * @return {void}
+         */
+        const destroy = async (id) => {
+            await incomingModel.remove(id);
+            const item = CACHE.MAP[id];
+            const index = _.findIndex(CACHE[item.Location], (o) => o.ID === item.ID);
+            CACHE[item.Location].splice(index, 1);
+            delete CACHE.MAP[id];
+            resetIndex(item.Location);
+            refresh();
+        };
 
-        return { init: angular.noop, getList, getLists, deleteEntry, reload };
+        /**
+         * Add an item from the list by adding its ref to the cache
+         * Update the search too if we need to
+         * @param  {String} Email
+         * @param  {String} type Type of list
+         * @return {void}
+         */
+        const add = async (Email, type) => {
+            const item = await incomingModel.create({ Email, Location: getTypeID(type) });
+            CACHE[item.Location].unshift(item.IncomingDefault);
+            CACHE.MAP[item.ID] = item.IncomingDefault;
+            resetIndex(item.Location);
+            refresh();
+        };
+
+        /**
+         * Refresh the UI
+         */
+        function refresh() {
+            if (CACHE.query) {
+                return search(CACHE.query);
+            }
+            dispatch('change', { type: 'refresh' });
+        }
+
+        const isLoading = () => !!CACHE.isLoading;
+
+        return { load, search, getList, move, destroy, isLoading, add };
+
     });

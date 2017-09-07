@@ -1,5 +1,5 @@
 angular.module('proton.filter')
-    .directive('emailBlockButton', (filterAddressModal, notify, gettextCatalog, spamListModel) => {
+    .directive('emailBlockButton', (filterAddressModal) => {
 
         return {
             replace: true,
@@ -8,18 +8,11 @@ angular.module('proton.filter')
             scope: {},
             link(scope, elem, { targetList }) {
 
-                const unsubscribe = [];
-
-                const list = spamListModel.getList(targetList);
 
                 const onClick = () => {
                     filterAddressModal.activate({
                         params: {
-                            list: targetList,
-                            add(email) {
-                                list.add(email);
-                                filterAddressModal.deactivate();
-                            },
+                            type: targetList,
                             close() {
                                 filterAddressModal.deactivate();
                             }
@@ -29,11 +22,8 @@ angular.module('proton.filter')
 
                 elem.on('click', onClick);
 
-                unsubscribe.push(() => elem.off('click', onClick));
-
                 scope.$on('$destroy', () => {
-                    _.each(unsubscribe, (cb) => cb());
-                    unsubscribe.length = 0;
+                    elem.off('click', onClick);
                 });
             }
         };

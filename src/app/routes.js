@@ -925,9 +925,8 @@ angular.module('proton.routes', [
             .state('secured.filters', {
                 url: '/filters',
                 resolve: {
-
                     loadSpamLists(spamListModel, networkActivityTracker) {
-                        return networkActivityTracker.track(spamListModel.reload());
+                        return networkActivityTracker.track(spamListModel.load());
                     },
                     methods(user, paymentModel, networkActivityTracker) {
                         return networkActivityTracker.track(paymentModel.getMethods(null, user));

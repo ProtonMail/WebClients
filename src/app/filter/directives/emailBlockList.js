@@ -25,37 +25,22 @@ angular.module('proton.filter')
                 listType: '@'
             },
             link(scope, elem, { switchTo }) {
-                const unsubscribe = [];
 
-                const list = spamListModel.getList(scope.listType);
-                const switchList = spamListModel.getList(switchTo);
+                const unsubscribe = [];
                 const tbody = elem[0].querySelector(`.${CLASSNAMES.LIST}`);
 
-                // we need to use the scope here because of ng-repeat.
-                scope.entries = list.getEntries();
+                scope.entries = spamListModel.getList(scope.listType);
 
-                unsubscribe.push($rootScope.$on('filter', (event, { type, data = {} }) => {
-                    if (type === 'spamlist.update' && scope.listType === data.name) {
-                        if ('appended' in data) {
-                            // shortcut in case of appending: make sure angular doesn't render the whole table again
-                            scope.$applyAsync(() => scope.entries.push(...data.appended));
-                            return;
-                        }
-                        /*
-                         * Can be any change. We don't want to send a sillion different event types for weird updates,
-                         * so we just assign the value). Also these updates happen after you click a button: a lag is not really noticed.
-                         */
-                        scope.$applyAsync(() => {
-                            scope.entries = data.entries;
-
-                            $('.tooltip').hide();
-                        });
-                    }
+                unsubscribe.push($rootScope.$on('filters', () => {
+                    scope.$applyAsync(() => {
+                        scope.entries = spamListModel.getList(scope.listType);
+                        $('.tooltip').hide();
+                    });
                 }));
 
 
                 const onScroll = _.throttle(() => {
-                    if (!list.hasMoreData() || list.isFetchingData()) {
+                    if (spamListModel.isLoading()) {
                         return;
                     }
 
@@ -65,7 +50,9 @@ angular.module('proton.filter')
 
                     // check if we have reached the last TRIGGER_BOUNDARY elements
                     if (scrollBottom / tbody.scrollHeight > triggerFetch / elementCount) {
-                        list.fetchMoreData();
+                        scope.$applyAsync(() => {
+                            scope.entries = scope.entries.concat(spamListModel.getList(scope.listType));
+                        });
                     }
 
                 }, SCROLL_THROTTLE);
@@ -78,11 +65,11 @@ angular.module('proton.filter')
                     }
 
                     if (target.classList.contains(CLASSNAMES.BTN_SWITCH)) {
-                        switchList.adopt(target.dataset.entryId);
+                        spamListModel.move(target.dataset.entryId, switchTo);
                     }
 
                     if (target.classList.contains(CLASSNAMES.BTN_DELETE)) {
-                        spamListModel.deleteEntry(target.dataset.entryId);
+                        spamListModel.destroy(target.dataset.entryId);
                     }
                 };
 
