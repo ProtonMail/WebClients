@@ -36,10 +36,13 @@ angular.module('proton.filter')
 
 
                 unsubscribe.push($rootScope.$on('filters', () => {
-                    scope.$applyAsync(() => {
-                        scope.entries = spamListModel.getList(scope.listType);
-                        $('.tooltip').hide();
-                    });
+                    spamListModel.getList(scope.listType)
+                        .then((list) => {
+                            scope.$applyAsync(() => {
+                                scope.entries = list;
+                                $('.tooltip').hide();
+                            });
+                        });
                 }));
 
 

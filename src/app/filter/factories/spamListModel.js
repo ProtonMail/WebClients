@@ -9,21 +9,12 @@ angular.module('proton.filter')
         const CACHE = {
             [`${BLACKLIST_TYPE}_TO`]: 0,
             [`${WHITELIST_TYPE}_TO`]: 0,
-            [`${WHITELIST_TYPE}.search`]: [],
-            [`${WHITELIST_TYPE}.search`]: [],
             [BLACKLIST_TYPE]: [],
             [WHITELIST_TYPE]: []
         };
 
         const getTypeID = (type) => (type === 'whitelist' ? WHITELIST_TYPE : BLACKLIST_TYPE);
         const dispatch = (type, data = {}) => $rootScope.$emit('filters', { type, data });
-
-        /**
-         * Get type of cache based on the context
-         * @param  {String} type
-         * @return {Array}
-         */
-        const getCache = (type) => (!CACHE.query ? CACHE[getTypeID(type)] : CACHE[`${getTypeID(type)}.search`]);
 
         const getIndex = (type) => `${getTypeID(type)}_TO`;
         const extendIndex = (type, value) => CACHE[`${getTypeID(type)}_TO`] += value;
@@ -35,12 +26,20 @@ angular.module('proton.filter')
             CACHE[getIndex('blacklistl')] = 0;
         };
 
-        const loadList = async (Location, Start, Amount) => {
-            const list = await incomingModel.get({ Location, Start, Amount });
-            CACHE[Location] = list;
+        /**
+         * Load the List and keep a ref inside the cache
+         * @param  {Object} params
+         * @return {Array}        Promise:<Array>
+         */
+        const loadList = async (params) => {
+            const list = await incomingModel.get(params);
+            CACHE[params.Location] = list;
             return list;
         };
 
+        /**
+         * Update the cache MAP
+         */
         const updateCache = () => {
             CACHE.MAP = CACHE[BLACKLIST_TYPE].concat(CACHE[WHITELIST_TYPE])
                 .reduce((acc, item) => (acc[item.ID] = item, acc), Object.create(null));
@@ -51,17 +50,18 @@ angular.module('proton.filter')
          * via references and a map.
          * @return {void}
          */
-        const load = async () => {
+        const load = async (params = {}, noEvent) => {
             CACHE.isLoading = true;
+            const config = { Start: 0, Amount: PAGE_SIZE };
             await Promise.all([
-                loadList(BLACKLIST_TYPE, 0, PAGE_SIZE),
-                loadList(WHITELIST_TYPE, 0, PAGE_SIZE)
+                loadList(_.extend({ Location: BLACKLIST_TYPE }, config, params)),
+                loadList(_.extend({ Location: WHITELIST_TYPE }, config, params))
             ]);
 
             CACHE.isLoading = false;
             updateCache();
-            resetIndex();
-            dispatch('change', { type: 'load' });
+            !noEvent && resetIndex();
+            !noEvent && dispatch('change', { type: 'load' });
         };
 
         /**
@@ -75,31 +75,24 @@ angular.module('proton.filter')
          */
         const getList = async (type = 'whitelist', length = PAGE_SIZE) => {
             const indexFrom = CACHE[getIndex(type)];
-            extendIndex(type, !indexFrom ? length + 1 : length);
+            extendIndex(type, length);
             CACHE.isLoading = true;
 
             if (indexFrom === 0) {
                 CACHE.isLoading = false;
-                return angular.copy(getCache(type).slice(indexFrom, CACHE[getIndex(type)]));
+                return angular.copy(CACHE[getTypeID(type)]);
             }
 
-            const list = await loadList(getTypeID(type), indexFrom, length);
+            const list = await loadList({
+                Location: getTypeID(type),
+                Start: indexFrom,
+                Search: CACHE.query,
+                Amount: length
+            });
+
             updateCache();
             CACHE.isLoading = false;
             return list;
-        };
-
-        /**
-         * Build the search list cache
-         * Flush the cache if we don't are in a search context
-         * @param  {String} type type of list
-         * @return {void}
-         */
-        const buildSearch = (type) => {
-            if (!CACHE.query) {
-                return (CACHE[`${type}.search`].length = 0);
-            }
-            CACHE[`${type}.search`] = _.filter(CACHE[type], ({ Email }) => Email.includes(CACHE.query));
         };
 
         /**
@@ -107,11 +100,10 @@ angular.module('proton.filter')
          * @param  {String} query
          * @return {void}
          */
-        const search = (query) => {
+        const search = async (query) => {
             CACHE.query = query;
             resetIndex();
-            buildSearch(BLACKLIST_TYPE);
-            buildSearch(WHITELIST_TYPE);
+            await load({ Search: query }, true);
             dispatch('search');
         };
 
