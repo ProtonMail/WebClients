@@ -152,7 +152,7 @@ angular.module('proton.elements')
 
         $scope.startWatchingEvent = () => {
 
-            let isOpened = false;
+            let isOpened = !!$state.params.id;
 
             /**
          * Auto detect if there is already a conversation:open, then do nothing
@@ -184,6 +184,7 @@ angular.module('proton.elements')
                         break;
                     }
                     case 'open':
+                        isOpened = true;
                         $scope.$applyAsync(() => openElement(data.element));
                         break;
                     case 'close':
