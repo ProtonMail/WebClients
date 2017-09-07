@@ -27,16 +27,17 @@ angular.module('proton.filter')
             link(scope, elem, { switchTo }) {
 
                 const unsubscribe = [];
+                const type = spamListModel.getType(scope.listType);
                 const tbody = elem[0].querySelector(`.${CLASSNAMES.LIST}`);
 
-                spamListModel.getList(scope.listType)
+                spamListModel.getList(type)
                     .then((list) => {
                         scope.$applyAsync(() => scope.entries = list);
                     });
 
 
                 unsubscribe.push($rootScope.$on('filters', () => {
-                    spamListModel.getList(scope.listType)
+                    spamListModel.getList(type)
                         .then((list) => {
                             scope.$applyAsync(() => {
                                 scope.entries = list;
@@ -47,7 +48,7 @@ angular.module('proton.filter')
 
 
                 const onScroll = _.throttle(() => {
-                    if (spamListModel.isLoading() || spamListModel.isEnding()) {
+                    if (spamListModel.isLoading(type) || spamListModel.isEnding(type)) {
                         return;
                     }
 
@@ -57,7 +58,7 @@ angular.module('proton.filter')
 
                     // check if we have reached the last TRIGGER_BOUNDARY elements
                     if (scrollBottom / tbody.scrollHeight > triggerFetch / elementCount) {
-                        spamListModel.getList(scope.listType)
+                        spamListModel.getList(type)
                             .then((list) => {
                                 scope.$applyAsync(() => {
                                     scope.entries = scope.entries.concat(list);
@@ -75,7 +76,7 @@ angular.module('proton.filter')
                     }
 
                     if (target.classList.contains(CLASSNAMES.BTN_SWITCH)) {
-                        spamListModel.move(target.dataset.entryId, switchTo);
+                        spamListModel.move(target.dataset.entryId, spamListModel.getType(switchTo));
                     }
 
                     if (target.classList.contains(CLASSNAMES.BTN_DELETE)) {

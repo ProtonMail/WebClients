@@ -7,7 +7,7 @@
 
     <div>
         <p class="alert alert-info" translate translate-context="Info" ng-if="entries.length === 0">
-            No emails in the <span class="email-block-list-name"></span>, click Add to add addresses to the <span class="email-block-list-name"></span>.
+            No emails in the <span class="email-block-list-name">{{::filterName}}</span>, click <b>Add</b> to add addresses to the <span class="email-block-list-name">{{::filterName}}</span>.
         </p>
 
         <div class="pm_table block-list" ng-class="{ empty: entries.length === 0 }">
