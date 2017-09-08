@@ -41,7 +41,7 @@ angular.module('proton.utils')
         const setTimer = (timer = CONSTANTS.INTERVAL_EVENT_TIMER) => MODEL.milliseconds = timer;
         const setEventID = (ID) => manageID(ID);
         const stop = () => $timeout.cancel(MODEL.promiseCancel);
-        const manageActiveMessage = ({ Messages = [] }) => Messages.length && dispatch('activeMessages', { messages: Messages.map(({ Message }) => Message) });
+        const manageActiveMessage = ({ Messages = [] }) => Messages.length && dispatch('activeMessages', { messages: _.pluck(Messages, 'Message') });
         const isDifferent = (eventID) => MODEL.ID !== eventID;
         const manageID = (id = MODEL.ID) => MODEL.ID = id;
 
@@ -398,9 +398,7 @@ angular.module('proton.utils')
 
             if (data.Error) {
                 return Events.getLatestID()
-                    .then((result) => {
-                        manageID(result.data.EventID);
-                    });
+                    .then(({ data = {} }) => manageID(data.EventID));
             }
 
             if (data.Refresh === 1) {
@@ -445,8 +443,6 @@ angular.module('proton.utils')
                         if (data.More === 1) {
                             return call();
                         }
-
-                        return Promise.resolve();
                     });
             }
 

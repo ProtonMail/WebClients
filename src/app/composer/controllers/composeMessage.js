@@ -101,7 +101,7 @@ angular.module('proton.composer')
         unsubscribe.push($rootScope.$on('app.event', (event, { type, data }) => {
             switch (type) {
                 case 'activeMessages': {
-                // If you send the current draft from another tab/app we need to remove it from the composerList
+                    // If you send the current draft from another tab/app we need to remove it from the composerList
                     const removed = $scope.messages.filter(({ ID = '' }) => {
                         const msg = _.findWhere(data.messages, { ID });
                         return (msg && isSent(msg));
@@ -109,7 +109,7 @@ angular.module('proton.composer')
 
                     removed.length && removed.forEach((message) => {
                         closeComposer(message);
-                        !isSent(message) && notify(gettextCatalog.getString('Your message was sent from another session', null, 'Info'));
+                        !isSent(message) && notify(gettextCatalog.getString('Email was already sent', null, 'Info'));
                     });
 
                     break;
