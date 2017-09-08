@@ -1,7 +1,11 @@
 angular.module('proton.filter')
-    .directive('emailBlockList', ($rootScope, spamListModel) => {
+    .directive('emailBlockList', ($rootScope, spamListModel, gettextCatalog) => {
 
-        // In milliseconds
+        const I18N = {
+            whitelist: gettextCatalog.getString('Whitelist', null, 'Info'),
+            blacklist: gettextCatalog.getString('Blacklist', null, 'Info')
+        };
+
         const SCROLL_THROTTLE = 100;
         // fetch when less than TRIGGER_BOUNDARY entries are below the bottom of the table view
         const TRIGGER_BOUNDARY = 50;
@@ -20,15 +24,14 @@ angular.module('proton.filter')
             replace: true,
             restrict: 'E',
             templateUrl: 'templates/filter/emailBlockList.tpl.html',
-            scope: {
-                filterName: '@',
-                listType: '@'
-            },
-            link(scope, elem, { switchTo }) {
+            scope: {},
+            link(scope, elem, { switchTo, listType }) {
 
                 const unsubscribe = [];
-                const type = spamListModel.getType(scope.listType);
+                const type = spamListModel.getType(listType);
                 const tbody = elem[0].querySelector(`.${CLASSNAMES.LIST}`);
+
+                scope.filterName = I18N[listType];
 
                 spamListModel.getList(type)
                     .then((list) => {
