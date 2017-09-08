@@ -3,7 +3,7 @@
 all: install test
 
 npm-install:
-	./bin/npm install --loglevel warn --no-progress
+	./bin/npm install --loglevel warn --no-progress --force
 
 vendor:
 	./bin/npm run bower-install
