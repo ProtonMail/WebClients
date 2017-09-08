@@ -20,19 +20,19 @@ rm -rf $DEST_MAILPARSER
 mkdir $DEST_MAILPARSER
 cp src/libraries/mailparser.js vendor/mailparser/mailparser.js
 
-git clone git@github.com:eligrey/Blob.js.git \
+git clone https://github.com/eligrey/Blob.js.git \
   --branch master \
   --single-branch $DEST_BLOB \
   --depth 1
 
 # There is a bower.json but it's not available
-git clone git@github.com:mckamey/cssuseragent.git \
+git clone https://github.com/mckamey/cssuseragent.git \
   --branch master \
   --single-branch $DEST_CSSUA \
   --depth 1
 
 # Dafuq bower asks for a password
-git clone git@github.com:davidshimjs/qrcodejs.git \
+git clone https://github.com/davidshimjs/qrcodejs.git \
   --branch master \
   --single-branch $DEST_QRCODE \
   --depth 1
