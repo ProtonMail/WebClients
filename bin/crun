@@ -32,8 +32,12 @@ if [ "$NO_DOCKER_RM" ]; then
   SPECIAL_OPTS=""
 fi
 
+# Enables interactive TTY if available
+TTY_OPT="-i"
+[ -t 0 ] && TTY_OPT="-it"
+
 set -x
 docker run -v $REPO_ROOT:$CONTAINER_HOME -v /var/run/docker.sock:/var/run/docker.sock \
   -e HOME=$CONTAINER_HOME -w $CONTAINER_HOME \
   -e PATH="./node_modules/.bin/:./node_modules/grunt-cli/bin/:$STANDARD_PATH" \
-  $DOCKER_OPTS $SPECIAL_OPTS -ti "$image" "$@"
+  $DOCKER_OPTS $SPECIAL_OPTS $TTY_OPT "$image" "$@"
