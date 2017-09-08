@@ -1,5 +1,4 @@
-.PHONY: all npm-install test start localurl versions
-.PHONY: ci.dependencies ci.test
+.PHONY: all vendor npm-install test start localurl versions
 
 all: install test
 
@@ -27,6 +26,3 @@ versions:
 	docker version
 	docker info
 	./bin/npm version
-
-ci.dependencies: versions install
-ci.test: test

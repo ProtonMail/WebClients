@@ -6,5 +6,6 @@ build:
     image_tag: master
     options: -v /root/src/github.com:/root/src/github.com
   ci:
-    - make ci.dependencies
-    - make ci.test
+    - make versions
+    - make install
+    - make test
