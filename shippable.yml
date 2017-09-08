@@ -6,6 +6,7 @@ build:
     image_tag: master
     options: -v /root/src/github.com:/root/src/github.com
   ci:
+    - make clean
     - make versions
     - make install
     - make test

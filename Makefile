@@ -2,8 +2,11 @@
 
 all: install test
 
+clean:
+	git clean -xfd
+
 npm-install:
-	./bin/npm install --loglevel warn --no-progress --force
+	./bin/npm install --loglevel warn --no-progress
 
 vendor:
 	./bin/npm run bower-install
