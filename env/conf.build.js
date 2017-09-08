@@ -49,7 +49,7 @@ module.exports = {
       "vendor/moment/min/moment-with-locales.js",
       "vendor/moment-timezone/builds/moment-timezone-with-data.js",
       "vendor/underscore/underscore.js",
-      "vendor/dompurify/src/purify.js",
+      "vendor/dompurify/dist/purify.js",
       "vendor/papaparse/papaparse.js",
       "vendor/ng-sortable/dist/ng-sortable.js",
       "vendor/angular-notify/dist/angular-notify.js",
