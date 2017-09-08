@@ -1,4 +1,4 @@
-.PHONY: all vendor npm-install test start localurl versions
+.PHONY: all vendor npm-install install build test start localurl versions
 
 all: install test
 
@@ -14,8 +14,15 @@ vendor:
 
 install: npm-install vendor
 
+build:
+	./bin/npm run build
+
 test:
+	./bin/npm run lint
 	./bin/npm test
+
+test-e2e:
+	./bin/npm run e2e
 
 start:
 	DOCKER_OPTS="-p 8080:8080 -p 3000:3000 -p 3001:3001" ./bin/npm run start-prod

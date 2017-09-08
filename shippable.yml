@@ -9,4 +9,5 @@ build:
     - make clean
     - make versions
     - make install
+    - make build
     - make test
