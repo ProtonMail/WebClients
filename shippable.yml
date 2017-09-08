@@ -1,0 +1,10 @@
+language: none
+
+build:
+  pre_ci_boot:
+    image_name: drydock/u16
+    image_tag: master
+    options: -v /root/src/github.com:/root/src/github.com
+  ci:
+    - make ci.dependencies
+    - make ci.test

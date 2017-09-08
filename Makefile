@@ -1,5 +1,5 @@
 .PHONY: all npm-install test start localurl versions
-.PHONY: circle.dependencies circle.test
+.PHONY: ci.dependencies ci.test
 
 all: install test
 
@@ -13,10 +13,10 @@ vendor:
 install: npm-install vendor
 
 test:
-	bin/npm test
+	./bin/npm test
 
 start:
-	DOCKER_OPTS="-p 8080:8080 -p 3000:3000 -p 3001:3001" bin/npm run start-prod
+	DOCKER_OPTS="-p 8080:8080 -p 3000:3000 -p 3001:3001" ./bin/npm run start-prod
 
 localurl:
 	@echo "http://$$(./bin/docker-ip):8080"
@@ -28,5 +28,5 @@ versions:
 	docker info
 	./bin/npm version
 
-circle.dependencies: versions npm-image install
-circle.test: test
+ci.dependencies: versions install
+ci.test: test
