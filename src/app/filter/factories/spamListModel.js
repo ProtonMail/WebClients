@@ -5,17 +5,20 @@ angular.module('proton.filter')
         const BLACKLIST_TYPE = +MAILBOX_IDENTIFIERS.spam;
         const WHITELIST_TYPE = +MAILBOX_IDENTIFIERS.inbox;
         const PAGE_SIZE = 100;
-
-        const CACHE = {
-            MAP: Object.create(null),
-            [`${BLACKLIST_TYPE}_TO`]: 0,
-            [`${WHITELIST_TYPE}_TO`]: 0,
-            [BLACKLIST_TYPE]: [],
-            [WHITELIST_TYPE]: []
-        };
+        let CACHE = getDefault();
 
         const dispatch = (type, data = {}) => $rootScope.$emit('filters', { type, data });
         const getType = (type) => (type === 'whitelist' ? WHITELIST_TYPE : BLACKLIST_TYPE);
+
+        function getDefault() {
+            return {
+                MAP: Object.create(null),
+                [`${BLACKLIST_TYPE}_TO`]: 0,
+                [`${WHITELIST_TYPE}_TO`]: 0,
+                [BLACKLIST_TYPE]: [],
+                [WHITELIST_TYPE]: []
+            };
+        }
 
         const getKey = (type, suffix) => `${type}.${suffix}`;
         const getIndex = (type) => getKey(type, 'TO');
@@ -202,7 +205,11 @@ angular.module('proton.filter')
 
         const isLoading = (type) => !!CACHE[getKey(type, 'loading')];
         const isEnding = (type) => !!CACHE[getEndingKey(type)];
+        const clear = () => (CACHE = getDefault());
 
-        return { load, search, getList, move, destroy, isLoading, isEnding, add, getType };
+        return {
+            load, search, getList, move, destroy, add,
+            isLoading, isEnding, getType, clear
+        };
 
     });

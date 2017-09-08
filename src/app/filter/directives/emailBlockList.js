@@ -91,6 +91,7 @@ angular.module('proton.filter')
                 scope.$on('$destroy', () => {
                     _.each(unsubscribe, (cb) => cb());
                     unsubscribe.length = 0;
+                    spamListModel.clear();
                 });
 
             }
