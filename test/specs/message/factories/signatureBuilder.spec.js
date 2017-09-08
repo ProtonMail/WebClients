@@ -93,7 +93,7 @@ describe('signatureBuilder factory', () => {
                 });
 
                 it('should an empty line before the signature', () => {
-                    expect(string).toMatch(new RegExp(`<div><br><\/div><div class="${noSignatures}"`));
+                    expect(string).toMatch(new RegExp(`<div><br></div><div class="${noSignatures}"`));
                 });
 
                 it('should only add one line', () => {
@@ -172,7 +172,7 @@ describe('signatureBuilder factory', () => {
                 });
 
                 it('should an empty line before the signature', () => {
-                    expect(string).toMatch(new RegExp(`<div><br><\/div><div class="${noSignatures}"`));
+                    expect(string).toMatch(new RegExp(`<div><br></div><div class="${noSignatures}"`));
                 });
 
                 it('should only add one line', () => {
@@ -257,7 +257,7 @@ describe('signatureBuilder factory', () => {
                 });
 
                 it('should two empty lines before the signature', () => {
-                    expect(string).toMatch(new RegExp(`(<div><br><\/div>){2}<div class="${blockSignature} "`));
+                    expect(string).toMatch(new RegExp(`(<div><br></div>){2}<div class="${blockSignature}"`));
                 });
 
                 it('shoul add 2 lines', () => {
@@ -341,7 +341,7 @@ describe('signatureBuilder factory', () => {
                 });
 
                 it('should two empty lines before the signature', () => {
-                    expect(string).toMatch(new RegExp(`(<div><br><\/div>){2}<div class="${blockSignature} "`));
+                    expect(string).toMatch(new RegExp(`(<div><br></div>){2}<div class="${blockSignature}"`));
                 });
 
                 it('shoul add 2 lines', () => {
@@ -427,7 +427,7 @@ describe('signatureBuilder factory', () => {
                 });
 
                 it('should two empty lines before the signature', () => {
-                    expect(string).toMatch(new RegExp(`(<div><br><\/div>){2}<div class="${blockSignature} "`));
+                    expect(string).toMatch(new RegExp(`(<div><br></div>){2}<div class="${blockSignature}"`));
                 });
 
                 it('shoul add 2 lines', () => {
@@ -510,7 +510,7 @@ describe('signatureBuilder factory', () => {
                 });
 
                 it('should two empty lines before the signature', () => {
-                    expect(string).toMatch(new RegExp(`(<div><br><\/div>){2}<div class="${blockSignature} "`));
+                    expect(string).toMatch(new RegExp(`(<div><br></div>){2}<div class="${blockSignature}"`));
                 });
 
                 it('shoul add 2 lines', () => {
@@ -595,11 +595,11 @@ describe('signatureBuilder factory', () => {
                 });
 
                 it('should two empty lines before the signature', () => {
-                    expect(string).toMatch(new RegExp(`(<div><br><\/div>){2}<div class="${blockSignature} "`));
+                    expect(string).toMatch(new RegExp(`(<div><br></div>){2}<div class="${blockSignature}"`));
                 });
 
                 it('should one empty lines before the proton signature', () => {
-                    expect(string).toMatch(new RegExp(`(<div><br><\/div>){1}(\r\n|\r|\n) *<div class="${blockProtonSignature} "`));
+                    expect(string).toMatch(new RegExp(`(<div><br></div>){1}(\r\n|\r|\n) *<div class="${blockProtonSignature}"`));
                 });
 
                 it('shoul add 3 lines', () => {
@@ -682,11 +682,11 @@ describe('signatureBuilder factory', () => {
                 });
 
                 it('should two empty lines before the signature', () => {
-                    expect(string).toMatch(new RegExp(`(<div><br><\/div>){2}<div class="${blockSignature} "`));
+                    expect(string).toMatch(new RegExp(`(<div><br></div>){2}<div class="${blockSignature}"`));
                 });
 
                 it('should one empty lines before the proton signature', () => {
-                    expect(string).toMatch(new RegExp(`(<div><br><\/div>){1}(\r\n|\r|\n) *<div class="${blockProtonSignature} "`));
+                    expect(string).toMatch(new RegExp(`(<div><br></div>){1}(\r\n|\r|\n) *<div class="${blockProtonSignature}"`));
                 });
 
                 it('shoul add 3 lines', () => {
@@ -776,11 +776,11 @@ describe('signatureBuilder factory', () => {
                 });
 
                 it('should an empty line before the signature', () => {
-                    expect(string).toMatch(new RegExp(`<div><br><\/div><div class="${noSignatures}"`));
+                    expect(string).toMatch(new RegExp(`<div><br></div><div class="${noSignatures}"`));
                 });
 
                 it('should add an empty line before the message', () => {
-                    expect(string).toMatch(new RegExp(`<div><br><\/div>${MESSAGE_BODY}`));
+                    expect(string).toMatch(new RegExp(`<div><br></div>${MESSAGE_BODY}`));
                 });
 
                 it('should add two lines', () => {
@@ -859,7 +859,7 @@ describe('signatureBuilder factory', () => {
                 });
 
                 it('should an empty between the message and the signature', () => {
-                    expect(string).toMatch(new RegExp(`${MESSAGE_BODY}<div><br><\/div><div class="${noSignatures}"`));
+                    expect(string).toMatch(new RegExp(`${MESSAGE_BODY}<div><br></div><div class="${noSignatures}"`));
                 });
 
                 it('should only add one line', () => {
@@ -944,11 +944,11 @@ describe('signatureBuilder factory', () => {
                 });
 
                 it('should two empty lines before the signature', () => {
-                    expect(string).toMatch(new RegExp(`(<div><br><\/div>){2}<div class="${blockSignature} "`));
+                    expect(string).toMatch(new RegExp(`(<div><br></div>){2}<div class="${blockSignature}"`));
                 });
 
                 it('should add an empty line before the message', () => {
-                    expect(string).toMatch(new RegExp(`<div><br><\/div>${MESSAGE_BODY}`));
+                    expect(string).toMatch(new RegExp(`<div><br></div>${MESSAGE_BODY}`));
                 });
 
                 it('shoul add 3 lines', () => {
@@ -1031,7 +1031,7 @@ describe('signatureBuilder factory', () => {
                 });
 
                 it('should two empty lines between the message and the signature', () => {
-                    expect(string).toMatch(new RegExp(`${MESSAGE_BODY}(<div><br><\/div>){2}<div class="${blockSignature} "`));
+                    expect(string).toMatch(new RegExp(`${MESSAGE_BODY}(<div><br></div>){2}<div class="${blockSignature}"`));
                 });
 
                 it('shoul add 2 lines', () => {
@@ -1117,7 +1117,7 @@ describe('signatureBuilder factory', () => {
                 });
 
                 it('should two empty lines before the signature', () => {
-                    expect(string).toMatch(new RegExp(`(<div><br><\/div>){2}<div class="${blockSignature} "`));
+                    expect(string).toMatch(new RegExp(`(<div><br></div>){2}<div class="${blockSignature}"`));
                 });
 
                 it('shoul add 2 lines', () => {
@@ -1125,7 +1125,7 @@ describe('signatureBuilder factory', () => {
                 });
 
                 it('should an empty line before the message', () => {
-                    expect(string).toMatch(new RegExp(`<div><br><\/div>${MESSAGE_BODY}`));
+                    expect(string).toMatch(new RegExp(`<div><br></div>${MESSAGE_BODY}`));
                 });
 
 
@@ -1203,7 +1203,7 @@ describe('signatureBuilder factory', () => {
                 });
 
                 it('should two empty lines between the message and the signature', () => {
-                    expect(string).toMatch(new RegExp(`${MESSAGE_BODY}(<div><br><\/div>){2}<div class="${blockSignature} "`));
+                    expect(string).toMatch(new RegExp(`${MESSAGE_BODY}(<div><br></div>){2}<div class="${blockSignature}"`));
                 });
 
                 it('shoul add 2 lines', () => {
@@ -1288,15 +1288,15 @@ describe('signatureBuilder factory', () => {
                 });
 
                 it('should two empty lines before the signature', () => {
-                    expect(string).toMatch(new RegExp(`(<div><br><\/div>){2}<div class="${blockSignature} "`));
+                    expect(string).toMatch(new RegExp(`(<div><br></div>){2}<div class="${blockSignature}"`));
                 });
 
                 it('should one empty lines before the proton signature', () => {
-                    expect(string).toMatch(new RegExp(`(<div><br><\/div>){1}(\r\n|\r|\n) *<div class="${blockProtonSignature} "`));
+                    expect(string).toMatch(new RegExp(`(<div><br></div>){1}(\r\n|\r|\n) *<div class="${blockProtonSignature}"`));
                 });
 
                 it('should an empty line before the message', () => {
-                    expect(string).toMatch(new RegExp(`<div><br><\/div>${MESSAGE_BODY}`));
+                    expect(string).toMatch(new RegExp(`<div><br></div>${MESSAGE_BODY}`));
                 });
 
                 it('shoul add 4 lines', () => {
@@ -1379,11 +1379,11 @@ describe('signatureBuilder factory', () => {
                 });
 
                 it('should two empty lines before the signature', () => {
-                    expect(string).toMatch(new RegExp(`${MESSAGE_BODY}(<div><br><\/div>){2}<div class="${blockSignature} "`));
+                    expect(string).toMatch(new RegExp(`${MESSAGE_BODY}(<div><br></div>){2}<div class="${blockSignature}"`));
                 });
 
                 it('should one empty lines between the message and the signature', () => {
-                    expect(string).toMatch(new RegExp(`(<div><br><\/div>){1}(\r\n|\r|\n) *<div class="${blockProtonSignature} "`));
+                    expect(string).toMatch(new RegExp(`(<div><br></div>){1}(\r\n|\r|\n) *<div class="${blockProtonSignature}"`));
                 });
 
                 it('shoul add 3 lines', () => {
@@ -1474,11 +1474,11 @@ describe('signatureBuilder factory', () => {
                 });
 
                 it('should an empty line before the signature', () => {
-                    expect(string).toMatch(new RegExp(`<div><br><\/div><div class="${noSignatures}"`));
+                    expect(string).toMatch(new RegExp(`<div><br></div><div class="${noSignatures}"`));
                 });
 
                 it('should add an empty line before the message', () => {
-                    expect(string).toMatch(new RegExp(`<div><br><\/div>${MESSAGE_BODY}`));
+                    expect(string).toMatch(new RegExp(`<div><br></div>${MESSAGE_BODY}`));
                 });
 
                 it('should add two lines', () => {
@@ -1557,7 +1557,7 @@ describe('signatureBuilder factory', () => {
                 });
 
                 it('should an empty between the message and the signature', () => {
-                    expect(string).toMatch(new RegExp(`${MESSAGE_BODY}<div><br><\/div><div class="${noSignatures}"`));
+                    expect(string).toMatch(new RegExp(`${MESSAGE_BODY}<div><br></div><div class="${noSignatures}"`));
                 });
 
                 it('should only add one line', () => {
@@ -1642,11 +1642,11 @@ describe('signatureBuilder factory', () => {
                 });
 
                 it('should two empty lines before the signature', () => {
-                    expect(string).toMatch(new RegExp(`(<div><br><\/div>){2}<div class="${blockSignature} "`));
+                    expect(string).toMatch(new RegExp(`(<div><br></div>){2}<div class="${blockSignature}"`));
                 });
 
                 it('should add an empty line before the message', () => {
-                    expect(string).toMatch(new RegExp(`<div><br><\/div>${MESSAGE_BODY}`));
+                    expect(string).toMatch(new RegExp(`<div><br></div>${MESSAGE_BODY}`));
                 });
 
                 it('shoul add 3 lines', () => {
@@ -1729,7 +1729,7 @@ describe('signatureBuilder factory', () => {
                 });
 
                 it('should two empty lines between the message and the signature', () => {
-                    expect(string).toMatch(new RegExp(`${MESSAGE_BODY}(<div><br><\/div>){2}<div class="${blockSignature} "`));
+                    expect(string).toMatch(new RegExp(`${MESSAGE_BODY}(<div><br></div>){2}<div class="${blockSignature}"`));
                 });
 
                 it('shoul add 2 lines', () => {
@@ -1815,7 +1815,7 @@ describe('signatureBuilder factory', () => {
                 });
 
                 it('should two empty lines before the signature', () => {
-                    expect(string).toMatch(new RegExp(`(<div><br><\/div>){2}<div class="${blockSignature} "`));
+                    expect(string).toMatch(new RegExp(`(<div><br></div>){2}<div class="${blockSignature}"`));
                 });
 
                 it('shoul add 2 lines', () => {
@@ -1823,7 +1823,7 @@ describe('signatureBuilder factory', () => {
                 });
 
                 it('should an empty line before the message', () => {
-                    expect(string).toMatch(new RegExp(`<div><br><\/div>${MESSAGE_BODY}`));
+                    expect(string).toMatch(new RegExp(`<div><br></div>${MESSAGE_BODY}`));
                 });
 
 
@@ -1901,7 +1901,7 @@ describe('signatureBuilder factory', () => {
                 });
 
                 it('should two empty lines between the message and the signature', () => {
-                    expect(string).toMatch(new RegExp(`${MESSAGE_BODY}(<div><br><\/div>){2}<div class="${blockSignature} "`));
+                    expect(string).toMatch(new RegExp(`${MESSAGE_BODY}(<div><br></div>){2}<div class="${blockSignature}"`));
                 });
 
                 it('shoul add 2 lines', () => {
@@ -1986,15 +1986,15 @@ describe('signatureBuilder factory', () => {
                 });
 
                 it('should two empty lines before the signature', () => {
-                    expect(string).toMatch(new RegExp(`(<div><br><\/div>){2}<div class="${blockSignature} "`));
+                    expect(string).toMatch(new RegExp(`(<div><br></div>){2}<div class="${blockSignature}"`));
                 });
 
                 it('should one empty lines before the proton signature', () => {
-                    expect(string).toMatch(new RegExp(`(<div><br><\/div>){1}(\r\n|\r|\n) *<div class="${blockProtonSignature} "`));
+                    expect(string).toMatch(new RegExp(`(<div><br></div>){1}(\r\n|\r|\n) *<div class="${blockProtonSignature}"`));
                 });
 
                 it('should an empty line before the message', () => {
-                    expect(string).toMatch(new RegExp(`<div><br><\/div>${MESSAGE_BODY}`));
+                    expect(string).toMatch(new RegExp(`<div><br></div>${MESSAGE_BODY}`));
                 });
 
                 it('shoul add 4 lines', () => {
@@ -2077,11 +2077,11 @@ describe('signatureBuilder factory', () => {
                 });
 
                 it('should two empty lines before the signature', () => {
-                    expect(string).toMatch(new RegExp(`${MESSAGE_BODY}(<div><br><\/div>){2}<div class="${blockSignature} "`));
+                    expect(string).toMatch(new RegExp(`${MESSAGE_BODY}(<div><br></div>){2}<div class="${blockSignature}"`));
                 });
 
                 it('should one empty lines between the message and the signature', () => {
-                    expect(string).toMatch(new RegExp(`(<div><br><\/div>){1}(\r\n|\r|\n) *<div class="${blockProtonSignature} "`));
+                    expect(string).toMatch(new RegExp(`(<div><br></div>){1}(\r\n|\r|\n) *<div class="${blockProtonSignature}"`));
                 });
 
                 it('shoul add 3 lines', () => {
@@ -2171,11 +2171,11 @@ describe('signatureBuilder factory', () => {
                 });
 
                 it('should an empty line before the signature', () => {
-                    expect(string).toMatch(new RegExp(`<div><br><\/div><div class="${noSignatures}"`));
+                    expect(string).toMatch(new RegExp(`<div><br></div><div class="${noSignatures}"`));
                 });
 
                 it('should add an empty line before the message', () => {
-                    expect(string).toMatch(new RegExp(`<div><br><\/div>${MESSAGE_BODY}`));
+                    expect(string).toMatch(new RegExp(`<div><br></div>${MESSAGE_BODY}`));
                 });
 
                 it('should add two lines', () => {
@@ -2254,7 +2254,7 @@ describe('signatureBuilder factory', () => {
                 });
 
                 it('should an empty between the message and the signature', () => {
-                    expect(string).toMatch(new RegExp(`${MESSAGE_BODY}<div><br><\/div><div class="${noSignatures}"`));
+                    expect(string).toMatch(new RegExp(`${MESSAGE_BODY}<div><br></div><div class="${noSignatures}"`));
                 });
 
                 it('should only add one line', () => {
@@ -2339,11 +2339,11 @@ describe('signatureBuilder factory', () => {
                 });
 
                 it('should two empty lines before the signature', () => {
-                    expect(string).toMatch(new RegExp(`(<div><br><\/div>){2}<div class="${blockSignature} "`));
+                    expect(string).toMatch(new RegExp(`(<div><br></div>){2}<div class="${blockSignature}"`));
                 });
 
                 it('should add an empty line before the message', () => {
-                    expect(string).toMatch(new RegExp(`<div><br><\/div>${MESSAGE_BODY}`));
+                    expect(string).toMatch(new RegExp(`<div><br></div>${MESSAGE_BODY}`));
                 });
 
                 it('shoul add 3 lines', () => {
@@ -2426,7 +2426,7 @@ describe('signatureBuilder factory', () => {
                 });
 
                 it('should two empty lines between the message and the signature', () => {
-                    expect(string).toMatch(new RegExp(`${MESSAGE_BODY}(<div><br><\/div>){2}<div class="${blockSignature} "`));
+                    expect(string).toMatch(new RegExp(`${MESSAGE_BODY}(<div><br></div>){2}<div class="${blockSignature}"`));
                 });
 
                 it('shoul add 2 lines', () => {
@@ -2512,7 +2512,7 @@ describe('signatureBuilder factory', () => {
                 });
 
                 it('should two empty lines before the signature', () => {
-                    expect(string).toMatch(new RegExp(`(<div><br><\/div>){2}<div class="${blockSignature} "`));
+                    expect(string).toMatch(new RegExp(`(<div><br></div>){2}<div class="${blockSignature}"`));
                 });
 
                 it('shoul add 2 lines', () => {
@@ -2520,7 +2520,7 @@ describe('signatureBuilder factory', () => {
                 });
 
                 it('should an empty line before the message', () => {
-                    expect(string).toMatch(new RegExp(`<div><br><\/div>${MESSAGE_BODY}`));
+                    expect(string).toMatch(new RegExp(`<div><br></div>${MESSAGE_BODY}`));
                 });
 
 
@@ -2598,7 +2598,7 @@ describe('signatureBuilder factory', () => {
                 });
 
                 it('should two empty lines between the message and the signature', () => {
-                    expect(string).toMatch(new RegExp(`${MESSAGE_BODY}(<div><br><\/div>){2}<div class="${blockSignature} "`));
+                    expect(string).toMatch(new RegExp(`${MESSAGE_BODY}(<div><br></div>){2}<div class="${blockSignature}"`));
                 });
 
                 it('shoul add 2 lines', () => {
@@ -2683,15 +2683,15 @@ describe('signatureBuilder factory', () => {
                 });
 
                 it('should two empty lines before the signature', () => {
-                    expect(string).toMatch(new RegExp(`(<div><br><\/div>){2}<div class="${blockSignature} "`));
+                    expect(string).toMatch(new RegExp(`(<div><br></div>){2}<div class="${blockSignature}"`));
                 });
 
                 it('should one empty lines before the proton signature', () => {
-                    expect(string).toMatch(new RegExp(`(<div><br><\/div>){1}(\r\n|\r|\n) *<div class="${blockProtonSignature} "`));
+                    expect(string).toMatch(new RegExp(`(<div><br></div>){1}(\r\n|\r|\n) *<div class="${blockProtonSignature}"`));
                 });
 
                 it('should an empty line before the message', () => {
-                    expect(string).toMatch(new RegExp(`<div><br><\/div>${MESSAGE_BODY}`));
+                    expect(string).toMatch(new RegExp(`<div><br></div>${MESSAGE_BODY}`));
                 });
 
                 it('shoul add 4 lines', () => {
@@ -2774,11 +2774,11 @@ describe('signatureBuilder factory', () => {
                 });
 
                 it('should two empty lines before the signature', () => {
-                    expect(string).toMatch(new RegExp(`${MESSAGE_BODY}(<div><br><\/div>){2}<div class="${blockSignature} "`));
+                    expect(string).toMatch(new RegExp(`${MESSAGE_BODY}(<div><br></div>){2}<div class="${blockSignature}"`));
                 });
 
                 it('should one empty lines between the message and the signature', () => {
-                    expect(string).toMatch(new RegExp(`(<div><br><\/div>){1}(\r\n|\r|\n) *<div class="${blockProtonSignature} "`));
+                    expect(string).toMatch(new RegExp(`(<div><br></div>){1}(\r\n|\r|\n) *<div class="${blockProtonSignature}"`));
                 });
 
                 it('shoul add 3 lines', () => {
@@ -2875,7 +2875,7 @@ describe('signatureBuilder factory', () => {
             });
 
             it('should an empty line before the signature', () => {
-                expect(string).toMatch(new RegExp(`<div><br><\/div><div class="${noSignatures}"`));
+                expect(string).toMatch(new RegExp(`<div><br></div><div class="${noSignatures}"`));
             });
 
             it('should only add one line', () => {
