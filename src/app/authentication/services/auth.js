@@ -19,7 +19,6 @@ angular.module('proton.authentication')
     Key,
     Label,
     networkActivityTracker,
-    notify,
     pmcw,
     secureSessionStorage,
     organizationApi,

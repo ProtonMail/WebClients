@@ -1,6 +1,6 @@
 angular.module('proton.autoresponder')
     .factory('autoresponderModel', ($rootScope, gettextCatalog, authentication, tools, settingsApi,
-        networkActivityTracker, notify, eventManager, autoresponderLanguage, signatureBuilder) => {
+        networkActivityTracker, notification, eventManager, autoresponderLanguage, signatureBuilder) => {
 
         const now = new Date();
         const momentNow = moment(now);
@@ -207,9 +207,6 @@ angular.module('proton.autoresponder')
             const autoresponder = getAutoresponderInAPIFormat();
             const original = authentication.user.AutoResponder || getDefaultAutoResponder();
             const responseMessage = getResponseMessage(original.isEnabled, autoresponder.isEnabled);
-
-            const notifySuccess = (message) => notify({ message, classes: 'notification-success' });
-
             const promise = settingsApi.setAutoresponder({ Parameters: autoresponder })
                 .then(({ data = {} }) => {
 
@@ -220,7 +217,7 @@ angular.module('proton.autoresponder')
 
                     if (data.Code === 1000) {
                         dispatch('saved_success', data);
-                        return eventManager.call().then(() => notifySuccess(responseMessage));
+                        return eventManager.call().then(() => notification.success(responseMessage));
                     }
 
                 })

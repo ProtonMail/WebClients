@@ -23,7 +23,6 @@ angular.module('proton.elements')
         gettextCatalog,
         Label,
         networkActivityTracker,
-        notify,
         paginationModel,
         settingsApi,
         AppModel,

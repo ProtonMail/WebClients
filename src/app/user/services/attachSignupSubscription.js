@@ -1,5 +1,5 @@
 angular.module('proton.user')
-    .factory('attachSignupSubscription', ($rootScope, signupModel, authentication, setupKeys, organizationApi, gettextCatalog, eventManager, notify, Payment) => {
+    .factory('attachSignupSubscription', ($rootScope, signupModel, authentication, setupKeys, organizationApi, gettextCatalog, eventManager, notification, Payment) => {
 
         const dispatch = (type, data = {}) => $rootScope.$emit('signup', { type, data });
 
@@ -69,7 +69,7 @@ angular.module('proton.user')
                 })
                 .then(() => signupModel.clear())
                 .catch((error) => {
-                    notify({ message: error.message, classes: 'notification-danger' });
+                    notification.error(error);
                     signupModel.clear();
                 });
         };

@@ -1,5 +1,5 @@
 angular.module('proton.core')
-    .factory('customizeInvoiceModal', (eventManager, pmModal, settingsApi, notify, authentication, networkActivityTracker) => {
+    .factory('customizeInvoiceModal', (eventManager, pmModal, settingsApi, notification, authentication, networkActivityTracker) => {
         return pmModal({
             controllerAs: 'ctrl',
             templateUrl: 'templates/modals/customizeInvoice.tpl.html',
@@ -20,7 +20,7 @@ angular.module('proton.core')
                         })
                         .then(() => eventManager.call())
                         .then(() => {
-                            notify({ message: 'Invoice customized', classes: 'notification-success' });
+                            notification.success('Invoice customized');
                             params.cancel();
                         });
 

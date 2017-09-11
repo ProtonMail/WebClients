@@ -1,7 +1,9 @@
 angular.module('proton.vpn')
-    .factory('changeVPNNameModal', (pmModal, settingsApi, notify, eventManager, gettextCatalog, networkActivityTracker) => {
+    .factory('changeVPNNameModal', (pmModal, settingsApi, notification, eventManager, gettextCatalog, networkActivityTracker) => {
+
         const successMessage = gettextCatalog.getString('OpenVPN login updated', null, 'Info');
         const errorMessage = gettextCatalog.getString('VPN request failed', null, 'Error');
+
         return pmModal({
             controllerAs: 'ctrl',
             templateUrl: 'templates/vpn/changeVPNNameModal.tpl.html',
@@ -18,7 +20,7 @@ angular.module('proton.vpn')
                             throw new Error(data.Error || errorMessage);
                         })
                         .then(() => eventManager.call())
-                        .then(() => (notify({ message: successMessage, classes: 'notification-success' }), params.close(VPNName)));
+                        .then(() => (notification.success(successMessage), params.close(VPNName)));
                     networkActivityTracker.track(promise);
                 };
                 self.cancel = () => params.close();

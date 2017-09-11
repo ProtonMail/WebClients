@@ -1,5 +1,5 @@
 angular.module('proton.search')
-    .factory('wildcardModel', ($rootScope, authentication, gettextCatalog, networkActivityTracker, notify, settingsApi) => {
+    .factory('wildcardModel', ($rootScope, authentication, gettextCatalog, networkActivityTracker, notification, settingsApi) => {
         const I18N = {
             success: gettextCatalog.getString('Search parameter updated')
         };
@@ -13,7 +13,7 @@ angular.module('proton.search')
                     }
                     throw new Error(data.Error);
                 })
-                .then(() => notify({ message: I18N.success, classes: 'notification-success' }));
+                .then(() => notification.success(I18N.success));
 
             networkActivityTracker.track(promise);
         }

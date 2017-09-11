@@ -1,5 +1,5 @@
 angular.module('proton.keys')
-    .factory('changePasswordModal', (authentication, changeMailboxPassword, eventManager, gettextCatalog, networkActivityTracker, notify, pmModal, settingsApi, User) => {
+    .factory('changePasswordModal', (authentication, changeMailboxPassword, eventManager, gettextCatalog, networkActivityTracker, notification, pmModal, settingsApi, User) => {
         return pmModal({
             controllerAs: 'ctrl',
             templateUrl: 'templates/modals/changePassword.tpl.html',
@@ -21,8 +21,7 @@ angular.module('proton.keys')
                         .then(() => ((next) ? Promise.resolve() : User.lock()))
                         .then(() => eventManager.call())
                         .then(() => {
-                            const message = gettextCatalog.getString('Password updated', null);
-                            notify({ message, classes: 'notification-success' });
+                            notification.success(gettextCatalog.getString('Password updated', null));
                             params.close(next);
                         });
                     networkActivityTracker.track(promise);

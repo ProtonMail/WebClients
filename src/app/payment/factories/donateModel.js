@@ -1,5 +1,5 @@
 angular.module('proton.payment')
-    .factory('donateModel', (Payment, networkActivityTracker, gettextCatalog, notify, $rootScope) => {
+    .factory('donateModel', (Payment, networkActivityTracker, gettextCatalog, notification, $rootScope) => {
 
         const I18N = {
             donation: {
@@ -12,8 +12,6 @@ angular.module('proton.payment')
         };
 
         const dispatch = (type, data = {}) => $rootScope.$emit('payments', { type, data });
-
-        const notifySuccess = (message) => notify({ message, classes: 'notification-success' });
 
         const donate = (options = {}) => {
             const promise = Payment.donate(options)
@@ -56,7 +54,7 @@ angular.module('proton.payment')
 
             dispatch(`${type}.request.load`);
             getPromise(type, options)
-                .then(notifySuccess)
+                .then(notification.success)
                 .then(() => dispatch(`${type}.request.success`))
                 .catch((e) => dispatch(`${type}.request.error`, e));
         };

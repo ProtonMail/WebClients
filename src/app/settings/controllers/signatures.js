@@ -20,7 +20,7 @@ angular.module('proton.settings')
         memberModal,
         memberModel,
         networkActivityTracker,
-        notify,
+        notification,
         organizationApi,
         organizationModel,
         organizationKeysModel,
@@ -109,12 +109,12 @@ angular.module('proton.settings')
             const organization = organizationModel.get();
 
             if (organization.MaxAddresses - organization.UsedAddresses < 1) {
-                notify({ message: gettextCatalog.getString('You have used all addresses in your plan. Please upgrade your plan to add a new address', null, 'Error'), classes: 'notification-danger' });
+                notification.error(gettextCatalog.getString('You have used all addresses in your plan. Please upgrade your plan to add a new address', null, 'Error'));
                 return 0;
             }
 
             if (organization.HasKeys === 1 && $scope.keyStatus > 0) {
-                notify({ message: gettextCatalog.getString('Administrator privileges must be activated', null, 'Error'), classes: 'notification-danger' });
+                notification.error(gettextCatalog.getString('Administrator privileges must be activated', null, 'Error'));
                 $state.go('secured.members');
                 return;
             }
@@ -132,39 +132,39 @@ angular.module('proton.settings')
             const verifiedDomains = _.filter(domains, ({ State }) => State);
 
             if (organization.MaxMembers === 1) {
-                notify(gettextCatalog.getString('Multi-user support requires either a Professional or Visionary plan.', null, 'Info'));
+                notification.info(gettextCatalog.getString('Multi-user support requires either a Professional or Visionary plan.', null, 'Info'));
                 $state.go('secured.members');
                 return false;
             }
 
             if (!organization.HasKeys) {
-                notify(gettextCatalog.getString('Please enable multi-user support before adding users to your organization', null, 'Info'));
+                notification.info(gettextCatalog.getString('Please enable multi-user support before adding users to your organization', null, 'Info'));
                 $state.go('secured.members');
                 return false;
             }
 
             if (!verifiedDomains.length) {
-                notify(gettextCatalog.getString('Please configure a custom domain before adding users to your organization.', null, 'Info'));
+                notification.info(gettextCatalog.getString('Please configure a custom domain before adding users to your organization.', null, 'Info'));
                 return false;
             }
 
             if (organization.MaxMembers - organization.UsedMembers < 1) {
-                notify({ message: gettextCatalog.getString('You have used all members in your plan. Please upgrade your plan to add a new user.', null, 'Error'), classes: 'notification-danger' });
+                notification.error(gettextCatalog.getString('You have used all members in your plan. Please upgrade your plan to add a new user.', null, 'Error'));
                 return false;
             }
 
             if (organization.MaxAddresses - organization.UsedAddresses < 1) {
-                notify({ message: gettextCatalog.getString('You have used all addresses in your plan. Please upgrade your plan to add a new member.', null, 'Error'), classes: 'notification-danger' });
+                notification.error(gettextCatalog.getString('You have used all addresses in your plan. Please upgrade your plan to add a new member.', null, 'Error'));
                 return false;
             }
 
             if (organization.MaxSpace - organization.AssignedSpace < 1) {
-                notify({ message: gettextCatalog.getString('All storage space has been allocated. Please reduce storage allocated to other members.', null, 'Error'), classes: 'notification-danger' });
+                notification.error(gettextCatalog.getString('All storage space has been allocated. Please reduce storage allocated to other members.', null, 'Error'));
                 return false;
             }
 
             if ($scope.keyStatus > 0) {
-                notify({ message: gettextCatalog.getString('Permission denied, administrator privileges have been restricted.', null, 'Error'), classes: 'notification-danger' });
+                notification.error(gettextCatalog.getString('Permission denied, administrator privileges have been restricted.', null, 'Error'));
                 $state.go('secured.members');
                 return false;
             }
@@ -225,11 +225,6 @@ angular.module('proton.settings')
                 $scope.disabledAddresses = _.difference(authentication.user.Addresses, $scope.activeAddresses);
             }
         });
-
-        // $scope.$on('createUser', () => {
-        //     notify({ message: gettextCatalog.getString('Address created', null, 'Info'), classes: 'notification-success' });
-        // });
-
         /**
      * Return domain value for a specific address
      * @param {Object} address
@@ -304,7 +299,7 @@ angular.module('proton.settings')
                             .then(() => deleteAddress(addressID))
                             .then(() => eventManager.call())
                             .then(() => {
-                                notify({ message: gettextCatalog.getString('Address deleted', null, 'Info'), classes: 'notification-success' });
+                                notification.success(gettextCatalog.getString('Address deleted', null, 'Info'));
                                 confirmModal.deactivate();
                             });
 
@@ -324,7 +319,7 @@ angular.module('proton.settings')
             const addressID = address.ID;
             const promise = enableAddress(addressID)
                 .then(() => eventManager.call())
-                .then(() => notify({ message: gettextCatalog.getString('Address enabled', null, 'Info'), classes: 'notification-success' }));
+                .then(() => notification.success(gettextCatalog.getString('Address enabled', null, 'Info')));
 
             networkActivityTracker.track(promise);
         };
@@ -345,7 +340,7 @@ angular.module('proton.settings')
                         const promise = disableAddress(addressID)
                             .then(() => eventManager.call())
                             .then(() => {
-                                notify({ message: gettextCatalog.getString('Address disabled', null, 'Info'), classes: 'notification-success' });
+                                notification.success(gettextCatalog.getString('Address disabled', null, 'Info'));
                                 confirmModal.deactivate();
                             });
 
@@ -432,15 +427,15 @@ angular.module('proton.settings')
                                 .then((result) => {
                                     if (angular.isDefined(result.data) && result.data.Code === 1000) {
                                         eventManager.call();
-                                        notify({ message: gettextCatalog.getString('Address updated', null, 'Info'), classes: 'notification-success' });
+                                        notification.success(gettextCatalog.getString('Address updated', null, 'Info'));
                                         signatureModal.deactivate();
                                     } else if (angular.isDefined(result.data) && result.data.Error) {
-                                        notify({ message: result.data.Error, classes: 'notification-danger' });
+                                        notification.error(result.data.Error);
                                     } else {
-                                        notify({ message: gettextCatalog.getString('Error during updating', null, 'Error'), classes: 'notification-danger' });
+                                        notification.error(gettextCatalog.getString('Error during updating', null, 'Error'));
                                     }
                                 }, () => {
-                                    notify({ message: gettextCatalog.getString('Error during updating', null, 'Error'), classes: 'notification-danger' });
+                                    notification.error(gettextCatalog.getString('Error during updating', null, 'Error'));
                                 })
                         );
                     },
@@ -481,11 +476,11 @@ angular.module('proton.settings')
                 Address.order({ Order: order })
                     .then((result) => {
                         if (result.data && result.data.Code === 1000) {
-                            notify({ message: gettextCatalog.getString('Order saved', null, 'Info'), classes: 'notification-success' });
+                            notification.success(gettextCatalog.getString('Order saved', null, 'Info'));
                         } else if (result.data && result.data.Error) {
-                            notify({ message: result.data.Error, classes: 'notification-danger' });
+                            notification.error(result.data.Error);
                         } else {
-                            notify({ message: gettextCatalog.getString('Unable to save your changes, please try again.', null, 'Error'), classes: 'notification-danger' });
+                            notification.error(gettextCatalog.getString('Unable to save your changes, please try again.', null, 'Error'));
                         }
                     })
             );
@@ -518,7 +513,7 @@ angular.module('proton.settings')
                     }
                 };
             } else {
-                notify({ message: gettextCatalog.getString('Organization keys already active', null, 'Error'), classes: 'notification-success' });
+                notification.success(gettextCatalog.getString('Organization keys already active', null, 'Error'));
                 return;
             }
 
@@ -547,7 +542,7 @@ angular.module('proton.settings')
             const otherAdmins = $scope.members.filter((member) => member.Role === CONSTANTS.PAID_ADMIN_ROLE).length > 1;
 
             if (nonPrivate.length > 0 && $scope.keyStatus > 0) {
-                notify({ message: gettextCatalog.getString('You must privatize all sub-accounts before generating new organization keys', null, 'Error'), classes: 'notification-danger' });
+                notification.error(gettextCatalog.getString('You must privatize all sub-accounts before generating new organization keys', null, 'Error'));
                 return;
             }
 

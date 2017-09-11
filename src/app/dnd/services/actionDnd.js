@@ -1,5 +1,5 @@
 angular.module('proton.dnd')
-    .factory('actionDnd', ($rootScope, $state, CONSTANTS, ptDndModel, actionConversation, labelsModel, gettextCatalog, notify, ptDndNotification, authentication) => {
+    .factory('actionDnd', ($rootScope, $state, CONSTANTS, ptDndModel, actionConversation, labelsModel, gettextCatalog, notification, ptDndNotification, authentication) => {
 
         const NOTIFS = {
             APPLY_LABEL: gettextCatalog.getString('Apply label', null, 'notification drag and drop'),
@@ -14,8 +14,6 @@ angular.module('proton.dnd')
         };
 
         ptDndNotification.init();
-
-        const notifySuccess = (message) => notify({ message, classes: 'notification-success' });
 
         const move = (ids, type, labelID) => {
             if (type === 'conversation') {
@@ -49,7 +47,7 @@ angular.module('proton.dnd')
                 });
             }
 
-            notifySuccess(`${NOTIFS.APPLY_LABEL} ${label.Name}`);
+            notification.success(`${NOTIFS.APPLY_LABEL} ${label.Name}`);
         };
 
         const star = (list = [], type) => {
@@ -59,7 +57,7 @@ angular.module('proton.dnd')
                     data: { model, type }
                 });
             });
-            notifySuccess(NOTIFS.star(list.length, type));
+            notification.success(NOTIFS.star(list.length, type));
         };
 
         let selectedList;
