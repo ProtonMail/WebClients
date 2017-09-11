@@ -22,7 +22,7 @@ angular.module('proton.settings')
         memberApi,
         memberModal,
         networkActivityTracker,
-        notify,
+        notification,
         organizationApi,
         passwords,
         pmcw,
@@ -112,7 +112,7 @@ angular.module('proton.settings')
                         })
                         .then(() => eventManager.call())
                         .then(() => {
-                            notify({ message: gettextCatalog.getString('Role updated', null), classes: 'notification-success' });
+                            notification.success(gettextCatalog.getString('Role updated', null));
                             confirmModal.deactivate();
                         });
 
@@ -134,7 +134,7 @@ angular.module('proton.settings')
             const promise = organizationApi.updateOrganizationName({ DisplayName: $scope.organization.DisplayName })
                 .then(({ data = {} } = {}) => {
                     if (data.Code === 1000) {
-                        notify({ message: gettextCatalog.getString('Organization updated', null), classes: 'notification-success' });
+                        notification.success(gettextCatalog.getString('Organization updated', null));
                     } else {
                         throw new Error(data.Error || errorMessage);
                     }
@@ -161,10 +161,10 @@ angular.module('proton.settings')
                                 .then((result) => {
                                     if (result.data && result.data.Code === 1000) {
                                         member.Private = 1;
-                                        notify({ message: success, classes: 'notification-success' });
+                                        notification.success(success);
                                         confirmModal.deactivate();
                                     } else if (result.data && result.data.Error) {
-                                        notify({ message: result.data.Error, classes: 'notification-danger' });
+                                        notification.error(result.data.Error);
                                     }
                                 })
                         );
@@ -178,7 +178,7 @@ angular.module('proton.settings')
 
         function canLogin() {
             if ($scope.keyStatus > 0 && CONSTANTS.KEY_PHASE > 3) {
-                notify({ message: gettextCatalog.getString('Permission denied, administrator privileges have been restricted.', null, 'Error'), classes: 'notification-danger' });
+                notification.error(gettextCatalog.getString('Permission denied, administrator privileges have been restricted.', null, 'Error'));
                 $state.go('secured.members');
                 return false;
             }
@@ -237,7 +237,7 @@ angular.module('proton.settings')
                         },
                         (error) => {
                             child.close();
-                            notify({ message: error.error_description, classes: 'notification-danger' });
+                            notification.error(error.error_description);
                         })
                 )
                     .catch(() => {
@@ -302,7 +302,7 @@ angular.module('proton.settings')
                             .then(() => eventManager.call())
                             .then(() => {
                                 confirmModal.deactivate();
-                                notify({ message: successMessage, classes: 'notification-success' });
+                                notification.success(successMessage);
                             });
                         networkActivityTracker.track(promise);
                     },
@@ -327,7 +327,7 @@ angular.module('proton.settings')
                                 const { organizationKey } = $scope;
                                 const promise = changeOrganizationPassword({ newPassword, creds, organizationKey })
                                     .then(() => {
-                                        notify({ message: gettextCatalog.getString('Password updated', null), classes: 'notification-success' });
+                                        notification.success(gettextCatalog.getString('Password updated', null));
                                         loginPasswordModal.deactivate();
                                     });
                                 networkActivityTracker.track(promise);
@@ -377,7 +377,7 @@ angular.module('proton.settings')
             }
 
             if ($scope.organization.MaxMembers === 1) {
-                notify(gettextCatalog.getString('Please upgrade to a Professional plan with more than 1 user, or a Visionary account, to get multi-user support.', null));
+                notification.info(gettextCatalog.getString('Please upgrade to a Professional plan with more than 1 user, or a Visionary account, to get multi-user support.', null));
             } else if ($scope.organization.MaxMembers > 1) {
                 passwordModal(submit);
             }

@@ -1,5 +1,5 @@
 angular.module('proton.core')
-    .directive('defaultSignature', ($rootScope, gettextCatalog, $q, eventManager, notify, networkActivityTracker, CONSTANTS, tools, settingsApi, authentication) => {
+    .directive('defaultSignature', ($rootScope, gettextCatalog, $q, eventManager, notification, networkActivityTracker, CONSTANTS, tools, settingsApi, authentication) => {
         return {
             replace: true,
             restrict: 'E',

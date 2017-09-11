@@ -1,5 +1,5 @@
 angular.module('proton.core')
-    .factory('generateOrganizationModal', (pmModal, authentication, networkActivityTracker, organizationApi, pmcw, passwords, setupKeys, loginPasswordModal, notify, gettextCatalog) => {
+    .factory('generateOrganizationModal', (pmModal, authentication, networkActivityTracker, organizationApi, pmcw, passwords, setupKeys, loginPasswordModal, notification, gettextCatalog) => {
         return pmModal({
             controllerAs: 'ctrl',
             templateUrl: 'templates/modals/generateOrganization.tpl.html',
@@ -78,7 +78,7 @@ angular.module('proton.core')
                                         return organizationApi.replaceKeys(payload, creds)
                                             .then(({ data }) => {
                                                 if (data && data.Code === 1000) {
-                                                    notify({ message: gettextCatalog.getString('Organization keys change successful', null, 'Error'), classes: 'notification-success' });
+                                                    notification.success(gettextCatalog.getString('Organization keys change successful', null, 'Error'));
                                                     return resolve(params.submit(decryptedKey));
                                                 } else if (data && data.Error) {
                                                     return reject(new Error(data.Error));
@@ -94,8 +94,8 @@ angular.module('proton.core')
                             });
                         }))
                         .catch((error) => {
-                            if (error && error.message) {
-                                notify({ message: error.message, classes: 'notification-danger' });
+                            if (error) {
+                                notification.error(error);
                             }
                         }));
                 };

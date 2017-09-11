@@ -17,7 +17,7 @@ angular.module('proton.core')
         pmcw,
         tempStorage,
         tools,
-        notify
+        notification
     ) => {
         function initialization() {
 
@@ -101,7 +101,7 @@ angular.module('proton.core')
             if (
                 $scope.resetMailboxToken === undefined
             ) {
-                notify({ message: 'Missing reset token', classes: 'notification-danger' });
+                notification.error('Missing reset token');
                 return;
             }
 
@@ -111,14 +111,6 @@ angular.module('proton.core')
                     .then($scope.resetMailboxTokenResponse)
                     .then($scope.doLogUserIn)
                     .then($scope.doMailboxLogin)
-                    .catch((err) => {
-                        // TODO exception handling
-                        $log.error(err);
-                        notify({
-                            classes: 'notification-danger',
-                            message: err.message
-                        });
-                    })
             );
         };
 
@@ -154,16 +146,10 @@ angular.module('proton.core')
                             $rootScope.isSecure = authentication.isSecured();
                             $state.go('secured.inbox');
                         }, () => {
-                            notify({
-                                classes: 'notification-danger',
-                                message: 'doMailboxLogin: Unable to set authCookie.'
-                            });
+                            notification.error('doMailboxLogin: Unable to set authCookie.');
                         });
                 }, () => {
-                    notify({
-                        classes: 'notification-danger',
-                        message: 'doMailboxLogin: Unable to unlock mailbox.'
-                    });
+                    notification.error('doMailboxLogin: Unable to unlock mailbox.');
                 });
         };
 
@@ -176,7 +162,7 @@ angular.module('proton.core')
                 angular.isUndefined($scope.account.resetMbCode) ||
             $scope.account.resetMbCode.length === 0
             ) {
-                notify('Verification Code required');
+                notification.info('Verification Code required');
             } else {
                 Reset.validateResetToken({
                     Username: $scope.creds.username,
@@ -185,10 +171,7 @@ angular.module('proton.core')
                     .then(
                         (response) => {
                             if (response.data.Code !== 1000) {
-                                notify({
-                                    classes: 'notification-danger',
-                                    message: 'Invalid Verification Code.'
-                                });
+                                notification.error('Invalid Verification Code.');
                             } else {
                                 $scope.addresses = response.data.Addresses;
                                 $scope.resetMailboxToken = $scope.account.resetMbCode;
@@ -198,10 +181,7 @@ angular.module('proton.core')
                         },
                         (err) => {
                             $log.error(err);
-                            notify({
-                                classes: 'notification-danger',
-                                message: 'Unable to verify Reset Token.'
-                            });
+                            notification.error('Unable to verify Reset Token.');
                         }
                     );
             }
@@ -212,7 +192,7 @@ angular.module('proton.core')
      */
         $scope.resetMailboxInit = function () {
             if ($scope.process.danger !== 'DANGER') {
-                notify({ message: 'Invalid value', classes: 'notification-danger' });
+                notification.error('Invalid value');
                 return false;
             }
 
@@ -233,7 +213,7 @@ angular.module('proton.core')
             const tokenResponse = function (response) {
                 const deferred = $q.defer();
                 if (response.data.Error || response.data.Code !== 1000) {
-                    notify(response);
+                    notification.info(response);
                     $log.error(response);
                     deferred.reject(response.data.Error);
                 } else if (response.data.Token) {
@@ -245,10 +225,7 @@ angular.module('proton.core')
                         .then(
                             (response) => {
                                 if (response.data.Code !== 1000) {
-                                    notify({
-                                        classes: 'notification-danger',
-                                        message: 'Invalid Verification Code.'
-                                    });
+                                    notification.error('Invalid Verification Code.');
                                 } else {
                                     $scope.addresses = response.data.Addresses;
                                     $scope.showForm = true;
@@ -258,10 +235,7 @@ angular.module('proton.core')
                             },
                             (err) => {
                                 $log.error(err);
-                                notify({
-                                    classes: 'notification-danger',
-                                    message: 'Unable to verify Reset Token.'
-                                });
+                                notification.error('Unable to verify Reset Token.');
                             }
                         );
                 } else {
@@ -313,26 +287,17 @@ angular.module('proton.core')
                 promise.reject(new Error('Connection error: Unable to save new keys.'));
             }
             if (response.status !== 200) {
-                notify({
-                    classes: 'notification-danger',
-                    message: 'Error, try again in a few minutes.'
-                });
+                notification.error('Error, try again in a few minutes.');
                 $scope.process.savingKeys = false;
                 promise.reject(new Error('Status Error: Unable to save new keys.'));
             } else if (response.data.Error) {
                 if (response.data.ErrorDescription !== '') {
-                    notify({
-                        classes: 'notification-danger',
-                        message: response.data.ErrorDescription
-                    });
+                    notification.error(response.data.ErrorDescription);
                     $log.error(response);
                     $scope.process.savingKeys = false;
                     promise.reject(new Error(response.data.ErrorDescription));
                 } else {
-                    notify({
-                        classes: 'notification-danger',
-                        message: response.data.Error
-                    });
+                    notification.error(response.data.Error);
                     $log.error(response);
                     $scope.process.savingKeys = false;
                     promise.reject(new Error(response.data.Error));

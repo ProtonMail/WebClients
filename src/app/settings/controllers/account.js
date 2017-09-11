@@ -20,7 +20,7 @@ angular.module('proton.settings')
         Key,
         loginPasswordModal,
         networkActivityTracker,
-        notify,
+        notification,
         organizationModel,
         passwords,
         pmcw,
@@ -105,10 +105,7 @@ angular.module('proton.settings')
                         authentication.user.NotificationEmail = $scope.notificationEmail;
                         form.$setUntouched();
                         form.$setPristine();
-                        notify({
-                            message: gettextCatalog.getString('Recovery/Notification email saved', null),
-                            classes: 'notification-success'
-                        });
+                        notification.success(gettextCatalog.getString('Recovery/Notification email saved', null));
                     });
                 networkActivityTracker.track(promise);
             }
@@ -123,7 +120,7 @@ angular.module('proton.settings')
                 const promise = settingsApi.passwordReset({ PasswordReset: $scope.passwordReset }, credentials)
                     .then(() => {
                         authentication.user.PasswordReset = $scope.passwordReset;
-                        notify({ message: gettextCatalog.getString('Preference saved', null), classes: 'notification-success' });
+                        notification.success(gettextCatalog.getString('Preference saved', null));
                     });
                 networkActivityTracker.track(promise);
             }
@@ -137,9 +134,9 @@ angular.module('proton.settings')
                     .then((result) => {
                         if (result.data && result.data.Code === 1000) {
                             authentication.user.Notify = $scope.dailyNotifications;
-                            notify({ message: gettextCatalog.getString('Preference saved', null), classes: 'notification-success' });
+                            notification.success(gettextCatalog.getString('Preference saved', null));
                         } else if (result.data && result.data.Error) {
-                            notify({ message: result.data.Error, classes: 'notification-danger' });
+                            notification.error(result.data.Error);
                         }
                     })
             );
@@ -152,7 +149,7 @@ angular.module('proton.settings')
                 if (changePasswordModal.active()) {
                     const message = gettextCatalog.getString('Operation timed out for security reasons, please try again', null);
                     changePasswordModal.deactivate();
-                    notify({ message, classes: 'notification-danger' });
+                    notification.error(message);
                 }
             }, tenMinutes, false);
         }
@@ -218,7 +215,7 @@ angular.module('proton.settings')
             networkActivityTracker.track(
                 settingsApi.autosave({ AutoSaveContacts: $scope.autosaveContacts })
                     .then(() => {
-                        notify({ message: gettextCatalog.getString('Preference saved', null), classes: 'notification-success' });
+                        notification.success(gettextCatalog.getString('Preference saved', null));
                         authentication.user.AutoSaveContacts = $scope.autosaveContacts;
                     })
             );
@@ -229,7 +226,7 @@ angular.module('proton.settings')
                 settingsApi.setShowImages({ ShowImages: $scope.images })
                     .then(() => {
                         authentication.user.ShowImages = $scope.images;
-                        notify({ message: gettextCatalog.getString('Image preferences updated', null), classes: 'notification-success' });
+                        notification.success(gettextCatalog.getString('Image preferences updated', null));
                     })
             );
         };
@@ -239,7 +236,7 @@ angular.module('proton.settings')
                 settingsApi.setShowEmbedded({ ShowEmbedded: $scope.embedded })
                     .then(() => {
                         authentication.user.ShowEmbedded = $scope.embedded;
-                        notify({ message: gettextCatalog.getString('Image preferences updated', null), classes: 'notification-success' });
+                        notification.success(gettextCatalog.getString('Image preferences updated', null));
                     })
             );
         };
@@ -267,9 +264,9 @@ angular.module('proton.settings')
                                 hotkeys.unbind();
                             }
 
-                            notify({ message: gettextCatalog.getString('Hotkeys preferences updated', null), classes: 'notification-success' });
+                            notification.success(gettextCatalog.getString('Hotkeys preferences updated', null));
                         } else if (result.data && result.data.Error) {
-                            notify({ message: result.data.Error, classes: 'notification-danger' });
+                            notification.error(result.data.Error);
                         }
                     })
             );
@@ -307,7 +304,7 @@ angular.module('proton.settings')
                     }
                     throw new Error(data.Error);
                 })
-                .then(() => notify({ message: successMessage, classes: 'notification-success' }));
+                .then(() => notification.success(successMessage));
             networkActivityTracker.track(promise);
         };
     });

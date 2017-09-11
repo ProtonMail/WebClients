@@ -1,5 +1,5 @@
 angular.module('proton.core')
-    .factory('activateOrganizationModal', (pmModal, networkActivityTracker, organizationApi, gettextCatalog, passwords, pmcw, authentication, notify) => {
+    .factory('activateOrganizationModal', (pmModal, networkActivityTracker, organizationApi, gettextCatalog, passwords, pmcw, authentication, notification) => {
         return pmModal({
             controllerAs: 'ctrl',
             templateUrl: 'templates/modals/activateOrganization.tpl.html',
@@ -36,7 +36,7 @@ angular.module('proton.core')
                                             .then((PrivateKey) => organizationApi.activateKeys({ PrivateKey }))
                                             .then(({ data }) => {
                                                 if (data && data.Code === 1000) {
-                                                    notify({ message: params.successMessage, classes: 'notification-success' });
+                                                    notification.success(params.successMessage);
                                                     params.submit(pkg);
                                                     return;
                                                 } else if (data && data.Error) {
@@ -49,8 +49,8 @@ angular.module('proton.core')
                                 );
                         })
                         .catch((error) => {
-                            if (error && error.message) {
-                                notify({ message: error.message, classes: 'notification-danger' });
+                            if (error) {
+                                notification.error(error);
                             }
                         }));
                 };

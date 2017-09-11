@@ -12,7 +12,7 @@ angular.module('proton.settings')
         networkActivityTracker,
         eventManager,
         settingsApi,
-        notify) => {
+        notification) => {
         const unsubscribe = [];
         $scope.appearance = {
             cssTheme: authentication.user.Theme,
@@ -39,15 +39,15 @@ angular.module('proton.settings')
                 settingsApi.theme({ Theme: $scope.appearance.cssTheme })
                     .then((result) => {
                         if (result.data && result.data.Code === 1000) {
-                            notify({ message: gettextCatalog.getString('Theme saved', null), classes: 'notification-success' });
+                            notification.success(gettextCatalog.getString('Theme saved', null));
                             eventManager.call().then(() => {
                                 deferred.resolve();
                             });
                         } else if (result.data && result.data.Error) {
-                            notify({ message: result.data.Error, classes: 'notification-danger' });
+                            notification.error(result.data.Error);
                             deferred.reject();
                         } else {
-                            notify({ message: gettextCatalog.getString('Unable to save your changes, please try again.', null, 'Error'), classes: 'notification-danger' });
+                            notification.error(gettextCatalog.getString('Unable to save your changes, please try again.', null, 'Error'));
                             deferred.reject();
                         }
                     })
@@ -70,10 +70,10 @@ angular.module('proton.settings')
                 settingsApi.setComposerMode({ ComposerMode: value })
                     .then((result) => {
                         if (result.data && result.data.Code === 1000) {
-                            notify({ message: gettextCatalog.getString('Compose mode saved', null, 'Info'), classes: 'notification-success' });
+                            notification.success(gettextCatalog.getString('Compose mode saved', null, 'Info'));
                             return eventManager.call();
                         } else if (result.data && result.data.Error) {
-                            notify({ message: result.data.Error, classes: 'notification-danger' });
+                            notification.error(result.data.Error);
                         }
                     })
             );
@@ -86,10 +86,10 @@ angular.module('proton.settings')
                 settingsApi.setViewlayout({ ViewLayout: value })
                     .then((result) => {
                         if (result.data && result.data.Code === 1000) {
-                            notify({ message: gettextCatalog.getString('Layout saved', null), classes: 'notification-success' });
+                            notification.success(gettextCatalog.getString('Layout saved', null));
                             return eventManager.call();
                         } else if (result.data && result.data.Error) {
-                            notify({ message: result.data.Error, classes: 'notification-danger' });
+                            notification.error(result.data.Error);
                         }
                     })
             );
@@ -102,7 +102,7 @@ angular.module('proton.settings')
                     if (result.data && result.data.Code === 1000) {
                         return eventManager.call()
                             .then(() => {
-                                notify({ message: gettextCatalog.getString('Buttons position saved', null, 'Info'), classes: 'notification-success' });
+                                notification.success(gettextCatalog.getString('Buttons position saved', null, 'Info'));
                                 return Promise.resolve();
                             });
                     } else if (result.data && result.data.Error) {
@@ -129,7 +129,7 @@ angular.module('proton.settings')
                 })
                 .then(() => eventManager.call())
                 .then(() => {
-                    notify({ message: gettextCatalog.getString('View mode saved', null, 'Info'), classes: 'notification-success' });
+                    notification.success(gettextCatalog.getString('View mode saved', null, 'Info'));
                     $rootScope.$emit('appearance', { type: 'viewModeChanged' });
                 });
 
