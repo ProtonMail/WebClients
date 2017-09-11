@@ -1,5 +1,5 @@
 angular.module('proton.composer')
-    .directive('composerDropzone', ($rootScope, attachmentFileFormat, tools, attachmentModel, notify, gettextCatalog, CONSTANTS, $state) => {
+    .directive('composerDropzone', ($rootScope, attachmentFileFormat, tools, attachmentModel, notification, gettextCatalog, CONSTANTS, $state) => {
         Dropzone.autoDiscover = false;
 
         const { BASE_SIZE, ATTACHMENT_SIZE_LIMIT, ATTACHMENT_NUMBER_LIMIT } = CONSTANTS;
@@ -20,8 +20,6 @@ angular.module('proton.composer')
         const ERROR_EO_NUMBER_ATT = gettextCatalog.getString('Maximum number of attachments (10) exceeded.', null, 'Composer');
 
         const dictDefaultMessage = gettextCatalog.getString('Drop a file here to upload', null, 'Info');
-
-        const notifyError = (message) => notify({ message, classes: 'notification-danger' });
 
         /**
          * Compute some informations to get the current context for a dropzone
@@ -51,14 +49,14 @@ angular.module('proton.composer')
                 if (numberFiles === ATTACHMENT_NUMBER_LIMIT) {
                     const msg = dropMessages[ATTACHMENT_NUMBER_LIMIT];
                     dropzone.removeFile(file);
-                    notifyError(msg);
+                    notification.error(msg);
                     return queue;
                 }
 
                 if (currentSize >= ATTACHMENT_MAX_SIZE) {
                     const msg = dropMessages[ATTACHMENT_MAX_SIZE](currentSize);
                     dropzone.removeFile(file);
-                    notifyError(msg);
+                    notification.error(msg);
                     return queue;
                 }
 
@@ -66,7 +64,7 @@ angular.module('proton.composer')
                     const msg = dropMessages[0];
                     /* file is too big */
                     dropzone.removeFile(file);
-                    notifyError(msg);
+                    notification.error(msg);
                     return queue;
                 }
 
@@ -117,7 +115,7 @@ angular.module('proton.composer')
 
                         // Prevent freeze from the API
                         return (id = setTimeout(() => {
-                            notifyError(dropMessages[ATTACHMENT_SIZE_LIMIT]);
+                            notification.error(dropMessages[ATTACHMENT_SIZE_LIMIT]);
                             dispatchAction(message, { size: 0, files: [] });
                             clearTimeout(id);
                         }, 100));
@@ -136,7 +134,7 @@ angular.module('proton.composer')
 
                     if (isEO && (queue.files.length + message.Attachments.length) > 10) {
                         dispatchAction(message, queue, 'attachments.limit.error');
-                        return notifyError(ERROR_EO_NUMBER_ATT);
+                        return notification.error(ERROR_EO_NUMBER_ATT);
                     }
                     dispatchAction(message, queue);
                 });

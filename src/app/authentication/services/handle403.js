@@ -1,5 +1,5 @@
 angular.module('proton.authentication')
-    .factory('handle403', ($http, $q, loginPasswordModal, User, authentication, notify) => {
+    .factory('handle403', ($http, $q, loginPasswordModal, User, authentication, notification) => {
         return (config) => {
             const deferred = $q.defer();
             // Open the open to enter login password because this request require lock scope
@@ -13,7 +13,7 @@ angular.module('proton.authentication')
                                 // Resend request now
                                 deferred.resolve($http(config));
                             }, (error) => {
-                                notify({ message: error.error_description, classes: 'notification-danger' });
+                                notification.error(error.error_description);
                             });
                     },
                     cancel() {
