@@ -5,9 +5,6 @@ const PACKAGE = require('../package');
 const { TRANSLATIONS_APP } = require('./translationsLoader');
 
 const APP_VERSION = PACKAGE.version || '3.8.18';
-const SITE_ID = 5;
-const AB_SITE_ID = 8;
-
 
 const AUTOPREFIXER_CONFIG = {
     browsers: [
@@ -15,6 +12,17 @@ const AUTOPREFIXER_CONFIG = {
         'iOS >= 8',
         'Safari >= 8'
     ]
+};
+
+const STATS_ID = {
+    a: {
+        siteId: 5, // the id of the global (total) piwik site
+        abSiteId: 8 // the id of the piwik site that is configured to only track requests that touch this FE version
+    },
+    b: {
+        siteId: 9, // the id of the global (total) piwik site
+        abSiteId: 9 // the id of the piwik site that is configured to only track requests that touch this FE version
+    }
 };
 
 const API_TARGETS = {
@@ -33,18 +41,14 @@ const PROD_STAT_MACHINE = {
     isEnabled: true,
     statsHost: 'stats.protonmail.ch',
     domains: ['*.protonmail.com', '*.mail.protonmail.com'],
-    cookieDomain: '*.protonmail.com',
-    siteId: 5, // the id of the global (total) piwik site
-    abSiteId: 8 // the id of the piwik site that is configured to only track requests that touch this FE version
+    cookieDomain: '*.protonmail.com'
 };
 
 const HOST_STAT_MACHINE = {
     isEnabled: true,
     statsHost: 'stats.protonmail.host',
     domains: ['*.protonmail.host', '*.mail.protonmail.host'],
-    cookieDomain: '*.protonmail.host',
-    siteId: 5, // the id of the global (total) piwik site
-    abSiteId: 8 // the id of the piwik site that is configured to only track requests that touch this FE version
+    cookieDomain: '*.protonmail.host'
 };
 
 const NO_STAT_MACHINE = { isEnabled: false };
@@ -68,9 +72,9 @@ const APP = {
 };
 
 const getStatsConfig = (deployBranch = '') => {
-    const [, host = 'dev'] = deployBranch.split('-');
-    return STATS_CONFIG[host] || NO_STAT_MACHINE;
-}
+    const [, host = 'dev', subhost = 'a' ] = deployBranch.split('-');
+    return extend({}, STATS_CONFIG[host], STATS_ID[subhost]) || NO_STAT_MACHINE;
+};
 
 const apiUrl = (type) => {
     if (type && API_TARGETS[type]) {
