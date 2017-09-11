@@ -74,8 +74,8 @@ angular.module('proton.keys')
                 privateKey: signingKey,
                 publicKeys: signingKey.toPublic()
             })
-                .then(({ data: decryptedToken, signature }) => {
-                    if (signature !== 1) {
+                .then(({ data: decryptedToken, verified }) => {
+                    if (verified !== 1) {
                         return $q.reject({ message: 'Signature verification failed' });
                     }
                     return { PrivateKey: key.PrivateKey, decryptedToken };
