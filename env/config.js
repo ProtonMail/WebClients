@@ -20,7 +20,7 @@ const STATS_ID = {
         abSiteId: 8 // the id of the piwik site that is configured to only track requests that touch this FE version
     },
     b: {
-        siteId: 9, // the id of the global (total) piwik site
+        siteId: 5, // the id of the global (total) piwik site
         abSiteId: 9 // the id of the piwik site that is configured to only track requests that touch this FE version
     }
 };
