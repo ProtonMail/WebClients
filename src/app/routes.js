@@ -108,7 +108,7 @@ angular.module('proton.routes', [
                         templateUrl: 'templates/layout/pre.tpl.html'
                     }
                 },
-                onEnter($state, $stateParams, $rootScope, notify, Invite, gettextCatalog, AppModel) {
+                onEnter($state, $stateParams, $rootScope, notification, Invite, gettextCatalog, AppModel) {
                     const { token: inviteToken, selector: inviteSelector } = $stateParams;
                     const errorMessage = gettextCatalog.getString('Invalid invite link', null, 'Error');
 
@@ -120,7 +120,7 @@ angular.module('proton.routes', [
                                 AppModel.set('preInvited', true);
                                 return $state.go('signup', { inviteToken, inviteSelector });
                             }
-                            notify({ message: data.Error || errorMessage, classes: 'notification-danger' });
+                            notification.error(data.Error || errorMessage);
                             $state.go('login');
                         });
                 }
@@ -156,13 +156,13 @@ angular.module('proton.routes', [
                     lang(i18nLoader) {
                         return i18nLoader();
                     },
-                    reset(networkActivityTracker, settingsApi, notify, eventManager, gettextCatalog) {
+                    reset(networkActivityTracker, settingsApi, notification, eventManager, gettextCatalog) {
                         const errorMessage = gettextCatalog.getString('Unable to reset theme', null, 'Error');
                         const promise = settingsApi.theme({ Theme: '' })
                             .then((result = {}) => {
                                 const { data } = result;
                                 if (data.Code === 1000) {
-                                    notify({ message: gettextCatalog.getString('Theme reset! Redirecting...', null), classes: 'notification-success' });
+                                    notification.success(gettextCatalog.getString('Theme reset! Redirecting...', null));
                                     return eventManager.call();
                                 }
                                 return Promise.reject(data.Error || errorMessage);
@@ -339,7 +339,7 @@ angular.module('proton.routes', [
                 views: {
                     content: {
                         templateUrl: 'templates/views/outside.unlock.tpl.html',
-                        controller($scope, $state, $stateParams, pmcw, encryptedToken, networkActivityTracker, notify, secureSessionStorage) {
+                        controller($scope, $state, $stateParams, pmcw, encryptedToken, networkActivityTracker, notification, secureSessionStorage) {
                             $scope.params = {
                                 MessagePassword: ''
                             };
@@ -357,7 +357,7 @@ angular.module('proton.routes', [
                                     })
                                     .catch((err) => {
                                         console.error(err);
-                                        notify({ message: 'Wrong Mailbox Password.', classes: 'notification-danger' });
+                                        notification.error('Wrong Mailbox Password.');
                                     });
 
                                 networkActivityTracker.track(promise);
@@ -584,10 +584,10 @@ angular.module('proton.routes', [
             .state('secured.contacts', {
                 url: '/contacts',
                 resolve: {
-                    delinquent($state, gettextCatalog, user, notify, authentication) {
+                    delinquent($state, gettextCatalog, user, notification, authentication) {
                         if (authentication.user.Delinquent >= 3) {
                             const message = gettextCatalog.getString('Your account currently has an overdue invoice. Please pay all unpaid invoices.', null, 'Info');
-                            notify({ message, classes: 'notification-danger' });
+                            notification.error(message);
                             $state.go('secured.payments');
                         }
                         return Promise.resolve();
@@ -995,10 +995,10 @@ angular.module('proton.routes', [
                 url: '/' + box + '?' + conversationParameters(),
                 views: list,
                 resolve: {
-                    delinquent($state, gettextCatalog, user, notify, authentication) {
+                    delinquent($state, gettextCatalog, user, notification, authentication) {
                         if (authentication.user.Delinquent >= 3) {
                             const message = gettextCatalog.getString('Your account currently has an overdue invoice. Please pay all unpaid invoices.', null, 'Info');
-                            notify({ message, classes: 'notification-danger' });
+                            notification.error(message);
                             $state.go('secured.payments');
                         }
                         return Promise.resolve();

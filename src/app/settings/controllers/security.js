@@ -15,7 +15,7 @@ angular.module('proton.settings')
         recoveryCodeModal,
         Logs,
         networkActivityTracker,
-        notify,
+        notification,
         settingsApi
     ) => {
         $scope.logs = [];
@@ -76,7 +76,7 @@ angular.module('proton.settings')
                     .then(() => {
                         $scope.twoFactor = 0;
                         authentication.user.TwoFactor = 0;
-                        notify({ message: gettextCatalog.getString('Two-factor authentication disabled', null), classes: 'notification-success' });
+                        notification.success(gettextCatalog.getString('Two-factor authentication disabled', null));
                     });
                 networkActivityTracker.track(promise);
             }
@@ -160,7 +160,7 @@ angular.module('proton.settings')
                         $scope.haveLogs = true;
                     },
                     (error) => {
-                        notify({ message: gettextCatalog.getString('Error during the initialization of logs', null, 'Error'), classes: 'notification-danger' });
+                        notification.error(gettextCatalog.getString('Error during the initialization of logs', null, 'Error'));
                         $log.error(error);
                     }
                 )
@@ -182,7 +182,7 @@ angular.module('proton.settings')
                                     if (result.data && result.data.Code === 1000) {
                                         $scope.logs = [];
                                         $scope.logCount = 0;
-                                        notify({ message: gettextCatalog.getString('Logs cleared', null), classes: 'notification-success' });
+                                        notification.success(gettextCatalog.getString('Logs cleared', null));
                                     }
                                 })
                         );
@@ -224,7 +224,7 @@ angular.module('proton.settings')
                     }
                     throw new Error(data.Error || errorMessage);
                 })
-                .then(() => notify({ message: successMessage, classes: 'notification-success' }));
+                .then(() => notification.success(successMessage));
             networkActivityTracker.track(promise);
         };
 
@@ -238,10 +238,7 @@ angular.module('proton.settings')
                                 .then(() => {
                                     $scope.doLogging = 0;
                                     authentication.user.LogAuth = 0;
-                                    notify({
-                                        message: gettextCatalog.getString('Logging preference updated', null, 'Dashboard/security'),
-                                        classes: 'notification-success'
-                                    });
+                                    notification.success(gettextCatalog.getString('Logging preference updated', null, 'Dashboard/security'));
                                     confirmModal.deactivate();
                                     $scope.disabledText = gettextCatalog.getString('Disabled', null);
                                 });
@@ -257,10 +254,7 @@ angular.module('proton.settings')
             const promise = settingsApi.setLogging({ LogAuth: value })
                 .then(() => {
                     $scope.doLogging = value;
-                    notify({
-                        message: gettextCatalog.getString('Logging preference updated', null, 'Dashboard/security'),
-                        classes: 'notification-success'
-                    });
+                    notification.success(gettextCatalog.getString('Logging preference updated', null, 'Dashboard/security'));
                     $scope.disabledText = gettextCatalog.getString('Disable', null, 'Action');
                 });
 

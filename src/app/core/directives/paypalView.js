@@ -1,12 +1,10 @@
 angular.module('proton.core')
-    .directive('paypalView', (notify, Payment, gettextCatalog, CONSTANTS) => {
+    .directive('paypalView', (notification, Payment, gettextCatalog, CONSTANTS) => {
 
         const { MIN_PAYPAL_AMOUNT, MAX_PAYPAL_AMOUNT } = CONSTANTS;
         const I18N = {
             down: gettextCatalog.getString('Error connecting to PayPal.', null, 'Paypal component')
         };
-
-        const notifyDanger = (message) => notify({ message, classes: 'notification-danger' });
 
         return {
             replace: true,
@@ -51,7 +49,7 @@ angular.module('proton.core')
                             throw new Error(data.Error || I18N.down);
                         })
                         .then(({ ApprovalURL }) => scope.approvalURL = ApprovalURL)
-                        .catch((error) => notifyDanger(error.message));
+                        .catch((error) => notification.error(error.message));
                 };
 
                 scope.openPaypalTab = () => {

@@ -1,5 +1,5 @@
 angular.module('proton.payment')
-    .directive('paymentForm', (notify, gettextCatalog, eventManager, cardModel, paymentModel, paymentUtils, dashboardModel, organizationModel, paymentModalModel, $rootScope, CONSTANTS) => {
+    .directive('paymentForm', (notification, gettextCatalog, eventManager, cardModel, paymentModel, paymentUtils, dashboardModel, organizationModel, paymentModalModel, $rootScope, CONSTANTS) => {
 
         const { PLANS_TYPE } = CONSTANTS;
 
@@ -152,10 +152,7 @@ angular.module('proton.payment')
                         .then(eventManager.call)
                         .then(finish)
                         .catch((error) => {
-                            notify({
-                                message: error.message,
-                                classes: 'notification-danger'
-                            });
+                            notification.error(error);
                             ctrl.step = 'payment';
                         });
                 };

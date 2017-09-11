@@ -1,5 +1,5 @@
 angular.module('proton.core')
-    .factory('addressModal', (pmModal, setupKeys, authentication, $rootScope, $state, $q, networkActivityTracker, notify, Address, gettextCatalog, organizationModel) => {
+    .factory('addressModal', (pmModal, setupKeys, authentication, $rootScope, $state, $q, networkActivityTracker, notification, Address, gettextCatalog, organizationModel) => {
         return pmModal({
             controllerAs: 'ctrl',
             templateUrl: 'templates/modals/addAddress.tpl.html',
@@ -26,7 +26,7 @@ angular.module('proton.core')
                     const member = self.member;
 
                     if (member.Private === 0 && !self.organizationKey) {
-                        notify({ message: gettextCatalog.getString('Cannot decrypt organization key', null, 'Error'), classes: 'notification-danger' });
+                        notification.error(gettextCatalog.getString('Cannot decrypt organization key', null, 'Error'));
                         return;
                     }
 
@@ -47,7 +47,7 @@ angular.module('proton.core')
                                 };
 
                                 const finish = () => {
-                                    notify({ message: successMessage, classes: 'notification-success' });
+                                    notification.success(successMessage);
                                     params.submit(address);
                                 };
 
