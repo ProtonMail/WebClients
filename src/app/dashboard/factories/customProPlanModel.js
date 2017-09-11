@@ -1,5 +1,6 @@
 angular.module('proton.dashboard')
     .factory('customProPlanModel', ($rootScope, CONSTANTS, dashboardConfiguration, dashboardModel) => {
+
         const { PLANS, BASE_SIZE, MAX_MEMBER } = CONSTANTS;
         const { PLAN, ADDON } = PLANS;
         const { MEMBER } = ADDON;
