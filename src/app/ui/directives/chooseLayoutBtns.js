@@ -1,7 +1,5 @@
 angular.module('proton.ui')
-    .directive('chooseLayoutBtns', ($rootScope, authentication, CONSTANTS, networkActivityTracker, tools, settingsApi, eventManager, notify, gettextCatalog) => {
-
-        const notif = (message = '', type = 'success') => notify({ message, classes: `notification-${type}` });
+    .directive('chooseLayoutBtns', ($rootScope, authentication, CONSTANTS, networkActivityTracker, tools, settingsApi, eventManager, notification, gettextCatalog) => {
 
         const getLayout = (mode) => {
             if (mode === 'rows' && authentication.user.ViewLayout === CONSTANTS.COLUMN_MODE) {
@@ -24,15 +22,15 @@ angular.module('proton.ui')
                                 .then(() => {
                                     $rootScope.$emit('settings', { type: 'viewLayout.updated', data: { viewLayout: newLayout } });
                                     tools.mobileResponsive();
-                                    notif(gettextCatalog.getString('Layout saved', null));
+                                    notification.success(gettextCatalog.getString('Layout saved', null));
                                 });
                         }
 
                         if (data.Error) {
-                            return notif(data.Error, 'danger');
+                            return notification.error(data.Error);
                         }
 
-                        notif('Error during saving layout mode', 'danger');
+                        notification.error('Error during saving layout mode');
                     });
                 networkActivityTracker.track(promise);
             }

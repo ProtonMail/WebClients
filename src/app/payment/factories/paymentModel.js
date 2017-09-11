@@ -1,5 +1,5 @@
 angular.module('proton.payment')
-    .factory('paymentModel', (Payment, networkActivityTracker, gettextCatalog, notify) => {
+    .factory('paymentModel', (Payment, networkActivityTracker, gettextCatalog, notification) => {
 
         let CACHE = {};
         const I18N = {
@@ -78,10 +78,7 @@ angular.module('proton.payment')
                     }
                 })
                 .then((data) => {
-                    notify({
-                        message: I18N.COUPON_SUCCESS,
-                        classes: 'notification-success'
-                    });
+                    notification.success(I18N.COUPON_SUCCESS);
                     return data;
                 });
             networkActivityTracker.track(promise);

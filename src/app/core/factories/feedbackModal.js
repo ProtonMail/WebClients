@@ -1,5 +1,5 @@
 angular.module('proton.core')
-    .factory('feedbackModal', (pmModal, Bug, notify, networkActivityTracker, gettextCatalog) => {
+    .factory('feedbackModal', (pmModal, Bug, notification, networkActivityTracker, gettextCatalog) => {
         return pmModal({
             controllerAs: 'ctrl',
             templateUrl: 'templates/modals/feedback.tpl.html',
@@ -26,7 +26,7 @@ angular.module('proton.core')
 
                     feedbackPromise
                         .then(() => {
-                            notify({ message: gettextCatalog.getString('Thanks for your feedback!', null, 'Success message when sending feedback'), classes: 'notification-success' });
+                            notification.success(gettextCatalog.getString('Thanks for your feedback!', null, 'Success message when sending feedback'));
                             params.close();
                         });
 

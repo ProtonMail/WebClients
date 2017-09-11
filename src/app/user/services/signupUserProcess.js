@@ -1,5 +1,5 @@
 angular.module('proton.user')
-    .factory('signupUserProcess', ($location, $rootScope, notify, gettextCatalog, settingsApi, signupModel, authentication, Address, $state, setupKeys, CONSTANTS) => {
+    .factory('signupUserProcess', ($location, $rootScope, gettextCatalog, settingsApi, signupModel, authentication, Address, $state, setupKeys, CONSTANTS, notification) => {
 
         const CACHE = {};
         const dispatch = (type, data = {}) => $rootScope.$emit('signup', { type, data });
@@ -126,8 +126,7 @@ angular.module('proton.user')
         const createAccount = (model) => {
             create(model)
                 .catch((e) => {
-                    const message = e.error ? e.error.message : I18N.ERROR_PROCESS;
-                    notify({ classes: 'notification-danger', message });
+                    notification.error(e.error ? e.error.message : I18N.ERROR_PROCESS);
                     dispatch('signup.error', { value: true });
                     delete CACHE.setupPayload;
 

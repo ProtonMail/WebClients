@@ -9,7 +9,7 @@ angular.module('proton.core')
         domains,
         gettextCatalog,
         networkActivityTracker,
-        notify,
+        notification,
         plans,
         AppModel,
         signupModel,
@@ -75,7 +75,7 @@ angular.module('proton.core')
                         }
                         $scope.step = 3;
                         const message = gettextCatalog.getString("It currently isn't possible to subscribe to a Paid ProtonMail plan.", null);
-                        return notify(message);
+                        return notification.info(message);
                     }
 
                     $scope.step = 3;

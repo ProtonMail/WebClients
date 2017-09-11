@@ -1,5 +1,5 @@
 angular.module('proton.sidebar')
-    .directive('donateBtn', (gettextCatalog, notify, donateModal, paymentModel) => {
+    .directive('donateBtn', (gettextCatalog, notification, donateModal, paymentModel) => {
 
         const I18N = {
             donation: gettextCatalog.getString('Donate', null, 'Title'),
@@ -19,7 +19,7 @@ angular.module('proton.sidebar')
 
                 const onClick = () => {
                     if (!paymentModel.canPay()) {
-                        return notify({ message: I18N.notAvailable });
+                        return notification.info(I18N.notAvailable);
                     }
 
                     donateModal.activate({

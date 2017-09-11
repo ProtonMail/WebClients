@@ -1,5 +1,5 @@
 angular.module('proton.elements')
-    .directive('advancedFilterElement', ($stateParams, gettextCatalog, messageApi, confirmModal, networkActivityTracker, cache, notify, eventManager, $state) => {
+    .directive('advancedFilterElement', ($stateParams, gettextCatalog, messageApi, confirmModal, networkActivityTracker, cache, notification, eventManager, $state) => {
 
         const getClass = (name) => `advancedFilterElement-${name}`;
         const ACTIVE_CLASS = 'active';
@@ -49,7 +49,7 @@ angular.module('proton.elements')
                                 if (data.Code === 1000) {
                                     cache.empty(mailbox);
                                     confirmModal.deactivate();
-                                    notify({ message: gettextCatalog.getString('Folder emptied', null), classes: 'notification-success' });
+                                    notification.success(gettextCatalog.getString('Folder emptied', null));
                                     return eventManager.call();
                                 }
                                 throw new Error(data.Error || errorMessage);

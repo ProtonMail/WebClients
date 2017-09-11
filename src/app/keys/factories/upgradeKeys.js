@@ -5,7 +5,6 @@ angular.module('proton.keys')
         gettextCatalog,
         Key,
         networkActivityTracker,
-        notify,
         organizationApi,
         passwords,
         pmcw,

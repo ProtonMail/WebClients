@@ -15,7 +15,6 @@ angular.module('proton.core')
         gettextCatalog,
         Key,
         networkActivityTracker,
-        notify,
         Payment,
         passwords,
         pmcw,

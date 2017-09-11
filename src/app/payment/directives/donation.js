@@ -1,5 +1,5 @@
 angular.module('proton.payment')
-    .directive('donation', (CONSTANTS, cardModel, gettextCatalog, notify, $rootScope, paymentUtils, donateModel, authentication) => {
+    .directive('donation', (CONSTANTS, cardModel, gettextCatalog, $rootScope, paymentUtils, donateModel, authentication) => {
 
         const SELECTOR = {
             BTN_AMOUNT: 'donationForm-btn-amount',

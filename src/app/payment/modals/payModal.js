@@ -1,5 +1,5 @@
 angular.module('proton.payment')
-    .factory('payModal', (pmModal, Payment, notify, eventManager, gettextCatalog, paymentUtils, networkActivityTracker, cardModel) => {
+    .factory('payModal', (pmModal, Payment, notification, eventManager, gettextCatalog, paymentUtils, networkActivityTracker, cardModel) => {
 
         const I18N = {
             success: gettextCatalog.getString('Invoice paid', null, 'Info')
@@ -72,10 +72,7 @@ angular.module('proton.payment')
                         .then(eventManager.call)
                         .then(() => (this.process = false))
                         .then(() => params.close(true))
-                        .then(() => notify({
-                            message: I18N.success,
-                            classes: 'notification-success'
-                        }));
+                        .then(() => notification.success(I18N.success));
                 };
 
             }
