@@ -1,12 +1,11 @@
 angular.module('proton.composer')
-    .directive('composerExpiration', (notify, gettextCatalog, $rootScope, CONSTANTS) => {
+    .directive('composerExpiration', (notification, gettextCatalog, $rootScope, CONSTANTS) => {
         const MESSAGES = {
             maxEpiration: gettextCatalog.getString('The maximum expiration is 4 weeks.', null, 'Error'),
             invalid: gettextCatalog.getString('Invalid expiration time.', null, 'Error')
         };
 
         const dispatch = (type, message) => $rootScope.$emit('composer.update', { type, data: { message, type: 'expiration' } });
-        const notifError = (message) => notify({ message, classes: 'notification-danger' });
 
         const formatOption = (size) => _.range(size).map((value) => ({ label: `${value}`, value }));
 
@@ -59,11 +58,11 @@ angular.module('proton.composer')
 
                     // How can we enter in this situation?
                     if (parseInt(hours, 10) > CONSTANTS.MAX_EXPIRATION_TIME) {
-                        return notifError(MESSAGES.maxEpiration);
+                        return notification.error(MESSAGES.maxEpiration);
                     }
 
                     if (isNaN(hours)) {
-                        return notifError(MESSAGES.invalid);
+                        return notification.error(MESSAGES.invalid);
                     }
 
                     scope.$applyAsync(() => {

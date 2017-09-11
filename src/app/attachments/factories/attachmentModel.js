@@ -1,10 +1,14 @@
 angular.module('proton.attachments')
-    .factory('attachmentModel', ($q, attachmentApi, AttachmentLoader, authentication, $rootScope, embedded, notify, networkActivityTracker, composerRequestModel, attachmentDownloader) => {
+    .factory('attachmentModel', ($q, attachmentApi, AttachmentLoader, authentication, $rootScope, embedded, notification, networkActivityTracker, composerRequestModel, attachmentDownloader, gettextCatalog) => {
 
         const queueMessage = {};
         let MAP_ATTACHMENTS = {};
         const EVENT_NAME = 'attachment.upload';
-        const notifyError = (message) => notify({ message, classes: 'notification-danger' });
+        const I18N = {
+            ERROR_UPLOAD: gettextCatalog.getString('Error during file upload', null, 'Compose message'),
+            ERROR_ENCRYPT: gettextCatalog.getString('Error encrypting attachment', null, 'Compose message')
+        };
+
         const dispatch = (type, data) => $rootScope.$emit(EVENT_NAME, { type, data });
 
         /**
@@ -328,12 +332,12 @@ angular.module('proton.attachments')
                         })
                         .catch((err) => {
                             console.error(err);
-                            notifyError('Error during file upload');
+                            notification.error(I18N.ERROR_UPLOAD);
                         });
                 })
                 .catch((err) => {
                     console.error(err);
-                    notifyError('Error encrypting attachment');
+                    notification.error(I18N.ERROR_ENCRYPT);
                     throw err;
                 });
         }

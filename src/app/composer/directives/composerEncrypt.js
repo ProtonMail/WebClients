@@ -1,12 +1,11 @@
 angular.module('proton.composer')
-    .directive('composerEncrypt', (notify, gettextCatalog, $rootScope) => {
+    .directive('composerEncrypt', (notification, gettextCatalog, $rootScope) => {
         const MESSAGES = {
             noPassword: gettextCatalog.getString('Please enter a password for this email.', null, 'Error'),
             noMatchPassword: gettextCatalog.getString('Message passwords do not match.', null, 'Error')
         };
 
         const dispatch = (type, message) => $rootScope.$emit('composer.update', { type, data: { message, type: 'encryption' } });
-        const notifError = (message) => notify({ message, classes: 'notification-danger' });
 
         return {
             replace: true,
@@ -28,11 +27,11 @@ angular.module('proton.composer')
                     e.stopPropagation();
 
                     if (!scope.model.password.length) {
-                        return notifError(MESSAGES.noPassword);
+                        return notification.error(MESSAGES.noPassword);
                     }
 
                     if (scope.model.password !== scope.model.confirm) {
-                        return notifError(MESSAGES.noMatchPassword);
+                        return notification.error(MESSAGES.noMatchPassword);
                     }
                     scope.$applyAsync(() => {
                         scope.message.IsEncrypted = 1;

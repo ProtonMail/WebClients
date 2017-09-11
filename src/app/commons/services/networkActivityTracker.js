@@ -1,8 +1,7 @@
 angular.module('proton.commons')
-    .factory('networkActivityTracker', (errorReporter, $rootScope, notify, dedentTpl) => {
+    .factory('networkActivityTracker', (errorReporter, $rootScope, notification, dedentTpl) => {
 
         let promises = [];
-        const DURATION = 10000; // 10 seconds
 
         /**
      * Dispatch an action in order to toggle the activityTracker component
@@ -12,14 +11,6 @@ angular.module('proton.commons')
      * @return {void}
      */
         const dispatch = (action) => $rootScope.$emit('networkActivity', action);
-
-        /**
-     * Send an alert notif to the front
-     * @param  {String} message
-     * @param  {Number} duration
-     * @return {void}
-     */
-        const notifyAlert = (message, duration = DURATION) => notify({ message, duration, classes: 'notification-danger' });
 
         /**
      * Check if we have some promises currently running
@@ -69,7 +60,7 @@ angular.module('proton.commons')
                 console.error(formatError(error));
 
                 if (angular.isString(error)) {
-                    notifyAlert(error);
+                    notification.error(error);
                 }
 
                 if (angular.isObject(error) && !error.noNotify) {
@@ -86,7 +77,7 @@ angular.module('proton.commons')
                     }
 
                     if (message !== 'loginPassword:cancel') {
-                        notifyAlert(message);
+                        notification.error(message);
                     }
 
 

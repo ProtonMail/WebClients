@@ -22,7 +22,7 @@ angular.module('proton.composer')
         composerRequestModel,
         attachmentModel,
         messageBuilder,
-        notify,
+        notification,
         pmcw,
         tools,
         AppModel,
@@ -109,7 +109,7 @@ angular.module('proton.composer')
 
                     removed.length && removed.forEach((message) => {
                         closeComposer(message);
-                        !isSent(message) && notify(gettextCatalog.getString('Email was already sent', null, 'Info'));
+                        !isSent(message) && notification.info(gettextCatalog.getString('Email was already sent', null, 'Info'));
                     });
 
                     break;
@@ -148,9 +148,7 @@ angular.module('proton.composer')
                     .then((message) => {
                         message.clearTextBody()
                             .then(() => initMessage(message))
-                            .catch((error) => {
-                                notify({ message: error.message, classes: 'notification-danger' });
-                            });
+                            .catch(notification.error);
                     });
             }
         }));
@@ -221,7 +219,7 @@ angular.module('proton.composer')
             const limit = ($scope.messages.length >= CONSTANTS.MAX_NUMBER_COMPOSER) || ($scope.messages.length === 1 && AppModel.is('mobile'));
 
             if (limit) {
-                notify({ message: gettextCatalog.getString('Maximum composer reached', null, `Notify the user when he try to open more than ${CONSTANTS.MAX_NUMBER_COMPOSER} composer`), classes: 'notification-danger' });
+                notification.error(gettextCatalog.getString('Maximum composer reached', null, `Notify the user when he try to open more than ${CONSTANTS.MAX_NUMBER_COMPOSER} composer`));
             }
 
             return limit;
@@ -351,7 +349,7 @@ angular.module('proton.composer')
             // Not in the delinquent state
             } else {
             // In delinquent state
-                notify({ message: gettextCatalog.getString('Your account currently has an overdue invoice. Please pay all unpaid invoices.', null, 'Info'), classes: 'notification-danger' });
+                notification.error(gettextCatalog.getString('Your account currently has an overdue invoice. Please pay all unpaid invoices.', null, 'Info'));
                 return false;
             }
 
@@ -648,7 +646,7 @@ angular.module('proton.composer')
                                 cache.events(events);
 
                                 if (notification === true) {
-                                    notify({ message: gettextCatalog.getString('Message saved', null), classes: 'notification-success' });
+                                    notification.success(gettextCatalog.getString('Message saved', null));
                                 }
 
                                 message.saving = false;
@@ -992,9 +990,8 @@ angular.module('proton.composer')
                             });
 
                             cache.events(events, false, true); // Send events to the cache manager
-                            notify({ message: gettextCatalog.getString('Message sent', null), classes: 'notification-success' }); // Notify the user
-
-                            $scope.close(message, false, false); // Close the composer window
+                            notification.success(gettextCatalog.getString('Message sent', null));
+                            $scope.close(message, false, false);
                             $timeout(() => {
                                 $rootScope.$emit('message.open', {
                                     type: 'save.success',
@@ -1134,7 +1131,7 @@ angular.module('proton.composer')
                     message: question,
                     confirm() {
                         $scope.openCloseModal(message, true);
-                        notify({ message: gettextCatalog.getString('Message discarded', null), classes: 'notification-success' });
+                        notification.success(gettextCatalog.getString('Message discarded', null));
                         confirmModal.deactivate();
                     },
                     cancel() {

@@ -21,7 +21,7 @@ angular.module('proton.core')
                             if (result.data && result.data.Code === 1000) {
                                 return eventManager.call()
                                     .then(() => {
-                                        notify({ message: gettextCatalog.getString('Signature updated', null, 'Info'), classes: 'notification-success' });
+                                        notification.success(gettextCatalog.getString('Signature updated', null, 'Info'));
                                     });
                             } else if (result.data && result.data.Error) {
                                 return Promise.reject(result.data.Error);
@@ -55,20 +55,20 @@ angular.module('proton.core')
                     })
                         .then((result) => {
                             if (result.displayName.data.Code === 1000 && result.signature.data.Code === 1000) {
-                                notify({ message: gettextCatalog.getString('Default Name / Signature saved', null), classes: 'notification-success' });
+                                notification.error(gettextCatalog.getString('Default Name / Signature saved', null));
                                 eventManager.call()
                                     .then(() => {
                                         deferred.resolve();
                                     });
                             } else if (result.signature.data.Code === 12010) {
-                                notify({ message: gettextCatalog.getString('Unable to save your changes, your signature is too large.', null, 'Error'), classes: 'notification-danger' });
+                                notification.error(gettextCatalog.getString('Unable to save your changes, your signature is too large.', null, 'Error'));
                                 deferred.reject();
                             } else {
-                                notify({ message: gettextCatalog.getString('Unable to save your changes, please try again.', null, 'Error'), classes: 'notification-danger' });
+                                notification.error(gettextCatalog.getString('Unable to save your changes, please try again.', null, 'Error'));
                                 deferred.reject();
                             }
                         }, () => {
-                            notify({ message: gettextCatalog.getString('Unable to save your changes, please try again.', null, 'Error'), classes: 'notification-danger' });
+                            notification.error(gettextCatalog.getString('Unable to save your changes, please try again.', null, 'Error'));
                             deferred.reject();
                         });
 
