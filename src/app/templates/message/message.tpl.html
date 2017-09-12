@@ -6,7 +6,8 @@
     'details': message.toggleDetails === true,
     'draft': message.Type === 1,
     'sent': message.Type === 2 || message.Type === 3,
-    'hasSender': message.Sender.Address.length
+    'hasSender': message.Sender.Address.length,
+    'message-mode-plain': message.viewMode === 'plain'
 }">
 
     <div class="summary" toggle-message>

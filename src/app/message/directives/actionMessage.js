@@ -8,6 +8,11 @@ angular.module('proton.message')
             });
         };
 
+        const toggleImages = ({ message }) => {
+            (message.showEmbedded === true) && (message.showEmbedded = false);
+            (message.showImages === true) && (message.showImages = false);
+        };
+
         return {
             link(scope, el, { actionMessage, actionMessageType = '' }) {
                 const dispatch = dispatcher(scope.message);
@@ -24,6 +29,7 @@ angular.module('proton.message')
 
                         case 'togglePlainHtml':
                             scope.$applyAsync(() => {
+                                toggleImages(scope);
                                 scope.message.viewMode = (scope.message.viewMode === 'plain') ? 'html' : 'plain';
                             });
                             dispatch(actionMessage, actionMessageType);

@@ -53,10 +53,10 @@
 .messageExtra-container > .messageExtra-container-error a { color: $white }
 
 /* displayContentBtn */
-.messageExtra-container > .displayContentBtn-container:not(.displayContentBtn-type-embedded)[data-action="embedded"],
-.messageExtra-container > .displayContentBtn-container:not(.displayContentBtn-type-remote)[data-action="remote"] { display: none }
-.messageExtra-container > .displayContentBtn-container[data-action="embedded"] .displayContentBtn-notice::before { content: "\f03e" }
-.messageExtra-container > .displayContentBtn-container[data-action="remote"] .displayContentBtn-notice::before { content: "\f1c5" }
+.displayContentBtn-container:not(.displayContentBtn-type-embedded)[data-action="embedded"],
+.displayContentBtn-container:not(.displayContentBtn-type-remote)[data-action="remote"] { display: none }
+.displayContentBtn-container[data-action="embedded"] .displayContentBtn-notice::before { content: "\f03e" }
+.displayContentBtn-container[data-action="remote"] .displayContentBtn-notice::before { content: "\f1c5" }
 
 /* messagePgpAttachments-container */
 .messageExtra-container > .messagePgpAttachments-container > [class*='-notice']::before { content: "\f0c6" }
