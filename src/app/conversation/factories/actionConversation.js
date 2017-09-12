@@ -73,7 +73,7 @@ angular.module('proton.conversation')
 
             const events = ids.reduce((acc, ID) => {
                 const messages = cache.queryMessagesCached(ID);
-                const { Labels = [] } = cache.getConversationCached(ID);
+                const { Labels = [] } = cache.getConversationCached(ID) || {};
 
                 if (messages.length) {
                     const { ID } = _.chain(messages)
@@ -117,7 +117,7 @@ angular.module('proton.conversation')
             }
 
             const events = ids.reduce((acc, ID) => {
-                const { Labels = [] } = cache.getConversationCached(ID);
+                const { Labels = [] } = cache.getConversationCached(ID) || {};
 
                 _.each(cache.queryMessagesCached(ID), ({ ID }) => {
                     acc.push({
