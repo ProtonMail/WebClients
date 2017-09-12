@@ -21,27 +21,27 @@ angular.module('proton.filter')
         }
 
         const getKey = (type, suffix) => `${type}.${suffix}`;
-        const getIndex = (type) => getKey(type, 'TO');
+        const getPage = (type) => getKey(type, 'TO');
         const getEndingKey = (type) => getKey(type, 'ending');
-        const extendIndex = (type, value) => CACHE[getIndex(type)] += value;
+        const extendPage = (type, value) => CACHE[getPage(type)] += value;
         const setLoader = (type, value) => (CACHE[getKey(type, 'loading')] = value);
 
         const resetIndex = (type) => {
             if (type) {
                 if (CACHE[getEndingKey(WHITELIST_TYPE)]) {
-                    CACHE[getIndex(WHITELIST_TYPE)] = 0;
+                    CACHE[getPage(WHITELIST_TYPE)] = 0;
                     CACHE[getEndingKey(WHITELIST_TYPE)] = false;
                 }
 
                 if (CACHE[getEndingKey(BLACKLIST_TYPE)]) {
-                    CACHE[getIndex(BLACKLIST_TYPE)] = 0;
+                    CACHE[getPage(BLACKLIST_TYPE)] = 0;
                     CACHE[getEndingKey(BLACKLIST_TYPE)] = false;
                 }
 
-                return (CACHE[getIndex(type)] = 0);
+                return (CACHE[getPage(type)] = 0);
             }
-            CACHE[getIndex(WHITELIST_TYPE)] = 0;
-            CACHE[getIndex(BLACKLIST_TYPE)] = 0;
+            CACHE[getPage(WHITELIST_TYPE)] = 0;
+            CACHE[getPage(BLACKLIST_TYPE)] = 0;
             CACHE[getEndingKey(WHITELIST_TYPE)] = false;
             CACHE[getEndingKey(BLACKLIST_TYPE)] = false;
         };
@@ -74,7 +74,7 @@ angular.module('proton.filter')
          * @return {void}
          */
         const load = async (params = {}, noEvent) => {
-            const config = { Start: 0, Amount: PAGE_SIZE };
+            const config = { Page: 0, PageSize: PAGE_SIZE };
 
             setLoader(WHITELIST_TYPE, true);
             setLoader(BLACKLIST_TYPE, true);
@@ -95,17 +95,15 @@ angular.module('proton.filter')
          * Get list of items based on
          *     - Current context (search or not)
          *     - Pagination (next call will get next items)
-         * @todo  Use a Promise as output to be able to load data from the API instead of the cache
          * @param  {String} type   Type of list (black|white)list
-         * @param  {Integer} length Size of the list you want to load
          * @return {Array}
          */
-        const getList = async (type = WHITELIST_TYPE, length = PAGE_SIZE) => {
-            const indexFrom = CACHE[getIndex(type)];
-            extendIndex(type, length);
+        const getList = async (type = WHITELIST_TYPE) => {
+            const pageFrom = CACHE[getPage(type)];
+            extendPage(type, 1);
             setLoader(type, true);
 
-            if (indexFrom === 0) {
+            if (pageFrom === 0) {
                 setLoader(type, false);
                 CACHE[getEndingKey(type)] = CACHE[type].length < PAGE_SIZE;
                 return angular.copy(CACHE[type]);
@@ -113,9 +111,9 @@ angular.module('proton.filter')
 
             const list = await loadList({
                 Location: type,
-                Start: indexFrom,
-                Search: CACHE.query,
-                Amount: length
+                Page: pageFrom,
+                Keyword: CACHE.query,
+                PageSize: PAGE_SIZE
             });
 
             updateCache();
@@ -132,7 +130,7 @@ angular.module('proton.filter')
         const search = async (query) => {
             CACHE.query = query;
             resetIndex();
-            await load({ Search: query }, true);
+            await load({ Keyword: query }, true);
             dispatch('search');
         };
 
