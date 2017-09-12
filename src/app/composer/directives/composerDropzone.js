@@ -163,21 +163,19 @@ angular.module('proton.composer')
                 const dropzone = new Dropzone(el[0], getConfig(scope.message, dispatchAction));
 
                 // Adding a message from the toolbar
-                const unsubscribe = $rootScope
-                    .$on('addFile', (e, { asEmbedded, message }) => {
-                        if (message.ID === scope.message.ID) {
-                            scope.message.asEmbedded = asEmbedded;
-                            dropzone.element.click();
-                        }
-                    });
+                const unsubscribe = $rootScope.$on('addFile', (e, { asEmbedded, message }) => {
+                    if (message.ID === scope.message.ID) {
+                        scope.message.asEmbedded = asEmbedded;
+                        dropzone.element.click();
+                    }
+                });
 
-                scope
-                    .$on('$destroy', () => {
-                        dropzone.off('dragover');
-                        dropzone.off('addedfiles');
-                        dropzone.destroy();
-                        unsubscribe();
-                    });
+                scope.$on('$destroy', () => {
+                    dropzone.off('dragover');
+                    dropzone.off('addedfiles');
+                    dropzone.destroy();
+                    unsubscribe();
+                });
             }
         };
     });
