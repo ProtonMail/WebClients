@@ -46,7 +46,7 @@ angular.module('proton.message')
                             message.content = el
                                 .parents('.message')
                                 .get(0)
-                                .querySelector('.bodyDecrypted')
+                                .querySelector('.message-body-container')
                                 .innerHTML;
 
                             openStatePostMessage.open('printer', { messageID: message.ID }, {
