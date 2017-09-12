@@ -75,14 +75,18 @@ angular.module('proton.composer')
 
                 };
 
+                const onDragLeave = _.debounce((e) => {
+                    const { target } = e;
+                    if (target.classList.contains('composer-dropzone') || target.classList.contains('composer-dropzone-wrapper')) {
+                        addDragleaveClassName(el[0]);
+                    }
+                }, 500);
+
                 const onDragEnter = ({ originalEvent }) => {
                     if (attachmentFileFormat.isUploadAbleType(originalEvent)) {
                         addDragenterClassName(el[0]);
                     }
                 };
-                const onDragLeave = _.debounce(({ target }) => {
-                    target.classList.contains('composer-dropzone') && addDragleaveClassName(el[0]);
-                }, 16);
 
                 const onKeydown = ({ keyCode }) => {
                     // ESC
@@ -109,20 +113,19 @@ angular.module('proton.composer')
                 const unsubscribeEditor = $rootScope.$on('editor.draggable', onAction(scope, el[0]));
                 const unsubscribeAtt = $rootScope.$on('attachment.upload', onAction(scope, el[0]));
 
-                scope
-                    .$on('$destroy', () => {
-                        el.off('dragenter', onDragEnter);
-                        el.off('dragleave', onDragLeave);
-                        el.off('click', onClick);
-                        el.off('keydown', onKeydown);
+                scope.$on('$destroy', () => {
+                    el.off('dragenter', onDragEnter);
+                    el.off('dragleave', onDragLeave);
+                    el.off('click', onClick);
+                    el.off('keydown', onKeydown);
 
-                        unsubscribeEditor();
-                        unsubscribeAtt();
+                    unsubscribeEditor();
+                    unsubscribeAtt();
 
-                        AppModel.set('activeComposer', false);
-                        AppModel.set('maximizedComposer', false);
-                        scope.selected = undefined;
-                    });
+                    AppModel.set('activeComposer', false);
+                    AppModel.set('maximizedComposer', false);
+                    scope.selected = undefined;
+                });
             }
         };
     });
