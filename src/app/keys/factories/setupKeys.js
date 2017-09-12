@@ -90,7 +90,7 @@ angular.module('proton.keys')
         function getPrimaryKey(member = {}, organizationKey = {}) {
 
             if (member.Keys.length === 0) {
-                return $q.reject({ message: 'Member not set up' });
+                return $q.reject({ message: 'User not set up' });
             }
 
             return decryptMemberKey(member.Keys[0], organizationKey);

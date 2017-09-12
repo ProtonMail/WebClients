@@ -149,17 +149,17 @@ angular.module('proton.settings')
             }
 
             if (organization.MaxMembers - organization.UsedMembers < 1) {
-                notification.error(gettextCatalog.getString('You have used all members in your plan. Please upgrade your plan to add a new user.', null, 'Error'));
+                notify({ message: gettextCatalog.getString('You have used all users in your plan. Please upgrade your plan to add a new user.', null, 'Error'), classes: 'notification-danger' });
                 return false;
             }
 
             if (organization.MaxAddresses - organization.UsedAddresses < 1) {
-                notification.error(gettextCatalog.getString('You have used all addresses in your plan. Please upgrade your plan to add a new member.', null, 'Error'));
+                notify({ message: gettextCatalog.getString('You have used all addresses in your plan. Please upgrade your plan to add a new user.', null, 'Error'), classes: 'notification-danger' });
                 return false;
             }
 
             if (organization.MaxSpace - organization.AssignedSpace < 1) {
-                notification.error(gettextCatalog.getString('All storage space has been allocated. Please reduce storage allocated to other members.', null, 'Error'));
+                notify({ message: gettextCatalog.getString('All storage space has been allocated. Please reduce storage allocated to other users.', null, 'Error'), classes: 'notification-danger' });
                 return false;
             }
 
