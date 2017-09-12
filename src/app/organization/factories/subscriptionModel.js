@@ -1,8 +1,9 @@
 angular.module('proton.organization')
     .factory('subscriptionModel', ($rootScope, gettextCatalog, Payment) => {
-        const CACHE = [];
+
+        const CACHE = {};
         const ERROR_SUBSCRIPTION = gettextCatalog.getString('Subscription request failed', null, 'Error');
-        const get = () => angular.copy(CACHE.subscription || {});
+
         const PAID_TYPES = {
             plus: ['plus'],
             professional: ['professional'],
@@ -10,6 +11,7 @@ angular.module('proton.organization')
             mail: ['plus', 'professional', 'visionary'],
             vpn: ['vpnbasic', 'vpnplus', 'visionary']
         };
+
         const MAP_ADDONS = {
             address: '5address',
             storage: '1gb',
@@ -17,6 +19,7 @@ angular.module('proton.organization')
             member: '1member'
         };
 
+        const get = () => angular.copy(CACHE.subscription || {});
         const count = (addon) => _.where(CACHE.subscription.Plans, { Name: MAP_ADDONS[addon] }).length;
         const hasFactory = (plans = []) => () => {
             const { Plans = [] } = (CACHE.subscription || {});

@@ -1,5 +1,5 @@
 angular.module('proton.dashboard')
-    .directive('currencySelector', ($rootScope, subscriptionModel) => {
+    .directive('currencySelector', ($rootScope, dashboardConfiguration) => {
         const ACTIVE_BUTTON_CLASS = 'active';
 
         return {
@@ -7,7 +7,7 @@ angular.module('proton.dashboard')
             replace: true,
             templateUrl: 'templates/dashboard/currencySelector.tpl.html',
             link(scope, element) {
-                const { Currency } = subscriptionModel.get();
+                const currency = dashboardConfiguration.currency();
                 const $buttons = element.find('.currencySelector-button');
 
                 function onClick(event) {
@@ -33,7 +33,7 @@ angular.module('proton.dashboard')
                     (type === 'update') && active(data.subscription.Currency);
                 });
 
-                active(Currency);
+                active(currency);
 
                 scope.$on('$destroy', () => {
                     unsubscribe();
