@@ -14,7 +14,7 @@ angular.module('proton.members')
                         members = data.Members;
                         return data.Members;
                     }
-                    throw new Error(data.Error || 'Member request failed');
+                    throw new Error(data.Error || 'User request failed');
                 });
         }
         function clear() {

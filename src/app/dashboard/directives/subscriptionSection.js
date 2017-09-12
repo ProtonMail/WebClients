@@ -4,8 +4,8 @@ angular.module('proton.dashboard')
             addresses: gettextCatalog.getString('addresses', null),
             domain: gettextCatalog.getString('domain', null),
             domains: gettextCatalog.getString('domains', null),
-            member: gettextCatalog.getString('member', null),
-            members: gettextCatalog.getString('members', null),
+            member: gettextCatalog.getString('user', null),
+            members: gettextCatalog.getString('users', null),
             cycles: {
                 1: gettextCatalog.getString('Monthly', null),
                 12: gettextCatalog.getString('Annually', null)

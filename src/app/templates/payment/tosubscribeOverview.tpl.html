@@ -42,7 +42,7 @@
 
                 <li class="tosubscribeOverview-about-members">
                     {{ ::ctrl.count('MaxMembers') }}
-                    <span class="tosubscribeOverview-about-type" translate translate-n="ctrl.count('MaxMembers')" translate-plural="Custom members">Custom member</span>
+                    <span class="tosubscribeOverview-about-type" translate translate-n="ctrl.count('MaxMembers')" translate-plural="Custom members">Custom user</span>
                     <strong ng-if="ctrl.price('member')" class="tosubscribeOverview-price">{{ ::ctrl.price('member') / 100 / 12 | fixed: 2 | currency: plan.Currency }}
                         <span
                             class="tosubscribeOverview-price-scope"
