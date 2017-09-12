@@ -943,7 +943,9 @@ angular.module('proton.composer')
                 .then(({ encrypt, cleartext }) => {
                     if (cleartext === true && message.Password.length === 0 && message.ExpirationTime) {
                         // Reject the error => to see the notification, and break the sending process
-                        throw new Error('Expiring emails to non-ProtonMail recipients require a message password to be set. For more information, <a href="https://protonmail.com/support/knowledge-base/expiration/" target="_blank">click here</a>.');
+                        const error = new Error('Expiring emails to non-ProtonMail recipients require a message password to be set. For more information, <a href="https://protonmail.com/support/knowledge-base/expiration/" target="_blank">click here</a>.');
+                        error.raw = true;
+                        throw error;
                     }
 
                     return encrypt().then((packages) => {
@@ -1004,11 +1006,11 @@ angular.module('proton.composer')
                             return data; // Resolve finally the promise
                         });
                 })
-                .catch((error) => {
+                .catch((e) => {
                     setStateSending(false);
                     message.encrypting = false;
                     dispatchMessageAction(message);
-                    throw new Error(unicodeTagView(error.message));
+                    throw new Error(!e.raw ? unicodeTagView(e.message) : e.message);
                 });
             networkActivityTracker.track(promise);
         };
