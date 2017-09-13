@@ -374,6 +374,7 @@ message-view {
 
 #conversation-view:empty { display: none }
 
+.message.message-mode-plain .displayContentBtn-container { display: none }
 
 .protonmail_signature_block-empty { /* https://github.com/ProtonMail/Angular/issues/4813 */
     opacity: 0;

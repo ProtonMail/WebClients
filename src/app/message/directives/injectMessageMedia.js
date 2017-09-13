@@ -144,8 +144,10 @@ angular.module('proton.message')
 
                         case 'injectContent': {
                             const body = scope.body || scope.message.getDecryptedBody(true);
-                            (data.action === 'remote') && displayImages(scope.message, body, 'user.inject');
-                            (data.action === 'embedded') && displayEmbedded(scope.message, body, 'user.inject');
+                            scope.$applyAsync(() => {
+                                (data.action === 'remote') && displayImages(scope.message, body, 'user.inject');
+                                (data.action === 'embedded') && displayEmbedded(scope.message, body, 'user.inject');
+                            });
                             break;
                         }
 

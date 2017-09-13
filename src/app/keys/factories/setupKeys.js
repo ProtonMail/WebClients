@@ -74,8 +74,8 @@ angular.module('proton.keys')
                 privateKey: signingKey,
                 publicKeys: signingKey.toPublic()
             })
-                .then(({ data: decryptedToken, signature }) => {
-                    if (signature !== 1) {
+                .then(({ data: decryptedToken, verified }) => {
+                    if (verified !== 1) {
                         return $q.reject({ message: 'Signature verification failed' });
                     }
                     return { PrivateKey: key.PrivateKey, decryptedToken };
@@ -90,7 +90,7 @@ angular.module('proton.keys')
         function getPrimaryKey(member = {}, organizationKey = {}) {
 
             if (member.Keys.length === 0) {
-                return $q.reject({ message: 'Member not set up' });
+                return $q.reject({ message: 'User not set up' });
             }
 
             return decryptMemberKey(member.Keys[0], organizationKey);

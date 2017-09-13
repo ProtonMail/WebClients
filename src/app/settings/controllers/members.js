@@ -92,11 +92,11 @@ angular.module('proton.settings')
             let message;
 
             if (role === CONSTANTS.PAID_ADMIN_ROLE) {
-                message = gettextCatalog.getString('You must provide this member with the Organization Password in order to fully activate administrator privileges.', null, 'Info');
+                message = gettextCatalog.getString('You must provide this user with the Organization Password in order to fully activate administrator privileges.', null, 'Info');
             } else if (isSubscriber) {
-                message = gettextCatalog.getString('This member is currently responsible for payments for your organization. By demoting this member, you will become responsible for payments for your organization.', null, 'Info');
+                message = gettextCatalog.getString('This user is currently responsible for payments for your organization. By demoting this member, you will become responsible for payments for your organization.', null, 'Info');
             } else {
-                message = gettextCatalog.getString('Are you sure you want to remove administrative privileges from this member?', null, 'Info');
+                message = gettextCatalog.getString('Are you sure you want to remove administrative privileges from this user?', null, 'Info');
             }
 
             const params = {
@@ -147,8 +147,8 @@ angular.module('proton.settings')
      * @param {Object} member
      */
         $scope.makePrivate = (member) => {
-            const title = gettextCatalog.getString('Privatize Member', null);
-            const message = gettextCatalog.getString("Organization administrators will no longer be able to log in and control the member's account after privatization. This change is PERMANENT.", null);
+            const title = gettextCatalog.getString('Privatize User', null);
+            const message = gettextCatalog.getString("Organization administrators will no longer be able to log in and control the user's account after privatization. This change is PERMANENT.", null);
             const success = gettextCatalog.getString('Status Updated', null);
 
             confirmModal.activate({
@@ -283,7 +283,7 @@ angular.module('proton.settings')
      */
         $scope.removeMember = (member, remove = true) => {
             const title = remove ? gettextCatalog.getString('Remove user', null, 'Title') : gettextCatalog.getString('Delete user', null, 'Title');
-            const message = remove ? gettextCatalog.getString('Are you sure you want to permanently remove this user from your organization? They will lose access to any addresses belonging to your organization.', null, 'Info') : gettextCatalog.getString('Are you sure you want to permanently delete this user? The user\'s inbox and all addresses associated with this member will be deleted.', null, 'Info');
+            const message = remove ? gettextCatalog.getString('Are you sure you want to permanently remove this user from your organization? They will lose access to any addresses belonging to your organization.', null, 'Info') : gettextCatalog.getString('Are you sure you want to permanently delete this user? The inbox and all addresses associated with this user will be deleted.', null, 'Info');
             const successMessage = gettextCatalog.getString('User removed', null, 'Info');
             const errorMessage = gettextCatalog.getString('Error during deletion', null, 'Error');
 

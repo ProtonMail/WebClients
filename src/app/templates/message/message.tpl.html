@@ -6,7 +6,8 @@
     'details': message.toggleDetails === true,
     'draft': message.Type === 1,
     'sent': message.Type === 2 || message.Type === 3,
-    'hasSender': message.Sender.Address.length
+    'hasSender': message.Sender.Address.length,
+    'message-mode-plain': message.viewMode === 'plain'
 }">
 
     <div class="summary" toggle-message>
@@ -214,13 +215,16 @@
                 <div translate translate-context="Error">Decryption of this message's encryption content failed.</div>
             </div>
             <div
-                class="bodyDecrypted email"
+                class="bodyDecrypted email message-body-container"
                 ng-class="{'plain': message.isPlain}"
                 render-message-body
                 ng-if="message.viewMode === 'html' && !message.failedDecryption"
                 toggle-blockquote
                 mail-to scroll="true" ></div>
-            <pre class="email" ng-if="message.viewMode === 'plain' || message.failedDecryption" ng-bind="message.plainText()"></pre>
+
+            <pre
+                class="email message-body-container"
+                ng-if="message.viewMode === 'plain' || message.failedDecryption">{{message.plainText()}}</pre>
         </div>
 
         <list-attachments ng-if="message.Attachments.length" data-model="message"></list-attachments>
