@@ -92,8 +92,9 @@ angular.module('proton', [
             }, 1000);
         }
     })
-    .config((urlProvider, CONFIG) => {
+    .config((urlProvider, CONFIG, notificationProvider) => {
         urlProvider.setBaseUrl(CONFIG.apiUrl);
+        notificationProvider.template('templates/notifications/base.tpl.html');
     })
 
     .run((
@@ -105,7 +106,6 @@ angular.module('proton', [
         authentication,
         networkActivityTracker,
         CONSTANTS,
-        notificationProvider,
         tools
     ) => {
         FastClick.attach(document.body);
@@ -126,7 +126,6 @@ angular.module('proton', [
         moment.relativeTimeThreshold('h', 23); // h hours   least number of hours to be considered a day
 
         $rootScope.networkActivity = networkActivityTracker;
-        notificationProvider.template('templates/notifications/base.tpl.html');
     })
 
     .config(($httpProvider, CONFIG) => {
