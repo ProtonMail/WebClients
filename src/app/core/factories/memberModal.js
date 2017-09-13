@@ -162,7 +162,7 @@ angular.module('proton.core')
                         } else if (!member.ID && !member.Private && !self.organizationKey) {
                             return Promise.reject(gettextCatalog.getString('Cannot decrypt organization key', null, 'Error'));
                         } else if (!member.ID && existingActiveAddress()) {
-                            return Promise.reject(gettextCatalog.getString('Address already associate to a member', null, 'Error'));
+                            return Promise.reject(gettextCatalog.getString('Address already associated to a user', null, 'Error'));
                         }
                         return Promise.resolve();
                     };
@@ -280,13 +280,13 @@ angular.module('proton.core')
 
                     if (self.ID) {
                         member.ID = self.ID;
-                        notificationMessage = gettextCatalog.getString('Member updated', null, 'Notification');
+                        notificationMessage = gettextCatalog.getString('User updated', null, 'Notification');
                         mainPromise = check()
                             .then(updateName)
                             .then(updateQuota)
                             .then(updateVPN);
                     } else {
-                        notificationMessage = gettextCatalog.getString('Member created', null, 'Notification');
+                        notificationMessage = gettextCatalog.getString('User created', null, 'Notification');
                         mainPromise = check().then(memberRequest);
                     }
 
