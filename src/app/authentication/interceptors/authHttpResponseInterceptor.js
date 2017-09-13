@@ -17,7 +17,7 @@ angular.module('proton.authentication')
             };
         };
         const notifyError = (message) => {
-            return $injector.get('notify')({ message, classes: 'notification-danger' });
+            return $injector.get('notification').error(message);
         };
 
         return {

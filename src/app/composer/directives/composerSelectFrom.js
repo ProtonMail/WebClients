@@ -1,5 +1,9 @@
 angular.module('proton.composer')
-    .directive('composerSelectFrom', (notify, authentication, editorModel, aboutClient) => {
+    .directive('composerSelectFrom', (notification, authentication, editorModel, aboutClient, gettextCatalog) => {
+
+        const I18N = {
+            ATTACHMENT_SEND_CHANGE: gettextCatalog.getString('Attachments and inline images must be removed first before changing sender', null, 'Compose message')
+        };
 
         const listAddress = () => {
             return _.chain(authentication.user.Addresses)
@@ -21,10 +25,7 @@ angular.module('proton.composer')
                 const onClick = (e) => {
                     if (scope.message.Attachments.length) {
                         e.preventDefault();
-                        return notify({
-                            message: 'Attachments and inline images must be removed first before changing sender',
-                            classes: 'notification-danger'
-                        });
+                        return notification.error(I18N.ATTACHMENT_SEND_CHANGE);
                     }
                 };
 

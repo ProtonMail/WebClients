@@ -1,5 +1,5 @@
 angular.module('proton.payment')
-    .directive('payInvoiceBtn', (gettextCatalog, Payment, paymentModel, payModal, networkActivityTracker, notify) => {
+    .directive('payInvoiceBtn', (gettextCatalog, Payment, paymentModel, payModal, networkActivityTracker, notification) => {
 
         const I18N = {
             message: gettextCatalog.getString('Pay', null, 'Action'),
@@ -27,7 +27,7 @@ angular.module('proton.payment')
                 const onClick = () => {
 
                     if (!paymentModel.canPay()) {
-                        return notify({ message: I18N.notAvailable });
+                        return notification.info(I18N.notAvailable);
                     }
 
                     const promise = checkInvoice(scope.model)

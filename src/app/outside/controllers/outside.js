@@ -11,7 +11,7 @@ angular.module('proton.outside')
         embedded,
         prepareContent,
         messageData,
-        notify,
+        notification,
         pmcw,
         networkActivityTracker,
         secureSessionStorage,
@@ -96,7 +96,7 @@ angular.module('proton.outside')
 
             if (Replies.length >= CONSTANTS.MAX_OUTSIDE_REPLY) {
                 const message = gettextCatalog.getString("ProtonMail's Encrypted Outside feature only allows replying 5 times. <a href=\"https://protonmail.com/signup\" target=\"_blank\">You can sign up for ProtonMail for seamless and unlimited end-to-end encryption</a>.", null, 'Notification');
-                notify({ message });
+                notification.info(message);
             }
             const process = embedded.parser($scope.message, { direction: 'cid' })
                 .then((data) => Promise.all([
@@ -125,11 +125,11 @@ angular.module('proton.outside')
                     })
                         .then((result) => {
                             $state.go('eo.message', { tag: $stateParams.tag });
-                            notify({ message: gettextCatalog.getString('Message sent', null), classes: 'notification-success' });
+                            notification.success(gettextCatalog.getString('Message sent', null));
                             return result;
                         })
                         .catch((err) => {
-                            notify({ message: gettextCatalog.getString('Error during the reply process', null, 'Error'), classes: 'notification-danger' });
+                            notification.error(gettextCatalog.getString('Error during the reply process', null, 'Error'));
                             throw err;
                         });
                 }).catch((error) => {

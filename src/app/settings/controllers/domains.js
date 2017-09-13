@@ -24,7 +24,7 @@ angular.module('proton.settings')
         memberModal,
         mxModal,
         networkActivityTracker,
-        notify,
+        notification,
         pmcw,
         spfModal,
         verificationModal
@@ -116,17 +116,17 @@ angular.module('proton.settings')
                     confirm() {
                         networkActivityTracker.track(domainApi.delete(domain.ID).then((result) => {
                             if (angular.isDefined(result.data) && result.data.Code === 1000) {
-                                notify({ message: gettextCatalog.getString('Domain deleted', null), classes: 'notification-success' });
+                                notification.success(gettextCatalog.getString('Domain deleted', null));
                                 $scope.domains.splice(index, 1); // Remove domain in interface
                                 eventManager.call(); // Call event log manager
                                 confirmModal.deactivate();
                             } else if (angular.isDefined(result.data) && result.data.Error) {
-                                notify({ message: result.data.Error, classes: 'notification-danger' });
+                                notification.error(result.data.Error);
                             } else {
-                                notify({ message: gettextCatalog.getString('Error during deletion', null, 'Error'), classes: 'notification-danger' });
+                                notification.error(gettextCatalog.getString('Error during deletion', null, 'Error'));
                             }
                         }, () => {
-                            notify({ message: gettextCatalog.getString('Error during deletion', null, 'Error'), classes: 'notification-danger' });
+                            notification.error(gettextCatalog.getString('Error during deletion', null, 'Error'));
                         }));
                     },
                     cancel() {
@@ -142,7 +142,7 @@ angular.module('proton.settings')
             const { catchall, DomainID, ID, Type } = address;
 
             if (!catchallSupport(Type)) {
-                notify(gettextCatalog.getString('This feature is only available for ProtonMail Professional plans or higher'));
+                notification.info(gettextCatalog.getString('This feature is only available for ProtonMail Professional plans or higher'));
                 address.catchall = !catchall;
                 return;
             }
@@ -153,7 +153,7 @@ angular.module('proton.settings')
 
             const promise = domainModel.catchall(DomainID, catchall ? ID : null)
                 .then(() => {
-                    notify({ message: gettextCatalog.getString('Catch-all address updated', null), classes: 'notification-success' });
+                    notification.success(gettextCatalog.getString('Catch-all address updated', null));
                 });
 
             networkActivityTracker.track(promise);
@@ -192,19 +192,19 @@ angular.module('proton.settings')
                     submit(name) {
                         networkActivityTracker.track(domainApi.create({ Name: name }).then((result) => {
                             if (angular.isDefined(result.data) && result.data.Code === 1000) {
-                                notify({ message: gettextCatalog.getString('Domain created', null), classes: 'notification-success' });
+                                notification.success(gettextCatalog.getString('Domain created', null));
                                 $scope.domains.push(result.data.Domain);
                                 eventManager.call(); // Call event log manager
                                 domainModal.deactivate();
                                 // open the next step
                                 $scope.verification(result.data.Domain);
                             } else if (angular.isDefined(result.data) && result.data.Error) {
-                                notify({ message: result.data.Error, classes: 'notification-danger' });
+                                notification.error(result.data.Error);
                             } else {
-                                notify({ message: gettextCatalog.getString('Error during creation', null, 'Error'), classes: 'notification-danger' });
+                                notification.error(gettextCatalog.getString('Error during creation', null, 'Error'));
                             }
                         }, () => {
-                            notify({ message: gettextCatalog.getString('Error during creation', null, 'Error'), classes: 'notification-danger' });
+                            notification.error(gettextCatalog.getString('Error during creation', null, 'Error'));
                         }));
                     },
                     next() {
@@ -248,13 +248,13 @@ angular.module('proton.settings')
                             // 0 is default, 1 is has code but wrong, 2 is good
                                 switch (result.data.Domain.VerifyState) {
                                     case 0:
-                                        notify({ message: gettextCatalog.getString('Verification did not succeed, please try again in an hour.', null, 'Error'), classes: 'notification-danger' });
+                                        notification.error(gettextCatalog.getString('Verification did not succeed, please try again in an hour.', null, 'Error'));
                                         break;
                                     case 1:
-                                        notify({ message: gettextCatalog.getString('Wrong verification code. Please make sure you copied the verification code correctly and try again. It can take up to 24 hours for changes to take effect.', null, 'Error'), classes: 'notification-danger', duration: 30000 });
+                                        notification.error(gettextCatalog.getString('Wrong verification code. Please make sure you copied the verification code correctly and try again. It can take up to 24 hours for changes to take effect.', null, 'Error'), { duration: 30000 });
                                         break;
                                     case 2:
-                                        notify({ message: gettextCatalog.getString('Domain verified', null), classes: 'notification-success' });
+                                        notification.success(gettextCatalog.getString('Domain verified', null));
                                         $scope.domains[index] = result.data.Domain;
                                         verificationModal.deactivate();
                                         // open the next step
@@ -264,12 +264,12 @@ angular.module('proton.settings')
                                         break;
                                 }
                             } else if (angular.isDefined(result.data) && result.data.Error) {
-                                notify({ message: result.data.Error, classes: 'notification-danger' });
+                                notification.error(result.data.Error);
                             } else {
-                                notify({ message: gettextCatalog.getString('Verification did not succeed, please try again in an hour.', null, 'Error'), classes: 'notification-danger' });
+                                notification.error(gettextCatalog.getString('Verification did not succeed, please try again in an hour.', null, 'Error'));
                             }
                         }, () => {
-                            notify({ message: gettextCatalog.getString('Verification did not succeed, please try again in an hour.', null, 'Error'), classes: 'notification-danger' });
+                            notification.error(gettextCatalog.getString('Verification did not succeed, please try again in an hour.', null, 'Error'));
                         }));
                     },
                     next() {
@@ -287,7 +287,7 @@ angular.module('proton.settings')
      */
         $scope.addAddresses = (domain = {}) => {
             if ($scope.organization.HasKeys === 1 && $scope.keyStatus > 0 && CONSTANTS.KEY_PHASE > 3) {
-                notify({ message: gettextCatalog.getString('Administrator privileges must be activated', null, 'Error'), classes: 'notification-danger' });
+                notification.error(gettextCatalog.getString('Administrator privileges must be activated', null, 'Error'));
                 $state.go('secured.members');
                 return;
             }
@@ -434,12 +434,12 @@ angular.module('proton.settings')
                                 dmarcModal.deactivate();
                                 eventManager.call();
                             } else if (angular.isDefined(result.data) && result.data.Error) {
-                                notify({ message: result.data.Error, classes: 'notification-danger' });
+                                notification.error(result.data.Error);
                             } else {
-                                notify({ message: gettextCatalog.getString('Verification did not succeed, please try again in an hour.', null, 'Error'), classes: 'notification-danger' });
+                                notification.error(gettextCatalog.getString('Verification did not succeed, please try again in an hour.', null, 'Error'));
                             }
                         }, () => {
-                            notify({ message: gettextCatalog.getString('Verification did not succeed, please try again in an hour.', null, 'Error'), classes: 'notification-danger' });
+                            notification.error(gettextCatalog.getString('Verification did not succeed, please try again in an hour.', null, 'Error'));
                         }));
                     },
                     close() {

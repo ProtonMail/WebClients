@@ -6,7 +6,7 @@ angular.module('proton.keys')
         gettextCatalog,
         Key,
         MemberKey,
-        notify,
+        notification,
         passwords,
         pmcw,
         webcrypto
@@ -254,7 +254,7 @@ angular.module('proton.keys')
                     // If the primary (first) key for address does not decrypt, display error.
                         if (index === 0) {
                             address.disabled = true; // This address cannot be used
-                            notify({ message: 'Primary key for address ' + address.Email + ' cannot be decrypted. You will not be able to read or write any email from this address', classes: 'notification-danger' });
+                            notification.error('Primary key for address ' + address.Email + ' cannot be decrypted. You will not be able to read or write any email from this address');
                         }
                         return { address, key, pkg: null };
                     });

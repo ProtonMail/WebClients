@@ -1,5 +1,5 @@
 angular.module('proton.dashboard')
-    .factory('downgrade', ($rootScope, confirmModal, eventManager, gettextCatalog, networkActivityTracker, notify, Payment, subscriptionModel) => {
+    .factory('downgrade', ($rootScope, confirmModal, eventManager, gettextCatalog, networkActivityTracker, notification, Payment, subscriptionModel) => {
         const FREE_PLAN = { Type: 1, Name: 'free' };
         const I18N = {
             downgradeTitle: gettextCatalog.getString('Confirm downgrade', null, 'Title'),
@@ -29,7 +29,7 @@ angular.module('proton.dashboard')
                         const promise = unsubscribe()
                             .then(() => {
                                 confirmModal.deactivate();
-                                notify({ message: I18N.successMessage, classes: 'notification-success' });
+                                notification.success(I18N.successMessage);
                             });
 
                         networkActivityTracker.track(promise);

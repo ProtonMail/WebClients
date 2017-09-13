@@ -105,7 +105,7 @@ angular.module('proton', [
         authentication,
         networkActivityTracker,
         CONSTANTS,
-        notify,
+        notificationProvider,
         tools
     ) => {
         FastClick.attach(document.body);
@@ -126,15 +126,7 @@ angular.module('proton', [
         moment.relativeTimeThreshold('h', 23); // h hours   least number of hours to be considered a day
 
         $rootScope.networkActivity = networkActivityTracker;
-
-        // notification service config
-        // https://github.com/cgross/angular-notify
-        notify.config({
-            templateUrl: 'templates/notifications/base.tpl.html',
-            duration: 6000,
-            position: 'center',
-            maximumOpen: 5
-        });
+        notificationProvider.template('templates/notifications/base.tpl.html');
     })
 
     .config(($httpProvider, CONFIG) => {

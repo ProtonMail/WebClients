@@ -1,5 +1,5 @@
 angular.module('proton.dashboard')
-    .factory('dashboardModel', ($rootScope, confirmModal, CONSTANTS, dashboardConfiguration, downgrade, gettextCatalog, Payment, paymentModal, notify, subscriptionModel, networkActivityTracker, paymentModel) => {
+    .factory('dashboardModel', ($rootScope, confirmModal, CONSTANTS, dashboardConfiguration, downgrade, gettextCatalog, Payment, paymentModal, subscriptionModel, networkActivityTracker, paymentModel) => {
 
         const PLANS_NAME = ['free', 'plus', 'professional', 'visionary'];
         const VPNS_NAME = ['vpnbasic', 'vpnplus'];

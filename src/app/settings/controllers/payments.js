@@ -12,7 +12,7 @@ angular.module('proton.settings')
         invoices,
         methods,
         downloadFile,
-        notify,
+        notification,
         networkActivityTracker,
         organizationInvoices,
         Payment,
@@ -80,14 +80,14 @@ angular.module('proton.settings')
             }).then((result) => {
                 if (result.data && result.data.Code === 1000) {
                     $scope.methods.splice(to, 0, $scope.methods.splice(from, 1)[0]);
-                    notify({ message: gettextCatalog.getString('Payment method updated', null), classes: 'notification-success' });
+                    notification.success(gettextCatalog.getString('Payment method updated', null));
                 } else if (result.data && result.data.Error) {
-                    notify({ message: result.data.Error, classes: 'notification-danger' });
+                    notification.error(result.data.Error);
                 } else {
-                    notify({ message: gettextCatalog.getString('Unable to save your changes, please try again.', null, 'Error'), classes: 'notification-danger' });
+                    notification.error(gettextCatalog.getString('Unable to save your changes, please try again.', null, 'Error'));
                 }
             }, () => {
-                notify({ message: gettextCatalog.getString('Unable to save your changes, please try again.', null, 'Error'), classes: 'notification-danger' });
+                notification.error(gettextCatalog.getString('Unable to save your changes, please try again.', null, 'Error'));
             }));
         };
 
@@ -113,11 +113,11 @@ angular.module('proton.settings')
                             .then(confirmModal.deactivate)
                             .then(() => {
                                 $scope.methods.splice($scope.methods.indexOf(method), 1);
-                                notify({ message: gettextCatalog.getString('Payment method deleted', null), classes: 'notification-success' });
+                                notification.success(gettextCatalog.getString('Payment method deleted', null));
                             })
                             .catch((e) => {
                                 confirmModal.deactivate();
-                                notify({ message: e.message, classes: 'notification-danger' });
+                                notification.error(e.message);
                             });
                         networkActivityTracker.track(promise);
                     },
@@ -204,7 +204,7 @@ angular.module('proton.settings')
                                         // Set invoice state to PAID
                                         invoice.State = 1;
                                         // Display a success notification
-                                        notify({ message: gettextCatalog.getString('Invoice paid', null, 'Info'), classes: 'notification-success' });
+                                        notification.success(gettextCatalog.getString('Invoice paid', null, 'Info'));
                                     }
                                 }
                             }

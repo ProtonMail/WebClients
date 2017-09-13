@@ -1,9 +1,9 @@
 angular.module('proton.attachments')
-    .factory('attachmentApi', ($http, url, $q, $rootScope, authentication, notify, pmcw, CONFIG, CONSTANTS, secureSessionStorage, gettextCatalog) => {
+    .factory('attachmentApi', ($http, url, $q, $rootScope, authentication, pmcw, CONFIG, CONSTANTS, secureSessionStorage, gettextCatalog, notification) => {
 
         let pendingUpload = [];
         const requestURL = url.build('attachments');
-        const notifyError = (message) => notify({ message, classes: 'notification-danger' });
+
         const dispatch = (type, data) => $rootScope.$emit('attachment.upload', { type, data });
 
         const dispatchUpload = (REQUEST_ID, message, packet) => (progress, status, isStart = false) => {
@@ -143,7 +143,7 @@ angular.module('proton.attachments')
 
                 if (statusCode !== 200) {
                     // Error with the request
-                    notifyError(gettextCatalog.getString('Unable to upload file. Please try again', null, 'Error'));
+                    notification.error(gettextCatalog.getString('Unable to upload file. Please try again', null, 'Error'));
                     return deferred.reject(json);
                 }
 
@@ -152,7 +152,7 @@ angular.module('proton.attachments')
                     // isInvalid = false: Attachment disallowed by back-end size limit (no change in size)
                     const msgError = !isInvalid ? json.Error : gettextCatalog.getString('Unable to upload file. Please try again', null, 'Error');
 
-                    notifyError(msgError);
+                    notification.error(msgError);
                     return deferred.reject(json);
                 }
 
@@ -211,7 +211,7 @@ angular.module('proton.attachments')
                     return data;
                 })
                 .catch((error) => {
-                    notifyError(error);
+                    notification.error(error);
                     console.error(error);
                 });
         };

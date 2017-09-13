@@ -7,7 +7,7 @@ angular.module('proton.core')
         gettextCatalog,
         memberApi,
         networkActivityTracker,
-        notify,
+        notification,
         pmcw,
         organizationModel,
         MemberKey,
@@ -268,13 +268,13 @@ angular.module('proton.core')
                     };
 
                     const finish = () => {
-                        notify({ message: notificationMessage, classes: 'notification-success' });
+                        notification.success(notificationMessage);
                         return eventManager.call()
                             .then(() => params.submit(member));
                     };
 
                     const error = (error) => {
-                        notify({ message: error, classes: 'notification-danger' });
+                        notification.error(error);
                         return eventManager.call();
                     };
 

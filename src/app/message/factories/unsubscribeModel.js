@@ -1,5 +1,5 @@
 angular.module('proton.message')
-    .factory('unsubscribeModel', ($rootScope, authentication, gettextCatalog, messageModel, notify, parseUrl, simpleSend) => {
+    .factory('unsubscribeModel', ($rootScope, authentication, gettextCatalog, messageModel, notification, parseUrl, simpleSend) => {
         const LIST = [];
         const UNSUBSCRIBE_REGEX = /<(.*?)>/g;
         const openTab = (url = '') => window.open(url, '_blank');
@@ -41,7 +41,7 @@ angular.module('proton.message')
             }
 
             return simpleSend(message)
-                .then(() => notify({ message: successMessage, classes: 'notification-success' }));
+                .then(() => notification.success(successMessage));
         }
 
 

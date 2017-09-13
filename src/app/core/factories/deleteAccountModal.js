@@ -1,5 +1,5 @@
 angular.module('proton.core')
-    .factory('deleteAccountModal', (pmModal, Bug, User, networkActivityTracker, authentication, $state, CONSTANTS, gettextCatalog, notify) => {
+    .factory('deleteAccountModal', (pmModal, Bug, User, networkActivityTracker, authentication, $state, CONSTANTS, gettextCatalog, notification) => {
         const I18N = {
             invalidForm: gettextCatalog.getString('Invalid form', null, 'Error reported when the delete account form is invalid')
         };
@@ -33,7 +33,7 @@ angular.module('proton.core')
                 self.twoFactorCode = '';
                 self.submit = () => {
                     if ($scope.deleteForm.$invalid) {
-                        notify({ message: I18N.invalidForm, classes: 'notification-danger' });
+                        notification.error(I18N.invalidForm);
                         return;
                     }
 

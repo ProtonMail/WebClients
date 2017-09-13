@@ -1,9 +1,8 @@
 angular.module('proton.outside')
-    .factory('attachmentModelOutside', ($log, AttachmentLoader, $rootScope, embedded, notify) => {
+    .factory('attachmentModelOutside', ($log, AttachmentLoader, $rootScope, embedded, notification) => {
 
         const EVENT_NAME = 'attachment.upload.outside';
         const QUEUE = [];
-        const notifyError = (message) => notify({ message, classes: 'notification-danger' });
         const dispatch = (type, data) => $rootScope.$emit(EVENT_NAME, { type, data });
 
         /**
@@ -159,7 +158,7 @@ angular.module('proton.outside')
                 })
                 .catch((err) => {
                     $log.error(err);
-                    notifyError('Error encrypting attachment');
+                    notification.error('Error encrypting attachment');
                     dispatchMessageAction(message);
                 });
         }

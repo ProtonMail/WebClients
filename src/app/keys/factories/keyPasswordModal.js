@@ -1,5 +1,5 @@
 angular.module('proton.keys')
-    .factory('keyPasswordModal', (pmModal, pmcw, notify, gettextCatalog, passwords, authentication) => {
+    .factory('keyPasswordModal', (pmModal, pmcw, notification, gettextCatalog, passwords, authentication) => {
         return pmModal({
             controllerAs: 'ctrl',
             templateUrl: 'templates/modals/keyPassword.tpl.html',
@@ -17,7 +17,7 @@ angular.module('proton.keys')
                         .then((decryptedKey) => {
                             params.submit(decryptedKey);
                         }, () => {
-                            notify({ message: gettextCatalog.getString('Incorrect decryption password', null, 'Error'), classes: 'notification-danger' });
+                            notification.error(gettextCatalog.getString('Incorrect decryption password', null, 'Error'));
                         });
                 };
 

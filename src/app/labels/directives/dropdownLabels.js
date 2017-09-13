@@ -1,11 +1,10 @@
 angular.module('proton.labels')
-    .directive('dropdownLabels', ($rootScope, $timeout, labelsModel, authentication, eventManager, notify, settingsApi, gettextCatalog) => {
+    .directive('dropdownLabels', ($rootScope, $timeout, labelsModel, authentication, eventManager, notification, settingsApi, gettextCatalog) => {
 
         const NOTIFS = {
             LABELS_SAVED: gettextCatalog.getString('Labels Saved', null),
             LABEL_SAVED: gettextCatalog.getString('Label Saved', null)
         };
-        const notifSuccess = (message = '') => notify({ message, classes: 'notification-success' });
         const close = () => $rootScope.$emit('closeDropdown');
 
         const mapLabelsMessage = (elements = []) => {
@@ -64,7 +63,7 @@ angular.module('proton.labels')
                         $rootScope.numberElementChecked = 0;
                         scope.saveLabels(scope.labels, scope.alsoArchive);
                         close();
-                        notifSuccess(NOTIFS.LABELS_SAVED);
+                        notification.success(NOTIFS.LABELS_SAVED);
                     });
                 };
 
@@ -76,7 +75,7 @@ angular.module('proton.labels')
                             label.Selected = true;
                             scope.saveLabels(scope.labels, scope.alsoArchive);
                             close();
-                            notifSuccess(NOTIFS.LABEL_SAVED);
+                            notification.success(NOTIFS.LABEL_SAVED);
                         });
                     }
                 };

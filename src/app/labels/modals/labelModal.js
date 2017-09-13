@@ -1,5 +1,5 @@
 angular.module('proton.labels')
-    .factory('labelModal', (pmModal, tools, hotkeys, gettextCatalog, networkActivityTracker, eventManager, Label, notify, sanitize) => {
+    .factory('labelModal', (pmModal, tools, hotkeys, gettextCatalog, networkActivityTracker, eventManager, Label, notification, sanitize) => {
         const COLORS_LIST = tools.colors();
         const TRANSLATIONS = {
             EDIT_FOLDER: gettextCatalog.getString('Edit folder', null, 'Title'),
@@ -114,12 +114,12 @@ angular.module('proton.labels')
                     // Can be empty for an XSS
                     if (!data.Name) {
                         self.name = data.Name;
-                        return notify({ message: getErrorColorName(data), classes: 'notification-danger' });
+                        return notification.error(getErrorColorName(data));
                     }
 
                     const promise = save(data)
                         .then((label) => {
-                            notify({ message: successMessage, classes: 'notification-success' });
+                            notification.success(successMessage);
                             hotkeys.bind();
                             (params.onSuccess || angular.noop)(label);
                             params.close(label);

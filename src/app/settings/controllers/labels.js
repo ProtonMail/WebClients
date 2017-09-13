@@ -12,7 +12,7 @@ angular.module('proton.settings')
         networkActivityTracker,
         cacheCounters,
         labelsEditorModel,
-        notify
+        notification
     ) => {
 
         const unsubscribe = [];
@@ -26,7 +26,7 @@ angular.module('proton.settings')
                     }
                     throw new Error(data.Error);
                 })
-                .then(() => notify({ message: gettextCatalog.getString('Label updated', null), classes: 'notification-success' }));
+                .then(() => notification.success(gettextCatalog.getString('Label updated', null)));
 
             networkActivityTracker.track(promise);
         };
@@ -144,7 +144,7 @@ angular.module('proton.settings')
                             })
                             .then(() => {
                                 confirmModal.deactivate();
-                                notify({ message: NOTIF, classes: 'notification-success' });
+                                notification.success(NOTIF);
                             });
 
                         networkActivityTracker.track(promise);
@@ -165,7 +165,7 @@ angular.module('proton.settings')
                     throw new Error(data.Error);
                 })
                 .then(() => {
-                    notify({ message: gettextCatalog.getString('Label order saved', null), classes: 'notification-success' });
+                    notification.success(gettextCatalog.getString('Label order saved', null));
                 });
 
             networkActivityTracker.track(promise);

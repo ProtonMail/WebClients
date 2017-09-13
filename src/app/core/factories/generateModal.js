@@ -1,5 +1,5 @@
 angular.module('proton.core')
-    .factory('generateModal', (pmModal, authentication, networkActivityTracker, Key, pmcw, notify, $q) => {
+    .factory('generateModal', (pmModal, authentication, networkActivityTracker, Key, pmcw, notification, $q) => {
         return pmModal({
             controllerAs: 'ctrl',
             templateUrl: 'templates/modals/generate.tpl.html',
@@ -64,27 +64,27 @@ angular.module('proton.core')
                                         address.state = SAVED;
                                         address.Keys = address.Keys || [];
                                         address.Keys.push(result.data.Key);
-                                        notify({ message: 'Key created', classes: 'notification-success' });
+                                        notification.error('Key created');
                                         return $q.resolve();
                                     } else if (result.data && result.data.Error) {
                                         address.state = ERROR;
-                                        notify({ message: result.data.Error, classes: 'notification-danger' });
+                                        notification.error(result.data.Error);
 
                                         return $q.reject();
                                     }
                                     address.state = ERROR;
-                                    notify({ message: 'Error during create key request', classes: 'notification-danger' });
+                                    notification.error('Error during create key request');
 
                                     return $q.reject();
                                 }, () => {
                                     address.state = ERROR;
-                                    notify({ message: 'Error during the create key request', classes: 'notification-danger' });
+                                    notification.error('Error during the create key request');
 
                                     return $q.reject();
                                 });
                             }, (error) => {
                                 address.state = ERROR;
-                                notify({ message: error, classes: 'notification-danger' });
+                                notification.error(error);
 
                                 return $q.reject();
                             }));

@@ -9,7 +9,7 @@ angular.module('proton.core')
         tempStorage,
         User,
         tools,
-        notify,
+        notification,
         gettextCatalog,
         confirmModal,
         Reset,
@@ -139,10 +139,7 @@ angular.module('proton.core')
                 .catch((error) => {
                     resetState();
                     $log.error(error);
-                    notify({
-                        classes: 'notification-danger',
-                        message: error.message
-                    });
+                    notification.error(error.message);
                 });
         };
 
@@ -224,10 +221,7 @@ angular.module('proton.core')
                     .catch((error) => {
                         $log.error(error);
                         resetState();
-                        notify({
-                            classes: 'notification-danger',
-                            message: error.message
-                        });
+                        notification.error(error.message);
                     }));
         };
 

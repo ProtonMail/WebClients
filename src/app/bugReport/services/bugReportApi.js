@@ -1,5 +1,5 @@
 angular.module('proton.bugReport')
-    .factory('bugReportApi', (Bug, CONFIG, $state, aboutClient, authentication, gettextCatalog, networkActivityTracker, notify) => {
+    .factory('bugReportApi', (Bug, CONFIG, $state, aboutClient, authentication, gettextCatalog, networkActivityTracker, notification) => {
         const LAYOUTS = ['column', 'row'];
         const MODES = ['conversation', 'message'];
 
@@ -56,7 +56,7 @@ angular.module('proton.bugReport')
          */
         const send = (form) => {
             return Bug.report(form)
-                .then(() => notify({ message: gettextCatalog.getString('Bug reported', null), classes: 'notification-success' }));
+                .then(() => notification.success(gettextCatalog.getString('Bug reported', null)));
         };
 
         /**
