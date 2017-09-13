@@ -27,6 +27,7 @@ angular.module('proton.composer')
         tools,
         AppModel,
         ComposerRequestStatus,
+        $injector,
         srp
     ) => {
 
@@ -646,7 +647,7 @@ angular.module('proton.composer')
                                 cache.events(events);
 
                                 if (notification === true) {
-                                    notification.success(gettextCatalog.getString('Message saved', null));
+                                    $injector.get('notification').success(gettextCatalog.getString('Message saved', null));
                                 }
 
                                 message.saving = false;
