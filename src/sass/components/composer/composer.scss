@@ -2,8 +2,8 @@
 
     /* COMPONNENT STRUCTURE */
 
-/*    [class*="composer-draggable"]::before {
-        content: '';
+    .composer-dropzone-wrapper { display: none }
+    [class*="composer-draggable"] .composer-dropzone-wrapper {
         display: block;
         position: absolute;
         top: 0;
@@ -11,13 +11,13 @@
         height: 100%;
         width: 100%;
         z-index: 90;
-    }*/
+    }
+
 
     .composer-askEmbedding {display: none !important}
-    .composer-dropzone {display: none !important}
+    .composer-dropzone {display: none}
     .composer-dropzone * {pointer-events: none}
     .composer-draggable .composer-dropzone,
-    .composer-draggable .composer-dropzone * {display: block !important}
     .composer-draggable-editor .composer-askEmbedding {display: flex !important}
 
     .composer{
@@ -120,7 +120,7 @@
             -webkit-overflow-scrolling: touch;
         }
 
-        .composeEditor{
+        &.composer-draggable-editor .composeEditor {
             position: relative; /* dropzone parent which is absolute */
         }
 
@@ -142,7 +142,31 @@
             width: 100%;
             height: 100%;
             z-index: 99;
-            border: 1rem solid rgba(0,0,0,.05);
+            top: 0;
+            left: 0;
+            background: transparent;
+        }
+
+        :not(.composer-draggable) .dropzone { display: none }
+
+        .dz-message {
+            position: absolute;
+            width: 100%;
+            z-index: 99;
+            border: 1rem solid rgba(0, 0, 0, 0.05);
+            background: white;
+            left: 0;
+            bottom: 24px;
+            height: calc(58% - 3px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 1 !important
+        }
+
+        &.maximized .dz-message {
+            height: 73%;
+
         }
 
         .toolbar li{
