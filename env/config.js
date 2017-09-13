@@ -113,7 +113,10 @@ const getConfig = (grunt) => {
         statsConfig: getStatsConfig(grunt.option('dest'))
     });
 
-    const isDistRelease = () => ['prod', 'beta'].indexOf(grunt.option('api')) !== -1;
+    const isDistRelease = () => {
+        const [, host] = (grunt.option('dest') || '').split('-');
+        return /beta|prod/.test(host);
+    };
 
     const getEnv = () => grunt.option('api') || 'local';
 
