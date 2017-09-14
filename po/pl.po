@@ -11,7 +11,7 @@ msgstr ""
 "Last-Translator: PMtranslator <contact@protonmail.ch>\n"
 "Language-Team: Polish\n"
 "Language: pl_PL\n"
-"PO-Revision-Date: 2017-08-31 09:12-0400\n"
+"PO-Revision-Date: 2017-09-13 06:25-0400\n"
 
 #: src/app/templates/modals/domain/domain.tpl.html:13
 msgid "'www' subdomains are typically not used for email. Are you sure you not want to use this domain value?"
@@ -30,7 +30,7 @@ msgstr "{{ organization.MaxVPN - organization.UsedVPN }}"
 msgid "{{value}} addresses"
 msgstr "{{value}} adresów"
 
-#: src/app/dashboard/factories/dashboardOptions.js:3
+#: src/app/dashboard/factories/dashboardOptions.js:5
 msgid "{{value}} Addresses"
 msgstr "{{value}} Adresów"
 
@@ -303,6 +303,13 @@ msgstr "<p>Odnotowaliśmy próby utworzenia zbyt wielu kont z Twojego adresu Ip.
 "                <p>By upewnić się, że nie jesteś robotem wysyłającym spam, a człowiekiem, wymagamy dodatkowej weryfikacji.</p>\n"
 "                <p>Ponieważ sieć Tor jest często nadużywana przez spamerów, komunikat ten mógł się pojawić ponieważ korzystasz z węzła wyjściowego sieci Tor.</p>"
 
+#: src/app/templates/message/filterButton.tpl.html:27
+msgctxt "Filter message"
+msgid "<span class=\"filterButton-label-text\">Attachments</span>\n"
+"                    <custom-checkbox class=\"filterButton-checkbox\" data-custom-ng-model=\"model.attachments\"></custom-checkbox>"
+msgstr "<span class=\"filterButton-label-text\">Załączniki</span>\n"
+"                    <custom-checkbox class=\"filterButton-checkbox\" data-custom-ng-model=\"model.attachments\"></custom-checkbox>"
+
 #: src/app/templates/views/members.tpl.html:84
 msgctxt "Title"
 msgid "<span class=\"margin-right\" translate=\"\">Available VPN connections</span>"
@@ -328,14 +335,14 @@ msgstr "<strong>Wysłano kod weryfikacyjny</strong><br>\n"
 msgid "1 Address"
 msgstr "1 Adres"
 
-#: src/app/dashboard/factories/dashboardOptions.js:6
+#: src/app/dashboard/factories/dashboardOptions.js:8
 msgid "1 Custom Domain"
 msgid_plural "{{$count}} Custom Domains"
 msgstr[0] "1 Niestandardowa domena"
 msgstr[1] "{{$count}} Niestandardowe domeny"
 msgstr[2] "{{$count}} Niestandardowych domen"
 
-#: src/app/dashboard/factories/dashboardOptions.js:4
+#: src/app/dashboard/factories/dashboardOptions.js:6
 msgid "1 GB Storage"
 msgid_plural "{{$count}} GB Storage"
 msgstr[0] "1 GB przestrzeni"
@@ -349,7 +356,7 @@ msgstr[0] "1 użytkownik"
 msgstr[1] "{{$count}} użytkowników"
 msgstr[2] "{{$count}} użytkowników"
 
-#: src/app/dashboard/factories/dashboardOptions.js:5
+#: src/app/dashboard/factories/dashboardOptions.js:7
 #: src/app/templates/dashboard/freeColumn.tpl.html:6
 #: src/app/templates/dashboard/plusColumn.tpl.html:7
 msgid "1 User"
@@ -782,13 +789,10 @@ msgctxt "Title"
 msgid "Additional themes"
 msgstr "Dodatkowe motywy"
 
-#: src/app/templates/modals/member.tpl.html:58
-#: src/app/templates/payment/tosubscribeOverview.tpl.html:56
+#: src/app/templates/modals/member.tpl.html:55
+msgctxt "Label"
 msgid "Address"
-msgid_plural "Addresses"
-msgstr[0] "Adres"
-msgstr[1] "Adresy"
-msgstr[2] "Adresy"
+msgstr "Adres"
 
 #. table heading
 #. table heading for the domains page table listing of addresses
@@ -800,10 +804,13 @@ msgctxt "Title"
 msgid "Address"
 msgstr "Adres"
 
-#: src/app/templates/modals/member.tpl.html:55
-msgctxt "Label"
+#: src/app/templates/modals/member.tpl.html:58
+#: src/app/templates/payment/tosubscribeOverview.tpl.html:56
 msgid "Address"
-msgstr "Adres"
+msgid_plural "Addresses"
+msgstr[0] "Adres"
+msgstr[1] "Adresy"
+msgstr[2] "Adresy"
 
 #: src/app/core/factories/addressModal.js:33
 msgctxt "Info"
@@ -937,14 +944,14 @@ msgstr "wszystkie"
 msgid "All"
 msgstr "Wszystko"
 
-#: src/app/sidebar/factories/sidebarModel.js:50
-#: src/app/ui/factories/pageTitlesModel.js:8
-msgctxt "Title"
+#: src/app/ui/directives/noResults.js:33
+msgctxt "No results heading"
 msgid "All Mail"
 msgstr "Wszystkie wiadomości"
 
-#: src/app/ui/directives/noResults.js:33
-msgctxt "No results heading"
+#: src/app/sidebar/factories/sidebarModel.js:50
+#: src/app/ui/factories/pageTitlesModel.js:8
+msgctxt "Title"
 msgid "All Mail"
 msgstr "Wszystkie wiadomości"
 
@@ -1011,7 +1018,7 @@ msgstr "Dozwolone formaty (kodowanie UTF-8): <code>.vcf, .csv</code><a class=\"p
 #: src/app/templates/dashboard/visionaryColumn.tpl.html:15
 msgctxt "Info"
 msgid "Allows you to host emails for your own domain(s) at ProtonMail, e.g. <u>john.smith@example.com</u>"
-msgstr ""
+msgstr "Pozwala na posiadanie e-maili z własną domeną(-ami), np: <u>jan@kowalski.pl</u>"
 
 #: src/app/core/factories/memberModal.js:48
 msgid "Already allocated"
@@ -1044,6 +1051,16 @@ msgctxt "Title"
 msgid "Amount"
 msgstr "Kwota"
 
+#: src/app/templates/directives/core/paypalView.tpl.html:10
+msgctxt "Paypal error"
+msgid "Amount above the maximum."
+msgstr "Kwota powyżej maksimum."
+
+#: src/app/templates/directives/core/paypalView.tpl.html:14
+msgctxt "Paypal error"
+msgid "Amount below minimum."
+msgstr "Kwota poniżej minimum."
+
 #: src/app/templates/payment/bitcoinView.tpl.html:26
 msgctxt "Bitcoin validation error"
 msgid "Amount below minimum. ({{ ::validator.amountMin / 100 }} {{::currency}})"
@@ -1069,13 +1086,13 @@ msgstr "Kwota zapłacona / termin realizacji"
 msgid "and"
 msgstr "i"
 
-#: src/app/templates/user/signupPayForm.tpl.html:38
-msgctxt "Info"
+#: src/app/templates/views/invoices.tpl.html:29
+#: src/app/templates/views/invoices.tpl.html:59
 msgid "Annually"
 msgstr "Rocznie"
 
-#: src/app/templates/views/invoices.tpl.html:29
-#: src/app/templates/views/invoices.tpl.html:59
+#: src/app/templates/user/signupPayForm.tpl.html:38
+msgctxt "Info"
 msgid "Annually"
 msgstr "Rocznie"
 
@@ -1120,11 +1137,6 @@ msgctxt "Label"
 msgid "Archive"
 msgstr "Archiwum"
 
-#: src/app/ui/directives/noResults.js:37
-msgctxt "No results heading"
-msgid "Archive"
-msgstr "Archiwum"
-
 #: src/app/sidebar/factories/sidebarModel.js:35
 #: src/app/ui/factories/pageTitlesModel.js:16
 msgctxt "Title"
@@ -1134,6 +1146,11 @@ msgstr "Archiwum"
 #: src/app/conversation/factories/actionConversation.js:28
 #: src/app/labels/directives/dropdownFolders.js:12
 #: src/app/message/factories/messageActions.js:26
+msgid "Archive"
+msgstr "Archiwum"
+
+#: src/app/ui/directives/noResults.js:37
+msgctxt "No results heading"
 msgid "Archive"
 msgstr "Archiwum"
 
@@ -1210,7 +1227,7 @@ msgctxt "Error"
 msgid "Are you sure your email address is correct ?"
 msgstr "Jesteś pewny, że adres e-mail jest poprawny?"
 
-#: src/app/elements/controllers/elements.js:659
+#: src/app/elements/controllers/elements.js:660
 #: src/app/elements/directives/advancedFilterElement.js:30
 msgctxt "Info"
 msgid "Are you sure? This cannot be undone."
@@ -1222,15 +1239,15 @@ msgctxt "Title"
 msgid "Attach screenshot"
 msgstr "Załącz zrzut ekranu"
 
-#: src/app/templates/directives/composer/composer.tpl.html:61
-#: src/app/templates/directives/composer/composerAskEmbedded.tpl.html:8
-#: src/app/templates/views/outside.reply.tpl.html:38
-msgid "Attachments"
-msgstr "Załączniki"
-
 #. Search form option heading
 #: src/app/templates/search/searchForm.tpl.html:117
 msgctxt "Title"
+msgid "Attachments"
+msgstr "Załączniki"
+
+#: src/app/templates/directives/composer/composer.tpl.html:61
+#: src/app/templates/directives/composer/composerAskEmbedded.tpl.html:8
+#: src/app/templates/views/outside.reply.tpl.html:38
 msgid "Attachments"
 msgstr "Załączniki"
 
@@ -1335,13 +1352,13 @@ msgstr "Dostępne domeny"
 msgid "Available VPN connections"
 msgstr "Dostępne połączenia sieci VPN"
 
-#: src/app/templates/ui/header/headerNoAuth.tpl.html:16
-msgctxt "Action"
+#. inbox menu
+#: src/app/templates/directives/ui/settingsMenu.tpl.html:6
 msgid "Back to inbox"
 msgstr "Powrót"
 
-#. inbox menu
-#: src/app/templates/directives/ui/settingsMenu.tpl.html:6
+#: src/app/templates/ui/header/headerNoAuth.tpl.html:16
+msgctxt "Action"
 msgid "Back to inbox"
 msgstr "Powrót"
 
@@ -1373,7 +1390,7 @@ msgctxt "Info"
 msgid "Before you can receive emails for your custom domain addresses at ProtonMail, you need to add the following MX record to your DNS. This can typically be done in the control panel of your domain name registrar."
 msgstr "Zanim otrzymasz e-maile na adresy domeny niestandardowej w ProtonMail, należy dodać następujący rekord MX do DNS. Zazwyczaj można to zrobić w panelu sterowania u rejestratora domeny."
 
-#: src/app/utils/services/eventManager.js:111
+#: src/app/utils/services/eventManager.js:112
 msgctxt "Info"
 msgid "Before you can start sending and receiving emails from your new addresses you need to create encryption keys for them. 4096-bit keys only work on high performance computers. For most users, we recommend using 2048-bit keys."
 msgstr "Zanim rozpoczniesz wysyłanie i odbieranie e-maili z nowych adresów, należy utworzyć dla nich klucze szyfrowania. Klucze 4096-bitowe działają tylko na komputerach wysokiej jakości. Dla większości użytkowników zaleca się użycie kluczy 2048-bitowych."
@@ -1486,8 +1503,8 @@ msgctxt "Info"
 msgid "By clicking Submit, you agree to abide by"
 msgstr "Klikając przycisk Wyślij, użytkownik zgadza się przestrzegać"
 
-#: src/app/composer/controllers/composeMessage.js:62
-#: src/app/routes.js:434
+#: src/app/composer/controllers/composeMessage.js:63
+#: src/app/routes.js:446
 msgid "By leaving now, you will lose what you have written in this email. You can save a draft if you want to come back to it later on."
 msgstr "Wychodząc teraz stracisz to co masz napisane w wiadomości. E-mail można zapisać jako szkic, jeśli chcesz wrócić do niego później."
 
@@ -1517,7 +1534,7 @@ msgstr "bajtów)."
 #: src/app/templates/modals/confirm.tpl.html:13
 #: src/app/templates/modals/contact.tpl.html:29
 #: src/app/templates/modals/customizeInvoice.tpl.html:16
-#: src/app/templates/modals/deleteAccount.tpl.html:34
+#: src/app/templates/modals/deleteAccount.tpl.html:40
 #: src/app/templates/modals/donate.tpl.html:38
 #: src/app/templates/modals/dropzone.tpl.html:20
 #: src/app/templates/modals/filterAddress.tpl.html:14
@@ -1561,7 +1578,7 @@ msgstr "Nie można odszyfrować klucza organizacji"
 
 #: src/app/composer/controllers/composeMessage.js:37
 msgid "Cannot send message"
-msgstr ""
+msgstr "Nie można wysłać wiadomości"
 
 #: src/app/templates/modals/humanVerification.tpl.html:13
 msgctxt "Label"
@@ -1641,13 +1658,13 @@ msgctxt "Title"
 msgid "Change Mailbox Password"
 msgstr "Zmień hasło skrzynki pocztowej"
 
-#: src/app/templates/vpn/openVpnSection.tpl.html:22
-msgctxt "Action"
+#: src/app/templates/vpn/changeVPNNameModal.tpl.html:7
+msgctxt "Title"
 msgid "Change OpenVPN Login"
 msgstr "Zmień login OpenVPN"
 
-#: src/app/templates/vpn/changeVPNNameModal.tpl.html:7
-msgctxt "Title"
+#: src/app/templates/vpn/openVpnSection.tpl.html:22
+msgctxt "Action"
 msgid "Change OpenVPN Login"
 msgstr "Zmień login OpenVPN"
 
@@ -1922,7 +1939,7 @@ msgctxt "Title"
 msgid "Conditions"
 msgstr "Warunki"
 
-#: src/app/templates/modals/confirm.tpl.html:19
+#: src/app/templates/modals/confirm.tpl.html:14
 #: src/app/templates/modals/signature.tpl.html:55
 msgctxt "Action"
 msgid "Confirm"
@@ -1962,12 +1979,12 @@ msgctxt "Label"
 msgid "Confirm password"
 msgstr "Potwierdź hasło"
 
-#: src/app/templates/composer/composerEncrypt.tpl.html:28
-msgctxt "Title"
+#: src/app/templates/modals/member.tpl.html:50
 msgid "Confirm Password"
 msgstr "Potwierdź hasło"
 
-#: src/app/templates/modals/member.tpl.html:50
+#: src/app/templates/composer/composerEncrypt.tpl.html:28
+msgctxt "Title"
 msgid "Confirm Password"
 msgstr "Potwierdź hasło"
 
@@ -2017,15 +2034,15 @@ msgctxt "Info"
 msgid "Contact us at <a href=\"mailto:security@protonmail.com\">security@protonmail.com</a> for critical security issues."
 msgstr "Skontaktuj się z nami pod adresem <a href=\"mailto:security@protonmail.com\"> security@protonmail.com</a> odnośnie krytycznych błędów bezpieczeństwa."
 
+#: src/app/templates/ui/navigation/navigation.tpl.html:17
+msgctxt "Action"
+msgid "Contacts"
+msgstr "Kontakty"
+
 #. Folder name
 #: src/app/templates/partials/sidebar-responsive.tpl.html:12
 #: src/app/ui/factories/pageTitlesModel.js:19
 msgctxt "Title"
-msgid "Contacts"
-msgstr "Kontakty"
-
-#: src/app/templates/ui/navigation/navigation.tpl.html:17
-msgctxt "Action"
 msgid "Contacts"
 msgstr "Kontakty"
 
@@ -2173,6 +2190,11 @@ msgstr "Tworzenie konta"
 msgid "Creating new account"
 msgstr "Tworzenie nowego konta"
 
+#. Invoice type display as badge
+#: src/app/templates/views/payments.tpl.html:93
+msgid "Credit"
+msgstr "Saldo"
+
 #: src/app/templates/dashboard/overviewSection.tpl.html:64
 #: src/app/templates/modals/pay.tpl.html:40
 #: src/app/templates/payment/tosubscribeOverview.tpl.html:93
@@ -2180,18 +2202,13 @@ msgctxt "Title"
 msgid "Credit"
 msgstr "Saldo"
 
-#. Invoice type display as badge
-#: src/app/templates/views/payments.tpl.html:93
-msgid "Credit"
-msgstr "Saldo"
-
-#: src/app/templates/user/signupPayForm.tpl.html:92
-msgctxt "Title"
+#: src/app/payment/services/paymentUtils.js:5
+msgctxt "Payment method"
 msgid "Credit Card"
 msgstr "Karta płatnicza"
 
-#: src/app/payment/services/paymentUtils.js:5
-msgctxt "Payment method"
+#: src/app/templates/user/signupPayForm.tpl.html:92
+msgctxt "Title"
 msgid "Credit Card"
 msgstr "Karta płatnicza"
 
@@ -2236,11 +2253,6 @@ msgctxt "Info"
 msgid "Currently all available VPN connections are allocated to the administrator account. Please select the number of connections you want to reserve for additional users."
 msgstr "Obecnie wszystkie dostępne połączenia sieci VPN są przydzielone do konta administratora. Wybierz liczbę połączeń, które chcesz zarezerwować dla dodatkowych użytkowników."
 
-#: src/app/templates/views/domains.tpl.html:149
-msgctxt "Title"
-msgid "Custom domain"
-msgstr "Niestandardowa domena"
-
 #: src/app/templates/payment/tosubscribeOverview.tpl.html:34
 msgid "Custom domain"
 msgid_plural "Custom domains"
@@ -2248,20 +2260,25 @@ msgstr[0] "Niestandardowa domena"
 msgstr[1] "Niestandardowe domeny"
 msgstr[2] "Niestandardowe domeny"
 
+#: src/app/templates/views/domains.tpl.html:149
+msgctxt "Title"
+msgid "Custom domain"
+msgstr "Niestandardowa domena"
+
 #: src/app/templates/dashboard/freeColumn.tpl.html:13
 msgid "Custom Domains"
 msgstr "Niestandardowe Domeny"
-
-#: src/app/templates/filter/modal.tpl.html:9
-msgctxt "Filter modal title"
-msgid "Custom Filter"
-msgstr "Własny filtr"
 
 #. Tooltip
 #: src/app/templates/message/filterButton.tpl.html:2
 msgctxt "Action"
 msgid "Custom Filter"
 msgstr "Filtr niestandardowy"
+
+#: src/app/templates/filter/modal.tpl.html:9
+msgctxt "Filter modal title"
+msgid "Custom Filter"
+msgstr "Własny filtr"
 
 #: src/app/filter/controllers/filters.js:175
 msgctxt "Info"
@@ -2399,13 +2416,13 @@ msgctxt "atom text loader"
 msgid "Decrypting"
 msgstr "Odszyfrowywanie"
 
-#: src/app/templates/message/message.tpl.html:213
+#: src/app/templates/message/message.tpl.html:214
 #: src/app/templates/views/outside.reply.tpl.html:25
 msgctxt "Error"
 msgid "Decryption error"
 msgstr "Błąd deszyfrowania"
 
-#: src/app/templates/message/message.tpl.html:214
+#: src/app/templates/message/message.tpl.html:215
 #: src/app/templates/views/outside.reply.tpl.html:26
 msgctxt "Error"
 msgid "Decryption of this message's encryption content failed."
@@ -2451,16 +2468,10 @@ msgctxt "Title"
 msgid "Default Signature"
 msgstr "Domyślny podpis"
 
-#: src/app/composer/controllers/composeMessage.js:1121
-#: src/app/templates/views/filters.tpl.html:111
-#: src/app/templates/views/filters.tpl.html:80
-msgid "Delete"
-msgstr "Usuń"
-
 #. contacts toolbar menu option
 #: src/app/templates/elements/moveElement.tpl.html:26
-#: src/app/templates/message/message.tpl.html:168
-#: src/app/templates/modals/deleteAccount.tpl.html:33
+#: src/app/templates/message/message.tpl.html:169
+#: src/app/templates/modals/deleteAccount.tpl.html:39
 #: src/app/templates/partials/toolbar-mobile.tpl.html:50
 #: src/app/templates/views/contacts.tpl.html:24
 #: src/app/templates/views/contacts.tpl.html:78
@@ -2476,9 +2487,15 @@ msgctxt "Action"
 msgid "Delete"
 msgstr "Usuń"
 
+#: src/app/composer/controllers/composeMessage.js:1130
+#: src/app/templates/views/filters.tpl.html:111
+#: src/app/templates/views/filters.tpl.html:80
+msgid "Delete"
+msgstr "Usuń"
+
 #: src/app/contactCurrent/controllers/contacts.js:162
 #: src/app/contactCurrent/controllers/contacts.js:165
-#: src/app/elements/controllers/elements.js:658
+#: src/app/elements/controllers/elements.js:659
 msgctxt "Title"
 msgid "Delete"
 msgstr "Usuń"
@@ -2498,15 +2515,15 @@ msgctxt "Title"
 msgid "Delete address"
 msgstr "Usuń adres"
 
-#: src/app/contactCurrent/controllers/contacts.js:131
-#: src/app/elements/directives/advancedFilterElement.js:29
-msgctxt "Title"
-msgid "Delete all"
-msgstr "Usuń wszystko"
-
 #. contacts toolbar menu option
 #: src/app/templates/views/contacts.tpl.html:11
 msgctxt "Action"
+msgid "Delete all"
+msgstr "Usuń wszystko"
+
+#: src/app/contactCurrent/controllers/contacts.js:131
+#: src/app/elements/directives/advancedFilterElement.js:29
+msgctxt "Title"
 msgid "Delete all"
 msgstr "Usuń wszystko"
 
@@ -2588,13 +2605,13 @@ msgctxt "Title"
 msgid "Disable address"
 msgstr "Wyłącz adres"
 
-#: src/app/templates/views/security.tpl.html:16
-msgctxt "Action"
+#: src/app/settings/controllers/security.js:132
+msgctxt "Title"
 msgid "Disable Two-Factor Authentication"
 msgstr "Wyłącz uwierzytelnianie dwustopniowe"
 
-#: src/app/settings/controllers/security.js:132
-msgctxt "Title"
+#: src/app/templates/views/security.tpl.html:16
+msgctxt "Action"
 msgid "Disable Two-Factor Authentication"
 msgstr "Wyłącz uwierzytelnianie dwustopniowe"
 
@@ -2729,16 +2746,16 @@ msgstr "Domeny"
 msgid "domains used."
 msgstr "używanych domen."
 
+#: src/app/templates/modals/donate.tpl.html:55
+msgctxt "Action"
+msgid "Donate"
+msgstr "Wspomóż nas"
+
 #: src/app/sidebar/directives/donateBtn.js:5
 #: src/app/templates/modals/donate.tpl.html:23
 #: src/app/templates/user/humanVerification.tpl.html:52
 #: src/app/templates/views/dashboard.tpl.html:30
 msgctxt "Title"
-msgid "Donate"
-msgstr "Wspomóż nas"
-
-#: src/app/templates/modals/donate.tpl.html:55
-msgctxt "Action"
 msgid "Donate"
 msgstr "Wspomóż nas"
 
@@ -2779,13 +2796,6 @@ msgctxt "Button to select plan on the dashboard"
 msgid "Downgrade to Plus"
 msgstr "Obniż plan do wersji Plus"
 
-#. table heading
-#: src/app/contactCurrent/controllers/contacts.js:424
-#: src/app/templates/address/addressKeysView.tpl.html:8
-msgctxt "Title"
-msgid "Download"
-msgstr "Pobierz"
-
 #: src/app/templates/directives/attachments/listAttachments.tpl.html:23
 #: src/app/templates/vpn/vpnRessources.tpl.html:13
 #: src/app/templates/vpn/vpnRessources.tpl.html:20
@@ -2802,6 +2812,13 @@ msgstr "Pobierz"
 #: src/app/templates/views/pgp.tpl.html:9
 #: src/app/templates/views/security.tpl.html:45
 msgctxt "Action"
+msgid "Download"
+msgstr "Pobierz"
+
+#. table heading
+#: src/app/contactCurrent/controllers/contacts.js:424
+#: src/app/templates/address/addressKeysView.tpl.html:8
+msgctxt "Title"
 msgid "Download"
 msgstr "Pobierz"
 
@@ -2849,15 +2866,15 @@ msgstr "Szkic"
 msgid "Drafts"
 msgstr "Szkice"
 
+#: src/app/ui/directives/noResults.js:13
+msgctxt "No results heading"
+msgid "Drafts"
+msgstr "Szkice"
+
 #: src/app/sidebar/factories/sidebarModel.js:19
 #: src/app/ui/factories/pageTitlesModel.js:11
 #: src/app/ui/factories/pageTitlesModel.js:12
 msgctxt "Title"
-msgid "Drafts"
-msgstr "Szkice"
-
-#: src/app/ui/directives/noResults.js:13
-msgctxt "No results heading"
 msgid "Drafts"
 msgstr "Szkice"
 
@@ -2934,13 +2951,13 @@ msgstr "Edytuj podpis"
 msgid "Edit the link"
 msgstr "Edytuj link"
 
-#: src/app/templates/modals/deleteAccount.tpl.html:20
-msgid "Email"
-msgstr "E-mail"
-
 #. table heading / link to sort table
 #: src/app/templates/views/contacts.tpl.html:52
 msgctxt "Action"
+msgid "Email"
+msgstr "E-mail"
+
+#: src/app/templates/modals/deleteAccount.tpl.html:26
 msgid "Email"
 msgstr "E-mail"
 
@@ -2990,7 +3007,12 @@ msgstr "Moje subskrypcje"
 msgid "Email verification"
 msgstr "Weryfikacja adresu e-mail"
 
-#: src/app/settings/controllers/account.js:299
+#: src/app/composer/controllers/composeMessage.js:112
+msgctxt "Info"
+msgid "Email was already sent"
+msgstr "E-mail został już wysłany"
+
+#: src/app/settings/controllers/account.js:300
 msgctxt "Success"
 msgid "Emailing preference updated"
 msgstr "Zaktualizowano ustawienia sposobu obsługi emaili"
@@ -3027,15 +3049,15 @@ msgctxt "Action"
 msgid "Empty trash"
 msgstr "Opróżnij kosz"
 
-#: src/app/templates/autoresponder/autoresponderTimeSection.tpl.html:4
-msgctxt "Label"
-msgid "Enable"
-msgstr "Włącz"
-
 #: src/app/templates/views/domains.tpl.html:213
 #: src/app/templates/views/members.tpl.html:228
 #: src/app/templates/views/signatures.tpl.html:67
 msgctxt "Action"
+msgid "Enable"
+msgstr "Włącz"
+
+#: src/app/templates/autoresponder/autoresponderTimeSection.tpl.html:4
+msgctxt "Label"
 msgid "Enable"
 msgstr "Włącz"
 
@@ -3054,20 +3076,20 @@ msgctxt "Action"
 msgid "Enable Two-Factor Authentication"
 msgstr "Włącz uwierzytelnianie dwustopniowe"
 
+#. notification settings option
+#: src/app/templates/views/account.tpl.html:278
+#: src/app/templates/views/account.tpl.html:57
+#: src/app/templates/views/account.tpl.html:78
+msgctxt "Action"
+msgid "Enabled"
+msgstr "Włączone"
+
 #. address state badge
 #. form option
 #: src/app/templates/views/account.tpl.html:194
 #: src/app/templates/views/domains.tpl.html:200
 #: src/app/templates/views/members.tpl.html:221
 #: src/app/templates/views/signatures.tpl.html:42
-msgid "Enabled"
-msgstr "Włączone"
-
-#. notification settings option
-#: src/app/templates/views/account.tpl.html:278
-#: src/app/templates/views/account.tpl.html:57
-#: src/app/templates/views/account.tpl.html:78
-msgctxt "Action"
 msgid "Enabled"
 msgstr "Włączone"
 
@@ -3186,12 +3208,12 @@ msgstr "Wprowadź hasło organizacji, aby przywrócić uprawnienia administrator
 msgid "Enter the word 'DANGER' here."
 msgstr "Wpisz tutaj słowo \"DANGER\"."
 
-#: src/app/templates/modals/deleteAccount.tpl.html:27
-msgctxt "Label"
+#: src/app/templates/authentication/modals/loginPassword.tpl.html:24
 msgid "Enter two-factor passcode:"
 msgstr "Wprowadź kod uwierzytelniający:"
 
-#: src/app/templates/authentication/modals/loginPassword.tpl.html:24
+#: src/app/templates/modals/deleteAccount.tpl.html:33
+msgctxt "Label"
 msgid "Enter two-factor passcode:"
 msgstr "Wprowadź kod uwierzytelniający:"
 
@@ -3199,7 +3221,7 @@ msgstr "Wprowadź kod uwierzytelniający:"
 msgid "Enter your current password:"
 msgstr "Wprowadź swoje aktualne hasło:"
 
-#: src/app/templates/modals/deleteAccount.tpl.html:23
+#: src/app/templates/modals/deleteAccount.tpl.html:29
 msgctxt "Label"
 msgid "Enter your login password to confirm your identity:"
 msgstr "Wprowadź swoje hasło logowania by potwierdzić tożsamość:"
@@ -3235,7 +3257,7 @@ msgctxt "Error"
 msgid "Error activating organization keys"
 msgstr "Błąd aktywacji klucza organizacji"
 
-#: src/app/core/factories/generateOrganizationModal.js:82
+#: src/app/core/factories/generateOrganizationModal.js:86
 msgctxt "Error"
 msgid "Error changing organization keys"
 msgstr "Błąd przy zmianie kluczy organizacji"
@@ -3245,13 +3267,13 @@ msgctxt "Report bug request"
 msgid "Error communicating with the server"
 msgstr "Błąd komunikacji z serwerem"
 
-#: src/app/templates/directives/core/paypalView.tpl.html:6
-msgctxt "Error"
+#: src/app/core/directives/paypalView.js:6
+msgctxt "Paypal component"
 msgid "Error connecting to PayPal."
 msgstr "Błąd podczas łączenia z PayPal."
 
-#: src/app/core/directives/paypalView.js:6
-msgctxt "Paypal component"
+#: src/app/templates/directives/core/paypalView.tpl.html:6
+msgctxt "Error"
 msgid "Error connecting to PayPal."
 msgstr "Błąd podczas łączenia z PayPal."
 
@@ -3294,7 +3316,7 @@ msgctxt "Error"
 msgid "Error during revoke request"
 msgstr "Błąd podczas odwoływania dostępu"
 
-#: src/app/outside/controllers/outside.js:137
+#: src/app/outside/controllers/outside.js:136
 msgctxt "Error"
 msgid "Error during the encryption"
 msgstr "Błąd podczas szyfrowania"
@@ -3309,7 +3331,7 @@ msgctxt "Error"
 msgid "Error during the initialization of logs"
 msgstr "Błąd podczas inicjalizacji dzienników"
 
-#: src/app/outside/controllers/outside.js:133
+#: src/app/outside/controllers/outside.js:132
 msgctxt "Error"
 msgid "Error during the reply process"
 msgstr "Błąd procesu odpowiedzi"
@@ -3320,7 +3342,7 @@ msgctxt "Error"
 msgid "Error during updating"
 msgstr "Błąd podczas aktualizowania"
 
-#: src/app/message/factories/messageModel.js:148
+#: src/app/message/factories/messageModel.js:150
 msgid "Error encrypting message"
 msgstr "Szyfrowanie wiadomości nie powiodło się"
 
@@ -3402,13 +3424,13 @@ msgctxt "Title"
 msgid "Expiration"
 msgstr "Wygasa"
 
-#: src/app/templates/composer/composerExpiration.tpl.html:3
-msgctxt "Title"
+#: src/app/templates/directives/composer/composer.tpl.html:89
+msgctxt "Action"
 msgid "Expiration time"
 msgstr "Czas wygaśnięcia"
 
-#: src/app/templates/directives/composer/composer.tpl.html:89
-msgctxt "Action"
+#: src/app/templates/composer/composerExpiration.tpl.html:3
+msgctxt "Title"
 msgid "Expiration time"
 msgstr "Czas wygaśnięcia"
 
@@ -3441,7 +3463,7 @@ msgctxt "Pikaday"
 msgid "February"
 msgstr "Luty"
 
-#: src/app/templates/modals/deleteAccount.tpl.html:16
+#: src/app/templates/modals/deleteAccount.tpl.html:22
 msgid "Feedback"
 msgstr "Opinia"
 
@@ -3490,6 +3512,11 @@ msgstr "Filtruj foldery"
 #: src/app/templates/directives/dropdownLabels.tpl.html:14
 msgid "Filter labels"
 msgstr "Filtruj etykiety"
+
+#: src/app/templates/message/filterButton.tpl.html:7
+msgctxt "Filter message"
+msgid "Filter on:"
+msgstr "Filtruj:"
 
 #: src/app/filter/factories/filterModal.js:29
 msgctxt "Notification"
@@ -3548,14 +3575,14 @@ msgstr "Folder zaktualizowany"
 msgid "Folders"
 msgstr "Foldery(ów)"
 
-#: src/app/templates/partials/sidebar.tpl.html:22
-msgctxt "Action"
-msgid "Folders / Labels"
-msgstr "Foldery / Etykiety"
-
 #: src/app/sidebar/factories/sidebarSettingsModel.js:17
 #: src/app/templates/views/labels.tpl.html:6
 msgctxt "Title"
+msgid "Folders / Labels"
+msgstr "Foldery / Etykiety"
+
+#: src/app/templates/partials/sidebar.tpl.html:22
+msgctxt "Action"
 msgid "Folders / Labels"
 msgstr "Foldery / Etykiety"
 
@@ -3609,7 +3636,7 @@ msgctxt "action"
 msgid "Forgot username?"
 msgstr "Nie pamiętasz nazwy użytkownika?"
 
-#: src/app/templates/message/message.tpl.html:130
+#: src/app/templates/message/message.tpl.html:131
 msgctxt "Action"
 msgid "Forward"
 msgstr "Przekaż"
@@ -3639,7 +3666,7 @@ msgctxt "Full day name"
 msgid "Friday"
 msgstr "Piątek"
 
-#: src/app/templates/message/message.tpl.html:19
+#: src/app/templates/message/message.tpl.html:20
 #: src/app/templates/search/searchForm.tpl.html:61
 #: src/app/templates/views/outside.reply.tpl.html:14
 msgid "From"
@@ -3668,13 +3695,13 @@ msgctxt "fileSize format"
 msgid "GB"
 msgstr "GB"
 
-#: src/app/settings/controllers/signatures.js:460
-msgctxt "Info"
+#: src/app/settings/controllers/signatures.js:459
+msgctxt "Title"
 msgid "Generate key pair"
 msgstr "Generowanie pary kluczy"
 
-#: src/app/settings/controllers/signatures.js:459
-msgctxt "Title"
+#: src/app/settings/controllers/signatures.js:460
+msgctxt "Info"
 msgid "Generate key pair"
 msgstr "Generowanie pary kluczy"
 
@@ -3779,7 +3806,7 @@ msgctxt "Action"
 msgid "Hide"
 msgstr "Ukryj"
 
-#: src/app/templates/message/message.tpl.html:195
+#: src/app/templates/message/message.tpl.html:196
 msgctxt "Action"
 msgid "Hide details"
 msgstr "Ukryj szczegóły"
@@ -3805,6 +3832,12 @@ msgid "Hide trashed messages"
 msgstr "Ukryj usunięte wiadomości"
 
 #. form option heading
+#: src/app/templates/modals/member.tpl.html:32
+msgctxt "Label"
+msgid "High security"
+msgstr "Wysoki poziom bezpieczeństwa"
+
+#. form option heading
 #: src/app/templates/modals/addAddress.tpl.html:33
 #: src/app/templates/modals/generate.tpl.html:22
 #: src/app/templates/modals/generateOrganization.tpl.html:13
@@ -3814,10 +3847,10 @@ msgid "High security"
 msgstr "Wysokie bezpieczeństwo"
 
 #. form option heading
-#: src/app/templates/modals/member.tpl.html:32
+#: src/app/templates/modals/member.tpl.html:38
 msgctxt "Label"
-msgid "High security"
-msgstr "Wysoki poziom bezpieczeństwa"
+msgid "Highest security"
+msgstr "Najwyższy poziom bezpieczeństwa"
 
 #. form option heading
 #: src/app/templates/modals/addAddress.tpl.html:39
@@ -3827,12 +3860,6 @@ msgstr "Wysoki poziom bezpieczeństwa"
 msgctxt "Title"
 msgid "Highest security"
 msgstr "Najwyższe bezpieczeństwo"
-
-#. form option heading
-#: src/app/templates/modals/member.tpl.html:38
-msgctxt "Label"
-msgid "Highest security"
-msgstr "Najwyższy poziom bezpieczeństwa"
 
 #: src/app/templates/composer/composerEncrypt.tpl.html:52
 msgid "Hint"
@@ -3857,7 +3884,7 @@ msgctxt "Title"
 msgid "Hotkeys"
 msgstr "Skróty klawiszowe"
 
-#: src/app/settings/controllers/account.js:269
+#: src/app/settings/controllers/account.js:270
 msgid "Hotkeys preferences updated"
 msgstr "Zaktualizowano ustawienia skrótów klawiaturowych"
 
@@ -3964,8 +3991,8 @@ msgstr[0] "wykryto obraz"
 msgstr[1] "wykryto obrazy"
 msgstr[2] "wykryto obrazy"
 
-#: src/app/settings/controllers/account.js:231
-#: src/app/settings/controllers/account.js:241
+#: src/app/settings/controllers/account.js:232
+#: src/app/settings/controllers/account.js:242
 msgid "Image preferences updated"
 msgstr "Zaktualizowano ustawienia wyświetlania obrazków"
 
@@ -4017,17 +4044,6 @@ msgstr "W koszu"
 msgid "Inactive"
 msgstr "Nieaktywny"
 
-#: src/app/conversation/factories/actionConversation.js:21
-#: src/app/labels/directives/dropdownFolders.js:6
-#: src/app/message/factories/messageActions.js:19
-msgid "Inbox"
-msgstr "Odebrane"
-
-#: src/app/ui/directives/noResults.js:9
-msgctxt "No results heading"
-msgid "Inbox"
-msgstr "Odebrane"
-
 #: src/app/templates/filter/modal.tpl.html:147
 msgctxt "Label"
 msgid "Inbox"
@@ -4036,6 +4052,17 @@ msgstr "Odebrane"
 #: src/app/sidebar/factories/sidebarModel.js:13
 #: src/app/ui/factories/pageTitlesModel.js:9
 msgctxt "Title"
+msgid "Inbox"
+msgstr "Odebrane"
+
+#: src/app/conversation/factories/actionConversation.js:21
+#: src/app/labels/directives/dropdownFolders.js:6
+#: src/app/message/factories/messageActions.js:19
+msgid "Inbox"
+msgstr "Odebrane"
+
+#: src/app/ui/directives/noResults.js:9
+msgctxt "No results heading"
 msgid "Inbox"
 msgstr "Odebrane"
 
@@ -4078,12 +4105,12 @@ msgctxt "Action"
 msgid "Insert image"
 msgstr "Wstaw obraz"
 
-#: src/app/templates/squire/squireToolbar.tpl.html:75
-msgctxt "Action"
+#: src/app/templates/squire/addLinkPopover.tpl.html:40
 msgid "Insert link"
 msgstr "Wstaw odnośnik"
 
-#: src/app/templates/squire/addLinkPopover.tpl.html:40
+#: src/app/templates/squire/squireToolbar.tpl.html:75
+msgctxt "Action"
 msgid "Insert link"
 msgstr "Wstaw odnośnik"
 
@@ -4331,7 +4358,7 @@ msgid "Label as"
 msgstr "Oznacz jako"
 
 #. Tooltip
-#: src/app/templates/message/message.tpl.html:104
+#: src/app/templates/message/message.tpl.html:105
 msgctxt "Action"
 msgid "Label as"
 msgstr "Oznacz jako"
@@ -4357,12 +4384,12 @@ msgstr "Zapisano etykietę"
 msgid "Label updated"
 msgstr "Zmieniono etykietę"
 
-#: src/app/payment/services/paymentPlansFormator.js:6
+#: src/app/ui/factories/pageTitlesModel.js:22
+msgctxt "Title"
 msgid "Labels"
 msgstr "Etykiety"
 
-#: src/app/ui/factories/pageTitlesModel.js:22
-msgctxt "Title"
+#: src/app/payment/services/paymentPlansFormator.js:6
 msgid "Labels"
 msgstr "Etykiety"
 
@@ -4394,26 +4421,13 @@ msgstr "Układ graficzny"
 msgid "Layout saved"
 msgstr "Zapisano układ graficzny"
 
-#: src/app/templates/views/members.tpl.html:260
-msgid "Learn more"
-msgstr "Dowiedz się więcej"
-
-#. learn more link
-#: src/app/templates/modals/domain/dkim.tpl.html:16
-#: src/app/templates/modals/domain/dmarc.tpl.html:12
-#: src/app/templates/modals/domain/domain.tpl.html:11
-#: src/app/templates/modals/domain/mx.tpl.html:15
-#: src/app/templates/modals/domain/spf.tpl.html:15
-#: src/app/templates/modals/domain/verification.tpl.html:16
-#: src/app/templates/views/appearance.tpl.html:12
-#: src/app/templates/views/appearance.tpl.html:39
-msgctxt "Action"
-msgid "Learn more"
-msgstr "Dowiedz się więcej"
-
 #: src/app/message/directives/unsubscribePanel.js:5
 #: src/app/templates/message/messageAutoGenerated.tpl.html:6
 msgctxt "Info"
+msgid "Learn more"
+msgstr "Dowiedz się więcej"
+
+#: src/app/templates/views/members.tpl.html:260
 msgid "Learn more"
 msgstr "Dowiedz się więcej"
 
@@ -4433,12 +4447,25 @@ msgctxt "Link"
 msgid "Learn more"
 msgstr "Dowiedz się więcej"
 
-#: src/app/templates/views/filters.tpl.html:51
-msgctxt "Link"
-msgid "Learn More"
+#. learn more link
+#: src/app/templates/modals/domain/dkim.tpl.html:16
+#: src/app/templates/modals/domain/dmarc.tpl.html:12
+#: src/app/templates/modals/domain/domain.tpl.html:11
+#: src/app/templates/modals/domain/mx.tpl.html:15
+#: src/app/templates/modals/domain/spf.tpl.html:15
+#: src/app/templates/modals/domain/verification.tpl.html:16
+#: src/app/templates/views/appearance.tpl.html:12
+#: src/app/templates/views/appearance.tpl.html:39
+msgctxt "Action"
+msgid "Learn more"
 msgstr "Dowiedz się więcej"
 
 #: src/app/templates/partials/conversation-placeholder.tpl.html:11
+msgid "Learn More"
+msgstr "Dowiedz się więcej"
+
+#: src/app/templates/views/filters.tpl.html:51
+msgctxt "Link"
 msgid "Learn More"
 msgstr "Dowiedz się więcej"
 
@@ -4502,7 +4529,7 @@ msgctxt "Info"
 msgid "Loading themes will override your current theme!"
 msgstr "Załadowanie układu graficznego spowoduje nadpisanie Twojego obecnego układu!"
 
-#: src/app/templates/directives/core/paypalView.tpl.html:15
+#: src/app/templates/directives/core/paypalView.tpl.html:22
 #: src/app/templates/formUtils/captcha.tpl.html:2
 msgid "Loading..."
 msgstr "Trwa ładowanie..."
@@ -4537,15 +4564,15 @@ msgctxt "Dashboard/security"
 msgid "Logging preference updated"
 msgstr "Ustawienia logowania zaktualizowano"
 
-#: src/app/ui/factories/pageTitlesModel.js:34
-msgctxt "Title"
-msgid "Login"
-msgstr "Zaloguj"
-
 #: src/app/templates/authentication/loginForm.tpl.html:44
 #: src/app/templates/authentication/loginTwoFactorForm.tpl.html:26
 #: src/app/templates/views/members.tpl.html:207
 msgctxt "Action"
+msgid "Login"
+msgstr "Zaloguj"
+
+#: src/app/ui/factories/pageTitlesModel.js:34
+msgctxt "Title"
 msgid "Login"
 msgstr "Zaloguj"
 
@@ -4561,7 +4588,7 @@ msgid "Login failure (two-factor)"
 msgstr "Błąd logowania (2FA)"
 
 #: src/app/templates/authentication/modals/loginPassword.tpl.html:15
-#: src/app/templates/modals/deleteAccount.tpl.html:24
+#: src/app/templates/modals/deleteAccount.tpl.html:30
 #: src/app/templates/modals/reactivate.tpl.html:10
 #: src/app/templates/modals/switchPasswordMode.tpl.html:32
 msgid "Login password"
@@ -4618,12 +4645,12 @@ msgctxt "Title"
 msgid "Mailbox Password"
 msgstr "Hasło skrzynki pocztowej"
 
-#: src/app/templates/views/account.tpl.html:334
+#: src/app/templates/views/account.tpl.html:330
 msgctxt "Label"
 msgid "Major Announcements (2-3 per year)"
 msgstr "Większe ogłoszenia (2-3 rocznie)"
 
-#: src/app/templates/views/account.tpl.html:338
+#: src/app/templates/views/account.tpl.html:334
 msgctxt "Label"
 msgid "Major New Features (3-4 per year)"
 msgstr "Główne nowe funkcje (3-4 razy w roku)"
@@ -4643,15 +4670,15 @@ msgctxt "Action"
 msgid "Make Private"
 msgstr "Chroń użytkownika"
 
+#: src/app/templates/dashboard/subscriptionSection.tpl.html:44
+msgid "Manage"
+msgstr "Zarządzaj"
+
 #. link to domains
 #: src/app/templates/dashboard/overviewSection.tpl.html:18
 #: src/app/templates/dashboard/overviewSection.tpl.html:37
 #: src/app/templates/views/members.tpl.html:109
 msgctxt "Action"
-msgid "Manage"
-msgstr "Zarządzaj"
-
-#: src/app/templates/dashboard/subscriptionSection.tpl.html:44
 msgid "Manage"
 msgstr "Zarządzaj"
 
@@ -4692,13 +4719,13 @@ msgctxt "Action"
 msgid "Mark as read / Mark as unread"
 msgstr "Oznacz jako przeczytane / Oznacz jako nieprzeczytane"
 
-#: src/app/templates/message/message.tpl.html:162
+#: src/app/templates/message/message.tpl.html:163
 msgctxt "Action"
 msgid "Mark as spam"
 msgstr "Oznacz jako spam"
 
 #: src/app/templates/directives/ui/readUnread.tpl.html:11
-#: src/app/templates/message/message.tpl.html:155
+#: src/app/templates/message/message.tpl.html:156
 #: src/app/templates/partials/toolbar-mobile.tpl.html:17
 msgctxt "Action"
 msgid "Mark as unread"
@@ -4719,7 +4746,7 @@ msgstr "dopasowania"
 msgid "Maximized"
 msgstr "Zmaksymalizowane"
 
-#: src/app/composer/controllers/composeMessage.js:223
+#: src/app/composer/controllers/composeMessage.js:224
 msgid "Maximum composer reached"
 msgstr "Osiągnięto dozwolone maksimum"
 
@@ -4760,7 +4787,7 @@ msgstr[0] "wiadomość"
 msgstr[1] "wiadomości"
 msgstr[2] "wiadomości"
 
-#: src/app/composer/controllers/composeMessage.js:1130
+#: src/app/composer/controllers/composeMessage.js:1139
 msgid "Message discarded"
 msgstr "Wiadomość odrzucona"
 
@@ -4795,7 +4822,7 @@ msgctxt "Error"
 msgid "Message passwords do not match."
 msgstr "Hasła nie są identyczne."
 
-#: src/app/composer/controllers/composeMessage.js:650
+#: src/app/composer/controllers/composeMessage.js:651
 msgid "Message saved"
 msgstr "Wiadomość zapisana"
 
@@ -4806,8 +4833,8 @@ msgstr[0] "wiadomość zaznaczona"
 msgstr[1] "wiadomości zaznaczone"
 msgstr[2] "wiadomości zaznaczone"
 
-#: src/app/composer/controllers/composeMessage.js:988
-#: src/app/outside/controllers/outside.js:129
+#: src/app/composer/controllers/composeMessage.js:997
+#: src/app/outside/controllers/outside.js:128
 msgid "Message sent"
 msgstr "Wiadomość wysłana"
 
@@ -4851,22 +4878,22 @@ msgstr "Poniedziałek"
 msgid "month"
 msgstr "miesiąc"
 
-#: src/app/templates/user/signupPayForm.tpl.html:37
-msgctxt "Info"
-msgid "Monthly"
-msgstr "Miesięcznie"
-
 #: src/app/templates/views/invoices.tpl.html:29
 #: src/app/templates/views/invoices.tpl.html:59
 msgid "Monthly"
 msgstr "Miesięcznie"
 
-#: src/app/templates/elements/advancedFilterElement.tpl.html:8
+#: src/app/templates/user/signupPayForm.tpl.html:37
+msgctxt "Info"
+msgid "Monthly"
+msgstr "Miesięcznie"
+
+#: src/app/templates/message/message.tpl.html:138
+msgctxt "Action"
 msgid "More"
 msgstr "Więcej"
 
-#: src/app/templates/message/message.tpl.html:137
-msgctxt "Action"
+#: src/app/templates/elements/advancedFilterElement.tpl.html:8
 msgid "More"
 msgstr "Więcej"
 
@@ -4879,18 +4906,18 @@ msgctxt "notification drag and drop"
 msgid "Move {{total}} {{type}}"
 msgstr "Przenieś {{total}} {{type}}"
 
-#: src/app/templates/partials/toolbar-desktop.tpl.html:13
-msgid "Move to"
-msgstr "Przenieś do"
-
 #. Tooltip
-#: src/app/templates/message/message.tpl.html:96
+#: src/app/templates/message/message.tpl.html:97
 msgctxt "Action"
 msgid "Move to"
 msgstr "Przenieś do"
 
 #: src/app/templates/labels/dropdownFolders.tpl.html:3
 msgctxt "title"
+msgid "Move to"
+msgstr "Przenieś do"
+
+#: src/app/templates/partials/toolbar-desktop.tpl.html:13
 msgid "Move to"
 msgstr "Przenieś do"
 
@@ -4906,7 +4933,7 @@ msgid "Move to archive"
 msgstr "Przenieś do archiwum"
 
 #: src/app/templates/elements/moveElement.tpl.html:8
-#: src/app/templates/message/message.tpl.html:145
+#: src/app/templates/message/message.tpl.html:146
 #: src/app/templates/partials/toolbar-mobile.tpl.html:38
 msgctxt "Action"
 msgid "Move to inbox"
@@ -4919,21 +4946,21 @@ msgid "Move to spam"
 msgstr "Przenieś do spamu"
 
 #: src/app/templates/elements/moveElement.tpl.html:2
-#: src/app/templates/message/message.tpl.html:151
+#: src/app/templates/message/message.tpl.html:152
 #: src/app/templates/partials/toolbar-mobile.tpl.html:34
 msgctxt "Action"
 msgid "Move to trash"
 msgstr "Przenieś do kosza"
 
+#: src/app/templates/views/members.tpl.html:9
+msgctxt "Title"
+msgid "Multi-User Support"
+msgstr "Obsługa wielu użytkowników"
+
 #: src/app/templates/dashboard/freeColumn.tpl.html:22
 #: src/app/templates/dashboard/plusColumn.tpl.html:25
 #: src/app/templates/dashboard/professionalColumn.tpl.html:32
 #: src/app/templates/dashboard/visionaryColumn.tpl.html:25
-msgid "Multi-User Support"
-msgstr "Obsługa wielu użytkowników"
-
-#: src/app/templates/views/members.tpl.html:9
-msgctxt "Title"
 msgid "Multi-User Support"
 msgstr "Obsługa wielu użytkowników"
 
@@ -4952,10 +4979,6 @@ msgctxt "Title"
 msgid "My subscription"
 msgstr "Moje subskrypcje"
 
-#: src/app/templates/modals/label.tpl.html:21
-msgid "Name"
-msgstr "Nazwa"
-
 #: src/app/templates/modals/label.tpl.html:19
 #: src/app/templates/modals/member.tpl.html:12
 msgctxt "Label"
@@ -4969,6 +4992,10 @@ msgstr "Nazwa"
 #: src/app/templates/views/domains.tpl.html:181
 #: src/app/templates/views/members.tpl.html:149
 msgctxt "Title"
+msgid "Name"
+msgstr "Nazwa"
+
+#: src/app/templates/modals/label.tpl.html:21
 msgid "Name"
 msgstr "Nazwa"
 
@@ -5032,7 +5059,7 @@ msgctxt "Label"
 msgid "New Login Password"
 msgstr "Nowe hasło logowania"
 
-#: src/app/utils/services/eventManager.js:285
+#: src/app/utils/services/eventManager.js:286
 msgctxt "Info"
 msgid "New mail from"
 msgstr "Nowa poczta od"
@@ -5046,7 +5073,7 @@ msgctxt "Label"
 msgid "New Mailbox Password"
 msgstr "Nowe hasło skrzynki pocztowej"
 
-#: src/app/composer/controllers/composeMessage.js:704
+#: src/app/composer/controllers/composeMessage.js:705
 msgctxt "Title"
 msgid "New message"
 msgstr "Nowa wiadomość"
@@ -5085,6 +5112,11 @@ msgctxt "Action"
 msgid "Next"
 msgstr "Dalej"
 
+#: src/app/templates/message/filterButton.tpl.html:33
+msgctxt "Filter message"
+msgid "Next"
+msgstr "Dalej"
+
 #: src/app/commons/services/i18nLoader.js:118
 msgctxt "Pikaday"
 msgid "Next Month"
@@ -5095,11 +5127,6 @@ msgctxt "Action"
 msgid "Next tip"
 msgstr "Następna wskazówka"
 
-#: src/app/ui/directives/toggle.js:20
-msgctxt "Title"
-msgid "No"
-msgstr "Nie"
-
 #. form option
 #: src/app/templates/search/searchForm.tpl.html:138
 #: src/app/templates/views/members.tpl.html:183
@@ -5108,6 +5135,11 @@ msgstr "Nie"
 
 #: src/app/user/directives/signupLink.js:9
 msgctxt "Action"
+msgid "No"
+msgstr "Nie"
+
+#: src/app/ui/directives/toggle.js:20
+msgctxt "Title"
 msgid "No"
 msgstr "Nie"
 
@@ -5245,14 +5277,14 @@ msgctxt "Action"
 msgid "Not spam"
 msgstr "To nie jest spam"
 
-#. Desktop notification
-#: src/app/templates/modals/label.tpl.html:55
-msgctxt "Title"
+#: src/app/templates/views/labels.tpl.html:54
+msgctxt "Label"
 msgid "Notification"
 msgstr "Powiadomienie"
 
-#: src/app/templates/views/labels.tpl.html:54
-msgctxt "Label"
+#. Desktop notification
+#: src/app/templates/modals/label.tpl.html:55
+msgctxt "Title"
 msgid "Notification"
 msgstr "Powiadomienie"
 
@@ -5285,11 +5317,6 @@ msgctxt "Pikaday"
 msgid "October"
 msgstr "Październik"
 
-#: src/app/templates/views/members.tpl.html:62
-msgctxt "Info"
-msgid "of"
-msgstr "z"
-
 #. dashboard page. how many addresses exist for an organization as well as the total number allowed.
 #. dashboard page. how many domains exist for an organization as well as the total number allowed.
 #. show used storage for an account
@@ -5297,6 +5324,11 @@ msgstr "z"
 #: src/app/templates/dashboard/overviewSection.tpl.html:33
 #: src/app/templates/dashboard/overviewSection.tpl.html:52
 #: src/app/templates/dashboard/overviewSection.tpl.html:53
+msgid "of"
+msgstr "z"
+
+#: src/app/templates/views/members.tpl.html:62
+msgctxt "Info"
 msgid "of"
 msgstr "z"
 
@@ -5355,7 +5387,7 @@ msgctxt "Title"
 msgid "Operating system"
 msgstr "System operacyjny"
 
-#: src/app/settings/controllers/account.js:152
+#: src/app/settings/controllers/account.js:153
 msgid "Operation timed out for security reasons, please try again"
 msgstr "Upłynął limit czasu, który jest ustawiony ze względów bezpieczeństwa. Spróbuj ponownie"
 
@@ -5418,7 +5450,7 @@ msgctxt "Error"
 msgid "Organization keys already active"
 msgstr "Klucze organizacji są już aktywne"
 
-#: src/app/core/factories/generateOrganizationModal.js:77
+#: src/app/core/factories/generateOrganizationModal.js:81
 msgctxt "Error"
 msgid "Organization keys change successful"
 msgstr "Zmiana kluczy organizacji zakończona pomyślnie"
@@ -5428,13 +5460,13 @@ msgctxt "Info"
 msgid "Organization keys restored"
 msgstr "Przywrócono klucze organizacji"
 
-#: src/app/templates/views/members.tpl.html:35
-msgctxt "Title"
+#: src/app/templates/modals/setupOrganization.tpl.html:15
+#: src/app/templates/views/members.tpl.html:39
 msgid "Organization name"
 msgstr "Nazwa organizacji"
 
-#: src/app/templates/modals/setupOrganization.tpl.html:15
-#: src/app/templates/views/members.tpl.html:39
+#: src/app/templates/views/members.tpl.html:35
+msgctxt "Title"
 msgid "Organization name"
 msgstr "Nazwa organizacji"
 
@@ -5533,9 +5565,12 @@ msgstr "Numer strony"
 msgid "Paid"
 msgstr "Opłacono"
 
-#: src/app/templates/modals/member.tpl.html:44
-#: src/app/templates/modals/switchPasswordMode.tpl.html:13
-msgctxt "Label"
+#. form heading for changing single password
+#: src/app/templates/modals/generate.tpl.html:12
+#: src/app/templates/user/usernamePassword.tpl.html:2
+#: src/app/templates/views/account.tpl.html:146
+#: src/app/templates/views/setup.tpl.html:63
+msgctxt "Title"
 msgid "Password"
 msgstr "Hasło"
 
@@ -5548,12 +5583,9 @@ msgstr "Hasło"
 msgid "Password"
 msgstr "Hasło"
 
-#. form heading for changing single password
-#: src/app/templates/modals/generate.tpl.html:12
-#: src/app/templates/user/usernamePassword.tpl.html:2
-#: src/app/templates/views/account.tpl.html:146
-#: src/app/templates/views/setup.tpl.html:63
-msgctxt "Title"
+#: src/app/templates/modals/member.tpl.html:44
+#: src/app/templates/modals/switchPasswordMode.tpl.html:13
+msgctxt "Label"
 msgid "Password"
 msgstr "Hasło"
 
@@ -5591,14 +5623,14 @@ msgctxt "Action"
 msgid "Pay"
 msgstr "Zapłać"
 
-#. Make sure this string is short please
-#: src/app/templates/dashboard/totalRows.tpl.html:17
-msgctxt "Billing cycle for the dashboard"
+#: src/app/templates/payment/paymentForm.tpl.html:16
+msgctxt "Action"
 msgid "Pay annually"
 msgstr "Plan roczny"
 
-#: src/app/templates/payment/paymentForm.tpl.html:16
-msgctxt "Action"
+#. Make sure this string is short please
+#: src/app/templates/dashboard/totalRows.tpl.html:17
+msgctxt "Billing cycle for the dashboard"
 msgid "Pay annually"
 msgstr "Plan roczny"
 
@@ -5613,12 +5645,12 @@ msgctxt "Billing cycle for the dashboard"
 msgid "Pay monthly"
 msgstr "Plan miesięczny"
 
-#: src/app/templates/dashboard/subscriptionSection.tpl.html:41
+#: src/app/templates/modals/payment/modal.tpl.html:29
+msgctxt "Title"
 msgid "Payment"
 msgstr "Płatność"
 
-#: src/app/templates/modals/payment/modal.tpl.html:29
-msgctxt "Title"
+#: src/app/templates/dashboard/subscriptionSection.tpl.html:41
 msgid "Payment"
 msgstr "Płatność"
 
@@ -5679,7 +5711,7 @@ msgctxt "Duration/repetition of autoresponder"
 msgid "Permanent"
 msgstr "Na Stałe"
 
-#: src/app/composer/controllers/composeMessage.js:1122
+#: src/app/composer/controllers/composeMessage.js:1131
 msgid "Permanently delete this draft?"
 msgstr "Trwale usunąć ten szkic?"
 
@@ -5816,7 +5848,7 @@ msgctxt "Error input"
 msgid "Please enter a valid time."
 msgstr "Podaj prawidłowy czas."
 
-#: src/app/composer/controllers/composeMessage.js:46
+#: src/app/composer/controllers/composeMessage.js:47
 msgctxt "Error"
 msgid "Please enter at least one recipient."
 msgstr "Proszę podać co najmniej jednego adresata."
@@ -5839,7 +5871,7 @@ msgstr "Podaj nazwę użytkownika i hasło"
 msgid "Please give the address and temporary password to the new member so they can log in."
 msgstr "Podaj nowy adres i tymczasowe hasło nowemu użytkownikowi, aby mógł się zalogować."
 
-#: src/app/templates/modals/deleteAccount.tpl.html:19
+#: src/app/templates/modals/deleteAccount.tpl.html:25
 msgctxt "Label"
 msgid "Please give us a way to contact you:"
 msgstr "Prosimy o podanie sposobu kontaktu z Tobą:"
@@ -5848,7 +5880,7 @@ msgstr "Prosimy o podanie sposobu kontaktu z Tobą:"
 msgid "Please make sure to give us a way to contact you"
 msgstr "Upewnij się, że będziemy mogli się z Tobą skontaktować"
 
-#: src/app/templates/modals/deleteAccount.tpl.html:15
+#: src/app/templates/modals/deleteAccount.tpl.html:21
 msgctxt "Label"
 msgid "Please tell us why you are leaving:"
 msgstr "Powiedz nam, dlaczego nas opuszczasz:"
@@ -5861,9 +5893,9 @@ msgstr "Ulepsz do planu Profesjonalnego z więcej niż 1 użytkownikiem, lub to 
 msgid "Popup"
 msgstr "Wyskakujące okno"
 
-#: src/app/settings/controllers/account.js:125
-#: src/app/settings/controllers/account.js:139
-#: src/app/settings/controllers/account.js:220
+#: src/app/settings/controllers/account.js:126
+#: src/app/settings/controllers/account.js:140
+#: src/app/settings/controllers/account.js:221
 msgid "Preference saved"
 msgstr "Ustawienia zostały zapisane"
 
@@ -5896,7 +5928,7 @@ msgstr "Podstawowy"
 msgid "Primary Admin"
 msgstr "Główny administrator"
 
-#: src/app/templates/message/message.tpl.html:187
+#: src/app/templates/message/message.tpl.html:188
 #: src/app/templates/views/pgp.tpl.html:10
 msgctxt "Action"
 msgid "Print"
@@ -5945,12 +5977,12 @@ msgctxt "Title"
 msgid "Proration"
 msgstr "Dzielenie proporcjonalne"
 
-#: src/app/templates/views/account.tpl.html:346
+#: src/app/templates/views/account.tpl.html:342
 msgctxt "Label"
 msgid "Proton Beta (~ 10-12 per year)"
 msgstr "Proton Beta (~ 10-12 razy w roku)"
 
-#: src/app/templates/views/account.tpl.html:342
+#: src/app/templates/views/account.tpl.html:338
 msgctxt "Label"
 msgid "Proton Newsletter (5-6 per year)"
 msgstr "Newsletter Protona (5-6 na rok)"
@@ -6096,6 +6128,11 @@ msgstr "Przeczytane"
 msgid "Received:"
 msgstr "Odebrano:"
 
+#: src/app/templates/message/filterButton.tpl.html:22
+msgctxt "Filter message"
+msgid "Recipient"
+msgstr "Odbiorca"
+
 #: src/app/templates/search/searchForm.tpl.html:64
 msgctxt "Title"
 msgid "Recipient"
@@ -6126,7 +6163,7 @@ msgctxt "Error"
 msgid "Recovery email invalid"
 msgstr "Nieprawidłowy email odzyskiwania hasła"
 
-#: src/app/settings/controllers/account.js:108
+#: src/app/settings/controllers/account.js:109
 msgid "Recovery/Notification email saved"
 msgstr "Email odzyskiwania hasła/powiadomień zapisano"
 
@@ -6172,12 +6209,12 @@ msgctxt "Duration/repetition of autoresponder"
 msgid "Repeat weekly"
 msgstr "Powtarzaj co tydzień"
 
-#: src/app/templates/message/message.tpl.html:113
+#: src/app/templates/message/message.tpl.html:114
 msgctxt "Action"
 msgid "Reply"
 msgstr "Odpowiedz"
 
-#: src/app/templates/message/message.tpl.html:122
+#: src/app/templates/message/message.tpl.html:123
 msgctxt "Action"
 msgid "Reply all"
 msgstr "Odpowiedz wszystkim"
@@ -6220,12 +6257,12 @@ msgctxt "Action"
 msgid "Reset"
 msgstr "Resetuj"
 
-#: src/app/templates/views/reset-mailbox-password.tpl.html:39
-msgctxt "Title"
+#: src/app/templates/views/reset-login-password.tpl.html:34
 msgid "Reset code"
 msgstr "Kod resetowania"
 
-#: src/app/templates/views/reset-login-password.tpl.html:34
+#: src/app/templates/views/reset-mailbox-password.tpl.html:39
+msgctxt "Title"
 msgid "Reset code"
 msgstr "Kod resetowania"
 
@@ -6245,13 +6282,13 @@ msgctxt "Action"
 msgid "Reset Keys"
 msgstr "Reset kluczy"
 
-#: src/app/templates/views/reset-mailbox-password.tpl.html:55
-msgctxt "Title"
+#: src/app/templates/views/reset-mailbox-password.tpl.html:47
+msgctxt "Action"
 msgid "Reset mailbox"
 msgstr "Zresetuj skrzynkę pocztową"
 
-#: src/app/templates/views/reset-mailbox-password.tpl.html:47
-msgctxt "Action"
+#: src/app/templates/views/reset-mailbox-password.tpl.html:55
+msgctxt "Title"
 msgid "Reset mailbox"
 msgstr "Zresetuj skrzynkę pocztową"
 
@@ -6267,6 +6304,12 @@ msgctxt "Action"
 msgid "Reset password"
 msgstr "Resetowanie hasła"
 
+#: src/app/templates/views/reset-login-password.tpl.html:30
+#: src/app/templates/views/reset-login-password.tpl.html:94
+msgctxt "Title"
+msgid "Reset Password"
+msgstr "Resetowanie hasła"
+
 #: src/app/templates/views/reset-login-password.tpl.html:5
 msgctxt "Info"
 msgid "Reset Password"
@@ -6277,12 +6320,6 @@ msgstr "Resetowanie hasła"
 #: src/app/templates/views/reset-login-password.tpl.html:20
 #: src/app/templates/views/reset-login-password.tpl.html:41
 msgctxt "Action"
-msgid "Reset Password"
-msgstr "Resetowanie hasła"
-
-#: src/app/templates/views/reset-login-password.tpl.html:30
-#: src/app/templates/views/reset-login-password.tpl.html:94
-msgctxt "Title"
 msgid "Reset Password"
 msgstr "Resetowanie hasła"
 
@@ -6427,6 +6464,10 @@ msgctxt "Full day name"
 msgid "Saturday"
 msgstr "Sobota"
 
+#: src/app/templates/autoresponder/autoresponder.tpl.html:25
+msgid "Save"
+msgstr "Zapisz"
+
 #. Save button for updating default identity on account page
 #: src/app/templates/dashboard/customProPlanModal.tpl.html:41
 #: src/app/templates/directives/composer/composer.tpl.html:117
@@ -6444,10 +6485,6 @@ msgstr "Sobota"
 #: src/app/templates/views/appearance.tpl.html:124
 #: src/app/templates/views/members.tpl.html:46
 msgctxt "Action"
-msgid "Save"
-msgstr "Zapisz"
-
-#: src/app/templates/autoresponder/autoresponder.tpl.html:25
 msgid "Save"
 msgstr "Zapisz"
 
@@ -6471,14 +6508,14 @@ msgstr "Zapisano"
 
 #: src/app/templates/directives/composer/composer.tpl.html:103
 msgid "Saved at {{ message.Time | date : \"shortTime\" }}"
-msgstr "Zapisano {{wiadomość. Czas | Data: \"shortTime\"}}"
+msgstr "Zapisano {{message.Time | date: \"shortTime\"}}"
 
 #: src/app/composer/directives/btnSendMessage.js:23
 msgctxt "Action"
 msgid "Saving"
 msgstr "Zapisywanie"
 
-#: src/app/composer/controllers/composeMessage.js:490
+#: src/app/composer/controllers/composeMessage.js:491
 msgctxt "Info"
 msgid "Saving draft failed, please try again"
 msgstr "Zapisywanie szkicu nie powiodło się, spróbuj ponownie"
@@ -6495,13 +6532,13 @@ msgstr "Skanuj kod QR"
 msgid "Scan this QR code with your two factor authentication device to set up your account."
 msgstr "Zeskanuj kod QR z ekranu za pomocą aplikacji uwierzytelniania dwuetapowego na Twoim urządzeniu."
 
-#: src/app/ui/directives/noResults.js:41
-msgctxt "No results heading"
+#: src/app/templates/search/searchForm.tpl.html:146
+msgctxt "Action"
 msgid "Search"
 msgstr "Szukaj"
 
-#: src/app/templates/search/searchForm.tpl.html:146
-msgctxt "Action"
+#: src/app/ui/directives/noResults.js:41
+msgctxt "No results heading"
 msgid "Search"
 msgstr "Szukaj"
 
@@ -6547,11 +6584,6 @@ msgstr "Kod zabezpieczający"
 msgctxt "Label"
 msgid "Security Code"
 msgstr "Kod zabezpieczający"
-
-#: src/app/templates/views/account.tpl.html:330
-msgctxt "Label"
-msgid "Security Information"
-msgstr "Informacje dotyczące zabezpieczeń"
 
 #: src/app/filter/factories/filterModal.js:6
 msgid "Select"
@@ -6604,6 +6636,11 @@ msgstr "Wyślij nowy kod"
 msgid "Send up to 1000 messages per day"
 msgstr "Wysyłaj do 1000 wiadomości dziennie"
 
+#: src/app/templates/message/filterButton.tpl.html:16
+msgctxt "Filter message"
+msgid "Sender"
+msgstr "Nadawca"
+
 #: src/app/templates/search/searchForm.tpl.html:56
 msgctxt "Title"
 msgid "Sender"
@@ -6619,8 +6656,10 @@ msgctxt "Action"
 msgid "Sending"
 msgstr "Wysyłanie"
 
-#: src/app/ui/directives/noResults.js:17
-msgctxt "No results heading"
+#: src/app/sidebar/factories/sidebarModel.js:25
+#: src/app/ui/factories/pageTitlesModel.js:13
+#: src/app/ui/factories/pageTitlesModel.js:14
+msgctxt "Title"
 msgid "Sent"
 msgstr "Wysłane"
 
@@ -6633,10 +6672,8 @@ msgstr "Wysłane"
 msgid "Sent"
 msgstr "Wysłane"
 
-#: src/app/sidebar/factories/sidebarModel.js:25
-#: src/app/ui/factories/pageTitlesModel.js:13
-#: src/app/ui/factories/pageTitlesModel.js:14
-msgctxt "Title"
+#: src/app/ui/directives/noResults.js:17
+msgctxt "No results heading"
 msgid "Sent"
 msgstr "Wysłane"
 
@@ -6684,13 +6721,13 @@ msgctxt "Info"
 msgid "Set a catch-all address for your domain."
 msgstr "Ustaw adres catch-all dla twojej domeny."
 
-#: src/app/templates/vpn/changeVPNPasswordModal.tpl.html:7
-msgctxt "Title"
+#: src/app/templates/vpn/openVpnSection.tpl.html:33
+msgctxt "Action"
 msgid "Set OpenVPN Password"
 msgstr "Ustaw hasło OpenVPN"
 
-#: src/app/templates/vpn/openVpnSection.tpl.html:33
-msgctxt "Action"
+#: src/app/templates/vpn/changeVPNPasswordModal.tpl.html:7
+msgctxt "Title"
 msgid "Set OpenVPN Password"
 msgstr "Ustaw hasło OpenVPN"
 
@@ -6699,13 +6736,13 @@ msgctxt "Title"
 msgid "Set Organization Password"
 msgstr "Ustaw hasło organizacji"
 
-#. Title
-#: src/app/templates/modals/twofactor/twoFAIntroModal.tpl.html:6
+#: src/app/templates/modals/twofactor/sharedSecret.tpl.html:6
+msgctxt "Title"
 msgid "Set Up Two Factor Authentication"
 msgstr "Ustaw uwierzytelnianie dwuetapowe"
 
-#: src/app/templates/modals/twofactor/sharedSecret.tpl.html:6
-msgctxt "Title"
+#. Title
+#: src/app/templates/modals/twofactor/twoFAIntroModal.tpl.html:6
 msgid "Set Up Two Factor Authentication"
 msgstr "Ustaw uwierzytelnianie dwuetapowe"
 
@@ -6728,12 +6765,12 @@ msgstr "Konfigurowanie konta"
 msgid "Setting up new account"
 msgstr "Konfigurowanie nowego konta"
 
-#: src/app/utils/services/eventManager.js:110
-msgctxt "Title"
+#: src/app/core/controllers/secured.js:82
 msgid "Setting up your Addresses"
 msgstr "Konfigurowanie adresów"
 
-#: src/app/core/controllers/secured.js:82
+#: src/app/utils/services/eventManager.js:111
+msgctxt "Title"
 msgid "Setting up your Addresses"
 msgstr "Konfigurowanie adresów"
 
@@ -6778,7 +6815,7 @@ msgctxt "Action"
 msgid "Show all"
 msgstr "Pokaż wszystkie"
 
-#: src/app/templates/message/message.tpl.html:194
+#: src/app/templates/message/message.tpl.html:195
 msgctxt "Action"
 msgid "Show details"
 msgstr "Pokaż szczegóły"
@@ -6936,6 +6973,11 @@ msgctxt "notification drag and drop"
 msgid "Star {{total}} {{type}}"
 msgstr "Gwiazdek {{total}} {{type}}"
 
+#: src/app/templates/filter/modal.tpl.html:200
+msgctxt "Label"
+msgid "Starred"
+msgstr "Wyróżnione"
+
 #: src/app/sidebar/factories/sidebarModel.js:30
 #: src/app/ui/factories/pageTitlesModel.js:15
 msgctxt "Title"
@@ -6944,11 +6986,6 @@ msgstr "Wyróżnione"
 
 #: src/app/ui/directives/noResults.js:29
 msgctxt "No results heading"
-msgid "Starred"
-msgstr "Wyróżnione"
-
-#: src/app/templates/filter/modal.tpl.html:200
-msgctxt "Label"
 msgid "Starred"
 msgstr "Wyróżnione"
 
@@ -6982,14 +7019,14 @@ msgstr "Uaktualniono status"
 msgid "Status Updated"
 msgstr "Uaktualniono status"
 
+#: src/app/templates/payment/tosubscribeOverview.tpl.html:24
+msgid "Storage"
+msgstr "Przestrzeni dyskowej"
+
 #: src/app/templates/dashboard/overviewSection.tpl.html:50
 msgctxt "Title"
 msgid "Storage"
 msgstr "Przestrzeń dyskowa"
-
-#: src/app/templates/payment/tosubscribeOverview.tpl.html:24
-msgid "Storage"
-msgstr "Przestrzeni dyskowej"
 
 #: src/app/templates/modals/setupOrganization.tpl.html:57
 msgctxt "Label"
@@ -7000,9 +7037,19 @@ msgstr "Pamięć masowa dla użytkowników:"
 msgid "Stored encrypted"
 msgstr "Zapisano zaszyfrowane"
 
+#: src/app/templates/message/filterButton.tpl.html:10
+msgctxt "Filter message"
+msgid "Subject"
+msgstr "Temat"
+
 #: src/app/templates/directives/composer/composerSubject.tpl.html:2
 msgid "Subject"
 msgstr "Temat"
+
+#: src/app/templates/modals/pay.tpl.html:112
+msgctxt "Info"
+msgid "Submit"
+msgstr "Wyślij"
 
 #: src/app/templates/authentication/modals/loginPassword.tpl.html:37
 #: src/app/templates/modals/activateOrganization.tpl.html:26
@@ -7022,17 +7069,12 @@ msgctxt "Action"
 msgid "Submit"
 msgstr "Wyślij"
 
-#: src/app/templates/modals/pay.tpl.html:112
-msgctxt "Info"
-msgid "Submit"
-msgstr "Wyślij"
-
 #. Invoice type display as badge
 #: src/app/templates/views/payments.tpl.html:91
 msgid "Subscription"
 msgstr "Abonament"
 
-#: src/app/organization/factories/subscriptionModel.js:4
+#: src/app/organization/factories/subscriptionModel.js:5
 msgctxt "Error"
 msgid "Subscription request failed"
 msgstr "Żądanie subskrypcji nie powiodło się"
@@ -7146,6 +7188,11 @@ msgctxt "Title"
 msgid "Thank you for your support!"
 msgstr "Dziękujemy za twoje wsparcie!"
 
+#: src/app/templates/payment/donation.tpl.html:89
+msgctxt "Error"
+msgid "Thank you for your willingness to donate. The maximum we can accept in single donations is 99 999 999 at this moment. Thank you"
+msgstr "Dziękujemy za chęć wsparcia. W chwili obecnej możemy zaakceptować przy pojedynczych wpłatach maksymalnie 99 999 999. Dziękujemy"
+
 #: src/app/templates/modals/sale.tpl.html:54
 msgctxt "Title"
 msgid "Thank You!"
@@ -7175,7 +7222,7 @@ msgctxt "Error"
 msgid "The maximum expiration is 4 weeks."
 msgstr "Maksymalny czas ważności wynosi 4 tygodnie."
 
-#: src/app/composer/controllers/composeMessage.js:45
+#: src/app/composer/controllers/composeMessage.js:46
 msgctxt "Error"
 msgid "The maximum length of the message body is 16,000,000 characters."
 msgstr "Maksymalna długość wiadomości to 16 000 000 znaków."
@@ -7298,7 +7345,7 @@ msgid "This message is from a mailing list."
 msgstr "Ta wiadomość pochodzi z listy dyskusyjnej."
 
 #: src/app/templates/composer/composerExpiration.tpl.html:9
-#: src/app/templates/message/message.tpl.html:203
+#: src/app/templates/message/message.tpl.html:204
 msgid "This message will expire in"
 msgstr "Ta wiadomość wygasa za"
 
@@ -7380,7 +7427,7 @@ msgctxt "Title"
 msgid "To"
 msgstr "Do"
 
-#: src/app/templates/message/message.tpl.html:61
+#: src/app/templates/message/message.tpl.html:62
 #: src/app/templates/search/searchForm.tpl.html:69
 #: src/app/templates/views/outside.reply.tpl.html:18
 msgid "To"
@@ -7459,17 +7506,6 @@ msgctxt "Label in the custom plan modal"
 msgid "Total Storage"
 msgstr "Łączna przestrzeń"
 
-#: src/app/conversation/factories/actionConversation.js:27
-#: src/app/labels/directives/dropdownFolders.js:24
-#: src/app/message/factories/messageActions.js:25
-msgid "Trash"
-msgstr "Kosz"
-
-#: src/app/templates/filter/modal.tpl.html:168
-msgctxt "Label"
-msgid "Trash"
-msgstr "Kosz"
-
 #: src/app/sidebar/factories/sidebarModel.js:45
 #: src/app/ui/factories/pageTitlesModel.js:18
 msgctxt "Title"
@@ -7478,6 +7514,17 @@ msgstr "Kosz"
 
 #: src/app/ui/directives/noResults.js:21
 msgctxt "No results heading"
+msgid "Trash"
+msgstr "Kosz"
+
+#: src/app/templates/filter/modal.tpl.html:168
+msgctxt "Label"
+msgid "Trash"
+msgstr "Kosz"
+
+#: src/app/conversation/factories/actionConversation.js:27
+#: src/app/labels/directives/dropdownFolders.js:24
+#: src/app/message/factories/messageActions.js:25
 msgid "Trash"
 msgstr "Kosz"
 
@@ -7524,7 +7571,7 @@ msgstr "Uwierzytelnianie dwustopniowe włączone"
 
 #: src/app/templates/authentication/loginTwoFactorForm.tpl.html:21
 #: src/app/templates/authentication/modals/loginPassword.tpl.html:25
-#: src/app/templates/modals/deleteAccount.tpl.html:28
+#: src/app/templates/modals/deleteAccount.tpl.html:34
 msgid "Two-factor passcode"
 msgstr "Kod uwierzytelniający"
 
@@ -7693,6 +7740,12 @@ msgstr "Zmodyfikuj plan Wizjoner"
 msgid "Update your credit card information."
 msgstr "Zaktualizuj dane karty płatniczej."
 
+#. Folder name
+#: src/app/templates/partials/sidebar-responsive.tpl.html:18
+msgctxt "Title"
+msgid "Upgrade"
+msgstr "Ulepsz"
+
 #. link to dashboard
 #: src/app/templates/dashboard/overviewSection.tpl.html:23
 #: src/app/templates/dashboard/overviewSection.tpl.html:42
@@ -7701,12 +7754,6 @@ msgstr "Zaktualizuj dane karty płatniczej."
 #: src/app/templates/views/members.tpl.html:79
 #: src/app/templates/views/members.tpl.html:92
 msgctxt "Action"
-msgid "Upgrade"
-msgstr "Ulepsz"
-
-#. Folder name
-#: src/app/templates/partials/sidebar-responsive.tpl.html:18
-msgctxt "Title"
 msgid "Upgrade"
 msgstr "Ulepsz"
 
@@ -7830,12 +7877,12 @@ msgctxt "Label"
 msgid "User:"
 msgstr "Użytkownik:"
 
-#: src/app/templates/dashboard/overviewSection.tpl.html:6
-msgctxt "Title"
+#: src/app/templates/authentication/loginForm.tpl.html:20
 msgid "Username"
 msgstr "Nazwa użytkownika"
 
-#: src/app/templates/authentication/loginForm.tpl.html:20
+#: src/app/templates/dashboard/overviewSection.tpl.html:6
+msgctxt "Title"
 msgid "Username"
 msgstr "Nazwa użytkownika"
 
@@ -7865,14 +7912,14 @@ msgctxt "Error"
 msgid "Username required"
 msgstr "Nazwa użytkownika jest wymagana"
 
-#: src/app/templates/dashboard/customProPlanModal.tpl.html:9
-msgctxt "Label in the custom plan modal"
-msgid "Users"
-msgstr "Użytkownicy"
-
 #: src/app/templates/views/members.tpl.html:126
 #: src/app/ui/factories/pageTitlesModel.js:27
 msgctxt "Title"
+msgid "Users"
+msgstr "Użytkownicy"
+
+#: src/app/templates/dashboard/customProPlanModal.tpl.html:9
+msgctxt "Label in the custom plan modal"
 msgid "Users"
 msgstr "Użytkownicy"
 
@@ -7912,16 +7959,16 @@ msgctxt "Error"
 msgid "Verification did not succeed, please try again in an hour."
 msgstr "Weryfikacja nie powiodła się, Proszę spróbować ponownie za godzinę."
 
+#: src/app/templates/modals/domain/verification.tpl.html:37
+msgctxt "Action"
+msgid "Verify"
+msgstr "Zweryfikuj"
+
 #: src/app/templates/modals/domain/menu.tpl.html:12
 #: src/app/templates/modals/domain/verification.tpl.html:10
 msgctxt "Title"
 msgid "Verify"
 msgstr "Weryfikacja"
-
-#: src/app/templates/modals/domain/verification.tpl.html:37
-msgctxt "Action"
-msgid "Verify"
-msgstr "Zweryfikuj"
 
 #: src/app/templates/layout/pre.tpl.html:4
 msgid "Verifying invite link..."
@@ -7935,7 +7982,7 @@ msgstr "Weryfikacja kodu resetowania"
 msgid "Version"
 msgstr "Wersja"
 
-#: src/app/templates/message/message.tpl.html:182
+#: src/app/templates/message/message.tpl.html:183
 msgctxt "Action"
 msgid "View headers"
 msgstr "Wyświetl nagłówki"
@@ -7950,17 +7997,17 @@ msgctxt "Info"
 msgid "View mode saved"
 msgstr "Tryb widoku zapisany"
 
-#: src/app/templates/message/message.tpl.html:183
+#: src/app/templates/message/message.tpl.html:184
 msgctxt "Action"
 msgid "View original"
 msgstr "Pokaż oryginał"
 
-#: src/app/templates/message/message.tpl.html:177
+#: src/app/templates/message/message.tpl.html:178
 msgctxt "Action"
 msgid "View rendered HTML"
 msgstr "Widok HTML"
 
-#: src/app/templates/message/message.tpl.html:173
+#: src/app/templates/message/message.tpl.html:174
 msgctxt "Action"
 msgid "View source code"
 msgstr "Pokaż kod źródłowy"
@@ -8013,7 +8060,7 @@ msgctxt "Single letter code Wednesday"
 msgid "W"
 msgstr "Ś"
 
-#: src/app/composer/controllers/composeMessage.js:41
+#: src/app/composer/controllers/composeMessage.js:42
 msgctxt "Error"
 msgid "Wait for attachment to finish uploading or cancel upload."
 msgstr "Poczekaj, na załadowanie załącznika albo anuluj przesyłanie."
@@ -8031,6 +8078,12 @@ msgctxt "Info"
 msgid "WARNING: DELETION IS PERMANENT"
 msgstr "OSTRZEŻENIE: USUNIĘCIE JEST TRWAŁE"
 
+#. account deletion warning
+#: src/app/templates/modals/deleteAccount.tpl.html:15
+msgctxt "Info"
+msgid "WARNING: THIS ALSO DELETES ALL CONNECTED SERVICES (ex: <i>ProtonVPN</i>)"
+msgstr "UWAGA: USUNIE TO TAKŻE WSZYSTKIE POWIĄZANE USŁUGI (np. <i>ProtonVPN</i>)"
+
 #: src/app/user/directives/signupUserForm.js:6
 msgctxt "Warning"
 msgid "Warning: You did not set a recovery email so account recovery is impossible if you forget your password. Proceed without recovery email?"
@@ -8041,7 +8094,7 @@ msgctxt "Info"
 msgid "We are now generating encryption keys for your account, this may take several minutes and temporarily freeze your browser."
 msgstr "Tworzymy teraz klucze szyfrowania dla Twojego konta, może to potrwać kilka minut i chwilowo zawiesić przeglądarkę."
 
-#: src/app/templates/modals/deleteAccount.tpl.html:14
+#: src/app/templates/modals/deleteAccount.tpl.html:20
 msgctxt "Label"
 msgid "We are sorry to see you go!"
 msgstr "Przykro nam, że nas opuszczasz!"
@@ -8159,9 +8212,8 @@ msgctxt "Error"
 msgid "Wrong verification code. Please make sure you copied the verification code correctly and try again. It can take up to 24 hours for changes to take effect."
 msgstr "Niepoprawny kod weryfikacyjny. Proszę upewnij się, że prawidłowo skopiowałeś kod i spróbuj ponownie. Może upłynąć do 24 godzin zanim zmiany zostaną wprowadzone."
 
-#. form option
-#: src/app/templates/search/searchForm.tpl.html:131
-#: src/app/templates/views/members.tpl.html:182
+#: src/app/ui/directives/toggle.js:16
+msgctxt "Title"
 msgid "Yes"
 msgstr "Tak"
 
@@ -8170,8 +8222,9 @@ msgctxt "Action"
 msgid "Yes"
 msgstr "Tak"
 
-#: src/app/ui/directives/toggle.js:16
-msgctxt "Title"
+#. form option
+#: src/app/templates/search/searchForm.tpl.html:131
+#: src/app/templates/views/members.tpl.html:182
 msgid "Yes"
 msgstr "Tak"
 
@@ -8207,7 +8260,7 @@ msgctxt "Info"
 msgid "You can enable authentication logging to see when your account is accessed, and from which IP. We will record the IP address that accesses the account and the time, as well as failed attempts."
 msgstr "Możesz włączyć dziennik logowania, by widzieć udane i nieudane próby logowania, oraz adres IP, z których próby te następowały."
 
-#: src/app/settings/controllers/account.js:89
+#: src/app/settings/controllers/account.js:90
 msgctxt "Info"
 msgid "You have a new email"
 msgstr "Masz nową wiadomość e-mail"
@@ -8313,9 +8366,9 @@ msgctxt "Info"
 msgid "You're upgrading your account. Once we successfully process payment, we'll immediately upgrade your account. Thanks for choosing to become a paying customer!"
 msgstr "Ulepszasz swoje konto. Po pomyślnie przetworzonej płatności, natychmiast zwiększymy jego funkcjonalność. Dziękujemy, że zdecydowałeś się na stałe wsparcie finansowe!"
 
-#: src/app/composer/controllers/composeMessage.js:353
-#: src/app/routes.js:577
-#: src/app/routes.js:988
+#: src/app/composer/controllers/composeMessage.js:354
+#: src/app/routes.js:1000
+#: src/app/routes.js:589
 #: src/app/templates/views/payments.tpl.html:64
 msgctxt "Info"
 msgid "Your account currently has an overdue invoice. Please pay all unpaid invoices."
@@ -8350,11 +8403,6 @@ msgstr "Twoja przeglądarka nie posiada funkcji potrzebnych do pobrania zaszyfro
 #: src/app/templates/views/dashboard.tpl.html:37
 msgid "Your donation helps us support more users and continue to develop ProtonMail as free and open source software."
 msgstr "Twoja darowizna pomaga nam obsługiwać więcej użytkowników i w dalszym ciągu rozwijać ProtonMail jako wolne i otwarte oprogramowanie."
-
-#: src/app/composer/controllers/composeMessage.js:111
-msgctxt "Info"
-msgid "Your message was sent from another session"
-msgstr "Twoja wiadomość została wysłana z innej sesji"
 
 #: src/app/templates/modals/payment/modal.tpl.html:48
 msgid "Your new features are now available."
