@@ -38,6 +38,7 @@ angular.module('proton.settings')
             { label: 'Español', key: 'es_ES' },
             { label: 'Français', key: 'fr_FR' },
             { label: 'Nederlands', key: 'nl_NL' },
+            { label: 'Italiano', key: 'it_IT' },
             { label: 'Polski', key: 'pl_PL' },
             { label: 'Pусский', key: 'ru_RU' },
             { label: 'Türk', key: 'tr_TR' }
