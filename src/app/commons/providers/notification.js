@@ -14,8 +14,7 @@ angular.module('proton.commons')
         this.duration = (value = 6000) => (CONFIG.duration = value);
         this.template = (value = '') => (CONFIG.template = value);
 
-        /* @ngInject */
-        this.$get = (notify) => {
+        this.$get = ['notify', (notify) => {
 
             const action = (type) => (input, options = {}) => {
 
@@ -41,5 +40,5 @@ angular.module('proton.commons')
                 error: action('error'),
                 info: action('info')
             };
-        };
+        }];
     });
