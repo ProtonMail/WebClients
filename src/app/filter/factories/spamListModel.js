@@ -5,134 +5,146 @@ angular.module('proton.filter')
         const BLACKLIST_TYPE = +MAILBOX_IDENTIFIERS.spam;
         const WHITELIST_TYPE = +MAILBOX_IDENTIFIERS.inbox;
         const PAGE_SIZE = 100;
-        let CACHE = getDefault();
+        let MAIN_CACHE = getDefault();
 
         const dispatch = (type, data = {}) => $rootScope.$emit('filters', { type, data });
         const getType = (type) => (type === 'whitelist' ? WHITELIST_TYPE : BLACKLIST_TYPE);
-
         function getDefault() {
             return {
                 MAP: Object.create(null),
-                [`${BLACKLIST_TYPE}_TO`]: 0,
-                [`${WHITELIST_TYPE}_TO`]: 0,
-                [BLACKLIST_TYPE]: [],
-                [WHITELIST_TYPE]: []
+                [BLACKLIST_TYPE]: { list: [], page: 0 },
+                [WHITELIST_TYPE]: { list: [], page: 0 }
             };
         }
 
-        const getKey = (type, suffix) => `${type}.${suffix}`;
-        const getPage = (type) => getKey(type, 'TO');
-        const getEndingKey = (type) => getKey(type, 'ending');
-        const extendPage = (type, value) => CACHE[getPage(type)] += value;
-        const setLoader = (type, value) => (CACHE[getKey(type, 'loading')] = value);
-
         const resetIndex = (type) => {
             if (type) {
-                if (CACHE[getEndingKey(WHITELIST_TYPE)]) {
-                    CACHE[getPage(WHITELIST_TYPE)] = 0;
-                    CACHE[getEndingKey(WHITELIST_TYPE)] = false;
+                if (MAIN_CACHE[WHITELIST_TYPE].ending) {
+                    MAIN_CACHE[WHITELIST_TYPE].page = 0;
+                    MAIN_CACHE[WHITELIST_TYPE].ending = false;
                 }
 
-                if (CACHE[getEndingKey(BLACKLIST_TYPE)]) {
-                    CACHE[getPage(BLACKLIST_TYPE)] = 0;
-                    CACHE[getEndingKey(BLACKLIST_TYPE)] = false;
+                if (MAIN_CACHE[BLACKLIST_TYPE].ending) {
+                    MAIN_CACHE[BLACKLIST_TYPE].page = 0;
+                    MAIN_CACHE[BLACKLIST_TYPE].ending = false;
                 }
 
-                return (CACHE[getPage(type)] = 0);
+                return (MAIN_CACHE[type].page = 0);
             }
-            CACHE[getPage(WHITELIST_TYPE)] = 0;
-            CACHE[getPage(BLACKLIST_TYPE)] = 0;
-            CACHE[getEndingKey(WHITELIST_TYPE)] = false;
-            CACHE[getEndingKey(BLACKLIST_TYPE)] = false;
+            MAIN_CACHE[WHITELIST_TYPE].page = 0;
+            MAIN_CACHE[BLACKLIST_TYPE].page = 0;
+            MAIN_CACHE[WHITELIST_TYPE].ending = false;
+            MAIN_CACHE[BLACKLIST_TYPE].ending = false;
         };
 
-        /**
-         * Load the List and keep a ref inside the cache
-         * @param  {Object} params
-         * @return {Array}        Promise:<Array>
-         */
-        const loadList = async (params) => {
-            const list = await incomingModel.get(params);
-            !CACHE[getEndingKey(params.Location)] && (CACHE[params.Location] = list);
-            return list;
+        const list = (type) => {
+
+            const CACHE = MAIN_CACHE[type];
+
+            const extendPage = (value) => (CACHE.page += value);
+            const setLoader = (value) => (CACHE.loading = value);
+
+            /**
+             * Load the List and keep a ref inside the cache
+             * @param  {Object} params
+             * @return {Array}        Promise:<Array>
+             */
+            const loadList = async (params) => {
+                const list = await incomingModel.get(_.extend({ Location: type }, params));
+                !CACHE.ending && (CACHE.list = list);
+                return list;
+            };
+
+
+            /**
+             * Get list of items based on
+             *     - Current context (search or not)
+             *     - Pagination (next call will get next items)
+             * @param  {String} type   Type of list (black|white)list
+             * @return {Array}
+             */
+            const get = async () => {
+                const pageFrom = CACHE.page;
+                extendPage(1);
+                setLoader(true);
+
+                if (pageFrom === 0) {
+                    setLoader(false);
+                    CACHE.ending = (CACHE.list.length < PAGE_SIZE) && !CACHE.invalidate;
+                    delete CACHE.invalidate;
+                    return angular.copy(CACHE.list);
+                }
+
+                const list = await loadList({
+                    Location: type,
+                    Page: pageFrom,
+                    Keyword: MAIN_CACHE.query,
+                    PageSize: PAGE_SIZE
+                });
+
+                updateCache();
+                setLoader(false);
+                CACHE.ending = (list.length < PAGE_SIZE) && !CACHE.invalidate;
+                delete CACHE.invalidate;
+                return list;
+            };
+
+            /**
+             * Add an item from the list by adding its ref to the cache
+             * Update the search too if we need to
+             * @param  {String} Email
+             * @param  {String} Location Type of list
+             * @return {void}
+             */
+            const add = async (Email) => {
+                const item = await incomingModel.create({ Email, Location: type });
+                CACHE.list.unshift(item);
+                MAIN_CACHE.MAP[item.ID] = item;
+                resetIndex(item.Location);
+                refresh();
+            };
+
+            const isLoading = () => !!CACHE.loading;
+            const isEnding = () => !!CACHE.ending;
+
+            return { extendPage, setLoader, loadList, get, add, isLoading, isEnding };
         };
 
         /**
          * Update the cache MAP
          */
-        const updateCache = (reset) => {
-            reset && (CACHE.MAP = Object.create(null));
-
-            const map = CACHE[BLACKLIST_TYPE].concat(CACHE[WHITELIST_TYPE])
+        function updateCache(reset) {
+            reset && (MAIN_CACHE.MAP = Object.create(null));
+            const map = MAIN_CACHE[BLACKLIST_TYPE].list.concat(MAIN_CACHE[WHITELIST_TYPE].list)
                 .reduce((acc, item) => (acc[item.ID] = item, acc), Object.create(null));
-            _.extend(CACHE.MAP, map);
-        };
+            _.extend(MAIN_CACHE.MAP, map);
+        }
 
         /**
          * Load Incoming filters and format a CACHE object by type
          * via references and a map.
          * @return {void}
          */
-        const load = async (params = {}, noEvent) => {
+        async function load(params = {}, noEvent) {
             const config = { Page: 0, PageSize: PAGE_SIZE };
+            const whitelist = list(WHITELIST_TYPE);
+            const blacklist = list(BLACKLIST_TYPE);
 
-            setLoader(WHITELIST_TYPE, true);
-            setLoader(BLACKLIST_TYPE, true);
+            whitelist.setLoader(true);
+            blacklist.setLoader(true);
 
             await Promise.all([
-                loadList(_.extend({ Location: BLACKLIST_TYPE }, config, params)),
-                loadList(_.extend({ Location: WHITELIST_TYPE }, config, params))
+                whitelist.loadList(_.extend({}, config, params)),
+                blacklist.loadList(_.extend({}, config, params))
             ]);
 
-            setLoader(WHITELIST_TYPE, false);
-            setLoader(BLACKLIST_TYPE, false);
+            whitelist.setLoader(false);
+            blacklist.setLoader(false);
             updateCache();
             !noEvent && resetIndex();
             !noEvent && dispatch('change', { type: 'load' });
-        };
+        }
 
-        /**
-         * Get list of items based on
-         *     - Current context (search or not)
-         *     - Pagination (next call will get next items)
-         * @param  {String} type   Type of list (black|white)list
-         * @return {Array}
-         */
-        const getList = async (type = WHITELIST_TYPE) => {
-            const pageFrom = CACHE[getPage(type)];
-            extendPage(type, 1);
-            setLoader(type, true);
-
-            if (pageFrom === 0) {
-                setLoader(type, false);
-                CACHE[getEndingKey(type)] = CACHE[type].length < PAGE_SIZE;
-                return angular.copy(CACHE[type]);
-            }
-
-            const list = await loadList({
-                Location: type,
-                Page: pageFrom,
-                Keyword: CACHE.query,
-                PageSize: PAGE_SIZE
-            });
-
-            updateCache();
-            setLoader(type, false);
-            CACHE[getEndingKey(type)] = list.length < PAGE_SIZE;
-            return list;
-        };
-
-        /**
-         * Perform the search and reset previous index
-         * @param  {String} query
-         * @return {void}
-         */
-        const search = async (query) => {
-            CACHE.query = query;
-            resetIndex();
-            await load({ Keyword: query }, true);
-            dispatch('search');
-        };
 
         /**
          * Move an item from a list to another and update its ref inside the map
@@ -144,21 +156,23 @@ angular.module('proton.filter')
         const move = async (id, location) => {
             try {
                 const data = await incomingModel.update(id, location);
-                const item = CACHE.MAP[id];
-                const index = _.findIndex(CACHE[item.Location], (o) => o.ID === item.ID);
-                CACHE[item.Location].splice(index, 1);
-                CACHE[location].unshift(data);
-                CACHE.MAP[item.ID] = data;
+                const item = MAIN_CACHE.MAP[id];
+                const index = _.findIndex(MAIN_CACHE[item.Location].list, (o) => o.ID === item.ID);
+                MAIN_CACHE[item.Location].list.splice(index, 1);
+                MAIN_CACHE[location].list.unshift(data);
+                MAIN_CACHE.MAP[item.ID] = data;
+                MAIN_CACHE[item.Location].invalidate = true;
                 resetIndex();
                 refresh();
             } catch (e) {
                 // Trying to move an item already deleted -> refresh the list
                 if (e.Code === 35023) {
-                    delete CACHE.MAP[id];
-                    load({ Search: CACHE.query });
+                    delete MAIN_CACHE.MAP[id];
+                    load({ Search: MAIN_CACHE.query });
                 }
             }
         };
+
 
         /**
          * Remove an tem from the list and remove its reference from the cache
@@ -168,46 +182,40 @@ angular.module('proton.filter')
          */
         const destroy = async (id) => {
             await incomingModel.remove(id);
-            const item = CACHE.MAP[id];
-            const index = _.findIndex(CACHE[item.Location], (o) => o.ID === item.ID);
-            CACHE[item.Location].splice(index, 1);
-            delete CACHE.MAP[id];
+            const item = MAIN_CACHE.MAP[id];
+            const index = _.findIndex(MAIN_CACHE[item.Location].list, (o) => o.ID === item.ID);
+            MAIN_CACHE[item.Location].list.splice(index, 1);
+            MAIN_CACHE[item.Location].invalidate = true;
+            delete MAIN_CACHE.MAP[id];
             resetIndex(item.Location);
             refresh();
         };
 
         /**
-         * Add an item from the list by adding its ref to the cache
-         * Update the search too if we need to
-         * @param  {String} Email
-         * @param  {String} Location Type of list
+         * Perform the search and reset previous index
+         * @param  {String} query
          * @return {void}
          */
-        const add = async (Email, location) => {
-            const item = await incomingModel.create({ Email, Location: location });
-            CACHE[item.Location].unshift(item);
-            CACHE.MAP[item.ID] = item;
-            resetIndex(item.Location);
-            refresh();
-        };
+        async function search(query) {
+            MAIN_CACHE.query = query;
+            resetIndex();
+            await load({ Keyword: query }, true);
+            dispatch('search');
+        }
 
         /**
          * Refresh the UI
          */
         function refresh() {
-            if (CACHE.query) {
-                return search(CACHE.query);
+            if (MAIN_CACHE.query) {
+                return search(MAIN_CACHE.query);
             }
+
             dispatch('change', { type: 'refresh' });
         }
 
-        const isLoading = (type) => !!CACHE[getKey(type, 'loading')];
-        const isEnding = (type) => !!CACHE[getEndingKey(type)];
-        const clear = () => (CACHE = getDefault());
+        const clear = () => (MAIN_CACHE = getDefault());
 
-        return {
-            load, search, getList, move, destroy, add,
-            isLoading, isEnding, getType, clear
-        };
+        return { list, load, move, destroy, search, refresh, clear, getType };
 
     });
