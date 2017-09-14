@@ -4,23 +4,23 @@ angular.module('proton.commons')
 
 
         /**
-     * Get all default rules
-     */
-        const get = () => $http.get(requestURL());
+         * Get all default rules
+         */
+        const get = (params) => $http.get(requestURL(), { params });
 
         /**
-     * Create a new default rule
-     */
+         * Create a new default rule
+         */
         const add = (params) => $http.post(requestURL(), params);
 
         /**
-    * Update a rule
-    */
+        * Update a rule
+        */
         const update = (opt = {}) => $http.put(requestURL(opt.ID), opt);
 
         /**
-    * Delete rule(s)
-    */
+        * Delete rule(s)
+        */
         const destroy = (params) => $http.put(requestURL('delete'), params);
         const clear = () => $http.delete(requestURL());
 

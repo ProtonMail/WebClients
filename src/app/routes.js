@@ -925,33 +925,8 @@ angular.module('proton.routes', [
             .state('secured.filters', {
                 url: '/filters',
                 resolve: {
-                    customFilters($q, Filter, networkActivityTracker) {
-                        const deferred = $q.defer();
-
-                        Filter.query()
-                            .then((result) => {
-                                if (result.data && result.data.Code === 1000) {
-                                    deferred.resolve(result.data.Filters);
-                                } else {
-                                    deferred.reject();
-                                }
-                            });
-
-                        return networkActivityTracker.track(deferred.promise);
-                    },
-                    incomingDefaults($q, IncomingDefault, networkActivityTracker) {
-                        const deferred = $q.defer();
-
-                        IncomingDefault.get()
-                            .then((result) => {
-                                if (result.data && result.data.Code === 1000) {
-                                    deferred.resolve(result.data.IncomingDefaults);
-                                } else {
-                                    deferred.reject();
-                                }
-                            });
-
-                        return networkActivityTracker.track(deferred.promise);
+                    loadSpamLists(spamListModel, networkActivityTracker) {
+                        return networkActivityTracker.track(spamListModel.load());
                     },
                     methods(user, paymentModel, networkActivityTracker) {
                         return networkActivityTracker.track(paymentModel.getMethods(null, user));
@@ -962,8 +937,7 @@ angular.module('proton.routes', [
                 },
                 views: {
                     'content@secured': {
-                        templateUrl: 'templates/views/filters.tpl.html',
-                        controller: 'FiltersController'
+                        template: '<filter-view></filter-view>'
                     }
                 }
             })

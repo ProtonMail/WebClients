@@ -1,0 +1,41 @@
+<div class="emailBlockList-container">
+    <header-block data-level="2" class="settingsLabels-header-blocklist">
+        <h2
+            class="settingsLabels-title-blocklist margin-bottom email-block-list-name">{{::filterName}}</h2>
+        <email-block-button data-target-list="{{::listType}}"></email-block-button>
+    </header-block>
+
+    <div>
+        <p class="alert alert-info" translate translate-context="Info" ng-if="entries.length === 0">
+            No emails in the <span class="email-block-list-name">{{::filterName}}</span>, click <b>Add</b> to add addresses to the <span class="email-block-list-name">{{::filterName}}</span>.
+        </p>
+
+        <div class="pm_table block-list" ng-class="{ empty: entries.length === 0 }">
+            <table class="bordered limited">
+                <tbody class="emailBlockList-list">
+                    <tr
+                        ng-repeat="entry in entries track by entry.ID"
+                        class="emailBlockList-row">
+                        <td class="blocklist-email-value">{{ ::entry.Email }}</td>
+                        <td class="text-right">
+                            <button
+                                data-entry-id="{{ ::entry.ID }}"
+                                class="pm_button link emailBlockList-btn-switch"
+                                pt-tooltip-translate="Switch">
+                                <i class="fa fa-arrows-h"></i>
+                            </button>
+                            <button
+                                data-entry-id="{{ ::entry.ID }}"
+                                class="pm_button link emailBlockList-btn-delete"
+                                pt-tooltip-translate="Delete">
+                                <i class="fa fa-times text-red"></i>
+                            </button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+    </div>
+    </div>
+</div>
