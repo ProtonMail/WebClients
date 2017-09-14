@@ -1,6 +1,5 @@
 angular.module('proton.autoresponder')
-    .factory('autoresponderModel', ($rootScope, gettextCatalog, authentication, tools, settingsApi,
-        networkActivityTracker, notification, eventManager, autoresponderLanguage, signatureBuilder) => {
+    .factory('autoresponderModel', ($rootScope, gettextCatalog, authentication, tools, settingsApi, networkActivityTracker, notification, eventManager, autoresponderLanguage, signatureBuilder) => {
 
         const now = new Date();
         const momentNow = moment(now);
