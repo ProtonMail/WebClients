@@ -43,7 +43,7 @@ angular.module('proton.filter')
                     spamListModel.getList(type)
                         .then((list) => {
                             scope.$applyAsync(() => {
-                                scope.entries = list;
+                                scope.entries = _.uniq(list);
                                 $('.tooltip').hide();
                             });
                         });
@@ -64,7 +64,7 @@ angular.module('proton.filter')
                         spamListModel.getList(type)
                             .then((list) => {
                                 scope.$applyAsync(() => {
-                                    scope.entries = scope.entries.concat(list);
+                                    scope.entries = _.uniq(scope.entries.concat(list));
                                 });
                             });
                     }
