@@ -14,6 +14,7 @@ angular.module('proton.commons')
         this.duration = (value = 6000) => (CONFIG.duration = value);
         this.template = (value = '') => (CONFIG.template = value);
 
+        /* @ngInject */
         this.$get = (notify) => {
 
             const action = (type) => (input, options = {}) => {
