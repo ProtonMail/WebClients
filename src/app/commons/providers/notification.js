@@ -1,5 +1,5 @@
 angular.module('proton.commons')
-    .provider('notification', function () {
+    .provider('notification', function notificationProvider() {
 
         const CONFIG = {
             classNames: {
