@@ -24,26 +24,28 @@ angular.module('proton.filter')
             replace: true,
             restrict: 'E',
             templateUrl: 'templates/filter/emailBlockList.tpl.html',
-            scope: {},
-            link(scope, elem, { switchTo, listType }) {
+            scope: {
+                listType: '@'
+            },
+            link(scope, elem, { switchTo }) {
 
                 const unsubscribe = [];
-                const type = spamListModel.getType(listType);
+                const list = spamListModel.list(spamListModel.getType(scope.listType));
                 const tbody = elem[0].querySelector(`.${CLASSNAMES.LIST}`);
 
-                scope.filterName = I18N[listType];
+                scope.filterName = I18N[scope.listType];
 
-                spamListModel.getList(type)
+                list.get()
                     .then((list) => {
                         scope.$applyAsync(() => scope.entries = list);
                     });
 
 
                 unsubscribe.push($rootScope.$on('filters', () => {
-                    spamListModel.getList(type)
+                    list.get()
                         .then((list) => {
                             scope.$applyAsync(() => {
-                                scope.entries = _.uniq(list);
+                                scope.entries = _.uniq(list, false, 'ID');
                                 $('.tooltip').hide();
                             });
                         });
@@ -51,7 +53,8 @@ angular.module('proton.filter')
 
 
                 const onScroll = _.throttle(() => {
-                    if (spamListModel.isLoading(type) || spamListModel.isEnding(type)) {
+
+                    if (list.isLoading() || list.isEnding()) {
                         return;
                     }
 
@@ -61,10 +64,10 @@ angular.module('proton.filter')
 
                     // check if we have reached the last TRIGGER_BOUNDARY elements
                     if (scrollBottom / tbody.scrollHeight > triggerFetch / elementCount) {
-                        spamListModel.getList(type)
+                        list.get()
                             .then((list) => {
                                 scope.$applyAsync(() => {
-                                    scope.entries = _.uniq(scope.entries.concat(list));
+                                    scope.entries = _.uniq(scope.entries.concat(list), false, 'ID');
                                 });
                             });
                     }
