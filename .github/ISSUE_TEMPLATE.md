@@ -1,5 +1,5 @@
-* Which browser? Chrome / Firefox / Safari / Opera
-* Which OS? Windows / Mac OS / Linux / iOS / Android
+* Which browser (+ version) ? Chrome / Firefox / Safari / Opera
+* Which OS (+ version)? Windows / Mac OS / Linux / iOS / Android
 * Which layout mode? Column mode / Row mode
 * Which threading mode? Conversation mode / Message mode
 * Can you reproduce the problem each time? Yes / No
