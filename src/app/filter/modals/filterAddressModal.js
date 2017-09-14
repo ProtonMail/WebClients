@@ -4,7 +4,8 @@ angular.module('proton.filter')
         return pmModal({
             controllerAs: 'ctrl',
             templateUrl: 'templates/filter/filterAddressModal.tpl.html',
-            controller(params) {
+            /* @ngInject */
+            controller: function (params) {
 
                 this.filter = { Email: '' };
                 this.cancel = params.close;
