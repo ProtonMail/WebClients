@@ -24,11 +24,11 @@ angular.module('proton.composer')
         messageBuilder,
         notification,
         pmcw,
-        tools,
         AppModel,
         ComposerRequestStatus,
         $injector,
-        srp
+        srp,
+        validateMessage
     ) => {
 
         const unsubscribe = [];
@@ -38,19 +38,6 @@ angular.module('proton.composer')
             cannotSendMessage: gettextCatalog.getString('Cannot send message')
         };
         const unicodeTagView = $filter('unicodeTagView');
-
-        const MESSAGES_ERROR = {
-            stillUploading: gettextCatalog.getString('Wait for attachment to finish uploading or cancel upload.', null, 'Error'),
-            invalidEmails(total) {
-                return gettextCatalog.getString(`Invalid email(s): ${total}.`, null, 'Error');
-            },
-            maxBodyLength: gettextCatalog.getString('The maximum length of the message body is 16,000,000 characters.', null, 'Error'),
-            noRecipient: gettextCatalog.getString('Please enter at least one recipient.', null, 'Error'),
-            maxSubjectLength: gettextCatalog.getString(`The maximum length of the subject is ${CONSTANTS.MAX_TITLE_LENGTH}.`, null, 'Error'),
-            maxRecipients(total) {
-                return gettextCatalog.getString(`The maximum number (${total}) of Recipients is 25.`, null, 'Error');
-            }
-        };
 
         $scope.messages = [];
         $scope.uid = 1;
@@ -422,53 +409,6 @@ angular.module('proton.composer')
      */
         $scope.saveLater = (message) => !message.sending && recordMessage(message, { autosaving: true, loader: false });
 
-        $scope.validate = (message) => {
-            const deferred = $q.defer();
-            const reject = (label) => deferred.reject(new Error(label));
-            message.setDecryptedBody(tools.fixImages(message.getDecryptedBody()));
-            angular.element('input').blur();
-
-            // We delay the validation to let the time for the autocomplete
-            $timeout(() => {
-            // Check if there is an attachment uploading
-                if (message.uploading > 0) {
-                    return reject(MESSAGES_ERROR.stillUploading);
-                }
-
-                // Check all emails to make sure they are valid
-                const allEmails = _.map(message.ToList.concat(message.CCList, message.BCCList), ({ Address = '' } = {}) => Address.trim());
-                const invalidEmails = _.filter(allEmails, (email) => !tools.validEmail(email));
-                const totalDestEmails = message.ToList.length + message.BCCList.length + message.CCList.length;
-
-                if (invalidEmails.length > 0) {
-                    return reject(MESSAGES_ERROR.invalidEmails(invalidEmails.join(',')));
-                }
-
-                // MAX 25 to, cc, bcc
-                if (totalDestEmails > 25) {
-                    return reject(MESSAGES_ERROR.maxRecipients(totalDestEmails));
-                }
-
-                if (totalDestEmails === 0) {
-                    return reject(MESSAGES_ERROR.noRecipient);
-                }
-
-                // Check title length
-                if (message.Subject && message.Subject.length > CONSTANTS.MAX_TITLE_LENGTH) {
-                    return reject(MESSAGES_ERROR.maxSubjectLength);
-                }
-
-                // Check body length
-                if (message.getDecryptedBody().length > 16000000) {
-                    return reject(MESSAGES_ERROR.maxBodyLength);
-                }
-
-                deferred.resolve();
-            }, 500, false);
-
-            return deferred.promise;
-        };
-
         $scope.save = (message, notification = false, autosaving = false) => {
             const msg = messageModel(message);
             return embedded.parser(msg, { direction: 'cid' })
@@ -704,35 +644,6 @@ angular.module('proton.composer')
             return message.Subject || gettextCatalog.getString('New message', null, 'Title');
         };
 
-        /**
-     * Check if the subject of this message is empty
-     * And ask the user to send anyway
-     * @param {Object} message
-     */
-        function checkSubject({ Subject }) {
-            const title = gettextCatalog.getString('No subject', null, 'Title');
-            const message = gettextCatalog.getString('No subject, send anyway?', null, 'Info');
-
-            return new Promise((resolve, reject) => {
-                if (!Subject) {
-                    confirmModal.activate({
-                        params: {
-                            title, message,
-                            confirm() {
-                                confirmModal.deactivate();
-                                resolve();
-                            },
-                            cancel() {
-                                confirmModal.deactivate();
-                                reject();
-                            }
-                        }
-                    });
-                } else {
-                    resolve();
-                }
-            });
-        }
 
         function dispatchMessageAction(message) {
             $rootScope.$emit('actionMessage', message);
@@ -915,21 +826,26 @@ angular.module('proton.composer')
      * Try to send message specified
      * @param {Object} message
      */
-        $scope.send = (msg) => {
+        $scope.send = async (msg) => {
         // Prevent mutability
             const message = messageModel(msg);
             const setStateSending = (is) => (message.sending = is, msg.sending = is);
 
             message.Password = message.Password || '';
             message.PasswordHint = message.PasswordHint || '';
-            setStateSending(true);
 
-            dispatchMessageAction(message);
+            try {
+                await validateMessage.checkSubject(message);
+            } catch (e) {
+                // No subject
+                return;
+            }
 
             const parameters = {};
+            setStateSending(true);
+            dispatchMessageAction(message);
 
-            const promise = $scope.validate(message)
-                .then(() => checkSubject(message))
+            const promise = validateMessage.validate(message)
                 .then(() => extractDataURI(message))
                 .then(() => recordMessage(message))
                 .then((messageSaved) => (message.ID = messageSaved.ID, message))
@@ -1007,7 +923,7 @@ angular.module('proton.composer')
                             return data; // Resolve finally the promise
                         });
                 })
-                .catch((e) => {
+                .catch((e = {}) => {
                     setStateSending(false);
                     message.encrypting = false;
                     dispatchMessageAction(message);
