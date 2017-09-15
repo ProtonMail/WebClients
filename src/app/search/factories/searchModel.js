@@ -66,14 +66,31 @@ angular.module('proton.search')
             }
         };
 
+        /**
+         * Format date interval
+         * If both date are equal (we selected the same day) we
+         * will return
+         *     - begin = 0:00
+         *     - end = 23:59
+         * @param  {Number} options.begin
+         * @param  {Number} options.end
+         * @return {Object}
+         */
+        const dateInterval = ({ begin, end }) => {
+            if (begin && begin === end) {
+                return { begin, end: end + (24 * 3600 - 1) };
+            }
+            return { begin, end };
+        };
+
         const build = (data = {}) => {
             const model = angular.copy(data);
             const attachments = +model.attachments;
             const wildcard = +model.wildcard;
-            const date = {
+            const date = dateInterval({
                 begin: extractDate(model.begin),
                 end: extractDate(model.end)
-            };
+            });
 
             return _.extend(resetParameters(), {
                 to: model.to,
