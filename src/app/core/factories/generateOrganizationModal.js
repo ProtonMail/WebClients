@@ -54,11 +54,11 @@ angular.module('proton.core')
                                     promises.push(setupKeys.decryptMemberToken(key, params.existingKey)
                                         .then(({ decryptedToken }) => pmcw.encryptMessage({
                                             data: decryptedToken,
-                                            publicKeys: pkg.toPublic().armor(),
+                                            publicKeys: pkg.toPublic(),
                                             privateKeys: pkg
                                         }))
-                                        .then((Token) => {
-                                            payload.Tokens.push({ ID: key.ID, Token });
+                                        .then(({ data }) => {
+                                            payload.Tokens.push({ ID: key.ID, Token: data });
                                         }));
                                 });
                             });
