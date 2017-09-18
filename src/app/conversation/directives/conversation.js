@@ -155,7 +155,7 @@ angular.module('proton.conversation')
                             action: 'move',
                             data: { ids: [scope.markedMessage.ID], labelID } });
                     }
-                    scope.move(labelID);
+                    actionConversation.move([ scope.conversation.ID ], labelID);
                 });
 
                 const onNextPrevElement = (type) => () => {
@@ -407,14 +407,6 @@ angular.module('proton.conversation')
                 scope.delete = () => {
                     actionConversation.remove([scope.conversation.ID]);
                 };
-
-                /**
-             * Move current conversation to a specific location
-             */
-                scope.move = (labelID) => {
-                    actionConversation.move([scope.conversation.ID], labelID);
-                };
-
                 /**
              * Apply labels for the current conversation
              * @return {Promise}
