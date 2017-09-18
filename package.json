@@ -76,7 +76,8 @@
     "testwatch": "npm test -- --auto-watch --no-single-run",
     "i18n": "./tasks/commitI18n.sh",
     "build:i18n": "grunt nggettext_extract nggettext_compile",
-    "postbuild:i18n": "npm run i18n"
+    "postbuild:i18n": "npm run i18n",
+    "i18n:check": "tasks/noContext"
   },
   "version": "3.11.3"
 }
