@@ -125,6 +125,7 @@ angular.module('proton.squire')
          */
         const create = ($iframe, message = {}) => {
             const { ID = 'editor' } = message;
+
             return new Promise((resolve, reject) => {
                 try {
                     loadIframe($iframe, ($iframe) => {
@@ -145,5 +146,7 @@ angular.module('proton.squire')
             });
         };
 
-        return { create };
+        const clean = editorModel.remove;
+
+        return { create, clean };
     });

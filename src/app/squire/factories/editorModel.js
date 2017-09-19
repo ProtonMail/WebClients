@@ -8,6 +8,7 @@ angular.module('proton.squire')
             return editor;
         };
         const find = ({ ID = 'editor' } = {}) => MAP[ID] || {};
+        const remove = ({ ID = 'editor' } = {}) => delete MAP[ID];
 
-        return { load, find };
+        return { load, find, remove };
     });
