@@ -309,7 +309,7 @@ angular.module('proton.elements')
                 const elementTime = $scope.markedElement.Time;
                 const conversationMode = authentication.user.ViewMode === CONSTANTS.CONVERSATION_VIEW_MODE;
 
-                cache.more(elementID, elementTime, 'next')
+                cache.more(elementID, elementTime, 'previous')
                     .then((element) => {
                         const id = (conversationMode) ? (element.ConversationID || element.ID) : element.ID;
                         $state.go(current, { id });
@@ -343,7 +343,7 @@ angular.module('proton.elements')
                 const elementTime = $scope.markedElement.Time;
                 const conversationMode = authentication.user.ViewMode === CONSTANTS.CONVERSATION_VIEW_MODE;
 
-                cache.more(elementID, elementTime, 'previous')
+                cache.more(elementID, elementTime, 'next')
                     .then((element) => {
                         const id = (conversationMode) ? (element.ConversationID || element.ID) : element.ID;
                         $state.go(current, { id });
