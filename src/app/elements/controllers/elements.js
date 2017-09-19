@@ -33,6 +33,8 @@ angular.module('proton.elements')
         let unbindWatcherElements;
         const MINUTE = 60 * 1000;
 
+        const isRowModeOpen = () => $state.params.id && authentication.user.ViewLayout === CONSTANTS.ROW_MODE;
+
         const id = setInterval(() => {
             $rootScope.$emit('elements', { type: 'refresh.time' });
         }, MINUTE);
@@ -601,6 +603,11 @@ angular.module('proton.elements')
      * @return {Array}
      */
         function idsSelected() {
+
+            if (isRowModeOpen()) {
+                return [$state.params.id];
+            }
+
             return _.pluck(getElementsSelected(), 'ID');
         }
 
@@ -614,8 +621,7 @@ angular.module('proton.elements')
             if (elementsSelected.length) {
                 return elementsSelected[0].ConversationID ? 'message' : 'conversation';
             }
-
-            return '';
+            return tools.getTypeList();
         }
 
 
