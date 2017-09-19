@@ -11,16 +11,20 @@ angular.module('proton.squire')
 
         return {
             scope: {
-                message: '=', // body
+                message: '=?', // body
                 value: '=?', // body
                 allowEmbedded: '=',
                 allowDataUri: '='
             },
             replace: true,
             templateUrl: 'templates/directives/squire.tpl.html',
-            link(scope, el, { typeContent = 'message', action = '' }) {
+            link(scope, el, { typeContent = 'message', action = '', id }) {
 
                 scope.data = {};
+                if (!isMessage(typeContent)) {
+                    scope.message = { ID: id };
+                }
+
                 const listen = editorListener(scope, el, { typeContent, action });
 
                 function updateModel(val, dispatchAction = false) {
@@ -83,6 +87,7 @@ angular.module('proton.squire')
 
                     scope.$on('$destroy', () => {
                         unsubscribe();
+                        squireEditor.clean(scope.message);
                         editor.destroy();
                     });
                 }
