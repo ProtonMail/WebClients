@@ -67,7 +67,7 @@ angular.module('proton.filter')
                 });
 
                 scope.$on('deleteFilter', (event, filterId) => {
-                    if (scope.itemMoved === false) {
+                    if (!scope.itemMoved) {
                         const index = _.findIndex(scope.customFilters, { ID: filterId });
 
                         if (index !== -1) {
@@ -77,7 +77,7 @@ angular.module('proton.filter')
                 });
 
                 scope.$on('createFilter', (event, filterId, filter) => {
-                    if (scope.itemMoved === false) {
+                    if (!scope.itemMoved) {
                         const index = _.findIndex(scope.customFilters, { ID: filterId });
 
                         if (index === -1) {
@@ -90,7 +90,7 @@ angular.module('proton.filter')
                 });
 
                 scope.$on('updateFilter', (event, filterId, filter) => {
-                    if (scope.itemMoved === false) {
+                    if (!scope.itemMoved) {
                         const index = _.findIndex(scope.customFilters, { ID: filterId });
 
                         if (index === -1) {
