@@ -59,8 +59,8 @@ angular.module('proton.user')
             link(scope, el, { offerType = CONSTANTS.INVITE_MAIL }) {
 
                 const unsubscribe = [];
-                const $formSMS = el[0].querySelector(SELECTOR.FORM_SMS);
-                const $formEMAIL = el[0].querySelector(SELECTOR.FORM_EMAIL);
+                const $formSMS = el.find(SELECTOR.FORM_SMS);
+                const $formEMAIL = el.find(SELECTOR.FORM_EMAIL);
                 const $btnSetup = el.find(SELECTOR.BTN_COMPLETE_SETUP);
 
                 signupModel.getOptionsVerification(offerType)
@@ -78,7 +78,9 @@ angular.module('proton.user')
                 /**
                  * @TODO RFR each form => component + model and remove facepalm boolean
                  */
-                const onSubmitSMS = () => {
+                const onSubmitSMS = (e) => {
+                    e.stopPropagation();
+                    e.preventDefault();
                     scope.$applyAsync(() => scope.smsSending = true);
                     sendVerificationCode('sms', scope.model.smsVerification)
                         .then((test = false) => {
@@ -90,7 +92,9 @@ angular.module('proton.user')
                         });
                 };
 
-                const onSubmitEmail = () => {
+                const onSubmitEmail = (e) => {
+                    e.stopPropagation();
+                    e.preventDefault();
                     sendVerificationCode('email', scope.model.emailVerification)
                         .then((test = false) => {
                             scope.model.verificationSent = test;
@@ -120,13 +124,13 @@ angular.module('proton.user')
                 }));
 
                 $btnSetup.on('click', onClickCompleteSetup);
-                $formSMS.addEventListener('submit', onSubmitSMS);
-                $formEMAIL.addEventListener('submit', onSubmitEmail);
+                $formSMS.on('submit', onSubmitSMS);
+                $formEMAIL.on('submit', onSubmitEmail);
 
                 scope.$on('$destroy', () => {
                     $btnSetup.off('click', onClickCompleteSetup);
-                    $formSMS.removeEventListener('submit', onSubmitSMS);
-                    $formEMAIL.removeEventListener('submit', onSubmitEmail);
+                    $formSMS.off('submit', onSubmitSMS);
+                    $formEMAIL.off('submit', onSubmitEmail);
                     unsubscribe.forEach((cb) => cb());
                     unsubscribe.length = 0;
                 });
