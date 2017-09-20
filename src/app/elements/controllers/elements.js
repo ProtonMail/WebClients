@@ -195,10 +195,10 @@ angular.module('proton.elements')
                         $scope.refreshElements();
                         break;
                     case 'switchTo.next':
-                        nextElement(data.from);
+                        nextElement();
                         break;
                     case 'switchTo.previous':
-                        previousElement(data.from);
+                        previousElement();
                         break;
                 }
             }));
@@ -293,19 +293,14 @@ angular.module('proton.elements')
             /**
          * Go to the next conversation
          */
-            function nextElement(from) {
+            function nextElement() {
                 const elementID = $state.params.id;
-                const fromButton = from === 'button';
 
                 if (!elementID) {
                     return markNext();
                 }
 
                 const isRowMode = authentication.user.ViewLayout === CONSTANTS.ROW_MODE;
-
-                if (elementID && isRowMode && !fromButton) {
-                    return;
-                }
 
                 const current = $state.$current.name;
                 const elementTime = $scope.markedElement.Time;
@@ -327,19 +322,14 @@ angular.module('proton.elements')
             /**
          * Go to the previous conversation
          */
-            function previousElement(from) {
+            function previousElement() {
                 const elementID = $state.params.id;
-                const fromButton = from === 'button';
 
                 if (!elementID) {
                     return markPrevious();
                 }
 
                 const isRowMode = authentication.user.ViewLayout === CONSTANTS.ROW_MODE;
-
-                if (elementID && isRowMode && !fromButton) {
-                    return;
-                }
 
                 const current = $state.$current.name;
                 const elementTime = $scope.markedElement.Time;
