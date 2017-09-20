@@ -126,6 +126,10 @@ angular.module('proton.attachments')
                 return Promise.resolve(cache.get(getCacheKey(attachment)));
             }
 
+            if (attachment.Preview) {
+                return Promise.resolve(attachment.Preview);
+            }
+
             const request = getRequest(attachment);
 
             const key = getSessionKey(message, attachment);
