@@ -11,7 +11,7 @@ msgstr ""
 "Last-Translator: PMtranslator <contact@protonmail.ch>\n"
 "Language-Team: Russian\n"
 "Language: ru_RU\n"
-"PO-Revision-Date: 2017-09-13 06:25-0400\n"
+"PO-Revision-Date: 2017-09-20 12:46-0400\n"
 
 #: src/app/templates/modals/domain/domain.tpl.html:13
 msgid "'www' subdomains are typically not used for email. Are you sure you not want to use this domain value?"
@@ -865,7 +865,7 @@ msgstr "Адреса"
 #: src/app/ui/factories/pageTitlesModel.js:26
 msgctxt "Title"
 msgid "Addresses / Users"
-msgstr "Пользователи"
+msgstr "Адреса / Пользователи"
 
 #: src/app/templates/views/domains.tpl.html:173
 msgctxt "Domains information"
@@ -6109,7 +6109,7 @@ msgstr "Поставлено в очередь"
 
 #: src/app/message/services/messageBuilder.js:4
 msgid "Re:"
-msgstr "Ответить:"
+msgstr "Re:"
 
 #: src/app/templates/address/addressKeysView.tpl.html:55
 msgctxt "Action"

@@ -11,7 +11,7 @@ msgstr ""
 "Last-Translator: PMtranslator <contact@protonmail.ch>\n"
 "Language-Team: Dutch\n"
 "Language: nl_NL\n"
-"PO-Revision-Date: 2017-09-13 06:01-0400\n"
+"PO-Revision-Date: 2017-09-20 12:43-0400\n"
 
 #: src/app/templates/modals/domain/domain.tpl.html:13
 msgid "'www' subdomains are typically not used for email. Are you sure you not want to use this domain value?"
@@ -307,7 +307,8 @@ msgstr "<p>Er zijn teveel ProtonMail-accounts vanaf uw verbinding aangemaakt.</p
 msgctxt "Filter message"
 msgid "<span class=\"filterButton-label-text\">Attachments</span>\n"
 "                    <custom-checkbox class=\"filterButton-checkbox\" data-custom-ng-model=\"model.attachments\"></custom-checkbox>"
-msgstr ""
+msgstr "<span class=\"filterButton-label-text\">Bijlagen</span>\n"
+"                    <custom-checkbox class=\"filterButton-checkbox\" data-custom-ng-model=\"model.attachments\"></custom-checkbox>"
 
 #: src/app/templates/views/members.tpl.html:84
 msgctxt "Title"
@@ -1048,12 +1049,12 @@ msgstr "Bedrag"
 #: src/app/templates/directives/core/paypalView.tpl.html:10
 msgctxt "Paypal error"
 msgid "Amount above the maximum."
-msgstr ""
+msgstr "Bedrag overschrijdt het limiet."
 
 #: src/app/templates/directives/core/paypalView.tpl.html:14
 msgctxt "Paypal error"
 msgid "Amount below minimum."
-msgstr ""
+msgstr "Bedrag te laag."
 
 #: src/app/templates/payment/bitcoinView.tpl.html:26
 msgctxt "Bitcoin validation error"
@@ -1135,7 +1136,7 @@ msgstr "Archiveren"
 #: src/app/ui/factories/pageTitlesModel.js:16
 msgctxt "Title"
 msgid "Archive"
-msgstr "Archiveren"
+msgstr "Archief"
 
 #: src/app/conversation/factories/actionConversation.js:28
 #: src/app/labels/directives/dropdownFolders.js:12
@@ -2999,7 +3000,7 @@ msgstr "E-mailverificatie"
 #: src/app/composer/controllers/composeMessage.js:112
 msgctxt "Info"
 msgid "Email was already sent"
-msgstr ""
+msgstr "E-mail is reeds verzonden"
 
 #: src/app/settings/controllers/account.js:300
 msgctxt "Success"
@@ -3503,7 +3504,7 @@ msgstr "Filter op labels"
 #: src/app/templates/message/filterButton.tpl.html:7
 msgctxt "Filter message"
 msgid "Filter on:"
-msgstr ""
+msgstr "Filter aan:"
 
 #: src/app/filter/factories/filterModal.js:29
 msgctxt "Notification"
@@ -5098,7 +5099,7 @@ msgstr "Volgende"
 #: src/app/templates/message/filterButton.tpl.html:33
 msgctxt "Filter message"
 msgid "Next"
-msgstr ""
+msgstr "Volgende"
 
 #: src/app/commons/services/i18nLoader.js:118
 msgctxt "Pikaday"
@@ -6114,7 +6115,7 @@ msgstr "Ontvangen:"
 #: src/app/templates/message/filterButton.tpl.html:22
 msgctxt "Filter message"
 msgid "Recipient"
-msgstr ""
+msgstr "Ontvanger"
 
 #: src/app/templates/search/searchForm.tpl.html:64
 msgctxt "Title"
@@ -6622,7 +6623,7 @@ msgstr "Stuur tot maximaal 1000 berichten per dag"
 #: src/app/templates/message/filterButton.tpl.html:16
 msgctxt "Filter message"
 msgid "Sender"
-msgstr ""
+msgstr "Afzender"
 
 #: src/app/templates/search/searchForm.tpl.html:56
 msgctxt "Title"
@@ -7023,7 +7024,7 @@ msgstr "Versleuteld opgeslagen"
 #: src/app/templates/message/filterButton.tpl.html:10
 msgctxt "Filter message"
 msgid "Subject"
-msgstr ""
+msgstr "Onderwerp"
 
 #: src/app/templates/directives/composer/composerSubject.tpl.html:2
 msgid "Subject"
@@ -7174,7 +7175,7 @@ msgstr "Hartelijk dank voor uw steun!"
 #: src/app/templates/payment/donation.tpl.html:89
 msgctxt "Error"
 msgid "Thank you for your willingness to donate. The maximum we can accept in single donations is 99 999 999 at this moment. Thank you"
-msgstr ""
+msgstr "Dank u voor uw bereidheid om te doneren. Het maximale bedrag dat wij in één donaties aanvaarden op dit moment is 99 999 999. Dank u"
 
 #: src/app/templates/modals/sale.tpl.html:54
 msgctxt "Title"
@@ -8065,7 +8066,7 @@ msgstr "WAARSCHUWING: VERWIJDERING IS PERMANENT"
 #: src/app/templates/modals/deleteAccount.tpl.html:15
 msgctxt "Info"
 msgid "WARNING: THIS ALSO DELETES ALL CONNECTED SERVICES (ex: <i>ProtonVPN</i>)"
-msgstr ""
+msgstr "Waarschuwing: Dit verwijdert u ook alle verbonden diensten (ex: <i>ProtonVPN</i>)"
 
 #: src/app/user/directives/signupUserForm.js:6
 msgctxt "Warning"

@@ -11,7 +11,7 @@ msgstr ""
 "Last-Translator: PMtranslator <contact@protonmail.ch>\n"
 "Language-Team: German\n"
 "Language: de_DE\n"
-"PO-Revision-Date: 2017-09-13 06:17-0400\n"
+"PO-Revision-Date: 2017-09-20 12:45-0400\n"
 
 #: src/app/templates/modals/domain/domain.tpl.html:13
 msgid "'www' subdomains are typically not used for email. Are you sure you not want to use this domain value?"
@@ -307,7 +307,8 @@ msgstr "<p>Von Ihrem Anschluss wurden zu viele ProtonMail-Konten erstellt.</p>\n
 msgctxt "Filter message"
 msgid "<span class=\"filterButton-label-text\">Attachments</span>\n"
 "                    <custom-checkbox class=\"filterButton-checkbox\" data-custom-ng-model=\"model.attachments\"></custom-checkbox>"
-msgstr ""
+msgstr "<span class=\"filterButton-label-text\">Anhänge</span>\n"
+"                    <custom-checkbox class=\"filterButton-checkbox\" data-custom-ng-model=\"model.attachments\"></custom-checkbox>"
 
 #: src/app/templates/views/members.tpl.html:84
 msgctxt "Title"
@@ -1047,12 +1048,12 @@ msgstr "Betrag"
 #: src/app/templates/directives/core/paypalView.tpl.html:10
 msgctxt "Paypal error"
 msgid "Amount above the maximum."
-msgstr ""
+msgstr "Höchstbetrag überschritten"
 
 #: src/app/templates/directives/core/paypalView.tpl.html:14
 msgctxt "Paypal error"
 msgid "Amount below minimum."
-msgstr ""
+msgstr "Mindestbetrag unterschritten"
 
 #: src/app/templates/payment/bitcoinView.tpl.html:26
 msgctxt "Bitcoin validation error"
@@ -3000,7 +3001,7 @@ msgstr "E-Mail-Verifizierung"
 #: src/app/composer/controllers/composeMessage.js:112
 msgctxt "Info"
 msgid "Email was already sent"
-msgstr ""
+msgstr "Nachricht wurde bereits gesendet"
 
 #: src/app/settings/controllers/account.js:300
 msgctxt "Success"
@@ -3204,7 +3205,7 @@ msgstr "Zwei-Faktor-Authentifizierungs PIN eingeben:"
 #: src/app/templates/modals/deleteAccount.tpl.html:33
 msgctxt "Label"
 msgid "Enter two-factor passcode:"
-msgstr "Zwei-Faktor-Authentifizierungs-PIN eingeben:"
+msgstr "Zwei-Faktor-Authentifizierungsschlüssel eingeben:"
 
 #: src/app/templates/authentication/modals/loginPassword.tpl.html:10
 msgid "Enter your current password:"
@@ -3213,7 +3214,7 @@ msgstr "Geben Sie Ihr aktuelles Passwort ein:"
 #: src/app/templates/modals/deleteAccount.tpl.html:29
 msgctxt "Label"
 msgid "Enter your login password to confirm your identity:"
-msgstr "Geben Sie zur Bestätigung Ihrer Identität Ihr Login-Passwort ein:"
+msgstr "Geben Sie zur Bestätigung Ihrer Identität Ihr Anmeldepasswort ein:"
 
 #: src/app/templates/authentication/modals/loginPassword.tpl.html:14
 #: src/app/templates/modals/reactivate.tpl.html:9
@@ -3223,12 +3224,12 @@ msgstr "Login-Passwort eingeben:"
 #: src/app/templates/modals/keyPassword.tpl.html:10
 msgctxt "Label in the modal which ask the user to enter his password or mailbox password"
 msgid "Enter your previous mailbox password from before your account was reset:"
-msgstr "Geben Sie Ihr vorheriges E-Mail-Passwort ein, bevor Ihr Konto zurückgesetzt wurde:"
+msgstr "Geben Sie Ihr bisheriges E-Mail-Passwort ein, bevor Sie Ihr Konto zurückgesetzt haben:"
 
 #: src/app/templates/modals/keyPassword.tpl.html:11
 msgctxt "Label in the modal which ask the user to enter his password or mailbox password"
 msgid "Enter your previous password from before your account was reset:"
-msgstr "Geben Sie Ihr vorheriges Passwort ein, bevor Ihr Konto zurückgesetzt wurde:"
+msgstr "Geben Sie Ihr bisheriges Passwort ein, bevor Sie Ihr Konto zurückgesetzt haben:"
 
 #. key generation progrss
 #: src/app/templates/modals/generate.tpl.html:49
@@ -3504,7 +3505,7 @@ msgstr "Kategorie filtern"
 #: src/app/templates/message/filterButton.tpl.html:7
 msgctxt "Filter message"
 msgid "Filter on:"
-msgstr ""
+msgstr "Filtern nach:"
 
 #: src/app/filter/factories/filterModal.js:29
 msgctxt "Notification"
@@ -3915,7 +3916,7 @@ msgstr "Wenn ein anderer Administrator dieses Passwort geändert hat, müssen Si
 #: src/app/templates/modals/domain/mx.tpl.html:35
 msgctxt "Info"
 msgid "If this domain is currently actively receiving emails, create all used email addresses in Step 3 before changing MX record to ensure a smooth transition."
-msgstr "Wenn diese Domain aktuell aktiv E-Mails empfängt, erstellen Sie alle benutzen E-Mail-Adressen in Schritt 3, bevor Sie den MX-Record ändern, um einen reibungslosen Übergang zu sichern."
+msgstr "Wenn diese Domäne derzeit aktiv E-Mails empfängt, erstellen Sie alle verwendeten E-Mail-Adressen in Schritt 3, bevor Sie den MX (Mail Exchange)-Eintrag ändern, um einen reibungslosen Übergang zu gewährleisten."
 
 #: src/app/templates/views/reset-login-password.tpl.html:79
 #: src/app/templates/views/reset-mailbox-password.tpl.html:20
@@ -3956,7 +3957,7 @@ msgstr "Wenn Sie Ihr Passwort verlieren, werden Sie nicht mehr in der Lage sein 
 #. Info
 #: src/app/templates/modals/twofactor/recoveryCode.tpl.html:11
 msgid "If you lose your two-factor-enabled device, these codes can be used instead of the 6-digit 2FA code to log into your account. Each code can only be used once."
-msgstr "Wenn Sie Ihr bestätigtes 2-Faktor-Gerät verlieren können diese Codes anstatt des 6-stelligen 2FA Codes benutzt werden um sich am Account anzumelden. Jeder Code kann nur ein Mal benutzt werden."
+msgstr "Wenn Sie Ihr bestätigtes 2-Faktor-Gerät verlieren, können diese Schlüssel anstelle des 6-stelligen 2FA-Schlüssels verwendet werden, um sich am Konto anzumelden. Jeder Schlüssel kann nur einmal verwendet werden."
 
 #: src/app/templates/views/reset-login-password.tpl.html:72
 msgid "If you remember your old password later, you can recover your existing messages. <a href=\"https://protonmail.com/support/knowledge-base/restoring-encrypted-mailbox/\" target=\"_blank\">Learn More</a>."
@@ -3970,7 +3971,7 @@ msgstr "Wenn Sie Ihren bestehenden SPF-Eintrag behalten möchten können Sie <co
 #: src/app/templates/modals/deleteAccount.tpl.html:11
 msgctxt "Info"
 msgid "If you wish to delete in order to combine this account with another one, do NOT delete your account. You need to instead follow"
-msgstr "Wenn Sie Ihr Account löschen möchten, um es mit einem anderen zusammenzuführen, löschen Sie Ihr Account NICHT. Sie sollten stattdessen"
+msgstr "Wenn Sie dieses Konto löschen möchten, um es mit einem anderen zusammenzuführen, löschen Sie Ihr Konto NICHT. Sie sollten stattdessen"
 
 #: src/app/composer/directives/composerAskEmbedded.js:5
 msgid "image detected"
@@ -3991,7 +3992,7 @@ msgstr "WICHTIG: Schließen Sie diese Seite nicht und navigieren Sie nicht zu ei
 #. Info
 #: src/app/templates/modals/twofactor/recoveryCode.tpl.html:10
 msgid "Important: Please make sure you saved the recovery codes. Otherwise you can permanently lose access to your account if you lose your 2FA device."
-msgstr "Wichtig: Bitte stellen Sie sicher, dass Sie Ihre Wiederherstellungscodes gespeichert haben. Andernfalls können Sie den Zugang zu Ihrem Account dauerhaft verlieren wenn Sie Ihr 2-Faktor-Gerät verlieren."
+msgstr "Wichtig: Bitte stellen Sie sicher, dass Sie die Wiederherstellungsschlüssel gespeichert haben. Andernfalls können Sie den Zugriff auf Ihr Konto dauerhaft verlieren, wenn Sie Ihr 2-Faktor-Gerät verlieren."
 
 #. message label
 #: src/app/elements/directives/foldersElement.js:20
@@ -4539,11 +4540,11 @@ msgstr "Alle anderen Sitzungen abmelden"
 
 #: src/app/templates/user/signupCreationProcess.tpl.html:29
 msgid "Logging in to new account"
-msgstr "In das neue Account einloggen"
+msgstr "Im neuem Konto anmelden"
 
 #: src/app/templates/views/reset-login-password.tpl.html:159
 msgid "Logging in to your account"
-msgstr "An Ihrem Account anmelden"
+msgstr "In Ihrem Konto anmelden"
 
 #: src/app/settings/controllers/security.js:242
 #: src/app/settings/controllers/security.js:261
@@ -5099,7 +5100,7 @@ msgstr "Weiter"
 #: src/app/templates/message/filterButton.tpl.html:33
 msgctxt "Filter message"
 msgid "Next"
-msgstr ""
+msgstr "Weiter"
 
 #: src/app/commons/services/i18nLoader.js:118
 msgctxt "Pikaday"
@@ -5411,7 +5412,7 @@ msgstr "Organisationsadministratoren können auf die Nachrichten von privaten Be
 
 #: src/app/settings/controllers/members.js:151
 msgid "Organization administrators will no longer be able to log in and control the member's account after privatization. This change is PERMANENT."
-msgstr "Organisationsadministratoren werden nach der Privatisierung nicht länger in der Lage sein, sich in das Benutzer-Account einzuloggen oder dieses zu verwalten. Diese Änderung ist DAUERHAFT."
+msgstr "Organisationsadministratoren werden nach der Privatisierung nicht länger in der Lage sein, sich in das Benutzerkonto anzumelden oder dieses zu verwalten. Diese Änderung ist DAUERHAFT."
 
 #: src/app/templates/views/invoices.tpl.html:12
 msgctxt "Title"
@@ -5954,7 +5955,7 @@ msgstr "Mitglied privatisieren"
 
 #: src/app/core/controllers/support.js:22
 msgid "Problem loading your account"
-msgstr "Problem beim Laden Ihres Accounts"
+msgstr "Problem beim Laden Ihres Kontos"
 
 #: src/app/templates/payment/tosubscribeOverview.tpl.html:83
 msgctxt "Title"
@@ -6115,7 +6116,7 @@ msgstr "Empfangen:"
 #: src/app/templates/message/filterButton.tpl.html:22
 msgctxt "Filter message"
 msgid "Recipient"
-msgstr ""
+msgstr "Empfänger"
 
 #: src/app/templates/search/searchForm.tpl.html:64
 msgctxt "Title"
@@ -6326,7 +6327,7 @@ msgstr "Das Zurücksetzen des Login- oder Mailboxpassworts wird alte Nachrichten
 #: src/app/templates/views/reset-login-password.tpl.html:77
 #: src/app/templates/views/reset-mailbox-password.tpl.html:18
 msgid "Resetting either Login or Mailbox password will switch you to <a href=\"https://protonmail.com/support/knowledge-base/single-password/\" target=\"_blank\">Single Password Mode</a>."
-msgstr "Das Zurücksetzen des Anmelde- oder Mailboxpassworts wird Ihren Account in den <a href=\"https://protonmail.com/support/knowledge-base/single-password/\" target=\"_blank\">Ein-Passwort-Modus</a> schalten."
+msgstr "Das Zurücksetzen des Anmelde- oder Postfachpassworts wird Ihr Konto in den <a href=\"https://protonmail.com/support/knowledge-base/single-password/\" target=\"_blank\">Ein-Passwort-Modus</a> umschalten."
 
 #: src/app/templates/views/reset-mailbox-password.tpl.html:77
 msgctxt "Title"
@@ -6514,7 +6515,7 @@ msgstr "Scannen Sie den QR-Code"
 
 #: src/app/templates/modals/twofactor/sharedSecret.tpl.html:9
 msgid "Scan this QR code with your two factor authentication device to set up your account."
-msgstr "Scannen Sie diesen QR-Code mit Ihrem 2-Faktor-Authentifizierungsgerät um Ihr Account einzurichten."
+msgstr "Scannen Sie diesen QR-Code mit Ihrem Zwei-Faktor-Authentifizierungsgerät, um Ihr Konto einzurichten."
 
 #: src/app/templates/search/searchForm.tpl.html:146
 msgctxt "Action"
@@ -6623,7 +6624,7 @@ msgstr "Senden Sie bis zu 1000 Nachrichten pro Tag"
 #: src/app/templates/message/filterButton.tpl.html:16
 msgctxt "Filter message"
 msgid "Sender"
-msgstr ""
+msgstr "Absender"
 
 #: src/app/templates/search/searchForm.tpl.html:56
 msgctxt "Title"
@@ -7024,7 +7025,7 @@ msgstr "Verschlüsselt gespeichert"
 #: src/app/templates/message/filterButton.tpl.html:10
 msgctxt "Filter message"
 msgid "Subject"
-msgstr ""
+msgstr "Betreff"
 
 #: src/app/templates/directives/composer/composerSubject.tpl.html:2
 msgid "Subject"
@@ -7139,12 +7140,12 @@ msgstr "Di"
 #: src/app/templates/user/signupUserForm.tpl.html:20
 msgctxt "Info"
 msgid "Take back your privacy! Creating your secure email account takes less than 2 minutes."
-msgstr "Holen Sie sich Ihre Privatsphäre zurück! Erstellen Sie Ihren sicheren E-Mail-Account in weniger als 2 Minuten."
+msgstr "Holen Sie sich Ihre Privatsphäre zurück! Die Einrichtung Ihres sicheren E-Mail-Kontos dauert weniger als 2 Minuten."
 
 #: src/app/templates/views/setup.tpl.html:14
 msgctxt "Info"
 msgid "Take back your privacy! Setting up your secure email account takes less than 2 minutes."
-msgstr "Holen Sie sich Ihre Privatsphäre zurück! Richten Sie Ihren sicheren E-Mail-Account in weniger als 2 Minuten ein."
+msgstr "Nehmen Sie Ihre Privatsphäre zurück! Die Einrichtung Ihres sicheren E-Mail-Kontos dauert weniger als 2 Minuten."
 
 #: src/app/templates/views/account.tpl.html:98
 msgid "Test notification"
@@ -7175,7 +7176,7 @@ msgstr "Vielen Dank für Ihre Unterstützung!"
 #: src/app/templates/payment/donation.tpl.html:89
 msgctxt "Error"
 msgid "Thank you for your willingness to donate. The maximum we can accept in single donations is 99 999 999 at this moment. Thank you"
-msgstr ""
+msgstr "Vielen Dank für Ihre Spendenbereitschaft. Die maximale Summe, die wir in Einzelspenden annehmen können, beträgt zur Zeit 99.999.999.999. Vielen Dank"
 
 #: src/app/templates/modals/sale.tpl.html:54
 msgctxt "Title"
@@ -7301,7 +7302,7 @@ msgstr "Dies wird benutzt um Ihre Nachrichten zu ver- und entschlüsseln. Verlie
 #: src/app/templates/user/signupUserForm.tpl.html:38
 msgctxt "Info"
 msgid "This is used to recover your account if you get locked out or forget your password."
-msgstr "Dies wird benutzt um Ihren Account wiederherzustellen wenn Sie ausgesperrt wurden oder Ihr Passwort vergessen haben."
+msgstr "Dies wird verwendet, um Ihr Konto wiederherzustellen, wenn Sie ausgesperrt wurden oder Ihr Passwort vergessen haben."
 
 #: src/app/settings/controllers/members.js:97
 msgctxt "Info"
@@ -7352,7 +7353,7 @@ msgstr "Dies stellt die Standardgröße für das Verfassen von Nachrichten ein. 
 #: src/app/templates/partials/wizard.tpl.html:13
 msgctxt "Info"
 msgid "This short tutorial will show you the main features of your new ProtonMail account. For more information, you can also check out the Welcome email we have sent you. If you ever want to view this tutorial again, you can access it by clicking your username in the upper right corner."
-msgstr "Diese kurze Anleitung wird Ihnen die Hauptfunktionen Ihres neuen ProtonMail-Accounts zeigen. Für mehr Informationen schauen Sie sich auch die Willkommens-E-Mail an, die wir Ihnen zugeschickt haben. Wenn Sie diese Anleitung noch einmal aufrufen möchten können Sie dies durch einen Klick auf Ihren Benutzernamen in der rechten oberen Ecke erledigen."
+msgstr "Diese kurze Anleitung wird Ihnen die Hauptfunktionen Ihres neuen ProtonMail-Kontos zeigen. Für weitere Informationen können Sie sich auch die Willkommens-E-Mail ansehen, die wir Ihnen zugesandt haben. Wenn Sie diese Anleitung erneutl ansehen möchten, können Sie es aufrufen, indem Sie auf Ihren Benutzernamen in der oberen rechten Ecke klicken."
 
 #: src/app/templates/user/usernameDomain.tpl.html:9
 #: src/app/templates/views/setup.tpl.html:22
@@ -8066,7 +8067,7 @@ msgstr "WARNUNG: LÖSCHEN IST DAUERHAFT"
 #: src/app/templates/modals/deleteAccount.tpl.html:15
 msgctxt "Info"
 msgid "WARNING: THIS ALSO DELETES ALL CONNECTED SERVICES (ex: <i>ProtonVPN</i>)"
-msgstr ""
+msgstr "WARNUNG: DIES ENTFERNT AUCH ALLE VERBUNDENEN DIENSTE (z. B. <i>ProtonVPN</i>)"
 
 #: src/app/user/directives/signupUserForm.js:6
 msgctxt "Warning"
@@ -8101,7 +8102,7 @@ msgstr "Wir empfehlen die Verwendung unterschiedlicher Login- und Postfach-Passw
 #: src/app/templates/views/reset-login-password.tpl.html:3
 msgctxt "Info"
 msgid "We will send a reset code to your <a class=\"bold\" href=\"https://protonmail.com/support/knowledge-base/set-forgot-password-options/\" target=\"_blank\" title=\"This is the optional email you used when first creating an account. This is the same as your notification email that is used for sending alerts about new messages.\">recovery email</a> to reset your password."
-msgstr "Wir senden Ihnen einen Zurücksetzungscode an Ihre <a class=\"bold\" href=\"https://protonmail.com/support/knowledge-base/set-forgot-password-options/\" target=\"_blank\" title=\"This is the optional email you used when first creating an account. This is the same as your notification email that is used for sending alerts about new messages.\">Wiederherstellungs-E-Mail</a>, um Ihr Passwort zurückzusetzen."
+msgstr "Wir senden Ihnen einen Rücksetzungsschlüssel an Ihre <a class=\"bold\" href=\"https://protonmail.com/support/knowledge-base/set-forgot-password-options/\" target=\"_blank\" title=\"Dies ist die optionale E-Mail-Adresse, die Sie beim ersten Erstellen eines Kontos verwendet haben. Diese ist identisch mit Ihre Benachrichtigungs-E-Mail-Adresse, die für das Versenden von Benachrichtigungen über neue Nachrichten verwendet wird.\">Wiederherstellungs-E-Mail-Adresse</a>, um Ihr Passwort zurückzusetzen."
 
 #: src/app/templates/views/reset-login-password.tpl.html:28
 #: src/app/templates/views/reset-mailbox-password.tpl.html:36
