@@ -41,6 +41,7 @@ describe('transformEscape service', () => {
     const CODE_HTML_ESCAPED = `<pre><code><img proton-src="polo.fr"></code></pre>`;
     const CODE_TEXT = `<pre><code>{ background: url('monique.jpg') }</code></pre>`;
     const TEXT = `<p>salut monique est ceque tu as un src="lol" dans la poche ?</p><span>src=</span>`;
+    const EDGE_CASE = `<div id="ymail_android_signature"><a href="https://overview.mail.yahoo.com/mobile/?.src=Android">Sent from Yahoo Mail on Android</a></div>`;
 
 
     let output;
@@ -198,6 +199,20 @@ describe('transformEscape service', () => {
         });
 
         it('should not escape txt', () => {
+            expect(output.innerHTML).not.toMatch(/proton-/);
+        });
+
+    });
+
+    describe('No escape EDGE_CASE', () => {
+
+        beforeEach(() => {
+            output = factory(document.createElement('DIV'), null, {
+                content: EDGE_CASE
+            });
+        });
+
+        it('should not escape EDGE_CASE', () => {
             expect(output.innerHTML).not.toMatch(/proton-/);
         });
 
