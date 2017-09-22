@@ -40,7 +40,7 @@ angular.module('proton.settings')
             { label: 'Nederlands', key: 'nl_NL' },
             { label: 'Italiano', key: 'it_IT' },
             { label: 'Polski', key: 'pl_PL' },
-            { label: 'Українська', key: 'ua_UA' },
+            { label: 'Українська', key: 'uk_UA' },
             { label: 'Pусский', key: 'ru_RU' },
             { label: 'Türk', key: 'tr_TR' }
         ];

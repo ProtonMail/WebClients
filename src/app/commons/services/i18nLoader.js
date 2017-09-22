@@ -130,36 +130,36 @@ angular.module('proton.commons')
             return response;
         };
 
-        const localizeDateUtils = () => {
-            dateUtils.init();
-            return Promise.resolve();
-        };
+        const localizeDateUtils = async () => dateUtils.init();
 
         const loadGettextCatalog = (lang) => {
             const navigatorLocale = getLocale();
             const locale = lang || navigatorLocale;
+
             gettextCatalog.debugPrefix = '';
             gettextCatalog.setCurrentLanguage(locale);
             gettextCatalog.debug = CONFIG.debug || false;
 
             const [ shortLocale ] = locale.split('_');
 
-            // We want to use a more specific locale because a language isn't directly connect to a language:
-            // e.g. English is used by U.S./Canada and U.K. but U.S./Canada use Sunday as the first day and
-            // the U.K. uses Monday. It's also better if you consider that all untranslated languages use English.
-            // moment.localeData() uses the selected language in the interface.
+            /*
+             * We want to use a more specific locale because a language isn't directly connect to a language:
+             * e.g. English is used by U.S./Canada and U.K. but U.S./Canada use Sunday as the first day and
+             * the U.K. uses Monday. It's also better if you consider that all untranslated languages use English.
+             * moment.localeData() uses the selected language in the interface.
 
-            // Note that this doesn't only apply to the English language, the same occurs when considering:
-            // French-Canada and France (Both French but: Sunday/Monday);
-            // Brazil and Portugal (Both Portugese but: Sunday/Monday);
-            // Spain and Hispanic-America (Both Spanish but: Sunday/Monday);
-            // Iraq, Saudi-Arabia and Maroc (Both Arabic but: Saturday/Sunday/Monday).
+             * Note that this doesn't only apply to the English language, the same occurs when considering:
+             * French-Canada and France (Both French but: Sunday/Monday);
+             * Brazil and Portugal (Both Portugese but: Sunday/Monday);
+             * Spain and Hispanic-America (Both Spanish but: Sunday/Monday);
+             * Iraq, Saudi-Arabia and Maroc (Both Arabic but: Saturday/Sunday/Monday).
+             */
             moment.locale(selectLocale(shortLocale, navigatorLocale));
 
             document.documentElement.lang = shortLocale;
 
             // If the translation is not available it seems to crash (CPU 100%)
-            if (CONFIG.translations.indexOf(locale) !== -1) {
+            if (CONFIG.translations.includes(locale)) {
                 return gettextCatalog.loadRemote(`/i18n/${locale}.json`);
             }
 
