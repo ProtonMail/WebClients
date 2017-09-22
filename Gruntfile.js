@@ -5,8 +5,7 @@ const serveStatic = require('serve-static');
 const loadTasks = require('load-grunt-tasks');
 const userConfig = require('./env/conf.build');
 
-const { getConfig, AUTOPREFIXER_CONFIG, PACKAGE } = require('./env/config');
-const { getCountry } = require('./env/translationsLoader');
+const { getConfig, AUTOPREFIXER_CONFIG, PACKAGE, getI18nMatchFile } = require('./env/config');
 
 module.exports = function (grunt) {
     grunt.option('debug-app', grunt.cli.tasks.indexOf('deploy') === -1);
@@ -599,7 +598,7 @@ module.exports = function (grunt) {
                     ext: '.json',
                     rename(dest, matchedSrcPath) {
                         const [ lang, ext ] = matchedSrcPath.split('.');
-                        return path.join(dest, `${lang}_${getCountry(lang)}.${ext}`);
+                        return path.join(dest, `${getI18nMatchFile(lang)}.${ext}`);
                     }
                 }]
             }

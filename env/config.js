@@ -1,8 +1,16 @@
 const fs = require('fs');
 const extend = require('lodash/extend');
+const execSync = require('child_process').execSync;
 const semver = require('semver');
 const PACKAGE = require('../package');
-const { TRANSLATIONS_APP } = require('./translationsLoader');
+const i18nLoader = require('./translationsLoader');
+
+/*
+    We need this to be sync (async process) to create a cache
+    then we can use it inside the gruntFile
+ */
+const i18n = execSync('node env/translationsLoader.js');
+i18nLoader.set(i18n);
 
 const APP_VERSION = PACKAGE.version || '3.8.18';
 
@@ -68,7 +76,7 @@ const APP = {
     clientID: 'Web',
     clientSecret: '4957cc9a2e0a2a49d02475c9d013478d',
     articleLink: 'https://protonmail.com/blog/protonmail-v3-11-release-notes/',
-    translations: TRANSLATIONS_APP
+    translations: i18nLoader.get('list')
 };
 
 const getStatsConfig = (deployBranch = '') => {
@@ -133,4 +141,7 @@ const getConfig = (grunt) => {
     return { CONFIG, isDistRelease, syncPackage, getEnv };
 };
 
-module.exports = { AUTOPREFIXER_CONFIG, getConfig, PACKAGE };
+module.exports = {
+    AUTOPREFIXER_CONFIG, getConfig, PACKAGE,
+    getI18nMatchFile: i18nLoader.getI18nMatchFile
+};
