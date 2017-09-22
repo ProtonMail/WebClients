@@ -9,7 +9,7 @@ We are currently working with our community to localize ProtonMail from English 
 
 ## Basic Installation
 
-- `$ npm install
+- `$ npm install`
 - `$ npm start`
 
 ### dependencies
