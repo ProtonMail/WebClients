@@ -272,8 +272,7 @@ angular.module('proton.message')
             }
 
             emailsToString() {
-                const list = [].concat(this.ToList, this.CCList, this.BCCList);
-                return _.map(list, ({ Address } = {}) => Address);
+                return _.pluck(this.ToList.concat(this.CCList, this.BCCList), 'Address');
             }
 
             getPublicKeys(emails = []) {
