@@ -46,12 +46,17 @@ angular.module('proton.message')
 
 
         const REGEXP_IS_BREAK = new RegExp('(svg|xlink:href|srcset=|src=|background=|poster=)(?=(([^"><\\\\]|\\\\[^><])|"([^"><\\\\]|\\\\[^><])*")*>)', 'g');
-        const REGEXP_IS_URL = new RegExp(/(url\()/ig);
-        const replace = (regex, input) => input.replace(regex, 'proton-$1');
+        const REGEXP_IS_URL = new RegExp('(style.+\\w+[:|: ]{1,})(url\\()', 'ig');
 
-        return (html, message, { content = '' }) => {
+        const escapeURL = (input, action) => {
+            if (action === 'user.inject') {
+                return input;
+            }
+            return input.replace(REGEXP_IS_URL, '$1proton-$2');
+        };
 
-            html.innerHTML = replace(REGEXP_IS_URL, replace(REGEXP_IS_BREAK, content));
+        return (html, message, { content = '', action }) => {
+            html.innerHTML = escapeURL(content.replace(REGEXP_IS_BREAK, 'proton-$1'), action);
             return syntaxHighlighterFilter(html);
         };
     });

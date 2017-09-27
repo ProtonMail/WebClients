@@ -27,6 +27,7 @@ angular.module('proton.message')
                 const [ key ] = attr.split(':');
                 return `[${key}]`;
             })
+                .concat('[style]')
                 .join(', ');
 
             /**
@@ -56,6 +57,7 @@ angular.module('proton.message')
                 acc.push(mapAttributes(node));
                 return acc;
             }, []);
+
 
             return attributes;
         }
