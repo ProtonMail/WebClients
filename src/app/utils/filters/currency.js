@@ -47,16 +47,11 @@ angular.module('proton.utils')
 
         return (amount, currency) => {
 
-            if (angular.isUndefined(currency)) {
+            if (!currency) {
                 return fallbackFormat(amount, currency);
             }
 
-            if (currency && !(currency in FORMATTERS)) {
-                FORMATTERS[currency] = getFormatter(currency);
-            }
-
-            const formatter = FORMATTERS[currency];
-
-            return formatter(amount);
+            !FORMATTERS[currency] && (FORMATTERS[currency] = getFormatter(currency));
+            return FORMATTERS[currency](amount);
         };
     });
