@@ -4,12 +4,13 @@ angular.module('proton.core')
             controllerAs: 'ctrl',
             templateUrl: 'templates/modals/confirm.tpl.html',
             /* @ngInject */
-            controller: function (params) {
+            controller: function (params, hotkeys) {
 
+                hotkeys.unbind();
                 this.title = params.title;
                 this.message = params.message;
-                this.confirm = () => params.confirm();
-                this.cancel = () => params.cancel();
+                this.confirm = () => (hotkeys.bind(), params.confirm());
+                this.cancel = () => (hotkeys.bind(), params.cancel());
 
                 // The button is not directly available
                 setTimeout(() => angular.element('#confirmModalBtn').focus(), 100);
