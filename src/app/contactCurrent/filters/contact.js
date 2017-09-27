@@ -5,9 +5,11 @@ angular.module('proton.contactCurrent')
 
         const getContactFromUser = (nameContact, Address) => {
             const { Name = '', Email } = getContact(Address);
+
             if (Name && Name !== Email) {
                 return Name;
             }
+
             return nameContact || Address;
         };
 
@@ -24,7 +26,7 @@ angular.module('proton.contactCurrent')
         return (sender, parameter) => {
 
             // The sender might be null
-            const { Name = '', Address } = (sender || {});
+            const { Name = '', Address = '' } = (sender || {});
 
             if (parameter === 'Address') {
                 return `<${Address}>`;
