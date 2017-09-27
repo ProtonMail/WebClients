@@ -1,6 +1,7 @@
 describe('transformEscape service', () => {
 
     let factory, getAttribute;
+    const USER_INJECT = 'user.inject';
     const DOM = `<section>
     <svg width="5cm" height="4cm" version="1.1"
          xmlns="http://www.w3.org/2000/svg" xmlns:xlink= "http://www.w3.org/1999/xlink">
@@ -42,7 +43,26 @@ describe('transformEscape service', () => {
     const CODE_TEXT = `<pre><code>{ background: url('monique.jpg') }</code></pre>`;
     const TEXT = `<p>salut monique est ceque tu as un src="lol" dans la poche ?</p><span>src=</span>`;
     const EDGE_CASE = `<div id="ymail_android_signature"><a href="https://overview.mail.yahoo.com/mobile/?.src=Android">Sent from Yahoo Mail on Android</a></div>`;
+    const EDGE_CASE_2 = `
+        webEngineView->setUrl("
+        <span>webEngineView->setUrl("</span>
+        <div>webEngineView->setUrl("</div>
+        <pre>webEngineView->setUrl("</pre>
+        <code>webEngineView->setUrl(".</code>`;
 
+    const EX_URL = `<div style="background: url('https://i.imgur.com/WScAnHr.jpg')">ddewdwed</div>`;
+    const EX_URL_CLEAN = `<div style="background: proton-url('https://i.imgur.com/WScAnHr.jpg')">ddewdwed</div>`;
+    const BACKGROUND_URL = `
+        <div style="background: url('https://i.imgur.com/WScAnHr.jpg')">ddewdwed</div>
+        <div style="color: red; background: url('https://i.imgur.com/WScAnHr.jpg')">ddewdwed</div>
+        <div style="color: red; background:    url('https://i.imgur.com/WScAnHr.jpg')">ddewdwed</div>
+        <div style="color: red; background:url('https://i.imgur.com/WScAnHr.jpg')">ddewdwed</div>
+        <span style="color: red; background:url('https://i.imgur.com/WScAnHr.jpg')">ddewdwed</span>`;
+    const BACKGROUND_URL_SAFE = `
+        <span>url('dewd')</span>
+        <span>style="dewdw" url('dewd')</span>
+        <span>dew style="dewdw" url('dewd')</span>
+        <span>dew style="dewdw": url(</span>`
 
     let output;
 
@@ -214,6 +234,83 @@ describe('transformEscape service', () => {
 
         it('should not escape EDGE_CASE', () => {
             expect(output.innerHTML).not.toMatch(/proton-/);
+        });
+
+    });
+
+    describe('No escape EDGE_CASE2', () => {
+
+        beforeEach(() => {
+            output = factory(document.createElement('DIV'), null, {
+                content: EDGE_CASE_2
+            });
+        });
+
+        it('should not escape EDGE_CASE', () => {
+            expect(output.innerHTML).not.toMatch(/proton-/);
+        });
+
+    });
+
+    describe('Escape BACKGROUND_URL', () => {
+
+        beforeEach(() => {
+            output = factory(document.createElement('DIV'), null, {
+                content: BACKGROUND_URL
+            });
+        });
+
+        it('should escape all', () => {
+            const list = output.innerHTML.split('\n').filter(Boolean);
+
+            list.forEach((key) => {
+                expect(key).toMatch(/proton-/);
+            });
+        });
+
+        it('should not break the HTML', () => {
+            const html = factory(document.createElement('DIV'), null, {
+                content: EX_URL
+            });
+            expect(html.innerHTML).toEqual(EX_URL_CLEAN);
+        });
+
+    });
+
+    describe('no scape BACKGROUND_URL -> user.inject', () => {
+
+        beforeEach(() => {
+            output = factory(document.createElement('DIV'), null, {
+                content: BACKGROUND_URL,
+                action: USER_INJECT
+            });
+        });
+
+        it('should not escape anything', () => {
+            expect(output.innerHTML).not.toMatch(/proton-/);
+        });
+
+        it('should not break the HTML', () => {
+            const html = factory(document.createElement('DIV'), null, {
+                content: EX_URL,
+                action: USER_INJECT
+            });
+            expect(html.innerHTML).not.toMatch(/proton-/);
+        });
+
+    });
+
+
+    describe('Ǹot escape BACKGROUND_URL', () => {
+
+        beforeEach(() => {
+            output = factory(document.createElement('DIV'), null, {
+                content: BACKGROUND_URL_SAFE
+            });
+        });
+
+        it('should not escape anything', () => {
+            expect(output.BACKGROUND_URL_SAFE).not.toMatch(/proton-/);
         });
 
     });
