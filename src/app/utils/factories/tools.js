@@ -97,8 +97,8 @@ angular.module('proton.utils')
      * @param {} html
      */
         tools.fixImages = (input) => {
-            const re = new RegExp('(proton-url|proton-src|proton-svg|proton-background|proton-poster)', 'g');
-            return input.replace(re, (match, $1) => $1.substring(7));
+            const re = new RegExp('proton-(url|src|svg|background|poster)', 'g');
+            return input.replace(re, '$1');
         };
 
 

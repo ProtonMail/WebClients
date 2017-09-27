@@ -1,5 +1,6 @@
 angular.module('proton.filter')
     .directive('customFilterList', ($rootScope, authentication, networkActivityTracker, Filter, gettextCatalog, notification, filterModal, confirmModal, eventManager) => {
+
         return {
             replace: true,
             restrict: 'E',

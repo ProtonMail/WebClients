@@ -89,3 +89,4 @@ angular.module('proton.composer')
 
         return { checkSubject, validate };
     });
+
