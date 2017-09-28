@@ -248,6 +248,7 @@
         box-sizing: border-box;
         height: 100%;
         overflow: auto;
+        -webkit-overflow-scrolling: touch;
 
         .angular-squire-wrapper {
             border: 1px solid $border;
