@@ -1,6 +1,7 @@
 angular.module('proton.ui')
     .factory('autocompleteEmailsModel', (authentication, regexEmail, checkTypoEmails, $filter, CONSTANTS) => {
 
+        const { AUTOCOMPLETE_DOMAINS } = CONSTANTS;
         const {
             OPEN_TAG_AUTOCOMPLETE,
             CLOSE_TAG_AUTOCOMPLETE
@@ -20,6 +21,23 @@ angular.module('proton.ui')
                 .replace(/</g, '&lt;')
                 .replace(/>/g, '&gt;')
                 .replace(/"/g, '&quot;');
+        };
+
+        /**
+         * Get a list of default value + most commons domains
+         * @param  {String} value
+         * @return {Array}
+         */
+        const defaultDomainsList = (value = '') => {
+            const [ email, domain = '' ] = value.split('@');
+            return _.chain(AUTOCOMPLETE_DOMAINS)
+                .filter((item) => item.includes(domain.toLowerCase()))
+                .map((domain) => {
+                    const value = `${email}@${domain}`;
+                    return { label: value, value, Name: value };
+                })
+                .first(CONSTANTS.AWESOMEPLETE_MAX_ITEMS)
+                .value();
         };
 
         /**
@@ -78,9 +96,23 @@ angular.module('proton.ui')
             // it creates a map <escaped>:<label> because the lib does not support more keys than label/value and we need the unescaped value #4901
             TEMP_LABELS = collection.reduce((acc, { label, Name }) => (acc[label] = Name, acc), {});
 
+            const hasAutocompletion = !!collection.length;
+
+            if (hasAutocompletion) {
+                return {
+                    list: filterList(collection, value, strictEquality),
+                    hasAutocompletion
+                };
+            }
+
+            if (value.includes('@')) {
+                const list = defaultDomainsList(value);
+                return { list, hasAutocompletion: !!list.length };
+            }
+
             return {
-                list: filterList(collection, value, strictEquality),
-                hasAutocompletion: !!collection.length
+                list: [],
+                hasAutocompletion: false
             };
         };
 

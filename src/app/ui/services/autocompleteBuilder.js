@@ -15,6 +15,7 @@ angular.module('proton.ui')
                     minChars: 1,
                     maxItems: CONSTANTS.AWESOMEPLETE_MAX_ITEMS,
                     autoFirst: true,
+                    sort: false,
                     list: []
                 });
 
