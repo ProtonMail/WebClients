@@ -6,11 +6,11 @@ angular.module('proton.ui')
         const COMMA_KEY = 188;
 
         /**
-     * Get the selected input value configuration
-     * @param  {Object} model Factory autocompleteEmailsModel
-     * @param  {String} value Input value
-     * @return {Object}       {label, value}
-     */
+         * Get the selected input value configuration
+         * @param  {Object} model Factory autocompleteEmailsModel
+         * @param  {String} value Input value
+         * @return {Object}       {label, value}
+         */
         const getConfigEmailInput = (model, value = '') => {
 
             if (regexEmail.test(value)) {
@@ -25,10 +25,10 @@ angular.module('proton.ui')
         };
 
         /**
-     * Get the form value (the input value) onSubmit
-     * @param  {Node} target
-     * @return {String}
-     */
+         * Get the form value (the input value) onSubmit
+         * @param  {Node} target
+         * @return {String}
+         */
         const getFormValue = (target) => {
 
             if (target.nodeName === 'FORM') {
@@ -50,18 +50,18 @@ angular.module('proton.ui')
         };
 
         /**
-     * Check if an input value is splitable, which means it contains emails
-     * separated by a , or ;
-     * @param  {String} value
-     * @return {Boolean}
-     */
+         * Check if an input value is splitable, which means it contains emails
+         * separated by a , or ;
+         * @param  {String} value
+         * @return {Boolean}
+        */
         const isSplitable = (value = '') => value.indexOf(',') > -1 || value.indexOf(';') > -1;
 
         /**
-     * Split emails separated by , or ;
-     * @param  {String} value
-     * @return {Array}
-     */
+         * Split emails separated by , or ;
+         * @param  {String} value
+         * @return {Array}
+         */
         const splitEmails = (value = '') => value.split(/,|;/).filter(Boolean).map((txt) => txt.trim());
 
 
@@ -73,9 +73,9 @@ angular.module('proton.ui')
             const model = autocompleteEmailsModel(scope.list);
 
             /**
-         * Sync the model, bind emails selected
-         * @return {void}
-         */
+             * Sync the model, bind emails selected
+             * @return {void}
+             */
             const syncModel = () => scope.$applyAsync(() => {
                 scope.emails = model.all();
                 scope.list = model.all();
@@ -83,13 +83,13 @@ angular.module('proton.ui')
             syncModel();
 
             const onInput = ({ target }) => {
-            // Only way to clear the input if you add a comma.
+                // Only way to clear the input if you add a comma.
                 target.value === ',' && (target.value = '');
 
                 /**
-             * If there is something before the comma add it to the selected list
-             * Then clear the input, and set the focus onto the input
-             */
+                 * If there is something before the comma add it to the selected list
+                 * Then clear the input, and set the focus onto the input
+                 */
                 if (target.value && isSplitable(target.value)) {
                     splitEmails(target.value)
                         .forEach((value) => model.add({ label: value, value }));
@@ -99,18 +99,21 @@ angular.module('proton.ui')
 
                 // Classic autocompletion
                 const { list, hasAutocompletion } = model.filterContact(target.value);
-
                 hasAutocompletion && (awesomplete.list = list);
 
+                if (!(target.value || '').includes('@')) {
+                    return;
+                }
+
                 // Unselect the autocomplete suggestion if the input value is a valid email
-                if ((target.value || '').indexOf('@')) {
-                    regexEmail.test(target.value) && awesomplete.goto(-1);
+                if (hasAutocompletion && regexEmail.test(target.value)) {
+                    return awesomplete.goto(-1);
                 }
             };
 
             const onClick = ({ target }) => {
 
-            // Reset autocomplete to work only after 1 letter
+                // Reset autocomplete to work only after 1 letter
                 awesomplete.minChars = 1;
 
                 // Click onto a remove button
@@ -121,9 +124,9 @@ angular.module('proton.ui')
                 }
 
                 /**
-             * Click onto the empty input
-             *     Display the autocomplete with a list
-             */
+                 * Click onto the empty input
+                 * Display the autocomplete with a list
+                 */
                 if (target.nodeName === 'INPUT' && !target.value) {
                     awesomplete.minChars = 0;
                     const { list, hasAutocompletion } = model.filterContact(target.value);
@@ -132,11 +135,11 @@ angular.module('proton.ui')
             };
 
             /**
-         * Autodetect the value of the input if you fill it without
-         * the autocomplete
-         * @param  {Event} e
-         * @return {void}
-         */
+             * Autodetect the value of the input if you fill it without
+             * the autocomplete
+             * @param  {Event} e
+             * @return {void}
+             */
             const onSubmit = (e) => {
                 e.preventDefault();
                 const { value, clear } = getFormValue(e.target);
@@ -156,7 +159,7 @@ angular.module('proton.ui')
                 switch (e.keyCode) {
                     case TAB_KEY:
 
-                    // When the autocomplete is opened and selected
+                        // When the autocomplete is opened and selected
                         if (awesomplete.opened && awesomplete.selected) {
                             e.preventDefault();
                             awesomplete.select();
@@ -173,7 +176,7 @@ angular.module('proton.ui')
                         break;
 
                     case BACKSPACE_KEY:
-                    // Remove last autocomplete only if input is empty and list is not
+                        // Remove last autocomplete only if input is empty and list is not
                         if (hasAutocompletion) {
                             model.removeLast();
                             syncModel();
@@ -184,13 +187,13 @@ angular.module('proton.ui')
             };
 
             /**
-         * Auto scroll will be available with the 1.2
-         * Patch extracted from {@link https://github.com/LeaVerou/awesomplete/issues/16875}
-         */
+             * Auto scroll will be available with the 1.2
+             * Patch extracted from {@link https://github.com/LeaVerou/awesomplete/issues/16875}
+             */
             awesomplete.input.addEventListener('blur', onSubmit);
             /**
-         * Update the model when an user select an option
-         */
+             * Update the model when an user select an option
+             */
             awesomplete.replace = function replace(opt) {
                 model.add(opt);
                 this.input.value = '';

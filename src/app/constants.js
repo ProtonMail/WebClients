@@ -145,5 +145,14 @@ angular.module('proton.constants', [])
             SEND_PGP_INLINE: 8,
             SEND_PGP_MIME: 16,
             SEND_MIME: 32
-        }
+        },
+        AUTOCOMPLETE_DOMAINS: [
+            'protonmail.com',
+            'protonmail.ch',
+            'gmail.com',
+            'hotmail.com',
+            'live.com',
+            'yahoo.com',
+            'outlook.com'
+        ]
     });
