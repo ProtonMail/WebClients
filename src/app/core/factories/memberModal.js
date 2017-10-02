@@ -199,7 +199,7 @@ angular.module('proton.core')
                     };
 
                     const updateVPN = () => {
-                        if (self.oldMember && self.oldMember.MaxVPN === vpn) {
+                        if (!self.hasVPN || (self.oldMember && self.oldMember.MaxVPN === vpn)) {
                             return Promise.resolve();
                         }
 
