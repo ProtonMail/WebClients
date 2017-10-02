@@ -204,7 +204,7 @@
                                             <button type="button" class="pm_button link" ng-show="organization.HasKeys === 1" ng-click="editMember(member)" translate-context="Action" translate>Edit</button>
                                             <button type="button" class="pm_button link" ng-show="member.Role === 1" ng-click="changeRole(member, 2)" translate-context="Action" translate>Make Admin</button>
                                             <button type="button" class="pm_button link" ng-show="!member.Self && member.Role === 2" ng-click="changeRole(member, 1)" translate-context="Action" translate>Revoke Admin</button>
-                                            <button type="button" class="pm_button link" ng-show="!member.Self && member.Private === 0 && member.Keys.length > 0" ng-click="login(member)" translate-context="Action" translate>Login</button>
+                                            <button type="button" class="pm_button link" ng-show="!member.Self && member.Private === 0 && member.Keys.length && member.Addresses.length" ng-click="login(member)" translate-context="Action" translate>Login</button>
                                             <button type="button" class="pm_button link" ng-show="member.Private === 0" ng-click="makePrivate(member)" translate-context="Action" translate-context="Action" translate>Make Private</button>
                                         </div>
                                     </div>
