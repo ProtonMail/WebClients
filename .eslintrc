@@ -58,6 +58,7 @@
     "no-bitwise": "off",
     "no-debugger": "off",
     "prefer-template": "off",
-    "class-methods-use-this": "off"
+    "class-methods-use-this": "off",
+    "func-names": ["off", "never"]
   }
 }
