@@ -40,7 +40,10 @@ angular.module('proton.utils')
         const closeNotifications = () => MODEL.notification && MODEL.notification.close();
         const setTimer = (timer = CONSTANTS.INTERVAL_EVENT_TIMER) => MODEL.milliseconds = timer;
         const setEventID = (ID) => manageID(ID);
-        const stop = () => $timeout.cancel(MODEL.promiseCancel);
+        const stop = () => {
+            $timeout.cancel(MODEL.promiseCancel);
+            delete MODEL.promiseCancel;
+        };
         const manageActiveMessage = ({ Messages = [] }) => Messages.length && dispatch('activeMessages', { messages: _.pluck(Messages, 'Message') });
         const isDifferent = (eventID) => MODEL.ID !== eventID;
         const manageID = (id = MODEL.ID) => MODEL.ID = id;

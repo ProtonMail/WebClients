@@ -25,7 +25,8 @@ angular.module('proton.composer')
         messageRequest,
         validateMessage,
         postMessage,
-        sendMessage
+        sendMessage,
+        eventManager
     ) => {
 
         const unsubscribe = [];
@@ -358,11 +359,11 @@ angular.module('proton.composer')
 
 
         /**
-     * Try to send message specified
-     * @param {Object} message
-     */
+         * Try to send message specified
+         * @param {Object} message
+         */
         $scope.send = async (msg) => {
-        // Prevent mutability
+            // Prevent mutability
             const message = messageModel(msg);
             const setStateSending = (is) => (message.sending = is, msg.sending = is);
 
@@ -380,14 +381,17 @@ angular.module('proton.composer')
             dispatchMessageAction(message);
 
             const promise = validateMessage.validate(message)
+                .then(eventManager.stop)
                 .then(() => extractDataURI(message))
                 .then(() => postMessage(message))
                 .then((messageSaved) => (message.ID = messageSaved.ID, message))
                 .then((msg) => sendMessage(msg))
+                .then(eventManager.start)
                 .catch((e) => {
                     setStateSending(false);
                     message.encrypting = false;
                     dispatchMessageAction(message);
+                    eventManager.start();
                     throw new Error(!e.raw ? unicodeTagView(e.message) : e.message);
                 });
             networkActivityTracker.track(promise);

@@ -1,5 +1,5 @@
 angular.module('proton.composer')
-    .factory('sendMessage', (CONSTANTS, messageModel, gettextCatalog, encryptMessage, messageRequest, notify, cache, $rootScope) => {
+    .factory('sendMessage', (CONSTANTS, messageModel, gettextCatalog, encryptMessage, messageRequest, notification, cache, $rootScope) => {
 
         const { STATUS } = CONSTANTS;
         const I18N = {
@@ -39,13 +39,23 @@ angular.module('proton.composer')
         const pipe = async (message, parameters = {}) => {
 
             const { Parent, Sent = {} } = await send(message, parameters);
+
+            $rootScope.$emit('composer.update', {
+                type: 'send.success',
+                data: {
+                    message, // Because we need the ref to close the compose... today
+                    discard: false,
+                    save: false
+                }
+            });
+
             const conversation = cache.getConversationCached(Sent.ConversationID);
-            const numMessages = angular.isDefined(conversation) ? conversation.NumMessages : 1;
-            const contextNumUnread = angular.isDefined(conversation) ? conversation.ContextNumUnread : 0;
+            const NumMessages = angular.isDefined(conversation) ? conversation.NumMessages : 1;
+            const ContextNumUnread = angular.isDefined(conversation) ? conversation.ContextNumUnread : 0;
 
             // The back-end doesn't return Senders nor Recipients
             Sent.Senders = [ Sent.Sender ];
-            Sent.Recipients = _.uniq(message.ToList.concat(message.CCList).concat(message.BCCList));
+            Sent.Recipients = _.uniq(message.ToList.concat(message.CCList, message.BCCList));
 
             // Generate event for this message
             const events = [{ Action: STATUS.UPDATE_FLAGS, ID: Sent.ID, Message: Sent }];
@@ -58,8 +68,7 @@ angular.module('proton.composer')
                 Action: STATUS.UPDATE_FLAGS,
                 ID: Sent.ConversationID,
                 Conversation: {
-                    NumMessages: numMessages,
-                    ContextNumUnread: contextNumUnread,
+                    NumMessages, ContextNumUnread,
                     Recipients: Sent.Recipients,
                     Senders: Sent.Senders,
                     Subject: Sent.Subject,
@@ -69,17 +78,8 @@ angular.module('proton.composer')
                 }
             });
 
+            notification.success(I18N.SEND_SUCCESS);
             cache.events(events, false, true);
-            notify({ message: I18N.SEND_SUCCESS, classes: 'notification-success' });
-
-            $rootScope.$emit('composer.update', {
-                type: 'send.success',
-                data: {
-                    message, // Because we need the ref to close the compose... today
-                    discard: false,
-                    save: false
-                }
-            });
 
             _.delay(() => {
                 $rootScope.$emit('message.open', {
