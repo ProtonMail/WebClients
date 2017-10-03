@@ -1,5 +1,5 @@
 angular.module('proton.attachments')
-    .directive('listAttachments', ($state, $rootScope, attachmentDownloader, notification) => {
+    .directive('listAttachments', ($state, $rootScope, attachmentDownloader, notification, AppModel) => {
 
         const DECRYPTING_CLASSNAME = 'listAttachments-item-decrypt';
         const DOWNLOADED_CLASSNAME = 'listAttachments-item-download';
@@ -44,7 +44,7 @@ angular.module('proton.attachments')
                             })
                             .catch((error) => {
                                 target.classList.remove(DECRYPTING_CLASSNAME);
-                                notification.error(error);
+                                AppModel.is('onLine') && notification.error(error);
                             });
                     }
 
