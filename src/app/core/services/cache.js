@@ -828,9 +828,9 @@ angular.module('proton.core')
         * Update a conversation
         */
         api.updateFlagConversation = (event = {}) => {
-            const current = _.findWhere(conversationsCached, { ID: event.ID });
+            const { loaded } = _.findWhere(conversationsCached, { ID: event.ID }) || {};
 
-            if (current && current.loaded) {
+            if (loaded) {
                 updateConversation(event.Conversation);
                 return Promise.resolve();
             }
@@ -942,6 +942,12 @@ angular.module('proton.core')
 
                     if (hasType) {
                         event[type].ID = event.ID;
+
+                        // NOTE Receiving an event update from the BE means the model stored in the cache is invalid
+                        if (fromBackend && event.Action === UPDATE_DRAFT) {
+                            event[type].loaded = false;
+                        }
+
                         acc[`${type}IDs`].push(event.ID);
                         (event.Action === CREATE) && acc.flow.create.push({ event, type });
                         (event.Action === UPDATE_DRAFT) && acc.flow.update.push({ event, type, isSend, item: 'Draft' });
