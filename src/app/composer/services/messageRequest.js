@@ -9,7 +9,14 @@ angular.module('proton.composer')
 
         const dispatch = (type, data = {}) => $rootScope.emit('composer.update', { type, data });
 
+
         function getSendError(data) {
+
+            // The API can return the error via a 4X or via 2X...
+            if (_.has(data, 'data')) {
+                return getSendError(data.data);
+            }
+
             if (data.ErrorDescription) {
                 return new Error(`${data.Error}: ${data.ErrorDescription}`);
             }
