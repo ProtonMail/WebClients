@@ -1,6 +1,7 @@
 <div class="autoresponderMessageContainer" ng-class="{
     autoresponderHalfFull: message.length > halfMessageLength,
-    autoresponderFull: message.length >= maxMessageLength
+    autoresponderFull: message.length >= maxMessageLength,
+    autoresponderEmpty: isEmpty(message)
     }">
     <div class="autoresponderMessageDisabler" ng-if="disabled"></div>
     <squire
@@ -11,6 +12,9 @@
         data-value="message"
         data-type-content="OOF-Message"
     ></squire>
+    <div class="autoresponderEmptyMessage" translate translate-context="Autoresponder empty">
+        The auto reply message cannot be empty.
+    </div>
     <div class="autoresponderCharacters autoresponderLengthWarning">
         <span class="autoresponderCharacterCount">{{message.length}}</span>/{{maxMessageLength - 1}} <span translate>bytes used</span>
     </div>

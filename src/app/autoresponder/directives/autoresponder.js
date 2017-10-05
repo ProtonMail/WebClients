@@ -37,11 +37,15 @@ angular.module('proton.autoresponder')
                     daysSelected: { 0: true, 1: true, 2: true, 3: true, 4: true, 5: true, 6: true }
                 };
 
+                const isEmpty = (message) => message !== null && $(message).text().trim().length === 0;
+
                 scope.isValid = () => {
                     return !scope.model.isEnabled || (
-                        (scope.model.message === null || scope.model.message.length < autoresponderModel.constants.MAX_MESSAGE_LENGTH)
+                        !isEmpty(scope.model.message)
+                        && scope.model.message.length < autoresponderModel.constants.MAX_MESSAGE_LENGTH
                         && (scope.model.repeat === autoresponderModel.constants.FOREVER ||
-                        (scope.model.startTime !== null && scope.model.endTime !== null)));
+                            (scope.model.startTime !== null && scope.model.endTime !== null))
+                    );
                 };
 
                 const onFormSubmit = () => {

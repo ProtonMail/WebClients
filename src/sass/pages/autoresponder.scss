@@ -1,9 +1,13 @@
 
-.autoresponderCharacters {
+.autoresponderCharacters, .autoresponderEmptyMessage {
     display: none;
 }
-.autoresponderMessageTooLong {
+.autoresponderMessageTooLong, .autoresponderEmptyMessage {
     color: $red;
+}
+
+.autoresponderEmpty > .autoresponderEmptyMessage {
+    display: block;
 }
 
 .autoresponderFull > .autoresponderMessageTooLong,

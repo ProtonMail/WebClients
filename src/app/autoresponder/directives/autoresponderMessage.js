@@ -14,6 +14,7 @@ angular.module('proton.autoresponder')
                 scope.disabled = disabled === 'true';
                 scope.halfMessageLength = autoresponderModel.constants.HALF_MESSAGE_LENGTH;
                 scope.maxMessageLength = autoresponderModel.constants.MAX_MESSAGE_LENGTH;
+                scope.isEmpty = (message) => message !== null && $(message).text().trim().length === 0;
 
                 unsubscribe.push($rootScope.$on('autoresponder', (event, { type, data = {} }) => {
                     if (type === 'update') {
