@@ -1,7 +1,7 @@
 angular.module('proton.core')
     .factory('deleteAccountModal', (pmModal, Bug, User, networkActivityTracker, authentication, $state, CONSTANTS, gettextCatalog, notification) => {
         const I18N = {
-            invalidForm: gettextCatalog.getString('Invalid form', null, 'Error reported when the delete account form is invalid')
+            invalidForm: gettextCatalog.getString('Invalid email address or password', null, 'Error reported when the delete account form is invalid')
         };
         function report(params, isAdmin) {
             if (isAdmin) {
