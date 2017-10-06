@@ -26,8 +26,15 @@
     .paymentsModal-btn-cancel,
     .paymentsModal-btn-submit { display: none }
 
+    .modal-dialog .modal-content .modal-body { box-shadow: none }
+
     .paymentsModal-group-btn { display: flex }
     .paymentsModal-btn-close { margin-left: auto  }
+
+    .modal-dialog .modal-content h3 {
+        text-transform: uppercase;
+        color: $primary;
+    }
 
 }
 
