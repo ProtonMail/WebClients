@@ -10,6 +10,8 @@ angular.module('proton.commons')
             (previous !== value) && dispatch(key, { value });
         };
         const is = (key = '') => !!MODEL[key];
+        const get = (key = '') => MODEL[key];
+        const store = (key = '', value) => (MODEL[key] = value);
 
-        return { is, set };
+        return { is, set, store, get };
     });

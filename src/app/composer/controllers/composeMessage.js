@@ -35,6 +35,21 @@ angular.module('proton.composer')
         $scope.messages = [];
         $scope.uid = 1;
 
+        /**
+         * Store ids of current openned composer
+         * @param  {String} ID    ID of the message
+         * @param  {Boolean} clear to remove the ID
+         * @return {void}
+         */
+        const commitComposer = ({ ID, ConversationID }, clear) => {
+            const list = AppModel.get('composerList') || [];
+
+            if (!clear) {
+                return AppModel.store('composerList', (list.push({ ID, ConversationID }), list));
+            }
+            AppModel.store('composerList', list.filter((item) => item.ID !== ID));
+        };
+
         // Listeners
         unsubscribe.push($scope.$watch('messages.length', () => {
             if ($scope.messages.length > 0) {
@@ -129,6 +144,7 @@ angular.module('proton.composer')
                     .then((message) => {
                         message.clearTextBody()
                             .then(() => initMessage(message))
+                            .then(() => commitComposer(message))
                             .catch(notification.error);
                     });
             }
@@ -136,6 +152,10 @@ angular.module('proton.composer')
 
         unsubscribe.push($rootScope.$on('composer.update', (e, { type, data }) => {
             switch (type) {
+
+                case 'loaded':
+                    commitComposer(data.message);
+                    break;
 
                 case 'key.autosave':
                     $scope.$applyAsync(() => {
@@ -455,7 +475,7 @@ angular.module('proton.composer')
      * @return {Array}
      */
         function removeMessage(list, message) {
-            return _.filter(list, (item) => message.uid !== item.uid);
+            return list.filter((item) => message.ID !== item.ID);
         }
 
         /**
@@ -467,11 +487,13 @@ angular.module('proton.composer')
         $scope.close = closeComposer;
         function closeComposer(msg, discard, save) {
             const message = messageModel(msg);
+
             const process = () => {
             // Remove message in composer controller
                 $scope.messages = removeMessage($scope.messages, message);
                 composerRequestModel.clear(message);
                 outsidersMap.remove(message.ID);
+                commitComposer(message, true);
 
                 // Hide all the tooltip
                 $('.tooltip').not(this).hide();

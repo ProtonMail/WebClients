@@ -42,7 +42,7 @@ angular.module('proton.conversation')
             cache.addToDispatcher(promise);
 
             if (!tools.cacheContext()) {
-                promise.then(eventManager.call());
+                promise.then(eventManager.call);
                 return networkActivityTracker.track(promise);
             }
 
@@ -55,6 +55,7 @@ angular.module('proton.conversation')
             }, []);
 
             cache.events(events);
+            return promise;
         }
 
         /**

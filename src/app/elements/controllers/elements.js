@@ -24,9 +24,11 @@ angular.module('proton.elements')
         Label,
         networkActivityTracker,
         paginationModel,
+        messageActions,
         settingsApi,
         AppModel,
         markedScroll,
+        removeElement,
         tools
     ) => {
         const unsubscribes = [];
@@ -647,37 +649,8 @@ angular.module('proton.elements')
             }
         };
 
-        /**
-     * Delete elements selected
-     */
         $scope.delete = () => {
-            const title = gettextCatalog.getString('Delete', null, 'Title');
-            const message = gettextCatalog.getString('Are you sure? This cannot be undone.', null, 'Info');
-
-            confirmModal.activate({
-                params: {
-                    title,
-                    message,
-                    confirm() {
-                        const type = getTypeSelected();
-                        const ids = idsSelected();
-
-                        if (type === 'conversation') {
-                            actionConversation.remove(ids);
-                        } else if (type === 'message') {
-                            $rootScope.$emit('messageActions', { action: 'delete', data: { ids } });
-                        }
-
-                        $rootScope.showWelcome = false;
-                        $rootScope.numberElementChecked = 0;
-                        confirmModal.deactivate();
-                        redirectUser();
-                    },
-                    cancel() {
-                        confirmModal.deactivate();
-                    }
-                }
-            });
+            removeElement({ getElementsSelected, idsSelected, getTypeSelected });
         };
 
         function redirectUser() {

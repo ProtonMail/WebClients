@@ -591,12 +591,14 @@ angular.module('proton.message')
             cache.addToDispatcher(promise);
 
             if (tools.cacheContext() === true) {
-                return cache.events(events);
+                cache.events(events);
+                return promise;
             }
 
             // Send cache events
             promise.then(() => cache.events(events));
             networkActivityTracker.track(promise);
+            return promise;
         }
 
         /**
