@@ -1,5 +1,6 @@
 angular.module('proton.message')
     .factory('displayContent', ($rootScope, $q, $filter, prepareContent, sanitize) => {
+        const read = ({ ID }) => $rootScope.$emit('messageActions', { action: 'read', data: { ids: [ID] } });
 
         function decrypt(message) {
             message.decrypting = true;
@@ -36,21 +37,16 @@ angular.module('proton.message')
             return content;
         }
 
-        function read({ ID }) {
-            $rootScope.$emit('messageActions', { action: 'read', data: { ids: [ID] } });
-        }
-
         return (message, body) => {
+            read(message);
 
             if (body) {
-                read(message);
                 return $q.when(withType(body, message));
             }
 
             return decrypt(message)
                 .then((body) => withType(body, message))
                 .then((content) => clean(content))
-                .then((content) => prepare(content, message))
-                .then((content) => (read(message), content));
+                .then((content) => prepare(content, message));
         };
     });
