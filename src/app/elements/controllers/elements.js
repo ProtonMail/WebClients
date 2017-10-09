@@ -34,9 +34,6 @@ angular.module('proton.elements')
         const unsubscribes = [];
         let unbindWatcherElements;
         const MINUTE = 60 * 1000;
-
-        const isRowModeOpen = () => $state.params.id && authentication.user.ViewLayout === CONSTANTS.ROW_MODE;
-
         const id = setInterval(() => {
             $rootScope.$emit('elements', { type: 'refresh.time' });
         }, MINUTE);
@@ -595,11 +592,6 @@ angular.module('proton.elements')
      * @return {Array}
      */
         function idsSelected() {
-
-            if (isRowModeOpen()) {
-                return [$state.params.id];
-            }
-
             return _.pluck(getElementsSelected(), 'ID');
         }
 
