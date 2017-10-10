@@ -18,7 +18,9 @@ angular.module('proton.composer')
 
         async function validate(message) {
 
-            message.setDecryptedBody(tools.fixImages(message.getDecryptedBody()));
+            if (message.MIMEType !== 'text/plain') {
+                message.setDecryptedBody(tools.fixImages(message.getDecryptedBody()));
+            }
 
             // We delay the validation to let the time for the autocomplete
             // Check if there is an attachment uploading

@@ -15,9 +15,21 @@ angular.module('proton.composer')
             };
 
             const onKeydown = _.throttle((e) => {
-                const { editor } = editorModel.find(scope.message);
+                if (e.which !== 9) {
+                    return;
+                }
                 // TAB
-                if (e.which === 9 && editor) {
+
+                if (scope.message.MIMEType === 'text/plain') {
+                    // todo make this an event?
+                    e.preventDefault();
+                    el.parents('.composer').find('textarea').focus();
+                    return;
+                }
+
+                const { editor } = editorModel.find(scope.message);
+
+                if (editor && scope.message.MIMEType !== 'text/plain') {
                     e.preventDefault();
                     editor.focus();
                 }

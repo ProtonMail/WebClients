@@ -48,6 +48,7 @@
         <div id="message-body" data-embedded-img-loader data-inject-message-media>
             <div
                 class="bodyDecrypted email"
+                ng-class="{'plain': message.isPlainText() }"
                 render-message-body
                 ng-if="body"
                 toggle-blockquote

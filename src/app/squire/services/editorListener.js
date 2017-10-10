@@ -1,7 +1,7 @@
 angular.module('proton.squire')
-    .factory('editorListener', (signatureBuilder, embedded, attachmentFileFormat, squireExecAction, $rootScope, authentication, editorDropzone, removeInlineWatcher, $state, CONSTANTS) => {
+    .factory('editorListener', (signatureBuilder, embedded, attachmentFileFormat, squireExecAction, $rootScope, authentication, editorDropzone, removeInlineWatcher, $state, CONSTANTS, aboutClient) => {
 
-        const isMac = navigator.userAgent.indexOf('Mac OS X') !== -1;
+        const isMac = aboutClient.getOS() === 'osx';
 
         // Delay before updating the model as the process is slow
         const TIMEOUTAPP = 300;
@@ -95,6 +95,10 @@ angular.module('proton.squire')
             return $rootScope.$on(key, (e, { type, data }) => {
 
                 if (!isSameMessage(message, data)) {
+                    return;
+                }
+
+                if (message.MIMEType === 'plain/text') {
                     return;
                 }
 

@@ -1,5 +1,5 @@
 angular.module('proton.squire')
-    .directive('squirePopover', ($rootScope) => {
+    .directive('squirePopover', ($rootScope, onCurrentMessage) => {
 
         const dispatch = (data) => {
             $rootScope.$emit('squire.editor', {
@@ -12,8 +12,9 @@ angular.module('proton.squire')
             return list.reduce((acc, { name, value }) => (acc[name] = value, acc), {});
         };
 
-        const onAction = (scope, action, name) => ({ keyCode, target, type }) => {
+        const onAction = (scope, action, name) => (e) => {
 
+            const { keyCode, target, type } = e;
             const message = scope.message;
             const reset = () => {
                 scope.$applyAsync(() => {
@@ -30,6 +31,8 @@ angular.module('proton.squire')
             }
 
             if (keyCode === 27) {
+                e.preventDefault();
+                e.stopPropagation();
                 dispatch({
                     message,
                     name, action: 'close',
@@ -40,20 +43,45 @@ angular.module('proton.squire')
         };
 
         return {
-            link(scope, el, attr) {
+            link(scope, el, { name, action }) {
 
-                const onSubmit = onAction(scope, 'update', attr.name);
-                const onReset = onAction(scope, 'remove', attr.name);
-                const onKeyUp = onAction(scope, 'close', attr.name);
+                const unsubscribe = [];
+                const CLASSNAME_HIDDEN = `${name}-hidden`;
+                const hide = () => !el[0].classList.contains(CLASSNAME_HIDDEN) && el[0].classList.add(CLASSNAME_HIDDEN);
+
+                const onSubmit = onAction(scope, 'update', name);
+                const onReset = onAction(scope, 'remove', name);
+                const onKeyUp = onAction(scope, 'close', name);
+
+                const closeDropdown = ({ target }) => {
+                    if (!el[0].contains(target) && !target.hasAttribute('data-squire-details')) {
+                        hide();
+                    }
+                };
+
+                unsubscribe.push(onCurrentMessage('squire.editor', scope, (type, data) => {
+                    if (type === 'squire.native.action' || type === 'squireActions') {
+                        (data.action !== action) && hide();
+                    }
+                }));
+
+                unsubscribe.push(onCurrentMessage('composer.update', scope, (type) => {
+                    (type === 'editor.focus') && hide();
+                }));
 
                 el.on('submit', onSubmit);
                 el.on('reset', onReset);
                 el.on('keyup', onKeyUp);
+                document.addEventListener('click', closeDropdown);
+
+                unsubscribe.push(() => el.off('submit', onSubmit));
+                unsubscribe.push(() => el.off('reset', onReset));
+                unsubscribe.push(() => el.off('keyup', onKeyUp));
+                unsubscribe.push(() => document.removeEventListener('click', closeDropdown));
 
                 scope.$on('$destroy', () => {
-                    el.off('submit', onSubmit);
-                    el.off('reset', onReset);
-                    el.off('keyup', onKeyUp);
+                    unsubscribe.forEach((cb) => cb());
+                    unsubscribe.length = 0;
                 });
             }
         };

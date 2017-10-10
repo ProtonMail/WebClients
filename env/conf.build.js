@@ -73,9 +73,9 @@ module.exports = {
       "vendor/fingerprintjs2/fingerprint2.js",
       "vendor/bcryptjs/dist/bcrypt.js",
       "vendor/nouislider/distribute/nouislider.js",
-      "vendor/ua-parser-js/dist/ua-parser.min.js",
-      "vendor/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.concat.min.js",
-      "vendor/ng-scrollbars/dist/scrollbars.min.js",
+      "vendor/ua-parser-js/src/ua-parser.js",
+      "vendor/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.js",
+      "vendor/ng-scrollbars/src/scrollbars.js",
       "vendor/sieve/sieve.js",
       'vendor/intl-tel-input/build/js/intlTelInput.js',
       'vendor/intl-tel-input/build/js/utils.js',
@@ -88,7 +88,8 @@ module.exports = {
       'vendor/cssua/cssua.js',
       'vendor/asmcrypto/asmcrypto.js',
       'vendor/babel-polyfill/dist/polyfill.js',
-      'vendor/pmcrypto/build/pmcrypto.js'
+      'vendor/pmcrypto/build/pmcrypto.js',
+      'vendor/markdown-it/dist/markdown-it.min.js'
     ],
     bootstrap_components: [
       "affix",

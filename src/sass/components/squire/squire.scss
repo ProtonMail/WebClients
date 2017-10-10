@@ -31,3 +31,20 @@
     border-color: $red !important;
     border-width: 2rem;
 }
+
+.plaintext-editor {
+    flex: 1;
+    width: 100%;
+    box-sizing: border-box;
+    z-index: 50;
+    margin: 0;
+    outline: none;
+    resize: none;
+    border: none;
+    padding: 1rem 10px 1rem 10px;
+    font-family: monospace;
+}
+
+.composer[data-type="text/plain"] .angular-squire-wrapper {
+    opacity: 0
+}

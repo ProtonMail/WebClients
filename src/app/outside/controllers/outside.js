@@ -13,6 +13,7 @@ angular.module('proton.outside')
         messageData,
         notification,
         pmcw,
+        textToHtmlMail,
         networkActivityTracker,
         secureSessionStorage,
         attachmentModelOutside,
@@ -38,10 +39,19 @@ angular.module('proton.outside')
             return prepareContent(content, message);
         }
 
+        const plaintextToHTML = (plaintext) => {
+            return $state.is('eo.reply') ? textToHtmlMail.parse(plaintext) : $('<div>').html(plaintext).text();
+        };
+
         function initialization() {
+            if (message.isPlainText()) {
+                message.setDecryptedBody(plaintextToHTML(message.getDecryptedBody()));
+            }
+
             if ($state.is('eo.reply')) {
                 message.showImages = true;
                 message.showEmbedded = true;
+                message.MIMEType = 'text/html';
             }
 
             message.setDecryptedBody(clean(message.getDecryptedBody()));
@@ -60,6 +70,7 @@ angular.module('proton.outside')
                         Keys: [{ PublicKey: message.publicKey }]
                     };
                     $scope.message = message;
+                    $scope.isPlain = message.isPlainText();
                     $scope.body = message.getDecryptedBody();
                 });
 

@@ -161,7 +161,8 @@ angular.module('proton.attachments')
                     id: REQUEST_ID,
                     messageID: message.ID,
                     packet: tempPacket,
-                    total
+                    total,
+                    message
                 });
 
                 // remove the current request as it's resolved

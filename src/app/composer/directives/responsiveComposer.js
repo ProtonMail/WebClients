@@ -12,7 +12,7 @@ angular.module('proton.composer')
 
             const width = window.innerWidth;
             const height = window.innerHeight;
-            const isSmall = (width <= 640 || height <= 500);
+            const isSmall = (width <= 640 || height <= 600);
 
             // If the composer is maximized do nothing, keep this state
             if (scope.message.maximized && !latestState.isSmall) {

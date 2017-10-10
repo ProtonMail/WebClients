@@ -1,6 +1,8 @@
 angular.module('proton.squire')
     .factory('squireExecAction', (editorModel, $rootScope) => {
 
+        const dispatch = (type, data = {}) => $rootScope.$emit('squire.editor', { type, data });
+
         $rootScope.$on('squire.editor', (e, { type, data }) => {
             (type === 'squireActions') && onAction(data);
         });
@@ -85,6 +87,12 @@ angular.module('proton.squire')
             });
         };
 
+        const changeColor = (message, color, mode = 'color') => {
+            const { editor } = editorModel.find(message);
+            const key = (mode === 'color') ? 'setTextColour' : 'setHighlightColour';
+            editor[key](color);
+        };
+
         /**
          * Insert an image inside the editor
          * @param  {Message} message
@@ -116,12 +124,12 @@ angular.module('proton.squire')
          * @param  {Message} options.message Current message
          * @return {void}
          */
-        function onAction({ action, message }) {
+        function onAction({ action, argument = {}, message }) {
             const { editor } = editorModel.find(message);
             const tests = testMap(editor, action);
 
             // We have custom behaviour for these actions
-            if (action === 'makeLink' || action === 'insertImage') {
+            if (/^(makeLink|insertImage|changeColor)$/.test(action)) {
                 return;
             }
 
@@ -133,11 +141,12 @@ angular.module('proton.squire')
                 actions.forEach((key) => editor[key]());
             } else {
                 // Perform the action
-                editor[action]();
+                (action !== 'setEditorMode') && editor[action](argument.value);
+                dispatch('squire.native.action', { action, argument, message });
             }
 
             editor.focus();
         }
-        return { makeLink, removeLink, insertImage };
+        return { makeLink, removeLink, insertImage, changeColor };
 
     });

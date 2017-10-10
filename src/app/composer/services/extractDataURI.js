@@ -30,6 +30,11 @@ angular.module('proton.composer')
         * @return {Promise}
         */
         async function extractDataURI(message) {
+
+            if (message.MIMEType === 'text/plain') {
+                return message;
+            }
+
             const content = message.getDecryptedBody();
             const testDiv = document.createElement('DIV');
 

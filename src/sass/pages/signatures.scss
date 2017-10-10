@@ -52,3 +52,22 @@ label.settingsSignatures-label-active {
 .appConfigBody-is-mobile .activeAddresses-badge { flex: 1 }
 
 .appConfigBody-is-mobile .activeAddresses-badge { justify-content: flex-end }
+
+[id="secured-signatures"] {
+    .squireToolbar-select-list {
+        min-height: 7em;
+    }
+
+    .squireToolbar-font-family {
+        width: 150px;
+        right: 0;
+        left: -50px;
+    }
+
+    .colorPopover-container .colorPopover-header [class*='colorPopover-title'] {
+        font-size: 1.2em
+    }
+    .squireToolbar-container { border-width: 1px 1px 0 1px }
+    [class*="squireToolbar-action-"] { padding: 0 }
+    .squireToolbar-text-mode { display: none }
+}

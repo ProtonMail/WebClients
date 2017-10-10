@@ -1,0 +1,23 @@
+<div class="plainTextSelectToggle-container" data-editor-mode="{{::message.MIMEType}}">
+    <div class="squireToolbar-select-view squireToolbar-action-mode">
+        <i class="plain-text-icon"></i>
+        <i class="fa fa-file-text"></i>
+        <button
+            type="button"
+            class="squireDropdown-item-label squireToolbar-action-modeEditor"
+            pt-tooltip-translate-context="Action"
+            pt-tooltip-translate="Switch Default/Plaintext mode"></button>
+            <i class="fa fa-angle-down"></i>
+            <i class="fa fa-angle-up"></i>
+    </div>
+    <ul class="squireToolbar-select-list squireToolbar-editor-mode" data-squire-actions="setEditorMode" data-squire-actions-select="true">
+        <li class="squireToolbar-select-item" data-value="text/html">
+            <i class="fa fa-file-text"></i>
+            <span translate-context="Composer Mode" translate>Normal</span>
+        </li>
+        <li class="squireToolbar-select-item" data-value="text/plain">
+            <i class="plain-text-icon"></i>
+            <span translate-context="Composer Mode" translate>Plain Text</span>
+        </li>
+    </ul>
+</div>

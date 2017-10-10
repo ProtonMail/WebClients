@@ -65,7 +65,7 @@
     "openpgp": "2.5.11",
     "nouislider": "^9.1.0",
     "ng-scrollbars": "^0.0.11",
-    "malihu-custom-scrollbar-plugin": "^3.1.5",
+    "malihu-custom-scrollbar-plugin": "https://github.com/ProtonMail/malihu-custom-scrollbar-plugin.git#feat/fixUpdateTimeout",
     "ng-pikaday": "https://github.com/ProtonMail/ng-pikaday.git#master",
     "ua-parser-js": "^0.7.12",
     "jquery-timepicker-wvega": "https://github.com/KAYLukas/timepicker.git#patch-1",
@@ -75,12 +75,14 @@
     "ng-intl-tel-input": "^2.0.0",
     "file-saver": "^1.3.3",
     "asmcrypto": "^0.0.11",
-    "hi-base32": "^0.2.0"
+    "hi-base32": "^0.2.0",
+    "markdown-it": "^8.4.0"
   },
   "resolutions": {
     "angular": "~1.6.2",
     "angular-cookies": "~1.6.1",
     "moment": ">= 2.9.0",
-    "intl-tel-input": "^12.0.0"
+    "intl-tel-input": "^12.0.0",
+    "malihu-custom-scrollbar-plugin": "feat/fixUpdateTimeout"
   }
 }

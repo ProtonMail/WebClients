@@ -257,12 +257,21 @@
                 flex:1;
                 max-width: 100%;
             }
+        }
+        .squireToolbar-select-list {
+            min-height: 7em;
+        }
 
+        .squireToolbar-font-family {
+            width: 150px;
+            right: 0;
+            left: -50px;
         }
 
 
         .squireToolbar-container { border-width: 1px 1px 0 1px }
         [class*="squireToolbar-action-"] { padding: 0 }
+        .squireToolbar-text-mode { display: none }
 
         .pm_buttons .fa.fa-angle-down {
             padding: 0 .5rem;
@@ -580,7 +589,6 @@ body.appConfigBody-is-mobile {
 
 [name="signature"] .squire-popover {
     font-size: .9em;
-    width: 20em;
 
     [class*="-panel"] {
         padding: .5em 1em;
@@ -595,6 +603,18 @@ body.appConfigBody-is-mobile {
         margin: 0
     }
     [class*="-footer"] { padding: .5em 1em }
+}
+
+[name="signature"] {
+    position: relative;
+    z-index: 0; /* maximized composer toolbar*/
+
+    .squireSelectColor-container { position: static }
+    .colorPopover-selection { display: none }
+    .colorPopover-panel { padding-top: 0 !important }
+    .squire-popover.squire-popover-second {
+        transform: scale(.85) translate(0, -20px);
+    }
 }
 
 .ua-ie-11 [name="signature"] .squire-popover [class*="-input"] { padding: .3em 1em }
