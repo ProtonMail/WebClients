@@ -1,0 +1,34 @@
+.colorList-container {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+.colorList-list {
+    display: flex;
+    margin: 0;
+    padding: 0;
+    list-style: none
+}
+.colorList-list + .colorList-list { margin-top: 1px }
+
+.colorList-item { background: currentColor }
+
+.colorList-btn-choose {
+    background: transparent;
+    padding: 0;
+    margin: 0;
+    width: $sizeColorListItem;
+    height: $sizeColorListItem;
+    border: 0;
+}
+
+.colorList-btn-choose .fa {
+    pointer-events: none;
+    opacity: 0;
+    color: inherit;
+    filter: invert(100%) brightness(500%);
+}
+.colorList-btn-choose:hover .fa,
+.colorList-btn-choose.active .fa,
+[data-is-empty] .colorList-item:first-child .fa { opacity: 1 }

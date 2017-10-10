@@ -29,7 +29,7 @@ angular.module('proton.composer')
 
         const makeParams = (message, autosaving) => {
             const parameters = {
-                Message: _.pick(message, 'ToList', 'CCList', 'BCCList', 'Subject', 'IsRead')
+                Message: _.pick(message, 'ToList', 'CCList', 'BCCList', 'Subject', 'IsRead', 'MIMEType')
             };
             parameters.Message.Subject = parameters.Message.Subject || '';
 
@@ -159,7 +159,7 @@ angular.module('proton.composer')
                     direction: 'cid',
                     isOutside: outsidersMap.get(message.ID)
                 });
-                message.setDecryptedBody(body);
+                message.setDecryptedBody(body, !message.isPlainText());
 
                 const encryptedBody = await message.encryptBody(message.From.Keys[0].PublicKey);
                 const actionType = message.ID ? STATUS.UPDATE : STATUS.CREATE;

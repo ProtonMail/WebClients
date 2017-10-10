@@ -552,6 +552,7 @@ angular.module('proton.authentication')
                             .then(() => Promise.resolve(user));
                     }
                 }
+                AppModel.set('editorMode', user.DraftMIMEType || 'text/html');
 
                 return user;
             })

@@ -1,0 +1,23 @@
+<div class="squireSelectColor-container">
+
+    <button
+        type="button"
+        class="squireToolbar-action-color"
+        pt-tooltip-translate-context="Action"
+        pt-tooltip-translate="Change color"
+        data-squire-details="popover.form"
+        data-squire-actions="changeColor">
+        <i class="fa fa-font" aria-hidden="true"></i>
+        <i class="fa fa-angle-down"></i>
+    </button>
+
+    <form
+        novalidate
+        data-squire-popover
+        data-action="changeColor"
+        name="changeColor"
+        class="squire-popover squire-popover-second squireSelectColor-popover changeColor-hidden">
+        <color-popover></color-popover>
+        <color-popover data-mode="highlight"></color-popover>
+    </form>
+</div>

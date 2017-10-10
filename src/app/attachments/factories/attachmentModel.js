@@ -264,13 +264,15 @@ angular.module('proton.attachments')
                     const attConf = getConfigMapAttachment(id, attachment);
                     const state = angular.extend({}, attConf || data, { message, attachment, id });
 
-                    if (packet.Inline === 1) {
+                    if (packet.Inline === 1 && message.MIMEType !== 'text/plain') {
                         // Attachment removed, may remove embedded ref from the editor too
                         dispatch('remove.embedded', state);
                     }
                     message.removeAttachment(attachment);
                     dispatch('remove.success', state);
                     cleanMap(state);
+                }).catch((exception) => {
+                    dispatch('remove.error', { message, exception });
                 });
         }
 

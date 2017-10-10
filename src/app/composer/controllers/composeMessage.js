@@ -203,7 +203,9 @@ angular.module('proton.composer')
         }));
 
         unsubscribe.push($rootScope.$on('attachment.upload', (e, { type, data }) => {
-            (type === 'remove.success') && postMessage(data.message, { autosaving: true });
+            if (type === 'remove.success' && data.message.MIMEType !== 'text/plain') {
+                postMessage(data.message, { autosaving: true });
+            }
         }));
 
         const onResize = _.debounce(() => {

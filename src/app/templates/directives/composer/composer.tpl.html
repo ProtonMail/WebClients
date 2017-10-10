@@ -49,10 +49,12 @@
                 ng-show="message.focussed"></div>
 
             <squire
-                data-message="message"
-                allow-embedded="true"
                 class="composer-editor"
-                ng-click="attHide(message); message.autocompletesFocussed = false;"></squire>
+                data-message="message"
+                data-allow-embedded="true"
+                ng-click="attHide(message); message.autocompletesFocussed = false;"
+            ></squire>
+
         </div>
     </section>
 

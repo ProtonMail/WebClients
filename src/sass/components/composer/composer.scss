@@ -115,6 +115,11 @@
           flex-direction: column;
         }
 
+        /*
+         * Make the editor have a 0 height if plaintext editor is visible.
+         */
+        &[data-type="text/plain"] .angular-squire-wrapper { flex: 0 !important }
+
         .angular-squire-wrapper {
             overflow: auto;
             -webkit-overflow-scrolling: touch;
@@ -184,6 +189,13 @@
                 position: relative;
                 top: 5px;
             }
+        }
+
+        .plain-text-icon {
+            display: inline-block;
+            width: 17px;
+            height: 17px;
+            background: url("/assets/img/plaintext.svg") no-repeat center;
         }
 
         .squire-popover-overlay {
@@ -431,6 +443,8 @@
                 height: $composerRowHeight;
                 padding: 0 1rem;
                 background: $white;
+                border: 1px solid $border;
+                box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
                 &.primary {
                     background: $primary;
                 }

@@ -109,7 +109,7 @@ angular.module('proton.composer')
             const packageSet = {
                 Type: 0,
                 Addresses: {},
-                MIMEType: 'text/html',
+                MIMEType: message.MIMEType || 'text/html',
                 Body: pmcw.encode_base64(pmcw.arrayToBinaryString(dataPacket[0]))
             };
 

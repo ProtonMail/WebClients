@@ -44,7 +44,8 @@
 
     <hr>
 
-    <div style="padding: 1rem;" class="bodyDecrypted" ng-bind-html="content"></div>
+    <div style="padding: 1rem;" class="bodyDecrypted" ng-bind-html="content" ng-if="message.MIMEType === 'text/html'"></div>
+    <div style="padding: 1rem;" class="bodyDecrypted plain" ng-bind="message.DecryptedBody" ng-if="message.MIMEType === 'text/plain'"></div>
 
     <list-attachments class="list-attachments-print" ng-if="message.NumAttachments > 0" data-model="message"></list-attachments>
 </div>

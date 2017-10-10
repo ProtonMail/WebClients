@@ -154,5 +154,18 @@ angular.module('proton.constants', [])
             'live.com',
             'yahoo.com',
             'outlook.com'
-        ]
+        ],
+        FONT_SIZE: {
+            small: 8,
+            normal: 14,
+            large: 20,
+            huge: 26
+        },
+        FONT_COLOR: {
+            white: [ '#FFFFFF', '#E5E5E5', '#CCCCCC', '#B3B3B3', '#5A5A5A', '#404041', '#222222'],
+            magenta: [ '#FF0615', '#E12126', '#CE2E30', '#B43D3F', '#A03E3F', '#864547', '#864547'],
+            blue: [ '#0063FA', '#1266E0', '#2363C6', '#2D60AD', '#375D93', '#3B5476', '#34435A'],
+            green: [ '#22C538', '#2DA937', '#349037', '#377836', '#346334', '#325231', '#2D3F2C'],
+            yellow: [ '#E9DD3D', '#DCBF3A', '#DDAB36', '#DD9632', '#C48B38', '#A97B38', '#695639']
+        }
     });

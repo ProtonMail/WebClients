@@ -1,19 +1,8 @@
 angular.module('proton.message')
-    .factory('messageBuilder', (gettextCatalog, prepareContent, tools, authentication, messageModel, $filter, signatureBuilder, CONSTANTS, sanitize) => {
+    .factory('messageBuilder', (gettextCatalog, prepareContent, tools, authentication, messageModel, $filter, signatureBuilder, CONSTANTS, sanitize, textToHtmlMail) => {
 
         const RE_PREFIX = gettextCatalog.getString('Re:', null);
         const FW_PREFIX = gettextCatalog.getString('Fw:', null);
-        const normalLinebreaks = (input = '') => input.replace(/\r\n?/g, '\n');
-        const convertLinebreaks = (input = '') => input.replace(/\n/g, '<br />');
-
-        function escapeHTML(input = '') {
-            return input
-                .replace(/&/g, '&amp;')
-                .replace(/</g, '&lt;')
-                .replace(/>/g, '&gt;')
-                .replace(/'/g, '&quot;')
-                .replace(/'/g, '&#39;');
-        }
 
         function formatSubject(subject = '', prefix = RE_PREFIX) {
             const combinaisons = (prefix === RE_PREFIX) ? [RE_PREFIX, `${FW_PREFIX} ${RE_PREFIX}`] : [FW_PREFIX, `${RE_PREFIX} ${FW_PREFIX}`];
@@ -30,12 +19,7 @@ angular.module('proton.message')
          */
         function convertContent(input = '', { MIMEType = '' } = {}) {
             if (MIMEType === 'text/plain') {
-                return _.reduce([
-                    normalLinebreaks,
-                    escapeHTML,
-                    convertLinebreaks
-                ], (acc, fn) => fn(acc), input)
-                    .trim();
+                return textToHtmlMail.parse(input);
             }
             return input;
         }
@@ -149,7 +133,12 @@ angular.module('proton.message')
         }
 
         function builder(action, currentMsg = {}, newMsg = {}) {
-            const addresses = _.chain(authentication.user.Addresses).where({ Status: 1, Receive: 1 }).sortBy('Order').value();
+            const addresses = _.chain(authentication.user.Addresses)
+                .where({ Status: 1, Receive: 1 })
+                .sortBy('Order')
+                .value();
+
+            newMsg.MIMEType = authentication.user.DraftMIMEType;
 
             (action === 'new') && newCopy(newMsg, currentMsg);
             (action === 'reply') && reply(newMsg, currentMsg);

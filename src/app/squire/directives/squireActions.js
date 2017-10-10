@@ -1,15 +1,32 @@
 angular.module('proton.squire')
     .directive('squireActions', ($rootScope) => ({
-        link(scope, el, attr) {
+        link(scope, el, { squireActions, squireActionsSelect }) {
 
-            const onClick = () => {
-                $rootScope.$emit('squire.editor', {
-                    type: 'squireActions',
-                    data: {
-                        action: attr.squireActions,
-                        message: scope.message
-                    }
-                });
+            const onClick = ({ target }) => {
+
+                if (!squireActionsSelect) {
+                    $rootScope.$emit('squire.editor', {
+                        type: 'squireActions',
+                        data: {
+                            action: squireActions,
+                            message: scope.message
+                        }
+                    });
+                }
+
+                if (target.nodeName === 'LI') {
+                    return $rootScope.$emit('squire.editor', {
+                        type: 'squireActions',
+                        data: {
+                            action: squireActions,
+                            argument: {
+                                value: target.dataset.value,
+                                label: target.textContent.trim()
+                            },
+                            message: scope.message
+                        }
+                    });
+                }
             };
 
             el.on('click', onClick);

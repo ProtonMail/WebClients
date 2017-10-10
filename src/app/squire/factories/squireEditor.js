@@ -1,6 +1,7 @@
 angular.module('proton.squire')
     .factory('squireEditor', ($rootScope, CONSTANTS, editorModel) => {
 
+        const CACHE = {};
         const IFRAME_CLASS = CONSTANTS.DEFAULT_SQUIRE_VALUE.IFRAMECLASSNAME;
 
         Squire.prototype.testPresenceinSelection = function (name, action, format, validation) {
@@ -123,8 +124,10 @@ angular.module('proton.squire')
          * @param  {Message} message
          * @return {Promise}
          */
-        const create = ($iframe, message = {}) => {
+        const create = ($iframe, message = {}, type) => {
             const { ID = 'editor' } = message;
+
+            CACHE[ID] = type;
 
             return new Promise((resolve, reject) => {
                 try {
@@ -146,7 +149,12 @@ angular.module('proton.squire')
             });
         };
 
-        const clean = editorModel.remove;
+        const clean = (message) => {
+            delete CACHE[message.ID];
+            editorModel.remove(message);
+        };
 
-        return { create, clean };
+        const getType = ({ ID }) => CACHE[ID];
+
+        return { create, clean, getType };
     });

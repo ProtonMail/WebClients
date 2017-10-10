@@ -358,10 +358,6 @@
                     overflow: auto;
                 }
             }
-
-            .plain {
-                white-space: pre-wrap;
-            }
         }
 
         .bodyDecrypted {
@@ -370,6 +366,11 @@
             animation-duration: 0.001s;
         }
     }
+}
+
+.bodyDecrypted.plain {
+    white-space: pre-wrap;
+    font-family: monospace;
 }
 
 #conversation-view:empty { display: none }

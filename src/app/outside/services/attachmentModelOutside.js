@@ -178,7 +178,7 @@ angular.module('proton.outside')
             const att = attachment || message.getAttachment(id);
             const state = { message, attachment: att, id };
 
-            if (+isEmbedded(att)) {
+            if (+isEmbedded(att) && message.MIMEType !== 'text/plain') {
                 // Attachment removed, may remove embedded ref from the editor too
                 dispatch('remove.embedded', state);
             }

@@ -1,82 +1,90 @@
 angular.module('proton.squire')
-    .directive('squireToolbar', ($rootScope, CONSTANTS) => {
+    .directive('squireToolbar', (CONSTANTS, squireDropdown, editorModel, onCurrentMessage) => {
 
-        const CONTAINER_CLASS = 'squireToolbar-container squire-toolbar';
-        const HEADER_CLASS = CONSTANTS.DEFAULT_SQUIRE_VALUE.HEADER_CLASS;
+        const { HEADER_CLASS } = CONSTANTS.DEFAULT_SQUIRE_VALUE;
 
-        /**
-         * Listener to detect the current style of a selected element
-         * @param  {Squire} options.editor
-         * @param  {Node} node           Current toolbar
-         * @return {void}
-         */
-        const onAction = ({ editor }, node) => {
-            const onPathChange = _.debounce(() => {
-                const p = editor.getPath();
-
-                if (p !== '(selection)') {
-
-                    /**
-                     * Find and filter selections to toogle the current action (toolbar)
-                     * Filter by whitelist
-                     * Ex: isBold etc.
-                     */
-                    const classNames = _.chain(p.split('>'))
-                        .filter((i) => i && /^i$|^u$|^b$|^ul$|^ol$|^li$|.align-(center|left|right)$/i.test(i))
-                        .reduce((acc, path) => acc.concat(path.split('.')), [])
-                        .filter((i) => i && !/div|html|body|span/i.test(i))
-                        .reduce((acc, key) => {
-                            if (HEADER_CLASS === key) {
-                                return `${acc} size`;
-                            }
-                            return `${acc} ${key.trim()}`;
-                        }, '')
-                        .value()
-                        .toLowerCase()
-                        .trim();
-
-                    node.className = `${CONTAINER_CLASS} ${classNames}`;
-                }
-
-            }, 100);
-
-            editor.addEventListener('pathChange', onPathChange);
-
-            return () => editor.removeEventListener('pathChange', onPathChange);
+        const CLASSNAME = {
+            CONTAINER: 'squireToolbar-container squire-toolbar',
+            SUB_ROW: 'squireToolbar-show-subrow'
         };
 
-        /**
-         * Check if this is the current instance of the editor
-         * @param  {Message} options.message Current message
-         * @param  {String} options.ID      ID of the message loaded
-         * @return {Boolean}
-         */
-        const isCurrent = ({ message = {} }, { ID = 'editor' } = {}) => {
-            const currentID = message.ID || 'editor';
-            return ID === currentID;
-        };
+        const onPathChangeCb = (node, editor) => _.debounce(() => {
+            const p = editor.getPath();
 
-        const onCurrentMessage = (scope, cb) => (e, { type, data }) => {
-            isCurrent(scope, data.message) && cb(type, data);
-        };
+            if (p !== '(selection)') {
+
+                const subRowClass = node.classList.contains(CLASSNAME.SUB_ROW) ? CLASSNAME.SUB_ROW : '';
+
+                /**
+                 * Find and filter selections to toogle the current action (toolbar)
+                 * Filter by whitelist
+                 * Ex: isBold etc.
+                 */
+                const classNames = _.chain(p.split('>'))
+                    .filter((i) => i && /^i$|^u$|^b$|^ul$|^ol$|^li$|.align-(center|left|right)$/i.test(i))
+                    .reduce((acc, path) => acc.concat(path.split('.')), [])
+                    .filter((i) => i && !/div|html|body|span/i.test(i))
+                    .reduce((acc, key) => {
+                        if (HEADER_CLASS === key) {
+                            return `${acc} size`;
+                        }
+                        return `${acc} ${key.trim()}`;
+                    }, '')
+                    .value()
+                    .toLowerCase()
+                    .trim();
+
+                node.className = `${CLASSNAME.CONTAINER} ${classNames} ${subRowClass}`.trim();
+            }
+        }, 100);
 
         return {
             replace: true,
             templateUrl: 'templates/squire/squireToolbar.tpl.html',
             link(scope, el) {
 
-                let unsubscribeActions = angular.noop;
+                const { editor } = editorModel.find(scope.message);
+                const onPathChange = onPathChangeCb(el[0], editor);
+                editor.addEventListener('pathChange', onPathChange);
+
                 const onActions = (type, data) => {
-                    if (type === 'loaded') {
-                        unsubscribeActions = onAction(data, el[0]);
+                    if (type === 'squire.native.action') {
+                        squireDropdown(scope.message).update(data);
+
+                        // Set the mode for the whole composer
+                        if (data.action === 'setEditorMode') {
+                            el[0].setAttribute('data-editor-text', data.argument.value);
+                        }
                     }
                 };
 
-                const unsubscribe = $rootScope.$on('squire.editor', onCurrentMessage(scope, onActions));
+                const onClick = (e) => {
+
+                    e.preventDefault();
+                    e.stopPropagation();
+                    const { target, currentTarget } = e;
+
+                    if (target.nodeName !== 'LI' && !/squireDropdown/.test(target.className)) {
+                        squireDropdown(scope.message).closeAll();
+                    }
+
+                    if (target.dataset.toggle === 'row') {
+                        currentTarget.classList.toggle(CLASSNAME.SUB_ROW);
+
+                        if (currentTarget.classList.contains(CLASSNAME.SUB_ROW)) {
+                            squireDropdown(scope.message).matchSelection();
+                        }
+                    }
+                };
+
+                el.on('click', onClick);
+                const unsubscribe = onCurrentMessage('squire.editor', scope, onActions);
 
                 scope.$on('$destroy', () => {
-                    unsubscribeActions();
+                    editor.removeEventListener('pathChange', onPathChange);
+                    el.off('click', onClick);
                     unsubscribe();
+                    squireDropdown(scope.message).clear();
                 });
 
             }
