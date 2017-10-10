@@ -71,7 +71,7 @@ angular.module('proton.authentication')
         fetchUserInfo() {
 
             return networkActivityTracker.track(User.get()
-            .then(({ data = {} }) => {
+            .then(({ data = {} } = {}) => {
                 if (data.Code === 1000) {
                     return data.User;
                 }
@@ -196,7 +196,7 @@ angular.module('proton.authentication')
                 };
 
                 // If session token set, we probably have a refresh token, try to refresh
-                $rootScope.doRefresh = true;
+                this.getRefreshCookie();
             }
         },
 
@@ -291,23 +291,19 @@ angular.module('proton.authentication')
                         $http.defaults.headers.common['x-pm-session'] = response.data.SessionToken;
                         secureSessionStorage.setItem(CONSTANTS.OAUTH_KEY + ':SessionToken', pmcw.encode_base64(response.data.SessionToken));
                         $log.debug('after', $http.defaults.headers.common['x-pm-session']);
-                        $rootScope.doRefresh = true;
+
+                        return response;
                     } else {
                         return $q.reject(response.data.Error);
                     }
-                },
-                (err) => {
-                    $log.error(err);
                 }
             );
         },
 
         setAuthCookie(authResponse) {
-            const deferred = $q.defer();
-
             $log.debug('setAuthCookie');
 
-            authApi.cookies({
+            return authApi.cookies({
                 ResponseType: 'token',
                 ClientID: CONFIG.clientID,
                 GrantType: 'refresh_token',
@@ -326,20 +322,15 @@ angular.module('proton.authentication')
                         AppModel.set('domoArigato', true);
                         // forget the old headers, set the new ones
                         $log.debug('/auth/cookies2: resolved');
-                        deferred.resolve(200);
                         $log.debug('headers change', $http.defaults.headers);
 
-                        const data = {
-                            SessionToken: result.data.SessionToken
-                        };
-
-                        saveAuthData(data);
+                        saveAuthData({ SessionToken: result.data.SessionToken });
 
                         $rootScope.isLocked = false;
-                        $rootScope.doRefresh = true;
 
+                        return result;
                     } else {
-                        deferred.reject({ message: result.data.Error });
+                        return Promise.reject({ message: result.data.Error });
                         $log.error('setAuthCookie1', result);
                     }
                 },
@@ -347,14 +338,12 @@ angular.module('proton.authentication')
                     $log.error('setAuthCookie2', error);
 
                     if (error.data && error.data.Error) {
-                        deferred.reject({ message: error.data.Error });
+                        return Promise.reject({ message: error.data.Error });
                     } else {
-                        deferred.reject({ message: 'Error setting authentication cookies.' });
+                        return Promise.reject({ message: 'Error setting authentication cookies.' });
                     }
                 }
             );
-
-            return deferred.promise;
         },
 
         loginWithCredentials(creds, initialInfoResponse) {

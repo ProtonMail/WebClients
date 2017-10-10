@@ -71,23 +71,8 @@ angular.module('proton.authentication')
                     }
                     AppModel.set('onLine', false);
                 } else if (rejection.status === 401) {
-                    if ($rootScope.doRefresh === true) {
-                        $rootScope.doRefresh = false;
-                        $injector.get('authentication').getRefreshCookie()
-                            .then(
-                                () => {
-                                    const $http = $injector.get('$http');
-
-                                    _.extend(rejection.config.headers, $http.defaults.headers.common);
-                                    return $http(rejection.config);
-                                },
-                                () => {
-                                    $injector.get('authentication').logout(true, false);
-                                }
-                            );
-                    } else {
-                        $injector.get('authentication').logout(true, false);
-                    }
+                    const handle401 = $injector.get('handle401');
+                    return handle401(rejection);
                 } else if (rejection.status === 403) {
                     const handle403 = $injector.get('handle403');
                     return handle403(rejection.config);
