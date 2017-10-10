@@ -30,6 +30,7 @@ angular.module('proton.core')
                             amount: MIN_PAYPAL_AMOUNT
                         };
                     }
+
                     if (Amount > MAX_PAYPAL_AMOUNT) {
                         return scope.errorDetails = {
                             type: 'validator.amount',
