@@ -53,14 +53,13 @@
 .squireToolbar-row-2 {
     display: flex;
     align-items: center;
-    justify-content: center;
     transform: translateY(-100%);
     transition: all ease-in .15s;
     position: absolute;
     top: 38px;
     right: 0;
     left: 0;
-    width: 360px;
+    width: 353px;
     max-width: 100%;
     margin: 0 auto;
     z-index: 1998;
@@ -95,7 +94,9 @@
     }
 }
 
-.squireToolbar-action-color .fa {
+
+
+.squireToolbar-action-color .fa-font {
     position: relative;
     top: -3px;
 }
@@ -108,6 +109,12 @@
     height: 3px;
     background: #000
 }
+
+.squireToolbar-show-subrow  .squireToolbar-action-color {
+    border: 1px solid $border;
+    margin-right: 4px
+}
+
 
 .squireToolbar-show-subrow .squireToolbar-action-options {
     background: #FFF;
@@ -235,7 +242,7 @@
     height: 100%;
     position: relative;
     min-height: $composerRowHeight; /* mobile devices */
-    min-width: 60px;
+    min-width: 50px;
 }
 
 .squireToolbar-fontFamily { max-width: 10em }
@@ -279,7 +286,7 @@
     justify-content: space-between;
     align-items: center;
     flex: 1;
-    margin: 4px;
+    margin: 4px 0px 4px 4px;
     height: 26px;
     padding-right: .5rem;
     border: 1px solid $border;
