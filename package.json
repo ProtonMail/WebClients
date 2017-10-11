@@ -14,7 +14,6 @@
     "babel-polyfill": "^6.23.0",
     "babel-preset-es2015": "^6.24.1",
     "babel-preset-stage-0": "^6.24.1",
-    "bower": "^1.7.7",
     "cross-env": "^3.2.3",
     "cssuseragent": "^2.1.31",
     "eslint": "^4.3.0",
@@ -79,5 +78,8 @@
     "postbuild:i18n": "npm run i18n",
     "i18n:check": "tasks/noContext"
   },
-  "version": "3.11.4"
+  "version": "3.11.4",
+  "dependencies": {
+    "bower": "^1.8.2"
+  }
 }
