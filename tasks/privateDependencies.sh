@@ -1,25 +1,12 @@
-DEST_BLOB='vendor/blobjs'
-DEST_CSSUA='vendor/cssua'
-DEST_QRCODE='vendor/qrcodejs'
-DEST_PMCRYPTO='vendor/pmcrypto'
-DEST_MAILPARSER='vendor/mailparser'
-DEST_BABEL_POLYFILL='vendor/babel-polyfill'
+DEST_BLOB='node_modules/pt.blobjs'
+DEST_QRCODE='node_modules/pt.qrcodejs'
+DEST_MAILPARSER='node_modules/pt.mailparser'
 
 # Remove previous version
-rm -rf $DEST_BLOB $DEST_CSSUA $DEST_QRCODE $DEST_PMCRYPTO $DEST_MAILPARSER $DEST_BABEL_POLYFILL
-
-
-# This file implements the syntax highlighting of codemirror.
-# The reason I'm not doing this in grunt, is that we already have a sieve.js file in /vendor/ (it implements the simple sieve parsing). So I need to give this a new name to get this working.
-cp vendor/codemirror/mode/sieve/sieve.js vendor/codemirror/mode/sieve/sieveSyntax.js
-
-# Cannot inject a file from node_modules with the current grunt setup ლ(ಠ益ಠლ
-cp -r node_modules/cssuseragent $DEST_CSSUA
-cp -r node_modules/pmcrypto $DEST_PMCRYPTO
-cp -r node_modules/babel-polyfill $DEST_BABEL_POLYFILL
+rm -rf $DEST_QRCODE $DEST_MAILPARSER $DEST_BLOB
 
 mkdir $DEST_MAILPARSER
-cp src/libraries/mailparser.js vendor/mailparser/mailparser.js
+cp src/libraries/mailparser.js $DEST_MAILPARSER/mailparser.js
 
 git clone git@github.com:eligrey/Blob.js.git \
   --branch master \
