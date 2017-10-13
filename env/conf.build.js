@@ -85,7 +85,7 @@ module.exports = {
       'node_modules/pt.qrcodejs/qrcode.js',
       'node_modules/pt.mailparser/mailparser.js',
       'node_modules/cssuseragent/cssua.js',
-      'node_modules/asmcrypto.js/asmcrypto.js',
+      'node_modules/pt.asmcrypto.js/asmcrypto.js',
       'node_modules/babel-polyfill/dist/polyfill.js',
       'node_modules/pmcrypto/build/pmcrypto.js',
       'node_modules/markdown-it/dist/markdown-it.min.js'
