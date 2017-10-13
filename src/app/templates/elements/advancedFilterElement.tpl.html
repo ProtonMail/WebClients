@@ -1,5 +1,5 @@
 <div class="pm_buttons advancedFilterElement-container" ng-class="{
-    'advancedFilterElement-state-drafts': ('secured.drafts.**' | includedByState),
+    'advancedFilterElement-state-drafts': ('secured.drafts.**' | includedByState) || ('secured.allDrafts.**' | includedByState),
     'advancedFilterElement-state-spam': ('secured.spam.**' | includedByState),
     'advancedFilterElement-state-trash': ('secured.trash.**' | includedByState)
 
