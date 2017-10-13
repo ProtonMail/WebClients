@@ -74,29 +74,34 @@ angular.module('proton.squire')
                     unsubscribeList.push(onCurrentMessage('composer.update', { message }, (type) => {
                         if (type === 'editor.focus') {
                             node.classList.remove(CLASSNAME.IS_OPEN);
-                            unsubscribe();
                         }
                     }));
 
                     const closeDropdown = ({ target }) => {
                         if (!node.contains(target) || target.classList.contains(CLASSNAME.DROPDOWN_ELEMENT)) {
                             node.classList.remove(CLASSNAME.IS_OPEN);
-                            unsubscribe();
                         }
                     };
 
-                    document.addEventListener('click', closeDropdown);
-                    unsubscribeList.push(() => document.removeEventListener('click', closeDropdown));
+                    document.body.addEventListener('click', closeDropdown);
+                    unsubscribeList.push(() => document.body.removeEventListener('click', closeDropdown));
                 };
 
                 const toggle = (onOpen = _.noop) => {
                     node.classList.toggle(CLASSNAME.IS_OPEN);
                     if (node.classList.contains(CLASSNAME.IS_OPEN)) {
+
+                        $rootScope.$emit('squire.editor', {
+                            type: 'squireDropdown',
+                            data: {
+                                action, message,
+                                type: 'is.open'
+                            }
+                        });
+
                         subscribeHandlers();
                         scrollToOption(onOpen(node));
-                        return;
                     }
-                    unsubscribe();
                 };
 
                 const refresh = (label, value) => update({ action, argument: { label, value } });
@@ -113,9 +118,11 @@ angular.module('proton.squire')
                 });
             };
 
-            const closeAll = () => {
+            const closeAll = (filter) => {
                 Object.keys(MAIN_CACHE[ID].MAP).forEach((action) => {
-                    MAIN_CACHE[ID].MAP[action].node.classList.remove(CLASSNAME.IS_OPEN);
+                    if (filter !== action) {
+                        MAIN_CACHE[ID].MAP[action].node.classList.remove(CLASSNAME.IS_OPEN);
+                    }
                 });
             };
 

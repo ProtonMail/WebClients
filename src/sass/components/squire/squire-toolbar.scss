@@ -31,7 +31,9 @@
 }
 
 [class*="squireToolbar-row"] [class*="squireToolbar-action-"]:hover,
-[class*="squireToolbar-row"] [class*="squireToolbar-action-"]:active {
+[class*="squireToolbar-row"] [class*="squireToolbar-action-"]:active,
+[class*="squireToolbar-row"] .squireToolbar-action-mode:hover,
+[class*="squireToolbar-row"] .squireToolbar-action-mode:active {
     background: #FFF;
     border: 1px solid $border;
 }
@@ -59,7 +61,7 @@
     top: 38px;
     right: 0;
     left: 0;
-    width: 353px;
+    width: 300px;
     max-width: 100%;
     margin: 0 auto;
     z-index: 1998;
@@ -70,13 +72,13 @@
 
 .composer {
     [data-editor-text="text/plain"] {
-        .squireToolbar-row-1 { display: none }
-        .squireToolbar-row-2 > :not(.squireToolbar-text-mode) {
+        .squireToolbar-row-2 { display: none }
+        .squireToolbar-row-1 > :not(.squireToolbar-text-mode) {
             display: none;
             pointer-events: none;
         }
 
-        .squireToolbar-row-2 {
+        .squireToolbar-row-1 {
             position: relative;
             top: 0;
             width: 100%;
@@ -95,19 +97,24 @@
 }
 
 
+.squireToolbar-action-color {position: relative;}
 
 .squireToolbar-action-color .fa-font {
     position: relative;
     top: -3px;
 }
-.squireToolbar-action-color .fa:first-of-type::after {
-    position: absolute;
-    bottom: -4px;
-    left: calc(50% - 8px);
-    content: "";
+.squireToolbar-action-color mark {
+     position: absolute;
     width: 16px;
     height: 3px;
-    background: #000
+    color: #222;
+    background: currentColor;
+    bottom: 3px;
+    left: 5px;
+}
+
+.squireSelectColor-is-open .squireToolbar-action-color .fa-angle-down {
+    transform: rotate(180deg);
 }
 
 .squireToolbar-show-subrow  .squireToolbar-action-color {
@@ -165,6 +172,7 @@
 
 .squireToolbar-action-color {
     width: 42px;
+    background-color: #FFF;
 }
 
 .squire-popover {
@@ -276,25 +284,22 @@
 
 .squireToolbar-select:not(.squireDropdown-is-open) {
     .squireToolbar-select-list,
-    .fa-angle-up  { display: none }
+    .fa[class$="up"]  { display: none }
 }
 
-.squireDropdown-is-open .fa-angle-down  { display: none }
+.squireDropdown-is-open .fa[class$="down"]  { display: none }
 
 .squireToolbar-select-view {
     display: flex;
     justify-content: space-between;
     align-items: center;
     flex: 1;
+    background-color: #FFF;
     margin: 4px 0px 4px 4px;
     height: 26px;
     padding-right: .5rem;
     border: 1px solid $border;
     border-radius: $border-radius;
-}
-
-.squireToolbar-select-view:hover {
-    background-color: #FFF;
 }
 
 .squireToolbar-select-view button {
@@ -372,8 +377,26 @@ $list: georgia arial helvetica menlo tahoma verdana times trebuchet;
 
 
 .squireToolbar-text-mode {
-    .squireToolbar-select-list { min-height: 5em }
-    .squireToolbar-action-mode { padding-left: .5rem; }
+
+    min-width: auto;
+    margin-left: auto;
+    margin-right: .5em;
+
+    .squireToolbar-select-list {
+        min-height: 5em;
+        right: 0;
+        left: auto;
+    }
+    .squireToolbar-action-mode {
+        display: flex;
+        justify-content: center;
+        padding-left: 0;
+        padding-right: 0;
+        background: inherit;
+        box-shadow: none;
+        border-color: transparent;
+        transition: background,border ease-out .2s
+    }
 }
 
 .squireToolbar-action-mode .squireDropdown-item-label {

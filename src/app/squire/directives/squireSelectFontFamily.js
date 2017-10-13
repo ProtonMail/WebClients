@@ -43,7 +43,11 @@ angular.module('proton.squire')
                     return font;
                 };
 
-                const onClick = () => dropdown.toggle(parseContent);
+                const onClick = ({ target }) => {
+                    if (target.nodeName !== 'LI') {
+                        dropdown.toggle(parseContent);
+                    }
+                };
                 const onActions = (type, data) => {
                     (data.action === ACTION) && parseContent();
                 };

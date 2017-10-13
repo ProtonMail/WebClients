@@ -1,70 +1,60 @@
 angular.module('proton.squire')
-    .directive('colorList', (CONSTANTS, $rootScope) => {
+    .directive('colorList', (CONSTANTS) => {
 
-        const { white, magenta, blue, green, yellow } = CONSTANTS.FONT_COLOR;
+        const { COMPOSER_COLOR, FONT_COLOR } = CONSTANTS;
+        const { white, magenta, blue, green, yellow } = FONT_COLOR;
         const CLASSNAME_ACTIVE = 'active';
-        const COMPOSER_COLOR = '#222222';
 
-        const template = (name) => {
-            const active = (name === COMPOSER_COLOR) ? CLASSNAME_ACTIVE : '';
-            return `<li class="colorList-item" style="color:${name}"><button class="colorList-btn-choose ${active}" type="button" data-color="${name}"><i class="fa fa-check" aria-hidden="true"></i></button></li>`;
+        /**
+         * Find active classe for type of color
+         *     - color: font color
+         *     - highlight: background color
+         * @param  {String}  name    Color name
+         * @param  {Boolean} details Mark default color as active
+         * @param  {String} mode     Type of list of color (color|highlight)
+         * @return {String}
+         */
+        const getActive = (name, details, mode) => {
+            const color = COMPOSER_COLOR[(mode === 'color') ? 'COLOR' : 'BACKGROUND'];
+            return (name === color && details) ? CLASSNAME_ACTIVE : '';
         };
 
-        const colorReducer = (acc, color) => acc + template(color);
-        const list = (colors) => `<ul class="colorList-list">${colors.reduce(colorReducer, '')}</ul>`;
-        const listReducer = (acc, colors) => acc + list(colors);
+        /**
+         * Create a color item
+         * @param  {String}  name    Color name
+         * @param  {Boolean} details Mark default color as active
+         * @param  {String} mode     Type of list of color (color|highlight)
+         * @return {String}
+         */
+        const template = (name, details = true, mode = 'color') => {
+            const active = getActive(name, details, mode);
+            return `<li class="colorList-item" style="color:${name}" data-mode="${mode}"><button class="colorList-btn-choose ${active}" data-mode="${mode}" type="button" data-color="${name}"><i class="fa fa-check" aria-hidden="true"></i></button></li>`;
+        };
+
+        const colorReducer = (details, mode) => (acc, color) => acc + template(color, details, mode);
+        const list = (colors, details, mode) => `<ul class="colorList-list">${colors.reduce(colorReducer(details, mode), '')}</ul>`;
+        const listReducer = (mode) => (acc, colors) => acc + list(colors, true, mode);
 
         return {
             replace: true,
             template: '<div class="colorList-container"></div>',
             compile(el, attr) {
 
-                const isEmpty = _.has(attr, 'isEmpty');
+                const html = [ white, magenta, blue, green, yellow ].reduce(listReducer(attr.mode), '');
+                el[0].innerHTML = html;
 
-                if (!isEmpty) {
-                    const html = [ white, magenta, blue, green, yellow ].reduce(listReducer, '');
-                    el[0].innerHTML = html;
-                } else {
-                    el[0].innerHTML = [ [ COMPOSER_COLOR ] ].reduce(listReducer, '');
-                }
+                return (scope, el) => {
 
-                return (scope, el, { hash, mode }) => {
-                    const unsubscribe = [];
+                    const onClick = ({ target }) => {
+                        const previous = el[0].querySelector(`.${CLASSNAME_ACTIVE}`);
+                        previous && previous.classList.remove(CLASSNAME_ACTIVE);
+                        target.classList.add(CLASSNAME_ACTIVE);
+                    };
 
-                    if (!isEmpty) {
-                        const onClick = ({ target }) => {
-                            const previous = el[0].querySelector(`.${CLASSNAME_ACTIVE}`);
-                            previous && previous.classList.remove(CLASSNAME_ACTIVE);
-                            target.classList.add(CLASSNAME_ACTIVE);
-
-                            $rootScope.$emit('colorList', {
-                                type: 'add',
-                                data: {
-                                    hash, mode,
-                                    color: target.dataset.color
-                                }
-                            });
-                        };
-                        el.on('click', onClick);
-                        unsubscribe.push(() => el.off('click', onClick));
-                    }
-
-                    if (isEmpty) {
-                        const history = [COMPOSER_COLOR];
-                        unsubscribe.push($rootScope.$on('colorList', (e, { data }) => {
-                            if (data.hash !== hash || data.mode !== mode) {
-                                return;
-                            }
-
-                            history.unshift(data.color);
-                            (history.length > 7) && (history.length = 7);
-                            el[0].innerHTML = list(history);
-                        }));
-                    }
+                    el.on('click', onClick);
 
                     scope.$on('$destroy', () => {
-                        unsubscribe.forEach((cb) => cb());
-                        unsubscribe.length = 0;
+                        el.off('click', onClick);
                     });
                 };
             }
