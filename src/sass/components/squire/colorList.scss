@@ -8,11 +8,17 @@
     display: flex;
     margin: 0;
     padding: 0;
+    margin-top: .1em !important;
     list-style: none
 }
 .colorList-list + .colorList-list { margin-top: 1px }
 
-.colorList-item { background: currentColor }
+.colorList-item {
+    margin: .1em;
+    box-shadow: 0 0 1px rgba(0,0,0,.5);
+    border-radius: $sizeColorListItem;
+    background: currentColor
+}
 
 .colorList-btn-choose {
     background: transparent;

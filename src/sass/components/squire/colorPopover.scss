@@ -3,19 +3,6 @@
 .colorPopover-container[data-mode="highlight"] .colorPopover-title { display: none }
 
 .colorPopover-selection { height: $sizeColorListItem }
-.colorPopover-choice {
-    margin-top: .5em;
-    border: 1px solid #000;
-    border-right: 0;
-    border-bottom: 0;
-}
-
-.colorPopover-choice .colorList-item {
-    border-right: 1px solid #000;
-    border-bottom: 1px solid #000;
-}
-
-.colorPopover-selection { border-bottom: 1px solid $toolbar-border }
 
 .colorPopover-custom {
     display: flex;
@@ -45,12 +32,12 @@
 
 [class*="colorPopover-title"] {
     font-size: 1em;
-    padding: .5em;
+    padding: .5em .5em 0;
     text-align: left;
     font-weight: normal;
+    margin: 0
 }
 
 .colorPopover-container[data-mode="highlight"] {
-    background: #F7F7F7;
     box-shadow: 0px 1px 2px rgba(0,0,0,0.15);
 }

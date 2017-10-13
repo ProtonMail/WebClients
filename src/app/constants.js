@@ -161,11 +161,15 @@ angular.module('proton.constants', [])
             large: 20,
             huge: 26
         },
+        COMPOSER_COLOR: {
+            COLOR: '#222222',
+            BACKGROUND: '#FFFFFF'
+        },
         FONT_COLOR: {
-            white: [ '#FFFFFF', '#E5E5E5', '#CCCCCC', '#B3B3B3', '#5A5A5A', '#404041', '#222222'],
-            magenta: [ '#FF0615', '#E12126', '#CE2E30', '#B43D3F', '#A03E3F', '#864547', '#864547'],
-            blue: [ '#0063FA', '#1266E0', '#2363C6', '#2D60AD', '#375D93', '#3B5476', '#34435A'],
-            green: [ '#22C538', '#2DA937', '#349037', '#377836', '#346334', '#325231', '#2D3F2C'],
-            yellow: [ '#E9DD3D', '#DCBF3A', '#DDAB36', '#DD9632', '#C48B38', '#A97B38', '#695639']
+            white: [ '#FFFFFF', '#DADADA', '#B5B5B5', '#909090', '#6B6B6B', '#464646', '#222222'],
+            magenta: [ '#F6CBCB', '#EC9798', '#E36667', '#ED4139', '#CF3932', '#9A2B25', '#681D19'],
+            blue: [ '#CDE1F2', '#9CC3E5', '#6CA6D9', '#3B83C2', '#2A47F6', '#145390', '#0F3A62'],
+            green: [ '#D7EAD3', '#B3D6A9', '#8FC380', '#77F241', '#66A657', '#3A762B', '#29501F'],
+            yellow: [ '#FFF2CD', '#FEE59C', '#FCD86F', '#FDF84E', '#F2C246', '#BE8F35', '#7F6124']
         }
     });

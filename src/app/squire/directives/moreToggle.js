@@ -1,5 +1,5 @@
 angular.module('proton.squire')
-    .directive('plainTextSelectToggle', (squireDropdown, $rootScope, toggleModeEditor, gettextCatalog, onCurrentMessage) => {
+    .directive('moreToggle', (squireDropdown, $rootScope, toggleModeEditor, gettextCatalog, onCurrentMessage) => {
 
         toggleModeEditor.init();
 
@@ -11,7 +11,7 @@ angular.module('proton.squire')
 
         return {
             replace: true,
-            templateUrl: 'templates/squire/plainTextSelectToggle.tpl.html',
+            templateUrl: 'templates/squire/moreToggle.tpl.html',
             link(scope, el) {
 
                 const unsubscribe = [];
@@ -28,11 +28,12 @@ angular.module('proton.squire')
                 dropdown.refresh(MAP_TEXT[defaultMode], defaultMode);
 
                 const toggle = (node) => node.dataset.value || toggleModeEditor.getMode(scope.message);
-                const onClick = ({ target }) => {
-                    const callback = (target.nodeName === 'LI') ? toggle : _.noop;
-                    dropdown.toggle(() => callback(target));
-                };
 
+                const onClick = ({ target }) => {
+                    if (target.nodeName !== 'LI') {
+                        dropdown.toggle(() => toggle(target));
+                    }
+                };
                 el.on('click', onClick);
 
                 unsubscribe.push(() => el.off('click', onClick));

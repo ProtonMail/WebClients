@@ -47,7 +47,12 @@ angular.module('proton.squire')
 
                 const unsubscribe = [];
                 const CLASSNAME_HIDDEN = `${name}-hidden`;
-                const hide = () => !el[0].classList.contains(CLASSNAME_HIDDEN) && el[0].classList.add(CLASSNAME_HIDDEN);
+                const hide = () => {
+                    if (!el[0].classList.contains(CLASSNAME_HIDDEN)) {
+                        el[0].classList.add(CLASSNAME_HIDDEN);
+                        dispatch({ name, form: {}, action: 'close.popover', message: scope.message });
+                    }
+                };
 
                 const onSubmit = onAction(scope, 'update', name);
                 const onReset = onAction(scope, 'remove', name);
@@ -60,8 +65,13 @@ angular.module('proton.squire')
                 };
 
                 unsubscribe.push(onCurrentMessage('squire.editor', scope, (type, data) => {
+
                     if (type === 'squire.native.action' || type === 'squireActions') {
                         (data.action !== action) && hide();
+                    }
+
+                    if (type === 'squire.toolbar' || (type === 'squireDropdown' && data.type === 'is.open')) {
+                        hide();
                     }
                 }));
 
