@@ -329,7 +329,7 @@ angular.module('proton.message')
             cache.addToDispatcher(promise);
 
             if (!tools.cacheContext()) {
-                promise.then(eventManager.call());
+                promise.then(() => eventManager.call());
                 return networkActivityTracker.track(promise);
             }
 
@@ -376,7 +376,7 @@ angular.module('proton.message')
             cache.addToDispatcher(promise);
 
             if (!tools.cacheContext()) {
-                promise.then(eventManager.call());
+                promise.then(() => eventManager.call());
                 return networkActivityTracker.track(promise);
             }
 
