@@ -949,9 +949,9 @@ angular.module('proton.core')
                         }
 
                         acc[`${type}IDs`].push(event.ID);
-                        (event.Action === CREATE) && acc.flow.create.push({ event, type });
-                        (event.Action === UPDATE_DRAFT) && acc.flow.update.push({ event, type, isSend, item: 'Draft' });
-                        (event.Action === UPDATE_FLAGS) && acc.flow.update.push({ event, type, isSend, item: 'Flag' });
+                        (event.Action === CREATE) && acc.flow[type].create.push({ event, type });
+                        (event.Action === UPDATE_DRAFT) && acc.flow[type].update.push({ event, type, isSend, item: 'Draft' });
+                        (event.Action === UPDATE_FLAGS) && acc.flow[type].update.push({ event, type, isSend, item: 'Flag' });
                     }
 
                     (event.Action === DELETE) && acc.flow.delete.push(event);
@@ -959,8 +959,14 @@ angular.module('proton.core')
                     return acc;
                 }, {
                     flow: {
-                        create: [],
-                        update: [],
+                        Message: {
+                            create: [],
+                            update: []
+                        },
+                        Conversation: {
+                            create: [],
+                            update: []
+                        },
                         delete: []
                     },
                     MessageIDs: [],
@@ -968,8 +974,11 @@ angular.module('proton.core')
                 })
                 .value();
 
-            return formatCreate(flow.create)
-                .then(() => formatUpdate(flow.update))
+            // NOTE Message events must be treated before Conversation events to calculate the Time per Conversation (see manageTimes())
+            return formatCreate(flow.Message.create)
+                .then(() => formatUpdate(flow.Message.update))
+                .then(() => formatCreate(flow.Conversation.create))
+                .then(() => formatUpdate(flow.Conversation.update))
                 .then(() => formatDelete(flow.delete))
                 .then(() => api.callRefresh(MessageIDs, ConversationIDs));
 
