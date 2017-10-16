@@ -2,6 +2,7 @@ angular.module('proton.ui')
     .directive('autocompleteEmailsItem', (CONSTANTS, regexEmail, sanitize) => {
 
         const { OPEN_TAG_AUTOCOMPLETE_RAW, CLOSE_TAG_AUTOCOMPLETE_RAW } = CONSTANTS.EMAIL_FORMATING;
+        const KEY_ENTER = 13;
 
         /**
          * Change button [data-address] to delete the item
@@ -38,18 +39,6 @@ angular.module('proton.ui')
 
                 const onClick = ({ target }) => target.setAttribute('contenteditable', true);
 
-                /*
-                    Prevent event propagation for custom action by the main component.
-                    And reset invalid state
-                    ex: BACKSPACE
-                 */
-                const onInput = (e) => {
-                    if (e.target.getAttribute('contenteditable') === 'true') {
-                        e.stopPropagation();
-                        scope.email.invalid && scope.$applyAsync(() => scope.email.invalid = false);
-                    }
-                };
-
                 const onBlur = ({ target }) => {
                     target.setAttribute('contenteditable', false);
 
@@ -69,6 +58,22 @@ angular.module('proton.ui')
                         scope.email.invalid = !regexEmail.test(adr || name);
                         updateBtn(scope.email.Address);
                     });
+                };
+
+                /*
+                    Prevent event propagation for custom action by the main component.
+                    And reset invalid state
+                    ex: BACKSPACE
+                 */
+                const onInput = (e) => {
+                    if (e.keyCode === KEY_ENTER) {
+                        return onBlur(e);
+                    }
+
+                    if (e.target.getAttribute('contenteditable') === 'true') {
+                        e.stopPropagation();
+                        scope.email.invalid && scope.$applyAsync(() => scope.email.invalid = false);
+                    }
                 };
 
                 $span.on('keydown', onInput);

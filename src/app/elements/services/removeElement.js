@@ -4,7 +4,7 @@ angular.module('proton.elements')
         const I18N = {
             TITLE: gettextCatalog.getString('Delete', null, 'Title'),
             MESSAGE: gettextCatalog.getString('Are you sure ? This cannot be undone.', null, 'Info'),
-            DRAFT_INFO: gettextCatalog.getString('A draft selected is opened, this action will close the composer too.', null, 'Info'),
+            DRAFT_INFO: gettextCatalog.getString('A draft selected is open in a composer, this action will close the composer and delete the message.', null, 'Info'),
             TYPES: {
                 message: (n) => gettextCatalog.getPlural(n, 'message', 'messages', 'Type element'),
                 conversation: (n) => gettextCatalog.getPlural(n, 'conversation', 'conversations', 'Type element')
