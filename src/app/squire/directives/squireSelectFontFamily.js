@@ -1,5 +1,5 @@
 angular.module('proton.squire')
-    .directive('squireSelectFontFamily', (squireDropdown, editorModel, onCurrentMessage) => {
+    .directive('squireSelectFontFamily', (squireDropdown, editorModel) => {
 
         const ACTION = 'setFontFace';
         const MAP = {
@@ -28,38 +28,30 @@ angular.module('proton.squire')
             link(scope, el) {
 
                 const container = squireDropdown(scope.message);
-                const dropdown = container.create(el[0], ACTION);
                 const { editor } = editorModel.find(scope.message);
 
-                container.attach(ACTION, {
-                    node: el[0],
-                    attribute: 'data-font-family'
-                });
-
-                const parseContent = () => {
+                const parseContent = (refresh) => () => {
                     const { family = 'arial' } = editor.getFontInfo() || {};
                     const font = family.replace(/"/g, '');
-                    dropdown.refresh(getFont(font), font);
+                    refresh(getFont(font), font);
                     return font;
                 };
 
+                const dropdown = container.create(el[0], ACTION, {
+                    attribute: 'data-font-family',
+                    parseContent
+                });
+
                 const onClick = ({ target }) => {
                     if (target.nodeName !== 'LI') {
-                        dropdown.toggle(parseContent);
+                        dropdown.toggle(parseContent(dropdown.refresh));
                     }
-                };
-                const onActions = (type, data) => {
-                    (data.action === ACTION) && parseContent();
                 };
 
                 el.on('click', onClick);
-                editor.addEventListener('click', parseContent);
-                const unsubscribe = onCurrentMessage('squire.editor', scope, onActions);
 
                 scope.$on('$destroy', () => {
-                    editor.removeEventListener('click', parseContent);
                     el.off('click', onClick);
-                    unsubscribe();
                     dropdown.unsubscribe();
                 });
             }
