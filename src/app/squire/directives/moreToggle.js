@@ -17,11 +17,9 @@ angular.module('proton.squire')
                 const unsubscribe = [];
                 const button = el[0].querySelector('.squireToolbar-action-modeEditor');
                 const container = squireDropdown(scope.message);
-                const dropdown = container.create(el[0], ACTION);
                 const defaultMode = toggleModeEditor.getMode(scope.message);
 
-                container.attach(ACTION, {
-                    node: el[0],
+                const dropdown = container.create(el[0], ACTION, {
                     attribute: 'data-editor-mode'
                 });
 
