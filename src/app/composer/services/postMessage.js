@@ -84,7 +84,7 @@ angular.module('proton.composer')
                     numMessages = (conversation.NumMessages || 0) + 1;
                     message.ID = Message.ID;
                 } else if (actionType === STATUS.UPDATE) {
-                    numMessages = (conversation.NumMessages || 0) + 1;
+                    numMessages = conversation.NumMessages || 0;
                 }
 
                 message.IsRead = Message.IsRead;
