@@ -117,6 +117,10 @@ angular.module('proton.squire')
             }
         };
 
+        const formatNativeValue = (action, { value }) => {
+            return (action === 'setFontSize') ? `${value}px` : value;
+        };
+
         /**
          * Perform an action for the current selected input
          * then focus into the editor
@@ -132,7 +136,6 @@ angular.module('proton.squire')
             if (/^(makeLink|insertImage|changeColor)$/.test(action)) {
                 return;
             }
-
             const actions = Object.keys(tests.tests)
                 .filter((key) => tests.tests[key]);
 
@@ -141,7 +144,7 @@ angular.module('proton.squire')
                 actions.forEach((key) => editor[key]());
             } else {
                 // Perform the action
-                (action !== 'setEditorMode') && editor[action](argument.value);
+                (action !== 'setEditorMode') && editor[action](formatNativeValue(action, argument));
                 dispatch('squire.native.action', { action, argument, message });
             }
 
