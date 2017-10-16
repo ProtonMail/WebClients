@@ -15,7 +15,7 @@ angular.module('proton.core')
                 currency: '=',
                 paypalCallback: '=callback'
             },
-            link(scope) {
+            link(scope, element, { type = 'payment' }) {
                 let childWindow;
 
                 scope.initPaypal = () => {
@@ -23,7 +23,7 @@ angular.module('proton.core')
                     scope.paypalNetworkError = false;
                     const Amount = scope.amount;
 
-                    if (Amount < MIN_PAYPAL_AMOUNT) {
+                    if (type === 'payment' && Amount < MIN_PAYPAL_AMOUNT) {
                         return scope.errorDetails = {
                             type: 'validator.amount',
                             validator: 'min',
