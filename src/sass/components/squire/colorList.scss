@@ -15,8 +15,7 @@
 
 .colorList-item {
     margin: .1em;
-    box-shadow: 0 0 1px rgba(0,0,0,.5);
-    border-radius: $sizeColorListItem;
+    border-radius: 2px;
     background: currentColor
 }
 
@@ -37,4 +36,7 @@
 }
 .colorList-btn-choose:hover .fa,
 .colorList-btn-choose.active .fa,
-[data-is-empty] .colorList-item:first-child .fa { opacity: 1 }
+[data-is-empty] .colorList-item:first-child .fa {
+    box-shadow: 0 0 1px rgba(0,0,0,.5);
+    opacity: 1;
+}
