@@ -8,11 +8,14 @@
 .moveElement-btn-delete { display: none }
 
 body[id^="secured-trash"],
-body[id^="secured-drafts"],
-body[id^="secured-spam"] {
+body[id^="secured-drafts"] {
     .moveElement-btn-trash { display: none }
     .moveElement-btn-delete { display: inline-block; }
     .moveElement-btn-inbox { border-left: 0 }
+}
+
+body[id^="secured-spam"] {
+    .moveElement-btn-delete { display: inline-block; }
 }
 
 body[id^="secured-inbox"] .moveElement-btn-inbox { display: none  }
