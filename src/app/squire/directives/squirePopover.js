@@ -23,6 +23,9 @@ angular.module('proton.squire')
                 });
             };
 
+            e.preventDefault();
+            e.stopPropagation();
+
             if (type !== 'keyup') {
                 const form = toJSON(target);
                 dispatch({ name, action, form, message });
@@ -31,8 +34,6 @@ angular.module('proton.squire')
             }
 
             if (keyCode === 27) {
-                e.preventDefault();
-                e.stopPropagation();
                 dispatch({
                     message,
                     name, action: 'close',
