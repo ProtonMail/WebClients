@@ -143,20 +143,6 @@
                     <button ng-if="false" class="pm_button" ng-click="enableThemeEdison()" translate-context="Action" translate>Load edison theme</button>
                 </p>
             </section>
-
-            <section class="setting pm_form col-1-2">
-
-                <header-block class="settingsAppearance-header-addtheme">
-                    <h2
-                        class="settingsAppearance-title-addtheme"
-                        translate
-                        translate-comment="Choose the default composer mode"
-                        translate-context="Title">Composer mode</h2>
-                </header-block>
-                <p>
-                    <choose-composer-mode></choose-composer-mode>
-                </p>
-            </section>
         </div>
         <div class="row pm_grid">
             <section class="pm_form col-1-2">
@@ -170,6 +156,19 @@
                 <p class="alert alert-info" translate-context="Bubbule info in appearance sent and drafts folders" translate>Setting to 'Include Moved' means that sent / drafts messages that have been moved to other folders will continue to appear in the Sent/Drafts folder.</p>
                 <moved-select></moved-select>
                 <a href="https://protonmail.com/support/knowledge-base/include-moved-messages" target="_blank" class="pm_button link" translate-context="Link" translate>Learn more</a>
+            </section>
+            <section class="setting pm_form col-1-2">
+
+                <header-block class="settingsAppearance-header-addtheme">
+                    <h2
+                        class="settingsAppearance-title-addtheme"
+                        translate
+                        translate-comment="Choose the default composer mode"
+                        translate-context="Title">Composer mode</h2>
+                </header-block>
+                <p>
+                    <choose-composer-mode></choose-composer-mode>
+                </p>
             </section>
         </div>
     </div>
