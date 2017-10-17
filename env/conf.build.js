@@ -73,6 +73,7 @@ module.exports = {
       "node_modules/bcryptjs/dist/bcrypt.js",
       "node_modules/nouislider/distribute/nouislider.js",
       "node_modules/ua-parser-js/src/ua-parser.js",
+      "node_modules/jquery-mousewheel/jquery.mousewheel.js",
       "node_modules/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.js",
       "node_modules/ng-scrollbars/dist/scrollbars.min.js",
       "node_modules/sieve.js/sieve.js",
