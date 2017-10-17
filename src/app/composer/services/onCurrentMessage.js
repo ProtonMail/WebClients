@@ -12,7 +12,7 @@ angular.module('proton.composer')
             return ID === currentID;
         };
 
-        const onCurrentMessage = (scope, cb) => (e, { type, data }) => {
+        const onCurrentMessage = (scope, cb) => (e, { type, data = {} }) => {
             isCurrent(scope, data.message) && cb(type, data);
         };
 
