@@ -3,7 +3,7 @@ angular.module('proton.message')
 
         const filter = $filter('contact');
         const formatAddresses = (key) => (contact, index) => {
-            const name = filter(contact, 'Name');
+            const name = contact.Name || filter(contact, 'Name');
             return (index === 0) ? `${key}: ${name}` : name;
         };
 
