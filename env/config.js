@@ -92,14 +92,19 @@ const apiUrl = (type) => {
 };
 
 const getVersion = ({ major, minor, patch, version }) => {
-    if (major) {
-        return semver.inc(APP_VERSION, 'major');
-    }
-    if (minor) {
-        return semver.inc(APP_VERSION, 'minor');
-    }
-    if (patch) {
-        return semver.inc(APP_VERSION, 'patch');
+    if (major || minor || patch || version) {
+
+        console.log();
+        console.log();
+        console.error('-------------------------------------------------------------');
+        console.error('> You must deploy a new version with npm version before');
+        console.error('> Ex: npm version --patch && grunt deploy');
+        console.log();
+        console.log('> It will create a new commit with the new version, a new tag');
+        console.error('-------------------------------------------------------------');
+        console.log();
+
+        process.exit(1);
     }
 
     return version || APP_VERSION;

@@ -36,6 +36,14 @@ We are still in Beta and will have a more refined build process, installation in
 
 We are very open to bug reports via Issues as well as Pull Requests.
 
+## Deploy
+
+1. Create a new version + tag => `$ npm version --(patch|minor|major)`
+2. Deploy via grunt `grunt deploy --api=X --dest=Y`
+
+> _Then don't forget to do a git push --tags to push the tag_
+
+
 ### CLI Flags
 
 - `--no-open`: Stop the browser from automatically opening
