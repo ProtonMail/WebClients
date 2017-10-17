@@ -43,6 +43,7 @@ label.settingsSignatures-label-active {
     opacity: 0 /* align with sortable addresses */
 }
 
+.settingsSignatures-container > :last-child { margin-bottom: 20px }
 .settingsSignatures-container .defaultSignature-link-signatures { display: none }
 .settingsSignatures-container .defaultSignature-toggle { transform: none }
 
