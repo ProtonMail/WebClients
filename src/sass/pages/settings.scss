@@ -613,7 +613,9 @@ body.appConfigBody-is-mobile {
     .colorPopover-selection { display: none }
     .colorPopover-panel { padding-top: 0 !important }
     .squire-popover.squire-popover-second {
-        transform: scale(.85) translate(0, -20px);
+        transform: scale(.75);
+        left: 0px;
+        transform-origin: 20% 100%
     }
 }
 
