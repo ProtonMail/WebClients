@@ -14,10 +14,6 @@ body[id^="secured-drafts"] {
     .moveElement-btn-inbox { border-left: 0 }
 }
 
-body[id^="secured-spam"] {
-    .moveElement-btn-delete { display: inline-block; }
-}
-
 body[id^="secured-inbox"] .moveElement-btn-inbox { display: none  }
 body[id^="secured-sent"] .moveElement-btn-inbox { display: none  }
 body[id^="secured-archive"] .moveElement-btn-archive { display: none  }
