@@ -273,8 +273,6 @@
     box-shadow: 0 2px 2px rgba(0, 0, 0, 0.1);
 }
 
-
-
 .squireToolbar-select:not(.squireDropdown-is-open) {
     .squireToolbar-select-list,
     .fa[class$="up"]  { display: none }
@@ -303,11 +301,6 @@
     padding-left: 0;
     padding: 0 .2em 0 .5em;
     text-align: left;
-
-    &.squireToolbar-action-fontFamily {
-        text-overflow: ellipsis;
-        width: 84px
-    }
 
     &::after {
         content: '';
@@ -468,3 +461,5 @@ $list: georgia arial helvetica menlo tahoma verdana times trebuchet;
 .squireToolbar-triangle-with-shadow:hover, .triangle-with-shadow:hover:after { box-shadow: none }
 
 .squireToolbar-show-subrow .squireToolbar-triangle-with-shadow { opacity: 1 }
+
+.squireSelectFontFamily-container .squireToolbar-select-view { width: 111px }
