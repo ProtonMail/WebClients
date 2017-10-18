@@ -29,10 +29,10 @@ $modalMargin: 2rem;
         }
     }
     &.important {
-        z-index: 99998;
+        z-index: 99999;
     }
     &.very-important {
-        z-index: 99999;
+        z-index: 100000;
     }
     &.small {
         .modal-dialog {
