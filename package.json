@@ -76,7 +76,7 @@
     "postbuild:i18n": "npm run i18n",
     "i18n:check": "tasks/noContext"
   },
-  "version": "3.11.6",
+  "version": "3.11.7",
   "dependencies": {
     "angular": "^1.6.6",
     "angular-cookies": "^1.6.6",
