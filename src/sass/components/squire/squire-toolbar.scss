@@ -253,13 +253,6 @@
     min-width: 50px;
 }
 
-.squireToolbar-fontFamily { max-width: 10em }
-.squireToolbar-action-fontFamily {
-    text-overflow: ellipsis;
-    max-width: 110px;
-
-}
-
 .squireToolbar-select-list {
     position: absolute;
     z-index: 1005;
@@ -293,7 +286,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    flex: 1;
+    flex-grow: 1;
     background-color: #FFF;
     margin: 4px 0px 4px 4px;
     height: 26px;
@@ -310,6 +303,11 @@
     padding-left: 0;
     padding: 0 .2em 0 .5em;
     text-align: left;
+
+    &.squireToolbar-action-fontFamily {
+        text-overflow: ellipsis;
+        width: 84px
+    }
 
     &::after {
         content: '';
@@ -422,7 +420,7 @@ $list: georgia arial helvetica menlo tahoma verdana times trebuchet;
     background: $alert;
     z-index: 999;
     margin: 0;
-    width: auto
+    width: auto;
 }
 
 [data-editor-mode="text/html"] .squireToolbar-select-view .plain-text-icon,
@@ -432,8 +430,12 @@ $list: georgia arial helvetica menlo tahoma verdana times trebuchet;
 
 [data-editor-mode="text/html"] .squireToolbar-select-item[data-value="text/html"],
 [data-editor-mode="text/plain"] .squireToolbar-select-item[data-value="text/plain"] {
-    opacity: .5;
-    pointer-events: none
+    pointer-events: none;
+}
+
+[data-editor-mode="text/html"] .squireToolbar-select-item[data-value="text/plain"],
+[data-editor-mode="text/plain"] .squireToolbar-select-item[data-value="text/html"] {
+    .fa-check { opacity: 0 }
 }
 
 .squireToolbar-action-options {
