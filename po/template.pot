@@ -5,7 +5,7 @@ msgstr ""
 "Project-Id-Version: \n"
 
 #: src/app/templates/modals/domain/domain.tpl.html:13
-msgid "'www' subdomains are typically not used for email. Are you sure you not want to use this domain value?"
+msgid "'www' subdomains are typically not used for email. Are you sure you want to use this domain value?"
 msgstr ""
 
 #: src/app/templates/dashboard/subscriptionSection.tpl.html:35
@@ -2209,11 +2209,6 @@ msgctxt "Title"
 msgid "Create new label"
 msgstr ""
 
-#: src/app/templates/views/payments.tpl.html:76
-msgctxt "Title"
-msgid "Create time"
-msgstr ""
-
 #: src/app/templates/modals/member.tpl.html:6
 msgctxt "Title"
 msgid "Create user"
@@ -2230,6 +2225,11 @@ msgstr ""
 
 #: src/app/templates/user/signupCreationProcess.tpl.html:25
 msgid "Creating new account"
+msgstr ""
+
+#: src/app/templates/views/payments.tpl.html:76
+msgctxt "Title"
+msgid "Creation time"
 msgstr ""
 
 #. Invoice type display as badge
@@ -8316,7 +8316,7 @@ msgstr ""
 
 #: src/app/settings/controllers/signatures.js:157
 msgctxt "Error"
-msgid "You have used all addresses in your plan. Please upgrade your plan to add a new user."
+msgid "You have used all addresses in your plan. Please upgrade your plan to add a new address."
 msgstr ""
 
 #: src/app/settings/controllers/signatures.js:152
