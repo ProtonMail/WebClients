@@ -42,7 +42,8 @@ angular.module('proton.settings')
             { label: 'Polski', key: 'pl_PL' },
             { label: 'Українська', key: 'ua_UA' },
             { label: 'Pусский', key: 'ru_RU' },
-            { label: 'Türkçe', key: 'tr_TR' }
+            { label: 'Türkçe', key: 'tr_TR' },
+            { label: 'Portugues, brasileiro', key: 'pt_BR' }
         ];
         $scope.locale = _.findWhere($scope.locales, { key: gettextCatalog.getCurrentLanguage() }) || $scope.locales[0];
         const EMAILING_KEYS = Object.keys($scope.emailing);
