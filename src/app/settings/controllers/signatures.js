@@ -154,7 +154,7 @@ angular.module('proton.settings')
             }
 
             if (organization.MaxAddresses - organization.UsedAddresses < 1) {
-                notify({ message: gettextCatalog.getString('You have used all addresses in your plan. Please upgrade your plan to add a new user.', null, 'Error'), classes: 'notification-danger' });
+                notification.error(gettextCatalog.getString('You have used all addresses in your plan. Please upgrade your plan to add a new address.', null, 'Error'));
                 return false;
             }
 
