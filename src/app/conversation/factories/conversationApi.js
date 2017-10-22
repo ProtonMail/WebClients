@@ -99,8 +99,8 @@ angular.module('proton.conversation')
          * @param {Array} IDs
          * @return {Promise}
          */
-            delete(IDs = []) {
-                return $http.put(requestURL('delete'), { IDs });
+            delete(IDs = [], LabelID) {
+                return $http.put(requestURL('delete'), { IDs, LabelID });
             },
             /**
          * Label/unlabel an array of conversations

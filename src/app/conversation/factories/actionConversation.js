@@ -37,8 +37,8 @@ angular.module('proton.conversation')
      * Delete a list of conversations
      * @param {ids}
      */
-        function remove(ids = []) {
-            const promise = conversationApi.delete(ids);
+        function remove(ids = [], labelID) {
+            const promise = conversationApi.delete(ids, labelID);
             cache.addToDispatcher(promise);
 
             if (!tools.cacheContext()) {

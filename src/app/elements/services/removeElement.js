@@ -1,5 +1,5 @@
 angular.module('proton.elements')
-    .factory('removeElement', (gettextCatalog, AppModel, actionConversation, messageActions, confirmModal, $state, $rootScope, notification) => {
+    .factory('removeElement', (gettextCatalog, AppModel, actionConversation, messageActions, confirmModal, $state, $rootScope, notification, tools) => {
 
         const I18N = {
             TITLE: gettextCatalog.getString('Delete', null, 'Title'),
@@ -66,9 +66,9 @@ angular.module('proton.elements')
             return { message: I18N.MESSAGE };
         };
 
-        const removeList = async (ids, context) => {
+        const removeList = async (ids, context, labelID) => {
             if (context === 'conversation') {
-                return actionConversation.remove(ids);
+                return actionConversation.remove(ids, labelID);
             }
             return messageActions.destroy(ids);
         };
@@ -81,6 +81,7 @@ angular.module('proton.elements')
             const ids = idsSelected();
             const context = getTypeSelected();
             const { message, isDraftOpen, drafts = [] } = lookForOpenDraft(ids, getElementsSelected);
+            const labelID = tools.currentLocation();
 
             confirmModal.activate({
                 params: {
@@ -89,7 +90,7 @@ angular.module('proton.elements')
                     cancel: confirmModal.deactivate,
                     confirm: async () => {
                         confirmModal.deactivate();
-                        await removeList(ids, context);
+                        await removeList(ids, context, labelID);
 
                         if (isDraftOpen) {
                             drafts.forEach((message) => {
