@@ -7,8 +7,10 @@ angular.module('proton.conversation')
                 if (/\/conversations\//.test((rep.config || {}).url)) {
                 // Prevent circular dependency
                     const cache = $injector.get('cache');
+                    const cacheCounters = $injector.get('cacheCounters');
                     const eventManager = $injector.get('eventManager');
                     cache.reset();
+                    cacheCounters.reset();
                     eventManager.call();
                 }
 
