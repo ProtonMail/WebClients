@@ -14,15 +14,15 @@ angular.module('proton.message')
         })();
 
         /**
-     * Find inside the current parser DOM every content escaped
-     * and build a list of Object <attribute>:<value> but don't parse them if
-     * it is an embedded content.
-     * As we have many differents attributes we create a list
-     * @param  {Node} html parser
-     * @return {Array}
-     */
+         * Find inside the current parser DOM every content escaped
+         * and build a list of Object <attribute>:<value> but don't parse them if
+         * it is an embedded content.
+         * As we have many differents attributes we create a list
+         * @param  {Node} html parser
+         * @return {Array}
+         */
         function prepareInjection(html) {
-        // Query selector
+            // Query selector
             const selector = ATTRIBUTES.map((attr) => {
                 const [ key ] = attr.split(':');
                 return `[${key}]`;
@@ -31,10 +31,10 @@ angular.module('proton.message')
                 .join(', ');
 
             /**
-         * Create a map of every proton-x attribute and its value
-         * @param  {Node} node Current element
-         * @return {Object}
-         */
+             * Create a map of every proton-x attribute and its value
+             * @param  {Node} node Current element
+             * @return {Object}
+             */
             const mapAttributes = (node) => {
                 return _.chain(node.attributes)
                     .filter((attr) => ATTRIBUTES.indexOf(attr.name) !== -1)
@@ -65,7 +65,7 @@ angular.module('proton.message')
         return (html, message, { action }) => {
 
             const user = authentication.user || { ShowImages: 0 };
-            const showImages = message.showImages || user.ShowImages || (CONSTANTS.WHITELIST.indexOf(message.Sender.Address) !== -1 && !message.IsEncrypted) || $state.is('printer');
+            const showImages = message.showImages || user.ShowImages || (CONSTANTS.WHITELIST.includes(message.Sender.Address) && !message.IsEncrypted) || $state.is('printer');
             const content = html.innerHTML;
 
             // Bind the boolean only if there are something

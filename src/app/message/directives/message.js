@@ -4,18 +4,18 @@ angular.module('proton.message')
         const getRecipients = ({ ToList = [], CCList = [], BCCList = [] } = {}) => [].concat(ToList, CCList, BCCList);
 
         /**
-     * Back to element list
-     */
+         * Back to element list
+         */
         function back() {
             const route = $state.$current.name.replace('.element', '');
             $state.go(route, { id: null });
         }
 
         /**
-     * Check if the message can be open for the current context
-     * @param  {Array}  [LabelIDs=[]}]
-     * @return {Boolean}
-     */
+         * Check if the message can be open for the current context
+         * @param  {Array}  [LabelIDs=[]}]
+         * @return {Boolean}
+         */
         function canBeOpen({ LabelIDs = [] }) {
             const currentLocation = tools.currentLocation();
             const condition = LabelIDs.indexOf(currentLocation) !== -1;
@@ -45,12 +45,14 @@ angular.module('proton.message')
 
                 const updateMessage = (promise) => {
                     promise.then(({ type, body }) => {
-                        scope.message.expand = true;
-                        scope.message.isPlain = (type === 'plain');
-                        if (type && body) {
-                            scope.message.viewMode = 'html';
-                            scope.body = body;
-                        }
+                        scope.$applyAsync(() => {
+                            scope.message.expand = true;
+                            scope.message.isPlain = (type === 'plain');
+                            if (type && body) {
+                                scope.message.viewMode = 'html';
+                                scope.body = body;
+                            }
+                        });
                     })
                         .catch(() => {
                             scope.message.expand = true;

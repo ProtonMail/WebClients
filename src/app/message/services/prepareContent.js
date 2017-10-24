@@ -1,5 +1,6 @@
 angular.module('proton.message')
-    .factory('prepareContent', ($injector, transformAttachements, transformRemote, transformEscape) => {
+    .factory('prepareContent', ($injector, transformAttachements, transformRemote, transformEscape, transformEmbedded) => {
+
         const filters = [
             'transformBase',
             'transformLinks',
@@ -16,10 +17,10 @@ angular.module('proton.message')
      * @return {Array}
      */
         const getTransformers = (blacklist = []) => {
-            if (blacklist.indexOf('*') > -1) {
+            if (blacklist.includes('*')) {
                 return [];
             }
-            return filters.filter(({ name }) => blacklist.indexOf(name) === -1);
+            return filters.filter(({ name }) => !blacklist.includes(name));
         };
 
         function createParser(content, message, { isBlacklisted = false, action }) {
@@ -46,10 +47,12 @@ angular.module('proton.message')
 
             const body = transformers.reduceRight((html, transformer) => transformer.action(html, message, action), div);
 
-            if (!_.contains(blacklist, 'transformAttachements')) {
+            if (!blacklist.includes('*') && !_.contains(blacklist, 'transformAttachements')) {
                 transformAttachements(body, message, action);
             }
 
+            // For a draft we try to load embedded content if we can
+            /^reply|forward/.test(action) && transformEmbedded(body, message, action);
             return transformRemote(body, message, { action }).innerHTML;
         };
     });

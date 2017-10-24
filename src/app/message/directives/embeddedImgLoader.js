@@ -38,8 +38,7 @@ angular.module('proton.message')
                     return acc;
                 }, { map: {}, list: [] });
 
-            Promise
-                .all(list)
+            Promise.all(list)
                 .then((images) => {
                     _rAF(() => {
                         images.forEach(({ img, src }) => {
@@ -71,13 +70,12 @@ angular.module('proton.message')
 
         return {
             link(scope) {
-                const unsubscribe = $rootScope
-                    .$on('message.embedded', (e, { type, data }) => {
-                        if (type === 'loaded') {
-                            // Need to build images after the $digest as we need the decrypted body to be already compiled
-                            scope.$applyAsync(() => bindImagesUrl(data));
-                        }
-                    });
+                const unsubscribe = $rootScope.$on('message.embedded', (e, { type, data }) => {
+                    if (type === 'loaded') {
+                        // Need to build images after the $digest as we need the decrypted body to be already compiled
+                        scope.$applyAsync(() => bindImagesUrl(data));
+                    }
+                });
 
                 scope.$on('$destroy', () => unsubscribe());
             }
