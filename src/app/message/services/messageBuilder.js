@@ -31,10 +31,10 @@ angular.module('proton.message')
          * @param  {Message} message
          * @return {String}
          */
-        function prepareBody(input, message) {
+        function prepareBody(input, message, action) {
             const content = convertContent(input, message);
             return prepareContent(content, message, {
-                blacklist: ['*']
+                blacklist: ['*'], action
             });
         }
 
@@ -171,7 +171,7 @@ angular.module('proton.message')
                     'From: ' + currentMsg.Sender.Address + '<br>',
                     'To: ' + tools.contactsToString(currentMsg.ToList) + '<br>',
                     (cc.length ? cc + '<br>' : '') + '<br>',
-                    (prepareBody(currentMsg.getDecryptedBody(), currentMsg)),
+                    (prepareBody(currentMsg.getDecryptedBody(), currentMsg, action)),
                     '</blockquote><br>'
                 ].join(''));
             }
@@ -243,7 +243,6 @@ angular.module('proton.message')
             setDefaultsParams(newMsg);
             newMsg = builder(action, currentMsg, newMsg);
             newMsg.setDecryptedBody(signatureBuilder.insert(newMsg, { action }));
-
             return newMsg;
         }
 

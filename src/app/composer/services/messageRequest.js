@@ -7,7 +7,7 @@ angular.module('proton.composer')
             ERROR_SENDING: gettextCatalog.getString('Cannot send message', null, 'Error')
         };
 
-        const dispatch = (type, data = {}) => $rootScope.emit('composer.update', { type, data });
+        const dispatch = (type, data = {}) => $rootScope.$emit('composer.update', { type, data });
 
 
         function getSendError(data) {
