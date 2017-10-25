@@ -68,7 +68,11 @@ label.settingsSignatures-label-active {
     .colorPopover-container .colorPopover-header [class*='colorPopover-title'] {
         font-size: 1.2em
     }
-    .squireToolbar-container { border-width: 1px 1px 0 1px }
+    .squireToolbar-container {
+        border-width: 1px 1px 0 1px;
+        border-style: solid;
+        border-color: $border;
+    }
     [class*="squireToolbar-action-"] { padding: 0 }
     .squireToolbar-text-mode { display: none }
 }
