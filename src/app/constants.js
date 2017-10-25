@@ -129,8 +129,8 @@ angular.module('proton.constants', [])
         IFRAME_SECURE_ORIGIN: 'https://secure.protonmail.com',
         INVITE_URL: 'https://protonmail.com/invite',
         DEFAULT_CURRENCY: 'EUR',
-        TRACKER_ROUTE: 'piwik.php',
-        PIWIK_SCRIPT: 'piwik.js',
+        TRACKER_ROUTE: 'proton.php',
+        PIWIK_SCRIPT: 'proton.js',
         METRIC_GOALS: {
             SIGNUP_ALL: 2,
             SIGNUP_FREE: 4,

@@ -20,8 +20,9 @@ angular.module('proton.analytics')
             state.tracker.setCookieDomain(cookieDomain);
             state.tracker.setDomains(domains);
             state.tracker.enableCrossDomainLinking();
-            state.tracker.setDoNotTrack(true);
-            state.tracker.disableCookies();
+            // temporarily disable do not track and cookies. Will be enabled again after some testing.
+            // state.tracker.setDoNotTrack(true);
+            // state.tracker.disableCookies();
             state.tracker.setCustomVariable(1, 'siteFrontEndId', abSiteId, 'visit');
             state.tracker.setCustomVariable(1, 'enablePMRequestCombiner', 'yes', 'page');
             // trigger the promises waiting for the tracker.
