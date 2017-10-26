@@ -79,6 +79,26 @@ angular.module('proton.squire')
                 border: none;
             }
 
+            .proton-embedded:not([src]) {
+                position: relative;
+                min-height: 38px; /* placeholder */
+
+            }
+            .proton-embedded:not([src])::after {
+                position: absolute;
+                top:0px;
+                left: 0px;
+                display: inline-block;
+                content: " " attr(alt);
+                white-space: nowrap;
+                padding: 10px 10px 10px 30px;
+                min-width: 40px;
+                background: url(/assets/img/icons/broken-img.png) no-repeat 5px 50% white;
+                border:1px solid;
+                border-color: #444 #CCC #CCC #444;
+                color: rgba(0,0,0,0.5);
+            }
+
             /* see embedded.scss rules */
             .proton-embedded:not([width]):not([style*="width"]) { max-width: 100% }
 
