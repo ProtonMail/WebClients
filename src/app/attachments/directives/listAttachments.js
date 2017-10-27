@@ -37,8 +37,7 @@ angular.module('proton.attachments')
                             return false;
                         }
 
-                        attachmentDownloader
-                            .download(attachment, scope.model, target)
+                        attachmentDownloader.download(attachment, scope.model, target)
                             .then(() => {
                                 target.classList.add(DOWNLOADED_CLASSNAME);
                             })
@@ -60,18 +59,17 @@ angular.module('proton.attachments')
                             }
                         });
 
-                        scope
-                            .$applyAsync(() => {
-                                const attachment = _.findWhere(scope.model.Attachments, { ID });
+                        scope.$applyAsync(() => {
+                            const attachment = _.findWhere(scope.model.Attachments, { ID });
 
-                                // If it's coming from outside there is no headers yet
-                                // it's raw attachments without any record yet
-                                if ((attachment.Headers || {}).embedded === 1) {
-                                    scope.model.NumEmbedded--;
-                                }
-                                scope.model.Attachments = scope.model.Attachments.filter((att) => att.ID !== ID);
-                                hide();
-                            });
+                            // If it's coming from outside there is no headers yet
+                            // it's raw attachments without any record yet
+                            if ((attachment.Headers || {}).embedded === 1) {
+                                scope.model.NumEmbedded--;
+                            }
+                            scope.model.Attachments = scope.model.Attachments.filter((att) => att.ID !== ID);
+                            hide();
+                        });
                     }
                 };
 

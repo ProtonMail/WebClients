@@ -89,7 +89,8 @@ module.exports = {
       'node_modules/pt.asmcrypto.js/asmcrypto.js',
       'node_modules/babel-polyfill/dist/polyfill.js',
       'node_modules/pmcrypto/build/pmcrypto.js',
-      'node_modules/markdown-it/dist/markdown-it.min.js'
+      'node_modules/markdown-it/dist/markdown-it.min.js',
+      'node_modules/jszip/dist/jszip.min.js'
     ],
     bootstrap_components: [
       "affix",

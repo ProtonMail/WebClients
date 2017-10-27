@@ -1,0 +1,11 @@
+.btnDownloadAttachments-container { cursor: pointer }
+.btnDownloadAttachments-container:hover { color: #222 }
+.btnDownloadAttachments-container * { pointer-events: none }
+
+.btnDownloadAttachments-container:not(.btnDownloadAttachments-load) {
+    .btnDownloadAttachments-icon-loader { display: none }
+}
+.btnDownloadAttachments-container.btnDownloadAttachments-load {
+    .btnDownloadAttachments-icon-download { display: none }
+}
+

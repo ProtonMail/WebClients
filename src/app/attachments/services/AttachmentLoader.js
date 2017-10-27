@@ -1,7 +1,6 @@
 angular.module('proton.attachments')
-    .factory('AttachmentLoader', ($cacheFactory, $log, $q, aboutClient, pmcw, authentication, $state, $stateParams, Eo, secureSessionStorage, attachmentApi) => {
+    .factory('AttachmentLoader', ($cacheFactory, $log, $q, pmcw, authentication, $state, $stateParams, Eo, secureSessionStorage, attachmentApi) => {
 
-        const isFileSaverSupported = aboutClient.isFileSaverSupported();
         const cache = $cacheFactory('attachments');
         const getCacheKey = ({ ID }) => `attachment.${ID}`;
         const isOutside = () => $state.is('eo.message') || $state.is('eo.reply');
@@ -131,18 +130,9 @@ angular.module('proton.attachments')
             }
 
             const request = getRequest(attachment);
-
             const key = getSessionKey(message, attachment);
-
             const pubKeys = null;
 
-            // const sender = [message.Sender.Address];
-            // message.getPublicKeys(sender)
-            // .then((result) => {
-            //     if (result.data && result.data[sender] != null) {
-            //         pubKeys = result.data[sender];
-            //     }
-            // });
             return Promise.all([request, key])
                 .then(([{ data }, { sessionKey }]) => decrypt(data, pubKeys, sessionKey))
                 .then((data) => (cache.put(getCacheKey(attachment), data), data))
@@ -151,33 +141,7 @@ angular.module('proton.attachments')
                 });
         };
 
-        /**
-         * Generate a download for an attachment
-         * @param  {Object} attachment
-         * @return {void}
-         */
-        const generateDownload = (attachment) => {
-            try {
-                const blob = new Blob([attachment.data], { type: attachment.MIMEType });
-
-                if (isFileSaverSupported) {
-                    return window.saveAs(blob, attachment.Name);
-                }
-
-                // Bad blob support, make a data URI, don't click it
-                const reader = new FileReader();
-
-                reader.onloadend = () => {
-                    attachment.el.href = reader.result;
-                };
-
-                reader.readAsDataURL(blob);
-            } catch (error) {
-                $log.error(error);
-            }
-        };
-
         const flushCache = () => cache.removeAll();
 
-        return { get, load, flushCache, generateDownload, getSessionKey };
+        return { get, load, flushCache, getSessionKey };
     });
