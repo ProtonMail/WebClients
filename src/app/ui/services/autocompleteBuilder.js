@@ -16,7 +16,8 @@ angular.module('proton.ui')
                     maxItems: CONSTANTS.AWESOMEPLETE_MAX_ITEMS,
                     autoFirst: true,
                     sort: false,
-                    list: []
+                    list: [],
+                    ul: el[0].querySelector('.autocompleteEmails-autocomplete')
                 });
 
                 let previousScrollIndex = 0;

@@ -68,6 +68,7 @@ angular.module('proton.ui')
         const link = (scope, el, { awesomplete }) => {
 
             scope.emails = [];
+            const $list = el[0].querySelector('.autocompleteEmails-admin');
 
             // Model for this autocomplete
             const model = autocompleteEmailsModel(scope.list);
@@ -79,6 +80,8 @@ angular.module('proton.ui')
             const syncModel = () => scope.$applyAsync(() => {
                 scope.emails = model.all();
                 scope.list = model.all();
+                // Auto scroll to the end of the list
+                _rAF(() => $list.scrollTop = $list.scrollHeight + 32);
             });
             syncModel();
 

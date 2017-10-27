@@ -15,6 +15,9 @@
     vertical-align: middle;
     width: 100%;
     position: relative;
+    max-height: 100px;
+    overflow-y: auto;
+    overflow-x: hidden
 }
 
 .autocompleteEmails-admin, .autocompleteEmails-admin * {box-sizing: border-box}
@@ -48,52 +51,85 @@
     white-space: nowrap
 }
 
+.autocompleteEmails-field .visually-hidden {display: none}
+
 .autocompleteEmails-field {
     flex: 1;
     min-width: 15%
 }
 
-.autocomplete-container {
-    .awesomplete {
-        display: block;
-        position: static;
+.autocomplete-container .awesomplete {
+    display: block;
+    position: static;
+}
 
-        input {width: 100%}
+.autocomplete-container .awesomplete,
+.autocompleteEmails-autocomplete  {
+    input {width: 100%}
 
-        ul {
-            border-radius: 0;
-            max-height: 150px;
-            overflow: auto;
-            z-index: 99999;
-            border: 1px solid $border;
-            background-color: $white;
-            box-shadow: none;
-            transform: scale(1) !important;
-            transition-duration: 0s !important;
-        }
+    ul {
+        border-radius: 0;
+        max-height: 150px;
+        overflow: auto;
+        z-index: 99999;
+        border: 1px solid $border;
+        background-color: $white;
+        box-shadow: none;
+        transform: scale(1) !important;
+        transition-duration: 0s !important;
+    }
 
-        ul[hidden] {pointer-events: none;}
+    ul[hidden] {pointer-events: none;}
 
-        ul:empty {display: none}
+    ul:empty,
+    ul::before {display: none}
 
-        ul::before {display: none}
+    li[aria-selected="true"], li[aria-selected="true"]:hover {background-color: $default-color-light}
 
-        li[aria-selected="true"], li[aria-selected="true"]:hover {background-color: $default-color-light}
+    li:hover {background-color: $light}
 
-        li:hover {background-color: $light}
+    li,
+    li:hover,
+    li[aria-selected="true"],
+    li[aria-selected="true"]:hover {color: $default-color }
 
-        li,
-        li:hover,
-        li[aria-selected="true"],
-        li[aria-selected="true"]:hover {color: $default-color }
+    mark,
+    li:hover mark,
+    li[aria-selected="true"] mark {
+        color: inherit;
+        background-color: transparent;
+        font-weight: bold
+    }
+}
 
-        mark,
-        li:hover mark,
-        li[aria-selected="true"] mark {
-            color: inherit;
-            background-color: transparent;
-            font-weight: bold
-        }
+.autocompleteEmails-autocomplete {
+    border-radius: 0;
+    max-height: 150px;
+    overflow: auto;
+    z-index: 9000;
+    border: 1px solid $border;
+    background-color: $white;
+    box-shadow: none;
+    transform: scale(1) !important;
+    transition-duration: 0s !important;
+
+    [hidden] {pointer-events: none;}
+    :empty {display: none}
+    ::before {display: none}
+}
+
+
+.autocompleteEmails-autocomplete {
+
+    position: fixed;
+    width: 92%;
+    li { padding: 0 .5em }
+
+    &:empty,
+    &::before,
+    &[hidden] {
+        pointer-events: none;
+        display: none
     }
 }
 
@@ -106,3 +142,4 @@
 .autocompleteEmails-btn-remove:focus, .autocompleteEmails-btn-remove:active {
     color: $active-background;
 }
+.autocompleteEmails-field .visually-hidden {display: none}
