@@ -2,14 +2,19 @@
     <header>
         <span class="title">
             <strong>{{ model.attachmentsSize() | humanSize }}</strong>
-            <span ng-show="model.Attachments.length - model.NumEmbedded > 0">
+            <span ng-if="model.Attachments.length - model.NumEmbedded > 0">
                 <i class="fa fa-paperclip"></i> {{ model.Attachments.length -  model.NumEmbedded }} <span translate translate-n="model.Attachments.length - model.NumEmbedded" translate-plural="files attached">file attached</span>
             </span>
-            <span ng-show="model.NumEmbedded > 0">
+            <span ng-if="model.NumEmbedded > 0">
                 <i class="fa fa-image embedded"></i> {{ model.NumEmbedded }} <span translate-n="model.NumEmbedded" translate-plural="embedded images">embedded image</span>
             </span>
+
+            <span ng-if="model.Attachments.length - model.NumEmbedded > 1">
+                <btn-download-attachments
+                    data-model="model"
+                    class="listAttachments-btn-downloadAll"></btn-download-attachments>
+            </span>
         </span>
-        <em></em>
     </header>
 
     <section class="listAttachments-list">
