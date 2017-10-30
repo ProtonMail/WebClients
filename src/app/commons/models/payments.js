@@ -81,9 +81,10 @@ angular.module('proton.commons')
         /**
          * Create Paypal Payment
          * @param {Object} params
+         * @param {Object} config
          * @return {Promise}
          */
-        const paypal = (opt) => $http.post(requestUrl('paypal'), opt);
+        const paypal = (opt, config = {}) => $http.post(requestUrl('paypal'), opt, config);
 
         /**
          * Send payment details to subscribe during the signup process

@@ -121,7 +121,7 @@ angular.module('proton.constants', [])
         },
         URL_INFO: 'https://mail.protonmail.com/assets/host.png',
         MIN_PAYPAL_AMOUNT: 500,
-        MAX_PAYPAL_AMOUNT: 999999999,
+        MAX_PAYPAL_AMOUNT: 99999900,
         MIN_BITCOIN_AMOUNT: 500,
         BTC_DONATION_ADDRESS: '1Q1nhq1NbxPYAbw1BppwKbCqg58ZqMb9A8',
         CURRENCIES: ['USD', 'EUR', 'CHF'],
@@ -171,5 +171,6 @@ angular.module('proton.constants', [])
             blue: [ '#CDE1F2', '#9CC3E5', '#6CA6D9', '#3B83C2', '#2A47F6', '#145390', '#0F3A62'],
             green: [ '#D7EAD3', '#B3D6A9', '#8FC380', '#77F241', '#66A657', '#3A762B', '#29501F'],
             yellow: [ '#FFF2CD', '#FEE59C', '#FCD86F', '#FDF84E', '#F2C246', '#BE8F35', '#7F6124']
-        }
+        },
+        CANCEL_REQUEST: 'CANCEL_REQUEST'
     });

@@ -1,7 +1,7 @@
-angular.module('proton.core')
-    .directive('paypalView', (notification, Payment, gettextCatalog, CONSTANTS) => {
+angular.module('proton.payment')
+    .directive('paypalView', (notification, Payment, gettextCatalog, CONSTANTS, $q, networkUtils) => {
 
-        const { MIN_PAYPAL_AMOUNT, MAX_PAYPAL_AMOUNT } = CONSTANTS;
+        const { MIN_PAYPAL_AMOUNT, MAX_PAYPAL_AMOUNT, CANCEL_REQUEST } = CONSTANTS;
         const I18N = {
             down: gettextCatalog.getString('Error connecting to PayPal.', null, 'Paypal component')
         };
@@ -9,7 +9,7 @@ angular.module('proton.core')
         return {
             replace: true,
             restrict: 'E',
-            templateUrl: 'templates/directives/core/paypalView.tpl.html',
+            templateUrl: 'templates/payment/paypalView.tpl.html',
             scope: {
                 amount: '=',
                 currency: '=',
@@ -17,8 +17,9 @@ angular.module('proton.core')
             },
             link(scope, element, { type = 'payment' }) {
                 let childWindow;
+                let deferred;
 
-                scope.initPaypal = () => {
+                const load = () => {
                     scope.errorDetails = null;
                     scope.paypalNetworkError = false;
                     const Amount = scope.amount;
@@ -39,8 +40,11 @@ angular.module('proton.core')
                         };
                     }
 
-                    Payment.paypal({ Amount, Currency: scope.currency })
+                    deferred = $q.defer();
+                    Payment.paypal({ Amount, Currency: scope.currency }, { timeout: deferred.promise })
                         .then(({ data = {} } = {}) => {
+                            deferred = null;
+
                             if (data.Code === 1000) {
                                 return data;
                             }
@@ -50,7 +54,12 @@ angular.module('proton.core')
                             throw new Error(data.Error || I18N.down);
                         })
                         .then(({ ApprovalURL }) => scope.approvalURL = ApprovalURL)
-                        .catch((error) => notification.error(error.message));
+                        .catch((error) => {
+                            deferred = null;
+                            if (!networkUtils.isCancelledRequest(error)) {
+                                error.message && notification.error(error);
+                            }
+                        });
                 };
 
                 scope.openPaypalTab = () => {
@@ -72,7 +81,13 @@ angular.module('proton.core')
                     scope.paypalCallback({ PayerID, PaymentID, Cancel });
                 }
 
-                scope.initPaypal();
+                load();
+
+                scope.$on('$destroy', () => {
+                    // Cancel request if pending
+                    deferred && deferred.resolve(CANCEL_REQUEST);
+                    deferred = null;
+                });
             }
         };
     });

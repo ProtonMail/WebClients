@@ -1,5 +1,5 @@
 angular.module('proton.authentication')
-    .factory('authHttpResponseInterceptor', ($q, $injector, $rootScope, AppModel) => {
+    .factory('authHttpResponseInterceptor', ($q, $injector, $rootScope, AppModel, networkUtils) => {
         let notification = false;
         let upgradeNotification = false;
         let NOTIFS;
@@ -63,13 +63,12 @@ angular.module('proton.authentication')
                 return response || $q.when(response);
             },
             responseError(rejection) {
-                if (rejection.status === 0 || rejection.status === -1) {
-                    if (navigator.onLine === true) {
-                        notification = notifyError(NOTIFS.noServer);
-                    } else {
-                        notification = notifyError(NOTIFS.noInternet);
-                    }
+
+                if ((rejection.status === 0 || rejection.status === -1) && !networkUtils.isCancelledRequest(rejection)) {
+                    const key = (navigator.onLine === true) ? 'noServer' : 'noInternet';
+                    notifyError(NOTIFS[key]);
                     AppModel.set('onLine', false);
+
                 } else if (rejection.status === 401) {
                     const handle401 = $injector.get('handle401');
                     return handle401(rejection);
