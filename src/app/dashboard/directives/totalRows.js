@@ -1,9 +1,17 @@
 angular.module('proton.dashboard')
-    .directive('totalRows', ($filter, $rootScope, dashboardConfiguration, dashboardModel) => {
-        const amount = (plan, cycle, currency, division) => $filter('currency')(dashboardModel.total(plan, cycle) / 100 / division, currency);
+    .directive('totalRows', ($filter, $rootScope, dashboardConfiguration, dashboardModel, gettextCatalog) => {
+
+        const I18N = {
+            billedAs(amount) {
+                return gettextCatalog.getString('Billed as {{amount}} /yr', { amount }, 'Info');
+            }
+        };
+
         const types = ['addon.updated', 'cycle.updated', 'currency.updated'];
         const MONTHLY = 1;
         const YEARLY = 12;
+
+        const amount = (plan, cycle, currency, division) => $filter('currency')(dashboardModel.total(plan, cycle) / 100 / division, currency);
 
         return {
             restrict: 'E',
@@ -21,7 +29,7 @@ angular.module('proton.dashboard')
                     scope.$applyAsync(() => {
                         monthly.text(amount(plan, MONTHLY, dashboardConfiguration.currency(), MONTHLY));
                         yearly.text(amount(plan, YEARLY, dashboardConfiguration.currency(), YEARLY));
-                        billed.text(`Billed as ${amount(plan, YEARLY, dashboardConfiguration.currency(), MONTHLY)} /yr`);
+                        billed.text(I18N.billedAs(amount(plan, YEARLY, dashboardConfiguration.currency(), MONTHLY)));
                         scope.cycle = dashboardConfiguration.cycle();
                     });
                 }
