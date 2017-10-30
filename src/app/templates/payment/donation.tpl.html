@@ -64,7 +64,7 @@
             <input
                 type="number"
                 min="2"
-                max="99999999"
+                max="999999"
                 id="otherAmount"
                 name="otherAmount"
                 ng-model="model.otherAmount"
@@ -86,7 +86,7 @@
     <div class="donateModal-choose-errors" ng-messages="donationForm.otherAmount.$error">
         <p ng-message="number" class="text-red" translate-context="Error" translate>Invalid number</p>
         <p ng-message="min" class="text-red" translate-context="Error" translate>Due to credit card processing fees, we cannot accept donations smaller than 2.</p>
-        <p ng-message="max" class="text-red" translate-context="Error" translate>Thank you for your willingness to donate. The maximum we can accept in single donations is 99 999 999 at this moment. Thank you</p>
+        <p ng-message="max" class="text-red" translate-context="Error" translate>Thank you for your willingness to donate. The maximum we can accept in single donations is 999 999 at this moment. Thank you</p>
     </div>
 
     <div>
