@@ -60,20 +60,22 @@ angular.module('proton.filter')
              * Get list of items based on
              *     - Current context (search or not)
              *     - Pagination (next call will get next items)
+             * This function is also called each time the user switch an element from a list to an other list
              * @param  {String} type   Type of list (black|white)list
              * @return {Array}
              */
             const get = async () => {
-                const pageFrom = CACHE.page;
-                extendPage(1);
-                setLoader(true);
+                const pageFrom = CACHE.page; // Starts at 0
 
-                if (pageFrom === 0) {
-                    setLoader(false);
+                // If we ask for content already saved in cache we return the list
+                if (CACHE.list.length && CACHE.list.length >= ((pageFrom + 2) * PAGE_SIZE)) {
                     CACHE.ending = (CACHE.list.length < PAGE_SIZE) && !CACHE.invalidate;
                     delete CACHE.invalidate;
                     return angular.copy(CACHE.list);
                 }
+
+                extendPage(1);
+                setLoader(true);
 
                 const list = await loadList({
                     Location: type,
@@ -161,7 +163,7 @@ angular.module('proton.filter')
                 MAIN_CACHE[item.Location].list.splice(index, 1);
                 MAIN_CACHE[location].list.unshift(data);
                 MAIN_CACHE.MAP[item.ID] = data;
-                MAIN_CACHE[item.Location].invalidate = true;
+                MAIN_CACHE[item.Location].invalidate = !MAIN_CACHE[item.Location].ending;
                 resetIndex();
                 refresh();
             } catch (e) {
@@ -185,7 +187,7 @@ angular.module('proton.filter')
             const item = MAIN_CACHE.MAP[id];
             const index = _.findIndex(MAIN_CACHE[item.Location].list, (o) => o.ID === item.ID);
             MAIN_CACHE[item.Location].list.splice(index, 1);
-            MAIN_CACHE[item.Location].invalidate = true;
+            MAIN_CACHE[item.Location].invalidate = !MAIN_CACHE[item.Location].ending;
             delete MAIN_CACHE.MAP[id];
             resetIndex(item.Location);
             refresh();
