@@ -1,7 +1,8 @@
 .composerInputMeta-container {
     position: relative;
     max-height: 32px;
-    overflow: hidden
+    overflow: hidden;
+    padding: 0 0 0 10px !important;
 }
 
 
@@ -37,6 +38,3 @@
     max-height: 100%;
     overflow: inherit;
 }
-
-/* Toggle button is right: 7px;  */
-.composerInputMeta-autocomplete { max-width: 93% }
