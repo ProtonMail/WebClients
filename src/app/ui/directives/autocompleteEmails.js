@@ -34,7 +34,7 @@ angular.module('proton.ui')
             if (target.nodeName === 'FORM') {
                 const input = target.querySelector('input');
                 return {
-                    value: input ? input.value : '',
+                    value: (input ? input.value : '').trim(),
                     clear() {
                         input && (input.value = '');
                     }
@@ -42,7 +42,7 @@ angular.module('proton.ui')
             }
 
             return {
-                value: target.value,
+                value: (target.value || '').trim(),
                 clear() {
                     target.value = '';
                 }
