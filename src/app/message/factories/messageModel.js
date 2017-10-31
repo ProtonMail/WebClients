@@ -38,18 +38,15 @@ angular.module('proton.message')
             gettextCatalog.getString('End to end encrypted auto-reply', null)
         ];
         const emptyMessage = gettextCatalog.getString('Message empty', null, 'Message content if empty');
+        const AUTOREPLY_HEADERS = ['X-Autoreply', 'X-Autorespond', 'X-Autoreply-From', 'X-Mail-Autoreply'];
 
         class Message {
 
 
             constructor(msg) {
                 _.extend(this, angular.copy(msg));
-
-
-                const autoreplyHeaders = ['X-Autoreply', 'X-Autorespond', 'X-Autoreply-From', 'X-Mail-Autoreply'];
                 const { ParsedHeaders = {} } = msg;
-                this.isAutoReply = autoreplyHeaders.some((header) => header in ParsedHeaders);
-
+                this.isAutoReply = AUTOREPLY_HEADERS.some((header) => header in ParsedHeaders);
                 return this;
             }
             isDraft() {

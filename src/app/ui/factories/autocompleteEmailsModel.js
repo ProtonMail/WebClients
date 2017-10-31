@@ -48,10 +48,10 @@ angular.module('proton.ui')
          */
         const formatLabel = (Name, Email) => {
             if (Email === Name || !Name) {
-                return Email;
+                return Email.trim();
             }
 
-            return `${htmlEntities(Name)} ${OPEN_TAG_AUTOCOMPLETE}${Email}${CLOSE_TAG_AUTOCOMPLETE}`;
+            return `${htmlEntities(Name).trim()} ${OPEN_TAG_AUTOCOMPLETE}${Email.trim()}${CLOSE_TAG_AUTOCOMPLETE}`;
         };
 
         /**

@@ -16,6 +16,12 @@ angular.module('proton.composer')
             NO_SUBJECT_MESSAGE: gettextCatalog.getString('No subject, send anyway?', null, 'Info')
         };
 
+        const cleanEmails = (message) => {
+            message.ToList.concat(message.CCList, message.BCCList).forEach((item) => {
+                item.Address = item.Address.trim();
+            });
+        };
+
         async function validate(message) {
 
             if (message.MIMEType !== 'text/plain') {
@@ -27,12 +33,11 @@ angular.module('proton.composer')
             if (message.uploading > 0) {
                 throw new Error(I18N.STILL_UPLOADING);
             }
-
+            cleanEmails(message);
             const emailStats = message.ToList.concat(message.CCList, message.BCCList)
                 .reduce((acc, { Address = '' }) => {
-                    const email = Address.trim();
-                    acc.all.push(email);
-                    !regexEmail.test(email) && acc.invalid.push(email);
+                    acc.all.push(Address);
+                    !regexEmail.test(Address) && acc.invalid.push(Address);
                     acc.total++;
                     return acc;
                 }, { all: [], invalid: [], total: 0 });
