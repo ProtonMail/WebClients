@@ -1,9 +1,29 @@
 angular.module('proton.message')
-    .directive('unsubscribePanel', ($rootScope, gettextCatalog) => {
+    .directive('unsubscribePanel', ($rootScope, authentication, confirmModal, gettextCatalog) => {
         const I18N = {
             notice: gettextCatalog.getString('This message is from a mailing list.', null, 'Info'),
             kb: gettextCatalog.getString('Learn more', null, 'Info'),
-            button: gettextCatalog.getString('Unsubscribe', null, 'Action')
+            button: gettextCatalog.getString('Unsubscribe', null, 'Action'),
+            title: gettextCatalog.getString('Unsubscribe from mailing list?', null, 'Title'),
+            message(email) { return gettextCatalog.getString('We will send a message from <b>{{email}}</b> and/or open a new tab to unsubscribe from this mailing list.', { email }, 'Info'); }
+        };
+
+        const confirm = (message) => {
+            const { Email } = _.findWhere(authentication.user.Addresses, { ID: message.AddressID }) || authentication.user.Addresses[0];
+
+            confirmModal.activate({
+                params: {
+                    title: I18N.title,
+                    message: I18N.message(Email),
+                    confirm() {
+                        confirmModal.deactivate();
+                        $rootScope.$emit('message', { type: 'unsubscribe', data: { message } });
+                    },
+                    cancel() {
+                        confirmModal.deactivate();
+                    }
+                }
+            });
         };
 
         return {
@@ -20,7 +40,7 @@ angular.module('proton.message')
             `,
             link(scope, element) {
                 const $button = element.find('.unsubscribePanel-button');
-                const onClick = () => $rootScope.$emit('message', { type: 'unsubscribe', data: { message: scope.message } });
+                const onClick = () => confirm(scope.message);
 
                 $button.on('click', onClick);
                 scope.$on('$destroy', () => $button.off('click', onClick));
