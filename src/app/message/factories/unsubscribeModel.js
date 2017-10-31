@@ -59,9 +59,22 @@ angular.module('proton.message')
             $rootScope.$emit('message', { type: 'unsubscribed', data: { message } });
         }
 
+        /**
+         * Know if we unsubscribe with link or message method
+         * @param  {Object}  message
+         * @param  {String}  type: 'http' or 'mailto:'
+         * @return {Boolean}
+         */
+        function beginsWith(message, type) {
+            const list = message.getListUnsubscribe();
+            const matches = (list.match(UNSUBSCRIBE_REGEX) || []).map((m) => m.replace('<', '').replace('>', ''));
+
+            return _.find(matches, (value = '') => value.startsWith(type));
+        }
+
         $rootScope.$on('message', (event, { type, data = {} }) => {
             (type === 'unsubscribe') && unsubscribe(data.message);
         });
 
-        return { init: angular.noop, already };
+        return { init: angular.noop, already, beginsWith };
     });
