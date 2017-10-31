@@ -104,9 +104,8 @@
             <i class="fa fa-clock-o"></i>
             <span ng-show="!!message.maximized" translate translate-context="Action">Expiration</span>
         </button>
-        <span class="text-muted saveAt" ng-show="message.Time" translate>Saved at {{ message.Time | date : "shortTime" }}</span>
         <div class="pull-right">
-
+            <span class="text-muted saveAt desktopOnly" ng-show="message.Time" translate>Saved at {{ message.Time | date : 'shortTime' }}</span>
             <button
                 class="pm_button composer-btn-discard"
                 ng-disabled="message.disableDiscard()"
