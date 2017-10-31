@@ -5,7 +5,9 @@ angular.module('proton.message')
             kb: gettextCatalog.getString('Learn more', null, 'Info'),
             button: gettextCatalog.getString('Unsubscribe', null, 'Action'),
             title: gettextCatalog.getString('Unsubscribe from mailing list?', null, 'Title'),
-            message(email) { return gettextCatalog.getString('We will send a message from <b>{{email}}</b> and/or open a new tab to unsubscribe from this mailing list.', { email }, 'Info'); }
+            message(email) {
+                return gettextCatalog.getString('We will send a message from {{email}} and/or open a new tab to unsubscribe from this mailing list.', { email: `<b>${email}</b>` }, 'Info');
+            }
         };
 
         const confirm = (message) => {
