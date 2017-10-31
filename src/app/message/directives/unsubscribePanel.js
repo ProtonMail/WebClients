@@ -1,16 +1,16 @@
 angular.module('proton.message')
-    .directive('unsubscribePanel', ($rootScope, authentication, confirmModal, gettextCatalog) => {
+    .directive('unsubscribePanel', ($rootScope, authentication, confirmModal, gettextCatalog, unsubscribeModel) => {
         const I18N = {
             notice: gettextCatalog.getString('This message is from a mailing list.', null, 'Info'),
             kb: gettextCatalog.getString('Learn more', null, 'Info'),
             button: gettextCatalog.getString('Unsubscribe', null, 'Action'),
             title: gettextCatalog.getString('Unsubscribe from mailing list?', null, 'Title'),
             message(email) {
-                return gettextCatalog.getString('We will send a message from {{email}} and/or open a new tab to unsubscribe from this mailing list.', { email: `<b>${email}</b>` }, 'Info');
+                return gettextCatalog.getString('We will send a message from {{email}} to unsubscribe from this mailing list.', { email: `<b>${email}</b>` }, 'Info');
             }
         };
 
-        const confirm = (message) => {
+        const confirmFirst = (message) => {
             const { Email } = _.findWhere(authentication.user.Addresses, { ID: message.AddressID }) || authentication.user.Addresses[0];
 
             confirmModal.activate({
@@ -42,7 +42,13 @@ angular.module('proton.message')
             `,
             link(scope, element) {
                 const $button = element.find('.unsubscribePanel-button');
-                const onClick = () => confirm(scope.message);
+                const onClick = () => {
+                    if (unsubscribeModel.beginsWith(scope.message, 'mailto:')) {
+                        confirmFirst(scope.message);
+                    } else {
+                        $rootScope.$emit('message', { type: 'unsubscribe', data: { message: scope.message } });
+                    }
+                };
 
                 $button.on('click', onClick);
                 scope.$on('$destroy', () => $button.off('click', onClick));
