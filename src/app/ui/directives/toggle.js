@@ -1,5 +1,13 @@
 angular.module('proton.ui')
     .directive('toggle', (gettextCatalog, $rootScope) => {
+
+        const I18N = {
+            YES: gettextCatalog.getString('Yes', null, 'Title'),
+            NO: gettextCatalog.getString('No', null, 'Title'),
+            ON: gettextCatalog.getString('ON', null, 'Title'),
+            OFF: gettextCatalog.getString('OFF', null, 'Title')
+        };
+
         return {
             restrict: 'E',
             replace: true,
@@ -7,18 +15,12 @@ angular.module('proton.ui')
             scope: {
                 id: '@', // ID if uniq logic needed
                 status: '=', // status value
-                name: '@', // event name called
-                on: '@', // text for on
-                off: '@' // text for off
+                name: '@' // event name called
             },
-            link(scope, element) {
-                if (!scope.on) {
-                    scope.on = gettextCatalog.getString('Yes', null, 'Title');
-                }
+            link(scope, element, { on = 'YES', off = 'NO' }) {
 
-                if (!scope.off) {
-                    scope.off = gettextCatalog.getString('No', null, 'Title');
-                }
+                scope.offn = I18N[on];
+                scope.off = I18N[off];
 
                 function onClick() {
                     scope.$applyAsync(() => {
