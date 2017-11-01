@@ -13,7 +13,7 @@ angular.module('proton.formUtils')
             const year = () => formatYear(card.year);
             const cvc = () => clean(card.cvc);
             const fullname = () => card.fullname;
-            const zip = () => clean(card.zip);
+            const zip = () => card.zip; // NOTE don't clean the ZIP, space is allowed
             const country = () => card.country.value;
             const details = () => ({
                 Number: number(),
