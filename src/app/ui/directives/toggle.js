@@ -19,7 +19,7 @@ angular.module('proton.ui')
             },
             link(scope, element, { on = 'YES', off = 'NO' }) {
 
-                scope.offn = I18N[on];
+                scope.on = I18N[on];
                 scope.off = I18N[off];
 
                 function onClick() {
