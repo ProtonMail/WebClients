@@ -1,5 +1,6 @@
 const fs = require('fs');
 const path = require('path');
+const os = require('os');
 const autoprefixer = require('autoprefixer');
 const serveStatic = require('serve-static');
 const loadTasks = require('load-grunt-tasks');
@@ -24,7 +25,6 @@ module.exports = function (grunt) {
             scroll: true
         };
     };
-
 
     const taskConfig = {
         pkg: PACKAGE,
@@ -504,7 +504,11 @@ module.exports = function (grunt) {
                     }
 
                     commands.push('cd dist');
-                    commands.push('(git ls-files --deleted -z  || echo:) | xargs -0 git rm');
+                    if (os.platform() === 'linux') {
+                        commands.push('git ls-files --deleted -z | xargs -r -0 git rm');
+                    }else {
+                        commands.push('(git ls-files --deleted -z  || echo:) | xargs -0 git rm');
+                    }
                     commands.push('git add --all');
                     commands.push('git commit -m "New Release"');
                     commands.push('git push origin ' + option);
