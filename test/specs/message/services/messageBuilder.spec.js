@@ -809,8 +809,8 @@ Est-ce que tu vas bien ?
                 expect(spyPrepareContent).toHaveBeenCalledTimes(1);
                 const [ content, message, options ] = spyPrepareContent.calls.argsFor(0);
                 expect(content).toBe(MESSAGE_BODY);
-                expect(message.ParentID).toBe(DEFAULT_MESSAGE_COPY.ID)
-                expect(options).toEqual({ blacklist: ['*'] });
+                expect(message.ParentID).toBe(DEFAULT_MESSAGE_COPY.ID);
+                expect(options).toEqual({ blacklist: ['*'], action: 'reply' });
             });
 
             it('should not parse text', () => {
@@ -1028,7 +1028,7 @@ Est-ce que tu vas bien ?
                 const [ content, message, options ] = spyPrepareContent.calls.argsFor(0);
                 expect(content).toBe(MESSAGE_BODY_PLAIN_ESCAPED);
                 expect(message.ParentID).toBe(DEFAULT_MESSAGE_COPY.ID);
-                expect(options).toEqual({ blacklist: ['*'] });
+                expect(options).toEqual({ blacklist: ['*'], action: 'reply' });
             });
 
             it('should parse text', () => {
@@ -1243,7 +1243,7 @@ Est-ce que tu vas bien ?
                 const [ content, message, options ] = spyPrepareContent.calls.argsFor(0);
                 expect(content).toBe(MESSAGE_BODY_PLAIN_ESCAPED);
                 expect(message.ParentID).toBe(DEFAULT_MESSAGE_COPY.ID);
-                expect(options).toEqual({ blacklist: ['*'] });
+                expect(options).toEqual({ blacklist: ['*'], action: 'reply' });
             });
 
             it('should parse text', () => {
@@ -1458,7 +1458,7 @@ Est-ce que tu vas bien ?
                 const [ content, message, options ] = spyPrepareContent.calls.argsFor(0);
                 expect(content).toBe(MESSAGE_BODY_PLAIN_ESCAPED);
                 expect(message.ParentID).toBe(DEFAULT_MESSAGE_COPY.ID);
-                expect(options).toEqual({ blacklist: ['*'] });
+                expect(options).toEqual({ blacklist: ['*'], action: 'reply' });
             });
 
             it('should parse text', () => {
@@ -1683,7 +1683,7 @@ Est-ce que tu vas bien ?
                 const [ content, message, options ] = spyPrepareContent.calls.argsFor(0);
                 expect(content).toBe(MESSAGE_BODY);
                 expect(message.ParentID).toBe(DEFAULT_MESSAGE_COPY.ID);
-                expect(options).toEqual({ blacklist: ['*'] });
+                expect(options).toEqual({ blacklist: ['*'], action: 'reply' });
             });
 
             it('should not parse text', () => {
@@ -1907,7 +1907,7 @@ Est-ce que tu vas bien ?
                 const [ content, message, options ] = spyPrepareContent.calls.argsFor(0);
                 expect(content).toBe(MESSAGE_BODY);
                 expect(message.ParentID).toBe(DEFAULT_MESSAGE_COPY.ID);
-                expect(options).toEqual({ blacklist: ['*'] });
+                expect(options).toEqual({ blacklist: ['*'], action: 'reply' });
             });
 
             it('should not parse text', () => {
@@ -2127,8 +2127,8 @@ Est-ce que tu vas bien ?
                 expect(spyPrepareContent).toHaveBeenCalledTimes(1);
                 const [ content, message, options ] = spyPrepareContent.calls.argsFor(0);
                 expect(content).toBe(MESSAGE_BODY);
-                expect(message.ParentID).toBe(DEFAULT_MESSAGE_COPY.ID)
-                expect(options).toEqual({ blacklist: ['*'] });
+                expect(message.ParentID).toBe(DEFAULT_MESSAGE_COPY.ID);
+                expect(options).toEqual({ blacklist: ['*'], action: 'reply' });
             });
 
             it('should not parse text', () => {
@@ -2336,7 +2336,7 @@ Est-ce que tu vas bien ?
                 const [ content, message, options ] = spyPrepareContent.calls.argsFor(0);
                 expect(content).toBe(MESSAGE_BODY);
                 expect(message.ParentID).toBe(DEFAULT_MESSAGE_COPY.ID);
-                expect(options).toEqual({ blacklist: ['*'] });
+                expect(options).toEqual({ blacklist: ['*'], action: 'replyall' });
             });
 
             it('should not parse text', () => {
@@ -2544,7 +2544,7 @@ Est-ce que tu vas bien ?
                 const [ content, message, options ] = spyPrepareContent.calls.argsFor(0);
                 expect(content).toBe(MESSAGE_BODY);
                 expect(message.ParentID).toBe(DEFAULT_MESSAGE_COPY.ID);
-                expect(options).toEqual({ blacklist: ['*'] });
+                expect(options).toEqual({ blacklist: ['*'], action: 'replyall' });
             });
 
 
@@ -2760,7 +2760,7 @@ Est-ce que tu vas bien ?
                 const [ content, message, options ] = spyPrepareContent.calls.argsFor(0);
                 expect(content).toBe(MESSAGE_BODY);
                 expect(message.ParentID).toBe(DEFAULT_MESSAGE_COPY.ID);
-                expect(options).toEqual({ blacklist: ['*'] });
+                expect(options).toEqual({ blacklist: ['*'], action: 'replyall' });
             });
 
             it('should not parse text', () => {
@@ -2969,7 +2969,7 @@ Est-ce que tu vas bien ?
                 const [ content, message, options ] = spyPrepareContent.calls.argsFor(0);
                 expect(content).toBe(MESSAGE_BODY);
                 expect(message.ParentID).toBe(DEFAULT_MESSAGE_COPY.ID);
-                expect(options).toEqual({ blacklist: ['*'] });
+                expect(options).toEqual({ blacklist: ['*'], action: 'forward' });
             });
 
 
