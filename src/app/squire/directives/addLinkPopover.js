@@ -1,21 +1,10 @@
 angular.module('proton.squire')
-    .directive('addLinkPopover', ($rootScope, editorModel, CONSTANTS, squireExecAction, regexEmail) => {
+    .directive('addLinkPopover', (editorModel, CONSTANTS, squireExecAction, regexEmail, onCurrentMessage) => {
 
         const { DEFAULT_SQUIRE_VALUE } = CONSTANTS;
         const LINK_DEFAULT = DEFAULT_SQUIRE_VALUE.LINK;
         const CLASS_HIDDEN = 'addLinkPopover-hidden';
         const CLASS_UPDATE = 'addLinkPopover-editable';
-
-        /**
-         * Check if this is the current instance of the editor
-         * @param  {Message} options.message Current message
-         * @param  {String} options.ID      ID of the message loaded
-         * @return {Boolean}
-         */
-        const isCurrent = ({ message = {} }, { ID = 'editor' } = {}) => {
-            const currentID = message.ID || 'editor';
-            return ID === currentID;
-        };
 
         /**
          * Get the current link at the cursor or the current selected item
@@ -76,10 +65,6 @@ angular.module('proton.squire')
             };
         };
 
-        const onCurrentMessage = (scope, onAction) => (e, { type, data }) => {
-            isCurrent(scope, data.message) && onAction(type, data);
-        };
-
         return {
             replace: true,
             templateUrl: 'templates/squire/addLinkPopover.tpl.html',
@@ -102,7 +87,7 @@ angular.module('proton.squire')
                     }
                 };
 
-                const unsubscribe = $rootScope.$on('squire.editor', onCurrentMessage(scope, onAction));
+                const unsubscribe = onCurrentMessage('squire.editor', scope, onAction);
 
                 scope.$on('$destroy', () => unsubscribe());
 

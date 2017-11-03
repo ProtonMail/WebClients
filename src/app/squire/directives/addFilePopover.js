@@ -1,20 +1,9 @@
 angular.module('proton.squire')
-    .directive('addFilePopover', ($rootScope, editorModel, CONSTANTS, squireExecAction) => {
+    .directive('addFilePopover', (editorModel, CONSTANTS, squireExecAction, onCurrentMessage) => {
 
         const { DEFAULT_SQUIRE_VALUE } = CONSTANTS;
         const IMAGE = DEFAULT_SQUIRE_VALUE.IMAGE;
         const CLASS_HIDDEN = 'addFilePopover-hidden';
-
-        /**
-         * Check if this is the current instance of the editor
-         * @param  {Message} options.message Current message
-         * @param  {String} options.ID      ID of the message loaded
-         * @return {Boolean}
-         */
-        const isCurrent = ({ message = {} }, { ID = 'editor' } = {}) => {
-            const currentID = message.ID || 'editor';
-            return ID === currentID;
-        };
 
         const onPopover = (message, node, scope) => {
             return ({ action, form, name }, formName) => {
@@ -39,10 +28,6 @@ angular.module('proton.squire')
             node.classList.add(CLASS_HIDDEN);
             // Reset input value to trigger the change event if you select the same file again
             _rAF(() => e.target.value = null);
-        };
-
-        const onCurrentMessage = (scope, onAction) => (e, { type, data }) => {
-            isCurrent(scope, data.message) && onAction(type, data);
         };
 
         return {
@@ -76,7 +61,7 @@ angular.module('proton.squire')
                     }
                 };
 
-                const unsubscribe = $rootScope.$on('squire.editor', onCurrentMessage(scope, onAction));
+                const unsubscribe = onCurrentMessage('squire.editor', scope, onAction);
 
                 scope.$on('$destroy', () => {
                     unsubscribe();
