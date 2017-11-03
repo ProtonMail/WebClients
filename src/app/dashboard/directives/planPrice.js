@@ -2,8 +2,8 @@ angular.module('proton.dashboard')
     .directive('planPrice', ($filter, $rootScope, dashboardConfiguration, dashboardModel, gettextCatalog) => {
         const types = ['cycle.updated', 'currency.updated'];
         const I18N = {
-            user: gettextCatalog.getString('user', null),
-            month: gettextCatalog.getString('month', null)
+            user: gettextCatalog.getString('user', null, 'Label'),
+            month: gettextCatalog.getString('month', null, 'Delay')
         };
         const amount = (plan, cycle, currency) => {
             const amounts = dashboardModel.amounts(cycle);

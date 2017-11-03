@@ -6,13 +6,13 @@ angular.module('proton.labels')
             EDIT_LABEL: gettextCatalog.getString('Edit label', null, 'Title'),
             CREATE_NEW_FOLDER: gettextCatalog.getString('Create new folder', null, 'Title'),
             CREATE_NEW_LABEL: gettextCatalog.getString('Create new label', null, 'Title'),
-            FOLDER_UPDATED: gettextCatalog.getString('Folder updated', null),
-            LABEL_UPDATED: gettextCatalog.getString('Label updated', null),
-            FOLDER_CREATED: gettextCatalog.getString('Folder created', null),
-            LABEL_CREATED: gettextCatalog.getString('Label created', null),
-            ERROR_MESSAGE: gettextCatalog.getString('Error when saving label', null),
-            ERROR_FOLDER_NAME: gettextCatalog.getString('Invalid folder name', null),
-            ERROR_LABEL_NAME: gettextCatalog.getString('Invalid label name', null)
+            FOLDER_UPDATED: gettextCatalog.getString('Folder updated', null, 'Label modal'),
+            LABEL_UPDATED: gettextCatalog.getString('Label updated', null, 'Label modal'),
+            FOLDER_CREATED: gettextCatalog.getString('Folder created', null, 'Label modal'),
+            LABEL_CREATED: gettextCatalog.getString('Label created', null, 'Label modal'),
+            ERROR_MESSAGE: gettextCatalog.getString('Error when saving label', null, 'Error label modal'),
+            ERROR_FOLDER_NAME: gettextCatalog.getString('Invalid folder name', null, 'Error label modal'),
+            ERROR_LABEL_NAME: gettextCatalog.getString('Invalid label name', null, 'Error label modal')
         };
         /**
      * Get title for label modal

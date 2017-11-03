@@ -4,13 +4,24 @@
         <div class="modal-content">
             <div class="modal-header">
                 <domains-menu-step></domains-menu-step>
-                <span ng-show="ctrl.domain.DomainName" class="pull-right pm_badge success" translate>Set</span>
+                <span
+                    ng-show="ctrl.domain.DomainName"
+                    class="pull-right pm_badge success"
+                    translate-context="Add a new domain label"
+                    translate>Set</span>
                 <h4 class="modal-title">1. <span translate translate-context="Title">Domain</span></h4>
             </div>
             <div class="modal-body pm_form">
                 <p><span translate-comment="label for adding a new custom domain" translate translate-context="Info">Add a domain that you own to your ProtonMail account.</span> <a target="_blank" href="https://protonmail.com/support/knowledge-base/custom-domains/" translate translate-context="Action">Learn more</a></p>
-                <input ng-hide="ctrl.domain" type="text" autofocus ng-model="ctrl.name" placeholder-translate="Domain name" />
-                <p class="alert alert-warning" ng-show="ctrl.beginsWith('www.')" translate>'www' subdomains are typically not used for email. Are you sure you want to use this domain value?</p>
+
+                <input
+                    ng-hide="ctrl.domain"
+                    type="text"
+                    autofocus
+                    ng-model="ctrl.name"
+                    placeholder-translate-context="Add a domain"
+                    placeholder-translate="Domain name">
+                <p class="alert alert-warning" ng-show="ctrl.beginsWith('www.')" translate-context="domains" translate>'www' subdomains are typically not used for email. Are you sure you want to use this domain value?</p>
                 <textarea rows="1" ng-show="ctrl.domain" readonly ng-bind="::ctrl.domain.DomainName"></textarea>
             </div>
         </div>

@@ -12,13 +12,19 @@
                         <label translate translate-context="Label">Name</label>
                     </div>
                     <div class="col-1-3">
-                        <input autofocus type="text" ng-model="ctrl.name" placeholder-translate="ex: Thomas Anderson" required />
+                        <input
+                            autofocus
+                            type="text"
+                            ng-model="ctrl.name"
+                            placeholder-translate="ex: Thomas Anderson"
+                            placeholder-translate-context="Exemple name for the user"
+                            required>
                     </div>
                     <div class="col-1-3" ng-if="!ctrl.ID">
                         <label>
                             <custom-checkbox data-custom-ng-model="ctrl.private"></custom-checkbox>
                             <span translate translate-context="Action" translate-comment="Form checkbox option">Private</span>
-                            <i class="fa fa-info-circle" pt-tooltip-translate="Organization administrators cannot access the messages of private users."></i>
+                            <i class="fa fa-info-circle" pt-tooltip-translate-context="Information about this user" pt-tooltip-translate="Organization administrators cannot access the messages of private users."></i>
                         </label>
                     </div>
                 </div>

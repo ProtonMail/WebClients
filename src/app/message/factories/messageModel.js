@@ -25,17 +25,17 @@ angular.module('proton.message')
             ExternalID: null
         };
         const encryptionTypes = [
-            gettextCatalog.getString('Unencrypted message', null),
-            gettextCatalog.getString('End to end encrypted internal message', null),
-            gettextCatalog.getString('External message stored encrypted', null),
-            gettextCatalog.getString('End to end encrypted for outside', null),
-            gettextCatalog.getString('External message stored encrypted', null),
-            gettextCatalog.getString('Stored encrypted', null),
-            gettextCatalog.getString('End to end encrypted for outside reply', null),
-            gettextCatalog.getString('End to end encrypted using PGP', null),
-            gettextCatalog.getString('End to end encrypted using PGP/MIME', null),
+            gettextCatalog.getString('Unencrypted message', null, 'Message encryption status'),
+            gettextCatalog.getString('End to end encrypted internal message', null, 'Message encryption status'),
+            gettextCatalog.getString('External message stored encrypted', null, 'Message encryption status'),
+            gettextCatalog.getString('End to end encrypted for outside', null, 'Message encryption status'),
+            gettextCatalog.getString('External message stored encrypted', null, 'Message encryption status'),
+            gettextCatalog.getString('Stored encrypted', null, 'Message encryption status'),
+            gettextCatalog.getString('End to end encrypted for outside reply', null, 'Message encryption status'),
+            gettextCatalog.getString('End to end encrypted using PGP', null, 'Message encryption status'),
+            gettextCatalog.getString('End to end encrypted using PGP/MIME', null, 'Message encryption status'),
             null /* reserved */,
-            gettextCatalog.getString('End to end encrypted auto-reply', null)
+            gettextCatalog.getString('End to end encrypted auto-reply', null, 'Message encryption status')
         ];
         const emptyMessage = gettextCatalog.getString('Message empty', null, 'Message content if empty');
         const AUTOREPLY_HEADERS = ['X-Autoreply', 'X-Autorespond', 'X-Autoreply-From', 'X-Mail-Autoreply'];

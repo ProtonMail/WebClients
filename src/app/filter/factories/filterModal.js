@@ -3,11 +3,11 @@ angular.module('proton.filter')
 
         const TRANSLATIONS = {
             TYPES: [
-                { label: gettextCatalog.getString('Select', null), value: 'select' },
-                { label: gettextCatalog.getString('the subject', null), value: 'subject' },
-                { label: gettextCatalog.getString('the sender', null), value: 'sender' },
-                { label: gettextCatalog.getString('the recipient', null), value: 'recipient' },
-                { label: gettextCatalog.getString('the attachments', null), value: 'attachments' }
+                { label: gettextCatalog.getString('Select', null, 'Filter modal type'), value: 'select' },
+                { label: gettextCatalog.getString('the subject', null, 'Filter modal type'), value: 'subject' },
+                { label: gettextCatalog.getString('the sender', null, 'Filter modal type'), value: 'sender' },
+                { label: gettextCatalog.getString('the recipient', null, 'Filter modal type'), value: 'recipient' },
+                { label: gettextCatalog.getString('the attachments', null, 'Filter modal type'), value: 'attachments' }
             ],
             COMPARATORS: [
                 { label: gettextCatalog.getString('contains', null, 'Condition for custom filter'), value: 'contains' },
@@ -22,10 +22,10 @@ angular.module('proton.filter')
                 { label: gettextCatalog.getString('does not match', null, 'Condition for custom filter'), value: '!matches' }
             ],
             OPERATORS: [
-                { label: gettextCatalog.getString('all', null), value: 'all' },
-                { label: gettextCatalog.getString('any', null), value: 'any' }
+                { label: gettextCatalog.getString('all', null, 'Filter modal operators'), value: 'all' },
+                { label: gettextCatalog.getString('any', null, 'Filter modal operators'), value: 'any' }
             ],
-            ERROR_PATTERN: gettextCatalog.getString('Text or pattern already included', null),
+            ERROR_PATTERN: gettextCatalog.getString('Text or pattern already included', null, 'Error'),
             FILTER_UPDATED_SUCCESS: gettextCatalog.getString('Filter updated', null, 'Notification'),
             FILTER_CREATED_SUCCESS: gettextCatalog.getString('Filter created', null, 'Notification')
         };

@@ -2,8 +2,8 @@ angular.module('proton.labels')
     .directive('dropdownLabels', ($rootScope, $timeout, labelsModel, authentication, eventManager, notification, settingsApi, gettextCatalog) => {
 
         const NOTIFS = {
-            LABELS_SAVED: gettextCatalog.getString('Labels Saved', null),
-            LABEL_SAVED: gettextCatalog.getString('Label Saved', null)
+            LABELS_SAVED: gettextCatalog.getString('Labels Saved', null, 'dropdown label'),
+            LABEL_SAVED: gettextCatalog.getString('Label Saved', null, 'dropdown label')
         };
         const close = () => $rootScope.$emit('closeDropdown');
 

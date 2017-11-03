@@ -6,7 +6,7 @@
                     ng-options="day.longLabel for day in days track by day.value"
                     ng-disabled="disableInput"
                     name="{{::datePickerKey}}" required>
-                <option value="" disabled translate>Select weekday</option>
+                <option value="" disabled translate-context="Label select weekday" translate>Select weekday</option>
             </select>
             <i class="fa fa-angle-down"></i>
         </div>

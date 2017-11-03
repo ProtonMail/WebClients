@@ -6,27 +6,27 @@ angular.module('proton.elements')
 
         const ACTIONS = {
             all: {
-                label: gettextCatalog.getString('Select All', null),
+                label: gettextCatalog.getString('Select All', null, 'Action'),
                 icon: 'fa-check-square-o',
                 action: 'all'
             },
             unread: {
-                label: gettextCatalog.getString('All Unread', null),
+                label: gettextCatalog.getString('All Unread', null, 'Action'),
                 icon: 'fa-eye-slash',
                 action: 'unread'
             },
             read: {
-                label: gettextCatalog.getString('All Read', null),
+                label: gettextCatalog.getString('All Read', null, 'Action'),
                 icon: 'fa-eye',
                 action: 'read'
             },
             unstar: {
-                label: gettextCatalog.getString('All Unstarred', null),
+                label: gettextCatalog.getString('All Unstarred', null, 'Action'),
                 icon: 'fa-star-o',
                 action: 'unstarred'
             },
             star: {
-                label: gettextCatalog.getString('All Starred', null),
+                label: gettextCatalog.getString('All Starred', null, 'Action'),
                 icon: 'fa-star',
                 action: 'starred'
             }

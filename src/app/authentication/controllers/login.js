@@ -324,14 +324,14 @@ angular.module('proton.authentication')
 
             try {
                 if (!username || !password) {
-                    throw new Error(gettextCatalog.getString('Please enter your username and password', null, 'Error'));
+                    throw new Error(gettextCatalog.getString('Please enter your username and password', null, 'Login error'));
                 }
 
                 const usernameLowerCase = username.toLowerCase();
                 const passwordEncoded = pmcw.encode_utf8(password);
 
                 if (!passwordEncoded) {
-                    throw new Error(gettextCatalog.getString('Your password is missing'));
+                    throw new Error(gettextCatalog.getString('Your password is missing', null, 'Login error'));
                 }
 
                 networkActivityTracker.track(

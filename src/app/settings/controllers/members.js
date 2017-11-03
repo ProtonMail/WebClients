@@ -49,8 +49,8 @@ angular.module('proton.settings')
         }
 
         $scope.roles = [];
-        $scope.roles[CONSTANTS.PAID_ADMIN_ROLE] = gettextCatalog.getString('Admin', null);
-        $scope.roles[CONSTANTS.PAID_MEMBER_ROLE] = gettextCatalog.getString('Member', null);
+        $scope.roles[CONSTANTS.PAID_ADMIN_ROLE] = gettextCatalog.getString('Admin', null, 'Member role');
+        $scope.roles[CONSTANTS.PAID_MEMBER_ROLE] = gettextCatalog.getString('Member', null, 'Member role');
 
         $scope.initialization = () => {
             $scope.newRecoveryPassword = '';

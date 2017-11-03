@@ -79,8 +79,8 @@ angular.module('proton.core')
             if (dirtyAddresses.length && !generateModal.active()) {
                 generateModal.activate({
                     params: {
-                        title: gettextCatalog.getString('Setting up your Addresses'),
-                        message: gettextCatalog.getString('Before you can start sending and receiving emails from your new addresses you need to create encryption keys for them. 4096-bit keys only work on high performance computers. For most users, we recommend using 2048-bit keys.'),
+                        title: gettextCatalog.getString('Setting up your Addresses', null, 'Title'),
+                        message: gettextCatalog.getString('Before you can start sending and receiving emails from your new addresses you need to create encryption keys for them. 4096-bit keys only work on high performance computers. For most users, we recommend using 2048-bit keys.', null, 'Info'),
                         addresses: dirtyAddresses,
                         password: authentication.getPassword(),
                         close(success) {

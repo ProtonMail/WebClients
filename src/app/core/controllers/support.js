@@ -19,8 +19,8 @@ angular.module('proton.core')
     ) => {
 
         const GENERIC_MESSAGE = {
-            title: gettextCatalog.getString('Problem loading your account'),
-            content: gettextCatalog.getString('ProtonMail encountered a problem loading your account. Please refresh the page and try again later.'),
+            title: gettextCatalog.getString('Problem loading your account', null, 'Title'),
+            content: gettextCatalog.getString('ProtonMail encountered a problem loading your account. Please refresh the page and try again later.', null, 'Info'),
             type: 'alert-danger'
         };
 

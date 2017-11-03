@@ -10,7 +10,7 @@
 
             <div class="text-center alert alert-info paymentForm-about-month">
                 <p>
-                    <strong translate>Save 20% with the annual plan!</strong>
+                    <strong translate-context="Payment form information" translate>Save 20% with the annual plan!</strong>
                 </p>
                 <p>
                     <button type="button" class="pm_button primary paymentForm-btn-payAnnualy" translate translate-context="Action">Pay annually</button>
@@ -78,7 +78,11 @@
                 <div class="col-2-3">
                     <div class="input-icon">
                         <i class="fa fa-tag"></i>
-                        <input type="text" ng-model="ctrl.coupon" placeholder-translate="Coupon">
+                        <input
+                            type="text"
+                            ng-model="ctrl.coupon"
+                            placeholder-translate-context="Payment form input label"
+                            placeholder-translate="Coupon">
                     </div>
                 </div>
                 <div class="col-1-3">

@@ -10,7 +10,7 @@ angular.module('proton.core')
                 self.card = {};
 
                 if (params.method) {
-                    self.text = gettextCatalog.getString('Update your credit card information.', null);
+                    self.text = gettextCatalog.getString('Update your credit card information.', null, 'Credit card modal');
                     self.mode = 'display';
                     self.panel = {
                         fullname: params.method.Details.Name,
@@ -22,7 +22,7 @@ angular.module('proton.core')
                         country: params.method.Details.Country
                     };
                 } else {
-                    self.text = gettextCatalog.getString('Add a credit card.', null);
+                    self.text = gettextCatalog.getString('Add a credit card.', null, 'Credit card modal');
                     self.mode = 'edition';
                 }
 

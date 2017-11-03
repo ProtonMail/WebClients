@@ -56,7 +56,7 @@ angular.module('proton.bugReport')
          */
         const send = (form) => {
             return Bug.report(form)
-                .then(() => notification.success(gettextCatalog.getString('Bug reported', null)));
+                .then(() => notification.success(gettextCatalog.getString('Bug reported', null, 'Bug report successfully')));
         };
 
         /**
