@@ -44,9 +44,18 @@ angular.module('proton.core')
                 self.address = '';
 
                 // sliders legends
-                const allocatedLegend = { label: gettextCatalog.getString('Allocated', null), classes: 'background-primary' };
-                const minPaddingLegend = { label: gettextCatalog.getString('Already used', null), classes: 'background-red-striped' };
-                const maxPaddingLegend = { label: gettextCatalog.getString('Already allocated', null), classes: 'background-yellow-striped' };
+                const allocatedLegend = {
+                    label: gettextCatalog.getString('Allocated', null, 'Member modal'),
+                    classes: 'background-primary'
+                };
+                const minPaddingLegend = {
+                    label: gettextCatalog.getString('Already used', null, 'Member modal'),
+                    classes: 'background-red-striped'
+                };
+                const maxPaddingLegend = {
+                    label: gettextCatalog.getString('Already allocated', null, 'Member modal'),
+                    classes: 'background-yellow-striped'
+                };
 
                 // Quota
                 self.unit = giga;

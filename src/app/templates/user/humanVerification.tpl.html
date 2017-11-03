@@ -35,7 +35,7 @@
         </div>
         <div class="humanVerification-block-sms">
 
-            <span class="pull-right humanVerification-sms-details">(<a href="#" ng-click="whySMS = !whySMS" translate>Why is this required?</a>)</span>
+            <span class="pull-right humanVerification-sms-details">(<a href="#" ng-click="whySMS = !whySMS"  translate-context="Link" translate>Why is this required?</a>)</span>
 
             <label class="signup-radio-label">
                 <custom-radio
@@ -54,7 +54,7 @@
         </div>
 
         <div ng-show="whySMS" class="spacing-top spacing-bottom">
-            <div class="alert alert-info" translate>
+            <div class="alert alert-info" translate-context="About human verification" translate>
                 <p>Too many ProtonMail accounts have been created from your connection.</p>
                 <p>Thus, we are requesting additional verification to ensure you are human and not a spam bot.</p>
                 <p>Because Tor is frequently abused by spammers, this check may be triggered because of the Tor exit node you are using.</p>
@@ -81,6 +81,7 @@
                         class="bigger"
                         type="text"
                         ng-model="model.codeVerification"
+                        placeholder-translate-context="Input for the code sent by SMS"
                         placeholder-translate="Verification code">
                 </div>
                 <div class="col-1-2">
@@ -108,7 +109,7 @@
                 </div>
             </form>
             <div class="pm_grid" ng-show="model.smsVerificationSent === true">
-                <p class="alert alert-success" translate>
+                <p class="alert alert-success" translate-context="Human verification via SMS" translate>
                     <strong>Verification code sent</strong><br />
                     Please check <strong>{{ model.smsVerification }}</strong> and enter the code below:
                 </p>

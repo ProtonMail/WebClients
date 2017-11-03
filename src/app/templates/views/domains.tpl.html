@@ -11,7 +11,7 @@
                         translate-context="Title">Domains</h2>
                 </header-block>
 
-                <p class="alert alert-info" translate>Use your own domain with ProtonMail and use your own email address, e.g. yourname@yourdomain.com. To enable this feature, <a ui-sref="secured.dashboard({scroll: true})">upgrade to ProtonMail Plus</a>.</p>
+                <p class="alert alert-info" translate-context="Domains" translate>Use your own domain with ProtonMail and use your own email address, e.g. yourname@yourdomain.com. To enable this feature, <a ui-sref="secured.dashboard({scroll: true})">upgrade to ProtonMail Plus</a>.</p>
             </section>
         </div>
 
@@ -25,7 +25,7 @@
                         translate-context="Title">Domains</h2>
 
                     <small class="settingsDomains-details-domain" ng-if="isAdmin">
-                        {{ organization.UsedDomains }} / {{ organization.MaxDomains }} <span translate-comment="how many domains are in use" translate>domains used.</span>
+                        {{ organization.UsedDomains }} / {{ organization.MaxDomains }} <span translate-context="how many domains are in use" translate>domains used.</span>
                         <a
                             class="settingsDomains-link-domain"
                             ui-sref="secured.dashboard({scroll: true})"
@@ -68,7 +68,7 @@
                                         'success': domain.VerifyState === 2,
                                         'error': domain.VerifyState === 1
                                     }">
-                                        <i class="fa fa-warning" ng-show="(domain.VerifyState === 1)"></i> <span translate>Verification</span>
+                                        <i class="fa fa-warning" ng-show="(domain.VerifyState === 1)"></i> <span translate-context="domain status" translate>Verification</span>
                                     </button>
                                     <button type="button" class="progress pm_button" ng-click="addAddresses(domain)" ng-disabled="domain.State === 0" ng-class="{'success': domain.State === 1 && domain.Addresses.length > 0}">
                                         <span ng-show="domain.Addresses.length > 0">{{ domain.Addresses.length }}</span> <span translate translate-context="Action">Addresses</span>
@@ -112,7 +112,12 @@
                                     </button>
                                 </td>
                                 <td class="text-right">
-                                    <button type="button" class="pm_button round" ng-click="wizard(domain)" pt-tooltip-translate="Wizard">
+                                    <button
+                                        type="button"
+                                        class="pm_button round"
+                                        ng-click="wizard(domain)"
+                                        pt-tooltip-translate-context="button to configure the domain"
+                                        pt-tooltip-translate="Wizard">
                                         <i class="fa fa-magic"></i>
                                     </button>
                                     <button type="button" class="remove pm_button round" ng-click="deleteDomain(domain)" pt-tooltip-translate="Delete" pt-tooltip-translate-context="Action">
@@ -122,7 +127,7 @@
                             </tr>
                             <tr ng-if="domain.State === 2">
                                 <td colspan="2">
-                                    <p class="alert alert-warning" translate>Check your DNS settings.</p>
+                                    <p class="alert alert-warning" translate-context="Domain status" translate>Check your DNS settings.</p>
                                 </td>
                                 <td></td>
                             </tr>
@@ -137,9 +142,9 @@
                 </div>
                 <div class="alert alert-info" ng-show="domains.length === 0">
                     <p>
-                        <strong translate>No custom domain found</strong>
+                        <strong translate-context="domains list" translate>No custom domain found</strong>
                     </p>
-                    <p translate>Click on 'ADD CUSTOM DOMAIN' button to add a domain.</p>
+                    <p translate-context="domains list" translate>Click on 'ADD CUSTOM DOMAIN' button to add a domain.</p>
                 </div>
             </section>
             <p>&nbsp;</p>
@@ -221,9 +226,9 @@
                 </div>
                 <div class="alert alert-info" ng-show="domains.length === 0">
                     <p>
-                        <strong  translate>No custom domain found</strong>
+                        <strong translate-context="List domains" translate>No custom domain found</strong>
                     </p>
-                    <p translate>Please add a custom domain before configuring addresses.</p>
+                    <p translate-context="List domains" translate>Please add a custom domain before configuring addresses.</p>
                 </div>
             </section>
         </div>

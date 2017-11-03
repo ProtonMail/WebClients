@@ -3,7 +3,9 @@
     autoresponderFull: message.length >= maxMessageLength,
     autoresponderEmpty: isEmpty(message)
     }">
+
     <div class="autoresponderMessageDisabler" ng-if="disabled"></div>
+
     <squire
         id="autoresponderMessage"
         class="form-control no-resize error_tooltip"
@@ -12,17 +14,20 @@
         data-value="message"
         data-type-content="OOF-Message"
     ></squire>
+
     <div class="autoresponderEmptyMessage" translate translate-context="Autoresponder empty">
         The auto reply message cannot be empty.
     </div>
+
     <div class="autoresponderCharacters autoresponderLengthWarning">
-        <span class="autoresponderCharacterCount">{{message.length}}</span>/{{maxMessageLength - 1}} <span translate>bytes used</span>
+        <span class="autoresponderCharacterCount">{{message.length}}</span>/{{maxMessageLength - 1}} <span translate-context="Settings autoresponder, how many bites inside the message" translate>bytes used</span>
     </div>
+
     <div class="autoresponderCharacters autoresponderMessageTooLong">
-        <span translate translate-context="The message contains too many bytes, only xxx allowed (you are using xxx characters). Part 1/3">The message contains too many bytes, only
+        <span translate-context="The message contains too many bytes, only xxx allowed (you are using xxx characters). Part 1/3" translate>The message contains too many bytes, only
         </span>
     {{maxMessageLength - 1}}
-        <span translate-context="The message contains too many bytes, only xxx allowed (you are using xxx characters). Part 2/3"> allowed (you are using </span>
+        <span translate-context="The message contains too many bytes, only xxx allowed (you are using xxx characters). Part 2/3" translate> allowed (you are using </span>
         <span class="autoresponderCharacterCount"> {{message.length}} </span><span  translate-context="The message contains too many bytes, only xxx allowed (you are using xxx characters). Part 3/3" translate> bytes).</span>
     </div>
 </div>

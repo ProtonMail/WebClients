@@ -4,7 +4,7 @@ angular.module('proton.dashboard')
         const I18N = {
             downgradeTitle: gettextCatalog.getString('Confirm downgrade', null, 'Title'),
             downgradeMessage: gettextCatalog.getString('This will downgrade your account to a free account. ProtonMail is free software that is supported by donations and paid accounts. Please consider making a donation so we can continue to offer the service for free.<br /><br />Note: Additional addresses, custom domains, and users must be removed/disabled before performing this action.', null, 'Info'),
-            successMessage: gettextCatalog.getString('You have successfully unsubscribed', null)
+            successMessage: gettextCatalog.getString('You have successfully unsubscribed', null, 'Downgrade account')
         };
 
 

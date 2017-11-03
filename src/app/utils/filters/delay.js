@@ -29,7 +29,7 @@ angular.module('proton.utils')
                 const seconds = Math.floor(moment.duration(ms).asSeconds());
 
                 // concatonate the variables
-                return days + ' ' + gettextCatalog.getString('Days') + ' ' + hours + ' ' + gettextCatalog.getString('Hours') + ' ' + minutes + ' ' + gettextCatalog.getString('Minutes') + ' ' + seconds + ' ' + gettextCatalog.getString('Seconds', null);
+                return days + ' ' + gettextCatalog.getString('Days', null, 'Delay') + ' ' + hours + ' ' + gettextCatalog.getString('Hours', null, 'Delay') + ' ' + minutes + ' ' + gettextCatalog.getString('Minutes', null, 'Delay') + ' ' + seconds + ' ' + gettextCatalog.getString('Seconds', null, 'Delay');
             }
 
             return '';

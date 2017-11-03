@@ -2,7 +2,7 @@
     <tbody class="subscriptionSection-tbody-plans">
         <tr>
             <td colspan="3">
-                <strong translate>Plans</strong>
+                <strong translate-context="subscription title" translate>Plans</strong>
             </td>
         </tr>
         <tr
@@ -26,22 +26,22 @@
     <tbody class="subscriptionSection-tbody-billing">
         <tr ng-hide="subscription.CouponCode === 'LIFETIME'">
             <td>
-                <strong translate>Billing cycle end</strong>
+                <strong translate-context="subscription details" translate>Billing cycle end</strong>
             </td>
             <td>{{ subscription.PeriodEnd | readableTime }}</td>
         </tr>
         <tr>
             <td>
-                <strong translate>Total price</strong> ({{ subscription.cycle }}) <span ng-if="subscription.CouponCode" translate>(with coupon)</span>
+                <strong translate-context="subscription price label" translate>Total price</strong> ({{ subscription.cycle }}) <span ng-if="subscription.CouponCode" translate-context="subscription price label information" translate>(with coupon)</span>
             </td>
             <td>{{ (subscription.Amount || 0) / 100 | currency: subscription.Currency }} ({{ subscription.cycle }})</td>
         </tr>
         <tr>
             <td>
-                <strong translate>Payment</strong>
+                <strong translate-context="subscription title" translate>Payment</strong>
             </td>
             <td>
-                {{ method }} <a ui-sref="secured.payments" class="text-purple" translate>Manage</a>
+                {{ method }} <a ui-sref="secured.payments" class="text-purple" translate-context="subscription link" translate>Manage</a>
             </td>
         </tr>
     </tbody>

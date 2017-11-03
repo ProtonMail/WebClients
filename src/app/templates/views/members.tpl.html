@@ -186,12 +186,12 @@
                                     <div class="members-table-usage">
                                         <i class="fa fa-hdd-o"></i>
                                         {{ member.UsedSpace | humanSize:true:'GB' }} / {{ member.MaxSpace | humanSize:false:'GB' }}
-                                        <span translate-comment="space used out of total space allowed for a member" translate>Used</span>
+                                        <span translate-context="space used out of total space allowed for a member" translate>Used</span>
                                     </div>
                                     <div class="members-table-usage">
                                         <i class="fa fa-shield"></i>
                                         {{ member.MaxVPN  }}
-                                        <span translate-comment="vpn connection used" translate>VPN Connections</span>
+                                        <span translate-comment="vpn connection used"  translate-context="How many connections" translate>VPN Connections</span>
                                     </div>
                                 </td>
                                 <td>
@@ -257,7 +257,7 @@
                         <p ng-show="keyStatus === 0">
                             <button class="pm_button primary" ng-disabled="networkActivity.loading()" ng-click="changeOrganizationPassword()" type="button" translate-context="Action" translate>Change organization password</button>
                             <button class="pm_button primary" ng-disabled="networkActivity.loading()" ng-click="changeOrganizationKeys()" type="button" translate-context="Action" translate>Change organization keys</button>
-                            <a class="pm_button link" href="https://protonmail.com/support/knowledge-base/organization-key" target="_blank" translate>Learn more</a>
+                            <a class="pm_button link" href="https://protonmail.com/support/knowledge-base/organization-key" target="_blank" translate translate-context="Link">Learn more</a>
                         </p>
                         <div ng-show="keyStatus === 1">
                             <p class="alert alert-warning" translate translate-context="Info">You must activate your organization keys. Without activation you will not be able to create new users, add addresses to existing users, or access non-private user accounts.</p>

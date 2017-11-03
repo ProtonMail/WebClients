@@ -6,7 +6,7 @@
         </a>
     </header>
 
-    <p class="alert alert-info" translate>This message will expire in</p>
+    <p class="alert alert-info" translate translate-context="Info">This message will expire in</p>
     <div class="pm_form alert text-center composerExpiration-fields-container">
 
         <div class="composerExpiration-field-weeks">
@@ -19,7 +19,7 @@
                     ng-options="option.label for option in options.week track by option.label"></select>
                 <i class="fa fa-angle-down"></i>
             </div>
-            <label translate for="weeks">Weeks</label>
+            <label translate translate-context="Delay" for="weeks">Weeks</label>
         </div>
 
         <div class="composerExpiration-field-days">
@@ -32,7 +32,7 @@
                     ng-options="option.label for option in options.day track by option.label"></select>
                 <i class="fa fa-angle-down"></i>
             </div>
-            <label translate for="days">Days</label>
+            <label translate translate-context="Delay" for="days">Days</label>
         </div>
 
         <div class="composerExpiration-field-hours">
@@ -45,7 +45,7 @@
                     ng-options="option.label for option in options.hour track by option.label"></select>
                 <i class="fa fa-angle-down"></i>
             </div>
-            <label translate for="hours">Hours</label>
+            <label translate translate-context="Delay" for="hours">Hours</label>
         </div>
     </div>
 

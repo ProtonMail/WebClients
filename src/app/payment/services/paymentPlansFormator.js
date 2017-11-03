@@ -2,14 +2,14 @@ angular.module('proton.payment')
     .factory('paymentPlansFormator', (CONSTANTS, gettextCatalog) => {
 
         const I18N = {
-            MSG_PER_DAY: gettextCatalog.getString('Messages per day', null),
-            LABELS: gettextCatalog.getString('Labels', null),
-            FOLDERS: gettextCatalog.getString('Folders', null),
-            UNLIMITED_LABELS: gettextCatalog.getString('Unlimited Folders / Unlimited labels', null),
-            SUPPORT: gettextCatalog.getString('Support', null),
-            LIMITED_SUPPORT: gettextCatalog.getString('Limited support', null),
-            PRIORITY_SUPPORT: gettextCatalog.getString('Priority support', null),
-            UNLIMITED_SENDING: gettextCatalog.getString('Unlimited sending', null)
+            MSG_PER_DAY: gettextCatalog.getString('Messages per day', null, 'Plan feature'),
+            LABELS: gettextCatalog.getString('Labels', null, 'Plan feature'),
+            FOLDERS: gettextCatalog.getString('Folders', null, 'Plan feature'),
+            UNLIMITED_LABELS: gettextCatalog.getString('Unlimited Folders / Unlimited labels', null, 'Plan feature'),
+            SUPPORT: gettextCatalog.getString('Support', null, 'Plan feature'),
+            LIMITED_SUPPORT: gettextCatalog.getString('Limited support', null, 'Plan feature'),
+            PRIORITY_SUPPORT: gettextCatalog.getString('Priority support', null, 'Plan feature'),
+            UNLIMITED_SENDING: gettextCatalog.getString('Unlimited sending', null, 'Plan feature')
         };
 
         const msgPerDay = (total) => `${total} ${I18N.MSG_PER_DAY}`;

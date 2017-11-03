@@ -2,13 +2,13 @@ angular.module('proton.dashboard')
     .factory('customProPlanModal', (customProPlanModel, gettextCatalog, pmModal) => {
         const I18N = {
             members(value) {
-                return gettextCatalog.getPlural(value, '1 user', '{{$count}} users', {});
+                return gettextCatalog.getPlural(value, '1 user', '{{$count}} users', 'Custom pro plan dashboard');
             },
             storage(value) {
-                return gettextCatalog.getString('{{value}} GB storage', { value });
+                return gettextCatalog.getString('{{value}} GB storage', { value }, 'Custom pro plan dashboard');
             },
             addresses(value) {
-                return gettextCatalog.getString('{{value}} addresses', { value });
+                return gettextCatalog.getString('{{value}} addresses', { value }, 'Custom pro plan dashboard');
             }
         };
         return pmModal({

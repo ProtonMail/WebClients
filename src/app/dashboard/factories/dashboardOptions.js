@@ -2,10 +2,26 @@ angular.module('proton.dashboard')
     .factory('dashboardOptions', (gettextCatalog, CONSTANTS) => {
 
         const { MAX_MEMBER } = CONSTANTS;
-        const ADDRESS_OPTIONS = _.range(5, 51, 5).map((value, index) => ({ label: gettextCatalog.getString('{{value}} Addresses', { value }), value: index }));
-        const SPACE_OPTIONS = _.range(5, 21).map((value, index) => ({ label: gettextCatalog.getPlural(value, '1 GB Storage', '{{$count}} GB Storage', {}), value: index }));
-        const MEMBER_OPTIONS = _.range(1, MAX_MEMBER + 1).map((value, index) => ({ label: gettextCatalog.getPlural(value, '1 User', '{{$count}} Users', {}), value: index }));
-        const generateDomains = (start, end) => _.range(start, end).map((value, index) => ({ label: gettextCatalog.getPlural(value, '1 Custom Domain', '{{$count}} Custom Domains', {}), value: index }));
+
+        const ADDRESS_OPTIONS = _.range(5, 51, 5).map((value, index) => ({
+            label: gettextCatalog.getString('{{value}} Addresses', { value }, 'dashboard options select'),
+            value: index
+        }));
+
+        const SPACE_OPTIONS = _.range(5, 21).map((value, index) => ({
+            label: gettextCatalog.getPlural(value, '1 GB Storage', '{{$count}} GB Storage', 'dashboard options select'),
+            value: index
+        }));
+
+        const MEMBER_OPTIONS = _.range(1, MAX_MEMBER + 1).map((value, index) => ({
+            label: gettextCatalog.getPlural(value, '1 User', '{{$count}} Users', 'dashboard options select'),
+            value: index
+        }));
+
+        const generateDomains = (start, end) => _.range(start, end).map((value, index) => ({
+            label: gettextCatalog.getPlural(value, '1 Custom Domain', '{{$count}} Custom Domains', 'dashboard options select'),
+            value: index
+        }));
 
         const VPN_OPTIONS = [
             { label: '----------', value: 'none' },

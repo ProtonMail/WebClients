@@ -7,16 +7,17 @@
     class="insertImage addFilePopover-container addFilePopover-hidden pm_form">
 
     <fieldset class="addFilePopover-panel">
-        <legend class="addFilePopover-legend" translate>Insert an image</legend>
+        <legend class="addFilePopover-legend" translate-context="Composer, add file popover" translate>Insert an image</legend>
 
         <div class="addFilePopover-field row">
-            <label for="url" class="addFilePopover-label" translate>URL image</label>
+            <label for="url" class="addFilePopover-label" translate-context="Composer, add file popover" translate>URL image</label>
             <input
                 type="url"
                 name="url"
                 autocomplete="off"
                 class="addFilePopover-input-url"
                 placeholder-translate="URL to image"
+                placeholder-translate-context="Composer, add file popover"
                 ng-model="data.image">
             <input
                 class="addFilePopover-input-file"

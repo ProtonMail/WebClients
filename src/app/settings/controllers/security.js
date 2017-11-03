@@ -76,7 +76,7 @@ angular.module('proton.settings')
                     .then(() => {
                         $scope.twoFactor = 0;
                         authentication.user.TwoFactor = 0;
-                        notification.success(gettextCatalog.getString('Two-factor authentication disabled', null));
+                        notification.success(gettextCatalog.getString('Two-factor authentication disabled', null, 'Disable 2FA'));
                     });
                 networkActivityTracker.track(promise);
             }
@@ -182,7 +182,7 @@ angular.module('proton.settings')
                                     if (result.data && result.data.Code === 1000) {
                                         $scope.logs = [];
                                         $scope.logCount = 0;
-                                        notification.success(gettextCatalog.getString('Logs cleared', null));
+                                        notification.success(gettextCatalog.getString('Logs cleared', null, "Clear user's logs (security)"));
                                     }
                                 })
                         );
@@ -240,7 +240,7 @@ angular.module('proton.settings')
                                     authentication.user.LogAuth = 0;
                                     notification.success(gettextCatalog.getString('Logging preference updated', null, 'Dashboard/security'));
                                     confirmModal.deactivate();
-                                    $scope.disabledText = gettextCatalog.getString('Disabled', null);
+                                    $scope.disabledText = gettextCatalog.getString('Disabled', null, 'Action');
                                 });
                             networkActivityTracker.track(promise);
                         },

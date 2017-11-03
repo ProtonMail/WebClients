@@ -117,7 +117,14 @@
 
                     <div class="margin" ng-class="{'has-error': (themeForm.cssTheme.$touched || themeForm.$submitted) && themeForm.cssTheme.$error.required}">
                         <p class="alert alert-info" translate-context="Info" translate>Custom themes from third-parties can potentially betray your privacy. Only use themes from trusted sources.</p>
-                        <textarea class="code" placeholder-translate="Paste your CSS code here (limited to 200,000 characters)" id="cssTheme" name="cssTheme" ng-model="appearance.cssTheme" maxlength="200000"></textarea>
+                        <textarea
+                            class="code"
+                            placeholder-translate="Paste your CSS code here (limited to 200,000 characters)"
+                            placeholder-translate-context="Dashboard, custom theme input"
+                            id="cssTheme"
+                            name="cssTheme"
+                            ng-model="appearance.cssTheme"
+                            maxlength="200000"></textarea>
                     </div>
                     <div class="text-right">
                         <button type="button" class="pm_button" ng-click="clearTheme()" translate-context="Action" translate>Reset theme</button>

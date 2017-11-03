@@ -16,13 +16,13 @@
                     <div class="col-1-4">
                         <span class="pm_select">
                             <select ng-model="ctrl.form.OS" name="bug_os" id="bug_os">
-                                <option disabled value="" translate translate-comment="select dropdown options">Choose</option>
+                                <option disabled value="" translate translate-context="bug report modal select dropdown options">Choose</option>
                                 <option value="osx">Mac OSX</option>
                                 <option value="ios">iOS</option>
                                 <option value="android">Android</option>
                                 <option value="windows">Windows</option>
                                 <option value="linux">Linux</option>
-                                <option value="other" translate translate-comment="select dropdown options">Other</option>
+                                <option value="other" translate translate-context="bug report modal select dropdown options">Other</option>
                             </select>
                             <i class="fa fa-angle-down"></i>
                         </span>
@@ -36,21 +36,27 @@
                 </div>
                 <div class="pm_grid">
                     <div class="col-1-4">
-                        <label for="bug_browser" translate translate-context="Title">Browser</label>
+                        <label for="bug_browser" translate translate-context="bug report modal label">Browser</label>
                     </div>
                     <div class="col-1-4">
                         <input type="text" name="bug_browser" id="bug_browser" placeholder-translate="Browser" ng-model="ctrl.form.Browser" />
                     </div>
                     <div class="col-1-4">
-                        <label for="bug_browser_version" translate translate-context="Title">Browser version</label>
+                        <label for="bug_browser_version" translate translate-context="bug report modal label">Browser version</label>
                     </div>
                     <div class="col-1-4">
-                        <input type="text" name="bug_browser_version" id="bug_browser_version" placeholder-translate="Browser version" ng-model="ctrl.form.BrowserVersion" />
+                        <input
+                            type="text"
+                            name="bug_browser_version"
+                            id="bug_browser_version"
+                            placeholder-translate="Browser version"
+                            placeholder-translate-context="bug report modal"
+                            ng-model="ctrl.form.BrowserVersion" />
                     </div>
                 </div>
                 <div class="pm_grid">
                     <div class="col-1-4">
-                        <label for="bugEmail" translate translate-context="Title">Email address</label>
+                        <label for="bugEmail" translate translate-context="bug report modal label">Email address</label>
                     </div>
                     <div class="col-3-4 ng-message-wrapper">
                         <input
@@ -59,6 +65,7 @@
                             name="bugEmail"
                             id="bugEmail"
                             data-validator-typo-email
+                            placeholder-translate-context="bug report modal"
                             placeholder-translate="Please make sure to give us a way to contact you"
                             ng-model="ctrl.form.Email">
 
@@ -75,10 +82,16 @@
                 </div>
                 <div class="pm_grid">
                     <div class="col-1-4">
-                        <label for="bug_description" translate translate-context="Title">What happened?</label>
+                        <label for="bug_description" translate translate-context="bug report modal label">What happened?</label>
                     </div>
                     <div class="col-3-4">
-                        <textarea ng-model="ctrl.form.Description" name="bug_description" rows="6" id="bug_description" placeholder-translate="Please describe the problem and include any error messages"></textarea>
+                        <textarea
+                        ng-model="ctrl.form.Description"
+                        name="bug_description"
+                        rows="6"
+                        id="bug_description"
+                        placeholder-translate-context="bug report modal description"
+                        placeholder-translate="Please describe the problem and include any error messages"></textarea>
                     </div>
                 </div>
                 <div class="pm_grid">

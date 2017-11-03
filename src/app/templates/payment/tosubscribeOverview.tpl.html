@@ -1,8 +1,8 @@
 <div class="tosubscribeOverview-container">
 
     <header class="tosubscribeOverview-head">
-        <h2 class="tosubscribeOverview-title-plan">Plan</h2>
-        <h2 class="tosubscribeOverview-title-price">Price</h2>
+        <h2 class="tosubscribeOverview-title-plan" translate-context="Title" translate>Plan</h2>
+        <h2 class="tosubscribeOverview-title-price" translate-context="Title" translate>Price</h2>
     </header>
 
     <ul class="tosubscribeOverview-list" data-valid-cycle-master="{{::ctrl.valid.Cycle}}">
@@ -21,7 +21,7 @@
             <ul class="tosubscribeOverview-list-about" ng-if="plan.Name.indexOf('vpn') === -1">
                 <li class="tosubscribeOverview-about-space">
                     {{ ::ctrl.count('MaxSpace') | humanSize }}
-                    <span class="tosubscribeOverview-about-type" translate>Storage</span>
+                    <span class="tosubscribeOverview-about-type" translate-context="subscription label" translate>Storage</span>
                     <strong ng-if="ctrl.price('space')" class="tosubscribeOverview-price">{{ ::ctrl.price('space') / 100 / 12 | fixed: 2 | currency: plan.Currency  }}
                         <span
                             class="tosubscribeOverview-price-scope"
@@ -31,7 +31,7 @@
                 </li>
                 <li class="tosubscribeOverview-about-domains">
                     {{ ::ctrl.count('MaxDomains') }}
-                    <span class="tosubscribeOverview-about-type" translate translate-n="ctrl.count('MaxDomains')" translate-plural="Custom domains">Custom domain</span>
+                    <span class="tosubscribeOverview-about-type" translate translate-n="ctrl.count('MaxDomains')" translate-plural="Custom domains" translate-context="subscription label">Custom domain</span>
                     <strong ng-if="ctrl.price('domain')" class="tosubscribeOverview-price">{{ ::ctrl.price('domain') / 100 / 12 | fixed: 2 | currency: plan.Currency }}
                         <span
                             class="tosubscribeOverview-price-scope"
@@ -42,7 +42,8 @@
 
                 <li class="tosubscribeOverview-about-members">
                     {{ ::ctrl.count('MaxMembers') }}
-                    <span class="tosubscribeOverview-about-type" translate translate-n="ctrl.count('MaxMembers')" translate-plural="Custom users">Custom user</span>
+
+                    <span class="tosubscribeOverview-about-type" translate translate-n="ctrl.count('MaxMembers')" translate-plural="Custom users" translate-context="subscription label">Custom user</span>
                     <strong ng-if="ctrl.price('member')" class="tosubscribeOverview-price">{{ ::ctrl.price('member') / 100 / 12 | fixed: 2 | currency: plan.Currency }}
                         <span
                             class="tosubscribeOverview-price-scope"
@@ -53,7 +54,7 @@
 
                 <li class="tosubscribeOverview-about-addresses">
                     {{ ::ctrl.count('MaxAddresses') }}
-                    <span class="tosubscribeOverview-about-type" translate translate translate-n="ctrl.count('MaxAddresses')" translate-plural="Addresses">Address</span>
+                    <span class="tosubscribeOverview-about-type" translate translate translate-n="ctrl.count('MaxAddresses')" translate-plural="Addresses" translate-context="subscription label">Address</span>
                     <strong ng-if="ctrl.price('address')" class="tosubscribeOverview-price">{{ ::ctrl.price('address') / 100 / 12 | fixed: 2 | currency: plan.Currency }}
                         <span
                             class="tosubscribeOverview-price-scope"

@@ -55,7 +55,7 @@ angular.module('proton.core')
                     })
                         .then((result) => {
                             if (result.displayName.data.Code === 1000 && result.signature.data.Code === 1000) {
-                                notification.success(gettextCatalog.getString('Default Name / Signature saved', null));
+                                notification.success(gettextCatalog.getString('Default Name / Signature saved', null, "User's signature"));
                                 eventManager.call()
                                     .then(() => {
                                         deferred.resolve();

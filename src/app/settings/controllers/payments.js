@@ -80,7 +80,7 @@ angular.module('proton.settings')
             }).then((result) => {
                 if (result.data && result.data.Code === 1000) {
                     $scope.methods.splice(to, 0, $scope.methods.splice(from, 1)[0]);
-                    notification.success(gettextCatalog.getString('Payment method updated', null));
+                    notification.success(gettextCatalog.getString('Payment method updated', null, 'Payment'));
                 } else if (result.data && result.data.Error) {
                     notification.error(result.data.Error);
                 } else {
@@ -113,7 +113,7 @@ angular.module('proton.settings')
                             .then(confirmModal.deactivate)
                             .then(() => {
                                 $scope.methods.splice($scope.methods.indexOf(method), 1);
-                                notification.success(gettextCatalog.getString('Payment method deleted', null));
+                                notification.success(gettextCatalog.getString('Payment method deleted', null, 'Payment'));
                             })
                             .catch((e) => {
                                 confirmModal.deactivate();

@@ -104,6 +104,7 @@
             <i class="fa fa-clock-o"></i>
             <span ng-show="!!message.maximized" translate translate-context="Action">Expiration</span>
         </button>
+
         <div class="pull-right">
             <composer-time></composer-time>
             <button
@@ -111,6 +112,7 @@
                 ng-disabled="message.disableDiscard()"
                 ng-click="discard(message)"
                 pt-tooltip-translate="Delete draft"
+                pt-tooltip-translate-context="Action"
                 pt-placement="top"
                 pt-tooltip-context="Action">
                 <i class="fa fa-trash-o"></i>

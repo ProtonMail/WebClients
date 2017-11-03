@@ -2,7 +2,7 @@ angular.module('proton.composer')
     .directive('composerAskEmbedded', ($rootScope, gettextCatalog) => {
 
         const buildTitle = (node, pending) => {
-            const counterTranslateKey = gettextCatalog.getPlural(pending, 'image detected', 'images detected', null);
+            const counterTranslateKey = gettextCatalog.getPlural(pending, 'image detected', 'images detected', 'Composer, message drag and drop images');
             node.textContent = `${pending} ${counterTranslateKey}`;
         };
 

@@ -5,27 +5,27 @@ angular.module('proton.elements')
         const MAP_LABELS = {
             inbox: {
                 className: 'fa-inbox',
-                tooltip: gettextCatalog.getString('In inbox', null)
+                tooltip: gettextCatalog.getString('In inbox', null, 'Type of label for a message/conversation')
             },
             sent: {
                 className: 'fa-send',
-                tooltip: gettextCatalog.getString('In sent', null)
+                tooltip: gettextCatalog.getString('In sent', null, 'Type of label for a message/conversation')
             },
             drafts: {
                 className: 'fa-file-text-o',
-                tooltip: gettextCatalog.getString('In drafts', null)
+                tooltip: gettextCatalog.getString('In drafts', null, 'Type of label for a message/conversation')
             },
             archive: {
                 className: 'fa-archive',
-                tooltip: gettextCatalog.getString('In archive', null)
+                tooltip: gettextCatalog.getString('In archive', null, 'Type of label for a message/conversation')
             },
             trash: {
                 className: 'fa-trash-o',
-                tooltip: gettextCatalog.getString('In trash', null)
+                tooltip: gettextCatalog.getString('In trash', null, 'Type of label for a message/conversation')
             },
             spam: {
                 className: 'fa-ban',
-                tooltip: gettextCatalog.getString('In spam', null)
+                tooltip: gettextCatalog.getString('In spam', null, 'Type of label for a message/conversation')
             },
             folder: {
                 className: 'fa-folder'

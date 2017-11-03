@@ -54,19 +54,19 @@
             </button>
 
             <ul class="signupPayForm-view-features">
-                <li class="signupPayForm-feature-plus" translate>5GB storage</li>
-                <li class="signupPayForm-feature-visionary" translate>20GB storage</li>
-                <li class="signupPayForm-feature-plus" translate>Send up to 1000 messages per day</li>
-                <li class="signupPayForm-feature-visionary" translate>No sending limits</li>
-                <li translate>Labels and Custom Filters</li>
-                <li translate>Send encrypted messages to external recipients</li>
-                <li translate>Use your own domain (ex: thomas@anderson.com)</li>
-                <li class="signupPayForm-feature-plus" translate>Up to 5 email aliases</li>
-                <li class="signupPayForm-feature-visionary" translate>Up to 50 email aliases</li>
-                <li class="signupPayForm-feature-visionary" translate>Support for up to 5 domains</li>
-                <li translate>Priority Customer Support</li>
-                <li class="signupPayForm-feature-visionary" translate>Early access to new features</li>
-                <li class="signupPayForm-feature-visionary" translate>Help pick new features through Visionary only polls</li>
+                <li class="signupPayForm-feature-plus" translate-context="Signup features" translate>5GB storage</li>
+                <li class="signupPayForm-feature-visionary" translate-context="Signup features" translate>20GB storage</li>
+                <li class="signupPayForm-feature-plus" translate-context="Signup features" translate>Send up to 1000 messages per day</li>
+                <li class="signupPayForm-feature-visionary" translate-context="Signup features" translate>No sending limits</li>
+                <li translate-context="Signup features" translate>Labels and Custom Filters</li>
+                <li translate-context="Signup features" translate>Send encrypted messages to external recipients</li>
+                <li translate-context="Signup features" translate>Use your own domain (ex: thomas@anderson.com)</li>
+                <li class="signupPayForm-feature-plus" translate-context="Signup features" translate>Up to 5 email aliases</li>
+                <li class="signupPayForm-feature-visionary" translate-context="Signup features" translate>Up to 50 email aliases</li>
+                <li class="signupPayForm-feature-visionary" translate-context="Signup features" translate>Support for up to 5 domains</li>
+                <li translate-context="Signup features" translate>Priority Customer Support</li>
+                <li class="signupPayForm-feature-visionary" translate-context="Signup features" translate>Early access to new features</li>
+                <li class="signupPayForm-feature-visionary" translate-context="Signup features" translate>Help pick new features through Visionary only polls</li>
             </ul>
         </div>
     </div>
@@ -108,7 +108,8 @@
         </div>
 
         <footer class="text-center signupPayForm-footer">
-            <p class="alert alert-info signupPayForm-msg-error">Would you like to create a free ProtonMail account instead? <signup-step-link data-value="3"></signup-step-link></p>
+            <p class="alert alert-info signupPayForm-msg-error"><span translate translate-context="Signup error">Would you like to create a free ProtonMail account instead?</span> <signup-step-link data-value="3"></signup-step-link></p>
+
                 <button
                     class="pm_button primary large signupPayForm-btn-submit"
                     type="submit"
