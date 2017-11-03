@@ -2,6 +2,7 @@
     novalidate
     data-squire-popover
     data-action="makeLink"
+    autocomplete="off"
     name="addLinkPopover"
     class="makeLink addLinkPopover-container addLinkPopover-hidden pm_form">
 
@@ -11,17 +12,12 @@
 
         <div class="addLinkPopover-field row">
             <label for="labelLink" class="addLinkPopover-label" translate>Text to display</label>
-            <input  name="labelLink" id="labelLink" class="addLinkPopover-input">
+            <input  name="labelLink" id="labelLink" class="addLinkPopover-input" placeholder-translate="Text">
         </div>
 
         <div class="addLinkPopover-field row">
             <label for="urlLink" class="addLinkPopover-label" translate>Link or Email</label>
-            <input
-                name="urlLink"
-                id="urlLink"
-                autocomplete="off"
-                placeholder-translate="Link URL"
-                class="addLinkPopover-input">
+            <input name="urlLink" id="urlLink" placeholder-translate="Link URL" class="addLinkPopover-input">
         </div>
     </fieldset>
 

@@ -5,15 +5,20 @@ angular.module('proton.squire')
 
         const CLASSNAME = {
             CONTAINER: 'squireToolbar-container squire-toolbar',
-            SUB_ROW: 'squireToolbar-show-subrow'
+            SUB_ROW: 'squireToolbar-show-subrow',
+            POPOVER_IMAGE: 'open-image',
+            POPOVER_LINK: 'open-link'
         };
 
+        const getDefaultClass = (node, klass) => (node.classList.contains(CLASSNAME[klass]) ? CLASSNAME[klass] : '');
         const onPathChangeCb = (node, editor) => _.debounce(() => {
             const p = editor.getPath();
 
             if (p !== '(selection)') {
 
-                const subRowClass = node.classList.contains(CLASSNAME.SUB_ROW) ? CLASSNAME.SUB_ROW : '';
+                const subRowClass = getDefaultClass(node, 'SUB_ROW');
+                const popoverImage = getDefaultClass(node, 'POPOVER_IMAGE');
+                const popoverLink = getDefaultClass(node, 'POPOVER_LINK');
 
                 /**
                  * Find and filter selections to toogle the current action (toolbar)
@@ -34,9 +39,29 @@ angular.module('proton.squire')
                     .toLowerCase()
                     .trim();
 
-                node.className = `${CLASSNAME.CONTAINER} ${classNames} ${subRowClass}`.trim();
+                node.className = `${CLASSNAME.CONTAINER} ${classNames} ${subRowClass} ${popoverImage} ${popoverLink}`.trim();
             }
         }, 100);
+
+        /**
+         * Highlight btn matching the current popover openned
+         * @param  {Element} node
+         * @return {Object}      {toggle(<popoverName/actionName>), show(<popoverName/actionName>)}
+         */
+        const togglePopover = (node) => {
+
+            const effect = (action) => (type) => {
+                if (type === 'makeLink' || type === 'addLinkPopover') {
+                    return node.classList[action](CLASSNAME.POPOVER_LINK);
+                }
+                node.classList[action](CLASSNAME.POPOVER_IMAGE);
+            };
+
+            return {
+                toggle: effect('toggle'),
+                hide: effect('remove')
+            };
+        };
 
         return {
             replace: true,
@@ -47,10 +72,18 @@ angular.module('proton.squire')
                 const onPathChange = onPathChangeCb(el[0], editor);
                 editor.addEventListener('pathChange', onPathChange);
 
+                const popoverBtn = togglePopover(el[0]);
+
                 const onActions = (type, data) => {
 
+
                     if (type === 'squireActions' && /^(makeLink|insertImage)$/.test(data.action)) {
+                        popoverBtn.toggle(data.action);
                         el[0].classList.remove(CLASSNAME.SUB_ROW);
+                    }
+
+                    if (type === 'popover.form' && /^close/.test(data.action)) {
+                        popoverBtn.hide(data.name);
                     }
 
                     if (type === 'squire.native.action') {
