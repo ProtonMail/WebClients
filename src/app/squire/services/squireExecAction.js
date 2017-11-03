@@ -56,7 +56,7 @@ angular.module('proton.squire')
 
             editor.makeLink(link, {
                 target: '_blank',
-                title: title || link,
+                title: link,
                 rel: 'nofollow'
             });
 
