@@ -105,7 +105,8 @@ angular.module('proton.ui')
                 };
             }
 
-            if (value.includes('@')) {
+            // Display custom domain suggestion if no match
+            if (/@$/.test(value)) {
                 const list = defaultDomainsList(value);
                 return { list, hasAutocompletion: !!list.length };
             }
@@ -166,7 +167,7 @@ angular.module('proton.ui')
 
                 // If the mail is not already inside the collection, add it
                 if (!list.some(({ Address }) => Address === data.Address)) {
-                    list.push(angular.extend({}, data, {
+                    list.push(_.extend({}, data, {
                         $id: getID(),
                         invalid: !regexEmail.test(data.Address) || checkTypoEmails(data.Address)
                     }));
