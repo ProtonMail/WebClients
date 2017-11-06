@@ -65,7 +65,7 @@ angular.module('proton.core')
                                         address.state = SAVED;
                                         address.Keys = address.Keys || [];
                                         address.Keys.push(result.data.Key);
-                                        notification.error('Key created');
+                                        notification.success('Key created');
                                         return $q.resolve();
                                     } else if (result.data && result.data.Error) {
                                         address.state = ERROR;
