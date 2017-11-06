@@ -1,5 +1,5 @@
 angular.module('proton.organization')
-    .factory('subscriptionModel', ($rootScope, gettextCatalog, Payment) => {
+    .factory('subscriptionModel', ($rootScope, CONSTANTS, gettextCatalog, Payment) => {
 
         const CACHE = {};
         const ERROR_SUBSCRIPTION = gettextCatalog.getString('Subscription request failed', null, 'Error');
@@ -9,21 +9,37 @@ angular.module('proton.organization')
             professional: ['professional'],
             visionary: ['visionary'],
             mail: ['plus', 'professional', 'visionary'],
-            vpn: ['vpnbasic', 'vpnplus', 'visionary']
+            vpn: ['vpnbasic', 'vpnplus', 'visionary'],
+            vpnbasic: ['vpnbasic'],
+            vpnplus: ['vpnplus']
         };
 
         const MAP_ADDONS = {
             address: '5address',
             storage: '1gb',
             domain: '1domain',
-            member: '1member'
+            member: '1member',
+            vpn: '1vpn'
         };
-
         const get = () => angular.copy(CACHE.subscription || {});
         const count = (addon) => _.where(CACHE.subscription.Plans, { Name: MAP_ADDONS[addon] }).length;
         const hasFactory = (plans = []) => () => {
             const { Plans = [] } = (CACHE.subscription || {});
             return _.some(Plans, ({ Name }) => plans.indexOf(Name) > -1);
+        };
+
+        const currency = () => {
+            const { Plans = [] } = CACHE.subscription || {};
+            const [ { Currency = CONSTANTS.DEFAULT_CURRENCY } = {} ] = Plans;
+
+            return Currency;
+        };
+
+        const cycle = () => {
+            const { Plans = [] } = CACHE.subscription || {};
+            const [ { Cycle = CONSTANTS.DEFAULT_CYCLE } = {} ] = Plans;
+
+            return Cycle;
         };
 
         const hasPaid = (type) => hasFactory(PAID_TYPES[type])();
@@ -65,5 +81,5 @@ angular.module('proton.organization')
             return 'free';
         }
 
-        return { set, get, name, fetch, hasPaid, coupon, count };
+        return { set, get, name, fetch, hasPaid, coupon, count, cycle, currency };
     });

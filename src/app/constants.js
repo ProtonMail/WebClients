@@ -18,13 +18,15 @@ angular.module('proton.constants', [])
                 ADDRESS: '5address',
                 MEMBER: '1member',
                 DOMAIN: '1domain',
-                SPACE: '1gb'
+                SPACE: '1gb',
+                VPN: '1vpn'
             }
         },
         PLANS_TYPE: {
             PLAN: 1,
             ADDON: 0
         },
+        MAX_VPN: 100,
         MAX_MEMBER: 100,
         AWESOMEPLETE_MAX_ITEMS: 20,
         MAIN_KEY: '0',
@@ -129,6 +131,7 @@ angular.module('proton.constants', [])
         IFRAME_SECURE_ORIGIN: 'https://secure.protonmail.com',
         INVITE_URL: 'https://protonmail.com/invite',
         DEFAULT_CURRENCY: 'EUR',
+        DEFAULT_CYCLE: 12,
         TRACKER_ROUTE: 'proton.php',
         PIWIK_SCRIPT: 'proton.js',
         METRIC_GOALS: {

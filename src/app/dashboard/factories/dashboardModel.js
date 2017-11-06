@@ -1,15 +1,14 @@
 angular.module('proton.dashboard')
-    .factory('dashboardModel', ($rootScope, confirmModal, CONSTANTS, dashboardConfiguration, downgrade, gettextCatalog, Payment, paymentModal, subscriptionModel, networkActivityTracker, paymentModel) => {
+    .factory('dashboardModel', ($filter, $rootScope, confirmModal, CONSTANTS, dashboardConfiguration, downgrade, gettextCatalog, Payment, paymentModal, subscriptionModel, networkActivityTracker, paymentModel) => {
 
-        const PLANS_NAME = ['free', 'plus', 'professional', 'visionary'];
-        const VPNS_NAME = ['vpnbasic', 'vpnplus'];
-        const { PLUS, PROFESSIONAL, VISIONARY } = CONSTANTS.PLANS.PLAN;
-        const { ADDRESS, MEMBER, DOMAIN, SPACE } = CONSTANTS.PLANS.ADDON;
+        const { PLUS, PROFESSIONAL, VISIONARY, VPN_BASIC, VPN_PLUS } = CONSTANTS.PLANS.PLAN;
+        const MAIL_PLANS = ['free', PLUS, PROFESSIONAL, VISIONARY];
+        const { ADDRESS, MEMBER, DOMAIN, SPACE, VPN } = CONSTANTS.PLANS.ADDON;
         const YEARLY = 12;
         const MONTHLY = 1;
         const CACHE_PLAN = {};
         const CACHE_API = {};
-
+        const filter = (amount) => $filter('currency')(amount / 100 / dashboardConfiguration.cycle(), dashboardConfiguration.currency());
         const get = (key) => {
             const cache = angular.copy(CACHE_PLAN);
             return key ? cache[key] : cache;
@@ -18,6 +17,53 @@ angular.module('proton.dashboard')
         const changeAddon = (plan, addon, value) => {
             dashboardConfiguration.addon(plan, addon, value);
             $rootScope.$emit('dashboard', { type: 'addon.updated', data: { plan, addon, value } });
+        };
+
+        const selectVpn = (plan = '', vpn = 0) => {
+            dashboardConfiguration.addon('free', 'vpnbasic', +(plan === 'vpnbasic'));
+            dashboardConfiguration.addon('free', 'vpnplus', +(plan === 'vpnplus'));
+            dashboardConfiguration.addon('plus', 'vpnbasic', +(plan === 'vpnbasic'));
+            dashboardConfiguration.addon('plus', 'vpnplus', +(plan === 'vpnplus'));
+            dashboardConfiguration.addon('professional', 'vpnbasic', +(plan === 'vpnbasic'));
+            dashboardConfiguration.addon('professional', 'vpnplus', +(plan === 'vpnplus'));
+            dashboardConfiguration.addon('professional', 'vpn', vpn);
+            $rootScope.$emit('dashboard', { type: 'vpn.updated' });
+        };
+
+        const removeVpn = () => {
+            dashboardConfiguration.addon('free', 'vpnbasic', 0);
+            dashboardConfiguration.addon('free', 'vpnplus', 0);
+            dashboardConfiguration.addon('plus', 'vpnbasic', 0);
+            dashboardConfiguration.addon('plus', 'vpnplus', 0);
+            dashboardConfiguration.addon('professional', 'vpnbasic', 0);
+            dashboardConfiguration.addon('professional', 'vpnplus', 0);
+            dashboardConfiguration.addon('professional', 'vpn', 0);
+            $rootScope.$emit('dashboard', { type: 'vpn.updated' });
+        };
+
+        /**
+         * Update VPN addons from subscription
+         */
+        const updateVpn = () => {
+            const vpnbasic = +subscriptionModel.hasPaid('vpnbasic');
+            const vpnplus = +subscriptionModel.hasPaid('vpnplus');
+            const vpn = subscriptionModel.count('vpn');
+
+            dashboardConfiguration.addon('free', 'vpnbasic', vpnbasic);
+            dashboardConfiguration.addon('free', 'vpnplus', vpnplus);
+            dashboardConfiguration.addon('plus', 'vpnbasic', vpnbasic);
+            dashboardConfiguration.addon('plus', 'vpnplus', vpnplus);
+            dashboardConfiguration.addon('professional', 'vpnbasic', vpnbasic);
+            dashboardConfiguration.addon('professional', 'vpnplus', vpnplus);
+            dashboardConfiguration.addon('professional', 'vpn', vpn);
+            $rootScope.$emit('dashboard', { type: 'vpn.updated' });
+        };
+
+        const initVpn = (plan = '') => {
+            dashboardConfiguration.addon(plan, 'vpnbasic', +subscriptionModel.hasPaid('vpnbasic'));
+            dashboardConfiguration.addon(plan, 'vpnplus', +subscriptionModel.hasPaid('vpnplus'));
+            (plan === 'professional') && dashboardConfiguration.addon(plan, 'vpn', subscriptionModel.count('vpn'));
+            $rootScope.$emit('dashboard', { type: 'vpn.updated', data: { plan } });
         };
 
         const query = (currency = 'USD', cycle = YEARLY) => {
@@ -34,20 +80,24 @@ angular.module('proton.dashboard')
 
             switch (plan) {
                 case 'free':
-                    config.free.vpn !== 'none' && plans.push(cache.vpn[config.free.vpn]);
+                    config.free.vpnbasic && plans.push(cache.addons[VPN_BASIC]);
+                    config.free.vpnplus && plans.push(cache.addons[VPN_PLUS]);
                     break;
                 case 'plus':
                     plans.push(cache.plan[PLUS]);
+                    config.plus.vpnbasic && plans.push(cache.addons[VPN_BASIC]);
+                    config.plus.vpnplus && plans.push(cache.addons[VPN_PLUS]);
                     _.times(config.plus.space, () => plans.push(cache.addons[SPACE]));
                     _.times(config.plus.address, () => plans.push(cache.addons[ADDRESS]));
                     _.times(config.plus.domain, () => plans.push(cache.addons[DOMAIN]));
-                    (config.plus.vpn !== 'none') && plans.push(cache.vpn[config.plus.vpn]);
                     break;
                 case 'professional':
                     plans.push(cache.plan[PROFESSIONAL]);
+                    config.professional.vpnbasic && plans.push(cache.addons[VPN_BASIC]);
+                    config.professional.vpnplus && plans.push(cache.addons[VPN_PLUS]);
                     _.times(config.professional.member, () => plans.push(cache.addons[MEMBER]));
                     _.times(config.professional.domain, () => plans.push(cache.addons[DOMAIN]));
-                    (config.professional.vpn !== 'none') && plans.push(cache.vpn[config.professional.vpn]);
+                    _.times(config.professional.vpn, () => plans.push(cache.addons[VPN]));
                     break;
                 case 'visionary':
                     plans.push(cache.plan[VISIONARY]);
@@ -123,29 +173,21 @@ angular.module('proton.dashboard')
         const loadPlanCycle = (currency, cycle = YEARLY) => {
             return fetchPlans(currency, cycle)
                 .then((data = {}) => {
-                    const { list, addons, vpn, plan, amounts } = (data.Plans || []).reduce((acc, plan) => {
+                    const { list, addons, plan, amounts } = (data.Plans || []).reduce((acc, plan) => {
                         acc.amounts[plan.Name] = plan.Amount;
 
-                        if (VPNS_NAME.indexOf(plan.Name) > -1) {
-                            acc.vpn[plan.Name] = plan;
-                            return acc;
-                        }
-
-                        if (PLANS_NAME.indexOf(plan.Name) > -1) {
+                        if (_.contains(MAIL_PLANS, plan.Name)) {
                             acc.plan[plan.Name] = plan;
                             acc.list.push(plan);
                             return acc;
                         }
 
-                        if ([ADDRESS, MEMBER, DOMAIN, SPACE].indexOf(plan.Name) > -1) {
-                            acc.addons[plan.Name] = plan;
-                            return acc;
-                        }
+                        acc.addons[plan.Name] = plan;
 
                         return acc;
-                    }, { addons: {}, plan: {}, vpn: {}, list: [], amounts: { none: 0 } });
+                    }, { addons: {}, plan: {}, list: [], amounts: {} });
 
-                    return { list, addons, vpn, plan, amounts };
+                    return { list, addons, plan, amounts };
                 });
         };
 
@@ -197,7 +239,7 @@ angular.module('proton.dashboard')
 
             switch (addon) {
                 case 'vpn':
-                    return CACHE_PLAN[cycle].amounts[config[plan].vpn];
+                    return CACHE_PLAN[cycle].amounts[VPN] * config[plan].vpn;
                 case 'address':
                     return CACHE_PLAN[cycle].amounts[ADDRESS] * config[plan].address;
                 case 'space':
@@ -206,15 +248,17 @@ angular.module('proton.dashboard')
                     return CACHE_PLAN[cycle].amounts[DOMAIN] * config[plan].domain;
                 case 'member':
                     return CACHE_PLAN[cycle].amounts[MEMBER] * config[plan].member;
+                case 'vpnbasic':
+                    return CACHE_PLAN[cycle].amounts[VPN_BASIC] * config[plan].vpnbasic;
+                case 'vpnplus':
+                    return CACHE_PLAN[cycle].amounts[VPN_PLUS] * config[plan].vpnplus;
             }
 
             switch (plan) {
                 case 'plus':
-                    return CACHE_PLAN[cycle].amounts.plus;
                 case 'professional':
-                    return CACHE_PLAN[cycle].amounts.professional;
                 case 'visionary':
-                    return CACHE_PLAN[cycle].amounts.visionary;
+                    return CACHE_PLAN[cycle].amounts[plan];
                 default:
                     return 0;
             }
@@ -231,19 +275,23 @@ angular.module('proton.dashboard')
 
             switch (plan) {
                 case 'free':
-                    result += amount({ plan, cycle, addon: 'vpn' });
+                    result += amount({ plan, cycle, addon: 'vpnbasic' });
+                    result += amount({ plan, cycle, addon: 'vpnplus' });
                     break;
                 case 'plus':
                     result += amount({ plan, cycle });
                     result += amount({ plan, cycle, addon: 'address' });
                     result += amount({ plan, cycle, addon: 'space' });
                     result += amount({ plan, cycle, addon: 'domain' });
-                    result += amount({ plan, cycle, addon: 'vpn' });
+                    result += amount({ plan, cycle, addon: 'vpnbasic' });
+                    result += amount({ plan, cycle, addon: 'vpnplus' });
                     break;
                 case 'professional':
                     result += amount({ plan, cycle });
                     result += amount({ plan, cycle, addon: 'member' });
                     result += amount({ plan, cycle, addon: 'domain' });
+                    result += amount({ plan, cycle, addon: 'vpnbasic' });
+                    result += amount({ plan, cycle, addon: 'vpnplus' });
                     result += amount({ plan, cycle, addon: 'vpn' });
                     break;
                 case 'visionary':
@@ -259,11 +307,18 @@ angular.module('proton.dashboard')
             $rootScope.$emit('dashboard', { type: 'cycle.updated', data: { cycle } });
         };
 
+        $rootScope.$on('subscription', (event, { type }) => {
+            (type === 'update') && updateVpn();
+        });
+
         $rootScope.$on('dashboard', (event, { type, data = {} }) => {
             (type === 'change.cycle') && changeCycle(data.cycle);
             (type === 'change.currency') && changeCurrency(data.currency);
             (type === 'change.addon') && changeAddon(data.plan, data.addon, data.value);
             (type === 'select.plan') && selectPlan(data.plan);
+            (type === 'select.vpn') && selectVpn(data.plan, data.vpn);
+            (type === 'remove.vpn') && removeVpn();
+            (type === 'init.vpn') && initVpn(data.plan);
         });
 
         $rootScope.$on('modal.payment', (e, { type, data }) => {
@@ -289,5 +344,5 @@ angular.module('proton.dashboard')
             }
         });
 
-        return { init: angular.noop, loadPlans, get, query, amount, amounts, total };
+        return { init: angular.noop, loadPlans, get, query, amount, amounts, total, filter };
     });

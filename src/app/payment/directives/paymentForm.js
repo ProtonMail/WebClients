@@ -44,6 +44,7 @@ angular.module('proton.payment')
                 updateKey(acc, 'MaxMembers', plan.MaxMembers);
                 updateKey(acc, 'MaxDomains', plan.MaxDomains);
                 updateKey(acc, 'MaxAddresses', plan.MaxAddresses);
+                updateKey(acc, 'MaxVPN', plan.MaxVPN);
                 return acc;
             }, Object.create(null));
 
@@ -54,7 +55,7 @@ angular.module('proton.payment')
                     const type = getTypeAddon(Name);
                     updateKey(acc, type, Amount);
                     return acc;
-                }, { space: 0, member: 0, domain: 0, address: 0 });
+                }, { space: 0, member: 0, domain: 0, address: 0, vpn: 0 });
 
             return { total, price };
         };

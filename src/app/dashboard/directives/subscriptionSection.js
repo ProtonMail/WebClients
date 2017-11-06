@@ -1,6 +1,7 @@
 angular.module('proton.dashboard')
     .directive('subscriptionSection', ($rootScope, CONSTANTS, subscriptionModel, gettextCatalog) => {
         const I18N = {
+            vpn: gettextCatalog.getString('VPN connections', null),
             addresses: gettextCatalog.getString('addresses', null),
             domain: gettextCatalog.getString('domain', null),
             domains: gettextCatalog.getString('domains', null),
@@ -16,8 +17,15 @@ angular.module('proton.dashboard')
             }
         };
 
-        const formatSubscription = (sub) => {
+        const formatSubscription = (sub = {}) => {
             sub.cycle = I18N.cycles[sub.Cycle];
+            sub.plans = _.reduce(sub.Plans, (acc, plan) => {
+                if (plan.Type === CONSTANTS.PLANS_TYPE.PLAN) {
+                    plan.addons = extractAddons(sub.Plans, plan.Name.indexOf('vpn') > -1);
+                    acc.push(plan);
+                }
+                return acc;
+            }, []);
             return sub;
         };
 
@@ -26,6 +34,9 @@ angular.module('proton.dashboard')
 
         function formatTitle(plan = {}) {
             switch (plan.Name) {
+                case '1vpn':
+                    plan.Title = `+ ${plan.time * plan.MaxVPN} ${I18N.vpn}`;
+                    break;
                 case '1gb':
                     plan.Title = `+ ${plan.time * fromBase(plan.MaxSpace)} GB`;
                     break;
@@ -43,16 +54,18 @@ angular.module('proton.dashboard')
             }
         }
 
-        function extractAddons({ Plans = [] } = {}) {
-            return _.chain(Plans)
+        function extractAddons(plans = [], vpn = false) {
+            return _.chain(plans)
                 .where({ Type: 0 })
                 .reduce((acc, plan) => {
-                    if (acc[plan.Name]) {
-                        acc[plan.Name].Amount += plan.Amount;
-                        acc[plan.Name].time++;
-                    } else {
-                        acc[plan.Name] = plan;
-                        acc[plan.Name].time = 1;
+                    if (vpn === (plan.Name.indexOf('vpn') > -1)) {
+                        if (acc[plan.Name]) {
+                            acc[plan.Name].Amount += plan.Amount;
+                            acc[plan.Name].time++;
+                        } else {
+                            acc[plan.Name] = plan;
+                            acc[plan.Name].time = 1;
+                        }
                     }
 
                     return acc;
@@ -72,13 +85,11 @@ angular.module('proton.dashboard')
                     if (type === 'update') {
                         scope.$applyAsync(() => {
                             scope.subscription = formatSubscription(data.subscription);
-                            scope.addons = extractAddons(data.subscription);
                         });
                     }
                 });
 
                 scope.subscription = formatSubscription(subscription);
-                scope.addons = extractAddons(subscription);
                 scope.method = getFirstMethodType(scope.methods);
 
                 scope.$on('$destroy', () => unsubscribe());
