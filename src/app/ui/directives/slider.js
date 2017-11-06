@@ -42,6 +42,8 @@ angular.module('proton.ui')
 
                 scope.$applyAsync(() => minMax());
 
+                scope.$watch('value', (newValue) => slider.noUiSlider.set(newValue));
+
                 if (scope.options.type) {
                     unsubscribe.push($rootScope.$on('refresh.slider', (event, { type, data = {} }) => {
                         if (scope.options.type === type) {

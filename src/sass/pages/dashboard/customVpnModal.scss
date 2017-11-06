@@ -1,0 +1,8 @@
+.customVpnModal-body.customVpnModal-from-free .vpnSlider-container,
+.customVpnModal-body.customVpnModal-from-plus .vpnSlider-container { display: none }
+.customVpnModal-remove {
+    border: 0;
+    background: transparent;
+    color: $primary;
+    text-decoration: underline;
+}

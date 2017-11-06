@@ -20,26 +20,10 @@
 [class*='Column-container'] {
     flex: 1;
     margin: 4px 4px 0 0; /*shadow+ parent overflow*/
-    min-width: 275px;
+    min-width: 320px;
 }
 
 /* context */
-.settingsDashboard-plans.showVpn {
-    .totalRows-container[data-plan='free'] { display: flex }
-    .freeColumn-free { display: none }
-    [class*='Column-footer'] {
-        height: inherit;
-        .addVpn-button,
-        .vpnIncluded { display: none }
-    }
-}
-.settingsDashboard-plans:not(.showVpn) {
-    .totalRows-container[data-plan='free'] { display: none }
-    .freeColumn-free { display: flex }
-}
-
-.settingsDashboard-plans:not(.showVpn) .freeColumn-header .totalPlan { display: none }
-
 .settingsDashboard-plans.free-active .freeColumn-container,
 .settingsDashboard-plans.plus-active .plusColumn-container,
 .settingsDashboard-plans.professional-active .professionalColumn-container,
@@ -111,13 +95,6 @@
 
 [class*="settingsDashboard-arrowToScroll"] .arrowsToScroll-button[data-direction='left'] { left: -10px }
 [class*="settingsDashboard-arrowToScroll"] .arrowsToScroll-button[data-direction='right'] { right: -10px }
-
-/* animations */
-
-/* animations */
-.showVpn [class*='Column-container'] [class*='Column-vpn']:not(.visionaryColumn-vpn) {
-    animation: highlight 1.2s;
-}
 
 /* mobile */
 body.appConfigBody-is-mobile {

@@ -12,9 +12,9 @@
             <td class="subscriptionSection-item-price">{{ plan.Amount / 100 / plan.Cycle | currency: plan.Currency }}/mo</td>
 
             <td class="subscriptionSection-item-addons">
-                <table class="subscriptionSection-addons" ng-if="plan.Name.indexOf('vpn') === -1">
+                <table class="subscriptionSection-addons">
                     <tbody class="subscriptionSection-tbody-addons">
-                        <tr ng-repeat="(key, plan) in addons track by plan.ID">
+                        <tr ng-repeat="(key, plan) in plan.addons track by plan.ID">
                             <td class="subscriptionSection-item-title">{{ plan.Title }}</td>
                             <td class="subscriptionSection-item-price">{{ plan.Amount / 100 / plan.Cycle | currency: plan.Currency }}/mo</td>
                         </tr>

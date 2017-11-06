@@ -7,7 +7,7 @@ angular.module('proton.dashboard')
             }
         };
 
-        const types = ['addon.updated', 'cycle.updated', 'currency.updated'];
+        const types = ['addon.updated', 'cycle.updated', 'currency.updated', 'vpn.updated'];
         const MONTHLY = 1;
         const YEARLY = 12;
 

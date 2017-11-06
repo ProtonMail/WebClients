@@ -97,16 +97,18 @@ angular.module('proton.dashboard')
         }
 
         $rootScope.$on('slider.updated', (event, { type, data = {} }) => {
-            const options = getEquivalentOptions();
-            const { members, storage, addresses } = _.findWhere(options, { [type]: data.value });
+            if (_.contains(['members', 'storage', 'addresses'], type)) {
+                const options = getEquivalentOptions();
+                const { members, storage, addresses } = _.findWhere(options, { [type]: data.value });
 
-            CACHE.members = members;
-            CACHE.storage = storage;
-            CACHE.addresses = addresses;
+                CACHE.members = members;
+                CACHE.storage = storage;
+                CACHE.addresses = addresses;
 
-            refreshSlider('members');
-            refreshSlider('storage');
-            refreshSlider('addresses');
+                refreshSlider('members');
+                refreshSlider('storage');
+                refreshSlider('addresses');
+            }
         });
 
         return { init: angular.noop, getSliders, send };
