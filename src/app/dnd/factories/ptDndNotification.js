@@ -10,8 +10,8 @@ angular.module('proton.dnd')
          * @return {String}
          */
         const getMessage = (total, item) => {
-            const message = gettextCatalog.getPlural(total, 'message', 'messages');
-            const conversation = gettextCatalog.getPlural(total, 'conversation', 'conversations');
+            const message = gettextCatalog.getPlural(total, 'message', 'messages', {});
+            const conversation = gettextCatalog.getPlural(total, 'conversation', 'conversations', {});
             return gettextCatalog.getString('Move {{total}} {{type}}', {
                 type: (item === 'conversation') ? conversation : message,
                 total
