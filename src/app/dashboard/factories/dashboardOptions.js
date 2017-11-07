@@ -9,17 +9,17 @@ angular.module('proton.dashboard')
         }));
 
         const SPACE_OPTIONS = _.range(5, 21).map((value, index) => ({
-            label: gettextCatalog.getPlural(value, '1 GB Storage', '{{$count}} GB Storage', 'dashboard options select'),
+            label: gettextCatalog.getPlural(value, '1 GB Storage', '{{$count}} GB Storage', {}, 'dashboard options select'),
             value: index
         }));
 
         const MEMBER_OPTIONS = _.range(1, MAX_MEMBER + 1).map((value, index) => ({
-            label: gettextCatalog.getPlural(value, '1 User', '{{$count}} Users', 'dashboard options select'),
+            label: gettextCatalog.getPlural(value, '1 User', '{{$count}} Users', {}, 'dashboard options select'),
             value: index
         }));
 
         const generateDomains = (start, end) => _.range(start, end).map((value, index) => ({
-            label: gettextCatalog.getPlural(value, '1 Custom Domain', '{{$count}} Custom Domains', 'dashboard options select'),
+            label: gettextCatalog.getPlural(value, '1 Custom Domain', '{{$count}} Custom Domains', {}, 'dashboard options select'),
             value: index
         }));
 
