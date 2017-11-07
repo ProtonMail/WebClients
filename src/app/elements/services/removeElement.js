@@ -6,8 +6,8 @@ angular.module('proton.elements')
             MESSAGE: gettextCatalog.getString('Are you sure? This cannot be undone.', null, 'Info'),
             DRAFT_INFO: gettextCatalog.getString('A draft selected is open in a composer, this action will close the composer and delete the message.', null, 'Info'),
             TYPES: {
-                message: (n) => gettextCatalog.getPlural(n, 'message', 'messages', 'Type element'),
-                conversation: (n) => gettextCatalog.getPlural(n, 'conversation', 'conversations', 'Type element')
+                message: (n) => gettextCatalog.getPlural(n, 'message', 'messages', {}, 'Type element'),
+                conversation: (n) => gettextCatalog.getPlural(n, 'conversation', 'conversations', {}, 'Type element')
             },
             success(total, item) {
                 return gettextCatalog.getString('{{total}} {{item}} removed', { total, item }, 'Remove element');

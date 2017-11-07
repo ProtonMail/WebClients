@@ -335,7 +335,7 @@ angular.module('proton.conversation')
 
             const folderName = getFolderNameTranslated(labelID);
 
-            const successMessage = gettextCatalog.getPlural(conversationIDs.length, 'Conversation moved to', 'Conversations moved to', null);
+            const successMessage = gettextCatalog.getPlural(conversationIDs.length, 'Conversation moved to', 'Conversations moved to', {});
             const displaySuccess = () => notification.success(`${successMessage} ${unicodeTagView(folderName)}`);
 
             const folderIDs = basicFolders.concat(folders).concat((toSpam || toTrash) ? labels : []);

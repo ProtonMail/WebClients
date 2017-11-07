@@ -162,7 +162,7 @@ angular.module('proton.message')
             const promise = messageApi.label(labelID, 1, ids);
             cache.addToDispatcher(promise);
 
-            const message = gettextCatalog.getPlural(ids.length, 'Message moved to', 'Messages moved to', 'Action');
+            const message = gettextCatalog.getPlural(ids.length, 'Message moved to', 'Messages moved to', {}, 'Action');
             const notification = `${message} ${getFolderNameTranslated(labelID)}`;
 
             if (tools.cacheContext()) {
