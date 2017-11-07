@@ -22,9 +22,9 @@ angular.module('proton.message')
             blockquotes.forEach((blockquote) => {
                 if (!found) {
                     const child = blockquote.textContent.trim();
-                    const [ splitted = '' ] = parent.split(child);
+                    const [ before = '', after = '' ] = parent.split(child);
 
-                    if (child.length < parent.length && splitted.length) {
+                    if (child.length < parent.length && before.length && !after.length) {
                         const button = document.createElement('button');
                         const title = gettextCatalog.getString('Show previous message', null, 'Title');
 
