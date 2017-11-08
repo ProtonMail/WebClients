@@ -5,11 +5,10 @@ angular.module('proton.organization')
             templateUrl: 'templates/modals/changeOrganizationPassword.tpl.html',
             /* @ngInject */
             controller: function (params) {
-                const self = this;
-                self.newPassword = '';
-                self.confirmPassword = '';
-                self.submit = () => params.close(self.newPassword);
-                self.cancel = params.close;
+                this.newPassword = '';
+                this.confirmPassword = '';
+                this.submit = () => params.close(this.newPassword);
+                this.cancel = params.close;
                 setTimeout(() => document.getElementById('newPassword').focus(), 0);
             }
         });

@@ -13,7 +13,11 @@
                 </header-block>
                 <p class="alert alert-info" translate-context="Info" translate>Create and manage sub-accounts and assign them email addresses on your custom domain.</p>
                 <p>
-                    <button type="button" class="pm_button primary" ng-click="enableMemberSupport()" translate-context="Action" translate>Enable multi-user support</button>
+                    <member-edit-btn
+                        data-action="enableSupport"
+                        class="pm_button primary"
+                        data-model="member"></member-edit-btn>
+
                     <a href="https://protonmail.com/support/knowledge-base/business/" target="_blank" class="pm_button link" translate-context="Link" translate>Learn more</a>
                 </p>
             </section>
@@ -30,23 +34,7 @@
                 <div class="pm_grid no-margin">
                     <div class="col-1-2">
                         <div class="clearfix">
-                            <form method="post" name="organizationForm" ng-submit="organizationForm.$valid && saveOrganizationName()" novalidate="">
-                                <div class="col-1-2">
-                                    <label for="orgName" translate-context="Title" translate>Organization name</label>
-                                </div>
-                                <div class="col-1-2">
-                                    <div class="clearfix">
-                                        <input id="orgName" name="name" type="text" class="margin" ng-model="organization.DisplayName" placeholder-translate="Organization name" ng-maxlength="100" required="" />
-                                        <div ng-messages="organizationForm.name.$error" class="text-red" ng-if="organizationForm.name.$touched || organizationForm.$submitted">
-                                            <p ng-message="required" translate-context="Error" translate>Field required</p>
-                                            <p ng-message="maxlength" translate-context="Error" translate>Name exceeds maximum length</p>
-                                        </div>
-                                    </div>
-                                    <p class="text-right clearfix">
-                                        <button class="pm_button primary" ng-disabled="networkActivity.loading()" type="submit" translate-context="Action" translate>Save</button>
-                                    </p>
-                                </div>
-                            </form>
+                            <organization-form-name></organization-form-name>
                         </div>
                     </div>
                     <div class="col-1-2">
@@ -140,9 +128,13 @@
                 </header-block>
 
                 <p>
-                    <button type="button" class="pm_button primary" ng-click="addMember()" translate-context="Action" translate>Add user</button>
+                    <member-edit-btn
+                        data-action="add"
+                        class="pm_button primary""></member-edit-btn>
                 </p>
+
                 <div class="pm_table visibleOverflow">
+
                     <table class="members-table bordered absorbing withDropDown">
                         <thead>
                             <tr>
@@ -165,14 +157,14 @@
                             </tr>
                         </thead>
                         <tbody class="members-table-tbody">
-                            <tr ng-repeat-start="member in members">
+                            <tr ng-repeat-start="member in members track by member.ID">
                                 <td>
                                     <span ng-bind="member.Name"></span>
                                 </td>
                                 <td>
                                     <span>{{ member.Addresses[0].Email }}</span>
-                                    <toggle-expand ng-if="member.Addresses.length > 1" class="autoHeight" data-model="member.toggle" text="+ {{ member.Addresses.length - 1 }}"></toggle-expand>
-                                    <toggle-expand ng-if="member.Addresses.length === 1" class="autoHeight" data-model="member.toggle"></toggle-expand>
+                                    <toggle-expand ng-if="member.Addresses.length > 1" class="autoHeight" data-model="member" data-text="+ {{ member.Addresses.length - 1 }}"></toggle-expand>
+                                    <toggle-expand ng-if="member.Addresses.length === 1" class="autoHeight" data-model="member"></toggle-expand>
                                 </td>
                                 <td ng-if="organization.HasKeys === 1">
                                     <span ng-show="member.Subscriber" translate>Primary Admin</span>
@@ -196,26 +188,65 @@
                                 </td>
                                 <td>
                                     <div class="pm_buttons">
-                                        <a type="button" class="pm_buttons pm_button" ng-click="addAddress(undefined, member)" translate-context="Action" translate>Add Address</a>
+                                        <address-btn-actions
+                                            data-model2="member"
+                                            data-action="add"
+                                            class="pm_buttons pm_button"></address-btn-actions>
+
                                         <a type="button" class="pm_buttons pm_button pm_trigger fa fa-angle-down" ng-if="organization.HasKeys === 1" dropdown></a>
                                         <div class="pm_dropdown right">
-                                            <button type="button" class="pm_button link text-red" ng-show="!member.Self && member.Type === 1" ng-click="removeMember(member, false)" translate-context="Action" translate>Delete</button>
-                                            <button type="button" class="pm_button link" ng-show="!member.Self && member.Type === 0" ng-click="removeMember(member)" translate-context="Action" translate>Remove</button>
-                                            <button type="button" class="pm_button link" ng-show="organization.HasKeys === 1" ng-click="editMember(member)" translate-context="Action" translate>Edit</button>
-                                            <button type="button" class="pm_button link" ng-show="member.Role === 1" ng-click="changeRole(member, 2)" translate-context="Action" translate>Make Admin</button>
-                                            <button type="button" class="pm_button link" ng-show="!member.Self && member.Role === 2" ng-click="changeRole(member, 1)" translate-context="Action" translate>Revoke Admin</button>
-                                            <button type="button" class="pm_button link" ng-show="!member.Self && member.Private === 0 && member.Keys.length && member.Addresses.length" ng-click="login(member)" translate-context="Action" translate>Login</button>
-                                            <button type="button" class="pm_button link" ng-show="member.Private === 0" ng-click="makePrivate(member)" translate-context="Action" translate-context="Action" translate>Make Private</button>
+
+                                            <member-edit-btn
+                                                ng-if="!member.Self && member.Type === 1"
+                                                data-action="destroy"
+                                                class="pm_button link text-red"
+                                                data-model="member"></member-edit-btn>
+
+                                            <member-edit-btn
+                                                ng-if="!member.Self && member.Type === 0"
+                                                data-action="remove"
+                                                class="pm_button link"
+                                                data-model="member"></member-edit-btn>
+
+                                            <member-edit-btn
+                                                ng-if="organization.HasKeys === 1"
+                                                class="pm_button link"
+                                                data-model="member"></member-edit-btn>
+
+                                            <member-edit-btn
+                                                ng-if="member.Role === 1"
+                                                data-action="makeAdmin"
+                                                class="pm_button link"
+                                                data-model="member"></member-edit-btn>
+
+                                            <member-edit-btn
+                                                ng-if="!member.Self && member.Role === 2"
+                                                data-action="revokeAdmin"
+                                                class="pm_button link"
+                                                data-model="member"></member-edit-btn>
+
+                                            <member-edit-btn
+                                                ng-if="!member.Self && member.Private === 0 && member.Keys.length  && member.Addresses.length"
+                                                data-action="login"
+                                                class="pm_button link"
+                                                data-model="member"></member-edit-btn>
+
+                                            <member-edit-btn
+                                                ng-if="member.Private === 0"
+                                                data-action="makePrivate"
+                                                class="pm_button link"
+                                                data-model="member"></member-edit-btn>
+
                                         </div>
                                     </div>
                                 </td>
                             </tr>
-                            <tr class="hasTable member-table-addresses-wrapper" ng-repeat-end ng-show="member.toggle === true && member.Addresses.length > 0">
+                            <tr class="hasTable member-table-addresses-wrapper" ng-repeat-end ng-if="member.toggle === true && member.Addresses.length > 0">
                                 <td colspan="6">
                                     <div class="pm_table member-table-addresses-pmTable">
                                         <table class="member-table-addresses absorbing">
                                             <tbody>
-                                                <tr ng-repeat="address in member.Addresses | orderBy: ['!Status','Order']">
+                                                <tr ng-repeat="address in member.Addresses | orderBy: ['!Status','Order'] track by address.ID">
                                                     <td ng-bind="address.Email"></td>
                                                     <td class="absorbing-column">
                                                         <span class="pm_badge success" ng-show="address.Status === 1 && address.Receive === 1" translate translate-comment="address state badge">Enabled</span>
@@ -225,9 +256,31 @@
                                                         <span class="pm_badge primary" ng-show="$first" translate translate translate-comment="address state badge">Default</span>
                                                     </td>
                                                     <td class="text-right">
-                                                        <button type="button" class="pm_button link" ng-show="isAdmin && address.Status === 0 && address.Type !== 1" ng-click="enableAddress(address)" translate-context="Action" translate>Enable</button>
-                                                        <button type="button" class="pm_button link" ng-show="isAdmin && address.Status === 1 && address.Type !== 1" ng-click="disableAddress(address)" translate-context="Action" translate>Disable</button>
-                                                        <button type="button" class="pm_button link" ng-show="address.Type === 3" ng-click="deleteAddress(address)" translate-context="Action" translate>Delete</button>
+
+                                                        <address-btn-actions
+                                                            data-model="address"
+                                                            data-model2="member"
+                                                            data-action="generate"
+                                                            ng-if="((isAdmin && member.Private !== 1) || (member.Private === 1 && member.Self === 1)) && address.HasKeys === 0"
+                                                            class="pm_button link"></address-btn-actions>
+
+                                                        <address-btn-actions
+                                                            data-model="address"
+                                                            data-action="enable"
+                                                            ng-if="isAdmin && address.Status === 0 && address.Type !== 1"
+                                                            class="pm_button link"></address-btn-actions>
+
+                                                        <address-btn-actions
+                                                            data-model="address"
+                                                            data-action="disable"
+                                                            ng-if="isAdmin && address.Status === 1 && address.Type !== 1"
+                                                            class="pm_button link"></address-btn-actions>
+
+                                                        <address-btn-actions
+                                                            data-model="address"
+                                                            data-action="remove"
+                                                            ng-if="address.Type === 3"
+                                                            class="pm_button link"></address-btn-actions>
                                                     </td>
                                                 </tr>
                                             </tbody>
@@ -242,7 +295,7 @@
             </section>
         </div>
 
-        <div class="row" id="securityOrganization" ng-show="organization.HasKeys === 1">
+        <div class="row" id="securityOrganization" ng-if="organization.HasKeys === 1">
             <section class="setting pm_form full">
 
                 <header-block class="settingsUsers-header-security">
@@ -254,25 +307,43 @@
 
                 <div class="pm_grid">
                     <div class="col-2-3">
-                        <p ng-show="keyStatus === 0">
-                            <button class="pm_button primary" ng-disabled="networkActivity.loading()" ng-click="changeOrganizationPassword()" type="button" translate-context="Action" translate>Change organization password</button>
-                            <button class="pm_button primary" ng-disabled="networkActivity.loading()" ng-click="changeOrganizationKeys()" type="button" translate-context="Action" translate>Change organization keys</button>
+                        <p ng-if="keyStatus === 0">
+                            <organization-btn-actions
+                                data-action="changePassword"
+                                ng-disabled="networkActivity.loading()"
+                                class="pm_button primary"></organization-btn-actions>
+
+                            <organization-btn-actions
+                                data-action="changeKeys"
+                                ng-disabled="networkActivity.loading()"
+                                class="pm_button primary"></organization-btn-actions>
+
                             <a class="pm_button link" href="https://protonmail.com/support/knowledge-base/organization-key" target="_blank" translate translate-context="Link">Learn more</a>
                         </p>
-                        <div ng-show="keyStatus === 1">
+                        <div ng-if="keyStatus === 1">
                             <p class="alert alert-warning" translate translate-context="Info">You must activate your organization keys. Without activation you will not be able to create new users, add addresses to existing users, or access non-private user accounts.</p>
                             <p>
-                                <button class="pm_button primary" ng-disabled="networkActivity.loading()" ng-click="activateOrganizationKeys()" type="button" translate-context="Action" translate>Activate Keys</button>
+                                <organization-btn-actions
+                                    data-action="activateKeys"
+                                    ng-disabled="networkActivity.loading()"
+                                    class="pm_button primary"></organization-btn-actions>
                             </p>
                         </div>
-                        <div ng-show="keyStatus === 2">
+                        <div ng-if="keyStatus === 2">
                             <p class="alert alert-danger" translate translate-context="Info">You have lost access to your organization keys. Without restoration you will not be able to create new users, add addresses to existing users, or access non-private user accounts.</p>
                             <p>
-                                <button class="pm_button" ng-disabled="networkActivity.loading()" ng-click="changeOrganizationKeys()" type="button" translate-context="Action" translate>Reset Keys</button>
-                                <button class="pm_button primary" ng-disabled="networkActivity.loading()" ng-click="activateOrganizationKeys()" type="button" translate-context="Action" translate>Restore Keys</button>
+                                <organization-btn-actions
+                                    data-action="resetKeys"
+                                    ng-disabled="networkActivity.loading()"
+                                    class="pm_button"></organization-btn-actions>
+
+                                <organization-btn-actions
+                                    data-action="restoreKeys"
+                                    ng-disabled="networkActivity.loading()"
+                                    class="pm_button primary"></organization-btn-actions>
                             </p>
                         </div>
-                        <div class="pm_table" ng-show="keyStatus === 0">
+                        <div class="pm_table" ng-if="keyStatus === 0">
                             <table class="bordered absorbing">
                                 <thead>
                                     <tr>

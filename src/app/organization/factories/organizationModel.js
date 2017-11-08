@@ -1,7 +1,17 @@
 angular.module('proton.organization')
-    .factory('organizationModel', (organizationApi, setupKeys, authentication, $rootScope, gettextCatalog, CONSTANTS) => {
+    .factory('organizationModel', (organizationApi, organizationKeysModel, setupKeys, authentication, $rootScope, gettextCatalog, CONSTANTS, notification, networkActivityTracker, changeOrganizationPasswordModal, loginPasswordModal, changeOrganizationPassword) => {
 
-        let organization = {};
+        let CACHE = {};
+
+        const I18N = {
+            CREATE_ERROR: gettextCatalog.getString('Error during organization request', null, 'Error organization'),
+            FETCH_ERROR: gettextCatalog.getString('Organization request failed', null, 'Error organization'),
+            KEYS_ERROR: gettextCatalog.getString('Error during the generation of new organization keys', null, 'Error organization'),
+            UPDATING_NAME_ERROR: gettextCatalog.getString('Error updating organization name', null, 'Error'),
+            UPDATING_NAME_SUCCESS: gettextCatalog.getString('Organization updated', null, 'Info'),
+            UPDATE_PASSWORD_SUCCESS: gettextCatalog.getString('Password updated', null, 'Info')
+        };
+
         const fakeOrganization = {
             PlanName: 'free',
             MaxMembers: 1,
@@ -14,28 +24,26 @@ angular.module('proton.organization')
             }
         };
 
-        const I18N = {
-            CREATE_ERROR: gettextCatalog.getString('Error during organization request', null, 'Error organization'),
-            FETCH_ERROR: gettextCatalog.getString('Organization request failed', null, 'Error organization'),
-            KEYS_ERROR: gettextCatalog.getString('Error during the generation of new organization keys', null, 'Error organization')
+        const clear = () => (CACHE = {});
+        const get = (key = 'organization') => CACHE[key];
+        const set = (data = {}, key = 'organization') => {
+            CACHE[key] = data;
+            if (key === 'organization') {
+                $rootScope.$emit('organizationChange', data);
+            }
         };
 
-
-        const get = () => organization;
-        const set = (data = {}) => (organization = data);
-        const clear = () => (organization = {});
-
-        const isFreePlan = () => (organization || {}).PlanName === 'free';
+        const isFreePlan = () => (CACHE.organization || {}).PlanName === 'free';
 
         function fetch() {
             if (authentication.user.Role === CONSTANTS.FREE_USER_ROLE) {
-                organization = fakeOrganization;
+                set(fakeOrganization);
                 return Promise.resolve(fakeResult);
             }
             return organizationApi.get()
                 .then(({ data = {} } = {}) => {
                     if (data.Code === 1000) {
-                        organization = data.Organization;
+                        set(data.Organization);
                         return data.Organization;
                     }
                     throw new Error(data.Error || I18N.FETCH_ERROR);
@@ -61,7 +69,6 @@ angular.module('proton.organization')
         }
 
         function generateKeys() {
-
             if (!isFreePlan()) {
                 return Promise.resolve();
             }
@@ -73,11 +80,57 @@ angular.module('proton.organization')
                 });
         }
 
-        $rootScope.$on('organizationChange', (event, newOrganization) => {
-            set(newOrganization);
-        });
+        const saveName = (DisplayName) => {
+            const promise = organizationApi.updateOrganizationName({ DisplayName })
+                .then(({ data = {} } = {}) => {
+                    if (data.Code === 1000) {
+                        return notification.success(I18N.UPDATING_NAME_SUCCESS);
+                    }
+                    throw new Error(data.Error || I18N.UPDATING_NAME_ERROR);
+                });
+            networkActivityTracker.track(promise);
+        };
+
+        const updatePassword = (newPassword) => {
+            const submit = (Password, TwoFactorCode) => {
+                const creds = { Password, TwoFactorCode };
+                const organizationKey = organizationKeysModel.get('organizationKey');
+
+                const promise = changeOrganizationPassword({ newPassword, creds, organizationKey })
+                    .then(() => {
+                        notification.success(I18N.UPDATE_PASSWORD_SUCCESS);
+                        loginPasswordModal.deactivate();
+                    });
+                networkActivityTracker.track(promise);
+            };
+
+            loginPasswordModal.activate({
+                params: {
+                    submit,
+                    cancel() {
+                        loginPasswordModal.deactivate();
+                    }
+                }
+            });
+        };
+
+        const changePassword = () => {
+            changeOrganizationPasswordModal.activate({
+                params: {
+                    close(newPassword) {
+                        changeOrganizationPasswordModal.deactivate();
+                        newPassword && updatePassword(newPassword);
+                    }
+                }
+            });
+        };
+
+
+        const changeKeys = organizationKeysModel.changeKeys;
+
         return {
             set, get, clear, isFreePlan,
-            fetch, create, generateKeys
+            fetch, create, generateKeys,
+            saveName, changePassword, changeKeys
         };
     });

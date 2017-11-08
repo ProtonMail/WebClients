@@ -1,4 +1,4 @@
-angular.module('proton.core')
+angular.module('proton.organization')
     .factory('generateOrganizationModal', (pmModal, authentication, networkActivityTracker, organizationApi, pmcw, passwords, setupKeys, loginPasswordModal, notification, gettextCatalog) => {
         return pmModal({
             controllerAs: 'ctrl',

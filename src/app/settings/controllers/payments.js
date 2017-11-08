@@ -168,11 +168,6 @@ angular.module('proton.settings')
                 status: Payment.status()
             };
 
-            // Payment.check(invoice.ID)
-            //     .then(({ data }) => {
-            //         console.log('--', data)
-            //     })
-
             networkActivityTracker.track(
                 $q.all(promises)
                     .then((result) => {

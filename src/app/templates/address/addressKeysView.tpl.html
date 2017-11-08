@@ -12,7 +12,7 @@
             <tr ng-repeat-start="address in addresses | orderBy: 'order' track by address.addressID">
                 <td>
                     <span class="addressKeysView-toggle">
-                        <toggle-expand data-model="address.toggle"></toggle-expand>
+                        <toggle-expand data-model="address"></toggle-expand>
                     </span>
                     <span class="addressKeysView-email ellipsis" title="{{ address.email }}"><strong>{{ address.email }}</strong></span>
                 </td>

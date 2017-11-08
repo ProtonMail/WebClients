@@ -2,6 +2,11 @@ angular.module('proton.core')
     .factory('$exceptionHandler', ($log, $injector, CONFIG, CONSTANTS) => {
         let nReports = 0;
 
+        // We don't need to log this error as it's more a status
+        const MAP_ERROR_SILENT = {
+            'loginPassword:cancel': true
+        };
+
         const getViewLayout = ({ ViewLayout }) => {
             let key;
             switch (ViewLayout) {
@@ -34,32 +39,43 @@ angular.module('proton.core')
             return key;
         };
 
+        const getError = (exception) => {
+            if (exception instanceof Error) {
+                return { message: exception.message, stack: exception.stack };
+            }
+
+            if (angular.isString(exception)) {
+                return exception;
+            }
+            try {
+                const json = angular.toJson(exception);
+                if ($.isEmptyObject(json)) {
+                    return exception.toString();
+                }
+                return exception;
+            } catch (err) {
+                return err.message;
+            }
+        };
+
+        const isLoggable = (err) => {
+            return !(MAP_ERROR_SILENT[err] || MAP_ERROR_SILENT[(err || {}).message]);
+        };
+
         return function (exception) {
             nReports++;
 
             /**
-         * Override Angular internal service, DO NOT REMOVE THIS CONSOLE.
-         * (ಠ益ಠ)
-         */
+             * Override Angular internal service, DO NOT REMOVE THIS CONSOLE.
+             * (ಠ益ಠ)
+             */
             console.error(exception);
 
             if (nReports < 6) {
-                let debug;
-                if (exception instanceof Error) {
-                    debug = { message: exception.message, stack: exception.stack };
-                } else if (angular.isString(exception)) {
-                    debug = exception;
-                } else {
-                    try {
-                        const json = angular.toJson(exception);
-                        if ($.isEmptyObject(json)) {
-                            debug = exception.toString();
-                        } else {
-                            debug = exception;
-                        }
-                    } catch (err) {
-                        debug = err.message;
-                    }
+                const error = getError(exception);
+
+                if (!isLoggable(error)) {
+                    return Promise.resolve();
                 }
 
                 try {
@@ -76,7 +92,7 @@ angular.module('proton.core')
                         ClientVersion: CONFIG.app_version,
                         ViewLayout: getViewLayout(user),
                         ViewMode: getViewMode(user),
-                        Debug: { state: $state.$current.name, error: debug }
+                        Debug: { state: $state.$current.name, error }
                     };
                     return Bug.crash(crashData).catch(angular.noop);
                 } catch (e) {

@@ -1,6 +1,7 @@
 angular.module('proton.commons')
     .factory('User', ($http, url, srp) => {
         const requestURL = url.build('users');
+
         return {
             create(params, password) {
                 return srp.getPasswordParams(password, params)

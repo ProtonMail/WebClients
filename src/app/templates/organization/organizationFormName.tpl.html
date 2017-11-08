@@ -1,0 +1,34 @@
+<form method="post" name="organizationForm" novalidate>
+    <div class="col-1-2">
+        <label for="orgName" translate-context="Title" translate>Organization name</label>
+    </div>
+    <div class="col-1-2">
+        <div class="clearfix">
+            <input
+                id="orgName"
+                name="name"
+                type="text"
+                class="margin"
+                ng-model="value"
+                placeholder-translate="Organization name"
+                placeholder-translate-context="Title"
+                ng-maxlength="100"
+                required>
+            <div
+                ng-messages="organizationForm.name.$error"
+                class="text-red"
+                 ng-if="organizationForm.name.$touched || organizationForm.$submitted">
+                <p ng-message="required" translate-context="Error" translate>Field required</p>
+                <p ng-message="maxlength" translate-context="Error" translate>Name exceeds maximum length</p>
+            </div>
+        </div>
+        <p class="text-right clearfix">
+            <button
+                class="pm_button primary"
+                ng-disabled="networkActivity.loading()"
+                type="submit"
+                translate-context="Action"
+                translate>Save</button>
+        </p>
+    </div>
+</form>

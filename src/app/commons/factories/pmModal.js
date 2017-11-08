@@ -1,6 +1,8 @@
 angular.module('proton.commons')
     .factory('pmModal', ($animate, $compile, $rootScope, $controller, $q, $http, AppModel, $templateCache) => {
+
         const $body = $('#body');
+
         return function modalFactory(config) {
             if (!(!config.template ^ !config.templateUrl)) {
                 throw new Error('Expected modal to have exactly one of either template or templateUrl');
@@ -77,17 +79,22 @@ angular.module('proton.commons')
                 unsubscribeLogoutListener();
 
                 return $animate.leave(element).then(() => {
+
+                    // We can have a concurrency isues ex: generateModal
+                    if (!element) {
+                        return;
+                    }
                     Mousetrap.unbind('escape');
-                    scope.$destroy();
+                    scope && scope.$destroy();
                     /**
-                 * Fuck you Enkular
-                 * > Called on a controller when its containing scope is destroyed.
-                 * https://docs.angularjs.org/api/ng/service/$compile#life-cycle-hooks
-                 * Et mon cul c'est du poulet alors ? (╯ὸ︹ό）╯︵ ┻━┻
-                 *
-                 * So we need to do it for you...
-                 * cf https://github.com/angular/angular.js/issues/14376#issuecomment-205926098
-                 */
+                     * Fuck you Enkular
+                     * > Called on a controller when its containing scope is destroyed.
+                     * https://docs.angularjs.org/api/ng/service/$compile#life-cycle-hooks
+                     * Et mon cul c'est du poulet alors ? (╯ὸ︹ό）╯︵ ┻━┻
+                     *
+                     * So we need to do it for you...
+                     * cf https://github.com/angular/angular.js/issues/14376#issuecomment-205926098
+                     */
                     (scope[controllerAs].$onDestroy || angular.noop)();
                     scope = null;
                     element.remove();

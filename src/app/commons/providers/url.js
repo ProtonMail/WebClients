@@ -3,6 +3,8 @@ angular.module('proton.commons')
         // Set base url from grunt config
         let base;
 
+        const make = (key, prefix = '') => (...path) => [`${prefix}/${key}`.trim()].concat(path).join('/');
+
         this.setBaseUrl = (newUrl) => {
             base = newUrl;
         };
@@ -17,6 +19,7 @@ angular.module('proton.commons')
                 get() {
                     return base;
                 },
+                make,
                 /**
                  * Factory to build urls for a scope
                  *     ex:
@@ -29,7 +32,7 @@ angular.module('proton.commons')
                  * @return {Function}
                  */
                 build(key) {
-                    return (...path) => this.get() + [`/${key}`].concat(path).join('/');
+                    return make(key, this.get());
                 }
             };
         };

@@ -175,5 +175,6 @@ angular.module('proton.constants', [])
             green: [ '#D7EAD3', '#B3D6A9', '#8FC380', '#77F241', '#66A657', '#3A762B', '#29501F'],
             yellow: [ '#FFF2CD', '#FEE59C', '#FCD86F', '#FDF84E', '#F2C246', '#BE8F35', '#7F6124']
         },
-        CANCEL_REQUEST: 'CANCEL_REQUEST'
+        CANCEL_REQUEST: 'CANCEL_REQUEST',
+        ENCRYPTION_DEFAULT: 2048
     });

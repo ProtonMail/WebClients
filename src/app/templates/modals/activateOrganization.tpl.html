@@ -6,7 +6,7 @@
                 <h4 class="modal-title">{{ ctrl.title }}</h4>
             </div>
             <div class="modal-body pm_form">
-                <div class="{{ ctrl.messageClass }}" ng-show="ctrl.message.length" ng-bind-html="ctrl.message"></div>
+                <div class="alert alert-info" ng-show="ctrl.message.length" ng-bind-html="ctrl.message"></div>
                 <p>{{ ctrl.prompt }}</p>
                 <div class="margin">
                     <password

@@ -969,11 +969,16 @@ angular.module('proton.routes', [
                 url: '/' + box + '?' + conversationParameters(),
                 views: list,
                 resolve: {
-                    delinquent($state, gettextCatalog, user, notification, authentication) {
-                        if (authentication.user.Delinquent >= 3) {
+                    delinquent($state, gettextCatalog, user, notification, authentication, CONSTANTS) {
+                        if (authentication.user.Delinquent >= 3 && authentication.user.Role === CONSTANTS.PAID_ADMIN_ROLE) {
                             const message = gettextCatalog.getString('Your account currently has an overdue invoice. Please pay all unpaid invoices.', null, 'Info');
                             notification.error(message);
                             $state.go('secured.payments');
+                        }
+                        if (authentication.user.Delinquent >= 3 && authentication.user.Role === CONSTANTS.PAID_MEMBER_ROLE) {
+                            const message = gettextCatalog.getString('Your account currently has an overdue invoice. Please contact your administrator.', null, 'Info');
+                            notification.error(message);
+                            $state.go('login');
                         }
                         return Promise.resolve();
                     }
