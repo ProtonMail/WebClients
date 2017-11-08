@@ -5,6 +5,7 @@ angular.module('proton.address')
             ERROR: gettextCatalog.getString('Error reactivating key. Please try again', null, 'Error'),
             SUCCESS: gettextCatalog.getString('Key reactivated', null, 'Info')
         };
+        const KEY_FILE_EXTENSION = '.asc';
 
         const reactivateProcess = async (decryptedKey, key) => {
             try {
@@ -78,7 +79,7 @@ angular.module('proton.address')
                  */
                 scope.download = (key, email, type) => {
                     const blob = new Blob([key], { type: 'data:text/plain;charset=utf-8;' });
-                    const filename = type + 'key.' + email + '.txt';
+                    const filename = type + 'key.' + email + KEY_FILE_EXTENSION;
 
                     downloadFile(blob, filename);
                 };
