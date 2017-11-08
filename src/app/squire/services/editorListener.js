@@ -226,7 +226,7 @@ angular.module('proton.squire')
 
                     if (action === 'message.changeFrom') {
                         const html = signatureBuilder.update(scope.message, editor.getHTML());
-                        editor.setHTML(html);
+                        !scope.message.isPlainText() && editor.setHTML(html);
                         return updateModel(html, true);
                     }
 

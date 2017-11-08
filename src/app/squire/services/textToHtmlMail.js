@@ -7,7 +7,6 @@ angular.module('proton.squire')
         };
 
         const FAKE_BODY = document.createElement('body');
-
         const md = window.markdownit('default', OPTIONS);
 
         /**

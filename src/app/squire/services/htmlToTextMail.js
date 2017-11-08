@@ -22,7 +22,6 @@ angular.module('proton.squire')
 
         const afterPosition = (blockquote, { node, position }) => {
             const bitmask = node.compareDocumentPosition(blockquote);
-
             return bitmask & Node.DOCUMENT_POSITION_FOLLOWING &&
                 (position === 'before' || !(bitmask & Node.DOCUMENT_POSITION_CONTAINED_BY));
         };
@@ -92,6 +91,16 @@ angular.module('proton.squire')
                     return extractPlainText(editor, node) + '\n';
                 },
                 matchesTag: (node) => ['P', 'H1', 'H2', 'H3', 'H4', 'H5', 'H6'].includes(node.tagName) && node.nextElementSibling !== null
+            },
+            '.protonmail_signature_block': {
+                process(editor, node) {
+                    /*
+                        Add empty space unicode around it to allow us
+                        to replace the signature if we change the From
+                     */
+                    return `​${extractPlainText(editor, node)}​\n`;
+                },
+                matchesTag: (node) => node.tagName === 'DIV'
             }
         };
 
