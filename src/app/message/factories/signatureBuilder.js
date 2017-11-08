@@ -1,10 +1,35 @@
 angular.module('proton.message')
-    .factory('signatureBuilder', (authentication, CONSTANTS, tools, sanitize) => {
+    .factory('signatureBuilder', (authentication, CONSTANTS, tools, sanitize, AppModel, $rootScope) => {
 
         const CLASSNAME_SIGNATURE_CONTAINER = 'protonmail_signature_block';
         const CLASSNAME_SIGNATURE_USER = 'protonmail_signature_block-user';
         const CLASSNAME_SIGNATURE_PROTON = 'protonmail_signature_block-proton';
         const CLASSNAME_SIGNATURE_EMPTY = 'protonmail_signature_block-empty';
+
+        const PROTON_SIGNATURE = getProtonSignature();
+        AppModel.store('protonSignature', !!authentication.user.PMSignature);
+
+        // Update config when we toggle the proton signature on the dashboard
+        $rootScope.$on('AppModel', (e, { type }) => {
+            (type === 'protonSignature') && _.extend(PROTON_SIGNATURE, getProtonSignature());
+        });
+
+        /**
+         * Preformat the protonMail signature
+         * @return {Object}
+         */
+        function getProtonSignature() {
+            if (!authentication.user.PMSignature) {
+                return { HTML: '', PLAIN: '' };
+            }
+
+            const div = document.createElement('DIV');
+            div.innerHTML = CONSTANTS.PM_SIGNATURE;
+            return {
+                HTML: CONSTANTS.PM_SIGNATURE,
+                PLAIN: div.textContent
+            };
+        }
 
         /**
          * Generate a space tag, it can be hidden from the UX via a className
@@ -26,12 +51,11 @@ angular.module('proton.message')
         /**
          * Generate a map of classNames used for the signature template
          * @param  {String} userSignature
-         * @param  {String} protonSignature
          * @return {Object}
          */
-        function getClassNamesSignature(userSignature, protonSignature) {
+        function getClassNamesSignature(userSignature) {
             const isUserEmpty = isEmptyUserSignature(userSignature);
-            const isProtonEmpty = !protonSignature;
+            const isProtonEmpty = !PROTON_SIGNATURE.HTML;
             return {
                 userClass: isUserEmpty ? CLASSNAME_SIGNATURE_EMPTY : '',
                 protonClass: isProtonEmpty ? CLASSNAME_SIGNATURE_EMPTY : '',
@@ -46,17 +70,16 @@ angular.module('proton.message')
          *     protonSignature: 2 spaces + protonSignature
          *     user + proton signature: 2 spaces + userSignature + 1 space + protonSignature
          * @param  {String}  userSignature
-         * @param  {String}  protonSignature
          * @param  {Boolean} isReply
          * @return {Object}                  {start: <String>, end: <String>}
          */
-        const getSpaces = (userSignature, protonSignature, isReply = false) => {
+        const getSpaces = (userSignature, isReply = false) => {
             const noUserSignature = isEmptyUserSignature(userSignature);
-            const isEmptySignature = noUserSignature && !protonSignature;
+            const isEmptySignature = noUserSignature && !PROTON_SIGNATURE.HTML;
             return {
                 start: isEmptySignature ? createSpace() : (createSpace() + createSpace()),
                 end: isReply ? createSpace() : '',
-                between: (!noUserSignature && protonSignature) ? createSpace() : ''
+                between: (!noUserSignature && PROTON_SIGNATURE.HTML) ? createSpace() : ''
             };
         };
 
@@ -67,16 +90,29 @@ angular.module('proton.message')
          * @param  {Boolean} isReply Detect if we create a new message or not
          * @return {String}
          */
-        function templateBuilder(userSignature = '', protonSignature = '', isReply = false) {
-            const { userClass, protonClass, containerClass } = getClassNamesSignature(userSignature, protonSignature);
-            const space = getSpaces(userSignature, protonSignature, isReply);
+        function templateBuilder(userSignature = '', isReply = false) {
+            const { userClass, protonClass, containerClass } = getClassNamesSignature(userSignature);
+            const space = getSpaces(userSignature, isReply);
 
             const template = `${space.start}<div class="${CLASSNAME_SIGNATURE_CONTAINER} ${containerClass}">
                 <div class="${CLASSNAME_SIGNATURE_USER} ${userClass}">${tools.replaceLineBreaks(userSignature)}</div>${space.between}
-                <div class="${CLASSNAME_SIGNATURE_PROTON} ${protonClass}">${tools.replaceLineBreaks(protonSignature)}</div>
+                <div class="${CLASSNAME_SIGNATURE_PROTON} ${protonClass}">${tools.replaceLineBreaks(PROTON_SIGNATURE.HTML)}</div>
             </div>${space.end}`;
 
             return sanitize.message(template);
+        }
+
+        /**
+         * Convert signature to plaintext and replace the previous one.
+         * We use an invisible space to find and replace the signature.
+         * @param  {String} body
+         * @param  {Node} userSignature
+         * @return {String}
+         */
+        function replaceRaw(body = '', userSignature) {
+            const signature = Array.from(userSignature.querySelectorAll('div'))
+                .reduce((acc, node) => `${acc}\n${node.textContent}`, '');
+            return body.replace(/(​[\b|\D]+​)/, `​${signature}\n${PROTON_SIGNATURE.PLAIN}​`);
         }
 
         /**
@@ -93,8 +129,7 @@ angular.module('proton.message')
             const { From = {} } = message;
             const position = isAfter ? 'beforeEnd' : 'afterBegin';
             const userSignature = !From.Signature ? authentication.user.Signature : From.Signature;
-            const protonSignature = authentication.user.PMSignature ? CONSTANTS.PM_SIGNATURE : '';
-            const template = templateBuilder(userSignature, protonSignature, action !== 'new');
+            const template = templateBuilder(userSignature, action !== 'new');
             // Parse the current message and append before it the signature
             const [ $parser ] = $.parseHTML(`<div>${message.getDecryptedBody()}</div>`);
             $parser.insertAdjacentHTML(position, template);
@@ -107,12 +142,16 @@ angular.module('proton.message')
          * @param  {Message} message
          * @return {String}
          */
-        function update(message = { getDecryptedBody: angular.noop }, body = '') {
+        function update(message = { getDecryptedBody: _.noop, isPlainText: _.noop }, body = '') {
 
             const { From = {} } = message;
             const content = (!From.Signature ? authentication.user.Signature : From.Signature) || '';
             const [ dom ] = $.parseHTML(`<div>${sanitize.message(body || message.getDecryptedBody())}</div>`) || [];
             const [ userSignature ] = $.parseHTML(`<div>${sanitize.message(content)}</div>`) || [];
+
+            if (message.isPlainText()) {
+                return replaceRaw(message.getDecryptedBody(), userSignature);
+            }
 
             /**
              * Update the signature for a user if it exists

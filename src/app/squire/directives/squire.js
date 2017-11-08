@@ -49,21 +49,15 @@ angular.module('proton.squire')
 
                 function updateModel(val, dispatchAction = false) {
 
-                    if (scope.message.MIMEType === 'text/plain') {
-                        // disable all updates.
-                        return;
-                    }
-
                     const value = sanitize.input(val || '');
                     scope.$applyAsync(() => {
 
                         if (scope.message.MIMEType === 'text/plain') {
-                            // disable all updates.
-                            return;
+                            return scope.message.setDecryptedBody(val, false);
                         }
 
                         const isEmpty = !value.trim().length;
-                        el[`${isEmpty ? 'remove' : 'add'}Class`]('squire-has-value');
+                        el[0].classList[`${isEmpty ? 'remove' : 'add'}`]('squire-has-value');
 
                         if (isMessage(typeContent)) {
                         // Replace the embedded images with CID to keep the model updated
