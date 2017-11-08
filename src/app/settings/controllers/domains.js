@@ -7,7 +7,6 @@ angular.module('proton.settings')
         $state,
         gettextCatalog,
         Address,
-        activateOrganizationModal,
         addressModal,
         addressesModal,
         authentication,

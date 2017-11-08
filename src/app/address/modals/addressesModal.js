@@ -1,4 +1,4 @@
-angular.module('proton.core')
+angular.module('proton.address')
     .factory('addressesModal', (pmModal, CONSTANTS, addressModal, memberModal, $rootScope, organizationModel) => {
         return pmModal({
             controllerAs: 'ctrl',

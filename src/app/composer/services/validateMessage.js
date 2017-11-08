@@ -1,5 +1,5 @@
 angular.module('proton.composer')
-    .factory('validateMessage', (gettextCatalog, tools, regexEmail, CONSTANTS, confirmModal) => {
+    .factory('validateMessage', (gettextCatalog, tools, regexEmail, CONSTANTS, confirmModal, authentication, notification, addressWithoutKeys) => {
 
         const I18N = {
             STILL_UPLOADING: gettextCatalog.getString('Wait for attachment to finish uploading or cancel upload.', null, 'Error'),
@@ -13,7 +13,12 @@ angular.module('proton.composer')
                 return gettextCatalog.getString(`The maximum number (${total}) of Recipients is 25.`, null, 'Error');
             },
             NO_SUBJECT_TITLE: gettextCatalog.getString('No subject', null, 'Title'),
-            NO_SUBJECT_MESSAGE: gettextCatalog.getString('No subject, send anyway?', null, 'Info')
+            NO_SUBJECT_MESSAGE: gettextCatalog.getString('No subject, send anyway?', null, 'Info'),
+            ERROR_ADDRESSES_INFO_PRIVATE: gettextCatalog.getString('You can generate your keys here', null, 'Error'),
+            ERROR_ADDRESSES: gettextCatalog.getString('No address with keys available to compose a message.', null, 'Error'),
+            MEMBER: gettextCatalog.getString('Addresses / Users', null, 'Title'),
+            ERROR_ADDRESSES_INFO: gettextCatalog.getString('Contact your organization’s administrator to resolve this.', null, 'Error'),
+            ERROR_DELINQUENT: gettextCatalog.getString('Your account currently has an overdue invoice. Please pay all unpaid invoices.', null, 'Info')
         };
 
         const cleanEmails = (message) => {
@@ -94,6 +99,30 @@ angular.module('proton.composer')
             });
         }
 
-        return { checkSubject, validate };
+        /**
+         * Private user can generate keys, invite him to generate them
+         */
+        const getErrorInfo = () => {
+            if (authentication.user.Private) {
+                return `${I18N.ERROR_ADDRESSES_INFO_PRIVATE} <a href="/members">${I18N.MEMBER}</a>`;
+            }
+            return I18N.ERROR_ADDRESSES_INFO;
+        };
+
+        function canWrite() {
+            // In delinquent state
+            if (authentication.user.Delinquent >= 3) {
+                return notification.error(I18N.ERROR_DELINQUENT);
+            }
+
+            // You cannot compose messages without a valid address
+            if (addressWithoutKeys.allDirty()) {
+                return notification.error(`${I18N.ERROR_ADDRESSES}<br>${getErrorInfo()}`);
+            }
+
+            return true;
+        }
+
+        return { checkSubject, validate, canWrite };
     });
 

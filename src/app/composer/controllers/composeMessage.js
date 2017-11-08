@@ -131,7 +131,7 @@ angular.module('proton.composer')
         unsubscribe.push($rootScope.$on('composer.new', (event, { message, type }) => {
             const limitReached = checkComposerNumber();
             if (!limitReached && AppModel.is('onLine')) {
-                initMessage(messageBuilder.create(type, message));
+                validateMessage.canWrite() && initMessage(messageBuilder.create(type, message));
             }
         }));
 
@@ -276,18 +276,10 @@ angular.module('proton.composer')
         }
 
         /**
-     * Add message in composer list
-     * @param {Object} message
-     */
+         * Add message in composer list
+         * @param {Object} message
+         */
         function initMessage(message) {
-
-            if (authentication.user.Delinquent < 3) {
-            // Not in the delinquent state
-            } else {
-            // In delinquent state
-                notification.error(gettextCatalog.getString('Your account currently has an overdue invoice. Please pay all unpaid invoices.', null, 'Info'));
-                return false;
-            }
 
             if (authentication.user.ComposerMode === 1) {
                 message.maximized = true;

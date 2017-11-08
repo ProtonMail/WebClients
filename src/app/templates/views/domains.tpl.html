@@ -173,7 +173,11 @@
                         <i class="fa" ng-class="{'fa-check-circle-o text-green': domain.State === 1, 'fa-exclamation-triangle text-red': domain.State === 0 || domain.State === 2}"></i> <strong>{{ domain.DomainName }}</strong>
                     </p>
                     <p>
-                        <button type="button" class="pm_button primary" ng-click="addAddress(domain)" translate-context="Action" translate-comment="add address button on the domains page" translate>Add address</button>
+                        <address-btn-actions
+                            data-model="domain"
+                            data-action="add"
+                            class="pm_button primary"></address-btn-actions>
+
                     </p>
                     <p
                         class="alert alert-info"
@@ -215,9 +219,23 @@
                                             ></custom-checkbox>
                                     </td>
                                     <td class="text-right">
-                                        <button type="button" class="pm_button link" ng-show="address.Status === 0 && address.Type !== 1" ng-click="enableAddress(address)" translate-context="Action" translate>Enable</button>
-                                        <button type="button" class="pm_button link" ng-show="address.Status === 1 && address.Type !== 1" ng-click="disableAddress(address)" translate-context="Action" translate>Disable</button>
-                                        <button type="button" class="pm_button link" ng-show="address.Status === 0 && address.Type === 3" ng-click="deleteAddress(address)" translate-context="Action" translate>Delete</button>
+                                        <address-btn-actions
+                                            data-model="address"
+                                            data-action="enable"
+                                            ng-if="address.Status === 0 && address.Type !== 1"
+                                            class="pm_button link"></address-btn-actions>
+
+                                        <address-btn-actions
+                                            data-model="address"
+                                            data-action="disable"
+                                            ng-if="address.Status === 1 && address.Type !== 1"
+                                            class="pm_button link"></address-btn-actions>
+
+                                        <address-btn-actions
+                                            data-model="address"
+                                            data-action="remove"
+                                            ng-if="address.Status === 0 && address.Type === 3"
+                                            class="pm_button link"></address-btn-actions>
                                     </td>
                                 </tr>
                             </tbody>

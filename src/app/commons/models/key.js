@@ -1,102 +1,105 @@
 angular.module('proton.commons')
-    .factory('Key', ($http, $q, url, srp) => {
-        return {
+    .factory('Key', ($http, url, srp) => {
+
+        const requestUrl = url.build('keys');
+
         /**
          * Create a new key
          * @param {Object} params
          * @return {Promise}
          */
-            create(params = {}) {
-                return $http.post(url.get() + '/keys', params);
-            },
-            /**
-         * Install a new key for each address
-         * @param {Object} params
-         * @return {Promise}
-         */
-            setup(params = {}, newPassword = '') {
-                if (newPassword.length) {
-                    return srp.getPasswordParams(newPassword, params)
-                        .then((authParams) => $http.post(url.get() + '/keys/setup', authParams));
-                }
+        const create = (params = {}) => $http.post(requestUrl(), params);
 
-                return $http.post(url.get() + '/keys/setup', params);
-            },
-            /**
+        /**
          * Install a new key for each address
          * @param {Object} params
          * @return {Promise}
          */
-            reset(params = {}, newPassword = '') {
-                if (newPassword.length) {
-                    return srp.getPasswordParams(newPassword, params)
-                        .then((authParams) => $http.post(url.get() + '/keys/reset', authParams));
-                }
-                return $http.post(url.get() + '/keys/reset', params);
-            },
-            /**
+        const setup = (params = {}, newPassword = '') => {
+            if (newPassword.length) {
+                return srp.getPasswordParams(newPassword, params)
+                    .then((authParams) => $http.post(requestUrl('setup'), authParams));
+            }
+
+            return $http.post(requestUrl('setup'), params);
+        };
+
+        /**
+         * Install a new key for each address
+         * @param {Object} params
+         * @return {Promise}
+         */
+        const reset = (params = {}, newPassword = '') => {
+            if (newPassword.length) {
+                return srp.getPasswordParams(newPassword, params)
+                    .then((authParams) => $http.post(requestUrl('reset'), authParams));
+            }
+            return $http.post(requestUrl('reset'), params);
+        };
+        /**
          * Update key priority
          * @param {Object} params
          * @return {Promise}
          */
-            order(params = {}) {
-                return $http.post(url.get() + '/keys/order', params);
-            },
-            /**
+        const order = (params = {}) => $http.post(requestUrl('order'), params);
+
+        /**
          * Activate key
          * @param {String} keyID
          * @param {Object} params
          * @return {Promise}
          */
-            activate(keyID, params = {}) {
-                return $http.put(url.get() + '/keys/' + keyID + '/activate', params);
-            },
-            /**
+        const activate = (keyID, params = {}) => $http.put(requestUrl(keyID, 'activate'), params);
+
+        /**
          * Update private key only, use for password updates
          * @param {Object} params
          * @return {Promise}
          */
-            private(params = {}, newPassword = '') {
-                if (newPassword.length) {
-                    return srp.getPasswordParams(newPassword, params)
-                        .then((authParams) => $http.put(url.get() + '/keys/private', authParams));
-                }
-                return $http.put(url.get() + '/keys/private', params);
-            },
-            /**
+        const privateKey = (params = {}, newPassword = '') => {
+            if (newPassword.length) {
+                return srp.getPasswordParams(newPassword, params)
+                    .then((authParams) => $http.put(requestUrl('private'), authParams));
+            }
+            return $http.put(requestUrl('private'), params);
+        };
+
+        /**
          * Upgrade private key with incorrect metadata
          * @param {Object} params
          * @return {Promise}
          */
-            upgrade(params = {}, newPassword = '') {
-                if (newPassword.length) {
-                    return srp.getPasswordParams(newPassword, params)
-                        .then((authParams) => $http.put(url.get() + '/keys/private/upgrade', authParams));
-                }
-                return $http.put(url.get() + '/keys/private/upgrade', params);
-            },
-            /**
+        const upgrade = (params = {}, newPassword = '') => {
+            if (newPassword.length) {
+                return srp.getPasswordParams(newPassword, params)
+                    .then((authParams) => $http.put(requestUrl('private', 'upgrade'), authParams));
+            }
+            return $http.put(requestUrl('private', 'upgrade'), params);
+        };
+
+        /**
          * Delete key
          * @param {String} keyID
          * @return {Promise}
          */
-            delete(keyID) {
-                return $http.delete(url.get() + '/keys/' + keyID);
-            },
-            /**
+        const deleteKey = (keyID) => $http.delete(requestUrl(keyID));
+
+        /**
          * Get salts
          * @return {Promise}
          */
-            salts() {
-                return $http.get(url.get() + '/keys/salts');
-            },
-            /**
+        const salts = () => $http.get(requestUrl('salts'));
+
+        /**
          * Delete key
          * @param {String} keyID
          * @return {Promise}
          */
-            reactivate(keyID, params) {
-                return $http.put(url.get() + '/keys/' + keyID, params);
-            }
+        const reactivate = (keyID, params) => $http.put(requestUrl(keyID), params);
+
+        return {
+            create, setup, reset, order, activate, upgrade,
+            private: privateKey, delete: deleteKey,
+            salts, reactivate
         };
     });

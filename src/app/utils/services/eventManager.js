@@ -1,15 +1,10 @@
 angular.module('proton.utils')
     .service('eventManager', (
         $cookies,
-        $exceptionHandler,
-        $location,
-        $log,
-        $q,
         $rootScope,
         $state,
         $stateParams,
         $timeout,
-        $window,
         authentication,
         cache,
         cacheCounters,
@@ -18,15 +13,14 @@ angular.module('proton.utils')
         Contact,
         desktopNotifications,
         Events,
-        generateModal,
         gettextCatalog,
         Label,
         notify,
-        pmcw,
-        setupKeys,
         AppModel,
         labelsModel,
-        sanitize
+        sanitize,
+        manageUser,
+        $injector
     ) => {
 
         const FIBONACCI = [1, 1, 2, 3, 5, 8];
@@ -39,6 +33,7 @@ angular.module('proton.utils')
         };
         const closeNotifications = () => MODEL.notification && MODEL.notification.close();
         const setTimer = (timer = CONSTANTS.INTERVAL_EVENT_TIMER) => MODEL.milliseconds = timer;
+        const manageID = (id = MODEL.ID) => MODEL.ID = id;
         const setEventID = (ID) => manageID(ID);
         const stop = () => {
             $timeout.cancel(MODEL.promiseCancel);
@@ -46,7 +41,6 @@ angular.module('proton.utils')
         };
         const manageActiveMessage = ({ Messages = [] }) => Messages.length && dispatch('activeMessages', { messages: _.pluck(Messages, 'Message') });
         const isDifferent = (eventID) => MODEL.ID !== eventID;
-        const manageID = (id = MODEL.ID) => MODEL.ID = id;
 
         /**
          * Clean contact datas
@@ -88,108 +82,6 @@ angular.module('proton.utils')
                     }
                 }
             });
-        }
-
-        function manageUser(user) {
-            if (user) {
-                const mailboxPassword = authentication.getPassword();
-
-                if (user.Role === CONSTANTS.FREE_USER_ROLE) {
-                    // Necessary because there is no deletion event for organizations
-                    $rootScope.$emit('organizationChange', { PlanName: 'free', HasKeys: 0 });
-                }
-
-                const subuser = angular.isDefined(user.OrganizationPrivateKey);
-                // Required for subuser
-                let organizationKeyPromise = Promise.resolve();
-                if (subuser) {
-                    organizationKeyPromise = pmcw.decryptPrivateKey(user.OrganizationPrivateKey, mailboxPassword);
-                }
-
-                const generateKeys = (addresses) => {
-                    const deferred = $q.defer();
-
-                    generateModal.activate({
-                        params: {
-                            title: gettextCatalog.getString('Setting up your Addresses', null, 'Title'),
-                            message: gettextCatalog.getString('Before you can start sending and receiving emails from your new addresses you need to create encryption keys for them. 4096-bit keys only work on high performance computers. For most users, we recommend using 2048-bit keys.', null, 'Info'),
-                            password: mailboxPassword,
-                            addresses,
-                            close(success) {
-                                if (success) {
-                                    /* eslint no-use-before-define: "off" */
-                                    call();
-                                    deferred.resolve();
-                                } else {
-                                    deferred.reject();
-                                }
-
-                                generateModal.deactivate();
-                            }
-                        }
-                    });
-
-                    return deferred.promise;
-                };
-
-                const storeKeys = (keys) => {
-                    authentication.clearKeys();
-                    _.each(keys, ({ address, key, pkg }) => {
-                        authentication.storeKey(address.ID, key.ID, pkg);
-                    });
-                };
-
-                const mergeUser = () => {
-                    // Merge user parameters
-                    _.each(Object.keys(user), (key) => {
-                        if (key === 'Addresses') {
-                            _.each(user.Addresses, (address) => {
-                                const index = _.findIndex(authentication.user.Addresses, { ID: address.ID });
-
-                                if (index === -1) {
-                                    authentication.user.Addresses.push(address);
-                                    $rootScope.$broadcast('createUser');
-                                } else {
-                                    angular.extend(authentication.user.Addresses[index], address);
-                                }
-                            });
-
-                            let index = authentication.user.Addresses.length;
-
-                            while (index--) {
-                                const address = authentication.user.Addresses[index];
-                                const found = _.findWhere(user.Addresses, { ID: address.ID });
-
-                                if (angular.isUndefined(found)) {
-                                    authentication.user.Addresses.splice(index, 1);
-                                }
-                            }
-                        } else {
-                            authentication.user[key] = user[key];
-                        }
-                    });
-                    angular.extend($rootScope.user, authentication.user);
-                    $rootScope.$broadcast('updateUser');
-                };
-
-                return organizationKeyPromise
-                    .then((organizationKey) => setupKeys.decryptUser(user, organizationKey, mailboxPassword))
-                    .then(({ keys, dirtyAddresses }) => {
-                        if (dirtyAddresses.length && !generateModal.active()) {
-                            return generateKeys(dirtyAddresses)
-                                .then(() => {
-                                    throw new Error('Regenerate keys for addresses');
-                                }, () => storeKeys(keys));
-                        }
-                        storeKeys(keys);
-                    })
-                    .then(mergeUser)
-                    .catch((error) => {
-                        $exceptionHandler(error);
-                        throw error;
-                    });
-            }
-            return Promise.resolve();
         }
 
         function manageMessageCounts(counts) {
@@ -314,17 +206,7 @@ angular.module('proton.utils')
         }
 
         function manageMembers(members) {
-            if (angular.isDefined(members)) {
-                _.each(members, (member) => {
-                    if (member.Action === DELETE) {
-                        $rootScope.$emit('deleteMember', member.ID);
-                    } else if (member.Action === CREATE) {
-                        $rootScope.$emit('createMember', member.ID, member.Member);
-                    } else if (member.Action === UPDATE) {
-                        $rootScope.$emit('updateMember', member.ID, member.Member);
-                    }
-                });
-            }
+            members && dispatch('members', members);
         }
 
         function manageDomains(domains) {
@@ -342,9 +224,7 @@ angular.module('proton.utils')
         }
 
         function manageOrganization(organization) {
-            if (angular.isDefined(organization)) {
-                $rootScope.$emit('organizationChange', organization);
-            }
+            organization && $injector.get('organizationModel').set(organization);
         }
 
         function manageFilters(filters) {
@@ -421,8 +301,7 @@ angular.module('proton.utils')
             }
 
             if (data.Reload === 1) {
-                $window.location.reload();
-
+                window.location.reload();
                 return Promise.resolve();
             }
 
@@ -441,7 +320,7 @@ angular.module('proton.utils')
                 manageID(data.EventID);
                 manageActiveMessage(data);
 
-                return manageUser(data.User)
+                return manageUser(data, call)
                     .then(() => {
                         if (data.More === 1) {
                             return call();

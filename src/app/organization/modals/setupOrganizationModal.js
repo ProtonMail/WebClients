@@ -1,4 +1,4 @@
-angular.module('proton.core')
+angular.module('proton.organization')
     .factory('setupOrganizationModal', (authentication, pmModal, passwords, networkActivityTracker, organizationApi, organizationModel, memberApi, CONSTANTS, setupKeys, pmcw, gettextCatalog) => {
         return pmModal({
             controllerAs: 'ctrl',
@@ -77,8 +77,7 @@ angular.module('proton.core')
 
                 self.next = () => {
                     const promise = methods[index]()
-                        .then((result = {}) => {
-                            const { data = {} } = result;
+                        .then(({ data = {} } = {}) => {
                             if (data.Error) {
                                 return Promise.reject(data.Error);
                             }

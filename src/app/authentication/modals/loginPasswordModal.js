@@ -5,21 +5,20 @@ angular.module('proton.core')
             templateUrl: 'templates/authentication/modals/loginPassword.tpl.html',
             /* @ngInject */
             controller: function (params) {
-                const self = this;
 
-                self.loginPassword = '';
-                self.twoFactorCode = '';
-                self.userPasswordMode = authentication.user.PasswordMode;
-                self.submit = () => params.submit(self.loginPassword, self.twoFactorCode);
-                self.cancel = () => params.cancel();
+                this.loginPassword = '';
+                this.twoFactorCode = '';
+                this.userPasswordMode = authentication.user.PasswordMode;
+                this.submit = () => params.submit(this.loginPassword, this.twoFactorCode);
+                this.cancel = () => params.cancel();
 
                 if (params.hasTwoFactor) {
-                    self.hasTwoFactor = params.hasTwoFactor === 1;
+                    this.hasTwoFactor = params.hasTwoFactor === 1;
                 } else {
                     const promise = srp.info()
                         .then(({ data = {} } = {}) => {
                             if (data.Code === 1000) {
-                                self.hasTwoFactor = data.TwoFactor === 1;
+                                this.hasTwoFactor = data.TwoFactor === 1;
                             }
                         });
                     networkActivityTracker.track(promise);

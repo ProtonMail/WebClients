@@ -1,0 +1,42 @@
+.generateModal-container:not(.generateModal-process) {
+    .generateModal-process-about { display: none }
+}
+
+.generateModal-process {
+    [class*="generateModal-key-"] { display: none }
+}
+
+[class*="generateModal-state"] { color: $text; }
+
+.generateModal-row[data-state="0"] {
+    .generateModal-state-generating,
+    .generateModal-state-done,
+    .generateModal-state-saved,
+    .generateModal-state-error { display: none }
+}
+
+.generateModal-row[data-state="1"] {
+    .generateModal-state-queued,
+    .generateModal-state-done,
+    .generateModal-state-saved,
+    .generateModal-state-error { display: none }
+}
+
+.generateModal-row[data-state="2"] {
+    .generateModal-state-queued,
+    .generateModal-state-generating,
+    .generateModal-state-saved,
+    .generateModal-state-error { display: none }
+}
+.generateModal-row[data-state="3"] {
+    .generateModal-state-queued,
+    .generateModal-state-generating,
+    .generateModal-state-done,
+    .generateModal-state-error { display: none }
+}
+.generateModal-row[data-state="4"] {
+    .generateModal-state-queued,
+    .generateModal-state-generating,
+    .generateModal-state-done,
+    .generateModal-state-saved { display: none }
+}
