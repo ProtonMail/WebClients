@@ -118,7 +118,7 @@ angular.module('proton.contact')
             const contact = _.filter(get(), (contact) => {
                 return _.some(contact.Emails, { ID: EmailID });
             })[0];
-            updateContact({ ID: contact.ID, contact });
+            contact && updateContact({ ID: contact.ID, contact });
         }
 
         function updateContact({ ID, contact }) {
