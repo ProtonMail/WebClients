@@ -41,7 +41,7 @@ angular.module('proton.core')
                     params.type = typeValue;
                 }
 
-                acc.add(key, DOMPurify.sanitize(cleanValue(value)), params);
+                acc.add(key, DOMPurify.sanitize(cleanValue(value, key)), params);
 
                 return acc;
             }, new vCard());
@@ -71,16 +71,21 @@ angular.module('proton.core')
         }
 
         /**
-         * Clean value, some imported vCards from Apple have weird bracket around the value
-         * _$!<value>!$_
+         * Clean value
          * @param  {String} value
          * @return {String}
          */
-        function cleanValue(value = '') {
+        function cleanValue(value = '', key = '') {
             const matches = value.match(/_\$!<(.*)>!\$_/);
 
+            // Some imported vCards from Apple have weird bracket around the value _$!<value>!$_
             if (Array.isArray(matches)) {
                 return matches[1];
+            }
+
+            // Clean URL
+            if (key.toLowerCase() === 'url') {
+                return decodeURI(value);
             }
 
             return value;
