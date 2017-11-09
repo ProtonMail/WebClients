@@ -1,89 +1,75 @@
-#pm_contacts {
-
-	.pm_table {
-		td {
-			vertical-align: middle;
-			span {
-				overflow: hidden;
-				text-overflow: ellipsis;
-				display: block;
-				width: 100%;
-				display: block;
-			}
-		}
-		td.name {
-			width: initial;
-			min-width: initial;
-		}
-		td.actions {
-			padding: 10px;
-		}
-		th.name {
-			width: initial;
-		}
-
-		.checkbox label { height: 3.5rem }
-	}
+.contacts-container {
+    position: relative; /* for mobile/tablet*/
+    height: 100%;
+    z-index: 0;
 }
 
-body.appConfigBody-is-mobile {
-	&#secured-contacts #pm_main {
-		overflow: auto;
-	}
-	#pm_contacts {
-		padding: 0;
-		#pm_toolbar {
-			padding: 10px !important;
-			display: block !important;
-			height: auto;
-			.pm_button[disabled] {
-				display: none;
-			}
-			.pm_button {
-				strong {
-					display: none;
-				}
-			}
-			.pm_button.deleteAll {
-				display: none;
-			}
-			.pm_button.primary {
-				strong {
-					display: inline;
-				}
-			}
-			.pm_buttons {
-				margin-left: 10px;
-				.page {
-					display: none;
-				}
-			}
-		}
-		.pm_table {
-			tr {
-				margin: 0;
-			}
-			.checkbox {
-				width: 4rem;
-				label {
-					height: 4rem;
-					width: 4rem;
-					text-align: center;
-					box-sizing: border-box;
-				}
-			}
-			td.name {
-				font-weight: bold;
-			}
-			td.text-right {
-				padding: .5rem 0;
-			}
-		}
-		.pm_toolbar {
-			.compose,
-			.delete {
-				display: none;
-			}
-		}
-	}
+.contacts-panels {
+    display: flex;
+    flex-direction: row;
+    height: calc(100% - #{$contactsToolbar});
+}
+
+[selected-contact] {
+    display: block;
+    height: 100%;
+}
+
+.contactDetails-container { height: 100% }
+.contactDetails-container > * { padding: 0 15px }
+
+.contactList-container {
+    position: relative;
+    flex: 1;
+    order: 0;
+    overflow: auto;
+    border-right: 1px solid rgba($border, .1);
+    background:  rgba($border, .05);
+    z-index: 100
+}
+
+.contactList-table {
+    background: #FFF;
+    box-shadow: 0px 1px 2px rgba($border, .2);
+}
+
+.contactList-table .contactList-thead { border-top: 0 }
+.contactList-table .contactList-thead th { border-bottom-width: 2px }
+
+.contactsDetails-container,
+.contactPlaceholder-container {
+    flex: 1;
+    order: 1;
+    box-sizing: border-box;
+    overflow: auto;
+}
+
+.contacts-container.contacts-empty .contactsToolbar-container,
+.contacts-container.contacts-empty .contactPlaceholder-container { display: none }
+
+.contacts-container.contacts-empty .contacts-list,
+.contacts-container.contacts-empty .contactsDetails-container { height: 100% }
+
+
+.appConfigBody-is-tablet .contactPlaceholder-container,
+.appConfigBody-is-mobile .contactPlaceholder-container { display: none }
+
+.appConfigBody-is-tablet .contactsDetails-container,
+.appConfigBody-is-mobile .contactsDetails-container {
+    position: absolute;
+    z-index: 100;
+    left:0;
+    top:0;
+    height: 100%;
+    width: 100%;
+    background: #FFF;
+    overflow: visible; /* keep toolbar at top on mobile*/
+}
+
+
+.appConfigBody-is-tablet .contactDetails-details,
+.appConfigBody-is-mobile .contactDetails-details {
+    /* keep toolbar at top on mobile*/
+    height: 100%;
+    overflow: auto;
 }

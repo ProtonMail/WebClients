@@ -3,7 +3,8 @@ html.protonmail {
 	body {
 		height: 100%;
 		.blank { background: $white }
-		.mobileOnly { 	display: none }
+		.mobileOnly,
+		.lowResolution { display: none }
 		&.scroll {
 			overflow-y: initial;
 			-webkit-overflow-scrolling: touch;
@@ -38,6 +39,17 @@ html.protonmail {
 				}
 			}
 		}
+		&.appConfigBody-is-tablet,
+		&.appConfigBody-is-mobile {
+			.lowResolution { display: inline-flex; }
+			.desktopOnly { display: none !important }
+		}
+		&.appConfigBody-is-mobile {
+			.notMobile { display: none }
+		}
+	}
+	.hidden {
+		display: none !important;
 	}
 	.visionary {
 		color: $visionary;
@@ -124,6 +136,10 @@ html.protonmail {
 	.spacing-bottom {
 		margin-bottom: 3rem;
 	}
+	.flex-space-right { margin-right: 4px }
+	.flex-space-left { margin-left: 4px }
+	.flex-space-top { margin-top: 4px }
+	.flex-space-bottom { margin-bottom: 4px }
 	.no-margin {
 		margin: 0;
 	}
@@ -176,6 +192,4 @@ html.protonmail {
 		&::-ms-input-placeholder { color: rgba(255,255,255,.75) }
 		&:-ms-input-placeholder { color: rgba(255,255,255,.75) }
 	}
-
-
 }

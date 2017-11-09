@@ -139,6 +139,19 @@
         pointer-events: none;
         cursor: default;
     }
+    &.main {
+        padding: 0px 20px;
+    }
+    &.dangerous {
+        box-shadow: none;
+        border:0;
+        padding: 0px 4px;
+        margin: 0px 10px;
+        color:$red;
+        span {
+            text-decoration: underline;
+        }
+    }
     strong {
         font-size: 12px;
         text-transform: uppercase;

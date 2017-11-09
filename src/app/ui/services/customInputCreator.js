@@ -4,10 +4,10 @@ angular.module('proton.ui')
         /**
          * {@link https://www.w3.org/TR/html5/forms.html#concept-input-apply}
          */
+
         const DEFAULT_ATTRIBUTES = ['id', 'class', 'value', 'checked', 'name', 'disabled', 'required', 'placeholder'];
 
         const isDefaultAttribute = (name = '') => DEFAULT_ATTRIBUTES.some((key) => key === name);
-
         /**
          * Convert a name from the dataSet to a valid HTML attribute
          * ex:
@@ -30,6 +30,7 @@ angular.module('proton.ui')
             return { for: id, id };
         };
 
+
         const removeWatcher = (node, key) => node.removeAttribute(`data-custom-${key}`);
 
         const bindAttributes = (node, el, attr = {}) => {
@@ -37,12 +38,14 @@ angular.module('proton.ui')
             const inputAttributes = Object.keys(attr).filter((attribute) => /custom[A-Z]/.test(attribute));
 
             const link = getLabelInputLink(inputAttributes);
+
             attr[link.id] && (node.id = attr[link.id]);
 
             inputAttributes.forEach((attribute) => {
                 const key = nameToAttribute(attribute);
 
                 // Do not put default attributes into the dataset
+
                 if (/aria/.test(key) || isDefaultAttribute(key)) {
 
                     // Extend className

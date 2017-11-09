@@ -1,0 +1,31 @@
+.contactAddressInput-container:not(.contactAddressInput-focussed) {
+    .contactAddressInput-label,
+    .contactAddressInput-post-box,
+    .contactAddressInput-extended,
+    .contactAddressInput-street,
+    .contactAddressInput-locality,
+    .contactAddressInput-region,
+    .contactAddressInput-postal-code,
+    .contactAddressInput-country { display: none }
+}
+
+.contactAddressInput-container.contactAddressInput-focussed .contactAddressInput-default { display: none }
+.contactAddressInput-container:not(.contactAddressInput-show-post-box) .contactAddressInput-post-box,
+.contactAddressInput-container:not(.contactAddressInput-show-post-box) .contactAddressInput-post-box-label { display: none }
+.contactAddressInput-container:not(.contactAddressInput-show-extended) .contactAddressInput-extended,
+.contactAddressInput-container:not(.contactAddressInput-show-extended) .contactAddressInput-extended-label { display: none }
+.contactAddressInput-grid {
+    display: flex;
+    justify-content: space-between;
+}
+.contactAddressInput-col {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+}
+.contactAddressInput-col:last-child { margin-left: 2px }
+.contactAddressInput-label {
+    color: $primary;
+    font-size: .8em;
+    line-height: 20px;
+}

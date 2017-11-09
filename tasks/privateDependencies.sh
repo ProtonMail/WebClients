@@ -2,12 +2,16 @@ DEST_BLOB='node_modules/pt.blobjs'
 DEST_QRCODE='node_modules/pt.qrcodejs'
 DEST_MAILPARSER='node_modules/pt.mailparser'
 DEST_ASMCRYPTO='node_modules/pt.asmcrypto.js'
+DEST_VCARD='node_modules/vcard'
 
 # Remove previous version
-rm -rf $DEST_QRCODE $DEST_MAILPARSER $DEST_BLOB $DEST_ASMCRYPTO
+rm -rf $DEST_QRCODE $DEST_MAILPARSER $DEST_BLOB $DEST_ASMCRYPTO $DEST_VCARD
 
 mkdir $DEST_MAILPARSER
 cp src/libraries/mailparser.js $DEST_MAILPARSER/mailparser.js
+
+mkdir $DEST_VCARD
+npx browserify node_modules/vcf/lib/vcard.js --standalone vCard -o node_modules/vcard/vcard.js
 
 git clone git@github.com:eligrey/Blob.js.git \
   --branch master \
@@ -36,7 +40,6 @@ git clone git@github.com:davidshimjs/qrcodejs.git \
 cd $DEST_QRCODE && git checkout 04f46c6a0708418cb7b96fc563eacae0fbf77674 && cd -
 
 rm -rf $DEST_BLOB/.git $DEST_QRCODE/.git $DEST_ASMCRYPTO/.git
-
 
 echo
 echo "--- custom dependencies installed ---"

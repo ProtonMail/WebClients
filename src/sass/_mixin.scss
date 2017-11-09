@@ -51,10 +51,6 @@
     flex-wrap: wrap;
 }
 
-/**
-    ALIGNMENTS
-**/
-
 @mixin flexJustifyCenter() {
     -webkit-justify-content: center;
     justify-content: center;

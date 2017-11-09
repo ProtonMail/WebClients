@@ -48,6 +48,7 @@
 @import "commons/scrollbars";
 @import "commons/toggle-switch";
 @import "commons/embedded";
+@import "commons/flex-grid";
 @import "commons/pm-noscript";
 @import "commons/ptDnd";
 
@@ -65,6 +66,7 @@
 @import "ui/asSortable";
 @import "ui/codeMirror";
 @import "ui/customMaskInput";
+@import "ui/copy";
 @import "ui/customRadio";
 @import "ui/customCheckbox";
 @import "ui/datetimePicker";
@@ -87,6 +89,7 @@
 @import "ui/timepicker";
 @import "ui/scrollbox";
 @import "ui/arrowsToScroll";
+@import "ui/dropzone";
 
 // === Settings UI
 @import "settings-ui/headerBlock.scss";
@@ -140,6 +143,7 @@
 @import "components/sidebar/sidebarMobileHeader";
 @import "components/sidebar/navigationItem";
 @import "components/sidebar/settingsMenu";
+@import "components/sidebar/sidebarContact";
 
 //== Message
 @import "components/message/messagePlaceholder";
@@ -167,6 +171,16 @@
 @import "components/attachments/attachments";
 @import "components/attachments/listAttachments";
 @import "components/attachments/btnDownloadAttachments";
+
+//== Contact
+@import "components/contact/contactError";
+@import "components/contact/contactDetails";
+@import "components/contact/contactAddressInput";
+@import "components/contact/contactItem";
+@import "components/contact/contactList";
+@import "components/contact/contactNoResult";
+@import "components/contact/contactsToolbar";
+@import "components/contact/contactPlaceholder";
 
 //== Squire
 @import "components/squire/squire-toolbar";

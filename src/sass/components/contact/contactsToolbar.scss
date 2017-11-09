@@ -1,0 +1,18 @@
+.contactsToolbar-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: $contactsToolbar;
+    padding-right: 10px;
+    border-bottom: 1px solid $border;
+}
+
+.contactsToolbar-selectAll { margin: 0 20px 0 10px }
+
+.contactsToolbar-right {
+    flex: 1;
+    text-align: right;
+}
+
+.contactsToolbar-container > button,
+.contactsToolbar-right > button { margin-right: 4px }

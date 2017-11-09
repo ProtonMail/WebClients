@@ -15,7 +15,10 @@ angular.module('proton.core')
     ) => {
         $scope.inboxSidebar = AppModel.is('inboxSidebar');
         $scope.showSidebar = AppModel.is('showSidebar');
+        $scope.settingsSidebar = AppModel.is('settingsSidebar');
+        $scope.contactSidebar = AppModel.is('contactSidebar');
         $scope.mobileMode = AppModel.is('mobile');
+        $scope.tabletMode = AppModel.is('tablet');
         $scope.user = authentication.user;
         $scope.isAdmin = authentication.user.Role === CONSTANTS.PAID_ADMIN_ROLE;
         $scope.isFree = authentication.user.Role === CONSTANTS.FREE_USER_ROLE;
@@ -27,7 +30,10 @@ angular.module('proton.core')
         const unsubscribe = $rootScope.$on('AppModel', (e, { type, data = {} }) => {
             (type === 'inboxSidebar') && bindAppValue(type, data);
             (type === 'mobile') && bindAppValue('mobileMode', data);
+            (type === 'tablet') && bindAppValue('tabletMode', data);
             (type === 'showSidebar') && bindAppValue(type, data);
+            (type === 'settingsSidebar') && bindAppValue(type, data);
+            (type === 'contactSidebar') && bindAppValue(type, data);
         });
 
         desktopNotifications.request();

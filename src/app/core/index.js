@@ -1,3 +1,6 @@
 angular.module('proton.core', ['proton.constants', 'proton.utils'])
-    .run((paginationModel) => paginationModel.init())
-    .run((cachePages) => cachePages.init());
+    .run((paginationModel, cachePages, backState) => {
+        paginationModel.init();
+        cachePages.init();
+        backState.init();
+    });

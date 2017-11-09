@@ -16,7 +16,6 @@ angular.module('proton.ui')
             archive: gettextCatalog.getString('Archive', null, 'Title'),
             spam: gettextCatalog.getString('Spam', null, 'Title'),
             trash: gettextCatalog.getString('Trash', null, 'Title'),
-            contacts: gettextCatalog.getString('Contacts', null, 'Title'),
             dashboard: gettextCatalog.getString('Dashboard', null, 'Title'),
             account: gettextCatalog.getString('Account', null, 'Title'),
             labels: gettextCatalog.getString('Labels', null, 'Title'),
@@ -32,6 +31,9 @@ angular.module('proton.ui')
             payments: gettextCatalog.getString('Payment methods', null, 'Title'),
             signatures: gettextCatalog.getString('Name / Signature', null, 'Title'),
             login: gettextCatalog.getString('Login', null, 'Title'),
+            contacts: gettextCatalog.getString('Contacts', null, 'Title'),
+            contact: gettextCatalog.getString('Contact', null, 'Title'),
+            contactsCreate: gettextCatalog.getString('Create Contact', null, 'Title'),
             signup: gettextCatalog.getString('Signup', null, 'Title'),
             vpn: gettextCatalog.getString('VPN', null, 'Title'),
             'eo.message': gettextCatalog.getString('Encrypted Message', null, 'Title'),
@@ -125,6 +127,18 @@ angular.module('proton.ui')
 
             if (/login|reset-password/.test(mailbox || name)) {
                 return formatTitle(MAP.login);
+            }
+
+            if (/contacts.list/.test(mailbox || name)) {
+                return formatTitle(MAP.contacts);
+            }
+
+            if (/contacts.new/.test(mailbox || name)) {
+                return formatTitle(MAP.contactsCreate);
+            }
+
+            if (/contacts.detail/.test(mailbox || name)) {
+                return formatTitle(MAP.contact);
             }
 
             const isLabelState = mailbox === 'label';

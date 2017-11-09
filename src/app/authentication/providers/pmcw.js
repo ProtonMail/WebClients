@@ -1,6 +1,6 @@
 angular.module('proton.authentication')
     .provider('pmcw', function pmcwProvider() {
-        pmcrypto.checkMailboxPassword = function (prKey, prKeyPassCode, accessToken) {
+        pmcrypto.checkMailboxPassword = (prKey, prKeyPassCode, accessToken) => {
 
             return new Promise((resolve, reject) => {
 
@@ -26,7 +26,5 @@ angular.module('proton.authentication')
             });
         };
 
-        this.$get = function () {
-            return pmcrypto;
-        };
+        this.$get = () => pmcrypto;
     });

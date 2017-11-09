@@ -4,6 +4,7 @@ angular.module('proton.commons')
         const className = (key = '') => `appConfigBody-${key}`;
         const mapClassNames = {
             mobile: className('is-mobile'),
+            tablet: className('is-tablet'),
             requestTimeout: className('request-timeout'),
             tourActive: className('tourActive'),
             activeComposer: className('activeComposer'),
@@ -15,6 +16,7 @@ angular.module('proton.commons')
         return {
             link(scope, el) {
                 AppModel.is('mobile') && el[0].classList.add(mapClassNames.mobile);
+                AppModel.is('tablet') && el[0].classList.add(mapClassNames.tablet);
 
                 const toggleClass = (className, data = {}) => {
                     const method = data.value ? 'add' : 'remove';

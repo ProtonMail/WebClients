@@ -1,18 +1,39 @@
 angular.module('proton.search')
-    .directive('searchContact', ($rootScope) => ({
-        replace: true,
-        scope: {},
-        templateUrl: 'templates/search/searchContact.tpl.html',
-        link(scope, el) {
-            const onSubmit = () => $rootScope.$broadcast('searchContacts', scope.query);
-            const onInput = _.throttle(onSubmit, 60);
+    .directive('searchContact', ($rootScope, $state, $stateParams, contactCache, gettextCatalog) => {
+        const searchContact = gettextCatalog.getString('Search contacts');
 
-            el.on('input', onInput);
-            el.on('submit', onSubmit);
+        return {
+            replace: true,
+            restrict: 'E',
+            scope: {},
+            templateUrl: 'templates/search/searchContact.tpl.html',
+            link(scope, element) {
+                const $input = element.find('.searchInput');
+                const onSubmit = () => $state.go($state.$current.name, { page: 1, keyword: scope.query });
+                const onReset = () => $state.go('secured.contacts', { page: 1, keyword: null });
+                const update = () => {
+                    const total = contactCache.total();
+                    const placeholder = total ? `${searchContact} (${total})` : searchContact;
 
-            scope.$on('$destroy', () => {
-                el.off('input', onInput);
-                el.off('submit', onSubmit);
-            });
-        }
-    }));
+                    $input.prop('placeholder', placeholder);
+                };
+                const unsubscribe = $rootScope.$on('contacts', (event, { type }) => {
+                    (type === 'contactsUpdated') && update();
+                });
+
+                update();
+
+                element.on('submit', onSubmit);
+                element.on('reset', onReset);
+                $input.on('input', _.debounce(onSubmit, 300));
+                scope.query = $stateParams.keyword || '';
+
+                scope.$on('$destroy', () => {
+                    unsubscribe();
+                    element.off('submit', onSubmit);
+                    element.off('reset', onReset);
+                    $input.off('input', _.debounce(onSubmit, 300));
+                });
+            }
+        };
+    });
