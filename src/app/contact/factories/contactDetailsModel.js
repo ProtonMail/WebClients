@@ -13,9 +13,9 @@ angular.module('proton.contact')
         const cleanValue = (value) => {
             // Some key contains several value separeted by comma
             if (Array.isArray(value)) {
-                return DOMPurify.sanitize(value).split(';');
+                return value.split(';');
             }
-            return DOMPurify.sanitize(value);
+            return value;
         };
         const buildProperty = (property = {}) => ({ value: cleanValue(property.valueOf()), type: getType(property), key: property.getField(), params: property.getParams() });
         const checkProperty = (property) => (Array.isArray(property) ? true : property && !property.isEmpty());
