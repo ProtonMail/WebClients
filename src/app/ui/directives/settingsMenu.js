@@ -1,8 +1,9 @@
 angular.module('proton.ui')
-    .directive('settingsMenu', (authentication, CONSTANTS, networkActivityTracker, $rootScope, sidebarSettingsModel, AppModel) => {
+    .directive('settingsMenu', (authentication, backState, CONSTANTS, networkActivityTracker, $rootScope, sidebarSettingsModel, AppModel) => {
         const IS_SUBUSER = 'settingsMenu-is-subuser';
         const IS_MEMBER = 'settingsMenu-is-member';
         const BACK_BUTTON = 'sidebar-btn-back';
+        const onClick = () => backState.back();
 
         return {
             replace: true,
@@ -31,9 +32,12 @@ angular.module('proton.ui')
                     (type === 'viewModeChanged') && $back.prop('disabled', false);
                 }));
 
+                $back.on('click', onClick);
+
                 scope.$on('$destroy', () => {
                     unsubscribe.forEach((cb) => cb());
                     unsubscribe.length = 0;
+                    $back.off('click', onClick);
                 });
             }
         };

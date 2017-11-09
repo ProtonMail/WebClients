@@ -581,32 +581,6 @@ angular.module('proton.routes', [
                 }
             })
 
-            .state('secured.contacts', {
-                url: '/contacts',
-                resolve: {
-                    delinquent($state, gettextCatalog, user, notification, authentication) {
-                        if (authentication.user.Delinquent >= 3) {
-                            const message = gettextCatalog.getString('Your account currently has an overdue invoice. Please pay all unpaid invoices.', null, 'Info');
-                            notification.error(message);
-                            $state.go('secured.payments');
-                        }
-                        return Promise.resolve();
-                    }
-                },
-                onEnter(AppModel) {
-                    AppModel.set('inboxSidebar', true);
-                },
-                onExit(AppModel) {
-                    AppModel.set('inboxSidebar', false);
-                },
-                views: {
-                    'content@secured': {
-                        templateUrl: 'templates/views/contacts.tpl.html',
-                        controller: 'ContactsController'
-                    }
-                }
-            })
-
             .state('secured.account', {
                 url: '/account',
                 views: {
@@ -622,6 +596,12 @@ angular.module('proton.routes', [
                     status(user, paymentModel, networkActivityTracker) {
                         return networkActivityTracker.track(paymentModel.getStatus());
                     }
+                },
+                onEnter(AppModel) {
+                    AppModel.set('settingsSidebar', true);
+                },
+                onExit(AppModel) {
+                    AppModel.set('settingsSidebar', false);
                 }
             })
 
@@ -640,6 +620,12 @@ angular.module('proton.routes', [
                     status(user, paymentModel, networkActivityTracker) {
                         return networkActivityTracker.track(paymentModel.getStatus());
                     }
+                },
+                onEnter(AppModel) {
+                    AppModel.set('settingsSidebar', true);
+                },
+                onExit(AppModel) {
+                    AppModel.set('settingsSidebar', false);
                 }
             })
 
@@ -658,6 +644,12 @@ angular.module('proton.routes', [
                     status(user, paymentModel, networkActivityTracker) {
                         return networkActivityTracker.track(paymentModel.getStatus());
                     }
+                },
+                onEnter(AppModel) {
+                    AppModel.set('settingsSidebar', true);
+                },
+                onExit(AppModel) {
+                    AppModel.set('settingsSidebar', false);
                 }
             })
 
@@ -677,6 +669,12 @@ angular.module('proton.routes', [
                     status(user, paymentModel, networkActivityTracker) {
                         return networkActivityTracker.track(paymentModel.getStatus());
                     }
+                },
+                onEnter(AppModel) {
+                    AppModel.set('settingsSidebar', true);
+                },
+                onExit(AppModel) {
+                    AppModel.set('settingsSidebar', false);
                 }
             })
 
@@ -719,6 +717,12 @@ angular.module('proton.routes', [
                         templateUrl: 'templates/views/signatures.tpl.html',
                         controller: 'SignaturesController'
                     }
+                },
+                onEnter(AppModel) {
+                    AppModel.set('settingsSidebar', true);
+                },
+                onExit(AppModel) {
+                    AppModel.set('settingsSidebar', false);
                 }
             })
 
@@ -753,6 +757,12 @@ angular.module('proton.routes', [
                     status(paymentModel, networkActivityTracker) {
                         return networkActivityTracker.track(paymentModel.getStatus());
                     }
+                },
+                onEnter(AppModel) {
+                    AppModel.set('settingsSidebar', true);
+                },
+                onExit(AppModel) {
+                    AppModel.set('settingsSidebar', false);
                 }
             })
 
@@ -770,6 +780,12 @@ angular.module('proton.routes', [
                     status(user, paymentModel, networkActivityTracker) {
                         return networkActivityTracker.track(paymentModel.getStatus());
                     }
+                },
+                onEnter(AppModel) {
+                    AppModel.set('settingsSidebar', true);
+                },
+                onExit(AppModel) {
+                    AppModel.set('settingsSidebar', false);
                 }
             })
 
@@ -787,6 +803,12 @@ angular.module('proton.routes', [
                     status(user, paymentModel, networkActivityTracker) {
                         return networkActivityTracker.track(paymentModel.getStatus());
                     }
+                },
+                onEnter(AppModel) {
+                    AppModel.set('settingsSidebar', true);
+                },
+                onExit(AppModel) {
+                    AppModel.set('settingsSidebar', false);
                 }
             })
 
@@ -817,6 +839,12 @@ angular.module('proton.routes', [
                         templateUrl: 'templates/views/dashboard.tpl.html',
                         controller: 'DashboardController'
                     }
+                },
+                onEnter(AppModel) {
+                    AppModel.set('settingsSidebar', true);
+                },
+                onExit(AppModel) {
+                    AppModel.set('settingsSidebar', false);
                 }
             })
 
@@ -870,6 +898,12 @@ angular.module('proton.routes', [
                         templateUrl: 'templates/views/members.tpl.html',
                         controller: 'MembersController'
                     }
+                },
+                onEnter(AppModel) {
+                    AppModel.set('settingsSidebar', true);
+                },
+                onExit(AppModel) {
+                    AppModel.set('settingsSidebar', false);
                 }
             })
 
@@ -919,6 +953,12 @@ angular.module('proton.routes', [
                         templateUrl: 'templates/views/domains.tpl.html',
                         controller: 'DomainsController'
                     }
+                },
+                onEnter(AppModel) {
+                    AppModel.set('settingsSidebar', true);
+                },
+                onExit(AppModel) {
+                    AppModel.set('settingsSidebar', false);
                 }
             })
 
@@ -939,6 +979,12 @@ angular.module('proton.routes', [
                     'content@secured': {
                         template: '<filter-view></filter-view>'
                     }
+                },
+                onEnter(AppModel) {
+                    AppModel.set('settingsSidebar', true);
+                },
+                onExit(AppModel) {
+                    AppModel.set('settingsSidebar', false);
                 }
             })
             .state('secured.autoresponder', {
@@ -947,6 +993,12 @@ angular.module('proton.routes', [
                     'content@secured': {
                         template: '<autoresponder-view></autoresponder-view>'
                     }
+                },
+                onEnter(AppModel) {
+                    AppModel.set('settingsSidebar', true);
+                },
+                onExit(AppModel) {
+                    AppModel.set('settingsSidebar', false);
                 }
             });
 

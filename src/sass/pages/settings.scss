@@ -1,18 +1,3 @@
-#pm_contacts {
-    height: 100%;
-    .wrap {
-        height: 100%;
-        .contactWrapper {
-            overflow: auto;
-            clear: both;
-            height: calc( 100% - 55px );
-            table {
-                margin-bottom: 0;
-            }
-        }
-    }
-}
-
 #domainsTable {
     td {
         padding: 10px 1rem;

@@ -50,13 +50,14 @@ angular.module('proton', [
     'proton.organization',
     'proton.squire',
     'proton.wizard',
-    'proton.contactCurrent',
+    'proton.contact',
+
+    // Controllers
     'proton.settings',
     'proton.dashboard',
     'proton.vpn',
     'proton.payment',
     'proton.formUtils'
-
 ])
 
 /**

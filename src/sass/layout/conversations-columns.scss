@@ -2,6 +2,7 @@
 .conversation {
     @include flexRow();
     @include flexAlignCenter();
+
     background: $white;
 
     position: relative;
@@ -92,6 +93,7 @@
             }
         }
 
+
         .meta {
             @include flexJustifyEnd();
 
@@ -136,6 +138,7 @@
             }
         }
 
+
         .labelsElement-container {
             position: absolute;
             right: 10px;
@@ -173,6 +176,7 @@
             width: 1.25rem;
         }
     }
+
 
     &.expiring .expiration { display: inline }
 

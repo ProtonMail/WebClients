@@ -57,7 +57,6 @@ module.exports = {
       "node_modules/jquery-timepicker/jquery.timepicker.js",
       "node_modules/squire-rte/build/squire-raw.js",
       "node_modules/dropzone/dist/dropzone.js",
-      "node_modules/vcard/src/vcard.js",
       "node_modules/html2canvas/dist/html2canvas.js",
       "node_modules/svg4everybody/dist/svg4everybody.js",
       "node_modules/ical.js/build/ical.js",
@@ -90,6 +89,8 @@ module.exports = {
       'node_modules/babel-polyfill/dist/polyfill.js',
       'node_modules/pmcrypto/build/pmcrypto.js',
       'node_modules/markdown-it/dist/markdown-it.min.js',
+      'node_modules/clipboard/dist/clipboard.js',
+      'node_modules/vcard/vcard.js',
       'node_modules/jszip/dist/jszip.min.js'
     ],
     bootstrap_components: [

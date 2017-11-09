@@ -9,7 +9,10 @@ angular.module('proton.core')
                 let extension;
                 const self = this;
 
-                function init() {
+                self.import = () => params.import(files);
+                self.cancel = () => params.cancel();
+
+                function initialization() {
                     const drop = document.getElementById('dropzone');
 
                     drop.ondrop = (e) => {
@@ -21,7 +24,6 @@ angular.module('proton.core')
                             self.hover = false;
                         } else {
                             files = e.dataTransfer.files;
-
                             $scope.$applyAsync(() => {
                                 self.fileDropped = files[0].name;
                                 self.hover = false;
@@ -50,22 +52,16 @@ angular.module('proton.core')
                             notify('Invalid file type');
                         } else {
                             files = $('#selectedFile')[0].files;
-                            self.fileDropped = $('#selectedFile')[0].files[0].name;
-                            self.hover = false;
+                            $scope.$applyAsync(() => {
+                                self.fileDropped = $('#selectedFile')[0].files[0].name;
+                                self.hover = false;
+                            });
                         }
                     });
                 }
 
-                this.import = () => {
-                    params.import(files);
-                };
-
-                this.cancel = () => {
-                    params.cancel();
-                };
-
                 $timeout(() => {
-                    init();
+                    initialization();
                 }, 100);
             }
         });

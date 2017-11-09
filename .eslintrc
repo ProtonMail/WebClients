@@ -24,7 +24,7 @@
     "moment": true,
     "openpgp": true,
     "vCard": true,
-    "Papa": true,
+    "Clipboard": true,
     "jQuery": true,
     "Dropzone": true,
     "Push": true,
@@ -32,7 +32,9 @@
     "_rAF": true,
     "base32": true,
     "$": true,
-    "_": true
+    "_": true,
+    "ICAL": true,
+    "Papa": true
   },
   "rules": {
     "object-shorthand": "off",

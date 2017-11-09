@@ -389,8 +389,8 @@ module.exports = function (grunt) {
                     '<%= build_dir %>/vendor.js',
                     '<%= build_dir %>/src/**/index.js',
                     '<%= build_dir %>/src/**/*.js',
-                    '<%= build_dir %>/assets/application.css',
-                    '<%= build_dir %>/assets/vendor.css'
+                    '<%= build_dir %>/assets/vendor.css',
+                    '<%= build_dir %>/assets/application.css'
                 ],
                 deployment: false
             },

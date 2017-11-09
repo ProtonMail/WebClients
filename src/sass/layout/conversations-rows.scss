@@ -36,9 +36,11 @@ body {
             }
             .subject {
                 position: relative;
+
                 display: inline-flex;
                 justify-content: space-between;
                 align-items: center;
+
                 box-sizing: border-box;
                 width: calc(84% - 17rem);
                 padding-left: 4px;
@@ -51,6 +53,7 @@ body {
                     height: 40px;
                     margin: 0;
                     font-size: 1em;
+
                     color: $black;
                     max-width: 90%;
 

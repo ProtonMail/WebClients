@@ -1,0 +1,50 @@
+<div class="contactList-container">
+    <request-timeout></request-timeout>
+    <contact-no-result ng-if="!contacts.length"></contact-no-result>
+    <div class="contactList-table pm_table" ng-if="contacts.length">
+        <table class="contactList-table">
+            <thead class="contactList-thead">
+                <tr>
+                    <th class="checkbox"></th>
+                    <th>
+                        <span data-action="toggleSort" data-sort="Name" translate-context="Title" translate-comment="table heading" translate>Name</span>
+                        <div class="contactList-toggle-sort-container">
+                            <button type="button" class="contactList-toggle-sort" ui-sref="secured.contacts({ sort: '-Name' })">
+                                <i class="fa fa-sort-desc"></i>
+                            </button>
+                            <button type="button" class="contactList-toggle-sort" ui-sref="secured.contacts({ sort: 'Name' })">
+                                <i class="fa fa-sort-asc"></i>
+                            </button>
+                        </div>
+                    </th>
+                    <th>
+                        <span data-action="toggleSort" data-sort="emails" translate-context="Title" translate-comment="table heading" translate>Email</span>
+                        <div class="contactList-toggle-sort-container">
+                            <button type="button" class="contactList-toggle-sort" ui-sref="secured.contacts({ sort: '-emails' })">
+                                <i class="fa fa-sort-desc"></i>
+                            </button>
+                            <button type="button" class="contactList-toggle-sort" ui-sref="secured.contacts({ sort: 'emails' })">
+                                <i class="fa fa-sort-asc"></i>
+                            </button>
+                        <div>
+                    </th>
+                </tr>
+            </thead>
+            <tbody class="contactList-tbody">
+                <tr data-contact-id="{{ contact.ID }}" class="contactList-item" ng-repeat="contact in contacts track by contact.ID">
+                    <td class="text-center contactList-checkbox">
+                        <custom-checkbox custom-ng-model="contact.selected" custom-ng-click="onSelectContact($event, contact)"></custom-checkbox>
+                    </td>
+                    <td class="contactList-item-name" data-action="showContact">
+                        <span>{{ contact.Name }}</span>
+                    </td>
+                    <td class="text-muted contactList-item-email" data-action="showContact">
+                        <ul class="inlineList">
+                            <li>{{ contact.emails }}</li>
+                        </ul>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

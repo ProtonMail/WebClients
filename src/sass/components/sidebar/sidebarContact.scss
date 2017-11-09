@@ -1,0 +1,31 @@
+
+.sidebarContact-container button.sidebarApp-link > * { pointer-events: none }
+
+.sidebarContact-container .sidebarApp-menu .sidebarApp-item { position: relative }
+.sidebarContact-container .sidebarApp-menu .sidebarApp-item:after {
+    pointer-events: none;
+    background: red;
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0px;
+    width: 20px;
+    height: 100%;
+    /* check _theme reset */
+    background: linear-gradient(to right, rgba($sidebar-background, 0) 0%, $sidebar-background 12px);
+}
+
+.sidebarContact-container .sidebarApp-menu .sidebarApp-item.active:after {
+    /* check _theme reset */
+    background: linear-gradient(to right, rgba($sidebar-active,0) 0%, $sidebar-active 12px)
+}
+
+/* Context */
+/* future merge feature (does not currently work) */
+.sidebarContact-container .sidebarApp-link[data-action="mergeContacts"] { display: none }
+
+.sidebarContact-container:not(.sidebarContact-show-delete-contacts) .sidebarApp-link[data-action="deleteContacts"] { display: none }
+// NOTE Hide this action since there is a problem with the clear route contact
+.sidebarApp-link[data-action="deleteContacts"] { display: none !important }
+
+body:not(.appConfigBody-is-mobile) .sidebarContact-about-app { display: none }

@@ -16,6 +16,7 @@ angular.module('proton.utils')
 
         tools.mobileResponsive = () => {
             AppModel.set('mobile', document.body.offsetWidth < CONSTANTS.MOBILE_BREAKPOINT);
+            AppModel.set('tablet', document.body.offsetWidth < CONSTANTS.DESKTOP_BREAKPOINT && document.body.offsetWidth > CONSTANTS.MOBILE_BREAKPOINT);
         };
 
         tools.colors = () => {

@@ -1,0 +1,17 @@
+/* dropzone */
+.dropzone {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-color: rgba(0, 0, 0, 0.05);
+
+}
+
+.dropzone--with-click {
+    color: $primary;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.dropzone--with-click:hover { text-decoration: none }

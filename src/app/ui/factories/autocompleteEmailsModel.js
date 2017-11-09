@@ -1,5 +1,6 @@
-angular.module('proton.ui')
-    .factory('autocompleteEmailsModel', (authentication, regexEmail, checkTypoEmails, $filter, CONSTANTS) => {
+
+angular.module('proton.formUtils')
+    .factory('autocompleteEmailsModel', (authentication, contactEmails, regexEmail, checkTypoEmails, $filter, CONSTANTS) => {
 
         const { AUTOCOMPLETE_DOMAINS } = CONSTANTS;
         const {
@@ -83,7 +84,7 @@ angular.module('proton.ui')
             const value = unicodeTagView(val.trim());
             const input = value.toLowerCase();
 
-            const collection = _.chain(authentication.user.Contacts)
+            const collection = _.chain(contactEmails.fetch())
                 .map(({ Name, Email }) => {
                     const value = Email;
                     const label = formatLabel(Name, Email);

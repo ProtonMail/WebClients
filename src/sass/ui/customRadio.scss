@@ -1,6 +1,7 @@
 .customRadio-mask { border-radius: 50% }
 
 .customRadio-input:checked + .customRadio-mask {
+
     box-shadow: inset 0 0 0px 3px white, inset 0 0 0px 10px $primary;
     border-color: $primary;
 }

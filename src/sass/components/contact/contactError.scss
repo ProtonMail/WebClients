@@ -1,0 +1,50 @@
+.contactError-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    box-sizing: border-box;
+    width: 100%;
+    background: $exp;
+    color: $white;
+    border: none;
+    border-radius: $border-radius;
+    padding: 5px
+}
+
+
+.contactError-container > [class*='-item-'] {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 10px 0 10px 30px;
+}
+
+.contactError-container > [class*='-item-']::before {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: FontAwesome;
+    width: 2.2em;
+    font-size: 1.1em;
+    content: "\f071"
+}
+
+.contactError-container > [class*='-item-'] h2 {
+    font-size: 1em;
+}
+
+.contactError-container > [class*='-item-'] p {
+    margin: 0;
+}
+
+.contactError-container > [class*='-item-'] a {
+    color: $white;
+    text-decoration: underline;
+}

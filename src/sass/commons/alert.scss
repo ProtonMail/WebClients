@@ -18,12 +18,16 @@
         }
     }
     &.alert-danger {
-        background: #cf9696;
+        background: $danger;
         a {
         	font-weight: 500;
         	color: $black;
         }
     }
+	&.alert-danger-primary {
+		background: $exp;
+		color: $white;
+	}
     &.alert-warning {
         background: #d9c4a2;
         a {

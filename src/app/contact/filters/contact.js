@@ -1,4 +1,4 @@
-angular.module('proton.contactCurrent')
+angular.module('proton.contact')
     .filter('contact', (gettextCatalog, authentication) => {
 
         const getContact = (Email) => _.findWhere(authentication.user.Contacts, { Email }) || {};

@@ -26,6 +26,26 @@ angular.module('proton.constants', [])
             PLAN: 1,
             ADDON: 0
         },
+        CONTACTS_MAX_SIZE: 50,
+        VCARD_VERSION: '4.0',
+        VCARD_KEYS: ['email', 'adr', 'tel', 'note', 'kind', 'source', 'xml', 'nickname', 'photo', 'bday', 'anniversary', 'gender', 'impp', 'lang', 'tz', 'geo', 'title', 'role', 'logo', 'org', 'member', 'related', 'categories', 'rev', 'sound', 'uid', 'clientpidmap', 'url', 'key', 'fburl', 'caladruri', 'caluri'],
+        VCARD_TYPES: ['work', 'home', 'text', 'voice', 'fax', 'cell', 'video', 'pager', 'textphone', 'iana-token', 'x-name', 'contact', 'acquaintance', 'friend', 'met', 'co-worker', 'colleague', 'co-resident', 'neighbor', 'child', 'parent', 'sibling', 'spouse', 'kin', 'muse', 'crush', 'date', 'sweetheart', 'me', 'agent', 'emergency'],
+        CONTACT_MODE: {
+            ENCRYPTED_AND_SIGNED: 3,
+            SIGNED: 2,
+            ENCRYPTED: 1,
+            CLEAR_TEXT: 0
+        },
+        CONTACT_ERROR: {
+            TYPE3_CONTACT_VERIFICATION: 3,
+            TYPE3_CONTACT_DECRYPTION: 2,
+            TYPE2_CONTACT: 1,
+            TYPE1_CONTACT: 0
+        },
+        CONTACT_LOADER_DELAY: 2000,
+        CONTACT_EMAILS_LIMIT: 1000,
+        CONTACTS_LIMIT: 1000,
+        EXPORT_CONTACTS_LIMIT: 50,
         MAX_VPN: 100,
         MAX_MEMBER: 100,
         AWESOMEPLETE_MAX_ITEMS: 20,
@@ -83,6 +103,7 @@ angular.module('proton.constants', [])
         SAVE_THROTTLE_TIME: 10000, // 10 seconds
         MAX_EXPIRATION_TIME: 672, // hours
         ELEMENTS_PER_PAGE: 50,
+        CONTACTS_PER_PAGE: 1000,
         HD_BREAKPOINT: 1920,
         DESKTOP_BREAKPOINT: 1200,
         ROW_BREAKPOINT: 960,

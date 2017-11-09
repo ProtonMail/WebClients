@@ -1,0 +1,13 @@
+.copy-button {
+    border: 0;
+    padding: 0;
+    margin: 0;
+    background: transparent;
+}
+
+.copy-button > * { pointer-events: none }
+
+.copy-icon::before {
+    font-family: FontAwesome;
+    content:"\f0ea";
+}

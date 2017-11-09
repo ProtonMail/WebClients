@@ -1,0 +1,8 @@
+.flex-grid {
+    display: flex;
+    flex-direction: row;
+}
+
+.flex-grid > * { flex:1 }
+
+body.mobileMode .flex-grid { flex-direction: column }

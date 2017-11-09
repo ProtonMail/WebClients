@@ -62,7 +62,7 @@ const STATS_CONFIG = {
 
 const APP = {
     app_version: APP_VERSION,
-    api_version: '1',
+    api_version: '2',
     date_version: new Date().toDateString(),
     year: (new Date()).getFullYear(),
     clientID: 'Web',

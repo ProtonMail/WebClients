@@ -1,0 +1,14 @@
+<nav class="contactsToolbar-container">
+    <label class="contactsToolbar-selectAll">
+        <custom-checkbox data-custom-ng-model="checkAll" data-custom-ng-disabled="disabled" data-custom-ng-click="selectAll($event)"></custom-checkbox>
+    </label>
+    <button data-action="addContact" class="pm_button primary" translate-context="Action" translate-comment="contacts toolbar menu option" translate>Add</button>
+    <button class="delete pm_button" type="button" data-action="deleteSelectedContacts" ng-if="selected.length" translate-comment="contacts toolbar menu option" translate>Delete</button>
+    <button class="compose pm_button" type="button" data-action="composeSelectedContacts" ng-if="selected.length" translate-context="Action" translate-comment="contacts toolbar menu option" translate>Compose</button>
+
+    <div class="contactsToolbar-right">
+        <span class="pull-right">
+            <paginator-scope data-type="contacts" page="currentPage" total-items="totalItems" items-per-page="numPerPage" change="selectPage" />
+        </span>
+    </div>
+</nav>

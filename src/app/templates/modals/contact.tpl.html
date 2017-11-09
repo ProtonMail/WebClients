@@ -7,22 +7,7 @@
                     <h3 class="modal-title">{{ ctrl.title }}</h3>
                 </div>
                 <div class="modal-body pm_grid">
-                    <div class="clearfix">
-                        <span class="col-3-8">
-                            <label class="control-label" for="contactName" translate translate-context="Title">Name</label>
-                        </span>
-                        <span class="col-5-8">
-                            <input type="text" id="contactName" name="contactName" class="form-control" ng-model="ctrl.name" placeholder-translate="Contact name" required />
-                        </span>
-                    </div>
-                    <div class="clearfix">
-                        <span class="col-3-8">
-                            <label class="control-label" for="contactEmail" translate translate-context="Title">Email</label>
-                        </span>
-                        <span class="col-5-8">
-                            <input type="email" id="contactEmail" name="contactEmail" class="form-control" ng-model="ctrl.email" placeholder-translate="Contact email" required />
-                        </span>
-                    </div>
+                    <ng-include src="'templates/partials/contact.tpl.html'"></ng-include>
                 </div>
             </div>
             <div class="modal-footer">

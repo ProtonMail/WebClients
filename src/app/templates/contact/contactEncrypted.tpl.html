@@ -1,0 +1,51 @@
+<section class="contactEncrypted-container">
+    <section class="contactDetails-fields-container">
+        <legend class="contactDetails-fields-ico">
+            <i class="contactEncrypted-encrypted-and-signed-icon" pt-tooltip-translate="Encrypted and digital signature verified"></i>
+        </legend>
+        <div>
+            <div ng-show="state.isFree" class="contactDetails-fields-locked" >
+                <div class="contactDetails-fields-locked-notice">
+                    <p><a class="pm_button primary" ui-sref="secured.dashboard({ scroll: true })" translate translate-context="Action">Upgrade now</a></p>
+                    <p translate translate-context="Info">This feature is only available for paid users.</p>
+                </div>
+            </div>
+
+            <contact-error></contact-error>
+
+            <contact-item
+                data-form="contactForm"
+                data-model="model"
+                data-state="state"
+                data-datas="get('Tels')"
+                data-type="Tels"></contact-item>
+
+            <contact-item
+                data-form="contactForm"
+                data-model="model"
+                data-state="state"
+                data-datas="get('Adrs')"
+                data-type="Adrs"></contact-item>
+            <contact-item
+                data-form="contactForm"
+                data-model="model"
+                data-state="state"
+                data-datas="get('Personals')"
+                data-type="Personals"></contact-item>
+            <button type="button" class="contactDetails-toggle-custom-fields"></button>
+            <contact-item
+                class="contactDetails-custom-fields"
+                data-form="contactForm"
+                data-model="model"
+                data-state="state"
+                data-datas="get('Customs')"
+                data-type="Customs"></contact-item>
+            <contact-item
+                data-form="contactForm"
+                data-model="model"
+                data-state="state"
+                data-datas="get('Notes')"
+                data-type="Notes"></contact-item>
+        </div>
+    </section>
+</section>

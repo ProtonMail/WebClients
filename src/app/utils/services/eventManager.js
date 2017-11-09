@@ -60,26 +60,17 @@ angular.module('proton.utils')
             return Events.getLatestID();
         }
 
-        function manageContacts(contacts = []) {
-            contacts.forEach((contact) => {
-                const contactCleaned = cleanContact(contact.Contact);
-                const index = _.findIndex(authentication.user.Contacts, { ID: contact.ID });
+        const manageContacts = (events = []) => (events.length) && $rootScope.$emit('contacts', { type: 'contactEvents', data: { events } });
 
-                if (contact.Action === DELETE) {
-                    if (index !== -1) {
-                        authentication.user.Contacts.splice(index, 1);
-                        $rootScope.$broadcast('deleteContact', contact.ID);
-                    }
-                } else if (contact.Action === CREATE) {
-                    if (index === -1) {
-                        authentication.user.Contacts.push(contactCleaned);
-                        $rootScope.$broadcast('createContact', contact.ID, contactCleaned);
-                    }
-                } else if (contact.Action === UPDATE) {
-                    if (index !== -1) {
-                        authentication.user.Contacts[index] = contactCleaned;
-                        $rootScope.$broadcast('updateContact', contact.ID, contactCleaned);
-                    }
+        function manageContactEmails(contactEmails = []) {
+            contactEmails.forEach((contactEmail) => {
+                const contactCleaned = cleanContact(contactEmail.ContactEmail);
+                if (contactEmail.Action === DELETE) {
+                    $rootScope.$emit('deleteContactEmail', contactEmail.ID);
+                } else if (contactEmail.Action === CREATE) {
+                    $rootScope.$emit('createContactEmail', contactCleaned);
+                } else if (contactEmail.Action === UPDATE) {
+                    $rootScope.$emit('updateContactEmail', contactEmail.ID, contactCleaned);
                 }
             });
         }
@@ -295,7 +286,8 @@ angular.module('proton.utils')
                 return authentication.fetchUserInfo()
                     .then(() => {
                         $rootScope.$broadcast('updateUser');
-                        $rootScope.$broadcast('updateContacts');
+                        $rootScope.$emit('resetContactEmails');
+                        $rootScope.$emit('contacts', { type: 'resetContacts' });
                         labelsModel.refresh();
                     });
             }
@@ -307,6 +299,7 @@ angular.module('proton.utils')
 
             if (isDifferent(data.EventID)) {
                 labelsModel.sync(data.Labels);
+                manageContactEmails(data.ContactEmails);
                 manageContacts(data.Contacts);
                 manageThreadings(data.Messages, data.Conversations);
                 manageDesktopNotifications(data.Messages);

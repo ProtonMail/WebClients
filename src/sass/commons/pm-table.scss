@@ -141,7 +141,7 @@
         }
         th {
             background: $tertiary;
-            border-bottom: 1px solid $border;
+            border-bottom: 1px solid rgba($border, .1);
             color: $default-color-medium;
             font-weight: 400;
             text-transform: uppercase;
@@ -154,7 +154,7 @@
             }
         }
         td {
-            border-bottom: 1px solid $border;
+            border-bottom: 1px solid rgba($border, .1);
             color: $default-color;
             .pm_select {
                 &.table_select {
