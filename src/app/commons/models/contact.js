@@ -1,5 +1,5 @@
 angular.module('proton.commons')
-    .factory('Contact', ($http, $q, CONSTANTS, notify, url, contactEncryption) => {
+    .factory('Contact', ($http, $q, CONSTANTS, notify, url, contactEncryption, sanitize) => {
         const requestURL = url.build('contacts');
 
         /**
@@ -9,8 +9,8 @@ angular.module('proton.commons')
          */
         function clearContacts(contacts = []) {
             return contacts.map((contact) => {
-                contact.Email = DOMPurify.sanitize(contact.Email);
-                contact.Name = DOMPurify.sanitize(contact.Name);
+                contact.Email = sanitize.input(contact.Email);
+                contact.Name = sanitize.input(contact.Name);
 
                 return contact;
             });

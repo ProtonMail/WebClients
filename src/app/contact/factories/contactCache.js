@@ -11,6 +11,7 @@ angular.module('proton.contact')
         contactEmails,
         contactImporter
     ) => {
+
         const CACHE = {
             hydrated: false,
             contacts: [],
@@ -115,9 +116,9 @@ angular.module('proton.contact')
         }
 
         function deleteContactEmail(EmailID) {
-            const contact = _.filter(get(), (contact) => {
+            const contact = _.find(get(), (contact) => {
                 return _.some(contact.Emails, { ID: EmailID });
-            })[0];
+            });
             contact && updateContact({ ID: contact.ID, contact });
         }
 
