@@ -1,6 +1,8 @@
 angular.module('proton.core')
-    .factory('vcard', (CONSTANTS) => {
+    .factory('vcard', (CONSTANTS, sanitize) => {
+
         const { VCARD_VERSION, VCARD_TYPES } = CONSTANTS;
+
         const to = (vcards = []) => _.reduce(vcards, (acc, vCard) => (acc + clean(vCard).toString(VCARD_VERSION) + '\r\n'), '');
         const from = (vcfString = '') => vCard.parse(vcfString).map((vcard) => clean(vcard));
         const merge = (vcards = []) => _.reduce(vcards, (acc, vcard = {}) => build(extractProperties(vcard), acc), new vCard());
@@ -41,7 +43,7 @@ angular.module('proton.core')
                     params.type = typeValue;
                 }
 
-                acc.add(key, DOMPurify.sanitize(cleanValue(value, key)), params);
+                acc.add(key, sanitize.input(cleanValue(value, key)), params);
 
                 return acc;
             }, new vCard());
