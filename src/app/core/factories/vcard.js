@@ -25,24 +25,26 @@ angular.module('proton.core')
          */
         function clean(vcard = new vCard()) {
             /* eslint new-cap: "off" */
-            const newCard = new vCard();
             const properties = extractProperties(vcard);
 
-            _.each(properties, (property) => {
+            return _.reduce(properties, (acc, property) => {
                 const type = property.getType();
-                const typeValue = Array.isArray(type) ? type.map((t) => cleanType(t)).filter((t) => t) : cleanType(type);
+                const typeValue = type && (Array.isArray(type) ? type.map((t) => cleanType(t)).filter((t) => t) : cleanType(type));
                 const key = property.getField();
                 const value = property.valueOf();
                 const params = property.getParams();
 
-                if (typeValue.length) {
+                delete params.type;
+
+                // Set Type only if it's valid
+                if (typeValue && typeValue.length) {
                     params.type = typeValue;
                 }
 
-                newCard.add(key, DOMPurify.sanitize(cleanValue(value)), params);
-            });
+                acc.add(key, DOMPurify.sanitize(cleanValue(value)), params);
 
-            return newCard;
+                return acc;
+            }, new vCard());
         }
 
         /**
@@ -53,7 +55,7 @@ angular.module('proton.core')
         function cleanType(type = '') {
             // Gmail set by default INTERNET as Type for email
             // We just remove it and then the default Email value will be display
-            if (type === 'INTERNET') {
+            if (type === 'x-INTERNET') {
                 return '';
             }
 
