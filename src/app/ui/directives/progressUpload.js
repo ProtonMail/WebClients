@@ -33,7 +33,7 @@ angular.module('proton.ui')
                 model: '='
             },
             replace: true,
-            templateUrl: 'templates/directives/ui/progressBar.tpl.html',
+            templateUrl: 'templates/directives/ui/progressUpload.tpl.html',
             link(scope, el) {
                 const tester = isAttachementOfMessage(scope.model);
 
