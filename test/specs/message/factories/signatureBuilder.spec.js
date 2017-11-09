@@ -2,7 +2,7 @@ describe('signatureBuilder factory', () => {
 
     let factory, rootScope, authentication, tools, CONSTANTS, sanitize;
     let userMock = { Signature: '' };
-    const message = { getDecryptedBody: angular.noop };
+    const message = { getDecryptedBody: angular.noop, isPlainText: angular.noop };
     const CLASS_EMPTY = 'protonmail_signature_block-empty';
     const blockSignature = 'protonmail_signature_block';
     const blockUserSignature = 'protonmail_signature_block-user';
