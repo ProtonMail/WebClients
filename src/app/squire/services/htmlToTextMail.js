@@ -98,6 +98,7 @@ angular.module('proton.squire')
                         Add empty space unicode around it to allow us
                         to replace the signature if we change the From
                      */
+                    /* eslint no-irregular-whitespace: "off" */
                     return `​${extractPlainText(editor, node)}​\n`;
                 },
                 matchesTag: (node) => node.tagName === 'DIV'
