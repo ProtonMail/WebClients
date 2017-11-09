@@ -1,6 +1,6 @@
 angular.module('proton.commons')
     .factory('contactEncryption', ($injector, CONSTANTS, chunk, gettextCatalog, pmcw, vcard) => {
-        const KEY_FIELDS = ['key', 'x-pm-mimetype', 'x-pm-encrypt', 'x-pm-sign', 'x-pm-pgp', 'x-pm-tls', 'x-pm-dane'];
+        const KEY_FIELDS = ['key', 'x-pm-mimetype', 'x-pm-encrypt', 'x-pm-sign', 'x-pm-scheme', 'x-pm-tls', 'x-pm-dane'];
         const CLEAR_FIELDS = ['version', 'prodid', 'x-pm-label', 'x-pm-group'];
         const SIGNED_FIELDS = ['version', 'prodid', 'fn', 'uid', 'email'].concat(KEY_FIELDS);
         const GROUP_FIELDS = ['email'];
