@@ -10,14 +10,17 @@ angular.module('proton.contact')
             PERSONALS: ['kind', 'source', 'xml', 'nickname', 'photo', 'bday', 'anniversary', 'gender', 'impp', 'lang', 'tz', 'geo', 'title', 'role', 'logo', 'org', 'member', 'related', 'categories', 'rev', 'sound', 'uid', 'clientpidmap', 'url', 'key', 'fburl', 'caladruri', 'caluri']
         };
 
-        const cleanValue = (value) => {
-            // Some key contains several value separeted by comma
-            if (Array.isArray(value)) {
+        const cleanValue = (value, key = '') => {
+            // ADR contains several value separeted by semicolon
+            if (key === 'adr') {
                 return value.split(';');
             }
             return value;
         };
-        const buildProperty = (property = {}) => ({ value: cleanValue(property.valueOf()), type: getType(property), key: property.getField(), params: property.getParams() });
+        const buildProperty = (property = {}) => {
+            const key = property.getField();
+            return { value: cleanValue(property.valueOf(), key), type: getType(property), key, params: property.getParams() };
+        };
         const checkProperty = (property) => (Array.isArray(property) ? true : property && !property.isEmpty());
         const keys = CONSTANTS.VCARD_KEYS.reduce((acc, key) => {
             acc[key] = contactTranformLabel.toLang(key);
