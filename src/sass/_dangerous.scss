@@ -61,6 +61,7 @@ It will conflict with email rendering if the selectors are not specific or neste
      /* webkit CSS here*/
     input[type="text"],
     input[type="number"],
+    input[type="tel"],
     input[type="password"],
     input[type="email"],
     input[type="search"]{
