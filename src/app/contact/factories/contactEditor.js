@@ -7,31 +7,18 @@ angular.module('proton.contact')
         */
         function create({ contacts = [], mode }) {
             let promiseCompleted = false;
-            const created = [];
-            const promise = Promise.all(chunk(contacts, CONSTANTS.CONTACTS_MAX_SIZE).map((Contacts) => Contact.add({ Contacts })))
-                .then((results = []) => {
-                    // Handle result to collect contact created
-                    results.forEach(({ Responses = [] } = {}) => {
-                        Responses.forEach(({ Response = {} } = {}) => {
-                            if (Response.Code === 1000) {
-                                created.push(Response.Contact);
-                            }
-                        });
-                    });
+            const promise = Contact.add(contacts)
+                .then(({ created, total, errors }) => {
+                    promiseCompleted = true;
+                    $rootScope.$emit('contacts', { type: 'contactCreated', data: { created, total, errors, mode } });
 
                     return eventManager.call();
-                })
-                .then(() => {
-                    contactLoaderModal.deactivate();
-                    promiseCompleted = true;
-                    $rootScope.$emit('contacts', { type: 'contactCreated', data: { created, total: contacts.length, mode } });
-                })
-                .catch(() => contactLoaderModal.deactivate());
+                });
 
             // If the promise take too much time, we display a modal to inform the user
             setTimeout(() => {
                 if (!promiseCompleted) {
-                    contactLoaderModal.activate({ params: { mode: 'import' } });
+                    contactLoaderModal.activate({ params: { mode: 'import', close() { contactLoaderModal.deactivate(); } } });
                 }
             }, CONSTANTS.CONTACT_LOADER_DELAY);
 

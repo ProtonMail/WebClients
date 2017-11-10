@@ -1,10 +1,10 @@
 angular.module('proton.commons')
-    .factory('contactEncryption', ($injector, CONSTANTS, chunk, gettextCatalog, pmcw, vcard) => {
+    .factory('contactEncryption', ($injector, $rootScope, CONSTANTS, chunk, gettextCatalog, pmcw, vcard) => {
         const KEY_FIELDS = ['key', 'x-pm-mimetype', 'x-pm-encrypt', 'x-pm-sign', 'x-pm-scheme', 'x-pm-tls', 'x-pm-dane'];
         const CLEAR_FIELDS = ['version', 'prodid', 'x-pm-label', 'x-pm-group'];
         const SIGNED_FIELDS = ['version', 'prodid', 'fn', 'uid', 'email'].concat(KEY_FIELDS);
         const GROUP_FIELDS = ['email'];
-        const { CONTACT_MODE, CONTACTS_MAX_SIZE, MAIN_KEY, VCARD_VERSION, CONTACT_ERROR } = CONSTANTS;
+        const { CONTACT_MODE, CONTACTS_LIMIT_ENCRYPTION, MAIN_KEY, VCARD_VERSION, CONTACT_ERROR } = CONSTANTS;
         const { CLEAR_TEXT, ENCRYPTED_AND_SIGNED, ENCRYPTED, SIGNED } = CONTACT_MODE;
         const { TYPE3_CONTACT_VERIFICATION, TYPE3_CONTACT_DECRYPTION, TYPE2_CONTACT, TYPE1_CONTACT } = CONTACT_ERROR;
         const getErrors = (data = []) => _.pluck(data, 'error').filter(Boolean);
@@ -170,6 +170,7 @@ angular.module('proton.commons')
 
         /**
          * Decrypt the custom datas
+         * NOTE It's very important to chain the promises for the encryption to not overcharge pmcw
          * @param {Array} contacts
          * @return {Promise}
          */
@@ -177,12 +178,19 @@ angular.module('proton.commons')
             const authentication = $injector.get('authentication');
             const privateKeys = authentication.getPrivateKeys(MAIN_KEY);
             const publicKeys = pmcw.getKeys(authentication.user.Keys[0].PublicKey);
+            let count = 0;
 
-            return chunk(contacts, CONTACTS_MAX_SIZE).reduce((promise, chunkedContacts) => {
+            return _.reduce(chunk(contacts, CONTACTS_LIMIT_ENCRYPTION), (promise, chunkedContacts) => {
                 return promise.then((previousContacts = []) => {
                     return Promise.all(chunkedContacts.map(({ ID, Cards = [] }) => {
                         return extractCards({ cards: Cards, privateKeys, publicKeys })
-                            .then((data) => buildContact(ID, data, Cards));
+                            .then((data) => {
+                                count++;
+                                const progress = ((count * 100) / contacts.length).toFixed();
+                                $rootScope.$emit('progressBar', { type: 'contactsProgressBar', data: { progress } });
+
+                                return buildContact(ID, data, Cards);
+                            });
                     })).then((newContacts) => previousContacts.concat(newContacts));
                 }, []);
             }, Promise.resolve());
@@ -190,6 +198,7 @@ angular.module('proton.commons')
 
         /**
          * Encrypt the custom datas
+         * NOTE It's very important to chain the promises for the encryption to not overcharge pmcw
          * @param {Array} contacts
          * @return {Promise}
          */
@@ -197,12 +206,20 @@ angular.module('proton.commons')
             const authentication = $injector.get('authentication');
             const privateKeys = authentication.getPrivateKeys(MAIN_KEY);
             const publicKeys = pmcw.getKeys(authentication.user.Keys[0].PublicKey);
+            let count = 0;
 
-            return chunk(contacts, CONTACTS_MAX_SIZE).reduce((promise, chunkedContacts) => {
+            return _.reduce(chunk(contacts, CONTACTS_LIMIT_ENCRYPTION), (promise, chunkedContacts) => {
                 return promise.then((previousContacts = []) => {
                     return Promise.all(chunkedContacts.map((contact) => {
                         return prepareCards({ data: contact.vCard, publicKeys, privateKeys })
-                            .then((cards) => ({ Cards: cards }));
+                            .then((Cards) => {
+                                count++;
+                                const progress = ((count * 50) / contacts.length).toFixed();
+
+                                $rootScope.$emit('progressBar', { type: 'contactsProgressBar', data: { progress } });
+
+                                return { Cards };
+                            });
                     })).then((newContacts) => previousContacts.concat(newContacts));
                 });
             }, Promise.resolve());
