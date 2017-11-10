@@ -11,7 +11,7 @@ const { getCountry } = require('./env/translationsLoader');
 
 module.exports = function (grunt) {
     grunt.option('debug-app', grunt.cli.tasks.indexOf('deploy') === -1);
-    const { CONFIG, isDistRelease, syncPackage, getEnv } = getConfig(grunt);
+    const { CONFIG, isDistRelease, getEnv } = getConfig(grunt);
     grunt.loadTasks('tasks');
     loadTasks(grunt);
 
@@ -539,22 +539,6 @@ module.exports = function (grunt) {
                     }
                     return 'echo "no i18n for dev/blue etc."';
                 }
-            },
-            syncPackage: {
-                command() {
-                    if (syncPackage()) {
-                        const DEFAULT_DEST = 'v3';
-                        return [
-                            'echo ""',
-                            'echo "Update package.json"',
-                            'git add package.json',
-                            'git commit -m "New app version :tada:"',
-                            `git push origin ${DEFAULT_DEST}`
-                        ].join('&&');
-                    }
-
-                    return 'echo "No update to package.json"';
-                }
             }
 
         },
@@ -656,8 +640,7 @@ module.exports = function (grunt) {
         'cachebreaker', // Append an MD5 hash of file contents to JS and CSS references
         'shell:push', // push code to deploy branch
         'wait:push',
-        'shell:i18n',
-        'shell:syncPackage'
+        'shell:i18n'
     ];
 
     const listTasksDeploy = isDistRelease() ? deployTasks : deployTasks.filter((key) => key !== 'nggettext_extract');
