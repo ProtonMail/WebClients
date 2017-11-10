@@ -255,14 +255,15 @@ angular.module('proton.attachments')
          * @return {void}
          */
         function remove(data) {
-            const { id, message, packet } = data;
-            const attachment = data.attachment || getAttachment(message, id);
+            const { id, message, packet, messageID } = data;
+            const msg = message || { ID: messageID };
+            const attachment = data.attachment || getAttachment(msg, id);
 
-            attachmentApi.remove(message, attachment)
+            attachmentApi.remove(msg, attachment)
                 .then(() => {
 
                     const attConf = getConfigMapAttachment(id, attachment);
-                    const state = angular.extend({}, attConf || data, { message, attachment, id });
+                    const state = _.extend({}, attConf || data, { message, attachment, id });
 
                     if (packet.Inline === 1 && message.MIMEType !== 'text/plain') {
                         // Attachment removed, may remove embedded ref from the editor too
