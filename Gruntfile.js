@@ -291,9 +291,22 @@ module.exports = function (grunt) {
                 },
                 nonull: true
             },
-            compile_js: {
+            compile_app_js: {
                 options: {
                     sourceMap: true,
+                    banner: '<%= meta.banner %>'
+                },
+                files: {
+                    '<%= compile_dir %>/assets/app.js': [
+                        '<%= build_dir %>/src/app/**/index.js',
+                        '<%= build_dir %>/src/app/**/*.js'
+                    ]
+                },
+                nonull: true
+            },
+            compile_vendor_js: {
+                options: {
+                    sourceMap: false,
                     banner: '<%= meta.banner %>'
                 },
                 files: {
@@ -301,10 +314,6 @@ module.exports = function (grunt) {
                         '<%= vendor_files.js %>',
                         '!<%= build_dir %>/src/libraries/mailparser.js',
                         '<%= build_dir %>/src/libraries/*.js'
-                    ],
-                    '<%= compile_dir %>/assets/app.js': [
-                        '<%= build_dir %>/src/app/**/index.js',
-                        '<%= build_dir %>/src/app/**/*.js'
                     ]
                 },
                 nonull: true
@@ -638,7 +647,8 @@ module.exports = function (grunt) {
         'copy:i18n',
         'copy:i18n_compile',
         'cssmin', // minify CSS
-        'concat:compile_js', // concat JS
+        'concat:compile_app_js', // concat JS
+        'concat:compile_vendor_js', // concat JS
         'uglify', // minify JS
         'copy:compile_external', // copy openpgp
         'index:compile', // index CSS and JS
