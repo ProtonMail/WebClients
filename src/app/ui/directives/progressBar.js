@@ -5,16 +5,19 @@ angular.module('proton.ui')
             replace: true,
             template: '<progress class="progressBar"></progress>',
             scope: {},
-            link(scope, element, { id = 'progress', max = 100 }) {
-                const unsubscribe = $rootScope.$on('progressBar', (event, { type = '', data = {} }) => {
-                    if (id === type) {
-                        element[0].value = +data.progress;
-                    }
-                });
-
+            compile(element, { id = 'progress', max = 100 }) {
                 element[0].value = 1;
                 element[0].max = max;
-                scope.$on('$destroy', unsubscribe);
+
+                return (scope) => {
+                    const unsubscribe = $rootScope.$on('progressBar', (event, { type = '', data = {} }) => {
+                        if (id === type) {
+                            element[0].value = +data.progress;
+                        }
+                    });
+
+                    scope.$on('$destroy', unsubscribe);
+                };
             }
         };
     });
