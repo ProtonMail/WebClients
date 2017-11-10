@@ -10,7 +10,7 @@ const { getConfig, AUTOPREFIXER_CONFIG, PACKAGE, getI18nMatchFile } = require('.
 
 module.exports = function (grunt) {
     grunt.option('debug-app', grunt.cli.tasks.indexOf('deploy') === -1);
-    const { CONFIG, isDistRelease, syncPackage, getEnv } = getConfig(grunt);
+    const { CONFIG, isDistRelease, getEnv } = getConfig(grunt);
     grunt.loadTasks('tasks');
     loadTasks(grunt);
 
@@ -291,9 +291,22 @@ module.exports = function (grunt) {
                 },
                 nonull: true
             },
-            compile_js: {
+            compile_app_js: {
                 options: {
                     sourceMap: true,
+                    banner: '<%= meta.banner %>'
+                },
+                files: {
+                    '<%= compile_dir %>/assets/app.js': [
+                        '<%= build_dir %>/src/app/**/index.js',
+                        '<%= build_dir %>/src/app/**/*.js'
+                    ]
+                },
+                nonull: true
+            },
+            compile_vendor_js: {
+                options: {
+                    sourceMap: false,
                     banner: '<%= meta.banner %>'
                 },
                 files: {
@@ -301,10 +314,6 @@ module.exports = function (grunt) {
                         '<%= vendor_files.js %>',
                         '!<%= build_dir %>/src/libraries/mailparser.js',
                         '<%= build_dir %>/src/libraries/*.js'
-                    ],
-                    '<%= compile_dir %>/assets/app.js': [
-                        '<%= build_dir %>/src/app/**/index.js',
-                        '<%= build_dir %>/src/app/**/*.js'
                     ]
                 },
                 nonull: true
@@ -529,22 +538,6 @@ module.exports = function (grunt) {
                     }
                     return 'echo "no i18n for dev/blue etc."';
                 }
-            },
-            syncPackage: {
-                command() {
-                    if (syncPackage()) {
-                        const DEFAULT_DEST = 'v3';
-                        return [
-                            'echo ""',
-                            'echo "Update package.json"',
-                            'git add package.json',
-                            'git commit -m "New app version :tada:"',
-                            `git push origin ${DEFAULT_DEST}`
-                        ].join('&&');
-                    }
-
-                    return 'echo "No update to package.json"';
-                }
             }
 
         },
@@ -638,15 +631,15 @@ module.exports = function (grunt) {
         'copy:i18n',
         'copy:i18n_compile',
         'cssmin', // minify CSS
-        'concat:compile_js', // concat JS
+        'concat:compile_app_js', // concat JS
+        'concat:compile_vendor_js', // concat JS
         'uglify', // minify JS
         'copy:compile_external', // copy openpgp
         'index:compile', // index CSS and JS
         'cachebreaker', // Append an MD5 hash of file contents to JS and CSS references
         'shell:push', // push code to deploy branch
         'wait:push',
-        'shell:i18n',
-        'shell:syncPackage'
+        'shell:i18n'
     ];
 
     const listTasksDeploy = isDistRelease() ? deployTasks : deployTasks.filter((key) => key !== 'nggettext_extract');
