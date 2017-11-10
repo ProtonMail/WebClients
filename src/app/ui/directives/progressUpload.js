@@ -1,5 +1,5 @@
 angular.module('proton.ui')
-    .directive('progressBar', ($rootScope, CONSTANTS) => {
+    .directive('progressUpload', ($rootScope, CONSTANTS) => {
         const { UPLOAD_GRADIENT_DARK, UPLOAD_GRADIENT_LIGHT } = CONSTANTS;
         const UPLOADING_CLASS = 'progressBar-uploading';
         const UPLOADED_CLASS = 'progressBar-uploaded';
