@@ -1,4 +1,4 @@
-.progressBar[value] {
+.progressBar-container[value] {
     /* Reset the default appearance */
       -webkit-appearance: none;
          -moz-appearance: none;
@@ -7,7 +7,6 @@
     /* Get rid of default border in Firefox. */
     border: none;
 
-    /* Dimensions */
     height: 10px;
     width: 100%;
     margin-bottom: 20px;
@@ -18,18 +17,16 @@
     color: $primary;
 }
 
-/* Firefox */
-.progressBar::-moz-progress-bar {
+.progressBar-container::-moz-progress-bar {
     background: $primary;
     border-radius: 10px;
 }
 
-/* Chrome */
-.progressBar::-webkit-progress-value {
+.progressBar-container::-webkit-progress-value {
     background: $primary;
 }
 
-.progressBar[value]::-webkit-progress-bar {
+.progressBar-container[value]::-webkit-progress-bar {
     background-color: $light;
     box-shadow: 0 1px 5px rgba(0, 0, 0, 0.25) inset;
     border-radius: 10px;

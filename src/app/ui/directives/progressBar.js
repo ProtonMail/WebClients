@@ -3,7 +3,7 @@ angular.module('proton.ui')
         return {
             restrict: 'E',
             replace: true,
-            template: '<progress class="progressBar"></progress>',
+            template: '<progress class="progressBar-container"></progress>',
             scope: {},
             compile(element, { id = 'progress', max = 100 }) {
                 element[0].value = 1;
