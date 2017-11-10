@@ -13,7 +13,7 @@ angular.module('proton.contact')
             exportTitle: gettextCatalog.getString('Exporting Contacts', null, 'Title for the contacts exporter modal'),
             importTitle: gettextCatalog.getString('Importing Contacts', null, 'Title for the contacts exporter modal'),
             exportInfo: gettextCatalog.getString('Exporting contacts, this may take a few minutes. When the progress is completed, this modal will close and let you download the file.', null, 'Information for the contacts exporter modal'),
-            importInfo: gettextCatalog.getString('Importing contacts, this may take a few minutes. When the progress is completed, this modal will close.', null, 'Information for the contacts importer modal'),
+            importInfo: gettextCatalog.getString('Importing contacts, this may take a few minutes.', null, 'Information for the contacts importer modal'),
             importFail(number) { return gettextCatalog.getString('{{number}} failed to import.', { number }, 'Number of failed contact during the contact import'); }
         };
 
