@@ -1,5 +1,5 @@
 angular.module('proton.contact')
-    .factory('contactTranformLabel', (gettextCatalog) => {
+    .factory('contactTransformLabel', (gettextCatalog) => {
         const labels = {
             adr: gettextCatalog.getString('Address', null, 'VCard key name'),
             anniversary: gettextCatalog.getString('Anniversary', null, 'VCard key name'),

@@ -10,7 +10,7 @@ angular.module('proton.contact')
         contactDetailsModel,
         contactDownloader,
         contactSchema,
-        contactTranformLabel,
+        contactTransformLabel,
         gettextCatalog,
         subscriptionModel,
         vcard
