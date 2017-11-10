@@ -1,5 +1,5 @@
 angular.module('proton.contact')
-    .factory('contactUI', (gettextCatalog, tools, contactTranformLabel) => {
+    .factory('contactUI', (gettextCatalog, tools, contactTransformLabel) => {
         const EMAIL_TYPE = ['email', 'home', 'work', 'other'];
         const TEL_TYPE = ['tel', 'mobile', 'work', 'fax', 'other'];
         const ADR_TYPE = ['adr', 'home', 'work', 'other'];
@@ -56,24 +56,24 @@ angular.module('proton.contact')
                     UI.inputType = 'email';
                     UI.placeholder = I18N.emailAddress;
                     UI.iconClass = 'fa-envelope';
-                    UI.labels = EMAIL_TYPE.map((label) => contactTranformLabel.toLang(label));
+                    UI.labels = EMAIL_TYPE.map((label) => contactTransformLabel.toLang(label));
                     break;
                 case 'Tels':
                     UI.inputType = 'tel';
                     UI.placeholder = I18N.phoneNumber;
                     UI.iconClass = 'fa-phone';
-                    UI.labels = TEL_TYPE.map((label) => contactTranformLabel.toLang(label));
+                    UI.labels = TEL_TYPE.map((label) => contactTransformLabel.toLang(label));
                     break;
                 case 'Adrs':
                     UI.placeholder = I18N.address;
                     UI.iconClass = 'fa-home';
                     UI.mode = 'address';
-                    UI.labels = ADR_TYPE.map((label) => contactTranformLabel.toLang(label));
+                    UI.labels = ADR_TYPE.map((label) => contactTransformLabel.toLang(label));
                     break;
                 case 'Personals':
                     UI.placeholder = I18N.information;
                     UI.iconClass = 'fa-address-card';
-                    UI.labels = PERSONAL_TYPE.map((label) => contactTranformLabel.toLang(label));
+                    UI.labels = PERSONAL_TYPE.map((label) => contactTransformLabel.toLang(label));
                     break;
                 case 'Notes':
                     UI.placeholder = I18N.note;
@@ -159,7 +159,7 @@ angular.module('proton.contact')
         function add(UI, type, label, value = '', params) {
             const hide = _.contains(UI.hide, type);
 
-            UI.items.push({ type, label: contactTranformLabel.toLang(label), value, hide, params });
+            UI.items.push({ type, label: contactTransformLabel.toLang(label), value, hide, params });
         }
 
         function remove(UI, item) {

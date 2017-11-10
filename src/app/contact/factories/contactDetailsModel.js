@@ -1,5 +1,5 @@
 angular.module('proton.contact')
-    .factory('contactDetailsModel', (contactTranformLabel, CONSTANTS, contactSchema) => {
+    .factory('contactDetailsModel', (contactTransformLabel, CONSTANTS, contactSchema) => {
         const FIELDS = {
             AVOID: ['version', 'n', 'prodid', 'abuid'],
             FN: ['fn'],
@@ -23,7 +23,7 @@ angular.module('proton.contact')
         };
         const checkProperty = (property) => (Array.isArray(property) ? true : property && !property.isEmpty());
         const keys = CONSTANTS.VCARD_KEYS.reduce((acc, key) => {
-            acc[key] = contactTranformLabel.toLang(key);
+            acc[key] = contactTransformLabel.toLang(key);
             return acc;
         }, {});
 
@@ -56,7 +56,7 @@ angular.module('proton.contact')
             const hasType = item.label && keys[item.type] !== item.label;
 
             if (hasType) {
-                params.type = contactTranformLabel.toVCard(item.label);
+                params.type = contactTransformLabel.toVCard(item.label);
             }
 
             if (pref) {
