@@ -1,9 +1,10 @@
-/**
- * Keep a trace of the previous box state to let the user back to mail
- * Action present in the settings and contact sidebar
- */
 angular.module('proton.core')
     .factory('backState', ($rootScope, $state, CONSTANTS, tools) => {
+
+        /**
+         * Keep a trace of the previous box state to let the user back to mail
+         * Action present in the settings and contact sidebar
+         */
         const CACHE = {};
         const routes = Object.keys(CONSTANTS.MAILBOX_IDENTIFIERS);
 
