@@ -1,14 +1,18 @@
 <div class="pm_modal small {{ctrl.class}}" role="dialog" style="display: block;">
     <div class="modal-dialog">
-        <div class="modal-content">
+        <div class="modal-content contactLoaderModal-container">
             <div class="modal-header">
-                <h4 ng-if="ctrl.mode === 'export'" class="modal-title" translate-context="Title for the contacts exporter modal" translate>Exporting Contacts</h4>
-                <h4 ng-if="ctrl.mode === 'import'" class="modal-title" translate-context="Title for the contacts importer modal" translate>Importing Contacts</h4>
+                <h4 class="modal-title">{{ ::ctrl.title }}</h4>
             </div>
             <div class="modal-body">
-                <p ng-if="ctrl.mode === 'export'" class="alert alert-info" translate-context="Information for the contacts exporter modal" translate>Exporting contacts, this may take a few minutes. When the progress is completed, this modal will close and let you download the file.</p>
-                <p ng-if="ctrl.mode === 'import'" class="alert alert-info" translate-context="Information for the contacts importer modal" translate>Importing contacts, this may take a few minutes. When the progress is completed, this modal will close.</p>
+                <p class="alert alert-info contactLoaderModal-info">{{ ::ctrl.info }}</p>
                 <loader-tag></loader-tag>
+                <progress-bar id="contactsProgressBar"></progress-bar>
+                <label class="contactLoaderModal-label"></label>
+                <div class="contactLoaderModal-success"></div>
+            </div>
+            <div class="modal-footer text-right">
+                <button class="pm_button" ng-click="ctrl.close()" translate-context="Action" translate>Close</button>
             </div>
         </div>
     </div>

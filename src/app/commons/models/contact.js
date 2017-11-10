@@ -1,6 +1,7 @@
 angular.module('proton.commons')
-    .factory('Contact', ($http, $q, CONSTANTS, notify, url, contactEncryption, sanitize) => {
+    .factory('Contact', ($http, $q, $rootScope, CONSTANTS, notify, url, chunk, contactEncryption, sanitize) => {
         const requestURL = url.build('contacts');
+        const { CONTACTS_LIMIT_UPLOAD } = CONSTANTS;
 
         /**
          * Clean contact datas
@@ -75,44 +76,66 @@ angular.module('proton.commons')
                 .then((contacts) => contacts[0]);
         }
 
+        function handleUpload(result = []) {
+            const { created = [], total = 0, errors = [] } = _.reduce(result, (acc, { data = {} } = {}) => {
+                if (data.Error) {
+                    acc.errors.push({
+                        code: data.Code,
+                        error: data.Error
+                    });
+                }
+
+                _.each(data.Responses, ({ Response = {} }) => {
+                    acc.total++;
+
+                    if (Response.Error) {
+                        acc.errors.push({
+                            code: Response.Code,
+                            name: Response.Name,
+                            emails: Response.Emails,
+                            error: Response.Error
+                        });
+                    }
+
+                    if (Response.Code === 1000) {
+                        acc.created.push(Response.Contact);
+                    }
+                });
+
+                return acc;
+            }, { created: [], total: 0, errors: [] });
+
+            return { created, total, errors };
+        }
+
+        function uploadContacts(cards = [], total) {
+            let progress = 50; // NOTE We start at 50% because the first part (encryption) is already done
+            const chunkCards = chunk(cards, CONTACTS_LIMIT_UPLOAD);
+            const promises = _.map(chunkCards, (Contacts) => {
+                const params = { Contacts, Groups: 1, Overwrite: 1, Labels: 1 };
+
+                return $http.post(requestURL(), params)
+                    .then((data) => {
+                        progress += +((Contacts.length * 50) / total).toFixed();
+                        $rootScope.$emit('progressBar', { type: 'contactsProgressBar', data: { progress } });
+
+                        return data;
+                    });
+            });
+
+            return Promise.all(promises).then(handleUpload);
+        }
+
         /**
          * Create new contacts
          * @param {Array} contacts
          * @return {Promise}
          */
-        function add(params) {
-            return contactEncryption.encrypt(params.Contacts)
-                .then((contacts) => {
-                    params.Contacts = contacts;
-                    params.Groups = 1;
-                    params.Overwrite = 1;
-                    params.Labels = 1;
-                    return params;
-                })
-                .then((params) => $http.post(requestURL(), params))
-                .then(({ data = {} } = {}) => {
-                    if (data.Error) {
-                        throw new Error(data.Error);
-                    }
-
-                    // Collect errors
-                    const errors = _.reduce(data.Responses, (acc, { Response = {} }) => {
-                        if (Response.Error) {
-                            acc.push({
-                                code: Response.Code,
-                                name: Response.Name,
-                                emails: Response.Emails,
-                                error: Response.Error
-                            });
-                        }
-
-                        return acc;
-                    }, []);
-
-                    if (errors.length) {
-                        data.errors = errors;
-                    }
-
+        function add(contacts = []) {
+            return contactEncryption.encrypt(contacts)
+                .then((result = []) => uploadContacts(result, contacts.length))
+                .then((data) => {
+                    $rootScope.$emit('contacts', { type: 'contactsUpdated' });
                     return data;
                 });
         }

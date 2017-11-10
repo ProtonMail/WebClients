@@ -26,7 +26,8 @@ angular.module('proton.constants', [])
             PLAN: 1,
             ADDON: 0
         },
-        CONTACTS_MAX_SIZE: 20,
+        CONTACTS_LIMIT_ENCRYPTION: 20,
+        CONTACTS_LIMIT_UPLOAD: 50,
         VCARD_VERSION: '4.0',
         VCARD_KEYS: ['email', 'adr', 'tel', 'note', 'kind', 'source', 'xml', 'nickname', 'photo', 'bday', 'anniversary', 'gender', 'impp', 'lang', 'tz', 'geo', 'title', 'role', 'logo', 'org', 'member', 'related', 'categories', 'rev', 'sound', 'uid', 'clientpidmap', 'url', 'key', 'fburl', 'caladruri', 'caluri'],
         VCARD_TYPES: ['work', 'home', 'text', 'voice', 'fax', 'cell', 'video', 'pager', 'textphone', 'iana-token', 'x-name', 'contact', 'acquaintance', 'friend', 'met', 'co-worker', 'colleague', 'co-resident', 'neighbor', 'child', 'parent', 'sibling', 'spouse', 'kin', 'muse', 'crush', 'date', 'sweetheart', 'me', 'agent', 'emergency'],

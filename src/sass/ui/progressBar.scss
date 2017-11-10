@@ -1,14 +1,36 @@
-.progressBar-container {
-    height: 20px;
-    border-radius: 20px;
-    border: 1px solid $border;
+.progressBar[value] {
+    /* Reset the default appearance */
+      -webkit-appearance: none;
+         -moz-appearance: none;
+              appearance: none;
+
+    /* Get rid of default border in Firefox. */
+    border: none;
+
+    /* Dimensions */
+    height: 10px;
+    width: 100%;
     margin-bottom: 20px;
+
+    border-radius: 10px;
+
+    /* For IE10 */
+    color: $primary;
 }
 
-.progressBar-uploading {
-
+/* Firefox */
+.progressBar::-moz-progress-bar {
+    background: $primary;
+    border-radius: 10px;
 }
 
-.progressBar-uploaded {
+/* Chrome */
+.progressBar::-webkit-progress-value {
+    background: $primary;
+}
 
+.progressBar[value]::-webkit-progress-bar {
+    background-color: $light;
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.25) inset;
+    border-radius: 10px;
 }
