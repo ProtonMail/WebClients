@@ -105,7 +105,7 @@ angular.module('proton.contact')
                 element.on('click', onClick);
                 unsubscribe.push($rootScope.$on('contacts', (event, { type = '', data = {} }) => {
                     (type === 'contactsUpdated') && scope.$applyAsync(() => updateContacts());
-                    (type === 'contactCreated') && data.mode === 'importer' && contactCreated(data);
+                    (type === 'contactCreated') && data.mode === 'import' && contactCreated(data);
                 }));
 
                 unsubscribe.push($rootScope.$on('$stateChangeSuccess', () => {

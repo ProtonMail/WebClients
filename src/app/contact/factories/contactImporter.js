@@ -8,14 +8,14 @@ angular.module('proton.contact')
             const vcardData = reader.result;
             const parsed = vcard.from(vcardData);
 
-            $rootScope.$emit('contacts', { type: 'createContact', data: { contacts: contactSchema.prepare(parsed), mode: 'importer' } });
+            $rootScope.$emit('contacts', { type: 'createContact', data: { contacts: contactSchema.prepare(parsed), mode: 'import' } });
             dropzoneModal.deactivate();
         };
         const importVCard = (file) => {
             csv.csvToVCard(file)
                 .then((parsed = []) => {
                     if (parsed.length) {
-                        $rootScope.$emit('contacts', { type: 'createContact', data: { contacts: contactSchema.prepare(parsed), mode: 'importer' } });
+                        $rootScope.$emit('contacts', { type: 'createContact', data: { contacts: contactSchema.prepare(parsed), mode: 'import' } });
                     }
 
                     dropzoneModal.deactivate();

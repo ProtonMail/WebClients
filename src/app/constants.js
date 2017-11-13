@@ -43,7 +43,6 @@ angular.module('proton.constants', [])
             TYPE2_CONTACT: 1,
             TYPE1_CONTACT: 0
         },
-        CONTACT_LOADER_DELAY: 2000,
         CONTACT_EMAILS_LIMIT: 1000,
         CONTACTS_LIMIT: 1000,
         EXPORT_CONTACTS_LIMIT: 50,
