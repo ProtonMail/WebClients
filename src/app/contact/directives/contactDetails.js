@@ -12,6 +12,7 @@ angular.module('proton.contact')
         contactSchema,
         contactTransformLabel,
         gettextCatalog,
+        notification,
         subscriptionModel,
         vcard
     ) => {
@@ -22,7 +23,8 @@ angular.module('proton.contact')
 
         const I18N = {
             title: gettextCatalog.getString('Save Changes?', null, 'Title for contact modal'),
-            message: gettextCatalog.getString('There are unsaved changes to the contact you are editing. Do you want to save changes?', null, 'Message for contact modal')
+            message: gettextCatalog.getString('There are unsaved changes to the contact you are editing. Do you want to save changes?', null, 'Message for contact modal'),
+            invalidForm: gettextCatalog.getString('This form is invalid', null, 'Error displays when the user try to leave an unsaved and invalid contact details')
         };
 
         return {
@@ -84,8 +86,10 @@ angular.module('proton.contact')
                             message: I18N.message,
                             confirm() {
                                 confirmModal.deactivate();
-                                saveContact();
-                                $state.go(toState.name, toParams);
+
+                                if (saveContact()) {
+                                    $state.go(toState.name, toParams);
+                                }
                             },
                             cancel() {
                                 confirmModal.deactivate();
@@ -114,10 +118,15 @@ angular.module('proton.contact')
                     }
                 }
 
+                /**
+                 * Send event to create / update contact
+                 * @return {Boolean}
+                 */
                 function saveContact() {
 
                     if (scope.contactForm.$invalid) {
-                        return;
+                        notification.error(I18N.invalidForm);
+                        return false;
                     }
 
                     const contact = contactDetailsModel.prepare(scope);
@@ -130,6 +139,8 @@ angular.module('proton.contact')
                     }
 
                     scope.contactForm.$setPristine(true);
+
+                    return true;
                 }
 
                 // Methods
