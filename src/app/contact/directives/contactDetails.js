@@ -9,6 +9,7 @@ angular.module('proton.contact')
         Contact,
         contactDetailsModel,
         contactDownloader,
+        contactBeforeToLeaveModal,
         contactSchema,
         contactTransformLabel,
         gettextCatalog,
@@ -22,8 +23,6 @@ angular.module('proton.contact')
         const HAS_ERROR_VERIFICATION_ENCRYPTED = 'contactDetails-encrypted-verification-error';
 
         const I18N = {
-            title: gettextCatalog.getString('Save Changes?', null, 'Title for contact modal'),
-            message: gettextCatalog.getString('There are unsaved changes to the contact you are editing. Do you want to save changes?', null, 'Message for contact modal'),
             invalidForm: gettextCatalog.getString('This form is invalid', null, 'Error displays when the user try to leave an unsaved and invalid contact details')
         };
 
@@ -80,21 +79,22 @@ angular.module('proton.contact')
 
                 // Functions
                 function saveBeforeToLeave(toState, toParams) {
-                    confirmModal.activate({
+                    contactBeforeToLeaveModal.activate({
                         params: {
-                            title: I18N.title,
-                            message: I18N.message,
-                            confirm() {
+                            save() {
                                 confirmModal.deactivate();
 
                                 if (saveContact()) {
                                     $state.go(toState.name, toParams);
                                 }
                             },
-                            cancel() {
+                            dontSave() {
                                 confirmModal.deactivate();
                                 scope.contactForm.$setPristine(true);
                                 $state.go(toState.name, toParams);
+                            },
+                            cancel() {
+                                confirmModal.deactivate();
                             }
                         }
                     });
