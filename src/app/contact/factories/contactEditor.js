@@ -6,22 +6,17 @@ angular.module('proton.contact')
         * @return {Promise}
         */
         function create({ contacts = [], mode }) {
-            let promiseCompleted = false;
             const promise = Contact.add(contacts)
                 .then(({ created, total, errors }) => {
                     return eventManager.call()
                         .then(() => {
-                            promiseCompleted = true;
                             $rootScope.$emit('contacts', { type: 'contactCreated', data: { created, total, errors, mode } });
                         });
                 });
 
-            // If the promise take too much time, we display a modal to inform the user
-            setTimeout(() => {
-                if (!promiseCompleted) {
-                    contactLoaderModal.activate({ params: { mode: 'import', close() { contactLoaderModal.deactivate(); } } });
-                }
-            }, CONSTANTS.CONTACT_LOADER_DELAY);
+            if (mode === 'import') {
+                contactLoaderModal.activate({ params: { mode: 'import', close() { contactLoaderModal.deactivate(); } } });
+            }
 
             return promise;
         }
