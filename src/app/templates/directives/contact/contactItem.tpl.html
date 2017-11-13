@@ -38,7 +38,7 @@
                     <input
                         ng-if="UI.mode === 'singleLine'"
                         type="{{ ::UI.inputType }}"
-                        name="{{ ::UI.inputName }}"
+                        name="{{ ::UI.inputName+$index }}"
                         placeholder="{{ UI.placeholder }}" class="form-control contactItem-field"
                         ng-model="item.value"
                         ng-change="change()" />
@@ -57,7 +57,7 @@
                     <copy ng-if="UI.mode === 'address'" data-value="getAddressValue(item)" pt-tooltip-translate="Copy address"></copy>
                     <button ng-if="UI.inputType === 'email'" type="button" class="contactItem-compose fa fa-send-o" data-action="composeTo" data-email="{{ item.value }}"></button>
                 </div>
-                <div class="contactItem-validation" ng-messages="form[UI.inputName].$error" role="alert">
+                <div class="contactItem-validation" ng-messages="form[UI.inputName+$index].$error" role="alert">
                     <div class="ng-messages-errors">
                         <p ng-message="email" class="text-red"  translate-context="Error" translate>Invalid email</p>
                     </div>

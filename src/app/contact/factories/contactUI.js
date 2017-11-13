@@ -114,7 +114,7 @@ angular.module('proton.contact')
                 add(UI, populated.key, populated.type, '');
             }
 
-            UI.inputName = `name${btoa(UI.placeholder || Math.random().toString(32).slice(3, 12)).replace(/\W+|_/g, '')}`;
+            UI.inputName = `name_${UI.placeholder.replace(/\W+|_/g, '')}`;
 
             return UI;
         }
