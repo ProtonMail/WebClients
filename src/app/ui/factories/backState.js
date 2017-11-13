@@ -1,4 +1,4 @@
-angular.module('proton.core')
+angular.module('proton.ui')
     .factory('backState', ($rootScope, $state, CONSTANTS, tools) => {
 
         /**
