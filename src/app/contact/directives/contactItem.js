@@ -120,7 +120,9 @@ angular.module('proton.contact')
 
                     if (type === 'Customs') {
                         item.type = addX(item.label);
-                    } else {
+                    }
+
+                    if (type === 'Personals') {
                         item.type = contactTransformLabel.toVCard(item.label);
                     }
 
