@@ -64,6 +64,13 @@ angular.module('proton.constants', [])
         FREE_USER_ROLE: 0,
         PAID_MEMBER_ROLE: 1,
         PAID_ADMIN_ROLE: 2,
+        UNPAID_STATE: {
+            NOT: 0,
+            AVAILABLE: 1,
+            OVERDUE: 2,
+            DELINQUENT: 3,
+            NO_RECEIVE: 4
+        },
         INBOX: 0,
         DRAFT: 1,
         SENT: 2,

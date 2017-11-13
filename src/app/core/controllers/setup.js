@@ -25,10 +25,11 @@ angular.module('proton.core')
         user
     ) => {
         let passwordCopy;
+        const { WIZARD_ENABLED, KEY_PHASE, UNPAID_STATE } = CONSTANTS;
 
         function initialization() {
 
-            $scope.keyPhase = CONSTANTS.KEY_PHASE;
+            $scope.keyPhase = KEY_PHASE;
 
             // Variables
             $scope.tools = tools;
@@ -141,11 +142,10 @@ angular.module('proton.core')
             $log.debug('finishRedirect');
             $scope.finishCreation = true;
 
-            if (authentication.user.Delinquent < 3) {
-                $state.go('secured.inbox', { welcome: CONSTANTS.WIZARD_ENABLED });
-            } else {
-                $state.go('secured.dashboard');
+            if (authentication.user.Delinquent < UNPAID_STATE.DELINQUENT) {
+                return $state.go('secured.inbox', { welcome: WIZARD_ENABLED });
             }
+            $state.go('secured.dashboard');
         }
 
         initialization();

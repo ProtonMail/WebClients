@@ -1,6 +1,7 @@
 angular.module('proton.composer')
     .factory('validateMessage', (gettextCatalog, tools, regexEmail, CONSTANTS, confirmModal, authentication, notification, addressWithoutKeys) => {
 
+        const { MAX_TITLE_LENGTH, UNPAID_STATE } = CONSTANTS;
         const I18N = {
             STILL_UPLOADING: gettextCatalog.getString('Wait for attachment to finish uploading or cancel upload.', null, 'Error'),
             invalidEmails(total) {
@@ -8,7 +9,7 @@ angular.module('proton.composer')
             },
             MAX_BODY_LENGTH: gettextCatalog.getString('The maximum length of the message body is 16,000,000 characters.', null, 'Error'),
             NO_RECIPIENT: gettextCatalog.getString('Please enter at least one recipient.', null, 'Error'),
-            MAX_SUBJECT_LENGTH: gettextCatalog.getString(`The maximum length of the subject is ${CONSTANTS.MAX_TITLE_LENGTH}.`, null, 'Error'),
+            MAX_SUBJECT_LENGTH: gettextCatalog.getString(`The maximum length of the subject is ${MAX_TITLE_LENGTH}.`, null, 'Error'),
             maxRecipients(total) {
                 return gettextCatalog.getString(`The maximum number (${total}) of Recipients is 25.`, null, 'Error');
             },
@@ -61,7 +62,7 @@ angular.module('proton.composer')
             }
 
             // Check title length
-            if (message.Subject && message.Subject.length > CONSTANTS.MAX_TITLE_LENGTH) {
+            if (message.Subject && message.Subject.length > MAX_TITLE_LENGTH) {
                 throw new Error(I18N.MAX_SUBJECT_LENGTH);
             }
 
@@ -111,7 +112,7 @@ angular.module('proton.composer')
 
         function canWrite() {
             // In delinquent state
-            if (authentication.user.Delinquent >= 3) {
+            if (authentication.user.Delinquent >= UNPAID_STATE.DELINQUENT) {
                 return notification.error(I18N.ERROR_DELINQUENT);
             }
 
