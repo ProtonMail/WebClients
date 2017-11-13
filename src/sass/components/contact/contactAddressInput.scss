@@ -19,6 +19,7 @@
 }
 .contactAddressInput-col {
     display: flex;
+    flex: 1;
     flex-direction: column;
 }
 .contactAddressInput-col * { width: 100% }
