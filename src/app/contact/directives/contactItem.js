@@ -1,5 +1,5 @@
 angular.module('proton.contact')
-    .directive('contactItem', ($timeout, $rootScope, messageModel, contactUI) => {
+    .directive('contactItem', ($timeout, $rootScope, contactTransformLabel, contactUI, messageModel) => {
         const AS_SORTABLE_DISABLED = 'as-sortable-disabled';
         const addX = (value = '') => (value.startsWith('x') ? value : `X-${value}`);
 
@@ -120,6 +120,8 @@ angular.module('proton.contact')
 
                     if (type === 'Customs') {
                         item.type = addX(item.label);
+                    } else {
+                        item.type = contactTransformLabel.toVCard(item.label);
                     }
 
                     ngFormController.$setDirty();
