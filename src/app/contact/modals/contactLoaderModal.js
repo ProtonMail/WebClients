@@ -57,8 +57,10 @@ angular.module('proton.contact')
                 }));
 
                 unsubscribe.push($rootScope.$on('progressBar', (event, { type = '', data = {} }) => {
-                    if (type === 'contactsProgressBar') {
-                        document.querySelector(`.${LABEL_CLASS}`).textContent = getLabel(params.mode, data.progress);
+                    const $label = document.querySelector(`.${LABEL_CLASS}`);
+
+                    if ($label && type === 'contactsProgressBar') {
+                        $label.textContent = getLabel(params.mode, data.progress);
                     }
                 }));
 
@@ -66,7 +68,8 @@ angular.module('proton.contact')
                 this.info = getInfo(params.mode);
                 this.close = params.close;
                 this.$onDestroy = () => {
-                    unsubscribe.forEarch((cb) => cb());
+                    _.each(unsubscribe, (cb) => cb());
+                    unsubscribe.length = 0;
                 };
             }
         });
