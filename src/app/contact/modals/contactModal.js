@@ -19,7 +19,7 @@ angular.module('proton.contact')
 
                         if (created.length) {
                             notification.success(I18N.contactAdded);
-                            $state.go('secured.contacts.details', { id: data.created[0].ID });
+                            $state.go('secured.contacts.details', { id: created[0].ID });
                             params.close();
                         }
                     }
