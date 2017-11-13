@@ -1,5 +1,5 @@
 angular.module('proton.dnd')
-    .directive('ptDropzoneContainer', ($rootScope, ptDndUtils, ptDndModel, PTDNDCONSTANTS) => {
+    .directive('ptDropzone', ($rootScope, ptDndUtils, ptDndModel, PTDNDCONSTANTS) => {
 
         const { CLASSNAME, DROPZONE_ATTR_ID } = PTDNDCONSTANTS;
 
