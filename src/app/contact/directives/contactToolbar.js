@@ -24,7 +24,9 @@ angular.module('proton.contact')
         function composeSelectedContacts() {
             const contactsSelected = contactCache.get('selected');
             const message = messageModel();
-            const list = contactsSelected.map(({ Emails, Name }) => ({ Address: Emails[0].Email, Name }));
+            const list = contactsSelected
+                .filter(({ Emails }) => Emails.length)
+                .map(({ Emails, Name }) => ({ Address: Emails[0].Email, Name }));
 
 
             if (list.length) {
