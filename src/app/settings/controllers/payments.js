@@ -16,19 +16,22 @@ angular.module('proton.settings')
         networkActivityTracker,
         organizationInvoices,
         Payment,
-        paymentModel
+        paymentModel,
+        CONSTANTS
     ) => {
+
+        const { UNPAID_STATE } = CONSTANTS;
         $scope.methods = methods;
         $scope.subscribed = authentication.user.Subscribed;
         $scope.invoices = invoices.data.Invoices;
         $scope.total = invoices.data.Total;
-        $scope.delinquent = authentication.user.Delinquent >= 3;
+        $scope.delinquent = authentication.user.Delinquent >= UNPAID_STATE.DELINQUENT;
         $scope.invoiceOwner = 0;
         $scope.role = authentication.user.Role;
 
         $scope.$on('updateUser', () => {
             $scope.subscribed = authentication.user.Subscribed;
-            $scope.delinquent = authentication.user.Delinquent >= 3;
+            $scope.delinquent = authentication.user.Delinquent >= UNPAID_STATE.DELINQUENT;
 
             if (authentication.user.Role !== $scope.role) {
                 $state.go('secured.payments');
