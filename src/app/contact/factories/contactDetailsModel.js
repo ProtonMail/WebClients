@@ -1,5 +1,6 @@
 angular.module('proton.contact')
-    .factory('contactDetailsModel', (contactTransformLabel, CONSTANTS, contactSchema) => {
+    .factory('contactDetailsModel', (contactTransformLabel, CONSTANTS, contactSchema, gettextCatalog) => {
+        const I18N = { unknown: gettextCatalog.getString('Unknown', null, 'Default display name vcard') };
         const FIELDS = {
             AVOID: ['version', 'n', 'prodid', 'abuid'],
             FN: ['fn'],
@@ -94,6 +95,19 @@ angular.module('proton.contact')
                         break;
                 }
             });
+
+            if (params.vCard.get('fn').isEmpty()) {
+                let value = I18N.unknown;
+                const emailProperty = params.vCard.get('email');
+
+                if (emailProperty) {
+                    const emailValue = emailProperty.valueOf();
+
+                    value = (Array.isArray(emailValue) ? emailValue[0].valueOf() : emailValue) || I18N.unknown;
+                }
+
+                params.vCard.add('fn', value);
+            }
 
             return params;
         }
