@@ -107,12 +107,12 @@ angular.module('proton.contact')
                     return '';
                 };
 
+                scope.onFocus = (item) => item.displaySelector = true;
+                scope.onBlur = (item) => item.displaySelector = false;
                 scope.toggleSelector = (event, item) => {
-                    setTimeout(() => {
-                        if (!item.displaySelector) {
-                            event.stopPropagation();
-                        }
-                    }, 100);
+                    item.displaySelector = !item.displaySelector;
+                    event.preventDefault();
+                    event.stopPropagation();
                 };
 
                 scope.setLabel = (item = {}, value = '') => {
