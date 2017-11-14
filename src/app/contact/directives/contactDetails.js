@@ -82,19 +82,19 @@ angular.module('proton.contact')
                     contactBeforeToLeaveModal.activate({
                         params: {
                             save() {
-                                confirmModal.deactivate();
+                                contactBeforeToLeaveModal.deactivate();
 
                                 if (saveContact()) {
                                     $state.go(toState.name, toParams);
                                 }
                             },
                             discard() {
-                                confirmModal.deactivate();
+                                contactBeforeToLeaveModal.deactivate();
                                 scope.contactForm.$setPristine(true);
                                 $state.go(toState.name, toParams);
                             },
                             cancel() {
-                                confirmModal.deactivate();
+                                contactBeforeToLeaveModal.deactivate();
                             }
                         }
                     });
