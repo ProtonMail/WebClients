@@ -202,6 +202,7 @@
 }
 
 .contactItem-actions {
+    position: relative;
     width: 50px;
     display: flex;
 }
@@ -219,8 +220,14 @@
     }
 }
 
+.copy-button,
 .contactItem-compose {
-    position: relative;
+    position: absolute;
+    left: -27px;
+    top: 10px;
+}
+
+.contactItem-compose {
     top: 1px;
     margin-left: -27px;
     height: 33px;
