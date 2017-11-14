@@ -71,17 +71,14 @@ const APP = {
     translations: TRANSLATIONS_APP
 };
 
+
 const getStatsConfig = (deployBranch = '') => {
     const [, host = 'dev', subhost = 'a' ] = deployBranch.split('-');
     return extend({}, STATS_CONFIG[host], STATS_ID[subhost]) || NO_STAT_MACHINE;
 };
 
-const apiUrl = (type) => {
-    if (type && API_TARGETS[type]) {
-        return API_TARGETS[type];
-    }
-    return API_TARGETS.build;
-};
+const getDefaultApiTarget = () => (/webclient/i.test(__dirname) ? 'prod' : 'dev');
+const apiUrl = (type = getDefaultApiTarget()) => API_TARGETS[type];
 
 const getVersion = ({ major, minor, patch, version }) => {
     if (major || minor || patch || version) {
