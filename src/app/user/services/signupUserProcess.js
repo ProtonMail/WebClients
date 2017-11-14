@@ -2,6 +2,7 @@ angular.module('proton.user')
     .factory('signupUserProcess', ($location, $rootScope, gettextCatalog, settingsApi, signupModel, authentication, Address, $state, setupKeys, CONSTANTS, notification) => {
 
         const CACHE = {};
+        const { WIZARD_ENABLED, UNPAID_STATE } = CONSTANTS;
         const dispatch = (type, data = {}) => $rootScope.$emit('signup', { type, data });
 
         const I18N = {
@@ -71,8 +72,8 @@ angular.module('proton.user')
             dispatch('user.finish', { value: true });
 
             delete CACHE.setupPayload;
-            if (authentication.user.Delinquent < 3) {
-                return $state.go('secured.inbox', { welcome: CONSTANTS.WIZARD_ENABLED });
+            if (authentication.user.Delinquent < UNPAID_STATE.DELINQUENT) {
+                return $state.go('secured.inbox', { welcome: WIZARD_ENABLED });
             }
 
             $state.go('secured.dashboard');

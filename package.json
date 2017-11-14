@@ -129,7 +129,7 @@
   "license": "MIT",
   "scripts": {
     "postinstall": "./tasks/privateDependencies.sh",
-    "start": "grunt watch --api=dev",
+    "start": "grunt watch",
     "lint": "eslint $(find src/app -type f -name '*.js')  --quiet",
     "e2e": "protractor protractor_conf.js",
     "test": "cross-env NODE_ENV=test karma start test/karma.conf.js",

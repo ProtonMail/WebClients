@@ -1022,17 +1022,22 @@ angular.module('proton.routes', [
                 views: list,
                 resolve: {
                     delinquent($state, gettextCatalog, user, notification, authentication, CONSTANTS) {
-                        if (authentication.user.Delinquent >= 3 && authentication.user.Role === CONSTANTS.PAID_ADMIN_ROLE) {
-                            const message = gettextCatalog.getString('Your account currently has an overdue invoice. Please pay all unpaid invoices.', null, 'Info');
-                            notification.error(message);
-                            $state.go('secured.payments');
+
+                        const { PAID_MEMBER_ROLE, UNPAID_STATE } = CONSTANTS;
+
+                        if (authentication.user.Delinquent < UNPAID_STATE.DELINQUENT) {
+                            return Promise.resolve();
                         }
-                        if (authentication.user.Delinquent >= 3 && authentication.user.Role === CONSTANTS.PAID_MEMBER_ROLE) {
+
+                        if (authentication.user.Role === PAID_MEMBER_ROLE) {
                             const message = gettextCatalog.getString('Your account currently has an overdue invoice. Please contact your administrator.', null, 'Info');
                             notification.error(message);
-                            $state.go('login');
+                            return $state.go('login');
                         }
-                        return Promise.resolve();
+
+                        const message = gettextCatalog.getString('Your account currently has an overdue invoice. Please pay all unpaid invoices.', null, 'Info');
+                        notification.error(message);
+                        $state.go('secured.payments');
                     }
                 },
                 onEnter(AppModel) {
