@@ -19,11 +19,11 @@
                     ng-change="setLabel(item)"
                     ng-readonly="!UI.allowCustom"
                     ng-required="UI.required"
-                    ng-focus="item.displaySelector = true"
-                    ng-blur="item.displaySelector = false">
+                    ng-focus="onFocus(item)"
+                    ng-blur="onBlur(item)">
 
                 <i class="fa itemIcon" ng-class="UI.iconClass"></i>
-                <i class="fa fa-chevron-down" ng-click="toggleSelector($event, item)"></i>
+                <i class="fa fa-chevron-down" ng-mousedown="toggleSelector($event, item)"></i>
 
                 <ul class="contactItem-selectType" ng-show="item.displaySelector && UI.labels.length > 1">
                     <li ng-repeat="label in  UI.labels" ng-class="{ selected: item.label.toUpperCase() === label.toUpperCase() }">
