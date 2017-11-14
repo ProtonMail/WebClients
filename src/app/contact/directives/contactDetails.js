@@ -88,7 +88,7 @@ angular.module('proton.contact')
                                     $state.go(toState.name, toParams);
                                 }
                             },
-                            dontSave() {
+                            discard() {
                                 confirmModal.deactivate();
                                 scope.contactForm.$setPristine(true);
                                 $state.go(toState.name, toParams);

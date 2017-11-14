@@ -5,7 +5,7 @@ angular.module('proton.contact')
             templateUrl: 'templates/contact/contactBeforeToLeaveModal.tpl.html',
             controller(params) {
                 this.save = params.save;
-                this.dontSave = params.dontSave;
+                this.discard = params.discard;
                 this.cancel = params.cancel;
             }
         });
