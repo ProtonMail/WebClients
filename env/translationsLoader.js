@@ -6,6 +6,28 @@ const getCountry = (lang) => {
     return key.toUpperCase();
 };
 
+const formatLang = (lang = '') => {
+    if (lang.length === 2) {
+        return `${lang}_${getCountry(lang)}`;
+    }
+    return lang;
+};
+
+/**
+ * Read a translation file and extract the translatio key
+ * @param  {String} file FilePath
+ * @return {Promise}         resolve: <keyFile>#<keyTranslation>
+ */
+const readFile = (file) => new Promise((resolve, reject) => {
+    const key = path.basename(file, '.po');
+    const stream = fs.createReadStream(file, { start: 100, end: 500 });
+    stream.on('data', (data) => {
+        const [ , lang ] = data.toString().match(/"Language:.(\w+)/);
+        resolve(`${key}#${formatLang(lang.trim())}`);
+    });
+    stream.on('error', reject);
+});
+
 /**
  * Create a list of available translations for the applications
  * Format: xx_XX
