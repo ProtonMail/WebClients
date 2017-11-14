@@ -2,10 +2,10 @@ angular.module('proton.ui')
     .directive('toggle', (gettextCatalog, $rootScope) => {
 
         const I18N = {
-            YES: gettextCatalog.getString('Yes', null, 'Title'),
-            NO: gettextCatalog.getString('No', null, 'Title'),
-            ON: gettextCatalog.getString('ON', null, 'Title'),
-            OFF: gettextCatalog.getString('OFF', null, 'Title')
+            YES: gettextCatalog.getString('Yes', null, 'Text displays in the toggle component, make it shorter as possible'),
+            NO: gettextCatalog.getString('No', null, 'Text displays in the toggle component, make it shorter as possible'),
+            ON: gettextCatalog.getString('ON', null, 'Text displays in the toggle component, make it shorter as possible'),
+            OFF: gettextCatalog.getString('OFF', null, 'Text displays in the toggle component, make it shorter as possible')
         };
 
         return {
