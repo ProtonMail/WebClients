@@ -42,7 +42,7 @@
 
                 <li class="tosubscribeOverview-about-members" ng-if="plan.Name.indexOf('vpn') === -1">
                     {{ ::ctrl.count('MaxMembers') }}
-                    <span class="tosubscribeOverview-about-type" translate translate-n="ctrl.count('MaxMembers')" translate-plural="Custom users" translate-context="subscription label">Custom user</span>
+                    <span class="tosubscribeOverview-about-type" translate translate-n="ctrl.count('MaxMembers')" translate-plural="Users" translate-context="subscription label">User</span>
                     <strong ng-if="ctrl.price('member')" class="tosubscribeOverview-price">{{ ::ctrl.price('member') / 100 / plan.Cycle | fixed: 2 | currency: plan.Currency }}
                         <span
                             class="tosubscribeOverview-price-scope"
