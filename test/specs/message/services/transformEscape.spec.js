@@ -54,15 +54,23 @@ describe('transformEscape service', () => {
     const EX_URL_CLEAN = `<div style="background: proton-url('https://i.imgur.com/WScAnHr.jpg')">ddewdwed</div>`;
     const BACKGROUND_URL = `
         <div style="background: url('https://i.imgur.com/WScAnHr.jpg')">ddewdwed</div>
-        <div style="color: red; background: url('https://i.imgur.com/WScAnHr.jpg')">ddewdwed</div>
+        <div style="color: red; background: #ffffff url('https://i.imgur.com/WScAnHr.jpg')">ddewdwed</div>
         <div style="color: red; background:    url('https://i.imgur.com/WScAnHr.jpg')">ddewdwed</div>
         <div style="color: red; background:url('https://i.imgur.com/WScAnHr.jpg')">ddewdwed</div>
-        <span style="color: red; background:url('https://i.imgur.com/WScAnHr.jpg')">ddewdwed</span>`;
+        <span style="color: red; background:url('https://i.imgur.com/WScAnHr.jpg')">ddewdwed</span>
+        <div style="width: 500px; height: 500px; content: &quot; ass &quot;; background:url(test);">ddewdwed</div>
+        <div style="width: 500px; height: 500px; background:&#117;rl(&quot;https://i.imgur.com/WScAnHr.jpg&quot;)">ddewdwed</div>
+        <div style="width: 500px; height: 500px; background:&#117;rl(&apos;https://i.imgur.com/WScAnHr.jpg&apos;)">ddewdwed</div>`;
     const BACKGROUND_URL_SAFE = `
         <span>url('dewd')</span>
         <span>style="dewdw" url('dewd')</span>
         <span>dew style="dewdw" url('dewd')</span>
-        <span>dew style="dewdw": url(</span>`
+        <span>dew style="dewdw": url(</span>
+        <span>dew style="content: \\"a\\"": url(</span>
+        <span>dew style="content: 'a": url(</span>
+        <span>dew style="content: \\"a": url(</span>
+        <div style="width: 500px; height: 500px; content: &quot; background:url(test)&quot;">ddewdwed</div>
+        <div style="width: 500px; height: 500px; content: &apos; background:url(test)&apos;">ddewdwed</div>`
 
     let output;
 

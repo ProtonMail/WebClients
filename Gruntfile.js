@@ -515,7 +515,7 @@ module.exports = function (grunt) {
                     commands.push('cd dist');
                     if (os.platform() === 'linux') {
                         commands.push('git ls-files --deleted -z | xargs -r -0 git rm');
-                    }else {
+                    } else {
                         commands.push('(git ls-files --deleted -z  || echo:) | xargs -0 git rm');
                     }
                     commands.push('git add --all');
