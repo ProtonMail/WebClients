@@ -33,12 +33,9 @@ angular.module('proton.contact')
         };
 
         const getSuccess = ({ created = [], total = 0, errors = [] }) => {
-            if (!created.length && errors.length) {
-                return `<p class="alert alert-danger">${errors[0].error}</p>`;
-            }
-
-            if (!created.length && !errors.length) {
-                return `<p class="alert alert-danger">${I18N.totalFailure}</p>`;
+            if (!created.length) {
+                const [ error = I18N.totalFailure ] = errors;
+                return `<p class="alert alert-danger">${error}</p>`;
             }
 
             const failure = errors.length ? `<p>${I18N.importFail(errors.length)}</p>` : '';
