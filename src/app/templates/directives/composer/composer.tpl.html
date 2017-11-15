@@ -87,7 +87,6 @@
             pt-tooltip-translate="Encryption"
             ng-click="togglePanel(message, 'encrypt')">
                 <i class="fa fa-lock"></i>
-                <span ng-show="!!message.maximized" translate translate-context="Title">Encryption</span>
         </button>
 
         <button
@@ -102,11 +101,10 @@
             pt-tooltip-translate-context="Action"
             ng-click="togglePanel(message, 'expiration')">
             <i class="fa fa-clock-o"></i>
-            <span ng-show="!!message.maximized" translate translate-context="Action">Expiration</span>
         </button>
 
         <div class="pull-right">
-            <composer-time></composer-time>
+            <composer-time class="desktopOnly"></composer-time>
             <button
                 class="pm_button composer-btn-discard"
                 ng-disabled="message.disableDiscard()"
