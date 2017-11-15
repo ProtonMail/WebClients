@@ -5,6 +5,7 @@ angular.module('proton.core')
         $state,
         authentication,
         cacheCounters,
+        contactCache,
         CONSTANTS,
         eventManager,
         hotkeys,
@@ -49,6 +50,8 @@ angular.module('proton.core')
         eventManager.start(authentication.user.EventID);
         // Initialize counters for conversation (total and unread)
         cacheCounters.query();
+        // Preload the contact list
+        !$state.includes('secured.contacts') && contactCache.hydrate();
         addressWithoutKeysManager.manage()
             .catch(_.noop);
 
