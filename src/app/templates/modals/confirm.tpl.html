@@ -10,8 +10,8 @@
             </div>
         </div>
         <div class="modal-footer">
-            <button id="cancelModalBtn" type="button" class="pm_button" ng-click="ctrl.cancel()" translate-context="Action" translate>Cancel</button>
-            <button id="confirmModalBtn" autofocus class="pm_button primary pull-right" translate-context="Action" translate>Confirm</button>
+            <button id="cancelModalBtn" type="button" class="pm_button" ng-click="ctrl.cancel()">{{ ::ctrl.cancelText }}</button>
+            <button id="confirmModalBtn" autofocus class="pm_button primary pull-right">{{ ::ctrl.confirmText }}</button>
         </div>
     </form>
     <div class="modal-overlay"></div>
