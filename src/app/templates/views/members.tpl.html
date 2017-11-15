@@ -114,7 +114,7 @@
                     <h2
                         class="settingsUsers-title-signatures"
                         translate
-                        translate-context="Title">Users</h2>
+                        translate-context="Title">Users/Addresses</h2>
 
                     <small class="settingsUsers-details-signatures" ng-if="isAdmin">
                         {{ organization.UsedAddresses }} / {{ organization.MaxAddresses }} <span translate-comment="how many addresses are in use" translate>addresses used.</span>
@@ -191,9 +191,9 @@
                                         <address-btn-actions
                                             data-model2="member"
                                             data-action="add"
-                                            class="pm_buttons pm_button"></address-btn-actions>
+                                            class="pm_buttons pm_button primary"></address-btn-actions>
 
-                                        <a type="button" class="pm_buttons pm_button pm_trigger fa fa-angle-down" ng-if="organization.HasKeys === 1" dropdown></a>
+                                        <a type="button" class="pm_buttons pm_button primary pm_trigger fa fa-angle-down" ng-if="organization.HasKeys === 1" dropdown></a>
                                         <div class="pm_dropdown right">
 
                                             <member-edit-btn
