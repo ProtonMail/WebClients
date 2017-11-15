@@ -1,67 +1,59 @@
 angular.module('proton.message')
     .directive('injectMessageMedia', ($rootScope, displayImages, displayEmbedded) => {
 
-        const wrapImage = (img) => angular.element(img).wrap('<div class="image loading"></div>');
+        const wrapImage = (img) => {
+            const hash = `${Math.random().toString(32).slice(2, 12)}-${Date.now()}`;
+            img.setAttribute('data-hash', hash);
+            angular.element(img).wrap(`<div class="image loading" data-hash="${hash}"></div>`);
+        };
+        const wrapImages = (list) => list.forEach(wrapImage);
 
         /**
-     * Remove every loader after each images are loaded
-     * Add a delay because that's better for the user to see an interaction,
-     * even if it's fast.
-     * @param  {Node} node    Main scope content
-     * @return {void}
-     */
-        const removeLoader = (node) => () => {
-            const loader = node.querySelectorAll('.loading');
-
-            if (loader.length) {
-                const id = setTimeout(() => {
-                    $(loader).contents().unwrap();
-                    clearTimeout(id);
-                }, 100);
-            }
+         * Remove the loadedr when the image is loaded
+         * Add a delay because that's better for the user to see an interaction,
+         * even if it's fast.
+         * @param  {Node} node    Main scope content
+         * @param  {String} hash  Hash of the media
+         * @return {void}
+         */
+        const removeLoader = (node, hash) => {
+            _.defer(() => {
+                const loader = node.querySelector(`.loading[data-hash="${hash}"]`);
+                loader && $(loader).contents().unwrap();
+            }, 100);
         };
 
         /**
-     * Build an array of promise around a content to load
-     * @param  {Array} $list       Collection of nodes
-     * @param  {Object} config      {selector, attribute, getValue(node)}
-     * @param  {Array}  accumulator
-     * @return {Array}
-     */
-        function reducerLoader($list, config = {}, accumulator = []) {
-            const { attribute, selector, setLoader = true } = config;
+         * From a list of all the media we need to load we wrap them inside a loader, then we load them.
+         * @param  {Array} $list       Collection of nodes
+         * @param  {Object} config      {selector, attribute, getValue(node)}
+         * @return {Array}
+         */
+        function alltheThings($list, config = {}) {
+            const { attribute, selector, setLoader = true, container } = config;
+            $list.forEach((node) => {
 
-            setLoader && $list.forEach(wrapImage);
+                setLoader && wrapImage(node);
 
-            return $list.reduce((acc, node) => {
-
-                const promise = new Promise((resolve) => {
-                    const resolver = { node, attribute, selector };
-                    // Set a custom attribute with a custom value
+                if (node.nodeName !== 'IMG') {
                     node.setAttribute(attribute, config.getValue(node));
+                    removeLoader(container, node.dataset.hash);
+                }
 
-                    if (node.nodeName !== 'IMG') {
-                        return resolve(resolver);
-                    }
-                    // Wrap promise with DOM api to resolve when the content is loaded
-                    node.onload = () => resolve(resolver);
-                    node.onerror = () => {
-                        console.error(`Could not load ${node.getAttribute(selector)}`);
-                        resolve(resolver);
-                    };
-                });
-
-                acc.push(promise);
-                return acc;
-            }, accumulator);
+                if (node.nodeName === 'IMG') {
+                    node.onload = () => removeLoader(container, node.dataset.hash);
+                    node.onerror = () => console.error(`Could not load ${node.getAttribute(selector)}`);
+                    node.setAttribute(attribute, config.getValue(node));
+                }
+            });
         }
 
         /**
-     * Inject to the message Body each embedded images
-     * @param  {jQLite} el          Current node wrapper
-     * @param  {Object} options.map Map {<cid:String>: <url:String>}
-     * @return {void}
-     */
+         * Inject to the message Body each embedded images
+         * @param  {jQLite} el          Current node wrapper
+         * @param  {Object} options.map Map {<cid:String>: <url:String>}
+         * @return {void}
+         */
         function injectInlineEmbedded(el, { map, action }) {
             const node = el[0];
             const selector = Object.keys(map)
@@ -71,28 +63,27 @@ angular.module('proton.message')
 
             // Set the loader before we decrypt then load the image (better ux)
             if (action === 'user.inject.load') {
-                return $list.forEach(wrapImage);
+                return wrapImages($list);
             }
 
-            const promises = reducerLoader($list, {
+            alltheThings($list, {
                 selector: 'proton-src',
                 attribute: 'src',
                 setLoader: false,
+                container: node,
                 map,
                 getValue(node) {
                     return this.map[node.getAttribute('proton-src')];
                 }
             });
-
-            Promise.all(promises).then(removeLoader(node));
         }
 
         /**
-     * Inject to the message Body each embedded images
-     * @param  {jQLite} el          Current node wrapper
-     * @param  {Array} options.list Collection of content [ {<proton-x:String>:<url:String>} ]
-     * @return {void}
-     */
+         * Inject to the message Body each embedded images
+         * @param  {jQLite} el          Current node wrapper
+         * @param  {Array} options.list Collection of content [ {<proton-x:String>:<url:String>} ]
+         * @return {void}
+         */
         function injectInlineRemote(el, { list, hasSVG }) {
 
             const node = el[0];
@@ -104,26 +95,25 @@ angular.module('proton.message')
                     }, acc);
             }, {});
 
-            const promises = Object.keys(mapSelectors)
-                .reduce((acc, selector) => {
-                // Remove proton- from the selector to know which selector to use
+            Object.keys(mapSelectors)
+                .forEach((selector) => {
+                    // Remove proton- from the selector to know which selector to use
                     const attribute = selector.substring(7);
                     // We don't want to parse embedded images
                     const $list = [].slice.call(node.querySelectorAll(`[${selector}]:not([${selector}^="cid:"])`));
-                    return reducerLoader($list, {
+                    alltheThings($list, {
                         selector, attribute,
+                        container: node,
                         getValue(node) {
                             return node.getAttribute(this.selector);
                         }
-                    }, acc);
-                }, []);
+                    });
+                });
 
             // No need to replace the current node for each svg
             if (hasSVG) {
                 node.innerHTML = node.innerHTML.replace(/proton-svg/g, 'svg');
             }
-
-            Promise.all(promises).then(removeLoader(node));
         }
 
         function injectAttributeStyles(element) {
@@ -141,7 +131,6 @@ angular.module('proton.message')
                     }
 
                     switch (type) {
-
                         case 'injectContent': {
                             const body = scope.body || scope.message.getDecryptedBody(true);
                             scope.$applyAsync(() => {
