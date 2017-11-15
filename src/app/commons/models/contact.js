@@ -83,6 +83,8 @@ angular.module('proton.commons')
                         code: data.Code,
                         error: data.Error
                     });
+
+                    return acc;
                 }
 
                 _.each(data.Responses, ({ Response = {} }) => {

@@ -4,19 +4,11 @@ angular.module('proton.contact')
         $rootScope,
         $state,
         $stateParams,
-        contactCache,
-        gettextCatalog,
-        notification
+        contactCache
     ) => {
         const HEADER_HEIGHT = 120;
         const ITEM_CLASS = 'contactList-item';
         const ACTIVE_CLASS = 'contactList-item-activeContact';
-
-        function contactCreated({ created = [], total = 0 }) {
-            const str = gettextCatalog.getPlural(created.length, 'contact imported', 'contacts imported', null, 'X contact imported with success');
-
-            notification.success(`${created.length}/${total} ${str}`);
-        }
 
         return {
             restrict: 'E',
@@ -103,9 +95,8 @@ angular.module('proton.contact')
 
                 // Listeners
                 element.on('click', onClick);
-                unsubscribe.push($rootScope.$on('contacts', (event, { type = '', data = {} }) => {
+                unsubscribe.push($rootScope.$on('contacts', (event, { type = '' }) => {
                     (type === 'contactsUpdated') && scope.$applyAsync(() => updateContacts());
-                    (type === 'contactCreated') && data.mode === 'import' && contactCreated(data);
                 }));
 
                 unsubscribe.push($rootScope.$on('$stateChangeSuccess', () => {

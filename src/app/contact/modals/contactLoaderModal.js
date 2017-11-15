@@ -14,7 +14,8 @@ angular.module('proton.contact')
             importTitle: gettextCatalog.getString('Importing Contacts', null, 'Title for the contacts exporter modal'),
             exportInfo: gettextCatalog.getString('Exporting contacts, this may take a few minutes. When the progress is completed, this modal will close and let you download the file.', null, 'Information for the contacts exporter modal'),
             importInfo: gettextCatalog.getString('Importing contacts, this may take a few minutes.', null, 'Information for the contacts importer modal'),
-            importFail(number) { return gettextCatalog.getString('{{number}} failed to import.', { number }, 'Number of failed contact during the contact import'); }
+            importFail(number) { return gettextCatalog.getString('{{number}} failed to import.', { number }, 'Number of failed contact during the contact import'); },
+            totalFailure: gettextCatalog.getString('Import failed. Please check the import file or try again.', null, 'Error during importation')
         };
 
         const getTitle = (mode) => (mode === 'export' ? I18N.exportTitle : I18N.importTitle);
@@ -31,7 +32,15 @@ angular.module('proton.contact')
             return '';
         };
 
-        const getSuccess = ({ created, total, errors }) => {
+        const getSuccess = ({ created = [], total = 0, errors = [] }) => {
+            if (!created.length && errors.length) {
+                return `<p class="alert alert-danger">${errors[0].error}</p>`;
+            }
+
+            if (!created.length && !errors.length) {
+                return `<p class="alert alert-danger">${I18N.totalFailure}</p>`;
+            }
+
             const failure = errors.length ? `<p>${I18N.importFail(errors.length)}</p>` : '';
             return `
                 <p>${I18N.importComplete}</p>
