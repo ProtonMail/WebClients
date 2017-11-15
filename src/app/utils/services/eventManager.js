@@ -23,16 +23,17 @@ angular.module('proton.utils')
         $injector
     ) => {
 
+        const { CONVERSATION_VIEW_MODE, INTERVAL_EVENT_TIMER, MAILBOX_IDENTIFIERS, STATUS } = CONSTANTS;
         const FIBONACCI = [1, 1, 2, 3, 5, 8];
-        const { inbox, starred } = CONSTANTS.MAILBOX_IDENTIFIERS;
-        const { DELETE, CREATE, UPDATE } = CONSTANTS.STATUS;
+        const { inbox, allDrafts, drafts, allSent, sent, trash, spam, allmail, archive, starred } = MAILBOX_IDENTIFIERS;
+        const { DELETE, CREATE, UPDATE } = STATUS;
         const dispatch = (type, data = {}) => $rootScope.$emit('app.event', { type, data });
         const MODEL = {
             index: 0,
-            milliseconds: CONSTANTS.INTERVAL_EVENT_TIMER
+            milliseconds: INTERVAL_EVENT_TIMER
         };
         const closeNotifications = () => MODEL.notification && MODEL.notification.close();
-        const setTimer = (timer = CONSTANTS.INTERVAL_EVENT_TIMER) => MODEL.milliseconds = timer;
+        const setTimer = (timer = INTERVAL_EVENT_TIMER) => MODEL.milliseconds = timer;
         const manageID = (id = MODEL.ID) => MODEL.ID = id;
         const setEventID = (ID) => manageID(ID);
         const stop = () => {
@@ -77,18 +78,7 @@ angular.module('proton.utils')
 
         function manageMessageCounts(counts) {
             if (angular.isDefined(counts)) {
-                const labelIDs = [
-                    CONSTANTS.MAILBOX_IDENTIFIERS.inbox,
-                    CONSTANTS.MAILBOX_IDENTIFIERS.allDrafts,
-                    CONSTANTS.MAILBOX_IDENTIFIERS.drafts,
-                    CONSTANTS.MAILBOX_IDENTIFIERS.allSent,
-                    CONSTANTS.MAILBOX_IDENTIFIERS.sent,
-                    CONSTANTS.MAILBOX_IDENTIFIERS.trash,
-                    CONSTANTS.MAILBOX_IDENTIFIERS.spam,
-                    CONSTANTS.MAILBOX_IDENTIFIERS.allmail,
-                    CONSTANTS.MAILBOX_IDENTIFIERS.archive,
-                    CONSTANTS.MAILBOX_IDENTIFIERS.starred
-                ].concat(labelsModel.ids());
+                const labelIDs = [inbox, allDrafts, drafts, allSent, sent, trash, spam, allmail, archive, starred].concat(labelsModel.ids());
 
                 _.each(labelIDs, (labelID) => {
                     const count = _.findWhere(counts, { LabelID: labelID });
@@ -106,18 +96,7 @@ angular.module('proton.utils')
 
         function manageConversationCounts(counts) {
             if (angular.isDefined(counts)) {
-                const labelIDs = [
-                    CONSTANTS.MAILBOX_IDENTIFIERS.inbox,
-                    CONSTANTS.MAILBOX_IDENTIFIERS.allDrafts,
-                    CONSTANTS.MAILBOX_IDENTIFIERS.drafts,
-                    CONSTANTS.MAILBOX_IDENTIFIERS.allSent,
-                    CONSTANTS.MAILBOX_IDENTIFIERS.sent,
-                    CONSTANTS.MAILBOX_IDENTIFIERS.trash,
-                    CONSTANTS.MAILBOX_IDENTIFIERS.spam,
-                    CONSTANTS.MAILBOX_IDENTIFIERS.allmail,
-                    CONSTANTS.MAILBOX_IDENTIFIERS.archive,
-                    CONSTANTS.MAILBOX_IDENTIFIERS.starred
-                ].concat(labelsModel.ids());
+                const labelIDs = [inbox, allDrafts, drafts, allSent, sent, trash, spam, allmail, archive, starred].concat(labelsModel.ids());
 
                 _.each(labelIDs, (labelID) => {
                     const count = _.findWhere(counts, { LabelID: labelID });
@@ -151,7 +130,7 @@ angular.module('proton.utils')
 
         function manageDesktopNotifications(messages = []) {
             if (messages.length) {
-                const threadingIsOn = authentication.user.ViewMode === CONSTANTS.CONVERSATION_VIEW_MODE;
+                const threadingIsOn = authentication.user.ViewMode === CONVERSATION_VIEW_MODE;
                 const { all } = labelsModel.get('map');
 
                 const filterNotify = ({ LabelIDs = [] }) => {
@@ -162,13 +141,16 @@ angular.module('proton.utils')
 
                 // @todo move them to the model itself
                 // @todo rename constants to UPPERCASE
-                all[inbox] = { Notify: 1 };
-                all[starred] = { Notify: 1 };
+                all[inbox] = { Notify: 1, ID: inbox };
+                all[starred] = { Notify: 1, ID: starred };
 
                 _.each(messages, ({ Action, Message = {} }) => {
                     const onlyNotify = filterNotify(Message);
 
                     if (Action === 1 && Message.IsRead === 0 && onlyNotify.length) {
+                        const [ { ID } ] = onlyNotify;
+                        const route = `secured.${MAILBOX_IDENTIFIERS[ID] || 'label'}.element`;
+                        const label = MAILBOX_IDENTIFIERS[ID] ? null : ID;
                         const title = gettextCatalog.getString('New mail from', null, 'Info') + ' ' + (Message.Sender.Name || Message.Sender.Address);
 
                         desktopNotifications.create(title, {
@@ -178,10 +160,10 @@ angular.module('proton.utils')
                                 window.focus();
 
                                 if (threadingIsOn) {
-                                    return $state.go('secured.inbox.element', { id: Message.ConversationID, messageID: Message.ID });
+                                    return $state.go(route, { id: Message.ConversationID, messageID: Message.ID, label });
                                 }
 
-                                $state.go('secured.inbox.element', { id: Message.ID });
+                                $state.go(route, { id: Message.ID, label });
 
                             }
                         });
