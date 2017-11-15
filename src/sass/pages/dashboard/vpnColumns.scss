@@ -87,9 +87,9 @@
 .vpnColumns-footer button:not([disabled]):hover,
 .vpnColumns-footer button:not([disabled]):focus { opacity: 0.7 }
 
-.vpnColumns-vpnbasic-col button:first-child,
+// .vpnColumns-vpnbasic-col button:first-child,
 .vpnColumns-vpnplus-col button:first-child { color: $white }
-.vpnColumns-vpnbasic-col button:first-child { background-color: $vpnbasic }
+// .vpnColumns-vpnbasic-col button:first-child { background-color: $vpnbasic }
 .vpnColumns-vpnplus-col button:first-child { background-color: $vpnplus }
 
 .vpnColumns-vpnbasic-selected .vpnColumns-vpnbasic-col button:first-child,
