@@ -1,5 +1,7 @@
 angular.module('proton.contact')
     .factory('contactDetailsModel', (contactTransformLabel, CONSTANTS, contactSchema, gettextCatalog) => {
+        const ESCAPE_REGEX = /:|,|;|"/gi;
+        const UNESCAPE_REGEX = /\\:|\\,|\\;|\\"/gi;
         const I18N = { unknown: gettextCatalog.getString('Unknown', null, 'Default display name vcard') };
         const FIELDS = {
             AVOID: ['version', 'n', 'prodid', 'abuid'],
@@ -11,12 +13,14 @@ angular.module('proton.contact')
             PERSONALS: ['kind', 'source', 'xml', 'nickname', 'photo', 'bday', 'anniversary', 'gender', 'impp', 'lang', 'tz', 'geo', 'title', 'role', 'logo', 'org', 'member', 'related', 'categories', 'rev', 'sound', 'uid', 'clientpidmap', 'url', 'key', 'fburl', 'caladruri', 'caluri']
         };
 
-        const cleanValue = (value, key = '') => {
-            // ADR contains several value separeted by semicolon
-            if (key === 'adr') {
-                return value.split(';');
+        const unescapeValue = (value = '') => value.replace(UNESCAPE_REGEX, (val) => val.substr(1));
+        const escapeValue = (value = '') => value.replace(ESCAPE_REGEX, (val) => `\\${val}`);
+        const cleanValue = (value = '', key = '') => {
+            // ADR and N contains several value separeted by semicolon
+            if (key === 'adr' || key === 'n') {
+                return value.split(';').map(unescapeValue);
             }
-            return value;
+            return unescapeValue(value);
         };
         const buildProperty = (property = {}) => {
             const key = property.getField();
@@ -78,19 +82,16 @@ angular.module('proton.contact')
                 const child = scope.model[key];
 
                 switch (key) {
-                    case 'Name':
-                        params.vCard.add('fn', _.first(child).value || '', getParams(child));
-                        break;
                     case 'Emails':
                     case 'Tels':
                     case 'Adrs':
                         child.forEach((item, index) => {
-                            (item.value) && params.vCard.add(item.type, item.value, getParams(item, child.length > 1 && (index + 1)));
+                            (item.value) && params.vCard.add(item.type, escapeValue(item.value), getParams(item, child.length > 1 && (index + 1)));
                         });
                         break;
                     default:
                         child.forEach((item) => {
-                            (item.value) && params.vCard.add(item.type, item.value, getParams(item));
+                            (item.value) && params.vCard.add(item.type, escapeValue(item.value), getParams(item));
                         });
                         break;
                 }
@@ -146,5 +147,5 @@ angular.module('proton.contact')
             });
         }
 
-        return { extract, prepare };
+        return { extract, prepare, unescapeValue, escapeValue };
     });
