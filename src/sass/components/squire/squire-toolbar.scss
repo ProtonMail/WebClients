@@ -406,6 +406,7 @@ $list: georgia arial helvetica menlo tahoma verdana times trebuchet;
     [class*="squireToolbar-action-"] + .squireToolbar-separator { border: 0 }
 
     .squireToolbar-container { flex-wrap: wrap; height: auto }
+    .squireToolbar-action-options { display: none }
 }
 
 .squireToolbar-dropdown-container { position: relative }
