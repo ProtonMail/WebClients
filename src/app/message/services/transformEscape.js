@@ -22,10 +22,11 @@ angular.module('proton.message')
             return recursive(0);
         }
 
+        /* eslint no-useless-escape: off */
         const matchURLS = [...cartesianProductConcatenate([
             ['&#117;', 'u'],
-            ['&#114;', 'r'],
-            ['&#108;', 'l']
+            ['&#114;', 'r', '\&#114;'],
+            ['&#108;', 'l', '\&#108;', '\l']
         ])].join('|');
 
         /**
@@ -100,16 +101,22 @@ angular.module('proton.message')
              - etc.
          */
         const CSS_URL = `((${matchURLS})(\\(|&(#40|#x00028|lpar);))`;
-
         const REGEXP_URL_ATTR = new RegExp(CSS_URL, 'gi');
 
+        /**
+         * Escape some WTF from the CSSParser, cf spec files
+         * @param  {String} style
+         * @return {String}
+         */
         const escapeURLinStyle = (style) => {
             // handle the case where the value is html encoded, e.g.:
             // background:&#117;rl(&quot;https://i.imgur.com/WScAnHr.jpg&quot;)
             const decodedStyle = _.unescape(style);
             const encodeFlag = decodedStyle !== style;
 
-            const escapedStyle = decodedStyle.replace(REGEXP_URL_ATTR, 'proton-url(');
+            const escapedStyle = decodedStyle
+                .replace(/\\r/g, 'r')
+                .replace(REGEXP_URL_ATTR, 'proton-url(');
 
             if (escapedStyle === decodedStyle) {
                 // nothing escaped: just return input
