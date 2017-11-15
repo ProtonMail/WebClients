@@ -1,6 +1,32 @@
 angular.module('proton.message')
     .factory('transformEscape', () => {
 
+        /**
+         * Create all possibilites based on a collection
+         * @{@link  https://stackoverflow.com/questions/4331092/finding-all-combinations-of-javascript-array-values#answer-37276760}
+         * @param  {Array} arr Array of array
+         * @return {Generator}
+         */
+        function cartesianProductConcatenate(arr) {
+            const data = new Array(arr.length);
+            function* recursive(pos) {
+                if (pos === arr.length) {
+                    yield data.join('');
+                } else {
+                    for (let i = 0; i < arr[pos].length; ++i) {
+                        data[pos] = arr[pos][i];
+                        yield* recursive(pos + 1);
+                    }
+                }
+            }
+            return recursive(0);
+        }
+
+        const matchURLS = [...cartesianProductConcatenate([
+            ['&#117;', 'u'],
+            ['&#114;', 'r'],
+            ['&#108;', 'l']
+        ])].join('|');
 
         /**
          * Prevent escape url on the textContent if you display some code
@@ -66,7 +92,14 @@ angular.module('proton.message')
 
         const REGEXP_IS_BREAK = new RegExp(FORBIDDEN_HTML + VERIFY_ELEMENT_END, 'gi');
         const REGEXP_IS_STYLE = new RegExp(STYLE_ATTRIBUTE + ATTRIBUTE_VALUE + VERIFY_ELEMENT_END, 'gi');
-        const CSS_URL = '(url\\()';
+
+        /*
+            This is valid
+             - background:&#117;r&#108;(
+             - background:url&lpar;
+             - etc.
+         */
+        const CSS_URL = `((${matchURLS})(\\(|&(#40|#x00028||lpar);))`;
 
         const REGEXP_URL_ATTR = new RegExp(CSS_URL, 'gi');
 
@@ -76,7 +109,7 @@ angular.module('proton.message')
             const decodedStyle = _.unescape(style);
             const encodeFlag = decodedStyle !== style;
 
-            const escapedStyle = decodedStyle.replace(REGEXP_URL_ATTR, 'proton-$1');
+            const escapedStyle = decodedStyle.replace(REGEXP_URL_ATTR, 'proton-url(');
 
             if (escapedStyle === decodedStyle) {
                 // nothing escaped: just return input
