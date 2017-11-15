@@ -1,5 +1,12 @@
 angular.module('proton.squire')
-    .directive('plainTextArea', () => {
+    .directive('plainTextArea', (authentication, $rootScope) => {
+
+        const KEY = {
+            ENTER: 13,
+            S: 83
+        };
+        const isKey = (e, code) => (!e.altKey && (e.ctrlKey || e.metaKey) && e.keyCode === code);
+
         return {
             replace: true,
             templateUrl: 'templates/squire/plainTextArea.tpl.html',
@@ -13,6 +20,28 @@ angular.module('proton.squire')
                 el[0].value = scope.message.DecryptedBody;
                 el[0].selectionStart = 0;
                 el[0].selectionEnd = 0;
+
+                // proxy for autosave as Mousetrap doesn't work with iframe
+                const onKeyDown = (e) => {
+                    // Check alt too cf Polis S #5476
+                    if (isKey(e, KEY.S)) {
+                        e.preventDefault();
+                        Mousetrap.trigger('meta+s');
+                    }
+
+                    if (isKey(e, KEY.ENTER) && authentication.user.Hotkeys === 1) {
+                        $rootScope.$emit('composer.update', {
+                            type: 'send.message',
+                            data: { message: scope.message }
+                        });
+                    }
+                };
+
+                el.on('keydown', onKeyDown);
+
+                scope.$on('$destroy', () => {
+                    el.off('keydown', onKeyDown);
+                });
             }
         };
     });
