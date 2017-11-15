@@ -58,7 +58,14 @@ describe('transformEscape service', () => {
         <div style="color: red; background:    url('https://i.imgur.com/WScAnHr.jpg')">ddewdwed</div>
         <div style="color: red; background:url('https://i.imgur.com/WScAnHr.jpg')">ddewdwed</div>
         <span style="color: red; background:url('https://i.imgur.com/WScAnHr.jpg')">ddewdwed</span>`;
+    const BACKGROUND_URL_ESCAPED_WTF = '<div style="width: 500px; height: 500px; background:u\\rl(&quot;https://i.imgur.com/WScAnHr.jpg&quot;)">ddewdwed</div>';
+    const BACKGROUND_URL_ESCAPED_WTF2 = `
+        <div style="width: 500px; height: 500px; background:ur\l(&quot;https://i.imgur.com/WScAnHr.jpg&quot;)">ddewdwed</div>
+        <div style="width: 500px; height: 500px; background:u\&#114;l(&quot;https://i.imgur.com/WScAnHr.jpg&quot;)">ddewdwed</div>
+        <div style="width: 500px; height: 500px; background:ur\&#108;(&quot;https://i.imgur.com/WScAnHr.jpg&quot;)">ddewdwed</div>
+    `;
     const BACKGROUND_URL_ESCAPED = `
+        <div style="width: 500px; height: 500px; background:&#117;rl(&quot;https://i.imgur.com/WScAnHr.jpg&quot;)">ddewdwed</div>
         <div style="width: 500px; height: 500px; background:&#117;rl(&quot;https://i.imgur.com/WScAnHr.jpg&quot;)">ddewdwed</div>
         <div style="width: 500px; height: 500px; background:&#117;rl(&apos;https://i.imgur.com/WScAnHr.jpg&apos;)">ddewdwed</div>
         <div style="width: 500px; height: 500px; content: &quot; ass &quot;; background:url(https://i.imgur.com/WScAnHr.jpg);">ddewdwed</div>
@@ -288,6 +295,23 @@ describe('transformEscape service', () => {
         it('should escape all encoded url', () => {
             const html = factory(document.createElement('DIV'), null, {
                 content: BACKGROUND_URL_ESCAPED
+            });
+            const list = getList(html);
+
+            list.forEach((key) => {
+                expect(key).toMatch(/proton-/);
+            });
+        });
+        it('should escape encoded url with escape \\r', () => {
+            const html = factory(document.createElement('DIV'), null, {
+                content: BACKGROUND_URL_ESCAPED_WTF
+            });
+            expect(html.innerHTML).toMatch(/proton-/);
+        });
+
+        it('should escape encoded url with escape standard wtf', () => {
+            const html = factory(document.createElement('DIV'), null, {
+                content: BACKGROUND_URL_ESCAPED_WTF2
             });
             const list = getList(html);
 
