@@ -99,7 +99,7 @@ angular.module('proton.message')
              - background:url&lpar;
              - etc.
          */
-        const CSS_URL = `((${matchURLS})(\\(|&(#40|#x00028||lpar);))`;
+        const CSS_URL = `((${matchURLS})(\\(|&(#40|#x00028|lpar);))`;
 
         const REGEXP_URL_ATTR = new RegExp(CSS_URL, 'gi');
 
