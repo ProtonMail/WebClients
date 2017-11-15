@@ -4,7 +4,6 @@ angular.module('proton.contact')
         $filter,
         $rootScope,
         $state,
-        confirmModal,
         CONSTANTS,
         Contact,
         contactDetailsModel,
