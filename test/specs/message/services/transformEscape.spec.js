@@ -57,10 +57,18 @@ describe('transformEscape service', () => {
         <div style="color: red; background: #ffffff url('https://i.imgur.com/WScAnHr.jpg')">ddewdwed</div>
         <div style="color: red; background:    url('https://i.imgur.com/WScAnHr.jpg')">ddewdwed</div>
         <div style="color: red; background:url('https://i.imgur.com/WScAnHr.jpg')">ddewdwed</div>
-        <span style="color: red; background:url('https://i.imgur.com/WScAnHr.jpg')">ddewdwed</span>
-        <div style="width: 500px; height: 500px; content: &quot; ass &quot;; background:url(test);">ddewdwed</div>
+        <span style="color: red; background:url('https://i.imgur.com/WScAnHr.jpg')">ddewdwed</span>`;
+    const BACKGROUND_URL_ESCAPED = `
         <div style="width: 500px; height: 500px; background:&#117;rl(&quot;https://i.imgur.com/WScAnHr.jpg&quot;)">ddewdwed</div>
-        <div style="width: 500px; height: 500px; background:&#117;rl(&apos;https://i.imgur.com/WScAnHr.jpg&apos;)">ddewdwed</div>`;
+        <div style="width: 500px; height: 500px; background:&#117;rl(&apos;https://i.imgur.com/WScAnHr.jpg&apos;)">ddewdwed</div>
+        <div style="width: 500px; height: 500px; content: &quot; ass &quot;; background:url(https://i.imgur.com/WScAnHr.jpg);">ddewdwed</div>
+        <div style="width: 500px; height: 500px; content: &quot; ass &quot;; background:url(https://i.imgur.com/WScAnHr.jpg);">ddewdwed</div>
+        <div style="width: 500px; height: 120px; content: &quot; ass &quot;; background:&#117;&#114;&#108;(https://i.imgur.com/WScAnHr.jpg);">ddewdwed</div>
+        <div style="width: 500px; height: 120px; content: &quot; ass &quot;; background:&#117;r&#108;(https://i.imgur.com/WScAnHr.jpg);">ddewdwed</div>
+        <div style="width: 500px; height: 500px; content: &quot; ass &quot;; background:url&#x00028;https://i.imgur.com/WScAnHr.jpg);">ddewdwed</div>
+        <div style="width: 500px; height: 500px; content: &quot; ass &quot;; background:url&lpar;https://i.imgur.com/WScAnHr.jpg);">ddewdwed</div>
+        <div style="width: 500px; height: 456px; content: &quot; ass &quot;; background:url&#40;https://i.imgur.com/WScAnHr.jpg);">ddewdwed</div>
+        `;
     const BACKGROUND_URL_SAFE = `
         <span>url('dewd')</span>
         <span>style="dewdw" url('dewd')</span>
@@ -262,14 +270,26 @@ describe('transformEscape service', () => {
 
     describe('Escape BACKGROUND_URL', () => {
 
-        beforeEach(() => {
-            output = factory(document.createElement('DIV'), null, {
+        const getList = (input) => {
+            return input.innerHTML.split('\n').map((s) => s.trim()).filter(Boolean);
+        };
+
+        it('should escape all', () => {
+            const html = factory(document.createElement('DIV'), null, {
                 content: BACKGROUND_URL
+            });
+            const list = getList(html);
+
+            list.forEach((key) => {
+                expect(key).toMatch(/proton-/);
             });
         });
 
-        it('should escape all', () => {
-            const list = output.innerHTML.split('\n').filter(Boolean);
+        it('should escape all encoded url', () => {
+            const html = factory(document.createElement('DIV'), null, {
+                content: BACKGROUND_URL_ESCAPED
+            });
+            const list = getList(html);
 
             list.forEach((key) => {
                 expect(key).toMatch(/proton-/);
