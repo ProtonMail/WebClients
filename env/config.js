@@ -75,7 +75,7 @@ const APP = {
     year: (new Date()).getFullYear(),
     clientID: 'Web',
     clientSecret: '4957cc9a2e0a2a49d02475c9d013478d',
-    articleLink: 'https://protonmail.com/blog/protonmail-v3-11-release-notes/',
+    articleLink: 'https://protonmail.com/blog/protonmail-v3-12-release-notes/',
     translations: i18nLoader.get('list')
 };
 
