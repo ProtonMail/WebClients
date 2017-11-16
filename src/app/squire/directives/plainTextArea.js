@@ -21,6 +21,8 @@ angular.module('proton.squire')
                 el[0].selectionStart = 0;
                 el[0].selectionEnd = 0;
 
+                _.has(scope.message, 'Action') && _rAF(() => el.focus());
+
                 // proxy for autosave as Mousetrap doesn't work with iframe
                 const onKeyDown = (e) => {
                     // Check alt too cf Polis S #5476
