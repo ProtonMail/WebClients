@@ -1,11 +1,16 @@
 angular.module('proton.core')
-    .factory('vcard', (CONSTANTS, sanitize) => {
+    .factory('vcard', (CONSTANTS, notification, sanitize) => {
 
         const { VCARD_VERSION, VCARD_TYPES } = CONSTANTS;
-
-        const to = (vcards = []) => _.reduce(vcards, (acc, vCard) => (acc + clean(vCard).toString(VCARD_VERSION) + '\r\n'), '');
-        const from = (vcfString = '') => vCard.parse(vcfString).map((vcard) => clean(vcard));
         const merge = (vcards = []) => _.reduce(vcards, (acc, vcard = {}) => build(extractProperties(vcard), acc), new vCard());
+        const to = (vcards = []) => _.reduce(vcards, (acc, vCard) => (acc + clean(vCard).toString(VCARD_VERSION) + '\r\n'), '');
+        const from = (vcfString = '') => {
+            try {
+                return vCard.parse(vcfString).map((vcard) => clean(vcard));
+            } catch (e) {
+                notification.error(e);
+            }
+        };
 
         /**
          * Check if the type is valid
