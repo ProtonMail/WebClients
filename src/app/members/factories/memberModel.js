@@ -20,15 +20,17 @@ angular.module('proton.members')
         const changeRole = ({ ID }, payload) => memberApi.role(ID, payload);
         const makePrivate = ({ ID }) => memberApi.privatize(ID);
         const login = ({ ID }, params) => memberApi.authenticate(ID, params);
-        const fetch = () => {
-
+        const formatUserMember = () => {
             _.extend(USER_MEMBER, {
                 Name: authentication.user.Name,
                 Addresses: authentication.user.Addresses,
                 UsedSpace: authentication.user.UsedSpace,
                 MaxSpace: authentication.user.MaxSpace
             });
+        };
 
+        const fetch = () => {
+            formatUserMember();
             return memberApi.query()
                 .then((data = {}) => set(expandSelfMember(data.Members)));
         };
@@ -41,7 +43,8 @@ angular.module('proton.members')
         }
 
         function getUser() {
-            return [USER_MEMBER];
+            formatUserMember();
+            return [ USER_MEMBER ];
         }
 
         function getAll() {
