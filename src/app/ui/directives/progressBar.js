@@ -13,7 +13,7 @@ angular.module('proton.ui')
                     const unsubscribe = $rootScope.$on('progressBar', (event, { type = '', data = {} }) => {
                         const { progress = 0 } = data;
 
-                        if (id === type && (element[0].value + progress) <= max) {
+                        if (id === type) {
                             element[0].value = +progress;
                         }
                     });
