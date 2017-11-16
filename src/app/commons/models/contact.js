@@ -118,7 +118,7 @@ angular.module('proton.commons')
 
                 return $http.post(requestURL(), params)
                     .then((data) => {
-                        progress += +((Contacts.length * 50) / total).toFixed();
+                        progress += Math.floor((Contacts.length * 50) / total);
                         $rootScope.$emit('progressBar', { type: 'contactsProgressBar', data: { progress } });
 
                         return data;
