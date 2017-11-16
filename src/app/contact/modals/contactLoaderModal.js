@@ -34,7 +34,7 @@ angular.module('proton.contact')
 
         const getSuccess = ({ created = [], total = 0, errors = [] }) => {
             if (!created.length) {
-                const [ { error = I18N.totalFailure } ] = errors;
+                const [ { error = I18N.totalFailure } = {} ] = errors;
                 return `<p class="alert alert-danger">${error}</p>`;
             }
 
