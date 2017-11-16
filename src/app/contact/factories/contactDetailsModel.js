@@ -104,7 +104,9 @@ angular.module('proton.contact')
                 }
             });
 
-            if (params.vCard.get('fn').isEmpty()) {
+            const fnProperty = params.vCard.get('fn');
+
+            if (!fnProperty || fnProperty.isEmpty()) {
                 let value = I18N.unknown;
                 const emailProperty = params.vCard.get('email');
 
