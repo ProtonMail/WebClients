@@ -53,7 +53,7 @@
                 <div class="contactItem-actions">
                     <!-- actions -->
                     <copy ng-if="UI.mode === 'address'" data-value="getAddressValue(item)" pt-tooltip-translate="Copy address"></copy>
-                    <button ng-if="UI.inputType === 'email'" type="button" class="contactItem-compose fa fa-send-o" data-action="composeTo" data-email="{{ item.value }}"></button>
+                    <button ng-if="UI.inputType === 'email'" type="button" class="contactItem-compose fa fa-send-o" data-action="composeTo" data-email="{{ item.value }}" pt-tooltip-translate="Compose to"></button>
                     <button ng-if="!UI.unique && visibleItems().length > 1" type="button" class="contactItem-delete"  data-action="remove" data-index="{{ $index }}" pt-tooltip-translate="Remove Entry"></button>
                     <button ng-if="!UI.unique && visibleItems().length" type="button" class="contactItem-add" data-action="add" pt-tooltip-translate="Add Entry"></button>
                 </div>
