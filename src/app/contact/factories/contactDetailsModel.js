@@ -14,7 +14,14 @@ angular.module('proton.contact')
         };
 
         const unescapeValue = (value = '') => value.replace(UNESCAPE_REGEX, (val) => val.substr(1));
-        const escapeValue = (value = '') => value.replace(ESCAPE_REGEX, (val) => `\\${val}`);
+        const processEscape = (value = '') => value.replace(ESCAPE_REGEX, (val) => `\\${val}`);
+        const escapeValue = (value = '') => {
+            if (Array.isArray(value)) {
+                return value.map(processEscape);
+            }
+            return processEscape(value);
+        };
+
         const cleanValue = (value = '', key = '') => {
             // ADR and N contains several value separeted by semicolon
             if (key === 'adr' || key === 'n') {
