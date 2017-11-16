@@ -25,7 +25,8 @@ body#eo-reply {
 
     .composer-outside-container {position: relative;}
 
-    .composer-askEmbedding {display: none !important}
+    .squireToolbar-text-mode,
+    .composer-askEmbedding,
     .composer-dropzone {display: none !important}
     .composer-dropzone * {pointer-events: none}
     .composer-draggable:not(.composer-draggable-editor) .composer-dropzone {
