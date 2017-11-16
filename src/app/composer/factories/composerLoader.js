@@ -37,9 +37,11 @@ angular.module('proton.composer')
                     return el.find('.subject').focus();
                 }
 
+                if (message.MIMEType === 'text/plain') {
+                    return el.find('.plaintext-editor').focus();
+                }
 
                 const { editor } = editorModel.find(message);
-
                 if (editor) {
                     return _rAF(() => editor.focus());
                 }
