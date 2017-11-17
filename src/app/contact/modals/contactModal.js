@@ -1,14 +1,16 @@
 angular.module('proton.contact')
     .factory('contactModal', ($rootScope, $state, gettextCatalog, notification, pmModal) => {
+
         const I18N = {
             contactAdded: gettextCatalog.getString('Contact added', null, 'Success message for the contact modal'),
             contactError: gettextCatalog.getString('Error with the request', null, 'Default error for the contact modal')
         };
+
         return pmModal({
             controllerAs: 'ctrl',
             templateUrl: 'templates/contact/contactModal.tpl.html',
-            controller(params) {
-                const self = this;
+            /* @ngInject */
+            controller: function (params) {
                 const unsubscribe = $rootScope.$on('contacts', (event, { type = '', data = {} }) => {
                     if (type === 'contactCreated') {
                         const { created = [], errors = [] } = data;
@@ -25,10 +27,10 @@ angular.module('proton.contact')
                     }
                 });
 
-                self.contact = params.contact;
-                self.cancel = () => params.close();
-                self.$onDestroy = () => unsubscribe();
-                self.submit = () => {
+                this.contact = params.contact;
+                this.cancel = params.close;
+                this.$onDestroy = () => unsubscribe();
+                this.submit = () => {
                     $rootScope.$emit('contacts', { type: 'submitContactForm' });
                 };
             }
