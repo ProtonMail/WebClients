@@ -1,57 +1,60 @@
 angular.module('proton.contact')
-    .factory('contactImporter', ($rootScope, contactSchema, dropzoneModal, notification, vcard, csv, gettextCatalog) => {
+    .factory('contactImporter', ($rootScope, contactSchema, importContactModal, notification, vcard, csv, gettextCatalog, networkActivityTracker) => {
+
         const I18N = {
             noFiles: gettextCatalog.getString('No files were selected', null, 'Error'),
-            invalid: gettextCatalog.getString('Invalid file type', null, 'Error')
+            invalid: gettextCatalog.getString('Invalid file type', null, 'Error'),
+            parsingCSV: gettextCatalog.getString('Cannot convert the file', null, 'Error')
         };
-        const importVCF = (reader) => {
-            const vcardData = reader.result;
-            const parsed = vcard.from(vcardData);
 
-            $rootScope.$emit('contacts', { type: 'createContact', data: { contacts: contactSchema.prepare(parsed), mode: 'import' } });
-            dropzoneModal.deactivate();
-        };
+        const dispatch = (data = []) => $rootScope.$emit('contacts', { type: 'createContact', data: { contacts: contactSchema.prepare(data), mode: 'import' } });
+
+        const importVCF = async (reader) => dispatch(vcard.from(reader.result));
+
         const importVCard = (file) => {
-            csv.csvToVCard(file)
-                .then((parsed = []) => {
-                    if (parsed.length) {
-                        $rootScope.$emit('contacts', { type: 'createContact', data: { contacts: contactSchema.prepare(parsed), mode: 'import' } });
-                    }
-
-                    dropzoneModal.deactivate();
-                })
-                .catch((error) => console.error(error));
+            return csv.csvToVCard(file)
+                .then((parsed = []) => parsed.length && dispatch(parsed))
+                .catch((e) => {
+                    console.error(e);
+                    throw new Error(I18N.parsingCSV);
+                });
         };
+
+        const MAP_SRC = {
+            '.vcf': importVCF,
+            '.csv': importVCard
+        };
+
         const importFiles = (files = []) => {
+
             if (!files.length) {
-                notification.error(I18N.noFiles);
-                return;
+                return notification.error(I18N.noFiles);
             }
 
             const reader = new FileReader();
             const file = files[0];
             const extension = file.name.slice(-4);
 
+            reader.onload = (e) => notification.error(e);
             reader.onload = () => {
-                if (extension === '.vcf') {
-                    importVCF(reader);
-                } else if (extension === '.csv') {
-                    importVCard(file);
-                } else {
+                if (!MAP_SRC[extension]) {
                     notification.error(I18N.invalid);
-                    dropzoneModal.deactivate();
+                    return importContactModal.deactivate();
                 }
+                const promise = MAP_SRC[extension](reader)
+                    .then(() => importContactModal.deactivate());
+                networkActivityTracker.track(promise);
             };
 
             reader.readAsText(file, 'utf-8');
         };
 
         return () => {
-            dropzoneModal.activate({
+            importContactModal.activate({
                 params: {
                     import: importFiles,
                     cancel() {
-                        dropzoneModal.deactivate();
+                        importContactModal.deactivate();
                     }
                 }
             });
