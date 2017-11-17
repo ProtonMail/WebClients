@@ -25,7 +25,5 @@
 .sidebarContact-container .sidebarApp-link[data-action="mergeContacts"] { display: none }
 
 .sidebarContact-container:not(.sidebarContact-show-delete-contacts) .sidebarApp-link[data-action="deleteContacts"] { display: none }
-// NOTE Hide this action since there is a problem with the clear route contact
-.sidebarApp-link[data-action="deleteContacts"] { display: none !important }
 
 body:not(.appConfigBody-is-mobile) .sidebarContact-about-app { display: none }
