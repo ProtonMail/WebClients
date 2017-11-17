@@ -15,7 +15,14 @@ angular.module('proton.contact')
                 });
 
             if (mode === 'import') {
-                contactLoaderModal.activate({ params: { mode: 'import', close() { contactLoaderModal.deactivate(); } } });
+                contactLoaderModal.activate({
+                    params: {
+                        mode: 'import',
+                        close() {
+                            contactLoaderModal.deactivate();
+                        }
+                    }
+                });
             }
 
             return promise;

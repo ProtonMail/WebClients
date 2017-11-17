@@ -1,20 +1,30 @@
 angular.module('proton.contact')
     .factory('contactLoaderModal', ($rootScope, gettextCatalog, pmModal) => {
+
         const LABEL_CLASS = 'contactLoaderModal-label';
         const SUCCESS_CLASS = 'contactLoaderModal-success';
         const CONTAINER_CLASS = 'contactLoaderModal-container';
         const IMPORTED_CLASS = 'contactLoaderModal-imported';
+
         const I18N = {
-            encrypting(progress) { return gettextCatalog.getString('Encrypting contacts: {{progress}}%', { progress }, 'Label for the progress bar displayed during the contact import'); },
-            decrypting(progress) { return gettextCatalog.getString('Decrypting contacts: {{progress}}%', { progress }, 'Label for the progress bar displayed during the contact export'); },
-            upload(progress) { return gettextCatalog.getString('Upload: {{progress}}%', { progress }, 'Label for the progress bar displayed during the contact import'); },
+            encrypting(progress) {
+                return gettextCatalog.getString('Encrypting contacts: {{progress}}%', { progress }, 'Label for the progress bar displayed during the contact import');
+            },
+            decrypting(progress) {
+                return gettextCatalog.getString('Decrypting contacts: {{progress}}%', { progress }, 'Label for the progress bar displayed during the contact export');
+            },
+            upload(progress) {
+                return gettextCatalog.getString('Upload: {{progress}}%', { progress }, 'Label for the progress bar displayed during the contact import');
+            },
             importComplete: gettextCatalog.getString('Importing contacts complete!', null, 'Import complete'),
             contactImported: gettextCatalog.getString('contacts successfully imported.', null, '1 of 2 contacts successfully imported.'),
             exportTitle: gettextCatalog.getString('Exporting Contacts', null, 'Title for the contacts exporter modal'),
             importTitle: gettextCatalog.getString('Importing Contacts', null, 'Title for the contacts exporter modal'),
             exportInfo: gettextCatalog.getString('Exporting contacts, this may take a few minutes. When the progress is completed, this modal will close and let you download the file.', null, 'Information for the contacts exporter modal'),
             importInfo: gettextCatalog.getString('Importing contacts, this may take a few minutes.', null, 'Information for the contacts importer modal'),
-            importFail(number) { return gettextCatalog.getString('{{number}} failed to import.', { number }, 'Number of failed contact during the contact import'); },
+            importFail(number) {
+                return gettextCatalog.getString('{{number}} failed to import.', { number }, 'Number of failed contact during the contact import');
+            },
             totalFailure: gettextCatalog.getString('Import failed. Please check the import file or try again.', null, 'Error during importation')
         };
 
@@ -52,7 +62,8 @@ angular.module('proton.contact')
         return pmModal({
             controllerAs: 'ctrl',
             templateUrl: 'templates/contact/contactLoaderModal.tpl.html',
-            controller(params) {
+            /* @ngInject */
+            controller: function (params) {
                 const unsubscribe = [];
 
                 unsubscribe.push($rootScope.$on('contacts', (event, { type = '', data = {} }) => {

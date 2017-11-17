@@ -1,18 +1,13 @@
 angular.module('proton.contact')
     .directive('contactNoResult', ($rootScope) => {
+
+        const MAP = {
+            add: 'addContact',
+            import: 'importContacts'
+        };
         function onClick(event) {
             const action = event.target.getAttribute('data-action');
-
-            switch (action) {
-                case 'add':
-                    $rootScope.$emit('contacts', { type: 'addContact' });
-                    break;
-                case 'import':
-                    $rootScope.$emit('contacts', { type: 'importContacts' });
-                    break;
-                default:
-                    break;
-            }
+            MAP[action] && $rootScope.$emit('contacts', { type: MAP[action] });
         }
 
         return {
