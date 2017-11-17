@@ -48,7 +48,12 @@ angular.module('proton.contact')
 
         function filter() {
             const keyword = $stateParams.keyword || '';
-            return orderBy(search(keyword, get())).map(({ ID }) => ID);
+
+            if (keyword) {
+                return orderBy(search(keyword, get())).map(({ ID }) => ID);
+            }
+
+            return orderBy(get()).map(({ ID }) => ID);
         }
 
         function get(key = 'all') {

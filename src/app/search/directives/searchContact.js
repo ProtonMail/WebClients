@@ -1,7 +1,7 @@
 angular.module('proton.search')
     .directive('searchContact', ($rootScope, $state, $stateParams, contactCache, gettextCatalog) => {
         const searchContact = gettextCatalog.getString('Search contacts');
-        const dispatch = (keyword) => $rootScope.$emit('contacts', { type: 'searchingContact', data: { keyword } });
+        const dispatch = (keyword = '') => $rootScope.$emit('contacts', { type: 'searchingContact', data: { keyword } });
 
         return {
             replace: true,
@@ -18,7 +18,7 @@ angular.module('proton.search')
                 };
                 const onReset = () => {
                     $state.go('secured.contacts', { page: 1, keyword: null }, { notify: false })
-                        .then(() => dispatch(''));
+                        .then(() => dispatch());
                 };
                 const update = () => {
                     const total = contactCache.total();
