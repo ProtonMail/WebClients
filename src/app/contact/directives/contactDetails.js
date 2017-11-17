@@ -48,7 +48,6 @@ angular.module('proton.contact')
 
                 unsubscribe.push($rootScope.$on('contacts', (event, { type = '', data = {} }) => {
                     if (scope.modal && type === 'submitContactForm') {
-                        scope.contactForm.$setSubmitted(true);
                         onSubmit();
                     }
 
@@ -117,13 +116,25 @@ angular.module('proton.contact')
                     }
                 }
 
+                function isValidForm() {
+                    if (scope.contactForm.$invalid) {
+                        return false;
+                    }
+
+                    const values = _.chain(scope.model)
+                        .values()
+                        .reduce((acc, child = []) => acc.concat(child.filter(({ value = '' }) => value)), [])
+                        .value();
+
+                    return values.length;
+                }
+
                 /**
                  * Send event to create / update contact
                  * @return {Boolean}
                  */
                 function saveContact() {
-
-                    if (scope.contactForm.$invalid) {
+                    if (!isValidForm()) {
                         notification.error(I18N.invalidForm);
                         return false;
                     }
@@ -137,6 +148,7 @@ angular.module('proton.contact')
                         $rootScope.$emit('contacts', { type: 'createContact', data: { contacts: [contact] } });
                     }
 
+                    scope.contactForm.$setSubmitted(true);
                     scope.contactForm.$setPristine(true);
 
                     return true;

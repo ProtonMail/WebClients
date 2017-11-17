@@ -46,7 +46,7 @@ angular.module('proton.contact')
 
                         $row.addClass(ACTIVE_CLASS);
                         // Scroll the first load
-                        scroll && element.animate({ scrollTop: $row.offset().top - HEADER_HEIGHT }, 1000);
+                        scroll && $row && element.animate({ scrollTop: $row.offset().top - HEADER_HEIGHT }, 1000);
                     }
                 }
 
