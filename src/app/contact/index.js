@@ -1,4 +1,4 @@
-angular.module('proton.contact', [])
+angular.module('proton.contact', ['vs-repeat'])
     .run((contactEditor, contactMerger) => {
         contactEditor.init();
         contactMerger.init();
