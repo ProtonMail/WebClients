@@ -90,6 +90,7 @@ module.exports = {
       'node_modules/pmcrypto/build/pmcrypto.js',
       'node_modules/markdown-it/dist/markdown-it.min.js',
       'node_modules/clipboard/dist/clipboard.js',
+      'node_modules/angular-vs-repeat/src/angular-vs-repeat.js',
       'node_modules/vcf/dist/vcard.js',
       'node_modules/jszip/dist/jszip.min.js'
     ],
