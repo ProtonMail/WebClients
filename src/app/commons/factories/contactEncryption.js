@@ -178,6 +178,7 @@ angular.module('proton.commons')
             const authentication = $injector.get('authentication');
             const privateKeys = authentication.getPrivateKeys(MAIN_KEY);
             const publicKeys = pmcw.getKeys(authentication.user.Keys[0].PublicKey);
+            const total = contacts.length;
             let count = 0;
 
             return _.reduce(chunk(contacts, CONTACTS_LIMIT_ENCRYPTION), (promise, chunkedContacts) => {
@@ -186,7 +187,7 @@ angular.module('proton.commons')
                         return extractCards({ cards: Cards, privateKeys, publicKeys })
                             .then((data) => {
                                 count++;
-                                const progress = ((count * 100) / contacts.length).toFixed();
+                                const progress = Math.floor((count * 100) / total);
                                 $rootScope.$emit('progressBar', { type: 'contactsProgressBar', data: { progress } });
 
                                 return buildContact(ID, data, Cards);
@@ -206,6 +207,7 @@ angular.module('proton.commons')
             const authentication = $injector.get('authentication');
             const privateKeys = authentication.getPrivateKeys(MAIN_KEY);
             const publicKeys = pmcw.getKeys(authentication.user.Keys[0].PublicKey);
+            const total = contacts.length;
             let count = 0;
 
             return _.reduce(chunk(contacts, CONTACTS_LIMIT_ENCRYPTION), (promise, chunkedContacts) => {
@@ -214,7 +216,7 @@ angular.module('proton.commons')
                         return prepareCards({ data: contact.vCard, publicKeys, privateKeys })
                             .then((Cards) => {
                                 count++;
-                                const progress = ((count * 50) / contacts.length).toFixed();
+                                const progress = Math.floor((count * 50) / total);
 
                                 $rootScope.$emit('progressBar', { type: 'contactsProgressBar', data: { progress } });
 
