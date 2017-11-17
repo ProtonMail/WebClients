@@ -1,6 +1,7 @@
 angular.module('proton.search')
     .directive('searchContact', ($rootScope, $state, $stateParams, contactCache, gettextCatalog) => {
         const searchContact = gettextCatalog.getString('Search contacts');
+        const dispatch = (keyword) => $rootScope.$emit('contacts', { type: 'searchingContact', data: { keyword } });
 
         return {
             replace: true,
@@ -9,8 +10,16 @@ angular.module('proton.search')
             templateUrl: 'templates/search/searchContact.tpl.html',
             link(scope, element) {
                 const $input = element.find('.searchInput');
-                const onSubmit = () => $state.go($state.$current.name, { page: 1, keyword: scope.query });
-                const onReset = () => $state.go('secured.contacts', { page: 1, keyword: null });
+                const onSubmit = () => {
+                    const keyword = scope.query;
+
+                    $state.go($state.$current.name, { page: 1, keyword }, { notify: false })
+                        .then(() => dispatch(keyword));
+                };
+                const onReset = () => {
+                    $state.go('secured.contacts', { page: 1, keyword: null }, { notify: false })
+                        .then(() => dispatch(''));
+                };
                 const update = () => {
                     const total = contactCache.total();
                     const placeholder = total ? `${searchContact} (${total})` : searchContact;

@@ -31,7 +31,9 @@ angular.module('proton.contact')
                         $state.go('secured.contacts');
                     }
 
-                    scope.contacts = filteredContacts;
+                    scope.$applyAsync(() => {
+                        scope.contacts = filteredContacts;
+                    });
                 }
 
                 function activeContact(scroll = false) {

@@ -170,6 +170,11 @@ angular.module('proton.contact')
             });
         }
 
+        function searchingContact() {
+            CACHE.map.filtered = filter();
+            emit();
+        }
+
         function selectContacts({ contactIDs = [], isChecked }) {
             CACHE.contacts = _.map(get(), (contact) => {
                 if (contactIDs.indexOf(contact.ID) > -1) {
@@ -181,19 +186,6 @@ angular.module('proton.contact')
 
             sync();
             emit();
-        }
-
-        function stateChanged({ toParams = {}, fromParams = {} }) {
-            // Uncheck all contacts when we change params state
-            if (!_.isEqual(toParams, fromParams)) {
-                CACHE.contacts = _.map(get(), (contact) => {
-                    contact.selected = false;
-                    return contact;
-                });
-
-                sync();
-                emit();
-            }
         }
 
         function contactEvents({ events = [] }) {
@@ -227,12 +219,7 @@ angular.module('proton.contact')
             (type === 'importContacts') && contactImporter(data.contactID);
             (type === 'exportContacts') && contactDownloader(data.contactID);
             (type === 'selectContacts') && selectContacts(data);
-        });
-
-        $rootScope.$on('$stateChangeSuccess', (event, toState, toParams, fromState, fromParams) => {
-            if ($state.includes('secured.contacts')) {
-                stateChanged({ toState, toParams, fromState, fromParams });
-            }
+            (type === 'searchingContact') && searchingContact(data);
         });
 
         return { hydrate, isHydrated, clear, get, total, paginate };
