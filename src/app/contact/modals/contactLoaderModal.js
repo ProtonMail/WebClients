@@ -42,6 +42,7 @@ angular.module('proton.contact')
             return '';
         };
 
+        const getRows = (errors = []) => errors.map(({ error }) => `<li class="contactLoaderModal-log">- ${error}</li>`).join('');
         const getSuccess = ({ created = [], total = 0, errors = [] }) => {
             if (!created.length) {
                 const [ { error = I18N.totalFailure } = {} ] = errors;
@@ -49,6 +50,8 @@ angular.module('proton.contact')
             }
 
             const failure = errors.length ? `<p>${I18N.importFail(errors.length)}</p>` : '';
+            const logs = errors.length ? `<ul class="contactLoaderModal-logs">${getRows(errors)}</ul>` : '';
+
             return `
                 <p>${I18N.importComplete}</p>
                 <div class="contactLoaderModal-frame">
@@ -56,6 +59,7 @@ angular.module('proton.contact')
                     <strong>${I18N.contactImported}</strong>
                 </div>
                 ${failure}
+                ${logs}
             `;
         };
 
