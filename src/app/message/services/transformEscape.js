@@ -5,29 +5,24 @@ angular.module('proton.message')
          * Create all possibilites based on a collection
          * @{@link  https://stackoverflow.com/questions/4331092/finding-all-combinations-of-javascript-array-values#answer-37276760}
          * @param  {Array} arr Array of array
-         * @return {Generator}
+         * @return {String}
          */
-        function cartesianProductConcatenate(arr) {
-            const data = new Array(arr.length);
-            function* recursive(pos) {
-                if (pos === arr.length) {
-                    yield data.join('');
-                } else {
-                    for (let i = 0; i < arr[pos].length; ++i) {
-                        data[pos] = arr[pos][i];
-                        yield* recursive(pos + 1);
-                    }
-                }
+        function getPermutation(list, prefix = '') {
+            if (!list.length) {
+                return prefix;
             }
-            return recursive(0);
+
+            return list[0].reduce((acc, value) => {
+                return acc.concat(getPermutation(list.slice(1), prefix + value));
+            }, []).join('|');
         }
 
         /* eslint no-useless-escape: off */
-        const matchURLS = [...cartesianProductConcatenate([
+        const matchURLS = getPermutation([
             ['&#117;', 'u'],
             ['&#114;', 'r', '\&#114;'],
             ['&#108;', 'l', '\&#108;', '\l']
-        ])].join('|');
+        ]);
 
         /**
          * Prevent escape url on the textContent if you display some code
