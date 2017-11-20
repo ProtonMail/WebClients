@@ -15,7 +15,7 @@ angular.module('proton.sidebar')
          * @return {String}
          */
         const stripHTML = (s) => {
-            CLEANER.innerText = s || '';
+            CLEANER.textContent = s || '';
             return CLEANER.innerHTML;
         };
 
