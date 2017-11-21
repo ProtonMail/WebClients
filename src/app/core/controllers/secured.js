@@ -51,7 +51,7 @@ angular.module('proton.core')
         // Initialize counters for conversation (total and unread)
         cacheCounters.query();
         // Preload the contact list
-        !$state.includes('secured.contacts') && contactCache.hydrate();
+        !$state.includes('secured.contacts') && contactCache.load();
         addressWithoutKeysManager.manage()
             .catch(_.noop);
 

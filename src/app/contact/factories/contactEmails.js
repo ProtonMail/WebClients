@@ -1,22 +1,33 @@
 angular.module('proton.contact')
-    .factory('contactEmails', ($rootScope) => {
+    .factory('contactEmails', ($rootScope, $state, Contact, networkActivityTracker) => {
+
         const emails = [];
-        const api = {
-            set(data) {
-                emails.push(...data);
-            },
-            fetch() {
-                return emails;
-            },
-            clear() {
-                emails.length = 0;
-            },
-            findIndex(ID) {
-                return _.findIndex(emails, { ID });
-            }
+        const set = (data) => emails.push(...data);
+        const fetch = () => emails;
+        const clear = () => (emails.length = 0);
+        const findIndex = (ID) => _.findIndex(emails, { ID });
+
+        const emit = (contact) => {
+            $rootScope.$emit('contacts', {
+                type: 'refreshContactEmails',
+                data: { ID: contact.ContactID }
+            });
         };
 
-        const emit = (contact) => $rootScope.$emit('contacts', { type: 'refreshContactEmails', data: { ID: contact.ContactID } });
+        /**
+         * Load first 100 emails via the user auth process
+         * @return {Promise}
+         */
+        const loadCache = async () => {
+            const list = await Contact.hydrate();
+            set(list);
+            return fetch();
+        };
+
+        const load = () => {
+            const promise = networkActivityTracker.track(loadCache());
+            return promise;
+        };
 
         $rootScope.$on('createContactEmail', (event, contactEmail) => {
             emails.push(contactEmail);
@@ -24,7 +35,7 @@ angular.module('proton.contact')
         });
 
         $rootScope.$on('updateContactEmail', (event, ID, contactEmail) => {
-            const index = api.findIndex(ID);
+            const index = findIndex(ID);
 
             if (index !== -1) {
                 emails[index] = contactEmail;
@@ -36,7 +47,7 @@ angular.module('proton.contact')
         });
 
         $rootScope.$on('deleteContactEmail', (event, ID) => {
-            const index = api.findIndex(ID);
+            const index = findIndex(ID);
 
             if (index !== -1) {
                 emails.splice(index, 1);
@@ -44,5 +55,5 @@ angular.module('proton.contact')
             }
         });
 
-        return api;
+        return { set, fetch, clear, findIndex, load };
     });

@@ -37,7 +37,7 @@ angular.module('proton.contact')
         const isHydrated = () => CACHE.hydrated;
 
         function selected() {
-            const selected = _.chain(get()).filter(({ selected }) => selected).map(({ ID }) => ID).value();
+            const selected = _.chain(get()).filter(({ selected }) => selected).pluck('ID').value();
 
             if (!selected.length && $stateParams.id) {
                 return [$stateParams.id];
@@ -50,10 +50,10 @@ angular.module('proton.contact')
             const keyword = $stateParams.keyword || '';
 
             if (keyword) {
-                return orderBy(search(keyword, get())).map(({ ID }) => ID);
+                return _.pluck(orderBy(search(keyword, get())), 'ID');
             }
 
-            return orderBy(get()).map(({ ID }) => ID);
+            return _.pluck(orderBy(get()), 'ID');
         }
 
         function get(key = 'all') {
@@ -69,17 +69,26 @@ angular.module('proton.contact')
          */
         function hydrate() {
             const promise = Contact.all()
-                .then((contacts) => {
+                .then((contacts = []) => {
                     CACHE.hydrated = true;
                     CACHE.contacts = contacts;
                     sync();
-
                     return get();
                 })
                 .then(() => emit());
-
             networkActivityTracker.track(promise);
+            return promise;
+        }
 
+        function load() {
+            const promise = Contact.load()
+                .then(({ Contacts = [] }) => {
+                    CACHE.contacts = Contacts;
+                    sync();
+                    return get();
+                })
+                .then(() => emit());
+            networkActivityTracker.track(promise);
             return promise;
         }
 
@@ -90,7 +99,6 @@ angular.module('proton.contact')
             CACHE.contacts = _.map(get(), (contact) => {
                 contact.Emails = _.where(emails, { ContactID: contact.ID });
                 contact.emails = contact.Emails.map(({ Email = '' }) => Email).join(', ');
-
                 return contact;
             });
 
@@ -227,5 +235,5 @@ angular.module('proton.contact')
             (type === 'searchingContact') && searchingContact(data);
         });
 
-        return { hydrate, isHydrated, clear, get, total, paginate };
+        return { hydrate, isHydrated, clear, get, total, paginate, load };
     });

@@ -12,7 +12,6 @@ angular.module('proton.authentication')
     checkKeysFormat,
     CONFIG,
     CONSTANTS,
-    contactEmailsInitialize,
     contactEmails,
     Contact,
     errorReporter,
@@ -116,21 +115,17 @@ angular.module('proton.authentication')
                 };
 
                 return $q.all({
-                    contacts: contactEmailsInitialize(),
                     labels: Label.query(),
+                    contacts: contactEmails.load(),
                     fix: fixOrganization(),
                     organizationKey: decryptOrganization()
                 })
-                .then(({ contacts, labels, organizationKey }) => {
+                .then(({ labels, organizationKey }) => {
 
                     if (labels.data && labels.data.Code === 1000) {
                         labelsModel.set(labels.data.Labels);
 
                         return { user, organizationKey };
-                    }
-
-                    if (contacts.data && contacts.data.Error) {
-                        throw new Error(contacts.data.Error);
                     }
 
                     if (labels.data && labels.data.Error) {

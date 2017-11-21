@@ -1,5 +1,6 @@
 angular.module('proton.commons')
-    .factory('Contact', ($http, $q, $rootScope, CONSTANTS, notify, url, chunk, contactEncryption, sanitize) => {
+    .factory('Contact', ($http, $rootScope, CONSTANTS, url, chunk, contactEncryption, sanitize) => {
+
         const requestURL = url.build('contacts');
         const { CONTACTS_LIMIT_UPLOAD } = CONSTANTS;
 
@@ -12,12 +13,11 @@ angular.module('proton.commons')
             return contacts.map((contact) => {
                 contact.Email = sanitize.input(contact.Email);
                 contact.Name = sanitize.input(contact.Name);
-
                 return contact;
             });
         }
 
-        function request(route, params) {
+        function request(route, params = {}) {
             return $http.get(route, { params })
                 .then(({ data = {} } = {}) => {
                     if (data.Error) {
@@ -27,37 +27,57 @@ angular.module('proton.commons')
                 });
         }
 
-        function queryContacts(route = '', size = 100, key = '') {
-            return request(route, { PageSize: size })
-                .then((data) => {
-                    const promises = [Promise.resolve(data[key])];
-                    const n = Math.ceil(data.Total / size) - 1;
+        async function queryContacts(route = '', { PageSize, key = '' }) {
 
-                    if (n > 0) {
-                        _.times(n, (index) => {
-                            promises.push(request(route, { PageSize: size, Page: index + 1 }).then((data) => data[key]));
-                        });
-                    }
+            const data = await request(route, { PageSize });
+            const promises = [ Promise.resolve(data[key]) ];
+            const n = Math.ceil(data.Total / PageSize) - 1; // We already load 1 or 2 pages
 
-                    return Promise.all(promises)
-                        .then((results = []) => results.reduce((acc, result) => [...acc, ...result]));
+            if (n > 0) {
+                _.times(n, (index) => {
+                    const promise = request(route, {
+                        PageSize,
+                        Page: index + 1
+                    }).then((data) => data[key]);
+                    promises.push(promise);
                 });
+            }
+
+            const list = await Promise.all(promises);
+            return list.reduce((acc, item) => acc.concat(item), []);
         }
 
         /**
          * Get a list of Contact Emails right after Login
          * @return {Promise}
          */
-        function hydrate() {
-            return queryContacts(requestURL('emails'), CONSTANTS.CONTACT_EMAILS_LIMIT, 'ContactEmails')
-                .then((contacts) => clearContacts(contacts));
+        function hydrate(PageSize = CONSTANTS.CONTACT_EMAILS_LIMIT) {
+            return queryContacts(requestURL('emails'), {
+                key: 'ContactEmails',
+                PageSize
+            })
+                .then(clearContacts);
         }
 
         /**
          * Get a list of Contacts minus their Data
          * @return {Promise}
          */
-        const all = () => queryContacts(requestURL(), CONSTANTS.CONTACTS_LIMIT, 'Contacts');
+        const all = (PageSize = CONSTANTS.CONTACTS_LIMIT) => {
+            return queryContacts(requestURL(), {
+                key: 'Contacts',
+                PageSize
+            });
+        };
+        /**
+         * Get a list of Contacts minus their Data
+         * @return {Promise}
+         */
+        const load = (type = '') => {
+            const url = type ? requestURL(type) : requestURL();
+            const PageSize = type ? CONSTANTS.CONTACT_EMAILS_LIMIT : CONSTANTS.CONTACTS_LIMIT / 10;
+            return request(url, { PageSize });
+        };
 
         /**
          * Get full Contact
@@ -65,14 +85,8 @@ angular.module('proton.commons')
          * @return {Promise}
          */
         function get(contactID) {
-            return $http.get(requestURL(contactID))
-                .then(({ data = {} }) => {
-                    if (data.Error) {
-                        throw new Error(data.Error);
-                    }
-                    return data.Contact;
-                })
-                .then((contact) => contactEncryption.decrypt([contact]))
+            return request(requestURL(contactID))
+                .then(({ Contact }) => contactEncryption.decrypt([Contact]))
                 .then((contacts) => contacts[0]);
         }
 
@@ -190,5 +204,5 @@ angular.module('proton.commons')
          */
         const groups = () => $http.get(requestURL('groups'));
 
-        return { hydrate, all, get, add, update, remove, clear, exportAll, groups };
+        return { hydrate, all, get, add, update, remove, clear, exportAll, groups, load };
     });

@@ -16,14 +16,13 @@ angular.module('proton.contact')
             scope: {},
             templateUrl: 'templates/contact/contactList.tpl.html',
             link(scope, element) {
-                // Variables
+
                 let lastChecked = null;
                 const unsubscribe = [];
 
                 scope.contacts = [];
                 scope.showContact = (contactID) => $state.go('secured.contacts.details', { id: contactID });
 
-                // Functions
                 function updateContacts() {
                     const filteredContacts = contactCache.paginate(contactCache.get('filtered'));
 
@@ -74,7 +73,6 @@ angular.module('proton.contact')
                     }
                 }
 
-                // Methods
                 scope.onSelectContact = (event, contact) => {
                     const isChecked = event.target.checked;
                     const contactIDs = [contact.ID];
