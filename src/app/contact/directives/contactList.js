@@ -1,11 +1,6 @@
 angular.module('proton.contact')
-    .directive('contactList', (
-        $filter,
-        $rootScope,
-        $state,
-        $stateParams,
-        contactCache
-    ) => {
+    .directive('contactList', ($filter, $rootScope, $state, $stateParams, contactCache) => {
+
         const HEADER_HEIGHT = 120;
         const ITEM_CLASS = 'contactList-item';
         const ACTIVE_CLASS = 'contactList-item-activeContact';
@@ -26,12 +21,9 @@ angular.module('proton.contact')
                 function updateContacts() {
                     const filteredContacts = contactCache.paginate(contactCache.get('filtered'));
 
-                    if (!filteredContacts.length && $state.is('secured.contacts.details')) {
-                        $state.go('secured.contacts');
-                    }
-
                     scope.$applyAsync(() => {
                         scope.contacts = filteredContacts;
+                        _.defer(() => activeContact(!!$stateParams.id), 1000);
                     });
                 }
 
@@ -45,7 +37,7 @@ angular.module('proton.contact')
 
                         $row.addClass(ACTIVE_CLASS);
                         // Scroll the first load
-                        scroll && $row && element.animate({ scrollTop: $row.offset().top - HEADER_HEIGHT }, 1000);
+                        scroll && $row[0] && element.animate({ scrollTop: $row.offset().top - HEADER_HEIGHT }, 1000);
                     }
                 }
 
@@ -93,7 +85,6 @@ angular.module('proton.contact')
                     $rootScope.$emit('contacts', { type: 'selectContacts', data: { contactIDs, isChecked } });
                 };
 
-                // Listeners
                 element.on('click', onClick);
                 unsubscribe.push($rootScope.$on('contacts', (event, { type = '' }) => {
                     (type === 'contactsUpdated') && scope.$applyAsync(() => updateContacts());
@@ -103,15 +94,13 @@ angular.module('proton.contact')
                     scope.$applyAsync(() => activeContact());
                 }));
 
-                // Unsubscription for listeners
+                contactCache.hydrate();
+
                 scope.$on('$destroy', () => {
                     element.off('click', onClick);
                     unsubscribe.forEach((cb) => cb());
                     unsubscribe.length = 0;
                 });
-
-                updateContacts();
-                scope.$applyAsync(() => activeContact(true));
             }
         };
     });

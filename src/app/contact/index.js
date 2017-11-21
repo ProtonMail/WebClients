@@ -22,12 +22,6 @@ angular.module('proton.contact', ['vs-repeat'])
                         $state.go('secured.payments');
 
                         return Promise.reject();
-                    },
-                    contacts(user, contactCache) {
-                        if (!contactCache.isHydrated()) {
-                            return contactCache.hydrate();
-                        }
-                        return Promise.resolve();
                     }
                 },
                 views: {
@@ -45,16 +39,12 @@ angular.module('proton.contact', ['vs-repeat'])
             .state('secured.contacts.details', {
                 url: '/:id',
                 params: { id: null },
-                resolve: {
-                    contact(user, contacts, $stateParams, Contact, networkActivityTracker) {
-                        return networkActivityTracker.track(Contact.get($stateParams.id));
-                    }
-                },
                 views: {
                     'details@secured.contacts': {
-                        template: '<contact-details data-contact="contact"></contact-details>',
-                        controller($scope, contact) {
-                            $scope.contact = contact;
+                        template: '<contact-details ng-if="contact" data-contact="contact"></contact-details>',
+                        controller($scope, $stateParams, contactCache) {
+                            contactCache.find($stateParams.id)
+                                .then((data) => $scope.contact = data);
                         }
                     }
                 }

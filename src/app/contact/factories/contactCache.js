@@ -67,7 +67,13 @@ angular.module('proton.contact')
          * Call the BE to get the contact list
          * @return {Array} contacts
          */
-        function hydrate() {
+        function hydrate(force) {
+
+            if (isHydrated() && !force) {
+                emit();
+                return Promise.resolve();
+            }
+
             const promise = Contact.all()
                 .then((contacts = []) => {
                     CACHE.hydrated = true;
@@ -88,6 +94,12 @@ angular.module('proton.contact')
                     return get();
                 })
                 .then(() => emit());
+            networkActivityTracker.track(promise);
+            return promise;
+        }
+
+        function find(id) {
+            const promise = Contact.get(id);
             networkActivityTracker.track(promise);
             return promise;
         }
@@ -114,7 +126,7 @@ angular.module('proton.contact')
          * Clear the contacts array and reset Hydrated
          */
         function clear() {
-            CACHE.contacts = [];
+            CACHE.contacts.length = 0;
             CACHE.hydrated = false;
         }
 
@@ -235,5 +247,5 @@ angular.module('proton.contact')
             (type === 'searchingContact') && searchingContact(data);
         });
 
-        return { hydrate, isHydrated, clear, get, total, paginate, load };
+        return { hydrate, isHydrated, clear, get, total, paginate, load, find };
     });
