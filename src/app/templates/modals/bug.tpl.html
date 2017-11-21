@@ -84,14 +84,21 @@
                     <div class="col-1-4">
                         <label for="bug_description" translate translate-context="bug report modal label">What happened?</label>
                     </div>
-                    <div class="col-3-4">
+                    <div class="col-3-4 ng-message-wrapper">
                         <textarea
-                        ng-model="ctrl.form.Description"
-                        name="bug_description"
-                        rows="6"
-                        id="bug_description"
-                        placeholder-translate-context="bug report modal description"
-                        placeholder-translate="Please describe the problem and include any error messages"></textarea>
+                            ng-model="ctrl.form.Description"
+                            required
+                            name="bug_description"
+                            rows="6"
+                            id="bug_description"
+                            placeholder-translate-context="bug report modal description"
+                            placeholder-translate="Please describe the problem and include any error messages"></textarea>
+
+                        <div ng-messages="bugModalForm.bug_description.$error" role="alert">
+                            <div class="ng-messages-errors">
+                                <p ng-message="required" translate-context="Error" translate>Add a description to help us improve ProtonMail</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <div class="pm_grid">
