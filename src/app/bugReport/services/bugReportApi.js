@@ -3,6 +3,7 @@ angular.module('proton.bugReport')
         const LAYOUTS = ['column', 'row'];
         const MODES = ['conversation', 'message'];
 
+
         /**
          * Generate the configuration for the main form
          * @return {Object}
