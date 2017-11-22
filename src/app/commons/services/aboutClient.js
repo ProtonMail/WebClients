@@ -12,8 +12,8 @@ angular.module('proton.commons')
             }
         };
         const hasCookie = () => navigator.cookieEnabled;
-        const getBrowser = () => $.ua.browser.name;
-        const getBrowserVersion = () => $.ua.browser.version;
+        const getBrowser = () => $.ua.browser;
+        const getDevice = () => $.ua.device;
 
         const isSafari = () => {
             const browsers = ['Safari', 'Mobile Safari'];
@@ -38,35 +38,8 @@ angular.module('proton.commons')
         };
 
         const getOS = () => {
-            let OSName = 'other'; // Unknown OS
-
-            if (navigator.appVersion) {
-                if (navigator.appVersion.indexOf('Win') !== -1) {
-                    OSName = 'windows';
-                }
-
-                if (navigator.appVersion.indexOf('Mac') !== -1) {
-                    OSName = 'osx';
-                }
-
-                if (navigator.appVersion.indexOf('X11') !== -1) {
-                    OSName = 'linux';
-                }
-
-                if (navigator.appVersion.indexOf('Linux') !== -1) {
-                    OSName = 'linux';
-
-                    if (navigator.appVersion.indexOf('Android') !== -1) {
-                        OSName = 'android';
-                    }
-                }
-            }
-
-            if (navigator.userAgent && /(iPad|iPhone|iPod)/g.test(navigator.userAgent)) {
-                OSName = 'ios';
-            }
-
-            return OSName;
+            const { name = 'other', version = '' } = $.ua.os;
+            return { name, version };
         };
 
         const doNotTrack = () => {
@@ -80,7 +53,7 @@ angular.module('proton.commons')
             hasCookie,
             getOS,
             getBrowser,
-            getBrowserVersion,
+            getDevice,
             isIE11,
             isEdge,
             isSafari,

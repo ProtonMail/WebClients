@@ -1,7 +1,38 @@
 angular.module('proton.bugReport')
-    .factory('bugReportApi', (Bug, CONFIG, $state, aboutClient, authentication, gettextCatalog, networkActivityTracker, notification) => {
-        const LAYOUTS = ['column', 'row'];
-        const MODES = ['conversation', 'message'];
+    .factory('bugReportApi', (Bug, CONFIG, $state, aboutClient, authentication, gettextCatalog, networkActivityTracker, notification, CONSTANTS) => {
+
+        const { ROW_MODE, COLUMN_MODE, MESSAGE_VIEW_MODE, CONVERSATION_VIEW_MODE } = CONSTANTS;
+        const MAP_MODE = {
+            layout: {
+                [ROW_MODE]: 'row',
+                [COLUMN_MODE]: 'column'
+            },
+            view: {
+                [MESSAGE_VIEW_MODE]: 'row',
+                [CONVERSATION_VIEW_MODE]: 'column'
+            }
+        };
+
+        const getViewLayout = (type) => MAP_MODE.layout[type] || 'unknown';
+        const getViewMode = (type) => MAP_MODE.view[type] || 'undefined';
+
+        const getClient = ({ ViewLayout = '', ViewMode = '' } = {}) => {
+            const os = aboutClient.getOS();
+            const browser = aboutClient.getBrowser();
+            const device = aboutClient.getDevice();
+            return {
+                OS: os.name,
+                OSVersion: os.version || '',
+                Browser: browser.name,
+                BrowserVersion: browser.version,
+                Client: 'Angular',
+                ClientVersion: CONFIG.app_version,
+                ViewLayout: getViewLayout(ViewLayout),
+                ViewMode: getViewMode(ViewMode),
+                DeviceName: device.vendor,
+                DeviceModel: device.model
+            };
+        };
 
 
         /**
@@ -9,24 +40,17 @@ angular.module('proton.bugReport')
          * @return {Object}
          */
         const getForm = () => {
-            const { Name = '', Addresses = [], ViewLayout = '', ViewMode = '' } = authentication.user;
+            const { Name = '', Addresses = [] } = authentication.user;
             const [{ Email = '' } = {}] = _.sortBy(Addresses, 'Order');
-            return {
-                OS: aboutClient.getOS(),
-                OSVersion: '',
-                DisplayMode: angular.isNumber(ViewLayout) ? LAYOUTS[ViewLayout] : '',
-                ViewMode: angular.isNumber(ViewMode) ? MODES[ViewMode] : '',
+
+            return _.extend(getClient(authentication.user), {
                 Resolution: `${window.innerHeight} x ${window.innerWidth}`,
-                Browser: aboutClient.getBrowser(),
-                BrowserVersion: aboutClient.getBrowserVersion(),
-                Client: 'Angular',
-                ClientVersion: CONFIG.app_version,
                 Title: `[Angular] Bug [${$state.$current.name}]`,
                 Description: '',
                 Username: Name,
                 Email,
                 attachScreenshot: false
-            };
+            });
         };
 
 
@@ -78,5 +102,12 @@ angular.module('proton.bugReport')
             return promise;
         };
 
-        return { getForm, takeScreenshot, report };
+        const crash = (error) => {
+            const crashData = _.extend(getClient(authentication.user), {
+                Debug: { state: $state.$current.name, error }
+            });
+            return Bug.crash(crashData).catch(angular.noop);
+        };
+
+        return { getForm, takeScreenshot, report, getClient, crash };
     });
