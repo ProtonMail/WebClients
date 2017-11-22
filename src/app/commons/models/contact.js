@@ -2,7 +2,7 @@ angular.module('proton.commons')
     .factory('Contact', ($http, $rootScope, CONSTANTS, url, chunk, contactEncryption, sanitize) => {
 
         const requestURL = url.build('contacts');
-        const { CONTACTS_LIMIT_UPLOAD } = CONSTANTS;
+        const { CONTACTS_LIMIT_UPLOAD, EXPORT_CONTACTS_LIMIT } = CONSTANTS;
 
         /**
          * Clean contact datas
@@ -193,8 +193,11 @@ angular.module('proton.commons')
          * Get all ContactData's for export
          * @return {Promise}
          */
-        function exportAll() {
-            return queryContacts(requestURL('export'), CONSTANTS.EXPORT_CONTACTS_LIMIT, 'Contacts')
+        function exportAll(PageSize = EXPORT_CONTACTS_LIMIT) {
+            return queryContacts(requestURL('export'), {
+                key: 'Contacts',
+                PageSize
+            })
                 .then((contacts) => contactEncryption.decrypt(contacts));
         }
 
