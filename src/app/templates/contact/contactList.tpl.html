@@ -38,13 +38,13 @@
                 data-vs-excess="6"
                 data-vs-scroll-parent=".contactList-container">
                 <tr
-                    data-contact-id="{{ contact.ID }}"
+                    data-contact-id="{{ ::contact.ID }}"
                     class="contactList-item"
                     ng-repeat="contact in contacts track by contact.ID">
                     <td class="text-center contactList-checkbox">
                         <custom-checkbox
-                            data-custom-ng-model="contact.selected"
-                            data-custom-ng-click="onSelectContact($event, contact)"></custom-checkbox>
+                            data-custom-contact-id="{{ ::contact.ID }}"
+                            data-custom-ng-model="contact.selected"></custom-checkbox>
                     </td>
                     <td class="contactList-item-name" data-action="showContact">
                         <span>{{ contact.Name }}</span>

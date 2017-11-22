@@ -29,61 +29,60 @@ angular.module('proton.contact')
 
                 function activeContact(scroll = false) {
                     const $items = element.find(`.${ITEM_CLASS}`);
-
                     $items.removeClass(ACTIVE_CLASS);
 
                     if ($stateParams.id) {
                         const $row = element.find(`.${ITEM_CLASS}[data-contact-id="${$stateParams.id}"]`);
-
                         $row.addClass(ACTIVE_CLASS);
                         // Scroll the first load
                         scroll && $row[0] && element.animate({ scrollTop: $row.offset().top - HEADER_HEIGHT }, 1000);
                     }
                 }
 
-                function onClick(event) {
-                    const action = event.target.getAttribute('data-action');
-
-                    switch (action) {
-                        case 'showContact': {
-                            const $item = angular.element(event.target).closest(`.${ITEM_CLASS}`);
-
-                            $state.go('secured.contacts.details', { id: $item.attr('data-contact-id') });
-                            break;
-                        }
-
-                        case 'toggleSort': {
-                            const sort = event.target.getAttribute('data-sort');
-                            const prefix = ($stateParams.sort || '').startsWith('-') ? '' : '-';
-
-                            $state.go('secured.contacts', { sort: `${prefix}${sort}` });
-                            break;
-                        }
-
-                        default:
-                            break;
-                    }
-                }
-
-                scope.onSelectContact = (event, contact) => {
-                    const isChecked = event.target.checked;
-                    const contactIDs = [contact.ID];
+                const selectContact = (contact, isChecked, shiftKey) => {
+                    const contactIDs = [ contact.ID ];
 
                     if (!lastChecked) {
                         lastChecked = contact;
                     } else {
-                        if (event.shiftKey) {
+                        if (shiftKey) {
                             const start = scope.contacts.indexOf(contact);
-                            const end = scope.contacts.indexOf(lastChecked);
-
-                            contactIDs.push(...scope.contacts.slice(Math.min(start, end), Math.max(start, end) + 1).map((contact) => contact.ID));
+                            const end = _.findIndex(scope.contacts, { ID: lastChecked.ID });
+                            const col = scope.contacts.slice(Math.min(start, end), Math.max(start, end) + 1);
+                            contactIDs.push(..._.pluck(col, 'ID'));
                         }
 
                         lastChecked = contact;
                     }
 
-                    $rootScope.$emit('contacts', { type: 'selectContacts', data: { contactIDs, isChecked } });
+                    $rootScope.$emit('contacts', {
+                        type: 'selectContacts',
+                        data: { contactIDs, isChecked }
+                    });
                 };
+
+                function onClick({ target, shiftKey }) {
+
+                    if (/customCheckbox/.test(target.className)) {
+                        return scope.$applyAsync(() => {
+                            const contact = _.findWhere(scope.contacts, { ID: target.dataset.contactId });
+                            selectContact(contact, target.checked, shiftKey);
+                        });
+                    }
+
+                    const action = target.getAttribute('data-action');
+
+                    if (action === 'showContact') {
+                        const $item = angular.element(target).closest(`.${ITEM_CLASS}`);
+                        $state.go('secured.contacts.details', { id: $item.attr('data-contact-id') });
+                    }
+
+                    if (action === 'toggleSort') {
+                        const sort = target.getAttribute('data-sort');
+                        const prefix = ($stateParams.sort || '').startsWith('-') ? '' : '-';
+                        $state.go('secured.contacts', { sort: `${prefix}${sort}` });
+                    }
+                }
 
                 element.on('click', onClick);
                 unsubscribe.push($rootScope.$on('contacts', (event, { type = '' }) => {
