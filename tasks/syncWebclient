@@ -1,0 +1,152 @@
+#!/usr/bin/env bash
+
+#  How to sync ?
+#  run the command and pass the last commit ID from the private repo
+#  OR if the last commit is the version do nothing.
+#
+#  It will sync everything BUT, as cherry-pick is not perfect you will
+#  need to do if it fails (it will)
+#       $ git cherry-pick --continue
+#  then
+#       $ git push webclient public
+#       $ git checkout v3
+#
+#  voilà
+
+Yellow="\033[0;33m"
+Green="\033[0;32m"
+Red="\033[0;31m"
+Purple="\033[0;35m"
+Cyan="\033[0;36m"
+WhiteBg="\033[0;7m"
+NoColor='\033[0m'
+
+
+function logInfo() {
+    echo -e "$Yellow[$1]:$NoColor $2";
+}
+
+function logWarning() {
+    echo -e "$Purple[WARNING]:$NoColor $1";
+}
+
+function textColor() {
+    echo -e "$1$2$NoColor" $3;
+}
+
+function logError() {
+    echo -e "$Red[ERROR] $1$NoColor";
+    exit 0;
+}
+
+function commitInfo() {
+    local commit=$(git log --pretty=format:'%H---%s' | grep -w "$1")
+    echo $commit;
+}
+
+# Get latest commit name's from webclient and find the matching commit ID on the private repo
+function getHashAngular() {
+    git checkout public --quiet;
+    last_commit_name=$(git log -1 --pretty=format:"%s" --abbrev-commit);
+    git checkout v3 --quiet;
+    # Get last hash ID for the commit based on the name deployed on the webclient
+    last_commit=$(commitInfo $last_commit_name | awk 'BEGIN {FS="---"} {print $1}');
+}
+
+# Select the latest commit from the repository or a custom commit via its hash
+# --> Can take one arg: hash commit to deploy
+function getNewReleaseHash() {
+    if [ $1 ]
+    then
+        new_release=$1;
+        new_release_name=$(commitInfo $new_release | awk 'BEGIN {FS="---"} {print $2}');
+    else
+        local new_release_info=$(git log -1 --pretty=format:'%H---%s' --abbrev-commit);
+        new_release=$(echo $new_release_info | awk 'BEGIN {FS="---"} {print $1}');
+        new_release_name=$(echo $new_release_info | awk 'BEGIN {FS="---"} {print $2}');
+    fi
+}
+
+# Sync public repository
+# READ THE DOC INSIDE THE HEAD
+# - From last commit deployed to the latest commit we want to deploy (default latest commit on the private repo)
+function syncWebclient() {
+
+    git checkout v3 # Make sure we are on the `v3` branch
+    git pull origin v3 # Pull latest commits on `v3`
+    git checkout public # Go to the `public` branch
+    git pull webclient public # Make sure we have the latest commits from the public repo
+    echo
+    logInfo "debug" "git cherry-pick -X theirs --allow-empty ${last_commit}..${new_release}"
+    echo
+    git cherry-pick -X theirs --allow-empty ${last_commit}..${new_release} # Merge latest changes from `v3`
+    # git push webclient public # Push the code to WebClient
+    # git checkout v3 # Go back to the `v3` branch
+}
+
+function process() {
+    getNewReleaseHash $1;
+    getHashAngular
+
+    echo
+    logInfo "Last commit" "$last_commit $last_commit_name";
+    logInfo "New commit" "$new_release $new_release_name";
+    echo
+    echo
+    textColor $Red "IMPORTANT"
+    echo "You will need if it fails to run until it's done -> (cherry-pick can be a long task)"
+    echo '      $ git cherry-pick --continue'
+    echo '      $ git push webclient public'
+    echo '      $ git checkout v3'
+    echo
+    echo
+    syncWebclient
+}
+
+if [ "$1" = "--help" ];
+then
+    echo
+    textColor $WhiteBg ' HELP ' 'How to use the command'
+    echo 'This command will sync the Private repository and the public repository'
+    echo
+    echo '      $ <command> <hash>'
+    echo
+    textColor $Cyan '<hash>' ': Latest commit to sync from the private repository'
+    logInfo opt '<hash> is optional. If not specified it will use the last commit from V3'
+    echo
+    echo 'ex: hash for version 3.11.8 => c9f0023438a6f8efcd79f7d772fafa884bf19467'
+    echo '$ ./tasks/syncWebclient c9f0023438a6f8efcd79f7d772fafa884bf19467'
+    echo
+    echo
+    textColor $Purple "---- IMPORTANT ----"
+    echo
+    echo "You will need if it fails to run until it's done -> (cherry-pick can be a long task)"
+    echo '      $ git cherry-pick --continue'
+    echo '      $ git push webclient public'
+    echo '      $ git checkout v3'
+    echo
+    exit 0
+fi
+
+if [ $(git rev-parse --abbrev-ref HEAD) != "v3" ]
+then
+    logError "You must be on V3 to sync the webclient";
+    exit 1
+fi
+
+if [ $(git remote | grep webclient) ]
+then
+  process $1
+
+else
+    logWarning "You don't have the public repo on your computer";
+    logInfo "log" "Add remote webclient"
+    git remote add webclient git@github.com:ProtonMail/WebClient.git
+    git config remote.webclient.push upstream
+    git fetch webclient
+    git checkout -b public webclient/public
+    process $1
+fi
+
+
+
