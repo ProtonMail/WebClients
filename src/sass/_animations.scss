@@ -190,16 +190,16 @@ Inpiration from 'esjay'
     -animation: pusate 2s infinite alternate
 }
 @-webkit-keyframes pusate {
-    from { color:$white; }
-    to { color: #5fdefb; }
+    from { background: rgba(0,0,0,.2); }
+    to { background: #D32E26; }
 }
 @-moz-keyframes pusate {
-    from { color:$white; }
-    to { color: #5fdefb; }
+    from { background: rgba(0,0,0,.2); }
+    to { background: #D32E26; }
 }
 @keyframes pusate {
-    from { color:$white; }
-    to { color: #5fdefb; }
+    from { background: rgba(0,0,0,.2); }
+    to { background: #D32E26; }
 }
 
 

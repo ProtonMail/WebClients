@@ -1,0 +1,31 @@
+.blackFridayModal.pm_modal .modal-dialog .modal-header h3,
+.blackFridayModal.pm_modal .modal-dialog .modal-body h3 {
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.blackFridayModal.pm_modal .modal-dialog .modal-content .modal-header h3 {
+    font-size: 2.4em;
+    padding: 20px 0 0;
+}
+
+.blackFridayModal.pm_modal .modal-dialog .modal-body h3 {
+    line-height: 1.4em;
+    font-size: 1.1em;
+    padding: 0 30px 1em 0;
+}
+
+.blackFridayModal.pm_modal .modal-dialog .modal-content .modal-body {
+    box-shadow: none
+}
+
+.blackFriday-intro,
+.blackFriday-end {
+    margin: 0;
+    line-height: 1.4em;
+    opacity: .9;
+}
+
+.blackFriday-end { margin: 20px 0 }
+
+

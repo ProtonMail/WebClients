@@ -1,0 +1,25 @@
+.navigationBlackFriday-button {
+    background: transparent;
+    border: none;
+}
+
+.navigationBlackFriday-icon,
+.navigationBlackFriday-icon:after  {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.navigationBlackFriday-icon { width: 100% }
+
+.navigationBlackFriday-icon:after {
+    content:"%";
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    font-family: arial;
+    font-weight: bold;
+    text-transform: none;
+    font-size: 11px;
+    animation: pusate 2s infinite alternate;
+}

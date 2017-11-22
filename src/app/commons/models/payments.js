@@ -1,6 +1,5 @@
 angular.module('proton.commons')
     .factory('Payment', ($http, authentication, url, brick, paymentPlansFormator) => {
-
         const requestUrl = url.build('payments');
         const transformRepBillingCycle = (data) => {
             const json = angular.fromJson(data);

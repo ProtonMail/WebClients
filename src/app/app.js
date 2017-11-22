@@ -51,6 +51,7 @@ angular.module('proton', [
     'proton.squire',
     'proton.wizard',
     'proton.contact',
+    'proton.blackFriday',
 
     // Controllers
     'proton.settings',
