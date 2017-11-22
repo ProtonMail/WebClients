@@ -41,6 +41,10 @@ angular.module('proton.contact')
                     notification.error(I18N.invalid);
                     dropzoneModal.deactivate();
                 }
+                const parameter = extension === '.vcf' ? reader : file;
+                const promise = MAP_SRC[extension](parameter)
+                    .then(() => importContactModal.deactivate());
+                networkActivityTracker.track(promise);
             };
 
             reader.readAsText(file, 'utf-8');
