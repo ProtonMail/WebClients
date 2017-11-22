@@ -1,5 +1,6 @@
 angular.module('proton.dashboard')
     .directive('subscriptionSection', ($rootScope, CONSTANTS, subscriptionModel, gettextCatalog) => {
+        const { MONTHLY, YEARLY, TWO_YEARS } = CONSTANTS.CYCLE;
         const I18N = {
             vpn: gettextCatalog.getString('VPN connections', null),
             addresses: gettextCatalog.getString('addresses', null),
@@ -8,8 +9,9 @@ angular.module('proton.dashboard')
             member: gettextCatalog.getString('user', null),
             members: gettextCatalog.getString('users', null),
             cycles: {
-                1: gettextCatalog.getString('Monthly', null),
-                12: gettextCatalog.getString('Annually', null)
+                [MONTHLY]: gettextCatalog.getString('Monthly', null),
+                [YEARLY]: gettextCatalog.getString('Annually', null),
+                [TWO_YEARS]: gettextCatalog.getString('2-years', null)
             },
             methods: {
                 card: gettextCatalog.getString('Credit card', null),

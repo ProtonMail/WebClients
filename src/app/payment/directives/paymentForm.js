@@ -110,6 +110,7 @@ angular.module('proton.payment')
 
                     const parameters = {
                         Amount: ctrl.valid.AmountDue,
+                        Cycle: ctrl.valid.Cycle,
                         Currency: ctrl.valid.Currency,
                         CouponCode: ctrl.coupon,
                         PlanIDs: params.planIDs

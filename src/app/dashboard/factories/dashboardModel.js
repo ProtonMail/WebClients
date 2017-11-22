@@ -4,8 +4,7 @@ angular.module('proton.dashboard')
         const { PLUS, PROFESSIONAL, VISIONARY, VPN_BASIC, VPN_PLUS } = CONSTANTS.PLANS.PLAN;
         const MAIL_PLANS = ['free', PLUS, PROFESSIONAL, VISIONARY];
         const { ADDRESS, MEMBER, DOMAIN, SPACE, VPN } = CONSTANTS.PLANS.ADDON;
-        const YEARLY = 12;
-        const MONTHLY = 1;
+        const { MONTHLY, YEARLY, TWO_YEARS } = CONSTANTS.CYCLE;
         const CACHE_PLAN = {};
         const CACHE_API = {};
         const filter = (amount) => $filter('currency')(amount / 100 / dashboardConfiguration.cycle(), dashboardConfiguration.currency());
@@ -194,6 +193,7 @@ angular.module('proton.dashboard')
         /**
          * Load all plans for a currency then create a cache representation
          * for them sorted by Cycle alias.
+         *  - 2-years = cycle = 24
          *  - yearly = cycle = 12
          *  - monthly = cycle = 1
          * Each key contains 4 keys with 3 maps and a list.
@@ -201,10 +201,11 @@ angular.module('proton.dashboard')
          * @return {Promise}
          */
         const loadPlans = (Currency = dashboardConfiguration.currency()) => {
-            const promise = Promise.all([ loadPlanCycle(Currency), loadPlanCycle(Currency, MONTHLY) ])
-                .then(([ yearly, monthly ]) => {
+            const promise = Promise.all([ loadPlanCycle(Currency), loadPlanCycle(Currency, MONTHLY), loadPlanCycle(Currency, TWO_YEARS) ])
+                .then(([ yearly, monthly, twoYears ]) => {
                     CACHE_PLAN[YEARLY] = angular.copy(yearly);
                     CACHE_PLAN[MONTHLY] = angular.copy(monthly);
+                    CACHE_PLAN[TWO_YEARS] = angular.copy(twoYears);
 
                     return angular.copy(CACHE_PLAN);
                 });
@@ -307,8 +308,12 @@ angular.module('proton.dashboard')
             $rootScope.$emit('dashboard', { type: 'cycle.updated', data: { cycle } });
         };
 
-        $rootScope.$on('subscription', (event, { type }) => {
-            (type === 'update') && updateVpn();
+        $rootScope.$on('subscription', (event, { type = '' }) => {
+            if (type === 'update') {
+                updateVpn();
+                changeCycle(subscriptionModel.cycle());
+                changeCurrency(subscriptionModel.currency());
+            }
         });
 
         $rootScope.$on('dashboard', (event, { type, data = {} }) => {
@@ -344,5 +349,5 @@ angular.module('proton.dashboard')
             }
         });
 
-        return { init: angular.noop, loadPlans, get, query, amount, amounts, total, filter };
+        return { init: angular.noop, loadPlans, fetchPlans, get, query, amount, amounts, total, filter };
     });

@@ -65,16 +65,3 @@
 }
 
 .tosubscribeOverview-item[data-cycle="1"] .tosubscribeOverview-price-scope { display: none }
-
-[data-valid-cycle-master="1"] {
-    [data-valid-cycle^="12"] {
-        display: none
-    }
-}
-
-[data-valid-cycle-master="12"] {
-    [data-valid-cycle="1:1"] {
-        display: none
-    }
-}
-

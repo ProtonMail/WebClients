@@ -155,7 +155,12 @@ angular.module('proton.constants', [])
         MIN_BITCOIN_AMOUNT: 500,
         BTC_DONATION_ADDRESS: '1Q1nhq1NbxPYAbw1BppwKbCqg58ZqMb9A8',
         CURRENCIES: ['USD', 'EUR', 'CHF'],
-        BILLING_CYCLE: [1, 12],
+        BILLING_CYCLE: [1, 12, 24],
+        CYCLE: {
+            MONTHLY: 1,
+            YEARLY: 12,
+            TWO_YEARS: 24
+        },
         IFRAME_SECURE_ORIGIN: 'https://secure.protonmail.com',
         INVITE_URL: 'https://protonmail.com/invite',
         DEFAULT_CURRENCY: 'EUR',

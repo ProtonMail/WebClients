@@ -1,29 +1,45 @@
 <div class="totalRows-container">
-    <label class="totalRows-label-monthly">
-        <div class="totalRows-label-monthly-left">
+    <label class="totalRows-label">
+        <div class="totalRows-label-left">
             <custom-radio data-custom-ng-model="cycle" data-custom-ng-value="1" data-custom-ng-change="onChange()"></custom-radio>
             <span class="totalRows-cycle" translate-comment="Make sure this string is short please" translate-context="Billing cycle for the dashboard" translate>Pay monthly</span>
         </div>
-        <div class="totalRows-label-monthly-right">
-            <div class="totalRows-monthly-wrapper">
+        <div class="totalRows-label-right">
+            <div class="totalRows-wrapper">
                 <strong class="totalRows-monthly-price"></strong>
                 <span translate translate-context="month price">/mo</span>
             </div>
         </div>
     </label>
-    <label class="totalRows-label-yearly">
-        <div class="totalRows-label-yearly-left">
+    <label class="totalRows-label">
+        <div class="totalRows-label-left">
             <custom-radio data-custom-ng-model="cycle" data-custom-ng-value="12" data-custom-ng-change="onChange()"></custom-radio>
             <span class="totalRows-cycle" translate-comment="Make sure this string is short please" translate-context="Billing cycle for the dashboard" translate>Pay annually</span>
         </div>
-        <div class="totalRows-label-yearly-right">
-            <div class="totalRows-yearly-wrapper">
+        <div class="totalRows-label-right">
+            <div class="totalRows-wrapper">
                 <strong class="totalRows-yearly-price"></strong>
                 <span translate translate-context="month price">/mo</span>
             </div>
-            <small class="totalRows-billed-price"></small>
+            <small class="totalRows-yearly-billed-price"></small>
             <i class="totalRows-discount">
                 <span>-20%</span>
+            </i>
+        </div>
+    </label>
+    <label class="totalRows-label totalRows-label-2-year">
+        <div class="totalRows-label-left">
+            <custom-radio data-custom-ng-model="cycle" data-custom-ng-value="24" data-custom-ng-change="onChange()"></custom-radio>
+            <span class="totalRows-cycle" translate-comment="Make sure this string is short please" translate-context="Billing cycle for the dashboard" translate>2-year plan</span>
+        </div>
+        <div class="totalRows-label-right">
+            <div class="totalRows-wrapper">
+                <strong class="totalRows-2-years-price"></strong>
+                <span translate translate-context="month price">/mo</span>
+            </div>
+            <small class="totalRows-2-years-billed-price"></small>
+            <i class="totalRows-discount">
+                <span>-33%</span>
             </i>
         </div>
     </label>

@@ -1,5 +1,5 @@
 angular.module('proton.settings')
-    .controller('DashboardController', ($rootScope, $scope, $stateParams, methods, authentication, dashboardConfiguration, subscriptionModel) => {
+    .controller('DashboardController', ($rootScope, $scope, $stateParams, blackFridayModel, methods, authentication, dashboardConfiguration, subscriptionModel, blackFridayModal) => {
         const scrollToPlans = () => $('.settings').animate({ scrollTop: $('#plans').offset().top }, 1000);
         const updateUser = () => $scope.isPaidUser = authentication.user.Subscribed;
         const updateMethods = (methods) => $scope.methods = methods;
@@ -15,6 +15,16 @@ angular.module('proton.settings')
         updateMethods(methods);
         dashboardConfiguration.set('cycle', subscriptionModel.cycle());
         dashboardConfiguration.set('currency', subscriptionModel.currency());
+
+        if (blackFridayModel.isBlackFridayPeriod(true) && !$stateParams.noBlackFridayModal) {
+            blackFridayModal.activate({
+                params: {
+                    close() {
+                        blackFridayModal.deactivate();
+                    }
+                }
+            });
+        }
 
         $scope.$on('$destroy', () => unsubscribe());
     });

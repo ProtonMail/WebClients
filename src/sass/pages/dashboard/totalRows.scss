@@ -7,6 +7,8 @@
 .totalRows-container > label  [class*='-left'],
 .totalRows-container > label  [class*='-right'] { display: flex }
 
+.totalRows-container:not(.totalRows-has-2-years) .totalRows-label-2-year { display: none }
+
 .totalRows-cycle {
     flex-grow: 1;
     min-width: 1px; /*IE*/
@@ -14,8 +16,7 @@
     margin-left: 4px;
 }
 
-.totalRows-label-monthly-right,
-.totalRows-label-yearly-right {
+.totalRows-label-right {
     display: flex;
     flex-direction: column;
     align-items: flex-end;
@@ -23,13 +24,13 @@
     width: 100%;
 }
 
-.totalRows-monthly-wrapper,
-.totalRows-yearly-wrapper {
+.totalRows-wrapper {
     text-align: right;
 }
 
 .totalRows-monthly-price,
-.totalRows-yearly-price {
+.totalRows-yearly-price,
+.totalRows-2-years-price {
     font-size: 1.1rem;
     color: $primary
 }

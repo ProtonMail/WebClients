@@ -1,0 +1,113 @@
+.blackFridayFree-container {
+    display: flex;
+    flex-direction: column;
+    padding-top: 30px;
+}
+
+.blackFridayFree-plans {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 20px;
+    margin-bottom: 20px;
+}
+
+.blackFridayFree-plan {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    border-radius: $border-radius;
+    padding: 1em;
+    background-color: $primary-extra-light; 
+    border: 2px solid $vpn
+}
+
+.blackFridayFree-mail-plan {
+    border-color: $primary;
+}
+
+.blackFridayFree-plan > p { opacity: .7 }
+
+.blackFridayFree-tag {
+    position: absolute;
+    right: -14px;
+    top: -14px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    color: $white;
+    background-color: #D12E26;
+    font-style: normal;
+    transform: scale(.9);
+
+}
+
+.blackFridayFree-title {
+    font-size: 2em;
+    color: $white;
+}
+
+.blackFridayFree-buy {
+    margin: auto auto 0 auto;
+    padding: 0px 26px;
+}
+
+.blackFridayFree-footer {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    font-weight: bold;
+}
+
+.blackFridayFree-dropdown-currency,
+.blackFridayFree-dashboard {
+    line-height: 1.2em
+}
+
+.blackFridayFree-dropdown-currency.active > i {
+    transform: rotate(180deg);
+}
+
+.blackFridayFree-currencies {
+    list-style: none;
+    padding: 0;
+    left: 20px;
+}
+
+.blackFridayFree-currencies li {
+    padding: 0;
+    border-bottom: 1px solid $primary-extra-light;
+}
+
+.blackFridayFree-currencies li button {
+    width: 100%;
+    border: 0;
+    padding: 10px;
+}
+
+.blackFridayFree-currencies li button:hover {
+    background: $primary-extra-light;
+}
+
+/* context */
+
+.blackFridayFree-mail-plan .blackFridayPrice-container::before {
+    background:  url("/assets/img/logo/logo-sign.svg") no-repeat 13px 8px / 160px, $primary;
+}
+
+.blackFridayFree-vpn-plan .blackFridayPrice-container::before {
+    background:  url("/assets/img/logo/protonvpn-sign.svg") no-repeat -6px 6px / 60px, $vpn;
+
+}
+
+.blackFridayFree-mail-vpn-plan .blackFridayPrice-container::before {
+    background:  url("/assets/img/logo/protonvpn-sign.svg") no-repeat 14px 20px / 40px, url("/assets/img/logo/logo-sign.svg") no-repeat 8px 6px / 100px, linear-gradient(to right bottom, $primary 0%,  $primary 30%,  $vpn 70%,  $vpn 100%);
+}
+
+.appConfigBody-is-mobile .blackFridayFree-plans {
+    grid-template-columns: repeat(1, 1fr);
+}
+

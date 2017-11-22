@@ -1,7 +1,7 @@
 angular.module('proton.utils')
     .filter('currency', (i18nLoader) => {
 
-        const FORMATTERS = { };
+        const FORMATTERS = {};
         const MAP = {
             USD: '$',
             EUR: '€',

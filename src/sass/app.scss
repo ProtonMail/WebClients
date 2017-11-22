@@ -231,6 +231,13 @@
 //== Promote
 @import "components/sale/index";
 
+//== Black Friday
+@import "components/blackFriday/navigationBlackFriday";
+@import "components/blackFriday/blackFridayModal";
+@import "components/blackFriday/blackFridayPrice";
+@import "components/blackFriday/blackFridayFree";
+@import "components/blackFriday/blackFridayPaid";
+
 //== Modals
 @import "components/modals/index";
 

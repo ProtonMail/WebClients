@@ -5,7 +5,7 @@
         <h2 class="tosubscribeOverview-title-price" translate-context="Title" translate>Price</h2>
     </header>
 
-    <ul class="tosubscribeOverview-list" data-valid-cycle-master="{{::ctrl.valid.Cycle}}">
+    <ul class="tosubscribeOverview-list">
         <li
             class="tosubscribeOverview-item"
             ng-repeat="plan in ctrl.plans | filter: { Type: 1 }"
@@ -74,18 +74,13 @@
             </ul>
         </li>
 
-        <li class="tosubscribeOverview-item tosubscribeOverview-total-monthly" data-valid-cycle="1:1">
-            <strong class="tosubscribeOverview-item-valid-monthly" tranlate translate-context="Title">Total per month (incl. taxes)</strong>
-            <strong>{{ ctrl.valid.Amount / 100 | currency: ctrl.valid.Currency }}</strong>
-        </li>
-
-        <li class="tosubscribeOverview-item tosubscribeOverview-total-monthly" data-valid-cycle="12:1">
+        <li class="tosubscribeOverview-item tosubscribeOverview-total-monthly" ng-hide="ctrl.valid.Cycle === 1">
             <strong class="tosubscribeOverview-item-valid-monthly" translate translate-context="Title">Total per month (incl. taxes)</strong>
-            <strong>{{ ctrl.valid.Amount / 100 / 12 | fixed:2 | currency: ctrl.valid.Currency }}</strong>
+            <strong>{{ ctrl.valid.Amount / 100 / ctrl.valid.Cycle | fixed:2 | currency: ctrl.valid.Currency }}</strong>
         </li>
 
-        <li class="tosubscribeOverview-item tosubscribeOverview-total-yearly" data-valid-cycle="12:12">
-            <strong class="tosubscribeOverview-item-valid-yearly" translate translate-context="Title">Total per year (incl. taxes)</strong>
+        <li class="tosubscribeOverview-item tosubscribeOverview-total-yearly">
+            <strong class="tosubscribeOverview-item-valid-yearly" translate translate-context="Title">Total (incl. taxes)</strong>
             <strong>{{ ctrl.valid.Amount / 100 | currency: ctrl.valid.Currency }}</strong>
         </li>
 
@@ -99,7 +94,7 @@
             <strong>{{ ctrl.valid.CouponDiscount / 100 | currency: ctrl.valid.Currency }}</strong>
         </li>
 
-        <li class="tosubscribeOverview-item" ng-if="ctrl.valid.Credit !== 0">
+        <li class="tosubscribeOverview-item" ng-if="ctrl.valid.Credit < 0">
             <span class="desc" translate translate-context="Title">Credit</span>
             <strong class="text-green">{{ ctrl.valid.Credit / 100 | currency: ctrl.valid.Currency }}</strong>
         </li>

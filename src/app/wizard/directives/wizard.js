@@ -1,5 +1,6 @@
 angular.module('proton.wizard')
-    .directive('wizard', ($rootScope, $stateParams, $timeout, $state, welcomeModal, wizardBuilder, AppModel) => {
+    .directive('wizard', ($rootScope, $stateParams, $timeout, $state, welcomeModal, blackFridayModal, blackFridayModel, wizardBuilder, AppModel, subscriptionModel, CONSTANTS) => {
+        const { MONTHLY } = CONSTANTS.CYCLE;
         return {
             restrict: 'E',
             replace: true,
@@ -14,7 +15,11 @@ angular.module('proton.wizard')
                             },
                             next() {
                                 welcomeModal.deactivate();
-                                // Start tour if not mobile mode
+
+                                if (checkBlackFriday()) {
+                                    openBlackFridayModal();
+                                }
+
                                 !AppModel.is('mobile') && tourStart();
                             }
                         }
@@ -62,6 +67,23 @@ angular.module('proton.wizard')
                 }
 
                 element.on('keydown', onKeydown);
+
+                function checkBlackFriday() {
+                    const isFree = !subscriptionModel.hasPaid('mail');
+                    const isMonthly = subscriptionModel.cycle() === MONTHLY;
+
+                    return blackFridayModel.isBlackFridayPeriod(true) && (isFree || isMonthly);
+                }
+
+                function openBlackFridayModal() {
+                    blackFridayModal.activate({
+                        params: {
+                            close() {
+                                blackFridayModal.deactivate();
+                            }
+                        }
+                    });
+                }
 
                 function tourStart() {
                     $state.go('secured.inbox');

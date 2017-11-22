@@ -63,3 +63,7 @@
     text-overflow: ellipsis;
     white-space: nowrap;
 }
+
+// context
+.navigation:not(.navigation-is-black-friday) .navigationBlackFriday { display: none }
+.navigation.navigation-is-black-friday .navigation-upgrade-item { display: none }
