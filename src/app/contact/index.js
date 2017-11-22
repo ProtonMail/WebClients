@@ -44,7 +44,9 @@ angular.module('proton.contact', ['vs-repeat'])
                         template: '<contact-details ng-if="contact" data-contact="contact"></contact-details>',
                         controller($scope, $stateParams, contactCache) {
                             contactCache.find($stateParams.id)
-                                .then((data) => $scope.contact = data);
+                                .then((data) => $scope.$applyAsync(() => {
+                                    $scope.contact = data;
+                                }));
                         }
                     }
                 }

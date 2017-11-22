@@ -44,6 +44,8 @@
     overflow: auto;
 }
 
+.contactsDetails-container:empty { display: none }
+
 .contacts-container.contacts-empty .contactsToolbar-container,
 .contacts-container.contacts-empty .contactPlaceholder-container { display: none }
 
