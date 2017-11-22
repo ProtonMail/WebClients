@@ -43,6 +43,7 @@
                 data-vs-scroll-parent=".contactList-container">
                 <tr
                     class="contactList-item"
+                    data-contact-id="{{ ::contact.ID }}"
                     ng-repeat="contact in contacts track by contact.ID">
                     <td class="text-center contactList-checkbox">
                         <custom-checkbox
