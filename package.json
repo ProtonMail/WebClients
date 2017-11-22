@@ -7,6 +7,7 @@
   "author": "Proton Technologies AG",
   "description": "Angular frontend for protonmail.com",
   "devDependencies": {
+    "asmcrypto.js": "https://github.com:vibornoff/asmcrypto.js.git#bfb14fdb4cecebd1ae260ae78e3663b8273120e1",
     "angular-mocks": "^1.6.2",
     "autoprefixer": "^6.7.5",
     "babel-plugin-istanbul": "^4.1.4",
@@ -60,6 +61,7 @@
     "load-grunt-tasks": "^3.5.0",
     "lodash": "^4.6.1",
     "node-sass": "^4.5.3",
+    "qrcodejs2": "0.0.2",
     "semver": "^5.3.0",
     "serve-static": "^1.10.2"
   },
