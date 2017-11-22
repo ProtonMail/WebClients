@@ -59,50 +59,13 @@ angular.module('proton', [
     'proton.payment',
     'proton.formUtils'
 ])
-
-/**
- * Check if the current browser owns some requirements
- */
-    .config(() => {
-
-        const isGoodPrngAvailable = () => {
-            if (typeof window !== 'undefined' && window.crypto && window.crypto.getRandomValues) {
-                return true;
-            } else if (typeof window !== 'undefined' && typeof window.msCrypto === 'object' && typeof window.msCrypto.getRandomValues === 'function') {
-                return true;
-            }
-
-            return false;
-        };
-
-        const isSessionStorageAvailable = () => {
-            return (typeof (sessionStorage) !== 'undefined');
-        };
-
-        if (isSessionStorageAvailable() === false) {
-            alert('Error: sessionStorage is required to use ProtonMail.');
-            setTimeout(() => {
-                window.location = 'https://protonmail.com/support/knowledge-base/sessionstorage/';
-            }, 1000);
-        }
-
-        if (isGoodPrngAvailable() === false) {
-            alert('Error: a PRNG is required to use ProtonMail.');
-            setTimeout(() => {
-                window.location = 'https://protonmail.com/support/knowledge-base/prng/';
-            }, 1000);
-        }
-    })
     .config((urlProvider, CONFIG, notificationProvider) => {
         urlProvider.setBaseUrl(CONFIG.apiUrl);
         notificationProvider.template('templates/notifications/base.tpl.html');
     })
-
     .run((
-        $document,
         $rootScope,
         $state,
-        $window,
         logoutManager, // Keep the logoutManager here to lunch it
         authentication,
         networkActivityTracker,

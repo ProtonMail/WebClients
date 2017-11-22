@@ -14,18 +14,12 @@
                         <label for="bug_os" translate translate-context="Title">Operating system</label>
                     </div>
                     <div class="col-1-4">
-                        <span class="pm_select">
-                            <select ng-model="ctrl.form.OS" name="bug_os" id="bug_os">
-                                <option disabled value="" translate translate-context="bug report modal select dropdown options">Choose</option>
-                                <option value="osx">Mac OSX</option>
-                                <option value="ios">iOS</option>
-                                <option value="android">Android</option>
-                                <option value="windows">Windows</option>
-                                <option value="linux">Linux</option>
-                                <option value="other" translate translate-context="bug report modal select dropdown options">Other</option>
-                            </select>
-                            <i class="fa fa-angle-down"></i>
-                        </span>
+                        <input
+                            type="text"
+                            placeholder-translate="OS Name"
+                            name="bug_os"
+                            id="bug_os"
+                            ng-model="ctrl.form.OS">
                     </div>
                     <div class="col-1-4">
                         <label for="bug_os_version" translate translate-context="Title">OS version</label>
