@@ -73,8 +73,7 @@ angular.module('proton.contact')
                     const action = target.getAttribute('data-action');
 
                     if (action === 'showContact') {
-                        const $item = angular.element(target).closest(`.${ITEM_CLASS}`);
-                        $state.go('secured.contacts.details', { id: $item.attr('data-contact-id') });
+                        $state.go('secured.contacts.details', { id: target.dataset.contactId });
                     }
 
                     if (action === 'toggleSort') {

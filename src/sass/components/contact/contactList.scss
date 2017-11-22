@@ -21,6 +21,8 @@
     }
 }
 
+[class*="contactList-item-"] span { pointer-events: none }
+
 .contactList-container .pm_table {
     > * { cursor: pointer }
     table { margin: 0 }
