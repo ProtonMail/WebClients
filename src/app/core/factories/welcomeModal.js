@@ -3,7 +3,7 @@ angular.module('proton.core')
         function saveDisplayName(DisplayName) {
             const promise = settingsApi.display({ DisplayName });
 
-            authentication.user.DisplayName = this.displayName;
+            authentication.user.DisplayName = DisplayName;
             networkActivityTracker.track(promise);
         }
         return pmModal({
