@@ -8,7 +8,7 @@ angular.module('proton.dashboard')
                 }
 
                 if (cycle === TWO_YEARS) {
-                    return gettextCatalog.getString('Billed as {{amount}} /2y', { amount }, 'Info');
+                    return gettextCatalog.getString('Billed as {{amount}} /2-yr', { amount }, 'Info');
                 }
 
                 return '';
