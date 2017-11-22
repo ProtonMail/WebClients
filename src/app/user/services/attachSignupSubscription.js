@@ -9,12 +9,12 @@ angular.module('proton.user')
         };
 
         const processPlan = async () => {
-            const { Name, Amount, Currency, ID } = signupModel.get('temp.plan') || {};
+            const { Name, Amount, Currency, Cycle, ID } = signupModel.get('temp.plan') || {};
 
             // if the user subscribed to a plan during the signup process
             if (['plus', 'visionary'].includes(Name) && Amount === authentication.user.Credit) {
                 const subscribe = () => {
-                    return Payment.subscribe({ Amount: 0, Currency, PlanIDs: [ ID ] })
+                    return Payment.subscribe({ Amount: 0, Currency, Cycle, PlanIDs: [ ID ] })
                         .then(({ data = {} }) => {
                             if (data.Error) {
                                 throw new Error(data.Error);
