@@ -774,7 +774,7 @@ msgid "Add contact"
 msgstr ""
 
 #. payment modal add coupon button
-#: src/app/templates/payment/paymentForm.tpl.html:75
+#: src/app/templates/payment/paymentForm.tpl.html:74
 msgctxt "Action"
 msgid "Add coupon"
 msgstr ""
@@ -1231,7 +1231,7 @@ msgid "Application"
 msgstr ""
 
 #: src/app/templates/directives/dropdownLabels.tpl.html:65
-#: src/app/templates/payment/paymentForm.tpl.html:90
+#: src/app/templates/payment/paymentForm.tpl.html:89
 msgctxt "Action"
 msgid "Apply"
 msgstr ""
@@ -1554,7 +1554,7 @@ msgstr ""
 
 #: src/app/dashboard/directives/totalRows.js:11
 msgctxt "Info"
-msgid "Billed as {{amount}} /2y"
+msgid "Billed as {{amount}} /2-yr"
 msgstr ""
 
 #: src/app/dashboard/directives/totalRows.js:7
@@ -1658,7 +1658,7 @@ msgctxt "Info"
 msgid "By clicking Setup Account, you agree to abide by"
 msgstr ""
 
-#: src/app/templates/payment/paymentForm.tpl.html:94
+#: src/app/templates/payment/paymentForm.tpl.html:93
 msgctxt "Info"
 msgid "By clicking Submit, you agree to abide by"
 msgstr ""
@@ -1760,7 +1760,7 @@ msgctxt "Label"
 msgid "Card Number"
 msgstr ""
 
-#: src/app/payment/services/paymentUtils.js:4
+#: src/app/payment/services/paymentUtils.js:5
 msgctxt "Payment method"
 msgid "Cash"
 msgstr ""
@@ -2378,7 +2378,7 @@ msgctxt "Title"
 msgid "Coupon"
 msgstr ""
 
-#: src/app/templates/payment/paymentForm.tpl.html:82
+#: src/app/templates/payment/paymentForm.tpl.html:81
 msgctxt "Payment form input label"
 msgid "Coupon"
 msgstr ""
@@ -2471,7 +2471,7 @@ msgctxt "Invoice type display as badge"
 msgid "Credit"
 msgstr ""
 
-#: src/app/payment/services/paymentUtils.js:5
+#: src/app/payment/services/paymentUtils.js:6
 msgctxt "Payment method"
 msgid "Credit Card"
 msgstr ""
@@ -4000,7 +4000,7 @@ msgstr ""
 
 #: src/app/templates/blackFriday/blackFridayModal.tpl.html:9
 msgctxt "Info"
-msgid "For a strictly limited period between Black Friday and Cyber Monday (November 24-27), we are having the first ever sale in ProtonMail's history! For these 4 days only, it is possible to get up to 45% discount for ProtonMail and ProtonVPN special 2-year paid plans. Once subscribed to this promotion, you keep the discount as long as your subscription is active."
+msgid "For a strictly limited period between Black Friday and Cyber Monday (November 24-27), we are having the first ever sale in ProtonMail's history! For these 4 days only, it is possible to get up to 45% off regular price for ProtonMail and ProtonVPN with our special 2-year plans. Once subscribed to this promotion, you keep the discount as long as your subscription is active."
 msgstr ""
 
 #: src/app/formUtils/directives/cvcTooltip.js:4
@@ -6612,7 +6612,7 @@ msgstr ""
 
 #: src/app/templates/blackFriday/blackFridayFree.tpl.html:7
 msgctxt "Info"
-msgid "ProtonMail Plus adds a number of powerful features to your secure inbox,  5GB storage, 5 extra addresses, Filters, Folders, Labels, IMAP/SMTP support (beta)."
+msgid "ProtonMail Plus adds a number of powerful features to your secure inbox: 5GB storage, 5 extra addresses, Filters, Folders, Labels, IMAP/SMTP support (beta), use your own domain name."
 msgstr ""
 
 #: src/app/templates/partials/sidebar-responsive.tpl.html:30
@@ -6655,7 +6655,7 @@ msgctxt "Title"
 msgid "ProtonMail's Terms and Conditions"
 msgstr ""
 
-#: src/app/templates/payment/paymentForm.tpl.html:94
+#: src/app/templates/payment/paymentForm.tpl.html:93
 msgctxt "Link"
 msgid "ProtonMail's Terms and Conditions"
 msgstr ""
@@ -6681,7 +6681,7 @@ msgstr ""
 
 #: src/app/templates/blackFriday/blackFridayFree.tpl.html:14
 msgctxt "Info"
-msgid "ProtonVPN encrypts your internet connection, ensuring your online activity stays private. 100+ servers in 14 countries. Secure core network, Tor integration, protect 5 devices."
+msgid "ProtonVPN encrypts your internet connection, ensuring your online activity stays private. 100+ servers in 14 countries. Secure core network, Tor integration, protect up to 5 devices."
 msgstr ""
 
 #: src/app/templates/vpn/vpnView.tpl.html:74
@@ -8286,7 +8286,7 @@ msgstr ""
 
 #: src/app/templates/modals/pay.tpl.html:88
 #: src/app/templates/payment/donation.tpl.html:103
-#: src/app/templates/payment/paymentForm.tpl.html:64
+#: src/app/templates/payment/paymentForm.tpl.html:63
 msgctxt "Info"
 msgid "To pay via Cash, please email us at <strong>contact@protonmail.ch</strong> for instructions."
 msgstr ""
