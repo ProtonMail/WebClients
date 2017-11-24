@@ -232,9 +232,7 @@ angular.module('proton.dashboard')
          * @param  {Object}
          * @return {Integer}
          */
-        const amount = ({ plan, addon, cycle = dashboardConfiguration.cycle() }) => {
-            const config = dashboardConfiguration.get();
-
+        const amount = ({ config = dashboardConfiguration.get(), plan, addon, cycle = dashboardConfiguration.cycle() }) => {
             switch (addon) {
                 case 'vpn':
                     return CACHE_PLAN[cycle].amounts[VPN] * config[plan].vpn;
@@ -269,31 +267,35 @@ angular.module('proton.dashboard')
          * @return {[type]}       [description]
          */
         const total = (plan, cycle) => {
+            const config = dashboardConfiguration.get();
+            const hasVpn = config[plan].vpnbasic || config[plan].vpnplus;
             let result = 0;
 
             switch (plan) {
                 case 'free':
-                    result += amount({ plan, cycle, addon: 'vpnbasic' });
-                    result += amount({ plan, cycle, addon: 'vpnplus' });
+                    result += amount({ config, plan, cycle, addon: VPN_BASIC });
+                    result += amount({ config, plan, cycle, addon: VPN_PLUS });
                     break;
                 case 'plus':
-                    result += amount({ plan, cycle });
-                    result += amount({ plan, cycle, addon: 'address' });
-                    result += amount({ plan, cycle, addon: 'space' });
-                    result += amount({ plan, cycle, addon: 'domain' });
-                    result += amount({ plan, cycle, addon: 'vpnbasic' });
-                    result += amount({ plan, cycle, addon: 'vpnplus' });
+                    result += amount({ config, plan, cycle });
+                    result += amount({ config, plan, cycle, addon: 'address' });
+                    result += amount({ config, plan, cycle, addon: 'space' });
+                    result += amount({ config, plan, cycle, addon: 'domain' });
+                    result += amount({ config, plan, cycle, addon: VPN_BASIC });
+                    result += amount({ config, plan, cycle, addon: VPN_PLUS });
+                    result *= hasVpn ? 0.8 : 1; // Simulate discount bundle
                     break;
                 case 'professional':
-                    result += amount({ plan, cycle });
-                    result += amount({ plan, cycle, addon: 'member' });
-                    result += amount({ plan, cycle, addon: 'domain' });
-                    result += amount({ plan, cycle, addon: 'vpnbasic' });
-                    result += amount({ plan, cycle, addon: 'vpnplus' });
-                    result += amount({ plan, cycle, addon: 'vpn' });
+                    result += amount({ config, plan, cycle });
+                    result += amount({ config, plan, cycle, addon: 'member' });
+                    result += amount({ config, plan, cycle, addon: 'domain' });
+                    result += amount({ config, plan, cycle, addon: VPN_BASIC });
+                    result += amount({ config, plan, cycle, addon: VPN_PLUS });
+                    result += amount({ config, plan, cycle, addon: 'vpn' });
+                    result *= hasVpn ? 0.8 : 1; // Simulate discount bundle
                     break;
                 case 'visionary':
-                    result += amount({ plan: 'visionary', cycle });
+                    result += amount({ config, plan, cycle });
                     break;
             }
 
