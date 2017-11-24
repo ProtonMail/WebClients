@@ -15,7 +15,7 @@
             <header class="tosubscribeOverview-item-header">
                 <h3 class="tosubscribeOverview-item-title">{{ ::plan.Title }}</h3>
                 <strong class="tosubscribeOverview-price-monthly">{{ plan.Amount / 100 | currency: plan.Currency }}</strong>
-                <strong class="tosubscribeOverview-price-yearly">{{ plan.Amount / 100 / 12 | fixed: 2 | currency: plan.Currency }}/mo</strong>
+                <strong class="tosubscribeOverview-price-yearly">{{ plan.Amount / 100 / plan.Cycle | fixed: 2 | currency: plan.Currency }}/mo</strong>
             </header>
 
             <ul class="tosubscribeOverview-list-about">
