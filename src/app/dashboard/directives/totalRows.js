@@ -2,8 +2,16 @@ angular.module('proton.dashboard')
     .directive('totalRows', ($filter, $rootScope, blackFridayModel, CONSTANTS, dashboardConfiguration, dashboardModel, gettextCatalog, subscriptionModel) => {
         const { MONTHLY, YEARLY, TWO_YEARS } = CONSTANTS.CYCLE;
         const I18N = {
-            billedAs(amount) {
-                return gettextCatalog.getString('Billed as {{amount}} /yr', { amount }, 'Info');
+            billedAs(amount, cycle) {
+                if (cycle === YEARLY) {
+                    return gettextCatalog.getString('Billed as {{amount}} /yr', { amount }, 'Info');
+                }
+
+                if (cycle === TWO_YEARS) {
+                    return gettextCatalog.getString('Billed as {{amount}} /2y', { amount }, 'Info');
+                }
+
+                return '';
             }
         };
 
@@ -37,8 +45,8 @@ angular.module('proton.dashboard')
                         monthly.text(amount(plan, MONTHLY, dashboardConfiguration.currency(), MONTHLY));
                         yearly.text(amount(plan, YEARLY, dashboardConfiguration.currency(), YEARLY));
                         twoYears.text(amount(plan, TWO_YEARS, dashboardConfiguration.currency(), TWO_YEARS));
-                        yearlyBilled.text(I18N.billedAs(amount(plan, YEARLY, dashboardConfiguration.currency(), MONTHLY)));
-                        twoYearsBilled.text(I18N.billedAs(amount(plan, TWO_YEARS, dashboardConfiguration.currency(), MONTHLY)));
+                        yearlyBilled.text(I18N.billedAs(amount(plan, YEARLY, dashboardConfiguration.currency(), MONTHLY), YEARLY));
+                        twoYearsBilled.text(I18N.billedAs(amount(plan, TWO_YEARS, dashboardConfiguration.currency(), MONTHLY), TWO_YEARS));
                         scope.cycle = dashboardConfiguration.cycle();
                     });
                 }
