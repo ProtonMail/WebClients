@@ -35,7 +35,9 @@ angular.module('proton.core')
                                 if (data.Code === 1000) {
                                     return data.PaymentMethod;
                                 }
-                                throw new Error(data.Error);
+                            })
+                            .catch(({ data = {} }) => {
+                                throw Error(data.Error);
                             });
                     }
                     return Promise.resolve();

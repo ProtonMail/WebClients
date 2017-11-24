@@ -15,10 +15,8 @@ angular.module('proton.user')
             if (['plus', 'visionary'].includes(Name) && Amount === authentication.user.Credit) {
                 const subscribe = () => {
                     return Payment.subscribe({ Amount: 0, Currency, Cycle, PlanIDs: [ ID ] })
-                        .then(({ data = {} }) => {
-                            if (data.Error) {
-                                throw new Error(data.Error);
-                            }
+                        .catch(({ data = {} }) => {
+                            throw Error(data.Error);
                         });
                 };
 
@@ -52,10 +50,8 @@ angular.module('proton.user')
             // We save the payment method used during the subscription
             if (method.Type === 'card') {
                 return Payment.updateMethod(method)
-                    .then(({ data = {} }) => {
-                        if (data.Error) {
-                            throw new Error(data.Error);
-                        }
+                    .catch(({ data = {} } = {}) => {
+                        throw Error(data.Error);
                     });
             }
         };

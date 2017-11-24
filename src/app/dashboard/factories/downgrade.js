@@ -14,10 +14,12 @@ angular.module('proton.dashboard')
                     if (data.Code === 1000) {
                         return data;
                     }
-                    throw new Error(data.Error);
                 })
                 .then(() => eventManager.call())
-                .then(() => subscriptionModel.set(FREE_PLAN));
+                .then(() => subscriptionModel.set(FREE_PLAN))
+                .catch(({ data = {} } = {}) => {
+                    throw Error(data.Error);
+                });
         }
 
         return () => {

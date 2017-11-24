@@ -78,20 +78,17 @@ angular.module('proton.settings')
             _.each($scope.methods, (method, index) => { order.push(index + 1); });
             order.splice(to, 0, order.splice(from, 1)[0]);
 
-            networkActivityTracker.track(Payment.order({
-                Order: order
-            }).then((result) => {
-                if (result.data && result.data.Code === 1000) {
-                    $scope.methods.splice(to, 0, $scope.methods.splice(from, 1)[0]);
-                    notification.success(gettextCatalog.getString('Payment method updated', null, 'Payment'));
-                } else if (result.data && result.data.Error) {
-                    notification.error(result.data.Error);
-                } else {
-                    notification.error(gettextCatalog.getString('Unable to save your changes, please try again.', null, 'Error'));
-                }
-            }, () => {
-                notification.error(gettextCatalog.getString('Unable to save your changes, please try again.', null, 'Error'));
-            }));
+            const promise = Payment.order({ Order: order })
+                .then(({ data = {} } = {}) => {
+                    if (data.Code === 1000) {
+                        $scope.methods.splice(to, 0, $scope.methods.splice(from, 1)[0]);
+                        notification.success(gettextCatalog.getString('Payment method updated', null, 'Payment'));
+                    }
+                    throw new Error(gettextCatalog.getString('Unable to save your changes, please try again.', null, 'Error'));
+                });
+
+            networkActivityTracker.track(promise);
+
         };
 
         $scope.delete = function (method) {
@@ -108,19 +105,17 @@ angular.module('proton.settings')
                                 if (data.Code === 1000) {
                                     return paymentModel.getMethods(true);
                                 }
-
-                                if (data.Error) {
-                                    throw new Error(data.Error);
-                                }
                             })
                             .then(confirmModal.deactivate)
                             .then(() => {
                                 $scope.methods.splice($scope.methods.indexOf(method), 1);
                                 notification.success(gettextCatalog.getString('Payment method deleted', null, 'Payment'));
                             })
-                            .catch((e) => {
+                            .catch((error) => {
+                                const { data = {} } = error;
                                 confirmModal.deactivate();
-                                notification.error(e.message);
+                                error.message && notification.error(error.message);
+                                data.Error && notification.error(data.Error);
                             });
                         networkActivityTracker.track(promise);
                     },

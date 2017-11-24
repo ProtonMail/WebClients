@@ -8,11 +8,9 @@ angular.module('proton.payment')
 
         const checkInvoice = ({ ID } = {}) => {
             return Payment.check(ID)
-                .then(({ data }) => {
-                    if (data.Error) {
-                        throw new Error(data.Error);
-                    }
-                    return data;
+                .then(({ data }) => data)
+                .catch(({ data = {} } = {}) => {
+                    throw Error(data.Error);
                 });
         };
 
