@@ -2,7 +2,7 @@ angular.module('proton.blackFriday')
     .factory('blackFridayModel', ($rootScope, authentication, CONSTANTS, dashboardModel, networkActivityTracker, Payment, paymentModal, subscriptionModel, paymentModel) => {
         const { PAID_MEMBER_ROLE, CYCLE, PLANS, BLACK_FRIDAY_INTERVAL } = CONSTANTS;
         const { TWO_YEARS } = CYCLE;
-        const { PLUS, VPN_PLUS, VISIONARY } = PLANS.PLAN;
+        const { PLUS, VPN_PLUS } = PLANS.PLAN;
         const CACHE = {};
         const BLACK_FRIDAY_ITEM = 'protonmail_black_friday';
         const inInterval = () => moment().isBetween('2017-11-24', '2017-11-28');
