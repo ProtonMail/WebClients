@@ -233,7 +233,8 @@ angular.module('proton.dashboard')
          * @return {Integer}
          */
         const amount = ({ config = dashboardConfiguration.get(), plan, addon, cycle = dashboardConfiguration.cycle() }) => {
-            const bundleCoef = (plan === PLUS || plan === PROFESSIONAL) && (config[plan].vpnbasic || config[plan].vpnplus) ? 0.8 : 1; // Simulate discount bundle
+            // Simulate discount bundle
+            const bundleCoef = (cycle === YEARLY || cycle === TWO_YEARS) && (plan === PLUS || plan === PROFESSIONAL) && (config[plan].vpnbasic || config[plan].vpnplus) ? 0.8 : 1;
 
             switch (addon) {
                 case 'vpn':
