@@ -1,5 +1,5 @@
 angular.module('proton.utils')
-    .filter('currency', (i18nLoader) => {
+    .filter('currency', () => {
 
         const FORMATTERS = {};
         const MAP = {
@@ -11,7 +11,7 @@ angular.module('proton.utils')
         function fallbackFormat(amount = 0, currency = '') {
 
             const symbol = MAP[currency] || currency;
-            const value = Number(amount);
+            const value = Number(amount).toFixed(2);
 
             if (currency === 'USD') {
                 // Negative amount, - is before the devise
@@ -22,28 +22,7 @@ angular.module('proton.utils')
             return `${value} ${symbol}`.trim();
         }
 
-        function getFormatter(currency) {
-
-            const currencyLocale = currency === 'USD' ? 'en' : i18nLoader.langCountry;
-
-            try {
-                const formatter = new Intl.NumberFormat(currencyLocale, {
-                    style: 'currency',
-                    currency,
-                    minimumFractionDigits: 0,
-                    maximumFractionDigits: 2
-                });
-
-                if (!formatter.format) {
-                    return (amount) => fallbackFormat(amount, currency);
-                }
-
-                return formatter.format;
-
-            } catch (e) {
-                return (amount) => fallbackFormat(amount, currency);
-            }
-        }
+        const getFormatter = (currency) => (amount) => fallbackFormat(amount, currency);
 
         return (amount, currency) => {
 
