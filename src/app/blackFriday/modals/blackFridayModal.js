@@ -14,7 +14,7 @@ angular.module('proton.blackFriday')
                 });
 
                 this.loaded = false;
-                this.isFreeUser = !subscriptionModel.hasPaid('mail');
+                this.isFreeUser = !authentication.user.Subscribed;
                 this.isPaidUser = authentication.user.Subscribed;
                 this.close = () => {
                     blackFridayModel.saveClose();
