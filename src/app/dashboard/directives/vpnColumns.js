@@ -1,6 +1,7 @@
 angular.module('proton.dashboard')
     .directive('vpnColumns', ($rootScope, CONSTANTS, dashboardConfiguration, dashboardModel, customVpnModel) => {
         const { VPN_BASIC, VPN_PLUS } = CONSTANTS.PLANS.PLAN;
+        const { MONTHLY } = CONSTANTS.CYCLE;
         const VPN_BASIC_SELECTED_CLASS = 'vpnColumns-vpnbasic-selected';
         const VPN_PLUS_SELECTED_CLASS = 'vpnColumns-vpnplus-selected';
 
@@ -29,7 +30,7 @@ angular.module('proton.dashboard')
             templateUrl: 'templates/dashboard/vpnColumns.tpl.html',
             link(scope, element) {
                 const amounts = dashboardModel.amounts();
-                const cycle = dashboardConfiguration.cycle() === 12 ? '/mo' : '';
+                const cycle = dashboardConfiguration.cycle() === MONTHLY ? '' : '/mo';
                 const update = () => {
                     element.removeClass(`${VPN_BASIC_SELECTED_CLASS} ${VPN_PLUS_SELECTED_CLASS}`);
                     customVpnModel.get('vpnbasic') && element.addClass(VPN_BASIC_SELECTED_CLASS);
