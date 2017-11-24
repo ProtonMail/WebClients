@@ -113,17 +113,17 @@ angular.module('proton.user')
                         set('temp.method', opt.Payment);
                         return data;
                     }
-
-                    if (data.Error) {
-                        // We were unable to successfully charge your card. Please try a different card or contact your bank for assistance.
-                        throw new Error(data.Error);
-                    }
                 })
-                .catch((error) => {
-                    dispatch('payment.verify.error', { error });
-                    throw error;
+                .catch(({ data = {} } = {}) => {
+                    // We were unable to successfully charge your card. Please try a different card or contact your bank for assistance.
+                    if (data.Error) {
+                        dispatch('payment.verify.error', { error: data.Error });
+                        throw data.Error;
+                    }
                 });
+
             networkActivityTracker.track(promise);
+
             return promise;
         }
 

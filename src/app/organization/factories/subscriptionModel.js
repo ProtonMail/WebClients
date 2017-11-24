@@ -61,7 +61,11 @@ angular.module('proton.organization')
                         set(data.Subscription);
                         return get();
                     }
-                    throw new Error(data.Error || ERROR_SUBSCRIPTION);
+                    throw new Error(ERROR_SUBSCRIPTION);
+                })
+                .catch((error) => {
+                    const { data = {} } = error;
+                    throw Error(data.Error || error);
                 });
         }
 

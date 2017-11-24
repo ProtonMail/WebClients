@@ -73,10 +73,6 @@ angular.module('proton.blackFriday')
                 .then((PlanIDs) => {
                     return Payment.valid({ Cycle: TWO_YEARS, Currency: CACHE.currency, PlanIDs, Coupon: subscriptionModel.coupon() })
                         .then(({ data: valid = {} } = {}) => {
-                            if (valid.Error) {
-                                throw new Error(valid.Error);
-                            }
-
                             paymentModal.activate({
                                 params: {
                                     planIDs: PlanIDs,
@@ -87,6 +83,9 @@ angular.module('proton.blackFriday')
                                 }
                             });
 
+                        })
+                        .catch(({ data = {} } = {}) => {
+                            throw Error(data.Error);
                         });
                 });
 

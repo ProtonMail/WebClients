@@ -121,11 +121,6 @@ angular.module('proton.dashboard')
                 Coupon: subscriptionModel.coupon()
             })
                 .then(({ data: valid = {} } = {}) => {
-
-                    if (valid.Error) {
-                        throw new Error(valid.Error);
-                    }
-
                     paymentModal.activate({
                         params: {
                             planIDs: PlanIDs,
@@ -135,7 +130,9 @@ angular.module('proton.dashboard')
                             }
                         }
                     });
-
+                })
+                .catch(({ data = {} } = {}) => {
+                    throw Error(data.Error);
                 });
 
             networkActivityTracker.track(promise);
@@ -150,11 +147,11 @@ angular.module('proton.dashboard')
 
             return Payment.plans(currency, cycle)
                 .then(({ data = {} }) => {
-                    if (data.Code !== 1000) {
-                        throw new Error(data.Error);
-                    }
                     CACHE_API[key] = data;
                     return data;
+                })
+                .catch(({ data = {} } = {}) => {
+                    throw data.Error;
                 });
         };
 

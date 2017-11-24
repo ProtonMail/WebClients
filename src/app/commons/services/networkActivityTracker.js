@@ -64,6 +64,7 @@ angular.module('proton.commons')
                 }
 
                 if (angular.isObject(error) && !error.noNotify) {
+                    const { data = {} } = error;
                     let message;
 
                     if (error.message) {
@@ -72,6 +73,8 @@ angular.module('proton.commons')
                         message = error.Error;
                     } else if (error.error_description) {
                         message = error.error_description;
+                    } else if (data.Error) {
+                        message = data.Error;
                     } else {
                         message = 'An error has occurred. <br> Please try again or refresh the page.';
                     }

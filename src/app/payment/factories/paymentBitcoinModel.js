@@ -28,17 +28,12 @@ angular.module('proton.payment')
             }
 
             const promise = Payment.btc(amount, currency)
-                .then(({ data = {} }) => {
-                    if (data.Error) {
-                        throw new Error(data.Error);
-                    }
-                    return data;
-                })
+                .then(({ data = {} }) => data)
                 .then((data) => (set('payment', data), data))
                 .then((data) => dispatch('bitcoin.success', data))
-                .catch((error) => {
-                    dispatch('bitcoin.error', error);
-                    throw error;
+                .catch(({ data = {} } = {}) => {
+                    dispatch('bitcoin.error', data.Error);
+                    throw data.Error;
                 });
 
             networkActivityTracker.track(promise);

@@ -14,13 +14,11 @@ angular.module('proton.payment')
 
         const loadStatus = () => {
             return Payment.status()
-                .then(({ data = {} }) => {
-                    if (data.Error) {
-                        throw new Error(data.Error);
-                    }
-                    return data;
-                })
-                .then((data) => set('status', data));
+                .then(({ data = {} }) => data)
+                .then((data) => set('status', data))
+                .catch(({ data = {} } = {}) => {
+                    throw new Error(data.Error);
+                });
         };
 
 
@@ -29,13 +27,11 @@ angular.module('proton.payment')
                 return Promise.resolve([]);
             }
             return Payment.methods()
-                .then(({ data = {} }) => {
-                    if (data.Error) {
-                        throw new Error(data.Error);
-                    }
-                    return data.PaymentMethods;
-                })
-                .then((data) => set('methods', data));
+                .then(({ data = {} }) => data.PaymentMethods)
+                .then((data) => set('methods', data))
+                .catch(({ data = {} } = {}) => {
+                    throw Error(data.Error);
+                });
         };
 
         const load = (type, cb) => (refresh, data) => {
@@ -60,7 +56,9 @@ angular.module('proton.payment')
                     if (data.Code === 1000) {
                         return data;
                     }
-                    throw new Error(data.Error || I18N.SUBSCRIBE_ERROR);
+                })
+                .catch(({ data = {} } = {}) => {
+                    throw Error(data.Error || I18N.SUBSCRIBE_ERROR);
                 });
         }
 
@@ -70,9 +68,7 @@ angular.module('proton.payment')
                     if (data.CouponDiscount === 0) {
                         throw new Error(I18N.COUPON_INVALID);
                     }
-                    if (data.Error) {
-                        throw new Error(data.Error);
-                    }
+
                     if (data.Code === 1000) {
                         return data;
                     }
@@ -80,8 +76,14 @@ angular.module('proton.payment')
                 .then((data) => {
                     notification.success(I18N.COUPON_SUCCESS);
                     return data;
+                })
+                .catch((error) => {
+                    const { data = {} } = error;
+                    throw new Error(data.Error || error);
                 });
+
             networkActivityTracker.track(promise);
+
             return promise;
         }
 

@@ -7,12 +7,12 @@ angular.module('proton.payment')
 
         const pay = (ID, options = {}) => {
             const promise = Payment.pay(ID, options)
-                .then(({ data = {} }) => {
-                    if (data.Error) {
-                        throw new Error(data.Error);
-                    }
+                .catch(({ data = {} } = {}) => {
+                    throw Error(data.Error);
                 });
+
             networkActivityTracker.track(promise);
+
             return promise;
         };
 

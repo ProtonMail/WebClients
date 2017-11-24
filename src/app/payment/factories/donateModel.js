@@ -2,6 +2,9 @@ angular.module('proton.payment')
     .factory('donateModel', (Payment, networkActivityTracker, gettextCatalog, notification, $rootScope) => {
 
         const I18N = {
+            credit: {
+                error: gettextCatalog.getString('Error while processing credit.', null, 'Donation modal')
+            },
             donation: {
                 success: gettextCatalog.getString('Your support is essential to keeping ProtonMail running. Thank you for supporting internet privacy!', null, 'Donation modal'),
                 error: gettextCatalog.getString('Error while processing donation.', null, 'Donation modal')
@@ -19,7 +22,7 @@ angular.module('proton.payment')
                     if (data.Code === 1000) {
                         return I18N.donation.success;
                     }
-                    throw new Error(data.Error || I18N.donation.error);
+                    throw new Error(I18N.donation.error);
                 });
             networkActivityTracker.track(promise);
             return promise;
@@ -31,7 +34,7 @@ angular.module('proton.payment')
                     if (data.Code === 1000) {
                         return I18N.topUp.success;
                     }
-                    throw new Error(data.Error);
+                    throw new Error(I18N.credit.error);
                 });
 
             networkActivityTracker.track(promise);

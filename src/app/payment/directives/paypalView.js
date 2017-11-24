@@ -51,13 +51,16 @@ angular.module('proton.payment')
                             if (data.Code === 22802) {
                                 scope.paypalNetworkError = true;
                             }
-                            throw new Error(data.Error || I18N.down);
+                            throw new Error(I18N.down);
                         })
                         .then(({ ApprovalURL }) => scope.approvalURL = ApprovalURL)
                         .catch((error) => {
+                            const { data = {} } = error;
+
                             deferred = null;
                             if (!networkUtils.isCancelledRequest(error)) {
                                 error.message && notification.error(error);
+                                data.Error && notification.error(data.Error);
                             }
                         });
                 };
