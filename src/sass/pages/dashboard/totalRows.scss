@@ -1,6 +1,5 @@
 .totalRows-container > label {
     display: flex;
-    padding-right: 15px;
     cursor: pointer;
 }
 
@@ -40,29 +39,19 @@
 .totalRows-container .customRadio-container { width: auto }
 
 .totalRows-label-yearly { position: relative }
+
 .totalRows-discount {
-    position: absolute;
-    z-index: 5;
-    right: -10px;
-    top: 0px;
-    margin: 0;
-    width: 0;
-    height: 0;
-    border-style: solid;
-    border-width: 0 3rem 3rem 0;
-    border-color: transparent $green transparent transparent;
-    color: $white;
-    font-style: normal;
-    overflow: visible;
-    > span {
-        position: absolute;
-        width: 100%;
-        display: block;
-        font-weight: 700;
-        text-align: center;
-        top: -.2rem;
-        right: -1.23rem;
-        transform: rotate(45deg);
+    margin-left: 4px;
+    padding: 1px 3px;
+    font-weight: bold;
+    font-size: .85em;
+    color: $discount;
+    border: 1px solid $discount;
+    border-radius: $border-radius;
+
+    &:hover {
+        color: $white;
+        background-color: $discount;
     }
 }
 
@@ -85,3 +74,11 @@ body.appConfigBody-is-mobile {
 
     .totalRows-container .customRadio-container { transform: scale(.8) }
 }
+
+// context
+.plusColumn-container .vpnRow-has-vpn + .totalRows-container .totalRows-discount-without-vpn,
+.professionalColumn-container .vpnRow-has-vpn + .totalRows-container .totalRows-discount-without-vpn { display: none }
+.plusColumn-container .vpnRow-container:not(.vpnRow-has-vpn) + .totalRows-container .totalRows-discount-with-vpn,
+.professionalColumn-container .vpnRow-container:not(.vpnRow-has-vpn) + .totalRows-container .totalRows-discount-with-vpn { display: none }
+.freeColumn-container .totalRows-discount-with-vpn,
+.visionaryColumn-container .totalRows-discount-with-vpn { display: none }
