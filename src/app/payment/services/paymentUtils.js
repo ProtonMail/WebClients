@@ -1,5 +1,6 @@
 angular.module('proton.payment')
-    .factory('paymentUtils', (gettextCatalog, aboutClient, paymentModel, $state) => {
+    .factory('paymentUtils', (CONSTANTS, gettextCatalog, aboutClient, paymentModel, $state) => {
+        const { MONTHLY, YEARLY, TWO_YEARS } = CONSTANTS.CYCLE;
         const I18N = {
             cash: gettextCatalog.getString('Cash', null, 'Payment method'),
             card: gettextCatalog.getString('Credit Card', null, 'Payment method')
@@ -21,17 +22,19 @@ angular.module('proton.payment')
          * @param  {String} config.choice custom selected choice
          * @return {Object}         { selected, list }
          */
-        const generateMethods = ({ methods = paymentModel.get('methods'), choice, Cycle = 12, Amount, modal = '' } = {}) => {
+        const generateMethods = ({ methods = paymentModel.get('methods'), choice, Cycle = YEARLY, Amount, modal = '' } = {}) => {
             const list = [{
                 value: 'card',
                 label: I18N.card
             }];
 
             // Min amount to activate it if monthly is 50
-            const isMonthlyValid = (Amount > 5000 && Cycle === 1);
+            const isMonthlyValid = (Amount > 5000 && Cycle === MONTHLY);
+            const isYearly = Cycle === YEARLY;
+            const isTwoYear = Cycle === TWO_YEARS;
             const isInvoiceModal = modal === 'invoice';
             // Paypal doesn't work with IE11. For the payment modal we cannot pay monthly via paypal
-            if (!aboutClient.isIE11() && (Cycle === 12 || isMonthlyValid || isInvoiceModal)) {
+            if (!aboutClient.isIE11() && (isYearly || isTwoYear || isMonthlyValid || isInvoiceModal)) {
                 list.push({
                     label: 'PayPal',
                     value: 'paypal'
