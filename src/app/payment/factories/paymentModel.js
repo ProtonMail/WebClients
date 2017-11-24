@@ -17,7 +17,7 @@ angular.module('proton.payment')
                 .then(({ data = {} }) => data)
                 .then((data) => set('status', data))
                 .catch(({ data = {} } = {}) => {
-                    throw new Error(data.Error);
+                    throw Error(data.Error);
                 });
         };
 
@@ -79,7 +79,7 @@ angular.module('proton.payment')
                 })
                 .catch((error) => {
                     const { data = {} } = error;
-                    throw new Error(data.Error || error);
+                    throw Error(data.Error || error);
                 });
 
             networkActivityTracker.track(promise);
