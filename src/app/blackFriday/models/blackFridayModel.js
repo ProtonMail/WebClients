@@ -1,12 +1,11 @@
 angular.module('proton.blackFriday')
     .factory('blackFridayModel', ($rootScope, authentication, CONSTANTS, dashboardModel, networkActivityTracker, Payment, paymentModal, subscriptionModel) => {
-        const { PAID_MEMBER_ROLE, CYCLE, PLANS } = CONSTANTS;
+        const { PAID_MEMBER_ROLE, CYCLE, PLANS, BLACK_FRIDAY_INTERVAL } = CONSTANTS;
         const { TWO_YEARS } = CYCLE;
         const { PLUS, VPN_PLUS } = PLANS.PLAN;
         const CACHE = {};
         const BLACK_FRIDAY_ITEM = 'protonmail_black_friday';
         const inInterval = () => moment().isBetween('2017-11-24', '2017-11-27');
-        const thirtyMinutes = 30 * 60 * 1000;
 
         function isBlackFridayPeriod(force = false) {
             const subscription = subscriptionModel.get();
@@ -104,7 +103,7 @@ angular.module('proton.blackFriday')
 
         setInterval(() => {
             $rootScope.$emit('blackFriday', { type: 'tictac' });
-        }, thirtyMinutes);
+        }, BLACK_FRIDAY_INTERVAL);
 
         $rootScope.$on('blackFriday', (event, { type = '', data = {} }) => {
             (type === 'buy') && buy(data);

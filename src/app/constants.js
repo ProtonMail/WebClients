@@ -6,6 +6,7 @@ angular.module('proton.constants', [])
 // Constants definition
 //
     .constant('CONSTANTS', {
+        BLACK_FRIDAY_INTERVAL: 10 * 60 * 1000,
         PLANS: {
             PLAN: {
                 PLUS: 'plus',
