@@ -233,28 +233,30 @@ angular.module('proton.dashboard')
          * @return {Integer}
          */
         const amount = ({ config = dashboardConfiguration.get(), plan, addon, cycle = dashboardConfiguration.cycle() }) => {
+            const bundleCoef = (plan === PLUS || plan === PROFESSIONAL) && (config[plan].vpnbasic || config[plan].vpnplus) ? 0.8 : 1; // Simulate discount bundle
+
             switch (addon) {
                 case 'vpn':
-                    return CACHE_PLAN[cycle].amounts[VPN] * config[plan].vpn;
+                    return CACHE_PLAN[cycle].amounts[VPN] * config[plan].vpn * bundleCoef;
                 case 'address':
-                    return CACHE_PLAN[cycle].amounts[ADDRESS] * config[plan].address;
+                    return CACHE_PLAN[cycle].amounts[ADDRESS] * config[plan].address * bundleCoef;
                 case 'space':
-                    return CACHE_PLAN[cycle].amounts[SPACE] * config[plan].space;
+                    return CACHE_PLAN[cycle].amounts[SPACE] * config[plan].space * bundleCoef;
                 case 'domain':
-                    return CACHE_PLAN[cycle].amounts[DOMAIN] * config[plan].domain;
+                    return CACHE_PLAN[cycle].amounts[DOMAIN] * config[plan].domain * bundleCoef;
                 case 'member':
-                    return CACHE_PLAN[cycle].amounts[MEMBER] * config[plan].member;
+                    return CACHE_PLAN[cycle].amounts[MEMBER] * config[plan].member * bundleCoef;
                 case 'vpnbasic':
-                    return CACHE_PLAN[cycle].amounts[VPN_BASIC] * config[plan].vpnbasic;
+                    return CACHE_PLAN[cycle].amounts[VPN_BASIC] * config[plan].vpnbasic * bundleCoef;
                 case 'vpnplus':
-                    return CACHE_PLAN[cycle].amounts[VPN_PLUS] * config[plan].vpnplus;
+                    return CACHE_PLAN[cycle].amounts[VPN_PLUS] * config[plan].vpnplus * bundleCoef;
             }
 
             switch (plan) {
                 case 'plus':
                 case 'professional':
                 case 'visionary':
-                    return CACHE_PLAN[cycle].amounts[plan];
+                    return CACHE_PLAN[cycle].amounts[plan] * bundleCoef;
                 default:
                     return 0;
             }
@@ -282,7 +284,6 @@ angular.module('proton.dashboard')
                     result += amount({ config, plan, cycle, addon: 'domain' });
                     result += amount({ config, plan, cycle, addon: VPN_BASIC });
                     result += amount({ config, plan, cycle, addon: VPN_PLUS });
-                    result *= (config[plan].vpnbasic || config[plan].vpnplus) ? 0.8 : 1; // Simulate discount bundle
                     break;
                 case 'professional':
                     result += amount({ config, plan, cycle });
@@ -291,7 +292,6 @@ angular.module('proton.dashboard')
                     result += amount({ config, plan, cycle, addon: VPN_BASIC });
                     result += amount({ config, plan, cycle, addon: VPN_PLUS });
                     result += amount({ config, plan, cycle, addon: 'vpn' });
-                    result *= (config[plan].vpnbasic || config[plan].vpnplus) ? 0.8 : 1; // Simulate discount bundle
                     break;
                 case 'visionary':
                     result += amount({ config, plan, cycle });
