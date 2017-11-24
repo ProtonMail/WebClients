@@ -13,8 +13,9 @@ angular.module('proton.settings')
 
         updateUser();
         updateMethods(methods);
-        dashboardConfiguration.set('cycle', subscriptionModel.cycle());
-        dashboardConfiguration.set('currency', subscriptionModel.currency());
+
+        dashboardConfiguration.set('cycle', $stateParams.cycle || subscriptionModel.cycle());
+        dashboardConfiguration.set('currency', $stateParams.currency || subscriptionModel.currency());
 
         if (blackFridayModel.isBlackFridayPeriod(true) && !$stateParams.noBlackFridayModal) {
             blackFridayModal.activate({
