@@ -1,5 +1,6 @@
 angular.module('proton.dashboard')
-    .directive('vpnTotal', ($rootScope, customVpnModel, dashboardConfiguration, dashboardModel) => {
+    .directive('vpnTotal', ($rootScope, CONSTANTS, customVpnModel, dashboardConfiguration, dashboardModel) => {
+        const { MONTHLY } = CONSTANTS.CYCLE;
         return {
             replace: true,
             restrict: 'E',
@@ -8,7 +9,7 @@ angular.module('proton.dashboard')
             link(scope, element) {
                 const $amount = element.find('.vpnTotal-amount');
                 const updateAmount = () => {
-                    const cycle = dashboardConfiguration.cycle() === 12 ? '/mo' : '';
+                    const cycle = dashboardConfiguration.cycle() === MONTHLY ? '' : '/mo';
                     const amount = customVpnModel.amount();
 
                     $amount.text(`${dashboardModel.filter(amount)}${cycle}`);

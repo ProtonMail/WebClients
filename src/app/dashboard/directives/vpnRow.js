@@ -5,6 +5,7 @@ angular.module('proton.dashboard')
         const VPN_PLUS_CLASS = 'vpnRow-vpnplus';
         const { VPN_BASIC, VPN_PLUS } = CONSTANTS.PLANS.PLAN;
         const { VPN } = CONSTANTS.PLANS.ADDON;
+        const { MONTHLY } = CONSTANTS.CYCLE;
         const getName = (config = {}) => (config.vpnplus ? 'ProtonVPN Plus' : 'ProtonVPN Basic');
         const getClass = (config = {}) => (config.vpnplus ? VPN_PLUS_CLASS : VPN_BASIC_CLASS);
         const initVpn = (plan) => $rootScope.$emit('dashboard', { type: 'init.vpn', data: { plan } });
@@ -36,7 +37,7 @@ angular.module('proton.dashboard')
                     const vpnplus = dashboardModel.amount({ plan, addon: 'vpnplus' });
                     const vpn = dashboardModel.amount({ plan, addon: 'vpn' });
                     const amount = vpnbasic + vpnplus + (plan === 'professional' ? vpn : 0);
-                    const cycle = dashboardConfiguration.cycle() === 12 ? '/mo' : '';
+                    const cycle = dashboardConfiguration.cycle() === MONTHLY ? '' : '/mo';
 
                     return `+ ${dashboardModel.filter(amount)} ${cycle}`;
                 };
