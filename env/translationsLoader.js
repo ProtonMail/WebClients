@@ -1,6 +1,8 @@
 const fs = require('fs');
 const path = require('path');
 
+const CACHE = {};
+
 const getCountry = (lang) => {
     const key = (lang === 'en') ? 'us' : lang;
     return key.toUpperCase();
@@ -34,15 +36,42 @@ const readFile = (file) => new Promise((resolve, reject) => {
  * @return {Array}
  */
 const listAvailableTranslations = () => {
-    return fs.readdirSync(path.join(__dirname, '../po'))
+    const promise = fs.readdirSync(path.join(__dirname, '../po'))
         .filter((file) => path.extname(file) === '.po')
-        .map((file) => path.basename(file, '.po'))
-        .map((name) => `${name}_${getCountry(name)}`);
+        .map((file) => path.resolve('./po', file))
+        .map(readFile);
+    return Promise.all(promise).catch(console.error);
 };
 
-const TRANSLATIONS_APP = listAvailableTranslations();
+/**
+ * Format a cache to get all translations available inside the app
+ * Create a map matching type of file and the attached translation key
+ * @param  {Buffer} input Input Sdtin
+ * @return {Object}       { map: <Object>, list: <Array> }
+ */
+const set = (input = '') => {
+    const { map, list } = input.toString().trim().split(',')
+        .reduce((acc, item) => {
+            const [ key, lang ] = item.split('#');
+            acc.map[key] = lang;
+            acc.list.push(lang);
+            return acc;
+        }, { map: {}, list: [] });
+    CACHE.map = map;
+    CACHE.list = list;
+    return CACHE;
+};
+
+
+listAvailableTranslations()
+    .then((list) => console.log(list.toString()));
 
 module.exports = {
-    getCountry,
-    TRANSLATIONS_APP
+    set,
+    get(key) {
+        return CACHE[key];
+    },
+    getI18nMatchFile(key) {
+        return CACHE.map[key];
+    }
 };
