@@ -4,7 +4,16 @@ angular.module('proton.blackFriday')
             controllerAs: 'ctrl',
             templateUrl: 'templates/blackFriday/blackFridayModal.tpl.html',
             /* @ngInject */
-            controller: function (params) {
+            controller: function (params, $scope) {
+                const unsubscribe = $rootScope.$on('blackFriday', (event, { type = '' }) => {
+                    if (type === 'loaded') {
+                        $scope.$applyAsync(() => {
+                            this.loaded = true;
+                        });
+                    }
+                });
+
+                this.loaded = false;
                 this.isFreeUser = !subscriptionModel.hasPaid('mail');
                 this.isPaidUser = authentication.user.Subscribed;
                 this.close = () => {
@@ -31,8 +40,14 @@ angular.module('proton.blackFriday')
                     $rootScope.$emit('closeDropdown');
                 };
 
+                this.$onDestroy = () => {
+                    unsubscribe();
+                };
+
                 this.currency = subscriptionModel.currency();
                 this.changeCurrency();
+                // Load requirements for the payment modal
+                $rootScope.$emit('blackFriday', { type: 'load' });
             }
         });
     });
