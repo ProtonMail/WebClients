@@ -4,7 +4,7 @@
 }
 .vpnRow-vpnplus { color: $vpnplus }
 .vpnRow-vpnbasic { color: $vpnbasic }
-.vpnRow-add, 
+.vpnRow-add,
 .vpnRow-add:hover  {
     background-color: $green;
     color: $white;
@@ -20,6 +20,9 @@
     width: 100%;
     align-items: center;
     justify-content: space-between;
+}
+.vpnRow-right {
+    white-space: nowrap;
 }
 // context
 .vpnRow-has-vpn .vpnRow-add,

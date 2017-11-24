@@ -268,7 +268,6 @@ angular.module('proton.dashboard')
          */
         const total = (plan, cycle) => {
             const config = dashboardConfiguration.get();
-            const hasVpn = config[plan].vpnbasic || config[plan].vpnplus;
             let result = 0;
 
             switch (plan) {
@@ -283,7 +282,7 @@ angular.module('proton.dashboard')
                     result += amount({ config, plan, cycle, addon: 'domain' });
                     result += amount({ config, plan, cycle, addon: VPN_BASIC });
                     result += amount({ config, plan, cycle, addon: VPN_PLUS });
-                    result *= hasVpn ? 0.8 : 1; // Simulate discount bundle
+                    result *= (config[plan].vpnbasic || config[plan].vpnplus) ? 0.8 : 1; // Simulate discount bundle
                     break;
                 case 'professional':
                     result += amount({ config, plan, cycle });
@@ -292,7 +291,7 @@ angular.module('proton.dashboard')
                     result += amount({ config, plan, cycle, addon: VPN_BASIC });
                     result += amount({ config, plan, cycle, addon: VPN_PLUS });
                     result += amount({ config, plan, cycle, addon: 'vpn' });
-                    result *= hasVpn ? 0.8 : 1; // Simulate discount bundle
+                    result *= (config[plan].vpnbasic || config[plan].vpnplus) ? 0.8 : 1; // Simulate discount bundle
                     break;
                 case 'visionary':
                     result += amount({ config, plan, cycle });
