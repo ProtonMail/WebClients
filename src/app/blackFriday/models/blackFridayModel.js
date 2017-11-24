@@ -117,5 +117,5 @@ angular.module('proton.blackFriday')
             (type === 'load') && load();
         });
 
-        return { init: angular.noop, isBlackFridayPeriod, set, saveClose };
+        return { init: angular.noop, isBlackFridayPeriod, set, saveClose, inInterval };
     });
