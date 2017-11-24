@@ -3,7 +3,6 @@ angular.module('proton.dashboard')
 
         customProPlanModel.init();
         const { MEMBER, ADDRESS, DOMAIN, SPACE } = CONSTANTS.PLANS.ADDON;
-        const { MONTHLY } = CONSTANTS.CYCLE;
         const MAP_ADDONS = { member: MEMBER, address: ADDRESS, domain: DOMAIN, space: SPACE };
 
         const filter = (amount) => $filter('currency')(amount / 100 / dashboardConfiguration.cycle(), dashboardConfiguration.currency());
@@ -13,10 +12,9 @@ angular.module('proton.dashboard')
                 return '';
             }
 
-            const cycle = dashboardConfiguration.cycle() === MONTHLY ? '' : '/mo';
             const amounts = dashboardModel.amounts();
 
-            return `+ ${filter(amounts[MAP_ADDONS[addon]] * value)}${cycle}`;
+            return `+ ${filter(amounts[MAP_ADDONS[addon]] * value)}/mo`;
         };
         return {
             restrict: 'E',
