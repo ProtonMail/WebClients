@@ -1,5 +1,6 @@
 angular.module('proton.blackFriday')
-    .factory('blackFridayModal', ($rootScope, $state, authentication, pmModal, blackFridayModel, subscriptionModel) => {
+    .factory('blackFridayModal', ($rootScope, $state, authentication, CONSTANTS, pmModal, blackFridayModel, subscriptionModel) => {
+        const { TWO_YEARS } = CONSTANTS.CYCLE;
         return pmModal({
             controllerAs: 'ctrl',
             templateUrl: 'templates/blackFriday/blackFridayModal.tpl.html',
@@ -23,7 +24,11 @@ angular.module('proton.blackFriday')
 
                 this.dashboard = () => {
                     if (!$state.is('secured.dashboard')) {
-                        $state.go('secured.dashboard', { noBlackFridayModal: true });
+                        $state.go('secured.dashboard', {
+                            noBlackFridayModal: true,
+                            currency: this.currency,
+                            cycle: TWO_YEARS
+                        });
                     }
 
                     this.close();
