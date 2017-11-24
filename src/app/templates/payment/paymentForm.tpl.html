@@ -49,7 +49,6 @@
                 <div ng-if="ctrl.method.value === 'paypal'">
 
                     <paypal-view
-                        ng-if="ctrl.valid.Cycle === 12"
                         data-amount="ctrl.valid.AmountDue"
                         data-currency="ctrl.valid.Currency"
                         data-callback="ctrl.paypalCallback"></paypal-view>
