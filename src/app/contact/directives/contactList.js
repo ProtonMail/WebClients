@@ -61,9 +61,13 @@ angular.module('proton.contact')
                     });
                 };
 
-                function onClick({ target, shiftKey }) {
+                function onClick(e) {
+
+                    const { target, shiftKey } = e;
 
                     if (/customCheckbox/.test(target.className)) {
+                        e.stopPrapagation();
+
                         return scope.$applyAsync(() => {
                             const contact = _.findWhere(scope.contacts, { ID: target.dataset.contactId });
                             selectContact(contact, target.checked, shiftKey);
