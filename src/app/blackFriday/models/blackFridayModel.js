@@ -61,7 +61,7 @@ angular.module('proton.blackFriday')
                     if (plan === 'current') {
                         const subscription = subscriptionModel.get();
 
-                        PlanIDs.push(...subscription.Plans.filter(({ Name }) => Name !== VISIONARY).map(({ Name }) => MAP_PLAN_ID[Name]));
+                        PlanIDs.push(...subscription.Plans.map(({ Name }) => MAP_PLAN_ID[Name]));
                     }
 
                     return PlanIDs;
