@@ -1,5 +1,5 @@
 angular.module('proton.blackFriday')
-    .factory('blackFridayModel', ($rootScope, authentication, CONSTANTS, dashboardModel, networkActivityTracker, Payment, paymentModal, subscriptionModel) => {
+    .factory('blackFridayModel', ($rootScope, authentication, CONSTANTS, dashboardModel, networkActivityTracker, Payment, paymentModal, subscriptionModel, paymentModel) => {
         const { PAID_MEMBER_ROLE, CYCLE, PLANS, BLACK_FRIDAY_INTERVAL } = CONSTANTS;
         const { TWO_YEARS } = CYCLE;
         const { PLUS, VPN_PLUS } = PLANS.PLAN;
@@ -101,12 +101,21 @@ angular.module('proton.blackFriday')
             localStorage.setItem(BLACK_FRIDAY_ITEM, 'closed');
         }
 
+        function load() {
+            Promise.all([
+                paymentModel.getMethods(),
+                paymentModel.getStatus()
+
+            ]).then(() => $rootScope.$emit('blackFriday', { type: 'loaded' }));
+        }
+
         setInterval(() => {
             $rootScope.$emit('blackFriday', { type: 'tictac' });
         }, BLACK_FRIDAY_INTERVAL);
 
         $rootScope.$on('blackFriday', (event, { type = '', data = {} }) => {
             (type === 'buy') && buy(data);
+            (type === 'load') && load();
         });
 
         return { init: angular.noop, isBlackFridayPeriod, set, saveClose };
