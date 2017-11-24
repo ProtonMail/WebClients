@@ -50,7 +50,7 @@ angular.module('proton.blackFriday')
                 };
 
                 this.currency = subscriptionModel.currency();
-                this.changeCurrency();
+                this.changeCurrency(this.currency);
                 // Load requirements for the payment modal
                 $rootScope.$emit('blackFriday', { type: 'load' });
             }
