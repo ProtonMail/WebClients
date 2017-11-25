@@ -37,7 +37,7 @@
 
 /* CONTEXTS */
 
-.featuresList-container [class*='.featuresList-'] { display: none }
+.featuresList-container > [class*='featuresList-'] { display: none }
 
 .featuresList-container.featuresList-isPlus,
 .featuresList-container.featuresList-isProfessional,
