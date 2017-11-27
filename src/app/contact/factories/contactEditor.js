@@ -51,6 +51,7 @@ angular.module('proton.contact')
         */
         function remove({ contactIDs = [], confirm = true }) {
             const success = (contactIDs === 'all') ? gettextCatalog.getString('All contacts deleted', null, 'Success') : gettextCatalog.getPlural(contactIDs.length, 'Contact deleted', 'Contacts deleted', null, 'Success');
+
             const process = () => {
                 const promise = requestDeletion(contactIDs)
                     .then(() => {
