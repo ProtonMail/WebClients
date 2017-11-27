@@ -81,8 +81,13 @@ function generateDirective(attrName) {
                                 return;
                             }
 
+                            if (element[0].nodeType === 8) {
+                                return;
+                            }
+
                             // Swap in the translation
                             element[0].setAttribute(attrName, translated);
+
                         }
 
                         if (attribute) {
