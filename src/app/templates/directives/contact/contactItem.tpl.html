@@ -3,11 +3,13 @@
     data-is-disabled="!UI.sortableState"
     data-as-sortable="itemContactDragControlListeners"
     data-ng-model="UI.items">
+
     <li
         class="contactItem-row"
         ng-if="!item.hide"
         ng-repeat="item in UI.items"
         as-sortable-item>
+
         <div class="contactItem-sortable-wrapper ng-message-wrapper" as-sortable-item-handle>
             <label class="contactItem-label">
                 <input
@@ -32,31 +34,67 @@
                 </ul>
 
             </label>
+
             <div class="contactItem-aside">
-                <!-- values -->
                 <div class="contactItem-inputs">
+
                     <input
                         ng-if="UI.mode === 'singleLine'"
                         type="{{ ::UI.inputType }}"
                         name="{{ ::UI.inputName+$index }}"
-                        placeholder="{{ UI.placeholder }}" class="form-control contactItem-field"
+                        placeholder="{{ UI.placeholder }}"
+                        class="form-control contactItem-field"
                         ng-model="item.value"
-                        ng-change="change()" />
+                        ng-change="change()">
+
                     <textarea
                         ng-if="UI.mode === 'multiLine'"
                         placeholder="{{ UI.placeholder }}"
                         class="form-control contactItem-field"
                         ng-model="item.value"
                         ng-change="change()"></textarea>
-                    <contact-address-input ng-if="UI.mode === 'address'" data-value="item.value" data-form="form"></contact-address-input>
+
+                    <contact-address-input
+                        ng-if="UI.mode === 'address'"
+                        data-focused="config.isFocusedAddress"
+                        data-value="item.value"
+                        data-form="form"></contact-address-input>
+
                 </div>
                 <div class="contactItem-actions">
-                    <!-- actions -->
-                    <copy ng-if="UI.mode === 'address'" data-value="getAddressValue(item)" pt-tooltip-translate="Copy address"></copy>
-                    <button ng-if="UI.inputType === 'email'" type="button" class="contactItem-compose fa fa-send-o" data-action="composeTo" data-email="{{ item.value }}" pt-tooltip-translate="Compose to"></button>
-                    <button ng-if="!UI.unique && visibleItems().length > 1" type="button" class="contactItem-delete"  data-action="remove" data-index="{{ $index }}" pt-tooltip-translate="Remove Entry"></button>
-                    <button ng-if="!UI.unique && visibleItems().length" type="button" class="contactItem-add" data-action="add" pt-tooltip-translate="Add Entry"></button>
+                    <copy
+                        ng-if="UI.mode === 'address' && !config.isFocusedAddress"
+                        data-value="getAddressValue(item)"
+                        pt-tooltip-translate="Copy address"
+                        pt-tooltip-translate="Action"></copy>
+
+                    <button
+                        ng-if="UI.inputType === 'email'"
+                        type="button"
+                        class="contactItem-compose fa fa-send-o"
+                        data-action="composeTo"
+                        data-email="{{ item.value }}"
+                        pt-tooltip-translate="Compose to"
+                        pt-tooltip-translate="Action"></button>
+
+                    <button
+                        ng-if="!UI.unique && visibleItems().length > 1"
+                        type="button"
+                        class="contactItem-delete"
+                        data-action="remove"
+                        data-index="{{ $index }}"
+                        pt-tooltip-translate="Remove Entry"
+                        pt-tooltip-translate="Action"></button>
+
+                    <button
+                        ng-if="!UI.unique && visibleItems().length"
+                        type="button"
+                        class="contactItem-add"
+                        data-action="add"
+                        pt-tooltip-translate="Add Entry"
+                        pt-tooltip-translate="Action"></button>
                 </div>
+
                 <div class="contactItem-validation" ng-messages="form[UI.inputName+$index].$error" role="alert">
                     <div class="ng-messages-errors">
                         <p ng-message="email" class="text-red"  translate-context="Error" translate>Invalid email</p>
@@ -65,8 +103,13 @@
             </div>
         </div> <!-- as-sortable-item-handle -->
     </li>
+
     <div class="contactItem-footer">
-        <button ng-if="UI.items.length > 1 && UI.sortable" type="button" data-action="toggleSortable" class="contactItem-toggle-sort">
+        <button
+            ng-if="UI.items.length > 1 && UI.sortable"
+            type="button"
+            data-action="toggleSortable"
+            class="contactItem-toggle-sort">
             <div class="contactItem-toggle-sort-enable" translate translate-context="Action">Change order</div>
             <div class="contactItem-toggle-sort-save" translate translate-context="Action">Save order</div>
         </button>

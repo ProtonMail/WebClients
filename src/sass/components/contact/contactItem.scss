@@ -144,10 +144,11 @@
 
 .contactItem-aside {
     display: flex;
-    align-items: flex-start;
     flex-grow: 1;
-    margin-left: 8px;
     flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: flex-end;
+    margin-left: 8px;
 }
 
 .contactItem-inputs {
@@ -181,7 +182,8 @@
     }
 }
 
-.contactItem-inputs  textarea {
+
+.contactItem-inputs textarea {
     font: inherit;
     min-height: 65px;
     /* autoExpand */
@@ -190,6 +192,7 @@
     transition: height 0.1s ease;
     resize: none;
 }
+
 
 .contactAddressInput-container {
     flex-grow: 1;
@@ -203,7 +206,6 @@
 
 .contactItem-actions {
     position: relative;
-    width: 50px;
     display: flex;
 }
 
