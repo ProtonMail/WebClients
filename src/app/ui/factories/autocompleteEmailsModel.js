@@ -1,4 +1,3 @@
-
 angular.module('proton.formUtils')
     .factory('autocompleteEmailsModel', (authentication, contactEmails, regexEmail, checkTypoEmails, $filter, CONSTANTS) => {
 
@@ -155,7 +154,7 @@ angular.module('proton.formUtils')
                 }));
 
             const all = () => list;
-            const clear = () => (list.length = 0);
+            const clear = () => (list.length = 0, TEMP_LABELS = {});
 
             /**
              * Add a new contact to the list

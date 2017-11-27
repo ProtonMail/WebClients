@@ -491,6 +491,7 @@ angular.module('proton.authentication')
             $rootScope.isSecure = this.isSecured();
             AppModel.set('domoArigato', false);
             AppModel.set('loggedIn', false);
+            contactEmails.clear();
         },
 
         // Returns an async promise that will be successful only if the mailbox password
