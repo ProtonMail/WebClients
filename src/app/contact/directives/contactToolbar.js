@@ -1,11 +1,24 @@
 angular.module('proton.contact')
-    .directive('contactToolbar', ($rootScope, $state, $stateParams, aboutClient, CONSTANTS, contactCache, gettextCatalog, messageModel, notification) => {
+    .directive('contactToolbar', ($rootScope, $state, $stateParams, aboutClient, CONSTANTS, contactCache, gettextCatalog, messageModel, notification, listeners) => {
+
+        const getList = () => {
+            if (contactCache.get('selected').length) {
+                return contactCache.get('selected');
+            }
+            return [ contactCache.getItem($stateParams.id) ].filter(Boolean);
+        }
+
         function onClick(event) {
             const type = event.target.getAttribute('data-action');
 
             switch (type) {
                 case 'deleteSelectedContacts':
-                    $rootScope.$emit('contacts', { type: 'deleteContacts', data: { contactIDs: contactCache.get('selected').map(({ ID }) => ID) } });
+                    $rootScope.$emit('contacts', {
+                        type: 'deleteContacts',
+                        data: {
+                            contactIDs: _.pluck(getList(), 'ID')
+                        }
+                    });
                     break;
                 case 'composeSelectedContacts':
                     composeSelectedContacts();
@@ -22,19 +35,18 @@ angular.module('proton.contact')
         }
 
         function composeSelectedContacts() {
-            const contactsSelected = contactCache.get('selected');
-            const message = messageModel();
-            const list = contactsSelected
+
+            const list = getList()
                 .filter(({ Emails = [] }) => Emails.length)
                 .map(({ Emails, Name }) => ({ Address: Emails[0].Email, Name }));
 
-
             if (list.length) {
+                const message = messageModel();
                 message.ToList = list;
-                $rootScope.$emit('composer.new', { message, type: 'new' });
-            } else {
-                notification.error(gettextCatalog.getString('Contact does not contain email address', null, 'Error'));
+                return $rootScope.$emit('composer.new', { message, type: 'new' });
             }
+
+            notification.error(gettextCatalog.getString('Contact does not contain email address', null, 'Error'));
         }
 
         return {
@@ -43,16 +55,30 @@ angular.module('proton.contact')
             scope: {},
             templateUrl: 'templates/contact/contactToolbar.tpl.html',
             link(scope, element) {
-                const unsubscribe = $rootScope.$on('contacts', (event, { type }) => {
-                    (type === 'contactsUpdated') && update();
+
+                const { on, unsubscribe } = listeners();
+
+                on('contacts', (event, { type }) => {
+                    (type === 'contactsUpdated' || type === 'selectContacts') && update();
+                });
+
+                on('$stateChangeSuccess', (e, state) => {
+                    (state.name === 'secured.contacts.details' && scope.noSelection) && update();
                 });
 
                 scope.numPerPage = CONSTANTS.CONTACTS_PER_PAGE;
                 scope.selectPage = (page) => $state.go($state.$current.name, { page });
-                scope.currentPage = Number($stateParams.page || 1);
+                scope.currentPage = +($stateParams.page || 1);
+
                 scope.selectAll = (event) => {
-                    const contactIDs = contactCache.paginate(contactCache.get('filtered')).map(({ ID }) => ID);
-                    $rootScope.$emit('contacts', { type: 'selectContacts', data: { contactIDs, isChecked: !!event.target.checked } });
+                    const contactIDs = _.pluck(contactCache.paginate(contactCache.get('filtered')), 'ID');
+                    $rootScope.$emit('contacts', {
+                        type: 'selectContacts',
+                        data: {
+                            contactIDs,
+                            isChecked: !!event.target.checked
+                        }
+                    });
                 };
 
                 function update() {
@@ -60,10 +86,12 @@ angular.module('proton.contact')
                     const selectedContacts = contactCache.get('selected');
                     const checkedContacts = _.where(paginatedContacts, { selected: true });
 
-                    scope.totalItems = contactCache.total();
-                    scope.disabled = !paginatedContacts.length;
-                    scope.selected = selectedContacts;
-                    scope.checkAll = paginatedContacts.length === checkedContacts.length;
+                    scope.$applyAsync(() => {
+                        scope.totalItems = contactCache.total();
+                        scope.disabled = !paginatedContacts.length;
+                        scope.noSelection = !($stateParams.id || selectedContacts.length);
+                        scope.checkAll = paginatedContacts.length === checkedContacts.length;
+                    });
                 }
 
                 element.on('click', onClick);

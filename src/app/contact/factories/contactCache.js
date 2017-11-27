@@ -28,7 +28,8 @@ angular.module('proton.contact')
             [CONSTANTS.STATUS.CREATE]: 'create',
             [CONSTANTS.STATUS.UPDATE]: 'update'
         };
-        const findID = (ID) => _.findIndex(CACHE.contacts, { ID });
+        const getItem = (ID) => _.findWhere(CACHE.contacts, { ID });
+        const findIndex = (ID) => _.findIndex(CACHE.contacts, { ID });
         const emit = () => $rootScope.$emit('contacts', { type: 'contactsUpdated', data: { all: get() } });
         const orderBy = (contacts = []) => $filter('orderBy')(contacts, $stateParams.sort || 'Name');
         const lowerCase = (word = '') => word.toLowerCase();
@@ -37,7 +38,10 @@ angular.module('proton.contact')
         const isHydrated = () => CACHE.hydrated;
 
         function selected() {
-            const selected = _.chain(get()).filter(({ selected }) => selected).pluck('ID').value();
+            const selected = _.chain(get())
+                .filter(({ selected }) => selected)
+                .pluck('ID')
+                .value();
 
             if (!selected.length && $stateParams.id) {
                 return [$stateParams.id];
@@ -148,7 +152,7 @@ angular.module('proton.contact')
         }
 
         function updateContact({ ID, contact }) {
-            const index = findID(ID);
+            const index = findIndex(ID);
 
             if (index !== -1) {
                 update(contact, index);
@@ -160,7 +164,7 @@ angular.module('proton.contact')
         }
 
         function refreshContactEmails({ ID }) {
-            const index = findID(ID);
+            const index = findIndex(ID);
 
             if (index !== -1) {
                 const contact = CACHE.contacts[index];
@@ -205,7 +209,6 @@ angular.module('proton.contact')
                 if (contactIDs.indexOf(contact.ID) > -1) {
                     contact.selected = isChecked;
                 }
-
                 return contact;
             });
 
@@ -247,5 +250,5 @@ angular.module('proton.contact')
             (type === 'searchingContact') && searchingContact(data);
         });
 
-        return { hydrate, isHydrated, clear, get, total, paginate, load, find };
+        return { hydrate, isHydrated, clear, get, total, paginate, load, find, getItem };
     });
