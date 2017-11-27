@@ -35,7 +35,7 @@ angular.module('proton.ui')
 
             const onInput = ({ target }) => {
 
-            // Classic autocompletion
+                // Classic autocompletion
                 const { list, hasAutocompletion } = model.filterContact(target.value);
                 hasAutocompletion && (awesomplete.list = list);
 
@@ -89,6 +89,7 @@ angular.module('proton.ui')
                 el.off('click', onClick);
                 el.off('input', onInput);
                 el.off('blur', onBlur);
+                model.clear();
             });
         };
         return {

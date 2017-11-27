@@ -102,6 +102,7 @@ angular.module('proton.ui')
 
                 // Classic autocompletion
                 const { list, hasAutocompletion } = model.filterContact(target.value);
+
                 hasAutocompletion && (awesomplete.list = list);
 
                 if (!(target.value || '').includes('@')) {
@@ -133,6 +134,7 @@ angular.module('proton.ui')
                 if (target.nodeName === 'INPUT' && !target.value) {
                     awesomplete.minChars = 0;
                     const { list, hasAutocompletion } = model.filterContact(target.value);
+
                     hasAutocompletion && (awesomplete.list = list);
                 }
             };
@@ -219,6 +221,7 @@ angular.module('proton.ui')
                 el.off('input', onInput);
                 el.off('submit', onSubmit);
                 awesomplete.input.removeEventListener('blur', onSubmit);
+                model.clear();
             });
         };
         return {
