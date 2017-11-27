@@ -1,5 +1,6 @@
 angular.module('proton.contact')
     .directive('contactAddressInput', () => {
+
         const DEFAULT = 'contactAddressInput-default';
         const STREET = 'contactAddressInput-street';
         const FIELD = 'contactAddressInput-field';
@@ -13,24 +14,34 @@ angular.module('proton.contact')
             replace: true,
             scope: {
                 value: '=',
-                form: '='
+                form: '=',
+                focused: '='
             },
             templateUrl: 'templates/contact/contactAddressInput.tpl.html',
             link(scope, element) {
+
                 const defaultInput = element.find(`.${DEFAULT}`);
                 const defaultValue = (Array.isArray(scope.value) && scope.value.length > 1) ? scope.value : ['', '', scope.value];
+
                 const [ postBoxValue = '', extendedValue = '', streetValue = '', localityValue = '', regionValue = '', postalCodeValue = '', countryValue = '' ] = defaultValue;
                 const fields = element.find(`.${FIELD}`);
-                const formatDefaultValue = (values = scope.value) => values.filter((value = '') => value.trim()).join('\n');
+                const formatDefaultValue = (values = scope.value) => {
+                    return values.filter((value = '') => value.trim()).join('\n');
+                }
 
                 function onFocus() {
                     element.addClass(FOCUSSED);
                     setTimeout(() => element.find(`.${STREET}`).focus(), DELAY);
+                    scope.$applyAsync(() => scope.focused = true);
                 }
 
                 function onBlur() {
                     setTimeout(() => {
-                        !element.find(`.${FIELD}:focus`).length && element.removeClass(FOCUSSED);
+                        if (element.find(`.${FIELD}:focus`).length) {
+                            return;
+                        }
+                        element.removeClass(FOCUSSED);
+                        scope.$applyAsync(() => scope.focused = false);
                     }, DELAY);
                 }
 

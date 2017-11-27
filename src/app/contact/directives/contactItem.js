@@ -19,6 +19,7 @@ angular.module('proton.contact')
                 const type = scope.type;
                 const state = scope.state;
                 const list = element.find('.contactItem-container');
+                scope.config = { isFocusedAddress: false };
 
                 list.addClass(`contactItem-container-${scope.type}`);
                 list.addClass(AS_SORTABLE_DISABLED);
