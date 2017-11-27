@@ -14,6 +14,7 @@ angular.module('proton.contact')
 
                 let lastChecked = null;
                 const unsubscribe = [];
+                let isLoadedContact = !!$stateParams.id;
 
                 scope.contacts = [];
                 scope.showContact = (contactID) => $state.go('secured.contacts.details', { id: contactID });
@@ -23,7 +24,10 @@ angular.module('proton.contact')
 
                     scope.$applyAsync(() => {
                         scope.contacts = filteredContacts;
-                        _.defer(() => activeContact(!!$stateParams.id), 1000);
+                        _.defer(() => {
+                            activeContact(isLoadedContact);
+                            isLoadedContact = false;
+                        }, 1000);
                     });
                 }
 
@@ -35,7 +39,9 @@ angular.module('proton.contact')
                         const $row = element.find(`.${ITEM_CLASS}[data-contact-id="${$stateParams.id}"]`);
                         $row.addClass(ACTIVE_CLASS);
                         // Scroll the first load
-                        scroll && $row[0] && element.animate({ scrollTop: $row.offset().top - HEADER_HEIGHT }, 1000);
+                        if (scroll && $row[0]) {
+                            element.animate({ scrollTop: $row.offset().top - HEADER_HEIGHT }, 1000);
+                        }
                     }
                 }
 
@@ -66,11 +72,11 @@ angular.module('proton.contact')
                     const { target, shiftKey } = e;
 
                     if (/customCheckbox/.test(target.className)) {
-                        e.stopPrapagation();
+                        e.stopPropagation();
 
                         return scope.$applyAsync(() => {
                             const contact = _.findWhere(scope.contacts, { ID: target.dataset.contactId });
-                            selectContact(contact, target.checked, shiftKey);
+                            contact.selected && selectContact(contact, target.checked, shiftKey);
                         });
                     }
 
