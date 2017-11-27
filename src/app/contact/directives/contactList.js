@@ -67,22 +67,29 @@ angular.module('proton.contact')
                     });
                 };
 
+                const setContactSelection = (ID, checked, shiftKey) => {
+                    return scope.$applyAsync(() => {
+                        const contact = _.findWhere(scope.contacts, { ID });
+                        selectContact(contact, checked, shiftKey);
+                    });
+                }
+
                 function onClick(e) {
 
                     const { target, shiftKey } = e;
 
                     if (/customCheckbox/.test(target.className)) {
                         e.stopPropagation();
-
-                        return scope.$applyAsync(() => {
-                            const contact = _.findWhere(scope.contacts, { ID: target.dataset.contactId });
-                            contact.selected && selectContact(contact, target.checked, shiftKey);
-                        });
+                        setContactSelection(target.dataset.contactId, target.checked, shiftKey);
                     }
 
                     const action = target.getAttribute('data-action');
 
                     if (action === 'showContact') {
+                        if (contactCache.get('selected').length) {
+                            setContactSelection(target.dataset.contactId, true);
+                        }
+
                         $state.go('secured.contacts.details', { id: target.dataset.contactId });
                     }
 
