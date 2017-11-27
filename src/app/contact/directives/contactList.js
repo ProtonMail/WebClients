@@ -86,7 +86,7 @@ angular.module('proton.contact')
                     const action = target.getAttribute('data-action');
 
                     if (action === 'showContact') {
-                        if (contactCache.get('selected').length) {
+                        if (contactCache.get('selected').length && !$stateParams.id) {
                             setContactSelection(target.dataset.contactId, true);
                         }
 
