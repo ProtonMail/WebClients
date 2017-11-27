@@ -27,7 +27,7 @@ angular.module('proton.contact')
                 const fields = element.find(`.${FIELD}`);
                 const formatDefaultValue = (values = scope.value) => {
                     return values.filter((value = '') => value.trim()).join('\n');
-                }
+                };
 
                 function onFocus() {
                     element.addClass(FOCUSSED);

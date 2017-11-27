@@ -6,7 +6,7 @@ angular.module('proton.contact')
                 return contactCache.get('selected');
             }
             return [ contactCache.getItem($stateParams.id) ].filter(Boolean);
-        }
+        };
 
         function onClick(event) {
             const type = event.target.getAttribute('data-action');

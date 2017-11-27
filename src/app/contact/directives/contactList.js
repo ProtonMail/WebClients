@@ -72,7 +72,7 @@ angular.module('proton.contact')
                         const contact = _.findWhere(scope.contacts, { ID });
                         selectContact(contact, checked, shiftKey);
                     });
-                }
+                };
 
                 function onClick(e) {
 
