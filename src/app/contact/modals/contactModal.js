@@ -11,9 +11,13 @@ angular.module('proton.contact')
             templateUrl: 'templates/contact/contactModal.tpl.html',
             /* @ngInject */
             controller: function (params) {
+
+                let processing = false;
+
                 const unsubscribe = $rootScope.$on('contacts', (event, { type = '', data = {} }) => {
                     if (type === 'contactCreated') {
                         const { created = [], errors = [] } = data;
+                        processing = false;
 
                         if (errors.length) {
                             errors.forEach(({ error = I18N.contactError }) => notification.error(error));
@@ -31,7 +35,10 @@ angular.module('proton.contact')
                 this.cancel = params.close;
                 this.$onDestroy = () => unsubscribe();
                 this.submit = () => {
-                    $rootScope.$emit('contacts', { type: 'submitContactForm' });
+                    if (!processing) {
+                        processing = true;
+                        $rootScope.$emit('contacts', { type: 'submitContactForm' });
+                    }
                 };
             }
         });
