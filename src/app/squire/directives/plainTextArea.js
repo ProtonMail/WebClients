@@ -21,7 +21,21 @@ angular.module('proton.squire')
                 el[0].selectionStart = 0;
                 el[0].selectionEnd = 0;
 
-                _.has(scope.message, 'Action') && _rAF(() => el.focus());
+                /**
+                 * Reply-ReplyAll-forward for default mode plaintext we focus
+                 * For a new message there is composerLoader to focus the correct item
+                 */
+                if (authentication.user.DraftMIMEType === 'text/plain' && _.has(scope.message, 'Action')) {
+                    _rAF(() => el.focus());
+                }
+
+                /**
+                 * Not HTML, it means we display it via an action on the composer,
+                 * we can focus the editor. It's fine
+                 */
+                if (authentication.user.DraftMIMEType !== 'text/plain') {
+                    _rAF(() => el.focus());
+                }
 
                 // proxy for autosave as Mousetrap doesn't work with iframe
                 const onKeyDown = (e) => {
