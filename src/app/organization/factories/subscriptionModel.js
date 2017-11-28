@@ -21,8 +21,10 @@ angular.module('proton.organization')
             member: '1member',
             vpn: '1vpn'
         };
+
         const get = () => angular.copy(CACHE.subscription || {});
         const count = (addon) => _.where(CACHE.subscription.Plans, { Name: MAP_ADDONS[addon] }).length;
+
         const hasFactory = (plans = []) => () => {
             const { Plans = [] } = (CACHE.subscription || {});
             return _.some(Plans, ({ Name }) => plans.indexOf(Name) > -1);
@@ -31,14 +33,12 @@ angular.module('proton.organization')
         const currency = () => {
             const { Plans = [] } = CACHE.subscription || {};
             const [ { Currency = CONSTANTS.DEFAULT_CURRENCY } = {} ] = Plans;
-
             return Currency;
         };
 
         const cycle = () => {
             const { Plans = [] } = CACHE.subscription || {};
             const [ { Cycle = CONSTANTS.DEFAULT_CYCLE } = {} ] = Plans;
-
             return Cycle;
         };
 

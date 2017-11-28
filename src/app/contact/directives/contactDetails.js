@@ -14,6 +14,7 @@ angular.module('proton.contact')
         gettextCatalog,
         notification,
         subscriptionModel,
+        memberModel,
         vcard
     ) => {
         const ENCRYPTED_AND_SIGNED = 'contactDetails-encrypted-and-signed';
@@ -34,7 +35,7 @@ angular.module('proton.contact')
                 const unsubscribe = [];
                 const updateType = (types = []) => _.contains(types, CONSTANTS.CONTACT_MODE.ENCRYPTED_AND_SIGNED) && element.addClass(ENCRYPTED_AND_SIGNED);
                 const onSubmit = () => saveContact();
-                const isFree = !subscriptionModel.hasPaid('mail');
+                const isFree = !subscriptionModel.hasPaid('mail') && !memberModel.isMember();
                 const properties = vcard.extractProperties(scope.contact.vCard);
                 const hasEmail = _.filter(properties, (property) => property.getField() === 'email').length;
 

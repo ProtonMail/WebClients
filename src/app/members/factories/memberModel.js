@@ -95,6 +95,8 @@ angular.module('proton.members')
             });
         };
 
+        const isMember = () => authentication.user.Role === PAID_MEMBER_ROLE;
+
         $rootScope.$on('app.event', (e, { type, data = {} }) => {
             (type === 'members') && manageCache(data);
         });
@@ -103,6 +105,6 @@ angular.module('proton.members')
             get, set, fetch, clear, remove,
             changeRole, makePrivate, login,
             getAll, getNonPrivate, hasAdmins, getSelf,
-            getRoles
+            getRoles, isMember
         };
     });
