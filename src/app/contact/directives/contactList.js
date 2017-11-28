@@ -36,7 +36,7 @@ angular.module('proton.contact')
                     $items.removeClass(ACTIVE_CLASS);
 
                     if ($stateParams.id) {
-                        const $row = element.find(`.${ITEM_CLASS}[data-contact-id="${$stateParams.id}"]`);
+                        const $row = element.find(`.${ITEM_CLASS}[data-contact-id="${unescape($stateParams.id)}"]`);
                         $row.addClass(ACTIVE_CLASS);
                         // Scroll the first load
                         if (scroll && $row[0]) {
