@@ -337,7 +337,6 @@
         .frame {
             padding: 15px 30px;
             border-top: 1px solid $border;
-            overflow: auto;
             zoom: 1;
             clear: left;
 
@@ -354,8 +353,7 @@
                     display: block;
                 }
                 blockquote.protonmail_quote {
-                    position: relative;
-                    overflow: auto;
+                    position: relative
                 }
             }
         }
@@ -365,6 +363,13 @@
             animation: nodeInserted;
             animation-duration: 0.001s;
         }
+    }
+}
+
+.bodyDecrypted {
+    /* Forbidden property on almost ALL clients */
+    [style*="position:absolute"] {
+        position: static !important;
     }
 }
 
