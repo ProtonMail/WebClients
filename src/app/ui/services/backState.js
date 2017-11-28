@@ -1,22 +1,25 @@
 angular.module('proton.ui')
-    .factory('backState', ($rootScope, $state, CONSTANTS, tools) => {
+    .factory('backState', ($rootScope, $state, CONSTANTS, tools, authentication) => {
+
+        const { MAILBOX_IDENTIFIERS } = CONSTANTS;
 
         /**
          * Keep a trace of the previous box state to let the user back to mail
          * Action present in the settings and contact sidebar
          */
         const CACHE = {};
-        const routes = Object.keys(CONSTANTS.MAILBOX_IDENTIFIERS);
 
-        $rootScope.$on('$stateChangeSuccess', (event, toState, toParams, fromState = {}, fromParams = {}) => {
-            if (_.contains(routes, tools.filteredState(fromState.name))) {
+        $rootScope.$on('$stateChangeSuccess', (e, toState, toParams, fromState = {}, fromParams = {}) => {
+            if (fromState.name && MAILBOX_IDENTIFIERS[tools.filteredState(fromState.name)]) {
                 CACHE.state = fromState.name;
                 CACHE.params = fromParams;
+                CACHE.mode = authentication.user.ViewMode;
             }
         });
 
         function back() {
-            if (CACHE.state) {
+            // We can change the mode, prevent issue if an element was opened
+            if (CACHE.state && CACHE.mode === authentication.user.ViewMode) {
                 return $state.go(CACHE.state, CACHE.params);
             }
 
