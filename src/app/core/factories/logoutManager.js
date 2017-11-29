@@ -1,5 +1,5 @@
 angular.module('proton.core')
-    .factory('logoutManager', ($rootScope, authentication, eventManager, cache, cacheCounters, contactCache) => {
+    .factory('logoutManager', ($rootScope, authentication, eventManager, cache, cacheCounters, contactCache, paymentModel) => {
         $rootScope.$on('$stateChangeSuccess', (e, state) => {
             const currentState = state.name;
             const specialStates = ['login.setup'];
@@ -11,6 +11,7 @@ angular.module('proton.core')
                 cache.reset();
                 cacheCounters.reset();
                 contactCache.clear();
+                paymentModel.clear();
                 // We automatically logout the user when he comes to login page and is already logged in
                 authentication.isLoggedIn() && authentication.logout();
                 // Dispatch an event to notify everybody that the user is no longer logged in
