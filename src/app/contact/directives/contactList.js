@@ -86,10 +86,6 @@ angular.module('proton.contact')
                     const action = target.getAttribute('data-action');
 
                     if (action === 'showContact') {
-                        if (contactCache.get('selected').length) {
-                            setContactSelection(target.dataset.contactId, true);
-                        }
-
                         $state.go('secured.contacts.details', { id: target.dataset.contactId });
                     }
 
