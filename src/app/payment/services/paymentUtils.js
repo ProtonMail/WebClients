@@ -41,7 +41,7 @@ angular.module('proton.payment')
                 });
             }
 
-            if (!$state.is('signup') && !isTwoYear) {
+            if (!$state.is('signup')) {
                 list.push({
                     value: 'bitcoin',
                     label: 'Bitcoin'
