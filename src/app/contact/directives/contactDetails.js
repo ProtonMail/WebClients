@@ -1,29 +1,48 @@
 angular.module('proton.contact')
     .directive('contactDetails', (
-        $compile,
-        $filter,
         $rootScope,
         $state,
         CONSTANTS,
-        Contact,
         contactDetailsModel,
-        contactDownloader,
         contactBeforeToLeaveModal,
-        contactSchema,
-        contactTransformLabel,
         gettextCatalog,
         notification,
         subscriptionModel,
         memberModel,
+        listeners,
         vcard
     ) => {
+
         const ENCRYPTED_AND_SIGNED = 'contactDetails-encrypted-and-signed';
         const HAS_ERROR_VERIFICATION = 'contactDetails-verification-error';
         const HAS_ERROR_ENCRYPTED = 'contactDetails-encrypted-error';
         const HAS_ERROR_VERIFICATION_ENCRYPTED = 'contactDetails-encrypted-verification-error';
 
+        const MAP_FIELDS = {
+            Name: 'FN',
+            Emails: 'EMAIL',
+            Tels: 'TEL',
+            Adrs: 'ADR',
+            Notes: 'NOTE'
+        };
+
+        const MAP_EVENT = {
+            deleteContact({ ID }) {
+                return { type: 'deleteContacts', data: { contactIDs: [ ID ] } };
+            },
+            downloadContact({ ID }) {
+                return { type: 'exportContacts', data: { contactID: ID } };
+            }
+        };
+
         const I18N = {
             invalidForm: gettextCatalog.getString('This form is invalid', null, 'Error displays when the user try to leave an unsaved and invalid contact details')
+        };
+
+        const getFieldKey = (type = '') => (MAP_FIELDS[type] || type.toUpperCase());
+        const dispatch = (type, data = {}) => {
+            const opt = (MAP_EVENT[type] || _.noop)(data) || { type, data };
+            $rootScope.$emit('contacts', opt);
         };
 
         return {
@@ -32,7 +51,8 @@ angular.module('proton.contact')
             scope: { contact: '=', modal: '=' },
             templateUrl: 'templates/contact/contactDetails.tpl.html',
             link(scope, element) {
-                const unsubscribe = [];
+
+                const { on, unsubscribe } = listeners();
                 const updateType = (types = []) => _.contains(types, CONSTANTS.CONTACT_MODE.ENCRYPTED_AND_SIGNED) && element.addClass(ENCRYPTED_AND_SIGNED);
                 const onSubmit = () => saveContact();
                 const isFree = !subscriptionModel.hasPaid('mail') && !memberModel.isMember();
@@ -43,11 +63,10 @@ angular.module('proton.contact')
                 scope.state = {
                     encrypting: false,
                     ID: scope.contact.ID,
-                    hasEmail,
-                    isFree
+                    hasEmail, isFree
                 };
 
-                unsubscribe.push($rootScope.$on('contacts', (event, { type = '', data = {} }) => {
+                on('contacts', (event, { type = '', data = {} }) => {
                     if (scope.modal && type === 'submitContactForm') {
                         onSubmit();
                     }
@@ -55,14 +74,14 @@ angular.module('proton.contact')
                     if (type === 'contactUpdated' && data.contact.ID === scope.contact.ID) {
                         updateType(data.cards.map(({ Type }) => Type));
                     }
-                }));
+                });
 
-                unsubscribe.push($rootScope.$on('$stateChangeStart', (event, toState, toParams) => {
+                on('$stateChangeStart', (event, toState, toParams) => {
                     if (!scope.modal && scope.contactForm.$dirty) {
                         event.preventDefault();
                         saveBeforeToLeave(toState, toParams);
                     }
-                }));
+                });
 
                 // If the contact is signed we display an icon
                 updateType(scope.contact.types);
@@ -99,22 +118,15 @@ angular.module('proton.contact')
                     });
                 }
 
-                function onClick(event) {
-                    const action = event.target.getAttribute('data-action');
+                function onClick({ target }) {
+                    const action = target.getAttribute('data-action');
 
-                    switch (action) {
-                        case 'deleteContact':
-                            $rootScope.$emit('contacts', { type: 'deleteContacts', data: { contactIDs: [scope.contact.ID] } });
-                            break;
-                        case 'downloadContact':
-                            $rootScope.$emit('contacts', { type: 'exportContacts', data: { contactID: scope.contact.ID } });
-                            break;
-                        case 'back':
-                            $state.go('secured.contacts');
-                            break;
-                        default:
-                            break;
+                    if (!action) {
+                        return;
                     }
+
+                    (action === 'back') && $state.go('secured.contacts');
+                    dispatch(action, scope.contact);
                 }
 
                 function isValidForm() {
@@ -144,46 +156,29 @@ angular.module('proton.contact')
 
                     if (scope.contact.ID) {
                         contact.ID = scope.contact.ID;
-                        $rootScope.$emit('contacts', { type: 'updateContact', data: { contact } });
+                        dispatch('updateContact', { contact });
                     } else {
-                        $rootScope.$emit('contacts', { type: 'createContact', data: { contacts: [contact] } });
+                        dispatch('createContact', { contacts: [ contact ] });
                     }
 
                     scope.contactForm.$setSubmitted(true);
                     scope.contactForm.$setPristine(true);
-
                     return true;
                 }
 
-                // Methods
                 scope.get = (type) => {
-                    const vcard = scope.contact.vCard;
-
-                    switch (type) {
-                        case 'Name':
-                            return contactDetailsModel.extract({ vcard, field: 'FN' });
-                        case 'Emails':
-                            return contactDetailsModel.extract({ vcard, field: 'EMAIL' });
-                        case 'Tels':
-                            return contactDetailsModel.extract({ vcard, field: 'TEL' });
-                        case 'Adrs':
-                            return contactDetailsModel.extract({ vcard, field: 'ADR' });
-                        case 'Personals':
-                            return contactDetailsModel.extract({ vcard, field: 'PERSONALS' });
-                        case 'Customs':
-                            return contactDetailsModel.extract({ vcard, field: 'CUSTOMS' });
-                        case 'Notes':
-                            return contactDetailsModel.extract({ vcard, field: 'NOTE' });
-                        default:
-                            break;
+                    if (type) {
+                        return contactDetailsModel.extract({
+                            vcard: scope.contact.vCard,
+                            field: getFieldKey(type)
+                        });
                     }
                 };
 
                 scope.$on('$destroy', () => {
-                    _.each(unsubscribe, (cb) => cb());
-                    unsubscribe.length = 0;
                     element.off('click', onClick);
                     element.off('submit', onSubmit);
+                    unsubscribe();
                 });
             }
         };

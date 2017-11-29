@@ -1,5 +1,5 @@
 angular.module('proton.contact')
-    .directive('contactList', ($filter, $rootScope, $state, $stateParams, contactCache) => {
+    .directive('contactList', ($rootScope, $state, $stateParams, contactCache, listeners) => {
 
         const HEADER_HEIGHT = 120;
         const ITEM_CLASS = 'contactList-item';
@@ -12,8 +12,8 @@ angular.module('proton.contact')
             templateUrl: 'templates/contact/contactList.tpl.html',
             link(scope, element) {
 
+                const { on, unsubscribe } = listeners();
                 let lastChecked = null;
-                const unsubscribe = [];
                 let isLoadedContact = !!$stateParams.id;
 
                 scope.contacts = [];
@@ -96,21 +96,20 @@ angular.module('proton.contact')
                     }
                 }
 
-                element.on('click', onClick);
-                unsubscribe.push($rootScope.$on('contacts', (event, { type = '' }) => {
+                on('contacts', (event, { type = '' }) => {
                     (type === 'contactsUpdated') && scope.$applyAsync(() => updateContacts());
-                }));
+                });
 
-                unsubscribe.push($rootScope.$on('$stateChangeSuccess', () => {
+                on('$stateChangeSuccess', () => {
                     scope.$applyAsync(() => activeContact());
-                }));
+                });
 
+                element.on('click', onClick);
                 contactCache.hydrate();
 
                 scope.$on('$destroy', () => {
                     element.off('click', onClick);
-                    unsubscribe.forEach((cb) => cb());
-                    unsubscribe.length = 0;
+                    unsubscribe();
                 });
             }
         };

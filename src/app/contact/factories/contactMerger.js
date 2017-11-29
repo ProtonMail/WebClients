@@ -1,5 +1,6 @@
 angular.module('proton.contact')
-    .factory('contactMerger', ($rootScope, contactMergerModal, contactCache, contactEditor, contactSchema, Contact, gettextCatalog, networkActivityTracker, notification, vcard) => {
+    .factory('contactMerger', ($rootScope, contactMergerModal, contactEditor, contactSchema, Contact, gettextCatalog, networkActivityTracker, notification, vcard) => {
+
         const I18N = {
             mergeContacts: gettextCatalog.getString('Merge contacts', null, 'Title'),
             noDuplicate: gettextCatalog.getString('You have no duplicate contacts', null, 'Info')
@@ -21,7 +22,6 @@ angular.module('proton.contact')
                 if (property.getField() === 'email') {
                     acc.push(property.valueOf());
                 }
-
                 return acc;
             }, []);
         }
@@ -54,7 +54,6 @@ angular.module('proton.contact')
 
                     _.each(map[email], (index) => {
                         const contact = contacts[index];
-
                         contact.selected = true; // Select the contact per default
                         acc[email].push(contact);
                     });

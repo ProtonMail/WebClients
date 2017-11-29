@@ -1,5 +1,6 @@
 angular.module('proton.contact')
-    .directive('contactItem', ($timeout, $rootScope, contactTransformLabel, contactUI, messageModel) => {
+    .directive('contactItem', ($rootScope, contactTransformLabel, contactUI, messageModel) => {
+
         const AS_SORTABLE_DISABLED = 'as-sortable-disabled';
         const addX = (value = '') => (value.startsWith('x') ? value : `X-${value}`);
 
@@ -24,15 +25,16 @@ angular.module('proton.contact')
                 list.addClass(`contactItem-container-${scope.type}`);
                 list.addClass(AS_SORTABLE_DISABLED);
 
-                function onClick({ target }) {
-                    const action = target.getAttribute('data-action');
-                    const index = parseInt(target.getAttribute('data-index'), 10);
+                function onClick(e) {
+                    e.stopPropagation();
+                    const action = e.target.getAttribute('data-action');
+                    const index = parseInt(e.target.getAttribute('data-index'), 10);
                     switch (action) {
                         case 'add':
                             add();
                             break;
                         case 'composeTo':
-                            composeTo(target.getAttribute('data-email'));
+                            composeTo(e.target.getAttribute('data-email'));
                             break;
                         case 'remove':
                             remove(scope.UI.items[index]);
@@ -65,10 +67,9 @@ angular.module('proton.contact')
                     scope.change();
                 }
 
-                function composeTo(email) {
+                function composeTo(Address) {
                     const message = messageModel();
-
-                    message.ToList = [ { Address: email, Name: email } ];
+                    message.ToList = [ { Address, Name: Address } ];
                     $rootScope.$emit('composer.new', { message, type: 'new' });
                 }
 
@@ -91,8 +92,6 @@ angular.module('proton.contact')
                 };
 
                 scope.UI = contactUI.initialize(datas, type, state);
-                scope.change = () => scope.$applyAsync(() => (scope.model[type] = scope.UI.items));
-                scope.visibleItems = () => scope.UI.items.filter(({ hide }) => !hide);
 
                 scope.getAddressValue = (item) => {
                     const itemValue = item.value;
@@ -108,6 +107,8 @@ angular.module('proton.contact')
                     return '';
                 };
 
+                scope.change = () => scope.$applyAsync(() => (scope.model[type] = scope.UI.items));
+                scope.visibleItems = () => scope.UI.items.filter(({ hide }) => !hide);
                 scope.onFocus = (item) => item.displaySelector = true;
                 scope.onBlur = (item) => item.displaySelector = false;
                 scope.toggleSelector = (event, item) => {

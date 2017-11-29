@@ -1,5 +1,5 @@
 angular.module('proton.contact')
-    .directive('contactToolbar', ($rootScope, $state, $stateParams, aboutClient, CONSTANTS, contactCache, gettextCatalog, messageModel, notification, listeners) => {
+    .directive('contactToolbar', ($rootScope, $state, $stateParams, CONSTANTS, contactCache, gettextCatalog, messageModel, notification, listeners) => {
 
         const getList = () => {
             if (contactCache.get('selected').length) {

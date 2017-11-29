@@ -1,9 +1,11 @@
 angular.module('proton.contact')
     .factory('contactUI', (gettextCatalog, tools, contactTransformLabel) => {
+
         const EMAIL_TYPE = ['email', 'home', 'work', 'other'];
         const TEL_TYPE = ['tel', 'mobile', 'work', 'fax', 'other'];
         const ADR_TYPE = ['adr', 'home', 'work', 'other'];
         const PERSONAL_TYPE = ['org', 'anniversary', 'bday', 'gender', 'nickname', 'role', 'title', 'url']; // Andy wants 'org' first
+
         const I18N = {
             name: gettextCatalog.getString('Name', null, 'Placeholder'),
             emailAddress: gettextCatalog.getString('Email address', null, 'Placeholder'),
@@ -92,11 +94,7 @@ angular.module('proton.contact')
                     break;
             }
 
-            if (UI.labels.length > 1) {
-                UI.selectable = true;
-            } else {
-                UI.selectable = false;
-            }
+            UI.selectable = UI.labels.length > 1;
 
             if (datas.length) {
                 UI.allowMultiple = true;
@@ -110,7 +108,6 @@ angular.module('proton.contact')
 
             if (!datas.length || (datas.length === 1 && _.contains(UI.hide, datas[0].key))) {
                 const populated = populate(UI, type);
-
                 add(UI, populated.key, populated.type, '');
             }
 
@@ -131,7 +128,6 @@ angular.module('proton.contact')
                     return { key: 'adr', type: 'adr' };
                 case 'Personals': {
                     const key = findKey(UI);
-
                     return { key, type: key };
                 }
                 case 'Customs':
@@ -150,23 +146,17 @@ angular.module('proton.contact')
          * @return {String} type
          */
         function findKey({ items = [] }) {
-            const types = _.map(items, ({ type }) => type);
+            const types = _.pluck(items, 'type');
             const key = _.find(PERSONAL_TYPE, (type) => types.indexOf(type) === -1);
-
             return key || PERSONAL_TYPE[_.random(PERSONAL_TYPE.length - 1)];
         }
 
         function add(UI, type, label, value = '', params) {
             const hide = _.contains(UI.hide, type);
-
             UI.items.push({ type, label: contactTransformLabel.toLang(label), value, hide, params });
         }
 
-        function remove(UI, item) {
-            const index = UI.items.indexOf(item);
-
-            UI.items.splice(index, 1);
-        }
+        const remove = (UI, item) => UI.items.splice(UI.items.indexOf(item), 1);
 
         return { remove, add, initialize, populate };
     });

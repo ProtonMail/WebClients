@@ -4,7 +4,7 @@
             <i class="contactEncrypted-encrypted-and-signed-icon" pt-tooltip-translate="Encrypted and digital signature verified"></i>
         </legend>
         <div>
-            <div ng-show="state.isFree" class="contactDetails-fields-locked" >
+            <div ng-if="state.isFree" class="contactDetails-fields-locked" >
                 <div class="contactDetails-fields-locked-notice">
                     <p><a class="pm_button primary" ui-sref="secured.dashboard({ scroll: true })" translate translate-context="Action">Upgrade now</a></p>
                     <p translate translate-context="Info">This feature is only available for paid users.</p>

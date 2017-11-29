@@ -15,7 +15,6 @@ angular.module('proton.contact')
             templateUrl: 'templates/contact/contactNoResult.tpl.html',
             link(scope, element) {
                 element.on('click', onClick);
-
                 scope.$on('$destroy', () => {
                     element.off('click', onClick);
                 });

@@ -1,8 +1,13 @@
 angular.module('proton.contact')
     .factory('contactDetailsModel', (contactTransformLabel, CONSTANTS, contactSchema, gettextCatalog) => {
+
         const ESCAPE_REGEX = /:|,|;|"/gi;
         const UNESCAPE_REGEX = /\\:|\\,|\\;|\\"/gi;
-        const I18N = { unknown: gettextCatalog.getString('Unknown', null, 'Default display name vcard') };
+
+        const I18N = {
+            unknown: gettextCatalog.getString('Unknown', null, 'Default display name vcard')
+        };
+
         const FIELDS = {
             AVOID: ['version', 'n', 'prodid', 'abuid'],
             FN: ['fn'],
@@ -12,6 +17,11 @@ angular.module('proton.contact')
             NOTE: ['note'],
             PERSONALS: ['kind', 'source', 'xml', 'nickname', 'photo', 'bday', 'anniversary', 'gender', 'impp', 'lang', 'tz', 'geo', 'title', 'role', 'logo', 'org', 'member', 'related', 'categories', 'rev', 'sound', 'uid', 'clientpidmap', 'url', 'key', 'fburl', 'caladruri', 'caluri']
         };
+
+        const MAP_KEYS = CONSTANTS.VCARD_KEYS.reduce((acc, key) => {
+            acc[key] = contactTransformLabel.toLang(key);
+            return acc;
+        }, {});
 
         const unescapeValue = (value = '') => value.replace(UNESCAPE_REGEX, (val) => val.substr(1));
         const processEscape = (value = '') => value.replace(ESCAPE_REGEX, (val) => `\\${val}`);
@@ -29,23 +39,24 @@ angular.module('proton.contact')
             }
             return unescapeValue(value);
         };
+
         const buildProperty = (property = {}) => {
             const key = property.getField();
             return { value: cleanValue(property.valueOf(), key), type: getType(property), key, params: property.getParams() };
         };
-        const checkProperty = (property) => (Array.isArray(property) ? true : property && !property.isEmpty());
-        const keys = CONSTANTS.VCARD_KEYS.reduce((acc, key) => {
-            acc[key] = contactTransformLabel.toLang(key);
-            return acc;
-        }, {});
+
+        const checkProperty = (property) => {
+            if (!Array.isArray(property)) {
+                return property && !property.isEmpty();
+            }
+            return true;
+        };
 
         function getKeys(field = '', vcard = {}) {
-            switch (field) {
-                case 'CUSTOMS':
-                    return _.difference(Object.keys(vcard.data), [].concat(FIELDS.AVOID, FIELDS.FN, FIELDS.EMAIL, FIELDS.TEL, FIELDS.ADR, FIELDS.NOTE, FIELDS.PERSONALS));
-                default:
-                    return FIELDS[field];
+            if (field === 'CUSTOMS') {
+                return _.difference(Object.keys(vcard.data), [].concat(FIELDS.AVOID, FIELDS.FN, FIELDS.EMAIL, FIELDS.TEL, FIELDS.ADR, FIELDS.NOTE, FIELDS.PERSONALS));
             }
+            return FIELDS[field];
         }
 
         /**
@@ -55,17 +66,12 @@ angular.module('proton.contact')
          */
         function getType(property) {
             const type = property.getType();
-
-            if (Array.isArray(type)) {
-                return type[0];
-            }
-
-            return type;
+            return Array.isArray(type) ? type[0] : type;
         }
 
         function getParams(item = {}, pref = 0) {
             const params = item.params || {};
-            const hasType = item.label && keys[item.type] !== item.label;
+            const hasType = item.label && MAP_KEYS[item.type] !== item.label;
 
             if (hasType) {
                 params.type = contactTransformLabel.toVCard(item.label);
@@ -93,7 +99,9 @@ angular.module('proton.contact')
                     case 'Tels':
                     case 'Adrs':
                         child.forEach((item, index) => {
-                            (item.value) && params.vCard.add(item.type, escapeValue(item.value), getParams(item, child.length > 1 && (index + 1)));
+                            if (item.value) {
+                                params.vCard.add(item.type, escapeValue(item.value), getParams(item, child.length > 1 && (index + 1)));
+                            }
                         });
                         break;
                     default:
@@ -107,22 +115,22 @@ angular.module('proton.contact')
             const fnProperty = params.vCard.get('fn');
 
             if (!fnProperty || fnProperty.isEmpty()) {
-                let value = I18N.unknown;
+                let value = '';
                 const emailProperty = params.vCard.get('email');
 
                 if (emailProperty) {
                     const emailValue = emailProperty.valueOf();
-
-                    value = (Array.isArray(emailValue) ? emailValue[0].valueOf() : emailValue) || I18N.unknown;
+                    value = Array.isArray(emailValue) ? emailValue[0].valueOf() : emailValue;
                 }
 
-                params.vCard.add('fn', value);
+                params.vCard.add('fn', value || I18N.unknown);
             }
 
             return params;
         }
 
         function extract({ vcard = {}, field = '' }) {
+
             return _.reduce(getKeys(field, vcard), (acc, key) => {
                 const property = vcard.get(key);
 
@@ -151,7 +159,6 @@ angular.module('proton.contact')
         function orderByPref(properties = []) {
             return _.sortBy(properties, (property) => {
                 const { pref = 0 } = property.getParams() || {};
-
                 return pref;
             });
         }

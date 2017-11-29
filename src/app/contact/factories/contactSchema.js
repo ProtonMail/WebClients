@@ -1,23 +1,39 @@
 angular.module('proton.contact')
     .factory('contactSchema', (gettextCatalog) => {
+
         /* eslint new-cap: "off" */
         const contactAPI = { vCard: new vCard() };
         const group = ['Tel', 'Adr', 'Note'];
         const personnal = ['Bday', 'Title', 'Org', 'Nickname'];
+        const I18N = {
+            UNKNOWN: gettextCatalog.getString('Unknown', null, 'Default display name vcard')
+        };
+
         const all = group.concat(personnal);
-        const buildEmailProperty = (property = {}) => ({ Email: property.valueOf(), Type: getType(property) });
-        const formatEmails = (property = {}) => (Array.isArray(property) ? _.map(property, (prop) => buildEmailProperty(prop)) : [buildEmailProperty(property)]);
-        const checkProperty = (property) => (Array.isArray(property) ? true : property && !property.isEmpty() && property.valueOf().trim());
-        const UNKNOWN = gettextCatalog.getString('Unknown', null, 'Default display name vcard');
+
+        const buildEmailProperty = (property = {}) => ({
+            Email: property.valueOf(),
+            Type: getType(property)
+        });
+
+        const formatEmails = (property = {}) => {
+            if (Array.isArray(property)) {
+                return _.map(property, buildEmailProperty);
+            }
+            return [ buildEmailProperty(property) ];
+        };
+
+        const checkProperty = (property) => {
+            if (!Array.isArray(property)) {
+                return property && !property.isEmpty() && property.valueOf().trim();
+            }
+            return true;
+        };
+
 
         function getType(property) {
             const type = property.getType();
-
-            if (Array.isArray(type)) {
-                return type;
-            }
-
-            return [type];
+            return Array.isArray(type) ? type : [type];
         }
 
         return {
@@ -40,7 +56,7 @@ angular.module('proton.contact')
                     if (checkProperty(nameProperty)) {
                         prepared.Name = nameProperty.valueOf().trim();
                     } else {
-                        const nameValue = prepared.Emails.length ? prepared.Emails[0].Email : UNKNOWN;
+                        const nameValue = prepared.Emails.length ? prepared.Emails[0].Email : I18N.UNKNOWN;
 
                         prepared.Name = nameValue;
                         prepared.vCard.set('fn', nameValue);
