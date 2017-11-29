@@ -87,5 +87,5 @@ angular.module('proton.payment')
             return promise;
         }
 
-        return { getStatus, getMethods, get, canPay, subscribe, addCoupon };
+        return { getStatus, getMethods, get, canPay, subscribe, addCoupon, clear };
     });
