@@ -13,15 +13,8 @@ angular.module('proton.contact', ['vs-repeat'])
                     sort: { value: null, squash: true }
                 },
                 resolve: {
-                    delinquent($state, gettextCatalog, user, notification) {
-                        if (user.Delinquent < 3) {
-                            return Promise.resolve();
-                        }
-
-                        notification.error(gettextCatalog.getString('Your account currently has an overdue invoice. Please pay all unpaid invoices.', null, 'Info'));
-                        $state.go('secured.payments');
-
-                        return Promise.reject();
+                    delinquent(user, isDelinquent) {
+                        return isDelinquent();
                     }
                 },
                 views: {
