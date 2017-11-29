@@ -14,7 +14,8 @@ angular.module('proton.conversation')
         tools,
         hotkeys,
         labelsModel,
-        findExpendableMessage
+        findExpendableMessage,
+        listeners
     ) => {
 
     /**
@@ -78,7 +79,7 @@ angular.module('proton.conversation')
             templateUrl: 'templates/partials/conversation.tpl.html',
             link(scope) {
                 let messagesCached = [];
-                const unsubscribe = [];
+                const { on, unsubscribe } = listeners();
 
                 const scrollToPosition = getScrollToPosition();
                 let unsubscribeActions = angular.noop;
@@ -114,18 +115,17 @@ angular.module('proton.conversation')
 
                 };
 
-                // Listeners
-                unsubscribe.push($rootScope.$on('refreshConversation', (event, conversationIDs) => {
+                on('refreshConversation', (event, conversationIDs) => {
                     if (conversationIDs.indexOf(scope.conversation.ID) > -1) {
                         refreshConversation();
                     }
-                }));
-                unsubscribe.push($rootScope.$on('message.expiration', () => {
+                });
+                on('message.expiration', () => {
                     scope.$applyAsync(() => refreshConversation());
-                }));
+                });
 
                 // We need to allow hotkeys for a message when you open the message
-                unsubscribe.push($rootScope.$on('message.open', (event, { type, data }) => {
+                on('message.open', (event, { type, data }) => {
                     if (type === 'toggle') {
                         unsubscribeActions();
                         unsubscribeActions = conversationListeners(data.message);
@@ -138,9 +138,9 @@ angular.module('proton.conversation')
                     if (type === 'render') {
                         return messageScroll.to(data);
                     }
-                }));
+                });
 
-                scope.$on('unmarkMessages', () => {
+                on('unmarkMessages', () => {
                     scope.markedMessage = undefined;
                     unsubscribeActions();
                 });
@@ -216,7 +216,7 @@ angular.module('proton.conversation')
                     }
                 });
 
-                unsubscribe.push($rootScope.$on('toggleStar', () => {
+                on('toggleStar', () => {
                     const data = {
                         model: scope.conversation,
                         type: 'conversation'
@@ -227,7 +227,7 @@ angular.module('proton.conversation')
                         data.type = 'message';
                     }
                     $rootScope.$emit('elements', { type: 'toggleStar', data });
-                }));
+                });
 
                 // We don't need to check these events if we didn't choose to focus onto a specific message
                 hotkeys.unbind(['down', 'up']);
@@ -369,59 +369,49 @@ angular.module('proton.conversation')
                 };
 
                 /**
-             * @return {Boolean}
-             */
+                 * @return {Boolean}
+                 */
                 scope.showNotifier = (folder) => {
                     const filtered = _.filter(messagesCached, (message) => _.contains(message.LabelIDs, CONSTANTS.MAILBOX_IDENTIFIERS[folder]));
                     return filtered.length < messagesCached.length && filtered.length > 0;
                 };
 
                 /**
-             * Return messages data for dropdown labels
-             */
-                scope.getMessages = () => {
-                    return scope.messages;
-                };
+                 * Return messages data for dropdown labels
+                 */
+                scope.getMessages = () => scope.messages;
 
                 /**
-             * Mark current conversation as read
-             * @param {Boolean} back
-             */
-                scope.read = () => {
-                    const ids = [scope.conversation.ID];
-
-                    actionConversation.read(ids);
-                };
+                 * Mark current conversation as read
+                 * @param {Boolean} back
+                 */
+                scope.read = () => actionConversation.read([ scope.conversation.ID ]);
 
                 /**
-             * Mark current conversation as unread
-             */
+                 * Mark current conversation as unread
+                 */
                 scope.unread = () => {
                     actionConversation.unread([scope.conversation.ID]);
                     back();
                 };
 
                 /**
-             * Delete current conversation
-             */
-                scope.delete = () => {
-                    actionConversation.remove([scope.conversation.ID]);
-                };
+                 * Delete current conversation
+                 */
+                scope.delete = () => actionConversation.remove([scope.conversation.ID]);
+
                 /**
-             * Apply labels for the current conversation
-             * @return {Promise}
-             */
+                 * Apply labels for the current conversation
+                 * @return {Promise}
+                 */
                 scope.saveLabels = (labels, alsoArchive) => {
                     actionConversation.label([scope.conversation.ID], labels, alsoArchive);
                 };
 
-                // Call initialization
                 initialization();
 
-
                 scope.$on('$destroy', () => {
-                    unsubscribe.forEach((cb) => cb());
-                    unsubscribe.length = 0;
+                    unsubscribe();
                     unsubscribeActions();
                     // Ensure only one event Listener
                     hotkeys.unbind(['down', 'up']);
