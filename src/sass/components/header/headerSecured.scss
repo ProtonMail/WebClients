@@ -5,7 +5,7 @@
     color: $header-font-color;
     font-size: 12px;
     position: relative;
-    z-index: 101; /* overlay composer */
+    z-index: 3000; /* overlay composer */
     font-family: sans-serif;
 }
 
