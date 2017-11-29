@@ -989,39 +989,20 @@ angular.module('proton.routes', [
         Object.keys(CONSTANTS.MAILBOX_IDENTIFIERS).forEach((box) => {
             const parentState = 'secured.' + box;
             const childState = 'secured.' + box + '.element';
-            const elementView = {};
-            const list = {};
 
-            list['content@secured'] = {
-                controller: 'ElementsController',
-                templateUrl: 'templates/partials/conversations.tpl.html'
-            };
-
-            elementView['view@secured.' + box] = {
-                template: '<element-view></element-view>'
+            const url = `/${box}?${conversationParameters()}`;
+            const views = {
+                'content@secured': {
+                    controller: 'ElementsController',
+                    templateUrl: 'templates/partials/conversations.tpl.html'
+                }
             };
 
             $stateProvider.state(parentState, {
-                url: '/' + box + '?' + conversationParameters(),
-                views: list,
+                url, views,
                 resolve: {
-                    delinquent($state, gettextCatalog, user, notification, authentication, CONSTANTS) {
-
-                        const { PAID_MEMBER_ROLE, UNPAID_STATE } = CONSTANTS;
-
-                        if (authentication.user.Delinquent < UNPAID_STATE.DELINQUENT) {
-                            return Promise.resolve();
-                        }
-
-                        if (authentication.user.Role === PAID_MEMBER_ROLE) {
-                            const message = gettextCatalog.getString('Your account currently has an overdue invoice. Please contact your administrator.', null, 'Info');
-                            notification.error(message);
-                            return $state.go('login');
-                        }
-
-                        const message = gettextCatalog.getString('Your account currently has an overdue invoice. Please pay all unpaid invoices.', null, 'Info');
-                        notification.error(message);
-                        $state.go('secured.payments');
+                    delinquent(user, isDelinquent) {
+                        return isDelinquent();
                     }
                 },
                 onEnter(AppModel) {
@@ -1033,13 +1014,18 @@ angular.module('proton.routes', [
                 }
             });
 
+            const elementView = {
+                [`view@secured.${box}`]: {
+                    template: '<element-view></element-view>'
+                }
+            };
+
             $stateProvider.state(childState, {
                 url: '/{id}',
                 views: elementView,
                 params: { id: null, messageID: null, welcome: null },
                 onExit($rootScope) {
-                    $rootScope.$broadcast('unactiveMessages');
-                    $rootScope.$broadcast('unmarkMessages');
+                    $rootScope.$emit('unmarkMessages');
                 }
             });
         });
