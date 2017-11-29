@@ -1,5 +1,5 @@
 angular.module('proton.contact')
-    .factory('contactEditor', ($log, $rootScope, $state, eventManager, chunk, Contact, CONSTANTS, contactModal, contactLoaderModal, contactSchema, confirmModal, gettextCatalog, networkActivityTracker, notification) => {
+    .factory('contactEditor', ($rootScope, $state, eventManager, Contact, contactModal, contactLoaderModal, contactSchema, confirmModal, gettextCatalog, networkActivityTracker, notification) => {
         /*
         * Add contacts
         * @param {Array} contacts
@@ -10,7 +10,10 @@ angular.module('proton.contact')
                 .then(({ created, total, errors }) => {
                     return eventManager.call()
                         .then(() => {
-                            $rootScope.$emit('contacts', { type: 'contactCreated', data: { created, total, errors, mode } });
+                            $rootScope.$emit('contacts', {
+                                type: 'contactCreated',
+                                data: { created, total, errors, mode }
+                            });
                         });
                 });
 
@@ -24,7 +27,6 @@ angular.module('proton.contact')
                     }
                 });
             }
-
             return promise;
         }
         /*
@@ -41,13 +43,11 @@ angular.module('proton.contact')
                 });
 
             networkActivityTracker.track(promise);
-
             return promise;
         }
         /*
         * Delete contact(s)
         * @param {Array} selectContacts
-        * @return {Promise}
         */
         function remove({ contactIDs = [], confirm = true }) {
             const success = (contactIDs === 'all') ? gettextCatalog.getString('All contacts deleted', null, 'Success') : gettextCatalog.getPlural(contactIDs.length, 'Contact deleted', 'Contacts deleted', null, 'Success');
@@ -58,28 +58,23 @@ angular.module('proton.contact')
                         notification.success(success);
                         $state.go('secured.contacts');
                     });
-
                 networkActivityTracker.track(promise);
             };
 
             if (confirm) {
-                confirmDeletion(contactIDs, () => process());
-            } else {
-                process();
+                return confirmDeletion(contactIDs, () => process());
             }
+            process();
         }
 
-        function requestDeletion(contactIDs = []) {
-            const promise = (contactIDs === 'all') ? Contact.clear() : Contact.remove({ IDs: contactIDs });
-
-            promise.then(({ data = {} } = {}) => {
+        function requestDeletion(IDs = []) {
+            const promise = (IDs === 'all') ? Contact.clear() : Contact.remove({ IDs });
+            return promise.then(({ data = {} } = {}) => {
                 if (data.Error) {
                     throw new Error(data.Error);
                 }
                 return eventManager.call();
             });
-
-            return promise;
         }
 
         function confirmDeletion(contactIDs = [], callback) {

@@ -1,6 +1,6 @@
 angular.module('proton.contact')
     .factory('contactTransformLabel', (gettextCatalog) => {
-        const labels = {
+        const MAP = {
             adr: gettextCatalog.getString('Address', null, 'VCard key name'),
             anniversary: gettextCatalog.getString('Anniversary', null, 'VCard key name'),
             caladruri: gettextCatalog.getString('Calendar user address', null, 'VCard key name'),
@@ -46,16 +46,14 @@ angular.module('proton.contact')
          * @param  {String} label
          * @return {String}
          */
-        const toLang = (label = '') => labels[label.toLowerCase()] || `${label.charAt(0).toUpperCase()}${label.slice(1)}`;
+        const toLang = (label = '') => MAP[label.toLowerCase()] || `${label.charAt(0).toUpperCase()}${label.slice(1)}`;
 
         /**
          * Transform displayed label to key
          * @param  {String} label
          * @return {Boolean / String}
          */
-        const toVCard = (label = '') => {
-            return Object.keys(labels).find((key) => label === labels[key]) || label;
-        };
+        const toVCard = (label = '') => Object.keys(MAP).find((key) => label === MAP[key]) || label;
 
         return { toLang, toVCard };
     });

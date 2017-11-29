@@ -1,5 +1,5 @@
 angular.module('proton.contact')
-    .factory('contactEmails', ($rootScope, $state, Contact, networkActivityTracker) => {
+    .factory('contactEmails', ($rootScope, Contact, networkActivityTracker) => {
 
         const emails = [];
         const set = (data) => emails.push(...data);
@@ -25,7 +25,8 @@ angular.module('proton.contact')
         };
 
         const load = () => {
-            const promise = networkActivityTracker.track(loadCache());
+            const promise = loadCache();
+            networkActivityTracker.track(promise);
             return promise;
         };
 
@@ -36,19 +37,16 @@ angular.module('proton.contact')
 
         $rootScope.$on('updateContactEmail', (event, ID, contactEmail) => {
             const index = findIndex(ID);
-
             if (index !== -1) {
                 emails[index] = contactEmail;
             } else {
                 emails.push(contactEmail);
             }
-
             emit(contactEmail);
         });
 
         $rootScope.$on('deleteContactEmail', (event, ID) => {
             const index = findIndex(ID);
-
             if (index !== -1) {
                 emails.splice(index, 1);
                 $rootScope.$emit('contacts', { type: 'deletedContactEmail', data: { ID } });

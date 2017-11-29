@@ -1,6 +1,7 @@
 angular.module('proton.contact')
-    .factory('contactDownloader', (CONSTANTS, Contact, contactLoaderModal, contactDetailsModel, downloadFile, vcard) => {
-        const getFileName = (id, [card]) => {
+    .factory('contactDownloader', (Contact, contactLoaderModal, contactDetailsModel, downloadFile, vcard) => {
+
+        const getFileName = (id, [ card ]) => {
             const nameProperty = card.get('fn');
 
             if (id !== 'all' && nameProperty) {
@@ -10,20 +11,33 @@ angular.module('proton.contact')
             return 'proton.vcf';
         };
 
+        const get = async (id) => {
+            if (id !== 'all') {
+                const { vCard } = await Contact.get(id);
+                return [ vCard ];
+            }
+            const list = await Contact.exportAll();
+            return list.map(({ vCard }) => vCard);
+        };
+
         return (id = 'all') => {
-            const promise = (id !== 'all') ? Contact.get(id) : Contact.exportAll();
+            const promise = get(id);
 
-            contactLoaderModal.activate({ params: { mode: 'export', close() { contactLoaderModal.deactivate(); } } });
-
-            promise.then((result) => {
-                const vCards = (id === 'all') ? result.map(({ vCard }) => vCard) : [result.vCard];
-                const fileName = getFileName(id, vCards);
-                const blob = new Blob([vcard.to(vCards)], { type: 'data:attachment/vcard;' });
-
-                contactLoaderModal.deactivate();
-                downloadFile(blob, fileName);
-            }, () => {
-                contactLoaderModal.deactivate();
+            contactLoaderModal.activate({
+                params: {
+                    mode: 'export',
+                    close() {
+                        contactLoaderModal.deactivate();
+                    }
+                }
             });
+
+            promise
+                .then((data) => {
+                    const blob = new Blob([ vcard.to(data) ], { type: 'data:attachment/vcard;' });
+                    contactLoaderModal.deactivate();
+                    downloadFile(blob, getFileName(id, data));
+                })
+                .catch(contactLoaderModal.deactivate);
         };
     });

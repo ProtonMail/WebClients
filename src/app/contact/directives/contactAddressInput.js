@@ -65,13 +65,8 @@ angular.module('proton.contact')
                     country: countryValue
                 };
 
-                if (postBoxValue.length) {
-                    element.addClass(SHOW_POST_BOX);
-                }
-
-                if (extendedValue.length) {
-                    element.addClass(SHOW_EXTENDED);
-                }
+                postBoxValue.length && element.addClass(SHOW_POST_BOX);
+                extendedValue.length && element.addClass(SHOW_EXTENDED);
 
                 defaultInput.on('focus', onFocus);
                 fields.on('change', onChange);
