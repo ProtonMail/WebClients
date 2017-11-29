@@ -7,6 +7,8 @@
 
 .moveElement-btn-delete { display: none }
 
+.moveElement-container button + button { border-radius: 0 }
+
 body[id^="secured-trash"],
 body[id^="secured-drafts"] {
     .moveElement-btn-trash { display: none }
