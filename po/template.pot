@@ -716,7 +716,7 @@ msgid "Active"
 msgstr ""
 
 #. contacts toolbar menu option
-#: src/app/templates/contact/contactToolbar.tpl.html:5
+#: src/app/templates/contact/contactToolbar.tpl.html:10
 #: src/app/templates/filter/emailBlockButton.tpl.html:1
 msgctxt "Action"
 msgid "Add"
@@ -804,7 +804,8 @@ msgctxt "Action"
 msgid "Add custom domain"
 msgstr ""
 
-#: src/app/templates/directives/contact/contactItem.tpl.html:58
+#: src/app/templates/directives/contact/contactItem.tpl.html:89
+msgctxt "Action"
 msgid "Add Entry"
 msgstr ""
 
@@ -1310,7 +1311,7 @@ msgctxt "Info"
 msgid "Are you sure you want to clear all your logs?"
 msgstr ""
 
-#: src/app/contact/factories/contactEditor.js:85
+#: src/app/contact/factories/contactEditor.js:86
 msgctxt "Info"
 msgid "Are you sure you want to delete all your contacts?"
 msgstr ""
@@ -1321,7 +1322,7 @@ msgctxt "Info"
 msgid "Are you sure you want to delete this address?"
 msgstr ""
 
-#: src/app/contact/factories/contactEditor.js:85
+#: src/app/contact/factories/contactEditor.js:86
 msgid "Are you sure you want to delete this contact?"
 msgid_plural "Are you sure you want to delete the selected contacts?"
 msgstr[0] ""
@@ -1900,7 +1901,7 @@ msgctxt "Action"
 msgid "Change OpenVPN Password"
 msgstr ""
 
-#: src/app/templates/directives/contact/contactItem.tpl.html:70
+#: src/app/templates/directives/contact/contactItem.tpl.html:113
 msgctxt "Action"
 msgid "Change order"
 msgstr ""
@@ -2151,7 +2152,7 @@ msgstr ""
 
 #. compose button in sidebar
 #. contacts toolbar menu option
-#: src/app/templates/contact/contactToolbar.tpl.html:7
+#: src/app/templates/contact/contactToolbar.tpl.html:24
 #: src/app/templates/partials/sidebar.tpl.html:2
 msgctxt "Action"
 msgid "Compose"
@@ -2162,7 +2163,8 @@ msgctxt "Info"
 msgid "Compose mode saved"
 msgstr ""
 
-#: src/app/templates/directives/contact/contactItem.tpl.html:56
+#: src/app/templates/directives/contact/contactItem.tpl.html:71
+msgctxt "Action"
 msgid "Compose to"
 msgstr ""
 
@@ -2283,7 +2285,7 @@ msgctxt "Title"
 msgid "Contact Details"
 msgstr ""
 
-#: src/app/contact/directives/contactToolbar.js:36
+#: src/app/contact/directives/contactToolbar.js:49
 msgctxt "Error"
 msgid "Contact does not contain email address"
 msgstr ""
@@ -2366,7 +2368,8 @@ msgstr ""
 msgid "Copied to clipboard"
 msgstr ""
 
-#: src/app/templates/directives/contact/contactItem.tpl.html:55
+#: src/app/templates/directives/contact/contactItem.tpl.html:65
+msgctxt "Action"
 msgid "Copy address"
 msgstr ""
 
@@ -2790,13 +2793,13 @@ msgctxt "Title"
 msgid "Default Signature"
 msgstr ""
 
-#: src/app/contact/factories/contactEditor.js:86
+#: src/app/contact/factories/contactEditor.js:87
 msgctxt "Title"
 msgid "Delete"
 msgstr ""
 
 #. contacts toolbar menu option
-#: src/app/templates/contact/contactToolbar.tpl.html:6
+#: src/app/templates/contact/contactToolbar.tpl.html:17
 #: src/app/templates/filter/emailBlockList.tpl.html:28
 msgid "Delete"
 msgstr ""
@@ -2829,7 +2832,7 @@ msgctxt "Title"
 msgid "Delete address"
 msgstr ""
 
-#: src/app/contact/factories/contactEditor.js:86
+#: src/app/contact/factories/contactEditor.js:87
 #: src/app/elements/directives/advancedFilterElement.js:29
 msgctxt "Title"
 msgid "Delete all"
@@ -4681,7 +4684,7 @@ msgctxt "Error"
 msgid "Invalid CVC"
 msgstr ""
 
-#: src/app/templates/directives/contact/contactItem.tpl.html:62
+#: src/app/templates/directives/contact/contactItem.tpl.html:100
 #: src/app/templates/filter/filterAddressModal.tpl.html:27
 #: src/app/templates/modals/bug.tpl.html:69
 msgctxt "Error"
@@ -6851,7 +6854,8 @@ msgctxt "Action"
 msgid "Remove"
 msgstr ""
 
-#: src/app/templates/directives/contact/contactItem.tpl.html:57
+#: src/app/templates/directives/contact/contactItem.tpl.html:80
+msgctxt "Action"
 msgid "Remove Entry"
 msgstr ""
 
@@ -7154,7 +7158,7 @@ msgstr ""
 #. contact details
 #. Save button for updating default identity on account page
 #: src/app/templates/contact/contactDetails.tpl.html:6
-#: src/app/templates/contact/contactModal.tpl.html:15
+#: src/app/templates/contact/contactModal.tpl.html:20
 #: src/app/templates/dashboard/customProPlanModal.tpl.html:41
 #: src/app/templates/dashboard/customVpnModal.tpl.html:25
 #: src/app/templates/directives/composer/composer.tpl.html:120
@@ -7194,7 +7198,7 @@ msgctxt "Title for contact modal"
 msgid "Save Changes?"
 msgstr ""
 
-#: src/app/templates/directives/contact/contactItem.tpl.html:71
+#: src/app/templates/directives/contact/contactItem.tpl.html:114
 msgctxt "Action"
 msgid "Save order"
 msgstr ""
@@ -8126,7 +8130,7 @@ msgstr ""
 msgid "This feature is only available for ProtonMail Professional plans or higher"
 msgstr ""
 
-#: src/app/contact/directives/contactDetails.js:25
+#: src/app/contact/directives/contactDetails.js:26
 msgctxt "Error displays when the user try to leave an unsaved and invalid contact details"
 msgid "This form is invalid"
 msgstr ""
