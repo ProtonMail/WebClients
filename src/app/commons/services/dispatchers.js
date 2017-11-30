@@ -8,7 +8,7 @@ angular.module('proton.commons')
                 if (key.charAt(0) !== '$') {
                     acc[key] = (type, data = {}) => {
                         $rootScope.$emit(key, { type, data });
-                    }
+                    };
                 }
                 return acc;
             }, Object.create(null));
