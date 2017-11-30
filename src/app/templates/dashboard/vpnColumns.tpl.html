@@ -1,15 +1,15 @@
 <div class="vpnColumns-container">
     <div class="vpnColumns-col">
-        <label translate-context="Label for the vpn columns" translate>Speed</label>
-        <label translate-context="Label for the vpn columns" translate>Connections</label>
-        <label>Tor VPN</label>
-        <label translate-context="Label for the vpn columns" translate>Secure Core</label>
+        <label class="vpnColumns-label" translate-context="Label for the vpn columns" translate>Speed</label>
+        <label class="vpnColumns-label" translate-context="Label for the vpn columns" translate>Connections/Devices</label>
+        <label class="vpnColumns-label">Tor VPN <i class="fa fa-info-circle" pt-tooltip-translate="Send all your traffic through the Tor network with a single click"></i></label>
+        <label class="vpnColumns-label">Secure Core <i class="fa fa-info-circle" pt-tooltip-translate="Provides additional protection against VPN server compromise by routing connections through our Secure Core network"></i></label>
     </div>
     <div class="vpnColumns-col vpnColumns-vpnbasic-col">
         <header class="vpnColumns-header">
             <span class="vpnColumns-selected">Selected plan</span>
             <span class="vpnColumns-vpnbasic-title">ProtonVPN Basic</span>
-            <span class="vpnColumns-amount">{{ ::vpnbasicAmount }}</span>
+            <span class="vpnColumns-vpnbasic-amount">{{ ::vpnbasicAmount }}</span>
         </header>
         <div>
             <strong translate-context="Info for the vpn columns" translate>High</strong>
@@ -32,7 +32,7 @@
         <header class="vpnColumns-header">
             <span class="vpnColumns-selected">Selected plan</span>
             <span class="vpnColumns-vpnplus-title">ProtonVPN Plus</span>
-            <span class="vpnColumns-amount">{{ ::vpnplusAmount }}</span>
+            <span class="vpnColumns-vpnplus-amount">{{ ::vpnplusAmount }}</span>
         </header>
         <div>
             <strong translate-context="Info for the vpn columns" translate>Highest</strong>
