@@ -26,3 +26,17 @@
     border: 0;
     background: none
 }
+
+.signupPayForm-gift-col {
+    display: flex;
+}
+
+.signupPayForm-container .giftCodeInput-container {
+    flex: 1;
+}
+
+.signupPayForm-show-gift .giftCodeBtn-container { display: none }
+.signupPayForm-container:not(.signupPayForm-show-gift) .signupPayForm-btn-apply,
+.signupPayForm-container:not(.signupPayForm-show-gift) .giftCodeInput-container { display: none }
+.signupPayForm-gift-applied .signupPayForm-gift-row { display: none }
+.signupPayForm-container .giftCodeBtn-text { text-transform: uppercase }

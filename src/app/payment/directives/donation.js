@@ -18,7 +18,8 @@ angular.module('proton.payment')
         const getParameters = (scope) => (paypalConfig = {}) => {
             const Amount = (scope.model.otherAmount || scope.model.amount) * 100;
             const Currency = scope.model.currency.value;
-            const parameters = { Amount, Currency };
+            // The buy credit route use `Credit` and the donate route use `Donation`
+            const parameters = { Amount, Credit: Amount, Donation: Amount, Currency };
 
             if (scope.model.method.value === 'use.card') {
                 parameters.PaymentMethodID = scope.model.method.ID;

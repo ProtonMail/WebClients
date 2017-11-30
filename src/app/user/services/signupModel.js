@@ -127,10 +127,24 @@ angular.module('proton.user')
             return promise;
         }
 
+        function applyGiftCode(opt) {
+            const promise = Payment.validateVerify(_.extend({}, opt, { Username: get('username') }))
+                .then(({ data = {} } = {}) => {
+                    if (data.Code === 1000) {
+                        dispatch('gift.applied', data);
+                        return data;
+                    }
+                });
+
+            networkActivityTracker.track(promise);
+
+            return promise;
+        }
+
         return {
             all, get, set, store, clear,
             getEmail, getDomain, getPassword,
             getOptionsVerification, optionsHumanCheck,
-            createUser, verify
+            createUser, verify, applyGiftCode
         };
     });
