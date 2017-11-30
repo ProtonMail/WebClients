@@ -232,6 +232,7 @@ angular.module('proton.address')
 
         const saveOrder = (Order) => {
             const promise = Address.order({ Order })
+                .then(eventManager.call)
                 .then(() => notification.success(I18N.SUCCESS_ORDER));
             networkActivityTracker.track(promise);
         };
@@ -242,8 +243,21 @@ angular.module('proton.address')
             return { active, disabled };
         };
 
+        const makeDefault = (address) => {
+            const { active, disabled } = getActive();
+            const addresses = [].concat(active, disabled);
+            const index = _.findIndex(addresses, { ID: address.ID });
+
+            addresses.splice(index, 1);
+            addresses.unshift(address);
+
+            const order = _.pluck(addresses, 'Order');
+
+            saveOrder(order);
+        };
+
         return {
-            add, disable, enable, remove,
+            add, disable, enable, remove, makeDefault,
             editSignature, saveOrder, generate,
             getActive
         };

@@ -55,8 +55,9 @@
                                 <div>
                                     <address-btn-actions
                                         data-model="address"
-                                        data-action="editSignature"
-                                        class="pm_button link"></address-btn-actions>
+                                        data-action="remove"
+                                        ng-if="address.Type === 3 && isAdmin && !isSubUser"
+                                        class="pm_button link text-red"></address-btn-actions>
 
                                     <address-btn-actions
                                         data-model="address"
@@ -66,16 +67,20 @@
 
                                     <address-btn-actions
                                         data-model="address"
-                                        data-action="remove"
-                                        ng-if="address.Type === 3 && isAdmin && !isSubUser"
-                                        class="pm_button link text-red"></address-btn-actions>
+                                        data-action="makeDefault"
+                                        ng-if="address.Order > 1"
+                                        class="pm_button link"></address-btn-actions>
 
+                                    <address-btn-actions
+                                        data-model="address"
+                                        data-action="editSignature"
+                                        class="pm_button link"></address-btn-actions>
                                 </div>
                             </div>
                         </li>
                     </ul>
                 </div>
-                <div class="inactiveAddresses-container" ng-if="disabledAddresses.length > 0">
+                <div class="inactiveAddresses-container" ng-if="disabledAddresses.length">
                     <ul class="pm_sort-container">
                         <li
                             class="pm_sort-item"
@@ -97,8 +102,9 @@
 
                                     <address-btn-actions
                                         data-model="address"
-                                        data-action="editSignature"
-                                        class="pm_button link"></address-btn-actions>
+                                        data-action="remove"
+                                        ng-if="address.Status === 0 && address.Type === 3 && ((isAdmin && !isSubUser) || isFree)"
+                                        class="pm_button link text-red"></address-btn-actions>
 
                                     <address-btn-actions
                                         data-model="address"
@@ -114,9 +120,8 @@
 
                                     <address-btn-actions
                                         data-model="address"
-                                        data-action="remove"
-                                        ng-if="address.Status === 0 && address.Type === 3 && ((isAdmin && !isSubUser) || isFree)"
-                                        class="pm_button link text-red"></address-btn-actions>
+                                        data-action="editSignature"
+                                        class="pm_button link"></address-btn-actions>
                                 </div>
                             </div>
                         </li>
