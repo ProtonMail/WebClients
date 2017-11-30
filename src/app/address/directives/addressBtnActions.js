@@ -2,7 +2,8 @@ angular.module('proton.address')
     .directive('addressBtnActions', (addressModel, gettextCatalog) => {
 
         const I18N = {
-            editSignature: gettextCatalog.getString('Edit Signature', null, 'Action'),
+            makeDefault: gettextCatalog.getString('Make default', null, 'Action'),
+            editSignature: gettextCatalog.getString('Edit signature', null, 'Action'),
             disable: gettextCatalog.getString('Disable', null, 'Action'),
             enable: gettextCatalog.getString('Enable', null, 'Action'),
             remove: gettextCatalog.getString('Delete', null, 'Action'),
