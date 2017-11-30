@@ -16,7 +16,12 @@ angular.module('proton.composer')
                         });
                     }
 
-                    $rootScope.$emit('composer.new', { type: actionComposeType, message: scope.model });
+                    $rootScope.$emit('composer.new', {
+                        type: actionComposeType,
+                        data: {
+                            message: scope.model
+                        }
+                    });
                 }
 
                 element[0].addEventListener('click', onClick);
