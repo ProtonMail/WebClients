@@ -8,10 +8,11 @@ angular.module('proton.ui')
          * Action present in the settings and contact sidebar
          */
         const CACHE = {};
+        const cleanState = (state = '') => state.replace('.element', '');
 
         $rootScope.$on('$stateChangeSuccess', (e, toState, toParams, fromState = {}, fromParams = {}) => {
             if (fromState.name && MAILBOX_IDENTIFIERS[tools.filteredState(fromState.name)]) {
-                CACHE.state = fromState.name;
+                CACHE.state = cleanState(fromState.name);
                 CACHE.params = fromParams;
                 CACHE.mode = authentication.user.ViewMode;
             }
