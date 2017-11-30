@@ -45,6 +45,20 @@
     color: inherit !important;
 }
 
+.tosubscribeOverview-discount {
+    border-radius: $border-radius;
+    border: 1px solid $discount;
+    color: $discount;
+    font-size: .85em;
+    font-weight: bold;
+    padding: 1px 3px;
+
+    &:hover {
+        color: $white;
+        background-color: $discount;
+    }
+}
+
 .tosubscribeOverview-item-header, .tosubscribeOverview-item:not([data-plan]), [class*="tosubscribeOverview-about"] {
     display: flex;
     justify-content: space-between;
@@ -60,8 +74,11 @@
     [class*="-yearly"] { display: none }
 }
 
-.tosubscribeOverview-item[data-cycle="12"] {
+.tosubscribeOverview-item[data-cycle="12"],
+.tosubscribeOverview-item[data-cycle="24"] {
     [class*="-monthly"] { display: none }
 }
 
 .tosubscribeOverview-item[data-cycle="1"] .tosubscribeOverview-price-scope { display: none }
+.tosubscribeOverview-item:not([data-cycle="12"]) [data-discount="20"] { display: none }
+.tosubscribeOverview-item:not([data-cycle="24"]) [data-discount="33"] { display: none }
