@@ -35,7 +35,12 @@ angular.module('proton.utils')
         const goToSpam = action(redirect('secured.spam'));
         const goToTrash = action(redirect('secured.trash'));
 
-        const composer = action(emit('composer.new', { message: messageModel(), type: 'new' }));
+        const composer = action(emit('composer.new', {
+            type: 'new',
+            data: {
+                message: messageModel()
+            }
+        }));
         const composerSave = action(emit('composer.update', { type: 'key.autosave' }));
         const reply = action(emit('replyConversation'));
         const replyAll = action(emit('replyAllConversation'));

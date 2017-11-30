@@ -1,5 +1,5 @@
 angular.module('proton.contact')
-    .directive('contactList', ($rootScope, $state, $stateParams, contactCache, listeners) => {
+    .directive('contactList', ($filter, dispatchers, $state, $stateParams, contactCache) => {
 
         const HEADER_HEIGHT = 120;
         const ITEM_CLASS = 'contactList-item';
@@ -12,7 +12,7 @@ angular.module('proton.contact')
             templateUrl: 'templates/contact/contactList.tpl.html',
             link(scope, element) {
 
-                const { on, unsubscribe } = listeners();
+                const { dispatcher, on, unsubscribe } = dispatchers([ 'contacts', '$stateChangeSuccess' ]);
                 let lastChecked = null;
                 let isLoadedContact = !!$stateParams.id;
 
@@ -60,11 +60,7 @@ angular.module('proton.contact')
 
                         lastChecked = contact;
                     }
-
-                    $rootScope.$emit('contacts', {
-                        type: 'selectContacts',
-                        data: { contactIDs, isChecked }
-                    });
+                    dispatcher.contacts('selectContacts', { contactIDs, isChecked });
                 };
 
                 const setContactSelection = (ID, checked, shiftKey) => {

@@ -128,10 +128,10 @@ angular.module('proton.composer')
             });
         }));
 
-        unsubscribe.push($rootScope.$on('composer.new', (event, { message, type }) => {
+        unsubscribe.push($rootScope.$on('composer.new', (e, { type, data = {} }) => {
             const limitReached = checkComposerNumber();
             if (!limitReached && AppModel.is('onLine')) {
-                validateMessage.canWrite() && initMessage(messageBuilder.create(type, message));
+                validateMessage.canWrite() && initMessage(messageBuilder.create(type, data.message));
             }
         }));
 

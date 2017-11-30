@@ -13,7 +13,7 @@ angular.module('proton.conversation')
         const openComposer = (key, message = {}) => () => {
             if (!isDraft(message) && isDecrypted(message)) {
                 const type = composerMapActions[key];
-                $rootScope.$emit('composer.new', { message, type });
+                $rootScope.$emit('composer.new', { type, data: { message } });
             }
         };
 

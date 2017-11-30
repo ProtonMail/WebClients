@@ -1,6 +1,5 @@
 angular.module('proton.contact')
     .directive('contactDetails', (
-        $rootScope,
         $state,
         CONSTANTS,
         contactDetailsModel,
@@ -9,7 +8,7 @@ angular.module('proton.contact')
         notification,
         subscriptionModel,
         memberModel,
-        listeners,
+        dispatchers,
         vcard
     ) => {
 
@@ -40,10 +39,6 @@ angular.module('proton.contact')
         };
 
         const getFieldKey = (type = '') => (MAP_FIELDS[type] || type.toUpperCase());
-        const dispatch = (type, data = {}) => {
-            const opt = (MAP_EVENT[type] || _.noop)(data) || { type, data };
-            $rootScope.$emit('contacts', opt);
-        };
 
         return {
             restrict: 'E',
@@ -52,7 +47,13 @@ angular.module('proton.contact')
             templateUrl: 'templates/contact/contactDetails.tpl.html',
             link(scope, element) {
 
-                const { on, unsubscribe } = listeners();
+                const { on, unsubscribe, dispatcher } = dispatchers([ 'contacts', '$stateChangeStart' ]);
+
+                const dispatch = (type, data = {}) => {
+                    const opt = (MAP_EVENT[type] || _.noop)(data) || { type, data };
+                    dispatcher.contacts(opt.type, opt.data);
+                };
+
                 const updateType = (types = []) => _.contains(types, CONSTANTS.CONTACT_MODE.ENCRYPTED_AND_SIGNED) && element.addClass(ENCRYPTED_AND_SIGNED);
                 const onSubmit = () => saveContact();
                 const isFree = !subscriptionModel.hasPaid('mail') && !memberModel.isMember();

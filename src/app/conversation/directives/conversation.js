@@ -15,23 +15,23 @@ angular.module('proton.conversation')
         hotkeys,
         labelsModel,
         findExpendableMessage,
-        listeners
+        dispatchers
     ) => {
 
-    /**
-     * Find the position of the scrollable item
-     * @return {Function} <index:Integer, max:Integer, type:String>
-     */
+        /**
+         * Find the position of the scrollable item
+         * @return {Function} <index:Integer, max:Integer, type:String>
+         */
         const getScrollToPosition = () => {
             const container = document.getElementById('pm_thread');
             const HEIGHT = 42;
 
             /**
-         * Compute the size to remove or add for the scroll
-         * @param  {Node} node Element
-         * @param  {String} type Type of selection
-         * @return {Number}
-         */
+             * Compute the size to remove or add for the scroll
+             * @param  {Node} node Element
+             * @param  {String} type Type of selection
+             * @return {Number}
+             */
             const getDelta = (node, type) => {
                 if (type === 'UP') {
 
@@ -79,7 +79,10 @@ angular.module('proton.conversation')
             templateUrl: 'templates/partials/conversation.tpl.html',
             link(scope) {
                 let messagesCached = [];
-                const { on, unsubscribe } = listeners();
+                const { on, unsubscribe, dispatcher } = dispatchers([
+                    'message.open', 'refreshConversation', 'message.expiration',
+                    'unmarkMessages', 'toggleStar', 'elements'
+                ]);
 
                 const scrollToPosition = getScrollToPosition();
                 let unsubscribeActions = angular.noop;
@@ -105,12 +108,9 @@ angular.module('proton.conversation')
                         return $rootScope.$emit('composer.load', msg);
                     }
 
-                    $rootScope.$emit('message.open', {
-                        type: 'toggle',
-                        data: {
-                            action: 'openMarked',
-                            message: msg
-                        }
+                    dispatcher['message.open']('toggle', {
+                        action: 'openMarked',
+                        message: msg
                     });
 
                 };
@@ -226,7 +226,7 @@ angular.module('proton.conversation')
                         data.model = scope.markedMessage;
                         data.type = 'message';
                     }
-                    $rootScope.$emit('elements', { type: 'toggleStar', data });
+                    dispatcher.elements('toggleStar', data);
                 });
 
                 // We don't need to check these events if we didn't choose to focus onto a specific message
@@ -253,28 +253,27 @@ angular.module('proton.conversation')
                 });
 
                 /**
-             * Back to the parent state
-             */
+                 * Back to the parent state
+                 */
                 function back() {
                     const route = $state.$current.name.replace('.element', '');
                     $state.go(route, { id: null });
                 }
 
                 /**
-             * Set a flag (expand) to the message to be expanded
-             * @param {Array} messages
-             * @return {Array} messages
-             */
+                 * Set a flag (expand) to the message to be expanded
+                 * @param {Array} messages
+                 * @return {Array} messages
+                 */
                 function expandMessage(messages = []) {
-
                     const message = findExpendableMessage.find(messages);
                     messages.length && (message.openMe = true);
                     return messages;
                 }
 
                 /**
-             * Method call at the initialization of this directive
-             */
+                 * Method call at the initialization of this directive
+                 */
                 function initialization() {
                     let messages = [];
                     messagesCached = cache.queryMessagesCached($stateParams.id);
@@ -298,16 +297,15 @@ angular.module('proton.conversation')
                         if (authentication.user.ViewLayout === CONSTANTS.ROW_MODE) {
                             scope.markedMessage = $rootScope.expandMessage;
                         }
-
-                        $rootScope.$emit('elements', { type: 'mark', data: { id: $stateParams.id } });
+                        dispatcher.elements('mark', { id: $stateParams.id });
                     } else {
                         back();
                     }
                 }
 
                 /**
-             * Refresh the current conversation with the latest change reported by the event log manager
-             */
+                 * Refresh the current conversation with the latest change reported by the event log manager
+                 */
                 function refreshConversation() {
 
                     const conversation = cache.getConversationCached($stateParams.id);
@@ -416,12 +414,7 @@ angular.module('proton.conversation')
                     // Ensure only one event Listener
                     hotkeys.unbind(['down', 'up']);
                     hotkeys.bind(['down', 'up']);
-                    $rootScope.$emit('elements', {
-                        type: 'close',
-                        data: {
-                            element: scope.conversation
-                        }
-                    });
+                    dispatcher.elements('close', { element: scope.conversation });
                 });
 
             }

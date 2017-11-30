@@ -8,7 +8,7 @@ angular.module('proton.message')
                 const message = messageModel();
                 const model = (key) ? scope.message[key] : scope.email;
                 message.ToList = [model];
-                $rootScope.$emit('composer.new', { message, type: 'new' });
+                $rootScope.$emit('composer.new', { type: 'new', data: { message } });
             };
 
             el.on('click', onClick);

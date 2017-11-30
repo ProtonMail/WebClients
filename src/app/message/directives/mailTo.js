@@ -2,13 +2,9 @@ angular.module('proton.message')
     .directive('mailTo', ($rootScope, regexEmail, messageModel, parseUrl, authentication) => ({
         restrict: 'A',
         link(scope, element) {
+
             function toAddresses(emails) {
-                return emails.map((email) => {
-                    return {
-                        Address: email,
-                        Name: email
-                    };
-                });
+                return emails.map((Address) => ({ Address, Name: Address }));
             }
 
             function click(event) {
@@ -57,7 +53,7 @@ angular.module('proton.message')
                     message.DecryptedBody = searchObject.body;
                 }
 
-                $rootScope.$emit('composer.new', { message, type: 'new' });
+                $rootScope.$emit('composer.new', { type: 'new', data: { message } });
             }
 
             element.on('click', click);
