@@ -1,11 +1,13 @@
 angular.module('proton.payment')
-    .factory('paymentModel', (Payment, networkActivityTracker, gettextCatalog, notification) => {
+    .factory('paymentModel', (eventManager, Payment, networkActivityTracker, gettextCatalog, notification) => {
 
         let CACHE = {};
         const I18N = {
             SUBSCRIBE_ERROR: gettextCatalog.getString('Error subscribing', null, 'Error'),
-            COUPON_INVALID: gettextCatalog.getString('Invalid coupon', null, 'Error'),
-            COUPON_SUCCESS: gettextCatalog.getString('Coupon accepted', null, 'Coupon request')
+            COUPON_INVALID: gettextCatalog.getString('Invalid coupon code', null, 'Error'),
+            GIFT_INVALID: gettextCatalog.getString('Invalid gift code', null, 'Error'),
+            COUPON_SUCCESS: gettextCatalog.getString('Coupon code accepted', null, 'Coupon code request'),
+            GIFT_SUCCESS: gettextCatalog.getString('Gift code accepted', null, 'Gift code request')
         };
 
         const get = (key) => CACHE[key];
@@ -62,11 +64,15 @@ angular.module('proton.payment')
                 });
         }
 
-        function addCoupon(opt) {
-            const promise = Payment.valid(opt)
+        function add(params) {
+            const promise = Payment.valid(params)
                 .then(({ data = {} } = {}) => {
-                    if (data.CouponDiscount === 0) {
+                    if (params.CouponCode && data.CouponDiscount === 0) {
                         throw new Error(I18N.COUPON_INVALID);
+                    }
+
+                    if (params.GiftCode && !data.Gift) {
+                        throw new Error(I18N.GIFT_INVALID);
                     }
 
                     if (data.Code === 1000) {
@@ -74,12 +80,15 @@ angular.module('proton.payment')
                     }
                 })
                 .then((data) => {
-                    notification.success(I18N.COUPON_SUCCESS);
+                    if (params.CouponCode) {
+                        notification.success(I18N.COUPON_SUCCESS);
+                    }
+
+                    if (params.GiftCode) {
+                        notification.success(I18N.GIFT_SUCCESS);
+                    }
+
                     return data;
-                })
-                .catch((error) => {
-                    const { data = {} } = error;
-                    throw Error(data.Error || error);
                 });
 
             networkActivityTracker.track(promise);
@@ -87,5 +96,15 @@ angular.module('proton.payment')
             return promise;
         }
 
-        return { getStatus, getMethods, get, canPay, subscribe, addCoupon, clear };
+        function useGiftCode(GiftCode) {
+            const promise = Payment.validateCredit({ GiftCode })
+                .then(() => Payment.credit({ GiftCode, Amount: 0 }))
+                .then(() => eventManager.call());
+
+            networkActivityTracker.track(promise);
+
+            return promise;
+        }
+
+        return { getStatus, getMethods, get, canPay, subscribe, add, useGiftCode, clear };
     });

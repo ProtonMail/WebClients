@@ -38,10 +38,16 @@
                             <strong class="signupPayForm-selection-annually" translate translate-context="Info">Annually</strong>
                         </td>
                     </tr>
+                    <tr ng-if="giftModel.Gift">
+                        <th translate-context="Title" translate>Gift code</th>
+                        <td>
+                            <strong class="text-green">{{ giftModel.Gift / 100 | currency: plan.Currency }}</strong>
+                        </td>
+                    </tr>
                     <tr>
                         <th translate translate-context="Title">Price</th>
                         <td>
-                            <strong>{{ ::plan.Amount / 100 | currency: plan.Currency }}</strong> <i ng-show="plan.Cycle === 12">({{ ::plan.Amount / 100 / 12 | fixed: 2 | currency: plan.Currency }} / month)</i>
+                            <strong>{{ (giftModel.AmountDue || plan.Amount) / 100 | currency: plan.Currency }}</strong> <i>({{ (giftModel.AmountDue || plan.Amount) / 100 / 12 | currency: plan.Currency }} / month)</i>
                         </td>
                     </tr>
                 </tbody>
@@ -103,25 +109,34 @@
                 <paypal-view
                     data-callback="onPaypalSuccess"
                     data-currency="plan.Currency"
-                    data-amount="plan.Amount"></paypal-view>
+                    data-amount="giftModel.AmountDue || plan.Amount"></paypal-view>
+            </div>
+        </div>
+
+        <div class="pm_grid signupPayForm-gift-row">
+            <div class="col-1-4 bold" translate-context="Title" translate>Gift code</div>
+            <div class="col-3-4 signupPayForm-gift-col">
+                <gift-code-btn data-action="displayGiftSignup"></gift-code-btn>
+                <gift-code-input data-code="giftCode"></gift-code-input>
+                <button class="signupPayForm-btn-apply pm_button" type="button" translate-context="Action" translate>Apply</button>
             </div>
         </div>
 
         <footer class="text-center signupPayForm-footer">
             <p class="alert alert-info signupPayForm-msg-error"><span translate translate-context="Signup error">Would you like to create a free ProtonMail account instead?</span> <signup-step-link data-value="3"></signup-step-link></p>
 
-                <button
-                    class="pm_button primary large signupPayForm-btn-submit"
-                    type="submit"
-                    ng-disabled="networkActivity.loading()"
-                    translate
-                    translate-context="Action"><i class="fa fa-lock"></i> Submit</button>
-                <button
-                    class="pm_button primary large signupPayForm-btn-retry"
-                    type="submit"
-                    ng-disabled="networkActivity.loading()"
-                    translate
-                    translate-context="Action">Retry</button>
+            <button
+                class="pm_button primary large signupPayForm-btn-submit"
+                type="submit"
+                ng-disabled="networkActivity.loading()"
+                translate
+                translate-context="Action"><i class="fa fa-lock"></i> Submit</button>
+            <button
+                class="pm_button primary large signupPayForm-btn-retry"
+                type="submit"
+                ng-disabled="networkActivity.loading()"
+                translate
+                translate-context="Action">Retry</button>
             <button
                 class="pm_button link signupPayForm-btn-cancel"
                 type="reset"

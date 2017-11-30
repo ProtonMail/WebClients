@@ -1,5 +1,6 @@
 .overviewSection-container {
     .topUp-button .donateBtn-icon { display: none }
+    .giftCodeBtn-icon { display: none }
 }
 
 .overviewSection-container:not(.overviewSection-plan-free) {
@@ -22,10 +23,10 @@
     border: 0;
     background: transparent;
     color: $primary;
-    text-decoration: underline
+    text-decoration: underline;
 }
 
 .overviewSection-couponCode {
     background-color: #FFF;
-    border: 1px dashed $border 
+    border: 1px dashed $border;
 }

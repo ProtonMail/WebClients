@@ -55,12 +55,31 @@ angular.module('proton.commons')
 
         /**
         * Credit account
-        * @param {Object} Obj
+        * @param {Object} params
         */
         const credit = (params) => {
             return generateFingerprint(params)
                 .then((params) => $http.post(requestUrl('credit'), params));
         };
+
+        /**
+         * Validate Credit
+         * @param  {Object} params
+         * Credit: 100, // optional if GiftCode present
+         * Currency: "USD", // optional if GiftCode present
+         * GiftCode: "ABCDEFHJMNPQRSTV" // optional
+         */
+        const validateCredit = (params) => $http.post(requestUrl('credit', 'check'), params);
+
+        /**
+         * Validate Verify
+         * @param  {Object} params
+         * Username: "mickeymouse",
+         * Credit: 100, // optional if GiftCode present
+         * Currency: "USD", // optional if GiftCode present
+         * GiftCode : "ABCDEFHJMNPQRSTV" // optional
+         */
+        const validateVerify = (params) => $http.post(requestUrl('verify', 'check'), params);
 
         /**
         * Donate for perks. Does not require authentication.
@@ -241,6 +260,7 @@ angular.module('proton.commons')
 
         return {
             credit, donate, paypal,
+            validateCredit, validateVerify,
             invoices, invoice, order,
             verify, status, check, pay, valid,
             plans, subscription,

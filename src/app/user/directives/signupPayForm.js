@@ -1,7 +1,7 @@
 angular.module('proton.user')
     .directive('signupPayForm', (paymentUtils, $rootScope, $stateParams, cardModel) => {
 
-        const dispatch = (data) => $rootScope.$emit('signup', { type: 'payform.submit', data });
+        const dispatch = (type, data) => $rootScope.$emit('signup', { type, data });
 
         return {
             replace: true,
@@ -13,28 +13,56 @@ angular.module('proton.user')
             link(scope, el) {
 
                 const $btnFeatures = el.find('.signupPayForm-btn-features');
+                const $btnApply = el.find('.signupPayForm-btn-apply');
                 const { list, selected } = paymentUtils.generateMethods({
                     Cycle: +$stateParams.billing
                 });
 
                 scope.methods = list;
                 scope.method = selected;
+                scope.giftModel = {};
 
                 scope.onPaypalSuccess = (Details) => {
-                    dispatch({
+                    dispatch('payform.submit', {
                         form: scope.account,
                         source: scope.method.value,
                         payment: {
-                            Amount: scope.plan.Amount,
+                            Amount: scope.giftModel.AmountDue || scope.plan.Amount,
                             Currency: scope.plan.Currency,
                             method: { Type: 'paypal', Details }
                         }
                     });
                 };
 
-                const unsubscribe = $rootScope.$on('signup', (e, { type }) => {
+                /**
+                 * Refresh component such as paypal/bitcoin
+                 */
+                const changeValue = () => {
+                    const ghost = scope.method.value;
+
+                    if (ghost === 'paypal') {
+                        scope.method.value = '';
+                        _rAF(() => {
+                            scope.$applyAsync(() => (scope.method.value = ghost));
+                        });
+                    }
+                };
+
+                const unsubscribe = $rootScope.$on('signup', (e, { type = '', data = {} }) => {
                     if (type === 'payment.verify.error') {
                         scope.$applyAsync(() => scope.errorPay = true);
+                    }
+
+                    if (type === 'displayGiftSignup') {
+                        el[0].classList.add('signupPayForm-show-gift');
+                    }
+
+                    if (type === 'gift.applied') {
+                        el[0].classList.add('signupPayForm-gift-applied');
+                        scope.$applyAsync(() => {
+                            scope.giftModel = data;
+                            changeValue();
+                        });
                     }
                 });
 
@@ -52,12 +80,14 @@ angular.module('proton.user')
                         scope.errorPay = false;
 
                         const card = cardModel(scope.account.card);
-                        dispatch({
+                        dispatch('payform.submit', {
                             form: scope.account,
                             source: scope.method.value,
                             payment: {
-                                Amount: scope.plan.Amount,
+                                Amount: scope.giftModel.AmountDue || scope.plan.Amount,
                                 Currency: scope.plan.Currency,
+                                GiftCode: scope.giftCode,
+                                Credit: scope.giftModel.Credit,
                                 method: { Type: 'card', Details: card.details() }
                             }
                         });
@@ -66,13 +96,23 @@ angular.module('proton.user')
 
                 const onReset = () => scope.$applyAsync(() => scope.errorPay = true);
 
+                const onApply = () => {
+                    dispatch('apply.gift', {
+                        Credit: scope.plan.Amount,
+                        Currency: scope.plan.Currency,
+                        GiftCode: scope.giftCode
+                    });
+                };
+
                 el.on('reset', onReset);
                 el.on('submit', onSubmit);
+                $btnApply.on('click', onApply);
                 $btnFeatures.on('click', onToggleFeature);
 
                 scope.$on('$destroy', () => {
                     el.off('reset', onReset);
                     el.off('submit', onSubmit);
+                    $btnApply.off('click', onApply);
                     $btnFeatures.off('click', onToggleFeature);
                     unsubscribe();
                 });

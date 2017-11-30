@@ -74,6 +74,7 @@ angular.module('proton.payment')
                 ctrl.card = {};
                 ctrl.cancel = params.cancel;
                 ctrl.valid = params.valid;
+                ctrl.displayGift = false;
 
                 if (params.valid.Coupon) {
                     ctrl.displayCoupon = true;
@@ -113,6 +114,7 @@ angular.module('proton.payment')
                         Cycle: ctrl.valid.Cycle,
                         Currency: ctrl.valid.Currency,
                         CouponCode: ctrl.coupon,
+                        GiftCode: ctrl.gift,
                         PlanIDs: params.planIDs
                     };
 
@@ -159,13 +161,26 @@ angular.module('proton.payment')
                         });
                 };
 
-                ctrl.apply = () => {
-                    paymentModel.addCoupon({
+                function getAddParameters(thing) {
+                    const parameters = {
                         Currency: params.valid.Currency,
                         Cycle: params.valid.Cycle,
-                        CouponCode: ctrl.coupon,
                         PlanIDs: params.planIDs
-                    })
+                    };
+
+                    if (thing === 'coupon') {
+                        parameters.CouponCode = ctrl.coupon;
+                    }
+
+                    if (thing === 'gift') {
+                        parameters.GiftCode = ctrl.gift;
+                    }
+
+                    return parameters;
+                }
+
+                ctrl.apply = (thing = 'coupon') => {
+                    paymentModel.add(getAddParameters(thing))
                         .then((data) => ctrl.valid = data)
                         .then(() => {
                             // If the amount due is null we select the first choice to display the submit button

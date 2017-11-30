@@ -16,6 +16,9 @@ angular.module('proton.core')
         signupUserProcess
     ) => {
         const unsubscribe = [];
+        const I18N = {
+            success: gettextCatalog.getString('Gift code applied', null, 'Success')
+        };
 
         // NOTE I don't know where the "u" parameter is set
         const initUsername = () => $location.search().u || $stateParams.username || '';
@@ -84,9 +87,17 @@ angular.module('proton.core')
             networkActivityTracker.track(promise);
         }
 
-        function verify(Payment, Amount, Currency) {
-            signupModel.verify({ Payment, Amount, Currency }, $scope.plan)
+        function verify({ Payment, Amount, Currency, GiftCode, Credit }) {
+            signupModel.verify({ Payment, Amount, Currency, GiftCode, Credit }, $scope.plan)
                 .then(createAccount);
+        }
+
+        function applyGift(opt) {
+            signupModel.applyGiftCode(opt)
+                .then((data) => {
+                    notification.success(I18N.success);
+                    return data;
+                });
         }
 
         unsubscribe.push($rootScope.$on('payments', (e, { type, data = {} }) => {
@@ -95,12 +106,13 @@ angular.module('proton.core')
 
                 if (data.action === 'humanVerification') {
                     const { Payment, Amount, Currency } = data.options;
-                    verify(Payment, Amount, Currency);
+                    verify({ Payment, Amount, Currency });
                 }
             }
         }));
 
         const bindStep = (key, value) => $scope.$applyAsync(() => $scope[key] = value);
+
         unsubscribe.push($rootScope.$on('signup', (e, { type, data }) => {
             (type === 'chech.humanity') && bindStep('step', 3);
             (type === 'creating') && bindStep('step', 5);
@@ -110,9 +122,11 @@ angular.module('proton.core')
             (type === 'userform.submit') && generateUserKeys();
             (type === 'humanform.submit') && createAccount();
 
+            (type === 'apply.gift') && applyGift(data);
+
             if (type === 'payform.submit') {
-                const { method, Amount, Currency } = data.payment;
-                verify(method, Amount, Currency);
+                const { method, Amount, Currency, GiftCode, Credit } = data.payment;
+                verify({ Payment: method, Amount, Currency, GiftCode, Credit });
             }
         }));
 
