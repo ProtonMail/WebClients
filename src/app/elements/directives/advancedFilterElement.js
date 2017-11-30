@@ -1,7 +1,8 @@
 angular.module('proton.elements')
-    .directive('advancedFilterElement', ($stateParams, gettextCatalog, messageApi, confirmModal, networkActivityTracker, cache, notification, eventManager, $state) => {
+    .directive('advancedFilterElement', ($rootScope, $stateParams, CONSTANTS, gettextCatalog, messageApi, confirmModal, labelsModel, networkActivityTracker, cache, notification, eventManager, $state) => {
 
         const getClass = (name) => `advancedFilterElement-${name}`;
+        const { MAILBOX_IDENTIFIERS } = CONSTANTS;
         const ACTIVE_CLASS = 'active';
         const BUTTONS_CLASS = {
             [getClass('btn-small-to-large')]: () => $stateParams.sort === 'size',
@@ -30,24 +31,26 @@ angular.module('proton.elements')
             const message = gettextCatalog.getString('Are you sure? This cannot be undone.', null, 'Info');
             const errorMessage = gettextCatalog.getString('Empty request failed', null, 'Error shows when the empty folder request failed');
 
-            if (['drafts', 'spam', 'trash'].indexOf(mailbox) === -1) {
+            if (['drafts', 'spam', 'trash', 'folder'].indexOf(mailbox) === -1) {
                 return;
             }
 
+            const labelID = $stateParams.label || MAILBOX_IDENTIFIERS[mailbox];
             const MAP_ACTIONS = {
                 drafts: 'emptyDraft',
                 spam: 'emptySpam',
-                trash: 'emptyTrash'
+                trash: 'emptyTrash',
+                folder: 'emptyLabel'
             };
 
             confirmModal.activate({
                 params: {
                     title, message,
                     confirm() {
-                        const promise = messageApi[MAP_ACTIONS[mailbox]]()
+                        const promise = messageApi[MAP_ACTIONS[mailbox]](labelID)
                             .then(({ data = {} } = {}) => {
                                 if (data.Code === 1000) {
-                                    cache.empty(mailbox);
+                                    cache.empty(labelID);
                                     confirmModal.deactivate();
                                     notification.success(gettextCatalog.getString('Folder emptied', null));
                                     return eventManager.call();
@@ -102,8 +105,22 @@ angular.module('proton.elements')
                     BUTTONS_CLASS[cssClass] && BUTTONS_CLASS[cssClass]() && button.classList.add(ACTIVE_CLASS);
                 });
 
+                const bindClass = () => {
+                    const labelID = $stateParams.label;
+                    const action = labelID && labelsModel.read(labelID, 'folders') ? 'add' : 'remove';
+
+                    el[0].classList[action]('advancedFilterElement-state-folder');
+                };
+
+                const unsubscribe = $rootScope.$on('$stateChangeSuccess', bindClass);
+
+                bindClass();
+
                 $btns.on('click', onClick);
-                scope.$on('$destroy', () => $btns.off('click', onClick));
+                scope.$on('$destroy', () => {
+                    $btns.off('click', onClick);
+                    unsubscribe();
+                });
             }
         };
     });
