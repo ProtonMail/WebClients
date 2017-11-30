@@ -1,5 +1,5 @@
 angular.module('proton.contact')
-    .factory('contactEditor', ($rootScope, $state, eventManager, Contact, contactModal, contactLoaderModal, contactSchema, confirmModal, gettextCatalog, networkActivityTracker, notification) => {
+    .factory('contactEditor', ($rootScope, $state, eventManager, Contact, contactModal, contactEmails, contactCache, contactLoaderModal, contactSchema, confirmModal, gettextCatalog, networkActivityTracker, notification) => {
         /*
         * Add contacts
         * @param {Array} contacts
@@ -53,26 +53,31 @@ angular.module('proton.contact')
             const success = (contactIDs === 'all') ? gettextCatalog.getString('All contacts deleted', null, 'Success') : gettextCatalog.getPlural(contactIDs.length, 'Contact deleted', 'Contacts deleted', null, 'Success');
 
             const process = () => {
-                const promise = requestDeletion(contactIDs)
+                requestDeletion(contactIDs)
                     .then(() => {
                         notification.success(success);
                         $state.go('secured.contacts');
                     });
-                networkActivityTracker.track(promise);
             };
 
             if (confirm) {
                 return confirmDeletion(contactIDs, () => process());
             }
+
             process();
         }
 
         function requestDeletion(IDs = []) {
             const promise = (IDs === 'all') ? Contact.clear() : Contact.remove({ IDs });
-            return promise.then(({ data = {} } = {}) => {
-                if (data.Error) {
-                    throw new Error(data.Error);
+
+            networkActivityTracker.track(promise);
+
+            return promise.then(() => {
+                if (IDs === 'all') {
+                    contactCache.clear();
+                    contactEmails.clear();
                 }
+
                 return eventManager.call();
             });
         }
