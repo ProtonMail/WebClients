@@ -147,10 +147,17 @@ angular.module('proton.message')
         */
         const emptyTrash = () => $http.delete(requestURL('trash'));
 
+        /**
+         * Delete all messages with a label
+         * @param  {String} Label
+         * @return {Promise}
+         */
+        const emptyLabel = (Label) => $http.delete(requestURL('empty'), { params: { Label } });
+
         return {
             send, createDraft, get, query, count,
             updateDraft, star, unstar, read, unread,
             trash, inbox, spam, archive, delete: destroy,
-            undelete, label, emptyDraft, emptySpam, emptyTrash
+            undelete, label, emptyDraft, emptySpam, emptyTrash, emptyLabel
         };
     });

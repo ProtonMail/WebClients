@@ -461,9 +461,7 @@ angular.module('proton.core')
             return promise;
         }
 
-        api.empty = (mailbox) => {
-            const labelID = CONSTANTS.MAILBOX_IDENTIFIERS[mailbox];
-
+        api.empty = (labelID) => {
             messagesCached = _.filter(messagesCached, ({ LabelIDs = [] }) => LabelIDs.indexOf(labelID) === -1);
 
             cacheCounters.updateMessage(labelID, 0);

@@ -2,7 +2,6 @@
     'advancedFilterElement-state-drafts': ('secured.drafts.**' | includedByState) || ('secured.allDrafts.**' | includedByState),
     'advancedFilterElement-state-spam': ('secured.spam.**' | includedByState),
     'advancedFilterElement-state-trash': ('secured.trash.**' | includedByState)
-
 }">
     <a class="pm_trigger advancedFilterElement-btn-dropdown" dropdown>
         <small translate>More</small>
@@ -34,6 +33,15 @@
             <div>
                 <i class="fa fa-times-circle-o"></i>
                 <span translate translate-context="Action">Empty trash</span>
+            </div>
+        </button>
+        <button
+            class="advancedFilterElement-btn-folder"
+            data-action="empty"
+            data-action-arg="folder">
+            <div>
+                <i class="fa fa-times-circle-o"></i>
+                <span translate translate-context="Action">Empty folder</span>
             </div>
         </button>
         <button
