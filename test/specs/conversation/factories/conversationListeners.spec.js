@@ -183,7 +183,7 @@ describe('conversationListeners factory', () => {
 
             it('should not call the composer.new event', () => {
                 expect(rootScope.$emit).toHaveBeenCalledWith('composer.new', {
-                    message,
+                    data: { message },
                     type: 'reply'
                 });
             })
@@ -199,7 +199,7 @@ describe('conversationListeners factory', () => {
 
             it('should not call the composer.new event', () => {
                 expect(rootScope.$emit).toHaveBeenCalledWith('composer.new', {
-                    message,
+                    data: { message },
                     type: 'replyall'
                 });
             })
@@ -215,7 +215,7 @@ describe('conversationListeners factory', () => {
 
             it('should not call the composer.new event', () => {
                 expect(rootScope.$emit).toHaveBeenCalledWith('composer.new', {
-                    message,
+                    data: { message },
                     type: 'forward'
                 });
             })
