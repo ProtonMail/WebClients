@@ -35,6 +35,10 @@
     flex: 1;
 }
 
+.signupPayForm-btn-apply {
+    margin-left: 20px;
+}
+
 .signupPayForm-show-gift .giftCodeBtn-container { display: none }
 .signupPayForm-container:not(.signupPayForm-show-gift) .signupPayForm-btn-apply,
 .signupPayForm-container:not(.signupPayForm-show-gift) .giftCodeInput-container { display: none }

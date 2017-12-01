@@ -1,6 +1,9 @@
 angular.module('proton.user')
-    .directive('signupPayForm', (paymentUtils, $rootScope, $stateParams, cardModel) => {
-
+    .directive('signupPayForm', (paymentUtils, $rootScope, $stateParams, cardModel, giftCodeModel, notification, gettextCatalog) => {
+        const I18N = {
+            giftCodeEmpty: gettextCatalog.getString('Gift code empty', null, 'Error'),
+            invalidGiftCode: gettextCatalog.getString('Invalid gift code', null, 'Error')
+        };
         const dispatch = (type, data) => $rootScope.$emit('signup', { type, data });
 
         return {
@@ -97,6 +100,14 @@ angular.module('proton.user')
                 const onReset = () => scope.$applyAsync(() => scope.errorPay = true);
 
                 const onApply = () => {
+                    if (!scope.giftCode) {
+                        return notification.error(I18N.giftCodeEmpty);
+                    }
+
+                    if (!giftCodeModel.isValid(scope.giftCode)) {
+                        return notification.error(I18N.invalidGiftCode);
+                    }
+
                     dispatch('apply.gift', {
                         Credit: scope.plan.Amount,
                         Currency: scope.plan.Currency,
