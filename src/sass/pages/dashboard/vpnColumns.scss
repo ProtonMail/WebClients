@@ -7,7 +7,7 @@
 
 // Columns
 .vpnColumns-col { flex: 1 }
-.vpnColumns-col:first-child { padding-top: 45px }
+.vpnColumns-col:first-child { padding-top: 60px }
 .vpnColumns-col > div:nth-child(even) { background-color: $light }
 
 .vpnColumns-vpnbasic-col, .vpnColumns-vpnplus-col {
@@ -40,7 +40,7 @@
 .vpnColumns-header {
     border-bottom: 1px solid $border;
     flex-direction: column;
-    height: 45px;
+    height: 60px;
 }
 
 .vpnColumns-selected {
@@ -68,13 +68,18 @@
 }
 
 .vpnColumns-vpnbasic-title,
-.vpnColumns-vpnplus-title { font-size: 1.3em }
+.vpnColumns-vpnplus-title,
+.vpnColumns-vpnbasic-amount,
+.vpnColumns-vpnplus-amount { font-size: 1.3em }
 
 .vpnColumns-vpnbasic-amount,
 .vpnColumns-vpnplus-amount {
     font-weight: bold;
     margin-left: 5px;
 }
+
+.vpnColumns-vpnbasic-amount { color: $vpnbasic }
+.vpnColumns-vpnplus-amount { color: $vpnplus }
 
 // Footer
 .vpnColumns-footer {
