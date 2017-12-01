@@ -590,3 +590,10 @@
         }
     }
 }
+
+.appConfigBody-is-mobile {
+    .composer [data-ng-form^="composeForm"],
+    .composer [ng-form^="composeForm"] {
+        min-height: 250px !important;
+    }
+}

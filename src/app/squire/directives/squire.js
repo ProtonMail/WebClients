@@ -54,6 +54,7 @@ angular.module('proton.squire')
 
                 scope.data = {};
                 const $iframe = el.find('iframe.squireIframe');
+                $iframe[0].id = `${id}${Date.now()}`;
 
                 if (!isMessage(typeContent)) {
                     scope.message = { ID: id, isPlainText: _.noop };
