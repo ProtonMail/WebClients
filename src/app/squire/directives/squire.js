@@ -1,5 +1,5 @@
 angular.module('proton.squire')
-    .directive('squire', (squireEditor, embedded, editorListener, $rootScope, sanitize, toggleModeEditor, AppModel) => {
+    .directive('squire', (squireEditor, embedded, editorListener, $rootScope, sanitize, toggleModeEditor, AppModel, onCurrentMessage) => {
 
         const CLASS_NAMES = {
             LOADED: 'squireEditor-loaded'
@@ -13,16 +13,28 @@ angular.module('proton.squire')
          */
         const isMessage = (typeContent) => typeContent === 'message';
 
+        /**
+         * Disable focus via TAB key when we switch are in mode: plaintext
+         * @param  {Node} iframe
+         * @return {Function}         arg:<Boolean> isPlaintext
+         */
+        const tabIndexAble = (iframe) => (isPlainText) => {
+            isPlainText && iframe.setAttribute('tabindex', '-1');
+            !isPlainText && iframe.removeAttribute('tabindex');
+        };
+
         /*
             We need the editor to get a valid plain text message on Load
             - Parse a new message
             - Don't parse when we open a draft already created.
          */
-        const loadPlainText = (scope, editor) => () => {
+        const loadPlainText = (scope, editor, bindTabIndex = _.noop) => () => {
 
             const isPlainTextMode = AppModel.get('editorMode') === 'text/plain';
             const isDraftPlainText = scope.message.isPlainText() && scope.message.IsEncrypted === 5;
             const isNewDraft = !scope.message.isPlainText() || !scope.message.IsEncrypted;
+
+            bindTabIndex(isPlainTextMode);
 
             if ((isPlainTextMode && isNewDraft) || isDraftPlainText) {
                 toggleModeEditor.toPlainText(scope.message, editor);
@@ -41,6 +53,8 @@ angular.module('proton.squire')
             link(scope, el, { typeContent = 'message', action = '', id }) {
 
                 scope.data = {};
+                const $iframe = el.find('iframe.squireIframe');
+
                 if (!isMessage(typeContent)) {
                     scope.message = { ID: id, isPlainText: _.noop };
                 }
@@ -78,12 +92,20 @@ angular.module('proton.squire')
                     });
                 }
 
-                squireEditor.create(el.find('iframe.squireIframe'), scope.message, typeContent)
+                squireEditor.create($iframe, scope.message, typeContent)
                     .then(onLoadEditor);
 
                 function onLoadEditor(editor) {
 
-                    let unsubscribe = angular.noop;
+                    const unsubscribe = [];
+                    const bindTabIndex = tabIndexAble($iframe[0]);
+
+                    // Prevent tab focus when we switch to plaintext
+                    unsubscribe.push(onCurrentMessage('squire.editor', scope, (type, { action, argument } = {}) => {
+                        if (type === 'squireActions' && action === 'setEditorMode' && action) {
+                            bindTabIndex(argument.value === 'text/plain');
+                        }
+                    }));
 
                     const isLoaded = () => {
                         el[0].classList.add(CLASS_NAMES.LOADED);
@@ -94,15 +116,15 @@ angular.module('proton.squire')
                         // On load we parse the body of the message in order to load its embedded images
                         embedded.parser(scope.message)
                             .then((body) => editor.setHTML(body))
-                            .then(loadPlainText(scope, editor))
+                            .then(loadPlainText(scope, editor, bindTabIndex))
                             .then(isLoaded)
-                            .then(() => unsubscribe = listen(updateModel, editor));
+                            .then(() => unsubscribe.push(listen(updateModel, editor)));
                     } else {
                         editor.setHTML(scope.value || '');
 
                         // defer loading to prevent input event refresh (takes some time to perform the setHTML)
                         const id = setTimeout(() => {
-                            unsubscribe = listen(updateModel, editor);
+                            unsubscribe.push(listen(updateModel, editor));
                             isLoaded();
                             clearTimeout(id);
                         }, 100);
@@ -118,7 +140,8 @@ angular.module('proton.squire')
                     });
 
                     scope.$on('$destroy', () => {
-                        unsubscribe();
+                        unsubscribe.forEach((cb) => cb());
+                        unsubscribe.length = 0;
                         squireEditor.clean(scope.message);
                         editor.destroy();
                     });
