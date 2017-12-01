@@ -62,7 +62,6 @@ module.exports = {
       "node_modules/ical.js/build/ical.js",
       "node_modules/angular-ical/dist/js/angular-ical.js",
       "node_modules/angular-messages/angular-messages.js",
-      "node_modules/svgeezy/svgeezy.js",
       "node_modules/mousetrap/mousetrap.js",
       "node_modules/push.js/push.js",
       "node_modules/angular-gettext/dist/angular-gettext.js",
