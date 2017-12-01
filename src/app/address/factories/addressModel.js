@@ -144,11 +144,12 @@ angular.module('proton.address')
          * @param  {Object} address
          * @return {Promise}
          */
-        const disableFirst = ({ ID, Status }) => {
+        const disableFirst = async ({ ID, Status }) => {
             if (Status === 0) {
-                return Promise.resolve();
+                return;
             }
-            return Address.disable(ID);
+            await Address.disable(ID);
+            notification.success(I18N.SUCCESS_DISABLED);
         };
 
         const remove = (address) => {
@@ -158,12 +159,16 @@ angular.module('proton.address')
                     message: I18N.DELETE_MODAL.message,
                     confirm() {
                         const promise = disableFirst(address)
-                            .then(() => Address.remove(address.ID))
+                            .then(() => Promise.all([ eventManager.call(), Address.remove(address.ID) ]))
                             .then(() => {
                                 notification.success(I18N.SUCCESS_REMOVE);
                                 confirmModal.deactivate();
                             })
-                            .then(eventManager.call);
+                            .then(eventManager.call)
+                            .catch((e) => {
+                                confirmModal.deactivate();
+                                throw e;
+                            });
 
                         networkActivityTracker.track(promise);
                     },
