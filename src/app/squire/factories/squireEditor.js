@@ -1,5 +1,5 @@
 angular.module('proton.squire')
-    .factory('squireEditor', ($rootScope, CONSTANTS, editorModel) => {
+    .factory('squireEditor', ($rootScope, CONSTANTS, editorModel, aboutClient) => {
 
         const CACHE = {};
         const IFRAME_CLASS = CONSTANTS.DEFAULT_SQUIRE_VALUE.IFRAMECLASSNAME;
@@ -21,26 +21,21 @@ angular.module('proton.squire')
          * @return {void}
          */
         const loadIframe = ($iframe, cb) => {
+
             const iframe = $iframe[0];
             const iframeDoc = (iframe.contentDocument || iframe.contentWindow) && iframe.contentWindow.document;
 
-            // Check if browser is Webkit (Safari/Chrome) or Opera
-            if ($.ua.engine.name === 'WebKit') {
-                // Start timer when loaded.
-                $iframe.load(() => cb($iframe));
-
-                // Safari and Opera need a kick-start.
-                const source = iframe.getAttribute('src');
-                iframe.setAttribute('src', '');
-                return iframe.setAttribute('src', source);
-
+            // Browser based on Firefox -> Firefox ESR or 57 or IE11 have the same issue
+            if (aboutClient.isGecko() || aboutClient.isIE11() || aboutClient.isEdge()) {
+                return $iframe.on('load', () => {
+                    _rAF(() => cb($iframe));
+                });
             }
 
             if (iframeDoc && iframeDoc.readyState === 'complete') {
-                return cb($iframe);
+                return _rAF(() => cb($iframe));
             }
 
-            $iframe.load(() => cb($iframe));
         };
 
         /**

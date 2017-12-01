@@ -22,6 +22,8 @@ angular.module('proton.commons')
         const isSafariMobile = () => $.ua.browser.name === 'Mobile Safari';
 
         const isIE11 = () => $.ua.browser.name === 'IE' && $.ua.browser.major === '11';
+        // Browser based on Firefox
+        const isGecko = () => $.ua.engine.name === 'Gecko';
         const isEdge = () => $.ua.browser.name === 'Edge';
         const isFirefox = () => $.ua.browser.name === 'Firefox';
 
@@ -56,6 +58,7 @@ angular.module('proton.commons')
             getDevice,
             isIE11,
             isEdge,
+            isGecko,
             isSafari,
             isFirefox,
             isSafariMobile,
