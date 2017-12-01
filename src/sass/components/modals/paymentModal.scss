@@ -58,3 +58,10 @@
 }
 
 .paymentsModal-container .giftCodeBtn-icon { display: none }
+
+.paymentForm-apply-container {
+    align-items: flex-start;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
