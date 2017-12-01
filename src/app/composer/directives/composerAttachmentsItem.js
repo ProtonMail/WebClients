@@ -1,7 +1,7 @@
 angular.module('proton.composer')
     .directive('composerAttachmentsItem', ($rootScope, gettextCatalog, attachmentDownloader) => {
 
-        const getTitle = () => gettextCatalog.getString(`Download the attachment ${name}`);
+        const getTitle = (name) => gettextCatalog.getString(`Download the attachment ${name}`);
         const dispatcher = (isOutside) => (type, data = {}) => {
             const event = `attachment.upload${isOutside ? '.outside' : ''}`.trim();
             $rootScope.$emit(event, { type, data });
