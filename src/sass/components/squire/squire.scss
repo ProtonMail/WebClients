@@ -47,5 +47,6 @@
 }
 
 .composer[data-type="text/plain"] .angular-squire-wrapper {
-    opacity: 0
+    opacity: 0;
+    pointer-events: none
 }
