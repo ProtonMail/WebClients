@@ -82,9 +82,9 @@ angular.module('proton', [
 
         $rootScope.showWelcome = true;
 
-        // SVG Polyfill for Edge
+        // SVG Polyfill for IE11 @todo lazy load
         window.svg4everybody();
-        window.svgeezy.init(false, 'png');
+
         // Set new relative time thresholds
         moment.relativeTimeThreshold('s', 59); // s seconds least number of seconds to be considered a minute
         moment.relativeTimeThreshold('m', 59); // m minutes least number of minutes to be considered an hour
