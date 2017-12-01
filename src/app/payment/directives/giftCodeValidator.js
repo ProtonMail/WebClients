@@ -1,9 +1,9 @@
 angular.module('proton.payment')
     .directive('giftCodeValidator', (CONSTANTS) => {
         const { GIFT_CODE_LENGTH } = CONSTANTS;
-        const IS_VALID = /[A-Z0-9]/g;
-        const CLEANER = /-|\s|\t/g;
-        const cleanCode = (input = '') => input.toUpperCase().replace(CLEANER, '');
+        const IS_VALID = /[a-zA-Z0-9]+/g; // Alpha-Numeric
+        const CLEANER = /-|\s|\t/g; // Remove space, tab and hyphen
+        const cleanCode = (input = '') => input.replace(CLEANER, '');
 
         return {
             restrict: 'A',
