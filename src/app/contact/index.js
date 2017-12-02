@@ -26,7 +26,6 @@ angular.module('proton.contact', ['vs-repeat'])
                     AppModel.set('contactSidebar', true);
                 },
                 onExit(contactCache, AppModel) {
-                    contactCache.clear();
                     AppModel.set('contactSidebar', false);
                 }
             })
