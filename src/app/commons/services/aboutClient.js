@@ -15,6 +15,10 @@ angular.module('proton.commons')
         const getBrowser = () => $.ua.browser;
         const getDevice = () => $.ua.device;
 
+        const getOS = () => {
+            const { name = 'other', version = '' } = $.ua.os;
+            return { name, version };
+        };
         const isSafari = () => {
             const browsers = ['Safari', 'Mobile Safari'];
             return _.contains(browsers, $.ua.browser.name);
@@ -26,6 +30,7 @@ angular.module('proton.commons')
         const isGecko = () => $.ua.engine.name === 'Gecko';
         const isEdge = () => $.ua.browser.name === 'Edge';
         const isFirefox = () => $.ua.browser.name === 'Firefox';
+        const isMac = () => getOS().name === 'Mac OS';
 
         const isFileSaverSupported = () => 'download' in document.createElement('a') || navigator.msSaveOrOpenBlob;
 
@@ -39,10 +44,6 @@ angular.module('proton.commons')
             return false;
         };
 
-        const getOS = () => {
-            const { name = 'other', version = '' } = $.ua.os;
-            return { name, version };
-        };
 
         const doNotTrack = () => {
             return navigator.doNotTrack === '1' || navigator.doNotTrack === 'yes'
@@ -56,6 +57,7 @@ angular.module('proton.commons')
             getOS,
             getBrowser,
             getDevice,
+            isMac,
             isIE11,
             isEdge,
             isGecko,

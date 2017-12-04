@@ -1,8 +1,7 @@
 angular.module('proton.squire')
     .factory('editorListener', (signatureBuilder, embedded, attachmentFileFormat, squireExecAction, $rootScope, authentication, editorDropzone, removeInlineWatcher, $state, CONSTANTS, aboutClient) => {
 
-        const { name = '' } = aboutClient.getOS();
-        const isMac = name === 'Mac OS';
+        const isMac = aboutClient.isMac();
 
         // Delay before updating the model as the process is slow
         const TIMEOUTAPP = 300;
