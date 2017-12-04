@@ -362,19 +362,17 @@ angular.module('proton.routes', [
                             .then(({ data = {} }) => {
                                 const message = data.Message;
                                 const promises = _.reduce(message.Replies, (acc, reply) => {
-                                    const promise = pmcw.decryptMessageLegacy({
+                                    const promise = pmcw.decryptMessage({
                                         message: pmcw.getMessage(reply.Body),
-                                        password,
-                                        messageTime: reply.Time
+                                        password
                                     })
                                         .then(({ data }) => (reply.DecryptedBody = data));
                                     acc.push(promise);
                                     return acc;
                                 }, [
-                                    pmcw.decryptMessageLegacy({
+                                    pmcw.decryptMessage({
                                         message: pmcw.getMessage(message.Body),
-                                        password,
-                                        messageTime: message.Time
+                                        password
                                     }).then(({ data } = {}) => (message.DecryptedBody = data))
                                 ]);
 
@@ -403,10 +401,9 @@ angular.module('proton.routes', [
                                 const message = result.data.Message;
 
                                 message.publicKey = result.data.PublicKey; // The sender’s public key
-                                return pmcw.decryptMessageLegacy({
+                                return pmcw.decryptMessage({
                                     message: pmcw.getMessage(message.Body),
-                                    password,
-                                    messageTime: message.Time
+                                    password
                                 })
                                     .then((body) => {
                                         const attachments = _.filter(message.Attachments, (attachment) => { return attachment.Headers && (attachment.Headers['content-id'] || attachment.Headers['content-location']); });
