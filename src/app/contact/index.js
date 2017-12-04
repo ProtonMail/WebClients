@@ -25,7 +25,7 @@ angular.module('proton.contact', ['vs-repeat'])
                 onEnter(AppModel) {
                     AppModel.set('contactSidebar', true);
                 },
-                onExit(contactCache, AppModel) {
+                onExit(AppModel) {
                     AppModel.set('contactSidebar', false);
                 }
             })
