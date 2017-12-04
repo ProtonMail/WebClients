@@ -2,6 +2,7 @@ angular.module('proton.core')
     .service('cacheCounters', (messageApi, CONSTANTS, conversationApi, $q, $rootScope, authentication, labelsModel) => {
         const api = {};
         let counters = {};
+        const { inbox, allDrafts, drafts, allSent, sent, trash, spam, allmail, archive, starred } = CONSTANTS.MAILBOX_IDENTIFIERS;
         const dispatch = (type, data = {}) => $rootScope.$emit('app.cacheCounters', { type, data });
 
         const exist = (loc) => {
@@ -35,18 +36,8 @@ angular.module('proton.core')
         * @return {Promise}
         */
         api.query = () => {
-            const locs = [
-                CONSTANTS.MAILBOX_IDENTIFIERS.inbox,
-                CONSTANTS.MAILBOX_IDENTIFIERS.allDrafts,
-                CONSTANTS.MAILBOX_IDENTIFIERS.drafts,
-                CONSTANTS.MAILBOX_IDENTIFIERS.allSent,
-                CONSTANTS.MAILBOX_IDENTIFIERS.sent,
-                CONSTANTS.MAILBOX_IDENTIFIERS.trash,
-                CONSTANTS.MAILBOX_IDENTIFIERS.spam,
-                CONSTANTS.MAILBOX_IDENTIFIERS.allmail,
-                CONSTANTS.MAILBOX_IDENTIFIERS.archive,
-                CONSTANTS.MAILBOX_IDENTIFIERS.starred
-            ].concat(labelsModel.ids());
+            const locs = [ inbox, allDrafts, drafts, allSent, sent, trash, spam, allmail, archive, starred ]
+                .concat(labelsModel.ids());
 
             return $q.all({
                 message: messageApi.count(),

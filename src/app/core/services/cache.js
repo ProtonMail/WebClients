@@ -24,6 +24,7 @@ angular.module('proton.core')
         const timeCached = {};
         const INVALID_SEARCH_ERROR_CODE = 15225;
         const { DELETE, CREATE, UPDATE_DRAFT, UPDATE_FLAGS } = CONSTANTS.STATUS;
+        const { inbox, allDrafts, drafts, allSent, sent, trash, spam, allmail, archive, starred } = CONSTANTS.MAILBOX_IDENTIFIERS;
         const I18N = {
             errorMessages: gettextCatalog.getString('No messages available', null, 'Error'),
             errorConversations: gettextCatalog.getString('No conversations available', null, 'Error')
@@ -186,18 +187,8 @@ angular.module('proton.core')
         */
         function vector({ LabelIDs = [], Labels = [], IsRead }, unread, type) {
             const toInt = (value) => +!!value;
-            const locs = [
-                CONSTANTS.MAILBOX_IDENTIFIERS.inbox,
-                CONSTANTS.MAILBOX_IDENTIFIERS.allDrafts,
-                CONSTANTS.MAILBOX_IDENTIFIERS.drafts,
-                CONSTANTS.MAILBOX_IDENTIFIERS.allSent,
-                CONSTANTS.MAILBOX_IDENTIFIERS.sent,
-                CONSTANTS.MAILBOX_IDENTIFIERS.trash,
-                CONSTANTS.MAILBOX_IDENTIFIERS.spam,
-                CONSTANTS.MAILBOX_IDENTIFIERS.allmail,
-                CONSTANTS.MAILBOX_IDENTIFIERS.archive,
-                CONSTANTS.MAILBOX_IDENTIFIERS.starred
-            ].concat(labelsModel.ids());
+            const locs = [ inbox, allDrafts, drafts, allSent, sent, trash, spam, allmail, archive, starred ]
+                .concat(labelsModel.ids());
 
             return _.reduce(locs, (acc, loc) => {
                 if (type === 'message') {
@@ -251,18 +242,8 @@ angular.module('proton.core')
             const newUnreadVector = vector(newElement, true, type);
             const newTotalVector = vector(newElement, false, type);
             const oldTotalVector = vector(oldElement, false, type);
-            const locs = [
-                CONSTANTS.MAILBOX_IDENTIFIERS.inbox,
-                CONSTANTS.MAILBOX_IDENTIFIERS.allDrafts,
-                CONSTANTS.MAILBOX_IDENTIFIERS.drafts,
-                CONSTANTS.MAILBOX_IDENTIFIERS.allSent,
-                CONSTANTS.MAILBOX_IDENTIFIERS.sent,
-                CONSTANTS.MAILBOX_IDENTIFIERS.trash,
-                CONSTANTS.MAILBOX_IDENTIFIERS.spam,
-                CONSTANTS.MAILBOX_IDENTIFIERS.allmail,
-                CONSTANTS.MAILBOX_IDENTIFIERS.archive,
-                CONSTANTS.MAILBOX_IDENTIFIERS.starred
-            ].concat(labelsModel.ids());
+            const locs = [ inbox, allDrafts, drafts, allSent, sent, trash, spam, allmail, archive, starred ]
+                .concat(labelsModel.ids());
 
             _.each(locs, (loc) => {
                 const deltaUnread = newUnreadVector[loc] - oldUnreadVector[loc];
@@ -856,9 +837,9 @@ angular.module('proton.core')
             return labelIDs;
         }
 
-        function getLabels(old, { Labels = [], LabelIDsRemoved = [], LabelIDsAdded = [] }) {
+        function getLabels(old, { Labels = [], LabelIDsRemoved = [], LabelIDsAdded = [], ContextNumUnread = 0 }) {
             if (LabelIDsAdded.length || LabelIDsRemoved.length) {
-                const toAdd = _.map(LabelIDsAdded, (ID) => ({ ID }));
+                const toAdd = _.map(LabelIDsAdded, (ID) => ({ ID, ContextNumUnread }));
                 const filtered = _.filter(old.Labels, ({ ID }) => !_.contains(LabelIDsRemoved, ID));
                 return _.uniq(filtered.concat(toAdd), ({ ID }) => ID);
             }
