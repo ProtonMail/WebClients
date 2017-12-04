@@ -1,7 +1,8 @@
 angular.module('proton.squire')
     .factory('editorListener', (signatureBuilder, embedded, attachmentFileFormat, squireExecAction, $rootScope, authentication, editorDropzone, removeInlineWatcher, $state, CONSTANTS, aboutClient) => {
 
-        const isMac = aboutClient.getOS() === 'osx';
+        const { name = '' } = aboutClient.getOS();
+        const isMac = name === 'Mac OS';
 
         // Delay before updating the model as the process is slow
         const TIMEOUTAPP = 300;
@@ -44,6 +45,7 @@ angular.module('proton.squire')
             });
 
             const sendKey = `${isMac ? 'meta' : 'ctrl'}-enter`;
+
             editor.setKeyHandler(sendKey, (self, event) => {
                 if (authentication.user.Hotkeys === 1) {
                     event.preventDefault();
