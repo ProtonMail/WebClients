@@ -182,3 +182,11 @@ input:-moz-ui-invalid {
         }
     }
 }
+
+#pm_slow { display: flex !important }
+#pm_slow2 { display: none !important }
+
+[id^="eo-"] {
+    #pm_slow { display: none !important }
+    #pm_slow2 { display: flex !important }
+}
