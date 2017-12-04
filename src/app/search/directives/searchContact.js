@@ -1,7 +1,9 @@
 angular.module('proton.search')
     .directive('searchContact', ($rootScope, $state, $stateParams, contactCache, gettextCatalog) => {
-        const searchContact = gettextCatalog.getString('Search contacts');
+
+        const I18N = gettextCatalog.getString('Search contacts');
         const dispatch = (keyword = '') => $rootScope.$emit('contacts', { type: 'searchingContact', data: { keyword } });
+
 
         return {
             replace: true,
@@ -9,39 +11,39 @@ angular.module('proton.search')
             scope: {},
             templateUrl: 'templates/search/searchContact.tpl.html',
             link(scope, element) {
-                const $input = element.find('.searchInput');
-                const onSubmit = () => {
-                    const keyword = scope.query;
 
-                    $state.go($state.$current.name, { page: 1, keyword }, { notify: false })
-                        .then(() => dispatch(keyword));
+                const $input = element[0].querySelector('.searchInput');
+                scope.query = $stateParams.keyword || '';
+
+                const switchState = (isReset, keyword = null) => {
+                    const state = isReset ? 'secured.contacts' : $state.$current.name;
+                    $state.go(state, { page: 1, keyword }, { notify: false })
+                        .then(() => (!isReset ? dispatch(keyword) : dispatch()));
                 };
-                const onReset = () => {
-                    $state.go('secured.contacts', { page: 1, keyword: null }, { notify: false })
-                        .then(() => dispatch());
-                };
+
+                const onSubmit = () => switchState(false, scope.query);
+                const onReset = () => switchState(true);
+                const onInput = _.debounce(onSubmit, 300);
                 const update = () => {
                     const total = contactCache.total();
-                    const placeholder = total ? `${searchContact} (${total})` : searchContact;
-
-                    $input.prop('placeholder', placeholder);
+                    const placeholder = total ? `${I18N} (${total})` : I18N;
+                    $input.placeholder = placeholder;
                 };
+
                 const unsubscribe = $rootScope.$on('contacts', (event, { type }) => {
                     (type === 'contactsUpdated') && update();
                 });
 
-                update();
-
                 element.on('submit', onSubmit);
                 element.on('reset', onReset);
-                $input.on('input', _.debounce(onSubmit, 300));
-                scope.query = $stateParams.keyword || '';
+                element.on('input', onInput);
+                update();
 
                 scope.$on('$destroy', () => {
                     unsubscribe();
                     element.off('submit', onSubmit);
                     element.off('reset', onReset);
-                    $input.off('input', _.debounce(onSubmit, 300));
+                    element.off('input', onInput);
                 });
             }
         };
