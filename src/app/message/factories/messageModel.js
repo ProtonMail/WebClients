@@ -178,7 +178,9 @@ angular.module('proton.message')
 
             decryptBody() {
                 const privateKeys = authentication.getPrivateKeys(this.AddressID);
-                const message = pmcw.getMessage(this.Body);
+
+                // decryptMessageLegacy expects message to be a string!
+                const message = this.Body;
 
                 this.decrypting = true;
 
