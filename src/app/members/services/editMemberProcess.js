@@ -146,9 +146,8 @@ angular.module('proton.members')
                     .then(keyRequest)
                     .then(finish(message))
                     .catch((error) => {
-                        console.error(error);
-                        notification.error(error);
-                        return eventManager.call();
+                        eventManager.call();
+                        throw error;
                     });
                 networkActivityTracker.track(process);
             };
