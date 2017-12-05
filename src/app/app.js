@@ -40,6 +40,7 @@ angular.module('proton', [
     'proton.authentication',
     'proton.elements',
     'proton.members',
+    'proton.bridge',
     'proton.labels',
     'proton.autoresponder',
     'proton.filter',
