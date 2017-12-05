@@ -70,7 +70,7 @@ angular.module('proton.contact')
                 function composeTo(Address) {
                     const message = messageModel();
                     message.ToList = [ { Address, Name: Address } ];
-                    $rootScope.$emit('composer.new', { message, type: 'new' });
+                    $rootScope.$emit('composer.new', { data: { message }, type: 'new' });
                 }
 
                 // Drag and Drop configuration
