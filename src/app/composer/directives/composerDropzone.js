@@ -130,7 +130,7 @@ angular.module('proton.composer')
 
 
                     this.removeAllFiles();
-                    queue.hasEmbedded = queue.files.some(({ isEmbedded }) => isEmbedded && message.MIMEType !== 'text/plain');
+                    queue.hasEmbedded = queue.files.every(({ isEmbedded }) => isEmbedded && message.MIMEType !== 'text/plain');
 
                     if (isEO && (queue.files.length + message.Attachments.length) > 10) {
                         dispatchAction(message, queue, 'attachments.limit.error');
