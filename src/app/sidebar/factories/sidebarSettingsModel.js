@@ -52,6 +52,11 @@ angular.module('proton.sidebar')
                 label: gettextCatalog.getString('Domains', null, 'Title'),
                 icon: 'fa-globe'
             },
+            bridge: {
+                state: 'secured.bridge',
+                label: 'IMAP/SMTP',
+                icon: 'fa-desktop'
+            },
             payments: {
                 state: 'secured.payments',
                 label: gettextCatalog.getString('Payments', null, 'Title'),

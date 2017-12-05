@@ -943,6 +943,21 @@ angular.module('proton.routes', [
                 }
             })
 
+            .state('secured.bridge', {
+                url: '/bridge',
+                views: {
+                    'content@secured': {
+                        template: '<bridge-view></bridge-view>'
+                    }
+                },
+                onEnter(AppModel) {
+                    AppModel.set('settingsSidebar', true);
+                },
+                onExit(AppModel) {
+                    AppModel.set('settingsSidebar', false);
+                }
+            })
+
             .state('secured.filters', {
                 url: '/filters',
                 resolve: {
