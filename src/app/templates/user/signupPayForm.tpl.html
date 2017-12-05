@@ -47,7 +47,7 @@
                     <tr>
                         <th translate translate-context="Title">Price</th>
                         <td>
-                            <strong>{{ (giftModel.AmountDue || plan.Amount) / 100 | currency: plan.Currency }}</strong> <i>({{ (giftModel.AmountDue || plan.Amount) / 100 / 12 | currency: plan.Currency }} / month)</i>
+                            <strong>{{ (giftModel.AmountDue || plan.Amount) / 100 | currency: plan.Currency }}</strong> <i ng-hide="plan.Cycle === 1">({{ (giftModel.AmountDue || plan.Amount) / 100 / plan.Cycle | currency: plan.Currency }} / month)</i>
                         </td>
                     </tr>
                 </tbody>
