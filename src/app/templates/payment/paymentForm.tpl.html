@@ -75,28 +75,32 @@
                 <gift-code-btn ng-if="!ctrl.displayGift" ng-click="ctrl.displayGift = true"></gift-code-btn>
             </p>
 
-            <div class="pm_grid flex flex-row" ng-if="ctrl.displayCoupon">
-                <div class="col-2-3">
-                    <label translate-context="Context" translate>Coupon</label>
-                    <div class="input-icon">
-                        <i class="fa fa-tag"></i>
-                        <input type="text" ng-model="ctrl.coupon" placeholder-translate-context="Payment form input label" placeholder-translate="Coupon">
+            <form name="couponForm" ng-if="ctrl.displayCoupon" ng-submit="ctrl.apply('coupon')" novalidate>
+                <label translate-context="Context" translate>Coupon</label>
+                <div class="pm_grid flex flex-row">
+                    <div class="col-2-3">
+                        <div class="input-icon">
+                            <i class="fa fa-tag"></i>
+                            <input type="text" ng-model="ctrl.coupon" placeholder-translate-context="Payment form input label" placeholder-translate="Coupon" required>
+                        </div>
+                    </div>
+                    <div class="col-1-3">
+                        <button class="pm_button primary" translate-context="Action" translate>Apply</button>
                     </div>
                 </div>
-                <div class="col-1-3 paymentForm-apply-container">
-                    <button type="button" class="pm_button primary" ng-click="ctrl.apply('coupon')" translate translate-context="Action">Apply</button>
-                </div>
-            </div>
+            </form>
 
-            <div class="pm_grid flex flex-row" ng-if="ctrl.displayGift">
-                <div class="col-2-3">
-                    <label translate-context="Context" translate>Gift code</label>
-                    <gift-code-input data-code="ctrl.gift"></gift-code-input>
+            <form name="giftForm" ng-if="ctrl.displayGift" ng-submit="ctrl.apply('gift')" novalidate>
+                <label translate-context="Context" translate>Gift code</label>
+                <div class="pm_grid flex flex-row">
+                    <div class="col-2-3">
+                        <gift-code-input data-code="ctrl.gift" data-form="giftForm"></gift-code-input>
+                    </div>
+                    <div class="col-1-3">
+                        <button class="pm_button primary" translate-context="Action" translate>Apply</button>
+                    </div>
                 </div>
-                <div class="col-1-3 paymentForm-apply-container">
-                    <button type="button" class="pm_button primary" ng-click="ctrl.apply('gift')" translate translate-context="Action">Apply</button>
-                </div>
-            </div>
+            </form>
 
             <p><span translate translate-context="Info">By clicking Submit, you agree to abide by</span> <a href="https://protonmail.com/terms-and-conditions" target="_blank" translate translate-context="Link">ProtonMail's Terms and Conditions</a>.</p>
         </div>
