@@ -2,7 +2,8 @@ angular.module('proton.user')
     .factory('manageUser', (CONSTANTS, pmcw, $rootScope, authentication, setupKeys, $exceptionHandler, addressWithoutKeysManager, gettextCatalog, notification) => {
 
         const I18N = {
-            REVOKE_ADMIN_RELOAD: gettextCatalog.getString('Your admin privileges have been revoked. The app will now be reloaded')
+            REVOKE_ADMIN_RELOAD: gettextCatalog.getString('Your admin privileges have been revoked.', null, 'Info'),
+            REVOKE_ADMIN_RELOAD_INFO: gettextCatalog.getString('The app will now be reloaded in a few seconds', null, 'Info')
         };
 
         let previousRole;
@@ -96,7 +97,7 @@ angular.module('proton.user')
             // Revoke admin, we reload the app to clear the context
             if (previousRole === CONSTANTS.PAID_ADMIN_ROLE && User.Role !== CONSTANTS.PAID_ADMIN_ROLE) {
                 previousRole = User.Role;
-                notification.info(I18N.REVOKE_ADMIN_RELOAD);
+                _rAF(() => notification.info(`${I18N.REVOKE_ADMIN_RELOAD}<br>${I18N.REVOKE_ADMIN_RELOAD_INFO}`));
                 return _.delay(() => window.location.reload(), 5000);
             }
 
