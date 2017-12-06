@@ -38,7 +38,6 @@
   },
   "rules": {
     "object-shorthand": "off",
-    "indent": ["error", 4, {"SwitchCase": 1}],
     "arrow-parens": ["error", "always"],
     "comma-dangle": ["error", "never"],
     "no-shadow": ["off", { "hoist": "never", "builtinGlobals": true  }],
@@ -65,7 +64,9 @@
     "prefer-destructuring": "off",
     "function-paren-newline": "off",
     "prefer-promise-reject-errors": "off",
-    "no-console": ["error", { allow: ["warn", "error"] }],
-    "object-curly-newline": "off"
+    "no-console": "off",
+    "object-curly-newline": "off",
+    "space-before-function-paren": "off",
+    "indent": "off"
   }
 }
