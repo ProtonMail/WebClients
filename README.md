@@ -46,13 +46,12 @@ We are very open to bug reports via Issues as well as Pull Requests.
 
 ### CLI Flags
 
-- `--no-open`: Stop the browser from automatically opening
-- `--no-ghost`: Switch off Clicks, Scrolls & Form inputs on any device
 - `--dest` : Deploy dest
 - `--api` : Set an API for the app (_dev, live, etc._)
 - `--article` : Change the path to the article (_for a custom version_)
 - `--api-version` : Set a custom api version
 - `--app-version` : Set a custom version (_ex: --app-version=3.8.20)
+- `--debug-app`: turn off debug mode for the app (default true)
 
 
 ## Branch naming conventions
@@ -110,7 +109,6 @@ Run a scenario:
 ```shell
 $ npm run e2e -- --suite=login
 ```
-
 
 ## License
 

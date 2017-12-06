@@ -61,6 +61,11 @@
     "no-debugger": "off",
     "prefer-template": "off",
     "class-methods-use-this": "off",
-    "func-names": ["off", "never"]
+    "func-names": ["off", "never"],
+    "prefer-destructuring": "off",
+    "function-paren-newline": "off",
+    "prefer-promise-reject-errors": "off",
+    "no-console": ["error", { allow: ["warn", "error"] }],
+    "object-curly-newline": "off"
   }
 }

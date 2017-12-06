@@ -43,7 +43,7 @@ module.exports = {
       "node_modules/codemirror/addon/display/autorefresh.js",
       "node_modules/codemirror/mode/sieve/sieve.js",
       "node_modules/codemirror/addon/lint/lint.js",
-      "node_modules/angular-ui-codemirror/src/ui-codemirror.js",
+      "node_modules/angular-ui-codemirror/dist/ui-codemirror.min.js",
       "node_modules/angular-sanitize/angular-sanitize.js",
       "node_modules/moment/min/moment-with-locales.js",
       "node_modules/moment-timezone/builds/moment-timezone-with-data.js",
@@ -91,7 +91,8 @@ module.exports = {
       'node_modules/clipboard/dist/clipboard.js',
       'node_modules/angular-vs-repeat/src/angular-vs-repeat.js',
       'node_modules/vcf/dist/vcard.js',
-      'node_modules/jszip/dist/jszip.min.js'
+      'node_modules/jszip/dist/jszip.min.js',
+      'node_modules/bootstrap-sass/assets/javascripts/bootstrap.js'
     ],
     bootstrap_components: [
       "affix",
@@ -132,20 +133,3 @@ module.exports = {
     date: "17 Apr. 2015"
   }
 };
-
-vendor_files.js = vendor_files.js.concat(vendor_files.bootstrap_components.map(function (cmp){
-  // return "node_modules/bootstrap-sass-official/assets/javascripts/bootstrap/"+cmp+".js";
-  return "node_modules/bootstrap-sass/assets/javascripts/bootstrap.js"
-}));
-
-vendor_files.included_js = vendor_files.js.filter(function (file) {
-  return vendor_files.included_js.every(function (included) {
-    return file.indexOf(included) === -1;
-  });
-});
-
-vendor_files.required_js = vendor_files.js.filter(function (file) {
-  return vendor_files.required_js.some(function (required) {
-    return file.indexOf(required) !== -1;
-  });
-});

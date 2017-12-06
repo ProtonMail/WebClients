@@ -1,18 +1,12 @@
-const fs = require('fs');
 const extend = require('lodash/extend');
 const execSync = require('child_process').execSync;
-const semver = require('semver');
+const argv = require('minimist')(process.argv.slice(2));
+
+const i18n = require('../po/lang');
 const PACKAGE = require('../package');
+
+const APP_VERSION = PACKAGE.version;
 const i18nLoader = require('./translationsLoader');
-
-/*
-    We need this to be sync (async process) to create a cache
-    then we can use it inside the gruntFile
- */
-const i18n = execSync('node env/translationsLoader.js');
-i18nLoader.set(i18n);
-
-const APP_VERSION = PACKAGE.version || '3.8.18';
 
 const AUTOPREFIXER_CONFIG = {
     browsers: [
@@ -68,6 +62,8 @@ const STATS_CONFIG = {
     host: HOST_STAT_MACHINE
 };
 
+i18nLoader.set(i18n);
+
 const APP = {
     app_version: APP_VERSION,
     api_version: '2',
@@ -88,62 +84,35 @@ const getStatsConfig = (deployBranch = '') => {
 const getDefaultApiTarget = () => (/webclient/i.test(__dirname) ? 'prod' : 'dev');
 const apiUrl = (type = getDefaultApiTarget()) => API_TARGETS[type];
 
-const getVersion = ({ major, minor, patch, version }) => {
-    if (major || minor || patch || version) {
+const getVersion = () => argv['app-version'] || APP_VERSION;
 
-        console.log();
-        console.log();
-        console.error('-------------------------------------------------------------');
-        console.error('> You must deploy a new version with npm version before');
-        console.error('> Ex: npm version --patch && grunt deploy');
-        console.log();
-        console.log('> It will create a new commit with the new version, a new tag');
-        console.error('-------------------------------------------------------------');
-        console.log();
-
-        process.exit(1);
-    }
-
-    return version || APP_VERSION;
-};
-
-const getConfig = (grunt) => {
+const getConfig = (env = process.env.NODE_ENV) => {
 
     const CONFIG = extend({}, APP, {
-        debug: !!grunt.option('debug-app'),
-        apiUrl: apiUrl(grunt.option('api')),
-        app_version: getVersion({
-            version: grunt.option('app-version'),
-            patch: !!grunt.option('patch'),
-            minor: !!grunt.option('minor'),
-            major: !!grunt.option('major')
-        }),
-        api_version: `${grunt.option('api-version') || APP.api_version}`,
-        articleLink: grunt.option('article') || APP.articleLink,
-        statsConfig: getStatsConfig(grunt.option('dest'))
+        debug: ((env === 'dist') ? false : ('debug-app' in argv ? argv['debug-app'] : true)),
+        apiUrl: apiUrl(argv.api),
+        app_version: getVersion(),
+        api_version: `${argv['api-version'] || APP.api_version}`,
+        articleLink: argv.article || APP.articleLink,
+        statsConfig: getStatsConfig(argv.branch)
     });
 
-    const isDistRelease = () => {
-        const [, host] = (grunt.option('dest') || '').split('-');
-        return /beta|prod/.test(host);
-    };
-
-    const getEnv = () => grunt.option('api') || 'local';
-
-    const syncPackage = () => {
-        if (PACKAGE.version !== CONFIG.app_version) {
-            PACKAGE.version = CONFIG.app_version;
-            fs.writeFileSync('./package.json', JSON.stringify(PACKAGE, null, 2));
-            console.log(`== Package.json updated to version ${CONFIG.app_version} ==`);
-            return true;
-        }
-    };
-
-
-    return { CONFIG, isDistRelease, syncPackage, getEnv };
+    return extend({ CONFIG }, { branch: argv.branch });
 };
 
+const isDistRelease = () => {
+    return ['prod', 'beta'].includes(argv.api) || process.env.NODE_ENV === 'dist';
+};
+
+const getEnv = () => {
+    if (isDistRelease()) {
+        return argv.api || getDefaultApiTarget();
+    }
+    return argv.api || 'local';
+}
+
 module.exports = {
-    AUTOPREFIXER_CONFIG, getConfig, PACKAGE,
-    getI18nMatchFile: i18nLoader.getI18nMatchFile
+    AUTOPREFIXER_CONFIG, getConfig, PACKAGE, isDistRelease,
+    getI18nMatchFile: i18nLoader.getI18nMatchFile,
+    argv, getEnv
 };
