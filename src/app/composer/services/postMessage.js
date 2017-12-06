@@ -65,6 +65,7 @@ angular.module('proton.composer')
                 parameters.Message.IsRead = 1;
             }
 
+            parameters.Message.Sender = { Name: message.From.DisplayName, Address: message.From.Email };
             parameters.Message.AddressID = message.AddressID;
 
             return parameters;

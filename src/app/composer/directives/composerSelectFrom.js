@@ -1,15 +1,8 @@
 angular.module('proton.composer')
-    .directive('composerSelectFrom', (notification, authentication, editorModel, aboutClient, gettextCatalog) => {
+    .directive('composerSelectFrom', (notification, editorModel, aboutClient, gettextCatalog, composerFromModel) => {
 
         const I18N = {
             ATTACHMENT_SEND_CHANGE: gettextCatalog.getString('Attachments and inline images must be removed first before changing sender', null, 'Compose message')
-        };
-
-        const listAddress = () => {
-            return _.chain(authentication.user.Addresses)
-                .where({ Status: 1, Receive: 1 })
-                .sortBy('Order')
-                .value();
         };
 
         return {
@@ -20,7 +13,8 @@ angular.module('proton.composer')
             templateUrl: 'templates/directives/composer/composerSelectFrom.tpl.html',
             link(scope, el) {
                 const $select = el.find('select');
-                scope.addresses = listAddress();
+
+                scope.addresses = composerFromModel.getAddresses(scope.message);
 
                 const onClick = (e) => {
                     if (scope.message.Attachments.length) {

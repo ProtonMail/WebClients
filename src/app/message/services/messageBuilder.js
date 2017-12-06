@@ -1,5 +1,5 @@
 angular.module('proton.message')
-    .factory('messageBuilder', (gettextCatalog, prepareContent, tools, authentication, messageModel, $filter, signatureBuilder, CONSTANTS, sanitize, textToHtmlMail) => {
+    .factory('messageBuilder', (gettextCatalog, prepareContent, composerFromModel, tools, authentication, messageModel, plusAliasModel, $filter, signatureBuilder, CONSTANTS, sanitize, textToHtmlMail) => {
 
         const RE_PREFIX = gettextCatalog.getString('Re:', null);
         const FW_PREFIX = gettextCatalog.getString('Fw:', null);
@@ -133,11 +133,6 @@ angular.module('proton.message')
         }
 
         function builder(action, currentMsg = {}, newMsg = {}) {
-            const addresses = _.chain(authentication.user.Addresses)
-                .where({ Status: 1, Receive: 1 })
-                .sortBy('Order')
-                .value();
-
             newMsg.MIMEType = authentication.user.DraftMIMEType;
 
             (action === 'new') && newCopy(newMsg, currentMsg);
@@ -145,13 +140,12 @@ angular.module('proton.message')
             (action === 'replyall') && replyAll(newMsg, currentMsg);
             (action === 'forward') && forward(newMsg, currentMsg);
 
-            if (currentMsg.AddressID) {
-                newMsg.AddressID = currentMsg.AddressID;
-                newMsg.From = _.findWhere(addresses, { ID: currentMsg.AddressID });
-            } else {
-                newMsg.AddressID = addresses[0].ID;
-                newMsg.From = addresses[0];
-            }
+            newMsg.xOriginalTo = currentMsg.xOriginalTo;
+
+            const [ address ] = composerFromModel.getAddresses(currentMsg);
+
+            newMsg.AddressID = address.ID;
+            newMsg.From = address;
 
             /* add inline images as attachments */
             newMsg.Attachments = injectInline(currentMsg);

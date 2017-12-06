@@ -6,27 +6,29 @@ angular.module('proton.composer')
         $state,
         $stateParams,
         $timeout,
-        gettextCatalog,
+        AppModel,
         authentication,
         cache,
+        composerFromModel,
+        composerRequestModel,
         confirmModal,
         CONSTANTS,
-        hotkeys,
-        messageModel,
         embedded,
-        networkActivityTracker,
-        composerRequestModel,
-        messageBuilder,
-        notification,
-        AppModel,
-        outsidersMap,
         encryptMessage,
+        eventManager,
         extractDataURI,
+        gettextCatalog,
+        hotkeys,
+        messageBuilder,
+        messageModel,
         messageRequest,
-        validateMessage,
+        networkActivityTracker,
+        notification,
+        outsidersMap,
+        plusAliasModel,
         postMessage,
         sendMessage,
-        eventManager
+        validateMessage,
     ) => {
 
         const unsubscribe = [];
@@ -250,28 +252,16 @@ angular.module('proton.composer')
 
 
         /**
-     * Bind the From configuration to a message and update the AddressID if we need to
-     * @param  {String} options.AddressID
-     * @return {Object}
-     */
-        function bindFrom({ AddressID }) {
+         * Bind the From configuration to a message and update the AddressID if we need to
+         * @param  {Object}
+         * @return {Object}
+         */
+        function bindFrom(message) {
+            const [ address ] = composerFromModel.getAddresses(message);
 
-            const addresses = _.chain(authentication.user.Addresses)
-                .where({ Status: 1, Receive: 1 })
-                .sortBy('Order')
-                .value();
-
-            if (AddressID) {
-            // If you try to create a reply from a disabled alias, bind the first Address.
-                const adr = _.findWhere(addresses, { ID: AddressID });
-                return {
-                    From: adr || addresses[0],
-                    AddressID: adr ? AddressID : addresses[0].ID
-                };
-            }
             return {
-                From: addresses[0],
-                AddressID: addresses[0].ID
+                From: address,
+                AddressID: address.ID
             };
         }
 
@@ -280,7 +270,6 @@ angular.module('proton.composer')
          * @param {Object} message
          */
         function initMessage(message) {
-
             if (authentication.user.ComposerMode === 1) {
                 message.maximized = true;
                 AppModel.set('maximizedComposer', true);
