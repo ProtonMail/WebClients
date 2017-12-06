@@ -137,7 +137,8 @@
     "i18n": "./tasks/commitI18n.sh",
     "build:i18n": "grunt nggettext_extract nggettext_compile",
     "postbuild:i18n": "npm run i18n",
-    "i18n:check": "tasks/noContext"
+    "i18n:check": "tasks/noContext",
+    "preversion": "rm package-lock.json || echo 'No useless package-lock to remove'"
   },
   "version": "3.12.13"
 }
