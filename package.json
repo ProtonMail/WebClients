@@ -154,7 +154,7 @@
     "precommit": "lint-staged"
   },
   "lint-staged": {
-    "*.{js}": ["prettier --write", "git add"]
+    "*.{js}": ["prettier --arrow-parens='always' --single-quote --tab-width=4 --print-width=150 --no-prose-wrap --write", "git add"]
   },
   "version": "3.12.13"
 }
