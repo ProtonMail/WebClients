@@ -4,7 +4,7 @@ const path = require('path');
 const CACHE = {};
 
 const getCountry = (lang) => {
-    const key = (lang === 'en') ? 'us' : lang;
+    const key = lang === 'en' ? 'us' : lang;
     return key.toUpperCase();
 };
 
@@ -20,15 +20,16 @@ const formatLang = (lang = '') => {
  * @param  {String} file FilePath
  * @return {Promise}         resolve: <keyFile>#<keyTranslation>
  */
-const readFile = (file) => new Promise((resolve, reject) => {
-    const key = path.basename(file, '.po');
-    const stream = fs.createReadStream(file, { start: 100, end: 500 });
-    stream.on('data', (data) => {
-        const [ , lang ] = data.toString().match(/"Language:.(\w+)/);
-        resolve({ key, lang: formatLang(lang.trim()) });
+const readFile = (file) =>
+    new Promise((resolve, reject) => {
+        const key = path.basename(file, '.po');
+        const stream = fs.createReadStream(file, { start: 100, end: 500 });
+        stream.on('data', (data) => {
+            const [, lang] = data.toString().match(/"Language:.(\w+)/);
+            resolve({ key, lang: formatLang(lang.trim()) });
+        });
+        stream.on('error', reject);
     });
-    stream.on('error', reject);
-});
 
 /**
  * Format a cache to get all translations available inside the app
@@ -37,11 +38,14 @@ const readFile = (file) => new Promise((resolve, reject) => {
  * @return {Object}       { map: <Object>, list: <Array> }
  */
 const set = (collection = []) => {
-    const { map, list } = collection.reduce((acc, { key, lang }) => {
-        acc.map[key] = lang;
-        acc.list.push(lang);
-        return acc;
-    }, { map: {}, list: [] });
+    const { map, list } = collection.reduce(
+        (acc, { key, lang }) => {
+            acc.map[key] = lang;
+            acc.list.push(lang);
+            return acc;
+        },
+        { map: {}, list: [] }
+    );
     CACHE.map = map;
     CACHE.list = list;
     return CACHE;
@@ -53,17 +57,17 @@ const set = (collection = []) => {
  * @return {Array}
  */
 const load = () => {
-    const promise = fs.readdirSync(path.join(__dirname, '../po'))
+    const promise = fs
+        .readdirSync(path.join(__dirname, '../po'))
         .filter((file) => path.extname(file) === '.po')
         .map((file) => path.resolve('./po', file))
         .map(readFile);
-    return Promise.all(promise)
-        .then((list) => (set(list), list));
+    return Promise.all(promise).then((list) => (set(list), list));
 };
 
-
 module.exports = {
-    load, set,
+    load,
+    set,
     get(key) {
         return CACHE[key];
     },

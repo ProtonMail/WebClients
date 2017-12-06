@@ -15,10 +15,7 @@ const pipe = [
                 options: {
                     cacheDirectory: true,
                     presets: ['es2017'],
-                    plugins: [
-                        require('babel-plugin-transform-object-rest-spread'),
-                        require('babel-plugin-transform-runtime')
-                    ],
+                    plugins: [require('babel-plugin-transform-object-rest-spread'), require('babel-plugin-transform-runtime')],
                     env: {
                         dist: {
                             plugins: [require('babel-plugin-angularjs-annotate')]

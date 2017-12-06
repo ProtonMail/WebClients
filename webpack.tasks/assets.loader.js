@@ -14,45 +14,53 @@ module.exports = [
     },
     {
         test: /\.png$/,
-        use: [ {
-            loader: 'url-loader',
-            options: {
-                limit: MAX_SIZE,
-                name: 'assets/img/[name].[ext]',
-                mimetype: 'image/png'
+        use: [
+            {
+                loader: 'url-loader',
+                options: {
+                    limit: MAX_SIZE,
+                    name: 'assets/img/[name].[ext]',
+                    mimetype: 'image/png'
+                }
             }
-        }]
+        ]
     },
     {
         test: /\.gif$/,
-        use: [ {
-            loader: 'url-loader',
-            options: {
-                limit: MAX_SIZE,
-                name: 'assets/img/[name].[ext]',
-                mimetype: 'image/gif'
+        use: [
+            {
+                loader: 'url-loader',
+                options: {
+                    limit: MAX_SIZE,
+                    name: 'assets/img/[name].[ext]',
+                    mimetype: 'image/gif'
+                }
             }
-        }]
+        ]
     },
     {
         test: /\.woff(2)?(\?v=[0-9]\.[0-9]\.[0-9])?$/,
-        use: [ {
-            loader: 'url-loader',
-            options: {
-                limit: MAX_SIZE,
-                name: 'assets/fonts/[name].[ext]',
-                mimetype: 'application/font-woff'
+        use: [
+            {
+                loader: 'url-loader',
+                options: {
+                    limit: MAX_SIZE,
+                    name: 'assets/fonts/[name].[ext]',
+                    mimetype: 'application/font-woff'
+                }
             }
-        }]
+        ]
     },
     {
         test: /\.(ttf|eot|svg)(\?v=[0-9]\.[0-9]\.[0-9])?$/,
-        use: [ {
-            loader: 'url-loader',
-            options: {
-                limit: MAX_SIZE,
-                name: 'assets/fonts/[name].[ext]'
+        use: [
+            {
+                loader: 'url-loader',
+                options: {
+                    limit: MAX_SIZE,
+                    name: 'assets/fonts/[name].[ext]'
+                }
             }
-        }]
+        ]
     }
 ];

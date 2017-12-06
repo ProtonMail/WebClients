@@ -14,8 +14,7 @@ const pullDist = (branch) => {
     commands.push(`git clone file://$PWD --depth 1 --single-branch --branch ${branch} dist`);
     commands.push('cd dist');
     commands.push('rm -rf *');
-    return exec(commands.join(' && '))
-        .then(() => success('Pull dist'));
+    return exec(commands.join(' && ')).then(() => success('Pull dist'));
 };
 
 const push = (branch) => {
@@ -30,8 +29,7 @@ const push = (branch) => {
     commands.push(`git push origin ${branch}`);
     commands.push('cd ..');
     commands.push(`git push origin ${branch}`);
-    return exec(commands.join(' && '))
-        .then(() => success('Push new release'));
+    return exec(commands.join(' && ')).then(() => success('Push new release'));
 };
 
 const buildApp = () => {
@@ -43,9 +41,13 @@ const buildApp = () => {
             resolve();
         };
 
-        const build = execRaw('npm run dist', {
-            maxBuffer: 1000 * 1000 * 10 // 10 MB
-        }, callback);
+        const build = execRaw(
+            'npm run dist',
+            {
+                maxBuffer: 1000 * 1000 * 10 // 10 MB
+            },
+            callback
+        );
         build.stdout.pipe(process.stdout);
         build.stderr.pipe(process.stderr);
     }).then(() => success('Build application'));
@@ -64,7 +66,6 @@ const buildApp = () => {
         await push(branch);
         success(`App deployment to ${branch} done`);
         process.exit(0);
-
     } catch (e) {
         console.log(chalk.magentaBright(' ⚠ '), chalk.red(e.message));
         process.exit(1);

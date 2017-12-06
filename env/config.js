@@ -9,11 +9,7 @@ const APP_VERSION = PACKAGE.version;
 const i18nLoader = require('./translationsLoader');
 
 const AUTOPREFIXER_CONFIG = {
-    browsers: [
-        'last 2 versions',
-        'iOS >= 8',
-        'Safari >= 8'
-    ]
+    browsers: ['last 2 versions', 'iOS >= 8', 'Safari >= 8']
 };
 
 const STATS_ID = {
@@ -68,16 +64,15 @@ const APP = {
     app_version: APP_VERSION,
     api_version: '2',
     date_version: new Date().toDateString(),
-    year: (new Date()).getFullYear(),
+    year: new Date().getFullYear(),
     clientID: 'Web',
     clientSecret: '4957cc9a2e0a2a49d02475c9d013478d',
     articleLink: 'https://protonmail.com/blog/protonmail-v3-12-release-notes/',
     translations: i18nLoader.get('list')
 };
 
-
 const getStatsConfig = (deployBranch = '') => {
-    const [, host = 'dev', subhost = 'a' ] = deployBranch.split('-');
+    const [, host = 'dev', subhost = 'a'] = deployBranch.split('-');
     return extend({}, STATS_CONFIG[host], STATS_ID[subhost]) || NO_STAT_MACHINE;
 };
 
@@ -87,9 +82,8 @@ const apiUrl = (type = getDefaultApiTarget()) => API_TARGETS[type];
 const getVersion = () => argv['app-version'] || APP_VERSION;
 
 const getConfig = (env = process.env.NODE_ENV) => {
-
     const CONFIG = extend({}, APP, {
-        debug: ((env === 'dist') ? false : ('debug-app' in argv ? argv['debug-app'] : true)),
+        debug: env === 'dist' ? false : 'debug-app' in argv ? argv['debug-app'] : true,
         apiUrl: apiUrl(argv.api),
         app_version: getVersion(),
         api_version: `${argv['api-version'] || APP.api_version}`,
@@ -109,10 +103,14 @@ const getEnv = () => {
         return argv.api || getDefaultApiTarget();
     }
     return argv.api || 'local';
-}
+};
 
 module.exports = {
-    AUTOPREFIXER_CONFIG, getConfig, PACKAGE, isDistRelease,
+    AUTOPREFIXER_CONFIG,
+    getConfig,
+    PACKAGE,
+    isDistRelease,
     getI18nMatchFile: i18nLoader.getI18nMatchFile,
-    argv, getEnv
+    argv,
+    getEnv
 };
