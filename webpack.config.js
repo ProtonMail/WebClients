@@ -22,7 +22,7 @@ process.on('unhandledRejection', (reason, p) => {
 
 module.exports = {
     stats: 'minimal',
-    devtool: (!env.isDistRelease() ? 'eval-source-map' : false), // Done via UglifyJS
+    devtool: !env.isDistRelease() ? 'eval-source-map' : false, // Done via UglifyJS
     devServer: {
         hot: true,
         stats: 'minimal',
@@ -33,7 +33,7 @@ module.exports = {
     },
     entry: {
         templates: TEMPLATES_GLOB,
-        app: ['./src/app/app.js', './src/sass/app.scss' ],
+        app: ['./src/app/app.js', './src/sass/app.scss'],
         styles: CSS_GLOB.concat(['./src/sass/app.scss']),
         html: './src/app.html'
     },

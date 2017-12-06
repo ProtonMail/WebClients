@@ -8,13 +8,13 @@ const CopyWebpackPlugin = require('copy-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const ImageminPlugin = require('imagemin-webpack-plugin').default;
 const HtmlWebpackIncludeAssetsPlugin = require('html-webpack-include-assets-plugin');
-const imageminMozjpeg = require('imagemin-mozjpeg')
+const imageminMozjpeg = require('imagemin-mozjpeg');
 
 const CONFIG = require('../env/conf.build');
 const env = require('../env/config');
 
 const makeSRC = (list) => list.map((file) => path.resolve(file));
-const [ OPENPGP_WORKER, OPENPGP ] = makeSRC(CONFIG.external_files.openpgp);
+const [OPENPGP_WORKER, OPENPGP] = makeSRC(CONFIG.external_files.openpgp);
 const VENDOR_GLOB = makeSRC(CONFIG.vendor_files.js);
 const VENDOR_LIB_GLOB = makeSRC(glob.sync('./src/libraries/{polyfill,tweetWebIntent,mailparser}.js'));
 
@@ -34,7 +34,6 @@ const minify = () => {
 };
 
 const minifyJS = () => {
-
     if (!env.isDistRelease()) {
         return false;
     }
@@ -95,7 +94,7 @@ const list = [
         useHash: true,
         name: 'openpgp',
         fileName: '[name].min.js?[hash]',
-        filesToConcat: [ OPENPGP ]
+        filesToConcat: [OPENPGP]
     }),
 
     new HtmlWebpackIncludeAssetsPlugin({
@@ -120,14 +119,15 @@ const list = [
     })
 ];
 
-
 if (env.isDistRelease()) {
-    list.push(new UglifyJSPlugin({
-        exclude: /\/node_modules/,
-        parallel: true,
-        sourceMap: true,
-        uglifyOptions: minifyJS()
-    }));
+    list.push(
+        new UglifyJSPlugin({
+            exclude: /\/node_modules/,
+            parallel: true,
+            sourceMap: true,
+            uglifyOptions: minifyJS()
+        })
+    );
 }
 
 module.exports = list;
