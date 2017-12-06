@@ -45,20 +45,24 @@ We are very open to bug reports via Issues as well as Pull Requests.
 
 ## Deploy
 
-1. Create a new version + tag => `$ npm version --(patch|minor|major)`
-2. Deploy via grunt `grunt deploy --api=X --dest=Y`
+1. Create a new version + tag => `$ npm version (patch|minor|major)`
+2. Deploy via npm `npm run deploy --api=X --branch=Y`
 
-> _Then don't forget to do a git push --tags to push the tag_
+## I18n à la demande
 
+> We build i18n when we create a build for beta or prod
+
+```sh
+$ npm run i18n:build
+```
+
+It will do everything you need. Import new translations first for a better result ;)
 
 ### CLI Flags
 
-- `--dest` : Deploy dest
+- `--branch` : Deploy branch dest
 - `--api` : Set an API for the app (_dev, live, etc._)
-- `--article` : Change the path to the article (_for a custom version_)
-- `--api-version` : Set a custom api version
-- `--app-version` : Set a custom version (_ex: --app-version=3.8.20)
-- `--debug-app`: turn off debug mode for the app (default true)
+- `--debug`: turn on debug mode for the command (default false)
 
 
 ## Branch naming conventions
