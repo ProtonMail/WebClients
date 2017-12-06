@@ -34,7 +34,7 @@ const push = (branch) => {
 
 const i18n = (branch) => {
     if (!/prod|beta/.test(branch)) {
-        console.log('We only build i18n !prod || beta');
+        console.log('⚠ We only build i18n for prod || beta');
         return Promise.resolve();
     }
     return exec('npm run i18n:build').then(() => success('Build I18N '));

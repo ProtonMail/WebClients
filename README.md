@@ -14,6 +14,24 @@ We are currently working with our community to localize ProtonMail from English 
 - `$ npm install`
 - `$ npm start`
 
+### dependencies
+  - Node.js >= v8
+  - npm 5
+  - git
+
+### About npm install
+
+This command will run as a hook postinstall,
+  - `tasks/privateDependencies.sh`: Custom vendor
+
+### Error with Mac
+
+You need to install a few dep in order to be able to deploy
+```sh
+brew install libpng
+```
+> or `brew upgrade libpng` if you already have the lib
+
 #### If you have docker, and prefer to not install node (or anything else) locally
 
 - `make start` to start the app on a container (use `make localurl` to find the url where it's running)
