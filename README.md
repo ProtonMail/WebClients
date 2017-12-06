@@ -46,7 +46,7 @@ We are very open to bug reports via Issues as well as Pull Requests.
 ## Deploy
 
 1. Create a new version + tag => `$ npm version (patch|minor|major)`
-2. Deploy via npm `npm run deploy --api=X --branch=Y`
+2. Deploy via npm `npm run deploy -- --api=X --branch=Y`
 
 ## I18n à la demande
 
