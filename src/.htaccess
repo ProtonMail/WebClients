@@ -4,22 +4,22 @@ RewriteCond %{HTTPS} !=on
 RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 
 # Redirect nothing to app
-RewriteRule ^$ /app.html [NC,L]
+RewriteRule ^$ /index.html [NC,L]
 
 # Hide .git stuff
-RewriteRule ^.*?\.git.* /app.html [NC,L]
+RewriteRule ^.*?\.git.* /index.html [NC,L]
 
 RewriteCond %{REQUEST_FILENAME} -s [OR]
 RewriteCond %{REQUEST_FILENAME} -l [OR]
 RewriteCond %{REQUEST_FILENAME} -d
 RewriteRule ^.*$ - [NC,L]
 
-RewriteRule ^(.*) /app.html [NC,L]
+RewriteRule ^(.*) /index.html [NC,L]
 
 # Error pages
 ErrorDocument 403   /assets/errors/403.html
 
-<Files app.html>
+<Files index.html>
     FileETag None
     Header unset ETag
     Header set Cache-Control "max-age=0, no-cache, no-store, must-revalidate"

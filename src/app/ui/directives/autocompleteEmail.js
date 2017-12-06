@@ -1,103 +1,99 @@
-angular.module('proton.ui')
-    .directive('autocompleteEmail', ($rootScope, autocompleteEmailsModel, regexEmail, autocompleteBuilder) => {
-
+/* @ngInject */
+function autocompleteEmail($rootScope, autocompleteEmailsModel, regexEmail, autocompleteBuilder) {
     /**
      * Get the selected input value configuration
      * @param  {Object} model Factory autocompleteEmailsModel
      * @param  {String} value Input value
      * @return {Object}       {label, value}
      */
-        const getConfigEmailInput = (model, value = '') => {
-
-            if (regexEmail.test(value)) {
-                const config = model.filterContact(value, true).list[0];
-                // Can be undefined if there is no match
-                if (config) {
-                    return config;
-                }
+    const getConfigEmailInput = (model, value = '') => {
+        if (regexEmail.test(value)) {
+            const config = model.filterContact(value, true).list[0];
+            // Can be undefined if there is no match
+            if (config) {
+                return config;
             }
+        }
 
-            return { label: value, value };
-        };
+        return { label: value, value };
+    };
 
-        const link = (scope, el, { awesomplete, attr }) => {
+    const link = (scope, el, { awesomplete, attr }) => {
+        const dispatch = (type, data) => $rootScope.$emit('autocompleteEmail', { type, data });
 
-            const dispatch = (type, data) => $rootScope.$emit('autocompleteEmail', { type, data });
+        // Model for this autocomplete
+        const model = autocompleteEmailsModel();
 
-            // Model for this autocomplete
-            const model = autocompleteEmailsModel();
-
-            /**
+        /**
          * Sync the model, bind emails selected
          * @return {void}
          */
-            const syncModel = ({ value }) => scope.$applyAsync(() => (scope.email = value));
+        const syncModel = ({ value }) => scope.$applyAsync(() => (scope.email = value));
 
-            const onInput = ({ target }) => {
+        const onInput = ({ target }) => {
+            // Classic autocompletion
+            const { list, hasAutocompletion } = model.filterContact(target.value);
+            hasAutocompletion && (awesomplete.list = list);
 
-                // Classic autocompletion
-                const { list, hasAutocompletion } = model.filterContact(target.value);
-                hasAutocompletion && (awesomplete.list = list);
+            // Unselect the autocomplete suggestion if the input value is a valid email
+            if ((target.value || '').includes('@')) {
+                regexEmail.test(target.value) && awesomplete.goto(-1);
+            }
+        };
 
-                // Unselect the autocomplete suggestion if the input value is a valid email
-                if ((target.value || '').includes('@')) {
-                    regexEmail.test(target.value) && awesomplete.goto(-1);
-                }
-            };
-
-            const onClick = ({ target }) => {
-
+        const onClick = ({ target }) => {
             // Reset autocomplete to work only after 1 letter
-                awesomplete.minChars = 1;
+            awesomplete.minChars = 1;
 
-                /**
+            /**
              * Click onto the empty input
              *     Display the autocomplete with a list
              */
-                if (target.nodeName === 'INPUT' && !target.value) {
-                    awesomplete.minChars = 0;
-                    const { list, hasAutocompletion } = model.filterContact(target.value);
-                    hasAutocompletion && (awesomplete.list = list);
-                }
-            };
+            if (target.nodeName === 'INPUT' && !target.value) {
+                awesomplete.minChars = 0;
+                const { list, hasAutocompletion } = model.filterContact(target.value);
+                hasAutocompletion && (awesomplete.list = list);
+            }
+        };
 
-            const onBlur = () => {
-                if (attr.eventType) {
-                    scope.$applyAsync(() => {
-                        dispatch('input.blur', { value: scope.email, type: attr.eventType, eventData: attr.eventData });
-                    });
-                }
-            };
+        const onBlur = () => {
+            if (attr.eventType) {
+                scope.$applyAsync(() => {
+                    dispatch('input.blur', { value: scope.email, type: attr.eventType, eventData: attr.eventData });
+                });
+            }
+        };
 
-            /**
+        /**
          * Update the model when an user select an option
          */
-            awesomplete.replace = function replace(opt) {
-                syncModel(getConfigEmailInput(model, opt.value));
-            };
-
-            // Custom filter as the list contains unicode and not the input
-            awesomplete.filter = (text, input) => {
-                return Awesomplete.FILTER_CONTAINS(text, model.formatInput(input));
-            };
-
-            el.on('click', onClick);
-            el.on('input', onInput);
-            el.find('input').on('blur', onBlur);
-
-            scope.$on('$destroy', () => {
-                el.off('click', onClick);
-                el.off('input', onInput);
-                el.off('blur', onBlur);
-                model.clear();
-            });
+        awesomplete.replace = function replace(opt) {
+            syncModel(getConfigEmailInput(model, opt.value));
         };
-        return {
-            scope: {
-                email: '='
-            },
-            replace: true,
-            templateUrl: 'templates/ui/autocompleteEmail.tpl.html',
-            compile: autocompleteBuilder(link)
+
+        // Custom filter as the list contains unicode and not the input
+        awesomplete.filter = (text, input) => {
+            return Awesomplete.FILTER_CONTAINS(text, model.formatInput(input));
         };
-    });
+
+        el.on('click', onClick);
+        el.on('input', onInput);
+        el.find('input').on('blur', onBlur);
+
+        scope.$on('$destroy', () => {
+            el.off('click', onClick);
+            el.off('input', onInput);
+            el.off('blur', onBlur);
+            model.clear();
+        });
+    };
+    return {
+        scope: {
+            email: '='
+        },
+        replace: true,
+        templateUrl: 'templates/ui/autocompleteEmail.tpl.html',
+        compile: autocompleteBuilder(link)
+    };
+}
+export default autocompleteEmail;

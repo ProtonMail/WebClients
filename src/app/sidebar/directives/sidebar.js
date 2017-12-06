@@ -1,12 +1,13 @@
-angular.module('proton.sidebar')
-    .directive('sidebar', (sidebarModel) => ({
-        scope: {},
-        replace: true,
-        templateUrl: 'templates/partials/sidebar.tpl.html',
-        link(scope) {
-            scope.listStates = Object.keys(sidebarModel.getStateConfig());
-            scope.scrollbarConfig = {
-                scrollInertia: 0
-            };
-        }
-    }));
+/* @ngInject */
+const sidebar = (sidebarModel) => ({
+    scope: {},
+    replace: true,
+    templateUrl: 'templates/partials/sidebar.tpl.html',
+    link(scope) {
+        scope.listStates = Object.keys(sidebarModel.getStateConfig());
+        scope.scrollbarConfig = {
+            scrollInertia: 0
+        };
+    }
+});
+export default sidebar;

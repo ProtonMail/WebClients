@@ -1,76 +1,75 @@
-angular.module('proton.contact')
-    .factory('importContactModal', (pmModal, notification, gettextCatalog) => {
+/* @ngInject */
+function importContactModal(pmModal, notification, gettextCatalog) {
+    const I18N = {
+        invalidType: gettextCatalog.getString('Invalid file type')
+    };
 
-        const I18N = {
-            invalidType: gettextCatalog.getString('Invalid file type')
-        };
+    return pmModal({
+        controllerAs: 'ctrl',
+        templateUrl: 'templates/contact/importContactModal.tpl.html',
+        /* @ngInject */
+        controller: function(params, notify, $timeout, $scope) {
+            let files = [];
+            let extension;
 
-        return pmModal({
-            controllerAs: 'ctrl',
-            templateUrl: 'templates/contact/importContactModal.tpl.html',
-            /* @ngInject */
-            controller: function (params, notify, $timeout, $scope) {
+            this.import = () => params.import(files);
+            this.cancel = params.cancel;
 
-                let files = [];
-                let extension;
+            const initialization = () => {
+                const drop = document.getElementById('dropzone');
+                const $selectFile = $('#selectedFile');
 
-                this.import = () => params.import(files);
-                this.cancel = params.cancel;
+                drop.ondrop = (e) => {
+                    e.preventDefault();
+                    const file = e.dataTransfer.files[0];
+                    extension = file.name.substr(file.name.length - 4);
 
-                const initialization = () => {
-                    const drop = document.getElementById('dropzone');
-                    const $selectFile = $('#selectedFile');
-
-                    drop.ondrop = (e) => {
-                        e.preventDefault();
-                        const file = e.dataTransfer.files[0];
-                        extension = file.name.substr(file.name.length - 4);
-
-                        if (extension !== '.csv' && extension !== '.vcf') {
-                            this.hover = false;
-                            return notification.error(I18N.invalidType);
-                        }
-
-                        files = e.dataTransfer.files;
-                        $scope.$applyAsync(() => {
-                            this.fileDropped = files[0].name;
-                            this.hover = false;
-                        });
-                    };
-
-                    drop.ondragover = (event) => {
-                        event.preventDefault();
-                        this.hover = true;
-                    };
-
-                    drop.ondragleave = (event) => {
-                        event.preventDefault();
+                    if (extension !== '.csv' && extension !== '.vcf') {
                         this.hover = false;
-                    };
+                        return notification.error(I18N.invalidType);
+                    }
 
-                    $('#dropzone').on('click', () => {
-                        $selectFile.trigger('click');
-                    });
-
-                    $selectFile.change(() => {
-                        const listFiles = $selectFile[0].files;
-                        const file = listFiles[0].name;
-
-                        extension = file.substr(file.length - 4);
-
-                        if (extension !== '.csv' && extension !== '.vcf') {
-                            return notification.error(I18N.invalidType);
-                        }
-
-                        files = listFiles;
-                        $scope.$applyAsync(() => {
-                            this.fileDropped = file;
-                            this.hover = false;
-                        });
+                    files = e.dataTransfer.files;
+                    $scope.$applyAsync(() => {
+                        this.fileDropped = files[0].name;
+                        this.hover = false;
                     });
                 };
 
-                _.defer(initialization, 100);
-            }
-        });
+                drop.ondragover = (event) => {
+                    event.preventDefault();
+                    this.hover = true;
+                };
+
+                drop.ondragleave = (event) => {
+                    event.preventDefault();
+                    this.hover = false;
+                };
+
+                $('#dropzone').on('click', () => {
+                    $selectFile.trigger('click');
+                });
+
+                $selectFile.change(() => {
+                    const listFiles = $selectFile[0].files;
+                    const file = listFiles[0].name;
+
+                    extension = file.substr(file.length - 4);
+
+                    if (extension !== '.csv' && extension !== '.vcf') {
+                        return notification.error(I18N.invalidType);
+                    }
+
+                    files = listFiles;
+                    $scope.$applyAsync(() => {
+                        this.fileDropped = file;
+                        this.hover = false;
+                    });
+                });
+            };
+
+            _.defer(initialization, 100);
+        }
     });
+}
+export default importContactModal;

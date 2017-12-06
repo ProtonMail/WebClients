@@ -1,8 +1,9 @@
-angular.module('proton.authentication')
-    .directive('twoFaField', () => {
-        return {
-            restrict: 'E',
-            replace: true,
-            templateUrl: 'templates/authentication/twoFaField.tpl.html'
-        };
-    });
+/* @ngInject */
+function twoFaField() {
+    return {
+        restrict: 'E',
+        replace: true,
+        templateUrl: 'templates/authentication/twoFaField.tpl.html'
+    };
+}
+export default twoFaField;

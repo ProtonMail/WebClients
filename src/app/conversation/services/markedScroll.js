@@ -1,22 +1,20 @@
-angular.module('proton.conversation')
-    .factory('markedScroll', () => {
+/* @ngInject */
+function markedScroll() {
+    const CACHE = {};
+    const getMarked = () => CACHE.wrapper.querySelector('.conversation.marked');
 
-        const CACHE = {};
-        const getMarked = () => CACHE.wrapper.querySelector('.conversation.marked');
+    const follow = () => {
+        if (!CACHE.wrapper) {
+            CACHE.wrapper = document.body.querySelector('.conversation-wrapper');
+        }
 
-        const follow = () => {
+        _rAF(() => {
+            const $marked = getMarked();
+            CACHE.wrapper.scrollTop = $marked.offsetTop - CACHE.wrapper.offsetHeight / 2;
+        });
+    };
+    const clear = () => (CACHE.wrapper = null);
 
-            if (!CACHE.wrapper) {
-                CACHE.wrapper = document.body.querySelector('.conversation-wrapper');
-            }
-
-            _rAF(() => {
-                const $marked = getMarked();
-                CACHE.wrapper.scrollTop = $marked.offsetTop - CACHE.wrapper.offsetHeight / 2;
-            });
-
-        };
-        const clear = () => (CACHE.wrapper = null);
-
-        return { follow, clear };
-    });
+    return { follow, clear };
+}
+export default markedScroll;

@@ -4,7 +4,7 @@ const CONFIG = require('./env/conf.build');
 const env = require('./env/config');
 
 const makeSRC = (list) => list.map((file) => path.resolve(file));
-const TEMPLATES_GLOB = makeSRC(glob.sync('./src-tmp/templates/**/*.tpl.html'));
+const TEMPLATES_GLOB = makeSRC(glob.sync('./src/templates/**/*.tpl.html'));
 const CSS_GLOB = makeSRC(CONFIG.vendor_files.css);
 
 const BUILD_TARGET = !env.isDistRelease() ? 'build' : 'dist';
@@ -33,14 +33,14 @@ module.exports = {
     },
     entry: {
         templates: TEMPLATES_GLOB,
-        app: ['./src-tmp/app/app.js', './src-tmp/sass/app.scss' ],
-        styles: CSS_GLOB.concat(['./src-tmp/sass/app.scss']),
-        html: './src-tmp/app.html'
+        app: ['./src/app/app.js', './src/sass/app.scss' ],
+        styles: CSS_GLOB.concat(['./src/sass/app.scss']),
+        html: './src/app.html'
     },
     resolve: {
         alias: {
-            sass: path.resolve('./src-tmp/sass'),
-            assets: path.resolve('./src-tmp/assets')
+            sass: path.resolve('./src/sass'),
+            assets: path.resolve('./src/assets')
         }
     },
     output: {

@@ -1,73 +1,72 @@
-angular.module('proton.ui')
-    .factory('customInputCreator', () => {
+/* @ngInject */
+function customInputCreator() {
+    /**
+     * {@link https://www.w3.org/TR/html5/forms.html#concept-input-apply}
+     */
 
-        /**
-         * {@link https://www.w3.org/TR/html5/forms.html#concept-input-apply}
-         */
+    const DEFAULT_ATTRIBUTES = ['id', 'class', 'value', 'checked', 'name', 'disabled', 'required', 'placeholder'];
 
-        const DEFAULT_ATTRIBUTES = ['id', 'class', 'value', 'checked', 'name', 'disabled', 'required', 'placeholder'];
+    const isDefaultAttribute = (name = '') => DEFAULT_ATTRIBUTES.some((key) => key === name);
+    /**
+     * Convert a name from the dataSet to a valid HTML attribute
+     * ex:
+     *     input: customNgClick
+     *     output: data-ng-click
+     * @param  {String} input
+     * @return {String}
+     */
+    const nameToAttribute = (input = '') => {
+        const attribute = input.replace(/^custom/, '');
+        return (attribute.charAt(0) + attribute.slice(1).replace(/([A-Z])/g, '-$1')).toLowerCase();
+    };
 
-        const isDefaultAttribute = (name = '') => DEFAULT_ATTRIBUTES.some((key) => key === name);
-        /**
-         * Convert a name from the dataSet to a valid HTML attribute
-         * ex:
-         *     input: customNgClick
-         *     output: data-ng-click
-         * @param  {String} input
-         * @return {String}
-         */
-        const nameToAttribute = (input = '') => {
-            const attribute = input.replace(/^custom/, '');
-            return (attribute.charAt(0) + attribute.slice(1).replace(/([A-Z])/g, '-$1')).toLowerCase();
-        };
+    const getLabelInputLink = (attributes = []) => {
+        const customId = attributes.filter((attr) => attr === 'customId')[0];
+        if (customId) {
+            return { for: customId, id: customId };
+        }
+        const id = `customInput${Math.random()
+            .toString(32)
+            .slice(2, 12)}`;
+        return { for: id, id };
+    };
 
-        const getLabelInputLink = (attributes = []) => {
-            const customId = attributes.filter((attr) => attr === 'customId')[0];
-            if (customId) {
-                return { for: customId, id: customId };
-            }
-            const id = `customInput${Math.random().toString(32).slice(2, 12)}`;
-            return { for: id, id };
-        };
+    const removeWatcher = (node, key) => node.removeAttribute(`data-custom-${key}`);
 
+    const bindAttributes = (node, el, attr = {}) => {
+        // filter attributes for the input
+        const inputAttributes = Object.keys(attr).filter((attribute) => /custom[A-Z]/.test(attribute));
 
-        const removeWatcher = (node, key) => node.removeAttribute(`data-custom-${key}`);
+        const link = getLabelInputLink(inputAttributes);
 
-        const bindAttributes = (node, el, attr = {}) => {
-            // filter attributes for the input
-            const inputAttributes = Object.keys(attr).filter((attribute) => /custom[A-Z]/.test(attribute));
+        attr[link.id] && (node.id = attr[link.id]);
 
-            const link = getLabelInputLink(inputAttributes);
+        inputAttributes.forEach((attribute) => {
+            const key = nameToAttribute(attribute);
 
-            attr[link.id] && (node.id = attr[link.id]);
+            // Do not put default attributes into the dataset
 
-            inputAttributes.forEach((attribute) => {
-                const key = nameToAttribute(attribute);
-
-                // Do not put default attributes into the dataset
-
-                if (/aria/.test(key) || isDefaultAttribute(key)) {
-
-                    // Extend className
-                    if (key === 'class') {
-                        removeWatcher(el[0], key);
-                        return node.classList.add(...attr[attribute].split(' '));
-                    }
-
-                    node.setAttribute(key, attr[attribute]);
-                } else {
-                    node.setAttribute(`data-${key}`, attr[attribute]);
+            if (/aria/.test(key) || isDefaultAttribute(key)) {
+                // Extend className
+                if (key === 'class') {
+                    removeWatcher(el[0], key);
+                    return node.classList.add(...attr[attribute].split(' '));
                 }
 
-                // Remove useless watchers
-                removeWatcher(el[0], key);
-                delete attr[attribute];
-            });
+                node.setAttribute(key, attr[attribute]);
+            } else {
+                node.setAttribute(`data-${key}`, attr[attribute]);
+            }
 
-            return inputAttributes;
-        };
+            // Remove useless watchers
+            removeWatcher(el[0], key);
+            delete attr[attribute];
+        });
 
-        /**
+        return inputAttributes;
+    };
+
+    /**
          * Custom compile function for a directive custom<Input type>
          *     - checkbox
          *     - radio
@@ -82,11 +81,12 @@ angular.module('proton.ui')
          * @param {Function} link
          * @return {Function} Compile function
          */
-        const compiler = (type = '', { pre, post = angular.noop } = {}) => (el, attr) => {
-            const $input = el[0].querySelector(`input[type="${type}"]`);
-            bindAttributes($input, el, attr);
-            return pre ? ({ pre, post }) : post;
-        };
+    const compiler = (type = '', { pre, post = angular.noop } = {}) => (el, attr) => {
+        const $input = el[0].querySelector(`input[type="${type}"]`);
+        bindAttributes($input, el, attr);
+        return pre ? { pre, post } : post;
+    };
 
-        return compiler;
-    });
+    return compiler;
+}
+export default customInputCreator;

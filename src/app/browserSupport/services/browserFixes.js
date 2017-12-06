@@ -1,15 +1,15 @@
-angular.module('proton.browserSupport')
-    .factory('browserFixes', (safari) => {
+/* @ngInject */
+function browserFixes(safari) {
+    const browsers = [safari];
 
-        const browsers = [ safari ];
+    function applyFixes() {
+        _.each(browsers, (browser) => {
+            if (browser.isCurrentBrowser()) {
+                browser.applyFixes();
+            }
+        });
+    }
 
-        function applyFixes() {
-            _.each(browsers, (browser) => {
-                if (browser.isCurrentBrowser()) {
-                    browser.applyFixes();
-                }
-            });
-        }
-
-        return { init: applyFixes };
-    });
+    return { init: applyFixes };
+}
+export default browserFixes;

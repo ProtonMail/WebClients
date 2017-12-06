@@ -1,5 +1,5 @@
-angular.module('proton.commons')
-.factory('secureSessionStorage', (CONSTANTS, webcrypto) => {
+/* @ngInject */
+function secureSessionStorage(CONSTANTS, webcrypto) {
     // Partially inspired by http://www.thomasfrank.se/sessionvars.html
 
     // This service implements essentially the sessionStorage API. However,
@@ -154,4 +154,5 @@ angular.module('proton.commons')
     }
 
     return api;
-});
+}
+export default secureSessionStorage;

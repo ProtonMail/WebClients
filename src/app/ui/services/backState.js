@@ -1,35 +1,35 @@
-angular.module('proton.ui')
-    .factory('backState', ($rootScope, $state, CONSTANTS, tools, authentication) => {
+/* @ngInject */
+function backState($rootScope, $state, CONSTANTS, tools, authentication) {
+    const { MAILBOX_IDENTIFIERS } = CONSTANTS;
 
-        const { MAILBOX_IDENTIFIERS } = CONSTANTS;
+    /**
+     * Keep a trace of the previous box state to let the user back to mail
+     * Action present in the settings and contact sidebar
+     */
+    const CACHE = {};
+    const cleanState = (state = '') => state.replace('.element', '');
 
-        /**
-         * Keep a trace of the previous box state to let the user back to mail
-         * Action present in the settings and contact sidebar
-         */
-        const CACHE = {};
-        const cleanState = (state = '') => state.replace('.element', '');
+    $rootScope.$on('$stateChangeSuccess', (e, toState, toParams, fromState = {}, fromParams = {}) => {
+        if (fromState.name && MAILBOX_IDENTIFIERS[tools.filteredState(fromState.name)]) {
+            CACHE.state = cleanState(fromState.name);
+            CACHE.params = fromParams;
+            CACHE.mode = authentication.user.ViewMode;
+        }
+    });
 
-        $rootScope.$on('$stateChangeSuccess', (e, toState, toParams, fromState = {}, fromParams = {}) => {
-            if (fromState.name && MAILBOX_IDENTIFIERS[tools.filteredState(fromState.name)]) {
-                CACHE.state = cleanState(fromState.name);
-                CACHE.params = fromParams;
-                CACHE.mode = authentication.user.ViewMode;
-            }
-        });
-
-        function back() {
-            // We can change the mode, prevent issue if an element was opened
-            if (CACHE.state && CACHE.mode === authentication.user.ViewMode) {
-                return $state.go(CACHE.state, CACHE.params);
-            }
-
-            if ($state.includes('secured.**')) {
-                return $state.go('secured.inbox');
-            }
-
-            return $state.go('login');
+    function back() {
+        // We can change the mode, prevent issue if an element was opened
+        if (CACHE.state && CACHE.mode === authentication.user.ViewMode) {
+            return $state.go(CACHE.state, CACHE.params);
         }
 
-        return { init: angular.noop, back };
-    });
+        if ($state.includes('secured.**')) {
+            return $state.go('secured.inbox');
+        }
+
+        return $state.go('login');
+    }
+
+    return { init: angular.noop, back };
+}
+export default backState;

@@ -42,7 +42,7 @@ module.exports = [
                 {
                     loader: 'sass-loader',
                     options: {
-                        includePaths: [path.resolve('./src-tmp/sass')]
+                        includePaths: [path.resolve('./src/sass')]
                     }
                 }
             ]

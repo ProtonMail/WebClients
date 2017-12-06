@@ -1,26 +1,25 @@
-angular.module('proton.filter')
-    .directive('spamListSearch', (spamListModel) => {
+/* @ngInject */
+function spamListSearch(spamListModel) {
+    const DEBOUNCE_TIME = 500;
 
-        const DEBOUNCE_TIME = 500;
+    return {
+        replace: true,
+        restrict: 'E',
+        templateUrl: 'templates/filter/spamListSearch.tpl.html',
+        scope: {},
+        link(scope, el) {
+            const $input = el.find('input');
 
-        return {
-            replace: true,
-            restrict: 'E',
-            templateUrl: 'templates/filter/spamListSearch.tpl.html',
-            scope: {},
-            link(scope, el) {
+            const onInput = _.debounce(({ target }) => {
+                spamListModel.search(target.value.trim());
+            }, DEBOUNCE_TIME);
 
-                const $input = el.find('input');
+            $input.on('input', onInput);
 
-                const onInput = _.debounce(({ target }) => {
-                    spamListModel.search(target.value.trim());
-                }, DEBOUNCE_TIME);
-
-                $input.on('input', onInput);
-
-                scope.$on('$destroy', () => {
-                    $input.off('input', onInput);
-                });
-            }
-        };
-    });
+            scope.$on('$destroy', () => {
+                $input.off('input', onInput);
+            });
+        }
+    };
+}
+export default spamListSearch;

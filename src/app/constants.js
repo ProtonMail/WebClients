@@ -1,10 +1,14 @@
-angular.module('proton.constants', [])
-/* eslint  no-useless-escape: "off" */
-    .constant('regexEmail', /(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))/i)
+export default angular
+    .module('proton.constants', [])
+    /* eslint  no-useless-escape: "off" */
+    .constant(
+        'regexEmail',
+        /(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))/i
+    )
 
-//
-// Constants definition
-//
+    //
+    // Constants definition
+    //
     .constant('CONSTANTS', {
         GIFT_CODE_LENGTH: 16,
         BLACK_FRIDAY_INTERVAL: 10 * 60 * 1000,
@@ -31,8 +35,73 @@ angular.module('proton.constants', [])
         CONTACTS_LIMIT_ENCRYPTION: 20,
         CONTACTS_LIMIT_UPLOAD: 50,
         VCARD_VERSION: '4.0',
-        VCARD_KEYS: ['email', 'adr', 'tel', 'note', 'kind', 'source', 'xml', 'nickname', 'photo', 'bday', 'anniversary', 'gender', 'impp', 'lang', 'tz', 'geo', 'title', 'role', 'logo', 'org', 'member', 'related', 'categories', 'rev', 'sound', 'uid', 'clientpidmap', 'url', 'key', 'fburl', 'caladruri', 'caluri'],
-        VCARD_TYPES: ['work', 'home', 'text', 'voice', 'fax', 'cell', 'video', 'pager', 'textphone', 'iana-token', 'x-name', 'contact', 'acquaintance', 'friend', 'met', 'co-worker', 'colleague', 'co-resident', 'neighbor', 'child', 'parent', 'sibling', 'spouse', 'kin', 'muse', 'crush', 'date', 'sweetheart', 'me', 'agent', 'emergency'],
+        VCARD_KEYS: [
+            'email',
+            'adr',
+            'tel',
+            'note',
+            'kind',
+            'source',
+            'xml',
+            'nickname',
+            'photo',
+            'bday',
+            'anniversary',
+            'gender',
+            'impp',
+            'lang',
+            'tz',
+            'geo',
+            'title',
+            'role',
+            'logo',
+            'org',
+            'member',
+            'related',
+            'categories',
+            'rev',
+            'sound',
+            'uid',
+            'clientpidmap',
+            'url',
+            'key',
+            'fburl',
+            'caladruri',
+            'caluri'
+        ],
+        VCARD_TYPES: [
+            'work',
+            'home',
+            'text',
+            'voice',
+            'fax',
+            'cell',
+            'video',
+            'pager',
+            'textphone',
+            'iana-token',
+            'x-name',
+            'contact',
+            'acquaintance',
+            'friend',
+            'met',
+            'co-worker',
+            'colleague',
+            'co-resident',
+            'neighbor',
+            'child',
+            'parent',
+            'sibling',
+            'spouse',
+            'kin',
+            'muse',
+            'crush',
+            'date',
+            'sweetheart',
+            'me',
+            'agent',
+            'emergency'
+        ],
         CONTACT_MODE: {
             ENCRYPTED_AND_SIGNED: 3,
             SIGNED: 2,
@@ -184,15 +253,7 @@ angular.module('proton.constants', [])
             SEND_PGP_MIME: 16,
             SEND_MIME: 32
         },
-        AUTOCOMPLETE_DOMAINS: [
-            'protonmail.com',
-            'protonmail.ch',
-            'gmail.com',
-            'hotmail.com',
-            'live.com',
-            'yahoo.com',
-            'outlook.com'
-        ],
+        AUTOCOMPLETE_DOMAINS: ['protonmail.com', 'protonmail.ch', 'gmail.com', 'hotmail.com', 'live.com', 'yahoo.com', 'outlook.com'],
         FONT_SIZE: {
             small: 8,
             normal: 14,
@@ -204,12 +265,12 @@ angular.module('proton.constants', [])
             BACKGROUND: '#FFFFFF'
         },
         FONT_COLOR: {
-            white: [ '#FFFFFF', '#DADADA', '#B5B5B5', '#909090', '#6B6B6B', '#464646', '#222222'],
-            magenta: [ '#F6CBCB', '#EC9798', '#E36667', '#ED4139', '#CF3932', '#9A2B25', '#681D19'],
-            blue: [ '#CDE1F2', '#9CC3E5', '#6CA6D9', '#3B83C2', '#2A47F6', '#145390', '#0F3A62'],
-            green: [ '#D7EAD3', '#B3D6A9', '#8FC380', '#77F241', '#66A657', '#3A762B', '#29501F'],
-            yellow: [ '#FFF2CD', '#FEE59C', '#FCD86F', '#FDF84E', '#F2C246', '#BE8F35', '#7F6124']
+            white: ['#FFFFFF', '#DADADA', '#B5B5B5', '#909090', '#6B6B6B', '#464646', '#222222'],
+            magenta: ['#F6CBCB', '#EC9798', '#E36667', '#ED4139', '#CF3932', '#9A2B25', '#681D19'],
+            blue: ['#CDE1F2', '#9CC3E5', '#6CA6D9', '#3B83C2', '#2A47F6', '#145390', '#0F3A62'],
+            green: ['#D7EAD3', '#B3D6A9', '#8FC380', '#77F241', '#66A657', '#3A762B', '#29501F'],
+            yellow: ['#FFF2CD', '#FEE59C', '#FCD86F', '#FDF84E', '#F2C246', '#BE8F35', '#7F6124']
         },
         CANCEL_REQUEST: 'CANCEL_REQUEST',
         ENCRYPTION_DEFAULT: 2048
-    });
+    }).name;

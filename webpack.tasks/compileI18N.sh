@@ -7,7 +7,7 @@ do
     lang="${file:3:2}";
     $COMMAND \
         --files $file \
-        --dest src-tmp/i18n/i18n.${lang}_${lang^^}.json \
+        --dest src/i18n/i18n.${lang}_${lang^^}.json \
         --compile \
         --format json;
 done

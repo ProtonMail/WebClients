@@ -1,13 +1,42 @@
-angular.module('proton.authentication', [
-    'proton.constants',
-    'proton.utils',
-    'proton.settings',
-    'proton.keys'
-])
-// Global functions
+import LoginController from './controllers/login';
+import loginForm from './directives/loginForm';
+import loginTwoFactorForm from './directives/loginTwoFactorForm';
+import twoFaField from './directives/twoFaField';
+import authHttpResponseInterceptor from './interceptors/authHttpResponseInterceptor';
+import helpLoginModal from './modals/helpLoginModal';
+import loginPasswordModal from './modals/loginPasswordModal';
+import pmcw from './providers/pmcw';
+import auth from './services/auth';
+import authApi from './services/authApi';
+import handle401 from './services/handle401';
+import handle403 from './services/handle403';
+import handle9001 from './services/handle9001';
+import passwords from './services/passwords';
+import srp from './services/srp';
+import upgradePassword from './services/upgradePassword';
+
+export default angular
+    .module('proton.authentication', ['proton.constants', 'proton.utils', 'proton.settings', 'proton.keys'])
+    // Global functions
     .run(($rootScope, authentication) => {
         authentication.detectAuthenticationState();
         $rootScope.isLoggedIn = authentication.isLoggedIn();
         $rootScope.isLocked = authentication.isLocked();
         $rootScope.isSecure = authentication.isSecured();
-    });
+    })
+    .controller('LoginController', LoginController)
+    .directive('loginForm', loginForm)
+    .directive('loginTwoFactorForm', loginTwoFactorForm)
+    .directive('twoFaField', twoFaField)
+    .factory('authHttpResponseInterceptor', authHttpResponseInterceptor)
+    .factory('helpLoginModal', helpLoginModal)
+    .factory('loginPasswordModal', loginPasswordModal)
+    .provider('pmcw', pmcw)
+    .factory('authentication', auth)
+    .factory('authApi', authApi)
+    .factory('handle401', handle401)
+    .factory('handle403', handle403)
+    .factory('handle9001', handle9001)
+    .factory('passwords', passwords)
+    .factory('srp', srp)
+    .factory('upgradePassword', upgradePassword).name;

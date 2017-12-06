@@ -1,67 +1,64 @@
-angular.module('proton.composer')
-    .factory('messageRequest', ($rootScope, messageApi, ComposerRequestStatus, CONSTANTS, gettextCatalog) => {
+/* @ngInject */
+function messageRequest($rootScope, messageApi, ComposerRequestStatus, CONSTANTS, gettextCatalog) {
+    const { STATUS } = CONSTANTS;
+    const I18N = {
+        ERROR_REQUEST_DRAFT: gettextCatalog.getString('Saving draft failed, please  try again', null, 'Error'),
+        ERROR_SENDING: gettextCatalog.getString('Cannot send message', null, 'Error')
+    };
 
-        const { STATUS } = CONSTANTS;
-        const I18N = {
-            ERROR_REQUEST_DRAFT: gettextCatalog.getString('Saving draft failed, please  try again', null, 'Error'),
-            ERROR_SENDING: gettextCatalog.getString('Cannot send message', null, 'Error')
-        };
+    const dispatch = (type, data = {}) => $rootScope.$emit('composer.update', { type, data });
 
-        const dispatch = (type, data = {}) => $rootScope.$emit('composer.update', { type, data });
-
-
-        function getSendError(data) {
-
-            // The API can return the error via a 4X or via 2X...
-            if (_.has(data, 'data')) {
-                return getSendError(data.data);
-            }
-
-            if (data.ErrorDescription) {
-                return new Error(`${data.Error}: ${data.ErrorDescription}`);
-            }
-            return new Error(data.Error || I18N.ERROR_SENDING);
+    function getSendError(data) {
+        // The API can return the error via a 4X or via 2X...
+        if (_.has(data, 'data')) {
+            return getSendError(data.data);
         }
 
-        const getEditPromise = (type = STATUS.CREATE, parameters) => {
-            if (type === STATUS.UPDATE) {
-                return messageApi.updateDraft(parameters);
-            }
-            return messageApi.createDraft(parameters);
-        };
+        if (data.ErrorDescription) {
+            return new Error(`${data.Error}: ${data.ErrorDescription}`);
+        }
+        return new Error(data.Error || I18N.ERROR_SENDING);
+    }
 
-        /**
-         * Handle the draft request
-         * @param {Object} parameters
-         * @param {Integer} type
-         * @return {Promise}
-         */
-        async function draft(parameters, message, type) {
+    const getEditPromise = (type = STATUS.CREATE, parameters) => {
+        if (type === STATUS.UPDATE) {
+            return messageApi.updateDraft(parameters);
+        }
+        return messageApi.createDraft(parameters);
+    };
 
-            const { data } = await getEditPromise(type, parameters);
+    /**
+     * Handle the draft request
+     * @param {Object} parameters
+     * @param {Integer} type
+     * @return {Promise}
+     */
+    async function draft(parameters, message, type) {
+        const { data } = await getEditPromise(type, parameters);
 
-            if ((data.Code === ComposerRequestStatus.SUCCESS || data.Code === ComposerRequestStatus.DRAFT_NOT_EXIST)) {
-                return data;
-            }
-
-            if (data.Code === ComposerRequestStatus.MESSAGE_ALREADY_SEND) {
-                return dispatch('close.message', { message });
-            }
-
-            throw new Error(data.Error || I18N.ERROR_REQUEST_DRAFT);
+        if (data.Code === ComposerRequestStatus.SUCCESS || data.Code === ComposerRequestStatus.DRAFT_NOT_EXIST) {
+            return data;
         }
 
-        async function send(parameters) {
-            try {
-                const { data = {} } = await messageApi.send(parameters);
-                return data;
-            } catch (e) {
-                // Check if there is an error coming from the server
-                const err = getSendError(e);
-                err.code = e.Code;
-                throw err;
-            }
+        if (data.Code === ComposerRequestStatus.MESSAGE_ALREADY_SEND) {
+            return dispatch('close.message', { message });
         }
 
-        return { draft, send };
-    });
+        throw new Error(data.Error || I18N.ERROR_REQUEST_DRAFT);
+    }
+
+    async function send(parameters) {
+        try {
+            const { data = {} } = await messageApi.send(parameters);
+            return data;
+        } catch (e) {
+            // Check if there is an error coming from the server
+            const err = getSendError(e);
+            err.code = e.Code;
+            throw err;
+        }
+    }
+
+    return { draft, send };
+}
+export default messageRequest;

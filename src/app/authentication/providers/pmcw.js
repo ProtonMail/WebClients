@@ -1,30 +1,30 @@
-angular.module('proton.authentication')
-    .provider('pmcw', function pmcwProvider() {
-        pmcrypto.checkMailboxPassword = (prKey, prKeyPassCode, accessToken) => {
+/* @ngInject */
+function pmcw() {
+    pmcrypto.checkMailboxPassword = (prKey, prKeyPassCode, accessToken) => {
+        return new Promise((resolve, reject) => {
+            if (typeof prKey === 'undefined') {
+                return reject(new Error('Missing private key.'));
+            }
 
-            return new Promise((resolve, reject) => {
+            if (typeof prKeyPassCode === 'undefined') {
+                return reject(new Error('Missing Mailbox Password.'));
+            }
 
-                if (typeof prKey === 'undefined') {
-                    return reject(new Error('Missing private key.'));
-                }
+            const keyPromise = pmcrypto.decryptPrivateKey(prKey, prKeyPassCode);
 
-                if (typeof prKeyPassCode === 'undefined') {
-                    return reject(new Error('Missing Mailbox Password.'));
-                }
+            keyPromise
+                .then((privateKey) => {
+                    const message = pmcrypto.getMessage(accessToken);
+                    // this is the private key, use this and decryptMessage to get the access token
+                    pmcrypto
+                        .decryptMessage({ message, privateKey })
+                        .then(({ data }) => resolve({ password: prKeyPassCode, token: data }))
+                        .catch(() => reject(new Error('Unable to get Access Token.')));
+                })
+                .catch(() => reject(new Error('Wrong Mailbox Password.')));
+        });
+    };
 
-                const keyPromise = pmcrypto.decryptPrivateKey(prKey, prKeyPassCode);
-
-                keyPromise
-                    .then((privateKey) => {
-                        const message = pmcrypto.getMessage(accessToken);
-                        // this is the private key, use this and decryptMessage to get the access token
-                        pmcrypto.decryptMessage({ message, privateKey })
-                            .then(({ data }) => resolve({ password: prKeyPassCode, token: data }))
-                            .catch(() => reject(new Error('Unable to get Access Token.')));
-                    })
-                    .catch(() => reject(new Error('Wrong Mailbox Password.')));
-            });
-        };
-
-        this.$get = () => pmcrypto;
-    });
+    this.$get = () => pmcrypto;
+}
+export default pmcw;

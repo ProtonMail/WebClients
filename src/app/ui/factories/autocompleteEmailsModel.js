@@ -1,203 +1,203 @@
-angular.module('proton.formUtils')
-    .factory('autocompleteEmailsModel', (authentication, contactEmails, regexEmail, checkTypoEmails, $filter, CONSTANTS) => {
+/* @ngInject */
+function autocompleteEmailsModel(authentication, contactEmails, regexEmail, checkTypoEmails, $filter, CONSTANTS) {
+    const { AUTOCOMPLETE_DOMAINS } = CONSTANTS;
+    const { OPEN_TAG_AUTOCOMPLETE, CLOSE_TAG_AUTOCOMPLETE } = CONSTANTS.EMAIL_FORMATING;
 
-        const { AUTOCOMPLETE_DOMAINS } = CONSTANTS;
-        const {
-            OPEN_TAG_AUTOCOMPLETE,
-            CLOSE_TAG_AUTOCOMPLETE
-        } = CONSTANTS.EMAIL_FORMATING;
+    let TEMP_LABELS = {};
+    const unicodeTagView = $filter('unicodeTagView');
 
-        let TEMP_LABELS = {};
-        const unicodeTagView = $filter('unicodeTagView');
+    const getID = () =>
+        `${Math.random()
+            .toString(32)
+            .slice(2, 12)}-${Date.now()}`;
 
-        const getID = () => `${Math.random().toString(32).slice(2, 12)}-${Date.now()}`;
+    /**
+     * @{link https://css-tricks.com/snippets/javascript/htmlentities-for-javascript/}
+     */
+    const htmlEntities = (str = '') => {
+        return String(str)
+            .replace(/&/g, '&amp;')
+            .replace(/</g, '&lt;')
+            .replace(/>/g, '&gt;')
+            .replace(/"/g, '&quot;');
+    };
 
-        /**
-         * @{link https://css-tricks.com/snippets/javascript/htmlentities-for-javascript/}
-         */
-        const htmlEntities = (str = '') => {
-            return String(str)
-                .replace(/&/g, '&amp;')
-                .replace(/</g, '&lt;')
-                .replace(/>/g, '&gt;')
-                .replace(/"/g, '&quot;');
-        };
+    /**
+     * Get a list of default value + most commons domains
+     * @param  {String} value
+     * @return {Array}
+     */
+    const defaultDomainsList = (value = '') => {
+        const [email, domain = ''] = value.split('@');
+        return _.chain(AUTOCOMPLETE_DOMAINS)
+            .filter((item) => item.includes(domain.toLowerCase()))
+            .map((domain) => {
+                const value = `${email}@${domain}`;
+                return { label: value, value, Name: value };
+            })
+            .first(CONSTANTS.AWESOMEPLETE_MAX_ITEMS)
+            .value();
+    };
 
-        /**
-         * Get a list of default value + most commons domains
-         * @param  {String} value
-         * @return {Array}
-         */
-        const defaultDomainsList = (value = '') => {
-            const [ email, domain = '' ] = value.split('@');
-            return _.chain(AUTOCOMPLETE_DOMAINS)
-                .filter((item) => item.includes(domain.toLowerCase()))
-                .map((domain) => {
-                    const value = `${email}@${domain}`;
-                    return { label: value, value, Name: value };
-                })
-                .first(CONSTANTS.AWESOMEPLETE_MAX_ITEMS)
-                .value();
-        };
+    /**
+     * Format the label of an address to display both the name and the address
+     * @param  {String} Name
+     * @param  {String} Email
+     * @return {String}
+     */
+    const formatLabel = (Name, Email) => {
+        if (Email === Name || !Name) {
+            return Email.trim();
+        }
 
-        /**
-         * Format the label of an address to display both the name and the address
-         * @param  {String} Name
-         * @param  {String} Email
-         * @return {String}
-         */
-        const formatLabel = (Name, Email) => {
-            if (Email === Name || !Name) {
-                return Email.trim();
-            }
+        return `${htmlEntities(Name).trim()} ${OPEN_TAG_AUTOCOMPLETE}${Email.trim()}${CLOSE_TAG_AUTOCOMPLETE}`;
+    };
 
-            return `${htmlEntities(Name).trim()} ${OPEN_TAG_AUTOCOMPLETE}${Email.trim()}${CLOSE_TAG_AUTOCOMPLETE}`;
-        };
+    /**
+     * Filter the autocomplete list output
+     * @param  {Array}   list
+     * @param  {String}  value          Default value if there is no autocomplete
+     * @param  {Boolean} strictEquality Return exact match
+     * @return {Array}
+     */
+    const filterList = (list = [], value, strictEquality = false) => {
+        const col = list.length ? list : [{ label: value, value }];
+        return strictEquality ? _.where(col, { value }) : col;
+    };
 
-        /**
-         * Filter the autocomplete list output
-         * @param  {Array}   list
-         * @param  {String}  value          Default value if there is no autocomplete
-         * @param  {Boolean} strictEquality Return exact match
-         * @return {Array}
-         */
-        const filterList = (list = [], value, strictEquality = false) => {
-            const col = list.length ? list : [{ label: value, value }];
-            return strictEquality ? _.where(col, { value }) : col;
-        };
+    /**
+     * Filter emails from our contacts to find by
+     *     - Matching name
+     *     - Emails starting with
+     *
+     * List contains available emails or the new one
+     * hasAutocompletion if data are coming from us
+     * @param  {String} value
+     * @param  {Boolean} strictEquality  Filter the collection via ===
+     * @return {Object} {list:Array, show:Boolean}
+     */
+    const filterContact = (val = '', strictEquality = false) => {
+        // Do not lowercase value as it might get used by the UI directy via filterList
+        const value = unicodeTagView(val.trim());
+        const input = value.toLowerCase();
 
-        /**
-         * Filter emails from our contacts to find by
-         *     - Matching name
-         *     - Emails starting with
-         *
-         * List contains available emails or the new one
-         * hasAutocompletion if data are coming from us
-         * @param  {String} value
-         * @param  {Boolean} strictEquality  Filter the collection via ===
-         * @return {Object} {list:Array, show:Boolean}
-         */
-        const filterContact = (val = '', strictEquality = false) => {
+        const collection = _.chain(contactEmails.fetch())
+            .map(({ Name, Email }) => {
+                const value = Email;
+                const label = formatLabel(Name, Email);
+                return { label, value, Name };
+            })
+            .filter(({ label }) => label.toLowerCase().includes(input))
+            .first(CONSTANTS.AWESOMEPLETE_MAX_ITEMS)
+            .value();
 
-            // Do not lowercase value as it might get used by the UI directy via filterList
-            const value = unicodeTagView(val.trim());
-            const input = value.toLowerCase();
+        // it creates a map <escaped>:<label> because the lib does not support more keys than label/value and we need the unescaped value #4901
+        TEMP_LABELS = collection.reduce((acc, { label, Name }) => ((acc[label] = Name), acc), {});
 
-            const collection = _.chain(contactEmails.fetch())
-                .map(({ Name, Email }) => {
-                    const value = Email;
-                    const label = formatLabel(Name, Email);
-                    return { label, value, Name };
-                })
-                .filter(({ label }) => label.toLowerCase().includes(input))
-                .first(CONSTANTS.AWESOMEPLETE_MAX_ITEMS)
-                .value();
+        const hasAutocompletion = !!collection.length;
 
-            // it creates a map <escaped>:<label> because the lib does not support more keys than label/value and we need the unescaped value #4901
-            TEMP_LABELS = collection.reduce((acc, { label, Name }) => (acc[label] = Name, acc), {});
-
-            const hasAutocompletion = !!collection.length;
-
-            if (hasAutocompletion) {
-                return {
-                    list: filterList(collection, value, strictEquality),
-                    hasAutocompletion
-                };
-            }
-
-            // Display custom domain suggestion if no match
-            if (/@$/.test(value)) {
-                const list = defaultDomainsList(value);
-                return { list, hasAutocompletion: !!list.length };
-            }
-
+        if (hasAutocompletion) {
             return {
-                list: [],
-                hasAutocompletion: false
+                list: filterList(collection, value, strictEquality),
+                hasAutocompletion
             };
+        }
+
+        // Display custom domain suggestion if no match
+        if (/@$/.test(value)) {
+            const list = defaultDomainsList(value);
+            return { list, hasAutocompletion: !!list.length };
+        }
+
+        return {
+            list: [],
+            hasAutocompletion: false
         };
+    };
+
+    /**
+     * Format any new email added to the collection
+     * @param  {String} label
+     * @param  {String} value
+     * @return {Object}       {Name, Address}
+     */
+    const formatNewEmail = (label, value) => {
+        // We need to clean the label because the one comming from the autocomplete can contains some unicode
+        const cleanLabel = $filter('chevrons')(label);
+
+        // Check if an user paste an email Name <email>
+        if (regexEmail.test(cleanLabel)) {
+            const [Name, adr = value] = cleanLabel.split('<').map((str = '') => str.trim());
+
+            // If the last > does not exist, keep the email intact
+            const Address = adr.indexOf('>') === adr.length - 1 ? adr.slice(0, -1) : adr;
+
+            return { Name, Address };
+        }
+
+        return { Name: label.trim(), Address: value.trim() };
+    };
+
+    return (previousList = []) => {
+        // Prevent empty names if we only have the address (new email, no contact yet for this one)
+        let list = angular.copy(previousList).map(({ Address = '', Name = '' }) => ({
+            $id: getID(),
+            Name: Name || Address,
+            Address
+        }));
+
+        const all = () => list;
+        const clear = () => ((list.length = 0), (TEMP_LABELS = {}));
 
         /**
-         * Format any new email added to the collection
-         * @param  {String} label
-         * @param  {String} value
-         * @return {Object}       {Name, Address}
+         * Add a new contact to the list
+         * @param  {String} options.label Label to display
+         * @param  {String} options.value Value === email
+         * @return {Number}
          */
-        const formatNewEmail = (label, value) => {
+        const add = ({ label, value } = {}) => {
+            const data = formatNewEmail(TEMP_LABELS[label] || label, value);
 
-            // We need to clean the label because the one comming from the autocomplete can contains some unicode
-            const cleanLabel = $filter('chevrons')(label);
-
-            // Check if an user paste an email Name <email>
-            if (regexEmail.test(cleanLabel)) {
-                const [ Name, adr = value ] = cleanLabel
-                    .split('<')
-                    .map((str = '') => str.trim());
-
-                // If the last > does not exist, keep the email intact
-                const Address = (adr.indexOf('>') === (adr.length - 1)) ? adr.slice(0, -1) : adr;
-
-                return { Name, Address };
-            }
-
-            return { Name: label.trim(), Address: value.trim() };
-        };
-
-        return (previousList = []) => {
-
-            // Prevent empty names if we only have the address (new email, no contact yet for this one)
-            let list = angular.copy(previousList)
-                .map(({ Address = '', Name = '' }) => ({
-                    $id: getID(),
-                    Name: Name || Address,
-                    Address
-                }));
-
-            const all = () => list;
-            const clear = () => (list.length = 0, TEMP_LABELS = {});
-
-            /**
-             * Add a new contact to the list
-             * @param  {String} options.label Label to display
-             * @param  {String} options.value Value === email
-             * @return {Number}
-             */
-            const add = ({ label, value } = {}) => {
-                const data = formatNewEmail(TEMP_LABELS[label] || label, value);
-
-                // If the mail is not already inside the collection, add it
-                if (!list.some(({ Address }) => Address === data.Address)) {
-                    list.push(_.extend({}, data, {
+            // If the mail is not already inside the collection, add it
+            if (!list.some(({ Address }) => Address === data.Address)) {
+                list.push(
+                    _.extend({}, data, {
                         $id: getID(),
                         invalid: !regexEmail.test(data.Address) || checkTypoEmails(data.Address)
-                    }));
-                }
-            };
-
-            /**
-             * Remove a contact by its address
-             * @param  {String} options.Address
-             * @return {Array}
-             */
-            const remove = ({ Address }) => (list = list.filter((item) => item.Address !== Address));
-
-            /**
-             * Remove the last contact from the list
-             * @return {Array}
-             */
-            const removeLast = () => (list.pop(), list);
-
-            /**
-             * Check if there are contacts inside the collection
-             * @return {Boolean}
-             */
-            const isEmpty = () => !list.length;
-
-            return {
-                filterContact,
-                formatInput: unicodeTagView,
-                all, add, remove, removeLast, isEmpty,
-                clear
-            };
+                    })
+                );
+            }
         };
-    });
+
+        /**
+         * Remove a contact by its address
+         * @param  {String} options.Address
+         * @return {Array}
+         */
+        const remove = ({ Address }) => (list = list.filter((item) => item.Address !== Address));
+
+        /**
+         * Remove the last contact from the list
+         * @return {Array}
+         */
+        const removeLast = () => (list.pop(), list);
+
+        /**
+         * Check if there are contacts inside the collection
+         * @return {Boolean}
+         */
+        const isEmpty = () => !list.length;
+
+        return {
+            filterContact,
+            formatInput: unicodeTagView,
+            all,
+            add,
+            remove,
+            removeLast,
+            isEmpty,
+            clear
+        };
+    };
+}
+export default autocompleteEmailsModel;
