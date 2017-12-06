@@ -1,58 +1,55 @@
-angular.module('proton.squire')
-    .factory('squireEditor', ($rootScope, CONSTANTS, editorModel) => {
+/* @ngInject */
+function squireEditor($rootScope, CONSTANTS, editorModel) {
+    const CACHE = {};
+    const IFRAME_CLASS = CONSTANTS.DEFAULT_SQUIRE_VALUE.IFRAMECLASSNAME;
 
-        const CACHE = {};
-        const IFRAME_CLASS = CONSTANTS.DEFAULT_SQUIRE_VALUE.IFRAMECLASSNAME;
+    Squire.prototype.testPresenceinSelection = function(name, action, format, validation) {
+        if (name !== action) {
+            return false;
+        }
 
-        Squire.prototype.testPresenceinSelection = function (name, action, format, validation) {
+        const test = validation.test(this.getPath()) | this.hasFormat(format);
+        return !!test;
+    };
 
-            if (name !== action) {
-                return false;
-            }
+    /**
+     * Load an iframe
+     * @param  {jQLite}   $iframe
+     * @param  {Function} cb      Callback on load
+     * @return {void}
+     */
+    const loadIframe = ($iframe, cb) => {
+        const iframe = $iframe[0];
+        const iframeDoc = (iframe.contentDocument || iframe.contentWindow) && iframe.contentWindow.document;
 
-            const test = validation.test(this.getPath()) | this.hasFormat(format);
-            return !!test;
-        };
-
-        /**
-         * Load an iframe
-         * @param  {jQLite}   $iframe
-         * @param  {Function} cb      Callback on load
-         * @return {void}
-         */
-        const loadIframe = ($iframe, cb) => {
-            const iframe = $iframe[0];
-            const iframeDoc = (iframe.contentDocument || iframe.contentWindow) && iframe.contentWindow.document;
-
-            // Check if browser is Webkit (Safari/Chrome) or Opera
-            if ($.ua.engine.name === 'WebKit') {
-                // Start timer when loaded.
-                $iframe.load(() => cb($iframe));
-
-                // Safari and Opera need a kick-start.
-                const source = iframe.getAttribute('src');
-                iframe.setAttribute('src', '');
-                return iframe.setAttribute('src', source);
-
-            }
-
-            if (iframeDoc && iframeDoc.readyState === 'complete') {
-                return cb($iframe);
-            }
-
+        // Check if browser is Webkit (Safari/Chrome) or Opera
+        if ($.ua.engine.name === 'WebKit') {
+            // Start timer when loaded.
             $iframe.load(() => cb($iframe));
-        };
 
-        /**
-         * Custom CSS inside the IFRAME
-         * @param  {Node} doc
-         * @return {void}
-         */
-        const updateStylesToMatch = (doc) => {
-            const head = doc.head || doc.getElementsByTagName('head')[0];
-            const style = doc.createElement('style');
+            // Safari and Opera need a kick-start.
+            const source = iframe.getAttribute('src');
+            iframe.setAttribute('src', '');
+            return iframe.setAttribute('src', source);
+        }
 
-            const css = `
+        if (iframeDoc && iframeDoc.readyState === 'complete') {
+            return cb($iframe);
+        }
+
+        $iframe.load(() => cb($iframe));
+    };
+
+    /**
+     * Custom CSS inside the IFRAME
+     * @param  {Node} doc
+     * @return {void}
+     */
+    const updateStylesToMatch = (doc) => {
+        const head = doc.head || doc.getElementsByTagName('head')[0];
+        const style = doc.createElement('style');
+
+        const css = `
             html {
                 height: 100%
             }
@@ -108,73 +105,74 @@ angular.module('proton.squire')
                 position: relative;
             }`;
 
-            style.setAttribute('type', 'text/css');
-            style.setAttribute('rel', 'stylesheet');
-            if (style.styleSheet) {
-                style.styleSheet.cssText = css;
-            } else {
-                style.appendChild(doc.createTextNode(css));
-            }
-            head.appendChild(style);
+        style.setAttribute('type', 'text/css');
+        style.setAttribute('rel', 'stylesheet');
+        if (style.styleSheet) {
+            style.styleSheet.cssText = css;
+        } else {
+            style.appendChild(doc.createTextNode(css));
+        }
+        head.appendChild(style);
 
-            doc.childNodes[0].className = IFRAME_CLASS + ' ';
+        doc.childNodes[0].className = IFRAME_CLASS + ' ';
+    };
+
+    /**
+     * Extend the EDITOR api
+     * @param  {Squire} editor
+     * @return {Squire}        Editor
+     */
+    const extendApi = (editor) => {
+        editor.alignRight = () => editor.setTextAlignment('right');
+        editor.alignCenter = () => editor.setTextAlignment('center');
+        editor.alignLeft = () => editor.setTextAlignment('left');
+        editor.alignJustify = () => editor.setTextAlignment('justify');
+        editor.makeHeading = () => {
+            editor.setFontSize('2em');
+            return editor.bold();
         };
+        return editor;
+    };
 
-        /**
-         * Extend the EDITOR api
-         * @param  {Squire} editor
-         * @return {Squire}        Editor
-         */
-        const extendApi = (editor) => {
-            editor.alignRight = () => editor.setTextAlignment('right');
-            editor.alignCenter = () => editor.setTextAlignment('center');
-            editor.alignLeft = () => editor.setTextAlignment('left');
-            editor.alignJustify = () => editor.setTextAlignment('justify');
-            editor.makeHeading = () => {
-                editor.setFontSize('2em');
-                return editor.bold();
-            };
-            return editor;
-        };
+    /**
+     * Create a new instance of Squire and store it
+     * Dispatch a squire.editor action (type: loaded) on load
+     * @param  {jQLite} $iframe
+     * @param  {Message} message
+     * @return {Promise}
+     */
+    const create = ($iframe, message = {}, type) => {
+        const { ID = 'editor' } = message;
 
-        /**
-         * Create a new instance of Squire and store it
-         * Dispatch a squire.editor action (type: loaded) on load
-         * @param  {jQLite} $iframe
-         * @param  {Message} message
-         * @return {Promise}
-         */
-        const create = ($iframe, message = {}, type) => {
-            const { ID = 'editor' } = message;
+        CACHE[ID] = type;
 
-            CACHE[ID] = type;
+        return new Promise((resolve, reject) => {
+            try {
+                loadIframe($iframe, ($iframe) => {
+                    const iframeDoc = $iframe[0].contentWindow.document;
+                    updateStylesToMatch(iframeDoc);
+                    const editor = editorModel.load({ ID }, extendApi(new Squire(iframeDoc)), $iframe);
 
-            return new Promise((resolve, reject) => {
-                try {
-                    loadIframe($iframe, ($iframe) => {
-                        const iframeDoc = $iframe[0].contentWindow.document;
-                        updateStylesToMatch(iframeDoc);
-                        const editor = editorModel.load({ ID }, extendApi(new Squire(iframeDoc)), $iframe);
-
-                        $rootScope.$emit('squire.editor', {
-                            type: 'loaded',
-                            data: { editor, $iframe, message }
-                        });
-                        resolve(editor, $iframe);
+                    $rootScope.$emit('squire.editor', {
+                        type: 'loaded',
+                        data: { editor, $iframe, message }
                     });
-                } catch (e) {
-                    console.error(e);
-                    reject(e);
-                }
-            });
-        };
+                    resolve(editor, $iframe);
+                });
+            } catch (e) {
+                console.error(e);
+                reject(e);
+            }
+        });
+    };
 
-        const clean = (message) => {
-            delete CACHE[message.ID];
-            editorModel.remove(message);
-        };
+    const clean = (message) => {
+        delete CACHE[message.ID];
+        editorModel.remove(message);
+    };
 
-        const getType = ({ ID }) => CACHE[ID];
+    const getType = ({ ID }) => CACHE[ID];
 
-        return { create, clean, getType };
-    });
+    return { create, clean, getType };
+}
+export default squireEditor;

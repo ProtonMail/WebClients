@@ -1,5 +1,6 @@
-angular.module('proton.ui')
-    .directive('navigationUser', () => ({
-        replace: true,
-        templateUrl: 'templates/ui/navigation/navigationUser.tpl.html'
-    }));
+/* @ngInject */
+const navigationUser = () => ({
+    replace: true,
+    templateUrl: 'templates/ui/navigation/navigationUser.tpl.html'
+});
+export default navigationUser;

@@ -3,6 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, user-scalable=no">
+    <meta http-equiv="x-dns-prefetch-control" content="off">
     <base href="/">
     <title>ProtonMail - Log in</title>
     <meta name="description" content="Log in or create an account.">
@@ -30,11 +31,6 @@
     <meta name="msapplication-TileImage" content="/assets/favicons/mstile-144x144.png">
     <meta name="theme-color" content="#333366">
     <meta name="apple-itunes-app" content="app-id=979659905"/>
-    <!-- Stylesheets -->
-    <% styles.forEach(function (file) { %>
-        <link rel="stylesheet" type="text/css" href="/<%= file %>" />
-    <% }); %>
-
     <custom-theme ng-if="(isLoggedIn && !isLocked)"></custom-theme>
 </head>
 <body ng-class="{
@@ -46,8 +42,6 @@
     scroll: ('signup'|isState) || ('login.setup'|isState) || ('secured.print'|isState)
 }" data-detect-time-width data-app-config-body>
 
-
-<!-- Loaders -->
 <proton-loader></proton-loader>
 
 <div id="pm_slow" class="pm-loader-fullpage" ng-hide="networkActivity.loading() || loggingOut || isSecure">
@@ -62,16 +56,9 @@
     </div>
 </div>
 <div id="pm_slow2" style="display:none;">Loading Message...</div>
-
-
-<!-- No Script message -->
-<noscript class="pm_noscript">ProtonMail requires Javascript. Enable Javascript and reload this page to continue.</noscript>
-
-<!-- JS -->
 <div ui-view="main" autoscroll="false" id="body"></div>
-<% scripts.forEach(function (file) { %>
-    <script type="text/javascript" src="/<%= file %>"></script>
-<% }); %>
+
+<noscript class="pm_noscript">ProtonMail requires Javascript. Enable Javascript and reload this page to continue.</noscript>
 
 <script type="text/javascript">
 

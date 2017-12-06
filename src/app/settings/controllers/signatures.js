@@ -1,63 +1,68 @@
-angular.module('proton.settings')
-    .controller('SignaturesController', (
-        $rootScope,
-        $scope,
-        authentication,
-        CONSTANTS,
-        domainModel,
-        memberModel,
-        organizationModel,
-        organizationKeysModel,
-        addressModel,
-        $state
-    ) => {
-        const unsubscribes = [];
-        const unsubscribesAll = [];
+/* @ngInject */
+function SignaturesController(
+    $rootScope,
+    $scope,
+    authentication,
+    CONSTANTS,
+    domainModel,
+    memberModel,
+    organizationModel,
+    organizationKeysModel,
+    addressModel,
+    $state
+) {
+    const unsubscribes = [];
+    const unsubscribesAll = [];
 
-        $scope.isSubUser = authentication.user.subuser;
-        const { active, disabled } = addressModel.getActive();
-        $scope.activeAddresses = active;
-        $scope.disabledAddresses = disabled;
-        $scope.itemMoved = false;
-        $scope.members = memberModel.getAll();
-        $scope.organization = organizationModel.get();
-        const isPaidAdmin = authentication.user.Role === CONSTANTS.PAID_ADMIN_ROLE;
+    $scope.isSubUser = authentication.user.subuser;
+    const { active, disabled } = addressModel.getActive();
+    $scope.activeAddresses = active;
+    $scope.disabledAddresses = disabled;
+    $scope.itemMoved = false;
+    $scope.members = memberModel.getAll();
+    $scope.organization = organizationModel.get();
+    const isPaidAdmin = authentication.user.Role === CONSTANTS.PAID_ADMIN_ROLE;
 
-        $scope.domains = domainModel.query();
+    $scope.domains = domainModel.query();
 
-        const refreshOrgKeys = async (orga = organizationModel.get()) => {
-            await organizationKeysModel.manage(orga);
+    const refreshOrgKeys = async (orga = organizationModel.get()) => {
+        await organizationKeysModel.manage(orga);
 
-            $scope.$applyAsync(() => {
-                $scope.keyStatus = organizationKeysModel.get('keyStatus');
-                $scope.organizationKeyInfo = organizationKeysModel.get('organizationKeyInfo');
-            });
-        };
+        $scope.$applyAsync(() => {
+            $scope.keyStatus = organizationKeysModel.get('keyStatus');
+            $scope.organizationKeyInfo = organizationKeysModel.get('organizationKeyInfo');
+        });
+    };
 
-        const watcherAdmin = () => {
-            unsubscribes.push($rootScope.$on('organizationChange', (event, newOrganization) => {
+    const watcherAdmin = () => {
+        unsubscribes.push(
+            $rootScope.$on('organizationChange', (event, newOrganization) => {
                 $scope.organization = newOrganization;
-                organizationKeysModel.fetch()
-                    .then(() => refreshOrgKeys(newOrganization));
-            }));
+                organizationKeysModel.fetch().then(() => refreshOrgKeys(newOrganization));
+            })
+        );
 
-            unsubscribes.push($rootScope.$on('members', (e, { type, data = {} }) => {
+        unsubscribes.push(
+            $rootScope.$on('members', (e, { type, data = {} }) => {
                 if (type === 'update') {
                     $scope.members = data.list;
                 }
-            }));
+            })
+        );
 
-            unsubscribes.push($rootScope.$on('domainsChange', (event, newDomains) => {
+        unsubscribes.push(
+            $rootScope.$on('domainsChange', (event, newDomains) => {
                 $scope.domains = newDomains;
-            }));
-        };
+            })
+        );
+    };
 
-        refreshOrgKeys();
-        isPaidAdmin && watcherAdmin();
+    refreshOrgKeys();
+    isPaidAdmin && watcherAdmin();
 
-        // Clear previous listener if we revoke the admin
-        unsubscribesAll.push($rootScope.$on('updateUser', () => {
-
+    // Clear previous listener if we revoke the admin
+    unsubscribesAll.push(
+        $rootScope.$on('updateUser', () => {
             if ($scope.itemMoved === false) {
                 $scope.$applyAsync(() => {
                     const { active, disabled } = addressModel.getActive();
@@ -72,9 +77,11 @@ angular.module('proton.settings')
                 organizationKeysModel.clear();
                 $state.reload();
             }
-        }));
+        })
+    );
 
-        unsubscribesAll.push($rootScope.$on('addressModel', (e, { type }) => {
+    unsubscribesAll.push(
+        $rootScope.$on('addressModel', (e, { type }) => {
             if (type === 'generateKey.success') {
                 $scope.$applyAsync(() => {
                     const { active, disabled } = addressModel.getActive();
@@ -82,45 +89,47 @@ angular.module('proton.settings')
                     $scope.disabledAddresses = disabled;
                 });
             }
-        }));
+        })
+    );
 
-        // Drag and Drop configuration
-        $scope.aliasDragControlListeners = {
-            containment: '.pm_form',
-            accept(sourceItemHandleScope, destSortableScope) {
-                return sourceItemHandleScope.itemScope.sortableScope.$id === destSortableScope.$id;
-            },
-            dragStart() {
-                $scope.itemMoved = true;
-            },
-            dragEnd() {
-                $scope.itemMoved = false;
-            },
-            orderChanged() {
-                const addresses = $scope.activeAddresses.concat($scope.disabledAddresses);
-                const order = [];
+    // Drag and Drop configuration
+    $scope.aliasDragControlListeners = {
+        containment: '.pm_form',
+        accept(sourceItemHandleScope, destSortableScope) {
+            return sourceItemHandleScope.itemScope.sortableScope.$id === destSortableScope.$id;
+        },
+        dragStart() {
+            $scope.itemMoved = true;
+        },
+        dragEnd() {
+            $scope.itemMoved = false;
+        },
+        orderChanged() {
+            const addresses = $scope.activeAddresses.concat($scope.disabledAddresses);
+            const order = [];
 
-                _.each(addresses, (address, index) => {
-                    order[index] = address.Order;
-                    address.Order = index + 1;
-                });
+            _.each(addresses, (address, index) => {
+                order[index] = address.Order;
+                address.Order = index + 1;
+            });
 
-                addressModel.saveOrder(order);
-            }
-        };
-        /**
-         * Return domain value for a specific address
-         * @param {Object} address
-         * @return {String} domain
-         */
-        $scope.getDomain = (address) => {
-            const [ email ] = address.Email.split('@');
-            return email;
-        };
+            addressModel.saveOrder(order);
+        }
+    };
+    /**
+     * Return domain value for a specific address
+     * @param {Object} address
+     * @return {String} domain
+     */
+    $scope.getDomain = (address) => {
+        const [email] = address.Email.split('@');
+        return email;
+    };
 
-        $scope.$on('$destroy', () => {
-            unsubscribes.concat(unsubscribesAll).forEach((cb) => cb());
-            unsubscribesAll.length = 0;
-            unsubscribes.length = 0;
-        });
+    $scope.$on('$destroy', () => {
+        unsubscribes.concat(unsubscribesAll).forEach((cb) => cb());
+        unsubscribesAll.length = 0;
+        unsubscribes.length = 0;
     });
+}
+export default SignaturesController;

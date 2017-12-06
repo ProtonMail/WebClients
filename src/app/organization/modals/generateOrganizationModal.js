@@ -1,28 +1,39 @@
-angular.module('proton.organization')
-    .factory('generateOrganizationModal', (pmModal, authentication, networkActivityTracker, organizationApi, pmcw, passwords, setupKeys, loginPasswordModal, notification, gettextCatalog) => {
-        return pmModal({
-            controllerAs: 'ctrl',
-            templateUrl: 'templates/modals/generateOrganization.tpl.html',
-            /* @ngInject */
-            controller: function (params) {
-
+/* @ngInject */
+function generateOrganizationModal(
+    pmModal,
+    authentication,
+    networkActivityTracker,
+    organizationApi,
+    pmcw,
+    passwords,
+    setupKeys,
+    loginPasswordModal,
+    notification,
+    gettextCatalog
+) {
+    return pmModal({
+        controllerAs: 'ctrl',
+        templateUrl: 'templates/modals/generateOrganization.tpl.html',
+        /* @ngInject */
+        controller: function(params) {
             // Parameters
-                this.size = 2048;
-                this.newRecoveryPassword = '';
-                this.confirmRecoveryPassword = '';
-                this.otherAdmins = params.otherAdmins;
+            this.size = 2048;
+            this.newRecoveryPassword = '';
+            this.confirmRecoveryPassword = '';
+            this.otherAdmins = params.otherAdmins;
 
-                // Functions
-                this.submit = () => {
+            // Functions
+            this.submit = () => {
+                const numBits = this.size;
+                const password = this.newRecoveryPassword;
 
-                    const numBits = this.size;
-                    const password = this.newRecoveryPassword;
+                let decryptedKey;
 
-                    let decryptedKey;
+                const payload = { Tokens: [] };
 
-                    const payload = { Tokens: [] };
-
-                    return networkActivityTracker.track(setupKeys.generateOrganization(authentication.getPassword(), numBits)
+                return networkActivityTracker.track(
+                    setupKeys
+                        .generateOrganization(authentication.getPassword(), numBits)
                         .then(({ privateKeyArmored }) => {
                             payload.PrivateKey = privateKeyArmored;
                             return privateKeyArmored;
@@ -35,15 +46,17 @@ angular.module('proton.organization')
 
                             // Backup key
                             payload.BackupKeySalt = passwords.generateKeySalt();
-                            promises.push(passwords.computeKeyPassword(password, payload.BackupKeySalt)
-                                .then((keyPassword) => pmcw.encryptPrivateKey(pkg, keyPassword))
-                                .then((armored) => {
-                                    payload.BackupPrivateKey = armored;
-                                }));
+                            promises.push(
+                                passwords
+                                    .computeKeyPassword(password, payload.BackupKeySalt)
+                                    .then((keyPassword) => pmcw.encryptPrivateKey(pkg, keyPassword))
+                                    .then((armored) => {
+                                        payload.BackupPrivateKey = armored;
+                                    })
+                            );
 
                             // Member tokens
                             _.each(params.nonPrivate, (member) => {
-
                                 let memberKeys = member.Keys.slice();
 
                                 _.each(member.Addresses, (address) => {
@@ -51,59 +64,70 @@ angular.module('proton.organization')
                                 });
 
                                 _.each(memberKeys, (key) => {
-                                    promises.push(setupKeys.decryptMemberToken(key, params.existingKey)
-                                        .then(({ decryptedToken }) => pmcw.encryptMessage({
-                                            data: decryptedToken,
-                                            publicKeys: pkg.toPublic(),
-                                            privateKeys: pkg
-                                        }))
-                                        .then(({ data }) => {
-                                            payload.Tokens.push({ ID: key.ID, Token: data });
-                                        }));
+                                    promises.push(
+                                        setupKeys
+                                            .decryptMemberToken(key, params.existingKey)
+                                            .then(({ decryptedToken }) =>
+                                                pmcw.encryptMessage({
+                                                    data: decryptedToken,
+                                                    publicKeys: pkg.toPublic(),
+                                                    privateKeys: pkg
+                                                })
+                                            )
+                                            .then(({ data }) => {
+                                                payload.Tokens.push({ ID: key.ID, Token: data });
+                                            })
+                                    );
                                 });
                             });
 
                             return Promise.all(promises).then(() => payload);
                         })
-                        .then((payload) => new Promise((resolve, reject) => {
-                            loginPasswordModal.activate({
-                                params: {
-                                    submit(currentPassword, twoFactorCode) {
-                                        loginPasswordModal.deactivate();
+                        .then(
+                            (payload) =>
+                                new Promise((resolve, reject) => {
+                                    loginPasswordModal.activate({
+                                        params: {
+                                            submit(currentPassword, twoFactorCode) {
+                                                loginPasswordModal.deactivate();
 
-                                        const creds = {
-                                            Password: currentPassword,
-                                            TwoFactorCode: twoFactorCode
-                                        };
+                                                const creds = {
+                                                    Password: currentPassword,
+                                                    TwoFactorCode: twoFactorCode
+                                                };
 
-                                        return organizationApi.replaceKeys(payload, creds)
-                                            .then(({ data }) => {
-                                                if (data && data.Code === 1000) {
-                                                    notification.success(gettextCatalog.getString('Organization keys change successful', null, 'Error'));
-                                                    return resolve(params.submit(decryptedKey));
-                                                } else if (data && data.Error) {
-                                                    return reject(new Error(data.Error));
-                                                }
-                                                reject(new Error(gettextCatalog.getString('Error changing organization keys', null, 'Error')));
-                                            });
-                                    },
-                                    cancel() {
-                                        loginPasswordModal.deactivate();
-                                        reject();
-                                    }
-                                }
-                            });
-                        }))
+                                                return organizationApi.replaceKeys(payload, creds).then(({ data }) => {
+                                                    if (data && data.Code === 1000) {
+                                                        notification.success(
+                                                            gettextCatalog.getString('Organization keys change successful', null, 'Error')
+                                                        );
+                                                        return resolve(params.submit(decryptedKey));
+                                                    } else if (data && data.Error) {
+                                                        return reject(new Error(data.Error));
+                                                    }
+                                                    reject(new Error(gettextCatalog.getString('Error changing organization keys', null, 'Error')));
+                                                });
+                                            },
+                                            cancel() {
+                                                loginPasswordModal.deactivate();
+                                                reject();
+                                            }
+                                        }
+                                    });
+                                })
+                        )
                         .catch((error) => {
                             if (error) {
                                 notification.error(error);
                             }
-                        }));
-                };
+                        })
+                );
+            };
 
-                this.cancel = () => {
-                    params.cancel();
-                };
-            }
-        });
+            this.cancel = () => {
+                params.cancel();
+            };
+        }
     });
+}
+export default generateOrganizationModal;

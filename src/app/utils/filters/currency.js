@@ -1,57 +1,34 @@
-angular.module('proton.utils')
-    .filter('currency', (i18nLoader) => {
+/* @ngInject */
+function currencyFilter() {
+    const FORMATTERS = {};
+    const MAP = {
+        USD: '$',
+        EUR: '€',
+        CHF: 'CHF'
+    };
 
-        const FORMATTERS = {};
-        const MAP = {
-            USD: '$',
-            EUR: '€',
-            CHF: 'CHF'
-        };
+    function fallbackFormat(amount = 0, currency = '') {
+        const symbol = MAP[currency] || currency;
+        const value = Number(amount).toFixed(2);
 
-        function fallbackFormat(amount = 0, currency = '') {
-
-            const symbol = MAP[currency] || currency;
-            const value = Number(amount);
-
-            if (currency === 'USD') {
-                // Negative amount, - is before the devise
-                const prefix = (value < 0) ? '-' : '';
-                return `${prefix}${symbol}${Math.abs(value)}`.trim();
-            }
-
-            return `${value} ${symbol}`.trim();
+        if (currency === 'USD') {
+            // Negative amount, - is before the devise
+            const prefix = value < 0 ? '-' : '';
+            return `${prefix}${symbol}${Math.abs(value)}`.trim();
         }
 
-        function getFormatter(currency) {
+        return `${value} ${symbol}`.trim();
+    }
 
-            const currencyLocale = currency === 'USD' ? 'en' : i18nLoader.langCountry;
+    const getFormatter = (currency) => (amount) => fallbackFormat(amount, currency);
 
-            try {
-                const formatter = new Intl.NumberFormat(currencyLocale, {
-                    style: 'currency',
-                    currency,
-                    minimumFractionDigits: 0,
-                    maximumFractionDigits: 2
-                });
-
-                if (!formatter.format) {
-                    return (amount) => fallbackFormat(amount, currency);
-                }
-
-                return formatter.format;
-
-            } catch (e) {
-                return (amount) => fallbackFormat(amount, currency);
-            }
+    return (amount, currency) => {
+        if (!currency) {
+            return fallbackFormat(amount, currency);
         }
 
-        return (amount, currency) => {
-
-            if (!currency) {
-                return fallbackFormat(amount, currency);
-            }
-
-            !FORMATTERS[currency] && (FORMATTERS[currency] = getFormatter(currency));
-            return FORMATTERS[currency](amount);
-        };
-    });
+        !FORMATTERS[currency] && (FORMATTERS[currency] = getFormatter(currency));
+        return FORMATTERS[currency](amount);
+    };
+}
+export default currencyFilter;

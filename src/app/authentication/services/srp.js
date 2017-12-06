@@ -1,6 +1,5 @@
-angular.module('proton.authentication')
-.factory('srp', ($http, CONFIG, webcrypto, passwords, url, authApi) => {
-
+/* @ngInject */
+function srp($http, CONFIG, webcrypto, passwords, url, authApi) {
     /**
      * [generateProofs description]
      * @param  {Integer} len            Size of the proof (bytes length)
@@ -57,7 +56,7 @@ angular.module('proton.authentication')
             return { Type: 'Error', Description: 'SRP server ephemeral is out of bounds' };
         }
 
-/* Unfortunately, this is too slow for common use
+        /* Unfortunately, this is too slow for common use
 
         // Check primality
         if (!new BN(2).toRed(reductionContext).redPow(modulusMinusOne).fromRed().eqn(1)) {
@@ -90,7 +89,10 @@ angular.module('proton.authentication')
         if (subtracted.compare(0) < 0) {
             subtracted = subtracted.add(modulus);
         }
-        const exponent = scramblingParam.multiply(hashedPassword).add(clientSecret).divide(modulus.subtract(1)).remainder;
+        const exponent = scramblingParam
+            .multiply(hashedPassword)
+            .add(clientSecret)
+            .divide(modulus.subtract(1)).remainder;
         const sharedSession = modulus.power(subtracted, exponent);
 
         const clientProof = hash(openpgp.util.concatUint8Array([fromBN(clientEphemeral), fromBN(serverEphemeral), fromBN(sharedSession)]));
@@ -156,8 +158,10 @@ angular.module('proton.authentication')
             // return Promise.reject({ error_description: 'An unexpected error has occurred. Please log out and log back in to fix it.' });
         }
 
-        if (authVersion === 2 && passwords.cleanUsername(creds.Username) !== passwords.cleanUsername(infoResp.data.Username) ||
-            authVersion <= 1 && creds.Username.toLowerCase() !== infoResp.data.Username.toLowerCase()) {
+        if (
+            (authVersion === 2 && passwords.cleanUsername(creds.Username) !== passwords.cleanUsername(infoResp.data.Username)) ||
+            (authVersion <= 1 && creds.Username.toLowerCase() !== infoResp.data.Username.toLowerCase())
+        ) {
             return Promise.reject({
                 error_description: 'Please login with just your ProtonMail username (without @protonmail.com or @protonmail.ch).'
             });
@@ -168,59 +172,59 @@ angular.module('proton.authentication')
             salt = pmcrypto.decode_base64(infoResp.data.Salt);
         }
 
-        return passwords.hashPassword(authVersion, creds.Password, salt, creds.Username, modulus).then((hashed) => {
-            proofs = generateProofs(
-                2048,
-                srpHasher,
-                modulus,
-                hashed,
-                serverEphemeral
-            );
+        return passwords
+            .hashPassword(authVersion, creds.Password, salt, creds.Username, modulus)
+            .then(
+                (hashed) => {
+                    proofs = generateProofs(2048, srpHasher, modulus, hashed, serverEphemeral);
 
-            if (proofs.Type !== 'Success') {
-                return Promise.reject({
-                    error_description: proofs.Description
-                });
-            }
+                    if (proofs.Type !== 'Success') {
+                        return Promise.reject({
+                            error_description: proofs.Description
+                        });
+                    }
 
-            const httpReq = {
-                method,
-                url: url.get() + endpoint,
-                data: _.extend(req, {
-                    SRPSession: session,
-                    ClientEphemeral: pmcrypto.encode_base64(pmcrypto.arrayToBinaryString(proofs.ClientEphemeral)),
-                    ClientProof: pmcrypto.encode_base64(pmcrypto.arrayToBinaryString(proofs.ClientProof)),
-                    TwoFactorCode: creds.TwoFactorCode
-                })
-            };
-            if (angular.isDefined(headers)) {
-                httpReq.headers = headers;
-            }
+                    const httpReq = {
+                        method,
+                        url: url.get() + endpoint,
+                        data: _.extend(req, {
+                            SRPSession: session,
+                            ClientEphemeral: pmcrypto.encode_base64(pmcrypto.arrayToBinaryString(proofs.ClientEphemeral)),
+                            ClientProof: pmcrypto.encode_base64(pmcrypto.arrayToBinaryString(proofs.ClientProof)),
+                            TwoFactorCode: creds.TwoFactorCode
+                        })
+                    };
+                    if (angular.isDefined(headers)) {
+                        httpReq.headers = headers;
+                    }
 
-            return $http(httpReq);
-        }, (err) => {
-            return Promise.reject({
-                error_description: err.message
-            });
-        }).then(
-            (resp) => {
-                if (resp.data.Code !== 1000) {
+                    return $http(httpReq);
+                },
+                (err) => {
                     return Promise.reject({
-                        error_description: resp.data.Error,
-                        usedFallback: useFallback
-                    });
-                } else if (pmcrypto.encode_base64(pmcrypto.arrayToBinaryString(proofs.ExpectedServerProof)) === resp.data.ServerProof) {
-                    return Promise.resolve(_.extend(resp, { authVersion }));
-                } else {
-                    return Promise.reject({
-                        error_description: 'Invalid server authentication'
+                        error_description: err.message
                     });
                 }
-            },
-            (error) => {
-                return Promise.reject(error);
-            }
-        );
+            )
+            .then(
+                (resp) => {
+                    if (resp.data.Code !== 1000) {
+                        return Promise.reject({
+                            error_description: resp.data.Error,
+                            usedFallback: useFallback
+                        });
+                    } else if (pmcrypto.encode_base64(pmcrypto.arrayToBinaryString(proofs.ExpectedServerProof)) === resp.data.ServerProof) {
+                        return Promise.resolve(_.extend(resp, { authVersion }));
+                    } else {
+                        return Promise.reject({
+                            error_description: 'Invalid server authentication'
+                        });
+                    }
+                },
+                (error) => {
+                    return Promise.reject(error);
+                }
+            );
     }
 
     function randomVerifier(password) {
@@ -249,11 +253,12 @@ angular.module('proton.authentication')
     }
 
     function authInfo(Username) {
-        return authApi.info({
-            Username,
-            ClientID: CONFIG.clientID,
-            ClientSecret: CONFIG.clientSecret
-        })
+        return authApi
+            .info({
+                Username,
+                ClientID: CONFIG.clientID,
+                ClientSecret: CONFIG.clientSecret
+            })
             .then((resp) => {
                 if (resp.data.Code === 1000) {
                     return resp;
@@ -308,10 +313,9 @@ angular.module('proton.authentication')
      * @return {Promise}
      */
     function getPasswordParams(password, config = {}) {
-        return randomVerifier(password)
-            .then((data) => _.extend({}, config, data));
+        return randomVerifier(password).then((data) => _.extend({}, config, data));
     }
 
-
     return { randomVerifier, info: authInfo, performSRPRequest, getPasswordParams };
-});
+}
+export default srp;

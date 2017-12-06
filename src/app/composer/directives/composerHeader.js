@@ -1,5 +1,6 @@
-angular.module('proton.composer')
-    .directive('composerHeader', () => ({
-        replace: true,
-        templateUrl: 'templates/directives/composer/composer-header.tpl.html'
-    }));
+/* @ngInject */
+const composerHeader = () => ({
+    replace: true,
+    templateUrl: 'templates/directives/composer/composer-header.tpl.html'
+});
+export default composerHeader;

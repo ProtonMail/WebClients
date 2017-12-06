@@ -1,63 +1,63 @@
-angular.module('proton.contact')
-    .factory('contactImporter', ($rootScope, contactSchema, dropzoneModal, notification, vcard, csv, gettextCatalog) => {
-        const I18N = {
-            noFiles: gettextCatalog.getString('No files were selected', null, 'Error'),
-            invalid: gettextCatalog.getString('Invalid file type', null, 'Error')
-        };
-        const importVCF = (reader) => {
-            const vcardData = reader.result;
-            const parsed = vcard.from(vcardData);
+/* @ngInject */
+function contactImporter($rootScope, contactSchema, importContactModal, notification, vcard, csv, gettextCatalog, networkActivityTracker) {
+    const I18N = {
+        noFiles: gettextCatalog.getString('No files were selected', null, 'Error'),
+        invalid: gettextCatalog.getString('Invalid file type', null, 'Error'),
+        parsingCSV: gettextCatalog.getString('Cannot convert the file', null, 'Error')
+    };
 
-            $rootScope.$emit('contacts', { type: 'createContact', data: { contacts: contactSchema.prepare(parsed), mode: 'import' } });
-            dropzoneModal.deactivate();
-        };
-        const importVCard = (file) => {
-            csv.csvToVCard(file)
-                .then((parsed = []) => {
-                    if (parsed.length) {
-                        $rootScope.$emit('contacts', { type: 'createContact', data: { contacts: contactSchema.prepare(parsed), mode: 'import' } });
-                    }
+    const dispatch = (data = []) =>
+        $rootScope.$emit('contacts', { type: 'createContact', data: { contacts: contactSchema.prepare(data), mode: 'import' } });
 
-                    dropzoneModal.deactivate();
-                })
-                .catch((error) => console.error(error));
-        };
-        const importFiles = (files = []) => {
-            if (!files.length) {
-                notification.error(I18N.noFiles);
-                return;
-            }
+    const importVCF = async (reader) => dispatch(vcard.from(reader.result));
 
-            const reader = new FileReader();
-            const file = files[0];
-            const extension = file.name.slice(-4);
-
-            reader.onload = () => {
-                if (extension === '.vcf') {
-                    importVCF(reader);
-                } else if (extension === '.csv') {
-                    importVCard(file);
-                } else {
-                    notification.error(I18N.invalid);
-                    dropzoneModal.deactivate();
-                }
-                const parameter = extension === '.vcf' ? reader : file;
-                const promise = MAP_SRC[extension](parameter)
-                    .then(() => importContactModal.deactivate());
-                networkActivityTracker.track(promise);
-            };
-
-            reader.readAsText(file, 'utf-8');
-        };
-
-        return () => {
-            dropzoneModal.activate({
-                params: {
-                    import: importFiles,
-                    cancel() {
-                        dropzoneModal.deactivate();
-                    }
-                }
+    const importVCard = (file) => {
+        return csv
+            .csvToVCard(file)
+            .then((parsed = []) => parsed.length && dispatch(parsed))
+            .catch((e) => {
+                console.error(e);
+                throw new Error(I18N.parsingCSV);
             });
+    };
+
+    const MAP_SRC = {
+        '.vcf': importVCF,
+        '.csv': importVCard
+    };
+
+    const importFiles = (files = []) => {
+        if (!files.length) {
+            return notification.error(I18N.noFiles);
+        }
+
+        const reader = new FileReader();
+        const file = files[0];
+        const extension = file.name.slice(-4);
+
+        reader.onload = (e) => notification.error(e);
+        reader.onload = () => {
+            if (!MAP_SRC[extension]) {
+                notification.error(I18N.invalid);
+                return importContactModal.deactivate();
+            }
+            const parameter = extension === '.vcf' ? reader : file;
+            const promise = MAP_SRC[extension](parameter).then(() => importContactModal.deactivate());
+            networkActivityTracker.track(promise);
         };
-    });
+
+        reader.readAsText(file, 'utf-8');
+    };
+
+    return () => {
+        importContactModal.activate({
+            params: {
+                import: importFiles,
+                cancel() {
+                    importContactModal.deactivate();
+                }
+            }
+        });
+    };
+}
+export default contactImporter;

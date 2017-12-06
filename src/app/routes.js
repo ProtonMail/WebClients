@@ -1,9 +1,5 @@
-angular.module('proton.routes', [
-    'ui.router',
-    'proton.authentication',
-    'proton.constants',
-    'proton.utils'
-])
+export default angular
+    .module('proton.routes', ['ui.router', 'proton.authentication', 'proton.constants', 'proton.utils'])
 
     .config(($stateProvider, $urlRouterProvider, $locationProvider, CONSTANTS) => {
         const conversationParameters = () => {
@@ -32,9 +28,9 @@ angular.module('proton.routes', [
 
         $stateProvider
 
-        // ------------
-        // LOGIN ROUTES
-        // ------------
+            // ------------
+            // LOGIN ROUTES
+            // ------------
             .state('login', {
                 url: '/login',
                 views: {
@@ -76,13 +72,12 @@ angular.module('proton.routes', [
                         return pmDomainModel.fetch();
                     },
                     user(User) {
-                        return User.get()
-                            .then(({ data }) => {
-                                if (data && data.Code !== 1000) {
-                                    return Promise.reject();
-                                }
-                                return data.User;
-                            });
+                        return User.get().then(({ data }) => {
+                            if (data && data.Code !== 1000) {
+                                return Promise.reject();
+                            }
+                            return data.User;
+                        });
                     }
                 }
             })
@@ -114,15 +109,14 @@ angular.module('proton.routes', [
 
                     $rootScope.loggingOut = false;
 
-                    Invite.check(inviteToken, inviteSelector, CONSTANTS.INVITE_MAIL)
-                        .then(({ data = {} } = {}) => {
-                            if (data.Valid === 1) {
-                                AppModel.set('preInvited', true);
-                                return $state.go('signup', { inviteToken, inviteSelector });
-                            }
-                            notification.error(data.Error || errorMessage);
-                            $state.go('login');
-                        });
+                    Invite.check(inviteToken, inviteSelector, CONSTANTS.INVITE_MAIL).then(({ data = {} } = {}) => {
+                        if (data.Valid === 1) {
+                            AppModel.set('preInvited', true);
+                            return $state.go('signup', { inviteToken, inviteSelector });
+                        }
+                        notification.error(data.Error || errorMessage);
+                        $state.go('login');
+                    });
                 }
             })
 
@@ -131,19 +125,18 @@ angular.module('proton.routes', [
                 resolve: {
                     direct($state, User, AppModel, CONSTANTS) {
                         if (!AppModel.is('preInvited')) {
-                            return User.direct()
-                                .then(({ data = {} } = {}) => {
-                                    if (data.Direct === 1) {
-                                        $state.go('signup');
-                                        return;
-                                    }
-                                    if (data.Code === 1000) {
-                                        window.location.href = CONSTANTS.INVITE_URL;
-                                        return Promise.reject();
-                                    }
-                                    $state.go('login');
+                            return User.direct().then(({ data = {} } = {}) => {
+                                if (data.Direct === 1) {
+                                    $state.go('signup');
+                                    return;
+                                }
+                                if (data.Code === 1000) {
+                                    window.location.href = CONSTANTS.INVITE_URL;
                                     return Promise.reject();
-                                });
+                                }
+                                $state.go('login');
+                                return Promise.reject();
+                            });
                         }
                         return Promise.resolve();
                     }
@@ -158,21 +151,19 @@ angular.module('proton.routes', [
                     },
                     reset(networkActivityTracker, settingsApi, notification, eventManager, gettextCatalog) {
                         const errorMessage = gettextCatalog.getString('Unable to reset theme', null, 'Error');
-                        const promise = settingsApi.theme({ Theme: '' })
-                            .then((result = {}) => {
-                                const { data } = result;
-                                if (data.Code === 1000) {
-                                    notification.success(gettextCatalog.getString('Theme reset! Redirecting...', null));
-                                    return eventManager.call();
-                                }
-                                return Promise.reject(data.Error || errorMessage);
-                            });
+                        const promise = settingsApi.theme({ Theme: '' }).then((result = {}) => {
+                            const { data } = result;
+                            if (data.Code === 1000) {
+                                notification.success(gettextCatalog.getString('Theme reset! Redirecting...', null));
+                                return eventManager.call();
+                            }
+                            return Promise.reject(data.Error || errorMessage);
+                        });
                         networkActivityTracker.track(promise);
                     }
                 },
                 onEnter($state) {
                     $state.go('secured.inbox');
-
                 }
             })
 
@@ -207,7 +198,6 @@ angular.module('proton.routes', [
                         const isValidPlan = isValid(plan, ['free', 'plus', 'visionary', 'professional']);
 
                         if (isValidCycle && isValidCurrency && isValidPlan) {
-
                             if (plan === 'free') {
                                 return Promise.resolve([]);
                             }
@@ -226,7 +216,7 @@ angular.module('proton.routes', [
                 }
             })
 
-        // Reset Mailbox Password
+            // Reset Mailbox Password
             .state('reset', {
                 url: '/reset',
                 views: {
@@ -250,9 +240,9 @@ angular.module('proton.routes', [
                 }
             })
 
-        // -------------------------------------------
-        // SUPPORT ROUTES
-        // -------------------------------------------
+            // -------------------------------------------
+            // SUPPORT ROUTES
+            // -------------------------------------------
             .state('support', {
                 url: '/help',
                 views: {
@@ -263,7 +253,7 @@ angular.module('proton.routes', [
                 }
             })
 
-        // Generic Message View Template
+            // Generic Message View Template
             .state('support.message', {
                 params: {
                     data: null
@@ -281,7 +271,7 @@ angular.module('proton.routes', [
                 }
             })
 
-        // Reset Login Password
+            // Reset Login Password
             .state('support.reset-password', {
                 url: '/reset-login-password?username&token',
                 params: {
@@ -295,9 +285,9 @@ angular.module('proton.routes', [
                 }
             })
 
-        // -------------------------------------------
-        // ENCRYPTION OUTSIDE
-        // -------------------------------------------
+            // -------------------------------------------
+            // ENCRYPTION OUTSIDE
+            // -------------------------------------------
             .state('eo', {
                 abstract: true,
                 views: {
@@ -331,12 +321,15 @@ angular.module('proton.routes', [
                             $scope.tokenError = !encryptedToken;
 
                             $scope.unlock = () => {
-
                                 const message = pmcw.getMessage(encryptedToken);
-                                const promise = pmcw.decryptMessage({ message, password: $scope.params.MessagePassword })
+                                const promise = pmcw
+                                    .decryptMessage({ message, password: $scope.params.MessagePassword })
                                     .then((decryptedToken) => {
                                         secureSessionStorage.setItem('proton:decrypted_token', decryptedToken.data);
-                                        secureSessionStorage.setItem('proton:encrypted_password', pmcw.encode_utf8_base64($scope.params.MessagePassword));
+                                        secureSessionStorage.setItem(
+                                            'proton:encrypted_password',
+                                            pmcw.encode_utf8_base64($scope.params.MessagePassword)
+                                        );
                                         $state.go('eo.message', { tag: $stateParams.tag });
                                     })
                                     .catch((err) => {
@@ -345,7 +338,6 @@ angular.module('proton.routes', [
                                     });
 
                                 networkActivityTracker.track(promise);
-
                             };
                         }
                     }
@@ -358,26 +350,32 @@ angular.module('proton.routes', [
                     messageData($stateParams, $q, Eo, messageModel, pmcw, secureSessionStorage) {
                         const password = pmcw.decode_utf8_base64(secureSessionStorage.getItem('proton:encrypted_password'));
 
-                        return Eo.message(secureSessionStorage.getItem('proton:decrypted_token'), $stateParams.tag)
-                            .then(({ data = {} }) => {
-                                const message = data.Message;
-                                const promises = _.reduce(message.Replies, (acc, reply) => {
-                                    const promise = pmcw.decryptMessage({
-                                        message: pmcw.getMessage(reply.Body),
-                                        password
-                                    })
+                        return Eo.message(secureSessionStorage.getItem('proton:decrypted_token'), $stateParams.tag).then(({ data = {} }) => {
+                            const message = data.Message;
+                            const promises = _.reduce(
+                                message.Replies,
+                                (acc, reply) => {
+                                    const promise = pmcw
+                                        .decryptMessage({
+                                            message: pmcw.getMessage(reply.Body),
+                                            password
+                                        })
                                         .then(({ data }) => (reply.DecryptedBody = data));
                                     acc.push(promise);
                                     return acc;
-                                }, [
-                                    pmcw.decryptMessage({
-                                        message: pmcw.getMessage(message.Body),
-                                        password
-                                    }).then(({ data } = {}) => (message.DecryptedBody = data))
-                                ]);
+                                },
+                                [
+                                    pmcw
+                                        .decryptMessage({
+                                            message: pmcw.getMessage(message.Body),
+                                            password
+                                        })
+                                        .then(({ data } = {}) => (message.DecryptedBody = data))
+                                ]
+                            );
 
-                                return $q.all(promises).then(() => messageModel(message));
-                            });
+                            return $q.all(promises).then(() => messageModel(message));
+                        });
                     }
                 },
                 views: {
@@ -396,24 +394,26 @@ angular.module('proton.routes', [
                         const decryptedToken = secureSessionStorage.getItem('proton:decrypted_token');
                         const password = pmcw.decode_utf8_base64(secureSessionStorage.getItem('proton:encrypted_password'));
 
-                        return Eo.message(decryptedToken, tokenId)
-                            .then((result) => {
-                                const message = result.data.Message;
+                        return Eo.message(decryptedToken, tokenId).then((result) => {
+                            const message = result.data.Message;
 
-                                message.publicKey = result.data.PublicKey; // The sender’s public key
-                                return pmcw.decryptMessage({
+                            message.publicKey = result.data.PublicKey; // The sender’s public key
+                            return pmcw
+                                .decryptMessage({
                                     message: pmcw.getMessage(message.Body),
                                     password
                                 })
-                                    .then((body) => {
-                                        const attachments = _.filter(message.Attachments, (attachment) => { return attachment.Headers && (attachment.Headers['content-id'] || attachment.Headers['content-location']); });
-
-                                        message.DecryptedBody = body.data;
-                                        message.Attachments = attachments;
-                                        message.NumAttachments = attachments.length;
-                                        return messageModel(message);
+                                .then((body) => {
+                                    const attachments = _.filter(message.Attachments, (attachment) => {
+                                        return attachment.Headers && (attachment.Headers['content-id'] || attachment.Headers['content-location']);
                                     });
-                            });
+
+                                    message.DecryptedBody = body.data;
+                                    message.Attachments = attachments;
+                                    message.NumAttachments = attachments.length;
+                                    return messageModel(message);
+                                });
+                        });
                     }
                 },
                 views: {
@@ -424,7 +424,10 @@ angular.module('proton.routes', [
                 },
                 onEnter(gettextCatalog) {
                     window.onbeforeunload = () => {
-                        return gettextCatalog.getString('By leaving now, you will lose what you have written in this email. You can save a draft if you want to come back to it later on.', null);
+                        return gettextCatalog.getString(
+                            'By leaving now, you will lose what you have written in this email. You can save a draft if you want to come back to it later on.',
+                            null
+                        );
                     };
                 },
                 onExit() {
@@ -432,10 +435,10 @@ angular.module('proton.routes', [
                 }
             })
 
-        // -------------------------------------------
-        // SECURED ROUTES
-        // this includes everything after login/unlock
-        // -------------------------------------------
+            // -------------------------------------------
+            // SECURED ROUTES
+            // this includes everything after login/unlock
+            // -------------------------------------------
 
             .state('secured', {
                 // This is included in every secured.* sub-controller
@@ -452,14 +455,14 @@ angular.module('proton.routes', [
                         if (Object.keys(authentication.user).length > 0) {
                             return authentication.user;
                         } else if (angular.isDefined(secureSessionStorage.getItem(CONSTANTS.OAUTH_KEY + ':SessionToken'))) {
-                            $http.defaults.headers.common['x-pm-session'] = pmcw.decode_base64(secureSessionStorage.getItem(CONSTANTS.OAUTH_KEY + ':SessionToken') || '');
+                            $http.defaults.headers.common['x-pm-session'] = pmcw.decode_base64(
+                                secureSessionStorage.getItem(CONSTANTS.OAUTH_KEY + ':SessionToken') || ''
+                            );
                         }
 
-                        return authentication.fetchUserInfo()
-                            .then((data) => {
-                                return i18nLoader(data.Language)
-                                    .then(() => data);
-                            });
+                        return authentication.fetchUserInfo().then((data) => {
+                            return i18nLoader(data.Language).then(() => data);
+                        });
                     },
                     subscription(user, subscriptionModel) {
                         return subscriptionModel.fetch();
@@ -487,7 +490,6 @@ angular.module('proton.routes', [
                     'main@': {
                         templateUrl: 'templates/views/pgp.tpl.html',
                         controller($scope, $rootScope, messageID, downloadFile) {
-
                             function viewPgp(event) {
                                 $scope.$applyAsync(() => {
                                     $scope.content = event.data;
@@ -633,7 +635,6 @@ angular.module('proton.routes', [
                     AppModel.set('settingsSidebar', false);
                 }
             })
-
 
             .state('secured.appearance', {
                 url: '/appearance',
@@ -805,8 +806,7 @@ angular.module('proton.routes', [
                         return Promise.resolve();
                     },
                     dashboardPlans(user, dashboardModel, subscriptionModel) {
-                        return subscriptionModel.fetch()
-                            .then(({ Currency }) => dashboardModel.loadPlans(Currency));
+                        return subscriptionModel.fetch().then(({ Currency }) => dashboardModel.loadPlans(Currency));
                     },
                     methods(user, paymentModel, networkActivityTracker) {
                         return networkActivityTracker.track(paymentModel.getMethods(null, user));
@@ -1011,7 +1011,8 @@ angular.module('proton.routes', [
             };
 
             $stateProvider.state(parentState, {
-                url, views,
+                url,
+                views,
                 resolve: {
                     delinquent(user, isDelinquent) {
                         return isDelinquent();
@@ -1050,4 +1051,4 @@ angular.module('proton.routes', [
         });
 
         $locationProvider.html5Mode(true);
-    });
+    }).name;

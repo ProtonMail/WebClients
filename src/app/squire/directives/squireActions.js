@@ -1,38 +1,37 @@
-angular.module('proton.squire')
-    .directive('squireActions', ($rootScope) => ({
-        link(scope, el, { squireActions, squireActionsSelect }) {
+/* @ngInject */
+const squireActions = ($rootScope) => ({
+    link(scope, el, { squireActions, squireActionsSelect }) {
+        const onClick = ({ target }) => {
+            if (!squireActionsSelect) {
+                $rootScope.$emit('squire.editor', {
+                    type: 'squireActions',
+                    data: {
+                        action: squireActions,
+                        message: scope.message
+                    }
+                });
+            }
 
-            const onClick = ({ target }) => {
+            if (target.nodeName === 'LI') {
+                return $rootScope.$emit('squire.editor', {
+                    type: 'squireActions',
+                    data: {
+                        action: squireActions,
+                        argument: {
+                            value: target.dataset.value,
+                            label: target.textContent.trim()
+                        },
+                        message: scope.message
+                    }
+                });
+            }
+        };
 
-                if (!squireActionsSelect) {
-                    $rootScope.$emit('squire.editor', {
-                        type: 'squireActions',
-                        data: {
-                            action: squireActions,
-                            message: scope.message
-                        }
-                    });
-                }
+        el.on('click', onClick);
 
-                if (target.nodeName === 'LI') {
-                    return $rootScope.$emit('squire.editor', {
-                        type: 'squireActions',
-                        data: {
-                            action: squireActions,
-                            argument: {
-                                value: target.dataset.value,
-                                label: target.textContent.trim()
-                            },
-                            message: scope.message
-                        }
-                    });
-                }
-            };
-
-            el.on('click', onClick);
-
-            scope.$on('$destroy', () => {
-                el.off('click', onClick);
-            });
-        }
-    }));
+        scope.$on('$destroy', () => {
+            el.off('click', onClick);
+        });
+    }
+});
+export default squireActions;

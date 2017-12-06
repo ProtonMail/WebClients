@@ -1,30 +1,29 @@
-angular.module('proton.core')
-    .factory('loginPasswordModal', ($timeout, pmModal, srp, networkActivityTracker, authentication) => {
-        return pmModal({
-            controllerAs: 'ctrl',
-            templateUrl: 'templates/authentication/modals/loginPassword.tpl.html',
-            /* @ngInject */
-            controller: function (params) {
+/* @ngInject */
+function loginPasswordModal($timeout, pmModal, srp, networkActivityTracker, authentication) {
+    return pmModal({
+        controllerAs: 'ctrl',
+        templateUrl: 'templates/authentication/modals/loginPassword.tpl.html',
+        /* @ngInject */
+        controller: function(params) {
+            this.loginPassword = '';
+            this.twoFactorCode = '';
+            this.userPasswordMode = authentication.user.PasswordMode;
+            this.submit = () => params.submit(this.loginPassword, this.twoFactorCode);
+            this.cancel = () => params.cancel();
 
-                this.loginPassword = '';
-                this.twoFactorCode = '';
-                this.userPasswordMode = authentication.user.PasswordMode;
-                this.submit = () => params.submit(this.loginPassword, this.twoFactorCode);
-                this.cancel = () => params.cancel();
-
-                if (params.hasTwoFactor) {
-                    this.hasTwoFactor = params.hasTwoFactor === 1;
-                } else {
-                    const promise = srp.info()
-                        .then(({ data = {} } = {}) => {
-                            if (data.Code === 1000) {
-                                this.hasTwoFactor = data.TwoFactor === 1;
-                            }
-                        });
-                    networkActivityTracker.track(promise);
-                }
-
-                $timeout(() => document.getElementById('loginPassword').focus(), 100, false);
+            if (params.hasTwoFactor) {
+                this.hasTwoFactor = params.hasTwoFactor === 1;
+            } else {
+                const promise = srp.info().then(({ data = {} } = {}) => {
+                    if (data.Code === 1000) {
+                        this.hasTwoFactor = data.TwoFactor === 1;
+                    }
+                });
+                networkActivityTracker.track(promise);
             }
-        });
+
+            $timeout(() => document.getElementById('loginPassword').focus(), 100, false);
+        }
     });
+}
+export default loginPasswordModal;

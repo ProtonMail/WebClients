@@ -1,40 +1,41 @@
-angular.module('proton.core')
-    .factory('vcard', (CONSTANTS, notification, sanitize) => {
+/* @ngInject */
+function vcard(CONSTANTS, notification, sanitize) {
+    const { VCARD_VERSION, VCARD_TYPES } = CONSTANTS;
+    const merge = (vcards = []) => _.reduce(vcards, (acc, vcard = {}) => build(extractProperties(vcard), acc), new vCard());
+    const to = (vcards = []) => _.reduce(vcards, (acc, vCard) => acc + clean(vCard).toString(VCARD_VERSION) + '\r\n', '');
+    const from = (vcfString = '') => {
+        try {
+            return vCard.parse(vcfString).map((vcard) => clean(vcard));
+        } catch (e) {
+            notification.error(e);
+        }
+    };
 
-        const { VCARD_VERSION, VCARD_TYPES } = CONSTANTS;
-        const merge = (vcards = []) => _.reduce(vcards, (acc, vcard = {}) => build(extractProperties(vcard), acc), new vCard());
-        const to = (vcards = []) => _.reduce(vcards, (acc, vCard) => (acc + clean(vCard).toString(VCARD_VERSION) + '\r\n'), '');
-        const from = (vcfString = '') => {
-            try {
-                return vCard.parse(vcfString).map((vcard) => clean(vcard));
-            } catch (e) {
-                notification.error(e);
-            }
-        };
-
-        /**
-         * Check if the type is valid
-         * @param  {String}  [type='']
-         * @return {Boolean}
-         */
-        function isValidType(type = '') {
-            if (type.length) {
-                return _.contains(VCARD_TYPES, type.toLowerCase());
-            }
-
-            return true;
+    /**
+     * Check if the type is valid
+     * @param  {String}  [type='']
+     * @return {Boolean}
+     */
+    function isValidType(type = '') {
+        if (type.length) {
+            return _.contains(VCARD_TYPES, type.toLowerCase());
         }
 
-        /**
-         * Purify value of each vCards
-         * @param  {vCard}  vcard
-         * @return {vCard}
-         */
-        function clean(vcard = new vCard()) {
-            /* eslint new-cap: "off" */
-            const properties = extractProperties(vcard);
+        return true;
+    }
 
-            return _.reduce(properties, (acc, property) => {
+    /**
+     * Purify value of each vCards
+     * @param  {vCard}  vcard
+     * @return {vCard}
+     */
+    function clean(vcard = new vCard()) {
+        /* eslint new-cap: "off" */
+        const properties = extractProperties(vcard);
+
+        return _.reduce(
+            properties,
+            (acc, property) => {
                 const type = property.getType();
                 const typeValue = type && (Array.isArray(type) ? type.map((t) => cleanType(t)).filter((t) => t) : cleanType(type));
                 const key = property.getField();
@@ -51,74 +52,82 @@ angular.module('proton.core')
                 acc.add(key, sanitize.input(cleanValue(value)), params);
 
                 return acc;
-            }, new vCard());
+            },
+            new vCard()
+        );
+    }
+
+    /**
+     * Clean type value and prefix it by adding `x` if it's invalid
+     * @param  {String} type
+     * @return {String}
+     */
+    function cleanType(type = '') {
+        // Gmail set by default INTERNET as Type for email
+        // We just remove it and then the default Email value will be display
+        if (type === 'x-INTERNET') {
+            return '';
         }
 
-        /**
-         * Clean type value and prefix it by adding `x` if it's invalid
-         * @param  {String} type
-         * @return {String}
-         */
-        function cleanType(type = '') {
-            // Gmail set by default INTERNET as Type for email
-            // We just remove it and then the default Email value will be display
-            if (type === 'x-INTERNET') {
-                return '';
-            }
-
-            if (isValidType(type)) {
-                return type;
-            }
-
-            if (type.toLowerCase().startsWith('x')) {
-                return type;
-            }
-
-            return `x-${type}`;
+        if (isValidType(type)) {
+            return type;
         }
 
-        /**
-         * Clean value
-         * @param  {String} value
-         * @return {String}
-         */
-        function cleanValue(value = '') {
-            const matches = value.match(/_\$!<(.*)>!\$_/);
-
-            // Some imported vCards from Apple have weird bracket around the value _$!<value>!$_
-            if (Array.isArray(matches)) {
-                return matches[1];
-            }
-
-            return value;
+        if (type.toLowerCase().startsWith('x')) {
+            return type;
         }
 
-        /**
-         * get all Properties for a specific vCard
-         * @param  {vCard} vcard
-         * @return {Array}
-         */
-        function extractProperties(vcard = new vCard()) {
-            return _.reduce(Object.keys(vcard.data), (acc, key) => {
+        return `x-${type}`;
+    }
+
+    /**
+     * Clean value
+     * @param  {String} value
+     * @return {String}
+     */
+    function cleanValue(value = '') {
+        const matches = value.match(/_\$!<(.*)>!\$_/);
+
+        // Some imported vCards from Apple have weird bracket around the value _$!<value>!$_
+        if (Array.isArray(matches)) {
+            return matches[1];
+        }
+
+        return value;
+    }
+
+    /**
+     * get all Properties for a specific vCard
+     * @param  {vCard} vcard
+     * @return {Array}
+     */
+    function extractProperties(vcard = new vCard()) {
+        return _.reduce(
+            Object.keys(vcard.data),
+            (acc, key) => {
                 const value = vcard.get(key);
                 const props = Array.isArray(value) ? value : [value];
 
                 return acc.concat(props);
-            }, []);
-        }
+            },
+            []
+        );
+    }
 
-        /**
-         * Handle xablabel custom property and convert it to the vCard 4 format
-         * Usually, vcards coming from Apple
-         * NOTE not used for now
-         * @param  {Array} vcards
-         * @return {Array}
-         */
-        /* eslint no-unused-vars: "off" */
-        function convertCustoms(vcard = new vCard()) {
-            const groups = _.groupBy(extractProperties(vcard), (property) => property.getGroup() || 'nogroup');
+    /**
+     * Handle xablabel custom property and convert it to the vCard 4 format
+     * Usually, vcards coming from Apple
+     * NOTE not used for now
+     * @param  {Array} vcards
+     * @return {Array}
+     */
+    /* eslint no-unused-vars: "off" */
+    function convertCustoms(vcard = new vCard()) {
+        const groups = _.groupBy(extractProperties(vcard), (property) => property.getGroup() || 'nogroup');
 
-            return _.reduce(Object.keys(groups), (acc, groupName) => {
+        return _.reduce(
+            Object.keys(groups),
+            (acc, groupName) => {
                 const group = groups[groupName];
 
                 if (groupName === 'nogroup' || group.length === 1) {
@@ -145,14 +154,17 @@ angular.module('proton.core')
                 _.each(group, (prop) => acc.addProperty(prop));
 
                 return acc;
-            }, new vCard());
-        }
+            },
+            new vCard()
+        );
+    }
 
-        function build(properties = [], target = new vCard()) {
-            _.each(properties, (property) => target.addProperty(property));
+    function build(properties = [], target = new vCard()) {
+        _.each(properties, (property) => target.addProperty(property));
 
-            return target;
-        }
+        return target;
+    }
 
-        return { from, to, extractProperties, merge, build, isValidType };
-    });
+    return { from, to, extractProperties, merge, build, isValidType };
+}
+export default vcard;

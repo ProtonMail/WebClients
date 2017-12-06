@@ -1,5 +1,5 @@
-angular.module('proton.authentication')
-.factory('authentication', (
+/* @ngInject */
+function authentication(
     $http,
     $location,
     $log,
@@ -32,7 +32,7 @@ angular.module('proton.authentication')
     tempStorage,
     sanitize,
     upgradeKeys
-) => {
+) {
     let keys = {}; // Store decrypted keys
     /**
      * Clean contact datas received from the BE
@@ -70,87 +70,88 @@ angular.module('proton.authentication')
         },
 
         fetchUserInfo() {
+            return networkActivityTracker.track(
+                User.get()
+                    .then(({ data = {} } = {}) => {
+                        if (data.Code === 1000) {
+                            return data.User;
+                        }
+                        throw new Error(data.Error || 'Error during user request');
+                    })
+                    .then((user) => {
+                        // Redirect to setup if necessary
+                        if (user.Keys.length === 0) {
+                            $state.go('login.setup');
+                            return Promise.resolve(user);
+                        }
 
-            return networkActivityTracker.track(User.get()
-            .then(({ data = {} } = {}) => {
-                if (data.Code === 1000) {
-                    return data.User;
-                }
-                throw new Error(data.Error || 'Error during user request');
-            })
-            .then((user) => {
+                        user.subuser = angular.isDefined(user.OrganizationPrivateKey);
+                        // Required for subuser
+                        const decryptOrganization = () => {
+                            if (user.subuser) {
+                                return pmcw.decryptPrivateKey(user.OrganizationPrivateKey, api.getPassword());
+                            }
+                            return Promise.resolve();
+                        };
 
-                // Redirect to setup if necessary
-                if (user.Keys.length === 0) {
-                    $state.go('login.setup');
-                    return Promise.resolve(user);
-                }
+                        // Hacky fix for missing organizations
+                        const fixOrganization = () => {
+                            if (user.Role === CONSTANTS.FREE_USER_ROLE && user.Subscribed) {
+                                return setupKeys
+                                    .generateOrganization(api.getPassword())
+                                    .then((response) => {
+                                        const privateKey = response.privateKeyArmored;
 
-                user.subuser = angular.isDefined(user.OrganizationPrivateKey);
-                // Required for subuser
-                const decryptOrganization = () => {
-                    if (user.subuser) {
-                        return pmcw.decryptPrivateKey(user.OrganizationPrivateKey, api.getPassword());
-                    }
-                    return Promise.resolve();
-                };
+                                        return {
+                                            DisplayName: 'My Organization',
+                                            PrivateKey: privateKey
+                                        };
+                                    })
+                                    .then((params) => {
+                                        return organizationApi.create(params);
+                                    });
+                            }
+                            return Promise.resolve();
+                        };
 
-                // Hacky fix for missing organizations
-                const fixOrganization = () => {
-                    if (user.Role === CONSTANTS.FREE_USER_ROLE && user.Subscribed) {
-                        return setupKeys.generateOrganization(api.getPassword())
-                        .then((response) => {
-                            const privateKey = response.privateKeyArmored;
+                        return $q
+                            .all({
+                                labels: Label.query(),
+                                contacts: contactEmails.load(),
+                                fix: fixOrganization(),
+                                organizationKey: decryptOrganization()
+                            })
+                            .then(({ labels, organizationKey }) => {
+                                if (labels.data && labels.data.Code === 1000) {
+                                    labelsModel.set(labels.data.Labels);
 
-                            return {
-                                DisplayName: 'My Organization',
-                                PrivateKey: privateKey
-                            };
-                        })
-                        .then((params) => {
-                            return organizationApi.create(params);
-                        });
-                    }
-                    return Promise.resolve();
-                };
+                                    return { user, organizationKey };
+                                }
 
-                return $q.all({
-                    labels: Label.query(),
-                    contacts: contactEmails.load(),
-                    fix: fixOrganization(),
-                    organizationKey: decryptOrganization()
-                })
-                .then(({ labels, organizationKey }) => {
+                                if (labels.data && labels.data.Error) {
+                                    throw new Error(labels.data.Error);
+                                }
 
-                    if (labels.data && labels.data.Code === 1000) {
-                        labelsModel.set(labels.data.Labels);
+                                throw new Error('Error during label / contact request');
+                            })
+                            .then(({ user, organizationKey }) => {
+                                const storeKeys = (keys) => {
+                                    api.clearKeys();
+                                    _.each(keys, ({ address, key, pkg }) => {
+                                        api.storeKey(address.ID, key.ID, pkg);
+                                    });
+                                };
 
-                        return { user, organizationKey };
-                    }
-
-                    if (labels.data && labels.data.Error) {
-                        throw new Error(labels.data.Error);
-                    }
-
-                    throw new Error('Error during label / contact request');
-                })
-                .then(({ user, organizationKey }) => {
-
-                    const storeKeys = (keys) => {
-                        api.clearKeys();
-                        _.each(keys, ({ address, key, pkg }) => {
-                            api.storeKey(address.ID, key.ID, pkg);
-                        });
-                    };
-
-                    return setupKeys.decryptUser(user, organizationKey, api.getPassword())
-                        .then(({ keys }) => (storeKeys(keys), user))
-                        .catch((error) => {
-                            $exceptionHandler(error);
-                            throw error;
-                        });
-                });
-            }));
+                                return setupKeys
+                                    .decryptUser(user, organizationKey, api.getPassword())
+                                    .then(({ keys }) => (storeKeys(keys), user))
+                                    .catch((error) => {
+                                        $exceptionHandler(error);
+                                        throw error;
+                                    });
+                            });
+                    })
+            );
         }
     };
 
@@ -231,7 +232,8 @@ angular.module('proton.authentication')
                 }
 
                 return result;
-            } else if (isOpera) { // Opera's Math.random is secure, see http://lists.w3.org/Archives/Public/public-webcrypto/2013Jan/0063.html
+            } else if (isOpera) {
+                // Opera's Math.random is secure, see http://lists.w3.org/Archives/Public/public-webcrypto/2013Jan/0063.html
                 for (i = 0; i < length; i++) {
                     result += charset[Math.floor(Math.random() * charset.length)];
                 }
@@ -280,68 +282,67 @@ angular.module('proton.authentication')
 
         getRefreshCookie() {
             $log.debug('getRefreshCookie');
-            return authApi.refresh({}).then(
-                (response) => {
-                    $log.debug(response);
-                    if (response.data.SessionToken !== undefined) {
-                        $log.debug('new token', response.data.SessionToken);
-                        $log.debug('before', $http.defaults.headers.common['x-pm-session']);
-                        $http.defaults.headers.common['x-pm-session'] = response.data.SessionToken;
-                        secureSessionStorage.setItem(CONSTANTS.OAUTH_KEY + ':SessionToken', pmcw.encode_base64(response.data.SessionToken));
-                        $log.debug('after', $http.defaults.headers.common['x-pm-session']);
+            return authApi.refresh({}).then((response) => {
+                $log.debug(response);
+                if (response.data.SessionToken !== undefined) {
+                    $log.debug('new token', response.data.SessionToken);
+                    $log.debug('before', $http.defaults.headers.common['x-pm-session']);
+                    $http.defaults.headers.common['x-pm-session'] = response.data.SessionToken;
+                    secureSessionStorage.setItem(CONSTANTS.OAUTH_KEY + ':SessionToken', pmcw.encode_base64(response.data.SessionToken));
+                    $log.debug('after', $http.defaults.headers.common['x-pm-session']);
 
-                        return response;
-                    } else {
-                        return $q.reject(response.data.Error);
-                    }
+                    return response;
+                } else {
+                    return $q.reject(response.data.Error);
                 }
-            );
+            });
         },
 
         setAuthCookie(authResponse) {
             $log.debug('setAuthCookie');
 
-            return authApi.cookies({
-                ResponseType: 'token',
-                ClientID: CONFIG.clientID,
-                GrantType: 'refresh_token',
-                RefreshToken: authResponse.RefreshToken,
-                Uid: authResponse.Uid,
-                RedirectURI: 'https://protonmail.com',
-                State: this.randomString(24)
-            })
-            .then(
-                (result) => {
-                    $log.debug(result);
+            return authApi
+                .cookies({
+                    ResponseType: 'token',
+                    ClientID: CONFIG.clientID,
+                    GrantType: 'refresh_token',
+                    RefreshToken: authResponse.RefreshToken,
+                    Uid: authResponse.Uid,
+                    RedirectURI: 'https://protonmail.com',
+                    State: this.randomString(24)
+                })
+                .then(
+                    (result) => {
+                        $log.debug(result);
 
-                    if (result.data.Code === 1000) {
-                        $log.debug('/auth/cookies:', result);
-                        $log.debug('/auth/cookies1: resolved');
-                        AppModel.set('domoArigato', true);
-                        // forget the old headers, set the new ones
-                        $log.debug('/auth/cookies2: resolved');
-                        $log.debug('headers change', $http.defaults.headers);
+                        if (result.data.Code === 1000) {
+                            $log.debug('/auth/cookies:', result);
+                            $log.debug('/auth/cookies1: resolved');
+                            AppModel.set('domoArigato', true);
+                            // forget the old headers, set the new ones
+                            $log.debug('/auth/cookies2: resolved');
+                            $log.debug('headers change', $http.defaults.headers);
 
-                        saveAuthData({ SessionToken: result.data.SessionToken });
+                            saveAuthData({ SessionToken: result.data.SessionToken });
 
-                        $rootScope.isLocked = false;
+                            $rootScope.isLocked = false;
 
-                        return result;
-                    } else {
-                        return Promise.reject({ message: result.data.Error });
-                        $log.error('setAuthCookie1', result);
+                            return result;
+                        } else {
+                            return Promise.reject({ message: result.data.Error });
+                            $log.error('setAuthCookie1', result);
+                        }
+                    },
+                    (error) => {
+                        $log.error('setAuthCookie2', error);
+
+                        if (error.data && error.data.Error) {
+                            return Promise.reject({ message: error.data.Error });
+                        } else {
+                            return Promise.reject({ message: 'Error setting authentication cookies.' });
+                        }
                     }
-                },
-                (error) => {
-                    $log.error('setAuthCookie2', error);
-
-                    if (error.data && error.data.Error) {
-                        return Promise.reject({ message: error.data.Error });
-                    } else {
-                        return Promise.reject({ message: 'Error setting authentication cookies.' });
-                    }
-                }
-            );
+                );
         },
 
         loginWithCredentials(creds, initialInfoResponse) {
@@ -353,35 +354,39 @@ angular.module('proton.authentication')
                 });
             } else {
                 delete $http.defaults.headers.common.Accept;
-                srp.performSRPRequest(
-                    'POST',
-                    '/auth',
-                    {
-                        Username: creds.Username,
-                        ClientID: CONFIG.clientID,
-                        ClientSecret: CONFIG.clientSecret
-                    },
-                    creds,
-                    initialInfoResponse
-                ).then((resp) => {
-                    // Upgrade users to the newest auth version
-                    if (resp.authVersion < passwords.currentAuthVersion) {
-                        srp.getPasswordParams(creds.Password)
-                        .then((data) => {
-                            upgradePassword.store(data);
-                            deferred.resolve(resp);
-                        });
-                    } else {
-                        deferred.resolve(resp);
-                    }
-                    // this is a trick! we dont know if we should go to unlock or step2 because we dont have user's data yet. so we redirect to the login page (current page), and this is determined in the resolve: promise on that state in the route. this is because we dont want to do another fetch info here.
-                }, (error) => {
-                    // TODO: This is almost certainly broken, not sure it needs to work though?
-                    console.error(error);
-                    deferred.reject({
-                        message: error.error_description
-                    });
-                });
+                srp
+                    .performSRPRequest(
+                        'POST',
+                        '/auth',
+                        {
+                            Username: creds.Username,
+                            ClientID: CONFIG.clientID,
+                            ClientSecret: CONFIG.clientSecret
+                        },
+                        creds,
+                        initialInfoResponse
+                    )
+                    .then(
+                        (resp) => {
+                            // Upgrade users to the newest auth version
+                            if (resp.authVersion < passwords.currentAuthVersion) {
+                                srp.getPasswordParams(creds.Password).then((data) => {
+                                    upgradePassword.store(data);
+                                    deferred.resolve(resp);
+                                });
+                            } else {
+                                deferred.resolve(resp);
+                            }
+                            // this is a trick! we dont know if we should go to unlock or step2 because we dont have user's data yet. so we redirect to the login page (current page), and this is determined in the resolve: promise on that state in the route. this is because we dont want to do another fetch info here.
+                        },
+                        (error) => {
+                            // TODO: This is almost certainly broken, not sure it needs to work though?
+                            console.error(error);
+                            deferred.reject({
+                                message: error.error_description
+                            });
+                        }
+                    );
             }
 
             return deferred.promise;
@@ -499,26 +504,29 @@ angular.module('proton.authentication')
         unlockWithPassword(pwd, { PrivateKey = '', AccessToken = '', RefreshToken = '', Uid = '', ExpiresIn = 0, EventID = '', KeySalt = '' } = {}) {
             const req = $q.defer();
             if (pwd) {
-
                 tempStorage.setItem('plainMailboxPass', pwd);
-                passwords.computeKeyPassword(pwd, KeySalt)
-                .then((pwd) => pmcw.checkMailboxPassword(PrivateKey, pwd, AccessToken))
-                .then(
-                    ({ token, password }) => {
-                        savePassword(password);
-                        receivedCredentials({
-                            AccessToken: token,
-                            RefreshToken, Uid, ExpiresIn, EventID
-                        });
-                        upgradePassword.send();
-                        req.resolve(200);
-                    },
-                    () => {
-                        req.reject({
-                            message: 'Wrong decryption password.'
-                        });
-                    }
-                );
+                passwords
+                    .computeKeyPassword(pwd, KeySalt)
+                    .then((pwd) => pmcw.checkMailboxPassword(PrivateKey, pwd, AccessToken))
+                    .then(
+                        ({ token, password }) => {
+                            savePassword(password);
+                            receivedCredentials({
+                                AccessToken: token,
+                                RefreshToken,
+                                Uid,
+                                ExpiresIn,
+                                EventID
+                            });
+                            upgradePassword.send();
+                            req.resolve(200);
+                        },
+                        () => {
+                            req.reject({
+                                message: 'Wrong decryption password.'
+                            });
+                        }
+                    );
             } else {
                 req.reject({
                     message: 'Password is required.'
@@ -529,36 +537,37 @@ angular.module('proton.authentication')
         },
 
         fetchUserInfo() {
-
             const promise = auth.fetchUserInfo();
 
-            return promise.then((user) => {
-                if (user.DisplayName.length === 0) {
-                    user.DisplayName = user.Name;
-                }
-
-                $rootScope.isLoggedIn = true;
-                this.user = user;
-                $rootScope.user = user;
-
-                const plainMailboxPass = tempStorage.getItem('plainMailboxPass');
-                tempStorage.removeItem('plainMailboxPass');
-
-                if (plainMailboxPass && !user.OrganizationPrivateKey) {
-                    if (!checkKeysFormat(user)) {
-                        AppModel.set('upgradingKeys', true);
-                        return upgradeKeys({mailboxPassword: plainMailboxPass, oldSaltedPassword: this.getPassword(), user})
-                            .then(() => Promise.resolve(user));
+            return promise
+                .then((user) => {
+                    if (user.DisplayName.length === 0) {
+                        user.DisplayName = user.Name;
                     }
-                }
-                AppModel.set('editorMode', user.DraftMIMEType || 'text/html');
 
-                return user;
-            })
-            .catch((error) => {
-                $state.go('support.message', { data: {} });
-                throw error;
-            });
+                    $rootScope.isLoggedIn = true;
+                    this.user = user;
+                    $rootScope.user = user;
+
+                    const plainMailboxPass = tempStorage.getItem('plainMailboxPass');
+                    tempStorage.removeItem('plainMailboxPass');
+
+                    if (plainMailboxPass && !user.OrganizationPrivateKey) {
+                        if (!checkKeysFormat(user)) {
+                            AppModel.set('upgradingKeys', true);
+                            return upgradeKeys({ mailboxPassword: plainMailboxPass, oldSaltedPassword: this.getPassword(), user }).then(() =>
+                                Promise.resolve(user)
+                            );
+                        }
+                    }
+                    AppModel.set('editorMode', user.DraftMIMEType || 'text/html');
+
+                    return user;
+                })
+                .catch((error) => {
+                    $state.go('support.message', { data: {} });
+                    throw error;
+                });
         },
 
         params(params) {
@@ -567,4 +576,5 @@ angular.module('proton.authentication')
     };
 
     return api;
-});
+}
+export default authentication;

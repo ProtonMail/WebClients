@@ -5,7 +5,7 @@ const path = require('path');
 const chalk = require('chalk');
 const env = require('../env/config');
 
-const PATH_CONFIG = path.resolve('./src-tmp/app/config.js');
+const PATH_CONFIG = path.resolve('./src/app/config.js');
 const { CONFIG } = env.getConfig();
 
 fs.writeFileSync(PATH_CONFIG, `export default ${JSON.stringify(CONFIG, null, 4)};`);

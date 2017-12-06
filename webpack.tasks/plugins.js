@@ -16,7 +16,7 @@ const env = require('../env/config');
 const makeSRC = (list) => list.map((file) => path.resolve(file));
 const [ OPENPGP_WORKER, OPENPGP ] = makeSRC(CONFIG.external_files.openpgp);
 const VENDOR_GLOB = makeSRC(CONFIG.vendor_files.js);
-const VENDOR_LIB_GLOB = makeSRC(glob.sync('./src-tmp/libraries/{polyfill,tweetWebIntent,mailparser}.js'));
+const VENDOR_LIB_GLOB = makeSRC(glob.sync('./src/libraries/{polyfill,tweetWebIntent,mailparser}.js'));
 
 const minify = () => {
     if (!env.isDistRelease()) {
@@ -47,17 +47,17 @@ const minifyJS = () => {
 
 const list = [
     new CopyWebpackPlugin([
-        { from: 'src-tmp/manifest.json' },
-        { from: 'src-tmp/.htaccess' },
+        { from: 'src/manifest.json' },
+        { from: 'src/.htaccess' },
         { from: CONFIG.vendor_files.fonts[0], to: 'assets/fonts/' },
-        { from: 'src-tmp/i18n', to: 'i18n' },
+        { from: 'src/i18n', to: 'i18n' },
         { from: OPENPGP_WORKER, to: 'openpgp.worker.min.js' }
     ]),
 
     new CopyWebpackPlugin([
-        { from: 'src-tmp/assets/img/decrypt1.gif', to: 'assets/img' },
-        { from: 'src-tmp/assets/img/small-spinner.gif', to: 'assets/img' },
-        { from: 'src-tmp/assets', to: 'assets' }
+        { from: 'src/assets/img/decrypt1.gif', to: 'assets/img' },
+        { from: 'src/assets/img/small-spinner.gif', to: 'assets/img' },
+        { from: 'src/assets', to: 'assets' }
     ]),
 
     new ImageminPlugin({
@@ -105,7 +105,7 @@ const list = [
     }),
 
     new HtmlWebpackPlugin({
-        template: 'src-tmp/app.html',
+        template: 'src/app.html',
         inject: 'body',
         hash: false,
         excludeChunks: ['styles', 'html', 'app.css'],
