@@ -2,14 +2,16 @@ angular.module('proton.message')
     .factory('simpleSend', (messageApi, User, ComposerRequestStatus, pmcw, srp, encryptMessage) => {
 
         const getDraftParameters = async (message) => {
-            const { Subject = '', ToList = [], CCList = [], BCCList = [], AddressID } = message;
-            const [ { PublicKey } = {} ] = message.From.Keys || {};
+            const { Subject = '', ToList = [], CCList = [], BCCList = [], AddressID, From = {} } = message;
+            const { DisplayName, Email, Keys } = From;
+            const [ { PublicKey } = {} ] = Keys || {};
 
             const Body = await message.encryptBody(PublicKey);
             return {
                 Message: {
                     AddressID, Body, Subject, ToList, CCList, BCCList,
-                    IsRead: 1
+                    IsRead: 1,
+                    Sender: { Name: DisplayName, Address: Email }
                 }
             };
         };

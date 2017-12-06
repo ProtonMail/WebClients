@@ -1,6 +1,7 @@
 angular.module('proton.message')
     .factory('messageApi', ($http, url) => {
         const requestURL = url.build('messages');
+        const headersVersion3 = { 'x-pm-apiversion': 3 };
 
         /**
         * Send a message
@@ -9,7 +10,7 @@ angular.module('proton.message')
         */
         const send = (params = {}) => {
             return $http.post(requestURL('send', params.id), params, {
-                headers: { 'x-pm-apiversion': 3 }
+                headers: headersVersion3
             });
         };
 
@@ -18,7 +19,9 @@ angular.module('proton.message')
          * @param  {Object} params
          * @return {Promise}
          */
-        const createDraft = (params = {}) => $http.post(requestURL('draft'), params);
+        const createDraft = (params = {}) => $http.post(requestURL('draft'), params, {
+            headers: headersVersion3
+        });
 
         /**
          * Get message
@@ -47,7 +50,9 @@ angular.module('proton.message')
         */
         const updateDraft = (params = {}) => {
             const messageID = params.ID || params.id;
-            return $http.put(requestURL('draft', messageID), params);
+            return $http.put(requestURL('draft', messageID), params, {
+                headers: headersVersion3
+            });
         };
 
         /**

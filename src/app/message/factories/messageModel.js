@@ -45,8 +45,11 @@ angular.module('proton.message')
 
             constructor(msg) {
                 _.extend(this, angular.copy(msg));
-                const { ParsedHeaders = {} } = msg;
+                const { ParsedHeaders = {}, xOriginalTo } = msg;
+
                 this.isAutoReply = AUTOREPLY_HEADERS.some((header) => header in ParsedHeaders);
+                this.xOriginalTo = xOriginalTo || ParsedHeaders['X-Original-To'];
+
                 return this;
             }
             isDraft() {
