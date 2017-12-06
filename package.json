@@ -145,7 +145,6 @@
     "postdist": "uglifyjs --compress --mangle -o dist/vendor.js -- dist/vendor.js && webpack.tasks/vendorCheckSum.sh",
     "predeploy": "del ./dist",
     "deploy": "cross-env NODE_ENV=dist tasks/setupConfig.js && webpack.tasks/deploy.js",
-    "postdeploy": "npm run i18n:build",
     "i18n:extract": "webpack.tasks/extractI18N.sh",
     "i18n:compile": "webpack.tasks/compileI18N.sh",
     "i18n:build": "npm run i18n:extract && npm run i18n:compile",
