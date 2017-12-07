@@ -43,6 +43,14 @@ We are still in Beta and will have a more refined build process, installation in
 
 We are very open to bug reports via Issues as well as Pull Requests.
 
+### Custom command
+
+```
+$ npx appComponent
+$ npm run create
+```
+cf [Component Generator](https://github.com/ProtonMail/componentGenerator)
+
 ## Deploy
 
 1. Create a new version + tag => `$ npm version (patch|minor|major)`
