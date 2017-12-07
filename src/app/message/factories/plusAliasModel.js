@@ -8,7 +8,7 @@ function plusAliasModel(authentication) {
     function getAddress(email = '') {
         const address = isValid(email);
 
-        return address ? _.extend({}, address, { Email: email }) : {};
+        return address ? _.extend({}, address, { Email: email }) : undefined;
     }
 
     /**
