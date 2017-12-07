@@ -17,10 +17,8 @@ function composerFromModel(authentication, plusAliasModel) {
         }
 
         if (!plusAddress && AddressID) {
-            const fromIndex = _.findIndex(addresses, { ID: AddressID });
-            const toIndex = 0;
-
-            return addresses.splice(toIndex, 0, addresses.splice(fromIndex, 1)[0]);
+            const address = _.find(addresses, { ID: AddressID });
+            return [address, ...addresses.filter(({ ID }) => ID !== AddressID)];
         }
 
         return addresses;
