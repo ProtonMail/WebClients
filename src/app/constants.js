@@ -130,6 +130,12 @@ export default angular
         MAILBOX_PASSWORD_KEY: 'proton:mailbox_pwd',
         OAUTH_KEY: 'proton:oauth',
         WHITELIST: ['notify@protonmail.com'],
+        ADDRESS_TYPE: {
+            ORIGINAL: 1,
+            ALIAS: 2,
+            CUSTOM_DOMAIN: 3,
+            PREMIUM: 4
+        },
         INVITE_MAIL: 1,
         INVITE_VPN: 2,
         FREE_USER_ROLE: 0,

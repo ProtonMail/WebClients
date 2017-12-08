@@ -1,24 +1,42 @@
 /* @ngInject */
 function memberActions(
-    CONSTANTS,
-    membersValidator,
-    memberModal,
     $rootScope,
-    organizationKeysModel,
-    domainModel,
-    gettextCatalog,
+    addressModel,
+    authentication,
     confirmModal,
-    notification,
-    networkActivityTracker,
-    memberSubLogin,
+    CONSTANTS,
+    domainModel,
+    eventManager,
+    gettextCatalog,
+    loginPasswordModal,
+    memberModal,
     memberModel,
+    memberSubLogin,
+    membersValidator,
+    networkActivityTracker,
+    notification,
+    organizationKeysModel,
     organizationModel,
     setupOrganizationModal,
-    User,
-    eventManager,
-    loginPasswordModal
+    User
 ) {
     const I18N = {
+        PM_ME: {
+            paid() {
+                return gettextCatalog.getString(
+                    'You can now send and receive email from your new {{name}}@pm.me address!',
+                    { name: authentication.user.Name },
+                    'Success notification for paid user after @pm.me generation'
+                );
+            },
+            free() {
+                return gettextCatalog.getString(
+                    'You can now receive email from your new {{name}}@pm.me address! To send from it, please upgrade to a paid ProtonMail plan',
+                    { name: authentication.user.Name },
+                    'Success notification for free user after @pm.me generation'
+                );
+            }
+        },
         CHANGE_ROLE: {
             default: {
                 title: gettextCatalog.getString('Change Role', null, 'Title'),
@@ -191,6 +209,24 @@ function memberActions(
     };
 
     /**
+     * Open the password modal to unlock the next process
+     * @param  {submit} {Function}
+     */
+    const passwordModal = (cb = angular.noop) => {
+        loginPasswordModal.activate({
+            params: {
+                submit(password, twoFactorCode) {
+                    loginPasswordModal.deactivate();
+                    cb(password, twoFactorCode);
+                },
+                cancel() {
+                    loginPasswordModal.deactivate();
+                }
+            }
+        });
+    };
+
+    /**
      * Enable multi-user support for Visionary or Business account
      */
     const enableSupport = () => {
@@ -200,24 +236,34 @@ function memberActions(
             return notification.info(I18N.PLEASE_UPGRADE);
         }
 
-        loginPasswordModal.activate({
-            params: {
-                submit(Password, TwoFactorCode) {
-                    const promise = User.password({ Password, TwoFactorCode })
-                        .then(({ data = {} }) => {
-                            if (data.Error) {
-                                throw new Error(data.Error);
-                            }
-                            return data;
-                        })
-                        .then(loginPasswordModal.deactivate)
-                        .then(modalSetupOrga);
-                    networkActivityTracker.track(promise);
-                },
-                cancel() {
-                    loginPasswordModal.deactivate();
-                }
-            }
+        passwordModal((Password, TwoFactorCode) => {
+            const promise = User.password({ Password, TwoFactorCode })
+                .then(({ data = {} }) => {
+                    if (data.Error) {
+                        throw new Error(data.Error);
+                    }
+                    return data;
+                })
+                .then(modalSetupOrga);
+
+            networkActivityTracker.track(promise);
+        });
+    };
+
+    /**
+     * Unlock the session to add the @pm.me address
+     * @return {[type]} [description]
+     */
+    const generatePmMe = () => {
+        const success = I18N.PM_ME[authentication.hasPaidMail() ? 'paid' : 'free']();
+
+        passwordModal((Password, TwoFactorCode) => {
+            const promise = User.unlock({ Password, TwoFactorCode })
+                .then(addressModel.generatePmMe)
+                .then(User.lock)
+                .then(() => notification.success(success));
+
+            networkActivityTracker.track(promise);
         });
     };
 
@@ -232,7 +278,8 @@ function memberActions(
         makeAdmin,
         revokeAdmin,
         makePrivate,
-        enableSupport
+        enableSupport,
+        generatePmMe
     };
 }
 export default memberActions;

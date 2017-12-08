@@ -288,7 +288,7 @@ function ComposeMessageController(
      * @return {Object}
      */
     function bindFrom(message) {
-        const [address] = composerFromModel.getAddresses(message);
+        const { address } = composerFromModel.get(message);
 
         return {
             From: address,

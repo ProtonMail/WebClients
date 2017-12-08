@@ -1,17 +1,12 @@
 /* @ngInject */
-function ptTooltip(AppModel) {
+function ptTooltip(AppModel, tooltipModel) {
     return {
         link(scope, element, attrs) {
             if (!AppModel.is('mobile')) {
-                const title = attrs.ptTooltip;
-                element.attr('title', title);
-                element.attr('aria-label', title);
-
-                element.tooltip({
-                    trigger: 'hover', // The default value for trigger is 'hover focus'
-                    container: 'body',
-                    placement: attrs.ptPlacement || 'top',
-                    html: attrs.ptHtml || false
+                tooltipModel.add(element, {
+                    title: attrs.ptTooltip,
+                    placement: attrs.ptPlacement,
+                    html: attrs.ptHtml
                 });
             }
         }

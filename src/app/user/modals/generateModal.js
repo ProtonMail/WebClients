@@ -7,12 +7,13 @@ function generateModal(
     pmcw,
     notification,
     CONSTANTS,
+    generateKeyModel,
     gettextCatalog,
     setupKeys,
     addressWithoutKeys
 ) {
+    const STATE = generateKeyModel.getStates();
     const I18N = {
-        ERROR: gettextCatalog.getString('Error during create key request', null, 'Error'),
         success(email) {
             return gettextCatalog.getString('Key created for {{email}}', { email }, 'Generate key modal');
         },
@@ -22,50 +23,6 @@ function generateModal(
             null,
             'Info'
         )
-    };
-
-    const STATE = {
-        QUEUED: 0,
-        GENERATING: 1,
-        DONE: 2,
-        SAVED: 3,
-        ERROR: 4
-    };
-
-    const onSuccess = (address, key) => {
-        address.state = STATE.SAVED;
-        address.Keys = address.Keys || [];
-        address.Keys.push(key);
-        notification.success(I18N.success(address.Email));
-    };
-
-    const generateKey = (numBits, passphrase, { organizationKey, memberMap = {} }) => async (address) => {
-        try {
-            address.state = STATE.GENERATING;
-            const { privateKeyArmored: PrivateKey } = await pmcw.generateKey({
-                userIds: [{ name: address.Email, email: address.Email }],
-                passphrase,
-                numBits
-            });
-
-            address.state = STATE.DONE;
-
-            const member = memberMap[address.ID] || {};
-            if (member.ID) {
-                const keys = await setupKeys.generateAddresses([address], 'temp', numBits);
-                const key = await setupKeys.memberKey('temp', keys[0], member, organizationKey);
-                return onSuccess(address, key);
-            }
-
-            const { data } = await Key.create({ AddressID: address.ID, PrivateKey });
-            if (data.Code === 1000) {
-                return onSuccess(address, data.Key);
-            }
-            throw new Error(data.Error || I18N.ERROR);
-        } catch (e) {
-            address.state = STATE.ERROR;
-            throw e;
-        }
     };
 
     return pmModal({
@@ -89,12 +46,23 @@ function generateModal(
 
             this.submit = () => {
                 this.process = true;
-                const promise = Promise.all(_.map(this.addresses, generateKey(this.size, this.password, params)))
-                    .then(params.onSuccess)
+                const promise = Promise.all(
+                    _.map(this.addresses, (address) =>
+                        generateKeyModel.generate({
+                            address,
+                            numBits: this.size,
+                            passphrase: this.password,
+                            organizationKey: params.organizationKey,
+                            memberMap: params.memberMap
+                        })
+                    )
+                )
+                    .then((addresses = []) => addresses.forEach(({ Email }) => notification.success(I18N.success(Email))))
                     .catch((e) => {
                         params.close(this.addresses, this.password);
                         throw e;
                     });
+
                 networkActivityTracker.track(promise);
             };
         }

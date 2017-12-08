@@ -155,7 +155,7 @@ function messageBuilder(
 
         newMsg.xOriginalTo = currentMsg.xOriginalTo;
 
-        const [address] = composerFromModel.getAddresses(currentMsg);
+        const { address } = composerFromModel.get(currentMsg);
 
         newMsg.AddressID = address.ID;
         newMsg.From = address;
