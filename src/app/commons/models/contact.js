@@ -31,13 +31,13 @@ function Contact($http, $rootScope, CONSTANTS, url, chunk, contactEncryption, sa
         const n = Math.ceil(data.Total / PageSize) - 1; // We already load 1 or 2 pages
 
         if (n > 0) {
-            _.times(n, (index) => {
-                const promise = request(route, {
+            const list = _.times(n, (index) => {
+                return request(route, {
                     PageSize,
                     Page: index + 1
                 }).then((data) => data[key]);
-                promises.push(promise);
             });
+            promises.push(...list);
         }
 
         const list = await Promise.all(promises);

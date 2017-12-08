@@ -25,9 +25,11 @@ import dashboardOptions from './factories/dashboardOptions';
 import downgrade from './factories/downgrade';
 import customProPlanModal from './modals/customProPlanModal';
 import customVpnModal from './modals/customVpnModal';
+import planListGenerator from './factories/planListGenerator';
 
 export default angular
     .module('proton.dashboard', [])
+    .factory('planListGenerator', planListGenerator)
     .directive('activePlan', activePlan)
     .directive('addVpn', addVpn)
     .directive('addonRow', addonRow)
