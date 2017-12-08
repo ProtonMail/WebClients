@@ -15,6 +15,10 @@ function domainApi($http, url) {
      */
     const available = () => $http.get(requestURL('available'));
     /**
+     * Get premium domains
+     */
+    const premium = () => $http.get(requestURL('premium'));
+    /**
      * Set a catch-all address for a domain
      * This allowed users on appropriate plans to designate a single address on a custom domain as their 'catch-all' address, which will receive all mail sent to their domain which does not correspond to another address they have set up.
      */
@@ -30,6 +34,7 @@ function domainApi($http, url) {
         create,
         query,
         available,
+        premium,
         get,
         catchall
     };

@@ -31,7 +31,9 @@ function wizard(
                                 openBlackFridayModal();
                             }
 
-                            !AppModel.is('mobile') && tourStart();
+                            if (!AppModel.is('mobile')) {
+                                tourStart();
+                            }
                         }
                     }
                 });

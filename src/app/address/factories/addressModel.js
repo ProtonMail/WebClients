@@ -6,6 +6,7 @@ function addressModel(
     notification,
     organizationModel,
     organizationKeysModel,
+    generateKeyModel,
     pmDomainModel,
     domainModel,
     memberModel,
@@ -21,6 +22,7 @@ function addressModel(
     CONSTANTS,
     $rootScope
 ) {
+    const { PREMIUM } = CONSTANTS.ADDRESS_TYPE;
     const I18N = {
         ERROR_DO_UPGRADE: gettextCatalog.getString(
             'You have used all addresses in your plan. Please upgrade your plan to add a new address',
@@ -229,6 +231,31 @@ function addressModel(
     };
 
     /**
+     * Generate @pm.me address for the current account
+     * @return {Promise}
+     */
+    function generatePmMe() {
+        const numBits = CONSTANTS.ENCRYPTION_DEFAULT;
+        const passphrase = authentication.getPassword();
+
+        return Address.setup({ Domain: 'pm.me' })
+            .then(({ data = {} } = {}) => {
+                if (data.Error) {
+                    throw new Error(data.Error);
+                }
+
+                return generateKeyModel.generate({ numBits, passphrase, address: data.Address });
+            })
+            .then(() => Promise.all([eventManager.call(), memberModel.fetch(), pmDomainModel.fetch()]));
+    }
+
+    /**
+     * Check if the current account has a @pm.me address
+     * @return {Boolean}
+     */
+    const hasPmMe = () => _.findWhere(authentication.user.Addresses, { Type: PREMIUM });
+
+    /**
      * Generate the key for a single address
      * It will open the generate modal
      * @param  {Object} address
@@ -292,7 +319,9 @@ function addressModel(
         editSignature,
         saveOrder,
         generate,
-        getActive
+        getActive,
+        generatePmMe,
+        hasPmMe
     };
 }
 export default addressModel;

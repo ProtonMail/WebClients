@@ -8,6 +8,7 @@ import signupStepLink from './directives/signupStepLink';
 import signupUserForm from './directives/signupUserForm';
 import usernameDomain from './directives/usernameDomain';
 import usernamePassword from './directives/usernamePassword';
+import generateKeyModel from './factories/generateKeyModel';
 import signatureModel from './factories/signatureModel';
 import generateModal from './modals/generateModal';
 import attachSignupSubscription from './services/attachSignupSubscription';
@@ -28,6 +29,7 @@ export default angular
     .directive('signupUserForm', signupUserForm)
     .directive('usernameDomain', usernameDomain)
     .directive('usernamePassword', usernamePassword)
+    .factory('generateKeyModel', generateKeyModel)
     .factory('signatureModel', signatureModel)
     .factory('generateModal', generateModal)
     .factory('attachSignupSubscription', attachSignupSubscription)

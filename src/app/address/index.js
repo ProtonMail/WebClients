@@ -1,5 +1,6 @@
 import addressBtnActions from './directives/addressBtnActions';
 import addressKeysView from './directives/addressKeysView';
+import pmMeTooltip from './directives/pmMeTooltip';
 import addressModel from './factories/addressModel';
 import addressWithoutKeys from './factories/addressWithoutKeys';
 import addressModal from './modals/addressModal';
@@ -10,6 +11,7 @@ export default angular
     .module('proton.address', [])
     .directive('addressBtnActions', addressBtnActions)
     .directive('addressKeysView', addressKeysView)
+    .directive('pmMeTooltip', pmMeTooltip)
     .factory('addressModel', addressModel)
     .factory('addressWithoutKeys', addressWithoutKeys)
     .factory('addressModal', addressModal)

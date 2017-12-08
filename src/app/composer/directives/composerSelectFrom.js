@@ -1,11 +1,18 @@
 /* @ngInject */
-function composerSelectFrom(notification, editorModel, aboutClient, gettextCatalog, composerFromModel) {
+function composerSelectFrom(notification, editorModel, aboutClient, gettextCatalog, composerFromModel, authentication) {
     const I18N = {
         ATTACHMENT_SEND_CHANGE: gettextCatalog.getString(
             'Attachments and inline images must be removed first before changing sender',
             null,
             'Compose message'
-        )
+        ),
+        upgradeRequired() {
+            return gettextCatalog.getString(
+                'Upgrade to a paid plan to send from your {{name}}@pm.me address',
+                { name: authentication.user.Name },
+                'Error'
+            );
+        }
     };
 
     return {
@@ -16,8 +23,10 @@ function composerSelectFrom(notification, editorModel, aboutClient, gettextCatal
         templateUrl: 'templates/directives/composer/composerSelectFrom.tpl.html',
         link(scope, el) {
             const $select = el.find('select');
+            const { addresses } = composerFromModel.get(scope.message);
+            let previousAddress = scope.message.From;
 
-            scope.addresses = composerFromModel.getAddresses(scope.message);
+            scope.addresses = addresses;
 
             const onClick = (e) => {
                 if (scope.message.Attachments.length) {
@@ -27,7 +36,15 @@ function composerSelectFrom(notification, editorModel, aboutClient, gettextCatal
             };
 
             const onChange = () => {
+                if (scope.message.From.Send === 0) {
+                    scope.$applyAsync(() => {
+                        scope.message.From = previousAddress;
+                    });
+                    return notification.error(I18N.upgradeRequired());
+                }
+
                 scope.$applyAsync(() => {
+                    previousAddress = scope.message.From;
                     scope.message.AddressID = scope.message.From.ID;
                     const { editor } = editorModel.find(scope.message);
                     editor.fireEvent('refresh', { action: 'message.changeFrom' });
@@ -42,12 +59,12 @@ function composerSelectFrom(notification, editorModel, aboutClient, gettextCatal
             aboutClient.isIE11() && $select.on('mousedown', onMouseDown);
 
             el.on('click', onClick);
-            el.on('change', onChange);
+            $select.on('change', onChange);
 
             scope.$on('$destroy', () => {
                 aboutClient.isIE11() && $select.off('mousedown', onMouseDown);
                 el.off('click', onClick);
-                el.off('change', onChange);
+                $select.off('change', onChange);
             });
         }
     };

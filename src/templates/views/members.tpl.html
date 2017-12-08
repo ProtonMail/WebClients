@@ -130,7 +130,12 @@
                 <p>
                     <member-edit-btn
                         data-action="add"
-                        class="pm_button primary""></member-edit-btn>
+                        class="pm_button primary"></member-edit-btn>
+                    <member-edit-btn
+                        ng-if="!hasPmMe"
+                        pm-me-tooltip
+                        data-action="generatePmMe"
+                        class="pm_button"></member-edit-btn>
                 </p>
 
                 <div class="pm_table visibleOverflow">
