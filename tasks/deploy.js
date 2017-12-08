@@ -67,7 +67,7 @@ const i18n = async (branch) => {
         return Promise.resolve();
     }
     await exec('npm run i18n:build');
-    success('Build I18N ');
+    success('Build I18N');
 };
 
 const buildApp = async () => {

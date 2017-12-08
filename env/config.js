@@ -76,7 +76,13 @@ const getStatsConfig = (deployBranch = '') => {
     return extend({}, STATS_CONFIG[host], STATS_ID[subhost]) || NO_STAT_MACHINE;
 };
 
-const getDefaultApiTarget = () => (/webclient/i.test(__dirname) ? 'prod' : 'build');
+const getDefaultApiTarget = () => {
+    if (/webclient/i.test(__dirname)) {
+        return 'prod';
+    }
+    return process.env.NODE_ENV === 'dist' ? 'build' : 'dev';
+};
+
 const apiUrl = (type = getDefaultApiTarget()) => API_TARGETS[type];
 
 const getVersion = () => argv['app-version'] || APP_VERSION;
