@@ -3,7 +3,8 @@
 const fs = require('fs');
 const path = require('path');
 const chalk = require('chalk');
-const i18nLoader = require('../env/translationsLoader');
+
+const i18nLoader = require('./translationsLoader');
 const PATH_ENV_I18N = path.resolve('./po/lang.json');
 
 /*

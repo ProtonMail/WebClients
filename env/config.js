@@ -6,7 +6,7 @@ const i18n = require('../po/lang');
 const PACKAGE = require('../package');
 
 const APP_VERSION = PACKAGE.version;
-const i18nLoader = require('./translationsLoader');
+const i18nLoader = require('../tasks/translationsLoader');
 
 const AUTOPREFIXER_CONFIG = {
     browsers: ['last 2 versions', 'iOS >= 8', 'Safari >= 8']
