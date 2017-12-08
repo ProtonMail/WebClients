@@ -11,7 +11,8 @@ function dashboardModel(
     paymentModal,
     subscriptionModel,
     networkActivityTracker,
-    paymentModel
+    paymentModel,
+    planListGenerator
 ) {
     const { PLUS, PROFESSIONAL, VISIONARY, VPN_BASIC, VPN_PLUS } = CONSTANTS.PLANS.PLAN;
     const MAIL_PLANS = ['free', PLUS, PROFESSIONAL, VISIONARY];
@@ -80,42 +81,12 @@ function dashboardModel(
     const query = (currency = 'USD', cycle = YEARLY) => {
         const key = `plans-${currency}-${cycle}`;
         const { Plans = [] } = CACHE_API[key] || {};
-
         return Plans;
     };
 
     const collectPlans = (plan) => {
-        const plans = [];
         const cache = CACHE_PLAN[dashboardConfiguration.cycle()];
-        const config = dashboardConfiguration.get();
-
-        switch (plan) {
-            case 'free':
-                config.free.vpnbasic && plans.push(cache.addons[VPN_BASIC]);
-                config.free.vpnplus && plans.push(cache.addons[VPN_PLUS]);
-                break;
-            case 'plus':
-                plans.push(cache.plan[PLUS]);
-                config.plus.vpnbasic && plans.push(cache.addons[VPN_BASIC]);
-                config.plus.vpnplus && plans.push(cache.addons[VPN_PLUS]);
-                _.times(config.plus.space, () => plans.push(cache.addons[SPACE]));
-                _.times(config.plus.address, () => plans.push(cache.addons[ADDRESS]));
-                _.times(config.plus.domain, () => plans.push(cache.addons[DOMAIN]));
-                break;
-            case 'professional':
-                plans.push(cache.plan[PROFESSIONAL]);
-                config.professional.vpnbasic && plans.push(cache.addons[VPN_BASIC]);
-                config.professional.vpnplus && plans.push(cache.addons[VPN_PLUS]);
-                _.times(config.professional.member, () => plans.push(cache.addons[MEMBER]));
-                _.times(config.professional.domain, () => plans.push(cache.addons[DOMAIN]));
-                _.times(config.professional.vpn, () => plans.push(cache.addons[VPN]));
-                break;
-            case 'visionary':
-                plans.push(cache.plan[VISIONARY]);
-                break;
-        }
-
-        return plans;
+        return planListGenerator[plan](cache);
     };
 
     const selectPlan = (plan, choice) => {
@@ -146,7 +117,7 @@ function dashboardModel(
                 });
             })
             .catch(({ data = {} } = {}) => {
-                throw Error(data.Error);
+                throw new Error(data.Error);
             });
 
         networkActivityTracker.track(promise);
@@ -165,7 +136,7 @@ function dashboardModel(
                 return data;
             })
             .catch(({ data = {} } = {}) => {
-                throw data.Error;
+                throw new Error(data.Error);
             });
     };
 
@@ -219,13 +190,11 @@ function dashboardModel(
                 CACHE_PLAN[YEARLY] = angular.copy(yearly);
                 CACHE_PLAN[MONTHLY] = angular.copy(monthly);
                 CACHE_PLAN[TWO_YEARS] = angular.copy(twoYears);
-
                 return angular.copy(CACHE_PLAN);
             }
         );
 
         networkActivityTracker.track(promise);
-
         return promise;
     };
 
