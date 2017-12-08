@@ -9,15 +9,43 @@ const chalk = require('chalk');
 const { CONFIG, branch } = require('../env/config').getConfig('dist');
 const success = (msg) => console.log(`${chalk.green('✓')} ${msg}.`);
 
-const pullDist = (branch) => {
+const commandeVerbose = (command) => {
+    return new Promise((resolve, reject) => {
+        const callback = (error) => {
+            if (error) {
+                return reject(error);
+            }
+            resolve();
+        };
+
+        const build = execRaw(
+            command,
+            {
+                maxBuffer: 1000 * 1000 * 10 // 10 MB
+            },
+            callback
+        );
+        build.stdout.pipe(process.stdout);
+        build.stderr.pipe(process.stderr);
+    });
+};
+
+const setupConfig = async () => {
+    const args = process.argv.slice(2).join(' ');
+    await commandeVerbose(`tasks/setupConfig.js ${args}`);
+    success('Generate configuration');
+};
+
+const pullDist = async (branch) => {
     const commands = [`git fetch origin ${branch}:${branch}`];
     commands.push(`git clone file://$PWD --depth 1 --single-branch --branch ${branch} dist`);
     commands.push('cd dist');
     commands.push('rm -rf *');
-    return exec(commands.join(' && ')).then(() => success('Pull dist'));
+    await exec(commands.join(' && '));
+    success('Pull dist');
 };
 
-const push = (branch) => {
+const push = async (branch) => {
     const commands = ['cd dist'];
     if (os.platform() === 'linux') {
         commands.push('git ls-files --deleted -z | xargs -r -0 git rm');
@@ -29,36 +57,22 @@ const push = (branch) => {
     commands.push(`git push origin ${branch}`);
     commands.push('cd ..');
     commands.push(`git push origin ${branch}`);
-    return exec(commands.join(' && ')).then(() => success('Push new release'));
+    await exec(commands.join(' && '));
+    success('Push new release');
 };
 
-const i18n = (branch) => {
+const i18n = async (branch) => {
     if (!/prod|beta/.test(branch)) {
         console.log('⚠ We only build i18n for prod || beta');
         return Promise.resolve();
     }
-    return exec('npm run i18n:build').then(() => success('Build I18N '));
+    await exec('npm run i18n:build');
+    success('Build I18N ');
 };
 
-const buildApp = () => {
-    return new Promise((resolve, reject) => {
-        const callback = (error) => {
-            if (error) {
-                return reject(error);
-            }
-            resolve();
-        };
-
-        const build = execRaw(
-            'npm run dist',
-            {
-                maxBuffer: 1000 * 1000 * 10 // 10 MB
-            },
-            callback
-        );
-        build.stdout.pipe(process.stdout);
-        build.stderr.pipe(process.stderr);
-    }).then(() => success('Build application'));
+const buildApp = async () => {
+    await commandeVerbose('npm run dist');
+    success('Build application');
 };
 
 (async () => {
@@ -69,6 +83,7 @@ const buildApp = () => {
             throw new Error('You must define a branch name. --branch=XXX');
         }
 
+        await setupConfig();
         await pullDist(branch);
         await buildApp();
         await push(branch);
