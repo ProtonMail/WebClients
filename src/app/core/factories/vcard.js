@@ -49,7 +49,7 @@ function vcard(CONSTANTS, notification, sanitize) {
                     params.type = typeValue;
                 }
 
-                acc.add(key, sanitize.input(cleanValue(value)), params);
+                acc.add(key, sanitize.input(cleanValue(value, key)), params);
 
                 return acc;
             },
@@ -83,14 +83,24 @@ function vcard(CONSTANTS, notification, sanitize) {
     /**
      * Clean value
      * @param  {String} value
+     * @param  {String} field
      * @return {String}
      */
-    function cleanValue(value = '') {
+    function cleanValue(value = '', field = '') {
         const matches = value.match(/_\$!<(.*)>!\$_/);
 
         // Some imported vCards from Apple have weird bracket around the value _$!<value>!$_
         if (Array.isArray(matches)) {
             return matches[1];
+        }
+
+        if (field === 'org') {
+            // ORG:ABC\, Inc.;North American Division;Marketing
+            return value
+                .split(';')
+                .map((str = '') => str.trim())
+                .filter(Boolean)
+                .join(', ');
         }
 
         return value;
