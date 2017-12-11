@@ -1,6 +1,5 @@
 /* @ngInject */
 function contactCache(
-    $filter,
     $rootScope,
     $state,
     $stateParams,
@@ -30,7 +29,19 @@ function contactCache(
     const getItem = (ID) => _.findWhere(CACHE.contacts, { ID });
     const findIndex = (ID) => _.findIndex(CACHE.contacts, { ID });
     const emit = () => $rootScope.$emit('contacts', { type: 'contactsUpdated', data: { all: get() } });
-    const orderBy = (contacts = []) => $filter('orderBy')(contacts, $stateParams.sort || 'Name');
+    const orderBy = (contacts = []) => {
+        const parameter = $stateParams.sort || 'Name';
+        const reverseOrder = parameter.indexOf('-') > -1;
+        const key = parameter.replace('-', '');
+
+        return contacts.slice().sort((a, b) => {
+            if (reverseOrder) {
+                return b[key].localeCompare(a[key]);
+            }
+
+            return a[key].localeCompare(b[key]);
+        });
+    };
     const lowerCase = (word = '') => word.toLowerCase();
     const filterEmails = (emails = [], value = '') => _.filter(emails, ({ Email = '' }) => lowerCase(Email).indexOf(value) > -1);
     const total = () => ($stateParams.keyword ? CACHE.map.filtered.length : CACHE.contacts.length);
