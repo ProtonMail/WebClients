@@ -139,7 +139,7 @@
     border: 0
 }
 
-.autocompleteEmails-btn-remove:focus, .autocompleteEmails-btn-remove:active {
-    color: $active-background;
-}
+.autocompleteEmails-btn-remove:focus,
+.autocompleteEmails-btn-remove:active { color: #F35D5D }
+
 .autocompleteEmails-field .visually-hidden {display: none}
