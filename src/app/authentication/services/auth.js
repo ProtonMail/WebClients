@@ -565,7 +565,7 @@ function authentication(
                     return user;
                 })
                 .catch((error) => {
-                    $state.go('support.message', { data: {} });
+                    $state.go('support.message');
                     throw error;
                 });
         },
