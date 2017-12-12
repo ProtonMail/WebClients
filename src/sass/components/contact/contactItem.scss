@@ -207,6 +207,7 @@
 .contactItem-actions {
     position: relative;
     display: flex;
+    min-width: 45px;
 }
 
 .contactItem-delete {
