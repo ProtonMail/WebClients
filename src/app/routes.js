@@ -255,9 +255,6 @@ export default angular
 
             // Generic Message View Template
             .state('support.message', {
-                params: {
-                    data: null
-                }, // Tip to avoid passing parameters in the URL
                 url: '/message',
                 onEnter($state, $stateParams) {
                     if ($stateParams.data === null) {

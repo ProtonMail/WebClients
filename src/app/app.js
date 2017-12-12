@@ -206,7 +206,7 @@ angular
     .run(($rootScope, $state) => {
         $rootScope.$on('$stateChangeError', (event, current, previous, rejection, ...arg) => {
             console.error('stateChangeError', event, current, previous, rejection, arg);
-            $state.go('support.message', { data: {} });
+            $state.go('support.message');
         });
     })
 
