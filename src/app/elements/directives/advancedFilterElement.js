@@ -48,7 +48,6 @@ function advancedFilterElement(
     const empty = (mailbox) => {
         const title = gettextCatalog.getString('Delete all', null, 'Title');
         const message = gettextCatalog.getString('Are you sure? This cannot be undone.', null, 'Info');
-        const errorMessage = gettextCatalog.getString('Empty request failed', null, 'Error shows when the empty folder request failed');
 
         if (['drafts', 'spam', 'trash', 'folder'].indexOf(mailbox) === -1) {
             return;
@@ -67,15 +66,24 @@ function advancedFilterElement(
                 title,
                 message,
                 confirm() {
+                    // Back to the origin before to clear the folder
+                    // https://github.com/ProtonMail/Angular/issues/5901
+                    if ($state.includes('**.element')) {
+                        $state.go($state.$current.name.replace('.element', ''));
+                    }
+
                     const promise = messageApi[MAP_ACTIONS[mailbox]](labelID).then(({ data = {} } = {}) => {
-                        if (data.Code === 1000) {
-                            cache.empty(labelID);
-                            confirmModal.deactivate();
-                            notification.success(gettextCatalog.getString('Folder emptied', null));
-                            return eventManager.call();
+                        if (data.Error) {
+                            throw new Error(data.Error);
                         }
-                        throw new Error(data.Error || errorMessage);
+
+                        cache.empty(labelID);
+                        confirmModal.deactivate();
+                        notification.success(gettextCatalog.getString('Folder emptied', null));
+
+                        return eventManager.call();
                     });
+
                     networkActivityTracker.track(promise);
                 },
                 cancel() {
