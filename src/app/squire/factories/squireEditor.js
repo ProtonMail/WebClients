@@ -79,7 +79,8 @@ function squireEditor($rootScope, CONSTANTS, editorModel) {
             .proton-embedded:not([src]) {
                 position: relative;
                 min-height: 38px; /* placeholder */
-
+                display: block;
+                visibility: hidden
             }
             .proton-embedded:not([src])::after {
                 position: absolute;
@@ -94,6 +95,7 @@ function squireEditor($rootScope, CONSTANTS, editorModel) {
                 border:1px solid;
                 border-color: #444 #CCC #CCC #444;
                 color: rgba(0,0,0,0.5);
+                visibility: visible
             }
 
             /* see embedded.scss rules */
