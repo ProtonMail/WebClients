@@ -246,7 +246,15 @@ function addressModel(
 
                 return generateKeyModel.generate({ numBits, passphrase, address: data.Address });
             })
-            .then(() => Promise.all([eventManager.call(), memberModel.fetch(), pmDomainModel.fetch()]));
+            .then(() => {
+                const promises = [eventManager.call(), pmDomainModel.fetch()];
+
+                if (authentication.user.Role === CONSTANTS.PAID_ADMIN_ROLE) {
+                    promises.push(memberModel.fetch());
+                }
+
+                return Promise.all(promises);
+            });
     }
 
     /**
