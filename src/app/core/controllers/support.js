@@ -17,16 +17,6 @@ function SupportController(
     Key,
     networkActivityTracker
 ) {
-    const GENERIC_MESSAGE = {
-        title: gettextCatalog.getString('Problem loading your account', null, 'Title'),
-        content: gettextCatalog.getString(
-            'ProtonMail encountered a problem loading your account. Please refresh the page and try again later.',
-            null,
-            'Info'
-        ),
-        type: 'alert-danger'
-    };
-
     function resetState() {
         $scope.params.resetToken = '';
         $scope.params.danger = '';
@@ -60,18 +50,6 @@ function SupportController(
     $scope.resetAccount = false;
     $scope.logUserIn = false;
     $scope.finishInstall = false;
-
-    $scope.getMessageTitle = () => {
-        return $state.params.data.title || GENERIC_MESSAGE.title;
-    };
-
-    $scope.getMessageContent = () => {
-        return $state.params.data.content || GENERIC_MESSAGE.content;
-    };
-
-    $scope.getMessageType = () => {
-        return $state.params.data.type || GENERIC_MESSAGE.type;
-    };
 
     $scope.confirmResetLostPassword = () => {
         const title = gettextCatalog.getString('Confirm Reset Password', null, 'Title');
