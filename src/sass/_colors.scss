@@ -2,11 +2,11 @@
     background: $body-background;
     background-size: $body-background-size;
 
-    &:before {
+    &::before {
         position: absolute;
-        content:"";
-        left:0px;
-        top:0px;
+        content: '';
+        left: 0;
+        top: 0;
         width: 100vw;
         height: 100vh;
         z-index: -1;

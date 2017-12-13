@@ -4,13 +4,14 @@ import attachments from './attachments/index';
 import authentication from './authentication/index';
 import autoresponder from './autoresponder/index';
 import blackFriday from './blackFriday/index';
-import browserSupport from './browserSupport/index';
 import bridge from './bridge/index';
+import browserSupport from './browserSupport/index';
 import bugReport from './bugReport/index';
+import command from './command/index';
 import commons from './commons/index';
 import composer from './composer/index';
-import contact from './contact/index';
 import conversation from './conversation/index';
+import contact from './contact/index';
 import core from './core/index';
 import dashboard from './dashboard/index';
 import dnd from './dnd/index';
@@ -59,13 +60,14 @@ angular
         authentication,
         autoresponder,
         blackFriday,
-        browserSupport,
         bridge,
+        browserSupport,
         bugReport,
+        command,
         commons,
         composer,
-        contact,
         conversation,
+        contact,
         core,
         dashboard,
         dnd,

@@ -240,6 +240,16 @@ function ElementsController(
             })
         );
 
+        unsubscribes.push(
+            $rootScope.$on('app.commands', (e, { type, data }) => {
+                const [, action, item] = type.match(/(add|remove)\.(folders|labels)$/) || [];
+                $scope.$applyAsync(() => {
+                    item === 'labels' && $scope.saveLabels(data.list);
+                    item === 'folders' && $scope.move(null, data.ID, action);
+                });
+            })
+        );
+
         $scope.$on('applyLabels', (event, LabelID) => {
             $scope.applyLabels(LabelID);
         });
@@ -679,10 +689,10 @@ function ElementsController(
      * Move conversation to an other location
      * @param {String} mailbox
      */
-    $scope.move = (mailbox) => {
+    $scope.move = (mailbox, folderID) => {
         const type = getTypeSelected();
         const ids = idsSelected();
-        const labelID = CONSTANTS.MAILBOX_IDENTIFIERS[mailbox];
+        const labelID = folderID || CONSTANTS.MAILBOX_IDENTIFIERS[mailbox];
 
         if (ids.length === 0) {
             return;

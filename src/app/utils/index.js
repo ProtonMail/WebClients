@@ -23,6 +23,7 @@ import utcReadableTime from './filters/utcReadableTime';
 import eventManager from './services/eventManager';
 import hotkeys from './services/hotkeys';
 import openStatePostMessage from './services/openStatePostMessage';
+import strUtils from './services/strUtils';
 
 export default angular
     .module('proton.utils', ['proton.constants'])
@@ -51,4 +52,5 @@ export default angular
     .filter('utcReadableTime', utcReadableTime)
     .factory('eventManager', eventManager)
     .factory('hotkeys', hotkeys)
-    .factory('openStatePostMessage', openStatePostMessage).name;
+    .factory('openStatePostMessage', openStatePostMessage)
+    .factory('strUtils', strUtils).name;
