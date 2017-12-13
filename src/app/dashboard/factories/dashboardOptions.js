@@ -38,7 +38,7 @@ function dashboardOptions(gettextCatalog, CONSTANTS) {
         professional: {
             vpn: VPN_OPTIONS,
             member: MEMBER_OPTIONS,
-            domain: generateDomains(2, 11)
+            domain: generateDomains(2, 51)
         }
     };
 
