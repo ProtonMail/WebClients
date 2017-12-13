@@ -98,6 +98,7 @@
 
 //===  Custom Components ================//
 
+
 // === User
 @import "components/user/generateModal";
 @import "components/user/usernamePassword";
@@ -106,6 +107,8 @@
 @import "components/user/signupPayForm";
 @import "components/user/signupCreationProcess";
 
+//== commandPalette
+@import "components/command/commandPalette";
 
 //== Composer
 @import "components/composer/composer";

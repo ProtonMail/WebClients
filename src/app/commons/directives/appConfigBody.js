@@ -9,7 +9,8 @@ function appConfigBody($rootScope, AppModel) {
         activeComposer: className('activeComposer'),
         maximizedComposer: className('maximizedComposer'),
         modalOpen: className('modalOpen'),
-        showSidebar: className('showSidebar')
+        showSidebar: className('showSidebar'),
+        commandPalette: className('commandPalette')
     };
 
     return {

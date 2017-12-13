@@ -1,0 +1,99 @@
+.commandPalette-container {
+    position: fixed;
+    z-index: 1337;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: 500px;
+    height: 240px;
+    padding: 1rem;
+    margin: auto;
+    background: white;
+    /*border: 1px solid #c3c3c3;*/
+    border-radius: .2em;
+    box-shadow: 0 0 .4em .1em rgba(0, 0, 0, .25);
+    transform: translateY(-50%);
+}
+
+.commandPalette-label,
+.commandPalette-container:not(.commandPalette-visible) { display: none }
+
+.autocompleteCommand-container {
+
+
+    ul[hidden]:not(:empty) {
+        display: block;
+        pointer-events: all;
+        opacity: 1;
+    }
+
+    .autocomplete-container {
+        position: relative;
+        box-sizing: border-box;
+    }
+
+    .awesomplete input {
+        box-sizing: border-box;
+        padding: 1em 1em 1em .5em;
+        border: 0;
+    }
+    .autocomplete-container {
+        display: flex;
+        align-items: center;
+        flex: 1;
+        background: #eee;
+        font-weight: bold;
+
+    }
+
+    .awesomplete { flex: 1 }
+
+    .autocompleteEmails-autocomplete {
+        box-sizing: border-box;
+        position: static;
+        width: 100%;
+        border: 0;
+        padding: 0;
+        margin: .5em 0;
+        max-height: 200px;
+
+        li { padding: 1em; box-sizing: border-box }
+        li + li { border-top: 1px solid $toolbar-border }
+
+        [aria-selected="true"] { background: $primary; color: white }
+    }
+}
+
+.autocompleteCommand-input {
+    background: transparent;
+}
+
+.autocompleteCommand-scope:empty {
+    display: none;
+    & + .awesomplete input { padding-left: 1em }
+}
+.autocompleteCommand-scope {
+    background: none;
+    padding: 0 .5em 0 1em;
+}
+
+.autocompleteCommand-scope:not(:empty)::after {
+    content: "\203a";
+    margin: 0 .2em
+}
+
+.commandPalette-btn-close {
+    position: absolute;
+    top: .1em;
+    right: 0;
+    background: none;
+    border: 0
+}
+
+.commandPalette-btn-close:active { color: $blue-gray }
+
+.appConfigBody-commandPalette::before {
+    background: rgba(0, 0, 0, .5);
+    z-index: 1335 !important;
+}
