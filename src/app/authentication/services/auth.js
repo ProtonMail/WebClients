@@ -13,7 +13,6 @@ function authentication(
     CONFIG,
     CONSTANTS,
     contactEmails,
-    Contact,
     errorReporter,
     gettextCatalog,
     upgradePassword,

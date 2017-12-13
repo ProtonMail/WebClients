@@ -1,10 +1,12 @@
 /* @ngInject */
 function eventManager(
     $cookies,
+    $injector,
     $rootScope,
     $state,
     $stateParams,
     $timeout,
+    AppModel,
     authentication,
     cache,
     cacheCounters,
@@ -15,12 +17,10 @@ function eventManager(
     Events,
     gettextCatalog,
     Label,
-    notify,
-    AppModel,
     labelsModel,
-    sanitize,
     manageUser,
-    $injector
+    notify,
+    sanitize
 ) {
     const { CONVERSATION_VIEW_MODE, INTERVAL_EVENT_TIMER, MAILBOX_IDENTIFIERS, STATUS } = CONSTANTS;
     const FIBONACCI = [1, 1, 2, 3, 5, 8];
@@ -243,6 +243,24 @@ function eventManager(
         }
     }
 
+    function refreshMail() {
+        cache.reset();
+        cachePages.clear();
+        cacheCounters.reset();
+        cache.callRefresh();
+        cacheCounters.query();
+
+        return authentication.fetchUserInfo().then(() => {
+            $rootScope.$broadcast('updateUser');
+            labelsModel.refresh();
+        });
+    }
+
+    function refreshContact() {
+        $rootScope.$emit('resetContactEmails');
+        $rootScope.$emit('contacts', { type: 'resetContacts' });
+    }
+
     function manage(data) {
         manageNotices(data.Notices);
 
@@ -250,25 +268,14 @@ function eventManager(
             return Events.getLatestID().then(({ data = {} }) => manageID(data.EventID));
         }
 
-        if (data.Refresh === 1) {
-            manageID(data.EventID);
-            cache.reset();
-            cachePages.clear();
-            cacheCounters.reset();
-            cache.callRefresh();
-            cacheCounters.query();
+        manageID(data.EventID);
 
-            return authentication.fetchUserInfo().then(() => {
-                $rootScope.$broadcast('updateUser');
-                $rootScope.$emit('resetContactEmails');
-                $rootScope.$emit('contacts', { type: 'resetContacts' });
-                labelsModel.refresh();
-            });
+        if (data.Refresh & 1) {
+            refreshMail();
         }
 
-        if (data.Reload === 1) {
-            window.location.reload();
-            return Promise.resolve();
+        if (data.Refresh & 2) {
+            refreshContact();
         }
 
         if (isDifferent(data.EventID)) {
@@ -284,7 +291,6 @@ function eventManager(
             manageMembers(data.Members);
             manageOrganization(data.Organization);
             manageFilters(data.Filters);
-            manageID(data.EventID);
             manageActiveMessage(data);
 
             return manageUser(data, call).then(() => {
