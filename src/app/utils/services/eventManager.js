@@ -270,37 +270,31 @@ function eventManager(
 
         manageID(data.EventID);
 
-        if (data.Refresh & 1) {
-            refreshMail();
+        if (data.Refresh) {
+            data.Refresh & 1 && refreshMail();
+            data.Refresh & 2 && refreshContact();
+            return Promise.resolve();
         }
 
-        if (data.Refresh & 2) {
-            refreshContact();
-        }
+        labelsModel.sync(data.Labels);
+        manageContactEmails(data.ContactEmails);
+        manageContacts(data.Contacts);
+        manageThreadings(data.Messages, data.Conversations);
+        manageDesktopNotifications(data.Messages);
+        manageMessageCounts(data.MessageCounts);
+        manageConversationCounts(data.ConversationCounts);
+        manageStorage(data.UsedSpace);
+        manageDomains(data.Domains);
+        manageMembers(data.Members);
+        manageOrganization(data.Organization);
+        manageFilters(data.Filters);
+        manageActiveMessage(data);
 
-        if (isDifferent(data.EventID)) {
-            labelsModel.sync(data.Labels);
-            manageContactEmails(data.ContactEmails);
-            manageContacts(data.Contacts);
-            manageThreadings(data.Messages, data.Conversations);
-            manageDesktopNotifications(data.Messages);
-            manageMessageCounts(data.MessageCounts);
-            manageConversationCounts(data.ConversationCounts);
-            manageStorage(data.UsedSpace);
-            manageDomains(data.Domains);
-            manageMembers(data.Members);
-            manageOrganization(data.Organization);
-            manageFilters(data.Filters);
-            manageActiveMessage(data);
-
-            return manageUser(data, call).then(() => {
-                if (data.More === 1) {
-                    return call();
-                }
-            });
-        }
-
-        return Promise.resolve();
+        return manageUser(data, call).then(() => {
+            if (data.More === 1) {
+                return call();
+            }
+        });
     }
 
     function reset() {
