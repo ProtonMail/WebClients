@@ -24,21 +24,21 @@ function chooseLayoutBtns(
         const newLayout = getLayout(mode);
 
         if (angular.isDefined(newLayout)) {
-            const promise = settingsApi.setViewlayout({ ViewLayout: newLayout }).then(({ data = {} } = {}) => {
-                if (data.Code === 1000) {
-                    return eventManager.call().then(() => {
-                        $rootScope.$emit('settings', { type: 'viewLayout.updated', data: { viewLayout: newLayout } });
-                        tools.mobileResponsive();
-                        notification.success(gettextCatalog.getString('Layout saved', null));
-                    });
-                }
+            const promise = settingsApi
+                .setViewlayout({ ViewLayout: newLayout })
+                .then(({ data = {} } = {}) => {
+                    if (data.Error) {
+                        throw new Error(data.Error);
+                    }
 
-                if (data.Error) {
-                    return notification.error(data.Error);
-                }
+                    return eventManager.call();
+                })
+                .then(() => {
+                    $rootScope.$emit('settings', { type: 'viewLayout.updated', data: { viewLayout: newLayout } });
+                    tools.mobileResponsive();
+                    notification.success(gettextCatalog.getString('Layout saved', null));
+                });
 
-                notification.error('Error during saving layout mode');
-            });
             networkActivityTracker.track(promise);
         }
 
