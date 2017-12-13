@@ -1,5 +1,5 @@
 /* @ngInject */
-function contactEmails($rootScope, Contact, networkActivityTracker) {
+function contactEmails($rootScope, Contact) {
     const emails = [];
     const set = (data) => emails.push(...data);
     const fetch = () => emails;
@@ -23,10 +23,9 @@ function contactEmails($rootScope, Contact, networkActivityTracker) {
         return fetch();
     };
 
-    const load = () => {
-        const promise = loadCache();
-        networkActivityTracker.track(promise);
-        return promise;
+    const reset = () => {
+        clear();
+        return loadCache();
     };
 
     $rootScope.$on('createContactEmail', (event, contactEmail) => {
@@ -52,6 +51,10 @@ function contactEmails($rootScope, Contact, networkActivityTracker) {
         }
     });
 
-    return { set, fetch, clear, findIndex, load };
+    $rootScope.$on('resetContactEmails', () => {
+        reset();
+    });
+
+    return { set, fetch, clear, findIndex, load: loadCache };
 }
 export default contactEmails;
