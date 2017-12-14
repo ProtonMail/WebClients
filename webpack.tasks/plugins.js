@@ -9,6 +9,7 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const ImageminPlugin = require('imagemin-webpack-plugin').default;
 const HtmlWebpackIncludeAssetsPlugin = require('html-webpack-include-assets-plugin');
 const imageminMozjpeg = require('imagemin-mozjpeg');
+const WebpackNotifierPlugin = require('webpack-notifier');
 
 const CONFIG = require('../env/conf.build');
 const env = require('../env/config');
@@ -47,6 +48,7 @@ const minifyJS = () => {
 };
 
 const list = [
+    new WebpackNotifierPlugin(),
     new CopyWebpackPlugin([
         { from: 'src/manifest.json' },
         { from: 'src/.htaccess' },
@@ -125,8 +127,8 @@ const list = [
         template: 'src/app.html',
         inject: 'body',
         hash: false,
-        excludeChunks: ['styles', 'html', 'app.css'],
-        chunks: ['openpgp.min', 'vendor', 'templates', 'app'],
+        excludeChunks: ['html', 'app.css'],
+        chunks: ['styles', 'openpgp.min', 'vendor', 'templates', 'app'],
         chunksSortMode: 'manual',
         minify: minify()
     }),

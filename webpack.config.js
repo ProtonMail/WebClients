@@ -33,7 +33,7 @@ module.exports = {
     },
     entry: {
         templates: TEMPLATES_GLOB,
-        app: ['./src/app/app.js', './src/sass/app.scss'],
+        app: './src/app/app.js',
         appLazy: ['./src/app/appLazy.js'],
         styles: CSS_GLOB.concat(['./src/sass/app.scss']),
         html: './src/app.html'

@@ -25,27 +25,29 @@ module.exports = [
     },
     {
         test: /\.scss$/,
-        use: ExtractTextPlugin.extract({
-            use: [
-                {
-                    loader: 'css-loader',
-                    options: {
-                        minimize: env.isDistRelease()
+        use: ['css-hot-loader'].concat(
+            ExtractTextPlugin.extract({
+                use: [
+                    {
+                        loader: 'css-loader',
+                        options: {
+                            minimize: env.isDistRelease()
+                        }
+                    },
+                    {
+                        loader: 'postcss-loader',
+                        options: {
+                            plugins: postcssPlugins
+                        }
+                    },
+                    {
+                        loader: 'sass-loader',
+                        options: {
+                            includePaths: [path.resolve('./src/sass')]
+                        }
                     }
-                },
-                {
-                    loader: 'postcss-loader',
-                    options: {
-                        plugins: postcssPlugins
-                    }
-                },
-                {
-                    loader: 'sass-loader',
-                    options: {
-                        includePaths: [path.resolve('./src/sass')]
-                    }
-                }
-            ]
-        })
+                ]
+            })
+        )
     }
 ];
