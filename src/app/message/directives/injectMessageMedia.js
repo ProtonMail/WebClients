@@ -45,7 +45,10 @@ function injectMessageMedia($rootScope, displayImages, displayEmbedded) {
 
             if (node.nodeName === 'IMG') {
                 node.onload = () => removeLoader(container, node.dataset.hash);
-                node.onerror = () => console.error(`Could not load ${node.getAttribute(selector)}`);
+                node.onerror = () => {
+                    console.error(`Could not load ${node.getAttribute(selector)}`);
+                    removeLoader(container, node.dataset.hash);
+                };
                 node.setAttribute(attribute, config.getValue(node));
             }
         });
