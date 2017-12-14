@@ -127,8 +127,8 @@ const list = [
         template: 'src/app.html',
         inject: 'body',
         hash: false,
-        excludeChunks: ['html', 'app.css'],
-        chunks: ['styles', 'openpgp.min', 'vendor', 'templates', 'app'],
+        excludeChunks: ['html', 'app.css', 'styles'],
+        chunks: ['openpgp.min', 'vendor', 'templates', 'app'],
         chunksSortMode: 'manual',
         minify: minify()
     }),
