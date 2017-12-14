@@ -26,19 +26,6 @@ module.exports = [
         ]
     },
     {
-        test: /\.gif$/,
-        use: [
-            {
-                loader: 'url-loader',
-                options: {
-                    limit: MAX_SIZE,
-                    name: 'assets/img/[name].[ext]',
-                    mimetype: 'image/gif'
-                }
-            }
-        ]
-    },
-    {
         test: /\.woff(2)?(\?v=[0-9]\.[0-9]\.[0-9])?$/,
         use: [
             {

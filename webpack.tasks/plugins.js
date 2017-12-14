@@ -57,11 +57,7 @@ const list = [
         { from: OPENPGP_WORKER, to: 'openpgp.worker.min.js' }
     ]),
 
-    new CopyWebpackPlugin([
-        { from: 'src/assets/img/decrypt1.gif', to: 'assets/img' },
-        { from: 'src/assets/img/small-spinner.gif', to: 'assets/img' },
-        { from: 'src/assets', to: 'assets' }
-    ]),
+    new CopyWebpackPlugin([{ from: 'src/assets', to: 'assets' }]),
 
     new ImageminPlugin({
         maxConcurrency: Infinity,
