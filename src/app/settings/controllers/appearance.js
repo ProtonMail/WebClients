@@ -33,27 +33,20 @@ function AppearanceController(
         $scope.saveTheme();
     };
 
-    $scope.saveTheme = function() {
-        const deferred = $q.defer();
-
-        networkActivityTracker.track(
-            settingsApi.theme({ Theme: $scope.appearance.cssTheme }).then((result) => {
-                if (result.data && result.data.Code === 1000) {
-                    notification.success(gettextCatalog.getString('Theme saved', null));
-                    eventManager.call().then(() => {
-                        deferred.resolve();
-                    });
-                } else if (result.data && result.data.Error) {
-                    notification.error(result.data.Error);
-                    deferred.reject();
-                } else {
-                    notification.error(gettextCatalog.getString('Unable to save your changes, please try again.', null, 'Error'));
-                    deferred.reject();
-                }
+    $scope.saveTheme = () => {
+        const promise = settingsApi
+            .theme({ Theme: $scope.appearance.cssTheme })
+            .then(() => {
+                notification.success(gettextCatalog.getString('Theme saved', null, 'Info'));
             })
-        );
+            .then(eventManager.call)
+            .catch((e) => {
+                console.error(e);
+                throw new Error(gettextCatalog.getString('Unable to save your changes, please try again.', null, 'Error'));
+            });
 
-        return deferred.promise;
+        networkActivityTracker.track(promise);
+        return promise;
     };
 
     $scope.clearTheme = function() {

@@ -19,7 +19,7 @@ function ElementsController(
     CONSTANTS,
     embedded,
     eventManager,
-    firstLoad,
+    firstLoadState,
     gettextCatalog,
     Label,
     networkActivityTracker,
@@ -447,7 +447,7 @@ function ElementsController(
 
         return promise.then(
             (elements) => {
-                firstLoad.set(false);
+                firstLoadState.set(false);
                 const page = ~~$stateParams.page || 0;
                 const selectedMap = $scope.conversations.reduce((map, element) => {
                     if (element.Selected) {

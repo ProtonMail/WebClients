@@ -19,7 +19,7 @@ function OutsideController(
     attachmentModelOutside,
     sanitize
 ) {
-    // Variables
+    attachmentModelOutside.load();
     const decryptedToken = secureSessionStorage.getItem('proton:decrypted_token');
     const password = pmcw.decode_utf8_base64(secureSessionStorage.getItem('proton:encrypted_password'));
     const tokenId = $stateParams.tag;

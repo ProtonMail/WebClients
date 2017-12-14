@@ -12,12 +12,10 @@ function authentication(
     checkKeysFormat,
     CONFIG,
     CONSTANTS,
-    contactEmails,
     errorReporter,
     gettextCatalog,
     upgradePassword,
     Key,
-    Label,
     networkActivityTracker,
     pmcw,
     secureSessionStorage,
@@ -25,7 +23,6 @@ function authentication(
     User,
     passwords,
     srp,
-    labelsModel,
     setupKeys,
     AppModel,
     tempStorage,
@@ -33,18 +30,6 @@ function authentication(
     upgradeKeys
 ) {
     let keys = {}; // Store decrypted keys
-    /**
-     * Clean contact datas received from the BE
-     * @param  {Array} contacts
-     * @return {Array}
-     */
-    function cleanContacts(contacts = []) {
-        return contacts.map((contact) => {
-            contact.Name = sanitize.input(contact.Name);
-            contact.Email = sanitize.input(contact.Email);
-            return contact;
-        });
-    }
 
     const auth = {
         headersSet: false,
@@ -69,88 +54,76 @@ function authentication(
         },
 
         fetchUserInfo() {
-            return networkActivityTracker.track(
-                User.get()
-                    .then(({ data = {} } = {}) => {
-                        if (data.Code === 1000) {
-                            return data.User;
+            const promise = User.get()
+                .then(({ data = {} } = {}) => {
+                    if (data.Code === 1000) {
+                        return data.User;
+                    }
+                    throw new Error(data.Error || 'Error during user request');
+                })
+                .then((user) => {
+                    // Redirect to setup if necessary
+                    if (user.Keys.length === 0) {
+                        $state.go('login.setup');
+                        return Promise.resolve(user);
+                    }
+
+                    user.subuser = angular.isDefined(user.OrganizationPrivateKey);
+                    // Required for subuser
+                    const decryptOrganization = () => {
+                        if (user.subuser) {
+                            return pmcw.decryptPrivateKey(user.OrganizationPrivateKey, api.getPassword());
                         }
-                        throw new Error(data.Error || 'Error during user request');
-                    })
-                    .then((user) => {
-                        // Redirect to setup if necessary
-                        if (user.Keys.length === 0) {
-                            $state.go('login.setup');
-                            return Promise.resolve(user);
+                        return Promise.resolve();
+                    };
+
+                    // Hacky fix for missing organizations
+                    const fixOrganization = () => {
+                        if (user.Role === CONSTANTS.FREE_USER_ROLE && user.Subscribed) {
+                            return setupKeys
+                                .generateOrganization(api.getPassword())
+                                .then((response) => {
+                                    const privateKey = response.privateKeyArmored;
+
+                                    return {
+                                        DisplayName: 'My Organization',
+                                        PrivateKey: privateKey
+                                    };
+                                })
+                                .then((params) => {
+                                    return organizationApi.create(params);
+                                });
                         }
+                        return Promise.resolve();
+                    };
 
-                        user.subuser = angular.isDefined(user.OrganizationPrivateKey);
-                        // Required for subuser
-                        const decryptOrganization = () => {
-                            if (user.subuser) {
-                                return pmcw.decryptPrivateKey(user.OrganizationPrivateKey, api.getPassword());
-                            }
-                            return Promise.resolve();
-                        };
+                    return $q
+                        .all({
+                            contacts: $injector.get('contactEmails').load(),
+                            fix: fixOrganization(),
+                            organizationKey: decryptOrganization()
+                        })
+                        .then(({ organizationKey }) => {
+                            return { user, organizationKey };
+                        })
+                        .then(({ user, organizationKey }) => {
+                            const storeKeys = (keys) => {
+                                api.clearKeys();
+                                _.each(keys, ({ address, key, pkg }) => {
+                                    api.storeKey(address.ID, key.ID, pkg);
+                                });
+                            };
 
-                        // Hacky fix for missing organizations
-                        const fixOrganization = () => {
-                            if (user.Role === CONSTANTS.FREE_USER_ROLE && user.Subscribed) {
-                                return setupKeys
-                                    .generateOrganization(api.getPassword())
-                                    .then((response) => {
-                                        const privateKey = response.privateKeyArmored;
-
-                                        return {
-                                            DisplayName: 'My Organization',
-                                            PrivateKey: privateKey
-                                        };
-                                    })
-                                    .then((params) => {
-                                        return organizationApi.create(params);
-                                    });
-                            }
-                            return Promise.resolve();
-                        };
-
-                        return $q
-                            .all({
-                                labels: Label.query(),
-                                contacts: contactEmails.load(),
-                                fix: fixOrganization(),
-                                organizationKey: decryptOrganization()
-                            })
-                            .then(({ labels, organizationKey }) => {
-                                if (labels.data && labels.data.Code === 1000) {
-                                    labelsModel.set(labels.data.Labels);
-
-                                    return { user, organizationKey };
-                                }
-
-                                if (labels.data && labels.data.Error) {
-                                    throw new Error(labels.data.Error);
-                                }
-
-                                throw new Error('Error during label / contact request');
-                            })
-                            .then(({ user, organizationKey }) => {
-                                const storeKeys = (keys) => {
-                                    api.clearKeys();
-                                    _.each(keys, ({ address, key, pkg }) => {
-                                        api.storeKey(address.ID, key.ID, pkg);
-                                    });
-                                };
-
-                                return setupKeys
-                                    .decryptUser(user, organizationKey, api.getPassword())
-                                    .then(({ keys }) => (storeKeys(keys), user))
-                                    .catch((error) => {
-                                        $exceptionHandler(error);
-                                        throw error;
-                                    });
-                            });
-                    })
-            );
+                            return setupKeys
+                                .decryptUser(user, organizationKey, api.getPassword())
+                                .then(({ keys }) => (storeKeys(keys), user))
+                                .catch((error) => {
+                                    $exceptionHandler(error);
+                                    throw error;
+                                });
+                        });
+                });
+            return networkActivityTracker.track(promise);
         }
     };
 
@@ -472,30 +445,35 @@ function authentication(
         },
 
         clearData() {
-            // Reset $http server
-            $http.defaults.headers.common['x-pm-session'] = undefined;
-            $http.defaults.headers.common.Authorization = undefined;
-            $http.defaults.headers.common['x-pm-uid'] = undefined;
-            // Completely clear sessionstorage
-            secureSessionStorage.clear();
-            // Delete data key
-            delete auth.data;
-            // Clean keys
-            keys = {};
-            auth.headersSet = false;
-            // Remove all user information
-            this.user = {};
-            // Clean onbeforeunload listener
-            window.onbeforeunload = undefined;
-            // Disable animation
-            $rootScope.loggingOut = false;
-            // Re-initialize variables
-            $rootScope.isLoggedIn = this.isLoggedIn();
-            $rootScope.isLocked = this.isLocked();
-            $rootScope.isSecure = this.isSecured();
-            AppModel.set('domoArigato', false);
-            AppModel.set('loggedIn', false);
-            contactEmails.clear();
+            try {
+                // Reset $http server
+                $http.defaults.headers.common['x-pm-session'] = undefined;
+                $http.defaults.headers.common.Authorization = undefined;
+                $http.defaults.headers.common['x-pm-uid'] = undefined;
+                // Completely clear sessionstorage
+                secureSessionStorage.clear();
+                // Delete data key
+                delete auth.data;
+                // Clean keys
+                keys = {};
+                auth.headersSet = false;
+                // Remove all user information
+                this.user = {};
+                // Clean onbeforeunload listener
+                window.onbeforeunload = undefined;
+                // Disable animation
+                $rootScope.loggingOut = false;
+                // Re-initialize variables
+                $rootScope.isLoggedIn = this.isLoggedIn();
+                $rootScope.isLocked = this.isLocked();
+                $rootScope.isSecure = this.isSecured();
+                AppModel.set('domoArigato', false);
+                AppModel.set('loggedIn', false);
+                $injector.get('contactEmails').clear();
+            } catch (e) {
+                // Do nothing as we lazy load some service it can throw an error
+                // -> ex signup
+            }
         },
 
         // Returns an async promise that will be successful only if the mailbox password

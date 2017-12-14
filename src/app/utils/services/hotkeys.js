@@ -1,5 +1,5 @@
 /* @ngInject */
-function hotkeys(hotkeyModal, $rootScope, $state, authentication, CONSTANTS, messageModel, gettextCatalog) {
+function hotkeys(hotkeyModal, $rootScope, $state, authentication, CONSTANTS, $injector, gettextCatalog) {
     const I18N = {
         OPEN_COMPOSER: gettextCatalog.getString('Open the composer', null, 'Hotkey description'),
         CREATE_REPLY: gettextCatalog.getString('Create a reply', null, 'Hotkey description'),
@@ -23,9 +23,15 @@ function hotkeys(hotkeyModal, $rootScope, $state, authentication, CONSTANTS, mes
         UNSELECT_ALL: gettextCatalog.getString('Unselect all elements', null, 'Hotkey description')
     };
 
+
     const action = (cb) => () => (cb(), false);
     const redirect = (state) => () => $state.go(state);
-    const emit = (action, data = {}) => () => $rootScope.$emit(action, data);
+    const emit = (action, data = {}) => () => {
+        if (action === 'composer.new') {
+            data.data.message = $injector.get('messageModel')();
+        }
+        $rootScope.$emit(action, data);
+    };
     const broadcast = (action, data = {}) => () => $rootScope.$broadcast(action, data);
 
     const openMarked = (event) => {
@@ -60,9 +66,7 @@ function hotkeys(hotkeyModal, $rootScope, $state, authentication, CONSTANTS, mes
     const composer = action(
         emit('composer.new', {
             type: 'new',
-            data: {
-                message: messageModel()
-            }
+            data: {}
         })
     );
 

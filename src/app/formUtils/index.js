@@ -3,6 +3,7 @@ import captchaView from './directives/captchaView';
 import cardCvc from './directives/cardCvc';
 import cardNumber from './directives/cardNumber';
 import cardView from './directives/cardView';
+import checkTypoEmails from './services/checkTypoEmails';
 import compareTo from './directives/compareTo';
 import cvcTooltip from './directives/cvcTooltip';
 import danger from './directives/danger';
@@ -34,4 +35,5 @@ export default angular
     .directive('validUsername', validUsername)
     .directive('validatorTypoEmail', validatorTypoEmail)
     .factory('cardModel', cardModel)
+    .factory('checkTypoEmails', checkTypoEmails)
     .factory('countriesListModel', countriesListModel).name;

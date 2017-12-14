@@ -6,6 +6,7 @@ function signupUserProcess(
     settingsApi,
     signupModel,
     authentication,
+    lazyLoader,
     Address,
     $state,
     setupKeys,
@@ -73,8 +74,9 @@ function signupUserProcess(
         return data;
     }
 
-    function doGetUserInfo() {
+    async function doGetUserInfo() {
         dispatch('user.get', { value: true });
+        await lazyLoader.app();
         return authentication.fetchUserInfo();
     }
 

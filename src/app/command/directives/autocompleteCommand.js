@@ -112,7 +112,6 @@ function autocompleteCommand($rootScope, autocompleteBuilder, autocompleteComman
             el.off('keydown', onKeyDown);
             el.off('input', onInput);
             autocompleteCommandModel.reset();
-            awesomplete.destroy();
         });
     };
     return {

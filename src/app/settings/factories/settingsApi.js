@@ -23,10 +23,10 @@ function settingsApi($http, url, srp) {
 
     const setLogging = (params) => {
         return $http.put(requestURL('logauth'), params).then(({ data = {} }) => {
-            if (data.Code === 1000) {
-                return data;
+            if (data.Code !== 1000) {
+                throw new Error(data.Error);
             }
-            throw new Error(data.Error);
+            return data;
         });
     };
 
@@ -37,12 +37,19 @@ function settingsApi($http, url, srp) {
     const disableTwoFactor = (creds = {}) => {
         return srp.performSRPRequest('PUT', '/settings/2fa', {}, creds).catch(errorSRP);
     };
+    const theme = (data) => {
+        $http.put(requestURL('theme'), data).then(({ data = {} } = {}) => {
+            if (data.Code !== 1000) {
+                return data;
+            }
+            throw new Error(data.Error);
+        });
+    };
 
     const passwordUpgrade = (data) => $http.put(requestURL('password', 'upgrade'), data);
     const signature = (data) => $http.put(requestURL('signature'), data);
     const updatePMSignature = (data) => $http.put(requestURL('pmsignature'), data);
     const display = (data) => $http.put(requestURL('display'), data);
-    const theme = (data) => $http.put(requestURL('theme'), data);
     const notify = (data) => $http.put(requestURL('notify'), data);
     const autosave = (data) => $http.put(requestURL('autosave'), data);
     const setLanguage = (data) => $http.put(requestURL('language'), data);

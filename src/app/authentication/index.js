@@ -11,12 +11,13 @@ import authApi from './services/authApi';
 import handle401 from './services/handle401';
 import handle403 from './services/handle403';
 import handle9001 from './services/handle9001';
+import logoutManager from './services/logoutManager';
 import passwords from './services/passwords';
 import srp from './services/srp';
 import upgradePassword from './services/upgradePassword';
 
 export default angular
-    .module('proton.authentication', ['proton.constants', 'proton.utils', 'proton.settings', 'proton.keys'])
+    .module('proton.authentication', ['proton.constants', 'proton.utils', 'proton.keys'])
     // Global functions
     .run(($rootScope, authentication) => {
         authentication.detectAuthenticationState();
@@ -31,6 +32,7 @@ export default angular
     .factory('authHttpResponseInterceptor', authHttpResponseInterceptor)
     .factory('helpLoginModal', helpLoginModal)
     .factory('loginPasswordModal', loginPasswordModal)
+    .factory('logoutManager', logoutManager)
     .provider('pmcw', pmcw)
     .factory('authentication', auth)
     .factory('authApi', authApi)

@@ -11,6 +11,7 @@ import chooseComposerMode from './directives/chooseComposerMode';
 import headerBlock from './directives/headerBlock';
 import labelsEditorModel from './factories/labelsEditorModel';
 import settingsApi from './factories/settingsApi';
+import sharedSecretModal from './modals/sharedSecretModal';
 
 export default angular
     .module('proton.settings', [])
@@ -26,4 +27,5 @@ export default angular
     .directive('chooseComposerMode', chooseComposerMode)
     .directive('headerBlock', headerBlock)
     .factory('labelsEditorModel', labelsEditorModel)
+    .factory('sharedSecretModal', sharedSecretModal)
     .factory('settingsApi', settingsApi).name;

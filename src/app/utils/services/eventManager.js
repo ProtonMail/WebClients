@@ -8,17 +8,12 @@ function eventManager(
     $timeout,
     AppModel,
     authentication,
-    cache,
-    cacheCounters,
     cachePages,
     CONSTANTS,
     Contact,
     desktopNotifications,
     Events,
     gettextCatalog,
-    Label,
-    labelsModel,
-    manageUser,
     notify,
     sanitize
 ) {
@@ -40,7 +35,6 @@ function eventManager(
         delete MODEL.promiseCancel;
     };
     const manageActiveMessage = ({ Messages = [] }) => Messages.length && dispatch('activeMessages', { messages: _.pluck(Messages, 'Message') });
-    const isDifferent = (eventID) => MODEL.ID !== eventID;
 
     /**
      * Clean contact datas
@@ -77,15 +71,17 @@ function eventManager(
 
     function manageMessageCounts(counts) {
         if (angular.isDefined(counts)) {
-            const labelIDs = [inbox, allDrafts, drafts, allSent, sent, trash, spam, allmail, archive, starred].concat(labelsModel.ids());
+            const labelIDs = [inbox, allDrafts, drafts, allSent, sent, trash, spam, allmail, archive, starred].concat(
+                $injector.get('labelsModel').ids()
+            );
 
             _.each(labelIDs, (labelID) => {
                 const count = _.findWhere(counts, { LabelID: labelID });
 
                 if (angular.isDefined(count)) {
-                    cacheCounters.updateMessage(count.LabelID, count.Total, count.Unread);
+                    $injector.get('cacheCounters').updateMessage(count.LabelID, count.Total, count.Unread);
                 } else {
-                    cacheCounters.updateMessage(labelID, 0, 0);
+                    $injector.get('cacheCounters').updateMessage(labelID, 0, 0);
                 }
             });
 
@@ -95,15 +91,17 @@ function eventManager(
 
     function manageConversationCounts(counts) {
         if (angular.isDefined(counts)) {
-            const labelIDs = [inbox, allDrafts, drafts, allSent, sent, trash, spam, allmail, archive, starred].concat(labelsModel.ids());
+            const labelIDs = [inbox, allDrafts, drafts, allSent, sent, trash, spam, allmail, archive, starred].concat(
+                $injector.get('labelsModel').ids()
+            );
 
             _.each(labelIDs, (labelID) => {
                 const count = _.findWhere(counts, { LabelID: labelID });
 
                 if (angular.isDefined(count)) {
-                    cacheCounters.updateConversation(count.LabelID, count.Total, count.Unread);
+                    $injector.get('cacheCounters').updateConversation(count.LabelID, count.Total, count.Unread);
                 } else {
-                    cacheCounters.updateConversation(labelID, 0, 0);
+                    $injector.get('cacheCounters').updateConversation(labelID, 0, 0);
                 }
             });
         }
@@ -121,14 +119,14 @@ function eventManager(
         }
 
         if (events.length > 0) {
-            cache.events(events, true);
+            $injector.get('cache').events(events, true);
         }
     }
 
     function manageDesktopNotifications(messages = []) {
         if (messages.length) {
             const threadingIsOn = authentication.user.ViewMode === CONVERSATION_VIEW_MODE;
-            const { all } = labelsModel.get('map');
+            const { all } = $injector.get('labelsModel').get('map');
 
             const filterNotify = ({ LabelIDs = [] }) => {
                 return LabelIDs.map((ID) => all[ID] || {}).filter(({ Notify }) => Notify);
@@ -244,15 +242,15 @@ function eventManager(
     }
 
     function refreshMail() {
-        cache.reset();
+        $injector.get('cache').reset();
         cachePages.clear();
-        cacheCounters.reset();
-        cache.callRefresh();
-        cacheCounters.query();
+        $injector.get('cacheCounters').reset();
+        $injector.get('cache').callRefresh();
+        $injector.get('cacheCounters').query();
 
         return authentication.fetchUserInfo().then(() => {
             $rootScope.$broadcast('updateUser');
-            labelsModel.refresh();
+            $injector.get('labelsModel').refresh();
         });
     }
 
@@ -276,7 +274,7 @@ function eventManager(
             return Promise.resolve();
         }
 
-        labelsModel.sync(data.Labels);
+        $injector.get('labelsModel').sync(data.Labels);
         manageContactEmails(data.ContactEmails);
         manageContacts(data.Contacts);
         manageThreadings(data.Messages, data.Conversations);
@@ -290,11 +288,13 @@ function eventManager(
         manageFilters(data.Filters);
         manageActiveMessage(data);
 
-        return manageUser(data, call).then(() => {
-            if (data.More === 1) {
-                return call();
-            }
-        });
+        return $injector
+            .get('manageUser')(data, call)
+            .then(() => {
+                if (data.More === 1) {
+                    return call();
+                }
+            });
     }
 
     function reset() {

@@ -397,13 +397,8 @@ function LoginController(
     };
 
     $scope.reset = () => {
-        if (CONSTANTS.KEY_PHASE > 2) {
-            $rootScope.isLoggedIn = false;
-            $state.go('support.reset-password');
-        } else {
-            tempStorage.setItem('creds', $scope.creds);
-            $state.go('reset');
-        }
+        $rootScope.isLoggedIn = false;
+        $state.go('support.reset-password');
     };
 
     initialization();

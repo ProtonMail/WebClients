@@ -1,5 +1,5 @@
 /* @ngInject */
-function sharedSecretModal(authentication, pmModal, $timeout, webcrypto) {
+function sharedSecretModal(authentication, pmModal, webcrypto) {
     return pmModal({
         controllerAs: 'ctrl',
         templateUrl: 'templates/modals/twofactor/sharedSecret.tpl.html',

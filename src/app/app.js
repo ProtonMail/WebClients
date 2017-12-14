@@ -1,40 +1,23 @@
-import address from './address/index';
+import paginator from './paginator/index';
 import analytics from './analytics/index';
-import attachments from './attachments/index';
 import authentication from './authentication/index';
-import autoresponder from './autoresponder/index';
-import blackFriday from './blackFriday/index';
-import bridge from './bridge/index';
 import browserSupport from './browserSupport/index';
+import bridge from './bridge/index';
 import bugReport from './bugReport/index';
-import command from './command/index';
 import commons from './commons/index';
-import composer from './composer/index';
-import conversation from './conversation/index';
-import contact from './contact/index';
 import core from './core/index';
-import dashboard from './dashboard/index';
-import dnd from './dnd/index';
 import domains from './domains/index';
-import elements from './elements/index';
-import filter from './filter/index';
 import formUtils from './formUtils/index';
 import keys from './keys/index';
-import labels from './labels/index';
 import members from './members/index';
-import message from './message/index';
 import organization from './organization/index';
 import outside from './outside/index';
 import payment from './payment/index';
 import search from './search/index';
 import settings from './settings/index';
-import sidebar from './sidebar/index';
-import squire from './squire/index';
 import ui from './ui/index';
 import user from './user/index';
 import utils from './utils/index';
-import vpn from './vpn/index';
-import wizard from './wizard/index';
 
 import CONFIG from './config';
 import constants from './constants';
@@ -43,54 +26,34 @@ import routes from './routes';
 angular
     .module('proton', [
         'gettext',
-        'as.sortable',
         'cgNotify',
         'ngCookies',
-        'ngIcal',
         'ngMessages',
         'ngSanitize',
-        'ngScrollbars',
-        'pikaday',
         'ui.router',
-        'ui.codemirror',
+        'oc.lazyLoad',
         'templates-app',
-        address,
+        paginator,
         analytics,
-        attachments,
         authentication,
-        autoresponder,
-        blackFriday,
+        browserSupport,
         bridge,
         browserSupport,
         bugReport,
-        command,
         commons,
-        composer,
-        conversation,
-        contact,
         core,
-        dashboard,
-        dnd,
         domains,
-        elements,
-        filter,
         formUtils,
         keys,
-        labels,
         members,
-        message,
         organization,
         outside,
         payment,
         search,
         settings,
-        sidebar,
-        squire,
         ui,
         user,
         utils,
-        vpn,
-        wizard,
         constants,
         routes
     ])
@@ -106,9 +69,12 @@ angular
         authentication,
         networkActivityTracker,
         CONSTANTS,
-        tools
+        tools,
+        lazyLoader
     ) => {
         FastClick.attach(document.body);
+
+        lazyLoader.app();
 
         // Manage responsive changes
         window.addEventListener('resize', _.debounce(tools.mobileResponsive, 50));
@@ -119,12 +85,6 @@ angular
 
         // SVG Polyfill for IE11 @todo lazy load
         window.svg4everybody();
-
-        // Set new relative time thresholds
-        moment.relativeTimeThreshold('s', 59); // s seconds least number of seconds to be considered a minute
-        moment.relativeTimeThreshold('m', 59); // m minutes least number of minutes to be considered an hour
-        moment.relativeTimeThreshold('h', 23); // h hours   least number of hours to be considered a day
-
         $rootScope.networkActivity = networkActivityTracker;
     })
 
@@ -200,24 +160,14 @@ angular
             $('#loading_pm, #pm_slow, #pm_slow2').remove();
         });
     })
-
-    //
-    // Rejection manager
-    //
-
     .run(($rootScope, $state) => {
         $rootScope.$on('$stateChangeError', (event, current, previous, rejection, ...arg) => {
-            console.error('stateChangeError', event, current, previous, rejection, arg);
             $state.go('support.message');
+            console.warn('stateChangeError', event, current, previous, rejection, arg);
+            console.error(arg[1]);
         });
     })
-
-    //
-    // Console messages
-    //
-
     .run((consoleMessage) => consoleMessage())
-
     .config(($logProvider, $compileProvider, $qProvider, CONFIG) => {
         const debugInfo = CONFIG.debug || false;
         $logProvider.debugEnabled(debugInfo);

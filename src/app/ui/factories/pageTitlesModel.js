@@ -1,5 +1,5 @@
 /* @ngInject */
-function pageTitlesModel(CONSTANTS, $rootScope, cacheCounters, gettextCatalog, authentication, $state, tools, labelsModel) {
+function pageTitlesModel(CONSTANTS, $injector, $rootScope, gettextCatalog, authentication, $state, tools) {
     const { MAILBOX_IDENTIFIERS } = CONSTANTS;
     const DISPLAY_NUMBER = ['inbox', 'drafts', 'sent', 'starred', 'archive', 'spam', 'trash', 'allmail', 'allDrafts', 'allSent'];
 
@@ -35,6 +35,7 @@ function pageTitlesModel(CONSTANTS, $rootScope, cacheCounters, gettextCatalog, a
         contactsCreate: gettextCatalog.getString('Create Contact', null, 'Title'),
         signup: gettextCatalog.getString('Signup', null, 'Title'),
         vpn: gettextCatalog.getString('VPN', null, 'Title'),
+        'support.message': gettextCatalog.getString('Error encountered', null, 'Title'),
         'eo.message': gettextCatalog.getString('Encrypted Message', null, 'Title'),
         'eo.reply': gettextCatalog.getString('Encrypted Reply', null, 'Title')
     });
@@ -56,7 +57,7 @@ function pageTitlesModel(CONSTANTS, $rootScope, cacheCounters, gettextCatalog, a
      * @return {String}
      */
     const getLabelState = () => {
-        const { Name = '' } = labelsModel.read($state.params.label) || {};
+        const { Name = '' } = $injector.get('labelsModel').read($state.params.label) || {};
         return Name || gettextCatalog.getString('Label', null, 'Title');
     };
 
@@ -77,6 +78,7 @@ function pageTitlesModel(CONSTANTS, $rootScope, cacheCounters, gettextCatalog, a
      */
     const getNumberMessage = () => {
         const mailbox = tools.currentMailbox();
+        const cacheCounters = $injector.get('cacheCounters');
 
         if (mailbox === 'label') {
             return cacheCounters[getCounterKey()]($state.params.label);
@@ -126,8 +128,12 @@ function pageTitlesModel(CONSTANTS, $rootScope, cacheCounters, gettextCatalog, a
     const find = ({ name } = {}, withEmail = true) => {
         const mailbox = tools.currentMailbox() || tools.filteredState();
 
-        if (/login|reset-password/.test(mailbox || name)) {
+        if (/login|reset-password|pre-invite|invite/.test(mailbox || name)) {
             return formatTitle(MAP.login);
+        }
+
+        if (/(signup|eo\.|support)/.test(mailbox || name)) {
+            return formatTitle(MAP[mailbox || name]);
         }
 
         if (/contacts.list/.test(mailbox || name)) {

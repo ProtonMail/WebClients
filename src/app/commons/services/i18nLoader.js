@@ -1,5 +1,6 @@
 /* @ngInject */
-function i18nLoader(CONFIG, $rootScope, gettextCatalog, pikadayConfiguration, dateUtils) {
+function i18nLoader(CONFIG, $rootScope, gettextCatalog, $injector) {
+    const CACHE = {};
     const upperCaseLocale = (locale = '') => (locale === 'en' ? 'us' : locale).toUpperCase();
     const dispatch = (type, data = {}) => $rootScope.$emit('i18n', { type, data });
 
@@ -32,6 +33,13 @@ function i18nLoader(CONFIG, $rootScope, gettextCatalog, pikadayConfiguration, da
             const [, locale] = location.search.match(/language=(([a-z]{2,}(_|-)[A-Z]{2,})|([a-z]{2,}))/) || [];
             return formatLocale(locale);
         }
+    };
+
+    const listLocales = (lang) => {
+        const navigatorLocale = getLocale();
+        const locale = lang || navigatorLocale;
+        const [shortLocale] = locale.split('_');
+        return _.extend(CACHE, { locale, navigatorLocale, shortLocale });
     };
 
     const localeRanker = (navigatorLocaleData) => {
@@ -82,7 +90,7 @@ function i18nLoader(CONFIG, $rootScope, gettextCatalog, pikadayConfiguration, da
         };
     };
 
-    const selectLocale = (baseLocale, navigatorLocale) => {
+    const selectLocale = (baseLocale, navigatorLocale = formatLocale()) => {
         // select one of the locales that have the same language as the base locale
         // and has the same settings as the navigator locale.
 
@@ -105,13 +113,18 @@ function i18nLoader(CONFIG, $rootScope, gettextCatalog, pikadayConfiguration, da
         return baseLocale;
     };
 
-    const localizePikaday = (response) => {
+    const localizePikaday = () => {
+        // Because we will lazy load these modules
+        const dateUtils = $injector.get('dateUtils');
+        const pikadayConfiguration = $injector.get('pikadayConfiguration');
+
         /*
-             Localize pikaday
-             american days means that the translated string is in american order:
-             sunday, monday, tuesday, wednesday
-             This is because pikaday expects this order. The actual order of the days is set by the firstday parameter.
-             */
+            Localize pikaday
+            american days means that the translated string is in american order:
+            sunday, monday, tuesday, wednesday
+            This is because pikaday expects this order.
+            The actual order of the days is set by the firstday parameter.
+         */
         const americanDays = _.sortBy(dateUtils.I18N.days.slice(), (day) => day.value);
         const locale = {
             previousMonth: gettextCatalog.getString('Previous Month', null, 'Pikaday'),
@@ -126,35 +139,37 @@ function i18nLoader(CONFIG, $rootScope, gettextCatalog, pikadayConfiguration, da
             firstDay: moment.localeData().firstDayOfWeek(),
             format: moment.localeData().longDateFormat('L')
         });
-
-        return response;
     };
 
-    const localizeDateUtils = async () => dateUtils.init();
+    const localizeDate = async () => {
+        const { navigatorLocale, shortLocale } = CACHE;
+        $injector.get('dateUtils').init();
 
-    const loadGettextCatalog = (lang) => {
-        const navigatorLocale = getLocale();
-        const locale = lang || navigatorLocale;
+        /**
+         * We want to use a more specific locale because a language isn't directly connect to a language:
+         * e.g. English is used by U.S./Canada and U.K. but U.S./Canada use Sunday as the first day and
+         * the U.K. uses Monday.
+         * It's also better if you consider that all untranslated languages use English.
+         * moment.localeData() uses the selected language in the interface.
+         * Note that this doesn't only apply to the English language, the same occurs when considering:
+         * French-Canada and France (Both French but: Sunday/Monday);
+         * Brazil and Portugal (Both Portugese but: Sunday/Monday);
+         * Spain and Hispanic-America (Both Spanish but: Sunday/Monday);
+         * Iraq, Saudi-Arabia and Maroc (Both Arabic but: Saturday/Sunday/Monday).
+         */
+        moment.locale(selectLocale(shortLocale, navigatorLocale));
+
+        localizePikaday();
+        CACHE.langCountry = moment.locale();
+        dispatch('load', { lang: CACHE.langCountry });
+    };
+
+    const loadGettextCatalog = async (lang) => {
+        const { locale, shortLocale } = listLocales(lang);
 
         gettextCatalog.debugPrefix = '';
         gettextCatalog.setCurrentLanguage(locale);
         gettextCatalog.debug = CONFIG.debug || false;
-
-        const [shortLocale] = locale.split('_');
-
-        /*
-             * We want to use a more specific locale because a language isn't directly connect to a language:
-             * e.g. English is used by U.S./Canada and U.K. but U.S./Canada use Sunday as the first day and
-             * the U.K. uses Monday. It's also better if you consider that all untranslated languages use English.
-             * moment.localeData() uses the selected language in the interface.
-
-             * Note that this doesn't only apply to the English language, the same occurs when considering:
-             * French-Canada and France (Both French but: Sunday/Monday);
-             * Brazil and Portugal (Both Portugese but: Sunday/Monday);
-             * Spain and Hispanic-America (Both Spanish but: Sunday/Monday);
-             * Iraq, Saudi-Arabia and Maroc (Both Arabic but: Saturday/Sunday/Monday).
-             */
-        moment.locale(selectLocale(shortLocale, navigatorLocale));
 
         document.documentElement.lang = shortLocale;
 
@@ -168,18 +183,12 @@ function i18nLoader(CONFIG, $rootScope, gettextCatalog, pikadayConfiguration, da
         if (languageMatch) {
             return gettextCatalog.loadRemote(`/i18n/${languageMatch}.json`);
         }
-
-        return Promise.resolve();
     };
 
-    const load = (lang) => {
-        return loadGettextCatalog(lang)
-            .then(localizeDateUtils)
-            .then(localizePikaday)
-            .then(() => (load.langCountry = moment.locale()))
-            .then(() => dispatch('load', { lang: load.langCountry }));
+    return {
+        localizeDate,
+        translate: loadGettextCatalog,
+        langCountry: CACHE.langCountry
     };
-
-    return load;
 }
 export default i18nLoader;

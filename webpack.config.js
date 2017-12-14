@@ -12,7 +12,7 @@ const BUILD_TARGET = !env.isDistRelease() ? 'build' : 'dist';
 
 /**
  * Some plugins are broken -> uglifyJS
- * And don't catch their Error, we need to see them
+ * And don't catch their errors, we need to see them
  * tada !!
  */
 process.on('unhandledRejection', (reason, p) => {
@@ -34,6 +34,7 @@ module.exports = {
     entry: {
         templates: TEMPLATES_GLOB,
         app: ['./src/app/app.js', './src/sass/app.scss'],
+        appLazy: ['./src/app/appLazy.js'],
         styles: CSS_GLOB.concat(['./src/sass/app.scss']),
         html: './src/app.html'
     },
@@ -45,7 +46,7 @@ module.exports = {
     },
     output: {
         path: path.resolve(`./${BUILD_TARGET}`),
-        filename: env.isDistRelease() ? '[name].[chunkhash].js' : '[name].[hash].js'
+        filename: '[name].js'
     },
 
     module: {

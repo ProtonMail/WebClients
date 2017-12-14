@@ -262,6 +262,10 @@ function contactCache(
         type === 'searchingContact' && searchingContact(data);
     });
 
+    $rootScope.$on('logout', () => {
+        clear();
+    });
+
     return { hydrate, isHydrated, clear, get, total, paginate, load, find, getItem };
 }
 export default contactCache;

@@ -12,7 +12,8 @@ function SecuredController(
     AppModel,
     desktopNotifications,
     attachSignupSubscription,
-    addressWithoutKeysManager
+    addressWithoutKeysManager,
+    resurrecter
 ) {
     $scope.inboxSidebar = AppModel.is('inboxSidebar');
     $scope.showSidebar = AppModel.is('showSidebar');
@@ -27,6 +28,7 @@ function SecuredController(
     $rootScope.isLoggedIn = true; // Shouldn't be there
     $rootScope.isLocked = false; // Shouldn't be there
 
+    resurrecter.init();
     const bindAppValue = (key, { value }) => $scope.$applyAsync(() => ($scope[key] = value));
     const unsubscribe = $rootScope.$on('AppModel', (e, { type, data = {} }) => {
         type === 'inboxSidebar' && bindAppValue(type, data);

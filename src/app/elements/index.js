@@ -17,7 +17,6 @@ import ptStar from './directives/ptStar';
 import searchLimitReached from './directives/searchLimitReached';
 import timeElement from './directives/timeElement';
 import elementsError from './factories/elementsError';
-import firstLoad from './factories/firstLoad';
 import limitElementsModel from './factories/limitElementsModel';
 import removeElement from './services/removeElement';
 
@@ -42,6 +41,5 @@ export default angular
     .directive('searchLimitReached', searchLimitReached)
     .directive('timeElement', timeElement)
     .factory('elementsError', elementsError)
-    .factory('firstLoad', firstLoad)
     .factory('limitElementsModel', limitElementsModel)
     .factory('removeElement', removeElement).name;

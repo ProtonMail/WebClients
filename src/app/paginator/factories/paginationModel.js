@@ -1,5 +1,5 @@
 /* @ngInject */
-function paginationModel(CONSTANTS, cacheCounters, $rootScope, $state, $stateParams, authentication, tools) {
+function paginationModel(CONSTANTS, $injector, $rootScope, $state, $stateParams, authentication, tools) {
     const { ELEMENTS_PER_PAGE, MESSAGE_VIEW_MODE } = CONSTANTS;
     let currentState = '';
 
@@ -21,6 +21,7 @@ function paginationModel(CONSTANTS, cacheCounters, $rootScope, $state, $statePar
      * @return {Integer}
      */
     const getMaxPage = () => {
+        const cacheCounters = $injector.get('cacheCounters');
         const counter = cacheCounters.getCounter(tools.currentLocation());
         if (tools.cacheContext() && counter) {
             const key = $stateParams.filter === 'unread' ? 'unread' : 'total';

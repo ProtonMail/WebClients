@@ -10,7 +10,6 @@ function LabelsController(
     Label,
     labelModal,
     networkActivityTracker,
-    cacheCounters,
     labelsEditorModel,
     notification
 ) {
