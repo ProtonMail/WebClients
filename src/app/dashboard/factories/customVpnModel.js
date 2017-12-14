@@ -31,9 +31,10 @@ function customVpnModel($rootScope, CONSTANTS, dashboardConfiguration, dashboard
                 step,
                 range: { min, max },
                 pips: {
-                    mode: 'values',
-                    values: [min, max],
-                    density: 4
+                    mode: 'positions',
+                    values: [0, 25, 50, 75, 100],
+                    density: 4,
+                    stepped: true
                 },
                 format: {
                     to(value) {

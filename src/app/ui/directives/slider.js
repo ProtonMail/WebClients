@@ -53,6 +53,30 @@ function slider($rootScope) {
                         }
                     })
                 );
+
+                unsubscribe.push(
+                    $rootScope.$on('update.slider.options', (event, { type, data = {} }) => {
+                        if (scope.options.type === type) {
+                            slider.noUiSlider.updateOptions(data.options);
+                        }
+                    })
+                );
+
+                unsubscribe.push(
+                    $rootScope.$on('enable.slider', (event, { type }) => {
+                        if (scope.options.type === type) {
+                            slider.removeAttribute('disabled');
+                        }
+                    })
+                );
+
+                unsubscribe.push(
+                    $rootScope.$on('disable.slider', (event, { type }) => {
+                        if (scope.options.type === type) {
+                            slider.setAttribute('disabled', true);
+                        }
+                    })
+                );
             }
 
             function usedSpace(unit) {
