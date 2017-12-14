@@ -21,10 +21,20 @@ function customProPlanModal(customProPlanModel, gettextCatalog, pmModal) {
             this.sliders = customProPlanModel.getSliders();
             this.format = (type) => I18N[type](this.sliders[type].value);
             this.close = () => params.close();
+
+            this.needMore = () => {
+                customProPlanModel.increaseRanges();
+                this.needMoreMember = true;
+            };
+
             this.submit = () => {
                 customProPlanModel.send();
                 params.close();
             };
+
+            if (customProPlanModel.needMoreMember()) {
+                this.needMore();
+            }
         }
     });
 }
