@@ -1,6 +1,6 @@
 /* @ngInject */
 function title($rootScope, pageTitlesModel, $state) {
-    const bindTitle = (el, title) => el.text(title);
+    const bindTitle = (el, title) => _rAF(() => el.text(title));
 
     return {
         restrict: 'E',

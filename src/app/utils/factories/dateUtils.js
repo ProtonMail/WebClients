@@ -2,6 +2,13 @@
 function dateUtils($injector, gettextCatalog) {
     const I18N = {};
 
+    const loadMoment = () => {
+        // Set new relative time thresholds
+        moment.relativeTimeThreshold('s', 59); // s seconds least number of seconds to be considered a minute
+        moment.relativeTimeThreshold('m', 59); // m minutes least number of minutes to be considered an hour
+        moment.relativeTimeThreshold('h', 23); // h hours   least number of hours to be considered a day
+    };
+
     function init() {
         // Calculate a nice place holder for the input date fields. We can always change it to localize the format
         // The format is not dependend on the language, but on the locale so in that case we would have to localize
@@ -76,6 +83,8 @@ function dateUtils($injector, gettextCatalog) {
             gettextCatalog.getString('December', null, 'Pikaday')
         ];
         I18N.localizedDatePlaceholder = localDatePlaceholder;
+
+        loadMoment();
     }
 
     /**
@@ -85,7 +94,6 @@ function dateUtils($injector, gettextCatalog) {
     function getSortedWeekdays() {
         const days = I18N.days.slice();
         // Get the start of the week using the locale.
-
         const startValue = moment.localeData().firstDayOfWeek();
 
         return _.sortBy(days, (day) => (7 + day.value - startValue) % 7);

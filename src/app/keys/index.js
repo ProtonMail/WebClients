@@ -6,7 +6,7 @@ import setupKeys from './factories/setupKeys';
 import upgradeKeys from './factories/upgradeKeys';
 
 export default angular
-    .module('proton.keys', ['proton.elements'])
+    .module('proton.keys', [])
     .factory('changeMailboxPassword', changeMailboxPassword)
     .factory('changePasswordModal', changePasswordModal)
     .factory('checkKeysFormat', checkKeysFormat)

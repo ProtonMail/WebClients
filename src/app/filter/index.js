@@ -13,7 +13,6 @@ import sieveLint from './services/sieveLint';
 
 export default angular
     .module('proton.filter', ['proton.constants', 'proton.utils'])
-    .run((sieveLint) => sieveLint.init())
     .directive('customFilterList', customFilterList)
     .directive('emailBlockButton', emailBlockButton)
     .directive('emailBlockList', emailBlockList)

@@ -2,6 +2,7 @@ import bitcoinDetails from './directives/bitcoinDetails';
 import bitcoinQrcode from './directives/bitcoinQrcode';
 import bitcoinView from './directives/bitcoinView';
 import cardIcon from './directives/cardIcon';
+import cardPanel from './directives/cardPanel';
 import donation from './directives/donation';
 import donationExternalSubmit from './directives/donationExternalSubmit';
 import featuresList from './directives/featuresList';
@@ -21,6 +22,9 @@ import paymentsInterceptor from './factories/paymentsInterceptor';
 import brick from './services/brick';
 import paymentPlansFormator from './services/paymentPlansFormator';
 import paymentUtils from './services/paymentUtils';
+import cardModal from './modals/cardModal';
+import customizeInvoiceModal from './modals/customizeInvoiceModal';
+import donateModal from './modals/donateModal';
 import giftCodeModal from './modals/giftCodeModal';
 import payModal from './modals/payModal';
 import paymentModal from './modals/paymentModal';
@@ -34,6 +38,7 @@ export default angular
     .directive('bitcoinQrcode', bitcoinQrcode)
     .directive('bitcoinView', bitcoinView)
     .directive('cardIcon', cardIcon)
+    .directive('cardPanel', cardPanel)
     .directive('donation', donation)
     .directive('donationExternalSubmit', donationExternalSubmit)
     .directive('featuresList', featuresList)
@@ -53,6 +58,9 @@ export default angular
     .factory('brick', brick)
     .factory('paymentPlansFormator', paymentPlansFormator)
     .factory('paymentUtils', paymentUtils)
+    .factory('cardModal', cardModal)
+    .factory('customizeInvoiceModal', customizeInvoiceModal)
+    .factory('donateModal', donateModal)
     .factory('giftCodeModal', giftCodeModal)
     .factory('payModal', payModal)
     .factory('paymentModal', paymentModal).name;

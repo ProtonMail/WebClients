@@ -1,5 +1,5 @@
 /* @ngInject */
-function paymentModel(eventManager, Payment, networkActivityTracker, gettextCatalog, notification) {
+function paymentModel(eventManager, Payment, networkActivityTracker, gettextCatalog, notification, $rootScope) {
     let CACHE = {};
     const I18N = {
         SUBSCRIBE_ERROR: gettextCatalog.getString('Error subscribing', null, 'Error'),
@@ -103,6 +103,10 @@ function paymentModel(eventManager, Payment, networkActivityTracker, gettextCata
 
         return promise;
     }
+
+    $rootScope.$on('logout', () => {
+        clear();
+    });
 
     return { getStatus, getMethods, get, canPay, subscribe, add, useGiftCode, clear };
 }

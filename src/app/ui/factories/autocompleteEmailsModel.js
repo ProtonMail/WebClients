@@ -1,5 +1,5 @@
 /* @ngInject */
-function autocompleteEmailsModel(authentication, contactEmails, regexEmail, checkTypoEmails, $filter, CONSTANTS) {
+function autocompleteEmailsModel($injector, authentication, regexEmail, checkTypoEmails, $filter, CONSTANTS) {
     const { AUTOCOMPLETE_DOMAINS } = CONSTANTS;
     const { OPEN_TAG_AUTOCOMPLETE, CLOSE_TAG_AUTOCOMPLETE } = CONSTANTS.EMAIL_FORMATING;
 
@@ -81,7 +81,7 @@ function autocompleteEmailsModel(authentication, contactEmails, regexEmail, chec
         const value = unicodeTagView(val.trim());
         const input = value.toLowerCase();
 
-        const collection = _.chain(contactEmails.fetch())
+        const collection = _.chain($injector.get('contactEmails').fetch())
             .map(({ Name, Email }) => {
                 const value = Email;
                 const label = formatLabel(Name, Email);

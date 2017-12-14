@@ -19,10 +19,7 @@ function eventListener(CONSTANTS, CONFIG, $rootScope, analytics, pageTitlesModel
         }
 
         const title = generateTitle(toState);
-
-        const page = { title, referrer, url: location.href };
-
-        analytics.trackPage(page);
+        analytics.trackPage({ title, referrer, url: location.href });
     });
 
     $rootScope.$on('signup', (event, { type, data }) => {

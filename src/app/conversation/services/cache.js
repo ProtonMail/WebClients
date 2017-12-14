@@ -7,7 +7,7 @@ function cache(
     $stateParams,
     CONSTANTS,
     conversationApi,
-    firstLoad,
+    firstLoadState,
     gettextCatalog,
     messageModel,
     messageApi,
@@ -580,7 +580,7 @@ function cache(
         const page = request.Page || 0;
 
         // In cache context?
-        if (context && !firstLoad.get() && cachePages.consecutive(page)) {
+        if (context && !firstLoadState.get() && cachePages.consecutive(page)) {
             const start = page * CONSTANTS.ELEMENTS_PER_PAGE;
             const end = start + CONSTANTS.ELEMENTS_PER_PAGE;
             let total;
@@ -637,7 +637,7 @@ function cache(
         const page = request.Page || 0;
 
         // In cache context?
-        if (context && !firstLoad.get() && cachePages.consecutive(page)) {
+        if (context && !firstLoadState.get() && cachePages.consecutive(page)) {
             const start = page * CONSTANTS.ELEMENTS_PER_PAGE;
             const end = start + CONSTANTS.ELEMENTS_PER_PAGE;
             let total;
@@ -996,7 +996,7 @@ function cache(
      * Manage expiration time for messages in the cache
      */
     function expiration() {
-        const now = moment().unix();
+        const now = ~~(Date.now() / 1000); // unix timestamp
         const { list, removeList } = messagesCached.reduce(
             (acc, message = {}) => {
                 const { ExpirationTime } = message;
@@ -1066,6 +1066,11 @@ function cache(
 
         return callApi();
     };
+
+    $rootScope.$on('logout', () => {
+        api.reset();
+        cacheCounters.reset();
+    });
 
     return api;
 }

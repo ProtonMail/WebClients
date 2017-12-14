@@ -43,6 +43,7 @@ import labelAutocomplete from './filters/labelAutocomplete';
 import unescape from './filters/unescape';
 import autocompleteBuilder from './services/autocompleteBuilder';
 import backState from './services/backState';
+import consoleMessage from './services/consoleMessage';
 import customInputCreator from './services/customInputCreator';
 import datetimeErrorCombiner from './services/datetimeErrorCombiner';
 import headerNoAuth from './directives/header/headerNoAuth';
@@ -55,7 +56,7 @@ import navigationReport from './directives/navigation/navigationReport';
 import navigationUser from './directives/navigation/navigationUser';
 
 export default angular
-    .module('proton.ui', ['ui.indeterminate'])
+    .module('proton.ui', [])
     .run((backState) => backState.init())
     .factory('autocompleteEmailsModel', autocompleteEmailsModel)
     .factory('pageTitlesModel', pageTitlesModel)
@@ -102,6 +103,7 @@ export default angular
     .filter('unescape', unescape)
     .factory('autocompleteBuilder', autocompleteBuilder)
     .factory('backState', backState)
+    .factory('consoleMessage', consoleMessage)
     .factory('customInputCreator', customInputCreator)
     .factory('datetimeErrorCombiner', datetimeErrorCombiner)
     .directive('headerNoAuth', headerNoAuth)

@@ -5,10 +5,7 @@ function helpLoginModal(pmModal) {
         templateUrl: 'templates/authentication/modals/helpLoginModal.tpl.html',
         /* @ngInject */
         controller: function(params) {
-            const self = this;
-            self.cancel = () => {
-                params.close();
-            };
+            this.cancel = params.close;
         }
     });
 }

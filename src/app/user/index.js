@@ -10,6 +10,7 @@ import usernameDomain from './directives/usernameDomain';
 import usernamePassword from './directives/usernamePassword';
 import generateKeyModel from './factories/generateKeyModel';
 import signatureModel from './factories/signatureModel';
+import deleteAccountModal from './modals/deleteAccountModal';
 import generateModal from './modals/generateModal';
 import attachSignupSubscription from './services/attachSignupSubscription';
 import isDelinquent from './services/isDelinquent';
@@ -31,6 +32,7 @@ export default angular
     .directive('usernamePassword', usernamePassword)
     .factory('generateKeyModel', generateKeyModel)
     .factory('signatureModel', signatureModel)
+    .factory('deleteAccountModal', deleteAccountModal)
     .factory('generateModal', generateModal)
     .factory('attachSignupSubscription', attachSignupSubscription)
     .factory('isDelinquent', isDelinquent)

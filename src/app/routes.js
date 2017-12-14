@@ -44,7 +44,7 @@ export default angular
                 },
                 resolve: {
                     lang(i18nLoader) {
-                        return i18nLoader();
+                        return i18nLoader.translate();
                     }
                 }
             })
@@ -143,27 +143,24 @@ export default angular
                 }
             })
 
-            .state('reset-theme', {
+            .state('secured.resetTheme', {
                 url: '/reset-theme',
                 resolve: {
-                    lang(i18nLoader) {
-                        return i18nLoader();
-                    },
-                    reset(networkActivityTracker, settingsApi, notification, eventManager, gettextCatalog) {
-                        const errorMessage = gettextCatalog.getString('Unable to reset theme', null, 'Error');
-                        const promise = settingsApi.theme({ Theme: '' }).then((result = {}) => {
-                            const { data } = result;
-                            if (data.Code === 1000) {
-                                notification.success(gettextCatalog.getString('Theme reset! Redirecting...', null));
-                                return eventManager.call();
-                            }
-                            return Promise.reject(data.Error || errorMessage);
-                        });
+                    reset(user, networkActivityTracker, settingsApi, notification, eventManager, gettextCatalog, $state) {
+                        const I18N = {
+                            SUCCESS: gettextCatalog.getString('Theme reset! Redirecting...', null, 'Info'),
+                            ERROR: gettextCatalog.getString('Unable to reset theme', null, 'Error')
+                        };
+                        const promise = settingsApi
+                            .theme({ Theme: '' })
+                            .then(() => notification.success(I18N.SUCCESS))
+                            .catch(() => {
+                                throw new Error(I18N.ERROR);
+                            })
+                            .then(eventManager.call)
+                            .then(() => $state.go('secured.inbox'));
                         networkActivityTracker.track(promise);
                     }
-                },
-                onEnter($state) {
-                    $state.go('secured.inbox');
                 }
             })
 
@@ -187,7 +184,7 @@ export default angular
                 },
                 resolve: {
                     lang(i18nLoader) {
-                        return i18nLoader();
+                        return i18nLoader.translate();
                     },
                     plans(CONSTANTS, $stateParams, Payment) {
                         const isValid = (test, list = []) => list.indexOf(test) !== -1;
@@ -216,34 +213,11 @@ export default angular
                 }
             })
 
-            // Reset Mailbox Password
-            .state('reset', {
-                url: '/reset',
-                views: {
-                    'main@': {
-                        controller: 'ResetController',
-                        templateUrl: 'templates/layout/auth.tpl.html'
-                    },
-                    'panel@reset': {
-                        templateUrl: 'templates/views/reset-mailbox-password.tpl.html'
-                    }
-                },
-                resolve: {
-                    lang(i18nLoader) {
-                        return i18nLoader();
-                    }
-                },
-                onEnter($rootScope, $state) {
-                    if (!$rootScope.isLoggedIn) {
-                        $state.go('login');
-                    }
-                }
-            })
-
             // -------------------------------------------
             // SUPPORT ROUTES
             // -------------------------------------------
             .state('support', {
+                abstract: true,
                 url: '/help',
                 views: {
                     'main@': {
@@ -294,7 +268,7 @@ export default angular
                 },
                 resolve: {
                     lang(i18nLoader) {
-                        return i18nLoader();
+                        return i18nLoader.translate();
                     }
                 }
             })
@@ -344,7 +318,10 @@ export default angular
             .state('eo.message', {
                 url: '/eo/message/:tag',
                 resolve: {
-                    messageData($stateParams, $q, Eo, messageModel, pmcw, secureSessionStorage) {
+                    app(lazyLoader, i18nLoader) {
+                        return lazyLoader.app().then(i18nLoader.localizeDate);
+                    },
+                    messageData(app, $stateParams, $q, Eo, messageModel, pmcw, secureSessionStorage) {
                         const password = pmcw.decode_utf8_base64(secureSessionStorage.getItem('proton:encrypted_password'));
 
                         return Eo.message(secureSessionStorage.getItem('proton:decrypted_token'), $stateParams.tag).then(({ data = {} }) => {
@@ -447,19 +424,41 @@ export default angular
                     }
                 },
                 resolve: {
+                    app(lazyLoader) {
+                        // We need to lazy load the app before being able to build the user object.
+                        return lazyLoader.app();
+                    },
                     // Contains also labels and contacts
-                    user(authentication, $http, pmcw, secureSessionStorage, i18nLoader) {
-                        if (Object.keys(authentication.user).length > 0) {
-                            return authentication.user;
-                        } else if (angular.isDefined(secureSessionStorage.getItem(CONSTANTS.OAUTH_KEY + ':SessionToken'))) {
+                    user(app, authentication, $http, pmcw, secureSessionStorage, i18nLoader) {
+                        const isAuth = Object.keys(authentication.user || {}).length > 0;
+                        if (isAuth) {
+                            return i18nLoader.localizeDate().then(() => authentication.user);
+                        }
+
+                        if (angular.isDefined(secureSessionStorage.getItem(CONSTANTS.OAUTH_KEY + ':SessionToken'))) {
                             $http.defaults.headers.common['x-pm-session'] = pmcw.decode_base64(
                                 secureSessionStorage.getItem(CONSTANTS.OAUTH_KEY + ':SessionToken') || ''
                             );
                         }
 
                         return authentication.fetchUserInfo().then((data) => {
-                            return i18nLoader(data.Language).then(() => data);
+                            return i18nLoader
+                                .translate(data.Language)
+                                .then(i18nLoader.localizeDate)
+                                .then(() => data);
                         });
+                    },
+                    labels(user, Label, labelsModel, networkActivityTracker) {
+                        const promise = Label.query().then(({ data = {} } = {}) => {
+                            if (data.Error) {
+                                throw new Error(data.Error);
+                            }
+
+                            labelsModel.set(data.Labels);
+                        });
+
+                        networkActivityTracker.track(promise);
+                        return promise;
                     },
                     subscription(user, subscriptionModel) {
                         return subscriptionModel.fetch();
@@ -478,7 +477,7 @@ export default angular
                 resolve: {
                     messageID($stateParams) {
                         if ($stateParams.messageID) {
-                            return Promise.resolve($stateParams.messageID);
+                            return $stateParams.messageID;
                         }
                         return Promise.reject();
                     }
@@ -522,7 +521,7 @@ export default angular
                 resolve: {
                     messageID($stateParams) {
                         if ($stateParams.messageID) {
-                            return Promise.resolve($stateParams.messageID);
+                            return $stateParams.messageID;
                         }
                         return Promise.reject();
                     }
@@ -534,9 +533,8 @@ export default angular
                             $scope.loading = true;
 
                             if (window.opener) {
-                                const url = window.location.href;
-                                const arr = url.split('/');
-                                const targetOrigin = arr[0] + '//' + arr[2];
+                                const [protocol, , host] = window.location.href.split('/');
+                                const targetOrigin = `${protocol}//${host}`;
 
                                 window.addEventListener('message', printMessage, false);
                                 window.opener.postMessage(messageID, targetOrigin);
@@ -958,7 +956,10 @@ export default angular
             .state('secured.filters', {
                 url: '/filters',
                 resolve: {
-                    loadSpamLists(spamListModel, networkActivityTracker) {
+                    vendor(lazyLoader) {
+                        return lazyLoader.extraVendor();
+                    },
+                    loadSpamLists(vendor, user, spamListModel, networkActivityTracker) {
                         return networkActivityTracker.track(spamListModel.load());
                     },
                     methods(user, paymentModel, networkActivityTracker) {
@@ -992,6 +993,49 @@ export default angular
                 },
                 onExit(AppModel) {
                     AppModel.set('settingsSidebar', false);
+                }
+            });
+
+        $stateProvider
+            .state('secured.contacts', {
+                url: '/contacts?sort&page&keyword',
+                params: {
+                    page: { value: null, squash: true },
+                    keyword: { value: null, squash: true },
+                    sort: { value: null, squash: true }
+                },
+                resolve: {
+                    delinquent(user, isDelinquent) {
+                        return isDelinquent();
+                    }
+                },
+                views: {
+                    'content@secured': {
+                        template: '<contact-view></contact-view>'
+                    }
+                },
+                onEnter(AppModel) {
+                    AppModel.set('contactSidebar', true);
+                },
+                onExit(AppModel) {
+                    AppModel.set('contactSidebar', false);
+                }
+            })
+            .state('secured.contacts.details', {
+                url: '/:id',
+                params: { id: null },
+                views: {
+                    'details@secured.contacts': {
+                        template:
+                            '<div class="contactsDetails-body"><contact-details ng-if="contact" data-contact="contact"></contact-details><loader-tag></loader-tag></div>',
+                        controller($scope, $stateParams, contactCache) {
+                            contactCache.find($stateParams.id).then((data) =>
+                                $scope.$applyAsync(() => {
+                                    $scope.contact = data;
+                                })
+                            );
+                        }
+                    }
                 }
             });
 

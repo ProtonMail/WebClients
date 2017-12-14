@@ -24,12 +24,12 @@ function SignupController(
     const initUsername = () => $location.search().u || $stateParams.username || '';
 
     /*
-            1 === user form
-            2 === keys generator
-            3 === humanity test
-            4 === payment
-            5 === creating
-         */
+        1 === user form
+        2 === keys generator
+        3 === humanity test
+        4 === payment
+        5 === creating
+     */
     $scope.step = 1;
     $scope.plans = plans;
     $scope.domains = _.map(domains, (value) => ({ label: value, value }));

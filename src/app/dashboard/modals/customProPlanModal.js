@@ -11,11 +11,13 @@ function customProPlanModal(customProPlanModel, gettextCatalog, pmModal) {
             return gettextCatalog.getString('{{value}} addresses', { value }, 'Custom pro plan dashboard');
         }
     };
+
     return pmModal({
         controllerAs: 'ctrl',
         templateUrl: 'templates/dashboard/customProPlanModal.tpl.html',
         /* @ngInject */
         controller: function(params) {
+            customProPlanModel.init();
             this.sliders = customProPlanModel.getSliders();
             this.format = (type) => I18N[type](this.sliders[type].value);
             this.close = () => params.close();

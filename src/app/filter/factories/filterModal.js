@@ -57,6 +57,8 @@ function filterModal(
         templateUrl: 'templates/filter/modal.tpl.html',
         /* @ngInject */
         controller: function(params, $scope) {
+            sieveLint.init();
+
             const labelsOrdered = labelsModel.get('labels');
             const foldersOrdered = labelsModel.get('folders');
             const ctrl = this;

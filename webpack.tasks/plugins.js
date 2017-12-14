@@ -16,6 +16,8 @@ const env = require('../env/config');
 const makeSRC = (list) => list.map((file) => path.resolve(file));
 const [OPENPGP_WORKER, OPENPGP] = makeSRC(CONFIG.external_files.openpgp);
 const VENDOR_GLOB = makeSRC(CONFIG.vendor_files.js);
+const VENDOR_LAZY_GLOB = makeSRC(CONFIG.vendor_files.jsLazy);
+const VENDOR_LAZY2_GLOB = makeSRC(CONFIG.vendor_files.jsLazy2);
 const VENDOR_LIB_GLOB = makeSRC(glob.sync('./src/libraries/{polyfill,tweetWebIntent,mailparser}.js'));
 
 const minify = () => {
@@ -88,6 +90,22 @@ const list = [
         name: 'vendor',
         fileName: '[name].js?[hash]',
         filesToConcat: VENDOR_GLOB.concat(VENDOR_LIB_GLOB)
+    }),
+
+    // No uglify here because it doesn't work (wtf)
+    new ConcatPlugin({
+        useHash: true,
+        name: 'vendorLazy',
+        fileName: '[name].js?[hash]',
+        filesToConcat: VENDOR_LAZY_GLOB
+    }),
+
+    // No uglify here because it doesn't work (wtf)
+    new ConcatPlugin({
+        useHash: true,
+        name: 'vendorLazy2',
+        fileName: '[name].js?[hash]',
+        filesToConcat: VENDOR_LAZY2_GLOB
     }),
 
     new ConcatPlugin({

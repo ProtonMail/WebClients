@@ -3,7 +3,7 @@ function cardPanel() {
     return {
         replace: true,
         restrict: 'E',
-        templateUrl: 'templates/directives/core/cardPanel.tpl.html',
+        templateUrl: 'templates/payment/cardPanel.tpl.html',
         scope: { card: '=' }
     };
 }
