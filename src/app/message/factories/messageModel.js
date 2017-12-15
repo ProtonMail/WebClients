@@ -179,9 +179,7 @@ function messageModel($q, $timeout, pmcw, User, gettextCatalog, authentication, 
 
             // decryptMessageLegacy expects message to be a string!
             const message = this.Body;
-
             this.decrypting = true;
-
             const sender = (this.Sender || {}).Address;
 
             const getPubKeys = (sender) => {
@@ -199,27 +197,33 @@ function messageModel($q, $timeout, pmcw, User, gettextCatalog, authentication, 
                 });
             };
 
-            return getPubKeys(sender).then((pubKeys) => {
-                return pmcw
-                    .decryptMessageLegacy({
-                        message,
-                        privateKeys,
-                        publicKeys: pubKeys ? pmcw.getKeys(pubKeys) : [],
-                        messageTime: this.Time
-                    })
-                    .then((rep) => {
-                        this.decrypting = false;
+            return getPubKeys(sender)
+                .then((pubKeys) => {
+                    return pmcw
+                        .decryptMessageLegacy({
+                            message,
+                            privateKeys,
+                            publicKeys: pubKeys ? pmcw.getKeys(pubKeys) : [],
+                            messageTime: this.Time
+                        })
+                        .then((rep) => {
+                            this.decrypting = false;
 
-                        if (this.IsEncrypted === 8 || this.MIMEType === 'multipart/mixed') {
-                            return this.parse(rep.data).then((data) => ({ data }));
-                        }
-                        return rep;
-                    })
-                    .catch((error) => {
-                        this.decrypting = false;
-                        throw error;
-                    });
-            });
+                            if (this.IsEncrypted === 8 || this.MIMEType === 'multipart/mixed') {
+                                return this.parse(rep.data).then((data) => ({ data }));
+                            }
+                            return rep;
+                        })
+                        .catch((error) => {
+                            this.decrypting = false;
+                            throw error;
+                        });
+                })
+                .catch((error) => {
+                    this.networkError = error.status === -1;
+                    this.decrypting = false;
+                    throw error;
+                });
         }
 
         encryptAttachmentKeyPackets(publicKeys = [], passwords = []) {
