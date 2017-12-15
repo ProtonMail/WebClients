@@ -14,7 +14,8 @@ function searchContact($rootScope, $state, $stateParams, contactCache, gettextCa
 
             const switchState = (isReset, keyword = null) => {
                 const state = isReset ? 'secured.contacts' : $state.$current.name;
-                $state.go(state, { page: 1, keyword }, { notify: false }).then(() => (!isReset ? dispatch(keyword) : dispatch()));
+
+                $state.go(state, { page: 1, keyword }, { notify: isReset }).then(() => (!isReset ? dispatch(keyword) : dispatch()));
             };
 
             const onSubmit = () => switchState(false, scope.query);
