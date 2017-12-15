@@ -1,4 +1,4 @@
-describe('transformEscape service', () => {
+fdescribe('transformEscape service', () => {
 
     let factory, getAttribute;
     const USER_INJECT = 'user.inject';
