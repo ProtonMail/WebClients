@@ -10,6 +10,7 @@ export default angular
     // Constants definition
     //
     .constant('CONSTANTS', {
+        CONVERSATION_REQUEST_SIZE: 10,
         GIFT_CODE_LENGTH: 16,
         BLACK_FRIDAY_INTERVAL: 10 * 60 * 1000,
         PLANS: {

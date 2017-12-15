@@ -322,8 +322,8 @@ function actionConversation(
         const getPromises = (list, starter = [], flag = ADD) => {
             return _.reduce(
                 list,
-                (acc, id) => {
-                    acc.push(conversationApi.labels(id, flag, ids));
+                (acc, labelID) => {
+                    acc.push(conversationApi[flag === ADD ? 'label' : 'unlabel'](labelID, ids));
                     return acc;
                 },
                 starter
@@ -353,7 +353,7 @@ function actionConversation(
         const toSpam = labelID === MAILBOX_IDENTIFIERS.spam;
         const toInbox = labelID === MAILBOX_IDENTIFIERS.inbox;
 
-        const promise = conversationApi.labels(labelID, 1, conversationIDs);
+        const promise = conversationApi.label(labelID, conversationIDs);
 
         const folderName = getFolderNameTranslated(labelID);
 
