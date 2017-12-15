@@ -1,6 +1,31 @@
 /* @ngInject */
-function conversationApi($http, url) {
+function conversationApi($http, chunk, CONSTANTS, url) {
+    const { MAILBOX_IDENTIFIERS, CONVERSATION_REQUEST_SIZE } = CONSTANTS;
+    const { archive, trash, inbox, spam } = MAILBOX_IDENTIFIERS;
     const requestURL = url.build('conversations');
+
+    /**
+     * Chunk conversation requests by IDs
+     * @param  {String} url
+     * @param  {String} method
+     * @param  {Object} params
+     * @return {Promise}
+     */
+    async function chunkRequest(url = '', method = '', params = {}) {
+        const promises = _.reduce(
+            chunk(params.IDs, CONVERSATION_REQUEST_SIZE),
+            (acc, IDsChunked = []) => {
+                params.IDs = IDsChunked;
+                return acc.concat($http({ url, method, params }));
+            },
+            []
+        );
+
+        const list = await Promise.all(promises);
+
+        return list.reduce((acc, item) => acc.concat(item), []);
+    }
+
     return {
         /**
          * Get a list of conversations
@@ -35,7 +60,7 @@ function conversationApi($http, url) {
          * @return {Promise}
          */
         star(IDs = []) {
-            return $http.put(requestURL('star'), { IDs });
+            return chunkRequest(requestURL('star'), 'PUT', { IDs });
         },
         /**
          * Mark an array of conversations as unstarred
@@ -43,7 +68,7 @@ function conversationApi($http, url) {
          * @return {Promise}
          */
         unstar(IDs = []) {
-            return $http.put(requestURL('unstar'), { IDs });
+            return chunkRequest(requestURL('unstar'), 'PUT', { IDs });
         },
         /**
          * Mark an array of conversations as read
@@ -51,7 +76,7 @@ function conversationApi($http, url) {
          * @return {Promise}
          */
         read(IDs = []) {
-            return $http.put(requestURL('read'), { IDs });
+            return chunkRequest(requestURL('read'), 'PUT', { IDs });
         },
         /**
          * Mark an array of conversations as unread
@@ -60,7 +85,7 @@ function conversationApi($http, url) {
          * @return {Promise}
          */
         unread(IDs = [], LabelID) {
-            return $http.put(requestURL('unread'), { IDs, LabelID });
+            return chunkRequest(requestURL('unread'), 'PUT', { IDs, LabelID });
         },
         /**
          * Move an array of conversations to trash
@@ -68,7 +93,7 @@ function conversationApi($http, url) {
          * @return {Promise}
          */
         trash(IDs = []) {
-            return $http.put(requestURL('trash'), { IDs });
+            return this.label(trash, IDs);
         },
         /**
          * Move an array of conversations to inbox
@@ -76,7 +101,7 @@ function conversationApi($http, url) {
          * @return {Promise}
          */
         inbox(IDs = []) {
-            return $http.put(requestURL('inbox'), { IDs });
+            return this.label(inbox, IDs);
         },
         /**
          * Move an array of conversations to spam
@@ -84,7 +109,7 @@ function conversationApi($http, url) {
          * @return {Promise}
          */
         spam(IDs = []) {
-            return $http.put(requestURL('spam'), { IDs });
+            return this.label(spam, IDs);
         },
         /**
          * Move an array of conversations to archive
@@ -92,25 +117,33 @@ function conversationApi($http, url) {
          * @return {Promise}
          */
         archive(IDs = []) {
-            return $http.put(requestURL('archive'), { IDs });
+            return this.label(archive, IDs);
         },
         /**
-         * Move an array of conversations to archive
+         * Move an array of conversations to tr
          * @param {Array} IDs
          * @return {Promise}
          */
         delete(IDs = [], LabelID) {
-            return $http.put(requestURL('delete'), { IDs, LabelID });
+            return chunkRequest(requestURL('delete'), 'PUT', { IDs, LabelID });
         },
         /**
-         * Label/unlabel an array of conversations
+         * Label an array of conversations
          * @param {String} LabelID
-         * @param {Integer} Action
-         * @param {Array} ConversationIDs
+         * @param {Array} IDs
          * @return {Promise}
          */
-        labels(LabelID = '', Action, ConversationIDs = []) {
-            return $http.put(requestURL('label'), { LabelID, Action, ConversationIDs });
+        label(LabelID = '', IDs = []) {
+            return chunkRequest(requestURL('label'), 'PUT', { IDs, LabelID });
+        },
+        /**
+         * Unlabel an array of conversations
+         * @param {String} LabelID
+         * @param {Array} IDs
+         * @return {Promise}
+         */
+        unlabel(LabelID = '', IDs = []) {
+            return chunkRequest(requestURL('unlabel'), 'PUT', { IDs, LabelID });
         }
     };
 }
