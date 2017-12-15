@@ -8,15 +8,15 @@ function conversationApi($http, chunk, CONSTANTS, url) {
      * Chunk conversation requests by IDs
      * @param  {String} url
      * @param  {String} method
-     * @param  {Object} params
+     * @param  {Object} data
      * @return {Promise}
      */
-    async function chunkRequest(url = '', method = '', params = {}) {
+    async function chunkRequest(url = '', method = '', data = {}) {
         const promises = _.reduce(
-            chunk(params.IDs, CONVERSATION_REQUEST_SIZE),
+            chunk(data.IDs, CONVERSATION_REQUEST_SIZE),
             (acc, IDsChunked = []) => {
-                params.IDs = IDsChunked;
-                return acc.concat($http({ url, method, params }));
+                data.IDs = IDsChunked;
+                return acc.concat($http({ url, method, data }));
             },
             []
         );
