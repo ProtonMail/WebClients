@@ -8,20 +8,16 @@ module.exports = (config) => {
         // list of files / patterns to load in the browser
         files: [
             'mock.js',
-            '../build/vendor/angular.js',
-            '../build/vendor/jquery.js',
-            '../build/vendor/codemirror.js',
-            '../build/vendor/moment-with-locales.js',
-            '../src/libraries/*.js',
-            '../build/vendor/*.js',
-            '../build/vendor/pmcrypto.js',
+            '../build/vendor.js',
+            '!../build/openpgp.worker.min.js',
+            '../build/openpgp.min.js',
+            '../build/templates.js',
+            '../build/app.js',
+            '../build/appLazy.js',
             '../node_modules/angular-mocks/angular-mocks.js',
-            '../src/app/config.js',
-            '../src/app/constants.js',
-            '../src/app/templates/**/*.html',
-            '../src/app/*.js',
-            '../src/app/**/index.js',
-            '../src/app/**/*.js',
+            '../src/templates/**/*.html',
+            'src/app/**/*.js',
+            'src/app/**/**/*.js',
             'specs/**/*.js'
             // 'mocks/**/*.js'
         ],
@@ -30,14 +26,15 @@ module.exports = (config) => {
         // list of files to exclude
         exclude: ['**/*.min.js', '../src/libraries/*.js', '../build/vendor/index.js'],
         preprocessors: {
-            '../src/app/templates/**/*.html': ['ng-html2js'],
-            '../src/app/**/**/*.js': ['babel'],
-            '../src/app/**/*.js': ['babel'],
+            '../src/templates/**/*.html': ['ng-html2js'],
+            'src/app/*.js': ['webpack'],
+            'src/app/**/*.js': ['webpack'],
+            'src/app/**/**/*.js': ['webpack'],
             'specs/**/*.js': ['babel']
         },
 
         ngHtml2JsPreprocessor: {
-            stripPrefix: '.*\/src\/app\/',
+            stripPrefix: '.*\\/src\\/app\\/',
             moduleName: 'test.templates'
         },
 
