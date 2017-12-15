@@ -180,7 +180,8 @@ function ComposeMessageController(
                 case 'key.autosave':
                     $scope.$applyAsync(() => {
                         postMessage(_.find($scope.messages, { focussed: true }), {
-                            autosaving: true
+                            autosaving: true,
+                            notification: true
                         });
                     });
                     break;
