@@ -19,7 +19,7 @@ function transformEscape() {
     }
 
     /* eslint no-useless-escape: off */
-    const matchURLS = getPermutation([['&#117;', 'u'], ['&#114;', 'r', '&#114;'], ['&#108;', 'l', '&#108;', 'l']]);
+    const matchURLS = getPermutation([['&#117;', 'u'], ['&#114;', 'r', '\&#114;'], ['&#108;', 'l', '\&#108;', '\l']]);
 
     /**
      * Prevent escape url on the textContent if you display some code
@@ -72,13 +72,14 @@ function transformEscape() {
     const BLACK_LIST = ['svg', 'xlink:href', 'srcset=', 'src=', 'background=', 'poster='];
     const FORBIDDEN_HTML = `(${BLACK_LIST.join('|')})`;
     const NO_SPECIALS = '([^"><\\\\]|\\\\[^><])';
-    const HTML_STRING = `("${NO_SPECIALS}*")`;
+    const NO_QUOTS = '(\\\\.|[^"\\\\])';
+    const HTML_STRING = `("${NO_QUOTS}*")`;
     const VERIFY_ELEMENT_END = `(?=(${NO_SPECIALS}|${HTML_STRING})*>)`;
 
     const STYLE_ATTRIBUTE = '(style\\s*=\\s*")';
     // The style attribute_value makes sure that there is at least a url( string inside the attribute, otherwise
     // it's no use to investigate it further.
-    const ATTRIBUTE_VALUE = '((?:(?:[^"]|\\\\.)*))(")';
+    const ATTRIBUTE_VALUE = '((?:(?:[^"\\\\]|\\\\.)*))(")';
 
     const REGEXP_IS_BREAK = new RegExp(FORBIDDEN_HTML + VERIFY_ELEMENT_END, 'gi');
     const REGEXP_IS_STYLE = new RegExp(STYLE_ATTRIBUTE + ATTRIBUTE_VALUE + VERIFY_ELEMENT_END, 'gi');
