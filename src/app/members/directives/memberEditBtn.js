@@ -9,8 +9,7 @@ function memberEditBtn(memberActions, gettextCatalog) {
         makeAdmin: gettextCatalog.getString('Make Admin', null, 'Action'),
         revokeAdmin: gettextCatalog.getString('Revoke Admin', null, 'Action'),
         makePrivate: gettextCatalog.getString('Make Private', null, 'Action'),
-        enableSupport: gettextCatalog.getString('Enable multi-user support', null, 'Action'),
-        generatePmMe: gettextCatalog.getString('Activate @pm.me', null, 'Action')
+        enableSupport: gettextCatalog.getString('Enable multi-user support', null, 'Action')
     };
 
     return {

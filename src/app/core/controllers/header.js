@@ -46,6 +46,7 @@ function HeaderController($rootScope, $scope, $state, authentication, organizati
             'appearance',
             'domains',
             'bridge',
+            'pmme',
             'signatures',
             'members',
             'payments',

@@ -56,6 +56,12 @@ function sidebarSettingsModel(gettextCatalog) {
             label: 'IMAP/SMTP',
             icon: 'fa-desktop'
         },
+        // NOTE Hide pmme tab until mobile apps are ready to support it
+        // pmme: {
+        //     state: 'secured.pmme',
+        //     label: 'pm.me',
+        //     icon: 'fa-desktop'
+        // },
         payments: {
             state: 'secured.payments',
             label: gettextCatalog.getString('Payments', null, 'Title'),

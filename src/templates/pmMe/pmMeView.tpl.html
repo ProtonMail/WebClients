@@ -1,0 +1,14 @@
+<div id="pm_settings">
+    <div class="settings">
+        <div class="row">
+            <div class="setting pm_form full">
+                <header-block class="settingsLabels-header-pmMe">
+                    <h2 class="settingsLabels-title-pmMe" translate-context="Title" translate>PM.ME</h2>
+                </header-block>
+                <p ng-if="hasPmMe" class="alert alert-success" translate-context="Info" translate>PM.ME address activated on your account.</p>
+                <p ng-if="!hasPmMe" class="alert alert-info" translate-context="Info" translate>PM.ME address is not yet activated on your account.</p>
+                <pm-me-btn ng-if="!hasPmMe" pm-me-tooltip class="pm_button primary"></pm-me-btn>
+            </div>
+        </div>
+    </div>
+</div>

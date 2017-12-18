@@ -21,7 +21,6 @@ function SignaturesController(
     $scope.itemMoved = false;
     $scope.members = memberModel.getAll();
     $scope.organization = organizationModel.get();
-    $scope.hasPmMe = addressModel.hasPmMe();
     const isPaidAdmin = authentication.user.Role === CONSTANTS.PAID_ADMIN_ROLE;
 
     $scope.domains = domainModel.query();
@@ -80,7 +79,6 @@ function SignaturesController(
             }
 
             $scope.$applyAsync(() => {
-                $scope.hasPmMe = addressModel.hasPmMe();
                 $scope.members = memberModel.getAll();
             });
         })
