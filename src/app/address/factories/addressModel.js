@@ -22,7 +22,7 @@ function addressModel(
     CONSTANTS,
     $rootScope
 ) {
-    const { PREMIUM } = CONSTANTS.ADDRESS_TYPE;
+    const { ENCRYPTION_DEFAULT, PAID_ADMIN_ROLE } = CONSTANTS;
     const I18N = {
         ERROR_DO_UPGRADE: gettextCatalog.getString(
             'You have used all addresses in your plan. Please upgrade your plan to add a new address',
@@ -156,6 +156,33 @@ function addressModel(
         });
     };
 
+    /**
+     * Generate @pm.me address for the current account
+     * @return {Promise}
+     */
+    const generatePmMe = () => {
+        const numBits = ENCRYPTION_DEFAULT;
+        const passphrase = authentication.getPassword();
+
+        return Address.setup({ Domain: 'pm.me' })
+            .then(({ data = {} } = {}) => {
+                if (data.Error) {
+                    throw new Error(data.Error);
+                }
+
+                return generateKeyModel.generate({ numBits, passphrase, address: data.Address });
+            })
+            .then(() => {
+                const promises = [eventManager.call(), pmDomainModel.fetch()];
+
+                if (authentication.user.Role === PAID_ADMIN_ROLE) {
+                    promises.push(memberModel.fetch());
+                }
+
+                return Promise.all(promises);
+            });
+    };
+
     const enable = ({ ID }) => {
         const promise = Address.enable(ID)
             .then(() => eventManager.call())
@@ -231,39 +258,6 @@ function addressModel(
     };
 
     /**
-     * Generate @pm.me address for the current account
-     * @return {Promise}
-     */
-    function generatePmMe() {
-        const numBits = CONSTANTS.ENCRYPTION_DEFAULT;
-        const passphrase = authentication.getPassword();
-
-        return Address.setup({ Domain: 'pm.me' })
-            .then(({ data = {} } = {}) => {
-                if (data.Error) {
-                    throw new Error(data.Error);
-                }
-
-                return generateKeyModel.generate({ numBits, passphrase, address: data.Address });
-            })
-            .then(() => {
-                const promises = [eventManager.call(), pmDomainModel.fetch()];
-
-                if (authentication.user.Role === CONSTANTS.PAID_ADMIN_ROLE) {
-                    promises.push(memberModel.fetch());
-                }
-
-                return Promise.all(promises);
-            });
-    }
-
-    /**
-     * Check if the current account has a @pm.me address
-     * @return {Boolean}
-     */
-    const hasPmMe = () => _.findWhere(authentication.user.Addresses, { Type: PREMIUM });
-
-    /**
      * Generate the key for a single address
      * It will open the generate modal
      * @param  {Object} address
@@ -321,15 +315,14 @@ function addressModel(
     return {
         add,
         disable,
-        enable,
-        remove,
-        makeDefault,
         editSignature,
-        saveOrder,
+        enable,
         generate,
-        getActive,
         generatePmMe,
-        hasPmMe
+        getActive,
+        makeDefault,
+        remove,
+        saveOrder
     };
 }
 export default addressModel;

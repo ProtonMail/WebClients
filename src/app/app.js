@@ -13,6 +13,7 @@ import members from './members/index';
 import organization from './organization/index';
 import outside from './outside/index';
 import payment from './payment/index';
+import pmMe from './pmMe/index';
 import search from './search/index';
 import settings from './settings/index';
 import ui from './ui/index';
@@ -49,6 +50,7 @@ angular
         organization,
         outside,
         payment,
+        pmMe,
         search,
         settings,
         ui,

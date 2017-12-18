@@ -953,6 +953,21 @@ export default angular
                 }
             })
 
+            .state('secured.pmme', {
+                url: '/pmme',
+                views: {
+                    'content@secured': {
+                        template: '<pm-me-view></pm-me-view>'
+                    }
+                },
+                onEnter(AppModel) {
+                    AppModel.set('settingsSidebar', true);
+                },
+                onExit(AppModel) {
+                    AppModel.set('settingsSidebar', false);
+                }
+            })
+
             .state('secured.filters', {
                 url: '/filters',
                 resolve: {
