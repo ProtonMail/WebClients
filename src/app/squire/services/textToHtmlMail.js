@@ -67,11 +67,15 @@ function textToHtmlMail() {
     const addNewLinePlaceholders = (text, placeholder) => {
         const startingNewline = '\n' + text;
         const textWPlaceholder = startingNewline.replace(/((\r\n|\n)\s*(\r\n|\n))+/g, (match) => newLineIntoPlaceholder(match, placeholder));
-        return textWPlaceholder.replace(/^\n/g, '');
+        // don't remove empty new lines before '>'
+        const noEmptyLines = textWPlaceholder.replace(/^\n/g, '');
+
+        // add an empty line (otherwise markdownit doesnt end the blockquote) if it comes after a `>`
+        return noEmptyLines.replace(/(>[^\r\n]*(?:\r\n|\n))(\s*[^>])/g, (match, line1, line2) => `${line1}\n${line2}`);
     };
 
     const removeNewLinePlaceholder = (html, placeholder) => {
-        return html.replace(new RegExp(placeholder, 'g'), '');
+        return html.replace(new RegExp(placeholder, 'g'), '&nbsp;');
     };
 
     const parse = (text) => {
