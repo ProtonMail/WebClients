@@ -16,6 +16,8 @@ import wizard from './wizard/index';
 import blackFriday from './blackFriday/index';
 import contact from './contact/index';
 import command from './command/index';
+import bridge from './bridge/index';
+import pmMe from './pmMe/index';
 
 export default angular.module('protonLazy', [
     'as.sortable',
@@ -26,6 +28,8 @@ export default angular.module('protonLazy', [
     filter,
     squire,
     contact,
+    bridge,
+    pmMe,
     command,
     wizard,
     blackFriday,
