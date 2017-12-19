@@ -1,11 +1,12 @@
 .storageBar {
     height: 6px;
-    background-color: $border;
+    background-color: $light;
     display: block;
     position: relative;
     margin: .5rem auto;
     border-radius: 12px;
     overflow: hidden;
+    border: 1px solid $border;
     .storageBar-progress {
         height: 100%;
         background-color: $primary;
