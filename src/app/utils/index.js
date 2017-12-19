@@ -2,6 +2,7 @@ import detectTimeWidth from './directives/detectTimeWidth';
 import dropzone from './directives/dropzone';
 import timeRefreshed from './directives/timeRefreshed';
 import reloadState from './directives/reloadState';
+import askPassword from './factories/askPassword';
 import chunk from './factories/chunk';
 import dateUtils from './factories/dateUtils';
 import desktopNotifications from './factories/desktopNotifications';
@@ -36,6 +37,7 @@ export default angular
     .directive('dropzone', dropzone)
     .directive('timeRefreshed', timeRefreshed)
     .directive('reloadState', reloadState)
+    .factory('askPassword', askPassword)
     .factory('chunk', chunk)
     .factory('dateUtils', dateUtils)
     .factory('desktopNotifications', desktopNotifications)

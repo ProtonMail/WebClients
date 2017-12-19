@@ -5,9 +5,16 @@
                 <header-block class="settingsLabels-header-pmMe">
                     <h2 class="settingsLabels-title-pmMe" translate-context="Title" translate>PM.ME</h2>
                 </header-block>
-                <p ng-if="hasPmMe" class="alert alert-success" translate-context="Info" translate>PM.ME address activated on your account.</p>
-                <p ng-if="!hasPmMe" class="alert alert-info" translate-context="Info" translate>PM.ME address is not yet activated on your account.</p>
-                <pm-me-btn ng-if="!hasPmMe" pm-me-tooltip class="pm_button primary"></pm-me-btn>
+                <div ng-if="!hasPmMe">
+                    <p class="alert" translate-context="Info" translate>ProtonMail now supports @pm.me email addresses (short for ProtonMail me or Private Message me).</p>
+                    <p class="alert alert-info" translate-context="Info" translate>Click on the button below to add the {{name}}@pm.me address to your account.</p>
+                    <pm-me-btn class="pm_button primary"></pm-me-btn>
+                </div>
+                <div ng-if="hasPmMe">
+                    <p ng-show="hasPaidMail" class="alert" translate-context="Info" translate>You can now also receive and send messages from your @pm.me address (short for ProtonMail me or Private Message me).</p>
+                    <p hide="hasPaidMail" class="alert" translate-context="Info" translate>You can now also receive messages at your @pm.me address (short for ProtonMail me or Private Message me). Upgrade to a paid accout to also send emails from your @pm.me address.</p>
+                    <p class="alert alert-success" translate-context="Info" translate>{{andy}}@pm.me is activated on your account.</p>
+                </div>
             </div>
         </div>
     </div>

@@ -60,7 +60,7 @@ function sidebarSettingsModel(gettextCatalog) {
         // pmme: {
         //     state: 'secured.pmme',
         //     label: 'pm.me',
-        //     icon: 'fa-desktop'
+        //     icon: 'fa-envelope'
         // },
         payments: {
             state: 'secured.payments',
