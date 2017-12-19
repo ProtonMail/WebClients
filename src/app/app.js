@@ -2,7 +2,6 @@ import paginator from './paginator/index';
 import analytics from './analytics/index';
 import authentication from './authentication/index';
 import browserSupport from './browserSupport/index';
-import bridge from './bridge/index';
 import bugReport from './bugReport/index';
 import commons from './commons/index';
 import core from './core/index';
@@ -13,7 +12,6 @@ import members from './members/index';
 import organization from './organization/index';
 import outside from './outside/index';
 import payment from './payment/index';
-import pmMe from './pmMe/index';
 import search from './search/index';
 import settings from './settings/index';
 import ui from './ui/index';
@@ -38,7 +36,6 @@ angular
         analytics,
         authentication,
         browserSupport,
-        bridge,
         browserSupport,
         bugReport,
         commons,
@@ -50,7 +47,6 @@ angular
         organization,
         outside,
         payment,
-        pmMe,
         search,
         settings,
         ui,
