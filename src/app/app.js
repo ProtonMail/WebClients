@@ -12,7 +12,6 @@ import members from './members/index';
 import organization from './organization/index';
 import outside from './outside/index';
 import payment from './payment/index';
-import search from './search/index';
 import settings from './settings/index';
 import ui from './ui/index';
 import user from './user/index';
@@ -47,7 +46,6 @@ angular
         organization,
         outside,
         payment,
-        search,
         settings,
         ui,
         user,
