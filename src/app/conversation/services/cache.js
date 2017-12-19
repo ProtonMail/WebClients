@@ -932,6 +932,12 @@ function cache(
                             event[type].loaded = false;
                         }
 
+                        // NOTE Simulate future change where Labels are updated only from Message events
+                        if (fromBackend && type === 'Conversation' && event.Action === UPDATE_FLAGS) {
+                            delete event.Conversation.LabelIDsAdded;
+                            delete event.Conversation.LabelIDsRemoved;
+                        }
+
                         acc[`${type}IDs`].push(event.ID);
                         event.Action === CREATE && acc.flow[type].create.push({ event, type });
                         event.Action === UPDATE_DRAFT && acc.flow[type].update.push({ event, type, isSend, item: 'Draft' });
