@@ -19,6 +19,7 @@ function paginator($rootScope, $stateParams, paginationModel, CONSTANTS) {
         if (paginationModel.isMax() || scope.totalItems === 0) {
             className.push(`${CLASS_PAGINATOR_DISABLED}next`);
         }
+
         if (maxPageNumber === 0 || maxPageNumber === 1 || scope.totalItems === 0) {
             className.push(`${CLASS_PAGINATOR_DISABLED}main`);
         }

@@ -279,7 +279,7 @@ function cache(
      * @param {Object} request
      * @return {Promise}
      */
-    function queryConversations(request) {
+    function queryConversations(request, noCacheCounter = false) {
         const loc = getLocation(request);
         const context = tools.cacheContext();
         request.Limit = request.Limit || CONSTANTS.CONVERSATION_LIMIT; // We don't call 50 conversations but 100 to improve user experience when he delete message and display quickly the next conversations
@@ -299,15 +299,20 @@ function cache(
                     // Only for cache context
                     if (context) {
                         // Set total value in cache
-                        const total = data.Limit;
-                        const unread = total === 0 ? 0 : data.Unread;
-                        const pages = getPages(request);
+                        if (!noCacheCounter) {
+                            const total = data.Limit;
+                            const unread = total === 0 ? 0 : data.Unread;
+                            const pages = getPages(request);
 
-                        cacheCounters.updateConversation(loc, total, unread);
+                            // Add pages to the cache
+                            pages.forEach((page) => !cachePages.inside(page) && cachePages.add(page));
+
+                            cacheCounters.updateConversation(loc, total, unread);
+                        }
+
                         // Store conversations
                         storeConversations(data.Conversations);
-                        // Add pages to the cache
-                        pages.forEach((page) => !cachePages.inside(page) && cachePages.add(page));
+
                         api.clearDispatcher();
                         // Return conversations ordered
                         return api.orderConversation(data.Conversations.slice(0, CONSTANTS.ELEMENTS_PER_PAGE), loc);
@@ -337,7 +342,7 @@ function cache(
      * @param {Object} request
      * @return {Promise}
      */
-    function queryMessages(request) {
+    function queryMessages(request, noCacheCounter = false) {
         const loc = getLocation(request);
         const context = tools.cacheContext();
 
@@ -366,7 +371,9 @@ function cache(
                     if (context) {
                         const pages = getPages(request);
                         // Set total value in cache
-                        cacheCounters.updateMessage(loc, Limit);
+                        if (!noCacheCounter) {
+                            cacheCounters.updateMessage(loc, Limit);
+                        }
                         // Add pages to the cache
                         pages.forEach((page) => !cachePages.inside(page) && cachePages.add(page));
                         // Return messages ordered
@@ -1030,6 +1037,7 @@ function cache(
         const type = tools.getTypeList();
         const elementsCached = type === 'conversation' ? conversationsCached : messagesCached;
         const loc = tools.currentLocation();
+        const noCacheCounter = true;
 
         const callApi = () => {
             const Label = loc;
@@ -1043,7 +1051,7 @@ function cache(
                 request.End = elementTime;
             }
 
-            const promise = type === 'conversation' ? queryConversations(request) : queryMessages(request);
+            const promise = type === 'conversation' ? queryConversations(request, noCacheCounter) : queryMessages(request, noCacheCounter);
 
             return promise.then((elements = []) => {
                 if (elements.length) {

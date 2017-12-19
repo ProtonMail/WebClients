@@ -329,7 +329,7 @@ function ElementsController(
             const conversationMode = authentication.user.ViewMode === CONSTANTS.CONVERSATION_VIEW_MODE;
 
             cache
-                .more(elementID, elementTime, 'previous')
+                .more(elementID, elementTime, 'next')
                 .then((element) => {
                     const id = conversationMode ? element.ConversationID || element.ID : element.ID;
                     $state.go(current, { id });
@@ -359,7 +359,7 @@ function ElementsController(
             const conversationMode = authentication.user.ViewMode === CONSTANTS.CONVERSATION_VIEW_MODE;
 
             cache
-                .more(elementID, elementTime, 'next')
+                .more(elementID, elementTime, 'previous')
                 .then((element) => {
                     const id = conversationMode ? element.ConversationID || element.ID : element.ID;
                     $state.go(current, { id });
@@ -734,12 +734,14 @@ function ElementsController(
      * @param refresh Boolean refresh the current state without it's id if true
      */
     $scope.back = (refresh = false) => {
+        const route = $state.$current.name.replace('.element', '');
+
         if (refresh) {
             const opt = _.extend({}, $stateParams, { id: null });
-            return $state.go($state.$current.name.replace('.element', ''), opt);
+            return $state.go(route, opt);
         }
 
-        $state.go($state.$current.name.replace('.element', ''), {
+        $state.go(route, {
             id: null,
             page: ~~$stateParams.page || 1,
             label: $stateParams.label
