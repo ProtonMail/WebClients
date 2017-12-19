@@ -2,11 +2,9 @@ import appConfigBody from './directives/appConfigBody';
 import appCopyright from './directives/appCopyright';
 import copy from './directives/copy';
 import AppModel from './factories/AppModel';
-import contactEncryption from './factories/contactEncryption';
 import pmModal from './factories/pmModal';
 import tempStorage from './factories/tempStorage';
 import address from './models/address';
-import contact from './models/contact';
 import eo from './models/eo';
 import events from './models/events';
 import filter from './models/filter';
@@ -38,11 +36,9 @@ export default angular
     .directive('appCopyright', appCopyright)
     .directive('copy', copy)
     .factory('AppModel', AppModel)
-    .factory('contactEncryption', contactEncryption)
     .factory('pmModal', pmModal)
     .factory('tempStorage', tempStorage)
     .factory('Address', address)
-    .factory('Contact', contact)
     .factory('Eo', eo)
     .factory('Events', events)
     .factory('Filter', filter)
