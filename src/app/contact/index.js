@@ -1,3 +1,4 @@
+import Contact from './services/contact';
 import contactAddressInput from './directives/contactAddressInput';
 import contactClear from './directives/contactClear';
 import contactDetails from './directives/contactDetails';
@@ -17,9 +18,10 @@ import contactEmails from './factories/contactEmails';
 import contactImporter from './factories/contactImporter';
 import contactMerger from './factories/contactMerger';
 import contactSchema from './factories/contactSchema';
+import contactEncryption from './factories/contactEncryption';
 import contactTransformLabel from './factories/contactTransformLabel';
 import contactUI from './factories/contactUI';
-import contact from './filters/contact';
+import contactFilter from './filters/contact';
 import spam from './filters/spam';
 import contactBeforeToLeaveModal from './modals/contactBeforeToLeaveModal';
 import contactLoaderModal from './modals/contactLoaderModal';
@@ -44,6 +46,7 @@ export default angular
     .directive('contactPlaceholder', contactPlaceholder)
     .directive('contactToolbar', contactToolbar)
     .directive('contactView', contactView)
+    .factory('Contact', Contact)
     .factory('contactCache', contactCache)
     .factory('contactDetailsModel', contactDetailsModel)
     .factory('contactDownloader', contactDownloader)
@@ -54,7 +57,8 @@ export default angular
     .factory('contactSchema', contactSchema)
     .factory('contactTransformLabel', contactTransformLabel)
     .factory('contactUI', contactUI)
-    .filter('contact', contact)
+    .factory('contactEncryption', contactEncryption)
+    .filter('contact', contactFilter)
     .filter('spam', spam)
     .factory('contactBeforeToLeaveModal', contactBeforeToLeaveModal)
     .factory('contactLoaderModal', contactLoaderModal)
