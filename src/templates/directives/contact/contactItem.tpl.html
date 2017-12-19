@@ -44,6 +44,7 @@
                         name="{{ ::UI.inputName+$index }}"
                         placeholder="{{ UI.placeholder }}"
                         class="form-control contactItem-field"
+                        ng-class="{ 'contactItem-input-with-icon': UI.inputType === 'email' }"
                         ng-model="item.value"
                         ng-change="change()">
 

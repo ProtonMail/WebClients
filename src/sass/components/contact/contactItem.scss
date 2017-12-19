@@ -182,6 +182,12 @@
     }
 }
 
+.contactItem-inputs input,
+.contactItem-inputs textarea {
+    &.contactItem-input-with-icon {
+        padding-right: 35px;
+    }
+}
 
 .contactItem-inputs textarea {
     font: inherit;
