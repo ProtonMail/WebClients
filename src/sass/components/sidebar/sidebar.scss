@@ -17,25 +17,25 @@
 
     .sidebar-btn-compose,
     .sidebar-btn-back {
-        box-sizing: border-box;
-        min-height: 40px;
-        margin-bottom: 10px;
-        font-size: 12px;
-        padding: 0;
-        text-align: center;
-        width: 100%;
-        text-transform: uppercase;
         border-color: transparent;
-        letter-spacing: 1px;
         border-radius: 2px;
+        box-sizing: border-box;
+        font-size: 12px;
+        letter-spacing: 1px;
+        line-height: 16px;
+        margin-bottom: 15px;
+        min-height: 40px;
+        padding: 12px 0px 10px;
+        text-align: center;
+        text-decoration: none;
+        text-transform: uppercase;
+        width: 100%;
     }
 
     .sidebar-btn-compose,
-    .sidebar-btn-back {
-        line-height: 16px;
-        padding: 12px 0px 10px;
-        text-decoration: none;
-        margin-bottom: 15px
+    .sidebar-btn-back * {
+        // https://github.com/ProtonMail/Angular/issues/6153
+        pointer-events: none;
     }
 
     .sidebar-btn-back {
