@@ -18,6 +18,7 @@ import contact from './contact/index';
 import command from './command/index';
 import bridge from './bridge/index';
 import pmMe from './pmMe/index';
+import search from './search/index';
 
 export default angular.module('protonLazy', [
     'as.sortable',
@@ -27,6 +28,7 @@ export default angular.module('protonLazy', [
     'ui.indeterminate',
     filter,
     squire,
+    search,
     contact,
     bridge,
     pmMe,
