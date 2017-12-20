@@ -46,7 +46,7 @@ import transformStylesheet from './services/transformStylesheet';
 import transformWelcome from './services/transformWelcome';
 
 export default angular
-    .module('proton.message', ['ngSanitize'])
+    .module('proton.message', ['ngSanitize', 'proton.contact', 'proton.squire'])
     .run((unsubscribeModel) => unsubscribeModel.init())
     .directive('actionMessage', actionMessage)
     .directive('allMessageLabels', allMessageLabels)
