@@ -1,9 +1,12 @@
 /* @ngInject */
 function contactToolbar($rootScope, $state, $stateParams, CONSTANTS, contactCache, gettextCatalog, messageModel, notification, dispatchers) {
     const getList = () => {
-        if (contactCache.get('selected').length) {
-            return contactCache.get('selected');
+        const selected = contactCache.get('selected').filter(Boolean);
+
+        if (selected.length) {
+            return selected;
         }
+
         return [contactCache.getItem($stateParams.id)].filter(Boolean);
     };
 
