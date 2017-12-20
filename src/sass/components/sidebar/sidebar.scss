@@ -30,10 +30,11 @@
         text-decoration: none;
         text-transform: uppercase;
         width: 100%;
-    }
 
-    .sidebar-btn-back * {
-        pointer-events: none;
+        * {
+            // https://github.com/ProtonMail/Angular/issues/6153
+            pointer-events: none;
+        }
     }
 
     .sidebar-btn-back {
