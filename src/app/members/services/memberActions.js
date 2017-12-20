@@ -1,6 +1,5 @@
 /* @ngInject */
 function memberActions(
-    $rootScope,
     addressModel,
     askPassword,
     authentication,
@@ -18,8 +17,11 @@ function memberActions(
     organizationKeysModel,
     organizationModel,
     setupOrganizationModal,
-    User
+    User,
+    dispatchers
 ) {
+    const { dispatcher } = dispatchers(['memberActions']);
+
     const I18N = {
         CHANGE_ROLE: {
             default: {
@@ -75,13 +77,14 @@ function memberActions(
         )
     };
 
-    const edit = (member) => {
+    const edit = (member, domains = domainModel.query()) => {
         const params = {
             member,
+            domains,
             organizationKey: organizationKeysModel.get('organizationKey'),
-            domains: domainModel.query(),
-            submit() {
+            submit(member) {
                 memberModal.deactivate();
+                dispatcher.memberActions('edit.success', { member, domains });
             },
             cancel() {
                 memberModal.deactivate();
@@ -96,6 +99,12 @@ function memberActions(
         }
     };
 
+    const addFromDomain = (domain) => {
+        if (membersValidator.canAdd(organizationKeysModel.get('keyStatus'))) {
+            edit(undefined, [domain]);
+        }
+    };
+
     const removeAction = ({ title, message }, remove = true) => (member) => {
         console.debug('@todo fix remove arg', remove);
         confirmModal.activate({
@@ -103,13 +112,11 @@ function memberActions(
                 title,
                 message,
                 confirm() {
-                    const promise = memberModel
-                        .remove(member)
-                        .then(eventManager.call)
-                        .then(() => {
-                            confirmModal.deactivate();
-                            notification.success(I18N.SUCCESS_REMOVE);
-                        });
+                    confirmModal.deactivate();
+                    const promise = memberModel.remove(member).then(() => {
+                        notification.success(I18N.SUCCESS_REMOVE);
+                        return eventManager.call();
+                    });
                     networkActivityTracker.track(promise);
                 },
                 cancel() {
@@ -227,7 +234,8 @@ function memberActions(
         makeAdmin,
         revokeAdmin,
         makePrivate,
-        enableSupport
+        enableSupport,
+        addFromDomain
     };
 }
 export default memberActions;

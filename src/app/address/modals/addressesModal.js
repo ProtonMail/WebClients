@@ -1,12 +1,11 @@
 /* @ngInject */
-function addressesModal(pmModal, CONSTANTS, addressModal, memberModal, $rootScope, organizationModel) {
+function addressesModal(pmModal, CONSTANTS, $rootScope, organizationModel, addressModel, memberActions) {
     return pmModal({
         controllerAs: 'ctrl',
         templateUrl: 'templates/modals/domain/address.tpl.html',
         /* @ngInject */
         controller: function(params) {
-            // Variables
-            const { domain, members, step, addressParams, memberParams, showMember = true } = params;
+            const { domain, members, step, showMember = true } = params;
             const organization = organizationModel.get();
 
             this.keyPhase = CONSTANTS.KEY_PHASE;
@@ -14,36 +13,23 @@ function addressesModal(pmModal, CONSTANTS, addressModal, memberModal, $rootScop
             this.domain = domain;
             this.step = step;
             this.showMember = showMember && organization.HasKeys === 1 && this.keyPhase > 3;
+            this.next = params.next;
+            this.close = params.cancel;
 
             this.open = (name) => {
                 $rootScope.$broadcast(name, params.domain);
             };
 
-            // Functions
-            this.getMember = (id) => {
-                const index = _.findIndex(members, { ID: id });
-                if (index !== -1) {
-                    return members[index];
-                }
-                return {};
-            };
+            this.getMember = (ID) => _.findWhere(members, { ID }) || {};
 
             this.addAddress = () => {
                 params.cancel();
-                addressModal.activate(addressParams);
+                addressModel.add(domain);
             };
 
             this.addMember = () => {
                 params.cancel();
-                memberModal.activate(memberParams);
-            };
-
-            this.next = () => {
-                params.next();
-            };
-
-            this.close = () => {
-                params.cancel();
+                memberActions.addFromDomain(domain);
             };
         }
     });

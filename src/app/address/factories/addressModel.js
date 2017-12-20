@@ -20,9 +20,11 @@ function addressModel(
     authentication,
     addressWithoutKeysManager,
     CONSTANTS,
-    $rootScope
+    dispatchers
 ) {
     const { ENCRYPTION_DEFAULT, PAID_ADMIN_ROLE } = CONSTANTS;
+    const { dispatcher } = dispatchers(['addressModel', 'memberActions']);
+
     const I18N = {
         ERROR_DO_UPGRADE: gettextCatalog.getString(
             'You have used all addresses in your plan. Please upgrade your plan to add a new address',
@@ -75,7 +77,7 @@ function addressModel(
         };
 
         if (member.Type === 0) {
-            config.pmDomains = pmDomainModel.get().map((domain) => ({ DomainName: domain }));
+            config.pmDomains = pmDomainModel.get().map((DomainName) => ({ DomainName }));
         }
 
         !domain.ID && (config.domains = config.pmDomains.concat(domainModel.query()));
@@ -117,20 +119,26 @@ function addressModel(
                             organization: organizationModel.get(),
                             organizationKey,
                             domains,
-                            submit: memberModal.deactivate,
+                            submit(member) {
+                                dispatcher.memberActions('edit.success', { member, domains });
+                                memberModal.deactivate();
+                            },
                             cancel: memberModal.deactivate
                         }
                     });
                 },
                 submit(address, member) {
                     addressModal.deactivate();
+                    const dispatch = () => dispatcher.addressModel('address.new', { address, member, domain });
 
                     // Non private member ~ Open generate modal
                     if (!member.Private) {
+                        dispatch();
                         return generate(address, member).then(eventManager.call);
                     }
 
                     eventManager.call();
+                    dispatch();
                 }
             }
         });
@@ -210,17 +218,13 @@ function addressModel(
                 title: I18N.DELETE_MODAL.title,
                 message: I18N.DELETE_MODAL.message,
                 confirm() {
+                    confirmModal.deactivate();
                     const promise = disableFirst(address)
                         .then(() => Promise.all([eventManager.call(), Address.remove(address.ID)]))
                         .then(() => {
                             notification.success(I18N.SUCCESS_REMOVE);
-                            confirmModal.deactivate();
                         })
-                        .then(eventManager.call)
-                        .catch((e) => {
-                            confirmModal.deactivate();
-                            throw e;
-                        });
+                        .then(eventManager.call);
 
                     networkActivityTracker.track(promise);
                 },
@@ -278,10 +282,7 @@ function addressModel(
                 // Address receive === 1 because we have keys and Status === 1
                 adr.Receive = +(adr.Status === 1);
                 index !== -1 && authentication.user.Addresses.splice(index, 1, adr);
-                $rootScope.$emit('addressModel', {
-                    type: 'generateKey.success',
-                    data: { address }
-                });
+                dispatcher.addressModel('generateKey.success', { address });
             })
             .catch(_.noop);
     }

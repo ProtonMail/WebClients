@@ -8,9 +8,20 @@
             </div>
             <div class="modal-body pm_form">
                 <p translate >Please add addresses to send and receive email with this domain</p>
-                <button ng-click="ctrl.addAddress()" class="pm_button primary" translate-context="Action" translate-comment="button" translate>Add Address</button>
-                <button ng-click="ctrl.addMember()" ng-show="ctrl.showMember" class="pm_button" translate-context="Action" translate-comment="button" translate>Add user</button>
-                <div ng-show="ctrl.domain.Addresses.length > 0">
+                <button
+                    ng-click="ctrl.addAddress()"
+                    class="pm_button primary"
+                    translate-context="Action"
+                    translate-comment="button"
+                    translate>Add Address</button>
+                <button
+                    ng-click="ctrl.addMember()"
+                    ng-show="ctrl.showMember"
+                    class="pm_button"
+                    translate-context="Action"
+                    translate-comment="button"
+                    translate>Add user</button>
+                <div ng-if="ctrl.domain.Addresses.length > 0">
                     <p><strong translate translate-context="Title" translate-comment="added addesses table label / heading">Domain addresses</strong></p>
                     <div class="pm_table">
                         <table class="pm_form bordered">
