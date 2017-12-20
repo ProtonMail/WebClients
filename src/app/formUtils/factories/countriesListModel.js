@@ -142,6 +142,7 @@ function countriesListModel() {
         { value: 'MD', label: 'Moldova' },
         { value: 'MC', label: 'Monaco' },
         { value: 'MN', label: 'Mongolia' },
+        { value: 'ME', label: 'Montenegro' },
         { value: 'MS', label: 'Montserrat' },
         { value: 'MA', label: 'Morocco' },
         { value: 'MZ', label: 'Mozambique' },
