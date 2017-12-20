@@ -5,37 +5,19 @@ function domainModal(pmModal, $rootScope) {
         templateUrl: 'templates/modals/domain/domain.tpl.html',
         /* @ngInject */
         controller: function(params) {
-            const self = this;
+            this.step = params.step;
+            this.next = params.next;
+            this.cancel = params.cancel;
+            this.domain = params.domain;
+            this.name = '';
 
-            self.step = params.step;
-            self.domain = params.domain;
-            self.name = '';
-
-            // Functions
-            self.open = (name) => {
+            this.open = (name) => {
                 $rootScope.$broadcast(name, params.domain);
             };
 
-            self.submit = () => {
-                if (angular.isDefined(params.submit) && angular.isFunction(params.submit)) {
-                    params.submit(self.name);
-                }
-            };
-
-            self.next = () => {
-                if (angular.isDefined(params.next) && angular.isFunction(params.next)) {
-                    params.next();
-                }
-            };
-
-            self.cancel = () => {
-                if (angular.isDefined(params.cancel) && angular.isFunction(params.cancel)) {
-                    params.cancel();
-                }
-            };
-
-            self.beginsWith = (value = '') => {
-                const { name = '' } = self;
+            this.submit = () => (params.submit || _.noop)(this.name);
+            this.beginsWith = (value = '') => {
+                const { name = '' } = this;
                 return name.substring(0, value.length) === value;
             };
         }

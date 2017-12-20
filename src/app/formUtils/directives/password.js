@@ -1,5 +1,10 @@
 /* @ngInject */
 function password() {
+    const generateID = () =>
+        `pw${Math.random()
+            .toString(32)
+            .slice(2, 12)}-${Date.now()}`;
+
     return {
         restrict: 'E',
         replace: true,
@@ -9,7 +14,7 @@ function password() {
             form: '=',
             compare: '='
         },
-        compile(element, { autofocus, compare, id = '', name = '', placeholder = '', tabindex = 0 }) {
+        compile(element, { autofocus, compare, id = generateID(), name = '', placeholder = '', tabindex = 0 }) {
             const input = element[0].querySelector('input');
             input.setAttribute('id', id);
             input.setAttribute('name', name);

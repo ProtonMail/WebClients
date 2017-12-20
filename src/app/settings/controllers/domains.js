@@ -26,11 +26,13 @@ function DomainsController(
     notification,
     pmcw,
     spfModal,
-    verificationModal
+    verificationModal,
+    dispatchers
 ) {
     $controller('SignaturesController', { $scope, authentication, pmcw });
 
-    // Listeners
+    const { on, unsubscribe } = dispatchers([], true);
+
     $scope.$on('domain', (event, domain) => {
         $scope.closeModals();
         $scope.addDomain(domain);
@@ -64,6 +66,31 @@ function DomainsController(
     $scope.$on('dmarc', (event, domain) => {
         $scope.closeModals();
         $scope.dmarc(domain);
+    });
+
+    $scope.$on('$destroy', () => {
+        unsubscribe();
+    });
+
+    on('addressModel', (e, { type, data }) => {
+        if (type === 'address.new') {
+            const address = _.extend({}, data.address, {
+                MemberID: data.member.ID
+            });
+            const domain = _.extend({}, data.domain, {
+                Addresses: data.domain.Addresses.concat([address])
+            });
+            $scope.addAddresses(domain);
+        }
+    });
+
+    on('memberActions', (e, { type, data }) => {
+        if (type === 'edit.success') {
+            const domain = _.extend({}, data.domains[0]);
+            domain.Addresses.push(...data.member.Addresses);
+            $scope.members.push(data.member);
+            $scope.addAddresses(domain);
+        }
     });
 
     /**
@@ -237,6 +264,44 @@ function DomainsController(
         );
     };
 
+    const verifyDomain = async ({ ID }) => {
+        try {
+            const { data = {} } = await domainApi.get(ID);
+
+            if (data.Code !== 1000) {
+                throw new Error(data.Error);
+            }
+
+            const { VerifyState } = (data.Domain || {}).VerifyState;
+
+            if (VerifyState === 0) {
+                throw new Error(gettextCatalog.getString('Verification did not succeed, please try again in an hour.', null, 'Error'));
+            }
+
+            if (VerifyState === 1) {
+                notification.error(
+                    gettextCatalog.getString(
+                        'Wrong verification code. Please make sure you copied the verification code correctly and try again. It can take up to 24 hours for changes to take effect.',
+                        null,
+                        'Error'
+                    ),
+                    { duration: 30000 }
+                );
+                return { test: false, data };
+            }
+
+            if (VerifyState === 2) {
+                notification.success(gettextCatalog.getString('Domain verified', null));
+                return { test: true, data };
+            }
+        } catch (e) {
+            if (e.message) {
+                throw e;
+            }
+            throw new Error(gettextCatalog.getString('Verification did not succeed, please try again in an hour.', null, 'Error'));
+        }
+    };
+
     /**
      * Open verification modal
      * @param {Object} domain
@@ -249,53 +314,16 @@ function DomainsController(
                 domain,
                 step: 2,
                 submit() {
-                    networkActivityTracker.track(
-                        domainApi.get(domain.ID).then(
-                            (result) => {
-                                if (angular.isDefined(result.data) && result.data.Code === 1000) {
-                                    // check verification code
-                                    // 0 is default, 1 is has code but wrong, 2 is good
-                                    switch (result.data.Domain.VerifyState) {
-                                        case 0:
-                                            notification.error(
-                                                gettextCatalog.getString('Verification did not succeed, please try again in an hour.', null, 'Error')
-                                            );
-                                            break;
-                                        case 1:
-                                            notification.error(
-                                                gettextCatalog.getString(
-                                                    'Wrong verification code. Please make sure you copied the verification code correctly and try again. It can take up to 24 hours for changes to take effect.',
-                                                    null,
-                                                    'Error'
-                                                ),
-                                                { duration: 30000 }
-                                            );
-                                            break;
-                                        case 2:
-                                            notification.success(gettextCatalog.getString('Domain verified', null));
-                                            $scope.domains[index] = result.data.Domain;
-                                            verificationModal.deactivate();
-                                            // open the next step
-                                            $scope.addAddresses(result.data.Domain);
-                                            break;
-                                        default:
-                                            break;
-                                    }
-                                } else if (angular.isDefined(result.data) && result.data.Error) {
-                                    notification.error(result.data.Error);
-                                } else {
-                                    notification.error(
-                                        gettextCatalog.getString('Verification did not succeed, please try again in an hour.', null, 'Error')
-                                    );
-                                }
-                            },
-                            () => {
-                                notification.error(
-                                    gettextCatalog.getString('Verification did not succeed, please try again in an hour.', null, 'Error')
-                                );
-                            }
-                        )
-                    );
+                    const promise = verifyDomain(domain).then(({ test, data }) => {
+                        if (test) {
+                            $scope.domains[index] = data.Domain;
+                            verificationModal.deactivate();
+                            // open the next step
+                            $scope.addAddresses(data.Domain);
+                        }
+                    });
+
+                    networkActivityTracker.track(promise);
                 },
                 next() {
                     $scope.addAddresses(domain);
@@ -317,55 +345,11 @@ function DomainsController(
             return;
         }
 
-        const memberParams = {
-            params: {
-                organizationKey: $scope.organizationKey,
-                domains: [domain],
-                submit(member) {
-                    memberModal.deactivate();
-                    const addresses = member.Addresses.map((address) => {
-                        address.MemberID = member.ID;
-                        return address;
-                    });
-                    domain.Addresses = domain.Addresses.concat(addresses);
-                    $scope.addAddresses(domain);
-                },
-                cancel() {
-                    memberModal.deactivate();
-                    $scope.addAddresses(domain);
-                }
-            }
-        };
-
-        const addressParams = {
-            params: {
-                domains: [domain],
-                members: $scope.members,
-                organizationKey: $scope.organizationKey,
-                addMember() {
-                    addressModal.deactivate();
-                    memberModal.activate(memberParams);
-                },
-                submit(address) {
-                    addressModal.deactivate();
-                    domain.Addresses.push(address);
-                    $scope.addAddresses(domain);
-                    eventManager.call();
-                },
-                cancel() {
-                    addressModal.deactivate();
-                    $scope.addAddresses(domain);
-                }
-            }
-        };
-
         addressesModal.activate({
             params: {
                 step: 3,
                 domain,
                 members: $scope.members,
-                addressParams,
-                memberParams,
                 next() {
                     addressesModal.deactivate();
                     $scope.mx(domain);

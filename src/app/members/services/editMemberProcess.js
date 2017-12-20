@@ -58,35 +58,35 @@ function editMemberProcess(networkActivityTracker, gettextCatalog, memberApi, Ad
             return memberApi.create(member, temporaryPassword).then((data = {}) => data.Member);
         };
 
-        const addressRequest = (member) => {
+        const addressRequest = async (member) => {
             if (params.member && params.member.Addresses.length) {
                 return { addresses: params.member.Addresses, member };
             }
 
-            return Address.create({
+            const data = await Address.create({
                 Local: address,
                 Domain: domain.DomainName,
                 MemberID: member.ID
-            }).then((data = {}) => {
-                member.Addresses.push(data.Address);
-                const addresses = [data.Address];
-                return { addresses, member };
             });
+            member.Addresses.push(data.Address);
+            return { addresses: [data.Address], member };
         };
 
-        const generateKey = ({ member, addresses }) => {
+        const generateKey = async ({ member, addresses }) => {
             if (member.Private || (params.member && params.member.Keys.length > 0)) {
                 return { member };
             }
             const list = !addresses.length ? params.member.Addresses : addresses;
-            return setupKeys.generate(list, temporaryPassword, size).then((key) => ({ member, key }));
+            const key = await setupKeys.generate(list, temporaryPassword, size);
+            return { member, key };
         };
 
-        const keyRequest = ({ member, key }) => {
+        const keyRequest = async ({ member, key }) => {
             if (member.Private || (params.member && params.member.Keys.length > 0)) {
-                return;
+                return { member };
             }
-            return setupKeys.memberSetup(key, temporaryPassword, member.ID, organizationKey);
+            await setupKeys.memberSetup(key, temporaryPassword, member.ID, organizationKey);
+            return { member };
         };
 
         /**
@@ -132,9 +132,10 @@ function editMemberProcess(networkActivityTracker, gettextCatalog, memberApi, Ad
 
             const { message, promise } = getPromise({ maxPadding, minPadding, maxVPNPadding }, member);
 
-            const finish = (message) => () => {
+            const finish = (message) => ({ member }) => {
                 notification.success(message);
-                return eventManager.call().then(() => params.submit(member));
+                params.submit(member);
+                return eventManager.call();
             };
 
             const process = promise()

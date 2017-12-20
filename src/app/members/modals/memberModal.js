@@ -27,7 +27,6 @@ function memberModal(pmModal, CONSTANTS, gettextCatalog, organizationModel, subs
         controller: function(params) {
             const { organization, minPadding, maxPadding, startValue } = getConfigKeys(params);
 
-            // Default Parameters
             this.ID = null;
             this.step = 'member';
             this.size = CONSTANTS.ENCRYPTION_DEFAULT;
@@ -108,7 +107,6 @@ function memberModal(pmModal, CONSTANTS, gettextCatalog, organizationModel, subs
                 this.showKeys = params.member.Keys.length === 0 && !this.private;
             }
 
-            // Functions
             this.submit = () => {
                 editMemberProcess(this, { params, maxPadding, minPadding, maxVPNPadding }).edit();
             };
