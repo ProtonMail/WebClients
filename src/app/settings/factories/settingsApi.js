@@ -40,9 +40,9 @@ function settingsApi($http, url, srp) {
     const theme = (data) => {
         $http.put(requestURL('theme'), data).then(({ data = {} } = {}) => {
             if (data.Code !== 1000) {
-                return data;
+                throw new Error(data.Error);
             }
-            throw new Error(data.Error);
+            return data;
         });
     };
 
