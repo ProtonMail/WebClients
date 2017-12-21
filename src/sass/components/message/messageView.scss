@@ -367,6 +367,8 @@
 }
 
 .bodyDecrypted {
+
+    overflow: auto;
     /* Forbidden property on almost ALL clients */
     [style*="position:absolute"] {
         position: static !important;
