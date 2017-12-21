@@ -74,7 +74,7 @@ function sidebarSettingsModel(gettextCatalog) {
         },
         vpn: {
             state: 'secured.vpn',
-            label: gettextCatalog.getString('VPN', null, 'Title'),
+            label: 'ProtonVPN',
             icon: 'fa-shield'
         }
     });
