@@ -83,6 +83,7 @@ function contactCache(
      */
     function hydrate(force) {
         if (isHydrated() && !force) {
+            sync();
             emit();
             return Promise.resolve();
         }
