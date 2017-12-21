@@ -475,6 +475,10 @@ export default angular
             .state('pgp', {
                 url: '/pgp/:messageID',
                 resolve: {
+                    app(lazyLoader) {
+                        // We need to lazy load the app.
+                        return lazyLoader.app();
+                    },
                     messageID($stateParams) {
                         if ($stateParams.messageID) {
                             return $stateParams.messageID;
