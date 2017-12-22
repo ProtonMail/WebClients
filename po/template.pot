@@ -1072,7 +1072,7 @@ msgstr ""
 msgid "All"
 msgstr ""
 
-#: ./src/app/contact/factories/contactEditor.js:66
+#: ./src/app/contact/factories/contactEditor.js:69
 msgctxt "Success"
 msgid "All contacts deleted"
 msgstr ""
@@ -1315,12 +1315,12 @@ msgctxt "Info"
 msgid "Are you sure you want to clear all your logs?"
 msgstr ""
 
-#: ./src/app/contact/factories/contactEditor.js:101
+#: ./src/app/contact/factories/contactEditor.js:104
 msgctxt "Info"
 msgid "Are you sure you want to delete all your contacts?"
 msgstr ""
 
-#: ./src/app/contact/factories/contactEditor.js:102
+#: ./src/app/contact/factories/contactEditor.js:105
 msgid "Are you sure you want to delete this contact?"
 msgid_plural "Are you sure you want to delete the selected contacts?"
 msgstr[0] ""
@@ -2216,7 +2216,7 @@ msgctxt "Success message for the contact modal"
 msgid "Contact added"
 msgstr ""
 
-#: ./src/app/contact/factories/contactEditor.js:67
+#: ./src/app/contact/factories/contactEditor.js:70
 msgid "Contact deleted"
 msgid_plural "Contacts deleted"
 msgstr[0] ""
@@ -2232,7 +2232,7 @@ msgctxt "Error"
 msgid "Contact does not contain email address"
 msgstr ""
 
-#: ./src/app/contact/factories/contactEditor.js:52
+#: ./src/app/contact/factories/contactEditor.js:55
 msgctxt "Success message"
 msgid "Contact edited"
 msgstr ""
@@ -2759,7 +2759,7 @@ msgctxt "Action"
 msgid "Delete"
 msgstr ""
 
-#: ./src/app/contact/factories/contactEditor.js:110
+#: ./src/app/contact/factories/contactEditor.js:113
 msgctxt "Title"
 msgid "Delete"
 msgstr ""
@@ -2780,7 +2780,7 @@ msgctxt "Title"
 msgid "Delete Account"
 msgstr ""
 
-#: ./src/app/contact/factories/contactEditor.js:110
+#: ./src/app/contact/factories/contactEditor.js:113
 #: ./src/app/elements/directives/advancedFilterElement.js:49
 msgctxt "Title"
 msgid "Delete all"
@@ -7055,7 +7055,7 @@ msgstr ""
 #. contact details
 #. Save button for updating default identity on account page
 #: ./src/templates/contact/contactDetails.tpl.html:6
-#: ./src/templates/contact/contactModal.tpl.html:20
+#: ./src/templates/contact/contactModal.tpl.html:21
 #: ./src/templates/dashboard/customProPlanModal.tpl.html:42
 #: ./src/templates/dashboard/customVpnModal.tpl.html:20
 #: ./src/templates/directives/composer/composer.tpl.html:120
