@@ -19,6 +19,10 @@ function cachePages($rootScope, tools) {
         }
     });
 
+    $rootScope.$on('logout', () => {
+        clear();
+    });
+
     return { init: angular.noop, add, inside, clear, consecutive };
 }
 export default cachePages;

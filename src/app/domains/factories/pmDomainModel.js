@@ -1,10 +1,9 @@
 /* @ngInject */
-function pmDomainModel(authentication, domainApi, gettextCatalog) {
+function pmDomainModel($rootScope, authentication, domainApi, gettextCatalog) {
     const errorMessage = gettextCatalog.getString('Domain request failed', null, 'Error');
     const domains = [];
-    function get() {
-        return domains;
-    }
+    const get = () => domains.slice();
+
     function set(list) {
         clear();
         domains.push(...list);
@@ -33,6 +32,9 @@ function pmDomainModel(authentication, domainApi, gettextCatalog) {
     function clear() {
         domains.length = 0;
     }
+    $rootScope.$on('logout', () => {
+        clear();
+    });
     return { get, fetch, clear };
 }
 export default pmDomainModel;

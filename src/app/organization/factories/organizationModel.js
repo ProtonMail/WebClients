@@ -139,6 +139,10 @@ function organizationModel(
 
     const changeKeys = organizationKeysModel.changeKeys;
 
+    $rootScope.$on('logout', () => {
+        clear();
+    });
+
     return {
         set,
         get,

@@ -55,6 +55,10 @@ function contactEmails($rootScope, Contact) {
         reset();
     });
 
+    $rootScope.$on('logout', () => {
+        clear();
+    });
+
     return { set, fetch, clear, findIndex, load: loadCache };
 }
 export default contactEmails;
