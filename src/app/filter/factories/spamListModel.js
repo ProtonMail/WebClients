@@ -211,6 +211,10 @@ function spamListModel($q, $rootScope, CONSTANTS, incomingModel) {
 
     const clear = () => (MAIN_CACHE = getDefault());
 
+    $rootScope.$on('logout', () => {
+        clear();
+    });
+
     return { list, load, move, destroy, search, refresh, clear, getType };
 }
 export default spamListModel;

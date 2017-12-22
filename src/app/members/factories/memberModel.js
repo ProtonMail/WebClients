@@ -103,6 +103,10 @@ function memberModel($rootScope, memberApi, gettextCatalog, authentication, CONS
         type === 'members' && manageCache(data);
     });
 
+    $rootScope.$on('logout', () => {
+        clear();
+    });
+
     return {
         get,
         set,

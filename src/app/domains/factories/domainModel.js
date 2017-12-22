@@ -60,6 +60,9 @@ function domainModel($rootScope, domainApi, gettextCatalog) {
         }
         $rootScope.$emit('domainsChange', domains);
     });
+    $rootScope.$on('logout', () => {
+        clear();
+    });
     return { query, get, set, fetch, clear, catchall };
 }
 export default domainModel;

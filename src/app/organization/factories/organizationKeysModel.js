@@ -146,6 +146,10 @@ function organizationKeysModel(
         }
     }
 
+    $rootScope.$on('logout', () => {
+        clear();
+    });
+
     return {
         fetch,
         get,
