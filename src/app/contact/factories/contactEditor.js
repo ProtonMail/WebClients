@@ -38,7 +38,10 @@ function contactEditor(
                     }
                 }
             });
+        } else {
+            networkActivityTracker.track(promise);
         }
+
         return promise;
     }
     /*
