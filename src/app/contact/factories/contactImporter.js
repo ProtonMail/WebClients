@@ -33,7 +33,7 @@ function contactImporter($rootScope, contactSchema, importContactModal, notifica
 
         const reader = new FileReader();
         const file = files[0];
-        const extension = file.name.slice(-4);
+        const extension = file.name.toLowerCase().slice(-4);
 
         reader.onload = (e) => notification.error(e);
         reader.onload = () => {
