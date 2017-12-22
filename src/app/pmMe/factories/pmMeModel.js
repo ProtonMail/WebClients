@@ -1,5 +1,4 @@
-function pmMeModel(addressModel, askPassword, authentication, CONSTANTS, gettextCatalog, networkActivityTracker, notification, User) {
-    const { PREMIUM } = CONSTANTS.ADDRESS_TYPE;
+function pmMeModel(addressModel, askPassword, authentication, gettextCatalog, networkActivityTracker, notification, User) {
     const I18N = {
         PM_ME: {
             paid() {
@@ -20,12 +19,6 @@ function pmMeModel(addressModel, askPassword, authentication, CONSTANTS, gettext
     };
 
     /**
-     * Check if the current account has a @pm.me address
-     * @return {Boolean}
-     */
-    const has = () => _.findWhere(authentication.user.Addresses, { Type: PREMIUM });
-
-    /**
      * Unlock the session to add the @pm.me address
      */
     const activate = () => {
@@ -41,7 +34,7 @@ function pmMeModel(addressModel, askPassword, authentication, CONSTANTS, gettext
         });
     };
 
-    return { has, activate };
+    return { activate };
 }
 
 export default pmMeModel;

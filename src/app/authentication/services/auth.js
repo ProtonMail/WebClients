@@ -30,7 +30,8 @@ function authentication(
     upgradeKeys
 ) {
     let keys = {}; // Store decrypted keys
-
+    const { ADDRESS_TYPE, OAUTH_KEY, FREE_USER_ROLE, MAILBOX_PASSWORD_KEY } = CONSTANTS;
+    const { PREMIUM } = ADDRESS_TYPE;
     const auth = {
         headersSet: false,
         // These headers are used just once for the /cookies route, then we forget them and use cookies and x-pm-session header instead.
@@ -42,9 +43,9 @@ function authentication(
                 $http.defaults.headers.common['x-pm-session'] = auth.data.SessionToken;
                 $http.defaults.headers.common.Authorization = undefined;
                 $http.defaults.headers.common['x-pm-uid'] = undefined;
-                secureSessionStorage.removeItem(CONSTANTS.OAUTH_KEY + ':AccessToken');
-                secureSessionStorage.removeItem(CONSTANTS.OAUTH_KEY + ':Uid');
-                secureSessionStorage.removeItem(CONSTANTS.OAUTH_KEY + ':RefreshToken');
+                secureSessionStorage.removeItem(OAUTH_KEY + ':AccessToken');
+                secureSessionStorage.removeItem(OAUTH_KEY + ':Uid');
+                secureSessionStorage.removeItem(OAUTH_KEY + ':RefreshToken');
             } else {
                 // we need the old stuff for now
                 $http.defaults.headers.common['x-pm-session'] = undefined;
@@ -79,7 +80,7 @@ function authentication(
 
                     // Hacky fix for missing organizations
                     const fixOrganization = () => {
-                        if (user.Role === CONSTANTS.FREE_USER_ROLE && user.Subscribed) {
+                        if (user.Role === FREE_USER_ROLE && user.Subscribed) {
                             return setupKeys
                                 .generateOrganization(api.getPassword())
                                 .then((response) => {
@@ -129,12 +130,12 @@ function authentication(
 
     function saveAuthData(data) {
         if (data.SessionToken) {
-            secureSessionStorage.setItem(CONSTANTS.OAUTH_KEY + ':SessionToken', pmcw.encode_base64(data.SessionToken));
+            secureSessionStorage.setItem(OAUTH_KEY + ':SessionToken', pmcw.encode_base64(data.SessionToken));
             auth.data = data;
         } else {
-            secureSessionStorage.setItem(CONSTANTS.OAUTH_KEY + ':Uid', data.Uid);
-            secureSessionStorage.setItem(CONSTANTS.OAUTH_KEY + ':AccessToken', data.AccessToken);
-            secureSessionStorage.setItem(CONSTANTS.OAUTH_KEY + ':RefreshToken', data.RefreshToken);
+            secureSessionStorage.setItem(OAUTH_KEY + ':Uid', data.Uid);
+            secureSessionStorage.setItem(OAUTH_KEY + ':AccessToken', data.AccessToken);
+            secureSessionStorage.setItem(OAUTH_KEY + ':RefreshToken', data.RefreshToken);
             auth.data = _.pick(data, 'Uid', 'AccessToken', 'RefreshToken');
         }
 
@@ -143,7 +144,7 @@ function authentication(
 
     function savePassword(pwd) {
         // Save password in session storage
-        secureSessionStorage.setItem(CONSTANTS.MAILBOX_PASSWORD_KEY, pmcw.encode_utf8_base64(pwd));
+        secureSessionStorage.setItem(MAILBOX_PASSWORD_KEY, pmcw.encode_utf8_base64(pwd));
     }
 
     function receivedCredentials(data) {
@@ -159,7 +160,7 @@ function authentication(
         savePassword,
         receivedCredentials,
         detectAuthenticationState() {
-            const session = secureSessionStorage.getItem(CONSTANTS.OAUTH_KEY + ':SessionToken');
+            const session = secureSessionStorage.getItem(OAUTH_KEY + ':SessionToken');
 
             if (session) {
                 auth.data = {
@@ -178,14 +179,14 @@ function authentication(
             }
 
             // Save password in session storage
-            secureSessionStorage.setItem(CONSTANTS.MAILBOX_PASSWORD_KEY, pmcw.encode_utf8_base64(pwd));
+            secureSessionStorage.setItem(MAILBOX_PASSWORD_KEY, pmcw.encode_utf8_base64(pwd));
         },
 
         /**
          * Return the mailbox password stored in the session storage
          */
         getPassword() {
-            const value = secureSessionStorage.getItem(CONSTANTS.MAILBOX_PASSWORD_KEY);
+            const value = secureSessionStorage.getItem(MAILBOX_PASSWORD_KEY);
             return value ? pmcw.decode_utf8_base64(value) : undefined;
         },
 
@@ -260,7 +261,7 @@ function authentication(
                     $log.debug('new token', response.data.SessionToken);
                     $log.debug('before', $http.defaults.headers.common['x-pm-session']);
                     $http.defaults.headers.common['x-pm-session'] = response.data.SessionToken;
-                    secureSessionStorage.setItem(CONSTANTS.OAUTH_KEY + ':SessionToken', pmcw.encode_base64(response.data.SessionToken));
+                    secureSessionStorage.setItem(OAUTH_KEY + ':SessionToken', pmcw.encode_base64(response.data.SessionToken));
                     $log.debug('after', $http.defaults.headers.common['x-pm-session']);
 
                     return response;
@@ -390,6 +391,10 @@ function authentication(
             return this.isLoggedIn() === false || angular.isUndefined(this.getPassword());
         },
 
+        hasPmMe() {
+            return _.findWhere(this.user.Addresses, { Type: PREMIUM });
+        },
+
         hasPaidMail() {
             return this.user.Subscribed & 1;
         },
@@ -425,8 +430,8 @@ function authentication(
          * @param {Boolean} redirect - Redirect at the end the user to the login page
          */
         logout(redirect, callApi = true) {
-            const sessionToken = secureSessionStorage.getItem(CONSTANTS.OAUTH_KEY + ':SessionToken');
-            const uid = secureSessionStorage.getItem(CONSTANTS.OAUTH_KEY + ':Uid');
+            const sessionToken = secureSessionStorage.getItem(OAUTH_KEY + ':SessionToken');
+            const uid = secureSessionStorage.getItem(OAUTH_KEY + ':Uid');
             const process = () => {
                 this.clearData();
 
