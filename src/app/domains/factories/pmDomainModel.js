@@ -11,7 +11,7 @@ function pmDomainModel($rootScope, authentication, domainApi, gettextCatalog) {
     function fetch() {
         const promises = [domainApi.available()];
 
-        if (authentication.isSecured() && authentication.hasPaidMail()) {
+        if (authentication.isSecured() && authentication.hasPmMe()) {
             promises.push(domainApi.premium());
         }
 
