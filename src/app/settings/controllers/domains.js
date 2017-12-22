@@ -272,7 +272,7 @@ function DomainsController(
                 throw new Error(data.Error);
             }
 
-            const { VerifyState } = (data.Domain || {}).VerifyState;
+            const { VerifyState } = data.Domain || {};
 
             if (VerifyState === 0) {
                 throw new Error(gettextCatalog.getString('Verification did not succeed, please try again in an hour.', null, 'Error'));
