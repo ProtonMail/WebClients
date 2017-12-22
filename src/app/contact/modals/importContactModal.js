@@ -3,14 +3,13 @@ function importContactModal(pmModal, notification, gettextCatalog) {
     const I18N = {
         invalidType: gettextCatalog.getString('Invalid file type')
     };
-
+    // TODO the logic of this modal needs to be redone
     return pmModal({
         controllerAs: 'ctrl',
         templateUrl: 'templates/contact/importContactModal.tpl.html',
         /* @ngInject */
         controller: function(params, notify, $timeout, $scope) {
             let files = [];
-            let extension;
 
             this.import = () => params.import(files);
             this.cancel = params.cancel;
@@ -22,7 +21,7 @@ function importContactModal(pmModal, notification, gettextCatalog) {
                 drop.ondrop = (e) => {
                     e.preventDefault();
                     const file = e.dataTransfer.files[0];
-                    extension = file.name.substr(file.name.length - 4);
+                    const extension = file.name.toLowerCase().slice(-4);
 
                     if (extension !== '.csv' && extension !== '.vcf') {
                         this.hover = false;
@@ -31,7 +30,7 @@ function importContactModal(pmModal, notification, gettextCatalog) {
 
                     files = e.dataTransfer.files;
                     $scope.$applyAsync(() => {
-                        this.fileDropped = files[0].name;
+                        this.fileDropped = file.name;
                         this.hover = false;
                     });
                 };
@@ -52,9 +51,8 @@ function importContactModal(pmModal, notification, gettextCatalog) {
 
                 $selectFile.change(() => {
                     const listFiles = $selectFile[0].files;
-                    const file = listFiles[0].name;
-
-                    extension = file.substr(file.length - 4);
+                    const file = listFiles[0];
+                    const extension = file.name.toLowerCase().slice(-4);
 
                     if (extension !== '.csv' && extension !== '.vcf') {
                         return notification.error(I18N.invalidType);
@@ -62,7 +60,7 @@ function importContactModal(pmModal, notification, gettextCatalog) {
 
                     files = listFiles;
                     $scope.$applyAsync(() => {
-                        this.fileDropped = file;
+                        this.fileDropped = file.name;
                         this.hover = false;
                     });
                 });
