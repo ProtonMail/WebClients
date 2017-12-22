@@ -14,9 +14,8 @@ function conversationApi($http, chunk, CONSTANTS, url) {
     async function chunkRequest(url = '', method = '', data = {}) {
         const promises = _.reduce(
             chunk(data.IDs, CONVERSATION_REQUEST_SIZE),
-            (acc, IDsChunked = []) => {
-                data.IDs = IDsChunked;
-                return acc.concat($http({ url, method, data }));
+            (acc, IDs = []) => {
+                return acc.concat($http({ url, method, data: _.extend({}, data, { IDs }) }));
             },
             []
         );
