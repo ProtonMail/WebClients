@@ -1,5 +1,5 @@
 /* @ngInject */
-function filterButton(filterModal) {
+function filterButton(filterModal, lazyLoader) {
     const recipients = ({ ToList = [], CCList = [], BCCList = [] }) => {
         return _.chain([].concat(ToList, CCList, BCCList))
             .map(({ Address }) => Address)
@@ -54,14 +54,18 @@ function filterButton(filterModal) {
                         }
                     };
 
-                    filterModal.activate({
-                        params: {
-                            mode: 'simple',
-                            filter,
-                            close() {
-                                filterModal.deactivate();
+                    // We need to load CodeMirror to use filterModal
+                    // https://github.com/ProtonMail/Angular/issues/6172
+                    lazyLoader.extraVendor().then(() => {
+                        filterModal.activate({
+                            params: {
+                                mode: 'simple',
+                                filter,
+                                close() {
+                                    filterModal.deactivate();
+                                }
                             }
-                        }
+                        });
                     });
 
                     initialize();
