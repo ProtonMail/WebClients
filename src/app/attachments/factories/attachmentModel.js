@@ -165,7 +165,11 @@ function attachmentModel(
         const promises = _.map(queue, ({ file, isEmbedded }, i, list) => {
             // required for BE to get a cid-header
             file.inline = +(isEmbedded && action === 'inline');
-            return addAttachment(file, message, list.length, cid);
+
+            // CID doesn't exist when the user add an attachment
+            const pCid = cid || embedded.generateCid(file.name, message.From.Email);
+
+            return addAttachment(file, message, list.length, pCid);
         });
 
         message.uploading = promises.length;
