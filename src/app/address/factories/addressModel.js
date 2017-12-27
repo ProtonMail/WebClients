@@ -242,11 +242,6 @@ function addressModel(
                 title: I18N.EDIT_MODAL.title,
                 cancel: signatureModal.deactivate,
                 confirm(address) {
-                    if (address.custom === false) {
-                        address.DisplayName = null;
-                        address.Signature = null;
-                    }
-
                     const promise = Address.edit(address.ID, {
                         DisplayName: address.DisplayName,
                         Signature: address.Signature
