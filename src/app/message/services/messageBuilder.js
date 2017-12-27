@@ -17,10 +17,8 @@ function messageBuilder(
     const FW_PREFIX = gettextCatalog.getString('Fw:', null);
 
     function formatSubject(subject = '', prefix = RE_PREFIX) {
-        const combinaisons = prefix === RE_PREFIX ? [RE_PREFIX, `${FW_PREFIX} ${RE_PREFIX}`] : [FW_PREFIX, `${RE_PREFIX} ${FW_PREFIX}`];
-        const hasPrefix = _.find(combinaisons, (pre) => subject.toLowerCase().indexOf(pre.toLowerCase()) === 0);
-
-        return hasPrefix ? subject : `${prefix} ${subject}`;
+        const hasPrefix = new RegExp(`^${prefix}`, 'i');
+        return hasPrefix.test(subject) ? subject : `${prefix} ${subject}`;
     }
 
     /**
