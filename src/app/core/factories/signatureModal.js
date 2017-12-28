@@ -13,12 +13,16 @@ function signatureModal(pmModal, authentication) {
             this.address.custom = true;
 
             this.confirm = function() {
-                params.confirm(this.address);
+                const adr = _.extend({}, this.address);
+
+                if (!adr.custom) {
+                    adr.DisplayName = authentication.user.DisplayName;
+                    adr.Signature = authentication.user.Signature;
+                }
+                params.confirm(adr);
             };
 
-            this.cancel = function() {
-                params.cancel();
-            };
+            this.cancel = params.cancel;
         }
     });
 }
