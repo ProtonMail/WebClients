@@ -10,6 +10,9 @@
     [data-pt-dropzone-item] * { pointer-events: none }
 }
 
+/* For Edge as it does not behave as others */
+.ptdnd-drag-start { opacity: .5 }
+
 .ptdnd-notification {
     position: absolute;
     z-index: 99999;

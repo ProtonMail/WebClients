@@ -13,11 +13,9 @@ function ptDraggable($rootScope, ptDndModel, ptDndUtils, PTDNDCONSTANTS, ptDndNo
         }
 
         const eventData = event.dataTransfer || event.originalEvent.dataTransfer;
-
+        target.classList.add(CLASSNAME.DRAG_START);
         document.body.classList.add(CLASSNAME.BODY);
-
         eventData.effectAllowed = 'move';
-
         eventData.setData('Text', JSON.stringify({ id: target.dataset.ptId }));
 
         // Cache for the current id as the event seems to not be fast enougth
@@ -49,7 +47,8 @@ function ptDraggable($rootScope, ptDndModel, ptDndUtils, PTDNDCONSTANTS, ptDndNo
         }
     });
 
-    document.addEventListener('dragend', () => {
+    document.addEventListener('dragend', (e) => {
+        e.target.classList.remove(CLASSNAME.DRAG_START);
         document.body.classList.remove(CLASSNAME.BODY);
         angular.element(document.querySelectorAll(`.${CLASSNAME.DROPZONE_HOVER}`)).removeClass(CLASSNAME.DROPZONE_HOVER);
 
