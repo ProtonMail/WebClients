@@ -479,7 +479,7 @@ export default angular
                         // We need to lazy load the app.
                         return lazyLoader.app();
                     },
-                    messageID($stateParams) {
+                    messageID(app, $stateParams) {
                         if ($stateParams.messageID) {
                             return $stateParams.messageID;
                         }
@@ -523,7 +523,11 @@ export default angular
                 params: { messageID: null },
                 url: '/printer/:messageID',
                 resolve: {
-                    messageID($stateParams) {
+                    app(lazyLoader) {
+                        // We need to lazy load the app before being able to build the user object.
+                        return lazyLoader.app();
+                    },
+                    messageID($stateParams, app) {
                         if ($stateParams.messageID) {
                             return $stateParams.messageID;
                         }
