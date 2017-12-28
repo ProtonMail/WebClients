@@ -1,6 +1,7 @@
 export default {
     CLASSNAME: {
         BODY: 'ptdnd-dragstart',
+        DRAG_START: 'ptdnd-drag-start',
         DRAG_HOVER: 'ptdnd-drag-hover',
         DROPZONE: 'ptDnd-dropzone-container',
         DROPZONE_HOVER: 'ptdnd-dropzone-hover',

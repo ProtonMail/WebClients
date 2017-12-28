@@ -66,6 +66,7 @@
 .autocomplete-container .awesomplete,
 .autocompleteEmails-autocomplete  {
     input {width: 100%}
+    ::-ms-clear { display: none; width:0; height:0 }
 
     ul {
         border-radius: 0;
