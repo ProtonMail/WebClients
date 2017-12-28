@@ -75,16 +75,15 @@
                                     <i class="fa fa-angle-down"></i>
                                 </span>
 
-                                <span class="filter-modal-condition-settings-item" ng-show="condition.Type.value === 'subject' || condition.Type.value === 'sender' || condition.Type.value === 'recipient'">
-                                    <span ng-show="condition.Values.length > 0">
-                                        <span class="filter-modal-condition-badges" ng-repeat="value in condition.Values">
-                                            <span class="filter-modal-condition-badge pm_badge default none">
-                                                {{ value }} <a href="#" ng-click="condition.Values.splice($index, 1)"><i class="fa fa-times"></i></a>
+                                <div class="filter-modal-condition-settings-item" ng-if="condition.Type.value === 'subject' || condition.Type.value === 'sender' || condition.Type.value === 'recipient'">
+                                    <div ng-if="condition.Values.length > 0">
+                                        <span class="filter-modal-condition-badges" ng-repeat="value in condition.Values track by $id(value)">
+                                            <span class="filter-modal-condition-badge pm_badge default none">{{ value }} <a href="#" ng-click="condition.Values.splice($index, 1)"><i class="fa fa-times"></i></a>
                                             </span>
                                             <span class="filter-modal-condition-or" translate-context="Filter modal value OR value" translate>or</span>
                                         </span>
-                                    </span>
-                                </span>
+                                    </div>
+                                </div>
 
                                 <form class="filter-modal-add-condition-settings-item filter-modal-add-condition" ng-show="condition.Type.value === 'subject'" ng-submit="ctrl.addValue(condition)">
                                     <input

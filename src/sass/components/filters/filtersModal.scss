@@ -1,15 +1,15 @@
 .filter-modal-input-name + .filter-modal-alert {
-	display: none
+    display: none
 }
 
 .filter-modal-input-name.ng-empty:not(:focus) ~ .filter-modal-alert {
-	display: block;
+    display: block;
 }
 
 .filter-modal-conditions {
-	@include flexInline();
-	@include flexWrap();
-	width: 100%;
+    @include flexInline();
+    @include flexWrap();
+    width: 100%;
 }
 
 .filter-modal-condition {
@@ -47,72 +47,76 @@
 
 .filter-modal-simple-condition { width: 100% }
 .filter-modal-condition-remove {
-	@include flexInline();
-	@include flexJustifyEnd();
-	flex-basis: 55px;
-	order:1;
+    @include flexInline();
+    @include flexJustifyEnd();
+    flex-basis: 55px;
+    order:1;
 }
 
 /* badges */
 .filter-modal-condition-badges {
-	@include flexInline();
-	@include flexAlignCenter();
-	height: 35px;
+    @include flexInline();
+    @include flexAlignCenter();
+}
+
+.filter-modal-condition-badge {
+    line-height: 2;
+    height: auto;
 }
 
 .filter-modal-condition-or {
-	margin:0 .5rem;
-	font-size: 75%;
+    margin:0 .5rem;
+    font-size: 75%;
 }
 
 /* condition pattern */
 .filter-modal-add-condition {
-	@include flexInline();
-	flex-basis: 15rem;
+    @include flexInline();
+    flex-basis: 15rem;
 }
 .filter-modal-add-condition-input { width: 12rem }
 .filter-modal-add-condition-button {
-	margin-left: -4px;
-	width: 40px;
-	background: $primary;
-	border-color: transparent;
-	color: $white;
+    margin-left: -4px;
+    width: 40px;
+    background: $primary;
+    border-color: transparent;
+    color: $white;
 }
 
 .filter-modal-add-condition-button:hover {
-	background: $primary;
-	border-color: transparent;
-	color: $white;
+    background: $primary;
+    border-color: transparent;
+    color: $white;
 }
 
 .filter-modal-add-condition-button[disabled] {
-	background: darken(#f7f7f7, 5);
-	border-color: rgba(0,0,0,0.2);
-	opacity: 1;
-	color: rgba(0,0,0,0.4)
+    background: darken(#f7f7f7, 5);
+    border-color: rgba(0,0,0,0.2);
+    opacity: 1;
+    color: rgba(0,0,0,0.4)
 }
 
 /* separator */
 .filter-modal-separator {
-	@include flexInline();
-	@include flexAlignCenter();
-	height: 35px;
+    @include flexInline();
+    @include flexAlignCenter();
+    height: 35px;
 }
 
 
 /* Labels */
 
 .filter-modal-label-container {
-	@include flexRow();
-	@include flexWrap();
+    @include flexRow();
+    @include flexWrap();
 }
 
 .filter-modal-label,
 .filter-modal-label-add { min-height: 3rem }
 .filter-modal-label i { margin: 0.1rem 0.5rem 0.1rem 0 }
 .filter-modal-label-add {
-	@include flexInline();
-	@include flexAlignCenter();
+    @include flexInline();
+    @include flexAlignCenter();
 }
 
 
