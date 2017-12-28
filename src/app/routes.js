@@ -527,7 +527,7 @@ export default angular
                         // We need to lazy load the app before being able to build the user object.
                         return lazyLoader.app();
                     },
-                    messageID($stateParams, app) {
+                    messageID(app, $stateParams) {
                         if ($stateParams.messageID) {
                             return $stateParams.messageID;
                         }
