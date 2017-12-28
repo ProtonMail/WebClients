@@ -111,7 +111,7 @@ function signatureBuilder(authentication, CONSTANTS, tools, sanitize, AppModel, 
     function replaceRaw(body = '', userSignature) {
         const signature = Array.from(userSignature.querySelectorAll('div')).reduce((acc, node) => `${acc}\n${node.textContent}`, '');
         /* eslint no-irregular-whitespace: "off" */
-        return body.replace(/(​[\b|\D]+​)/, `​${signature}\n${PROTON_SIGNATURE.PLAIN}​`);
+        return body.replace(/​(\s*?.*?)*?​/, `​${signature}\n${PROTON_SIGNATURE.PLAIN}​`);
     }
 
     /**
