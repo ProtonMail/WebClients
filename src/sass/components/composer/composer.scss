@@ -13,7 +13,6 @@
         z-index: 90;
     }
 
-
     .composer-askEmbedding {display: none !important}
     .composer-dropzone {display: none}
     .composer-dropzone * {pointer-events: none}
@@ -171,10 +170,9 @@
             opacity: 1 !important
         }
 
-        &.maximized .dz-message {
-            height: 73%;
-
-        }
+        &.expandRecipients .dz-message { height: calc(45% - 3px) }
+        &.maximized .dz-message { height: 73% }
+        &.expandRecipients.maximized .dz-message { height: 60% }
 
         .toolbar li{
           -webkit-flex:1;
