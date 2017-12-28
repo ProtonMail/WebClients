@@ -81,9 +81,10 @@ function customInputCreator() {
          * @param {Function} link
          * @return {Function} Compile function
          */
-    const compiler = (type = '', { pre, post = angular.noop } = {}) => (el, attr) => {
+    const compiler = (type = '', { pre, post = _.noop, compile = _.noop } = {}) => (el, attr) => {
         const $input = el[0].querySelector(`input[type="${type}"]`);
         bindAttributes($input, el, attr);
+        compile(el, attr);
         return pre ? { pre, post } : post;
     };
 

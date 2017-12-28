@@ -1,6 +1,11 @@
 /* @ngInject */
 function autocompleteBuilder(CONSTANTS, customInputCreator) {
-    return (post = angular.noop, pre = angular.noop) => {
+    const generateID = () =>
+        `${Math.random()
+            .toString(32)
+            .slice(2, 12)}-${Date.now()}`;
+
+    return (post = _.noop, pre = _.noop) => {
         /**
          * Linking fonction for the directive
          */
@@ -47,7 +52,12 @@ function autocompleteBuilder(CONSTANTS, customInputCreator) {
             });
         };
 
-        return customInputCreator('text', { pre, post: postCompile });
+        const compile = (el) => {
+            const item = el[0].querySelector('[id="autocomplete"]');
+            item && (item.id = `${item.id}${generateID()}`);
+        };
+
+        return customInputCreator('text', { pre, post: postCompile, compile });
     };
 }
 export default autocompleteBuilder;
