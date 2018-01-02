@@ -30,6 +30,15 @@ function messageView($stateParams, $state, $rootScope, conversationListeners, ca
 
             scope.$on('move', (e, mailbox) => {
                 const labelID = CONSTANTS.MAILBOX_IDENTIFIERS[mailbox];
+
+                /**
+                 * Move item only when we didn't select anything
+                 * -> Prevent x2 move with marked item by elementsCtrl
+                 */
+                if ($rootScope.numberElementChecked) {
+                    return;
+                }
+
                 $rootScope.$emit('messageActions', {
                     action: 'move',
                     data: { ids: [scope.message.ID], labelID }
