@@ -96,7 +96,7 @@ function htmlToTextMail() {
                 /* eslint no-irregular-whitespace: "off" */
                 return `​${extractPlainText(editor, node)}​\n`;
             },
-            matchesTag: (node) => node.tagName === 'DIV'
+            matchesTag: (node) => node.tagName === 'DIV' && node.classList.contains('protonmail_signature_block')
         }
     };
 
@@ -151,7 +151,7 @@ function htmlToTextMail() {
         const result = editor.getSelectedText();
         editor.setSelection(selection);
 
-        return result;
+        return /\n$/.test(result) ? result : `${result}\n`;
     };
 
     /**
