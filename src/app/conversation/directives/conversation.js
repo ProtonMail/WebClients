@@ -149,6 +149,15 @@ function conversation(
                 unsubscribeActions();
 
                 const labelID = CONSTANTS.MAILBOX_IDENTIFIERS[mailbox];
+
+                /**
+                 * Move item only when we didn't select anything
+                 * -> Prevent x2 move with marked item by elementsCtrl
+                 */
+                if ($rootScope.numberElementChecked) {
+                    return;
+                }
+
                 if (scope.markedMessage) {
                     return $rootScope.$emit('messageActions', {
                         action: 'move',
