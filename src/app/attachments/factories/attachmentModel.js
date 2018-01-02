@@ -165,11 +165,7 @@ function attachmentModel(
         const promises = _.map(queue, ({ file, isEmbedded }, i, list) => {
             // required for BE to get a cid-header
             file.inline = +(isEmbedded && action === 'inline');
-
-            // CID doesn't exist when the user add an attachment
-            const pCid = cid || embedded.generateCid(file.name, message.From.Email);
-
-            return addAttachment(file, message, list.length, pCid);
+            return addAttachment(file, message, list.length, cid);
         });
 
         message.uploading = promises.length;
@@ -328,6 +324,8 @@ function attachmentModel(
         // force update the embedded counter
         if (tempPacket.Inline) {
             message.NumEmbedded++;
+            // CID doesn't exist when the user add an attachment
+            tempPacket.ContentID = cid || embedded.generateCid(file.name, message.From.Email);
         }
 
         message.attachmentsToggle = true;
