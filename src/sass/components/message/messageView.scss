@@ -24,10 +24,10 @@
 
         /*
         Supercalifragilisticexpialidocious h1
-		avoid child shrink which is accomplished here by min-content
-		*/
-		min-height: -moz-min-content;
-	    min-height: -webkit-min-content;
+        avoid child shrink which is accomplished here by min-content
+        */
+        min-height: -moz-min-content;
+        min-height: -webkit-min-content;
         min-height: min-content;
         border-bottom: 1px solid $border;
         padding: 0px 10px;
@@ -367,10 +367,9 @@
 }
 
 .bodyDecrypted {
-
-    overflow: auto;
-    /* Forbidden property on almost ALL clients */
-    [style*="position:absolute"] {
+    /* Forbidden property on almost ALL clients IE add a space :) */
+    [style*="position:absolute"],
+    [style*="position: absolute"] {
         position: static !important;
     }
 }

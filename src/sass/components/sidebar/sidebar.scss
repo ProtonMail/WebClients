@@ -1,40 +1,50 @@
 #pm_sidebar { float: left }
+#ptSidebar {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    align-content: space-between;
+    width: $sidebarWidth;
+    min-width: $sidebarWidth;
+    box-sizing: border-box;
+    overflow: auto;
+    float: left;
+    background: $sidebar-background;
+    height: calc(100% - 61px);  /* #pm_header-desktop height */
+    will-change: transform;
+ }
+
+ #ptSidebar > * { flex: 1 }
 
 .sidebarApp-container {
     display: flex;
     flex-direction: column;
     align-items: stretch;
     align-content: space-between;
-    padding: $sidebar-padding;
-    width: $sidebarWidth;
-    min-width: $sidebarWidth;
-    box-sizing: border-box;
-    float: left;
-    height: calc(100% - 61px);  /* #pm_header-desktop height */
-    overflow: auto;
-    background: $sidebar-background;
     position: relative;
+    padding: $sidebar-padding;
 
     .sidebar-btn-compose,
     .sidebar-btn-back {
-        border-color: transparent;
-        border-radius: 2px;
         box-sizing: border-box;
-        font-size: 12px;
-        letter-spacing: 1px;
-        line-height: 16px;
-        margin-bottom: 15px;
         min-height: 40px;
-        padding: 12px 0px 10px;
+        margin-bottom: 10px;
+        font-size: 12px;
+        padding: 0;
         text-align: center;
-        text-decoration: none;
-        text-transform: uppercase;
         width: 100%;
+        text-transform: uppercase;
+        border-color: transparent;
+        letter-spacing: 1px;
+        border-radius: 2px;
     }
 
-    .sidebar-btn-back * {
-        // https://github.com/ProtonMail/Angular/issues/6153
-        pointer-events: none;
+    .sidebar-btn-compose,
+    .sidebar-btn-back {
+        line-height: 16px;
+        padding: 12px 0px 10px;
+        text-decoration: none;
+        margin-bottom: 15px
     }
 
     .sidebar-btn-back {
@@ -314,7 +324,7 @@
     }
 }
 
-.appConfigBody-is-mobile .sidebarApp-container {
+.appConfigBody-is-mobile #ptSidebar {
     position: absolute;
     top: 0;
     right: 0;
@@ -322,14 +332,15 @@
     left: 0;
     width: 100%;
     min-width: 100%;
-    padding: 2rem;
     z-index: 999;
     background: $secondary;
     height: 100%;
     overflow-x: hidden;
     overflow-y: auto;
     -webkit-overflow-scrolling: touch;
+    transform: translateX(-100%);
 
+    .sidebarApp-container { padding: 2rem }
 
     .refresh { display: none }
 
@@ -357,6 +368,9 @@
     .sidebarApp-item .navigationItem-counter {
         display: inline-flex;
     }
+}
+.appConfigBody-is-mobile.appConfigBody-showSidebar #ptSidebar {
+    transform: translateX(0);
 }
 
 @media (max-height: 500px) {
