@@ -421,6 +421,10 @@ export default angular
                     'main@': {
                         controller: 'SecuredController',
                         templateUrl: 'templates/layout/secured.tpl.html'
+                    },
+                    'sidebar@secured': {
+                        controller: 'SidebarController',
+                        templateUrl: 'templates/layout/sidebar.tpl.html'
                     }
                 },
                 resolve: {
@@ -584,10 +588,9 @@ export default angular
                     }
                 },
                 onEnter(AppModel) {
+                    AppModel.set('inboxSidebar', false);
+                    AppModel.set('contactSidebar', false);
                     AppModel.set('settingsSidebar', true);
-                },
-                onExit(AppModel) {
-                    AppModel.set('settingsSidebar', false);
                 }
             })
 
@@ -608,10 +611,9 @@ export default angular
                     }
                 },
                 onEnter(AppModel) {
+                    AppModel.set('inboxSidebar', false);
+                    AppModel.set('contactSidebar', false);
                     AppModel.set('settingsSidebar', true);
-                },
-                onExit(AppModel) {
-                    AppModel.set('settingsSidebar', false);
                 }
             })
 
@@ -632,10 +634,9 @@ export default angular
                     }
                 },
                 onEnter(AppModel) {
+                    AppModel.set('inboxSidebar', false);
+                    AppModel.set('contactSidebar', false);
                     AppModel.set('settingsSidebar', true);
-                },
-                onExit(AppModel) {
-                    AppModel.set('settingsSidebar', false);
                 }
             })
 
@@ -656,10 +657,9 @@ export default angular
                     }
                 },
                 onEnter(AppModel) {
+                    AppModel.set('inboxSidebar', false);
+                    AppModel.set('contactSidebar', false);
                     AppModel.set('settingsSidebar', true);
-                },
-                onExit(AppModel) {
-                    AppModel.set('settingsSidebar', false);
                 }
             })
 
@@ -704,10 +704,9 @@ export default angular
                     }
                 },
                 onEnter(AppModel) {
+                    AppModel.set('inboxSidebar', false);
+                    AppModel.set('contactSidebar', false);
                     AppModel.set('settingsSidebar', true);
-                },
-                onExit(AppModel) {
-                    AppModel.set('settingsSidebar', false);
                 }
             })
 
@@ -744,10 +743,9 @@ export default angular
                     }
                 },
                 onEnter(AppModel) {
+                    AppModel.set('inboxSidebar', false);
+                    AppModel.set('contactSidebar', false);
                     AppModel.set('settingsSidebar', true);
-                },
-                onExit(AppModel) {
-                    AppModel.set('settingsSidebar', false);
                 }
             })
 
@@ -767,10 +765,9 @@ export default angular
                     }
                 },
                 onEnter(AppModel) {
+                    AppModel.set('inboxSidebar', false);
+                    AppModel.set('contactSidebar', false);
                     AppModel.set('settingsSidebar', true);
-                },
-                onExit(AppModel) {
-                    AppModel.set('settingsSidebar', false);
                 }
             })
 
@@ -790,10 +787,9 @@ export default angular
                     }
                 },
                 onEnter(AppModel) {
+                    AppModel.set('inboxSidebar', false);
+                    AppModel.set('contactSidebar', false);
                     AppModel.set('settingsSidebar', true);
-                },
-                onExit(AppModel) {
-                    AppModel.set('settingsSidebar', false);
                 }
             })
 
@@ -825,10 +821,9 @@ export default angular
                     }
                 },
                 onEnter(AppModel) {
+                    AppModel.set('inboxSidebar', false);
+                    AppModel.set('contactSidebar', false);
                     AppModel.set('settingsSidebar', true);
-                },
-                onExit(AppModel) {
-                    AppModel.set('settingsSidebar', false);
                 }
             })
 
@@ -884,10 +879,9 @@ export default angular
                     }
                 },
                 onEnter(AppModel) {
+                    AppModel.set('inboxSidebar', false);
+                    AppModel.set('contactSidebar', false);
                     AppModel.set('settingsSidebar', true);
-                },
-                onExit(AppModel) {
-                    AppModel.set('settingsSidebar', false);
                 }
             })
 
@@ -939,10 +933,9 @@ export default angular
                     }
                 },
                 onEnter(AppModel) {
+                    AppModel.set('inboxSidebar', false);
+                    AppModel.set('contactSidebar', false);
                     AppModel.set('settingsSidebar', true);
-                },
-                onExit(AppModel) {
-                    AppModel.set('settingsSidebar', false);
                 }
             })
 
@@ -954,10 +947,9 @@ export default angular
                     }
                 },
                 onEnter(AppModel) {
+                    AppModel.set('inboxSidebar', false);
+                    AppModel.set('contactSidebar', false);
                     AppModel.set('settingsSidebar', true);
-                },
-                onExit(AppModel) {
-                    AppModel.set('settingsSidebar', false);
                 }
             })
 
@@ -969,10 +961,9 @@ export default angular
                     }
                 },
                 onEnter(AppModel) {
+                    AppModel.set('inboxSidebar', false);
+                    AppModel.set('contactSidebar', false);
                     AppModel.set('settingsSidebar', true);
-                },
-                onExit(AppModel) {
-                    AppModel.set('settingsSidebar', false);
                 }
             })
 
@@ -998,10 +989,9 @@ export default angular
                     }
                 },
                 onEnter(AppModel) {
+                    AppModel.set('inboxSidebar', false);
+                    AppModel.set('contactSidebar', false);
                     AppModel.set('settingsSidebar', true);
-                },
-                onExit(AppModel) {
-                    AppModel.set('settingsSidebar', false);
                 }
             })
             .state('secured.autoresponder', {
@@ -1038,10 +1028,9 @@ export default angular
                     }
                 },
                 onEnter(AppModel) {
+                    AppModel.set('inboxSidebar', false);
                     AppModel.set('contactSidebar', true);
-                },
-                onExit(AppModel) {
-                    AppModel.set('contactSidebar', false);
+                    AppModel.set('settingsSidebar', false);
                 }
             })
             .state('secured.contacts.details', {
@@ -1084,10 +1073,11 @@ export default angular
                 },
                 onEnter(AppModel) {
                     AppModel.set('inboxSidebar', true);
+                    AppModel.set('contactSidebar', false);
+                    AppModel.set('settingsSidebar', false);
                 },
                 onExit(AppModel, $rootScope) {
                     $rootScope.showWelcome = false;
-                    AppModel.set('inboxSidebar', false);
                 }
             });
 

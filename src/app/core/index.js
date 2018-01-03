@@ -26,6 +26,7 @@ import twoFAIntroModal from './factories/twoFAIntroModal';
 import vcard from './factories/vcard';
 import verificationModal from './factories/verificationModal';
 import welcomeModal from './factories/welcomeModal';
+import SidebarController from './controllers/sidebar';
 
 export default angular
     .module('proton.core', ['proton.constants', 'proton.utils'])
@@ -33,6 +34,7 @@ export default angular
         paginationModel.init();
         cachePages.init();
     })
+    .controller('SidebarController', SidebarController)
     .controller('HeaderController', HeaderController)
     .controller('SecuredController', SecuredController)
     .controller('SetupController', SetupController)
