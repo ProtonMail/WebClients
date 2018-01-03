@@ -1,4 +1,4 @@
-fdescribe('messageBuilder factory', () => {
+describe('messageBuilder factory', () => {
     let factory, rootScope, authentication, tools, CONSTANTS, messageModel, sanitize, textToHtmlMail;
     let signatureBuilder, gettextCatalog, composerFromModel;
     let spyUpdateSignature = jasmine.createSpy();

@@ -1,7 +1,7 @@
+process.env.CHROME_BIN = require('puppeteer').executablePath();
+
 module.exports = (config) => {
-
     config.set({
-
         basePath: '',
         frameworks: ['jasmine'],
 
@@ -16,21 +16,40 @@ module.exports = (config) => {
             '../build/appLazy.js',
             '../node_modules/angular-mocks/angular-mocks.js',
             '../src/templates/**/*.html',
-            'src/app/**/*.js',
-            'src/app/**/**/*.js',
-            'specs/**/*.js'
+            'specs/message/services/transformEscape.spec.js',
+            // 'specs/**/*.js'
             // 'mocks/**/*.js'
         ],
 
-
         // list of files to exclude
-        exclude: ['**/*.min.js', '../src/libraries/*.js', '../build/vendor/index.js'],
         preprocessors: {
             '../src/templates/**/*.html': ['ng-html2js'],
-            'src/app/*.js': ['webpack'],
-            'src/app/**/*.js': ['webpack'],
-            'src/app/**/**/*.js': ['webpack'],
-            'specs/**/*.js': ['babel']
+            '../src/app/*.js': ['webpack'],
+            '../src/app/**/*.js': ['webpack'],
+            '../src/app/**/**/*.js': ['webpack'],
+            'specs/message/services/transformEscape.spec.js': ['webpack']
+            // 'specs/**/*.js': ['webpack']
+        },
+
+        babelPreprocessor: {
+            options: {
+                presets: [
+                    ["env", {
+                        "targets": {
+                          "browsers": ["last 2 version", "ie 11"]
+                        }
+                    }]
+                ],
+                plugins: ['transform-regenerator', 'transform-object-rest-spread'],
+                env: {
+                    dist: {
+                        plugins: ['angularjs-annotate']
+                    }
+                    // "test": {
+                    //     "plugins": ["istanbul"]
+                    // }
+                }
+            }
         },
 
         ngHtml2JsPreprocessor: {
@@ -40,10 +59,7 @@ module.exports = (config) => {
 
         // optionally, configure the reporter
         coverageReporter: {
-            reporters: [
-                { type: 'html', dir: 'coverage/' },
-                { type: 'clover', dir: 'coverage/clover/' }
-            ]
+            reporters: [{ type: 'html', dir: 'coverage/' }, { type: 'clover', dir: 'coverage/clover/' }]
         },
 
         reporters: ['progress', 'coverage', 'junit'],
@@ -54,12 +70,12 @@ module.exports = (config) => {
         port: 9876,
         colors: true,
 
-
         // level of logging
         // possible values: config.LOG_DISABLE || config.LOG_ERROR || config.LOG_WARN || config.LOG_INFO || config.LOG_DEBUG
         logLevel: config.LOG_INFO,
         autoWatch: false,
-        browsers: ['PhantomJS'],
+        // browsers: ['PhantomJS'],
+        browsers: ['ChromeHeadless'],
         singleRun: true
     });
 };
