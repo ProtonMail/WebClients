@@ -7,11 +7,7 @@
             </div>
             <div class="modal-body">
                 <p translate translate-context="Info">We support importing CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps. We also support importing vCard. (UTF-8 encoding). <a href="https://protonmail.com/support/knowledge-base/adding-contacts/" target="_blank">Need help?</a></p>
-                <div ng-hide="ctrl.fileDropped" class="dropzone dropzone--with-click" id="dropzone" ng-class="{'hover': hover}">
-                    <p translate translate-context="Info">Drop file or click here</p>
-                </div>
-                <p ng-show="ctrl.fileDropped" class="text-center bold" ng-bind="ctrl.fileDropped"></p>
-                <input id="selectedFile" type="file" style="display: none;" />
+                <import-card-dropzone></import-card-dropzone>
             </div>
         </div>
         <div class="modal-footer">

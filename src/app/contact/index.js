@@ -28,9 +28,11 @@ import contactLoaderModal from './modals/contactLoaderModal';
 import contactMergerModal from './modals/contactMergerModal';
 import contactModal from './modals/contactModal';
 import importContactModal from './modals/importContactModal';
+import importCardDropzone from './directives/importCardDropzone';
 
 export default angular
     .module('proton.contact', ['vs-repeat'])
+    .directive('importCardDropzone', importCardDropzone)
     .run((contactEditor, contactMerger) => {
         contactEditor.init();
         contactMerger.init();
