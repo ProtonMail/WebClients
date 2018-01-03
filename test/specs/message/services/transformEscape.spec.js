@@ -1,6 +1,6 @@
 import service from '../../../../src/app/message/services/transformEscape';
 
-fdescribe('transformEscape service', () => {
+describe('transformEscape service', () => {
     let getAttribute;
     const factory = service();
     const USER_INJECT = 'user.inject';
@@ -62,6 +62,8 @@ fdescribe('transformEscape service', () => {
         <span style="color: red; background:url('https://i.imgur.com/WScAnHr.jpg')">ddewdwed</span>`;
     const BACKGROUND_URL_ESCAPED_WTF =
         '<div style="width: 500px; height: 500px; background:u\\rl(&quot;https://i.imgur.com/WScAnHr.jpg&quot;)">ddewdwed</div>';
+
+    // DON'T REMOVE THEM
     const BACKGROUND_URL_ESCAPED_WTF2 = `
         <div style="width: 500px; height: 500px; background:ur\l(&quot;https://i.imgur.com/WScAnHr.jpg&quot;)">ddewdwed</div>
         <div style="width: 500px; height: 500px; background:u\&#114;l(&quot;https://i.imgur.com/WScAnHr.jpg&quot;)">ddewdwed</div>
@@ -211,6 +213,7 @@ fdescribe('transformEscape service', () => {
             expect(output.innerHTML).not.toMatch(/proton-/);
         });
     });
+
     describe('No escape TXT', () => {
         beforeEach(() => {
             output = factory(document.createElement('DIV'), null, {
@@ -326,7 +329,7 @@ fdescribe('transformEscape service', () => {
     describe('Ǹot escape BACKGROUND_URL', () => {
         beforeEach(() => {
             output = factory(document.createElement('DIV'), null, {
-                content: BACKGROUND_URL_SAFE,
+                content: BACKGROUND_URL_SAFE
             });
         });
 

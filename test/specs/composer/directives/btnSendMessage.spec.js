@@ -1,336 +1,336 @@
-describe('CreateLabel directive', () => {
+// describe('CreateLabel directive', () => {
 
-    let dom, compile, scope, rootScope, gettextCatalog;
-    let iscope, $, $$;
+//     let dom, compile, scope, rootScope, gettextCatalog;
+//     let iscope, $, $$;
 
-    beforeEach(module('proton.composer', 'test.templates', ($provide) => {
+//     beforeEach(module('proton.composer', 'test.templates', ($provide) => {
 
-        $provide.factory('gettextCatalog', () => ({
-            getString: _.identity
-        }));
+//         $provide.factory('gettextCatalog', () => ({
+//             getString: _.identity
+//         }));
 
-    }));
+//     }));
 
-    beforeEach(inject(($injector) => {
+//     beforeEach(inject(($injector) => {
 
-        rootScope = $injector.get('$rootScope');
-        compile = $injector.get('$compile');
-        gettextCatalog = $injector.get('gettextCatalog');
+//         rootScope = $injector.get('$rootScope');
+//         compile = $injector.get('$compile');
+//         gettextCatalog = $injector.get('gettextCatalog');
 
-        scope = rootScope.$new();
-    }));
+//         scope = rootScope.$new();
+//     }));
 
-    describe('Compilation process', () => {
+//     describe('Compilation process', () => {
 
-        beforeEach(() => {
-            scope.message = 'message';
-            spyOn(rootScope, '$on').and.callThrough();
-            spyOn(gettextCatalog, 'getString').and.callThrough();
-            dom = compile('<btn-send-message data-message="message"></btn-send-message>')(scope);
-            scope.$digest();
-            iscope = dom.isolateScope();
-        });
+//         beforeEach(() => {
+//             scope.message = 'message';
+//             spyOn(rootScope, '$on').and.callThrough();
+//             spyOn(gettextCatalog, 'getString').and.callThrough();
+//             dom = compile('<btn-send-message data-message="message"></btn-send-message>')(scope);
+//             scope.$digest();
+//             iscope = dom.isolateScope();
+//         });
 
-        it('should replace da nodeName', () => {
-            expect(dom[0].nodeName).toBe('BUTTON');
-        });
+//         it('should replace da nodeName', () => {
+//             expect(dom[0].nodeName).toBe('BUTTON');
+//         });
 
-        it('should create an isolate Scope', () => {
-            expect(dom.isolateScope()).toBeDefined();
-        });
+//         it('should create an isolate Scope', () => {
+//             expect(dom.isolateScope()).toBeDefined();
+//         });
 
-        it('should bind the message', () => {
-            expect(iscope.model).toBe('message');
-        });
+//         it('should bind the message', () => {
+//             expect(iscope.model).toBe('message');
+//         });
 
-        it('should get the default translation', () => {
-            expect(gettextCatalog.getString).toHaveBeenCalledWith('Send', null, 'Action');
-        });
+//         it('should get the default translation', () => {
+//             expect(gettextCatalog.getString).toHaveBeenCalledWith('Send', null, 'Action');
+//         });
 
-        it('should bind to the textContent the translation', () => {
-            expect(dom[0].textContent).toBe('Send');
-        });
+//         it('should bind to the textContent the translation', () => {
+//             expect(dom[0].textContent).toBe('Send');
+//         });
 
-        it('should record a listener', () => {
-            expect(rootScope.$on).toHaveBeenCalledWith('actionMessage', jasmine.any(Function));
-        });
+//         it('should record a listener', () => {
+//             expect(rootScope.$on).toHaveBeenCalledWith('actionMessage', jasmine.any(Function));
+//         });
 
-    });
+//     });
 
 
-    describe('Step action message', () => {
+//     describe('Step action message', () => {
 
-        describe('Not the same message', () => {
-            beforeEach(() => {
-                scope.message = { ID: 1, encryptingAttachment: true };
-                spyOn(rootScope, '$on').and.callThrough();
-                spyOn(gettextCatalog, 'getString').and.callThrough();
-                dom = compile('<btn-send-message data-message="message"></btn-send-message>')(scope);
-                scope.$digest();
-                iscope = dom.isolateScope();
-                rootScope.$emit('actionMessage', { ID: 2 });
-            });
+//         describe('Not the same message', () => {
+//             beforeEach(() => {
+//                 scope.message = { ID: 1, encryptingAttachment: true };
+//                 spyOn(rootScope, '$on').and.callThrough();
+//                 spyOn(gettextCatalog, 'getString').and.callThrough();
+//                 dom = compile('<btn-send-message data-message="message"></btn-send-message>')(scope);
+//                 scope.$digest();
+//                 iscope = dom.isolateScope();
+//                 rootScope.$emit('actionMessage', { ID: 2 });
+//             });
 
-            it('should get a custom translation', () => {
-                expect(gettextCatalog.getString).toHaveBeenCalledWith('Encrypting attachments', null, 'Action');
-            });
+//             it('should get a custom translation', () => {
+//                 expect(gettextCatalog.getString).toHaveBeenCalledWith('Encrypting attachments', null, 'Action');
+//             });
 
-            it('should bind to the textContent the translation', () => {
-                expect(dom[0].textContent).toBe('Encrypting attachments');
-            });
+//             it('should bind to the textContent the translation', () => {
+//                 expect(dom[0].textContent).toBe('Encrypting attachments');
+//             });
 
-            it('should not load a new translation', () => {
-                expect(gettextCatalog.getString).not.toHaveBeenCalledWith('Send', null, 'Action');
-            });
+//             it('should not load a new translation', () => {
+//                 expect(gettextCatalog.getString).not.toHaveBeenCalledWith('Send', null, 'Action');
+//             });
 
-            it('should not set the button as disabled', () => {
-                expect(dom[0].disabled).not.toBeTruthy();
-            });
+//             it('should not set the button as disabled', () => {
+//                 expect(dom[0].disabled).not.toBeTruthy();
+//             });
 
 
-        });
+//         });
 
-        describe('The same message', () => {
-            beforeEach(() => {
-                scope.message = { ID: 1, encryptingAttachment: true };
-                spyOn(rootScope, '$on').and.callThrough();
-                spyOn(gettextCatalog, 'getString').and.callThrough();
-                dom = compile('<btn-send-message data-message="message"></btn-send-message>')(scope);
-                scope.$digest();
-                iscope = dom.isolateScope();
-            });
+//         describe('The same message', () => {
+//             beforeEach(() => {
+//                 scope.message = { ID: 1, encryptingAttachment: true };
+//                 spyOn(rootScope, '$on').and.callThrough();
+//                 spyOn(gettextCatalog, 'getString').and.callThrough();
+//                 dom = compile('<btn-send-message data-message="message"></btn-send-message>')(scope);
+//                 scope.$digest();
+//                 iscope = dom.isolateScope();
+//             });
 
-            it('should get get a custom translation', () => {
-                expect(gettextCatalog.getString).toHaveBeenCalledWith('Encrypting attachments', null, 'Action');
-            });
+//             it('should get get a custom translation', () => {
+//                 expect(gettextCatalog.getString).toHaveBeenCalledWith('Encrypting attachments', null, 'Action');
+//             });
 
-            it('should bind to the textContent the translation', () => {
-                expect(dom[0].textContent).toBe('Encrypting attachments');
-            });
+//             it('should bind to the textContent the translation', () => {
+//                 expect(dom[0].textContent).toBe('Encrypting attachments');
+//             });
 
-            describe('State: uploading', () => {
+//             describe('State: uploading', () => {
 
-                beforeEach(() => {
-                    rootScope.$emit('actionMessage', { ID: 1, uploading: 2 });
-                });
+//                 beforeEach(() => {
+//                     rootScope.$emit('actionMessage', { ID: 1, uploading: 2 });
+//                 });
 
-                it('should load a new translation', () => {
-                    expect(gettextCatalog.getString).toHaveBeenCalledWith('Uploading', null, 'Action');
-                });
+//                 it('should load a new translation', () => {
+//                     expect(gettextCatalog.getString).toHaveBeenCalledWith('Uploading', null, 'Action');
+//                 });
 
-                it('should bind to the textContent the new translation', () => {
-                    expect(dom[0].textContent).toBe('Uploading');
-                });
+//                 it('should bind to the textContent the new translation', () => {
+//                     expect(dom[0].textContent).toBe('Uploading');
+//                 });
 
-                it('should not set the button as disabled', () => {
-                    expect(dom[0].disabled).not.toBeTruthy();
-                });
+//                 it('should not set the button as disabled', () => {
+//                     expect(dom[0].disabled).not.toBeTruthy();
+//                 });
 
-            });
+//             });
 
-            describe('State: encrypting', () => {
+//             describe('State: encrypting', () => {
 
-                beforeEach(() => {
-                    rootScope.$emit('actionMessage', { ID: 1, encrypting: true });
-                });
+//                 beforeEach(() => {
+//                     rootScope.$emit('actionMessage', { ID: 1, encrypting: true });
+//                 });
 
-                it('should load a new translation', () => {
-                    expect(gettextCatalog.getString).toHaveBeenCalledWith('Encrypting', null, 'Action');
-                });
+//                 it('should load a new translation', () => {
+//                     expect(gettextCatalog.getString).toHaveBeenCalledWith('Encrypting', null, 'Action');
+//                 });
 
-                it('should bind to the textContent the new translation', () => {
-                    expect(dom[0].textContent).toBe('Encrypting');
-                });
+//                 it('should bind to the textContent the new translation', () => {
+//                     expect(dom[0].textContent).toBe('Encrypting');
+//                 });
 
-                it('should not set the button as disabled', () => {
-                    expect(dom[0].disabled).not.toBeTruthy();
-                });
+//                 it('should not set the button as disabled', () => {
+//                     expect(dom[0].disabled).not.toBeTruthy();
+//                 });
 
-            });
+//             });
 
-            describe('State: sending', () => {
+//             describe('State: sending', () => {
 
-                beforeEach(() => {
-                    rootScope.$emit('actionMessage', { ID: 1, sending: true });
-                });
+//                 beforeEach(() => {
+//                     rootScope.$emit('actionMessage', { ID: 1, sending: true });
+//                 });
 
-                it('should load a new translation', () => {
-                    expect(gettextCatalog.getString).toHaveBeenCalledWith('Sending', null, 'Action');
-                });
+//                 it('should load a new translation', () => {
+//                     expect(gettextCatalog.getString).toHaveBeenCalledWith('Sending', null, 'Action');
+//                 });
 
-                it('should bind to the textContent the new translation', () => {
-                    expect(dom[0].textContent).toBe('Sending');
-                });
+//                 it('should bind to the textContent the new translation', () => {
+//                     expect(dom[0].textContent).toBe('Sending');
+//                 });
 
-                it('should not set the button as disabled', () => {
-                    expect(dom[0].disabled).not.toBeTruthy();
-                });
+//                 it('should not set the button as disabled', () => {
+//                     expect(dom[0].disabled).not.toBeTruthy();
+//                 });
 
-            });
+//             });
 
-            describe('State: saving no autosaving', () => {
+//             describe('State: saving no autosaving', () => {
 
-                beforeEach(() => {
-                    rootScope.$emit('actionMessage', { ID: 1, saving: true });
-                });
+//                 beforeEach(() => {
+//                     rootScope.$emit('actionMessage', { ID: 1, saving: true });
+//                 });
 
-                it('should not load a new translation', () => {
-                    expect(gettextCatalog.getString).not.toHaveBeenCalledWith('Saving', null, 'Action');
-                });
+//                 it('should not load a new translation', () => {
+//                     expect(gettextCatalog.getString).not.toHaveBeenCalledWith('Saving', null, 'Action');
+//                 });
 
-                it('should not bind to the textContent the new translation', () => {
-                    expect(dom[0].textContent).not.toBe('Saving');
-                });
+//                 it('should not bind to the textContent the new translation', () => {
+//                     expect(dom[0].textContent).not.toBe('Saving');
+//                 });
 
-                it('should not set the button as disabled', () => {
-                    expect(dom[0].disabled).not.toBeTruthy();
-                });
+//                 it('should not set the button as disabled', () => {
+//                     expect(dom[0].disabled).not.toBeTruthy();
+//                 });
 
-            });
+//             });
 
-            describe('State: autosaving no saving', () => {
+//             describe('State: autosaving no saving', () => {
 
-                beforeEach(() => {
-                    rootScope.$emit('actionMessage', { ID: 1, autosaving: true });
-                });
+//                 beforeEach(() => {
+//                     rootScope.$emit('actionMessage', { ID: 1, autosaving: true });
+//                 });
 
-                it('should not load a new translation', () => {
-                    expect(gettextCatalog.getString).not.toHaveBeenCalledWith('Saving', null, 'Action');
-                });
+//                 it('should not load a new translation', () => {
+//                     expect(gettextCatalog.getString).not.toHaveBeenCalledWith('Saving', null, 'Action');
+//                 });
 
-                it('should not bind to the textContent the new translation', () => {
-                    expect(dom[0].textContent).not.toBe('Saving');
-                });
+//                 it('should not bind to the textContent the new translation', () => {
+//                     expect(dom[0].textContent).not.toBe('Saving');
+//                 });
 
-                it('should not set the button as disabled', () => {
-                    expect(dom[0].disabled).not.toBeTruthy();
-                });
+//                 it('should not set the button as disabled', () => {
+//                     expect(dom[0].disabled).not.toBeTruthy();
+//                 });
 
-            });
+//             });
 
-            describe('State: autosaving && saving', () => {
+//             describe('State: autosaving && saving', () => {
 
-                beforeEach(() => {
-                    rootScope.$emit('actionMessage', { ID: 1, saving: true, autosaving: true });
-                });
+//                 beforeEach(() => {
+//                     rootScope.$emit('actionMessage', { ID: 1, saving: true, autosaving: true });
+//                 });
 
-                it('should load a new translation', () => {
-                    expect(gettextCatalog.getString).not.toHaveBeenCalledWith('Saving', null, 'Action');
-                });
+//                 it('should load a new translation', () => {
+//                     expect(gettextCatalog.getString).not.toHaveBeenCalledWith('Saving', null, 'Action');
+//                 });
 
-                it('should bind to the textContent the new translation', () => {
-                    expect(dom[0].textContent).not.toBe('Saving');
-                });
+//                 it('should bind to the textContent the new translation', () => {
+//                     expect(dom[0].textContent).not.toBe('Saving');
+//                 });
 
-                it('should not set the button as disabled', () => {
-                    expect(dom[0].disabled).not.toBeTruthy();
-                });
+//                 it('should not set the button as disabled', () => {
+//                     expect(dom[0].disabled).not.toBeTruthy();
+//                 });
 
-            });
+//             });
 
-            describe('State: !autosaving && saving', () => {
+//             describe('State: !autosaving && saving', () => {
 
-                beforeEach(() => {
-                    rootScope.$emit('actionMessage', { ID: 1, saving: true, autosaving: false });
-                });
+//                 beforeEach(() => {
+//                     rootScope.$emit('actionMessage', { ID: 1, saving: true, autosaving: false });
+//                 });
 
-                it('should load a new translation', () => {
-                    expect(gettextCatalog.getString).toHaveBeenCalledWith('Saving', null, 'Action');
-                });
+//                 it('should load a new translation', () => {
+//                     expect(gettextCatalog.getString).toHaveBeenCalledWith('Saving', null, 'Action');
+//                 });
 
-                it('should bind to the textContent the new translation', () => {
-                    expect(dom[0].textContent).toBe('Saving');
-                });
+//                 it('should bind to the textContent the new translation', () => {
+//                     expect(dom[0].textContent).toBe('Saving');
+//                 });
 
-                it('should not set the button as disabled', () => {
-                    expect(dom[0].disabled).not.toBeTruthy();
-                });
+//                 it('should not set the button as disabled', () => {
+//                     expect(dom[0].disabled).not.toBeTruthy();
+//                 });
 
 
-            });
+//             });
 
-            describe('State: disableSend', () => {
+//             describe('State: disableSend', () => {
 
-                beforeEach(() => {
-                    rootScope.$emit('actionMessage', { ID: 1, disableSend() {
-                        return true;
-                    } });
-                });
+//                 beforeEach(() => {
+//                     rootScope.$emit('actionMessage', { ID: 1, disableSend() {
+//                         return true;
+//                     } });
+//                 });
 
-                it('should load a new translation', () => {
-                    expect(gettextCatalog.getString).toHaveBeenCalledWith('Send', null, 'Action');
-                });
+//                 it('should load a new translation', () => {
+//                     expect(gettextCatalog.getString).toHaveBeenCalledWith('Send', null, 'Action');
+//                 });
 
-                it('should bind to the textContent the new translation', () => {
-                    expect(dom[0].textContent).toBe('Send');
-                });
+//                 it('should bind to the textContent the new translation', () => {
+//                     expect(dom[0].textContent).toBe('Send');
+//                 });
 
-                it('should set the button as disabled', () => {
-                    expect(dom[0].disabled).toBeTruthy();
-                });
+//                 it('should set the button as disabled', () => {
+//                     expect(dom[0].disabled).toBeTruthy();
+//                 });
 
-            });
+//             });
 
-        });
+//         });
 
-    });
+//     });
 
 
-    describe('On Click', () => {
+//     describe('On Click', () => {
 
-        beforeEach(() => {
-            scope.message = 'message';
-            spyOn(rootScope, '$emit');
-            dom = compile('<btn-send-message data-message="message"></btn-send-message>')(scope);
-            scope.$digest();
-            iscope = dom.isolateScope();
-            dom.triggerHandler('click');
-        });
+//         beforeEach(() => {
+//             scope.message = 'message';
+//             spyOn(rootScope, '$emit');
+//             dom = compile('<btn-send-message data-message="message"></btn-send-message>')(scope);
+//             scope.$digest();
+//             iscope = dom.isolateScope();
+//             dom.triggerHandler('click');
+//         });
 
-        it('should emit an event', () => {
-            expect(rootScope.$emit).toHaveBeenCalledWith('composer.update', {
-                type: 'send.message',
-                data: {
-                    message: 'message'
-                }
-            });
-        });
-    });
+//         it('should emit an event', () => {
+//             expect(rootScope.$emit).toHaveBeenCalledWith('composer.update', {
+//                 type: 'send.message',
+//                 data: {
+//                     message: 'message'
+//                 }
+//             });
+//         });
+//     });
 
 
-    describe('On $destroy', () => {
+//     describe('On $destroy', () => {
 
-        beforeEach(() => {
-            scope.message = { ID: 1 };
-            dom = compile('<btn-send-message data-message="message"></btn-send-message>')(scope);
-            scope.$digest();
-            iscope = dom.isolateScope();
-            spyOn(gettextCatalog, 'getString').and.callThrough();
-            rootScope.$broadcast('$destroy');
-            rootScope.$emit('actionMessage', { ID: 1, encrypting: true });
-            spyOn(rootScope, '$emit');
-        });
+//         beforeEach(() => {
+//             scope.message = { ID: 1 };
+//             dom = compile('<btn-send-message data-message="message"></btn-send-message>')(scope);
+//             scope.$digest();
+//             iscope = dom.isolateScope();
+//             spyOn(gettextCatalog, 'getString').and.callThrough();
+//             rootScope.$broadcast('$destroy');
+//             rootScope.$emit('actionMessage', { ID: 1, encrypting: true });
+//             spyOn(rootScope, '$emit');
+//         });
 
-        it('should not emit an event on click', () => {
-            dom.triggerHandler('click');
-            expect(rootScope.$emit).not.toHaveBeenCalled();
-        });
+//         it('should not emit an event on click', () => {
+//             dom.triggerHandler('click');
+//             expect(rootScope.$emit).not.toHaveBeenCalled();
+//         });
 
 
-        it('should not load a new translation', () => {
-            expect(gettextCatalog.getString).not.toHaveBeenCalledWith('Encrypting', null, 'Action');
-        });
+//         it('should not load a new translation', () => {
+//             expect(gettextCatalog.getString).not.toHaveBeenCalledWith('Encrypting', null, 'Action');
+//         });
 
-        it('should not bind to the textContent the new translation', () => {
-            expect(dom[0].textContent).not.toBe('Encrypting');
-        });
+//         it('should not bind to the textContent the new translation', () => {
+//             expect(dom[0].textContent).not.toBe('Encrypting');
+//         });
 
-        it('should not set the button as disabled', () => {
-            expect(dom[0].disabled).not.toBeTruthy();
-        });
+//         it('should not set the button as disabled', () => {
+//             expect(dom[0].disabled).not.toBeTruthy();
+//         });
 
 
-    });
+//     });
 
 
-});
+// });

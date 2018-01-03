@@ -1,6 +1,8 @@
-describe('transformEscape service', () => {
+import service from '../../../../src/app/message/services/transformLinks';
 
-    let factory, getAttribute;
+describe('transformLinks service', () => {
+
+    const factory = service();
 
     const ADD_REF = `
         <a href="#lol" id="anchorLink">anchor</a>
@@ -20,25 +22,11 @@ describe('transformEscape service', () => {
 
     let output;
 
-
-    beforeEach(module('proton.message', 'proton.constants', 'proton.config', 'proton.commons', ($provide) => {
-
-        $provide.factory('unsubscribeModel', () => ({
-            init: angular.noop
-        }));
-
-    }));
-
     const dom = (html) => {
         const div = document.createElement('DIV');
         div.innerHTML = html;
         return div;
     };
-
-
-    beforeEach(inject(($injector) => {
-       factory = $injector.get('transformLinks');
-    }));
 
     describe('Improve privacy', () => {
 

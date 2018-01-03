@@ -12,12 +12,11 @@ module.exports = (config) => {
             '!../build/openpgp.worker.min.js',
             '../build/openpgp.min.js',
             '../build/templates.js',
-            '../build/app.js',
-            '../build/appLazy.js',
+            // '../build/app.js',
+            // '../build/appLazy.js',
             '../node_modules/angular-mocks/angular-mocks.js',
             '../src/templates/**/*.html',
-            'specs/message/services/transformEscape.spec.js',
-            // 'specs/**/*.js'
+            'specs/**/*.js'
             // 'mocks/**/*.js'
         ],
 
@@ -27,29 +26,7 @@ module.exports = (config) => {
             '../src/app/*.js': ['webpack'],
             '../src/app/**/*.js': ['webpack'],
             '../src/app/**/**/*.js': ['webpack'],
-            'specs/message/services/transformEscape.spec.js': ['webpack']
-            // 'specs/**/*.js': ['webpack']
-        },
-
-        babelPreprocessor: {
-            options: {
-                presets: [
-                    ["env", {
-                        "targets": {
-                          "browsers": ["last 2 version", "ie 11"]
-                        }
-                    }]
-                ],
-                plugins: ['transform-regenerator', 'transform-object-rest-spread'],
-                env: {
-                    dist: {
-                        plugins: ['angularjs-annotate']
-                    }
-                    // "test": {
-                    //     "plugins": ["istanbul"]
-                    // }
-                }
-            }
+            'specs/**/*.js': ['webpack', 'coverage']
         },
 
         ngHtml2JsPreprocessor: {
@@ -59,7 +36,11 @@ module.exports = (config) => {
 
         // optionally, configure the reporter
         coverageReporter: {
-            reporters: [{ type: 'html', dir: 'coverage/' }, { type: 'clover', dir: 'coverage/clover/' }]
+            instrumenterOptions: { istanbul: { noCompact: true } },
+            reporters: [
+                { type: 'html', dir: 'coverage/' },
+                { type: 'clover', dir: 'coverage/clover/' }
+            ]
         },
 
         reporters: ['progress', 'coverage', 'junit'],

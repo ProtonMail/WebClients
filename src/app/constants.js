@@ -5,10 +5,6 @@ export default angular
         'regexEmail',
         /(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))/i
     )
-
-    //
-    // Constants definition
-    //
     .constant('CONSTANTS', {
         ERROR_AUTH_ACCOUNT_DISABLED: 10003,
         CONVERSATION_REQUEST_SIZE: 10,
