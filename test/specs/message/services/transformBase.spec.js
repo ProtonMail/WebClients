@@ -1,6 +1,8 @@
-describe('transformBase service', () => {
+import service from '../../../../src/app/message/services/transformBase';
 
-    let factory;
+describe('transformBase service', () => {
+    const factory = service();
+
     const URL_PROTON = 'https://protonmail.com';
     const URL_PROTON_SLASH = 'https://protonmail.com/';
 
@@ -30,9 +32,9 @@ describe('transformBase service', () => {
     <img src="${LINKS.imgAbsolute2}" id="imgAbsolute2" class="img-absolute">
     <img class="img-empty" id="imgNope">
 </section`;
-
+    const DEFAULT_DOMAIN = 'http://lol.com';
     let output, getLinks, getImages;
-    const getDocument = (path = '') => {
+    const getDocument = (path = DEFAULT_DOMAIN) => {
         const doc = document.implementation.createHTMLDocument('test transformBase')
         const base = document.createElement('BASE');
         base.href = path;
@@ -41,19 +43,6 @@ describe('transformBase service', () => {
         return doc;
     };
 
-
-    beforeEach(module('proton.message', 'proton.constants', 'proton.config', 'proton.commons', ($provide) => {
-
-        $provide.factory('unsubscribeModel', () => ({
-            init: angular.noop
-        }));
-
-    }));
-
-
-    beforeEach(inject(($injector) => {
-       factory = $injector.get('transformBase');
-    }));
 
     describe('Escape base relative no slash', () => {
 
@@ -196,12 +185,16 @@ describe('transformBase service', () => {
     });
 
     describe('Escape with a base', () => {
+        const matchLink = (url, domain = DEFAULT_DOMAIN) => `${domain}${url.startsWith('/') ? url : '/' + url}`;
 
         describe('For a link', () => {
             const html = getDocument();
             beforeEach(() => {
                 output = factory(html);
-                getLinks = (type = 'relative') => [].slice.call(output.querySelectorAll(`.link-${type}`)).map((node) => node.href);
+                getLinks = (type = 'relative') => {
+                    return [].slice.call(output.querySelectorAll(`.link-${type}`))
+                        .map((node) => node.getAttribute('href'));
+                };
             });
 
             it('should prepend the base into href', () => {
@@ -213,20 +206,19 @@ describe('transformBase service', () => {
 
             it('should prepend the base into href without breaking the path', () => {
                 const [link1, link2] = getLinks();
-                expect(link1).toBe(LINKS.linkRelative);
-                expect(link2).toBe(LINKS.linkRelative2);
+                expect(link1).toBe(matchLink(LINKS.linkRelative));
+                expect(link2).toBe(matchLink(LINKS.linkRelative2));
             });
 
             it('should prepend the base into href with a slash', () => {
                 const [,, link3] = getLinks();
-                expect(link3).toBe(LINKS.linkRelative3);
+                expect(link3).toBe(matchLink(LINKS.linkRelative3));
             });
 
             it('should bind a href if there is not', () => {
                 const nope = output.querySelector('#linkNope');
-                expect(nope.href).toBe('');
+                expect(nope.href).toBe(matchLink(''));
             });
-
         });
 
         describe('For an image', () => {
@@ -246,19 +238,19 @@ describe('transformBase service', () => {
 
             it('should prepend the base into src without breaking the path', () => {
                 const [img1, img2] = getImages();
-                expect(img1).toBe(LINKS.imgRelative);
-                expect(img2).toBe(LINKS.imgRelative2);
+                expect(img1).toBe(matchLink(LINKS.imgRelative));
+                expect(img2).toBe(matchLink(LINKS.imgRelative2));
             });
 
             it('should prepend the base into src with a slash', () => {
                 const [,, img3] = getImages();
-                expect(img3).toBe(LINKS.imgRelative3);
+                expect(img3).toBe(matchLink(LINKS.imgRelative3));
             });
 
 
             it('should bind a src if there is not', () => {
                 const nope = output.querySelector('#imgNope');
-                expect(nope.src).toBe('');
+                expect(nope.src).toBe(matchLink(''));
             });
 
         });

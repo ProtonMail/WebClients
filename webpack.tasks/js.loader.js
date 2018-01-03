@@ -24,8 +24,8 @@ const pipe = [
                         dist: {
                             plugins: [require('babel-plugin-angularjs-annotate')]
                         },
-                        test2: {
-                            plugins: [require('babel-plugin-istanbul')]
+                        test: {
+                            plugins: ['istanbul']
                         }
                     }
                 }
