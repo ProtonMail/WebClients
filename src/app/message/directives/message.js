@@ -52,7 +52,8 @@ function message($state, $rootScope, cache, displayContent, messageScroll, tools
                             }
                         });
                     })
-                    .catch(() => {
+                    .catch((e) => {
+                        console.error(e);
                         scope.message.expand = true;
                         scope.message.viewMode = 'plain';
                     });
