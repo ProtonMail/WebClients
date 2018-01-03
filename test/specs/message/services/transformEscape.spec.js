@@ -1,6 +1,8 @@
-fdescribe('transformEscape service', () => {
+import service from '../../../../src/app/message/services/transformEscape';
 
-    let factory, getAttribute;
+fdescribe('transformEscape service', () => {
+    let getAttribute;
+    const factory = service();
     const USER_INJECT = 'user.inject';
     const DOM = `<section>
     <svg width="5cm" height="4cm" version="1.1"
@@ -58,7 +60,8 @@ fdescribe('transformEscape service', () => {
         <div style="color: red; background:    url('https://i.imgur.com/WScAnHr.jpg')">ddewdwed</div>
         <div style="color: red; background:url('https://i.imgur.com/WScAnHr.jpg')">ddewdwed</div>
         <span style="color: red; background:url('https://i.imgur.com/WScAnHr.jpg')">ddewdwed</span>`;
-    const BACKGROUND_URL_ESCAPED_WTF = '<div style="width: 500px; height: 500px; background:u\\rl(&quot;https://i.imgur.com/WScAnHr.jpg&quot;)">ddewdwed</div>';
+    const BACKGROUND_URL_ESCAPED_WTF =
+        '<div style="width: 500px; height: 500px; background:u\\rl(&quot;https://i.imgur.com/WScAnHr.jpg&quot;)">ddewdwed</div>';
     const BACKGROUND_URL_ESCAPED_WTF2 = `
         <div style="width: 500px; height: 500px; background:ur\l(&quot;https://i.imgur.com/WScAnHr.jpg&quot;)">ddewdwed</div>
         <div style="width: 500px; height: 500px; background:u\&#114;l(&quot;https://i.imgur.com/WScAnHr.jpg&quot;)">ddewdwed</div>
@@ -85,30 +88,15 @@ fdescribe('transformEscape service', () => {
         <span>dew style="content: 'a": url(</span>
         <span>dew style="content: \\"a": url(</span>
         <div style="width: 500px; height: 500px; content: &quot; background:url(test)&quot;">ddewdwed</div>
-        <div style="width: 500px; height: 500px; content: &apos; background:url(test)&apos;">ddewdwed</div>`
+        <div style="width: 500px; height: 500px; content: &apos; background:url(test)&apos;">ddewdwed</div>`;
 
     let output;
 
-
-    beforeEach(module('proton.message', 'proton.constants', 'proton.config', 'proton.commons', ($provide) => {
-
-        $provide.factory('unsubscribeModel', () => ({
-            init: angular.noop
-        }));
-
-    }));
-
-
-    beforeEach(inject(($injector) => {
-       factory = $injector.get('transformEscape');
-    }));
-
     describe('Escape <pre>', () => {
-
         describe('No syntax hightlighting', () => {
             beforeEach(() => {
                 output = factory(document.createElement('DIV'), null, {
-                    content: CODE_HTML
+                    content: CODE_HTML,
                 });
             });
 
@@ -116,35 +104,31 @@ fdescribe('transformEscape service', () => {
                 expect(output.innerHTML).toBe(CODE_HTML_ESCAPED);
             });
 
-
             it('should not escape text inside a <code> tag', () => {
                 const demo = factory(document.createElement('DIV'), null, {
-                    content: CODE_TEXT
+                    content: CODE_TEXT,
                 });
                 expect(demo.innerHTML).toBe(CODE_TEXT);
             });
-
         });
 
         describe('Syntax hightlighting', () => {
             beforeEach(() => {
                 output = factory(document.createElement('DIV'), null, {
-                    content: CODE_HTML_HIGHLIGHT
+                    content: CODE_HTML_HIGHLIGHT,
                 });
             });
 
             it('should not escape inside a <code> tag', () => {
                 expect(output.innerHTML).not.toMatch(/proton-/);
             });
-
         });
     });
 
     describe('Escape everything with proton-', () => {
-
         beforeEach(() => {
             output = factory(document.createElement('DIV'), null, {
-                content: DOM
+                content: DOM,
             });
             getAttribute = (attribute) => {
                 return [].slice.call(output.querySelectorAll(`[${attribute}]`));
@@ -152,7 +136,6 @@ fdescribe('transformEscape service', () => {
         });
 
         describe('Add a prefix', () => {
-
             it('should not add the prefix before href', () => {
                 const list = getAttribute('proton-href');
                 expect(list.length).toBe(0);
@@ -182,11 +165,9 @@ fdescribe('transformEscape service', () => {
                 const list = output.querySelectorAll('proton-svg');
                 expect(list.length).toBe(1);
             });
-
         });
 
         describe('Excape all the things !', () => {
-
             it('should have escaped every src', () => {
                 const list = getAttribute('src');
                 expect(list.length).toBe(0);
@@ -211,7 +192,6 @@ fdescribe('transformEscape service', () => {
                 const list = output.querySelectorAll('svg');
                 expect(list.length).toBe(0);
             });
-
         });
 
         it('should correctly escape svg', () => {
@@ -221,48 +201,41 @@ fdescribe('transformEscape service', () => {
     });
 
     describe('No escape inside URL', () => {
-
         beforeEach(() => {
             output = factory(document.createElement('DIV'), null, {
-                content: HTML_LINKS
+                content: HTML_LINKS,
             });
         });
 
         it('should not escape the content of an anchor tag', () => {
             expect(output.innerHTML).not.toMatch(/proton-/);
         });
-
     });
     describe('No escape TXT', () => {
-
         beforeEach(() => {
             output = factory(document.createElement('DIV'), null, {
-                content: TEXT
+                content: TEXT,
             });
         });
 
         it('should not escape txt', () => {
             expect(output.innerHTML).not.toMatch(/proton-/);
         });
-
     });
 
     describe('No escape EDGE_CASE', () => {
-
         beforeEach(() => {
             output = factory(document.createElement('DIV'), null, {
-                content: EDGE_CASE
+                content: EDGE_CASE,
             });
         });
 
         it('should not escape EDGE_CASE', () => {
             expect(output.innerHTML).not.toMatch(/proton-/);
         });
-
     });
 
     describe('No escape EDGE_CASE2', () => {
-
         beforeEach(() => {
             output = factory(document.createElement('DIV'), null, {
                 content: EDGE_CASE_2
@@ -272,13 +245,14 @@ fdescribe('transformEscape service', () => {
         it('should not escape EDGE_CASE', () => {
             expect(output.innerHTML).not.toMatch(/proton-/);
         });
-
     });
 
     describe('Escape BACKGROUND_URL', () => {
-
         const getList = (input) => {
-            return input.innerHTML.split('\n').map((s) => s.trim()).filter(Boolean);
+            return input.innerHTML
+                .split('\n')
+                .map((s) => s.trim())
+                .filter(Boolean);
         };
 
         it('should escape all', () => {
@@ -326,15 +300,13 @@ fdescribe('transformEscape service', () => {
             });
             expect(html.innerHTML).toEqual(EX_URL_CLEAN);
         });
-
     });
 
     describe('no scape BACKGROUND_URL -> user.inject', () => {
-
         beforeEach(() => {
             output = factory(document.createElement('DIV'), null, {
                 content: BACKGROUND_URL,
-                action: USER_INJECT
+                action: USER_INJECT,
             });
         });
 
@@ -345,26 +317,21 @@ fdescribe('transformEscape service', () => {
         it('should not break the HTML', () => {
             const html = factory(document.createElement('DIV'), null, {
                 content: EX_URL,
-                action: USER_INJECT
+                action: USER_INJECT,
             });
             expect(html.innerHTML).not.toMatch(/proton-/);
         });
-
     });
 
-
     describe('Ǹot escape BACKGROUND_URL', () => {
-
         beforeEach(() => {
             output = factory(document.createElement('DIV'), null, {
-                content: BACKGROUND_URL_SAFE
+                content: BACKGROUND_URL_SAFE,
             });
         });
 
         it('should not escape anything', () => {
             expect(output.BACKGROUND_URL_SAFE).not.toMatch(/proton-/);
         });
-
     });
-
 });
