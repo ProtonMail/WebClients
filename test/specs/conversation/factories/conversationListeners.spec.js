@@ -1,315 +1,286 @@
-// describe('conversationListeners factory', () => {
+import service from '../../../../src/app/conversation/factories/conversationListeners';
+import CONSTANTS from '../../../constants';
 
-//     let factory, rootScope, CONSTANTS;
-//     let spy = angular.noop;
+describe('conversationListeners factory', () => {
 
+    let factory, rootScope;
+    let spy = angular.noop;
 
-//     beforeEach(module('proton.conversation', 'proton.constants', 'proton.config', ($provide) => {
-//         $provide.factory('authentication', () => ({
-//             user: userMock
-//         }));
+    beforeEach(angular.mock.module('ng', ($provide) => {
+          $provide.decorator('$rootScope', ($delegate) => {
+              const service = $delegate;
+              service.$on = function (name, listener) {
+                  var namedListeners = this.$$listeners[name];
+                  if (!namedListeners) {
+                    this.$$listeners[name] = namedListeners = [];
+                  }
+                  namedListeners.push(listener)
+                  return spy
+              }
+              return service;
+          });
+    }));
 
-//         $provide.decorator('$rootScope', ($delegate) => {
-//             const service = $delegate;
-//             const ghost = angular.copy(service.$on);
-//             service.$on = function (name, listener) {
-//                 var namedListeners = this.$$listeners[name];
-//                 if (!namedListeners) {
-//                   this.$$listeners[name] = namedListeners = [];
-//                 }
-//                 namedListeners.push(listener)
-//                 return spy
-//             }
-//             return service;
-//         });
+    beforeEach(angular.mock.inject(($injector) => {
+        rootScope = $injector.get('$rootScope');
+        factory = service(rootScope, CONSTANTS);
+    }));
 
-//         $provide.factory('aboutClient', () => ({
-//             hasSessionStorage: angular.noop,
-//             prngAvailable: angular.noop
-//         }));
+    describe('Add subscriber with a draft', () => {
 
-//         $provide.factory('$state', () => ({
-//             go: angular.noop
-//         }));
+        let unsubscribe;
+        let message;
 
-//         $provide.factory('$cookies', () => ({
-//             get: angular.noop,
-//             put: angular.noop
-//         }));
-//         $provide.factory('eventManager', () => ({
-//             setEventID: angular.noop,
-//             start: angular.noop,
-//             call: angular.noop,
-//             stop: angular.noop
-//         }));
+        beforeEach(() => {
+            spy = jasmine.createSpy();
+            message = { Type: CONSTANTS.DRAFT };
+            spyOn(rootScope, '$on').and.callThrough();
+            unsubscribe = factory(message);
+        });
 
-//         $provide.factory('tools', () => ({
-//             currentLocation: angular.noop,
-//             cacheContext: angular.noop
-//         }));
-//     }));
+        it('should record 3 listeners', () => {
+            expect(rootScope.$on).toHaveBeenCalledTimes(3);
+        });
 
-//     beforeEach(inject(($injector) => {
-//         rootScope = $injector.get('$rootScope');
-//         CONSTANTS = $injector.get('CONSTANTS');
-//         factory = $injector.get('conversationListeners');
-//     }));
+        it('should record a listener replyConversation', () => {
+            expect(rootScope.$on).toHaveBeenCalledWith('replyConversation', jasmine.any(Function));
+        });
 
-//     describe('Add subscriber with a draft', () => {
+        it('should record a listener replyAllConversation', () => {
+            expect(rootScope.$on).toHaveBeenCalledWith('replyAllConversation', jasmine.any(Function));
+        });
 
-//         let unsubscribe;
-//         let message;
+        it('should record a listener forwardConversation', () => {
+            expect(rootScope.$on).toHaveBeenCalledWith('forwardConversation', jasmine.any(Function));
+        });
 
-//         beforeEach(() => {
-//             spy = jasmine.createSpy();
-//             message = { Type: CONSTANTS.DRAFT };
-//             spyOn(rootScope, '$on').and.callThrough();
-//             unsubscribe = factory(message);
-//         });
+        it('should return a function', () => {
+            expect(typeof unsubscribe).toBe('function');
+        });
 
-//         it('should record 3 listeners', () => {
-//             expect(rootScope.$on).toHaveBeenCalledTimes(3);
-//         });
+        describe('Emit replyConversation', () => {
 
-//         it('should record a listener replyConversation', () => {
-//             expect(rootScope.$on).toHaveBeenCalledWith('replyConversation', jasmine.any(Function));
-//         });
+            beforeEach(() => {
+                spyOn(rootScope, '$emit').and.callThrough();
+                rootScope.$emit('replyConversation');
+                rootScope.$digest();
+            });
 
-//         it('should record a listener replyAllConversation', () => {
-//             expect(rootScope.$on).toHaveBeenCalledWith('replyAllConversation', jasmine.any(Function));
-//         });
+            it('should not call the composer.new event', () => {
+                expect(rootScope.$emit).not.toHaveBeenCalledWith('composer.new', {
+                    message,
+                    type: 'reply'
+                });
+            })
+        });
 
-//         it('should record a listener forwardConversation', () => {
-//             expect(rootScope.$on).toHaveBeenCalledWith('forwardConversation', jasmine.any(Function));
-//         });
+        describe('Emit replyAllConversation', () => {
 
-//         it('should return a function', () => {
-//             expect(typeof unsubscribe).toBe('function');
-//         });
+            beforeEach(() => {
+                spyOn(rootScope, '$emit').and.callThrough();
+                rootScope.$emit('replyAllConversation');
+                rootScope.$digest();
+            });
 
-//         describe('Emit replyConversation', () => {
+            it('should not call the composer.new event', () => {
+                expect(rootScope.$emit).not.toHaveBeenCalledWith('composer.new', {
+                    message,
+                    type: 'replyall'
+                });
+            })
+        });
 
-//             beforeEach(() => {
-//                 spyOn(rootScope, '$emit').and.callThrough();
-//                 rootScope.$emit('replyConversation');
-//                 rootScope.$digest();
-//             });
+        describe('Emit forwardConversation', () => {
 
-//             it('should not call the composer.new event', () => {
-//                 expect(rootScope.$emit).not.toHaveBeenCalledWith('composer.new', {
-//                     message,
-//                     type: 'reply'
-//                 });
-//             })
-//         });
+            beforeEach(() => {
+                spyOn(rootScope, '$emit').and.callThrough();
+                rootScope.$emit('forwardConversation');
+                rootScope.$digest();
+            });
 
-//         describe('Emit replyAllConversation', () => {
+            it('should not call the composer.new event', () => {
+                expect(rootScope.$emit).not.toHaveBeenCalledWith('composer.new', {
+                    message,
+                    type: 'forward'
+                });
+            })
+        });
 
-//             beforeEach(() => {
-//                 spyOn(rootScope, '$emit').and.callThrough();
-//                 rootScope.$emit('replyAllConversation');
-//                 rootScope.$digest();
-//             });
+        it('should unsubscribe 3 spies', () => {
+            unsubscribe();
+            expect(spy).toHaveBeenCalledTimes(3);
+        });
+    });
 
-//             it('should not call the composer.new event', () => {
-//                 expect(rootScope.$emit).not.toHaveBeenCalledWith('composer.new', {
-//                     message,
-//                     type: 'replyall'
-//                 });
-//             })
-//         });
+    describe('Add subscriber with a message:decrypted', () => {
 
-//         describe('Emit forwardConversation', () => {
+        let unsubscribe;
+        let message;
 
-//             beforeEach(() => {
-//                 spyOn(rootScope, '$emit').and.callThrough();
-//                 rootScope.$emit('forwardConversation');
-//                 rootScope.$digest();
-//             });
+        beforeEach(() => {
+            spy = jasmine.createSpy();
+            message = { Type: CONSTANTS.INBOX };
+            spyOn(rootScope, '$on').and.callThrough();
+            unsubscribe = factory(message);
+        });
 
-//             it('should not call the composer.new event', () => {
-//                 expect(rootScope.$emit).not.toHaveBeenCalledWith('composer.new', {
-//                     message,
-//                     type: 'forward'
-//                 });
-//             })
-//         });
+        it('should record 3 listeners', () => {
+            expect(rootScope.$on).toHaveBeenCalledTimes(3);
+        });
 
-//         it('should unsubscribe 3 spies', () => {
-//             unsubscribe();
-//             expect(spy).toHaveBeenCalledTimes(3);
-//         });
-//     });
+        it('should record a listener replyConversation', () => {
+            expect(rootScope.$on).toHaveBeenCalledWith('replyConversation', jasmine.any(Function));
+        });
 
-//     describe('Add subscriber with a message:decrypted', () => {
+        it('should record a listener replyAllConversation', () => {
+            expect(rootScope.$on).toHaveBeenCalledWith('replyAllConversation', jasmine.any(Function));
+        });
 
-//         let unsubscribe;
-//         let message;
+        it('should record a listener forwardConversation', () => {
+            expect(rootScope.$on).toHaveBeenCalledWith('forwardConversation', jasmine.any(Function));
+        });
 
-//         beforeEach(() => {
-//             spy = jasmine.createSpy();
-//             message = { Type: CONSTANTS.INBOX };
-//             spyOn(rootScope, '$on').and.callThrough();
-//             unsubscribe = factory(message);
-//         });
+        it('should return a function', () => {
+            expect(typeof unsubscribe).toBe('function');
+        });
 
-//         it('should record 3 listeners', () => {
-//             expect(rootScope.$on).toHaveBeenCalledTimes(3);
-//         });
+        describe('Emit replyConversation', () => {
 
-//         it('should record a listener replyConversation', () => {
-//             expect(rootScope.$on).toHaveBeenCalledWith('replyConversation', jasmine.any(Function));
-//         });
+            beforeEach(() => {
+                spyOn(rootScope, '$emit').and.callThrough();
+                rootScope.$emit('replyConversation');
+                rootScope.$digest();
+            });
 
-//         it('should record a listener replyAllConversation', () => {
-//             expect(rootScope.$on).toHaveBeenCalledWith('replyAllConversation', jasmine.any(Function));
-//         });
+            it('should not call the composer.new event', () => {
+                expect(rootScope.$emit).toHaveBeenCalledWith('composer.new', {
+                    data: { message },
+                    type: 'reply'
+                });
+            })
+        });
 
-//         it('should record a listener forwardConversation', () => {
-//             expect(rootScope.$on).toHaveBeenCalledWith('forwardConversation', jasmine.any(Function));
-//         });
+        describe('Emit replyAllConversation', () => {
 
-//         it('should return a function', () => {
-//             expect(typeof unsubscribe).toBe('function');
-//         });
+            beforeEach(() => {
+                spyOn(rootScope, '$emit').and.callThrough();
+                rootScope.$emit('replyAllConversation');
+                rootScope.$digest();
+            });
 
-//         describe('Emit replyConversation', () => {
+            it('should not call the composer.new event', () => {
+                expect(rootScope.$emit).toHaveBeenCalledWith('composer.new', {
+                    data: { message },
+                    type: 'replyall'
+                });
+            })
+        });
 
-//             beforeEach(() => {
-//                 spyOn(rootScope, '$emit').and.callThrough();
-//                 rootScope.$emit('replyConversation');
-//                 rootScope.$digest();
-//             });
+        describe('Emit forwardConversation', () => {
 
-//             it('should not call the composer.new event', () => {
-//                 expect(rootScope.$emit).toHaveBeenCalledWith('composer.new', {
-//                     data: { message },
-//                     type: 'reply'
-//                 });
-//             })
-//         });
+            beforeEach(() => {
+                spyOn(rootScope, '$emit').and.callThrough();
+                rootScope.$emit('forwardConversation');
+                rootScope.$digest();
+            });
 
-//         describe('Emit replyAllConversation', () => {
+            it('should not call the composer.new event', () => {
+                expect(rootScope.$emit).toHaveBeenCalledWith('composer.new', {
+                    data: { message },
+                    type: 'forward'
+                });
+            })
+        });
 
-//             beforeEach(() => {
-//                 spyOn(rootScope, '$emit').and.callThrough();
-//                 rootScope.$emit('replyAllConversation');
-//                 rootScope.$digest();
-//             });
+        it('should unsubscribe 3 spies', () => {
+            unsubscribe();
+            expect(spy).toHaveBeenCalledTimes(3);
+        });
+    });
 
-//             it('should not call the composer.new event', () => {
-//                 expect(rootScope.$emit).toHaveBeenCalledWith('composer.new', {
-//                     data: { message },
-//                     type: 'replyall'
-//                 });
-//             })
-//         });
+    describe('Add subscriber with a message:failedDecryption', () => {
 
-//         describe('Emit forwardConversation', () => {
+        let unsubscribe;
+        let message;
 
-//             beforeEach(() => {
-//                 spyOn(rootScope, '$emit').and.callThrough();
-//                 rootScope.$emit('forwardConversation');
-//                 rootScope.$digest();
-//             });
+        beforeEach(() => {
+            spy = jasmine.createSpy();
+            message = { Type: CONSTANTS.INBOX, failedDecryption: true };
+            spyOn(rootScope, '$on').and.callThrough();
+            unsubscribe = factory(message);
+        });
 
-//             it('should not call the composer.new event', () => {
-//                 expect(rootScope.$emit).toHaveBeenCalledWith('composer.new', {
-//                     data: { message },
-//                     type: 'forward'
-//                 });
-//             })
-//         });
+        it('should record 3 listeners', () => {
+            expect(rootScope.$on).toHaveBeenCalledTimes(3);
+        });
 
-//         it('should unsubscribe 3 spies', () => {
-//             unsubscribe();
-//             expect(spy).toHaveBeenCalledTimes(3);
-//         });
-//     });
+        it('should record a listener replyConversation', () => {
+            expect(rootScope.$on).toHaveBeenCalledWith('replyConversation', jasmine.any(Function));
+        });
 
-//     describe('Add subscriber with a message:failedDecryption', () => {
+        it('should record a listener replyAllConversation', () => {
+            expect(rootScope.$on).toHaveBeenCalledWith('replyAllConversation', jasmine.any(Function));
+        });
 
-//         let unsubscribe;
-//         let message;
+        it('should record a listener forwardConversation', () => {
+            expect(rootScope.$on).toHaveBeenCalledWith('forwardConversation', jasmine.any(Function));
+        });
 
-//         beforeEach(() => {
-//             spy = jasmine.createSpy();
-//             message = { Type: CONSTANTS.INBOX, failedDecryption: true };
-//             spyOn(rootScope, '$on').and.callThrough();
-//             unsubscribe = factory(message);
-//         });
+        it('should return a function', () => {
+            expect(typeof unsubscribe).toBe('function');
+        });
 
-//         it('should record 3 listeners', () => {
-//             expect(rootScope.$on).toHaveBeenCalledTimes(3);
-//         });
+        describe('Emit replyConversation', () => {
 
-//         it('should record a listener replyConversation', () => {
-//             expect(rootScope.$on).toHaveBeenCalledWith('replyConversation', jasmine.any(Function));
-//         });
+            beforeEach(() => {
+                spyOn(rootScope, '$emit').and.callThrough();
+                rootScope.$emit('replyConversation');
+                rootScope.$digest();
+            });
 
-//         it('should record a listener replyAllConversation', () => {
-//             expect(rootScope.$on).toHaveBeenCalledWith('replyAllConversation', jasmine.any(Function));
-//         });
+            it('should not call the composer.new event', () => {
+                expect(rootScope.$emit).not.toHaveBeenCalledWith('composer.new', {
+                    message,
+                    type: 'reply'
+                });
+            })
+        });
 
-//         it('should record a listener forwardConversation', () => {
-//             expect(rootScope.$on).toHaveBeenCalledWith('forwardConversation', jasmine.any(Function));
-//         });
+        describe('Emit replyAllConversation', () => {
 
-//         it('should return a function', () => {
-//             expect(typeof unsubscribe).toBe('function');
-//         });
+            beforeEach(() => {
+                spyOn(rootScope, '$emit').and.callThrough();
+                rootScope.$emit('replyAllConversation');
+                rootScope.$digest();
+            });
 
-//         describe('Emit replyConversation', () => {
+            it('should not call the composer.new event', () => {
+                expect(rootScope.$emit).not.toHaveBeenCalledWith('composer.new', {
+                    message,
+                    type: 'replyall'
+                });
+            })
+        });
 
-//             beforeEach(() => {
-//                 spyOn(rootScope, '$emit').and.callThrough();
-//                 rootScope.$emit('replyConversation');
-//                 rootScope.$digest();
-//             });
+        describe('Emit forwardConversation', () => {
 
-//             it('should not call the composer.new event', () => {
-//                 expect(rootScope.$emit).not.toHaveBeenCalledWith('composer.new', {
-//                     message,
-//                     type: 'reply'
-//                 });
-//             })
-//         });
+            beforeEach(() => {
+                spyOn(rootScope, '$emit').and.callThrough();
+                rootScope.$emit('forwardConversation');
+                rootScope.$digest();
+            });
 
-//         describe('Emit replyAllConversation', () => {
+            it('should not call the composer.new event', () => {
+                expect(rootScope.$emit).not.toHaveBeenCalledWith('composer.new', {
+                    message,
+                    type: 'forward'
+                });
+            })
+        });
 
-//             beforeEach(() => {
-//                 spyOn(rootScope, '$emit').and.callThrough();
-//                 rootScope.$emit('replyAllConversation');
-//                 rootScope.$digest();
-//             });
-
-//             it('should not call the composer.new event', () => {
-//                 expect(rootScope.$emit).not.toHaveBeenCalledWith('composer.new', {
-//                     message,
-//                     type: 'replyall'
-//                 });
-//             })
-//         });
-
-//         describe('Emit forwardConversation', () => {
-
-//             beforeEach(() => {
-//                 spyOn(rootScope, '$emit').and.callThrough();
-//                 rootScope.$emit('forwardConversation');
-//                 rootScope.$digest();
-//             });
-
-//             it('should not call the composer.new event', () => {
-//                 expect(rootScope.$emit).not.toHaveBeenCalledWith('composer.new', {
-//                     message,
-//                     type: 'forward'
-//                 });
-//             })
-//         });
-
-//         it('should unsubscribe 3 spies', () => {
-//             unsubscribe();
-//             expect(spy).toHaveBeenCalledTimes(3);
-//         });
-//     });
-// });
+        it('should unsubscribe 3 spies', () => {
+            unsubscribe();
+            expect(spy).toHaveBeenCalledTimes(3);
+        });
+    });
+});
