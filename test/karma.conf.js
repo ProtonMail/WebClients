@@ -30,7 +30,7 @@ module.exports = (config) => {
         },
 
         ngHtml2JsPreprocessor: {
-            stripPrefix: '.*\\/src\\/app\\/',
+            stripPrefix: '.*/src/',
             moduleName: 'test.templates'
         },
 
