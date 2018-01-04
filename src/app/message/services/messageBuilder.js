@@ -141,7 +141,6 @@ function messageBuilder(
     tools,
     authentication,
     messageModel,
-    plusAliasModel,
     $filter,
     signatureBuilder,
     sanitize,

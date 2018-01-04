@@ -1,4 +1,4 @@
-import service, { formatSubject, createMessage, omitUserAddresses, injectInline } from '../../../../src/app/message/services/messageBuilder';
+import service, { formatSubject, createMessage, omitUserAddresses, injectInline, findSender } from '../../../../src/app/message/services/messageBuilder';
 import CONSTANTS from '../../../constants';
 
 const RE_PREFIX = 'Re:';
@@ -336,9 +336,83 @@ describe('Create type of message', () => {
     });
 });
 
-xdescribe('messageBuilder factory', () => {
-    let factory, rootScope, authentication, tools, messageModel, sanitize, textToHtmlMail;
-    let signatureBuilder, gettextCatalog, composerFromModel;
+describe('Find the sender', () => {
+    describe('No addresses no message', () => {
+        let output;
+        beforeEach(() => {
+            output = findSender();
+        });
+
+        it('should return an empty object', () => {
+            expect(output).toEqual({});
+        });
+    });
+
+    describe('No addresses message', () => {
+        let output;
+        beforeEach(() => {
+            output = findSender({ AddressID: 1 });
+        });
+
+        it('should return an empty object', () => {
+            expect(output).toEqual({});
+        });
+    });
+
+    describe('Addresses but no match', () => {
+        let output;
+        beforeEach(() => {
+            output = findSender({ Addresses: [{ Status: 2 }] }, { AddressID: 1 });
+        });
+
+        it('should return an empty object', () => {
+            expect(output).toEqual({});
+        });
+    });
+
+    describe('Addresses valid but no match', () => {
+        let output;
+        const match = { Status: 1, Order: 1, ID: 2 };
+        beforeEach(() => {
+            const Addresses = [{ Status: 2 }, match, { Status: 1, Order: 2, ID: 3 }];
+            output = findSender({ Addresses }, { AddressID: 1 });
+        });
+
+        it('should return the first address', () => {
+            expect(output).toEqual(match);
+        });
+    });
+
+    describe('Addresses order valid but no match', () => {
+        let output;
+        const match = { Status: 1, Order: 1, ID: 2 };
+        beforeEach(() => {
+            const Addresses = [{ Status: 2, ID: 1, Order: 0 }, { Status: 1, Order: 2, ID: 3 }, match];
+            output = findSender({ Addresses }, { AddressID: 1 });
+        });
+
+        it('should return the first address ordered', () => {
+            expect(output).toEqual(match);
+        });
+    });
+
+    describe('Addresses order valid  match', () => {
+        let output;
+        const match = { Status: 1, Order: 1, ID: 2 };
+        const matchMessage = { Status: 1, Order: 2, ID: 1 };
+        beforeEach(() => {
+            const Addresses = [{ Status: 2 }, matchMessage, match];
+            output = findSender({ Addresses }, { AddressID: 1 });
+        });
+
+        it('should return the matching ID from message', () => {
+            expect(output).toEqual(matchMessage);
+        });
+    });
+});
+
+
+describe('messageBuilder factory', () => {
     let spyUpdateSignature = jasmine.createSpy();
     let spyGetDecryptedBody = jasmine.createSpy();
     let spySetDecryptedBody = jasmine.createSpy();
@@ -346,8 +420,31 @@ xdescribe('messageBuilder factory', () => {
     let spyLocalReadableTime = jasmine.createSpy();
     let spyUtcReadableTime = jasmine.createSpy();
     let spyPrepareContent = jasmine.createSpy();
-
     let userMock = { Signature: '', DraftMIMEType: 'text/html' };
+
+    let rootScope, factory;
+
+    const gettextCatalog = { getString: _.identity };
+    const tools = { contactsToString: _.noop };
+    const sanitize = { input: _.identity, message: _.identity };
+    const textToHtmlMail = { parse: _.identity };
+    const authentication = { user: userMock };
+    const prepareContent = (...args) => {
+        spyPrepareContent(...args);
+        return 'prepareContent';
+    };
+
+    const composerFromModel = {
+        get() {
+            return { address: {} };
+        }
+    };
+    const signatureBuilder = {
+        insert: _.noop,
+        update(...args) {
+            spyUpdateSignature(...args);
+        }
+    };
 
     const message = { getDecryptedBody: angular.noop };
     const MESSAGE_BODY = '<p>polo</p>';
@@ -381,77 +478,22 @@ Est-ce que tu vas bien ?
         spyMessageModelMock(data);
         return new Message(data);
     };
-
+    beforeEach(angular.mock.module('ng', ($provide) => {
+        $provide.factory('localReadableTimeFilter', () => (...args) => {
+            spyLocalReadableTime(...args);
+            return 'localReadableTime';
+        });
+        $provide.factory('utcReadableTimeFilter', () => (...args) => {
+            spyUtcReadableTime(...args);
+            return 'utcReadableTime';
+        });
+    }));
     beforeEach(
-        module('proton.message', 'proton.constants', 'proton.config', 'proton.commons', ($provide) => {
-            $provide.factory('authentication', () => ({
-                user: userMock
-            }));
-
-            $provide.factory('unsubscribeModel', () => ({
-                init: angular.noop
-            }));
-
-            $provide.factory('gettextCatalog', () => ({
-                getString: _.identity
-            }));
-            $provide.factory('composerFromModel', () => ({
-                get() {
-                    return { address: {} };
-                }
-            }));
-
-            $provide.factory('localReadableTimeFilter', () => (...args) => {
-                spyLocalReadableTime(...args);
-                return 'localReadableTime';
-            });
-            $provide.factory('sanitize', () => ({
-                input: _.identity,
-                message: _.identity
-            }));
-            $provide.factory('utcReadableTimeFilter', () => (...args) => {
-                spyUtcReadableTime(...args);
-                return 'utcReadableTime';
-            });
-
-            $provide.factory('tools', () => ({
-                contactsToString: angular.noop
-            }));
-
-            $provide.factory('textToHtmlMail', () => ({
-                parse: _.identity
-            }));
-
-            $provide.factory('prepareContent', () => (...args) => {
-                spyPrepareContent(...args);
-                return 'prepareContent';
-            });
-
-            $provide.factory('messageModel', () => messageModelMock);
-
-            $provide.factory('signatureBuilder', () => ({
-                insert: angular.noop,
-                update(...args) {
-                    spyUpdateSignature(...args);
-                }
-            }));
-        })
-    );
-
-    beforeEach(
-        inject(($injector) => {
-            sanitize = $injector.get('sanitize');
-            rootScope = $injector.get('$rootScope');
-            CONSTANTS = $injector.get('CONSTANTS');
-            tools = $injector.get('tools');
-            gettextCatalog = $injector.get('gettextCatalog');
-            textToHtmlMail = $injector.get('textToHtmlMail');
+        angular.mock.inject(($injector) => {
+            const $filter = $injector.get('$filter');
             spyOn(gettextCatalog, 'getString').and.callThrough();
 
-            authentication = $injector.get('authentication');
-            signatureBuilder = $injector.get('signatureBuilder');
-            messageModel = $injector.get('messageModel');
-            factory = $injector.get('messageBuilder');
+            factory = service(gettextCatalog, prepareContent, composerFromModel, tools, authentication, messageModelMock, $filter, signatureBuilder, sanitize, textToHtmlMail);
 
             DEFAULT_MESSAGE = {
                 Type: CONSTANTS.DRAFT,
@@ -473,88 +515,12 @@ Est-ce que tu vas bien ?
                 ccbcc: false,
                 AddressID: 42,
                 NumEmbedded: 0,
+                xOriginalTo: undefined,
                 DecryptedBody: USER_SIGNATURE
             };
         })
     );
 
-    describe('Find the sender', () => {
-        describe('No addresses no message', () => {
-            let output;
-            beforeEach(() => {
-                userMock.Addresses = [];
-                output = factory.findSender();
-            });
-
-            it('should return an empty object', () => {
-                expect(output).toEqual({});
-            });
-        });
-
-        describe('No addresses message', () => {
-            let output;
-            beforeEach(() => {
-                userMock.Addresses = [];
-                output = factory.findSender({ AddressID: 1 });
-            });
-
-            it('should return an empty object', () => {
-                expect(output).toEqual({});
-            });
-        });
-
-        describe('Addresses but no match', () => {
-            let output;
-            beforeEach(() => {
-                userMock.Addresses = [{ Status: 2 }];
-                output = factory.findSender({ AddressID: 1 });
-            });
-
-            it('should return an empty object', () => {
-                expect(output).toEqual({});
-            });
-        });
-
-        describe('Addresses valid but no match', () => {
-            let output;
-            const match = { Status: 1, Order: 1, ID: 2 };
-            beforeEach(() => {
-                userMock.Addresses = [{ Status: 2 }, match, { Status: 1, Order: 2, ID: 3 }];
-                output = factory.findSender({ AddressID: 1 });
-            });
-
-            it('should return the first address', () => {
-                expect(output).toEqual(match);
-            });
-        });
-
-        describe('Addresses order valid but no match', () => {
-            let output;
-            const match = { Status: 1, Order: 1, ID: 2 };
-            beforeEach(() => {
-                userMock.Addresses = [{ Status: 2, ID: 1, Order: 0 }, { Status: 1, Order: 2, ID: 3 }, match];
-                output = factory.findSender({ AddressID: 1 });
-            });
-
-            it('should return the first address ordered', () => {
-                expect(output).toEqual(match);
-            });
-        });
-
-        describe('Addresses order valid  match', () => {
-            let output;
-            const match = { Status: 1, Order: 1, ID: 2 };
-            const matchMessage = { Status: 1, Order: 2, ID: 1 };
-            beforeEach(() => {
-                userMock.Addresses = [{ Status: 2 }, matchMessage, match];
-                output = factory.findSender({ AddressID: 1 });
-            });
-
-            it('should return the matching ID from message', () => {
-                expect(output).toEqual(matchMessage);
-            });
-        });
-    });
 
     describe('Update the signature', () => {
         it('should use the signatureBuilder factory', () => {
@@ -580,6 +546,7 @@ Est-ce que tu vas bien ?
                 userMock.Addresses = [TESTABLE_ADDRESS_DEFAULT, { Status: 2 }, match];
                 spyOn(textToHtmlMail, 'parse').and.callThrough();
                 spyOn(signatureBuilder, 'insert').and.returnValue(USER_SIGNATURE);
+                spyOn(composerFromModel, 'get').and.returnValue({ address: DEFAULT_MESSAGE.From });
                 spyOn(tools, 'contactsToString').and.returnValue('');
                 spyOn(sanitize, 'input').and.callFake(_.identity);
 
@@ -603,6 +570,10 @@ Est-ce que tu vas bien ?
             it('should create a new signature', () => {
                 expect(signatureBuilder.insert).toHaveBeenCalledTimes(1);
                 expect(signatureBuilder.insert).toHaveBeenCalledWith(jasmine.any(Message), { action: 'new' });
+            });
+            it('should load the sender', () => {
+                expect(composerFromModel.get).toHaveBeenCalledTimes(1);
+                expect(composerFromModel.get).toHaveBeenCalledWith(jasmine.any(Object));
             });
 
             it('should create a valid message', () => {
@@ -732,12 +703,15 @@ Est-ce que tu vas bien ?
                 spySetDecryptedBody = jasmine.createSpy();
                 spyMessageModelMock = jasmine.createSpy();
                 userMock.Addresses = [TESTABLE_ADDRESS_DEFAULT, { Status: 2 }, match];
+                spyOn(composerFromModel, 'get').and.returnValue({ address: DEFAULT_MESSAGE.From });
+
                 spyOn(textToHtmlMail, 'parse').and.callThrough();
                 spyOn(signatureBuilder, 'insert').and.returnValue(USER_SIGNATURE);
                 spyOn(tools, 'contactsToString').and.returnValue('');
                 spyOn(sanitize, 'input').and.callFake(_.identity);
 
                 DEFAULT_MESSAGE_COPY = _.extend({}, DEFAULT_MESSAGE, {
+                    xOriginalTo: 'dew',
                     Subject: 'polo',
                     ToList: ['bob'],
                     CCList: ['bobby'],
@@ -747,6 +721,7 @@ Est-ce que tu vas bien ?
                 item = factory.create(
                     'new',
                     _.extend({}, message, {
+                        xOriginalTo: 'dew',
                         Subject: 'polo',
                         ToList: ['bob'],
                         CCList: ['bobby'],
@@ -768,6 +743,11 @@ Est-ce que tu vas bien ?
             it('should create a new signature', () => {
                 expect(signatureBuilder.insert).toHaveBeenCalledTimes(1);
                 expect(signatureBuilder.insert).toHaveBeenCalledWith(jasmine.any(Message), { action: 'new' });
+            });
+
+            it('should load the sender', () => {
+                expect(composerFromModel.get).toHaveBeenCalledTimes(1);
+                expect(composerFromModel.get).toHaveBeenCalledWith(jasmine.any(Object));
             });
 
             it('should create a valid message', () => {
@@ -866,7 +846,6 @@ Est-ce que tu vas bien ?
             it('should return a new default object', () => {
                 const keysItem = Object.keys(item).sort();
                 const keysDefault = Object.keys(DEFAULT_MESSAGE_COPY).sort();
-
                 expect(keysItem.length).toBe(keysDefault.length);
                 expect(keysItem).toEqual(keysDefault.sort());
             });
@@ -913,7 +892,7 @@ Est-ce que tu vas bien ?
                 spyOn(signatureBuilder, 'insert').and.returnValue(USER_SIGNATURE);
                 spyOn(tools, 'contactsToString').and.returnValue('');
                 spyOn(sanitize, 'input').and.callFake(_.identity);
-
+                spyOn(composerFromModel, 'get').and.returnValue({ address: DEFAULT_MESSAGE.From });
                 DEFAULT_MESSAGE_COPY = _.extend({}, DEFAULT_MESSAGE, {
                     Subject: 'polo',
                     ToList: ['bob'],
@@ -950,6 +929,11 @@ Est-ce que tu vas bien ?
             it('should create a new signature', () => {
                 expect(signatureBuilder.insert).toHaveBeenCalledTimes(1);
                 expect(signatureBuilder.insert).toHaveBeenCalledWith(jasmine.any(Message), { action: 'new' });
+            });
+
+            it('should load the sender', () => {
+                expect(composerFromModel.get).toHaveBeenCalledTimes(1);
+                expect(composerFromModel.get).toHaveBeenCalledWith(jasmine.any(Object));
             });
 
             it('should create a valid message', () => {
@@ -1099,7 +1083,7 @@ Est-ce que tu vas bien ?
                 spyOn(tools, 'contactsToString').and.returnValue('');
                 spyOn(message, 'getDecryptedBody').and.returnValue(MESSAGE_BODY);
                 spyOn(sanitize, 'input').and.callFake(_.identity);
-
+                spyOn(composerFromModel, 'get').and.returnValue({ address: DEFAULT_MESSAGE.From });
                 DEFAULT_MESSAGE_COPY = _.extend({}, DEFAULT_MESSAGE, {
                     Subject: 'polo',
                     ToList: ['bob'],
@@ -1166,6 +1150,11 @@ Est-ce que tu vas bien ?
             it('should create a new signature', () => {
                 expect(signatureBuilder.insert).toHaveBeenCalled();
                 expect(signatureBuilder.insert).toHaveBeenCalledWith(jasmine.any(Message), { action: 'reply' });
+            });
+
+            it('should load the sender', () => {
+                expect(composerFromModel.get).toHaveBeenCalledTimes(1);
+                expect(composerFromModel.get).toHaveBeenCalledWith(jasmine.any(Object));
             });
 
             it('should add two new keys for this message', () => {
@@ -1313,6 +1302,7 @@ Est-ce que tu vas bien ?
                 spyOn(message, 'getDecryptedBody').and.returnValue(MESSAGE_BODY_PLAIN);
                 spyOn(textToHtmlMail, 'parse').and.returnValue(MESSAGE_BODY_PLAIN_ESCAPED);
                 spyOn(sanitize, 'input').and.callFake(_.identity);
+                spyOn(composerFromModel, 'get').and.returnValue({ address: DEFAULT_MESSAGE.From });
 
                 DEFAULT_MESSAGE_COPY = _.extend({}, DEFAULT_MESSAGE, {
                     Subject: 'polo',
@@ -1386,6 +1376,11 @@ Est-ce que tu vas bien ?
             it('should create a new signature', () => {
                 expect(signatureBuilder.insert).toHaveBeenCalled();
                 expect(signatureBuilder.insert).toHaveBeenCalledWith(jasmine.any(Message), { action: 'reply' });
+            });
+
+            it('should load the sender', () => {
+                expect(composerFromModel.get).toHaveBeenCalledTimes(1);
+                expect(composerFromModel.get).toHaveBeenCalledWith(jasmine.any(Object));
             });
 
             it('should add two new keys for this message', () => {
@@ -1532,6 +1527,7 @@ Est-ce que tu vas bien ?
                 spyOn(message, 'getDecryptedBody').and.returnValue(MESSAGE_BODY_PLAIN);
                 spyOn(textToHtmlMail, 'parse').and.returnValue(MESSAGE_BODY_PLAIN_ESCAPED);
                 spyOn(sanitize, 'input').and.callFake(_.identity);
+                spyOn(composerFromModel, 'get').and.returnValue({ address: DEFAULT_MESSAGE.From });
 
                 DEFAULT_MESSAGE_COPY = _.extend({}, DEFAULT_MESSAGE, {
                     Subject: 'polo',
@@ -1601,6 +1597,11 @@ Est-ce que tu vas bien ?
             it('should create a new signature', () => {
                 expect(signatureBuilder.insert).toHaveBeenCalled();
                 expect(signatureBuilder.insert).toHaveBeenCalledWith(jasmine.any(Message), { action: 'reply' });
+            });
+
+            it('should load the sender', () => {
+                expect(composerFromModel.get).toHaveBeenCalledTimes(1);
+                expect(composerFromModel.get).toHaveBeenCalledWith(jasmine.any(Object));
             });
 
             it('should add two new keys for this message', () => {
@@ -1747,7 +1748,7 @@ Est-ce que tu vas bien ?
                 spyOn(tools, 'contactsToString').and.returnValue('');
                 spyOn(message, 'getDecryptedBody').and.returnValue(MESSAGE_BODY_PLAIN);
                 spyOn(sanitize, 'input').and.callFake(_.identity);
-
+                spyOn(composerFromModel, 'get').and.returnValue({ address: DEFAULT_MESSAGE.From });
                 DEFAULT_MESSAGE_COPY = _.extend({}, DEFAULT_MESSAGE, {
                     Subject: 'Re: polo',
                     ToList: ['monique'],
@@ -1816,6 +1817,11 @@ Est-ce que tu vas bien ?
             it('should create a new signature', () => {
                 expect(signatureBuilder.insert).toHaveBeenCalled();
                 expect(signatureBuilder.insert).toHaveBeenCalledWith(jasmine.any(Message), { action: 'reply' });
+            });
+
+            it('should load the sender', () => {
+                expect(composerFromModel.get).toHaveBeenCalledTimes(1);
+                expect(composerFromModel.get).toHaveBeenCalledWith(jasmine.any(Object));
             });
 
             it('should add two new keys for this message', () => {
@@ -1977,7 +1983,7 @@ Est-ce que tu vas bien ?
                 spyOn(tools, 'contactsToString').and.returnValue('');
                 spyOn(message, 'getDecryptedBody').and.returnValue(MESSAGE_BODY);
                 spyOn(sanitize, 'input').and.callFake(_.identity);
-
+                spyOn(composerFromModel, 'get').and.returnValue({ address: VALID_MATCH });
                 DEFAULT_MESSAGE_COPY = _.extend({}, DEFAULT_MESSAGE, {
                     Subject: 'polo',
                     AddressID: 1337,
@@ -2047,6 +2053,11 @@ Est-ce que tu vas bien ?
             it('should create a new signature', () => {
                 expect(signatureBuilder.insert).toHaveBeenCalled();
                 expect(signatureBuilder.insert).toHaveBeenCalledWith(jasmine.any(Message), { action: 'reply' });
+            });
+
+            it('should load the sender', () => {
+                expect(composerFromModel.get).toHaveBeenCalledTimes(1);
+                expect(composerFromModel.get).toHaveBeenCalledWith(jasmine.any(Object));
             });
 
             it('should add two new keys for this message', () => {
@@ -2208,7 +2219,7 @@ Est-ce que tu vas bien ?
                 spyOn(message, 'getDecryptedBody').and.returnValue(MESSAGE_BODY);
                 spyOn(sanitize, 'input').and.callFake(_.identity);
                 spyOn(textToHtmlMail, 'parse').and.callThrough();
-
+                spyOn(composerFromModel, 'get').and.returnValue({ address: VALID_MATCH });
                 DEFAULT_MESSAGE_COPY = _.extend({}, DEFAULT_MESSAGE, {
                     Subject: 'polo',
                     AddressID: 1337,
@@ -2278,6 +2289,11 @@ Est-ce que tu vas bien ?
             it('should create a new signature', () => {
                 expect(signatureBuilder.insert).toHaveBeenCalled();
                 expect(signatureBuilder.insert).toHaveBeenCalledWith(jasmine.any(Message), { action: 'reply' });
+            });
+
+            it('should load the sender', () => {
+                expect(composerFromModel.get).toHaveBeenCalledTimes(1);
+                expect(composerFromModel.get).toHaveBeenCalledWith(jasmine.any(Object));
             });
 
             it('should add two new keys for this message', () => {
@@ -2427,6 +2443,7 @@ Est-ce que tu vas bien ?
                 spyOn(message, 'getDecryptedBody').and.returnValue(MESSAGE_BODY);
                 spyOn(sanitize, 'input').and.callFake(_.identity);
                 spyOn(textToHtmlMail, 'parse').and.callThrough();
+                spyOn(composerFromModel, 'get').and.returnValue({ address: DEFAULT_MESSAGE.From });
 
                 DEFAULT_MESSAGE_COPY = _.extend({}, DEFAULT_MESSAGE, {
                     Subject: 'polo',
@@ -2502,6 +2519,11 @@ Est-ce que tu vas bien ?
             it('should create a new signature', () => {
                 expect(signatureBuilder.insert).toHaveBeenCalled();
                 expect(signatureBuilder.insert).toHaveBeenCalledWith(jasmine.any(Message), { action: 'reply' });
+            });
+
+            it('should load the sender', () => {
+                expect(composerFromModel.get).toHaveBeenCalledTimes(1);
+                expect(composerFromModel.get).toHaveBeenCalledWith(jasmine.any(Object));
             });
 
             it('should add two new keys for this message', () => {
@@ -2645,7 +2667,7 @@ Est-ce que tu vas bien ?
                 spyOn(message, 'getDecryptedBody').and.returnValue(MESSAGE_BODY);
                 spyOn(sanitize, 'input').and.callFake(_.identity);
                 spyOn(textToHtmlMail, 'parse').and.callThrough();
-
+                spyOn(composerFromModel, 'get').and.returnValue({ address: DEFAULT_MESSAGE.From });
                 DEFAULT_MESSAGE_COPY = _.extend({}, DEFAULT_MESSAGE, {
                     Subject: 'polo',
                     ToList: ['bob'],
@@ -2714,6 +2736,10 @@ Est-ce que tu vas bien ?
                 expect(signatureBuilder.insert).toHaveBeenCalledWith(jasmine.any(Message), { action: 'replyall' });
             });
 
+            it('should load the sender', () => {
+                expect(composerFromModel.get).toHaveBeenCalledTimes(1);
+                expect(composerFromModel.get).toHaveBeenCalledWith(jasmine.any(Object));
+            });
             it('should add two new keys for this message', () => {
                 const item = signatureBuilder.insert.calls.argsFor(0)[0];
                 const list = Object.keys(DEFAULT_MESSAGE_COPY).concat('Action', 'ParentID');
@@ -2855,6 +2881,7 @@ Est-ce que tu vas bien ?
                 spyOn(message, 'getDecryptedBody').and.returnValue(MESSAGE_BODY);
                 spyOn(sanitize, 'input').and.callFake(_.identity);
                 spyOn(textToHtmlMail, 'parse').and.callThrough();
+                spyOn(composerFromModel, 'get').and.returnValue({ address: DEFAULT_MESSAGE.From });
 
                 DEFAULT_MESSAGE_COPY = _.extend({}, DEFAULT_MESSAGE, {
                     Subject: 'polo',
@@ -2922,6 +2949,10 @@ Est-ce que tu vas bien ?
             it('should create a new signature', () => {
                 expect(signatureBuilder.insert).toHaveBeenCalled();
                 expect(signatureBuilder.insert).toHaveBeenCalledWith(jasmine.any(Message), { action: 'replyall' });
+            });
+            it('should load the sender', () => {
+                expect(composerFromModel.get).toHaveBeenCalledTimes(1);
+                expect(composerFromModel.get).toHaveBeenCalledWith(jasmine.any(Object));
             });
 
             it('should add two new keys for this message', () => {
@@ -3065,7 +3096,7 @@ Est-ce que tu vas bien ?
                 spyOn(tools, 'contactsToString').and.returnValue('');
                 spyOn(message, 'getDecryptedBody').and.returnValue(MESSAGE_BODY);
                 spyOn(sanitize, 'input').and.callFake(_.identity);
-
+                spyOn(composerFromModel, 'get').and.returnValue({ address: DEFAULT_MESSAGE.From });
                 DEFAULT_MESSAGE_COPY = _.extend({}, DEFAULT_MESSAGE, {
                     Subject: 'polo',
                     ToList: ['monique'],
@@ -3146,6 +3177,10 @@ Est-ce que tu vas bien ?
                 expect(signatureBuilder.insert).toHaveBeenCalledWith(jasmine.any(Message), { action: 'replyall' });
             });
 
+            it('should load the sender', () => {
+                expect(composerFromModel.get).toHaveBeenCalledTimes(1);
+                expect(composerFromModel.get).toHaveBeenCalledWith(jasmine.any(Object));
+            });
             it('should add two new keys for this message', () => {
                 const item = signatureBuilder.insert.calls.argsFor(0)[0];
                 const list = Object.keys(DEFAULT_MESSAGE_COPY).concat('Action', 'ParentID');
@@ -3287,7 +3322,7 @@ Est-ce que tu vas bien ?
                 spyOn(message, 'getDecryptedBody').and.returnValue(MESSAGE_BODY);
                 spyOn(sanitize, 'input').and.callFake(_.identity);
                 spyOn(textToHtmlMail, 'parse').and.callThrough();
-
+                spyOn(composerFromModel, 'get').and.returnValue({ address: DEFAULT_MESSAGE.From });
                 DEFAULT_MESSAGE_COPY = _.extend({}, DEFAULT_MESSAGE, {
                     Subject: 'polo',
                     ToList: ['bob'],
@@ -3354,6 +3389,10 @@ Est-ce que tu vas bien ?
             it('should create a new signature', () => {
                 expect(signatureBuilder.insert).toHaveBeenCalled();
                 expect(signatureBuilder.insert).toHaveBeenCalledWith(jasmine.any(Message), { action: 'forward' });
+            });
+            it('should load the sender', () => {
+                expect(composerFromModel.get).toHaveBeenCalledTimes(1);
+                expect(composerFromModel.get).toHaveBeenCalledWith(jasmine.any(Object));
             });
 
             it('should add two new keys for this message', () => {
