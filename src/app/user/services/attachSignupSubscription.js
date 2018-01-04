@@ -14,7 +14,7 @@ function attachSignupSubscription(
 
     const I18N = {
         ERROR_ORGA_KEY_GENERATION: gettextCatalog.getString('Error during the generation of new organization keys', null, 'Error'),
-        ERROR_ORGA_REQUEST: gettextCatalog.getString('Error during organization request', null, 'Error')
+        ERROR_ORGA_REQUEST: gettextCatalog.getString('Error during organization request', null, 'Error organization creation')
     };
 
     const processPlan = async () => {
