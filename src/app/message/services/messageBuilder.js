@@ -1,3 +1,138 @@
+import { CONSTANTS } from '../../constants';
+
+/**
+ * Format the subject to add the prefix only when the subject
+ * doesn't start with it
+ * @param  {String} subject
+ * @param  {String} prefix
+ * @return {String}
+ */
+export function formatSubject(subject = '', prefix = '') {
+    const hasPrefix = new RegExp(`^${prefix}`, 'i');
+    return hasPrefix.test(subject) ? subject : `${prefix} ${subject}`;
+}
+
+/**
+ * Omit user's adresses from a list
+ * @param  {Array}  list
+ * @param  {Array}  address UserAdresses
+ * @return {Array}
+ */
+export const omitUserAddresses = (list = [], address = []) => _.filter(list, ({ Address }) => address.indexOf(Address.toLowerCase()) === -1);
+
+/**
+ * Inject the inline images as attachement for embedded xray()
+ * @param {Array} originalAttachements From the current message
+ * return {String}
+ */
+export function injectInline({ Attachments = [] } = {}) {
+    return Attachments.filter((attachement) => {
+        const disposition = attachement.Headers['content-disposition'];
+        const REGEXP_IS_INLINE = /^inline/i;
+
+        return typeof disposition !== 'undefined' && REGEXP_IS_INLINE.test(disposition);
+    });
+}
+
+/**
+ * Find the current sender for a message
+ * @param  {Object} options.Addresses  From the user
+ * @param  {String} options.AddressID
+ * @return {Object}
+ */
+export function findSender({ Addresses = [] } = {}, { AddressID = '' } = {}) {
+    const enabledAddresses = _.chain(Addresses)
+        .where({ Status: 1 })
+        .sortBy('Order')
+        .value();
+
+    let sender = enabledAddresses[0];
+
+    if (AddressID) {
+        const originalAddress = _.findWhere(enabledAddresses, { ID: AddressID });
+        originalAddress && (sender = originalAddress);
+    }
+    return sender || {};
+}
+
+export function createMessage({ Addresses = [] } = {}, { RE_PREFIX, FW_PREFIX } = {}) {
+    const { FORWARD, REPLY_ALL, REPLY } = CONSTANTS;
+
+    /**
+     * Format and build a new message
+     * @param  {Message} newMsg          New message to build
+     * @param  {String} options.Subject from the current message
+     * @param  {String} options.ToList  from the current message
+     */
+    function newCopy(newMsg, { Subject = '', ToList = [], CCList = [], BCCList = [], DecryptedBody = '' } = {}) {
+        newMsg.Subject = Subject;
+        newMsg.ToList = ToList;
+        newMsg.CCList = CCList;
+        newMsg.BCCList = BCCList;
+        DecryptedBody && newMsg.setDecryptedBody(DecryptedBody);
+    }
+
+    /**
+     * Format and build a reply
+     * @param  {Message} newMsg          New message to build
+     * @param  {String} options.Subject from the current message
+     * @param  {String} options.ToList  from the current message
+     * @param  {String} options.ReplyTo from the current message
+     * @param  {Number} options.Type    from the current message
+     */
+    function reply(newMsg, origin = {}) {
+        newMsg.Action = REPLY;
+        newMsg.Subject = formatSubject(origin.Subject, RE_PREFIX);
+
+        if (origin.Type === 2 || origin.Type === 3) {
+            newMsg.ToList = origin.ToList;
+        } else {
+            newMsg.ToList = [origin.ReplyTo];
+        }
+    }
+
+    /**
+     * Format and build a replyAll
+     * @param  {Message} newMsg          New message to build
+     * @param  {String} options.Subject from the current message
+     * @param  {String} options.ToList  from the current message
+     * @param  {String} options.CCList  from the current message
+     * @param  {String} options.BCCList from the current message
+     * @param  {String} options.ReplyTo from the current message
+     * @param  {Number} options.Type    from the current message
+     */
+    function replyAll(newMsg, { Subject, Type, ToList, ReplyTo, CCList, BCCList } = {}) {
+        newMsg.Action = REPLY_ALL;
+        newMsg.Subject = formatSubject(Subject, RE_PREFIX);
+
+        if (Type === 2 || Type === 3) {
+            newMsg.ToList = ToList;
+            newMsg.CCList = CCList;
+            newMsg.BCCList = BCCList;
+        } else {
+            newMsg.ToList = [ReplyTo];
+            newMsg.CCList = _.union(ToList, CCList);
+
+            // Remove user address in CCList and ToList
+            const userAddresses = _.map(Addresses, ({ Email = '' }) => Email.toLowerCase());
+            newMsg.CCList = omitUserAddresses(newMsg.CCList, userAddresses);
+        }
+    }
+
+    /**
+     * Format and build a forward
+     * @param  {Message} newMsg          New message to build
+     * @param  {String} options.Subject from the current message
+     */
+    function forward(newMsg, { Subject } = {}) {
+        newMsg.Action = FORWARD;
+        newMsg.ToList = [];
+        newMsg.Subject = formatSubject(Subject, FW_PREFIX);
+    }
+
+    return { reply, replyAll, forward, newCopy };
+}
+
 /* @ngInject */
 function messageBuilder(
     gettextCatalog,
@@ -9,17 +144,13 @@ function messageBuilder(
     plusAliasModel,
     $filter,
     signatureBuilder,
-    CONSTANTS,
     sanitize,
     textToHtmlMail
 ) {
-    const RE_PREFIX = gettextCatalog.getString('Re:', null);
-    const FW_PREFIX = gettextCatalog.getString('Fw:', null);
-
-    function formatSubject(subject = '', prefix = RE_PREFIX) {
-        const hasPrefix = new RegExp(`^${prefix}`, 'i');
-        return hasPrefix.test(subject) ? subject : `${prefix} ${subject}`;
-    }
+    const { reply, replyAll, forward, newCopy } = createMessage(authentication.user, {
+        RE_PREFIX: gettextCatalog.getString('Re:', null, 'Message'),
+        FW_PREFIX: gettextCatalog.getString('Fw:', null, 'Message')
+    });
 
     /**
      * Convert string content to HTML
@@ -46,100 +177,6 @@ function messageBuilder(
         return prepareContent(content, message, {
             blacklist: ['*'],
             action
-        });
-    }
-
-    /**
-     * Filter user's adresses
-     * @param  {Array}  list
-     * @param  {Array}  address UserAdresses
-     * @return {Array}
-     */
-    const filterUserAddresses = (list = [], address = []) => _.filter(list, ({ Address }) => address.indexOf(Address.toLowerCase()) === -1);
-
-    /**
-     * Format and build a new message
-     * @param  {Message} newMsg          New message to build
-     * @param  {String} options.Subject from the current message
-     * @param  {String} options.ToList  from the current message
-     */
-    function newCopy(newMsg, { Subject = '', ToList = [], CCList = [], BCCList = [], DecryptedBody = '' } = {}) {
-        newMsg.Subject = Subject;
-        newMsg.ToList = ToList;
-        newMsg.CCList = CCList;
-        newMsg.BCCList = BCCList;
-        DecryptedBody && newMsg.setDecryptedBody(DecryptedBody);
-    }
-
-    /**
-     * Format and build a reply
-     * @param  {Message} newMsg          New message to build
-     * @param  {String} options.Subject from the current message
-     * @param  {String} options.ToList  from the current message
-     * @param  {String} options.ReplyTo from the current message
-     * @param  {Number} options.Type    from the current message
-     */
-    function reply(newMsg, origin = {}) {
-        newMsg.Action = CONSTANTS.REPLY;
-        newMsg.Subject = formatSubject(origin.Subject);
-
-        if (origin.Type === 2 || origin.Type === 3) {
-            newMsg.ToList = origin.ToList;
-        } else {
-            newMsg.ToList = [origin.ReplyTo];
-        }
-    }
-
-    /**
-     * Format and build a replyAll
-     * @param  {Message} newMsg          New message to build
-     * @param  {String} options.Subject from the current message
-     * @param  {String} options.ToList  from the current message
-     * @param  {String} options.CCList  from the current message
-     * @param  {String} options.BCCList from the current message
-     * @param  {String} options.ReplyTo from the current message
-     * @param  {Number} options.Type    from the current message
-     */
-    function replyAll(newMsg, { Subject, Type, ToList, ReplyTo, CCList, BCCList } = {}) {
-        newMsg.Action = CONSTANTS.REPLY_ALL;
-        newMsg.Subject = formatSubject(Subject);
-
-        if (Type === 2 || Type === 3) {
-            newMsg.ToList = ToList;
-            newMsg.CCList = CCList;
-            newMsg.BCCList = BCCList;
-        } else {
-            newMsg.ToList = [ReplyTo];
-            newMsg.CCList = _.union(ToList, CCList);
-
-            // Remove user address in CCList and ToList
-            const userAddresses = _(authentication.user.Addresses).map(({ Email = '' }) => Email.toLowerCase());
-            newMsg.CCList = filterUserAddresses(newMsg.CCList, userAddresses);
-        }
-    }
-
-    /**
-     * Format and build a forward
-     * @param  {Message} newMsg          New message to build
-     * @param  {String} options.Subject from the current message
-     */
-    function forward(newMsg, { Subject } = {}) {
-        newMsg.Action = CONSTANTS.FORWARD;
-        newMsg.ToList = [];
-        newMsg.Subject = formatSubject(Subject, FW_PREFIX);
-    }
-
-    /**
-     * Inject the inline images as attachement for embedded xray()
-     * @param {Array} originalAttachements From the current message
-     * return {String}
-     */
-    function injectInline({ Attachments = [] } = {}) {
-        return Attachments.filter((attachement) => {
-            const disposition = attachement.Headers['content-disposition'];
-            const REGEXP_IS_INLINE = /^inline/i;
-
-            return typeof disposition !== 'undefined' && REGEXP_IS_INLINE.test(disposition);
         });
     }
 
@@ -187,28 +224,6 @@ function messageBuilder(
     }
 
     /**
-     * Find the current sender for a message
-     * @param  {String} options.AddressID
-     * @return {Object}
-     */
-    function findSender({ AddressID = '' } = {}) {
-        const enabledAddresses = _.chain(authentication.user.Addresses)
-            .where({ Status: 1 })
-            .sortBy('Order')
-            .value();
-
-        let sender = enabledAddresses[0];
-
-        if (AddressID) {
-            const originalAddress = _.findWhere(enabledAddresses, { ID: AddressID });
-
-            originalAddress && (sender = originalAddress);
-        }
-
-        return sender || {};
-    }
-
-    /**
      * Bind defaults parameters for a messafe
      * @param {Message} message
      */
@@ -243,13 +258,12 @@ function messageBuilder(
      */
     function create(action = '', currentMsg = {}) {
         let newMsg = messageModel();
-
         setDefaultsParams(newMsg);
         newMsg = builder(action, currentMsg, newMsg);
         newMsg.setDecryptedBody(signatureBuilder.insert(newMsg, { action }));
         return newMsg;
     }
 
-    return { create, findSender, updateSignature: signatureBuilder.update };
+    return { create, updateSignature: signatureBuilder.update };
 }
 export default messageBuilder;
