@@ -102,6 +102,25 @@ function signatureBuilder(authentication, CONSTANTS, tools, sanitize, AppModel, 
     }
 
     /**
+     * Extract the signature.
+     * Default case is multi line signature but sometimes we have a single line signature
+     * without a container.
+     * @param  {Node} userSignature
+     * @return {String}
+     */
+    const extractSignature = (userSignature) => {
+        /*
+            Default use case, we have a div inside a div for the signature
+            we can have a multi line signature
+         */
+        if (userSignature.firstElementChild && userSignature.firstElementChild.nodeName === 'DIV') {
+            return [...userSignature.querySelectorAll('div')].reduce((acc, node) => `${acc}\n${node.textContent}`, '');
+        }
+
+        return userSignature.textContent;
+    };
+
+    /**
      * Convert signature to plaintext and replace the previous one.
      * We use an invisible space to find and replace the signature.
      * @param  {String} body
@@ -109,7 +128,7 @@ function signatureBuilder(authentication, CONSTANTS, tools, sanitize, AppModel, 
      * @return {String}
      */
     function replaceRaw(body = '', userSignature) {
-        const signature = Array.from(userSignature.querySelectorAll('div')).reduce((acc, node) => `${acc}\n${node.textContent}`, '');
+        const signature = extractSignature(userSignature);
         /* eslint no-irregular-whitespace: "off" */
         return body.replace(/​(\s*?.*?)*?​/, `​${signature}\n${PROTON_SIGNATURE.PLAIN}​`);
     }
