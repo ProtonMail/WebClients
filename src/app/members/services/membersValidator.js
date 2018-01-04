@@ -10,7 +10,7 @@ function membersValidator(gettextCatalog, notification, $state, organizationMode
             'Error'
         ),
         ERROR_NO_ADDRESS_LEFT: gettextCatalog.getString(
-            'You have used all addresses in your plan. Please upgrade your plan to add a new user.',
+            'You have used all addresses in your plan. Please upgrade your plan to add a new address.',
             null,
             'Error'
         ),
