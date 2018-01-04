@@ -1,6 +1,9 @@
 import service from '../../../../src/app/labels/directives/createLabel';
+import { generateModuleName } from '../../../utils/helpers';
 
 describe('CreateLabel directive', () => {
+
+    const MODULE = generateModuleName();
 
     let dom, compile, scope, rootScope;
     let iscope, $, $$;
@@ -12,11 +15,11 @@ describe('CreateLabel directive', () => {
         }
     };
 
-    angular.module('test', ['test.templates'])
+    angular.module(MODULE, ['test.templates'])
         .factory('labelModal', () => labelModal)
         .directive('createLabel', service);
 
-    beforeEach(angular.mock.module('test'));
+    beforeEach(angular.mock.module(MODULE));
 
     beforeEach(angular.mock.inject(($injector) => {
         rootScope = $injector.get('$rootScope');
