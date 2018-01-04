@@ -1,8 +1,10 @@
 import service from '../../../../src/app/paginator/factories/paginationModel';
 import CONSTANTS from '../../../constants';
+import { generateModuleName } from '../../../utils/helpers';
 
 describe('paginationModel factory', () => {
 
+    const MODULE = generateModuleName();
     const userMock = { ViewMode: 0 };
     const stateParamsMock = {};
 
@@ -20,9 +22,9 @@ describe('paginationModel factory', () => {
 
     let factory, rootScope;
 
-    angular.module('test', []);
+    angular.module(MODULE, []);
 
-    beforeEach(angular.mock.module('test', ($provide) => {
+    beforeEach(angular.mock.module(MODULE, ($provide) => {
         $provide.factory('cacheCounters', () => cacheCounters);
     }));
 
