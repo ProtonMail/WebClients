@@ -38,7 +38,7 @@ function settingsApi($http, url, srp) {
         return srp.performSRPRequest('PUT', '/settings/2fa', {}, creds).catch(errorSRP);
     };
     const theme = (data) => {
-        $http.put(requestURL('theme'), data).then(({ data = {} } = {}) => {
+        return $http.put(requestURL('theme'), data).then(({ data = {} } = {}) => {
             if (data.Code !== 1000) {
                 throw new Error(data.Error);
             }

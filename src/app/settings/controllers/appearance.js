@@ -36,10 +36,10 @@ function AppearanceController(
     $scope.saveTheme = () => {
         const promise = settingsApi
             .theme({ Theme: $scope.appearance.cssTheme })
+            .then(eventManager.call)
             .then(() => {
                 notification.success(gettextCatalog.getString('Theme saved', null, 'Info'));
             })
-            .then(eventManager.call)
             .catch((e) => {
                 console.error(e);
                 throw new Error(gettextCatalog.getString('Unable to save your changes, please try again.', null, 'Error'));
