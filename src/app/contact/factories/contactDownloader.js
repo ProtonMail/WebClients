@@ -1,5 +1,8 @@
+import { CONSTANTS } from '../../constants';
+
 /* @ngInject */
-function contactDownloader(Contact, contactLoaderModal, contactDetailsModel, downloadFile, vcard) {
+function contactDownloader(Contact, contactLoaderModal, contactDetailsModel, downloadFile, vcard, $q) {
+    const { CANCEL_REQUEST, EXPORT_CONTACTS_LIMIT } = CONSTANTS;
     const getFileName = (id, [card]) => {
         const nameProperty = card.get('fn');
 
@@ -10,34 +13,42 @@ function contactDownloader(Contact, contactLoaderModal, contactDetailsModel, dow
         return 'proton.vcf';
     };
 
-    const get = async (id) => {
+    const get = async (id, timeout) => {
         if (id !== 'all') {
-            const { vCard } = await Contact.get(id);
+            const { vCard } = await Contact.get(id, timeout);
             return [vCard];
         }
-        const list = await Contact.exportAll();
+        const list = await Contact.exportAll(EXPORT_CONTACTS_LIMIT, timeout);
         return list.map(({ vCard }) => vCard);
     };
 
-    return (id = 'all') => {
-        const promise = get(id);
+    return async (id = 'all') => {
+        let deferred = $q.defer();
 
         contactLoaderModal.activate({
             params: {
                 mode: 'export',
-                close() {
+                onEscape() {
+                    if (deferred) {
+                        deferred.resolve(CANCEL_REQUEST);
+                        return _rAF(() => (deferred = null));
+                    }
                     contactLoaderModal.deactivate();
-                }
+                },
+                close: contactLoaderModal.deactivate
             }
         });
 
-        promise
-            .then((data) => {
-                const blob = new Blob([vcard.to(data)], { type: 'data:attachment/vcard;' });
-                contactLoaderModal.deactivate();
-                downloadFile(blob, getFileName(id, data));
-            })
-            .catch(contactLoaderModal.deactivate);
+        try {
+            const data = await get(id, deferred.promise);
+            deferred = null;
+            const blob = new Blob([vcard.to(data)], { type: 'data:attachment/vcard;' });
+            contactLoaderModal.deactivate();
+            downloadFile(blob, getFileName(id, data));
+        } catch (e) {
+            deferred = null;
+            contactLoaderModal.deactivate();
+        }
     };
 }
 export default contactDownloader;

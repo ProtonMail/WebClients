@@ -36,7 +36,10 @@ function pmModal($animate, $compile, $rootScope, $controller, $q, $http, AppMode
                 const id = setTimeout(() => {
                     $('.modal').addClass('in');
                     window.scrollTo(0, 0);
-                    Mousetrap.bind('escape', () => deactivate());
+                    Mousetrap.bind('escape', () => {
+                        const { onEscape = deactivate } = locals.params || {};
+                        onEscape();
+                    });
                     clearTimeout(id);
                 }, 100);
 
