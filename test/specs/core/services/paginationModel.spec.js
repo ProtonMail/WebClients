@@ -1,5 +1,5 @@
 import service from '../../../../src/app/paginator/factories/paginationModel';
-import CONSTANTS from '../../../constants';
+import { CONSTANTS } from '../../../../src/app/constants';
 import { generateModuleName } from '../../../utils/helpers';
 
 describe('paginationModel factory', () => {

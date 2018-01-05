@@ -1,6 +1,5 @@
 import service from '../../../../src/app/message/factories/signatureBuilder';
-import CONSTANTS from '../../../constants';
-
+import { CONSTANTS } from '../../../../src/app/constants';
 
 describe('signatureBuilder factory', () => {
 

@@ -1,5 +1,5 @@
 import service from '../../../../src/app/labels/factories/labelsModel';
-import constants from '../../../constants';
+import { CONSTANTS as constants } from '../../../../src/app/constants';
 
 const sanitize = { input: _.identity, message: _.identity };
 

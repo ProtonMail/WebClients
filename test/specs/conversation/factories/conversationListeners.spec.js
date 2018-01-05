@@ -1,5 +1,5 @@
 import service from '../../../../src/app/conversation/factories/conversationListeners';
-import CONSTANTS from '../../../constants';
+import { CONSTANTS } from '../../../../src/app/constants';
 
 describe('conversationListeners factory', () => {
 
