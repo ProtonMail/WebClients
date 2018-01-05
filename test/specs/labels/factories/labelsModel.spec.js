@@ -1,6 +1,11 @@
+import service from '../../../../src/app/labels/factories/labelsModel';
+import { CONSTANTS as constants } from '../../../../src/app/constants';
+
+const sanitize = { input: _.identity, message: _.identity };
+
 describe('labelsModel factory', () => {
 
-    let factory, rootScope, sanitize;
+    let factory, rootScope;
     const XSS_NAME = 'monique <script>alert("youhou")</script>';
     const XSS_COLOR = '<a href="javascript:dew">deww</a>';
     const getID = () => `${Math.random().toString(32).slice(2, 12)}-${Date.now()}`;
@@ -52,21 +57,11 @@ describe('labelsModel factory', () => {
 
     let TODO_CREATE, TODO_UPDATE, TODO_IDS, TODO_DELETE;
 
-    beforeEach(module('proton.labels', 'proton.constants', ($provide) => {
-        $provide.factory('sanitize', () => ({
-            input: _.identity,
-            message: _.identity
-        }));
-    }));
-
     beforeEach(inject(($injector) => {
-        sanitize = $injector.get('sanitize');
         rootScope = $injector.get('$rootScope');
-        const constants = $injector.get('CONSTANTS');
         spyOn(rootScope, '$on').and.callThrough();
-        factory = $injector.get('labelsModel');
         spyOn(sanitize, 'input').and.callThrough();
-
+        factory = service(rootScope, constants, sanitize);
         TODO_IDS = [getID(), getID()];
 
         TODO_CREATE = [
@@ -259,7 +254,6 @@ describe('labelsModel factory', () => {
                 data: {}
             });
         });
-
     });
 
     describe('Flush the cache on logout', () => {
@@ -446,7 +440,6 @@ describe('labelsModel factory', () => {
         it('should set notfy:true for roma', () => {
             expect(mapMock.roma.notify).toBe(true);
         });
-
     });
 
 });

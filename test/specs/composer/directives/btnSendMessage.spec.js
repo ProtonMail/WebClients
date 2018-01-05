@@ -1,24 +1,25 @@
-describe('CreateLabel directive', () => {
+import service from '../../../../src/app/composer/directives/btnSendMessage';
+import { generateModuleName } from '../../../utils/helpers';
 
-    let dom, compile, scope, rootScope, gettextCatalog;
+describe('btnSendMessage directive', () => {
+
+    const MODULE = generateModuleName();
+    let dom, compile, scope, rootScope;
     let iscope, $, $$;
 
-    beforeEach(module('proton.composer', 'test.templates', ($provide) => {
+    const gettextCatalog = { getString: _.identity };
 
-        $provide.factory('gettextCatalog', () => ({
-            getString: _.identity
-        }));
+    angular.module(MODULE, ['test.templates'])
+        .factory('gettextCatalog', () => gettextCatalog)
+        .directive('btnSendMessage', service);
 
-    }));
+    beforeEach(angular.mock.module(MODULE));
 
-    beforeEach(inject(($injector) => {
-
+    beforeEach(angular.mock.inject(($injector) => {
         rootScope = $injector.get('$rootScope');
         compile = $injector.get('$compile');
-        gettextCatalog = $injector.get('gettextCatalog');
-
         scope = rootScope.$new();
-    }));
+   }));
 
     describe('Compilation process', () => {
 
@@ -328,8 +329,6 @@ describe('CreateLabel directive', () => {
         it('should not set the button as disabled', () => {
             expect(dom[0].disabled).not.toBeTruthy();
         });
-
-
     });
 
 

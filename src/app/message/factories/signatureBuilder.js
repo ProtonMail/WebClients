@@ -163,13 +163,13 @@ function signatureBuilder(authentication, CONSTANTS, tools, sanitize, AppModel, 
     function update(message = { getDecryptedBody: _.noop, isPlainText: _.noop }, body = '') {
         const { From = {} } = message;
         const content = (!From.Signature ? authentication.user.Signature : From.Signature) || '';
-        const [dom] = $.parseHTML(`<div>${sanitize.message(body || message.getDecryptedBody())}</div>`) || [];
         const [userSignature] = $.parseHTML(`<div>${sanitize.message(content)}</div>`) || [];
 
         if (message.isPlainText()) {
             return replaceRaw(message.getDecryptedBody(), userSignature);
         }
 
+        const [dom] = $.parseHTML(`<div>${sanitize.message(body || message.getDecryptedBody())}</div>`) || [];
         /**
          * Update the signature for a user if it exists
          */

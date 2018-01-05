@@ -1,61 +1,36 @@
+import service from '../../../../src/app/paginator/factories/paginationModel';
+import { CONSTANTS } from '../../../../src/app/constants';
+import { generateModuleName } from '../../../utils/helpers';
+
 describe('paginationModel factory', () => {
 
-    let factory, rootScope, cacheCounters, authentication, state, CONSTANTS, tools;
-    let userMock = { ViewMode: 0 };
-    let stateParamsMock = {};
+    const MODULE = generateModuleName();
+    const userMock = { ViewMode: 0 };
+    const stateParamsMock = {};
 
-    beforeEach(module('proton.core', 'proton.constants', 'proton.config', ($provide) => {
-        $provide.factory('authentication', () => ({
-            user: userMock
-        }));
+    const authentication = { user: userMock };
+    const state = { go: _.noop };
+    const cacheCounters = {
+        getCurrentState: _.noop,
+        getCounter: _.noop
+    };
 
-        $provide.factory('AppModel', () => ({
-            is: angular.noop,
-            set: angular.noop
-        }));
+    const tools = {
+        currentLocation: _.noop,
+        cacheContext: _.noop
+    };
 
-        $provide.factory('aboutClient', () => ({
-            hasSessionStorage: angular.noop,
-            prngAvailable: angular.noop
-        }));
+    let factory, rootScope;
 
-        $provide.factory('$state', () => ({
-            go: angular.noop
-        }));
+    angular.module(MODULE, []);
 
-        $provide.factory('$cookies', () => ({
-            get: angular.noop,
-            put: angular.noop
-        }));
-        $provide.factory('eventManager', () => ({
-            setEventID: angular.noop,
-            start: angular.noop,
-            call: angular.noop,
-            stop: angular.noop
-        }));
-
-        $provide.factory('cacheCounters', () => ({
-            getCurrentState: angular.noop,
-            getCounter: angular.noop
-        }));
-
-        $provide.factory('tools', () => ({
-            currentLocation: angular.noop,
-            cacheContext: angular.noop
-        }));
-
-        $provide.factory('$stateParams', () => stateParamsMock);
+    beforeEach(angular.mock.module(MODULE, ($provide) => {
+        $provide.factory('cacheCounters', () => cacheCounters);
     }));
 
-    beforeEach(inject(($injector) => {
+    beforeEach(angular.mock.inject(($injector) => {
         rootScope = $injector.get('$rootScope');
-        CONSTANTS = $injector.get('CONSTANTS');
-        cacheCounters = $injector.get('cacheCounters');
-        authentication = $injector.get('authentication');
-        state = $injector.get('$state');
-        factory = $injector.get('paginationModel');
-        tools = $injector.get('tools');
-        factory.init();
+        factory = service(CONSTANTS, $injector, rootScope, state, stateParamsMock, authentication, tools);
     }));
 
     describe('Switch page', () => {
@@ -596,7 +571,6 @@ describe('paginationModel factory', () => {
                 });
             });
         });
-
     });
 
     describe('Check if page number is maxPageNumber', () => {
@@ -659,9 +633,7 @@ describe('paginationModel factory', () => {
                 delete stateParamsMock.page;
                 expect(factory.isMax()).toBe(false);
             });
-
         });
     });
-
 
 });

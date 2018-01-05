@@ -1,26 +1,29 @@
+import service from '../../../../src/app/labels/directives/createLabel';
+import { generateModuleName } from '../../../utils/helpers';
+
 describe('CreateLabel directive', () => {
 
-    let dom, compile, scope, rootScope, labelModal;
+    const MODULE = generateModuleName();
+
+    let dom, compile, scope, rootScope;
     let iscope, $, $$;
     let mockResponseLabel;
+    const labelModal = {
+        deactivate: angular.noop,
+        activate({ params }) {
+            params.close(mockResponseLabel);
+        }
+    };
 
-    beforeEach(module('proton.labels', 'test.templates', ($provide) => {
+    angular.module(MODULE, ['test.templates'])
+        .factory('labelModal', () => labelModal)
+        .directive('createLabel', service);
 
-        $provide.factory('labelModal', () => ({
-            deactivate: angular.noop,
-            activate({ params }) {
-                params.close(mockResponseLabel);
-            }
-        }));
+    beforeEach(angular.mock.module(MODULE));
 
-    }));
-
-    beforeEach(inject(($injector) => {
-
+    beforeEach(angular.mock.inject(($injector) => {
         rootScope = $injector.get('$rootScope');
         compile = $injector.get('$compile');
-        labelModal = $injector.get('labelModal');
-
         scope = rootScope.$new();
     }));
 

@@ -1,58 +1,29 @@
+import service from '../../../../src/app/conversation/factories/conversationListeners';
+import { CONSTANTS } from '../../../../src/app/constants';
+
 describe('conversationListeners factory', () => {
 
-    let factory, rootScope, CONSTANTS;
+    let factory, rootScope;
     let spy = angular.noop;
 
-
-    beforeEach(module('proton.conversation', 'proton.constants', 'proton.config', ($provide) => {
-        $provide.factory('authentication', () => ({
-            user: userMock
-        }));
-
-        $provide.decorator('$rootScope', ($delegate) => {
-            const service = $delegate;
-            const ghost = angular.copy(service.$on);
-            service.$on = function (name, listener) {
-                var namedListeners = this.$$listeners[name];
-                if (!namedListeners) {
-                  this.$$listeners[name] = namedListeners = [];
-                }
-                namedListeners.push(listener)
-                return spy
-            }
-            return service;
-        });
-
-        $provide.factory('aboutClient', () => ({
-            hasSessionStorage: angular.noop,
-            prngAvailable: angular.noop
-        }));
-
-        $provide.factory('$state', () => ({
-            go: angular.noop
-        }));
-
-        $provide.factory('$cookies', () => ({
-            get: angular.noop,
-            put: angular.noop
-        }));
-        $provide.factory('eventManager', () => ({
-            setEventID: angular.noop,
-            start: angular.noop,
-            call: angular.noop,
-            stop: angular.noop
-        }));
-
-        $provide.factory('tools', () => ({
-            currentLocation: angular.noop,
-            cacheContext: angular.noop
-        }));
+    beforeEach(angular.mock.module('ng', ($provide) => {
+          $provide.decorator('$rootScope', ($delegate) => {
+              const service = $delegate;
+              service.$on = function (name, listener) {
+                  var namedListeners = this.$$listeners[name];
+                  if (!namedListeners) {
+                    this.$$listeners[name] = namedListeners = [];
+                  }
+                  namedListeners.push(listener)
+                  return spy
+              }
+              return service;
+          });
     }));
 
-    beforeEach(inject(($injector) => {
+    beforeEach(angular.mock.inject(($injector) => {
         rootScope = $injector.get('$rootScope');
-        CONSTANTS = $injector.get('CONSTANTS');
-        factory = $injector.get('conversationListeners');
+        factory = service(rootScope, CONSTANTS);
     }));
 
     describe('Add subscriber with a draft', () => {
