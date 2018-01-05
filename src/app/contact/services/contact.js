@@ -16,8 +16,8 @@ function Contact($http, $rootScope, CONSTANTS, url, chunk, contactEncryption, sa
         });
     }
 
-    function request(route, params = {}) {
-        return $http.get(route, { params }).then(({ data = {} } = {}) => {
+    function request(route, params = {}, timeout) {
+        return $http.get(route, { params, timeout }).then(({ data = {} } = {}) => {
             if (data.Error) {
                 throw new Error(data.Error);
             }
@@ -25,17 +25,21 @@ function Contact($http, $rootScope, CONSTANTS, url, chunk, contactEncryption, sa
         });
     }
 
-    async function queryContacts(route = '', { PageSize, key = '' }) {
-        const data = await request(route, { PageSize });
+    async function queryContacts(route = '', { PageSize, key = '' }, timeout) {
+        const data = await request(route, { PageSize }, timeout);
         const promises = [Promise.resolve(data[key])];
         const n = Math.ceil(data.Total / PageSize) - 1; // We already load 1 or 2 pages
 
         if (n > 0) {
             const list = _.times(n, (index) => {
-                return request(route, {
-                    PageSize,
-                    Page: index + 1
-                }).then((data) => data[key]);
+                return request(
+                    route,
+                    {
+                        PageSize,
+                        Page: index + 1
+                    },
+                    timeout
+                ).then((data) => data[key]);
             });
             promises.push(...list);
         }
@@ -80,10 +84,10 @@ function Contact($http, $rootScope, CONSTANTS, url, chunk, contactEncryption, sa
      * @param {String} contactID
      * @return {Promise}
      */
-    function get(contactID) {
-        return request(requestURL(contactID))
-            .then(({ Contact }) => contactEncryption.decrypt([Contact]))
-            .then((contacts) => contacts[0]);
+    async function get(contactID, timeout) {
+        const { Contact } = await request(requestURL(contactID), {}, timeout);
+        const [contact] = await contactEncryption.decrypt([Contact]);
+        return contact;
     }
 
     function handleUpload(result = []) {
@@ -191,11 +195,16 @@ function Contact($http, $rootScope, CONSTANTS, url, chunk, contactEncryption, sa
      * Get all ContactData's for export
      * @return {Promise}
      */
-    function exportAll(PageSize = EXPORT_CONTACTS_LIMIT) {
-        return queryContacts(requestURL('export'), {
-            key: 'Contacts',
-            PageSize
-        }).then((contacts) => contactEncryption.decrypt(contacts));
+    async function exportAll(PageSize = EXPORT_CONTACTS_LIMIT, timeout) {
+        const contacts = await queryContacts(
+            requestURL('export'),
+            {
+                key: 'Contacts',
+                PageSize
+            },
+            timeout
+        );
+        return contactEncryption.decrypt(contacts);
     }
 
     /**
