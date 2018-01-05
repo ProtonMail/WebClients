@@ -1,5 +1,8 @@
 /* @ngInject */
 function searchValue($stateParams) {
+    const toUnixTimestamp = (value = '') => moment(value).unix();
+    const formatDate = (value) => moment.unix(value).format('YYYYMMDD');
+
     /**
      * Return parameters from String
      * @return {Object}
@@ -10,7 +13,9 @@ function searchValue($stateParams) {
             { value: 'keyword:', key: 'keyword' },
             { value: 'from:', key: 'from' },
             { value: 'to:', key: 'to' },
-            { value: 'in:', key: 'label' }
+            { value: 'in:', key: 'label' },
+            { value: 'begin:', key: 'begin' },
+            { value: 'end:', key: 'end' }
         ];
 
         _.each(separators, (separator) => {
@@ -31,6 +36,8 @@ function searchValue($stateParams) {
                     if (angular.isDefined(folder)) {
                         parameters.label = folder.value;
                     }
+                } else if (separator.key === 'begin' || separator.key === 'end') {
+                    parameters[separator.key] = toUnixTimestamp(tmp1);
                 } else {
                     parameters[separator.key] = tmp1;
                 }
@@ -54,7 +61,7 @@ function searchValue($stateParams) {
             const folder = _.findWhere(folders, { value: $stateParams.label });
 
             if (angular.isDefined(folder)) {
-                result += 'in:' + folder.label + ' ';
+                result += `in:${folder.label} `;
             }
         }
 
@@ -62,18 +69,26 @@ function searchValue($stateParams) {
             if (angular.isUndefined($stateParams.from) && angular.isUndefined($stateParams.to) && angular.isUndefined($stateParams.label)) {
                 result += $stateParams.keyword + ' ';
             } else {
-                result += 'keyword:' + $stateParams.keyword + ' ';
+                result += `keyword:${$stateParams.keyword} `;
             }
         } else if (angular.isDefined($stateParams.label)) {
             result += 'keyword: ';
         }
 
         if (angular.isDefined($stateParams.from)) {
-            result += 'from:' + $stateParams.from + ' ';
+            result += `from:${$stateParams.from} `;
         }
 
         if (angular.isDefined($stateParams.to)) {
-            result += 'to:' + $stateParams.to + ' ';
+            result += `to:${$stateParams.to} `;
+        }
+
+        if (angular.isDefined($stateParams.begin)) {
+            result += `begin:${formatDate($stateParams.begin)} `;
+        }
+
+        if (angular.isDefined($stateParams.end)) {
+            result += `end:${formatDate($stateParams.end)} `;
         }
 
         return result.trim();
