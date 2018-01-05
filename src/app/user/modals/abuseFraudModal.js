@@ -1,3 +1,4 @@
+/* @ngInject */
 function abuseFraudModal(pmModal) {
     return pmModal({
         controllerAs: 'ctrl',
