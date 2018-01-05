@@ -22,6 +22,18 @@
         -webkit-overflow-scrolling: touch;
         overflow: auto !important;
     }
+
+    #pm_thread {
+        position: relative;
+    }
+    #pm_thread:before {
+        position: absolute;
+        display: block;
+        content: "";
+        height: calc(100% + 1px);
+        width: 100%;
+        z-index: -1;
+    }
 }
 
 // Firefox Linux
