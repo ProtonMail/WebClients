@@ -1,5 +1,5 @@
 import service, { formatSubject, createMessage, omitUserAddresses, injectInline, findSender } from '../../../../src/app/message/services/messageBuilder';
-import CONSTANTS from '../../../constants';
+import { CONSTANTS } from '../../../../src/app/constants';
 
 const RE_PREFIX = 'Re:';
 const FW_PREFIX = 'Fw:';
