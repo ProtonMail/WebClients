@@ -1,5 +1,5 @@
 /* @ngInject */
-function srp($http, CONFIG, webcrypto, passwords, url, authApi) {
+function srp($http, CONFIG, webcrypto, passwords, url, authApi, handle10003) {
     /**
      * [generateProofs description]
      * @param  {Integer} len            Size of the proof (bytes length)
@@ -209,6 +209,7 @@ function srp($http, CONFIG, webcrypto, passwords, url, authApi) {
             .then(
                 (resp) => {
                     if (resp.data.Code !== 1000) {
+                        handle10003(resp.data);
                         return Promise.reject({
                             error_description: resp.data.Error,
                             usedFallback: useFallback
