@@ -11,14 +11,12 @@ function contactModal($rootScope, $state, gettextCatalog, notification, pmModal)
         /* @ngInject */
         controller: function(params, $scope) {
             const unsubscribe = [];
-            let processing = false;
             this.networkActivity = false;
 
             unsubscribe.push(
                 $rootScope.$on('contacts', (event, { type = '', data = {} }) => {
                     if (type === 'contactCreated') {
                         const { created = [], errors = [] } = data;
-                        processing = false;
 
                         if (errors.length) {
                             errors.forEach(({ error = I18N.contactError }) => notification.error(error));
@@ -51,12 +49,7 @@ function contactModal($rootScope, $state, gettextCatalog, notification, pmModal)
 
             this.contact = params.contact;
             this.cancel = params.close;
-            this.submit = () => {
-                if (!processing) {
-                    processing = true;
-                    $rootScope.$emit('contacts', { type: 'submitContactForm' });
-                }
-            };
+            this.submit = () => $rootScope.$emit('contacts', { type: 'submitContactForm' });
             this.$onDestroy = () => {
                 unsubscribe.forEach((cb) => cb());
                 unsubscribe.length = 0;
