@@ -78,8 +78,7 @@
 
     <div class="pull-right">
         <nav-elements></nav-elements>
-        <paginator ng-hide="idDefined()"></paginator>
-
+        <paginator ng-if="!idDefined()"></paginator>
     </div>
 
 </nav>
