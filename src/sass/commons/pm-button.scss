@@ -338,4 +338,6 @@
 
 body.appConfigBody-is-mobile {
     .pm_buttons { margin: 0 5px 0 0 }
+
+    .pm_buttons:last-of-type { margin: 0; }
 }
