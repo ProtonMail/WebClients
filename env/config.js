@@ -1,5 +1,4 @@
 const extend = require('lodash/extend');
-const execSync = require('child_process').execSync;
 const argv = require('minimist')(process.argv.slice(2));
 
 const i18n = require('../po/lang');
@@ -80,7 +79,13 @@ const getDefaultApiTarget = () => {
     if (/webclient/i.test(__dirname)) {
         return 'prod';
     }
-    return process.env.NODE_ENV === 'dist' ? 'prod' : 'dev';
+
+    if (process.env.NODE_ENV === 'dist') {
+        const [, type] = argv.branch.match(/\w+-(\w+)/) || [];
+        return type || 'blue';
+    }
+
+    return 'dev';
 };
 
 const apiUrl = (type = getDefaultApiTarget(), branch = '') => {
@@ -88,10 +93,7 @@ const apiUrl = (type = getDefaultApiTarget(), branch = '') => {
     if (/-prod/.test(branch)) {
         return API_TARGETS.prod;
     }
-    if (/-beta/.test(branch)) {
-        return API_TARGETS[type] || API_TARGETS.beta;
-    }
-    return API_TARGETS[type];
+    return API_TARGETS[type] || API_TARGETS.blue;
 };
 
 const getVersion = () => argv['app-version'] || APP_VERSION;
