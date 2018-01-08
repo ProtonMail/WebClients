@@ -45,6 +45,8 @@
             padding: 0 10px;
             padding: 14px 30px 14px 0px; /* star */
             min-height: 35px;
+            max-height: 110px;
+            overflow-y: auto;
 
             .starButton {
                 position: absolute;
