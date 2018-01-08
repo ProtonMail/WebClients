@@ -1,5 +1,4 @@
 const extend = require('lodash/extend');
-const execSync = require('child_process').execSync;
 const argv = require('minimist')(process.argv.slice(2));
 
 const i18n = require('../po/lang');
@@ -80,17 +79,29 @@ const getDefaultApiTarget = () => {
     if (/webclient/i.test(__dirname)) {
         return 'prod';
     }
-    return process.env.NODE_ENV === 'dist' ? 'build' : 'dev';
+
+    if (process.env.NODE_ENV === 'dist') {
+        const [, type] = argv.branch.match(/\w+-(\w+)/) || [];
+        return type || 'blue';
+    }
+
+    return 'dev';
 };
 
-const apiUrl = (type = getDefaultApiTarget()) => API_TARGETS[type];
+const apiUrl = (type = getDefaultApiTarget(), branch = '') => {
+    // Cannot override the branch when you deploy to live
+    if (/-prod/.test(branch)) {
+        return API_TARGETS.prod;
+    }
+    return API_TARGETS[type] || API_TARGETS.blue;
+};
 
 const getVersion = () => argv['app-version'] || APP_VERSION;
 
 const getConfig = (env = process.env.NODE_ENV) => {
     const CONFIG = extend({}, APP, {
         debug: env === 'dist' ? false : 'debug-app' in argv ? argv['debug-app'] : true,
-        apiUrl: apiUrl(argv.api),
+        apiUrl: apiUrl(argv.api, argv.branch),
         app_version: getVersion(),
         api_version: `${argv['api-version'] || APP.api_version}`,
         articleLink: argv.article || APP.articleLink,
