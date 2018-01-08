@@ -169,8 +169,15 @@ function messageActions(
         const promise = messageApi.label(labelID, 1, ids);
         cache.addToDispatcher(promise);
 
-        const message = gettextCatalog.getPlural(ids.length, 'Message moved to', 'Messages moved to', {}, 'Action');
-        const notification = `${message} ${getFolderNameTranslated(labelID)}`;
+        const notification = gettextCatalog.getPlural(
+            ids.length,
+            'Message moved to {{folder}}',
+            'Messages moved to {{folder}}',
+            {
+                folder: getFolderNameTranslated(labelID)
+            },
+            'Action'
+        );
 
         if (tools.cacheContext()) {
             cache.events(events);

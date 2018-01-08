@@ -357,8 +357,16 @@ function actionConversation(
 
         const folderName = getFolderNameTranslated(labelID);
 
-        const successMessage = gettextCatalog.getPlural(conversationIDs.length, 'Conversation moved to', 'Conversations moved to', {});
-        const displaySuccess = () => notification.success(`${successMessage} ${unicodeTagView(folderName)}`);
+        const successMessage = gettextCatalog.getPlural(
+            conversationIDs.length,
+            'Conversation moved to {{folder}}',
+            'Conversations moved to {{folder}}',
+            {
+                folder: unicodeTagView(folderName)
+            },
+            'Info'
+        );
+        const displaySuccess = () => notification.success(successMessage);
 
         const folderIDs = basicFolders.concat(folders).concat(toSpam || toTrash ? labels : []);
 
