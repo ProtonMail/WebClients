@@ -47,12 +47,9 @@ body#eo-reply {
     .composer-draggable-editor .composer-askEmbedding { display: flex !important }
     .composer-outside-editor iframe {
         width: 100%;
-        min-height: 30rem;
-        height: 30rem;
         padding: 1rem 25px;
         box-sizing: border-box;
     }
-
 
 	#pm_footer {
 		position: static;
@@ -165,13 +162,19 @@ body#eo-reply {
     }
 	#outsideMessageWrap {
 		padding: 0;
-		background-color: $white;
+        background-color: $white;
+        max-height: 100%;
+        position: relative;
 	}
 	#outsideMessage {
 		padding: 35px;
 		overflow: auto;
 		-webkit-overflow-scrolling: touch;
-	}
+    }
+    .squireIframe {
+        height: 35vh;
+        max-height: 600px;
+    }
 	.message-head {
 		padding: 20px 35px;
 		border-bottom: 1px solid $border;
