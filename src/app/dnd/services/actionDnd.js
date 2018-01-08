@@ -14,8 +14,8 @@ function actionDnd(
     const NOTIFS = {
         APPLY_LABEL: gettextCatalog.getString('Apply label', null, 'notification drag and drop'),
         star(total, type) {
-            const message = gettextCatalog.getPlural(total, 'message', 'messages', {});
-            const conversation = gettextCatalog.getPlural(total, 'conversation', 'conversations', {});
+            const message = gettextCatalog.getPlural(total, 'message', 'messages', {}, 'Type of item');
+            const conversation = gettextCatalog.getPlural(total, 'conversation', 'conversations', {}, 'Type of item');
             return gettextCatalog.getString(
                 'Star {{total}} {{type}}',
                 {

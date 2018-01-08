@@ -1,14 +1,13 @@
 /* @ngInject */
 function composerAskEmbedded($rootScope, gettextCatalog) {
     const buildTitle = (node, pending) => {
-        const counterTranslateKey = gettextCatalog.getPlural(
+        node.textContent = gettextCatalog.getPlural(
             pending,
-            'image detected',
-            'images detected',
+            '{{$count}} image detected',
+            '{{$count}} images detected',
             {},
             'Composer, message drag and drop images'
         );
-        node.textContent = `${pending} ${counterTranslateKey}`;
     };
 
     return {
