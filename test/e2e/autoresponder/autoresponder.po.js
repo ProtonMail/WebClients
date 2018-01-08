@@ -90,7 +90,7 @@ function setEnabledDays(days) {
     return browser.executeScript(`
             var days = ${jsonDays};
             $('#enabledDays > .pm_multiselect label > input')
-                .each((key, ele) => { 
+                .each((key, ele) => {
                     if($(ele).prop('checked') != (days.indexOf(+$(ele).val()) != -1)) {
                         $(ele).click();
                     }
@@ -161,7 +161,7 @@ module.exports = {
     // Set the start time
     setStartWeekday, getStartWeekday, setStartMonthday, getStartMonthday, setStartDate, getStartDate, setStartTime, getStartTime,
     // Set the end time
-    setEndWeekday, getEndWeekday, setEndMonthday,  getEndMonthday, setEndDate, getEndDate, setEndTime, getEndTime,
+    setEndWeekday, getEndWeekday, setEndMonthday, getEndMonthday, setEndDate, getEndDate, setEndTime, getEndTime,
     // Other getter/setters
     setSubjectPrefix, getSubjectPrefix,
     setEnabledDays, getEnabledDays,
