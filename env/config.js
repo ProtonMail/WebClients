@@ -80,17 +80,26 @@ const getDefaultApiTarget = () => {
     if (/webclient/i.test(__dirname)) {
         return 'prod';
     }
-    return process.env.NODE_ENV === 'dist' ? 'build' : 'dev';
+    return process.env.NODE_ENV === 'dist' ? 'prod' : 'dev';
 };
 
-const apiUrl = (type = getDefaultApiTarget()) => API_TARGETS[type];
+const apiUrl = (type = getDefaultApiTarget(), branch = '') => {
+    // Cannot override the branch when you deploy to live
+    if (/-prod/.test(branch)) {
+        return API_TARGETS.prod;
+    }
+    if (/-beta/.test(branch)) {
+        return API_TARGETS[type] || API_TARGETS.beta;
+    }
+    return API_TARGETS[type];
+};
 
 const getVersion = () => argv['app-version'] || APP_VERSION;
 
 const getConfig = (env = process.env.NODE_ENV) => {
     const CONFIG = extend({}, APP, {
         debug: env === 'dist' ? false : 'debug-app' in argv ? argv['debug-app'] : true,
-        apiUrl: apiUrl(argv.api),
+        apiUrl: apiUrl(argv.api, argv.branch),
         app_version: getVersion(),
         api_version: `${argv['api-version'] || APP.api_version}`,
         articleLink: argv.article || APP.articleLink,
