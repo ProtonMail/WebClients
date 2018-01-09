@@ -1717,27 +1717,27 @@ msgctxt "Title"
 msgid "Auto-Reply"
 msgstr ""
 
-#: ./src/templates/autoresponder/autoresponderTimeSection.tpl.html:51
+#: ./src/templates/autoresponder/autoresponderTimeSection.tpl.html:50
 msgctxt "Auto-reply duration description"
 msgid "Auto-reply is active each month between the selected start and end time."
 msgstr ""
 
-#: ./src/templates/autoresponder/autoresponderTimeSection.tpl.html:45
+#: ./src/templates/autoresponder/autoresponderTimeSection.tpl.html:44
 msgctxt "Auto-reply duration description"
 msgid "Auto-reply is active each week between the selected start and end time."
 msgstr ""
 
-#: ./src/templates/autoresponder/autoresponderTimeSection.tpl.html:33
+#: ./src/templates/autoresponder/autoresponderTimeSection.tpl.html:32
 msgctxt "Auto-reply duration description"
 msgid "Auto-reply is active from the start time to the end time."
 msgstr ""
 
-#: ./src/templates/autoresponder/autoresponderTimeSection.tpl.html:27
+#: ./src/templates/autoresponder/autoresponderTimeSection.tpl.html:26
 msgctxt "Auto-reply duration description"
 msgid "Auto-reply is active until you turn it off."
 msgstr ""
 
-#: ./src/templates/autoresponder/autoresponderTimeSection.tpl.html:39
+#: ./src/templates/autoresponder/autoresponderTimeSection.tpl.html:38
 msgctxt "Auto-reply duration description"
 msgid "Auto-reply is always active on the days of the week you select, between the selected hours."
 msgstr ""
@@ -2871,7 +2871,7 @@ msgctxt "Delay"
 msgid "Days"
 msgstr ""
 
-#: ./src/templates/autoresponder/autoresponderTimeSection.tpl.html:59
+#: ./src/templates/autoresponder/autoresponderTimeSection.tpl.html:58
 msgctxt "Label"
 msgid "Days"
 msgstr ""
@@ -3390,7 +3390,7 @@ msgctxt "Error"
 msgid "Due to credit card processing fees, we cannot accept donations smaller than 2."
 msgstr ""
 
-#: ./src/templates/autoresponder/autoresponderTimeSection.tpl.html:13
+#: ./src/templates/autoresponder/autoresponderTimeSection.tpl.html:12
 msgctxt "Label"
 msgid "Duration"
 msgstr ""
@@ -3626,7 +3626,7 @@ msgctxt "Title"
 msgid "End date"
 msgstr ""
 
-#: ./src/templates/autoresponder/autoresponderTimeSection.tpl.html:80
+#: ./src/templates/autoresponder/autoresponderTimeSection.tpl.html:79
 msgctxt "Label"
 msgid "End time"
 msgstr ""
@@ -5125,7 +5125,7 @@ msgstr ""
 
 #: ./src/app/search/directives/wildcardCheckbox.js:5
 #: ./src/app/ui/directives/noResults.js:4
-#: ./src/templates/autoresponder/autoresponder.tpl.html:32
+#: ./src/templates/autoresponder/autoresponder.tpl.html:26
 #: ./src/templates/contact/contactError.tpl.html:10
 #: ./src/templates/contact/contactError.tpl.html:5
 #: ./src/templates/dashboard/customVpnModal.tpl.html:10
@@ -7107,7 +7107,7 @@ msgctxt "Info"
 msgid "Resetting your password will also reset your encryption keys, so you will be unable to read your existing messages. <a href=\"https://protonmail.com/support/knowledge-base/updating-your-login-password/\" target=\"_blank\">Learn More</a>."
 msgstr ""
 
-#: ./src/templates/autoresponder/autoresponder.tpl.html:16
+#: ./src/templates/autoresponder/autoresponder.tpl.html:13
 msgctxt "Label"
 msgid "Response"
 msgstr ""
@@ -7830,7 +7830,7 @@ msgctxt "Title"
 msgid "Start date"
 msgstr ""
 
-#: ./src/templates/autoresponder/autoresponderTimeSection.tpl.html:67
+#: ./src/templates/autoresponder/autoresponderTimeSection.tpl.html:66
 msgctxt "Label"
 msgid "Start time"
 msgstr ""
@@ -8303,7 +8303,7 @@ msgctxt "Title"
 msgid "Time"
 msgstr ""
 
-#: ./src/templates/autoresponder/autoresponderTimeSection.tpl.html:93
+#: ./src/templates/autoresponder/autoresponderTimeSection.tpl.html:92
 msgctxt "Label"
 msgid "Time zone"
 msgstr ""
