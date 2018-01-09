@@ -12,8 +12,11 @@ function eventManager(
     desktopNotifications,
     Events,
     gettextCatalog,
+    mailSettingsModel,
     notify,
-    sanitize
+    sanitize,
+    userSettingsModel,
+    vpnSettingsModel
 ) {
     const { CONVERSATION_VIEW_MODE, INTERVAL_EVENT_TIMER, MAILBOX_IDENTIFIERS, STATUS } = CONSTANTS;
     const FIBONACCI = [1, 1, 2, 3, 5, 8];
@@ -53,6 +56,24 @@ function eventManager(
     }
 
     const manageContacts = (events = []) => events.length && $rootScope.$emit('contacts', { type: 'contactEvents', data: { events } });
+
+    function manageMailSettings(mailSettings) {
+        if (angular.isDefined(mailSettings)) {
+            mailSettingsModel.set('all', mailSettings);
+        }
+    }
+
+    function manageUserSettings(userSettings) {
+        if (angular.isDefined(userSettings)) {
+            userSettingsModel.set(userSettings);
+        }
+    }
+
+    function manageVpnSettings(vpnSettings) {
+        if (angular.isDefined(vpnSettings)) {
+            vpnSettingsModel.set(vpnSettings);
+        }
+    }
 
     function manageContactEmails(contactEmails = []) {
         contactEmails.forEach((contactEmail) => {
@@ -123,7 +144,8 @@ function eventManager(
 
     function manageDesktopNotifications(messages = []) {
         if (messages.length) {
-            const threadingIsOn = authentication.user.ViewMode === CONVERSATION_VIEW_MODE;
+            const { ViewMode } = mailSettingsModel.get();
+            const threadingIsOn = ViewMode === CONVERSATION_VIEW_MODE;
             const { all } = $injector.get('labelsModel').get('map');
 
             const filterNotify = ({ LabelIDs = [] }) => {
@@ -273,6 +295,9 @@ function eventManager(
         }
 
         $injector.get('labelsModel').sync(data.Labels);
+        manageMailSettings(data.MailSettings);
+        manageVpnSettings(data.VPNSettings);
+        manageUserSettings(data.UserSettings);
         manageContactEmails(data.ContactEmails);
         manageContacts(data.Contacts);
         manageThreadings(data.Messages, data.Conversations);

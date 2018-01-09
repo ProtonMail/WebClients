@@ -5,9 +5,9 @@ function editorListener(
     attachmentFileFormat,
     squireExecAction,
     $rootScope,
-    authentication,
     editorDropzone,
     removeInlineWatcher,
+    mailSettingsModel,
     $state,
     CONSTANTS,
     aboutClient
@@ -45,7 +45,9 @@ function editorListener(
      */
     const bindHotKeys = (editor, element, scope) => {
         editor.setKeyHandler('escape', () => {
-            if (authentication.user.Hotkeys === 1) {
+            const { Hotkeys } = mailSettingsModel.get();
+
+            if (Hotkeys === 1) {
                 $rootScope.$emit('composer.update', {
                     type: 'close.message',
                     data: { message: scope.message }
@@ -56,7 +58,9 @@ function editorListener(
         const sendKey = `${isMac ? 'meta' : 'ctrl'}-enter`;
 
         editor.setKeyHandler(sendKey, (self, event) => {
-            if (authentication.user.Hotkeys === 1) {
+            const { Hotkeys } = mailSettingsModel.get();
+
+            if (Hotkeys === 1) {
                 event.preventDefault();
                 $rootScope.$emit('composer.update', {
                     type: 'send.message',

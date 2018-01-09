@@ -1,12 +1,12 @@
 /* @ngInject */
-function transformEmbedded(authentication, embedded, $state) {
+function transformEmbedded(CONSTANTS, embedded, $state, mailSettingsModel) {
     const EMBEDDED_CLASSNAME = 'proton-embedded';
     const wrapImage = (img) => angular.element(img).wrap('<div class="image loading"></div>');
 
     return (html, message, { action }) => {
         const images = [].slice.call(html.querySelectorAll('img[proton-src]'));
-        const user = authentication.user || { ShowEmbedded: 0 };
-        const show = message.showEmbedded === true || user.ShowEmbedded === 1;
+        const { ShowImages = 0 } = mailSettingsModel.get();
+        const show = message.showEmbedded === true || ShowImages & CONSTANTS.EMBEDDED;
         const isEoReply = $state.is('eo.reply');
 
         images.forEach((image) => {

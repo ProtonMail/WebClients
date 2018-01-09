@@ -1,8 +1,9 @@
 /* @ngInject */
-function movedSelect($rootScope, authentication, gettextCatalog, networkActivityTracker, settingsApi) {
+function movedSelect($rootScope, authentication, gettextCatalog, networkActivityTracker, mailSettingsModel, settingsMailApi, notification) {
     const I18N = {
         includeMoved: gettextCatalog.getString('Include Moved', null, 'Option'),
-        hideMoved: gettextCatalog.getString('Hide Moved', null, 'Option')
+        hideMoved: gettextCatalog.getString('Hide Moved', null, 'Option'),
+        success: gettextCatalog.getString('Setting updated', null, 'Success')
     };
     return {
         restrict: 'E',
@@ -21,21 +22,22 @@ function movedSelect($rootScope, authentication, gettextCatalog, networkActivity
             const $select = element.find('select');
             const set = (moved) => $select.val(+moved);
             const get = () => ~~$select.val();
-            const unsubscribe = $rootScope.$on('updateUser', () => set(authentication.user.Moved));
+            const unsubscribe = $rootScope.$on('updateUser', () => {
+                const { ShowMoved } = mailSettingsModel.get();
+                set(ShowMoved);
+            });
+            const { ShowMoved } = mailSettingsModel.get();
 
             function onChange() {
-                const Moved = get();
-                const promise = settingsApi.updateMoved({ Moved }).then(({ data = {} } = {}) => {
-                    if (data.Code === 1000) {
-                        authentication.user.Moved = Moved;
-                        return data;
-                    }
-                    throw new Error(data.Error);
+                const ShowMoved = get();
+                const promise = settingsMailApi.updateShowMoved({ ShowMoved }).then(() => {
+                    notification.success(I18N.success);
                 });
+
                 networkActivityTracker.track(promise);
             }
 
-            set(authentication.user.Moved);
+            set(ShowMoved);
             $select.on('change', onChange);
 
             scope.$on('$destroy', () => {

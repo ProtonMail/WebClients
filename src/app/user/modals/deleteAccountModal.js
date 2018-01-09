@@ -1,5 +1,16 @@
 /* @ngInject */
-function deleteAccountModal(pmModal, Bug, User, networkActivityTracker, authentication, $state, CONSTANTS, gettextCatalog, notification) {
+function deleteAccountModal(
+    pmModal,
+    Bug,
+    User,
+    networkActivityTracker,
+    authentication,
+    $state,
+    CONSTANTS,
+    gettextCatalog,
+    notification,
+    userSettingsModel
+) {
     const I18N = {
         invalidForm: gettextCatalog.getString('Invalid email address or password', null, 'Error reported when the delete account form is invalid')
     };
@@ -25,7 +36,7 @@ function deleteAccountModal(pmModal, Bug, User, networkActivityTracker, authenti
         /* @ngInject */
         controller: function(params, $scope) {
             const self = this;
-            self.hasTwoFactor = authentication.user.TwoFactor;
+            self.hasTwoFactor = userSettingsModel.get('TwoFactor');
             self.isAdmin = authentication.user.Role === CONSTANTS.PAID_ADMIN_ROLE;
             self.email = '';
             self.feedback = '';

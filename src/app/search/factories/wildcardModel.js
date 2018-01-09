@@ -1,20 +1,11 @@
 /* @ngInject */
-function wildcardModel($rootScope, authentication, gettextCatalog, networkActivityTracker, notification, settingsApi) {
+function wildcardModel($rootScope, gettextCatalog, networkActivityTracker, notification, settingsMailApi) {
     const I18N = {
         success: gettextCatalog.getString('Search parameter updated')
     };
 
     function updateAutowildcard({ AutoWildcardSearch }) {
-        const promise = settingsApi
-            .updateAutowildcard({ AutoWildcardSearch })
-            .then(({ data = {} } = {}) => {
-                if (data.Code === 1000) {
-                    authentication.user.AutoWildcardSearch = AutoWildcardSearch;
-                    return Promise.resolve();
-                }
-                throw new Error(data.Error);
-            })
-            .then(() => notification.success(I18N.success));
+        const promise = settingsMailApi.updateAutowildcard({ AutoWildcardSearch }).then(() => notification.success(I18N.success));
 
         networkActivityTracker.track(promise);
     }

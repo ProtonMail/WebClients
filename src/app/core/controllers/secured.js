@@ -3,16 +3,17 @@ function SecuredController(
     $rootScope,
     $scope,
     $state,
+    addressWithoutKeysManager,
+    AppModel,
+    attachSignupSubscription,
     authentication,
     cacheCounters,
-    contactCache,
     CONSTANTS,
+    contactCache,
+    desktopNotifications,
     eventManager,
     hotkeys,
-    AppModel,
-    desktopNotifications,
-    attachSignupSubscription,
-    addressWithoutKeysManager,
+    mailSettingsModel,
     resurrecter
 ) {
     $scope.mobileMode = AppModel.is('mobile');
@@ -34,7 +35,7 @@ function SecuredController(
     desktopNotifications.request();
 
     // Enable hotkeys
-    if (authentication.user.Hotkeys === 1) {
+    if (mailSettingsModel.get('Hotkeys') === 1) {
         hotkeys.bind();
     } else {
         hotkeys.unbind();

@@ -1,9 +1,7 @@
 /* @ngInject */
-function welcomeModal(pmModal, settingsApi, authentication, networkActivityTracker) {
+function welcomeModal(pmModal, settingsMailApi, mailSettingsModel, authentication, networkActivityTracker) {
     function saveDisplayName(DisplayName) {
-        const promise = settingsApi.display({ DisplayName });
-
-        authentication.user.DisplayName = DisplayName;
+        const promise = settingsMailApi.updateDisplayName({ DisplayName });
         networkActivityTracker.track(promise);
     }
     return pmModal({
@@ -11,7 +9,9 @@ function welcomeModal(pmModal, settingsApi, authentication, networkActivityTrack
         templateUrl: require('../../../templates/modals/welcome.tpl.html'),
         /* @ngInject */
         controller: function(params) {
-            this.displayName = authentication.user.DisplayName;
+            const { DisplayName } = mailSettingsModel.get();
+
+            this.displayName = DisplayName;
             this.cancel = params.cancel;
             this.next = () => {
                 this.displayName.length && saveDisplayName(this.displayName);

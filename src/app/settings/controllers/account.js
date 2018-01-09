@@ -22,10 +22,13 @@ function AccountController(
     networkActivityTracker,
     notification,
     organizationModel,
+    mailSettingsModel,
     passwords,
     pmcw,
     settingsApi,
+    settingsMailApi,
     tools,
+    userSettingsModel,
     User
 ) {
     let promisePasswordModal;
@@ -73,8 +76,8 @@ function AccountController(
     });
 
     $scope.saveDefaultLanguage = () => {
-        const Language = $scope.locale.key;
-        const promise = settingsApi.setLanguage({ Language }).then(() => window.location.reload());
+        const Locale = $scope.locale.key;
+        const promise = settingsApi.updateLocale({ Locale }).then(() => window.location.reload());
 
         networkActivityTracker.track(promise);
 
@@ -101,8 +104,8 @@ function AccountController(
         function submit(currentPassword, twoFactorCode) {
             loginPasswordModal.deactivate();
             const credentials = { Password: currentPassword, TwoFactorCode: twoFactorCode };
-            const promise = settingsApi.noticeEmail({ NotificationEmail: $scope.notificationEmail }, credentials).then(() => {
-                authentication.user.NotificationEmail = $scope.notificationEmail;
+            const promise = settingsApi.updateEmail({ Email: $scope.notificationEmail }, credentials).then(() => {
+                userSettingsModel.set('NotificationEmail', $scope.notificationEmail);
                 form.$setUntouched();
                 form.$setPristine();
                 notification.success(gettextCatalog.getString('Recovery/Notification email saved', null));
@@ -118,9 +121,9 @@ function AccountController(
             loginPasswordModal.deactivate();
             const credentials = { Password, TwoFactorCode };
             const promise = settingsApi.passwordReset({ PasswordReset: $scope.passwordReset }, credentials).then(() => {
-                authentication.user.PasswordReset = $scope.passwordReset;
                 notification.success(gettextCatalog.getString('Preference saved', null));
             });
+
             networkActivityTracker.track(promise);
         }
         const onCancel = () => ($scope.passwordReset = +!$scope.passwordReset);
@@ -128,16 +131,19 @@ function AccountController(
     };
 
     $scope.saveDailyNotifications = () => {
-        networkActivityTracker.track(
-            settingsApi.notify({ Notify: $scope.dailyNotifications }).then((result) => {
-                if (result.data && result.data.Code === 1000) {
-                    authentication.user.Notify = $scope.dailyNotifications;
-                    notification.success(gettextCatalog.getString('Preference saved', null));
-                } else if (result.data && result.data.Error) {
-                    notification.error(result.data.Error);
-                }
-            })
-        );
+        const promise = settingsApi.notify({ Notify: $scope.dailyNotifications }).then((data = {}) => {
+            if (data.Error) {
+                throw new Error(data.Error);
+            }
+
+            if (data.Code === 1000) {
+                notification.success(gettextCatalog.getString('Preference saved', null));
+            }
+
+            return data;
+        });
+
+        networkActivityTracker.track(promise);
     };
 
     function initAutoClose() {
@@ -200,44 +206,45 @@ function AccountController(
     };
 
     function updateUser() {
-        $scope.notificationEmail = authentication.user.NotificationEmail;
-        $scope.passwordReset = authentication.user.PasswordReset;
-        $scope.dailyNotifications = authentication.user.Notify;
+        const { Hotkeys, ShowImages, AutoSaveContacts } = mailSettingsModel.get();
+        const { PasswordMode, News, Email } = userSettingsModel.get();
+        $scope.notificationEmail = Email.Value;
+        $scope.passwordReset = Email.Reset;
+        $scope.dailyNotifications = Email.Notify;
         $scope.desktopNotificationsStatus = desktopNotifications.status();
-        $scope.autosaveContacts = authentication.user.AutoSaveContacts;
-        $scope.images = authentication.user.ShowImages;
-        $scope.embedded = authentication.user.ShowEmbedded;
-        $scope.hotkeys = authentication.user.Hotkeys;
-        $scope.passwordMode = authentication.user.PasswordMode;
+        $scope.autosaveContacts = AutoSaveContacts;
+        $scope.images = ShowImages & CONSTANTS.REMOTE ? 1 : 0;
+        $scope.embedded = ShowImages & CONSTANTS.EMBEDDED ? 2 : 0;
+        $scope.hotkeys = Hotkeys;
+        $scope.passwordMode = PasswordMode;
         $scope.isMember = authentication.user.Role === CONSTANTS.PAID_MEMBER_ROLE;
-        setEmailingValues(authentication.user.News);
+        setEmailingValues(News);
     }
 
     $scope.saveAutosaveContacts = () => {
-        networkActivityTracker.track(
-            settingsApi.autosave({ AutoSaveContacts: $scope.autosaveContacts }).then(() => {
-                notification.success(gettextCatalog.getString('Preference saved', null));
-                authentication.user.AutoSaveContacts = $scope.autosaveContacts;
-            })
-        );
+        const promise = settingsMailApi.updateAutoSaveContacts({ AutoSaveContacts: $scope.autosaveContacts }).then(() => {
+            notification.success(gettextCatalog.getString('Preference saved', null));
+        });
+
+        networkActivityTracker.track(promise);
     };
 
     $scope.saveImages = () => {
-        networkActivityTracker.track(
-            settingsApi.setShowImages({ ShowImages: $scope.images }).then(() => {
-                authentication.user.ShowImages = $scope.images;
-                notification.success(gettextCatalog.getString('Image preferences updated', null));
-            })
-        );
+        const ShowImages = (mailSettingsModel.get('ShowImages') & CONSTANTS.EMBEDDED ? 2 : 0) + $scope.images;
+        const promise = settingsMailApi.updateShowImages({ ShowImages }).then(() => {
+            notification.success(gettextCatalog.getString('Image preferences updated', null));
+        });
+
+        networkActivityTracker.track(promise);
     };
 
     $scope.saveEmbedded = () => {
-        networkActivityTracker.track(
-            settingsApi.setShowEmbedded({ ShowEmbedded: $scope.embedded }).then(() => {
-                authentication.user.ShowEmbedded = $scope.embedded;
-                notification.success(gettextCatalog.getString('Image preferences updated', null));
-            })
-        );
+        const ShowImages = (mailSettingsModel.get('ShowImages') & CONSTANTS.REMOTE ? 1 : 0) + $scope.embedded;
+        const promise = settingsMailApi.updateShowImages({ ShowImages }).then(() => {
+            notification.success(gettextCatalog.getString('Image preferences updated', null));
+        });
+
+        networkActivityTracker.track(promise);
     };
 
     $scope.openHotkeyModal = () => {
@@ -251,23 +258,23 @@ function AccountController(
     };
 
     $scope.saveHotkeys = () => {
-        networkActivityTracker.track(
-            settingsApi.setHotkeys({ Hotkeys: $scope.hotkeys }).then((result) => {
-                if (result.data && result.data.Code === 1000) {
-                    authentication.user.Hotkeys = $scope.hotkeys;
+        const promise = settingsMailApi.updateHotkeys({ Hotkeys: $scope.hotkeys }).then((data = {}) => {
+            if (data.Error) {
+                throw new Error(data.Error);
+            }
 
-                    if ($scope.hotkeys === 1) {
-                        hotkeys.bind();
-                    } else {
-                        hotkeys.unbind();
-                    }
-
-                    notification.success(gettextCatalog.getString('Hotkeys preferences updated', null));
-                } else if (result.data && result.data.Error) {
-                    notification.error(result.data.Error);
+            if (data.Code === 1000) {
+                if ($scope.hotkeys === 1) {
+                    hotkeys.bind();
+                } else {
+                    hotkeys.unbind();
                 }
-            })
-        );
+
+                notification.success(gettextCatalog.getString('Hotkeys preferences updated', null));
+            }
+        });
+
+        networkActivityTracker.track(promise);
     };
 
     $scope.deleteAccount = () => {
@@ -296,12 +303,16 @@ function AccountController(
 
         const promise = settingsApi
             .setNews({ News })
-            .then(({ data = {} } = {}) => {
-                if (data.Code === 1000) {
-                    authentication.user.News = News;
-                    return Promise.resolve();
+            .then((data = {}) => {
+                if (data.Error) {
+                    throw new Error(data.Error);
                 }
-                throw new Error(data.Error);
+
+                if (data.Code === 1000) {
+                    userSettingsModel.set('News', News);
+                }
+
+                return data;
             })
             .then(() => notification.success(successMessage));
         networkActivityTracker.track(promise);

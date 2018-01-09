@@ -1,5 +1,5 @@
 /* @ngInject */
-function dropdownLabels($rootScope, $timeout, labelsModel, authentication, eventManager, notification, settingsApi, gettextCatalog) {
+function dropdownLabels($rootScope, $timeout, labelsModel, mailSettingsModel, eventManager, notification, settingsMailApi, gettextCatalog) {
     const NOTIFS = {
         LABELS_SAVED: gettextCatalog.getString('Labels Saved', null, 'dropdown label'),
         LABEL_SAVED: gettextCatalog.getString('Label Saved', null, 'dropdown label')
@@ -48,7 +48,7 @@ function dropdownLabels($rootScope, $timeout, labelsModel, authentication, event
 
                     scope.labelName = '';
                     scope.labels = labelsModel.get('labels');
-                    scope.alsoArchive = Boolean(authentication.user.AlsoArchive);
+                    scope.alsoArchive = Boolean(mailSettingsModel.get('AlsoArchive'));
 
                     scope.labels.forEach((label) => {
                         const count = messagesLabels[label.ID] || 0;
@@ -94,7 +94,7 @@ function dropdownLabels($rootScope, $timeout, labelsModel, authentication, event
             scope.color = ({ Color: color = 'inherit' } = {}) => ({ color });
 
             scope.changeAlsoArchive = () => {
-                settingsApi.alsoArchive({ AlsoArchive: +scope.alsoArchive }).then(({ data = {} } = {}) => data.Code === 1000 && eventManager.call());
+                settingsMailApi.updateAlsoArchive({ AlsoArchive: +scope.alsoArchive }).then(eventManager.call);
             };
 
             scope.$on('$destroy', () => {

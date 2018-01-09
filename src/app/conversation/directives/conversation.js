@@ -14,6 +14,7 @@ function conversation(
     tools,
     hotkeys,
     labelsModel,
+    mailSettingsModel,
     findExpendableMessage,
     dispatchers
 ) {
@@ -300,7 +301,7 @@ function conversation(
                     scope.messages = expandMessage(list);
                     unsubscribeActions = conversationListeners(_.last(scope.messages));
 
-                    if (authentication.user.ViewLayout === CONSTANTS.ROW_MODE) {
+                    if (mailSettingsModel.get('ViewLayout') === CONSTANTS.ROW_MODE) {
                         scope.markedMessage = $rootScope.expandMessage;
                     }
                     dispatcher.elements('mark', { id: $stateParams.id });

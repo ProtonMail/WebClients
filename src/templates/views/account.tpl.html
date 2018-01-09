@@ -168,8 +168,8 @@
                         translate
                         translate-context="Title">Language</h2>
                 </header-block>
-                <label for="selectDefaultLanguage"  translate translate-comment="form option">Choose your default language.</label>
-                <span class="pm_select">
+                <label for="selectDefaultLanguage" translate translate-comment="form option">Choose your default language.</label>
+                <span class="pm_select inline">
                     <select id="selectDefaultLanguage" ng-model="locale" ng-options="locale.label for locale in locales" ng-change="saveDefaultLanguage()"></select>
                     <i class="fa fa-angle-down"></i>
                 </span>
@@ -246,7 +246,7 @@
                     <div class="col-5-8">
                         <div class="col-1-2">
                             <label>
-                                <custom-radio data-custom-ng-change="saveEmbedded()" data-custom-ng-model="embedded" data-custom-ng-value="1"></custom-radio>
+                                <custom-radio data-custom-ng-change="saveEmbedded()" data-custom-ng-model="embedded" data-custom-ng-value="2"></custom-radio>
                                 <span translate-comment="form option" translate-context="Action" translate>Auto</span>
                             </label>
                         </div>

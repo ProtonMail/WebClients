@@ -1,5 +1,5 @@
 /* @ngInject */
-function searchForm($rootScope, $state, $stateParams, authentication, searchModel, searchValue, dateUtils) {
+function searchForm($rootScope, $state, $stateParams, authentication, searchModel, searchValue, dateUtils, mailSettingsModel) {
     const CLASS_OPEN = 'searchForm-container-adv';
     const dispatch = (type, data = {}) => $rootScope.$emit('advancedSearch', { type, data });
 
@@ -29,13 +29,14 @@ function searchForm($rootScope, $state, $stateParams, authentication, searchMode
 
             return (scope, el) => {
                 const unsubscribe = [];
+                const { AutoWildcardSearch } = mailSettingsModel.get();
 
                 let folders = searchModel.getFolderList();
                 const addresses = searchModel.getAddresses();
                 const $input = el[0].querySelector('.search-form-fieldset-input');
 
                 scope.model = {
-                    wildcard: Boolean(authentication.user.AutoWildcardSearch),
+                    wildcard: Boolean(AutoWildcardSearch),
                     folder: folders[0],
                     address: addresses[0],
                     attachments: '2'

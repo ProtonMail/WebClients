@@ -1,6 +1,5 @@
 /* @ngInject */
 function changePasswordModal(
-    authentication,
     changeMailboxPassword,
     eventManager,
     gettextCatalog,
@@ -8,6 +7,7 @@ function changePasswordModal(
     notification,
     pmModal,
     settingsApi,
+    userSettingsModel,
     User
 ) {
     return pmModal({
@@ -22,7 +22,7 @@ function changePasswordModal(
                 login: () => settingsApi.password(self.newPassword),
                 mailbox: () => changeMailboxPassword({ newPassword: self.newPassword, onePassword: false })
             };
-            self.mode = authentication.user.PasswordMode;
+            self.mode = userSettingsModel.get('PasswordMode');
             self.type = type;
             self.newPassword = '';
             self.confirmPassword = '';

@@ -1,5 +1,5 @@
 /* @ngInject */
-function paginationModel(CONSTANTS, $injector, $rootScope, $state, $stateParams, authentication, tools) {
+function paginationModel(CONSTANTS, $injector, $rootScope, $state, $stateParams, mailSettingsModel, tools) {
     const { ELEMENTS_PER_PAGE, MESSAGE_VIEW_MODE } = CONSTANTS;
     let currentState = '';
 
@@ -8,7 +8,7 @@ function paginationModel(CONSTANTS, $injector, $rootScope, $state, $stateParams,
     });
 
     const getLayout = () => {
-        if (authentication.user.ViewMode === MESSAGE_VIEW_MODE) {
+        if (mailSettingsModel.get('ViewMode') === MESSAGE_VIEW_MODE) {
             return 'message';
         }
         return 'conversation';

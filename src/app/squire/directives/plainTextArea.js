@@ -1,5 +1,5 @@
 /* @ngInject */
-function plainTextArea(authentication, $rootScope) {
+function plainTextArea($rootScope, mailSettingsModel) {
     const KEY = {
         ENTER: 13,
         S: 83
@@ -10,6 +10,7 @@ function plainTextArea(authentication, $rootScope) {
         replace: true,
         templateUrl: require('../../../templates/squire/plainTextArea.tpl.html'),
         link(scope, el) {
+            const { DraftMIMEType, Hotkeys } = mailSettingsModel.get();
             /*
                 Set the selection to the start instead of the end just like with squire.
                 only set it on first load as we should remember the location after first use.
@@ -26,7 +27,7 @@ function plainTextArea(authentication, $rootScope) {
              * Reply-ReplyAll-forward for default mode plaintext we focus
              * For a new message there is composerLoader to focus the correct item
              */
-            if (authentication.user.DraftMIMEType === 'text/plain' && _.has(scope.message, 'Action')) {
+            if (DraftMIMEType === 'text/plain' && _.has(scope.message, 'Action')) {
                 _rAF(() => el.focus());
             }
 
@@ -34,7 +35,7 @@ function plainTextArea(authentication, $rootScope) {
              * Not HTML, it means we display it via an action on the composer,
              * we can focus the editor. It's fine
              */
-            if (authentication.user.DraftMIMEType !== 'text/plain') {
+            if (DraftMIMEType !== 'text/plain') {
                 _rAF(() => el.focus());
             }
 
@@ -46,7 +47,7 @@ function plainTextArea(authentication, $rootScope) {
                     Mousetrap.trigger('meta+s');
                 }
 
-                if (isKey(e, KEY.ENTER) && authentication.user.Hotkeys === 1) {
+                if (isKey(e, KEY.ENTER) && Hotkeys === 1) {
                     $rootScope.$emit('composer.update', {
                         type: 'send.message',
                         data: { message: scope.message }

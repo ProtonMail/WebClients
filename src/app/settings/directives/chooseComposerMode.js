@@ -1,5 +1,5 @@
 /* @ngInject */
-function chooseComposerMode(authentication, networkActivityTracker, settingsApi, notification, gettextCatalog, AppModel) {
+function chooseComposerMode(authentication, networkActivityTracker, settingsMailApi, notification, gettextCatalog, AppModel, mailSettingsModel) {
     const I18N = {
         success(value) {
             return gettextCatalog.getString('Change composer mode to {{value}}', { value }, 'Info');
@@ -7,13 +7,12 @@ function chooseComposerMode(authentication, networkActivityTracker, settingsApi,
     };
 
     const update = (MIMEType) => {
-        const promise = settingsApi.updateDraftType({ MIMEType }).then(({ data = {} }) => {
-            if (data.Code !== 1000) {
-                throw new Error(data.Error);
-            }
+        const promise = settingsMailApi.updateDraftType({ MIMEType }).then(() => {
             AppModel.set('editorMode', MIMEType);
         });
+
         networkActivityTracker.track(promise);
+
         return promise;
     };
 
@@ -22,8 +21,10 @@ function chooseComposerMode(authentication, networkActivityTracker, settingsApi,
         scope: {},
         templateUrl: require('../../../templates/settings/chooseComposerMode.tpl.html'),
         link(scope, el) {
-            AppModel.set('editorMode', authentication.user.DraftMIMEType);
-            scope.model = authentication.user.DraftMIMEType;
+            const { DraftMIMEType } = mailSettingsModel.get();
+
+            AppModel.set('editorMode', DraftMIMEType);
+            scope.model = DraftMIMEType;
 
             const onChange = ({ target }) => {
                 update(target.value)

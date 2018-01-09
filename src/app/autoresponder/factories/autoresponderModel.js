@@ -1,14 +1,14 @@
 /* @ngInject */
 function autoresponderModel(
     $rootScope,
+    autoresponderLanguage,
+    eventManager,
     gettextCatalog,
-    authentication,
-    tools,
-    settingsApi,
+    mailSettingsModel,
     networkActivityTracker,
     notification,
-    eventManager,
-    autoresponderLanguage,
+    settingsApi,
+    settingsMailApi,
     signatureBuilder
 ) {
     const now = new Date();
@@ -33,7 +33,7 @@ function autoresponderModel(
         DAY: 24 * 60 * 60
     };
 
-    // this object indicates the differences between the user.AutoResponder and the unsaved changes
+    // this object indicates the differences between the mailSettingsModel.AutoResponder and the unsaved changes
     let changedAutoresponder = {};
 
     const getChangedAutoresponder = () => changedAutoresponder;
@@ -41,7 +41,8 @@ function autoresponderModel(
     const clearChangedAutoresponder = () => (changedAutoresponder = {});
 
     function getBaseResponder() {
-        const base = _.extend({}, authentication.user.AutoResponder);
+        const base = _.extend({}, mailSettingsModel.get('AutoResponder'));
+
         if (base === null || !base.isEnabled) {
             return getDefaultAutoResponder();
         }
@@ -208,20 +209,15 @@ function autoresponderModel(
 
     function save() {
         const autoresponder = getAutoresponderInAPIFormat();
-        const original = authentication.user.AutoResponder || getDefaultAutoResponder();
+        const { AutoResponder } = mailSettingsModel.get();
+        const original = AutoResponder || getDefaultAutoResponder();
         const responseMessage = getResponseMessage(original.isEnabled, autoresponder.isEnabled);
-        const promise = settingsApi
-            .setAutoresponder({ Parameters: autoresponder })
-            .then(({ data = {} }) => {
-                if (data.Error) {
-                    dispatch('saved_error', data);
-                    throw new Error(data.Error);
-                }
-
-                if (data.Code === 1000) {
-                    dispatch('saved_success', data);
-                    return eventManager.call().then(() => notification.success(responseMessage));
-                }
+        const promise = settingsMailApi
+            .updateAutoresponder({ Parameters: autoresponder })
+            .then((data) => eventManager.call().then(() => data))
+            .then((data) => {
+                dispatch('saved_success', data);
+                notification.success(responseMessage);
             })
             // catch is thrown when the scope authentication is canceled.
             .catch((error) => dispatch('saved_error', { Error: error }));

@@ -7,20 +7,21 @@ function AppearanceController(
     $window,
     gettextCatalog,
     $q,
-    authentication,
     CONSTANTS,
     networkActivityTracker,
     eventManager,
-    settingsApi,
+    settingsMailApi,
+    mailSettingsModel,
     notification
 ) {
     const unsubscribe = [];
+    const { Theme, ComposerMode, ViewLayout, MessageButtons, ViewMode } = mailSettingsModel.get();
     $scope.appearance = {
-        cssTheme: authentication.user.Theme,
-        ComposerMode: authentication.user.ComposerMode,
-        ViewLayout: authentication.user.ViewLayout,
-        MessageButtons: authentication.user.MessageButtons,
-        viewMode: !authentication.user.ViewMode // BE data is reversed
+        cssTheme: Theme,
+        ComposerMode: ComposerMode,
+        ViewLayout: ViewLayout,
+        MessageButtons: MessageButtons,
+        viewMode: !ViewMode // BE data is reversed
     };
 
     unsubscribe.push($rootScope.$on('changeViewMode', changeViewMode));
@@ -34,18 +35,15 @@ function AppearanceController(
     };
 
     $scope.saveTheme = () => {
-        const promise = settingsApi
-            .theme({ Theme: $scope.appearance.cssTheme })
+        const promise = settingsMailApi
+            .updateTheme({ Theme: $scope.appearance.cssTheme })
             .then(eventManager.call)
             .then(() => {
                 notification.success(gettextCatalog.getString('Theme saved', null, 'Info'));
-            })
-            .catch((e) => {
-                console.error(e);
-                throw new Error(gettextCatalog.getString('Unable to save your changes, please try again.', null, 'Error'));
             });
 
         networkActivityTracker.track(promise);
+
         return promise;
     };
 
@@ -59,45 +57,36 @@ function AppearanceController(
     $scope.saveComposerMode = function() {
         const value = parseInt($scope.appearance.ComposerMode, 10);
 
-        networkActivityTracker.track(
-            settingsApi.setComposerMode({ ComposerMode: value }).then((result) => {
-                if (result.data && result.data.Code === 1000) {
-                    notification.success(gettextCatalog.getString('Compose mode saved', null, 'Info'));
-                    return eventManager.call();
-                } else if (result.data && result.data.Error) {
-                    notification.error(result.data.Error);
-                }
-            })
-        );
+        const promise = settingsMailApi
+            .updateComposerMode({ ComposerMode: value })
+            .then(eventManager.call)
+            .then(() => {
+                notification.success(gettextCatalog.getString('Compose mode saved', null, 'Info'));
+            });
+
+        networkActivityTracker.track(promise);
     };
 
     $scope.saveLayoutMode = function() {
         const value = $scope.appearance.ViewLayout;
+        const promise = settingsMailApi
+            .updateViewLayout({ ViewLayout: value })
+            .then(eventManager.call)
+            .then(() => {
+                notification.success(gettextCatalog.getString('Layout saved', null));
+            });
 
-        networkActivityTracker.track(
-            settingsApi.setViewlayout({ ViewLayout: value }).then((result) => {
-                if (result.data && result.data.Code === 1000) {
-                    notification.success(gettextCatalog.getString('Layout saved', null));
-                    return eventManager.call();
-                } else if (result.data && result.data.Error) {
-                    notification.error(result.data.Error);
-                }
-            })
-        );
+        networkActivityTracker.track(promise);
     };
 
     $scope.saveButtonsPosition = () => {
         const MessageButtons = $scope.appearance.MessageButtons;
-        const promise = settingsApi.setMessageStyle({ MessageButtons }).then((result) => {
-            if (result.data && result.data.Code === 1000) {
-                return eventManager.call().then(() => {
-                    notification.success(gettextCatalog.getString('Buttons position saved', null, 'Info'));
-                    return Promise.resolve();
-                });
-            } else if (result.data && result.data.Error) {
-                return Promise.reject(result.data.Error);
-            }
-        });
+        const promise = settingsMailApi
+            .updateMessageButtons({ MessageButtons })
+            .then(eventManager.call)
+            .then(() => {
+                notification.success(gettextCatalog.getString('Buttons position saved', null, 'Info'));
+            });
 
         networkActivityTracker.track(promise);
 
@@ -109,14 +98,8 @@ function AppearanceController(
 
         $rootScope.$emit('appearance', { type: 'changingViewMode' });
 
-        const promise = settingsApi
-            .setViewMode({ ViewMode })
-            .then(({ data = {} } = {}) => {
-                if (data.Error) {
-                    throw new Error(data.Error);
-                }
-                return data;
-            })
+        const promise = settingsMailApi
+            .updateViewMode({ ViewMode })
             .then(() => eventManager.call())
             .then(() => {
                 notification.success(gettextCatalog.getString('View mode saved', null, 'Info'));
