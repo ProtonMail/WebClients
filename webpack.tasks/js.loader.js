@@ -37,6 +37,22 @@ const pipe = [
                 }
             }
         ]
+    },
+    {
+        test: /\.js$/,
+        loader: 'string-replace-loader',
+        query: {
+            multiple: [
+                {
+                    search: '#hostURL#',
+                    replace: env.getHostURL()
+                },
+                {
+                    search: '#hostURL2#',
+                    replace: env.getHostURL(true)
+                }
+            ]
+        }
     }
 ];
 
@@ -45,17 +61,6 @@ if (process.env.NODE_ENV !== 'test') {
         test: /\.js$/,
         use: ['source-map-loader'],
         enforce: 'pre'
-    });
-}
-
-if (env.isDistRelease()) {
-    pipe.push({
-        test: /\.js$/,
-        loader: 'string-replace-loader',
-        query: {
-            search: 'NODE_ENV',
-            replace: env.getEnv()
-        }
     });
 }
 

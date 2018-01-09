@@ -122,6 +122,29 @@ const getEnv = () => {
     return argv.api || 'local';
 };
 
+const getHostURL = (encoded) => {
+    // on local env is undefined
+    const host = (process.env.NODE_ENV_API || apiUrl()).replace(/\api$/, '');
+    const url = `${host}assets/host.png`;
+
+    if (encoded) {
+        const encoder = (input) => `%${input.charCodeAt(0).toString(16)}`;
+        return url
+            .split('/')
+            .map((chunk) => {
+                if (['/', 'https:'].includes(chunk)) {
+                    return chunk;
+                }
+                return chunk
+                    .split('')
+                    .map(encoder)
+                    .join('');
+            })
+            .join('/');
+    }
+    return url;
+};
+
 module.exports = {
     AUTOPREFIXER_CONFIG,
     getConfig,
@@ -129,5 +152,6 @@ module.exports = {
     isDistRelease,
     getI18nMatchFile: i18nLoader.getI18nMatchFile,
     argv,
-    getEnv
+    getEnv,
+    getHostURL
 };
