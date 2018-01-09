@@ -1,0 +1,61 @@
+<div id="" class="">
+    Events
+    <section class="">
+        <div class="pm_table" ng-repeat="event in model.events track by $id($$hashKey)">
+            <table>
+                <tr>
+                    <th translate>When</th>
+                    <td>{{ event.startDate }} - {{ event.endDate }}</td>
+                </tr>
+                <tr>
+                    <th translate>Summary</th>
+                    <td>{{ event.summary }}</td>
+                </tr>
+                <tr>
+                    <th translate>Who</th>
+                    <td>
+                        <ul>
+                            <li ng-repeat="attendee in event.attendees">{{ attendee.jCal[1].cn }}</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <th translate>Description</th>
+                    <td>{{ event.description }}</td>
+                </tr>
+            </table>
+            <!-- <table>
+                <caption>{{ event.summary }}</caption>
+                <tr>
+                    <th translate>When</th>
+                    <th translate>Description</th>
+                    <th translate>Who</th>
+                </tr>
+                <tr>
+                    <td>{{ event.summary }}</td>
+                    <td>{{ event.description }}</td>
+                    <td>
+                        <ul>
+                            <li ng-repeat="attendee in event.attendees">{{ attendee.jCal[1].cn }}</li>
+                        </ul>
+                    </td>
+                </tr>
+            </table> -->
+            <!-- <table>
+                <caption>{{ event.summary }}</caption>
+                <thead>
+                    <tr>
+                        <th translate>Summary</th>
+                        <th translate>Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>{{ event.summary }}</td>
+                        <td>{{ event.description }}</td>
+                    </tr>
+                </tbody>
+            </table> -->
+        </div>
+    </section>
+</div>

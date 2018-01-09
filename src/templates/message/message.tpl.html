@@ -207,6 +207,8 @@
 
         <message-extra></message-extra>
 
+        <events-attachments ng-if="message.Attachments.length" data-model="message"></events-attachments>
+
         <div class="frame message-frame" data-embedded-img-loader data-inject-message-media>
             <loader-tag ng-if="message.decrypting === true"></loader-tag>
             <div class="alert alert-danger" ng-if="message.failedDecryption && !message.networkError">

@@ -27,7 +27,7 @@ function composerDropzone($rootScope, attachmentFileFormat, tools, attachmentMod
     const dictDefaultMessage = gettextCatalog.getString('Drop a file here to upload', null, 'Info');
 
     /**
-     * Compute some informations to get the current context for a dropzone
+     * Compute some information to get the current context for a dropzone
      * @param  {Message} message
      * @param  {File} file
      * @return {Object}F
@@ -45,7 +45,7 @@ function composerDropzone($rootScope, attachmentFileFormat, tools, attachmentMod
      * BuildQueueReducer, take message as argument and get the dropzone as
      * context.
      * @param  {Message} message
-     * @return {Function}         Reducer(<queu>, <file>)
+     * @return {Function}         Reducer(<queue>, <file>)
      */
     function buildQueue(message, dropzone) {
         return (queue, file) => {

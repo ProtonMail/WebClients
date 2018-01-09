@@ -18,7 +18,7 @@ function embeddedFinder(embeddedStore, embeddedUtils) {
     };
 
     /**
-     * Find all attachements inline
+     * Find all attachments inline
      * @param  {Message}
      * @return {Array}
      */
@@ -27,11 +27,11 @@ function embeddedFinder(embeddedStore, embeddedUtils) {
         const MAP_CID = embeddedStore.cid.get(message);
 
         return Object.keys(MAP_CID).reduce((acc, cid) => {
-            // Extract current attachement content-id
+            // Extract current attachment content-id
             const contentId = MAP_CID[cid].Headers['content-id'];
             const contentName = embeddedUtils.getAttachementName(MAP_CID[cid].Headers);
 
-            // Find the matching attachement
+            // Find the matching attachment
             const attachment = list.filter(({ Headers = {}, Name = '' } = {}) => {
                 if (Headers['content-location']) {
                     return Name === contentName;

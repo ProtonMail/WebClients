@@ -13,15 +13,15 @@ export function formatSubject(subject = '', prefix = '') {
 }
 
 /**
- * Omit user's adresses from a list
+ * Omit user's addresses from a list
  * @param  {Array}  list
- * @param  {Array}  address UserAdresses
+ * @param  {Array}  address UserAddresses
  * @return {Array}
  */
 export const omitUserAddresses = (list = [], address = []) => _.filter(list, ({ Address }) => address.indexOf(Address.toLowerCase()) === -1);
 
 /**
- * Inject the inline images as attachement for embedded xray()
+ * Inject the inline images as attachment for embedded xray()
  * @param {Array} originalAttachements From the current message
  * return {String}
  */
@@ -224,7 +224,7 @@ function messageBuilder(
     }
 
     /**
-     * Bind defaults parameters for a messafe
+     * Bind defaults parameters for a message
      * @param {Message} message
      */
     function setDefaultsParams(message) {
