@@ -1,5 +1,5 @@
 /* @ngInject */
-function backState($rootScope, $state, CONSTANTS, tools, authentication) {
+function backState($rootScope, $state, CONSTANTS, tools, mailSettingsModel) {
     const { MAILBOX_IDENTIFIERS } = CONSTANTS;
 
     /**
@@ -11,15 +11,18 @@ function backState($rootScope, $state, CONSTANTS, tools, authentication) {
 
     $rootScope.$on('$stateChangeSuccess', (e, toState, toParams, fromState = {}, fromParams = {}) => {
         if (fromState.name && MAILBOX_IDENTIFIERS[tools.filteredState(fromState.name)]) {
+            const { ViewMode } = mailSettingsModel.get();
+
             CACHE.state = cleanState(fromState.name);
             CACHE.params = fromParams;
-            CACHE.mode = authentication.user.ViewMode;
+            CACHE.mode = ViewMode;
         }
     });
 
     function back() {
+        const { ViewMode } = mailSettingsModel.get();
         // We can change the mode, prevent issue if an element was opened
-        if (CACHE.state && CACHE.mode === authentication.user.ViewMode) {
+        if (CACHE.state && CACHE.mode === ViewMode) {
             return $state.go(CACHE.state, CACHE.params);
         }
 

@@ -1,21 +1,23 @@
 /* @ngInject */
 function chooseLayoutBtns(
     $rootScope,
-    authentication,
     CONSTANTS,
     networkActivityTracker,
     tools,
-    settingsApi,
+    settingsMailApi,
     eventManager,
     notification,
-    gettextCatalog
+    gettextCatalog,
+    mailSettingsModel
 ) {
     const getLayout = (mode) => {
-        if (mode === 'rows' && authentication.user.ViewLayout === CONSTANTS.COLUMN_MODE) {
+        const { ViewLayout } = mailSettingsModel.get();
+
+        if (mode === 'rows' && ViewLayout === CONSTANTS.COLUMN_MODE) {
             return 1;
         }
 
-        if (mode === 'columns' && authentication.user.ViewLayout === CONSTANTS.ROW_MODE) {
+        if (mode === 'columns' && ViewLayout === CONSTANTS.ROW_MODE) {
             return 0;
         }
     };
@@ -24,15 +26,9 @@ function chooseLayoutBtns(
         const newLayout = getLayout(mode);
 
         if (angular.isDefined(newLayout)) {
-            const promise = settingsApi
-                .setViewlayout({ ViewLayout: newLayout })
-                .then(({ data = {} } = {}) => {
-                    if (data.Error) {
-                        throw new Error(data.Error);
-                    }
-
-                    return eventManager.call();
-                })
+            const promise = settingsMailApi
+                .updateViewLayout({ ViewLayout: newLayout })
+                .then(eventManager.call)
                 .then(() => {
                     $rootScope.$emit('settings', { type: 'viewLayout.updated', data: { viewLayout: newLayout } });
                     tools.mobileResponsive();

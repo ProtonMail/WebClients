@@ -1,5 +1,5 @@
 /* @ngInject */
-function navElements($rootScope, $state, authentication, tools, CONSTANTS) {
+function navElements($rootScope, $state, mailSettingsModel, tools, CONSTANTS) {
     const CLASS_DISPLAY = 'navElements-displayed';
     const CLASS_ERROR = 'navElements-no-';
     const SPECIAL_BOXES = ['drafts', 'search', 'sent', 'allDrafts', 'allSent'];
@@ -8,7 +8,7 @@ function navElements($rootScope, $state, authentication, tools, CONSTANTS) {
 
     const showNextPrev = () => {
         const box = tools.currentMailbox();
-        const rowMode = authentication.user.ViewLayout === CONSTANTS.ROW_MODE;
+        const rowMode = mailSettingsModel.get('ViewLayout') === CONSTANTS.ROW_MODE;
         const context = tools.cacheContext();
         const notSpecial = SPECIAL_BOXES.indexOf(box) === -1;
         return $state.params.id && rowMode && context && notSpecial;

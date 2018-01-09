@@ -1,7 +1,8 @@
 /* @ngInject */
-function sidebarModel(authentication, CONSTANTS, tools, cacheCounters, gettextCatalog) {
-    const draftsIncluded = () => authentication.user.Moved & 1;
-    const sentIncluded = () => authentication.user.Moved & 2;
+function sidebarModel(CONSTANTS, tools, cacheCounters, gettextCatalog, mailSettingsModel) {
+    const { ShowMoved } = mailSettingsModel.get();
+    const draftsIncluded = () => ShowMoved & 1;
+    const sentIncluded = () => ShowMoved & 2;
 
     const getStateConfig = () => {
         const defaultDrafts = draftsIncluded() ? 'secured.allDrafts' : 'secured.drafts';

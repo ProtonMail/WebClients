@@ -4,24 +4,27 @@ function SecurityController(
     $rootScope,
     $scope,
     authApi,
-    twoFAIntroModal,
-    gettextCatalog,
     authentication,
     confirmModal,
     CONSTANTS,
-    sharedSecretModal,
     downloadFile,
+    gettextCatalog,
     loginPasswordModal,
-    recoveryCodeModal,
     Logs,
     networkActivityTracker,
     notification,
-    settingsApi
+    recoveryCodeModal,
+    settingsApi,
+    userSettingsModel,
+    sharedSecretModal,
+    twoFAIntroModal
 ) {
+    const { LogAuth, TwoFactor } = userSettingsModel.get();
+
     $scope.logs = [];
     $scope.logItemsPerPage = 20;
-    $scope.doLogging = authentication.user.LogAuth;
-    $scope.twoFactor = authentication.user.TwoFactor;
+    $scope.doLogging = LogAuth;
+    $scope.twoFactor = TwoFactor;
     $scope.keyPhase = CONSTANTS.KEY_PHASE;
 
     // / logging page
@@ -57,7 +60,7 @@ function SecurityController(
                 })
                 .then((codes) => {
                     $scope.twoFactor = 1;
-                    authentication.user.TwoFactor = 1;
+                    userSettingsModel.set('TwoFactor', 1);
                     recoveryCodes(codes);
                 });
             networkActivityTracker.track(promise);
@@ -77,7 +80,7 @@ function SecurityController(
                 })
                 .then(() => {
                     $scope.twoFactor = 0;
-                    authentication.user.TwoFactor = 0;
+                    userSettingsModel.set('TwoFactor', 0);
                     notification.success(gettextCatalog.getString('Two-factor authentication disabled', null, 'Disable 2FA'));
                 });
             networkActivityTracker.track(promise);
@@ -238,7 +241,6 @@ function SecurityController(
                     confirm() {
                         const promise = settingsApi.setLogging({ LogAuth: 0 }).then(() => {
                             $scope.doLogging = 0;
-                            authentication.user.LogAuth = 0;
                             notification.success(gettextCatalog.getString('Logging preference updated', null, 'Dashboard/security'));
                             confirmModal.deactivate();
                             $scope.disabledText = gettextCatalog.getString('Disabled', null, 'Action');

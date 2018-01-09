@@ -1,12 +1,12 @@
 /* @ngInject */
-function keyPasswordModal(pmModal, pmcw, notification, gettextCatalog, passwords, authentication) {
+function keyPasswordModal(pmModal, pmcw, notification, gettextCatalog, passwords, userSettingsModel) {
     return pmModal({
         controllerAs: 'ctrl',
         templateUrl: require('../../../templates/modals/keyPassword.tpl.html'),
         /* @ngInject */
         controller: function(params) {
             const self = this;
-            self.passwordMode = authentication.user.PasswordMode;
+            self.passwordMode = userSettingsModel.get('PasswordMode');
             self.password = '';
             const privateKey = params.privateKey;
 

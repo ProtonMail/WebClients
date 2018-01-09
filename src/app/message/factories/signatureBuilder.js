@@ -1,12 +1,12 @@
 /* @ngInject */
-function signatureBuilder(authentication, CONSTANTS, tools, sanitize, AppModel, $rootScope) {
+function signatureBuilder(authentication, CONSTANTS, tools, sanitize, AppModel, $rootScope, mailSettingsModel) {
     const CLASSNAME_SIGNATURE_CONTAINER = 'protonmail_signature_block';
     const CLASSNAME_SIGNATURE_USER = 'protonmail_signature_block-user';
     const CLASSNAME_SIGNATURE_PROTON = 'protonmail_signature_block-proton';
     const CLASSNAME_SIGNATURE_EMPTY = 'protonmail_signature_block-empty';
 
     const PROTON_SIGNATURE = getProtonSignature();
-    AppModel.store('protonSignature', !!authentication.user.PMSignature);
+    AppModel.store('protonSignature', !!mailSettingsModel.get('PMSignature'));
 
     // Update config when we toggle the proton signature on the dashboard
     $rootScope.$on('AppModel', (e, { type }) => {
@@ -18,7 +18,7 @@ function signatureBuilder(authentication, CONSTANTS, tools, sanitize, AppModel, 
      * @return {Object}
      */
     function getProtonSignature() {
-        if (!authentication.user.PMSignature) {
+        if (!mailSettingsModel.get('PMSignature')) {
             return { HTML: '', PLAIN: '' };
         }
 
@@ -146,7 +146,7 @@ function signatureBuilder(authentication, CONSTANTS, tools, sanitize, AppModel, 
     function insert(message = { getDecryptedBody: angular.noop }, { action = 'new', isAfter = false }) {
         const { From = {} } = message;
         const position = isAfter ? 'beforeEnd' : 'afterBegin';
-        const userSignature = !From.Signature ? authentication.user.Signature : From.Signature;
+        const userSignature = !From.Signature ? mailSettingsModel.get('Signature') : From.Signature;
         const template = templateBuilder(userSignature, action !== 'new');
         // Parse the current message and append before it the signature
         const [$parser] = $.parseHTML(`<div>${message.getDecryptedBody()}</div>`);
@@ -162,7 +162,7 @@ function signatureBuilder(authentication, CONSTANTS, tools, sanitize, AppModel, 
      */
     function update(message = { getDecryptedBody: _.noop, isPlainText: _.noop }, body = '') {
         const { From = {} } = message;
-        const content = (!From.Signature ? authentication.user.Signature : From.Signature) || '';
+        const content = (!From.Signature ? mailSettingsModel.get('Signature') : From.Signature) || '';
         const [userSignature] = $.parseHTML(`<div>${sanitize.message(content)}</div>`) || [];
 
         if (message.isPlainText()) {
@@ -176,7 +176,7 @@ function signatureBuilder(authentication, CONSTANTS, tools, sanitize, AppModel, 
         if (dom && userSignature) {
             const item = dom.querySelector('.' + CLASSNAME_SIGNATURE_USER);
             const isEmptyUser = isEmptyUserSignature(userSignature.innerHTML);
-            const isProtonEmpty = !authentication.user.PMSignature;
+            const isProtonEmpty = !mailSettingsModel.get('PMSignature');
 
             // If a user deletes all the content we need to append the signature
             if (!item) {

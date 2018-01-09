@@ -21,11 +21,11 @@ function ElementsController(
     eventManager,
     firstLoadState,
     gettextCatalog,
+    mailSettingsModel,
     Label,
     networkActivityTracker,
     paginationModel,
     messageActions,
-    settingsApi,
     AppModel,
     markedScroll,
     removeElement,
@@ -34,6 +34,7 @@ function ElementsController(
     const unsubscribes = [];
     let unbindWatcherElements;
     const MINUTE = 60 * 1000;
+    const { NumMessagePerPage, MessageButtons } = mailSettingsModel.get();
     const id = setInterval(() => {
         $rootScope.$emit('elements', { type: 'refresh.time' });
     }, MINUTE);
@@ -48,9 +49,9 @@ function ElementsController(
         // Variables
         $scope.markedElement = undefined;
         $scope.mailbox = tools.currentMailbox();
-        $scope.conversationsPerPage = authentication.user.NumMessagePerPage;
+        $scope.conversationsPerPage = NumMessagePerPage;
         $scope.labels = labelsModel.get();
-        $scope.messageButtons = authentication.user.MessageButtons;
+        $scope.messageButtons = MessageButtons;
         $scope.selectedFilter = $stateParams.filter;
         $scope.selectedOrder = $stateParams.sort || '-date';
         $scope.page = ~~$stateParams.page || 1;
@@ -119,8 +120,9 @@ function ElementsController(
      */
     const displayType = (type) => {
         let test = false;
-        const isColumnsMode = authentication.user.ViewLayout === CONSTANTS.COLUMN_MODE;
-        const isRowsMode = authentication.user.ViewLayout === CONSTANTS.ROW_MODE;
+        const { ViewLayout } = mailSettingsModel.get();
+        const isColumnsMode = ViewLayout === CONSTANTS.COLUMN_MODE;
+        const isRowsMode = ViewLayout === CONSTANTS.ROW_MODE;
 
         switch (type) {
             case 'rows': {
@@ -255,7 +257,7 @@ function ElementsController(
         });
 
         $scope.$on('move', (e, mailbox) => {
-            const isColumnsMode = authentication.user.ViewLayout === CONSTANTS.COLUMN_MODE;
+            const isColumnsMode = mailSettingsModel.get('ViewLayout') === CONSTANTS.COLUMN_MODE;
             const idDefined = $scope.idDefined();
             const isScope = isColumnsMode && (!idDefined || (idDefined && $rootScope.numberElementChecked > 0));
             /**
@@ -336,11 +338,11 @@ function ElementsController(
                 return markNext();
             }
 
-            const isRowMode = authentication.user.ViewLayout === CONSTANTS.ROW_MODE;
-
+            const { ViewLayout, ViewMode } = mailSettingsModel.get();
+            const isRowMode = ViewLayout === CONSTANTS.ROW_MODE;
             const current = $state.$current.name;
             const elementTime = $scope.markedElement.Time;
-            const conversationMode = authentication.user.ViewMode === CONSTANTS.CONVERSATION_VIEW_MODE;
+            const conversationMode = ViewMode === CONSTANTS.CONVERSATION_VIEW_MODE;
 
             cache
                 .more(elementID, elementTime, 'next')
@@ -366,11 +368,11 @@ function ElementsController(
                 return markPrevious();
             }
 
-            const isRowMode = authentication.user.ViewLayout === CONSTANTS.ROW_MODE;
-
+            const { ViewLayout, ViewMode } = mailSettingsModel.get();
+            const isRowMode = ViewLayout === CONSTANTS.ROW_MODE;
             const current = $state.$current.name;
             const elementTime = $scope.markedElement.Time;
-            const conversationMode = authentication.user.ViewMode === CONSTANTS.CONVERSATION_VIEW_MODE;
+            const conversationMode = ViewMode === CONSTANTS.CONVERSATION_VIEW_MODE;
 
             cache
                 .more(elementID, elementTime, 'previous')
@@ -410,7 +412,9 @@ function ElementsController(
             return $stateParams.wildcard;
         }
 
-        return authentication.user.AutoWildcardSearch;
+        const { AutoWildcardSearch } = mailSettingsModel.get();
+
+        return AutoWildcardSearch;
     }
 
     function forgeRequestParameters(mailbox) {
@@ -623,7 +627,7 @@ function ElementsController(
         const { conversations = [] } = $scope; // conversations can contains message list or conversation list
         const elements = _.where(conversations, { Selected: true });
 
-        if ($state.params.id && authentication.user.ViewLayout === CONSTANTS.ROW_MODE) {
+        if ($state.params.id && mailSettingsModel.get('ViewLayout') === CONSTANTS.ROW_MODE) {
             return _.filter(conversations, ({ ID, ConversationID }) => ID === $state.params.id || ConversationID === $state.params.id);
         }
 
@@ -769,7 +773,7 @@ function ElementsController(
         $('.pm_dropdown').removeClass('active');
     };
 
-    $scope.displayPaginator = () => !$state.params.id || authentication.user.ViewLayout === 0;
+    $scope.displayPaginator = () => !$state.params.id || mailSettingsModel.get('ViewLayout') === CONSTANTS.COLUMN_MODE;
 
     /**
      * Emulate labels array for the drag and drop

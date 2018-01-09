@@ -146,13 +146,13 @@ export default angular
             .state('secured.resetTheme', {
                 url: '/reset-theme',
                 resolve: {
-                    reset(user, networkActivityTracker, settingsApi, notification, eventManager, gettextCatalog, $state) {
+                    reset(user, networkActivityTracker, settingsMailApi, notification, eventManager, gettextCatalog, $state) {
                         const I18N = {
                             SUCCESS: gettextCatalog.getString('Theme reset! Redirecting...', null, 'Info'),
                             ERROR: gettextCatalog.getString('Unable to reset theme', null, 'Error')
                         };
-                        const promise = settingsApi
-                            .theme({ Theme: '' })
+                        const promise = settingsMailApi
+                            .updateTheme({ Theme: '' })
                             .then(() => notification.success(I18N.SUCCESS))
                             .catch(() => {
                                 throw new Error(I18N.ERROR);
@@ -447,7 +447,7 @@ export default angular
 
                         return authentication.fetchUserInfo().then((data) => {
                             return i18nLoader
-                                .translate(data.Language)
+                                .translate(data.Locale)
                                 .then(i18nLoader.localizeDate)
                                 .then(() => data);
                         });

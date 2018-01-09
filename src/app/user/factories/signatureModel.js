@@ -1,5 +1,5 @@
 /* @ngInject */
-function signatureModel(AppModel, sanitize, settingsApi, eventManager, notification, gettextCatalog, networkActivityTracker) {
+function signatureModel(AppModel, sanitize, settingsMailApi, eventManager, notification, gettextCatalog, networkActivityTracker) {
     const I18N = {
         SUCCESS_UPDATE: gettextCatalog.getString('Signature updated', null, 'Info'),
         SUCCESS_SAVE: gettextCatalog.getString('Default Name / Signature saved', null, "User's signature"),
@@ -9,7 +9,7 @@ function signatureModel(AppModel, sanitize, settingsApi, eventManager, notificat
 
     const changePMSignature = async (status) => {
         const PMSignature = +!!status;
-        const { data = {} } = await settingsApi.updatePMSignature({ PMSignature });
+        const { data = {} } = await settingsMailApi.updatePMSignature({ PMSignature });
 
         if (data.Error) {
             throw new Error(data.Error);
@@ -24,9 +24,9 @@ function signatureModel(AppModel, sanitize, settingsApi, eventManager, notificat
         const Signature = signature.replace(/\n/g, '<br />');
         const DisplayName = sanitize.input(displayName);
 
-        const [{ data: displayNameData = {} }, { data: signatureData = {} }] = await Promise.all([
-            settingsApi.display({ DisplayName }),
-            settingsApi.signature({ Signature })
+        const [displayNameData = {}, signatureData = {}] = await Promise.all([
+            settingsMailApi.updateDisplayName({ DisplayName }),
+            settingsMailApi.updateSignature({ Signature })
         ]);
 
         // USER_UPDATE_SIGNATURE_TOO_LARGE

@@ -135,16 +135,17 @@ export function createMessage({ Addresses = [] } = {}, { RE_PREFIX, FW_PREFIX } 
 
 /* @ngInject */
 function messageBuilder(
-    gettextCatalog,
-    prepareContent,
-    composerFromModel,
-    tools,
-    authentication,
-    messageModel,
     $filter,
-    signatureBuilder,
+    authentication,
+    composerFromModel,
+    gettextCatalog,
+    mailSettingsModel,
+    messageModel,
+    prepareContent,
     sanitize,
-    textToHtmlMail
+    signatureBuilder,
+    textToHtmlMail,
+    tools
 ) {
     const { reply, replyAll, forward, newCopy } = createMessage(authentication.user, {
         RE_PREFIX: gettextCatalog.getString('Re:', null, 'Message'),
@@ -180,7 +181,7 @@ function messageBuilder(
     }
 
     function builder(action, currentMsg = {}, newMsg = {}) {
-        newMsg.MIMEType = authentication.user.DraftMIMEType;
+        newMsg.MIMEType = mailSettingsModel.get('DraftMIMEType');
 
         action === 'new' && newCopy(newMsg, currentMsg);
         action === 'reply' && reply(newMsg, currentMsg);

@@ -1,5 +1,5 @@
 /* @ngInject */
-function transformRemote($state, $rootScope, authentication, CONSTANTS) {
+function transformRemote($state, $rootScope, mailSettingsModel, CONSTANTS) {
     const ATTRIBUTES = ['url', 'xlink:href', 'srcset', 'src', 'svg', 'background', 'poster'].map((name) => `proton-${name}`);
 
     const REGEXP_FIXER = (() => {
@@ -61,10 +61,9 @@ function transformRemote($state, $rootScope, authentication, CONSTANTS) {
     }
 
     return (html, message, { action }) => {
-        const user = authentication.user || { ShowImages: 0 };
         const showImages =
             message.showImages ||
-            user.ShowImages ||
+            mailSettingsModel.get('ShowImages') ||
             (CONSTANTS.WHITELIST.includes(message.Sender.Address) && !message.IsEncrypted) ||
             $state.is('printer');
         const content = html.innerHTML;

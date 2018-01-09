@@ -4,7 +4,6 @@ function tools(
     $state,
     $stateParams,
     $filter,
-    authentication,
     $compile,
     $templateCache,
     $rootScope,
@@ -13,6 +12,7 @@ function tools(
     aboutClient,
     regexEmail,
     gettextCatalog,
+    mailSettingsModel,
     AppModel
 ) {
     const tools = {};
@@ -303,7 +303,8 @@ function tools(
     tools.getTypeList = (name) => {
         const specialBoxes = ['drafts', 'search', 'sent', 'allDrafts', 'allSent'];
         const box = name || tools.currentMailbox();
-        const threadingIsOff = authentication.user.ViewMode === CONSTANTS.MESSAGE_VIEW_MODE;
+        const { ViewMode } = mailSettingsModel.get();
+        const threadingIsOff = ViewMode === CONSTANTS.MESSAGE_VIEW_MODE;
 
         if (threadingIsOff || _.contains(specialBoxes, box)) {
             return 'message';
@@ -313,7 +314,8 @@ function tools(
     };
 
     tools.typeView = () => {
-        return authentication.user.ViewMode === CONSTANTS.MESSAGE_VIEW_MODE ? 'message' : 'conversation';
+        const { ViewMode } = mailSettingsModel.get();
+        return ViewMode === CONSTANTS.MESSAGE_VIEW_MODE ? 'message' : 'conversation';
     };
 
     /**

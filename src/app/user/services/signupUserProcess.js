@@ -30,7 +30,7 @@ function signupUserProcess(
 
     async function setUserLanguage() {
         if ($location.search().language) {
-            return settingsApi.setLanguage({ Language: gettextCatalog.getCurrentLanguage() });
+            return settingsApi.updateLocale({ Locale: gettextCatalog.getCurrentLanguage() });
         }
     }
 

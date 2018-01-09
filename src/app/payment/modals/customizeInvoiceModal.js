@@ -1,5 +1,5 @@
 /* @ngInject */
-function customizeInvoiceModal(eventManager, pmModal, settingsApi, notification, authentication, networkActivityTracker) {
+function customizeInvoiceModal(eventManager, pmModal, settingsApi, notification, userSettingsModel, networkActivityTracker) {
     return pmModal({
         controllerAs: 'ctrl',
         templateUrl: require('../../../templates/modals/customizeInvoice.tpl.html'),
@@ -7,7 +7,7 @@ function customizeInvoiceModal(eventManager, pmModal, settingsApi, notification,
         controller: function(params) {
             const self = this;
 
-            self.text = authentication.user.InvoiceText || '';
+            self.text = userSettingsModel.get('InvoiceText') || '';
             self.cancel = () => params.cancel();
 
             self.submit = () => {

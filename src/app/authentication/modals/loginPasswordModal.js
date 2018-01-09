@@ -1,5 +1,5 @@
 /* @ngInject */
-function loginPasswordModal($timeout, pmModal, srp, networkActivityTracker, authentication) {
+function loginPasswordModal($timeout, pmModal, srp, networkActivityTracker, userSettingsModel) {
     return pmModal({
         controllerAs: 'ctrl',
         templateUrl: require('../../../templates/authentication/modals/loginPassword.tpl.html'),
@@ -7,7 +7,7 @@ function loginPasswordModal($timeout, pmModal, srp, networkActivityTracker, auth
         controller: function(params) {
             this.loginPassword = '';
             this.twoFactorCode = '';
-            this.userPasswordMode = authentication.user.PasswordMode;
+            this.userPasswordMode = userSettingsModel.get('PasswordMode');
             this.submit = () => params.submit(this.loginPassword, this.twoFactorCode);
             this.cancel = () => params.cancel();
 

@@ -19,7 +19,6 @@ function LoginController(
     pmcw,
     tempStorage,
     aboutClient,
-    settingsApi,
     srp
 ) {
     $scope.twoFactor = 0;

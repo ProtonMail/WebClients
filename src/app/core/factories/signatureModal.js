@@ -1,23 +1,25 @@
 /* @ngInject */
-function signatureModal(pmModal, authentication) {
+function signatureModal(pmModal, mailSettingsModel) {
     return pmModal({
         controllerAs: 'ctrl',
         templateUrl: require('../../../templates/modals/signature.tpl.html'),
         /* @ngInject */
         controller: function(params) {
-            this.defaultDisplayName = authentication.user.DisplayName;
-            this.defaultSignature = authentication.user.Signature;
+            const { DisplayName, Signature } = mailSettingsModel.get();
+            this.defaultDisplayName = DisplayName;
+            this.defaultSignature = Signature;
             this.address = params.address;
-            this.address.DisplayName = this.address.DisplayName || authentication.user.DisplayName;
-            this.address.Signature = this.address.Signature || authentication.user.Signature;
+            this.address.DisplayName = this.address.DisplayName || DisplayName;
+            this.address.Signature = this.address.Signature || Signature;
             this.address.custom = true;
 
             this.confirm = function() {
                 const adr = _.extend({}, this.address);
 
                 if (!adr.custom) {
-                    adr.DisplayName = authentication.user.DisplayName;
-                    adr.Signature = authentication.user.Signature;
+                    const { DisplayName, Signature } = mailSettingsModel.get();
+                    adr.DisplayName = DisplayName;
+                    adr.Signature = Signature;
                 }
                 params.confirm(adr);
             };

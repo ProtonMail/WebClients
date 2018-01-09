@@ -1,5 +1,5 @@
 /* @ngInject */
-function composer(AppModel, $rootScope, embedded, attachmentFileFormat, authentication) {
+function composer(AppModel, $rootScope, embedded, attachmentFileFormat, mailSettingsModel) {
     const CLASS_DRAGGABLE = 'composer-draggable';
     const CLASS_DRAGGABLE_EDITOR = 'composer-draggable-editor';
 
@@ -89,7 +89,7 @@ function composer(AppModel, $rootScope, embedded, attachmentFileFormat, authenti
                     if (document.activeElement && document.activeElement.classList.contains('autocompleteEmails-input')) {
                         return;
                     }
-                    if (authentication.user.Hotkeys === 1) {
+                    if (mailSettingsModel.get('Hotkeys') === 1) {
                         $rootScope.$emit('composer.update', {
                             type: 'close.message',
                             data: { message: scope.message }

@@ -1,5 +1,5 @@
 /* @ngInject */
-function responsiveComposer($rootScope, authentication) {
+function responsiveComposer($rootScope, mailSettingsModel) {
     const latestState = {};
 
     /**
@@ -29,7 +29,7 @@ function responsiveComposer($rootScope, authentication) {
             $rootScope.mini = height < 600;
 
             isSmall && scope.maximize(scope.message);
-            !isSmall && authentication.user.ComposerMode === 0 && scope.normalize(scope.message);
+            !isSmall && mailSettingsModel.get('ComposerMode') === 0 && scope.normalize(scope.message);
         });
     };
 

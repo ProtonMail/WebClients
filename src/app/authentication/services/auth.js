@@ -100,6 +100,8 @@ function authentication(
 
                     return $q
                         .all({
+                            settings: $injector.get('settingsApi').fetch(),
+                            mailSettings: $injector.get('settingsMailApi').fetch(),
                             contacts: $injector.get('contactEmails').load(),
                             fix: fixOrganization(),
                             organizationKey: decryptOrganization()
@@ -542,7 +544,7 @@ function authentication(
                             );
                         }
                     }
-                    AppModel.set('editorMode', user.DraftMIMEType || 'text/html');
+                    AppModel.set('editorMode', $injector.get('mailSettingsModel').get('DraftMIMEType') || 'text/html');
 
                     return user;
                 })

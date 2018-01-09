@@ -1,5 +1,5 @@
 /* @ngInject */
-function elementsSelector($rootScope, authentication, gettextCatalog, dedentTpl) {
+function elementsSelector($rootScope, mailSettingsModel, gettextCatalog, dedentTpl) {
     const isChecked = true;
     const ORDER_FALSY = ['all', 'read', 'unread', 'star', 'unstar'];
     const ORDER_TRUTHY = ['all', 'unread', 'read', 'unstar', 'star'];
@@ -34,7 +34,8 @@ function elementsSelector($rootScope, authentication, gettextCatalog, dedentTpl)
 
     const map = (list) => list.map((key) => ACTIONS[key]);
     const orderActions = () => {
-        const order = +authentication.user.MessageButtons;
+        const order = +mailSettingsModel.get('MessageButtons');
+
         if (!order) {
             return map(ORDER_FALSY);
         }

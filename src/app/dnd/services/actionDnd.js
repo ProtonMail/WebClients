@@ -9,7 +9,7 @@ function actionDnd(
     gettextCatalog,
     notification,
     ptDndNotification,
-    authentication
+    mailSettingsModel
 ) {
     const NOTIFS = {
         APPLY_LABEL: gettextCatalog.getString('Apply label', null, 'notification drag and drop'),
@@ -48,7 +48,7 @@ function actionDnd(
             return move(ids, type, labelID);
         }
 
-        if (authentication.user.AlsoArchive) {
+        if (mailSettingsModel.get('AlsoArchive')) {
             move(ids, type, CONSTANTS.MAILBOX_IDENTIFIERS.archive);
         }
 

@@ -1,5 +1,5 @@
 /* @ngInject */
-function embeddedParser(embeddedStore, embeddedFinder, embeddedUtils, AttachmentLoader, attachmentFileFormat, authentication, $state) {
+function embeddedParser(CONSTANTS, embeddedStore, embeddedFinder, embeddedUtils, AttachmentLoader, attachmentFileFormat, $state, mailSettingsModel) {
     const DIV = document.createElement('DIV');
     const EMBEDDED_CLASSNAME = 'proton-embedded';
 
@@ -79,8 +79,7 @@ function embeddedParser(embeddedStore, embeddedFinder, embeddedUtils, Attachment
 
     const decrypt = (message) => {
         const list = embeddedFinder.listInlineAttachments(message);
-        const user = authentication.user || { ShowEmbedded: 0 };
-        const show = message.showEmbedded === true || user.ShowEmbedded === 1;
+        const show = message.showEmbedded === true || mailSettingsModel.get('ShowImages') & CONSTANTS.EMBEDDED;
         const isDraft = $state.includes('secured.drafts.**') || message.isDraft();
 
         // For a draft if we close it before the end of the attachement upload, there are no keyPackets

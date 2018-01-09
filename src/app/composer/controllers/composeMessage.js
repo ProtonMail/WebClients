@@ -19,6 +19,7 @@ function ComposeMessageController(
     extractDataURI,
     gettextCatalog,
     hotkeys,
+    mailSettingsModel,
     messageBuilder,
     messageModel,
     messageRequest,
@@ -69,7 +70,7 @@ function ComposeMessageController(
                 AppModel.set('activeComposer', false);
                 window.onbeforeunload = undefined;
 
-                if (authentication.user.Hotkeys === 1) {
+                if (mailSettingsModel.get('Hotkeys') === 1) {
                     hotkeys.bind();
                 } else {
                     hotkeys.unbind();
@@ -302,7 +303,7 @@ function ComposeMessageController(
      * @param {Object} message
      */
     function initMessage(message) {
-        if (authentication.user.ComposerMode === 1) {
+        if (mailSettingsModel.get('ComposerMode') === 1) {
             message.maximized = true;
             AppModel.set('maximizedComposer', true);
         }
