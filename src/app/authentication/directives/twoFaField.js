@@ -3,7 +3,7 @@ function twoFaField() {
     return {
         restrict: 'E',
         replace: true,
-        templateUrl: 'templates/authentication/twoFaField.tpl.html'
+        templateUrl: require('../../../templates/authentication/twoFaField.tpl.html')
     };
 }
 export default twoFaField;

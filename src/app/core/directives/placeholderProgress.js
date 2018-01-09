@@ -5,7 +5,7 @@ function placeholderProgress(authentication, $filter) {
     const percentageValue = () => percentage(authentication.user.UsedSpace, authentication.user.MaxSpace);
 
     return {
-        templateUrl: 'templates/directives/core/placeholderProgress.tpl.html',
+        templateUrl: require('../../../templates/directives/core/placeholderProgress.tpl.html'),
         replace: true,
         link(scope) {
             scope.storageStyle = () => ({ width: `${percentageValue()}%` });

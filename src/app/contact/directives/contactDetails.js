@@ -47,7 +47,7 @@ function contactDetails(
         restrict: 'E',
         replace: true,
         scope: { contact: '=', modal: '=' },
-        templateUrl: 'templates/contact/contactDetails.tpl.html',
+        templateUrl: require('../../../templates/contact/contactDetails.tpl.html'),
         link(scope, element) {
             const { on, unsubscribe, dispatcher } = dispatchers(['contacts', '$stateChangeStart']);
 

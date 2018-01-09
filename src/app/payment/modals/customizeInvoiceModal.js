@@ -2,7 +2,7 @@
 function customizeInvoiceModal(eventManager, pmModal, settingsApi, notification, authentication, networkActivityTracker) {
     return pmModal({
         controllerAs: 'ctrl',
-        templateUrl: 'templates/modals/customizeInvoice.tpl.html',
+        templateUrl: require('../../../templates/modals/customizeInvoice.tpl.html'),
         /* @ngInject */
         controller: function(params) {
             const self = this;

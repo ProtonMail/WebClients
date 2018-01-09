@@ -27,7 +27,7 @@ function generateModal(
 
     return pmModal({
         controllerAs: 'ctrl',
-        templateUrl: 'templates/modals/generate.tpl.html',
+        templateUrl: require('../../../templates/modals/generate.tpl.html'),
         /* @ngInject */
         controller: function(params, $scope) {
             this.size = CONSTANTS.ENCRYPTION_DEFAULT; // To match the [radio] value

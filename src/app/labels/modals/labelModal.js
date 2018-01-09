@@ -93,7 +93,7 @@ function labelModal(pmModal, tools, hotkeys, gettextCatalog, networkActivityTrac
 
     return pmModal({
         controllerAs: 'ctrl',
-        templateUrl: 'templates/modals/label.tpl.html',
+        templateUrl: require('../../../templates/modals/label.tpl.html'),
         /* @ngInject */
         controller: function(params) {
             const self = this;

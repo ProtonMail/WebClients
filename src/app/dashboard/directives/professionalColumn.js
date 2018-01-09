@@ -4,7 +4,7 @@ function professionalColumn(customProPlanModal) {
         restrict: 'E',
         replace: true,
         scope: {},
-        templateUrl: 'templates/dashboard/professionalColumn.tpl.html',
+        templateUrl: require('../../../templates/dashboard/professionalColumn.tpl.html'),
         link(scope, element) {
             const $buttons = element.find('.professionalColumn-customize');
 

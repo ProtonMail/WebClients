@@ -9,7 +9,7 @@ function messageView($stateParams, $state, $rootScope, conversationListeners, ca
     return {
         restrict: 'E',
         replace: true,
-        templateUrl: 'templates/message/messageView.tpl.html',
+        templateUrl: require('../../../templates/message/messageView.tpl.html'),
         link(scope) {
             const messageID = $stateParams.id;
             let unsubscribeActions = angular.noop;

@@ -2,7 +2,7 @@
 function domainModal(pmModal, $rootScope) {
     return pmModal({
         controllerAs: 'ctrl',
-        templateUrl: 'templates/modals/domain/domain.tpl.html',
+        templateUrl: require('../../../templates/modals/domain/domain.tpl.html'),
         /* @ngInject */
         controller: function(params) {
             this.step = params.step;

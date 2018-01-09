@@ -22,7 +22,7 @@ function emailBlockList($rootScope, spamListModel, gettextCatalog) {
     return {
         replace: true,
         restrict: 'E',
-        templateUrl: 'templates/filter/emailBlockList.tpl.html',
+        templateUrl: require('../../../templates/filter/emailBlockList.tpl.html'),
         scope: {
             listType: '@'
         },

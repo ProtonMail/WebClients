@@ -2,7 +2,7 @@
 function countElementsSelected($rootScope) {
     return {
         replace: true,
-        templateUrl: 'templates/elements/countElementsSelected.tpl.html',
+        templateUrl: require('../../../templates/elements/countElementsSelected.tpl.html'),
         link(scope, element) {
             const $btn = element.find('.countElementsSelected-btn-unselect');
             const onClick = () => $rootScope.$emit('selectElements', { value: 'all', isChecked: false });

@@ -5,7 +5,7 @@ function changeVPNPasswordModal(pmModal, settingsApi, notification, eventManager
 
     return pmModal({
         controllerAs: 'ctrl',
-        templateUrl: 'templates/vpn/changeVPNPasswordModal.tpl.html',
+        templateUrl: require('../../../templates/vpn/changeVPNPasswordModal.tpl.html'),
         /* @ngInject */
         controller: function(params) {
             const self = this;

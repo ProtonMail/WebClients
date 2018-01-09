@@ -7,7 +7,7 @@ function multiselect($rootScope) {
             selected: '=',
             options: '='
         },
-        templateUrl: 'templates/ui/multiselect.tpl.html',
+        templateUrl: require('../../../templates/ui/multiselect.tpl.html'),
         link(scope, elem, { name, disabled }) {
             const unsubscribe = [];
 

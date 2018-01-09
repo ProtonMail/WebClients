@@ -8,7 +8,7 @@ function password() {
     return {
         restrict: 'E',
         replace: true,
-        templateUrl: 'templates/formUtils/password.tpl.html',
+        templateUrl: require('../../../templates/formUtils/password.tpl.html'),
         scope: {
             value: '=',
             form: '=',

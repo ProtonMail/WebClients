@@ -7,7 +7,7 @@ function cardView(countriesListModel) {
 
     return {
         replace: true,
-        templateUrl: 'templates/formUtils/cardView.tpl.html',
+        templateUrl: require('../../../templates/formUtils/cardView.tpl.html'),
         scope: {
             card: '=',
             form: '='

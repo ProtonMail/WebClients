@@ -98,16 +98,16 @@
 /* context */
 
 .blackFridayFree-mail-plan .blackFridayPrice-container::before {
-    background:  url("/assets/img/logo/logo-sign.svg") no-repeat 13px 8px / 160px, $primary;
+    background:  url(assets('img/logo/logo-sign.svg')) no-repeat 13px 8px / 160px, $primary;
 }
 
 .blackFridayFree-vpn-plan .blackFridayPrice-container::before {
-    background:  url("/assets/img/logo/protonvpn-sign.svg") no-repeat -6px 6px / 60px, $vpn;
+    background:  url(assets('img/logo/protonvpn-sign.svg')) no-repeat -6px 6px / 60px, $vpn;
 
 }
 
 .blackFridayFree-mail-vpn-plan .blackFridayPrice-container::before {
-    background:  url("/assets/img/logo/protonvpn-sign.svg") no-repeat 14px 20px / 40px, url("/assets/img/logo/logo-sign.svg") no-repeat 8px 6px / 100px, linear-gradient(to right bottom, $primary 0%,  $primary 30%,  $vpn 70%,  $vpn 100%);
+    background:  url(assets('img/logo/protonvpn-sign.svg')) no-repeat 14px 20px / 40px, url(assets('img/logo/logo-sign.svg')) no-repeat 8px 6px / 100px, linear-gradient(to right bottom, $primary 0%,  $primary 30%,  $vpn 70%,  $vpn 100%);
 }
 
 .appConfigBody-is-mobile .blackFridayFree-plans {

@@ -1,25 +1,19 @@
 const path = require('path');
 const webpack = require('webpack');
-const glob = require('glob');
-const ConcatPlugin = require('webpack-concat-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const ImageminPlugin = require('imagemin-webpack-plugin').default;
-const HtmlWebpackIncludeAssetsPlugin = require('html-webpack-include-assets-plugin');
 const imageminMozjpeg = require('imagemin-mozjpeg');
 const WebpackNotifierPlugin = require('webpack-notifier');
+const HardSourceWebpackPlugin = require('hard-source-webpack-plugin');
 
 const CONFIG = require('../env/conf.build');
 const env = require('../env/config');
 
 const makeSRC = (list) => list.map((file) => path.resolve(file));
-const [OPENPGP_WORKER, OPENPGP] = makeSRC(CONFIG.external_files.openpgp);
-const VENDOR_GLOB = makeSRC(CONFIG.vendor_files.js);
-const VENDOR_LAZY_GLOB = makeSRC(CONFIG.vendor_files.jsLazy);
-const VENDOR_LAZY2_GLOB = makeSRC(CONFIG.vendor_files.jsLazy2);
-const VENDOR_LIB_GLOB = makeSRC(glob.sync('./src/libraries/{polyfill,tweetWebIntent,mailparser}.js'));
+const [OPENPGP_WORKER] = makeSRC(CONFIG.external_files.openpgp);
 
 const minify = () => {
     if (!env.isDistRelease()) {
@@ -48,7 +42,8 @@ const minifyJS = () => {
 };
 
 const list = [
-    new WebpackNotifierPlugin(),
+    new HardSourceWebpackPlugin(),
+    // new WebpackNotifierPlugin(),
     new CopyWebpackPlugin([
         { from: 'src/manifest.json' },
         { from: 'src/.htaccess' },
@@ -59,79 +54,21 @@ const list = [
 
     new CopyWebpackPlugin([{ from: 'src/assets', to: 'assets' }]),
 
-    new ImageminPlugin({
-        maxConcurrency: Infinity,
-        disable: !env.isDistRelease(),
-        test: /\.(jpe?g|png)$/i,
-        optipng: {
-            optimizationLevel: 7
-        },
-        pngquant: {
-            quality: '80-100'
-        },
-        jpegtran: {
-            progressive: true
-        },
-        plugins: [
-            imageminMozjpeg({
-                quality: 80,
-                progressive: true
-            })
-        ]
-    }),
-
     new ExtractTextPlugin('styles.css'),
-
-    // No uglify here because it doesn't work (wtf)
-    new ConcatPlugin({
-        useHash: true,
-        name: 'vendor',
-        fileName: '[name].js?[hash]',
-        filesToConcat: VENDOR_GLOB.concat(VENDOR_LIB_GLOB)
-    }),
-
-    // No uglify here because it doesn't work (wtf)
-    new ConcatPlugin({
-        useHash: true,
-        name: 'vendorLazy',
-        fileName: '[name].js?[hash]',
-        filesToConcat: VENDOR_LAZY_GLOB
-    }),
-
-    // No uglify here because it doesn't work (wtf)
-    new ConcatPlugin({
-        useHash: true,
-        name: 'vendorLazy2',
-        fileName: '[name].js?[hash]',
-        filesToConcat: VENDOR_LAZY2_GLOB
-    }),
-
-    new ConcatPlugin({
-        useHash: true,
-        name: 'openpgp',
-        fileName: '[name].min.js?[hash]',
-        filesToConcat: [OPENPGP]
-    }),
-
-    new HtmlWebpackIncludeAssetsPlugin({
-        assets: ['openpgp.min.js', 'vendor.js'],
-        append: false,
-        hash: false
-    }),
 
     new HtmlWebpackPlugin({
         template: 'src/app.html',
         inject: 'body',
         hash: false,
-        excludeChunks: ['html', 'app.css', 'styles'],
-        chunks: ['openpgp.min', 'vendor', 'templates', 'app'],
+        excludeChunks: ['html', 'app.css'],
+        chunks: ['app'],
         chunksSortMode: 'manual',
         minify: minify()
     }),
 
     new webpack.SourceMapDevToolPlugin({
         filename: '[name].js.map',
-        exclude: ['vendor', 'templates', 'html', 'styles', 'openpgp']
+        exclude: ['templates', 'html', 'styles']
     })
 ];
 
@@ -142,6 +79,29 @@ if (env.isDistRelease()) {
             parallel: true,
             sourceMap: true,
             uglifyOptions: minifyJS()
+        })
+    );
+
+    list.push(
+        new ImageminPlugin({
+            maxConcurrency: Infinity,
+            disable: false,
+            test: /\.(jpe?g|png)$/i,
+            optipng: {
+                optimizationLevel: 7
+            },
+            pngquant: {
+                quality: '80-100'
+            },
+            jpegtran: {
+                progressive: true
+            },
+            plugins: [
+                imageminMozjpeg({
+                    quality: 80,
+                    progressive: true
+                })
+            ]
         })
     );
 }

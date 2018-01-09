@@ -137,7 +137,7 @@ function composerAttachments($rootScope, gettextCatalog) {
         scope: {
             message: '=model'
         },
-        templateUrl: 'templates/directives/composer/composerAttachments.tpl.html',
+        templateUrl: require('../../../templates/directives/composer/composerAttachments.tpl.html'),
         link(scope, el) {
             scope.list = formatAttachments(scope, scope.message.Attachments);
             scope.labelHeader = labelHeader.show;

@@ -2,7 +2,7 @@
 function loginPasswordModal($timeout, pmModal, srp, networkActivityTracker, authentication) {
     return pmModal({
         controllerAs: 'ctrl',
-        templateUrl: 'templates/authentication/modals/loginPassword.tpl.html',
+        templateUrl: require('../../../templates/authentication/modals/loginPassword.tpl.html'),
         /* @ngInject */
         controller: function(params) {
             this.loginPassword = '';

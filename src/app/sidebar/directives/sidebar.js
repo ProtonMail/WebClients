@@ -2,7 +2,7 @@
 const sidebar = (sidebarModel) => ({
     scope: {},
     replace: true,
-    templateUrl: 'templates/partials/sidebar.tpl.html',
+    templateUrl: require('../../../templates/partials/sidebar.tpl.html'),
     link(scope) {
         scope.listStates = Object.keys(sidebarModel.getStateConfig());
         scope.scrollbarConfig = {

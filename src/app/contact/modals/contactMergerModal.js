@@ -2,7 +2,7 @@
 function contactMergerModal(gettextCatalog, pmModal) {
     return pmModal({
         controllerAs: 'ctrl',
-        templateUrl: 'templates/contact/contactMergerModal.tpl.html',
+        templateUrl: require('../../../templates/contact/contactMergerModal.tpl.html'),
         /* @ngInject */
         controller: function(params) {
             this.title = gettextCatalog.getPlural(Object.keys(params.emails).length, '1 Duplicate found', '{{$count}} Duplicates found', {});

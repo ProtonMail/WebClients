@@ -4,7 +4,7 @@ function plusColumn() {
         restrict: 'E',
         replace: true,
         scope: {},
-        templateUrl: 'templates/dashboard/plusColumn.tpl.html'
+        templateUrl: require('../../../templates/dashboard/plusColumn.tpl.html')
     };
 }
 export default plusColumn;

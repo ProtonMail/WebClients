@@ -10,7 +10,7 @@ function bitcoinView(paymentBitcoinModel, $rootScope, CONSTANTS) {
             currency: '='
         },
         replace: true,
-        templateUrl: 'templates/payment/bitcoinView.tpl.html',
+        templateUrl: require('../../../templates/payment/bitcoinView.tpl.html'),
         link(scope, el, { type = 'payment' }) {
             el[0].classList.add(`bitcoinView-type-${type}`);
 

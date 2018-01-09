@@ -14,7 +14,7 @@ function setupOrganizationModal(
 ) {
     return pmModal({
         controllerAs: 'ctrl',
-        templateUrl: 'templates/modals/setupOrganization.tpl.html',
+        templateUrl: require('../../../templates/modals/setupOrganization.tpl.html'),
         /* @ngInject */
         controller: function(params, $scope) {
             const self = this;

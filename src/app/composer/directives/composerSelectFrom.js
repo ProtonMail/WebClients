@@ -20,7 +20,7 @@ function composerSelectFrom(notification, editorModel, aboutClient, gettextCatal
             message: '=model'
         },
         replace: true,
-        templateUrl: 'templates/directives/composer/composerSelectFrom.tpl.html',
+        templateUrl: require('../../../templates/directives/composer/composerSelectFrom.tpl.html'),
         link(scope, el) {
             const $select = el.find('select');
             const { addresses } = composerFromModel.get(scope.message);

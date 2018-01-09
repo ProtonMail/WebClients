@@ -2,7 +2,7 @@
 function reactivateModal(pmModal) {
     return pmModal({
         controllerAs: 'ctrl',
-        templateUrl: 'templates/modals/reactivate.tpl.html',
+        templateUrl: require('../../../templates/modals/reactivate.tpl.html'),
         /* @ngInject */
         controller: function(params) {
             this.loginPassword = '';

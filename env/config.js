@@ -81,7 +81,7 @@ const getDefaultApiTarget = () => {
     }
 
     if (process.env.NODE_ENV === 'dist') {
-        const [, type] = argv.branch.match(/\w+-(\w+)/) || [];
+        const [, type] = (argv.branch || '').match(/\w+-(\w+)/) || [];
         return type || 'blue';
     }
 

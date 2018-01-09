@@ -1,7 +1,11 @@
 // Vendors
+
+@function assets($item){
+  @return '../assets/' + $item
+}
 //============================= FontAwesome =============================//
 /* override FontAwesome font path $var */
-$fa-font-path: '/assets/fonts';
+$fa-font-path: assets('fonts');
 
 // ProtonMail Theme variables 🎨
 //============================= Breakpoints =============================//
@@ -126,7 +130,7 @@ $main-shadow:           none;
 
 //============================= BG IMAGE =============================//
 // Tooltip: IMG as background
-// $body-background:       url("/assets/img/login.jpg");
+// $body-background:       url(assets("img/login.jpg"));
 // $header-background:	    transparent;
 // $sidebar-background:    transparent;
 // $logo-background:       transparent;

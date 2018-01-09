@@ -11,7 +11,7 @@ function importCardDropzone(notification, gettextCatalog, $rootScope) {
         scope: {},
         replace: true,
         restrict: 'E',
-        templateUrl: 'templates/contact/importCardDropzone.tpl.html',
+        templateUrl: require('../../../templates/contact/importCardDropzone.tpl.html'),
         link(scope, el) {
             const dropzone = new Dropzone(el[0].firstElementChild, {
                 addRemoveLinks: false,

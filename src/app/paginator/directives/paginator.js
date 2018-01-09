@@ -50,7 +50,7 @@ function paginator($rootScope, $stateParams, paginationModel, CONSTANTS) {
     return {
         restrict: 'E',
         replace: true,
-        templateUrl: 'templates/directives/paginator.tpl.html',
+        templateUrl: require('../../../templates/directives/paginator.tpl.html'),
         scope: {
             totalItems: '='
         },

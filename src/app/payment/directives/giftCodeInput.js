@@ -4,7 +4,7 @@ function giftCodeInput() {
         replace: true,
         restrict: 'E',
         scope: { form: '=', code: '=' },
-        templateUrl: 'templates/payment/giftCodeInput.tpl.html'
+        templateUrl: require('../../../templates/payment/giftCodeInput.tpl.html')
     };
 }
 export default giftCodeInput;

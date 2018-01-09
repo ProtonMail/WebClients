@@ -5,7 +5,7 @@ function freeColumn($rootScope, dashboardConfiguration) {
         restrict: 'E',
         replace: true,
         scope: {},
-        templateUrl: 'templates/dashboard/freeColumn.tpl.html',
+        templateUrl: require('../../../templates/dashboard/freeColumn.tpl.html'),
         link(scope, element) {
             const update = () => {
                 const { free } = dashboardConfiguration.get();

@@ -23,7 +23,7 @@ function squireSelectFontFamily(squireDropdown, editorModel) {
 
     return {
         replace: true,
-        templateUrl: 'templates/squire/squireSelectFontFamily.tpl.html',
+        templateUrl: require('../../../templates/squire/squireSelectFontFamily.tpl.html'),
         link(scope, el) {
             const container = squireDropdown(scope.message);
             const { editor } = editorModel.find(scope.message);

@@ -78,7 +78,7 @@ function paymentForm(
             ctrl: '='
         },
         replace: true,
-        templateUrl: 'templates/payment/paymentForm.tpl.html',
+        templateUrl: require('../../../templates/payment/paymentForm.tpl.html'),
         link(scope, el) {
             const ctrl = scope.ctrl;
             const params = paymentModalModel.get();

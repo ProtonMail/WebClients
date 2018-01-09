@@ -16,7 +16,7 @@ function signupUserForm(confirmModal, gettextCatalog, signupModel, CONSTANTS, $r
             plans: '=',
             account: '='
         },
-        templateUrl: 'templates/user/signupUserForm.tpl.html',
+        templateUrl: require('../../../templates/user/signupUserForm.tpl.html'),
         link(scope, el) {
             const send = () => {
                 // Save variables to prevent extensions/etc

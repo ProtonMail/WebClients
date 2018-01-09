@@ -74,7 +74,7 @@ function noResults(elementsError, tools, gettextCatalog, labelsModel, $statePara
     return {
         restrict: 'E',
         replace: true,
-        templateUrl: 'templates/directives/ui/noResults.tpl.html',
+        templateUrl: require('../../../templates/directives/ui/noResults.tpl.html'),
         link(scope, element) {
             const $icon = element[0].querySelector('i');
             const $span = element[0].querySelector('span');

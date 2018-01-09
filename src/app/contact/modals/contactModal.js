@@ -7,7 +7,7 @@ function contactModal($rootScope, $state, gettextCatalog, notification, pmModal)
 
     return pmModal({
         controllerAs: 'ctrl',
-        templateUrl: 'templates/contact/contactModal.tpl.html',
+        templateUrl: require('../../../templates/contact/contactModal.tpl.html'),
         /* @ngInject */
         controller: function(params, $scope) {
             const unsubscribe = [];

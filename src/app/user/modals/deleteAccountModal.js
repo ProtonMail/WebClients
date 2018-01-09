@@ -21,7 +21,7 @@ function deleteAccountModal(pmModal, Bug, User, networkActivityTracker, authenti
 
     return pmModal({
         controllerAs: 'ctrl',
-        templateUrl: 'templates/modals/deleteAccount.tpl.html',
+        templateUrl: require('../../../templates/modals/deleteAccount.tpl.html'),
         /* @ngInject */
         controller: function(params, $scope) {
             const self = this;

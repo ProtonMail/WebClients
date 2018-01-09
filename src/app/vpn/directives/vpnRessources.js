@@ -4,7 +4,7 @@ function vpnRessources() {
         scope: {},
         restrict: 'E',
         replace: true,
-        templateUrl: 'templates/vpn/vpnRessources.tpl.html'
+        templateUrl: require('../../../templates/vpn/vpnRessources.tpl.html')
     };
 }
 export default vpnRessources;

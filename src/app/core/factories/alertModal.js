@@ -12,7 +12,7 @@ function alertModal(pmModal) {
             };
         },
         controllerAs: 'ctrl',
-        templateUrl: 'templates/modals/alert.tpl.html'
+        templateUrl: require('../../../templates/modals/alert.tpl.html')
     });
 }
 export default alertModal;

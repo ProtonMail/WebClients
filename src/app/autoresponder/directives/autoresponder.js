@@ -11,7 +11,7 @@ function autoresponder(autoresponderModel, timepickerModel, $rootScope, autoresp
     return {
         replace: true,
         restrict: 'E',
-        templateUrl: 'templates/autoresponder/autoresponder.tpl.html',
+        templateUrl: require('../../../templates/autoresponder/autoresponder.tpl.html'),
         scope: {},
         link(scope, elem, { mock }) {
             const unsubscribe = [];

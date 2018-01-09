@@ -1,7 +1,7 @@
 /* @ngInject */
 const moveElement = () => ({
     replace: true,
-    templateUrl: 'templates/elements/moveElement.tpl.html',
+    templateUrl: require('../../../templates/elements/moveElement.tpl.html'),
     link(scope, element) {
         function onClick(event) {
             if (event.target.tagName === 'BUTTON') {

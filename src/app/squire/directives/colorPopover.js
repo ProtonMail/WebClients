@@ -2,7 +2,7 @@
 function colorPopover(squireExecAction) {
     return {
         replace: true,
-        templateUrl: 'templates/squire/colorPopover.tpl.html',
+        templateUrl: require('../../../templates/squire/colorPopover.tpl.html'),
         compile(el, { mode = 'color' }) {
             el.find('[data-hash]').attr('data-mode', mode);
 

@@ -12,7 +12,7 @@ function composerEncrypt(notification, gettextCatalog, $rootScope) {
         scope: {
             message: '='
         },
-        templateUrl: 'templates/composer/composerEncrypt.tpl.html',
+        templateUrl: require('../../../templates/composer/composerEncrypt.tpl.html'),
         link(scope, el) {
             const $cancel = el.find('.composerEncrypt-btn-cancel');
             scope.model = {

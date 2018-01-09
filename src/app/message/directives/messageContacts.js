@@ -7,7 +7,7 @@ function messageContacts(gettextCatalog) {
     };
 
     return {
-        templateUrl: 'templates/message/messageContacts.tpl.html',
+        templateUrl: require('../../../templates/message/messageContacts.tpl.html'),
         replace: true,
         scope: {
             model: '='

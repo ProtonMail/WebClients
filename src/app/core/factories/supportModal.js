@@ -2,7 +2,7 @@
 function supportModal(pmModal) {
     return pmModal({
         controllerAs: 'ctrl',
-        templateUrl: 'templates/modals/support.tpl.html',
+        templateUrl: require('../../../templates/modals/support.tpl.html'),
         /* @ngInject */
         controller: function(params) {
             this.cancel = () => {

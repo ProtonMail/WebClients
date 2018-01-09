@@ -2,7 +2,7 @@
 function twoFAIntroModal(pmModal) {
     return pmModal({
         controllerAs: 'ctrl',
-        templateUrl: 'templates/modals/twofactor/twoFAIntroModal.tpl.html',
+        templateUrl: require('../../../templates/modals/twofactor/twoFAIntroModal.tpl.html'),
         /* @ngInject */
         controller: function(params) {
             const self = this;

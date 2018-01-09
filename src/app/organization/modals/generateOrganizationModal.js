@@ -13,7 +13,7 @@ function generateOrganizationModal(
 ) {
     return pmModal({
         controllerAs: 'ctrl',
-        templateUrl: 'templates/modals/generateOrganization.tpl.html',
+        templateUrl: require('../../../templates/modals/generateOrganization.tpl.html'),
         /* @ngInject */
         controller: function(params) {
             // Parameters

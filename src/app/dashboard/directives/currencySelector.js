@@ -5,7 +5,7 @@ function currencySelector($rootScope, dashboardConfiguration) {
     return {
         restrict: 'E',
         replace: true,
-        templateUrl: 'templates/dashboard/currencySelector.tpl.html',
+        templateUrl: require('../../../templates/dashboard/currencySelector.tpl.html'),
         link(scope, element) {
             const currency = dashboardConfiguration.currency();
             const $buttons = element.find('.currencySelector-button');

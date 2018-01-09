@@ -2,7 +2,7 @@
 function recoveryCodeModal(pmModal, downloadFile) {
     return pmModal({
         controllerAs: 'ctrl',
-        templateUrl: 'templates/modals/twofactor/recoveryCode.tpl.html',
+        templateUrl: require('../../../templates/modals/twofactor/recoveryCode.tpl.html'),
         /* @ngInject */
         controller: function(params) {
             this.recoveryCodesFirstHalf = params.recoveryCodes.slice(0, 8);

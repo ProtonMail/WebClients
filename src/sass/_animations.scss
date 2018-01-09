@@ -96,8 +96,8 @@ Inpiration from 'esjay'
     -webkit-perspective: ($spinnerWidth / 2);
     perspective: ($spinnerWidth / 2);
     background-size: ($spinnerWidth / 2) ($spinnerWidth / 2);
-    -webkit-mask:  url(/assets/img/valence.svg) no-repeat 50% 50%;
-    mask: url(/assets/img/valence.svg) no-repeat 50% 50%;
+    -webkit-mask:  url(assets('img/valence.svg')) no-repeat 50% 50%;
+    mask: url(assets('img/valence.svg')) no-repeat 50% 50%;
     -webkit-mask-size: cover;
     mask-size: cover;
 }

@@ -119,7 +119,7 @@ function autocompleteCommand($rootScope, autocompleteBuilder, autocompleteComman
             isVisible: '='
         },
         replace: true,
-        templateUrl: 'templates/command/autocompleteCommand.tpl.html',
+        templateUrl: require('../../../templates/command/autocompleteCommand.tpl.html'),
         compile: autocompleteBuilder(link)
     };
 }

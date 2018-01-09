@@ -2,7 +2,7 @@
 function hotkeyModal(pmModal, authentication, CONSTANTS) {
     return pmModal({
         controllerAs: 'ctrl',
-        templateUrl: 'templates/modals/hotkey.tpl.html',
+        templateUrl: require('../../../templates/modals/hotkey.tpl.html'),
         /* @ngInject */
         controller: function(params) {
             this.isMac = navigator.userAgent.indexOf('Mac OS X') !== -1;

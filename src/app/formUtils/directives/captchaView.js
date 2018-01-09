@@ -2,7 +2,7 @@
 function captchaView($httpParamSerializer, $rootScope, url) {
     return {
         restrict: 'E',
-        templateUrl: 'templates/formUtils/captchaView.tpl.html',
+        templateUrl: require('../../../templates/formUtils/captchaView.tpl.html'),
         link(scope, element, { token }) {
             const iframe = element[0].querySelector('iframe');
             const client = 'web';

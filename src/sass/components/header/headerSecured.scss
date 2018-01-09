@@ -34,7 +34,7 @@
     content: "";
     height: 35px;
     width: 116px;
-    background: url(../assets/img/logo/logo.svg) no-repeat center bottom;
+    background: url(assets('img/logo/logo.svg')) no-repeat center bottom;
 }
 
 .headerSecuredDesktop-logo::after {

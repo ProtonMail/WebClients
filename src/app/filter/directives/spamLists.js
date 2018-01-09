@@ -3,7 +3,7 @@ function spamLists() {
     return {
         replace: true,
         restrict: 'E',
-        templateUrl: 'templates/filter/spamLists.tpl.html'
+        templateUrl: require('../../../templates/filter/spamLists.tpl.html')
     };
 }
 export default spamLists;

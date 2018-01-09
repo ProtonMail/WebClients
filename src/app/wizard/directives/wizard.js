@@ -16,7 +16,7 @@ function wizard(
     return {
         restrict: 'E',
         replace: true,
-        templateUrl: 'templates/partials/wizard.tpl.html',
+        templateUrl: require('../../../templates/partials/wizard.tpl.html'),
         link(scope, element) {
             const welcome = function() {
                 welcomeModal.activate({

@@ -22,7 +22,7 @@ function searchForm($rootScope, $state, $stateParams, authentication, searchMode
     return {
         scope: {},
         replace: true,
-        templateUrl: 'templates/search/searchForm.tpl.html',
+        templateUrl: require('../../../templates/search/searchForm.tpl.html'),
         compile(elem) {
             const searchDate = elem.find('.search-date');
             searchDate.attr('placeholder', dateUtils.I18N.localizedDatePlaceholder);

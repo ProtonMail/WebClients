@@ -62,7 +62,7 @@
 
     .subscriptionSection-tbody-billing > tr:first-of-type {
         padding-top: 1em;
-        background:url(/assets/img/triangle-down.svg) repeat-x 0px -2px;
+        background:url(assets('img/triangle-down.svg')) repeat-x 0px -2px;
         background-size: 8px;
     }
 

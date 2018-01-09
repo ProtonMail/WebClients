@@ -9,7 +9,7 @@ function displayContentBtn($rootScope, gettextCatalog) {
 
     return {
         replace: true,
-        templateUrl: 'templates/message/displayContentBtn.tpl.html',
+        templateUrl: require('../../../templates/message/displayContentBtn.tpl.html'),
         link(scope, el, { action = 'remote' }) {
             const $notice = el[0].querySelector('.displayContentBtn-notice-text');
             const $btn = el.find('.displayContentBtn-button');

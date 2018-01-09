@@ -6,7 +6,7 @@ function confirmModal(pmModal, gettextCatalog) {
     };
     return pmModal({
         controllerAs: 'ctrl',
-        templateUrl: 'templates/modals/confirm.tpl.html',
+        templateUrl: require('../../../templates/modals/confirm.tpl.html'),
         /* @ngInject */
         controller: function(params, hotkeys) {
             hotkeys.unbind(['enter']);

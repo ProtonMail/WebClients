@@ -1,7 +1,7 @@
 /* @ngInject */
 const readUnread = () => ({
     replace: true,
-    templateUrl: 'templates/directives/ui/readUnread.tpl.html',
+    templateUrl: require('../../../templates/directives/ui/readUnread.tpl.html'),
     link(scope, el) {
         const $a = el.find('a');
 

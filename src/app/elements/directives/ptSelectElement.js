@@ -1,6 +1,6 @@
 /* @ngInject */
 const ptSelectElement = () => ({
     replace: true,
-    templateUrl: 'templates/elements/ptSelectElement.tpl.html'
+    templateUrl: require('../../../templates/elements/ptSelectElement.tpl.html')
 });
 export default ptSelectElement;

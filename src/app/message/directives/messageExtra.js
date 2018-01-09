@@ -2,7 +2,7 @@
 function messageExtra() {
     return {
         restrict: 'E',
-        templateUrl: 'templates/message/messageExtra.tpl.html',
+        templateUrl: require('../../../templates/message/messageExtra.tpl.html'),
         replace: true
     };
 }

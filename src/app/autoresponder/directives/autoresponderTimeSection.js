@@ -4,7 +4,7 @@ function autoresponderTimeSection(autoresponderModel, dateUtils, $rootScope) {
     return {
         replace: true,
         restrict: 'E',
-        templateUrl: 'templates/autoresponder/autoresponderTimeSection.tpl.html',
+        templateUrl: require('../../../templates/autoresponder/autoresponderTimeSection.tpl.html'),
         scope: {
             form: '='
         },

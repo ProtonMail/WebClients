@@ -35,11 +35,11 @@ export default angular
                 url: '/login',
                 views: {
                     'main@': {
-                        templateUrl: 'templates/layout/login.tpl.html'
+                        templateUrl: require('../templates/layout/login.tpl.html')
                     },
                     'panel@login': {
                         controller: 'LoginController',
-                        templateUrl: 'templates/views/login.tpl.html'
+                        templateUrl: require('../templates/views/login.tpl.html')
                     }
                 },
                 resolve: {
@@ -54,7 +54,7 @@ export default angular
                 views: {
                     'panel@login': {
                         controller: 'LoginController',
-                        templateUrl: 'templates/views/unlock.tpl.html'
+                        templateUrl: require('../templates/views/unlock.tpl.html')
                     }
                 }
             })
@@ -64,7 +64,7 @@ export default angular
                 views: {
                     'panel@login': {
                         controller: 'SetupController',
-                        templateUrl: 'templates/views/setup.tpl.html'
+                        templateUrl: require('../templates/views/setup.tpl.html')
                     }
                 },
                 resolve: {
@@ -87,7 +87,7 @@ export default angular
                 views: {
                     'panel@login': {
                         controller: 'LoginController',
-                        templateUrl: 'templates/views/unlock.tpl.html'
+                        templateUrl: require('../templates/views/unlock.tpl.html')
                     }
                 },
                 onEnter: ($rootScope, AppModel) => {
@@ -100,7 +100,7 @@ export default angular
                 url: '/pre-invite/:selector/:token',
                 views: {
                     'main@': {
-                        templateUrl: 'templates/layout/pre.tpl.html'
+                        templateUrl: require('../templates/layout/pre.tpl.html')
                     }
                 },
                 onEnter($state, $stateParams, $rootScope, notification, Invite, gettextCatalog, AppModel) {
@@ -176,10 +176,10 @@ export default angular
                 views: {
                     'main@': {
                         controller: 'SignupController',
-                        templateUrl: 'templates/layout/auth.tpl.html'
+                        templateUrl: require('../templates/layout/auth.tpl.html')
                     },
                     'panel@signup': {
-                        templateUrl: 'templates/views/signup.tpl.html'
+                        templateUrl: require('../templates/views/signup.tpl.html')
                     }
                 },
                 resolve: {
@@ -222,7 +222,7 @@ export default angular
                 views: {
                     'main@': {
                         controller: 'SupportController',
-                        templateUrl: 'templates/layout/auth.tpl.html'
+                        templateUrl: require('../templates/layout/auth.tpl.html')
                     }
                 }
             })
@@ -237,7 +237,7 @@ export default angular
                 },
                 views: {
                     'panel@support': {
-                        templateUrl: 'templates/views/support-message.tpl.html'
+                        templateUrl: require('../templates/views/support-message.tpl.html')
                     }
                 }
             })
@@ -251,7 +251,7 @@ export default angular
                 },
                 views: {
                     'panel@support': {
-                        templateUrl: 'templates/views/reset-login-password.tpl.html'
+                        templateUrl: require('../templates/views/reset-login-password.tpl.html')
                     }
                 }
             })
@@ -263,7 +263,7 @@ export default angular
                 abstract: true,
                 views: {
                     'main@': {
-                        templateUrl: 'templates/layout/outside.tpl.html'
+                        templateUrl: require('../templates/layout/outside.tpl.html')
                     }
                 },
                 resolve: {
@@ -283,7 +283,7 @@ export default angular
                 },
                 views: {
                     content: {
-                        templateUrl: 'templates/views/outside.unlock.tpl.html',
+                        templateUrl: require('../templates/views/outside.unlock.tpl.html'),
                         controller($scope, $state, $stateParams, pmcw, encryptedToken, networkActivityTracker, notification, secureSessionStorage) {
                             $scope.params = {
                                 MessagePassword: ''
@@ -355,7 +355,7 @@ export default angular
                 views: {
                     content: {
                         controller: 'OutsideController',
-                        templateUrl: 'templates/views/outside.message.tpl.html'
+                        templateUrl: require('../templates/views/outside.message.tpl.html')
                     }
                 }
             })
@@ -393,7 +393,7 @@ export default angular
                 views: {
                     content: {
                         controller: 'OutsideController',
-                        templateUrl: 'templates/views/outside.reply.tpl.html'
+                        templateUrl: require('../templates/views/outside.reply.tpl.html')
                     }
                 },
                 onEnter(gettextCatalog) {
@@ -420,11 +420,11 @@ export default angular
                 views: {
                     'main@': {
                         controller: 'SecuredController',
-                        templateUrl: 'templates/layout/secured.tpl.html'
+                        templateUrl: require('../templates/layout/secured.tpl.html')
                     },
                     'sidebar@secured': {
                         controller: 'SidebarController',
-                        templateUrl: 'templates/layout/sidebar.tpl.html'
+                        templateUrl: require('../templates/layout/sidebar.tpl.html')
                     }
                 },
                 resolve: {
@@ -492,7 +492,7 @@ export default angular
                 },
                 views: {
                     'main@': {
-                        templateUrl: 'templates/views/pgp.tpl.html',
+                        templateUrl: require('../templates/views/pgp.tpl.html'),
                         controller($scope, $rootScope, messageID, downloadFile) {
                             function viewPgp(event) {
                                 $scope.$applyAsync(() => {
@@ -540,7 +540,7 @@ export default angular
                 },
                 views: {
                     'main@': {
-                        templateUrl: 'templates/views/message.print.tpl.html',
+                        templateUrl: require('../templates/views/message.print.tpl.html'),
                         controller($scope, $rootScope, $sce, messageID) {
                             $scope.loading = true;
 
@@ -575,7 +575,7 @@ export default angular
                 url: '/account',
                 views: {
                     'content@secured': {
-                        templateUrl: 'templates/views/account.tpl.html',
+                        templateUrl: require('../templates/views/account.tpl.html'),
                         controller: 'AccountController'
                     }
                 },
@@ -598,7 +598,7 @@ export default angular
                 url: '/labels',
                 views: {
                     'content@secured': {
-                        templateUrl: 'templates/views/labels.tpl.html',
+                        templateUrl: require('../templates/views/labels.tpl.html'),
                         controller: 'LabelsController'
                     }
                 },
@@ -621,7 +621,7 @@ export default angular
                 url: '/security',
                 views: {
                     'content@secured': {
-                        templateUrl: 'templates/views/security.tpl.html',
+                        templateUrl: require('../templates/views/security.tpl.html'),
                         controller: 'SecurityController'
                     }
                 },
@@ -644,7 +644,7 @@ export default angular
                 url: '/appearance',
                 views: {
                     'content@secured': {
-                        templateUrl: 'templates/views/appearance.tpl.html',
+                        templateUrl: require('../templates/views/appearance.tpl.html'),
                         controller: 'AppearanceController'
                     }
                 },
@@ -699,7 +699,7 @@ export default angular
                 },
                 views: {
                     'content@secured': {
-                        templateUrl: 'templates/views/signatures.tpl.html',
+                        templateUrl: require('../templates/views/signatures.tpl.html'),
                         controller: 'SignaturesController'
                     }
                 },
@@ -714,7 +714,7 @@ export default angular
                 url: '/payments',
                 views: {
                     'content@secured': {
-                        templateUrl: 'templates/views/payments.tpl.html',
+                        templateUrl: require('../templates/views/payments.tpl.html'),
                         controller: 'PaymentsController'
                     }
                 },
@@ -753,7 +753,7 @@ export default angular
                 url: '/keys',
                 views: {
                     'content@secured': {
-                        templateUrl: 'templates/views/keys.tpl.html'
+                        templateUrl: require('../templates/views/keys.tpl.html')
                     }
                 },
                 resolve: {
@@ -816,7 +816,7 @@ export default angular
                 },
                 views: {
                     'content@secured': {
-                        templateUrl: 'templates/views/dashboard.tpl.html',
+                        templateUrl: require('../templates/views/dashboard.tpl.html'),
                         controller: 'DashboardController'
                     }
                 },
@@ -874,7 +874,7 @@ export default angular
                 },
                 views: {
                     'content@secured': {
-                        templateUrl: 'templates/views/members.tpl.html',
+                        templateUrl: require('../templates/views/members.tpl.html'),
                         controller: 'MembersController'
                     }
                 },
@@ -928,7 +928,7 @@ export default angular
                 },
                 views: {
                     'content@secured': {
-                        templateUrl: 'templates/views/domains.tpl.html',
+                        templateUrl: require('../templates/views/domains.tpl.html'),
                         controller: 'DomainsController'
                     }
                 },
@@ -1059,7 +1059,7 @@ export default angular
             const views = {
                 'content@secured': {
                     controller: 'ElementsController',
-                    templateUrl: 'templates/partials/conversations.tpl.html'
+                    templateUrl: require('../templates/partials/conversations.tpl.html')
                 }
             };
 

@@ -230,7 +230,7 @@ function eventManager(
                 if (!$cookies.get(cookieName)) {
                     notify({
                         message,
-                        templateUrl: 'templates/notifications/cross.tpl.html',
+                        templateUrl: require('../../../templates/notifications/cross.tpl.html'),
                         duration: '0',
                         onClose: onClose(cookieName)
                     });
@@ -327,7 +327,11 @@ function eventManager(
                     }
                     setTimer(MODEL.milliseconds * FIBONACCI[MODEL.index]);
                     MODEL.promiseCancel = $timeout(interval, MODEL.milliseconds, false);
-                    MODEL.notification = notify({ templateUrl: 'templates/notifications/retry.tpl.html', duration: '0', onClick: reset });
+                    MODEL.notification = notify({
+                        templateUrl: require('../../../templates/notifications/retry.tpl.html'),
+                        duration: '0',
+                        onClick: reset
+                    });
                     AppModel.set('onLine', false);
                 }
             }

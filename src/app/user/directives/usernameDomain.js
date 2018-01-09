@@ -7,7 +7,7 @@ function usernameDomain() {
             model: '=',
             domains: '='
         },
-        templateUrl: 'templates/user/usernameDomain.tpl.html'
+        templateUrl: require('../../../templates/user/usernameDomain.tpl.html')
     };
 }
 export default usernameDomain;

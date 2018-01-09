@@ -20,7 +20,7 @@ function chooseComposerMode(authentication, networkActivityTracker, settingsApi,
     return {
         replace: true,
         scope: {},
-        templateUrl: 'templates/settings/chooseComposerMode.tpl.html',
+        templateUrl: require('../../../templates/settings/chooseComposerMode.tpl.html'),
         link(scope, el) {
             AppModel.set('editorMode', authentication.user.DraftMIMEType);
             scope.model = authentication.user.DraftMIMEType;

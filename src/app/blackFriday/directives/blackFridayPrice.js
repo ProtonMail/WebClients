@@ -4,7 +4,7 @@ function blackFridayPrice() {
         restrict: 'E',
         replace: true,
         scope: { amount: '=', strike: '=', currency: '=' },
-        templateUrl: 'templates/blackFriday/blackFridayPrice.tpl.html'
+        templateUrl: require('../../../templates/blackFriday/blackFridayPrice.tpl.html')
     };
 }
 export default blackFridayPrice;

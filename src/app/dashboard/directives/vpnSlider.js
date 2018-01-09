@@ -19,7 +19,7 @@ function vpnSlider($rootScope, CONSTANTS, customVpnModel, dashboardConfiguration
         replace: true,
         restrict: 'E',
         scope: {},
-        templateUrl: 'templates/dashboard/vpnSlider.tpl.html',
+        templateUrl: require('../../../templates/dashboard/vpnSlider.tpl.html'),
         link(scope, element) {
             const $count = element.find('.vpnSlider-count');
             const { addons } = dashboardModel.get(dashboardConfiguration.cycle());

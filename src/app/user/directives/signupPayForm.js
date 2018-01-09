@@ -11,7 +11,7 @@ function signupPayForm(paymentUtils, $rootScope, $stateParams, cardModel, giftCo
             plan: '=',
             account: '='
         },
-        templateUrl: 'templates/user/signupPayForm.tpl.html',
+        templateUrl: require('../../../templates/user/signupPayForm.tpl.html'),
         link(scope, el) {
             const $btnFeatures = el.find('.signupPayForm-btn-features');
             const $btnApply = el.find('.signupPayForm-btn-apply');

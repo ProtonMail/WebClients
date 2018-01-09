@@ -48,7 +48,7 @@ function dropdownFolders(labelsModel, $rootScope, actionConversation, labelModal
 
     return {
         restrict: 'E',
-        templateUrl: 'templates/labels/dropdownFolders.tpl.html',
+        templateUrl: require('../../../templates/labels/dropdownFolders.tpl.html'),
         replace: true,
         scope: {
             getElements: '=elements'

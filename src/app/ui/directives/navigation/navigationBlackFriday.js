@@ -15,7 +15,7 @@ function navigationBlackFriday($stateParams, blackFridayModal, blackFridayModel,
         restrict: 'E',
         scope: {},
         replace: true,
-        templateUrl: 'templates/ui/navigation/navigationBlackFriday.tpl.html',
+        templateUrl: require('../../../../templates/ui/navigation/navigationBlackFriday.tpl.html'),
         link(scope, element) {
             const isFree = !subscriptionModel.hasPaid('mail');
             const isMonthly = subscriptionModel.cycle() === MONTHLY;

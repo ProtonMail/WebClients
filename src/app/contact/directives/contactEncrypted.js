@@ -10,7 +10,7 @@ function contactEncrypted(gettextCatalog) {
     return {
         restrict: 'E',
         replace: true,
-        templateUrl: 'templates/contact/contactEncrypted.tpl.html',
+        templateUrl: require('../../../templates/contact/contactEncrypted.tpl.html'),
         link(scope, el) {
             const button = el.find(`.${TOGGLE_BUTTON_CLASS}`);
             const updateText = () => {

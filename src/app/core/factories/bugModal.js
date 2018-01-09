@@ -2,7 +2,7 @@
 function bugModal(pmModal) {
     return pmModal({
         controllerAs: 'ctrl',
-        templateUrl: 'templates/modals/bug.tpl.html',
+        templateUrl: require('../../../templates/modals/bug.tpl.html'),
         /* @ngInject */
         controller: function(params) {
             // Variables

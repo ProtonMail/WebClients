@@ -41,7 +41,7 @@ function composerOutside($rootScope, attachmentFileFormat) {
 
     return {
         replace: true,
-        templateUrl: 'templates/directives/outside/composer.tpl.html',
+        templateUrl: require('../../../templates/directives/outside/composer.tpl.html'),
         link(scope, el) {
             const onDragEnter = ({ originalEvent }) => {
                 if (attachmentFileFormat.isUploadAbleType(originalEvent)) {

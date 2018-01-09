@@ -41,7 +41,7 @@ function composerExpiration(notification, gettextCatalog, $rootScope, CONSTANTS)
         scope: {
             message: '='
         },
-        templateUrl: 'templates/composer/composerExpiration.tpl.html',
+        templateUrl: require('../../../templates/composer/composerExpiration.tpl.html'),
         link(scope, el) {
             const $cancel = el.find('.composerExpiration-btn-cancel');
             scope.model = initModel(scope.message);

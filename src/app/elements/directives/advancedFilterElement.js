@@ -119,7 +119,7 @@ function advancedFilterElement(
 
     return {
         replace: true,
-        templateUrl: 'templates/elements/advancedFilterElement.tpl.html',
+        templateUrl: require('../../../templates/elements/advancedFilterElement.tpl.html'),
         link(scope, el) {
             const $btns = el.find('button');
             const onClick = (e) => {

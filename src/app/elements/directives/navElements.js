@@ -16,7 +16,7 @@ function navElements($rootScope, $state, authentication, tools, CONSTANTS) {
 
     return {
         replace: true,
-        templateUrl: 'templates/elements/navElements.tpl.html',
+        templateUrl: require('../../../templates/elements/navElements.tpl.html'),
         link(scope, el) {
             const unsubscribe = [];
 

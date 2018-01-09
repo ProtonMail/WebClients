@@ -22,7 +22,7 @@ function memberModal(pmModal, CONSTANTS, gettextCatalog, organizationModel, subs
 
     return pmModal({
         controllerAs: 'ctrl',
-        templateUrl: 'templates/modals/member.tpl.html',
+        templateUrl: require('../../../templates/modals/member.tpl.html'),
         /* @ngInject */
         controller: function(params) {
             const { organization, minPadding, maxPadding, startValue } = getConfigKeys(params);

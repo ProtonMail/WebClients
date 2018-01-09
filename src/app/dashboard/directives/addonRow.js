@@ -42,7 +42,7 @@ function addonRow(
         restrict: 'E',
         replace: true,
         scope: {},
-        templateUrl: 'templates/dashboard/addonRow.tpl.html',
+        templateUrl: require('../../../templates/dashboard/addonRow.tpl.html'),
         compile(element, { addon, plan }) {
             const initValue = subscriptionModel.count(addon);
             const dispatch = (value) => $rootScope.$emit('dashboard', { type: 'change.addon', data: { addon, plan, value } });

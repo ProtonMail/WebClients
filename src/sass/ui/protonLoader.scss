@@ -51,7 +51,7 @@
         background-color: #FFF;
         box-shadow: 1px 1px 3px rgba(0,0,0,.33), 0 0 2px rgba(0,0,0,.33);
 		background-position: center;
-		background-image:url('../assets/img/loaders/small-spinner.gif');
+		background-image:url(assets('img/loaders/small-spinner.gif'));
 	}
     .protonLoader:after,
     .protonLoaderIcon {

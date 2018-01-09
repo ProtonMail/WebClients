@@ -12,7 +12,7 @@ function composerAskEmbedded($rootScope, gettextCatalog) {
 
     return {
         replace: true,
-        templateUrl: 'templates/directives/composer/composerAskEmbedded.tpl.html',
+        templateUrl: require('../../../templates/directives/composer/composerAskEmbedded.tpl.html'),
         link(scope, el, { action = '' }) {
             const key = ['attachment.upload', action].filter(Boolean).join('.');
             const dispatch = (data) => $rootScope.$emit(key, { type: 'upload', data });

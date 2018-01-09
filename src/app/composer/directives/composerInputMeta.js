@@ -42,7 +42,7 @@ function composerInputMeta() {
 
     return {
         replace: true,
-        templateUrl: 'templates/directives/composer/composerInputMeta.tpl.html',
+        templateUrl: require('../../../templates/directives/composer/composerInputMeta.tpl.html'),
         compile(element, { label, key }) {
             const $label = element[0].querySelector('.composerInputMeta-label');
             const $input = element[0].querySelector('.composerInputMeta-autocomplete');

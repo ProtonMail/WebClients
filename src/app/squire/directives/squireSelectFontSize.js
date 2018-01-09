@@ -4,7 +4,7 @@ function squireSelectFontSize(squireDropdown, editorModel) {
 
     return {
         replace: true,
-        templateUrl: 'templates/squire/squireSelectFontSize.tpl.html',
+        templateUrl: require('../../../templates/squire/squireSelectFontSize.tpl.html'),
         link(scope, el) {
             const container = squireDropdown(scope.message);
             const { editor } = editorModel.find(scope.message);

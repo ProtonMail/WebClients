@@ -8,7 +8,7 @@ function bridgeFreePanel(gettextCatalog, notification) {
         replace: true,
         restrict: 'E',
         scope: {},
-        templateUrl: 'templates/bridge/bridgeFreePanel.tpl.html',
+        templateUrl: require('../../../templates/bridge/bridgeFreePanel.tpl.html'),
         link(scope, el) {
             const $btn = el.find('.bridgeFreePanel-btn');
 

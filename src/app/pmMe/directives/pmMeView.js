@@ -4,7 +4,7 @@ function pmMeView($rootScope, authentication) {
         replace: true,
         restrict: 'E',
         scope: {},
-        templateUrl: 'templates/pmMe/pmMeView.tpl.html',
+        templateUrl: require('../../../templates/pmMe/pmMeView.tpl.html'),
         link(scope) {
             scope.name = authentication.user.Name;
             scope.hasPmMe = authentication.hasPmMe();

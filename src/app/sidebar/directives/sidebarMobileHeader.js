@@ -2,7 +2,7 @@
 const sidebarMobileHeader = (authentication) => ({
     scope: {},
     replace: true,
-    templateUrl: 'templates/sidebar/sidebarMobileHeader.tpl.html',
+    templateUrl: require('../../../templates/sidebar/sidebarMobileHeader.tpl.html'),
     link(scope) {
         // IF the user doesn't have any activated emails, Addresses is empty
         const [{ Email = '' } = {}] = authentication.user.Addresses || [];

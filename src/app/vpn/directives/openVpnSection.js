@@ -4,7 +4,7 @@ function openVpnSection(vpnModel, changeVPNNameModal, changeVPNPasswordModal) {
         restrict: 'E',
         replace: true,
         scope: {},
-        templateUrl: 'templates/vpn/openVpnSection.tpl.html',
+        templateUrl: require('../../../templates/vpn/openVpnSection.tpl.html'),
         link(scope) {
             vpnModel.fetch().then(({ Name, Password }) => {
                 scope.VPNName = Name;

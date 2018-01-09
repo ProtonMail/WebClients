@@ -50,7 +50,7 @@ function chooseLayoutBtns(
 
     return {
         replace: true,
-        templateUrl: 'templates/ui/chooseLayoutBtns.tpl.html',
+        templateUrl: require('../../../templates/ui/chooseLayoutBtns.tpl.html'),
         link(scope, el) {
             const $a = el.find('a');
             const onClick = (e) => {

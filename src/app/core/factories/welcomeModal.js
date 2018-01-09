@@ -8,7 +8,7 @@ function welcomeModal(pmModal, settingsApi, authentication, networkActivityTrack
     }
     return pmModal({
         controllerAs: 'ctrl',
-        templateUrl: 'templates/modals/welcome.tpl.html',
+        templateUrl: require('../../../templates/modals/welcome.tpl.html'),
         /* @ngInject */
         controller: function(params) {
             this.displayName = authentication.user.DisplayName;

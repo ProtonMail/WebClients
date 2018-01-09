@@ -16,7 +16,7 @@ function payModal(pmModal, Payment, notification, eventManager, gettextCatalog, 
 
     return pmModal({
         controllerAs: 'ctrl',
-        templateUrl: 'templates/modals/pay.tpl.html',
+        templateUrl: require('../../../templates/modals/pay.tpl.html'),
         /* @ngInject */
         controller: function(params) {
             this.checkInvoice = params.checkInvoice;

@@ -4,7 +4,7 @@ function vpnTotal($rootScope, CONSTANTS, customVpnModel, dashboardConfiguration,
         replace: true,
         restrict: 'E',
         scope: {},
-        templateUrl: 'templates/dashboard/vpnTotal.tpl.html',
+        templateUrl: require('../../../templates/dashboard/vpnTotal.tpl.html'),
         link(scope, element) {
             const $amount = element.find('.vpnTotal-amount');
             const updateAmount = () => {

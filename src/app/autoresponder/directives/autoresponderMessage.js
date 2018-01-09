@@ -3,7 +3,7 @@ function autoresponderMessage(autoresponderModel, $rootScope) {
     return {
         replace: true,
         restrict: 'E',
-        templateUrl: 'templates/autoresponder/autoresponderMessage.tpl.html',
+        templateUrl: require('../../../templates/autoresponder/autoresponderMessage.tpl.html'),
         scope: {
             // we need this scope, as we don't have good squire events to push the message on change to the model.
             message: '='

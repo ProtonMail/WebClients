@@ -48,7 +48,7 @@ function activateOrganizationModal(pmModal, gettextCatalog, activateOrganization
 
     return pmModal({
         controllerAs: 'ctrl',
-        templateUrl: 'templates/modals/activateOrganization.tpl.html',
+        templateUrl: require('../../../templates/modals/activateOrganization.tpl.html'),
         /* @ngInject */
         controller: function(params) {
             const context = I18N[params.keyStatus];

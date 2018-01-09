@@ -26,7 +26,7 @@ function vpnColumns($rootScope, CONSTANTS, dashboardConfiguration, dashboardMode
         restrict: 'E',
         replace: true,
         scope: {},
-        templateUrl: 'templates/dashboard/vpnColumns.tpl.html',
+        templateUrl: require('../../../templates/dashboard/vpnColumns.tpl.html'),
         link(scope, element) {
             const amounts = dashboardModel.amounts();
             const update = () => {

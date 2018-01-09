@@ -61,7 +61,7 @@ function addressKeysView(
     return {
         replace: true,
         restrict: 'E',
-        templateUrl: 'templates/address/addressKeysView.tpl.html',
+        templateUrl: require('../../../templates/address/addressKeysView.tpl.html'),
         link(scope) {
             const unsubscribe = $rootScope.$on('updateUser', () => {
                 populateKeys();

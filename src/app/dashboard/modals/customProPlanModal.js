@@ -14,7 +14,7 @@ function customProPlanModal(customProPlanModel, gettextCatalog, pmModal) {
 
     return pmModal({
         controllerAs: 'ctrl',
-        templateUrl: 'templates/dashboard/customProPlanModal.tpl.html',
+        templateUrl: require('../../../templates/dashboard/customProPlanModal.tpl.html'),
         /* @ngInject */
         controller: function(params) {
             customProPlanModel.init();

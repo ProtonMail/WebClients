@@ -48,7 +48,7 @@ function composer(AppModel, $rootScope, embedded, attachmentFileFormat, authenti
 
     return {
         replace: true,
-        templateUrl: 'templates/directives/composer/composer.tpl.html',
+        templateUrl: require('../../../templates/directives/composer/composer.tpl.html'),
         link(scope, el) {
             const onClick = ({ target }) => {
                 if (!/composerHeader-btn/.test(target.classList.toString())) {

@@ -40,7 +40,7 @@ function captcha($rootScope, CONSTANTS, url, $httpParamSerializer) {
 
     return {
         replace: true,
-        templateUrl: 'templates/formUtils/captcha.tpl.html',
+        templateUrl: require('../../../templates/formUtils/captcha.tpl.html'),
         link(scope, el, { token = 'signup' }) {
             const iframe = el.find('iframe');
             const listener = captchaReceiveMessage(iframe);
