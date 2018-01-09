@@ -3,7 +3,7 @@ function sieveLabelInput() {
     return {
         replace: true,
         restrict: 'E',
-        templateUrl: 'templates/filter/sieveLabelInput.tpl.html',
+        templateUrl: require('../../../templates/filter/sieveLabelInput.tpl.html'),
         scope: {
             sieve: '='
         },

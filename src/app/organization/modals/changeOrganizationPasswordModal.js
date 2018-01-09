@@ -2,7 +2,7 @@
 function changeOrganizationPasswordModal(pmModal) {
     return pmModal({
         controllerAs: 'ctrl',
-        templateUrl: 'templates/modals/changeOrganizationPassword.tpl.html',
+        templateUrl: require('../../../templates/modals/changeOrganizationPassword.tpl.html'),
         /* @ngInject */
         controller: function(params) {
             this.newPassword = '';

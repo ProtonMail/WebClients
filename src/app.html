@@ -31,7 +31,6 @@
     <meta name="msapplication-TileImage" content="/assets/favicons/mstile-144x144.png">
     <meta name="theme-color" content="#333366">
     <meta name="apple-itunes-app" content="app-id=979659905"/>
-    <link href="styles.css" rel="stylesheet">
     <custom-theme ng-if="(isLoggedIn && !isLocked)"></custom-theme>
 </head>
 <body ng-class="{
@@ -86,5 +85,7 @@
         window.location = "https://protonmail.com/compatibility";
     }
 </script>
+<script type="text/javascript" src="openpgp.min.js"></script>
+<script type="text/javascript" src="vendor.js"></script>
 </body>
 </html>

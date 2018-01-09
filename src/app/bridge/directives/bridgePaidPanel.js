@@ -4,7 +4,7 @@ function bridgePaidPanel() {
         replace: true,
         restrict: 'E',
         scope: {},
-        templateUrl: 'templates/bridge/bridgePaidPanel.tpl.html'
+        templateUrl: require('../../../templates/bridge/bridgePaidPanel.tpl.html')
     };
 }
 export default bridgePaidPanel;

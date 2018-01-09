@@ -63,7 +63,7 @@ function squireToolbar(CONSTANTS, squireDropdown, editorModel, onCurrentMessage,
 
     return {
         replace: true,
-        templateUrl: 'templates/squire/squireToolbar.tpl.html',
+        templateUrl: require('../../../templates/squire/squireToolbar.tpl.html'),
         link(scope, el) {
             const { editor } = editorModel.find(scope.message);
             const onPathChange = onPathChangeCb(el[0], editor);

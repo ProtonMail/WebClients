@@ -2,7 +2,7 @@
 function paymentModal(pmModal, paymentModalModel) {
     return pmModal({
         controllerAs: 'ctrl',
-        templateUrl: 'templates/modals/payment/modal.tpl.html',
+        templateUrl: require('../../../templates/modals/payment/modal.tpl.html'),
         /* @ngInject */
         controller: function(params) {
             paymentModalModel.set(params);

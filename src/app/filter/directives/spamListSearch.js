@@ -5,7 +5,7 @@ function spamListSearch(spamListModel) {
     return {
         replace: true,
         restrict: 'E',
-        templateUrl: 'templates/filter/spamListSearch.tpl.html',
+        templateUrl: require('../../../templates/filter/spamListSearch.tpl.html'),
         scope: {},
         link(scope, el) {
             const $input = el.find('input');

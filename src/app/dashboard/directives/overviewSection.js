@@ -4,7 +4,7 @@ function overviewSection($rootScope, authentication, organizationModel, subscrip
         replace: true,
         restrict: 'E',
         scope: {},
-        templateUrl: 'templates/dashboard/overviewSection.tpl.html',
+        templateUrl: require('../../../templates/dashboard/overviewSection.tpl.html'),
         link(scope, element) {
             const unsubscribe = [];
             const $buttons = element.find('.scroll');

@@ -4,7 +4,7 @@ function headerSecuredDesktop() {
         restrict: 'E',
         replace: true,
         controller: 'HeaderController',
-        templateUrl: 'templates/ui/header/headerSecuredDesktop.tpl.html'
+        templateUrl: require('../../../../templates/ui/header/headerSecuredDesktop.tpl.html')
     };
 }
 export default headerSecuredDesktop;

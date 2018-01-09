@@ -2,7 +2,7 @@
 function allMessageLabels() {
     return {
         replace: true,
-        templateUrl: 'templates/message/allMessageLabels.tpl.html'
+        templateUrl: require('../../../templates/message/allMessageLabels.tpl.html')
     };
 }
 export default allMessageLabels;

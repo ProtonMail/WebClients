@@ -9,7 +9,7 @@
     align-items: center;
     box-sizing: border-box;
     padding: 100px 2em 0 2em;
-    background:  url("/assets/img/logo/logo.svg") no-repeat $secondary center center;
+    background:  url(assets('img/logo/logo.svg')) no-repeat $secondary center center;
     background-size: 200px;
     color: $white;
     font-size: 1.2em;

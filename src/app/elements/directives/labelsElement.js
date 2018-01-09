@@ -21,7 +21,7 @@ function labelsElement($rootScope, labelsModel, authentication, $state) {
 
     return {
         restrict: 'E',
-        templateUrl: 'templates/elements/labelsElement.tpl.html',
+        templateUrl: require('../../../templates/elements/labelsElement.tpl.html'),
         replace: true,
         scope: {
             element: '='

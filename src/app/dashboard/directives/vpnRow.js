@@ -28,7 +28,7 @@ function vpnRow($rootScope, CONSTANTS, dashboardConfiguration, dashboardModel, g
         restrict: 'E',
         replace: true,
         scope: {},
-        templateUrl: 'templates/dashboard/vpnRow.tpl.html',
+        templateUrl: require('../../../templates/dashboard/vpnRow.tpl.html'),
         link(scope, element, { plan }) {
             const getAmount = () => {
                 const vpnbasic = dashboardModel.amount({ plan, addon: 'vpnbasic' });

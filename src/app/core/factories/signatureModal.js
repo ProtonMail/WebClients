@@ -2,7 +2,7 @@
 function signatureModal(pmModal, authentication) {
     return pmModal({
         controllerAs: 'ctrl',
-        templateUrl: 'templates/modals/signature.tpl.html',
+        templateUrl: require('../../../templates/modals/signature.tpl.html'),
         /* @ngInject */
         controller: function(params) {
             this.defaultDisplayName = authentication.user.DisplayName;

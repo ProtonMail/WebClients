@@ -7,7 +7,7 @@ function btnDownloadAttachments(attachmentDownloader) {
             model: '='
         },
         replace: true,
-        templateUrl: 'templates/attachments/btnDownloadAttachments.tpl.html',
+        templateUrl: require('../../../templates/attachments/btnDownloadAttachments.tpl.html'),
         link(scope, el) {
             const reset = () => el[0].classList.remove(LOAD_CLASSNAME);
             const onClick = (e) => {

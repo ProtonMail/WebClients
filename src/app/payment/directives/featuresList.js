@@ -20,7 +20,7 @@ function featuresList($state, paymentModal) {
         restrict: 'E',
         scope: { ctrl: '=' },
         replace: true,
-        templateUrl: 'templates/payment/featuresList.tpl.html',
+        templateUrl: require('../../../templates/payment/featuresList.tpl.html'),
         link(scope, element) {
             const MAP = scope.ctrl.plans.reduce((acc, plan) => {
                 acc[plan.Name] = plan.Name;

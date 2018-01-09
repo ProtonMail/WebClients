@@ -4,7 +4,7 @@ function defaultSignature($rootScope, signatureModel, CONSTANTS, authentication,
         scope: {},
         replace: true,
         restrict: 'E',
-        templateUrl: 'templates/user/defaultSignature.tpl.html',
+        templateUrl: require('../../../templates/user/defaultSignature.tpl.html'),
         link(scope) {
             const unsubscribe = [];
             scope.protonSignature = {

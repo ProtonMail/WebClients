@@ -2,7 +2,7 @@
 function contactBeforeToLeaveModal(pmModal) {
     return pmModal({
         controllerAs: 'ctrl',
-        templateUrl: 'templates/contact/contactBeforeToLeaveModal.tpl.html',
+        templateUrl: require('../../../templates/contact/contactBeforeToLeaveModal.tpl.html'),
         /* @ngInject */
         controller: function(params) {
             this.save = params.save;

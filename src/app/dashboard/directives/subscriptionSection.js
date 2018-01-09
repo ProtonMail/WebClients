@@ -84,7 +84,7 @@ function subscriptionSection($rootScope, CONSTANTS, subscriptionModel, gettextCa
         scope: { methods: '=' },
         restrict: 'E',
         replace: true,
-        templateUrl: 'templates/dashboard/subscriptionSection.tpl.html',
+        templateUrl: require('../../../templates/dashboard/subscriptionSection.tpl.html'),
         link(scope) {
             const subscription = subscriptionModel.get();
             const unsubscribe = $rootScope.$on('subscription', (event, { type, data = {} }) => {

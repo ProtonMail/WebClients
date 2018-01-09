@@ -54,7 +54,7 @@ function filterModal(
 
     return pmModal({
         controllerAs: 'ctrl',
-        templateUrl: 'templates/filter/modal.tpl.html',
+        templateUrl: require('../../../templates/filter/modal.tpl.html'),
         /* @ngInject */
         controller: function(params, $scope) {
             sieveLint.init();

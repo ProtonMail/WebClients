@@ -10,7 +10,7 @@ function humanVerificationModal($http, $rootScope, pmModal, User, networkActivit
     }
     return pmModal({
         controllerAs: 'ctrl',
-        templateUrl: 'templates/modals/humanVerification.tpl.html',
+        templateUrl: require('../../../templates/modals/humanVerification.tpl.html'),
         /* @ngInject */
         controller: function(params, $scope) {
             const self = this;

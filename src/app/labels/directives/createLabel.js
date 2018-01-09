@@ -13,7 +13,7 @@ function createLabel($rootScope, labelModal) {
     return {
         replace: true,
         restrict: 'E',
-        templateUrl: 'templates/labels/createLabel.tpl.html',
+        templateUrl: require('../../../templates/labels/createLabel.tpl.html'),
         scope: {
             name: '=labelName',
             message: '='

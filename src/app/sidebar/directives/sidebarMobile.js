@@ -2,7 +2,7 @@
 const sidebarMobile = (sidebarModel, $rootScope, authentication, CONSTANTS, AppModel) => ({
     replace: true,
     scope: {},
-    templateUrl: 'templates/partials/sidebar-responsive.tpl.html',
+    templateUrl: require('../../../templates/partials/sidebar-responsive.tpl.html'),
     link(scope) {
         const unsubscribes = [];
 

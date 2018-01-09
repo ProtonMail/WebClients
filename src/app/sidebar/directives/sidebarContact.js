@@ -11,7 +11,7 @@ function sidebarContact($rootScope, backState, contactCache) {
         restrict: 'E',
         replace: true,
         scope: {},
-        templateUrl: 'templates/sidebar/sidebarContact.tpl.html',
+        templateUrl: require('../../../templates/sidebar/sidebarContact.tpl.html'),
         link(scope, element) {
             // const $mergeText = element.find(`.${MERGE_TEXT}`);
             const unsubscribe = $rootScope.$on('contacts', (event, { type = '' }) => {

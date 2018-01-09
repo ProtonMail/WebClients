@@ -8,7 +8,7 @@ function contactList($filter, dispatchers, $state, $stateParams, contactCache) {
         restrict: 'E',
         replace: true,
         scope: {},
-        templateUrl: 'templates/contact/contactList.tpl.html',
+        templateUrl: require('../../../templates/contact/contactList.tpl.html'),
         link(scope, element) {
             const { dispatcher, on, unsubscribe } = dispatchers(['contacts', '$stateChangeSuccess']);
             let lastChecked = null;

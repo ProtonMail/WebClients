@@ -3,7 +3,7 @@ function blackFridayModal($rootScope, $state, authentication, CONSTANTS, pmModal
     const { TWO_YEARS } = CONSTANTS.CYCLE;
     return pmModal({
         controllerAs: 'ctrl',
-        templateUrl: 'templates/blackFriday/blackFridayModal.tpl.html',
+        templateUrl: require('../../../templates/blackFriday/blackFridayModal.tpl.html'),
         /* @ngInject */
         controller: function(params, $scope) {
             const unsubscribe = $rootScope.$on('blackFriday', (event, { type = '' }) => {

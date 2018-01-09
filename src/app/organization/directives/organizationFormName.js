@@ -3,7 +3,7 @@ function organizationFormName(organizationModel) {
     return {
         replace: true,
         scope: {},
-        templateUrl: 'templates/organization/organizationFormName.tpl.html',
+        templateUrl: require('../../../templates/organization/organizationFormName.tpl.html'),
         link(scope, el) {
             const { DisplayName } = organizationModel.get() || {};
             scope.value = DisplayName;

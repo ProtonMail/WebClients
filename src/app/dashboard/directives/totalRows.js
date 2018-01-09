@@ -23,7 +23,7 @@ function totalRows($filter, $rootScope, blackFridayModel, CONSTANTS, dashboardCo
         restrict: 'E',
         replace: true,
         scope: {},
-        templateUrl: 'templates/dashboard/totalRows.tpl.html',
+        templateUrl: require('../../../templates/dashboard/totalRows.tpl.html'),
         link(scope, element, { plan }) {
             const unsubscribe = [];
             const monthly = element.find('.totalRows-monthly-price');

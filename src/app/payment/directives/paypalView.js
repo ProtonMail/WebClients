@@ -8,7 +8,7 @@ function paypalView(notification, Payment, gettextCatalog, CONSTANTS, $q, networ
     return {
         replace: true,
         restrict: 'E',
-        templateUrl: 'templates/payment/paypalView.tpl.html',
+        templateUrl: require('../../../templates/payment/paypalView.tpl.html'),
         scope: {
             amount: '=',
             currency: '=',

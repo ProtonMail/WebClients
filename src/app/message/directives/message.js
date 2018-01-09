@@ -26,7 +26,7 @@ function message($state, $rootScope, cache, displayContent, messageScroll, tools
     return {
         restrict: 'E',
         replace: true,
-        templateUrl: 'templates/message/message.tpl.html',
+        templateUrl: require('../../../templates/message/message.tpl.html'),
         scope: {
             message: '=model',
             marked: '=',

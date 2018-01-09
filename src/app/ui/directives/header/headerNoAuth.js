@@ -2,6 +2,6 @@
 const headerNoAuth = () => ({
     restrict: 'E',
     replace: true,
-    templateUrl: 'templates/ui/header/headerNoAuth.tpl.html'
+    templateUrl: require('../../../../templates/ui/header/headerNoAuth.tpl.html')
 });
 export default headerNoAuth;

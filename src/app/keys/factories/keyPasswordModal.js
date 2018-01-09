@@ -2,7 +2,7 @@
 function keyPasswordModal(pmModal, pmcw, notification, gettextCatalog, passwords, authentication) {
     return pmModal({
         controllerAs: 'ctrl',
-        templateUrl: 'templates/modals/keyPassword.tpl.html',
+        templateUrl: require('../../../templates/modals/keyPassword.tpl.html'),
         /* @ngInject */
         controller: function(params) {
             const self = this;

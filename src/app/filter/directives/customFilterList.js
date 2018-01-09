@@ -13,7 +13,7 @@ function customFilterList(
     return {
         replace: true,
         restrict: 'E',
-        templateUrl: 'templates/filter/customFilterList.tpl.html',
+        templateUrl: require('../../../templates/filter/customFilterList.tpl.html'),
         scope: {},
         link(scope) {
             // Variables

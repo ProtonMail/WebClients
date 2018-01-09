@@ -1,3 +1,4 @@
+const path = require('path');
 const env = require('../env/config');
 
 module.exports = [
@@ -8,7 +9,7 @@ module.exports = [
                 loader: 'ngtemplate-loader',
                 options: {
                     module: 'templates-app',
-                    relativeTo: 'templates/',
+                    relativeTo: path.resolve(__dirname, '../src/templates'),
                     prefix: 'templates',
                     root: 'assets'
                 }

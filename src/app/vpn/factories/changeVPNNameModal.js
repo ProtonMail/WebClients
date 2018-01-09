@@ -5,7 +5,7 @@ function changeVPNNameModal(pmModal, settingsApi, notification, eventManager, ge
 
     return pmModal({
         controllerAs: 'ctrl',
-        templateUrl: 'templates/vpn/changeVPNNameModal.tpl.html',
+        templateUrl: require('../../../templates/vpn/changeVPNNameModal.tpl.html'),
         /* @ngInject */
         controller: function(params) {
             const self = this;

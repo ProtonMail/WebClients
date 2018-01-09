@@ -3,7 +3,7 @@ function emailBlockButton(filterAddressModal) {
     return {
         replace: true,
         restrict: 'E',
-        templateUrl: 'templates/filter/emailBlockButton.tpl.html',
+        templateUrl: require('../../../templates/filter/emailBlockButton.tpl.html'),
         scope: {},
         link(scope, elem, { targetList }) {
             const onClick = () => {

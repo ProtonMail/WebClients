@@ -294,10 +294,10 @@
     width: 17px;
     height: 17px;
     content: " ";
-    background: url("/assets/img/plus.svg") no-repeat center;
+    background: url(assets('img/plus.svg')) no-repeat center;
 }
 
-.contactItem-delete:before { background: url("/assets/img/minus.svg") no-repeat center;}
+.contactItem-delete:before { background: url(assets('img/minus.svg')) no-repeat center;}
 
 .contactItem-row .as-sortable-item-handle::before { display: none }
 

@@ -15,7 +15,7 @@ function atomLoader($rootScope, gettextCatalog) {
 
     return {
         replace: true,
-        templateUrl: 'templates/ui/atomLoader.tpl.html',
+        templateUrl: require('../../../templates/ui/atomLoader.tpl.html'),
         link(scope, el, { translationKey, loaderTheme }) {
             let currentContent;
             const $textLoader = el[0].querySelector('.atomLoader-text');

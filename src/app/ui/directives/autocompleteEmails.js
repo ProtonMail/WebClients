@@ -234,7 +234,7 @@ function autocompleteEmails($rootScope, autocompleteEmailsModel, regexEmail, aut
             list: '=emails'
         },
         replace: true,
-        templateUrl: 'templates/ui/autocompleteEmails.tpl.html',
+        templateUrl: require('../../../templates/ui/autocompleteEmails.tpl.html'),
         compile: autocompleteBuilder(link)
     };
 }

@@ -7,7 +7,7 @@ function squireSelectColor(onCurrentMessage, editorModel) {
     return {
         restrict: 'E',
         replace: true,
-        templateUrl: 'templates/squire/squireSelectColor.tpl.html',
+        templateUrl: require('../../../templates/squire/squireSelectColor.tpl.html'),
         link(scope, el) {
             const $i = el[0].querySelector('mark');
             const $popover = el[0].querySelector('.squireSelectColor-popover');

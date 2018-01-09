@@ -3,7 +3,7 @@ function paginatorScope($rootScope) {
     return {
         restrict: 'E',
         replace: true,
-        templateUrl: 'templates/directives/paginatorScope.tpl.html',
+        templateUrl: require('../../../templates/directives/paginatorScope.tpl.html'),
         scope: {
             page: '=',
             totalItems: '=',

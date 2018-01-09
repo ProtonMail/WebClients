@@ -23,7 +23,7 @@ function dropdownLabels($rootScope, $timeout, labelsModel, authentication, event
 
     return {
         restrict: 'E',
-        templateUrl: 'templates/directives/dropdownLabels.tpl.html',
+        templateUrl: require('../../../templates/directives/dropdownLabels.tpl.html'),
         replace: true,
         scope: {
             getMessages: '=messages',

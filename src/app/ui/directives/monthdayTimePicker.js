@@ -5,7 +5,7 @@ function monthdayTimePicker($rootScope, timepickerModel, datetimeErrorCombiner) 
     return {
         replace: true,
         restrict: 'E',
-        templateUrl: 'templates/ui/monthdayTimePicker.tpl.html',
+        templateUrl: require('../../../templates/ui/monthdayTimePicker.tpl.html'),
         scope: {
             form: '='
         },

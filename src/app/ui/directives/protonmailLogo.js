@@ -2,7 +2,7 @@
 function protonmailLogo(authentication, CONSTANTS, organizationModel, subscriptionModel, $rootScope) {
     return {
         restrict: 'E',
-        templateUrl: 'templates/directives/ui/protonmailLogo.tpl.html',
+        templateUrl: require('../../../templates/directives/ui/protonmailLogo.tpl.html'),
         replace: true,
         link(scope, element) {
             const { PLUS, PROFESSIONAL, VISIONARY } = CONSTANTS.PLANS.PLAN;

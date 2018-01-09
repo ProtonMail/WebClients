@@ -3,7 +3,7 @@ function commandPalette($rootScope, AppModel) {
     return {
         replace: true,
         scope: {},
-        templateUrl: 'templates/command/commandPalette.tpl.html',
+        templateUrl: require('../../../templates/command/commandPalette.tpl.html'),
         link(scope, el) {
             let $input;
 

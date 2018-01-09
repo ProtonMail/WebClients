@@ -4,7 +4,7 @@ function contactPlaceholder() {
         restrict: 'E',
         replace: true,
         scope: {},
-        templateUrl: 'templates/contact/contactPlaceholder.tpl.html'
+        templateUrl: require('../../../templates/contact/contactPlaceholder.tpl.html')
     };
 }
 export default contactPlaceholder;

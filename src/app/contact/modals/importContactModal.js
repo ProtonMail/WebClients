@@ -2,7 +2,7 @@
 function importContactModal(pmModal, dispatchers) {
     return pmModal({
         controllerAs: 'ctrl',
-        templateUrl: 'templates/contact/importContactModal.tpl.html',
+        templateUrl: require('../../../templates/contact/importContactModal.tpl.html'),
         /* @ngInject */
         controller: function(params, $scope) {
             const { on, unsubscribe } = dispatchers();

@@ -1,7 +1,7 @@
 /* @ngInject */
 const newBugReport = ($rootScope) => ({
     replace: true,
-    templateUrl: 'templates/bugReport/newBugReport.tpl.html',
+    templateUrl: require('../../../templates/bugReport/newBugReport.tpl.html'),
     link(scope, el) {
         const onClick = () => {
             $rootScope.$emit('bugReport', {

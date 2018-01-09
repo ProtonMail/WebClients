@@ -10,7 +10,7 @@ function weekdayTimePicker(dateUtils, $rootScope, datetimeErrorCombiner, timepic
     return {
         replace: true,
         restrict: 'E',
-        templateUrl: 'templates/ui/weekdayTimePicker.tpl.html',
+        templateUrl: require('../../../templates/ui/weekdayTimePicker.tpl.html'),
         scope: {
             form: '='
         },

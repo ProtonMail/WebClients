@@ -2,7 +2,7 @@
 function contactClear() {
     return {
         replace: true,
-        templateUrl: 'templates/contact/contactClear.tpl.html'
+        templateUrl: require('../../../templates/contact/contactClear.tpl.html')
     };
 }
 export default contactClear;

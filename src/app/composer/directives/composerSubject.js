@@ -1,7 +1,7 @@
 /* @ngInject */
 const composerSubject = (editorModel) => ({
     replace: true,
-    templateUrl: 'templates/directives/composer/composerSubject.tpl.html',
+    templateUrl: require('../../../templates/directives/composer/composerSubject.tpl.html'),
     link(scope, el) {
         const $input = el[0].querySelector('input');
 

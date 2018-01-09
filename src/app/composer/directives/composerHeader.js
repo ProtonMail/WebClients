@@ -1,6 +1,6 @@
 /* @ngInject */
 const composerHeader = () => ({
     replace: true,
-    templateUrl: 'templates/directives/composer/composer-header.tpl.html'
+    templateUrl: require('../../../templates/directives/composer/composer-header.tpl.html')
 });
 export default composerHeader;

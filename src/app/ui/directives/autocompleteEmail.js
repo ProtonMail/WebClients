@@ -92,7 +92,7 @@ function autocompleteEmail($rootScope, autocompleteEmailsModel, regexEmail, auto
             email: '='
         },
         replace: true,
-        templateUrl: 'templates/ui/autocompleteEmail.tpl.html',
+        templateUrl: require('../../../templates/ui/autocompleteEmail.tpl.html'),
         compile: autocompleteBuilder(link)
     };
 }

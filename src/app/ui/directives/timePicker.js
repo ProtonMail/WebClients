@@ -5,7 +5,7 @@ function timePicker($rootScope, timepickerModel) {
     return {
         replace: true,
         restrict: 'E',
-        templateUrl: 'templates/ui/timePicker.tpl.html',
+        templateUrl: require('../../../templates/ui/timePicker.tpl.html'),
         require: '?ngModel',
         scope: {},
         link(scope, elem, { eventKey }, modelCtrl) {

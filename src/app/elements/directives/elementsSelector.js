@@ -58,7 +58,7 @@ function elementsSelector($rootScope, authentication, gettextCatalog, dedentTpl)
 
     return {
         replace: true,
-        templateUrl: 'templates/elements/elementsSelector.tpl.html',
+        templateUrl: require('../../../templates/elements/elementsSelector.tpl.html'),
         compile(element) {
             const dropdown = element[0].querySelector('.pm_dropdown');
             dropdown.insertAdjacentHTML('beforeEnd', getTemplate());

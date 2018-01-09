@@ -53,7 +53,7 @@ function humanVerification(AppModel, User, $state, signupModel, networkActivityT
         scope: {
             model: '='
         },
-        templateUrl: 'templates/user/humanVerification.tpl.html',
+        templateUrl: require('../../../templates/user/humanVerification.tpl.html'),
         link(scope, el, { offerType = CONSTANTS.INVITE_MAIL }) {
             const unsubscribe = [];
             const $formSMS = el.find(SELECTOR.FORM_SMS);

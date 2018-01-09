@@ -28,7 +28,7 @@ function contactToolbar($rootScope, $state, $stateParams, CONSTANTS, contactCach
         restrict: 'E',
         replace: true,
         scope: {},
-        templateUrl: 'templates/contact/contactToolbar.tpl.html',
+        templateUrl: require('../../../templates/contact/contactToolbar.tpl.html'),
         link(scope, element) {
             const { on, unsubscribe, dispatcher } = dispatchers(['composer.new', 'contacts', '$stateChangeSuccess']);
 

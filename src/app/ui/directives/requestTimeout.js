@@ -2,7 +2,7 @@
 function requestTimeout(AppModel) {
     return {
         replace: true,
-        templateUrl: 'templates/directives/ui/requestTimeout.tpl.html',
+        templateUrl: require('../../../templates/directives/ui/requestTimeout.tpl.html'),
         link(scope, element) {
             const btn = element[0].querySelector('.request-timeout-button-refresh');
 

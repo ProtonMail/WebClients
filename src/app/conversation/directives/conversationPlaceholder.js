@@ -1,6 +1,6 @@
 /* @ngInject */
 const conversationPlaceholder = () => ({
     replace: true,
-    templateUrl: 'templates/partials/conversation-placeholder.tpl.html'
+    templateUrl: require('../../../templates/partials/conversation-placeholder.tpl.html')
 });
 export default conversationPlaceholder;

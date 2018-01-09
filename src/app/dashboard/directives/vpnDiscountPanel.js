@@ -4,7 +4,7 @@ function vpnDiscountPanel() {
         restrict: 'E',
         replace: true,
         scope: {},
-        templateUrl: 'templates/dashboard/vpnDiscountPanel.tpl.html'
+        templateUrl: require('../../../templates/dashboard/vpnDiscountPanel.tpl.html')
     };
 }
 export default vpnDiscountPanel;

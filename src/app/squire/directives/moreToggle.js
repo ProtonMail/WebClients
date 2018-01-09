@@ -10,7 +10,7 @@ function moreToggle(squireDropdown, $rootScope, toggleModeEditor, gettextCatalog
 
     return {
         replace: true,
-        templateUrl: 'templates/squire/moreToggle.tpl.html',
+        templateUrl: require('../../../templates/squire/moreToggle.tpl.html'),
         link(scope, el) {
             const unsubscribe = [];
             const button = el[0].querySelector('.squireToolbar-action-modeEditor');

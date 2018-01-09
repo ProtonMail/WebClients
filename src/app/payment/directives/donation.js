@@ -48,7 +48,7 @@ function donation(CONSTANTS, cardModel, gettextCatalog, $rootScope, paymentUtils
             method: '=?',
             type: '@'
         },
-        templateUrl: 'templates/payment/donation.tpl.html',
+        templateUrl: require('../../../templates/payment/donation.tpl.html'),
         link(scope, el, { action = '' }) {
             const $items = el.find(SELECTOR.SELECT_CURRENCY);
             const $other = el.find(SELECTOR.INPUT_OTHER);

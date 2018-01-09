@@ -11,7 +11,7 @@ function contactNoResult($rootScope) {
 
     return {
         replace: true,
-        templateUrl: 'templates/contact/contactNoResult.tpl.html',
+        templateUrl: require('../../../templates/contact/contactNoResult.tpl.html'),
         link(scope, element) {
             element.on('click', onClick);
             scope.$on('$destroy', () => {

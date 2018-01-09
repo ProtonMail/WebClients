@@ -2,7 +2,7 @@
 function cardModal(pmModal, Payment, gettextCatalog, cardModel, networkActivityTracker, paymentModel) {
     return pmModal({
         controllerAs: 'ctrl',
-        templateUrl: 'templates/modals/card.tpl.html',
+        templateUrl: require('../../../templates/modals/card.tpl.html'),
         /* @ngInject */
         controller: function(params) {
             // Variables

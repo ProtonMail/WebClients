@@ -69,7 +69,7 @@ function addLinkPopover(editorModel, CONSTANTS, squireExecAction, regexEmail, on
 
     return {
         replace: true,
-        templateUrl: 'templates/squire/addLinkPopover.tpl.html',
+        templateUrl: require('../../../templates/squire/addLinkPopover.tpl.html'),
         link(scope, el, { name }) {
             const onAction = (type, data = {}) => {
                 if (type === 'popover.form') {

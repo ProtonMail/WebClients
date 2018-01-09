@@ -10,7 +10,7 @@ function btnAdvancedSearch($rootScope) {
 
     return {
         replace: true,
-        templateUrl: 'templates/search/btnAdvancedSearch.tpl.html',
+        templateUrl: require('../../../templates/search/btnAdvancedSearch.tpl.html'),
         link(scope, el, { action = 'show' }) {
             const $icon = el[0].querySelector('.btnAdvancedSearch-icon-desktop');
             let isOpen = false;

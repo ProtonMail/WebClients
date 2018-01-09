@@ -17,7 +17,7 @@
 .addVpn-button-wrapper:before {
     content:"";
     display: inline-block;
-    background: url('/assets/img/logo/protonvpn-sign-green.svg') no-repeat 35% 0%;
+    background: url(assets('img/logo/protonvpn-sign-green.svg')) no-repeat 35% 0%;
     background-size: 3em;
     height: 2em;
     width: 2em;

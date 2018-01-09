@@ -5,7 +5,7 @@ function navigation($rootScope, blackFridayModel) {
     return {
         restrict: 'E',
         replace: true,
-        templateUrl: 'templates/ui/navigation/navigation.tpl.html',
+        templateUrl: require('../../../../templates/ui/navigation/navigation.tpl.html'),
         link(scope, element) {
             const unsubscribe = [];
             const update = () => element[0].classList[blackFridayModel.isBlackFridayPeriod(true) ? 'add' : 'remove'](IS_BLACK_FRIDAY_CLASS);

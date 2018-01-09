@@ -6,7 +6,7 @@ function contactItem($rootScope, contactTransformLabel, contactUI, messageModel)
     return {
         restrict: 'E',
         require: '^form',
-        templateUrl: 'templates/directives/contact/contactItem.tpl.html',
+        templateUrl: require('../../../templates/directives/contact/contactItem.tpl.html'),
         scope: {
             form: '=',
             model: '=',

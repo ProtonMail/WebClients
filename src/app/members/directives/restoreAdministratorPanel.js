@@ -2,7 +2,7 @@
 function restoreAdministratorPanel(organizationKeysModel, organizationModel) {
     return {
         restrict: 'E',
-        templateUrl: 'templates/members/restoreAdministratorPanel.tpl.html',
+        templateUrl: require('../../../templates/members/restoreAdministratorPanel.tpl.html'),
         link(scope, el) {
             const $btn = el.find('button');
 

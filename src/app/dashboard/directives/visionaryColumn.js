@@ -4,7 +4,7 @@ function visionaryColumn() {
         restrict: 'E',
         replace: true,
         scope: {},
-        templateUrl: 'templates/dashboard/visionaryColumn.tpl.html'
+        templateUrl: require('../../../templates/dashboard/visionaryColumn.tpl.html')
     };
 }
 export default visionaryColumn;

@@ -4,7 +4,7 @@ function bridgeView(authentication) {
         replace: true,
         restrict: 'E',
         scope: {},
-        templateUrl: 'templates/bridge/bridgeView.tpl.html',
+        templateUrl: require('../../../templates/bridge/bridgeView.tpl.html'),
         link(scope) {
             scope.isFree = !(authentication.user.Subscribed & 1);
         }

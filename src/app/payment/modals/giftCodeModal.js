@@ -5,7 +5,7 @@ function giftCodeModal($rootScope, gettextCatalog, notification, paymentModel, p
     };
     return pmModal({
         controllerAs: 'ctrl',
-        templateUrl: 'templates/payment/giftCodeModal.tpl.html',
+        templateUrl: require('../../../templates/payment/giftCodeModal.tpl.html'),
         /* @ngInject */
         controller: function(params) {
             const unsubscribe = $rootScope.$on('payments', (e, { type }) => {

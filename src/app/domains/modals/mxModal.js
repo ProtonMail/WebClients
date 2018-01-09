@@ -2,7 +2,7 @@
 function mxModal(pmModal, $rootScope) {
     return pmModal({
         controllerAs: 'ctrl',
-        templateUrl: 'templates/modals/domain/mx.tpl.html',
+        templateUrl: require('../../../templates/modals/domain/mx.tpl.html'),
         /* @ngInject */
         controller: function(params) {
             this.domain = params.domain;

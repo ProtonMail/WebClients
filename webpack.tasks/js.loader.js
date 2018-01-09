@@ -3,8 +3,14 @@ const env = require('../env/config');
 const pipe = [
     {
         test: /\.js$/,
-        exclude: /(node_modules|vendor|src\/librairies)/,
+        use: ['source-map-loader'],
+        enforce: 'pre'
+    },
+    {
+        test: /\.js$/,
+        exclude: /node_modules/,
         use: [
+            'source-map-loader',
             {
                 loader: 'babel-loader',
                 options: {

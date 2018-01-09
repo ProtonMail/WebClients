@@ -2,7 +2,7 @@
 function dkimModal(pmModal, $rootScope) {
     return pmModal({
         controllerAs: 'ctrl',
-        templateUrl: 'templates/modals/domain/dkim.tpl.html',
+        templateUrl: require('../../../templates/modals/domain/dkim.tpl.html'),
         /* @ngInject */
         controller: function(params) {
             this.domain = params.domain;

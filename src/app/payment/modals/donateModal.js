@@ -2,7 +2,7 @@
 function donateModal($rootScope, pmModal) {
     return pmModal({
         controllerAs: 'ctrl',
-        templateUrl: 'templates/modals/donate.tpl.html',
+        templateUrl: require('../../../templates/modals/donate.tpl.html'),
         /* @ngInject */
         controller: function(params) {
             this.typeOfModal = params.type;

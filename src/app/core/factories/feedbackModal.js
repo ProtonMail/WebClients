@@ -2,7 +2,7 @@
 function feedbackModal(pmModal, Bug, notification, networkActivityTracker, gettextCatalog) {
     return pmModal({
         controllerAs: 'ctrl',
-        templateUrl: 'templates/modals/feedback.tpl.html',
+        templateUrl: require('../../../templates/modals/feedback.tpl.html'),
         /* @ngInject */
         controller: function(params) {
             this.fdbckTxt = '';

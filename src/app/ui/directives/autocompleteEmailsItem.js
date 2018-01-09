@@ -29,7 +29,7 @@ function autocompleteEmailsItem(CONSTANTS, regexEmail, sanitize) {
 
     return {
         replace: true,
-        templateUrl: 'templates/ui/autoCompleteEmailsItem.tpl.html',
+        templateUrl: require('../../../templates/ui/autoCompleteEmailsItem.tpl.html'),
         link(scope, el) {
             const $span = el.find('span');
             const updateBtn = buttonState(el[0]);

@@ -8,7 +8,7 @@ function settingsMenu(authentication, backState, CONSTANTS, networkActivityTrack
     return {
         replace: true,
         scope: {},
-        templateUrl: 'templates/directives/ui/settingsMenu.tpl.html',
+        templateUrl: require('../../../templates/directives/ui/settingsMenu.tpl.html'),
         link(scope, element) {
             const unsubscribe = [];
             const isMember = () => authentication.user.Role === CONSTANTS.PAID_MEMBER_ROLE;

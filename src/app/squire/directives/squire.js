@@ -47,7 +47,7 @@ function squire(squireEditor, embedded, editorListener, $rootScope, sanitize, to
             allowDataUri: '='
         },
         replace: true,
-        templateUrl: 'templates/directives/squire.tpl.html',
+        templateUrl: require('../../../templates/directives/squire.tpl.html'),
         link(scope, el, { typeContent = 'message', action = '', id }) {
             scope.data = {};
             const $iframe = el.find('iframe.squireIframe');

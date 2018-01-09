@@ -11,7 +11,7 @@ function signupCreationProcess($rootScope) {
     return {
         replace: true,
         scope: {},
-        templateUrl: 'templates/user/signupCreationProcess.tpl.html',
+        templateUrl: require('../../../templates/user/signupCreationProcess.tpl.html'),
         link(scope) {
             scope.flow = {};
             const unsubscribe = $rootScope.$on('signup', (e, { type, data }) => {

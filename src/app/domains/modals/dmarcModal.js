@@ -2,7 +2,7 @@
 function dmarcModal(pmModal, $rootScope) {
     return pmModal({
         controllerAs: 'ctrl',
-        templateUrl: 'templates/modals/domain/dmarc.tpl.html',
+        templateUrl: require('../../../templates/modals/domain/dmarc.tpl.html'),
         /* @ngInject */
         controller: function(params) {
             this.domain = params.domain;

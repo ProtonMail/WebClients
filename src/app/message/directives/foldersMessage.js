@@ -32,7 +32,7 @@ function foldersMessage($rootScope, gettextCatalog, $compile, mailboxIdentifersT
     const { getTemplateLabels, getTemplateType } = mailboxIdentifersTemplate({ MAP_LABELS, MAP_TYPES });
 
     return {
-        templateUrl: 'templates/message/foldersMessage.tpl.html',
+        templateUrl: require('../../../templates/message/foldersMessage.tpl.html'),
         replace: true,
         link(scope, el) {
             const build = (event, { LabelIDs, Type }) => {

@@ -8,7 +8,7 @@ function plainTextArea(authentication, $rootScope) {
 
     return {
         replace: true,
-        templateUrl: 'templates/squire/plainTextArea.tpl.html',
+        templateUrl: require('../../../templates/squire/plainTextArea.tpl.html'),
         link(scope, el) {
             /*
                 Set the selection to the start instead of the end just like with squire.

@@ -6,7 +6,7 @@ function usernamePassword() {
             form: '=',
             model: '='
         },
-        templateUrl: 'templates/user/usernamePassword.tpl.html'
+        templateUrl: require('../../../templates/user/usernamePassword.tpl.html')
     };
 }
 export default usernamePassword;

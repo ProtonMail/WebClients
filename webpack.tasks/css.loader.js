@@ -11,7 +11,9 @@ if (env.isDistRelease()) {
 module.exports = [
     {
         test: /\.css$/,
+        exclude: /node_modules/,
         use: ExtractTextPlugin.extract({
+            allChunks: true,
             use: [
                 {
                     loader: 'css-loader',
@@ -25,8 +27,10 @@ module.exports = [
     },
     {
         test: /\.scss$/,
+        exclude: /node_modules/,
         use: ['css-hot-loader'].concat(
             ExtractTextPlugin.extract({
+                allChunks: true,
                 use: [
                     {
                         loader: 'css-loader',
@@ -41,9 +45,9 @@ module.exports = [
                         }
                     },
                     {
-                        loader: 'sass-loader',
+                        loader: 'fast-sass-loader',
                         options: {
-                            includePaths: [path.resolve('./src/sass')]
+                            // includePaths: [path.resolve('./src/sass')]
                         }
                     }
                 ]

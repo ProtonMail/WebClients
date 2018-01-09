@@ -73,7 +73,7 @@ function conversation(
         scope: {
             conversation: '='
         },
-        templateUrl: 'templates/partials/conversation.tpl.html',
+        templateUrl: require('../../../templates/partials/conversation.tpl.html'),
         link(scope) {
             let messagesCached = [];
             const { on, unsubscribe, dispatcher } = dispatchers([

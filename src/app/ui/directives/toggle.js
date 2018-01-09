@@ -10,7 +10,7 @@ function toggle(gettextCatalog, $rootScope) {
     return {
         restrict: 'E',
         replace: true,
-        templateUrl: 'templates/directives/toggle.tpl.html',
+        templateUrl: require('../../../templates/directives/toggle.tpl.html'),
         scope: {
             id: '@', // ID if uniq logic needed
             status: '=', // status value

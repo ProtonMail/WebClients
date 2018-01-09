@@ -20,6 +20,10 @@ import utils from './utils/index';
 import CONFIG from './config';
 import constants from './constants';
 import routes from './routes';
+import '../sass/app.scss';
+
+const templates = require.context('../templates', true, /\.html$/);
+templates.keys().forEach(templates);
 
 angular
     .module('proton', [
@@ -56,7 +60,7 @@ angular
     .constant('CONFIG', CONFIG)
     .config((urlProvider, CONFIG, notificationProvider) => {
         urlProvider.setBaseUrl(CONFIG.apiUrl);
-        notificationProvider.template('templates/notifications/base.tpl.html');
+        notificationProvider.template(require('../templates/notifications/base.tpl.html'));
     })
     .run((
         $rootScope,

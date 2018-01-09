@@ -39,7 +39,7 @@ function ptStar($rootScope, CONSTANTS, gettextCatalog, tools, actionConversation
             model: '='
         },
         replace: true,
-        templateUrl: 'templates/elements/ptStar.tpl.html',
+        templateUrl: require('../../../templates/elements/ptStar.tpl.html'),
         link(scope, el, attr) {
             const type = attr.ptStarType || tools.getTypeList();
 

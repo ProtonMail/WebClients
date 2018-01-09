@@ -44,7 +44,7 @@ function foldersElement($rootScope, $state, gettextCatalog, $compile, mailboxIde
     const { getTemplateLabels } = mailboxIdentifersTemplate({ MAP_LABELS });
 
     return {
-        templateUrl: 'templates/elements/foldersElement.tpl.html',
+        templateUrl: require('../../../templates/elements/foldersElement.tpl.html'),
         replace: true,
         scope: {
             conversation: '='

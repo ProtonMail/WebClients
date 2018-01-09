@@ -3,7 +3,7 @@ function autoresponderTimePicker($rootScope, autoresponderModel, timepickerModel
     return {
         replace: true,
         restrict: 'E',
-        templateUrl: 'templates/autoresponder/autoresponderTimePicker.tpl.html',
+        templateUrl: require('../../../templates/autoresponder/autoresponderTimePicker.tpl.html'),
         scope: {
             form: '='
         },

@@ -5,7 +5,7 @@ function signupHumanForm($rootScope) {
         scope: {
             account: '='
         },
-        templateUrl: 'templates/user/signupHumanForm.tpl.html',
+        templateUrl: require('../../../templates/user/signupHumanForm.tpl.html'),
         link(scope, el) {
             const onSubmit = (e) => {
                 e.preventDefault();

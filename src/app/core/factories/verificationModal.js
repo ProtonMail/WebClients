@@ -2,7 +2,7 @@
 function verificationModal(pmModal, $rootScope) {
     return pmModal({
         controllerAs: 'ctrl',
-        templateUrl: 'templates/modals/domain/verification.tpl.html',
+        templateUrl: require('../../../templates/modals/domain/verification.tpl.html'),
         /* @ngInject */
         controller: function(params) {
             this.domain = params.domain;

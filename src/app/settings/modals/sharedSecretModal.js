@@ -2,7 +2,7 @@
 function sharedSecretModal(authentication, pmModal, webcrypto) {
     return pmModal({
         controllerAs: 'ctrl',
-        templateUrl: 'templates/modals/twofactor/sharedSecret.tpl.html',
+        templateUrl: require('../../../templates/modals/twofactor/sharedSecret.tpl.html'),
         /* @ngInject */
         controller: function(params) {
             const self = this;

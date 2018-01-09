@@ -76,7 +76,7 @@ function contactLoaderModal($rootScope, gettextCatalog, pmModal) {
 
     return pmModal({
         controllerAs: 'ctrl',
-        templateUrl: 'templates/contact/contactLoaderModal.tpl.html',
+        templateUrl: require('../../../templates/contact/contactLoaderModal.tpl.html'),
         /* @ngInject */
         controller: function(params) {
             const unsubscribe = [];

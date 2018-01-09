@@ -1,6 +1,6 @@
 /* @ngInject */
 const loginForm = () => ({
     replace: true,
-    templateUrl: 'templates/authentication/loginForm.tpl.html'
+    templateUrl: require('../../../templates/authentication/loginForm.tpl.html')
 });
 export default loginForm;

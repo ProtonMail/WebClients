@@ -4,7 +4,7 @@ function slider($rootScope) {
         replace: true,
         restrict: 'E',
         scope: { value: '=', options: '=' },
-        templateUrl: 'templates/ui/slider.tpl.html',
+        templateUrl: require('../../../templates/ui/slider.tpl.html'),
         link(scope, element) {
             const unsubscribe = [];
             const slider = element[0].querySelector('.slider');

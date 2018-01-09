@@ -11,7 +11,7 @@ function durationselect($rootScope, autoresponderModel, autoresponderLanguage) {
     return {
         replace: true,
         restrict: 'E',
-        templateUrl: 'templates/autoresponder/durationselect.tpl.html',
+        templateUrl: require('../../../templates/autoresponder/durationselect.tpl.html'),
         scope: {},
         link(scope, elem, { disableInput, repeat }) {
             const unsubscribe = [];

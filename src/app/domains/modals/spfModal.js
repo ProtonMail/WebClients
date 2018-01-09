@@ -2,7 +2,7 @@
 function spfModal(pmModal, $rootScope) {
     return pmModal({
         controllerAs: 'ctrl',
-        templateUrl: 'templates/modals/domain/spf.tpl.html',
+        templateUrl: require('../../../templates/modals/domain/spf.tpl.html'),
         /* @ngInject */
         controller: function(params) {
             this.domain = params.domain;

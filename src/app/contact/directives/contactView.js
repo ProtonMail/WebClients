@@ -7,7 +7,7 @@ function contactView($rootScope, $stateParams, contactCache) {
         restrict: 'E',
         replace: true,
         scope: {},
-        templateUrl: 'templates/views/contacts.tpl.html',
+        templateUrl: require('../../../templates/views/contacts.tpl.html'),
         link(scope, element) {
             const unsubscribe = $rootScope.$on('contacts', (event, { type = '' }) => {
                 type === 'contactsUpdated' && scope.$applyAsync(() => update());

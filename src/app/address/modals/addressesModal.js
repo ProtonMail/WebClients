@@ -2,7 +2,7 @@
 function addressesModal(pmModal, CONSTANTS, $rootScope, organizationModel, addressModel, memberActions) {
     return pmModal({
         controllerAs: 'ctrl',
-        templateUrl: 'templates/modals/domain/address.tpl.html',
+        templateUrl: require('../../../templates/modals/domain/address.tpl.html'),
         /* @ngInject */
         controller: function(params) {
             const { domain, members, step, showMember = true } = params;

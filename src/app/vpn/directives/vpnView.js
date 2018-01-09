@@ -12,7 +12,7 @@ function vpnView($rootScope, $state, CONSTANTS, authentication) {
         restrict: 'E',
         replace: true,
         scope: {},
-        templateUrl: 'templates/vpn/vpnView.tpl.html',
+        templateUrl: require('../../../templates/vpn/vpnView.tpl.html'),
         link(scope) {
             const unsubscribes = [];
             const update = () => {

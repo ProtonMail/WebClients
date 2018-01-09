@@ -194,7 +194,7 @@
             display: inline-block;
             width: 17px;
             height: 17px;
-            background: url("/assets/img/plaintext.svg") no-repeat center;
+            background: url(assets('img/plaintext.svg')) no-repeat center;
         }
 
         .squire-popover.makeLink { right: 41px !important }

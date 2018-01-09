@@ -22,23 +22,28 @@ process.on('unhandledRejection', (reason, p) => {
 
 module.exports = {
     stats: 'minimal',
-    devtool: !env.isDistRelease() ? 'eval-source-map' : false, // Done via UglifyJS
+    devtool: !env.isDistRelease() ? 'cheap-module-eval-source-map' : false, // Done via UglifyJS
+    watchOptions: {
+        ignored: [/node_modules/, 'i18n/*.json', /\*\.(gif|jpeg|jpg|ico|png)/]
+    },
     devServer: {
         hot: true,
         stats: 'minimal',
+        host: '0.0.0.0',
+        port: 8080,
+        public: 'localhost',
         historyApiFallback: true,
-        contentBase: path.resolve('./build'),
-        publicPath: '/',
-        filename: 'app.js'
+        disableHostCheck: true,
+        contentBase: path.resolve('./build')
     },
     entry: {
-        templates: TEMPLATES_GLOB,
-        app: './src/app/app.js',
+        app: ['./src/app/app.js'],
         appLazy: ['./src/app/appLazy.js'],
-        styles: CSS_GLOB.concat(['./src/sass/app.scss']),
         html: './src/app.html'
     },
     resolve: {
+        unsafeCache: true,
+        symlinks: false,
         alias: {
             sass: path.resolve('./src/sass'),
             assets: path.resolve('./src/assets')

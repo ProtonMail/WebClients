@@ -7,7 +7,7 @@ function searchContact($rootScope, $state, $stateParams, contactCache, gettextCa
         replace: true,
         restrict: 'E',
         scope: {},
-        templateUrl: 'templates/search/searchContact.tpl.html',
+        templateUrl: require('../../../templates/search/searchContact.tpl.html'),
         link(scope, element) {
             const $input = element[0].querySelector('.searchInput');
             scope.query = $stateParams.keyword || '';

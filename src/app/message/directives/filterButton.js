@@ -13,7 +13,7 @@ function filterButton(filterModal, lazyLoader) {
         restrict: 'E',
         replace: true,
         scope: { message: '=' },
-        templateUrl: 'templates/message/filterButton.tpl.html',
+        templateUrl: require('../../../templates/message/filterButton.tpl.html'),
         link(scope, el) {
             scope.model = {};
             const $btn = el[0].querySelector('.filterButton-btn-next');

@@ -32,7 +32,7 @@ function progressUpload($rootScope, CONSTANTS) {
             model: '='
         },
         replace: true,
-        templateUrl: 'templates/directives/ui/progressUpload.tpl.html',
+        templateUrl: require('../../../templates/directives/ui/progressUpload.tpl.html'),
         link(scope, el) {
             const tester = isAttachementOfMessage(scope.model);
 

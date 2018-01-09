@@ -2,7 +2,7 @@
 const protonLoader = ($rootScope) => ({
     replace: true,
     scope: {},
-    templateUrl: 'templates/directives/ui/protonLoader.tpl.html',
+    templateUrl: require('../../../templates/directives/ui/protonLoader.tpl.html'),
     link(scope, el) {
         $rootScope.$on('networkActivity', (e, type) => {
             type === 'load' && _rAF(() => el[0].classList.add('show'));

@@ -4,7 +4,7 @@ function headerSecuredMobile() {
         restrict: 'E',
         replace: true,
         controller: 'HeaderController',
-        templateUrl: 'templates/ui/header/headerSecuredMobile.tpl.html'
+        templateUrl: require('../../../../templates/ui/header/headerSecuredMobile.tpl.html')
     };
 }
 export default headerSecuredMobile;

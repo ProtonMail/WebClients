@@ -31,7 +31,7 @@ function addFilePopover(editorModel, CONSTANTS, squireExecAction, onCurrentMessa
 
     return {
         replace: true,
-        templateUrl: 'templates/squire/addFilePopover.tpl.html',
+        templateUrl: require('../../../templates/squire/addFilePopover.tpl.html'),
         link(scope, el, { name }) {
             const $embedded = el[0].querySelector('.addFilePopover-btn-embedded');
             const $uri = el[0].querySelector('.addFilePopover-btn-uri');

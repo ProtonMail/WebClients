@@ -7,7 +7,7 @@ function dateTimePicker($rootScope, datetimeErrorCombiner, timepickerModel, date
     return {
         replace: true,
         restrict: 'E',
-        templateUrl: 'templates/ui/dateTimePicker.tpl.html',
+        templateUrl: require('../../../templates/ui/dateTimePicker.tpl.html'),
         scope: {
             form: '='
         },

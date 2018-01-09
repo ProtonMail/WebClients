@@ -7,7 +7,7 @@ function addressModal(pmModal, $rootScope, $state, networkActivityTracker, notif
 
     return pmModal({
         controllerAs: 'ctrl',
-        templateUrl: 'templates/modals/addAddress.tpl.html',
+        templateUrl: require('../../../templates/modals/addAddress.tpl.html'),
         /* @ngInject */
         controller: function(params) {
             const { domains = [], organizationKey = null, members = [] } = params;

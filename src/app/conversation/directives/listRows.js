@@ -1,6 +1,6 @@
 /* @ngInject */
 const listRows = () => ({
     replace: true,
-    templateUrl: 'templates/partials/conversation-list-rows.tpl.html'
+    templateUrl: require('../../../templates/partials/conversation-list-rows.tpl.html')
 });
 export default listRows;

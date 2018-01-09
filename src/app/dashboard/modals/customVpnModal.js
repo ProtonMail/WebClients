@@ -2,7 +2,7 @@
 function customVpnModal($rootScope, dashboardConfiguration, pmModal, customVpnModel) {
     return pmModal({
         controllerAs: 'ctrl',
-        templateUrl: 'templates/dashboard/customVpnModal.tpl.html',
+        templateUrl: require('../../../templates/dashboard/customVpnModal.tpl.html'),
         /* @ngInject */
         controller: function(params) {
             const config = dashboardConfiguration.get();
