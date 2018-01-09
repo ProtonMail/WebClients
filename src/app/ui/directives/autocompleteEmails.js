@@ -1,8 +1,9 @@
 /* @ngInject */
-function autocompleteEmails(autocompleteEmailsModel, regexEmail, autocompleteBuilder) {
+function autocompleteEmails($rootScope, autocompleteEmailsModel, regexEmail, autocompleteBuilder) {
     const TAB_KEY = 9;
     const BACKSPACE_KEY = 8;
     const COMMA_KEY = 188;
+    const ESCAPE_KEY = 27;
 
     /**
      * Get the selected input value configuration
@@ -174,6 +175,15 @@ function autocompleteEmails(autocompleteEmailsModel, regexEmail, autocompleteBui
                 // Prevent autoselect if you press MAJ + COMMA (< for QWERTY)
                 case COMMA_KEY && !e.shiftKey:
                     awesomplete.select();
+                    break;
+
+                case ESCAPE_KEY:
+                    // Close the composer if no autocompletion
+                    if (!hasAutocompletion) {
+                        $rootScope.$emit('composer.update', {
+                            type: 'escape.autocomplete'
+                        });
+                    }
                     break;
 
                 case BACKSPACE_KEY:
