@@ -56,7 +56,7 @@ function attachmentApi($http, url, $q, $rootScope, authentication, pmcw, CONFIG,
 
     /**
      * Close a pending request and dispatch an action
-     * @param  {Numer} options.id        Timestamp id for a request
+     * @param  {Number} options.id        Timestamp id for a request
      * @param  {String} options.messageID
      * @return {void}
      */

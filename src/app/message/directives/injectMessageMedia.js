@@ -10,7 +10,7 @@ function injectMessageMedia($rootScope, displayImages, displayEmbedded) {
     const wrapImages = (list) => list.forEach(wrapImage);
 
     /**
-     * Remove the loadedr when the image is loaded
+     * Remove the loader when the image is loaded
      * Add a delay because that's better for the user to see an interaction,
      * even if it's fast.
      * @param  {Node} node    Main scope content

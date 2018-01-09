@@ -5,7 +5,7 @@ function AttachmentLoader($cacheFactory, $log, $q, pmcw, authentication, $state,
     const isOutside = () => $state.is('eo.message') || $state.is('eo.reply');
 
     /**
-     * Get the source request for an attachement
+     * Get the source request for an attachment
      * @param  {String} options.ID  Attachment's ID
      * @return {$http}
      */
