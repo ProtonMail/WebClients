@@ -81,6 +81,7 @@ function dropdownFolders(labelsModel, $rootScope, actionConversation, labelModal
                         const folderID = event.target.getAttribute('data-folder-id');
                         const elements = scope.getElements();
                         const type = getType(elements);
+                        $rootScope.numberElementChecked = 0;
                         moveTo(elements, type, folderID);
                         close();
                     });
