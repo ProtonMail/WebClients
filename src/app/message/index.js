@@ -36,7 +36,6 @@ import findExpendableMessage from './services/findExpendableMessage';
 import messageBuilder from './services/messageBuilder';
 import prepareContent from './services/prepareContent';
 import transformAttachements from './services/transformAttachements';
-import transformBase from './services/transformBase';
 import transformBlockquotes from './services/transformBlockquotes';
 import transformEmbedded from './services/transformEmbedded';
 import transformEscape from './services/transformEscape';
@@ -86,7 +85,6 @@ export default angular
     .factory('messageBuilder', messageBuilder)
     .factory('prepareContent', prepareContent)
     .factory('transformAttachements', transformAttachements)
-    .factory('transformBase', transformBase)
     .factory('transformBlockquotes', transformBlockquotes)
     .factory('transformEmbedded', transformEmbedded)
     .factory('transformEscape', transformEscape)

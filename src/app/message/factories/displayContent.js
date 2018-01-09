@@ -2,9 +2,11 @@
 function displayContent($rootScope, $q, $filter, prepareContent, sanitize) {
     const read = ({ ID }) => $rootScope.$emit('messageActions', { action: 'read', data: { ids: [ID] } });
 
-    function decrypt(message) {
+    async function decrypt(message) {
         message.decrypting = true;
-        return message.clearTextBody().then((body) => ((message.decrypting = false), body));
+        const body = await message.clearTextBody();
+        message.decrypting = false;
+        return body;
     }
 
     function withType(body, { MIMEType }) {
@@ -19,7 +21,7 @@ function displayContent($rootScope, $q, $filter, prepareContent, sanitize) {
         }
 
         // Clear content with DOMPurify before anything happen!
-        content.body = sanitize.message(content.body);
+        content.body = sanitize.message(content.body, true);
         return content;
     }
 

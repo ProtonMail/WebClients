@@ -3,7 +3,7 @@ function transformEmbedded(authentication, embedded, $state) {
     const EMBEDDED_CLASSNAME = 'proton-embedded';
     const wrapImage = (img) => angular.element(img).wrap('<div class="image loading"></div>');
 
-    return (html, message, action) => {
+    return (html, message, { action }) => {
         const images = [].slice.call(html.querySelectorAll('img[proton-src]'));
         const user = authentication.user || { ShowEmbedded: 0 };
         const show = message.showEmbedded === true || user.ShowEmbedded === 1;

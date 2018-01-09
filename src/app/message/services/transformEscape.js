@@ -1,3 +1,5 @@
+import transformBase from './transformBase';
+
 /* @ngInject */
 function transformEscape() {
     /**
@@ -125,9 +127,21 @@ function transformEscape() {
         return input.replace(REGEXP_IS_STYLE, (match, p1, p2, p3) => `${p1}${escapeURLinStyle(p2)}${p3}`);
     };
 
-    return (html, message, { content = '', action }) => {
-        html.innerHTML = escapeURL(content.replace(REGEXP_IS_BREAK, 'proton-$1'), action);
-        return syntaxHighlighterFilter(html);
+    /**
+     * Escape content for a message
+     * Content can be a Document when we open a message, it's usefull
+     * in order to bind the base if it exists
+     * @param  {Node} html                       Parser
+     * @param  {Message} message
+     * @param  {String|Document} options.content Content to escape
+     * @param  {String} options.action           Type of action
+     * @param  {Boolean} options.isDocument      Type of content to escape
+     * @return {Node}                            Parser
+     */
+    return (html, message, { content = '', action, isDocument }) => {
+        const input = isDocument ? content.querySelector('body').innerHTML : content;
+        html.innerHTML = escapeURL(input.replace(REGEXP_IS_BREAK, 'proton-$1'), action);
+        return syntaxHighlighterFilter((isDocument ? transformBase : _.identity)(html, content));
     };
 }
 export default transformEscape;
