@@ -8,6 +8,7 @@
     "es6": true
   },
   "globals": {
+    "require": true,
     "FastClick": true,
     "angular": true,
     "pmcrypto": true,
@@ -67,6 +68,7 @@
     "no-console": "off",
     "object-curly-newline": "off",
     "space-before-function-paren": "off",
+    "global-require": "off",
     "indent": "off"
   }
 }
