@@ -50,7 +50,7 @@ export default angular
     .factory('csv', csv)
     .factory('csvFormat', csvFormat)
     .factory('downloadFile', downloadFile)
-    .factory('exceptionHandler', exceptionHandler)
+    .factory('$exceptionHandler', exceptionHandler)
     .factory('feedbackModal', feedbackModal)
     .factory('hotkeyModal', hotkeyModal)
     .factory('humanVerificationModal', humanVerificationModal)
