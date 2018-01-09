@@ -1,6 +1,6 @@
 /* @ngInject */
 function transformAttachements(embedded, $rootScope) {
-    return (body, message, action) => {
+    return (body, message, { action }) => {
         /**
          * Usefull when we inject the content into the message (load:manual)
          */

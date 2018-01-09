@@ -1,8 +1,9 @@
 /* @ngInject */
 function prepareContent($injector, transformAttachements, transformRemote, transformEscape, transformEmbedded) {
-    const filters = ['transformBase', 'transformLinks', 'transformEmbedded', 'transformWelcome', 'transformBlockquotes', 'transformStylesheet'].map(
-        (name) => ({ name, action: $injector.get(name) })
-    );
+    const filters = ['transformLinks', 'transformEmbedded', 'transformWelcome', 'transformBlockquotes', 'transformStylesheet'].map((name) => ({
+        name,
+        action: $injector.get(name)
+    }));
 
     /**
      * Get the list of transoformation to perform
@@ -21,15 +22,23 @@ function prepareContent($injector, transformAttachements, transformRemote, trans
         const div = document.createElement('div');
 
         if (isBlacklisted) {
-            div.innerHTML = content;
+            div.innerHTML = getInput(content);
             return div;
         }
 
         // Escape All the things !
         return transformEscape(div, message, {
             action,
-            content
+            content,
+            isDocument: typeof content !== 'string'
         });
+    }
+
+    function getInput(input) {
+        if (typeof input === 'string') {
+            return input;
+        }
+        return input.querySelector('body').innerHTML;
     }
 
     return (content, message, { blacklist = [], action } = {}) => {
@@ -39,10 +48,10 @@ function prepareContent($injector, transformAttachements, transformRemote, trans
             isBlacklisted: _.contains(blacklist, 'transformRemote')
         });
 
-        const body = transformers.reduceRight((html, transformer) => transformer.action(html, message, action), div);
+        const body = transformers.reduceRight((html, transformer) => transformer.action(html, message, { action }), div);
 
         if (!blacklist.includes('*') && !_.contains(blacklist, 'transformAttachements')) {
-            transformAttachements(body, message, action);
+            transformAttachements(body, message, { action });
         }
 
         // For a draft we try to load embedded content if we can
