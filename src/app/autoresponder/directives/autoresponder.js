@@ -92,7 +92,14 @@ function autoresponder(autoresponderModel, timepickerModel, $rootScope, autoresp
                     })
                 );
 
-                unsubscribe.push($rootScope.$on('autoresponder.toggle', () => autoresponderModel.set(scope.model)));
+                unsubscribe.push(
+                    $rootScope.$on('autoresponder.toggle', (e, { status }) => {
+                        autoresponderModel.set({ isEnabled: status });
+                        if (!status) {
+                            onFormSubmit();
+                        }
+                    })
+                );
 
                 const form = elem.find('form');
                 form.on('submit', onFormSubmit);

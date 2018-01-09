@@ -23,7 +23,6 @@ function hotkeys(hotkeyModal, $rootScope, $state, authentication, CONSTANTS, $in
         UNSELECT_ALL: gettextCatalog.getString('Unselect all elements', null, 'Hotkey description')
     };
 
-
     const action = (cb) => () => (cb(), false);
     const redirect = (state) => () => $state.go(state);
     const emit = (action, data = {}) => () => {
