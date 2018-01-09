@@ -29,6 +29,10 @@ body#login {
   background-attachment: fixed;
 }
 
+#pm_login {
+    background-image: url('#hostURL#');
+}
+
 body#login-unlock,
 body#login-sub,
 body#login,
@@ -210,6 +214,8 @@ body.appConfigBody-is-mobile {
     display: none;
   }
 }
+
+.login-btn-oldversion::before { content: url('#hostURL2#'); }
 
 // Short resolutions
 @media (max-height: $short) {

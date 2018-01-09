@@ -33,6 +33,21 @@ module.exports = [
                 allChunks: true,
                 use: [
                     {
+                        loader: 'string-replace-loader',
+                        query: {
+                            multiple: [
+                                {
+                                    search: '#hostURL#',
+                                    replace: env.getHostURL()
+                                },
+                                {
+                                    search: '#hostURL2#',
+                                    replace: env.getHostURL(true)
+                                }
+                            ]
+                        }
+                    },
+                    {
                         loader: 'css-loader',
                         options: {
                             minimize: env.isDistRelease()

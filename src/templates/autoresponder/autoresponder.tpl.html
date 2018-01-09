@@ -3,15 +3,12 @@
     <p class="alert alert-info" translate-context="Info" translate>Automatic replies can respond automatically to incoming messages (such as when you are on vacation and can't respond).</p>
 </section>
 <form name="autoresponderForm" novalidate>
-    <div class="row pm_grid">
+    <div class="pm_grid no-padding no-margin">
         <autoresponder-time-section
             data-mock="{{ ::mock }}"
             data-form="autoresponderForm"></autoresponder-time-section>
-        <section class="pm_form col-1-2">
-            <div class="clearfix" ng-if="model.isEnabled">
-                <div class="col-1-1"></div>
-            </div>
-            <div class="clearfix" ng-if="model.isEnabled">
+        <section class="pm_form col-1-2" ng-if="model.isEnabled">
+            <div class="clearfix">
                 <div class="col-1-4">
                     <label for="autoresponder-message" translate-context="Label" translate>Response</label>
                 </div>
@@ -22,13 +19,12 @@
         </section>
     </div>
 
-    <button
-        class="pm_button primary"
-        id="autoresponder-save"
-        ng-disabled="!isValid() || mock || submitting"
-        translate
-        translate-context="Action autoresponder"
-        type="submit">Save</button>
-    <a href="https://protonmail.com/support/knowledge-base/autoresponder/" target="_blank" class="pm_button link" translate-context="Link" translate>Learn more</a>
+    <div class="pm_grid no-padding no-margin">
+        <div class="col-1-8 desktopOnly">&nbsp;</div>
+        <div class="col-7-8">
+            <button class="pm_button primary" id="autoresponder-save" ng-if="model.isEnabled" translate-context="Action autoresponder" translate ng-disabled="!isValid() || mock || submitting" type="submit">Save</button>
+            <a href="https://protonmail.com/support/knowledge-base/autoresponder/" target="_blank" class="pm_button link" translate-context="Link" translate>Learn more</a>
+        </div>
+    </div>
 </form>
 </div>
