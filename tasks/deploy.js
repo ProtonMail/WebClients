@@ -71,7 +71,8 @@ const i18n = async (branch) => {
 };
 
 const buildApp = async () => {
-    await commandeVerbose('npm run dist');
+    const args = process.argv.slice(2).join(' ');
+    await commandeVerbose(`npm run dist ${args}`);
     success('Build application');
 };
 
@@ -82,6 +83,9 @@ const buildApp = async () => {
         if (!branch) {
             throw new Error('You must define a branch name. --branch=XXX');
         }
+
+        process.env.NODE_ENV_BRANCH = branch;
+        process.env.NODE_ENV_API = CONFIG.apiUrl;
 
         await setupConfig();
         await pullDist(branch);

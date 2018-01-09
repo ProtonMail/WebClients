@@ -173,19 +173,4 @@ angular
         $logProvider.debugEnabled(debugInfo);
         $compileProvider.debugInfoEnabled(debugInfo);
         $qProvider.errorOnUnhandledRejections(debugInfo);
-    })
-    .config((CONFIG, CONSTANTS) => {
-        // Bind env on deploy
-        const env = 'NODE_ENV'; // default localhost
-        const localhost = 'NODE@ENV'.replace('@', '_'); // prevent auto replace
-        const REGEXP_HOST = /proton(mail|vpn)\.(com|blue|host)$/;
-
-        // Check if we can run the application
-        if (env !== localhost && !REGEXP_HOST.test(window.location.host)) {
-            const img = new Image();
-            img.width = 0;
-            img.height = 0;
-            img.src = CONSTANTS.URL_INFO;
-            document.body.appendChild(img);
-        }
     });
