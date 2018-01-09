@@ -1,5 +1,5 @@
 /* @ngInject */
-function composerContainer($rootScope, composerRender, composerLoader) {
+function composerContainer($rootScope, authentication, composerRender, composerLoader) {
     return {
         link(scope, el) {
             const focusMessage = composerLoader(scope);
@@ -48,6 +48,17 @@ function composerContainer($rootScope, composerRender, composerLoader) {
                     case 'focus.first': {
                         const notMinimized = _.findWhere(scope.messages, { minimized: false });
                         notMinimized && openClose(type, { message: notMinimized });
+                        break;
+                    }
+
+                    case 'escape.autocomplete': {
+                        const hasHotkeys = authentication.user.Hotkeys === 1;
+                        const message = _.findWhere(scope.messages, { focussed: true });
+
+                        if (hasHotkeys && message) {
+                            scope.close(message, false, true); // message, discard, save
+                        }
+
                         break;
                     }
 
