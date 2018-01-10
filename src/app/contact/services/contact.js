@@ -1,3 +1,5 @@
+import _ from 'lodash';
+
 /* @ngInject */
 function Contact($http, $rootScope, CONSTANTS, url, chunk, contactEncryption, sanitize) {
     const requestURL = url.build('contacts');

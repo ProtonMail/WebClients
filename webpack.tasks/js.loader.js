@@ -25,7 +25,11 @@ const pipe = [
                             }
                         ]
                     ],
-                    plugins: [require('babel-plugin-transform-object-rest-spread'), require('babel-plugin-transform-runtime')],
+                    plugins: [
+                        require('babel-plugin-transform-object-rest-spread'),
+                        require('babel-plugin-transform-runtime'),
+                        require('babel-plugin-lodash')
+                    ],
                     env: {
                         dist: {
                             plugins: [require('babel-plugin-angularjs-annotate')]

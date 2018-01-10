@@ -1,3 +1,5 @@
+import { flow, filter, take } from 'lodash/fp';
+
 /* @ngInject */
 function autocompleteCommandModel(hotkeys, CONSTANTS, labelsModel, strUtils, $rootScope, gettextCatalog, $stateParams) {
     let scopedList = [];
@@ -93,16 +95,14 @@ function autocompleteCommandModel(hotkeys, CONSTANTS, labelsModel, strUtils, $ro
      * @param  {String} mode Mode, default empty -> all commands
      * @return {Object}      { list: <Array>, hasAutocompletion: <Boolean> }
      */
-    const filter = (val = '', mode) => {
+    const filterType = (val = '', mode) => {
         // Do not lowercase value as it might get used by the UI directy via filterList
         const value = val.trim();
         const input = value.toLowerCase();
 
-        const list = _.chain(getList(mode))
-            .filter(stateScoped)
-            .filter(({ label }) => label.toLowerCase().includes(input))
-            .first(CONSTANTS.AWESOMEPLETE_MAX_ITEMS)
-            .value();
+        const list = flow(filter(stateScoped), filter(({ label }) => label.toLowerCase().includes(input)), take(CONSTANTS.AWESOMEPLETE_MAX_ITEMS))(
+            getList(mode)
+        );
 
         return { list, hasAutocompletion: !!list.length };
     };
@@ -143,6 +143,7 @@ function autocompleteCommandModel(hotkeys, CONSTANTS, labelsModel, strUtils, $ro
         reset(); // Clear the scopedList as we don't need it anymore
     };
 
-    return { all, filter, trigger, reset };
+    return { all, filter: filterType, trigger, reset };
 }
+
 export default autocompleteCommandModel;

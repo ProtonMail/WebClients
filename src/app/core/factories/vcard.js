@@ -1,3 +1,5 @@
+import _ from 'lodash';
+
 /* @ngInject */
 function vcard(CONSTANTS, notification, sanitize) {
     const { VCARD_VERSION, VCARD_TYPES } = CONSTANTS;
@@ -18,7 +20,7 @@ function vcard(CONSTANTS, notification, sanitize) {
      */
     function isValidType(type = '') {
         if (type.length) {
-            return _.contains(VCARD_TYPES, type.toLowerCase());
+            return _.includes(VCARD_TYPES, type.toLowerCase());
         }
 
         return true;

@@ -1,3 +1,5 @@
+import _ from 'lodash';
+
 export default angular
     .module('proton.routes', ['ui.router', 'proton.authentication', 'proton.constants', 'proton.utils'])
 

@@ -1,3 +1,5 @@
+import _ from 'lodash';
+
 /* @ngInject */
 function messageModel($q, $timeout, pmcw, User, gettextCatalog, authentication, AttachmentLoader, sanitize) {
     const defaultMessage = {
@@ -87,7 +89,7 @@ function messageModel($q, $timeout, pmcw, User, gettextCatalog, authentication, 
         }
 
         getAttachment(ID) {
-            return _.findWhere(this.Attachments || [], { ID });
+            return _.find(this.Attachments || [], { ID });
         }
 
         getAttachments() {
@@ -270,7 +272,7 @@ function messageModel($q, $timeout, pmcw, User, gettextCatalog, authentication, 
         }
 
         emailsToString() {
-            return _.pluck(this.ToList.concat(this.CCList, this.BCCList), 'Address');
+            return _.map(this.ToList.concat(this.CCList, this.BCCList), 'Address');
         }
 
         getPublicKeys(emails = []) {

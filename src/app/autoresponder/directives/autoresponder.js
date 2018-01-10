@@ -1,3 +1,5 @@
+import _ from 'lodash';
+
 /* @ngInject */
 function autoresponder(autoresponderModel, timepickerModel, $rootScope, autoresponderLanguage) {
     const frequencies = [

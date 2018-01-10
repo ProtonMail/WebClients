@@ -1,3 +1,5 @@
+import _ from 'lodash';
+
 /* @ngInject */
 function signupModel(User, $state, $stateParams, $location, CONSTANTS, Payment, networkActivityTracker, $rootScope) {
     const CACHE = {};
@@ -49,10 +51,10 @@ function signupModel(User, $state, $stateParams, $location, CONSTANTS, Payment, 
         return User.direct(Type).then(({ data = {} } = {}) => {
             if (data.Direct === 1) {
                 return (CACHE.humanCheck = {
-                    email: _.contains(data.VerifyMethods, 'email'),
-                    captcha: _.contains(data.VerifyMethods, 'captcha'),
-                    sms: _.contains(data.VerifyMethods, 'sms'),
-                    payment: _.contains(data.VerifyMethods, 'payment')
+                    email: _.includes(data.VerifyMethods, 'email'),
+                    captcha: _.includes(data.VerifyMethods, 'captcha'),
+                    sms: _.includes(data.VerifyMethods, 'sms'),
+                    payment: _.includes(data.VerifyMethods, 'payment')
                 });
             }
 

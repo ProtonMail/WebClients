@@ -1,3 +1,7 @@
+import _ from 'lodash';
+
+import { flow, values, reduce } from 'lodash/fp';
+
 /* @ngInject */
 function contactDetails(
     $state,
@@ -57,7 +61,7 @@ function contactDetails(
             };
 
             const updateType = (types = []) =>
-                _.contains(types, CONSTANTS.CONTACT_MODE.ENCRYPTED_AND_SIGNED) && element.addClass(ENCRYPTED_AND_SIGNED);
+                _.includes(types, CONSTANTS.CONTACT_MODE.ENCRYPTED_AND_SIGNED) && element.addClass(ENCRYPTED_AND_SIGNED);
             const onSubmit = () => saveContact();
             const isFree = !subscriptionModel.hasPaid('mail') && !memberModel.isMember();
             const properties = vcard.extractProperties(scope.contact.vCard);
@@ -139,12 +143,9 @@ function contactDetails(
                     return false;
                 }
 
-                const values = _.chain(scope.model)
-                    .values()
-                    .reduce((acc, child = []) => acc.concat(child.filter(({ value = '' }) => value)), [])
-                    .value();
+                const valuesArray = flow(values, reduce((acc, child = []) => acc.concat(child.filter(({ value = '' }) => value)), []))(scope.model);
 
-                return values.length;
+                return valuesArray.length;
             }
 
             /**

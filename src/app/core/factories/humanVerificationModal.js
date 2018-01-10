@@ -1,3 +1,5 @@
+import _ from 'lodash';
+
 /* @ngInject */
 function humanVerificationModal($http, $rootScope, pmModal, User, networkActivityTracker) {
     function handleResult({ data = {} }) {
@@ -24,7 +26,7 @@ function humanVerificationModal($http, $rootScope, pmModal, User, networkActivit
                     self.token = Token;
                     self.methods = VerifyMethods;
                     // NOTE this part need to change if we add other options
-                    self.showCaptcha = _.contains(VerifyMethods, 'captcha');
+                    self.showCaptcha = _.includes(VerifyMethods, 'captcha');
                     self.verificator = 'captcha';
                 });
 

@@ -1,3 +1,5 @@
+import _ from 'lodash';
+
 /* @ngInject */
 const conversationView = ($state, $stateParams, cache, tools) => ({
     restrict: 'E',
@@ -13,7 +15,7 @@ const conversationView = ($state, $stateParams, cache, tools) => ({
         }
 
         cache.getConversation(conversationID).then((conversation) => {
-            const label = _.findWhere(conversation.Labels, { ID });
+            const label = _.find(conversation.Labels, { ID });
 
             if (label || $state.includes('secured.search.**')) {
                 return (scope.conversation = conversation);

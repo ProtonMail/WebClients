@@ -1,6 +1,8 @@
+import _ from 'lodash';
+
 /* @ngInject */
 function contact(gettextCatalog, authentication) {
-    const getContact = (Email) => _.findWhere(authentication.user.Contacts, { Email }) || {};
+    const getContact = (Email) => _.find(authentication.user.Contacts, { Email }) || {};
 
     const getContactFromUser = (nameContact, Address) => {
         const { Name = '', Email } = getContact(Address);

@@ -1,3 +1,5 @@
+import _ from 'lodash';
+
 /* @ngInject */
 function Eo($http, url, CONFIG) {
     const requestURL = url.build('eo');

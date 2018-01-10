@@ -1,3 +1,5 @@
+import _ from 'lodash';
+
 /* @ngInject */
 function transformLinks() {
     const PROTOCOLS = ['ftp://', 'http://', 'https://', 'xmpp:', 'tel:', 'callto:'];

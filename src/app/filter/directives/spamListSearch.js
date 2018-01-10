@@ -1,3 +1,5 @@
+import _ from 'lodash';
+
 /* @ngInject */
 function spamListSearch(spamListModel) {
     const DEBOUNCE_TIME = 500;

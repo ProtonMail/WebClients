@@ -1,3 +1,5 @@
+import _ from 'lodash';
+
 /* @ngInject */
 function membersValidator(gettextCatalog, notification, $state, organizationModel, domainModel, memberModel) {
     const I18N = {

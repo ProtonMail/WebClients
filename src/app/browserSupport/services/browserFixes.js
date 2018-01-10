@@ -1,3 +1,5 @@
+import _ from 'lodash';
+
 /* @ngInject */
 function browserFixes(safari) {
     const browsers = [safari];

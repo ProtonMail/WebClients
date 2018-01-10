@@ -1,3 +1,5 @@
+import _ from 'lodash';
+
 /* @ngInject */
 function memberModal(pmModal, CONSTANTS, gettextCatalog, organizationModel, subscriptionModel, editMemberProcess) {
     const GIGA = CONSTANTS.BASE_SIZE ** 3;

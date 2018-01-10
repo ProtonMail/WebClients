@@ -1,3 +1,5 @@
+import _ from 'lodash';
+
 /* @ngInject */
 function DomainsController(
     $controller,
@@ -194,7 +196,7 @@ function DomainsController(
      * @return {Boolean}
      */
     $scope.owned = (address) => {
-        const found = _.findWhere(authentication.user.Addresses, { ID: address.ID });
+        const found = _.find(authentication.user.Addresses, { ID: address.ID });
 
         return angular.isDefined(found);
     };
@@ -205,7 +207,7 @@ function DomainsController(
      * @return {Boolean}
      */
     $scope.privated = (address) => {
-        const member = _.findWhere($scope.members, { ID: address.MemberID });
+        const member = _.find($scope.members, { ID: address.MemberID });
 
         return member.Private === 1;
     };
@@ -489,7 +491,7 @@ function DomainsController(
      * @return {Object} member
      */
     $scope.member = (memberId) => {
-        const member = _.findWhere($scope.members, { ID: memberId });
+        const member = _.find($scope.members, { ID: memberId });
 
         if (angular.isDefined(member)) {
             return member;

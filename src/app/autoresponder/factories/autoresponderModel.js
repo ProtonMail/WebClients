@@ -1,3 +1,5 @@
+import _ from 'lodash';
+
 /* @ngInject */
 function autoresponderModel(
     $rootScope,
@@ -177,7 +179,7 @@ function autoresponderModel(
     function getAutoresponderInAPIFormat() {
         const autoresponder = get();
 
-        autoresponder.daysSelected = Object.keys(_.pick(autoresponder.daysSelected, Boolean)).map(Number);
+        autoresponder.daysSelected = Object.keys(_.pickBy(autoresponder.daysSelected, Boolean)).map(Number);
 
         if (!autoresponder.isEnabled) {
             // override the 'hidden' parameters for privacy reasons.

@@ -1,3 +1,5 @@
+import _ from 'lodash';
+
 /* @ngInject */
 function dateTimePicker($rootScope, datetimeErrorCombiner, timepickerModel, dateUtils) {
     const minDate = new Date(1970, 1, 1);

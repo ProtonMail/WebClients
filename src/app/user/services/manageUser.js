@@ -1,3 +1,5 @@
+import _ from 'lodash';
+
 /* @ngInject */
 function manageUser(
     CONSTANTS,
@@ -59,7 +61,7 @@ function manageUser(
 
         while (index--) {
             const address = authentication.user.Addresses[index];
-            const found = _.findWhere(user.Addresses, { ID: address.ID });
+            const found = _.find(user.Addresses, { ID: address.ID });
 
             if (angular.isUndefined(found)) {
                 authentication.user.Addresses.splice(index, 1);
@@ -80,7 +82,7 @@ function manageUser(
     };
 
     const generateKeys = (user, Members, keys) => {
-        return addressWithoutKeysManager.manage(user, _.pluck(Members, 'Member'), true).then(
+        return addressWithoutKeysManager.manage(user, _.map(Members, 'Member'), true).then(
             (addresses = []) => {
                 if (addresses.length) {
                     throw new Error('Regenerate keys for addresses');

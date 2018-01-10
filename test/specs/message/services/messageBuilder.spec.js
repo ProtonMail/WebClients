@@ -1162,8 +1162,8 @@ Est-ce que tu vas bien ?
                 const list = Object.keys(DEFAULT_MESSAGE_COPY).concat('Action', 'ParentID');
                 const listKeysItem = Object.keys(item);
                 expect(listKeysItem.length).toBe(list.length);
-                expect(_.contains(listKeysItem, 'Action')).toBe(true);
-                expect(_.contains(listKeysItem, 'ParentID')).toBe(true);
+                expect(_.includes(listKeysItem, 'Action')).toBe(true);
+                expect(_.includes(listKeysItem, 'ParentID')).toBe(true);
             });
 
             it('should set a value to Type', () => {
@@ -1272,8 +1272,8 @@ Est-ce que tu vas bien ?
 
                 expect(keysItem.length).toBe(keysDefault.length);
                 expect(keysItem).toEqual(keysDefault.sort());
-                expect(_.contains(keysItem, 'Action')).toBe(true);
-                expect(_.contains(keysItem, 'ParentID')).toBe(true);
+                expect(_.includes(keysItem, 'Action')).toBe(true);
+                expect(_.includes(keysItem, 'ParentID')).toBe(true);
             });
 
             it('should return an instance of Message', () => {
@@ -1388,8 +1388,8 @@ Est-ce que tu vas bien ?
                 const list = Object.keys(DEFAULT_MESSAGE_COPY).concat('Action', 'ParentID');
                 const listKeysItem = Object.keys(item);
                 expect(listKeysItem.length).toBe(list.length);
-                expect(_.contains(listKeysItem, 'Action')).toBe(true);
-                expect(_.contains(listKeysItem, 'ParentID')).toBe(true);
+                expect(_.includes(listKeysItem, 'Action')).toBe(true);
+                expect(_.includes(listKeysItem, 'ParentID')).toBe(true);
             });
 
             it('should set a value to Type', () => {
@@ -1498,8 +1498,8 @@ Est-ce que tu vas bien ?
 
                 expect(keysItem.length).toBe(keysDefault.length);
                 expect(keysItem).toEqual(keysDefault.sort());
-                expect(_.contains(keysItem, 'Action')).toBe(true);
-                expect(_.contains(keysItem, 'ParentID')).toBe(true);
+                expect(_.includes(keysItem, 'Action')).toBe(true);
+                expect(_.includes(keysItem, 'ParentID')).toBe(true);
             });
 
             it('should return an instance of Message', () => {
@@ -1609,8 +1609,8 @@ Est-ce que tu vas bien ?
                 const list = Object.keys(DEFAULT_MESSAGE_COPY).concat('Action', 'ParentID');
                 const listKeysItem = Object.keys(item);
                 expect(listKeysItem.length).toBe(list.length);
-                expect(_.contains(listKeysItem, 'Action')).toBe(true);
-                expect(_.contains(listKeysItem, 'ParentID')).toBe(true);
+                expect(_.includes(listKeysItem, 'Action')).toBe(true);
+                expect(_.includes(listKeysItem, 'ParentID')).toBe(true);
             });
 
             it('should set a value to Type', () => {
@@ -1719,8 +1719,8 @@ Est-ce que tu vas bien ?
 
                 expect(keysItem.length).toBe(keysDefault.length);
                 expect(keysItem).toEqual(keysDefault.sort());
-                expect(_.contains(keysItem, 'Action')).toBe(true);
-                expect(_.contains(keysItem, 'ParentID')).toBe(true);
+                expect(_.includes(keysItem, 'Action')).toBe(true);
+                expect(_.includes(keysItem, 'ParentID')).toBe(true);
             });
 
             it('should return an instance of Message', () => {
@@ -1829,8 +1829,8 @@ Est-ce que tu vas bien ?
                 const list = Object.keys(DEFAULT_MESSAGE_COPY).concat('Action', 'ParentID');
                 const listKeysItem = Object.keys(item);
                 expect(listKeysItem.length).toBe(list.length);
-                expect(_.contains(listKeysItem, 'Action')).toBe(true);
-                expect(_.contains(listKeysItem, 'ParentID')).toBe(true);
+                expect(_.includes(listKeysItem, 'Action')).toBe(true);
+                expect(_.includes(listKeysItem, 'ParentID')).toBe(true);
             });
 
             it('should set a value to Type', () => {
@@ -1935,8 +1935,8 @@ Est-ce que tu vas bien ?
 
                 expect(keysItem.length).toBe(keysDefault.length);
                 expect(keysItem).toEqual(keysDefault.sort());
-                expect(_.contains(keysItem, 'Action')).toBe(true);
-                expect(_.contains(keysItem, 'ParentID')).toBe(true);
+                expect(_.includes(keysItem, 'Action')).toBe(true);
+                expect(_.includes(keysItem, 'ParentID')).toBe(true);
             });
 
             it('should return an instance of Message', () => {
@@ -2065,8 +2065,8 @@ Est-ce que tu vas bien ?
                 const list = Object.keys(DEFAULT_MESSAGE_COPY).concat('Action', 'ParentID');
                 const listKeysItem = Object.keys(item);
                 expect(listKeysItem.length).toBe(list.length);
-                expect(_.contains(listKeysItem, 'Action')).toBe(true);
-                expect(_.contains(listKeysItem, 'ParentID')).toBe(true);
+                expect(_.includes(listKeysItem, 'Action')).toBe(true);
+                expect(_.includes(listKeysItem, 'ParentID')).toBe(true);
             });
 
             it('should set a value to Type', () => {
@@ -2171,8 +2171,8 @@ Est-ce que tu vas bien ?
 
                 expect(keysItem.length).toBe(keysDefault.length);
                 expect(keysItem).toEqual(keysDefault.sort());
-                expect(_.contains(keysItem, 'Action')).toBe(true);
-                expect(_.contains(keysItem, 'ParentID')).toBe(true);
+                expect(_.includes(keysItem, 'Action')).toBe(true);
+                expect(_.includes(keysItem, 'ParentID')).toBe(true);
             });
 
             it('should return an instance of Message', () => {
@@ -2301,8 +2301,8 @@ Est-ce que tu vas bien ?
                 const list = Object.keys(DEFAULT_MESSAGE_COPY).concat('Action', 'ParentID');
                 const listKeysItem = Object.keys(item);
                 expect(listKeysItem.length).toBe(list.length);
-                expect(_.contains(listKeysItem, 'Action')).toBe(true);
-                expect(_.contains(listKeysItem, 'ParentID')).toBe(true);
+                expect(_.includes(listKeysItem, 'Action')).toBe(true);
+                expect(_.includes(listKeysItem, 'ParentID')).toBe(true);
             });
 
             it('should set a value to Type', () => {
@@ -2407,8 +2407,8 @@ Est-ce que tu vas bien ?
 
                 expect(keysItem.length).toBe(keysDefault.length);
                 expect(keysItem).toEqual(keysDefault.sort());
-                expect(_.contains(keysItem, 'Action')).toBe(true);
-                expect(_.contains(keysItem, 'ParentID')).toBe(true);
+                expect(_.includes(keysItem, 'Action')).toBe(true);
+                expect(_.includes(keysItem, 'ParentID')).toBe(true);
             });
 
             it('should return an instance of Message', () => {
@@ -2531,8 +2531,8 @@ Est-ce que tu vas bien ?
                 const list = Object.keys(DEFAULT_MESSAGE_COPY).concat('Action', 'ParentID');
                 const listKeysItem = Object.keys(item);
                 expect(listKeysItem.length).toBe(list.length);
-                expect(_.contains(listKeysItem, 'Action')).toBe(true);
-                expect(_.contains(listKeysItem, 'ParentID')).toBe(true);
+                expect(_.includes(listKeysItem, 'Action')).toBe(true);
+                expect(_.includes(listKeysItem, 'ParentID')).toBe(true);
             });
 
             it('should set a value to Type', () => {
@@ -2637,8 +2637,8 @@ Est-ce que tu vas bien ?
 
                 expect(keysItem.length).toBe(keysDefault.length);
                 expect(keysItem).toEqual(keysDefault.sort());
-                expect(_.contains(keysItem, 'Action')).toBe(true);
-                expect(_.contains(keysItem, 'ParentID')).toBe(true);
+                expect(_.includes(keysItem, 'Action')).toBe(true);
+                expect(_.includes(keysItem, 'ParentID')).toBe(true);
             });
 
             it('should return an instance of Message', () => {
@@ -2745,8 +2745,8 @@ Est-ce que tu vas bien ?
                 const list = Object.keys(DEFAULT_MESSAGE_COPY).concat('Action', 'ParentID');
                 const listKeysItem = Object.keys(item);
                 expect(listKeysItem.length).toBe(list.length);
-                expect(_.contains(listKeysItem, 'Action')).toBe(true);
-                expect(_.contains(listKeysItem, 'ParentID')).toBe(true);
+                expect(_.includes(listKeysItem, 'Action')).toBe(true);
+                expect(_.includes(listKeysItem, 'ParentID')).toBe(true);
             });
 
             it('should set a value to Type', () => {
@@ -2851,8 +2851,8 @@ Est-ce que tu vas bien ?
 
                 expect(keysItem.length).toBe(keysDefault.length);
                 expect(keysItem).toEqual(keysDefault.sort());
-                expect(_.contains(keysItem, 'Action')).toBe(true);
-                expect(_.contains(keysItem, 'ParentID')).toBe(true);
+                expect(_.includes(keysItem, 'Action')).toBe(true);
+                expect(_.includes(keysItem, 'ParentID')).toBe(true);
             });
 
             it('should return an instance of Message', () => {
@@ -2960,8 +2960,8 @@ Est-ce que tu vas bien ?
                 const list = Object.keys(DEFAULT_MESSAGE_COPY).concat('Action', 'ParentID');
                 const listKeysItem = Object.keys(item);
                 expect(listKeysItem.length).toBe(list.length);
-                expect(_.contains(listKeysItem, 'Action')).toBe(true);
-                expect(_.contains(listKeysItem, 'ParentID')).toBe(true);
+                expect(_.includes(listKeysItem, 'Action')).toBe(true);
+                expect(_.includes(listKeysItem, 'ParentID')).toBe(true);
             });
 
             it('should set a value to Type', () => {
@@ -3066,8 +3066,8 @@ Est-ce que tu vas bien ?
 
                 expect(keysItem.length).toBe(keysDefault.length);
                 expect(keysItem).toEqual(keysDefault.sort());
-                expect(_.contains(keysItem, 'Action')).toBe(true);
-                expect(_.contains(keysItem, 'ParentID')).toBe(true);
+                expect(_.includes(keysItem, 'Action')).toBe(true);
+                expect(_.includes(keysItem, 'ParentID')).toBe(true);
             });
 
             it('should return an instance of Message', () => {
@@ -3186,8 +3186,8 @@ Est-ce que tu vas bien ?
                 const list = Object.keys(DEFAULT_MESSAGE_COPY).concat('Action', 'ParentID');
                 const listKeysItem = Object.keys(item);
                 expect(listKeysItem.length).toBe(list.length);
-                expect(_.contains(listKeysItem, 'Action')).toBe(true);
-                expect(_.contains(listKeysItem, 'ParentID')).toBe(true);
+                expect(_.includes(listKeysItem, 'Action')).toBe(true);
+                expect(_.includes(listKeysItem, 'ParentID')).toBe(true);
             });
 
             it('should set a value to Type', () => {
@@ -3292,8 +3292,8 @@ Est-ce que tu vas bien ?
 
                 expect(keysItem.length).toBe(keysDefault.length);
                 expect(keysItem).toEqual(keysDefault.sort());
-                expect(_.contains(keysItem, 'Action')).toBe(true);
-                expect(_.contains(keysItem, 'ParentID')).toBe(true);
+                expect(_.includes(keysItem, 'Action')).toBe(true);
+                expect(_.includes(keysItem, 'ParentID')).toBe(true);
             });
 
             it('should return an instance of Message', () => {
@@ -3400,8 +3400,8 @@ Est-ce que tu vas bien ?
                 const list = Object.keys(DEFAULT_MESSAGE_COPY).concat('Action', 'ParentID');
                 const listKeysItem = Object.keys(item);
                 expect(listKeysItem.length).toBe(list.length);
-                expect(_.contains(listKeysItem, 'Action')).toBe(true);
-                expect(_.contains(listKeysItem, 'ParentID')).toBe(true);
+                expect(_.includes(listKeysItem, 'Action')).toBe(true);
+                expect(_.includes(listKeysItem, 'ParentID')).toBe(true);
             });
 
             it('should set a value to Type', () => {
@@ -3506,8 +3506,8 @@ Est-ce que tu vas bien ?
 
                 expect(keysItem.length).toBe(keysDefault.length);
                 expect(keysItem).toEqual(keysDefault.sort());
-                expect(_.contains(keysItem, 'Action')).toBe(true);
-                expect(_.contains(keysItem, 'ParentID')).toBe(true);
+                expect(_.includes(keysItem, 'Action')).toBe(true);
+                expect(_.includes(keysItem, 'ParentID')).toBe(true);
             });
 
             it('should return an instance of Message', () => {

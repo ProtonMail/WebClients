@@ -1,3 +1,5 @@
+import _ from 'lodash';
+
 /* @ngInject */
 function MemberKey($http, url, srp) {
     return {

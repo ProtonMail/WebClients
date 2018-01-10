@@ -1,3 +1,5 @@
+import _ from 'lodash';
+
 /* @ngInject */
 function aboutClient() {
     const hasSessionStorage = () => {
@@ -20,7 +22,7 @@ function aboutClient() {
     };
     const isSafari = () => {
         const browsers = ['Safari', 'Mobile Safari'];
-        return _.contains(browsers, $.ua.browser.name);
+        return _.includes(browsers, $.ua.browser.name);
     };
     const isSafariMobile = () => $.ua.browser.name === 'Mobile Safari';
 

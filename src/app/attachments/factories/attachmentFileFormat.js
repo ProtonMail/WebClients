@@ -1,8 +1,10 @@
+import _ from 'lodash';
+
 /* @ngInject */
 function attachmentFileFormat(aboutClient) {
     const embedded = ['image/gif', 'image/jpeg', 'image/png', 'image/bmp'];
     const isSafari = () => aboutClient.isSafari();
-    const isEmbedded = (key) => _.contains(embedded, key);
+    const isEmbedded = (key) => _.includes(embedded, key);
     const getEmbedded = () => embedded;
 
     /**

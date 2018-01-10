@@ -1,3 +1,5 @@
+import _ from 'lodash';
+
 /* @ngInject */
 function unsubscribePanel($rootScope, authentication, confirmModal, gettextCatalog, unsubscribeModel) {
     const I18N = {
@@ -15,7 +17,7 @@ function unsubscribePanel($rootScope, authentication, confirmModal, gettextCatal
     };
 
     const confirmFirst = (message) => {
-        const { Email } = _.findWhere(authentication.user.Addresses, { ID: message.AddressID }) || authentication.user.Addresses[0];
+        const { Email } = _.find(authentication.user.Addresses, { ID: message.AddressID }) || authentication.user.Addresses[0];
 
         confirmModal.activate({
             params: {

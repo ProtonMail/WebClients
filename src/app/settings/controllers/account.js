@@ -1,3 +1,5 @@
+import _ from 'lodash';
+
 /* @ngInject */
 function AccountController(
     $log,
@@ -48,7 +50,7 @@ function AccountController(
         { label: 'Türkçe', key: 'tr_TR' },
         { label: 'Portugues, brasileiro', key: 'pt_BR' }
     ];
-    $scope.locale = _.findWhere($scope.locales, { key: gettextCatalog.getCurrentLanguage() }) || $scope.locales[0];
+    $scope.locale = _.find($scope.locales, { key: gettextCatalog.getCurrentLanguage() }) || $scope.locales[0];
     const EMAILING_KEYS = Object.keys($scope.emailing);
     updateUser();
 

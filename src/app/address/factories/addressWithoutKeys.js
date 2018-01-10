@@ -1,3 +1,5 @@
+import _ from 'lodash';
+
 /* @ngInject */
 function addressWithoutKeys(memberModel, authentication, AppModel) {
     const isDirtyAddress = ({ Keys, Status }) => !Keys.length && Status === 1;

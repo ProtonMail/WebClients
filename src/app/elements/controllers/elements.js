@@ -1,3 +1,5 @@
+import _ from 'lodash';
+
 /* @ngInject */
 function ElementsController(
     $filter,
@@ -177,7 +179,7 @@ function ElementsController(
             $rootScope.$on('elements', (e, { type, data = {} }) => {
                 switch (type) {
                     case 'mark': {
-                        const thisElement = _.findWhere($scope.conversations, { ID: data.id });
+                        const thisElement = _.find($scope.conversations, { ID: data.id });
 
                         if (thisElement && $scope.markedElement !== thisElement) {
                             $scope.$applyAsync(() => {
@@ -230,7 +232,7 @@ function ElementsController(
             $scope.markedElement &&
                 $scope.$applyAsync(() => {
                     $scope.markedElement.Selected = !$scope.markedElement.Selected;
-                    $rootScope.numberElementChecked = _.where($scope.conversations, { Selected: true }).length;
+                    $rootScope.numberElementChecked = _.filter($scope.conversations, { Selected: true }).length;
                 });
         });
 
@@ -503,16 +505,16 @@ function ElementsController(
                                     ({ ID, ConversationID }) => $state.params.id === ConversationID || $state.params.id === ID
                                 );
                             } else {
-                                element = _.first($scope.conversations);
+                                element = _.head($scope.conversations);
                             }
                         } else {
-                            const found = _.findWhere($scope.conversations, { ID: $scope.markedElement.ID });
+                            const found = _.find($scope.conversations, { ID: $scope.markedElement.ID });
 
                             if (found) {
                                 element = found;
                             } else {
                                 const previousIndexMarked = _.findIndex(previousConversations, { ID: $scope.markedElement.ID }) || 0;
-                                element = $scope.conversations[previousIndexMarked] || _.first($scope.conversations);
+                                element = $scope.conversations[previousIndexMarked] || _.head($scope.conversations);
                             }
                         }
 
@@ -608,14 +610,14 @@ function ElementsController(
 
         _.each($scope.conversations, (element) => actions[value](element));
 
-        $rootScope.numberElementChecked = _.where($scope.conversations, { Selected: true }).length;
+        $rootScope.numberElementChecked = _.filter($scope.conversations, { Selected: true }).length;
     };
 
     function isStarred({ LabelIDs = [], Labels = [] }) {
         if (Labels.length) {
-            return _.contains(LabelIDs, CONSTANTS.MAILBOX_IDENTIFIERS.starred);
+            return _.includes(LabelIDs, CONSTANTS.MAILBOX_IDENTIFIERS.starred);
         }
-        return !!_.findWhere(Labels, { ID: CONSTANTS.MAILBOX_IDENTIFIERS.starred });
+        return !!_.find(Labels, { ID: CONSTANTS.MAILBOX_IDENTIFIERS.starred });
     }
 
     /**
@@ -625,7 +627,7 @@ function ElementsController(
      */
     function getElementsSelected(includeMarked = true) {
         const { conversations = [] } = $scope; // conversations can contains message list or conversation list
-        const elements = _.where(conversations, { Selected: true });
+        const elements = _.filter(conversations, { Selected: true });
 
         if ($state.params.id && mailSettingsModel.get('ViewLayout') === CONSTANTS.ROW_MODE) {
             return _.filter(conversations, ({ ID, ConversationID }) => ID === $state.params.id || ConversationID === $state.params.id);
@@ -643,7 +645,7 @@ function ElementsController(
      * @return {Array}
      */
     function idsSelected() {
-        return _.pluck(getElementsSelected(), 'ID');
+        return _.map(getElementsSelected(), 'ID');
     }
 
     /**

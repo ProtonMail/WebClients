@@ -1,3 +1,5 @@
+import _ from 'lodash';
+
 /* @ngInject */
 function conversation(
     $filter,
@@ -285,8 +287,8 @@ function conversation(
             function initialization() {
                 let messages = [];
                 messagesCached = cache.queryMessagesCached($stateParams.id);
-                scope.trashed = _.some(messagesCached, ({ LabelIDs }) => _.contains(LabelIDs, CONSTANTS.MAILBOX_IDENTIFIERS.trash));
-                scope.nonTrashed = _.some(messagesCached, ({ LabelIDs }) => !_.contains(LabelIDs, CONSTANTS.MAILBOX_IDENTIFIERS.trash));
+                scope.trashed = _.some(messagesCached, ({ LabelIDs }) => _.includes(LabelIDs, CONSTANTS.MAILBOX_IDENTIFIERS.trash));
+                scope.nonTrashed = _.some(messagesCached, ({ LabelIDs }) => !_.includes(LabelIDs, CONSTANTS.MAILBOX_IDENTIFIERS.trash));
 
                 messages = $filter('filterMessages')(messagesCached, scope.showTrashed, scope.showNonTrashed);
 
@@ -319,14 +321,14 @@ function conversation(
                 const labelID = tools.currentLocation();
 
                 messagesCached = messages;
-                scope.trashed = messagesCached.some(({ LabelIDs = [] }) => _.contains(LabelIDs, CONSTANTS.MAILBOX_IDENTIFIERS.trash));
-                scope.nonTrashed = messagesCached.some(({ LabelIDs = [] }) => !_.contains(LabelIDs, CONSTANTS.MAILBOX_IDENTIFIERS.trash));
+                scope.trashed = messagesCached.some(({ LabelIDs = [] }) => _.includes(LabelIDs, CONSTANTS.MAILBOX_IDENTIFIERS.trash));
+                scope.nonTrashed = messagesCached.some(({ LabelIDs = [] }) => !_.includes(LabelIDs, CONSTANTS.MAILBOX_IDENTIFIERS.trash));
 
                 if (!conversation) {
                     return back();
                 }
 
-                const label = _.findWhere(conversation.Labels, { ID: labelID });
+                const label = _.find(conversation.Labels, { ID: labelID });
 
                 if (label || $state.includes('secured.search.**')) {
                     _.extend(scope.conversation, conversation);
@@ -375,7 +377,7 @@ function conversation(
              * @return {Boolean}
              */
             scope.showNotifier = (folder) => {
-                const filtered = _.filter(messagesCached, (message) => _.contains(message.LabelIDs, CONSTANTS.MAILBOX_IDENTIFIERS[folder]));
+                const filtered = _.filter(messagesCached, (message) => _.includes(message.LabelIDs, CONSTANTS.MAILBOX_IDENTIFIERS[folder]));
                 return filtered.length < messagesCached.length && filtered.length > 0;
             };
 

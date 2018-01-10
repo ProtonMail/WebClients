@@ -1,3 +1,5 @@
+import _ from 'lodash';
+
 /* @ngInject */
 function elementsError($rootScope) {
     const errors = [];

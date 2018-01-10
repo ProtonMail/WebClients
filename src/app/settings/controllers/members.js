@@ -1,3 +1,5 @@
+import _ from 'lodash';
+
 /* @ngInject */
 function MembersController($controller, $scope, $stateParams, authentication, pmcw, memberActions, memberModel) {
     $controller('SignaturesController', { $scope, authentication, pmcw });
@@ -18,7 +20,7 @@ function MembersController($controller, $scope, $stateParams, authentication, pm
             memberActions.add();
             break;
         case 'edit':
-            memberActions.edit(_.findWhere($scope.members, { ID: $stateParams.id }));
+            memberActions.edit(_.find($scope.members, { ID: $stateParams.id }));
             break;
         case 'scroll':
             scrollToUsers();

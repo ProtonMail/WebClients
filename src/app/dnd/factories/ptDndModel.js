@@ -1,3 +1,5 @@
+import _ from 'lodash';
+
 /* @ngInject */
 function ptDndModel($rootScope) {
     const CACHE = {};

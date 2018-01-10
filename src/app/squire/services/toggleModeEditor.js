@@ -1,3 +1,5 @@
+import _ from 'lodash';
+
 /* @ngInject */
 function toggleModeEditor($rootScope, embeddedUtils, attachmentModel, editorModel, textToHtmlMail, htmlToTextMail, networkActivityTracker) {
     const MODE = {

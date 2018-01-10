@@ -1,3 +1,5 @@
+import _ from 'lodash';
+
 /* @ngInject */
 function arrowsToScroll() {
     const BUTTON_CLASS = 'arrowsToScroll-button';

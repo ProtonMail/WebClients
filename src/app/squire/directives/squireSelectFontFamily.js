@@ -1,3 +1,5 @@
+import _ from 'lodash';
+
 /* @ngInject */
 function squireSelectFontFamily(squireDropdown, editorModel) {
     const ACTION = 'setFontFace';

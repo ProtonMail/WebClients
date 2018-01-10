@@ -1,3 +1,5 @@
+import _ from 'lodash';
+
 /* @ngInject */
 function currencySelector($rootScope, dashboardConfiguration) {
     const ACTIVE_BUTTON_CLASS = 'active';

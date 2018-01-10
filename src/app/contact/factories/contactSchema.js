@@ -1,3 +1,5 @@
+import _ from 'lodash';
+
 /* @ngInject */
 function contactSchema(gettextCatalog) {
     /* eslint new-cap: "off" */
