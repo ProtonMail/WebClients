@@ -1,5 +1,4 @@
 import _ from 'lodash';
-import { ERROR_SILENT } from '../../constants';
 
 /* @ngInject */
 function networkActivityTracker(errorReporter, $rootScope, notification, dedentTpl) {
