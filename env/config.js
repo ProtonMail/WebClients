@@ -81,11 +81,13 @@ const getDefaultApiTarget = () => {
     }
 
     if (process.env.NODE_ENV === 'dist') {
-        const [, type] = (argv.branch || '').match(/\w+-(\w+)/) || [];
-        return type || 'blue';
+        const [, type] = (argv.branch || '').match(/\w+-(beta|prod)/) || [];
+        if (type) {
+            return type;
+        }
     }
 
-    return 'dev';
+    return 'build';
 };
 
 const apiUrl = (type = getDefaultApiTarget(), branch = '') => {
@@ -93,7 +95,7 @@ const apiUrl = (type = getDefaultApiTarget(), branch = '') => {
     if (/-prod/.test(branch)) {
         return API_TARGETS.prod;
     }
-    return API_TARGETS[type] || API_TARGETS.blue;
+    return API_TARGETS[type] || API_TARGETS.build;
 };
 
 const getVersion = () => argv['app-version'] || APP_VERSION;
