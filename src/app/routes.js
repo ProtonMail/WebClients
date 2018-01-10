@@ -435,7 +435,7 @@ export default angular
                         return lazyLoader.app();
                     },
                     // Contains also labels and contacts
-                    user(app, authentication, $http, pmcw, secureSessionStorage, i18nLoader) {
+                    user(app, authentication, $http, pmcw, secureSessionStorage, i18nLoader, userSettingsModel) {
                         const isAuth = Object.keys(authentication.user || {}).length > 0;
                         if (isAuth) {
                             return i18nLoader.localizeDate().then(() => authentication.user);
@@ -449,7 +449,7 @@ export default angular
 
                         return authentication.fetchUserInfo().then((data) => {
                             return i18nLoader
-                                .translate(data.Locale)
+                                .translate(userSettingsModel.get('Locale'))
                                 .then(i18nLoader.localizeDate)
                                 .then(() => data);
                         });
