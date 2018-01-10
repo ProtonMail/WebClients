@@ -1,5 +1,5 @@
 /* @ngInject */
-function attachmentDownloader(gettextCatalog, AttachmentLoader, embeddedUtils, aboutClient, notification, pmcw) {
+function attachmentDownloader(gettextCatalog, AttachmentLoader, embeddedUtils, aboutClient, notification) {
     const isFileSaverSupported = aboutClient.isFileSaverSupported();
     const I18N = {
         NOT_SUPPORTED: gettextCatalog.getString(
@@ -83,10 +83,6 @@ function attachmentDownloader(gettextCatalog, AttachmentLoader, embeddedUtils, a
         return formatDownload(attachment, message, el).then(generateDownload);
     };
 
-    const downloadString = (attachment, message) => {
-        return AttachmentLoader.get(attachment, message).then((buffer) => pmcw.arrayToBinaryString(buffer));
-    };
-
     /**
      * Download all attachments as a zipfile
      * @param  {Object} message Message
@@ -108,6 +104,6 @@ function attachmentDownloader(gettextCatalog, AttachmentLoader, embeddedUtils, a
         }
     };
 
-    return { isNotSupported, download, all, downloadString };
+    return { isNotSupported, download, all };
 }
 export default attachmentDownloader;
