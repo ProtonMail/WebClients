@@ -85,9 +85,10 @@ const getDefaultApiTarget = () => {
         if (type) {
             return type;
         }
+        return 'build';
     }
 
-    return 'build';
+    return 'dev';
 };
 
 const apiUrl = (type = getDefaultApiTarget(), branch = '') => {
@@ -95,7 +96,7 @@ const apiUrl = (type = getDefaultApiTarget(), branch = '') => {
     if (/-prod/.test(branch)) {
         return API_TARGETS.prod;
     }
-    return API_TARGETS[type] || API_TARGETS.build;
+    return API_TARGETS[type] || API_TARGETS.dev;
 };
 
 const getVersion = () => argv['app-version'] || APP_VERSION;
