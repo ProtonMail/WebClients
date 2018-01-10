@@ -449,7 +449,7 @@ export default angular
 
                         return authentication.fetchUserInfo().then((data) => {
                             return i18nLoader
-                                .translate(userSettingsModel.get().Locale)
+                                .translate(userSettingsModel.get('Locale'))
                                 .then(i18nLoader.localizeDate)
                                 .then(() => data);
                         });
