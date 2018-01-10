@@ -15,6 +15,10 @@ function composer(AppModel, $rootScope, embedded, attachmentFileFormat, mailSett
         return ID === messageID || ID === message.ID;
     };
 
+    const focusComposer = (event, data = {}) => {
+        $rootScope.$emit('composer.update', { type: `focus.${event}`, data });
+    };
+
     /**
      * Parse actions for the message and trigger some actions
      * @param  {$scope} scope
@@ -30,6 +34,11 @@ function composer(AppModel, $rootScope, embedded, attachmentFileFormat, mailSett
             case 'dragenter':
                 if (attachmentFileFormat.isUploadAbleType(data.event)) {
                     addDragenterClassName(el);
+                    focusComposer('dragenter', {
+                        message: scope.message,
+                        composer: angular.element(el),
+                        index: +el.getAttribute('data-index')
+                    });
                 }
                 break;
             case 'drop':
@@ -54,13 +63,10 @@ function composer(AppModel, $rootScope, embedded, attachmentFileFormat, mailSett
         link(scope, el) {
             const onClick = ({ target }) => {
                 if (!/composerHeader-btn/.test(target.classList.toString())) {
-                    $rootScope.$emit('composer.update', {
-                        type: 'focus.click',
-                        data: {
-                            message: scope.message,
-                            composer: el,
-                            index: +el[0].getAttribute('data-index')
-                        }
+                    focusComposer('click', {
+                        message: scope.message,
+                        composer: el,
+                        index: +el[0].getAttribute('data-index')
                     });
                 }
 
@@ -74,7 +80,11 @@ function composer(AppModel, $rootScope, embedded, attachmentFileFormat, mailSett
             const onDragLeave = _.debounce((e) => {
                 const { target } = e;
                 if (target.classList.contains('composer-dropzone') || target.classList.contains('composer-dropzone-wrapper')) {
-                    addDragleaveClassName(el[0]);
+                    if (AppModel.get('composerList').length > 1) {
+                        !scope.message.focussed && addDragleaveClassName(el[0]);
+                    } else {
+                        addDragleaveClassName(el[0]);
+                    }
                 }
             }, 500);
 
