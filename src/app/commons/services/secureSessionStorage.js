@@ -1,3 +1,5 @@
+import _ from 'lodash';
+
 /* @ngInject */
 function secureSessionStorage(CONSTANTS, webcrypto) {
     // Partially inspired by http://www.thomasfrank.se/sessionvars.html

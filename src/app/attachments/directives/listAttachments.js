@@ -1,3 +1,5 @@
+import _ from 'lodash';
+
 /* @ngInject */
 function listAttachments($state, $rootScope, attachmentDownloader, notification, AppModel) {
     const DECRYPTING_CLASSNAME = 'listAttachments-item-decrypt';
@@ -26,7 +28,7 @@ function listAttachments($state, $rootScope, attachmentDownloader, notification,
                 // download attachment
                 if (target.nodeName === 'A') {
                     const ID = target.getAttribute('data-attachment-id');
-                    const attachment = _.findWhere(scope.model.Attachments, { ID });
+                    const attachment = _.find(scope.model.Attachments, { ID });
 
                     target.classList.add(DECRYPTING_CLASSNAME);
 
@@ -60,7 +62,7 @@ function listAttachments($state, $rootScope, attachmentDownloader, notification,
                         });
 
                     scope.$applyAsync(() => {
-                        const attachment = _.findWhere(scope.model.Attachments, { ID });
+                        const attachment = _.find(scope.model.Attachments, { ID });
 
                         // If it's coming from outside there is no headers yet
                         // it's raw attachments without any record yet

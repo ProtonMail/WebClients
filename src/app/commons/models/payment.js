@@ -1,3 +1,5 @@
+import _ from 'lodash';
+
 /* @ngInject */
 function Payment($http, authentication, url, brick, paymentPlansFormator) {
     const requestUrl = url.build('payments');
@@ -165,7 +167,7 @@ function Payment($http, authentication, url, brick, paymentPlansFormator) {
                     const json = angular.fromJson(datas);
 
                     if (json && json.Code === 1000) {
-                        const { Name, Title } = _.findWhere(json.Subscription.Plans, { Type: 1 }) || {};
+                        const { Name, Title } = _.find(json.Subscription.Plans, { Type: 1 }) || {};
                         json.Subscription.Name = Name;
                         json.Subscription.Title = Title;
                     }

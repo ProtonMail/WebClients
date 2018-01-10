@@ -1,3 +1,7 @@
+import _ from 'lodash';
+
+import { flow, filter, sortBy } from 'lodash/fp';
+
 /* @ngInject */
 function composerFromModel(authentication, plusAliasModel) {
     /**
@@ -7,10 +11,7 @@ function composerFromModel(authentication, plusAliasModel) {
      */
     function get({ xOriginalTo, AddressID }) {
         const plusAddress = plusAliasModel.getAddress(xOriginalTo);
-        const addresses = _.chain(authentication.user.Addresses)
-            .where({ Status: 1, Receive: 1 })
-            .sortBy('Order')
-            .value();
+        const addresses = flow(filter({ Status: 1, Receive: 1 }), sortBy('Order'))(authentication.user.Addresses);
 
         if (plusAddress) {
             // It's important to unshift the plus address to be found first with find()
@@ -28,12 +29,12 @@ function composerFromModel(authentication, plusAliasModel) {
      */
     function find(addresses = [], ID) {
         if (!authentication.hasPaidMail()) {
-            const onlySend = _.where(addresses, { Send: 1 });
-            return _.findWhere(onlySend, { ID }) || onlySend[0];
+            const onlySend = _.filter(addresses, { Send: 1 });
+            return _.find(onlySend, { ID }) || onlySend[0];
         }
 
         if (ID) {
-            return _.findWhere(addresses, { ID });
+            return _.find(addresses, { ID });
         }
 
         return addresses[0];

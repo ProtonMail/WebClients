@@ -1,3 +1,5 @@
+import { flow, each, filter } from 'lodash/fp';
+
 /* @ngInject */
 function cacheCounters(messageApi, CONSTANTS, conversationApi, $q, $rootScope, authentication, labelsModel) {
     const api = {};
@@ -46,20 +48,24 @@ function cacheCounters(messageApi, CONSTANTS, conversationApi, $q, $rootScope, a
                 // Initialize locations
                 locs.forEach(exist);
 
-                _.chain(message.data.Counts)
-                    .filter(({ LabelID }) => counters[LabelID])
-                    .each(({ LabelID, Total = 0, Unread = 0 }) => {
+                flow(
+                    filter(({ LabelID }) => counters[LabelID]),
+                    each(({ LabelID, Total = 0, Unread = 0 }) => {
                         counters[LabelID].message.total = Total;
                         counters[LabelID].message.unread = Unread;
-                    });
+                    })
+                )(message.data.Counts);
 
-                _.chain(conversation.data.Counts)
-                    .filter(({ LabelID }) => counters[LabelID])
-                    .each(({ LabelID, Total = 0, Unread = 0 }) => {
+                flow(
+                    filter(({ LabelID }) => counters[LabelID]),
+                    each(({ LabelID, Total = 0, Unread = 0 }) => {
                         counters[LabelID].conversation.total = Total;
                         counters[LabelID].conversation.unread = Unread;
-                    });
+                    })
+                )(conversation.data.Counts);
+
                 dispatch('load');
+
                 return Promise.resolve();
             }, Promise.reject);
     };

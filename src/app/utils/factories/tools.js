@@ -1,3 +1,5 @@
+import _ from 'lodash';
+
 /* @ngInject */
 function tools(
     $log,
@@ -293,7 +295,7 @@ function tools(
     tools.currentMailbox = () => {
         const mailbox = filteredState();
 
-        if (_.contains(MAILBOX_KEYS, mailbox)) {
+        if (_.includes(MAILBOX_KEYS, mailbox)) {
             return mailbox;
         }
 
@@ -306,7 +308,7 @@ function tools(
         const { ViewMode } = mailSettingsModel.get();
         const threadingIsOff = ViewMode === CONSTANTS.MESSAGE_VIEW_MODE;
 
-        if (threadingIsOff || _.contains(specialBoxes, box)) {
+        if (threadingIsOff || _.includes(specialBoxes, box)) {
             return 'message';
         }
 

@@ -1,3 +1,5 @@
+import _ from 'lodash';
+
 /* @ngInject */
 function upgradeKeys($log, CONSTANTS, gettextCatalog, Key, networkActivityTracker, organizationApi, passwords, pmcw, secureSessionStorage) {
     /**
@@ -29,7 +31,7 @@ function upgradeKeys($log, CONSTANTS, gettextCatalog, Key, networkActivityTracke
                 acc.keys.push(key);
                 let foundKey = null;
                 Addresses.forEach((address) => {
-                    foundKey = _.findWhere(address.Keys, { Fingerprint: key.Fingerprint });
+                    foundKey = _.find(address.Keys, { Fingerprint: key.Fingerprint });
                     if (foundKey) {
                         acc.emails[key.ID] = address.Email;
                     }

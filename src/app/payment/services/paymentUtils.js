@@ -1,3 +1,5 @@
+import _ from 'lodash';
+
 /* @ngInject */
 function paymentUtils(CONSTANTS, gettextCatalog, aboutClient, paymentModel, $state) {
     const { MONTHLY, YEARLY, TWO_YEARS } = CONSTANTS.CYCLE;
@@ -65,7 +67,7 @@ function paymentUtils(CONSTANTS, gettextCatalog, aboutClient, paymentModel, $sta
         }
 
         if (choice) {
-            selected = _.findWhere(list, { value: choice });
+            selected = _.find(list, { value: choice });
         }
 
         return { list, selected };

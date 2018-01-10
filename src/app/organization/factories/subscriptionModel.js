@@ -1,3 +1,5 @@
+import _ from 'lodash';
+
 /* @ngInject */
 function subscriptionModel($rootScope, CONSTANTS, gettextCatalog, Payment) {
     const CACHE = {};
@@ -22,7 +24,7 @@ function subscriptionModel($rootScope, CONSTANTS, gettextCatalog, Payment) {
     };
 
     const get = () => angular.copy(CACHE.subscription || {});
-    const count = (addon) => _.where(CACHE.subscription.Plans, { Name: MAP_ADDONS[addon] }).length;
+    const count = (addon) => _.filter(CACHE.subscription.Plans, { Name: MAP_ADDONS[addon] }).length;
 
     const hasFactory = (plans = []) => () => {
         const { Plans = [] } = CACHE.subscription || {};

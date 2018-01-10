@@ -1,3 +1,5 @@
+import _ from 'lodash';
+
 /* @ngInject */
 function foldersElement($rootScope, $state, gettextCatalog, $compile, mailboxIdentifersTemplate) {
     const allowedStates = [

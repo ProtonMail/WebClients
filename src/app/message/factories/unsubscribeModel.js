@@ -1,3 +1,5 @@
+import _ from 'lodash';
+
 /* @ngInject */
 function unsubscribeModel($rootScope, authentication, gettextCatalog, messageModel, notification, parseUrl, simpleSend) {
     const LIST = [];
@@ -7,7 +9,7 @@ function unsubscribeModel($rootScope, authentication, gettextCatalog, messageMod
 
     function already(list = '') {
         if (list.length) {
-            return _.contains(LIST, list);
+            return _.includes(LIST, list);
         }
         return false;
     }
@@ -25,7 +27,7 @@ function unsubscribeModel($rootScope, authentication, gettextCatalog, messageMod
         const { searchObject = {} } = parseUrl(mailto.substring(j + 1));
 
         message.AddressID = addressID || authentication.user.Addresses[0].ID;
-        message.From = _.findWhere(authentication.user.Addresses, { ID: message.AddressID });
+        message.From = _.find(authentication.user.Addresses, { ID: message.AddressID });
         message.Password = '';
 
         if (to) {

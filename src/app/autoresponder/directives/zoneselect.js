@@ -1,3 +1,5 @@
+import _ from 'lodash';
+
 /* @ngInject */
 function zoneselect($rootScope, autoresponderModel) {
     return {
@@ -15,7 +17,7 @@ function zoneselect($rootScope, autoresponderModel) {
                 elem.attr('disabled', 'disabled');
             }
 
-            scope.zone = _.findWhere(scope.timezones, { value: zone });
+            scope.zone = _.find(scope.timezones, { value: zone });
 
             const onChange = () => {
                 scope.$applyAsync(() => autoresponderModel.set({ zone: scope.zone.value }));
@@ -24,7 +26,7 @@ function zoneselect($rootScope, autoresponderModel) {
             unsubscribe.push(
                 $rootScope.$on('autoresponder', (event, { type, data = {} }) => {
                     if (type === 'update') {
-                        scope.zone = _.findWhere(scope.timezones, { value: data.autoresponder.zone });
+                        scope.zone = _.find(scope.timezones, { value: data.autoresponder.zone });
                     }
                 })
             );

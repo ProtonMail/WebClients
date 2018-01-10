@@ -1,3 +1,7 @@
+import _ from 'lodash';
+
+import { flow, uniq, each, map, filter, reduce } from 'lodash/fp';
+
 /* @ngInject */
 function messageActions(
     $q,
@@ -107,8 +111,8 @@ function messageActions(
         const toTrash = labelID === CONSTANTS.MAILBOX_IDENTIFIERS.trash;
         const toSpam = labelID === CONSTANTS.MAILBOX_IDENTIFIERS.spam;
         const folderIDs = toSpam || toTrash ? basicFolders.concat(folders).concat(labels) : basicFolders.concat(folders);
-        const events = _.chain(ids)
-            .map((id) => {
+        const events = flow(
+            map((id) => {
                 const message = cache.getMessageCached(id) || {};
                 let labelIDs = message.LabelIDs || [];
                 const labelIDsAdded = updateLabelsAdded(message.Type, labelID);
@@ -133,23 +137,23 @@ function messageActions(
                         IsRead: toTrash ? 1 : message.IsRead
                     }
                 };
-            })
-            .reduce((acc, event) => ((acc[event.ID] = event), acc), {})
-            .reduce((acc, event, i, eventList) => {
+            }),
+            reduce((acc, event) => ((acc[event.ID] = event), acc), {}),
+            reduce((acc, event, i, eventList) => {
                 const conversation = cache.getConversationCached(event.Message.ConversationID);
                 const messages = cache.queryMessagesCached(event.Message.ConversationID);
 
                 acc.push(event);
 
                 if (conversation && Array.isArray(messages)) {
-                    const Labels = _.chain(messages)
-                        .reduce((acc, { ID, LabelIDs = [] }) => {
+                    const Labels = flow(
+                        reduce((acc, { ID, LabelIDs = [] }) => {
                             const list = eventList[ID] ? eventList[ID].Message.LabelIDs : LabelIDs;
                             return acc.concat(list);
-                        }, [])
-                        .uniq()
-                        .map((ID) => ({ ID }))
-                        .value();
+                        }, []),
+                        uniq,
+                        map((ID) => ({ ID }))
+                    )(messages);
 
                     acc.push({
                         Action: 3,
@@ -163,7 +167,7 @@ function messageActions(
 
                 return acc;
             }, [])
-            .value();
+        )(ids);
 
         // Send request
         const promise = messageApi.label(labelID, 1, ids);
@@ -203,16 +207,16 @@ function messageActions(
         // Generate event for the message
         events.push({ Action: 3, ID: messageID, Message: { ID: messageID, LabelIDsRemoved: [labelID] } });
 
-        const Labels = _.chain(messages)
-            .reduce((acc, { ID, LabelIDs = [] }) => {
+        const Labels = flow(
+            reduce((acc, { ID, LabelIDs = [] }) => {
                 if (ID === messageID) {
                     return acc.concat(LabelIDs.filter((id) => id !== labelID));
                 }
                 return acc.concat(LabelIDs);
-            }, [])
-            .uniq()
-            .map((ID) => ({ ID }))
-            .value();
+            }, []),
+            uniq,
+            map((ID) => ({ ID }))
+        )(messages);
 
         events.push({
             Action: 3,
@@ -239,17 +243,15 @@ function messageActions(
     function addLabel(messages, labels, alsoArchive) {
         const context = tools.cacheContext();
         const currentLocation = tools.currentLocation();
-        const isStateAllowedRemove = _.contains(basicFolders, currentLocation) || labelsModel.contains(currentLocation, 'folders');
-        const ids = _.pluck(messages, 'ID');
+        const isStateAllowedRemove = _.includes(basicFolders, currentLocation) || labelsModel.contains(currentLocation, 'folders');
+        const ids = _.map(messages, 'ID');
 
         const process = (events) => {
             cache.events(events).then(() => {
                 const getLabels = ({ ID }) => {
-                    return _.chain(cache.queryMessagesCached(ID) || [])
-                        .reduce((acc, { LabelIDs = [] }) => acc.concat(LabelIDs), [])
-                        .uniq()
-                        .map((ID) => ({ ID }))
-                        .value();
+                    return flow(reduce((acc, { LabelIDs = [] }) => acc.concat(LabelIDs), []), uniq, map((ID) => ({ ID })))(
+                        cache.queryMessagesCached(ID) || []
+                    );
                 };
 
                 const events2 = _.reduce(
@@ -280,10 +282,7 @@ function messageActions(
         };
 
         const filterLabelsID = (list = [], cb = angular.noop) => {
-            return _.chain(list)
-                .filter(cb)
-                .map(({ ID }) => ID)
-                .value();
+            return flow(filter(cb), map(({ ID }) => ID))(list);
         };
 
         const mapPromisesLabels = (list = [], Action) => {
@@ -295,8 +294,8 @@ function messageActions(
             (acc, message) => {
                 const msgLabels = (message.LabelIDs || []).filter((v) => isNaN(+v));
                 // Selected can equals to true / false / null
-                const toApply = filterLabelsID(labels, ({ ID, Selected }) => Selected === true && !_.contains(msgLabels, ID));
-                const toRemove = filterLabelsID(labels, ({ ID, Selected }) => Selected === false && _.contains(msgLabels, ID));
+                const toApply = filterLabelsID(labels, ({ ID, Selected }) => Selected === true && !_.includes(msgLabels, ID));
+                const toRemove = filterLabelsID(labels, ({ ID, Selected }) => Selected === false && _.includes(msgLabels, ID));
 
                 if (alsoArchive === true) {
                     toApply.push(CONSTANTS.MAILBOX_IDENTIFIERS.archive);
@@ -352,10 +351,10 @@ function messageActions(
             return networkActivityTracker.track(promise);
         }
 
-        const events = _.chain(ids)
-            .map((id) => cache.getMessageCached(id))
-            .filter(Boolean)
-            .reduce((acc, { ID, ConversationID, IsRead }) => {
+        const events = flow(
+            map((id) => cache.getMessageCached(id)),
+            filter(Boolean),
+            reduce((acc, { ID, ConversationID, IsRead }) => {
                 const conversation = cache.getConversationCached(ConversationID);
 
                 // Messages
@@ -380,7 +379,7 @@ function messageActions(
 
                 return acc;
             }, [])
-            .value();
+        )(ids);
 
         cache.events(events);
     }
@@ -400,13 +399,13 @@ function messageActions(
             return networkActivityTracker.track(promise);
         }
 
-        const events = _.chain(ids)
-            .map((id) => cache.getMessageCached(id))
-            .filter(Boolean)
-            .reduce((acc, { ID, ConversationID, IsRead }) => {
+        const events = flow(
+            map((id) => cache.getMessageCached(id)),
+            filter(Boolean),
+            reduce((acc, { ID, ConversationID, IsRead }) => {
                 const conversation = cache.getConversationCached(ConversationID);
                 const messages = cache.queryMessagesCached(ConversationID);
-                const stars = _.filter(messages, ({ LabelIDs = [] }) => _.contains(LabelIDs, CONSTANTS.MAILBOX_IDENTIFIERS.starred));
+                const stars = _.filter(messages, ({ LabelIDs = [] }) => _.includes(LabelIDs, CONSTANTS.MAILBOX_IDENTIFIERS.starred));
 
                 // Messages
                 acc.push({
@@ -429,7 +428,7 @@ function messageActions(
                 }
                 return acc;
             }, [])
-            .value();
+        )(ids);
 
         cache.events(events);
     }
@@ -466,14 +465,14 @@ function messageActions(
         }
 
         // Generate conversation event
-        _.chain(conversationIDs)
-            .uniq()
-            .map((id) => cache.getConversationCached(id))
-            .filter(Boolean)
-            .each(({ ID, Labels = [] }) => {
+        flow(
+            uniq,
+            map((id) => cache.getConversationCached(id)),
+            filter(Boolean),
+            each(({ ID, Labels = [] }) => {
                 const messages = _.filter(
                     cache.queryMessagesCached(ID) || [],
-                    ({ ID, LabelIDs }) => _.contains(messageIDs, ID) && _.contains(LabelIDs, currentLocation)
+                    ({ ID, LabelIDs }) => _.includes(messageIDs, ID) && _.includes(LabelIDs, currentLocation)
                 );
 
                 events.push({
@@ -489,7 +488,8 @@ function messageActions(
                         })
                     }
                 });
-            });
+            })
+        )(conversationIDs);
 
         // Send request
         const promise = messageApi.read({ IDs: messageIDs });
@@ -555,14 +555,14 @@ function messageActions(
 
         if (messageIDs.length) {
             // Generate conversation event
-            _.chain(conversationIDs)
-                .uniq()
-                .map((id) => cache.getConversationCached(id))
-                .filter(Boolean)
-                .each(({ ID, Labels = [] }) => {
+            flow(
+                uniq,
+                map((id) => cache.getConversationCached(id)),
+                filter(Boolean),
+                each(({ ID, Labels = [] }) => {
                     const messages = _.filter(
                         cache.queryMessagesCached(ID) || [],
-                        ({ ID, LabelIDs }) => _.contains(messageIDs, ID) && _.contains(LabelIDs, currentLocation)
+                        ({ ID, LabelIDs }) => _.includes(messageIDs, ID) && _.includes(LabelIDs, currentLocation)
                     );
 
                     events.push({
@@ -578,7 +578,8 @@ function messageActions(
                             })
                         }
                     });
-                });
+                })
+            )(conversationIDs);
         }
 
         cache.events(events);
@@ -602,12 +603,12 @@ function messageActions(
 
                     if (conversation.NumMessages > 1) {
                         const messages = cache.queryMessagesCached(conversation.ID);
-                        const Labels = _.chain(messages)
-                            .filter(({ ID }) => ID !== id)
-                            .reduce((acc, { LabelIDs = [] }) => acc.concat(LabelIDs), [])
-                            .uniq()
-                            .map((ID) => ({ ID }))
-                            .value();
+                        const Labels = flow(
+                            filter(({ ID }) => ID !== id),
+                            reduce((acc, { LabelIDs = [] }) => acc.concat(LabelIDs), []),
+                            uniq,
+                            map((ID) => ({ ID }))
+                        )(messages);
 
                         acc.push({
                             Action: ACTION_STATUS.UPDATE_FLAGS,

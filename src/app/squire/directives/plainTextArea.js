@@ -1,3 +1,5 @@
+import _ from 'lodash';
+
 /* @ngInject */
 function plainTextArea($rootScope, mailSettingsModel) {
     const KEY = {

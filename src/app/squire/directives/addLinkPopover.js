@@ -1,3 +1,5 @@
+import _ from 'lodash';
+
 /* @ngInject */
 function addLinkPopover(editorModel, CONSTANTS, squireExecAction, regexEmail, onCurrentMessage) {
     const { DEFAULT_SQUIRE_VALUE } = CONSTANTS;

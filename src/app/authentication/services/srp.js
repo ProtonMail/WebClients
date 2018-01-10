@@ -1,3 +1,5 @@
+import _ from 'lodash';
+
 /* @ngInject */
 function srp($http, CONFIG, webcrypto, passwords, url, authApi, handle10003) {
     /**

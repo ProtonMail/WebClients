@@ -1,3 +1,7 @@
+import _ from 'lodash';
+
+import { flow, filter, reduce } from 'lodash/fp';
+
 /* @ngInject */
 function squireToolbar(CONSTANTS, squireDropdown, editorModel, onCurrentMessage, $rootScope) {
     const { HEADER_CLASS } = CONSTANTS.DEFAULT_SQUIRE_VALUE;
@@ -24,17 +28,17 @@ function squireToolbar(CONSTANTS, squireDropdown, editorModel, onCurrentMessage,
                  * Filter by whitelist
                  * Ex: isBold etc.
                  */
-                const classNames = _.chain(p.split('>'))
-                    .filter((i) => i && /^i$|^u$|^b$|^ul$|^ol$|^li$|.align-(center|left|right)$/i.test(i))
-                    .reduce((acc, path) => acc.concat(path.split('.')), [])
-                    .filter((i) => i && !/div|html|body|span/i.test(i))
-                    .reduce((acc, key) => {
+                const classNames = flow(
+                    filter((i) => i && /^i$|^u$|^b$|^ul$|^ol$|^li$|.align-(center|left|right)$/i.test(i)),
+                    reduce((acc, path) => acc.concat(path.split('.')), []),
+                    filter((i) => i && !/div|html|body|span/i.test(i)),
+                    reduce((acc, key) => {
                         if (HEADER_CLASS === key) {
                             return `${acc} size`;
                         }
                         return `${acc} ${key.trim()}`;
                     }, '')
-                    .value()
+                )(p.split('>'))
                     .toLowerCase()
                     .trim();
 

@@ -1,3 +1,5 @@
+import _ from 'lodash';
+
 /* @ngInject */
 function contactUI(gettextCatalog, tools, contactTransformLabel) {
     const EMAIL_TYPE = ['email', 'home', 'work', 'other'];
@@ -104,7 +106,7 @@ function contactUI(gettextCatalog, tools, contactTransformLabel) {
             });
         }
 
-        if (!datas.length || (datas.length === 1 && _.contains(UI.hide, datas[0].key))) {
+        if (!datas.length || (datas.length === 1 && _.includes(UI.hide, datas[0].key))) {
             const populated = populate(UI, type);
             add(UI, populated.key, populated.type, '');
         }
@@ -144,13 +146,13 @@ function contactUI(gettextCatalog, tools, contactTransformLabel) {
      * @return {String} type
      */
     function findKey({ items = [] }) {
-        const types = _.pluck(items, 'type');
+        const types = _.map(items, 'type');
         const key = _.find(PERSONAL_TYPE, (type) => types.indexOf(type) === -1);
         return key || PERSONAL_TYPE[_.random(PERSONAL_TYPE.length - 1)];
     }
 
     function add(UI, type, label, value = '', params) {
-        const hide = _.contains(UI.hide, type);
+        const hide = _.includes(UI.hide, type);
         UI.items.push({ type, label: contactTransformLabel.toLang(label), value, hide, params });
     }
 

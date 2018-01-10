@@ -1,3 +1,5 @@
+import _ from 'lodash';
+
 /* @ngInject */
 function contactEncryption($injector, $rootScope, CONSTANTS, chunk, gettextCatalog, pmcw, vcard) {
     const KEY_FIELDS = ['key', 'x-pm-mimetype', 'x-pm-encrypt', 'x-pm-sign', 'x-pm-scheme', 'x-pm-tls', 'x-pm-dane'];
@@ -7,7 +9,7 @@ function contactEncryption($injector, $rootScope, CONSTANTS, chunk, gettextCatal
     const { CONTACT_MODE, CONTACTS_LIMIT_ENCRYPTION, MAIN_KEY, VCARD_VERSION, CONTACT_ERROR } = CONSTANTS;
     const { CLEAR_TEXT, ENCRYPTED_AND_SIGNED, ENCRYPTED, SIGNED } = CONTACT_MODE;
     const { TYPE3_CONTACT_VERIFICATION, TYPE3_CONTACT_DECRYPTION, TYPE2_CONTACT, TYPE1_CONTACT } = CONTACT_ERROR;
-    const getErrors = (data = []) => _.pluck(data, 'error').filter(Boolean);
+    const getErrors = (data = []) => _.map(data, 'error').filter(Boolean);
     const buildContact = (ID, data = [], cards) => ({
         ID,
         vCard: mergeContactData(data),
@@ -60,7 +62,7 @@ function contactEncryption($injector, $rootScope, CONSTANTS, chunk, gettextCatal
 
             const groupName = `item${itemCounter}`;
 
-            if (_.contains(groups, groupName)) {
+            if (_.includes(groups, groupName)) {
                 return getGroupName();
             }
 
@@ -71,10 +73,10 @@ function contactEncryption($injector, $rootScope, CONSTANTS, chunk, gettextCatal
             vcard.extractProperties(data),
             (acc, property) => {
                 const key = property.getField();
-                const isClear = _.contains(CLEAR_FIELDS, key);
-                const isSigned = _.contains(SIGNED_FIELDS, key);
+                const isClear = _.includes(CLEAR_FIELDS, key);
+                const isSigned = _.includes(SIGNED_FIELDS, key);
 
-                if (_.contains(GROUP_FIELDS, key) && !property.group) {
+                if (_.includes(GROUP_FIELDS, key) && !property.group) {
                     property.group = getGroupName();
                 }
 
@@ -103,7 +105,7 @@ function contactEncryption($injector, $rootScope, CONSTANTS, chunk, gettextCatal
         }
 
         if (toSign.length > 0) {
-            const signedFields = _.pluck(toSign, '_field');
+            const signedFields = _.map(toSign, '_field');
 
             if (signedFields.indexOf('uid') === -1) {
                 toSign.push(new vCard.Property('uid', generateUID()));
@@ -111,7 +113,7 @@ function contactEncryption($injector, $rootScope, CONSTANTS, chunk, gettextCatal
 
             if (signedFields.indexOf('fn') === -1) {
                 let fn = gettextCatalog.getString('Unknown', null, 'Default display name vcard');
-                const nameProperty = _.findWhere(toEncryptAndSign, { _field: 'n' });
+                const nameProperty = _.find(toEncryptAndSign, { _field: 'n' });
 
                 if (nameProperty) {
                     fn = nameProperty
@@ -119,7 +121,7 @@ function contactEncryption($injector, $rootScope, CONSTANTS, chunk, gettextCatal
                         .split(';')
                         .join(' ');
                 } else {
-                    const firstEmail = _.findWhere(toSign, { _field: 'email' });
+                    const firstEmail = _.find(toSign, { _field: 'email' });
 
                     if (firstEmail) {
                         fn = firstEmail.valueOf();

@@ -1,3 +1,5 @@
+import _ from 'lodash';
+
 /* @ngInject */
 function autocompleteCommand($rootScope, autocompleteBuilder, autocompleteCommandModel, AppModel) {
     const BACKSPACE_KEY = 8;
@@ -48,7 +50,7 @@ function autocompleteCommand($rootScope, autocompleteBuilder, autocompleteComman
          */
         const action = ({ value, label }) => {
             /* eslint no-underscore-dangle: "off" */
-            mode.key = (_.findWhere(awesomplete._list, { value, label }) || {}).key;
+            mode.key = (_.find(awesomplete._list, { value, label }) || {}).key;
 
             if (/^(add|remove)\.(label|folder)$/.test(value)) {
                 const [type = '', match = ''] = value.split('.');

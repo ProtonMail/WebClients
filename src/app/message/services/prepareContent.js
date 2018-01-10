@@ -1,3 +1,5 @@
+import _ from 'lodash';
+
 /* @ngInject */
 function prepareContent($injector, transformAttachements, transformRemote, transformEscape, transformEmbedded) {
     const filters = ['transformLinks', 'transformEmbedded', 'transformWelcome', 'transformBlockquotes', 'transformStylesheet'].map((name) => ({
@@ -45,12 +47,12 @@ function prepareContent($injector, transformAttachements, transformRemote, trans
         const transformers = getTransformers(blacklist);
         const div = createParser(content, message, {
             action,
-            isBlacklisted: _.contains(blacklist, 'transformRemote')
+            isBlacklisted: _.includes(blacklist, 'transformRemote')
         });
 
         const body = transformers.reduceRight((html, transformer) => transformer.action(html, message, { action }), div);
 
-        if (!blacklist.includes('*') && !_.contains(blacklist, 'transformAttachements')) {
+        if (!blacklist.includes('*') && !_.includes(blacklist, 'transformAttachements')) {
             transformAttachements(body, message, { action });
         }
 

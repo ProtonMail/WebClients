@@ -1,3 +1,5 @@
+import _ from 'lodash';
+
 /* @ngInject */
 function donation(CONSTANTS, cardModel, gettextCatalog, $rootScope, paymentUtils, donateModel, authentication) {
     const SELECTOR = {
@@ -61,7 +63,7 @@ function donation(CONSTANTS, cardModel, gettextCatalog, $rootScope, paymentUtils
                 card: {},
                 method: selected,
                 amount: 25,
-                currency: _.findWhere(CURRENCIES, { value: authentication.user.Currency || CONSTANTS.DEFAULT_CURRENCY })
+                currency: _.find(CURRENCIES, { value: authentication.user.Currency || CONSTANTS.DEFAULT_CURRENCY })
             };
 
             scope.currencies = CURRENCIES;

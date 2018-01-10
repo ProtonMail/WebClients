@@ -1,3 +1,7 @@
+import _ from 'lodash';
+
+import { flow, filter, uniq, reduce } from 'lodash/fp';
+
 /* @ngInject */
 function contactMerger(
     $rootScope,
@@ -64,9 +68,9 @@ function contactMerger(
             { map: {}, duplicate: [] }
         );
 
-        return _.chain(duplicate)
-            .uniq()
-            .reduce((acc, email) => {
+        return flow(
+            uniq,
+            reduce((acc, email) => {
                 acc[email] = [];
 
                 _.each(map[email], (index) => {
@@ -77,7 +81,7 @@ function contactMerger(
 
                 return acc;
             }, {})
-            .value();
+        )(duplicate);
     }
 
     /**
@@ -106,13 +110,14 @@ function contactMerger(
      * @param  {Object} emails
      */
     function merge(emails = {}) {
-        const { toDelete, toCreate } = _.chain(Object.keys(emails))
-            .reduce(
+        const { toDelete, toCreate } = flow(
+            reduce(
                 (acc, key) => {
                     const contacts = emails[key];
-                    const properties = _.chain(contacts)
-                        .filter(({ selected }) => selected)
-                        .reduce((acc2, contact) => {
+
+                    const properties = flow(
+                        filter(({ selected }) => selected),
+                        reduce((acc2, contact) => {
                             if (contact.selected) {
                                 acc.toDelete.push(contact.ID);
                                 acc2.push(vcard.extractProperties(contact.vCard));
@@ -120,7 +125,7 @@ function contactMerger(
 
                             return acc2;
                         }, [])
-                        .value();
+                    )(contacts);
 
                     if (properties.length) {
                         /* eslint new-cap: "off" */
@@ -134,7 +139,7 @@ function contactMerger(
                 },
                 { toDelete: [], toCreate: [] }
             )
-            .value();
+        )(Object.keys(emails));
 
         contactEditor.remove({ contactIDs: toDelete, confirm: false });
         contactEditor.create({ contacts: contactSchema.prepare(toCreate) });
@@ -166,4 +171,5 @@ function contactMerger(
 
     return { init: angular.noop, extractDuplicates };
 }
+
 export default contactMerger;

@@ -1,3 +1,5 @@
+import _ from 'lodash';
+
 /* @ngInject */
 function datetimeErrorCombiner() {
     function create(timePickerKey, scope) {

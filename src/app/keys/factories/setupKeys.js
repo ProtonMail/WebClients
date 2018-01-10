@@ -1,3 +1,5 @@
+import _ from 'lodash';
+
 /* @ngInject */
 function setupKeys($log, $q, CONSTANTS, gettextCatalog, Key, MemberKey, notification, passwords, pmcw, webcrypto) {
     function generate(addresses = [], password = '', numBits = 2048) {

@@ -388,14 +388,14 @@ describe('labelsModel factory', () => {
         it('should update the list after an update of a scoped map: folders', () => {
             const ID = mapMock.luis.ID;
             const mock = prepareItem(factory.read(ID, 'folders'));
-            expect(_.findWhere(factory.get(), { ID })).toEqual(mock);
-            expect(_.findWhere(factory.get('folders'), { ID })).toEqual(mock);
+            expect(_.find(factory.get(), { ID })).toEqual(mock);
+            expect(_.find(factory.get('folders'), { ID })).toEqual(mock);
             expect(factory.read(ID)).not.toEqual(mapMock.luis);
         });
 
         it('should get a copy of the list via getters : folders', () => {
             const ID = mapMock.luis.ID;
-            const item = _.findWhere(factory.get('folders'), { ID });
+            const item = _.find(factory.get('folders'), { ID });
             const mock = prepareItem(factory.read(ID, 'folders'));
             expect(item).not.toEqual(mock);
         });
@@ -411,14 +411,14 @@ describe('labelsModel factory', () => {
         it('should update the list after an update of a scoped map type:labels', () => {
             const ID = mapMock.jeanne.ID;
             const mock = prepareItem(factory.read(ID, 'labels'), 'jeanne');
-            expect(_.findWhere(factory.get(), { ID })).toEqual(mock);
-            expect(_.findWhere(factory.get('labels'), { ID })).toEqual(mock);
+            expect(_.find(factory.get(), { ID })).toEqual(mock);
+            expect(_.find(factory.get('labels'), { ID })).toEqual(mock);
             expect(factory.read(ID)).not.toEqual(mapMock.jeanne);
         });
 
         it('should get a copy of the list via getters : labels', () => {
             const ID = mapMock.jeanne.ID;
-            const item = _.findWhere(factory.get('labels'), { ID });
+            const item = _.find(factory.get('labels'), { ID });
             const mock = prepareItem(factory.read(ID, 'labels'), 'jeanne');
             expect(item).not.toEqual(mock);
         });

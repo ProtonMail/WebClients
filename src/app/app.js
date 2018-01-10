@@ -1,3 +1,5 @@
+import _ from 'lodash';
+
 import paginator from './paginator/index';
 import analytics from './analytics/index';
 import authentication from './authentication/index';

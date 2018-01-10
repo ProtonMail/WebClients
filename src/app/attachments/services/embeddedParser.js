@@ -1,3 +1,7 @@
+import _ from 'lodash';
+
+import { flow, filter, map } from 'lodash/fp';
+
 /* @ngInject */
 function embeddedParser(CONSTANTS, embeddedStore, embeddedFinder, embeddedUtils, AttachmentLoader, attachmentFileFormat, $state, mailSettingsModel) {
     const DIV = document.createElement('DIV');
@@ -83,14 +87,14 @@ function embeddedParser(CONSTANTS, embeddedStore, embeddedFinder, embeddedUtils,
         const isDraft = $state.includes('secured.drafts.**') || message.isDraft();
 
         // For a draft if we close it before the end of the attachement upload, there are no keyPackets
-        const promise = _.chain(list)
-            .filter(({ attachment }) => attachment.KeyPackets)
-            .filter(({ cid }) => !embeddedStore.hasBlob(cid) && (show || isDraft))
-            .map(({ cid, attachment }) => {
+        const promise = flow(
+            filter(({ attachment }) => attachment.KeyPackets),
+            filter(({ cid }) => !embeddedStore.hasBlob(cid) && (show || isDraft)),
+            map(({ cid, attachment }) => {
                 const storeAttachement = embeddedStore.store(message, cid);
                 return AttachmentLoader.get(attachment, message).then((buffer) => storeAttachement(buffer, attachment.MIMEType));
             })
-            .value();
+        )(list);
 
         if (!promise.length) {
             // all cid was already stored, we can resolve

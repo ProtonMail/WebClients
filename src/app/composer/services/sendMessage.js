@@ -1,3 +1,5 @@
+import _ from 'lodash';
+
 /* @ngInject */
 function sendMessage(CONSTANTS, messageModel, gettextCatalog, encryptMessage, messageRequest, notification, cache, $rootScope) {
     const { STATUS } = CONSTANTS;

@@ -1,3 +1,5 @@
+import _ from 'lodash';
+
 /* @ngInject */
 function embeddedFinder(embeddedStore, embeddedUtils) {
     const find = (message) => {

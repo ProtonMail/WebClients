@@ -1,3 +1,5 @@
+import _ from 'lodash';
+
 /* @ngInject */
 function bugReportApi(Bug, CONFIG, $state, aboutClient, authentication, gettextCatalog, networkActivityTracker, notification, CONSTANTS) {
     const { ROW_MODE, COLUMN_MODE, MESSAGE_VIEW_MODE, CONVERSATION_VIEW_MODE } = CONSTANTS;

@@ -1,3 +1,5 @@
+import _ from 'lodash';
+
 /* @ngInject */
 function memberModel($rootScope, memberApi, gettextCatalog, authentication, CONSTANTS) {
     let CACHE = [];

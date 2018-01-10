@@ -1,3 +1,7 @@
+import _ from 'lodash';
+
+import { flow, filter, head } from 'lodash/fp';
+
 /* @ngInject */
 function csvFormat() {
     const PROPERTIES = {
@@ -54,10 +58,7 @@ function csvFormat() {
     };
 
     const getParameter = (key = '') => {
-        return _.chain(Object.keys(parameters))
-            .filter((param) => parameters[param].filter((value) => key.indexOf(value) > -1).length > 0)
-            .first()
-            .value();
+        return flow(filter((param) => parameters[param].filter((value) => key.indexOf(value) > -1).length > 0), head)(Object.keys(parameters));
     };
 
     const extractKeys = (keys = [], contact = {}) => {
@@ -327,4 +328,5 @@ function csvFormat() {
         url
     };
 }
+
 export default csvFormat;

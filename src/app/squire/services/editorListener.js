@@ -1,3 +1,7 @@
+import _ from 'lodash';
+
+import { flow, filter, each } from 'lodash/fp';
+
 /* @ngInject */
 function editorListener(
     signatureBuilder,
@@ -117,15 +121,16 @@ function editorListener(
 
             switch (type) {
                 case 'upload.success':
-                    _.chain(data.upload)
-                        .filter(({ attachment = {} }) => attachment.Headers['content-disposition'] === 'inline')
-                        .each(({ cid, url, attachment }) => {
+                    flow(
+                        filter(({ attachment = {} }) => attachment.Headers['content-disposition'] === 'inline'),
+                        each(({ cid, url, attachment }) => {
                             // If we close the composer the editor won't exist anymore but maybe we were uploading an attchement
                             editor.fireEvent('refresh', {
                                 action: 'attachment.embedded',
                                 data: { url, cid, attachment }
                             });
-                        });
+                        })
+                    )(data.upload);
                     break;
 
                 case 'remove.embedded':

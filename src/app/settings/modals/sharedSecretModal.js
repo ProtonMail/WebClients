@@ -1,3 +1,5 @@
+import _ from 'lodash';
+
 /* @ngInject */
 function sharedSecretModal(authentication, pmModal, webcrypto) {
     return pmModal({
