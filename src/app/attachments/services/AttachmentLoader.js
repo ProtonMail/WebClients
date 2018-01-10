@@ -115,25 +115,29 @@ function AttachmentLoader($cacheFactory, $log, $q, pmcw, authentication, $state,
      * @param  {Object} message
      * @return {Promise}            Return decrypted attachment
      */
-    const get = (attachment = {}, message = {}) => {
+    const get = async (attachment = {}, message = {}) => {
         if (cache.get(`attachment.${attachment.ID}`)) {
-            return Promise.resolve(cache.get(getCacheKey(attachment)));
+            return cache.get(getCacheKey(attachment));
         }
 
         if (attachment.Preview) {
-            return Promise.resolve(attachment.Preview);
+            return attachment.Preview;
         }
 
-        const request = getRequest(attachment);
-        const key = getSessionKey(message, attachment);
         const pubKeys = null;
 
-        return Promise.all([request, key])
-            .then(([{ data }, { sessionKey }]) => decrypt(data, pubKeys, sessionKey))
-            .then((data) => (cache.put(getCacheKey(attachment), data), data))
-            .catch((err) => {
-                throw err;
-            });
+        const { data } = await getRequest(attachment);
+        try {
+            // Will crash if there is a decryption error
+            const { sessionKey } = await getSessionKey(message, attachment);
+            const buffer = await decrypt(data, pubKeys, sessionKey);
+            cache.put(getCacheKey(attachment), buffer);
+            return buffer;
+        } catch (error) {
+            const blob = pmcw.concatArrays([pmcw.binaryStringToArray(pmcw.decode_base64(attachment.KeyPackets)), new Uint8Array(data)]);
+            // Fallback download raw attachement
+            return Promise.reject({ data: blob, error });
+        }
     };
 
     const flushCache = () => cache.removeAll();

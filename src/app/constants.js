@@ -1,3 +1,5 @@
+export const ERROR_SILENT = 'ignoreError';
+
 export const CONSTANTS = {
     ERROR_AUTH_ACCOUNT_DISABLED: 10003,
     CONVERSATION_REQUEST_SIZE: 10,
@@ -272,7 +274,8 @@ export const CONSTANTS = {
         yellow: ['#FFF2CD', '#FEE59C', '#FCD86F', '#FDF84E', '#F2C246', '#BE8F35', '#7F6124']
     },
     CANCEL_REQUEST: 'CANCEL_REQUEST',
-    ENCRYPTION_DEFAULT: 2048
+    ENCRYPTION_DEFAULT: 2048,
+    ERROR_SILENT
 };
 
 export default angular
