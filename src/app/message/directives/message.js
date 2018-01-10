@@ -1,7 +1,7 @@
 import _ from 'lodash';
 
 /* @ngInject */
-function message($state, $rootScope, cache, displayContent, messageScroll, tools, unsubscribeModel) {
+function message($state, $rootScope, cache, displayContent, messageScroll, tools, unsubscribeModel, $exceptionHandler) {
     const getRecipients = ({ ToList = [], CCList = [], BCCList = [] } = {}) => [].concat(ToList, CCList, BCCList);
 
     /**
@@ -56,8 +56,11 @@ function message($state, $rootScope, cache, displayContent, messageScroll, tools
                     })
                     .catch((e) => {
                         console.error(e);
-                        scope.message.expand = true;
-                        scope.message.viewMode = 'plain';
+                        $exceptionHandler(e);
+                        scope.$applyAsync(() => {
+                            scope.message.expand = true;
+                            scope.message.viewMode = 'plain';
+                        });
                     });
             };
 

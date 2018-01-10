@@ -1,7 +1,5 @@
 import _ from 'lodash';
-
 import { flow, filter, sortBy } from 'lodash/fp';
-
 import { CONSTANTS } from '../../constants';
 
 /**
