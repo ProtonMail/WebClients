@@ -1,5 +1,3 @@
-import _ from 'lodash';
-
 /* @ngInject */
 function SignaturesController(
     $rootScope,
@@ -112,14 +110,15 @@ function SignaturesController(
         },
         orderChanged() {
             const addresses = $scope.activeAddresses.concat($scope.disabledAddresses);
-            const order = [];
+            const { active, disabled } = addressModel.getActive();
+            const map = active.concat(disabled).reduce((acc, adr) => ((acc[adr.ID] = adr), acc), {});
+            const newOrder = addresses.map(({ ID }) => map[ID].Order);
 
-            _.each(addresses, (address, index) => {
-                order[index] = address.Order;
+            addresses.forEach((address, index) => {
                 address.Order = index + 1;
             });
 
-            addressModel.saveOrder(order);
+            addressModel.saveOrder(newOrder);
         }
     };
     /**

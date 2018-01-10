@@ -1,4 +1,7 @@
-<section class="defaultSignature-container">
+<section class="defaultSignature-container" ng-class="{
+    'defaultSignature-custom-signature': hasCustom.Signature,
+    'defaultSignature-custom-displayname': hasCustom.DisplayName,
+}">
     <div class="clearfix">
         <div class="col-3-8">
             <label for="displayName">
@@ -7,7 +10,11 @@
             </label>
         </div>
         <div class="col-5-8">
-            <input id="displayName" type="text" name="displayName" ng-model="displayName" />
+            <input
+                id="displayName"
+                type="text"
+                name="displayName"
+                ng-model="displayName">
         </div>
     </div>
     <div class="clearfix">
@@ -43,6 +50,16 @@
         </div>
     </div>
     <div class="clearfix">
+
+        <blockquote class="alert alert-warning defaultSignature-warnings">
+            <span class="defaultSignature-warnings-about">You already set a custom:</span>
+            <ul class="defaultSignature-warnings-list">
+                <li class="defaultSignature-item-displayname">display name</li>
+                <li class="defaultSignature-item-signature">signature</li>
+            </ul>
+            <a ui-sref="secured.signatures" class="defaultSignature-warnings-link">Edit</a>
+        </blockquote>
+
         <div class="col-3-8">&nbsp;</div>
         <div class="col-5-8">
             <button class="pm_button primary" ng-click="saveIdentity()" translate-context="Action" translate translate-comment="Save button for updating default identity on account page">Save</button>

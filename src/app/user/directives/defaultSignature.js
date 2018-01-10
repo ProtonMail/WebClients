@@ -1,5 +1,5 @@
 /* @ngInject */
-function defaultSignature($rootScope, signatureModel, CONSTANTS, mailSettingsModel, tools) {
+function defaultSignature($rootScope, signatureModel, CONSTANTS, mailSettingsModel, tools, addressModel) {
     return {
         scope: {},
         replace: true,
@@ -7,7 +7,17 @@ function defaultSignature($rootScope, signatureModel, CONSTANTS, mailSettingsMod
         templateUrl: require('../../../templates/user/defaultSignature.tpl.html'),
         link(scope) {
             const unsubscribe = [];
-            const { PMSignature } = mailSettingsModel.get();
+            const { PMSignature, DisplayName, Signature } = mailSettingsModel.get();
+
+            const checkCustom = (DisplayName, Signature) => {
+                const { active: [mainAddress = {}] } = addressModel.getActive() || { active: [] };
+                scope.hasCustom = {
+                    DisplayName: mainAddress.DisplayName !== DisplayName,
+                    Signature: mainAddress.Signature !== Signature
+                };
+            };
+            checkCustom(DisplayName, Signature);
+
             scope.protonSignature = {
                 content: CONSTANTS.PM_SIGNATURE,
                 isMandatory: PMSignature === 2,
@@ -17,9 +27,9 @@ function defaultSignature($rootScope, signatureModel, CONSTANTS, mailSettingsMod
 
             const updateUser = () => {
                 const { DisplayName, Signature } = mailSettingsModel.get();
-
                 scope.displayName = DisplayName;
                 scope.signature = tools.replaceLineBreaks(Signature);
+                checkCustom(DisplayName, Signature);
             };
 
             unsubscribe.push(
