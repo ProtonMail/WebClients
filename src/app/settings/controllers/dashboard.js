@@ -1,3 +1,5 @@
+import _ from 'lodash';
+
 /* @ngInject */
 function DashboardController(
     $rootScope,
@@ -18,7 +20,7 @@ function DashboardController(
     });
 
     if ($stateParams.scroll === true) {
-        scrollToPlans();
+        _.defer(scrollToPlans);
     }
 
     updateUser();
