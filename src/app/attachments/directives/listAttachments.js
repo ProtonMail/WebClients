@@ -1,7 +1,7 @@
 import _ from 'lodash';
 
 /* @ngInject */
-function listAttachments($state, $rootScope, attachmentDownloader, notification, AppModel) {
+function listAttachments($state, $rootScope, attachmentDownloader) {
     const DECRYPTING_CLASSNAME = 'listAttachments-item-decrypt';
     const DOWNLOADED_CLASSNAME = 'listAttachments-item-download';
     const HIDDEN_CLASSNAME = 'hidden';
@@ -42,9 +42,8 @@ function listAttachments($state, $rootScope, attachmentDownloader, notification,
                         .then(() => {
                             target.classList.add(DOWNLOADED_CLASSNAME);
                         })
-                        .catch((error) => {
+                        .catch(() => {
                             target.classList.remove(DECRYPTING_CLASSNAME);
-                            AppModel.is('onLine') && notification.error(error);
                         });
                 }
 

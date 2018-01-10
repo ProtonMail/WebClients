@@ -1,4 +1,5 @@
 import _ from 'lodash';
+import { ERROR_SILENT } from '../../constants';
 
 /* @ngInject */
 function networkActivityTracker(errorReporter, $rootScope, notification, dedentTpl) {
@@ -78,7 +79,7 @@ function networkActivityTracker(errorReporter, $rootScope, notification, dedentT
                     message = 'An error has occurred. <br> Please try again or refresh the page.';
                 }
 
-                if (message !== 'loginPassword:cancel') {
+                if (message !== 'loginPassword:cancel' || message !== ERROR_SILENT) {
                     notification.error(message);
                 }
 
