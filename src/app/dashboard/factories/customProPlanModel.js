@@ -1,3 +1,5 @@
+import _ from 'lodash';
+
 /* @ngInject */
 function customProPlanModel($rootScope, CONSTANTS, dashboardConfiguration, dashboardModel) {
     const { PLANS, BASE_SIZE, MAX_MEMBER, HUGE_MEMBER } = CONSTANTS;
@@ -58,7 +60,7 @@ function customProPlanModel($rootScope, CONSTANTS, dashboardConfiguration, dashb
         const professionalPlan = plan[PROFESSIONAL];
         const { professional } = dashboardConfiguration.get();
         const options = getEquivalentOptions();
-        const option = _.findWhere(options, { members: Number(professional.member) + professionalPlan.MaxMembers });
+        const option = _.find(options, { members: Number(professional.member) + professionalPlan.MaxMembers });
 
         let step;
         let start;
@@ -69,19 +71,19 @@ function customProPlanModel($rootScope, CONSTANTS, dashboardConfiguration, dashb
             case 'members':
                 step = memberAddon.MaxMembers;
                 start = option.members;
-                min = _.first(options).members;
+                min = _.head(options).members;
                 max = _.last(options).members;
                 break;
             case 'storage':
                 step = fromBase(memberAddon.MaxSpace);
                 start = option.storage;
-                min = _.first(options).storage;
+                min = _.head(options).storage;
                 max = _.last(options).storage;
                 break;
             case 'addresses':
                 step = memberAddon.MaxAddresses;
                 start = option.addresses;
-                min = _.first(options).addresses;
+                min = _.head(options).addresses;
                 max = _.last(options).addresses;
                 break;
         }
@@ -116,7 +118,7 @@ function customProPlanModel($rootScope, CONSTANTS, dashboardConfiguration, dashb
 
     function refreshSliders(type, value) {
         const options = getEquivalentOptions();
-        const { members, storage, addresses } = _.findWhere(options, { [type]: value });
+        const { members, storage, addresses } = _.find(options, { [type]: value });
 
         CACHE.members = members;
         CACHE.storage = storage;
@@ -131,7 +133,7 @@ function customProPlanModel($rootScope, CONSTANTS, dashboardConfiguration, dashb
         CACHE.maxMembers = HUGE_MEMBER; // Important to have it before getEquivalentOptions()
 
         const options = getEquivalentOptions();
-        const min = _.first(options);
+        const min = _.head(options);
         const max = _.last(options);
 
         SLIDER_TYPES.forEach((type) => {
@@ -150,7 +152,7 @@ function customProPlanModel($rootScope, CONSTANTS, dashboardConfiguration, dashb
     }
 
     $rootScope.$on('slider.updated', (event, { type, data = {} }) => {
-        if (_.contains(['members', 'storage', 'addresses'], type)) {
+        if (_.includes(['members', 'storage', 'addresses'], type)) {
             refreshSliders(type, data.value);
         }
     });

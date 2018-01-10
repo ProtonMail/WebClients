@@ -1,10 +1,9 @@
+import { flow, map, uniq } from 'lodash/fp';
+
 /* @ngInject */
 function filterButton(filterModal, lazyLoader) {
     const recipients = ({ ToList = [], CCList = [], BCCList = [] }) => {
-        return _.chain([].concat(ToList, CCList, BCCList))
-            .map(({ Address }) => Address)
-            .uniq()
-            .value();
+        return flow(map(({ Address }) => Address), uniq)([].concat(ToList, CCList, BCCList));
     };
 
     const attachments = ({ Attachments = [] }) => (Attachments.length ? 'contains' : '!contains');

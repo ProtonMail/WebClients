@@ -1,3 +1,5 @@
+import _ from 'lodash';
+
 /* @ngInject */
 function cardView(countriesListModel) {
     const countries = countriesListModel();
@@ -13,7 +15,7 @@ function cardView(countriesListModel) {
             form: '='
         },
         link(scope) {
-            const country = scope.card.country ? _.findWhere(countries, { value: scope.card.country.value }) : countries[0];
+            const country = scope.card.country ? _.find(countries, { value: scope.card.country.value }) : countries[0];
             scope.months = months;
             scope.years = years;
             scope.countries = countries;

@@ -1,3 +1,5 @@
+import _ from 'lodash';
+
 /* @ngInject */
 function navigationItem($rootScope, $state, $stateParams, sidebarModel, dedentTpl, eventManager, AppModel) {
     const CLASS_ACTIVE = 'active';

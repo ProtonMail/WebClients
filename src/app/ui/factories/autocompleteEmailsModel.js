@@ -1,3 +1,7 @@
+import _ from 'lodash';
+
+import { flow, filter, take, map } from 'lodash/fp';
+
 /* @ngInject */
 function autocompleteEmailsModel($injector, authentication, regexEmail, checkTypoEmails, $filter, CONSTANTS) {
     const { AUTOCOMPLETE_DOMAINS } = CONSTANTS;
@@ -29,14 +33,14 @@ function autocompleteEmailsModel($injector, authentication, regexEmail, checkTyp
      */
     const defaultDomainsList = (value = '') => {
         const [email, domain = ''] = value.split('@');
-        return _.chain(AUTOCOMPLETE_DOMAINS)
-            .filter((item) => item.includes(domain.toLowerCase()))
-            .map((domain) => {
+        return flow(
+            filter((item) => item.includes(domain.toLowerCase())),
+            map((domain) => {
                 const value = `${email}@${domain}`;
                 return { label: value, value, Name: value };
-            })
-            .first(CONSTANTS.AWESOMEPLETE_MAX_ITEMS)
-            .value();
+            }),
+            take(CONSTANTS.AWESOMEPLETE_MAX_ITEMS)
+        )(AUTOCOMPLETE_DOMAINS);
     };
 
     /**
@@ -62,7 +66,7 @@ function autocompleteEmailsModel($injector, authentication, regexEmail, checkTyp
      */
     const filterList = (list = [], value, strictEquality = false) => {
         const col = list.length ? list : [{ label: value, value }];
-        return strictEquality ? _.where(col, { value }) : col;
+        return strictEquality ? _.filter(col, { value }) : col;
     };
 
     /**
@@ -81,15 +85,15 @@ function autocompleteEmailsModel($injector, authentication, regexEmail, checkTyp
         const value = unicodeTagView(val.trim());
         const input = value.toLowerCase();
 
-        const collection = _.chain($injector.get('contactEmails').fetch())
-            .map(({ Name, Email }) => {
+        const collection = flow(
+            map(({ Name, Email }) => {
                 const value = Email;
                 const label = formatLabel(Name, Email);
                 return { label, value, Name };
-            })
-            .filter(({ label }) => label.toLowerCase().includes(input))
-            .first(CONSTANTS.AWESOMEPLETE_MAX_ITEMS)
-            .value();
+            }),
+            filter(({ label }) => label.toLowerCase().includes(input)),
+            take(CONSTANTS.AWESOMEPLETE_MAX_ITEMS)
+        )($injector.get('contactEmails').fetch());
 
         // it creates a map <escaped>:<label> because the lib does not support more keys than label/value and we need the unescaped value #4901
         TEMP_LABELS = collection.reduce((acc, { label, Name }) => ((acc[label] = Name), acc), {});
@@ -200,4 +204,5 @@ function autocompleteEmailsModel($injector, authentication, regexEmail, checkTyp
         };
     };
 }
+
 export default autocompleteEmailsModel;

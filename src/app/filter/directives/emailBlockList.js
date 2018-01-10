@@ -1,3 +1,5 @@
+import _ from 'lodash';
+
 /* @ngInject */
 function emailBlockList($rootScope, spamListModel, gettextCatalog) {
     const I18N = {
@@ -41,7 +43,7 @@ function emailBlockList($rootScope, spamListModel, gettextCatalog) {
                 $rootScope.$on('filters', () => {
                     list.get().then((list) => {
                         scope.$applyAsync(() => {
-                            scope.entries = _.uniq(list, false, 'ID');
+                            scope.entries = _.uniqBy(list, 'ID');
                             $('.tooltip').hide();
                         });
                     });
@@ -61,7 +63,7 @@ function emailBlockList($rootScope, spamListModel, gettextCatalog) {
                 if (scrollBottom / tbody.scrollHeight > triggerFetch / elementCount) {
                     list.get().then((list) => {
                         scope.$applyAsync(() => {
-                            scope.entries = _.uniq(scope.entries.concat(list), false, 'ID');
+                            scope.entries = _.uniqBy(scope.entries.concat(list), 'ID');
                         });
                     });
                 }

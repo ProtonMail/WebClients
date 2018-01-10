@@ -1,3 +1,5 @@
+import _ from 'lodash';
+
 /* @ngInject */
 function encryptMessage($rootScope, pmcw, srp, ComposerRequestStatus, outsidersMap, CONSTANTS, gettextCatalog) {
     const { SEND_TYPES } = CONSTANTS;

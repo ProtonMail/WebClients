@@ -1,3 +1,5 @@
+import _ from 'lodash';
+
 /* @ngInject */
 function dashboardModel(
     $filter,
@@ -96,7 +98,7 @@ function dashboardModel(
             return downgrade();
         }
 
-        const PlanIDs = _.pluck(plans, 'ID'); // Map plan IDs
+        const PlanIDs = _.map(plans, 'ID'); // Map plan IDs
         const promise = Payment.valid({
             Cycle: dashboardConfiguration.cycle(),
             Currency: dashboardConfiguration.currency(),
@@ -157,7 +159,7 @@ function dashboardModel(
                 (acc, plan) => {
                     acc.amounts[plan.Name] = plan.Amount;
 
-                    if (_.contains(MAIL_PLANS, plan.Name)) {
+                    if (_.includes(MAIL_PLANS, plan.Name)) {
                         acc.plan[plan.Name] = plan;
                         acc.list.push(plan);
                         return acc;

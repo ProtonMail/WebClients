@@ -1,3 +1,5 @@
+import _ from 'lodash';
+
 /* @ngInject */
 function filterModal(
     $timeout,
@@ -97,8 +99,8 @@ function filterModal(
                 const conditions = Conditions.map(({ Type = {}, Comparator = {}, Values = [] }) => ({
                     Values,
                     value: '',
-                    Type: _.findWhere(ctrl.types, { value: Type.value }),
-                    Comparator: _.findWhere(ctrl.comparators, { value: Comparator.value })
+                    Type: _.find(ctrl.types, { value: Type.value }),
+                    Comparator: _.find(ctrl.comparators, { value: Comparator.value })
                 }));
 
                 if (conditions.length === 0) {
@@ -139,7 +141,7 @@ function filterModal(
                     Mark
                 };
 
-                ctrl.hasLabels = !!_.where(actions.Labels, { Selected: true }).length;
+                ctrl.hasLabels = !!_.filter(actions.Labels, { Selected: true }).length;
                 return actions;
             }
 
@@ -150,7 +152,7 @@ function filterModal(
              */
             function prepareOperator({ Simple = {} } = {}) {
                 const { value = 'all' } = Simple.Operator || {};
-                return _.findWhere(ctrl.operators, { value });
+                return _.find(ctrl.operators, { value });
             }
 
             /**
@@ -250,7 +252,7 @@ function filterModal(
              * @return {void}
              */
             ctrl.onChangeAttachements = (model, value) => {
-                model.Comparator = _.findWhere(ctrl.comparators, { value });
+                model.Comparator = _.find(ctrl.comparators, { value });
             };
 
             ctrl.displaySeparator = () => {
@@ -291,7 +293,7 @@ function filterModal(
                     pass = pass && (ctrl.hasLabels || ctrl.hasMove || ctrl.hasMark);
 
                     if (ctrl.hasLabels === true) {
-                        pass = pass && _.where(ctrl.filter.Simple.Actions.Labels, { Selected: true }).length > 0;
+                        pass = pass && _.filter(ctrl.filter.Simple.Actions.Labels, { Selected: true }).length > 0;
                     }
 
                     if (ctrl.hasMark === true) {
@@ -311,8 +313,8 @@ function filterModal(
 
             ctrl.addCondition = () => {
                 ctrl.filter.Simple.Conditions.push({
-                    Type: _.first(ctrl.types),
-                    Comparator: _.first(ctrl.comparators),
+                    Type: _.head(ctrl.types),
+                    Comparator: _.head(ctrl.comparators),
                     Values: [],
                     value: ''
                 });

@@ -1,3 +1,5 @@
+import _ from 'lodash';
+
 /* @ngInject */
 function activePlan($rootScope, CONSTANTS, subscriptionModel) {
     const { PLUS, PROFESSIONAL, VISIONARY } = CONSTANTS.PLANS.PLAN;

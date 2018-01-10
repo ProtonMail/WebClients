@@ -1,3 +1,5 @@
+import _ from 'lodash';
+
 /* @ngInject */
 function humanSize(CONSTANTS, gettextCatalog) {
     const units = {

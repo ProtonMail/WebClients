@@ -1,3 +1,5 @@
+import _ from 'lodash';
+
 /* @ngInject */
 function contactList($filter, dispatchers, $state, $stateParams, contactCache) {
     const HEADER_HEIGHT = 120;
@@ -53,7 +55,7 @@ function contactList($filter, dispatchers, $state, $stateParams, contactCache) {
                         const start = scope.contacts.indexOf(contact);
                         const end = _.findIndex(scope.contacts, { ID: lastChecked.ID });
                         const col = scope.contacts.slice(Math.min(start, end), Math.max(start, end) + 1);
-                        contactIDs.push(..._.pluck(col, 'ID'));
+                        contactIDs.push(..._.map(col, 'ID'));
                     }
 
                     lastChecked = contact;
@@ -63,7 +65,7 @@ function contactList($filter, dispatchers, $state, $stateParams, contactCache) {
 
             const setContactSelection = (ID, checked, shiftKey) => {
                 return scope.$applyAsync(() => {
-                    const contact = _.findWhere(scope.contacts, { ID });
+                    const contact = _.find(scope.contacts, { ID });
                     selectContact(contact, checked, shiftKey);
                 });
             };

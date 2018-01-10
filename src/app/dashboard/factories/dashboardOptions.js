@@ -1,3 +1,5 @@
+import _ from 'lodash';
+
 /* @ngInject */
 function dashboardOptions(gettextCatalog, CONSTANTS) {
     const { MAX_MEMBER } = CONSTANTS;

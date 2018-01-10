@@ -1,3 +1,5 @@
+import _ from 'lodash';
+
 /* @ngInject */
 function ptStar($rootScope, CONSTANTS, gettextCatalog, tools, actionConversation) {
     /**
@@ -6,7 +8,7 @@ function ptStar($rootScope, CONSTANTS, gettextCatalog, tools, actionConversation
      */
     function isStarred({ LabelIDs = [], Labels = [] }) {
         if (Labels.length) {
-            return _.findWhere(Labels, { ID: CONSTANTS.MAILBOX_IDENTIFIERS.starred });
+            return _.find(Labels, { ID: CONSTANTS.MAILBOX_IDENTIFIERS.starred });
         }
         return LabelIDs.some((label) => label === CONSTANTS.MAILBOX_IDENTIFIERS.starred);
     }

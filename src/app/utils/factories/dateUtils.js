@@ -1,3 +1,5 @@
+import _ from 'lodash';
+
 /* @ngInject */
 function dateUtils($injector, gettextCatalog) {
     const I18N = {};

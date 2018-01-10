@@ -1,3 +1,5 @@
+import _ from 'lodash';
+
 /* @ngInject */
 function weekdayTimePicker(dateUtils, $rootScope, datetimeErrorCombiner, timepickerModel) {
     const days = dateUtils.getSortedWeekdays();
@@ -41,7 +43,7 @@ function weekdayTimePicker(dateUtils, $rootScope, datetimeErrorCombiner, timepic
                         return;
                     }
 
-                    scope.model.weekday = _.findWhere(scope.days, { value: getWeekDay(scope.timestamp) });
+                    scope.model.weekday = _.find(scope.days, { value: getWeekDay(scope.timestamp) });
                     scope.model.time = getTime(scope.timestamp);
                 }
 

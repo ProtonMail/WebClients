@@ -1,3 +1,5 @@
+import _ from 'lodash';
+
 /* @ngInject */
 function overviewSection($rootScope, authentication, organizationModel, subscriptionModel) {
     return {

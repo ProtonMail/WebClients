@@ -1,9 +1,11 @@
+import _ from 'lodash';
+
 /* @ngInject */
 function domainModel($rootScope, domainApi, gettextCatalog) {
     let domains = [];
     const errorMessage = gettextCatalog.getString('Domain request failed', null, 'Error');
     const query = () => angular.copy(domains);
-    const get = (ID) => _.findWhere(query(), { ID });
+    const get = (ID) => _.find(query(), { ID });
 
     function set(newDomains) {
         domains = newDomains;
@@ -11,7 +13,7 @@ function domainModel($rootScope, domainApi, gettextCatalog) {
     function catchall(ID, AddressID) {
         return domainApi.catchall(ID, { AddressID }).then(({ data = {} } = {}) => {
             if (data.Code === 1000) {
-                const domain = _.findWhere(domains, { ID });
+                const domain = _.find(domains, { ID });
 
                 domain.CatchAll = AddressID;
 

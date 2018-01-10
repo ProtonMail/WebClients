@@ -1,3 +1,7 @@
+import _ from 'lodash';
+
+import { flow, filter, map } from 'lodash/fp';
+
 /* @ngInject */
 function contactCache(
     $rootScope,
@@ -26,7 +30,7 @@ function contactCache(
         [CONSTANTS.STATUS.CREATE]: 'create',
         [CONSTANTS.STATUS.UPDATE]: 'update'
     };
-    const getItem = (ID) => _.findWhere(CACHE.contacts, { ID });
+    const getItem = (ID) => _.find(CACHE.contacts, { ID });
     const findIndex = (ID) => _.findIndex(CACHE.contacts, { ID });
     const emit = () => $rootScope.$emit('contacts', { type: 'contactsUpdated', data: { all: get() } });
     const orderBy = (contacts = []) => {
@@ -48,10 +52,7 @@ function contactCache(
     const isHydrated = () => CACHE.hydrated;
 
     function selected() {
-        const selected = _.chain(get())
-            .filter(({ selected }) => selected)
-            .pluck('ID')
-            .value();
+        const selected = flow(filter(({ selected }) => selected), map('ID'))(get());
 
         if (!selected.length && $stateParams.id) {
             return [$stateParams.id];
@@ -60,14 +61,14 @@ function contactCache(
         return selected;
     }
 
-    function filter() {
+    function filtered() {
         const keyword = $stateParams.keyword || '';
 
         if (keyword) {
-            return _.pluck(orderBy(search(keyword, get())), 'ID');
+            return _.map(orderBy(search(keyword, get())), 'ID');
         }
 
-        return _.pluck(orderBy(get()), 'ID');
+        return _.map(orderBy(get()), 'ID');
     }
 
     function get(key = 'all') {
@@ -123,7 +124,7 @@ function contactCache(
 
         // Synchronise emails
         CACHE.contacts = _.map(get(), (contact) => {
-            contact.Emails = _.where(emails, { ContactID: contact.ID });
+            contact.Emails = _.filter(emails, { ContactID: contact.ID });
             contact.emails = contact.Emails.map(({ Email = '' }) => Email).join(', ');
             return contact;
         });
@@ -132,7 +133,7 @@ function contactCache(
         CACHE.map = {
             all: _.reduce(get(), (acc, contact) => ((acc[contact.ID] = contact), acc), {}),
             selected: selected(),
-            filtered: filter()
+            filtered: filtered()
         };
     }
 
@@ -210,7 +211,7 @@ function contactCache(
     }
 
     function searchingContact() {
-        CACHE.map.filtered = filter();
+        CACHE.map.filtered = filtered();
         emit();
     }
 
@@ -242,11 +243,7 @@ function contactCache(
             { update: {}, create: [], remove: {} }
         );
 
-        CACHE.contacts = _.chain(get())
-            .map((contact) => todo.update[contact.ID] || contact)
-            .filter(({ ID }) => !todo.remove[ID])
-            .value()
-            .concat(todo.create);
+        CACHE.contacts = flow(map((contact) => todo.update[contact.ID] || contact), filter(({ ID }) => !todo.remove[ID]))(get()).concat(todo.create);
 
         sync();
         emit();

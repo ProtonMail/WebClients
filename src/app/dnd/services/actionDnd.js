@@ -1,3 +1,5 @@
+import _ from 'lodash';
+
 /* @ngInject */
 function actionDnd(
     $rootScope,
@@ -40,7 +42,7 @@ function actionDnd(
     };
 
     const label = (list, type, labelID) => {
-        const ids = _.pluck(list, 'ID');
+        const ids = _.map(list, 'ID');
         const label = labelsModel.read(labelID);
         const labels = [((label.Selected = true), label)];
 
@@ -85,7 +87,7 @@ function actionDnd(
         if (type === 'dropsuccess') {
             const { model, type } = ptDndModel.draggable.get(data.itemId);
             const list = $rootScope.numberElementChecked && selectedList ? selectedList : [model];
-            const ids = _.pluck(list, 'ID');
+            const ids = _.map(list, 'ID');
             selectedList = undefined;
 
             if (data.type === 'label') {

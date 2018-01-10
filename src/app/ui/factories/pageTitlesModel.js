@@ -1,3 +1,7 @@
+import _ from 'lodash';
+
+import { flow, filter, sortBy, head } from 'lodash/fp';
+
 /* @ngInject */
 function pageTitlesModel(CONSTANTS, $injector, $rootScope, gettextCatalog, authentication, $state, tools) {
     const { MAILBOX_IDENTIFIERS } = CONSTANTS;
@@ -45,13 +49,7 @@ function pageTitlesModel(CONSTANTS, $injector, $rootScope, gettextCatalog, authe
     let MAP = loadI18N();
 
     function getFirstSortedAddresses() {
-        return (
-            _.chain(authentication.user.Addresses)
-                .where({ Status: 1, Receive: 1 })
-                .sortBy('Order')
-                .first()
-                .value() || {}
-        );
+        return flow(filter({ Status: 1, Receive: 1 }), sortBy('Order'), head)(authentication.user.Addresses) || {};
     }
 
     /**
@@ -96,7 +94,7 @@ function pageTitlesModel(CONSTANTS, $injector, $rootScope, gettextCatalog, authe
      * @return {String}
      */
     const formatNumber = (n, mailbox) => {
-        if (_.contains(DISPLAY_NUMBER, mailbox) && n > 0) {
+        if (_.includes(DISPLAY_NUMBER, mailbox) && n > 0) {
             return `(${n})`;
         }
         return '';
@@ -164,4 +162,5 @@ function pageTitlesModel(CONSTANTS, $injector, $rootScope, gettextCatalog, authe
 
     return { find };
 }
+
 export default pageTitlesModel;

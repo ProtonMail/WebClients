@@ -1,3 +1,5 @@
+import _ from 'lodash';
+
 /* @ngInject */
 function searchModel(authentication, CONSTANTS, gettextCatalog, labelsModel) {
     const LIST_LOCATIONS = _.reduce(

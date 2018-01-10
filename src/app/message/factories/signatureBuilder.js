@@ -1,3 +1,5 @@
+import _ from 'lodash';
+
 /* @ngInject */
 function signatureBuilder(authentication, CONSTANTS, tools, sanitize, AppModel, $rootScope, mailSettingsModel) {
     const CLASSNAME_SIGNATURE_CONTAINER = 'protonmail_signature_block';

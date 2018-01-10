@@ -1,7 +1,9 @@
+import _ from 'lodash';
+
 /* @ngInject */
 function ptSelectMultipleElements($rootScope) {
     const CACHE = {};
-    const countChecked = (conversations) => _.where(conversations, { Selected: true }).length;
+    const countChecked = (conversations) => _.filter(conversations, { Selected: true }).length;
 
     /**
      * Select many conversations and update the scope

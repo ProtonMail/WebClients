@@ -1,3 +1,5 @@
+import _ from 'lodash';
+
 /* @ngInject */
 function paginationModel(CONSTANTS, $injector, $rootScope, $state, $stateParams, mailSettingsModel, tools) {
     const { ELEMENTS_PER_PAGE, MESSAGE_VIEW_MODE } = CONSTANTS;

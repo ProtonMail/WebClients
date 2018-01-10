@@ -1,3 +1,5 @@
+import _ from 'lodash';
+
 /* @ngInject */
 function message($state, $rootScope, cache, displayContent, messageScroll, tools, unsubscribeModel) {
     const getRecipients = ({ ToList = [], CCList = [], BCCList = [] } = {}) => [].concat(ToList, CCList, BCCList);

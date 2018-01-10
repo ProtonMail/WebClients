@@ -1,3 +1,7 @@
+import _ from 'lodash';
+
+import { flow, filter, map, reduce } from 'lodash/fp';
+
 /* @ngInject */
 function attachmentModel(
     $q,
@@ -53,7 +57,7 @@ function attachmentModel(
         if (MAP_ATTACHMENTS[id]) {
             return MAP_ATTACHMENTS[id].attachment;
         }
-        return _.findWhere(message.Attachments, { ID: id });
+        return _.find(message.Attachments, { ID: id });
     };
 
     $rootScope.$on(EVENT_NAME, (e, { type, data }) => {
@@ -221,15 +225,15 @@ function attachmentModel(
      * @return {Object}         Map[<attachmentID>] = config
      */
     function addEmbedded(list = [], message = {}) {
-        return _.chain(list)
-            .filter(({ attachment = {} }) => isEmbedded(attachment))
-            .filter(({ cid }) => cid)
-            .map(({ packets, attachment, sessionKey, cid, REQUEST_ID }) => {
+        return flow(
+            filter(({ attachment = {} }) => isEmbedded(attachment)),
+            filter(({ cid }) => cid),
+            map(({ packets, attachment, sessionKey, cid, REQUEST_ID }) => {
                 const { url } = embedded.addEmbedded(message, cid, packets.Preview, attachment.MIMEType);
                 return { packets, sessionKey, attachment, cid, url, REQUEST_ID };
-            })
-            .reduce((acc, o) => ((acc[o.attachment.ID] = o), acc), {})
-            .value();
+            }),
+            reduce((acc, o) => ((acc[o.attachment.ID] = o), acc), {})
+        )(list);
     }
 
     /**

@@ -1,3 +1,5 @@
+import _ from 'lodash';
+
 /* @ngInject */
 function composerExpiration(notification, gettextCatalog, $rootScope, CONSTANTS) {
     const MESSAGES = {
@@ -25,9 +27,9 @@ function composerExpiration(notification, gettextCatalog, $rootScope, CONSTANTS)
             const deltaDays = Math.floor(deltaHours / 24);
 
             return {
-                weeks: angular.copy(_.findWhere(OPTIONS.week, { value: Math.floor(deltaDays / 7) })),
-                days: angular.copy(_.findWhere(OPTIONS.day, { value: deltaDays % 7 })),
-                hours: angular.copy(_.findWhere(OPTIONS.hour, { value: deltaHours % 24 }))
+                weeks: angular.copy(_.find(OPTIONS.week, { value: Math.floor(deltaDays / 7) })),
+                days: angular.copy(_.find(OPTIONS.day, { value: deltaDays % 7 })),
+                hours: angular.copy(_.find(OPTIONS.hour, { value: deltaHours % 24 }))
             };
         }
 

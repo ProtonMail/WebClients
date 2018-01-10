@@ -1,3 +1,7 @@
+import _ from 'lodash';
+
+import { flow, filter, sortBy } from 'lodash/fp';
+
 import { CONSTANTS } from '../../constants';
 
 /**
@@ -41,15 +45,12 @@ export function injectInline({ Attachments = [] } = {}) {
  * @return {Object}
  */
 export function findSender({ Addresses = [] } = {}, { AddressID = '' } = {}) {
-    const enabledAddresses = _.chain(Addresses)
-        .where({ Status: 1 })
-        .sortBy('Order')
-        .value();
+    const enabledAddresses = flow(filter({ Status: 1 }), sortBy('Order'))(Addresses);
 
     let sender = enabledAddresses[0];
 
     if (AddressID) {
-        const originalAddress = _.findWhere(enabledAddresses, { ID: AddressID });
+        const originalAddress = _.find(enabledAddresses, { ID: AddressID });
         originalAddress && (sender = originalAddress);
     }
     return sender || {};

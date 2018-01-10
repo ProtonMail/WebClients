@@ -1,3 +1,5 @@
+import _ from 'lodash';
+
 /* @ngInject */
 function labelModal(pmModal, tools, hotkeys, gettextCatalog, networkActivityTracker, eventManager, Label, notification, sanitize) {
     const COLORS_LIST = tools.colors();

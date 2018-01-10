@@ -1,3 +1,7 @@
+import _ from 'lodash';
+
+import { flow, filter, each, map, head } from 'lodash/fp';
+
 /* @ngInject */
 function cache(
     $interval,
@@ -80,7 +84,7 @@ function cache(
      * @param {Object} message
      */
     function updateMessage(message, isSend) {
-        const current = _.findWhere(messagesCached, { ID: message.ID });
+        const current = _.find(messagesCached, { ID: message.ID });
 
         if (current) {
             messagesCached = _.map(messagesCached, (msg) => {
@@ -118,7 +122,8 @@ function cache(
      * @return {Array}           Current list
      */
     const filterSenderConversation = (previous = [], current = []) => {
-        const { list } = current.concat(previous).reduce(
+        const { list } = _.reduce(
+            current.concat(previous),
             (acc, sender) => {
                 if (!acc.map[sender.Address]) {
                     acc.list.push(sender);
@@ -146,7 +151,7 @@ function cache(
             ContextNumAttachments = oldElement.ContextNumAttachments,
             ContextSize = oldElement.ContextSize,
             ContextTime = oldElement.ContextTime
-        } = Labels.length ? _.findWhere(Labels, { ID }) || {} : newElement;
+        } = Labels.length ? _.find(Labels, { ID }) || {} : newElement;
 
         return { ContextNumUnread, ContextNumAttachments, ContextSize, ContextTime };
     }
@@ -156,7 +161,7 @@ function cache(
      * @param {Object} conversation
      */
     function updateConversation(conversation) {
-        const current = _.findWhere(conversationsCached, { ID: conversation.ID });
+        const current = _.find(conversationsCached, { ID: conversation.ID });
 
         if (current) {
             _.extend(
@@ -195,12 +200,12 @@ function cache(
             locs,
             (acc, loc) => {
                 if (type === 'message') {
-                    const test = _.contains(LabelIDs, loc);
+                    const test = _.includes(LabelIDs, loc);
                     acc[loc] = toInt(unread ? test && IsRead === 0 : test);
                 }
 
                 if (type === 'conversation') {
-                    const label = _.findWhere(Labels, { ID: loc });
+                    const label = _.find(Labels, { ID: loc });
                     acc[loc] = toInt(unread ? label && label.ContextNumUnread > 0 : label);
                 }
 
@@ -225,11 +230,7 @@ function cache(
         if (messages.length) {
             Labels.forEach(({ ID }) => {
                 // Get the most recent message for a specific label
-                const { Time } =
-                    _.chain(messages)
-                        .filter(({ LabelIDs = [] }) => _.contains(LabelIDs, ID))
-                        .first()
-                        .value() || {};
+                const { Time } = flow(filter(({ LabelIDs = [] }) => _.includes(LabelIDs, ID)), head)(messages) || {};
 
                 Time && storeTime(conversationID, ID, Time);
             });
@@ -412,7 +413,7 @@ function cache(
             if (Code === 1000) {
                 const conversation = Conversation;
                 const messages = Messages;
-                const message = _.max(messages, ({ Time }) => Time); // NOTE Seems wrong, we should check Time and LabelIDs
+                const message = _.maxBy(messages, ({ Time }) => Time); // NOTE Seems wrong, we should check Time and LabelIDs
 
                 messages.forEach((message) => (message.loaded = true));
                 conversation.loaded = true;
@@ -498,7 +499,7 @@ function cache(
     };
 
     function reverse(list = []) {
-        return list.reduce((acc, item) => (acc.unshift(item), acc), []);
+        return _.reduce(list, (acc, item) => (acc.unshift(item), acc), []);
     }
 
     /**
@@ -593,10 +594,7 @@ function cache(
             let total;
             let number;
             const mailbox = tools.currentMailbox();
-            let messages = _.chain(messagesCached)
-                .filter(({ LabelIDs = [] }) => LabelIDs.indexOf(loc) !== -1)
-                .map((message) => messageModel(message))
-                .value();
+            let messages = flow(filter(({ LabelIDs = [] }) => LabelIDs.indexOf(loc) !== -1), map((message) => messageModel(message)))(messagesCached);
 
             messages = api.orderMessage(messages);
 
@@ -650,7 +648,7 @@ function cache(
             let total;
             let number;
             const mailbox = tools.currentMailbox();
-            let conversations = _.filter(conversationsCached, ({ Labels = [], ID }) => _.findWhere(Labels, { ID: loc }) && api.getTime(ID, loc));
+            let conversations = _.filter(conversationsCached, ({ Labels = [], ID }) => _.find(Labels, { ID: loc }) && api.getTime(ID, loc));
 
             conversations = api.orderConversation(conversations, loc);
 
@@ -692,7 +690,7 @@ function cache(
      * @param {String} conversationID
      */
     api.queryMessagesCached = (ConversationID = '') => {
-        const list = api.orderMessage(_.where(messagesCached, { ConversationID }));
+        const list = api.orderMessage(_.filter(messagesCached, { ConversationID }));
         return list.map(messageModel);
     };
 
@@ -701,21 +699,21 @@ function cache(
      * @param {String} conversationId
      * @return {Object}
      */
-    api.getConversationCached = (ID) => angular.copy(_.findWhere(conversationsCached, { ID }));
+    api.getConversationCached = (ID) => angular.copy(_.find(conversationsCached, { ID }));
 
     /**
      * Return message cached
      * @param {String} messageId
      * @return {Object}
      */
-    api.getMessageCached = (ID) => messageModel(_.findWhere(messagesCached, { ID }));
+    api.getMessageCached = (ID) => messageModel(_.find(messagesCached, { ID }));
 
     /**
      * @param {String} conversationID
      * @return {Promise}
      */
     api.getConversation = (ID) => {
-        const conversation = _.findWhere(conversationsCached, { ID }) || {};
+        const conversation = _.find(conversationsCached, { ID }) || {};
         const messages = api.queryMessagesCached(ID); // messages are ordered by -Time
 
         if (conversation.loaded === true && messages.length === conversation.NumMessages) {
@@ -731,7 +729,7 @@ function cache(
      * @return {Promise}
      */
     api.getMessage = (ID = '') => {
-        const message = _.findWhere(messagesCached, { ID }) || {};
+        const message = _.find(messagesCached, { ID }) || {};
 
         return new Promise((resolve) => {
             if (message.Body) {
@@ -796,7 +794,7 @@ function cache(
      * @return {Promise}
      */
     api.updateFlagMessage = (event, isSend) => {
-        const current = _.findWhere(messagesCached, { ID: event.ID });
+        const current = _.find(messagesCached, { ID: event.ID });
 
         // // We need to force the update if the update is coming from a Send (new message)
         // if (!isSend && (!current || (current && event.Message.Time === current.Time))) {
@@ -820,7 +818,7 @@ function cache(
      * Update a conversation
      */
     api.updateFlagConversation = (event = {}) => {
-        const { loaded } = _.findWhere(conversationsCached, { ID: event.ID }) || {};
+        const { loaded } = _.find(conversationsCached, { ID: event.ID }) || {};
 
         if (loaded) {
             updateConversation(event.Conversation);
@@ -851,13 +849,13 @@ function cache(
     function getLabels(old, { Labels = [], LabelIDsRemoved = [], LabelIDsAdded = [], ContextNumUnread = 0 }) {
         if (LabelIDsAdded.length || LabelIDsRemoved.length) {
             const toAdd = _.map(LabelIDsAdded, (ID) => ({ ID, ContextNumUnread }));
-            const filtered = _.filter(old.Labels, ({ ID }) => !_.contains(LabelIDsRemoved, ID));
-            return _.uniq(filtered.concat(toAdd), ({ ID }) => ID);
+            const filtered = _.filter(old.Labels, ({ ID }) => !_.includes(LabelIDsRemoved, ID));
+            return _.uniqBy(filtered.concat(toAdd), ({ ID }) => ID);
         }
 
         if (Labels.length) {
             return _.map(Labels, (label) => {
-                const oldLabel = _.findWhere(old.Labels || [], { ID: label.ID });
+                const oldLabel = _.find(old.Labels || [], { ID: label.ID });
 
                 if (oldLabel) {
                     return _.extend({}, oldLabel, label);
@@ -875,27 +873,29 @@ function cache(
      * @param  {Array} events
      */
     function handleCounters(events = []) {
-        _.chain(events)
-            .filter((event) => event.Message)
-            .map((event) => angular.copy(event.Message))
-            .each((newMessage) => {
-                const oldMessage = _.findWhere(messagesCached, { ID: newMessage.ID });
+        flow(
+            filter((event) => event.Message),
+            map((event) => angular.copy(event.Message)),
+            each((newMessage) => {
+                const oldMessage = _.find(messagesCached, { ID: newMessage.ID });
                 if (oldMessage) {
                     newMessage.LabelIDs = getLabelsId(oldMessage, newMessage);
                     manageCounters(oldMessage, newMessage, 'message');
                 }
-            });
+            })
+        )(events);
 
-        _.chain(events)
-            .filter((event) => event.Conversation)
-            .map((event) => angular.copy(event.Conversation))
-            .each((newConversation) => {
-                const oldConversation = _.findWhere(conversationsCached, { ID: newConversation.ID });
+        flow(
+            filter((event) => event.Conversation),
+            map((event) => angular.copy(event.Conversation)),
+            each((newConversation) => {
+                const oldConversation = _.find(conversationsCached, { ID: newConversation.ID });
                 if (oldConversation) {
                     newConversation.Labels = getLabels(oldConversation, newConversation);
                     manageCounters(oldConversation, newConversation, 'conversation');
                 }
-            });
+            })
+        )(events);
 
         cacheCounters.status();
     }
@@ -925,60 +925,59 @@ function cache(
 
         !fromBackend && handleCounters(events);
 
-        const { flow, MessageIDs, ConversationIDs } = _.chain(events)
-            .reduce(
-                (acc, event) => {
-                    const hasType = event.Message || event.Conversation;
-                    const type = event.Message ? 'Message' : 'Conversation';
+        const { Flow, MessageIDs, ConversationIDs } = _.reduce(
+            events,
+            (acc, event) => {
+                const hasType = event.Message || event.Conversation;
+                const type = event.Message ? 'Message' : 'Conversation';
 
-                    if (hasType) {
-                        event[type].ID = event.ID;
+                if (hasType) {
+                    event[type].ID = event.ID;
 
-                        // NOTE Receiving an event update from the BE means the model stored in the cache is invalid
-                        if (fromBackend && event.Action === UPDATE_DRAFT) {
-                            event[type].loaded = false;
-                        }
-
-                        // NOTE Simulate future change where Labels are updated only from Message events
-                        if (fromBackend && type === 'Conversation' && event.Action === UPDATE_FLAGS) {
-                            delete event.Conversation.LabelIDsAdded;
-                            delete event.Conversation.LabelIDsRemoved;
-                        }
-
-                        acc[`${type}IDs`].push(event.ID);
-                        event.Action === CREATE && acc.flow[type].create.push({ event, type });
-                        event.Action === UPDATE_DRAFT && acc.flow[type].update.push({ event, type, isSend, item: 'Draft' });
-                        event.Action === UPDATE_FLAGS && acc.flow[type].update.push({ event, type, isSend, item: 'Flag' });
+                    // NOTE Receiving an event update from the BE means the model stored in the cache is invalid
+                    if (fromBackend && event.Action === UPDATE_DRAFT) {
+                        event[type].loaded = false;
                     }
 
-                    event.Action === DELETE && acc.flow.delete.push(event);
+                    // NOTE Simulate future change where Labels are updated only from Message events
+                    if (fromBackend && type === 'Conversation' && event.Action === UPDATE_FLAGS) {
+                        delete event.Conversation.LabelIDsAdded;
+                        delete event.Conversation.LabelIDsRemoved;
+                    }
 
-                    return acc;
-                },
-                {
-                    flow: {
-                        Message: {
-                            create: [],
-                            update: []
-                        },
-                        Conversation: {
-                            create: [],
-                            update: []
-                        },
-                        delete: []
-                    },
-                    MessageIDs: [],
-                    ConversationIDs: []
+                    acc[`${type}IDs`].push(event.ID);
+                    event.Action === CREATE && acc.Flow[type].create.push({ event, type });
+                    event.Action === UPDATE_DRAFT && acc.Flow[type].update.push({ event, type, isSend, item: 'Draft' });
+                    event.Action === UPDATE_FLAGS && acc.Flow[type].update.push({ event, type, isSend, item: 'Flag' });
                 }
-            )
-            .value();
+
+                event.Action === DELETE && acc.Flow.delete.push(event);
+
+                return acc;
+            },
+            {
+                Flow: {
+                    Message: {
+                        create: [],
+                        update: []
+                    },
+                    Conversation: {
+                        create: [],
+                        update: []
+                    },
+                    delete: []
+                },
+                MessageIDs: [],
+                ConversationIDs: []
+            }
+        );
 
         // NOTE Message events must be treated before Conversation events to calculate the Time per Conversation (see manageTimes())
-        return formatCreate(flow.Message.create)
-            .then(() => formatUpdate(flow.Message.update))
-            .then(() => formatCreate(flow.Conversation.create))
-            .then(() => formatUpdate(flow.Conversation.update))
-            .then(() => formatDelete(flow.delete))
+        return formatCreate(Flow.Message.create)
+            .then(() => formatUpdate(Flow.Message.update))
+            .then(() => formatCreate(Flow.Conversation.create))
+            .then(() => formatUpdate(Flow.Conversation.update))
+            .then(() => formatDelete(Flow.delete))
             .then(() => api.callRefresh(MessageIDs, ConversationIDs));
     };
 
@@ -1010,7 +1009,8 @@ function cache(
      */
     function expiration() {
         const now = ~~(Date.now() / 1000); // unix timestamp
-        const { list, removeList } = messagesCached.reduce(
+        const { list, removeList } = _.reduce(
+            messagesCached,
             (acc, message = {}) => {
                 const { ExpirationTime } = message;
                 const test = !(ExpirationTime !== 0 && ExpirationTime < now);
@@ -1065,7 +1065,7 @@ function cache(
 
         const elements = elementsCached.filter(({ LabelIDs = [] }) => LabelIDs.indexOf(loc) > -1);
         const elementsOrdered = api.orderElements(elements, type, true, loc);
-        const currentElement = _.findWhere(elementsOrdered, { ID: elementID });
+        const currentElement = _.find(elementsOrdered, { ID: elementID });
 
         if (currentElement) {
             const currentIndex = _.findIndex(elementsOrdered, { ID: elementID });

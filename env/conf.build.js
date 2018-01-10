@@ -16,7 +16,6 @@ module.exports = {
             'angular-cookies/angular-cookies.js',
             'angular-ui-router/release/angular-ui-router.js',
             'angular-sanitize/angular-sanitize.js',
-            'underscore/underscore.js',
             'angular-notify/dist/angular-notify.js',
             'oclazyload/dist/ocLazyLoad.js',
             'html2canvas/dist/html2canvas.js',

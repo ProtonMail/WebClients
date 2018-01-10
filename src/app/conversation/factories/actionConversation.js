@@ -1,3 +1,7 @@
+import _ from 'lodash';
+
+import { flow, filter, reduce, sortBy, last, map } from 'lodash/fp';
+
 /* @ngInject */
 function actionConversation(
     $rootScope,
@@ -83,11 +87,8 @@ function actionConversation(
             const { Labels = [] } = cache.getConversationCached(ID) || {};
 
             if (messages.length) {
-                const { ID } = _.chain(messages)
-                    .filter(({ LabelIDs = [] }) => _.contains(LabelIDs, currentLocation))
-                    .sortBy(({ Time }) => Time)
-                    .last()
-                    .value();
+                const { ID } = flow(filter(({ LabelIDs = [] }) => _.includes(LabelIDs, currentLocation)), sortBy(({ Time }) => Time), last)(messages);
+
                 acc.push({
                     ID,
                     Action: 3,
@@ -173,10 +174,10 @@ function actionConversation(
             return networkActivityTracker.track(promise);
         }
 
-        const events = _.chain(ids)
-            .map((id) => cache.getConversationCached(id))
-            .filter(Boolean)
-            .reduce((acc, { ID, ContextNumUnread }) => {
+        const events = flow(
+            map((id) => cache.getConversationCached(id)),
+            filter(Boolean),
+            reduce((acc, { ID, ContextNumUnread }) => {
                 const messages = cache.queryMessagesCached(ID);
 
                 _.each(messages, (message) => {
@@ -194,7 +195,7 @@ function actionConversation(
                 });
                 return acc;
             }, [])
-            .value();
+        )(ids);
 
         cache.events(events);
     }
@@ -213,10 +214,10 @@ function actionConversation(
             return networkActivityTracker.track(promise);
         }
 
-        const events = _.chain(ids)
-            .map((id) => cache.getConversationCached(id))
-            .filter(Boolean)
-            .reduce((acc, { ID, ContextNumUnread }) => {
+        const events = flow(
+            map((id) => cache.getConversationCached(id)),
+            filter(Boolean),
+            reduce((acc, { ID, ContextNumUnread }) => {
                 const messages = cache.queryMessagesCached(ID);
 
                 _.each(messages, (message) => {
@@ -234,7 +235,7 @@ function actionConversation(
                 });
                 return acc;
             }, [])
-            .value();
+        )(ids);
 
         cache.events(events);
     }
@@ -247,7 +248,7 @@ function actionConversation(
      */
     function label(ids, labels, alsoArchive) {
         const currentLocation = tools.currentLocation();
-        const isStateAllowedRemove = _.contains(basicFolders, currentLocation) || labelsModel.contains(currentLocation, 'folders');
+        const isStateAllowedRemove = _.includes(basicFolders, currentLocation) || labelsModel.contains(currentLocation, 'folders');
         const REMOVE = 0;
         const ADD = 1;
         const current = tools.currentLocation();
@@ -258,12 +259,7 @@ function actionConversation(
         };
 
         const getLabelsId = (list = [], cb = angular.noop) => {
-            return (
-                _.chain(list)
-                    .filter(cb)
-                    .map(({ ID }) => ID)
-                    .value() || []
-            );
+            return flow(filter(cb), map(({ ID }) => ID))(list) || [];
         };
 
         // Selected can equals to true / false / null
@@ -277,10 +273,10 @@ function actionConversation(
             isStateAllowedRemove && toRemove.push(current);
         }
 
-        const events = _.chain(ids)
-            .map((id) => cache.getConversationCached(id))
-            .filter(Boolean)
-            .reduce((acc, { ID, ContextNumUnread }) => {
+        const events = flow(
+            map((id) => cache.getConversationCached(id)),
+            filter(Boolean),
+            reduce((acc, { ID, ContextNumUnread }) => {
                 const messages = cache.queryMessagesCached(ID);
 
                 _.each(messages, (message) => {
@@ -317,7 +313,7 @@ function actionConversation(
                 });
                 return acc;
             }, [])
-            .value();
+        )(ids);
 
         const getPromises = (list, starter = [], flag = ADD) => {
             return _.reduce(
@@ -387,7 +383,7 @@ function actionConversation(
 
                 _.each(messages, ({ Type, LabelIDs = [], ID, IsRead }) => {
                     const copyLabelIDsAdded = labelIDsAdded.slice(); // Copy
-                    const copyLabelIDsRemoved = _.filter(LabelIDs, (labelID) => _.contains(folderIDs, labelID));
+                    const copyLabelIDsRemoved = _.filter(LabelIDs, (labelID) => _.includes(folderIDs, labelID));
 
                     if (toInbox) {
                         /**
@@ -433,10 +429,7 @@ function actionConversation(
                 const conversation = cache.getConversationCached(ID);
 
                 if (conversation) {
-                    const labelIDsRemoved = _.chain(conversation.Labels)
-                        .filter(({ ID }) => _.contains(folderIDs, ID))
-                        .map(({ ID }) => ID)
-                        .value();
+                    const labelIDsRemoved = flow(filter(({ ID }) => _.includes(folderIDs, ID)), map(({ ID }) => ID))(conversation.Labels);
 
                     acc.push({
                         Action: 3,

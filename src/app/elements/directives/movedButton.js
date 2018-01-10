@@ -1,3 +1,5 @@
+import _ from 'lodash';
+
 /* @ngInject */
 function movedButton($state, gettextCatalog, tools) {
     const ACTIVE_CLASS = 'active';

@@ -1,3 +1,5 @@
+import _ from 'lodash';
+
 /* @ngInject */
 function editMemberProcess(networkActivityTracker, gettextCatalog, memberApi, Address, setupKeys, membersValidator, notification, eventManager) {
     const I18N = {

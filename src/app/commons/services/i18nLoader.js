@@ -1,3 +1,5 @@
+import _ from 'lodash';
+
 /* @ngInject */
 function i18nLoader(CONFIG, $rootScope, gettextCatalog, $injector) {
     const CACHE = {};
@@ -103,7 +105,7 @@ function i18nLoader(CONFIG, $rootScope, gettextCatalog, $injector) {
             possibleLocales.sort(localeRanker(navigatorLocaleData));
 
             // chose the navigator locale if possible
-            if (_.contains(possibleLocales, normalizedNavLocale)) {
+            if (_.includes(possibleLocales, normalizedNavLocale)) {
                 return normalizedNavLocale;
             }
             if (possibleLocales.length) {

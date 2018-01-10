@@ -1,3 +1,5 @@
+import _ from 'lodash';
+
 /* @ngInject */
 function validUsername() {
     const IS_VALID = new RegExp(/^[A-Za-z0-9]+(?:[_.-][A-Za-z0-9]+)*$/);

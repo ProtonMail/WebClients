@@ -1,3 +1,5 @@
+import _ from 'lodash';
+
 /* @ngInject */
 function composerDropzone($rootScope, attachmentFileFormat, tools, attachmentModel, notification, gettextCatalog, CONSTANTS, $state) {
     Dropzone.autoDiscover = false;

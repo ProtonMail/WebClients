@@ -1,3 +1,5 @@
+import _ from 'lodash';
+
 /* @ngInject */
 function contactToolbar($rootScope, $state, $stateParams, CONSTANTS, contactCache, gettextCatalog, messageModel, notification, dispatchers) {
     const getList = () => {
@@ -36,7 +38,7 @@ function contactToolbar($rootScope, $state, $stateParams, CONSTANTS, contactCach
             scope.selectPage = (page) => $state.go($state.$current.name, { page });
             scope.currentPage = +($stateParams.page || 1);
             scope.selectAll = (event) => {
-                const contactIDs = _.pluck(contactCache.paginate(contactCache.get('filtered')), 'ID');
+                const contactIDs = _.map(contactCache.paginate(contactCache.get('filtered')), 'ID');
                 dispatcher.contacts('selectContacts', {
                     contactIDs,
                     isChecked: !!event.target.checked
@@ -46,7 +48,7 @@ function contactToolbar($rootScope, $state, $stateParams, CONSTANTS, contactCach
             function update() {
                 const paginatedContacts = contactCache.paginate(contactCache.get('filtered'));
                 const selectedContacts = contactCache.get('selected');
-                const checkedContacts = _.where(paginatedContacts, { selected: true });
+                const checkedContacts = _.filter(paginatedContacts, { selected: true });
 
                 scope.$applyAsync(() => {
                     scope.totalItems = contactCache.total();
@@ -62,7 +64,7 @@ function contactToolbar($rootScope, $state, $stateParams, CONSTANTS, contactCach
                 type === 'composeSelectedContacts' && composeSelectedContacts(dispatcher);
                 if (type === 'deleteSelectedContacts') {
                     return dispatcher.contacts('deleteContacts', {
-                        contactIDs: _.pluck(getList(), 'ID')
+                        contactIDs: _.map(getList(), 'ID')
                     });
                 }
 

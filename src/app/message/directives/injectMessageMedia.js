@@ -1,3 +1,5 @@
+import _ from 'lodash';
+
 /* @ngInject */
 function injectMessageMedia($rootScope, displayImages, displayEmbedded) {
     const wrapImage = (img) => {

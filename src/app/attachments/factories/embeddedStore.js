@@ -1,3 +1,5 @@
+import _ from 'lodash';
+
 /* @ngInject */
 function embeddedStore($rootScope, embeddedUtils) {
     const Blobs = {};

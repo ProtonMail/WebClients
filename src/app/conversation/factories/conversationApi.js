@@ -1,3 +1,5 @@
+import _ from 'lodash';
+
 /* @ngInject */
 function conversationApi($http, chunk, CONSTANTS, url) {
     const { MAILBOX_IDENTIFIERS, CONVERSATION_REQUEST_SIZE } = CONSTANTS;

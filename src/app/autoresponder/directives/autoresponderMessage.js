@@ -1,3 +1,5 @@
+import _ from 'lodash';
+
 /* @ngInject */
 function autoresponderMessage(autoresponderModel, $rootScope) {
     return {

@@ -1,3 +1,7 @@
+import _ from 'lodash';
+
+import { flow, filter, last } from 'lodash/fp';
+
 /* @ngInject */
 function findExpendableMessage(tools, CONSTANTS, $state, $stateParams) {
     const isSentAutoReply = ({ Type, IsEncrypted, ParsedHeaders = {} }) => {
@@ -58,11 +62,8 @@ function findExpendableMessage(tools, CONSTANTS, $state, $stateParams) {
     function find(messages = []) {
         let thisOne;
 
-        const filter = (cb) =>
-            _.chain(messages)
-                .filter(cb)
-                .last()
-                .value();
+        const filterCb = (cb) => flow(filter(cb), last)(messages);
+
         const currentLocation = tools.currentLocation();
 
         switch (true) {
@@ -72,7 +73,7 @@ function findExpendableMessage(tools, CONSTANTS, $state, $stateParams) {
                 break;
 
             case !!$stateParams.messageID:
-                thisOne = _.findWhere(messages, { ID: $stateParams.messageID });
+                thisOne = _.find(messages, { ID: $stateParams.messageID });
                 break;
 
             case $state.includes('secured.starred.**'):
@@ -81,11 +82,11 @@ function findExpendableMessage(tools, CONSTANTS, $state, $stateParams) {
                 break;
 
             case $state.includes('secured.drafts.**'):
-                thisOne = filter(({ Type }) => Type === CONSTANTS.DRAFT);
+                thisOne = filterCb(({ Type }) => Type === CONSTANTS.DRAFT);
                 break;
 
             default: {
-                const latest = filter((m) => m.Type !== CONSTANTS.DRAFT && !isSentAutoReply(m));
+                const latest = filterCb((m) => m.Type !== CONSTANTS.DRAFT && !isSentAutoReply(m));
 
                 if (latest && latest.IsRead === 1) {
                     thisOne = latest;

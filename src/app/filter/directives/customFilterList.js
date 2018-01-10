@@ -1,3 +1,5 @@
+import _ from 'lodash';
+
 /* @ngInject */
 function customFilterList(
     $rootScope,
@@ -33,7 +35,7 @@ function customFilterList(
 
             unsubscribe.push(
                 $rootScope.$on('changeCustomFilterStatus', (event, { id, status }) => {
-                    const filter = _.findWhere(scope.customFilters, { ID: id });
+                    const filter = _.find(scope.customFilters, { ID: id });
 
                     if (filter) {
                         changeCustomFilterStatus(filter, status);
@@ -116,7 +118,7 @@ function customFilterList(
             });
 
             scope.addCustomFilter = () => {
-                const activeCustomFilters = _.where(scope.customFilters, { Status: 1 });
+                const activeCustomFilters = _.filter(scope.customFilters, { Status: 1 });
 
                 if (!authentication.hasPaidMail() && activeCustomFilters.length === 1) {
                     return notification.info(
@@ -139,7 +141,7 @@ function customFilterList(
             };
 
             scope.addSieveFilter = () => {
-                const activeCustomFilters = _.where(scope.customFilters, { Status: 1 });
+                const activeCustomFilters = _.filter(scope.customFilters, { Status: 1 });
 
                 if (!authentication.hasPaidMail() && activeCustomFilters.length === 1) {
                     return notification.info(

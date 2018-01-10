@@ -1,3 +1,5 @@
+import _ from 'lodash';
+
 /* @ngInject */
 function ComposeMessageController(
     $filter,
@@ -112,7 +114,7 @@ function ComposeMessageController(
                 case 'activeMessages': {
                     // If you send the current draft from another tab/app we need to remove it from the composerList
                     const removed = $scope.messages.filter(({ ID = '' }) => {
-                        const msg = _.findWhere(data.messages, { ID });
+                        const msg = _.find(data.messages, { ID });
                         return msg && isSent(msg);
                     });
 
@@ -156,7 +158,7 @@ function ComposeMessageController(
 
     unsubscribe.push(
         $rootScope.$on('composer.load', (event, { ID }) => {
-            const found = _.findWhere($scope.messages, { ID });
+            const found = _.find($scope.messages, { ID });
             const limitReached = checkComposerNumber();
 
             if (!found && !limitReached) {

@@ -1,3 +1,5 @@
+import _ from 'lodash';
+
 /* @ngInject */
 function eventManager(
     $cookies,
@@ -35,7 +37,7 @@ function eventManager(
         $timeout.cancel(MODEL.promiseCancel);
         delete MODEL.promiseCancel;
     };
-    const manageActiveMessage = ({ Messages = [] }) => Messages.length && dispatch('activeMessages', { messages: _.pluck(Messages, 'Message') });
+    const manageActiveMessage = ({ Messages = [] }) => Messages.length && dispatch('activeMessages', { messages: _.map(Messages, 'Message') });
 
     /**
      * Clean contact datas
@@ -95,7 +97,7 @@ function eventManager(
             );
 
             _.each(labelIDs, (labelID) => {
-                const count = _.findWhere(counts, { LabelID: labelID });
+                const count = _.find(counts, { LabelID: labelID });
 
                 if (angular.isDefined(count)) {
                     $injector.get('cacheCounters').updateMessage(count.LabelID, count.Total, count.Unread);
@@ -115,7 +117,7 @@ function eventManager(
             );
 
             _.each(labelIDs, (labelID) => {
-                const count = _.findWhere(counts, { LabelID: labelID });
+                const count = _.find(counts, { LabelID: labelID });
 
                 if (angular.isDefined(count)) {
                     $injector.get('cacheCounters').updateConversation(count.LabelID, count.Total, count.Unread);

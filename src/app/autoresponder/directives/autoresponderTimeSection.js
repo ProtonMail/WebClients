@@ -1,3 +1,5 @@
+import _ from 'lodash';
+
 /* @ngInject */
 function autoresponderTimeSection(autoresponderModel, dateUtils, $rootScope) {
     const days = _.map(dateUtils.getSortedWeekdays(), (day) => ({ value: day.value, label: day.shortLabel }));

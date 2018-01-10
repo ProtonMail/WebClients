@@ -1,3 +1,5 @@
+import _ from 'lodash';
+
 /* @ngInject */
 function composer(AppModel, $rootScope, embedded, attachmentFileFormat, mailSettingsModel) {
     const CLASS_DRAGGABLE = 'composer-draggable';

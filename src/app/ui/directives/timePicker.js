@@ -1,3 +1,5 @@
+import _ from 'lodash';
+
 /* @ngInject */
 function timePicker($rootScope, timepickerModel) {
     const dispatch = (type, data) => $rootScope.$emit('timepicker', { type, data });

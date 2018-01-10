@@ -1,3 +1,5 @@
+import _ from 'lodash';
+
 /* @ngInject */
 function paginator($rootScope, $stateParams, paginationModel, CONSTANTS) {
     const { ELEMENTS_PER_PAGE } = CONSTANTS;

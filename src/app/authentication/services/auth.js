@@ -1,3 +1,5 @@
+import _ from 'lodash';
+
 /* @ngInject */
 function authentication(
     $http,
@@ -394,7 +396,7 @@ function authentication(
         },
 
         hasPmMe() {
-            return _.findWhere(this.user.Addresses, { Type: PREMIUM });
+            return _.find(this.user.Addresses, { Type: PREMIUM });
         },
 
         hasPaidMail() {

@@ -1,3 +1,5 @@
+import _ from 'lodash';
+
 /* @ngInject */
 function messageRequest($rootScope, messageApi, ComposerRequestStatus, CONSTANTS, gettextCatalog) {
     const { STATUS } = CONSTANTS;
