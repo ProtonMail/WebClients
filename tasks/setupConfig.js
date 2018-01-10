@@ -11,4 +11,7 @@ const { CONFIG } = env.getConfig();
 fs.writeFileSync(PATH_CONFIG, `export default ${JSON.stringify(CONFIG, null, 4)};`);
 
 env.argv.debug && console.log(`${JSON.stringify(CONFIG, null, 2)}`);
-process.env.NODE_ENV !== 'dist' && console.log(`${chalk.green('✓')} Generate configuration`);
+if (process.env.NODE_ENV !== 'dist') {
+    console.log(`${chalk.green('✓')} Generate configuration`);
+    console.log('~', chalk.bgYellow(chalk.black(`API: ${CONFIG.apiUrl}`)), '~');
+}
