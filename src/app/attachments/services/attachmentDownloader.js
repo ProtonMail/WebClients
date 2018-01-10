@@ -1,5 +1,8 @@
+import _ from 'lodash';
+import { ERROR_SILENT } from '../../constants';
+
 /* @ngInject */
-function attachmentDownloader(gettextCatalog, AttachmentLoader, embeddedUtils, aboutClient, notification) {
+function attachmentDownloader(gettextCatalog, AttachmentLoader, embeddedUtils, aboutClient, notification, AppModel, confirmModal) {
     const isFileSaverSupported = aboutClient.isFileSaverSupported();
     const I18N = {
         NOT_SUPPORTED: gettextCatalog.getString(
@@ -7,6 +10,21 @@ function attachmentDownloader(gettextCatalog, AttachmentLoader, embeddedUtils, a
             null,
             'Error'
         ),
+        BROKEN_ATT: {
+            title: gettextCatalog.getString('Error decrypting attachment', null, 'Title'),
+            message: (() => {
+                const line1 = gettextCatalog.getString('The attachment will be downloaded but it will still be encrypted.', null, 'Error');
+                const line2 = gettextCatalog.getString(
+                    'You can decrypt the file with a program such as {{link}} if you have the corresponding private key.',
+                    {
+                        link: '<a href="https://www.gnupg.org/" target="_blank" title="GnuPG is a free implementation of OpenPGP">GPG</a>'
+                    },
+                    'Info'
+                );
+                return `${line1}<br><br>${line2}`;
+            })(),
+            confirmText: gettextCatalog.getString('Download', null, 'Action')
+        },
         ERROR_ZIP: gettextCatalog.getString('Cannot generate a zip of your attachments.', null, 'Error')
     };
 
@@ -56,6 +74,25 @@ function attachmentDownloader(gettextCatalog, AttachmentLoader, embeddedUtils, a
         downloadFile(new Blob([attachment.data], { type: attachment.MIMEType }), attachment.Name, attachment.el);
     };
 
+    const allowDownloadBrokenAtt = () =>
+        new Promise((resolve) => {
+            const params = _.extend(
+                {
+                    isDanger: true,
+                    confirm() {
+                        resolve(true);
+                        confirmModal.deactivate();
+                    },
+                    cancel() {
+                        resolve(false);
+                        confirmModal.deactivate();
+                    }
+                },
+                I18N.BROKEN_ATT
+            );
+            confirmModal.activate({ params });
+        });
+
     /**
      * Format attachment for the download
      * @param  {Object} attachment
@@ -63,13 +100,32 @@ function attachmentDownloader(gettextCatalog, AttachmentLoader, embeddedUtils, a
      * @param  {Node} el         Link clicked
      * @return {Promise}
      */
-    const formatDownload = (attachment, message, el) => {
-        return AttachmentLoader.get(attachment, message).then((buffer) => ({
-            data: buffer,
-            Name: attachment.Name,
-            MIMEType: attachment.MIMEType,
-            el
-        }));
+    const formatDownload = async (attachment, message, el) => {
+        try {
+            const data = await AttachmentLoader.get(attachment, message);
+            return {
+                el,
+                data,
+                Name: attachment.Name,
+                MIMEType: attachment.MIMEType
+            };
+        } catch (e) {
+            // If the decryption fails we download the encrypted version
+            if (e.data) {
+                const ok = await allowDownloadBrokenAtt();
+                if (ok) {
+                    return {
+                        el,
+                        data: e.data,
+                        Name: `${attachment.Name}.pgp`,
+                        MIMEType: 'application/pgp'
+                    };
+                }
+
+                throw new Error(ERROR_SILENT);
+            }
+            throw e;
+        }
     };
 
     /**
@@ -79,8 +135,9 @@ function attachmentDownloader(gettextCatalog, AttachmentLoader, embeddedUtils, a
      * @param  {Node} el
      * @return {Promise}
      */
-    const download = (attachment, message, el) => {
-        return formatDownload(attachment, message, el).then(generateDownload);
+    const download = async (attachment, message, el) => {
+        const att = await formatDownload(attachment, message, el);
+        return generateDownload(att);
     };
 
     /**
