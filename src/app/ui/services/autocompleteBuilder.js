@@ -12,10 +12,13 @@ function autocompleteBuilder(CONSTANTS, customInputCreator) {
          * Linking fonction for the directive
          */
         const postCompile = (scope, el, attr) => {
+            const $input = el[0].querySelector('input');
+            $input && ($input.id = `${$input.id}${generateID()}`);
+
             /**
              * @link {https://leaverou.github.io/awesomplete/#basic-usage}
              */
-            let awesomplete = new Awesomplete(el[0].querySelector('input'), {
+            let awesomplete = new Awesomplete($input, {
                 minChars: 1,
                 maxItems: CONSTANTS.AWESOMEPLETE_MAX_ITEMS,
                 autoFirst: true,
@@ -54,12 +57,7 @@ function autocompleteBuilder(CONSTANTS, customInputCreator) {
             });
         };
 
-        const compile = (el) => {
-            const item = el[0].querySelector('[id="autocomplete"]');
-            item && (item.id = `${item.id}${generateID()}`);
-        };
-
-        return customInputCreator('text', { pre, post: postCompile, compile });
+        return customInputCreator('text', { pre, post: postCompile });
     };
 }
 export default autocompleteBuilder;
