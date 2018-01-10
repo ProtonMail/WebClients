@@ -1,3 +1,5 @@
+import _ from 'lodash';
+
 /* @ngInject */
 function contactDetailsModel(contactTransformLabel, CONSTANTS, contactSchema, gettextCatalog) {
     const ESCAPE_REGEX = /:|,|;|"/gi;

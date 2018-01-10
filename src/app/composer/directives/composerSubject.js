@@ -1,3 +1,5 @@
+import _ from 'lodash';
+
 /* @ngInject */
 const composerSubject = (editorModel) => ({
     replace: true,

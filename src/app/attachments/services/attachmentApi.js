@@ -1,3 +1,5 @@
+import _ from 'lodash';
+
 /* @ngInject */
 function attachmentApi($http, url, $q, $rootScope, authentication, pmcw, CONFIG, CONSTANTS, secureSessionStorage, gettextCatalog, notification) {
     let pendingUpload = [];
@@ -61,7 +63,7 @@ function attachmentApi($http, url, $q, $rootScope, authentication, pmcw, CONFIG,
      * @return {void}
      */
     function killUpload({ id, messageID }) {
-        const upload = _.findWhere(pendingUpload, { id, messageID });
+        const upload = _.find(pendingUpload, { id, messageID });
         upload.request.abort();
         pendingUpload = pendingUpload.filter((up) => up.id !== id);
     }
@@ -110,7 +112,7 @@ function attachmentApi($http, url, $q, $rootScope, authentication, pmcw, CONFIG,
                 messageID: message.ID
             });
 
-            message.uploading = _.where(pendingUpload, { messageID: message.ID }).length;
+            message.uploading = _.filter(pendingUpload, { messageID: message.ID }).length;
 
             dispatch('error', {
                 id: REQUEST_ID,
@@ -129,7 +131,7 @@ function attachmentApi($http, url, $q, $rootScope, authentication, pmcw, CONFIG,
                 messageID: message.ID
             });
 
-            message.uploading = _.where(pendingUpload, { messageID: message.ID }).length;
+            message.uploading = _.filter(pendingUpload, { messageID: message.ID }).length;
 
             dispatch('cancel', {
                 id: REQUEST_ID,

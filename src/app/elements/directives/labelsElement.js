@@ -1,3 +1,5 @@
+import _ from 'lodash';
+
 /* @ngInject */
 function labelsElement($rootScope, labelsModel, authentication, $state) {
     const HIDE_CLASSNAME = 'labelsElement-hidden';

@@ -1,3 +1,5 @@
+import _ from 'lodash';
+
 /* @ngInject */
 function addressModel(
     $state,
@@ -290,7 +292,7 @@ function addressModel(
     };
 
     const getActive = () => {
-        const active = _.where(authentication.user.Addresses, { Status: 1, Receive: 1 });
+        const active = _.filter(authentication.user.Addresses, { Status: 1, Receive: 1 });
         const disabled = _.difference(authentication.user.Addresses, active);
         return { active, disabled };
     };
@@ -303,7 +305,7 @@ function addressModel(
         addresses.splice(index, 1);
         addresses.unshift(address);
 
-        const order = _.pluck(addresses, 'Order');
+        const order = _.map(addresses, 'Order');
 
         saveOrder(order);
     };

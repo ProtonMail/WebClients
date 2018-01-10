@@ -1,3 +1,5 @@
+import _ from 'lodash';
+
 /* @ngInject */
 function searchValue($stateParams) {
     const toUnixTimestamp = (value = '') => moment(value).unix();
@@ -31,7 +33,7 @@ function searchValue($stateParams) {
                 const tmp1 = tmp[1].trim();
 
                 if (separator.key === 'label') {
-                    const folder = _.findWhere(folders, { label: tmp1 });
+                    const folder = _.find(folders, { label: tmp1 });
 
                     if (angular.isDefined(folder)) {
                         parameters.label = folder.value;
@@ -58,7 +60,7 @@ function searchValue($stateParams) {
         let result = '';
 
         if (angular.isDefined($stateParams.label)) {
-            const folder = _.findWhere(folders, { value: $stateParams.label });
+            const folder = _.find(folders, { value: $stateParams.label });
 
             if (angular.isDefined(folder)) {
                 result += `in:${folder.label} `;

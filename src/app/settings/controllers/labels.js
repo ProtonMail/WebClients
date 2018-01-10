@@ -1,3 +1,5 @@
+import _ from 'lodash';
+
 /* @ngInject */
 function LabelsController(
     $rootScope,
@@ -16,7 +18,7 @@ function LabelsController(
     const unsubscribe = [];
 
     const changeNotify = (event, { id, status }) => {
-        const { Name, Color, Display, Exclusive } = _.findWhere($scope.labels, { ID: id });
+        const { Name, Color, Display, Exclusive } = _.find($scope.labels, { ID: id });
         const promise = Label.update({ ID: id, Name, Color, Display, Exclusive, Notify: status ? 1 : 0 })
             .then(({ data = {} } = {}) => {
                 if (data.Code === 1000) {

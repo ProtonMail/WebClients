@@ -1,3 +1,7 @@
+import _ from 'lodash';
+
+import { flow, map, reduce, filter } from 'lodash/fp';
+
 /* @ngInject */
 function attachmentModelOutside($log, AttachmentLoader, $rootScope, embedded, notification) {
     const EVENT_NAME = 'attachment.upload.outside';
@@ -218,16 +222,16 @@ function attachmentModelOutside($log, AttachmentLoader, $rootScope, embedded, no
      * @return {Object}         Map[<attachmentID>] = config
      */
     function addEmbedded(list = [], message = {}) {
-        return _.chain(list)
-            .filter((attachment = {}) => isEmbedded(attachment))
-            .filter(({ Headers }) => Headers['content-id'])
-            .map((attachment) => {
+        return flow(
+            filter((attachment = {}) => isEmbedded(attachment)),
+            filter(({ Headers }) => Headers['content-id']),
+            map((attachment) => {
                 const { Headers, Preview, MIMEType } = attachment;
                 const { url } = embedded.addEmbedded(message, Headers['content-id'], Preview, MIMEType);
                 return angular.extend({}, attachment, { url });
-            })
-            .reduce((acc, att) => ((acc[att.ID] = att), acc), {})
-            .value();
+            }),
+            reduce((acc, att) => ((acc[att.ID] = att), acc), {})
+        )(list);
     }
 
     /**

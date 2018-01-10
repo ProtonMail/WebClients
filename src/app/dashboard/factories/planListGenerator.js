@@ -1,3 +1,5 @@
+import _ from 'lodash';
+
 /* @ngInject */
 function planListGenerator(CONSTANTS, dashboardConfiguration) {
     const { PLAN, ADDON } = CONSTANTS.PLANS;

@@ -1,3 +1,5 @@
+import _ from 'lodash';
+
 /* @ngInject */
 function addressKeysView(
     $rootScope,
@@ -38,7 +40,7 @@ function addressKeysView(
     const reactivate = async (key) => {
         try {
             const { data = {} } = await Key.salts();
-            const { KeySalt: salt } = _.findWhere(data.KeySalts, { ID: key.ID }) || {};
+            const { KeySalt: salt } = _.find(data.KeySalts, { ID: key.ID }) || {};
 
             keyPasswordModal.activate({
                 params: {

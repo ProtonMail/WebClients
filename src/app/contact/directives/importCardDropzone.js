@@ -1,3 +1,5 @@
+import _ from 'lodash';
+
 /* @ngInject */
 function importCardDropzone(notification, gettextCatalog, $rootScope) {
     const I18N = {

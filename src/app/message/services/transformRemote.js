@@ -1,3 +1,5 @@
+import { flow, filter, reduce } from 'lodash/fp';
+
 /* @ngInject */
 function transformRemote($state, $rootScope, mailSettingsModel, CONSTANTS) {
     const ATTRIBUTES = ['url', 'xlink:href', 'srcset', 'src', 'svg', 'background', 'poster'].map((name) => `proton-${name}`);
@@ -35,10 +37,9 @@ function transformRemote($state, $rootScope, mailSettingsModel, CONSTANTS) {
          * @return {Object}
          */
         const mapAttributes = (node) => {
-            return _.chain(node.attributes)
-                .filter((attr) => ATTRIBUTES.indexOf(attr.name) !== -1)
-                .reduce((acc, attr) => ((acc[`${attr.name}`] = attr.value), acc), {})
-                .value();
+            return flow(filter((attr) => ATTRIBUTES.indexOf(attr.name) !== -1), reduce((acc, attr) => ((acc[`${attr.name}`] = attr.value), acc), {}))(
+                node.attributes
+            );
         };
 
         const $list = [].slice.call(html.querySelectorAll(selector));

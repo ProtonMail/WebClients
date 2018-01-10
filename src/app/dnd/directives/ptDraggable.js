@@ -1,3 +1,5 @@
+import _ from 'lodash';
+
 /* @ngInject */
 function ptDraggable($rootScope, ptDndModel, ptDndUtils, PTDNDCONSTANTS, ptDndNotification) {
     const { CLASSNAME, DROPZONE_ATTR_ID } = PTDNDCONSTANTS;
@@ -88,7 +90,7 @@ function ptDraggable($rootScope, ptDndModel, ptDndUtils, PTDNDCONSTANTS, ptDndNo
                         data: {
                             before: {
                                 number: value,
-                                ids: _.pluck(getSelected(), 'ID')
+                                ids: _.map(getSelected(), 'ID')
                             }
                         }
                     });

@@ -1,3 +1,5 @@
+import _ from 'lodash';
+
 /* @ngInject */
 function durationselect($rootScope, autoresponderModel, autoresponderLanguage) {
     const frequencies = [
@@ -19,7 +21,7 @@ function durationselect($rootScope, autoresponderModel, autoresponderLanguage) {
             // this prevents race conditions where something else is initialized before the autoresponderModel is informed.
 
             scope.frequencies = frequencies;
-            scope.repeat = _.findWhere(scope.frequencies, { value: Number(repeat) });
+            scope.repeat = _.find(scope.frequencies, { value: Number(repeat) });
 
             if (disableInput === 'true') {
                 elem.attr('disabled', 'disabled');
@@ -34,7 +36,7 @@ function durationselect($rootScope, autoresponderModel, autoresponderLanguage) {
             unsubscribe.push(
                 $rootScope.$on('autoresponder', (event, { type, data = {} }) => {
                     if (type === 'update') {
-                        scope.repeat = _.findWhere(scope.frequencies, { value: data.autoresponder.repeat });
+                        scope.repeat = _.find(scope.frequencies, { value: data.autoresponder.repeat });
                     }
                 })
             );

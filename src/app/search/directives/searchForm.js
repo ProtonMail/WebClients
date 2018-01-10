@@ -1,3 +1,5 @@
+import _ from 'lodash';
+
 /* @ngInject */
 function searchForm($rootScope, $state, $stateParams, authentication, searchModel, searchValue, dateUtils, mailSettingsModel) {
     const CLASS_OPEN = 'searchForm-container-adv';
@@ -56,7 +58,7 @@ function searchForm($rootScope, $state, $stateParams, authentication, searchMode
                     scope.model.begin = dateTS(parameters.begin);
                     scope.model.endRaw = dateISO(parameters.end);
                     scope.model.end = dateTS(parameters.end);
-                    scope.model.folder = _.findWhere(folders, { value: parameters.label }) || folders[0];
+                    scope.model.folder = _.find(folders, { value: parameters.label }) || folders[0];
                 };
 
                 unsubscribe.push(

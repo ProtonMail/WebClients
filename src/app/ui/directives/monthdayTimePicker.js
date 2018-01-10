@@ -1,3 +1,5 @@
+import _ from 'lodash';
+
 /* @ngInject */
 function monthdayTimePicker($rootScope, timepickerModel, datetimeErrorCombiner) {
     const dispatch = (type, data) => $rootScope.$emit('timepicker', { type, data });
@@ -35,7 +37,7 @@ function monthdayTimePicker($rootScope, timepickerModel, datetimeErrorCombiner) 
                         return;
                     }
                     // seconds since start of month -> days since start of month, each day has 24 * 60 * 60 seconds.
-                    scope.model.day = _.findWhere(scope.availableDays, { value: Math.floor(scope.timestamp / (24 * 3600)) % 31 });
+                    scope.model.day = _.find(scope.availableDays, { value: Math.floor(scope.timestamp / (24 * 3600)) % 31 });
                     scope.model.time = scope.timestamp % (24 * 3600);
                 }
 

@@ -1,3 +1,5 @@
+import _ from 'lodash';
+
 /* @ngInject */
 function dropdownLabels($rootScope, $timeout, labelsModel, mailSettingsModel, eventManager, notification, settingsMailApi, gettextCatalog) {
     const NOTIFS = {
@@ -78,7 +80,7 @@ function dropdownLabels($rootScope, $timeout, labelsModel, mailSettingsModel, ev
                     const ID = e.target.getAttribute('data-label-id');
                     ID &&
                         scope.$applyAsync(() => {
-                            const label = _.findWhere(scope.labels, { ID });
+                            const label = _.find(scope.labels, { ID });
                             label.Selected = true;
                             scope.saveLabels(scope.labels, scope.alsoArchive);
                             close();

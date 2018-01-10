@@ -1,3 +1,5 @@
+import _ from 'lodash';
+
 /* @ngInject */
 function composerOutside($rootScope, attachmentFileFormat) {
     const CLASS_DRAGGABLE = 'composer-draggable';

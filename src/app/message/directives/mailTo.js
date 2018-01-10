@@ -1,3 +1,5 @@
+import _ from 'lodash';
+
 /* @ngInject */
 const mailTo = ($rootScope, regexEmail, messageModel, parseUrl, authentication) => ({
     restrict: 'A',
@@ -30,7 +32,7 @@ const mailTo = ($rootScope, regexEmail, messageModel, parseUrl, authentication) 
             const { searchObject = {} } = parseUrl(mailto.substring(j + 1));
             const message = messageModel();
 
-            message.From = _.findWhere(authentication.user.Addresses, { ID: scope.message.AddressID });
+            message.From = _.find(authentication.user.Addresses, { ID: scope.message.AddressID });
 
             if (to) {
                 message.ToList = toAddresses(to.split(','));

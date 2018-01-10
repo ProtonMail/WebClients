@@ -1,3 +1,5 @@
+import _ from 'lodash';
+
 /* @ngInject */
 function squireDropdown($rootScope, squireEditor, editorModel, onCurrentMessage) {
     const MAIN_CACHE = {};

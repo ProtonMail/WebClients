@@ -1,3 +1,5 @@
+import _ from 'lodash';
+
 /* @ngInject */
 function searchContact($rootScope, $state, $stateParams, contactCache, gettextCatalog) {
     const I18N = gettextCatalog.getString('Search contacts');

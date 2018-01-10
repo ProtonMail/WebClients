@@ -1,3 +1,7 @@
+import _ from 'lodash';
+
+import { flow, filter, map, sortBy } from 'lodash/fp';
+
 /* @ngInject */
 function labelsModel($rootScope, CONSTANTS, sanitize) {
     const IS_LABEL = 0;
@@ -56,18 +60,16 @@ function labelsModel($rootScope, CONSTANTS, sanitize) {
         );
     };
 
+    const syncType = (type) => {
+        return flow(filter({ Exclusive: type }), sortBy('Order'))(CACHE.all);
+    };
+
     const syncLabels = () => {
-        CACHE.labels = _.chain(CACHE.all)
-            .where({ Exclusive: IS_LABEL })
-            .sortBy('Order')
-            .value();
+        CACHE.labels = syncType(IS_LABEL);
     };
 
     const syncFolders = () => {
-        CACHE.folders = _.chain(CACHE.all)
-            .where({ Exclusive: IS_FOLDER })
-            .sortBy('Order')
-            .value();
+        CACHE.folders = syncType(IS_FOLDER);
     };
 
     /**
@@ -137,11 +139,9 @@ function labelsModel($rootScope, CONSTANTS, sanitize) {
             { update: {}, create: [], remove: {} }
         );
 
-        CACHE.all = _.chain(CACHE.all)
-            .map((label) => cleanLabel(todo.update[label.ID] || label))
-            .filter(({ ID }) => !todo.remove[ID])
-            .value()
-            .concat(todo.create.map((label) => cleanLabel(label)));
+        CACHE.all = flow(map((label) => cleanLabel(todo.update[label.ID] || label)), filter(({ ID }) => !todo.remove[ID]))(CACHE.all).concat(
+            todo.create.map((label) => cleanLabel(label))
+        );
 
         syncMap();
         syncLabels();
@@ -173,4 +173,5 @@ function labelsModel($rootScope, CONSTANTS, sanitize) {
         IS_FOLDER
     };
 }
+
 export default labelsModel;

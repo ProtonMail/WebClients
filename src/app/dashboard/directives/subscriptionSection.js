@@ -1,3 +1,7 @@
+import _ from 'lodash';
+
+import { flow, filter, reduce, each } from 'lodash/fp';
+
 /* @ngInject */
 function subscriptionSection($rootScope, CONSTANTS, subscriptionModel, gettextCatalog) {
     const { MONTHLY, YEARLY, TWO_YEARS } = CONSTANTS.CYCLE;
@@ -61,9 +65,9 @@ function subscriptionSection($rootScope, CONSTANTS, subscriptionModel, gettextCa
     }
 
     function extractAddons(plans = [], vpn = false) {
-        return _.chain(plans)
-            .where({ Type: 0 })
-            .reduce((acc, plan) => {
+        return flow(
+            filter({ Type: 0 }),
+            reduce((acc, plan) => {
                 if (vpn === plan.Name.indexOf('vpn') > -1) {
                     if (acc[plan.Name]) {
                         acc[plan.Name].Amount += plan.Amount;
@@ -75,9 +79,9 @@ function subscriptionSection($rootScope, CONSTANTS, subscriptionModel, gettextCa
                 }
 
                 return acc;
-            }, {})
-            .each((plan) => formatTitle(plan))
-            .value();
+            }, {}),
+            each((plan) => formatTitle(plan))
+        )(plans);
     }
 
     return {

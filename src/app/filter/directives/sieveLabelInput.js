@@ -1,3 +1,5 @@
+import _ from 'lodash';
+
 /* @ngInject */
 function sieveLabelInput() {
     return {
@@ -37,7 +39,7 @@ function sieveLabelInput() {
                 };
 
                 // regex map because this is the best way to replaceAll (replace only replaces one value)
-                const regexMap = _.mapObject(unicodeClassification, (value) => new RegExp('[' + value.join('') + ']', 'g'));
+                const regexMap = _.mapValues(unicodeClassification, (value) => new RegExp('[' + value.join('') + ']', 'g'));
 
                 scope.codeMirrorLoaded = (codemirror) => {
                     editor = codemirror;

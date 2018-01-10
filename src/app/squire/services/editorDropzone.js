@@ -1,3 +1,5 @@
+import _ from 'lodash';
+
 /* @ngInject */
 function editorDropzone($rootScope, gettextCatalog, attachmentFileFormat, squireExecAction) {
     const CLASS_DRAGGABLE = 'editorDropzone-enter';

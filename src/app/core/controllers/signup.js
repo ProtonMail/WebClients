@@ -1,3 +1,5 @@
+import _ from 'lodash';
+
 /* @ngInject */
 function SignupController(
     $location,
@@ -47,7 +49,7 @@ function SignupController(
     authentication.logout(false, authentication.isLoggedIn());
 
     if (plans.length) {
-        $scope.plan = _.findWhere(plans, {
+        $scope.plan = _.find(plans, {
             Name: $stateParams.plan,
             Cycle: parseInt($stateParams.billing, 10),
             Currency: $stateParams.currency

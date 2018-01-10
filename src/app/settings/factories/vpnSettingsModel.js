@@ -1,3 +1,5 @@
+import _ from 'lodash';
+
 /* @ngInject */
 function vpnSettingsModel($rootScope) {
     let CACHE = {};

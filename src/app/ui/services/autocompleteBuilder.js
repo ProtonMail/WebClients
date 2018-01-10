@@ -1,3 +1,5 @@
+import _ from 'lodash';
+
 /* @ngInject */
 function autocompleteBuilder(CONSTANTS, customInputCreator) {
     const generateID = () =>

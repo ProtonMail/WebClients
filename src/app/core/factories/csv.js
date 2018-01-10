@@ -1,3 +1,5 @@
+import _ from 'lodash';
+
 /* @ngInject */
 function csv(csvFormat) {
     const properties = csvFormat.getAllProperties();

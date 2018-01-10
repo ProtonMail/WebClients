@@ -1,3 +1,5 @@
+import _ from 'lodash';
+
 /* @ngInject */
 function elementsSelector($rootScope, mailSettingsModel, gettextCatalog, dedentTpl) {
     const isChecked = true;

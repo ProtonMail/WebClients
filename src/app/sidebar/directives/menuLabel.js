@@ -1,3 +1,5 @@
+import _ from 'lodash';
+
 /* @ngInject */
 function menuLabel($rootScope, labelsModel, $stateParams, dedentTpl, $state, sidebarModel) {
     const CLEANER = document.createElement('div');

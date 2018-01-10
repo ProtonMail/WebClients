@@ -1,3 +1,5 @@
+import _ from 'lodash';
+
 /* @ngInject */
 function createLabel($rootScope, labelModal) {
     const dispatch = (message, label = {}) => {

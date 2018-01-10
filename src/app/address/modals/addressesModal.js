@@ -1,3 +1,5 @@
+import _ from 'lodash';
+
 /* @ngInject */
 function addressesModal(pmModal, CONSTANTS, $rootScope, organizationModel, addressModel, memberActions) {
     return pmModal({
@@ -20,7 +22,7 @@ function addressesModal(pmModal, CONSTANTS, $rootScope, organizationModel, addre
                 $rootScope.$broadcast(name, params.domain);
             };
 
-            this.getMember = (ID) => _.findWhere(members, { ID }) || {};
+            this.getMember = (ID) => _.find(members, { ID }) || {};
 
             this.addAddress = () => {
                 params.cancel();

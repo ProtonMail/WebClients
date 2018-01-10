@@ -1,3 +1,5 @@
+import _ from 'lodash';
+
 /* @ngInject */
 function networkActivityTracker(errorReporter, $rootScope, notification, dedentTpl) {
     let promises = [];

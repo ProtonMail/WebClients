@@ -1,3 +1,5 @@
+import _ from 'lodash';
+
 /* @ngInject */
 function vpnModel($rootScope, authentication, gettextCatalog, vpnApi) {
     let vpn = angular.copy(authentication.user.VPN);

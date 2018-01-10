@@ -1,3 +1,5 @@
+import _ from 'lodash';
+
 /* @ngInject */
 function spamListModel($q, $rootScope, CONSTANTS, incomingModel) {
     const { MAILBOX_IDENTIFIERS } = CONSTANTS;

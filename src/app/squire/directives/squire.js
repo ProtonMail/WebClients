@@ -1,3 +1,5 @@
+import _ from 'lodash';
+
 /* @ngInject */
 function squire(squireEditor, embedded, editorListener, $rootScope, sanitize, toggleModeEditor, AppModel, onCurrentMessage) {
     const CLASS_NAMES = {

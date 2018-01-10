@@ -1,3 +1,7 @@
+import _ from 'lodash';
+
+import { flow, filter, each } from 'lodash/fp';
+
 /* @ngInject */
 function hotkeys(hotkeyModal, $rootScope, $state, authentication, CONSTANTS, $injector, gettextCatalog) {
     const I18N = {
@@ -220,9 +224,7 @@ function hotkeys(hotkeyModal, $rootScope, $state, authentication, CONSTANTS, $in
      * @return {void}
      */
     const filterBinding = (list = [], cb = angular.noop) => {
-        _.chain(keys)
-            .filter(({ keyboard }) => _.contains(list, keyboard))
-            .each(cb);
+        flow(filter(({ keyboard }) => _.includes(list, keyboard)), each(cb))(keys);
     };
 
     const hotkeys = {
@@ -251,4 +253,5 @@ function hotkeys(hotkeyModal, $rootScope, $state, authentication, CONSTANTS, $in
 
     return hotkeys;
 }
+
 export default hotkeys;

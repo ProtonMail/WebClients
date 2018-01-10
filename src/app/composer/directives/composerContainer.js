@@ -1,3 +1,5 @@
+import _ from 'lodash';
+
 /* @ngInject */
 function composerContainer($rootScope, authentication, composerRender, composerLoader) {
     return {
@@ -46,14 +48,14 @@ function composerContainer($rootScope, authentication, composerRender, composerL
                         break;
 
                     case 'focus.first': {
-                        const notMinimized = _.findWhere(scope.messages, { minimized: false });
+                        const notMinimized = _.find(scope.messages, { minimized: false });
                         notMinimized && openClose(type, { message: notMinimized });
                         break;
                     }
 
                     case 'escape.autocomplete': {
                         const hasHotkeys = authentication.user.Hotkeys === 1;
-                        const message = _.findWhere(scope.messages, { focussed: true });
+                        const message = _.find(scope.messages, { focussed: true });
 
                         if (hasHotkeys && message) {
                             scope.close(message, false, true); // message, discard, save

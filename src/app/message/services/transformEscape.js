@@ -1,3 +1,5 @@
+import _ from 'lodash';
+
 import transformBase from './transformBase';
 
 /* @ngInject */

@@ -1,3 +1,5 @@
+import { flow, map, filter } from 'lodash/fp';
+
 /* @ngInject */
 function extractDataURI(attachmentModel, embedded) {
     /**
@@ -41,10 +43,10 @@ function extractDataURI(attachmentModel, embedded) {
 
         const images = testDiv.querySelectorAll('img');
 
-        const promises = _.chain([].slice.call(images))
-            .filter(({ src }) => /data:image/.test(src)) // only data:uri image
-            .filter(({ src }) => src.includes(',')) // remove invalid data:uri
-            .map((image) => {
+        const promises = flow(
+            filter(({ src }) => /data:image/.test(src)), // only data:uri image
+            filter(({ src }) => src.includes(',')), // remove invalid data:uri
+            map((image) => {
                 const cid = embedded.generateCid(image.src, message.From.Email);
                 const setEmbeddedImg = () => {
                     image.setAttribute('data-embedded-img', cid);
@@ -63,7 +65,7 @@ function extractDataURI(attachmentModel, embedded) {
 
                 return attachmentModel.create(file, message, true, cid).then(setEmbeddedImg);
             })
-            .value();
+        )([].slice.call(images));
 
         await Promise.all(promises);
 

@@ -1,3 +1,5 @@
+import _ from 'lodash';
+
 /* @ngInject */
 function contactLoaderModal($rootScope, gettextCatalog, pmModal) {
     const LABEL_CLASS = 'contactLoaderModal-label';
