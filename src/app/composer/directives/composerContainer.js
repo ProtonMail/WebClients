@@ -43,6 +43,7 @@ function composerContainer($rootScope, authentication, composerRender, composerL
 
             const unsubscribe = $rootScope.$on('composer.update', (e, { type, data }) => {
                 switch (type) {
+                    case 'focus.dragenter':
                     case 'focus.click':
                         scope.$applyAsync(() => focusMessage(data));
                         break;
