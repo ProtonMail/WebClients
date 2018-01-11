@@ -24,18 +24,19 @@ function contactDownloader(Contact, contactLoaderModal, contactDetailsModel, dow
 
     return async (id = 'all') => {
         let deferred = $q.defer();
+        const close = () => {
+            if (deferred) {
+                deferred.resolve(CANCEL_REQUEST);
+                return _rAF(() => (deferred = null));
+            }
+            contactLoaderModal.deactivate();
+        };
 
         contactLoaderModal.activate({
             params: {
                 mode: 'export',
-                onEscape() {
-                    if (deferred) {
-                        deferred.resolve(CANCEL_REQUEST);
-                        return _rAF(() => (deferred = null));
-                    }
-                    contactLoaderModal.deactivate();
-                },
-                close: contactLoaderModal.deactivate
+                onEscape: close,
+                close
             }
         });
 
