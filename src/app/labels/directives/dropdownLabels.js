@@ -96,7 +96,7 @@ function dropdownLabels($rootScope, $timeout, labelsModel, mailSettingsModel, ev
             scope.color = ({ Color: color = 'inherit' } = {}) => ({ color });
 
             scope.changeAlsoArchive = () => {
-                settingsMailApi.updateAlsoArchive({ AlsoArchive: +scope.alsoArchive }).then(eventManager.call);
+                settingsMailApi.updateAlsoArchive({ AlsoArchive: +scope.alsoArchive });
             };
 
             scope.$on('$destroy', () => {
