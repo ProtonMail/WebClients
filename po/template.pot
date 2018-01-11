@@ -643,12 +643,12 @@ msgctxt "Action"
 msgid "<i class=\"fa fa-underline\"></i>"
 msgstr ""
 
-#: ./src/templates/ui/chooseLayoutBtns.tpl.html:4
+#: ./src/templates/ui/chooseLayoutBtns.tpl.html:2
 msgctxt "Action"
 msgid "<img src=\"/assets/img/columnview.svg\">"
 msgstr ""
 
-#: ./src/templates/ui/chooseLayoutBtns.tpl.html:12
+#: ./src/templates/ui/chooseLayoutBtns.tpl.html:10
 msgctxt "Action"
 msgid "<img src=\"/assets/img/rowview.svg\">"
 msgstr ""
@@ -3128,7 +3128,7 @@ msgstr ""
 #: ./src/templates/views/account.tpl.html:200
 #: ./src/templates/views/domains.tpl.html:211
 #: ./src/templates/views/members.tpl.html:253
-#: ./src/templates/views/signatures.tpl.html:91
+#: ./src/templates/views/signatures.tpl.html:92
 msgid "Disabled"
 msgstr ""
 
@@ -5108,7 +5108,7 @@ msgid "Layout"
 msgstr ""
 
 #: ./src/app/settings/controllers/appearance.js:76
-#: ./src/app/ui/directives/chooseLayoutBtns.js:35
+#: ./src/app/ui/directives/chooseLayoutBtns.js:34
 msgid "Layout saved"
 msgstr ""
 
@@ -5543,7 +5543,7 @@ msgstr ""
 #. address state badge
 #: ./src/templates/views/domains.tpl.html:212
 #: ./src/templates/views/members.tpl.html:254
-#: ./src/templates/views/signatures.tpl.html:92
+#: ./src/templates/views/signatures.tpl.html:93
 msgid "Missing keys"
 msgstr ""
 
@@ -6200,7 +6200,7 @@ msgstr ""
 
 #. address state badge
 #: ./src/templates/views/members.tpl.html:255
-#: ./src/templates/views/signatures.tpl.html:93
+#: ./src/templates/views/signatures.tpl.html:94
 msgid "Orphan"
 msgstr ""
 
