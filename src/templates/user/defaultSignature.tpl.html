@@ -5,7 +5,10 @@
     <div class="clearfix">
         <div class="col-3-8">
             <label for="displayName">
-                <span translate-context="Title" translate translate-comment="display name heading on account page">Default display name</span>
+                <span
+                    translate-context="Title"
+                    translate translate-comment="display name heading on account page"
+                    translate>Default display name</span>
                 <a href="https://protonmail.com/support/knowledge-base/display-name/" target="_blank" class="text-purple"><i class="fa fa-info-circle"></i></a>
             </label>
         </div>
@@ -19,7 +22,11 @@
     </div>
     <div class="clearfix">
         <div class="col-3-8">
-            <label for="signature" translate-context="Title" translate translate-comment="Signature heading on account page">Default signature</label>
+            <label
+                for="signature"
+                translate-context="Title"
+                translate translate-comment="Signature heading on account page"
+                translate>Default signature</label>
         </div>
         <div class="col-5-8">
             <squire
@@ -33,7 +40,7 @@
     </div>
     <div class="clearfix">
         <div class="col-3-8">
-            <label>ProtonMail Signature</label>
+            <label translate translate-context="Title">ProtonMail Signature</label>
         </div>
         <div class="col-5-8">
             <toggle
@@ -52,10 +59,10 @@
     <div class="clearfix">
 
         <blockquote class="alert alert-warning defaultSignature-warnings">
-            <span class="defaultSignature-warnings-about">You already set a custom:</span>
+            <span class="defaultSignature-warnings-about" translate translate-context="Info">You already set a custom:</span>
             <ul class="defaultSignature-warnings-list">
-                <li class="defaultSignature-item-displayname">display name</li>
-                <li class="defaultSignature-item-signature">signature</li>
+                <li class="defaultSignature-item-displayname" translate translate-context="Info">display name</li>
+                <li class="defaultSignature-item-signature" translate translate-context="Info">signature</li>
             </ul>
             <a ui-sref="secured.signatures" class="defaultSignature-warnings-link">Edit</a>
         </blockquote>
