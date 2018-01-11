@@ -20,9 +20,6 @@ HASH_VENDOR_LAZY2=$(shasum dist/vendorLazy2.js | awk '{print  $1}');
 HASH_STYLE=$(shasum dist/styles.css | awk '{print  $1}');
 HASH_OPENPGP=$(shasum dist/openpgp.min.js | awk '{print  $1}');
 
-CONTENT=$(sed -e "s/app.js/app.$HASH_APP.js/g;s/appLazy.js/appLazy.$HASH_APP_LAZY.js/g;s/styles.css/styles.$HASH_STYLE.css/g;s/vendor.js/vendor.$HASH_VENDOR.js/g;s/vendorLazy.js/vendorLazy.$HASH_VENDOR_LAZY.js/g;s/vendorLazy2.js/vendorLazy2.$HASH_VENDOR_LAZY2.js/g;s/openpgp.min.js/openpgp.min.js?rel=$HASH_OPENPGP/g" dist/index.html)
-CONTENT_APP=$(sed -e "s/vendorLazy.js/vendorLazy.$HASH_VENDOR_LAZY.js/g;s/vendorLazy2.js/vendorLazy2.$HASH_VENDOR_LAZY2.js/g;s/appLazy.js/appLazy.$HASH_APP_LAZY.js/g" dist/app.js)
-
 echo HASH_STYLE $HASH_STYLE
 echo HASH_APP $HASH_APP
 echo HASH_APP_LAZY $HASH_APP_LAZY
@@ -34,7 +31,7 @@ echo HASH_OPENPGP $HASH_OPENPGP
 
 echo
 echo " → Attach shasum to files"
-mv dist/app.js dist/app.$HASH_APP.js
+mv dist/index.html dist/app.html
 mv dist/appLazy.js dist/appLazy.$HASH_APP_LAZY.js
 mv dist/vendor.js dist/vendor.$HASH_VENDOR.js
 mv dist/vendorLazy.js dist/vendorLazy.$HASH_VENDOR_LAZY.js
@@ -42,7 +39,10 @@ mv dist/vendorLazy2.js dist/vendorLazy2.$HASH_VENDOR_LAZY2.js
 mv dist/styles.css dist/styles.$HASH_STYLE.css
 
 echo " → Write shasum"
-echo $CONTENT > dist/index.html
-echo $CONTENT_APP > dist/app.$HASH_APP.js
+
+sed -e "s/app.js/app.$HASH_APP.js/g;s/appLazy.js/appLazy.$HASH_APP_LAZY.js/g;s/styles.css/styles.$HASH_STYLE.css/g;s/vendor.js/vendor.$HASH_VENDOR.js/g;s/vendorLazy.js/vendorLazy.$HASH_VENDOR_LAZY.js/g;s/vendorLazy2.js/vendorLazy2.$HASH_VENDOR_LAZY2.js/g;s/openpgp.min.js/openpgp.min.js?rel=$HASH_OPENPGP/g" < dist/app.html > dist/index.html;
+sed -e "s/vendorLazy.js/vendorLazy.$HASH_VENDOR_LAZY.js/g;s/vendorLazy2.js/vendorLazy2.$HASH_VENDOR_LAZY2.js/g;s/appLazy.js/appLazy.$HASH_APP_LAZY.js/g" < dist/app.js > dist/app.$HASH_APP.js;
+
+rm dist/{app.html,app.js};
 echo " ✓ Write shasum success"
 echo
