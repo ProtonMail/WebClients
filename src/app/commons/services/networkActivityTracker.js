@@ -2,8 +2,9 @@ import _ from 'lodash';
 import { ERROR_SILENT } from '../../constants';
 
 /* @ngInject */
-function networkActivityTracker(errorReporter, $rootScope, notification, dedentTpl) {
+function networkActivityTracker($filter, errorReporter, $rootScope, notification) {
     let promises = [];
+    const unicodeTagView = $filter('unicodeTagView');
 
     /**
      * Dispatch an action in order to toggle the activityTracker component
@@ -21,27 +22,6 @@ function networkActivityTracker(errorReporter, $rootScope, notification, dedentT
     const loading = () => !_.isEmpty(promises);
 
     /**
-     * Format error message displayed with more informations
-     *     - message: main message
-     *     - Code: code coming from the API
-     *     - Original: original message (ex: from composer)
-     * @param  {Error} error
-     * @return {Error}
-     */
-    const formatError = (error = {}) => {
-        if (!error.originalMessage) {
-            return error;
-        }
-
-        return dedentTpl`
-            >>> ${error.message}
-            Code: ${error.code}
-            Original: ${error.originalMessage},
-            Stack: ${error.stack}
-        `;
-    };
-
-    /**
      * Track promise to catch event around
      * @param {object} promise - Promise tracker
      * @return {object} promise - Return the orginal promise to stay in the same context
@@ -57,7 +37,7 @@ function networkActivityTracker(errorReporter, $rootScope, notification, dedentT
         promises = _.union(promises, [promise]);
 
         promise.catch((error) => {
-            console.error(formatError(error));
+            console.error(error);
 
             if (angular.isString(error)) {
                 notification.error(error);
@@ -68,7 +48,7 @@ function networkActivityTracker(errorReporter, $rootScope, notification, dedentT
                 let message;
 
                 if (error.message) {
-                    message = error.message;
+                    message = !error.raw ? unicodeTagView(error.message) : error.message;
                 } else if (error.Error) {
                     message = error.Error;
                 } else if (error.error_description) {
