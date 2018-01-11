@@ -13,6 +13,7 @@
     flex-direction: column;
     padding-right: 1em;
     margin: 0 0 1em;
+    position: relative;
 }
 
 .defaultSignature-warnings-list {
@@ -22,5 +23,10 @@
 }
 
 .defaultSignature-warnings-link {
-    margin-left: auto;
+    position: absolute;
+    right: 20px;
+}
+
+.defaultSignature-warnings-about {
+    margin-bottom: 10px;
 }
