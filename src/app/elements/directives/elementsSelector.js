@@ -68,6 +68,16 @@ function elementsSelector($rootScope, mailSettingsModel, gettextCatalog, dedentT
 
             return (scope, el) => {
                 const $btn = el.find('.elementsSelector-btn-action');
+                const updateView = () => {
+                    scope.$applyAsync(() => {
+                        scope.viewLayout = mailSettingsModel.get('ViewLayout');
+                    });
+                };
+                const unsubscribe = $rootScope.$on('mailSettings', (event, { type = '' }) => {
+                    if (type === 'updated') {
+                        updateView();
+                    }
+                });
 
                 $btn.on('click', onClick);
 
@@ -78,8 +88,9 @@ function elementsSelector($rootScope, mailSettingsModel, gettextCatalog, dedentT
                 }
 
                 scope.checkedSelectorState = () => _.every(scope.conversations, { Selected: true });
-
+                updateView();
                 scope.$on('$destroy', () => {
+                    unsubscribe();
                     $btn.off('click', onClick);
                 });
             };

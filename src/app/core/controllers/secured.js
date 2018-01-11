@@ -51,6 +51,13 @@ function SecuredController(
     !$state.includes('secured.contacts') && contactCache.load();
     addressWithoutKeysManager.manage().catch(_.noop);
 
+    function updateView() {
+        $scope.$applyAsync(() => {
+            const { ViewLayout } = mailSettingsModel.get();
+            $scope.viewLayout = ViewLayout;
+        });
+    }
+
     $scope.$on('updateUser', () => {
         $scope.$applyAsync(() => {
             $scope.user = authentication.user;
@@ -59,9 +66,15 @@ function SecuredController(
         });
     });
 
+    $scope.$on('mailSettings', (event, { type = '' }) => {
+        if (type === 'updated') {
+            updateView();
+        }
+    });
+
     $scope.idDefined = () => $state.params.id && $state.params.id.length > 0;
     $scope.isMobile = () => AppModel.is('mobile');
-
+    updateView();
     $scope.$on('$destroy', () => {
         hotkeys.unbind();
         unsubscribe();

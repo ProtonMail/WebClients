@@ -9,13 +9,8 @@ function signatureModel(AppModel, sanitize, settingsMailApi, eventManager, notif
 
     const changePMSignature = async (status) => {
         const PMSignature = +!!status;
-        const { data = {} } = await settingsMailApi.updatePMSignature({ PMSignature });
-
-        if (data.Error) {
-            throw new Error(data.Error);
-        }
+        await settingsMailApi.updatePMSignature({ PMSignature });
         await eventManager.call();
-
         AppModel.set('protonSignature', !!status);
         return notification.success(I18N.SUCCESS_UPDATE);
     };
