@@ -135,9 +135,8 @@ function editMemberProcess(networkActivityTracker, gettextCatalog, memberApi, Ad
             const { message, promise } = getPromise({ maxPadding, minPadding, maxVPNPadding }, member);
 
             const finish = (message) => ({ member }) => {
-                notification.success(message);
                 params.submit(member);
-                return eventManager.call();
+                return eventManager.call().then(() => notification.success(message));
             };
 
             const process = promise()
