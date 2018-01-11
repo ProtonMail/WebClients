@@ -111,7 +111,7 @@ function messageActions(
         const toTrash = labelID === CONSTANTS.MAILBOX_IDENTIFIERS.trash;
         const toSpam = labelID === CONSTANTS.MAILBOX_IDENTIFIERS.spam;
         const folderIDs = toSpam || toTrash ? basicFolders.concat(folders).concat(labels) : basicFolders.concat(folders);
-        const events = flow(
+        const eventList = flow(
             map((id) => {
                 const message = cache.getMessageCached(id) || {};
                 let labelIDs = message.LabelIDs || [];
@@ -138,8 +138,11 @@ function messageActions(
                     }
                 };
             }),
-            reduce((acc, event) => ((acc[event.ID] = event), acc), {}),
-            reduce((acc, event, i, eventList) => {
+            reduce((acc, event) => ((acc[event.ID] = event), acc), {})
+        )(ids);
+        const events = _.reduce(
+            eventList,
+            (acc, event) => {
                 const conversation = cache.getConversationCached(event.Message.ConversationID);
                 const messages = cache.queryMessagesCached(event.Message.ConversationID);
 
@@ -166,8 +169,9 @@ function messageActions(
                 }
 
                 return acc;
-            }, [])
-        )(ids);
+            },
+            []
+        );
 
         // Send request
         const promise = messageApi.label(labelID, 1, ids);
