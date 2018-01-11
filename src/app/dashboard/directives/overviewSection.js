@@ -13,6 +13,14 @@ function overviewSection($rootScope, authentication, organizationModel, subscrip
 
             $buttons.on('click', onClick);
 
+            function updateStorageBar() {
+                const organization = organizationModel.get();
+                const model = organization.PlanName === 'free' ? authentication.user : organization;
+                const progress = model.UsedSpace / model.MaxSpace * 100;
+
+                $rootScope.$emit('progressBar', { type: 'storageBar', data: { progress } });
+            }
+
             function updateUser() {
                 scope.$applyAsync(() => {
                     scope.user = angular.copy(authentication.user);
@@ -47,12 +55,14 @@ function overviewSection($rootScope, authentication, organizationModel, subscrip
             unsubscribe.push(
                 $rootScope.$on('updateUser', () => {
                     updateUser();
+                    updateStorageBar();
                 })
             );
 
             unsubscribe.push(
                 $rootScope.$on('organizationChange', (e, organization) => {
                     updateOrganization(organization);
+                    updateStorageBar();
                 })
             );
 
@@ -71,6 +81,7 @@ function overviewSection($rootScope, authentication, organizationModel, subscrip
             updateUser();
             updateOrganization(organizationModel.get());
             updateSubscription(subscriptionModel.get());
+            updateStorageBar();
 
             scope.$on('$destroy', () => {
                 $buttons.off('click', onClick);

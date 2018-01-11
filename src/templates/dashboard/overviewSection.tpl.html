@@ -52,10 +52,7 @@
                 <strong class="overviewSection-storage-size">{{ organization.UsedSpace | humanSize }} <span translate-context="show used storage for an account" translate>of</span> {{ organization.MaxSpace | humanSize }}</strong>
                 <strong class="overviewSection-storage-free">{{ user.UsedSpace | humanSize }} <span translate-context="show used storage for an account" translate>of</span> {{ user.MaxSpace | humanSize }}</strong>
                 <br>
-                <div class="storageBar">
-                    <div class="storageBar-progress" ng-if="organization.PlanName !== 'free'" style="width: {{ organization.UsedSpace / organization.MaxSpace * 100 }}%"></div>
-                    <div class="storageBar-progress" ng-if="organization.PlanName === 'free'" style="width: {{ user.UsedSpace / user.MaxSpace * 100 }}%"></div>
-                </div>
+                <progress-bar id="storageBar"></progress-bar>
             </td>
         </tr>
     </tbody>
