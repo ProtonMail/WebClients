@@ -6,7 +6,10 @@ const sidebar = (sidebarModel) => ({
     link(scope) {
         scope.listStates = Object.keys(sidebarModel.getStateConfig());
         scope.scrollbarConfig = {
-            scrollInertia: 0
+            scrollInertia: 0,
+            scrollButtons: {
+                enable: false
+            }
         };
     }
 });
