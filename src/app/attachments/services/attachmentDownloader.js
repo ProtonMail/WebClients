@@ -1,5 +1,4 @@
 import _ from 'lodash';
-import { ERROR_SILENT } from '../../constants';
 
 /* @ngInject */
 function attachmentDownloader(gettextCatalog, AttachmentLoader, embeddedUtils, aboutClient, notification, AppModel, confirmModal) {
@@ -78,7 +77,7 @@ function attachmentDownloader(gettextCatalog, AttachmentLoader, embeddedUtils, a
         new Promise((resolve) => {
             const params = _.extend(
                 {
-                    isDanger: true,
+                    isWarning: true,
                     confirm() {
                         resolve(true);
                         confirmModal.deactivate();
@@ -112,17 +111,13 @@ function attachmentDownloader(gettextCatalog, AttachmentLoader, embeddedUtils, a
         } catch (e) {
             // If the decryption fails we download the encrypted version
             if (e.data) {
-                const ok = await allowDownloadBrokenAtt();
-                if (ok) {
-                    return {
-                        el,
-                        data: e.data,
-                        Name: `${attachment.Name}.pgp`,
-                        MIMEType: 'application/pgp'
-                    };
-                }
-
-                throw new Error(ERROR_SILENT);
+                return {
+                    el,
+                    data: e.data,
+                    Name: `${attachment.Name}.pgp`,
+                    MIMEType: 'application/pgp',
+                    isError: true
+                };
             }
             throw e;
         }
@@ -137,6 +132,11 @@ function attachmentDownloader(gettextCatalog, AttachmentLoader, embeddedUtils, a
      */
     const download = async (attachment, message, el) => {
         const att = await formatDownload(attachment, message, el);
+        if (att.isError) {
+            if (!await allowDownloadBrokenAtt()) {
+                return; // We don't want to download it
+            }
+        }
         return generateDownload(att);
     };
 
@@ -151,6 +151,13 @@ function attachmentDownloader(gettextCatalog, AttachmentLoader, embeddedUtils, a
             const promises = (message.Attachments || []).filter((att) => !embeddedUtils.isEmbedded(att)).map((att) => formatDownload(att, message));
 
             const list = await Promise.all(promises);
+
+            // Detect if we have at least one error
+            if (list.some(({ isError }) => isError)) {
+                if (!await allowDownloadBrokenAtt()) {
+                    return; // We don't want to download it
+                }
+            }
             const zip = new window.JSZip();
             list.forEach(({ Name, data }) => zip.file(Name, data));
             const content = await zip.generateAsync({ type: 'blob' });
