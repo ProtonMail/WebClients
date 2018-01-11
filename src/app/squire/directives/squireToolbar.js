@@ -95,7 +95,7 @@ function squireToolbar(CONSTANTS, squireDropdown, editorModel, onCurrentMessage,
                 }
             };
 
-            const onClick = (e) => {
+            const onMouseDown = (e) => {
                 e.preventDefault();
                 e.stopPropagation();
                 const { target, currentTarget } = e;
@@ -126,13 +126,13 @@ function squireToolbar(CONSTANTS, squireDropdown, editorModel, onCurrentMessage,
                 el[0].classList.remove(CLASSNAME.SUB_ROW);
             };
 
-            el.on('click', onClick);
+            el.on('mousedown', onMouseDown);
             $(window).on('resize', onResize);
             const unsubscribe = onCurrentMessage('squire.editor', scope, onActions);
 
             scope.$on('$destroy', () => {
                 editor.removeEventListener('pathChange', onPathChange);
-                el.off('click', onClick);
+                el.off('mousedown', onMouseDown);
                 $(window).off('resize', onResize);
                 unsubscribe();
                 squireDropdown(scope.message).clear();
