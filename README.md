@@ -11,8 +11,8 @@ We are currently working with our community to localize ProtonMail from English 
 
 > :warning: You must have node.js >= v6
 
-- `$ npm install`
-- `$ npm start`
+- `npm install`
+- `npm start`
 
 #### If you have docker, and prefer to not install node (or anything else) locally
 
@@ -29,7 +29,7 @@ We are very open to bug reports via Issues as well as Pull Requests.
 
 ## Deploy
 
-1. Create a new version + tag => `$ npm version --(patch|minor|major)`
+1. Create a new version + tag => `npm version --(patch|minor|major)`
 2. Deploy via grunt `grunt deploy --api=X --dest=Y`
 
 > _Then don't forget to do a git push --tags to push the tag_
@@ -52,48 +52,48 @@ For a feature
 ## Tests
 
 ```shell
-$ npm test
+npm test
 ```
 
-> To edit test it's better to run `$ npm run testwatch` (_tests with a watcher_)
+> To edit test it's better to run `npm run testwatch` (_tests with a watcher_)
 
 ## End to end testing for AngularJS
 
 Installation:
 
 ```shell
-$ npm install -g protractor
-$ webdriver-manager update
+npm install -g protractor
+webdriver-manager update
 ```
 
 Start up a Selenium Server:
 
 ```shell
-$ webdriver-manager start
+webdriver-manager start
 ```
 
 > To run selenium you can use docker if you don't want to install Java :
 ```sh
-$ docker run -d -p 4444:4444 -v /dev/shm:/dev/shm selenium/standalone-chrome:2.53.0
+docker run -d -p 4444:4444 -v /dev/shm:/dev/shm selenium/standalone-chrome:2.53.0
 ```
 cf [Selenium Docker](https://github.com/SeleniumHQ/docker-selenium)
 
 
 Run tests:
 ```shell
-$ npm run e2e -- --params.password1 "XXX" --params.password2 "XXX"
+npm run e2e -- --params.password1 "XXX" --params.password2 "XXX"
 ```
 > default account is qatest123, you can change that using `--params.login "xxxx"`
 
 
 ```shell
-$ npm run e2e
+npm run e2e
 ```
 
 Run a scenario:
 
 ```shell
-$ npm run e2e -- --suite=login
+npm run e2e -- --suite=login
 ```
 
 ## CLI Flags
