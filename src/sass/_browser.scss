@@ -177,7 +177,7 @@ input:-moz-ui-invalid {
         }
 
         &::-webkit-input-placeholder {
-            @include resetTwoFA-input()
+            @include resetTwoFA-input();
             line-height: 24px; /* safari */
         }
         &:-moz-placeholder {
@@ -201,4 +201,15 @@ input:-moz-ui-invalid {
 [id^="eo-"] {
     #pm_slow { display: none !important }
     #pm_slow2 { display: flex !important }
+}
+
+// Mailvelope
+// Show Mailvelope button
+.m-encrypt-frame {
+    z-index: 110;
+}
+
+// Force frame to be aligned
+.m-extract-frame.m-large.m-decrypt {
+    left: 55px !important;
 }
