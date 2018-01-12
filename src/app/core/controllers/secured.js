@@ -19,6 +19,7 @@ function SecuredController(
     resurrecter,
     userType
 ) {
+    const ROWS_CLASS = 'rows';
     $scope.mobileMode = AppModel.is('mobile');
     $scope.tabletMode = AppModel.is('tablet');
     $scope.user = authentication.user;
@@ -57,14 +58,10 @@ function SecuredController(
     addressWithoutKeysManager.manage().catch(_.noop);
 
     function updateView() {
-        const $main = document.querySelector('#pm_main');
+        const { ViewLayout } = mailSettingsModel.get();
+        const action = ViewLayout === CONSTANTS.ROW_MODE ? 'add' : 'remove';
 
-        if ($main) {
-            const { ViewLayout } = mailSettingsModel.get();
-            const action = ViewLayout === CONSTANTS.ROW_MODE ? 'add' : 'remove';
-
-            $main.classList[action]('rows');
-        }
+        document.body.classList[action](ROWS_CLASS);
     }
 
     $scope.$on('updateUser', () => {
@@ -74,7 +71,7 @@ function SecuredController(
         });
     });
 
-    $scope.$on('mailSettings', (event, { type = '' }) => {
+    $rootScope.$on('mailSettings', (event, { type = '' }) => {
         if (type === 'updated') {
             updateView();
         }
