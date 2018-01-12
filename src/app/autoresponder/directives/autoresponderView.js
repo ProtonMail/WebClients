@@ -1,12 +1,12 @@
 /* @ngInject */
-function autoresponderView(authentication) {
+function autoresponderView(userType) {
     return {
         replace: true,
         restrict: 'E',
         templateUrl: require('../../../templates/autoresponder/autoresponderView.tpl.html'),
         scope: {},
         link(scope) {
-            scope.isFree = !(authentication.user.Subscribed & 1);
+            scope.isFree = userType().isFree;
         }
     };
 }

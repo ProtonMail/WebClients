@@ -18,9 +18,11 @@ import isDelinquent from './services/isDelinquent';
 import manageUser from './services/manageUser';
 import signupModel from './services/signupModel';
 import signupUserProcess from './services/signupUserProcess';
+import userType from './services/userType';
 
 export default angular
     .module('proton.user', [])
+    .service('userType', userType)
     .directive('defaultSignature', defaultSignature)
     .directive('humanVerification', humanVerification)
     .directive('signupCreationProcess', signupCreationProcess)

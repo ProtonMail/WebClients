@@ -16,13 +16,18 @@ function SecuredController(
     eventManager,
     hotkeys,
     mailSettingsModel,
-    resurrecter
+    resurrecter,
+    userType
 ) {
     $scope.mobileMode = AppModel.is('mobile');
     $scope.tabletMode = AppModel.is('tablet');
     $scope.user = authentication.user;
-    $scope.isAdmin = authentication.user.Role === CONSTANTS.PAID_ADMIN_ROLE;
-    $scope.isFree = authentication.user.Role === CONSTANTS.FREE_USER_ROLE;
+    const setUserType = () => {
+        const { isAdmin, isFree } = userType();
+        $scope.isAdmin = isAdmin;
+        $scope.isFree = isFree;
+    };
+    setUserType();
     $scope.keyPhase = CONSTANTS.KEY_PHASE;
     $rootScope.isLoggedIn = true; // Shouldn't be there
     $rootScope.isLocked = false; // Shouldn't be there
@@ -61,8 +66,7 @@ function SecuredController(
     $scope.$on('updateUser', () => {
         $scope.$applyAsync(() => {
             $scope.user = authentication.user;
-            $scope.isAdmin = authentication.user.Role === CONSTANTS.PAID_ADMIN_ROLE;
-            $scope.isFree = authentication.user.Role === CONSTANTS.FREE_USER_ROLE;
+            setUserType();
         });
     });
 

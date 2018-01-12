@@ -1,13 +1,16 @@
 /* @ngInject */
-const sidebarMobile = (sidebarModel, $rootScope, authentication, CONSTANTS, AppModel) => ({
+const sidebarMobile = (sidebarModel, $rootScope, authentication, AppModel, userType) => ({
     replace: true,
     scope: {},
     templateUrl: require('../../../templates/partials/sidebar-responsive.tpl.html'),
     link(scope) {
         const unsubscribes = [];
-
-        scope.isAdmin = authentication.user.Role === CONSTANTS.PAID_ADMIN_ROLE;
-        scope.isFree = authentication.user.Role === CONSTANTS.FREE_USER_ROLE;
+        const setUserType = () => {
+            const { isAdmin, isFree } = userType();
+            scope.isAdmin = isAdmin;
+            scope.isFree = isFree;
+        };
+        setUserType();
         scope.listStates = Object.keys(sidebarModel.getStateConfig());
 
         // Hide the sidebar with a delay for better perf on repaint
@@ -24,12 +27,7 @@ const sidebarMobile = (sidebarModel, $rootScope, authentication, CONSTANTS, AppM
             })
         );
 
-        unsubscribes.push(
-            $rootScope.$on('updateUser', () => {
-                scope.isAdmin = authentication.user.Role === CONSTANTS.PAID_ADMIN_ROLE;
-                scope.isFree = authentication.user.Role === CONSTANTS.FREE_USER_ROLE;
-            })
-        );
+        unsubscribes.push($rootScope.$on('updateUser', setUserType));
 
         scope.$on('$destroy', () => {
             unsubscribes.forEach((cb) => cb());

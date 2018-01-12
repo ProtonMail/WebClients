@@ -1,4 +1,5 @@
 import _ from 'lodash';
+import { CONSTANTS, WIZARD_ENABLED } from '../../constants';
 
 /* @ngInject */
 function SetupController(
@@ -11,7 +12,6 @@ function SetupController(
     $state,
     Address,
     authentication,
-    CONSTANTS,
     confirmModal,
     domains,
     gettextCatalog,
@@ -27,7 +27,7 @@ function SetupController(
     user
 ) {
     let passwordCopy;
-    const { WIZARD_ENABLED, KEY_PHASE, UNPAID_STATE } = CONSTANTS;
+    const { KEY_PHASE, UNPAID_STATE } = CONSTANTS;
 
     function initialization() {
         $scope.keyPhase = KEY_PHASE;
