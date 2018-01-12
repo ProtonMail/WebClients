@@ -1,8 +1,8 @@
 import _ from 'lodash';
+import { CONVERSATION_REQUEST_SIZE, MAILBOX_IDENTIFIERS } from '../../constants';
 
 /* @ngInject */
-function conversationApi($http, chunk, CONSTANTS, url) {
-    const { MAILBOX_IDENTIFIERS, CONVERSATION_REQUEST_SIZE } = CONSTANTS;
+function conversationApi($http, chunk, url) {
     const { archive, trash, inbox, spam } = MAILBOX_IDENTIFIERS;
     const requestURL = url.build('conversations');
 

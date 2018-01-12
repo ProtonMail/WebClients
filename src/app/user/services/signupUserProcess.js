@@ -1,3 +1,5 @@
+import { UNPAID_STATE, WIZARD_ENABLED } from '../../constants';
+
 /* @ngInject */
 function signupUserProcess(
     $location,
@@ -10,11 +12,9 @@ function signupUserProcess(
     Address,
     $state,
     setupKeys,
-    CONSTANTS,
     notification
 ) {
     const CACHE = {};
-    const { WIZARD_ENABLED, UNPAID_STATE } = CONSTANTS;
     const dispatch = (type, data = {}) => $rootScope.$emit('signup', { type, data });
 
     const I18N = {

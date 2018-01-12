@@ -5,7 +5,7 @@ function blackFridayModal($rootScope, $state, authentication, CONSTANTS, pmModal
         controllerAs: 'ctrl',
         templateUrl: require('../../../templates/blackFriday/blackFridayModal.tpl.html'),
         /* @ngInject */
-        controller: function(params, $scope) {
+        controller: function(params, $scope, userType) {
             const unsubscribe = $rootScope.$on('blackFriday', (event, { type = '' }) => {
                 if (type === 'loaded') {
                     $scope.$applyAsync(() => {
@@ -15,7 +15,7 @@ function blackFridayModal($rootScope, $state, authentication, CONSTANTS, pmModal
             });
 
             this.loaded = false;
-            this.isFreeUser = !authentication.user.Subscribed;
+            this.isFreeUser = userType().isFree;
             this.isPaidUser = authentication.user.Subscribed;
             this.close = () => {
                 blackFridayModel.saveClose();

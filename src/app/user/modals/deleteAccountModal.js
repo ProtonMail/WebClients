@@ -6,19 +6,18 @@ function deleteAccountModal(
     networkActivityTracker,
     authentication,
     $state,
-    CONSTANTS,
     gettextCatalog,
     notification,
-    userSettingsModel
+    userSettingsModel,
+    userType
 ) {
     const I18N = {
         invalidForm: gettextCatalog.getString('Invalid email address or password', null, 'Error reported when the delete account form is invalid')
     };
-    function report(params, isAdmin) {
+    async function report(params, isAdmin) {
         if (isAdmin) {
             return Bug.report(params);
         }
-        return Promise.resolve();
     }
 
     function deleteUser(params) {
@@ -35,14 +34,14 @@ function deleteAccountModal(
         templateUrl: require('../../../templates/modals/deleteAccount.tpl.html'),
         /* @ngInject */
         controller: function(params, $scope) {
-            const self = this;
-            self.hasTwoFactor = userSettingsModel.get('TwoFactor');
-            self.isAdmin = authentication.user.Role === CONSTANTS.PAID_ADMIN_ROLE;
-            self.email = '';
-            self.feedback = '';
-            self.password = '';
-            self.twoFactorCode = '';
-            self.submit = () => {
+            this.hasTwoFactor = userSettingsModel.get('TwoFactor');
+            this.isAdmin = userType().isAdmin;
+            this.cancel = params.close;
+            this.email = '';
+            this.feedback = '';
+            this.password = '';
+            this.twoFactorCode = '';
+            this.submit = () => {
                 if ($scope.deleteForm.$invalid) {
                     notification.error(I18N.invalidForm);
                     return;
@@ -59,18 +58,15 @@ function deleteAccountModal(
                     ClientVersion: '--',
                     Title: `[DELETION FEEDBACK] ${username}`,
                     Username: username,
-                    Email: self.email || authentication.user.Addresses[0].Email,
-                    Description: self.feedback
+                    Email: this.email || authentication.user.Addresses[0].Email,
+                    Description: this.feedback
                 };
 
-                const promise = report(params, self.isAdmin)
-                    .then(() => deleteUser({ Password: self.password, TwoFactorCode: self.twoFactorCode }))
+                const promise = report(params, this.isAdmin)
+                    .then(() => deleteUser({ Password: this.password, TwoFactorCode: this.twoFactorCode }))
                     .then(() => $state.go('login'));
 
                 networkActivityTracker.track(promise);
-            };
-            self.cancel = () => {
-                params.close();
             };
         }
     });

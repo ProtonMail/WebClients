@@ -1,13 +1,19 @@
+import { WIZARD_ENABLED } from '../../constants';
+
 /* @ngInject */
-function HeaderController($rootScope, $scope, $state, authentication, organizationModel, CONSTANTS) {
+function HeaderController($rootScope, $scope, $state, authentication, organizationModel, userType) {
     const unsubscribes = [];
 
+    const setUserType = () => {
+        const { isAdmin, isFree } = userType();
+        $scope.isAdmin = isAdmin;
+        $scope.isFree = isFree;
+    };
+    setUserType();
     $scope.params = {};
     $scope.user = authentication.user;
     $scope.organization = organizationModel.get();
-    $scope.wizardEnabled = CONSTANTS.WIZARD_ENABLED;
-    $scope.isAdmin = authentication.user.Role === CONSTANTS.PAID_ADMIN_ROLE;
-    $scope.isFree = authentication.user.Role === CONSTANTS.FREE_USER_ROLE;
+    $scope.wizardEnabled = WIZARD_ENABLED;
     $scope.ctrl = {};
     $scope.starred = 2;
 
@@ -17,12 +23,7 @@ function HeaderController($rootScope, $scope, $state, authentication, organizati
         })
     );
 
-    unsubscribes.push(
-        $rootScope.$on('updateUser', () => {
-            $scope.isAdmin = authentication.user.Role === CONSTANTS.PAID_ADMIN_ROLE;
-            $scope.isFree = authentication.user.Role === CONSTANTS.FREE_USER_ROLE;
-        })
-    );
+    unsubscribes.push($rootScope.$on('updateUser', setUserType));
 
     $scope.$on('$destroy', () => {
         unsubscribes.forEach((cb) => cb());

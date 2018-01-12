@@ -20,6 +20,7 @@ function SignaturesController(
     $scope.disabledAddresses = disabled;
     $scope.itemMoved = false;
     $scope.members = memberModel.getAll();
+
     $scope.organization = organizationModel.get();
     const isPaidAdmin = authentication.user.Role === CONSTANTS.PAID_ADMIN_ROLE;
 

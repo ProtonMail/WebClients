@@ -153,11 +153,11 @@ function addressModel(
                 message: I18N.DISABLE_MODAL.message,
                 cancel: confirmModal.deactivate,
                 confirm() {
+                    confirmModal.deactivate();
                     const promise = Address.disable(ID)
                         .then(eventManager.call)
                         .then(() => {
                             notification.success(I18N.SUCCESS_DISABLED);
-                            confirmModal.deactivate();
                         });
 
                     networkActivityTracker.track(promise);

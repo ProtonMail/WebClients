@@ -1,12 +1,12 @@
 /* @ngInject */
-function bridgeView(authentication) {
+function bridgeView(userType) {
     return {
         replace: true,
         restrict: 'E',
         scope: {},
         templateUrl: require('../../../templates/bridge/bridgeView.tpl.html'),
         link(scope) {
-            scope.isFree = !(authentication.user.Subscribed & 1);
+            scope.isFree = userType().isFree;
         }
     };
 }

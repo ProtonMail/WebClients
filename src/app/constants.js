@@ -1,9 +1,34 @@
+export const ERROR_AUTH_ACCOUNT_DISABLED = 10003;
 export const ERROR_SILENT = 'ignoreError';
+export const WIZARD_ENABLED = true;
+export const FREE_USER_ROLE = 0;
+export const PAID_MEMBER_ROLE = 1;
+export const PAID_ADMIN_ROLE = 2;
+export const UNPAID_STATE = {
+    NOT: 0,
+    AVAILABLE: 1,
+    OVERDUE: 2,
+    DELINQUENT: 3,
+    NO_RECEIVE: 4
+};
+export const MAILBOX_IDENTIFIERS = {
+    inbox: '0',
+    allDrafts: '1',
+    allSent: '2',
+    trash: '3',
+    spam: '4',
+    allmail: '5',
+    starred: '10',
+    archive: '6',
+    sent: '7',
+    drafts: '8',
+    search: 'search',
+    label: 'label'
+};
+export const CONVERSATION_REQUEST_SIZE = 10;
+export const GIFT_CODE_LENGTH = 16;
 
 export const CONSTANTS = {
-    ERROR_AUTH_ACCOUNT_DISABLED: 10003,
-    CONVERSATION_REQUEST_SIZE: 10,
-    GIFT_CODE_LENGTH: 16,
     BLACK_FRIDAY_INTERVAL: 10 * 60 * 1000,
     REMOTE: 1,
     EMBEDDED: 2,
@@ -134,16 +159,6 @@ export const CONSTANTS = {
     },
     INVITE_MAIL: 1,
     INVITE_VPN: 2,
-    FREE_USER_ROLE: 0,
-    PAID_MEMBER_ROLE: 1,
-    PAID_ADMIN_ROLE: 2,
-    UNPAID_STATE: {
-        NOT: 0,
-        AVAILABLE: 1,
-        OVERDUE: 2,
-        DELINQUENT: 3,
-        NO_RECEIVE: 4
-    },
     INBOX: 0,
     DRAFT: 1,
     SENT: 2,
@@ -188,21 +203,6 @@ export const CONSTANTS = {
     DESKTOP_BREAKPOINT: 1200,
     ROW_BREAKPOINT: 960,
     MOBILE_BREAKPOINT: 800,
-    WIZARD_ENABLED: true, // true / false
-    MAILBOX_IDENTIFIERS: {
-        inbox: '0',
-        allDrafts: '1',
-        allSent: '2',
-        trash: '3',
-        spam: '4',
-        allmail: '5',
-        starred: '10',
-        archive: '6',
-        sent: '7',
-        drafts: '8',
-        search: 'search',
-        label: 'label'
-    },
     EMAIL_FORMATING: {
         OPEN_TAG_AUTOCOMPLETE: '‹',
         CLOSE_TAG_AUTOCOMPLETE: '›',
@@ -275,7 +275,13 @@ export const CONSTANTS = {
     },
     CANCEL_REQUEST: 'CANCEL_REQUEST',
     ENCRYPTION_DEFAULT: 2048,
-    ERROR_SILENT
+    ERROR_SILENT,
+    FREE_USER_ROLE,
+    PAID_MEMBER_ROLE,
+    PAID_ADMIN_ROLE,
+    UNPAID_STATE,
+    WIZARD_ENABLED,
+    MAILBOX_IDENTIFIERS
 };
 
 export default angular
