@@ -20,6 +20,7 @@ function SecuredController(
     userType
 ) {
     const ROWS_CLASS = 'rows';
+    const unsubscribe = [];
     $scope.mobileMode = AppModel.is('mobile');
     $scope.tabletMode = AppModel.is('tablet');
     $scope.user = authentication.user;
@@ -35,10 +36,13 @@ function SecuredController(
 
     resurrecter.init();
     const bindAppValue = (key, { value }) => $scope.$applyAsync(() => ($scope[key] = value));
-    const unsubscribe = $rootScope.$on('AppModel', (e, { type, data = {} }) => {
-        type === 'mobile' && bindAppValue('mobileMode', data);
-        type === 'tablet' && bindAppValue('tabletMode', data);
-    });
+
+    unsubscribe.push(
+        $rootScope.$on('AppModel', (e, { type, data = {} }) => {
+            type === 'mobile' && bindAppValue('mobileMode', data);
+            type === 'tablet' && bindAppValue('tabletMode', data);
+        })
+    );
 
     desktopNotifications.request();
 
@@ -64,25 +68,30 @@ function SecuredController(
         document.body.classList[action](ROWS_CLASS);
     }
 
-    $scope.$on('updateUser', () => {
-        $scope.$applyAsync(() => {
-            $scope.user = authentication.user;
-            setUserType();
-        });
-    });
+    unsubscribe.push(
+        $rootScope.$on('updateUser', () => {
+            $scope.$applyAsync(() => {
+                $scope.user = authentication.user;
+                setUserType();
+            });
+        })
+    );
 
-    $rootScope.$on('mailSettings', (event, { type = '' }) => {
-        if (type === 'updated') {
-            updateView();
-        }
-    });
+    unsubscribe.push(
+        $rootScope.$on('mailSettings', (event, { type = '' }) => {
+            if (type === 'updated') {
+                updateView();
+            }
+        })
+    );
 
     $scope.idDefined = () => $state.params.id && $state.params.id.length > 0;
     $scope.isMobile = () => AppModel.is('mobile');
     updateView();
     $scope.$on('$destroy', () => {
         hotkeys.unbind();
-        unsubscribe();
+        unsubscribe.forEach((cb) => cb());
+        unsubscribe.length = 0;
     });
 }
 export default SecuredController;
