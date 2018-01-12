@@ -57,10 +57,14 @@ function SecuredController(
     addressWithoutKeysManager.manage().catch(_.noop);
 
     function updateView() {
-        $scope.$applyAsync(() => {
+        const $main = document.querySelector('#pm_main');
+
+        if ($main) {
             const { ViewLayout } = mailSettingsModel.get();
-            $scope.viewLayout = ViewLayout;
-        });
+            const action = ViewLayout === CONSTANTS.ROW_MODE ? 'add' : 'remove';
+
+            $main.classList[action]('rows');
+        }
     }
 
     $scope.$on('updateUser', () => {
