@@ -1,4 +1,4 @@
-import { ROW_MODE } from '../../constants';
+import { CONSTANTS } from '../../constants';
 /* @ngInject */
 function appConfigBody($rootScope, AppModel, mailSettingsModel) {
     const className = (key = '') => `appConfigBody-${key}`;
@@ -22,7 +22,7 @@ function appConfigBody($rootScope, AppModel, mailSettingsModel) {
 
             const updateRows = () => {
                 const { ViewLayout } = mailSettingsModel.get();
-                const action = ViewLayout === ROW_MODE ? 'add' : 'remove';
+                const action = ViewLayout === CONSTANTS.ROW_MODE ? 'add' : 'remove';
 
                 el[0].classList[action](mapClassNames.rows);
             };
