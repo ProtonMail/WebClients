@@ -19,7 +19,6 @@ function SecuredController(
     resurrecter,
     userType
 ) {
-    const ROWS_CLASS = 'secured-rows';
     const unsubscribe = [];
     $scope.mobileMode = AppModel.is('mobile');
     $scope.tabletMode = AppModel.is('tablet');
@@ -61,13 +60,6 @@ function SecuredController(
     !$state.includes('secured.contacts') && contactCache.load();
     addressWithoutKeysManager.manage().catch(_.noop);
 
-    function updateView() {
-        const { ViewLayout } = mailSettingsModel.get();
-        const action = ViewLayout === CONSTANTS.ROW_MODE ? 'add' : 'remove';
-
-        document.body.classList[action](ROWS_CLASS);
-    }
-
     unsubscribe.push(
         $rootScope.$on('updateUser', () => {
             $scope.$applyAsync(() => {
@@ -77,17 +69,8 @@ function SecuredController(
         })
     );
 
-    unsubscribe.push(
-        $rootScope.$on('mailSettings', (event, { type = '' }) => {
-            if (type === 'updated') {
-                updateView();
-            }
-        })
-    );
-
     $scope.idDefined = () => $state.params.id && $state.params.id.length > 0;
     $scope.isMobile = () => AppModel.is('mobile');
-    updateView();
     $scope.$on('$destroy', () => {
         hotkeys.unbind();
         unsubscribe.forEach((cb) => cb());
