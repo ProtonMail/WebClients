@@ -89,7 +89,7 @@ function setupKeys($log, $q, CONSTANTS, gettextCatalog, Key, MemberKey, notifica
             AddressKeys: keys
         };
 
-        if (CONSTANTS.KEY_PHASE > 1) {
+        if (CONSTANTS.KEY_PHASE > 1 && keys.length > 0) {
             payload.PrimaryKey = keys[0].PrivateKey;
         }
 
