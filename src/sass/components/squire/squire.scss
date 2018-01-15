@@ -45,3 +45,8 @@
 .editor-container {
     position: relative;
 }
+
+// Hotfix adblock squire issue
+.angular-squire-wrapper iframe[src="about:blank"] {
+    display: flex !important;
+}
