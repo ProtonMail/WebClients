@@ -1,7 +1,6 @@
 # ProtonMail Web Client
 
-
-Official AngularJS web client for the [ProtonMail secure email service](https://protonmail.com). ProtonMail also makes use of [OpenPGPjs](https://github.com/openpgpjs/openpgpjs) as our message crytography is PGP compliant.
+Official AngularJS web client for the [ProtonMail secure email service](https://protonmail.com). ProtonMail also makes use of [OpenPGPjs](https://github.com/openpgpjs/openpgpjs) as our message cryptography is PGP compliant.
 
 ## Translation
 
@@ -55,8 +54,12 @@ cf [Component Generator](https://github.com/ProtonMail/componentGenerator)
 
 ## Deploy
 
-1. Create a new version + tag => `$ npm version (patch|minor|major)`
-2. Deploy via npm `npm run deploy -- --api=X --branch=Y`
+1. Create a new version + tag => `$ npm version (patch|minor|major)`.
+2. Deploy via npm `npm run deploy -- --api=X --branch=Y`.
+    - `X` is the API version available in `API_TARGETS` in the `env/config.js` file
+    - `Y` can be `deploy-dev`, `deploy-beta`, `deploy-prod-a` or `deploy-prod-b`.
+
+Each `deploy-<NAME>` will be available at `<NAME>.protonmail.com`.
 
 ## I18n à la demande
 
