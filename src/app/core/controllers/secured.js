@@ -19,7 +19,7 @@ function SecuredController(
     resurrecter,
     userType
 ) {
-    const ROWS_CLASS = 'rows';
+    const ROWS_CLASS = 'secured-rows';
     const unsubscribe = [];
     $scope.mobileMode = AppModel.is('mobile');
     $scope.tabletMode = AppModel.is('tablet');
