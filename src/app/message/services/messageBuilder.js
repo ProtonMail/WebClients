@@ -199,23 +199,13 @@ function messageBuilder(
         newMsg.NumEmbedded = 0;
 
         if (action !== 'new') {
-            const subject = sanitize.input(`Subject: ${currentMsg.Subject}<br>`);
-            const cc = tools.contactsToString(Array.isArray(currentMsg.CCList) ? currentMsg.CCList : [currentMsg.CCList]);
-
             newMsg.ParentID = currentMsg.ID;
             newMsg.setDecryptedBody(
-                [
-                    '<blockquote class="protonmail_quote" type="cite">',
-                    '-------- Original Message --------<br>',
-                    subject,
-                    'Local Time: ' + $filter('localReadableTime')(currentMsg.Time) + '<br>',
-                    'UTC Time: ' + $filter('utcReadableTime')(currentMsg.Time) + '<br>',
-                    'From: ' + currentMsg.Sender.Address + '<br>',
-                    'To: ' + tools.contactsToString(currentMsg.ToList) + '<br>',
-                    (cc.length ? cc + '<br>' : '') + '<br>',
-                    prepareBody(currentMsg.getDecryptedBody(), currentMsg, action),
-                    '</blockquote><br>'
-                ].join('')
+                `-------- Original Message --------<br>
+                On ${$filter('localReadableTime')(currentMsg.Time)}, ${currentMsg.Sender.Name} &lt;${currentMsg.Sender.Address}&gt; wrote:<br>
+                <blockquote class="protonmail_quote" type="cite">
+                    ${prepareBody(currentMsg.getDecryptedBody(), currentMsg, action)}
+                </blockquote><br>`
             );
         }
 
