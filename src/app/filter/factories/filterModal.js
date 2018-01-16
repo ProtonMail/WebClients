@@ -230,6 +230,8 @@ function filterModal(
                     );
                 }
 
+                const onMouseOverCancel = () => angular.element('#filterName').blur();
+
                 $scope.$on('$destroy', () => {
                     _.each(unsubscribe, (cb) => cb());
                     unsubscribe.length = 0;
@@ -238,6 +240,9 @@ function filterModal(
                 $timeout(
                     () => {
                         angular.element('#filterName').focus();
+                        const $close = angular.element('[ng-click="ctrl.cancel()"]');
+                        $close.on('mouseover', onMouseOverCancel);
+                        unsubscribe.push(() => $close.off('mouseover', onMouseOverCancel));
                     },
                     100,
                     false
@@ -413,9 +418,7 @@ function filterModal(
                 networkActivityTracker.track(requestUpdate(clone));
             };
 
-            ctrl.cancel = () => {
-                params.close();
-            };
+            ctrl.cancel = params.close;
 
             ctrl.initialization();
         }
