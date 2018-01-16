@@ -166,7 +166,13 @@ function eventManager(
                     const [{ ID }] = onlyNotify;
                     const route = `secured.${MAILBOX_IDENTIFIERS[ID] || 'label'}.element`;
                     const label = MAILBOX_IDENTIFIERS[ID] ? null : ID;
-                    const title = gettextCatalog.getString('New mail from', null, 'Info') + ' ' + (Message.Sender.Name || Message.Sender.Address);
+                    const title = gettextCatalog.getString(
+                        'New mail from {{sender}}',
+                        {
+                            sender: Message.Sender.Name || Message.Sender.Address
+                        },
+                        'Notification user'
+                    );
 
                     desktopNotifications.create(title, {
                         body: Message.Subject,
