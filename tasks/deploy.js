@@ -76,6 +76,11 @@ const buildApp = async () => {
     success('Build application');
 };
 
+const lint = async () => {
+    await commandeVerbose('npm run lint');
+    success('Lint application');
+};
+
 (async () => {
     try {
         console.log('~', chalk.bgYellow(chalk.black(`Deploy with API: ${CONFIG.apiUrl}`)), '~');
@@ -87,6 +92,7 @@ const buildApp = async () => {
         process.env.NODE_ENV_BRANCH = branch;
         process.env.NODE_ENV_API = CONFIG.apiUrl;
 
+        await lint();
         await setupConfig();
         await pullDist(branch);
         await buildApp();
