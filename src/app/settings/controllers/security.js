@@ -74,7 +74,7 @@ function SecurityController(
         function submit(loginPassword, twoFactorCode) {
             const promise = settingsApi
                 .disableTwoFactor({ TwoFactorCode: twoFactorCode, Password: loginPassword })
-                .then((data) => {
+                .then((data = {}) => {
                     if (data.Code === 1000) {
                         return Promise.resolve();
                     }
