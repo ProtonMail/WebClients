@@ -1,9 +1,10 @@
 .filter-modal-input-name + .filter-modal-alert {
-    display: none
+    visibility: hidden;
+    margin-bottom: 0;
 }
 
 .filter-modal-input-name.ng-empty:not(:focus) ~ .filter-modal-alert {
-    display: block;
+    visibility: visible;
 }
 
 .filter-modal-conditions {
