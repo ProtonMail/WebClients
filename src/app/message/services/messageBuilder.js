@@ -143,8 +143,7 @@ function messageBuilder(
     prepareContent,
     sanitize,
     signatureBuilder,
-    textToHtmlMail,
-    tools
+    textToHtmlMail
 ) {
     const { reply, replyAll, forward, newCopy } = createMessage(authentication.user, {
         RE_PREFIX: gettextCatalog.getString('Re:', null, 'Message'),
