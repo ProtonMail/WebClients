@@ -57,7 +57,7 @@ function mailboxIdentifersTemplate($rootScope, CONSTANTS, labelsModel) {
      * @param  {String} input
      * @return {String}
      */
-    const escapeTooltip = (input = '') => input.replace(/^{{/g, '{​{');
+    const escapeTooltip = (input = '') => input.replace(/^{{/g, '{\u200B{');
 
     /**
      * Returm a factory to expose a context

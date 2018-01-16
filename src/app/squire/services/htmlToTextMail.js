@@ -95,8 +95,7 @@ function htmlToTextMail() {
                         Add empty space unicode around it to allow us
                         to replace the signature if we change the From
                      */
-                /* eslint no-irregular-whitespace: "off" */
-                return `​${extractPlainText(editor, node)}​\n`;
+                return `\u200B${extractPlainText(editor, node)}\u200B\n`;
             },
             matchesTag: (node) => node.tagName === 'DIV' && node.classList.contains('protonmail_signature_block')
         }
