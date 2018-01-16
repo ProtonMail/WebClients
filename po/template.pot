@@ -4240,7 +4240,7 @@ msgctxt "Message sender label"
 msgid "From"
 msgstr ""
 
-#: ./src/app/message/services/messageBuilder.js:151
+#: ./src/app/message/services/messageBuilder.js:150
 msgctxt "Message"
 msgid "Fw:"
 msgstr ""
@@ -5773,8 +5773,8 @@ msgid "New Password"
 msgstr ""
 
 #: ./src/app/utils/services/eventManager.js:169
-msgctxt "Info"
-msgid "New mail from"
+msgctxt "Notification user"
+msgid "New mail from {{sender}}"
 msgstr ""
 
 #: ./src/app/composer/controllers/composeMessage.js:391
@@ -6874,7 +6874,7 @@ msgctxt "key generation progrss"
 msgid "Queued"
 msgstr ""
 
-#: ./src/app/message/services/messageBuilder.js:150
+#: ./src/app/message/services/messageBuilder.js:149
 msgctxt "Message"
 msgid "Re:"
 msgstr ""
