@@ -972,7 +972,7 @@ export default angular
             .state('secured.filters', {
                 url: '/filters',
                 resolve: {
-                    vendor(lazyLoader) {
+                    vendor(app, lazyLoader) {
                         return lazyLoader.extraVendor();
                     },
                     loadSpamLists(vendor, user, spamListModel, networkActivityTracker) {
