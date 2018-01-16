@@ -10,7 +10,7 @@ function validateMessage(gettextCatalog, tools, regexEmail, CONSTANTS, confirmMo
         NO_RECIPIENT: gettextCatalog.getString('Please enter at least one recipient.', null, 'Error'),
         MAX_SUBJECT_LENGTH: gettextCatalog.getString('The maximum length of the subject is {{size}}.', { size: MAX_TITLE_LENGTH }, 'Error'),
         maxRecipients(total) {
-            return gettextCatalog.getString('The maximum number ({{total}}) of Recipients is 25.', { total }, 'Error');
+            return gettextCatalog.getString('You have {{total}} recipients. The maximum number is 25.', { total }, 'Error');
         },
         NO_SUBJECT_TITLE: gettextCatalog.getString('No subject', null, 'Title'),
         NO_SUBJECT_MESSAGE: gettextCatalog.getString('No subject, send anyway?', null, 'Info'),
