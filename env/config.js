@@ -91,10 +91,12 @@ const getDefaultApiTarget = () => {
     return 'dev';
 };
 
+const isProdBranch = (branch = process.env.NODE_ENV_BRANCH) => /-prod/.test(branch);
+
 const apiUrl = (type = getDefaultApiTarget(), branch = '') => {
     // Cannot override the branch when you deploy to live
-    if (/-prod/.test(branch)) {
-        return API_TARGETS.prod;
+    if (isProdBranch(branch)) {
+        return API_TARGETS.build;
     }
     return API_TARGETS[type] || API_TARGETS.dev;
 };
@@ -127,7 +129,7 @@ const getEnv = () => {
 
 const getHostURL = (encoded) => {
     // on local env is undefined
-    const host = (process.env.NODE_ENV_API || apiUrl()).replace(/\api$/, '');
+    const host = (isProdBranch() ? API_TARGETS.prod : process.env.NODE_ENV_API || apiUrl()).replace(/\api$/, '');
     const url = `${host}assets/host.png`;
 
     if (encoded) {
