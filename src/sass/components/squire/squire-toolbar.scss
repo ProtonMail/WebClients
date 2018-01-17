@@ -266,7 +266,6 @@
     right: auto;
     min-width: 100%;
     min-height: 9em;
-    max-height: 50%;
     overflow-y: auto;
     margin: 0;
     padding: 0;
@@ -327,6 +326,16 @@
     border: 0
 }
 
+[data-editor-mode="text/plain"] .squireToolbar-dropdown-divider {
+    display: none;
+}
+
+.squireToolbar-dropdown-divider {
+    height: 1px;
+    margin: 4px 0;
+    background-color: $border;
+}
+
 .squireToolbar-select-item {
     display: flex;
     align-items: center;
@@ -340,6 +349,7 @@
     * { pointer-events: none }
     span { margin-left: .5em }
 }
+.squireToolbar-dropdown-divider + .squireToolbar-select-item,
 .squireToolbar-select-item:first-child { border: 0 }
 .squireToolbar-select-item:hover {
     background: lighten( $border, 20% )
@@ -424,14 +434,22 @@ $list: georgia arial helvetica menlo tahoma verdana times trebuchet;
 /*To match with the other icon*/
 .squireToolbar-editor-mode .fa-file-text { margin-right: 3px }
 
-[data-editor-mode="text/html"] .squireToolbar-select-item[data-value="text/html"],
-[data-editor-mode="text/plain"] .squireToolbar-select-item[data-value="text/plain"] {
-    pointer-events: none;
+.squireToolbar-select-item {
+    .fa-check { opacity: 0 }
 }
 
-[data-editor-mode="text/html"] .squireToolbar-select-item[data-value="text/plain"],
-[data-editor-mode="text/plain"] .squireToolbar-select-item[data-value="text/html"] {
-    .fa-check { opacity: 0 }
+/* Active items in the more list */
+.squireToolbar-container.dir-ltr .squireToolbar-select-item[data-squire-actions="setTextDirectionLTR"],
+.squireToolbar-container.dir-rtl .squireToolbar-select-item[data-squire-actions="setTextDirectionRTL"],
+.composer [data-editor-mode="text/plain"] .squireToolbar-select-item[data-value="text/plain"],
+.composer [data-editor-mode="text/html"] .squireToolbar-select-item[data-value="text/html"] {
+    pointer-events: none;
+    .fa-check { opacity: 1 }
+}
+
+.composer [data-editor-text="text/plain"] .squireToolbar-select-item[data-squire-actions="setTextDirectionRTL"],
+.composer [data-editor-text="text/plain"] .squireToolbar-select-item[data-squire-actions="setTextDirectionLTR"] {
+    display: none;
 }
 
 .squireToolbar-action-options {

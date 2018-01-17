@@ -180,6 +180,7 @@ function messageBuilder(
 
     function builder(action, currentMsg = {}, newMsg = {}) {
         newMsg.MIMEType = mailSettingsModel.get('DraftMIMEType');
+        newMsg.RightToLeft = mailSettingsModel.get('RightToLeft');
 
         action === 'new' && newCopy(newMsg, currentMsg);
         action === 'reply' && reply(newMsg, currentMsg);

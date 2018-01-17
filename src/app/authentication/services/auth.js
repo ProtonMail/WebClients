@@ -555,7 +555,6 @@ function authentication(
                             );
                         }
                     }
-                    AppModel.set('editorMode', $injector.get('mailSettingsModel').get('DraftMIMEType') || 'text/html');
 
                     return user;
                 })

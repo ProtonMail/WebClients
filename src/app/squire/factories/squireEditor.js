@@ -125,6 +125,20 @@ function squireEditor($rootScope, CONSTANTS, editorModel) {
      * @return {Squire}        Editor
      */
     const extendApi = (editor) => {
+        editor.setTextDirectionLTR = () => editor.setTextDirection();
+        editor.setTextDirectionRTL = () => editor.setTextDirection('rtl');
+        // The default text direction function sets focus to the editor, which breaks the
+        // custom focus used by the composer when setting the default text direction to be RTL.
+        editor.setTextDirectionWithoutFocus = (direction) => {
+            editor.forEachBlock((block) => {
+                if (direction) {
+                    block.dir = direction;
+                } else {
+                    block.removeAttribute('dir');
+                }
+            }, true);
+        };
+        editor.alignCenter = () => editor.setTextAlignment('center');
         editor.alignRight = () => editor.setTextAlignment('right');
         editor.alignCenter = () => editor.setTextAlignment('center');
         editor.alignLeft = () => editor.setTextAlignment('left');
@@ -177,4 +191,5 @@ function squireEditor($rootScope, CONSTANTS, editorModel) {
 
     return { create, clean, getType };
 }
+
 export default squireEditor;

@@ -1,25 +1,26 @@
 /* @ngInject */
-function chooseComposerMode($rootScope, composerSettings, mailSettingsModel) {
-    const KEY = 'DraftMIMEType';
+function chooseRightToLeft($rootScope, composerSettings, mailSettingsModel) {
+    const KEY = 'RightToLeft';
 
     return {
+        restrict: 'E',
         replace: true,
         scope: {},
-        templateUrl: require('../../../templates/settings/chooseComposerMode.tpl.html'),
+        templateUrl: 'templates/settings/chooseRightToLeft.tpl.html',
         link(scope, el) {
-            scope.model = mailSettingsModel.get(KEY);
+            scope.model = '' + (mailSettingsModel.get(KEY) || 0);
 
             const onChange = ({ target }) => {
-                const value = target.value;
+                const rightToLeft = parseInt(target.value, 10);
                 const textContent = target.selectedOptions[0].textContent;
-                composerSettings.updateComposerMode(value, textContent);
+                composerSettings.updateRightToLeft(rightToLeft, textContent);
             };
 
             el.on('change', onChange);
 
             const unsubscribe = $rootScope.$on('mailSettings', (event, { key, value = {} }) => {
                 if (key === 'all') {
-                    scope.model = value[KEY];
+                    scope.model = '' + value[KEY];
                 }
             });
 
@@ -31,4 +32,4 @@ function chooseComposerMode($rootScope, composerSettings, mailSettingsModel) {
     };
 }
 
-export default chooseComposerMode;
+export default chooseRightToLeft;

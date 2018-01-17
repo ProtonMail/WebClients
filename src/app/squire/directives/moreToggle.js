@@ -26,7 +26,7 @@ function moreToggle(squireDropdown, $rootScope, toggleModeEditor, gettextCatalog
             const toggle = (node) => node.dataset.value || toggleModeEditor.getMode(scope.message);
 
             const onClick = ({ target }) => {
-                if (target.nodeName !== 'LI') {
+                if (target.dataset.key === 'setEditorMode') {
                     dropdown.toggle(() => toggle(target));
                 }
             };
@@ -50,4 +50,5 @@ function moreToggle(squireDropdown, $rootScope, toggleModeEditor, gettextCatalog
         }
     };
 }
+
 export default moreToggle;
