@@ -35,11 +35,6 @@ function editorDropzone($rootScope, gettextCatalog, attachmentFileFormat, squire
          */
         const onDragOver = _.debounce(() => removeClass(CLASS_DRAGGABLE), 500);
 
-        const onClick = ({ target }) => {
-            // If you click inside a popover do nothing
-            target.tagName !== 'INPUT' && editor.focus();
-        };
-
         /**
          * Display dropzone to the user
          */
@@ -47,13 +42,11 @@ function editorDropzone($rootScope, gettextCatalog, attachmentFileFormat, squire
             attachmentFileFormat.isUploadAbleType(e) && addClass(CLASS_DRAGGABLE);
         };
 
-        node.on('click', onClick);
         node[0].addEventListener('dragenter', onDragEnter);
         editor.addEventListener('dragenter', onDragEnter);
         $dropzone.addEventListener('dragover', onDragOver);
 
         return () => {
-            node.off('click', onClick);
             node[0].removeEventListener('dragenter', onDragEnter);
             editor.removeEventListener('dragenter', onDragEnter);
             $dropzone.removeEventListener('dragover', onDragOver);
