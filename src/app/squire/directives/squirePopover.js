@@ -85,12 +85,12 @@ function squirePopover($rootScope, onCurrentMessage) {
             el.on('submit', onSubmit);
             el.on('reset', onReset);
             el.on('keyup', onKeyUp);
-            document.addEventListener('click', closeDropdown);
+            document.addEventListener('mousedown', closeDropdown);
 
             unsubscribe.push(() => el.off('submit', onSubmit));
             unsubscribe.push(() => el.off('reset', onReset));
             unsubscribe.push(() => el.off('keyup', onKeyUp));
-            unsubscribe.push(() => document.removeEventListener('click', closeDropdown));
+            unsubscribe.push(() => document.removeEventListener('mousedown', closeDropdown));
 
             scope.$on('$destroy', () => {
                 unsubscribe.forEach((cb) => cb());
