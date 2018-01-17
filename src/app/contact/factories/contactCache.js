@@ -243,7 +243,10 @@ function contactCache(
             { update: {}, create: [], remove: {} }
         );
 
-        CACHE.contacts = flow(map((contact) => todo.update[contact.ID] || contact), filter(({ ID }) => !todo.remove[ID]))(get()).concat(todo.create);
+        CACHE.contacts = [].concat(
+            flow(map((contact) => todo.update[contact.ID] || contact), filter(({ ID }) => !todo.remove[ID]))(get()),
+            todo.create
+        );
 
         sync();
         emit();

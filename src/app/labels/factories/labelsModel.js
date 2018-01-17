@@ -139,7 +139,8 @@ function labelsModel($rootScope, CONSTANTS, sanitize) {
             { update: {}, create: [], remove: {} }
         );
 
-        CACHE.all = flow(map((label) => cleanLabel(todo.update[label.ID] || label)), filter(({ ID }) => !todo.remove[ID]))(CACHE.all).concat(
+        CACHE.all = [].concat(
+            flow(map((label) => cleanLabel(todo.update[label.ID] || label)), filter(({ ID }) => !todo.remove[ID]))(CACHE.all),
             todo.create.map((label) => cleanLabel(label))
         );
 
