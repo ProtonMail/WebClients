@@ -1,7 +1,8 @@
 import { flow, filter, reduce } from 'lodash/fp';
+import { CONSTANTS } from '../../constants';
 
 /* @ngInject */
-function transformRemote($state, $rootScope, mailSettingsModel, CONSTANTS) {
+function transformRemote($state, $rootScope, mailSettingsModel) {
     const ATTRIBUTES = ['url', 'xlink:href', 'srcset', 'src', 'svg', 'background', 'poster'].map((name) => `proton-${name}`);
 
     const REGEXP_FIXER = (() => {
@@ -64,7 +65,7 @@ function transformRemote($state, $rootScope, mailSettingsModel, CONSTANTS) {
     return (html, message, { action }) => {
         const showImages =
             message.showImages ||
-            mailSettingsModel.get('ShowImages') ||
+            mailSettingsModel.get('ShowImages') & CONSTANTS.REMOTE ||
             (CONSTANTS.WHITELIST.includes(message.Sender.Address) && !message.IsEncrypted) ||
             $state.is('printer');
         const content = html.innerHTML;
