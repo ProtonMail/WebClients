@@ -1,4 +1,4 @@
-<div id="pm_settings">
+<div id="pm_settings" class="keysView-container">
     <div class="settings pm_form">
         <div class="row">
             <header-block class="settingsKeys-header-key">
@@ -9,6 +9,10 @@
             </header-block>
 
             <p class="alert alert-info" translate-comment="Inline OpenPGP means NOT pgp/mime, so the body and attachments are encrypted separately" translate-context="Info" translate>Download your PGP Keys for use with other PGP compatible services. Only incoming messages in inline OpenPGP format are currently supported.</p>
+            <p>
+                <reactivate-keys-btn data-mode="contact"></reactivate-keys-btn>
+                <reactivate-keys-btn data-mode="address"></reactivate-keys-btn>
+            </p>
             <address-keys-view></address-keys-view>
         </div>
     </div>

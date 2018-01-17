@@ -4,6 +4,7 @@ import loginTwoFactorForm from './directives/loginTwoFactorForm';
 import twoFaField from './directives/twoFaField';
 import authHttpResponseInterceptor from './interceptors/authHttpResponseInterceptor';
 import helpLoginModal from './modals/helpLoginModal';
+import oldPasswordModal from './modals/oldPasswordModal';
 import loginPasswordModal from './modals/loginPasswordModal';
 import pmcw from './providers/pmcw';
 import auth from './services/auth';
@@ -32,6 +33,7 @@ export default angular
     .directive('twoFaField', twoFaField)
     .factory('authHttpResponseInterceptor', authHttpResponseInterceptor)
     .factory('helpLoginModal', helpLoginModal)
+    .factory('oldPasswordModal', oldPasswordModal)
     .factory('loginPasswordModal', loginPasswordModal)
     .factory('logoutManager', logoutManager)
     .provider('pmcw', pmcw)

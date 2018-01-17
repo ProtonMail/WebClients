@@ -242,6 +242,15 @@ function authentication(
         },
 
         /**
+         * Return the activated public keys available for a specific address ID
+         * @param {String} addressID
+         * @return {Array}
+         */
+        getPublicKeys(addressID) {
+            return keys[addressID].map((key) => key.toPublic());
+        },
+
+        /**
          * Store package
          */
         storeKey(addressID, keyID, pkg) {
