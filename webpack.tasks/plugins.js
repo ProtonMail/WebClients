@@ -43,6 +43,7 @@ const minifyJS = () => {
 
 const list = [
     new HardSourceWebpackPlugin(),
+    new webpack.NamedModulesPlugin(),
     // new WebpackNotifierPlugin(),
     new CopyWebpackPlugin([
         { from: 'src/manifest.json' },
