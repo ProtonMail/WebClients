@@ -73,6 +73,9 @@ function toggleModeEditor($rootScope, embeddedUtils, attachmentModel, editorMode
             editor.setHTML(message.getDecryptedBody());
             message.MIMEType = MODE.DEFAULT;
             initializeSelection(editor);
+            if (message.RightToLeft) {
+                editor.setTextDirectionRTL();
+            }
         });
         networkActivityTracker.track(promise);
     };

@@ -14,14 +14,47 @@ function squireToolbar(CONSTANTS, squireDropdown, editorModel, onCurrentMessage,
     };
 
     const getDefaultClass = (node, klass) => (node.classList.contains(CLASSNAME[klass]) ? CLASSNAME[klass] : '');
+
+    const REGEX_DIRECTION = /\[(dir=(rtl|ltr))]/g;
+    /**
+     * Extract the direction class from the blocks in squire.
+     * Example block: DIV.align-center[dir=rtl],
+     * so extract the dir=rtl and replace the = with -
+     * @param str
+     * @returns {string}
+     */
+    const getDirectionClass = (str = '') => {
+        const matches = REGEX_DIRECTION.exec(str);
+        if (matches && matches.length >= 2) {
+            return matches[1].replace('=', '-');
+        }
+        return 'dir-ltr';
+    };
+    /**
+     * Strip away the direction attribute from the squire block.
+     * @param str
+     * @returns {string}
+     */
+    const stripDirectionAttribute = (str = '') => {
+        return str.replace(REGEX_DIRECTION, '');
+    };
+
     const onPathChangeCb = (node, editor) =>
         _.debounce(() => {
-            const p = editor.getPath();
+            const path = editor.getPath();
+            /**
+             * Have to strip away any text direction attribute from the path
+             * otherwise the alignment classNames
+             * in the chain below will not work.
+             */
+            const p = stripDirectionAttribute(path);
 
             if (p !== '(selection)') {
                 const subRowClass = getDefaultClass(node, 'SUB_ROW');
                 const popoverImage = getDefaultClass(node, 'POPOVER_IMAGE');
                 const popoverLink = getDefaultClass(node, 'POPOVER_LINK');
+
+                const directionClass = getDirectionClass(path);
 
                 /**
                  * Find and filter selections to toogle the current action (toolbar)
@@ -42,7 +75,7 @@ function squireToolbar(CONSTANTS, squireDropdown, editorModel, onCurrentMessage,
                     .toLowerCase()
                     .trim();
 
-                node.className = `${CLASSNAME.CONTAINER} ${classNames} ${subRowClass} ${popoverImage} ${popoverLink}`.trim();
+                node.className = [CLASSNAME.CONTAINER, classNames, subRowClass, popoverImage, popoverLink, directionClass].filter(Boolean).join(' ');
             }
         }, 100);
 
@@ -72,6 +105,8 @@ function squireToolbar(CONSTANTS, squireDropdown, editorModel, onCurrentMessage,
             const { editor } = editorModel.find(scope.message);
             const onPathChange = onPathChangeCb(el[0], editor);
             editor.addEventListener('pathChange', onPathChange);
+            // Initialize the current path for pre-defined states.
+            onPathChange();
 
             const popoverBtn = togglePopover(el[0]);
 
@@ -140,4 +175,5 @@ function squireToolbar(CONSTANTS, squireDropdown, editorModel, onCurrentMessage,
         }
     };
 }
+
 export default squireToolbar;

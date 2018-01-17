@@ -1,34 +1,32 @@
+import _ from 'lodash';
+
 /* @ngInject */
 const squireActions = ($rootScope) => ({
-    link(scope, el, { squireActions, squireActionsSelect }) {
+    link(scope, el, { squireActions }) {
         const onMouseDown = (e) => {
             e.preventDefault();
             e.stopPropagation();
             const target = e.target;
 
-            if (!squireActionsSelect) {
-                $rootScope.$emit('squire.editor', {
-                    type: 'squireActions',
-                    data: {
-                        action: squireActions,
-                        message: scope.message
-                    }
-                });
+            const emitOptions = {
+                type: 'squireActions',
+                data: {
+                    action: squireActions,
+                    message: scope.message
+                }
+            };
+            /**
+             * Emit the action with value arguments if data-value is defined on the element.
+             * This enables it to be more flexible, i.e. it can both used as a list and as
+             * a single element.
+             */
+            if (_.has(target.dataset, 'value')) {
+                emitOptions.data.argument = {
+                    value: target.dataset.value,
+                    label: target.textContent.trim()
+                };
             }
-
-            if (target.nodeName === 'LI') {
-                return $rootScope.$emit('squire.editor', {
-                    type: 'squireActions',
-                    data: {
-                        action: squireActions,
-                        argument: {
-                            value: target.dataset.value,
-                            label: target.textContent.trim()
-                        },
-                        message: scope.message
-                    }
-                });
-            }
+            $rootScope.$emit('squire.editor', emitOptions);
         };
 
         el.on('mousedown', onMouseDown);

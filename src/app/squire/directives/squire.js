@@ -1,7 +1,7 @@
 import _ from 'lodash';
 
 /* @ngInject */
-function squire(squireEditor, embedded, editorListener, $rootScope, sanitize, toggleModeEditor, AppModel, onCurrentMessage) {
+function squire(squireEditor, embedded, editorListener, $rootScope, sanitize, toggleModeEditor, mailSettingsModel, onCurrentMessage) {
     const CLASS_NAMES = {
         LOADED: 'squireEditor-loaded'
     };
@@ -30,7 +30,7 @@ function squire(squireEditor, embedded, editorListener, $rootScope, sanitize, to
             - Don't parse when we open a draft already created.
          */
     const loadPlainText = (scope, editor, bindTabIndex = _.noop) => () => {
-        const isPlainTextMode = AppModel.get('editorMode') === 'text/plain';
+        const isPlainTextMode = mailSettingsModel.get('DraftMIMEType') === 'text/plain';
         const isDraftPlainText = scope.message.isPlainText() && scope.message.IsEncrypted === 5;
         const isNewDraft = !scope.message.isPlainText() || !scope.message.IsEncrypted;
 
@@ -113,7 +113,12 @@ function squire(squireEditor, embedded, editorListener, $rootScope, sanitize, to
                     // On load we parse the body of the message in order to load its embedded images
                     embedded
                         .parser(scope.message)
-                        .then((body) => editor.setHTML(body))
+                        .then((body) => {
+                            editor.setHTML(body);
+                            if (scope.message.RightToLeft) {
+                                editor.setTextDirectionWithoutFocus('rtl');
+                            }
+                        })
                         .then(loadPlainText(scope, editor, bindTabIndex))
                         .then(isLoaded)
                         .then(() => unsubscribe.push(listen(updateModel, editor)));

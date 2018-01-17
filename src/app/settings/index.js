@@ -8,6 +8,7 @@ import PaymentsController from './controllers/payments';
 import SecurityController from './controllers/security';
 import SignaturesController from './controllers/signatures';
 import chooseComposerMode from './directives/chooseComposerMode';
+import chooseRightToLeft from './directives/chooseRightToLeft';
 import headerBlock from './directives/headerBlock';
 import labelsEditorModel from './factories/labelsEditorModel';
 import settingsApi from './factories/settingsApi';
@@ -17,6 +18,7 @@ import vpnSettingsModel from './factories/vpnSettingsModel';
 import mailSettingsModel from './factories/mailSettingsModel';
 import sharedSecretModal from './modals/sharedSecretModal';
 import vpnSettingsApi from './factories/vpnSettingsApi';
+import composerSettings from './services/composerSettings';
 
 export default angular
     .module('proton.settings', [])
@@ -31,6 +33,7 @@ export default angular
     .controller('SecurityController', SecurityController)
     .controller('SignaturesController', SignaturesController)
     .directive('chooseComposerMode', chooseComposerMode)
+    .directive('chooseRightToLeft', chooseRightToLeft)
     .directive('headerBlock', headerBlock)
     .factory('labelsEditorModel', labelsEditorModel)
     .factory('sharedSecretModal', sharedSecretModal)
@@ -38,4 +41,5 @@ export default angular
     .factory('settingsMailApi', settingsMailApi)
     .factory('userSettingsModel', userSettingsModel)
     .factory('vpnSettingsModel', vpnSettingsModel)
+    .factory('composerSettings', composerSettings)
     .factory('mailSettingsModel', mailSettingsModel).name;
