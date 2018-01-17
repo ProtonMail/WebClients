@@ -8,56 +8,31 @@ function addressKeysView(
     gettextCatalog,
     tools,
     notification,
-    Key,
-    keyPasswordModal,
-    pmcw,
+    oldPasswordModal,
     networkActivityTracker,
-    eventManager
+    reactivateKeys
 ) {
     const I18N = {
-        ERROR: gettextCatalog.getString('Error reactivating key. Please try again', null, 'Error'),
         SUCCESS: gettextCatalog.getString('Key reactivated', null, 'Info')
     };
     const KEY_FILE_EXTENSION = '.asc';
 
-    const reactivateProcess = async (decryptedKey, key) => {
-        try {
-            const PrivateKey = await pmcw.encryptPrivateKey(decryptedKey, authentication.getPassword());
-            const { data = {} } = await Key.reactivate(key.ID, { PrivateKey });
+    const reactivate = (key) => {
+        oldPasswordModal.activate({
+            params: {
+                submit(password) {
+                    oldPasswordModal.deactivate();
+                    const promise = reactivateKeys([key], password).then(() => {
+                        notification.success(I18N.SUCCESS);
+                    });
 
-            if (data.Code !== 1000) {
-                throw new Error(data.Error || I18N.ERROR);
-            }
-
-            key.decrypted = true;
-            notification.success(I18N.SUCCESS);
-            return eventManager.call();
-        } catch (e) {
-            throw new Error(I18N.ERROR);
-        }
-    };
-
-    const reactivate = async (key) => {
-        try {
-            const { data = {} } = await Key.salts();
-            const { KeySalt: salt } = _.find(data.KeySalts, { ID: key.ID }) || {};
-
-            keyPasswordModal.activate({
-                params: {
-                    salt,
-                    privateKey: key.PrivateKey,
-                    submit(decryptedKey) {
-                        keyPasswordModal.deactivate();
-                        networkActivityTracker.track(reactivateProcess(decryptedKey, key));
-                    },
-                    cancel() {
-                        keyPasswordModal.deactivate();
-                    }
+                    networkActivityTracker.track(promise);
+                },
+                cancel() {
+                    oldPasswordModal.deactivate();
                 }
-            });
-        } catch (e) {
-            // Nothing
-        }
+            }
+        });
     };
 
     return {

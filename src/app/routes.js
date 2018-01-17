@@ -755,7 +755,7 @@ export default angular
                 url: '/keys',
                 views: {
                     'content@secured': {
-                        templateUrl: require('../templates/views/keys.tpl.html')
+                        template: '<keys-view></keys-view>'
                     }
                 },
                 resolve: {

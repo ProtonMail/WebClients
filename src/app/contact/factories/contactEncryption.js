@@ -205,7 +205,7 @@ function contactEncryption($injector, $rootScope, CONSTANTS, chunk, gettextCatal
     function decrypt(contacts = []) {
         const authentication = $injector.get('authentication');
         const privateKeys = authentication.getPrivateKeys(MAIN_KEY);
-        const publicKeys = pmcw.getKeys(authentication.user.Keys[0].PublicKey);
+        const publicKeys = authentication.getPublicKeys(MAIN_KEY);
         const total = contacts.length;
         let count = 0;
 
@@ -238,8 +238,8 @@ function contactEncryption($injector, $rootScope, CONSTANTS, chunk, gettextCatal
      */
     function encrypt(contacts = []) {
         const authentication = $injector.get('authentication');
-        const privateKeys = authentication.getPrivateKeys(MAIN_KEY)[0];
-        const publicKeys = pmcw.getKeys(authentication.user.Keys[0].PublicKey);
+        const privateKeys = [authentication.getPrivateKeys(MAIN_KEY)[0]];
+        const publicKeys = [authentication.getPublicKeys(MAIN_KEY)[0]];
         const total = contacts.length;
         let count = 0;
 
