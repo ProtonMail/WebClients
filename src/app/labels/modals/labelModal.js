@@ -103,6 +103,7 @@ function labelModal(pmModal, tools, hotkeys, gettextCatalog, networkActivityTrac
             const successMessage = getSuccessMessage(params.label);
             const index = _.random(0, COLORS_LIST.length - 1);
             self.ID = ID;
+            self.exclusive = Exclusive;
             self.title = getTitle(params.label);
             self.name = Name || '';
             self.notify = getNotify(params.label);
