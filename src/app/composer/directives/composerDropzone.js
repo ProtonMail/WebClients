@@ -9,11 +9,12 @@ function composerDropzone($rootScope, attachmentFileFormat, tools, attachmentMod
 
     const isEO = $state.includes('eo.*');
 
-    const numberLimit = { number: ATTACHMENT_NUMBER_LIMIT };
+    const numberLimit = { number: ATTACHMENT_SIZE_LIMIT };
+    const sizeLimit = { number: ATTACHMENT_SIZE_LIMIT };
     const dropMessages = {
         0: gettextCatalog.getString('Empty attachment', null, 'Composer'),
         [ATTACHMENT_NUMBER_LIMIT]: gettextCatalog.getString('Messages are limited to {{number}} attachments', numberLimit, 'Composer'),
-        [ATTACHMENT_SIZE_LIMIT]: gettextCatalog.getString('Attachments are limited to {{number}} MB.', numberLimit, 'Composer'),
+        [ATTACHMENT_SIZE_LIMIT]: gettextCatalog.getString('Attachments are limited to {{number}} MB.', sizeLimit, 'Composer'),
         [ATTACHMENT_MAX_SIZE](bytes) {
             const total = Math.round(10 * bytes / BASE_SIZE / BASE_SIZE) / 10;
             return gettextCatalog.getString(
