@@ -29,6 +29,7 @@ export const CONVERSATION_REQUEST_SIZE = 10;
 export const GIFT_CODE_LENGTH = 16;
 
 export const CONSTANTS = {
+    CLIENT_TYPE: 1,
     BLACK_FRIDAY_INTERVAL: 10 * 60 * 1000,
     REMOTE: 1,
     EMBEDDED: 2,

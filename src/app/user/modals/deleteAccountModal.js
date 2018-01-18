@@ -1,3 +1,5 @@
+import { CONSTANTS } from '../../constants';
+
 /* @ngInject */
 function deleteAccountModal(
     pmModal,
@@ -11,6 +13,7 @@ function deleteAccountModal(
     userSettingsModel,
     userType
 ) {
+    const { CLIENT_TYPE } = CONSTANTS;
     const I18N = {
         invalidForm: gettextCatalog.getString('Invalid email address or password', null, 'Error reported when the delete account form is invalid')
     };
@@ -56,6 +59,7 @@ function deleteAccountModal(
                     BrowserExtensions: '--',
                     Client: '--',
                     ClientVersion: '--',
+                    ClientType: CLIENT_TYPE,
                     Title: `[DELETION FEEDBACK] ${username}`,
                     Username: username,
                     Email: this.email || authentication.user.Addresses[0].Email,

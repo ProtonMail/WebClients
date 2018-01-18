@@ -1,8 +1,9 @@
 import _ from 'lodash';
+import { CONSTANTS } from '../../constants';
 
 /* @ngInject */
-function bugReportApi(Bug, CONFIG, $state, aboutClient, authentication, gettextCatalog, networkActivityTracker, notification, CONSTANTS) {
-    const { ROW_MODE, COLUMN_MODE, MESSAGE_VIEW_MODE, CONVERSATION_VIEW_MODE } = CONSTANTS;
+function bugReportApi(Bug, CONFIG, $state, aboutClient, authentication, gettextCatalog, networkActivityTracker, notification) {
+    const { ROW_MODE, COLUMN_MODE, MESSAGE_VIEW_MODE, CONVERSATION_VIEW_MODE, CLIENT_TYPE } = CONSTANTS;
     const MAP_MODE = {
         layout: {
             [ROW_MODE]: 'row',
@@ -28,6 +29,7 @@ function bugReportApi(Bug, CONFIG, $state, aboutClient, authentication, gettextC
             BrowserVersion: browser.version,
             Client: 'Angular',
             ClientVersion: CONFIG.app_version,
+            ClientType: CLIENT_TYPE,
             ViewLayout: getViewLayout(ViewLayout),
             ViewMode: getViewMode(ViewMode),
             DeviceName: device.vendor,
