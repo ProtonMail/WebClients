@@ -1,5 +1,8 @@
+import { CONSTANTS } from '../../constants';
+
 /* @ngInject */
 function feedbackModal(pmModal, Bug, notification, networkActivityTracker, gettextCatalog) {
+    const { CLIENT_TYPE } = CONSTANTS;
     return pmModal({
         controllerAs: 'ctrl',
         templateUrl: require('../../../templates/modals/feedback.tpl.html'),
@@ -17,6 +20,7 @@ function feedbackModal(pmModal, Bug, notification, networkActivityTracker, gette
                     BrowserExtensions: '--',
                     Client: '--',
                     ClientVersion: '--',
+                    ClientType: CLIENT_TYPE,
                     Title: '[FEEDBACK v3]',
                     Username: '--',
                     Email: '--',
