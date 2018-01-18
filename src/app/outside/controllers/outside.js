@@ -28,14 +28,12 @@ function OutsideController(
     const message = messageData;
 
     function clean(body) {
-        let content = sanitize.message(body, {
-            ADD_ATTR: ['target'],
-            FORBID_TAGS: ['style', 'input', 'form']
-        });
+        let content = sanitize.message(body);
 
         if ($state.is('eo.reply')) {
-            content = '<br /><br /><blockquote>' + content + '</blockquote>';
+            content = `<br /><br /><blockquote class="protonmail_quote" type="cite">${content}</blockquote>`;
         }
+
         return prepareContent(content, message);
     }
 
