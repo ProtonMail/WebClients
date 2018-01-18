@@ -1911,7 +1911,7 @@ msgctxt "bug report modal label"
 msgid "Browser version"
 msgstr ""
 
-#: ./src/app/bugReport/services/bugReportApi.js:83
+#: ./src/app/bugReport/services/bugReportApi.js:85
 msgctxt "Bug report successfully"
 msgid "Bug reported"
 msgstr ""
@@ -3831,7 +3831,7 @@ msgctxt "Error"
 msgid "Error during revoke request"
 msgstr ""
 
-#: ./src/app/outside/controllers/outside.js:160
+#: ./src/app/outside/controllers/outside.js:158
 msgctxt "Error"
 msgid "Error during the encryption"
 msgstr ""
@@ -3851,7 +3851,7 @@ msgctxt "Error"
 msgid "Error during the initialization of logs"
 msgstr ""
 
-#: ./src/app/outside/controllers/outside.js:155
+#: ./src/app/outside/controllers/outside.js:153
 msgctxt "Error"
 msgid "Error during the reply process"
 msgstr ""
@@ -4851,7 +4851,7 @@ msgctxt "Error"
 msgid "Invalid email"
 msgstr ""
 
-#: ./src/app/user/modals/deleteAccountModal.js:15
+#: ./src/app/user/modals/deleteAccountModal.js:18
 msgctxt "Error reported when the delete account form is invalid"
 msgid "Invalid email address or password"
 msgstr ""
@@ -5543,7 +5543,7 @@ msgctxt "Send message"
 msgid "Message sent"
 msgstr ""
 
-#: ./src/app/outside/controllers/outside.js:151
+#: ./src/app/outside/controllers/outside.js:149
 msgid "Message sent"
 msgstr ""
 
@@ -6802,7 +6802,7 @@ msgctxt "Info"
 msgid "ProtonMail supports both column and row layouts for the inbox. Using this setting, it is possible to change between the two layouts."
 msgstr ""
 
-#: ./src/app/outside/controllers/outside.js:111
+#: ./src/app/outside/controllers/outside.js:109
 msgctxt "Notification"
 msgid "ProtonMail's Encrypted Outside feature only allows replying 5 times. <a href=\"https://protonmail.com/signup\" target=\"_blank\">You can sign up for ProtonMail for seamless and unlimited end-to-end encryption</a>."
 msgstr ""
@@ -8101,7 +8101,7 @@ msgctxt "Error"
 msgid "Thank you for your willingness to donate. The maximum we can accept in single donations is 999 999 at this moment. Thank you"
 msgstr ""
 
-#: ./src/app/core/factories/feedbackModal.js:29
+#: ./src/app/core/factories/feedbackModal.js:33
 msgctxt "Success message when sending feedback"
 msgid "Thanks for your feedback!"
 msgstr ""
