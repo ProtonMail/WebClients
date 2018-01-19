@@ -24,6 +24,7 @@
 
 .progressBar-container::-webkit-progress-value {
     background: $primary;
+    border-radius: 10px;
 }
 
 .progressBar-container[value]::-webkit-progress-bar {
