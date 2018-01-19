@@ -343,7 +343,6 @@
     display: none;
 }
 
-
 .contactItem-container:not(.as-sortable-disabled) .contactItem-row .contactItem-sortable-wrapper {
      border-color: rgba(0,0,0,.2);
      cursor: move;
@@ -382,3 +381,4 @@
 .appConfigBody-is-mobile .contactItem-sortable-wrapper { flex-direction: column }
 .appConfigBody-is-mobile .contactItem-actions { width: auto }
 .appConfigBody-is-mobile .contactItem-label > input { width: 100% }
+.appConfigBody-is-mobile .contactItem-container .contactItem-row:not(:first-child) .contactItem-label > input { padding-left: 10px }
