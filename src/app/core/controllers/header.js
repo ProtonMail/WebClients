@@ -37,25 +37,26 @@ function HeaderController($rootScope, $scope, $state, authentication, organizati
     };
 
     $scope.activeSettings = () => {
-        const route = $state.$current.name.replace('secured.', '');
+        const currentRoute = $state.$current.name;
         const settings = [
-            'dashboard',
-            'account',
-            'labels',
-            'filters',
-            'security',
-            'appearance',
-            'domains',
-            'bridge',
-            'pmme',
-            'signatures',
-            'members',
-            'payments',
-            'keys',
-            'vpn'
+            'secured.ashboard',
+            'secured.account',
+            'secured.labels',
+            'secured.filters',
+            'secured.autoresponder',
+            'secured.security',
+            'secured.appearance',
+            'secured.domains',
+            'secured.bridge',
+            'secured.pmme',
+            'secured.signatures',
+            'secured.members',
+            'secured.payments',
+            'secured.keys',
+            'secured.vpn'
         ];
 
-        return settings.indexOf(route) !== -1;
+        return settings.indexOf(currentRoute) !== -1;
     };
 }
 export default HeaderController;
