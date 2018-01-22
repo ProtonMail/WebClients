@@ -30,7 +30,8 @@
         flex-direction: column; /* .editor space fill */
 
         position: absolute; /* better for iOS then fixed*/
-        height: 510px !important; // the drag directive tries to override this.
+        height: calc(100% - 100px) !important; // the drag directive tries to override this.
+        max-height: 510px;
         right:  0 !important;
         transform: translateX(-20px);
         visibility: hidden;
@@ -358,6 +359,7 @@
             transform: translateX(-20px) !important;
             width: calc(100% - #{$sidebarWidth} - 40px);
             height: auto !important;
+            max-height: 100%;
             box-sizing: border-box;
             margin: 0;
 
