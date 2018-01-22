@@ -179,7 +179,7 @@ function messageBuilder(
     }
 
     function builder(action, currentMsg = {}, newMsg = {}) {
-        newMsg.MIMEType = mailSettingsModel.get('DraftMIMEType');
+        newMsg.MIMEType = currentMsg.MIMEType === 'text/plain' ? 'text/plain' : mailSettingsModel.get('DraftMIMEType');
         newMsg.RightToLeft = mailSettingsModel.get('RightToLeft');
 
         action === 'new' && newCopy(newMsg, currentMsg);
