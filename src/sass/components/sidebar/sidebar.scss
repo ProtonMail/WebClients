@@ -135,7 +135,7 @@
     text-align: left;
 }
 
-.sidebarApp-container a {cursor: pointer}
+.sidebarApp-container a { cursor: pointer; }
 
 .sidebarApp-menu {
     flex-shrink: 0;
@@ -144,6 +144,11 @@
     list-style-type: none;
     font-size: 14px;
     margin: 0 -20px 10px -25px;
+
+    .ico-protonvpn {
+        height: 16px;
+        opacity: .5;
+    }
 }
 
 .sidebarApp-menu a {cursor: pointer}

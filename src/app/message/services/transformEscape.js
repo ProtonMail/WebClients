@@ -5,7 +5,7 @@ import transformBase from './transformBase';
 /* @ngInject */
 function transformEscape() {
     /**
-     * Create all possibilites based on a collection
+     * Create all possibilities based on a collection
      * @{@link  https://stackoverflow.com/questions/4331092/finding-all-combinations-of-javascript-array-values#answer-37276760}
      * @param  {Array} arr Array of array
      * @return {String}
@@ -43,7 +43,7 @@ function transformEscape() {
     };
 
     /**
-     * Unescape the textContent only and inside a synthax Highlighting block
+     * Unescape the textContent only and inside a syntax Highlighting block
      * Compat
      *     - fontawesome
      *     - prism
@@ -131,7 +131,7 @@ function transformEscape() {
 
     /**
      * Escape content for a message
-     * Content can be a Document when we open a message, it's usefull
+     * Content can be a Document when we open a message, it's useful
      * in order to bind the base if it exists
      * @param  {Node} html                       Parser
      * @param  {Message} message
