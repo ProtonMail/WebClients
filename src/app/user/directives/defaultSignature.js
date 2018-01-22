@@ -9,18 +9,23 @@ function defaultSignature($rootScope, signatureModel, CONSTANTS, mailSettingsMod
             const unsubscribe = [];
             const { PMSignature, DisplayName, Signature } = mailSettingsModel.get();
 
+            const isSignatureMandatory = () => {
+                const { PMSignature } = mailSettingsModel.get();
+                return PMSignature === 2;
+            };
+
             const checkCustom = (DisplayName, Signature) => {
                 const { active: [mainAddress = {}] } = addressModel.getActive() || { active: [] };
                 scope.hasCustom = {
                     DisplayName: mainAddress.DisplayName !== DisplayName,
-                    Signature: mainAddress.Signature !== Signature
+                    Signature: !isSignatureMandatory() && mainAddress.Signature !== Signature
                 };
             };
             checkCustom(DisplayName, Signature);
 
             scope.protonSignature = {
                 content: CONSTANTS.PM_SIGNATURE,
-                isMandatory: PMSignature === 2,
+                isMandatory: isSignatureMandatory(),
                 isActive: !!PMSignature
             };
             scope.saveIdentity = () => signatureModel.save(scope);
