@@ -430,8 +430,10 @@ function ComposeMessageController(
                 message.encrypting = false;
                 dispatchMessageAction(message);
                 eventManager.start();
-                throw new Error(!e.raw ? unicodeTagView(e.message) : e.message);
+
+                throw !e.raw ? new Error(unicodeTagView(e.message)) : e;
             });
+
         networkActivityTracker.track(promise);
     };
 
