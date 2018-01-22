@@ -1,4 +1,5 @@
 import _ from 'lodash';
+import createScrollHelper from '../../../helpers/dragScrollHelper';
 
 /* @ngInject */
 function LabelsController(
@@ -35,9 +36,13 @@ function LabelsController(
 
     setLabels();
 
+    const { dragStart, dragMove, dragEnd } = createScrollHelper({ scrollableSelector: '#labelContainer' });
     // Drag and Drop configuration
     $scope.labelsDragControlListeners = {
         containment: '#labelContainer',
+        dragStart,
+        dragMove,
+        dragEnd,
         accept(sourceItemHandleScope, destSortableScope) {
             return sourceItemHandleScope.itemScope.sortableScope.$id === destSortableScope.$id;
         },

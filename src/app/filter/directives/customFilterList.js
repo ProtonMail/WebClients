@@ -1,4 +1,5 @@
 import _ from 'lodash';
+import createScrollHelper from '../../../helpers/dragScrollHelper';
 
 /* @ngInject */
 function customFilterList(
@@ -43,16 +44,20 @@ function customFilterList(
                 })
             );
 
+            const { dragStart, dragMove, dragEnd } = createScrollHelper({ scrollableSelector: '#pm_settings .settings' });
             // Drag and Drop configuration
             scope.filterDragControlListeners = {
                 containment: '.pm_sort',
                 accept(sourceItemHandleScope, destSortableScope) {
                     return sourceItemHandleScope.itemScope.sortableScope.$id === destSortableScope.$id;
                 },
-                dragStart() {
+                dragStart(event) {
+                    dragStart(event);
                     scope.itemMoved = true;
                 },
+                dragMove,
                 dragEnd() {
+                    dragEnd();
                     scope.itemMoved = false;
                 },
                 orderChanged() {
