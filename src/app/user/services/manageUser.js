@@ -92,13 +92,13 @@ function manageUser(
         );
     };
 
-    async function manageUser({ User, Members = [] }) {
+    async function manageUser({ User = {}, Members = [] }) {
         // Init value on load
         if (angular.isUndefined(previousRole)) {
             previousRole = authentication.user.Role;
         }
 
-        if (!User) {
+        if (angular.isUndefined(User.Role)) {
             return;
         }
 
