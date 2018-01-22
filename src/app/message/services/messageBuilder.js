@@ -199,10 +199,21 @@ function messageBuilder(
         newMsg.NumEmbedded = 0;
 
         if (action !== 'new') {
+            const previously = () => {
+                return gettextCatalog.getString(
+                    'On {{date}}, {{name}} {{address}} wrote:',
+                    {
+                        date: $filter('localReadableTime')(currentMsg.Time),
+                        name: currentMsg.Sender.Name,
+                        address: `&lt;${currentMsg.Sender.Address}&gt;`
+                    },
+                    'Message'
+                );
+            };
             newMsg.ParentID = currentMsg.ID;
             newMsg.setDecryptedBody(
                 `-------- Original Message --------<br>
-                On ${$filter('localReadableTime')(currentMsg.Time)}, ${currentMsg.Sender.Name} &lt;${currentMsg.Sender.Address}&gt; wrote:<br>
+                ${previously()}<br>
                 <blockquote class="protonmail_quote" type="cite">
                     ${prepareBody(currentMsg.getDecryptedBody(), currentMsg, action)}
                 </blockquote><br>`
