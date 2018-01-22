@@ -29,7 +29,7 @@ function sidebarSettingsModel(gettextCatalog) {
         security: {
             state: 'secured.security',
             label: gettextCatalog.getString('Security', null, 'Title'),
-            icon: 'fa-lock'
+            icon: 'fa-shield'
         },
         appearance: {
             state: 'secured.appearance',
@@ -75,7 +75,7 @@ function sidebarSettingsModel(gettextCatalog) {
         vpn: {
             state: 'secured.vpn',
             label: 'ProtonVPN',
-            icon: 'fa-shield'
+            icon: 'ico-protonvpn'
         }
     });
 

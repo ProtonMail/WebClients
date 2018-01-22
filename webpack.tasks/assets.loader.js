@@ -2,7 +2,7 @@ const MAX_SIZE = 24 * 1024;
 
 module.exports = [
     {
-        test: /\.(jpg|jpeg|gif)$/,
+        test: /\.(jpg|jpeg|gif|svg)$/,
         use: [
             {
                 loader: 'file-loader',
@@ -40,7 +40,7 @@ module.exports = [
         ]
     },
     {
-        test: /\.(ttf|eot|svg)(\?v=[0-9]\.[0-9]\.[0-9])?$/,
+        test: /\.(ttf|eot)(\?v=[0-9]\.[0-9]\.[0-9])?$/,
         use: [
             {
                 loader: 'file-loader',
