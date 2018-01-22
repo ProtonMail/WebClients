@@ -22,11 +22,11 @@ function movedSelect($rootScope, authentication, gettextCatalog, networkActivity
             const $select = element.find('select');
             const set = (moved) => $select.val(+moved);
             const get = () => ~~$select.val();
-            const unsubscribe = $rootScope.$on('updateUser', () => {
-                const { ShowMoved } = mailSettingsModel.get();
-                set(ShowMoved);
+            const unsubscribe = $rootScope.$on('mailSettings', () => {
+                set(mailSettingsModel.get('ShowMoved'));
             });
-            const { ShowMoved } = mailSettingsModel.get();
+
+            set(mailSettingsModel.get('ShowMoved'));
 
             function onChange() {
                 const ShowMoved = get();
@@ -37,7 +37,6 @@ function movedSelect($rootScope, authentication, gettextCatalog, networkActivity
                 networkActivityTracker.track(promise);
             }
 
-            set(ShowMoved);
             $select.on('change', onChange);
 
             scope.$on('$destroy', () => {
