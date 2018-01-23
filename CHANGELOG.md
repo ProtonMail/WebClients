@@ -1,3 +1,33 @@
+# [3.12.25] - 2018-01-23
+## Added
+- Change expiration icon
+- Change log / Release note modal
+- Change settings sidebar icons
+- RTL support for Squire
+
+## Fixed
+- Bulleted/Numbered lists display issue in Chrome when aligned to right
+- label settings: if i have many labels, I can't move the bottom label to the top in one time.
+- Incorrect error message when sending to outside email addresses with expiration but without password
+- custom signature UI problem
+- Scroll appearing in message content
+- Reply to text/plain message
+- Compose window may be hidden with some viewports
+- custom signature UI problem
+- Admin privileges revoked when changing layout
+- did deploy reset the hide/show sent setting?
+- Alignment issues with contact details
+- Pressing "Enter" in the composer scrolls the text box up automatically
+- Writing continues in URL
+- Verification/decryption error in contacts after reactivating keys
+
+## Changed
+- Layout state was not reflected on chooseLayoutBtns component
+- translate response title
+- Active settings state for autoresponder page
+- progressbar value rounded now
+- Load custom theme after styles
+
 # [3.12.24] - 2018-01-18
 ## Fixed
 - When you reply to an outside (password protected) message, you can see [object HTMLhtmlElement]
