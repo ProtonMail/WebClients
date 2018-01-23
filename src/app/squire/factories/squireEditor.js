@@ -105,7 +105,12 @@ function squireEditor($rootScope, CONSTANTS, editorModel) {
 
             .protonmail_quote {
                 position: relative;
-            }`;
+            }
+
+            li {
+                list-style-position: inside;
+            }
+            `;
 
         style.setAttribute('type', 'text/css');
         style.setAttribute('rel', 'stylesheet');
