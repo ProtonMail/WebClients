@@ -1,0 +1,167 @@
+#!/usr/bin/env node
+
+const { promisify } = require('util');
+const exec = promisify(require('child_process').exec);
+const execRaw = require('child_process').exec;
+const chalk = require('chalk');
+const argv = require('minimist')(process.argv.slice(2));
+const stripAnsi = require('strip-ansi');
+const dedent = require('dedent');
+
+const success = (msg) => console.log(`${chalk.green('✓')} ${msg}.`);
+
+const commandeVerbose = (command) => {
+    return new Promise((resolve, reject) => {
+        const callback = (error) => {
+            if (error) {
+                return reject(error);
+            }
+            resolve();
+        };
+
+        const build = execRaw(
+            command,
+            {
+                maxBuffer: 1000 * 1000 * 10 // 10 MB
+            },
+            callback
+        );
+        build.stdout.pipe(process.stdout);
+        build.stderr.pipe(process.stderr);
+    });
+};
+
+const getLatestCommit = async () => {
+    const { stdout = '' } = await exec("git log -1 --pretty=format:'%H---%s' --abbrev-commit");
+    const [ output = '' ] = stripAnsi(stdout).split('\n');
+    const [ hash = '', label = '' ] = output.split('---');
+    return { hash, label };
+};
+
+const getCommitByName = async (name) => {
+    const { stdout = '' } = await exec(`git log --pretty=format:'%H---%s' | grep -w "${name}"`);
+    const [ output = '' ] = stripAnsi(stdout).split('\n');
+    const [ hash = '', label = '' ] = output.split('---');
+    return { hash, label };
+};
+
+const getAngularRelease = async (name) => {
+    if (name) {
+        return getCommitByName(argv.tag);
+    }
+    return getLatestCommit();
+};
+
+const getWebclientRelease = async () => {
+    const commands = [
+        'git checkout public --quiet',
+        'git log -1 --pretty=format:"%s" --abbrev-commit'
+    ];
+    const { stdout = '' } = await exec(commands.join(' && '));
+    await exec('git checkout v3 --quiet');
+    const [ output = '' ] = stripAnsi(stdout).split('\n');
+    return getCommitByName(output);
+};
+
+const isDeployAbleBranch = async () => {
+    const { stdout = '' } = await exec('git rev-parse --abbrev-ref HEAD');
+    const [ output = '' ] = stripAnsi(stdout).split('\n');
+    if (output !== 'v3') {
+        throw new Error('You must be on V3 to sync the webclient');
+    }
+};
+
+
+const addPublicRemote = async () => {
+    const commands = ['git remote add webclient git@github.com:ProtonMail/WebClient.git'];
+    commands.push('git config remote.webclient.push upstream');
+    commands.push('git fetch webclient');
+    commands.push('git checkout -b public webclient/public');
+    await exec(commands.join(' && '));
+    success('Add public remote');
+};
+
+const hasPublicRemote = async () => {
+    try {
+        await exec('git remote | grep webclient');
+        success('Public remote exists');
+    } catch (e) {
+        await addPublicRemote();
+    }
+};
+
+/**
+ * Sync the webclient based on
+ *     - latest commit for a version on webclient
+ *     - latest commit for the last version live on Angular
+ *
+ * It will fail most of the time because of empty merge.
+ * You will need if it fails to run until it's done
+ *     (cherry-pick can be a long task)
+ * Warning you may have conflicts
+ * $ git cherry-pick --continue
+ * $ git push webclient public
+ * $ git checkout v3
+ * @param  {String} options.hash: webclientHash
+ * @param  {String} options.hash: latestHash
+ * @return {Promise}
+ */
+const syncWebclient = async ({ hash: webclientHash }, { hash: latestHash }) => {
+    const commands = [
+        'git checkout v3',
+        'git pull origin v3',
+        'git checkout public',
+        'git pull webclient public'
+    ];
+    await commandeVerbose(commands.join(' && '));
+    await commandeVerbose(`git cherry-pick -X theirs --allow-empty ${webclientHash}..${latestHash}`);
+    await exec('git push webclient public');
+    await exec('git checkout v3 --quiet');
+    success('Sync webclient');
+};
+
+const help = () => {
+    const msg = dedent`
+        ${chalk.yellow(' ⟞ How to use the command ?'.toUpperCase())}
+
+        This command will sync the Private repository and the public repository
+            ➙ $ ./tasks/rebaseWebClient --tag=3.12.24
+                            or
+            ➙ $ ./tasks/rebaseWebClient
+
+            - With the flag tag, you can deploy to webclient only commits until this tag
+            - Without you deploy commits until the latest available on Angular (ex: post release)
+
+
+        ${chalk.keyword('orange')(' ⚠⚠⚠ Warning ⚠⚠⚠'.toUpperCase())}
+
+        You will need if it fails to run until it's done.
+        cherry-pick can be a long task with some conflicts to resolve (rm/add)
+            $ git cherry-pick --continue
+            $ git push webclient public
+            $ git checkout v3
+
+    `;
+    console.log(msg);
+};
+
+argv.help && help();
+!argv.help && (async () => {
+    try {
+
+        await isDeployAbleBranch();
+        await hasPublicRemote();
+        const angularRelease = await getAngularRelease(argv.tag);
+        const webclientRelease = await getWebclientRelease();
+        console.log();
+        console.log(JSON.stringify({ angularRelease, webclientRelease }, null, 2));
+        console.log();
+        await syncWebclient(webclientRelease, angularRelease);
+        process.exit(0);
+    } catch (e) {
+        console.log(chalk.magentaBright(' ⚠ '), chalk.red(e.message));
+        console.log();
+        help();
+        process.exit(1);
+    }
+})();
