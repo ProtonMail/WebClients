@@ -29,6 +29,7 @@ import networkUtils from './services/networkUtils';
 import secureSessionStorage from './services/secureSessionStorage';
 import webcrypto from './services/webcrypto';
 import translateAttribute from './directives/translateAttribute';
+import lazyInject from './directives/lazyInject';
 
 export default angular
     .module('proton.commons', [])
@@ -64,4 +65,5 @@ export default angular
     .factory('webcrypto', webcrypto)
     .directive('placeholderTranslate', translateAttribute.placeholder)
     .directive('titleTranslate', translateAttribute.title)
+    .directive('lazyInject', lazyInject)
     .directive('ptTooltipTranslate', translateAttribute.tooltip).name;

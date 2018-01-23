@@ -1,0 +1,34 @@
+<div role="dialog" class="pm_modal releaseNotesModal-container">
+    <div class="modal-dialog">
+        <button
+            type="button"
+            ng-click="ctrl.close()"
+            aria-hidden="true"
+            title-translate="Close"
+            title-translate-context="Action"
+            class="fa fa-times close"></button>
+
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title donateModal-title-donate" translate translate-context="Title">Release notes</h4>
+                <a data-prefix="v" href="{{::ctrl.articleLink}}" title="{{::ctrl.dateVersion}}" class="infoLink" target="_blank">
+                    More info
+                </a>
+            </div>
+            <div class="modal-body" lazy-inject="{{::ctrl.changelogPath}}">
+            </div>
+        </div>
+
+        <div class="modal-footer text-right releaseNotes-group-btn">
+            <button
+                type="button"
+                class="pm_button primary"
+                ng-click="ctrl.close()"
+                translate
+                translate-context="Action">
+                Close
+            </button>
+        </div>
+    </div>
+    <div class="modal-overlay"></div>
+</div>

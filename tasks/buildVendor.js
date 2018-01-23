@@ -1,9 +1,11 @@
 #!/usr/bin/env node
 
+const exec = require('child_process').exec;
 const gulp = require('gulp');
 const concat = require('gulp-concat');
 const glob = require('glob');
 const CONFIG = require('../env/conf.build');
+const { CONFIG: APP_CONFIG } = require('../env/config').getConfig();
 
 const OUTPUT_DIR = process.env.NODE_ENV === 'dist' ? 'dist' : 'build';
 
@@ -38,3 +40,5 @@ const [, OPENPGP] = makeSRC(CONFIG.external_files.openpgp);
         .pipe(concat(`${name}.js`))
         .pipe(gulp.dest(`${OUTPUT_DIR}/`));
 });
+
+exec(`tasks/generateChangelog.js ./CHANGELOG.md ${OUTPUT_DIR}/${APP_CONFIG.changelogPath}`);

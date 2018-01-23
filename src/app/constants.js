@@ -238,6 +238,7 @@ export const CONSTANTS = {
     IFRAME_SECURE_ORIGIN: 'https://secure.protonmail.com',
     INVITE_URL: 'https://protonmail.com/invite',
     DEFAULT_CURRENCY: 'EUR',
+    CHANGELOG_PATH: 'assets/changelog.tpl.html',
     DEFAULT_CYCLE: 12,
     TRACKER_ROUTE: 'proton.php',
     PIWIK_SCRIPT: 'proton.js',
