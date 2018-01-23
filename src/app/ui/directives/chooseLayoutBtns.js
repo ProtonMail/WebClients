@@ -1,17 +1,6 @@
 /* @ngInject */
-function chooseLayoutBtns(
-    $rootScope,
-    CONSTANTS,
-    networkActivityTracker,
-    tools,
-    settingsMailApi,
-    eventManager,
-    notification,
-    gettextCatalog,
-    mailSettingsModel
-) {
+function chooseLayoutBtns($rootScope, CONSTANTS, networkActivityTracker, tools, settingsMailApi, notification, gettextCatalog, mailSettingsModel) {
     const { COLUMN_MODE, ROW_MODE } = CONSTANTS;
-    const ROWS_CLASS = 'chooseLayoutBtns-container-rows';
     const getLayout = (mode) => {
         const { ViewLayout } = mailSettingsModel.get();
 
@@ -52,21 +41,8 @@ function chooseLayoutBtns(
                 e.preventDefault();
                 changeTo(e.target.getAttribute('data-action'));
             };
-            const updateView = () => {
-                const { ViewLayout } = mailSettingsModel.get();
-                const action = ViewLayout === ROW_MODE ? 'add' : 'remove';
-
-                el[0].classList[action](ROWS_CLASS);
-            };
-            const unsubscribe = $rootScope.$on('mailSettings', (event, { type = '' }) => {
-                if (type === 'updated') {
-                    updateView();
-                }
-            });
             $a.on('click', onClick);
-            updateView();
             scope.$on('$destroy', () => {
-                unsubscribe();
                 $a.off('click', onClick);
             });
         }

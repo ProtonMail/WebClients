@@ -12,7 +12,7 @@ function mailSettingsModel($rootScope) {
             CACHE[key] = value;
         }
 
-        $rootScope.$emit('mailSettings', { key, value });
+        $rootScope.$emit('mailSettings', { type: 'updated', data: { key, value } });
     };
 
     $rootScope.$on('logout', () => clear());
