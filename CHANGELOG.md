@@ -1,4 +1,4 @@
-# [3.12.25] - 2018-01-23
+# [3.12.25] - 2018-01-25
 ## Added
 - Change expiration icon
 - Change log / Release note modal
