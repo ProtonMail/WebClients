@@ -59,6 +59,12 @@ cf [Component Generator](https://github.com/ProtonMail/componentGenerator)
 
 Each `deploy-<NAME>` will be available at `<NAME>.protonmail.com`.
 
+### CLI Flags
+
+- `--branch` : Deploy branch dest
+- `--api` : Set an API for the app (_dev, live, etc._)
+- `--debug`: turn on debug mode for the command (default false)
+
 ## I18n à la demande
 
 > We build i18n when we create a build for beta or prod
@@ -69,11 +75,44 @@ $ npm run i18n:build
 
 It will do everything you need. Import new translations first for a better result ;)
 
-### CLI Flags
+## Release notes
 
-- `--branch` : Deploy branch dest
-- `--api` : Set an API for the app (_dev, live, etc._)
-- `--debug`: turn on debug mode for the command (default false)
+### Extract markdown
+*NOTE: In order to generate the release notes you need to set the `RELEASER_GH_TOKEN` environment variable.*
+
+To generate release notes for the latest version (tag), run the following command:
+```sh
+$ npm run releaser:extract
+```
+
+To generate release notes for a specific version (tag), run:
+```sh
+$ npm run releaser:extract -- --tag v3.12.24
+```
+
+The release notes are outputted to `stdout`. Those notes have to be manually inserted to `CHANGELOG.md`.
+
+It is also possible to run the following command to automatically unshift the output from releaser into `CHANGELOG.md`
+```sh
+$ npm run releaser:unshift
+```
+
+### Generate HTML file
+The HTML file from the `CHANGELOG.md` file is automatically generated when running `start` or `dist`. It takes the markdown file and generates the HTML file at `${build}/assets/changelog.tpl.html` which will be dynamically fetched when the modal opens.
+
+
+## Commit naming conventions
+For a fix linked to an issue number:
+- `(Fix|Close|Resolve) #ISSUENUMBER` (multiple allowed, separated by comma)
+
+For a hotfix not linked to any issue:
+- `Hotfix - Description`
+
+Any commits that follow this convention will be included in the release notes generator.
+
+For fixes linked to an issue, the description will be taken from GitHub and grouped according to if it has the `Bug` or `Feature` label.
+
+For hotfixes, the description in the commit name will be included in the release notes under the group `Others`.
 
 
 ## Branch naming conventions

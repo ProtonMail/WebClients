@@ -67,6 +67,7 @@ const APP = {
     clientID: 'Web',
     clientSecret: '4957cc9a2e0a2a49d02475c9d013478d',
     articleLink: 'https://protonmail.com/blog/protonmail-v3-12-release-notes/',
+    changelogPath: 'assets/changelog.tpl.html',
     translations: i18nLoader.get('list')
 };
 
@@ -110,6 +111,7 @@ const getConfig = (env = process.env.NODE_ENV) => {
         app_version: getVersion(),
         api_version: `${argv['api-version'] || APP.api_version}`,
         articleLink: argv.article || APP.articleLink,
+        changelogPath: env === 'dist' ? APP.changelogPath : 'changelog.tpl.html',
         statsConfig: getStatsConfig(argv.branch)
     });
 

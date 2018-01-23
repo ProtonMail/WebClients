@@ -9,6 +9,7 @@ import formatResponseInterceptor from './interceptors/formatResponseInterceptor'
 import alertModal from './factories/alertModal';
 import browserFingerprint from './factories/browserFingerprint';
 import bugModal from './factories/bugModal';
+import releaseNotesModal from './factories/releaseNotesModal';
 import confirmModal from './factories/confirmModal';
 import csv from './factories/csv';
 import csvFormat from './factories/csvFormat';
@@ -47,6 +48,7 @@ export default angular
     .factory('browserFingerprint', browserFingerprint)
     .factory('bugModal', bugModal)
     .factory('confirmModal', confirmModal)
+    .factory('releaseNotesModal', releaseNotesModal)
     .factory('csv', csv)
     .factory('csvFormat', csvFormat)
     .factory('downloadFile', downloadFile)

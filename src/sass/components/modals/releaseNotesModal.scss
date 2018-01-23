@@ -1,0 +1,35 @@
+.releaseNotesModal-container {
+    .modal-header {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .infoLink {
+        margin-top: 10px;
+        color: $dark;
+    }
+
+    .group {
+        font-size: 13px !important;
+        line-height: 13px !important;
+        color: #fff !important;
+        padding: 3px 5px;
+        text-transform: uppercase;
+        display: inline-block;
+        border-radius: 2px;
+    }
+
+    .features {
+        background-color: $feature;
+    }
+    .bugs {
+        background-color: $bug;
+    }
+    .others {
+        background-color: $blue-gray;
+    }
+
+    .change {
+        margin-bottom: 3px;
+    }
+}
