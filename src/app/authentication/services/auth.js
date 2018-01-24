@@ -536,7 +536,7 @@ function authentication(
 
             return promise
                 .then((user) => {
-                    if (user.DisplayName.length === 0) {
+                    if (!user.DisplayName) {
                         user.DisplayName = user.Name;
                     }
 
