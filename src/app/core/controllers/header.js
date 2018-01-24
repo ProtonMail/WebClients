@@ -39,7 +39,7 @@ function HeaderController($rootScope, $scope, $state, authentication, organizati
     $scope.activeSettings = () => {
         const currentRoute = $state.$current.name;
         const settings = [
-            'secured.ashboard',
+            'secured.dashboard',
             'secured.account',
             'secured.labels',
             'secured.filters',
