@@ -15,7 +15,7 @@ function simpleSend(messageApi, User, ComposerRequestStatus, pmcw, srp, encryptM
                 CCList,
                 BCCList,
                 IsRead: 1,
-                Sender: { Name: DisplayName, Address: Email }
+                Sender: { Name: DisplayName || '', Address: Email } // Default empty display name is null
             }
         };
     };
