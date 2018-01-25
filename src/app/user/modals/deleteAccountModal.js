@@ -3,7 +3,7 @@ import { CONSTANTS } from '../../constants';
 /* @ngInject */
 function deleteAccountModal(
     pmModal,
-    Bug,
+    Report,
     User,
     networkActivityTracker,
     authentication,
@@ -19,7 +19,7 @@ function deleteAccountModal(
     };
     async function report(params, isAdmin) {
         if (isAdmin) {
-            return Bug.report(params);
+            return Report.bug(params);
         }
     }
 
