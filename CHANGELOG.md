@@ -1,4 +1,13 @@
-# [3.12.25] - 2018-01-25
+# [3.12.26] - 2018-01-25
+## Fixed
+- "Learn more" link for invalid searches does not link to KB
+- Invalid recipient issue
+
+## Changed
+- Account creation was crashing
+- Dashboard route was unactive
+
+# [3.12.25] - 2018-01-23
 ## Added
 - Change expiration icon
 - Change log / Release note modal
