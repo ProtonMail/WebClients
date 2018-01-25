@@ -1,4 +1,5 @@
 import _ from 'lodash';
+import parseDate from './vcardDateParser';
 
 /* @ngInject */
 function vcard(CONSTANTS, notification, sanitize) {
@@ -51,7 +52,7 @@ function vcard(CONSTANTS, notification, sanitize) {
                     params.type = typeValue;
                 }
 
-                acc.add(key, sanitize.input(cleanValue(value, key)), params);
+                acc.add(key, sanitize.input(cleanValue(value, key, params)), params);
 
                 return acc;
             },
@@ -84,16 +85,30 @@ function vcard(CONSTANTS, notification, sanitize) {
 
     /**
      * Clean value
-     * @param  {String} value
-     * @param  {String} field
+     * @param {String} value The value of the vcard field
+     * @param {String} field The name of the vcard field
+     * @param {Object} params Rest of the parameters from the vcard value
      * @return {String}
      */
-    function cleanValue(value = '', field = '') {
+    function cleanValue(value = '', field = '', params = {}) {
         const matches = value.match(/_\$!<(.*)>!\$_/);
 
         // Some imported vCards from Apple have weird bracket around the value _$!<value>!$_
         if (Array.isArray(matches)) {
             return matches[1];
+        }
+
+        // Handle X-APPLE-OMIT-YEAR https://github.com/ProtonMail/Angular/issues/6116
+        if (field === 'bday' && params.xAppleOmitYear === '1604') {
+            const { month, day } = parseDate(value) || {};
+            // If it was possible to parse the date, return it in a truncated format.
+            if (month && day) {
+                // Delete the apple specific tag since it's now parsed properly.
+                delete params.xAppleOmitYear;
+                return `--${month}-${day}`;
+            }
+            // Else just return the original value.
+            return value;
         }
 
         if (field === 'org') {
@@ -133,6 +148,7 @@ function vcard(CONSTANTS, notification, sanitize) {
      * @param  {Array} vcards
      * @return {Array}
      */
+
     /* eslint no-unused-vars: "off" */
     function convertCustoms(vcard = new vCard()) {
         const groups = _.groupBy(extractProperties(vcard), (property) => property.getGroup() || 'nogroup');
@@ -179,4 +195,5 @@ function vcard(CONSTANTS, notification, sanitize) {
 
     return { from, to, extractProperties, merge, build, isValidType };
 }
+
 export default vcard;
