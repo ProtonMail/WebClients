@@ -286,11 +286,12 @@ export const CONSTANTS = {
     MAILBOX_IDENTIFIERS
 };
 
+/* eslint  no-useless-escape: "off" */
+export const REGEX_EMAIL = /(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))/i;
+
 export default angular
     .module('proton.constants', [])
-    /* eslint  no-useless-escape: "off" */
     .constant(
-        'regexEmail',
-        /(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))/i
+        'regexEmail', REGEX_EMAIL
     )
     .constant('CONSTANTS', CONSTANTS).name;

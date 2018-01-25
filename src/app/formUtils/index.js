@@ -16,9 +16,11 @@ import validUsername from './directives/validUsername';
 import validatorTypoEmail from './directives/validatorTypoEmail';
 import cardModel from './factories/cardModel';
 import countriesListModel from './factories/countriesListModel';
+import validEmail from './directives/validEmail';
 
 export default angular
     .module('proton.formUtils', ['ngIntlTelInput'])
+    .directive('validEmail', validEmail)
     .directive('captcha', captcha)
     .directive('captchaView', captchaView)
     .directive('cardCvc', cardCvc)
