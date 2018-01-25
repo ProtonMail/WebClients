@@ -1,7 +1,7 @@
 import { CONSTANTS } from '../../constants';
 
 /* @ngInject */
-function feedbackModal(pmModal, Bug, notification, networkActivityTracker, gettextCatalog) {
+function feedbackModal(pmModal, Report, notification, networkActivityTracker, gettextCatalog) {
     const { CLIENT_TYPE } = CONSTANTS;
     return pmModal({
         controllerAs: 'ctrl',
@@ -27,7 +27,7 @@ function feedbackModal(pmModal, Bug, notification, networkActivityTracker, gette
                     Description: description
                 };
 
-                const feedbackPromise = Bug.report(data);
+                const feedbackPromise = Report.bug(data);
 
                 feedbackPromise.then(() => {
                     notification.success(gettextCatalog.getString('Thanks for your feedback!', null, 'Success message when sending feedback'));

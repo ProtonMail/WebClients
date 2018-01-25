@@ -2,7 +2,7 @@ import _ from 'lodash';
 import { CONSTANTS } from '../../constants';
 
 /* @ngInject */
-function bugReportApi(Bug, CONFIG, $state, aboutClient, authentication, gettextCatalog, networkActivityTracker, notification) {
+function bugReportApi(Report, CONFIG, $state, aboutClient, authentication, gettextCatalog, networkActivityTracker, notification) {
     const { ROW_MODE, COLUMN_MODE, MESSAGE_VIEW_MODE, CONVERSATION_VIEW_MODE, CLIENT_TYPE } = CONSTANTS;
     const MAP_MODE = {
         layout: {
@@ -81,8 +81,9 @@ function bugReportApi(Bug, CONFIG, $state, aboutClient, authentication, gettextC
      * @param  {Object} form FormData from the user
      * @return {Promise}
      */
-    const send = (form) => {
-        return Bug.report(form).then(() => notification.success(gettextCatalog.getString('Bug reported', null, 'Bug report successfully')));
+    const send = async (form) => {
+        await Report.bug(form);
+        notification.success(gettextCatalog.getString('Bug reported', null, 'Bug report successfully'));
     };
 
     /**
@@ -94,7 +95,7 @@ function bugReportApi(Bug, CONFIG, $state, aboutClient, authentication, gettextC
     const report = (form, screenshot) => {
         let promise;
         if (form.attachScreenshot) {
-            promise = Bug.uploadScreenshot(screenshot, form).then(send);
+            promise = Report.uploadScreenshot(screenshot, form).then(send);
         } else {
             promise = send(form);
         }
@@ -106,7 +107,7 @@ function bugReportApi(Bug, CONFIG, $state, aboutClient, authentication, gettextC
         const crashData = _.extend(getClient(authentication.user), {
             Debug: { state: $state.$current.name, error }
         });
-        return Bug.crash(crashData).catch(angular.noop);
+        return Report.crash(crashData).catch(angular.noop);
     };
 
     return { getForm, takeScreenshot, report, getClient, crash };

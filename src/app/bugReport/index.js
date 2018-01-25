@@ -1,6 +1,6 @@
 import newBugReport from './directives/newBugReport';
 import bugReportModel from './factories/bugReportModel';
-import Bug from './services/Bug';
+import Report from './services/Report';
 import bugReportApi from './services/bugReportApi';
 
 export default angular
@@ -8,5 +8,5 @@ export default angular
     .run((bugReportModel) => bugReportModel.init())
     .directive('newBugReport', newBugReport)
     .factory('bugReportModel', bugReportModel)
-    .factory('Bug', Bug)
+    .factory('Report', Report)
     .factory('bugReportApi', bugReportApi).name;

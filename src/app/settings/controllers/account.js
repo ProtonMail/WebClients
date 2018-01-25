@@ -12,7 +12,6 @@ function AccountController(
     $q,
     authentication,
     changePasswordModal,
-    Bug,
     confirmModal,
     deleteAccountModal,
     desktopNotifications,
