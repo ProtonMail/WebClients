@@ -42,6 +42,7 @@
                         ng-if="UI.mode === 'singleLine'"
                         type="{{ ::UI.inputType }}"
                         name="{{ ::UI.inputName+$index }}"
+                        data-valid-email
                         placeholder="{{ UI.placeholder }}"
                         class="form-control contactItem-field"
                         ng-class="{ 'contactItem-input-with-icon': UI.inputType === 'email' }"
