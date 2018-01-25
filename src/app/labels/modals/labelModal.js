@@ -98,26 +98,35 @@ function labelModal(pmModal, tools, hotkeys, gettextCatalog, networkActivityTrac
         templateUrl: require('../../../templates/modals/label.tpl.html'),
         /* @ngInject */
         controller: function(params) {
-            const self = this;
             const { ID, Name = '', Color = '', Exclusive = 0 } = params.label;
             const successMessage = getSuccessMessage(params.label);
             const index = _.random(0, COLORS_LIST.length - 1);
-            self.ID = ID;
-            self.exclusive = Exclusive;
-            self.title = getTitle(params.label);
-            self.name = Name || '';
-            self.notify = getNotify(params.label);
-            self.colors = COLORS_LIST;
-            self.color = Color || COLORS_LIST[index];
+            this.ID = ID;
+            this.exclusive = Exclusive;
+            this.title = getTitle(params.label);
+            this.name = Name || '';
+            this.notify = getNotify(params.label);
+            this.colors = COLORS_LIST;
+            this.color = Color || COLORS_LIST[index];
 
             hotkeys.unbind();
 
-            self.create = () => {
-                const data = cleanInput({ ID, Name: self.name, Color: self.color, Exclusive, Notify: self.notify ? 1 : 0 });
+            this.create = (form) => {
+
+                if (form.$invalid) {
+                    return; // we display the information inside the form
+                }
+
+                const data = cleanInput({
+                    ID, Exclusive,
+                    Name: this.name,
+                    Color: this.color,
+                    Notify: +!!this.notify
+                });
 
                 // Can be empty for an XSS
                 if (!data.Name) {
-                    self.name = data.Name;
+                    this.name = data.Name;
                     return notification.error(getErrorColorName(data));
                 }
 
@@ -130,7 +139,7 @@ function labelModal(pmModal, tools, hotkeys, gettextCatalog, networkActivityTrac
                 networkActivityTracker.track(promise);
             };
 
-            self.cancel = () => {
+            this.cancel = () => {
                 params.close();
                 hotkeys.bind();
             };
