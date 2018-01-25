@@ -2,7 +2,7 @@
     class="pm_modal small important {{ctrl.class}} labelModal-container"
     role="dialog"
     id="labelModal">
-    <form class="modal-dialog" ng-submit="ctrl.create()">
+    <form class="modal-dialog" name="editLabelForm"  ng-submit="ctrl.create(editLabelForm)">
         <button
             ng-click="ctrl.cancel()"
             type="button"
@@ -17,7 +17,7 @@
             <div class="modal-body pm_form pm_grid">
                 <div class="row">
                     <label for="labelName" class="col-1-4" translate translate-context="Label">Name</label>
-                    <div class="col-3-4">
+                    <div class="col-3-4 ng-message-wrapper">
                         <input
                             tabindex="1"
                             type="text"
@@ -25,9 +25,15 @@
                             autofocus
                             id="labelName"
                             name="label"
+                            data-valid-label
                             ng-model="ctrl.name"
                             placeholder-translate="Name"
                             required>
+
+                        <div ng-messages="editLabelForm.label.$error" role="alert" class="text-red">
+                            <p ng-message="required" translate-context="Error" translate>You must set a name</p>
+                            <p ng-message="validLabel" translate-context="Error" translate>Invalid name (Forbidden char. ex: <>)</p>
+                        </div>
                     </div>
                 </div>
                 <div class="row">
