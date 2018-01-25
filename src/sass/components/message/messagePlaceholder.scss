@@ -31,4 +31,6 @@
 
 }
 
+.messagePlaceholder ~ .conversation-wrapper { pointer-events: none }
+
 .appConfigBody-is-mobile .messagePlaceholder { min-height: 80vh }
