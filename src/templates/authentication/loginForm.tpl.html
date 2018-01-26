@@ -5,8 +5,7 @@
     class="pm_panel alt pm_form loginForm-container"
     novalidate role="form"
     autocomplete="on"
-    ng-submit="enterLoginPassword()"
-    onsubmit="return false"
+    ng-submit="enterLoginPassword($event)"
     action="login">
 
     <img src="assets/img/logo.png" height="20" alt="ProtonMail" class="logo" />
