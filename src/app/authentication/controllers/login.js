@@ -332,7 +332,9 @@ function LoginController(
         });
     };
 
-    $scope.enterLoginPassword = () => {
+    $scope.enterLoginPassword = (e) => {
+        e.preventDefault();
+
         angular.element('input').blur();
         angular.element('#pm_login').attr({ action: '/*' });
         clearErrors();
