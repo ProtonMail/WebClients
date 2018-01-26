@@ -67,7 +67,7 @@ function hotkeys(hotkeyModal, $rootScope, $state, authentication, CONSTANTS, $in
     const goToTrash = action(redirect('secured.trash'));
 
     const composer = action(
-        emit('composer.new', {
+        emit('composer.create', {
             type: 'new',
             data: {}
         })

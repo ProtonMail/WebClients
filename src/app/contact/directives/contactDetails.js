@@ -67,6 +67,9 @@ function contactDetails(
             const properties = vcard.extractProperties(scope.contact.vCard);
             const hasEmail = _.filter(properties, (property) => property.getField() === 'email').length;
 
+            // Focus the details
+            element.find('.contactDetails-details').focus();
+
             scope.model = {};
             scope.state = {
                 encrypting: false,
@@ -82,6 +85,12 @@ function contactDetails(
 
                 if (type === 'contactUpdated' && data.contact.ID === scope.contact.ID) {
                     updateType(data.cards.map(({ Type }) => Type));
+                }
+            });
+
+            on('composer.update', (e, { type = '' }) => {
+                if (type === 'key.autosave') {
+                    saveContact();
                 }
             });
 

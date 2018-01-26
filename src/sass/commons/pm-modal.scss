@@ -130,6 +130,18 @@ $modalMargin: 2rem;
             }
         }
     }
+
+    .modal-details {
+        border: 1px solid #E1E1E1;
+        margin: 0 0 .4em;
+    }
+
+    .modal-summary {
+        font-size: 1.1em;
+        font-weight: bold;
+        cursor: pointer;
+        padding: 12px 0;
+    }
 }
 
 

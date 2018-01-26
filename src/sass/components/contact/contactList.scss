@@ -21,6 +21,14 @@
     }
 }
 
+.contactList-item .customCheckbox-container {
+    border-left: 4px solid transparent;
+}
+
+.contactList-item-activeCursorContact .customCheckbox-container {
+    border-left-color: $primary;
+}
+
 [class*="contactList-item-"] span { pointer-events: none }
 
 .contactList-container .pm_table {
