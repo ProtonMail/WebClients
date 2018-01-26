@@ -1,6 +1,6 @@
 import _ from 'lodash';
 
-import { flow, filter, map, sortBy } from 'lodash/fp';
+import { flow, filter, map, sortBy, uniqBy } from 'lodash/fp';
 
 /* @ngInject */
 function labelsModel($rootScope, CONSTANTS, sanitize) {
@@ -30,7 +30,7 @@ function labelsModel($rootScope, CONSTANTS, sanitize) {
      * @param  {Array} labels
      * @return {Array}
      */
-    const cleanLabels = (labels = []) => labels.map((label) => cleanLabel(label));
+    const cleanLabels = (labels = []) => flow(uniqBy(({ ID }) => ID), map(cleanLabel))(labels);
 
     function cleanLabel(label) {
         label.Name = sanitize.input(label.Name);
@@ -139,10 +139,10 @@ function labelsModel($rootScope, CONSTANTS, sanitize) {
             { update: {}, create: [], remove: {} }
         );
 
-        CACHE.all = [].concat(
-            flow(map((label) => cleanLabel(todo.update[label.ID] || label)), filter(({ ID }) => !todo.remove[ID]))(CACHE.all),
-            todo.create.map((label) => cleanLabel(label))
-        );
+        CACHE.all = cleanLabels([].concat(
+            flow(map((label) => todo.update[label.ID] || label), filter(({ ID }) => !todo.remove[ID]))(CACHE.all),
+            todo.create.map((label) => label)
+        ));
 
         syncMap();
         syncLabels();
