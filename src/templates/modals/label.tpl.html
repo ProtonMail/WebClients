@@ -32,7 +32,10 @@
 
                         <div ng-messages="editLabelForm.label.$error" role="alert" class="text-red">
                             <p ng-message="required" translate-context="Error" translate>You must set a name</p>
-                            <p ng-message="validLabel" translate-context="Error" translate>Invalid name (Forbidden char. ex: &lt;&gt;)</p>
+                            <p ng-message="validLabel">
+                                <span translate-context="Error" translate>Invalid name. Forbidden char. ex:</span>
+                                &#60;&#62;
+                            </p>
                         </div>
                     </div>
                 </div>
