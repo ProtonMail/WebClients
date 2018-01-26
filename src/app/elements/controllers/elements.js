@@ -820,7 +820,7 @@ function ElementsController(
      * @param {Object} element - conversation / message
      */
     function openElement(element) {
-        // When we swicth to another state it can be undefined
+        // When we switch to another state it can be undefined
         if (!element) {
             return;
         }
@@ -844,7 +844,7 @@ function ElementsController(
         // we may trigger a deallocation process to avoid a memory leak.
         embedded.deallocator(element);
 
-        // reset the attachement storage
+        // reset the attachment storage
         AttachmentLoader.flushCache();
 
         // Mark this element

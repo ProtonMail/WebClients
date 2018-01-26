@@ -83,7 +83,7 @@ function pmModal($animate, $compile, $rootScope, $controller, $q, $http, AppMode
             unsubscribeLogoutListener();
 
             return $animate.leave(element).then(() => {
-                // We can have a concurrency isues ex: generateModal
+                // We can have a concurrency issues ex: generateModal
                 if (!element) {
                     return;
                 }

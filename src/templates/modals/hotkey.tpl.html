@@ -6,69 +6,96 @@
                 <h4 class="modal-title" translate translate-context="Title">Hotkeys</h4>
             </div>
             <div class="modal-body">
-                <div class="pm_grid">
-                    <div class="col-1-2">
-                        <legend class="bold" translate translate-context="Title">Application</legend>
-                        <p translate translate-context="Info"><kbd>?</kbd> Opens the <strong>help modal</strong>.</p>
-                        <p translate translate-context="Info"><kbd>/</kbd> Focus the <strong>search input</strong>.</p>
-                        <p translate translate-context="Info"><kbd>enter</kbd> Confirms <strong>the active modal</strong>.</p>
-                        <p translate translate-context="Info"><kbd>escape</kbd> Closes <strong>the active modal</strong>.</p>
-                        <p translate translate-context="Info"><kbd>shift</kbd> + <kbd>space</kbd> Opens <strong>the command palette</strong>.</p>
+
+                <details class="modal-details" open>
+                    <summary class="modal-summary">General</summary>
+                    <div class="pm_grid">
+                        <div class="col-1-2">
+                            <legend class="bold" translate translate-context="Title">Application</legend>
+                            <p translate translate-context="Info"><kbd>?</kbd> Opens the <strong>help modal</strong>.</p>
+                            <p translate translate-context="Info"><kbd>/</kbd> Focus the <strong>search input</strong>.</p>
+                            <p translate translate-context="Info"><kbd>enter</kbd> Confirms <strong>the active modal</strong>.</p>
+                            <p translate translate-context="Info"><kbd>escape</kbd> Closes <strong>the active modal</strong>.</p>
+                            <p translate translate-context="Info"><kbd>shift</kbd> + <kbd>space</kbd> Opens <strong>the command palette</strong>.</p>
+                        </div>
+                        <div class="col-1-2">
+                            <legend class="bold" translate translate-context="Title">Composer</legend>
+                            <p translate translate-context="Info"><kbd>c</kbd> Opens a new <strong>composer</strong>.</p>
+                            <p translate translate-context="Info" ng-hide="ctrl.isMac"><kbd>ctrl</kbd> + <kbd>enter</kbd> <strong>Sends</strong> the message.</p>
+                            <p translate translate-context="Info" ng-show="ctrl.isMac"><kbd>command</kbd> + <kbd>enter</kbd> <strong>Sends</strong> the message.</p>
+                            <p translate translate-context="Info" ng-hide="ctrl.isMac"><kbd>ctrl</kbd> + <kbd>s</kbd> <strong>Saves</strong> the message.</p>
+                            <p translate translate-context="Info" ng-show="ctrl.isMac"><kbd>command</kbd> + <kbd>s</kbd> <strong>Saves</strong> the message.</p>
+                            <p translate translate-context="Info"><kbd>escape</kbd> Closes the active <strong>composer</strong>.</p>
+                        </div>
                     </div>
-                    <div class="col-1-2">
-                        <legend class="bold" translate translate-context="Title">Composer</legend>
-                        <p translate translate-context="Info"><kbd>c</kbd> Opens a new <strong>composer</strong>.</p>
-                        <p translate translate-context="Info" ng-hide="ctrl.isMac"><kbd>ctrl</kbd> + <kbd>enter</kbd> <strong>Sends</strong> the message.</p>
-                        <p translate translate-context="Info" ng-show="ctrl.isMac"><kbd>command</kbd> + <kbd>enter</kbd> <strong>Sends</strong> the message.</p>
-                        <p translate translate-context="Info" ng-hide="ctrl.isMac"><kbd>ctrl</kbd> + <kbd>s</kbd> <strong>Saves</strong> the message.</p>
-                        <p translate translate-context="Info" ng-show="ctrl.isMac"><kbd>command</kbd> + <kbd>s</kbd> <strong>Saves</strong> the message.</p>
-                        <p translate translate-context="Info"><kbd>escape</kbd> Closes the active <strong>composer</strong>.</p>
+                </details>
+
+                <details class="modal-details">
+                    <summary class="modal-summary">Mail</summary>
+                    <div class="pm_grid">
+                        <div class="col-1-2">
+                            <legend class="bold" translate translate-context="Title">Jumping</legend>
+                            <p translate translate-context="Info"><kbd>g</kbd> then <kbd>i</kbd> Goes to <strong>inbox</strong>.</p>
+                            <p translate translate-context="Info"><kbd>g</kbd> then <kbd>d</kbd> Goes to <strong>drafts</strong>.</p>
+                            <p translate translate-context="Info"><kbd>g</kbd> then <kbd>s</kbd> Goes to <strong>sent</strong>.</p>
+                            <p translate translate-context="Info"><kbd>g</kbd> then <kbd>.</kbd> Goes to <strong>starred</strong>.</p>
+                            <p translate translate-context="Info"><kbd>g</kbd> then <kbd>a</kbd> Goes to <strong>archive</strong>.</p>
+                            <p translate translate-context="Info"><kbd>g</kbd> then <kbd>x</kbd> Goes to <strong>spam</strong>.</p>
+                            <p translate translate-context="Info"><kbd>g</kbd> then <kbd>t</kbd> Goes to <strong>trash</strong>.</p>
+                        </div>
+                        <div class="col-1-2">
+                            <legend class="bold" translate translate-context="Title">Navigation</legend>
+                            <p translate translate-context="Info"><kbd><i class="fa fa-long-arrow-up"></i></kbd> Marks the <strong>previous</strong> message/conversation.</p>
+                            <p translate translate-context="Info"><kbd><i class="fa fa-long-arrow-down"></i></kbd> Marks the <strong>next</strong> message/conversation.</p>
+                            <p translate translate-context="Info"><kbd><i class="fa fa-long-arrow-left"></i></kbd> Marks the last message.</p>
+                            <p translate translate-context="Info"><kbd><i class="fa fa-long-arrow-right"></i></kbd> Unmarks the message.</p>
+                            <p translate translate-context="Info"><kbd>k</kbd> Displays the <strong>newer</strong> conversation.</p>
+                            <p translate translate-context="Info"><kbd>j</kbd> Displays the <strong>older</strong> conversation.</p>
+                            <p translate translate-context="Info"><kbd>enter</kbd> Opens the <strong>marked</strong> message/conversation.</p>
+                            <p translate translate-context="Info"><kbd>escape</kbd> Back to the list.</p>
+                        </div>
                     </div>
-                </div>
-                <div class="pm_grid">
-                    <div class="col-1-2">
-                        <legend class="bold" translate translate-context="Title">Threadlist</legend>
-                        <p translate translate-context="Info"><kbd>*</kbd> then <kbd>a</kbd> <strong>Select all</strong> conversations.</p>
-                        <p translate translate-context="Info"><kbd>*</kbd> then <kbd>n</kbd> <strong>Unselect all</strong> conversations.</p>
-                        <p translate translate-context="Info"><kbd>x</kbd> Selects the message/conversation marked.</p>
-                        <p translate translate-context="Info"><kbd>r</kbd> Marks the message/conversation as <strong>read</strong>.</p>
-                        <p translate translate-context="Info"><kbd>u</kbd> Marks the message/conversation as <strong>unread</strong>.</p>
-                        <p translate translate-context="Info"><kbd>.</kbd> Marks or unmarks the message/conversation as <strong>starred</strong>.</p>
-                        <p translate translate-context="Info"><kbd>i</kbd> Moves the message/conversation to <strong>inbox</strong>.</p>
-                        <p translate translate-context="Info"><kbd>t</kbd> Moves the message/conversation to <strong>trash</strong>.</p>
-                        <p translate translate-context="Info"><kbd>a</kbd> Moves the message/conversation to <strong>archive</strong>.</p>
-                        <p translate translate-context="Info"><kbd>s</kbd> Moves the message/conversation to <strong>spam</strong>.</p>
+                    <div class="pm_grid">
+                        <div class="col-1-2">
+                            <legend class="bold" translate translate-context="Title">Threadlist</legend>
+                            <p translate translate-context="Info"><kbd>*</kbd> then <kbd>a</kbd> <strong>Select all</strong> conversations.</p>
+                            <p translate translate-context="Info"><kbd>*</kbd> then <kbd>n</kbd> <strong>Unselect all</strong> conversations.</p>
+                            <p translate translate-context="Info"><kbd>x</kbd> Selects the message/conversation marked.</p>
+                            <p translate translate-context="Info"><kbd>r</kbd> Marks the message/conversation as <strong>read</strong>.</p>
+                            <p translate translate-context="Info"><kbd>u</kbd> Marks the message/conversation as <strong>unread</strong>.</p>
+                            <p translate translate-context="Info"><kbd>.</kbd> Marks or unmarks the message/conversation as <strong>starred</strong>.</p>
+                            <p translate translate-context="Info"><kbd>i</kbd> Moves the message/conversation to <strong>inbox</strong>.</p>
+                            <p translate translate-context="Info"><kbd>t</kbd> Moves the message/conversation to <strong>trash</strong>.</p>
+                            <p translate translate-context="Info"><kbd>a</kbd> Moves the message/conversation to <strong>archive</strong>.</p>
+                            <p translate translate-context="Info"><kbd>s</kbd> Moves the message/conversation to <strong>spam</strong>.</p>
+                        </div>
+                        <div class="col-1-2">
+                            <legend class="bold" translate translate-context="Title">Actions</legend>
+                            <p translate translate-context="Info"><kbd>shift</kbd> + <kbd>r</kbd> Reply to a message/conversation.</p>
+                            <p translate translate-context="Info"><kbd>shift</kbd> + <kbd>a</kbd> Reply to all recipients for a message/conversation.</p>
+                            <p translate translate-context="Info"><kbd>shift</kbd> + <kbd>f</kbd> Forward a message/conversation.</p>
+                        </div>
                     </div>
-                    <div class="col-1-2">
-                        <legend class="bold" translate translate-context="Title">Actions</legend>
-                        <p translate translate-context="Info"><kbd>shift</kbd> + <kbd>r</kbd> Reply to a message/conversation.</p>
-                        <p translate translate-context="Info"><kbd>shift</kbd> + <kbd>a</kbd> Reply to all recipients for a message/conversation.</p>
-                        <p translate translate-context="Info"><kbd>shift</kbd> + <kbd>f</kbd> Forward a message/conversation.</p>
+                </details>
+
+                <details class="modal-details">
+                    <summary class="modal-summary">Contacts</summary>
+                    <div class="pm_grid">
+                        <div class="col-1-2">
+                            <legend class="bold" translate translate-context="Title">Contact List</legend>
+                            <p translate translate-context="Info"><kbd><i class="fa fa-long-arrow-up"></i></kbd> + <kbd><i class="fa fa-long-arrow-down"></i></kbd> <strong>Moving</strong> between contacts.</p>
+                            <p translate translate-context="Info"><kbd><i class="fa fa-long-arrow-right"></i></kbd> <strong>To enter</strong> contact details.</p>
+                            <p translate translate-context="Info"><kbd>c</kbd> <strong>To compose</strong>.</p>
+                            <p translate translate-context="Info"><kbd>t</kbd> <strong>To delete</strong> contact.</p>
+                        </div>
+                        <div class="col-1-2">
+                            <legend class="bold" translate translate-context="Title">Contact Details</legend>
+                            <p translate translate-context="Info"><kbd><i class="fa fa-long-arrow-left"></i></kbd> <strong>Exits</strong> contact details.</p>
+                            <p translate translate-context="Info"><kbd>TAB</kbd> <strong>Navigates</strong> between fields.</p>
+                            <p translate translate-context="Info"><kbd>command</kbd> + <kbd>s</kbd> <strong>Saves</strong> the contact.</p>
+                        </div>
                     </div>
-                </div>
-                <div class="pm_grid">
-                    <div class="col-1-2">
-                        <legend class="bold" translate translate-context="Title">Jumping</legend>
-                        <p translate translate-context="Info"><kbd>g</kbd> then <kbd>i</kbd> Goes to <strong>inbox</strong>.</p>
-                        <p translate translate-context="Info"><kbd>g</kbd> then <kbd>d</kbd> Goes to <strong>drafts</strong>.</p>
-                        <p translate translate-context="Info"><kbd>g</kbd> then <kbd>s</kbd> Goes to <strong>sent</strong>.</p>
-                        <p translate translate-context="Info"><kbd>g</kbd> then <kbd>.</kbd> Goes to <strong>starred</strong>.</p>
-                        <p translate translate-context="Info"><kbd>g</kbd> then <kbd>a</kbd> Goes to <strong>archive</strong>.</p>
-                        <p translate translate-context="Info"><kbd>g</kbd> then <kbd>x</kbd> Goes to <strong>spam</strong>.</p>
-                        <p translate translate-context="Info"><kbd>g</kbd> then <kbd>t</kbd> Goes to <strong>trash</strong>.</p>
-                    </div>
-                    <div class="col-1-2">
-                        <legend class="bold" translate translate-context="Title">Navigation</legend>
-                        <p translate translate-context="Info"><kbd><i class="fa fa-long-arrow-up"></i></kbd> Marks the <strong>previous</strong> message/conversation.</p>
-                        <p translate translate-context="Info"><kbd><i class="fa fa-long-arrow-down"></i></kbd> Marks the <strong>next</strong> message/conversation.</p>
-                        <p translate translate-context="Info"><kbd><i class="fa fa-long-arrow-left"></i></kbd> Marks the last message.</p>
-                        <p translate translate-context="Info"><kbd><i class="fa fa-long-arrow-right"></i></kbd> Unmarks the message.</p>
-                        <p translate translate-context="Info"><kbd>k</kbd> Displays the <strong>newer</strong> conversation.</p>
-                        <p translate translate-context="Info"><kbd>j</kbd> Displays the <strong>older</strong> conversation.</p>
-                        <p translate translate-context="Info"><kbd>enter</kbd> Opens the <strong>marked</strong> message/conversation.</p>
-                        <p translate translate-context="Info"><kbd>escape</kbd> Back to the list.</p>
-                    </div>
-                </div>
+                </details>
             </div>
         </div>
         <div class="modal-footer text-right">

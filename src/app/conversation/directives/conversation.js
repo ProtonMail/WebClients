@@ -143,6 +143,10 @@ function conversation(
                 }
             });
 
+            on('composer.create', () => {
+                $rootScope.$emit('composer.new', { type: 'new', data: {} });
+            });
+
             on('unmarkMessages', () => {
                 scope.markedMessage = undefined;
                 unsubscribeActions();

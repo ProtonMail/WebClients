@@ -16,6 +16,7 @@
                     type="text"
                     placeholder="{{ UI.placeholder }}"
                     class="form-control"
+                    tabindex="2"
                     ng-model="item.label"
                     ng-class="{ 'contactItem-label-editable' : UI.allowCustom, 'contactItem-label-selectable': UI.selectable }"
                     ng-change="setLabel(item)"
@@ -45,6 +46,7 @@
                         data-valid-email
                         placeholder="{{ UI.placeholder }}"
                         class="form-control contactItem-field"
+                        tabindex="2"
                         ng-class="{ 'contactItem-input-with-icon': UI.inputType === 'email' }"
                         ng-model="item.value"
                         ng-change="change()">
@@ -53,6 +55,7 @@
                         ng-if="UI.mode === 'multiLine'"
                         placeholder="{{ UI.placeholder }}"
                         class="form-control contactItem-field"
+                        tabindex="2"
                         ng-model="item.value"
                         ng-change="change()"></textarea>
 
