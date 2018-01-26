@@ -4,6 +4,8 @@ import _ from 'lodash';
 function contactDetailsModel(contactTransformLabel, CONSTANTS, contactSchema, gettextCatalog) {
     const ESCAPE_REGEX = /:|,|;|"/gi;
     const UNESCAPE_REGEX = /\\:|\\,|\\;|\\"/gi;
+    const BACKSLASH_SEMICOLON_REGEX = /\\;/gi;
+    const SPECIAL_CHARACTER_REGEX = /🐶 🐱 🐭 🐹 🐰 🦊 🐻 🐼/gi;
 
     const I18N = {
         unknown: gettextCatalog.getString('Unknown', null, 'Default display name vcard')
@@ -65,7 +67,14 @@ function contactDetailsModel(contactTransformLabel, CONSTANTS, contactSchema, ge
     const cleanValue = (value = '', key = '') => {
         // ADR and N contains several value separeted by semicolon
         if (key === 'adr' || key === 'n') {
-            return value.split(';').map(unescapeValue);
+            // https://github.com/ProtonMail/Angular/issues/6298
+            // To avoid problem with the split on ; we need to replace \; first and then re-inject the \;
+            // There is no negative lookbehind in JS regex
+            return value
+                .replace(BACKSLASH_SEMICOLON_REGEX, '🐶 🐱 🐭 🐹 🐰 🦊 🐻 🐼')
+                .split(';')
+                .map((value) => value.replace(SPECIAL_CHARACTER_REGEX, '\\;'))
+                .map(unescapeValue);
         }
         return unescapeValue(value);
     };
