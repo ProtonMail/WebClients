@@ -15,7 +15,7 @@ describe('CreateLabel directive', () => {
         }
     };
 
-    angular.module(MODULE, ['test.templates'])
+    angular.module(MODULE, ['templates-app'])
         .factory('labelModal', () => labelModal)
         .directive('createLabel', service);
 

@@ -1,7 +1,7 @@
 import service from '../../../../src/app/message/services/transformBase';
 
 describe('transformBase service', () => {
-    const factory = service();
+    const factory = service;
 
     const URL_PROTON = 'https://protonmail.com';
     const URL_PROTON_SLASH = 'https://protonmail.com/';
@@ -49,7 +49,7 @@ describe('transformBase service', () => {
         describe('For a link', () => {
             const html = getDocument(URL_PROTON);
             beforeEach(() => {
-                output = factory(html);
+                output = factory(html, html);
                 getLinks = (type = 'relative') => [].slice.call(output.querySelectorAll(`.link-${type}`)).map((node) => node.href);
             });
 
@@ -82,7 +82,7 @@ describe('transformBase service', () => {
 
             const html = getDocument(URL_PROTON);
             beforeEach(() => {
-                output = factory(html);
+                output = factory(html, html);
                 getImages = (type = 'relative') => [].slice.call(output.querySelectorAll(`.img-${type}`)).map((node) => node.src);
             });
 
@@ -119,7 +119,7 @@ describe('transformBase service', () => {
         describe('For a link', () => {
             const html = getDocument(URL_PROTON_SLASH);
             beforeEach(() => {
-                output = factory(html);
+                output = factory(html, html);
                 getLinks = (type = 'relative') => [].slice.call(output.querySelectorAll(`.link-${type}`)).map((node) => node.href);
             });
 
@@ -152,7 +152,7 @@ describe('transformBase service', () => {
 
             const html = getDocument(URL_PROTON_SLASH);
             beforeEach(() => {
-                output = factory(html);
+                output = factory(html, html);
                 getImages = (type = 'relative') => [].slice.call(output.querySelectorAll(`.img-${type}`)).map((node) => node.src);
             });
 
@@ -190,7 +190,7 @@ describe('transformBase service', () => {
         describe('For a link', () => {
             const html = getDocument();
             beforeEach(() => {
-                output = factory(html);
+                output = factory(html, html);
                 getLinks = (type = 'relative') => {
                     return [].slice.call(output.querySelectorAll(`.link-${type}`))
                         .map((node) => node.getAttribute('href'));
@@ -225,7 +225,7 @@ describe('transformBase service', () => {
 
             const html = getDocument();
             beforeEach(() => {
-                output = factory(html);
+                output = factory(html, html);
                 getImages = (type = 'relative') => [].slice.call(output.querySelectorAll(`.img-${type}`)).map((node) => node.src);
             });
 

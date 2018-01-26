@@ -1,5 +1,5 @@
 window.openpgp = {
     config: {},
     util: {},
-    initWorker: function() {}
+    initWorker: function () {}
 };

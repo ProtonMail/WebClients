@@ -1,4 +1,11 @@
-import service, { formatSubject, createMessage, omitUserAddresses, injectInline, findSender } from '../../../../src/app/message/services/messageBuilder';
+import _ from 'lodash';
+import service, {
+    formatSubject,
+    createMessage,
+    omitUserAddresses,
+    injectInline,
+    findSender
+} from '../../../../src/app/message/services/messageBuilder';
 import { CONSTANTS } from '../../../../src/app/constants';
 
 const RE_PREFIX = 'Re:';
@@ -22,7 +29,7 @@ describe('Format subject', () => {
     ];
 
     it('should add the RE only if id does not start with it', () => {
-        const [ subject, reply, forward, fwreply, reforward ] = listRe;
+        const [subject, reply, forward, fwreply, reforward] = listRe;
         expect(formatSubject(subject, RE_PREFIX)).toBe(`${RE_PREFIX} ${subject}`);
         expect(formatSubject(reply, RE_PREFIX)).toBe(reply);
         expect(formatSubject(forward, RE_PREFIX)).toBe(`${RE_PREFIX} ${forward}`);
@@ -31,7 +38,7 @@ describe('Format subject', () => {
     });
 
     it('should add the Fw only if id does not start with it', () => {
-        const [ subject, reply, forward, fwreply, reforward ] = listFw;
+        const [subject, reply, forward, fwreply, reforward] = listFw;
         expect(formatSubject(subject, FW_PREFIX)).toBe(`${FW_PREFIX} ${subject}`);
         expect(formatSubject(reply, FW_PREFIX)).toBe(`${FW_PREFIX} ${reply}`);
         expect(formatSubject(forward, FW_PREFIX)).toBe(forward);
@@ -262,7 +269,7 @@ describe('Create type of message', () => {
             it('should bind values', () => {
                 expect(newMsg.Subject).toEqual(`${RE_PREFIX} monique`);
                 expect(newMsg.ToList).toEqual(['jeanne@pt.com']);
-                expect(newMsg.CCList).toEqual([ { Address: 'yolo@pt.com' } ]);
+                expect(newMsg.CCList).toEqual([{ Address: 'yolo@pt.com' }]);
                 expect(newMsg.BCCList).toEqual(undefined);
                 expect(newMsg.Action).toEqual(CONSTANTS.REPLY_ALL);
             });
@@ -418,14 +425,14 @@ describe('messageBuilder factory', () => {
     let spySetDecryptedBody = jasmine.createSpy();
     let spyMessageModelMock = jasmine.createSpy();
     let spyLocalReadableTime = jasmine.createSpy();
-    let spyUtcReadableTime = jasmine.createSpy();
     let spyPrepareContent = jasmine.createSpy();
     let userMock = { Signature: '', DraftMIMEType: 'text/html' };
 
     let rootScope, factory;
 
+    const mailSettingsMock = { Signature: '', DraftMIMEType: 'text/html', RightToLeft: undefined };
+    const mailSettingsModel = { get: (k) => mailSettingsMock[k] };
     const gettextCatalog = { getString: _.identity };
-    const tools = { contactsToString: _.noop };
     const sanitize = { input: _.identity, message: _.identity };
     const textToHtmlMail = { parse: _.identity };
     const authentication = { user: userMock };
@@ -458,6 +465,7 @@ Est-ce que tu vas bien ?
     const TESTABLE_ADDRESS_DEFAULT = { Status: 1, Receive: 1, Send: 2, ID: 42, Email: 'haquecoucou@mulot.fr' };
 
     let DEFAULT_MESSAGE;
+
     class Message {
         constructor(msg) {
             _.extend(this, angular.copy(msg));
@@ -474,6 +482,7 @@ Est-ce que tu vas bien ?
             return MESSAGE_BODY;
         }
     }
+
     const messageModelMock = (data) => {
         spyMessageModelMock(data);
         return new Message(data);
@@ -483,17 +492,23 @@ Est-ce que tu vas bien ?
             spyLocalReadableTime(...args);
             return 'localReadableTime';
         });
-        $provide.factory('utcReadableTimeFilter', () => (...args) => {
-            spyUtcReadableTime(...args);
-            return 'utcReadableTime';
-        });
     }));
     beforeEach(
         angular.mock.inject(($injector) => {
             const $filter = $injector.get('$filter');
             spyOn(gettextCatalog, 'getString').and.callThrough();
 
-            factory = service(gettextCatalog, prepareContent, composerFromModel, tools, authentication, messageModelMock, $filter, signatureBuilder, sanitize, textToHtmlMail);
+            factory = service(
+                $filter,
+                authentication,
+                composerFromModel,
+                gettextCatalog,
+                mailSettingsModel,
+                messageModelMock,
+                prepareContent,
+                sanitize,
+                signatureBuilder,
+                textToHtmlMail);
 
             DEFAULT_MESSAGE = {
                 Type: CONSTANTS.DRAFT,
@@ -504,6 +519,7 @@ Est-ce que tu vas bien ?
                 numTags: [],
                 recipientFields: [],
                 MIMEType: 'text/html',
+                RightToLeft: undefined,
                 Subject: '',
                 PasswordHint: '',
                 IsEncrypted: 0,
@@ -530,1443 +546,279 @@ Est-ce que tu vas bien ?
     });
 
     describe('Create a message', () => {
-        describe('A new message from nothing', () => {
-            let item;
-            const match = { Status: 1, Send: 1, ID: 2 };
 
-            let DEFAULT_MESSAGE_COPY;
-
-            beforeEach(() => {
-                spyPrepareContent = jasmine.createSpy();
-                spyLocalReadableTime = jasmine.createSpy();
-                spyUtcReadableTime = jasmine.createSpy();
-                spyGetDecryptedBody = jasmine.createSpy();
-                spySetDecryptedBody = jasmine.createSpy();
-                spyMessageModelMock = jasmine.createSpy();
-                userMock.Addresses = [TESTABLE_ADDRESS_DEFAULT, { Status: 2 }, match];
-                spyOn(textToHtmlMail, 'parse').and.callThrough();
-                spyOn(signatureBuilder, 'insert').and.returnValue(USER_SIGNATURE);
-                spyOn(composerFromModel, 'get').and.returnValue({ address: DEFAULT_MESSAGE.From });
-                spyOn(tools, 'contactsToString').and.returnValue('');
-                spyOn(sanitize, 'input').and.callFake(_.identity);
-
-                DEFAULT_MESSAGE_COPY = _.extend({}, DEFAULT_MESSAGE);
-                item = factory.create('new');
-            });
-
-            it('should build a new message', () => {
-                expect(spyMessageModelMock).toHaveBeenCalledWith(undefined);
-                expect(spyMessageModelMock).toHaveBeenCalledTimes(1);
-            });
-
-            it('should not prepareContent', () => {
-                expect(spyPrepareContent).not.toHaveBeenCalled();
-            });
-
-            it('should not parse text', () => {
-                expect(textToHtmlMail.parse).not.toHaveBeenCalled();
-            });
-
-            it('should create a new signature', () => {
-                expect(signatureBuilder.insert).toHaveBeenCalledTimes(1);
-                expect(signatureBuilder.insert).toHaveBeenCalledWith(jasmine.any(Message), { action: 'new' });
-            });
-            it('should load the sender', () => {
-                expect(composerFromModel.get).toHaveBeenCalledTimes(1);
-                expect(composerFromModel.get).toHaveBeenCalledWith(jasmine.any(Object));
-            });
-
-            it('should create a valid message', () => {
-                const msg = signatureBuilder.insert.calls.argsFor(0)[0];
-                Object.keys(msg).forEach((key) => {
-                    expect(msg[key]).toEqual(DEFAULT_MESSAGE[key]);
-                });
-            });
-
-            it('should set the decrypted body', () => {
-                expect(spySetDecryptedBody).toHaveBeenCalledWith(USER_SIGNATURE);
-                expect(spySetDecryptedBody).toHaveBeenCalledTimes(1);
-            });
-
-            it('should return a new default object', () => {
-                Object.keys(item).forEach((key) => {
-                    expect(item[key]).toEqual(DEFAULT_MESSAGE[key]);
-                });
-            });
-
-            it('should return an instance of Message', () => {
-                expect(item.constructor).toMatch(/Message/);
-            });
-
-            it('should set a value to Type', () => {
-                expect(item.Type).toBe(DEFAULT_MESSAGE_COPY.Type);
-            });
-
-            it('should set a value to ToList', () => {
-                expect(item.ToList).toEqual(DEFAULT_MESSAGE_COPY.ToList);
-            });
-
-            it('should set a value to CCList', () => {
-                expect(item.CCList).toEqual(DEFAULT_MESSAGE_COPY.CCList);
-            });
-
-            it('should set a value to BCCList', () => {
-                expect(item.BCCList).toEqual(DEFAULT_MESSAGE_COPY.BCCList);
-            });
-
-            it('should set a value to Attachments', () => {
-                expect(item.Attachments).toEqual(DEFAULT_MESSAGE_COPY.Attachments);
-            });
-
-            it('should set a value to numTags', () => {
-                expect(item.numTags).toEqual(DEFAULT_MESSAGE_COPY.numTags);
-            });
-
-            it('should set a value to recipientFields', () => {
-                expect(item.recipientFields).toEqual(DEFAULT_MESSAGE_COPY.recipientFields);
-            });
-
-            it('should set a value to Subject', () => {
-                expect(item.Subject).toBe(DEFAULT_MESSAGE_COPY.Subject);
-            });
-
-            it('should set a value to PasswordHint', () => {
-                expect(item.PasswordHint).toBe(DEFAULT_MESSAGE_COPY.PasswordHint);
-            });
-
-            it('should set a value to IsEncrypted', () => {
-                expect(item.IsEncrypted).toBe(DEFAULT_MESSAGE_COPY.IsEncrypted);
-            });
-
-            it('should set a value to ExpirationTime', () => {
-                expect(item.ExpirationTime).toBe(DEFAULT_MESSAGE_COPY.ExpirationTime);
-            });
-
-            it('should set a value to From', () => {
-                expect(item.From).toEqual(DEFAULT_MESSAGE_COPY.From);
-            });
-
-            it('should set a value to uploading', () => {
-                expect(item.uploading).toBe(DEFAULT_MESSAGE_COPY.uploading);
-            });
-
-            it('should set a value to toFocussed', () => {
-                expect(item.toFocussed).toBe(DEFAULT_MESSAGE_COPY.toFocussed);
-            });
-
-            it('should set a value to autocompletesFocussed', () => {
-                expect(item.autocompletesFocussed).toBe(DEFAULT_MESSAGE_COPY.autocompletesFocussed);
-            });
-
-            it('should set a value to ccbcc', () => {
-                expect(item.ccbcc).toBe(DEFAULT_MESSAGE_COPY.ccbcc);
-            });
-
-            it('should set a value to AddressID', () => {
-                expect(item.AddressID).toBe(DEFAULT_MESSAGE_COPY.AddressID);
-            });
-
-            it('should set a value to NumEmbedded', () => {
-                expect(item.NumEmbedded).toBe(DEFAULT_MESSAGE_COPY.NumEmbedded);
-            });
-
-            it('should set a value to DecryptedBody', () => {
-                expect(item.DecryptedBody).toBe(DEFAULT_MESSAGE_COPY.DecryptedBody);
-            });
-
-            it('should not have called the filter localReadableTime ', () => {
-                expect(spyLocalReadableTime).not.toHaveBeenCalled();
-            });
-
-            it('should not have called the filter utcReadableTime ', () => {
-                expect(spyUtcReadableTime).not.toHaveBeenCalled();
-            });
-
-            it('should not have formated contact as a string ', () => {
-                expect(tools.contactsToString).not.toHaveBeenCalled();
-            });
-
-            it('should not have sanitize data ', () => {
-                expect(sanitize.input).not.toHaveBeenCalled();
-            });
+        createMessageTest({
+            type: 'A new message from nothing',
+            defaultMessageExtension: {},
+            actionConstant: undefined,
+            toList: [],
+            ccList: [],
+            bccList: [],
+            subject: '',
+            body: '',
+            action: 'new',
+            currentMessageExtension: {},
+            createMessage: (currentMsg) => {
+                const match = { Status: 1, Send: 1, ID: 2 };
+                mailSettingsMock.Addresses = [TESTABLE_ADDRESS_DEFAULT, { Status: 2 }, match];
+                return factory.create('new', currentMsg);
+            }
         });
 
-        describe('A new message from default config', () => {
-            let item;
-            const match = { Status: 1, Send: 1, ID: 2 };
-            let DEFAULT_MESSAGE_COPY;
-
-            beforeEach(() => {
-                spyLocalReadableTime = jasmine.createSpy();
-                spyUtcReadableTime = jasmine.createSpy();
-                spyGetDecryptedBody = jasmine.createSpy();
-                spySetDecryptedBody = jasmine.createSpy();
-                spyMessageModelMock = jasmine.createSpy();
-                userMock.Addresses = [TESTABLE_ADDRESS_DEFAULT, { Status: 2 }, match];
-                spyOn(composerFromModel, 'get').and.returnValue({ address: DEFAULT_MESSAGE.From });
-
-                spyOn(textToHtmlMail, 'parse').and.callThrough();
-                spyOn(signatureBuilder, 'insert').and.returnValue(USER_SIGNATURE);
-                spyOn(tools, 'contactsToString').and.returnValue('');
-                spyOn(sanitize, 'input').and.callFake(_.identity);
-
-                DEFAULT_MESSAGE_COPY = _.extend({}, DEFAULT_MESSAGE, {
-                    xOriginalTo: 'dew',
-                    Subject: 'polo',
-                    ToList: ['bob'],
-                    CCList: ['bobby'],
-                    BCCList: ['bobette']
-                });
-                spyOn(message, 'getDecryptedBody').and.returnValue('');
-                item = factory.create(
-                    'new',
-                    _.extend({}, message, {
-                        xOriginalTo: 'dew',
-                        Subject: 'polo',
-                        ToList: ['bob'],
-                        CCList: ['bobby'],
-                        BCCList: ['bobette'],
-                        DecryptedBody: USER_SIGNATURE2
-                    })
-                );
-            });
-
-            it('should build a new message', () => {
-                expect(spyMessageModelMock).toHaveBeenCalledWith(undefined);
-                expect(spyMessageModelMock).toHaveBeenCalledTimes(1);
-            });
-
-            it('should not parse text', () => {
-                expect(textToHtmlMail.parse).not.toHaveBeenCalled();
-            });
-
-            it('should create a new signature', () => {
-                expect(signatureBuilder.insert).toHaveBeenCalledTimes(1);
-                expect(signatureBuilder.insert).toHaveBeenCalledWith(jasmine.any(Message), { action: 'new' });
-            });
-
-            it('should load the sender', () => {
-                expect(composerFromModel.get).toHaveBeenCalledTimes(1);
-                expect(composerFromModel.get).toHaveBeenCalledWith(jasmine.any(Object));
-            });
-
-            it('should create a valid message', () => {
-                const msg = signatureBuilder.insert.calls.argsFor(0)[0];
-                Object.keys(msg).forEach((key) => {
-                    expect(msg[key]).toEqual(DEFAULT_MESSAGE_COPY[key]);
-                });
-            });
-
-            it('should set a value to Type', () => {
-                expect(item.Type).toBe(DEFAULT_MESSAGE_COPY.Type);
-            });
-
-            it('should set a value to ToList', () => {
-                expect(item.ToList).toEqual(DEFAULT_MESSAGE_COPY.ToList);
-            });
-
-            it('should set a value to CCList', () => {
-                expect(item.CCList).toEqual(DEFAULT_MESSAGE_COPY.CCList);
-            });
-
-            it('should set a value to BCCList', () => {
-                expect(item.BCCList).toEqual(DEFAULT_MESSAGE_COPY.BCCList);
-            });
-
-            it('should set a value to Attachments', () => {
-                expect(item.Attachments).toEqual(DEFAULT_MESSAGE_COPY.Attachments);
-            });
-
-            it('should set a value to numTags', () => {
-                expect(item.numTags).toEqual(DEFAULT_MESSAGE_COPY.numTags);
-            });
-
-            it('should set a value to recipientFields', () => {
-                expect(item.recipientFields).toEqual(DEFAULT_MESSAGE_COPY.recipientFields);
-            });
-
-            it('should set a value to Subject', () => {
-                expect(item.Subject).toBe(DEFAULT_MESSAGE_COPY.Subject);
-            });
-
-            it('should set a value to PasswordHint', () => {
-                expect(item.PasswordHint).toBe(DEFAULT_MESSAGE_COPY.PasswordHint);
-            });
-
-            it('should set a value to IsEncrypted', () => {
-                expect(item.IsEncrypted).toBe(DEFAULT_MESSAGE_COPY.IsEncrypted);
-            });
-
-            it('should set a value to ExpirationTime', () => {
-                expect(item.ExpirationTime).toBe(DEFAULT_MESSAGE_COPY.ExpirationTime);
-            });
-
-            it('should set a value to From', () => {
-                expect(item.From).toEqual(DEFAULT_MESSAGE_COPY.From);
-            });
-
-            it('should set a value to uploading', () => {
-                expect(item.uploading).toBe(DEFAULT_MESSAGE_COPY.uploading);
-            });
-
-            it('should set a value to toFocussed', () => {
-                expect(item.toFocussed).toBe(DEFAULT_MESSAGE_COPY.toFocussed);
-            });
-
-            it('should set a value to autocompletesFocussed', () => {
-                expect(item.autocompletesFocussed).toBe(DEFAULT_MESSAGE_COPY.autocompletesFocussed);
-            });
-
-            it('should set a value to ccbcc', () => {
-                expect(item.ccbcc).toBe(DEFAULT_MESSAGE_COPY.ccbcc);
-            });
-
-            it('should set a value to AddressID', () => {
-                expect(item.AddressID).toBe(DEFAULT_MESSAGE_COPY.AddressID);
-            });
-
-            it('should set a value to NumEmbedded', () => {
-                expect(item.NumEmbedded).toBe(DEFAULT_MESSAGE_COPY.NumEmbedded);
-            });
-
-            it('should set a value to DecryptedBody', () => {
-                expect(item.DecryptedBody).toBe(DEFAULT_MESSAGE_COPY.DecryptedBody);
-            });
-
-            it('should set MIMEType to html', () => {
-                expect(item.MIMEType).toBe('text/html');
-            });
-
-            it('should set the decrypted body', () => {
-                expect(spySetDecryptedBody).toHaveBeenCalledWith(USER_SIGNATURE);
-                expect(spySetDecryptedBody).toHaveBeenCalledWith(USER_SIGNATURE2);
-                expect(spySetDecryptedBody).toHaveBeenCalledTimes(2);
-            });
-
-            it('should return a new default object', () => {
-                const keysItem = Object.keys(item).sort();
-                const keysDefault = Object.keys(DEFAULT_MESSAGE_COPY).sort();
-                expect(keysItem.length).toBe(keysDefault.length);
-                expect(keysItem).toEqual(keysDefault.sort());
-            });
-
-            it('should return an instance of Message', () => {
-                expect(item.constructor).toMatch(/Message/);
-            });
-
-            it('should not have called the filter localReadableTime ', () => {
-                expect(spyLocalReadableTime).not.toHaveBeenCalled();
-            });
-
-            it('should not have called the filter utcReadableTime ', () => {
-                expect(spyUtcReadableTime).not.toHaveBeenCalled();
-            });
-
-            it('should not have formated contact as a string ', () => {
-                expect(tools.contactsToString).not.toHaveBeenCalled();
-            });
-
-            it('should try to get the default decryptBody of the message', () => {
-                expect(message.getDecryptedBody).not.toHaveBeenCalled();
-            });
-
-            it('should not have sanitize data ', () => {
-                expect(sanitize.input).not.toHaveBeenCalled();
-            });
+        createMessageTest({
+            type: 'A new message from default config',
+            defaultMessageExtension: {
+                xOriginalTo: 'dew',
+                Subject: 'polo',
+                ToList: ['bob'],
+                CCList: ['bobby'],
+                BCCList: ['bobette']
+            },
+            actionConstant: undefined,
+            toList: ['bob'],
+            ccList: ['bobby'],
+            bccList: ['bobette'],
+            subject: '',
+            action: 'new',
+            currentMessageExtension: {
+                xOriginalTo: 'dew',
+                Subject: 'polo',
+                ToList: ['bob'],
+                CCList: ['bobby'],
+                BCCList: ['bobette'],
+                DecryptedBody: USER_SIGNATURE2
+            },
+            createMessage: (currentMsg) => {
+                const match = { Status: 1, Send: 1, ID: 2 };
+                mailSettingsMock.Addresses = [TESTABLE_ADDRESS_DEFAULT, { Status: 2 }, match];
+                return factory.create('new', currentMsg);
+            }
         });
 
-        describe('A new message from default config as plain/text', () => {
-            let item;
-            const match = { Status: 1, Send: 1, ID: 2 };
-            let DEFAULT_MESSAGE_COPY;
-
-            beforeEach(() => {
-                spyLocalReadableTime = jasmine.createSpy();
-                spyUtcReadableTime = jasmine.createSpy();
-                spyGetDecryptedBody = jasmine.createSpy();
-                spySetDecryptedBody = jasmine.createSpy();
-                spyMessageModelMock = jasmine.createSpy();
-                userMock.Addresses = [TESTABLE_ADDRESS_DEFAULT, { Status: 2 }, match];
-                userMock.DraftMIMEType = 'text/plain';
-                spyOn(textToHtmlMail, 'parse').and.callThrough();
-                spyOn(signatureBuilder, 'insert').and.returnValue(USER_SIGNATURE);
-                spyOn(tools, 'contactsToString').and.returnValue('');
-                spyOn(sanitize, 'input').and.callFake(_.identity);
-                spyOn(composerFromModel, 'get').and.returnValue({ address: DEFAULT_MESSAGE.From });
-                DEFAULT_MESSAGE_COPY = _.extend({}, DEFAULT_MESSAGE, {
-                    Subject: 'polo',
-                    ToList: ['bob'],
-                    CCList: ['bobby'],
-                    BCCList: ['bobette'],
-                    MIMEType: 'text/plain'
-                });
-                spyOn(message, 'getDecryptedBody').and.returnValue('');
-                item = factory.create(
-                    'new',
-                    _.extend({}, message, {
-                        Subject: 'polo',
-                        ToList: ['bob'],
-                        CCList: ['bobby'],
-                        BCCList: ['bobette'],
-                        DecryptedBody: USER_SIGNATURE2
-                    })
-                );
-            });
-
-            afterEach(() => {
-                userMock.DraftMIMEType = 'text/html';
-            });
-
-            it('should build a new message', () => {
-                expect(spyMessageModelMock).toHaveBeenCalledWith(undefined);
-                expect(spyMessageModelMock).toHaveBeenCalledTimes(1);
-            });
-
-            it('should not parse text', () => {
-                expect(textToHtmlMail.parse).not.toHaveBeenCalled();
-            });
-
-            it('should create a new signature', () => {
-                expect(signatureBuilder.insert).toHaveBeenCalledTimes(1);
-                expect(signatureBuilder.insert).toHaveBeenCalledWith(jasmine.any(Message), { action: 'new' });
-            });
-
-            it('should load the sender', () => {
-                expect(composerFromModel.get).toHaveBeenCalledTimes(1);
-                expect(composerFromModel.get).toHaveBeenCalledWith(jasmine.any(Object));
-            });
-
-            it('should create a valid message', () => {
-                const msg = signatureBuilder.insert.calls.argsFor(0)[0];
-                Object.keys(msg).forEach((key) => {
-                    expect(msg[key]).toEqual(DEFAULT_MESSAGE_COPY[key]);
-                });
-            });
-
-            it('should set a value to Type', () => {
-                expect(item.Type).toBe(DEFAULT_MESSAGE_COPY.Type);
-            });
-
-            it('should set a value to ToList', () => {
-                expect(item.ToList).toEqual(DEFAULT_MESSAGE_COPY.ToList);
-            });
-
-            it('should set a value to CCList', () => {
-                expect(item.CCList).toEqual(DEFAULT_MESSAGE_COPY.CCList);
-            });
-
-            it('should set a value to BCCList', () => {
-                expect(item.BCCList).toEqual(DEFAULT_MESSAGE_COPY.BCCList);
-            });
-
-            it('should set a value to Attachments', () => {
-                expect(item.Attachments).toEqual(DEFAULT_MESSAGE_COPY.Attachments);
-            });
-
-            it('should set a value to numTags', () => {
-                expect(item.numTags).toEqual(DEFAULT_MESSAGE_COPY.numTags);
-            });
-
-            it('should set a value to recipientFields', () => {
-                expect(item.recipientFields).toEqual(DEFAULT_MESSAGE_COPY.recipientFields);
-            });
-
-            it('should set a value to Subject', () => {
-                expect(item.Subject).toBe(DEFAULT_MESSAGE_COPY.Subject);
-            });
-
-            it('should set a value to PasswordHint', () => {
-                expect(item.PasswordHint).toBe(DEFAULT_MESSAGE_COPY.PasswordHint);
-            });
-
-            it('should set a value to IsEncrypted', () => {
-                expect(item.IsEncrypted).toBe(DEFAULT_MESSAGE_COPY.IsEncrypted);
-            });
-
-            it('should set a value to ExpirationTime', () => {
-                expect(item.ExpirationTime).toBe(DEFAULT_MESSAGE_COPY.ExpirationTime);
-            });
-
-            it('should set a value to From', () => {
-                expect(item.From).toEqual(DEFAULT_MESSAGE_COPY.From);
-            });
-
-            it('should set a value to uploading', () => {
-                expect(item.uploading).toBe(DEFAULT_MESSAGE_COPY.uploading);
-            });
-
-            it('should set a value to toFocussed', () => {
-                expect(item.toFocussed).toBe(DEFAULT_MESSAGE_COPY.toFocussed);
-            });
-
-            it('should set a value to autocompletesFocussed', () => {
-                expect(item.autocompletesFocussed).toBe(DEFAULT_MESSAGE_COPY.autocompletesFocussed);
-            });
-
-            it('should set a value to ccbcc', () => {
-                expect(item.ccbcc).toBe(DEFAULT_MESSAGE_COPY.ccbcc);
-            });
-
-            it('should set a value to AddressID', () => {
-                expect(item.AddressID).toBe(DEFAULT_MESSAGE_COPY.AddressID);
-            });
-
-            it('should set a value to NumEmbedded', () => {
-                expect(item.NumEmbedded).toBe(DEFAULT_MESSAGE_COPY.NumEmbedded);
-            });
-
-            it('should set a value to DecryptedBody', () => {
-                expect(item.DecryptedBody).toBe(DEFAULT_MESSAGE_COPY.DecryptedBody);
-            });
-
-            it('should set MIMEType to plaintext', () => {
-                expect(item.MIMEType).toBe('text/plain');
-            });
-
-            it('should set the decrypted body', () => {
-                expect(spySetDecryptedBody).toHaveBeenCalledWith(USER_SIGNATURE);
-                expect(spySetDecryptedBody).toHaveBeenCalledWith(USER_SIGNATURE2);
-                expect(spySetDecryptedBody).toHaveBeenCalledTimes(2);
-            });
-
-            it('should return a new default object', () => {
-                const keysItem = Object.keys(item).sort();
-                const keysDefault = Object.keys(DEFAULT_MESSAGE_COPY).sort();
-
-                expect(keysItem.length).toBe(keysDefault.length);
-                expect(keysItem).toEqual(keysDefault.sort());
-            });
-
-            it('should return an instance of Message', () => {
-                expect(item.constructor).toMatch(/Message/);
-            });
-
-            it('should not have called the filter localReadableTime ', () => {
-                expect(spyLocalReadableTime).not.toHaveBeenCalled();
-            });
-
-            it('should not have called the filter utcReadableTime ', () => {
-                expect(spyUtcReadableTime).not.toHaveBeenCalled();
-            });
-
-            it('should not have formated contact as a string ', () => {
-                expect(tools.contactsToString).not.toHaveBeenCalled();
-            });
-
-            it('should try to get the default decryptBody of the message', () => {
-                expect(message.getDecryptedBody).not.toHaveBeenCalled();
-            });
-
-            it('should not have sanitize data ', () => {
-                expect(sanitize.input).not.toHaveBeenCalled();
-            });
+        createMessageTest({
+            type: 'A new message from default config as plain/text',
+            defaultMessageExtension: {
+                Subject: 'polo',
+                ToList: ['bob'],
+                CCList: ['bobby'],
+                BCCList: ['bobette'],
+                MIMEType: 'text/plain'
+            },
+            actionConstant: undefined,
+            toList: ['bob'],
+            ccList: ['bobby'],
+            bccList: ['bobette'],
+            subject: '',
+            action: 'new',
+            currentMessageExtension: {
+                Subject: 'polo',
+                ToList: ['bob'],
+                CCList: ['bobby'],
+                BCCList: ['bobette'],
+                DecryptedBody: USER_SIGNATURE2
+            },
+            createMessage: (currentMsg) => {
+                const match = { Status: 1, Send: 1, ID: 2 };
+                mailSettingsMock.Addresses = [TESTABLE_ADDRESS_DEFAULT, { Status: 2 }, match];
+                mailSettingsMock.DraftMIMEType = 'text/plain';
+                return factory.create('new', currentMsg);
+            }
         });
 
-        describe('A reply message', () => {
-            let item, currentMsg;
-            const match = { Status: 1, Send: 1, ID: 2 };
-            let DEFAULT_MESSAGE_COPY;
-
-            const DEFAULT_MESSAGE_REPLY =
-                '<blockquote class="protonmail_quote" type="cite">-------- Original Message --------<br>Subject: polo<br>Local Time: localReadableTime<br>UTC Time: utcReadableTime<br>From: polo@test.com<br>To: <br><br>prepareContent</blockquote><br>';
-
-            beforeEach(() => {
-                spyPrepareContent = jasmine.createSpy();
-                spyLocalReadableTime = jasmine.createSpy();
-                spyUtcReadableTime = jasmine.createSpy();
-                spyGetDecryptedBody = jasmine.createSpy();
-                spySetDecryptedBody = jasmine.createSpy();
-                spyMessageModelMock = jasmine.createSpy();
-                userMock.Addresses = [TESTABLE_ADDRESS_DEFAULT, { Status: 2 }, match];
-                spyOn(textToHtmlMail, 'parse').and.callThrough();
-                spyOn(signatureBuilder, 'insert').and.returnValue(USER_SIGNATURE);
-                spyOn(tools, 'contactsToString').and.returnValue('');
-                spyOn(message, 'getDecryptedBody').and.returnValue(MESSAGE_BODY);
-                spyOn(sanitize, 'input').and.callFake(_.identity);
-                spyOn(composerFromModel, 'get').and.returnValue({ address: DEFAULT_MESSAGE.From });
-                DEFAULT_MESSAGE_COPY = _.extend({}, DEFAULT_MESSAGE, {
-                    Subject: 'polo',
-                    ToList: ['bob'],
-                    CCList: ['bobby'],
-                    BCCList: ['bobette']
-                });
-                currentMsg = _.extend({}, message, {
-                    ID: Date.now(),
-                    Type: 2,
-                    Subject: 'polo',
-                    ToList: ['bob'],
-                    CCList: ['bobby'],
-                    BCCList: ['bobette'],
-                    Sender: {
-                        Address: 'polo@test.com'
-                    },
-                    DecryptedBody: USER_SIGNATURE2
-                });
-                item = factory.create('reply', currentMsg);
-            });
-
-            it('should build a new message', () => {
-                expect(spyMessageModelMock).toHaveBeenCalledWith(undefined);
-                expect(spyMessageModelMock).toHaveBeenCalledTimes(1);
-            });
-
-            it('should prepareContent', () => {
-                expect(spyPrepareContent).toHaveBeenCalledTimes(1);
-                const [content, message, options] = spyPrepareContent.calls.argsFor(0);
-                expect(content).toBe(MESSAGE_BODY);
-                expect(message.ParentID).toBe(DEFAULT_MESSAGE_COPY.ID);
-                expect(options).toEqual({ blacklist: ['*'], action: 'reply' });
-            });
-
-            it('should not parse text', () => {
-                expect(textToHtmlMail.parse).not.toHaveBeenCalled();
-            });
-
-            it('should have called the filter localReadableTime ', () => {
-                expect(spyLocalReadableTime).toHaveBeenCalledWith(DEFAULT_MESSAGE_COPY.Time);
-                expect(spyLocalReadableTime).toHaveBeenCalledTimes(1);
-            });
-
-            it('should have called the filter utcReadableTime ', () => {
-                expect(spyUtcReadableTime).toHaveBeenCalledWith(DEFAULT_MESSAGE_COPY.Time);
-                expect(spyUtcReadableTime).toHaveBeenCalledTimes(1);
-            });
-
-            it('should have formated contact as a string ', () => {
-                expect(tools.contactsToString).toHaveBeenCalledWith(currentMsg.CCList);
-                expect(tools.contactsToString).toHaveBeenCalledWith(currentMsg.ToList);
-                expect(tools.contactsToString).toHaveBeenCalledTimes(2);
-            });
-
-            it('should read the default message body', () => {
-                expect(message.getDecryptedBody).toHaveBeenCalledTimes(1);
-            });
-
-            it('should sanitize data ', () => {
-                expect(sanitize.input).toHaveBeenCalledWith(`Subject: ${currentMsg.Subject}<br>`);
-                expect(sanitize.input).toHaveBeenCalledTimes(1);
-            });
-
-            it('should create a new signature', () => {
-                expect(signatureBuilder.insert).toHaveBeenCalled();
-                expect(signatureBuilder.insert).toHaveBeenCalledWith(jasmine.any(Message), { action: 'reply' });
-            });
-
-            it('should load the sender', () => {
-                expect(composerFromModel.get).toHaveBeenCalledTimes(1);
-                expect(composerFromModel.get).toHaveBeenCalledWith(jasmine.any(Object));
-            });
-
-            it('should add two new keys for this message', () => {
-                const item = signatureBuilder.insert.calls.argsFor(0)[0];
-                const list = Object.keys(DEFAULT_MESSAGE_COPY).concat('Action', 'ParentID');
-                const listKeysItem = Object.keys(item);
-                expect(listKeysItem.length).toBe(list.length);
-                expect(_.includes(listKeysItem, 'Action')).toBe(true);
-                expect(_.includes(listKeysItem, 'ParentID')).toBe(true);
-            });
-
-            it('should set a value to Type', () => {
-                expect(item.Type).toBe(DEFAULT_MESSAGE_COPY.Type);
-            });
-
-            it('should set a value to ToList', () => {
-                expect(item.ToList).toEqual(DEFAULT_MESSAGE_COPY.ToList);
-            });
-
-            it('should set a value to CCList', () => {
-                expect(item.CCList).toEqual([]);
-            });
-
-            it('should set a value to BCCList', () => {
-                expect(item.BCCList).toEqual([]);
-            });
-
-            it('should set a value to Attachments', () => {
-                expect(item.Attachments).toEqual(DEFAULT_MESSAGE_COPY.Attachments);
-            });
-
-            it('should set a value to numTags', () => {
-                expect(item.numTags).toEqual(DEFAULT_MESSAGE_COPY.numTags);
-            });
-
-            it('should set a value to recipientFields', () => {
-                expect(item.recipientFields).toEqual(DEFAULT_MESSAGE_COPY.recipientFields);
-            });
-
-            it('should set a value to Subject', () => {
-                expect(item.Subject).toBe(`Re: ${DEFAULT_MESSAGE_COPY.Subject}`);
-            });
-
-            it('should set a value to PasswordHint', () => {
-                expect(item.PasswordHint).toBe(DEFAULT_MESSAGE_COPY.PasswordHint);
-            });
-
-            it('should set a value to IsEncrypted', () => {
-                expect(item.IsEncrypted).toBe(DEFAULT_MESSAGE_COPY.IsEncrypted);
-            });
-
-            it('should set a value to ExpirationTime', () => {
-                expect(item.ExpirationTime).toBe(DEFAULT_MESSAGE_COPY.ExpirationTime);
-            });
-
-            it('should set a value to From', () => {
-                expect(item.From).toEqual(DEFAULT_MESSAGE_COPY.From);
-            });
-
-            it('should set a value to uploading', () => {
-                expect(item.uploading).toBe(DEFAULT_MESSAGE_COPY.uploading);
-            });
-
-            it('should set a value to toFocussed', () => {
-                expect(item.toFocussed).toBe(DEFAULT_MESSAGE_COPY.toFocussed);
-            });
-
-            it('should set a value to autocompletesFocussed', () => {
-                expect(item.autocompletesFocussed).toBe(DEFAULT_MESSAGE_COPY.autocompletesFocussed);
-            });
-
-            it('should set a value to ccbcc', () => {
-                expect(item.ccbcc).toBe(DEFAULT_MESSAGE_COPY.ccbcc);
-            });
-
-            it('should set a value to AddressID', () => {
-                expect(item.AddressID).toBe(DEFAULT_MESSAGE_COPY.AddressID);
-            });
-
-            it('should set a value to NumEmbedded', () => {
-                expect(item.NumEmbedded).toBe(DEFAULT_MESSAGE_COPY.NumEmbedded);
-            });
-
-            it('should set a value to DecryptedBody', () => {
-                expect(item.DecryptedBody).toBe(DEFAULT_MESSAGE_COPY.DecryptedBody);
-            });
-
-            it('should set a value to Action', () => {
-                expect(item.Action).toBe(CONSTANTS.REPLY);
-            });
-
-            it('should set a value to ParentID', () => {
-                expect(item.ParentID).toBe(currentMsg.ID);
-            });
-
-            it('should set a value ID', () => {
-                expect(item.ID).toBe(undefined);
-            });
-
-            it('should set MIMEType to html', () => {
-                expect(item.MIMEType).toBe('text/html');
-            });
-
-            it('should set the decrypted body', () => {
-                expect(spySetDecryptedBody).toHaveBeenCalledWith(USER_SIGNATURE);
-                expect(spySetDecryptedBody).toHaveBeenCalledWith(DEFAULT_MESSAGE_REPLY);
-                expect(spySetDecryptedBody).toHaveBeenCalledTimes(2);
-            });
-
-            it('should return a new default object', () => {
-                const keysItem = Object.keys(item).sort();
-                const keysDefault = Object.keys(DEFAULT_MESSAGE_COPY)
-                    .concat('Action', 'ParentID')
-                    .sort();
-
-                expect(keysItem.length).toBe(keysDefault.length);
-                expect(keysItem).toEqual(keysDefault.sort());
-                expect(_.includes(keysItem, 'Action')).toBe(true);
-                expect(_.includes(keysItem, 'ParentID')).toBe(true);
-            });
-
-            it('should return an instance of Message', () => {
-                expect(item.constructor).toMatch(/Message/);
-            });
+        const defaultReply = `-------- Original Message --------<br>
+                On {{date}}, {{name}} {{address}} wrote:<br>
+                <blockquote class="protonmail_quote" type="cite">
+                    prepareContent
+                </blockquote><br>`;
+        createMessageTest({
+            type: 'A reply message',
+            defaultMessageExtension: {
+                Subject: 'polo',
+                ToList: ['bob'],
+                CCList: ['bobby'],
+                BCCList: ['bobette']
+            },
+            actionConstant: CONSTANTS.REPLY,
+            toList: ['bob'],
+            ccList: [],
+            bccList: [],
+            body: defaultReply,
+            subject: 'Re: ',
+            action: 'reply',
+            currentMessageExtension: {
+                ID: Date.now(),
+                Type: 2,
+                Subject: 'polo',
+                ToList: ['bob'],
+                CCList: ['bobby'],
+                BCCList: ['bobette'],
+                Sender: {
+                    Address: 'polo@test.com'
+                },
+                DecryptedBody: USER_SIGNATURE2
+            },
+            createMessage: (currentMsg) => {
+                const match = { Status: 1, Send: 1, ID: 2 };
+                mailSettingsMock.Addresses = [TESTABLE_ADDRESS_DEFAULT, { Status: 2 }, match];
+                return factory.create('reply', currentMsg);
+            }
         });
 
-        describe('A reply message with MIMEType and userMimeType plaintext and type = 3', () => {
-            let item, currentMsg;
-            const match = { Status: 1, Send: 1, ID: 2 };
-            let DEFAULT_MESSAGE_COPY;
-            const DEFAULT_MESSAGE_REPLY =
-                '<blockquote class="protonmail_quote" type="cite">-------- Original Message --------<br>Subject: Re: polo<br>Local Time: localReadableTime<br>UTC Time: utcReadableTime<br>From: polo@test.com<br>To: <br><br>prepareContent</blockquote><br>';
-
-            beforeEach(() => {
-                spyPrepareContent = jasmine.createSpy();
-                spyLocalReadableTime = jasmine.createSpy();
-                spyUtcReadableTime = jasmine.createSpy();
-                spyGetDecryptedBody = jasmine.createSpy();
-                spySetDecryptedBody = jasmine.createSpy();
-                spyMessageModelMock = jasmine.createSpy();
-                userMock.Addresses = [TESTABLE_ADDRESS_DEFAULT, { Status: 2 }, match];
-                userMock.DraftMIMEType = 'text/plain';
-                spyOn(signatureBuilder, 'insert').and.returnValue(USER_SIGNATURE);
-                spyOn(tools, 'contactsToString').and.returnValue('');
-                spyOn(message, 'getDecryptedBody').and.returnValue(MESSAGE_BODY_PLAIN);
-                spyOn(textToHtmlMail, 'parse').and.returnValue(MESSAGE_BODY_PLAIN_ESCAPED);
-                spyOn(sanitize, 'input').and.callFake(_.identity);
-                spyOn(composerFromModel, 'get').and.returnValue({ address: DEFAULT_MESSAGE.From });
-
-                DEFAULT_MESSAGE_COPY = _.extend({}, DEFAULT_MESSAGE, {
-                    Subject: 'polo',
-                    ToList: ['bob'],
-                    CCList: ['bobby'],
-                    BCCList: ['bobette']
-                });
-                currentMsg = _.extend({}, message, {
-                    ID: Date.now(),
-                    Type: 3,
-                    Subject: 'Re: polo',
-                    MIMEType: 'text/plain',
-                    ToList: ['bob'],
-                    CCList: ['bobby'],
-                    BCCList: ['bobette'],
-                    Sender: {
-                        Address: 'polo@test.com'
-                    },
-                    DecryptedBody: USER_SIGNATURE2
-                });
-                item = factory.create('reply', currentMsg);
-            });
-
-            afterEach(() => {
-                userMock.DraftMIMEType = 'text/html';
-            });
-
-            it('should build a new message', () => {
-                expect(spyMessageModelMock).toHaveBeenCalledWith(undefined);
-                expect(spyMessageModelMock).toHaveBeenCalledTimes(1);
-            });
-
-            it('should prepareContent', () => {
-                expect(spyPrepareContent).toHaveBeenCalledTimes(1);
-                const [content, message, options] = spyPrepareContent.calls.argsFor(0);
-                expect(content).toBe(MESSAGE_BODY_PLAIN_ESCAPED);
-                expect(message.ParentID).toBe(DEFAULT_MESSAGE_COPY.ID);
-                expect(options).toEqual({ blacklist: ['*'], action: 'reply' });
-            });
-
-            it('should parse text', () => {
-                expect(textToHtmlMail.parse).toHaveBeenCalledTimes(1);
-                expect(textToHtmlMail.parse).toHaveBeenCalledWith(MESSAGE_BODY_PLAIN);
-            });
-
-            it('should have called the filter localReadableTime ', () => {
-                expect(spyLocalReadableTime).toHaveBeenCalledWith(DEFAULT_MESSAGE_COPY.Time);
-                expect(spyLocalReadableTime).toHaveBeenCalledTimes(1);
-            });
-
-            it('should have called the filter utcReadableTime ', () => {
-                expect(spyUtcReadableTime).toHaveBeenCalledWith(DEFAULT_MESSAGE_COPY.Time);
-                expect(spyUtcReadableTime).toHaveBeenCalledTimes(1);
-            });
-
-            it('should have formated contact as a string ', () => {
-                expect(tools.contactsToString).toHaveBeenCalledWith(currentMsg.CCList);
-                expect(tools.contactsToString).toHaveBeenCalledWith(currentMsg.ToList);
-                expect(tools.contactsToString).toHaveBeenCalledTimes(2);
-            });
-
-            it('should read the default message body', () => {
-                expect(message.getDecryptedBody).toHaveBeenCalledTimes(1);
-            });
-
-            it('should sanitize data ', () => {
-                expect(sanitize.input).toHaveBeenCalledWith(`Subject: ${currentMsg.Subject}<br>`);
-                expect(sanitize.input).toHaveBeenCalledTimes(1);
-            });
-
-            it('should create a new signature', () => {
-                expect(signatureBuilder.insert).toHaveBeenCalled();
-                expect(signatureBuilder.insert).toHaveBeenCalledWith(jasmine.any(Message), { action: 'reply' });
-            });
-
-            it('should load the sender', () => {
-                expect(composerFromModel.get).toHaveBeenCalledTimes(1);
-                expect(composerFromModel.get).toHaveBeenCalledWith(jasmine.any(Object));
-            });
-
-            it('should add two new keys for this message', () => {
-                const item = signatureBuilder.insert.calls.argsFor(0)[0];
-                const list = Object.keys(DEFAULT_MESSAGE_COPY).concat('Action', 'ParentID');
-                const listKeysItem = Object.keys(item);
-                expect(listKeysItem.length).toBe(list.length);
-                expect(_.includes(listKeysItem, 'Action')).toBe(true);
-                expect(_.includes(listKeysItem, 'ParentID')).toBe(true);
-            });
-
-            it('should set a value to Type', () => {
-                expect(item.Type).toBe(DEFAULT_MESSAGE_COPY.Type);
-            });
-
-            it('should set a value to ToList', () => {
-                expect(item.ToList).toEqual(DEFAULT_MESSAGE_COPY.ToList);
-            });
-
-            it('should set a value to CCList', () => {
-                expect(item.CCList).toEqual([]);
-            });
-
-            it('should set a value to BCCList', () => {
-                expect(item.BCCList).toEqual([]);
-            });
-
-            it('should set a value to Attachments', () => {
-                expect(item.Attachments).toEqual(DEFAULT_MESSAGE_COPY.Attachments);
-            });
-
-            it('should set a value to numTags', () => {
-                expect(item.numTags).toEqual(DEFAULT_MESSAGE_COPY.numTags);
-            });
-
-            it('should set a value to recipientFields', () => {
-                expect(item.recipientFields).toEqual(DEFAULT_MESSAGE_COPY.recipientFields);
-            });
-
-            it('should set a value to Subject', () => {
-                expect(item.Subject).toBe(`Re: ${DEFAULT_MESSAGE_COPY.Subject}`);
-            });
-
-            it('should set a value to PasswordHint', () => {
-                expect(item.PasswordHint).toBe(DEFAULT_MESSAGE_COPY.PasswordHint);
-            });
-
-            it('should set a value to IsEncrypted', () => {
-                expect(item.IsEncrypted).toBe(DEFAULT_MESSAGE_COPY.IsEncrypted);
-            });
-
-            it('should set a value to ExpirationTime', () => {
-                expect(item.ExpirationTime).toBe(DEFAULT_MESSAGE_COPY.ExpirationTime);
-            });
-
-            it('should set a value to From', () => {
-                expect(item.From).toEqual(DEFAULT_MESSAGE_COPY.From);
-            });
-
-            it('should set a value to uploading', () => {
-                expect(item.uploading).toBe(DEFAULT_MESSAGE_COPY.uploading);
-            });
-
-            it('should set a value to toFocussed', () => {
-                expect(item.toFocussed).toBe(DEFAULT_MESSAGE_COPY.toFocussed);
-            });
-
-            it('should set a value to autocompletesFocussed', () => {
-                expect(item.autocompletesFocussed).toBe(DEFAULT_MESSAGE_COPY.autocompletesFocussed);
-            });
-
-            it('should set a value to ccbcc', () => {
-                expect(item.ccbcc).toBe(DEFAULT_MESSAGE_COPY.ccbcc);
-            });
-
-            it('should set a value to AddressID', () => {
-                expect(item.AddressID).toBe(DEFAULT_MESSAGE_COPY.AddressID);
-            });
-
-            it('should set a value to NumEmbedded', () => {
-                expect(item.NumEmbedded).toBe(DEFAULT_MESSAGE_COPY.NumEmbedded);
-            });
-
-            it('should set a value to DecryptedBody', () => {
-                expect(item.DecryptedBody).toBe(DEFAULT_MESSAGE_COPY.DecryptedBody);
-            });
-
-            it('should set a value to Action', () => {
-                expect(item.Action).toBe(CONSTANTS.REPLY);
-            });
-
-            it('should set a value to ParentID', () => {
-                expect(item.ParentID).toBe(currentMsg.ID);
-            });
-
-            it('should set MIMEType to plaintext', () => {
-                expect(item.MIMEType).toBe('text/plain');
-            });
-
-            it('should set a value ID', () => {
-                expect(item.ID).toBe(undefined);
-            });
-
-            it('should set the decrypted body', () => {
-                expect(spySetDecryptedBody).toHaveBeenCalledWith(USER_SIGNATURE);
-                expect(spySetDecryptedBody).toHaveBeenCalledWith(DEFAULT_MESSAGE_REPLY);
-                expect(spySetDecryptedBody).toHaveBeenCalledTimes(2);
-            });
-
-            it('should return a new default object', () => {
-                const keysItem = Object.keys(item).sort();
-                const keysDefault = Object.keys(DEFAULT_MESSAGE_COPY)
-                    .concat('Action', 'ParentID')
-                    .sort();
-
-                expect(keysItem.length).toBe(keysDefault.length);
-                expect(keysItem).toEqual(keysDefault.sort());
-                expect(_.includes(keysItem, 'Action')).toBe(true);
-                expect(_.includes(keysItem, 'ParentID')).toBe(true);
-            });
-
-            it('should return an instance of Message', () => {
-                expect(item.constructor).toMatch(/Message/);
-            });
+        createMessageTest({
+            type: 'A reply message with MIMEType and userMimeType plaintext and type = 3',
+            defaultMessageExtension: {
+                Subject: 'polo',
+                ToList: ['bob'],
+                CCList: ['bobby'],
+                BCCList: ['bobette']
+            },
+            actionConstant: CONSTANTS.REPLY,
+            parseText: true,
+            toList: ['bob'],
+            ccList: [],
+            bccList: [],
+            subject: 'Re: ',
+            action: 'reply',
+            body: defaultReply,
+            currentMessageExtension: {
+                ID: Date.now(),
+                Type: 3,
+                Subject: 'Re: polo',
+                MIMEType: 'text/plain',
+                ToList: ['bob'],
+                CCList: ['bobby'],
+                BCCList: ['bobette'],
+                Sender: {
+                    Address: 'polo@test.com'
+                },
+                DecryptedBody: USER_SIGNATURE2
+            },
+            createMessage: (currentMsg) => {
+                const match = { Status: 1, Send: 1, ID: 2 };
+                mailSettingsMock.Addresses = [TESTABLE_ADDRESS_DEFAULT, { Status: 2 }, match];
+                mailSettingsMock.DraftMIMEType = 'text/plain';
+                return factory.create('reply', currentMsg);
+            }
         });
 
-        describe('A reply message with MIMEType and type = 3', () => {
-            let item, currentMsg;
-            const match = { Status: 1, Send: 1, ID: 2 };
-            let DEFAULT_MESSAGE_COPY;
-            const DEFAULT_MESSAGE_REPLY =
-                '<blockquote class="protonmail_quote" type="cite">-------- Original Message --------<br>Subject: Re: polo<br>Local Time: localReadableTime<br>UTC Time: utcReadableTime<br>From: polo@test.com<br>To: <br><br>prepareContent</blockquote><br>';
-
-            beforeEach(() => {
-                spyPrepareContent = jasmine.createSpy();
-                spyLocalReadableTime = jasmine.createSpy();
-                spyUtcReadableTime = jasmine.createSpy();
-                spyGetDecryptedBody = jasmine.createSpy();
-                spySetDecryptedBody = jasmine.createSpy();
-                spyMessageModelMock = jasmine.createSpy();
-                userMock.Addresses = [TESTABLE_ADDRESS_DEFAULT, { Status: 2 }, match];
-                spyOn(signatureBuilder, 'insert').and.returnValue(USER_SIGNATURE);
-                spyOn(tools, 'contactsToString').and.returnValue('');
-                spyOn(message, 'getDecryptedBody').and.returnValue(MESSAGE_BODY_PLAIN);
-                spyOn(textToHtmlMail, 'parse').and.returnValue(MESSAGE_BODY_PLAIN_ESCAPED);
-                spyOn(sanitize, 'input').and.callFake(_.identity);
-                spyOn(composerFromModel, 'get').and.returnValue({ address: DEFAULT_MESSAGE.From });
-
-                DEFAULT_MESSAGE_COPY = _.extend({}, DEFAULT_MESSAGE, {
-                    Subject: 'polo',
-                    ToList: ['bob'],
-                    CCList: ['bobby'],
-                    BCCList: ['bobette']
-                });
-                currentMsg = _.extend({}, message, {
-                    ID: Date.now(),
-                    Type: 3,
-                    Subject: 'Re: polo',
-                    MIMEType: 'text/plain',
-                    ToList: ['bob'],
-                    CCList: ['bobby'],
-                    BCCList: ['bobette'],
-                    Sender: {
-                        Address: 'polo@test.com'
-                    },
-                    DecryptedBody: USER_SIGNATURE2
-                });
-                item = factory.create('reply', currentMsg);
-            });
-
-            it('should build a new message', () => {
-                expect(spyMessageModelMock).toHaveBeenCalledWith(undefined);
-                expect(spyMessageModelMock).toHaveBeenCalledTimes(1);
-            });
-
-            it('should prepareContent', () => {
-                expect(spyPrepareContent).toHaveBeenCalledTimes(1);
-                const [content, message, options] = spyPrepareContent.calls.argsFor(0);
-                expect(content).toBe(MESSAGE_BODY_PLAIN_ESCAPED);
-                expect(message.ParentID).toBe(DEFAULT_MESSAGE_COPY.ID);
-                expect(options).toEqual({ blacklist: ['*'], action: 'reply' });
-            });
-
-            it('should parse text', () => {
-                expect(textToHtmlMail.parse).toHaveBeenCalledTimes(1);
-                expect(textToHtmlMail.parse).toHaveBeenCalledWith(MESSAGE_BODY_PLAIN);
-            });
-
-            it('should have called the filter localReadableTime ', () => {
-                expect(spyLocalReadableTime).toHaveBeenCalledWith(DEFAULT_MESSAGE_COPY.Time);
-                expect(spyLocalReadableTime).toHaveBeenCalledTimes(1);
-            });
-
-            it('should have called the filter utcReadableTime ', () => {
-                expect(spyUtcReadableTime).toHaveBeenCalledWith(DEFAULT_MESSAGE_COPY.Time);
-                expect(spyUtcReadableTime).toHaveBeenCalledTimes(1);
-            });
-
-            it('should have formated contact as a string ', () => {
-                expect(tools.contactsToString).toHaveBeenCalledWith(currentMsg.CCList);
-                expect(tools.contactsToString).toHaveBeenCalledWith(currentMsg.ToList);
-                expect(tools.contactsToString).toHaveBeenCalledTimes(2);
-            });
-
-            it('should read the default message body', () => {
-                expect(message.getDecryptedBody).toHaveBeenCalledTimes(1);
-            });
-
-            it('should sanitize data ', () => {
-                expect(sanitize.input).toHaveBeenCalledWith(`Subject: ${currentMsg.Subject}<br>`);
-                expect(sanitize.input).toHaveBeenCalledTimes(1);
-            });
-
-            it('should create a new signature', () => {
-                expect(signatureBuilder.insert).toHaveBeenCalled();
-                expect(signatureBuilder.insert).toHaveBeenCalledWith(jasmine.any(Message), { action: 'reply' });
-            });
-
-            it('should load the sender', () => {
-                expect(composerFromModel.get).toHaveBeenCalledTimes(1);
-                expect(composerFromModel.get).toHaveBeenCalledWith(jasmine.any(Object));
-            });
-
-            it('should add two new keys for this message', () => {
-                const item = signatureBuilder.insert.calls.argsFor(0)[0];
-                const list = Object.keys(DEFAULT_MESSAGE_COPY).concat('Action', 'ParentID');
-                const listKeysItem = Object.keys(item);
-                expect(listKeysItem.length).toBe(list.length);
-                expect(_.includes(listKeysItem, 'Action')).toBe(true);
-                expect(_.includes(listKeysItem, 'ParentID')).toBe(true);
-            });
-
-            it('should set a value to Type', () => {
-                expect(item.Type).toBe(DEFAULT_MESSAGE_COPY.Type);
-            });
-
-            it('should set a value to ToList', () => {
-                expect(item.ToList).toEqual(DEFAULT_MESSAGE_COPY.ToList);
-            });
-
-            it('should set a value to CCList', () => {
-                expect(item.CCList).toEqual([]);
-            });
-
-            it('should set a value to BCCList', () => {
-                expect(item.BCCList).toEqual([]);
-            });
-
-            it('should set a value to Attachments', () => {
-                expect(item.Attachments).toEqual(DEFAULT_MESSAGE_COPY.Attachments);
-            });
-
-            it('should set a value to numTags', () => {
-                expect(item.numTags).toEqual(DEFAULT_MESSAGE_COPY.numTags);
-            });
-
-            it('should set a value to recipientFields', () => {
-                expect(item.recipientFields).toEqual(DEFAULT_MESSAGE_COPY.recipientFields);
-            });
-
-            it('should set a value to Subject', () => {
-                expect(item.Subject).toBe(`Re: ${DEFAULT_MESSAGE_COPY.Subject}`);
-            });
-
-            it('should set a value to PasswordHint', () => {
-                expect(item.PasswordHint).toBe(DEFAULT_MESSAGE_COPY.PasswordHint);
-            });
-
-            it('should set a value to IsEncrypted', () => {
-                expect(item.IsEncrypted).toBe(DEFAULT_MESSAGE_COPY.IsEncrypted);
-            });
-
-            it('should set a value to ExpirationTime', () => {
-                expect(item.ExpirationTime).toBe(DEFAULT_MESSAGE_COPY.ExpirationTime);
-            });
-
-            it('should set a value to From', () => {
-                expect(item.From).toEqual(DEFAULT_MESSAGE_COPY.From);
-            });
-
-            it('should set a value to uploading', () => {
-                expect(item.uploading).toBe(DEFAULT_MESSAGE_COPY.uploading);
-            });
-
-            it('should set a value to toFocussed', () => {
-                expect(item.toFocussed).toBe(DEFAULT_MESSAGE_COPY.toFocussed);
-            });
-
-            it('should set a value to autocompletesFocussed', () => {
-                expect(item.autocompletesFocussed).toBe(DEFAULT_MESSAGE_COPY.autocompletesFocussed);
-            });
-
-            it('should set a value to ccbcc', () => {
-                expect(item.ccbcc).toBe(DEFAULT_MESSAGE_COPY.ccbcc);
-            });
-
-            it('should set a value to AddressID', () => {
-                expect(item.AddressID).toBe(DEFAULT_MESSAGE_COPY.AddressID);
-            });
-
-            it('should set a value to NumEmbedded', () => {
-                expect(item.NumEmbedded).toBe(DEFAULT_MESSAGE_COPY.NumEmbedded);
-            });
-
-            it('should set a value to DecryptedBody', () => {
-                expect(item.DecryptedBody).toBe(DEFAULT_MESSAGE_COPY.DecryptedBody);
-            });
-
-            it('should set a value to Action', () => {
-                expect(item.Action).toBe(CONSTANTS.REPLY);
-            });
-
-            it('should set a value to ParentID', () => {
-                expect(item.ParentID).toBe(currentMsg.ID);
-            });
-
-            it('should set MIMEType to html', () => {
-                expect(item.MIMEType).toBe('text/html');
-            });
-
-            it('should set a value ID', () => {
-                expect(item.ID).toBe(undefined);
-            });
-
-            it('should set the decrypted body', () => {
-                expect(spySetDecryptedBody).toHaveBeenCalledWith(USER_SIGNATURE);
-                expect(spySetDecryptedBody).toHaveBeenCalledWith(DEFAULT_MESSAGE_REPLY);
-                expect(spySetDecryptedBody).toHaveBeenCalledTimes(2);
-            });
-
-            it('should return a new default object', () => {
-                const keysItem = Object.keys(item).sort();
-                const keysDefault = Object.keys(DEFAULT_MESSAGE_COPY)
-                    .concat('Action', 'ParentID')
-                    .sort();
-
-                expect(keysItem.length).toBe(keysDefault.length);
-                expect(keysItem).toEqual(keysDefault.sort());
-                expect(_.includes(keysItem, 'Action')).toBe(true);
-                expect(_.includes(keysItem, 'ParentID')).toBe(true);
-            });
-
-            it('should return an instance of Message', () => {
-                expect(item.constructor).toMatch(/Message/);
-            });
+        createMessageTest({
+            type: 'A reply message with MIMEType type = 3',
+            defaultMessageExtension: {
+                Subject: 'polo',
+                ToList: ['bob'],
+                CCList: ['bobby'],
+                BCCList: ['bobette']
+            },
+            actionConstant: CONSTANTS.REPLY,
+            parseText: true,
+            toList: ['bob'],
+            ccList: [],
+            bccList: [],
+            subject: 'Re: ',
+            action: 'reply',
+            body: defaultReply,
+            currentMessageExtension: {
+                ID: Date.now(),
+                Type: 3,
+                Subject: 'Re: polo',
+                MIMEType: 'text/plain',
+                ToList: ['bob'],
+                CCList: ['bobby'],
+                BCCList: ['bobette'],
+                Sender: {
+                    Address: 'polo@test.com'
+                },
+                DecryptedBody: USER_SIGNATURE2
+            },
+            createMessage: (currentMsg) => {
+                const match = { Status: 1, Send: 1, ID: 2 };
+                mailSettingsMock.Addresses = [TESTABLE_ADDRESS_DEFAULT, { Status: 2 }, match];
+                mailSettingsMock.DraftMIMEType = 'text/plain';
+                return factory.create('reply', currentMsg);
+            }
         });
 
-        describe('A reply message with ReplyTo and no type', () => {
-            let item, currentMsg;
-            const match = { Status: 1, Send: 1, ID: 2 };
-            let DEFAULT_MESSAGE_COPY;
-            const DEFAULT_MESSAGE_REPLY =
-                '<blockquote class="protonmail_quote" type="cite">-------- Original Message --------<br>Subject: Re: polo<br>Local Time: localReadableTime<br>UTC Time: utcReadableTime<br>From: polo@test.com<br>To: <br><br>prepareContent</blockquote><br>';
-
-            beforeEach(() => {
-                spyPrepareContent = jasmine.createSpy();
-                spyLocalReadableTime = jasmine.createSpy();
-                spyUtcReadableTime = jasmine.createSpy();
-                spyGetDecryptedBody = jasmine.createSpy();
-                spySetDecryptedBody = jasmine.createSpy();
-                spyMessageModelMock = jasmine.createSpy();
-                spyOn(textToHtmlMail, 'parse').and.returnValue(MESSAGE_BODY_PLAIN_ESCAPED);
-                userMock.Addresses = [TESTABLE_ADDRESS_DEFAULT, { Status: 2 }, match];
-                spyOn(signatureBuilder, 'insert').and.returnValue(USER_SIGNATURE);
-                spyOn(tools, 'contactsToString').and.returnValue('');
-                spyOn(message, 'getDecryptedBody').and.returnValue(MESSAGE_BODY_PLAIN);
-                spyOn(sanitize, 'input').and.callFake(_.identity);
-                spyOn(composerFromModel, 'get').and.returnValue({ address: DEFAULT_MESSAGE.From });
-                DEFAULT_MESSAGE_COPY = _.extend({}, DEFAULT_MESSAGE, {
-                    Subject: 'Re: polo',
-                    ToList: ['monique'],
-                    CCList: ['bobby'],
-                    BCCList: ['bobette']
-                });
-                currentMsg = _.extend({}, message, {
-                    ID: Date.now(),
-                    Subject: 'Re: polo',
-                    MIMEType: 'text/plain',
-                    ToList: [],
-                    ReplyTo: 'monique',
-                    CCList: ['bobby'],
-                    BCCList: ['bobette'],
-                    Sender: {
-                        Address: 'polo@test.com'
-                    },
-                    DecryptedBody: USER_SIGNATURE2
-                });
-                item = factory.create('reply', currentMsg);
-            });
-
-            it('should build a new message', () => {
-                expect(spyMessageModelMock).toHaveBeenCalledWith(undefined);
-                expect(spyMessageModelMock).toHaveBeenCalledTimes(1);
-            });
-
-            it('should prepareContent', () => {
-                expect(spyPrepareContent).toHaveBeenCalledTimes(1);
-                const [content, message, options] = spyPrepareContent.calls.argsFor(0);
-                expect(content).toBe(MESSAGE_BODY_PLAIN_ESCAPED);
-                expect(message.ParentID).toBe(DEFAULT_MESSAGE_COPY.ID);
-                expect(options).toEqual({ blacklist: ['*'], action: 'reply' });
-            });
-
-            it('should parse text', () => {
-                expect(textToHtmlMail.parse).toHaveBeenCalledTimes(1);
-                expect(textToHtmlMail.parse).toHaveBeenCalledWith(MESSAGE_BODY_PLAIN);
-            });
-
-            it('should have called the filter localReadableTime ', () => {
-                expect(spyLocalReadableTime).toHaveBeenCalledWith(DEFAULT_MESSAGE_COPY.Time);
-                expect(spyLocalReadableTime).toHaveBeenCalledTimes(1);
-            });
-
-            it('should have called the filter utcReadableTime ', () => {
-                expect(spyUtcReadableTime).toHaveBeenCalledWith(DEFAULT_MESSAGE_COPY.Time);
-                expect(spyUtcReadableTime).toHaveBeenCalledTimes(1);
-            });
-
-            it('should have formated contact as a string ', () => {
-                expect(tools.contactsToString).toHaveBeenCalledWith(currentMsg.CCList);
-                expect(tools.contactsToString).toHaveBeenCalledWith(currentMsg.ToList);
-                expect(tools.contactsToString).toHaveBeenCalledTimes(2);
-            });
-
-            it('should read the default message body', () => {
-                expect(message.getDecryptedBody).toHaveBeenCalledTimes(1);
-            });
-
-            it('should sanitize data ', () => {
-                expect(sanitize.input).toHaveBeenCalledWith(`Subject: ${currentMsg.Subject}<br>`);
-                expect(sanitize.input).toHaveBeenCalledTimes(1);
-            });
-
-            it('should create a new signature', () => {
-                expect(signatureBuilder.insert).toHaveBeenCalled();
-                expect(signatureBuilder.insert).toHaveBeenCalledWith(jasmine.any(Message), { action: 'reply' });
-            });
-
-            it('should load the sender', () => {
-                expect(composerFromModel.get).toHaveBeenCalledTimes(1);
-                expect(composerFromModel.get).toHaveBeenCalledWith(jasmine.any(Object));
-            });
-
-            it('should add two new keys for this message', () => {
-                const item = signatureBuilder.insert.calls.argsFor(0)[0];
-                const list = Object.keys(DEFAULT_MESSAGE_COPY).concat('Action', 'ParentID');
-                const listKeysItem = Object.keys(item);
-                expect(listKeysItem.length).toBe(list.length);
-                expect(_.includes(listKeysItem, 'Action')).toBe(true);
-                expect(_.includes(listKeysItem, 'ParentID')).toBe(true);
-            });
-
-            it('should set a value to Type', () => {
-                expect(item.Type).toBe(DEFAULT_MESSAGE_COPY.Type);
-            });
-
-            it('should set a value to ToList', () => {
-                expect(item.ToList).toEqual(DEFAULT_MESSAGE_COPY.ToList);
-            });
-
-            it('should set a value to CCList', () => {
-                expect(item.CCList).toEqual([]);
-            });
-
-            it('should set a value to BCCList', () => {
-                expect(item.BCCList).toEqual([]);
-            });
-
-            it('should set a value to Attachments', () => {
-                expect(item.Attachments).toEqual(DEFAULT_MESSAGE_COPY.Attachments);
-            });
-
-            it('should set a value to numTags', () => {
-                expect(item.numTags).toEqual(DEFAULT_MESSAGE_COPY.numTags);
-            });
-
-            it('should set a value to recipientFields', () => {
-                expect(item.recipientFields).toEqual(DEFAULT_MESSAGE_COPY.recipientFields);
-            });
-
-            it('should set a value to Subject', () => {
-                expect(item.Subject).toBe(DEFAULT_MESSAGE_COPY.Subject);
-            });
-
-            it('should set a value to PasswordHint', () => {
-                expect(item.PasswordHint).toBe(DEFAULT_MESSAGE_COPY.PasswordHint);
-            });
-
-            it('should set a value to IsEncrypted', () => {
-                expect(item.IsEncrypted).toBe(DEFAULT_MESSAGE_COPY.IsEncrypted);
-            });
-
-            it('should set a value to ExpirationTime', () => {
-                expect(item.ExpirationTime).toBe(DEFAULT_MESSAGE_COPY.ExpirationTime);
-            });
-
-            it('should set a value to From', () => {
-                expect(item.From).toEqual(DEFAULT_MESSAGE_COPY.From);
-            });
-
-            it('should set a value to uploading', () => {
-                expect(item.uploading).toBe(DEFAULT_MESSAGE_COPY.uploading);
-            });
-
-            it('should set a value to toFocussed', () => {
-                expect(item.toFocussed).toBe(DEFAULT_MESSAGE_COPY.toFocussed);
-            });
-
-            it('should set a value to autocompletesFocussed', () => {
-                expect(item.autocompletesFocussed).toBe(DEFAULT_MESSAGE_COPY.autocompletesFocussed);
-            });
-
-            it('should set a value to ccbcc', () => {
-                expect(item.ccbcc).toBe(DEFAULT_MESSAGE_COPY.ccbcc);
-            });
-
-            it('should set a value to AddressID', () => {
-                expect(item.AddressID).toBe(DEFAULT_MESSAGE_COPY.AddressID);
-            });
-
-            it('should set a value to NumEmbedded', () => {
-                expect(item.NumEmbedded).toBe(DEFAULT_MESSAGE_COPY.NumEmbedded);
-            });
-
-            it('should set a value to DecryptedBody', () => {
-                expect(item.DecryptedBody).toBe(DEFAULT_MESSAGE_COPY.DecryptedBody);
-            });
-
-            it('should set a value to Action', () => {
-                expect(item.Action).toBe(CONSTANTS.REPLY);
-            });
-
-            it('should set a value to ParentID', () => {
-                expect(item.ParentID).toBe(currentMsg.ID);
-            });
-
-            it('should set a value ID', () => {
-                expect(item.ID).toBe(undefined);
-            });
-
-            it('should set the decrypted body', () => {
-                expect(spySetDecryptedBody).toHaveBeenCalledWith(USER_SIGNATURE);
-                expect(spySetDecryptedBody).toHaveBeenCalledWith(DEFAULT_MESSAGE_REPLY);
-                expect(spySetDecryptedBody).toHaveBeenCalledTimes(2);
-            });
-
-            it('should return a new default object', () => {
-                const keysItem = Object.keys(item).sort();
-                const keysDefault = Object.keys(DEFAULT_MESSAGE_COPY)
-                    .concat('Action', 'ParentID')
-                    .sort();
-
-                expect(keysItem.length).toBe(keysDefault.length);
-                expect(keysItem).toEqual(keysDefault.sort());
-                expect(_.includes(keysItem, 'Action')).toBe(true);
-                expect(_.includes(keysItem, 'ParentID')).toBe(true);
-            });
-
-            it('should return an instance of Message', () => {
-                expect(item.constructor).toMatch(/Message/);
-            });
+        createMessageTest({
+            type: 'A reply message with ReplyTo and no type',
+            defaultMessageExtension: {
+                Subject: 'polo',
+                ToList: ['monique'],
+                CCList: ['bobby'],
+                BCCList: ['bobette']
+            },
+            actionConstant: CONSTANTS.REPLY,
+            parseText: true,
+            toList: ['monique'],
+            ccList: [],
+            bccList: [],
+            subject: 'Re: ',
+            action: 'reply',
+            body: defaultReply,
+            currentMessageExtension: {
+                ID: Date.now(),
+                Subject: 'Re: polo',
+                MIMEType: 'text/plain',
+                ToList: [],
+                ReplyTo: 'monique',
+                CCList: ['bobby'],
+                BCCList: ['bobette'],
+                Sender: {
+                    Address: 'polo@test.com'
+                },
+                DecryptedBody: USER_SIGNATURE2
+            },
+            createMessage: (currentMsg) => {
+                const match = { Status: 1, Send: 1, ID: 2 };
+                mailSettingsMock.Addresses = [TESTABLE_ADDRESS_DEFAULT, { Status: 2 }, match];
+                mailSettingsMock.DraftMIMEType = 'text/plain';
+                return factory.create('reply', currentMsg);
+            }
         });
 
-        describe('A reply message with current AddressID', () => {
-            let item, currentMsg;
-            const match = { Status: 1, Send: 1, ID: 2 };
-            let DEFAULT_MESSAGE_COPY;
-            const VALID_MATCH = {
-                ID: 1337,
-                Status: 1,
-                Receive: 1,
-                Send: 3,
-                Address: 'ecolier@free.fr'
-            };
 
-            const DEFAULT_MESSAGE_REPLY =
-                '<blockquote class="protonmail_quote" type="cite">-------- Original Message --------<br>Subject: polo<br>Local Time: localReadableTime<br>UTC Time: utcReadableTime<br>From: polo@test.com<br>To: <br><br>prepareContent</blockquote><br>';
+        const VALID_MATCH = {
+            ID: 1337,
+            Status: 1,
+            Receive: 1,
+            Send: 3,
+            Address: 'ecolier@free.fr'
+        };
 
-            beforeEach(() => {
-                spyPrepareContent = jasmine.createSpy();
-                spyLocalReadableTime = jasmine.createSpy();
-                spyUtcReadableTime = jasmine.createSpy();
-                spyGetDecryptedBody = jasmine.createSpy();
-                spySetDecryptedBody = jasmine.createSpy();
-                spyMessageModelMock = jasmine.createSpy();
-                userMock.Addresses = [
+        createMessageTest({
+            type: 'A reply message with current AddressID',
+            defaultMessageExtension: {
+                Subject: 'polo',
+                AddressID: 1337,
+                ToList: ['bob'],
+                CCList: ['bobby@free.fr'],
+                BCCList: ['bobette'],
+                From: VALID_MATCH
+            },
+            fromAddress: VALID_MATCH,
+            actionConstant: CONSTANTS.REPLY,
+            parseText: false,
+            toList: ['bob'],
+            ccList: [],
+            bccList: [],
+            subject: 'Re: ',
+            action: 'reply',
+            body: defaultReply,
+            currentMessageExtension: {
+                ID: Date.now(),
+                Type: 2,
+                AddressID: 1337,
+                Subject: 'polo',
+                ToList: ['bob'],
+                CCList: 'bobby@free.fr',
+                BCCList: ['bobette'],
+                Sender: {
+                    Address: 'polo@test.com'
+                },
+                DecryptedBody: USER_SIGNATURE2
+            },
+            createMessage: (currentMsg) => {
+                const match = { Status: 1, Send: 1, ID: 2 };
+                mailSettingsMock.Addresses = [
                     TESTABLE_ADDRESS_DEFAULT,
                     { Status: 2 },
                     match,
@@ -1978,231 +830,45 @@ Est-ce que tu vas bien ?
                     },
                     VALID_MATCH
                 ];
-                spyOn(signatureBuilder, 'insert').and.returnValue(USER_SIGNATURE);
-                spyOn(textToHtmlMail, 'parse').and.callThrough();
-                spyOn(tools, 'contactsToString').and.returnValue('');
-                spyOn(message, 'getDecryptedBody').and.returnValue(MESSAGE_BODY);
-                spyOn(sanitize, 'input').and.callFake(_.identity);
-                spyOn(composerFromModel, 'get').and.returnValue({ address: VALID_MATCH });
-                DEFAULT_MESSAGE_COPY = _.extend({}, DEFAULT_MESSAGE, {
-                    Subject: 'polo',
-                    AddressID: 1337,
-                    ToList: ['bob'],
-                    CCList: ['bobby@free.fr'],
-                    BCCList: ['bobette'],
-                    From: VALID_MATCH
-                });
-                currentMsg = _.extend({}, message, {
-                    ID: Date.now(),
-                    Type: 2,
-                    AddressID: 1337,
-                    Subject: 'polo',
-                    ToList: ['bob'],
-                    CCList: 'bobby@free.fr',
-                    BCCList: ['bobette'],
-                    Sender: {
-                        Address: 'polo@test.com'
-                    },
-                    DecryptedBody: USER_SIGNATURE2
-                });
-                item = factory.create('reply', currentMsg);
-            });
-
-            it('should build a new message', () => {
-                expect(spyMessageModelMock).toHaveBeenCalledWith(undefined);
-                expect(spyMessageModelMock).toHaveBeenCalledTimes(1);
-            });
-
-            it('should prepareContent', () => {
-                expect(spyPrepareContent).toHaveBeenCalledTimes(1);
-                const [content, message, options] = spyPrepareContent.calls.argsFor(0);
-                expect(content).toBe(MESSAGE_BODY);
-                expect(message.ParentID).toBe(DEFAULT_MESSAGE_COPY.ID);
-                expect(options).toEqual({ blacklist: ['*'], action: 'reply' });
-            });
-
-            it('should not parse text', () => {
-                expect(textToHtmlMail.parse).not.toHaveBeenCalled();
-            });
-
-            it('should have called the filter localReadableTime ', () => {
-                expect(spyLocalReadableTime).toHaveBeenCalledWith(DEFAULT_MESSAGE_COPY.Time);
-                expect(spyLocalReadableTime).toHaveBeenCalledTimes(1);
-            });
-
-            it('should have called the filter utcReadableTime ', () => {
-                expect(spyUtcReadableTime).toHaveBeenCalledWith(DEFAULT_MESSAGE_COPY.Time);
-                expect(spyUtcReadableTime).toHaveBeenCalledTimes(1);
-            });
-
-            it('should have formated contact as a string ', () => {
-                expect(tools.contactsToString).toHaveBeenCalledWith([currentMsg.CCList]);
-                expect(tools.contactsToString).toHaveBeenCalledWith(currentMsg.ToList);
-                expect(tools.contactsToString).toHaveBeenCalledTimes(2);
-            });
-
-            it('should read the default message body', () => {
-                expect(message.getDecryptedBody).toHaveBeenCalledTimes(1);
-            });
-
-            it('should sanitize data ', () => {
-                expect(sanitize.input).toHaveBeenCalledWith(`Subject: ${currentMsg.Subject}<br>`);
-                expect(sanitize.input).toHaveBeenCalledTimes(1);
-            });
-
-            it('should create a new signature', () => {
-                expect(signatureBuilder.insert).toHaveBeenCalled();
-                expect(signatureBuilder.insert).toHaveBeenCalledWith(jasmine.any(Message), { action: 'reply' });
-            });
-
-            it('should load the sender', () => {
-                expect(composerFromModel.get).toHaveBeenCalledTimes(1);
-                expect(composerFromModel.get).toHaveBeenCalledWith(jasmine.any(Object));
-            });
-
-            it('should add two new keys for this message', () => {
-                const item = signatureBuilder.insert.calls.argsFor(0)[0];
-                const list = Object.keys(DEFAULT_MESSAGE_COPY).concat('Action', 'ParentID');
-                const listKeysItem = Object.keys(item);
-                expect(listKeysItem.length).toBe(list.length);
-                expect(_.includes(listKeysItem, 'Action')).toBe(true);
-                expect(_.includes(listKeysItem, 'ParentID')).toBe(true);
-            });
-
-            it('should set a value to Type', () => {
-                expect(item.Type).toBe(DEFAULT_MESSAGE_COPY.Type);
-            });
-
-            it('should set a value to ToList', () => {
-                expect(item.ToList).toEqual(DEFAULT_MESSAGE_COPY.ToList);
-            });
-
-            it('should set a value to CCList', () => {
-                expect(item.CCList).toEqual([]);
-            });
-
-            it('should set a value to BCCList', () => {
-                expect(item.BCCList).toEqual([]);
-            });
-
-            it('should set a value to Attachments', () => {
-                expect(item.Attachments).toEqual(DEFAULT_MESSAGE_COPY.Attachments);
-            });
-
-            it('should set a value to numTags', () => {
-                expect(item.numTags).toEqual(DEFAULT_MESSAGE_COPY.numTags);
-            });
-
-            it('should set a value to recipientFields', () => {
-                expect(item.recipientFields).toEqual(DEFAULT_MESSAGE_COPY.recipientFields);
-            });
-
-            it('should set a value to Subject', () => {
-                expect(item.Subject).toBe(`Re: ${DEFAULT_MESSAGE_COPY.Subject}`);
-            });
-
-            it('should set a value to PasswordHint', () => {
-                expect(item.PasswordHint).toBe(DEFAULT_MESSAGE_COPY.PasswordHint);
-            });
-
-            it('should set a value to IsEncrypted', () => {
-                expect(item.IsEncrypted).toBe(DEFAULT_MESSAGE_COPY.IsEncrypted);
-            });
-
-            it('should set a value to ExpirationTime', () => {
-                expect(item.ExpirationTime).toBe(DEFAULT_MESSAGE_COPY.ExpirationTime);
-            });
-
-            it('should set a value to From', () => {
-                expect(item.From).toEqual(DEFAULT_MESSAGE_COPY.From);
-            });
-
-            it('should set a value to uploading', () => {
-                expect(item.uploading).toBe(DEFAULT_MESSAGE_COPY.uploading);
-            });
-
-            it('should set a value to toFocussed', () => {
-                expect(item.toFocussed).toBe(DEFAULT_MESSAGE_COPY.toFocussed);
-            });
-
-            it('should set a value to autocompletesFocussed', () => {
-                expect(item.autocompletesFocussed).toBe(DEFAULT_MESSAGE_COPY.autocompletesFocussed);
-            });
-
-            it('should set a value to ccbcc', () => {
-                expect(item.ccbcc).toBe(DEFAULT_MESSAGE_COPY.ccbcc);
-            });
-
-            it('should set a value to AddressID', () => {
-                expect(item.AddressID).toBe(DEFAULT_MESSAGE_COPY.AddressID);
-            });
-
-            it('should set a value to NumEmbedded', () => {
-                expect(item.NumEmbedded).toBe(DEFAULT_MESSAGE_COPY.NumEmbedded);
-            });
-
-            it('should set a value to DecryptedBody', () => {
-                expect(item.DecryptedBody).toBe(DEFAULT_MESSAGE_COPY.DecryptedBody);
-            });
-
-            it('should set a value to Action', () => {
-                expect(item.Action).toBe(CONSTANTS.REPLY);
-            });
-
-            it('should set a value to ParentID', () => {
-                expect(item.ParentID).toBe(currentMsg.ID);
-            });
-
-            it('should set a value ID', () => {
-                expect(item.ID).toBe(undefined);
-            });
-
-            it('should set the decrypted body', () => {
-                expect(spySetDecryptedBody).toHaveBeenCalledWith(USER_SIGNATURE);
-                expect(spySetDecryptedBody).toHaveBeenCalledWith(DEFAULT_MESSAGE_REPLY);
-                expect(spySetDecryptedBody).toHaveBeenCalledTimes(2);
-            });
-
-            it('should return a new default object', () => {
-                const keysItem = Object.keys(item).sort();
-                const keysDefault = Object.keys(DEFAULT_MESSAGE_COPY)
-                    .concat('Action', 'ParentID')
-                    .sort();
-
-                expect(keysItem.length).toBe(keysDefault.length);
-                expect(keysItem).toEqual(keysDefault.sort());
-                expect(_.includes(keysItem, 'Action')).toBe(true);
-                expect(_.includes(keysItem, 'ParentID')).toBe(true);
-            });
-
-            it('should return an instance of Message', () => {
-                expect(item.constructor).toMatch(/Message/);
-            });
+                return factory.create('reply', currentMsg);
+            }
         });
 
-        describe('A reply message with current AddressID and many CCs', () => {
-            let item, currentMsg;
-            const match = { Status: 1, Send: 1, ID: 2 };
-            let DEFAULT_MESSAGE_COPY;
-            const VALID_MATCH = {
-                ID: 1337,
-                Status: 1,
-                Receive: 1,
-                Send: 3,
-                Address: 'ecolier@free.fr'
-            };
-
-            const DEFAULT_MESSAGE_REPLY =
-                '<blockquote class="protonmail_quote" type="cite">-------- Original Message --------<br>Subject: polo<br>Local Time: localReadableTime<br>UTC Time: utcReadableTime<br>From: polo@test.com<br>To: ashes2ashes@dust2dust.earth<br>ashes2ashes@dust2dust.earth<br><br>prepareContent</blockquote><br>';
-
-            beforeEach(() => {
-                spyPrepareContent = jasmine.createSpy();
-                spyLocalReadableTime = jasmine.createSpy();
-                spyUtcReadableTime = jasmine.createSpy();
-                spyGetDecryptedBody = jasmine.createSpy();
-                spySetDecryptedBody = jasmine.createSpy();
-                spyMessageModelMock = jasmine.createSpy();
-                userMock.Addresses = [
+        createMessageTest({
+            type: 'A reply message with current AddressID and many CCs',
+            defaultMessageExtension: {
+                Subject: 'polo',
+                AddressID: 1337,
+                ToList: ['bob'],
+                CCList: ['bobby@free.fr'],
+                BCCList: ['bobette'],
+                From: VALID_MATCH
+            },
+            fromAddress: VALID_MATCH,
+            actionConstant: CONSTANTS.REPLY,
+            parseText: false,
+            toList: ['bob'],
+            ccList: [],
+            bccList: [],
+            subject: 'Re: ',
+            action: 'reply',
+            body: defaultReply,
+            currentMessageExtension: {
+                ID: Date.now(),
+                Type: 2,
+                AddressID: 1337,
+                Subject: 'polo',
+                ToList: ['bob'],
+                CCList: 'bobby@free.fr',
+                BCCList: ['bobette'],
+                Sender: {
+                    Address: 'polo@test.com'
+                },
+                DecryptedBody: USER_SIGNATURE2
+            },
+            createMessage: (currentMsg) => {
+                const match = { Status: 1, Send: 1, ID: 2 };
+                mailSettingsMock.Addresses = [
                     TESTABLE_ADDRESS_DEFAULT,
                     { Status: 2 },
                     match,
@@ -2214,1305 +880,461 @@ Est-ce que tu vas bien ?
                     },
                     VALID_MATCH
                 ];
-                spyOn(signatureBuilder, 'insert').and.returnValue(USER_SIGNATURE);
-                spyOn(tools, 'contactsToString').and.returnValue('ashes2ashes@dust2dust.earth');
-                spyOn(message, 'getDecryptedBody').and.returnValue(MESSAGE_BODY);
-                spyOn(sanitize, 'input').and.callFake(_.identity);
-                spyOn(textToHtmlMail, 'parse').and.callThrough();
-                spyOn(composerFromModel, 'get').and.returnValue({ address: VALID_MATCH });
-                DEFAULT_MESSAGE_COPY = _.extend({}, DEFAULT_MESSAGE, {
-                    Subject: 'polo',
-                    AddressID: 1337,
-                    ToList: ['bob'],
-                    CCList: ['bobby@free.fr'],
-                    BCCList: ['bobette'],
-                    From: VALID_MATCH
-                });
-                currentMsg = _.extend({}, message, {
-                    ID: Date.now(),
-                    Type: 2,
-                    AddressID: 1337,
-                    Subject: 'polo',
-                    ToList: ['bob'],
-                    CCList: 'bobby@free.fr',
-                    BCCList: ['bobette'],
-                    Sender: {
-                        Address: 'polo@test.com'
-                    },
-                    DecryptedBody: USER_SIGNATURE2
-                });
-                item = factory.create('reply', currentMsg);
-            });
-
-            it('should build a new message', () => {
-                expect(spyMessageModelMock).toHaveBeenCalledWith(undefined);
-                expect(spyMessageModelMock).toHaveBeenCalledTimes(1);
-            });
-
-            it('should prepareContent', () => {
-                expect(spyPrepareContent).toHaveBeenCalledTimes(1);
-                const [content, message, options] = spyPrepareContent.calls.argsFor(0);
-                expect(content).toBe(MESSAGE_BODY);
-                expect(message.ParentID).toBe(DEFAULT_MESSAGE_COPY.ID);
-                expect(options).toEqual({ blacklist: ['*'], action: 'reply' });
-            });
-
-            it('should not parse text', () => {
-                expect(textToHtmlMail.parse).not.toHaveBeenCalled();
-            });
-
-            it('should have called the filter localReadableTime ', () => {
-                expect(spyLocalReadableTime).toHaveBeenCalledWith(DEFAULT_MESSAGE_COPY.Time);
-                expect(spyLocalReadableTime).toHaveBeenCalledTimes(1);
-            });
-
-            it('should have called the filter utcReadableTime ', () => {
-                expect(spyUtcReadableTime).toHaveBeenCalledWith(DEFAULT_MESSAGE_COPY.Time);
-                expect(spyUtcReadableTime).toHaveBeenCalledTimes(1);
-            });
-
-            it('should have formated contact as a string ', () => {
-                expect(tools.contactsToString).toHaveBeenCalledWith([currentMsg.CCList]);
-                expect(tools.contactsToString).toHaveBeenCalledWith(currentMsg.ToList);
-                expect(tools.contactsToString).toHaveBeenCalledTimes(2);
-            });
-
-            it('should read the default message body', () => {
-                expect(message.getDecryptedBody).toHaveBeenCalledTimes(1);
-            });
-
-            it('should sanitize data ', () => {
-                expect(sanitize.input).toHaveBeenCalledWith(`Subject: ${currentMsg.Subject}<br>`);
-                expect(sanitize.input).toHaveBeenCalledTimes(1);
-            });
-
-            it('should create a new signature', () => {
-                expect(signatureBuilder.insert).toHaveBeenCalled();
-                expect(signatureBuilder.insert).toHaveBeenCalledWith(jasmine.any(Message), { action: 'reply' });
-            });
-
-            it('should load the sender', () => {
-                expect(composerFromModel.get).toHaveBeenCalledTimes(1);
-                expect(composerFromModel.get).toHaveBeenCalledWith(jasmine.any(Object));
-            });
-
-            it('should add two new keys for this message', () => {
-                const item = signatureBuilder.insert.calls.argsFor(0)[0];
-                const list = Object.keys(DEFAULT_MESSAGE_COPY).concat('Action', 'ParentID');
-                const listKeysItem = Object.keys(item);
-                expect(listKeysItem.length).toBe(list.length);
-                expect(_.includes(listKeysItem, 'Action')).toBe(true);
-                expect(_.includes(listKeysItem, 'ParentID')).toBe(true);
-            });
-
-            it('should set a value to Type', () => {
-                expect(item.Type).toBe(DEFAULT_MESSAGE_COPY.Type);
-            });
-
-            it('should set a value to ToList', () => {
-                expect(item.ToList).toEqual(DEFAULT_MESSAGE_COPY.ToList);
-            });
-
-            it('should set a value to CCList', () => {
-                expect(item.CCList).toEqual([]);
-            });
-
-            it('should set a value to BCCList', () => {
-                expect(item.BCCList).toEqual([]);
-            });
-
-            it('should set a value to Attachments', () => {
-                expect(item.Attachments).toEqual(DEFAULT_MESSAGE_COPY.Attachments);
-            });
-
-            it('should set a value to numTags', () => {
-                expect(item.numTags).toEqual(DEFAULT_MESSAGE_COPY.numTags);
-            });
-
-            it('should set a value to recipientFields', () => {
-                expect(item.recipientFields).toEqual(DEFAULT_MESSAGE_COPY.recipientFields);
-            });
-
-            it('should set a value to Subject', () => {
-                expect(item.Subject).toBe(`Re: ${DEFAULT_MESSAGE_COPY.Subject}`);
-            });
-
-            it('should set a value to PasswordHint', () => {
-                expect(item.PasswordHint).toBe(DEFAULT_MESSAGE_COPY.PasswordHint);
-            });
-
-            it('should set a value to IsEncrypted', () => {
-                expect(item.IsEncrypted).toBe(DEFAULT_MESSAGE_COPY.IsEncrypted);
-            });
-
-            it('should set a value to ExpirationTime', () => {
-                expect(item.ExpirationTime).toBe(DEFAULT_MESSAGE_COPY.ExpirationTime);
-            });
-
-            it('should set a value to From', () => {
-                expect(item.From).toEqual(DEFAULT_MESSAGE_COPY.From);
-            });
-
-            it('should set a value to uploading', () => {
-                expect(item.uploading).toBe(DEFAULT_MESSAGE_COPY.uploading);
-            });
-
-            it('should set a value to toFocussed', () => {
-                expect(item.toFocussed).toBe(DEFAULT_MESSAGE_COPY.toFocussed);
-            });
-
-            it('should set a value to autocompletesFocussed', () => {
-                expect(item.autocompletesFocussed).toBe(DEFAULT_MESSAGE_COPY.autocompletesFocussed);
-            });
-
-            it('should set a value to ccbcc', () => {
-                expect(item.ccbcc).toBe(DEFAULT_MESSAGE_COPY.ccbcc);
-            });
-
-            it('should set a value to AddressID', () => {
-                expect(item.AddressID).toBe(DEFAULT_MESSAGE_COPY.AddressID);
-            });
-
-            it('should set a value to NumEmbedded', () => {
-                expect(item.NumEmbedded).toBe(DEFAULT_MESSAGE_COPY.NumEmbedded);
-            });
-
-            it('should set a value to DecryptedBody', () => {
-                expect(item.DecryptedBody).toBe(DEFAULT_MESSAGE_COPY.DecryptedBody);
-            });
-
-            it('should set a value to Action', () => {
-                expect(item.Action).toBe(CONSTANTS.REPLY);
-            });
-
-            it('should set a value to ParentID', () => {
-                expect(item.ParentID).toBe(currentMsg.ID);
-            });
-
-            it('should set a value ID', () => {
-                expect(item.ID).toBe(undefined);
-            });
-
-            it('should set the decrypted body', () => {
-                expect(spySetDecryptedBody).toHaveBeenCalledWith(USER_SIGNATURE);
-                expect(spySetDecryptedBody).toHaveBeenCalledWith(DEFAULT_MESSAGE_REPLY);
-                expect(spySetDecryptedBody).toHaveBeenCalledTimes(2);
-            });
-
-            it('should return a new default object', () => {
-                const keysItem = Object.keys(item).sort();
-                const keysDefault = Object.keys(DEFAULT_MESSAGE_COPY)
-                    .concat('Action', 'ParentID')
-                    .sort();
-
-                expect(keysItem.length).toBe(keysDefault.length);
-                expect(keysItem).toEqual(keysDefault.sort());
-                expect(_.includes(keysItem, 'Action')).toBe(true);
-                expect(_.includes(keysItem, 'ParentID')).toBe(true);
-            });
-
-            it('should return an instance of Message', () => {
-                expect(item.constructor).toMatch(/Message/);
-            });
+                return factory.create('reply', currentMsg);
+            }
         });
 
-        describe('A reply message with attachements', () => {
-            let item, currentMsg;
-            const match = { Status: 1, Send: 1, ID: 2 };
-            let DEFAULT_MESSAGE_COPY;
 
-            const DEFAULT_MESSAGE_REPLY =
-                '<blockquote class="protonmail_quote" type="cite">-------- Original Message --------<br>Subject: polo<br>Local Time: localReadableTime<br>UTC Time: utcReadableTime<br>From: polo@test.com<br>To: <br><br>prepareContent</blockquote><br>';
+        const VALID_ATTACHMENT = {
+            ID: 42,
+            Headers: {
+                'content-disposition': 'inline'
+            }
+        };
+        createMessageTest({
+            type: 'A reply message with attachments',
+            defaultMessageExtension: {
+                Subject: 'polo',
+                AddressID: 1337,
+                ToList: ['bob'],
+                CCList: ['bobby@free.fr'],
+                BCCList: ['bobette'],
+                Attachments: [VALID_ATTACHMENT],
+                From: VALID_MATCH
+            },
+            fromAddress: VALID_MATCH,
+            actionConstant: CONSTANTS.REPLY,
+            parseText: false,
+            toList: ['bob'],
+            ccList: [],
+            bccList: [],
+            subject: 'Re: ',
+            action: 'reply',
+            body: defaultReply,
+            currentMessageExtension: {
+                ID: Date.now(),
+                Type: 2,
+                AddressID: 1337,
+                Subject: 'polo',
+                ToList: ['bob'],
+                CCList: 'bobby@free.fr',
+                BCCList: ['bobette'],
+                Attachments: [
+                    {
+                        Headers: {},
+                        ID: '1664'
+                    },
+                    VALID_ATTACHMENT
+                ],
+                Sender: {
+                    Address: 'polo@test.com'
+                },
+                DecryptedBody: USER_SIGNATURE2
+            },
+            createMessage: (currentMsg) => {
+                const match = { Status: 1, Send: 1, ID: 2 };
+                mailSettingsMock.Addresses = [
+                    TESTABLE_ADDRESS_DEFAULT,
+                    { Status: 2 },
+                    match,
+                    {
+                        Status: 1,
+                        Receive: 1,
+                        Send: 4,
+                        Address: 'paco@free.fr'
+                    },
+                    VALID_MATCH
+                ];
+                return factory.create('reply', currentMsg);
+            }
+        });
 
-            const VALID_ATTACHMENT = {
-                ID: 42,
-                Headers: {
-                    'content-disposition': 'inline'
+        createMessageTest({
+            type: 'A reply all message',
+            defaultMessageExtension: {
+                Subject: 'polo',
+                ToList: ['bob'],
+                CCList: ['bobby'],
+                BCCList: ['bobette']
+            },
+            actionConstant: CONSTANTS.REPLY_ALL,
+            toList: ['bob'],
+            ccList: ['bobby'],
+            bccList: ['bobette'],
+            subject: 'Re: ',
+            action: 'replyall',
+            body: defaultReply,
+            currentMessageExtension: {
+                ID: Date.now(),
+                Type: 2,
+                Subject: 'polo',
+                ToList: ['bob'],
+                CCList: ['bobby'],
+                BCCList: ['bobette'],
+                Sender: {
+                    Address: 'polo@test.com'
+                },
+                DecryptedBody: USER_SIGNATURE2
+            },
+            createMessage: (currentMsg) => {
+                const match = { Status: 1, Send: 1, ID: 2 };
+                mailSettingsMock.Addresses = [TESTABLE_ADDRESS_DEFAULT, { Status: 2 }, match];
+                return factory.create('replyall', currentMsg);
+            }
+        });
+
+        createMessageTest({
+            type: 'A reply all message type 3',
+            defaultMessageExtension: {
+                Subject: 'polo',
+                ToList: ['bob'],
+                CCList: ['bobby'],
+                BCCList: ['bobette']
+            },
+            actionConstant: CONSTANTS.REPLY_ALL,
+            toList: ['bob'],
+            ccList: ['bobby'],
+            bccList: ['bobette'],
+            subject: 'Re: ',
+            action: 'replyall',
+            body: defaultReply,
+            currentMessageExtension: {
+                ID: Date.now(),
+                Type: 3,
+                Subject: 'polo',
+                ToList: ['bob'],
+                CCList: ['bobby'],
+                BCCList: ['bobette'],
+                Sender: {
+                    Address: 'polo@test.com'
+                },
+                DecryptedBody: USER_SIGNATURE2
+            },
+            createMessage: (currentMsg) => {
+                const match = { Status: 1, Send: 1, ID: 2 };
+                mailSettingsMock.Addresses = [TESTABLE_ADDRESS_DEFAULT, { Status: 2 }, match];
+                return factory.create('replyall', currentMsg);
+            }
+        });
+
+        createMessageTest({
+            type: 'A reply all message type ! 2||3',
+            defaultMessageExtension: {
+                Subject: 'polo',
+                ToList: ['monique'],
+                CCList: [
+                    {
+                        Address: 's@mulot.fr'
+                    }
+                ],
+                BCCList: []
+            },
+            toList: ['monique'],
+            ccList: [
+                {
+                    Address: 's@mulot.fr'
                 }
-            };
-            beforeEach(() => {
-                spyPrepareContent = jasmine.createSpy();
-                spyLocalReadableTime = jasmine.createSpy();
-                spyUtcReadableTime = jasmine.createSpy();
-                spyGetDecryptedBody = jasmine.createSpy();
-                spySetDecryptedBody = jasmine.createSpy();
-                spyMessageModelMock = jasmine.createSpy();
-                userMock.Addresses = [TESTABLE_ADDRESS_DEFAULT, { Status: 2 }, match];
-                spyOn(signatureBuilder, 'insert').and.returnValue(USER_SIGNATURE);
-                spyOn(tools, 'contactsToString').and.returnValue('');
-                spyOn(message, 'getDecryptedBody').and.returnValue(MESSAGE_BODY);
-                spyOn(sanitize, 'input').and.callFake(_.identity);
-                spyOn(textToHtmlMail, 'parse').and.callThrough();
-                spyOn(composerFromModel, 'get').and.returnValue({ address: DEFAULT_MESSAGE.From });
-
-                DEFAULT_MESSAGE_COPY = _.extend({}, DEFAULT_MESSAGE, {
-                    Subject: 'polo',
-                    ToList: ['bob'],
-                    CCList: ['bobby'],
-                    BCCList: ['bobette'],
-                    Attachments: [VALID_ATTACHMENT]
-                });
-                currentMsg = _.extend({}, message, {
-                    ID: Date.now(),
-                    Type: 2,
-                    Subject: 'polo',
-                    ToList: ['bob'],
-                    CCList: ['bobby'],
-                    BCCList: ['bobette'],
-                    Attachments: [
-                        {
-                            Headers: {},
-                            ID: '1664'
-                        },
-                        VALID_ATTACHMENT
-                    ],
-                    Sender: {
-                        Address: 'polo@test.com'
-                    },
-                    DecryptedBody: USER_SIGNATURE2
-                });
-                item = factory.create('reply', currentMsg);
-            });
-
-            it('should build a new message', () => {
-                expect(spyMessageModelMock).toHaveBeenCalledWith(undefined);
-                expect(spyMessageModelMock).toHaveBeenCalledTimes(1);
-            });
-
-            it('should prepareContent', () => {
-                expect(spyPrepareContent).toHaveBeenCalledTimes(1);
-                const [content, message, options] = spyPrepareContent.calls.argsFor(0);
-                expect(content).toBe(MESSAGE_BODY);
-                expect(message.ParentID).toBe(DEFAULT_MESSAGE_COPY.ID);
-                expect(options).toEqual({ blacklist: ['*'], action: 'reply' });
-            });
-
-            it('should not parse text', () => {
-                expect(textToHtmlMail.parse).not.toHaveBeenCalled();
-            });
-
-            it('should have called the filter localReadableTime ', () => {
-                expect(spyLocalReadableTime).toHaveBeenCalledWith(DEFAULT_MESSAGE_COPY.Time);
-                expect(spyLocalReadableTime).toHaveBeenCalledTimes(1);
-            });
-
-            it('should have called the filter utcReadableTime ', () => {
-                expect(spyUtcReadableTime).toHaveBeenCalledWith(DEFAULT_MESSAGE_COPY.Time);
-                expect(spyUtcReadableTime).toHaveBeenCalledTimes(1);
-            });
-
-            it('should have formated contact as a string ', () => {
-                expect(tools.contactsToString).toHaveBeenCalledWith(currentMsg.CCList);
-                expect(tools.contactsToString).toHaveBeenCalledWith(currentMsg.ToList);
-                expect(tools.contactsToString).toHaveBeenCalledTimes(2);
-            });
-
-            it('should read the default message body', () => {
-                expect(message.getDecryptedBody).toHaveBeenCalledTimes(1);
-            });
-
-            it('should sanitize data ', () => {
-                expect(sanitize.input).toHaveBeenCalledWith(`Subject: ${currentMsg.Subject}<br>`);
-                expect(sanitize.input).toHaveBeenCalledTimes(1);
-            });
-
-            it('should create a new signature', () => {
-                expect(signatureBuilder.insert).toHaveBeenCalled();
-                expect(signatureBuilder.insert).toHaveBeenCalledWith(jasmine.any(Message), { action: 'reply' });
-            });
-
-            it('should load the sender', () => {
-                expect(composerFromModel.get).toHaveBeenCalledTimes(1);
-                expect(composerFromModel.get).toHaveBeenCalledWith(jasmine.any(Object));
-            });
-
-            it('should add two new keys for this message', () => {
-                const item = signatureBuilder.insert.calls.argsFor(0)[0];
-                const list = Object.keys(DEFAULT_MESSAGE_COPY).concat('Action', 'ParentID');
-                const listKeysItem = Object.keys(item);
-                expect(listKeysItem.length).toBe(list.length);
-                expect(_.includes(listKeysItem, 'Action')).toBe(true);
-                expect(_.includes(listKeysItem, 'ParentID')).toBe(true);
-            });
-
-            it('should set a value to Type', () => {
-                expect(item.Type).toBe(DEFAULT_MESSAGE_COPY.Type);
-            });
-
-            it('should set a value to ToList', () => {
-                expect(item.ToList).toEqual(DEFAULT_MESSAGE_COPY.ToList);
-            });
-
-            it('should set a value to CCList', () => {
-                expect(item.CCList).toEqual([]);
-            });
-
-            it('should set a value to BCCList', () => {
-                expect(item.BCCList).toEqual([]);
-            });
-
-            it('should set a value to Attachments', () => {
-                expect(item.Attachments).toEqual(DEFAULT_MESSAGE_COPY.Attachments);
-            });
-
-            it('should set a value to numTags', () => {
-                expect(item.numTags).toEqual(DEFAULT_MESSAGE_COPY.numTags);
-            });
-
-            it('should set a value to recipientFields', () => {
-                expect(item.recipientFields).toEqual(DEFAULT_MESSAGE_COPY.recipientFields);
-            });
-
-            it('should set a value to Subject', () => {
-                expect(item.Subject).toBe(`Re: ${DEFAULT_MESSAGE_COPY.Subject}`);
-            });
-
-            it('should set a value to PasswordHint', () => {
-                expect(item.PasswordHint).toBe(DEFAULT_MESSAGE_COPY.PasswordHint);
-            });
-
-            it('should set a value to IsEncrypted', () => {
-                expect(item.IsEncrypted).toBe(DEFAULT_MESSAGE_COPY.IsEncrypted);
-            });
-
-            it('should set a value to ExpirationTime', () => {
-                expect(item.ExpirationTime).toBe(DEFAULT_MESSAGE_COPY.ExpirationTime);
-            });
-
-            it('should set a value to From', () => {
-                expect(item.From).toEqual(DEFAULT_MESSAGE_COPY.From);
-            });
-
-            it('should set a value to uploading', () => {
-                expect(item.uploading).toBe(DEFAULT_MESSAGE_COPY.uploading);
-            });
-
-            it('should set a value to toFocussed', () => {
-                expect(item.toFocussed).toBe(DEFAULT_MESSAGE_COPY.toFocussed);
-            });
-
-            it('should set a value to autocompletesFocussed', () => {
-                expect(item.autocompletesFocussed).toBe(DEFAULT_MESSAGE_COPY.autocompletesFocussed);
-            });
-
-            it('should set a value to ccbcc', () => {
-                expect(item.ccbcc).toBe(DEFAULT_MESSAGE_COPY.ccbcc);
-            });
-
-            it('should set a value to AddressID', () => {
-                expect(item.AddressID).toBe(DEFAULT_MESSAGE_COPY.AddressID);
-            });
-
-            it('should set a value to NumEmbedded', () => {
-                expect(item.NumEmbedded).toBe(DEFAULT_MESSAGE_COPY.NumEmbedded);
-            });
-
-            it('should set a value to DecryptedBody', () => {
-                expect(item.DecryptedBody).toBe(DEFAULT_MESSAGE_COPY.DecryptedBody);
-            });
-
-            it('should set a value to Action', () => {
-                expect(item.Action).toBe(CONSTANTS.REPLY);
-            });
-
-            it('should set a value to ParentID', () => {
-                expect(item.ParentID).toBe(currentMsg.ID);
-            });
-
-            it('should set a value ID', () => {
-                expect(item.ID).toBe(undefined);
-            });
-
-            it('should set the decrypted body', () => {
-                expect(spySetDecryptedBody).toHaveBeenCalledWith(USER_SIGNATURE);
-                expect(spySetDecryptedBody).toHaveBeenCalledWith(DEFAULT_MESSAGE_REPLY);
-                expect(spySetDecryptedBody).toHaveBeenCalledTimes(2);
-            });
-
-            it('should return a new default object', () => {
-                const keysItem = Object.keys(item).sort();
-                const keysDefault = Object.keys(DEFAULT_MESSAGE_COPY)
-                    .concat('Action', 'ParentID')
-                    .sort();
-
-                expect(keysItem.length).toBe(keysDefault.length);
-                expect(keysItem).toEqual(keysDefault.sort());
-                expect(_.includes(keysItem, 'Action')).toBe(true);
-                expect(_.includes(keysItem, 'ParentID')).toBe(true);
-            });
-
-            it('should return an instance of Message', () => {
-                expect(item.constructor).toMatch(/Message/);
-            });
+            ],
+            bccList: [],
+            subject: 'Re: ',
+            action: 'replyall',
+            actionConstant: CONSTANTS.REPLY_ALL,
+            body: defaultReply,
+            currentMessageExtension: {
+                ID: Date.now(),
+                Subject: 'polo',
+                ReplyTo: 'monique',
+                ToList: [],
+                CCList: [
+                    {
+                        Address: 's@mulot.fr'
+                    }
+                ],
+                BCCList: [
+                    {
+                        Address: 'jean@bob.fr'
+                    }
+                ],
+                Sender: {
+                    Address: 'polo@test.com'
+                },
+                DecryptedBody: USER_SIGNATURE2
+            },
+            createMessage: (currentMsg) => {
+                const match = { Status: 1, Send: 1, Email: 'jeanne@free.fr' };
+                mailSettingsMock.Addresses = [TESTABLE_ADDRESS_DEFAULT, { Status: 2, Email: 'robert@free.fr' }, match];
+                return factory.create('replyall', currentMsg);
+            }
         });
 
-        describe('A reply all message', () => {
-            let item, currentMsg;
-            const match = { Status: 1, Send: 1, ID: 2 };
-            let DEFAULT_MESSAGE_COPY;
-
-            const DEFAULT_MESSAGE_REPLY =
-                '<blockquote class="protonmail_quote" type="cite">-------- Original Message --------<br>Subject: polo<br>Local Time: localReadableTime<br>UTC Time: utcReadableTime<br>From: polo@test.com<br>To: <br><br>prepareContent</blockquote><br>';
-
-            beforeEach(() => {
-                spyPrepareContent = jasmine.createSpy();
-                spyLocalReadableTime = jasmine.createSpy();
-                spyUtcReadableTime = jasmine.createSpy();
-                spyGetDecryptedBody = jasmine.createSpy();
-                spySetDecryptedBody = jasmine.createSpy();
-                spyMessageModelMock = jasmine.createSpy();
-                userMock.Addresses = [TESTABLE_ADDRESS_DEFAULT, { Status: 2 }, match];
-                spyOn(signatureBuilder, 'insert').and.returnValue(USER_SIGNATURE);
-                spyOn(tools, 'contactsToString').and.returnValue('');
-                spyOn(message, 'getDecryptedBody').and.returnValue(MESSAGE_BODY);
-                spyOn(sanitize, 'input').and.callFake(_.identity);
-                spyOn(textToHtmlMail, 'parse').and.callThrough();
-                spyOn(composerFromModel, 'get').and.returnValue({ address: DEFAULT_MESSAGE.From });
-                DEFAULT_MESSAGE_COPY = _.extend({}, DEFAULT_MESSAGE, {
-                    Subject: 'polo',
-                    ToList: ['bob'],
-                    CCList: ['bobby'],
-                    BCCList: ['bobette']
-                });
-                currentMsg = _.extend({}, message, {
-                    ID: Date.now(),
-                    Type: 2,
-                    Subject: 'polo',
-                    ToList: ['bob'],
-                    CCList: ['bobby'],
-                    BCCList: ['bobette'],
-                    Sender: {
-                        Address: 'polo@test.com'
-                    },
-                    DecryptedBody: USER_SIGNATURE2
-                });
-                item = factory.create('replyall', currentMsg);
-            });
-
-            it('should build a new message', () => {
-                expect(spyMessageModelMock).toHaveBeenCalledWith(undefined);
-                expect(spyMessageModelMock).toHaveBeenCalledTimes(1);
-            });
-
-            it('should prepareContent', () => {
-                expect(spyPrepareContent).toHaveBeenCalledTimes(1);
-                const [content, message, options] = spyPrepareContent.calls.argsFor(0);
-                expect(content).toBe(MESSAGE_BODY);
-                expect(message.ParentID).toBe(DEFAULT_MESSAGE_COPY.ID);
-                expect(options).toEqual({ blacklist: ['*'], action: 'replyall' });
-            });
-
-            it('should not parse text', () => {
-                expect(textToHtmlMail.parse).not.toHaveBeenCalled();
-            });
-
-            it('should have called the filter localReadableTime ', () => {
-                expect(spyLocalReadableTime).toHaveBeenCalledWith(DEFAULT_MESSAGE_COPY.Time);
-                expect(spyLocalReadableTime).toHaveBeenCalledTimes(1);
-            });
-
-            it('should have called the filter utcReadableTime ', () => {
-                expect(spyUtcReadableTime).toHaveBeenCalledWith(DEFAULT_MESSAGE_COPY.Time);
-                expect(spyUtcReadableTime).toHaveBeenCalledTimes(1);
-            });
-
-            it('should have formated contact as a string ', () => {
-                expect(tools.contactsToString).toHaveBeenCalledWith(currentMsg.CCList);
-                expect(tools.contactsToString).toHaveBeenCalledWith(currentMsg.ToList);
-                expect(tools.contactsToString).toHaveBeenCalledTimes(2);
-            });
-
-            it('should read the default message body', () => {
-                expect(message.getDecryptedBody).toHaveBeenCalledTimes(1);
-            });
-
-            it('should sanitize data ', () => {
-                expect(sanitize.input).toHaveBeenCalledWith(`Subject: ${currentMsg.Subject}<br>`);
-                expect(sanitize.input).toHaveBeenCalledTimes(1);
-            });
-
-            it('should create a new signature', () => {
-                expect(signatureBuilder.insert).toHaveBeenCalled();
-                expect(signatureBuilder.insert).toHaveBeenCalledWith(jasmine.any(Message), { action: 'replyall' });
-            });
-
-            it('should load the sender', () => {
-                expect(composerFromModel.get).toHaveBeenCalledTimes(1);
-                expect(composerFromModel.get).toHaveBeenCalledWith(jasmine.any(Object));
-            });
-            it('should add two new keys for this message', () => {
-                const item = signatureBuilder.insert.calls.argsFor(0)[0];
-                const list = Object.keys(DEFAULT_MESSAGE_COPY).concat('Action', 'ParentID');
-                const listKeysItem = Object.keys(item);
-                expect(listKeysItem.length).toBe(list.length);
-                expect(_.includes(listKeysItem, 'Action')).toBe(true);
-                expect(_.includes(listKeysItem, 'ParentID')).toBe(true);
-            });
-
-            it('should set a value to Type', () => {
-                expect(item.Type).toBe(DEFAULT_MESSAGE_COPY.Type);
-            });
-
-            it('should set a value to ToList', () => {
-                expect(item.ToList).toEqual(DEFAULT_MESSAGE_COPY.ToList);
-            });
-
-            it('should set a value to CCList', () => {
-                expect(item.CCList).toEqual(DEFAULT_MESSAGE_COPY.CCList);
-            });
-
-            it('should set a value to BCCList', () => {
-                expect(item.BCCList).toEqual(DEFAULT_MESSAGE_COPY.BCCList);
-            });
-
-            it('should set a value to Attachments', () => {
-                expect(item.Attachments).toEqual(DEFAULT_MESSAGE_COPY.Attachments);
-            });
-
-            it('should set a value to numTags', () => {
-                expect(item.numTags).toEqual(DEFAULT_MESSAGE_COPY.numTags);
-            });
-
-            it('should set a value to recipientFields', () => {
-                expect(item.recipientFields).toEqual(DEFAULT_MESSAGE_COPY.recipientFields);
-            });
-
-            it('should set a value to Subject', () => {
-                expect(item.Subject).toBe(`Re: ${DEFAULT_MESSAGE_COPY.Subject}`);
-            });
-
-            it('should set a value to PasswordHint', () => {
-                expect(item.PasswordHint).toBe(DEFAULT_MESSAGE_COPY.PasswordHint);
-            });
-
-            it('should set a value to IsEncrypted', () => {
-                expect(item.IsEncrypted).toBe(DEFAULT_MESSAGE_COPY.IsEncrypted);
-            });
-
-            it('should set a value to ExpirationTime', () => {
-                expect(item.ExpirationTime).toBe(DEFAULT_MESSAGE_COPY.ExpirationTime);
-            });
-
-            it('should set a value to From', () => {
-                expect(item.From).toEqual(DEFAULT_MESSAGE_COPY.From);
-            });
-
-            it('should set a value to uploading', () => {
-                expect(item.uploading).toBe(DEFAULT_MESSAGE_COPY.uploading);
-            });
-
-            it('should set a value to toFocussed', () => {
-                expect(item.toFocussed).toBe(DEFAULT_MESSAGE_COPY.toFocussed);
-            });
-
-            it('should set a value to autocompletesFocussed', () => {
-                expect(item.autocompletesFocussed).toBe(DEFAULT_MESSAGE_COPY.autocompletesFocussed);
-            });
-
-            it('should set a value to ccbcc', () => {
-                expect(item.ccbcc).toBe(DEFAULT_MESSAGE_COPY.ccbcc);
-            });
-
-            it('should set a value to AddressID', () => {
-                expect(item.AddressID).toBe(DEFAULT_MESSAGE_COPY.AddressID);
-            });
-
-            it('should set a value to NumEmbedded', () => {
-                expect(item.NumEmbedded).toBe(DEFAULT_MESSAGE_COPY.NumEmbedded);
-            });
-
-            it('should set a value to DecryptedBody', () => {
-                expect(item.DecryptedBody).toBe(DEFAULT_MESSAGE_COPY.DecryptedBody);
-            });
-
-            it('should set a value to Action', () => {
-                expect(item.Action).toBe(CONSTANTS.REPLY_ALL);
-            });
-
-            it('should set a value to ParentID', () => {
-                expect(item.ParentID).toBe(currentMsg.ID);
-            });
-
-            it('should set a value ID', () => {
-                expect(item.ID).toBe(undefined);
-            });
-
-            it('should set the decrypted body', () => {
-                expect(spySetDecryptedBody).toHaveBeenCalledWith(USER_SIGNATURE);
-                expect(spySetDecryptedBody).toHaveBeenCalledWith(DEFAULT_MESSAGE_REPLY);
-                expect(spySetDecryptedBody).toHaveBeenCalledTimes(2);
-            });
-
-            it('should return a new default object', () => {
-                const keysItem = Object.keys(item).sort();
-                const keysDefault = Object.keys(DEFAULT_MESSAGE_COPY)
-                    .concat('Action', 'ParentID')
-                    .sort();
-
-                expect(keysItem.length).toBe(keysDefault.length);
-                expect(keysItem).toEqual(keysDefault.sort());
-                expect(_.includes(keysItem, 'Action')).toBe(true);
-                expect(_.includes(keysItem, 'ParentID')).toBe(true);
-            });
-
-            it('should return an instance of Message', () => {
-                expect(item.constructor).toMatch(/Message/);
-            });
+        createMessageTest({
+            type: 'A forward message',
+            defaultMessageExtension: {
+                Subject: 'polo',
+                ToList: ['bob'],
+                CCList: ['bobby'],
+                BCCList: ['bobette']
+            },
+            actionConstant: CONSTANTS.FORWARD,
+            toList: [],
+            ccList: [],
+            bccList: [],
+            subject: 'Fw: ',
+            action: 'forward',
+            body: defaultReply,
+            currentMessageExtension: {
+                ID: Date.now(),
+                Type: 2,
+                Subject: 'polo',
+                ToList: ['bob'],
+                CCList: ['bobby'],
+                BCCList: ['bobette'],
+                Sender: {
+                    Address: 'polo@test.com'
+                },
+                DecryptedBody: USER_SIGNATURE2
+            },
+            createMessage: (currentMsg) => {
+                const match = { Status: 1, Send: 1, ID: 2 };
+                mailSettingsMock.Addresses = [TESTABLE_ADDRESS_DEFAULT, { Status: 2 }, match];
+                return factory.create('forward', currentMsg);
+            }
         });
 
-        describe('A reply all message type 3', () => {
-            let item, currentMsg;
-            const match = { Status: 1, Send: 1, ID: 2 };
-            let DEFAULT_MESSAGE_COPY;
+        function createMessageTest({ type, createMessage, defaultMessageExtension, currentMessageExtension, action, toList, ccList, bccList, subject, actionConstant, parseText, fromAddress, body = USER_SIGNATURE2 }) {
+            describe(type, () => {
+                let item;
+                let currentMsg;
+                let DEFAULT_MESSAGE_COPY;
 
-            const DEFAULT_MESSAGE_REPLY =
-                '<blockquote class="protonmail_quote" type="cite">-------- Original Message --------<br>Subject: polo<br>Local Time: localReadableTime<br>UTC Time: utcReadableTime<br>From: polo@test.com<br>To: <br><br>prepareContent</blockquote><br>';
+                beforeEach(() => {
+                    spyPrepareContent = jasmine.createSpy();
+                    spyLocalReadableTime = jasmine.createSpy();
+                    spyGetDecryptedBody = jasmine.createSpy();
+                    spySetDecryptedBody = jasmine.createSpy();
+                    spyMessageModelMock = jasmine.createSpy();
 
-            beforeEach(() => {
-                spyPrepareContent = jasmine.createSpy();
-                spyLocalReadableTime = jasmine.createSpy();
-                spyUtcReadableTime = jasmine.createSpy();
-                spyGetDecryptedBody = jasmine.createSpy();
-                spySetDecryptedBody = jasmine.createSpy();
-                spyMessageModelMock = jasmine.createSpy();
-                userMock.Addresses = [TESTABLE_ADDRESS_DEFAULT, { Status: 2 }, match];
-                spyOn(signatureBuilder, 'insert').and.returnValue(USER_SIGNATURE);
-                spyOn(tools, 'contactsToString').and.returnValue('');
-                spyOn(message, 'getDecryptedBody').and.returnValue(MESSAGE_BODY);
-                spyOn(sanitize, 'input').and.callFake(_.identity);
-                spyOn(textToHtmlMail, 'parse').and.callThrough();
-                spyOn(composerFromModel, 'get').and.returnValue({ address: DEFAULT_MESSAGE.From });
+                    spyOn(signatureBuilder, 'insert').and.returnValue(USER_SIGNATURE);
+                    if (currentMessageExtension.MIMEType === 'text/plain') {
+                        spyOn(textToHtmlMail, 'parse').and.returnValue(MESSAGE_BODY_PLAIN_ESCAPED);
+                        spyOn(message, 'getDecryptedBody').and.returnValue(MESSAGE_BODY_PLAIN);
+                    } else {
+                        spyOn(textToHtmlMail, 'parse').and.callThrough();
+                        spyOn(message, 'getDecryptedBody').and.returnValue(MESSAGE_BODY);
+                    }
+                    spyOn(sanitize, 'input').and.callFake(_.identity);
 
-                DEFAULT_MESSAGE_COPY = _.extend({}, DEFAULT_MESSAGE, {
-                    Subject: 'polo',
-                    ToList: ['bob'],
-                    CCList: ['bobby'],
-                    BCCList: ['bobette']
+                    if (fromAddress) {
+                        spyOn(composerFromModel, 'get').and.returnValue({ address: fromAddress });
+                    } else {
+                        spyOn(composerFromModel, 'get').and.returnValue({ address: DEFAULT_MESSAGE.From });
+                    }
+
+                    DEFAULT_MESSAGE_COPY = _.extend({}, DEFAULT_MESSAGE, defaultMessageExtension);
+                    currentMsg = _.extend({}, message, currentMessageExtension);
+
+                    item = createMessage(currentMsg);
                 });
-                currentMsg = _.extend({}, message, {
-                    ID: Date.now(),
-                    Type: 3,
-                    Subject: 'polo',
-                    ToList: ['bob'],
-                    CCList: ['bobby'],
-                    BCCList: ['bobette'],
-                    Sender: {
-                        Address: 'polo@test.com'
-                    },
-                    DecryptedBody: USER_SIGNATURE2
+
+                it('should build a new message', () => {
+                    expect(spyMessageModelMock).toHaveBeenCalledWith(undefined);
+                    expect(spyMessageModelMock).toHaveBeenCalledTimes(1);
                 });
-                item = factory.create('replyall', currentMsg);
-            });
 
-            it('should build a new message', () => {
-                expect(spyMessageModelMock).toHaveBeenCalledWith(undefined);
-                expect(spyMessageModelMock).toHaveBeenCalledTimes(1);
-            });
+                if (parseText) {
+                    it('should parse text', () => {
+                        expect(textToHtmlMail.parse).toHaveBeenCalledTimes(1);
+                        expect(textToHtmlMail.parse).toHaveBeenCalledWith(MESSAGE_BODY_PLAIN);
+                    });
+                } else {
+                    it('should not parse text', () => {
+                        expect(textToHtmlMail.parse).not.toHaveBeenCalled();
+                    });
+                }
 
-            it('should prepareContent', () => {
-                expect(spyPrepareContent).toHaveBeenCalledTimes(1);
-                const [content, message, options] = spyPrepareContent.calls.argsFor(0);
-                expect(content).toBe(MESSAGE_BODY);
-                expect(message.ParentID).toBe(DEFAULT_MESSAGE_COPY.ID);
-                expect(options).toEqual({ blacklist: ['*'], action: 'replyall' });
-            });
+                if (action !== 'new') {
+                    it('should prepareContent', () => {
+                        expect(spyPrepareContent).toHaveBeenCalledTimes(1);
+                        const [content, message, options] = spyPrepareContent.calls.argsFor(0);
 
-            it('should not parse text', () => {
-                expect(textToHtmlMail.parse).not.toHaveBeenCalled();
-            });
-
-            it('should have called the filter localReadableTime ', () => {
-                expect(spyLocalReadableTime).toHaveBeenCalledWith(DEFAULT_MESSAGE_COPY.Time);
-                expect(spyLocalReadableTime).toHaveBeenCalledTimes(1);
-            });
-
-            it('should have called the filter utcReadableTime ', () => {
-                expect(spyUtcReadableTime).toHaveBeenCalledWith(DEFAULT_MESSAGE_COPY.Time);
-                expect(spyUtcReadableTime).toHaveBeenCalledTimes(1);
-            });
-
-            it('should have formated contact as a string ', () => {
-                expect(tools.contactsToString).toHaveBeenCalledWith(currentMsg.CCList);
-                expect(tools.contactsToString).toHaveBeenCalledWith(currentMsg.ToList);
-                expect(tools.contactsToString).toHaveBeenCalledTimes(2);
-            });
-
-            it('should read the default message body', () => {
-                expect(message.getDecryptedBody).toHaveBeenCalledTimes(1);
-            });
-
-            it('should sanitize data ', () => {
-                expect(sanitize.input).toHaveBeenCalledWith(`Subject: ${currentMsg.Subject}<br>`);
-                expect(sanitize.input).toHaveBeenCalledTimes(1);
-            });
-
-            it('should create a new signature', () => {
-                expect(signatureBuilder.insert).toHaveBeenCalled();
-                expect(signatureBuilder.insert).toHaveBeenCalledWith(jasmine.any(Message), { action: 'replyall' });
-            });
-            it('should load the sender', () => {
-                expect(composerFromModel.get).toHaveBeenCalledTimes(1);
-                expect(composerFromModel.get).toHaveBeenCalledWith(jasmine.any(Object));
-            });
-
-            it('should add two new keys for this message', () => {
-                const item = signatureBuilder.insert.calls.argsFor(0)[0];
-                const list = Object.keys(DEFAULT_MESSAGE_COPY).concat('Action', 'ParentID');
-                const listKeysItem = Object.keys(item);
-                expect(listKeysItem.length).toBe(list.length);
-                expect(_.includes(listKeysItem, 'Action')).toBe(true);
-                expect(_.includes(listKeysItem, 'ParentID')).toBe(true);
-            });
-
-            it('should set a value to Type', () => {
-                expect(item.Type).toBe(DEFAULT_MESSAGE_COPY.Type);
-            });
-
-            it('should set a value to ToList', () => {
-                expect(item.ToList).toEqual(DEFAULT_MESSAGE_COPY.ToList);
-            });
-
-            it('should set a value to CCList', () => {
-                expect(item.CCList).toEqual(DEFAULT_MESSAGE_COPY.CCList);
-            });
-
-            it('should set a value to BCCList', () => {
-                expect(item.BCCList).toEqual(DEFAULT_MESSAGE_COPY.BCCList);
-            });
-
-            it('should set a value to Attachments', () => {
-                expect(item.Attachments).toEqual(DEFAULT_MESSAGE_COPY.Attachments);
-            });
-
-            it('should set a value to numTags', () => {
-                expect(item.numTags).toEqual(DEFAULT_MESSAGE_COPY.numTags);
-            });
-
-            it('should set a value to recipientFields', () => {
-                expect(item.recipientFields).toEqual(DEFAULT_MESSAGE_COPY.recipientFields);
-            });
-
-            it('should set a value to Subject', () => {
-                expect(item.Subject).toBe(`Re: ${DEFAULT_MESSAGE_COPY.Subject}`);
-            });
-
-            it('should set a value to PasswordHint', () => {
-                expect(item.PasswordHint).toBe(DEFAULT_MESSAGE_COPY.PasswordHint);
-            });
-
-            it('should set a value to IsEncrypted', () => {
-                expect(item.IsEncrypted).toBe(DEFAULT_MESSAGE_COPY.IsEncrypted);
-            });
-
-            it('should set a value to ExpirationTime', () => {
-                expect(item.ExpirationTime).toBe(DEFAULT_MESSAGE_COPY.ExpirationTime);
-            });
-
-            it('should set a value to From', () => {
-                expect(item.From).toEqual(DEFAULT_MESSAGE_COPY.From);
-            });
-
-            it('should set a value to uploading', () => {
-                expect(item.uploading).toBe(DEFAULT_MESSAGE_COPY.uploading);
-            });
-
-            it('should set a value to toFocussed', () => {
-                expect(item.toFocussed).toBe(DEFAULT_MESSAGE_COPY.toFocussed);
-            });
-
-            it('should set a value to autocompletesFocussed', () => {
-                expect(item.autocompletesFocussed).toBe(DEFAULT_MESSAGE_COPY.autocompletesFocussed);
-            });
-
-            it('should set a value to ccbcc', () => {
-                expect(item.ccbcc).toBe(DEFAULT_MESSAGE_COPY.ccbcc);
-            });
-
-            it('should set a value to AddressID', () => {
-                expect(item.AddressID).toBe(DEFAULT_MESSAGE_COPY.AddressID);
-            });
-
-            it('should set a value to NumEmbedded', () => {
-                expect(item.NumEmbedded).toBe(DEFAULT_MESSAGE_COPY.NumEmbedded);
-            });
-
-            it('should set a value to DecryptedBody', () => {
-                expect(item.DecryptedBody).toBe(DEFAULT_MESSAGE_COPY.DecryptedBody);
-            });
-
-            it('should set a value to Action', () => {
-                expect(item.Action).toBe(CONSTANTS.REPLY_ALL);
-            });
-
-            it('should set a value to ParentID', () => {
-                expect(item.ParentID).toBe(currentMsg.ID);
-            });
-
-            it('should set a value ID', () => {
-                expect(item.ID).toBe(undefined);
-            });
-
-            it('should set the decrypted body', () => {
-                expect(spySetDecryptedBody).toHaveBeenCalledWith(USER_SIGNATURE);
-                expect(spySetDecryptedBody).toHaveBeenCalledWith(DEFAULT_MESSAGE_REPLY);
-                expect(spySetDecryptedBody).toHaveBeenCalledTimes(2);
-            });
-
-            it('should return a new default object', () => {
-                const keysItem = Object.keys(item).sort();
-                const keysDefault = Object.keys(DEFAULT_MESSAGE_COPY)
-                    .concat('Action', 'ParentID')
-                    .sort();
-
-                expect(keysItem.length).toBe(keysDefault.length);
-                expect(keysItem).toEqual(keysDefault.sort());
-                expect(_.includes(keysItem, 'Action')).toBe(true);
-                expect(_.includes(keysItem, 'ParentID')).toBe(true);
-            });
-
-            it('should return an instance of Message', () => {
-                expect(item.constructor).toMatch(/Message/);
-            });
-        });
-
-        describe('A reply all message type ! 2||3', () => {
-            let item, currentMsg;
-            const match = { Status: 1, Send: 1, ID: 2, Email: 'jeanne@free.fr' };
-            let DEFAULT_MESSAGE_COPY;
-
-            const DEFAULT_MESSAGE_REPLY =
-                '<blockquote class="protonmail_quote" type="cite">-------- Original Message --------<br>Subject: polo<br>Local Time: localReadableTime<br>UTC Time: utcReadableTime<br>From: polo@test.com<br>To: <br><br>prepareContent</blockquote><br>';
-
-            beforeEach(() => {
-                spyPrepareContent = jasmine.createSpy();
-                spyLocalReadableTime = jasmine.createSpy();
-                spyUtcReadableTime = jasmine.createSpy();
-                spyGetDecryptedBody = jasmine.createSpy();
-                spySetDecryptedBody = jasmine.createSpy();
-                spyMessageModelMock = jasmine.createSpy();
-                spyOn(textToHtmlMail, 'parse').and.callThrough();
-                userMock.Addresses = [TESTABLE_ADDRESS_DEFAULT, { Status: 2, Email: 'robert@free.fr' }, match];
-                spyOn(signatureBuilder, 'insert').and.returnValue(USER_SIGNATURE);
-                spyOn(tools, 'contactsToString').and.returnValue('');
-                spyOn(message, 'getDecryptedBody').and.returnValue(MESSAGE_BODY);
-                spyOn(sanitize, 'input').and.callFake(_.identity);
-                spyOn(composerFromModel, 'get').and.returnValue({ address: DEFAULT_MESSAGE.From });
-                DEFAULT_MESSAGE_COPY = _.extend({}, DEFAULT_MESSAGE, {
-                    Subject: 'polo',
-                    ToList: ['monique'],
-                    CCList: [
-                        {
-                            Address: 's@mulot.fr'
+                        if (currentMessageExtension.MIMEType === 'text/plain') {
+                            expect(content).toBe(MESSAGE_BODY_PLAIN_ESCAPED);
+                        } else {
+                            expect(content).toBe(MESSAGE_BODY);
                         }
-                    ],
-                    BCCList: []
+                        expect(message.ParentID).toBe(DEFAULT_MESSAGE_COPY.ID);
+                        expect(options).toEqual({ blacklist: ['*'], action });
+                    });
+
+                    it('should have called the filter localReadableTime ', () => {
+                        expect(spyLocalReadableTime).toHaveBeenCalledWith(DEFAULT_MESSAGE_COPY.Time);
+                        expect(spyLocalReadableTime).toHaveBeenCalledTimes(1);
+                    });
+
+                    it('should read the default message body', () => {
+                        expect(message.getDecryptedBody).toHaveBeenCalledTimes(1);
+                    });
+
+                } else {
+                    it('should not have called the filter localReadableTime ', () => {
+                        expect(spyLocalReadableTime).not.toHaveBeenCalled();
+                    });
+
+                    it('should try to get the default decryptBody of the message', () => {
+                        expect(message.getDecryptedBody).not.toHaveBeenCalled();
+                    });
+
+                    it('should not have sanitize data ', () => {
+                        expect(sanitize.input).not.toHaveBeenCalled();
+                    });
+                }
+
+                it('should create a new signature', () => {
+                    expect(signatureBuilder.insert).toHaveBeenCalled();
+                    expect(signatureBuilder.insert).toHaveBeenCalledWith(jasmine.any(Message), { action });
                 });
-                currentMsg = _.extend({}, message, {
-                    ID: Date.now(),
-                    Subject: 'polo',
-                    ReplyTo: 'monique',
-                    ToList: [],
-                    CCList: [
-                        {
-                            Address: 's@mulot.fr'
-                        }
-                    ],
-                    BCCList: [
-                        {
-                            Address: 'jean@bob.fr'
-                        }
-                    ],
-                    Sender: {
-                        Address: 'polo@test.com'
-                    },
-                    DecryptedBody: USER_SIGNATURE2
+
+                it('should load the sender', () => {
+                    expect(composerFromModel.get).toHaveBeenCalledTimes(1);
+                    expect(composerFromModel.get).toHaveBeenCalledWith(jasmine.any(Object));
                 });
-                item = factory.create('replyall', currentMsg);
-            });
 
-            it('should build a new message', () => {
-                expect(spyMessageModelMock).toHaveBeenCalledWith(undefined);
-                expect(spyMessageModelMock).toHaveBeenCalledTimes(1);
-            });
+                if (action !== 'new') {
+                    it('should add two new keys for this message', () => {
+                        const item = signatureBuilder.insert.calls.argsFor(0)[0];
+                        const list = Object.keys(DEFAULT_MESSAGE_COPY).concat('Action', 'ParentID');
+                        const listKeysItem = Object.keys(item);
+                        expect(listKeysItem.length).toBe(list.length);
+                        expect(_.includes(listKeysItem, 'Action')).toBe(true);
+                        expect(_.includes(listKeysItem, 'ParentID')).toBe(true);
+                    });
+                }
 
-            it('should prepareContent', () => {
-                expect(spyPrepareContent).toHaveBeenCalledTimes(1);
-                const [content, message, options] = spyPrepareContent.calls.argsFor(0);
-                expect(content).toBe(MESSAGE_BODY);
-                expect(message.ParentID).toBe(DEFAULT_MESSAGE_COPY.ID);
-                expect(options).toEqual({ blacklist: ['*'], action: 'replyall' });
-            });
-
-            it('should not parse text', () => {
-                expect(textToHtmlMail.parse).not.toHaveBeenCalled();
-            });
-
-            it('should have called the filter localReadableTime ', () => {
-                expect(spyLocalReadableTime).toHaveBeenCalledWith(DEFAULT_MESSAGE_COPY.Time);
-                expect(spyLocalReadableTime).toHaveBeenCalledTimes(1);
-            });
-
-            it('should have called the filter utcReadableTime ', () => {
-                expect(spyUtcReadableTime).toHaveBeenCalledWith(DEFAULT_MESSAGE_COPY.Time);
-                expect(spyUtcReadableTime).toHaveBeenCalledTimes(1);
-            });
-
-            it('should have formated contact as a string ', () => {
-                expect(tools.contactsToString).toHaveBeenCalledWith(currentMsg.CCList);
-                expect(tools.contactsToString).toHaveBeenCalledWith(currentMsg.ToList);
-                expect(tools.contactsToString).toHaveBeenCalledTimes(2);
-            });
-
-            it('should read the default message body', () => {
-                expect(message.getDecryptedBody).toHaveBeenCalledTimes(1);
-            });
-
-            it('should sanitize data ', () => {
-                expect(sanitize.input).toHaveBeenCalledWith(`Subject: ${currentMsg.Subject}<br>`);
-                expect(sanitize.input).toHaveBeenCalledTimes(1);
-            });
-
-            it('should create a new signature', () => {
-                expect(signatureBuilder.insert).toHaveBeenCalled();
-                expect(signatureBuilder.insert).toHaveBeenCalledWith(jasmine.any(Message), { action: 'replyall' });
-            });
-
-            it('should load the sender', () => {
-                expect(composerFromModel.get).toHaveBeenCalledTimes(1);
-                expect(composerFromModel.get).toHaveBeenCalledWith(jasmine.any(Object));
-            });
-            it('should add two new keys for this message', () => {
-                const item = signatureBuilder.insert.calls.argsFor(0)[0];
-                const list = Object.keys(DEFAULT_MESSAGE_COPY).concat('Action', 'ParentID');
-                const listKeysItem = Object.keys(item);
-                expect(listKeysItem.length).toBe(list.length);
-                expect(_.includes(listKeysItem, 'Action')).toBe(true);
-                expect(_.includes(listKeysItem, 'ParentID')).toBe(true);
-            });
-
-            it('should set a value to Type', () => {
-                expect(item.Type).toBe(DEFAULT_MESSAGE_COPY.Type);
-            });
-
-            it('should set a value to ToList', () => {
-                expect(item.ToList).toEqual(DEFAULT_MESSAGE_COPY.ToList);
-            });
-
-            it('should set a value to CCList', () => {
-                expect(item.CCList).toEqual(DEFAULT_MESSAGE_COPY.CCList);
-            });
-
-            it('should set a value to BCCList', () => {
-                expect(item.BCCList).toEqual(DEFAULT_MESSAGE_COPY.BCCList);
-            });
-
-            it('should set a value to Attachments', () => {
-                expect(item.Attachments).toEqual(DEFAULT_MESSAGE_COPY.Attachments);
-            });
-
-            it('should set a value to numTags', () => {
-                expect(item.numTags).toEqual(DEFAULT_MESSAGE_COPY.numTags);
-            });
-
-            it('should set a value to recipientFields', () => {
-                expect(item.recipientFields).toEqual(DEFAULT_MESSAGE_COPY.recipientFields);
-            });
-
-            it('should set a value to Subject', () => {
-                expect(item.Subject).toBe(`Re: ${DEFAULT_MESSAGE_COPY.Subject}`);
-            });
-
-            it('should set a value to PasswordHint', () => {
-                expect(item.PasswordHint).toBe(DEFAULT_MESSAGE_COPY.PasswordHint);
-            });
-
-            it('should set a value to IsEncrypted', () => {
-                expect(item.IsEncrypted).toBe(DEFAULT_MESSAGE_COPY.IsEncrypted);
-            });
-
-            it('should set a value to ExpirationTime', () => {
-                expect(item.ExpirationTime).toBe(DEFAULT_MESSAGE_COPY.ExpirationTime);
-            });
-
-            it('should set a value to From', () => {
-                expect(item.From).toEqual(DEFAULT_MESSAGE_COPY.From);
-            });
-
-            it('should set a value to uploading', () => {
-                expect(item.uploading).toBe(DEFAULT_MESSAGE_COPY.uploading);
-            });
-
-            it('should set a value to toFocussed', () => {
-                expect(item.toFocussed).toBe(DEFAULT_MESSAGE_COPY.toFocussed);
-            });
-
-            it('should set a value to autocompletesFocussed', () => {
-                expect(item.autocompletesFocussed).toBe(DEFAULT_MESSAGE_COPY.autocompletesFocussed);
-            });
-
-            it('should set a value to ccbcc', () => {
-                expect(item.ccbcc).toBe(DEFAULT_MESSAGE_COPY.ccbcc);
-            });
-
-            it('should set a value to AddressID', () => {
-                expect(item.AddressID).toBe(DEFAULT_MESSAGE_COPY.AddressID);
-            });
-
-            it('should set a value to NumEmbedded', () => {
-                expect(item.NumEmbedded).toBe(DEFAULT_MESSAGE_COPY.NumEmbedded);
-            });
-
-            it('should set a value to DecryptedBody', () => {
-                expect(item.DecryptedBody).toBe(DEFAULT_MESSAGE_COPY.DecryptedBody);
-            });
-
-            it('should set a value to Action', () => {
-                expect(item.Action).toBe(CONSTANTS.REPLY_ALL);
-            });
-
-            it('should set a value to ParentID', () => {
-                expect(item.ParentID).toBe(currentMsg.ID);
-            });
-
-            it('should set a value ID', () => {
-                expect(item.ID).toBe(undefined);
-            });
-
-            it('should set the decrypted body', () => {
-                expect(spySetDecryptedBody).toHaveBeenCalledWith(USER_SIGNATURE);
-                expect(spySetDecryptedBody).toHaveBeenCalledWith(DEFAULT_MESSAGE_REPLY);
-                expect(spySetDecryptedBody).toHaveBeenCalledTimes(2);
-            });
-
-            it('should return a new default object', () => {
-                const keysItem = Object.keys(item).sort();
-                const keysDefault = Object.keys(DEFAULT_MESSAGE_COPY)
-                    .concat('Action', 'ParentID')
-                    .sort();
-
-                expect(keysItem.length).toBe(keysDefault.length);
-                expect(keysItem).toEqual(keysDefault.sort());
-                expect(_.includes(keysItem, 'Action')).toBe(true);
-                expect(_.includes(keysItem, 'ParentID')).toBe(true);
-            });
-
-            it('should return an instance of Message', () => {
-                expect(item.constructor).toMatch(/Message/);
-            });
-        });
-
-        describe('A forward message', () => {
-            let item, currentMsg;
-            const match = { Status: 1, Send: 1, ID: 2 };
-            let DEFAULT_MESSAGE_COPY;
-
-            const DEFAULT_MESSAGE_REPLY =
-                '<blockquote class="protonmail_quote" type="cite">-------- Original Message --------<br>Subject: polo<br>Local Time: localReadableTime<br>UTC Time: utcReadableTime<br>From: polo@test.com<br>To: <br><br>prepareContent</blockquote><br>';
-
-            beforeEach(() => {
-                spyPrepareContent = jasmine.createSpy();
-                spyLocalReadableTime = jasmine.createSpy();
-                spyUtcReadableTime = jasmine.createSpy();
-                spyGetDecryptedBody = jasmine.createSpy();
-                spySetDecryptedBody = jasmine.createSpy();
-                spyMessageModelMock = jasmine.createSpy();
-                userMock.Addresses = [TESTABLE_ADDRESS_DEFAULT, { Status: 2 }, match];
-                spyOn(signatureBuilder, 'insert').and.returnValue(USER_SIGNATURE);
-                spyOn(tools, 'contactsToString').and.returnValue('');
-                spyOn(message, 'getDecryptedBody').and.returnValue(MESSAGE_BODY);
-                spyOn(sanitize, 'input').and.callFake(_.identity);
-                spyOn(textToHtmlMail, 'parse').and.callThrough();
-                spyOn(composerFromModel, 'get').and.returnValue({ address: DEFAULT_MESSAGE.From });
-                DEFAULT_MESSAGE_COPY = _.extend({}, DEFAULT_MESSAGE, {
-                    Subject: 'polo',
-                    ToList: ['bob'],
-                    CCList: ['bobby'],
-                    BCCList: ['bobette']
+                it('should set a value to Type', () => {
+                    expect(item.Type).toBe(DEFAULT_MESSAGE_COPY.Type);
                 });
-                currentMsg = _.extend({}, message, {
-                    ID: Date.now(),
-                    Type: 2,
-                    Subject: 'polo',
-                    ToList: ['bob'],
-                    CCList: ['bobby'],
-                    BCCList: ['bobette'],
-                    Sender: {
-                        Address: 'polo@test.com'
-                    },
-                    DecryptedBody: USER_SIGNATURE2
+
+                it('should set a value to ToList', () => {
+                    expect(item.ToList).toEqual(toList);
                 });
-                item = factory.create('forward', currentMsg);
-            });
 
-            it('should build a new message', () => {
-                expect(spyMessageModelMock).toHaveBeenCalledWith(undefined);
-                expect(spyMessageModelMock).toHaveBeenCalledTimes(1);
-            });
+                it('should set a value to CCList', () => {
+                    expect(item.CCList).toEqual(ccList);
+                });
 
-            it('should prepareContent', () => {
-                expect(spyPrepareContent).toHaveBeenCalledTimes(1);
-                const [content, message, options] = spyPrepareContent.calls.argsFor(0);
-                expect(content).toBe(MESSAGE_BODY);
-                expect(message.ParentID).toBe(DEFAULT_MESSAGE_COPY.ID);
-                expect(options).toEqual({ blacklist: ['*'], action: 'forward' });
-            });
+                it('should set a value to BCCList', () => {
+                    expect(item.BCCList).toEqual(bccList);
+                });
 
-            it('should not parse text', () => {
-                expect(textToHtmlMail.parse).not.toHaveBeenCalled();
-            });
+                it('should set a value to Attachments', () => {
+                    expect(item.Attachments).toEqual(DEFAULT_MESSAGE_COPY.Attachments);
+                });
 
-            it('should have called the filter localReadableTime ', () => {
-                expect(spyLocalReadableTime).toHaveBeenCalledWith(DEFAULT_MESSAGE_COPY.Time);
-                expect(spyLocalReadableTime).toHaveBeenCalledTimes(1);
-            });
+                it('should set a value to numTags', () => {
+                    expect(item.numTags).toEqual(DEFAULT_MESSAGE_COPY.numTags);
+                });
 
-            it('should have called the filter utcReadableTime ', () => {
-                expect(spyUtcReadableTime).toHaveBeenCalledWith(DEFAULT_MESSAGE_COPY.Time);
-                expect(spyUtcReadableTime).toHaveBeenCalledTimes(1);
-            });
+                it('should set a value to recipientFields', () => {
+                    expect(item.recipientFields).toEqual(DEFAULT_MESSAGE_COPY.recipientFields);
+                });
 
-            it('should have formated contact as a string ', () => {
-                expect(tools.contactsToString).toHaveBeenCalledWith(currentMsg.CCList);
-                expect(tools.contactsToString).toHaveBeenCalledWith(currentMsg.ToList);
-                expect(tools.contactsToString).toHaveBeenCalledTimes(2);
-            });
+                it('should set a value to Subject', () => {
+                    expect(item.Subject).toBe(`${subject}${DEFAULT_MESSAGE_COPY.Subject}`);
+                });
 
-            it('should read the default message body', () => {
-                expect(message.getDecryptedBody).toHaveBeenCalledTimes(1);
-            });
+                it('should set a value to PasswordHint', () => {
+                    expect(item.PasswordHint).toBe(DEFAULT_MESSAGE_COPY.PasswordHint);
+                });
 
-            it('should sanitize data ', () => {
-                expect(sanitize.input).toHaveBeenCalledWith(`Subject: ${currentMsg.Subject}<br>`);
-                expect(sanitize.input).toHaveBeenCalledTimes(1);
-            });
+                it('should set a value to IsEncrypted', () => {
+                    expect(item.IsEncrypted).toBe(DEFAULT_MESSAGE_COPY.IsEncrypted);
+                });
 
-            it('should create a new signature', () => {
-                expect(signatureBuilder.insert).toHaveBeenCalled();
-                expect(signatureBuilder.insert).toHaveBeenCalledWith(jasmine.any(Message), { action: 'forward' });
-            });
-            it('should load the sender', () => {
-                expect(composerFromModel.get).toHaveBeenCalledTimes(1);
-                expect(composerFromModel.get).toHaveBeenCalledWith(jasmine.any(Object));
-            });
+                it('should set a value to ExpirationTime', () => {
+                    expect(item.ExpirationTime).toBe(DEFAULT_MESSAGE_COPY.ExpirationTime);
+                });
 
-            it('should add two new keys for this message', () => {
-                const item = signatureBuilder.insert.calls.argsFor(0)[0];
-                const list = Object.keys(DEFAULT_MESSAGE_COPY).concat('Action', 'ParentID');
-                const listKeysItem = Object.keys(item);
-                expect(listKeysItem.length).toBe(list.length);
-                expect(_.includes(listKeysItem, 'Action')).toBe(true);
-                expect(_.includes(listKeysItem, 'ParentID')).toBe(true);
-            });
+                it('should set a value to From', () => {
+                    expect(item.From).toEqual(DEFAULT_MESSAGE_COPY.From);
+                });
 
-            it('should set a value to Type', () => {
-                expect(item.Type).toBe(DEFAULT_MESSAGE_COPY.Type);
-            });
+                it('should set a value to uploading', () => {
+                    expect(item.uploading).toBe(DEFAULT_MESSAGE_COPY.uploading);
+                });
 
-            it('should set a value to ToList', () => {
-                expect(item.ToList).toEqual([]);
-            });
+                it('should set a value to toFocussed', () => {
+                    expect(item.toFocussed).toBe(DEFAULT_MESSAGE_COPY.toFocussed);
+                });
 
-            it('should set a value to CCList', () => {
-                expect(item.CCList).toEqual([]);
-            });
+                it('should set a value to autocompletesFocussed', () => {
+                    expect(item.autocompletesFocussed).toBe(DEFAULT_MESSAGE_COPY.autocompletesFocussed);
+                });
 
-            it('should set a value to BCCList', () => {
-                expect(item.BCCList).toEqual([]);
-            });
+                it('should set a value to ccbcc', () => {
+                    expect(item.ccbcc).toBe(DEFAULT_MESSAGE_COPY.ccbcc);
+                });
 
-            it('should set a value to Attachments', () => {
-                expect(item.Attachments).toEqual(DEFAULT_MESSAGE_COPY.Attachments);
-            });
+                it('should set a value to AddressID', () => {
+                    expect(item.AddressID).toBe(DEFAULT_MESSAGE_COPY.AddressID);
+                });
 
-            it('should set a value to numTags', () => {
-                expect(item.numTags).toEqual(DEFAULT_MESSAGE_COPY.numTags);
-            });
+                it('should set a value to NumEmbedded', () => {
+                    expect(item.NumEmbedded).toBe(DEFAULT_MESSAGE_COPY.NumEmbedded);
+                });
 
-            it('should set a value to recipientFields', () => {
-                expect(item.recipientFields).toEqual(DEFAULT_MESSAGE_COPY.recipientFields);
-            });
+                it('should set a value to DecryptedBody', () => {
+                    expect(item.DecryptedBody).toBe(DEFAULT_MESSAGE_COPY.DecryptedBody);
+                });
 
-            it('should set a value to Subject', () => {
-                expect(item.Subject).toBe(`Fw: ${DEFAULT_MESSAGE_COPY.Subject}`);
-            });
+                if (action !== 'new') {
+                    it('should set a value to Action', () => {
+                        expect(item.Action).toBe(actionConstant);
+                    });
 
-            it('should set a value to PasswordHint', () => {
-                expect(item.PasswordHint).toBe(DEFAULT_MESSAGE_COPY.PasswordHint);
-            });
+                    it('should set a value to ParentID', () => {
+                        expect(item.ParentID).toBe(currentMsg.ID);
+                    });
 
-            it('should set a value to IsEncrypted', () => {
-                expect(item.IsEncrypted).toBe(DEFAULT_MESSAGE_COPY.IsEncrypted);
-            });
+                    it('should set a value ID', () => {
+                        expect(item.ID).toBe(undefined);
+                    });
 
-            it('should set a value to ExpirationTime', () => {
-                expect(item.ExpirationTime).toBe(DEFAULT_MESSAGE_COPY.ExpirationTime);
-            });
+                }
 
-            it('should set a value to From', () => {
-                expect(item.From).toEqual(DEFAULT_MESSAGE_COPY.From);
-            });
+                it('should set the decrypted body', () => {
+                    expect(spySetDecryptedBody).toHaveBeenCalledWith(USER_SIGNATURE);
+                    if (body) {
+                        expect(spySetDecryptedBody).toHaveBeenCalledWith(body);
+                        expect(spySetDecryptedBody).toHaveBeenCalledTimes(2);
+                    }
+                });
 
-            it('should set a value to uploading', () => {
-                expect(item.uploading).toBe(DEFAULT_MESSAGE_COPY.uploading);
-            });
+                if (action !== 'new') {
+                    it('should return a new default object', () => {
+                        const keysItem = Object.keys(item).sort();
+                        const keysDefault = Object.keys(DEFAULT_MESSAGE_COPY)
+                            .concat('Action', 'ParentID')
+                            .sort();
 
-            it('should set a value to toFocussed', () => {
-                expect(item.toFocussed).toBe(DEFAULT_MESSAGE_COPY.toFocussed);
-            });
+                        expect(keysItem.length).toBe(keysDefault.length);
+                        expect(keysItem).toEqual(keysDefault.sort());
+                        expect(_.includes(keysItem, 'Action')).toBe(true);
+                        expect(_.includes(keysItem, 'ParentID')).toBe(true);
+                    });
+                } else {
+                    it('should return a new default object', () => {
+                        const keysItem = Object.keys(item).sort();
+                        const keysDefault = Object.keys(DEFAULT_MESSAGE_COPY);
+                        expect(keysItem.length).toBe(keysDefault.length);
+                        expect(keysItem).toEqual(keysDefault.sort());
+                    });
+                }
 
-            it('should set a value to autocompletesFocussed', () => {
-                expect(item.autocompletesFocussed).toBe(DEFAULT_MESSAGE_COPY.autocompletesFocussed);
+                it('should return an instance of Message', () => {
+                    expect(item.constructor).toMatch(/Message/);
+                });
             });
-
-            it('should set a value to ccbcc', () => {
-                expect(item.ccbcc).toBe(DEFAULT_MESSAGE_COPY.ccbcc);
-            });
-
-            it('should set a value to AddressID', () => {
-                expect(item.AddressID).toBe(DEFAULT_MESSAGE_COPY.AddressID);
-            });
-
-            it('should set a value to NumEmbedded', () => {
-                expect(item.NumEmbedded).toBe(DEFAULT_MESSAGE_COPY.NumEmbedded);
-            });
-
-            it('should set a value to DecryptedBody', () => {
-                expect(item.DecryptedBody).toBe(DEFAULT_MESSAGE_COPY.DecryptedBody);
-            });
-
-            it('should set a value to Action', () => {
-                expect(item.Action).toBe(CONSTANTS.FORWARD);
-            });
-
-            it('should set a value to ParentID', () => {
-                expect(item.ParentID).toBe(currentMsg.ID);
-            });
-
-            it('should set a value ID', () => {
-                expect(item.ID).toBe(undefined);
-            });
-
-            it('should set the decrypted body', () => {
-                expect(spySetDecryptedBody).toHaveBeenCalledWith(USER_SIGNATURE);
-                expect(spySetDecryptedBody).toHaveBeenCalledWith(DEFAULT_MESSAGE_REPLY);
-                expect(spySetDecryptedBody).toHaveBeenCalledTimes(2);
-            });
-
-            it('should return a new default object', () => {
-                const keysItem = Object.keys(item).sort();
-                const keysDefault = Object.keys(DEFAULT_MESSAGE_COPY)
-                    .concat('Action', 'ParentID')
-                    .sort();
-
-                expect(keysItem.length).toBe(keysDefault.length);
-                expect(keysItem).toEqual(keysDefault.sort());
-                expect(_.includes(keysItem, 'Action')).toBe(true);
-                expect(_.includes(keysItem, 'ParentID')).toBe(true);
-            });
-
-            it('should return an instance of Message', () => {
-                expect(item.constructor).toMatch(/Message/);
-            });
-        });
+        }
     });
+
 });

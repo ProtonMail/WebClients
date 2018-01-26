@@ -1,3 +1,4 @@
+import _ from 'lodash';
 import service from '../../../../src/app/message/factories/signatureBuilder';
 import { CONSTANTS } from '../../../../src/app/constants';
 
@@ -30,6 +31,8 @@ describe('signatureBuilder factory', () => {
             const message = { getDecryptedBody: angular.noop, isPlainText: angular.noop };
 
             let factory, rootScope;
+            let mailSettingsMock = { Signature: '' };
+            const mailSettingsModel = { get: (k) => mailSettingsMock[k] };
             let userMock = { Signature: '' };
             const tools = { replaceLineBreaks: _.identity };
             const sanitize = { input: _.identity, message: _.identity };
@@ -38,7 +41,7 @@ describe('signatureBuilder factory', () => {
 
             beforeEach(angular.mock.inject(($injector) => {
                 rootScope = $injector.get('$rootScope');
-                factory = service(authentication, CONSTANTS, tools, sanitize, AppModel, rootScope);
+                factory = service(authentication, CONSTANTS, tools, sanitize, AppModel, rootScope, mailSettingsModel);
             }));
 
             describe('Insert signature ~ no signatures', () => {
@@ -210,7 +213,7 @@ describe('signatureBuilder factory', () => {
 
                     let string;
                     beforeEach(() => {
-                        userMock.PMSignature = true;
+                        mailSettingsMock.PMSignature = true;
                         spyOn(tools, 'replaceLineBreaks').and.callThrough();
                         spyOn(sanitize, 'message').and.callThrough();
                         spyOn(message, 'getDecryptedBody').and.returnValue(MESSAGE_BODY);
@@ -291,7 +294,7 @@ describe('signatureBuilder factory', () => {
 
                     let string;
                     beforeEach(() => {
-                        userMock.PMSignature = true;
+                        mailSettingsMock.PMSignature = true;
                         spyOn(tools, 'replaceLineBreaks').and.callThrough();
                         spyOn(sanitize, 'message').and.callThrough();
                         spyOn(message, 'getDecryptedBody').and.returnValue(MESSAGE_BODY);
@@ -372,7 +375,7 @@ describe('signatureBuilder factory', () => {
                 });
 
                 afterEach(() => {
-                    delete userMock.PMSignature;
+                    delete mailSettingsMock.PMSignature;
                 });
             });
 
@@ -557,7 +560,7 @@ describe('signatureBuilder factory', () => {
                         message.From = {
                             Signature: USER_SIGNATURE
                         };
-                        userMock.PMSignature = true;
+                        mailSettingsMock.PMSignature = true;
                         spyOn(tools, 'replaceLineBreaks').and.callThrough();
                         spyOn(sanitize, 'message').and.callThrough();
                         spyOn(message, 'getDecryptedBody').and.returnValue(MESSAGE_BODY);
@@ -647,7 +650,7 @@ describe('signatureBuilder factory', () => {
                         message.From = {
                             Signature: USER_SIGNATURE
                         };
-                        userMock.PMSignature = true;
+                        mailSettingsMock.PMSignature = true;
                         spyOn(tools, 'replaceLineBreaks').and.callThrough();
                         spyOn(sanitize, 'message').and.callThrough();
                         spyOn(message, 'getDecryptedBody').and.returnValue(MESSAGE_BODY);
@@ -730,7 +733,7 @@ describe('signatureBuilder factory', () => {
                 });
 
                 afterEach(() => {
-                    delete userMock.PMSignature;
+                    delete mailSettingsMock.PMSignature;
                 });
             });
         });
@@ -753,7 +756,9 @@ describe('signatureBuilder factory', () => {
             beforeEach(angular.mock.inject(($injector) => {
                 rootScope = $injector.get('$rootScope');
                 const authentication = { user: _.extend({ Signature: '' }, user) };
-                factory = service(authentication, CONSTANTS, tools, sanitize, AppModel, rootScope);
+                const mailSettingsMock = _.extend({ Signature: '' }, user);
+                const mailSettingsModel = { get: (k) => mailSettingsMock[k] };
+                factory = service(authentication, CONSTANTS, tools, sanitize, AppModel, rootScope, mailSettingsModel);
                 rootScope.$emit('AppModel', { type: 'protonSignature' });
                 rootScope.$digest();
             }));
@@ -1176,7 +1181,9 @@ describe('signatureBuilder factory', () => {
             beforeEach(angular.mock.inject(($injector) => {
                 rootScope = $injector.get('$rootScope');
                 const authentication = { user: _.extend({ Signature: '' }, user) };
-                factory = service(authentication, CONSTANTS, tools, sanitize, AppModel, rootScope);
+                const mailSettingsMock = _.extend({ Signature: '' }, user);
+                const mailSettingsModel = { get: (k) => mailSettingsMock[k] };
+                factory = service(authentication, CONSTANTS, tools, sanitize, AppModel, rootScope, mailSettingsModel);
                 rootScope.$emit('AppModel', { type: 'protonSignature' });
                 rootScope.$digest();
             }));
@@ -1235,28 +1242,28 @@ describe('signatureBuilder factory', () => {
                 string = factory.update(message);
             });
 
-           it('should get the decrypted body', () => {
-               expect(message.getDecryptedBody).toHaveBeenCalled();
-               expect(message.getDecryptedBody).toHaveBeenCalledTimes(1);
-           });
+            it('should get the decrypted body', () => {
+                expect(message.getDecryptedBody).toHaveBeenCalled();
+                expect(message.getDecryptedBody).toHaveBeenCalledTimes(1);
+            });
 
-           it('should not remove line breaks', () => {
-               expect(tools.replaceLineBreaks).not.toHaveBeenCalled();
-           });
+            it('should not remove line breaks', () => {
+                expect(tools.replaceLineBreaks).not.toHaveBeenCalled();
+            });
 
-           it('should try to clean the signature', () => {
-               expect(sanitize.message).toHaveBeenCalledTimes(1);
-               expect(sanitize.message).toHaveBeenCalledWith(jasmine.any(String));
-           });
+            it('should try to clean the signature', () => {
+                expect(sanitize.message).toHaveBeenCalledTimes(1);
+                expect(sanitize.message).toHaveBeenCalledWith(jasmine.any(String));
+            });
 
-           it('should clean the signature', () => {
-               const html = sanitize.message.calls.argsFor(0)[0];
-               expect(html).toBe(USER_SIGNATURE);
-           });
+            it('should clean the signature', () => {
+                const html = sanitize.message.calls.argsFor(0)[0];
+                expect(html).toBe(USER_SIGNATURE);
+            });
 
-           it('should change nothing', () => {
-               expect(string).toEqual(getMessageUpdatePlain(getTxt(USER_SIGNATURE)));
-           });
+            it('should change nothing', () => {
+                expect(string).toEqual(getMessageUpdatePlain(getTxt(USER_SIGNATURE)));
+            });
         });
 
         describe('No:body message new userSignature', () => {
