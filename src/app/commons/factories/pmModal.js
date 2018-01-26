@@ -1,6 +1,13 @@
 /* @ngInject */
-function pmModal($animate, $compile, $rootScope, $controller, $q, $http, AppModel, $templateCache) {
+function pmModal($animate, $compile, $rootScope, $injector, $controller, $q, $http, AppModel, mailSettingsModel, $templateCache) {
     const $body = $('#body');
+
+    function manageHotkeys(bind = true) {
+        if (mailSettingsModel.get('Hotkeys')) {
+            const hotkeys = $injector.get('hotkeys');
+            hotkeys[bind ? 'bind' : 'unbind']();
+        }
+    }
 
     return function modalFactory(config) {
         if (!(!config.template ^ !config.templateUrl)) {
@@ -36,6 +43,7 @@ function pmModal($animate, $compile, $rootScope, $controller, $q, $http, AppMode
                 const id = setTimeout(() => {
                     $('.modal').addClass('in');
                     window.scrollTo(0, 0);
+                    manageHotkeys(false); // Disable hotkeys
                     Mousetrap.bind('escape', () => {
                         const { onEscape = deactivate } = locals.params || {};
                         onEscape();
@@ -88,6 +96,7 @@ function pmModal($animate, $compile, $rootScope, $controller, $q, $http, AppMode
                     return;
                 }
                 Mousetrap.unbind('escape');
+                manageHotkeys(); // Enable hotkeys
                 scope && scope.$destroy();
                 /**
                  * Fuck you Enkular
