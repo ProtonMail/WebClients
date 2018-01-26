@@ -5,8 +5,7 @@
     class="pm_panel alt pm_form"
     novalidate role="form"
     autocomplete="off"
-    ng-submit="enterTwoFactor()"
-    onsubmit="return false"
+    ng-submit="enterTwoFactor($event)"
     action="loginTwoFactor">
 
     <img src="assets/img/logo.png" height="20" alt="ProtonMail" class="logo" />
