@@ -1,3 +1,4 @@
+import _ from 'lodash';
 import service from '../../../../src/app/labels/factories/labelsModel';
 import { CONSTANTS as constants } from '../../../../src/app/constants';
 

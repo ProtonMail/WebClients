@@ -1,15 +1,17 @@
+import _ from 'lodash';
 import service from '../../../../src/app/composer/directives/btnSendMessage';
 import { generateModuleName } from '../../../utils/helpers';
 
 describe('btnSendMessage directive', () => {
 
     const MODULE = generateModuleName();
+
     let dom, compile, scope, rootScope;
     let iscope, $, $$;
 
     const gettextCatalog = { getString: _.identity };
 
-    angular.module(MODULE, ['test.templates'])
+    angular.module(MODULE, ['templates-app'])
         .factory('gettextCatalog', () => gettextCatalog)
         .directive('btnSendMessage', service);
 
@@ -19,7 +21,7 @@ describe('btnSendMessage directive', () => {
         rootScope = $injector.get('$rootScope');
         compile = $injector.get('$compile');
         scope = rootScope.$new();
-   }));
+    }));
 
     describe('Compilation process', () => {
 
@@ -253,9 +255,11 @@ describe('btnSendMessage directive', () => {
             describe('State: disableSend', () => {
 
                 beforeEach(() => {
-                    rootScope.$emit('actionMessage', { ID: 1, disableSend() {
-                        return true;
-                    } });
+                    rootScope.$emit('actionMessage', {
+                        ID: 1, disableSend() {
+                            return true;
+                        }
+                    });
                 });
 
                 it('should load a new translation', () => {

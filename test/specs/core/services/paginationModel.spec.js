@@ -1,3 +1,4 @@
+import _ from 'lodash';
 import service from '../../../../src/app/paginator/factories/paginationModel';
 import { CONSTANTS } from '../../../../src/app/constants';
 import { generateModuleName } from '../../../utils/helpers';
@@ -5,10 +6,11 @@ import { generateModuleName } from '../../../utils/helpers';
 describe('paginationModel factory', () => {
 
     const MODULE = generateModuleName();
-    const userMock = { ViewMode: 0 };
     const stateParamsMock = {};
 
-    const authentication = { user: userMock };
+    const mailSettingsMock = { ViewMode: 0 };
+    const mailSettingsModel = { get: (k) => mailSettingsMock[k] };
+
     const state = { go: _.noop };
     const cacheCounters = {
         getCurrentState: _.noop,
@@ -30,7 +32,7 @@ describe('paginationModel factory', () => {
 
     beforeEach(angular.mock.inject(($injector) => {
         rootScope = $injector.get('$rootScope');
-        factory = service(CONSTANTS, $injector, rootScope, state, stateParamsMock, authentication, tools);
+        factory = service(CONSTANTS, $injector, rootScope, state, stateParamsMock, mailSettingsModel, tools);
     }));
 
     describe('Switch page', () => {
@@ -174,7 +176,7 @@ describe('paginationModel factory', () => {
             let total;
 
             beforeEach(() => {
-                userMock.ViewMode = CONSTANTS.CONVERSATION_VIEW_MODE;
+                mailSettingsMock.ViewMode = CONSTANTS.CONVERSATION_VIEW_MODE;
                 spyOn(tools, 'cacheContext').and.returnValue(true);
                 spyOn(tools, 'currentLocation').and.returnValue('ici');
                 spyOn(cacheCounters, 'getCounter').and.returnValue({
@@ -250,7 +252,7 @@ describe('paginationModel factory', () => {
             let total;
 
             beforeEach(() => {
-                userMock.ViewMode = CONSTANTS.MESSAGE_VIEW_MODE;
+                mailSettingsMock.ViewMode = CONSTANTS.MESSAGE_VIEW_MODE;
                 spyOn(tools, 'cacheContext').and.returnValue(true);
                 spyOn(tools, 'currentLocation').and.returnValue('ici');
                 spyOn(cacheCounters, 'getCounter').and.returnValue({
@@ -328,7 +330,7 @@ describe('paginationModel factory', () => {
                 let total;
 
                 beforeEach(() => {
-                    userMock.ViewMode = CONSTANTS.MESSAGE_VIEW_MODE;
+                    mailSettingsMock.ViewMode = CONSTANTS.MESSAGE_VIEW_MODE;
                     spyOn(tools, 'cacheContext').and.returnValue(true);
                     spyOn(tools, 'currentLocation').and.returnValue('ici');
                     spyOn(cacheCounters, 'getCounter').and.returnValue({

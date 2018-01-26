@@ -9,26 +9,32 @@ module.exports = (config) => {
         files: [
             'mock.js',
             '../build/vendor.js',
+            '../build/vendorLazy.js',
+            '../build/vendorLazy2.js',
+            'templates.js',
             '!../build/openpgp.worker.min.js',
             '../build/openpgp.min.js',
-            '../build/templates.js',
             '../node_modules/angular-mocks/angular-mocks.js',
             '../src/templates/**/*.html',
             'specs/**/*.js'
         ],
 
+        webpack: {
+            module: {
+                rules: [
+                    ...require('../webpack.tasks/templates.loader'),
+                    ...require('../webpack.tasks/assets.loader')
+                ]
+            }
+        },
+
         // list of files to exclude
         preprocessors: {
-            '../src/templates/**/*.html': ['ng-html2js'],
+            'templates.js': ['webpack'],
             '../src/app/*.js': ['webpack'],
             '../src/app/**/*.js': ['webpack'],
             '../src/app/**/**/*.js': ['webpack'],
             'specs/**/*.js': ['webpack', 'coverage']
-        },
-
-        ngHtml2JsPreprocessor: {
-            stripPrefix: '.*/src/',
-            moduleName: 'test.templates'
         },
 
         // optionally, configure the reporter
