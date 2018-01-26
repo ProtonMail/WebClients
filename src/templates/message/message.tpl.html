@@ -64,6 +64,11 @@
                     class="recipients-summary-label"
                     ng-repeat="email in recipients() track by $id(email)"
                     title="{{ ::email | contact:'Address' }}">{{::email | contact: 'Name': true | nameRecipient}}</span>
+                <span
+                    ng-if="::noRecipients()"
+                    class="recipients-summary-label"
+                    translate-context="No recipients to display in the message header"
+                    translate>Undisclosed Recipients</span>
             </div>
 
             <div class="recipients-details">
