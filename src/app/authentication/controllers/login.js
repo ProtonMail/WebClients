@@ -375,7 +375,9 @@ function LoginController(
         }
     };
 
-    $scope.enterTwoFactor = () => {
+    $scope.enterTwoFactor = (e) => {
+        e.preventDefault();
+
         if (angular.isUndefined($scope.twoFactorCode) || $scope.twoFactorCode.length === 0) {
             notify({ message: gettextCatalog.getString('Please enter your two-factor passcode', null, 'Error'), classes: 'notification-danger' });
             return;
