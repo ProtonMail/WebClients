@@ -175,6 +175,12 @@ function message($state, $rootScope, cache, displayContent, messageScroll, tools
              */
             scope.recipients = () => getRecipients(scope.message);
 
+            /**
+             * Check if there is no recipients
+             * @return {Boolean}
+             */
+            scope.noRecipients = () => !scope.recipients().length;
+
             // TODO need review with label dropdown
             scope.getMessage = () => [scope.message];
 
