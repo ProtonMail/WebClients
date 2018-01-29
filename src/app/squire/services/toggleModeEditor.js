@@ -68,34 +68,36 @@ function toggleModeEditor($rootScope, embeddedUtils, attachmentModel, editorMode
     };
 
     const toDefault = (message, editor) => {
-        const promise = textToHtmlMail.parseAsync(message.getDecryptedBody()).then((txt) => {
+        const value = message.getDecryptedBody();
+        const txt = textToHtmlMail.parse(value);
+
+        $rootScope.$applyAsync(() => {
+            message.MIMEType = MODE.DEFAULT;
             message.setDecryptedBody(txt, false);
             editor.setHTML(message.getDecryptedBody());
-            message.MIMEType = MODE.DEFAULT;
             initializeSelection(editor);
             if (message.RightToLeft) {
                 editor.setTextDirectionRTL();
             }
         });
-        networkActivityTracker.track(promise);
     };
 
     const toPlainText = (message, editor) => {
-        message.MIMEType = MODE.PLAINTEXT;
-        const promise = htmlToTextMail(editor).then((plaintext) => {
-            // remove attachments
-            const list = message.Attachments.filter(embeddedUtils.isEmbedded);
+        // Remove focus from the editor to prevent inserting more text.
+        editor.blur();
+        const plaintext = htmlToTextMail(editor);
 
-            $rootScope.$emit('attachment.upload', { type: 'remove.all', data: { message, list } });
+        // remove attachments
+        const list = message.Attachments.filter(embeddedUtils.isEmbedded);
+        $rootScope.$emit('attachment.upload', { type: 'remove.all', data: { message, list } });
+        CACHE.ATTACHMENTS_PROCESSING[message.ID] = CACHE.ATTACHMENTS_PROCESSING[message.ID] || {};
+        const map = list.reduce((acc, { ID }) => ((acc[ID] = true), acc), {});
+        _.extend(CACHE.ATTACHMENTS_PROCESSING[message.ID], map);
 
-            CACHE.ATTACHMENTS_PROCESSING[message.ID] = CACHE.ATTACHMENTS_PROCESSING[message.ID] || {};
-
-            const map = list.reduce((acc, { ID }) => ((acc[ID] = true), acc), {});
-            _.extend(CACHE.ATTACHMENTS_PROCESSING[message.ID], map);
-
+        $rootScope.$applyAsync(() => {
             message.setDecryptedBody(plaintext, false);
+            message.MIMEType = MODE.PLAINTEXT;
         });
-        networkActivityTracker.track(promise);
     };
 
     const check = (message) => {
@@ -151,4 +153,5 @@ function toggleModeEditor($rootScope, embeddedUtils, attachmentModel, editorMode
 
     return { init: angular.noop, getMode, toggle, clear, toPlainText };
 }
+
 export default toggleModeEditor;

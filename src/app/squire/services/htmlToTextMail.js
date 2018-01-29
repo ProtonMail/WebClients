@@ -189,7 +189,7 @@ function htmlToTextMail() {
         return stringList.join('');
     }
 
-    const toPlaintext = async (editor) => {
+    const toPlaintext = (editor) => {
         const root = editor.getRoot();
         return extractPlainText(editor, root);
     };

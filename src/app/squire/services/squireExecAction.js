@@ -87,8 +87,9 @@ function squireExecAction(editorModel, $rootScope) {
 
     const changeColor = (message, color, mode = 'color') => {
         const { editor } = editorModel.find(message);
-        const key = mode === 'color' ? 'setTextColour' : 'setHighlightColour';
-        editor[key](color);
+        const action = mode === 'color' ? 'setTextColour' : 'setHighlightColour';
+        editor[action](color);
+        dispatch('squire.native.action', { action, argument: color, message });
     };
 
     /**

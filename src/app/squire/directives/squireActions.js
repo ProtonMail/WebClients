@@ -26,6 +26,7 @@ const squireActions = ($rootScope) => ({
                     label: target.textContent.trim()
                 };
             }
+
             $rootScope.$emit('squire.editor', emitOptions);
         };
 

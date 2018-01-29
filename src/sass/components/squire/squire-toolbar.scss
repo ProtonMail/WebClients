@@ -266,6 +266,7 @@
     right: auto;
     min-width: 100%;
     min-height: 9em;
+    max-height: 50%;
     overflow-y: auto;
     margin: 0;
     padding: 0;
@@ -273,6 +274,8 @@
     border-radius: $border-radius;
     box-shadow: 0 2px 2px rgba(0, 0, 0, 0.1);
 }
+
+.squireToolbar-editor-mode { max-height: inherit; }
 
 .squireToolbar-select:not(.squireDropdown-is-open) {
     .squireToolbar-select-list,
@@ -326,7 +329,7 @@
     border: 0
 }
 
-[data-editor-mode="text/plain"] .squireToolbar-dropdown-divider {
+[data-editor-text="text/plain"] .squireToolbar-dropdown-divider {
     display: none;
 }
 
@@ -429,8 +432,8 @@ $list: georgia arial helvetica menlo tahoma verdana times trebuchet;
     width: auto;
 }
 
-[data-editor-mode="text/html"] .squireToolbar-select-view .plain-text-icon,
-[data-editor-mode="text/plain"] .squireToolbar-select-view .fa-file-text { display: none !important }
+[data-editor-text="text/html"] .squireToolbar-select-view .plain-text-icon,
+[data-editor-text="text/plain"] .squireToolbar-select-view .fa-file-text { display: none !important }
 /*To match with the other icon*/
 .squireToolbar-editor-mode .fa-file-text { margin-right: 3px }
 
@@ -441,8 +444,8 @@ $list: georgia arial helvetica menlo tahoma verdana times trebuchet;
 /* Active items in the more list */
 .squireToolbar-container.dir-ltr .squireToolbar-select-item[data-squire-actions="setTextDirectionLTR"],
 .squireToolbar-container.dir-rtl .squireToolbar-select-item[data-squire-actions="setTextDirectionRTL"],
-.composer [data-editor-mode="text/plain"] .squireToolbar-select-item[data-value="text/plain"],
-.composer [data-editor-mode="text/html"] .squireToolbar-select-item[data-value="text/html"] {
+.composer [data-editor-text="text/plain"] .squireToolbar-select-item[data-value="text/plain"],
+.composer [data-editor-text="text/html"] .squireToolbar-select-item[data-value="text/html"] {
     pointer-events: none;
     .fa-check { opacity: 1 }
 }

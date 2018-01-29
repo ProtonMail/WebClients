@@ -21,16 +21,18 @@ function squireSelectFontSize(squireDropdown, editorModel) {
                 parseContent
             });
 
-            const onClick = ({ target }) => {
-                if (target.nodeName !== 'LI') {
+            const onMouseDown = (e) => {
+                e.preventDefault();
+                e.stopPropagation();
+                if (e.target.nodeName !== 'LI') {
                     dropdown.toggle(parseContent(dropdown.refresh));
                 }
             };
 
-            el.on('click', onClick);
+            el.on('mousedown', onMouseDown);
 
             scope.$on('$destroy', () => {
-                el.off('click', onClick);
+                el.off('mousedown', onMouseDown);
                 dropdown.unsubscribe();
             });
         }
