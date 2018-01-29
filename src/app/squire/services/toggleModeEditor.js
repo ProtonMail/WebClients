@@ -1,7 +1,7 @@
 import _ from 'lodash';
 
 /* @ngInject */
-function toggleModeEditor($rootScope, embeddedUtils, attachmentModel, editorModel, textToHtmlMail, htmlToTextMail, networkActivityTracker) {
+function toggleModeEditor($rootScope, embeddedUtils, attachmentModel, editorModel, textToHtmlMail, htmlToTextMail) {
     const MODE = {
         PLAINTEXT: 'text/plain',
         DEFAULT: 'text/html'
