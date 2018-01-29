@@ -13,6 +13,7 @@ function settingsMailApi($http, gettextCatalog, mailSettingsModel, url) {
         if (data.Code === 12010) {
             throw new Error(I18N.ERROR_SAVE_INPUT);
         }
+    };
 
     const handleResponse = (promise) => promise.then(handleResult).catch(handleError);
     const fetch = () => $http.get(requestURL()).then(handleResponse);
@@ -65,5 +66,4 @@ function settingsMailApi($http, gettextCatalog, mailSettingsModel, url) {
         updateAutoresponder
     };
 }
-
 export default settingsMailApi;
