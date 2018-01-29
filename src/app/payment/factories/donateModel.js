@@ -20,23 +20,22 @@ function donateModel(Payment, networkActivityTracker, gettextCatalog, notificati
     const dispatch = (type, data = {}) => $rootScope.$emit('payments', { type, data });
 
     const donate = (options = {}) => {
-        const promise = Payment.donate(options).then(({ data = {} }) => {
-            if (data.Code === 1000) {
-                return I18N.donation.success;
-            }
-            throw new Error(I18N.donation.error);
-        });
+        const promise = Payment.donate(options)
+            .then(() => I18N.donation.success)
+            .catch(() => {
+                throw new Error(I18N.donation.error);
+            });
+
         networkActivityTracker.track(promise);
         return promise;
     };
 
     const addCredits = (options = {}) => {
-        const promise = Payment.credit(options).then(({ data = {} }) => {
-            if (data.Code === 1000) {
-                return I18N.topUp.success;
-            }
-            throw new Error(I18N.credit.error);
-        });
+        const promise = Payment.credit(options)
+            .then(() => I18N.topUp.success)
+            .catch(() => {
+                throw new Error(I18N.credit.error);
+            });
 
         networkActivityTracker.track(promise);
         return promise;

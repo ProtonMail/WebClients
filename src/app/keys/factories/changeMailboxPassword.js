@@ -7,12 +7,13 @@ function changeMailboxPassword($log, authentication, CONSTANTS, gettextCatalog, 
      * @return {Promise}
      */
     function getUser(newMailPwd = '', keySalt = '') {
-        return Promise.all([passwords.computeKeyPassword(newMailPwd, keySalt), User.get()]).then(([password, { data = {} } = {}]) => {
-            if (data.Code === 1000) {
+        return Promise.all([passwords.computeKeyPassword(newMailPwd, keySalt), User.get()])
+            .then(([password, { data = {} } = {}]) => {
                 return Promise.resolve({ password, user: data.User });
-            }
-            throw new Error(data.Error || gettextCatalog.getString('Unable to save your changes, please try again.', null, 'Error'));
-        });
+            })
+            .catch(([, { data = {} } = {}]) => {
+                throw new Error(data.Error || gettextCatalog.getString('Unable to save your changes, please try again.', null, 'Error'));
+            });
     }
 
     /**
@@ -24,8 +25,9 @@ function changeMailboxPassword($log, authentication, CONSTANTS, gettextCatalog, 
     function manageOrganizationKeys(password = '', oldMailPwd = '', user = {}) {
         if (user.Role === CONSTANTS.PAID_ADMIN_ROLE) {
             // Get organization key
-            return organizationApi.getKeys().then(({ data = {} } = {}) => {
-                if (data.Code === 1000) {
+            return organizationApi
+                .getKeys()
+                .then(({ data = {} } = {}) => {
                     const encryptPrivateKey = data.PrivateKey;
 
                     // Decrypt organization private key with the old mailbox password (current)
@@ -34,9 +36,10 @@ function changeMailboxPassword($log, authentication, CONSTANTS, gettextCatalog, 
                     return pmcw
                         .decryptPrivateKey(encryptPrivateKey, oldMailPwd)
                         .then((pkg) => Promise.resolve(pmcw.encryptPrivateKey(pkg, password)), () => Promise.resolve(0));
-                }
-                throw new Error(data.Error || gettextCatalog.getString('Unable to get organization keys', null, 'Error'));
-            });
+                })
+                .catch(({ data = {} } = {}) => {
+                    throw new Error(data.Error || gettextCatalog.getString('Unable to get organization keys', null, 'Error'));
+                });
         }
         return Promise.resolve(0);
     }
@@ -128,12 +131,6 @@ function changeMailboxPassword($log, authentication, CONSTANTS, gettextCatalog, 
                     newLoginPassword
                 })
             )
-            .then(({ data = {} } = {}) => {
-                if (data.Code === 1000) {
-                    return Promise.resolve();
-                }
-                throw new Error(data.Error);
-            })
             .then(() => authentication.savePassword(passwordComputed));
         networkActivityTracker.track(promise);
         return promise;

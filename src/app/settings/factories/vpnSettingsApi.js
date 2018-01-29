@@ -2,14 +2,7 @@
 function vpnSettingsApi($http, url, vpnSettingsModel) {
     const requestURL = url.build('settings/vpn');
     const handleResult = ({ data = {} } = {}) => {
-        if (data.Error) {
-            throw new Error(data.Error);
-        }
-
-        if (data.Code === 1000) {
-            vpnSettingsModel.set('all', data.VPNSettings);
-        }
-
+        vpnSettingsModel.set('all', data.VPNSettings);
         return data;
     };
     const fetch = () => $http.get(requestURL()).then(handleResult);

@@ -4,6 +4,7 @@ import _ from 'lodash';
 function contactLoaderModal($rootScope, gettextCatalog, pmModal) {
     const LABEL_CLASS = 'contactLoaderModal-label';
     const SUCCESS_CLASS = 'contactLoaderModal-success';
+    const ERROR_CLASS = 'contactLoaderModal-error';
     const CONTAINER_CLASS = 'contactLoaderModal-container';
     const IMPORTED_CLASS = 'contactLoaderModal-imported';
 
@@ -56,24 +57,30 @@ function contactLoaderModal($rootScope, gettextCatalog, pmModal) {
     };
 
     const getRows = (errors = []) => errors.map(({ error }) => `<li class="contactLoaderModal-log">- ${error}</li>`).join('');
-    const getSuccess = ({ created = [], total = 0, errors = [] }) => {
-        if (!created.length) {
-            const [{ error = I18N.totalFailure } = {}] = errors;
-            return `<p class="alert alert-danger">${error}</p>`;
-        }
-
-        const failure = errors.length ? `<p>${I18N.importFail(errors.length)}</p>` : '';
-        const logs = errors.length ? `<ul class="contactLoaderModal-logs">${getRows(errors)}</ul>` : '';
-
+    const getSuccess = ({ created = [], total = 0 }) => {
         return `
                 <p>${I18N.importComplete}</p>
                 <div class="contactLoaderModal-frame">
                     <h1>${created.length} of ${total}</h1>
                     <strong>${I18N.contactImported}</strong>
                 </div>
-                ${failure}
-                ${logs}
             `;
+    };
+
+    const getError = ({ errors = [], total }) => {
+        if (!errors.length) {
+            return '';
+        }
+
+        if (errors.length === total) {
+            const [{ error = I18N.totalFailure } = {}] = errors;
+            return `<p class="alert alert-danger">${error}</p>`;
+        }
+
+        return `
+            <p>${I18N.importFail(errors.length)}</p>
+            <ul class="contactLoaderModal-logs">${getRows(errors)}</ul>
+        `;
     };
 
     return pmModal({
@@ -88,6 +95,11 @@ function contactLoaderModal($rootScope, gettextCatalog, pmModal) {
                     if (type === 'contactCreated') {
                         document.querySelector(`.${CONTAINER_CLASS}`).classList.add(IMPORTED_CLASS);
                         document.querySelector(`.${SUCCESS_CLASS}`).innerHTML = getSuccess(data);
+                    }
+
+                    if (type === 'contactErrors') {
+                        document.querySelector(`.${CONTAINER_CLASS}`).classList.add(IMPORTED_CLASS);
+                        document.querySelector(`.${ERROR_CLASS}`).innerHTML = getError(data);
                     }
                 })
             );

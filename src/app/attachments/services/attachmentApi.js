@@ -212,16 +212,9 @@ function attachmentApi($http, url, $q, $rootScope, authentication, pmcw, CONFIG,
     const remove = (message, attachment) => {
         return $http
             .delete(requestURL(attachment.ID), { MessageID: message.ID })
-            .then(({ data = {} }) => {
-                if (data.Code !== 1000) {
-                    const error = data.Error || 'Error during the remove request';
-                    throw new Error(error);
-                }
-                return data;
-            })
-            .catch((error) => {
-                notification.error(error);
-                console.error(error);
+            .then(({ data = {} } = {}) => data)
+            .catch(({ data = {} } = {}) => {
+                throw new Error(data.Error || gettextCatalog.getString('Error during the remove request', null, 'Error delete attachment'));
             });
     };
 

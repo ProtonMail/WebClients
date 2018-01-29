@@ -104,23 +104,19 @@ function dashboardModel(
             Currency: dashboardConfiguration.currency(),
             PlanIDs,
             Coupon: subscriptionModel.coupon()
-        })
-            .then(({ data: valid = {} } = {}) => {
-                paymentModal.activate({
-                    params: {
-                        planIDs: PlanIDs,
-                        valid,
-                        choice,
-                        plan,
-                        cancel() {
-                            paymentModal.deactivate();
-                        }
+        }).then(({ data: valid = {} } = {}) => {
+            paymentModal.activate({
+                params: {
+                    planIDs: PlanIDs,
+                    valid,
+                    choice,
+                    plan,
+                    cancel() {
+                        paymentModal.deactivate();
                     }
-                });
-            })
-            .catch(({ data = {} } = {}) => {
-                throw new Error(data.Error);
+                }
             });
+        });
 
         networkActivityTracker.track(promise);
     };
@@ -132,14 +128,10 @@ function dashboardModel(
             return Promise.resolve(CACHE_API[key]);
         }
 
-        return Payment.plans(currency, cycle)
-            .then(({ data = {} }) => {
-                CACHE_API[key] = data;
-                return data;
-            })
-            .catch(({ data = {} } = {}) => {
-                throw new Error(data.Error);
-            });
+        return Payment.plans(currency, cycle).then(({ data = {} }) => {
+            CACHE_API[key] = data;
+            return data;
+        });
     };
 
     /**

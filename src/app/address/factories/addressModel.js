@@ -177,10 +177,6 @@ function addressModel(
 
         return Address.setup({ Domain: 'pm.me' })
             .then(({ data = {} } = {}) => {
-                if (data.Error) {
-                    throw new Error(data.Error);
-                }
-
                 return generateKeyModel.generate({ numBits, passphrase, address: data.Address });
             })
             .then(() => {

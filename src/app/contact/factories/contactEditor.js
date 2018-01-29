@@ -20,14 +20,27 @@ function contactEditor(
         * @return {Promise}
         */
     function create({ contacts = [], mode }) {
-        const promise = Contact.add(contacts).then(({ created, total, errors }) => {
-            return eventManager.call().then(() => {
-                $rootScope.$emit('contacts', {
-                    type: 'contactCreated',
-                    data: { created, total, errors, mode }
+        const promise = Contact.add(contacts)
+            .then(({ created, total }) => {
+                return eventManager.call().then(() => {
+                    $rootScope.$emit('contacts', {
+                        type: 'contactCreated',
+                        data: { created, total, mode }
+                    });
                 });
+            })
+            .catch((err) => {
+                const { errors = [], total } = err;
+
+                if (errors.length) {
+                    return $rootScope.$emit('contacts', {
+                        type: 'contactErrors',
+                        data: { errors, total, mode }
+                    });
+                }
+
+                throw err;
             });
-        });
 
         if (mode === 'import') {
             contactLoaderModal.activate({

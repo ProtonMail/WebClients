@@ -13,26 +13,6 @@ function Filter($http, url) {
         return angular.toJson(filter);
     }
 
-    /**
-     * Transform the datas received
-     */
-    function transformResponseFilter(data) {
-        const json = angular.fromJson(data);
-
-        if (json && json.Code === 1000) {
-            _.each(json.Filters, (filter) => {
-                const simple = Sieve.fromTree(filter.Tree);
-                if (_.isEqual(filter.Tree, Sieve.toTree(simple))) {
-                    filter.Simple = simple;
-                } else {
-                    delete filter.Simple;
-                }
-            });
-        }
-
-        return json || {};
-    }
-
     const Filter = {
         /**
          * Add filter to the current user
@@ -59,8 +39,16 @@ function Filter($http, url) {
          * @return {Promise}
          */
         query() {
-            return $http.get(url.get() + '/filters', {
-                transformResponse: transformResponseFilter
+            return $http.get(url.get() + '/filters').then(({ data = {} } = {}) => {
+                _.each(data.Filters, (filter) => {
+                    const simple = Sieve.fromTree(filter.Tree);
+                    if (_.isEqual(filter.Tree, Sieve.toTree(simple))) {
+                        filter.Simple = simple;
+                    } else {
+                        delete filter.Simple;
+                    }
+                });
+                return data;
             });
         },
         /**

@@ -3,24 +3,6 @@ import _ from 'lodash';
 /* @ngInject */
 function Payment($http, authentication, url, brick, paymentPlansFormator) {
     const requestUrl = url.build('payments');
-    const transformRepBillingCycle = (data) => {
-        const json = angular.fromJson(data);
-
-        if (json && json.Code === 1000) {
-            const month = 60 * 60 * 24 * 30; // Time for a month in second
-
-            _.each(json.Payments, (invoice) => {
-                if (parseInt((invoice.PeriodEnd - invoice.PeriodStart) / month, 10) === 1) {
-                    invoice.BillingCycle = 12;
-                } else {
-                    invoice.BillingCycle = 1;
-                }
-            });
-        }
-
-        return json || {};
-    };
-
     const getPayment = (params = {}) => {
         if (params.Payment) {
             return params.Payment;
@@ -162,18 +144,13 @@ function Payment($http, authentication, url, brick, paymentPlansFormator) {
      */
     const subscription = () => {
         if (authentication.user.Role > 1) {
-            return $http.get(requestUrl('subscription'), {
-                transformResponse(datas) {
-                    const json = angular.fromJson(datas);
+            return $http.get(requestUrl('subscription')).then(({ data = {} } = {}) => {
+                const { Name, Title } = _.find(data.Subscription.Plans, { Type: 1 }) || {};
 
-                    if (json && json.Code === 1000) {
-                        const { Name, Title } = _.find(json.Subscription.Plans, { Type: 1 }) || {};
-                        json.Subscription.Name = Name;
-                        json.Subscription.Title = Title;
-                    }
+                data.Subscription.Name = Name;
+                data.Subscription.Title = Title;
 
-                    return json || {};
-                }
+                return data;
             });
         }
         const sub = {
@@ -228,30 +205,6 @@ function Payment($http, authentication, url, brick, paymentPlansFormator) {
      */
     const destroy = () => $http.delete(requestUrl('subscription'));
 
-    /**
-     *  Get payments corresponding to the given user.
-     * @param {Integer} timestamp
-     * @param {Integer} limit
-     */
-    const user = (Time, Limit) => {
-        return $http.get(requestUrl('user'), {
-            params: { Time, Limit },
-            transformResponse: transformRepBillingCycle
-        });
-    };
-
-    /**
-     *  Get payments corresponding to the given organization.
-     * @param {Integer} timestamp
-     * @param {Integer} limit
-     */
-    const organization = (Time, Limit) => {
-        return $http.get(requestUrl('organization'), {
-            params: { Time, Limit },
-            transformResponse: transformRepBillingCycle
-        });
-    };
-
     const btc = (Amount, Currency) => $http.post(requestUrl('bcinfo'), { Amount, Currency });
 
     return {
@@ -276,9 +229,7 @@ function Payment($http, authentication, url, brick, paymentPlansFormator) {
         subscribe,
         unsubscribe,
         delete: destroy,
-        btc,
-        organization,
-        user
+        btc
     };
 }
 export default Payment;

@@ -11,25 +11,28 @@ function domainModel($rootScope, domainApi, gettextCatalog) {
         domains = newDomains;
     }
     function catchall(ID, AddressID) {
-        return domainApi.catchall(ID, { AddressID }).then(({ data = {} } = {}) => {
-            if (data.Code === 1000) {
+        return domainApi
+            .catchall(ID, { AddressID })
+            .then(({ data = {} } = {}) => {
                 const domain = _.find(domains, { ID });
 
                 domain.CatchAll = AddressID;
-
                 return data;
-            }
-            throw new Error(data.Error || errorMessage);
-        });
+            })
+            .catch(({ data = {} } = {}) => {
+                throw new Error(data.Error || errorMessage);
+            });
     }
     function fetch() {
-        return domainApi.query().then(({ data = {} } = {}) => {
-            if (data.Code === 1000) {
+        return domainApi
+            .query()
+            .then(({ data = {} } = {}) => {
                 domains = data.Domains;
                 return data.Domains;
-            }
-            throw new Error(data.Error || errorMessage);
-        });
+            })
+            .catch(({ data = {} } = {}) => {
+                throw new Error(data.Error || errorMessage);
+            });
     }
     function clear() {
         domains.length = 0;

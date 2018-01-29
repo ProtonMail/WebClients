@@ -57,16 +57,12 @@ function subscriptionModel($rootScope, CONSTANTS, gettextCatalog, Payment) {
 
     function fetch() {
         return Payment.subscription()
-            .then(({ data = {} } = {}) => {
-                if (data.Code === 1000) {
-                    set(data.Subscription);
-                    return get();
-                }
-                throw new Error(ERROR_SUBSCRIPTION);
+            .then((data = {}) => {
+                set(data.Subscription);
+                return get();
             })
-            .catch((error) => {
-                const { data = {} } = error;
-                throw Error(data.Error || error);
+            .catch(({ data = {} } = {}) => {
+                throw Error(data.Error || ERROR_SUBSCRIPTION);
             });
     }
 

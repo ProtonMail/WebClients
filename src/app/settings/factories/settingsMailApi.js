@@ -1,41 +1,43 @@
 /* @ngInject */
-function settingsMailApi($http, mailSettingsModel, url) {
+function settingsMailApi($http, gettextCatalog, mailSettingsModel, url) {
+    const I18N = {
+        ERROR_SAVE_INPUT: gettextCatalog.getString('Unable to save your changes, your signature is too large.', null, 'Error')
+    };
     const requestURL = url.build('settings/mail');
     const handleResult = ({ data = {} } = {}) => {
-        if (data.Error) {
-            throw new Error(data.Error);
-        }
-
-        if (data.Code === 1000) {
-            mailSettingsModel.set('all', data.MailSettings);
-        }
-
+        mailSettingsModel.set('all', data.MailSettings);
         return data;
     };
+    const handleError = ({ data = {} } = {}) => {
+        // USER_UPDATE_SIGNATURE_TOO_LARGE
+        if (data.Code === 12010) {
+            throw new Error(I18N.ERROR_SAVE_INPUT);
+        }
 
-    const fetch = () => $http.get(requestURL()).then(handleResult);
-    const updateTheme = (data) => $http.put(requestURL('theme'), data).then(handleResult);
-    const updateAutoSaveContacts = (data) => $http.put(requestURL('autocontacts'), data).then(handleResult);
-    const updateComposerMode = (data) => $http.put(requestURL('composermode'), data).then(handleResult);
-    const updateMessageButtons = (data) => $http.put(requestURL('messagebuttons'), data).then(handleResult);
-    const updateShowImages = (data) => $http.put(requestURL('images'), data).then(handleResult);
-    const updateShowMoved = (data) => $http.put(requestURL('moved'), data).then(handleResult);
-    const updateViewMode = (data) => $http.put(requestURL('viewmode'), data).then(handleResult);
-    const updateViewLayout = (data) => $http.put(requestURL('viewlayout'), data).then(handleResult);
-    const updateSwipeLeft = (data) => $http.put(requestURL('swipeleft'), data).then(handleResult);
-    const updateSwipeRight = (data) => $http.put(requestURL('swiperight'), data).then(handleResult);
-    const updateAlsoArchive = (data) => $http.put(requestURL('alsoarchive'), data).then(handleResult);
-    const updateHotkeys = (data) => $http.put(requestURL('hotkeys'), data).then(handleResult);
-    const updatePMSignature = (data) => $http.put(requestURL('pmsignature'), data).then(handleResult);
-    const updateAutowildcard = (data) => $http.put(requestURL('autowildcard'), data).then(handleResult);
-    const updateDraftType = (data) => $http.put(requestURL('drafttype'), data).then(handleResult);
-    const updateReceiveType = (data) => $http.put(requestURL('receivetype'), data).then(handleResult);
-    const updateShowType = (data) => $http.put(requestURL('showtype'), data).then(handleResult);
-    const updateImageProxy = (data) => $http.put(requestURL('imageproxy'), data).then(handleResult);
-    const updateTLS = (data) => $http.put(requestURL('tls'), data).then(handleResult);
-    const updateRightToLeft = (data) => $http.put(requestURL('righttoleft'), data).then(handleResult);
-    const updateAttachPublicKey = (data) => $http.put(requestURL('attachpublic'), data).then(handleResult);
-    const updateAutoresponder = (data) => $http.put(requestURL('autoresponder'), data).then(handleResult);
+    const handleResponse = (promise) => promise.then(handleResult).catch(handleError);
+    const fetch = () => $http.get(requestURL()).then(handleResponse);
+    const updateTheme = (data) => $http.put(requestURL('theme'), data).then(handleResponse);
+    const updateAutoSaveContacts = (data) => $http.put(requestURL('autocontacts'), data).then(handleResponse);
+    const updateComposerMode = (data) => $http.put(requestURL('composermode'), data).then(handleResponse);
+    const updateMessageButtons = (data) => $http.put(requestURL('messagebuttons'), data).then(handleResponse);
+    const updateShowImages = (data) => $http.put(requestURL('images'), data).then(handleResponse);
+    const updateShowMoved = (data) => $http.put(requestURL('moved'), data).then(handleResponse);
+    const updateViewMode = (data) => $http.put(requestURL('viewmode'), data).then(handleResponse);
+    const updateViewLayout = (data) => $http.put(requestURL('viewlayout'), data).then(handleResponse);
+    const updateSwipeLeft = (data) => $http.put(requestURL('swipeleft'), data).then(handleResponse);
+    const updateSwipeRight = (data) => $http.put(requestURL('swiperight'), data).then(handleResponse);
+    const updateAlsoArchive = (data) => $http.put(requestURL('alsoarchive'), data).then(handleResponse);
+    const updateHotkeys = (data) => $http.put(requestURL('hotkeys'), data).then(handleResponse);
+    const updatePMSignature = (data) => $http.put(requestURL('pmsignature'), data).then(handleResponse);
+    const updateAutowildcard = (data) => $http.put(requestURL('autowildcard'), data).then(handleResponse);
+    const updateDraftType = (data) => $http.put(requestURL('drafttype'), data).then(handleResponse);
+    const updateReceiveType = (data) => $http.put(requestURL('receivetype'), data).then(handleResponse);
+    const updateShowType = (data) => $http.put(requestURL('showtype'), data).then(handleResponse);
+    const updateImageProxy = (data) => $http.put(requestURL('imageproxy'), data).then(handleResponse);
+    const updateTLS = (data) => $http.put(requestURL('tls'), data).then(handleResponse);
+    const updateRightToLeft = (data) => $http.put(requestURL('righttoleft'), data).then(handleResponse);
+    const updateAttachPublicKey = (data) => $http.put(requestURL('attachpublic'), data).then(handleResponse);
+    const updateAutoresponder = (data) => $http.put(requestURL('autoresponder'), data).then(handleResponse);
 
     return {
         fetch,

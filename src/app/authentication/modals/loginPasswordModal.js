@@ -15,10 +15,9 @@ function loginPasswordModal($timeout, pmModal, srp, networkActivityTracker, user
                 this.hasTwoFactor = params.hasTwoFactor === 1;
             } else {
                 const promise = srp.info().then(({ data = {} } = {}) => {
-                    if (data.Code === 1000) {
-                        this.hasTwoFactor = data.TwoFactor === 1;
-                    }
+                    this.hasTwoFactor = data.TwoFactor === 1;
                 });
+
                 networkActivityTracker.track(promise);
             }
 

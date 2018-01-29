@@ -13,16 +13,8 @@ function downgrade($rootScope, confirmModal, eventManager, gettextCatalog, netwo
 
     function unsubscribe() {
         return Payment.delete()
-            .then(({ data = {} } = {}) => {
-                if (data.Code === 1000) {
-                    return data;
-                }
-            })
             .then(() => eventManager.call())
-            .then(() => subscriptionModel.set(FREE_PLAN))
-            .catch(({ data = {} } = {}) => {
-                throw Error(data.Error);
-            });
+            .then(() => subscriptionModel.set(FREE_PLAN));
     }
 
     return () => {

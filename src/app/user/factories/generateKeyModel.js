@@ -37,13 +37,11 @@ function generateKeyModel(Key, pmcw, setupKeys) {
             }
 
             const { data } = await Key.create({ AddressID: address.ID, PrivateKey });
-            if (data.Code === 1000) {
-                return onSuccess(address, data.Key);
-            }
-            throw new Error(data.Error);
-        } catch (e) {
+            return onSuccess(address, data.Key);
+        } catch (err) {
+            const { data = {} } = err || {};
             address.state = STATE.ERROR;
-            throw e;
+            throw new Error(data.Error);
         }
     };
 

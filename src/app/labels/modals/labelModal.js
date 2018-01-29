@@ -84,13 +84,11 @@ function labelModal(pmModal, tools, hotkeys, gettextCatalog, networkActivityTrac
         const action = ID ? 'update' : 'create';
 
         return Label[action]({ ID, Name, Color, Display, Exclusive, Notify })
-            .then(({ data = {} } = {}) => {
-                if (data.Code === 1000) {
-                    return data.Label;
-                }
+            .then(({ data = {} } = {}) => data.Label)
+            .then((newLabel) => eventManager.call().then(() => newLabel))
+            .catch(({ data = {} } = {}) => {
                 throw new Error(data.Error || TRANSLATIONS.ERROR_MESSAGE);
-            })
-            .then((newLabel) => eventManager.call().then(() => newLabel));
+            });
     }
 
     return pmModal({

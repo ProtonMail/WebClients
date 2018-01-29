@@ -13,12 +13,9 @@ function memberApi($http, url, srp, gettextCatalog) {
 
     const requestUrl = url.build('members');
     const requestSrp = url.make('members');
-
-    const filterError = (error) => ({ data = {} }) => {
-        if (data.Code !== 1000) {
-            throw new Error(data.Error || error);
-        }
-        return data;
+    const handleResult = ({ data = {} } = {}) => data;
+    const filterError = (error) => ({ data = {} } = {}) => {
+        throw new Error(data.Error || error);
     };
 
     /**
@@ -28,7 +25,8 @@ function memberApi($http, url, srp, gettextCatalog) {
         return srp
             .getPasswordParams(password, Obj)
             .then((data) => $http.post(requestUrl(), data))
-            .then(filterError(I18N.ERROR_CREATE));
+            .then(handleResult)
+            .catch(filterError(I18N.ERROR_CREATE));
     };
 
     /**
@@ -47,7 +45,10 @@ function memberApi($http, url, srp, gettextCatalog) {
     };
 
     const query = () => {
-        return $http.get(requestUrl()).then(filterError(I18N.ERROR_REQUEST));
+        return $http
+            .get(requestUrl())
+            .then(handleResult)
+            .catch(filterError(I18N.ERROR_REQUEST));
     };
 
     /**
@@ -62,7 +63,10 @@ function memberApi($http, url, srp, gettextCatalog) {
      * @return {Promise}
      */
     const name = (memberID, Name) => {
-        return $http.put(requestUrl(memberID, 'name'), { Name }).then(filterError(I18N.ERROR_NAME));
+        return $http
+            .put(requestUrl(memberID, 'name'), { Name })
+            .then(handleResult)
+            .catch(filterError(I18N.ERROR_NAME));
     };
 
     /**
@@ -72,7 +76,10 @@ function memberApi($http, url, srp, gettextCatalog) {
      * @return {Promise}
      */
     const quota = (memberID, MaxSpace) => {
-        return $http.put(requestUrl(memberID, 'quota'), { MaxSpace }).then(filterError(I18N.ERROR_QUOTA));
+        return $http
+            .put(requestUrl(memberID, 'quota'), { MaxSpace })
+            .then(handleResult)
+            .catch(filterError(I18N.ERROR_QUOTA));
     };
 
     /**
@@ -82,7 +89,10 @@ function memberApi($http, url, srp, gettextCatalog) {
      * @return {Promise}
      */
     const vpn = (memberID, MaxVPN) => {
-        return $http.put(requestUrl(memberID, 'vpn'), { MaxVPN }).then(filterError(I18N.ERROR_VPN));
+        return $http
+            .put(requestUrl(memberID, 'vpn'), { MaxVPN })
+            .then(handleResult)
+            .catch(filterError(I18N.ERROR_VPN));
     };
 
     /**
@@ -92,7 +102,10 @@ function memberApi($http, url, srp, gettextCatalog) {
      * @return {Promise}
      */
     const role = (memberID, params) => {
-        return $http.put(requestUrl(memberID, 'role'), params).then(filterError(I18N.ERROR_UPDATE_ROLE));
+        return $http
+            .put(requestUrl(memberID, 'role'), params)
+            .then(handleResult)
+            .catch(filterError(I18N.ERROR_UPDATE_ROLE));
     };
 
     /**
@@ -111,14 +124,20 @@ function memberApi($http, url, srp, gettextCatalog) {
      * @return {Promise}
      */
     const privatize = (memberID) => {
-        return $http.put(requestUrl(memberID, 'privatize')).then(filterError(I18N.ERROR_PRIVATIZE));
+        return $http
+            .put(requestUrl(memberID, 'privatize'))
+            .then(handleResult)
+            .catch(filterError(I18N.ERROR_PRIVATIZE));
     };
 
     /**
      * Nuke the member. Protect against nuking the group owner.
      */
     const remove = (memberID) => {
-        return $http.delete(requestUrl(memberID)).then(filterError(I18N.ERROR_DELETE));
+        return $http
+            .delete(requestUrl(memberID))
+            .then(handleResult)
+            .catch(filterError(I18N.ERROR_DELETE));
     };
 
     /**

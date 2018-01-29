@@ -50,11 +50,21 @@ function eventManager(
         return contact;
     }
 
+    function handleError(error = {}) {
+        const { data = {} } = error;
+
+        if (data.Error) {
+            return Events.getLatestID().then(({ data = {} }) => manageID(data.EventID));
+        }
+
+        throw error;
+    }
+
     function get() {
         if (MODEL.ID) {
-            return Events.get(MODEL.ID);
+            return Events.get(MODEL.ID).catch(handleError);
         }
-        return Events.getLatestID();
+        return Events.getLatestID().catch(handleError);
     }
 
     const manageContacts = (events = []) => events.length && $rootScope.$emit('contacts', { type: 'contactEvents', data: { events } });
@@ -289,11 +299,6 @@ function eventManager(
 
     function manage(data) {
         manageNotices(data.Notices);
-
-        if (data.Error) {
-            return Events.getLatestID().then(({ data = {} }) => manageID(data.EventID));
-        }
-
         manageID(data.EventID);
 
         if (data.Refresh) {
@@ -378,20 +383,21 @@ function eventManager(
     }
 
     function call() {
-        return get().then(({ data = {} } = {}) => {
-            AppModel.set('onLine', true);
+        return get()
+            .then(({ data = {} } = {}) => {
+                AppModel.set('onLine', true);
 
-            if (data.Code === 1000) {
                 if (MODEL.index) {
                     closeNotifications();
                     setTimer();
                     MODEL.promiseCancel = $timeout(interval, MODEL.milliseconds);
                 }
-                return manage(data);
-            }
 
-            throw new Error(data.Error || 'Error event manager');
-        });
+                return manage(data);
+            })
+            .catch(({ data = {} } = {}) => {
+                throw new Error(data.Error || 'Error event manager');
+            });
     }
 
     return { setEventID, start, call, stop };

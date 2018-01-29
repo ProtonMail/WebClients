@@ -3,12 +3,7 @@ import _ from 'lodash';
 /* @ngInject */
 function humanVerificationModal($http, $rootScope, pmModal, User, networkActivityTracker) {
     function handleResult({ data = {} }) {
-        if (data.Code === 1000) {
-            return Promise.resolve(data);
-        } else if (data.Error) {
-            return Promise.reject(data.Error);
-        }
-        return Promise.reject('Error');
+        return Promise.resolve(data);
     }
     return pmModal({
         controllerAs: 'ctrl',

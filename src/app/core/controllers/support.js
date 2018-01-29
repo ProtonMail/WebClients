@@ -79,15 +79,10 @@ function SupportController(
      */
     function resetLostPassword() {
         $scope.params.username = $scope.params.username;
-        const promise = Reset.requestResetToken({ Username: $scope.params.username, NotificationEmail: $scope.params.recoveryEmail }).then(
-            ({ data = {} }) => {
-                if (data.Code === 1000) {
-                    $scope.resetState = $scope.states.CODE;
-                } else if (data.Error) {
-                    return Promise.reject(data.Error);
-                }
-            }
-        );
+        const promise = Reset.requestResetToken({ Username: $scope.params.username, NotificationEmail: $scope.params.recoveryEmail }).then(() => {
+            $scope.resetState = $scope.states.CODE;
+        });
+
         networkActivityTracker.track(promise);
     }
 
@@ -105,24 +100,19 @@ function SupportController(
 
         Reset.validateResetToken($scope.tokenParams)
             .then(({ data = {} }) => {
-                if (data.Code === 1000) {
-                    $scope.passwordMode = data.PasswordMode;
-                    $scope.addresses = data.Addresses;
+                $scope.passwordMode = data.PasswordMode;
+                $scope.addresses = data.Addresses;
 
-                    $scope.resetState = $scope.states.DANGER;
-                    if ($scope.passwordMode === 2 && $scope.keyPhase < 3) {
-                        $scope.resetState = $scope.states.PASSWORD;
-                    }
-                } else {
-                    return Promise.reject({
-                        message: data.Error || 'Unable to verify reset token'
-                    });
+                $scope.resetState = $scope.states.DANGER;
+                if ($scope.passwordMode === 2 && $scope.keyPhase < 3) {
+                    $scope.resetState = $scope.states.PASSWORD;
                 }
             })
             .catch((error) => {
+                const { data = {} } = error;
                 resetState();
+                notification.error(data.Error || 'Unable to verify reset token');
                 $log.error(error);
-                notification.error(error.message);
             });
     };
 
@@ -132,16 +122,8 @@ function SupportController(
 
     function doReset() {
         if ($scope.passwordMode === 2 && $scope.keyPhase < 3) {
-            return Reset.resetPassword($scope.tokenParams, $scope.params.password).then((response = {}) => {
-                const { data = {} } = response;
-
-                if (data.Code === 1000) {
-                    return response;
-                }
-
-                return Promise.reject({
-                    message: data.Error || 'Unable to update password. Please try again'
-                });
+            return Reset.resetPassword($scope.tokenParams, $scope.params.password).catch(({ data = {} } = {}) => {
+                throw new Error(data.Error || 'Unable to update password. Please try again');
             });
         }
 

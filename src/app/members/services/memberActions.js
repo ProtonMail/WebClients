@@ -213,12 +213,7 @@ function memberActions(
 
         askPassword((Password, TwoFactorCode) => {
             const promise = User.password({ Password, TwoFactorCode })
-                .then(({ data = {} }) => {
-                    if (data.Error) {
-                        throw new Error(data.Error);
-                    }
-                    return data;
-                })
+                .then(({ data = {} }) => data)
                 .then(modalSetupOrga);
 
             networkActivityTracker.track(promise);

@@ -288,48 +288,45 @@ function cache(
             .getDispatcher()
             .then(() => conversationApi.query(request))
             .then(({ data = {} } = {}) => {
-                if (data.Code === 1000) {
-                    cacheCounters.currentState(data.Limit);
-                    $rootScope.$emit('elements', { type: 'setLimit', data: { limit: data.Limit, total: data.Total } });
-
-                    _.each(data.Conversations, (conversation) => {
-                        conversation.loaded = true; // Mark these conversations as loaded
-                        storeTime(conversation.ID, loc, conversation.ContextTime); // Store time value
-                    });
-
-                    // Only for cache context
-                    if (context) {
-                        // Set total value in cache
-                        if (!noCacheCounter) {
-                            const total = data.Limit;
-                            const unread = total === 0 ? 0 : data.Unread;
-                            const pages = getPages(request);
-
-                            // Add pages to the cache
-                            pages.forEach((page) => !cachePages.inside(page) && cachePages.add(page));
-
-                            cacheCounters.updateConversation(loc, total, unread);
-                        }
-
-                        // Store conversations
-                        storeConversations(data.Conversations);
-
-                        api.clearDispatcher();
-                        // Return conversations ordered
-                        return api.orderConversation(data.Conversations.slice(0, CONSTANTS.ELEMENTS_PER_PAGE), loc);
-                    }
-
-                    api.clearDispatcher();
-                    return data.Conversations.slice(0, CONSTANTS.ELEMENTS_PER_PAGE);
-                }
-
-                api.clearDispatcher();
-                $rootScope.$emit('elements', { type: 'error', data: { code: data.Code, error: data.Error } });
-
                 if (data.Code === INVALID_SEARCH_ERROR_CODE) {
                     return [];
                 }
+                cacheCounters.currentState(data.Limit);
+                $rootScope.$emit('elements', { type: 'setLimit', data: { limit: data.Limit, total: data.Total } });
 
+                _.each(data.Conversations, (conversation) => {
+                    conversation.loaded = true; // Mark these conversations as loaded
+                    storeTime(conversation.ID, loc, conversation.ContextTime); // Store time value
+                });
+
+                // Only for cache context
+                if (context) {
+                    // Set total value in cache
+                    if (!noCacheCounter) {
+                        const total = data.Limit;
+                        const unread = total === 0 ? 0 : data.Unread;
+                        const pages = getPages(request);
+
+                        // Add pages to the cache
+                        pages.forEach((page) => !cachePages.inside(page) && cachePages.add(page));
+
+                        cacheCounters.updateConversation(loc, total, unread);
+                    }
+
+                    // Store conversations
+                    storeConversations(data.Conversations);
+
+                    api.clearDispatcher();
+                    // Return conversations ordered
+                    return api.orderConversation(data.Conversations.slice(0, CONSTANTS.ELEMENTS_PER_PAGE), loc);
+                }
+
+                api.clearDispatcher();
+                return data.Conversations.slice(0, CONSTANTS.ELEMENTS_PER_PAGE);
+            })
+            .catch(({ data = {} } = {}) => {
+                api.clearDispatcher();
+                $rootScope.$emit('elements', { type: 'error', data: { code: data.Code, error: data.Error } });
                 throw new Error(data.Error || I18N.errorConversations);
             });
 
@@ -353,46 +350,43 @@ function cache(
             .getDispatcher()
             .then(() => messageApi.query(request))
             .then(({ data = {} } = {}) => {
-                if (data.Code === 1000) {
-                    const { Messages = [], Total = 0, Limit = 0 } = data;
-                    cacheCounters.currentState(Limit);
-                    $rootScope.$emit('elements', { type: 'setLimit', data: { limit: Limit, total: Total } });
-
-                    _.each(Messages, (message) => {
-                        const { ToList = [], CCList = [], BCCList = [] } = message;
-                        message.loaded = true;
-                        message.Senders = [message.Sender];
-                        message.Recipients = _.uniq([].concat(ToList, CCList, BCCList));
-                    });
-
-                    // Store messages
-                    storeMessages(Messages);
-
-                    // Only for cache context
-                    if (context) {
-                        const pages = getPages(request);
-                        // Set total value in cache
-                        if (!noCacheCounter) {
-                            cacheCounters.updateMessage(loc, Limit);
-                        }
-                        // Add pages to the cache
-                        pages.forEach((page) => !cachePages.inside(page) && cachePages.add(page));
-                        // Return messages ordered
-                        api.clearDispatcher();
-                        return api.orderMessage(Messages.slice(0, CONSTANTS.ELEMENTS_PER_PAGE));
-                    }
-
-                    api.clearDispatcher();
-                    return Messages.slice(0, CONSTANTS.ELEMENTS_PER_PAGE);
-                }
-
-                api.clearDispatcher();
-                $rootScope.$emit('elements', { type: 'error', data: { code: data.Code, error: data.Error } });
-
                 if (data.Code === INVALID_SEARCH_ERROR_CODE) {
                     return [];
                 }
+                const { Messages = [], Total = 0, Limit = 0 } = data;
+                cacheCounters.currentState(Limit);
+                $rootScope.$emit('elements', { type: 'setLimit', data: { limit: Limit, total: Total } });
 
+                _.each(Messages, (message) => {
+                    const { ToList = [], CCList = [], BCCList = [] } = message;
+                    message.loaded = true;
+                    message.Senders = [message.Sender];
+                    message.Recipients = _.uniq([].concat(ToList, CCList, BCCList));
+                });
+
+                // Store messages
+                storeMessages(Messages);
+
+                // Only for cache context
+                if (context) {
+                    const pages = getPages(request);
+                    // Set total value in cache
+                    if (!noCacheCounter) {
+                        cacheCounters.updateMessage(loc, Limit);
+                    }
+                    // Add pages to the cache
+                    pages.forEach((page) => !cachePages.inside(page) && cachePages.add(page));
+                    // Return messages ordered
+                    api.clearDispatcher();
+                    return api.orderMessage(Messages.slice(0, CONSTANTS.ELEMENTS_PER_PAGE));
+                }
+
+                api.clearDispatcher();
+                return Messages.slice(0, CONSTANTS.ELEMENTS_PER_PAGE);
+            })
+            .catch(({ data = {} } = {}) => {
+                api.clearDispatcher();
+                $rootScope.$emit('elements', { type: 'error', data: { code: data.Code, error: data.Error } });
                 throw new Error(data.Error || I18N.errorMessages);
             });
 
@@ -408,23 +402,18 @@ function cache(
      */
     function getConversation(conversationID = '') {
         const promise = conversationApi.get(conversationID).then(({ data = {} } = {}) => {
-            const { Code, Conversation, Messages } = data;
+            const { Conversation, Messages } = data;
+            const conversation = Conversation;
+            const messages = Messages;
+            const message = _.maxBy(messages, ({ Time }) => Time); // NOTE Seems wrong, we should check Time and LabelIDs
 
-            if (Code === 1000) {
-                const conversation = Conversation;
-                const messages = Messages;
-                const message = _.maxBy(messages, ({ Time }) => Time); // NOTE Seems wrong, we should check Time and LabelIDs
+            messages.forEach((message) => (message.loaded = true));
+            conversation.loaded = true;
+            conversation.Time = message.Time;
+            storeConversations([conversation]);
+            storeMessages(messages);
 
-                messages.forEach((message) => (message.loaded = true));
-                conversation.loaded = true;
-                conversation.Time = message.Time;
-                storeConversations([conversation]);
-                storeMessages(messages);
-
-                return angular.copy(conversation);
-            }
-
-            throw new Error(data.Error);
+            return angular.copy(conversation);
         });
 
         networkActivityTracker.track(promise);
@@ -439,14 +428,10 @@ function cache(
      */
     function getMessage(messageID = '') {
         const promise = messageApi.get(messageID).then(({ data = {} } = {}) => {
-            if (data.Code === 1000) {
-                const message = data.Message;
-                message.loaded = true;
-                storeMessages([message]);
-                return messageModel(message);
-            }
-
-            throw new Error(data.Error);
+            const message = data.Message;
+            message.loaded = true;
+            storeMessages([message]);
+            return messageModel(message);
         });
 
         networkActivityTracker.track(promise);

@@ -74,11 +74,7 @@ function advancedFilterElement(
                         $state.go($state.$current.name.replace('.element', ''));
                     }
 
-                    const promise = messageApi[MAP_ACTIONS[mailbox]](labelID).then(({ data = {} } = {}) => {
-                        if (data.Error) {
-                            throw new Error(data.Error);
-                        }
-
+                    const promise = messageApi[MAP_ACTIONS[mailbox]](labelID).then(() => {
                         cache.empty(labelID);
                         confirmModal.deactivate();
                         notification.success(gettextCatalog.getString('Folder emptied', null));

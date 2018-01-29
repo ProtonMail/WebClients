@@ -1,7 +1,6 @@
 /* @ngInject */
 function messageApi($http, url) {
     const requestURL = url.build('messages');
-    const headersVersion3 = { 'x-pm-apiversion': 3 };
 
     /**
      * Send a message
@@ -9,9 +8,7 @@ function messageApi($http, url) {
      * @return {Promise}
      */
     const send = (params = {}) => {
-        return $http.post(requestURL('send', params.id), params, {
-            headers: headersVersion3
-        });
+        return $http.post(requestURL('send', params.id), params);
     };
 
     /**
@@ -19,10 +16,7 @@ function messageApi($http, url) {
      * @param  {Object} params
      * @return {Promise}
      */
-    const createDraft = (params = {}) =>
-        $http.post(requestURL('draft'), params, {
-            headers: headersVersion3
-        });
+    const createDraft = (params = {}) => $http.post(requestURL('draft'), params);
 
     /**
      * Get message
@@ -51,9 +45,7 @@ function messageApi($http, url) {
      */
     const updateDraft = (params = {}) => {
         const messageID = params.ID || params.id;
-        return $http.put(requestURL('draft', messageID), params, {
-            headers: headersVersion3
-        });
+        return $http.put(requestURL('draft', messageID), params);
     };
 
     /**

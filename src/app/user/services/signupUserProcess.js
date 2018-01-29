@@ -24,8 +24,27 @@ function signupUserProcess(
 
     async function doCreateUser(model) {
         dispatch('create.user', { value: true });
-        const { data } = await signupModel.createUser(model);
-        return data;
+        try {
+            const { data } = await signupModel.createUser(model);
+            return data;
+        } catch (e) {
+            const { data = {} } = e;
+            // Failed Human verification
+            if (data.Code === 12087) {
+                dispatch('creating', { value: false });
+                dispatch('chech.humanity', { value: true });
+
+                return Promise.reject({
+                    error: new Error(data.Error),
+                    verbose: false
+                });
+            }
+
+            return Promise.reject({
+                error: new Error(e.Error),
+                verbose: true
+            });
+        }
     }
 
     async function setUserLanguage() {
@@ -56,9 +75,9 @@ function signupUserProcess(
     async function doAccountSetup() {
         dispatch('setup.account', { value: true });
 
-        const { data } = await Address.setup({ Domain: signupModel.getDomain() });
+        try {
+            const { data } = await Address.setup({ Domain: signupModel.getDomain() });
 
-        if (data.Code === 1000) {
             CACHE.setupPayload.keys[0].AddressID = data.Address.ID;
 
             return setupKeys.setup(CACHE.setupPayload, signupModel.getPassword()).then(() => {
@@ -69,9 +88,10 @@ function signupUserProcess(
                 $rootScope.isSecure = authentication.isSecured();
                 return data;
             });
+        } catch (err) {
+            const { data = {} } = err;
+            throw new Error(data.Error || err);
         }
-
-        return data;
     }
 
     async function doGetUserInfo() {
@@ -91,36 +111,27 @@ function signupUserProcess(
         $state.go('secured.dashboard');
     }
 
+    const createAddress = async () => {
+        try {
+            return await doLogUserIn().then(doAccountSetup);
+        } catch (e) {
+            const { data = {} } = e;
+
+            if (data.Error) {
+                return Promise.reject({
+                    error: new Error(data.Error || I18N.ERROR_ADDRESS_CREATION),
+                    verbose: true,
+                    redirect: 'login'
+                });
+            }
+
+            throw e;
+        }
+    };
+
     const create = async (model) => {
-        const userData = await doCreateUser(model);
-
-        // Failed Human verification
-        if (userData.Code === 12087) {
-            dispatch('creating', { value: false });
-            dispatch('chech.humanity', { value: true });
-
-            return Promise.reject({
-                error: new Error(userData.Error),
-                verbose: false
-            });
-        }
-
-        if (userData.Code !== 1000) {
-            return Promise.reject({
-                error: new Error(userData.Error),
-                verbose: true
-            });
-        }
-
-        const addressData = await doLogUserIn().then(doAccountSetup);
-
-        if (addressData.Code !== 1000) {
-            return Promise.reject({
-                error: new Error(addressData.Error || I18N.ERROR_ADDRESS_CREATION),
-                verbose: true,
-                redirect: 'login'
-            });
-        }
+        await doCreateUser(model);
+        await createAddress();
 
         setUserLanguage()
             .then(doGetUserInfo)

@@ -61,7 +61,7 @@ i18nLoader.set(i18n);
 
 const APP = {
     app_version: APP_VERSION,
-    api_version: '2',
+    api_version: '3',
     date_version: new Date().toDateString(),
     year: new Date().getFullYear(),
     clientID: 'Web',

@@ -11,12 +11,9 @@ function Address($http, url, gettextCatalog) {
     };
 
     const requestUrl = url.build('addresses');
-
+    const handleResult = ({ data = {} } = {}) => data;
     const filterError = (error) => ({ data = {} }) => {
-        if (data.Code !== 1000) {
-            throw new Error(data.Error || error);
-        }
-        return data;
+        throw new Error(data.Error || error);
     };
 
     /**
@@ -26,10 +23,9 @@ function Address($http, url, gettextCatalog) {
      */
     const create = (address) => {
         return $http
-            .post(requestUrl(), address, {
-                headers: headersVersion3
-            })
-            .then(filterError(I18N.ERROR_CREATE));
+            .post(requestUrl(), address)
+            .then(handleResult)
+            .catch(filterError(I18N.ERROR_CREATE));
     };
 
     /**
@@ -49,10 +45,9 @@ function Address($http, url, gettextCatalog) {
      */
     const edit = (addressID, params) => {
         return $http
-            .put(requestUrl(addressID), params, {
-                headers: headersVersion3
-            })
-            .then(filterError(I18N.ERROR_UPDATE));
+            .put(requestUrl(addressID), params)
+            .then(handleResult)
+            .catch(filterError(I18N.ERROR_UPDATE));
     };
 
     /**
@@ -61,7 +56,10 @@ function Address($http, url, gettextCatalog) {
      * @return {Promise}
      */
     const enable = (addressID) => {
-        return $http.put(requestUrl(addressID, 'enable')).then(filterError(I18N.ERROR_ENABLE));
+        return $http
+            .put(requestUrl(addressID, 'enable'))
+            .then(handleResult)
+            .catch(filterError(I18N.ERROR_ENABLE));
     };
 
     /**
@@ -70,7 +68,10 @@ function Address($http, url, gettextCatalog) {
      * @return {Promise}
      */
     const disable = (addressID) => {
-        return $http.put(requestUrl(addressID, 'disable')).then(filterError(I18N.ERROR_DISABLE));
+        return $http
+            .put(requestUrl(addressID, 'disable'))
+            .then(handleResult)
+            .catch(filterError(I18N.ERROR_DISABLE));
     };
 
     /**
@@ -79,11 +80,17 @@ function Address($http, url, gettextCatalog) {
      * @return {Promise}
      */
     const remove = (addressID) => {
-        return $http.delete(requestUrl(addressID)).then(filterError(I18N.ERROR_DELETE));
+        return $http
+            .delete(requestUrl(addressID))
+            .then(handleResult)
+            .catch(filterError(I18N.ERROR_DELETE));
     };
 
     const order = (params) => {
-        return $http.post(requestUrl('order'), params).then(filterError(I18N.ERROR_ORDER));
+        return $http
+            .post(requestUrl('order'), params)
+            .then(handleResult)
+            .catch(filterError(I18N.ERROR_ORDER));
     };
 
     return { create, setup, edit, enable, disable, remove, order };

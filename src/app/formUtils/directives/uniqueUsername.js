@@ -13,21 +13,22 @@ function uniqueUsername($stateParams, gettextCatalog, User) {
             return Promise.resolve();
         }
 
-        return User.available(username).then(({ data = {} } = {}) => {
-            if (data.Code === 1000) {
+        return User.available(username)
+            .then(({ data = {} } = {}) => {
                 if (data.Available) {
                     return Promise.resolve();
                 }
+
                 ngModel.$error.alreadyTaken = true;
-            }
+            })
+            .catch(({ data = {} } = {}) => {
+                if (data.Error === 429) {
+                    ngModel.$error.tooMuch = true;
+                }
 
-            if (data.Error === 429) {
-                ngModel.$error.tooMuch = true;
-            }
-
-            ngModel.$error.uniqueError = true;
-            return Promise.reject(false);
-        });
+                ngModel.$error.uniqueError = true;
+                return Promise.reject(false);
+            });
     };
 
     return {

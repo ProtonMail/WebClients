@@ -4,15 +4,16 @@ import _ from 'lodash';
 function Report($http, url, gettextCatalog) {
     const requestURL = url.build('reports');
     const ERROR_REPORT = gettextCatalog.getString('Error communicating with the server', null, 'Report bug request');
+    const handleSuccess = ({ data = {} } = {}) => data;
+    const handleError = (errorMessage) => ({ data = {} } = {}) => {
+        throw new Error(data.Error || errorMessage);
+    };
 
     const crash = (data) => $http.post(requestURL('crash'), data);
     const bug = (data) => {
-        return $http.post(requestURL('bug'), data).then(({ data = {} } = {}) => {
-            if (data.Code === 1000) {
-                return data;
-            }
-            throw new Error(data.Error || ERROR_REPORT);
-        });
+        return $http.post(requestURL('bug'), data)
+            .then(handleSuccess)
+            .catch(handleError(ERROR_REPORT));
     };
 
     const uploadScreenshot = (image, form) =>

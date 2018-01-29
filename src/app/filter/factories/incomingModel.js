@@ -10,9 +10,6 @@ function incomingModel(notify, gettextCatalog, IncomingDefault, networkActivityT
 
     const get = (config) => {
         const promise = IncomingDefault.get(config).then(({ data = {} }) => {
-            if (data.Error) {
-                throw new Error(data.Error);
-            }
             return data.IncomingDefaults;
         });
         networkActivityTracker.track(promise);
@@ -21,11 +18,6 @@ function incomingModel(notify, gettextCatalog, IncomingDefault, networkActivityT
 
     const update = (ID, Location) => {
         const promise = IncomingDefault.update({ ID, Location }).then(({ data = {} }) => {
-            if (data.Error) {
-                const error = new Error(data.Error);
-                error.Code = data.Code;
-                throw error;
-            }
             notifySuccess(I18N.UPDATE_SUCCESS);
             return data.IncomingDefault;
         });
@@ -35,9 +27,6 @@ function incomingModel(notify, gettextCatalog, IncomingDefault, networkActivityT
 
     const remove = (ID) => {
         const promise = IncomingDefault.delete({ IDs: [ID] }).then(({ data = {} }) => {
-            if (data.Error) {
-                throw new Error(data.Error);
-            }
             notifySuccess(I18N.DELETE_SUCCESS);
             return data.IncomingDefault;
         });
@@ -47,9 +36,6 @@ function incomingModel(notify, gettextCatalog, IncomingDefault, networkActivityT
 
     const create = (params) => {
         const promise = IncomingDefault.add(params).then(({ data = {} }) => {
-            if (data.Error) {
-                throw new Error(data.Error);
-            }
             notifySuccess(I18N.ADD_SUCCESS);
             return data.IncomingDefault;
         });

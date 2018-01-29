@@ -7,7 +7,8 @@
     margin-bottom: 15px;
 }
 
-.contactLoaderModal-success {
+.contactLoaderModal-success,
+.contactLoaderModal-error {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -46,7 +47,8 @@
 }
 
 /* Context */
-.contactLoaderModal-container:not(.contactLoaderModal-imported) .contactLoaderModal-success { display: none }
+.contactLoaderModal-container:not(.contactLoaderModal-imported) .contactLoaderModal-success,
+.contactLoaderModal-container:not(.contactLoaderModal-imported) .contactLoaderModal-error { display: none }
 .contactLoaderModal-imported .loader,
 .contactLoaderModal-imported .contactLoaderModal-info,
 .contactLoaderModal-imported .contactLoaderModal-label,

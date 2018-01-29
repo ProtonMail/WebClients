@@ -24,12 +24,7 @@ function deleteAccountModal(
     }
 
     function deleteUser(params) {
-        return User.delete(params).then(({ data = {} }) => {
-            if (data.Code === 1000) {
-                return data;
-            }
-            throw new Error(data.Error);
-        });
+        return User.delete(params).then(({ data = {} }) => data);
     }
 
     return pmModal({

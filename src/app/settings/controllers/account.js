@@ -133,14 +133,7 @@ function AccountController(
 
     $scope.saveDailyNotifications = () => {
         const promise = settingsApi.notify({ Notify: $scope.dailyNotifications }).then((data = {}) => {
-            if (data.Error) {
-                throw new Error(data.Error);
-            }
-
-            if (data.Code === 1000) {
-                notification.success(gettextCatalog.getString('Preference saved', null));
-            }
-
+            notification.success(gettextCatalog.getString('Preference saved', null));
             return data;
         });
 
@@ -188,19 +181,11 @@ function AccountController(
             });
         }
         function submit(currentPassword, twoFactorCode) {
-            const promise = User.password({ Password: currentPassword, TwoFactorCode: twoFactorCode })
-                .then((result) => {
-                    const { data } = result;
-                    if (data.Error) {
-                        return Promise.reject(data.Error);
-                    }
-                    return Promise.resolve(result);
-                })
-                .then(() => {
-                    loginPasswordModal.deactivate();
-                    initAutoClose();
-                    modal();
-                });
+            const promise = User.password({ Password: currentPassword, TwoFactorCode: twoFactorCode }).then(() => {
+                loginPasswordModal.deactivate();
+                initAutoClose();
+                modal();
+            });
             networkActivityTracker.track(promise);
         }
         passwordModal(submit);
@@ -259,20 +244,14 @@ function AccountController(
     };
 
     $scope.saveHotkeys = () => {
-        const promise = settingsMailApi.updateHotkeys({ Hotkeys: $scope.hotkeys }).then((data = {}) => {
-            if (data.Error) {
-                throw new Error(data.Error);
+        const promise = settingsMailApi.updateHotkeys({ Hotkeys: $scope.hotkeys }).then(() => {
+            if ($scope.hotkeys === 1) {
+                hotkeys.bind();
+            } else {
+                hotkeys.unbind();
             }
 
-            if (data.Code === 1000) {
-                if ($scope.hotkeys === 1) {
-                    hotkeys.bind();
-                } else {
-                    hotkeys.unbind();
-                }
-
-                notification.success(gettextCatalog.getString('Hotkeys preferences updated', null));
-            }
+            notification.success(gettextCatalog.getString('Hotkeys preferences updated', null));
         });
 
         networkActivityTracker.track(promise);
@@ -305,14 +284,7 @@ function AccountController(
         const promise = settingsApi
             .setNews({ News })
             .then((data = {}) => {
-                if (data.Error) {
-                    throw new Error(data.Error);
-                }
-
-                if (data.Code === 1000) {
-                    userSettingsModel.set('News', News);
-                }
-
+                userSettingsModel.set('News', News);
                 return data;
             })
             .then(() => notification.success(successMessage));

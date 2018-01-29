@@ -43,24 +43,24 @@ function paypalView(notification, Payment, gettextCatalog, CONSTANTS, $q, networ
                 Payment.paypal({ Amount, Currency: scope.currency }, { timeout: deferred.promise })
                     .then(({ data = {} } = {}) => {
                         deferred = null;
-
-                        if (data.Code === 1000) {
-                            return data;
-                        }
-                        if (data.Code === 22802) {
-                            scope.paypalNetworkError = true;
-                        }
-                        throw new Error(I18N.down);
+                        return data;
                     })
                     .then(({ ApprovalURL }) => (scope.approvalURL = ApprovalURL))
                     .catch((error) => {
                         const { data = {} } = error;
 
+                        if (data.Code === 22802) {
+                            scope.paypalNetworkError = true;
+                        }
+
                         deferred = null;
+
                         if (!networkUtils.isCancelledRequest(error)) {
                             error.message && notification.error(error);
                             data.Error && notification.error(data.Error);
                         }
+
+                        throw new Error(I18N.down);
                     });
             };
 
