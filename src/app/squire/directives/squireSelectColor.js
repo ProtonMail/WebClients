@@ -13,9 +13,15 @@ function squireSelectColor(onCurrentMessage, editorModel) {
             const $popover = el[0].querySelector('.squireSelectColor-popover');
             const { editor } = editorModel.find(scope.message);
 
+            const closePopover = () => {
+                $popover.classList.add(CLASS_HIDDEN);
+                el[0].classList.remove(CLASS_TOGGLE);
+            };
+
             const onClickEditor = () => {
                 const { color = 'rgb(34, 34, 34)' } = editor.getFontInfo() || {};
                 $i.style.color = color;
+                closePopover();
             };
 
             const onKeyup = (e) => {
@@ -32,24 +38,25 @@ function squireSelectColor(onCurrentMessage, editorModel) {
                 }
 
                 if (type === 'popover.form' && data.action === 'close.popover' && data.name === 'changeColor') {
-                    el[0].classList.remove(CLASS_TOGGLE);
+                    closePopover();
                 }
             };
 
-            // Click button select color
-            const onClick = ({ target }) => {
+            const onMouseDown = (e) => {
+                e.preventDefault();
+                e.stopPropagation();
+                const target = e.target;
                 if (target.hasAttribute('data-color') && target.getAttribute('data-mode') === 'color') {
                     $i.style.color = target.getAttribute('data-color');
-                    $popover.classList.add(CLASS_HIDDEN);
-                    el[0].classList.remove(CLASS_TOGGLE);
+                    closePopover();
                 }
             };
 
-            el.on('click', onClick);
+            el.on('mousedown', onMouseDown);
             const unsubscribe = onCurrentMessage('squire.editor', scope, onAction);
 
             scope.$on('$destroy', () => {
-                el.off('click', onClick);
+                el.off('mousedown', onMouseDown);
                 editor.removeEventListener('click', onClickEditor);
                 editor.removeEventListener('keyup', onKeyup);
                 unsubscribe();

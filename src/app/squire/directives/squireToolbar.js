@@ -130,44 +130,38 @@ function squireToolbar(CONSTANTS, squireDropdown, editorModel, onCurrentMessage,
                 }
             };
 
-            const onMouseDown = (e) => {
+            const toggleRow = (e) => {
                 e.preventDefault();
                 e.stopPropagation();
-                const { target, currentTarget } = e;
+                el[0].classList.toggle(CLASSNAME.SUB_ROW);
 
-                if (target.nodeName === 'BUTTON') {
-                    squireDropdown(scope.message).closeAll(target.dataset.key);
-                }
+                if (el[0].classList.contains(CLASSNAME.SUB_ROW)) {
+                    squireDropdown(scope.message).matchSelection();
 
-                if (target.dataset.toggle === 'row') {
-                    currentTarget.classList.toggle(CLASSNAME.SUB_ROW);
-
-                    if (currentTarget.classList.contains(CLASSNAME.SUB_ROW)) {
-                        squireDropdown(scope.message).matchSelection();
-
-                        $rootScope.$emit('squire.editor', {
-                            type: 'squire.toolbar',
-                            data: {
-                                action: 'display.subrow',
-                                message: scope.message
-                            }
-                        });
-                    }
+                    $rootScope.$emit('squire.editor', {
+                        type: 'squire.toolbar',
+                        data: {
+                            action: 'display.subrow',
+                            message: scope.message
+                        }
+                    });
                 }
             };
+
+            const rowButton = el[0].querySelector('.squireToolbar-action-options');
 
             const onResize = () => {
                 squireDropdown(scope.message).closeAll();
                 el[0].classList.remove(CLASSNAME.SUB_ROW);
             };
 
-            el.on('mousedown', onMouseDown);
+            rowButton.addEventListener('mousedown', toggleRow);
             $(window).on('resize', onResize);
             const unsubscribe = onCurrentMessage('squire.editor', scope, onActions);
 
             scope.$on('$destroy', () => {
                 editor.removeEventListener('pathChange', onPathChange);
-                el.off('mousedown', onMouseDown);
+                rowButton.removeEventListener('mousedown', toggleRow);
                 $(window).off('resize', onResize);
                 unsubscribe();
                 squireDropdown(scope.message).clear();

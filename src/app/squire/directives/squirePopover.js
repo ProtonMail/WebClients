@@ -47,7 +47,7 @@ function squirePopover($rootScope, onCurrentMessage) {
         link(scope, el, { name, action }) {
             const unsubscribe = [];
             const CLASSNAME_HIDDEN = `${name}-hidden`;
-            const hide = () => {
+            const close = () => {
                 if (!el[0].classList.contains(CLASSNAME_HIDDEN)) {
                     el[0].classList.add(CLASSNAME_HIDDEN);
                     dispatch({ name, form: {}, action: 'close.popover', message: scope.message });
@@ -60,25 +60,25 @@ function squirePopover($rootScope, onCurrentMessage) {
 
             const closeDropdown = ({ target }) => {
                 if (!el[0].contains(target) && !target.hasAttribute('data-squire-details')) {
-                    hide();
+                    close();
                 }
             };
 
             unsubscribe.push(
                 onCurrentMessage('squire.editor', scope, (type, data) => {
-                    if (type === 'squire.native.action' || type === 'squireActions') {
-                        data.action !== action && hide();
+                    if (type === 'squire.native.action' || (type === 'squireActions' && data.action !== action)) {
+                        close();
                     }
 
                     if (type === 'squire.toolbar' || (type === 'squireDropdown' && data.type === 'is.open')) {
-                        hide();
+                        close();
                     }
                 })
             );
 
             unsubscribe.push(
                 onCurrentMessage('composer.update', scope, (type) => {
-                    type === 'editor.focus' && hide();
+                    type === 'editor.focus' && close();
                 })
             );
 
@@ -99,4 +99,5 @@ function squirePopover($rootScope, onCurrentMessage) {
         }
     };
 }
+
 export default squirePopover;

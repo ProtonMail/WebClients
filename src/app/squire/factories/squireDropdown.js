@@ -70,6 +70,10 @@ function squireDropdown($rootScope, squireEditor, editorModel, onCurrentMessage)
                 unsubscribeList.length = 0;
             };
 
+            const close = () => {
+                node.classList.remove(CLASSNAME.IS_OPEN);
+            };
+
             /**
              * Detect when we need to close the dropdown
              *     - Close on another dropdwon
@@ -77,24 +81,29 @@ function squireDropdown($rootScope, squireEditor, editorModel, onCurrentMessage)
              * @return {Function} Unsubscribe
              */
             const subscribeHandlers = () => {
-                // click events on squire don't trigger document.click because of the iframe.
-                const onComposer = onCurrentMessage('composer.update', { message }, (type) => {
-                    if (type === 'editor.focus') {
-                        node.classList.remove(CLASSNAME.IS_OPEN);
+                const { editor } = editorModel.find(message);
+                editor.addEventListener('click', close);
+
+                // Close the dropdown when an action has been inserted, or another dropdown is opened.
+                const onEditor = onCurrentMessage('squire.editor', { message }, (type, data) => {
+                    if (type === 'squire.native.action' || type === 'squireActions' || (type === 'squireDropdown' && data.action !== action)) {
+                        close();
                     }
                 });
 
+                // Close the dropdown when clicking anywhere outside.
                 const closeDropdown = ({ target }) => {
                     if (!node.contains(target) || target.classList.contains(CLASSNAME.DROPDOWN_ELEMENT)) {
-                        node.classList.remove(CLASSNAME.IS_OPEN);
+                        close();
                     }
                 };
 
-                document.body.addEventListener('click', closeDropdown);
+                document.body.addEventListener('mousedown', closeDropdown);
 
                 return () => {
-                    document.body.removeEventListener('click', closeDropdown);
-                    onComposer();
+                    document.body.removeEventListener('mousedown', closeDropdown);
+                    editor.removeEventListener('click', close);
+                    onEditor();
                 };
             };
 
@@ -183,4 +192,5 @@ function squireDropdown($rootScope, squireEditor, editorModel, onCurrentMessage)
         return { create, update, clear, matchSelection, closeAll };
     };
 }
+
 export default squireDropdown;

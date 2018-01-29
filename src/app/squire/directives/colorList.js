@@ -42,16 +42,16 @@ function colorList(CONSTANTS) {
             el[0].innerHTML = html;
 
             return (scope, el) => {
-                const onClick = ({ target }) => {
+                const onMousedown = ({ target }) => {
                     const previous = el[0].querySelector(`.${CLASSNAME_ACTIVE}`);
                     previous && previous.classList.remove(CLASSNAME_ACTIVE);
                     target.classList.add(CLASSNAME_ACTIVE);
                 };
 
-                el.on('click', onClick);
+                el.on('mousedown', onMousedown);
 
                 scope.$on('$destroy', () => {
-                    el.off('click', onClick);
+                    el.off('mousedown', onMousedown);
                 });
             };
         }
