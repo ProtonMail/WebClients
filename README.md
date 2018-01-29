@@ -175,7 +175,7 @@ $ npm run e2e -- --suite=login
 
 ## License
 
-Copyright (c) 2013-2016
+Copyright (c) 2013-2018
 
 Proton Technologies A.G. (Switzerland)
 
