@@ -16,29 +16,29 @@ function settingsMailApi($http, gettextCatalog, mailSettingsModel, url) {
     };
 
     const handleResponse = (promise) => promise.then(handleResult).catch(handleError);
-    const fetch = () => $http.get(requestURL()).then(handleResponse);
-    const updateTheme = (data) => $http.put(requestURL('theme'), data).then(handleResponse);
-    const updateAutoSaveContacts = (data) => $http.put(requestURL('autocontacts'), data).then(handleResponse);
-    const updateComposerMode = (data) => $http.put(requestURL('composermode'), data).then(handleResponse);
-    const updateMessageButtons = (data) => $http.put(requestURL('messagebuttons'), data).then(handleResponse);
-    const updateShowImages = (data) => $http.put(requestURL('images'), data).then(handleResponse);
-    const updateShowMoved = (data) => $http.put(requestURL('moved'), data).then(handleResponse);
-    const updateViewMode = (data) => $http.put(requestURL('viewmode'), data).then(handleResponse);
-    const updateViewLayout = (data) => $http.put(requestURL('viewlayout'), data).then(handleResponse);
-    const updateSwipeLeft = (data) => $http.put(requestURL('swipeleft'), data).then(handleResponse);
-    const updateSwipeRight = (data) => $http.put(requestURL('swiperight'), data).then(handleResponse);
-    const updateAlsoArchive = (data) => $http.put(requestURL('alsoarchive'), data).then(handleResponse);
-    const updateHotkeys = (data) => $http.put(requestURL('hotkeys'), data).then(handleResponse);
-    const updatePMSignature = (data) => $http.put(requestURL('pmsignature'), data).then(handleResponse);
-    const updateAutowildcard = (data) => $http.put(requestURL('autowildcard'), data).then(handleResponse);
-    const updateDraftType = (data) => $http.put(requestURL('drafttype'), data).then(handleResponse);
-    const updateReceiveType = (data) => $http.put(requestURL('receivetype'), data).then(handleResponse);
-    const updateShowType = (data) => $http.put(requestURL('showtype'), data).then(handleResponse);
-    const updateImageProxy = (data) => $http.put(requestURL('imageproxy'), data).then(handleResponse);
-    const updateTLS = (data) => $http.put(requestURL('tls'), data).then(handleResponse);
-    const updateRightToLeft = (data) => $http.put(requestURL('righttoleft'), data).then(handleResponse);
-    const updateAttachPublicKey = (data) => $http.put(requestURL('attachpublic'), data).then(handleResponse);
-    const updateAutoresponder = (data) => $http.put(requestURL('autoresponder'), data).then(handleResponse);
+    const fetch = () => handleResponse($http.get(requestURL()));
+    const updateTheme = (data) => handleResponse($http.put(requestURL('theme'), data));
+    const updateAutoSaveContacts = (data) => handleResponse($http.put(requestURL('autocontacts'), data));
+    const updateComposerMode = (data) => handleResponse($http.put(requestURL('composermode'), data));
+    const updateMessageButtons = (data) => handleResponse($http.put(requestURL('messagebuttons'), data));
+    const updateShowImages = (data) => handleResponse($http.put(requestURL('images'), data));
+    const updateShowMoved = (data) => handleResponse($http.put(requestURL('moved'), data));
+    const updateViewMode = (data) => handleResponse($http.put(requestURL('viewmode'), data));
+    const updateViewLayout = (data) => handleResponse($http.put(requestURL('viewlayout'), data));
+    const updateSwipeLeft = (data) => handleResponse($http.put(requestURL('swipeleft'), data));
+    const updateSwipeRight = (data) => handleResponse($http.put(requestURL('swiperight'), data));
+    const updateAlsoArchive = (data) => handleResponse($http.put(requestURL('alsoarchive'), data));
+    const updateHotkeys = (data) => handleResponse($http.put(requestURL('hotkeys'), data));
+    const updatePMSignature = (data) => handleResponse($http.put(requestURL('pmsignature'), data));
+    const updateAutowildcard = (data) => handleResponse($http.put(requestURL('autowildcard'), data));
+    const updateDraftType = (data) => handleResponse($http.put(requestURL('drafttype'), data));
+    const updateReceiveType = (data) => handleResponse($http.put(requestURL('receivetype'), data));
+    const updateShowType = (data) => handleResponse($http.put(requestURL('showtype'), data));
+    const updateImageProxy = (data) => handleResponse($http.put(requestURL('imageproxy'), data));
+    const updateTLS = (data) => handleResponse($http.put(requestURL('tls'), data));
+    const updateRightToLeft = (data) => handleResponse($http.put(requestURL('righttoleft'), data));
+    const updateAttachPublicKey = (data) => handleResponse($http.put(requestURL('attachpublic'), data));
+    const updateAutoresponder = (data) => handleResponse($http.put(requestURL('autoresponder'), data));
 
     return {
         fetch,
