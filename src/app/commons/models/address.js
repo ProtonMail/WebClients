@@ -1,6 +1,5 @@
 /* @ngInject */
 function Address($http, url, gettextCatalog) {
-    const headersVersion3 = { 'x-pm-apiversion': 3 };
     const I18N = {
         ERROR_UPDATE: gettextCatalog.getString('Error during updating', null, 'Error'),
         ERROR_ORDER: gettextCatalog.getString('Unable to save your changes, please try again.', null, 'Error'),
