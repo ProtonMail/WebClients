@@ -141,12 +141,7 @@ function setupKeys($log, $q, CONSTANTS, gettextCatalog, Key, MemberKey, notifica
     }
 
     function errorHandler({ data }) {
-        if (data && data.Code === 1000) {
-            return $q.resolve(data.User || data.Member || data.MemberKey);
-        } else if (data && data.Error) {
-            return $q.reject({ message: data.Error });
-        }
-        return $q.reject({ message: 'Something went wrong during key setup' });
+        return $q.resolve(data.User || data.Member || data.MemberKey);
     }
 
     function reset({ keySalt, keys }, password = '', params = {}) {

@@ -193,16 +193,14 @@ function encryptMessage($rootScope, pmcw, srp, ComposerRequestStatus, outsidersM
         try {
             const uniqueEmails = _.uniq(emails);
             const { data } = await message.getPublicKeys(uniqueEmails);
-            if (data.Code !== ComposerRequestStatus.SUCCESS) {
-                throw new Error(data.Error || ERROR_REQUEST_KEYS);
-            }
 
             return encryptFromPublicKeys(message, uniqueEmails, data);
         } catch (err) {
+            const { data = {} } = err || {};
             console.error('Cannot encrypt message', err);
             message.encrypting = false;
             dispatchMessageAction(message);
-            throw err;
+            throw new Error(data.Error || ERROR_REQUEST_KEYS);
         }
     }
 

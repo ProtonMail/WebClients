@@ -36,17 +36,21 @@ function messageRequest($rootScope, messageApi, ComposerRequestStatus, CONSTANTS
      * @return {Promise}
      */
     async function draft(parameters, message, type) {
-        const { data } = await getEditPromise(type, parameters);
+        try {
+            const { data } = await getEditPromise(type, parameters);
 
-        if (data.Code === ComposerRequestStatus.SUCCESS || data.Code === ComposerRequestStatus.DRAFT_NOT_EXIST) {
-            return data;
+            if (data.Code === ComposerRequestStatus.SUCCESS || data.Code === ComposerRequestStatus.DRAFT_NOT_EXIST) {
+                return data;
+            }
+
+            if (data.Code === ComposerRequestStatus.MESSAGE_ALREADY_SEND) {
+                return dispatch('close.message', { message });
+            }
+        } catch (err) {
+            const { data = {} } = err || {};
+
+            throw new Error(data.Error || I18N.ERROR_REQUEST_DRAFT);
         }
-
-        if (data.Code === ComposerRequestStatus.MESSAGE_ALREADY_SEND) {
-            return dispatch('close.message', { message });
-        }
-
-        throw new Error(data.Error || I18N.ERROR_REQUEST_DRAFT);
     }
 
     async function send(parameters) {

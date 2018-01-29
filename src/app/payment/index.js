@@ -18,7 +18,6 @@ import giftCodeModel from './factories/giftCodeModel';
 import paymentBitcoinModel from './factories/paymentBitcoinModel';
 import paymentModalModel from './factories/paymentModalModel';
 import paymentModel from './factories/paymentModel';
-import paymentsInterceptor from './factories/paymentsInterceptor';
 import brick from './services/brick';
 import paymentPlansFormator from './services/paymentPlansFormator';
 import paymentUtils from './services/paymentUtils';
@@ -31,9 +30,6 @@ import paymentModal from './modals/paymentModal';
 
 export default angular
     .module('proton.payment', [])
-    .config(($httpProvider) => {
-        $httpProvider.interceptors.push('paymentsInterceptor');
-    })
     .directive('bitcoinDetails', bitcoinDetails)
     .directive('bitcoinQrcode', bitcoinQrcode)
     .directive('bitcoinView', bitcoinView)
@@ -54,7 +50,6 @@ export default angular
     .factory('paymentBitcoinModel', paymentBitcoinModel)
     .factory('paymentModalModel', paymentModalModel)
     .factory('paymentModel', paymentModel)
-    .factory('paymentsInterceptor', paymentsInterceptor)
     .factory('brick', brick)
     .factory('paymentPlansFormator', paymentPlansFormator)
     .factory('paymentUtils', paymentUtils)

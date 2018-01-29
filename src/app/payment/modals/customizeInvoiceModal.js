@@ -13,13 +13,7 @@ function customizeInvoiceModal(eventManager, pmModal, settingsApi, notification,
             self.submit = () => {
                 const promise = settingsApi
                     .invoiceText({ InvoiceText: self.text })
-                    .then(({ data = {} } = {}) => {
-                        if (data.Error) {
-                            throw new Error(data.Error);
-                        }
-
-                        return data;
-                    })
+                    .then(({ data = {} } = {}) => data)
                     .then(() => eventManager.call())
                     .then(() => {
                         notification.success('Invoice customized');

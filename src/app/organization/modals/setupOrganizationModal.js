@@ -89,23 +89,16 @@ function setupOrganizationModal(
             self.isLastStep = () => self.step === _.last(steps);
 
             self.next = () => {
-                const promise = methods[index]()
-                    .then(({ data = {} } = {}) => {
-                        if (data.Error) {
-                            return Promise.reject(data.Error);
-                        }
-                        return Promise.resolve();
-                    })
-                    .then(() => {
-                        if (self.isLastStep()) {
-                            return params.close();
-                        }
+                const promise = methods[index]().then(() => {
+                    if (self.isLastStep()) {
+                        return params.close();
+                    }
 
-                        index++;
-                        $scope.$applyAsync(() => {
-                            self.step = steps[index];
-                        });
+                    index++;
+                    $scope.$applyAsync(() => {
+                        self.step = steps[index];
                     });
+                });
                 networkActivityTracker.track(promise);
             };
             self.cancel = () => {

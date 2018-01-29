@@ -1,6 +1,5 @@
 /* @ngInject */
-function pmDomainModel($rootScope, authentication, domainApi, gettextCatalog) {
-    const errorMessage = gettextCatalog.getString('Domain request failed', null, 'Error');
+function pmDomainModel($rootScope, authentication, domainApi) {
     const domains = [];
     const get = () => domains.slice();
 
@@ -17,11 +16,8 @@ function pmDomainModel($rootScope, authentication, domainApi, gettextCatalog) {
 
         return Promise.all(promises).then((result) => {
             const list = result.reduce((acc, { data = {} } = {}) => {
-                if (data.Code === 1000) {
-                    acc.push(...data.Domains);
-                    return acc;
-                }
-                throw new Error(data.Error || errorMessage);
+                acc.push(...data.Domains);
+                return acc;
             }, []);
 
             set(list);

@@ -21,12 +21,7 @@ function LabelsController(
     const changeNotify = (event, { id, status }) => {
         const { Name, Color, Display, Exclusive } = _.find($scope.labels, { ID: id });
         const promise = Label.update({ ID: id, Name, Color, Display, Exclusive, Notify: status ? 1 : 0 })
-            .then(({ data = {} } = {}) => {
-                if (data.Code === 1000) {
-                    return eventManager.call();
-                }
-                throw new Error(data.Error);
-            })
+            .then(eventManager.call)
             .then(() => notification.success(gettextCatalog.getString('Label updated', null)));
 
         networkActivityTracker.track(promise);
@@ -151,12 +146,7 @@ function LabelsController(
                 message: CONFIRM,
                 confirm() {
                     const promise = Label.delete(label.ID)
-                        .then(({ data = {} } = {}) => {
-                            if (data.Code === 1000) {
-                                return eventManager.call();
-                            }
-                            throw new Error(data.Error);
-                        })
+                        .then(eventManager.call)
                         .then(() => {
                             confirmModal.deactivate();
                             notification.success(NOTIF);
@@ -173,12 +163,7 @@ function LabelsController(
 
     $scope.saveLabelOrder = (labelOrder) => {
         const promise = Label.order({ Order: labelOrder })
-            .then(({ data = {} } = {}) => {
-                if (data.Code === 1000) {
-                    return eventManager.call();
-                }
-                throw new Error(data.Error);
-            })
+            .then(eventManager.call)
             .then(() => {
                 notification.success(gettextCatalog.getString('Label order saved', null));
             });

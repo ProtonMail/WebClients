@@ -52,13 +52,15 @@ function organizationModel(
             set(fakeOrganization);
             return Promise.resolve(fakeResult);
         }
-        return organizationApi.get().then(({ data = {} } = {}) => {
-            if (data.Code === 1000) {
+        return organizationApi
+            .get()
+            .then(({ data = {} } = {}) => {
                 set(data.Organization);
                 return data.Organization;
-            }
-            throw new Error(data.Error || I18N.FETCH_ERROR);
-        });
+            })
+            .catch(({ data = {} } = {}) => {
+                throw new Error(data.Error || I18N.FETCH_ERROR);
+            });
     }
 
     function create() {
@@ -68,17 +70,10 @@ function organizationModel(
 
         generateKeys()
             .then(organizationApi.create)
-            .then(
-                ({ data = {} } = {}) => {
-                    if (data.Code === 1000) {
-                        return data;
-                    }
-                    throw new Error(data.Error || I18N.CREATE_ERROR);
-                },
-                () => {
-                    throw new Error(I18N.CREATE_ERROR);
-                }
-            );
+            .then(({ data = {} } = {}) => data)
+            .catch(({ data = {} } = {}) => {
+                throw new Error(data.Error || I18N.CREATE_ERROR);
+            });
     }
 
     function generateKeys() {
@@ -95,12 +90,16 @@ function organizationModel(
     }
 
     const saveName = (DisplayName) => {
-        const promise = organizationApi.updateOrganizationName({ DisplayName }).then(({ data = {} } = {}) => {
-            if (data.Code === 1000) {
-                return notification.success(I18N.UPDATING_NAME_SUCCESS);
-            }
-            throw new Error(data.Error || I18N.UPDATING_NAME_ERROR);
-        });
+        const promise = organizationApi
+            .updateOrganizationName({ DisplayName })
+            .then(({ data = {} } = {}) => {
+                notification.success(I18N.UPDATING_NAME_SUCCESS);
+                return data;
+            })
+            .catch(({ data = {} } = {}) => {
+                throw new Error(data.Error || I18N.UPDATING_NAME_ERROR);
+            });
+
         networkActivityTracker.track(promise);
     };
 

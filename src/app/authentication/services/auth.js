@@ -58,12 +58,7 @@ function authentication(
 
         fetchUserInfo() {
             const promise = User.get()
-                .then(({ data = {} } = {}) => {
-                    if (data.Code === 1000) {
-                        return data.User;
-                    }
-                    throw new Error(data.Error || 'Error during user request');
-                })
+                .then(({ data = {} } = {}) => data.User)
                 .then((user) => {
                     // Redirect to setup if necessary
                     if (user.Keys.length === 0) {
@@ -300,33 +295,23 @@ function authentication(
                 .then(
                     (result) => {
                         $log.debug(result);
+                        $log.debug('/auth/cookies:', result);
+                        $log.debug('/auth/cookies1: resolved');
+                        AppModel.set('domoArigato', true);
+                        // forget the old headers, set the new ones
+                        $log.debug('/auth/cookies2: resolved');
+                        $log.debug('headers change', $http.defaults.headers);
 
-                        if (result.data.Code === 1000) {
-                            $log.debug('/auth/cookies:', result);
-                            $log.debug('/auth/cookies1: resolved');
-                            AppModel.set('domoArigato', true);
-                            // forget the old headers, set the new ones
-                            $log.debug('/auth/cookies2: resolved');
-                            $log.debug('headers change', $http.defaults.headers);
+                        saveAuthData({ SessionToken: result.data.SessionToken });
 
-                            saveAuthData({ SessionToken: result.data.SessionToken });
+                        $rootScope.isLocked = false;
 
-                            $rootScope.isLocked = false;
-
-                            return result;
-                        } else {
-                            return Promise.reject({ message: result.data.Error });
-                            $log.error('setAuthCookie1', result);
-                        }
+                        return result;
                     },
                     (error) => {
+                        const { data = {} } = error;
                         $log.error('setAuthCookie2', error);
-
-                        if (error.data && error.data.Error) {
-                            return Promise.reject({ message: error.data.Error });
-                        } else {
-                            return Promise.reject({ message: 'Error setting authentication cookies.' });
-                        }
+                        throw new Error(data.Error || 'Error setting authentication cookies.');
                     }
                 );
         },

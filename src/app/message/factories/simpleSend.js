@@ -38,22 +38,27 @@ function simpleSend(messageApi, User, ComposerRequestStatus, pmcw, srp, encryptM
     }
 
     const createDraft = async (message) => {
-        const config = await getDraftParameters(message);
-        const { data = {} } = await messageApi.createDraft(config);
-        if (data.Code === 1000) {
+        try {
+            const config = await getDraftParameters(message);
+            const { data = {} } = await messageApi.createDraft(config);
+
             return data.Message;
+        } catch (err) {
+            const { data = {} } = err || {};
+            throw new Error(data.Error);
         }
-        throw new Error(data.Error);
     };
 
     const send = async (message) => {
-        const config = await getSendParameters(message);
-        const { data = {} } = await messageApi.send(config);
+        try {
+            const config = await getSendParameters(message);
+            const { data = {} } = await messageApi.send(config);
 
-        if (data.Code === 1000) {
             return data.Message;
+        } catch (err) {
+            const { data = {} } = err || {};
+            throw new Error(data.Error);
         }
-        throw new Error(data.Error);
     };
 
     return async (message) => {

@@ -1,6 +1,12 @@
 /* @ngInject */
-function organizationApi($http, url, srp) {
+function organizationApi($http, gettextCatalog, url, srp) {
     const requestURL = url.build('organizations');
+    const I18N = {
+        ERROR_FETCH_BACKUP: gettextCatalog.getString('Error retrieving backup organization keys', null, 'Error')
+    };
+    const handleError = (message = '') => ({ data = {} } = {}) => {
+        throw new Error(data.Error || message);
+    };
 
     /**
      * Create a new group of given parameters. Requires a subscription.
@@ -25,7 +31,7 @@ function organizationApi($http, url, srp) {
      * Get organization keys
      * @return {Promise}
      */
-    const getBackupKeys = () => $http.get(requestURL('keys', 'backup'));
+    const getBackupKeys = () => $http.get(requestURL('keys', 'backup')).catch(handleError(I18N.ERROR_FETCH_BACKUP));
 
     /**
      * Update private key for the organization

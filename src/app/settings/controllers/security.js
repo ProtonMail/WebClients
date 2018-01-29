@@ -53,17 +53,15 @@ function SecurityController(
         function submit(loginPassword, twoFactorCode) {
             const promise = settingsApi
                 .enableTwoFactor({ TwoFactorSharedSecret: sharedSecret }, { TwoFactorCode: twoFactorCode, Password: loginPassword })
-                .then((data = {}) => {
-                    if (data.Code === 1000) {
-                        return Promise.resolve(data.TwoFactorRecoveryCodes);
-                    }
-                    showSharedSecret(sharedSecret, qrURI);
-                    return Promise.reject(data.Error);
-                })
+                .then((data = {}) => data.TwoFactorRecoveryCodes)
                 .then((codes) => {
                     $scope.twoFactor = 1;
                     userSettingsModel.set('TwoFactor', 1);
                     recoveryCodes(codes);
+                })
+                .catch((err) => {
+                    showSharedSecret(sharedSecret, qrURI);
+                    throw err;
                 });
             networkActivityTracker.track(promise);
         }
@@ -72,19 +70,12 @@ function SecurityController(
 
     function confirm2FADisable() {
         function submit(loginPassword, twoFactorCode) {
-            const promise = settingsApi
-                .disableTwoFactor({ TwoFactorCode: twoFactorCode, Password: loginPassword })
-                .then((data = {}) => {
-                    if (data.Code === 1000) {
-                        return Promise.resolve();
-                    }
-                    return Promise.reject(data.Error);
-                })
-                .then(() => {
-                    $scope.twoFactor = 0;
-                    userSettingsModel.set('TwoFactor', 0);
-                    notification.success(gettextCatalog.getString('Two-factor authentication disabled', null, 'Disable 2FA'));
-                });
+            const promise = settingsApi.disableTwoFactor({ TwoFactorCode: twoFactorCode, Password: loginPassword }).then(() => {
+                $scope.twoFactor = 0;
+                userSettingsModel.set('TwoFactor', 0);
+                notification.success(gettextCatalog.getString('Two-factor authentication disabled', null, 'Disable 2FA'));
+            });
+
             networkActivityTracker.track(promise);
         }
         checkCredentials2FA(submit);
@@ -183,15 +174,13 @@ function SecurityController(
                 title,
                 message,
                 confirm() {
-                    networkActivityTracker.track(
-                        Logs.clear().then((result) => {
-                            if (result.data && result.data.Code === 1000) {
-                                $scope.logs = [];
-                                $scope.logCount = 0;
-                                notification.success(gettextCatalog.getString('Logs cleared', null, "Clear user's logs (security)"));
-                            }
-                        })
-                    );
+                    const promise = Logs.clear().then(() => {
+                        $scope.logs = [];
+                        $scope.logCount = 0;
+                        notification.success(gettextCatalog.getString('Logs cleared', null, "Clear user's logs (security)"));
+                    });
+
+                    networkActivityTracker.track(promise);
                     confirmModal.deactivate();
                 },
                 cancel() {
@@ -225,13 +214,11 @@ function SecurityController(
         const successMessage = gettextCatalog.getString('Other sessions revoked', null, 'Success');
         const promise = authApi
             .revokeOthers()
-            .then(({ data = {} } = {}) => {
-                if (data.Code === 1000) {
-                    return Promise.resolve();
-                }
+            .then(() => notification.success(successMessage))
+            .catch(({ data = {} } = {}) => {
                 throw new Error(data.Error || errorMessage);
-            })
-            .then(() => notification.success(successMessage));
+            });
+
         networkActivityTracker.track(promise);
     };
 

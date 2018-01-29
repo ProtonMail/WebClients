@@ -81,13 +81,15 @@ function PaymentsController(
         });
         order.splice(to, 0, order.splice(from, 1)[0]);
 
-        const promise = Payment.order({ Order: order }).then(({ data = {} } = {}) => {
-            if (data.Code === 1000) {
+        const promise = Payment.order({ Order: order })
+            .then(({ data = {} } = {}) => {
                 $scope.methods.splice(to, 0, $scope.methods.splice(from, 1)[0]);
                 notification.success(gettextCatalog.getString('Payment method updated', null, 'Payment'));
-            }
-            throw new Error(gettextCatalog.getString('Unable to save your changes, please try again.', null, 'Error'));
-        });
+                return data;
+            })
+            .catch(({ data = {} } = {}) => {
+                throw new Error(data.Error || gettextCatalog.getString('Unable to save your changes, please try again.', null, 'Error'));
+            });
 
         networkActivityTracker.track(promise);
     };
@@ -102,11 +104,7 @@ function PaymentsController(
                 message,
                 confirm() {
                     const promise = Payment.deleteMethod(method.ID)
-                        .then(({ data = {} }) => {
-                            if (data.Code === 1000) {
-                                return paymentModel.getMethods(true);
-                            }
-                        })
+                        .then(() => paymentModel.getMethods(true))
                         .then(confirmModal.deactivate)
                         .then(() => {
                             $scope.methods.splice($scope.methods.indexOf(method), 1);
@@ -168,16 +166,8 @@ function PaymentsController(
 
         networkActivityTracker.track(
             $q.all(promises).then((result) => {
-                let methods = [];
-                let status;
-
-                if (result.methods.data && result.methods.data.PaymentMethods) {
-                    methods = result.methods.data.PaymentMethods;
-                }
-
-                if (result.status.data && result.status.data.Code === 1000) {
-                    status = result.status.data;
-                }
+                const methods = result.methods.data.PaymentMethods;
+                const status = result.status.data;
 
                 payModal.activate({
                     params: {

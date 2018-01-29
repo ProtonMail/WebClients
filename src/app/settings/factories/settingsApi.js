@@ -2,14 +2,7 @@
 function settingsApi($http, url, srp, userSettingsModel) {
     const requestURL = url.build('settings');
     const handleResult = ({ data = {} } = {}) => {
-        if (data.Error) {
-            throw new Error(data.Error);
-        }
-
-        if (data.Code === 1000) {
-            userSettingsModel.set('all', data.UserSettings);
-        }
-
+        userSettingsModel.set('all', data.UserSettings);
         return data;
     };
 

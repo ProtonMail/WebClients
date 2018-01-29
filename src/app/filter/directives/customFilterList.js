@@ -23,16 +23,11 @@ function customFilterList(
             const unsubscribe = [];
             scope.customFilters = null;
 
-            networkActivityTracker
-                .track(
-                    Filter.query().then(({ data = {} }) => {
-                        if (data.Code === 1000) {
-                            return data.Filters;
-                        }
-                        throw new Error(data.Error);
-                    })
-                )
-                .then((result) => (scope.customFilters = result));
+            const promise = Filter.query().then((data = {}) => {
+                scope.customFilters = data.Filters;
+            });
+
+            networkActivityTracker.track(promise);
 
             unsubscribe.push(
                 $rootScope.$on('changeCustomFilterStatus', (event, { id, status }) => {
@@ -70,13 +65,16 @@ function customFilterList(
 
                     // Save priority order
                     networkActivityTracker.track(
-                        Filter.order({ Order: order }).then(({ data = {} }) => {
-                            if (data.Code === 1000) {
-                                return notification.success(gettextCatalog.getString('Order saved', null, 'Info'));
-                            }
-
-                            throw new Error(data.Error || gettextCatalog.getString('Unable to save your changes, please try again.', null, 'Error'));
-                        })
+                        Filter.order({ Order: order })
+                            .then(({ data = {} } = {}) => {
+                                notification.success(gettextCatalog.getString('Order saved', null, 'Info'));
+                                return data;
+                            })
+                            .catch(({ data = {} } = {}) => {
+                                throw new Error(
+                                    data.Error || gettextCatalog.getString('Unable to save your changes, please try again.', null, 'Error')
+                                );
+                            })
                     );
                 }
             };
@@ -191,15 +189,13 @@ function customFilterList(
                         title,
                         message,
                         confirm() {
-                            networkActivityTracker.track(
-                                Filter.delete(filter).then(({ data = {} }) => {
-                                    if (data.Code === 1000) {
-                                        eventManager.call();
-                                        return notification.success(gettextCatalog.getString('Custom filter deleted', null, 'Info'));
-                                    }
-                                    throw new Error(data.Error);
-                                })
-                            );
+                            const promise = Filter.delete(filter)
+                                .then(eventManager.call)
+                                .then(() => {
+                                    notification.success(gettextCatalog.getString('Custom filter deleted', null, 'Info'));
+                                });
+
+                            networkActivityTracker.track(promise);
                             confirmModal.deactivate();
                         },
                         cancel() {
@@ -210,28 +206,34 @@ function customFilterList(
             };
 
             scope.enableCustomFilter = (filter) => {
-                return networkActivityTracker.track(
-                    Filter.enable(filter).then(({ data = {} }) => {
-                        if (data.Code === 1000) {
-                            return notification.success(gettextCatalog.getString('Status updated', null, 'Info'));
-                        }
-
+                const promise = Filter.enable(filter)
+                    .then(() => {
+                        notification.success(gettextCatalog.getString('Status updated', null, 'Info'));
+                    })
+                    .catch(({ data = {} } = {}) => {
                         filter.Status = 0;
                         throw new Error(data.Error);
-                    })
-                );
+                    });
+
+                networkActivityTracker.track(promise);
+
+                return promise;
             };
 
             scope.disableCustomFilter = (filter) => {
-                return networkActivityTracker.track(
-                    Filter.disable(filter).then(({ data = {} }) => {
-                        if (data.Code === 1000) {
-                            return notification.success(gettextCatalog.getString('Status updated', null, 'Info'));
-                        }
+                const promise = Filter.disable(filter)
+                    .then(({ data = {} }) => {
+                        notification.success(gettextCatalog.getString('Status updated', null, 'Info'));
+                        return data;
+                    })
+                    .catch(({ data = {} } = {}) => {
                         filter.Status = 1;
                         throw new Error(data.Error);
-                    })
-                );
+                    });
+
+                networkActivityTracker.track(promise);
+
+                return promise;
             };
 
             function changeCustomFilterStatus(filter, status) {

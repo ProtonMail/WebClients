@@ -52,11 +52,7 @@ function paymentModel(eventManager, Payment, networkActivityTracker, gettextCata
 
     function subscribe(config) {
         return Payment.subscribe(config)
-            .then(({ data = {} } = {}) => {
-                if (data.Code === 1000) {
-                    return data;
-                }
-            })
+            .then(({ data = {} } = {}) => data)
             .catch(({ data = {} } = {}) => {
                 throw Error(data.Error || I18N.SUBSCRIBE_ERROR);
             });
@@ -73,9 +69,7 @@ function paymentModel(eventManager, Payment, networkActivityTracker, gettextCata
                     throw new Error(I18N.GIFT_INVALID);
                 }
 
-                if (data.Code === 1000) {
-                    return data;
-                }
+                return data;
             })
             .then((data) => {
                 if (params.CouponCode) {

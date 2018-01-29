@@ -74,12 +74,7 @@ export default angular
                         return pmDomainModel.fetch();
                     },
                     user(User) {
-                        return User.get().then(({ data }) => {
-                            if (data && data.Code !== 1000) {
-                                return Promise.reject();
-                            }
-                            return data.User;
-                        });
+                        return User.get().then(({ data }) => data.User);
                     }
                 }
             })
@@ -111,14 +106,19 @@ export default angular
 
                     $rootScope.loggingOut = false;
 
-                    Invite.check(inviteToken, inviteSelector, CONSTANTS.INVITE_MAIL).then(({ data = {} } = {}) => {
-                        if (data.Valid === 1) {
-                            AppModel.set('preInvited', true);
-                            return $state.go('signup', { inviteToken, inviteSelector });
-                        }
-                        notification.error(data.Error || errorMessage);
-                        $state.go('login');
-                    });
+                    Invite.check(inviteToken, inviteSelector, CONSTANTS.INVITE_MAIL)
+                        .then(({ data = {} } = {}) => {
+                            if (data.Valid === 1) {
+                                AppModel.set('preInvited', true);
+                                return $state.go('signup', { inviteToken, inviteSelector });
+                            }
+                            throw new Error(errorMessage);
+                        })
+                        .catch((err) => {
+                            const { data = {} } = err;
+                            notification.error(data.Error || errorMessage);
+                            $state.go('login');
+                        });
                 }
             })
 
@@ -127,18 +127,20 @@ export default angular
                 resolve: {
                     direct($state, User, AppModel, CONSTANTS) {
                         if (!AppModel.is('preInvited')) {
-                            return User.direct().then(({ data = {} } = {}) => {
-                                if (data.Direct === 1) {
-                                    $state.go('signup');
-                                    return;
-                                }
-                                if (data.Code === 1000) {
+                            return User.direct()
+                                .then(({ data = {} } = {}) => {
+                                    if (data.Direct === 1) {
+                                        $state.go('signup');
+                                        return;
+                                    }
+
                                     window.location.href = CONSTANTS.INVITE_URL;
                                     return Promise.reject();
-                                }
-                                $state.go('login');
-                                return Promise.reject();
-                            });
+                                })
+                                .catch(() => {
+                                    $state.go('login');
+                                    return Promise.reject();
+                                });
                         }
                         return Promise.resolve();
                     }
@@ -456,10 +458,6 @@ export default angular
                     },
                     labels(user, Label, labelsModel, networkActivityTracker) {
                         const promise = Label.query().then(({ data = {} } = {}) => {
-                            if (data.Error) {
-                                throw new Error(data.Error);
-                            }
-
                             labelsModel.set(data.Labels);
                         });
 

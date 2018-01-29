@@ -12,15 +12,17 @@ function upgradeKeys($log, CONSTANTS, gettextCatalog, Key, networkActivityTracke
     function manageOrganizationKeys(password = '', oldSaltedPassword = '', user = {}) {
         if (user.Role === CONSTANTS.PAID_ADMIN_ROLE) {
             // Get organization key
-            return organizationApi.getKeys().then(({ data = {} } = {}) => {
-                if (data.Code === 1000) {
+            return organizationApi
+                .getKeys()
+                .then(({ data = {} } = {}) => {
                     const encryptPrivateKey = data.PrivateKey;
                     return pmcw
                         .decryptPrivateKey(encryptPrivateKey, oldSaltedPassword)
                         .then((pkg) => pmcw.reformatKey(pkg, user.Addresses[0].Email, password), () => 0);
-                }
-                throw new Error(data.Error || gettextCatalog.getString('Unable to get organization keys', null, 'Error'));
-            });
+                })
+                .catch(({ data = {} } = {}) => {
+                    throw new Error(data.Error || gettextCatalog.getString('Unable to get organization keys', null, 'Error'));
+                });
         }
         return Promise.resolve(0);
     }
@@ -134,10 +136,8 @@ function upgradeKeys($log, CONSTANTS, gettextCatalog, Key, networkActivityTracke
                     loginPassword
                 })
             )
-            .then(({ data = {} } = {}) => {
-                if (data.Code === 1000) {
-                    secureSessionStorage.setItem(CONSTANTS.MAILBOX_PASSWORD_KEY, pmcw.encode_utf8_base64(passwordComputed));
-                }
+            .then(() => {
+                secureSessionStorage.setItem(CONSTANTS.MAILBOX_PASSWORD_KEY, pmcw.encode_utf8_base64(passwordComputed));
             });
     };
 }

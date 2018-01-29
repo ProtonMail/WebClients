@@ -34,13 +34,11 @@ function reactivateKeys(authentication, Key, eventManager, gettextCatalog, passw
                 )
                 .then((privateKey) => Key.reactivate(key.ID, { PrivateKey: privateKey }))
                 .then(({ data = {} } = {}) => {
-                    if (data.Code !== 1000) {
-                        throw new Error(data.Error || I18N.error);
-                    }
-
                     key.decrypted = true;
-
                     return data;
+                })
+                .catch(({ data = {} } = {}) => {
+                    throw new Error(data.Error || I18N.error);
                 });
         });
 

@@ -192,7 +192,7 @@ function messageModel($q, $timeout, pmcw, User, gettextCatalog, authentication, 
                 }
 
                 return this.getPublicKeys([sender]).then(({ data = {} } = {}) => {
-                    if (data.Code === 1000 && data[sender].length > 0) {
+                    if (data[sender].length > 0) {
                         return data[sender];
                     }
                     return null;

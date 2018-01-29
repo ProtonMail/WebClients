@@ -8,7 +8,7 @@ function filterModal(
     gettextCatalog,
     Filter,
     networkActivityTracker,
-    notify,
+    notification,
     CONSTANTS,
     eventManager,
     labelModal,
@@ -332,7 +332,7 @@ function filterModal(
                         condition.value = '';
                     }
                 } else {
-                    notify({ message: TRANSLATIONS.ERROR_PATTERN, classes: 'notification-danger' });
+                    notification.error(TRANSLATIONS.ERROR_PATTERN);
                 }
             };
 
@@ -353,25 +353,30 @@ function filterModal(
             };
 
             const requestUpdate = (data = {}) => {
-                const onSuccess = (message = '') => (result) => {
-                    if (result.data && result.data.Code === 1000) {
-                        notify({ message, classes: 'notification-success' });
+                const onSuccess = (message = '') => () => {
+                    notification.success(message);
+                    eventManager.call();
+                    params.close();
+                };
+
+                const onError = ({ data = {} } = {}) => {
+                    notification.error(data.Error);
+
+                    if (data.Code === 50016) {
                         eventManager.call();
                         params.close();
-                    } else if (result.data && result.data.Error) {
-                        notify({ message: result.data.Error, classes: 'notification-danger' });
-
-                        if (result.data.Code === 50016) {
-                            eventManager.call();
-                            params.close();
-                        }
                     }
                 };
 
                 if (data.ID) {
-                    return Filter.update(data).then(onSuccess(TRANSLATIONS.FILTER_UPDATED_SUCCESS));
+                    return Filter.update(data)
+                        .then(onSuccess(TRANSLATIONS.FILTER_UPDATED_SUCCESS))
+                        .catch(onError);
                 }
-                return Filter.create(data).then(onSuccess(TRANSLATIONS.FILTER_CREATED_SUCCESS));
+
+                return Filter.create(data)
+                    .then(onSuccess(TRANSLATIONS.FILTER_CREATED_SUCCESS))
+                    .catch(onError);
             };
 
             ctrl.save = () => {

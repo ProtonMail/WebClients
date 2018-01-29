@@ -48,23 +48,31 @@ function signupModel(User, $state, $stateParams, $location, CONSTANTS, Payment, 
             return Promise.resolve({ invitation: true });
         }
 
-        return User.direct(Type).then(({ data = {} } = {}) => {
-            if (data.Direct === 1) {
-                return (CACHE.humanCheck = {
-                    email: _.includes(data.VerifyMethods, 'email'),
-                    captcha: _.includes(data.VerifyMethods, 'captcha'),
-                    sms: _.includes(data.VerifyMethods, 'sms'),
-                    payment: _.includes(data.VerifyMethods, 'payment')
-                });
-            }
+        return User.direct(Type)
+            .then(({ data = {} } = {}) => {
+                if (data.Direct === 1) {
+                    return (CACHE.humanCheck = {
+                        email: _.includes(data.VerifyMethods, 'email'),
+                        captcha: _.includes(data.VerifyMethods, 'captcha'),
+                        sms: _.includes(data.VerifyMethods, 'sms'),
+                        payment: _.includes(data.VerifyMethods, 'payment')
+                    });
+                }
 
-            if (data.Code === 1000) {
                 window.location.href = CONSTANTS.INVITE_URL;
                 return data;
-            }
-            $state.go('login');
-            return data;
-        });
+            })
+            .catch((err) => {
+                const { data = {} } = err;
+
+                $state.go('login');
+
+                if (data.Error) {
+                    throw new Error(data.Error);
+                }
+
+                throw err;
+            });
     };
 
     const optionsHumanCheck = (type) => get(type, 'humanCheck');
@@ -106,18 +114,16 @@ function signupModel(User, $state, $stateParams, $location, CONSTANTS, Payment, 
     function verify(opt, plan) {
         const promise = Payment.verify(_.extend({}, opt, { Username: get('username') }))
             .then(({ data = {} } = {}) => {
-                if (data.Code === 1000) {
-                    set('VerifyCode', data.VerifyCode);
-                    set('temp.plan', plan);
-                    set('temp.method', opt.Payment);
-                    return data;
-                }
+                set('VerifyCode', data.VerifyCode);
+                set('temp.plan', plan);
+                set('temp.method', opt.Payment);
+                return data;
             })
             .catch(({ data = {} } = {}) => {
                 // We were unable to successfully charge your card. Please try a different card or contact your bank for assistance.
                 if (data.Error) {
                     dispatch('payment.verify.error', { error: data.Error });
-                    throw data.Error;
+                    throw new Error(data.Error);
                 }
             });
 
@@ -128,10 +134,8 @@ function signupModel(User, $state, $stateParams, $location, CONSTANTS, Payment, 
 
     function applyGiftCode(opt) {
         const promise = Payment.validateVerify(_.extend({}, opt, { Username: get('username') })).then(({ data = {} } = {}) => {
-            if (data.Code === 1000) {
-                dispatch('gift.applied', data);
-                return data;
-            }
+            dispatch('gift.applied', data);
+            return data;
         });
 
         networkActivityTracker.track(promise);

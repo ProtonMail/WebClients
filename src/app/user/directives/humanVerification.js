@@ -26,12 +26,7 @@ function humanVerification(AppModel, User, $state, signupModel, networkActivityT
             Username: signupModel.get('username'),
             Type,
             Destination: getDestination(Type, value)
-        }).then(({ data = {} } = {}) => {
-            if (data.Error) {
-                throw new Error(data.Error);
-            }
-            return data.Code === 1000;
-        });
+        }).then(({ data = {} } = {}) => data.Code === 1000);
         networkActivityTracker.track(promise);
         return promise;
     };

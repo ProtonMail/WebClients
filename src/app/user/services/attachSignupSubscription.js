@@ -38,11 +38,12 @@ function attachSignupSubscription(
             };
 
             const createOrganization = (parameters) => {
-                return organizationApi.create(parameters).then(({ data = {} }) => {
-                    if (data.Error) {
+                return organizationApi
+                    .create(parameters)
+                    .then(({ data = {} } = {}) => data)
+                    .catch(({ data = {} } = {}) => {
                         throw new Error(data.Error || I18N.ERROR_ORGA_REQUEST);
-                    }
-                });
+                    });
             };
 
             return subscribe()

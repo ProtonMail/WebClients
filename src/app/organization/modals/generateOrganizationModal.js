@@ -98,17 +98,17 @@ function generateOrganizationModal(
                                                     TwoFactorCode: twoFactorCode
                                                 };
 
-                                                return organizationApi.replaceKeys(payload, creds).then(({ data }) => {
-                                                    if (data && data.Code === 1000) {
+                                                return organizationApi
+                                                    .replaceKeys(payload, creds)
+                                                    .then(() => {
                                                         notification.success(
                                                             gettextCatalog.getString('Organization keys change successful', null, 'Error')
                                                         );
                                                         return resolve(params.submit(decryptedKey));
-                                                    } else if (data && data.Error) {
+                                                    })
+                                                    .catch(({ data = {} } = {}) => {
                                                         return reject(new Error(data.Error));
-                                                    }
-                                                    reject(new Error(gettextCatalog.getString('Error changing organization keys', null, 'Error')));
-                                                });
+                                                    });
                                             },
                                             cancel() {
                                                 loginPasswordModal.deactivate();

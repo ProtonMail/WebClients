@@ -91,17 +91,10 @@ function SetupController(
         $log.debug('setupAddress');
         $scope.filling = false;
 
-        if (user.Addresses.length === 0) {
-            return Address.setup({
-                Domain: $scope.domain.value
-            }).then((result) => {
-                if (result.data && result.data.Code === 1000) {
-                    user.Addresses = [result.data.Address];
-                    return user;
-                } else if (result.data && result.data.Error) {
-                    return $q.reject({ message: result.data.Error });
-                }
-                return $q.reject({ message: 'Something went wrong during address creation' });
+        if (!user.Addresses.length) {
+            return Address.setup({ Domain: $scope.domain.value }).then(({ data = {} } = {}) => {
+                user.Addresses = [data.Address];
+                return user;
             });
         }
         return $q.resolve(user);

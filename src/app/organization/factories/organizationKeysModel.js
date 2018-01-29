@@ -34,13 +34,15 @@ function organizationKeysModel(
     });
 
     function fetch() {
-        return organizationApi.getKeys().then(({ data = {} } = {}) => {
-            if (data.Code === 1000) {
+        return organizationApi
+            .getKeys()
+            .then(({ data = {} } = {}) => {
                 set('keys', data);
                 return data;
-            }
-            throw new Error(data.Error || I18N.ERROR_DEFAULT);
-        });
+            })
+            .catch(({ data = {} } = {}) => {
+                throw new Error(data.Error || I18N.ERROR_DEFAULT);
+            });
     }
 
     /**

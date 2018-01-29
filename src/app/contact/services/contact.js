@@ -19,12 +19,12 @@ function Contact($http, $rootScope, CONSTANTS, url, chunk, contactEncryption, sa
     }
 
     function request(route, params = {}, timeout) {
-        return $http.get(route, { params, timeout }).then(({ data = {} } = {}) => {
-            if (data.Error) {
+        return $http
+            .get(route, { params, timeout })
+            .then(({ data = {} } = {}) => data)
+            .catch(({ data = {} } = {}) => {
                 throw new Error(data.Error);
-            }
-            return data;
-        });
+            });
     }
 
     async function queryContacts(route = '', { PageSize, key = '' }, timeout) {
@@ -92,43 +92,41 @@ function Contact($http, $rootScope, CONSTANTS, url, chunk, contactEncryption, sa
         return contact;
     }
 
-    function handleUpload(result = []) {
-        const { created = [], total = 0, errors = [] } = _.reduce(
+    const handleUpload = (total) => (result = []) => {
+        const created = _.reduce(
             result,
             (acc, { data = {} } = {}) => {
-                if (data.Error) {
-                    acc.errors.push({
-                        code: data.Code,
-                        error: data.Error
-                    });
+                return acc.concat(
+                    _.map(data.Responses, ({ Response = {} }) => {
+                        return Response.Contact;
+                    })
+                );
+            },
+            []
+        );
 
-                    return acc;
-                }
+        return { created, total };
+    };
 
-                _.each(data.Responses, ({ Response = {} }) => {
-                    acc.total++;
-
-                    if (Response.Error) {
-                        acc.errors.push({
+    const handleErrors = (total) => (result = []) => {
+        const errors = _.reduce(
+            result,
+            (acc, { data = {} } = {}) => {
+                return acc.concat(
+                    _.map(data.Responses, ({ Response = {} }) => {
+                        return {
                             code: Response.Code,
                             name: Response.Name,
                             emails: Response.Emails,
                             error: Response.Error
-                        });
-                    }
-
-                    if (Response.Code === 1000) {
-                        acc.created.push(Response.Contact);
-                    }
-                });
-
-                return acc;
+                        };
+                    })
+                );
             },
-            { created: [], total: 0, errors: [] }
+            []
         );
-
-        return { created, total, errors };
-    }
+        return { errors, total };
+    };
 
     function uploadContacts(cards = [], total) {
         let progress = 50; // NOTE We start at 50% because the first part (encryption) is already done
@@ -144,7 +142,9 @@ function Contact($http, $rootScope, CONSTANTS, url, chunk, contactEncryption, sa
             });
         });
 
-        return Promise.all(promises).then(handleUpload);
+        return Promise.all(promises)
+            .then(handleUpload(total))
+            .catch(handleErrors(total));
     }
 
     /**
@@ -169,14 +169,16 @@ function Contact($http, $rootScope, CONSTANTS, url, chunk, contactEncryption, sa
      */
     function update(contact) {
         return contactEncryption.encrypt([contact]).then((contacts) => {
-            return $http.put(requestURL(contact.ID), contacts[0]).then(({ data = {} } = {}) => {
-                if (data.Error) {
+            return $http
+                .put(requestURL(contact.ID), contacts[0])
+                .then(({ data = {} } = {}) => {
+                    // NOTE We need to pass the cards to update the encrypted icon in the contact view
+                    data.cards = contacts[0].Cards;
+                    return data;
+                })
+                .catch(({ data = {} } = {}) => {
                     throw new Error(data.Error);
-                }
-                // NOTE We need to pass the cards to update the encrypted icon in the contact view
-                data.cards = contacts[0].Cards;
-                return data;
-            });
+                });
         });
     }
 

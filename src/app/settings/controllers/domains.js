@@ -141,25 +141,16 @@ function DomainsController(
                 title: gettextCatalog.getString('Delete domain', null, 'Title'),
                 message: gettextCatalog.getString('Are you sure you want to delete this address?', null, 'Info'),
                 confirm() {
-                    networkActivityTracker.track(
-                        domainApi.delete(domain.ID).then(
-                            (result) => {
-                                if (angular.isDefined(result.data) && result.data.Code === 1000) {
-                                    notification.success(gettextCatalog.getString('Domain deleted', null));
-                                    $scope.domains.splice(index, 1); // Remove domain in interface
-                                    eventManager.call(); // Call event log manager
-                                    confirmModal.deactivate();
-                                } else if (angular.isDefined(result.data) && result.data.Error) {
-                                    notification.error(result.data.Error);
-                                } else {
-                                    notification.error(gettextCatalog.getString('Error during deletion', null, 'Error'));
-                                }
-                            },
-                            () => {
-                                notification.error(gettextCatalog.getString('Error during deletion', null, 'Error'));
-                            }
-                        )
-                    );
+                    const promise = domainApi
+                        .delete(domain.ID)
+                        .then(eventManager.call)
+                        .then(() => {
+                            notification.success(gettextCatalog.getString('Domain deleted', null));
+                            $scope.domains.splice(index, 1); // Remove domain in interface
+                            confirmModal.deactivate();
+                        });
+
+                    networkActivityTracker.track(promise);
                 },
                 cancel() {
                     confirmModal.deactivate();
@@ -221,27 +212,18 @@ function DomainsController(
                 step: 1,
                 domain,
                 submit(name) {
-                    networkActivityTracker.track(
-                        domainApi.create({ Name: name }).then(
-                            (result) => {
-                                if (angular.isDefined(result.data) && result.data.Code === 1000) {
-                                    notification.success(gettextCatalog.getString('Domain created', null));
-                                    $scope.domains.push(result.data.Domain);
-                                    eventManager.call(); // Call event log manager
-                                    domainModal.deactivate();
-                                    // open the next step
-                                    $scope.verification(result.data.Domain);
-                                } else if (angular.isDefined(result.data) && result.data.Error) {
-                                    notification.error(result.data.Error);
-                                } else {
-                                    notification.error(gettextCatalog.getString('Error during creation', null, 'Error'));
-                                }
-                            },
-                            () => {
-                                notification.error(gettextCatalog.getString('Error during creation', null, 'Error'));
-                            }
-                        )
-                    );
+                    const promise = domainApi
+                        .create({ Name: name })
+                        .then(eventManager.call)
+                        .then(({ data = {} } = {}) => {
+                            notification.success(gettextCatalog.getString('Domain created', null));
+                            $scope.domains.push(data.Domain);
+                            domainModal.deactivate();
+                            // open the next step
+                            $scope.verification(data.Domain);
+                        });
+
+                    networkActivityTracker.track(promise);
                 },
                 next() {
                     domainModal.deactivate();
@@ -269,11 +251,6 @@ function DomainsController(
     const verifyDomain = async ({ ID }) => {
         try {
             const { data = {} } = await domainApi.get(ID);
-
-            if (data.Code !== 1000) {
-                throw new Error(data.Error);
-            }
-
             const { VerifyState } = data.Domain || {};
 
             if (VerifyState === 0) {
@@ -439,28 +416,20 @@ function DomainsController(
                 domain,
                 step: 7,
                 verify() {
-                    networkActivityTracker.track(
-                        domainApi.get(domain.ID).then(
-                            (result) => {
-                                if (angular.isDefined(result.data) && result.data.Code === 1000) {
-                                    $scope.domains[index] = result.data.Domain;
-                                    dmarcModal.deactivate();
-                                    eventManager.call();
-                                } else if (angular.isDefined(result.data) && result.data.Error) {
-                                    notification.error(result.data.Error);
-                                } else {
-                                    notification.error(
-                                        gettextCatalog.getString('Verification did not succeed, please try again in an hour.', null, 'Error')
-                                    );
-                                }
-                            },
-                            () => {
-                                notification.error(
-                                    gettextCatalog.getString('Verification did not succeed, please try again in an hour.', null, 'Error')
-                                );
-                            }
-                        )
-                    );
+                    const promise = domainApi
+                        .get(domain.ID)
+                        .then(eventManager.call)
+                        .then(({ data = {} } = {}) => {
+                            $scope.domains[index] = data.Domain;
+                            dmarcModal.deactivate();
+                        })
+                        .catch(({ data = {} } = {}) => {
+                            throw new Error(
+                                data.Error || gettextCatalog.getString('Verification did not succeed, please try again in an hour.', null, 'Error')
+                            );
+                        });
+
+                    networkActivityTracker.track(promise);
                 },
                 close() {
                     dmarcModal.deactivate();

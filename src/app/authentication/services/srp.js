@@ -231,28 +231,33 @@ function srp($http, CONFIG, webcrypto, passwords, url, authApi, handle10003) {
     }
 
     function randomVerifier(password) {
-        return authApi.modulus().then((resp) => {
-            if (resp.data.Code !== 1000) {
-                return Promise.reject({
-                    error_description: resp.data.Error
+        return authApi
+            .modulus()
+            .then(({ data = {} } = {}) => {
+                const modulus = pmcrypto.binaryStringToArray(pmcrypto.decode_base64(openpgp.cleartext.readArmored(data.Modulus).getText()));
+                const salt = pmcrypto.arrayToBinaryString(webcrypto.getRandomValues(new Uint8Array(10)));
+                return passwords.hashPassword(passwords.currentAuthVersion, password, salt, undefined, modulus).then((hashedPassword) => {
+                    const verifier = generateVerifier(2048, hashedPassword, modulus);
+
+                    return {
+                        Auth: {
+                            Version: passwords.currentAuthVersion,
+                            ModulusID: data.ModulusID,
+                            Salt: pmcrypto.encode_base64(salt),
+                            Verifier: pmcrypto.encode_base64(pmcrypto.arrayToBinaryString(verifier))
+                        }
+                    };
                 });
-            }
-
-            const modulus = pmcrypto.binaryStringToArray(pmcrypto.decode_base64(openpgp.cleartext.readArmored(resp.data.Modulus).getText()));
-            const salt = pmcrypto.arrayToBinaryString(webcrypto.getRandomValues(new Uint8Array(10)));
-            return passwords.hashPassword(passwords.currentAuthVersion, password, salt, undefined, modulus).then((hashedPassword) => {
-                const verifier = generateVerifier(2048, hashedPassword, modulus);
-
-                return {
-                    Auth: {
-                        Version: passwords.currentAuthVersion,
-                        ModulusID: resp.data.ModulusID,
-                        Salt: pmcrypto.encode_base64(salt),
-                        Verifier: pmcrypto.encode_base64(pmcrypto.arrayToBinaryString(verifier))
-                    }
-                };
+            })
+            .catch((err = {}) => {
+                const { data = {} } = err;
+                if (data.Error) {
+                    return Promise.reject({
+                        error_description: data.Error
+                    });
+                }
+                throw err;
             });
-        });
     }
 
     function authInfo(Username) {
@@ -262,16 +267,8 @@ function srp($http, CONFIG, webcrypto, passwords, url, authApi, handle10003) {
                 ClientID: CONFIG.clientID,
                 ClientSecret: CONFIG.clientSecret
             })
-            .then((resp) => {
-                if (resp.data.Code === 1000) {
-                    return resp;
-                }
-
-                if (resp.data.Error) {
-                    throw new Error(resp.data.Error);
-                }
-
-                const error = new Error('Cannot get auth information');
+            .catch(({ data = {} } = {}) => {
+                const error = new Error(data.Error || 'Cannot get auth information');
                 error.noNotify = true;
                 throw error;
             });
