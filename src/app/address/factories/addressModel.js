@@ -13,6 +13,7 @@ function addressModel(
     domainModel,
     memberModel,
     addressModal,
+    signatureModel,
     membersValidator,
     memberModal,
     eventManager,
@@ -244,15 +245,10 @@ function addressModel(
                 title: I18N.EDIT_MODAL.title,
                 cancel: signatureModal.deactivate,
                 confirm(address) {
-                    const promise = Address.edit(address.ID, {
-                        DisplayName: address.DisplayName,
-                        Signature: address.Signature
-                    }).then(() => {
-                        eventManager.call();
+                    signatureModel.save({ id: address.ID, displayName: address.DisplayName, signature: address.Signature }).then(() => {
                         notification.success(I18N.SUCCESS_EDIT);
                         signatureModal.deactivate();
                     });
-                    networkActivityTracker.track(promise);
                 }
             }
         });

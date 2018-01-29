@@ -1,5 +1,6 @@
 /* @ngInject */
 function Address($http, url, gettextCatalog) {
+    const headersVersion3 = { 'x-pm-apiversion': 3 };
     const I18N = {
         ERROR_UPDATE: gettextCatalog.getString('Error during updating', null, 'Error'),
         ERROR_ORDER: gettextCatalog.getString('Unable to save your changes, please try again.', null, 'Error'),
@@ -24,7 +25,11 @@ function Address($http, url, gettextCatalog) {
      * @return {Promise}
      */
     const create = (address) => {
-        return $http.post(requestUrl(), address).then(filterError(I18N.ERROR_CREATE));
+        return $http
+            .post(requestUrl(), address, {
+                headers: headersVersion3
+            })
+            .then(filterError(I18N.ERROR_CREATE));
     };
 
     /**
@@ -43,7 +48,11 @@ function Address($http, url, gettextCatalog) {
      * @return {Promise}
      */
     const edit = (addressID, params) => {
-        return $http.put(requestUrl(addressID), params).then(filterError(I18N.ERROR_UPDATE));
+        return $http
+            .put(requestUrl(addressID), params, {
+                headers: headersVersion3
+            })
+            .then(filterError(I18N.ERROR_UPDATE));
     };
 
     /**

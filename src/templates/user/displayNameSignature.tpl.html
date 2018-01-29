@@ -1,0 +1,16 @@
+<div class="displayNameSignature-container">
+    <label for="displayName" translate-context="Label" translate>Display name</label>
+    <input
+        type="text"
+        id="displayName"
+        class="displayNameSignature-input"
+        ng-model="model.DisplayName">
+    <label for="signature" translate-context="Label" translate>Signature</label>
+    <squire
+        id="signature"
+        class="displayNameSignature-squire"
+        name="signature"
+        data-type-content="signature"
+        allow-data-uri="true"
+        data-value="model.Signature"></squire>
+</div>

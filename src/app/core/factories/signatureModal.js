@@ -1,32 +1,23 @@
 import _ from 'lodash';
 
 /* @ngInject */
-function signatureModal(pmModal, mailSettingsModel) {
+function signatureModal(pmModal, tools) {
     return pmModal({
         controllerAs: 'ctrl',
         templateUrl: require('../../../templates/modals/signature.tpl.html'),
         /* @ngInject */
         controller: function(params) {
-            const { DisplayName, Signature } = mailSettingsModel.get();
-            this.defaultDisplayName = DisplayName;
-            this.defaultSignature = Signature;
+            const { DisplayName, Signature } = params.address;
+
             this.address = params.address;
-            this.address.DisplayName = this.address.DisplayName || DisplayName;
-            this.address.Signature = this.address.Signature || Signature;
-            this.address.custom = true;
-
-            this.confirm = function() {
-                const adr = _.extend({}, this.address);
-
-                if (!adr.custom) {
-                    const { DisplayName, Signature } = mailSettingsModel.get();
-                    adr.DisplayName = DisplayName;
-                    adr.Signature = Signature;
-                }
-                params.confirm(adr);
-            };
-
+            this.model = { DisplayName, Signature: tools.replaceLineBreaks(Signature) };
             this.cancel = params.cancel;
+            this.confirm = () => {
+                const { DisplayName, Signature } = this.model;
+                const address = _.extend({}, params.address, { Signature, DisplayName });
+
+                params.confirm(address);
+            };
         }
     });
 }

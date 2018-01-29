@@ -1,27 +1,22 @@
 /* @ngInject */
-const sidebarMobileHeader = ($rootScope, authentication, mailSettingsModel) => ({
+const sidebarMobileHeader = ($rootScope, authentication) => ({
     scope: {},
     replace: true,
     templateUrl: require('../../../templates/sidebar/sidebarMobileHeader.tpl.html'),
     link(scope) {
-        // IF the user doesn't have any activated emails, Addresses is empty
-        const [{ Email = '' } = {}] = authentication.user.Addresses || [];
         const updateView = () => {
-            const { DisplayName } = mailSettingsModel.get();
+            const { Name = '', Addresses = [] } = authentication.user;
+            const [{ DisplayName = '', Email = '' } = {}] = Addresses;
+
             scope.$applyAsync(() => {
-                scope.displayName = DisplayName;
+                scope.displayName = DisplayName || Name;
+                scope.email = Email;
             });
         };
-        const unsubscribe = $rootScope.$on('mailSettings', (event, { type = '' }) => {
-            const displayName = mailSettingsModel.get('DisplayName');
+        const unsubscribe = $rootScope.$on('updateUser', () => updateView());
 
-            if (type === 'updated' && scope.displayName !== displayName) {
-                updateView();
-            }
-        });
-
-        scope.email = Email;
         updateView();
+
         scope.$on('$destroy', () => {
             unsubscribe();
         });

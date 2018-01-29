@@ -1,5 +1,8 @@
 /* @ngInject */
-function defaultSignature($rootScope, signatureModel, CONSTANTS, mailSettingsModel, tools, addressModel) {
+function defaultSignature($rootScope, authentication, gettextCatalog, signatureModel, CONSTANTS, mailSettingsModel, notification, tools) {
+    const I18N = {
+        SUCCESS_SAVE: gettextCatalog.getString('Default Name / Signature saved', null, "User's signature")
+    };
     return {
         scope: {},
         replace: true,
@@ -7,34 +10,26 @@ function defaultSignature($rootScope, signatureModel, CONSTANTS, mailSettingsMod
         templateUrl: require('../../../templates/user/defaultSignature.tpl.html'),
         link(scope) {
             const unsubscribe = [];
-            const { PMSignature, DisplayName, Signature } = mailSettingsModel.get();
-
+            const { PMSignature } = mailSettingsModel.get();
             const isSignatureMandatory = () => {
                 const { PMSignature } = mailSettingsModel.get();
                 return PMSignature === 2;
             };
-
-            const checkCustom = (DisplayName, Signature) => {
-                const { active: [mainAddress = {}] } = addressModel.getActive() || { active: [] };
-                scope.hasCustom = {
-                    DisplayName: mainAddress.DisplayName !== DisplayName,
-                    Signature: !isSignatureMandatory() && mainAddress.Signature !== Signature
-                };
-            };
-            checkCustom(DisplayName, Signature);
 
             scope.protonSignature = {
                 content: CONSTANTS.PM_SIGNATURE,
                 isMandatory: isSignatureMandatory(),
                 isActive: !!PMSignature
             };
-            scope.saveIdentity = () => signatureModel.save(scope);
+
+            scope.saveIdentity = () => signatureModel.save(scope).then(() => notification.success(I18N.SUCCESS_SAVE));
 
             const updateUser = () => {
-                const { DisplayName, Signature } = mailSettingsModel.get();
+                const { Addresses = [] } = authentication.user;
+                const [{ DisplayName, Signature } = {}] = Addresses;
+
                 scope.displayName = DisplayName;
                 scope.signature = tools.replaceLineBreaks(Signature);
-                checkCustom(DisplayName, Signature);
             };
 
             unsubscribe.push(

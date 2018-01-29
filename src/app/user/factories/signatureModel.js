@@ -1,10 +1,17 @@
 /* @ngInject */
-function signatureModel(AppModel, sanitize, settingsMailApi, eventManager, notification, gettextCatalog, networkActivityTracker) {
+function signatureModel(
+    authentication,
+    Address,
+    AppModel,
+    sanitize,
+    settingsMailApi,
+    eventManager,
+    notification,
+    gettextCatalog,
+    networkActivityTracker
+) {
     const I18N = {
-        SUCCESS_UPDATE: gettextCatalog.getString('Signature updated', null, 'Info'),
-        SUCCESS_SAVE: gettextCatalog.getString('Default Name / Signature saved', null, "User's signature"),
-        ERROR_SAVE_INPUT: gettextCatalog.getString('Unable to save your changes, your signature is too large.', null, 'Error'),
-        ERROR_SAVE: gettextCatalog.getString('Unable to save your changes, please try again.', null, 'Error')
+        SUCCESS_UPDATE: gettextCatalog.getString('Signature updated', null, 'Info')
     };
 
     const changePMSignature = async (status) => {
@@ -15,29 +22,22 @@ function signatureModel(AppModel, sanitize, settingsMailApi, eventManager, notif
         return notification.success(I18N.SUCCESS_UPDATE);
     };
 
-    const saveIdentity = async (displayName, signature) => {
+    const getFirstID = () => {
+        const { Addresses = [] } = authentication.user;
+        const [{ ID }] = Addresses;
+
+        return ID;
+    };
+
+    const saveIdentity = async (ID, displayName, signature) => {
         const Signature = signature.replace(/\n/g, '<br />');
         const DisplayName = sanitize.input(displayName);
 
-        const [displayNameData = {}, signatureData = {}] = await Promise.all([
-            settingsMailApi.updateDisplayName({ DisplayName }),
-            settingsMailApi.updateSignature({ Signature })
-        ]);
-
-        // USER_UPDATE_SIGNATURE_TOO_LARGE
-        if (signatureData.Code === 12010) {
-            throw new Error(I18N.ERROR_SAVE_INPUT);
-        }
-
-        if (signatureData.Code !== 1000 || displayNameData.Code !== 1000) {
-            throw new Error(I18N.ERROR_SAVE);
-        }
-
-        await eventManager.call();
-        return notification.success(I18N.SUCCESS_SAVE);
+        await Address.edit(ID, { DisplayName, Signature });
+        return eventManager.call();
     };
 
-    const save = ({ displayName, signature }) => networkActivityTracker.track(saveIdentity(displayName, signature));
+    const save = ({ id = getFirstID(), displayName, signature }) => networkActivityTracker.track(saveIdentity(id, displayName, signature));
     const changeProtonStatus = ({ status }) => networkActivityTracker.track(changePMSignature(status));
 
     return {

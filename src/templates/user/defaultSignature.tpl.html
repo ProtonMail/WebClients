@@ -1,14 +1,11 @@
-<section class="defaultSignature-container" ng-class="{
-    'defaultSignature-custom-signature': hasCustom.Signature,
-    'defaultSignature-custom-displayname': hasCustom.DisplayName,
-}">
+<section class="defaultSignature-container">
     <div class="clearfix">
         <div class="col-3-8">
             <label for="displayName">
                 <span
                     translate-context="Title"
                     translate translate-comment="display name heading on account page"
-                    translate>Default display name</span>
+                    translate>Display name</span>
                 <a href="https://protonmail.com/support/knowledge-base/display-name/" target="_blank" class="text-purple"><i class="fa fa-info-circle"></i></a>
             </label>
         </div>
@@ -26,7 +23,7 @@
                 for="signature"
                 translate-context="Title"
                 translate translate-comment="Signature heading on account page"
-                translate>Default signature</label>
+                translate>Signature</label>
         </div>
         <div class="col-5-8">
             <squire
@@ -57,16 +54,6 @@
         </div>
     </div>
     <div class="clearfix">
-
-        <!-- <blockquote class="alert alert-warning defaultSignature-warnings">
-            <a ui-sref="secured.signatures" class="defaultSignature-warnings-link">Edit</a>
-            <span class="defaultSignature-warnings-about" translate translate-context="Info">You already set a custom:</span>
-            <ul class="defaultSignature-warnings-list">
-                <li class="defaultSignature-item-displayname" translate translate-context="Info">display name</li>
-                <li class="defaultSignature-item-signature" translate translate-context="Info">signature</li>
-            </ul>
-        </blockquote> -->
-
         <div class="col-3-8">&nbsp;</div>
         <div class="col-5-8">
             <button class="pm_button primary" ng-click="saveIdentity()" translate-context="Action" translate translate-comment="Save button for updating default identity on account page">Save</button>
