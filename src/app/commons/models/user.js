@@ -1,5 +1,6 @@
 /* @ngInject */
 function User($http, url, srp) {
+    const headersVersion3 = { 'x-pm-apiversion': 3 };
     const requestURL = url.build('users');
 
     return {
@@ -10,7 +11,9 @@ function User($http, url, srp) {
             return $http.post(requestURL('code'), params);
         },
         get() {
-            return $http.get(requestURL());
+            return $http.get(requestURL(), {
+                headers: headersVersion3
+            });
         },
         human() {
             return $http.get(url.get() + '/users/human');

@@ -8,6 +8,7 @@ import signupStepLink from './directives/signupStepLink';
 import signupUserForm from './directives/signupUserForm';
 import usernameDomain from './directives/usernameDomain';
 import usernamePassword from './directives/usernamePassword';
+import displayNameSignature from './directives/displayNameSignature';
 import generateKeyModel from './factories/generateKeyModel';
 import signatureModel from './factories/signatureModel';
 import deleteAccountModal from './modals/deleteAccountModal';
@@ -33,6 +34,7 @@ export default angular
     .directive('signupUserForm', signupUserForm)
     .directive('usernameDomain', usernameDomain)
     .directive('usernamePassword', usernamePassword)
+    .directive('displayNameSignature', displayNameSignature)
     .factory('abuseFraudModal', abuseFraudModal)
     .factory('generateKeyModel', generateKeyModel)
     .factory('signatureModel', signatureModel)

@@ -14,8 +14,6 @@ function settingsMailApi($http, mailSettingsModel, url) {
     };
 
     const fetch = () => $http.get(requestURL()).then(handleResult);
-    const updateSignature = (data) => $http.put(requestURL('signature'), data).then(handleResult);
-    const updateDisplayName = (data) => $http.put(requestURL('display'), data).then(handleResult);
     const updateTheme = (data) => $http.put(requestURL('theme'), data).then(handleResult);
     const updateAutoSaveContacts = (data) => $http.put(requestURL('autocontacts'), data).then(handleResult);
     const updateComposerMode = (data) => $http.put(requestURL('composermode'), data).then(handleResult);
@@ -41,8 +39,6 @@ function settingsMailApi($http, mailSettingsModel, url) {
 
     return {
         fetch,
-        updateSignature,
-        updateDisplayName,
         updateTheme,
         updateAutoSaveContacts,
         updateComposerMode,

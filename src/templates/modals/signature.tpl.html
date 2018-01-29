@@ -7,48 +7,7 @@
             </div>
             <div class="modal-body pm_form">
                 <p class="alert alert-info"><strong>{{ ctrl.address.Email }}</strong></p>
-                <div class="pm_grid">
-                    <div class="col-1-2">
-                        <label>
-                            <custom-radio data-custom-ng-model="ctrl.address.custom" data-custom-ng-value="false"></custom-radio>
-                            <strong translate translate-context="Title" translate-comment="form label">Default Signature</strong>
-                        </label>
-                    </div>
-                    <div class="col-1-2">
-                        <label>
-                            <custom-radio data-custom-ng-model="ctrl.address.custom" data-custom-ng-value="true"></custom-radio>
-                            <strong translate translate-context="Title" translate-comment="form label">Custom Name / Signature</strong>
-                        </label>
-                    </div>
-                </div>
-                <div ng-show="ctrl.address.custom === true">
-                    <section>
-                        <label translate translate-context="Title">Display name</label>
-                        <div class="margin">
-                            <input type="text" ng-model="ctrl.address.DisplayName" />
-                        </div>
-                    </section>
-                    <section>
-                        <label translate translate-context="Title">Signature</label>
-                        <div class="margin">
-                            <squire
-                                id="modalSignature"
-                                name="signature"
-                                data-type-content="signature"
-                                data-value="ctrl.address.Signature" allow-data-uri="true"></squire>
-                        </div>
-                    </section>
-                </div>
-                <div ng-show="ctrl.address.custom === false">
-                    <section>
-                        <label translate translate-context="Title">Default Display name</label>
-                        <div class="alert alert-info" ng-bind="ctrl.defaultDisplayName"></div>
-                    </section>
-                    <section>
-                        <label translate translate-context="Title">Default Signature</label>
-                        <div class="alert alert-info" ng-bind-html="ctrl.defaultSignature" style="overflow: auto;"></div>
-                    </section>
-                </div>
+                <display-name-signature data-model="ctrl.model"></display-name-signature>
             </div>
         </div>
         <div class="modal-footer text-right">
