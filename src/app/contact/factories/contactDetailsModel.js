@@ -2,8 +2,8 @@ import _ from 'lodash';
 
 /* @ngInject */
 function contactDetailsModel(contactTransformLabel, CONSTANTS, contactSchema, gettextCatalog) {
-    const ESCAPE_REGEX = /:|,|;|"/gi;
-    const UNESCAPE_REGEX = /\\:|\\,|\\;|\\"/gi;
+    const ESCAPE_REGEX = /:|,|;/gi;
+    const UNESCAPE_REGEX = /\\:|\\,|\\;/gi;
     const BACKSLASH_SEMICOLON_REGEX = /\\;/gi;
     const SPECIAL_CHARACTER_REGEX = /🐶 🐱 🐭 🐹 🐰 🦊 🐻 🐼/gi;
 
