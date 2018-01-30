@@ -3,6 +3,8 @@
 const fs = require('fs');
 const path = require('path');
 const chalk = require('chalk');
+const dedent = require('dedent');
+const localIp = require('my-local-ip');
 
 const env = require('../env/config');
 const PATH_CONFIG = path.resolve('./src/app/config.js');
@@ -20,6 +22,13 @@ fs.utimesSync(PATH_CONFIG, then, then);
 
 env.argv.debug && console.log(`${JSON.stringify(CONFIG, null, 2)}`);
 if (process.env.NODE_ENV !== 'dist') {
-    console.log(`${chalk.green('✓')} Generate configuration`);
-    console.log('~', chalk.bgYellow(chalk.black(`API: ${CONFIG.apiUrl}`)), '~');
+
+    const server = (ip = 'localhost') => chalk.yellow(`http://${ip}:8080`);
+    console.log(dedent`
+        ${chalk.green('✓')} Generate configuration
+        ~ ${chalk.bgYellow(chalk.black(`API: ${CONFIG.apiUrl}`))} ~
+
+        ➙ Dev server: ${server()}
+        ➙ Dev server: ${server(localIp())}
+    `);
 }
