@@ -73,9 +73,9 @@ function ComposeMessageController(
                 window.onbeforeunload = undefined;
 
                 if (mailSettingsModel.get('Hotkeys') === 1) {
-                    hotkeys.bind();
+                    hotkeys.unpause();
                 } else {
-                    hotkeys.unbind();
+                    hotkeys.pause();
                 }
             }
         })

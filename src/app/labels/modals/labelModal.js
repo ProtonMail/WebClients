@@ -107,8 +107,6 @@ function labelModal(pmModal, tools, hotkeys, gettextCatalog, networkActivityTrac
             this.colors = COLORS_LIST;
             this.color = Color || COLORS_LIST[index];
 
-            hotkeys.unbind();
-
             this.create = (form) => {
 
                 if (form.$invalid) {
@@ -130,7 +128,6 @@ function labelModal(pmModal, tools, hotkeys, gettextCatalog, networkActivityTrac
 
                 const promise = save(data).then((label) => {
                     notification.success(successMessage);
-                    hotkeys.bind();
                     (params.onSuccess || angular.noop)(label);
                     params.close(label);
                 });
@@ -139,7 +136,6 @@ function labelModal(pmModal, tools, hotkeys, gettextCatalog, networkActivityTrac
 
             this.cancel = () => {
                 params.close();
-                hotkeys.bind();
             };
 
             setTimeout(

@@ -1,3 +1,5 @@
+import { MOUSETRAP_KEY_EVENT } from '../../constants';
+
 /* @ngInject */
 function pmModal($animate, $compile, $rootScope, $injector, $controller, $q, $http, AppModel, mailSettingsModel, $templateCache) {
     const $body = $('#body');
@@ -47,7 +49,7 @@ function pmModal($animate, $compile, $rootScope, $injector, $controller, $q, $ht
                     Mousetrap.bind('escape', () => {
                         const { onEscape = deactivate } = locals.params || {};
                         onEscape();
-                    });
+                    }, MOUSETRAP_KEY_EVENT);
                     clearTimeout(id);
                 }, 100);
 

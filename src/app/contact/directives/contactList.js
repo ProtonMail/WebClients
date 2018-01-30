@@ -175,18 +175,18 @@ function contactList($filter, dispatchers, $state, $stateParams, contactCache, h
             element.on('click', onClick);
             contactCache.hydrate();
 
-            $rootScope.$on('right', openContact);
+            on('right', openContact);
 
-            $rootScope.$on('openMarked', openContact);
+            on('openMarked', openContact);
 
             // Restore them to allow custom keyboard navigation
-            $rootScope.$on('left', () => {
+            on('left', () => {
                 document.activeElement.blur();
                 hotkeys.bind(['down', 'up']);
             });
 
             // Move to trash
-            $rootScope.$on('move', (e, type) => {
+            on('move', (e, type) => {
                 if (type === 'trash') {
                     dispatcher.contacts('deleteContacts', { contactIDs: [cursorID] });
                 } else {
@@ -196,10 +196,10 @@ function contactList($filter, dispatchers, $state, $stateParams, contactCache, h
             });
 
             // Goes up
-            $rootScope.$on('markPrevious', onNextPrevElement('UP'));
+            on('markPrevious', onNextPrevElement('UP'));
 
             // Goes down
-            $rootScope.$on('markNext', onNextPrevElement('DOWN'));
+            on('markNext', onNextPrevElement('DOWN'));
 
             $rootScope.$on('$destroy', () => {
                 element.off('click', onClick);
