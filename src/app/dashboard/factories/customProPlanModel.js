@@ -100,7 +100,7 @@ function customProPlanModel($rootScope, CONSTANTS, dashboardConfiguration, dashb
                 range: { min, max },
                 pips: {
                     mode: 'positions',
-                    values: [0, 25, 50, 75, 100],
+                    values: [0, 100],
                     density: 4,
                     stepped: true
                 },
