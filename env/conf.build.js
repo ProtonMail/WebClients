@@ -22,6 +22,7 @@ module.exports = {
             'svg4everybody/dist/svg4everybody.js',
             'angular-messages/angular-messages.js',
             'mousetrap/mousetrap.js',
+            'mousetrap-pause/mousetrap-pause.js',
             'angular-gettext/dist/angular-gettext.js',
             'fingerprintjs2/fingerprint2.js',
             'bcryptjs/dist/bcrypt.js',
