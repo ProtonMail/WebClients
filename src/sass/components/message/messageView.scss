@@ -559,7 +559,7 @@ body.appConfigBody-is-mobile {
 .print .proton-message-blockquote-toggle {
     display: none;
     ~ * {
-        display: block
+        display: block !important
     }
 }
 
