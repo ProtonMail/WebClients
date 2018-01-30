@@ -30,8 +30,9 @@ function signatureModel(
     };
 
     const saveIdentity = async (ID, displayName, signature) => {
-        const Signature = signature.replace(/\n/g, '<br />');
-        const DisplayName = sanitize.input(displayName);
+        // DisplayName and Signature can be set to null
+        const DisplayName = displayName ? sanitize.input(displayName) : displayName;
+        const Signature = signature ? signature.replace(/\n/g, '<br />') : signature;
 
         await Address.edit(ID, { DisplayName, Signature });
         return eventManager.call();
