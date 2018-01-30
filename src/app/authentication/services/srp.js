@@ -174,10 +174,8 @@ function srp($http, CONFIG, webcrypto, passwords, url, authApi, handle10003) {
             salt = pmcrypto.decode_base64(infoResp.data.Salt);
         }
 
-        return passwords
-            .hashPassword(authVersion, creds.Password, salt, creds.Username, modulus)
-            .then(
-                (hashed) => {
+        return passwords.hashPassword(authVersion, creds.Password, salt, creds.Username, modulus)
+            .then((hashed) => {
                     proofs = generateProofs(2048, srpHasher, modulus, hashed, serverEphemeral);
 
                     if (proofs.Type !== 'Success') {
@@ -210,21 +208,26 @@ function srp($http, CONFIG, webcrypto, passwords, url, authApi, handle10003) {
             )
             .then(
                 (resp) => {
-                    if (resp.data.Code !== 1000) {
-                        handle10003(resp.data);
-                        return Promise.reject({
-                            error_description: resp.data.Error,
-                            usedFallback: useFallback
-                        });
-                    } else if (pmcrypto.encode_base64(pmcrypto.arrayToBinaryString(proofs.ExpectedServerProof)) === resp.data.ServerProof) {
+                    if (pmcrypto.encode_base64(pmcrypto.arrayToBinaryString(proofs.ExpectedServerProof)) === resp.data.ServerProof) {
                         return Promise.resolve(_.extend(resp, { authVersion }));
-                    } else {
-                        return Promise.reject({
-                            error_description: 'Invalid server authentication'
-                        });
                     }
+
+                    return Promise.reject({
+                        error_description: 'Invalid server authentication'
+                    });
                 },
                 (error) => {
+                    const { data = {} } = error || {};
+
+                    handle10003(data);
+
+                    if (data.Error) {
+                        return Promise.reject({
+                            error_description: data.Error,
+                            usedFallback: useFallback
+                        });
+                    }
+
                     return Promise.reject(error);
                 }
             );
