@@ -1,9 +1,10 @@
 import _ from 'lodash';
 
 import { flow, filter, each } from 'lodash/fp';
+import { MOUSETRAP_KEY_EVENT } from '../../constants';
 
 /* @ngInject */
-function hotkeys(hotkeyModal, $rootScope, $state, authentication, CONSTANTS, $injector, gettextCatalog) {
+function hotkeys(hotkeyModal, $rootScope, $state, authentication, $injector, gettextCatalog) {
     const I18N = {
         OPEN_COMPOSER: gettextCatalog.getString('Open the composer', null, 'Hotkey description'),
         CREATE_REPLY: gettextCatalog.getString('Create a reply', null, 'Hotkey description'),
@@ -216,7 +217,7 @@ function hotkeys(hotkeyModal, $rootScope, $state, authentication, CONSTANTS, $in
     ];
 
     const removeBinding = ({ keyboard }) => Mousetrap.unbind(keyboard);
-    const addBinding = ({ keyboard, callback }) => Mousetrap.bind(keyboard, callback);
+    const addBinding = ({ keyboard, callback }) => Mousetrap.bind(keyboard, callback, MOUSETRAP_KEY_EVENT);
     /**
      * Bind/unBind an action for an event based on a custom list
      * @param  {Array}    list [...<eventName>]
