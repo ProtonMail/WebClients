@@ -1,5 +1,5 @@
 /* @ngInject */
-function handle403($http, $q, loginPasswordModal, User, authentication, notification) {
+function handle403($http, $q, loginPasswordModal, User, authentication, networkActivityTracker) {
     return (config) => {
         const deferred = $q.defer();
         // Open the open to enter login password because this request require lock scope
@@ -7,16 +7,14 @@ function handle403($http, $q, loginPasswordModal, User, authentication, notifica
             params: {
                 submit(Password, TwoFactorCode) {
                     // Send request to unlock the current session for administrator privileges
-                    User.unlock({ Password, TwoFactorCode }).then(
-                        () => {
+                    const promise = User.unlock({ Password, TwoFactorCode })
+                        .then(() => {
                             loginPasswordModal.deactivate();
                             // Resend request now
                             deferred.resolve($http(config));
-                        },
-                        (error) => {
-                            notification.error(error.error_description);
-                        }
-                    );
+                        });
+
+                    networkActivityTracker.track(promise);
                 },
                 cancel() {
                     loginPasswordModal.deactivate();
