@@ -239,10 +239,17 @@ function hotkeys(hotkeyModal, $rootScope, $state, authentication, $injector, get
         },
         unbind(list = []) {
             if (!list.length) {
-                return keys.forEach(removeBinding);
+                // NOTE Mousetrap.unbind doesn't seem to work
+                return Mousetrap.reset();
             }
 
             filterBinding(list, removeBinding);
+        },
+        pause() {
+            Mousetrap.pause();
+        },
+        unpause() {
+            Mousetrap.unpause();
         },
         keys() {
             return angular.copy(keys);
