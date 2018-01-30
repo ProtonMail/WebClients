@@ -25,10 +25,10 @@ function squire(squireEditor, embedded, editorListener, $rootScope, sanitize, to
     };
 
     /*
-            We need the editor to get a valid plain text message on Load
-            - Parse a new message
-            - Don't parse when we open a draft already created.
-         */
+        We need the editor to get a valid plain text message on Load
+        - Parse a new message
+        - Don't parse when we open a draft already created.
+     */
     const loadPlainText = (scope, editor, bindTabIndex = _.noop) => () => {
         const isPlainTextMode = scope.message.MIMEType === 'text/plain';
         const isDraftPlainText = scope.message.isPlainText() && scope.message.IsEncrypted === 5;
