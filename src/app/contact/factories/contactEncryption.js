@@ -8,7 +8,7 @@ function contactEncryption($injector, $rootScope, CONSTANTS, chunk, gettextCatal
     const GROUP_FIELDS = ['email'];
     const { CONTACT_MODE, CONTACTS_LIMIT_ENCRYPTION, MAIN_KEY, VCARD_VERSION, CONTACT_ERROR } = CONSTANTS;
     const { CLEAR_TEXT, ENCRYPTED_AND_SIGNED, ENCRYPTED, SIGNED } = CONTACT_MODE;
-    const { TYPE3_CONTACT_VERIFICATION, TYPE3_CONTACT_DECRYPTION, TYPE2_CONTACT, TYPE1_CONTACT } = CONTACT_ERROR;
+    const { TYPE3_CONTACT_VERIFICATION, TYPE3_CONTACT_DECRYPTION, TYPE2_CONTACT_VERIFICATION, TYPE1_CONTACT } = CONTACT_ERROR;
     const getErrors = (data = []) => _.map(data, 'error').filter(Boolean);
     const buildContact = (ID, data = [], cards) => ({
         ID,
@@ -179,7 +179,7 @@ function contactEncryption($injector, $rootScope, CONSTANTS, chunk, gettextCatal
                         .verifyMessage({ message: pmcw.getCleartextMessage(Data), publicKeys, signature: pmcw.getSignature(Signature) })
                         .then(({ verified }) => {
                             if (verified !== 1) {
-                                return { error: TYPE2_CONTACT, data: Data };
+                                return { error: TYPE2_CONTACT_VERIFICATION, data: Data };
                             }
                             return { data: Data };
                         });

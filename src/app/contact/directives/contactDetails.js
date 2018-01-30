@@ -105,9 +105,9 @@ function contactDetails(
             updateType(scope.contact.types);
 
             if (scope.contact.errors) {
-                scope.contact.errors.indexOf(3) !== -1 && element.addClass(HAS_ERROR_VERIFICATION_ENCRYPTED);
-                scope.contact.errors.indexOf(2) !== -1 && element.addClass(HAS_ERROR_ENCRYPTED);
-                scope.contact.errors.indexOf(1) !== -1 && element.addClass(HAS_ERROR_VERIFICATION);
+                scope.contact.errors.indexOf(CONSTANTS.CONTACT_ERROR.TYPE3_CONTACT_VERIFICATION) !== -1 && element.addClass(HAS_ERROR_VERIFICATION_ENCRYPTED);
+                scope.contact.errors.indexOf(CONSTANTS.CONTACT_ERROR.TYPE3_CONTACT_DECRYPTION) !== -1 && element.addClass(HAS_ERROR_ENCRYPTED);
+                scope.contact.errors.indexOf(CONSTANTS.CONTACT_ERROR.TYPE2_CONTACT_VERIFICATION) !== -1 && element.addClass(HAS_ERROR_VERIFICATION);
             }
 
             element.on('click', onClick);
