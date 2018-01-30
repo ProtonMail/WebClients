@@ -119,11 +119,8 @@
         /*
          * Make the editor have a 0 height if plaintext editor is visible.
          */
-        &[data-type="text/plain"] .angular-squire-wrapper { flex: 0 !important }
-
-        .angular-squire-wrapper {
-            overflow: auto;
-            -webkit-overflow-scrolling: touch;
+        &[data-type="text/plain"] .angular-squire-wrapper {
+            display: none;
         }
 
         &.composer-draggable-editor .composeEditor {
@@ -141,6 +138,7 @@
             position: relative;
             z-index: 4;
             width: 100%;
+            height: 100%;
         }
 
         .dropzone {
@@ -470,11 +468,6 @@
           margin:0px;
           padding:0px;
           list-style: none;
-        }
-
-        .angular-squire {
-            overflow: auto;
-            -webkit-overflow-scrolling: touch;
         }
 
 
