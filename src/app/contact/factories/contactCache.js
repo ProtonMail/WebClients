@@ -51,11 +51,11 @@ function contactCache(
     const total = () => ($stateParams.keyword ? CACHE.map.filtered.length : CACHE.contacts.length);
     const isHydrated = () => CACHE.hydrated;
 
-    function selected() {
+    function selected(ID = $stateParams.id) {
         const selected = flow(filter(({ selected }) => selected), map('ID'))(get());
 
-        if (!selected.length && $stateParams.id) {
-            return [$stateParams.id];
+        if (!selected.length && ID) {
+            return [ ID ];
         }
 
         return selected;
@@ -119,7 +119,12 @@ function contactCache(
         return promise;
     }
 
-    function sync() {
+    /**
+     * Sync the collection and auto select the last contact
+     * added if it exists
+     * @param  {Object} [ { ID }
+     */
+    function sync([ { ID } = {} ] = []) {
         const emails = contactEmails.fetch();
 
         // Synchronise emails
@@ -132,7 +137,7 @@ function contactCache(
         // Create maps
         CACHE.map = {
             all: _.reduce(get(), (acc, contact) => ((acc[contact.ID] = contact), acc), {}),
-            selected: selected(),
+            selected: selected(ID),
             filtered: filtered()
         };
     }
@@ -248,7 +253,7 @@ function contactCache(
             todo.create
         );
 
-        sync();
+        sync(todo.create);
         emit();
     }
 
