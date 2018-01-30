@@ -324,8 +324,7 @@ function eventManager(
         manageFilters(data.Filters);
         manageActiveMessage(data);
 
-        return $injector
-            .get('manageUser')(data, call)
+        return $injector.get('manageUser')(data)
             .then(() => {
                 if (data.More === 1) {
                     return call();

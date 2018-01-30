@@ -248,12 +248,14 @@ function contactCache(
             { update: {}, create: [], remove: {} }
         );
 
+        const toAdd = _.filter(todo.create, ({ ID }) => !CACHE.map.all[ID]);
+
         CACHE.contacts = [].concat(
             flow(map((contact) => todo.update[contact.ID] || contact), filter(({ ID }) => !todo.remove[ID]))(get()),
-            todo.create
+            toAdd
         );
 
-        sync(todo.create);
+        sync(toAdd);
         emit();
     }
 
