@@ -122,3 +122,9 @@
 .listAttachments-btn-action-remove {display: none}
 .listAttachments-btn-action-remove i {pointer-events: none}
 .state-eoReply .listAttachments-btn-action-remove {display: block}
+
+[id="printer"] {
+    .listAttachments-title-size,
+    .listAttachments-title-download { display: none }
+    a { pointer-events: none }
+}
