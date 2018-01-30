@@ -132,6 +132,15 @@ export function createMessage({ Addresses = [] } = {}, { RE_PREFIX, FW_PREFIX } 
     return { reply, replyAll, forward, newCopy };
 }
 
+/**
+ * Load the correct default MIMEType for a message
+ * Default case is the user setting
+ * @param  {String} options.MIMEType Can be undefined for a draft
+ * @param  {String} DraftMIMEType    User setting
+ * @return {String}
+ */
+export const loadMimeType = ({ MIMEType }, DraftMIMEType) => MIMEType || DraftMIMEType;
+
 /* @ngInject */
 function messageBuilder(
     $filter,
@@ -179,7 +188,7 @@ function messageBuilder(
     }
 
     function builder(action, currentMsg = {}, newMsg = {}) {
-        newMsg.MIMEType = currentMsg.MIMEType === 'text/plain' ? 'text/plain' : mailSettingsModel.get('DraftMIMEType');
+        newMsg.MIMEType = loadMimeType(currentMsg, mailSettingsModel.get('DraftMIMEType'));
         newMsg.RightToLeft = mailSettingsModel.get('RightToLeft');
 
         action === 'new' && newCopy(newMsg, currentMsg);
