@@ -1,7 +1,7 @@
 import _ from 'lodash';
 
 /* @ngInject */
-function contactList($filter, dispatchers, $state, $stateParams, contactCache, hotkeys, $rootScope, messageModel) {
+function contactList($filter, dispatchers, $state, $stateParams, contactCache, hotkeys) {
     const HEADER_HEIGHT = 120;
     const ITEM_CLASS = 'contactList-item';
     const ACTIVE_CLASS = 'contactList-item-activeContact';
