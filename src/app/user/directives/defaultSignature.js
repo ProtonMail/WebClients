@@ -28,8 +28,9 @@ function defaultSignature($rootScope, authentication, gettextCatalog, signatureM
                 const { Addresses = [] } = authentication.user;
                 const [{ DisplayName, Signature } = {}] = Addresses;
 
-                scope.displayName = DisplayName;
-                scope.signature = tools.replaceLineBreaks(Signature);
+                // NOTE DisplayName and Signature can be set to null
+                scope.displayName = DisplayName || '';
+                scope.signature = tools.replaceLineBreaks(Signature || '');
             };
 
             unsubscribe.push(

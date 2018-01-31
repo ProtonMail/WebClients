@@ -10,7 +10,7 @@ function signatureModal(pmModal, tools) {
             const { DisplayName, Signature } = params.address;
 
             this.address = params.address;
-            this.model = { DisplayName, Signature: tools.replaceLineBreaks(Signature) };
+            this.model = { DisplayName, Signature: tools.replaceLineBreaks(Signature || '') };
             this.cancel = params.cancel;
             this.confirm = () => {
                 const { DisplayName, Signature } = this.model;
