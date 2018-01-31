@@ -260,7 +260,9 @@ function hotkeys(hotkeyModal, $rootScope, $state, authentication, $injector, get
         },
         unbind(list = []) {
             if (!list.length) {
-                return keys.forEach(removeBinding);
+                // Mousetrap.unbind doesn't work
+                // return keys.forEach(removeBinding);
+                return Mousetrap.reset();
             }
 
             filterBinding(list, removeBinding);
