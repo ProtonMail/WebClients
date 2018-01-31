@@ -13,7 +13,8 @@ function contactDetails(
     subscriptionModel,
     memberModel,
     dispatchers,
-    vcard
+    vcard,
+    hotkeys
 ) {
     const ENCRYPTED_AND_SIGNED = 'contactDetails-encrypted-and-signed';
     const HAS_ERROR_VERIFICATION = 'contactDetails-verification-error';
@@ -88,8 +89,8 @@ function contactDetails(
                 }
             });
 
-            on('composer.update', (e, { type = '' }) => {
-                if (type === 'key.autosave') {
+            on('hotkeys', (e, { type = '' }) => {
+                if (type === 'save') {
                     saveContact();
                 }
             });

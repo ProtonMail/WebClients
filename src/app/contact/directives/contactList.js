@@ -155,6 +155,7 @@ function contactList($filter, dispatchers, $state, $stateParams, contactCache, h
                 // Open the contact
                 $state.go('secured.contacts.details', { id: cursorID });
 
+                hotkeys.bind('mod+s');
                 // We don't need to check these events if we didn't choose to focus onto a specific message
                 hotkeys.unbind(['down', 'up']);
             };
@@ -183,15 +184,15 @@ function contactList($filter, dispatchers, $state, $stateParams, contactCache, h
             on('left', () => {
                 document.activeElement.blur();
                 hotkeys.bind(['down', 'up']);
+                hotkeys.unbind(['mod+s']);
             });
 
             // Move to trash
             on('move', (e, type) => {
                 if (type === 'trash') {
                     dispatcher.contacts('deleteContacts', { contactIDs: [cursorID] });
-                } else {
+                } else if (type === 'archive') {
                     dispatcher.contacts('addContact');
-                    hotkeys.unbind(['down', 'up']);
                 }
             });
 
@@ -201,7 +202,7 @@ function contactList($filter, dispatchers, $state, $stateParams, contactCache, h
             // Goes down
             on('markNext', onNextPrevElement('DOWN'));
 
-            $rootScope.$on('$destroy', () => {
+            scope.$on('$destroy', () => {
                 element.off('click', onClick);
                 unsubscribe();
             });
