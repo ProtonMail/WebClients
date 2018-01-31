@@ -1,8 +1,13 @@
 import _ from 'lodash';
 
+const CLASSNAME = {
+    UNDISCLOSED: 'message-undisclosed'
+};
+
 /* @ngInject */
 function message($state, $rootScope, cache, displayContent, messageScroll, tools, unsubscribeModel, $exceptionHandler) {
-    const getRecipients = ({ ToList = [], CCList = [], BCCList = [] } = {}) => [].concat(ToList, CCList, BCCList);
+
+    const getRecipients = ({ ToList = [], CCList = [], BCCList = [] } = {}) => ToList.concat(CCList, BCCList);
 
     /**
      * Back to element list
@@ -37,6 +42,9 @@ function message($state, $rootScope, cache, displayContent, messageScroll, tools
         },
         link(scope, element) {
             const unsubscribe = [];
+
+            const recipients = getRecipients(scope.message);
+            !recipients.length && element[0].classList.add(CLASSNAME.UNDISCLOSED);
 
             const loadMessageBody = () => {
                 return cache.getMessage(scope.message.ID).then((message) => _.extend(scope.message, message));
@@ -169,17 +177,18 @@ function message($state, $rootScope, cache, displayContent, messageScroll, tools
              */
             scope.getElements = () => [scope.message];
 
+
             /**
              * Get all recipients
              * @return {Array} recipients
              */
-            scope.recipients = () => getRecipients(scope.message);
+            scope.recipients = () => recipients;
 
             /**
              * Check if there is no recipients
              * @return {Boolean}
              */
-            scope.noRecipients = () => !scope.recipients().length;
+            scope.noRecipients = () => !recipients.length;
 
             // TODO need review with label dropdown
             scope.getMessage = () => [scope.message];

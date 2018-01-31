@@ -567,3 +567,4 @@ body.appConfigBody-is-mobile {
     /* 72 DPI will let us margin 2 blockquote */
     min-width:595px;
 }
+#conversation-view .message.message-undisclosed .recipients-summary { display: block !important }
