@@ -71,7 +71,7 @@ function contactItem($rootScope, contactTransformLabel, contactUI, messageModel)
             function composeTo(Address) {
                 const message = messageModel();
                 message.ToList = [{ Address, Name: Address }];
-                $rootScope.$emit('composer.new', { data: { message }, type: 'new' });
+                $rootScope.$emit('composer.new', { type: 'new', data: { message } });
             }
 
             // Drag and Drop configuration
