@@ -23,6 +23,7 @@ module.exports = {
             'angular-messages/angular-messages.js',
             'mousetrap/mousetrap.js',
             'mousetrap/plugins/pause/mousetrap-pause.js',
+            'mousetrap/plugins/global-bind/mousetrap-global-bind.js',
             'angular-gettext/dist/angular-gettext.js',
             'fingerprintjs2/fingerprint2.js',
             'bcryptjs/dist/bcrypt.js',

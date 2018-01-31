@@ -40,7 +40,7 @@ function ComposeMessageController(
     $scope.uid = 1;
 
     /**
-     * Store ids of current openned composer
+     * Store ids of current opened composer
      * @param  {String} ID    ID of the message
      * @param  {Boolean} clear to remove the ID
      * @return {void}
@@ -67,7 +67,7 @@ function ComposeMessageController(
                     );
                 };
                 hotkeys.unbind(); // Disable hotkeys
-                hotkeys.bind(['meta+s']);
+                hotkeys.bind(['mod+s']);
             } else {
                 AppModel.set('activeComposer', false);
                 window.onbeforeunload = undefined;
@@ -174,23 +174,27 @@ function ComposeMessageController(
     );
 
     unsubscribe.push(
+        $rootScope.$on('hotkeys', (e, { type }) => {
+            if (type === 'save') {
+                $scope.$applyAsync(() => {
+                    const message = _.find($scope.messages, { focussed: true });
+
+                    if (message) {
+                        postMessage(message, {
+                            autosaving: true,
+                            notification: true
+                        });
+                    }
+                });
+            }
+        })
+    );
+
+    unsubscribe.push(
         $rootScope.$on('composer.update', (e, { type, data }) => {
             switch (type) {
                 case 'loaded':
                     commitComposer(data.message);
-                    break;
-
-                case 'key.autosave':
-                    $scope.$applyAsync(() => {
-                        const message = _.find($scope.messages, { focussed: true });
-
-                        if (message) {
-                            postMessage(message, {
-                                autosaving: true,
-                                notification: true
-                            });
-                        }
-                    });
                     break;
 
                 case 'editor.focus': {

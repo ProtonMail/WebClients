@@ -27,7 +27,6 @@ export const MAILBOX_IDENTIFIERS = {
 };
 export const CONVERSATION_REQUEST_SIZE = 10;
 export const GIFT_CODE_LENGTH = 16;
-export const MOUSETRAP_KEY_EVENT = 'keyup';
 
 export const CONSTANTS = {
     CLIENT_TYPE: 1,
@@ -284,8 +283,7 @@ export const CONSTANTS = {
     PAID_ADMIN_ROLE,
     UNPAID_STATE,
     WIZARD_ENABLED,
-    MAILBOX_IDENTIFIERS,
-    MOUSETRAP_KEY_EVENT
+    MAILBOX_IDENTIFIERS
 };
 
 /* eslint  no-useless-escape: "off" */

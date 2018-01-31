@@ -1,7 +1,6 @@
 import _ from 'lodash';
 
 import { flow, filter, each } from 'lodash/fp';
-import { MOUSETRAP_KEY_EVENT } from '../../constants';
 
 /* @ngInject */
 function hotkeys(hotkeyModal, $rootScope, $state, authentication, $injector, gettextCatalog) {
@@ -26,6 +25,12 @@ function hotkeys(hotkeyModal, $rootScope, $state, authentication, $injector, get
         GO_TO_TRASH: gettextCatalog.getString('Go to trash', null, 'Hotkey description'),
         SELECT_ALL: gettextCatalog.getString('Select all elements', null, 'Hotkey description'),
         UNSELECT_ALL: gettextCatalog.getString('Unselect all elements', null, 'Hotkey description')
+    };
+
+    const KEY_EVENT_TYPE = {
+        PRESS: 'keypress',
+        DOWN: 'keydown',
+        UP: 'keyup'
     };
 
     const action = (cb) => () => (cb(), false);
@@ -75,7 +80,7 @@ function hotkeys(hotkeyModal, $rootScope, $state, authentication, $injector, get
     );
 
     const commandPalette = action(emit('hotkeys', { type: 'commandPalette' }));
-    const composerSave = action(emit('composer.update', { type: 'key.autosave' }));
+    const save = action(emit('hotkeys', { type: 'save' }));
     const reply = action(emit('replyConversation'));
     const replyAll = action(emit('replyAllConversation'));
     const forward = action(emit('forwardConversation'));
@@ -104,10 +109,18 @@ function hotkeys(hotkeyModal, $rootScope, $state, authentication, $injector, get
         {
             keyboard: 'c',
             callback: composer,
-            description: I18N.OPEN_COMPOSER
+            description: I18N.OPEN_COMPOSER,
+            global: true
         },
-        { keyboard: 'meta+s', callback: composerSave },
-        { keyboard: 'shift+space', callback: commandPalette },
+        {
+            keyboard: 'mod+s',
+            callback: save,
+            global: true
+        },
+        {
+            keyboard: 'shift+space',
+            callback: commandPalette
+        },
         {
             keyboard: 'shift+r',
             callback: reply,
@@ -143,9 +156,10 @@ function hotkeys(hotkeyModal, $rootScope, $state, authentication, $injector, get
             description: I18N.MOVE_TO_INBOX
         },
         {
-            keyboard: ['t', 'del'],
+            keyboard: ['t', 'del', 'command+backspace'],
             callback: trash,
-            description: I18N.MOVE_TO_TRASH
+            description: I18N.MOVE_TO_TRASH,
+            keyEventType: KEY_EVENT_TYPE.UP
         },
         {
             keyboard: 'a',
@@ -217,7 +231,14 @@ function hotkeys(hotkeyModal, $rootScope, $state, authentication, $injector, get
     ];
 
     const removeBinding = ({ keyboard }) => Mousetrap.unbind(keyboard);
-    const addBinding = ({ keyboard, callback }) => Mousetrap.bind(keyboard, callback, MOUSETRAP_KEY_EVENT);
+    const addBinding = ({ keyboard, callback, keyEventType, global = false }) => {
+        if (global) {
+            // 'keyup' will not work with command+s
+            return Mousetrap.bindGlobal(keyboard, callback, keyEventType);
+        }
+        Mousetrap.bind(keyboard, callback, keyEventType);
+    };
+
     /**
      * Bind/unBind an action for an event based on a custom list
      * @param  {Array}    list [...<eventName>]
@@ -239,11 +260,13 @@ function hotkeys(hotkeyModal, $rootScope, $state, authentication, $injector, get
         },
         unbind(list = []) {
             if (!list.length) {
-                // NOTE Mousetrap.unbind doesn't seem to work
-                return Mousetrap.reset();
+                return keys.forEach(removeBinding);
             }
 
             filterBinding(list, removeBinding);
+        },
+        reset() {
+            Mousetrap.reset();
         },
         pause() {
             Mousetrap.pause();

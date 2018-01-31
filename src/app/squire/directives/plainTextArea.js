@@ -46,7 +46,7 @@ function plainTextArea($rootScope, mailSettingsModel) {
                 // Check alt too cf Polis S #5476
                 if (isKey(e, KEY.S)) {
                     e.preventDefault();
-                    Mousetrap.trigger('meta+s');
+                    Mousetrap.trigger('mod+s');
                 }
 
                 if (isKey(e, KEY.ENTER) && Hotkeys === 1) {

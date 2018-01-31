@@ -132,7 +132,7 @@ $modalMargin: 2rem;
     }
 
     .modal-details {
-        border: 1px solid #E1E1E1;
+        border: 1px solid $border;
         margin: 0 0 .4em;
     }
 
@@ -140,7 +140,11 @@ $modalMargin: 2rem;
         font-size: 1.1em;
         font-weight: bold;
         cursor: pointer;
-        padding: 12px 0;
+        padding: 1em;
+    }
+
+    .modal-content-details {
+        padding: 0 1em;
     }
 }
 
