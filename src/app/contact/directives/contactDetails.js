@@ -13,8 +13,7 @@ function contactDetails(
     subscriptionModel,
     memberModel,
     dispatchers,
-    vcard,
-    hotkeys
+    vcard
 ) {
     const ENCRYPTED_AND_SIGNED = 'contactDetails-encrypted-and-signed';
     const HAS_ERROR_VERIFICATION = 'contactDetails-verification-error';
