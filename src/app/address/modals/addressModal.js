@@ -26,7 +26,8 @@ function addressModal(
             const organization = organizationModel.get();
             const [{ DisplayName, Signature }] = authentication.user.Addresses || [];
 
-            this.model = { DisplayName, Signature: tools.replaceLineBreaks(Signature) };
+            // NOTE DisplayName and Signature can be set to null
+            this.model = { DisplayName: DisplayName || '', Signature: tools.replaceLineBreaks(Signature || '') };
             this.domain = domains[0];
             this.domains = domains;
             this.address = '';

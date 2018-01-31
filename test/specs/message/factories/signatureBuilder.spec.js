@@ -856,7 +856,7 @@ describe('signatureBuilder factory', () => {
             });
         });
 
-        describe('No:body message userSignature', () => {
+        describe('No:body message addressSignature', () => {
             let string;
             const MESSAGE_BODY_UPDATE = getMessageUpdate();
             const message = loadEnv({ PMSignature: false }, {
@@ -915,7 +915,7 @@ describe('signatureBuilder factory', () => {
             });
         });
 
-        describe('No:body message new userSignature', () => {
+        describe('No:body message new addressSignature', () => {
             let string;
             const MESSAGE_BODY_UPDATE = getMessageUpdate();
             const message = loadEnv({
@@ -975,7 +975,7 @@ describe('signatureBuilder factory', () => {
             });
         });
 
-        describe('No:body message new userSignature and protonSignature', () => {
+        describe('No:body message new addressSignature and protonSignature', () => {
             let string;
             const MESSAGE_BODY_UPDATE = getMessageUpdate(undefined, CONSTANTS.PM_SIGNATURE);
 
@@ -1036,7 +1036,7 @@ describe('signatureBuilder factory', () => {
             });
         });
 
-        describe('No:body message update userSignature and protonSignature', () => {
+        describe('No:body message update addressSignature and protonSignature', () => {
             let string;
             const MESSAGE_BODY_UPDATE = getMessageUpdate(USER_SIGNATURE, CONSTANTS.PM_SIGNATURE);
             const message = loadEnv({
@@ -1096,7 +1096,7 @@ describe('signatureBuilder factory', () => {
             });
         });
 
-        describe('body message update userSignature and protonSignature', () => {
+        describe('body message update addressSignature and protonSignature', () => {
             let string;
             const MESSAGE_BODY_UPDATE = getMessageUpdate(USER_SIGNATURE, CONSTANTS.PM_SIGNATURE);
 
@@ -1228,7 +1228,7 @@ describe('signatureBuilder factory', () => {
             });
         });
 
-        describe('No:body message userSignature', () => {
+        describe('No:body message addressSignature', () => {
             let string;
             const MESSAGE_BODY_UPDATE = getMessageUpdatePlain();
             const message = loadEnv({ PMSignature: false }, {
@@ -1266,7 +1266,7 @@ describe('signatureBuilder factory', () => {
             });
         });
 
-        describe('No:body message new userSignature', () => {
+        describe('No:body message new addressSignature', () => {
             let string;
             const MESSAGE_BODY_UPDATE = getMessageUpdatePlain(USER_SIGNATURE);
             const message = loadEnv({
@@ -1305,7 +1305,7 @@ describe('signatureBuilder factory', () => {
             });
         });
 
-        describe('No:body message new userSignature and protonSignature', () => {
+        describe('No:body message new addressSignature and protonSignature', () => {
             let string;
             const MESSAGE_BODY_UPDATE = getMessageUpdatePlain(undefined, CONSTANTS.PM_SIGNATURE);
 
@@ -1346,7 +1346,7 @@ describe('signatureBuilder factory', () => {
             });
         });
 
-        describe('No:body message update userSignature and protonSignature', () => {
+        describe('No:body message update addressSignature and protonSignature', () => {
             let string;
             const MESSAGE_BODY_UPDATE = getMessageUpdatePlain(USER_SIGNATURE, CONSTANTS.PM_SIGNATURE);
             const message = loadEnv({
@@ -1386,7 +1386,7 @@ describe('signatureBuilder factory', () => {
             });
         });
 
-        describe('body message update userSignature and protonSignature', () => {
+        describe('body message update addressSignature and protonSignature', () => {
             let string;
             const MESSAGE_BODY_UPDATE = getMessageUpdatePlain(USER_SIGNATURE, CONSTANTS.PM_SIGNATURE, true);
             const message = loadEnv({
@@ -1426,7 +1426,7 @@ describe('signatureBuilder factory', () => {
             });
         });
 
-        describe('body message update userSignature and protonSignature multiple roww', () => {
+        describe('body message update addressSignature and protonSignature multiple roww', () => {
             let string;
             const MESSAGE_BODY_UPDATE = getMessageUpdatePlain(USER_SIGNATURE, CONSTANTS.PM_SIGNATURE, true);
             const message = loadEnv({
