@@ -73,7 +73,7 @@ function hotkeys(hotkeyModal, $rootScope, $state, authentication, $injector, get
     const goToTrash = action(redirect('secured.trash'));
 
     const composer = action(
-        emit('composer.create', {
+        emit('composer.new', {
             type: 'new',
             data: {}
         })
@@ -230,7 +230,7 @@ function hotkeys(hotkeyModal, $rootScope, $state, authentication, $injector, get
         { keyboard: '/', callback: slash }
     ];
 
-    const removeBinding = ({ keyboard }) => Mousetrap.unbind(keyboard);
+    const removeBinding = ({ keyboard, keyEventType }) => Mousetrap.unbind(keyboard, keyEventType);
     const addBinding = ({ keyboard, callback, keyEventType, global = false }) => {
         if (global) {
             // 'keyup' will not work with command+s
@@ -260,9 +260,7 @@ function hotkeys(hotkeyModal, $rootScope, $state, authentication, $injector, get
         },
         unbind(list = []) {
             if (!list.length) {
-                // Mousetrap.unbind doesn't work
-                // return keys.forEach(removeBinding);
-                return Mousetrap.reset();
+                return keys.forEach(removeBinding);
             }
 
             filterBinding(list, removeBinding);

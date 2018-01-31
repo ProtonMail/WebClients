@@ -66,8 +66,7 @@ function ComposeMessageController(
                         null
                     );
                 };
-                hotkeys.unbind(); // Disable hotkeys
-                hotkeys.bind(['mod+s']);
+                hotkeys.pause(); // Pause hotkeys
             } else {
                 AppModel.set('activeComposer', false);
                 window.onbeforeunload = undefined;

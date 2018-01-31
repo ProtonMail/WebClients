@@ -119,7 +119,10 @@ function contactList($filter, dispatchers, $state, $stateParams, contactCache, h
                         element[0].scrollTop -= $items.height();
                     }
                 } else {
-                    element.animate({ scrollTop: element[0].scrollTop + element[0].clientHeight - HEADER_HEIGHT }, 100);
+                    element.animate({ scrollTop: pos * $items.height() - HEADER_HEIGHT }, {
+                        duration: 500,
+                        complete: () => setContactCursor(ID)
+                    });
                 }
             };
 
@@ -144,12 +147,6 @@ function contactList($filter, dispatchers, $state, $stateParams, contactCache, h
                 }
             }
 
-            function composeTo(Address = '') {
-                const message = messageModel();
-                message.ToList = [{ Address, Name: Address }];
-                $rootScope.$emit('composer.new', { data: { message }, type: 'new' });
-            }
-
             // Open the current contact
             const openContact = () => {
                 // Open the contact
@@ -159,11 +156,6 @@ function contactList($filter, dispatchers, $state, $stateParams, contactCache, h
                 // We don't need to check these events if we didn't choose to focus onto a specific message
                 hotkeys.unbind(['down', 'up']);
             };
-
-            on('composer.create', () => {
-                const index = _.findIndex(scope.contacts, { ID: cursorID }) || 0;
-                composeTo(scope.contacts[index].emails);
-            });
 
             on('contacts', (event, { type = '' }) => {
                 type === 'contactsUpdated' && scope.$applyAsync(() => updateContacts());
@@ -201,6 +193,12 @@ function contactList($filter, dispatchers, $state, $stateParams, contactCache, h
 
             // Goes down
             on('markNext', onNextPrevElement('DOWN'));
+
+            on('composer.update', (e, { type = '' }) => {
+                if (type === 'close') {
+                    hotkeys.bind(['down', 'up']);
+                }
+            });
 
             scope.$on('$destroy', () => {
                 element.off('click', onClick);

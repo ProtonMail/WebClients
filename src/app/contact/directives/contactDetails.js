@@ -6,6 +6,7 @@ import { flow, values, reduce } from 'lodash/fp';
 function contactDetails(
     $state,
     CONSTANTS,
+    AppModel,
     contactDetailsModel,
     contactBeforeToLeaveModal,
     gettextCatalog,
@@ -89,7 +90,7 @@ function contactDetails(
             });
 
             on('hotkeys', (e, { type = '' }) => {
-                if (type === 'save') {
+                if (type === 'save' && !AppModel.get('activeComposer')) {
                     saveContact();
                 }
             });
