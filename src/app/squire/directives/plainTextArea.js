@@ -1,4 +1,5 @@
 import _ from 'lodash';
+import { CONSTANTS } from '../../constants';
 
 /* @ngInject */
 function plainTextArea($rootScope, mailSettingsModel) {
@@ -12,7 +13,7 @@ function plainTextArea($rootScope, mailSettingsModel) {
         replace: true,
         templateUrl: require('../../../templates/squire/plainTextArea.tpl.html'),
         link(scope, el) {
-            const { DraftMIMEType, Hotkeys } = mailSettingsModel.get();
+            const { DraftMIMEType } = mailSettingsModel.get();
             /*
                 Set the selection to the start instead of the end just like with squire.
                 only set it on first load as we should remember the location after first use.
@@ -41,7 +42,7 @@ function plainTextArea($rootScope, mailSettingsModel) {
                 _rAF(() => el.focus());
             }
 
-            // proxy for autosave as Mousetrap doesn't work with iframe
+            // proxy for saving as Mousetrap doesn't work with iframe
             const onKeyDown = (e) => {
                 // Check alt too cf Polis S #5476
                 if (isKey(e, KEY.S)) {
@@ -49,7 +50,7 @@ function plainTextArea($rootScope, mailSettingsModel) {
                     Mousetrap.trigger('mod+s');
                 }
 
-                if (isKey(e, KEY.ENTER) && Hotkeys === 1) {
+                if (isKey(e, KEY.ENTER) && mailSettingsModel.get('Hotkeys') === 1) {
                     $rootScope.$emit('composer.update', {
                         type: 'send.message',
                         data: { message: scope.message }
@@ -57,17 +58,26 @@ function plainTextArea($rootScope, mailSettingsModel) {
                 }
             };
 
+            const onInput = _.debounce(() => {
+                $rootScope.$emit('plaintextarea', {
+                    type: 'input',
+                    data: { message: scope.message }
+                });
+            }, CONSTANTS.SAVE_TIMEOUT_TIME);
+
             const onClick = () => {
                 if (scope.message.ccbcc) {
                     scope.$applyAsync(() => (scope.message.ccbcc = false));
                 }
             };
 
-            el.on('keydown', onKeyDown);
             el.on('click', onClick);
+            el.on('input', onInput);
+            el.on('keydown', onKeyDown);
 
             scope.$on('$destroy', () => {
                 el.off('click', onClick);
+                el.off('input', onInput);
                 el.off('keydown', onKeyDown);
             });
         }

@@ -234,6 +234,12 @@ function ComposeMessageController(
     );
 
     unsubscribe.push(
+        $rootScope.$on('plaintextarea', (e, { type, data }) => {
+            type === 'input' && $scope.saveLater(data.message);
+        })
+    );
+
+    unsubscribe.push(
         $rootScope.$on('squire.editor', (e, { type, data }) => {
             type === 'input' && $scope.saveLater(data.message);
         })
