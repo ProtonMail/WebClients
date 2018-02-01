@@ -1,3 +1,40 @@
+# [3.12.27] - 2018-02-01
+## Added
+- "To: Undisclosed Recipients" added if no recipients in "To" and "CC"
+- Default Display name is no longer assigned to alias addresses
+- Add hotkeys in contacts
+- Switch to API v3
+
+## Fixed
+- Edit signature button from Settings>Name/Signature does not work
+- Insert image button remains selected after you insert an image in the composer
+- The normal mode is not recognized when replying (if plain text compose is set to default)
+- Double scrollbar in composer
+- The option to download attachment is available on the Print window
+- Importing contacts fix
+- Wrong error message for disabled accounts
+- ProtonVPN wrong number of connections for Professional Plan
+- Attachments with large text in Plaintext mode are not shown correctly
+- Create new alias empty name error + UX improvement
+- Error message after first login on a new account
+- Contact actions for contacts with the same name
+- Keyboard shortcuts are too sensitive - while you are holding the key the actions are not stopping
+- The "\" symbol is added to the contacts name if "" are used.
+- Bug report link in sidebar alignment issue in mobile
+- Broken plaintext editor via option menu composer
+- Keyboard shortcuts work in the background when you have a pop-up window displayed
+- When you send a message only to BCC, the recipient sees the To field as empty
+- Folders/Labels are not showing
+- Address field doesn't support semicolons
+- `meta+s` throw error when the context is not on "composer"
+- Inconsistency for addresses with local part of 64+ characters
+- Encoding for tag names
+- iOS mobile browser send button in horizontal composer won't show
+
+## Changed
+- Color popover hidden in the signature squire editor
+- Handle response on settingsMailApi
+
 # [3.12.26] - 2018-01-25
 ## Fixed
 - "Learn more" link for invalid searches does not link to KB
@@ -50,75 +87,3 @@
 - Set ClientType for bug request
 - load embedded with cache Load a message with an embedded (auto load), go to settings, the go back to the message. As there is a cache it's too fast for the $digest.
 - Wrong error message for the attachment size limit
-
-# [3.12.23] - 2018-01-16
-## Fixed
-- Cancel button in 'Add Filter'
-
-## Changed
-- deploy prod with /api
-
-# [3.12.22] - 2018-01-16
-## Added
-- Reply header contains un-standard information and has a typo
-- Add info if you already have a custom displayName/Signature
-- Switch from Underscore to Lodash
-
-## Fixed
-- System keeps asking for password when you try to enable disabled addresses (aliases) while on the free plan
-- Selecting bold/italic/underline moves the pointer to the first line
-- Warning icon seems to be styled improperly
-- [DEV] Changing row to column view causes small problem
-- Delete button is showing for ProtonMail addresses
-- [DEV] Arrows are shown in the sidebar scroll
-- Upgrade and Settings buttons are 'active' at the same time
-- [QA] Drag & drop attachments in multiple composers freezes
-
-## Changed
-- 2FA process was not working properly
-- adblock squire issue, add display important (#6253)
-- Use CONSTANTS
-- Use import constants
-- Properly unsubscribe "updateUser" and "mailSettings" events
-- Use the body with the 'rows' class
-- Switch layout
-- displayName || firstEmail
-- display the success after the event call
-- layout buttons need to be initialized
-- the usage space bar in Dashboard was always full
-- download attachements
-- reduce behavior
-- $digest message directive on error + handlerError
-- load the locale on auth
-
-# [3.12.21] - 2018-01-10
-## Added
-- Switch from Underscore to Lodash
-- Improve auto-responder design
-- Escape button doesn't close the composer when To/CC/BCC lines are selected
-- Autoresponder UI Improvement for Free Accounts
-- improve the experience for users whose protonmail account was disabled
-- Web client is using deprecated 'Inline' parameter when uploading embedded attachments
-
-## Fixed
-- The scroll bar in the signature box (in settings) is not working properly
-- android ux problem
-- [UX improvement] Replying encrypted from outside
-- Username overlapps with side-bar menu on default Blackberry browser
-- Long subject on mobile browser takes up the whole screen, prevents scrolling
-- You cannot save contact after "This form is invalid" error
-- The theme changes only after you refresh the page, not after clicking save
-- Decryption error for some messages (from PayPal, Steam, other) mostly on Edge browser
-- When a message is already opened and 2 other messages are being selected, pressing "T" removes the already opened message.
-- Edge: Drag & drop messages problem
-- Signature is not changing when PlainText mode is on
-- drag and drop box size
-- filter long content ux bug
-- You cannot compose a message after selecting "default signature" in Settings
-- Broken Re:/Fw: treatment
-
-## Changed
-- don't show overflow-x in subject
-- #6217 - When we move elements, numberElementChecked is set to 0
-- pmView binding name
-- Lazy load app for printer state
