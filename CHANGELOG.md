@@ -1,6 +1,6 @@
 # [3.12.28] - 2018-02-01
 ## Changed
-- c cannot be a global binding
+- `c` cannot be a global binding
 - Save draft when pressing ESC in the composer
 - Autosave in plain text mode
 
