@@ -93,39 +93,27 @@ function Contact($http, $rootScope, CONSTANTS, url, chunk, contactEncryption, sa
     }
 
     const handleUpload = (total) => (result = []) => {
-        const created = _.reduce(
+        const { created, errors } = _.reduce(
             result,
             (acc, { data = {} } = {}) => {
-                return acc.concat(
-                    _.map(data.Responses, ({ Response = {} }) => {
-                        return Response.Contact;
-                    })
-                );
-            },
-            []
-        );
-
-        return { created, total };
-    };
-
-    const handleErrors = (total) => (result = []) => {
-        const errors = _.reduce(
-            result,
-            (acc, { data = {} } = {}) => {
-                return acc.concat(
-                    _.map(data.Responses, ({ Response = {} }) => {
-                        return {
+                _.each(data.Responses, ({ Response = {} }) => {
+                    if (Response.Error) {
+                        return acc.errors.push({
                             code: Response.Code,
                             name: Response.Name,
                             emails: Response.Emails,
                             error: Response.Error
-                        };
-                    })
-                );
+                        });
+                    }
+                    acc.created.push(Response.Contact);
+                });
+
+                return acc;
             },
-            []
+            { created: [], errors: [] }
         );
-        return { errors, total };
+
+        return { created, errors, total };
     };
 
     function uploadContacts(cards = [], total) {
@@ -143,8 +131,7 @@ function Contact($http, $rootScope, CONSTANTS, url, chunk, contactEncryption, sa
         });
 
         return Promise.all(promises)
-            .then(handleUpload(total))
-            .catch(handleErrors(total));
+            .then(handleUpload(total));
     }
 
     /**

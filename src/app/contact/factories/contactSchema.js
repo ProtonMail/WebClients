@@ -17,6 +17,13 @@ function contactSchema(gettextCatalog) {
         Type: getType(property)
     });
 
+    const formatName = (property = {}) => {
+       if (Array.isArray(property)) {
+           return property[0].valueOf().trim();
+       }
+       return property.valueOf().trim();
+   };
+
     const formatEmails = (property = {}) => {
         if (Array.isArray(property)) {
             return _.map(property, buildEmailProperty);
@@ -56,7 +63,7 @@ function contactSchema(gettextCatalog) {
                     }
 
                     if (checkProperty(nameProperty)) {
-                        prepared.Name = nameProperty.valueOf().trim();
+                        prepared.Name = formatName(nameProperty);
                     } else {
                         const nameValue = prepared.Emails.length ? prepared.Emails[0].Email : I18N.UNKNOWN;
 
