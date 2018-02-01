@@ -1,3 +1,9 @@
+# [3.12.28] - 2018-02-01
+## Changed
+- c cannot be a global binding
+- Save draft when pressing ESC in the composer
+- Autosave in plain text mode
+
 # [3.12.27] - 2018-02-01
 ## Added
 - "To: Undisclosed Recipients" added if no recipients in "To" and "CC"
