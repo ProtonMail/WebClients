@@ -109,8 +109,7 @@ function hotkeys(hotkeyModal, $rootScope, $state, authentication, $injector, get
         {
             keyboard: 'c',
             callback: composer,
-            description: I18N.OPEN_COMPOSER,
-            global: true
+            description: I18N.OPEN_COMPOSER
         },
         {
             keyboard: 'mod+s',
