@@ -214,7 +214,7 @@ function ComposeMessageController(
 
                 case 'send.success':
                 case 'close.message': {
-                    $scope.close(data.message, false, false);
+                    $scope.close(data.message, data.discard, data.save);
                     break;
                 }
 
