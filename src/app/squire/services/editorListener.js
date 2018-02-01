@@ -54,7 +54,10 @@ function editorListener(
             if (Hotkeys === 1) {
                 $rootScope.$emit('composer.update', {
                     type: 'close.message',
-                    data: { message: scope.message }
+                    data: {
+                        message: scope.message,
+                        save: true
+                    }
                 });
             }
         });

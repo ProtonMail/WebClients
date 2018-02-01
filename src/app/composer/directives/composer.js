@@ -104,7 +104,10 @@ function composer(AppModel, $rootScope, embedded, attachmentFileFormat, mailSett
                     if (mailSettingsModel.get('Hotkeys') === 1) {
                         $rootScope.$emit('composer.update', {
                             type: 'close.message',
-                            data: { message: scope.message }
+                            data: {
+                                message: scope.message,
+                                save: true
+                            }
                         });
                     }
                 }
