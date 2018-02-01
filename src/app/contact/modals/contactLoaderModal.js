@@ -4,7 +4,6 @@ import _ from 'lodash';
 function contactLoaderModal($rootScope, gettextCatalog, pmModal) {
     const LABEL_CLASS = 'contactLoaderModal-label';
     const SUCCESS_CLASS = 'contactLoaderModal-success';
-    const ERROR_CLASS = 'contactLoaderModal-error';
     const CONTAINER_CLASS = 'contactLoaderModal-container';
     const IMPORTED_CLASS = 'contactLoaderModal-imported';
 
@@ -57,17 +56,7 @@ function contactLoaderModal($rootScope, gettextCatalog, pmModal) {
     };
 
     const getRows = (errors = []) => errors.map(({ error }) => `<li class="contactLoaderModal-log">- ${error}</li>`).join('');
-    const getSuccess = ({ created = [], total = 0 }) => {
-        return `
-                <p>${I18N.importComplete}</p>
-                <div class="contactLoaderModal-frame">
-                    <h1>${created.length} of ${total}</h1>
-                    <strong>${I18N.contactImported}</strong>
-                </div>
-            `;
-    };
-
-    const getError = ({ errors = [], total }) => {
+    const getError = (errors = [], total) => {
         if (!errors.length) {
             return '';
         }
@@ -82,6 +71,16 @@ function contactLoaderModal($rootScope, gettextCatalog, pmModal) {
             <ul class="contactLoaderModal-logs">${getRows(errors)}</ul>
         `;
     };
+    const getSuccess = ({ created = [], errors = [], total = 0 }) => {
+        return `
+                <p>${I18N.importComplete}</p>
+                <div class="contactLoaderModal-frame">
+                    <h1>${created.length} of ${total}</h1>
+                    <strong>${I18N.contactImported}</strong>
+                </div>
+                ${getError(errors, total)}
+            `;
+    };
 
     return pmModal({
         controllerAs: 'ctrl',
@@ -95,11 +94,6 @@ function contactLoaderModal($rootScope, gettextCatalog, pmModal) {
                     if (type === 'contactCreated') {
                         document.querySelector(`.${CONTAINER_CLASS}`).classList.add(IMPORTED_CLASS);
                         document.querySelector(`.${SUCCESS_CLASS}`).innerHTML = getSuccess(data);
-                    }
-
-                    if (type === 'contactErrors') {
-                        document.querySelector(`.${CONTAINER_CLASS}`).classList.add(IMPORTED_CLASS);
-                        document.querySelector(`.${ERROR_CLASS}`).innerHTML = getError(data);
                     }
                 })
             );
