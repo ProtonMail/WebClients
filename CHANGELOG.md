@@ -1,3 +1,11 @@
+# [3.12.29] - 2018-02-02
+## Fixed
+- Created folder or label shows up twice with the same name when you go back to messages and when you go back to Folders / Labels, the page is blank.
+- Cannot reply/forward a messages on iOS browsers
+
+## Changed
+- Handle contact errors during import
+
 # [3.12.28] - 2018-02-01
 ## Changed
 - `c` cannot be a global binding
