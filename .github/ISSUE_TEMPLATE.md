@@ -1,9 +1,7 @@
-* Which browser (+ version) ? Chrome / Firefox / Safari / Opera
-* Which OS (+ version)? Windows / Mac OS / Linux / iOS / Android
-* Which layout mode? Column mode / Row mode
-* Which threading mode? Conversation mode / Message mode
+* Browser + version? Chrome / Firefox / Safari / Opera
+* OS + version? Windows / Mac OS / Linux / iOS / Android
 * Can you reproduce the problem each time? Yes / No
-* Which url?
+* URL?
 
 ### What steps will reproduce the problem?
 
