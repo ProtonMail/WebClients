@@ -1,16 +1,33 @@
 <div class="displayNameSignature-container">
-    <label for="displayName" translate-context="Label" translate>Display name</label>
-    <input
-        type="text"
-        id="displayName"
-        class="displayNameSignature-input"
-        ng-model="model.DisplayName">
-    <label for="signature" translate-context="Label" translate>Signature</label>
-    <squire
-        id="signature"
-        class="displayNameSignature-squire"
-        name="signature"
-        data-type-content="signature"
-        allow-data-uri="true"
-        data-value="model.Signature"></squire>
+    <div class="pm_grid">
+        <div class="col-3-8">
+            <label class="displayNameSignature-label" for="displayName">
+                <span translate-context="Label" translate>Display name</span>
+                <a href="https://protonmail.com/support/knowledge-base/display-name/" target="_blank" class="text-purple">
+                    <i class="fa fa-info-circle"></i>
+                </a>
+            </label>
+        </div>
+        <div class="col-5-8">
+            <input
+                type="text"
+                id="displayName"
+                class="displayNameSignature-input"
+                ng-model="model.DisplayName">
+        </div>
+    </div>
+    <div class="pm_grid">
+        <div class="col-3-8">
+            <label class="displayNameSignature-label" for="signature" translate-context="Label" translate>Signature</label>
+        </div>
+        <div class="col-5-8">
+            <squire
+                id="signature"
+                class="displayNameSignature-squire"
+                name="signature"
+                data-type-content="signature"
+                allow-data-uri="true"
+                data-value="model.Signature"></squire>
+        </div>
+    </div>
 </div>

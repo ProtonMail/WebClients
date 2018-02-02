@@ -1,8 +1,11 @@
-import defaultSignature from './directives/defaultSignature';
 import humanVerification from './directives/humanVerification';
 import signupCreationProcess from './directives/signupCreationProcess';
 import signupHumanForm from './directives/signupHumanForm';
 import signupLink from './directives/signupLink';
+import addressesSelector from './directives/addressesSelector';
+import addressesSection from './directives/addressesSection';
+import pmSignatureToggle from './directives/pmSignatureToggle';
+import identitySection from './directives/identitySection';
 import signupPayForm from './directives/signupPayForm';
 import signupStepLink from './directives/signupStepLink';
 import signupUserForm from './directives/signupUserForm';
@@ -24,11 +27,14 @@ import userType from './services/userType';
 export default angular
     .module('proton.user', [])
     .service('userType', userType)
-    .directive('defaultSignature', defaultSignature)
     .directive('humanVerification', humanVerification)
     .directive('signupCreationProcess', signupCreationProcess)
     .directive('signupHumanForm', signupHumanForm)
     .directive('signupLink', signupLink)
+    .directive('addressesSelector', addressesSelector)
+    .directive('addressesSection', addressesSection)
+    .directive('pmSignatureToggle', pmSignatureToggle)
+    .directive('identitySection', identitySection)
     .directive('signupPayForm', signupPayForm)
     .directive('signupStepLink', signupStepLink)
     .directive('signupUserForm', signupUserForm)

@@ -18,7 +18,6 @@ function addressModel(
     memberModal,
     eventManager,
     confirmModal,
-    signatureModal,
     Address,
     authentication,
     addressWithoutKeysManager,
@@ -234,22 +233,6 @@ function addressModel(
         });
     };
 
-    const editSignature = (address) => {
-        signatureModal.activate({
-            params: {
-                address,
-                title: I18N.EDIT_MODAL.title,
-                cancel: signatureModal.deactivate,
-                confirm(address) {
-                    signatureModel.save({ id: address.ID, displayName: address.DisplayName, signature: address.Signature }).then(() => {
-                        notification.success(I18N.SUCCESS_EDIT);
-                        signatureModal.deactivate();
-                    });
-                }
-            }
-        });
-    };
-
     /**
      * Generate the key for a single address
      * It will open the generate modal
@@ -305,7 +288,6 @@ function addressModel(
     return {
         add,
         disable,
-        editSignature,
         enable,
         generate,
         generatePmMe,

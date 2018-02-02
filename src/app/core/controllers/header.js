@@ -49,7 +49,6 @@ function HeaderController($rootScope, $scope, $state, authentication, organizati
             'secured.domains',
             'secured.bridge',
             'secured.pmme',
-            'secured.signatures',
             'secured.members',
             'secured.payments',
             'secured.keys',

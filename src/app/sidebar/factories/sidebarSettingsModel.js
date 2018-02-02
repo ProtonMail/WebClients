@@ -36,11 +36,6 @@ function sidebarSettingsModel(gettextCatalog) {
             label: gettextCatalog.getString('Appearance', null, 'Title'),
             icon: 'fa-paint-brush'
         },
-        signatures: {
-            state: 'secured.signatures',
-            label: gettextCatalog.getString('Name / Signature', null, 'Title'),
-            icon: 'fa-at'
-        },
         members: {
             state: 'secured.members',
             label: gettextCatalog.getString('Addresses / Users', null, 'Title'),
