@@ -1,7 +1,8 @@
 /* @ngInject */
 function bugReportModel($rootScope, bugReportApi, bugModal) {
-    $rootScope.$on('bugReport', (e, { type }) => {
-        type === 'new' && open();
+
+    $rootScope.$on('bugReport', (e, { type, data = {} }) => {
+        type === 'new' && open(data);
     });
 
     const takeScreenshot = ({ attachScreenshot }) => {
@@ -16,12 +17,12 @@ function bugReportModel($rootScope, bugReportApi, bugModal) {
      * @param  {String} screenshot screenshot of the page
      * @return {Object}
      */
-    const getModalParam = () => ({
+    const getModalParam = (content) => ({
         params: {
             form: bugReportApi.getForm(),
+            content,
             submit(data) {
                 const form = angular.copy(data);
-
                 bugModal.deactivate();
                 takeScreenshot(form).then((screenshot) => bugReportApi.report(form, screenshot));
             },
@@ -35,8 +36,8 @@ function bugReportModel($rootScope, bugReportApi, bugModal) {
      * Take a screenshot of the page then open the modal
      * @return {void}
      */
-    function open() {
-        bugModal.activate(getModalParam());
+    function open({ content = '' }) {
+        bugModal.activate(getModalParam(content));
     }
 
     return { init: angular.noop };

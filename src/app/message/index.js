@@ -43,9 +43,11 @@ import transformLinks from './services/transformLinks';
 import transformRemote from './services/transformRemote';
 import transformStylesheet from './services/transformStylesheet';
 import transformWelcome from './services/transformWelcome';
+import messageDisplayError from './directives/messageDisplayError';
 
 export default angular
     .module('proton.message', ['ngSanitize', 'proton.contact', 'proton.squire'])
+    .directive('messageDisplayError', messageDisplayError)
     .run((unsubscribeModel) => unsubscribeModel.init())
     .directive('actionMessage', actionMessage)
     .directive('allMessageLabels', allMessageLabels)

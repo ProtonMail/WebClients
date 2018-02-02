@@ -50,26 +50,27 @@ function message($state, $rootScope, cache, displayContent, messageScroll, tools
                 return cache.getMessage(scope.message.ID).then((message) => _.extend(scope.message, message));
             };
 
-            const updateMessage = (promise) => {
-                promise
-                    .then(({ type, body }) => {
-                        scope.$applyAsync(() => {
-                            scope.message.expand = true;
-                            scope.message.isPlain = type === 'plain';
-                            if (type && body) {
-                                scope.message.viewMode = 'html';
-                                scope.body = body;
-                            }
-                        });
-                    })
-                    .catch((e) => {
-                        console.error(e);
-                        $exceptionHandler(e);
-                        scope.$applyAsync(() => {
-                            scope.message.expand = true;
-                            scope.message.viewMode = 'plain';
-                        });
+            const updateMessage = async (promise) => {
+                try {
+                    const { type, body } = await promise;
+                    scope.$applyAsync(() => {
+                        scope.message.expand = true;
+                        scope.message.isPlain = type === 'plain';
+                        if (type && body) {
+                            scope.message.viewMode = 'html';
+                            scope.body = body;
+                        }
                     });
+                } catch (e) {
+                    console.error(e);
+                    $exceptionHandler(e);
+                    scope.$applyAsync(() => {
+                        scope.message.expand = true;
+                        scope.message.viewMode = 'plain';
+                        scope.message.hasError = true;
+                        scope.message.errorInfo = e;
+                    });
+                }
             };
 
             const loadContent = () => updateMessage(displayContent(scope.message, scope.body, scope.index));

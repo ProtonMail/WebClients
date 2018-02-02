@@ -201,8 +201,7 @@ function messageModel($q, $timeout, pmcw, User, gettextCatalog, authentication, 
 
             return getPubKeys(sender)
                 .then((pubKeys) => {
-                    return pmcw
-                        .decryptMessageLegacy({
+                    return pmcw.decryptMessageLegacy({
                             message,
                             privateKeys,
                             publicKeys: pubKeys ? pmcw.getKeys(pubKeys) : [],
@@ -210,19 +209,17 @@ function messageModel($q, $timeout, pmcw, User, gettextCatalog, authentication, 
                         })
                         .then((rep) => {
                             this.decrypting = false;
+                            this.hasError = false;
 
                             if (this.IsEncrypted === 8 || this.MIMEType === 'multipart/mixed') {
                                 return this.parse(rep.data).then((data) => ({ data }));
                             }
                             return rep;
-                        })
-                        .catch((error) => {
-                            this.decrypting = false;
-                            throw error;
                         });
                 })
                 .catch((error) => {
                     this.networkError = error.status === -1;
+                    this.hasError = true;
                     this.decrypting = false;
                     throw error;
                 });
@@ -291,11 +288,13 @@ function messageModel($q, $timeout, pmcw, User, gettextCatalog, authentication, 
                                 this.setDecryptedBody(result.data, !this.isPlainText());
                                 this.Signature = result.signature;
                                 this.failedDecryption = false;
+                                this.hasError = false;
                                 deferred.resolve(result.data);
                             })
                             .catch((err) => {
                                 this.setDecryptedBody(this.Body, false);
                                 this.failedDecryption = true;
+                                this.hasError = true;
 
                                 // We need to display the encrypted body to the user if it fails
                                 this.MIMEType = 'text/plain';
@@ -305,6 +304,7 @@ function messageModel($q, $timeout, pmcw, User, gettextCatalog, authentication, 
                         this.setDecryptedBody(this.Body, false);
                         this.MIMEType = 'text/plain';
                         this.failedDecryption = true;
+                        this.hasError = true;
                         deferred.reject(err);
                     }
                 } else {
