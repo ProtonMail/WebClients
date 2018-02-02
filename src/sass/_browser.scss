@@ -17,6 +17,15 @@
 
 // All iOS devices
 .ua-ios {
+    .angular-squire-wrapper {
+        overflow: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .angular-squire {
+        overflow: auto;
+        -webkit-overflow-scrolling: touch;
+    }
 
     #pm_captcha {
         -webkit-overflow-scrolling: touch;
