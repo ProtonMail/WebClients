@@ -38,7 +38,7 @@ function updateCollection(all = [], events = [], type = '') {
     const { collection } = _.reduce([].concat(todo.create, todo.update), (acc, element) => {
         const index = acc.MAP[element.ID];
 
-        if (index) {
+        if (typeof index !== 'undefined') { // index can be set to 0
             // Update
             acc.collection[index] = element;
             return acc;
