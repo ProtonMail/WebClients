@@ -1419,7 +1419,7 @@ msgctxt "Action"
 msgid "All Unstarred"
 msgstr ""
 
-#: ./src/app/contact/factories/contactEditor.js:82
+#: ./src/app/contact/factories/contactEditor.js:70
 msgctxt "Success"
 msgid "All contacts deleted"
 msgstr ""
@@ -1623,7 +1623,7 @@ msgctxt "Info"
 msgid "Are you sure you want to clear all your logs?"
 msgstr ""
 
-#: ./src/app/contact/factories/contactEditor.js:117
+#: ./src/app/contact/factories/contactEditor.js:105
 msgctxt "Info"
 msgid "Are you sure you want to delete all your contacts?"
 msgstr ""
@@ -1634,7 +1634,7 @@ msgctxt "Info"
 msgid "Are you sure you want to delete this address?"
 msgstr ""
 
-#: ./src/app/contact/factories/contactEditor.js:118
+#: ./src/app/contact/factories/contactEditor.js:106
 msgctxt "Info"
 msgid "Are you sure you want to delete this contact?"
 msgid_plural "Are you sure you want to delete the selected contacts?"
@@ -2516,7 +2516,7 @@ msgctxt "Success message for the contact modal"
 msgid "Contact added"
 msgstr ""
 
-#: ./src/app/contact/factories/contactEditor.js:83
+#: ./src/app/contact/factories/contactEditor.js:71
 msgctxt "Success"
 msgid "Contact deleted"
 msgid_plural "Contacts deleted"
@@ -2528,7 +2528,7 @@ msgctxt "Error"
 msgid "Contact does not contain email address"
 msgstr ""
 
-#: ./src/app/contact/factories/contactEditor.js:68
+#: ./src/app/contact/factories/contactEditor.js:56
 msgctxt "Success message"
 msgid "Contact edited"
 msgstr ""
@@ -2944,7 +2944,7 @@ msgctxt "atom text loader"
 msgid "Decrypting"
 msgstr ""
 
-#: ./src/app/contact/modals/contactLoaderModal.js:20
+#: ./src/app/contact/modals/contactLoaderModal.js:19
 msgctxt "Label for the progress bar displayed during the contact export"
 msgid "Decrypting contacts: {{progress}}%"
 msgstr ""
@@ -2993,7 +2993,7 @@ msgctxt "User's signature"
 msgid "Default Name / Signature saved"
 msgstr ""
 
-#: ./src/app/contact/factories/contactEditor.js:126
+#: ./src/app/contact/factories/contactEditor.js:114
 #: ./src/app/elements/services/removeElement.js:4
 msgctxt "Title"
 msgid "Delete"
@@ -3042,7 +3042,7 @@ msgctxt "Title"
 msgid "Delete address"
 msgstr ""
 
-#: ./src/app/contact/factories/contactEditor.js:126
+#: ./src/app/contact/factories/contactEditor.js:114
 #: ./src/app/elements/directives/advancedFilterElement.js:51
 msgctxt "Title"
 msgid "Delete all"
@@ -3637,7 +3637,7 @@ msgctxt "Action"
 msgid "Encrypting attachments"
 msgstr ""
 
-#: ./src/app/contact/modals/contactLoaderModal.js:13
+#: ./src/app/contact/modals/contactLoaderModal.js:12
 msgctxt "Label for the progress bar displayed during the contact import"
 msgid "Encrypting contacts: {{progress}}%"
 msgstr ""
@@ -3997,12 +3997,12 @@ msgstr ""
 msgid "Export contact in vCard format"
 msgstr ""
 
-#: ./src/app/contact/modals/contactLoaderModal.js:31
+#: ./src/app/contact/modals/contactLoaderModal.js:30
 msgctxt "Title for the contacts exporter modal"
 msgid "Exporting Contacts"
 msgstr ""
 
-#: ./src/app/contact/modals/contactLoaderModal.js:33
+#: ./src/app/contact/modals/contactLoaderModal.js:32
 msgctxt "Information for the contacts exporter modal"
 msgid "Exporting contacts, this may take a few minutes. When the progress is completed, this modal will close and let you download the file."
 msgstr ""
@@ -4666,7 +4666,7 @@ msgctxt "Action"
 msgid "Import contacts"
 msgstr ""
 
-#: ./src/app/contact/modals/contactLoaderModal.js:42
+#: ./src/app/contact/modals/contactLoaderModal.js:41
 msgctxt "Error during importation"
 msgid "Import failed. Please check the import file or try again."
 msgstr ""
@@ -4676,17 +4676,17 @@ msgctxt "Info"
 msgid "Important: Please make sure you saved the recovery codes. Otherwise you can permanently lose access to your account if you lose your 2FA device."
 msgstr ""
 
-#: ./src/app/contact/modals/contactLoaderModal.js:32
+#: ./src/app/contact/modals/contactLoaderModal.js:31
 msgctxt "Title for the contacts exporter modal"
 msgid "Importing Contacts"
 msgstr ""
 
-#: ./src/app/contact/modals/contactLoaderModal.js:29
+#: ./src/app/contact/modals/contactLoaderModal.js:28
 msgctxt "Import complete"
 msgid "Importing contacts complete!"
 msgstr ""
 
-#: ./src/app/contact/modals/contactLoaderModal.js:38
+#: ./src/app/contact/modals/contactLoaderModal.js:37
 msgctxt "Information for the contacts importer modal"
 msgid "Importing contacts, this may take a few minutes."
 msgstr ""
@@ -8832,7 +8832,7 @@ msgctxt "dashboard, donation informations"
 msgid "Upgrading to a paid account is the best way to support ProtonMail, but you can also donate any amount."
 msgstr ""
 
-#: ./src/app/contact/modals/contactLoaderModal.js:27
+#: ./src/app/contact/modals/contactLoaderModal.js:26
 msgctxt "Label for the progress bar displayed during the contact import"
 msgid "Upload: {{progress}}%"
 msgstr ""
@@ -9670,7 +9670,7 @@ msgctxt "ProtonVPN with X connections"
 msgid "connections"
 msgstr ""
 
-#: ./src/app/contact/modals/contactLoaderModal.js:30
+#: ./src/app/contact/modals/contactLoaderModal.js:29
 msgctxt "1 of 2 contacts successfully imported."
 msgid "contacts successfully imported."
 msgstr ""
@@ -9922,7 +9922,7 @@ msgctxt "Info"
 msgid "{{name}}@pm.me is activated on your account."
 msgstr ""
 
-#: ./src/app/contact/modals/contactLoaderModal.js:40
+#: ./src/app/contact/modals/contactLoaderModal.js:39
 msgctxt "Number of failed contact during the contact import"
 msgid "{{number}} failed to import."
 msgstr ""
