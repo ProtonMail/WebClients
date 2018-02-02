@@ -1,6 +1,7 @@
 import _ from 'lodash';
 
 import { flow, filter, map } from 'lodash/fp';
+import updateCollection from '../../utils/helpers/updateCollection';
 
 /* @ngInject */
 function contactCache(
@@ -25,11 +26,6 @@ function contactCache(
     };
 
     const { CONTACTS_PER_PAGE } = CONSTANTS;
-    const ACTIONS = {
-        [CONSTANTS.STATUS.DELETE]: 'remove',
-        [CONSTANTS.STATUS.CREATE]: 'create',
-        [CONSTANTS.STATUS.UPDATE]: 'update'
-    };
     const getItem = (ID) => _.find(CACHE.contacts, { ID });
     const findIndex = (ID) => _.findIndex(CACHE.contacts, { ID });
     const emit = () => $rootScope.$emit('contacts', { type: 'contactsUpdated', data: { all: get() } });
@@ -233,29 +229,11 @@ function contactCache(
     }
 
     function contactEvents({ events = [] }) {
-        const todo = events.reduce(
-            (acc, { ID, Contact = {}, Action }) => {
-                const action = ACTIONS[Action];
+        const { collection, todo } = updateCollection(CACHE.contacts, events, 'Contact');
 
-                if (action === 'create') {
-                    acc[action].push(Contact);
-                    return acc;
-                }
-                // Contact does not exist for DELETE
-                acc[action][ID] = Contact;
-                return acc;
-            },
-            { update: {}, create: [], remove: {} }
-        );
+        CACHE.contacts = collection;
 
-        const toAdd = _.filter(todo.create, ({ ID }) => !CACHE.map.all[ID]);
-
-        CACHE.contacts = [].concat(
-            flow(map((contact) => todo.update[contact.ID] || contact), filter(({ ID }) => !todo.remove[ID]))(get()),
-            toAdd
-        );
-
-        sync(toAdd);
+        sync(todo.create);
         emit();
     }
 

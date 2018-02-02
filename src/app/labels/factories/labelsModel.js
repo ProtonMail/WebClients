@@ -1,16 +1,12 @@
 import _ from 'lodash';
+import { flow, filter, sortBy } from 'lodash/fp';
 
-import { flow, filter, map, sortBy } from 'lodash/fp';
+import updateCollection from '../../utils/helpers/updateCollection';
 
 /* @ngInject */
 function labelsModel($rootScope, CONSTANTS, sanitize) {
     const IS_LABEL = 0;
     const IS_FOLDER = 1;
-    const ACTIONS = {
-        [CONSTANTS.STATUS.DELETE]: 'remove',
-        [CONSTANTS.STATUS.CREATE]: 'create',
-        [CONSTANTS.STATUS.UPDATE]: 'update'
-    };
 
     const CACHE = {
         labels: [],
@@ -124,25 +120,9 @@ function labelsModel($rootScope, CONSTANTS, sanitize) {
      * @return {void}
      */
     const sync = (list = []) => {
-        const todo = list.reduce(
-            (acc, { ID, Label = {}, Action }) => {
-                const action = ACTIONS[Action];
+        const { collection, todo } = updateCollection(CACHE.all, list, 'Label');
 
-                if (action === 'create') {
-                    acc[action].push(Label);
-                    return acc;
-                }
-                // Label does not exist for DELETE
-                acc[action][ID] = Label;
-                return acc;
-            },
-            { update: {}, create: [], remove: {} }
-        );
-
-        CACHE.all = cleanLabels([].concat(
-            flow(map((label) => todo.update[label.ID] || label), filter(({ ID }) => !todo.remove[ID]))(CACHE.all),
-            flow(filter(({ ID }) => !CACHE.map[ID]), map((label) => label))(todo.create)
-        ));
+        CACHE.all = cleanLabels(collection);
 
         syncMap();
         syncLabels();
