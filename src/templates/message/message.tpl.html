@@ -214,19 +214,7 @@
 
         <div class="frame message-frame" data-embedded-img-loader data-inject-message-media>
             <loader-tag ng-if="message.decrypting === true"></loader-tag>
-            <div class="alert alert-danger" ng-if="message.failedDecryption && !message.networkError">
-                <span class="pull-left fa fa-exclamation-triangle"></span>
-                <strong translate translate-context="Message decryption error">Decryption error</strong>
-                <div translate translate-context="Message decryption error">Decryption of this message's encryption content failed.</div>
-                <a href="#" reload-state translate-context="Action to reload the current state" translate>Try again</a>
-            </div>
-
-            <div class="alert alert-danger" ng-if="message.networkError">
-                <span class="pull-left fa fa-exclamation-triangle"></span>
-                <strong translate translate-context="Message network error">Network error</strong>
-                <div translate translate-context="Message network error">Please check your connection and try again.</div>
-                <a href="#" reload-state translate-context="Action to reload the current state" translate>Try again</a>
-            </div>
+            <message-display-error ng-if="message.hasError"></message-display-error>
             <div
                 class="bodyDecrypted email message-body-container"
                 ng-class="{'plain': message.isPlain}"
