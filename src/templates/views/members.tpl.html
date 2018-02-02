@@ -267,13 +267,13 @@
                                                         <address-btn-actions
                                                             data-model="address"
                                                             data-action="enable"
-                                                            ng-if="isAdmin && address.Status === 0 && address.Type !== 1"
+                                                            ng-if="isAdmin && address.Status === 0 && address.Type !== 1 && address.Type !== 4"
                                                             class="pm_button link"></address-btn-actions>
 
                                                         <address-btn-actions
                                                             data-model="address"
                                                             data-action="disable"
-                                                            ng-if="isAdmin && address.Status === 1 && address.Type !== 1"
+                                                            ng-if="isAdmin && address.Status === 1 && address.Type !== 1 && address.Type !== 4"
                                                             class="pm_button link"></address-btn-actions>
 
                                                         <address-btn-actions
