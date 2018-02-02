@@ -663,53 +663,6 @@ export default angular
                 }
             })
 
-            .state('secured.signatures', {
-                url: '/signatures',
-                resolve: {
-                    members(user, memberModel, networkActivityTracker) {
-                        if (user.Role === CONSTANTS.PAID_ADMIN_ROLE) {
-                            return networkActivityTracker.track(memberModel.fetch());
-                        }
-                        return { data: {} };
-                    },
-                    domains(user, domainModel, networkActivityTracker) {
-                        if (user.Role === CONSTANTS.PAID_ADMIN_ROLE) {
-                            return networkActivityTracker.track(domainModel.fetch());
-                        }
-                        return { data: {} };
-                    },
-                    pmDomains(pmDomainModel, networkActivityTracker) {
-                        return networkActivityTracker.track(pmDomainModel.fetch());
-                    },
-                    organization(user, organizationModel, networkActivityTracker) {
-                        return networkActivityTracker.track(organizationModel.fetch());
-                    },
-                    organizationKeys(user, organizationKeysModel, networkActivityTracker) {
-                        if (user.Role === CONSTANTS.PAID_ADMIN_ROLE) {
-                            return networkActivityTracker.track(organizationKeysModel.fetch());
-                        }
-                        return Promise.resolve();
-                    },
-                    methods(user, paymentModel, networkActivityTracker) {
-                        return networkActivityTracker.track(paymentModel.getMethods(null, user));
-                    },
-                    status(user, paymentModel, networkActivityTracker) {
-                        return networkActivityTracker.track(paymentModel.getStatus());
-                    }
-                },
-                views: {
-                    'content@secured': {
-                        templateUrl: require('../templates/views/signatures.tpl.html'),
-                        controller: 'SignaturesController'
-                    }
-                },
-                onEnter(AppModel) {
-                    AppModel.set('inboxSidebar', false);
-                    AppModel.set('contactSidebar', false);
-                    AppModel.set('settingsSidebar', true);
-                }
-            })
-
             .state('secured.payments', {
                 url: '/payments',
                 views: {
@@ -838,7 +791,7 @@ export default angular
                         if (CONSTANTS.KEY_PHASE > 3 && !user.subuser && user.Role !== CONSTANTS.PAID_MEMBER_ROLE) {
                             return Promise.resolve();
                         }
-                        $state.go('secured.signatures');
+                        $state.go('secured.account');
                         return Promise.reject();
                     },
                     members(user, memberModel, networkActivityTracker) {
@@ -890,7 +843,7 @@ export default angular
                 resolve: {
                     access(user, $state) {
                         if (user.subuser || user.Role === CONSTANTS.PAID_MEMBER_ROLE) {
-                            $state.go('secured.signatures');
+                            $state.go('secured.account');
                             return Promise.reject();
                         }
                         return Promise.resolve();

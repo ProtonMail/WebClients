@@ -10,7 +10,7 @@ function welcomeModal(pmModal, authentication, signatureModel) {
             this.displayName = Name;
             this.cancel = params.cancel;
             this.next = () => {
-                this.displayName.length && signatureModel.save({ displayName: this.displayName });
+                this.displayName.length && signatureModel.save({ DisplayName: this.displayName });
                 params.next();
             };
         }

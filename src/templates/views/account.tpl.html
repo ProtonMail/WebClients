@@ -11,7 +11,7 @@
                         translate-comment="Account page heading"
                         translate-context="Title">Identity</h2>
                 </header-block>
-                <default-signature></default-signature>
+                <identity-section></identity-section>
             </section>
 
             <section class="pm_form col-1-2">
@@ -295,28 +295,15 @@
         </div><!--/.row-->
 
         <div class="row pm_grid">
-            <section class="pm_form col-1-2" ng-if="!isMember">
-                <header-block class="settingsAccount-header-delete">
-                    <h2
-                        class="settingsAccount-title-delete"
-                        translate
-                        translate-context="Title">Delete Account</h2>
-                </header-block>
-                <button class="pm_button error" ng-click="deleteAccount()" translate-context="Action" translate>Delete your account</button>
-            </section>
             <section class="pm_form col-1-2">
-                <header-block class="settingsAccount-header-search">
+                <header-block class="settingsAccount-header-addresses-priority">
                     <h2
-                    class="settingsAccount-title-search"
-                    translate
-                    translate-comment="Section heading"
-                    translate-context="Title">Search</h2>
+                        class="settingsAccount-title-addresses-priority"
+                        translate
+                        translate-context="Title">Address Priority</h2>
                 </header-block>
-                <wildcard-checkbox></wildcard-checkbox>
+                <addresses-section></addresses-section>
             </section>
-        </div><!--/.row-->
-
-        <div class="row pm_grid">
             <section class="pm_form col-1-2" ng-if="!isMember">
                 <header-block class="settingsAccount-header-subscriptions">
                     <h2
@@ -341,6 +328,28 @@
                     <span translate-context="Label" translate>Proton Beta (~ 10-12 per year)</span>
                 </label>
             </section>
-        </div>
+        </div><!--/.row-->
+
+        <div class="row pm_grid">
+            <section class="pm_form col-1-2">
+                <header-block class="settingsAccount-header-search">
+                    <h2
+                    class="settingsAccount-title-search"
+                    translate
+                    translate-comment="Section heading"
+                    translate-context="Title">Search</h2>
+                </header-block>
+                <wildcard-checkbox></wildcard-checkbox>
+            </section>
+            <section class="pm_form col-1-2" ng-if="!isMember">
+                <header-block class="settingsAccount-header-delete">
+                    <h2
+                        class="settingsAccount-title-delete"
+                        translate
+                        translate-context="Title">Delete Account</h2>
+                </header-block>
+                <button class="pm_button error" ng-click="deleteAccount()" translate-context="Action" translate>Delete your account</button>
+            </section>
+        </div><!--/.row-->
     </div>
 </div>

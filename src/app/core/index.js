@@ -20,7 +20,6 @@ import hotkeyModal from './factories/hotkeyModal';
 import humanVerificationModal from './factories/humanVerificationModal';
 import reactivateModal from './factories/reactivateModal';
 import recoveryCodeModal from './factories/recoveryCodeModal';
-import signatureModal from './factories/signatureModal';
 import supportModal from './factories/supportModal';
 import switchPasswordModeModal from './factories/switchPasswordModeModal';
 import twoFAIntroModal from './factories/twoFAIntroModal';
@@ -58,7 +57,6 @@ export default angular
     .factory('humanVerificationModal', humanVerificationModal)
     .factory('reactivateModal', reactivateModal)
     .factory('recoveryCodeModal', recoveryCodeModal)
-    .factory('signatureModal', signatureModal)
     .factory('supportModal', supportModal)
     .factory('switchPasswordModeModal', switchPasswordModeModal)
     .factory('twoFAIntroModal', twoFAIntroModal)
