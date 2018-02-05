@@ -59,22 +59,19 @@ function bugReportApi(Report, CONFIG, $state, aboutClient, authentication, gette
      * Take a screenshot of the current state when we open the modal
      * @return {Promise}   resolve data is the image as a base64 string
      */
-    const takeScreenshot = () =>
-        new Promise((resolve) => {
-            if (!window.html2canvas) {
-                return resolve();
-            }
+    const takeScreenshot = async () => {
 
-            window.html2canvas(document.body, {
-                onrendered(canvas) {
-                    try {
-                        resolve(canvas.toDataURL('image/jpeg', 0.9).split(',')[1]);
-                    } catch (e) {
-                        resolve(canvas.toDataURL().split(',')[1]);
-                    }
-                }
-            });
-        });
+        if (!window.html2canvas) {
+            return;
+        }
+
+        const canvas = await window.html2canvas(document.body, { logging: CONFIG.debug });
+        try {
+            return canvas.toDataURL('image/jpeg', 0.9).split(',')[1];
+        } catch (e) {
+            return canvas.toDataURL().split(',')[1];
+        }
+    };
 
     /**
      * Send the form to the server
