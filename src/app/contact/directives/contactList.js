@@ -129,6 +129,11 @@ function contactList($filter, dispatchers, $state, $stateParams, contactCache, h
             function onClick(e) {
                 const { target, shiftKey } = e;
 
+                // Indicates if there is currently any text selected
+                if (!window.getSelection().isCollapsed) {
+                    return e.preventDefault();
+                }
+
                 if (/customCheckbox/.test(target.className)) {
                     e.stopPropagation();
                     setContactSelection(target.dataset.contactId, target.checked, shiftKey);
