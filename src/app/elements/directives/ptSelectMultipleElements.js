@@ -19,13 +19,9 @@ function ptSelectMultipleElements($rootScope) {
          * @return {void}
          */
         return (previous, from, to) => {
-            _.each(scope.conversations, (conversation, i) => {
-                if (i >= from && i <= to) {
-                    conversation.Selected = previous.conversation.Selected;
-                } else {
-                    return false; // Break
-                }
-            });
+            for (let index = from; index < to; index++) {
+                scope.conversations[index].Selected = previous.conversation.Selected;
+            }
 
             $rootScope.numberElementChecked = countChecked(scope.conversations);
         };
