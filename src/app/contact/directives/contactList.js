@@ -20,6 +20,8 @@ function contactList($filter, dispatchers, $state, $stateParams, contactCache, h
 
             scope.contacts = [];
             scope.showContact = (contactID) => $state.go('secured.contacts.details', { id: contactID });
+            scope.isSelected = ({ ID }) => ID === cursorID;
+            scope.isActive = ({ ID }) => ID === $stateParams.id;
 
             const setContactCursor = (id) => {
                 cursorID = id;
