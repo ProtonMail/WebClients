@@ -25,7 +25,7 @@ module.exports = {
             'mousetrap/plugins/pause/mousetrap-pause.js',
             'mousetrap/plugins/global-bind/mousetrap-global-bind.js',
             'angular-gettext/dist/angular-gettext.js',
-            'fingerprintjs2/fingerprint2.js',
+            'fingerprintjs2/dist/fingerprint2.js',
             'bcryptjs/dist/bcrypt.js',
             'nouislider/distribute/nouislider.js',
             'ua-parser-js/src/ua-parser.js',
