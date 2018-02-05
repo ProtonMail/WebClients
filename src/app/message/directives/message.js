@@ -43,8 +43,7 @@ function message($state, $rootScope, cache, displayContent, messageScroll, tools
         link(scope, element) {
             const unsubscribe = [];
 
-            const recipients = getRecipients(scope.message);
-            !recipients.length && element[0].classList.add(CLASSNAME.UNDISCLOSED);
+            !getRecipients(scope.message).length && element[0].classList.add(CLASSNAME.UNDISCLOSED);
 
             const loadMessageBody = () => {
                 return cache.getMessage(scope.message.ID).then((message) => _.extend(scope.message, message));
@@ -183,13 +182,13 @@ function message($state, $rootScope, cache, displayContent, messageScroll, tools
              * Get all recipients
              * @return {Array} recipients
              */
-            scope.recipients = () => recipients;
+            scope.recipients = () => getRecipients(scope.message);
 
             /**
              * Check if there is no recipients
              * @return {Boolean}
              */
-            scope.noRecipients = () => !recipients.length;
+            scope.noRecipients = () => !getRecipients(scope.message).length;
 
             // TODO need review with label dropdown
             scope.getMessage = () => [scope.message];
