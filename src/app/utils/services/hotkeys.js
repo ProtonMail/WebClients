@@ -141,18 +141,21 @@ function hotkeys(hotkeyModal, $rootScope, $state, authentication, $injector, get
         {
             keyboard: 'r',
             callback: read,
-            description: I18N.MARK_AS_READ
+            description: I18N.MARK_AS_READ,
+            keyEventType: KEY_EVENT_TYPE.UP
         },
         {
             keyboard: 'u',
             callback: unread,
-            description: I18N.MARK_AS_UNREAD
+            description: I18N.MARK_AS_UNREAD,
+            keyEventType: KEY_EVENT_TYPE.UP
         },
         { keyboard: '.', callback: toggleStar },
         {
             keyboard: 'i',
             callback: inbox,
-            description: I18N.MOVE_TO_INBOX
+            description: I18N.MOVE_TO_INBOX,
+            keyEventType: KEY_EVENT_TYPE.UP
         },
         {
             keyboard: ['t', 'del', 'command+backspace'],
@@ -163,12 +166,14 @@ function hotkeys(hotkeyModal, $rootScope, $state, authentication, $injector, get
         {
             keyboard: 'a',
             callback: archive,
-            description: I18N.MOVE_TO_ARCHIVE
+            description: I18N.MOVE_TO_ARCHIVE,
+            keyEventType: KEY_EVENT_TYPE.UP
         },
         {
             keyboard: 's',
             callback: spam,
-            description: I18N.MOVE_TO_SPAM
+            description: I18N.MOVE_TO_SPAM,
+            keyEventType: KEY_EVENT_TYPE.UP
         },
         {
             keyboard: '?',
