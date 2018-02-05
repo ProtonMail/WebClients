@@ -44,6 +44,7 @@
                 <tr
                     class="contactList-item"
                     data-contact-id="{{ ::contact.ID }}"
+                    ng-class="{ 'contactList-item-activeCursorContact': isSelected(contact), 'contactList-item-activeContact': isActive(contact) }"
                     ng-repeat="contact in contacts track by contact.ID">
                     <td class="text-center contactList-checkbox">
                         <custom-checkbox
