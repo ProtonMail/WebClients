@@ -30,15 +30,24 @@ function contactCache(
     const findIndex = (ID) => _.findIndex(CACHE.contacts, { ID });
     const emit = () => $rootScope.$emit('contacts', { type: 'contactsUpdated', data: { all: get() } });
     const orderBy = (contacts = []) => {
+
+        if (!$state.includes('secured.contacts')) {
+            return contacts;
+        }
+
         const parameter = $stateParams.sort || 'Name';
         const reverseOrder = parameter.indexOf('-') > -1;
         const key = parameter.replace('-', '');
 
-        return contacts.slice().sort((a, b) => {
+        // Sort is a key not defined inside a contact
+        if (!_.has(key, contacts[0])) {
+            return contacts;
+        }
+
+        return _.sortBy(contacts, (a, b) => {
             if (reverseOrder) {
                 return b[key].localeCompare(a[key]);
             }
-
             return a[key].localeCompare(b[key]);
         });
     };
