@@ -25,16 +25,6 @@ function messageActions(
     const unicodeTagView = $filter('unicodeTagView');
     const notifySuccess = (message) => notification.success(unicodeTagView(message));
 
-    const mailboxes = {
-        [CONSTANTS.MAILBOX_IDENTIFIERS.inbox]: gettextCatalog.getString('Inbox', null, 'App folder'),
-        [CONSTANTS.MAILBOX_IDENTIFIERS.spam]: gettextCatalog.getString('Spam', null, 'App folder'),
-        [CONSTANTS.MAILBOX_IDENTIFIERS.drafts]: gettextCatalog.getString('Drafts', null, 'App folder'),
-        [CONSTANTS.MAILBOX_IDENTIFIERS.allDrafts]: gettextCatalog.getString('Drafts', null, 'App folder'),
-        [CONSTANTS.MAILBOX_IDENTIFIERS.sent]: gettextCatalog.getString('Sent', null, 'App folder'),
-        [CONSTANTS.MAILBOX_IDENTIFIERS.allSent]: gettextCatalog.getString('Sent', null, 'App folder'),
-        [CONSTANTS.MAILBOX_IDENTIFIERS.trash]: gettextCatalog.getString('Trash', null, 'App folder'),
-        [CONSTANTS.MAILBOX_IDENTIFIERS.archive]: gettextCatalog.getString('Archive', null, 'App folder')
-    };
 
     const basicFolders = [
         CONSTANTS.MAILBOX_IDENTIFIERS.inbox,
@@ -47,6 +37,16 @@ function messageActions(
 
     function getFolderNameTranslated(labelID = '') {
         const { Name } = labelsModel.read(labelID, 'folders') || {};
+        const mailboxes = {
+            [CONSTANTS.MAILBOX_IDENTIFIERS.inbox]: gettextCatalog.getString('Inbox', null, 'App folder'),
+            [CONSTANTS.MAILBOX_IDENTIFIERS.spam]: gettextCatalog.getString('Spam', null, 'App folder'),
+            [CONSTANTS.MAILBOX_IDENTIFIERS.drafts]: gettextCatalog.getString('Drafts', null, 'App folder'),
+            [CONSTANTS.MAILBOX_IDENTIFIERS.allDrafts]: gettextCatalog.getString('Drafts', null, 'App folder'),
+            [CONSTANTS.MAILBOX_IDENTIFIERS.sent]: gettextCatalog.getString('Sent', null, 'App folder'),
+            [CONSTANTS.MAILBOX_IDENTIFIERS.allSent]: gettextCatalog.getString('Sent', null, 'App folder'),
+            [CONSTANTS.MAILBOX_IDENTIFIERS.trash]: gettextCatalog.getString('Trash', null, 'App folder'),
+            [CONSTANTS.MAILBOX_IDENTIFIERS.archive]: gettextCatalog.getString('Archive', null, 'App folder')
+        };
         return mailboxes[labelID] || Name;
     }
 

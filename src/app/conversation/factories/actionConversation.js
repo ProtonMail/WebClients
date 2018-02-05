@@ -31,14 +31,14 @@ function actionConversation(
     function getFolderNameTranslated(labelID = '') {
         const { Name } = labelsModel.read(labelID, 'folders') || {};
         const mailboxes = {
-            [MAILBOX_IDENTIFIERS.inbox]: gettextCatalog.getString('Inbox', null, 'Type of folder'),
-            [MAILBOX_IDENTIFIERS.spam]: gettextCatalog.getString('Spam', null, 'Type of folder'),
-            [MAILBOX_IDENTIFIERS.drafts]: gettextCatalog.getString('Drafts', null, 'Type of folder'),
-            [MAILBOX_IDENTIFIERS.allDrafts]: gettextCatalog.getString('Drafts', null, 'Type of folder'),
-            [MAILBOX_IDENTIFIERS.sent]: gettextCatalog.getString('Sent', null, 'Type of folder'),
-            [MAILBOX_IDENTIFIERS.allSent]: gettextCatalog.getString('Sent', null, 'Type of folder'),
-            [MAILBOX_IDENTIFIERS.trash]: gettextCatalog.getString('Trash', null, 'Type of folder'),
-            [MAILBOX_IDENTIFIERS.archive]: gettextCatalog.getString('Archive', null, 'Type of folder')
+            [MAILBOX_IDENTIFIERS.inbox]: gettextCatalog.getString('Inbox', null, 'App folder'),
+            [MAILBOX_IDENTIFIERS.spam]: gettextCatalog.getString('Spam', null, 'App folder'),
+            [MAILBOX_IDENTIFIERS.drafts]: gettextCatalog.getString('Drafts', null, 'App folder'),
+            [MAILBOX_IDENTIFIERS.allDrafts]: gettextCatalog.getString('Drafts', null, 'App folder'),
+            [MAILBOX_IDENTIFIERS.sent]: gettextCatalog.getString('Sent', null, 'App folder'),
+            [MAILBOX_IDENTIFIERS.allSent]: gettextCatalog.getString('Sent', null, 'App folder'),
+            [MAILBOX_IDENTIFIERS.trash]: gettextCatalog.getString('Trash', null, 'App folder'),
+            [MAILBOX_IDENTIFIERS.archive]: gettextCatalog.getString('Archive', null, 'App folder')
         };
         return mailboxes[labelID] || Name;
     }
