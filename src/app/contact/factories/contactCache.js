@@ -40,11 +40,11 @@ function contactCache(
         const key = parameter.replace('-', '');
 
         // Sort is a key not defined inside a contact
-        if (!_.has(key, contacts[0])) {
+        if (!_.has(contacts[0], key)) {
             return contacts;
         }
 
-        return _.sortBy(contacts, (a, b) => {
+        return contacts.sort((a, b) => {
             if (reverseOrder) {
                 return b[key].localeCompare(a[key]);
             }
