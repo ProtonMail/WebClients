@@ -8,31 +8,27 @@
             <thead class="contactList-thead">
                 <tr>
                     <th class="checkbox"></th>
-                    <th>
+                    <th
+                        data-sort="Name"
+                        data-action="toggleSort">
                         <span
-                            data-action="toggleSort" data-sort="Name"
                             translate-context="Title"
                             translate-comment="table heading"
-                            translate>Name</span>
-                        <div class="contactList-toggle-sort-container">
-                            <button type="button" class="contactList-toggle-sort" ui-sref="secured.contacts({ sort: '-Name' })">
-                                <i class="fa fa-sort-desc"></i>
-                            </button>
-                            <button type="button" class="contactList-toggle-sort" ui-sref="secured.contacts({ sort: 'Name' })">
-                                <i class="fa fa-sort-asc"></i>
-                            </button>
-                        </div>
+                            translate>
+                            Name
+                        </span>
+                        <contact-arrows-sort data-sort="Name"></contact-arrows-sort>
                     </th>
-                    <th>
-                        <span data-action="toggleSort" data-sort="emails" translate-context="Title" translate-comment="table heading" translate>Email</span>
-                        <div class="contactList-toggle-sort-container">
-                            <button type="button" class="contactList-toggle-sort" ui-sref="secured.contacts({ sort: '-emails' })">
-                                <i class="fa fa-sort-desc"></i>
-                            </button>
-                            <button type="button" class="contactList-toggle-sort" ui-sref="secured.contacts({ sort: 'emails' })">
-                                <i class="fa fa-sort-asc"></i>
-                            </button>
-                        <div>
+                    <th
+                        data-sort="emails"
+                        data-action="toggleSort">
+                        <span
+                            translate-context="Title"
+                            translate-comment="table heading"
+                            translate>
+                            Email
+                        </span>
+                        <contact-arrows-sort data-sort="emails"></contact-arrows-sort>
                     </th>
                 </tr>
             </thead>

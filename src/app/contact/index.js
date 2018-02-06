@@ -5,6 +5,7 @@ import contactDetails from './directives/contactDetails';
 import contactEncrypted from './directives/contactEncrypted';
 import contactError from './directives/contactError';
 import contactItem from './directives/contactItem';
+import contactArrowsSort from './directives/contactArrowsSort';
 import contactList from './directives/contactList';
 import contactNoResult from './directives/contactNoResult';
 import contactPlaceholder from './directives/contactPlaceholder';
@@ -43,6 +44,7 @@ export default angular
     .directive('contactEncrypted', contactEncrypted)
     .directive('contactError', contactError)
     .directive('contactItem', contactItem)
+    .directive('contactArrowsSort', contactArrowsSort)
     .directive('contactList', contactList)
     .directive('contactNoResult', contactNoResult)
     .directive('contactPlaceholder', contactPlaceholder)
