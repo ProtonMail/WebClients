@@ -121,6 +121,9 @@ function autocompleteEmailsModel($injector, authentication, regexEmail, checkTyp
 
     /**
      * Format any new email added to the collection
+     * Extract Name and Email from a string
+     *     Standard: Name <email>
+     *     Outlook 2016: Name (email)
      * @param  {String} label
      * @param  {String} value
      * @return {Object}       {Name, Address}
@@ -129,13 +132,11 @@ function autocompleteEmailsModel($injector, authentication, regexEmail, checkTyp
         // We need to clean the label because the one comming from the autocomplete can contains some unicode
         const cleanLabel = $filter('chevrons')(label);
 
-        // Check if an user paste an email Name <email>
+        // Check if an user paste an email Name <email> || Name (email)
         if (regexEmail.test(cleanLabel)) {
-            const [Name, adr = value] = cleanLabel.split('<').map((str = '') => str.trim());
-
-            // If the last > does not exist, keep the email intact
-            const Address = adr.indexOf('>') === adr.length - 1 ? adr.slice(0, -1) : adr;
-
+            const [Name, adr = value] = cleanLabel.split(/<|\(/).map((str = '') => str.trim());
+            // If the last >/) does not exist, keep the email intact
+            const Address = /(>|\))$/.test(adr) ? adr.slice(0, -1) : adr;
             return { Name, Address };
         }
 
