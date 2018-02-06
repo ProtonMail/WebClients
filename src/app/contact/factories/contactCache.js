@@ -44,7 +44,7 @@ function contactCache(
             return contacts;
         }
 
-        return contacts.sort((a, b) => {
+        return contacts.slice().sort((a, b) => {
             if (reverseOrder) {
                 return b[key].localeCompare(a[key]);
             }
