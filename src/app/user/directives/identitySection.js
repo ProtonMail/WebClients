@@ -15,11 +15,13 @@ function identitySection($rootScope, authentication, editorModel, gettextCatalog
             const $form = el;
             const CACHE = {};
             const unsubscribe = [];
+
             const onSubmit = () => {
                 const { DisplayName, Signature } = scope.address;
                 signatureModel.save({ ID: CACHE.ID, DisplayName, Signature })
                     .then(() => notification.success(I18N.SUCCESS_SAVE));
             };
+
             const updateAddress = ({ ID, DisplayName, Signature }, firstTime = false) => {
                 const signature = tools.replaceLineBreaks(Signature);
 
@@ -30,9 +32,7 @@ function identitySection($rootScope, authentication, editorModel, gettextCatalog
                     editor.fireEvent('refresh', { Body: signature });
                 }
 
-                scope.$applyAsync(() => {
-                    scope.address = { DisplayName, Signature: signature };
-                });
+                scope.address = { DisplayName, Signature: signature };
             };
             const updateUser = () => {
                 const { Addresses = [] } = authentication.user || {};
@@ -43,7 +43,12 @@ function identitySection($rootScope, authentication, editorModel, gettextCatalog
 
             unsubscribe.push($rootScope.$on('changeAddressSelection', (event, { ID }) => {
                 const address = _.find(CACHE.addresses, { ID });
-                address && updateAddress(address);
+
+                if (address) {
+                    scope.$applyAsync(() => {
+                        updateAddress(address);
+                    });
+                }
             }));
 
             unsubscribe.push($rootScope.$on('updateUser', () => {
