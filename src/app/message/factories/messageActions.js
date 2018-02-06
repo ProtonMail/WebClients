@@ -179,10 +179,11 @@ function messageActions(
 
         const notification = gettextCatalog.getPlural(
             ids.length,
-            'Message moved to {{folder}}',
-            'Messages moved to {{folder}}',
+            '1 message moved to {{folder}}',
+            '{{number}} messages moved to {{folder}}',
             {
-                folder: getFolderNameTranslated(labelID)
+                folder: getFolderNameTranslated(labelID),
+                number: ids.length
             },
             'Action'
         );
