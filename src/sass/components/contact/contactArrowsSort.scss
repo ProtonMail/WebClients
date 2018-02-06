@@ -1,0 +1,27 @@
+.contactArrowsSort-container {
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    justify-content: center;
+    width: 15px;
+    height: 37px;
+    pointer-events: none;
+
+    &[order="asc"] .fa-sort-asc,
+    &[order="desc"] .fa-sort-desc {
+        color: $dark;
+        opacity: 1;
+    }
+
+    & > .fa-sort-desc,
+    & > .fa-sort-asc {
+        position: relative;
+        opacity: 0.4;
+    }
+
+    & > .fa-sort-desc { top: -6px }
+    & > .fa-sort-asc { top: 6px }
+}
+
+/* too small for mobile */
+body.appConfigBody-is-mobile .contactArrowsSort-container  { display: none }

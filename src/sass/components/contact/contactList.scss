@@ -34,6 +34,11 @@
 .contactList-container .pm_table {
     > * { cursor: pointer }
     table { margin: 0 }
+    thead {
+        th[data-action]:hover {
+            background: darken($tertiary, 4);
+        }
+    }
     tbody {
         .contactList-checkbox {
             height: 40px;
@@ -64,36 +69,8 @@
             }
         }
     }
+
+    .contactArrowsSort-container {
+        float: right;
+    }
 }
-
-
-
-.contactList-toggle-sort-container {
-    display: flex;
-    flex-direction: column-reverse;
-    align-items: center;
-    justify-content: center;
-    width: 30px;
-    height: 37px;
-    float: left;
-    margin-left: -30px;
-}
-
-.contactList-toggle-sort {
-    background: none;
-    border: 0;
-    line-height: 1;
-    height: 15px;
-    overflow: hidden;
-}
-
-.contactList-toggle-sort > .fa-sort-desc,
-.contactList-toggle-sort > .fa-sort-asc { position: relative }
-
-.contactList-toggle-sort > .fa-sort-desc { top: -8px }
-.contactList-toggle-sort > .fa-sort-asc { top: 4px }
-
-.contactList-toggle-sort:hover > .fa { color: darken($primary, 20) }
-
-/* too small for mobile */
-body.appConfigBody-is-mobile .contactList-toggle-sort-container  { display: none }
