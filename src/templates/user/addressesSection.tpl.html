@@ -34,21 +34,4 @@
             </li>
         </ul>
     </div>
-    <div class="inactiveAddresses-container" ng-if="disabledAddresses.length">
-        <ul class="pm_sort-container">
-            <li
-                class="pm_sort-item"
-                ng-repeat="address in disabledAddresses | orderBy: getDomain track by address.ID"
-                ng-class="{'highlight': address.Type === 1}">
-                <div class="pm_sort-item-content">
-                    <div class="activeAddresses-email"><span class="ellipsis">{{ address.Email }}</span></div>
-                    <div class="activeAddresses-badge">
-                        <span class="pm_badge error" ng-show="address.Status === 0"  translate translate-comment="address state badge">Disabled</span>
-                        <span class="pm_badge warning" ng-show="address.HasKeys === 0"  translate translate-comment="address state badge">Missing keys</span>
-                        <span class="pm_badge warning" ng-show="address.DomainID === null"  translate translate-comment="address state badge">Orphan</span>
-                    </div>
-                </div>
-            </li>
-        </ul>
-    </div>
 </div>
