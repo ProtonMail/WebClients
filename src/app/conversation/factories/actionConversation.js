@@ -355,10 +355,11 @@ function actionConversation(
 
         const successMessage = gettextCatalog.getPlural(
             conversationIDs.length,
-            'Conversation moved to {{folder}}',
-            'Conversations moved to {{folder}}',
+            '1 conversation moved to {{folder}}',
+            '{{number}} conversations moved to {{folder}}',
             {
-                folder: unicodeTagView(folderName)
+                folder: unicodeTagView(folderName),
+                number: conversationIDs.length
             },
             'Info'
         );
