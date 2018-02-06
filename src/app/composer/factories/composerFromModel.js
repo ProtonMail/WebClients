@@ -34,7 +34,7 @@ function composerFromModel(authentication, plusAliasModel) {
         }
 
         if (ID) {
-            return _.find(addresses, { ID });
+            return _.find(addresses, { ID }) || addresses[0];
         }
 
         return addresses[0];
