@@ -1,10 +1,11 @@
 import _ from 'lodash';
 
 /* @ngInject */
-function identitySection($rootScope, authentication, gettextCatalog, notification, signatureModel, tools) {
+function identitySection($rootScope, authentication, editorModel, gettextCatalog, notification, signatureModel, tools) {
     const I18N = {
         SUCCESS_SAVE: gettextCatalog.getString('Default Name / Signature saved', null, "User's signature")
     };
+    const EDITOR_ID = 'signature';
     return {
         scope: {},
         replace: true,
@@ -19,10 +20,18 @@ function identitySection($rootScope, authentication, gettextCatalog, notificatio
                 signatureModel.save({ ID: CACHE.ID, DisplayName, Signature })
                     .then(() => notification.success(I18N.SUCCESS_SAVE));
             };
-            const updateAddress = ({ ID, DisplayName, Signature }) => {
+            const updateAddress = ({ ID, DisplayName, Signature }, firstTime = false) => {
+                const signature = tools.replaceLineBreaks(Signature);
+
                 CACHE.ID = ID;
+
+                if (!firstTime) {
+                    const { editor } = editorModel.find({ ID: EDITOR_ID });
+                    editor.fireEvent('refresh', { Body: signature });
+                }
+
                 scope.$applyAsync(() => {
-                    scope.address = { DisplayName, Signature: tools.replaceLineBreaks(Signature) };
+                    scope.address = { DisplayName, Signature: signature };
                 });
             };
             const updateUser = () => {
@@ -42,7 +51,7 @@ function identitySection($rootScope, authentication, gettextCatalog, notificatio
             }));
 
             updateUser();
-            updateAddress(CACHE.addresses[0]);
+            updateAddress(CACHE.addresses[0], true);
 
             scope.$on('$destroy', () => {
                 $form.off('submit', onSubmit);
