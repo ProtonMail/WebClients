@@ -6,6 +6,7 @@ function identitySection($rootScope, authentication, editorModel, gettextCatalog
         SUCCESS_SAVE: gettextCatalog.getString('Default Name / Signature saved', null, "User's signature")
     };
     const EDITOR_ID = 'signature';
+    const MULTIPLE_ADDRESS_CLASS = 'identitySection-has-multiple-address';
     return {
         scope: {},
         replace: true,
@@ -36,7 +37,9 @@ function identitySection($rootScope, authentication, editorModel, gettextCatalog
             };
             const updateUser = () => {
                 const { Addresses = [] } = authentication.user || {};
+
                 CACHE.addresses = Addresses.slice(0);
+                el[0].classList[CACHE.addresses.length > 1 ? 'add' : 'remove'](MULTIPLE_ADDRESS_CLASS);
             };
 
             $form.on('submit', onSubmit);
