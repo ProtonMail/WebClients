@@ -1,0 +1,10 @@
+.identitySection-has-multiple-address .identitySection-single-label,
+.identitySection-container:not(.identitySection-has-multiple-address) .identitySection-multiple-label,
+.identitySection-container:not(.identitySection-has-multiple-address) .identitySection-priority-link { display: none }
+
+// Context
+.identitySection-container:not(.identitySection-has-multiple-address) .addressesSelector-icon { display: none }
+.identitySection-container:not(.identitySection-has-multiple-address) .addressesSelector-container {
+    box-shadow: none;
+    pointer-events: none;
+}
