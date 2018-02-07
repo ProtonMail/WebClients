@@ -1,3 +1,35 @@
+# [3.12.30] - 2018-02-07
+## Added
+- Improve the BTC payment message.
+- Improve the "name" and "email" sorting in the Contacts page
+- Support pasting "(address@domain.com)" into the "To" field
+- Make the growler more precise
+- Contacts - copy from the listing doesn't work
+- Improve decryption error for a message
+- Name/Signature change
+
+## Fixed
+- Cannot activate keys in some occasions
+- Cannot view/edit the signature for an address
+- New contacts appear at the bottom
+- An error message is not showing if you try to reply from a disabled address
+- Custom signature is not showing
+- Change address priority button does not work
+- URL image added in signature when you click Insert file (it should be Insert URL)
+- "Undisclosed recipients" showing when it shouldn't
+- Error messages show in OS language instead of the language users set
+- The purple selection marker and the selected contact marker disappear when you scroll up and down
+- Cannot read property 'localeCompare' of undefined with random 'sort' query
+- Shift select for selecting multiple messages
+- Text between "< >" disappears when minimising the composer in plaintext mode
+
+## Changed
+- Make sure we make a copy before to use sort
+- Remove disabled addresses in the address priority section
+- Align improvements
+- Keyup handler for other location
+- Don't let the user enable / disable premium address
+
 # [3.12.29] - 2018-02-02
 ## Fixed
 - Created folder or label shows up twice with the same name when you go back to messages and when you go back to Folders / Labels, the page is blank.
