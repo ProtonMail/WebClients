@@ -1,35 +1,14 @@
 #!/usr/bin/env node
 
-const { promisify } = require('util');
-const exec = promisify(require('child_process').exec);
-const execRaw = require('child_process').exec;
+
 const chalk = require('chalk');
 const argv = require('minimist')(process.argv.slice(2));
 const stripAnsi = require('strip-ansi');
 const dedent = require('dedent');
 
-const success = (msg) => console.log(`${chalk.green('✓')} ${msg}.`);
+const { execVerbose, exec } = require('./helpers/command');
+const { success, error, json } = require('./helpers/log');
 
-const commandeVerbose = (command) => {
-    return new Promise((resolve, reject) => {
-        const callback = (error) => {
-            if (error) {
-                return reject(error);
-            }
-            resolve();
-        };
-
-        const build = execRaw(
-            command,
-            {
-                maxBuffer: 1000 * 1000 * 10 // 10 MB
-            },
-            callback
-        );
-        build.stdout.pipe(process.stdout);
-        build.stderr.pipe(process.stderr);
-    });
-};
 
 const getLatestCommit = async () => {
     const { stdout = '' } = await exec("git log -1 --pretty=format:'%H---%s' --abbrev-commit");
@@ -113,8 +92,8 @@ const syncWebclient = async ({ hash: webclientHash }, { hash: latestHash }) => {
         'git checkout public',
         'git pull webclient public'
     ];
-    await commandeVerbose(commands.join(' && '));
-    await commandeVerbose(`git cherry-pick -X theirs --allow-empty ${webclientHash}..${latestHash}`);
+    await execVerbose(commands.join(' && '));
+    await execVerbose(`git cherry-pick -X theirs --allow-empty ${webclientHash}..${latestHash}`);
     await exec('git push webclient public');
     await exec('git checkout v3 --quiet');
     success('Sync webclient');
@@ -153,15 +132,12 @@ argv.help && help();
         await hasPublicRemote();
         const angularRelease = await getAngularRelease(argv.tag);
         const webclientRelease = await getWebclientRelease();
-        console.log();
-        console.log(JSON.stringify({ angularRelease, webclientRelease }, null, 2));
-        console.log();
+        json({ angularRelease, webclientRelease });
         await syncWebclient(webclientRelease, angularRelease);
         process.exit(0);
     } catch (e) {
-        console.log(chalk.magentaBright(' ⚠ '), chalk.red(e.message));
-        console.log();
         help();
-        process.exit(1);
+        console.log();
+        error(e);
     }
 })();
