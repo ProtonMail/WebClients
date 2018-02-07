@@ -10,7 +10,10 @@ do
 
     $COMMAND \
         --files $file \
-        --dest src/i18n/i18n.${lang}_${langUpper}.json \
+        --dest src/i18n/${lang}_${langUpper}.json \
         --compile \
         --format json;
 done
+
+# Default no need to build it
+rm  src/i18n/en_EN.json || echo 'Nothing to remove';
