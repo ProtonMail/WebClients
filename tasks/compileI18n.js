@@ -1,13 +1,11 @@
 #!/usr/bin/env node
 
-const { promisify } = require('util');
-const exec = promisify(require('child_process').exec);
-
 const chalk = require('chalk');
 
-const i18nConfig = require('../po/lang');
+const { exec } = require('./helpers/command');
+const { success, error } = require('./helpers/log');
 
-const success = (msg) => console.log(`${chalk.green('✓')} ${msg}.`);
+const i18nConfig = require('../po/lang');
 
 const compile = async ({ file, lang }) => {
     const output = `src/i18n/${lang}.json`;
@@ -26,7 +24,6 @@ const compile = async ({ file, lang }) => {
         success('Compilation to JSON done');
         process.exit(0);
     } catch (e) {
-        console.log(chalk.magentaBright(' ⚠ '), chalk.red(e.message));
-        process.exit(1);
+        error(e);
     }
 })();

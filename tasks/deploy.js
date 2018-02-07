@@ -1,38 +1,14 @@
 #!/usr/bin/env node
 
 const os = require('os');
-const { promisify } = require('util');
-const exec = promisify(require('child_process').exec);
-const execRaw = require('child_process').exec;
-const chalk = require('chalk');
+const { exec, execVerbose } = require('./helpers/command');
+const { title, success, error } = require('./helpers/log');
 
 const { CONFIG, branch } = require('../env/config').getConfig('dist');
-const success = (msg) => console.log(`${chalk.green('✓')} ${msg}.`);
-
-const commandeVerbose = (command) => {
-    return new Promise((resolve, reject) => {
-        const callback = (error) => {
-            if (error) {
-                return reject(error);
-            }
-            resolve();
-        };
-
-        const build = execRaw(
-            command,
-            {
-                maxBuffer: 1000 * 1000 * 10 // 10 MB
-            },
-            callback
-        );
-        build.stdout.pipe(process.stdout);
-        build.stderr.pipe(process.stderr);
-    });
-};
 
 const setupConfig = async () => {
     const args = process.argv.slice(2).join(' ');
-    await commandeVerbose(`tasks/setupConfig.js ${args}`);
+    await execVerbose(`tasks/setupConfig.js ${args}`);
     success('Generate configuration');
 };
 
@@ -72,18 +48,18 @@ const i18n = async (branch) => {
 
 const buildApp = async () => {
     const args = process.argv.slice(2).join(' ');
-    await commandeVerbose(`npm run dist ${args}`);
+    await execVerbose(`npm run dist ${args}`);
     success('Build application');
 };
 
 const lint = async () => {
-    await commandeVerbose('npm run lint');
+    await execVerbose('npm run lint');
     success('Lint application');
 };
 
 (async () => {
     try {
-        console.log('~', chalk.bgYellow(chalk.black(`Deploy with API: ${CONFIG.apiUrl}`)), '~');
+        title(`Deploy with API: ${CONFIG.apiUrl}`);
 
         if (!branch) {
             throw new Error('You must define a branch name. --branch=XXX');
@@ -101,7 +77,6 @@ const lint = async () => {
         success(`App deployment to ${branch} done`);
         process.exit(0);
     } catch (e) {
-        console.log(chalk.magentaBright(' ⚠ '), chalk.red(e.message));
-        process.exit(1);
+        error(e);
     }
 })();
