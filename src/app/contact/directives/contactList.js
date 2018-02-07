@@ -53,14 +53,14 @@ function contactList($filter, dispatchers, $state, $stateParams, contactCache, h
             function activeContact(scroll = false) {
                 const $items = element.find(`.${ITEM_CLASS}`);
                 $items.removeClass(ACTIVE_CLASS);
-                $items.removeClass(ACTIVE_CURSOR_CLASS);
 
                 if ($stateParams.id) {
                     const $row = element.find(`.${ITEM_CLASS}[data-contact-id="${unescape($stateParams.id)}"]`);
                     $row.addClass(ACTIVE_CLASS);
-                    $row.addClass(ACTIVE_CURSOR_CLASS);
 
-                    cursorID = $stateParams.id;
+                    if (!cursorID) {
+                        cursorID = $stateParams.id;
+                    }
 
                     // Scroll the first load
                     if (scroll && $row[0]) {
@@ -144,6 +144,7 @@ function contactList($filter, dispatchers, $state, $stateParams, contactCache, h
                 const action = target.getAttribute('data-action');
 
                 if (action === 'showContact') {
+                    setContactCursor(target.dataset.contactId);
                     $state.go('secured.contacts.details', { id: target.dataset.contactId });
                 }
 
