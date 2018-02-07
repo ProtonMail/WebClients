@@ -175,6 +175,10 @@ function i18nLoader(CONFIG, $rootScope, gettextCatalog, $injector) {
 
         document.documentElement.lang = shortLocale;
 
+        if (locale.startsWith('en')) {
+            return;
+        }
+
         // If the translation is not available it seems to crash (CPU 100%)
         if (CONFIG.translations.includes(locale)) {
             return gettextCatalog.loadRemote(`/i18n/${locale}.json`);
