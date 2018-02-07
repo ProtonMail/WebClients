@@ -162,7 +162,7 @@
     "releaser:extract": "releaser --config releaser.config.js --token $RELEASER_GH_TOKEN",
     "releaser:unshift": "./tasks/unshiftReleaser.sh",
     "i18n:extract": "tasks/extractI18N.sh",
-    "i18n:compile": "tasks/compileI18N.sh",
+    "i18n:compile": "tasks/compileI18n.js",
     "i18n:build": "npm run i18n:extract && npm run i18n:compile",
     "posti18n:build": "./tasks/createI18nCache.js && ./tasks/commitI18n.sh",
     "pretty": "prettier --arrow-parens=always --single-quote --tab-width=4 --require-pragma --print-width=150 --no-prose-wrap --write $(find src/app -type f -name '*.js')",
