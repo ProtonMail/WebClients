@@ -3,11 +3,11 @@ import _ from 'lodash';
 const CLASSNAME = {
     UNDISCLOSED: 'message-undisclosed'
 };
+const getRecipients = ({ ToList = [], CCList = [], BCCList = [] } = {}) => ToList.concat(CCList, BCCList);
+const noRecipients = (message) => !getRecipients(message).length;
 
 /* @ngInject */
 function message($state, $rootScope, cache, displayContent, messageScroll, tools, unsubscribeModel, $exceptionHandler) {
-
-    const getRecipients = ({ ToList = [], CCList = [], BCCList = [] } = {}) => ToList.concat(CCList, BCCList);
 
     /**
      * Back to element list
@@ -42,8 +42,11 @@ function message($state, $rootScope, cache, displayContent, messageScroll, tools
         },
         link(scope, element) {
             const unsubscribe = [];
+            const bindClasses = (message) => {
+                element[0].classList[noRecipients(message) ? 'add' : 'remove'](CLASSNAME.UNDISCLOSED);
+            };
 
-            !getRecipients(scope.message).length && element[0].classList.add(CLASSNAME.UNDISCLOSED);
+            bindClasses(scope.message);
 
             const loadMessageBody = () => {
                 return cache.getMessage(scope.message.ID).then((message) => _.extend(scope.message, message));
@@ -137,6 +140,7 @@ function message($state, $rootScope, cache, displayContent, messageScroll, tools
 
                         if (message && canBeOpen(message)) {
                             scope.message = _.extend(scope.message, message);
+                            bindClasses(scope.message);
                         } else if (type === 'message') {
                             back();
                         }
@@ -188,7 +192,7 @@ function message($state, $rootScope, cache, displayContent, messageScroll, tools
              * Check if there is no recipients
              * @return {Boolean}
              */
-            scope.noRecipients = () => !getRecipients(scope.message).length;
+            scope.noRecipients = () => noRecipients(scope.message);
 
             // TODO need review with label dropdown
             scope.getMessage = () => [scope.message];
