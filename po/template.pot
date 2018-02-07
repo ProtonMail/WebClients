@@ -629,7 +629,7 @@ msgstr ""
 #: ./src/templates/modals/feedback.tpl.html:3
 #: ./src/templates/modals/generate.tpl.html:6
 #: ./src/templates/modals/generateOrganization.tpl.html:3
-#: ./src/templates/modals/hotkey.tpl.html:102
+#: ./src/templates/modals/hotkey.tpl.html:101
 #: ./src/templates/modals/hotkey.tpl.html:3
 #: ./src/templates/modals/humanVerification.tpl.html:3
 #: ./src/templates/modals/label.tpl.html:6
@@ -2778,11 +2778,6 @@ msgctxt "Error"
 msgid "Error privatizing the user"
 msgstr ""
 
-#: ./src/app/address/factories/reactivateKeys.js:7
-msgctxt "Error"
-msgid "Error reactivating key. Please try again"
-msgstr ""
-
 #: ./src/app/organization/modals/activateOrganizationModal.js:34
 msgctxt "Error"
 msgid "Error restoring organization keys"
@@ -3790,7 +3785,7 @@ msgctxt "Info"
 msgid "<kbd><i class=\"fa fa-long-arrow-down\"></i></kbd> Marks the <strong>next</strong> message/conversation."
 msgstr ""
 
-#: ./src/templates/modals/hotkey.tpl.html:93
+#: ./src/templates/modals/hotkey.tpl.html:92
 msgctxt "Info"
 msgid "<kbd><i class=\"fa fa-long-arrow-left\"></i></kbd> <strong>Exits</strong> contact details."
 msgstr ""
@@ -3825,7 +3820,7 @@ msgctxt "Info"
 msgid "<kbd>?</kbd> Opens the <strong>help modal</strong>."
 msgstr ""
 
-#: ./src/templates/modals/hotkey.tpl.html:94
+#: ./src/templates/modals/hotkey.tpl.html:93
 msgctxt "Info"
 msgid "<kbd>TAB</kbd> <strong>Navigates</strong> between fields."
 msgstr ""
@@ -3833,11 +3828,6 @@ msgstr ""
 #: ./src/templates/modals/hotkey.tpl.html:69
 msgctxt "Info"
 msgid "<kbd>a</kbd> Moves the message/conversation to <strong>archive</strong>."
-msgstr ""
-
-#: ./src/templates/modals/hotkey.tpl.html:88
-msgctxt "Info"
-msgid "<kbd>c</kbd> <strong>To compose</strong>."
 msgstr ""
 
 #: ./src/templates/modals/hotkey.tpl.html:23
@@ -3850,7 +3840,7 @@ msgctxt "Info"
 msgid "<kbd>command</kbd> + <kbd>enter</kbd> <strong>Sends</strong> the message."
 msgstr ""
 
-#: ./src/templates/modals/hotkey.tpl.html:95
+#: ./src/templates/modals/hotkey.tpl.html:94
 msgctxt "Info"
 msgid "<kbd>command</kbd> + <kbd>s</kbd> <strong>Saves</strong> the contact."
 msgstr ""
@@ -3975,7 +3965,7 @@ msgctxt "Info"
 msgid "<kbd>shift</kbd> + <kbd>space</kbd> Opens <strong>the command palette</strong>."
 msgstr ""
 
-#: ./src/templates/modals/hotkey.tpl.html:89
+#: ./src/templates/modals/hotkey.tpl.html:88
 msgctxt "Info"
 msgid "<kbd>t</kbd> <strong>To delete</strong> contact."
 msgstr ""
@@ -7232,7 +7222,7 @@ msgid "Contact"
 msgstr ""
 
 #: ./src/templates/contact/contactDetails.tpl.html:3
-#: ./src/templates/modals/hotkey.tpl.html:92
+#: ./src/templates/modals/hotkey.tpl.html:91
 msgctxt "Title"
 msgid "Contact Details"
 msgstr ""
