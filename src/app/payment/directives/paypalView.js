@@ -19,7 +19,7 @@ function paypalView(notification, Payment, gettextCatalog, CONSTANTS, $q, networ
             let deferred;
 
             const resetWindow = () => {
-                windows.forEach(close);
+                windows.forEach((win) => win.close());
                 window.removeEventListener('message', receivePaypalMessage, false);
             };
 
