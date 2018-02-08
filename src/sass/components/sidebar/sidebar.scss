@@ -1,4 +1,7 @@
-#pm_sidebar { float: left }
+#pm_sidebar {
+    float: left;
+    height: 100%;
+}
 #ptSidebar {
     display: flex;
     flex-direction: column;
