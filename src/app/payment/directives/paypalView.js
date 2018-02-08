@@ -15,8 +15,13 @@ function paypalView(notification, Payment, gettextCatalog, CONSTANTS, $q, networ
             paypalCallback: '=callback'
         },
         link(scope, element, { type = 'payment' }) {
-            let childWindow;
+            const windows = [];
             let deferred;
+
+            const resetWindow = () => {
+                windows.forEach(close);
+                window.removeEventListener('message', receivePaypalMessage, false);
+            };
 
             const load = () => {
                 scope.errorDetails = null;
@@ -65,7 +70,8 @@ function paypalView(notification, Payment, gettextCatalog, CONSTANTS, $q, networ
             };
 
             scope.openPaypalTab = () => {
-                childWindow = window.open(scope.approvalURL, 'PayPal');
+                resetWindow();
+                windows.push(window.open(scope.approvalURL, 'PayPal'));
                 window.addEventListener('message', receivePaypalMessage, false);
             };
 
@@ -78,8 +84,7 @@ function paypalView(notification, Payment, gettextCatalog, CONSTANTS, $q, networ
 
                 const { payerID: PayerID, paymentID: PaymentID, cancel: Cancel } = event.data;
 
-                childWindow.close();
-                window.removeEventListener('message', receivePaypalMessage, false);
+                resetWindow();
                 scope.paypalCallback({ PayerID, PaymentID, Cancel });
             }
 
@@ -89,6 +94,7 @@ function paypalView(notification, Payment, gettextCatalog, CONSTANTS, $q, networ
                 // Cancel request if pending
                 deferred && deferred.resolve(CANCEL_REQUEST);
                 deferred = null;
+                windows.length = 0;
             });
         }
     };
