@@ -210,9 +210,9 @@
             <time time-refreshed="{{ ::message.ExpirationTime }}"></time>
         </div>
 
-        <events-attachments data-model="message"></events-attachments>
-
         <message-extra></message-extra>
+
+        <events-attachments data-model="message"></events-attachments>
 
         <div class="frame message-frame" data-embedded-img-loader data-inject-message-media>
             <loader-tag ng-if="message.decrypting === true"></loader-tag>
