@@ -11,7 +11,7 @@ function chooseComposerMode($rootScope, composerSettings, mailSettingsModel) {
 
             const onChange = ({ target }) => {
                 const value = target.value;
-                const textContent = target.selectedOptions[0].textContent;
+                const textContent = target.querySelector(`[value="${value}"]`).textContent;
                 composerSettings.updateComposerMode(value, textContent);
             };
 

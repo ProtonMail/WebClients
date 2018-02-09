@@ -12,7 +12,7 @@ function chooseRightToLeft($rootScope, composerSettings, mailSettingsModel) {
 
             const onChange = ({ target }) => {
                 const rightToLeft = parseInt(target.value, 10);
-                const textContent = target.selectedOptions[0].textContent;
+                const textContent = target.querySelector(`[value="${target.value}"]`).textContent;
                 composerSettings.updateRightToLeft(rightToLeft, textContent);
             };
 
