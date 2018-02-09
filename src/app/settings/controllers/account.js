@@ -2,38 +2,36 @@ import _ from 'lodash';
 
 /* @ngInject */
 function AccountController(
-    $log,
-    $rootScope,
     $scope,
-    $timeout,
     $state,
-    CONSTANTS,
-    gettextCatalog,
-    $q,
+    $timeout,
     authentication,
     changePasswordModal,
     confirmModal,
+    CONSTANTS,
     deleteAccountModal,
     desktopNotifications,
+    dispatchers,
     eventManager,
-    hotkeys,
+    gettextCatalog,
     hotkeyModal,
+    hotkeys,
     Key,
     loginPasswordModal,
+    mailSettingsModel,
     networkActivityTracker,
     notification,
     organizationModel,
-    mailSettingsModel,
     passwords,
     pmcw,
     settingsApi,
     settingsMailApi,
     tools,
-    userSettingsModel,
-    User
+    User,
+    userSettingsModel
 ) {
     let promisePasswordModal;
-    const unsubscribe = [];
+    const { unsubscribe, on } = dispatchers(['mailSettings', 'userSettings']);
     $scope.keyPhase = CONSTANTS.KEY_PHASE;
     $scope.emailing = { announcements: false, features: false, newsletter: false, beta: false };
     $scope.locales = [
@@ -51,7 +49,9 @@ function AccountController(
     ];
     $scope.locale = _.find($scope.locales, { key: gettextCatalog.getCurrentLanguage() }) || $scope.locales[0];
     const EMAILING_KEYS = Object.keys($scope.emailing);
-    updateUser();
+
+    updateUserSettings();
+    updateMailSettings();
 
     function passwordModal(submit = angular.noop, onCancel = angular.noop) {
         loginPasswordModal.activate({
@@ -70,10 +70,24 @@ function AccountController(
     };
 
     // Listeners
+    on('mailSettings', (e, { type = '' }) => {
+        if (type === 'updated') {
+            $scope.$applyAsync(() => {
+                updateMailSettings();
+            });
+        }
+    });
+
+    on('userSettings', (e, { type = '' }) => {
+        if (type === 'updated') {
+            $scope.$applyAsync(() => {
+                updateUserSettings();
+            });
+        }
+    });
 
     $scope.$on('$destroy', () => {
-        unsubscribe.forEach((cb) => cb());
-        unsubscribe.length = 0;
+        unsubscribe();
     });
 
     $scope.saveDefaultLanguage = () => {
@@ -204,20 +218,25 @@ function AccountController(
         passwordModal(submit);
     };
 
-    function updateUser() {
-        const { Hotkeys, ShowImages, AutoSaveContacts } = mailSettingsModel.get();
+    function updateUserSettings() {
         const { PasswordMode, News, Email } = userSettingsModel.get();
+
         $scope.notificationEmail = Email.Value;
         $scope.passwordReset = Email.Reset;
         $scope.dailyNotifications = Email.Notify;
         $scope.desktopNotificationsStatus = desktopNotifications.status();
+        $scope.passwordMode = PasswordMode;
+        $scope.isMember = authentication.user.Role === CONSTANTS.PAID_MEMBER_ROLE;
+        setEmailingValues(News);
+    }
+
+    function updateMailSettings() {
+        const { Hotkeys, ShowImages, AutoSaveContacts } = mailSettingsModel.get();
+
         $scope.autosaveContacts = AutoSaveContacts;
         $scope.images = ShowImages & CONSTANTS.REMOTE ? 1 : 0;
         $scope.embedded = ShowImages & CONSTANTS.EMBEDDED ? 2 : 0;
         $scope.hotkeys = Hotkeys;
-        $scope.passwordMode = PasswordMode;
-        $scope.isMember = authentication.user.Role === CONSTANTS.PAID_MEMBER_ROLE;
-        setEmailingValues(News);
     }
 
     $scope.saveAutosaveContacts = () => {
