@@ -39,7 +39,6 @@ function reactivateKeysBtn(authentication, oldPasswordModal, gettextCatalog, rea
             }
 
             const onClick = () => {
-                debugger;
                 oldPasswordModal.activate({
                     params: {
                         submit(password) {
