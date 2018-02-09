@@ -121,21 +121,34 @@ function AccountController(
         function submit(Password, TwoFactorCode) {
             loginPasswordModal.deactivate();
             const credentials = { Password, TwoFactorCode };
-            const promise = settingsApi.passwordReset({ PasswordReset: $scope.passwordReset }, credentials).then(() => {
-                notification.success(gettextCatalog.getString('Preference saved', null));
-            });
+            const promise = settingsApi.passwordReset({ PasswordReset: $scope.passwordReset }, credentials)
+                .then(() => {
+                    notification.success(gettextCatalog.getString('Preference saved', null));
+                })
+                .catch((error) => {
+                    const { Email } = userSettingsModel.get();
+                    $scope.passwordReset = Email.Reset;
+                    throw error;
+                });
 
             networkActivityTracker.track(promise);
         }
+
         const onCancel = () => ($scope.passwordReset = +!$scope.passwordReset);
+
         passwordModal(submit, onCancel);
     };
 
     $scope.saveDailyNotifications = () => {
-        const promise = settingsApi.notify({ Notify: $scope.dailyNotifications }).then((data = {}) => {
-            notification.success(gettextCatalog.getString('Preference saved', null));
-            return data;
-        });
+        const promise = settingsApi.notify({ Notify: $scope.dailyNotifications })
+            .then(() => {
+                notification.success(gettextCatalog.getString('Preference saved', null));
+            })
+            .catch((error) => {
+                const { Email } = userSettingsModel.get();
+                $scope.dailyNotifications = Email.Notify;
+                throw error;
+            });
 
         networkActivityTracker.track(promise);
     };
