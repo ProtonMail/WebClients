@@ -26,6 +26,7 @@ import twoFAIntroModal from './factories/twoFAIntroModal';
 import vcard from './factories/vcard';
 import verificationModal from './factories/verificationModal';
 import welcomeModal from './factories/welcomeModal';
+import windowModel from './factories/windowModel';
 import SidebarController from './controllers/sidebar';
 
 export default angular
@@ -62,4 +63,5 @@ export default angular
     .factory('twoFAIntroModal', twoFAIntroModal)
     .factory('vcard', vcard)
     .factory('verificationModal', verificationModal)
-    .factory('welcomeModal', welcomeModal).name;
+    .factory('welcomeModal', welcomeModal)
+    .factory('windowModel', windowModel).name;
