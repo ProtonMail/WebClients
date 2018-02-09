@@ -77,13 +77,13 @@ function eventManager(
 
     function manageUserSettings(userSettings) {
         if (angular.isDefined(userSettings)) {
-            userSettingsModel.set(userSettings);
+            userSettingsModel.set('all', userSettings);
         }
     }
 
     function manageVpnSettings(vpnSettings) {
         if (angular.isDefined(vpnSettings)) {
-            vpnSettingsModel.set(vpnSettings);
+            vpnSettingsModel.set('all', vpnSettings);
         }
     }
 

@@ -108,7 +108,7 @@
 
         <div class="row pm_grid">
 
-            <section class="pm_form col-1-2" ng-show="passwordMode === 2 || keyPhase < 2">
+            <section class="pm_form col-1-2" ng-show="passwordMode === 2">
                 <header-block class="settingsAccount-header-login">
                     <h2
                         class="settingsAccount-title-login"
@@ -121,12 +121,12 @@
                     <button type="button" class="pm_button" ng-click="changePassword('login', 0)" translate-context="Action" translate>Change login password</button>
                 </p>
                 <p>
-                    <button type="button" ng-if="keyPhase > 2" ng-click="changePassword('password', 0)" class="pm_button" translate-context="Action" translate>Switch to one-password mode</button>
+                    <button type="button" ng-click="changePassword('password', 0)" class="pm_button" translate-context="Action" translate>Switch to one-password mode</button>
                     <a href="https://protonmail.com/support/knowledge-base/single-password/" target="_blank" class="pm_button link" translate-context="Link" translate>Learn more</a>
                 </p>
             </section>
 
-            <section class="pm_form col-1-2" ng-show="passwordMode === 2 || keyPhase < 2">
+            <section class="pm_form col-1-2" ng-show="passwordMode === 2">
                 <header-block class="settingsAccount-header-mailbox">
                     <h2
                         class="settingsAccount-title-mailbox"
@@ -140,7 +140,7 @@
                 </p>
             </section>
 
-            <section class="pm_form col-1-2" ng-show="passwordMode === 1 && keyPhase > 1">
+            <section class="pm_form col-1-2" ng-show="passwordMode === 1">
                 <header-block class="settingsAccount-header-password">
                     <h2
                         class="settingsAccount-title-password"
