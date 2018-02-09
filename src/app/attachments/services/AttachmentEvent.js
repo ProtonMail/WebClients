@@ -1,7 +1,7 @@
 import ICAL from 'ical.js';
 
 /* @ngInject */
-function AttachmentEvent($cacheFactory, $log, $q, pmcw, authentication, $state, $stateParams, Eo, secureSessionStorage, attachmentApi) {
+function AttachmentEvent() {
     /**
      * Get ical event from raw string of the event
      * @param {string} event info
