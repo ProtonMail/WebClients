@@ -1,0 +1,97 @@
+.eventsAttachments-container {
+    // background: $tertiary;
+    clear: both;
+    padding: .8rem .6rem .4rem;
+    border-top: 1px solid $border;
+}
+
+.eventsAttachments-hidden {
+    display: none;
+}
+
+.eventsAttachments-decrypt {
+    opacity: 0.5;
+}
+
+.eventsAttachments-download-link {
+    line-height: 1;
+    height: auto;
+    float: right;
+}
+
+.eventsAttachments-details {
+    background: $composer-background;
+    border-radius: $border-radius-large;
+    margin-bottom: .5rem;
+}
+
+.eventsAttachments-details-wrapper {
+    padding: .8rem 1rem;
+    border: 1px solid $toolbar-border;
+}
+
+.eventsAttachments-details[open] .eventsAttachments-summary {
+    border-radius: 4px 4px 0 0;
+
+    &:after {
+        font-family: FontAwesome;
+        content:"\f106";
+    }
+}
+
+.eventsAttachments-summary {
+    background: $tertiary;
+    padding: .7rem 1rem;
+    border-radius: $border-radius-large;
+
+    &:hover {
+        cursor: pointer;
+    }
+
+    .fa {
+        margin-right: 4px;
+    }
+
+    &:after {
+        font-family: FontAwesome;
+        content:"\f107";
+        float: right;
+        margin-top: 1px;
+        text-align: center;
+    }
+
+    &::-webkit-details-marker {
+        display: none
+    }
+}
+
+.eventsAttachments-load .eventsAttachments-placeholder {
+    display: inline-block;
+    background: $text;
+    width: 200px;
+    content: ' ';
+    height: 15px;
+    margin-bottom: -3px;
+    border-radius: $border-radius-large;
+    opacity: .4;
+}
+
+.eventsAttachments-details-table {
+    word-break: break-all;
+    text-align: left;
+    width: 100%;
+
+    tr th {
+        width: 120px;
+        padding: .4rem 0;
+    }
+
+    ul {
+        padding: 0;
+        list-style-type: none;
+
+        li {
+            padding: .1rem 0;
+        }
+    }
+}

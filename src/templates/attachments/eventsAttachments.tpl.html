@@ -1,0 +1,46 @@
+<div class="eventsAttachments-container eventsAttachments-hidden">
+    <details class="eventsAttachments-details" ng-repeat="event in model.events track by event.uid">
+        <summary class="eventsAttachments-summary">
+            <i class="fa fa-calendar"></i>
+            Attached Event:
+            <span class="eventsAttachments-placeholder" ng-if="!event.summary"></span>
+            <span ng-if="event.summary">
+                <strong>{{ event.summary }}</strong> /
+                {{ ::dateFormat(event.startDateMoment, event.endDateMoment) }}
+            </span>
+        </summary>
+        <div ng-if="event.summary" class="eventsAttachments-details-wrapper">
+            <table class="eventsAttachments-details-table">
+                <tr ng-if="event.summary">
+                    <th translate translate-context="Info">Summary:</th>
+                    <td>
+                        {{ event.summary }}
+                        <button
+                            class="pm_button link eventsAttachments-download-link"
+                            data-event-uid="{{event.uid}}"
+                            translate
+                            translate-context="Action"><i class="fa fa-download btnDownloadAttachments-icon-download"></i> Download</button>
+                    </td>
+                </tr>
+                <tr>
+                    <th translate translate-context="Info">When:</th>
+                    <td>
+                        {{ ::dateFormat(event.startDateMoment, event.endDateMoment) }}
+                    </td>
+                </tr>
+                <tr ng-if="event.attendees.length">
+                    <th translate translate-context="Info">Who:</th>
+                    <td>
+                        <ul>
+                            <li ng-repeat="attendee in event.attendees track by $id(attendee)">{{ attendee.jCal[1].cn }}</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr ng-if="event.description">
+                    <th translate translate-context="Info">Description:</th>
+                    <td>{{ event.description }}</td>
+                </tr>
+            </table>
+        </div>
+    </details>
+</div>

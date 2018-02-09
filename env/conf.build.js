@@ -67,7 +67,8 @@ module.exports = {
             'clipboard/dist/clipboard.js',
             'angular-vs-repeat/src/angular-vs-repeat.js',
             'vcf/dist/vcard.js',
-            'jszip/dist/jszip.min.js'
+            'jszip/dist/jszip.min.js',
+            'ical.js/build/ical.min.js'
         ].map(bindPrefix),
         jsLazy2: [
             'codemirror/lib/codemirror.js',

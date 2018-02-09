@@ -5,7 +5,7 @@ function AttachmentLoader($cacheFactory, $log, $q, pmcw, authentication, $state,
     const isOutside = () => $state.is('eo.message') || $state.is('eo.reply');
 
     /**
-     * Get the source request for an attachement
+     * Get the source request for an attachment
      * @param  {String} options.ID  Attachment's ID
      * @return {$http}
      */
@@ -135,7 +135,7 @@ function AttachmentLoader($cacheFactory, $log, $q, pmcw, authentication, $state,
             return buffer;
         } catch (error) {
             const blob = pmcw.concatArrays([pmcw.binaryStringToArray(pmcw.decode_base64(attachment.KeyPackets)), new Uint8Array(data)]);
-            // Fallback download raw attachement
+            // Fallback download raw attachment
             return Promise.reject({ data: blob, error });
         }
     };
