@@ -320,7 +320,7 @@ describe('labelsModel factory', () => {
                     data: {
                         create: TODO_CREATE.map(({ Label }) => Label),
                         remove: {},
-                        update: {}
+                        update: []
                     }
                 });
             });
@@ -358,11 +358,9 @@ describe('labelsModel factory', () => {
                     data: {
                         create: [],
                         remove: {
-                            [remove.ID]: remove
+                            [remove.ID]: true
                         },
-                        update: {
-                            [update.ID]: update
-                        }
+                        update: [update]
                     }
                 });
             });
