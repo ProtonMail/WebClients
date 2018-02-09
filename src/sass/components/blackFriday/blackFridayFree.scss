@@ -5,21 +5,24 @@
 }
 
 .blackFridayFree-plans {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-gap: 20px;
+    display: flex;
     margin-bottom: 20px;
 }
 
+.blackFridayFree-plans .blackFridayFree-plan:not(:last-of-type) { margin-right: 20px }
+
 .blackFridayFree-plan {
+    width: 33%;
     display: flex;
     flex-direction: column;
     position: relative;
     border-radius: $border-radius;
     padding: 1em;
-    background-color: $primary-extra-light; 
-    border: 2px solid $vpn
+    background-color: $primary-extra-light;
+    border: 2px solid $vpn;
+    box-sizing: border-box;
 }
+
 
 .blackFridayFree-mail-plan {
     border-color: $primary;
@@ -108,6 +111,10 @@
 }
 
 .appConfigBody-is-mobile .blackFridayFree-plans {
-    grid-template-columns: repeat(1, 1fr);
+    flex-direction: column;
 }
 
+.appConfigBody-is-mobile .blackFridayFree-plans .blackFridayFree-plan {
+    width: 100%;
+    margin: 0 0 20px 0px;
+}
