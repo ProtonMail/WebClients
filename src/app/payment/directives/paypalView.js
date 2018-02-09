@@ -1,5 +1,5 @@
 /* @ngInject */
-function paypalView(notification, Payment, gettextCatalog, CONSTANTS, $q, networkUtils) {
+function paypalView(notification, Payment, gettextCatalog, CONSTANTS, $q, networkUtils, windowModel) {
     const { MIN_PAYPAL_AMOUNT, MAX_PAYPAL_AMOUNT, CANCEL_REQUEST } = CONSTANTS;
     const I18N = {
         down: gettextCatalog.getString('Error connecting to PayPal.', null, 'Paypal component')
@@ -15,11 +15,11 @@ function paypalView(notification, Payment, gettextCatalog, CONSTANTS, $q, networ
             paypalCallback: '=callback'
         },
         link(scope, element, { type = 'payment' }) {
-            const windows = [];
+
             let deferred;
 
             const resetWindow = () => {
-                windows.forEach((win) => win.close());
+                windowModel.reset('paypal');
                 window.removeEventListener('message', receivePaypalMessage, false);
             };
 
@@ -71,7 +71,7 @@ function paypalView(notification, Payment, gettextCatalog, CONSTANTS, $q, networ
 
             scope.openPaypalTab = () => {
                 resetWindow();
-                windows.push(window.open(scope.approvalURL, 'PayPal'));
+                windowModel.add(window.open(scope.approvalURL, 'PayPal'), 'paypal');
                 window.addEventListener('message', receivePaypalMessage, false);
             };
 
@@ -94,7 +94,7 @@ function paypalView(notification, Payment, gettextCatalog, CONSTANTS, $q, networ
                 // Cancel request if pending
                 deferred && deferred.resolve(CANCEL_REQUEST);
                 deferred = null;
-                windows.length = 0;
+                windowModel.reset('paypal');
             });
         }
     };
