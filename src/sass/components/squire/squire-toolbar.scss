@@ -81,6 +81,10 @@
             justify-content: flex-end;
         }
 
+        .squireToolbar-text-mode {
+            margin-left: 0;
+        }
+
         .squireToolbar-select-list {
             left: auto;
             right: 4px
@@ -383,7 +387,6 @@ $list: georgia arial helvetica menlo tahoma verdana times trebuchet;
 
 
 .squireToolbar-text-mode {
-
     min-width: auto;
     margin-left: auto;
     margin-right: .5em;
