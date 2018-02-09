@@ -55,7 +55,7 @@
         </div>
     </div>
 
-    <div  ng-if="message.expand">
+    <div ng-if="message.expand">
 
         <div class="details">
             <div class="recipients-summary">
@@ -209,6 +209,8 @@
             <span translate-context="Message expiration label" translate>This message will expire in</span>
             <time time-refreshed="{{ ::message.ExpirationTime }}"></time>
         </div>
+
+        <events-attachments data-model="message"></events-attachments>
 
         <message-extra></message-extra>
 

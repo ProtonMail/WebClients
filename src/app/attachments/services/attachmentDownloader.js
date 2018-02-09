@@ -1,7 +1,7 @@
 import _ from 'lodash';
 
 /* @ngInject */
-function attachmentDownloader(gettextCatalog, AttachmentLoader, embeddedUtils, aboutClient, notification, AppModel, confirmModal) {
+function attachmentDownloader(gettextCatalog, AttachmentLoader, embeddedUtils, aboutClient, notification, AppModel, confirmModal, pmcw) {
     const isFileSaverSupported = aboutClient.isFileSaverSupported();
     const I18N = {
         NOT_SUPPORTED: gettextCatalog.getString(
@@ -71,6 +71,15 @@ function attachmentDownloader(gettextCatalog, AttachmentLoader, embeddedUtils, a
      */
     const generateDownload = (attachment) => {
         downloadFile(new Blob([attachment.data], { type: attachment.MIMEType }), attachment.Name, attachment.el);
+    };
+
+    /**
+     * Download an attachment as a string
+     * @param {object} attachment
+     * @param {Node} message
+     */
+    const downloadString = (attachment, message) => {
+        return AttachmentLoader.get(attachment, message).then((buffer) => pmcw.arrayToBinaryString(buffer));
     };
 
     const allowDownloadBrokenAtt = () =>
@@ -168,6 +177,6 @@ function attachmentDownloader(gettextCatalog, AttachmentLoader, embeddedUtils, a
         }
     };
 
-    return { isNotSupported, download, all };
+    return { isNotSupported, download, all, downloadString };
 }
 export default attachmentDownloader;
