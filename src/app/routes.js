@@ -282,7 +282,11 @@ export default angular
                 resolve: {
                     encryptedToken(Eo, $stateParams) {
                         // Can be null if the network is down
-                        return Eo.token($stateParams.tag).then(({ data }) => (data || {}).Token);
+                        return Eo.token($stateParams.tag)
+                            .then(({ data = {} } = {}) => data.Token)
+                            .catch(() => {
+                                return Promise.resolve(false);
+                            });
                     }
                 },
                 views: {
