@@ -34,7 +34,10 @@
 }
 
 .contactList-table .contactList-thead { border-top: 0 }
-.contactList-table .contactList-thead th { border-bottom-width: 2px }
+.contactList-table .contactList-thead th {
+    border-bottom-width: 2px;
+    white-space: normal;
+}
 
 .contactsDetails-container,
 .contactPlaceholder-container {
