@@ -1,0 +1,29 @@
+.contactDisplay-item-group {
+    margin-bottom: 10px;
+
+}
+.contactDisplay-item {
+    padding: 10px;
+    display: flex;
+
+    > div {
+        flex: 1;
+    }
+}
+
+.contactDisplay-item-value {
+}
+
+.contactDisplay-item-value[data-key="adr"] {
+    white-space: pre-wrap;
+}
+
+.contactDisplay-item-label {
+    max-width: 45%;
+    .fa {
+        width: 30px;
+        text-align: center;
+        color: $default-color;
+    }
+    color: $default-color-medium;
+}

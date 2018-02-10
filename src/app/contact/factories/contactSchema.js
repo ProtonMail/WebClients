@@ -17,18 +17,18 @@ function contactSchema(gettextCatalog) {
         Type: getType(property)
     });
 
-    const formatName = (property = {}) => {
-       if (Array.isArray(property)) {
-           return property[0].valueOf().trim();
-       }
-       return property.valueOf().trim();
-   };
-
     const formatEmails = (property = {}) => {
         if (Array.isArray(property)) {
             return _.map(property, buildEmailProperty);
         }
         return [buildEmailProperty(property)];
+    };
+
+    const formatName = (property = {}) => {
+        if (Array.isArray(property)) {
+            return property[0].valueOf().trim();
+        }
+        return property.valueOf().trim();
     };
 
     const checkProperty = (property) => {
@@ -43,6 +43,27 @@ function contactSchema(gettextCatalog) {
         return Array.isArray(type) ? type : [type];
     }
 
+    function prepareContact(contact) {
+        const prepared = { Emails: [], vCard: contact };
+        const nameProperty = contact.get('fn');
+        const emailProperty = contact.get('email');
+
+        if (checkProperty(emailProperty)) {
+            prepared.Emails = formatEmails(emailProperty);
+        }
+
+        if (checkProperty(nameProperty)) {
+            prepared.Name = formatName(nameProperty);
+        } else {
+            const nameValue = prepared.Emails.length ? prepared.Emails[0].Email : I18N.UNKNOWN;
+
+            prepared.Name = nameValue;
+            prepared.vCard.set('fn', nameValue);
+        }
+
+        return prepared;
+    }
+
     return {
         contactAPI,
         group,
@@ -50,34 +71,11 @@ function contactSchema(gettextCatalog) {
         custom(key) {
             return all.indexOf(key) === -1;
         },
-        prepare(contacts = []) {
-            return _.reduce(
-                contacts,
-                (acc, contact) => {
-                    const prepared = { Emails: [], vCard: contact };
-                    const nameProperty = contact.get('fn');
-                    const emailProperty = contact.get('email');
-
-                    if (checkProperty(emailProperty)) {
-                        prepared.Emails = formatEmails(emailProperty);
-                    }
-
-                    if (checkProperty(nameProperty)) {
-                        prepared.Name = formatName(nameProperty);
-                    } else {
-                        const nameValue = prepared.Emails.length ? prepared.Emails[0].Email : I18N.UNKNOWN;
-
-                        prepared.Name = nameValue;
-                        prepared.vCard.set('fn', nameValue);
-                    }
-
-                    acc.push(prepared);
-
-                    return acc;
-                },
-                []
-            );
+        prepareContact,
+        prepareContacts(contacts = []) {
+            return contacts.map(prepareContact);
         }
     };
 }
+
 export default contactSchema;

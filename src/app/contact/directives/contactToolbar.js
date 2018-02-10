@@ -54,6 +54,7 @@ function contactToolbar($rootScope, $state, $stateParams, CONSTANTS, contactCach
                     scope.totalItems = contactCache.total();
                     scope.disabled = !paginatedContacts.length;
                     scope.noSelection = !($stateParams.id || selectedContacts.length);
+                    scope.selectedLength = selectedContacts.length;
                     scope.checkAll = paginatedContacts.length === checkedContacts.length;
                 });
             }
@@ -68,8 +69,15 @@ function contactToolbar($rootScope, $state, $stateParams, CONSTANTS, contactCach
                     });
                 }
 
-                if (type === 'addContact' || /^(merge|export|import)Contacts$/.test(type)) {
+                if (type === 'addContact' || /^(export|import)Contacts$/.test(type)) {
                     return dispatcher.contacts(type);
+                }
+
+                // Dispatch the merge contacts event with the IDs of the selected contacts.
+                if (type === 'mergeContacts') {
+                    return dispatcher.contacts(type, {
+                        contactIDs: _.map(getList(), 'ID')
+                    });
                 }
             }
 

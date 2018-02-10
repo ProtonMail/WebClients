@@ -7,7 +7,7 @@ function contactImporter($rootScope, contactSchema, importContactModal, notifica
     };
 
     const dispatch = (data = []) =>
-        $rootScope.$emit('contacts', { type: 'createContact', data: { contacts: contactSchema.prepare(data), mode: 'import' } });
+        $rootScope.$emit('contacts', { type: 'createContact', data: { contacts: contactSchema.prepareContacts(data), mode: 'import' } });
 
     const importVCF = async (reader) => dispatch(vcard.from(reader.result));
 

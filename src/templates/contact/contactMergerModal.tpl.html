@@ -1,37 +1,31 @@
 <div class="pm_modal {{ctrl.class}}" role="dialog" style="display: block;">
     <div class="modal-dialog">
-        <button type="button" ng-click="ctrl.cancel()" aria-hidden="true" title-translate="Close" title-translate-context="Action" class="fa fa-times close"></button>
+        <button
+            type="button"
+            name="cancel"
+            ng-click="ctrl.close()"
+            aria-hidden="true"
+            title-translate="Close"
+            title-translate-context="Action" class="fa fa-times close"></button>
         <div class="modal-content">
             <div class="modal-header">
-                <h4 class="modal-title" ng-bind=ctrl.title></h4>
+                <h4 class="modal-title">{{ ::ctrl.title }}</h4>
             </div>
             <div class="modal-body">
-                <div class="pm_table" ng-repeat="(email, contacts) in ctrl.emails">
-                    <table>
-                        <caption>{{ email }}</caption>
-                        <thead>
-                            <tr>
-                                <th></th>
-                                <th translate>Name</th>
-                                <th translate>Emails</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr ng-repeat="contact in contacts">
-                                <td>
-                                    <custom-checkbox data-custom-ng-model="contact.selected" ng-init="contact.selected = true"></custom-checkbox>
-                                </td>
-                                <td>{{ contact.Name }}</td>
-                                <td>{{ contact.emails }}</td>
-                            </tr>
-                        </tbody>
-                    </table>
+                <div class="alert alert-info" translate translate-context="Info">
+                    <p><i class="fa fa-info-circle"></i> Use Drag and Drop to rank merging priority between contacts.</p>
+                    <p>Uncheck contacts you do <b>not</b> want to merge.</p>
                 </div>
+                <contact-merger preview="ctrl.preview" groups="ctrl.duplicates"></contact-merger>
             </div>
         </div>
         <div class="modal-footer text-right">
-            <button class="pm_button pull-left" ng-click="ctrl.cancel()" translate-context="Action" translate>Cancel</button>
-            <button class="pm_button primary" tabindex="1" ng-click="ctrl.merge()" translate-context="Action" translate>Merge</button>
+            <button class="pm_button pull-left" ng-click="ctrl.close()" name="cancel" translate-context="Action" translate>
+                Cancel
+            </button>
+            <button class="pm_button primary" ng-click="ctrl.merge()" tabindex="1" name="merge" translate-context="Action" translate>
+                Merge
+            </button>
         </div>
     </div>
     <div class="modal-overlay"></div>

@@ -2,11 +2,14 @@ import Contact from './services/contact';
 import contactAddressInput from './directives/contactAddressInput';
 import contactClear from './directives/contactClear';
 import contactDetails from './directives/contactDetails';
+import contactDisplay from './directives/contactDisplay';
+import contactDisplayModal from './modals/contactDisplayModal';
 import contactEncrypted from './directives/contactEncrypted';
 import contactError from './directives/contactError';
 import contactItem from './directives/contactItem';
 import contactArrowsSort from './directives/contactArrowsSort';
 import contactList from './directives/contactList';
+import contactMerger from './directives/contactMerger';
 import contactNoResult from './directives/contactNoResult';
 import contactPlaceholder from './directives/contactPlaceholder';
 import contactToolbar from './directives/contactToolbar';
@@ -17,7 +20,7 @@ import contactDownloader from './factories/contactDownloader';
 import contactEditor from './factories/contactEditor';
 import contactEmails from './factories/contactEmails';
 import contactImporter from './factories/contactImporter';
-import contactMerger from './factories/contactMerger';
+import contactMergerFactory from './factories/contactMerger';
 import contactSchema from './factories/contactSchema';
 import contactEncryption from './factories/contactEncryption';
 import contactTransformLabel from './factories/contactTransformLabel';
@@ -40,7 +43,9 @@ export default angular
     })
     .directive('contactAddressInput', contactAddressInput)
     .directive('contactClear', contactClear)
+    .directive('contactDisplay', contactDisplay)
     .directive('contactDetails', contactDetails)
+    .directive('contactMerger', contactMerger)
     .directive('contactEncrypted', contactEncrypted)
     .directive('contactError', contactError)
     .directive('contactItem', contactItem)
@@ -53,11 +58,12 @@ export default angular
     .factory('Contact', Contact)
     .factory('contactCache', contactCache)
     .factory('contactDetailsModel', contactDetailsModel)
+    .factory('contactDisplayModal', contactDisplayModal)
     .factory('contactDownloader', contactDownloader)
     .factory('contactEditor', contactEditor)
     .factory('contactEmails', contactEmails)
     .factory('contactImporter', contactImporter)
-    .factory('contactMerger', contactMerger)
+    .factory('contactMerger', contactMergerFactory)
     .factory('contactSchema', contactSchema)
     .factory('contactTransformLabel', contactTransformLabel)
     .factory('contactUI', contactUI)

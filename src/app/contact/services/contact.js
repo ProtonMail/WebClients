@@ -1,4 +1,5 @@
 import _ from 'lodash';
+import { ContactUpdateError } from '../../../helpers/errors';
 
 /* @ngInject */
 function Contact($http, $rootScope, CONSTANTS, url, chunk, contactEncryption, sanitize) {
@@ -155,18 +156,19 @@ function Contact($http, $rootScope, CONSTANTS, url, chunk, contactEncryption, sa
      * @return {Promise}
      */
     function update(contact) {
-        return contactEncryption.encrypt([contact]).then((contacts) => {
-            return $http
-                .put(requestURL(contact.ID), contacts[0])
-                .then(({ data = {} } = {}) => {
-                    // NOTE We need to pass the cards to update the encrypted icon in the contact view
-                    data.cards = contacts[0].Cards;
-                    return data;
-                })
-                .catch(({ data = {} } = {}) => {
-                    throw new Error(data.Error);
-                });
-        });
+        return contactEncryption.encrypt([contact])
+            .then((contacts) => {
+                return $http
+                    .put(requestURL(contact.ID), contacts[0])
+                    .then(({ data = {} } = {}) => {
+                        // NOTE We need to pass the cards to update the encrypted icon in the contact view
+                        data.cards = contacts[0].Cards;
+                        return data;
+                    })
+                    .catch(({ data = {} } = {}) => {
+                        throw new ContactUpdateError(data.Error);
+                    });
+            });
     }
 
     /**
@@ -174,7 +176,20 @@ function Contact($http, $rootScope, CONSTANTS, url, chunk, contactEncryption, sa
      * @param {Array} contacts
      * @return {Promise}
      */
-    const remove = (contacts) => $http.put(requestURL('delete'), contacts);
+    const remove = (contacts) => {
+        return $http.put(requestURL('delete'), contacts)
+            .then(({ data = {} } = {}) => data)
+            .then(({ Responses = [] }) => {
+                return Responses.reduce((agg, { ID, Response = {} } = {}) => {
+                    if (Response.Error) {
+                        agg.errors.push({ ID, Error: Response.Error, Code: Response.Code });
+                    } else {
+                        agg.removed.push(ID);
+                    }
+                    return agg;
+                }, { removed: [], errors: [] });
+            });
+    };
 
     /**
      * Delete all contacts
@@ -199,11 +214,22 @@ function Contact($http, $rootScope, CONSTANTS, url, chunk, contactEncryption, sa
     }
 
     /**
+     * Get multiple contact by ids
+     * @param {Array} ids
+     * @param {number} timeout in ms
+     * @return {Promise}
+     */
+    function getMultiple(ids, timeout) {
+        return Promise.all(ids.map((id) => get(id, timeout)));
+    }
+
+    /**
      * Get groups and their emails
      * @return {Promise}
      */
     const groups = () => $http.get(requestURL('groups'));
 
-    return { hydrate, all, get, add, update, remove, clear, exportAll, groups, load };
+    return { hydrate, all, get, getMultiple, add, update, remove, clear, exportAll, groups, load };
 }
+
 export default Contact;
