@@ -61,6 +61,8 @@ function squireExecAction(editorModel, $rootScope) {
 
         const newSelection = angular.element(editor.getSelection().commonAncestorContainer);
         (newSelection.closest('a')[0] || newSelection.find('a')[0]).textContent = title || link;
+
+        dispatch('squire.native.action', { action: 'makeLink', message });
     };
 
     /**
@@ -71,6 +73,7 @@ function squireExecAction(editorModel, $rootScope) {
     const removeLink = (message) => {
         const { editor } = editorModel.find(message);
         editor.removeLink();
+        dispatch('squire.native.action', { action: 'removeLink', message });
     };
 
     const insertFile = (file) => {
@@ -132,7 +135,7 @@ function squireExecAction(editorModel, $rootScope) {
         const tests = testMap(editor, action);
 
         // We have custom behaviour for these actions
-        if (/^(makeLink|insertImage|changeColor)$/.test(action)) {
+        if (/^(makeLink|insertImage|changeColor|changeFontFamily|changeFontSize|moreToggle)$/.test(action)) {
             return;
         }
         const actions = Object.keys(tests.tests).filter((key) => tests.tests[key]);

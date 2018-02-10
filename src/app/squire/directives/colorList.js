@@ -1,60 +1,65 @@
+import { hexToRgbString } from '../../../helpers/colorHelper';
+
 /* @ngInject */
-function colorList(CONSTANTS) {
-    const { COMPOSER_COLOR, FONT_COLOR } = CONSTANTS;
+function colorList(editorState, CONSTANTS) {
+    const { FONT_COLOR } = CONSTANTS;
     const { white, magenta, blue, green, yellow } = FONT_COLOR;
     const CLASSNAME_ACTIVE = 'active';
 
     /**
-     * Find active classe for type of color
-     *     - color: font color
-     *     - highlight: background color
-     * @param  {String}  name    Color name
-     * @param  {Boolean} details Mark default color as active
-     * @param  {String} mode     Type of list of color (color|highlight)
-     * @return {String}
-     */
-    const getActive = (name, details, mode) => {
-        const color = COMPOSER_COLOR[mode === 'color' ? 'COLOR' : 'BACKGROUND'];
-        return name === color && details ? CLASSNAME_ACTIVE : '';
-    };
-
-    /**
      * Create a color item
-     * @param  {String}  name    Color name
-     * @param  {Boolean} details Mark default color as active
+     * @param  {String}  hex     Color in hex format
      * @param  {String} mode     Type of list of color (color|highlight)
      * @return {String}
      */
-    const template = (name, details = true, mode = 'color') => {
-        const active = getActive(name, details, mode);
-        return `<li class="colorList-item" style="color:${name}" data-mode="${mode}"><button class="colorList-btn-choose ${active}" data-mode="${mode}" type="button" data-color="${name}"><i class="fa fa-check" aria-hidden="true"></i></button></li>`;
+    const template = (hex, mode = 'color') => {
+        const rgb = hexToRgbString(hex);
+        return `<li class="colorList-item" style="color:${rgb}" data-mode="${mode}"><button class="colorList-btn-choose" data-mode="${mode}" type="button" data-color="${rgb}"><i class="fa fa-check" aria-hidden="true"></i></button></li>`;
     };
 
-    const colorReducer = (details, mode) => (acc, color) => acc + template(color, details, mode);
-    const list = (colors, details, mode) => `<ul class="colorList-list">${colors.reduce(colorReducer(details, mode), '')}</ul>`;
-    const listReducer = (mode) => (acc, colors) => acc + list(colors, true, mode);
+    const colorReducer = (mode) => (acc, color) => acc + template(color, mode);
+    const list = (colors, mode) => `<ul class="colorList-list">${colors.reduce(colorReducer(mode), '')}</ul>`;
+    const listReducer = (mode) => (acc, colors) => acc + list(colors, mode);
 
     return {
         replace: true,
         template: '<div class="colorList-container"></div>',
         compile(el, attr) {
-            const html = [white, magenta, blue, green, yellow].reduce(listReducer(attr.mode), '');
-            el[0].innerHTML = html;
+            const mode = attr.mode;
+
+            el[0].innerHTML = [white, magenta, blue, green, yellow].reduce(listReducer(mode), '');
+
+            const stateKey = mode === 'highlight' ? 'backgroundColor' : 'color';
 
             return (scope, el) => {
-                const onMousedown = ({ target }) => {
+                const ID = scope.message.ID;
+
+                const removeOldActive = () => {
                     const previous = el[0].querySelector(`.${CLASSNAME_ACTIVE}`);
                     previous && previous.classList.remove(CLASSNAME_ACTIVE);
-                    target.classList.add(CLASSNAME_ACTIVE);
                 };
 
-                el.on('mousedown', onMousedown);
+                const onStateChange = ({ [stateKey]: oldValue }, { [stateKey]: value }) => {
+                    if (oldValue === value) {
+                        return;
+                    }
+                    removeOldActive();
+                    const button = el[0].querySelector(`[data-color="${value}"]`);
+                    if (!button) {
+                        return;
+                    }
+                    button.classList.add(CLASSNAME_ACTIVE);
+                };
+
+                onStateChange({}, editorState.get(ID));
+                editorState.on(ID, onStateChange, [stateKey]);
 
                 scope.$on('$destroy', () => {
-                    el.off('mousedown', onMousedown);
+                    editorState.off(ID, onStateChange);
                 });
             };
         }
     };
 }
+
 export default colorList;

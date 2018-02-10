@@ -2,11 +2,16 @@ import _ from 'lodash';
 
 /* @ngInject */
 const squireActions = ($rootScope) => ({
-    link(scope, el, { squireActions }) {
+    link(scope, el, { squireActions, squireActionsType = 'mousedown' }) {
         const onMouseDown = (e) => {
+            const target = e.target;
+            // This is to be enable scrolling with the mouse click, for example on the dropdown.
+            if (target.dataset.squireIgnore) {
+                return;
+            }
+
             e.preventDefault();
             e.stopPropagation();
-            const target = e.target;
 
             const emitOptions = {
                 type: 'squireActions',
@@ -30,10 +35,15 @@ const squireActions = ($rootScope) => ({
             $rootScope.$emit('squire.editor', emitOptions);
         };
 
-        el.on('mousedown', onMouseDown);
+        /**
+         * The squireActionsType is the event for which to listen to.
+         * Special case for the `moreToggle` which needs to listen to the "click" event
+         * to steal focus from the editor to make the toggle mode editor work properly.
+         */
+        el.on(squireActionsType, onMouseDown);
 
         scope.$on('$destroy', () => {
-            el.off('mousedown', onMouseDown);
+            el.off(squireActionsType, onMouseDown);
         });
     }
 });

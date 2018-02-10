@@ -1,15 +1,13 @@
-<div class="moreToggle-container" data-editor-mode="{{::message.MIMEType}}">
+<div class="moreToggle-container">
     <div
         class="squireToolbar-select-view squireToolbar-action-mode"
+        data-squire-actions="moreToggle"
+        data-squire-actions-type="click"
         pt-tooltip-translate-context="Action"
         pt-tooltip-translate="More">
-        <button
-            type="button"
-            class="squireDropdown-item-label squireToolbar-action-modeEditor"
-            data-key="setEditorMode"
-            ></button>
-            <i class="fa fa-caret-down"></i>
-            <i class="fa fa-caret-up"></i>
+        <button type="button" class="squireDropdown-item-label squireToolbar-action-modeEditor"></button>
+        <i class="fa fa-caret-down"></i>
+        <i class="fa fa-caret-up"></i>
     </div>
     <ul class="squireToolbar-select-list squireToolbar-editor-mode">
         <li class="squireToolbar-select-item" data-squire-actions="setTextDirectionLTR">

@@ -147,6 +147,7 @@ function squire(squireEditor, embedded, editorListener, $rootScope, sanitize, to
                     unsubscribe.forEach((cb) => cb());
                     unsubscribe.length = 0;
                     squireEditor.clean(scope.message);
+                    toggleModeEditor.clear(scope.message);
                     editor.destroy();
                 });
             }

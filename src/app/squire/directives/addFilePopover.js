@@ -1,82 +1,76 @@
 /* @ngInject */
-function addFilePopover($rootScope, editorModel, CONSTANTS, squireExecAction, onCurrentMessage) {
-    const dispatch = (data) => {
-        $rootScope.$emit('squire.editor', {
-            type: 'popover.form',
-            data
-        });
-    };
+function addFilePopover(editorState, CONSTANTS, squireExecAction) {
     const { DEFAULT_SQUIRE_VALUE } = CONSTANTS;
     const IMAGE = DEFAULT_SQUIRE_VALUE.IMAGE;
     const CLASS_HIDDEN = 'addFilePopover-hidden';
 
-    const onPopover = (message, node, scope) => {
-        return ({ action, form, name }, formName) => {
-            if (formName !== name) {
-                return;
-            }
-            switch (action) {
-                case 'update':
-                    squireExecAction.insertImage(message, { url: form.url });
-                    break;
-                case 'close':
-                    node.classList.add(CLASS_HIDDEN);
-                    scope.$applyAsync(() => (scope.data.image = IMAGE));
-                    break;
-            }
-        };
-    };
-
-    const onChangeFile = (message, node) => (e) => {
-        const file = e.target.files[0];
-        squireExecAction.insertImage(message, { url: '', file });
-        node.classList.add(CLASS_HIDDEN);
-        // Reset input value to trigger the change event if you select the same file again
-        _rAF(() => (e.target.value = null));
-    };
-
     return {
         replace: true,
         templateUrl: require('../../../templates/squire/addFilePopover.tpl.html'),
-        link(scope, el, { name }) {
+        link(scope, $el) {
+            const ID = scope.message.ID;
+            const el = $el[0];
+
             const hide = () => {
-                el[0].classList.add(CLASS_HIDDEN);
-                dispatch({ name, form: {}, action: 'close.popover', message: scope.message });
+                editorState.set(ID, { popover: undefined });
             };
-            const $embedded = el[0].querySelector('.addFilePopover-btn-embedded');
-            const $uri = el[0].querySelector('.addFilePopover-btn-uri');
-            const $input = el[0].querySelector('.addFilePopover-input-file');
-            const onChange = onChangeFile(scope.message, el[0]);
-            const onClickUri = () => {
-                $input.click();
+
+            const onChangeFile = (e) => {
+                const file = e.target.files[0];
+                squireExecAction.insertImage(scope.message, { url: '', file });
+                // Reset input value to trigger the change event if you select the same file again
                 hide();
+                return _rAF(() => (e.target.value = null));
             };
 
-            $uri.addEventListener('click', onClickUri, false);
-            $embedded.addEventListener('click', hide, false);
-            $input.addEventListener('change', onChange, false);
-
-            const onAction = (type, data = {}) => {
-                if (type === 'popover.form') {
-                    const modelPopover = onPopover(scope.message, el[0], scope);
-                    return modelPopover(data, name);
-                }
-
-                if (type === 'squireActions' && data.action === 'insertImage') {
-                    el[0].classList.toggle(CLASS_HIDDEN);
-                    return _rAF(() => el[0].querySelector('input').focus());
+            const onStateChange = ({ popover: oldPopover }, { popover }) => {
+                if (popover === 'insertImage') {
+                    el.classList.remove(CLASS_HIDDEN);
+                    return _rAF(() => el.querySelector('input').focus());
+                } else if (oldPopover === 'insertImage') {
+                    el.classList.add(CLASS_HIDDEN);
+                    scope.$applyAsync(() => (scope.data.image = IMAGE));
                 }
             };
 
-            const unsubscribe = onCurrentMessage('squire.editor', scope, onAction);
+            const onSubmit = (e) => {
+                e.preventDefault();
+                e.stopPropagation();
+            };
+
+            const $input = el.querySelector('.addFilePopover-input-file');
+
+            const onClick = ({ target }) => {
+                switch (target.name) {
+                    case 'adduri':
+                        $input.click();
+                        hide();
+                        break;
+                    case 'addurl':
+                        squireExecAction.insertImage(scope.message, { url: el.url.value });
+                        hide();
+                        break;
+                    case 'addembedded':
+                        hide();
+                        break;
+                }
+            };
+
+            editorState.on(ID, onStateChange, ['popover']);
+
+            el.addEventListener('submit', onSubmit, false);
+            el.addEventListener('click', onClick, false);
+            $input.addEventListener('change', onChangeFile, false);
 
             scope.$on('$destroy', () => {
-                unsubscribe();
-                $uri.removeEventListener('click', onClickUri, false);
-                $embedded.removeEventListener('click', hide, false);
-                $input.removeEventListener('change', onChange, false);
+                editorState.off(ID, onStateChange);
+
+                el.removeEventListener('submit', onSubmit, false);
+                el.addEventListener('click', onClick, false);
+                $input.removeEventListener('change', onChangeFile, false);
             });
         }
     };
 }
+
 export default addFilePopover;

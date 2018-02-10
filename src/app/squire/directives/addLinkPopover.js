@@ -1,7 +1,7 @@
 import _ from 'lodash';
 
 /* @ngInject */
-function addLinkPopover(editorModel, CONSTANTS, squireExecAction, regexEmail, onCurrentMessage) {
+function addLinkPopover(editorModel, editorState, CONSTANTS, squireExecAction, regexEmail) {
     const { DEFAULT_SQUIRE_VALUE } = CONSTANTS;
     const LINK_DEFAULT = DEFAULT_SQUIRE_VALUE.LINK;
     const CLASS_HIDDEN = 'addLinkPopover-hidden';
@@ -46,54 +46,62 @@ function addLinkPopover(editorModel, CONSTANTS, squireExecAction, regexEmail, on
 
     const isUpdate = (link = LINK_DEFAULT) => link && link !== LINK_DEFAULT;
 
-    const onPopover = (message, node) => {
-        return ({ action, form, name }, formName) => {
-            if (formName !== name) {
-                return;
-            }
-
-            switch (action) {
-                case 'update':
-                    squireExecAction.makeLink(message, formatLink(form.urlLink), form.labelLink);
-                    break;
-                case 'close':
-                    node.classList.add(CLASS_HIDDEN);
-                    node.classList.remove(CLASS_UPDATE);
-                    node.urlLink.value = LINK_DEFAULT;
-                    node.labelLink.value = '';
-                    break;
-                case 'remove':
-                    squireExecAction.removeLink(message);
-                    break;
-            }
-        };
-    };
-
     return {
         replace: true,
         templateUrl: require('../../../templates/squire/addLinkPopover.tpl.html'),
-        link(scope, el, { name }) {
-            const onAction = (type, data = {}) => {
-                if (type === 'popover.form') {
-                    const modelPopover = onPopover(scope.message, el[0], scope);
-                    return modelPopover(data, name);
-                }
+        link(scope, $el) {
+            const ID = scope.message.ID;
+            const el = $el[0];
 
-                if (type === 'squireActions' && data.action === 'makeLink') {
+            const onStateChange = ({ popover: oldPopover }, { popover }) => {
+                if (popover === 'makeLink') {
                     const link = getLinkAtCursor(scope.message);
-                    el[0].urlLink.value = link.href;
-                    el[0].labelLink.value = link.textContent;
-                    el[0].classList.toggle(CLASS_HIDDEN);
+                    el.urlLink.value = link.href;
+                    el.labelLink.value = link.textContent;
+                    el.classList.remove(CLASS_HIDDEN);
 
-                    isUpdate(el[0].urlLink.value) && el[0].classList.toggle(CLASS_UPDATE);
-                    _rAF(() => el[0].querySelector('input').focus());
+                    if (isUpdate(el.urlLink.value)) {
+                        el.classList.add(CLASS_UPDATE);
+                    } else {
+                        el.classList.remove(CLASS_UPDATE);
+                    }
+
+                    return _rAF(() => el.querySelector('input').focus());
+                } else if (oldPopover === 'makeLink') {
+                    el.classList.add(CLASS_HIDDEN);
                 }
             };
 
-            const unsubscribe = onCurrentMessage('squire.editor', scope, onAction);
+            const onClick = ({ target }) => {
+                switch (target.name) {
+                    case 'update':
+                    case 'add':
+                        squireExecAction.makeLink(scope.message, formatLink(el.urlLink.value), el.labelLink.value);
+                        break;
+                    case 'remove':
+                        squireExecAction.removeLink(scope.message);
+                        break;
+                }
+            };
 
-            scope.$on('$destroy', () => unsubscribe());
+            const onSubmit = (e) => {
+                e.preventDefault();
+                e.stopPropagation();
+            };
+
+            editorState.on(ID, onStateChange, ['popover']);
+
+            el.addEventListener('submit', onSubmit);
+            el.addEventListener('click', onClick);
+
+            scope.$on('$destroy', () => {
+                editorState.off(ID, onStateChange);
+
+                el.removeEventListener('submit', onSubmit);
+                el.removeEventListener('click', onClick);
+            });
         }
     };
 }
+
 export default addLinkPopover;

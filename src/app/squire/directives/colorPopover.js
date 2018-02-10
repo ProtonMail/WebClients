@@ -7,8 +7,10 @@ function colorPopover(squireExecAction) {
             el.find('[data-hash]').attr('data-mode', mode);
 
             return (scope, el, { mode = 'color' }) => {
-                const onMouseDown = ({ target }) => {
-                    squireExecAction.changeColor(scope.message, target.dataset.color, mode);
+                const onMouseDown = (e) => {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    squireExecAction.changeColor(scope.message, e.target.dataset.color, mode);
                 };
 
                 el.on('mousedown', onMouseDown);

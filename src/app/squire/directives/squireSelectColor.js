@@ -1,67 +1,37 @@
 /* @ngInject */
-function squireSelectColor(onCurrentMessage, editorModel) {
+function squireSelectColor(editorState) {
     const CLASS_HIDDEN = 'changeColor-hidden';
     const CLASS_TOGGLE = 'squireSelectColor-is-open';
-    const KEY_ARROW_INPUT = [38, 39, 40, 37, 33, 34, 36, 35]; // URDL FastUP FastDown
 
     return {
         restrict: 'E',
         replace: true,
         templateUrl: require('../../../templates/squire/squireSelectColor.tpl.html'),
         link(scope, el) {
+            const ID = scope.message.ID;
             const $i = el[0].querySelector('mark');
             const $popover = el[0].querySelector('.squireSelectColor-popover');
-            const { editor } = editorModel.find(scope.message);
 
-            const closePopover = () => {
-                $popover.classList.add(CLASS_HIDDEN);
-                el[0].classList.remove(CLASS_TOGGLE);
-            };
-
-            const onClickEditor = () => {
-                const { color = 'rgb(34, 34, 34)' } = editor.getFontInfo() || {};
-                $i.style.color = color;
-                closePopover();
-            };
-
-            const onKeyup = (e) => {
-                KEY_ARROW_INPUT.includes(e.keyCode) && onClickEditor();
-            };
-
-            editor.addEventListener('click', onClickEditor);
-            editor.addEventListener('keyup', onKeyup);
-
-            const onAction = (type, data = {}) => {
-                if (type === 'squireActions' && data.action === 'changeColor') {
-                    $popover.classList.toggle(CLASS_HIDDEN);
-                    el[0].classList.toggle(CLASS_TOGGLE);
+            const onStateChange = ({ popover: oldPopover, color: oldColor }, { color, popover }) => {
+                if (oldColor !== color) {
+                    $i.style.color = color;
                 }
-
-                if (type === 'popover.form' && data.action === 'close.popover' && data.name === 'changeColor') {
-                    closePopover();
+                if (popover === 'changeColor') {
+                    $popover.classList.remove(CLASS_HIDDEN);
+                    el[0].classList.add(CLASS_TOGGLE);
+                } else if (oldPopover === 'changeColor') {
+                    $popover.classList.add(CLASS_HIDDEN);
+                    el[0].classList.remove(CLASS_TOGGLE);
                 }
             };
 
-            const onMouseDown = (e) => {
-                e.preventDefault();
-                e.stopPropagation();
-                const target = e.target;
-                if (target.hasAttribute('data-color') && target.getAttribute('data-mode') === 'color') {
-                    $i.style.color = target.getAttribute('data-color');
-                    closePopover();
-                }
-            };
-
-            el.on('mousedown', onMouseDown);
-            const unsubscribe = onCurrentMessage('squire.editor', scope, onAction);
+            editorState.on(ID, onStateChange, ['color', 'popover']);
 
             scope.$on('$destroy', () => {
-                el.off('mousedown', onMouseDown);
-                editor.removeEventListener('click', onClickEditor);
-                editor.removeEventListener('keyup', onKeyup);
-                unsubscribe();
+                editorState.off(ID, onStateChange);
             });
         }
     };
 }
+
 export default squireSelectColor;

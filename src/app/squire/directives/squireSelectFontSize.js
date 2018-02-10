@@ -1,41 +1,47 @@
 /* @ngInject */
-function squireSelectFontSize(squireDropdown, editorModel) {
-    const ACTION = 'setFontSize';
-
+function squireSelectFontSize(editorState) {
+    const IS_OPEN = 'squireDropdown-is-open';
     return {
         replace: true,
         templateUrl: require('../../../templates/squire/squireSelectFontSize.tpl.html'),
-        link(scope, el) {
-            const container = squireDropdown(scope.message);
-            const { editor } = editorModel.find(scope.message);
+        link(scope, $el) {
+            const ID = scope.message.ID;
+            const el = $el[0];
+            const button = el.querySelector('.squireToolbar-action-fontSize');
 
-            const parseContent = (refresh) => () => {
-                const { size = '14px' } = editor.getFontInfo() || {};
-                const value = parseInt(size, 10);
-                refresh(value, value);
-                return value;
-            };
-
-            const dropdown = container.create(el[0], ACTION, {
-                attribute: 'data-font-size',
-                parseContent
-            });
-
-            const onMouseDown = (e) => {
-                e.preventDefault();
-                e.stopPropagation();
-                if (e.target.nodeName !== 'LI') {
-                    dropdown.toggle(parseContent(dropdown.refresh));
+            const onStateChange = ({ popover: oldPopover, size: oldSize }, { popover, size }) => {
+                if (oldSize !== size) {
+                    button.textContent = size;
+                    el.setAttribute('data-font-size', size);
+                }
+                if (popover === 'changeFontSize') {
+                    el.classList.add(IS_OPEN);
+                    const item = el.querySelector(`[data-value^="${size}"]`);
+                    if (item) {
+                        // To prevent scrolling the whole page, just the dropdown.
+                        item.parentNode.scrollTop = item.offsetTop;
+                    }
+                } else if (oldPopover === 'changeFontSize') {
+                    el.classList.remove(IS_OPEN);
                 }
             };
 
-            el.on('mousedown', onMouseDown);
+            const onClick = (e) => {
+                e.preventDefault();
+                e.stopPropagation();
+            };
+
+            el.addEventListener('mousedown', onClick);
+
+            onStateChange({}, editorState.get(ID));
+            editorState.on(ID, onStateChange, ['popover', 'size']);
 
             scope.$on('$destroy', () => {
-                el.off('mousedown', onMouseDown);
-                dropdown.unsubscribe();
+                editorState.off(ID, onStateChange);
+                el.removeEventListener('mousedown', onClick);
             });
         }
     };
 }
+
 export default squireSelectFontSize;

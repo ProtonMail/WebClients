@@ -1,8 +1,7 @@
 /* @ngInject */
-function moreToggle(squireDropdown, $rootScope, toggleModeEditor, gettextCatalog, onCurrentMessage) {
-    toggleModeEditor.init();
+function moreToggle(gettextCatalog, onCurrentMessage, editorState) {
+    const IS_OPEN = 'squireDropdown-is-open';
 
-    const ACTION = 'setEditorMode';
     const MAP_TEXT = {
         'text/plain': gettextCatalog.getString('Plain Text', null, 'Composer Mode'),
         'text/html': gettextCatalog.getString('Normal', null, 'Composer Mode')
@@ -11,41 +10,36 @@ function moreToggle(squireDropdown, $rootScope, toggleModeEditor, gettextCatalog
     return {
         replace: true,
         templateUrl: require('../../../templates/squire/moreToggle.tpl.html'),
-        link(scope, el) {
-            const unsubscribe = [];
-            const button = el[0].querySelector('.squireToolbar-action-modeEditor');
-            const container = squireDropdown(scope.message);
-            const defaultMode = toggleModeEditor.getMode(scope.message);
+        link(scope, $el) {
+            const ID = scope.message.ID;
+            const el = $el[0];
+            const button = el.querySelector('.squireToolbar-action-modeEditor');
 
-            const dropdown = container.create(el[0], ACTION, {
-                attribute: 'data-editor-mode'
-            });
-
-            dropdown.refresh(MAP_TEXT[defaultMode], defaultMode);
-
-            const toggle = (node) => node.dataset.value || toggleModeEditor.getMode(scope.message);
-
-            const onClick = ({ target }) => {
-                if (target.dataset.key === 'setEditorMode') {
-                    dropdown.toggle(() => toggle(target));
+            const onStateChange = ({ popover: oldPopover, editorMode: oldEditorMode }, { popover, editorMode }) => {
+                if (oldEditorMode !== editorMode) {
+                    el.setAttribute('data-editor-mode', editorMode);
+                    button.textContent = MAP_TEXT[editorMode];
+                }
+                if (popover === 'moreToggle') {
+                    el.classList.add(IS_OPEN);
+                } else if (oldPopover === 'moreToggle') {
+                    el.classList.remove(IS_OPEN);
                 }
             };
-            el.on('click', onClick);
 
-            unsubscribe.push(() => el.off('click', onClick));
-            unsubscribe.push(() => dropdown.unsubscribe());
-            unsubscribe.push(() => toggleModeEditor.clear(scope.message));
-            unsubscribe.push(
-                onCurrentMessage('squire.toggleMode', scope, (type) => {
-                    if (type === 'enableToggle' || type === 'disableToggle') {
-                        button.disabled = type === 'disableToggle';
-                    }
-                })
-            );
+            const unsubscribe = onCurrentMessage('squire.toggleMode', scope, (type) => {
+                if (type === 'enableToggle' || type === 'disableToggle') {
+                    button.disabled = type === 'disableToggle';
+                }
+            });
+
+            // Needs to be initialized with the default editor mode.
+            onStateChange({}, editorState.get(ID));
+            editorState.on(ID, onStateChange, ['popover', 'editorMode']);
 
             scope.$on('$destroy', () => {
-                unsubscribe.forEach((cb) => cb());
-                unsubscribe.length = 0;
+                editorState.off(ID, onStateChange);
+                unsubscribe();
             });
         }
     };
