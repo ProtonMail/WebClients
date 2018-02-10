@@ -6,13 +6,13 @@ import moreToggle from './directives/moreToggle';
 import plainTextArea from './directives/plainTextArea';
 import squire from './directives/squire';
 import squireActions from './directives/squireActions';
-import squirePopover from './directives/squirePopover';
 import squireSelectColor from './directives/squireSelectColor';
 import squireSelectFontFamily from './directives/squireSelectFontFamily';
 import squireSelectFontSize from './directives/squireSelectFontSize';
 import squireToolbar from './directives/squireToolbar';
+import squireState from './directives/squireState';
 import editorModel from './factories/editorModel';
-import squireDropdown from './factories/squireDropdown';
+import editorState from './factories/editorState';
 import squireEditor from './factories/squireEditor';
 import editorDropzone from './services/editorDropzone';
 import editorListener from './services/editorListener';
@@ -32,13 +32,13 @@ export default angular
     .directive('plainTextArea', plainTextArea)
     .directive('squire', squire)
     .directive('squireActions', squireActions)
-    .directive('squirePopover', squirePopover)
     .directive('squireSelectColor', squireSelectColor)
     .directive('squireSelectFontFamily', squireSelectFontFamily)
     .directive('squireSelectFontSize', squireSelectFontSize)
     .directive('squireToolbar', squireToolbar)
+    .directive('squireState', squireState)
     .factory('editorModel', editorModel)
-    .factory('squireDropdown', squireDropdown)
+    .factory('editorState', editorState)
     .factory('squireEditor', squireEditor)
     .factory('editorDropzone', editorDropzone)
     .factory('editorListener', editorListener)

@@ -22,6 +22,7 @@ module.exports = (config) => {
         webpack: {
             module: {
                 rules: [
+                    ...require('../webpack.tasks/js.loader'),
                     ...require('../webpack.tasks/templates.loader'),
                     ...require('../webpack.tasks/assets.loader')
                 ]

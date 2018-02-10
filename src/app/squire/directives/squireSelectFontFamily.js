@@ -1,8 +1,8 @@
 import _ from 'lodash';
 
 /* @ngInject */
-function squireSelectFontFamily(squireDropdown, editorModel) {
-    const ACTION = 'setFontFace';
+function squireSelectFontFamily(editorState) {
+    const IS_OPEN = 'squireDropdown-is-open';
     const MAP = {
         georgia: 'Georgia',
         arial: 'Arial',
@@ -26,37 +26,38 @@ function squireSelectFontFamily(squireDropdown, editorModel) {
     return {
         replace: true,
         templateUrl: require('../../../templates/squire/squireSelectFontFamily.tpl.html'),
-        link(scope, el) {
-            const container = squireDropdown(scope.message);
-            const { editor } = editorModel.find(scope.message);
+        link(scope, $el) {
+            const ID = scope.message.ID;
+            const el = $el[0];
+            const button = el.querySelector('.squireToolbar-action-fontFamily');
 
-            const parseContent = (refresh) => () => {
-                const { family = 'arial' } = editor.getFontInfo() || {};
-                const font = family.replace(/"/g, '');
-                refresh(getFont(font), font);
-                return font;
-            };
+            const onStateChange = ({ popover: oldPopover, font: oldFont }, { popover, font = '' }) => {
+                if (oldFont !== font) {
+                    button.textContent = getFont(font);
+                    el.setAttribute('data-font-family', font);
+                }
+                if (popover === 'changeFontFamily') {
+                    el.classList.add(IS_OPEN);
+                    const [firstFont] = font.split(' ');
+                    const item = el.querySelector(`[data-value^="${firstFont}"]`);
 
-            const dropdown = container.create(el[0], ACTION, {
-                attribute: 'data-font-family',
-                parseContent
-            });
-
-            const onMouseDown = (e) => {
-                e.preventDefault();
-                e.stopPropagation();
-                if (e.target.nodeName !== 'LI') {
-                    dropdown.toggle(parseContent(dropdown.refresh));
+                    if (item) {
+                        // To prevent scrolling the whole page, just the dropdown.
+                        item.parentNode.scrollTop = item.offsetTop;
+                    }
+                } else if (oldPopover === 'changeFontFamily') {
+                    el.classList.remove(IS_OPEN);
                 }
             };
 
-            el.on('mousedown', onMouseDown);
+            onStateChange({}, editorState.get(ID));
+            editorState.on(ID, onStateChange, ['popover', 'font']);
 
             scope.$on('$destroy', () => {
-                el.off('mousedown', onMouseDown);
-                dropdown.unsubscribe();
+                editorState.off(ID, onStateChange);
             });
         }
     };
 }
+
 export default squireSelectFontFamily;
