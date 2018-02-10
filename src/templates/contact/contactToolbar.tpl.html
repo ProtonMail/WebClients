@@ -28,6 +28,13 @@
         translate-comment="contacts toolbar menu option"
         translate>Compose</button>
 
+    <button class="merge pm_button" type="button"
+            data-action="mergeContacts"
+            ng-disabled="selectedLength <= 1"
+            translate-context="Action"
+            translate-comment="contacts toolbar menu option"
+            translate>Merge</button>
+
     <div class="contactsToolbar-right">
         <div class="pull-right">
             <paginator-scope

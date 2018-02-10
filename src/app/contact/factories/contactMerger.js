@@ -1,11 +1,11 @@
 import _ from 'lodash';
-
-import { flow, filter, uniq, reduce } from 'lodash/fp';
+import duplicateExtractor from '../../../helpers/duplicateExtractor';
 
 /* @ngInject */
 function contactMerger(
     $rootScope,
     contactMergerModal,
+    contactDisplayModal,
     contactEditor,
     contactSchema,
     Contact,
@@ -44,59 +44,152 @@ function contactMerger(
     }
 
     /**
-     * Extract duplicate contacts per email
-     * @param  {Array}  contacts
-     * @return {Object} (key: email, value: contacts)
+     * Clean a name for use in the duplication check
+     * @param {string} name
+     * @returns {string}
+     */
+    const cleanName = (name = '') => name.trim().toLowerCase();
+
+    /**
+     * Extract name from contact.
+     * From GET /api/contacts Name is defined
+     * From GET /api/contacts/export Name is defined inside the vCard Object
+     * @param Name
+     * @param vCard
+     * @returns {*}
+     */
+    function getName({ Name, vCard }) {
+        if (Name) {
+            return Name;
+        }
+        const name = vCard.get('fn');
+        return (Array.isArray(name) ? name[0] : name).valueOf();
+    }
+
+    /**
+     * Extract duplicates from an array of contacts.
+     * @param {Array} contacts
+     * @returns {{}}
      */
     function extractDuplicates(contacts = []) {
-        const { map = {}, duplicate = [] } = _.reduce(
-            contacts,
-            (acc, contact, index) => {
-                const emails = getEmails(contact);
+        // Flatten all emails and names from a contact into the format that duplicateExtractor expects.
+        const items = contacts.reduce((acc, contact, i) => {
+            const emails = getEmails(contact)
+                .map((email) => ({ duplicate: email, unique: i, contact }));
+            const names = [{ duplicate: cleanName(getName(contact)), unique: i, contact }];
+            return acc.concat(emails).concat(names);
+        }, []);
+        // Extract the duplicates.
+        return duplicateExtractor({
+            items,
+            duplicateKey: 'duplicate',
+            uniqueKey: 'unique',
+            objectKey: 'contact'
+        });
+    }
 
-                _.each(emails, (email = '') => {
-                    acc.map[email] = acc.map[email] || [];
-                    acc.map[email].push(index);
-
-                    if (acc.map[email].length > 1) {
-                        acc.duplicate.push(email);
-                    }
-                });
-
-                return acc;
-            },
-            { map: {}, duplicate: [] }
+    /**
+     * Convert multiple contacts into one.
+     * @param {array} contacts
+     * @return {vCard} the new vCard instance
+     */
+    function getMergedContact(contacts = []) {
+        return vcard.merge(
+            contacts.map(({ vCard }) => vCard)
         );
+    }
 
-        return flow(
-            uniq,
-            reduce((acc, email) => {
-                acc[email] = [];
+    /**
+     * Get the contacts to delete and to create from the grouping in the way that the API expects.
+     * @param emails
+     * @returns {object}
+     */
+    function prepareMerge(emails = {}) {
+        return Object.keys(emails).reduce((acc, key) => {
+            const { selected = [], deleted = [] } = emails[key];
 
-                _.each(map[email], (index) => {
-                    const contact = contacts[index];
-                    contact.selected = true; // Select the contact per default
-                    acc[email].push(contact);
-                });
+            // Merge the vCards together, and create the update contact in the way the API expects.
+            const update = contactSchema.prepareContact(
+                getMergedContact(selected)
+            );
 
+            // The first contact is the one that will be updated.
+            const updateId = selected[0].id;
+
+            // Set the ID on the "new" contact (the one to update).
+            update.ID = updateId;
+
+            acc[key] = {
+                update,
+                remove: selected
+                    .concat(deleted) // Add the ids that were requested to be deleted.
+                    .map(({ id }) => id)
+                    .filter((id) => id !== updateId)
+            };
+            return acc;
+        }, {});
+    }
+
+    /**
+     * Mangle the groups of contacts into selected and delected.
+     * @param {Object} groups Coming from the contact-merge directive.
+     * @returns {{}}
+     */
+    function prepareGroups(groups) {
+        return Object.keys(groups)
+            .reduce((acc, key) => {
+                // Include contacts that were selected, or deleted.
+                const selected = groups[key].filter(({ selected }) => selected);
+                const deleted = groups[key].filter(({ deleted }) => deleted);
+
+                // If less than 2 contacts were selected, then ignore this group.
+                if (selected.length <= 1) {
+                    return acc;
+                }
+                acc[key] = { selected, deleted };
                 return acc;
-            }, {})
-        )(duplicate);
+            }, {});
+    }
+
+    /**
+     * Open the preview contact modal.
+     * @param vcard of the contact
+     */
+    function showContactPreviewModal(vcard) {
+        contactDisplayModal.activate({
+            params: {
+                vcard,
+                close() {
+                    contactDisplayModal.deactivate();
+                }
+            }
+        });
     }
 
     /**
      * Open the confirm merge contacts modal
      * Let the user pick contacts to merge
      * And then call the merge function
-     * @param  {Object} emails
+     * @param {Object} duplicates
      */
-    function confirm(emails) {
+    function showMergeModal(duplicates) {
         contactMergerModal.activate({
             params: {
-                emails,
-                merge(emails = {}) {
-                    merge(emails);
+                title: I18N.mergeContacts,
+                duplicates,
+                merge(groups = {}) {
+                    const duplicateGroups = prepareGroups(groups);
+                    if (Object.keys(duplicateGroups).length === 0) {
+                        return;
+                    }
+                    contactEditor.merge(prepareMerge(duplicateGroups));
                     contactMergerModal.deactivate();
+                },
+                preview(contacts = []) {
+                    if (!contacts.length) {
+                        return;
+                    }
+                    showContactPreviewModal(getMergedContact(contacts));
                 },
                 close() {
                     contactMergerModal.deactivate();
@@ -106,58 +199,19 @@ function contactMerger(
     }
 
     /**
-     * Delete existing contacts and merge properties per email address
-     * @param  {Object} emails
-     */
-    function merge(emails = {}) {
-        const { toDelete, toCreate } = flow(
-            reduce(
-                (acc, key) => {
-                    const contacts = emails[key];
-
-                    const properties = flow(
-                        filter(({ selected }) => selected),
-                        reduce((acc2, contact) => {
-                            if (contact.selected) {
-                                acc.toDelete.push(contact.ID);
-                                acc2.push(vcard.extractProperties(contact.vCard));
-                            }
-
-                            return acc2;
-                        }, [])
-                    )(contacts);
-
-                    if (properties.length) {
-                        /* eslint new-cap: "off" */
-                        const newCard = new vCard();
-
-                        _.each(properties, (property) => newCard.addProperty(property));
-                        acc.toCreate.push(newCard);
-                    }
-
-                    return acc;
-                },
-                { toDelete: [], toCreate: [] }
-            )
-        )(Object.keys(emails));
-
-        contactEditor.remove({ contactIDs: toDelete, confirm: false });
-        contactEditor.create({ contacts: contactSchema.prepare(toCreate) });
-    }
-
-    /**
      * First function called to initialize this process
      * @return {Promise}
      */
-    function mergeContacts() {
-        const promise = Contact.exportAll().then((contacts) => {
-            const emails = extractDuplicates(contacts);
+    function mergeContacts(ids = []) {
+        const promise = ids.length >= 2 ?
+            Contact.getMultiple(ids).then((data) => ({ group: data })) :
+            Contact.exportAll().then(extractDuplicates);
 
-            if (Object.keys(emails).length) {
-                confirm(emails);
-            } else {
-                notification.info(I18N.noDuplicate);
+        promise.then((duplicates) => {
+            if (Object.keys(duplicates).length) {
+                return showMergeModal(duplicates);
             }
+            notification.info(I18N.noDuplicate);
         });
 
         networkActivityTracker.track(promise);
@@ -165,8 +219,8 @@ function contactMerger(
         return promise;
     }
 
-    $rootScope.$on('contacts', (event, { type }) => {
-        type === 'mergeContacts' && mergeContacts();
+    $rootScope.$on('contacts', (event, { type, data = {} }) => {
+        type === 'mergeContacts' && mergeContacts(data.contactIDs);
     });
 
     return { init: angular.noop, extractDuplicates };

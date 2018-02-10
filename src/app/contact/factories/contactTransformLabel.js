@@ -41,6 +41,13 @@ function contactTransformLabel(gettextCatalog) {
     };
 
     /**
+     * Transform vCard label to language if a reference is found, or undefined
+     * @param  {String} label
+     * @return {String}
+     */
+    const toLangExplicit = (label = '') => MAP[label.toLowerCase()];
+
+    /**
      * Transform vCard label to language if a reference is found
      * or Uppercase the first letter
      * @param  {String} label
@@ -55,6 +62,6 @@ function contactTransformLabel(gettextCatalog) {
      */
     const toVCard = (label = '') => Object.keys(MAP).find((key) => label === MAP[key]) || label;
 
-    return { toLang, toVCard };
+    return { toLang, toLangExplicit, toVCard };
 }
 export default contactTransformLabel;

@@ -1,10 +1,62 @@
 import _ from 'lodash';
-import parseDate from './vcardDateParser';
+import parseDate from '../../../helpers/vcardDateParser';
+import isUniqField from '../../../helpers/vcardUniqueFields';
 
 /* @ngInject */
 function vcard(CONSTANTS, notification, sanitize) {
     const { VCARD_VERSION, VCARD_TYPES } = CONSTANTS;
-    const merge = (vcards = []) => _.reduce(vcards, (acc, vcard = {}) => build(extractProperties(vcard), acc), new vCard());
+    const makeUniq = (properties = []) => _.uniqBy(properties, (property) => property.valueOf());
+
+    /**
+     * Merge multiple vCards into one
+     * @param vCards
+     * @returns {*}
+     */
+    const merge = (vCards = []) => {
+        if (vCards.length === 0) {
+            return;
+        }
+        if (vCards.length === 1) {
+            return vCards[0];
+        }
+        const newCard = new vCard();
+
+        // Count of the id of the group to ensure that no conflicts exists between them between contacts.
+        let groupId = 0;
+
+        // All new properties.
+        const properties = _.reduce(vCards, (acc, vcard = {}) => {
+            const groups = {};
+            const props = extractProperties(vcard);
+            _.each(props, (prop) => {
+                const group = prop.getGroup();
+                if (group) {
+                    // Rename group to prevent conflicts where properties from different vcards have the same group.
+                    groups[group] = groups[group] || `item${groupId++}`;
+                    prop.group = groups[group];
+                }
+                const field = prop.getField();
+                acc[field] = acc[field] || [];
+                acc[field].push(prop);
+            });
+            return acc;
+        }, {});
+
+        /**
+         * Build all the properties.
+         * If it's a unique field, take the first property.
+         * Otherwise ensure that the properties are unique and add them.
+         */
+        _.each(Object.keys(properties), (field) => {
+            if (isUniqField(field)) {
+                return build([properties[field][0]], newCard);
+            }
+            build(makeUniq(properties[field]), newCard);
+        });
+
+        return newCard;
+    };
+
     const to = (vcards = []) => _.reduce(vcards, (acc, vCard) => acc + clean(vCard).toString(VCARD_VERSION) + '\r\n', '');
     const from = (vcfString = '') => {
         try {
@@ -129,15 +181,12 @@ function vcard(CONSTANTS, notification, sanitize) {
      * @return {Array}
      */
     function extractProperties(vcard = new vCard()) {
-        return _.reduce(
-            Object.keys(vcard.data),
-            (acc, key) => {
+        return _.reduce(Object.keys(vcard.data), (acc, key) => {
                 const value = vcard.get(key);
                 const props = Array.isArray(value) ? value : [value];
 
                 return acc.concat(props);
-            },
-            []
+            }, []
         );
     }
 

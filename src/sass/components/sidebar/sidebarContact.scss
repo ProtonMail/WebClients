@@ -21,9 +21,7 @@
 }
 
 /* Context */
-/* future merge feature (does not currently work) */
-.sidebarContact-container .sidebarApp-link[data-action="mergeContacts"] { display: none }
-
 .sidebarContact-container:not(.sidebarContact-show-delete-contacts) .sidebarApp-link[data-action="deleteContacts"] { display: none }
+.sidebarContact-container:not(.sidebarContact-show-merge-button) .sidebarApp-link[data-action="mergeContacts"] { display: none }
 
 body:not(.appConfigBody-is-mobile) .sidebarContact-about-app { display: none }

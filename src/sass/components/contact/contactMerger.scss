@@ -1,0 +1,112 @@
+.contactMergerList-table {
+    margin-top: 20px;
+    position: relative;
+
+    .fa {
+        // To prevent the icons from being the target in the on click event inside the buttons.
+        pointer-events: none;
+    }
+
+    .undelete {
+        display: none;
+    }
+
+    .undelete,
+    .delete,
+    .details {
+        width: 40px;
+        color: $primary;
+        background: none;
+        border: none;
+    }
+}
+
+.contactMergerList-group {
+    border: 1px solid $gray-light;
+    margin-bottom: 20px;
+}
+
+.contactMergerList-group-footer {
+    padding: 20px 0;
+}
+
+.contactMergerList-group-preview {
+    margin: 0 auto;
+    display: block;
+}
+
+.contactMergerList-item {
+    display: flex;
+}
+
+.contactMergerList-item > div {
+    flex: 1;
+    padding: 10px;
+}
+
+.contactMergerList-item {
+    .contactMergerList-priority {
+        text-align: center;
+        max-width: 20px;
+        color: $default-color-medium;
+        border-right: 1px solid $gray-light;
+        margin-right: 10px;
+    }
+    .contactMergerList-actions {
+        max-width: 100px;
+    }
+
+    border-bottom: 1px solid $gray-light;
+}
+
+.contactMergerList-item.deleted,
+.contactMergerList-item:not(.included) {
+    .contactMergerList-priority .value {
+        display: none;
+    }
+}
+
+.contactMergerList-item.deleted {
+    color: $gray-light;
+
+    .delete,
+    .details,
+    .preview,
+    .checkbox {
+        display: none;
+    }
+    .undelete {
+        display: block;
+    }
+}
+
+.contactMergerList-name {
+    .customCheckbox-container {
+        margin-right: 6px;
+    }
+
+    .contactMergerList-name-span {
+        text-overflow: ellipsis;
+    }
+    .customMaskInput-container {
+        width: auto;
+        vertical-align: middle;
+    }
+}
+
+.contactMergerList-emails,
+.contactMergerList-name {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.contactMergerList-name:not(.as-sortable-item-handle) {
+    // Adds the margin so that it doesn't look weird.
+    &::before {
+        content: "\F0C9";
+        font-family: FontAwesome;
+        margin-right: .5em;
+        opacity: 0;
+    }
+}

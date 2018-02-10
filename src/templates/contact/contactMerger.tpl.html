@@ -1,0 +1,70 @@
+<div class="contactMergerList-table">
+    <div
+        ng-repeat="(key, contacts) in groups track by key"
+        data-as-sortable="dragControlListener"
+        data-ng-model="contacts"
+        data-email="{{ ::key }}"
+        class="contactMergerList-group">
+        <div
+            ng-repeat="contact in contacts track by contact.id"
+            ng-class="{
+                deleted: contact.deleted,
+                included: contact.included
+            }"
+            data-as-sortable-item
+            data-email="{{ ::key }}"
+            data-i="{{ $index }}"
+            class="contactMergerList-item as-sortable-item">
+            <div class="contactMergerList-priority">
+                <span class="value">{{ $index + 1 }}</span>
+            </div>
+            <div
+                data-as-sortable-item-handle
+                class="contactMergerList-name"
+                ng-class="{ 'as-sortable-item-handle': contact.included}">
+                <custom-checkbox
+                    class="checkbox"
+                    data-custom-ng-model="contact.selected"
+                    data-custom-name="select"></custom-checkbox>
+                <span class="contactMergerList-name-span">{{ ::contact.name }}</span>
+            </div>
+            <div class="contactMergerList-emails">{{ ::contact.email }}</div>
+            <div class="contactMergerList-actions">
+                <button
+                    name="details"
+                    type="button"
+                    class="details"
+                    pt-tooltip-translate="Contact details"
+                    pt-tooltip-translate-context="Action">
+                    <i class="fa fa-vcard-o"></i>
+                </button>
+                <button
+                    type="button"
+                    class="delete"
+                    name="delete"
+                    pt-tooltip-translate="Delete"
+                    pt-tooltip-translate-context="Action">
+                    <i class="fa fa-trash-o"></i>
+                </button>
+                <button
+                    type="button"
+                    class="undelete"
+                    name="undelete"
+                    pt-tooltip-translate="Undo"
+                    pt-tooltip-translate-context="Action">
+                    <i class="fa fa-undo"></i>
+                </button>
+            </div>
+        </div>
+        <div class="contactMergerList-group-footer">
+            <button
+                name="preview"
+                class="pm_button contactMergerList-group-preview"
+                ng-disabled="!willMerge(key)"
+                translate-context="Contact"
+                translate>
+                Preview Contact
+            </button>
+        </div>
+    </div>
+</div>
