@@ -60,18 +60,23 @@ function paypalView(notification, Payment, gettextCatalog, CONSTANTS, $q, networ
 
                         deferred = null;
 
-                        if (!networkUtils.isCancelledRequest(error)) {
-                            error.message && notification.error(error);
-                            data.Error && notification.error(data.Error);
+                        if (networkUtils.isCancelledRequest(error)) {
+                            return;
                         }
 
-                        throw new Error(I18N.down);
+                        throw new Error(error.message || data.Error || I18N.down);
                     });
             };
 
             scope.openPaypalTab = () => {
                 resetWindow();
-                windowModel.add(window.open(scope.approvalURL, 'PayPal'), 'paypal');
+                windowModel.add({
+                    type: 'paypal',
+                    win: window.open(scope.approvalURL, 'PayPal'),
+                    unsubscribe() {
+                        window.removeEventListener('message', receivePaypalMessage, false);
+                    }
+                });
                 window.addEventListener('message', receivePaypalMessage, false);
             };
 
