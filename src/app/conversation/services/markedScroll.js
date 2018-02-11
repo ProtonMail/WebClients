@@ -1,3 +1,5 @@
+import _ from 'lodash';
+
 /* @ngInject */
 function markedScroll() {
     const CACHE = {};
@@ -8,8 +10,12 @@ function markedScroll() {
             CACHE.wrapper = document.body.querySelector('.conversation-wrapper');
         }
 
-        _rAF(() => {
+        _.defer(() => {
             const $marked = getMarked();
+
+            // Focus the checkbox to toggle it with the "space" key
+            $marked.querySelector('.customCheckbox-input').focus();
+
             CACHE.wrapper.scrollTop = $marked.offsetTop - CACHE.wrapper.offsetHeight / 2;
         });
     };
