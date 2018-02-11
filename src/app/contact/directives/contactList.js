@@ -31,6 +31,9 @@ function contactList($filter, dispatchers, $state, $stateParams, contactCache, h
 
                 const $row = element.find(`.${ITEM_CLASS}[data-contact-id="${unescape(cursorID)}"]`);
                 $row.addClass(ACTIVE_CURSOR_CLASS);
+
+                // Focus the checkbox to toggle it with the "space" key
+                $row.find('.customCheckbox-input').focus();
             };
 
             function updateContacts() {
