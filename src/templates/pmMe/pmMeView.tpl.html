@@ -12,7 +12,7 @@
                 </div>
                 <div ng-if="hasPmMe">
                     <p ng-show="hasPaidMail" class="alert" translate-context="Info" translate>You can now also receive and send messages from your @pm.me address (short for ProtonMail me or Private Message me).</p>
-                    <p hide="hasPaidMail" class="alert" translate-context="Info" translate>You can now also receive messages at your @pm.me address (short for ProtonMail me or Private Message me). Upgrade to a paid accout to also send emails from your @pm.me address.</p>
+                    <p ng-hide="hasPaidMail" class="alert" translate-context="Info" translate>You can now also receive messages at your @pm.me address (short for ProtonMail me or Private Message me). Upgrade to a paid accout to also send emails from your @pm.me address.</p>
                     <p class="alert alert-success" translate-context="Info" translate>{{name}}@pm.me is activated on your account.</p>
                 </div>
             </div>
