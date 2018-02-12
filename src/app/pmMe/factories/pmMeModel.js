@@ -1,3 +1,4 @@
+/* @ngInject */
 function pmMeModel(addressModel, askPassword, authentication, gettextCatalog, networkActivityTracker, notification, User) {
     const I18N = {
         PM_ME: {
