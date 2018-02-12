@@ -1,6 +1,6 @@
 import editorStateFactory from '../../../../src/app/squire/factories/editorState';
 
-fdescribe('editor state', () => {
+describe('editor state', () => {
     const ID = 1;
     const obj = {
         cb: () => {}
