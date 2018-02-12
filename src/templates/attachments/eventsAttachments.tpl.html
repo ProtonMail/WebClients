@@ -6,7 +6,7 @@
             <span class="eventsAttachments-placeholder" ng-if="!event.summary"></span>
             <span ng-if="event.summary">
                 <strong>{{ event.summary }}</strong> /
-                {{ ::dateFormat(event.startDateMoment, event.endDateMoment) }}
+                {{ ::dateFormat(event) }}
             </span>
         </summary>
         <div ng-if="event.summary" class="eventsAttachments-details-wrapper">
@@ -15,11 +15,10 @@
                     <th translate translate-context="Info">Summary</th>
                     <td>
                         {{ ::event.summary }}
-                        <button
-                            class="pm_button link eventsAttachments-download-link"
-                            data-event-uid="{{event.uid}}"
-                            translate
-                            translate-context="Action"><i class="fa fa-download btnDownloadAttachments-icon-download"></i> Download</button>
+                        <button class="pm_button link eventsAttachments-download-link" data-event-uid="{{event.uid}}">
+                            <i class="fa fa-download btnDownloadAttachments-icon-download"></i>
+                            <span translate translate-context="Action">Download</span>
+                        </button>
                     </td>
                 </tr>
                 <tr ng-if="event.description">
@@ -29,7 +28,7 @@
                 <tr>
                     <th translate translate-context="Info">When</th>
                     <td>
-                        {{ ::dateFormat(event.startDateMoment, event.endDateMoment) }}
+                        {{ ::dateFormat(event, true) }}
                     </td>
                 </tr>
                 <tr ng-if="event.organizer">

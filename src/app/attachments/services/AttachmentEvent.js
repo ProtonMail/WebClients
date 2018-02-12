@@ -21,8 +21,8 @@ function AttachmentEvent() {
         const { attendees = [] } = icalEvent;
 
         if (icalEvent.startDate && icalEvent.endDate) {
-            icalEvent.startDateMoment = moment.unix(icalEvent.startDate.toUnixTime());
-            icalEvent.endDateMoment = moment.unix(icalEvent.endDate.toUnixTime());
+            icalEvent.startDateMoment = moment(icalEvent.startDate.toJSDate());
+            icalEvent.endDateMoment = moment(icalEvent.endDate.toJSDate());
         }
 
         if (attendees.length) {

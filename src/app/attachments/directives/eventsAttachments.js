@@ -23,16 +23,18 @@ function eventsAttachments(
         replace: true,
         templateUrl: require('../../../templates/attachments/eventsAttachments.tpl.html'),
         link(scope, el) {
-            scope.dateFormat = (start, end) => {
-                if (!start || !end) {
+            scope.dateFormat = ({ startDateMoment: start, endDateMoment: end, startDate }, withTimezone = false) => {
+                if (!moment.isMoment(start) || !moment.isMoment(end)) {
                     return '';
                 }
 
+                const timezone = (withTimezone && startDate.timezone) ? `(${startDate.timezone})` : '';
+
                 if (end.diff(start, 'days') < 1) {
-                    return `${start.format('ll')} ${start.format('LT')} – ${end.format('LT')}`;
+                    return `${start.format('ll')} ${start.format('LT')} – ${end.format('LT')} ${timezone}`;
                 }
 
-                return `${start.format('ll')} ${start.format('LT')} – ${end.format('ll')} ${end.format('LT')}`;
+                return `${start.format('ll')} ${start.format('LT')} – ${end.format('ll')} ${end.format('LT')} ${timezone}`;
             };
 
             const onClick = (e) => {
