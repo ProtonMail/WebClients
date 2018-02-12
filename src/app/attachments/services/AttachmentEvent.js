@@ -18,12 +18,18 @@ function AttachmentEvent() {
             return false;
         }
 
+        const { attendees = [] } = icalEvent;
+
         if (icalEvent.startDate && icalEvent.endDate) {
             icalEvent.startDateMoment = moment.unix(icalEvent.startDate.toUnixTime());
             icalEvent.endDateMoment = moment.unix(icalEvent.endDate.toUnixTime());
         }
 
-        icalEvent.attachment = event; // Keep the attachment
+        if (attendees.length) {
+            icalEvent.attendeesList = attendees.reduce((acc, attendee) => acc.concat(attendee.getValues()), []);
+        }
+
+        icalEvent.attachment = info; // Keep the attachment
 
         return icalEvent;
     };

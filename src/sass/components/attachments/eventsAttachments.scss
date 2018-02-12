@@ -75,6 +75,8 @@
     opacity: .4;
 }
 
+.eventsAttachments-description { white-space: pre-line }
+
 .eventsAttachments-details-table {
     word-break: break-all;
     text-align: left;
@@ -82,10 +84,16 @@
 
     tr th {
         width: 120px;
+    }
+
+    tr th,
+    tr td {
         padding: .4rem 0;
+        vertical-align: top;
     }
 
     ul {
+        margin: 0;
         padding: 0;
         list-style-type: none;
 
