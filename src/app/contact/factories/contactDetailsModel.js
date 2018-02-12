@@ -154,7 +154,11 @@ function contactDetailsModel(contactTransformLabel, CONSTANTS, contactSchema, ge
             }
         });
 
-        const fnProperty = params.vCard.get('fn');
+        let fnProperty = params.vCard.get('fn');
+
+        if (Array.isArray(fnProperty)) {
+            fnProperty = fnProperty[0];
+        }
 
         if (!fnProperty || fnProperty.isEmpty()) {
             let value = '';
