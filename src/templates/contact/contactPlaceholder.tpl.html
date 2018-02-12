@@ -1,4 +1,11 @@
 <div class="contactPlaceholder-container">
-    <i class="contactPlaceholder-icon fa fa-address-book-o"></i>
-    <p class="contactPlaceholder-message" translate-context="Info" translate-comment="Message displayed in the contact placeholder section" transalate>Click on a contact to view or edit details.</p>
+    <count-elements-selected ng-if="!welcomePlaceholder" id="pm_placeholder"></count-elements-selected>
+
+    <div ng-if="welcomePlaceholder">
+        <i class="contactPlaceholder-icon fa fa-address-book-o"></i>
+
+        <p class="contactPlaceholder-message" translate-context="Info" translate-comment="Message displayed in the contact placeholder section" transalate>
+            Click on a contact to view or edit details.
+        </p>
+    </div>
 </div>

@@ -995,15 +995,7 @@ export default angular
                 params: { id: null },
                 views: {
                     'details@secured.contacts': {
-                        template:
-                            '<div class="contactsDetails-body"><contact-details ng-if="contact" data-contact="contact"></contact-details><loader-tag></loader-tag></div>',
-                        controller($scope, $stateParams, contactCache) {
-                            contactCache.find($stateParams.id).then((data) =>
-                                $scope.$applyAsync(() => {
-                                    $scope.contact = data;
-                                })
-                            );
-                        }
+                        template: '<contact-left-panel></contact-left-panel>'
                     }
                 }
             });

@@ -1,5 +1,5 @@
 /* @ngInject */
-function numberElementSelected(gettextCatalog, tools) {
+function numberElementSelected(gettextCatalog, tools, $state) {
     return {
         scope: { number: '=' },
         replace: true,
@@ -8,11 +8,14 @@ function numberElementSelected(gettextCatalog, tools) {
             scope.text = () => {
                 const { number } = scope;
                 const type = tools.getTypeList();
-                const element =
-                    type === 'conversation'
-                        ? gettextCatalog.getPlural(number, 'conversation selected', 'conversations selected', {})
-                        : gettextCatalog.getPlural(number, 'message selected', 'messages selected', {});
-                return `${number} ${element}`;
+
+                if ($state.includes('secured.contacts')) {
+                    return gettextCatalog.getPlural(number, '{{$count}} contact selected', '{{$count}} contacts selected', {}, 'Info');
+                } else if (type === 'conversation') {
+                    return gettextCatalog.getPlural(number, '{{$count}} conversation selected', '{{$count}} conversations selected', {}, 'Info');
+                }
+
+                return gettextCatalog.getPlural(number, '{{$count}} message selected', '{{$count}} messages selected', {}, 'Info');
             };
         }
     };

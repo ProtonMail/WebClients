@@ -32,18 +32,21 @@ function contactToolbar($rootScope, $state, $stateParams, CONSTANTS, contactCach
         scope: {},
         templateUrl: require('../../../templates/contact/contactToolbar.tpl.html'),
         link(scope, element) {
-            const { on, unsubscribe, dispatcher } = dispatchers(['composer.new', 'contacts', '$stateChangeSuccess']);
+            const { on, unsubscribe, dispatcher } = dispatchers(['composer.new', 'contacts', 'selectElements', '$stateChangeSuccess']);
+
+            const toggleSelectAll = (isChecked) => {
+                const contactIDs = _.map(contactCache.paginate(contactCache.get('filtered')), 'ID');
+
+                dispatcher.contacts('selectContacts', {
+                    contactIDs,
+                    isChecked
+                });
+            };
 
             scope.numPerPage = CONSTANTS.CONTACTS_PER_PAGE;
             scope.selectPage = (page) => $state.go($state.$current.name, { page });
             scope.currentPage = +($stateParams.page || 1);
-            scope.selectAll = (event) => {
-                const contactIDs = _.map(contactCache.paginate(contactCache.get('filtered')), 'ID');
-                dispatcher.contacts('selectContacts', {
-                    contactIDs,
-                    isChecked: !!event.target.checked
-                });
-            };
+            scope.selectAll = (event) => toggleSelectAll(!!event.target.checked);
 
             function update() {
                 const paginatedContacts = contactCache.paginate(contactCache.get('filtered'));
@@ -87,6 +90,12 @@ function contactToolbar($rootScope, $state, $stateParams, CONSTANTS, contactCach
 
             on('$stateChangeSuccess', (e, state) => {
                 state.name === 'secured.contacts.details' && scope.noSelection && update();
+            });
+
+            on('selectElements', (e, { value }) => value === 'all' && toggleSelectAll(false));
+
+            on('right', () => {
+                toggleSelectAll(false);
             });
 
             element.on('click', onClick);
