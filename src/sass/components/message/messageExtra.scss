@@ -67,6 +67,9 @@
 /* unsubscribePanel */
 .messageExtra-container > .unsubscribePanel-container > [class*='-notice']::before { content: "\f1ea" }
 
+.messageMimeParsing-container {
+    padding: 0 0 0 10px;
+}
 
 /* EO */
 #eo-message .messageExtra-container > [class*='-container'] {
