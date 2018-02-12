@@ -51,11 +51,12 @@ function sidebarSettingsModel(gettextCatalog) {
             label: 'IMAP/SMTP',
             icon: 'fa-desktop'
         },
-        pmme: {
-            state: 'secured.pmme',
-            label: 'pm.me',
-            icon: 'fa-envelope'
-        },
+        // iOs is not ready to support pm.me
+        // pmme: {
+        //     state: 'secured.pmme',
+        //     label: 'pm.me',
+        //     icon: 'fa-envelope'
+        // },
         payments: {
             state: 'secured.payments',
             label: gettextCatalog.getString('Payments', null, 'Title'),
