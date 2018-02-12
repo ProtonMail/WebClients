@@ -205,3 +205,6 @@
     text-decoration: underline;
     color: $primary;
 }
+
+// Only show the first FN
+.contactItem-container-Name .contactItem-row:not(:first-child) { display: none }
