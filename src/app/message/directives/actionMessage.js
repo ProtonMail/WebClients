@@ -1,5 +1,5 @@
 /* @ngInject */
-function actionMessage($rootScope, CONSTANTS, openStatePostMessage) {
+function actionMessage($rootScope, CONSTANTS, downloadFile, openStatePostMessage) {
     const dispatcher = (message = {}) => (action = '', mailbox = '') => {
         $rootScope.$emit('messageActions', {
             action,
@@ -67,6 +67,16 @@ function actionMessage($rootScope, CONSTANTS, openStatePostMessage) {
                                 data: `${message.Header}\n\r${message.Body}`
                             }
                         );
+                        break;
+                    }
+
+                    case 'downloadEml': {
+                        const { Body = '', Header = '', Subject = '', Time } = scope.message;
+                        const blob = new Blob([`${Header}\n\r${Body}`], { type: 'data:text/plain;charset=utf-8;' });
+                        const filename = `${Subject} ${moment.unix(Time).format()}.eml`;
+
+                        downloadFile(blob, filename);
+
                         break;
                     }
 
