@@ -211,12 +211,11 @@ function DomainsController(
             params: {
                 step: 1,
                 domain,
-                submit(name) {
-                    const promise = domainApi
-                        .create({ Name: name })
-                        .then(eventManager.call)
+                submit(Name) {
+                    const promise = domainApi.create({ Name })
+                        .then((data) => eventManager.call().then(() => data))
                         .then(({ data = {} } = {}) => {
-                            notification.success(gettextCatalog.getString('Domain created', null));
+                            notification.success(gettextCatalog.getString('Domain created', null, 'Success'));
                             $scope.domains.push(data.Domain);
                             domainModal.deactivate();
                             // open the next step
@@ -418,7 +417,7 @@ function DomainsController(
                 verify() {
                     const promise = domainApi
                         .get(domain.ID)
-                        .then(eventManager.call)
+                        .then((data) => eventManager.call().then(() => data))
                         .then(({ data = {} } = {}) => {
                             $scope.domains[index] = data.Domain;
                             dmarcModal.deactivate();
