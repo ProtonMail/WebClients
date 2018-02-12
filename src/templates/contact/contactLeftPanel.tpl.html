@@ -1,0 +1,8 @@
+<div class="contactsDetails-body">
+    <contact-placeholder></contact-placeholder>
+
+    <div ng-if="!selectedContacts.length">
+        <contact-details ng-if="contact" data-contact="contact"></contact-details>
+        <loader-tag></loader-tag>
+    </div>
+</div>

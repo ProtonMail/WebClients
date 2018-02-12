@@ -23,6 +23,8 @@ function contactList($filter, dispatchers, $state, $stateParams, contactCache, h
             scope.isSelected = ({ ID }) => ID === cursorID;
             scope.isActive = ({ ID }) => ID === $stateParams.id;
 
+            const paginatedContacts = () => contactCache.paginate(contactCache.get('filtered'));
+
             const setContactCursor = (id) => {
                 cursorID = id;
 
@@ -37,7 +39,7 @@ function contactList($filter, dispatchers, $state, $stateParams, contactCache, h
             };
 
             function updateContacts() {
-                const filteredContacts = contactCache.paginate(contactCache.get('filtered'));
+                const filteredContacts = paginatedContacts();
 
                 scope.$applyAsync(() => {
                     scope.contacts = filteredContacts;
@@ -59,7 +61,14 @@ function contactList($filter, dispatchers, $state, $stateParams, contactCache, h
 
                 if ($stateParams.id) {
                     const $row = element.find(`.${ITEM_CLASS}[data-contact-id="${unescape($stateParams.id)}"]`);
-                    $row.addClass(ACTIVE_CLASS);
+
+                    const filteredContacts = paginatedContacts();
+                    const selectedContacts = filteredContacts.filter((c) => c.selected);
+
+                    // Only add the active class if 0 contacts are tick
+                    if (!selectedContacts.length) {
+                        $row.addClass(ACTIVE_CLASS);
+                    }
 
                     if (!cursorID) {
                         cursorID = $stateParams.id;
@@ -186,6 +195,7 @@ function contactList($filter, dispatchers, $state, $stateParams, contactCache, h
             // Restore them to allow custom keyboard navigation
             on('left', () => {
                 document.activeElement.blur();
+                $state.go('secured.contacts');
                 hotkeys.bind(['down', 'up']);
                 hotkeys.unbind(['mod+s']);
             });
