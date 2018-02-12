@@ -8,6 +8,14 @@
         class="messageExtra-container-error"
         ng-if="message.PgpMimeWithAttachments"></message-pgp-attachments>
 
+    <div class="messageExtra-container-error" ng-if="message.MIMEParsingFailed">
+        <div class="messageMimeParsing-container">
+            <div class="messageMimeParsing-notice">
+                <div class="messageMimeParsing-notice-sub" translate-context="Error" translate>The email body is not a valid MIME message.</div>
+            </div>
+        </div>
+    </div>
+
     <unsubscribe-panel ng-if="!unsubscribed && message.getListUnsubscribe()"></unsubscribe-panel>
     <message-auto-generated ng-if="message.isAutoReply"></message-auto-generated>
 

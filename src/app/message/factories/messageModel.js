@@ -161,13 +161,23 @@ function messageModel($q, $timeout, pmcw, User, gettextCatalog, authentication, 
                 }
 
                 if (html) {
-                    deferred.resolve(html);
-                } else if (text) {
-                    this.MIMEType = 'text/plain';
-                    deferred.resolve(text);
-                } else {
-                    deferred.resolve(emptyMessage);
+                    return deferred.resolve(html);
                 }
+
+                // If html is missing, display the rest of the cases like plain text.
+                this.MIMEType = 'text/plain';
+
+                if (text) {
+                    return deferred.resolve(text);
+                }
+
+                // If the parsing did not return html or text, but there is content that was attempted to be parsed, assume that it failed to parse.
+                if (content.trim().length) {
+                    this.MIMEParsingFailed = true;
+                    return deferred.resolve(content);
+                }
+
+                deferred.resolve(emptyMessage);
             });
 
             mailparser.write(content);
