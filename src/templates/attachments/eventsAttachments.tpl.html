@@ -2,8 +2,7 @@
     <details class="eventsAttachments-details" ng-repeat="event in model.events track by event.uid">
         <summary class="eventsAttachments-summary">
             <i class="fa fa-calendar"></i>
-            Attached Event:
-            <span class="eventsAttachments-placeholder" ng-if="!event.summary"></span>
+            <span class="eventsAttachments-placeholder" ng-if="!event.summary" translate-context="Info" translate>Attached Event</span>
             <span ng-if="event.summary">
                 <strong>{{ event.summary }}</strong> /
                 {{ ::dateFormat(event) }}
