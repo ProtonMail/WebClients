@@ -29,7 +29,7 @@ function AttachmentEvent() {
             icalEvent.attendeesList = attendees.reduce((acc, attendee) => acc.concat(attendee.getValues()), []);
         }
 
-        icalEvent.attachment = info; // Keep the attachment
+        icalEvent.attachment = event; // Keep the attachment
 
         return icalEvent;
     };
