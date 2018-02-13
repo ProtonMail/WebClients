@@ -1,5 +1,5 @@
 /* @ngInject */
-function contactItem($rootScope, contactTransformLabel, contactUI, messageModel) {
+function contactItem(contactTransformLabel, contactUI, dispatchers, messageModel) {
     const AS_SORTABLE_DISABLED = 'as-sortable-disabled';
     const addX = (value = '') => (value.startsWith('x') ? value : `X-${value}`);
 
@@ -15,10 +15,13 @@ function contactItem($rootScope, contactTransformLabel, contactUI, messageModel)
             type: '@type'
         },
         link(scope, element, attr, ngFormController) {
+            const { dispatcher, on, unsubscribe } = dispatchers(['contacts', 'composer.new']);
             const datas = scope.getDatas();
             const type = scope.type;
             const state = scope.state;
             const list = element.find('.contactItem-container');
+            const dispatch = (type, data = {}) => dispatcher['composer.new'](type, data);
+
             scope.config = { isFocusedAddress: false };
 
             list.addClass(`contactItem-container-${scope.type}`);
@@ -71,7 +74,7 @@ function contactItem($rootScope, contactTransformLabel, contactUI, messageModel)
             function composeTo(Address) {
                 const message = messageModel();
                 message.ToList = [{ Address, Name: Address }];
-                $rootScope.$emit('composer.new', { type: 'new', data: { message } });
+                dispatch('new', { message });
             }
 
             // Drag and Drop configuration
@@ -137,8 +140,18 @@ function contactItem($rootScope, contactTransformLabel, contactUI, messageModel)
 
             element.on('click', onClick);
 
+            on('contacts', (e, { type = '' }) => {
+                if (!list.hasClass(AS_SORTABLE_DISABLED) && (type === 'updateContact' || type === 'createContact')) {
+                    scope.$applyAsync(() => {
+                        scope.UI.sortableState = false;
+                        list.addClass(AS_SORTABLE_DISABLED);
+                    });
+                }
+            });
+
             scope.$on('$destroy', () => {
                 element.off('click', onClick);
+                unsubscribe();
             });
         }
     };
