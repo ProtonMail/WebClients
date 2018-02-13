@@ -443,12 +443,11 @@ function messageActions(
      * @param {Array} ids
      */
     function read(ids = []) {
-        const currentLocation = tools.currentLocation();
         // Generate message event
-        const { messageIDs, conversationIDs, events } = _.reduce(
+        const { messages, conversationIDs, events } = _.reduce(
             ids,
             (acc, ID) => {
-                const { IsRead, ConversationID } = cache.getMessageCached(ID) || {};
+                const { IsRead, ConversationID, LabelIDs } = cache.getMessageCached(ID) || {};
 
                 if (IsRead === 0) {
                     acc.conversationIDs.push(ConversationID);
@@ -457,15 +456,15 @@ function messageActions(
                         ID,
                         Message: { ID, ConversationID, IsRead: 1 }
                     });
-                    acc.messageIDs.push(ID);
+                    acc.messages.push({ LabelIDs, ConversationID });
                 }
 
                 return acc;
             },
-            { messageIDs: [], conversationIDs: [], events: [] }
+            { messages: [], conversationIDs: [], events: [] }
         );
 
-        if (!messageIDs.length) {
+        if (!messages.length) {
             return;
         }
 
@@ -475,20 +474,13 @@ function messageActions(
             map((id) => cache.getConversationCached(id)),
             filter(Boolean),
             each(({ ID, Labels = [] }) => {
-                const messages = _.filter(
-                    cache.queryMessagesCached(ID) || [],
-                    ({ ID, LabelIDs }) => _.includes(messageIDs, ID) && _.includes(LabelIDs, currentLocation)
-                );
-
                 events.push({
                     Action: 3,
                     ID,
                     Conversation: {
                         ID,
                         Labels: _.map(Labels, (label) => {
-                            if (label.ID === currentLocation) {
-                                label.ContextNumUnread -= messages.length;
-                            }
+                            label.ContextNumUnread -= _.filter(messages, ({ ConversationID = '', LabelIDs = [] }) => ID === ConversationID && _.includes(LabelIDs, label.ID)).length;
                             return label;
                         })
                     }
@@ -497,7 +489,7 @@ function messageActions(
         )(conversationIDs);
 
         // Send request
-        const promise = messageApi.read({ IDs: messageIDs });
+        const promise = messageApi.read({ IDs: ids });
         cache.addToDispatcher(promise);
 
         if (tools.cacheContext() === true) {
@@ -516,7 +508,6 @@ function messageActions(
     function unread(ids = []) {
         const context = tools.cacheContext();
         const promise = messageApi.unread({ IDs: ids });
-        const currentLocation = tools.currentLocation();
 
         cache.addToDispatcher(promise);
 
@@ -534,10 +525,10 @@ function messageActions(
             return networkActivityTracker.track(promise);
         }
 
-        const { messageIDs, conversationIDs, events } = _.reduce(
+        const { messages, conversationIDs, events } = _.reduce(
             ids,
             (acc, ID) => {
-                const { IsRead, ConversationID } = cache.getMessageCached(ID) || {};
+                const { IsRead, ConversationID, LabelIDs } = cache.getMessageCached(ID) || {};
 
                 if (IsRead === 1) {
                     acc.conversationIDs.push(ConversationID);
@@ -550,35 +541,28 @@ function messageActions(
                             IsRead: 0
                         }
                     });
-                    acc.messageIDs.push(ID);
+                    acc.messages.push({ LabelIDs, ConversationID });
                 }
 
                 return acc;
             },
-            { messageIDs: [], conversationIDs: [], events: [] }
+            { messages: [], conversationIDs: [], events: [] }
         );
 
-        if (messageIDs.length) {
+        if (messages.length) {
             // Generate conversation event
             flow(
                 uniq,
                 map((id) => cache.getConversationCached(id)),
                 filter(Boolean),
                 each(({ ID, Labels = [] }) => {
-                    const messages = _.filter(
-                        cache.queryMessagesCached(ID) || [],
-                        ({ ID, LabelIDs }) => _.includes(messageIDs, ID) && _.includes(LabelIDs, currentLocation)
-                    );
-
                     events.push({
                         Action: 3,
                         ID,
                         Conversation: {
                             ID,
                             Labels: _.map(Labels, (label) => {
-                                if (label.ID === currentLocation) {
-                                    label.ContextNumUnread += messages.length;
-                                }
+                                label.ContextNumUnread += _.filter(messages, ({ ConversationID = '', LabelIDs = [] }) => ID === ConversationID && _.includes(LabelIDs, label.ID)).length;
                                 return label;
                             })
                         }
