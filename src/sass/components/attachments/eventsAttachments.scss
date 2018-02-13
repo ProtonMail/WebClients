@@ -66,16 +66,7 @@
     }
 }
 
-.eventsAttachments-load .eventsAttachments-placeholder {
-    display: inline-block;
-    background: $text;
-    width: 200px;
-    content: ' ';
-    height: 15px;
-    margin-bottom: -3px;
-    border-radius: $border-radius-large;
-    opacity: .4;
-}
+.eventsAttachments-container:not(.eventsAttachments-load) .eventsAttachments-placeholder { display: none }
 
 .eventsAttachments-description { white-space: pre-line }
 
