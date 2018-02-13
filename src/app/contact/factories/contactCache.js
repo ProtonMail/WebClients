@@ -25,6 +25,7 @@ function contactCache(
         }
     };
 
+    const CONTACT_STATES = ['secured.contacts', 'secured.contacts.details'];
     const { CONTACTS_PER_PAGE } = CONSTANTS;
     const getItem = (ID) => _.find(CACHE.contacts, { ID });
     const findIndex = (ID) => _.findIndex(CACHE.contacts, { ID });
@@ -237,6 +238,13 @@ function contactCache(
         emit();
     }
 
+    function unselectAll() {
+        const contactIDs = Object.keys(CACHE.map.all);
+        const isChecked = false;
+
+        selectContacts({ contactIDs, isChecked });
+    }
+
     function contactEvents({ events = [] }) {
         const { collection, todo } = updateCollection(CACHE.contacts, events, 'Contact');
 
@@ -255,6 +263,12 @@ function contactCache(
         type === 'exportContacts' && contactDownloader(data.contactID);
         type === 'selectContacts' && selectContacts(data);
         type === 'searchingContact' && searchingContact(data);
+    });
+
+    $rootScope.$on('$stateChangeSuccess', (event, toState, toParams, fromState) => {
+        if (CONTACT_STATES.includes(fromState.name) && !CONTACT_STATES.includes(toState.name)) {
+            unselectAll();
+        }
     });
 
     $rootScope.$on('logout', () => {
