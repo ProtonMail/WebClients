@@ -3,7 +3,7 @@ function analytics(CONFIG, CONSTANTS, aboutClient) {
     const { isEnabled, cookieDomain = '', domains = [], statsHost = '', siteId = -1, abSiteId = -1 } = CONFIG.statsConfig;
 
     // check if we should load the analytics package
-    if (!isEnabled || aboutClient.doNotTrack()) {
+    if (!isEnabled) { // || aboutClient.doNotTrack()) {
         return { init: angular.noop, trackGoals: angular.noop, trackPage: angular.noop };
     }
 
@@ -22,6 +22,7 @@ function analytics(CONFIG, CONSTANTS, aboutClient) {
         // state.tracker.setDoNotTrack(true);
         // state.tracker.disableCookies();
         state.tracker.setCustomVariable(1, 'siteFrontEndId', abSiteId, 'visit');
+        state.tracker.setCustomVariable(3, 'siteFrontEndClient', CONFIG.clientID + '_' + CONFIG.app_version, 'visit');
         state.tracker.setCustomVariable(1, 'enablePMRequestCombiner', 'yes', 'page');
         // trigger the promises waiting for the tracker.
         loadQueue.forEach((resolve) => resolve(state.tracker));
