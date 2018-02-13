@@ -140,7 +140,7 @@ export const CONSTANTS = {
     EXPORT_CONTACTS_LIMIT: 50,
     MAX_VPN: 100,
     MAX_MEMBER: 100,
-    HUGE_MEMBER: 1000,
+    HUGE_MEMBER: 5000,
     AWESOMEPLETE_MAX_ITEMS: 20,
     MAIN_KEY: '0',
     TIMEOUT: 30 * 1000, // timeout in milliseconds
