@@ -1,7 +1,7 @@
 /* @ngInject */
 function pmMeBtn(gettextCatalog, pmMeModel) {
     const I18N = {
-        ACTIVATE: gettextCatalog.getString('Active @pm.me', null, 'Action')
+        ACTIVATE: gettextCatalog.getString('Activate @pm.me', null, 'Action')
     };
 
     const onClick = () => pmMeModel.activate();
