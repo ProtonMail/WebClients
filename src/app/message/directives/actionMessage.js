@@ -71,8 +71,8 @@ function actionMessage($rootScope, CONSTANTS, downloadFile, openStatePostMessage
                     }
 
                     case 'downloadEml': {
-                        const { Body = '', Header = '', Subject = '', Time } = scope.message;
-                        const blob = new Blob([`${Header}\n\r${Body}`], { type: 'data:text/plain;charset=utf-8;' });
+                        const { DecryptedBody = '', Header = '', Subject = '', Time } = scope.message;
+                        const blob = new Blob([`${Header}\n\r${DecryptedBody}`], { type: 'data:text/plain;charset=utf-8;' });
                         const filename = `${Subject} ${moment.unix(Time).format()}.eml`;
 
                         downloadFile(blob, filename);
