@@ -110,6 +110,8 @@
     left: 6px;
 }
 
+.squireSelectFontFamily-container.squireDropdown-is-open .fa-angle-down,
+.squireSelectFontSize-container.squireDropdown-is-open .fa-angle-down,
 .squireSelectColor-is-open .squireToolbar-action-color .fa-angle-down {
     transform: rotate(180deg);
 }
@@ -289,26 +291,34 @@
 .squireDropdown-is-open .fa[class$="down"]  { display: none }
 
 .squireToolbar-select-view {
-    display: flex;
     justify-content: space-between;
     align-items: center;
-    flex-grow: 1;
     background-color: #FFF;
     margin: 4px 0px 4px 4px;
     height: 26px;
-    padding-right: .5rem;
     border: 1px solid $border;
     border-radius: $border-radius;
 }
 
 .squireToolbar-select-view button {
-
-    flex: 1;
+    display: flex;
+    align-items: center;
     width: 100%;
     height: 100%;
-    padding-left: 0;
-    padding: 0 .2em 0 .5em;
     text-align: left;
+    margin: 0;
+    padding: 0 0.5em;
+}
+
+.squireToolbar-select-view .value {
+    flex: 1;
+    width: 100%;
+    text-align: left;
+    margin: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    word-wrap: break-word;
+    white-space: nowrap;
 
     &::after {
         content: '';
@@ -323,6 +333,7 @@
 
     &:first-letter { text-transform: uppercase }
 }
+
 
 /* reset button style */
 [class*="squireToolbar-row"] .squireToolbar-select-view button:hover,
@@ -489,4 +500,8 @@ $list: georgia arial helvetica menlo tahoma verdana times trebuchet;
 
 .squireToolbar-show-subrow .squireToolbar-triangle-with-shadow { opacity: 1 }
 
+.squireSelectFontSize-container .value {
+    text-align: center;
+}
+.squireSelectFontSize-container .squireToolbar-select-view { width: 50px }
 .squireSelectFontFamily-container .squireToolbar-select-view { width: 111px }

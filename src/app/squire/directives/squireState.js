@@ -12,7 +12,7 @@ function squireState(onCurrentMessage, editorModel, editorState, toggleModeEdito
 
         editorState.set(ID, {
             size: parseInt(size, 10),
-            font: family.replace(/"/g, ''),
+            font: family.replace(/["\\]/g, ''),
             color,
             backgroundColor,
             popover: undefined // Also close any popover (triggered when selecting or moving the cursor in the editor).
