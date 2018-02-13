@@ -15,7 +15,7 @@ function contactLeftPanel(dispatchers, contactCache, $stateParams) {
                 const paginatedContacts = contactCache.paginate(contactCache.get('filtered'));
                 scope.selectedContacts = paginatedContacts.filter((c) => c.selected);
 
-                el[0].classList[scope.selectedContacts ? 'remove' : 'add'](HIDE_CLASS);
+                el[0].classList[scope.selectedContacts.length ? 'remove' : 'add'](HIDE_CLASS);
             };
 
             contactCache.find($stateParams.id).then((data) =>
