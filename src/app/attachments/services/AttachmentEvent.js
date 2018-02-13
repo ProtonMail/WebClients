@@ -67,7 +67,7 @@ function AttachmentEvent(
         icalEvent.attachment = event; // Keep the attachment
 
         return icalEvent;
-    };
+    }
 
     return {
         dateFormat,
