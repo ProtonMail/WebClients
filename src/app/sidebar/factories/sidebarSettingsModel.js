@@ -1,6 +1,8 @@
+import _ from 'lodash';
+
 /* @ngInject */
-function sidebarSettingsModel(gettextCatalog) {
-    const getStateConfig = () => ({
+function sidebarSettingsModel(gettextCatalog, subscriptionModel) {
+    const states = {
         dashboard: {
             state: 'secured.dashboard',
             label: gettextCatalog.getString('Dashboard', null, 'Title'),
@@ -51,12 +53,11 @@ function sidebarSettingsModel(gettextCatalog) {
             label: 'IMAP/SMTP',
             icon: 'fa-desktop'
         },
-        // iOs is not ready to support pm.me
-        // pmme: {
-        //     state: 'secured.pmme',
-        //     label: 'pm.me',
-        //     icon: 'fa-envelope'
-        // },
+        pmme: {
+            state: 'secured.pmme',
+            label: 'pm.me (beta)',
+            icon: 'fa-envelope'
+        },
         payments: {
             state: 'secured.payments',
             label: gettextCatalog.getString('Payments', null, 'Title'),
@@ -72,7 +73,17 @@ function sidebarSettingsModel(gettextCatalog) {
             label: 'ProtonVPN',
             icon: 'ico-protonvpn'
         }
-    });
+    };
+
+    const getStateConfig = () => {
+        const hasVisionary = subscriptionModel.hasPaid('visionary');
+
+        if (!hasVisionary) {
+            return _.omit(states, 'pmme');
+        }
+
+        return states;
+    };
 
     return { getStateConfig };
 }
