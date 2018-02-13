@@ -7,11 +7,11 @@ function squireSelectFontSize(editorState) {
         link(scope, $el) {
             const ID = scope.message.ID;
             const el = $el[0];
-            const button = el.querySelector('.squireToolbar-action-fontSize');
+            const value = el.querySelector('.value');
 
             const onStateChange = ({ popover: oldPopover, size: oldSize }, { popover, size }) => {
                 if (oldSize !== size) {
-                    button.textContent = size;
+                    value.textContent = size;
                     el.setAttribute('data-font-size', size);
                 }
                 if (popover === 'changeFontSize') {

@@ -29,11 +29,11 @@ function squireSelectFontFamily(editorState) {
         link(scope, $el) {
             const ID = scope.message.ID;
             const el = $el[0];
-            const button = el.querySelector('.squireToolbar-action-fontFamily');
+            const value = el.querySelector('.value');
 
             const onStateChange = ({ popover: oldPopover, font: oldFont }, { popover, font = '' }) => {
                 if (oldFont !== font) {
-                    button.textContent = getFont(font);
+                    value.textContent = getFont(font);
                     el.setAttribute('data-font-family', font);
                 }
                 if (popover === 'changeFontFamily') {
