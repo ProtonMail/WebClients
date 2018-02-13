@@ -18,6 +18,8 @@
     float: right;
 }
 
+.eventsAttachments-download-link * { pointer-events: none; }
+
 .eventsAttachments-details {
     background: $composer-background;
     border-radius: $border-radius-large;
