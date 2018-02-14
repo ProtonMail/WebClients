@@ -1,3 +1,36 @@
+# [3.12.31] - 2018-02-14
+## Added
+- Merge contact functionality
+- Preview ICS attachments in emails
+
+## Fixed
+- Improve re-ordering of the addresses in Contacts
+- "Contact does not exist" error when you delete a contact with shortcuts then click on the right arrow
+- The arrow for the font options does not work on Firefox
+- Fix alignment in Professional plan modal
+- Improved time for the unread counter to be removed
+- Only display the first name for the contact view
+- Cannot set the signature in plain text mode when creating a new address
+- Inconsistency with the contact markers after refresh/switch tab
+- Encrypted Facebook message was not opening
+- Adding a `.to` domain fails to generate Verify value/data
+- Checkbox cannot be ticked with the keyboard in the contact list
+- Selected color is not updated in the color popover
+- IE: Changing default composer mode and composer direction does not work
+- "Switch to one password mode" was still displayed after switching to one password mode
+- On Firefox the contacts list header is floating improperly
+- You can switch to disabled or enabled for password recovery when you enter the wrong password
+- Expired EO message link goes to the wrong page
+- Folders/Labels were not showing on old browsers (mostly on Safari)
+- The purple marker disappears when you click on a checkbox in Contacts
+- When you forward a message the `To` line shows up twice in Show details
+
+## Changed
+- By using toUnixTime() the value is set in UTC + Add timezone in the ICS viewer
+- Mismatch amount issue: Close the PayPal tab if the current subscription change
+- Make sure we reset all tabs for PayPal
+- Upgrade translations and fix generation
+
 # [3.12.30] - 2018-02-07
 ## Added
 - Improve the BTC payment message.
