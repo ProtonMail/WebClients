@@ -505,3 +505,10 @@ $list: georgia arial helvetica menlo tahoma verdana times trebuchet;
 }
 .squireSelectFontSize-container .squireToolbar-select-view { width: 50px }
 .squireSelectFontFamily-container .squireToolbar-select-view { width: 111px }
+
+.squireSelectFontFamily-container button,
+.squireSelectFontSize-container button {
+    margin: 0 !important;
+    width: 100% !important;
+    padding: 0 0.5em !important;
+}
