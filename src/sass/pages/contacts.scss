@@ -51,14 +51,6 @@
 .contacts-container.contacts-empty .contacts-list,
 .contacts-container.contacts-empty .contactsDetails-container { height: 100% }
 
-.contactsDetails-body {
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-
-    .loader { margin: auto }
-}
-
 [id="secured-contacts"] .contactsDetails-container,
 [id="secured-contacts-details"] .contactDetails-container + .loader,
 .contacts-container.contacts-empty .contactsToolbar-container,

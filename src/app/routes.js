@@ -995,7 +995,7 @@ export default angular
                 params: { id: null },
                 views: {
                     'details@secured.contacts': {
-                        template: '<contact-left-panel></contact-left-panel>'
+                        template: '<contact-right-panel></contact-right-panel>'
                     }
                 }
             });
