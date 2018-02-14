@@ -1,21 +1,21 @@
 /* @ngInject */
-function contactLeftPanel(dispatchers, contactCache, $stateParams) {
-    const HIDE_CLASS = 'contactLeftPanel-placeholder-hidden';
+function contactRightPanel(dispatchers, contactCache, $stateParams) {
+    const HIDE_CLASS = 'contactRightPanel-placeholder-hidden';
 
     return {
         replace: true,
         scope: {},
-        templateUrl: require('../../../templates/contact/contactLeftPanel.tpl.html'),
+        templateUrl: require('../../../templates/contact/contactRightPanel.tpl.html'),
         link(scope, el) {
             const { on, unsubscribe } = dispatchers(['contacts']);
-            scope.selectedContacts = [];
+
             el.addClass(HIDE_CLASS);
 
             const selectContacts = () => {
                 const paginatedContacts = contactCache.paginate(contactCache.get('filtered'));
-                scope.selectedContacts = paginatedContacts.filter((c) => c.selected);
+                const selectedContacts = paginatedContacts.filter((c) => c.selected);
 
-                el[0].classList[scope.selectedContacts.length ? 'remove' : 'add'](HIDE_CLASS);
+                el[0].classList[selectedContacts.length ? 'remove' : 'add'](HIDE_CLASS);
             };
 
             contactCache.find($stateParams.id).then((data) =>
@@ -34,4 +34,4 @@ function contactLeftPanel(dispatchers, contactCache, $stateParams) {
         }
     };
 }
-export default contactLeftPanel;
+export default contactRightPanel;

@@ -1,0 +1,9 @@
+.contactRightPanel-container {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.contactRightPanel-container .loader { margin: auto }
+.contactRightPanel-container:not(.contactRightPanel-placeholder-hidden) .contactRightPanel-content { display: none }
+.contactRightPanel-placeholder-hidden .contactPlaceholder-container { display: none }

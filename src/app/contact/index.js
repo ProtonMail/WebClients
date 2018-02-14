@@ -14,7 +14,7 @@ import contactNoResult from './directives/contactNoResult';
 import contactPlaceholder from './directives/contactPlaceholder';
 import contactToolbar from './directives/contactToolbar';
 import contactView from './directives/contactView';
-import contactLeftPanel from './directives/contactLeftPanel';
+import contactRightPanel from './directives/contactRightPanel';
 import contactCache from './factories/contactCache';
 import contactDetailsModel from './factories/contactDetailsModel';
 import contactDownloader from './factories/contactDownloader';
@@ -56,7 +56,7 @@ export default angular
     .directive('contactPlaceholder', contactPlaceholder)
     .directive('contactToolbar', contactToolbar)
     .directive('contactView', contactView)
-    .directive('contactLeftPanel', contactLeftPanel)
+    .directive('contactRightPanel', contactRightPanel)
     .factory('Contact', Contact)
     .factory('contactCache', contactCache)
     .factory('contactDetailsModel', contactDetailsModel)
