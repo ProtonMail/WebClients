@@ -36,12 +36,13 @@ function transformLinks() {
         // make links open in a new tab
         const httpInNewTab = (html) => {
             /*
-                 * Don't select in querySelector: we need to check the browser `href` instead of the attribute
-                 * (i.e. where the browser will actually link to)
-                 */
+             * Don't select in querySelector: we need to check the browser `href` instead of the attribute
+             * (i.e. where the browser will actually link to)
+             */
             const links = [].slice.call(html.querySelectorAll('[href]' + EXCLUDE_ANCHORS));
             _.each(links, (link) => {
-                if ((link.href || '').indexOf('http') === 0) {
+                // Prevent issue for Edge/IE A security problem cf https://jsfiddle.net/dpaoxoks/7/
+                if ((link.getAttribute('href') || '').indexOf('http') === 0) {
                     link.setAttribute('target', '_blank');
                 }
             });
@@ -58,7 +59,7 @@ function transformLinks() {
                 // link.href is the absolute value of the link: mail.protonmail.com is prepended, use getAttribute
                 const url = link.getAttribute('href');
 
-                link.href = `http://${url}`;
+                link.setAttribute('href', `http://${url}`);
                 link.setAttribute('target', '_blank');
             });
         };
