@@ -16,22 +16,24 @@ function contactList($filter, dispatchers, $state, $stateParams, contactCache, h
             const { dispatcher, on, unsubscribe } = dispatchers(['contacts', '$stateChangeSuccess']);
             let lastChecked = null;
             let isLoadedContact = !!$stateParams.id;
-            let cursorID = null;
+            const MODEL = {
+                cursorID: null
+            };
 
             scope.contacts = [];
             scope.showContact = (contactID) => $state.go('secured.contacts.details', { id: contactID });
-            scope.isSelected = ({ ID }) => ID === cursorID;
+            scope.isSelected = ({ ID }) => ID === MODEL.cursorID;
             scope.isActive = ({ ID }) => ID === $stateParams.id;
 
             const paginatedContacts = () => contactCache.paginate(contactCache.get('filtered'));
 
             const setContactCursor = (id) => {
-                cursorID = id;
+                MODEL.cursorID = id;
 
                 const $items = element.find(`.${ITEM_CLASS}`);
                 $items.removeClass(ACTIVE_CURSOR_CLASS);
 
-                const $row = element.find(`.${ITEM_CLASS}[data-contact-id="${unescape(cursorID)}"]`);
+                const $row = element.find(`.${ITEM_CLASS}[data-contact-id="${unescape(MODEL.cursorID)}"]`);
                 $row.addClass(ACTIVE_CURSOR_CLASS);
 
                 // Focus the checkbox to toggle it with the "space" key
@@ -48,7 +50,7 @@ function contactList($filter, dispatchers, $state, $stateParams, contactCache, h
                         activeContact(isLoadedContact);
                         isLoadedContact = false;
 
-                        if (cursorID === null && filteredContacts.length > 0) {
+                        if (!MODEL.cursorID && filteredContacts.length > 0) {
                             setContactCursor(filteredContacts[0].ID);
                         }
                     }, 1000);
@@ -70,8 +72,8 @@ function contactList($filter, dispatchers, $state, $stateParams, contactCache, h
                         $row.addClass(ACTIVE_CLASS);
                     }
 
-                    if (!cursorID) {
-                        cursorID = $stateParams.id;
+                    if (!MODEL.cursorID) {
+                        MODEL.cursorID = $stateParams.id;
                     }
 
                     // Scroll the first load
@@ -107,7 +109,7 @@ function contactList($filter, dispatchers, $state, $stateParams, contactCache, h
             };
 
             const onNextPrevElement = (type) => () => {
-                const index = _.findIndex(scope.contacts, { ID: cursorID }) || 0;
+                const index = _.findIndex(scope.contacts, { ID: MODEL.cursorID }) || 0;
                 const pos = type === 'DOWN' ? index + 1 : index - 1;
 
                 // Last item
@@ -124,7 +126,7 @@ function contactList($filter, dispatchers, $state, $stateParams, contactCache, h
                 setContactCursor(ID);
 
                 const $items = element.find(`.${ITEM_CLASS}`);
-                const $row = element.find(`.${ITEM_CLASS}[data-contact-id="${unescape(cursorID)}"]`);
+                const $row = element.find(`.${ITEM_CLASS}[data-contact-id="${unescape(MODEL.cursorID)}"]`);
 
                 if ($row.offset()) {
                     if ($row.offset().top > element[0].clientHeight) {
@@ -170,7 +172,7 @@ function contactList($filter, dispatchers, $state, $stateParams, contactCache, h
             // Open the current contact
             const openContact = () => {
                 // Open the contact
-                $state.go('secured.contacts.details', { id: cursorID });
+                $state.go('secured.contacts.details', { id: MODEL.cursorID });
 
                 hotkeys.bind('mod+s');
                 // We don't need to check these events if we didn't choose to focus onto a specific message
@@ -179,6 +181,7 @@ function contactList($filter, dispatchers, $state, $stateParams, contactCache, h
 
             on('contacts', (event, { type = '' }) => {
                 type === 'contactsUpdated' && scope.$applyAsync(() => updateContacts());
+                type === 'deletedContactEmail' && (delete MODEL.cursorID);
             });
 
             on('$stateChangeSuccess', () => {
@@ -202,8 +205,8 @@ function contactList($filter, dispatchers, $state, $stateParams, contactCache, h
 
             // Move to trash
             on('move', (e, type) => {
-                if (type === 'trash') {
-                    dispatcher.contacts('deleteContacts', { contactIDs: [cursorID] });
+                if (type === 'trash' && MODEL.cursorID) {
+                    dispatcher.contacts('deleteContacts', { contactIDs: [MODEL.cursorID] });
                 } else if (type === 'archive') {
                     dispatcher.contacts('addContact');
                 }
