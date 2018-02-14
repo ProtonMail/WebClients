@@ -110,6 +110,7 @@
     left: 6px;
 }
 
+.moreToggle-container.squireDropdown-is-open .fa-caret-down,
 .squireSelectFontFamily-container.squireDropdown-is-open .fa-angle-down,
 .squireSelectFontSize-container.squireDropdown-is-open .fa-angle-down,
 .squireSelectColor-is-open .squireToolbar-action-color .fa-angle-down {
@@ -284,11 +285,8 @@
 .squireToolbar-editor-mode { max-height: inherit; }
 
 .squireToolbar-select:not(.squireDropdown-is-open) {
-    .squireToolbar-select-list,
-    .fa[class$="up"]  { display: none }
+    .squireToolbar-select-list { display: none }
 }
-
-.squireDropdown-is-open .fa[class$="down"]  { display: none }
 
 .squireToolbar-select-view {
     justify-content: space-between;
