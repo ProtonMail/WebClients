@@ -142,7 +142,8 @@ function transformEscape() {
      */
     return (html, message, { content = '', action, isDocument }) => {
         const input = isDocument ? content.querySelector('body').innerHTML : content;
-        html.innerHTML = escapeURL(input.replace(REGEXP_IS_BREAK, 'proton-$1'), action);
+        const breakHtml = input.replace(REGEXP_IS_BREAK, 'proton-$1');
+        html.innerHTML = escapeURL(breakHtml, action);
         return syntaxHighlighterFilter((isDocument ? transformBase : _.identity)(html, content));
     };
 }
