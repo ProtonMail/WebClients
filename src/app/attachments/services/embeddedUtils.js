@@ -51,7 +51,7 @@ function embeddedUtils(attachmentFileFormat, tools) {
 
     const getAttachementName = (Headers = {}) => {
         if (Headers['content-disposition'] !== 'inline') {
-            const [, name] = Headers['content-disposition'].split('filename=');
+            const [, name] = (Headers['content-disposition'] || '').split('filename=');
 
             if (name) {
                 return name.replace(/"/g, '');
