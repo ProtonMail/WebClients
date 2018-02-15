@@ -82,8 +82,7 @@ msgstr ""
 msgctxt "Action"
 msgid ""
 "<button type=\"button\" class=\"squireDropdown-item-label squireToolbar-action-modeEditor\"></button>\n"
-"        <i class=\"fa fa-caret-down\"></i>\n"
-"        <i class=\"fa fa-caret-up\"></i>"
+"        <i class=\"fa fa-caret-down\"></i>"
 msgstr ""
 
 #: ./src/templates/squire/squireToolbar.tpl.html:112
@@ -1965,14 +1964,14 @@ msgstr ""
 
 #: ./src/app/squire/directives/moreToggle.js:7
 #: ./src/templates/settings/chooseComposerMode.tpl.html:3
-#: ./src/templates/squire/moreToggle.tpl.html:24
+#: ./src/templates/squire/moreToggle.tpl.html:23
 msgctxt "Composer Mode"
 msgid "Normal"
 msgstr ""
 
 #: ./src/app/squire/directives/moreToggle.js:6
 #: ./src/templates/settings/chooseComposerMode.tpl.html:4
-#: ./src/templates/squire/moreToggle.tpl.html:28
+#: ./src/templates/squire/moreToggle.tpl.html:27
 msgctxt "Composer Mode"
 msgid "Plain Text"
 msgstr ""
@@ -6434,13 +6433,13 @@ msgid "Include Moved"
 msgstr ""
 
 #: ./src/templates/settings/chooseRightToLeft.tpl.html:3
-#: ./src/templates/squire/moreToggle.tpl.html:15
+#: ./src/templates/squire/moreToggle.tpl.html:14
 msgctxt "Option"
 msgid "Left to Right"
 msgstr ""
 
 #: ./src/templates/settings/chooseRightToLeft.tpl.html:4
-#: ./src/templates/squire/moreToggle.tpl.html:19
+#: ./src/templates/squire/moreToggle.tpl.html:18
 msgctxt "Option"
 msgid "Right to Left"
 msgstr ""
