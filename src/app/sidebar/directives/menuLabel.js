@@ -75,7 +75,7 @@ function menuLabel($rootScope, labelsModel, $stateParams, dedentTpl, $state, sid
 
             unsubscribe.push(
                 $rootScope.$on('labelsModel', (e, { type }) => {
-                    if (type === 'cache.refesh' || type === 'cache.update') {
+                    if (type === 'cache.refresh' || type === 'cache.update') {
                         refresh();
                     }
                 })

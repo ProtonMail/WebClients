@@ -64,7 +64,7 @@ function ptDropzone($rootScope, ptDndUtils, ptDndModel, PTDNDCONSTANTS) {
 
             unsubscribe.push(
                 $rootScope.$on('labelsModel', (e, { type }) => {
-                    if (type === 'cache.refesh' || type === 'cache.update') {
+                    if (type === 'cache.refresh' || type === 'cache.update') {
                         refresh();
                     }
                 })
