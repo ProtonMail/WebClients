@@ -9,10 +9,6 @@
 .pm_sort-item {
 	list-style-type: none;
 	position: relative;
-	&.highlight {
-		background-color: $primary-light;
-		font-weight: bold;
-	}
 }
 
 
