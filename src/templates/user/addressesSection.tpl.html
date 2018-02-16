@@ -21,13 +21,12 @@
                 class="pm_sort-item"
                 ng-repeat="address in activeAddresses | orderBy: 'Order' track by address.ID"
                 data-as-sortable-item
-                ng-class="{'highlight': address.Type === 1, 'unsortable': true}">
+                ng-class="{'unsortable': true}">
                 <div class="pm_sort-item-content" as-sortable-item-handle="">
                     <div class="activeAddresses-email">
                         <span class="ellipsis">{{ address.Email }}</span>
                     </div>
                     <div class="activeAddresses-badge">
-                        <span class="pm_badge success" translate>Enabled</span>
                         <span class="pm_badge primary" ng-show="$first" translate>Default</span>
                     </div>
                 </div>
