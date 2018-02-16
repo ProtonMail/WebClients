@@ -59,7 +59,7 @@ function networkActivityTracker($filter, errorReporter, $rootScope, notification
                     message = 'An error has occurred. <br> Please try again or refresh the page.';
                 }
 
-                if (message !== 'loginPassword:cancel' || message !== ERROR_SILENT) {
+                if (message !== 'loginPassword:cancel' && message !== ERROR_SILENT) {
                     notification.error(message);
                 }
 
