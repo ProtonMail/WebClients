@@ -20,6 +20,7 @@ function uniqueUsername($stateParams, gettextCatalog, User) {
                 }
 
                 ngModel.$error.alreadyTaken = true;
+                return Promise.reject(false);
             })
             .catch(({ data = {} } = {}) => {
                 if (data.Error === 429) {
