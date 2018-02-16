@@ -69,12 +69,12 @@
                     <table ng-show="invoices.length > 0" id="invoicesTable">
                         <thead>
                             <tr>
-                                <th style="width: 4rem" class="invoice">ID</th>
-                                <th style="width: 10rem" class="paid" translate-context="Title" translate>Amount Paid / Due</th>
-                                <th style="width: 10rem" class="type" translate-context="Title" translate>Type</th>
-                                <th style="width: 6rem" class="status" translate-context="Title" translate>Status</th>
-                                <th style="width: 8rem" class="time" translate-context="Title" translate>Creation time</th>
-                                <th style="width: 10rem" class="text-right actions" translate-context="Title" translate>Actions</th>
+                                <th class="invoice">ID</th>
+                                <th class="paid" translate-context="Title" translate>Amount Paid / Due</th>
+                                <th class="actions" translate-context="Title" translate>Actions</th>
+                                <th class="type" translate-context="Title" translate>Type</th>
+                                <th class="status" translate-context="Title" translate>Status</th>
+                                <th class="time" translate-context="Title" translate>Creation time</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -85,6 +85,10 @@
                                 <td>
                                     <span ng-show="invoice.State === 0">{{ invoice.AmountDue / 100 | currency: invoice.Currency }}</span>
                                     <span ng-show="invoice.State === 1">{{ invoice.AmountCharged / 100 | currency: invoice.Currency }}</span>
+                                </td>
+                                <td>
+                                    <pay-invoice-btn data-model="invoice" ng-show="invoice.State === 0" ></pay-invoice-btn>
+                                    <button class="pm_button link" ng-click="download(invoice)" translate-context="Action" translate>Download</button>
                                 </td>
                                 <td>
                                     <span class="pm_badge" ng-show="invoice.Type === 0" translate-context="Invoice type display as badge" translate>Other</span>
@@ -100,10 +104,6 @@
                                     <span class="pm_badge" ng-show="invoice.State === 3" translate-context="Invoice status display as badge" translate>Billed</span>
                                 </td>
                                 <td>{{ invoice.CreateTime | readableTime }}</td>
-                                <td class="text-right">
-                                    <pay-invoice-btn data-model="invoice" ng-show="invoice.State === 0" ></pay-invoice-btn>
-                                    <button class="pm_button link" ng-click="download(invoice)" translate-context="Action" translate>Download</button>
-                                </td>
                             </tr>
                         </tbody>
                     </table>
