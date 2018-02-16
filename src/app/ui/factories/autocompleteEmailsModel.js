@@ -1,6 +1,6 @@
 import _ from 'lodash';
 
-import { flow, filter, take, map } from 'lodash/fp';
+import { flow, filter, take, map, sortBy } from 'lodash/fp';
 
 /* @ngInject */
 function autocompleteEmailsModel($injector, authentication, regexEmail, checkTypoEmails, $filter, CONSTANTS) {
@@ -91,6 +91,7 @@ function autocompleteEmailsModel($injector, authentication, regexEmail, checkTyp
                 const label = formatLabel(Name, Email);
                 return { label, value, Name };
             }),
+            sortBy('label'),
             filter(({ label }) => label.toLowerCase().includes(input)),
             take(CONSTANTS.AWESOMEPLETE_MAX_ITEMS)
         )($injector.get('contactEmails').fetch());
