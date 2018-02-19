@@ -92,9 +92,7 @@ function eventManager(
             const contactCleaned = cleanContact(contactEmail.ContactEmail);
             if (contactEmail.Action === DELETE) {
                 $rootScope.$emit('deleteContactEmail', contactEmail.ID);
-            } else if (contactEmail.Action === CREATE) {
-                $rootScope.$emit('createContactEmail', contactCleaned);
-            } else if (contactEmail.Action === UPDATE) {
+            } else if (contactEmail.Action === CREATE || contactEmail.Action === UPDATE) {
                 $rootScope.$emit('updateContactEmail', contactEmail.ID, contactCleaned);
             }
         });
