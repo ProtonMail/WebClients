@@ -19,7 +19,6 @@ import reset from './models/reset';
 import user from './models/user';
 import notification from './providers/notification';
 import url from './providers/url';
-import aboutClient from './services/aboutClient';
 import dedentTpl from './services/dedentTpl';
 import dispatchers from './services/dispatchers';
 import errorReporter from './services/errorReporter';
@@ -54,7 +53,6 @@ export default angular
     .factory('User', user)
     .provider('notification', notification)
     .provider('url', url)
-    .factory('aboutClient', aboutClient)
     .factory('dedentTpl', dedentTpl)
     .factory('dispatchers', dispatchers)
     .factory('errorReporter', errorReporter)

@@ -1,7 +1,8 @@
 import _ from 'lodash';
+import { isSafari } from '../../../helpers/browser';
 
 /* @ngInject */
-function safari(aboutClient) {
+function safari() {
     const fixes = [
         // Issue #5433: Download instead of new tab when clicking on links in emails
         () => {
@@ -17,6 +18,6 @@ function safari(aboutClient) {
 
     const applyFixes = () => _.each(fixes, (fix) => fix());
 
-    return { isCurrentBrowser: aboutClient.isSafari, applyFixes };
+    return { isCurrentBrowser: isSafari, applyFixes };
 }
 export default safari;

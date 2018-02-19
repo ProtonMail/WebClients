@@ -1,6 +1,7 @@
 import _ from 'lodash';
-
 import { flow, filter, each } from 'lodash/fp';
+import { isMac } from '../../../helpers/browser';
+import { CONSTANTS } from '../../constants';
 
 /* @ngInject */
 function editorListener(
@@ -12,11 +13,9 @@ function editorListener(
     editorDropzone,
     removeInlineWatcher,
     mailSettingsModel,
-    $state,
-    CONSTANTS,
-    aboutClient
+    $state
 ) {
-    const isMac = aboutClient.isMac();
+    const testMac = isMac();
 
     // Delay before updating the model as the process is slow
     const TIMEOUTAPP = 300;
@@ -62,7 +61,7 @@ function editorListener(
             }
         });
 
-        const sendKey = `${isMac ? 'meta' : 'ctrl'}-enter`;
+        const sendKey = `${testMac ? 'meta' : 'ctrl'}-enter`;
 
         editor.setKeyHandler(sendKey, (self, event) => {
             const { Hotkeys } = mailSettingsModel.get();

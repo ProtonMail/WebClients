@@ -1,8 +1,9 @@
 import _ from 'lodash';
 import { CONSTANTS } from '../../constants';
+import { getOS, getBrowser, getDevice } from '../../../helpers/browser';
 
 /* @ngInject */
-function bugReportApi(Report, CONFIG, $state, aboutClient, authentication, gettextCatalog, networkActivityTracker, notification) {
+function bugReportApi(Report, CONFIG, $state, authentication, gettextCatalog, networkActivityTracker, notification) {
     const { ROW_MODE, COLUMN_MODE, MESSAGE_VIEW_MODE, CONVERSATION_VIEW_MODE, CLIENT_TYPE } = CONSTANTS;
     const MAP_MODE = {
         layout: {
@@ -19,9 +20,9 @@ function bugReportApi(Report, CONFIG, $state, aboutClient, authentication, gette
     const getViewMode = (type) => MAP_MODE.view[type] || 'undefined';
 
     const getClient = ({ ViewLayout = '', ViewMode = '' } = {}) => {
-        const os = aboutClient.getOS();
-        const browser = aboutClient.getBrowser();
-        const device = aboutClient.getDevice();
+        const os = getOS();
+        const browser = getBrowser();
+        const device = getDevice();
         return {
             OS: os.name,
             OSVersion: os.version || '',

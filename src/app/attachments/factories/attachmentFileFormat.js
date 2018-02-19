@@ -1,9 +1,9 @@
 import _ from 'lodash';
+import { isSafari, isIE11 } from '../../../helpers/browser';
 
 /* @ngInject */
-function attachmentFileFormat(aboutClient) {
+function attachmentFileFormat() {
     const embedded = ['image/gif', 'image/jpeg', 'image/png', 'image/bmp'];
-    const isSafari = () => aboutClient.isSafari();
     const isEmbedded = (key) => _.includes(embedded, key);
     const getEmbedded = () => embedded;
 
@@ -14,7 +14,7 @@ function attachmentFileFormat(aboutClient) {
      */
     const isUploadMIMEType = (type) => {
         // Prehistory, with IE you can be Files or Text.
-        if (aboutClient.isIE11()) {
+        if (isIE11()) {
             return type !== 'Text';
         }
         return type !== 'text/html' && type !== 'text/plain' && type !== 'text/uri-list';
@@ -32,7 +32,7 @@ function attachmentFileFormat(aboutClient) {
         const list = [...(dataTransfer.types || [])];
 
         // Can be a drag and drop of an image inside the composer
-        if (aboutClient.isIE11() && !list.length) {
+        if (isIE11() && !list.length) {
             return false;
         }
 
