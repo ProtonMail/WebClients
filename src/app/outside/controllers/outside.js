@@ -51,7 +51,8 @@ function OutsideController(
         }
 
         if ($state.is('eo.reply')) {
-            message.showImages = true;
+            // If showImages were not specified in stateParams (i.e. loaded when viewing), don't show them in the reply.
+            message.showImages = $stateParams.showImages;
             message.showEmbedded = true;
             message.MIMEType = 'text/html';
         }
@@ -166,7 +167,10 @@ function OutsideController(
     };
 
     $scope.reply = () => {
-        $state.go('eo.reply', { tag: $stateParams.tag });
+        $state.go('eo.reply', {
+            tag: $stateParams.tag,
+            showImages: message.showImages
+        });
     };
 
     initialization();
