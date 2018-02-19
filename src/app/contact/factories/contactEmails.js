@@ -30,18 +30,15 @@ function contactEmails($rootScope, Contact) {
         return loadCache();
     };
 
-    $rootScope.$on('createContactEmail', (event, contactEmail) => {
-        emails.push(contactEmail);
-        emit(contactEmail);
-    });
-
     $rootScope.$on('updateContactEmail', (event, ID, contactEmail) => {
         const index = findIndex(ID);
+
         if (index !== -1) {
             emails[index] = contactEmail;
         } else {
             emails.push(contactEmail);
         }
+
         emit(contactEmail);
     });
 
