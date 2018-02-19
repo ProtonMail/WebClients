@@ -57,6 +57,7 @@ export const CONSTANTS = {
     CONTACTS_LIMIT_UPLOAD: 50,
     VCARD_VERSION: '4.0',
     VCARD_KEYS: [
+        'fn',
         'email',
         'adr',
         'tel',
