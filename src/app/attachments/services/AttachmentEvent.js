@@ -14,12 +14,11 @@ function AttachmentEvent(
     const mapAttachmentsToIcalEvent = (event, model) => {
         return attachmentDownloader
             .downloadString(event, model)
-            .then(getIcalEvent)
+            .then(getIcalEvent(event))
             .catch((err) => AppModel.is('onLine') && notification.error(err));
     };
 
     const load = (events, model) => {
-        console.log(events, model);
         return Promise.all(events.map((event) => mapAttachmentsToIcalEvent(event, model)));
     };
 
@@ -42,38 +41,38 @@ function AttachmentEvent(
      * @param {string} event info
      * @return {object}
      */
-    function getIcalEvent(info) {
-        const jcalData = ICAL.parse(info);
-        const vcalendar = new ICAL.Component(jcalData);
-        const vevent = vcalendar.getFirstSubcomponent('vevent');
-        const icalEvent = new ICAL.Event(vevent);
+    function getIcalEvent(event) {
+        return (info) => {
+            const jcalData = ICAL.parse(info);
+            const vcalendar = new ICAL.Component(jcalData);
+            const vevent = vcalendar.getFirstSubcomponent('vevent');
+            const icalEvent = new ICAL.Event(vevent);
 
-        // Invalid event
-        if (!vevent) {
-            return false;
-        }
+            // Invalid event
+            if (!vevent) {
+                return false;
+            }
 
-        const { attendees = [] } = icalEvent;
+            const { attendees = [] } = icalEvent;
 
-        if (icalEvent.startDate && icalEvent.endDate) {
-            icalEvent.startDateMoment = moment(icalEvent.startDate.toJSDate());
-            icalEvent.endDateMoment = moment(icalEvent.endDate.toJSDate());
-        }
+            if (icalEvent.startDate && icalEvent.endDate) {
+                icalEvent.startDateMoment = moment(icalEvent.startDate.toJSDate());
+                icalEvent.endDateMoment = moment(icalEvent.endDate.toJSDate());
+            }
 
-        if (attendees.length) {
-            icalEvent.attendeesList = attendees.reduce((acc, attendee) => acc.concat(attendee.getValues()), []);
-        }
+            if (attendees.length) {
+                icalEvent.attendeesList = attendees.reduce((acc, attendee) => acc.concat(attendee.getValues()), []);
+            }
 
-        icalEvent.attachment = event; // Keep the attachment
+            icalEvent.attachment = event; // Keep the attachment
 
-        return icalEvent;
+            return icalEvent;
+        };
     }
 
     return {
         dateFormat,
-        getIcalEvent,
         filterAttachmentsForEvents,
-        mapAttachmentsToIcalEvent,
         load
     };
 }

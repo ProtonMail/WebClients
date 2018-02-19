@@ -371,7 +371,7 @@ export default angular
             .state('eo.reply', {
                 url: '/eo/reply/:tag',
                 params: {
-                    showImages: false,
+                    showImages: false
                 },
                 resolve: {
                     messageData($stateParams, Eo, messageModel, pmcw, secureSessionStorage) {
