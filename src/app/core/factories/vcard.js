@@ -128,6 +128,11 @@ function vcard(CONSTANTS, notification, sanitize) {
             return type;
         }
 
+        // We've accidentally set custom fn-types on created contacts and x-fn types on exported data. Remove them.
+        if (type === 'fn' || type === 'x-fn') {
+            return '';
+        }
+
         if (type.toLowerCase().startsWith('x')) {
             return type;
         }
