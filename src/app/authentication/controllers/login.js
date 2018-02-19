@@ -1,3 +1,5 @@
+import { hasSessionStorage, hasCookie } from '../../../helpers/browser';
+
 /* @ngInject */
 function LoginController(
     $rootScope,
@@ -18,7 +20,6 @@ function LoginController(
     AppModel,
     pmcw,
     tempStorage,
-    aboutClient,
     srp
 ) {
     $scope.twoFactor = 0;
@@ -87,7 +88,7 @@ function LoginController(
      * or notify the user
      */
     function testSessionStorage() {
-        if (aboutClient.hasSessionStorage() === false) {
+        if (hasSessionStorage() === false) {
             notify({
                 message: gettextCatalog.getString(
                     'You are in Private Mode or have Session Storage disabled.\nPlease deactivate Private Mode and then reload the page.\n<a href="https://protonmail.com/support/knowledge-base/enabling-cookies/" target="_blank">More information here</a>.',
@@ -106,7 +107,7 @@ function LoginController(
      */
     function testCookie() {
         //
-        if (aboutClient.hasCookie() === false) {
+        if (hasCookie() === false) {
             notify({
                 message: gettextCatalog.getString(
                     'Cookies are disabled.\nPlease activate it and then reload the page.\n<a href="https://protonmail.com/support/knowledge-base/enabling-cookies/" target="_blank">More information here</a>.',

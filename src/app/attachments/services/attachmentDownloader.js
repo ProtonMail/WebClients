@@ -1,8 +1,11 @@
 import _ from 'lodash';
+import { isFileSaverSupported } from '../../../helpers/browser';
 
 /* @ngInject */
-function attachmentDownloader(gettextCatalog, AttachmentLoader, embeddedUtils, aboutClient, notification, AppModel, confirmModal, pmcw) {
-    const isFileSaverSupported = aboutClient.isFileSaverSupported();
+function attachmentDownloader(gettextCatalog, AttachmentLoader, embeddedUtils, notification, AppModel, confirmModal, pmcw) {
+
+    const hasFileSaverSupported = isFileSaverSupported();
+
     const I18N = {
         NOT_SUPPORTED: gettextCatalog.getString(
             'Your browser lacks features needed to download encrypted attachments directly. Please right-click on the attachment and select Save/Download As.',
@@ -48,7 +51,7 @@ function attachmentDownloader(gettextCatalog, AttachmentLoader, embeddedUtils, a
      */
     const downloadFile = (blob, name, el) => {
         try {
-            if (isFileSaverSupported) {
+            if (hasFileSaverSupported) {
                 return window.saveAs(blob, name);
             }
 

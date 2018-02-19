@@ -1,11 +1,13 @@
+import { isFileSaverSupported } from '../../../helpers/browser';
+
 /* @ngInject */
-function downloadFile(gettextCatalog, notification, aboutClient) {
+function downloadFile(gettextCatalog, notification) {
     const newerBrowser = gettextCatalog.getString('Download requires a newer browser.', null, 'Error');
     const learnMore = gettextCatalog.getString('Learn more.', null, 'Info');
 
     return (blob, filename) => {
         try {
-            if (!aboutClient.isFileSaverSupported()) {
+            if (!isFileSaverSupported()) {
                 throw new Error(newerBrowser);
             }
             window.saveAs(blob, filename);

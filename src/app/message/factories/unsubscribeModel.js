@@ -1,10 +1,12 @@
 import _ from 'lodash';
+import { openWindow } from '../../../helpers/browser';
 
 /* @ngInject */
 function unsubscribeModel($rootScope, authentication, gettextCatalog, messageModel, notification, parseUrl, simpleSend) {
+
     const LIST = [];
     const UNSUBSCRIBE_REGEX = /<(.*?)>/g;
-    const openTab = (url = '') => window.open(url, '_blank');
+
     const successMessage = gettextCatalog.getString('Unsubscribed', null, 'Success notification');
 
     function already(list = '') {
@@ -52,7 +54,7 @@ function unsubscribeModel($rootScope, authentication, gettextCatalog, messageMod
 
         _.each(matches, (value = '') => {
             value.startsWith('mailto:') && sendMessage(value, addressID);
-            value.startsWith('http') && openTab(value);
+            value.startsWith('http') && openWindow(value);
         });
 
         LIST.push(list);

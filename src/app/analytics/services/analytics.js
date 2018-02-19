@@ -3,7 +3,7 @@ function analytics(CONFIG, CONSTANTS) {
     const { isEnabled, cookieDomain = '', domains = [], statsHost = '', siteId = -1, abSiteId = -1 } = CONFIG.statsConfig;
 
     // check if we should load the analytics package
-    if (!isEnabled) { // || aboutClient.doNotTrack()) {
+    if (!isEnabled) {
         return { init: angular.noop, trackGoals: angular.noop, trackPage: angular.noop };
     }
 

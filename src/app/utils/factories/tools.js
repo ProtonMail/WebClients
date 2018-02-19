@@ -3,7 +3,7 @@ import { CONSTANTS } from '../../constants';
 
 /* @ngInject */
 function tools($state, $stateParams, mailSettingsModel, AppModel) {
-    const tools = {};
+
     const MAILBOX_KEYS = Object.keys(CONSTANTS.MAILBOX_IDENTIFIERS);
 
     /**
@@ -11,16 +11,16 @@ function tools($state, $stateParams, mailSettingsModel, AppModel) {
      * @param  {String} str
      * @return {Integer}
      */
-    tools.hash = (str = '') => {
+    const hash = (str = '') => {
         return str.split('').reduce((prevHash, currVal) => (prevHash << 5) - prevHash + currVal.charCodeAt(0), 0);
     };
 
-    tools.mobileResponsive = () => {
+    const mobileResponsive = () => {
         AppModel.set('mobile', document.body.offsetWidth < CONSTANTS.MOBILE_BREAKPOINT);
         AppModel.set('tablet', document.body.offsetWidth < CONSTANTS.DESKTOP_BREAKPOINT && document.body.offsetWidth > CONSTANTS.MOBILE_BREAKPOINT);
     };
 
-    tools.colors = () => {
+    const colors = () => {
         return [
             '#7272a7',
             '#8989ac',
@@ -58,23 +58,23 @@ function tools($state, $stateParams, mailSettingsModel, AppModel) {
      * Remove every protonmail attributes inside the HTML content specified
      * @param {} html
      */
-    tools.fixImages = (input) => {
+    const fixImages = (input) => {
         const re = new RegExp('proton-(url|src|svg|background|poster)', 'g');
         return input.replace(re, '$1');
     };
 
-    tools.replaceLineBreaks = (content) => {
+    const replaceLineBreaks = (content) => {
         return content.replace(/(?:\r\n|\r|\n)/g, '<br />');
     };
 
-    tools.currentLocation = () => {
+    const currentLocation = () => {
         const mailbox = tools.currentMailbox();
         const loc = mailbox === 'label' ? $stateParams.label : CONSTANTS.MAILBOX_IDENTIFIERS[mailbox];
 
         return loc;
     };
 
-    const filteredState = (state = $state.$current.name) => state.replace('secured.', '').replace('.element', '');
+const filteredState = (state = $state.$current.name) => state.replace('secured.', '').replace('.element', '');
 
     tools.filteredState = filteredState;
     tools.currentMailbox = () => {
@@ -87,7 +87,7 @@ function tools($state, $stateParams, mailSettingsModel, AppModel) {
         return false;
     };
 
-    tools.getTypeList = (name) => {
+    const getTypeList = (name) => {
         const specialBoxes = ['drafts', 'search', 'sent', 'allDrafts', 'allSent'];
         const box = name || tools.currentMailbox();
         const { ViewMode } = mailSettingsModel.get();
@@ -100,7 +100,7 @@ function tools($state, $stateParams, mailSettingsModel, AppModel) {
         return 'conversation';
     };
 
-    tools.typeView = () => {
+    const typeView = () => {
         const { ViewMode } = mailSettingsModel.get();
         return ViewMode === CONSTANTS.MESSAGE_VIEW_MODE ? 'message' : 'conversation';
     };
@@ -109,7 +109,7 @@ function tools($state, $stateParams, mailSettingsModel, AppModel) {
      * Check if the request is in a cache context
      * @return {Boolean}
      */
-    tools.cacheContext = () => {
+    const cacheContext = () => {
         const mailbox = filteredState();
         const filterUndefined = angular.isUndefined($stateParams.filter);
         const sortUndefined = angular.isUndefined($stateParams.sort);
@@ -118,6 +118,17 @@ function tools($state, $stateParams, mailSettingsModel, AppModel) {
         return isNotSearch && sortUndefined && filterUndefined;
     };
 
-    return tools;
+    return {
+        hash,
+        mobileResponsive,
+        colors,
+        fixImages,
+        replaceLineBreaks,
+        currentLocation,
+        filteredState,
+        getTypeList,
+        typeView,
+        cacheContext
+    };
 }
 export default tools;

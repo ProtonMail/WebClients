@@ -1,5 +1,7 @@
+import { isIE11 } from '../../../helpers/browser';
+
 /* @ngInject */
-function composerSelectFrom(notification, editorModel, aboutClient, gettextCatalog, composerFromModel, authentication) {
+function composerSelectFrom(notification, editorModel, gettextCatalog, composerFromModel, authentication) {
     const I18N = {
         ATTACHMENT_SEND_CHANGE: gettextCatalog.getString(
             'Attachments and inline images must be removed first before changing sender',
@@ -56,13 +58,13 @@ function composerSelectFrom(notification, editorModel, aboutClient, gettextCatal
              * cause a rendering bug of the options widths
              */
             const onMouseDown = () => $select.focus();
-            aboutClient.isIE11() && $select.on('mousedown', onMouseDown);
+            isIE11() && $select.on('mousedown', onMouseDown);
 
             el.on('click', onClick);
             $select.on('change', onChange);
 
             scope.$on('$destroy', () => {
-                aboutClient.isIE11() && $select.off('mousedown', onMouseDown);
+                isIE11() && $select.off('mousedown', onMouseDown);
                 el.off('click', onClick);
                 $select.off('change', onChange);
             });

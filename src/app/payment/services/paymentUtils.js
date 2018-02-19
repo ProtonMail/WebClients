@@ -1,7 +1,9 @@
 import _ from 'lodash';
+import { CONSTANTS } from '../../constants';
+import { isIE11 } from '../../../helpers/browser';
 
 /* @ngInject */
-function paymentUtils(CONSTANTS, gettextCatalog, aboutClient, paymentModel, $state) {
+function paymentUtils(gettextCatalog, paymentModel, $state) {
     const { MONTHLY, YEARLY, TWO_YEARS } = CONSTANTS.CYCLE;
     const I18N = {
         cash: gettextCatalog.getString('Cash', null, 'Payment method'),
@@ -39,7 +41,7 @@ function paymentUtils(CONSTANTS, gettextCatalog, aboutClient, paymentModel, $sta
         const isTwoYear = Cycle === TWO_YEARS;
         const isInvoiceModal = modal === 'invoice';
         // Paypal doesn't work with IE11. For the payment modal we cannot pay monthly via paypal
-        if (!aboutClient.isIE11() && (isYearly || isTwoYear || isMonthlyValid || isInvoiceModal)) {
+        if (!isIE11() && (isYearly || isTwoYear || isMonthlyValid || isInvoiceModal)) {
             list.push({
                 label: 'PayPal',
                 value: 'paypal'
