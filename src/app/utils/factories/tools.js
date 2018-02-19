@@ -68,16 +68,15 @@ function tools($state, $stateParams, mailSettingsModel, AppModel) {
     };
 
     const currentLocation = () => {
-        const mailbox = tools.currentMailbox();
+        const mailbox = currentMailbox();
         const loc = mailbox === 'label' ? $stateParams.label : CONSTANTS.MAILBOX_IDENTIFIERS[mailbox];
 
         return loc;
     };
 
-const filteredState = (state = $state.$current.name) => state.replace('secured.', '').replace('.element', '');
+    const filteredState = (state = $state.$current.name) => state.replace('secured.', '').replace('.element', '');
 
-    tools.filteredState = filteredState;
-    tools.currentMailbox = () => {
+    function currentMailbox() {
         const mailbox = filteredState();
 
         if (_.includes(MAILBOX_KEYS, mailbox)) {
@@ -85,11 +84,11 @@ const filteredState = (state = $state.$current.name) => state.replace('secured.'
         }
 
         return false;
-    };
+    }
 
     const getTypeList = (name) => {
         const specialBoxes = ['drafts', 'search', 'sent', 'allDrafts', 'allSent'];
-        const box = name || tools.currentMailbox();
+        const box = name || currentMailbox();
         const { ViewMode } = mailSettingsModel.get();
         const threadingIsOff = ViewMode === CONSTANTS.MESSAGE_VIEW_MODE;
 
@@ -126,6 +125,7 @@ const filteredState = (state = $state.$current.name) => state.replace('secured.'
         replaceLineBreaks,
         currentLocation,
         filteredState,
+        currentMailbox,
         getTypeList,
         typeView,
         cacheContext
