@@ -4,6 +4,7 @@ import menuLabel from './directives/menuLabel';
 import navigationItem from './directives/navigationItem';
 import navigationSettings from './directives/navigationSettings';
 import sidebar from './directives/sidebar';
+import sidebarLabels from './directives/sidebarLabels';
 import sidebarContact from './directives/sidebarContact';
 import sidebarMobile from './directives/sidebarMobile';
 import sidebarMobileHeader from './directives/sidebarMobileHeader';
@@ -19,6 +20,7 @@ export default angular
     .directive('navigationItem', navigationItem)
     .directive('navigationSettings', navigationSettings)
     .directive('sidebar', sidebar)
+    .directive('sidebarLabels', sidebarLabels)
     .directive('sidebarContact', sidebarContact)
     .directive('sidebarMobile', sidebarMobile)
     .directive('sidebarMobileHeader', sidebarMobileHeader)

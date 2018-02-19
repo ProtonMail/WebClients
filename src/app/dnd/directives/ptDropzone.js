@@ -47,7 +47,13 @@ function ptDropzone($rootScope, ptDndUtils, ptDndModel, PTDNDCONSTANTS) {
         link(scope, el) {
             const unsubscribe = [];
 
-            const refresh = () => {
+            /**
+             * There is a race-condition when a new menu label is added. It can happen that this function
+             * is called BEFORE the label is added. Thus it's wrapped in rAF to delay it to be sure that
+             * the added label element exists in the list.
+             * @returns {*}
+             */
+            const refresh = () => _rAF(() => {
                 ptDndModel.dropzone.reset();
                 [].slice.call(el[0].querySelectorAll('[data-pt-dropzone-item]')).forEach((node) => {
                     const id = ptDndUtils.generateUniqId('drop');
@@ -58,7 +64,7 @@ function ptDropzone($rootScope, ptDndUtils, ptDndModel, PTDNDCONSTANTS) {
                         type: node.dataset.ptDropzoneItemType
                     });
                 });
-            };
+            });
 
             const id = setTimeout(() => (refresh(), clearTimeout(id)), 1000);
 
