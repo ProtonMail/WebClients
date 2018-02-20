@@ -44,6 +44,9 @@ function identitySection(authentication, editorModel, gettextCatalog, notificati
                 if (!firstTime) {
                     const { editor } = editorModel.find({ ID: EDITOR_ID });
                     editor.fireEvent('refresh', { Body: signature });
+                    return scope.$applyAsync(() => {
+                        scope.address = { DisplayName, Signature: signature };
+                    });
                 }
 
                 scope.address = { DisplayName, Signature: signature };

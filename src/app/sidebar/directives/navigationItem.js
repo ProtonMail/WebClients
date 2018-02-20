@@ -1,7 +1,8 @@
 import _ from 'lodash';
+import dedentTpl from '../../../helpers/dedent';
 
 /* @ngInject */
-function navigationItem($rootScope, $state, $stateParams, sidebarModel, dedentTpl, eventManager, AppModel) {
+function navigationItem($rootScope, $state, $stateParams, sidebarModel, eventManager, AppModel) {
     const CLASS_ACTIVE = 'active';
     const CLASS_SPIN = 'spinMe';
     const template = (key, { state, label, icon = '' }) => {

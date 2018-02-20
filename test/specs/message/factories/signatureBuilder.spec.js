@@ -14,6 +14,7 @@ describe('signatureBuilder factory', () => {
     const USER_SIGNATURE = '<strong>POPOPO</strong>';
     const USER_SIGNATURE2 = '<i>Elle est où Jeanne ???</i>';
     const USER_SIGNATURE_MULTIPLE = '<i>Elle est où Jeanne ???</i><br><div>DTC</div>';
+    const USER_SIGNATURE_MULTIPLE_TXT = ['Elle est où Jeanne ???', 'DTC'].join('\n\n');
     const MESSAGE_BODY = '<p>polo</p>';
     const getMessageUpdate = (user = '', proton = '') => {
         const blockEmpty = (!user && !proton) ? CLASS_EMPTY : '';
@@ -41,7 +42,7 @@ describe('signatureBuilder factory', () => {
 
             beforeEach(angular.mock.inject(($injector) => {
                 rootScope = $injector.get('$rootScope');
-                factory = service(authentication, CONSTANTS, tools, sanitize, AppModel, rootScope, mailSettingsModel);
+                factory = service(authentication, tools, sanitize, AppModel, rootScope, mailSettingsModel);
             }));
 
             describe('Insert signature ~ no signatures', () => {
@@ -73,7 +74,6 @@ describe('signatureBuilder factory', () => {
 
                     it('should clean the signature', () => {
                         const html = sanitize.message.calls.argsFor(0)[0];
-                        expect(html).toMatch(/<div><br \/><\/div>/);
                         expect(html).toContain(noSignatures);
                         expect(html).toContain(noSignatureUser);
                         expect(html).toContain(noSignatureProton);
@@ -153,7 +153,6 @@ describe('signatureBuilder factory', () => {
 
                     it('should clean the signature', () => {
                         const html = sanitize.message.calls.argsFor(0)[0];
-                        expect(html).toMatch(/<div><br \/><\/div>/);
                         expect(html).toContain(noSignatures);
                         expect(html).toContain(noSignatureUser);
                         expect(html).toContain(noSignatureProton);
@@ -239,7 +238,6 @@ describe('signatureBuilder factory', () => {
 
                     it('should clean the signature', () => {
                         const html = sanitize.message.calls.argsFor(0)[0];
-                        expect(html).toMatch(/<div><br \/><\/div>/);
                         expect(html).not.toContain(noSignatures);
                         expect(html).toContain(noSignatureUser);
                         expect(html).not.toContain(noSignatureProton);
@@ -322,7 +320,6 @@ describe('signatureBuilder factory', () => {
 
                     it('should clean the signature', () => {
                         const html = sanitize.message.calls.argsFor(0)[0];
-                        expect(html).toMatch(/<div><br \/><\/div>/);
                         expect(html).not.toContain(noSignatures);
                         expect(html).toContain(noSignatureUser);
                         expect(html).not.toContain(noSignatureProton);
@@ -411,7 +408,6 @@ describe('signatureBuilder factory', () => {
 
                     it('should clean the signature', () => {
                         const html = sanitize.message.calls.argsFor(0)[0];
-                        expect(html).toMatch(/<div><br \/><\/div>/);
                         expect(html).not.toContain(noSignatures);
                         expect(html).not.toContain(noSignatureUser);
                         expect(html).toContain(noSignatureProton);
@@ -494,7 +490,6 @@ describe('signatureBuilder factory', () => {
 
                     it('should clean the signature', () => {
                         const html = sanitize.message.calls.argsFor(0)[0];
-                        expect(html).toMatch(/<div><br \/><\/div>/);
                         expect(html).not.toContain(noSignatures);
                         expect(html).not.toContain(noSignatureUser);
                         expect(html).toContain(noSignatureProton);
@@ -586,7 +581,6 @@ describe('signatureBuilder factory', () => {
 
                     it('should clean the signature', () => {
                         const html = sanitize.message.calls.argsFor(0)[0];
-                        expect(html).toMatch(/<div><br \/><\/div>/);
                         expect(html).not.toContain(noSignatures);
                         expect(html).not.toContain(noSignatureUser);
                         expect(html).not.toContain(noSignatureProton);
@@ -676,7 +670,6 @@ describe('signatureBuilder factory', () => {
 
                     it('should clean the signature', () => {
                         const html = sanitize.message.calls.argsFor(0)[0];
-                        expect(html).toMatch(/<div><br \/><\/div>/);
                         expect(html).not.toContain(noSignatures);
                         expect(html).not.toContain(noSignatureUser);
                         expect(html).not.toContain(noSignatureProton);
@@ -758,7 +751,7 @@ describe('signatureBuilder factory', () => {
                 const authentication = { user: _.extend({ Signature: '' }, user) };
                 const mailSettingsMock = _.extend({ Signature: '' }, user);
                 const mailSettingsModel = { get: (k) => mailSettingsMock[k] };
-                factory = service(authentication, CONSTANTS, tools, sanitize, AppModel, rootScope, mailSettingsModel);
+                factory = service(authentication, tools, sanitize, AppModel, rootScope, mailSettingsModel);
                 rootScope.$emit('AppModel', { type: 'protonSignature' });
                 rootScope.$digest();
             }));
@@ -798,19 +791,18 @@ describe('signatureBuilder factory', () => {
             });
 
 
-            it('should clean the user signature 1st', () => {
-                const html = sanitize.message.calls.argsFor(0)[0];
+            it('should clean the user signature 2sd', () => {
+                const html = sanitize.message.calls.argsFor(1)[0];
                 expect(html).toBe('');
             });
 
             it('should clean the message after', () => {
-                const html = sanitize.message.calls.argsFor(1)[0];
+                const html = sanitize.message.calls.argsFor(0)[0];
                 expect(html).toBe(MESSAGE_BODY);
             });
 
             it('should clean the new signature', () => {
                 const html = sanitize.message.calls.argsFor(2)[0];
-                expect(html).toMatch(/<div><br \/><\/div>/);
                 expect(html).toContain(noSignatures);
                 expect(html).toContain(noSignatureUser);
                 expect(html).toContain(noSignatureProton);
@@ -883,13 +875,13 @@ describe('signatureBuilder factory', () => {
                 expect(sanitize.message).toHaveBeenCalledWith(jasmine.any(String));
             });
 
-            it('should clean the user signature 1st', () => {
-                const html = sanitize.message.calls.argsFor(0)[0];
+            it('should clean the user signature 2sd', () => {
+                const html = sanitize.message.calls.argsFor(1)[0];
                 expect(html).toBe(USER_SIGNATURE);
             });
 
             it('should clean the message after', () => {
-                const html = sanitize.message.calls.argsFor(1)[0];
+                const html = sanitize.message.calls.argsFor(0)[0];
                 expect(html).toBe(MESSAGE_BODY_UPDATE);
             });
 
@@ -940,13 +932,13 @@ describe('signatureBuilder factory', () => {
                 expect(sanitize.message).toHaveBeenCalledWith(jasmine.any(String));
             });
 
-            it('should clean the user signature 1st', () => {
-                const html = sanitize.message.calls.argsFor(0)[0];
+            it('should clean the user signature 2sd', () => {
+                const html = sanitize.message.calls.argsFor(1)[0];
                 expect(html).toBe(USER_SIGNATURE);
             });
 
             it('should clean the message after', () => {
-                const html = sanitize.message.calls.argsFor(1)[0];
+                const html = sanitize.message.calls.argsFor(0)[0];
                 expect(html).toBe(MESSAGE_BODY_UPDATE);
             });
 
@@ -998,13 +990,13 @@ describe('signatureBuilder factory', () => {
                 expect(sanitize.message).toHaveBeenCalledWith(jasmine.any(String));
             });
 
-            it('should clean the user signature 1st', () => {
-                const html = sanitize.message.calls.argsFor(0)[0];
+            it('should clean the user signature 2sd', () => {
+                const html = sanitize.message.calls.argsFor(1)[0];
                 expect(html).toBe(USER_SIGNATURE);
             });
 
             it('should clean the message after', () => {
-                const html = sanitize.message.calls.argsFor(1)[0];
+                const html = sanitize.message.calls.argsFor(0)[0];
                 expect(html).toBe(MESSAGE_BODY_UPDATE);
             });
 
@@ -1055,13 +1047,13 @@ describe('signatureBuilder factory', () => {
                 expect(sanitize.message).toHaveBeenCalledWith(jasmine.any(String));
             });
 
-            it('should clean the user signature 1st', () => {
-                const html = sanitize.message.calls.argsFor(0)[0];
+            it('should clean the user signature 2sd', () => {
+                const html = sanitize.message.calls.argsFor(1)[0];
                 expect(html).toBe(USER_SIGNATURE2);
             });
 
             it('should clean the message after', () => {
-                const html = sanitize.message.calls.argsFor(1)[0];
+                const html = sanitize.message.calls.argsFor(0)[0];
                 expect(html).toBe(MESSAGE_BODY_UPDATE);
             });
 
@@ -1111,13 +1103,13 @@ describe('signatureBuilder factory', () => {
                 expect(sanitize.message).toHaveBeenCalledWith(jasmine.any(String));
             });
 
-            it('should clean the user signature 1st', () => {
-                const html = sanitize.message.calls.argsFor(0)[0];
+            it('should clean the user signature 2sd', () => {
+                const html = sanitize.message.calls.argsFor(1)[0];
                 expect(html).toBe(USER_SIGNATURE2);
             });
 
             it('should clean the message after', () => {
-                const html = sanitize.message.calls.argsFor(1)[0];
+                const html = sanitize.message.calls.argsFor(0)[0];
                 expect(html).toBe(MESSAGE_BODY_UPDATE);
             });
 
@@ -1157,9 +1149,11 @@ describe('signatureBuilder factory', () => {
         const getMessageUpdatePlain = (user = '', proton = '', haveBody = false) => {
             let str = !haveBody ? '' : `${MESSAGE_BODY_PLAIN}\n`;
 
+            const signature = (user && proton) ? `\n\n${proton}` : proton;
+
             /* whitespace around user signature */
-            str += `​${user}\n`;
-            str += `${proton}​`;
+            str += `​${user}`;
+            str += `${signature}​`;
             return str;
         };
 
@@ -1169,7 +1163,7 @@ describe('signatureBuilder factory', () => {
                 const authentication = { user: _.extend({ Signature: '' }, user) };
                 const mailSettingsMock = _.extend({ Signature: '' }, user);
                 const mailSettingsModel = { get: (k) => mailSettingsMock[k] };
-                factory = service(authentication, CONSTANTS, tools, sanitize, AppModel, rootScope, mailSettingsModel);
+                factory = service(authentication, tools, sanitize, AppModel, rootScope, mailSettingsModel);
                 rootScope.$emit('AppModel', { type: 'protonSignature' });
                 rootScope.$digest();
             }));
@@ -1195,8 +1189,9 @@ describe('signatureBuilder factory', () => {
                 expect(message.getDecryptedBody).toHaveBeenCalledTimes(1);
             });
 
-            it('should not remove line breaks', () => {
-                expect(tools.replaceLineBreaks).not.toHaveBeenCalled();
+            it('should remove line breaks', () => {
+                expect(tools.replaceLineBreaks).toHaveBeenCalled();
+                expect(tools.replaceLineBreaks).toHaveBeenCalledTimes(2);
             });
 
             it('should try to clean the signature', () => {
@@ -1204,9 +1199,9 @@ describe('signatureBuilder factory', () => {
                 expect(sanitize.message).toHaveBeenCalledWith(jasmine.any(String));
             });
 
-            it('should clean the signature', () => {
-                const html = sanitize.message.calls.argsFor(0)[0];
-                expect(html).toBe('');
+            it('should clean the signature -> empty', () => {
+                const [ html ] = $.parseHTML(`<div>${sanitize.message.calls.argsFor(0)[0]}</div>`);
+                expect(html.querySelectorAll('.protonmail_signature_block-empty').length).toBe(3);
             });
 
             it('should change nothing', () => {
@@ -1233,8 +1228,8 @@ describe('signatureBuilder factory', () => {
                 expect(message.getDecryptedBody).toHaveBeenCalledTimes(1);
             });
 
-            it('should not remove line breaks', () => {
-                expect(tools.replaceLineBreaks).not.toHaveBeenCalled();
+            it('should remove line breaks', () => {
+                expect(tools.replaceLineBreaks).toHaveBeenCalledTimes(2);
             });
 
             it('should try to clean the signature', () => {
@@ -1242,10 +1237,18 @@ describe('signatureBuilder factory', () => {
                 expect(sanitize.message).toHaveBeenCalledWith(jasmine.any(String));
             });
 
+
             it('should clean the signature', () => {
-                const html = sanitize.message.calls.argsFor(0)[0];
-                expect(html).toBe(USER_SIGNATURE);
+                const [ html ] = $.parseHTML(`<div>${sanitize.message.calls.argsFor(0)[0]}</div>`);
+                const user = html.querySelector('.protonmail_signature_block-user');
+                const proton = html.querySelector('.protonmail_signature_block-proton');
+
+                expect(html.querySelectorAll('.protonmail_signature_block-empty').length).toBe(1);
+                expect(user.classList.contains('protonmail_signature_block-empty')).toBe(false);
+                expect(proton.classList.contains('protonmail_signature_block-empty')).toBe(true);
+                expect(user.innerHTML).toBe(USER_SIGNATURE);
             });
+
 
             it('should change nothing', () => {
                 expect(string).toEqual(getMessageUpdatePlain(getTxt(USER_SIGNATURE)));
@@ -1269,8 +1272,8 @@ describe('signatureBuilder factory', () => {
                 expect(message.getDecryptedBody).toHaveBeenCalledTimes(1);
             });
 
-            it('should not remove line breaks', () => {
-                expect(tools.replaceLineBreaks).not.toHaveBeenCalled();
+            it('should remove line breaks', () => {
+                expect(tools.replaceLineBreaks).toHaveBeenCalledTimes(2);
             });
 
             it('should try to clean the signature', () => {
@@ -1279,9 +1282,16 @@ describe('signatureBuilder factory', () => {
             });
 
             it('should clean the signature', () => {
-                const html = sanitize.message.calls.argsFor(0)[0];
-                expect(html).toBe(USER_SIGNATURE2);
+                const [ html ] = $.parseHTML(`<div>${sanitize.message.calls.argsFor(0)[0]}</div>`);
+                const user = html.querySelector('.protonmail_signature_block-user');
+                const proton = html.querySelector('.protonmail_signature_block-proton');
+
+                expect(html.querySelectorAll('.protonmail_signature_block-empty').length).toBe(1);
+                expect(user.classList.contains('protonmail_signature_block-empty')).toBe(false);
+                expect(proton.classList.contains('protonmail_signature_block-empty')).toBe(true);
+                expect(user.innerHTML).toBe(USER_SIGNATURE2);
             });
+
 
             it('should change nothing', () => {
                 expect(string).toEqual(getMessageUpdatePlain(getTxt(USER_SIGNATURE2)));
@@ -1306,8 +1316,8 @@ describe('signatureBuilder factory', () => {
                 expect(message.getDecryptedBody).toHaveBeenCalledTimes(1);
             });
 
-            it('should not remove line breaks', () => {
-                expect(tools.replaceLineBreaks).not.toHaveBeenCalled();
+            it('should remove line breaks', () => {
+                expect(tools.replaceLineBreaks).toHaveBeenCalledTimes(2);
             });
 
             it('should try to clean the signature', () => {
@@ -1316,9 +1326,17 @@ describe('signatureBuilder factory', () => {
             });
 
             it('should clean the signature', () => {
-                const html = sanitize.message.calls.argsFor(0)[0];
-                expect(html).toBe(USER_SIGNATURE);
+                const [ html ] = $.parseHTML(`<div>${sanitize.message.calls.argsFor(0)[0]}</div>`);
+                const user = html.querySelector('.protonmail_signature_block-user');
+                const proton = html.querySelector('.protonmail_signature_block-proton');
+
+                expect(html.querySelectorAll('.protonmail_signature_block-empty').length).toBe(0);
+                expect(user.classList.contains('protonmail_signature_block-empty')).toBe(false);
+                expect(proton.classList.contains('protonmail_signature_block-empty')).toBe(false);
+                expect(user.innerHTML).toBe(USER_SIGNATURE);
+                expect(proton.innerHTML).toBe(CONSTANTS.PM_SIGNATURE);
             });
+
 
             it('should change nothing', () => {
                 const output = getMessageUpdatePlain(getTxt(USER_SIGNATURE), getTxt(CONSTANTS.PM_SIGNATURE));
@@ -1343,8 +1361,8 @@ describe('signatureBuilder factory', () => {
                 expect(message.getDecryptedBody).toHaveBeenCalledTimes(1);
             });
 
-            it('should not remove line breaks', () => {
-                expect(tools.replaceLineBreaks).not.toHaveBeenCalled();
+            it('should remove line breaks', () => {
+                expect(tools.replaceLineBreaks).toHaveBeenCalledTimes(2);
             });
 
             it('should try to clean the signature', () => {
@@ -1353,9 +1371,16 @@ describe('signatureBuilder factory', () => {
             });
 
             it('should clean the signature', () => {
-                const html = sanitize.message.calls.argsFor(0)[0];
-                expect(html).toBe(USER_SIGNATURE2);
+                const [ html ] = $.parseHTML(`<div>${sanitize.message.calls.argsFor(0)[0]}</div>`);
+                const user = html.querySelector('.protonmail_signature_block-user');
+                const proton = html.querySelector('.protonmail_signature_block-proton');
+
+                expect(html.querySelectorAll('.protonmail_signature_block-empty').length).toBe(0);
+                expect(user.classList.contains('protonmail_signature_block-empty')).toBe(false);
+                expect(proton.classList.contains('protonmail_signature_block-empty')).toBe(false);
+                expect(user.innerHTML).toBe(USER_SIGNATURE2);
             });
+
 
             it('should change nothing', () => {
                 const output = getMessageUpdatePlain(getTxt(USER_SIGNATURE2), getTxt(CONSTANTS.PM_SIGNATURE));
@@ -1380,8 +1405,8 @@ describe('signatureBuilder factory', () => {
                 expect(message.getDecryptedBody).toHaveBeenCalledTimes(1);
             });
 
-            it('should not remove line breaks', () => {
-                expect(tools.replaceLineBreaks).not.toHaveBeenCalled();
+            it('should remove line breaks', () => {
+                expect(tools.replaceLineBreaks).toHaveBeenCalledTimes(2);
             });
 
             it('should try to clean the signature', () => {
@@ -1390,8 +1415,14 @@ describe('signatureBuilder factory', () => {
             });
 
             it('should clean the signature', () => {
-                const html = sanitize.message.calls.argsFor(0)[0];
-                expect(html).toBe(USER_SIGNATURE2);
+                const [ html ] = $.parseHTML(`<div>${sanitize.message.calls.argsFor(0)[0]}</div>`);
+                const user = html.querySelector('.protonmail_signature_block-user');
+                const proton = html.querySelector('.protonmail_signature_block-proton');
+
+                expect(html.querySelectorAll('.protonmail_signature_block-empty').length).toBe(0);
+                expect(user.classList.contains('protonmail_signature_block-empty')).toBe(false);
+                expect(proton.classList.contains('protonmail_signature_block-empty')).toBe(false);
+                expect(user.innerHTML).toBe(USER_SIGNATURE2);
             });
 
             it('should change nothing', () => {
@@ -1417,8 +1448,8 @@ describe('signatureBuilder factory', () => {
                 expect(message.getDecryptedBody).toHaveBeenCalledTimes(1);
             });
 
-            it('should not remove line breaks', () => {
-                expect(tools.replaceLineBreaks).not.toHaveBeenCalled();
+            it('should  remove line breaks', () => {
+                expect(tools.replaceLineBreaks).toHaveBeenCalledTimes(2);
             });
 
             it('should try to clean the signature', () => {
@@ -1427,12 +1458,18 @@ describe('signatureBuilder factory', () => {
             });
 
             it('should clean the signature', () => {
-                const html = sanitize.message.calls.argsFor(0)[0];
-                expect(html).toBe(USER_SIGNATURE_MULTIPLE);
+                const [ html ] = $.parseHTML(`<div>${sanitize.message.calls.argsFor(0)[0]}</div>`);
+                const user = html.querySelector('.protonmail_signature_block-user');
+                const proton = html.querySelector('.protonmail_signature_block-proton');
+
+                expect(html.querySelectorAll('.protonmail_signature_block-empty').length).toBe(0);
+                expect(user.classList.contains('protonmail_signature_block-empty')).toBe(false);
+                expect(proton.classList.contains('protonmail_signature_block-empty')).toBe(false);
+                expect(user.innerHTML).toBe(USER_SIGNATURE_MULTIPLE);
             });
 
             it('should change nothing', () => {
-                const output = getMessageUpdatePlain(getTxt(USER_SIGNATURE_MULTIPLE), getTxt(CONSTANTS.PM_SIGNATURE), true);
+                const output = getMessageUpdatePlain(USER_SIGNATURE_MULTIPLE_TXT, getTxt(CONSTANTS.PM_SIGNATURE), true);
                 expect(string).toEqual(output);
             });
         });

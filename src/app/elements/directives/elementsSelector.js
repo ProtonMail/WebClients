@@ -1,7 +1,8 @@
 import _ from 'lodash';
+import dedentTpl from '../../../helpers/dedent';
 
 /* @ngInject */
-function elementsSelector($rootScope, mailSettingsModel, gettextCatalog, dedentTpl) {
+function elementsSelector($rootScope, mailSettingsModel, gettextCatalog) {
     const isChecked = true;
     const ORDER_FALSY = ['all', 'read', 'unread', 'star', 'unstar'];
     const ORDER_TRUTHY = ['all', 'unread', 'read', 'unstar', 'star'];

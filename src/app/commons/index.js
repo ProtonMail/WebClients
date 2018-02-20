@@ -19,7 +19,6 @@ import reset from './models/reset';
 import user from './models/user';
 import notification from './providers/notification';
 import url from './providers/url';
-import dedentTpl from './services/dedentTpl';
 import dispatchers from './services/dispatchers';
 import errorReporter from './services/errorReporter';
 import i18nLoader from './services/i18nLoader';
@@ -53,7 +52,6 @@ export default angular
     .factory('User', user)
     .provider('notification', notification)
     .provider('url', url)
-    .factory('dedentTpl', dedentTpl)
     .factory('dispatchers', dispatchers)
     .factory('errorReporter', errorReporter)
     .factory('i18nLoader', i18nLoader)
