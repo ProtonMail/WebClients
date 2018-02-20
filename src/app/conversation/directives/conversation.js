@@ -306,7 +306,9 @@ function conversation(
                     if (mailSettingsModel.get('ViewLayout') === CONSTANTS.ROW_MODE) {
                         scope.markedMessage = $rootScope.expandMessage;
                     }
+
                     dispatcher.elements('mark', { id: $stateParams.id });
+                    dispatcher.elements('opened', { id: $stateParams.id });
                 } else {
                     back();
                 }
