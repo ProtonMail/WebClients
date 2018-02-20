@@ -1,21 +1,11 @@
-machine:
-  pre:
-    - sudo curl -L -o /usr/bin/docker 'http://s3-external-1.amazonaws.com/circle-downloads/docker-1.6.x-circleci' && sudo chmod 0755 /usr/bin/docker
-  services:
-    - docker
-  environment:
-    NO_DOCKER_RM: true
-  ruby: #docker is all we need, but a language has to be chosen
-dependencies:
-  pre:
-    - "rm -rf node_modules/"
-  override:
-    - make circle.dependencies
-  cache_directories:
-    - ".npm/"
-    - ".cache/bower/"
-    - ".node-gyp/"
-    - "vendor/"
-test:
-  override:
-    - make circle.test
+version: 2
+jobs:
+   build:
+     docker:
+       - image: circleci/node:9.5.0-stretch-browsers
+     steps:
+       - checkout
+       - run: npm i
+       - run: npm run config
+       - run: npm run lint
+       - run: npm test

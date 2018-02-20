@@ -42,7 +42,7 @@ module.exports = (config) => {
         coverageReporter: {
             instrumenterOptions: { istanbul: { noCompact: true } },
             reporters: [
-                { type: 'html', dir: 'coverage/' },
+                // { type: 'html', dir: 'coverage/' },
                 { type: 'clover', dir: 'coverage/clover/' }
             ]
         },
