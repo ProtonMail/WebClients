@@ -27,6 +27,8 @@ export const MAILBOX_IDENTIFIERS = {
 };
 export const CONVERSATION_REQUEST_SIZE = 10;
 export const GIFT_CODE_LENGTH = 16;
+export const PM_SIGNATURE = 'Sent with <a href="https://protonmail.com" target="_blank">ProtonMail</a> Secure Email.';
+
 
 export const CONSTANTS = {
     CLIENT_TYPE: 1,
@@ -146,7 +148,6 @@ export const CONSTANTS = {
     MAIN_KEY: '0',
     TIMEOUT: 30 * 1000, // timeout in milliseconds
     BASE_SIZE: 1024, // define the base used for byte
-    PM_SIGNATURE: 'Sent with <a href="https://protonmail.com" target="_blank">ProtonMail</a> Secure Email.',
     KEY_PHASE: 5,
     KEY_VERSION: 3,
     MAX_OUTSIDE_REPLY: 4,
@@ -284,7 +285,8 @@ export const CONSTANTS = {
     PAID_ADMIN_ROLE,
     UNPAID_STATE,
     WIZARD_ENABLED,
-    MAILBOX_IDENTIFIERS
+    MAILBOX_IDENTIFIERS,
+    PM_SIGNATURE
 };
 
 /* eslint  no-useless-escape: "off" */

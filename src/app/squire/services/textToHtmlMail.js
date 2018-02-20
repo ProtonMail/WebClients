@@ -1,7 +1,7 @@
 import _ from 'lodash';
 
 /* @ngInject */
-function textToHtmlMail() {
+function textToHtmlMail(signatureBuilder) {
     const OPTIONS = {
         breaks: true,
         linkify: true
@@ -60,14 +60,15 @@ function textToHtmlMail() {
     };
 
     /**
-     * Turns any empty lines into lines filled with the specified placeholder to trick the markdown converter into keeping
+     * Turns any empty lines into lines filled with the specified placeholder
+     * to trick the markdown converter into keeping
      * those empty lines.
      * @param text
      * @param placeholder
      * @returns {string}
      */
     const addNewLinePlaceholders = (text, placeholder) => {
-        const startingNewline = '\n' + text;
+        const startingNewline = text.startsWith('\n') ? text : `\n${text}`;
         const textWPlaceholder = startingNewline.replace(/((\r\n|\n)\s*(\r\n|\n))+/g, (match) => newLineIntoPlaceholder(match, placeholder));
         // don't remove empty new lines before '>'
         const noEmptyLines = textWPlaceholder.replace(/^\n/g, '');
@@ -76,11 +77,36 @@ function textToHtmlMail() {
         return noEmptyLines.replace(/(>[^\r\n]*(?:\r\n|\n))(\s*[^>])/g, (match, line1, line2) => `${line1}\n${line2}`);
     };
 
-    const removeNewLinePlaceholder = (html, placeholder) => {
-        return html.replace(new RegExp(placeholder, 'g'), '&nbsp;');
+    const removeNewLinePlaceholder = (html, placeholder) => html.replace(new RegExp(placeholder, 'g'), '');
+
+    /**
+     * Replace the signature by a temp hash, we replace it only
+     * if the content is the same.
+     * @param  {String} input
+     * @param  {Message} message
+     * @return {String}
+     */
+    const replaceSignature = (input, message) => {
+        const signature = signatureBuilder.getTXT(message);
+        return input.replace(signature, '--protonSignature--');
     };
 
-    const parse = (text) => {
+    /**
+     * Replace the hash by the signature inside the message formated as HTML
+     * We prevent too many lines to be added as we already have a correct message
+     * @param  {String} input   body of the message as html
+     * @param  {Message} message
+     * @return {String}
+     */
+    const attachSignature = (input, message, plaintext) => {
+        const signature = signatureBuilder.getHTML(message, false, !plaintext.startsWith('--protonSignature--'));
+        return input.replace('--protonSignature--', signature);
+    };
+
+    const parse = (input, message = {}) => {
+
+        const text = replaceSignature(input, message);
+
         // We want empty new lines to behave as if they were not empty (this is non-standard markdown behaviour)
         // It's more logical though, for users that don't know about markdown.
         const placeholder = generatePlaceHolder(text);
@@ -92,10 +118,11 @@ function textToHtmlMail() {
             div.innerHTML = node.innerHTML;
             node.parentNode.replaceChild(div, node);
         });
-        return FAKE_BODY.innerHTML;
+
+        return attachSignature(FAKE_BODY.innerHTML, message, text);
     };
 
-    const parseAsync = async (input) => parse(input);
+    const parseAsync = async (...input) => parse(...input);
 
     return { parse, parseAsync };
 }

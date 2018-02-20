@@ -1,5 +1,7 @@
+import dedentTpl from '../../../helpers/dedent';
+
 /* @ngInject */
-function navigationSettings($rootScope, $state, sidebarSettingsModel, dedentTpl) {
+function navigationSettings($rootScope, $state, sidebarSettingsModel) {
     const CLASS_ACTIVE = 'active';
     const template = (key, { label, icon = '', state }) => {
         const iconClassName = `sidebarApp-icon navigationSettings-icon fa ${icon}`.trim();

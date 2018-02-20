@@ -1,5 +1,7 @@
+import dedentTpl from '../../../helpers/dedent';
+
 /* @ngInject */
-function togglePassword(gettextCatalog, dedentTpl) {
+function togglePassword(gettextCatalog) {
     const hasNativeButton = $.ua.browser.name === 'IE' || $.ua.browser.name === 'Edge';
     const CLASS_DISPLAY_PASSWORD = 'togglePassword-btn-display';
     const TOOLTIPS = {

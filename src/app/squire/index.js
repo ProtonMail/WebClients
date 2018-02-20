@@ -16,7 +16,6 @@ import editorState from './factories/editorState';
 import squireEditor from './factories/squireEditor';
 import editorDropzone from './services/editorDropzone';
 import editorListener from './services/editorListener';
-import htmlToTextMail from './services/htmlToTextMail';
 import removeInlineWatcher from './services/removeInlineWatcher';
 import squireExecAction from './services/squireExecAction';
 import textToHtmlMail from './services/textToHtmlMail';
@@ -42,7 +41,6 @@ export default angular
     .factory('squireEditor', squireEditor)
     .factory('editorDropzone', editorDropzone)
     .factory('editorListener', editorListener)
-    .factory('htmlToTextMail', htmlToTextMail)
     .factory('removeInlineWatcher', removeInlineWatcher)
     .factory('squireExecAction', squireExecAction)
     .factory('textToHtmlMail', textToHtmlMail)

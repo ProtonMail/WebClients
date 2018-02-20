@@ -1,7 +1,8 @@
 import _ from 'lodash';
+import dedentTpl from '../../../helpers/dedent';
 
 /* @ngInject */
-function menuLabel($rootScope, labelsModel, $stateParams, dedentTpl, $state, sidebarModel) {
+function menuLabel($rootScope, labelsModel, $stateParams, $state, sidebarModel) {
     const CLEANER = document.createElement('div');
     const getClassName = (ID) => {
         const isActiveLabel = $stateParams.label === ID;

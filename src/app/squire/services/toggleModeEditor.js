@@ -1,7 +1,8 @@
 import _ from 'lodash';
+import htmlToTextMail from '../helpers/htmlToTextMail';
 
 /* @ngInject */
-function toggleModeEditor($rootScope, embeddedUtils, attachmentModel, editorModel, textToHtmlMail, htmlToTextMail) {
+function toggleModeEditor($rootScope, embeddedUtils, attachmentModel, editorModel, textToHtmlMail) {
     const MODE = {
         PLAINTEXT: 'text/plain',
         DEFAULT: 'text/html'
@@ -9,14 +10,16 @@ function toggleModeEditor($rootScope, embeddedUtils, attachmentModel, editorMode
 
     const CACHE = {
         /*
-             * Holds the current state describing whether a message is allowed to toggle between plaintext and html mode
-             * We block some message from toggling when we are still removing inline attachments or uploading inline attachments
-             * Otherwise this would trigger the being inserted in the plaintext message, which is something we don't want.
-             */
+         * Holds the current state describing whether a message is allowed to toggle
+         * between plaintext and html mode. We block some message from toggling when
+         * we are still removing inline attachments or uploading inline attachments
+         * Otherwise this would trigger the being inserted in the plaintext message,
+         * which is something we don't want.
+         */
         CAN_TOGGLE: {},
         /*
-             * To keep track of the attachment that we are removing when switching from html to plaintext
-             */
+         * To keep track of the attachment that we are removing when switching from html to plaintext
+         */
         ATTACHMENTS_PROCESSING: {}
     };
 
@@ -69,7 +72,7 @@ function toggleModeEditor($rootScope, embeddedUtils, attachmentModel, editorMode
 
     const toDefault = (message, editor) => {
         const value = message.getDecryptedBody();
-        const txt = textToHtmlMail.parse(value);
+        const txt = textToHtmlMail.parse(value, message);
 
         $rootScope.$applyAsync(() => {
             message.MIMEType = MODE.DEFAULT;

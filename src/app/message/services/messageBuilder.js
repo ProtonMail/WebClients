@@ -221,7 +221,7 @@ function messageBuilder(
             };
             newMsg.ParentID = currentMsg.ID;
             newMsg.setDecryptedBody(
-                `-------- Original Message --------<br>
+                `──────── Original Message ────────<br>
                 ${previously()}<br>
                 <blockquote class="protonmail_quote" type="cite">
                     ${prepareBody(currentMsg.getDecryptedBody(), currentMsg, action)}

@@ -1,11 +1,52 @@
 import _ from 'lodash';
+import dedentTpl from '../../../helpers/dedent';
+import { PM_SIGNATURE } from '../../constants';
+import { toText } from '../../../helpers/parserHTML';
+
+
+const CLASSNAME_SIGNATURE_CONTAINER = 'protonmail_signature_block';
+const CLASSNAME_SIGNATURE_USER = 'protonmail_signature_block-user';
+const CLASSNAME_SIGNATURE_PROTON = 'protonmail_signature_block-proton';
+const CLASSNAME_SIGNATURE_EMPTY = 'protonmail_signature_block-empty';
+
+/**
+ * Generate a space tag, it can be hidden from the UX via a className
+ * @param  {String} className
+ * @return {String}
+ */
+function createSpace(className = '') {
+    const tagOpen = className ? `<div class="${className}">` : '<div>';
+    return `${tagOpen}<br /></div>`;
+}
+
+/**
+ * Check if the signature is empty for an user
+ * @param  {String} addressSignature
+ * @return {Boolean}
+ */
+const isEmptyUserSignature = (addressSignature) => !addressSignature || (addressSignature === '<div><br /></div>' || addressSignature === '<div><br></div>');
+
+/**
+ * Extract the signature.
+ * Default case is multi line signature but sometimes we have a single line signature
+ * without a container.
+ * @param  {Node} addressSignature
+ * @return {String}
+ */
+const extractSignature = (addressSignature) => {
+    /*
+        Default use case, we have a div inside a div for the signature
+        we can have a multi line signature
+     */
+    if (addressSignature.firstElementChild && addressSignature.firstElementChild.nodeName === 'DIV') {
+        return toText(addressSignature.innerHTML, false);
+    }
+
+    return addressSignature.textContent;
+};
 
 /* @ngInject */
-function signatureBuilder(authentication, CONSTANTS, tools, sanitize, AppModel, $rootScope, mailSettingsModel) {
-    const CLASSNAME_SIGNATURE_CONTAINER = 'protonmail_signature_block';
-    const CLASSNAME_SIGNATURE_USER = 'protonmail_signature_block-user';
-    const CLASSNAME_SIGNATURE_PROTON = 'protonmail_signature_block-proton';
-    const CLASSNAME_SIGNATURE_EMPTY = 'protonmail_signature_block-empty';
+function signatureBuilder(authentication, tools, sanitize, AppModel, $rootScope, mailSettingsModel) {
 
     const PROTON_SIGNATURE = getProtonSignature();
     AppModel.store('protonSignature', !!mailSettingsModel.get('PMSignature'));
@@ -25,43 +66,33 @@ function signatureBuilder(authentication, CONSTANTS, tools, sanitize, AppModel, 
         }
 
         const div = document.createElement('DIV');
-        div.innerHTML = CONSTANTS.PM_SIGNATURE;
+        div.innerHTML = PM_SIGNATURE;
         return {
-            HTML: CONSTANTS.PM_SIGNATURE,
+            HTML: PM_SIGNATURE,
             PLAIN: div.textContent
         };
     }
 
     /**
-     * Generate a space tag, it can be hidden from the UX via a className
-     * @param  {String} className
+     * Format the signature as plaintext wrapped inside invisible spaces.
+     * @param  {Object} message
      * @return {String}
      */
-    function createSpace(className = '') {
-        const tagOpen = className ? `<div class="${className}">` : '<div>';
-        return `${tagOpen}<br /></div>`;
+    function getTXT(message = {}) {
+        const [addressSignature] = $.parseHTML(`<div>${getHTML(message, false, true)}</div>`) || [];
+        return extractSignature(addressSignature);
     }
 
     /**
-     * Check if the signature is empty for an user
-     * @param  {String} addressSignature
-     * @return {Boolean}
+     * Get the signature as HTML
+     * @param  {Object}  Message.From
+     * @param  {Boolean} isReply      To append spaces before the signature or not
+     * @param  {Boolean}  noSpace     Do we want spaces or not, default yes
+     * @return {String}
      */
-    const isEmptyUserSignature = (addressSignature) => !addressSignature || (addressSignature === '<div><br /></div>' || addressSignature === '<div><br></div>');
-
-    /**
-     * Generate a map of classNames used for the signature template
-     * @param  {String} addressSignature
-     * @return {Object}
-     */
-    function getClassNamesSignature(addressSignature) {
-        const isUserEmpty = isEmptyUserSignature(addressSignature);
-        const isProtonEmpty = !PROTON_SIGNATURE.HTML;
-        return {
-            userClass: isUserEmpty ? CLASSNAME_SIGNATURE_EMPTY : '',
-            protonClass: isProtonEmpty ? CLASSNAME_SIGNATURE_EMPTY : '',
-            containerClass: isUserEmpty && isProtonEmpty ? CLASSNAME_SIGNATURE_EMPTY : ''
-        };
+    function getHTML({ From = {} } = {}, isReply = false, noSpace) {
+        const addressSignature = From.Signature || '';
+        return templateBuilder(addressSignature, isReply, noSpace);
     }
 
     /**
@@ -85,42 +116,43 @@ function signatureBuilder(authentication, CONSTANTS, tools, sanitize, AppModel, 
     };
 
     /**
+     * Generate a map of classNames used for the signature template
+     * @param  {String} addressSignature
+     * @return {Object}
+     */
+    function getClassNamesSignature(addressSignature) {
+        const isUserEmpty = isEmptyUserSignature(addressSignature);
+        const isProtonEmpty = !PROTON_SIGNATURE.HTML;
+        return {
+            userClass: isUserEmpty ? CLASSNAME_SIGNATURE_EMPTY : '',
+            protonClass: isProtonEmpty ? CLASSNAME_SIGNATURE_EMPTY : '',
+            containerClass: isUserEmpty && isProtonEmpty ? CLASSNAME_SIGNATURE_EMPTY : ''
+        };
+    }
+
+    /**
      * Generate the template for a signature and clean it
      * @param  {String} addressSignature
      * @param  {String} protonSignature
      * @param  {Boolean} isReply Detect if we create a new message or not
+     * @param  {Boolean} noSpace Append spaces around the signature
      * @return {String}
      */
-    function templateBuilder(addressSignature = '', isReply = false) {
+    function templateBuilder(addressSignature = '', isReply = false, noSpace = false) {
         const { userClass, protonClass, containerClass } = getClassNamesSignature(addressSignature);
         const space = getSpaces(addressSignature, isReply);
 
-        const template = `${space.start}<div class="${CLASSNAME_SIGNATURE_CONTAINER} ${containerClass}">
+        const template = dedentTpl`<div class="${CLASSNAME_SIGNATURE_CONTAINER} ${containerClass}">
                 <div class="${CLASSNAME_SIGNATURE_USER} ${userClass}">${tools.replaceLineBreaks(addressSignature)}</div>${space.between}
                 <div class="${CLASSNAME_SIGNATURE_PROTON} ${protonClass}">${tools.replaceLineBreaks(PROTON_SIGNATURE.HTML)}</div>
-            </div>${space.end}`;
+            </div>`;
+
+        if (!noSpace) {
+            return `${space.start}${sanitize.message(template)}${space.end}`;
+        }
 
         return sanitize.message(template);
     }
-
-    /**
-     * Extract the signature.
-     * Default case is multi line signature but sometimes we have a single line signature
-     * without a container.
-     * @param  {Node} addressSignature
-     * @return {String}
-     */
-    const extractSignature = (addressSignature) => {
-        /*
-            Default use case, we have a div inside a div for the signature
-            we can have a multi line signature
-         */
-        if (addressSignature.firstElementChild && addressSignature.firstElementChild.nodeName === 'DIV') {
-            return [...addressSignature.querySelectorAll('div')].reduce((acc, node) => `${acc}\n${node.textContent}`, '');
-        }
-
-        return addressSignature.textContent;
-    };
 
     /**
      * Convert signature to plaintext and replace the previous one.
@@ -129,9 +161,8 @@ function signatureBuilder(authentication, CONSTANTS, tools, sanitize, AppModel, 
      * @param  {Node} addressSignature
      * @return {String}
      */
-    function replaceRaw(body = '', addressSignature) {
-        const signature = extractSignature(addressSignature);
-        return body.replace(/\u200B(\s*?.*?)*?\u200B/, `\u200B${signature}\n${PROTON_SIGNATURE.PLAIN}\u200B`);
+    function replaceRaw(body = '', signature) {
+        return body.replace(/\u200B(\s*?.*?)*?\u200B/, signature);
     }
 
     /**
@@ -145,10 +176,8 @@ function signatureBuilder(authentication, CONSTANTS, tools, sanitize, AppModel, 
      * @return {String}
      */
     function insert(message = { getDecryptedBody: angular.noop }, { action = 'new', isAfter = false }) {
-        const { From = {} } = message;
         const position = isAfter ? 'beforeEnd' : 'afterBegin';
-        const addressSignature = From.Signature || '';
-        const template = templateBuilder(addressSignature, action !== 'new');
+        const template = getHTML(message, action !== 'new');
         // Parse the current message and append before it the signature
         const [$parser] = $.parseHTML(`<div>${message.getDecryptedBody()}</div>`);
         $parser.insertAdjacentHTML(position, template);
@@ -162,15 +191,16 @@ function signatureBuilder(authentication, CONSTANTS, tools, sanitize, AppModel, 
      * @return {String}
      */
     function update(message = { getDecryptedBody: _.noop, isPlainText: _.noop }, body = '') {
-        const { From = {} } = message;
-        const content = From.Signature || '';
-        const [addressSignature] = $.parseHTML(`<div>${sanitize.message(content)}</div>`) || [];
 
         if (message.isPlainText()) {
-            return replaceRaw(message.getDecryptedBody(), addressSignature);
+            return replaceRaw(message.getDecryptedBody(), getTXT(message));
         }
 
+        const { From = {} } = message;
+        const content = From.Signature || '';
         const [dom] = $.parseHTML(`<div>${sanitize.message(body || message.getDecryptedBody())}</div>`) || [];
+        const [addressSignature] = $.parseHTML(`<div>${sanitize.message(content)}</div>`) || [];
+
         /**
          * Update the signature for a user if it exists
          */
@@ -196,6 +226,6 @@ function signatureBuilder(authentication, CONSTANTS, tools, sanitize, AppModel, 
         return dom.innerHTML;
     }
 
-    return { insert, update };
+    return { insert, update, getHTML, getTXT };
 }
 export default signatureBuilder;

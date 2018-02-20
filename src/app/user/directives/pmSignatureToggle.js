@@ -1,5 +1,7 @@
+import { PM_SIGNATURE } from '../../constants';
+
 /* @ngInject */
-function pmSignatureToggle($rootScope, CONSTANTS, mailSettingsModel, signatureModel) {
+function pmSignatureToggle($rootScope, mailSettingsModel, signatureModel) {
     const isSignatureMandatory = () => {
         const { PMSignature } = mailSettingsModel.get();
         return PMSignature === 2;
@@ -16,7 +18,7 @@ function pmSignatureToggle($rootScope, CONSTANTS, mailSettingsModel, signatureMo
             });
 
             scope.protonSignature = {
-                content: CONSTANTS.PM_SIGNATURE,
+                content: PM_SIGNATURE,
                 isMandatory: isSignatureMandatory(),
                 isActive: !!PMSignature
             };
