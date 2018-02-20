@@ -1,12 +1,14 @@
-import _ from 'lodash';
+import { CONSTANTS } from '../../constants';
 
 /* @ngInject */
-function attachmentApi($http, url, $q, $rootScope, authentication, pmcw, CONFIG, CONSTANTS, secureSessionStorage, gettextCatalog, notification) {
-    let pendingUpload = [];
+function attachmentApi($http, url, $q, $rootScope, authentication, pmcw, CONFIG, secureSessionStorage, gettextCatalog) {
+    const MAP = {
+        message: {},
+        request: {}
+    };
+
     const requestURL = url.build('attachments');
-
     const dispatch = (type, data) => $rootScope.$emit('attachment.upload', { type, data });
-
     const dispatchUpload = (REQUEST_ID, message, packet) => (progress, status, isStart = false) => {
         dispatch('uploading', {
             id: REQUEST_ID,
@@ -63,9 +65,9 @@ function attachmentApi($http, url, $q, $rootScope, authentication, pmcw, CONFIG,
      * @return {void}
      */
     function killUpload({ id, messageID }) {
-        const upload = _.find(pendingUpload, { id, messageID });
-        upload.request.abort();
-        pendingUpload = pendingUpload.filter((up) => up.id !== id);
+        MAP.request[id].request.abort();
+        delete MAP.message[messageID][id];
+        delete MAP.request[id];
     }
 
     /**
@@ -91,12 +93,19 @@ function attachmentApi($http, url, $q, $rootScope, authentication, pmcw, CONFIG,
             }
         });
 
-        pendingUpload.push({
+        const pending = {
             id: REQUEST_ID,
             messageID: message.ID,
             packet: tempPacket,
             request: xhr
-        });
+        };
+
+        MAP.message[message.ID] = {
+            ...(MAP.message[message.ID] || {}),
+            [REQUEST_ID]: pending
+        };
+
+        MAP.request[REQUEST_ID] = MAP.message[message.ID][REQUEST_ID];
 
         dispatcher(1, true, true);
 
@@ -105,14 +114,14 @@ function attachmentApi($http, url, $q, $rootScope, authentication, pmcw, CONFIG,
             dispatcher(progress, true);
         };
 
-        xhr.onerror = function onerror() {
-            // remove the current request as it's resolved
-            pendingUpload = _.reject(pendingUpload, {
-                id: REQUEST_ID,
-                messageID: message.ID
-            });
+        xhr.onerror = onerror;
 
-            message.uploading = _.filter(pendingUpload, { messageID: message.ID }).length;
+        function onerror(json) {
+            // remove the current request as it's resolved
+            delete MAP.message[message.ID][REQUEST_ID];
+            delete MAP.request[REQUEST_ID];
+
+            message.uploading = Object.keys(MAP.message[message.ID]).length;
 
             dispatch('error', {
                 id: REQUEST_ID,
@@ -120,18 +129,20 @@ function attachmentApi($http, url, $q, $rootScope, authentication, pmcw, CONFIG,
                 message
             });
 
+            if (json) {
+                return deferred.reject(json);
+            }
+
             deferred.resolve({ id: REQUEST_ID, isError: true });
             unsubscribe();
-        };
+        }
 
         xhr.onabort = function onabort() {
             // remove the current request as it's resolved
-            pendingUpload = _.reject(pendingUpload, {
-                id: REQUEST_ID,
-                messageID: message.ID
-            });
+            delete MAP.message[message.ID][REQUEST_ID];
+            delete MAP.request[REQUEST_ID];
 
-            message.uploading = _.filter(pendingUpload, { messageID: message.ID }).length;
+            message.uploading = Object.keys(MAP.message[message.ID]).length;
 
             dispatch('cancel', {
                 id: REQUEST_ID,
@@ -149,18 +160,15 @@ function attachmentApi($http, url, $q, $rootScope, authentication, pmcw, CONFIG,
             const statusCode = this.status;
             unsubscribe();
 
-            if (statusCode !== 200) {
-                // Error with the request
-                notification.error(gettextCatalog.getString('Unable to upload file. Please try again', null, 'Error'));
-                return deferred.reject(json);
-            }
-
-            if (json.Error) {
+            if (statusCode !== 200 || json.Error) {
                 // isInvalid = false: Attachment disallowed by back-end size limit (no change in size)
-                const msgError = !isInvalid ? json.Error : gettextCatalog.getString('Unable to upload file. Please try again', null, 'Error');
-
-                notification.error(msgError);
-                return deferred.reject(json);
+                const msgError = !isInvalid
+                    ? json.Error
+                    : gettextCatalog.getString('Unable to upload file. Please try again', null, 'Error');
+                return onerror({
+                    ...json,
+                    Error: msgError
+                });
             }
 
             dispatcher(100, false);
@@ -173,10 +181,8 @@ function attachmentApi($http, url, $q, $rootScope, authentication, pmcw, CONFIG,
             });
 
             // remove the current request as it's resolved
-            pendingUpload = _.reject(pendingUpload, {
-                id: REQUEST_ID,
-                messageID: message.ID
-            });
+            delete MAP.message[message.ID][REQUEST_ID];
+            delete MAP.request[REQUEST_ID];
 
             const msg = pmcw.getMessage(packets.keys);
             pmcw
@@ -184,7 +190,10 @@ function attachmentApi($http, url, $q, $rootScope, authentication, pmcw, CONFIG,
                 .then((sessionKey) => ({
                     REQUEST_ID,
                     sessionKey,
-                    attachment: _.extend({}, json.Attachment || {}, { sessionKey })
+                    attachment: {
+                        ...(json.Attachment || {}),
+                        sessionKey
+                    }
                 }))
                 .then(deferred.resolve)
                 .catch(deferred.reject);
@@ -196,7 +205,10 @@ function attachmentApi($http, url, $q, $rootScope, authentication, pmcw, CONFIG,
         xhr.setRequestHeader('Accept', 'application/vnd.protonmail.v1+json');
         xhr.setRequestHeader('x-pm-appversion', 'Web_' + CONFIG.app_version);
         xhr.setRequestHeader('x-pm-apiversion', CONFIG.api_version);
-        xhr.setRequestHeader('x-pm-session', pmcw.decode_base64(secureSessionStorage.getItem(CONSTANTS.OAUTH_KEY + ':SessionToken') || ''));
+        xhr.setRequestHeader(
+            'x-pm-session',
+            pmcw.decode_base64(secureSessionStorage.getItem(CONSTANTS.OAUTH_KEY + ':SessionToken') || '')
+        );
 
         xhr.send(makeFormUpload(packets, message, tempPacket));
 
@@ -209,13 +221,14 @@ function attachmentApi($http, url, $q, $rootScope, authentication, pmcw, CONFIG,
      * @param  {Object} attachment
      * @return {Promise}
      */
-    const remove = (message, attachment) => {
-        return $http
-            .delete(requestURL(attachment.ID), { MessageID: message.ID })
-            .then(({ data = {} } = {}) => data)
-            .catch(({ data = {} } = {}) => {
-                throw new Error(data.Error || gettextCatalog.getString('Error during the remove request', null, 'Error delete attachment'));
-            });
+    const remove = async ({ ID: MessageID } = {}, attachment = {}) => {
+        try {
+            const { data = {} } = await $http.delete(requestURL(attachment.ID), { MessageID });
+            return data;
+        } catch (e) {
+            const error = gettextCatalog.getString('Error during the remove request', null, 'Error delete attachment');
+            throw new Error(e.Error || error);
+        }
     };
 
     return { get, upload, killUpload, remove };
