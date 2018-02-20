@@ -78,28 +78,37 @@ function squireEditor($rootScope, CONSTANTS, editorModel) {
 
             .proton-embedded:not([src]) {
                 position: relative;
-                min-height: 38px; /* placeholder */
-                display: block;
-                visibility: hidden
-            }
-            .proton-embedded:not([src])::after {
-                position: absolute;
-                top:0px;
-                left: 0px;
+                min-height: 38px;
                 display: inline-block;
+                border: 1px solid;
+                border-color: #444 #CCC #CCC #444;
+                background: url('/assets/img/icons/broken-img.png') no-repeat 0 50% white;
+            }
+
+            .proton-embedded:not([src]):not([alt]) {
+                background-position-x: 50%;
+            }
+
+            .proton-embedded[alt]:not([src])::after {
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
                 content: " " attr(alt);
                 white-space: nowrap;
-                padding: 10px 10px 10px 30px;
-                min-width: 40px;
-                background: url(/assets/img/icons/broken-img.png) no-repeat 5px 50% white;
-                border:1px solid;
-                border-color: #444 #CCC #CCC #444;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                padding: 10px 0 0 20px;
                 color: rgba(0,0,0,0.5);
-                visibility: visible
+                background: url('/assets/img/icons/broken-img.png') no-repeat 0 50% white;
             }
 
             /* see embedded.scss rules */
-            .proton-embedded:not([width]):not([style*="width"]) { max-width: 100% }
+            .proton-embedded:not([width]):not([style*="width"]) {
+                max-width: 100%;
+                min-width: 38px;
+            }
 
             .protonmail_signature_block-empty { display: none }
 
