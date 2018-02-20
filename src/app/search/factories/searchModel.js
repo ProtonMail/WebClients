@@ -3,23 +3,22 @@ import _ from 'lodash';
 /* @ngInject */
 function searchModel(authentication, CONSTANTS, gettextCatalog, labelsModel) {
     const FOLDER_TRANSLATIONS = {
-        inbox: gettextCatalog.getString('Inbox', null, 'Label for search panel'),
-        spam: gettextCatalog.getString('Spam', null, 'Label for search panel'),
-        drafts: gettextCatalog.getString('Drafts', null, 'Label for search panel'),
-        starred: gettextCatalog.getString('Starred', null, 'Label for search panel'),
-        allDrafts: gettextCatalog.getString('Drafts', null, 'Label for search panel'),
-        sent: gettextCatalog.getString('Sent', null, 'Label for search panel'),
-        allSent: gettextCatalog.getString('Sent', null, 'Label for search panel'),
-        trash: gettextCatalog.getString('Trash', null, 'Label for search panel'),
-        archive: gettextCatalog.getString('Archive', null, 'Label for search panel'),
-        allmail: gettextCatalog.getString('All Mail', null, 'Label for search panel')
+        inbox: gettextCatalog.getString('Inbox', null, 'Option for search panel'),
+        spam: gettextCatalog.getString('Spam', null, 'Option for search panel'),
+        drafts: gettextCatalog.getString('Drafts', null, 'Option for search panel'),
+        starred: gettextCatalog.getString('Starred', null, 'Option for search panel'),
+        allDrafts: gettextCatalog.getString('Drafts', null, 'Option for search panel'),
+        sent: gettextCatalog.getString('Sent', null, 'Option for search panel'),
+        allSent: gettextCatalog.getString('Sent', null, 'Option for search panel'),
+        trash: gettextCatalog.getString('Trash', null, 'Option for search panel'),
+        archive: gettextCatalog.getString('Archive', null, 'Option for search panel'),
+        allmail: gettextCatalog.getString('All Mail', null, 'Option for search panel')
     };
     const LIST_LOCATIONS = _.reduce(
         Object.keys(CONSTANTS.MAILBOX_IDENTIFIERS),
         (acc, label) => {
             if (label !== 'search' && label !== 'label') {
                 const value = CONSTANTS.MAILBOX_IDENTIFIERS[label];
-                console.log(label);
                 acc.push({ value, label: FOLDER_TRANSLATIONS[label], group: 'folder' });
             }
             return acc;
