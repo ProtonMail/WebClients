@@ -45,23 +45,23 @@ function domainModel($rootScope, domainApi, gettextCatalog) {
             $rootScope.$emit('domainsChange', domains);
         }
     });
-    $rootScope.$on('createDomain', (event, ID, member) => {
+    $rootScope.$on('createDomain', (event, ID, domain) => {
         const index = _.findIndex(domains, { ID });
 
         if (index === -1) {
-            domains.push(member);
+            domains.push(domain);
         } else {
-            _.extend(domains[index], member);
+            _.extend(domains[index], domain);
         }
         $rootScope.$emit('domainsChange', domains);
     });
-    $rootScope.$on('updateDomain', (event, ID, member) => {
+    $rootScope.$on('updateDomain', (event, ID, domain) => {
         const index = _.findIndex(domains, { ID });
 
         if (index === -1) {
-            domains.push(member);
+            domains.push(domain);
         } else {
-            _.extend(domains[index], member);
+            _.extend(domains[index], domain);
         }
         $rootScope.$emit('domainsChange', domains);
     });

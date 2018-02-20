@@ -216,7 +216,6 @@ function DomainsController(
                         .then((data) => eventManager.call().then(() => data))
                         .then(({ data = {} } = {}) => {
                             notification.success(gettextCatalog.getString('Domain created', null, 'Success'));
-                            $scope.domains.push(data.Domain);
                             domainModal.deactivate();
                             // open the next step
                             $scope.verification(data.Domain);
