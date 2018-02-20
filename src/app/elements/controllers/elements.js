@@ -181,6 +181,10 @@ function ElementsController(
                     case 'mark': {
                         const thisElement = _.find($scope.conversations, { ID: data.id });
 
+                        if (thisElement) {
+                            isOpened = true;
+                        }
+
                         if (thisElement && $scope.markedElement !== thisElement) {
                             $scope.$applyAsync(() => {
                                 $scope.markedElement = thisElement;
