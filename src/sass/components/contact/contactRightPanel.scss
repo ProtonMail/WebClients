@@ -7,3 +7,7 @@
 .contactRightPanel-container .loader { margin: auto }
 .contactRightPanel-container:not(.contactRightPanel-placeholder-hidden) .contactRightPanel-content { display: none }
 .contactRightPanel-placeholder-hidden .contactPlaceholder-container { display: none }
+
+.contactRightPanel-content {
+    height: 100%;
+}
