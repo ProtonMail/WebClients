@@ -55,10 +55,15 @@
     }
 }
 
+.totalRows-2-years-billed-price {
+    font-size: 75%;
+}
+
 body.appConfigBody-is-mobile {
     .totalRows-container > label {
         flex-direction: column;
-        padding: .5em
+        padding: .5em;
+        overflow: hidden;
     }
 
     .totalRows-container > label  [class*='-left'] {
