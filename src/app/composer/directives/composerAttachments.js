@@ -118,9 +118,7 @@ function composerAttachments($rootScope, gettextCatalog) {
 
             case 'error':
                 scope.$applyAsync(() => {
-                    scope.list = scope.list.filter((item) => {
-                        return item.id !== id && item.message.ID !== scope.message.ID;
-                    });
+                    scope.list = scope.list.filter((item) => item.id !== id);
                     actionsPanel.close();
                     !scope.list.length && actionsPanel.hide();
                 });
