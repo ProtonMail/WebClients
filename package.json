@@ -154,6 +154,7 @@
     "i18n:check": "tasks/noContext",
     "preversion": "rm package-lock.json || echo 'No useless package-lock to remove'",
     "postversion": "git push --tags",
+    "config": "cross-env NODE_ENV=dev tasks/setupConfig.js",
     "start": "cross-env NODE_ENV=dev tasks/setupConfig.js",
     "poststart": "npm run vendor && cross-env NODE_ENV=dev && webpack-dev-server --hot --progress",
     "dist": "cross-env NODE_ENV=dist webpack --progress && cross-env NODE_ENV=dist tasks/buildVendor.js",
