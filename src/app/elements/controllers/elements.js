@@ -181,10 +181,6 @@ function ElementsController(
                     case 'mark': {
                         const thisElement = _.find($scope.conversations, { ID: data.id });
 
-                        if (thisElement) {
-                            isOpened = true;
-                        }
-
                         if (thisElement && $scope.markedElement !== thisElement) {
                             $scope.$applyAsync(() => {
                                 $scope.markedElement = thisElement;
@@ -193,9 +189,16 @@ function ElementsController(
                         break;
                     }
                     case 'open':
-                        isOpened = true;
                         $scope.$applyAsync(() => openElement(data.element));
                         break;
+                    case 'opened': {
+                        const thisElement = _.find($scope.conversations, { ID: data.id });
+
+                        if (thisElement) {
+                            isOpened = true;
+                        }
+                        break;
+                    }
                     case 'close':
                         isOpened = false;
                         break;
