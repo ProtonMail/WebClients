@@ -264,16 +264,10 @@ function srp($http, CONFIG, webcrypto, passwords, url, authApi, handle10003) {
     }
 
     function authInfo(Username) {
-        return authApi
-            .info({
+        return authApi.info({
                 Username,
                 ClientID: CONFIG.clientID,
                 ClientSecret: CONFIG.clientSecret
-            })
-            .catch(({ data = {} } = {}) => {
-                const error = new Error(data.Error || 'Cannot get auth information');
-                error.noNotify = true;
-                throw error;
             });
     }
 
