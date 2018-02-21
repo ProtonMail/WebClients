@@ -216,6 +216,11 @@
     min-width: 45px;
 }
 
+// When changing the order, don't show the action buttons.
+.contactItem-container:not(.as-sortable-disabled) .contactItem-actions {
+    display: none;
+}
+
 .contactItem-delete {
     height: 36px;
     cursor: pointer;

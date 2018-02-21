@@ -58,6 +58,19 @@ describe('vcard factory', () => {
             expect(email.map((p) => p.valueOf()).join(' ')).toEqual('foo@bar.com bar@foo.com');
         });
 
+        it('should handle unique properties and merge the rest', () => {
+            const contactA = new vCard();
+            const contactB = new vCard();
+
+            contactA.set('email', 'foo@bar.com');
+            contactB.set('email', 'Foo@bar.com');
+
+            const newContact = factory.merge([contactA, contactB]);
+            const email = newContact.get('email');
+
+            expect(email.valueOf()).toEqual('foo@bar.com');
+        });
+
         it('should handle/rename groups correctly', () => {
             const newContact = factory.merge([contactA, contactB]);
             const [a, b] = newContact.get('email');
