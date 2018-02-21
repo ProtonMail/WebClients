@@ -6,7 +6,7 @@ const sidebarLabels = () => ({
     replace: true,
     templateUrl: require('../../../templates/sidebar/sidebarLabels.tpl.html'),
     link(scope, $el) {
-        const mcsScroller = createMscScroller({ margin: 30 });
+        const mcsScroller = createMscScroller({ margin: 40, scrollBy: 30 });
         const el = $el[0];
 
         scope.scrollbarConfig = {
