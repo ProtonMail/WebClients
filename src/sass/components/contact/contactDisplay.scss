@@ -12,6 +12,8 @@
 }
 
 .contactDisplay-item-value {
+    word-wrap: break-word;
+    max-width: 55%;
 }
 
 .contactDisplay-item-value[data-key="adr"] {
