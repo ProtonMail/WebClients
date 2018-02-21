@@ -17,12 +17,16 @@ function LabelsController(
     notification
 ) {
     const unsubscribe = [];
+    const I18N = {
+        labelUpdated: gettextCatalog.getString('Label updated', null, 'Success'),
+        folderUpdated: gettextCatalog.getString('Folder updated', null, 'Success')
+    };
 
     const changeNotify = (event, { id, status }) => {
         const { Name, Color, Display, Exclusive } = _.find($scope.labels, { ID: id });
         const promise = Label.update({ ID: id, Name, Color, Display, Exclusive, Notify: status ? 1 : 0 })
             .then(eventManager.call)
-            .then(() => notification.success(gettextCatalog.getString('Label updated', null)));
+            .then(() => notification.success(Exclusive ? I18N.folderUpdated : I18N.labelUpdated));
 
         networkActivityTracker.track(promise);
     };
