@@ -5,7 +5,7 @@
     box-sizing: border-box;
     width: 100%;
     padding: 5px 10px 5px 0px;
-    border-top: 1px solid $border;
+    border-bottom: 1px solid $border;
     background: darken($tertiary, 4);
     color: $secondary;
     font-size: .9em;
@@ -48,7 +48,7 @@
     padding: 10px 10px 10px 0px;
 }
 
-.messageExtra-container > .messageExtra-container-error + .messageExtra-container-error { border-top: 1px solid lighten($exp, 10) }
+.messageExtra-container > .messageExtra-container-error + .messageExtra-container-error { border-bottom: 1px solid lighten($exp, 10) }
 
 .messageExtra-container > .messageExtra-container-error a { color: $white }
 
