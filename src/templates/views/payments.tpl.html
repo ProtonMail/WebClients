@@ -87,8 +87,8 @@
                                     <span ng-show="invoice.State === 1">{{ invoice.AmountCharged / 100 | currency: invoice.Currency }}</span>
                                 </td>
                                 <td>
-                                    <pay-invoice-btn data-model="invoice" ng-show="invoice.State === 0" ></pay-invoice-btn>
                                     <button class="pm_button link" ng-click="download(invoice)" translate-context="Action" translate>Download</button>
+                                    <pay-invoice-btn data-model="invoice" ng-show="invoice.State === 0" ></pay-invoice-btn>
                                 </td>
                                 <td>
                                     <span class="pm_badge" ng-show="invoice.Type === 0" translate-context="Invoice type display as badge" translate>Other</span>
