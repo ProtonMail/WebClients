@@ -70,15 +70,15 @@ function eventsAttachments(
                     const event = scope.model.events.find((e) => e.uid === uid);
 
                     if (event) {
-                        const { data } = event.attachment.data;
-
                         // Cf Safari
                         if (attachmentDownloader.isNotSupported(e)) {
                             return false;
                         }
 
+                        const { filename, data = '' } = event.attachment;
+
                         // Download the file
-                        downloadFile(new Blob([data.data], { type: data.filename }), data.filename);
+                        downloadFile(new Blob([data], { type: filename }), filename);
                     }
                 }
             };

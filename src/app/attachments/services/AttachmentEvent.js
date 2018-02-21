@@ -38,10 +38,10 @@ function AttachmentEvent(
 
     /**
      * Get ical event from raw string of the event
-     * @param {string} event info
+     * @param {object} event
      * @return {object}
      */
-    function getIcalEvent(event) {
+    function getIcalEvent({ Name }) {
         return (info) => {
             const jcalData = ICAL.parse(info);
             const vcalendar = new ICAL.Component(jcalData);
@@ -64,7 +64,11 @@ function AttachmentEvent(
                 icalEvent.attendeesList = attendees.reduce((acc, attendee) => acc.concat(attendee.getValues()), []);
             }
 
-            icalEvent.attachment = event; // Keep the attachment
+            // Keep the attachment data and filename
+            icalEvent.attachment = {
+                filename: Name,
+                data: info
+            };
 
             return icalEvent;
         };
