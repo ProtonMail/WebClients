@@ -6,7 +6,6 @@ import askPassword from './factories/askPassword';
 import chunk from './factories/chunk';
 import dateUtils from './factories/dateUtils';
 import desktopNotifications from './factories/desktopNotifications';
-import parseUrl from './factories/parseUrl';
 import resurrecter from './factories/resurrecter';
 import tools from './factories/tools';
 import bytes from './filters/bytes';
@@ -42,7 +41,6 @@ export default angular
     .factory('dateUtils', dateUtils)
     .factory('desktopNotifications', desktopNotifications)
     .factory('firstLoadState', firstLoadState)
-    .factory('parseUrl', parseUrl)
     .factory('resurrecter', resurrecter)
     .factory('tools', tools)
     .filter('bytes', bytes)

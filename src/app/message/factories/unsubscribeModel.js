@@ -1,8 +1,8 @@
 import _ from 'lodash';
-import { openWindow } from '../../../helpers/browser';
+import { openWindow, parseUrl } from '../../../helpers/browser';
 
 /* @ngInject */
-function unsubscribeModel($rootScope, authentication, gettextCatalog, messageModel, notification, parseUrl, simpleSend) {
+function unsubscribeModel($rootScope, authentication, gettextCatalog, messageModel, notification, simpleSend) {
 
     const LIST = [];
     const UNSUBSCRIBE_REGEX = /<(.*?)>/g;
