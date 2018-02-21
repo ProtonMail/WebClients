@@ -1,8 +1,9 @@
 /**
  * Calculates new scroll positions for ng-scrollbars.
  * @param {Number} margin The margin by when to start scrolling
+ * @param {Number} scrollBy Amount to scroll by
  */
-const createMscScroller = ({ margin }) => {
+const createMscScroller = ({ margin, scrollBy }) => {
     const model = {
         scroll: 0
     };
@@ -24,10 +25,10 @@ const createMscScroller = ({ margin }) => {
          */
         scroll: (targetTop, scrollerHeight) => {
             const relativeY = targetTop - model.scroll;
-            if (relativeY <= 0 && model.scroll > 0) {
-                return Math.max(model.scroll - margin, 0);
+            if (relativeY - (margin / 2) <= 0 && model.scroll > 0) {
+                return Math.max(model.scroll - scrollBy, 0);
             } else if (relativeY - scrollerHeight + margin > 0) {
-                return model.scroll + margin;
+                return model.scroll + scrollBy;
             }
         }
     };
