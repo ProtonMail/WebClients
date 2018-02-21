@@ -58,7 +58,7 @@ describe('vcard factory', () => {
             expect(email.map((p) => p.valueOf()).join(' ')).toEqual('foo@bar.com bar@foo.com');
         });
 
-        it('should handle unique properties and merge the rest', () => {
+        it('should handle case insensitive properties', () => {
             const contactA = new vCard();
             const contactB = new vCard();
 
