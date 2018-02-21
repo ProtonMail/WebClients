@@ -1,7 +1,9 @@
 import _ from 'lodash';
 
+import { parseUrl } from '../../../helpers/browser';
+
 /* @ngInject */
-const mailTo = ($rootScope, regexEmail, messageModel, parseUrl, authentication) => ({
+const mailTo = ($rootScope, regexEmail, messageModel, authentication) => ({
     restrict: 'A',
     link(scope, element) {
         function toAddresses(emails) {

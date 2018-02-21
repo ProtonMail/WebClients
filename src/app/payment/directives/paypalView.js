@@ -1,3 +1,5 @@
+import { parseUrl } from '../../../helpers/browser';
+
 /* @ngInject */
 function paypalView(notification, Payment, gettextCatalog, CONSTANTS, $q, networkUtils, windowModel) {
     const { MIN_PAYPAL_AMOUNT, MAX_PAYPAL_AMOUNT, CANCEL_REQUEST } = CONSTANTS;
@@ -87,7 +89,12 @@ function paypalView(notification, Payment, gettextCatalog, CONSTANTS, $q, networ
                     return;
                 }
 
-                const { payerID: PayerID, paymentID: PaymentID, cancel: Cancel } = event.data;
+                const { payerID: PayerID, paymentID: PaymentID, cancel: Cancel, token } = event.data;
+                const { searchObject = {} } = parseUrl(scope.approvalURL);
+
+                if (token !== searchObject.token) {
+                    return;
+                }
 
                 resetWindow();
                 scope.paypalCallback({ PayerID, PaymentID, Cancel });
