@@ -25,7 +25,7 @@ function contactCache(
         }
     };
 
-    const CONTACT_STATES = ['secured.contacts', 'secured.contacts.details'];
+    const CONTACT_STATES = ['secured.contacts'];
     const { CONTACTS_PER_PAGE } = CONSTANTS;
     const getItem = (ID) => _.find(CACHE.contacts, { ID });
     const findIndex = (ID) => _.findIndex(CACHE.contacts, { ID });
