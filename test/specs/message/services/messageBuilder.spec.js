@@ -625,7 +625,7 @@ Est-ce que tu vas bien ?
             }
         });
 
-        const defaultReply = `╴╴╴╴╴╴╴╴Original Message╶╶╶╶╶╶╶╶<br>
+        const defaultReply = `──────── Original Message ────────<br>
                 On {{date}}, {{name}} {{address}} wrote:<br>
                 <blockquote class="protonmail_quote" type="cite">
                     prepareContent
