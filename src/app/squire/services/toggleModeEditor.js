@@ -85,14 +85,26 @@ function toggleModeEditor($rootScope, embeddedUtils, attachmentModel, editorMode
         });
     };
 
-    const toPlainText = (message, editor) => {
+    /**
+     * Convert a message to plaintext
+     * Allow use to load a message as plaintext
+     * @param  {Message}  message
+     * @param  {Squire}  editor
+     * @param  {Boolean} noParse Should we parse the HTML from the editor or use the plaintext saved ?
+     * @return {void}
+     */
+    const toPlainText = (message, editor, noParse = false) => {
+
         // Remove focus from the editor to prevent inserting more text.
         editor.blur();
-        const plaintext = htmlToTextMail(editor);
+        const plaintext = !noParse ? htmlToTextMail(editor) : message.getDecryptedBody();
 
         // remove attachments
         const list = message.Attachments.filter(embeddedUtils.isEmbedded);
-        $rootScope.$emit('attachment.upload', { type: 'remove.all', data: { message, list } });
+        $rootScope.$emit('attachment.upload', {
+                type: 'remove.all',
+                data: { message, list }
+        });
         CACHE.ATTACHMENTS_PROCESSING[message.ID] = CACHE.ATTACHMENTS_PROCESSING[message.ID] || {};
         const map = list.reduce((acc, { ID }) => ((acc[ID] = true), acc), {});
         _.extend(CACHE.ATTACHMENTS_PROCESSING[message.ID], map);

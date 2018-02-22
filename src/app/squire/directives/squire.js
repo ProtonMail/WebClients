@@ -37,7 +37,8 @@ function squire(squireEditor, embedded, editorListener, $rootScope, sanitize, to
         bindTabIndex(isPlainTextMode);
 
         if ((isPlainTextMode && isNewDraft) || isDraftPlainText) {
-            toggleModeEditor.toPlainText(scope.message, editor);
+            // We convert only for a new draft, as old ones contains already the plaintext
+            toggleModeEditor.toPlainText(scope.message, editor, isDraftPlainText);
         }
     };
 
