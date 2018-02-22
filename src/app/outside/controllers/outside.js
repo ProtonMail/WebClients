@@ -51,8 +51,7 @@ function OutsideController(
         }
 
         if ($state.is('eo.reply')) {
-            // If showImages were not specified in stateParams (i.e. loaded when viewing), don't show them in the reply.
-            message.showImages = $stateParams.showImages;
+            message.showImages = true;
             message.showEmbedded = true;
             message.MIMEType = 'text/html';
         }
