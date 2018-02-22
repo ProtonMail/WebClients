@@ -24,9 +24,20 @@ const getCommitByName = async (name) => {
     return { hash, label };
 };
 
-const getAngularRelease = async (name) => {
+const getCommitByHash = async (hashid) => {
+    const { stdout = '' } = await exec(`git log ${hashid} -n 1 --pretty=format:'%H---%s' --abbrev-commit`);
+    const [ output = '' ] = stripAnsi(stdout).split('\n');
+    const [ hash = '', label = '' ] = output.split('---');
+    return { hash, label };
+};
+
+const getAngularRelease = async (name, hash) => {
     if (name) {
-        return getCommitByName(argv.tag);
+        return getCommitByName(name);
+    }
+
+    if (hash) {
+        return getCommitByHash(hash);
     }
     return getLatestCommit();
 };
@@ -106,6 +117,8 @@ const help = () => {
         This command will sync the Private repository and the public repository
             ➙ $ ./tasks/rebaseWebClient --tag=3.12.24
                             or
+            ➙ $ ./tasks/rebaseWebClient --hash=<commitID>
+                            or
             ➙ $ ./tasks/rebaseWebClient
 
             - With the flag tag, you can deploy to webclient only commits until this tag
@@ -130,7 +143,7 @@ argv.help && help();
 
         await isDeployAbleBranch();
         await hasPublicRemote();
-        const angularRelease = await getAngularRelease(argv.tag);
+        const angularRelease = await getAngularRelease(argv.tag, argv.hash);
         const webclientRelease = await getWebclientRelease();
         json({ angularRelease, webclientRelease });
         await syncWebclient(webclientRelease, angularRelease);
