@@ -370,9 +370,6 @@ export default angular
 
             .state('eo.reply', {
                 url: '/eo/reply/:tag',
-                params: {
-                    showImages: false
-                },
                 resolve: {
                     messageData($stateParams, Eo, messageModel, pmcw, secureSessionStorage) {
                         const tokenId = $stateParams.tag;
