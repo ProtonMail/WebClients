@@ -1,3 +1,9 @@
+# [3.12.33] - 2018-02-22
+
+## Changed
+- Solid separator when reply / forward
+- Emails are technically case-sensitive
+
 # [3.12.32] - 2018-02-22
 
 ## Added
