@@ -58,7 +58,7 @@ describe('vcard factory', () => {
             expect(email.map((p) => p.valueOf()).join(' ')).toEqual('foo@bar.com bar@foo.com');
         });
 
-        it('should handle case insensitive properties', () => {
+        it('should handle case-sensitive properties', () => {
             const contactA = new vCard();
             const contactB = new vCard();
 
@@ -66,9 +66,9 @@ describe('vcard factory', () => {
             contactB.set('email', 'Foo@bar.com');
 
             const newContact = factory.merge([contactA, contactB]);
-            const email = newContact.get('email');
+            const emails = newContact.get('email');
 
-            expect(email.valueOf()).toEqual('foo@bar.com');
+            expect(emails.map((e) => e.valueOf()).join(' ')).toEqual('foo@bar.com Foo@bar.com');
         });
 
         it('should handle/rename groups correctly', () => {

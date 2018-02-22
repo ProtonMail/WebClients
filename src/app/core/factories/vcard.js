@@ -5,13 +5,7 @@ import isUniqField from '../../../helpers/vcardUniqueFields';
 /* @ngInject */
 function vcard(CONSTANTS, notification, sanitize) {
     const { VCARD_VERSION, VCARD_TYPES } = CONSTANTS;
-    const makeUniq = (properties = []) => _.uniqBy(properties, (property) => {
-        const value = property.valueOf();
-        if (typeof value === 'string') {
-            return value.toLowerCase();
-        }
-        return value;
-    });
+    const makeUniq = (properties = []) => _.uniqBy(properties, (property) => property.valueOf());
 
     /**
      * Merge multiple vCards into one
