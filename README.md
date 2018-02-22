@@ -1,5 +1,7 @@
 # ProtonMail Web Client
 
+[![CircleCI](https://circleci.com/gh/ProtonMail/Angular.svg?style=svg&circle-token=d960b54918d5375b4e7639ca505d14a0e131dc21)](https://circleci.com/gh/ProtonMail/Angular)
+
 Official AngularJS web client for the [ProtonMail secure email service](https://protonmail.com). ProtonMail also makes use of [OpenPGPjs](https://github.com/openpgpjs/openpgpjs) as our message cryptography is PGP compliant.
 
 ## Translation
