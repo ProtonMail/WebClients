@@ -29,3 +29,10 @@
     }
     color: $default-color-medium;
 }
+
+
+// https://github.com/ProtonMail/Angular/issues/6522
+// TODO: need to discuss what to do with these because multiple FNs are actually stored on the vCard, but only 1 is displayed
+.contactDisplay-item[data-field="FN"]:not(:first-child) {
+    display: none;
+}

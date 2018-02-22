@@ -207,4 +207,6 @@
 }
 
 // Only show the first FN
+// https://github.com/ProtonMail/Angular/issues/6522
+// TODO: need to discuss what to do with these because multiple FNs are actually stored on the vCard, but only 1 is displayed
 .contactItem-container-Name .contactItem-row:not(:first-child) { display: none }
