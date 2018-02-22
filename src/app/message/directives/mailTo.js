@@ -1,6 +1,6 @@
 import _ from 'lodash';
 
-import { parseUrl } from '../../../helpers/browser';
+import { parseURL } from '../../../helpers/browser';
 
 /* @ngInject */
 const mailTo = ($rootScope, regexEmail, messageModel, authentication) => ({
@@ -31,7 +31,7 @@ const mailTo = ($rootScope, regexEmail, messageModel, authentication) => ({
             }
 
             const to = mailto.substring(0, j);
-            const { searchObject = {} } = parseUrl(mailto.substring(j + 1));
+            const { searchObject = {} } = parseURL(mailto.substring(j + 1));
             const message = messageModel();
 
             message.From = _.find(authentication.user.Addresses, { ID: scope.message.AddressID });

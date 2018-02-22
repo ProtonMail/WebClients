@@ -1,5 +1,5 @@
 import _ from 'lodash';
-import { openWindow, parseUrl } from '../../../helpers/browser';
+import { openWindow, parseURL } from '../../../helpers/browser';
 
 /* @ngInject */
 function unsubscribeModel($rootScope, authentication, gettextCatalog, messageModel, notification, simpleSend) {
@@ -26,7 +26,7 @@ function unsubscribeModel($rootScope, authentication, gettextCatalog, messageMod
         }
 
         const to = mailto.substring(0, j);
-        const { searchObject = {} } = parseUrl(mailto.substring(j + 1));
+        const { searchObject = {} } = parseURL(mailto.substring(j + 1));
 
         message.AddressID = addressID || authentication.user.Addresses[0].ID;
         message.From = _.find(authentication.user.Addresses, { ID: message.AddressID });

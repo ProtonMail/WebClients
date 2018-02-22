@@ -1,4 +1,4 @@
-import { parseUrl } from '../../../helpers/browser';
+import { parseURL } from '../../../helpers/browser';
 
 /* @ngInject */
 function paypalView(notification, Payment, gettextCatalog, CONSTANTS, $q, networkUtils, windowModel) {
@@ -90,7 +90,7 @@ function paypalView(notification, Payment, gettextCatalog, CONSTANTS, $q, networ
                 }
 
                 const { payerID: PayerID, paymentID: PaymentID, cancel: Cancel, token } = event.data;
-                const { searchObject = {} } = parseUrl(scope.approvalURL);
+                const { searchObject = {} } = parseURL(scope.approvalURL);
 
                 if (token !== searchObject.token) {
                     return;
