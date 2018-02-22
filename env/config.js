@@ -22,6 +22,11 @@ const getDefaultApiTarget = () => {
         if (type) {
             return type;
         }
+
+        if (/red/.test(argv.branch || '')) {
+            return 'dev';
+        }
+
         return 'build';
     }
 
