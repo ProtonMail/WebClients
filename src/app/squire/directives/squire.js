@@ -66,7 +66,8 @@ function squire(squireEditor, embedded, editorListener, $rootScope, sanitize, to
                 const value = sanitize.input(val || '');
                 scope.$applyAsync(() => {
                     if (scope.message.MIMEType === 'text/plain') {
-                        return scope.message.setDecryptedBody(val, false);
+                        // disable all updates if in plain text mode
+                        return;
                     }
 
                     const isEmpty = !value.trim().length;
