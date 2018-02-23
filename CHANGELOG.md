@@ -1,3 +1,14 @@
+# [3.12.34] - 2018-02-23
+
+## Fixed
+
+- Switching draft in plain text was broken
+
+## Changed
+
+-  Close the payment modal if the subscription change to avoid the "Amount Mismatch" issue
+- Add more `‐` for the Original Message separator
+
 # [3.12.33] - 2018-02-22
 
 ## Changed
