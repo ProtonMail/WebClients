@@ -151,6 +151,7 @@
     input[type="password"],
     input[type="email"],
     input[type="search"],
+    input[type="url"],
     select {
         height: 35px;
     }
@@ -160,7 +161,8 @@
     input[type="tel"],
     input[type="password"],
     input[type="email"],
-    input[type="search"] {
+    input[type="search"],
+    input[type="url"] {
         box-shadow: inset 0 2px 5px rgba(0,0,0,.15);
         background: #fafafa;
         &.inline {
@@ -189,6 +191,7 @@
     input[type="password"],
     input[type="email"],
     input[type="search"],
+    input[type="url"],
     select,
     textarea {
         line-height: 35px;
@@ -250,6 +253,7 @@
     input[type="password"],
     input[type="email"],
     input[type="search"],
+    input[type="url"],
     select,
     textarea {
         padding: 0 20px;

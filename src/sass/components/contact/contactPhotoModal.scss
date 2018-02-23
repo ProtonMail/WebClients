@@ -1,0 +1,25 @@
+.contactPhotoModal-input-file { display: none }
+.pm_form .contactPhotoModal-input-label {
+    text-decoration: none;
+    color: $button-color;
+    padding: 0 10px;
+    height: 35px;
+    line-height: 35px;
+    border: 1px solid $border;
+    border-radius: $border-radius;
+    box-sizing: border-box;
+    display: inline-block;
+    cursor: pointer;
+    font-size: 12px;
+    text-transform: uppercase;
+    background-color: transparent;
+    transition: all .3s ease-out;
+    box-shadow: 0 1px 2px 0 rgba(0,0,0,0.1);
+    vertical-align: middle;
+}
+
+.contactPhotoModal-input-label:hover {
+    background-color: $button-background-focus;
+    color: $button-color-focus;
+    transition: none;
+}

@@ -1,9 +1,12 @@
 import Contact from './services/contact';
 import contactAddressInput from './directives/contactAddressInput';
+import contactPhotoRow from './directives/contactPhotoRow';
 import contactClear from './directives/contactClear';
 import contactDetails from './directives/contactDetails';
 import contactDisplay from './directives/contactDisplay';
 import contactDisplayModal from './modals/contactDisplayModal';
+import contactPhotoModal from './modals/contactPhotoModal';
+import contactPhotoForm from './directives/contactPhotoForm';
 import contactEncrypted from './directives/contactEncrypted';
 import contactError from './directives/contactError';
 import contactItem from './directives/contactItem';
@@ -43,6 +46,7 @@ export default angular
         contactMerger.init();
     })
     .directive('contactAddressInput', contactAddressInput)
+    .directive('contactPhotoRow', contactPhotoRow)
     .directive('contactClear', contactClear)
     .directive('contactDisplay', contactDisplay)
     .directive('contactDetails', contactDetails)
@@ -57,10 +61,12 @@ export default angular
     .directive('contactToolbar', contactToolbar)
     .directive('contactView', contactView)
     .directive('contactRightPanel', contactRightPanel)
+    .directive('contactPhotoForm', contactPhotoForm)
     .factory('Contact', Contact)
     .factory('contactCache', contactCache)
     .factory('contactDetailsModel', contactDetailsModel)
     .factory('contactDisplayModal', contactDisplayModal)
+    .factory('contactPhotoModal', contactPhotoModal)
     .factory('contactDownloader', contactDownloader)
     .factory('contactEditor', contactEditor)
     .factory('contactEmails', contactEmails)

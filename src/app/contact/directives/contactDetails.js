@@ -26,7 +26,8 @@ function contactDetails(
         Emails: 'EMAIL',
         Tels: 'TEL',
         Adrs: 'ADR',
-        Notes: 'NOTE'
+        Notes: 'NOTE',
+        Photos: 'PHOTO'
     };
 
     const MAP_EVENT = {

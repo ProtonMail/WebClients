@@ -84,6 +84,11 @@ function contactUI(gettextCatalog, tools, contactTransformLabel) {
                 UI.mode = 'multiLine';
                 UI.unique = true;
                 break;
+            case 'Photos':
+                UI.iconClass = 'fa-photo';
+                UI.mode = 'photo';
+                UI.unique = true;
+                break;
             case 'Customs':
                 UI.infinite = true;
                 UI.placeholder = I18N.customField;
@@ -134,6 +139,8 @@ function contactUI(gettextCatalog, tools, contactTransformLabel) {
                 return { key: 'x-custom', type: 'custom' };
             case 'Notes':
                 return { key: 'note', type: 'note' };
+            case 'Photos':
+                return { key: 'photo', type: 'photo' };
             default:
                 break;
         }

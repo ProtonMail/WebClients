@@ -12,16 +12,23 @@
 }
 
 .contactDisplay-item-value {
+    display: block;
+    width: 100%;
     word-wrap: break-word;
     max-width: 55%;
 }
 
-.contactDisplay-item-value[data-key="adr"] {
+.contactDisplay-item[data-key="adr"] .contactDisplay-item-value {
     white-space: pre-wrap;
 }
 
+.contactDisplay-item[data-key="photo"] .contactDisplay-item-value,
+.contactDisplay-item:not([data-key="photo"]) .contactDisplay-item-image { display: none }
+
 .contactDisplay-item-label {
+    display: block;
     max-width: 45%;
+    width: 100%;
     .fa {
         width: 30px;
         text-align: center;
@@ -30,6 +37,10 @@
     color: $default-color-medium;
 }
 
+.contactDisplay-item-image {
+    max-width: 65px;
+    max-height: 65px;
+}
 
 // https://github.com/ProtonMail/Angular/issues/6522
 // TODO: need to discuss what to do with these because multiple FNs are actually stored on the vCard, but only 1 is displayed
