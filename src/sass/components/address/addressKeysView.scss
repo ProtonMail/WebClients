@@ -13,3 +13,9 @@
 
 .addressKeysView-toggle { width: 30px }
 .addressKeysView-email { width: calc(100% - 30px) }
+
+
+.addressKeysView-container.user [data-display-mode="address"],
+.addressKeysView-container.address [data-display-mode="user"] {
+    display: none;
+}
