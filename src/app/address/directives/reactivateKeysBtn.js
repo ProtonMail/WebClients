@@ -43,7 +43,11 @@ function reactivateKeysBtn(authentication, oldPasswordModal, gettextCatalog, rea
                     params: {
                         submit(password) {
                             oldPasswordModal.deactivate();
-                            const promise = reactivateKeys(keys, password).then(() => notification.success(I18N.success));
+                            const promise = reactivateKeys(keys, password)
+                                .then(({ success, failed }) => {
+                                    success && notification.success(success);
+                                    failed && notification.error(failed);
+                                });
 
                             networkActivityTracker.track(promise);
                         },
