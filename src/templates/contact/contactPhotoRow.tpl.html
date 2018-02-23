@@ -1,4 +1,5 @@
 <div class="contactPhotoRow-container">
-    <img class="contactPhotoRow-image" alt="Photo" src="{{ value }}">
-    <button class="contactPhotoRow-edit-button pm_button" type="button" translate-context="Action" translate>Edit photo</button>
+    <img class="contactPhotoRow-image" alt="Photo" src="{{ value }}" data-action="edit">
+    <button class="contactPhotoRow-edit-button pm_button" data-action="edit" type="button" translate-context="Action" translate>Edit photo</button>
+    <button class="contactPhotoRow-clear-button pm_button link" data-action="clear" type="button" translate-context="Action" translate>Clear</button>
 </div>

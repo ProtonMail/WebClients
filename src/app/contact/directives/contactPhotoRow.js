@@ -1,6 +1,7 @@
+import { PHOTO_PLACEHOLDER_URL } from '../../constants';
+
 /* @ngInject */
 function contactPhotoRow(contactPhotoModal) {
-    const PHOTO_PLACEHOLDER_URL = '/assets/img/photo-placeholder.png';
     return {
         restrict: 'E',
         replace: true,
@@ -12,23 +13,33 @@ function contactPhotoRow(contactPhotoModal) {
         templateUrl: require('../../../templates/contact/contactPhotoRow.tpl.html'),
         link(scope, element, attr, ngFormController) {
             const updateImage = (uri) => scope.value = uri || PHOTO_PLACEHOLDER_URL;
-            const onClick = () => {
-                contactPhotoModal.activate({
-                    params: {
-                        uri: scope.value === PHOTO_PLACEHOLDER_URL ? '' : scope.value,
-                        submit(uri) {
-                            contactPhotoModal.deactivate();
-                            scope.$applyAsync(() => {
-                                updateImage(uri);
-                                ngFormController.$setDirty();
-                            });
-                        },
-                        cancel() {
-                            contactPhotoModal.deactivate();
+            const actions = {
+                edit() {
+                    contactPhotoModal.activate({
+                        params: {
+                            uri: scope.value === PHOTO_PLACEHOLDER_URL ? '' : scope.value,
+                            submit(uri) {
+                                contactPhotoModal.deactivate();
+                                scope.$applyAsync(() => {
+                                    updateImage(uri);
+                                    ngFormController.$setDirty();
+                                });
+                            },
+                            cancel() {
+                                contactPhotoModal.deactivate();
+                            }
                         }
-                    }
-                });
+                    });
+                },
+                clear() {
+                    scope.$applyAsync(() => {
+                        updateImage(PHOTO_PLACEHOLDER_URL);
+                        ngFormController.$setDirty();
+                    });
+                }
             };
+
+            const onClick = ({ target }) => actions[target.getAttribute('data-action')]();
 
             element.on('click', onClick);
 
