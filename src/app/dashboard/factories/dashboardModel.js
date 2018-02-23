@@ -103,7 +103,7 @@ function dashboardModel(
             Cycle: dashboardConfiguration.cycle(),
             Currency: dashboardConfiguration.currency(),
             PlanIDs,
-            Coupon: subscriptionModel.coupon()
+            CouponCode: subscriptionModel.coupon()
         }).then(({ data: valid = {} } = {}) => {
             paymentModal.activate({
                 params: {
