@@ -60,6 +60,7 @@ function addonRow(
                 }
 
                 element[0].classList.add(LIMIT_REACHED_CLASS);
+                $placeholder[0].setAttribute('data-value', value);
                 $placeholder[0].textContent = `${dashboardOptions.translate(addon, value + 1)} ${getPrice({ addon, value })}`;
             };
 
@@ -99,7 +100,7 @@ function addonRow(
                     }
 
                     if (type === 'currency.updated' || type === 'cycle.updated') {
-                        const value = $select.val();
+                        const value = element[0].classList.contains(LIMIT_REACHED_CLASS) ? ~~$placeholder[0].getAttribute('data-value') : $select.val();
 
                         buildOptions();
                         set(value);
