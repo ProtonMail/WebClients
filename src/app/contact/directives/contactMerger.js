@@ -21,11 +21,10 @@ function contactMerger() {
      */
     const clickHandlers = {
         details(arr, i) {
-            return [arr[i]];
+            return arr[i];
         },
         preview(arr) {
-            const contacts = prepareArray(arr);
-            return contacts.length >= 2 ? contacts : [];
+            return arr;
         },
         select(arr, i) {
             const item = arr[i];
@@ -118,6 +117,7 @@ function contactMerger() {
         replace: true,
         scope: {
             groups: '=',
+            details: '<',
             preview: '<'
         },
         templateUrl: require('../../../templates/contact/contactMerger.tpl.html'),
@@ -156,9 +156,19 @@ function contactMerger() {
                 return arr.length >= 2;
             };
 
+            /**
+             * Callback when a specific group has been merged.
+             * Used by the preview modal.
+             * @param {string} groupName
+             */
+            const onPreviewMerge = (groupName = '') => {
+                delete scope.groups[groupName];
+                return scope.groups;
+            };
+
             function onClick({ target }) {
                 /**
-                 * Get the email and index of the item in the liast that was clicked from
+                 * Get the email and index of the item in the list that was clicked from
                  * a parent in which the `data-email` and `data-i` is set. This way it does
                  * not have to be repeated on each button.
                  * @param node
@@ -179,10 +189,18 @@ function contactMerger() {
                 };
                 const name = target.name;
                 switch (name) {
-                    case 'details':
-                    case 'preview': {
+                    case 'details': {
                         const { email, i } = getClickedContact(target);
-                        scope.preview(clickHandlers[name](scope.groups[email], i));
+                        scope.details(clickHandlers.details(scope.groups[email], i));
+                        break;
+                    }
+                    case 'preview': {
+                        const { email } = getClickedContact(target);
+                        scope.preview(
+                            clickHandlers.preview(scope.groups[email]),
+                            email,
+                            onPreviewMerge
+                        );
                         break;
                     }
                     case 'undelete':

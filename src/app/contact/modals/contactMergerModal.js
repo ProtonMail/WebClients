@@ -5,18 +5,19 @@ function contactMergerModal(gettextCatalog, pmModal) {
         templateUrl: require('../../../templates/contact/contactMergerModal.tpl.html'),
         /* @ngInject */
         controller: function (params) {
-            const { duplicates, title, preview, close, merge } = params;
+            const { duplicates, title, onClickDetails, onClickPreview, onClickClose, onClickMerge } = params;
 
             this.title = title;
             this.duplicates = duplicates;
-            this.close = close;
-            this.preview = preview;
+            this.onClickDetails = onClickDetails;
+            this.onClickPreview = onClickPreview;
+            this.onClickClose = onClickClose;
 
             /**
              * Click handler for the merge button.
              */
-            this.merge = () => {
-                merge(this.duplicates);
+            this.onClickMerge = () => {
+                onClickMerge(this.duplicates);
             };
         }
     });

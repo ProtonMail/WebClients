@@ -3,7 +3,7 @@
         <button
             type="button"
             name="cancel"
-            ng-click="ctrl.close()"
+            ng-click="ctrl.onClickClose()"
             aria-hidden="true"
             title-translate="Close"
             title-translate-context="Action" class="fa fa-times close"></button>
@@ -16,14 +16,17 @@
                     <p><i class="fa fa-info-circle"></i> Use Drag and Drop to rank merging priority between contacts.</p>
                     <p>Uncheck contacts you do <b>not</b> want to merge.</p>
                 </div>
-                <contact-merger preview="ctrl.preview" groups="ctrl.duplicates"></contact-merger>
+                <contact-merger
+                    details="ctrl.onClickDetails"
+                    preview="ctrl.onClickPreview"
+                    groups="ctrl.duplicates"></contact-merger>
             </div>
         </div>
         <div class="modal-footer text-right">
-            <button class="pm_button pull-left" ng-click="ctrl.close()" name="cancel" translate-context="Action" translate>
+            <button class="pm_button pull-left" ng-click="ctrl.onClickClose()" name="cancel" translate-context="Action" translate>
                 Cancel
             </button>
-            <button class="pm_button primary" ng-click="ctrl.merge()" tabindex="1" name="merge" translate-context="Action" translate>
+            <button class="pm_button primary" ng-click="ctrl.onClickMerge()" tabindex="1" name="merge" translate-context="Action" translate>
                 Merge
             </button>
         </div>

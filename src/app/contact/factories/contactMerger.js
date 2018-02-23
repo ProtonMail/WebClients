@@ -152,18 +152,70 @@ function contactMerger(
     }
 
     /**
-     * Open the preview contact modal.
-     * @param vcard of the contact
+     * Open the display contact modal.
+     * @param {vCard} vcard of the contact
      */
-    function showContactPreviewModal(vcard) {
+    function showContactDisplayModal(vcard) {
         contactDisplayModal.activate({
             params: {
                 vcard,
-                close() {
+                onClickClose() {
                     contactDisplayModal.deactivate();
                 }
             }
         });
+    }
+
+    /**
+     * Open the preview contact modal, which has the possibility to merge the contact directly.
+     * @param {vCard} vcard of the contact
+     * @param {Function} merge
+     */
+    function showContactPreviewModal(vcard, merge) {
+        contactDisplayModal.activate({
+            params: {
+                vcard,
+                onClickMerge() {
+                    merge();
+                    contactDisplayModal.deactivate();
+                },
+                onClickClose() {
+                    contactDisplayModal.deactivate();
+                }
+            }
+        });
+    }
+
+    /**
+     * Perform the merge of a group of contacts.
+     * @param {Object} groups
+     * @returns {Promise} promise for when the merge has completed
+     */
+    async function doMerge(groups) {
+        const duplicateGroups = prepareGroups(groups);
+        if (Object.keys(duplicateGroups).length === 0) {
+            throw new Error('Not enough contacts selected');
+        }
+        return contactEditor.merge(prepareMerge(duplicateGroups));
+    }
+
+    /**
+     * Get the callback for when the merge button is pressed inside the preview contact modal.
+     * It performs the merge with a single group, and if this group was the only group left in the merge
+     * modal, close it.
+     * @param {Array} group
+     * @param {string} groupName
+     * @param {function} callback
+     * @returns {function()}
+     */
+    function getPreviewMergeCallback(group, groupName, callback) {
+        return async () => {
+            await doMerge({ [groupName]: group });
+            const remainingGroups = callback(groupName);
+            if (Object.keys(remainingGroups).length === 0) {
+                contactMergerModal.deactivate();
+            }
+        };
     }
 
     /**
@@ -177,21 +229,24 @@ function contactMerger(
             params: {
                 title: I18N.mergeContacts,
                 duplicates,
-                merge(groups = {}) {
-                    const duplicateGroups = prepareGroups(groups);
-                    if (Object.keys(duplicateGroups).length === 0) {
-                        return;
-                    }
-                    contactEditor.merge(prepareMerge(duplicateGroups));
+                onClickMerge(groups = {}) {
+                    doMerge(groups).catch(() => {});
                     contactMergerModal.deactivate();
                 },
-                preview(contacts = []) {
-                    if (!contacts.length) {
+                onClickDetails(selection) {
+                    showContactDisplayModal(selection.vCard);
+                },
+                onClickPreview(group = [], groupName = '', mergeGroupSuccess) {
+                    const selectedContacts = group.filter(({ selected }) => selected);
+                    if (selectedContacts.length <= 1) {
                         return;
                     }
-                    showContactPreviewModal(getMergedContact(contacts));
+                    showContactPreviewModal(
+                        getMergedContact(selectedContacts),
+                        getPreviewMergeCallback(group, groupName, mergeGroupSuccess)
+                    );
                 },
-                close() {
+                onClickClose() {
                     contactMergerModal.deactivate();
                 }
             }
