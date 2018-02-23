@@ -20,8 +20,8 @@ function contactPhotoForm(gettextCatalog, notification) {
                     resizeImage(reader.result, maxWidth, 'image/jpeg', 0.7)
                         .then((base64str) => {
                             scope.$applyAsync(() => {
-                                this.uri = base64str;
-                                this.submit(this.uri);
+                                scope.ctrl.uri = base64str;
+                                scope.ctrl.submit(scope.ctrl.uri);
                             });
                         })
                         .catch((error) => {
