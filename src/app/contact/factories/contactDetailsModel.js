@@ -1,7 +1,9 @@
 import _ from 'lodash';
 
+import { CONSTANTS } from '../../constants';
+
 /* @ngInject */
-function contactDetailsModel(contactTransformLabel, CONSTANTS, contactSchema, gettextCatalog) {
+function contactDetailsModel(contactTransformLabel, contactSchema, gettextCatalog) {
     const ESCAPE_REGEX = /:|,|;/gi;
     const UNESCAPE_REGEX = /\\:|\\,|\\;/gi;
     const BACKSLASH_SEMICOLON_REGEX = /\\;/gi;
