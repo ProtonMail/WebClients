@@ -1,6 +1,9 @@
 import { resizeImage } from '../../../helpers/imageHelper';
 /* @ngInject */
-function contactPhotoForm() {
+function contactPhotoForm(gettextCatalog, notification) {
+    const I18N = {
+        error: gettextCatalog.getString('Image upload failed', null, 'Error')
+    };
     return {
         restrict: 'E',
         replace: true,
@@ -20,6 +23,10 @@ function contactPhotoForm() {
                                 this.uri = base64str;
                                 this.submit(this.uri);
                             });
+                        })
+                        .catch((error) => {
+                            notification.error(I18N.error);
+                            throw error;
                         });
                 };
 
