@@ -2,6 +2,7 @@ import { PHOTO_PLACEHOLDER_URL } from '../../constants';
 
 /* @ngInject */
 function contactPhotoRow(contactPhotoModal) {
+    const HIDE_CLEAR_BUTTON = 'contactPhotoRow-hide-clear-button';
     return {
         restrict: 'E',
         replace: true,
@@ -16,6 +17,7 @@ function contactPhotoRow(contactPhotoModal) {
             const updateImage = (uri = '') => {
                 scope.uri = uri || PHOTO_PLACEHOLDER_URL;
                 scope.value = cleanUri(scope.uri);
+                element[0].classList[scope.uri === PHOTO_PLACEHOLDER_URL ? 'add' : 'remove'](HIDE_CLEAR_BUTTON);
             };
             const actions = {
                 edit() {
