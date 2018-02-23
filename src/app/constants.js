@@ -4,6 +4,7 @@ export const WIZARD_ENABLED = true;
 export const FREE_USER_ROLE = 0;
 export const PAID_MEMBER_ROLE = 1;
 export const PAID_ADMIN_ROLE = 2;
+export const PHOTO_PLACEHOLDER_URL = '/assets/img/photo-placeholder.png';
 export const UNPAID_STATE = {
     NOT: 0,
     AVAILABLE: 1,
