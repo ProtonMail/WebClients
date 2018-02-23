@@ -29,7 +29,7 @@
                 <i class="fa fa-chevron-down" ng-mousedown="toggleSelector($event, item)"></i>
 
                 <ul class="contactItem-selectType" ng-show="item.displaySelector && UI.labels.length > 1">
-                    <li ng-repeat="label in  UI.labels" ng-class="{ selected: item.label.toUpperCase() === label.toUpperCase() }">
+                    <li ng-repeat="label in UI.labels" ng-class="{ selected: item.label.toUpperCase() === label.toUpperCase() }">
                         <a ng-mousedown="setLabel(item, label)">{{ label }}</a>
                     </li>
                 </ul>
@@ -64,6 +64,11 @@
                         data-focused="config.isFocusedAddress"
                         data-value="item.value"
                         data-form="form"></contact-address-input>
+
+                    <contact-photo-row
+                        ng-if="UI.mode === 'photo'"
+                        data-value="item.value"
+                        data-form="form"></contact-photo-row>
 
                 </div>
                 <div class="contactItem-actions">

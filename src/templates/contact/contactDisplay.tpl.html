@@ -1,8 +1,11 @@
 <div class="contactDisplay">
     <div class="contactDisplay-item-group" ng-repeat="property in ::properties track by property.field">
-        <div class="contactDisplay-item" data-field="{{ ::property.field }}" ng-repeat="value in ::property.items">
-            <div class="contactDisplay-item-label"><i class="fa" ng-class="::value.icon"></i>{{ ::value.label }}</div>
-            <div class="contactDisplay-item-value" data-key="{{ ::value.key }}" data-group="{{ ::value.group }}">{{ ::value.value }}</div>
+        <div class="contactDisplay-item" ng-repeat="value in ::property.items" data-field="{{ ::property.field }}" data-key="{{ ::value.key }}" data-group="{{ ::value.group }}">
+            <label class="contactDisplay-item-label">
+                <i class="fa" ng-class="::value.icon"></i>{{ ::value.label }}
+            </label>
+            <span class="contactDisplay-item-value">{{ ::value.value }}</span>
+            <img ng-if="value.key === 'photo'" class="contactDisplay-item-image" src="{{ ::value.value }}" alt="Photo">
         </div>
     </div>
 </div>

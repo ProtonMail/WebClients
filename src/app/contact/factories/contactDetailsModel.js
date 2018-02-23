@@ -18,12 +18,12 @@ function contactDetailsModel(contactTransformLabel, CONSTANTS, contactSchema, ge
         TEL: ['tel'],
         ADR: ['adr'],
         NOTE: ['note'],
+        PHOTO: ['photo'],
         PERSONALS: [
             'kind',
             'source',
             'xml',
             'nickname',
-            'photo',
             'bday',
             'anniversary',
             'gender',
@@ -95,7 +95,7 @@ function contactDetailsModel(contactTransformLabel, CONSTANTS, contactSchema, ge
         if (field === 'CUSTOMS') {
             return _.difference(
                 Object.keys(vcard.data),
-                [].concat(FIELDS.AVOID, FIELDS.FN, FIELDS.EMAIL, FIELDS.TEL, FIELDS.ADR, FIELDS.NOTE, FIELDS.PERSONALS)
+                [].concat(FIELDS.AVOID, FIELDS.FN, FIELDS.EMAIL, FIELDS.TEL, FIELDS.ADR, FIELDS.NOTE, FIELDS.PHOTO, FIELDS.PERSONALS)
             );
         }
         return FIELDS[field];

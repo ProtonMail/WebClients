@@ -28,6 +28,10 @@ function contactDisplay(gettextCatalog, contactDetailsModel, contactTransformLab
         {
             field: 'NOTE',
             icon: 'fa-sticky-note'
+        },
+        {
+            field: 'PHOTO',
+            icon: 'fa-photo'
         }
     ];
 
