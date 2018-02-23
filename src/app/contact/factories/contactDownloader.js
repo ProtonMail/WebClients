@@ -4,7 +4,11 @@ import { CONSTANTS } from '../../constants';
 function contactDownloader(Contact, contactLoaderModal, contactDetailsModel, downloadFile, vcard, $q) {
     const { CANCEL_REQUEST, EXPORT_CONTACTS_LIMIT } = CONSTANTS;
     const getFileName = (id, [card]) => {
-        const nameProperty = card.get('fn');
+        let nameProperty = card.get('fn');
+
+        if (Array.isArray(nameProperty)) {
+            nameProperty = nameProperty[0];
+        }
 
         if (id !== 'all' && nameProperty) {
             return `${contactDetailsModel.unescapeValue(nameProperty.valueOf())}.vcf`;
