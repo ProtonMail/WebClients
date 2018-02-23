@@ -5,8 +5,11 @@ function contactDisplayModal(pmModal) {
         templateUrl: require('../../../templates/contact/contactDisplayModal.tpl.html'),
         /* @ngInject */
         controller: function(params) {
-            this.vcard = params.vcard;
-            this.close = params.close;
+            const { vcard, onClickMerge, onClickClose } = params;
+
+            this.vcard = vcard;
+            this.onClickClose = onClickClose;
+            this.onClickMerge = onClickMerge;
         }
     });
 }
