@@ -346,7 +346,7 @@ msgctxt "Action"
 msgid "Add Condition"
 msgstr ""
 
-#: ./src/templates/directives/contact/contactItem.tpl.html:94
+#: ./src/templates/directives/contact/contactItem.tpl.html:99
 msgctxt "Action"
 msgid "Add Entry"
 msgstr ""
@@ -514,8 +514,9 @@ msgstr ""
 #: ./src/templates/authentication/modals/oldPasswordModal.tpl.html:20
 #: ./src/templates/composer/composerEncrypt.tpl.html:67
 #: ./src/templates/composer/composerExpiration.tpl.html:53
-#: ./src/templates/contact/contactMergerModal.tpl.html:23
+#: ./src/templates/contact/contactMergerModal.tpl.html:26
 #: ./src/templates/contact/contactModal.tpl.html:14
+#: ./src/templates/contact/contactPhotoModal.tpl.html:13
 #: ./src/templates/contact/importContactModal.tpl.html:14
 #: ./src/templates/dashboard/customProPlanModal.tpl.html:41
 #: ./src/templates/dashboard/customVpnModal.tpl.html:19
@@ -578,7 +579,7 @@ msgctxt "Action"
 msgid "Change mailbox password"
 msgstr ""
 
-#: ./src/templates/directives/contact/contactItem.tpl.html:118
+#: ./src/templates/directives/contact/contactItem.tpl.html:123
 msgctxt "Action"
 msgid "Change order"
 msgstr ""
@@ -598,6 +599,11 @@ msgctxt "Action"
 msgid "Change password"
 msgstr ""
 
+#: ./src/templates/contact/contactPhotoRow.tpl.html:4
+msgctxt "Action"
+msgid "Clear"
+msgstr ""
+
 #: ./src/templates/payment/paypalView.tpl.html:6
 msgctxt "Action"
 msgid "Click here to try again"
@@ -609,11 +615,13 @@ msgstr ""
 #: ./src/templates/blackFriday/blackFridayModal.tpl.html:3
 #: ./src/templates/contact/contactBeforeToLeaveModal.tpl.html:3
 #: ./src/templates/contact/contactDisplayModal.tpl.html:13
+#: ./src/templates/contact/contactDisplayModal.tpl.html:17
 #: ./src/templates/contact/contactDisplayModal.tpl.html:3
 #: ./src/templates/contact/contactLoaderModal.tpl.html:23
 #: ./src/templates/contact/contactLoaderModal.tpl.html:3
 #: ./src/templates/contact/contactMergerModal.tpl.html:3
 #: ./src/templates/contact/contactModal.tpl.html:3
+#: ./src/templates/contact/contactPhotoModal.tpl.html:3
 #: ./src/templates/contact/importContactModal.tpl.html:3
 #: ./src/templates/dashboard/customProPlanModal.tpl.html:3
 #: ./src/templates/dashboard/customVpnModal.tpl.html:3
@@ -702,7 +710,7 @@ msgctxt "Action"
 msgid "Compose"
 msgstr ""
 
-#: ./src/templates/directives/contact/contactItem.tpl.html:76
+#: ./src/templates/directives/contact/contactItem.tpl.html:81
 msgctxt "Action"
 msgid "Compose to"
 msgstr ""
@@ -712,7 +720,7 @@ msgctxt "Action"
 msgid "Contacts"
 msgstr ""
 
-#: ./src/templates/directives/contact/contactItem.tpl.html:70
+#: ./src/templates/directives/contact/contactItem.tpl.html:75
 msgctxt "Action"
 msgid "Copy address"
 msgstr ""
@@ -829,6 +837,11 @@ msgstr ""
 #: ./src/templates/user/defaultSignature.tpl.html:60
 msgctxt "Action"
 msgid "Edit other signatures"
+msgstr ""
+
+#: ./src/templates/contact/contactPhotoRow.tpl.html:3
+msgctxt "Action"
+msgid "Edit photo"
 msgstr ""
 
 #: ./src/app/address/directives/addressBtnActions.js:5
@@ -1103,7 +1116,8 @@ msgid "Mark as unread"
 msgstr ""
 
 #. contacts toolbar menu option
-#: ./src/templates/contact/contactMergerModal.tpl.html:26
+#: ./src/templates/contact/contactDisplayModal.tpl.html:14
+#: ./src/templates/contact/contactMergerModal.tpl.html:29
 #: ./src/templates/contact/contactToolbar.tpl.html:31
 msgctxt "Action"
 msgid "Merge"
@@ -1174,6 +1188,12 @@ msgctxt "Action"
 msgid "No"
 msgstr ""
 
+#: ./src/templates/address/addressKeysView.tpl.html:28
+#: ./src/templates/address/addressKeysView.tpl.html:58
+msgctxt "Action"
+msgid "None"
+msgstr ""
+
 #: ./src/templates/ui/toolbarMobile.tpl.html:54
 msgctxt "Action"
 msgid "Not spam"
@@ -1213,12 +1233,12 @@ msgctxt "Action"
 msgid "ProtonMail Shop"
 msgstr ""
 
-#: ./src/templates/address/addressKeysView.tpl.html:26
+#: ./src/templates/address/addressKeysView.tpl.html:27
 msgctxt "Action"
 msgid "Public key"
 msgstr ""
 
-#: ./src/templates/address/addressKeysView.tpl.html:55
+#: ./src/templates/address/addressKeysView.tpl.html:57
 msgctxt "Action"
 msgid "Reactivate"
 msgstr ""
@@ -1243,7 +1263,7 @@ msgctxt "Action"
 msgid "Remove"
 msgstr ""
 
-#: ./src/templates/directives/contact/contactItem.tpl.html:85
+#: ./src/templates/directives/contact/contactItem.tpl.html:90
 msgctxt "Action"
 msgid "Remove Entry"
 msgstr ""
@@ -1319,6 +1339,7 @@ msgstr ""
 #. contact details
 #: ./src/templates/contact/contactDetails.tpl.html:6
 #: ./src/templates/contact/contactModal.tpl.html:21
+#: ./src/templates/contact/contactPhotoModal.tpl.html:19
 #: ./src/templates/dashboard/customProPlanModal.tpl.html:42
 #: ./src/templates/dashboard/customVpnModal.tpl.html:20
 #: ./src/templates/directives/composer/composer.tpl.html:128
@@ -1338,7 +1359,7 @@ msgctxt "Action"
 msgid "Save"
 msgstr ""
 
-#: ./src/templates/directives/contact/contactItem.tpl.html:119
+#: ./src/templates/directives/contact/contactItem.tpl.html:124
 msgctxt "Action"
 msgid "Save order"
 msgstr ""
@@ -1575,6 +1596,11 @@ msgstr ""
 #: ./src/templates/views/members.tpl.html:121
 msgctxt "Action"
 msgid "Upgrade your plan"
+msgstr ""
+
+#: ./src/templates/contact/contactPhotoForm.tpl.html:15
+msgctxt "Action"
+msgid "Upload picture"
 msgstr ""
 
 #: ./src/app/composer/directives/btnSendMessage.js:16
@@ -2068,6 +2094,11 @@ msgctxt "Contact modal title"
 msgid "Add contact"
 msgstr ""
 
+#: ./src/templates/contact/contactPhotoModal.tpl.html:6
+msgctxt "Contact modal title"
+msgid "Add image"
+msgstr ""
+
 #: ./src/templates/contact/contactDisplayModal.tpl.html:6
 msgctxt "Contact modal title"
 msgid "Contact details"
@@ -2479,7 +2510,7 @@ msgctxt "Default autoresponder message without signature (no regards, etcetera)"
 msgid "<div>I'm out of the office with limited access to my email.</div>"
 msgstr ""
 
-#: ./src/app/contact/factories/contactDetailsModel.js:11
+#: ./src/app/contact/factories/contactDetailsModel.js:13
 #: ./src/app/contact/factories/contactEncryption.js:115
 #: ./src/app/contact/factories/contactSchema.js:10
 msgctxt "Default display name vcard"
@@ -2857,6 +2888,11 @@ msgctxt "Error"
 msgid "Error updating the vpn option"
 msgstr ""
 
+#: ./src/app/address/factories/reactivateKeys.js:19
+msgctxt "Error"
+msgid "Failed to reactivate key"
+msgstr ""
+
 #: ./src/templates/authentication/modals/loginPassword.tpl.html:18
 #: ./src/templates/authentication/modals/loginPassword.tpl.html:38
 #: ./src/templates/authentication/modals/oldPasswordModal.tpl.html:15
@@ -2878,7 +2914,12 @@ msgctxt "Error"
 msgid "IMPORTANT: Do not close or navigate away from this page. You will need to enter the reset code into the field below once you receive it."
 msgstr ""
 
-#: ./src/app/address/factories/reactivateKeys.js:6
+#: ./src/app/contact/directives/contactPhotoForm.js:5
+msgctxt "Error"
+msgid "Image upload failed"
+msgstr ""
+
+#: ./src/app/address/factories/reactivateKeys.js:15
 msgctxt "Error"
 msgid "Incorrect decryption password"
 msgstr ""
@@ -2908,7 +2949,7 @@ msgctxt "Error"
 msgid "Invalid coupon code"
 msgstr ""
 
-#: ./src/templates/directives/contact/contactItem.tpl.html:105
+#: ./src/templates/directives/contact/contactItem.tpl.html:110
 #: ./src/templates/filter/filterAddressModal.tpl.html:27
 #: ./src/templates/modals/bug.tpl.html:69
 msgctxt "Error"
@@ -3356,6 +3397,16 @@ msgctxt "Error"
 msgid "Your browser lacks features needed to download encrypted attachments directly. Please right-click on the attachment and select Save/Download As."
 msgstr ""
 
+#: ./src/app/address/factories/reactivateKeys.js:16
+msgctxt "Error"
+msgid "{{n}} keys failed to decrypt due to an incorrect password"
+msgstr ""
+
+#: ./src/app/address/factories/reactivateKeys.js:20
+msgctxt "Error"
+msgid "{{n}} keys failed to reactivate"
+msgstr ""
+
 #: ./src/app/address/modals/addressModal.js:18
 msgctxt "Error"
 msgid "{{username}} is your username. To create {{username}}@pm.me, please go to Settings -> pm.me"
@@ -3366,7 +3417,7 @@ msgctxt "Error delete attachment"
 msgid "Error during the remove request"
 msgstr ""
 
-#: ./src/app/contact/directives/contactDetails.js:42
+#: ./src/app/contact/directives/contactDetails.js:43
 msgctxt "Error displays when the user try to leave an unsaved and invalid contact details"
 msgid "This form is invalid"
 msgstr ""
@@ -4565,7 +4616,7 @@ msgctxt "Info"
 msgid "Keep this record in your DNS for as long as you want to use DKIM. You can change its Value to <code>off</code> to disable DKIM"
 msgstr ""
 
-#: ./src/app/address/directives/addressKeysView.js:16
+#: ./src/app/address/factories/reactivateKeys.js:10
 msgctxt "Info"
 msgid "Key reactivated"
 msgstr ""
@@ -4966,7 +5017,7 @@ msgstr ""
 
 #: ./src/templates/pmMe/pmMeView.tpl.html:20
 msgctxt "Info"
-msgid "This feature is still in testing phase and you could experience some issues with it"
+msgid "This feature is still being tested, so you may experience some issues with it"
 msgstr ""
 
 #: ./src/templates/modals/welcome.tpl.html:20
@@ -5400,6 +5451,11 @@ msgctxt "Info"
 msgid "{{name}}@pm.me is activated on your account."
 msgstr ""
 
+#: ./src/app/address/factories/reactivateKeys.js:11
+msgctxt "Info"
+msgid "{{n}} keys reactivated"
+msgstr ""
+
 #: ./src/app/composer/directives/composerTime.js:5
 msgctxt "Info display in the composer footer"
 msgid "Saved at"
@@ -5535,6 +5591,11 @@ msgstr ""
 #: ./src/templates/modals/member.tpl.html:78
 msgctxt "Label"
 msgid "Account storage"
+msgstr ""
+
+#: ./src/templates/contact/contactPhotoForm.tpl.html:4
+msgctxt "Label"
+msgid "Add image URL"
 msgstr ""
 
 #: ./src/templates/modals/member.tpl.html:61
@@ -5868,6 +5929,11 @@ msgstr ""
 #: ./src/templates/filter/modal.tpl.html:173
 msgctxt "Label"
 msgid "Trash"
+msgstr ""
+
+#: ./src/templates/contact/contactPhotoForm.tpl.html:12
+msgctxt "Label"
+msgid "Upload picture"
 msgstr ""
 
 #: ./src/templates/modals/addAddress.tpl.html:11
@@ -7110,7 +7176,7 @@ msgstr ""
 
 #. Table heading
 #. table heading
-#: ./src/templates/address/addressKeysView.tpl.html:38
+#: ./src/templates/address/addressKeysView.tpl.html:40
 #: ./src/templates/filter/modal.tpl.html:123
 #: ./src/templates/modals/hotkey.tpl.html:73
 #: ./src/templates/views/domains.tpl.html:200
@@ -7435,6 +7501,11 @@ msgctxt "Title"
 msgid "Contact List"
 msgstr ""
 
+#: ./src/templates/views/keysView.tpl.html:22
+msgctxt "Title"
+msgid "Contact encryption keys"
+msgstr ""
+
 #: ./src/templates/modals/support.tpl.html:6
 msgctxt "Title"
 msgid "Contact us"
@@ -7684,7 +7755,7 @@ msgid "Donate"
 msgstr ""
 
 #. table heading
-#: ./src/templates/address/addressKeysView.tpl.html:8
+#: ./src/templates/address/addressKeysView.tpl.html:9
 msgctxt "Title"
 msgid "Download"
 msgstr ""
@@ -7733,6 +7804,11 @@ msgstr ""
 #: ./src/templates/views/account.tpl.html:309
 msgctxt "Title"
 msgid "Email Subscriptions"
+msgstr ""
+
+#: ./src/templates/views/keysView.tpl.html:5
+msgctxt "Title"
+msgid "Email encryption keys"
 msgstr ""
 
 #: ./src/templates/composer/composerEncrypt.tpl.html:3
@@ -7800,8 +7876,8 @@ msgid "Filters"
 msgstr ""
 
 #. table heading
-#: ./src/templates/address/addressKeysView.tpl.html:35
-#: ./src/templates/address/addressKeysView.tpl.html:6
+#: ./src/templates/address/addressKeysView.tpl.html:37
+#: ./src/templates/address/addressKeysView.tpl.html:7
 msgctxt "Title"
 msgid "Fingerprint"
 msgstr ""
@@ -7938,8 +8014,8 @@ msgid "Key recovery password"
 msgstr ""
 
 #. table heading
-#: ./src/templates/address/addressKeysView.tpl.html:36
-#: ./src/templates/address/addressKeysView.tpl.html:7
+#: ./src/templates/address/addressKeysView.tpl.html:38
+#: ./src/templates/address/addressKeysView.tpl.html:8
 #: ./src/templates/views/members.tpl.html:356
 msgctxt "Title"
 msgid "Key size"
@@ -7953,7 +8029,6 @@ msgstr ""
 
 #: ./src/app/sidebar/factories/sidebarSettingsModel.js:68
 #: ./src/app/ui/factories/pageTitlesModel.js:31
-#: ./src/templates/views/keysView.tpl.html:5
 msgctxt "Title"
 msgid "Keys"
 msgstr ""
@@ -8533,7 +8608,7 @@ msgstr ""
 
 #. table heading
 #. table heading for the domains page table listing of addresses
-#: ./src/templates/address/addressKeysView.tpl.html:37
+#: ./src/templates/address/addressKeysView.tpl.html:39
 #: ./src/templates/modals/generate.tpl.html:52
 #: ./src/templates/views/domains.tpl.html:193
 #: ./src/templates/views/payments.tpl.html:76
@@ -8661,6 +8736,7 @@ msgid "Upgrade"
 msgstr ""
 
 #. table heading
+#: ./src/templates/address/addressKeysView.tpl.html:6
 #: ./src/templates/modals/domain/address.tpl.html:30
 msgctxt "Title"
 msgid "User"
@@ -9089,7 +9165,7 @@ msgctxt "action"
 msgid "Forgot username?"
 msgstr ""
 
-#: ./src/templates/address/addressKeysView.tpl.html:23
+#: ./src/templates/address/addressKeysView.tpl.html:24
 msgctxt "address key bit size tooltip"
 msgid "The ability to change key strength will be coming in a future ProtonMail release"
 msgstr ""
@@ -9481,7 +9557,7 @@ msgid "A new version of ProtonMail is available. Please refresh this page."
 msgstr ""
 
 #. key state badge
-#: ./src/templates/address/addressKeysView.tpl.html:51
+#: ./src/templates/address/addressKeysView.tpl.html:53
 msgid "Active"
 msgstr ""
 
@@ -9759,7 +9835,7 @@ msgid "In trash"
 msgstr ""
 
 #. key state badge
-#: ./src/templates/address/addressKeysView.tpl.html:52
+#: ./src/templates/address/addressKeysView.tpl.html:54
 msgid "Inactive"
 msgstr ""
 
@@ -9839,10 +9915,6 @@ msgstr ""
 #: ./src/templates/search/searchForm.tpl.html:138
 #: ./src/templates/views/members.tpl.html:175
 msgid "No"
-msgstr ""
-
-#: ./src/templates/address/addressKeysView.tpl.html:56
-msgid "None"
 msgstr ""
 
 #. DMARC status badge
@@ -9938,7 +10010,7 @@ msgid "Preference saved"
 msgstr ""
 
 #. key state badge
-#: ./src/templates/address/addressKeysView.tpl.html:50
+#: ./src/templates/address/addressKeysView.tpl.html:52
 msgid "Primary"
 msgstr ""
 
