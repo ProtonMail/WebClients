@@ -82,7 +82,7 @@ function attachmentDownloader(gettextCatalog, AttachmentLoader, embeddedUtils, n
      * @param {Node} message
      */
     const downloadString = (attachment, message) => {
-        return AttachmentLoader.get(attachment, message).then((buffer) => pmcw.arrayToBinaryString(buffer));
+        return AttachmentLoader.get(attachment, message).then((buffer) => pmcw.decode_utf8(pmcw.arrayToBinaryString(buffer)));
     };
 
     const allowDownloadBrokenAtt = () =>
