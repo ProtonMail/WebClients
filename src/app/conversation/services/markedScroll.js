@@ -6,7 +6,7 @@ function markedScroll() {
     const getMarked = () => CACHE.wrapper.querySelector('.conversation.marked');
 
     const follow = () => {
-        if (!CACHE.wrapper) {
+        if (!CACHE.wrapper || !CACHE.wrapper.offsetHeight) {
             CACHE.wrapper = document.body.querySelector('.conversation-wrapper');
         }
 
