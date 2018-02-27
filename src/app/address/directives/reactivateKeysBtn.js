@@ -32,8 +32,6 @@ function reactivateKeysBtn(authentication, oldPasswordModal, gettextCatalog, rea
         template: `<button class="reactivateUserKeysBtn-container pm_button">${I18N.reactivateContact}</button>`,
         restrict: 'E',
         link(scope, el, { mode }) {
-            const keys = getKeys(mode);
-
             if (mode === 'address') {
                 el[0].textContent = I18N.reactivateAddress;
             }
@@ -42,6 +40,7 @@ function reactivateKeysBtn(authentication, oldPasswordModal, gettextCatalog, rea
                 oldPasswordModal.activate({
                     params: {
                         submit(password) {
+                            const keys = getKeys(mode); // Get the keys dynamically since they can change.
                             oldPasswordModal.deactivate();
                             const promise = reactivateKeys(keys, password)
                                 .then(({ success, failed }) => {
