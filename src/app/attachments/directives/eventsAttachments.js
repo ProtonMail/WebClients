@@ -87,6 +87,7 @@ function eventsAttachments(
                 if (type === 'render') {
                     const { message = {} } = data;
                     loadEvents(message.Attachments);
+                    unsubscribe();
                 }
             });
 

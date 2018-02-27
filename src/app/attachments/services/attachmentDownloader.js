@@ -78,6 +78,7 @@ function attachmentDownloader(gettextCatalog, AttachmentLoader, embeddedUtils, n
 
     /**
      * Download an attachment as a string
+     * /!\ Do not use for binary content
      * @param {object} attachment
      * @param {Node} message
      */
