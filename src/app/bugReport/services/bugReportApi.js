@@ -66,11 +66,11 @@ function bugReportApi(Report, CONFIG, $state, authentication, gettextCatalog, ne
             return;
         }
 
-        const canvas = await window.html2canvas(document.body, { logging: CONFIG.debug });
         try {
+            const canvas = await window.html2canvas(document.body, { logging: CONFIG.debug });
             return canvas.toDataURL('image/jpeg', 0.9).split(',')[1];
         } catch (e) {
-            return canvas.toDataURL().split(',')[1];
+            console.log(e);
         }
     };
 
@@ -92,8 +92,8 @@ function bugReportApi(Report, CONFIG, $state, authentication, gettextCatalog, ne
      */
     const report = (form, screenshot) => {
         let promise;
-        if (form.attachScreenshot) {
-            promise = Report.uploadScreenshot(screenshot, form).then(send);
+        if (form.attachScreenshot && screenshot) {
+            promise = Report.uploadScreenshot(screenshot, form).then(send).catch(() => send(form));
         } else {
             promise = send(form);
         }
