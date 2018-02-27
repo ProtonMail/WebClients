@@ -95,6 +95,18 @@ function DomainsController(
         }
     });
 
+    $scope.goodSetup = ({ DomainName = '', VerifyState, Addresses = [], MxState, SpfState, DkimState, DmarcState }) => {
+        const domainDefined = DomainName.length;
+        const goodVerify = VerifyState === 2;
+        const hasAddress = Addresses.length;
+        const goodMx = MxState === 3;
+        const goodSpf = SpfState === 3;
+        const goodDkim = DkimState === 4;
+        const goodDmarc = DmarcState === 3;
+
+        return domainDefined && goodVerify && hasAddress && goodMx && goodSpf && goodDkim && goodDmarc;
+    };
+
     /**
      * Open modal process to add a custom domain.
      * @param {Object} domain
@@ -116,7 +128,7 @@ function DomainsController(
             $scope.addDomain();
         } else if (domain.VerifyState !== 2) {
             $scope.verification(domain);
-        } else if (domain.Addresses.length === 0) {
+        } else if (!domain.Addresses.length) {
             $scope.addAddresses(domain);
         } else if (domain.MxState !== 3) {
             $scope.mx(domain);
