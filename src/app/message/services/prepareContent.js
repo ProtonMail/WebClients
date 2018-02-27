@@ -58,7 +58,6 @@ function prepareContent($injector, transformAttachements, transformRemote, trans
 
         // For a draft we try to load embedded content if we can
         if (/^reply|forward/.test(action)) {
-            message.showEmbedded = true;
             transformEmbedded(body, message, { action });
         }
 

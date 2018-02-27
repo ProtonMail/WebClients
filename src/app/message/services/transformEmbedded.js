@@ -6,7 +6,8 @@ function transformEmbedded(CONSTANTS, embedded, $state, mailSettingsModel) {
     return (html, message, { action }) => {
         const images = [].slice.call(html.querySelectorAll('img[proton-src]'));
         const { ShowImages = 0 } = mailSettingsModel.get();
-        const show = message.showEmbedded === true || ShowImages & CONSTANTS.EMBEDDED;
+        const isReplyForward = /^reply|forward/.test(action);
+        const show = message.showEmbedded === true || ShowImages & CONSTANTS.EMBEDDED || isReplyForward;
         const isEoReply = $state.is('eo.reply');
 
         images.forEach((image) => {
@@ -27,7 +28,7 @@ function transformEmbedded(CONSTANTS, embedded, $state, mailSettingsModel) {
                 image.setAttribute('data-embedded-img', src);
 
                 // Auto load image inside a reply draft
-                if (/^reply|forward/.test(action)) {
+                if (isReplyForward) {
                     const url = embedded.getUrl(image);
                     image.src = url;
                     return;
