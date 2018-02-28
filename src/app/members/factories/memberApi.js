@@ -38,7 +38,7 @@ function memberApi($http, url, srp, gettextCatalog) {
     const authenticate = (memberID, params) => {
         return srp
             .performSRPRequest('POST', requestSrp(memberID, 'auth'), {}, params)
-            .then(({ data = {} }) => data.SessionToken)
+            .then(({ data = {} }) => data.UID)
             .catch((error) => {
                 throw new Error(error.error_description);
             });

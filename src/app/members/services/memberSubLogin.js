@@ -54,12 +54,12 @@ function memberSubLogin(
 
         const promise = memberModel
             .login(member, { Password, TwoFactorCode })
-            .then((SessionToken) => {
+            .then((UID) => {
                 const MailboxPassword = authentication.getPassword();
                 const cb = () => {
                     if (config.isReady) {
                         // Send the session token and the organization owner’s  mailbox password to the target URI
-                        child.postMessage({ SessionToken, MailboxPassword }, config.domain);
+                        child.postMessage({ UID, MailboxPassword }, config.domain);
                     } else {
                         _.delay(cb, 500);
                     }

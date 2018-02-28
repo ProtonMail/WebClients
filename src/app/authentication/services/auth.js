@@ -36,23 +36,14 @@ function authentication(
     const { PREMIUM } = ADDRESS_TYPE;
     const auth = {
         headersSet: false,
-        // These headers are used just once for the /cookies route, then we forget them and use cookies and x-pm-session header instead.
+        // The Authorization header is used just once for the /cookies route, then we forget it and use cookies instead.
         setAuthHeaders() {
             this.headersSet = true;
-            // API version
-            if (auth.data.SessionToken) {
-                // we have a session token, so we can remove the old stuff
-                $http.defaults.headers.common['x-pm-session'] = auth.data.SessionToken;
-                $http.defaults.headers.common.Authorization = undefined;
-                $http.defaults.headers.common['x-pm-uid'] = undefined;
-                secureSessionStorage.removeItem(OAUTH_KEY + ':AccessToken');
-                secureSessionStorage.removeItem(OAUTH_KEY + ':Uid');
-                secureSessionStorage.removeItem(OAUTH_KEY + ':RefreshToken');
-            } else {
-                // we need the old stuff for now
-                $http.defaults.headers.common['x-pm-session'] = undefined;
+            $http.defaults.headers.common['x-pm-uid'] = auth.data.UID;
+            if (auth.data.AccessToken) {
                 $http.defaults.headers.common.Authorization = 'Bearer ' + auth.data.AccessToken;
-                $http.defaults.headers.common['x-pm-uid'] = auth.data.Uid;
+            } else {
+                $http.defaults.headers.common.Authorization = undefined;
             }
         },
 
@@ -128,15 +119,10 @@ function authentication(
     };
 
     function saveAuthData(data) {
-        if (data.SessionToken) {
-            secureSessionStorage.setItem(OAUTH_KEY + ':SessionToken', pmcw.encode_base64(data.SessionToken));
-            auth.data = data;
-        } else {
-            secureSessionStorage.setItem(OAUTH_KEY + ':Uid', data.Uid);
-            secureSessionStorage.setItem(OAUTH_KEY + ':AccessToken', data.AccessToken);
-            secureSessionStorage.setItem(OAUTH_KEY + ':RefreshToken', data.RefreshToken);
-            auth.data = _.pick(data, 'Uid', 'AccessToken', 'RefreshToken');
-        }
+        $log.debug('saveAuthData', data);
+
+        secureSessionStorage.setItem(OAUTH_KEY + ':UID', data.UID);
+        auth.data = _.pick(data, 'UID', 'AccessToken', 'RefreshToken');
 
         auth.setAuthHeaders();
     }
@@ -159,15 +145,26 @@ function authentication(
         savePassword,
         receivedCredentials,
         detectAuthenticationState() {
+
+            const uid = secureSessionStorage.getItem(OAUTH_KEY + ':UID');
             const session = secureSessionStorage.getItem(OAUTH_KEY + ':SessionToken');
 
-            if (session) {
+            if (uid) {
                 auth.data = {
-                    SessionToken: pmcw.decode_base64(session)
+                    UID: uid
                 };
 
-                // If session token set, we probably have a refresh token, try to refresh
-                this.getRefreshCookie();
+                auth.setAuthHeaders();
+            } else if (session) {
+                auth.data = {
+                    UID: pmcw.decode_base64(session)
+                };
+
+                // Remove obsolete item
+                secureSessionStorage.setItem(OAUTH_KEY + ':UID', auth.data.UID);
+                secureSessionStorage.removeItem(OAUTH_KEY + ':SessionToken');
+
+                auth.setAuthHeaders();
             }
         },
 
@@ -265,30 +262,23 @@ function authentication(
             $log.debug('getRefreshCookie');
             return authApi.refresh({}).then((response) => {
                 $log.debug(response);
-                if (response.data.SessionToken !== undefined) {
-                    $log.debug('new token', response.data.SessionToken);
-                    $log.debug('before', $http.defaults.headers.common['x-pm-session']);
-                    $http.defaults.headers.common['x-pm-session'] = response.data.SessionToken;
-                    secureSessionStorage.setItem(OAUTH_KEY + ':SessionToken', pmcw.encode_base64(response.data.SessionToken));
-                    $log.debug('after', $http.defaults.headers.common['x-pm-session']);
 
-                    return response;
-                } else {
-                    return $q.reject(response.data.Error);
-                }
+                // Necessary during the transition to UIDs
+                saveAuthData(response.data);
+
+                return response;
             });
         },
 
         setAuthCookie(authResponse) {
             $log.debug('setAuthCookie');
 
-            return authApi
-                .cookies({
+            return authApi.cookies({
                     ResponseType: 'token',
                     ClientID: CONFIG.clientID,
                     GrantType: 'refresh_token',
                     RefreshToken: authResponse.RefreshToken,
-                    Uid: authResponse.Uid,
+                    Uid: authResponse.UID,
                     RedirectURI: 'https://protonmail.com',
                     State: this.randomString(24)
                 })
@@ -302,7 +292,7 @@ function authentication(
                         $log.debug('/auth/cookies2: resolved');
                         $log.debug('headers change', $http.defaults.headers);
 
-                        saveAuthData({ SessionToken: result.data.SessionToken });
+                        saveAuthData(result.data);
 
                         $rootScope.isLocked = false;
 
@@ -363,21 +353,19 @@ function authentication(
             return deferred.promise;
         },
 
-        sessionTokenIsDefined() {
-            let isDefined = false;
-
-            if (auth.data && typeof auth.data.SessionToken !== 'undefined' && auth.data.SessionToken !== 'undefined') {
-                isDefined = true;
+        existingSession() {
+            if (auth.data && auth.data.UID) {
+                return true;
             }
 
-            return isDefined;
+            return false;
         },
 
         // Whether a user is logged in at all
         isLoggedIn() {
-            const loggedIn = this.sessionTokenIsDefined();
+            const loggedIn = this.existingSession();
 
-            if (loggedIn === true && auth.headersSet === false) {
+            if (loggedIn && auth.headersSet === false) {
                 auth.setAuthHeaders();
             }
 
@@ -428,8 +416,8 @@ function authentication(
          * @param {Boolean} redirect - Redirect at the end the user to the login page
          */
         logout(redirect, callApi = true) {
-            const sessionToken = secureSessionStorage.getItem(OAUTH_KEY + ':SessionToken');
-            const uid = secureSessionStorage.getItem(OAUTH_KEY + ':Uid');
+
+            const uid = secureSessionStorage.getItem(OAUTH_KEY + ':UID');
             const process = () => {
                 this.clearData();
 
@@ -440,7 +428,7 @@ function authentication(
 
             $rootScope.loggingOut = true;
 
-            if (callApi && (angular.isDefined(sessionToken) || angular.isDefined(uid))) {
+            if (callApi && uid) {
                 authApi.revoke().then(process, process);
             } else {
                 process();
@@ -494,7 +482,7 @@ function authentication(
                             receivedCredentials({
                                 AccessToken: token,
                                 RefreshToken,
-                                Uid,
+                                UID: Uid,
                                 ExpiresIn,
                                 EventID
                             });

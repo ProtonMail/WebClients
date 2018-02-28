@@ -150,14 +150,11 @@ function LoginController(
                 // Remove listener
                 window.removeEventListener('message', login);
 
-                const sessionToken = event.data.SessionToken;
-                const adminPassword = event.data.MailboxPassword;
-
                 // Save password
-                authentication.savePassword(adminPassword);
+                authentication.savePassword(event.data.MailboxPassword);
 
                 // Continues loading up the app
-                authentication.saveAuthData({ SessionToken: sessionToken });
+                authentication.saveAuthData({ UID: event.data.UID });
 
                 $rootScope.isSecure = true;
                 $rootScope.isLoggedIn = true;

@@ -447,10 +447,16 @@ export default angular
                             return i18nLoader.localizeDate().then(() => authentication.user);
                         }
 
-                        if (angular.isDefined(secureSessionStorage.getItem(CONSTANTS.OAUTH_KEY + ':SessionToken'))) {
-                            $http.defaults.headers.common['x-pm-session'] = pmcw.decode_base64(
+                        const uid = secureSessionStorage.getItem(CONSTANTS.OAUTH_KEY + ':UID');
+
+                        if (uid) {
+                            $http.defaults.headers.common['x-pm-uid'] = uid;
+                        } else if (angular.isDefined(secureSessionStorage.getItem(CONSTANTS.OAUTH_KEY + ':SessionToken'))) {
+                            $http.defaults.headers.common['x-pm-uid'] = pmcw.decode_base64(
                                 secureSessionStorage.getItem(CONSTANTS.OAUTH_KEY + ':SessionToken') || ''
                             );
+                            secureSessionStorage.setItem(CONSTANTS.OAUTH_KEY + ':UID', $http.defaults.headers.common['x-pm-uid']);
+                            secureSessionStorage.removeItem(CONSTANTS.OAUTH_KEY + ':SessionToken');
                         }
 
                         return authentication.fetchUserInfo().then((data) => {
