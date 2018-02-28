@@ -1,3 +1,29 @@
+# [3.12.35] - 2018-02-28
+## Added
+- Add MERGE button in the preview contact modal
+- Increase the number of VPN connections for the Professional plan
+- Added option for reactivating contacts and email keys separately
+
+## Fixed
+- The purple marker was not scrolling the page up/down after you have opened a message
+- Hide the Wizard Button on the Domains tab if the setup is done
+- Report bug button is not working if screenshot is enabled for some browsers
+- Clicking reply on message removes the option to load inline images
+- ICS preview: opening msg with event overwrites all open previews in same conversation with same date
+- Edge: Back to mail button was not working
+- Unicode in events was not working
+- Number of users on the Professional plan not shown correctly after upgrade
+- Coupon code is still used from the current subscription if it exists
+- Download contact was not working with multiple names
+
+## Changed
+- Get the keys dynamically when reactivating them
+- Move merge button to the right in the preview contact modal
+- Hide the clear button if the placeholder photo is set
+- Clean photo placeholder
+- Add CLEAR photo button
+- Display an error message if the image upload fails
+
 # [3.12.34] - 2018-02-23
 
 ## Fixed
