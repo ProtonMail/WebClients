@@ -341,7 +341,7 @@ msgctxt "Action"
 msgid "Add Address"
 msgstr ""
 
-#: ./src/templates/filter/modal.tpl.html:118
+#: ./src/templates/filter/modal.tpl.html:119
 msgctxt "Action"
 msgid "Add Condition"
 msgstr ""
@@ -399,13 +399,13 @@ msgctxt "Action"
 msgid "Add filters"
 msgstr ""
 
-#: ./src/templates/filter/modal.tpl.html:185
+#: ./src/templates/filter/modal.tpl.html:184
 #: ./src/templates/views/labels.tpl.html:13
 msgctxt "Action"
 msgid "Add folder"
 msgstr ""
 
-#: ./src/templates/filter/modal.tpl.html:138
+#: ./src/templates/filter/modal.tpl.html:137
 #: ./src/templates/views/labels.tpl.html:14
 msgctxt "Action"
 msgid "Add label"
@@ -521,7 +521,7 @@ msgstr ""
 #: ./src/templates/dashboard/customProPlanModal.tpl.html:41
 #: ./src/templates/dashboard/customVpnModal.tpl.html:19
 #: ./src/templates/filter/filterAddressModal.tpl.html:34
-#: ./src/templates/filter/modal.tpl.html:216
+#: ./src/templates/filter/modal.tpl.html:215
 #: ./src/templates/modals/activateOrganization.tpl.html:24
 #: ./src/templates/modals/addAddress.tpl.html:58
 #: ./src/templates/modals/bug.tpl.html:112
@@ -1344,7 +1344,7 @@ msgstr ""
 #: ./src/templates/dashboard/customVpnModal.tpl.html:20
 #: ./src/templates/directives/composer/composer.tpl.html:128
 #: ./src/templates/filter/filterAddressModal.tpl.html:40
-#: ./src/templates/filter/modal.tpl.html:217
+#: ./src/templates/filter/modal.tpl.html:216
 #: ./src/templates/modals/addAddress.tpl.html:59
 #: ./src/templates/modals/changeOrganizationPassword.tpl.html:23
 #: ./src/templates/modals/changePassword.tpl.html:40
@@ -3112,7 +3112,7 @@ msgctxt "Error"
 msgid "Please enter at least one recipient."
 msgstr ""
 
-#: ./src/app/authentication/controllers/login.js:385
+#: ./src/app/authentication/controllers/login.js:382
 msgctxt "Error"
 msgid "Please enter your two-factor passcode"
 msgstr ""
@@ -3412,7 +3412,7 @@ msgctxt "Error"
 msgid "{{username}} is your username. To create {{username}}@pm.me, please go to Settings -> pm.me"
 msgstr ""
 
-#: ./src/app/attachments/services/attachmentApi.js:229
+#: ./src/app/attachments/services/attachmentApi.js:226
 msgctxt "Error delete attachment"
 msgid "Error during the remove request"
 msgstr ""
@@ -3538,40 +3538,34 @@ msgctxt "Filter message"
 msgid "Subject"
 msgstr ""
 
-#: ./src/templates/filter/modal.tpl.html:121
-msgctxt "Filter modal - If one of the conditions ..."
-msgid "of the conditions above apply, do the following actions."
-msgstr ""
-
-#: ./src/templates/filter/modal.tpl.html:121
-#: ./src/templates/filter/modal.tpl.html:47
+#: ./src/templates/filter/modal.tpl.html:48
 msgctxt "Filter modal condition"
 msgid "If"
 msgstr ""
 
-#: ./src/templates/filter/modal.tpl.html:126
+#: ./src/templates/filter/modal.tpl.html:125
 msgctxt "Filter modal label"
 msgid "Apply Labels"
 msgstr ""
 
-#: ./src/templates/filter/modal.tpl.html:191
+#: ./src/templates/filter/modal.tpl.html:190
 msgctxt "Filter modal label"
 msgid "Mark As"
 msgstr ""
 
-#: ./src/templates/filter/modal.tpl.html:144
+#: ./src/templates/filter/modal.tpl.html:143
 msgctxt "Filter modal label"
 msgid "Move To"
 msgstr ""
 
 #: ./src/app/filter/factories/filterModal.js:39
 msgctxt "Filter modal operators"
-msgid "all"
+msgid "AND"
 msgstr ""
 
 #: ./src/app/filter/factories/filterModal.js:40
 msgctxt "Filter modal operators"
-msgid "any"
+msgid "OR"
 msgstr ""
 
 #: ./src/templates/filter/modal.tpl.html:9
@@ -3604,7 +3598,7 @@ msgctxt "Filter modal type"
 msgid "the subject"
 msgstr ""
 
-#: ./src/templates/filter/modal.tpl.html:83
+#: ./src/templates/filter/modal.tpl.html:84
 msgctxt "Filter modal value OR value"
 msgid "or"
 msgstr ""
@@ -5614,7 +5608,7 @@ msgctxt "Label"
 msgid "Admin VPN Connections:"
 msgstr ""
 
-#: ./src/templates/filter/modal.tpl.html:159
+#: ./src/templates/filter/modal.tpl.html:158
 msgctxt "Label"
 msgid "Archive"
 msgstr ""
@@ -5767,7 +5761,7 @@ msgctxt "Label"
 msgid "Highest security"
 msgstr ""
 
-#: ./src/templates/filter/modal.tpl.html:152
+#: ./src/templates/filter/modal.tpl.html:151
 msgctxt "Label"
 msgid "Inbox"
 msgstr ""
@@ -5876,7 +5870,7 @@ msgctxt "Label"
 msgid "ProtonVPN Homepage"
 msgstr ""
 
-#: ./src/templates/filter/modal.tpl.html:198
+#: ./src/templates/filter/modal.tpl.html:197
 msgctxt "Label"
 msgid "Read"
 msgstr ""
@@ -5901,12 +5895,12 @@ msgctxt "Label"
 msgid "Signature"
 msgstr ""
 
-#: ./src/templates/filter/modal.tpl.html:166
+#: ./src/templates/filter/modal.tpl.html:165
 msgctxt "Label"
 msgid "Spam"
 msgstr ""
 
-#: ./src/templates/filter/modal.tpl.html:205
+#: ./src/templates/filter/modal.tpl.html:204
 msgctxt "Label"
 msgid "Starred"
 msgstr ""
@@ -5926,7 +5920,7 @@ msgctxt "Label"
 msgid "Time zone"
 msgstr ""
 
-#: ./src/templates/filter/modal.tpl.html:173
+#: ./src/templates/filter/modal.tpl.html:172
 msgctxt "Label"
 msgid "Trash"
 msgstr ""
@@ -6222,22 +6216,12 @@ msgctxt "List domains"
 msgid "Please add a custom domain before configuring addresses."
 msgstr ""
 
-#: ./src/templates/filter/modal.tpl.html:34
-msgctxt "Logic operator"
-msgid "and"
-msgstr ""
-
-#: ./src/templates/filter/modal.tpl.html:35
-msgctxt "Logic operator"
-msgid "or"
-msgstr ""
-
-#: ./src/app/authentication/controllers/login.js:347
+#: ./src/app/authentication/controllers/login.js:344
 msgctxt "Login error"
 msgid "Please enter your username and password"
 msgstr ""
 
-#: ./src/app/authentication/controllers/login.js:354
+#: ./src/app/authentication/controllers/login.js:351
 msgctxt "Login error"
 msgid "Your password is missing"
 msgstr ""
@@ -7177,7 +7161,7 @@ msgstr ""
 #. Table heading
 #. table heading
 #: ./src/templates/address/addressKeysView.tpl.html:40
-#: ./src/templates/filter/modal.tpl.html:123
+#: ./src/templates/filter/modal.tpl.html:122
 #: ./src/templates/modals/hotkey.tpl.html:73
 #: ./src/templates/views/domains.tpl.html:201
 #: ./src/templates/views/domains.tpl.html:52
@@ -8813,12 +8797,12 @@ msgctxt "Title"
 msgid "Welcome to your new encrypted email account"
 msgstr ""
 
-#: ./src/templates/filter/modal.tpl.html:60
+#: ./src/templates/filter/modal.tpl.html:61
 msgctxt "Title"
 msgid "With Attachments"
 msgstr ""
 
-#: ./src/templates/filter/modal.tpl.html:69
+#: ./src/templates/filter/modal.tpl.html:70
 msgctxt "Title"
 msgid "Without Attachments"
 msgstr ""
