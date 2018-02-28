@@ -48,9 +48,7 @@ function secureSessionStorage(CONSTANTS, webcrypto) {
     const whitelist = [
         CONSTANTS.MAILBOX_PASSWORD_KEY,
         CONSTANTS.OAUTH_KEY + ':SessionToken',
-        CONSTANTS.OAUTH_KEY + ':Uid',
-        CONSTANTS.OAUTH_KEY + ':AccessToken',
-        CONSTANTS.OAUTH_KEY + ':RefreshToken',
+        CONSTANTS.OAUTH_KEY + ':UID',
         'proton:decrypted_token',
         'proton:encrypted_password'
     ];
