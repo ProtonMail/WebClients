@@ -36,8 +36,8 @@ function filterModal(
             { label: gettextCatalog.getString('does not match', null, 'Condition for custom filter'), value: '!matches' }
         ],
         OPERATORS: [
-            { label: gettextCatalog.getString('all', null, 'Filter modal operators'), value: 'all' },
-            { label: gettextCatalog.getString('any', null, 'Filter modal operators'), value: 'any' }
+            { label: gettextCatalog.getString('AND', null, 'Filter modal operators'), value: 'all' },
+            { label: gettextCatalog.getString('OR', null, 'Filter modal operators'), value: 'any' }
         ],
         ERROR_PATTERN: gettextCatalog.getString('Text or pattern already included', null, 'Error'),
         FILTER_UPDATED_SUCCESS: gettextCatalog.getString('Filter updated', null, 'Notification'),
