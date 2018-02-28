@@ -31,8 +31,9 @@
 
                     <div class="filter-modal-conditions" ng-repeat="condition in ctrl.filter.Simple.Conditions">
                         <p class="filter-modal-simple-condition bold text-center" ng-hide="$index === 0">
-                            <span translate translate-context="Logic operator" ng-show="ctrl.filter.Simple.Operator.value === 'all'">and</span>
-                            <span translate translate-context="Logic operator" ng-show="ctrl.filter.Simple.Operator.value === 'any'">or</span>
+                            <span class="pm_select inline">
+                                <select ng-model="ctrl.filter.Simple.Operator" ng-options="operator.label for operator in ctrl.operators"></select><i class="fa fa-angle-down"></i>
+                            </span>
                         </p>
 
                         <div class="filter-modal-condition alert" style="position: relative;">
@@ -117,8 +118,6 @@
                     <p>
                         <a href="#" class="pm_button link" ng-click="ctrl.addCondition()" translate translate-context="Action">Add Condition</a>
                     </p>
-
-                    <p class="bold filter-modal-separator" ng-show="ctrl.displaySeparator()"><span translate-context="Filter modal condition" translate>If</span> <span class="pm_select inline"><select ng-model="ctrl.filter.Simple.Operator" ng-options="operator.label for operator in ctrl.operators"></select><i class="fa fa-angle-down"></i></span> <span translate-context="Filter modal - If one of the conditions ..." translate>of the conditions above apply, do the following actions.</span></p>
 
                     <legend translate-context="Title" translate translate-context="Title">Actions</legend>
                     <label>
