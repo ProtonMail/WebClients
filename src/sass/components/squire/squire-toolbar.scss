@@ -25,6 +25,7 @@
 [class*="squireToolbar-row"] {
     display: flex;
     align-items: center;
+    flex-wrap: wrap; // Wrap no matter the size, this will prevent the buttons from ever going outside the container
     flex: 1;
     min-height: $composerRowHeight; /* mobile devices */
     background-color: $tertiary;
@@ -256,7 +257,6 @@
 
 .squireToolbar-select {
     display: flex;
-    height: 100%;
     position: relative;
     min-height: $composerRowHeight; /* mobile devices */
     min-width: 50px;
@@ -509,4 +509,19 @@ $list: georgia arial helvetica menlo tahoma verdana times trebuchet;
     margin: 0 !important;
     width: 100% !important;
     padding: 0 0.5em !important;
+}
+
+
+@media (max-width: 440px) {
+    [class*="squireToolbar-action-"] {
+        width: 26px;
+        margin: 2px;
+    }
+    // Don't minimize the color and 2nd row button
+    .squireToolbar-action-color {
+        width: 42px;
+    }
+    .squireToolbar-action-options {
+        width: 36px;
+    }
 }
