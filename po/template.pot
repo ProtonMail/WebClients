@@ -230,7 +230,7 @@ msgid "<i class=\"fa fa-times composerHeader-btn-icon\"></i>"
 msgstr ""
 
 #: ./src/templates/contact/contactMerger.tpl.html:41
-#: ./src/templates/views/domains.tpl.html:123
+#: ./src/templates/views/domains.tpl.html:124
 msgctxt "Action"
 msgid "<i class=\"fa fa-trash-o\"></i>"
 msgstr ""
@@ -1591,7 +1591,7 @@ msgid "Upgrade storage"
 msgstr ""
 
 #. link to dashboard page
-#: ./src/templates/views/domains.tpl.html:163
+#: ./src/templates/views/domains.tpl.html:164
 #: ./src/templates/views/domains.tpl.html:29
 #: ./src/templates/views/members.tpl.html:121
 msgctxt "Action"
@@ -2584,7 +2584,7 @@ msgctxt "Discount displayed in the dashboard"
 msgid "Get 20% off when you get both ProtonMail and ProtonVPN"
 msgstr ""
 
-#: ./src/templates/views/domains.tpl.html:130
+#: ./src/templates/views/domains.tpl.html:131
 msgctxt "Domain status"
 msgid "Check your DNS settings."
 msgstr ""
@@ -2594,7 +2594,7 @@ msgctxt "Domains"
 msgid "Use your own domain with ProtonMail and use your own email address, e.g. yourname@yourdomain.com. To enable this feature, <a ui-sref=\"secured.dashboard({scroll: true})\">upgrade to ProtonMail Plus</a>."
 msgstr ""
 
-#: ./src/templates/views/domains.tpl.html:183
+#: ./src/templates/views/domains.tpl.html:184
 msgctxt "Domains information"
 msgid "Addresses must be disabled before they can be deleted. Addresses can only be deleted if all messages associated with that address are deleted."
 msgstr ""
@@ -2682,7 +2682,7 @@ msgid "Address creation failed"
 msgstr ""
 
 #: ./src/app/address/factories/addressModel.js:36
-#: ./src/app/settings/controllers/domains.js:320
+#: ./src/app/settings/controllers/domains.js:332
 msgctxt "Error"
 msgid "Administrator privileges must be activated"
 msgstr ""
@@ -3312,9 +3312,9 @@ msgctxt "Error"
 msgid "VPN request failed"
 msgstr ""
 
-#: ./src/app/settings/controllers/domains.js:255
-#: ./src/app/settings/controllers/domains.js:278
-#: ./src/app/settings/controllers/domains.js:426
+#: ./src/app/settings/controllers/domains.js:267
+#: ./src/app/settings/controllers/domains.js:290
+#: ./src/app/settings/controllers/domains.js:438
 msgctxt "Error"
 msgid "Verification did not succeed, please try again in an hour."
 msgstr ""
@@ -3324,7 +3324,7 @@ msgctxt "Error"
 msgid "Wait for attachment to finish uploading or cancel upload."
 msgstr ""
 
-#: ./src/app/settings/controllers/domains.js:260
+#: ./src/app/settings/controllers/domains.js:272
 msgctxt "Error"
 msgid "Wrong verification code. Please make sure you copied the verification code correctly and try again. It can take up to 24 hours for changes to take effect."
 msgstr ""
@@ -4187,7 +4187,7 @@ msgid "Are you sure you want to delete all your contacts?"
 msgstr ""
 
 #: ./src/app/address/factories/addressModel.js:48
-#: ./src/app/settings/controllers/domains.js:142
+#: ./src/app/settings/controllers/domains.js:154
 msgctxt "Info"
 msgid "Are you sure you want to delete this address?"
 msgstr ""
@@ -4921,7 +4921,7 @@ msgid ""
 "                Marking a message as not spam adds the address to the Whitelist."
 msgstr ""
 
-#: ./src/templates/views/domains.tpl.html:197
+#: ./src/templates/views/domains.tpl.html:198
 msgctxt "Info"
 msgid "Set a catch-all address for your domain."
 msgstr ""
@@ -6212,12 +6212,12 @@ msgctxt "Link for the custom vpn modal"
 msgid "Upgrade to ProtonVPN Plus"
 msgstr ""
 
-#: ./src/templates/views/domains.tpl.html:248
+#: ./src/templates/views/domains.tpl.html:249
 msgctxt "List domains"
 msgid "No custom domain found"
 msgstr ""
 
-#: ./src/templates/views/domains.tpl.html:250
+#: ./src/templates/views/domains.tpl.html:251
 msgctxt "List domains"
 msgid "Please add a custom domain before configuring addresses."
 msgstr ""
@@ -7013,7 +7013,7 @@ msgid_plural "Contacts deleted"
 msgstr[0] ""
 msgstr[1] ""
 
-#: ./src/app/settings/controllers/domains.js:218
+#: ./src/app/settings/controllers/domains.js:230
 msgctxt "Success"
 msgid "Domain created"
 msgstr ""
@@ -7179,7 +7179,7 @@ msgstr ""
 #: ./src/templates/address/addressKeysView.tpl.html:40
 #: ./src/templates/filter/modal.tpl.html:123
 #: ./src/templates/modals/hotkey.tpl.html:73
-#: ./src/templates/views/domains.tpl.html:200
+#: ./src/templates/views/domains.tpl.html:201
 #: ./src/templates/views/domains.tpl.html:52
 #: ./src/templates/views/invoices.tpl.html:20
 #: ./src/templates/views/invoices.tpl.html:50
@@ -7222,7 +7222,7 @@ msgstr ""
 #: ./src/templates/modals/domain/address.tpl.html:31
 #: ./src/templates/modals/generate.tpl.html:51
 #: ./src/templates/search/searchForm.tpl.html:107
-#: ./src/templates/views/domains.tpl.html:192
+#: ./src/templates/views/domains.tpl.html:193
 msgctxt "Title"
 msgid "Address"
 msgstr ""
@@ -7396,7 +7396,7 @@ msgid "CC"
 msgstr ""
 
 #. table heading for the domains page table listing of addresses
-#: ./src/templates/views/domains.tpl.html:195
+#: ./src/templates/views/domains.tpl.html:196
 msgctxt "Title"
 msgid "Catch-All"
 msgstr ""
@@ -7596,7 +7596,7 @@ msgctxt "Title"
 msgid "Custom Filters"
 msgstr ""
 
-#: ./src/templates/views/domains.tpl.html:154
+#: ./src/templates/views/domains.tpl.html:155
 msgctxt "Title"
 msgid "Custom domain"
 msgstr ""
@@ -7677,7 +7677,7 @@ msgctxt "Title"
 msgid "Delete all"
 msgstr ""
 
-#: ./src/app/settings/controllers/domains.js:141
+#: ./src/app/settings/controllers/domains.js:153
 msgctxt "Title"
 msgid "Delete domain"
 msgstr ""
@@ -8134,7 +8134,7 @@ msgstr ""
 #. table heading for the domains page table listing of addresses
 #: ./src/templates/contact/contactList.tpl.html:14
 #: ./src/templates/filter/modal.tpl.html:16
-#: ./src/templates/views/domains.tpl.html:191
+#: ./src/templates/views/domains.tpl.html:192
 #: ./src/templates/views/members.tpl.html:141
 msgctxt "Title"
 msgid "Name"
@@ -8610,7 +8610,7 @@ msgstr ""
 #. table heading for the domains page table listing of addresses
 #: ./src/templates/address/addressKeysView.tpl.html:39
 #: ./src/templates/modals/generate.tpl.html:52
-#: ./src/templates/views/domains.tpl.html:193
+#: ./src/templates/views/domains.tpl.html:194
 #: ./src/templates/views/payments.tpl.html:76
 msgctxt "Title"
 msgid "Status"
@@ -9286,12 +9286,12 @@ msgctxt "domains"
 msgid "'www' subdomains are typically not used for email. Are you sure you want to use this domain value?"
 msgstr ""
 
-#: ./src/templates/views/domains.tpl.html:147
+#: ./src/templates/views/domains.tpl.html:148
 msgctxt "domains list"
 msgid "Click on 'ADD CUSTOM DOMAIN' button to add a domain."
 msgstr ""
 
-#: ./src/templates/views/domains.tpl.html:145
+#: ./src/templates/views/domains.tpl.html:146
 msgctxt "domains list"
 msgid "No custom domain found"
 msgstr ""
@@ -9612,7 +9612,7 @@ msgstr ""
 msgid "By leaving now, you will lose what you have written in this email. You can save a draft if you want to come back to it later on."
 msgstr ""
 
-#: ./src/app/settings/controllers/domains.js:178
+#: ./src/app/settings/controllers/domains.js:190
 msgid "Catch-all address updated"
 msgstr ""
 
@@ -9694,7 +9694,7 @@ msgstr ""
 #. address state badge
 #. form option
 #: ./src/templates/views/account.tpl.html:199
-#: ./src/templates/views/domains.tpl.html:211
+#: ./src/templates/views/domains.tpl.html:212
 #: ./src/templates/views/members.tpl.html:253
 msgid "Disabled"
 msgstr ""
@@ -9707,11 +9707,11 @@ msgstr ""
 msgid "Do not require exact match"
 msgstr ""
 
-#: ./src/app/settings/controllers/domains.js:148
+#: ./src/app/settings/controllers/domains.js:160
 msgid "Domain deleted"
 msgstr ""
 
-#: ./src/app/settings/controllers/domains.js:271
+#: ./src/app/settings/controllers/domains.js:283
 msgid "Domain verified"
 msgstr ""
 
@@ -9739,7 +9739,7 @@ msgstr ""
 #. address state badge
 #. form option
 #: ./src/templates/views/account.tpl.html:193
-#: ./src/templates/views/domains.tpl.html:210
+#: ./src/templates/views/domains.tpl.html:211
 #: ./src/templates/views/members.tpl.html:252
 msgid "Enabled"
 msgstr ""
@@ -9896,7 +9896,7 @@ msgid "Message sent"
 msgstr ""
 
 #. address state badge
-#: ./src/templates/views/domains.tpl.html:212
+#: ./src/templates/views/domains.tpl.html:213
 #: ./src/templates/views/members.tpl.html:254
 msgid "Missing keys"
 msgstr ""
@@ -10107,7 +10107,7 @@ msgstr ""
 msgid "Test notification"
 msgstr ""
 
-#: ./src/app/settings/controllers/domains.js:168
+#: ./src/app/settings/controllers/domains.js:180
 msgid "This feature is only available for ProtonMail Professional plans or higher"
 msgstr ""
 
@@ -10140,7 +10140,7 @@ msgid "addresses"
 msgstr ""
 
 #. how many addresses are in use
-#: ./src/templates/views/domains.tpl.html:161
+#: ./src/templates/views/domains.tpl.html:162
 #: ./src/templates/views/members.tpl.html:120
 msgid "addresses used."
 msgstr ""
