@@ -1,3 +1,11 @@
+# [3.12.36] - 2018-02-28
+## Changed
+- Authentication review (SessionToken / UID)
+- Filter modal UX improvement
+
+## Fixed
+- Composer dropdown for the content format is not showing properly on mobile
+
 # [3.12.35] - 2018-02-28
 ## Added
 - Add MERGE button in the preview contact modal
