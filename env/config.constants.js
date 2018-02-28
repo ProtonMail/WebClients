@@ -26,14 +26,14 @@ const API_TARGETS = {
 };
 
 const PROD_STAT_MACHINE = {
-    isEnabled: true,
+    isEnabled: false,
     statsHost: 'stats.protonmail.ch',
     domains: ['*.protonmail.com', '*.mail.protonmail.com'],
     cookieDomain: '*.protonmail.com'
 };
 
 const HOST_STAT_MACHINE = {
-    isEnabled: true,
+    isEnabled: false,
     statsHost: 'stats.protonmail.host',
     domains: ['*.protonmail.host', '*.mail.protonmail.host'],
     cookieDomain: '*.protonmail.host'
