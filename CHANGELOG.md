@@ -1,3 +1,8 @@
+# [3.12.37] - 2018-03-01
+## Changed
+- Allow member to login and setup their account
+- Call unsubscribe properly
+
 # [3.12.36] - 2018-02-28
 ## Changed
 - Authentication review (SessionToken / UID)
