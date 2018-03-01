@@ -40,8 +40,7 @@ function settingsMenu(authentication, backState, CONSTANTS, networkActivityTrack
             $back.on('click', onClick);
 
             scope.$on('$destroy', () => {
-                unsubscribe.forEach((cb) => cb());
-                unsubscribe.length = 0;
+                unsubscribe();
                 $back.off('click', onClick);
             });
         }
