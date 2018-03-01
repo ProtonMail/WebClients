@@ -5,13 +5,6 @@ function bugReportModel($rootScope, bugReportApi, bugModal) {
         type === 'new' && open(data);
     });
 
-    const takeScreenshot = ({ attachScreenshot }) => {
-        if (attachScreenshot) {
-            return bugReportApi.takeScreenshot();
-        }
-        return Promise.resolve();
-    };
-
     /**
      * Generate the configuration for the modal
      * @param  {String} screenshot screenshot of the page
@@ -21,10 +14,10 @@ function bugReportModel($rootScope, bugReportApi, bugModal) {
         params: {
             form: bugReportApi.getForm(),
             content,
-            submit(data) {
-                const form = angular.copy(data);
+            submit: async function (data) {
                 bugModal.deactivate();
-                takeScreenshot(form).then((screenshot) => bugReportApi.report(form, screenshot));
+                const formData = await bugReportApi.toFormData(data);
+                bugReportApi.report(formData);
             },
             cancel() {
                 bugModal.deactivate();

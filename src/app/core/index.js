@@ -5,6 +5,7 @@ import SignupController from './controllers/signup';
 import SupportController from './controllers/support';
 import hideUpgrade from './directives/hideUpgrade';
 import placeholderProgress from './directives/placeholderProgress';
+import bugModalView from './directives/bugModalView';
 import formatResponseInterceptor from './interceptors/formatResponseInterceptor';
 import alertModal from './factories/alertModal';
 import browserFingerprint from './factories/browserFingerprint';
@@ -43,6 +44,7 @@ export default angular
     .controller('SupportController', SupportController)
     .directive('hideUpgrade', hideUpgrade)
     .directive('placeholderProgress', placeholderProgress)
+    .directive('bugModalView', bugModalView)
     .factory('formatResponseInterceptor', formatResponseInterceptor)
     .factory('alertModal', alertModal)
     .factory('browserFingerprint', browserFingerprint)

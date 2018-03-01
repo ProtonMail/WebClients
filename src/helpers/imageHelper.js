@@ -53,7 +53,7 @@ export const resizeImage = (original, maxSize, finalMimeType = 'image/jpeg', enc
  * @param  {String} filename
  * @return {Object}
  */
-export const base64toFile = (base64str, filename = 'file') => {
+export const toFile = (base64str, filename = 'file') => {
     const arr = base64str.split(',');
     const mime = arr[0].match(/:(.*?);/)[1];
     const bstr = atob(arr[1]);
@@ -79,7 +79,7 @@ export const downSize = (base64str, maxSize, mimeType = 'image/jpeg', encoderOpt
     const process = (source, max) => {
         return resizeImage(source, max, mimeType, encoderOptions)
             .then((resized) => {
-                const { size } = base64toFile(resized);
+                const { size } = toFile(resized);
 
                 if (size <= maxSize) {
                     return resized;

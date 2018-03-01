@@ -1,127 +1,26 @@
-<div class="pm_modal {{ctrl.class}}" role="dialog" style="display: block;" id="bugModal">
-    <form class="modal-dialog pm_form" novalidate name="bugModalForm">
+<div class="pm_modal {{ctrl.class}}" role="dialog" style="display: block;">
+    <form class="modal-dialog pm_form bugModalForm" ng-submit="bugModalForm.$valid && ctrl.submit()" name="bugModalForm" novalidate>
         <button type="button" ng-click="ctrl.cancel()" title-translate="Close" title-translate-context="Action" class="fa fa-times close"></button>
         <div class="modal-content">
             <div class="modal-header">
                 <h3 class="modal-title" translate translate-context="Title">Report Bug</h3>
             </div>
-            <div class="modal-body pm_form">
-                <p class="alert alert-info" translate translate-context="Info">
-                    <i class="fa fa-info-circle"></i> Refreshing the page or <a href="https://protonmail.com/support/knowledge-base/how-to-clean-cache-and-cookies/" target="_blank">clearing your browser cache</a> will automatically resolve most issues.
-                </p>
-                <div class="pm_grid">
-                    <div class="col-1-4">
-                        <label for="bug_os" translate translate-context="Title">Operating system</label>
-                    </div>
-                    <div class="col-1-4">
-                        <input
-                            type="text"
-                            placeholder-translate="OS Name"
-                            name="bug_os"
-                            id="bug_os"
-                            ng-model="ctrl.form.OS">
-                    </div>
-                    <div class="col-1-4">
-                        <label for="bug_os_version" translate translate-context="Title">OS version</label>
-                    </div>
-                    <div class="col-1-4">
-                        <input placeholder-translate="OS version" type="text" id="bug_os_version" ng-model="ctrl.form.OSVersion"/>
-                    </div>
-                </div>
-                <div class="pm_grid">
-                    <div class="col-1-4">
-                        <label for="bug_browser" translate translate-context="bug report modal label">Browser</label>
-                    </div>
-                    <div class="col-1-4">
-                        <input type="text" name="bug_browser" id="bug_browser" placeholder-translate="Browser" ng-model="ctrl.form.Browser" />
-                    </div>
-                    <div class="col-1-4">
-                        <label for="bug_browser_version" translate translate-context="bug report modal label">Browser version</label>
-                    </div>
-                    <div class="col-1-4">
-                        <input
-                            type="text"
-                            name="bug_browser_version"
-                            id="bug_browser_version"
-                            placeholder-translate="Browser version"
-                            placeholder-translate-context="bug report modal"
-                            ng-model="ctrl.form.BrowserVersion" />
-                    </div>
-                </div>
-                <div class="pm_grid">
-                    <div class="col-1-4">
-                        <label for="bugEmail" translate translate-context="bug report modal label">Email address</label>
-                    </div>
-                    <div class="col-3-4 ng-message-wrapper">
-                        <input
-                            type="email"
-                            required
-                            name="bugEmail"
-                            id="bugEmail"
-                            data-validator-typo-email
-                            placeholder-translate-context="bug report modal"
-                            placeholder-translate="Please make sure to give us a way to contact you"
-                            ng-model="ctrl.form.Email">
-
-                        <div ng-messages="bugModalForm.bugEmail.$error" role="alert">
-                            <div class="ng-messages-errors">
-                                <p ng-message="required" translate-context="Error" translate>You must set an email</p>
-                                <p ng-message="email" translate-context="Error" translate>Invalid email</p>
-                            </div>
-                            <div class="ng-messages-warning">
-                                <p ng-message-warning="typo-email" translate-context="Error" translate>Are you sure your email address is correct ?</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="pm_grid">
-                    <div class="col-1-4">
-                        <label for="bug_description" translate translate-context="bug report modal label">What happened?</label>
-                    </div>
-                    <div class="col-3-4 ng-message-wrapper">
-                        <textarea
-                            ng-model="ctrl.form.Description"
-                            required
-                            name="bug_description"
-                            rows="6"
-                            id="bug_description"
-                            placeholder-translate-context="bug report modal description"
-                            placeholder-translate="Please describe the problem and include any error messages"></textarea>
-
-                        <div ng-messages="bugModalForm.bug_description.$error" role="alert">
-                            <div class="ng-messages-errors">
-                                <p ng-message="required" translate-context="Error" translate>Add a description to help us improve ProtonMail</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="pm_grid">
-                    <div class="col-1-4">
-                        <label translate translate-context="Title" translate-comment="but report form heading label">Attach screenshot</label>
-                    </div>
-                    <div class="col-3-4">
-                        <toggle status="ctrl.form.attachScreenshot" on-translate="Yes" off-translate="No" ng-click="ctrl.form.attachScreenshot = !ctrl.form.attachScreenshot"></toggle>
-                        <p class="alert alert-info" ng-if="ctrl.form.attachScreenshot" translate-context="Info" translate-comment="Explain privacy issues for using img.ur to do screenshot uploading" translate>A screenshot of your current page will be sent to us automatically, so we can help debug your problem! Screenshots are hosted using a 3rd party, public service [imgur].</p>
-                        <p translate translate-context="Info">Bug reports are not end-to-end encrypted, please do not send any sensitive information.</p>
-                        <p class="alert alert-info text-center" translate translate-context="Info">Contact us at <a href='mailto:security@protonmail.com'>security@protonmail.com</a> for critical security issues.</p>
-                    </div>
-                </div>
+            <div class="modal-body">
+                <bug-modal-view data-form="bugModalForm" data-model="ctrl.form"></bug-modal-view>
             </div>
         </div>
         <div class="modal-footer text-right">
-            <a
+            <button
                 id="cancelModalBtn"
+                type="button"
                 class="pm_button pull-left"
                 ng-click="ctrl.cancel()"
-                translate
-                translate-context="Action">Cancel</a>
+                translate-context="Action" translate>Cancel</button>
             <button
                 id="confirmModalBtn"
                 class="pm_button primary"
                 ng-disabled="networkActivity.loading()"
-                ng-click="bugModalForm.$valid && ctrl.submit()"
-                translate
-                translate-context="Action">Submit</button>
+                translate-context="Action" translate>Submit</button>
         </div>
     </form>
     <div class="modal-overlay"></div>

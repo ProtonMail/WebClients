@@ -32,6 +32,7 @@ export const PM_SIGNATURE = 'Sent with <a href="https://protonmail.com" target="
 
 
 export const CONSTANTS = {
+    MAX_SIZE_SCREENSHOT: 500 * 1000,
     CLIENT_TYPE: 1,
     BLACK_FRIDAY_INTERVAL: 10 * 60 * 1000,
     REMOTE: 1,

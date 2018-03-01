@@ -1,10 +1,12 @@
 import _ from 'lodash';
 import { CONSTANTS } from '../../constants';
 import { getOS, getBrowser, getDevice } from '../../../helpers/browser';
+import { toBase64 } from '../../../helpers/fileHelper';
+import { downSize, toFile } from '../../../helpers/imageHelper';
 
 /* @ngInject */
 function bugReportApi(Report, CONFIG, $state, authentication, gettextCatalog, networkActivityTracker, notification) {
-    const { ROW_MODE, COLUMN_MODE, MESSAGE_VIEW_MODE, CONVERSATION_VIEW_MODE, CLIENT_TYPE } = CONSTANTS;
+    const { ROW_MODE, COLUMN_MODE, MESSAGE_VIEW_MODE, CONVERSATION_VIEW_MODE, CLIENT_TYPE, MAX_SIZE_SCREENSHOT } = CONSTANTS;
     const MAP_MODE = {
         layout: {
             [ROW_MODE]: 'row',
@@ -51,27 +53,37 @@ function bugReportApi(Report, CONFIG, $state, authentication, gettextCatalog, ne
             Title: `[Angular] Bug [${$state.$current.name}]`,
             Description: '',
             Username: Name,
-            Email,
-            attachScreenshot: false
+            Email
         });
     };
 
-    /**
-     * Take a screenshot of the current state when we open the modal
-     * @return {Promise}   resolve data is the image as a base64 string
-     */
-    const takeScreenshot = async () => {
+    const toFormData = (parameters = {}) => {
+        const formData = new FormData();
+        const resize = (file) => toBase64(file).then((base64str) => downSize(base64str, MAX_SIZE_SCREENSHOT, file.type));
+        const promises = _.reduce(parameters, (acc, value, key) => {
+            if (value instanceof FileList) {
+                // NOTE FileList instanceof Array => false
+                for (let i = 0; i < value.length; i++) {
+                    const file = value[i];
+                    const promise = resize(file)
+                        .then((base64str) => {
+                            formData.append(file.name, toFile(base64str, file.name), file.name);
+                        });
 
-        if (!window.html2canvas) {
-            return;
-        }
+                    acc.push(promise);
+                }
 
-        try {
-            const canvas = await window.html2canvas(document.body, { logging: CONFIG.debug });
-            return canvas.toDataURL('image/jpeg', 0.9).split(',')[1];
-        } catch (e) {
-            console.log(e);
-        }
+                return acc;
+            }
+
+            value && formData.append(key, value);
+
+            return acc;
+        }, []);
+
+        return Promise.all(promises)
+            .then(() => formData)
+            .catch(() => formData);
     };
 
     /**
@@ -90,13 +102,8 @@ function bugReportApi(Report, CONFIG, $state, authentication, gettextCatalog, ne
      * @param  {String} screenshot Screenshot as a base64
      * @return {Promise}
      */
-    const report = (form, screenshot) => {
-        let promise;
-        if (form.attachScreenshot && screenshot) {
-            promise = Report.uploadScreenshot(screenshot, form).then(send).catch(() => send(form));
-        } else {
-            promise = send(form);
-        }
+    const report = (form) => {
+        const promise = send(form);
         networkActivityTracker.track(promise);
         return promise;
     };
@@ -108,6 +115,6 @@ function bugReportApi(Report, CONFIG, $state, authentication, gettextCatalog, ne
         return Report.crash(crashData).catch(angular.noop);
     };
 
-    return { getForm, takeScreenshot, report, getClient, crash };
+    return { getForm, report, getClient, crash, toFormData };
 }
 export default bugReportApi;
