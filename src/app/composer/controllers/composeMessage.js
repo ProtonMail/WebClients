@@ -387,7 +387,12 @@ function ComposeMessageController(
      * Delay the saving
      * @param {Object} message
      */
-    $scope.saveLater = (message) => !message.sending && postMessage(message, { autosaving: true, loader: false });
+    $scope.saveLater = (message) => {
+        if (message.sending || message.discardDontAutoSave) {
+            return;
+        }
+        postMessage(message, { autosaving: true, loader: false });
+    };
 
     $scope.save = (message, notification = false, autosaving = false) => {
         const msg = messageModel(message);
@@ -567,16 +572,26 @@ function ComposeMessageController(
         const title = gettextCatalog.getString('Delete', null);
         const question = gettextCatalog.getString('Permanently delete this draft?', null);
 
+        /**
+         * When the confirm modal is opened, a draft can still be saved.
+         * That can cause race conditions when the user wants to delete the message.
+         * Set a variable on the message to prevent the auto saving from happening when this modal is opened.
+         */
+        message.discardDontAutoSave = true;
+
         confirmModal.activate({
             params: {
                 title,
                 message: question,
                 confirm() {
                     $scope.openCloseModal(message, true);
+                    // Delete it after the close message has run to be sure the save is not triggered.
+                    delete message.discardDontAutoSave;
                     notification.success(gettextCatalog.getString('Message discarded', null));
                     confirmModal.deactivate();
                 },
                 cancel() {
+                    delete message.discardDontAutoSave;
                     confirmModal.deactivate();
                 }
             }

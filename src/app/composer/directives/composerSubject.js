@@ -37,7 +37,11 @@ const composerSubject = (editorModel) => ({
             }
         }, 150);
 
-        const onBlur = () => {
+        const onBlur = ({ relatedTarget }) => {
+            // If the target that gained focus was the discard button, don't save the draft.
+            if (relatedTarget && relatedTarget.classList.contains('composer-btn-discard')) {
+                return;
+            }
             scope.$applyAsync(() => scope.saveLater(scope.message));
         };
 
