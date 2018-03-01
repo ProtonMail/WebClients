@@ -9,11 +9,10 @@ function bugModal(pmModal) {
         controller: function(params) {
             this.form = {
                 ...params.form,
-                Description: `${params.form.Description || ''}\n\n\n ${params.content || ''}`
+                Description: `${params.form.Description || ''}\n\n\n ${params.content || ''}`.trim()
             };
 
-            this.form.attachScreenshot = false; // Do not attach screenshot by default
-            this.submit = () => (params.submit || _.noop)(this.form);
+            this.submit = () => params.submit(this.form);
             this.cancel = params.cancel;
         }
     });

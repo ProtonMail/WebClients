@@ -1,0 +1,107 @@
+<div class="bugModalView-container pm_form">
+    <p class="alert alert-info" translate translate-context="Info">
+        <i class="fa fa-info-circle"></i> Refreshing the page or <a href="https://protonmail.com/support/knowledge-base/how-to-clean-cache-and-cookies/" target="_blank">clearing your browser cache</a> will automatically resolve most issues.
+    </p>
+    <div class="pm_grid">
+        <div class="col-1-4">
+            <label for="bug_os" translate translate-context="Title">Operating system</label>
+        </div>
+        <div class="col-1-4">
+            <input
+                type="text"
+                placeholder-translate="OS Name"
+                name="bug_os"
+                id="bug_os"
+                ng-model="model.OS">
+        </div>
+        <div class="col-1-4">
+            <label for="bug_os_version" translate translate-context="Title">OS version</label>
+        </div>
+        <div class="col-1-4">
+            <input placeholder-translate="OS version" type="text" id="bug_os_version" ng-model="model.OSVersion"/>
+        </div>
+    </div>
+    <div class="pm_grid">
+        <div class="col-1-4">
+            <label for="bug_browser" translate translate-context="bug report modal label">Browser</label>
+        </div>
+        <div class="col-1-4">
+            <input type="text" name="bug_browser" id="bug_browser" placeholder-translate="Browser" ng-model="model.Browser" />
+        </div>
+        <div class="col-1-4">
+            <label for="bug_browser_version" translate translate-context="bug report modal label">Browser version</label>
+        </div>
+        <div class="col-1-4">
+            <input
+                type="text"
+                name="bug_browser_version"
+                id="bug_browser_version"
+                placeholder-translate="Browser version"
+                placeholder-translate-context="bug report modal"
+                ng-model="model.BrowserVersion" />
+        </div>
+    </div>
+    <div class="pm_grid">
+        <div class="col-1-4">
+            <label for="bugEmail" translate translate-context="bug report modal label">Email address</label>
+        </div>
+        <div class="col-3-4 ng-message-wrapper">
+            <input
+                type="email"
+                required
+                name="bugEmail"
+                id="bugEmail"
+                data-validator-typo-email
+                placeholder-translate-context="bug report modal"
+                placeholder-translate="Please make sure to give us a way to contact you"
+                ng-model="model.Email">
+
+            <div ng-messages="form.bugEmail.$error" role="alert">
+                <div class="ng-messages-errors">
+                    <p ng-message="required" translate-context="Error" translate>You must set an email</p>
+                    <p ng-message="email" translate-context="Error" translate>Invalid email</p>
+                </div>
+                <div class="ng-messages-warning">
+                    <p ng-message-warning="typo-email" translate-context="Error" translate>Are you sure your email address is correct ?</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="pm_grid">
+        <div class="col-1-4">
+            <label for="bug_description" translate translate-context="bug report modal label">What happened?</label>
+        </div>
+        <div class="col-3-4 ng-message-wrapper">
+            <textarea
+                ng-model="model.Description"
+                required
+                name="bug_description"
+                rows="6"
+                id="bug_description"
+                placeholder-translate-context="bug report modal description"
+                placeholder-translate="Please describe the problem and include any error messages"></textarea>
+
+            <div ng-messages="form.bug_description.$error" role="alert">
+                <div class="ng-messages-errors">
+                    <p ng-message="required" translate-context="Error" translate>Add a description to help us improve ProtonMail</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="pm_grid">
+        <div class="col-1-4">
+            <label translate translate-context="Title" translate-comment="but report form heading label">Attach screenshot</label>
+        </div>
+        <div class="col-3-4">
+            <label class="bugModalView-input-label" for="bugModalView-upload" translate-context="Action" translate>Add screenshots</label>
+            <input type="file" multiple accept="image/*" class="bugModalView-input-file" id="bugModalView-upload">
+            <a class="pm_button link bugModalView-upload-info" href="" target="_blank" translate-context="Link" translate>Learn more</a>
+            <p class="bugModalView-upload-success">
+                <i class="fa fa-image"></i> <span class="bugModalView-upload-success-message" translate-context="Success message" translate>Screenshot(s) attached</span>
+                <button class="pm_button bugModalView-clear-upload" type="button" translate-context="Action" translate>Clear</button>
+            </p>
+            <p class="help" translate translate-context="Info">Bug reports are not end-to-end encrypted, please do not send any sensitive information.</p>
+            <p class="alert alert-info" translate translate-context="Info">Contact us at <a href='mailto:security@protonmail.com'>security@protonmail.com</a> for critical security issues.</p>
+        </div>
+    </div>
+</div>

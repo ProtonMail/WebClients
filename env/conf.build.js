@@ -18,7 +18,6 @@ module.exports = {
             'angular-sanitize/angular-sanitize.js',
             'angular-notify/dist/angular-notify.js',
             'oclazyload/dist/ocLazyLoad.js',
-            'html2canvas/dist/html2canvas.js',
             'svg4everybody/dist/svg4everybody.js',
             'angular-messages/angular-messages.js',
             'mousetrap/mousetrap.js',
