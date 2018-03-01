@@ -74,10 +74,10 @@ export function createMessage({ Addresses = [] } = {}, { RE_PREFIX, FW_PREFIX } 
     /**
      * Format and build a reply
      * @param  {Message} newMsg          New message to build
-     * @param  {String} options.Subject from the current message
-     * @param  {String} options.ToList  from the current message
-     * @param  {String} options.ReplyTo from the current message
-     * @param  {Number} options.Type    from the current message
+     * @param  {String} Subject          from the current message
+     * @param  {String} ToList           from the current message
+     * @param  {Array} ReplyTos          from the current message
+     * @param  {Number} Type             from the current message
      */
     function reply(newMsg, origin = {}) {
         newMsg.Action = REPLY;
@@ -86,21 +86,21 @@ export function createMessage({ Addresses = [] } = {}, { RE_PREFIX, FW_PREFIX } 
         if (origin.Type === 2 || origin.Type === 3) {
             newMsg.ToList = origin.ToList;
         } else {
-            newMsg.ToList = [origin.ReplyTo];
+            newMsg.ToList = origin.ReplyTos;
         }
     }
 
     /**
      * Format and build a replyAll
      * @param  {Message} newMsg          New message to build
-     * @param  {String} options.Subject from the current message
-     * @param  {String} options.ToList  from the current message
-     * @param  {String} options.CCList  from the current message
-     * @param  {String} options.BCCList from the current message
-     * @param  {String} options.ReplyTo from the current message
-     * @param  {Number} options.Type    from the current message
+     * @param  {String} Subject          from the current message
+     * @param  {String} ToList           from the current message
+     * @param  {String} CCList           from the current message
+     * @param  {String} BCCList          from the current message
+     * @param  {Array} ReplyTos          from the current message
+     * @param  {Number} Type             from the current message
      */
-    function replyAll(newMsg, { Subject, Type, ToList, ReplyTo, CCList, BCCList } = {}) {
+    function replyAll(newMsg, { Subject, Type, ToList, ReplyTos, CCList, BCCList } = {}) {
         newMsg.Action = REPLY_ALL;
         newMsg.Subject = formatSubject(Subject, RE_PREFIX);
 
@@ -109,7 +109,7 @@ export function createMessage({ Addresses = [] } = {}, { RE_PREFIX, FW_PREFIX } 
             newMsg.CCList = CCList;
             newMsg.BCCList = BCCList;
         } else {
-            newMsg.ToList = [ReplyTo];
+            newMsg.ToList = ReplyTos;
             newMsg.CCList = _.union(ToList, CCList);
 
             // Remove user address in CCList and ToList
