@@ -130,7 +130,7 @@
                             <label class="filter-modal-label">
                                 <custom-checkbox data-custom-ng-model="label.Selected"></custom-checkbox>
                                 <i class="fa" ng-class="{ 'fa-folder': label.Exclusive, 'fa-tag': !label.Exclusive }" ng-style="{color: label.Color}"></i>
-                                <span class="ellipsis" ng-bind="label.Name">{{ label.Name }}</span>
+                                <span class="ellipsis" title="{{ ::label.Name }}">{{ ::label.Name }}</span>
                             </label>
                         </div>
                         <div class="col-1-4 filter-modal-label-add">
@@ -176,7 +176,7 @@
                         <div class="col-1-4" ng-repeat="folder in ctrl.folders track by folder.ID">
                             <label>
                                 <custom-radio data-custom-ng-model="ctrl.filter.Simple.Actions.Move" data-custom-value="{{ ::folder.Name }}"></custom-radio>
-                                <span class="ellipsis">{{ ::folder.Name }}</span>
+                                <span class="ellipsis" title="{{ ::folder.Name }}">{{ ::folder.Name }}</span>
                             </label>
                         </div>
 
