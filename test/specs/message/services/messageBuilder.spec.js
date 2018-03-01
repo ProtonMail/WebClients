@@ -190,7 +190,7 @@ describe('Create type of message', () => {
         const message = {
             Subject: 'monique',
             ToList: ['yolo@pt.com'],
-            ReplyTo: 'jeanne@pt.com'
+            ReplyTos: ['jeanne@pt.com']
         };
 
         describe('Type != 2||3', () => {
@@ -254,7 +254,7 @@ describe('Create type of message', () => {
             ToList: [{ Address: 'yolo@pt.com' }],
             CCList: [{ Address: 'yoloCC@pt.com' }],
             BCCList: ['yoloBCC@pt.com'],
-            ReplyTo: 'jeanne@pt.com'
+            ReplyTos: ['jeanne@pt.com']
         };
 
         describe('Type !== 2||3', () => {
@@ -320,7 +320,7 @@ describe('Create type of message', () => {
             ToList: ['yolo@pt.com'],
             CCList: ['yoloCC@pt.com'],
             BCCList: ['yoloBCC@pt.com'],
-            ReplyTo: 'jeanne@pt.com'
+            ReplyTos: ['jeanne@pt.com']
         };
 
         describe('Empty ToList', () => {
@@ -759,7 +759,7 @@ Est-ce que tu vas bien ?
                 Subject: 'Re: polo',
                 MIMEType: 'text/plain',
                 ToList: [],
-                ReplyTo: 'monique',
+                ReplyTos: ['monique'],
                 CCList: ['bobby'],
                 BCCList: ['bobette'],
                 Sender: {
@@ -1043,7 +1043,7 @@ Est-ce que tu vas bien ?
             currentMessageExtension: {
                 ID: Date.now(),
                 Subject: 'polo',
-                ReplyTo: 'monique',
+                ReplyTos: ['monique'],
                 ToList: [],
                 CCList: [
                     {
