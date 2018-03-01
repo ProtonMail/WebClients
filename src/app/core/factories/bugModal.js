@@ -1,5 +1,3 @@
-import _ from 'lodash';
-
 /* @ngInject */
 function bugModal(pmModal) {
     return pmModal({
