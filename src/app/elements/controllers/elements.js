@@ -266,18 +266,17 @@ function ElementsController(
         });
 
         $scope.$on('move', (e, mailbox) => {
-            const isColumnsMode = mailSettingsModel.get('ViewLayout') === CONSTANTS.COLUMN_MODE;
             const idDefined = $scope.idDefined();
-            const isScope = isColumnsMode && (!idDefined || (idDefined && $rootScope.numberElementChecked > 0));
+            const isScope = (!idDefined || (idDefined && $rootScope.numberElementChecked > 0));
             /**
              * Move item only when nothing is opened
-             * or we have a selection (mode column)
+             * and we have a selection
              * -> Prevent x2 move with marked item by conversation component
              *
              * Hack: defer to prevent children to check an empty value...
              * @todo  we need to KILL this controller and rfr
              */
-            if (!isOpened || isScope) {
+            if (!isOpened && isScope) {
                 e.preventDefault();
                 _.defer(() => $scope.move(mailbox));
             }
