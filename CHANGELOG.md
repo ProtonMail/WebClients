@@ -1,3 +1,15 @@
+# [3.12.38] - 2018-03-02
+## Added
+- Add title for folder/label names in the filter modal
+
+## Fixed
+- “Draft does not exist” or “Conversation does not exist” error message shows up in contacts tab
+
+## Changed
+- Add premium address for every paid user in the address modal
+- Use ReplyTos instead of ReplyTo
+- Replace html2canva by file input for screenshot
+
 # [3.12.37] - 2018-03-01
 ## Changed
 - Allow member to login and setup their account
