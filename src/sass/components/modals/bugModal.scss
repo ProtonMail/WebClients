@@ -102,9 +102,6 @@
     transition: none;
 }
 
-.bugModalView-upload-success {
-    margin-top: 0;
-}
 .bugModalView-upload-success-message {
     font-weight: bold;
     margin-right: 20px;
@@ -113,3 +110,5 @@
 .bugModalView-files-uploaded .bugModalView-input-label,
 .bugModalView-files-uploaded .bugModalView-upload-info,
 .bugModalView-container:not(.bugModalView-files-uploaded) .bugModalView-upload-success { display: none }
+
+.bugModalView-container:not(.bugModalView-upload-supported) .bugModalView-upload-row { display: none }

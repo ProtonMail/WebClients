@@ -21,6 +21,7 @@ export const isSafariMobile = () => $.ua.browser.name === 'Mobile Safari';
 export const isIE11 = () => $.ua.browser.name === 'IE' && $.ua.browser.major === '11';
 export const isEdge = () => $.ua.browser.name === 'Edge';
 export const isFirefox = () => $.ua.browser.name === 'Firefox';
+export const isChrome = () => $.ua.browser.name === 'Chrome';
 export const isMac = () => getOS().name === 'Mac OS';
 
 export const isFileSaverSupported = () => 'download' in document.createElement('a') || navigator.msSaveOrOpenBlob;

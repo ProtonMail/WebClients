@@ -88,7 +88,7 @@
             </div>
         </div>
     </div>
-    <div class="pm_grid">
+    <div class="pm_grid no-margin bugModalView-upload-row">
         <div class="col-1-4">
             <label translate translate-context="Title" translate-comment="but report form heading label">Attach screenshot</label>
         </div>
@@ -96,10 +96,15 @@
             <label class="bugModalView-input-label" for="bugModalView-upload" translate-context="Action" translate>Add screenshots</label>
             <input type="file" multiple accept="image/*" class="bugModalView-input-file" id="bugModalView-upload">
             <!-- <a class="pm_button link bugModalView-upload-info" href="" target="_blank" translate-context="Link" translate>Learn more</a> -->
-            <p class="bugModalView-upload-success">
+            <div class="bugModalView-upload-success">
                 <i class="fa fa-image"></i> <span class="bugModalView-upload-success-message" translate-context="Success message" translate>Screenshot(s) attached</span>
                 <button class="pm_button bugModalView-clear-upload" type="button" translate-context="Action" translate>Clear</button>
-            </p>
+            </div>
+        </div>
+    </div>
+    <div class="pm_grid flex absorbing flex-row">
+        <div class="col-1-4"></div>
+        <div class="col-3-4">
             <p class="help" translate translate-context="Info">Bug reports are not end-to-end encrypted, please do not send any sensitive information.</p>
             <p class="alert alert-info" translate translate-context="Info">Contact us at <a href='mailto:security@protonmail.com'>security@protonmail.com</a> for critical security issues.</p>
         </div>
