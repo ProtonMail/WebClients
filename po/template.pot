@@ -416,6 +416,11 @@ msgctxt "Action"
 msgid "Add new users"
 msgstr ""
 
+#: ./src/templates/directives/core/bugModalView.tpl.html:96
+msgctxt "Action"
+msgid "Add screenshots"
+msgstr ""
+
 #. button
 #: ./src/app/members/directives/memberEditBtn.js:5
 #: ./src/templates/modals/addAddress.tpl.html:29
@@ -524,7 +529,7 @@ msgstr ""
 #: ./src/templates/filter/modal.tpl.html:215
 #: ./src/templates/modals/activateOrganization.tpl.html:24
 #: ./src/templates/modals/addAddress.tpl.html:58
-#: ./src/templates/modals/bug.tpl.html:112
+#: ./src/templates/modals/bug.tpl.html:13
 #: ./src/templates/modals/card.tpl.html:16
 #: ./src/templates/modals/changeOrganizationPassword.tpl.html:22
 #: ./src/templates/modals/changePassword.tpl.html:38
@@ -600,6 +605,7 @@ msgid "Change password"
 msgstr ""
 
 #: ./src/templates/contact/contactPhotoRow.tpl.html:4
+#: ./src/templates/directives/core/bugModalView.tpl.html:101
 msgctxt "Action"
 msgid "Clear"
 msgstr ""
@@ -1494,7 +1500,7 @@ msgstr ""
 #: ./src/templates/authentication/modals/loginPassword.tpl.html:51
 #: ./src/templates/authentication/modals/oldPasswordModal.tpl.html:21
 #: ./src/templates/modals/activateOrganization.tpl.html:26
-#: ./src/templates/modals/bug.tpl.html:118
+#: ./src/templates/modals/bug.tpl.html:19
 #: ./src/templates/modals/card.tpl.html:17
 #: ./src/templates/modals/customizeInvoice.tpl.html:15
 #: ./src/templates/modals/humanVerification.tpl.html:22
@@ -1868,7 +1874,7 @@ msgctxt "Bubbule info in appearance sent and drafts folders"
 msgid "Setting to 'Include Moved' means that sent / drafts messages that have been moved to other folders will continue to appear in the Sent/Drafts folder."
 msgstr ""
 
-#: ./src/app/bugReport/services/bugReportApi.js:84
+#: ./src/app/bugReport/services/bugReportApi.js:96
 msgctxt "Bug report successfully"
 msgid "Bug reported"
 msgstr ""
@@ -2666,7 +2672,7 @@ msgctxt "Encrypt message"
 msgid "Cannot get public keys"
 msgstr ""
 
-#: ./src/templates/modals/bug.tpl.html:93
+#: ./src/templates/directives/core/bugModalView.tpl.html:86
 msgctxt "Error"
 msgid "Add a description to help us improve ProtonMail"
 msgstr ""
@@ -2697,7 +2703,7 @@ msgctxt "Error"
 msgid "An error occured while trying to create your account. To see common problems and solutions"
 msgstr ""
 
-#: ./src/templates/modals/bug.tpl.html:72
+#: ./src/templates/directives/core/bugModalView.tpl.html:65
 msgctxt "Error"
 msgid "Are you sure your email address is correct ?"
 msgstr ""
@@ -2950,8 +2956,8 @@ msgid "Invalid coupon code"
 msgstr ""
 
 #: ./src/templates/directives/contact/contactItem.tpl.html:110
+#: ./src/templates/directives/core/bugModalView.tpl.html:62
 #: ./src/templates/filter/filterAddressModal.tpl.html:27
-#: ./src/templates/modals/bug.tpl.html:69
 msgctxt "Error"
 msgid "Invalid email"
 msgstr ""
@@ -3377,7 +3383,7 @@ msgctxt "Error"
 msgid "You must set a name"
 msgstr ""
 
-#: ./src/templates/modals/bug.tpl.html:68
+#: ./src/templates/directives/core/bugModalView.tpl.html:61
 msgctxt "Error"
 msgid "You must set an email"
 msgstr ""
@@ -3852,7 +3858,7 @@ msgctxt "Info"
 msgid "4096-bit keys only work on high performance computers. For most users, we recommend using 2048-bit keys. Clicking <strong>Save</strong> will generate encryption keys and may freeze ProtonMail for several minutes"
 msgstr ""
 
-#: ./src/templates/modals/bug.tpl.html:9
+#: ./src/templates/directives/core/bugModalView.tpl.html:2
 msgctxt "Info"
 msgid "<i class=\"fa fa-info-circle\"></i> Refreshing the page or <a href=\"https://protonmail.com/support/knowledge-base/how-to-clean-cache-and-cookies/\" target=\"_blank\">clearing your browser cache</a> will automatically resolve most issues."
 msgstr ""
@@ -4106,12 +4112,6 @@ msgctxt "Info"
 msgid "A draft selected is open in a composer, this action will close the composer and delete the message."
 msgstr ""
 
-#. Explain privacy issues for using img.ur to do screenshot uploading
-#: ./src/templates/modals/bug.tpl.html:104
-msgctxt "Info"
-msgid "A screenshot of your current page will be sent to us automatically, so we can help debug your problem! Screenshots are hosted using a 3rd party, public service [imgur]."
-msgstr ""
-
 #. reset warning 2/3
 #: ./src/templates/views/reset-login-password.tpl.html:84
 msgctxt "Info"
@@ -4289,7 +4289,7 @@ msgctxt "Info"
 msgid "Blacklist"
 msgstr ""
 
-#: ./src/templates/modals/bug.tpl.html:105
+#: ./src/templates/directives/core/bugModalView.tpl.html:103
 msgctxt "Info"
 msgid "Bug reports are not end-to-end encrypted, please do not send any sensitive information."
 msgstr ""
@@ -4356,7 +4356,7 @@ msgctxt "Info"
 msgid "Compose mode saved"
 msgstr ""
 
-#: ./src/templates/modals/bug.tpl.html:106
+#: ./src/templates/directives/core/bugModalView.tpl.html:104
 msgctxt "Info"
 msgid "Contact us at <a href=\"mailto:security@protonmail.com\">security@protonmail.com</a> for critical security issues."
 msgstr ""
@@ -5009,7 +5009,7 @@ msgctxt "Info"
 msgid "This feature is only available for paid users."
 msgstr ""
 
-#: ./src/templates/pmMe/pmMeView.tpl.html:20
+#: ./src/templates/pmMe/pmMeView.tpl.html:21
 msgctxt "Info"
 msgid "This feature is still being tested, so you may experience some issues with it"
 msgstr ""
@@ -6115,6 +6115,11 @@ msgctxt "Link"
 msgid "<img src=\"/assets/img/welcome/mobile.jpg\">"
 msgstr ""
 
+#: ./src/templates/pmMe/pmMeView.tpl.html:18
+msgctxt "Link"
+msgid "Add another address"
+msgstr ""
+
 #: ./src/templates/vpn/vpnView.tpl.html:69
 msgctxt "Link"
 msgid "Download Page"
@@ -6146,6 +6151,7 @@ msgstr ""
 #: ./src/templates/contact/contactError.tpl.html:13
 #: ./src/templates/contact/contactError.tpl.html:7
 #: ./src/templates/dashboard/customVpnModal.tpl.html:10
+#: ./src/templates/directives/core/bugModalView.tpl.html:98
 #: ./src/templates/members/restoreAdministratorPanel.tpl.html:9
 #: ./src/templates/views/account.tpl.html:125
 #: ./src/templates/views/account.tpl.html:156
@@ -6166,7 +6172,7 @@ msgid "Login"
 msgstr ""
 
 #: ./src/templates/pmMe/pmMeView.tpl.html:12
-#: ./src/templates/pmMe/pmMeView.tpl.html:18
+#: ./src/templates/pmMe/pmMeView.tpl.html:19
 msgctxt "Link"
 msgid "More info"
 msgstr ""
@@ -7042,6 +7048,11 @@ msgctxt "Success message"
 msgid "Contact edited"
 msgstr ""
 
+#: ./src/templates/directives/core/bugModalView.tpl.html:100
+msgctxt "Success message"
+msgid "Screenshot(s) attached"
+msgstr ""
+
 #: ./src/app/contact/modals/contactModal.js:4
 msgctxt "Success message for the contact modal"
 msgid "Contact added"
@@ -7300,7 +7311,7 @@ msgid "Are you human?"
 msgstr ""
 
 #. but report form heading label
-#: ./src/templates/modals/bug.tpl.html:100
+#: ./src/templates/directives/core/bugModalView.tpl.html:93
 msgctxt "Title"
 msgid "Attach screenshot"
 msgstr ""
@@ -8135,7 +8146,7 @@ msgctxt "Title"
 msgid "Navigation"
 msgstr ""
 
-#: ./src/app/composer/controllers/composeMessage.js:404
+#: ./src/app/composer/controllers/composeMessage.js:409
 msgctxt "Title"
 msgid "New message"
 msgstr ""
@@ -8177,7 +8188,7 @@ msgctxt "Title"
 msgid "Number"
 msgstr ""
 
-#: ./src/templates/modals/bug.tpl.html:25
+#: ./src/templates/directives/core/bugModalView.tpl.html:18
 msgctxt "Title"
 msgid "OS version"
 msgstr ""
@@ -8187,7 +8198,7 @@ msgctxt "Title"
 msgid "OpenVPN Login"
 msgstr ""
 
-#: ./src/templates/modals/bug.tpl.html:14
+#: ./src/templates/directives/core/bugModalView.tpl.html:7
 msgctxt "Title"
 msgid "Operating system"
 msgstr ""
@@ -9184,22 +9195,22 @@ msgctxt "bitcoin error request"
 msgid "Error connecting to the Bitcoin API."
 msgstr ""
 
-#: ./src/templates/modals/bug.tpl.html:33
+#: ./src/templates/directives/core/bugModalView.tpl.html:26
 msgctxt "bug report modal label"
 msgid "Browser"
 msgstr ""
 
-#: ./src/templates/modals/bug.tpl.html:39
+#: ./src/templates/directives/core/bugModalView.tpl.html:32
 msgctxt "bug report modal label"
 msgid "Browser version"
 msgstr ""
 
-#: ./src/templates/modals/bug.tpl.html:53
+#: ./src/templates/directives/core/bugModalView.tpl.html:46
 msgctxt "bug report modal label"
 msgid "Email address"
 msgstr ""
 
-#: ./src/templates/modals/bug.tpl.html:79
+#: ./src/templates/directives/core/bugModalView.tpl.html:72
 msgctxt "bug report modal label"
 msgid "What happened?"
 msgstr ""
@@ -9658,7 +9669,7 @@ msgid "Default"
 msgstr ""
 
 #. contacts toolbar menu option
-#: ./src/app/composer/controllers/composeMessage.js:567
+#: ./src/app/composer/controllers/composeMessage.js:572
 #: ./src/templates/contact/contactToolbar.tpl.html:17
 msgid "Delete"
 msgstr ""
@@ -9753,7 +9764,7 @@ msgstr ""
 msgid "Enter your login password:"
 msgstr ""
 
-#: ./src/app/message/factories/messageModel.js:147
+#: ./src/app/message/factories/messageModel.js:150
 msgid "Error encrypting message"
 msgstr ""
 
@@ -9871,7 +9882,7 @@ msgstr ""
 msgid "Maximized"
 msgstr ""
 
-#: ./src/app/composer/controllers/composeMessage.js:576
+#: ./src/app/composer/controllers/composeMessage.js:590
 msgid "Message discarded"
 msgstr ""
 
@@ -9958,7 +9969,7 @@ msgstr ""
 msgid "Password updated"
 msgstr ""
 
-#: ./src/app/composer/controllers/composeMessage.js:568
+#: ./src/app/composer/controllers/composeMessage.js:573
 msgid "Permanently delete this draft?"
 msgstr ""
 
