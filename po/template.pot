@@ -4289,7 +4289,7 @@ msgctxt "Info"
 msgid "Blacklist"
 msgstr ""
 
-#: ./src/templates/directives/core/bugModalView.tpl.html:103
+#: ./src/templates/directives/core/bugModalView.tpl.html:108
 msgctxt "Info"
 msgid "Bug reports are not end-to-end encrypted, please do not send any sensitive information."
 msgstr ""
@@ -4356,7 +4356,7 @@ msgctxt "Info"
 msgid "Compose mode saved"
 msgstr ""
 
-#: ./src/templates/directives/core/bugModalView.tpl.html:104
+#: ./src/templates/directives/core/bugModalView.tpl.html:109
 msgctxt "Info"
 msgid "Contact us at <a href=\"mailto:security@protonmail.com\">security@protonmail.com</a> for critical security issues."
 msgstr ""
@@ -6151,7 +6151,6 @@ msgstr ""
 #: ./src/templates/contact/contactError.tpl.html:13
 #: ./src/templates/contact/contactError.tpl.html:7
 #: ./src/templates/dashboard/customVpnModal.tpl.html:10
-#: ./src/templates/directives/core/bugModalView.tpl.html:98
 #: ./src/templates/members/restoreAdministratorPanel.tpl.html:9
 #: ./src/templates/views/account.tpl.html:125
 #: ./src/templates/views/account.tpl.html:156
@@ -9764,7 +9763,7 @@ msgstr ""
 msgid "Enter your login password:"
 msgstr ""
 
-#: ./src/app/message/factories/messageModel.js:150
+#: ./src/app/message/factories/messageModel.js:147
 msgid "Error encrypting message"
 msgstr ""
 
