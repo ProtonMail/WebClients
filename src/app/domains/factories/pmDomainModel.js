@@ -1,5 +1,5 @@
 /* @ngInject */
-function pmDomainModel($rootScope, authentication, domainApi, subscriptionModel) {
+function pmDomainModel($rootScope, authentication, domainApi) {
     const domains = [];
     const get = () => domains.slice();
 
@@ -10,7 +10,7 @@ function pmDomainModel($rootScope, authentication, domainApi, subscriptionModel)
     function fetch() {
         const promises = [domainApi.available()];
 
-        if (authentication.isSecured() && subscriptionModel.hasPaid('visionary')) {
+        if (authentication.isSecured() && authentication.hasPaidMail()) {
             promises.push(domainApi.premium());
         }
 
