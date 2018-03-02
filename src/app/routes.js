@@ -816,7 +816,7 @@ export default angular
                         }
                         return { data: {} };
                     },
-                    pmDomains(pmDomainModel, networkActivityTracker) {
+                    pmDomains(user, pmDomainModel, networkActivityTracker) {
                         return networkActivityTracker.track(pmDomainModel.fetch());
                     },
                     organization(user, organizationModel, networkActivityTracker) {
