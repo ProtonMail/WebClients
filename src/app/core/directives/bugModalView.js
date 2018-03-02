@@ -11,10 +11,11 @@ function bugModalView() {
         },
         templateUrl: require('../../../templates/directives/core/bugModalView.tpl.html'),
         link(scope, element) {
-            const $input = element[0].querySelector('.bugModalView-input-file');
-            const $clear = element[0].querySelector('.bugModalView-clear-upload');
-            const onClick = () => {
+            const $input = element.find('.bugModalView-input-file');
+            const $clear = element.find('.bugModalView-clear-upload');
+            const onClick = ({ target }) => {
                 element[0].classList.remove(UPLOADED_CLASS);
+                target.value = ''; // Clear the input file
                 scope.$applyAsync(() => {
                     scope.model.fileList = [];
                 });
@@ -26,12 +27,12 @@ function bugModalView() {
                 });
             };
 
-            $input.addEventListener('change', onChange);
-            $clear.addEventListener('click', onClick);
+            $input.on('change', onChange);
+            $clear.on('click', onClick);
 
             scope.$on('$destroy', () => {
-                $input.removeEventListener('change', onChange);
-                $clear.removeEventListener('click', onClick);
+                $input.off('change', onChange);
+                $clear.off('click', onClick);
             });
         }
     };
