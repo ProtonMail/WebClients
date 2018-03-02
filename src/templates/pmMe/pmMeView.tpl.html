@@ -15,6 +15,7 @@
                     <p ng-show="hasPaidMail" class="alert" translate-context="Info" translate>You can now also receive and send messages from your @pm.me address (short for ProtonMail me or Private Message me).</p>
                     <p ng-hide="hasPaidMail" class="alert" translate-context="Info" translate>You can now also receive messages at your @pm.me address (short for ProtonMail me or Private Message me). Upgrade to a paid accout to also send emails from your @pm.me address.</p>
                     <p class="alert alert-success" translate-context="Info" translate>{{name}}@pm.me is activated on your account.</p>
+                    <a ng-show="hasPaidMail" class="pm_button" ui-sref="secured.members" translate-context="Link" translate>Add another address</a>
                     <a class="pm_button link" href="https://protonmail.com/support/knowledge-base/pm-me-addresses/" target="_blank" translate-context="Link" translate>More info</a>
                 </div>
                 <p class="alert alert-warning" translate-context="Info" translate>This feature is still being tested, so you may experience some issues with it</p>
