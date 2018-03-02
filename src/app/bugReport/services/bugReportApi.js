@@ -61,8 +61,8 @@ function bugReportApi(Report, CONFIG, $state, authentication, gettextCatalog, ne
         const formData = new FormData();
         const resize = (file) => toBase64(file).then((base64str) => downSize(base64str, MAX_SIZE_SCREENSHOT, file.type));
         const promises = _.reduce(parameters, (acc, value, key) => {
-            if (value instanceof FileList) {
-                // NOTE FileList instanceof Array => false
+            // NOTE FileList instanceof Array => false
+            if (value instanceof FileList || value instanceof Array) {
                 for (let i = 0; i < value.length; i++) {
                     const file = value[i];
                     const promise = resize(file)
