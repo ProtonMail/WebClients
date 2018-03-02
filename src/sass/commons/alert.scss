@@ -1,39 +1,27 @@
 .alert {
-	padding: 15px 35px;
-	border-radius: 4px;
+	padding: 15px 20px;
+	border-radius: $border-radius-large;
 	background: $alert;
-	a { color: $primary }
+	color: darken($alert, 50);
+	a {
+		font-weight: 500;
+		color: $black;
+	}
 	&.alert-info {
 		background: $primary-light;
-		a {
-			font-weight: 500;
-			color: $black;
-		}
+		color: darken($primary-light, 50);
 	}
     &.alert-success {
         background: $green;
-        a {
-        	font-weight: 500;
-        	color: $black;
-        }
+		color: darken($green, 50);
     }
     &.alert-danger {
         background: $danger;
-        a {
-        	font-weight: 500;
-        	color: $black;
-        }
+		color: darken($danger, 50);
     }
-	&.alert-danger-primary {
-		background: $exp;
-		color: $white;
-	}
     &.alert-warning {
-        background: #d9c4a2;
-        a {
-        	font-weight: 500;
-        	color: $black;
-        }
+        background: $warning;
+		color: darken($warning, 50);
     }
 
     input[type="text"],
