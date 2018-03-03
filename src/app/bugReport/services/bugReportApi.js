@@ -2,7 +2,7 @@ import _ from 'lodash';
 import { CONSTANTS } from '../../constants';
 import { getOS, getBrowser, getDevice } from '../../../helpers/browser';
 import { toBase64 } from '../../../helpers/fileHelper';
-import { downSize, toFile } from '../../../helpers/imageHelper';
+import { downSize, toBlob } from '../../../helpers/imageHelper';
 
 /* @ngInject */
 function bugReportApi(Report, CONFIG, $state, authentication, gettextCatalog, networkActivityTracker, notification) {
@@ -67,7 +67,7 @@ function bugReportApi(Report, CONFIG, $state, authentication, gettextCatalog, ne
                     const file = value[i];
                     const promise = resize(file)
                         .then((base64str) => {
-                            formData.append(file.name, toFile(base64str, file.name), file.name);
+                            formData.append(file.name, toBlob(base64str), file.name);
                         });
 
                     acc.push(promise);

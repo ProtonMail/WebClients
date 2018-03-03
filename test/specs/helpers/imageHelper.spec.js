@@ -1,17 +1,26 @@
-import { resizeImage, toFile } from '../../../src/helpers/imageHelper';
+import { resizeImage, toBlob, toFile } from '../../../src/helpers/imageHelper';
 import img from '../../media/img';
 
 const MIMETYPE_REGEX = /data:([a-zA-Z0-9]+\/[a-zA-Z0-9-.+]+).*,.*/;
 const fileName = 'proton';
 
+describe('toBlob', () => {
+    it('it should be an instance of an Object', () => {
+        expect(toBlob(img) instanceof Object).toBeTruthy();
+    });
+
+    it('it should be an instance of a Blob', () => {
+        expect(toBlob(img) instanceof Blob).toBeTruthy();
+    });
+});
 
 describe('toFile', () => {
     it('it should be an instance of an Object', () => {
-        expect(toFile(img, fileName) instanceof Object).toBeTruthy();
+        expect(toFile(img) instanceof Object).toBeTruthy();
     });
 
     it('it should be an instance of a File', () => {
-        expect(toFile(img, fileName) instanceof File).toBeTruthy();
+        expect(toFile(img) instanceof File).toBeTruthy();
     });
 
     it('it should have the correct name', () => {
