@@ -48,23 +48,51 @@ export const resizeImage = (original, maxSize, finalMimeType = 'image/jpeg', enc
 };
 
 /**
- * Convert a data URL to a File Object
- * @param  {String} base64str
- * @param  {String} filename
- * @return {Object}
+ * Extract the mime and base64 str from a base64 image.
+ * @param str
+ * @returns {{mime, base64}}
  */
-export const toFile = (base64str, filename = 'file') => {
-    const arr = base64str.split(',');
+const extractBase64Image = (str) => {
+    const arr = str.split(',');
     const mime = arr[0].match(/:(.*?);/)[1];
-    const bstr = atob(arr[1]);
+    const base64 = arr[1];
+    return { mime, base64 };
+};
+
+/**
+ * Convert a base 64 str to an uint8 array.
+ * @param base64str
+ * @returns {Uint8Array}
+ */
+const toUint8Array = (base64str) => {
+    const bstr = atob(base64str);
     let n = bstr.length;
     const u8arr = new Uint8Array(n);
-
     while (n--) {
         u8arr[n] = bstr.charCodeAt(n);
     }
+    return u8arr;
+};
 
-    return new File([u8arr], filename, { type: mime });
+/**
+ * Convert a data URL to a Blob Object
+ * @param {String} base64str
+ * @param {String} filename
+ * @return {Object}
+ */
+export const toFile = (base64str, filename = 'file') => {
+    const { base64, mime } = extractBase64Image(base64str);
+    return new File([toUint8Array(base64)], filename, { type: mime });
+};
+
+/**
+ * Convert a data URL to a Blob Object
+ * @param  {String} base64str
+ * @return {Blob}
+ */
+export const toBlob = (base64str) => {
+    const { base64, mime } = extractBase64Image(base64str);
+    return new Blob([toUint8Array(base64)], { type: mime });
 };
 
 /**
@@ -79,7 +107,7 @@ export const downSize = (base64str, maxSize, mimeType = 'image/jpeg', encoderOpt
     const process = (source, max) => {
         return resizeImage(source, max, mimeType, encoderOptions)
             .then((resized) => {
-                const { size } = toFile(resized);
+                const { size } = toBlob(resized);
 
                 if (size <= maxSize) {
                     return resized;
