@@ -23,7 +23,7 @@ const formatLang = (lang = '') => {
 const readFile = (file) =>
     new Promise((resolve, reject) => {
         const key = path.basename(file, '.po');
-        const stream = fs.createReadStream(file, { start: 100, end: 500 });
+        const stream = fs.createReadStream(file, { start: 100, end: 600 });
         stream.on('data', (data) => {
             const [, lang] = data.toString().match(/"Language:.(\w+)/);
             resolve({ key, lang: formatLang(lang.trim()) });
