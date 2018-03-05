@@ -39,14 +39,14 @@ function AccountController(
         { label: 'English', key: 'en_US' },
         { label: 'Español', key: 'es_ES' },
         { label: 'Français', key: 'fr_FR' },
-        { label: 'Indonesian', key: 'id_ID' },
+        { label: 'Bahasa Indonesia', key: 'id_ID' },
         { label: 'Italiano', key: 'it_IT' },
-        { label: 'Japanese', key: 'ja_JP' },
+        { label: '日本語', key: 'ja_JP' },
         { label: 'Nederlands', key: 'nl_NL' },
         { label: 'Polski', key: 'pl_PL' },
         { label: 'Portugues, brasileiro', key: 'pt_BR' },
         { label: 'Pусский', key: 'ru_RU' },
-        { label: 'Romanian', key: 'ro_RO' },
+        { label: 'Română', key: 'ro_RO' },
         { label: 'Türkçe', key: 'tr_TR' },
         { label: 'Українська', key: 'uk_UA' }
     ];
