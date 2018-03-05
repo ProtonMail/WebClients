@@ -62,12 +62,19 @@ function squire(squireEditor, embedded, editorListener, $rootScope, sanitize, to
 
             const listen = editorListener(scope, el, { typeContent, action });
 
-            function updateModel(val, dispatchAction = false) {
+            /**
+             * Update the value of the message and send the state to the application
+             * @param  {String}  val            Body
+             * @param  {Boolean} dispatchAction Send the state to the app, default false.
+             * @param  {Boolean} forceUpdate    Force update the message for the mode plain-text (prevent issue 6530)
+             * @return {void}
+             */
+            function updateModel(val, dispatchAction = false, forceUpdate = false) {
                 const value = sanitize.input(val || '');
                 scope.$applyAsync(() => {
                     if (scope.message.MIMEType === 'text/plain') {
                         // disable all updates if in plain text mode
-                        return;
+                        return (forceUpdate && scope.message.setDecryptedBody(val, false));
                     }
 
                     const isEmpty = !value.trim().length;
