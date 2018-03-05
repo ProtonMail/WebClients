@@ -242,7 +242,7 @@ function editorListener(
                 if (action === 'message.changeFrom') {
                     const html = signatureBuilder.update(scope.message, editor.getHTML());
                     !scope.message.isPlainText() && editor.setHTML(html);
-                    return updateModel(html, true);
+                    return updateModel(html, true, true);
                 }
 
                 if (isMessage(typeContent)) {
