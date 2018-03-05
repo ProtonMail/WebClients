@@ -39,7 +39,7 @@ function AccountController(
         { label: 'English', key: 'en_US' },
         { label: 'Español', key: 'es_ES' },
         { label: 'Français', key: 'fr_FR' },
-        { label: 'Bahasa Indonesia', key: 'id_ID' },
+        // { label: 'Bahasa Indonesia', key: 'id_ID' },
         { label: 'Italiano', key: 'it_IT' },
         { label: '日本語', key: 'ja_JP' },
         { label: 'Nederlands', key: 'nl_NL' },
