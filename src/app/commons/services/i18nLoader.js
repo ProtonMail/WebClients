@@ -155,9 +155,9 @@ function i18nLoader(CONFIG, $rootScope, gettextCatalog, $injector) {
          * moment.localeData() uses the selected language in the interface.
          * Note that this doesn't only apply to the English language, the same occurs when considering:
          * French-Canada and France (Both French but: Sunday/Monday);
-         * Brazil and Portugal (Both Portugese but: Sunday/Monday);
+         * Brazil and Portugal (Both Portuguese but: Sunday/Monday);
          * Spain and Hispanic-America (Both Spanish but: Sunday/Monday);
-         * Iraq, Saudi-Arabia and Maroc (Both Arabic but: Saturday/Sunday/Monday).
+         * Iraq, Saudi-Arabia and Morocco (Both Arabic but: Saturday/Sunday/Monday).
          */
         moment.locale(selectLocale(shortLocale, navigatorLocale));
 
