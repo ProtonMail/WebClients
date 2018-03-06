@@ -46,22 +46,35 @@ const extractSignature = (addressSignature) => {
 };
 
 /* @ngInject */
-function signatureBuilder(authentication, tools, sanitize, AppModel, $rootScope, mailSettingsModel) {
+function signatureBuilder(authentication, tools, sanitize, AppModel, dispatchers, mailSettingsModel) {
+    const { on } = dispatchers();
 
-    const PROTON_SIGNATURE = getProtonSignature();
-    AppModel.store('protonSignature', !!mailSettingsModel.get('PMSignature'));
+    let oldPMSignature = mailSettingsModel.get('PMSignature');
+    let PROTON_SIGNATURE = getProtonSignature(oldPMSignature);
 
-    // Update config when we toggle the proton signature on the dashboard
-    $rootScope.$on('AppModel', (e, { type }) => {
-        type === 'protonSignature' && _.extend(PROTON_SIGNATURE, getProtonSignature());
+    /**
+     * Update config when logging in / mail settings updated
+     * Since the mail settings can be updated often when in settings, cache the old value, since
+     * the getProtonSignature fn uses the DOM.
+     */
+    on('mailSettings', (e, { type }) => {
+        if (type === 'updated') {
+            const newPMSignature = mailSettingsModel.get('PMSignature');
+            if (oldPMSignature === newPMSignature) {
+                return;
+            }
+            oldPMSignature = newPMSignature;
+            PROTON_SIGNATURE = getProtonSignature(oldPMSignature);
+        }
     });
 
     /**
      * Preformat the protonMail signature
+     * @param {Boolean} value
      * @return {Object}
      */
-    function getProtonSignature() {
-        if (!mailSettingsModel.get('PMSignature')) {
+    function getProtonSignature(value) {
+        if (!value) {
             return { HTML: '', PLAIN: '' };
         }
 
@@ -228,4 +241,5 @@ function signatureBuilder(authentication, tools, sanitize, AppModel, $rootScope,
 
     return { insert, update, getHTML, getTXT };
 }
+
 export default signatureBuilder;

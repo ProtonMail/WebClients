@@ -1,5 +1,6 @@
 import _ from 'lodash';
 import service from '../../../../src/app/message/factories/signatureBuilder';
+import dispatchersService from '../../../../src/app/commons/services/dispatchers'
 import { CONSTANTS } from '../../../../src/app/constants';
 
 describe('signatureBuilder factory', () => {
@@ -32,7 +33,7 @@ describe('signatureBuilder factory', () => {
             const message = { getDecryptedBody: angular.noop, isPlainText: angular.noop };
 
             let factory, rootScope;
-            let mailSettingsMock = { Signature: '' };
+            let mailSettingsMock = { Signature: '', PMSignature: false };
             const mailSettingsModel = { get: (k) => mailSettingsMock[k] };
             let userMock = { Signature: '' };
             const tools = { replaceLineBreaks: _.identity };
@@ -42,8 +43,15 @@ describe('signatureBuilder factory', () => {
 
             beforeEach(angular.mock.inject(($injector) => {
                 rootScope = $injector.get('$rootScope');
-                factory = service(authentication, tools, sanitize, AppModel, rootScope, mailSettingsModel);
+                const dispatchers = dispatchersService(rootScope);
+                factory = service(authentication, tools, sanitize, AppModel, dispatchers, mailSettingsModel);
             }));
+
+            const setPMSignature = (value) => {
+                mailSettingsMock.PMSignature = value;
+                rootScope.$emit('mailSettings', { type: 'updated' });
+                rootScope.$digest();
+            };
 
             describe('Insert signature ~ no signatures', () => {
 
@@ -212,12 +220,10 @@ describe('signatureBuilder factory', () => {
 
                     let string;
                     beforeEach(() => {
-                        mailSettingsMock.PMSignature = true;
+                        setPMSignature(true);
                         spyOn(tools, 'replaceLineBreaks').and.callThrough();
                         spyOn(sanitize, 'message').and.callThrough();
                         spyOn(message, 'getDecryptedBody').and.returnValue(MESSAGE_BODY);
-                        rootScope.$emit('AppModel', { type: 'protonSignature' });
-                        rootScope.$digest();
                         string = factory.insert(message, { action });
                     });
 
@@ -292,12 +298,10 @@ describe('signatureBuilder factory', () => {
 
                     let string;
                     beforeEach(() => {
-                        mailSettingsMock.PMSignature = true;
+                        setPMSignature(true);
                         spyOn(tools, 'replaceLineBreaks').and.callThrough();
                         spyOn(sanitize, 'message').and.callThrough();
                         spyOn(message, 'getDecryptedBody').and.returnValue(MESSAGE_BODY);
-                        rootScope.$emit('AppModel', { type: 'protonSignature' });
-                        rootScope.$digest();
                         string = factory.insert(message, { isAfter: true, action });
                     });
 
@@ -385,6 +389,7 @@ describe('signatureBuilder factory', () => {
                         message.From = {
                             Signature: USER_SIGNATURE
                         };
+                        setPMSignature(false);
                         spyOn(tools, 'replaceLineBreaks').and.callThrough();
                         spyOn(sanitize, 'message').and.callThrough();
                         spyOn(message, 'getDecryptedBody').and.returnValue(MESSAGE_BODY);
@@ -555,12 +560,10 @@ describe('signatureBuilder factory', () => {
                         message.From = {
                             Signature: USER_SIGNATURE
                         };
-                        mailSettingsMock.PMSignature = true;
+                        setPMSignature(true);
                         spyOn(tools, 'replaceLineBreaks').and.callThrough();
                         spyOn(sanitize, 'message').and.callThrough();
                         spyOn(message, 'getDecryptedBody').and.returnValue(MESSAGE_BODY);
-                        rootScope.$emit('AppModel', { type: 'protonSignature' });
-                        rootScope.$digest();
                         string = factory.insert(message, { action });
                     });
 
@@ -644,12 +647,10 @@ describe('signatureBuilder factory', () => {
                         message.From = {
                             Signature: USER_SIGNATURE
                         };
-                        mailSettingsMock.PMSignature = true;
+                        setPMSignature(true);
                         spyOn(tools, 'replaceLineBreaks').and.callThrough();
                         spyOn(sanitize, 'message').and.callThrough();
                         spyOn(message, 'getDecryptedBody').and.returnValue(MESSAGE_BODY);
-                        rootScope.$emit('AppModel', { type: 'protonSignature' });
-                        rootScope.$digest();
                         string = factory.insert(message, { isAfter: true, action });
                     });
 
@@ -751,9 +752,8 @@ describe('signatureBuilder factory', () => {
                 const authentication = { user: _.extend({ Signature: '' }, user) };
                 const mailSettingsMock = _.extend({ Signature: '' }, user);
                 const mailSettingsModel = { get: (k) => mailSettingsMock[k] };
-                factory = service(authentication, tools, sanitize, AppModel, rootScope, mailSettingsModel);
-                rootScope.$emit('AppModel', { type: 'protonSignature' });
-                rootScope.$digest();
+                const dispatchers = dispatchersService(rootScope);
+                factory = service(authentication, tools, sanitize, AppModel, dispatchers, mailSettingsModel);
             }));
 
             return _.extend({
@@ -1163,9 +1163,8 @@ describe('signatureBuilder factory', () => {
                 const authentication = { user: _.extend({ Signature: '' }, user) };
                 const mailSettingsMock = _.extend({ Signature: '' }, user);
                 const mailSettingsModel = { get: (k) => mailSettingsMock[k] };
-                factory = service(authentication, tools, sanitize, AppModel, rootScope, mailSettingsModel);
-                rootScope.$emit('AppModel', { type: 'protonSignature' });
-                rootScope.$digest();
+                const dispatchers = dispatchersService(rootScope);
+                factory = service(authentication, tools, sanitize, AppModel, dispatchers, mailSettingsModel);
             }));
 
             return _.extend({

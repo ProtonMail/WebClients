@@ -18,7 +18,6 @@ function signatureModel(
         const PMSignature = +!!status;
         await settingsMailApi.updatePMSignature({ PMSignature });
         await eventManager.call();
-        AppModel.set('protonSignature', !!status);
         return notification.success(I18N.SUCCESS_UPDATE);
     };
 
