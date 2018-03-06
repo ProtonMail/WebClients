@@ -265,8 +265,8 @@ function contactCache(
         type === 'searchingContact' && searchingContact(data);
     });
 
-    $rootScope.$on('$stateChangeSuccess', (event, toState, toParams, fromState) => {
-        if (CONTACT_STATES.includes(fromState.name) && !CONTACT_STATES.includes(toState.name)) {
+    $rootScope.$on('$stateChangeSuccess', (event, toState) => {
+        if (!CONTACT_STATES.includes(toState.name)) {
             unselectAll();
         }
     });
