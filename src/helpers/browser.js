@@ -23,6 +23,7 @@ export const isEdge = () => $.ua.browser.name === 'Edge';
 export const isFirefox = () => $.ua.browser.name === 'Firefox';
 export const isChrome = () => $.ua.browser.name === 'Chrome';
 export const isMac = () => getOS().name === 'Mac OS';
+export const hasTouch = ('ontouchstart' in document.documentElement);
 
 export const isFileSaverSupported = () => 'download' in document.createElement('a') || navigator.msSaveOrOpenBlob;
 

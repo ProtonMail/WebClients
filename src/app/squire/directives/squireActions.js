@@ -1,4 +1,5 @@
 import _ from 'lodash';
+import { hasTouch } from '../../../helpers/browser';
 
 /* @ngInject */
 const squireActions = ($rootScope) => ({
@@ -39,11 +40,15 @@ const squireActions = ($rootScope) => ({
          * The squireActionsType is the event for which to listen to.
          * Special case for the `moreToggle` which needs to listen to the "click" event
          * to steal focus from the editor to make the toggle mode editor work properly.
+         *
+         * Only listen to the click event for mobile browsers, so that they can properly handle
+         * the event (#6599). Only enable the mousedown event for desktop browsers (#4955).
          */
-        el.on(squireActionsType, onMouseDown);
+        const event = hasTouch ? 'click' : squireActionsType;
+        el.on(event, onMouseDown);
 
         scope.$on('$destroy', () => {
-            el.off(squireActionsType, onMouseDown);
+            el.off(event, onMouseDown);
         });
     }
 });
