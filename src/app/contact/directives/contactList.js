@@ -159,6 +159,7 @@ function contactList($filter, dispatchers, $state, $stateParams, contactCache, h
 
                 if (action === 'showContact') {
                     setContactCursor(target.dataset.contactId);
+                    dispatcher.contacts('selectContacts', { isChecked: false });
                     $state.go('secured.contacts.details', { id: target.dataset.contactId });
                 }
 
