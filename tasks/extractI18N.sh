@@ -7,6 +7,6 @@ echo 'Extracting translations...'
 $COMMAND \
     --files './src/+(app|templates)/**/**/*.+(js|html)' \
     --dest po/template.pot \
-    --attributes "placehoder-translate","title-translate","pt-tooltip-translate","translate"
+    --attributes "placeholder-translate","title-translate","pt-tooltip-translate","translate"
 
 echo '✓ extracing translations'
