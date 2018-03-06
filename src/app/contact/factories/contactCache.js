@@ -226,7 +226,12 @@ function contactCache(
         emit();
     }
 
-    function selectContacts({ contactIDs = [], isChecked }) {
+    /**
+     * Check or uncheck contacts
+     * @param  {Array} contactIDs by default contains all contact ID
+     * @param  {Boolean} isChecked check / uncheck
+     */
+    function selectContacts({ contactIDs = Object.keys(CACHE.map.all), isChecked }) {
         CACHE.contacts = _.map(get(), (contact) => {
             if (contactIDs.indexOf(contact.ID) > -1) {
                 contact.selected = isChecked;
@@ -236,13 +241,6 @@ function contactCache(
 
         sync();
         emit();
-    }
-
-    function unselectAll() {
-        const contactIDs = Object.keys(CACHE.map.all);
-        const isChecked = false;
-
-        selectContacts({ contactIDs, isChecked });
     }
 
     function contactEvents({ events = [] }) {
@@ -267,7 +265,7 @@ function contactCache(
 
     $rootScope.$on('$stateChangeSuccess', (event, toState) => {
         if (!CONTACT_STATES.includes(toState.name)) {
-            unselectAll();
+            selectContacts({ isChecked: false });
         }
     });
 
