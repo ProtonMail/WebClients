@@ -22,14 +22,14 @@ function editorListener(
 
     /**
      * Check if this squire instance is for a message or not
-     * Ex: you can work with a string intead of the message model
+     * Ex: you can work with a string instead of the message model
      *   => signature
      * @return {Boolean}
      */
     const isMessage = (typeContent) => typeContent === 'message';
 
     /**
-     * Check if the current action is comming from the current editing message
+     * Check if the current action is coming from the current editing message
      * Both ID are undefined on outside
      * @param  {String} options.ID
      * @param  {Object} options.message
@@ -41,7 +41,7 @@ function editorListener(
     };
 
     /**
-     * Attach some hotkeus for the editor
+     * Attach some hotkeys for the editor
      * @param  {Squire} editor
      * @param  {jQLite} element
      * @return {void}
@@ -78,7 +78,7 @@ function editorListener(
 
     /**
      * Generate an event listener based on the eventName
-     * Debounce some events are thez are triggered too many times
+     * Debounce some events are they are triggered too many times
      * Dispatch an event editor.draggable
      * @param  {String} type void
      * @return {Function}      EventListener Callback
@@ -126,7 +126,7 @@ function editorListener(
                     flow(
                         filter(({ attachment = {} }) => attachment.Headers['content-disposition'] === 'inline'),
                         each(({ cid, url, attachment }) => {
-                            // If we close the composer the editor won't exist anymore but maybe we were uploading an attchement
+                            // If we close the composer the editor won't exist anymore but maybe we were uploading an attachment
                             editor.fireEvent('refresh', {
                                 action: 'attachment.embedded',
                                 data: { url, cid, attachment }

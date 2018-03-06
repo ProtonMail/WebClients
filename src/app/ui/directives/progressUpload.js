@@ -40,7 +40,7 @@ function progressUpload($rootScope, CONSTANTS) {
              * If you do a reply it can contain attachment,
              * we need to be able to remove them.
              * When you add a new one the key uploading will be true.
-             * Also no need to susbcribe to the event.
+             * Also no need to subscribe to the event.
              */
             if (!scope.model.packet.uploading) {
                 el[0].classList.remove(CLASS_UPLOADING);

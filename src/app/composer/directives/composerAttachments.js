@@ -77,7 +77,7 @@ function composerAttachments($rootScope, gettextCatalog) {
      * @param  {Object} actionsPanel  Manager for the panel
      * @return {Function}             Callback event
      */
-    const onAction = (scope, actionsPanel) => (e, { type, data }) => {
+    const onAction = (scope, el, actionsPanel) => (e, { type, data }) => {
         const { status, packet, id, messageID, REQUEST_ID, isStart } = data;
 
         if (!isMessage(scope.message, data)) {
@@ -148,7 +148,7 @@ function composerAttachments($rootScope, gettextCatalog) {
             const onClick = () => actionsPanel.toggle();
             $header.on('click', onClick);
 
-            const unsubscribe = $rootScope.$on('attachment.upload', onAction(scope, actionsPanel));
+            const unsubscribe = $rootScope.$on('attachment.upload', onAction(scope, el, actionsPanel));
 
             scope.$on('$destroy', () => {
                 $header.off('click', onClick);
