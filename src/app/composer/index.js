@@ -6,6 +6,7 @@ import composer from './directives/composer';
 import composerAskEmbedded from './directives/composerAskEmbedded';
 import composerAttachments from './directives/composerAttachments';
 import composerAttachmentsItem from './directives/composerAttachmentsItem';
+import composerAttachmentsSize from './directives/composerAttachmentsSize';
 import composerContainer from './directives/composerContainer';
 import composerDropzone from './directives/composerDropzone';
 import composerEncrypt from './directives/composerEncrypt';
@@ -39,6 +40,7 @@ export default angular
     .directive('composer', composer)
     .directive('composerAskEmbedded', composerAskEmbedded)
     .directive('composerAttachments', composerAttachments)
+    .directive('composerAttachmentsSize', composerAttachmentsSize)
     .directive('composerAttachmentsItem', composerAttachmentsItem)
     .directive('composerContainer', composerContainer)
     .directive('composerDropzone', composerDropzone)

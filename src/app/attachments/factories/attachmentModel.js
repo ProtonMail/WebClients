@@ -34,10 +34,10 @@ function attachmentModel(
 
     /**
      * Create a map [<REQUEST>] = <upload>
-     * So we can have every informations for a request such as attachment etc.
-     * Usefull for removing attachment as it can send us:
+     * So we can have every information for a request such as attachment etc.
+     * Useful for removing attachment as it can send us:
      *     - REQUEST_ID for new composer with new attachments
-     *     - ATTACHEMENT_ID for a composer (ex:reply) with attachments
+     *     - ATTACHMENT_ID for a composer (ex:reply) with attachments
      * @param  {Array} uploads
      * @return {void}
      */
@@ -260,7 +260,7 @@ function attachmentModel(
     /**
      * Remove an attachment based on it's configuration
      * It's coming from the composerAttachments component.
-     * For new attchment it sends us a REQUEST_ID because it's a list of packets not attachments.
+     * For new attachment it sends us a REQUEST_ID because it's a list of packets not attachments.
      * If you remove the embedded from the editor (SUPPR), you will have the attachment's ID,
      * and for a new one you need its REQUEST_ID (the front use packages).
      * @param  {Object} data
@@ -346,6 +346,7 @@ function attachmentModel(
                         // Extract content-id even if there are no headers
                         const contentId = (attachment.Headers || {})['content-id'] || '';
                         const cid = contentId.replace(/[<>]+/g, '');
+
                         return { attachment, sessionKey, packets, cid, REQUEST_ID };
                     })
                     .catch((err) => {
@@ -364,7 +365,7 @@ function attachmentModel(
 
     /**
      * Download an attachment from the composer
-     * As we don't know the current atttachment we need to get it from the model itself
+     * As we don't know the current attachment we need to get it from the model itself
      *     ->> We MUST not know the attachment inside the composer
      * @param  {String} options.id      Packet id
      * @param  {Message} options.message

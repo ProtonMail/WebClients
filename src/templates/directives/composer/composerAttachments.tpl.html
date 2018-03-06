@@ -1,7 +1,7 @@
 <div class="composerAttachments-container composerAttachments-close">
     <div class="composerAttachments-header">
 
-        <strong class="composerAttachments-size">{{ message.attachmentsSize() | humanSize }}</strong>
+        <composer-attachments-size class="composerAttachments-size"></composer-attachments-size>
         <span class="composerAttachments-counter-attachments" ng-show="message.Attachments.length > message.NumEmbedded">
             <i class="fa fa-paperclip"></i> {{ message.Attachments.length - message.NumEmbedded }} <span translate translate-n="message.Attachments.length - message.NumEmbedded" translate-plural="files attached">file attached</span>
         </span>

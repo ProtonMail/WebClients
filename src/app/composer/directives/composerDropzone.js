@@ -30,7 +30,7 @@ function composerDropzone($rootScope, attachmentFileFormat, tools, attachmentMod
     const dictDefaultMessage = gettextCatalog.getString('Drop a file here to upload', null, 'Info');
 
     /**
-     * Compute some informations to get the current context for a dropzone
+     * Compute some information to get the current context for a dropzone
      * @param  {Message} message
      * @param  {File} file
      * @return {Object}F
