@@ -1,6 +1,11 @@
+import _ from 'lodash';
+
 /* @ngInject */
-function bugModalView() {
+function bugModalView(gettextCatalog, notification) {
     const UPLOADED_CLASS = 'bugModalView-files-uploaded';
+    const I18N = {
+        noImageSelected: gettextCatalog.getString('No image selected', null, 'Error notification in the bug report modal when the user upload file')
+    };
     return {
         replace: true,
         restrict: 'E',
@@ -14,10 +19,17 @@ function bugModalView() {
             const $clear = element.find('.bugModalView-clear-upload');
 
             const onChange = ({ target }) => {
-                element[0].classList.add(UPLOADED_CLASS);
-                scope.$applyAsync(() => {
-                    scope.model.fileList = target.files;
-                });
+                const images = _.filter(target.files, ({ type }) => /^image\//i.test(type));
+
+                if (images.length) {
+                    element[0].classList.add(UPLOADED_CLASS);
+
+                    scope.$applyAsync(() => {
+                        scope.model.fileList = images;
+                    });
+                } else {
+                    notification.error(I18N.noImageSelected);
+                }
             };
 
             const onClick = () => {
