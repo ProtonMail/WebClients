@@ -1,6 +1,5 @@
 .labelModal-container {
-	.row { margin-bottom: 1rem }
-	.pm_button.primary { padding: 0 1rem }
+    .pm_button.primary { padding: 0 1rem }
 }
 .labelModal-list,
 .labelModal-list * { box-sizing: border-box }
@@ -13,6 +12,20 @@
     margin: 0;
 }
 
+.labelModal-errors {
+    display: block !important;
+    overflow: hidden;
+    margin: .8em 0;
+    opacity: 0;
+    [ng-message] { margin: 0; padding: 0 }
+}
+
+.labelModal-errors.ng-inactive { margin-bottom: 1.6em }
+
+.labelModal-form.ng-invalid.ng-dirty .labelModal-errors {
+    opacity: 1;
+}
+
 .labelModal-item {
     position: relative;
     display: flex;
@@ -21,10 +34,10 @@
     height: 2rem;
     width: 2rem;
     min-width: 2rem;
-	border-radius: 50%;
+    border-radius: 50%;
     padding: 0;
     margin: 0 .35rem .35rem 0;
-	overflow: hidden;
+    overflow: hidden;
 }
 
 .labelModal-item .fa {
@@ -38,31 +51,31 @@
 
 .labelModal-item-mask {
     position: absolute;
-	display: inline-flex;
-	justify-content: center;
-	align-items: center;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-	border-radius: 50%;
+    border-radius: 50%;
     z-index: 2;
     background: currentColor;
-	border: 2px solid $white;
+    border: 2px solid $white;
     pointer-events: none;
-	transition: border .1s ease-out;
+    transition: border .1s ease-out;
 }
 
 .labelModal-input-color {
     position: absolute;
-	z-index: 1;
+    z-index: 1;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-	opacity: 0;
+    opacity: 0;
     margin: 0;
-	cursor: pointer;
+    cursor: pointer;
 }
 
 .labelModal-input-color:checked + .labelModal-item-mask .fa { opacity: 1 }
