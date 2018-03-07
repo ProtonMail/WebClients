@@ -31,6 +31,7 @@ function unsubscribeModel($rootScope, authentication, gettextCatalog, messageMod
         message.AddressID = addressID || authentication.user.Addresses[0].ID;
         message.From = _.find(authentication.user.Addresses, { ID: message.AddressID });
         message.Password = '';
+        message.AutoSaveContacts = 0; // Override the global settings value to prevent auto adding recipients to contacts
 
         if (to) {
             message.ToList = to.split(',').map((email) => ({ Address: email, Name: email }));
