@@ -1,4 +1,5 @@
 import _ from 'lodash';
+import { CONSTANTS } from '../../constants';
 
 /* @ngInject */
 function squire(squireEditor, embedded, editorListener, $rootScope, sanitize, toggleModeEditor, mailSettingsModel, onCurrentMessage) {
@@ -63,6 +64,22 @@ function squire(squireEditor, embedded, editorListener, $rootScope, sanitize, to
             const listen = editorListener(scope, el, { typeContent, action });
 
             /**
+             * Load the body of the message and load embedded if we need to
+             * @return {Promise} -> String
+             */
+            const loadBody = async () => {
+                const show = !!scope.message.showEmbedded || (mailSettingsModel.get('ShowImages') & CONSTANTS.EMBEDDED);
+
+                if (!show) {
+                    return scope.message.getDecryptedBody();
+                }
+
+                // On load we parse the body of the message in order to load its embedded images
+                return embedded.parser(scope.message);
+            };
+
+
+            /**
              * Update the value of the message and send the state to the application
              * @param  {String}  val            Body
              * @param  {Boolean} dispatchAction Send the state to the app, default false.
@@ -119,11 +136,10 @@ function squire(squireEditor, embedded, editorListener, $rootScope, sanitize, to
                 };
 
                 if (isMessage(typeContent)) {
-                    // On load we parse the body of the message in order to load its embedded images
-                    embedded
-                        .parser(scope.message)
-                        .then((body) => {
-                            editor.setHTML(body);
+
+                    loadBody()
+                        .then((body) => editor.setHTML(body))
+                        .then(() => {
                             if (scope.message.RightToLeft) {
                                 editor.setTextDirectionWithoutFocus('rtl');
                             }
