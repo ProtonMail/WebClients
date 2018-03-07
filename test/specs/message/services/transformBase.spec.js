@@ -16,7 +16,10 @@ describe('transformBase service', () => {
         linkAbsolutehttp: 'http://cpp.li/monique',
         linkAbsolutehttps: 'https://cpp.li/monique2',
         imgAbsolute: 'http://cpp.li/robert3.jpg',
-        imgAbsolute2: 'https://cpp.li/robert3.jpg'
+        imgAbsolute2: 'https://cpp.li/robert3.jpg',
+        imgCID: 'cid:xxxxx',
+        imghttp: 'https://cpp.li/robert3.jpg',
+        ahttp: 'https://cpp.li/'
     };
     const DOM = `<section>
     <a href="${LINKS.linkRelative}" id="linkRelative" class="link-relative">Monique</a>
@@ -31,6 +34,9 @@ describe('transformBase service', () => {
     <img src="${LINKS.imgAbsolute}" id="imgAbsolute" class="img-absolute">
     <img src="${LINKS.imgAbsolute2}" id="imgAbsolute2" class="img-absolute">
     <img class="img-empty" id="imgNope">
+    <img proton-src="${LINKS.imgCID}" alt="" id="imgcid" />
+    <img src="${LINKS.imghttp}" alt="" id="imghttp" />
+    <a href="${LINKS.ahttp}"  id="ahttp">dew</a>
 </section`;
     const DEFAULT_DOMAIN = 'http://lol.com';
     let output, getLinks, getImages;
@@ -76,6 +82,11 @@ describe('transformBase service', () => {
                 expect(nope.href).toBe(URL_PROTON + '/');
             });
 
+            it('should not change the HREF for a link with already http', () => {
+                const nope = output.querySelector('#ahttp');
+                expect(nope.href).toBe(LINKS.ahttp);
+            });
+
         });
 
         describe('For an image', () => {
@@ -109,6 +120,18 @@ describe('transformBase service', () => {
                 const nope = output.querySelector('#imgNope');
                 expect(nope.src).toBe(URL_PROTON + '/');
             });
+
+            it('should not change the SRC for a link with already http', () => {
+                const nope = output.querySelector('#imghttp');
+                expect(nope.src).toBe(LINKS.imghttp);
+            });
+
+            it('should not change the SRC for a link with cid', () => {
+                const nope = output.querySelector('#imgcid');
+                expect(nope.getAttribute('proton-src')).toBe(LINKS.imgCID);
+                expect(nope.getAttribute('src')).toBe(null);
+            });
+
 
         });
 
@@ -146,6 +169,11 @@ describe('transformBase service', () => {
                 expect(nope.href).toBe(URL_PROTON_SLASH);
             });
 
+            it('should not change the HREF for a link with already http', () => {
+                const nope = output.querySelector('#ahttp');
+                expect(nope.href).toBe(LINKS.ahttp);
+            });
+
         });
 
         describe('For an image', () => {
@@ -178,6 +206,18 @@ describe('transformBase service', () => {
             it('should bind a src if there is not', () => {
                 const nope = output.querySelector('#imgNope');
                 expect(nope.src).toBe(URL_PROTON_SLASH);
+            });
+
+
+            it('should not change the SRC for a link with already http', () => {
+                const nope = output.querySelector('#imghttp');
+                expect(nope.src).toBe(LINKS.imghttp);
+            });
+
+            it('should not change the SRC for a link with cid', () => {
+                const nope = output.querySelector('#imgcid');
+                expect(nope.getAttribute('proton-src')).toBe(LINKS.imgCID);
+                expect(nope.getAttribute('src')).toBe(null);
             });
 
         });
@@ -219,6 +259,11 @@ describe('transformBase service', () => {
                 const nope = output.querySelector('#linkNope');
                 expect(nope.href).toBe(matchLink(''));
             });
+
+            it('should not change the HREF for a link with already http', () => {
+                const nope = output.querySelector('#ahttp');
+                expect(nope.href).toBe(LINKS.ahttp);
+            });
         });
 
         describe('For an image', () => {
@@ -251,6 +296,18 @@ describe('transformBase service', () => {
             it('should bind a src if there is not', () => {
                 const nope = output.querySelector('#imgNope');
                 expect(nope.src).toBe(matchLink(''));
+            });
+
+
+            it('should not change the SRC for a link with already http', () => {
+                const nope = output.querySelector('#imghttp');
+                expect(nope.src).toBe(LINKS.imghttp);
+            });
+
+            it('should not change the SRC for a link with cid', () => {
+                const nope = output.querySelector('#imgcid');
+                expect(nope.getAttribute('proton-src')).toBe(LINKS.imgCID);
+                expect(nope.getAttribute('src')).toBe(null);
             });
 
         });
