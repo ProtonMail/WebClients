@@ -275,6 +275,8 @@ function editorListener(
                 attachmentFileFormat.isUploadAbleType(e) && e.preventDefault();
                 const file = e.dataTransfer.files[0];
                 if (file && /image/.test(file.type || '')) {
+                    // Prevent the default insert action from happening, since we are handling it (issue on edge (#6600).
+                    e.preventDefault();
                     squireExecAction.insertImage(scope.message, { url: '', file });
                 }
             };
