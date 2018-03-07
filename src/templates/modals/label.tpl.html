@@ -2,7 +2,12 @@
     class="pm_modal small important {{ctrl.class}} labelModal-container"
     role="dialog"
     id="labelModal">
-    <form class="modal-dialog" name="editLabelForm"  ng-submit="ctrl.create(editLabelForm)">
+
+    <form
+        class="modal-dialog labelModal-form"
+        name="editLabelForm"
+        ng-submit="ctrl.create(editLabelForm)">
+
         <button
             ng-click="ctrl.cancel()"
             type="button"
@@ -10,10 +15,13 @@
             title-translate="Close"
             title-translate-context="Action"
             class="fa fa-times close"></button>
+
         <div class="modal-content">
+
             <header class="modal-header" ng-show="ctrl.title">
                 <h3 class="modal-title">{{ ::ctrl.title }}</h3>
             </header>
+
             <div class="modal-body pm_form pm_grid">
                 <div class="row">
                     <label for="labelName" class="col-1-4" translate translate-context="Label">Name</label>
@@ -30,7 +38,10 @@
                             placeholder-translate="Name"
                             required>
 
-                        <div ng-messages="editLabelForm.label.$error" role="alert" class="text-red">
+                        <div
+                            ng-messages="editLabelForm.label.$error"
+                            role="alert"
+                            class="text-red labelModal-errors">
                             <p ng-message="required" translate-context="Error" translate>You must set a name</p>
                             <p ng-message="validLabel">
                                 <span translate-context="Error" translate>Invalid name. Forbidden char. ex:</span>
