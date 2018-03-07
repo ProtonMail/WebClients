@@ -539,7 +539,7 @@ msgstr ""
 #: ./src/templates/modals/generate.tpl.html:76
 #: ./src/templates/modals/generateOrganization.tpl.html:32
 #: ./src/templates/modals/humanVerification.tpl.html:21
-#: ./src/templates/modals/label.tpl.html:72
+#: ./src/templates/modals/label.tpl.html:83
 #: ./src/templates/modals/member.tpl.html:108
 #: ./src/templates/modals/organizationRecovery.tpl.html:14
 #: ./src/templates/modals/pay.tpl.html:100
@@ -667,7 +667,7 @@ msgstr ""
 #: ./src/templates/modals/hotkey.tpl.html:101
 #: ./src/templates/modals/hotkey.tpl.html:3
 #: ./src/templates/modals/humanVerification.tpl.html:3
-#: ./src/templates/modals/label.tpl.html:6
+#: ./src/templates/modals/label.tpl.html:11
 #: ./src/templates/modals/member.tpl.html:3
 #: ./src/templates/modals/organizationRecovery.tpl.html:3
 #: ./src/templates/modals/pay.tpl.html:107
@@ -1364,7 +1364,7 @@ msgstr ""
 #: ./src/templates/modals/addAddress.tpl.html:59
 #: ./src/templates/modals/changeOrganizationPassword.tpl.html:23
 #: ./src/templates/modals/changePassword.tpl.html:40
-#: ./src/templates/modals/label.tpl.html:79
+#: ./src/templates/modals/label.tpl.html:90
 #: ./src/templates/modals/member.tpl.html:109
 #: ./src/templates/organization/organizationFormName.tpl.html:26
 #: ./src/templates/user/defaultSignature.tpl.html:59
@@ -3025,7 +3025,7 @@ msgctxt "Error"
 msgid "Invalid name"
 msgstr ""
 
-#: ./src/templates/modals/label.tpl.html:36
+#: ./src/templates/modals/label.tpl.html:47
 msgctxt "Error"
 msgid "Invalid name. Forbidden char. ex:"
 msgstr ""
@@ -3408,7 +3408,7 @@ msgctxt "Error"
 msgid "You must privatize all sub-accounts before generating new organization keys"
 msgstr ""
 
-#: ./src/templates/modals/label.tpl.html:34
+#: ./src/templates/modals/label.tpl.html:45
 msgctxt "Error"
 msgid "You must set a name"
 msgstr ""
@@ -5683,7 +5683,7 @@ msgctxt "Label"
 msgid "Choose the user who will own this address"
 msgstr ""
 
-#: ./src/templates/modals/label.tpl.html:43
+#: ./src/templates/modals/label.tpl.html:54
 msgctxt "Label"
 msgid "Color"
 msgstr ""
@@ -5831,7 +5831,7 @@ msgctxt "Label"
 msgid "Major New Features (3-4 per year)"
 msgstr ""
 
-#: ./src/templates/modals/label.tpl.html:19
+#: ./src/templates/modals/label.tpl.html:27
 #: ./src/templates/modals/member.tpl.html:12
 msgctxt "Label"
 msgid "Name"
@@ -8247,7 +8247,7 @@ msgid "No subject"
 msgstr ""
 
 #. Desktop notification
-#: ./src/templates/modals/label.tpl.html:64
+#: ./src/templates/modals/label.tpl.html:75
 msgctxt "Title"
 msgid "Notification"
 msgstr ""
@@ -10118,7 +10118,7 @@ msgstr ""
 msgid "More"
 msgstr ""
 
-#: ./src/templates/modals/label.tpl.html:21
+#: ./src/templates/modals/label.tpl.html:29
 msgid "Name"
 msgstr ""
 
