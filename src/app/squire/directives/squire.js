@@ -51,7 +51,7 @@ function squire(squireEditor, embedded, editorListener, $rootScope, sanitize, to
         },
         replace: true,
         templateUrl: require('../../../templates/directives/squire.tpl.html'),
-        link(scope, el, { typeContent = 'message', action = '', id }) {
+        link(scope, el, { typeContent = 'message', action = '', id = 'composer' }) {
             scope.data = {};
             const $iframe = el.find('iframe.squireIframe');
             $iframe[0].id = `${id}${Date.now()}`;
@@ -135,10 +135,10 @@ function squire(squireEditor, embedded, editorListener, $rootScope, sanitize, to
                     editor.setHTML(scope.value || '');
 
                     // defer loading to prevent input event refresh (takes some time to perform the setHTML)
-                    const id = setTimeout(() => {
+                    const timeoutId = setTimeout(() => {
                         unsubscribe.push(listen(updateModel, editor));
                         isLoaded();
-                        clearTimeout(id);
+                        clearTimeout(timeoutId);
                     }, 100);
                 }
 
