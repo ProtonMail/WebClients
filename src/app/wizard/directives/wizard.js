@@ -1,9 +1,9 @@
 /* @ngInject */
 function wizard(
-    $rootScope,
     $stateParams,
     $timeout,
     $state,
+    dispatchers,
     welcomeModal,
     blackFridayModal,
     blackFridayModel,
@@ -18,6 +18,10 @@ function wizard(
         replace: true,
         templateUrl: require('../../../templates/partials/wizard.tpl.html'),
         link(scope, element) {
+            const { on, unsubscribe } = dispatchers();
+            const show = () => element[0].classList.remove('wizardStep-hidden');
+            const hide = () => element[0].classList.add('wizardStep-hidden');
+            const has = () => element[0].classList.contains('wizardStep-hidden');
             const welcome = function() {
                 welcomeModal.activate({
                     params: {
@@ -53,11 +57,17 @@ function wizard(
              *   - touchNext: Display the next slide
              *   - touchGo: Going to a slide by its position
              */
-            const unsubscribe = $rootScope.$on('tourActions', (e, { action, position }) => {
+            on('tourActions', (e, { action, position }) => {
                 action === 'tourStart' && tourStart();
                 action === 'tourEnd' && tourEnd();
                 action === 'tourNext' && tourNext();
                 action === 'tourGo' && tourGo(position);
+            });
+
+            on('$stateChangeSuccess', () => {
+                if (!has()) {
+                    hide();
+                }
             });
 
             scope.$on('$destroy', unsubscribe);
@@ -103,7 +113,7 @@ function wizard(
                 AppModel.set('tourActive', true);
                 scope.$applyAsync(() => {
                     scope.tourActive = true; // used for body class and CSS.
-                    element[0].classList.remove('wizardStep-hidden'); // Display the wizard
+                    show(); // Display the wizard
                     $timeout(() => element[0].focus(), 0, false); // Prevent $digest
                 });
 
@@ -111,7 +121,7 @@ function wizard(
             }
 
             function tourEnd() {
-                element[0].classList.add('wizardStep-hidden'); // Hide the wizard
+                hide(); // Hide the wizard
                 AppModel.set('tourActive', false);
                 scope.$applyAsync(() => {
                     scope.tourActive = false;
