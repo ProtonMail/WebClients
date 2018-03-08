@@ -1,7 +1,7 @@
 import _ from 'lodash';
 
 /* @ngInject */
-function sidebarSettingsModel(authentication, gettextCatalog) {
+function sidebarSettingsModel(authentication, gettextCatalog, memberModel) {
     const states = {
         dashboard: {
             state: 'secured.dashboard',
@@ -77,8 +77,9 @@ function sidebarSettingsModel(authentication, gettextCatalog) {
 
     const getStateConfig = () => {
         const hasPaidMail = authentication.hasPaidMail();
+        const isMember = memberModel.isMember();
 
-        if (!hasPaidMail) {
+        if (!hasPaidMail || isMember) {
             return _.omit(states, 'pmme');
         }
 
