@@ -4,10 +4,10 @@ import _ from 'lodash';
 function handle401($http, authentication) {
     let refreshPromise = null;
     const clearPromise = () => refreshPromise = null;
-    const logout = (rejection) => {
+    const logout = (err) => {
         authentication.logout(true, false);
 
-        return Promise.reject(rejection);
+        return Promise.reject(err);
     };
     const recall = ({ config }) => {
         _.extend(config.headers, $http.defaults.headers.common);
@@ -28,7 +28,9 @@ function handle401($http, authentication) {
                 .catch(logout);
         }
 
-        return refreshPromise.then(() => recall(rejection));
+        return refreshPromise
+            .then(() => recall(rejection))
+            .catch(() => Promise.reject(rejection));
     };
 }
 export default handle401;
