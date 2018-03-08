@@ -17,6 +17,7 @@ function eventManager(
     mailSettingsModel,
     notify,
     sanitize,
+    subscriptionModel,
     userSettingsModel,
     vpnSettingsModel
 ) {
@@ -38,6 +39,7 @@ function eventManager(
         delete MODEL.promiseCancel;
     };
     const manageActiveMessage = ({ Messages = [] }) => Messages.length && dispatch('activeMessages', { messages: _.map(Messages, 'Message') });
+    const manageSubscription = ({ Subscription: subscription }) => subscription && dispatch('subscription.event', { subscription });
 
     /**
      * Clean contact datas
@@ -309,6 +311,7 @@ function eventManager(
         manageMailSettings(data.MailSettings);
         manageVpnSettings(data.VPNSettings);
         manageUserSettings(data.UserSettings);
+        manageSubscription(data);
         manageContactEmails(data.ContactEmails);
         manageContacts(data.Contacts);
         manageThreadings(data.Messages, data.Conversations);

@@ -1,9 +1,10 @@
 import _ from 'lodash';
 
 /* @ngInject */
-function subscriptionModel($rootScope, CONSTANTS, gettextCatalog, Payment) {
+function subscriptionModel(CONSTANTS, dispatchers, gettextCatalog, Payment) {
     const CACHE = {};
     const ERROR_SUBSCRIPTION = gettextCatalog.getString('Subscription request failed', null, 'Error');
+    const { dispatcher, on } = dispatchers(['subscription']);
 
     const PAID_TYPES = {
         plus: ['plus'],
@@ -47,7 +48,7 @@ function subscriptionModel($rootScope, CONSTANTS, gettextCatalog, Payment) {
 
     function set(subscription = {}, noEvent = false) {
         CACHE.subscription = angular.copy(subscription);
-        !noEvent && $rootScope.$emit('subscription', { type: 'update', data: { subscription } });
+        !noEvent && dispatcher.subscription('update', { subscription });
     }
 
     function coupon() {
@@ -81,6 +82,12 @@ function subscriptionModel($rootScope, CONSTANTS, gettextCatalog, Payment) {
 
         return 'free';
     }
+
+    on('app.event', (event, { type, data }) => {
+        if (type === 'subscription.event') {
+            set(data.subscription);
+        }
+    });
 
     return { set, get, name, fetch, hasPaid, coupon, count, cycle, currency };
 }
