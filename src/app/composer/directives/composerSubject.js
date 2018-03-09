@@ -42,7 +42,14 @@ const composerSubject = (editorModel) => ({
             if (relatedTarget && relatedTarget.classList.contains('composer-btn-discard')) {
                 return;
             }
-            scope.$applyAsync(() => scope.saveLater(scope.message));
+            scope.$applyAsync(() => {
+                // Don't trigger the save of this message in case it is due to the composer closing.
+                // In this case the message has already been saved.
+                if (scope.$$destroyed) {
+                    return;
+                }
+                scope.saveLater(scope.message);
+            });
         };
 
         $input.addEventListener('focus', onFocus, true);
