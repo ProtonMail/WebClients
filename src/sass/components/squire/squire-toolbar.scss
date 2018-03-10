@@ -96,7 +96,7 @@
 
 
 .squireToolbar-action-color {position: relative;}
-
+.squireToolbar-action-color > * { pointer-events: none; }
 .squireToolbar-action-color .fa-font {
     position: relative;
     top: -3px;

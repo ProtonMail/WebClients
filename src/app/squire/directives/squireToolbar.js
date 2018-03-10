@@ -1,6 +1,7 @@
 import _ from 'lodash';
 
 import { flow, filter, reduce } from 'lodash/fp';
+import { findParent } from '../../../helpers/domHelper';
 
 /* @ngInject */
 function squireToolbar(CONSTANTS, editorState, editorModel) {
@@ -96,6 +97,15 @@ function squireToolbar(CONSTANTS, editorState, editorModel) {
                 closeAllPopups();
             };
 
+            const isInsidePopup = (node) => findParent(node, (parent) => parent.dataset &&
+                (parent.dataset.squirePopover !== undefined || parent.dataset.squireDropdown !== undefined));
+            const clickAnywhereClose = ({ target }) => {
+                if (target.dataset.squireActions || isInsidePopup(target)) {
+                    return;
+                }
+                closeAllPopups();
+            };
+
             const onStateChange = ({ popover: oldPopover, editorMode: oldEditorMode }, { popover, editorMode }) => {
                 if (oldEditorMode !== editorMode) {
                     el.setAttribute('data-editor-text', editorMode);
@@ -123,12 +133,14 @@ function squireToolbar(CONSTANTS, editorState, editorModel) {
             rowButton.addEventListener('mousedown', onRowClick);
             const resizeCb = _.debounce(closeAllPopups, 50);
             window.addEventListener('resize', resizeCb);
+            document.addEventListener('click', clickAnywhereClose);
 
             scope.$on('$destroy', () => {
                 editorState.off(ID, onStateChange);
                 editor.removeEventListener('pathChange', onPathChange);
                 rowButton.removeEventListener('mousedown', onRowClick);
                 window.removeEventListener('resize', resizeCb);
+                document.removeEventListener('click', clickAnywhereClose);
             });
         }
     };
