@@ -102,7 +102,7 @@ function actionConversation(
                 Conversation: {
                     ID,
                     Labels: _.map(Labels, (label) => {
-                        if (label.ID === currentLocation) {
+                        if (label.ID === currentLocation || label.ID === MAILBOX_IDENTIFIERS.allmail) {
                             label.ContextNumUnread++; // FIXME calculate the correct number
                         }
                         return label;
@@ -146,7 +146,7 @@ function actionConversation(
                 Conversation: {
                     ID,
                     Labels: _.map(Labels, (label) => {
-                        if (label.ID === currentLocation) {
+                        if (label.ID === currentLocation || label.ID === MAILBOX_IDENTIFIERS.allmail) {
                             label.ContextNumUnread = 0;
                         }
                         return label;
