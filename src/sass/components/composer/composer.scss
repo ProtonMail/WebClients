@@ -21,8 +21,7 @@
     /* Button toggle BCC/CC */
     .composer-field-ToList .autocompleteEmails-admin { padding-right: 7px  }
 
-    .composer{
-
+    .composer {
         display: -webkit-flex;
         display: flex;
 
@@ -42,7 +41,7 @@
         background:$white;
         will-change: transform;
 
-        header, footer, .row{
+        header, footer, .row {
           line-height: $composerRowHeight;
         }
 
@@ -51,7 +50,7 @@
         .ccRow .composerInputMeta-overlay-button,
         .bccRow .composerInputMeta-overlay-button { display: none }
 
-        .row{
+        .row {
           display: -webkit-flex; /* ipad */
           display: flex;
 
@@ -71,7 +70,7 @@
             line-height: $composerRowHeight;
           }
 
-          select{
+          select {
             z-index: 2;
             background:transparent;
           }
@@ -131,7 +130,7 @@
             width: calc(100% - 40px); /* absolute pm_button .link*/
         }
 
-        iframe{
+        iframe {
             -webkit-flex:1;
             flex:1;
 
@@ -172,7 +171,7 @@
         &.maximized .dz-message { height: 73% }
         &.expandRecipients.maximized .dz-message { height: 60% }
 
-        .toolbar li{
+        .toolbar li {
           -webkit-flex:1;
           flex:1;
           cursor: pointer;
@@ -180,13 +179,24 @@
           line-height:$composerRowHeight;
         }
 
-
         .fa {
             font-size: 14px;
             &.fa-minus {
                 position: relative;
                 top: 5px;
             }
+        }
+
+        .composer-btn-encryption {
+            padding-top: 1px;
+
+            .fa {
+                font-size: 15px;
+            }
+        }
+
+        .composer-btn-expiration .fa {
+            font-size: 12px;
         }
 
         .plain-text-icon {
@@ -317,8 +327,8 @@
         /* STATE CHANGE */
 
 
-        @media (min-width:600px){
-          &{
+        @media (min-width:600px) {
+          & {
             width: 600px;
             /* STYLES */
             box-shadow: $box-shadow;
@@ -376,11 +386,11 @@
 
         /* COMPONNENT APPEARANCE */
 
-        .dotdotdot{
+        .dotdotdot {
             display: none;
         }
 
-        &.blur{
+        &.blur {
             box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1),
                         0 0 2px rgba(0, 0, 0, 0.1);
             & > * {
@@ -388,7 +398,7 @@
             }
         }
 
-        .row{
+        .row {
           border-bottom:1px solid $border;
           &.placeholder div{
                     color: $text;
@@ -399,7 +409,7 @@
                     display:block; /* webkit */
                     padding-right: 20px; /* button */
           }
-          .overlay{
+          .overlay {
             position: absolute;
             z-index: 10;
             left: 0px;
@@ -409,13 +419,13 @@
           }
         }
 
-        input, select{
+        input, select {
           font-size: 14px;
           color: #333;
 
         }
 
-        .meta{
+        .meta {
             color: $default-color-light;
             input, select{
                 border:none;
@@ -425,7 +435,7 @@
 
         .fromRow { color: $default-color }
 
-        footer{
+        footer {
           padding: 10px;
           background: $tertiary;
           border-top: 1px solid $border;
@@ -464,14 +474,13 @@
         /* RESETS */
         /* Probably to move as a global reset scope */
 
-        ul{
+        ul {
           margin:0px;
           padding:0px;
           list-style: none;
         }
 
-
-        input,select{
+        input,select {
           outline: none;
           -webkit-appearance: none; /* DRY */
           -moz-appearance: none;
