@@ -54,7 +54,7 @@ msgctxt "About human verification"
 msgid ""
 "<p>Too many ProtonMail accounts have been created from your connection.</p>\n"
 "                <p>Thus, we are requesting additional verification to ensure you are human and not a spam bot.</p>\n"
-"                <p>Because Tor is frequently abused by spammers, this check may be triggered because of the Tor exit node you are using.</p>"
+"                <p>Because Tor or free VPNs are frequently abused by spammers, this check may be triggered because of the Tor or VPN exit node you are using.</p>"
 msgstr ""
 
 #: ./src/app/message/factories/messageActions.js:180
@@ -439,7 +439,7 @@ msgctxt "Action"
 msgid "Addresses"
 msgstr ""
 
-#: ./src/templates/views/security.tpl.html:53
+#: ./src/templates/views/security.tpl.html:54
 msgctxt "Action"
 msgid "Advanced"
 msgstr ""
@@ -501,7 +501,7 @@ msgctxt "Action"
 msgid "Back to protonmail.com"
 msgstr ""
 
-#: ./src/templates/views/security.tpl.html:52
+#: ./src/templates/views/security.tpl.html:53
 msgctxt "Action"
 msgid "Basic"
 msgstr ""
@@ -827,7 +827,7 @@ msgstr ""
 #: ./src/templates/modals/twofactor/recoveryCode.tpl.html:28
 #: ./src/templates/views/payments.tpl.html:90
 #: ./src/templates/views/pgp.tpl.html:9
-#: ./src/templates/views/security.tpl.html:45
+#: ./src/templates/views/security.tpl.html:46
 msgctxt "Action"
 msgid "Download"
 msgstr ""
@@ -1669,7 +1669,7 @@ msgctxt "Action"
 msgid "What is this?"
 msgstr ""
 
-#: ./src/templates/views/security.tpl.html:44
+#: ./src/templates/views/security.tpl.html:45
 msgctxt "Action"
 msgid "Wipe"
 msgstr ""
@@ -3453,7 +3453,7 @@ msgctxt "Error delete attachment"
 msgid "Error during the remove request"
 msgstr ""
 
-#: ./src/app/contact/directives/contactDetails.js:43
+#: ./src/app/contact/directives/contactDetails.js:46
 msgctxt "Error displays when the user try to leave an unsaved and invalid contact details"
 msgid "This form is invalid"
 msgstr ""
@@ -4687,12 +4687,12 @@ msgid "Location"
 msgstr ""
 
 #. authentication log record
-#: ./src/templates/views/security.tpl.html:78
+#: ./src/templates/views/security.tpl.html:79
 msgctxt "Info"
 msgid "Login failure (password)"
 msgstr ""
 
-#: ./src/templates/views/security.tpl.html:60
+#: ./src/templates/views/security.tpl.html:61
 msgctxt "Info"
 msgid "Logs include authentication attempts for all Proton services that use your ProtonMail credentials."
 msgstr ""
@@ -4734,7 +4734,7 @@ msgctxt "Info"
 msgid "No labels"
 msgstr ""
 
-#: ./src/templates/views/security.tpl.html:63
+#: ./src/templates/views/security.tpl.html:64
 msgctxt "Info"
 msgid "No logs yet"
 msgstr ""
@@ -5295,7 +5295,7 @@ msgctxt "Info"
 msgid "You can decrypt the file with a program such as {{link}} if you have the corresponding private key."
 msgstr ""
 
-#: ./src/templates/views/security.tpl.html:59
+#: ./src/templates/views/security.tpl.html:60
 msgctxt "Info"
 msgid "You can enable authentication logging to see when your account is accessed, and from which IP. We will record the IP address that accesses the account and the time, as well as failed attempts."
 msgstr ""
@@ -6212,6 +6212,7 @@ msgstr ""
 #: ./src/templates/views/members.tpl.html:21
 #: ./src/templates/views/members.tpl.html:321
 #: ./src/templates/views/security.tpl.html:18
+#: ./src/templates/views/security.tpl.html:31
 msgctxt "Link"
 msgid "Learn more"
 msgstr ""
@@ -6518,7 +6519,7 @@ msgctxt "Notification error trying to connect to the API"
 msgid "Servers are unreachable."
 msgstr ""
 
-#: ./src/app/utils/services/eventManager.js:177
+#: ./src/app/utils/services/eventManager.js:179
 msgctxt "Notification user"
 msgid "New mail from {{sender}}"
 msgstr ""
@@ -7398,7 +7399,7 @@ msgid "Attachments"
 msgstr ""
 
 #. logs page heading
-#: ./src/templates/views/security.tpl.html:37
+#: ./src/templates/views/security.tpl.html:38
 msgctxt "Title"
 msgid "Authentication Logs"
 msgstr ""
@@ -7919,7 +7920,7 @@ msgstr ""
 #. Table heading
 #: ./src/templates/views/invoices.tpl.html:18
 #: ./src/templates/views/invoices.tpl.html:48
-#: ./src/templates/views/security.tpl.html:69
+#: ./src/templates/views/security.tpl.html:70
 msgctxt "Title"
 msgid "Event"
 msgstr ""
@@ -8725,7 +8726,7 @@ msgctxt "Title"
 msgid "Threadlist"
 msgstr ""
 
-#: ./src/templates/views/security.tpl.html:71
+#: ./src/templates/views/security.tpl.html:72
 msgctxt "Title"
 msgid "Time"
 msgstr ""
@@ -9261,17 +9262,17 @@ msgctxt "atom text loader"
 msgid "Enabling IMAP (coming soon).<br />This may take a few minutes, please wait."
 msgstr ""
 
-#: ./src/templates/views/security.tpl.html:87
+#: ./src/templates/views/security.tpl.html:88
 msgctxt "auth log entry"
 msgid "Login failure (two-factor)"
 msgstr ""
 
-#: ./src/templates/views/security.tpl.html:81
+#: ./src/templates/views/security.tpl.html:82
 msgctxt "auth log entry"
 msgid "Login success"
 msgstr ""
 
-#: ./src/templates/views/security.tpl.html:84
+#: ./src/templates/views/security.tpl.html:85
 msgctxt "auth log entry"
 msgid "Logout"
 msgstr ""
