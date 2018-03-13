@@ -1,11 +1,14 @@
 import _ from 'lodash';
-
 import { flow, values, reduce } from 'lodash/fp';
+import { CONSTANTS } from '../../constants';
+
+const { CONTACT_MODE, CONTACT_ERROR } = CONSTANTS;
+const { ENCRYPTED_AND_SIGNED, ENCRYPTED, SIGNED } = CONTACT_MODE;
+const { TYPE3_CONTACT_VERIFICATION, TYPE2_CONTACT_VERIFICATION, TYPE3_CONTACT_DECRYPTION } = CONTACT_ERROR;
 
 /* @ngInject */
 function contactDetails(
     $state,
-    CONSTANTS,
     AppModel,
     contactDetailsModel,
     contactBeforeToLeaveModal,
@@ -16,7 +19,7 @@ function contactDetails(
     dispatchers,
     vcard
 ) {
-    const ENCRYPTED_AND_SIGNED = 'contactDetails-encrypted-and-signed';
+    const ENCRYPTED_AND_SIGNED_CLASS = 'contactDetails-encrypted-and-signed';
     const HAS_ERROR_VERIFICATION = 'contactDetails-verification-error';
     const HAS_ERROR_ENCRYPTED = 'contactDetails-encrypted-error';
     const HAS_ERROR_VERIFICATION_ENCRYPTED = 'contactDetails-encrypted-verification-error';
@@ -62,8 +65,14 @@ function contactDetails(
                 dispatcher.contacts(opt.type, opt.data);
             };
 
-            const updateType = (types = []) =>
-                _.includes(types, CONSTANTS.CONTACT_MODE.ENCRYPTED_AND_SIGNED) && element.addClass(ENCRYPTED_AND_SIGNED);
+            const updateType = (types = []) => {
+                if ([ENCRYPTED_AND_SIGNED, SIGNED, ENCRYPTED].some((type) => types.indexOf(type) !== -1)) {
+                    element.addClass(ENCRYPTED_AND_SIGNED_CLASS);
+                    return;
+                }
+                element.removeClass(ENCRYPTED_AND_SIGNED_CLASS);
+            };
+
             const onSubmit = () => saveContact();
             const isFree = !subscriptionModel.hasPaid('mail') && !memberModel.isMember();
             const properties = vcard.extractProperties(scope.contact.vCard);
@@ -107,9 +116,9 @@ function contactDetails(
             updateType(scope.contact.types);
 
             if (scope.contact.errors) {
-                scope.contact.errors.indexOf(CONSTANTS.CONTACT_ERROR.TYPE3_CONTACT_VERIFICATION) !== -1 && element.addClass(HAS_ERROR_VERIFICATION_ENCRYPTED);
-                scope.contact.errors.indexOf(CONSTANTS.CONTACT_ERROR.TYPE3_CONTACT_DECRYPTION) !== -1 && element.addClass(HAS_ERROR_ENCRYPTED);
-                scope.contact.errors.indexOf(CONSTANTS.CONTACT_ERROR.TYPE2_CONTACT_VERIFICATION) !== -1 && element.addClass(HAS_ERROR_VERIFICATION);
+                scope.contact.errors.indexOf(TYPE3_CONTACT_VERIFICATION) !== -1 && element.addClass(HAS_ERROR_VERIFICATION_ENCRYPTED);
+                scope.contact.errors.indexOf(TYPE3_CONTACT_DECRYPTION) !== -1 && element.addClass(HAS_ERROR_ENCRYPTED);
+                scope.contact.errors.indexOf(TYPE2_CONTACT_VERIFICATION) !== -1 && element.addClass(HAS_ERROR_VERIFICATION);
             }
 
             element.on('click', onClick);

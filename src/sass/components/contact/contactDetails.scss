@@ -159,6 +159,13 @@
 }
 
 
+.contactDetails-container:not(.contactDetails-encrypted-and-signed) {
+    // Hide the check icon if it's not encrypted and signed.
+    .contactEncrypted-signed-icon {
+        display: none;
+    }
+}
+
 // Errors handling
 
 .contactDetails-container .contactError-container { display: none }
