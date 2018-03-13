@@ -21,6 +21,7 @@ function simpleSend(messageApi, User, ComposerRequestStatus, pmcw, srp, encryptM
     };
 
     async function getSendParameters(message) {
+        const { AutoSaveContacts } = message;
         const { encrypt, cleartext } = await encryptMessage(message, message.emailsToString());
         if (cleartext === true && message.Password.length === 0 && message.ExpirationTime) {
             // Reject the error => to see the notification, and break the sending process
@@ -32,6 +33,7 @@ function simpleSend(messageApi, User, ComposerRequestStatus, pmcw, srp, encryptM
         const Packages = await encrypt();
         return {
             id: message.ID,
+            AutoSaveContacts,
             ExpirationTime: message.ExpirationTime,
             Packages
         };
