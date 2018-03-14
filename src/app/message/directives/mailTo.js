@@ -1,8 +1,7 @@
-import _ from 'lodash';
 import { parseURL } from '../../../helpers/browser';
 
 /* @ngInject */
-const mailTo = ($rootScope, messageModel, authentication) => ({
+const mailTo = ($rootScope, addressesModel, messageModel) => ({
     restrict: 'A',
     link(scope, element) {
         function toAddresses(emails) {
@@ -33,7 +32,7 @@ const mailTo = ($rootScope, messageModel, authentication) => ({
             const { searchObject = {} } = parseURL(mailto.substring(j + 1));
             const message = messageModel();
 
-            message.From = _.find(authentication.user.Addresses, { ID: scope.message.AddressID });
+            message.From = addressesModel.getByID(scope.message.AddressID);
 
             if (to) {
                 message.ToList = toAddresses(to.split(','));

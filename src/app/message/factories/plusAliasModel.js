@@ -1,7 +1,7 @@
 import _ from 'lodash';
 
 /* @ngInject */
-function plusAliasModel(authentication) {
+function plusAliasModel(addressesModel) {
     /**
      * Detect if the email address is a valid plus alias and returns the address model appropriate
      * @param  {String} email
@@ -28,7 +28,7 @@ function plusAliasModel(authentication) {
 
         // remove the + stuff
         const Email = `${email.substring(0, plusIndex)}${email.substring(atIndex, email.length)}`;
-        const address = _.find(authentication.user.Addresses, { Status: 1, Receive: 1, Email });
+        const address = _.find(addressesModel.get(), { Status: 1, Receive: 1, Email });
 
         if (!address) {
             return false;

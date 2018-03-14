@@ -1,7 +1,7 @@
 import _ from 'lodash';
 
 /* @ngInject */
-function memberModel($rootScope, memberApi, gettextCatalog, authentication, CONSTANTS) {
+function memberModel($rootScope, addressesModel, memberApi, gettextCatalog, authentication, CONSTANTS) {
     let CACHE = [];
     const { FREE_USER_ROLE, PAID_ADMIN_ROLE, PAID_MEMBER_ROLE, STATUS } = CONSTANTS;
     const I18N = {
@@ -24,7 +24,7 @@ function memberModel($rootScope, memberApi, gettextCatalog, authentication, CONS
     const formatUserMember = () => {
         _.extend(USER_MEMBER, {
             Name: authentication.user.Name,
-            Addresses: authentication.user.Addresses,
+            Addresses: addressesModel.get(),
             UsedSpace: authentication.user.UsedSpace,
             MaxSpace: authentication.user.MaxSpace
         });

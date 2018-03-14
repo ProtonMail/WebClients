@@ -5,6 +5,7 @@ function manageUser(
     CONSTANTS,
     pmcw,
     $rootScope,
+    addressesModel,
     authentication,
     setupKeys,
     $exceptionHandler,
@@ -55,18 +56,19 @@ function manageUser(
             { map: Object.create(null), list: [] }
         );
 
-        authentication.user.Addresses = list.concat(dirtyAddresses);
-
-        let index = authentication.user.Addresses.length;
+        const addresses = list.concat(dirtyAddresses);
+        let index = addresses.length;
 
         while (index--) {
-            const address = authentication.user.Addresses[index];
-            const found = _.find(user.Addresses, { ID: address.ID });
+            const address = addresses[index];
+            const found = addressesModel.getByID(address.ID, user, true);
 
             if (angular.isUndefined(found)) {
-                authentication.user.Addresses.splice(index, 1);
+                addresses.splice(index, 1);
             }
         }
+
+        addressesModel.set(addresses);
     };
 
     const mergeUser = (user = {}, keys, dirtyAddresses) => {
@@ -119,7 +121,7 @@ function manageUser(
 
         try {
             const organizationKey = await getPromise(User, password);
-            const { dirtyAddresses, keys } = await setupKeys.decryptUser(User, organizationKey, password);
+            const { dirtyAddresses, keys } = await setupKeys.decryptUser(User, addressesModel.get(), organizationKey, password);
             await generateKeys(User, Members, keys);
             storeKeys(keys);
             mergeUser(User, keys, dirtyAddresses);

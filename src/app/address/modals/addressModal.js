@@ -1,6 +1,8 @@
 import { CONSTANTS } from '../../constants';
 /* @ngInject */
 function addressModal(
+    addressModel,
+    addressesModel,
     authentication,
     pmModal,
     $rootScope,
@@ -27,7 +29,7 @@ function addressModal(
         controller: function(params) {
             const { domains = [], organizationKey = null, members = [] } = params;
             const organization = organizationModel.get();
-            const [{ DisplayName, Signature }] = authentication.user.Addresses || [];
+            const [{ DisplayName, Signature }] = addressesModel.get() || [];
 
             // NOTE DisplayName and Signature can be set to null
             this.model = { DisplayName: DisplayName || '', Signature: tools.replaceLineBreaks(Signature || '') };
@@ -46,7 +48,7 @@ function addressModal(
                     return notification.error(I18N.ERROR_DECRYPT_ORG_KEY);
                 }
 
-                if (!authentication.hasPmMe() && `${authentication.user.Name}@pm.me` === `${this.address}@${this.domain.DomainName}`) {
+                if (!addressesModel.hasPmMe() && `${authentication.user.Name}@pm.me` === `${this.address}@${this.domain.DomainName}`) {
                     return notification.error(I18N.errorPmMeSetup());
                 }
 

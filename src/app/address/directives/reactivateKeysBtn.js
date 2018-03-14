@@ -1,6 +1,6 @@
 import _ from 'lodash';
 /* @ngInject */
-function reactivateKeysBtn(authentication, oldPasswordModal, gettextCatalog, reactivateKeys, networkActivityTracker, notification) {
+function reactivateKeysBtn(authentication, addressesModel, oldPasswordModal, gettextCatalog, reactivateKeys, networkActivityTracker, notification) {
     const I18N = {
         success: gettextCatalog.getString('Keys reactivated', null, 'Success'),
         reactivateContact: gettextCatalog.getString('Reactivate contact keys', null, 'Action'),
@@ -15,7 +15,7 @@ function reactivateKeysBtn(authentication, oldPasswordModal, gettextCatalog, rea
 
         if (mode === 'address') {
             return _.reduce(
-                authentication.user.Addresses || [],
+                addressesModel.get(),
                 (acc, { Keys = [] }) => {
                     return acc.concat(Keys.filter(({ decrypted }) => !decrypted));
                 },

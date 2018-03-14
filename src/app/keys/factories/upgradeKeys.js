@@ -1,7 +1,7 @@
 import _ from 'lodash';
 
 /* @ngInject */
-function upgradeKeys($log, CONSTANTS, gettextCatalog, Key, networkActivityTracker, organizationApi, passwords, pmcw, secureSessionStorage) {
+function upgradeKeys($log, addressesModel, CONSTANTS, gettextCatalog, Key, networkActivityTracker, organizationApi, passwords, pmcw, secureSessionStorage) {
     /**
      * Reformat organization keys
      * @param  {String} password
@@ -16,9 +16,10 @@ function upgradeKeys($log, CONSTANTS, gettextCatalog, Key, networkActivityTracke
                 .getKeys()
                 .then(({ data = {} } = {}) => {
                     const encryptPrivateKey = data.PrivateKey;
+                    const [{ Email }] = addressesModel.getByUser(user) || {};
                     return pmcw
                         .decryptPrivateKey(encryptPrivateKey, oldSaltedPassword)
-                        .then((pkg) => pmcw.reformatKey(pkg, user.Addresses[0].Email, password), () => 0);
+                        .then((pkg) => pmcw.reformatKey(pkg, Email, password), () => 0);
                 })
                 .catch(({ data = {} } = {}) => {
                     throw new Error(data.Error || gettextCatalog.getString('Unable to get organization keys', null, 'Error'));

@@ -1,7 +1,5 @@
-import _ from 'lodash';
-
 /* @ngInject */
-function unsubscribePanel($rootScope, authentication, confirmModal, gettextCatalog, unsubscribeModel) {
+function unsubscribePanel($rootScope, addressesModel, confirmModal, gettextCatalog, unsubscribeModel) {
     const I18N = {
         notice: gettextCatalog.getString('This message is from a mailing list.', null, 'Info'),
         kb: gettextCatalog.getString('Learn more', null, 'Info'),
@@ -17,7 +15,7 @@ function unsubscribePanel($rootScope, authentication, confirmModal, gettextCatal
     };
 
     const confirmFirst = (message) => {
-        const { Email } = _.find(authentication.user.Addresses, { ID: message.AddressID }) || authentication.user.Addresses[0];
+        const { Email } = addressesModel.getByID(message.AddressID);
 
         confirmModal.activate({
             params: {

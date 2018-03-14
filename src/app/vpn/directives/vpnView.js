@@ -1,12 +1,12 @@
 /* @ngInject */
-function vpnView($rootScope, $state, CONSTANTS, authentication) {
+function vpnView($rootScope, $state, addressesModel, CONSTANTS, authentication) {
     const vpnStatus = () => {
         const { Status = 0 } = authentication.user.VPN;
         return Status;
     };
     const getFirstEmail = () => {
-        const { Addresses = [] } = authentication.user;
-        return Addresses.length ? Addresses[0].Email : '';
+        const addresses = addressesModel.get();
+        return addresses.length ? addresses[0].Email : '';
     };
     return {
         restrict: 'E',

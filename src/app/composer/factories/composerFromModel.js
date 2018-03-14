@@ -3,7 +3,7 @@ import _ from 'lodash';
 import { flow, filter, sortBy } from 'lodash/fp';
 
 /* @ngInject */
-function composerFromModel(authentication, plusAliasModel) {
+function composerFromModel(addressesModel, authentication, plusAliasModel) {
     /**
      * Return list of addresses available in the FROM select
      * @param  {Object} message
@@ -11,7 +11,7 @@ function composerFromModel(authentication, plusAliasModel) {
      */
     function get({ xOriginalTo, AddressID }) {
         const plusAddress = plusAliasModel.getAddress(xOriginalTo);
-        const addresses = flow(filter({ Status: 1, Receive: 1 }), sortBy('Order'))(authentication.user.Addresses);
+        const addresses = flow(filter({ Status: 1, Receive: 1 }), sortBy('Order'))(addressesModel.get());
 
         if (plusAddress) {
             // It's important to unshift the plus address to be found first with find()

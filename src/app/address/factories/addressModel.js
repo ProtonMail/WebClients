@@ -5,6 +5,7 @@ function addressModel(
     $state,
     gettextCatalog,
     networkActivityTracker,
+    addressesModel,
     notification,
     organizationModel,
     organizationKeysModel,
@@ -249,11 +250,12 @@ function addressModel(
         return addressWithoutKeysManager
             .manageOne(address, member)
             .then(([adr = {}]) => {
-                const index = _.findIndex(authentication.user.Addresses, ({ ID }) => ID === adr.ID);
+                const addresses = addressesModel.getByUser(authentication.user);
+                const index = _.findIndex(addresses, ({ ID }) => ID === adr.ID);
 
                 // Address receive === 1 because we have keys and Status === 1
                 adr.Receive = +(adr.Status === 1);
-                index !== -1 && authentication.user.Addresses.splice(index, 1, adr);
+                index !== -1 && addresses.splice(index, 1, adr);
                 dispatcher.addressModel('generateKey.success', { address });
             })
             .catch(_.noop);
@@ -263,12 +265,15 @@ function addressModel(
         const promise = Address.order({ Order })
             .then(eventManager.call)
             .then(() => notification.success(I18N.SUCCESS_ORDER));
+
         networkActivityTracker.track(promise);
     };
 
     const getActive = () => {
-        const active = _.filter(authentication.user.Addresses, { Status: 1, Receive: 1 });
-        const disabled = _.difference(authentication.user.Addresses, active);
+        const addresses = addressesModel.get();
+        const active = _.filter(addresses, { Status: 1, Receive: 1 });
+        const disabled = _.difference(addresses, active);
+
         return { active, disabled };
     };
 

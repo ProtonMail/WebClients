@@ -32,12 +32,12 @@ export const getAddressKeys = (addresses = {}) => {
  * @param {User} user
  * @returns {Array}
  */
-export const getUserKeys = (user) => {
+export const getUserKeys = (user, addresses) => {
     const getAddressFromFingerprint = (addresses, wantedFingerprint) => _.find(addresses, ({ Keys = [] }) =>
         _.find(Keys, ({ fingerprint }) => fingerprint === wantedFingerprint));
 
     const groupedByDisplayName = user.Keys.reduce((acc, key) => {
-        const address = getAddressFromFingerprint(user.Addresses, key.fingerprint);
+        const address = getAddressFromFingerprint(addresses, key.fingerprint);
 
         // Should never happen, but just to be safe.
         if (!address) {

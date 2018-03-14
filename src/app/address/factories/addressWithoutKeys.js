@@ -1,7 +1,7 @@
 import _ from 'lodash';
 
 /* @ngInject */
-function addressWithoutKeys(memberModel, authentication, AppModel) {
+function addressWithoutKeys(memberModel, addressesModel, authentication, AppModel) {
     const isDirtyAddress = ({ Keys, Status }) => !Keys.length && Status === 1;
     const filterDirty = (user, list = []) => {
         return _.filter(list, (adr) => isDirtyAddress(adr) && user.Private === 1);
@@ -10,9 +10,10 @@ function addressWithoutKeys(memberModel, authentication, AppModel) {
     /**
      * Get the list of dirty addresses for a user
      * @param  {Object} user
+     * @param {Array} addresses
      * @return {Array}
      */
-    const fromUser = (user = authentication.user) => filterDirty(user, user.Addresses);
+    const fromUser = (user = authentication.user, addresses = addressesModel.get()) => filterDirty(user, addresses);
 
     /**
      * Get list of addresses for the member we try to edit
@@ -25,14 +26,14 @@ function addressWithoutKeys(memberModel, authentication, AppModel) {
             return member.Addresses;
         }
 
-        const mapAddresses = user.Addresses.reduce((acc, { ID }) => ((acc[ID] = true), acc), {});
+        const mapAddresses = addressesModel.getByUser(user).reduce((acc, { ID }) => ((acc[ID] = true), acc), {});
         /*
                 The member is coming from the event he has the new address.
                 But member.Addresses don't have Keys even if the matching one
-                inside user.Addresses has Keys.
+                inside addressesModel.getByUser(user) has Keys.
                 We create a diff array with only what's new from the event.
              */
-        return user.Addresses.concat(member.Addresses.filter(({ ID }) => !mapAddresses[ID]));
+        return addressesModel.getByUser(user).concat(member.Addresses.filter(({ ID }) => !mapAddresses[ID]));
     };
 
     /**
@@ -50,7 +51,7 @@ function addressWithoutKeys(memberModel, authentication, AppModel) {
         }
 
         // Default case onLoad -> via securedController
-        return { addresses: filterDirty(user, user.Addresses) };
+        return { addresses: filterDirty(user, addressesModel.getByUser(user)) };
     };
 
     /**

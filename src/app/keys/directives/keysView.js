@@ -1,7 +1,7 @@
 import { getAddressKeys, getUserKeys } from '../../address/helpers/addressKeysView';
 
 /* @ngInject */
-function keysView(dispatchers, authentication) {
+function keysView(dispatchers, addressesModel, authentication) {
     const REQUIRE_CONTACT_CLASS = 'keysView-require-contact-keys-reactivation';
     const REQUIRE_ADDRESS_CLASS = 'keysView-require-address-keys-reactivation';
     return {
@@ -12,26 +12,33 @@ function keysView(dispatchers, authentication) {
         link(scope, el) {
             const { on, unsubscribe } = dispatchers();
 
-            const updateView = ({ Keys = [], Addresses = [] }) => {
-                const contactAction = Keys.some(({ decrypted }) => !decrypted) ? 'add' : 'remove';
-                const addressAction = Addresses.some(({ Keys = [] }) => Keys.filter(({ decrypted }) => !decrypted).length) ? 'add' : 'remove';
+            const updateUser = () => {
+                const user = authentication.user;
+                const contactAction = user.Keys.some(({ decrypted }) => !decrypted) ? 'add' : 'remove';
+
+                scope.userKeys = getUserKeys(user, addressesModel.getByUser(user));
+                scope.isSubUser = user.subuser;
 
                 el[0].classList[contactAction](REQUIRE_CONTACT_CLASS);
+            };
+
+            const updateAddresses = (addresses = addressesModel.get()) => {
+                const addressAction = addresses.some(({ Keys = [] }) => Keys.filter(({ decrypted }) => !decrypted).length) ? 'add' : 'remove';
+
+                scope.addressKeys = getAddressKeys(addresses);
+
                 el[0].classList[addressAction](REQUIRE_ADDRESS_CLASS);
             };
 
-            const update = () => {
-                const user = authentication.user;
+            on('updateUser', updateUser);
+            on('addressesModel', (e, { type = '', data = {} }) => {
+                if (type === 'addresses.updated') {
+                    updateAddresses(data.addresses);
+                }
+            });
 
-                scope.addressKeys = getAddressKeys(user.Addresses);
-                scope.userKeys = getUserKeys(user);
-                scope.isSubUser = user.subuser;
-
-                updateView(user);
-            };
-
-            on('updateUser', update);
-            update();
+            updateAddresses();
+            updateUser();
 
             scope.$on('$destroy', () => {
                 unsubscribe();

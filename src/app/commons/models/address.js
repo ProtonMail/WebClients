@@ -6,7 +6,9 @@ function Address($http, url, gettextCatalog) {
         ERROR_DELETE: gettextCatalog.getString('Error during deletion', null, 'Error'),
         ERROR_DISABLE: gettextCatalog.getString('Error during disable request', null, 'Error'),
         ERROR_ENABLE: gettextCatalog.getString('Error during enable request', null, 'Error'),
-        ERROR_CREATE: gettextCatalog.getString('Address creation failed', null, 'Error')
+        ERROR_CREATE: gettextCatalog.getString('Address creation failed', null, 'Error'),
+        ERROR_QUERY: gettextCatalog.getString('Error during query addresses', null, 'Error'),
+        ERROR_GET: gettextCatalog.getString('Error during get address', null, 'Error')
     };
 
     const requestUrl = url.build('addresses');
@@ -92,6 +94,9 @@ function Address($http, url, gettextCatalog) {
             .catch(filterError(I18N.ERROR_ORDER));
     };
 
-    return { create, setup, edit, enable, disable, remove, order };
+    const query = () => $http.get(requestUrl()).then(handleResult).catch(filterError(I18N.ERROR_QUERY));
+    const get = (addressID) => $http.get(requestUrl(addressID)).then(handleResult).catch(filterError(I18N.ERROR_GET));
+
+    return { create, setup, edit, enable, disable, remove, order, query, get };
 }
 export default Address;

@@ -2,7 +2,7 @@ import _ from 'lodash';
 import { openWindow, parseURL } from '../../../helpers/browser';
 
 /* @ngInject */
-function unsubscribeModel($rootScope, authentication, gettextCatalog, messageModel, notification, simpleSend) {
+function unsubscribeModel($rootScope, addressesModel, authentication, gettextCatalog, messageModel, notification, simpleSend) {
 
     const LIST = [];
     const UNSUBSCRIBE_REGEX = /<(.*?)>/g;
@@ -27,9 +27,10 @@ function unsubscribeModel($rootScope, authentication, gettextCatalog, messageMod
 
         const to = mailto.substring(0, j);
         const { searchObject = {} } = parseURL(mailto.substring(j + 1));
+        const { ID } = addressesModel.getFirst();
 
-        message.AddressID = addressID || authentication.user.Addresses[0].ID;
-        message.From = _.find(authentication.user.Addresses, { ID: message.AddressID });
+        message.AddressID = addressID || ID;
+        message.From = addressesModel.getByID(message.AddressID);
         message.Password = '';
         message.AutoSaveContacts = 0; // Override the global settings value to prevent auto adding recipients to contacts
 

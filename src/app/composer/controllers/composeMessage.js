@@ -8,6 +8,7 @@ function ComposeMessageController(
     $state,
     $stateParams,
     $timeout,
+    addressesModel,
     AppModel,
     authentication,
     cache,
@@ -81,8 +82,10 @@ function ComposeMessageController(
     );
 
     unsubscribe.push(
-        $scope.$on('updateUser', () => {
-            $scope.addresses = authentication.user.Addresses;
+        $scope.$on('addressesModel', (e, { type }) => {
+            if (type === 'addresses.updated') {
+                $scope.addresses = addressesModel.get();
+            }
         })
     );
 

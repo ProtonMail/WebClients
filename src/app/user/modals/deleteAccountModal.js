@@ -2,6 +2,7 @@ import { CONSTANTS } from '../../constants';
 
 /* @ngInject */
 function deleteAccountModal(
+    addressesModel,
     pmModal,
     Report,
     User,
@@ -46,6 +47,7 @@ function deleteAccountModal(
                 }
 
                 const username = authentication.user.Name;
+                const { Email } = addressesModel.getFirst();
                 const params = {
                     OS: '--',
                     OSVersion: '--',
@@ -57,7 +59,7 @@ function deleteAccountModal(
                     ClientType: CLIENT_TYPE,
                     Title: `[DELETION FEEDBACK] ${username}`,
                     Username: username,
-                    Email: this.email || authentication.user.Addresses[0].Email,
+                    Email: this.email || Email,
                     Description: this.feedback
                 };
 

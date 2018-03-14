@@ -40,6 +40,7 @@ function eventManager(
     };
     const manageActiveMessage = ({ Messages = [] }) => Messages.length && dispatch('activeMessages', { messages: _.map(Messages, 'Message') });
     const manageSubscription = ({ Subscription: subscription }) => subscription && dispatch('subscription.event', { subscription });
+    const manageAddresses = ({ Addresses = [] }) => Addresses.length && dispatch('addresses.event', { addresses: Addresses });
 
     /**
      * Clean contact datas
@@ -324,6 +325,7 @@ function eventManager(
         manageOrganization(data.Organization);
         manageFilters(data.Filters);
         manageActiveMessage(data);
+        manageAddresses(data);
 
         return $injector.get('manageUser')(data)
             .then(() => {
