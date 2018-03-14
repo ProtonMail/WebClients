@@ -11,7 +11,7 @@ function addressesModel(Address, authentication, dispatchers) {
 
     const set = (addresses = [], user = authentication.user, noEvent = false) => {
         CACHE[user.ID] = addresses;
-        !noEvent && dispatcher.addressModel('addresses.updated', { addresses });
+        !noEvent && dispatcher.addressesModel('addresses.updated', { addresses });
     };
 
     /**

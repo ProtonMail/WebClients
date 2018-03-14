@@ -14,6 +14,7 @@ import usernamePassword from './directives/usernamePassword';
 import displayNameSignature from './directives/displayNameSignature';
 import generateKeyModel from './factories/generateKeyModel';
 import signatureModel from './factories/signatureModel';
+import addressesModel from './factories/addressesModel';
 import deleteAccountModal from './modals/deleteAccountModal';
 import abuseFraudModal from './modals/abuseFraudModal';
 import generateModal from './modals/generateModal';
@@ -44,6 +45,7 @@ export default angular
     .factory('abuseFraudModal', abuseFraudModal)
     .factory('generateKeyModel', generateKeyModel)
     .factory('signatureModel', signatureModel)
+    .factory('addressesModel', addressesModel)
     .factory('deleteAccountModal', deleteAccountModal)
     .factory('generateModal', generateModal)
     .factory('attachSignupSubscription', attachSignupSubscription)
