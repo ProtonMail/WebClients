@@ -89,7 +89,7 @@ function authentication(
                             settings: $injector.get('settingsApi').fetch(),
                             mailSettings: $injector.get('settingsMailApi').fetch(),
                             contacts: $injector.get('contactEmails').load(),
-                            addresses: $injector.get('addressesModel').fetch(),
+                            addresses: $injector.get('addressesModel').fetch(user),
                             fix: fixOrganization(),
                             organizationKey: decryptOrganization()
                         })
