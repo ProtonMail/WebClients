@@ -1,7 +1,8 @@
 import _ from 'lodash';
+import { INVITE_URL } from '../../constants';
 
 /* @ngInject */
-function signupModel(User, $state, $stateParams, $location, CONSTANTS, Payment, networkActivityTracker, $rootScope) {
+function signupModel(User, $state, $stateParams, $location, Payment, networkActivityTracker, $rootScope) {
     const CACHE = {};
     const dispatch = (type, data = {}) => $rootScope.$emit('signup', { type, data });
 
@@ -59,7 +60,7 @@ function signupModel(User, $state, $stateParams, $location, CONSTANTS, Payment, 
                     });
                 }
 
-                window.location.href = CONSTANTS.INVITE_URL;
+                window.location.href = INVITE_URL;
                 return data;
             })
             .catch((err) => {

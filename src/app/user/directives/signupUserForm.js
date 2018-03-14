@@ -1,5 +1,7 @@
+import { INVITE_MAIL } from '../../constants';
+
 /* @ngInject */
-function signupUserForm(confirmModal, gettextCatalog, signupModel, CONSTANTS, $rootScope) {
+function signupUserForm(confirmModal, gettextCatalog, signupModel, $rootScope) {
     const I18N = {
         TITLE: gettextCatalog.getString('Warning', null, 'Title'),
         MESSAGE: gettextCatalog.getString(
@@ -22,7 +24,7 @@ function signupUserForm(confirmModal, gettextCatalog, signupModel, CONSTANTS, $r
                 // Save variables to prevent extensions/etc
                 // from modifying them during setup process
                 signupModel.store(scope.account);
-                signupModel.set('Type', CONSTANTS.INVITE_MAIL);
+                signupModel.set('Type', INVITE_MAIL);
 
                 $rootScope.$emit('signup', {
                     type: 'userform.submit',

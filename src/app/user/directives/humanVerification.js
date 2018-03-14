@@ -1,5 +1,7 @@
+import { INVITE_MAIL } from '../../constants';
+
 /* @ngInject */
-function humanVerification(AppModel, User, $state, signupModel, networkActivityTracker, $rootScope, CONSTANTS) {
+function humanVerification(AppModel, User, $state, signupModel, networkActivityTracker, $rootScope) {
     const SELECTOR = {
         FORM_EMAIL: '.humanVerification-formEmail-container',
         FORM_SMS: '.humanVerification-formSms-container',
@@ -49,7 +51,7 @@ function humanVerification(AppModel, User, $state, signupModel, networkActivityT
             model: '='
         },
         templateUrl: require('../../../templates/user/humanVerification.tpl.html'),
-        link(scope, el, { offerType = CONSTANTS.INVITE_MAIL }) {
+        link(scope, el, { offerType = INVITE_MAIL }) {
             const unsubscribe = [];
             const $formSMS = el.find(SELECTOR.FORM_SMS);
             const $formEMAIL = el.find(SELECTOR.FORM_EMAIL);
