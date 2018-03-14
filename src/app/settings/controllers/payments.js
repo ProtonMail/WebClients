@@ -1,4 +1,5 @@
 import _ from 'lodash';
+import { UNPAID_STATE } from '../../constants';
 
 /* @ngInject */
 function PaymentsController(
@@ -18,10 +19,8 @@ function PaymentsController(
     networkActivityTracker,
     organizationInvoices,
     Payment,
-    paymentModel,
-    CONSTANTS
+    paymentModel
 ) {
-    const { UNPAID_STATE } = CONSTANTS;
     $scope.methods = methods;
     $scope.subscribed = authentication.user.Subscribed;
     $scope.invoices = invoices.data.Invoices;

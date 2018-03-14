@@ -1,6 +1,9 @@
+import { REGEX_EMAIL, EMAIL_FORMATING } from '../../constants';
+
+const { OPEN_TAG_AUTOCOMPLETE_RAW, CLOSE_TAG_AUTOCOMPLETE_RAW } = EMAIL_FORMATING;
+
 /* @ngInject */
-function autocompleteEmailsItem(CONSTANTS, regexEmail, sanitize) {
-    const { OPEN_TAG_AUTOCOMPLETE_RAW, CLOSE_TAG_AUTOCOMPLETE_RAW } = CONSTANTS.EMAIL_FORMATING;
+function autocompleteEmailsItem(sanitize) {
     const KEY_ENTER = 13;
 
     /**
@@ -52,7 +55,7 @@ function autocompleteEmailsItem(CONSTANTS, regexEmail, sanitize) {
                         scope.email.Address = name;
                     }
 
-                    scope.email.invalid = !regexEmail.test(adr || name);
+                    scope.email.invalid = !REGEX_EMAIL.test(adr || name);
                     updateBtn(scope.email.Address);
                 });
             };

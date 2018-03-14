@@ -1,6 +1,7 @@
+import { DEFAULT_SQUIRE_VALUE } from '../../constants';
+
 /* @ngInject */
-function addFilePopover(editorState, CONSTANTS, squireExecAction) {
-    const { DEFAULT_SQUIRE_VALUE } = CONSTANTS;
+function addFilePopover(editorState, squireExecAction) {
     const IMAGE = DEFAULT_SQUIRE_VALUE.IMAGE;
     const CLASS_HIDDEN = 'addFilePopover-hidden';
 

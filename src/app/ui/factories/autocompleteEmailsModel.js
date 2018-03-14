@@ -1,11 +1,11 @@
 import _ from 'lodash';
-
 import { flow, filter, take, map, sortBy } from 'lodash/fp';
+import { REGEX_EMAIL, EMAIL_FORMATING, AUTOCOMPLETE_DOMAINS, AWESOMEPLETE_MAX_ITEMS } from '../../constants';
+
+const { OPEN_TAG_AUTOCOMPLETE, CLOSE_TAG_AUTOCOMPLETE } = EMAIL_FORMATING;
 
 /* @ngInject */
-function autocompleteEmailsModel($injector, authentication, regexEmail, checkTypoEmails, $filter, CONSTANTS) {
-    const { AUTOCOMPLETE_DOMAINS } = CONSTANTS;
-    const { OPEN_TAG_AUTOCOMPLETE, CLOSE_TAG_AUTOCOMPLETE } = CONSTANTS.EMAIL_FORMATING;
+function autocompleteEmailsModel($injector, authentication, checkTypoEmails, $filter) {
 
     let TEMP_LABELS = {};
     const unicodeTagView = $filter('unicodeTagView');
@@ -39,7 +39,7 @@ function autocompleteEmailsModel($injector, authentication, regexEmail, checkTyp
                 const value = `${email}@${domain}`;
                 return { label: value, value, Name: value };
             }),
-            take(CONSTANTS.AWESOMEPLETE_MAX_ITEMS)
+            take(AWESOMEPLETE_MAX_ITEMS)
         )(AUTOCOMPLETE_DOMAINS);
     };
 
@@ -93,7 +93,7 @@ function autocompleteEmailsModel($injector, authentication, regexEmail, checkTyp
             }),
             sortBy('label'),
             filter(({ label }) => label.toLowerCase().includes(input)),
-            take(CONSTANTS.AWESOMEPLETE_MAX_ITEMS)
+            take(AWESOMEPLETE_MAX_ITEMS)
         )($injector.get('contactEmails').fetch());
 
         // it creates a map <escaped>:<label> because the lib does not support more keys than label/value and we need the unescaped value #4901
@@ -134,7 +134,7 @@ function autocompleteEmailsModel($injector, authentication, regexEmail, checkTyp
         const cleanLabel = $filter('chevrons')(label);
 
         // Check if an user paste an email Name <email> || Name (email)
-        if (regexEmail.test(cleanLabel)) {
+        if (REGEX_EMAIL.test(cleanLabel)) {
             const [Name, adr = value] = cleanLabel.split(/<|\(/).map((str = '') => str.trim());
             // If the last >/) does not exist, keep the email intact
             const Address = /(>|\))$/.test(adr) ? adr.slice(0, -1) : adr;
@@ -169,7 +169,7 @@ function autocompleteEmailsModel($injector, authentication, regexEmail, checkTyp
                 list.push(
                     _.extend({}, data, {
                         $id: getID(),
-                        invalid: !regexEmail.test(data.Address) || checkTypoEmails(data.Address)
+                        invalid: !REGEX_EMAIL.test(data.Address) || checkTypoEmails(data.Address)
                     })
                 );
             }
