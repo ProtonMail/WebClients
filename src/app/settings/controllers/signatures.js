@@ -16,7 +16,7 @@ function SignaturesController(
     const unsubscribesAll = [];
 
     $scope.isSubUser = authentication.user.subuser;
-    const { active, disabled } = addressesModel.getActive();
+    const { active, disabled } = addressModel.getActive();
     $scope.activeAddresses = active;
     $scope.disabledAddresses = disabled;
     $scope.itemMoved = false;
@@ -67,7 +67,7 @@ function SignaturesController(
         $rootScope.$on('updateUser', () => {
             if ($scope.itemMoved === false) {
                 $scope.$applyAsync(() => {
-                    const { active, disabled } = addressesModel.getActive();
+                    const { active, disabled } = addressModel.getActive();
                     $scope.activeAddresses = active;
                     $scope.disabledAddresses = disabled;
                 });
@@ -90,7 +90,7 @@ function SignaturesController(
         $rootScope.$on('addressModel', (e, { type }) => {
             if (type === 'generateKey.success') {
                 $scope.$applyAsync(() => {
-                    const { active, disabled } = addressesModel.getActive();
+                    const { active, disabled } = addressModel.getActive();
                     $scope.activeAddresses = active;
                     $scope.disabledAddresses = disabled;
                 });
@@ -112,7 +112,7 @@ function SignaturesController(
         },
         orderChanged() {
             const addresses = $scope.activeAddresses.concat($scope.disabledAddresses);
-            const { active, disabled } = addressesModel.getActive();
+            const { active, disabled } = addressModel.getActive();
             const map = active.concat(disabled).reduce((acc, adr) => ((acc[adr.ID] = adr), acc), {});
             const newOrder = addresses.map(({ ID }) => map[ID].Order);
 
