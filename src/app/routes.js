@@ -1,9 +1,10 @@
 import _ from 'lodash';
+import { PAID_ADMIN_ROLE, PAID_MEMBER_ROLE,INVITE_MAIL, INVITE_URL, OAUTH_KEY, MAILBOX_IDENTIFIERS, CURRENCIES, BILLING_CYCLE } from './constants';
 
 export default angular
     .module('proton.routes', ['ui.router', 'proton.authentication', 'proton.constants', 'proton.utils'])
 
-    .config(($stateProvider, $urlRouterProvider, $locationProvider, CONSTANTS) => {
+    .config(($stateProvider, $urlRouterProvider, $locationProvider) => {
         const conversationParameters = () => {
             const parameters = [
                 'email',
@@ -106,7 +107,7 @@ export default angular
 
                     $rootScope.loggingOut = false;
 
-                    Invite.check(inviteToken, inviteSelector, CONSTANTS.INVITE_MAIL)
+                    Invite.check(inviteToken, inviteSelector, INVITE_MAIL)
                         .then(({ data = {} } = {}) => {
                             if (data.Valid === 1) {
                                 AppModel.set('preInvited', true);
@@ -125,7 +126,7 @@ export default angular
             .state('invite', {
                 url: '/invite',
                 resolve: {
-                    direct($state, User, AppModel, CONSTANTS) {
+                    direct($state, User, AppModel) {
                         if (!AppModel.is('preInvited')) {
                             return User.direct()
                                 .then(({ data = {} } = {}) => {
@@ -134,7 +135,7 @@ export default angular
                                         return;
                                     }
 
-                                    window.location.href = CONSTANTS.INVITE_URL;
+                                    window.location.href = INVITE_URL;
                                     return Promise.reject();
                                 })
                                 .catch(() => {
@@ -190,12 +191,12 @@ export default angular
                     lang(i18nLoader) {
                         return i18nLoader.translate();
                     },
-                    plans(CONSTANTS, $stateParams, Payment) {
+                    plans($stateParams, Payment) {
                         const isValid = (test, list = []) => list.indexOf(test) !== -1;
                         const { currency, billing: cycle, plan } = $stateParams;
 
-                        const isValidCurrency = isValid(currency, CONSTANTS.CURRENCIES);
-                        const isValidCycle = isValid(+cycle, CONSTANTS.BILLING_CYCLE);
+                        const isValidCurrency = isValid(currency, CURRENCIES);
+                        const isValidCycle = isValid(+cycle, BILLING_CYCLE);
                         const isValidPlan = isValid(plan, ['free', 'plus', 'visionary', 'professional']);
 
                         if (isValidCycle && isValidCurrency && isValidPlan) {
@@ -447,16 +448,16 @@ export default angular
                             return i18nLoader.localizeDate().then(() => authentication.user);
                         }
 
-                        const uid = secureSessionStorage.getItem(CONSTANTS.OAUTH_KEY + ':UID');
+                        const uid = secureSessionStorage.getItem(OAUTH_KEY + ':UID');
 
                         if (uid) {
                             $http.defaults.headers.common['x-pm-uid'] = uid;
-                        } else if (angular.isDefined(secureSessionStorage.getItem(CONSTANTS.OAUTH_KEY + ':SessionToken'))) {
+                        } else if (angular.isDefined(secureSessionStorage.getItem(OAUTH_KEY + ':SessionToken'))) {
                             $http.defaults.headers.common['x-pm-uid'] = pmcw.decode_base64(
-                                secureSessionStorage.getItem(CONSTANTS.OAUTH_KEY + ':SessionToken') || ''
+                                secureSessionStorage.getItem(OAUTH_KEY + ':SessionToken') || ''
                             );
-                            secureSessionStorage.setItem(CONSTANTS.OAUTH_KEY + ':UID', $http.defaults.headers.common['x-pm-uid']);
-                            secureSessionStorage.removeItem(CONSTANTS.OAUTH_KEY + ':SessionToken');
+                            secureSessionStorage.setItem(OAUTH_KEY + ':UID', $http.defaults.headers.common['x-pm-uid']);
+                            secureSessionStorage.removeItem(OAUTH_KEY + ':SessionToken');
                         }
 
                         return authentication.fetchUserInfo().then((data) => {
@@ -693,7 +694,7 @@ export default angular
                         return networkActivityTracker.track(Payment.invoices({ Owner: 0 }));
                     },
                     organizationInvoices(user, Payment, networkActivityTracker) {
-                        if (user.Role === CONSTANTS.PAID_ADMIN_ROLE) {
+                        if (user.Role === PAID_ADMIN_ROLE) {
                             return networkActivityTracker.track(Payment.invoices({ Owner: 1 }));
                         }
                         return {};
@@ -761,7 +762,7 @@ export default angular
                 params: { scroll: null, noBlackFridayModal: null, cycle: null, currency: null },
                 resolve: {
                     access(user, $state) {
-                        if (user.subuser || user.Role === CONSTANTS.PAID_MEMBER_ROLE) {
+                        if (user.subuser || user.Role === PAID_MEMBER_ROLE) {
                             $state.go('secured.account');
                             return Promise.reject();
                         }
@@ -798,20 +799,20 @@ export default angular
                 },
                 resolve: {
                     access(user, $state) {
-                        if (!user.subuser && user.Role !== CONSTANTS.PAID_MEMBER_ROLE) {
+                        if (!user.subuser && user.Role !== PAID_MEMBER_ROLE) {
                             return Promise.resolve();
                         }
                         $state.go('secured.account');
                         return Promise.reject();
                     },
                     members(user, memberModel, networkActivityTracker) {
-                        if (user.Role === CONSTANTS.PAID_ADMIN_ROLE) {
+                        if (user.Role === PAID_ADMIN_ROLE) {
                             return networkActivityTracker.track(memberModel.fetch());
                         }
                         return { data: {} };
                     },
                     domains(user, domainModel, networkActivityTracker) {
-                        if (user.Role === CONSTANTS.PAID_ADMIN_ROLE) {
+                        if (user.Role === PAID_ADMIN_ROLE) {
                             return networkActivityTracker.track(domainModel.fetch());
                         }
                         return { data: {} };
@@ -823,7 +824,7 @@ export default angular
                         return networkActivityTracker.track(organizationModel.fetch());
                     },
                     organizationKeys(user, organizationKeysModel, networkActivityTracker) {
-                        if (user.Role === CONSTANTS.PAID_ADMIN_ROLE) {
+                        if (user.Role === PAID_ADMIN_ROLE) {
                             return networkActivityTracker.track(organizationKeysModel.fetch());
                         }
                         return Promise.resolve();
@@ -852,20 +853,20 @@ export default angular
                 url: '/domains',
                 resolve: {
                     access(user, $state) {
-                        if (user.subuser || user.Role === CONSTANTS.PAID_MEMBER_ROLE) {
+                        if (user.subuser || user.Role === PAID_MEMBER_ROLE) {
                             $state.go('secured.account');
                             return Promise.reject();
                         }
                         return Promise.resolve();
                     },
                     members(user, memberModel, networkActivityTracker) {
-                        if (user.Role === CONSTANTS.PAID_ADMIN_ROLE) {
+                        if (user.Role === PAID_ADMIN_ROLE) {
                             return networkActivityTracker.track(memberModel.fetch());
                         }
                         return { data: {} };
                     },
                     domains(user, domainModel, networkActivityTracker) {
-                        if (user.Role === CONSTANTS.PAID_ADMIN_ROLE) {
+                        if (user.Role === PAID_ADMIN_ROLE) {
                             return networkActivityTracker.track(domainModel.fetch());
                         }
                         return { data: {} };
@@ -877,7 +878,7 @@ export default angular
                         return networkActivityTracker.track(organizationModel.fetch());
                     },
                     organizationKeys(user, organizationKeysModel, networkActivityTracker) {
-                        if (user.Role === CONSTANTS.PAID_ADMIN_ROLE) {
+                        if (user.Role === PAID_ADMIN_ROLE) {
                             return networkActivityTracker.track(organizationKeysModel.fetch());
                         }
                         return Promise.resolve();
@@ -1006,7 +1007,7 @@ export default angular
                 }
             });
 
-        Object.keys(CONSTANTS.MAILBOX_IDENTIFIERS).forEach((box) => {
+        Object.keys(MAILBOX_IDENTIFIERS).forEach((box) => {
             const parentState = 'secured.' + box;
             const childState = 'secured.' + box + '.element';
 

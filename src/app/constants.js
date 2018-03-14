@@ -8,6 +8,9 @@ export const FREE_USER_ROLE = 0;
 export const PAID_MEMBER_ROLE = 1;
 export const PAID_ADMIN_ROLE = 2;
 export const PHOTO_PLACEHOLDER_URL = '/assets/img/photo-placeholder.png';
+
+export const INVITE_MAIL = 1;
+export const INVITE_VPN = 2;
 export const UNPAID_STATE = {
     NOT: 0,
     AVAILABLE: 1,
@@ -180,8 +183,6 @@ export const CONSTANTS = {
         CUSTOM_DOMAIN: 3,
         PREMIUM: 4
     },
-    INVITE_MAIL: 1,
-    INVITE_VPN: 2,
     INBOX: 0,
     DRAFT: 1,
     SENT: 2,
