@@ -23,7 +23,7 @@ function attachSignupSubscription(
         // if the user subscribed to a plan during the signup process
         if (['plus', 'visionary'].includes(Name) && Amount === authentication.user.Credit) {
             const subscribe = () => {
-                return Payment.subscribe({ Amount: 0, Currency, Cycle, PlanIDs: [ID] }).catch(({ data = {} }) => {
+                return Payment.subscribe({ Amount: 0, Currency, Cycle, PlanIDs: { [ID]: 1 } }).catch(({ data = {} }) => {
                     throw Error(data.Error);
                 });
             };

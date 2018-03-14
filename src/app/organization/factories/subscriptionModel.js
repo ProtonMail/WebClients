@@ -25,7 +25,10 @@ function subscriptionModel(CONSTANTS, dispatchers, gettextCatalog, Payment) {
     };
 
     const get = () => angular.copy(CACHE.subscription || {});
-    const count = (addon) => _.filter(CACHE.subscription.Plans, { Name: MAP_ADDONS[addon] }).length;
+    const count = (addon) => {
+        const { Quantity = 0 } = _.find(CACHE.subscription.Plans, { Name: MAP_ADDONS[addon] }) || {};
+        return Quantity;
+    };
 
     const hasFactory = (plans = []) => () => {
         const { Plans = [] } = CACHE.subscription || {};
@@ -46,9 +49,27 @@ function subscriptionModel(CONSTANTS, dispatchers, gettextCatalog, Payment) {
 
     const hasPaid = (type) => hasFactory(PAID_TYPES[type])();
 
+    /**
+     * Format plans to add the Quantity parameter until the API apply this change
+     * @param  {Object} subscription
+     * @return {Object} subscription
+     */
+    const formatPlans = (subscription = {}) => {
+        if (Array.isArray(subscription.Plans)) {
+            const counter = _.countBy(subscription.Plans, 'ID');
+
+            subscription.Plans.forEach((plan) => {
+                plan.Quantity = counter[plan.ID];
+            });
+        }
+
+        return subscription;
+    };
+
     function set(subscription = {}, noEvent = false) {
-        CACHE.subscription = angular.copy(subscription);
-        !noEvent && dispatcher.subscription('update', { subscription });
+        const copy = angular.copy(formatPlans(subscription));
+        CACHE.subscription = copy;
+        !noEvent && dispatcher.subscription('update', { subscription: copy });
     }
 
     function coupon() {

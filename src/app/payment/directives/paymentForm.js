@@ -23,6 +23,8 @@ function paymentForm(
         });
     };
 
+    const formatPlanIDs = (planIDs = []) => _.countBy(planIDs, (planID) => planID);
+
     /**
      * Extract the name of the addon, ex 1gb -> space
      * to have human friendly keys for the template
@@ -129,7 +131,7 @@ function paymentForm(
                     Currency: ctrl.valid.Currency,
                     CouponCode: ctrl.coupon,
                     GiftCode: ctrl.gift,
-                    PlanIDs: params.planIDs
+                    PlanIDs: formatPlanIDs(params.planIDs)
                 };
 
                 if (!ctrl.valid.AmountDue) {
@@ -165,8 +167,7 @@ function paymentForm(
             ctrl.submit = () => {
                 ctrl.step = 'process';
 
-                paymentModel
-                    .subscribe(getParameters())
+                paymentModel.subscribe(getParameters())
                     .then(organizationModel.create)
                     .then(eventManager.call)
                     .then(finish)
@@ -180,7 +181,7 @@ function paymentForm(
                 const parameters = {
                     Currency: params.valid.Currency,
                     Cycle: params.valid.Cycle,
-                    PlanIDs: params.planIDs
+                    PlanIDs: formatPlanIDs(params.planIDs)
                 };
 
                 if (thing === 'coupon') {
@@ -195,8 +196,7 @@ function paymentForm(
             }
 
             ctrl.apply = (thing = 'coupon') => {
-                paymentModel
-                    .add(getAddParameters(thing))
+                paymentModel.add(getAddParameters(thing))
                     .then((data) => (ctrl.valid = data))
                     .then(() => {
                         // If the amount due is null we select the first choice to display the submit button

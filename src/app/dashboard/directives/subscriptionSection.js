@@ -45,19 +45,19 @@ function subscriptionSection($rootScope, CONSTANTS, subscriptionModel, gettextCa
     function formatTitle(plan = {}) {
         switch (plan.Name) {
             case '1vpn':
-                plan.Title = `+ ${plan.time * plan.MaxVPN} ${I18N.vpn}`;
+                plan.Title = `+ ${plan.Quantity * plan.MaxVPN} ${I18N.vpn}`;
                 break;
             case '1gb':
-                plan.Title = `+ ${plan.time * fromBase(plan.MaxSpace)} GB`;
+                plan.Title = `+ ${plan.Quantity * fromBase(plan.MaxSpace)} GB`;
                 break;
             case '5address':
-                plan.Title = `+ ${plan.time * plan.MaxAddresses} ${I18N.addresses}`;
+                plan.Title = `+ ${plan.Quantity * plan.MaxAddresses} ${I18N.addresses}`;
                 break;
             case '1domain':
-                plan.Title = `+ ${plan.time * plan.MaxDomains} ${plan.time > 1 ? I18N.domains : I18N.domain}`;
+                plan.Title = `+ ${plan.Quantity * plan.MaxDomains} ${plan.Quantity > 1 ? I18N.domains : I18N.domain}`;
                 break;
             case '1member':
-                plan.Title = `+ ${plan.time * plan.MaxMembers} ${plan.time > 1 ? I18N.members : I18N.member}`;
+                plan.Title = `+ ${plan.Quantity * plan.MaxMembers} ${plan.Quantity > 1 ? I18N.members : I18N.member}`;
                 break;
             default:
                 break;
@@ -71,10 +71,8 @@ function subscriptionSection($rootScope, CONSTANTS, subscriptionModel, gettextCa
                 if (vpn === plan.Name.indexOf('vpn') > -1) {
                     if (acc[plan.Name]) {
                         acc[plan.Name].Amount += plan.Amount;
-                        acc[plan.Name].time++;
                     } else {
                         acc[plan.Name] = plan;
-                        acc[plan.Name].time = 1;
                     }
                 }
 
