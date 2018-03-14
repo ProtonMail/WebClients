@@ -798,7 +798,7 @@ export default angular
                 },
                 resolve: {
                     access(user, $state) {
-                        if (CONSTANTS.KEY_PHASE > 3 && !user.subuser && user.Role !== CONSTANTS.PAID_MEMBER_ROLE) {
+                        if (!user.subuser && user.Role !== CONSTANTS.PAID_MEMBER_ROLE) {
                             return Promise.resolve();
                         }
                         $state.go('secured.account');
