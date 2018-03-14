@@ -56,7 +56,12 @@ function subscriptionModel(CONSTANTS, dispatchers, gettextCatalog, Payment) {
      */
     const formatPlans = (subscription = {}) => {
         if (Array.isArray(subscription.Plans)) {
-            const counter = _.countBy(subscription.Plans, 'ID');
+            const counter = _.reduce(subscription.Plans, (acc, plan) => {
+                acc[plan.ID] = acc[plan.ID] || 0;
+                acc[plan.ID] += plan.Quantity;
+
+                return acc;
+            }, {});
 
             subscription.Plans.forEach((plan) => {
                 plan.Quantity = counter[plan.ID];
