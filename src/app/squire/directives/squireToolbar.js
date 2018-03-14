@@ -131,15 +131,12 @@ function squireToolbar(editorState, editorModel) {
             onPathChange();
             editor.addEventListener('pathChange', onPathChange);
             rowButton.addEventListener('mousedown', onRowClick);
-            const resizeCb = _.debounce(closeAllPopups, 50);
-            window.addEventListener('resize', resizeCb);
             document.addEventListener('click', clickAnywhereClose);
 
             scope.$on('$destroy', () => {
                 editorState.off(ID, onStateChange);
                 editor.removeEventListener('pathChange', onPathChange);
                 rowButton.removeEventListener('mousedown', onRowClick);
-                window.removeEventListener('resize', resizeCb);
                 document.removeEventListener('click', clickAnywhereClose);
             });
         }
