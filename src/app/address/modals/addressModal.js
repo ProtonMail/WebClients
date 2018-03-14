@@ -1,7 +1,6 @@
 import { CONSTANTS } from '../../constants';
 /* @ngInject */
 function addressModal(
-    addressModel,
     addressesModel,
     authentication,
     pmModal,

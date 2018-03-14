@@ -11,7 +11,7 @@ function addressesSection(addressModel, addressesModel, dispatchers, userType) {
             const { on, unsubscribe } = dispatchers(['addressModel', 'updateUser']);
             const updateAddresses = () => {
                 scope.$applyAsync(() => {
-                    const { active, disabled } = addressesModel.getActive();
+                    const { active, disabled } = addressModel.getActive();
 
                     scope.activeAddresses = active;
                     scope.disabledAddresses = disabled;
@@ -44,7 +44,7 @@ function addressesSection(addressModel, addressesModel, dispatchers, userType) {
                 },
                 orderChanged() {
                     const addresses = scope.activeAddresses.concat(scope.disabledAddresses);
-                    const { active, disabled } = addressesModel.getActive();
+                    const { active, disabled } = addressModel.getActive();
                     const map = active.concat(disabled).reduce((acc, adr) => ((acc[adr.ID] = adr), acc), {});
                     const newOrder = addresses.map(({ ID }) => map[ID].Order);
 
