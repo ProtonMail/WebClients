@@ -1,3 +1,27 @@
+# [3.12.40] - 2018-03-14
+
+## Added
+- Add Tooltip for "Log out all other sessions" in Settings -> Security
+- Change the link for display name in Settings -> Account
+- Improve the Human verification error message
+- Close the tutorial if one navigates away
+- Hide pm.me tab for members
+
+## Fixed
+- Unsubscribe button - Prevent automatically adding recipient to Contacts
+- Delay in marking conversations as read or unread
+- Verification error not showing for all contacts after a password reset
+- Click anywhere to close editor popup
+- "To" field missing when saving a draft and not clicking in the composer tab
+- Loading images automatically when replying
+- UI issue in the advanced search panel
+- UI issue with the command palette
+- (Edge) Drag&drop images show up twice in the composer
+
+## Changed
+- Undefined composer id
+- Normalize icons size in the composer
+
 # [3.12.39] - 2018-03-07
 
 ## Fixed
