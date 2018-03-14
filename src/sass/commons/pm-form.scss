@@ -25,6 +25,14 @@
         }
     }
 
+    // To remove the bottom margin from forms where pm_grid and errors are used, because errors are always shown
+    // Example: payments form modal, and filter modal
+    .card-container, &.filter-form {
+        .pm_grid {
+            margin: 0;
+        }
+    }
+
     .pm_select {
         position: relative;
         display: block;
@@ -207,11 +215,24 @@
         -webkit-appearance: none;
         -moz-appearance: none;
         appearance: none;
-        & + [ng-messages] { display: none }
-        &.ng-invalid.ng-touched + [ng-messages] { display: block }
-        &.ng-invalid.ng-submitted + [ng-messages] { display: block }
-        &.ng-invalid.ng-touched { border-color: $red; }
+
+        & + [ng-messages] {
+            opacity: 0;
+        }
+        // Set the error container div to have the same height as the error message will have.
+        // Assume that the error message will fit on one row.
+        & + [ng-messages], & + [ng-messages] p {
+            height: 1em;
+            margin: 0.6em 0 0.8em 0;
+        }
+        // Display the error messages with opacity to prevent reflow.
+        &.ng-invalid.ng-dirty + [ng-messages] {
+            opacity: 1
+        }
+        // Add a red border color to the input.
+        &.ng-invalid.ng-dirty { border-color: $red; }
         &.ng-invalid.always-show-ng-invalid { border-color: $red; }
+
         &.inline {
             display: inline-block;
             width: 8rem;
@@ -346,5 +367,18 @@
             border-bottom-left-radius: 0;
         }
     }
+}
 
+// ng-submitted is not always with .pm-form, so need to lift it out.
+.ng-submitted {
+    input,
+    select,
+    textarea {
+        &.ng-invalid + [ng-messages] {
+            opacity: 1 !important;
+        }
+        &.ng-invalid {
+            border-color: $red !important;
+        }
+    }
 }

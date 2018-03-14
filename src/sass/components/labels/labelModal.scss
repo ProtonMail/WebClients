@@ -12,20 +12,6 @@
     margin: 0;
 }
 
-.labelModal-errors {
-    display: block !important;
-    overflow: hidden;
-    margin: .8em 0;
-    opacity: 0;
-    [ng-message] { margin: 0; padding: 0 }
-}
-
-.labelModal-errors.ng-inactive { margin-bottom: 1.6em }
-
-.labelModal-form.ng-invalid.ng-dirty .labelModal-errors {
-    opacity: 1;
-}
-
 .labelModal-item {
     position: relative;
     display: flex;
