@@ -1,5 +1,5 @@
 /* @ngInject */
-function checkKeysFormat(addressesModel, CONSTANTS) {
+function checkKeysFormat($injector, CONSTANTS) {
     return (user) => {
         for (let i = 0; i < user.Keys.length; i++) {
             const key = user.Keys[i];
@@ -9,7 +9,7 @@ function checkKeysFormat(addressesModel, CONSTANTS) {
             }
         }
 
-        const addresses = addressesModel.getByUser(user);
+        const addresses = $injector.get('addressesModel').getByUser(user);
 
         for (let i = 0; i < addresses.length; i++) {
             const addressKeys = addresses[i].Keys;

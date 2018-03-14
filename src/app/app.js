@@ -1,5 +1,6 @@
 import _ from 'lodash';
 
+import address from './address/index';
 import paginator from './paginator/index';
 import analytics from './analytics/index';
 import authentication from './authentication/index';
@@ -40,7 +41,7 @@ angular
         paginator,
         analytics,
         authentication,
-        browserSupport,
+        address,
         browserSupport,
         bugReport,
         commons,
