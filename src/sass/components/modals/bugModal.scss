@@ -16,15 +16,15 @@
         flex-direction: row;
         align-items: center;
         box-sizing: border-box;
-        padding: .4em .8em;
+        margin: 0.3em 0 0 0 !important;
         font-weight: bold;
         line-height: .9em;
+        font-size: .8em;
         color: $red;
     }
 
     [ng-messages] [ng-message] {
-        margin: 0;
-        font-size: .8em;
+        margin: 0 !important;
     }
 
     [ng-messages] * [ng-message]:not(:last-of-type):after {
@@ -53,13 +53,13 @@
     .ng-valid + [ng-messages],
     .ng-dirty + [ng-messages],
     .ng-untouched + [ng-messages],
-    .ng-invalid [ng-message-warning] { display: none }
+    .ng-invalid [ng-message-warning] { opacity: 0 }
 
     /* touched inputs || submitted form */
     .ng-touched.ng-invalid:not(:focus) ~ [ng-messages],
     .ng-submitted .ng-invalid:not(:focus) ~ [ng-messages],
     .ng-touched[class*='ng-warning']:not(:focus) ~ [ng-messages],
-    .ng-submitted [class*='ng-warning']:not(:focus) ~ [ng-messages]  { display: flex }
+    .ng-submitted [class*='ng-warning']:not(:focus) ~ [ng-messages]  { opacity: 1 }
 
     /* inputs colors */
     .ng-touched.ng-invalid:not(:focus),
@@ -68,11 +68,16 @@
         box-shadow: inset 0 1px 2px rgba($red, .3), 0 0 0 0.2em rgba($red, .3);
     }
 
+    // Don't show the typo warning
+    .ng-messages-warning { display: none; }
     .ng-touched[class*='ng-warning']:not(:focus),
     .ng-submitted [class*='ng-warning']:not(:focus) {
+        display: block;
         border-color: orange;
         box-shadow: inset 0 1px 2px rgba(orange, .3), 0 0 0 0.2em rgba(orange, .3);
         & + [ng-messages] { color: orange }
+        // it's only visible on blur
+        & + [ng-messages] .ng-messages-warning { display: block }
     }
 }
 
