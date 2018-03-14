@@ -1,7 +1,7 @@
 import _ from 'lodash';
 
 /* @ngInject */
-function searchModel(authentication, CONSTANTS, gettextCatalog, labelsModel) {
+function searchModel(addressesModel, authentication, CONSTANTS, gettextCatalog, labelsModel) {
     const FOLDER_TRANSLATIONS = {
         inbox: gettextCatalog.getString('Inbox', null, 'Option for search panel'),
         spam: gettextCatalog.getString('Spam', null, 'Option for search panel'),
@@ -50,7 +50,7 @@ function searchModel(authentication, CONSTANTS, gettextCatalog, labelsModel) {
                 Receive: 1,
                 Status: 1
             }
-        ].concat(authentication.user.Addresses);
+        ].concat(addressesModel.get());
     };
 
     /**

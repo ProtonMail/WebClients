@@ -1,5 +1,6 @@
 /* @ngInject */
 function signatureModel(
+    addressesModel,
     authentication,
     Address,
     AppModel,
@@ -22,8 +23,7 @@ function signatureModel(
     };
 
     const getFirstID = () => {
-        const { Addresses = [] } = authentication.user;
-        const [{ ID }] = Addresses;
+        const [{ ID }] = addressesModel.get();
 
         return ID;
     };

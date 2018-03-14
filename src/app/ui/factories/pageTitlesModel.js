@@ -3,7 +3,7 @@ import _ from 'lodash';
 import { flow, filter, sortBy, head } from 'lodash/fp';
 
 /* @ngInject */
-function pageTitlesModel(CONSTANTS, $injector, $rootScope, gettextCatalog, authentication, $state, tools) {
+function pageTitlesModel(CONSTANTS, $injector, $rootScope, gettextCatalog, addressesModel, authentication, $state, tools) {
     const { MAILBOX_IDENTIFIERS } = CONSTANTS;
     const DISPLAY_NUMBER = ['inbox', 'drafts', 'sent', 'starred', 'archive', 'spam', 'trash', 'allmail', 'allDrafts', 'allSent'];
 
@@ -49,7 +49,7 @@ function pageTitlesModel(CONSTANTS, $injector, $rootScope, gettextCatalog, authe
     let MAP = loadI18N();
 
     function getFirstSortedAddresses() {
-        return flow(filter({ Status: 1, Receive: 1 }), sortBy('Order'), head)(authentication.user.Addresses) || {};
+        return flow(filter({ Status: 1, Receive: 1 }), sortBy('Order'), head)(addressesModel.get()) || {};
     }
 
     /**

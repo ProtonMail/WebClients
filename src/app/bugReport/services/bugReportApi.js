@@ -5,7 +5,7 @@ import { toBase64 } from '../../../helpers/fileHelper';
 import { downSize, toBlob } from '../../../helpers/imageHelper';
 
 /* @ngInject */
-function bugReportApi(Report, CONFIG, $state, authentication, gettextCatalog, networkActivityTracker, notification) {
+function bugReportApi(Report, CONFIG, $state, addressesModel, authentication, gettextCatalog, networkActivityTracker, notification) {
     const { ROW_MODE, COLUMN_MODE, MESSAGE_VIEW_MODE, CONVERSATION_VIEW_MODE, CLIENT_TYPE, MAX_SIZE_SCREENSHOT } = CONSTANTS;
     const MAP_MODE = {
         layout: {
@@ -45,8 +45,8 @@ function bugReportApi(Report, CONFIG, $state, authentication, gettextCatalog, ne
      * @return {Object}
      */
     const getForm = () => {
-        const { Name = '', Addresses = [] } = authentication.user;
-        const [{ Email = '' } = {}] = _.sortBy(Addresses, 'Order');
+        const { Name = '' } = authentication.user;
+        const [{ Email = '' } = {}] = _.sortBy(addressesModel.get(), 'Order');
 
         return _.extend(getClient(authentication.user), {
             Resolution: `${window.innerHeight} x ${window.innerWidth}`,

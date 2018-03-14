@@ -1,12 +1,12 @@
 /* @ngInject */
-function navigationUser($rootScope, authentication) {
+function navigationUser($rootScope, addressesModel, authentication) {
     return {
         replace: true,
         templateUrl: require('../../../../templates/ui/navigation/navigationUser.tpl.html'),
         link(scope) {
             const updateView = () => {
-                const { Name = '', Addresses = [] } = authentication.user;
-                const [{ DisplayName = '', Email = '' } = {}] = Addresses;
+                const { Name = '' } = authentication.user;
+                const [{ DisplayName = '', Email = '' } = {}] = addressesModel.get();
 
                 scope.$applyAsync(() => {
                     scope.displayName = DisplayName || Name;

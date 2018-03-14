@@ -4,6 +4,7 @@ import pmMeTooltip from './directives/pmMeTooltip';
 import reactivateKeysBtn from './directives/reactivateKeysBtn';
 import reactivateKeys from './factories/reactivateKeys';
 import addressModel from './factories/addressModel';
+import addressesModel from './factories/addressesModel';
 import addressWithoutKeys from './factories/addressWithoutKeys';
 import addressModal from './modals/addressModal';
 import addressesModal from './modals/addressesModal';
@@ -17,6 +18,7 @@ export default angular
     .directive('reactivateKeysBtn', reactivateKeysBtn)
     .factory('reactivateKeys', reactivateKeys)
     .factory('addressModel', addressModel)
+    .factory('addressesModel', addressesModel)
     .factory('addressWithoutKeys', addressWithoutKeys)
     .factory('addressModal', addressModal)
     .factory('addressesModal', addressesModal)

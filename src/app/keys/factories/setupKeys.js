@@ -197,7 +197,7 @@ function setupKeys($log, $q, CONSTANTS, gettextCatalog, Key, MemberKey, notifica
             .then(errorHandler);
     }
 
-    function decryptUser(user = {}, organizationKey = {}, mailboxPassword) {
+    function decryptUser(user = {}, addresses = [], organizationKey = {}, mailboxPassword) {
         const privateUser = user.Private === 1;
         const subuser = angular.isDefined(user.OrganizationPrivateKey);
 
@@ -258,7 +258,7 @@ function setupKeys($log, $q, CONSTANTS, gettextCatalog, Key, MemberKey, notifica
             const dirtyAddresses = [];
 
             // All address keys are decrypted and stored
-            _.each(user.Addresses, (address) => {
+            _.each(addresses, (address) => {
                 if (address.Keys.length > 0) {
                     let index = 0;
                     _.each(address.Keys, (key) => {

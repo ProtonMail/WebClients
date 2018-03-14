@@ -1,5 +1,5 @@
 /* @ngInject */
-function changeMailboxPassword($log, authentication, CONSTANTS, gettextCatalog, Key, networkActivityTracker, organizationApi, passwords, pmcw, User) {
+function changeMailboxPassword($log, addressesModel, authentication, CONSTANTS, gettextCatalog, Key, networkActivityTracker, organizationApi, passwords, pmcw, User) {
     /**
      * Instead of grab keys from the cache, we call the back-end, just to make sure everything is up to date
      * @param {String} newMailPwd
@@ -49,7 +49,7 @@ function changeMailboxPassword($log, authentication, CONSTANTS, gettextCatalog, 
         // Collect user keys
         user.Keys.forEach((key) => inputKeys.push(key));
         // Collect address keys
-        user.Addresses.forEach((address) => {
+        addressesModel.getByUser(user).forEach((address) => {
             address.Keys.forEach((key) => inputKeys.push(key));
         });
         // Re-encrypt all keys, if they can be decrypted

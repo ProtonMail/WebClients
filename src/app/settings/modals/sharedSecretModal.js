@@ -1,7 +1,7 @@
 import _ from 'lodash';
 
 /* @ngInject */
-function sharedSecretModal(authentication, pmModal, webcrypto) {
+function sharedSecretModal(addressesModel, authentication, pmModal, webcrypto) {
     return pmModal({
         controllerAs: 'ctrl',
         templateUrl: require('../../../templates/modals/twofactor/sharedSecret.tpl.html'),
@@ -10,7 +10,7 @@ function sharedSecretModal(authentication, pmModal, webcrypto) {
             const self = this;
             const randomBytes = webcrypto.getRandomValues(new Uint8Array(20));
             const sharedSecret = base32.encode(randomBytes);
-            const primaryAddress = _.find(authentication.user.Addresses, ({ Keys }) => Keys);
+            const primaryAddress = _.find(addressesModel.get(), ({ Keys }) => Keys);
             const identifier = primaryAddress ? primaryAddress.Email : `${authentication.user.Name}@protonmail`;
             const qrURI = `otpauth://totp/${identifier}?secret=${sharedSecret}&issuer=ProtonMail&algorithm=SHA1&digits=6&period=30`;
 

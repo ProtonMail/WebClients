@@ -10,6 +10,7 @@ function DomainsController(
     gettextCatalog,
     Address,
     addressModal,
+    addressesModel,
     addressesModal,
     authentication,
     confirmModal,
@@ -199,7 +200,7 @@ function DomainsController(
      * @return {Boolean}
      */
     $scope.owned = (address) => {
-        const found = _.find(authentication.user.Addresses, { ID: address.ID });
+        const found = addressesModel.getByID(address.ID, authentication.user, true);
 
         return angular.isDefined(found);
     };

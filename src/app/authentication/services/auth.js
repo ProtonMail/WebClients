@@ -32,8 +32,7 @@ function authentication(
     upgradeKeys
 ) {
     let keys = {}; // Store decrypted keys
-    const { ADDRESS_TYPE, OAUTH_KEY, FREE_USER_ROLE, MAILBOX_PASSWORD_KEY } = CONSTANTS;
-    const { PREMIUM } = ADDRESS_TYPE;
+    const { OAUTH_KEY, FREE_USER_ROLE, MAILBOX_PASSWORD_KEY } = CONSTANTS;
     const auth = {
         headersSet: false,
         // The Authorization header is used just once for the /cookies route, then we forget it and use cookies instead.
@@ -86,18 +85,16 @@ function authentication(
                         return Promise.resolve();
                     };
 
-                    return $q
-                        .all({
+                    return $q.all({
                             settings: $injector.get('settingsApi').fetch(),
                             mailSettings: $injector.get('settingsMailApi').fetch(),
                             contacts: $injector.get('contactEmails').load(),
+                            addresses: $injector.get('addressesModel').fetch(),
                             fix: fixOrganization(),
                             organizationKey: decryptOrganization()
                         })
-                        .then(({ organizationKey }) => {
-                            return { user, organizationKey };
-                        })
-                        .then(({ user, organizationKey }) => {
+                        .then(({ organizationKey, addresses }) => ({ user, organizationKey, addresses }))
+                        .then(({ user, organizationKey, addresses }) => {
                             const storeKeys = (keys) => {
                                 api.clearKeys();
                                 _.each(keys, ({ address, key, pkg }) => {
@@ -105,8 +102,7 @@ function authentication(
                                 });
                             };
 
-                            return setupKeys
-                                .decryptUser(user, organizationKey, api.getPassword())
+                            return setupKeys.decryptUser(user, addresses, organizationKey, api.getPassword())
                                 .then(({ keys }) => (storeKeys(keys), user))
                                 .catch((error) => {
                                     $exceptionHandler(error);
@@ -375,10 +371,6 @@ function authentication(
         // Whether the mailbox' password is accessible, or if the user needs to re-enter it
         isLocked() {
             return this.isLoggedIn() === false || angular.isUndefined(this.getPassword());
-        },
-
-        hasPmMe() {
-            return _.find(this.user.Addresses, { Type: PREMIUM });
         },
 
         hasPaidMail() {

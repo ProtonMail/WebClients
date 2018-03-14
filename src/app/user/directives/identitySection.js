@@ -2,7 +2,7 @@ import _ from 'lodash';
 import isPhone from 'phone-regex';
 
 /* @ngInject */
-function identitySection(authentication, editorModel, gettextCatalog, notification, signatureModel, tools, dispatchers) {
+function identitySection(addressesModel, authentication, editorModel, gettextCatalog, notification, signatureModel, tools, dispatchers) {
 
     const I18N = {
         SUCCESS_SAVE: gettextCatalog.getString('Default Name / Signature saved', null, "User's signature")
@@ -52,9 +52,8 @@ function identitySection(authentication, editorModel, gettextCatalog, notificati
                 scope.address = { DisplayName, Signature: signature };
             };
 
-            const updateUser = () => {
-                const { Addresses = [] } = authentication.user || {};
-                CACHE.addresses = Addresses.slice(0);
+            const updateAddresses = (addresses = addressesModel.get()) => {
+                CACHE.addresses = addresses.slice(0);
                 el[0].classList[CACHE.addresses.length > 1 ? 'add' : 'remove'](MULTIPLE_ADDRESS_CLASS);
             };
 
@@ -82,9 +81,13 @@ function identitySection(authentication, editorModel, gettextCatalog, notificati
                 }
             });
 
-            on('updateUser', updateUser);
+            on('addressesModel', (e, { type = '', data = {} }) => {
+                if (type === 'addresses.updated') {
+                    updateAddresses(data.addresses);
+                }
+            });
 
-            updateUser();
+            updateAddresses();
             updateAddress(CACHE.addresses[0], true);
 
             scope.$on('$destroy', () => {
