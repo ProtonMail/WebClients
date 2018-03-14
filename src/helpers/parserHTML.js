@@ -1,4 +1,5 @@
 import TurndownService from 'turndown';
+import _ from 'lodash';
 
 /**
  * Transform HTML to text
@@ -57,6 +58,13 @@ export function toText(html, appendLines = true) {
         () => turndownService.addRule('replaceBreakLine', replaceBreakLine),
         () => turndownService.addRule('protonSignature', protonSignature)
     ]);
+
+    /**
+     * Override turndown to NOT escape any HTML. For example MONO_TLS_PROVIDER -> MONO\_TLS\_PROVIDER.
+     * Just return the value that is passed in.
+     * Fixes https://github.com/ProtonMail/Angular/issues/6556
+     */
+    turndownService.escape = _.identity;
 
     const output = turndownService.turndown(html);
 
