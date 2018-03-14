@@ -18,12 +18,12 @@ function addressesModel(Address, authentication, dispatchers) {
      * Fetch addresses from current user
      * @return {Promise}
      */
-    const fetch = () => {
+    const fetch = (user = authentication.user) => {
         return Address.query()
             .then(({ Addresses = [] }) => {
                 const copy = Addresses.slice(0);
 
-                set(copy);
+                set(copy, user);
 
                 return copy;
             });
