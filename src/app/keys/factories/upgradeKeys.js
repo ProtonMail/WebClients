@@ -1,7 +1,7 @@
 import _ from 'lodash';
 
 /* @ngInject */
-function upgradeKeys($log, addressesModel, CONSTANTS, gettextCatalog, Key, networkActivityTracker, organizationApi, passwords, pmcw, secureSessionStorage) {
+function upgradeKeys($log, $injector, CONSTANTS, gettextCatalog, Key, networkActivityTracker, organizationApi, passwords, pmcw, secureSessionStorage) {
     /**
      * Reformat organization keys
      * @param  {String} password
@@ -16,7 +16,7 @@ function upgradeKeys($log, addressesModel, CONSTANTS, gettextCatalog, Key, netwo
                 .getKeys()
                 .then(({ data = {} } = {}) => {
                     const encryptPrivateKey = data.PrivateKey;
-                    const [{ Email }] = addressesModel.getByUser(user) || {};
+                    const [{ Email }] = $injector.get('addressesModel').getByUser(user) || {};
                     return pmcw
                         .decryptPrivateKey(encryptPrivateKey, oldSaltedPassword)
                         .then((pkg) => pmcw.reformatKey(pkg, Email, password), () => 0);

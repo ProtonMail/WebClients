@@ -1,4 +1,3 @@
-import address from './address/index';
 import attachments from './attachments/index';
 import autoresponder from './autoresponder/index';
 import composer from './composer/index';
@@ -41,7 +40,6 @@ export default angular.module('protonLazy', [
     sidebar,
     elements,
     autoresponder,
-    address,
     composer,
     attachments,
     message,
