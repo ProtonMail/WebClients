@@ -1,5 +1,5 @@
 import _ from 'lodash';
-import { PAID_ADMIN_ROLE, PAID_MEMBER_ROLE,INVITE_MAIL, INVITE_URL, OAUTH_KEY, MAILBOX_IDENTIFIERS, CURRENCIES, BILLING_CYCLE } from './constants';
+import { PAID_ADMIN_ROLE, PAID_MEMBER_ROLE, INVITE_MAIL, INVITE_URL, OAUTH_KEY, MAILBOX_IDENTIFIERS, CURRENCIES, BILLING_CYCLE } from './constants';
 
 export default angular
     .module('proton.routes', ['ui.router', 'proton.authentication', 'proton.constants', 'proton.utils'])
