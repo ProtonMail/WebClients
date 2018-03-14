@@ -8,9 +8,10 @@ export const FREE_USER_ROLE = 0;
 export const PAID_MEMBER_ROLE = 1;
 export const PAID_ADMIN_ROLE = 2;
 export const PHOTO_PLACEHOLDER_URL = '/assets/img/photo-placeholder.png';
-
+export const INVITE_URL = 'https://protonmail.com/invite';
 export const INVITE_MAIL = 1;
 export const INVITE_VPN = 2;
+export const OAUTH_KEY = 'proton:oauth';
 export const UNPAID_STATE = {
     NOT: 0,
     AVAILABLE: 1,
@@ -175,7 +176,6 @@ export const CONSTANTS = {
     KEY_VERSION: 3,
     MAX_OUTSIDE_REPLY: 4,
     MAILBOX_PASSWORD_KEY: 'proton:mailbox_pwd',
-    OAUTH_KEY: 'proton:oauth',
     WHITELIST: ['notify@protonmail.com'],
     ADDRESS_TYPE: {
         ORIGINAL: 1,
@@ -246,7 +246,6 @@ export const CONSTANTS = {
         TWO_YEARS: 24
     },
     IFRAME_SECURE_ORIGIN: 'https://secure.protonmail.com',
-    INVITE_URL: 'https://protonmail.com/invite',
     DEFAULT_CURRENCY: 'EUR',
     CHANGELOG_PATH: 'assets/changelog.tpl.html',
     DEFAULT_CYCLE: 12,
@@ -293,7 +292,9 @@ export const CONSTANTS = {
     UNPAID_STATE,
     WIZARD_ENABLED,
     MAILBOX_IDENTIFIERS,
-    PM_SIGNATURE
+    PM_SIGNATURE,
+    OAUTH_KEY,
+    KEY_PHASE
 };
 
 /* eslint  no-useless-escape: "off" */
