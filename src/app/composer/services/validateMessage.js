@@ -1,6 +1,8 @@
+import { MAX_TITLE_LENGTH, UNPAID_STATE, REGEX_EMAIL } from '../../constants';
+
 /* @ngInject */
-function validateMessage(gettextCatalog, tools, regexEmail, CONSTANTS, confirmModal, authentication, notification, addressWithoutKeys) {
-    const { MAX_TITLE_LENGTH, UNPAID_STATE } = CONSTANTS;
+function validateMessage(gettextCatalog, tools, confirmModal, authentication, notification, addressWithoutKeys) {
+
     const I18N = {
         STILL_UPLOADING: gettextCatalog.getString('Wait for attachment to finish uploading or cancel upload.', null, 'Error'),
         invalidEmails(total) {
@@ -41,7 +43,7 @@ function validateMessage(gettextCatalog, tools, regexEmail, CONSTANTS, confirmMo
         const emailStats = message.ToList.concat(message.CCList, message.BCCList).reduce(
             (acc, { Address = '' }) => {
                 acc.all.push(Address);
-                !regexEmail.test(Address) && acc.invalid.push(Address);
+                !REGEX_EMAIL.test(Address) && acc.invalid.push(Address);
                 acc.total++;
                 return acc;
             },

@@ -79,11 +79,13 @@ function postMessage(
             parameters.Message.IsRead = 1;
         }
 
+        const { DisplayName: Name, Email: Address } = message.From || {};
         parameters.Message.Sender = {
             // Default empty DisplayName is null
-            Name: message.From.DisplayName || '',
-            Address: message.From.Email
+            Name: Name || '',
+            Address
         };
+
         parameters.Message.AddressID = message.AddressID;
 
         return parameters;

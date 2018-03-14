@@ -1,6 +1,7 @@
+import { UNPAID_STATE, PAID_MEMBER_ROLE } from '../../constants';
+
 /* @ngInject */
-function isDelinquent($state, gettextCatalog, notification, authentication, CONSTANTS) {
-    const { PAID_MEMBER_ROLE, UNPAID_STATE } = CONSTANTS;
+function isDelinquent($state, gettextCatalog, notification, authentication) {
     const I18N = {
         ERROR_MEMBER: gettextCatalog.getString('Your account currently has an overdue invoice. Please contact your administrator.', null, 'Error'),
         ERROR_ADMIN: gettextCatalog.getString('Your account currently has an overdue invoice. Please pay all unpaid invoices.', null, 'Error')

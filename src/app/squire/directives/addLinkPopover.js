@@ -1,11 +1,38 @@
-import _ from 'lodash';
+import { DEFAULT_SQUIRE_VALUE, REGEX_EMAIL } from '../../constants';
+
+const LINK_DEFAULT = DEFAULT_SQUIRE_VALUE.LINK;
+const CLASS_HIDDEN = 'addLinkPopover-hidden';
+const CLASS_UPDATE = 'addLinkPopover-editable';
 
 /* @ngInject */
-function addLinkPopover(editorModel, editorState, CONSTANTS, squireExecAction, regexEmail) {
-    const { DEFAULT_SQUIRE_VALUE } = CONSTANTS;
-    const LINK_DEFAULT = DEFAULT_SQUIRE_VALUE.LINK;
-    const CLASS_HIDDEN = 'addLinkPopover-hidden';
-    const CLASS_UPDATE = 'addLinkPopover-editable';
+function addLinkPopover(editorModel, editorState, squireExecAction) {
+
+    const getSelectionEditor = (message) => {
+        const { editor } = editorModel.find(message);
+        return {
+            editor,
+            selection: editor && editor.getSelection()
+        };
+    };
+
+    /**
+     * Found the image if there is one inside the current selection
+     * @param  {Message} message
+     * @return {Node}
+     */
+    const getSelectedImg = (message) => {
+        const { selection, editor } = getSelectionEditor(message);
+
+        if (editor) {
+            return angular.element(selection.commonAncestorContainer)
+                .find('img')
+                .filter(function() {
+                    /* eslint no-underscore-dangle: "off" */
+                    return editor._win.getSelection().containsNode(this);
+                })[0];
+        }
+    };
+
 
     /**
      * Get the current link at the cursor or the current selected item
@@ -13,17 +40,19 @@ function addLinkPopover(editorModel, editorState, CONSTANTS, squireExecAction, r
      * @return {Object}         {href: textContent};
      */
     function getLinkAtCursor(message) {
-        const { editor } = editorModel.find(message);
+        const { selection, editor } = getSelectionEditor(message);
         const config = { href: LINK_DEFAULT, textContent: LINK_DEFAULT };
+
         if (!editor) {
             return config;
         }
-        const selection = editor.getSelection();
+
         return (
             angular.element(selection.commonAncestorContainer).closest('a')[0] ||
-            _.extend({}, config, {
+            {
+                ...config,
                 textContent: selection.toString()
-            })
+            }
         );
     }
 
@@ -33,7 +62,7 @@ function addLinkPopover(editorModel, editorState, CONSTANTS, squireExecAction, r
      * @return {String}
      */
     const formatLink = (input = '') => {
-        if (regexEmail.test(input)) {
+        if (REGEX_EMAIL.test(input)) {
             return /mailto/.test(input) ? input : `mailto:${input}`.trim();
         }
 
@@ -67,20 +96,25 @@ function addLinkPopover(editorModel, editorState, CONSTANTS, squireExecAction, r
                     }
 
                     return _rAF(() => el.querySelector('input').focus());
-                } else if (oldPopover === 'makeLink') {
+                }
+
+                if (oldPopover === 'makeLink') {
                     el.classList.add(CLASS_HIDDEN);
                 }
             };
 
             const onClick = ({ target }) => {
-                switch (target.name) {
-                    case 'update':
-                    case 'add':
-                        squireExecAction.makeLink(scope.message, formatLink(el.urlLink.value), el.labelLink.value);
-                        break;
-                    case 'remove':
-                        squireExecAction.removeLink(scope.message);
-                        break;
+
+                if (/update|add/.test(target.name)) {
+                    return squireExecAction.makeLink(scope.message, {
+                        link: formatLink(el.urlLink.value),
+                        title: el.labelLink.value,
+                        wrap: getSelectedImg(scope.message)
+                    });
+                }
+
+                if (target.name === 'remove') {
+                    squireExecAction.removeLink(scope.message);
                 }
             };
 

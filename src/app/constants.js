@@ -1,4 +1,7 @@
+export const KEY_PHASE = 5;
 export const ERROR_AUTH_ACCOUNT_DISABLED = 10003;
+export const MAX_TITLE_LENGTH = 255;
+export const AWESOMEPLETE_MAX_ITEMS = 20;
 export const ERROR_SILENT = 'ignoreError';
 export const WIZARD_ENABLED = true;
 export const FREE_USER_ROLE = 0;
@@ -12,6 +15,7 @@ export const UNPAID_STATE = {
     DELINQUENT: 3,
     NO_RECEIVE: 4
 };
+
 export const MAILBOX_IDENTIFIERS = {
     inbox: '0',
     allDrafts: '1',
@@ -26,10 +30,26 @@ export const MAILBOX_IDENTIFIERS = {
     search: 'search',
     label: 'label'
 };
+
 export const CONVERSATION_REQUEST_SIZE = 10;
 export const GIFT_CODE_LENGTH = 16;
 export const PM_SIGNATURE = 'Sent with <a href="https://protonmail.com" target="_blank">ProtonMail</a> Secure Email.';
 
+export const DEFAULT_SQUIRE_VALUE = {
+    LINK: '',
+    IMAGE: '',
+    HEADER_CLASS: 'h4',
+    IFRAME_CLASS: 'angular-squire-iframe'
+};
+
+export const EMAIL_FORMATING = {
+    OPEN_TAG_AUTOCOMPLETE: '‹',
+    CLOSE_TAG_AUTOCOMPLETE: '›',
+    OPEN_TAG_AUTOCOMPLETE_RAW: '<',
+    CLOSE_TAG_AUTOCOMPLETE_RAW: '>'
+};
+
+export const AUTOCOMPLETE_DOMAINS = ['protonmail.com', 'protonmail.ch', 'gmail.com', 'hotmail.com', 'live.com', 'yahoo.com', 'outlook.com'];
 
 export const CONSTANTS = {
     MAX_SIZE_SCREENSHOT: 500 * 1000,
@@ -146,11 +166,9 @@ export const CONSTANTS = {
     MAX_VPN: 500,
     MAX_MEMBER: 100,
     HUGE_MEMBER: 5000,
-    AWESOMEPLETE_MAX_ITEMS: 20,
     MAIN_KEY: '0',
     TIMEOUT: 30 * 1000, // timeout in milliseconds
     BASE_SIZE: 1024, // define the base used for byte
-    KEY_PHASE: 5,
     KEY_VERSION: 3,
     MAX_OUTSIDE_REPLY: 4,
     MAILBOX_PASSWORD_KEY: 'proton:mailbox_pwd',
@@ -179,7 +197,6 @@ export const CONSTANTS = {
     COLUMN_MODE: 0,
     ATTACHMENT_SIZE_LIMIT: 25, // MB
     ATTACHMENT_NUMBER_LIMIT: 100,
-    MAX_TITLE_LENGTH: 255,
     MAX_NUMBER_COMPOSER: 3,
     MESSAGE_VIEW_MODE: 1,
     CONVERSATION_VIEW_MODE: 0,
@@ -208,24 +225,12 @@ export const CONSTANTS = {
     DESKTOP_BREAKPOINT: 1200,
     ROW_BREAKPOINT: 960,
     MOBILE_BREAKPOINT: 800,
-    EMAIL_FORMATING: {
-        OPEN_TAG_AUTOCOMPLETE: '‹',
-        CLOSE_TAG_AUTOCOMPLETE: '›',
-        OPEN_TAG_AUTOCOMPLETE_RAW: '<',
-        CLOSE_TAG_AUTOCOMPLETE_RAW: '>'
-    },
     STATUS: {
         DELETE: 0,
         CREATE: 1,
         UPDATE: 2,
         UPDATE_DRAFT: 2,
         UPDATE_FLAGS: 3
-    },
-    DEFAULT_SQUIRE_VALUE: {
-        LINK: '',
-        IMAGE: '',
-        HEADER_CLASS: 'h4',
-        IFRAMECLASSNAME: 'angular-squire-iframe'
     },
     URL_INFO: 'https://mail.protonmail.com/assets/host.png',
     MIN_PAYPAL_AMOUNT: 500,
@@ -261,7 +266,6 @@ export const CONSTANTS = {
         SEND_PGP_MIME: 16,
         SEND_MIME: 32
     },
-    AUTOCOMPLETE_DOMAINS: ['protonmail.com', 'protonmail.ch', 'gmail.com', 'hotmail.com', 'live.com', 'yahoo.com', 'outlook.com'],
     FONT_SIZE: {
         small: 8,
         normal: 14,

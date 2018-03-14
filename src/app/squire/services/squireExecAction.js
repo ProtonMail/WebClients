@@ -37,10 +37,12 @@ function squireExecAction(editorModel, $rootScope) {
     /**
      * Create a link inside the editor
      * @param  {Message} message
-     * @param  {String} link
+     * @param  {String} options.link  URL aka default text to display
+     * @param  {String} options.title text to display
+     * @param  {Node} options.wrap    Wrap a media = image
      * @return {void}
      */
-    const makeLink = (message, link = '', title) => {
+    const makeLink = (message, { link = '', title, wrap }) => {
         const { editor, iframe } = editorModel.find(message);
         const node = angular.element(editor.getSelection().commonAncestorContainer).closest('a')[0];
         const range = iframe[0].contentWindow.document.createRange();
@@ -59,8 +61,11 @@ function squireExecAction(editorModel, $rootScope) {
             rel: 'nofollow'
         });
 
-        const newSelection = angular.element(editor.getSelection().commonAncestorContainer);
-        (newSelection.closest('a')[0] || newSelection.find('a')[0]).textContent = title || link;
+        // Ex we select an image to create a link, we don't want a default textContent (will erase the image)
+        if (!wrap) {
+            const newSelection = angular.element(editor.getSelection().commonAncestorContainer);
+            (newSelection.closest('a')[0] || newSelection.find('a')[0]).textContent = title || link;
+        }
 
         dispatch('squire.native.action', { action: 'makeLink', message });
     };

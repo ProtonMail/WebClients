@@ -1,6 +1,9 @@
+import { EMAIL_FORMATING } from '../../constants';
+
+const { OPEN_TAG_AUTOCOMPLETE_RAW, CLOSE_TAG_AUTOCOMPLETE_RAW } = EMAIL_FORMATING;
+
 /* @ngInject */
-function labelAutocomplete(CONSTANTS) {
-    const { OPEN_TAG_AUTOCOMPLETE_RAW, CLOSE_TAG_AUTOCOMPLETE_RAW } = CONSTANTS.EMAIL_FORMATING;
+function labelAutocomplete() {
 
     return ({ Name = '', Address = '' } = {}) => {
         if (Name === Address) {

@@ -1,11 +1,11 @@
 import _ from 'lodash';
-
 import { flow, filter, reduce } from 'lodash/fp';
+import { DEFAULT_SQUIRE_VALUE } from '../../constants';
 import { findParent } from '../../../helpers/domHelper';
 
 /* @ngInject */
-function squireToolbar(CONSTANTS, editorState, editorModel) {
-    const { HEADER_CLASS } = CONSTANTS.DEFAULT_SQUIRE_VALUE;
+function squireToolbar(editorState, editorModel) {
+    const { HEADER_CLASS } = DEFAULT_SQUIRE_VALUE;
 
     const CLASSNAME = {
         CONTAINER: 'squireToolbar-container squire-toolbar',

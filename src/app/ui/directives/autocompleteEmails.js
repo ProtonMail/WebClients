@@ -1,5 +1,7 @@
+import { REGEX_EMAIL } from '../../constants';
+
 /* @ngInject */
-function autocompleteEmails($rootScope, autocompleteEmailsModel, regexEmail, autocompleteBuilder) {
+function autocompleteEmails($rootScope, autocompleteEmailsModel, autocompleteBuilder) {
     const TAB_KEY = 9;
     const BACKSPACE_KEY = 8;
     const COMMA_KEY = 188;
@@ -12,7 +14,7 @@ function autocompleteEmails($rootScope, autocompleteEmailsModel, regexEmail, aut
      * @return {Object}       {label, value}
      */
     const getConfigEmailInput = (model, value = '') => {
-        if (regexEmail.test(value)) {
+        if (REGEX_EMAIL.test(value)) {
             const config = model.filterContact(value, true).list[0];
             // Can be undefined if there is no match
             if (config) {
@@ -110,7 +112,7 @@ function autocompleteEmails($rootScope, autocompleteEmailsModel, regexEmail, aut
             }
 
             // Unselect the autocomplete suggestion if the input value is a valid email
-            if (hasAutocompletion && regexEmail.test(target.value)) {
+            if (hasAutocompletion && REGEX_EMAIL.test(target.value)) {
                 return awesomplete.goto(-1);
             }
         };

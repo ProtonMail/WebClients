@@ -1,7 +1,10 @@
+import { DEFAULT_SQUIRE_VALUE } from '../../constants';
+
+const { IFRAME_CLASS } = DEFAULT_SQUIRE_VALUE;
+
 /* @ngInject */
-function squireEditor($rootScope, CONSTANTS, editorModel) {
+function squireEditor($rootScope, editorModel) {
     const CACHE = {};
-    const IFRAME_CLASS = CONSTANTS.DEFAULT_SQUIRE_VALUE.IFRAMECLASSNAME;
 
     Squire.prototype.testPresenceinSelection = function(name, action, format, validation) {
         if (name !== action) {
