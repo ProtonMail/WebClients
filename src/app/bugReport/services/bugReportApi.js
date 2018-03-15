@@ -57,29 +57,33 @@ function bugReportApi(Report, CONFIG, $state, addressesModel, authentication, ge
         });
     };
 
+    const resize = (file) => {
+        return toBase64(file)
+            .then((base64str) => downSize(base64str, MAX_SIZE_SCREENSHOT, file.type));
+    };
+
     const toFormData = (parameters = {}) => {
-        const formData = new FormData();
-        const resize = (file) => toBase64(file).then((base64str) => downSize(base64str, MAX_SIZE_SCREENSHOT, file.type));
-        const promises = _.reduce(parameters, (acc, value, key) => {
+
+        const { promises, formData } = _.reduce(parameters, (acc, value, key) => {
             // NOTE FileList instanceof Array => false
             if (value instanceof FileList || value instanceof Array) {
                 for (let i = 0; i < value.length; i++) {
                     const file = value[i];
                     const promise = resize(file)
                         .then((base64str) => {
-                            formData.append(file.name, toBlob(base64str), file.name);
+                            acc.formData.append(file.name, toBlob(base64str), file.name);
                         });
 
-                    acc.push(promise);
+                    acc.promises.push(promise);
                 }
 
                 return acc;
             }
 
-            value && formData.append(key, value);
+            acc.formData.append(key, value);
 
             return acc;
-        }, []);
+        }, { promises: [], formData: new FormData() });
 
         return Promise.all(promises)
             .then(() => formData)
