@@ -8,7 +8,6 @@ function SecurityController(
     authApi,
     authentication,
     confirmModal,
-    CONSTANTS,
     downloadFile,
     gettextCatalog,
     loginPasswordModal,
@@ -27,7 +26,6 @@ function SecurityController(
     $scope.logItemsPerPage = 20;
     $scope.doLogging = LogAuth;
     $scope.twoFactor = TwoFactor;
-    $scope.keyPhase = CONSTANTS.KEY_PHASE;
 
     // / logging page
     $scope.disabledText = gettextCatalog.getString('Disable', null, 'Action');

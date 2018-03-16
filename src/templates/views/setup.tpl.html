@@ -29,34 +29,7 @@
                 </div>
             </div>
 
-            <div ng-if="keyPhase < 3">
-
-                <label class="titleLabel" for="password">
-                    <em class="num" ng-if="chooseDomain">2</em>
-                    <span translate translate-context="Title">Mailbox Password</span>
-                </label>
-
-                <password
-                    class="loginSetup-field-password"
-                    data-id="password"
-                    data-name="password"
-                    data-value="$parent.password"
-                    placeholder-translate="Choose a password"
-                    data-form="setup"></password>
-
-                <password
-                    class="loginSetup-field-password"
-                    data-id="passwordc"
-                    data-name="passwordc"
-                    data-value="$parent.passwordConfirm"
-                    data-compare="$parent.password"
-                    placeholder-translate="Confirm password"
-                    data-form="setup"></password>
-
-                <p class="alert alert-info" translate-context="Info" translate>If you lose your mailbox password, you will not be able to read your emails. We cannot recover this password for you.</p>
-            </div>
-
-            <div ng-if="keyPhase > 2">
+            <div>
 
                 <label class="titleLabel" for="password">
                     <em class="num" ng-if="chooseDomain">2</em>

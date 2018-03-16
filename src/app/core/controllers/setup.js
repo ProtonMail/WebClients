@@ -1,5 +1,5 @@
 import _ from 'lodash';
-import { KEY_PHASE, WIZARD_ENABLED, UNPAID_STATE } from '../../constants';
+import { WIZARD_ENABLED, UNPAID_STATE } from '../../constants';
 
 /* @ngInject */
 function SetupController(
@@ -31,8 +31,6 @@ function SetupController(
 
     function initialization() {
         const addresses = addressesModel.get();
-
-        $scope.keyPhase = KEY_PHASE;
 
         // Variables
         $scope.tools = tools;

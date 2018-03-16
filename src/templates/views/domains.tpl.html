@@ -189,7 +189,7 @@
                         <table class="pm_form bordered" ng-show="domain.Addresses.length > 0">
                             <thead>
                                 <tr>
-                                    <th ng-if="keyPhase > 3" translate-context="Title" translate-comment="table heading for the domains page table listing of addresses" translate>Name</th>
+                                    <th translate-context="Title" translate-comment="table heading for the domains page table listing of addresses" translate>Name</th>
                                     <th translate-context="Title" translate-comment="table heading for the domains page table listing of addresses" translate>Address</th>
                                     <th translate-context="Title" translate-comment="table heading for the domains page table listing of addresses" translate>Status</th>
                                     <th>
@@ -203,7 +203,7 @@
                             </thead>
                             <tbody>
                                 <tr ng-repeat="address in domain.Addresses | orderBy: 'Order'" ng-class="{'disabled': address.Status === 0}">
-                                    <td ng-if="keyPhase > 3">
+                                    <td>
                                         <a ui-sref="secured.members({action: 'edit', id: address.MemberID})" ng-bind="member(address.MemberID).Name" class="text-purple"></a>
                                     </td>
                                     <td ng-bind="address.Email"></td>

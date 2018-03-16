@@ -1,4 +1,4 @@
-export const KEY_PHASE = 5;
+export const MAIN_KEY = '0';
 export const ERROR_AUTH_ACCOUNT_DISABLED = 10003;
 export const MAX_TITLE_LENGTH = 255;
 export const AWESOMEPLETE_MAX_ITEMS = 20;
@@ -12,6 +12,7 @@ export const INVITE_URL = 'https://protonmail.com/invite';
 export const INVITE_MAIL = 1;
 export const INVITE_VPN = 2;
 export const OAUTH_KEY = 'proton:oauth';
+export const CUSTOM_DOMAIN_ADDRESS = 3;
 export const UNPAID_STATE = {
     NOT: 0,
     AVAILABLE: 1,
@@ -35,6 +36,8 @@ export const MAILBOX_IDENTIFIERS = {
     label: 'label'
 };
 
+export const REMOTE = 1;
+export const EMBEDDED = 2;
 export const CONVERSATION_REQUEST_SIZE = 10;
 export const GIFT_CODE_LENGTH = 16;
 export const PM_SIGNATURE = 'Sent with <a href="https://protonmail.com" target="_blank">ProtonMail</a> Secure Email.';
@@ -55,12 +58,21 @@ export const EMAIL_FORMATING = {
 
 export const AUTOCOMPLETE_DOMAINS = ['protonmail.com', 'protonmail.ch', 'gmail.com', 'hotmail.com', 'live.com', 'yahoo.com', 'outlook.com'];
 
+export const MAX_OUTSIDE_REPLY = 4;
+export const MAILBOX_PASSWORD_KEY = 'proton:mailbox_pwd';
+export const WHITELIST = ['notify@protonmail.com'];
+export const ADDRESS_TYPE = {
+    ORIGINAL: 1,
+    ALIAS: 2,
+    CUSTOM_DOMAIN: 3,
+    PREMIUM: 4
+};
+
 export const CONSTANTS = {
     MAX_SIZE_SCREENSHOT: 500 * 1000,
     CLIENT_TYPE: 1,
     BLACK_FRIDAY_INTERVAL: 10 * 60 * 1000,
-    REMOTE: 1,
-    EMBEDDED: 2,
+
     PLANS: {
         PLAN: {
             PLUS: 'plus',
@@ -170,26 +182,15 @@ export const CONSTANTS = {
     MAX_VPN: 500,
     MAX_MEMBER: 100,
     HUGE_MEMBER: 5000,
-    MAIN_KEY: '0',
     TIMEOUT: 30 * 1000, // timeout in milliseconds
     BASE_SIZE: 1024, // define the base used for byte
     KEY_VERSION: 3,
-    MAX_OUTSIDE_REPLY: 4,
-    MAILBOX_PASSWORD_KEY: 'proton:mailbox_pwd',
-    WHITELIST: ['notify@protonmail.com'],
-    ADDRESS_TYPE: {
-        ORIGINAL: 1,
-        ALIAS: 2,
-        CUSTOM_DOMAIN: 3,
-        PREMIUM: 4
-    },
     INBOX: 0,
     DRAFT: 1,
     SENT: 2,
     INBOX_AND_SENT: 3,
     PM_ADDRESS: 1,
     PM_ALIAS: 2,
-    CUSTOM_DOMAIN_ADDRESS: 3,
     REPLY: 0,
     REPLY_ALL: 1,
     FORWARD: 2,
@@ -294,7 +295,9 @@ export const CONSTANTS = {
     MAILBOX_IDENTIFIERS,
     PM_SIGNATURE,
     OAUTH_KEY,
-    KEY_PHASE
+    MAIN_KEY,
+    MAX_OUTSIDE_REPLY,
+    MAILBOX_PASSWORD_KEY
 };
 
 /* eslint  no-useless-escape: "off" */
@@ -302,7 +305,4 @@ export const REGEX_EMAIL = /(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)
 
 export default angular
     .module('proton.constants', [])
-    .constant(
-        'regexEmail', REGEX_EMAIL
-    )
     .constant('CONSTANTS', CONSTANTS).name;

@@ -1,4 +1,5 @@
 import _ from 'lodash';
+import { PAID_MEMBER_ROLE, REMOTE, EMBEDDED } from '../../constants';
 
 /* @ngInject */
 function AccountController(
@@ -8,7 +9,6 @@ function AccountController(
     authentication,
     changePasswordModal,
     confirmModal,
-    CONSTANTS,
     deleteAccountModal,
     desktopNotifications,
     dispatchers,
@@ -32,7 +32,6 @@ function AccountController(
 ) {
     let promisePasswordModal;
     const { unsubscribe, on } = dispatchers(['mailSettings', 'userSettings']);
-    $scope.keyPhase = CONSTANTS.KEY_PHASE;
     $scope.emailing = { announcements: false, features: false, newsletter: false, beta: false };
     $scope.locales = [
         { label: 'Deutsch', key: 'de_DE' },
@@ -229,7 +228,7 @@ function AccountController(
         $scope.dailyNotifications = Email.Notify;
         $scope.desktopNotificationsStatus = desktopNotifications.status();
         $scope.passwordMode = PasswordMode;
-        $scope.isMember = authentication.user.Role === CONSTANTS.PAID_MEMBER_ROLE;
+        $scope.isMember = authentication.user.Role === PAID_MEMBER_ROLE;
         setEmailingValues(News);
     }
 
@@ -237,8 +236,8 @@ function AccountController(
         const { Hotkeys, ShowImages, AutoSaveContacts } = mailSettingsModel.get();
 
         $scope.autosaveContacts = AutoSaveContacts;
-        $scope.images = ShowImages & CONSTANTS.REMOTE ? 1 : 0;
-        $scope.embedded = ShowImages & CONSTANTS.EMBEDDED ? 2 : 0;
+        $scope.images = ShowImages & REMOTE ? 1 : 0;
+        $scope.embedded = ShowImages & EMBEDDED ? 2 : 0;
         $scope.hotkeys = Hotkeys;
     }
 
@@ -251,7 +250,7 @@ function AccountController(
     };
 
     $scope.saveImages = () => {
-        const ShowImages = (mailSettingsModel.get('ShowImages') & CONSTANTS.EMBEDDED ? 2 : 0) + $scope.images;
+        const ShowImages = (mailSettingsModel.get('ShowImages') & EMBEDDED ? 2 : 0) + $scope.images;
         const promise = settingsMailApi.updateShowImages({ ShowImages }).then(() => {
             notification.success(gettextCatalog.getString('Image preferences updated', null));
         });
@@ -260,7 +259,7 @@ function AccountController(
     };
 
     $scope.saveEmbedded = () => {
-        const ShowImages = (mailSettingsModel.get('ShowImages') & CONSTANTS.REMOTE ? 1 : 0) + $scope.embedded;
+        const ShowImages = (mailSettingsModel.get('ShowImages') & REMOTE ? 1 : 0) + $scope.embedded;
         const promise = settingsMailApi.updateShowImages({ ShowImages }).then(() => {
             notification.success(gettextCatalog.getString('Image preferences updated', null));
         });

@@ -27,13 +27,12 @@
                         <table class="pm_form bordered">
                             <thead>
                                 <tr>
-                                    <th ng-show="ctrl.keyPhase > 3" translate translate-context="Title" translate-comment="table heading">User</th>
+                                    <th translate translate-context="Title" translate-comment="table heading">User</th>
                                     <th translate translate-context="Title" translate-comment="table heading">Address</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <tr ng-repeat="address in ctrl.domain.Addresses" ng-class="{'disabled': address.Status === 0}">
-                                    <td ng-show="ctrl.keyPhase > 3" ng-bind="ctrl.getMember(address.MemberID).Name"></td>
                                     <td ng-bind="address.Email"></td>
                                 </tr>
                             </tbody>

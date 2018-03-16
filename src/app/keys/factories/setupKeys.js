@@ -1,9 +1,11 @@
 import _ from 'lodash';
+import { MAIN_KEY } from '../../constants';
 
 /* @ngInject */
-function setupKeys($log, $q, CONSTANTS, gettextCatalog, Key, MemberKey, notification, passwords, pmcw, webcrypto) {
+function setupKeys($log, $q, gettextCatalog, Key, MemberKey, notification, passwords, pmcw, webcrypto) {
+
     function generate(addresses = [], password = '', numBits = 2048) {
-        const keySalt = CONSTANTS.KEY_PHASE > 1 ? passwords.generateKeySalt() : null;
+        const keySalt = passwords.generateKeySalt();
         const passwordPromise = passwords.computeKeyPassword(password, keySalt);
         const promises = {
             mailboxPassword: passwordPromise,
@@ -89,12 +91,12 @@ function setupKeys($log, $q, CONSTANTS, gettextCatalog, Key, MemberKey, notifica
             AddressKeys: keys
         };
 
-        if (CONSTANTS.KEY_PHASE > 1 && keys.length > 0) {
+        if (keys.length > 0) {
             payload.PrimaryKey = keys[0].PrivateKey;
         }
 
         let newPassword = '';
-        if (CONSTANTS.KEY_PHASE > 2 && password.length) {
+        if (password.length) {
             newPassword = password;
         }
 
@@ -240,7 +242,7 @@ function setupKeys($log, $q, CONSTANTS, gettextCatalog, Key, MemberKey, notifica
         const promises = [];
 
         // All user key are decrypted and stored
-        const address = { ID: CONSTANTS.MAIN_KEY };
+        const address = { ID: MAIN_KEY };
         _.each(user.Keys, (key, index) => {
             if (subuser === true) {
                 promises.push(decryptMemberKey(key, organizationKey).then((pkg) => storeKey({ key, pkg, address })));

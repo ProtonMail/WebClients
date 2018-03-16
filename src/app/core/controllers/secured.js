@@ -29,7 +29,6 @@ function SecuredController(
         $scope.isFree = isFree;
     };
     setUserType();
-    $scope.keyPhase = CONSTANTS.KEY_PHASE;
     $rootScope.isLoggedIn = true; // Shouldn't be there
     $rootScope.isLocked = false; // Shouldn't be there
 

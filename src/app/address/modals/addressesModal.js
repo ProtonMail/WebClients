@@ -1,7 +1,7 @@
 import _ from 'lodash';
 
 /* @ngInject */
-function addressesModal(pmModal, CONSTANTS, $rootScope, organizationModel, addressModel, memberActions) {
+function addressesModal(pmModal, $rootScope, organizationModel, addressModel, memberActions) {
     return pmModal({
         controllerAs: 'ctrl',
         templateUrl: require('../../../templates/modals/domain/address.tpl.html'),
@@ -10,11 +10,9 @@ function addressesModal(pmModal, CONSTANTS, $rootScope, organizationModel, addre
             const { domain, members, step, showMember = true } = params;
             const organization = organizationModel.get();
 
-            this.keyPhase = CONSTANTS.KEY_PHASE;
-
             this.domain = domain;
             this.step = step;
-            this.showMember = showMember && organization.HasKeys === 1 && this.keyPhase > 3;
+            this.showMember = showMember && organization.HasKeys === 1;
             this.next = params.next;
             this.close = params.cancel;
 
