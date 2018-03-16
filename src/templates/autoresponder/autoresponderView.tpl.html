@@ -7,7 +7,7 @@
                     translate
                     translate-context="Title">Automatic Replies</h2>
             </header-block>
-            <p ng-if="isFree" class="alert alert-info" translate translate-context="Translate">This feature is for paying customers only. Please <a ui-sref="secured.dashboard({scroll: true})">upgrade</a> to use this feature.</p>
+            <p ng-if="isFree" class="alert alert-info" translate translate-context="Translate">Automatic replies is a paid feature. Please <a ui-sref="secured.dashboard({scroll: true})">upgrade</a> to a paid account to use this feature.</p>
             <autoresponder data-mock="{{ ::isFree }}"></autoresponder>
         </div>
     </div>
