@@ -4,21 +4,23 @@ function customizeInvoiceModal(eventManager, pmModal, settingsApi, notification,
         controllerAs: 'ctrl',
         templateUrl: require('../../../templates/modals/customizeInvoice.tpl.html'),
         /* @ngInject */
-        controller: function(params) {
-            const self = this;
+        controller: function($scope, params) {
+            this.text = userSettingsModel.get('InvoiceText') || '';
+            this.cancel = params.cancel;
 
-            self.text = userSettingsModel.get('InvoiceText') || '';
-            self.cancel = () => params.cancel();
+            this.submit = () => {
 
-            self.submit = () => {
+                if ($scope.customizeInvoiceModalForm.$invalid) {
+                    return;
+                }
+
                 const promise = settingsApi
-                    .invoiceText({ InvoiceText: self.text })
-                    .then(({ data = {} } = {}) => data)
-                    .then(() => eventManager.call())
+                    .invoiceText({ InvoiceText: this.text })
                     .then(() => {
                         notification.success('Invoice customized');
                         params.cancel();
-                    });
+                    })
+                    .then(eventManager.call);
 
                 networkActivityTracker.track(promise);
             };
