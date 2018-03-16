@@ -5,7 +5,6 @@ function SupportController(
     $state,
     $log,
     authentication,
-    CONSTANTS,
     tempStorage,
     User,
     tools,
@@ -25,8 +24,6 @@ function SupportController(
 
         $scope.resetState = $scope.states.RECOVERY;
     }
-
-    $scope.keyPhase = CONSTANTS.KEY_PHASE;
 
     $scope.states = {
         RECOVERY: 1,
@@ -104,9 +101,6 @@ function SupportController(
                 $scope.addresses = data.Addresses;
 
                 $scope.resetState = $scope.states.DANGER;
-                if ($scope.passwordMode === 2 && $scope.keyPhase < 3) {
-                    $scope.resetState = $scope.states.PASSWORD;
-                }
             })
             .catch((error) => {
                 const { data = {} } = error;
@@ -121,12 +115,6 @@ function SupportController(
     };
 
     function doReset() {
-        if ($scope.passwordMode === 2 && $scope.keyPhase < 3) {
-            return Reset.resetPassword($scope.tokenParams, $scope.params.password).catch(({ data = {} } = {}) => {
-                throw new Error(data.Error || 'Unable to update password. Please try again');
-            });
-        }
-
         return generateKeys().then(installKeys);
     }
 

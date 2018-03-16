@@ -1,5 +1,7 @@
+import { EMBEDDED } from '../../constants';
+
 /* @ngInject */
-function transformEmbedded(CONSTANTS, embedded, $state, mailSettingsModel) {
+function transformEmbedded(embedded, $state, mailSettingsModel) {
     const EMBEDDED_CLASSNAME = 'proton-embedded';
     const wrapImage = (img) => angular.element(img).wrap('<div class="image loading"></div>');
 
@@ -7,7 +9,7 @@ function transformEmbedded(CONSTANTS, embedded, $state, mailSettingsModel) {
         const images = [].slice.call(html.querySelectorAll('img[proton-src]'));
         const { ShowImages = 0 } = mailSettingsModel.get();
         const isReplyForward = /^reply|forward/.test(action);
-        const show = message.showEmbedded === true || ShowImages & CONSTANTS.EMBEDDED || isReplyForward;
+        const show = message.showEmbedded === true || ShowImages & EMBEDDED || isReplyForward;
         const isEoReply = $state.is('eo.reply');
 
         images.forEach((image) => {

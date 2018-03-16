@@ -1,5 +1,5 @@
 import _ from 'lodash';
-import { CONSTANTS } from '../../constants';
+import { EMBEDDED } from '../../constants';
 
 /* @ngInject */
 function squire(squireEditor, embedded, editorListener, $rootScope, sanitize, toggleModeEditor, mailSettingsModel, onCurrentMessage) {
@@ -68,7 +68,7 @@ function squire(squireEditor, embedded, editorListener, $rootScope, sanitize, to
              * @return {Promise} -> String
              */
             const loadBody = async () => {
-                const show = !!scope.message.showEmbedded || (mailSettingsModel.get('ShowImages') & CONSTANTS.EMBEDDED);
+                const show = !!scope.message.showEmbedded || (mailSettingsModel.get('ShowImages') & EMBEDDED);
 
                 if (!show) {
                     return scope.message.getDecryptedBody();

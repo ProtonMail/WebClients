@@ -2,7 +2,6 @@ import _ from 'lodash';
 
 /* @ngInject */
 function memberSubLogin(
-    CONSTANTS,
     $state,
     organizationKeysModel,
     notification,
@@ -19,7 +18,7 @@ function memberSubLogin(
     const SUBLOGIN_URL = $state.href('login.sub', { sub: true }, { absolute: true });
 
     function canLogin() {
-        if (organizationKeysModel.get('keyStatus') > 0 && CONSTANTS.KEY_PHASE > 3) {
+        if (organizationKeysModel.get('keyStatus') > 0) {
             notification.error(I18N.ERROR);
             $state.go('secured.members');
             return false;

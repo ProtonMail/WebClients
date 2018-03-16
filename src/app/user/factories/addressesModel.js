@@ -1,11 +1,11 @@
 import _ from 'lodash';
-import { CONSTANTS } from '../../constants';
+import { ADDRESS_TYPE } from '../../constants';
 import updateCollection from '../../utils/helpers/updateCollection';
+
+const { PREMIUM } = ADDRESS_TYPE;
 
 /* @ngInject */
 function addressesModel(Address, authentication, dispatchers) {
-    const { ADDRESS_TYPE } = CONSTANTS;
-    const { PREMIUM } = ADDRESS_TYPE;
     const { dispatcher, on } = dispatchers(['addressesModel']);
     let CACHE = {};
 

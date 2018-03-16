@@ -1,4 +1,5 @@
 import _ from 'lodash';
+import { CUSTOM_DOMAIN_ADDRESS } from '../../constants';
 
 /* @ngInject */
 function DomainsController(
@@ -14,7 +15,6 @@ function DomainsController(
     addressesModal,
     authentication,
     confirmModal,
-    CONSTANTS,
     dkimModal,
     dmarcModal,
     domainApi,
@@ -172,7 +172,7 @@ function DomainsController(
         });
     };
 
-    const catchallSupport = (type) => type === CONSTANTS.CUSTOM_DOMAIN_ADDRESS && $scope.organization.Features & 1;
+    const catchallSupport = (type) => type === CUSTOM_DOMAIN_ADDRESS && $scope.organization.Features & 1;
 
     $scope.changeCatchall = (address, { Addresses = [] }) => {
         const { catchall, DomainID, ID, Type } = address;
@@ -329,7 +329,7 @@ function DomainsController(
      * Open modal to add a new address
      */
     $scope.addAddresses = (domain = {}) => {
-        if ($scope.organization.HasKeys === 1 && $scope.keyStatus > 0 && CONSTANTS.KEY_PHASE > 3) {
+        if ($scope.organization.HasKeys === 1 && $scope.keyStatus > 0) {
             notification.error(gettextCatalog.getString('Administrator privileges must be activated', null, 'Error'));
             $state.go('secured.members');
             return;

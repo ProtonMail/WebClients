@@ -1,5 +1,5 @@
 import { flow, filter, reduce } from 'lodash/fp';
-import { CONSTANTS } from '../../constants';
+import { REMOTE, WHITELIST } from '../../constants';
 
 /* @ngInject */
 function transformRemote($state, $rootScope, mailSettingsModel) {
@@ -65,8 +65,8 @@ function transformRemote($state, $rootScope, mailSettingsModel) {
     return (html, message, { action }) => {
         const showImages =
             message.showImages ||
-            mailSettingsModel.get('ShowImages') & CONSTANTS.REMOTE ||
-            (CONSTANTS.WHITELIST.includes(message.Sender.Address) && !message.IsEncrypted) ||
+            mailSettingsModel.get('ShowImages') & REMOTE ||
+            (WHITELIST.includes(message.Sender.Address) && !message.IsEncrypted) ||
             $state.is('printer');
         const content = html.innerHTML;
 

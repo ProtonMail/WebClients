@@ -1,5 +1,7 @@
+import { PAID_ADMIN_ROLE } from '../../constants';
+
 /* @ngInject */
-function changeMailboxPassword($log, addressesModel, authentication, CONSTANTS, gettextCatalog, Key, networkActivityTracker, organizationApi, passwords, pmcw, User) {
+function changeMailboxPassword($log, addressesModel, authentication, gettextCatalog, Key, networkActivityTracker, organizationApi, passwords, pmcw, User) {
     /**
      * Instead of grab keys from the cache, we call the back-end, just to make sure everything is up to date
      * @param {String} newMailPwd
@@ -23,7 +25,7 @@ function changeMailboxPassword($log, addressesModel, authentication, CONSTANTS, 
      * @return {Promise}
      */
     function manageOrganizationKeys(password = '', oldMailPwd = '', user = {}) {
-        if (user.Role === CONSTANTS.PAID_ADMIN_ROLE) {
+        if (user.Role === PAID_ADMIN_ROLE) {
             // Get organization key
             return organizationApi
                 .getKeys()
@@ -108,7 +110,7 @@ function changeMailboxPassword($log, addressesModel, authentication, CONSTANTS, 
 
     return ({ newPassword = '', onePassword = false }) => {
         const oldMailPwd = authentication.getPassword();
-        const keySalt = CONSTANTS.KEY_PHASE > 1 ? passwords.generateKeySalt() : null;
+        const keySalt = passwords.generateKeySalt();
         const newLoginPassword = onePassword ? newPassword : '';
         let passwordComputed;
         const promise = getUser(newPassword, keySalt)
