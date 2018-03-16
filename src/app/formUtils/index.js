@@ -17,9 +17,11 @@ import validatorTypoEmail from './directives/validatorTypoEmail';
 import cardModel from './factories/cardModel';
 import countriesListModel from './factories/countriesListModel';
 import validEmail from './directives/validEmail';
+import isValidInvoiceText from './directives/isValidInvoiceText';
 
 export default angular
     .module('proton.formUtils', ['ngIntlTelInput'])
+    .directive('isValidInvoiceText', isValidInvoiceText)
     .directive('validEmail', validEmail)
     .directive('captcha', captcha)
     .directive('captchaView', captchaView)
