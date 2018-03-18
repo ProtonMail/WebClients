@@ -64,7 +64,7 @@ module.exports = {
             'pt.mailparser/mailparser.js',
             'markdown-it/dist/markdown-it.min.js',
             'clipboard/dist/clipboard.js',
-            'angular-vs-repeat/src/angular-vs-repeat.js',
+            'angular-vs-repeat/dist/angular-vs-repeat.js',
             'vcf/dist/vcard.js',
             'jszip/dist/jszip.min.js',
             'ical.js/build/ical.min.js'
