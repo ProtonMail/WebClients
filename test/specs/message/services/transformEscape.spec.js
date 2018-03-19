@@ -250,6 +250,21 @@ describe('transformEscape service', () => {
         });
     });
 
+    describe('No double escape', () => {
+        beforeEach(() => {
+            output = factory(document.createElement('DIV'), null, {
+                content: DOM
+            });
+            output = factory(document.createElement('DIV'), null, {
+                content: output.innerHTML
+            });
+        });
+
+        it('should not double escape attributes', () => {
+            expect(output.innerHTML).not.toMatch(/proton-proton-/);
+        });
+    });
+
     describe('Escape BACKGROUND_URL', () => {
         const getList = (input) => {
             return input.innerHTML

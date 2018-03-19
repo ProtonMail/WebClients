@@ -1,5 +1,4 @@
 import _ from 'lodash';
-import { EMBEDDED } from '../../constants';
 
 /* @ngInject */
 function squire(squireEditor, embedded, editorListener, $rootScope, sanitize, toggleModeEditor, mailSettingsModel, onCurrentMessage) {
@@ -64,22 +63,6 @@ function squire(squireEditor, embedded, editorListener, $rootScope, sanitize, to
             const listen = editorListener(scope, el, { typeContent, action });
 
             /**
-             * Load the body of the message and load embedded if we need to
-             * @return {Promise} -> String
-             */
-            const loadBody = async () => {
-                const show = !!scope.message.showEmbedded || (mailSettingsModel.get('ShowImages') & EMBEDDED);
-
-                if (!show) {
-                    return scope.message.getDecryptedBody();
-                }
-
-                // On load we parse the body of the message in order to load its embedded images
-                return embedded.parser(scope.message);
-            };
-
-
-            /**
              * Update the value of the message and send the state to the application
              * @param  {String}  val            Body
              * @param  {Boolean} dispatchAction Send the state to the app, default false.
@@ -87,7 +70,8 @@ function squire(squireEditor, embedded, editorListener, $rootScope, sanitize, to
              * @return {void}
              */
             function updateModel(val, dispatchAction = false, forceUpdate = false) {
-                const value = sanitize.input(val || '');
+                // Sanitize the message with the DOMPurify config.
+                const value = sanitize.message(val || '');
                 scope.$applyAsync(() => {
                     if (scope.message.MIMEType === 'text/plain') {
                         // disable all updates if in plain text mode
@@ -136,17 +120,18 @@ function squire(squireEditor, embedded, editorListener, $rootScope, sanitize, to
                 };
 
                 if (isMessage(typeContent)) {
-
-                    loadBody()
-                        .then((body) => editor.setHTML(body))
-                        .then(() => {
+                    // On load we parse the body of the message in order to load its embedded images
+                    // Assume that the message has been sanitized in composer.load first
+                    embedded.parser(scope.message)
+                        .then((body) => {
+                            editor.setHTML(body);
                             if (scope.message.RightToLeft) {
                                 editor.setTextDirectionWithoutFocus('rtl');
                             }
-                        })
-                        .then(loadPlainText(scope, editor, bindTabIndex))
-                        .then(isLoaded)
-                        .then(() => unsubscribe.push(listen(updateModel, editor)));
+                            loadPlainText(scope, editor, bindTabIndex);
+                            isLoaded();
+                            unsubscribe.push(listen(updateModel, editor));
+                        });
                 } else {
                     editor.setHTML(scope.value || '');
 

@@ -233,6 +233,17 @@ function messageBuilder(
     }
 
     /**
+     * Filter and clean the body of the message, and update the message body with the result.
+     * @param {Message} message
+     * @param {String} action
+     * @returns {Message}
+     */
+    function prepare(message, action) {
+        message.setDecryptedBody(prepareBody(message.getDecryptedBody(), message, action));
+        return message;
+    }
+
+    /**
      * Bind defaults parameters for a messafe
      * @param {Message} message
      */
@@ -273,6 +284,6 @@ function messageBuilder(
         return newMsg;
     }
 
-    return { create, updateSignature: signatureBuilder.update };
+    return { create, prepare, updateSignature: signatureBuilder.update };
 }
 export default messageBuilder;

@@ -3,8 +3,23 @@ import { DEFAULT_SQUIRE_VALUE } from '../../constants';
 const { IFRAME_CLASS } = DEFAULT_SQUIRE_VALUE;
 
 /* @ngInject */
-function squireEditor($rootScope, editorModel) {
+function squireEditor($rootScope, editorModel, sanitize) {
     const CACHE = {};
+
+    /**
+     * Override the default sanitizeToDOMFragment function in Squire.
+     * This allows proton-[attr] attributes to exist in the html, to allow for squire to show remote content
+     * and embedded images properly.
+     */
+    const SQUIRE_CONFIG = {
+        sanitizeToDOMFragment: (html, isPaste, self) => {
+            // eslint-disable-next-line no-underscore-dangle
+            const doc = self._doc;
+            // Use proton's instance of DOMPurify to allow proton-src attributes to be displayed in squire.
+            const frag = html ? sanitize.message(html, true) : null;
+            return frag ? doc.importNode(frag, true) : doc.createDocumentFragment();
+        }
+    };
 
     Squire.prototype.testPresenceinSelection = function(name, action, format, validation) {
         if (name !== action) {
@@ -184,7 +199,7 @@ function squireEditor($rootScope, editorModel) {
                 loadIframe($iframe, ($iframe) => {
                     const iframeDoc = $iframe[0].contentWindow.document;
                     updateStylesToMatch(iframeDoc);
-                    const editor = editorModel.load({ ID }, extendApi(new Squire(iframeDoc)), $iframe);
+                    const editor = editorModel.load({ ID }, extendApi(new Squire(iframeDoc, SQUIRE_CONFIG)), $iframe);
 
                     $rootScope.$emit('squire.editor', {
                         type: 'loaded',
