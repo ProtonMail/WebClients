@@ -1,12 +1,14 @@
 /* @ngInject */
-function pmDomainModel($rootScope, authentication, domainApi) {
+function pmDomainModel(authentication, dispatchers, domainApi) {
     const domains = [];
     const get = () => domains.slice();
+    const { on } = dispatchers();
 
     function set(list) {
         clear();
         domains.push(...list);
     }
+
     function fetch() {
         const promises = [domainApi.available()];
 
@@ -25,12 +27,15 @@ function pmDomainModel($rootScope, authentication, domainApi) {
             return list;
         });
     }
+
     function clear() {
         domains.length = 0;
     }
-    $rootScope.$on('logout', () => {
+
+    on('logout', () => {
         clear();
     });
+
     return { get, fetch, clear };
 }
 export default pmDomainModel;

@@ -1,5 +1,5 @@
 /* @ngInject */
-function progressBar($rootScope) {
+function progressBar(dispatchers) {
     return {
         restrict: 'E',
         replace: true,
@@ -10,7 +10,9 @@ function progressBar($rootScope) {
             element[0].max = max;
 
             return (scope) => {
-                const unsubscribe = $rootScope.$on('progressBar', (event, { type = '', data = {} }) => {
+                const { on, unsubscribe } = dispatchers();
+
+                on('progressBar', (event, { type = '', data = {} }) => {
                     const { progress = 0 } = data;
 
                     if (id === type) {

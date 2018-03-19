@@ -1,5 +1,7 @@
 /* @ngInject */
-function cachePages($rootScope, tools) {
+function cachePages(dispatchers, tools) {
+    const { on } = dispatchers();
+
     const pages = [];
     const inside = (page) => pages.indexOf(page) > -1;
     const add = (page) => pages.push(page);
@@ -13,13 +15,13 @@ function cachePages($rootScope, tools) {
         return true;
     };
 
-    $rootScope.$on('$stateChangeStart', (event, toState, toParams, fromState) => {
+    on('$stateChangeStart', (event, toState, toParams, fromState) => {
         if (tools.filteredState(fromState.name) !== tools.filteredState(toState.name)) {
             clear();
         }
     });
 
-    $rootScope.$on('logout', () => {
+    on('logout', () => {
         clear();
     });
 

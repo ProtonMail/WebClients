@@ -1,5 +1,5 @@
 /* @ngInject */
-function chooseComposerMode($rootScope, composerSettings, mailSettingsModel) {
+function chooseComposerMode(dispatchers, composerSettings, mailSettingsModel) {
     const KEY = 'DraftMIMEType';
 
     return {
@@ -7,6 +7,8 @@ function chooseComposerMode($rootScope, composerSettings, mailSettingsModel) {
         scope: {},
         templateUrl: require('../../../templates/settings/chooseComposerMode.tpl.html'),
         link(scope, el) {
+            const { on, unsubscribe } = dispatchers();
+
             scope.model = mailSettingsModel.get(KEY);
 
             const onChange = ({ target }) => {
@@ -17,7 +19,7 @@ function chooseComposerMode($rootScope, composerSettings, mailSettingsModel) {
 
             el.on('change', onChange);
 
-            const unsubscribe = $rootScope.$on('mailSettings', (event, { key, value = {} }) => {
+            on('mailSettings', (event, { key, value = {} }) => {
                 if (key === 'all') {
                     scope.model = value[KEY];
                 }

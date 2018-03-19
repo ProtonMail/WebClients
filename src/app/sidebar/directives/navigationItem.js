@@ -2,7 +2,7 @@ import _ from 'lodash';
 import dedentTpl from '../../../helpers/dedent';
 
 /* @ngInject */
-function navigationItem($rootScope, $state, $stateParams, sidebarModel, eventManager, AppModel) {
+function navigationItem($state, $stateParams, dispatchers, sidebarModel, eventManager, AppModel) {
     const CLASS_ACTIVE = 'active';
     const CLASS_SPIN = 'spinMe';
     const template = (key, { state, label, icon = '' }) => {
@@ -45,10 +45,11 @@ function navigationItem($rootScope, $state, $stateParams, sidebarModel, eventMan
         replace: true,
         template: '<li class="navigationItem-container"></li>',
         link(scope, el, { key }) {
+            const { on, unsubscribe } = dispatchers();
+
             let id;
             const STATES = sidebarModel.getStateConfig();
             const config = STATES[key];
-            const unsubscribe = [];
             const render = () => (el[0].innerHTML = template(key, config));
             const updateCounter = () => {
                 const $anchor = el[0].querySelector('.navigationItem-item');
@@ -78,25 +79,19 @@ function navigationItem($rootScope, $state, $stateParams, sidebarModel, eventMan
             updateCounter();
 
             // Update the counter when we load then
-            unsubscribe.push(
-                $rootScope.$on('app.cacheCounters', (e, { type }) => {
-                    type === 'load' && updateCounter();
-                })
-            );
+            on('app.cacheCounters', (e, { type }) => {
+                type === 'load' && updateCounter();
+            });
 
             // Update the counter when we update it (too many updates if we update them via app.cacheCounters)
-            unsubscribe.push(
-                $rootScope.$on('elements', (e, { type }) => {
-                    type === 'refresh' && updateCounter();
-                })
-            );
+            on('elements', (e, { type }) => {
+                type === 'refresh' && updateCounter();
+            });
 
             // Check the current state to set the current one as active
-            unsubscribe.push(
-                $rootScope.$on('$stateChangeSuccess', () => {
-                    updateActive();
-                })
-            );
+            on('$stateChangeSuccess', () => {
+                updateActive();
+            });
 
             const onClick = () => {
                 const sameRoute = $state.$current.name === config.state && !$stateParams.filter;
@@ -114,8 +109,7 @@ function navigationItem($rootScope, $state, $stateParams, sidebarModel, eventMan
 
             scope.$on('$destroy', () => {
                 el.off('click', onClick);
-                unsubscribe.forEach((cb) => cb());
-                unsubscribe.length = 0;
+                unsubscribe();
             });
         }
     };

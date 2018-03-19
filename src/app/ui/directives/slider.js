@@ -1,14 +1,13 @@
-import _ from 'lodash';
-
 /* @ngInject */
-function slider($rootScope) {
+function slider(dispatchers) {
     return {
         replace: true,
         restrict: 'E',
         scope: { value: '=', options: '=' },
         templateUrl: require('../../../templates/ui/slider.tpl.html'),
         link(scope, element) {
-            const unsubscribe = [];
+            const { on, unsubscribe, dispatcher } = dispatchers(['slider.updated']);
+
             const slider = element[0].querySelector('.slider');
             const available = scope.options.range.max - scope.options.range.min;
 
@@ -17,12 +16,6 @@ function slider($rootScope) {
             onChange();
 
             slider.noUiSlider.on('change', onChange);
-
-            scope.$on('$destroy', () => {
-                slider.noUiSlider.off('change', onChange);
-                slider.noUiSlider.destroy();
-                _.each(unsubscribe, (cb) => cb());
-            });
 
             scope.plus = () => {
                 const newValue = Number(slider.noUiSlider.get()) + scope.options.step;
@@ -47,38 +40,34 @@ function slider($rootScope) {
             scope.$watch('value', (newValue) => slider.noUiSlider.set(newValue));
 
             if (scope.options.type) {
-                unsubscribe.push(
-                    $rootScope.$on('refresh.slider', (event, { type, data = {} }) => {
-                        if (scope.options.type === type) {
-                            slider.noUiSlider.set(data.value);
-                            scope.$applyAsync(() => (scope.value = data.value));
-                        }
-                    })
-                );
+                on('refresh.slider', (event, { type, data = {} }) => {
+                    if (scope.options.type !== type) {
+                        return;
+                    }
+                    slider.noUiSlider.set(data.value);
+                    scope.$applyAsync(() => (scope.value = data.value));
+                });
 
-                unsubscribe.push(
-                    $rootScope.$on('update.slider.options', (event, { type, data = {} }) => {
-                        if (scope.options.type === type) {
-                            slider.noUiSlider.updateOptions(data.options);
-                        }
-                    })
-                );
+                on('update.slider.options', (event, { type, data = {} }) => {
+                    if (scope.options.type !== type) {
+                        return;
+                    }
+                    slider.noUiSlider.updateOptions(data.options);
+                });
 
-                unsubscribe.push(
-                    $rootScope.$on('enable.slider', (event, { type }) => {
-                        if (scope.options.type === type) {
-                            slider.removeAttribute('disabled');
-                        }
-                    })
-                );
+                on('enable.slider', (event, { type }) => {
+                    if (scope.options.type !== type) {
+                        return;
+                    }
+                    slider.removeAttribute('disabled');
+                });
 
-                unsubscribe.push(
-                    $rootScope.$on('disable.slider', (event, { type }) => {
-                        if (scope.options.type === type) {
-                            slider.setAttribute('disabled', true);
-                        }
-                    })
-                );
+                on('disable.slider', (event, { type }) => {
+                    if (scope.options.type !== type) {
+                        return;
+                    }
+                    slider.setAttribute('disabled', true);
+                });
             }
 
             function usedSpace(unit) {
@@ -123,10 +112,16 @@ function slider($rootScope) {
                     scope.value = newValue;
 
                     if (scope.options.type) {
-                        $rootScope.$emit('slider.updated', { type: scope.options.type, data: { value: newValue } });
+                        dispatcher['slider.updated'](scope.options.type, { value: newValue });
                     }
                 });
             }
+
+            scope.$on('$destroy', () => {
+                slider.noUiSlider.off('change', onChange);
+                slider.noUiSlider.destroy();
+                unsubscribe();
+            });
         }
     };
 }

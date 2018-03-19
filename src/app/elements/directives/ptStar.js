@@ -26,7 +26,7 @@ function ptStar($rootScope, CONSTANTS, gettextCatalog, tools, actionConversation
         }
 
         if (type === 'message') {
-            $rootScope.$emit('messageActions', { action, data: { ids: [model.ID] } });
+            $rootScope.$emit('messageActions', { type: action, data: { ids: [model.ID] } });
         }
     }
 

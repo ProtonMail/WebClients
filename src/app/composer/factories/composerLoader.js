@@ -1,7 +1,7 @@
 import _ from 'lodash';
 
 /* @ngInject */
-function composerLoader(editorModel, $rootScope) {
+function composerLoader(dispatchers, editorModel) {
     /**
      * Custom focus to the composer depending of the source from the click event
      *     - Fix issue with the templating (Todo refacto HTML composer to improve KISS)
@@ -49,8 +49,10 @@ function composerLoader(editorModel, $rootScope) {
                 return _rAF(() => editor.focus());
             }
 
+            const { on, unsubscribe } = dispatchers();
+
             // If the iframe is not loaded yet wait for it then remove the listener
-            const unsubscribe = $rootScope.$on('composer.update', (e, { type, data }) => {
+            on('composer.update', (e, { type, data }) => {
                 if (type !== 'editor.loaded') {
                     return;
                 }

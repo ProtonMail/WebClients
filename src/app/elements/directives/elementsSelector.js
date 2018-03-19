@@ -2,7 +2,7 @@ import _ from 'lodash';
 import dedentTpl from '../../../helpers/dedent';
 
 /* @ngInject */
-function elementsSelector($rootScope, mailSettingsModel, gettextCatalog) {
+function elementsSelector(dispatchers, mailSettingsModel, gettextCatalog) {
     const isChecked = true;
     const ORDER_FALSY = ['all', 'read', 'unread', 'star', 'unstar'];
     const ORDER_TRUTHY = ['all', 'unread', 'read', 'unstar', 'star'];
@@ -68,13 +68,14 @@ function elementsSelector($rootScope, mailSettingsModel, gettextCatalog) {
             dropdown.insertAdjacentHTML('beforeEnd', getTemplate());
 
             return (scope, el) => {
+                const { dispatcher, on, unsubscribe } = dispatchers(['closeDropdown', 'selectElements']);
                 const $btn = el.find('.elementsSelector-btn-action');
                 const updateView = () => {
                     scope.$applyAsync(() => {
                         scope.viewLayout = mailSettingsModel.get('ViewLayout');
                     });
                 };
-                const unsubscribe = $rootScope.$on('mailSettings', (event, { type = '' }) => {
+                on('mailSettings', (event, { type = '' }) => {
                     if (type === 'updated') {
                         updateView();
                     }
@@ -83,9 +84,9 @@ function elementsSelector($rootScope, mailSettingsModel, gettextCatalog) {
                 $btn.on('click', onClick);
 
                 function onClick({ currentTarget }) {
-                    const value = currentTarget.getAttribute('data-action');
-                    $rootScope.$emit('selectElements', { value, isChecked });
-                    $rootScope.$emit('closeDropdown');
+                    const action = currentTarget.getAttribute('data-action');
+                    dispatcher.selectElements(action, { isChecked });
+                    dispatcher.closeDropdown();
                 }
 
                 scope.checkedSelectorState = () => _.every(scope.conversations, { Selected: true });

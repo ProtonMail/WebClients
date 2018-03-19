@@ -1,7 +1,5 @@
-import _ from 'lodash';
-
 /* @ngInject */
-function autoresponderMessage(autoresponderModel, $rootScope) {
+function autoresponderMessage(autoresponderModel, dispatchers) {
     return {
         replace: true,
         restrict: 'E',
@@ -11,7 +9,7 @@ function autoresponderMessage(autoresponderModel, $rootScope) {
             message: '='
         },
         link(scope, elem, { disabled }) {
-            const unsubscribe = [];
+            const { on, unsubscribe } = dispatchers();
 
             scope.disabled = disabled === 'true';
             scope.halfMessageLength = autoresponderModel.constants.HALF_MESSAGE_LENGTH;
@@ -22,18 +20,13 @@ function autoresponderMessage(autoresponderModel, $rootScope) {
                     .text()
                     .trim().length === 0;
 
-            unsubscribe.push(
-                $rootScope.$on('autoresponder', (event, { type, data = {} }) => {
-                    if (type === 'update') {
-                        scope.message = data.autoresponder.message;
-                    }
-                })
-            );
-
-            scope.$on('$destroy', () => {
-                _.each(unsubscribe, (cb) => cb());
-                unsubscribe.length = 0;
+            on('autoresponder', (event, { type, data = {} }) => {
+                if (type === 'update') {
+                    scope.message = data.autoresponder.message;
+                }
             });
+
+            scope.$on('$destroy', unsubscribe);
         }
     };
 }

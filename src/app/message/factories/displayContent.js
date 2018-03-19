@@ -1,6 +1,6 @@
 /* @ngInject */
 function displayContent($rootScope, $q, $filter, prepareContent, sanitize) {
-    const read = ({ ID }) => $rootScope.$emit('messageActions', { action: 'read', data: { ids: [ID] } });
+    const read = ({ ID }) => $rootScope.$emit('messageActions', { type: 'read', data: { ids: [ID] } });
 
     async function decrypt(message) {
         message.decrypting = true;

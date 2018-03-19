@@ -35,7 +35,7 @@ function dropdownFolders(labelsModel, $rootScope, actionConversation, labelModal
         if (type === 'conversation') {
             actionConversation.move(elementIDs, labelID);
         } else if (type === 'message') {
-            $rootScope.$emit('messageActions', { action: 'move', data: { ids: elementIDs, labelID } });
+            $rootScope.$emit('messageActions', { type: 'move', data: { ids: elementIDs, labelID } });
         }
     }
 

@@ -2,7 +2,6 @@ import { ContactUpdateError } from '../../../helpers/errors';
 
 /* @ngInject */
 function contactEditor(
-    $rootScope,
     $state,
     eventManager,
     Contact,
@@ -12,10 +11,12 @@ function contactEditor(
     contactLoaderModal,
     contactSchema,
     confirmModal,
+    dispatchers,
     gettextCatalog,
     networkActivityTracker,
     notification
 ) {
+    const { dispatcher, on } = dispatchers(['contacts', 'progressBar']);
     /*
         * Add contacts
         * @param {Array} contacts
@@ -26,10 +27,7 @@ function contactEditor(
             .then((data) => {
                 const { created, errors, total } = data;
                 eventManager.call().then(() => {
-                    $rootScope.$emit('contacts', {
-                        type: 'contactCreated',
-                        data: { created, errors, total, mode }
-                    });
+                    dispatcher.contacts('contactCreated', { created, errors, total, mode });
                 });
                 return data;
             });
@@ -117,8 +115,8 @@ function contactEditor(
                 progress += Math.floor((result.total * 100) / total);
 
                 // Emit the progress bar and that the contact has updated.
-                $rootScope.$emit('progressBar', { type: 'contactsProgressBar', data: { progress } });
-                $rootScope.$emit('contacts', { type: 'contactUpdated', data: { contact: update } });
+                dispatcher.progressBar('contactsProgressBar', { progress });
+                dispatcher.contacts('contactUpdated', { contact: update });
 
                 return result;
             });
@@ -154,10 +152,10 @@ function contactEditor(
             .then(summarizeMergeResults)
             .then((summarizedResults) => {
                 // To notify that some contacts have been deleted.
-                $rootScope.$emit('contacts', { type: 'contactsUpdated' });
+                dispatcher.contacts('contactsUpdated');
 
                 // To finish the loading modal.
-                $rootScope.$emit('contacts', { type: 'contactsMerged', data: summarizedResults });
+                dispatcher.contacts('contactsMerged', summarizedResults);
 
                 // To update for the deleted contacts.
                 return eventManager.call();
@@ -175,7 +173,7 @@ function contactEditor(
      */
     function update({ contact = {} }) {
         const promise = Contact.update(contact).then(({ Contact, cards }) => {
-            $rootScope.$emit('contacts', { type: 'contactUpdated', data: { contact: Contact, cards } });
+            dispatcher.contacts('contactUpdated', { contact: Contact, cards });
             notification.success(gettextCatalog.getString('Contact edited', null, 'Success message'));
             return eventManager.call();
         });
@@ -268,7 +266,7 @@ function contactEditor(
         });
     }
 
-    $rootScope.$on('contacts', (event, { type, data = {} }) => {
+    on('contacts', (event, { type, data = {} }) => {
         type === 'deleteContacts' && remove(data);
         type === 'updateContact' && update(data);
         type === 'createContact' && create(data);

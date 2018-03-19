@@ -106,7 +106,7 @@ function manageUser(
 
         if (User.Role === CONSTANTS.FREE_USER_ROLE) {
             // Necessary because there is no deletion event for organizations
-            $rootScope.$emit('organizationChange', { PlanName: 'free', HasKeys: 0 });
+            $rootScope.$emit('organizationChange', { data: { PlanName: 'free', HasKeys: 0 } });
         }
 
         // Revoke admin, we reload the app to clear the context

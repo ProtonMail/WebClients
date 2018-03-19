@@ -1,10 +1,11 @@
 import _ from 'lodash';
 
 /* @ngInject */
-function squireExecAction(editorModel, $rootScope) {
-    const dispatch = (type, data = {}) => $rootScope.$emit('squire.editor', { type, data });
+function squireExecAction(editorModel, dispatchers) {
+    const { on, dispatcher } = dispatchers(['squire.editor']);
+    const dispatch = (type, data = {}) => dispatcher['squire.editor'](type, data);
 
-    $rootScope.$on('squire.editor', (e, { type, data }) => {
+    on('squire.editor', (e, { type, data }) => {
         type === 'squireActions' && onAction(data);
     });
 

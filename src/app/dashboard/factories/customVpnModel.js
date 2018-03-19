@@ -1,11 +1,12 @@
 /* @ngInject */
-function customVpnModel($rootScope, CONSTANTS, dashboardConfiguration, dashboardModel) {
+function customVpnModel(CONSTANTS, dashboardConfiguration, dashboardModel, dispatchers) {
     const { MAX_VPN, PLANS } = CONSTANTS;
     const { PLAN, ADDON } = PLANS;
     const { VPN } = ADDON;
     const { VPN_BASIC, VPN_PLUS } = PLAN;
     const CACHE = {};
-    const dispatch = () => $rootScope.$emit('dashboard', { type: 'vpn.modal.updated' });
+    const { dispatcher, on } = dispatchers(['dashboard']);
+    const dispatch = () => dispatcher.dashboard('vpn.modal.updated');
     const set = (key, value) => {
         CACHE[key] = value;
         dispatch();
@@ -77,7 +78,7 @@ function customVpnModel($rootScope, CONSTANTS, dashboardConfiguration, dashboard
         return result;
     };
 
-    $rootScope.$on('slider.updated', (event, { type = '', data = {} }) => {
+    on('slider.updated', (event, { type = '', data = {} }) => {
         if (type === 'vpn') {
             const { addons } = dashboardModel.get(dashboardConfiguration.cycle());
             const vpnplus = addons[VPN_PLUS];

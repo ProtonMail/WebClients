@@ -1,5 +1,5 @@
 /* @ngInject */
-function bitcoinView(paymentBitcoinModel, $rootScope, CONSTANTS) {
+function bitcoinView(paymentBitcoinModel, dispatchers, CONSTANTS) {
     const { MIN_BITCOIN_AMOUNT } = CONSTANTS;
 
     paymentBitcoinModel.load();
@@ -12,17 +12,19 @@ function bitcoinView(paymentBitcoinModel, $rootScope, CONSTANTS) {
         replace: true,
         templateUrl: require('../../../templates/payment/bitcoinView.tpl.html'),
         link(scope, el, { type = 'payment' }) {
+            const { on, unsubscribe, dispatcher } = dispatchers(['payment']);
+
             el[0].classList.add(`bitcoinView-type-${type}`);
 
             const load = () => {
-                $rootScope.$emit('payment', {
-                    type: 'bitcoin.submit',
-                    data: {
+                dispatcher.payment(
+                    'bitcoin.submit',
+                    {
                         type,
                         amount: scope.amount,
                         currency: scope.currency
                     }
-                });
+                );
             };
 
             const onClickReload = ({ target }) => {
@@ -33,7 +35,7 @@ function bitcoinView(paymentBitcoinModel, $rootScope, CONSTANTS) {
 
             el.on('click', onClickReload);
 
-            const unsubscribe = $rootScope.$on('payment', (e, { type }) => {
+            on('payment', (e, { type }) => {
                 if (type === 'bitcoin.success') {
                     scope.$applyAsync(() => {
                         scope.isBitcoin = true;

@@ -5,9 +5,9 @@ import updateCollection from '../../utils/helpers/updateCollection';
 
 /* @ngInject */
 function contactCache(
-    $rootScope,
     $state,
     $stateParams,
+    dispatchers,
     networkActivityTracker,
     CONSTANTS,
     Contact,
@@ -25,11 +25,12 @@ function contactCache(
         }
     };
 
+    const { dispatcher, on } = dispatchers(['contacts']);
     const CONTACT_STATES = ['secured.contacts'];
     const { CONTACTS_PER_PAGE } = CONSTANTS;
     const getItem = (ID) => _.find(CACHE.contacts, { ID });
     const findIndex = (ID) => _.findIndex(CACHE.contacts, { ID });
-    const emit = () => $rootScope.$emit('contacts', { type: 'contactsUpdated', data: { all: get() } });
+    const emit = () => dispatcher.contacts('contactsUpdated', { all: get() });
     const orderBy = (contacts = []) => {
 
         if (!$state.includes('secured.contacts')) {
@@ -252,7 +253,7 @@ function contactCache(
         emit();
     }
 
-    $rootScope.$on('contacts', (event, { type, data = {} }) => {
+    on('contacts', (event, { type, data = {} }) => {
         type === 'contactEvents' && contactEvents(data);
         type === 'refreshContactEmails' && refreshContactEmails(data);
         type === 'deletedContactEmail' && deletedContactEmail(data);
@@ -263,13 +264,13 @@ function contactCache(
         type === 'searchingContact' && searchingContact(data);
     });
 
-    $rootScope.$on('$stateChangeSuccess', (event, toState) => {
+    on('$stateChangeSuccess', (event, toState) => {
         if (!CONTACT_STATES.includes(toState.name)) {
             selectContacts({ isChecked: false });
         }
     });
 
-    $rootScope.$on('logout', () => {
+    on('logout', () => {
         clear();
     });
 

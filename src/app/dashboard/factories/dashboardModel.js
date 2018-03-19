@@ -3,10 +3,10 @@ import _ from 'lodash';
 /* @ngInject */
 function dashboardModel(
     $filter,
-    $rootScope,
     confirmModal,
     CONSTANTS,
     dashboardConfiguration,
+    dispatchers,
     downgrade,
     gettextCatalog,
     Payment,
@@ -16,6 +16,7 @@ function dashboardModel(
     paymentModel,
     planListGenerator
 ) {
+    const { dispatcher, on } = dispatchers(['dashboard']);
     const { PLUS, PROFESSIONAL, VISIONARY, VPN_BASIC, VPN_PLUS } = CONSTANTS.PLANS.PLAN;
     const MAIL_PLANS = ['free', PLUS, PROFESSIONAL, VISIONARY];
     const { ADDRESS, MEMBER, DOMAIN, SPACE, VPN } = CONSTANTS.PLANS.ADDON;
@@ -30,7 +31,7 @@ function dashboardModel(
 
     const changeAddon = (plan, addon, value) => {
         dashboardConfiguration.addon(plan, addon, value);
-        $rootScope.$emit('dashboard', { type: 'addon.updated', data: { plan, addon, value } });
+        dispatcher.dashboard('addon.updated', { plan, addon, value });
     };
 
     const selectVpn = (plan = '', vpn = 0) => {
@@ -41,7 +42,7 @@ function dashboardModel(
         dashboardConfiguration.addon('professional', 'vpnbasic', +(plan === 'vpnbasic'));
         dashboardConfiguration.addon('professional', 'vpnplus', +(plan === 'vpnplus'));
         dashboardConfiguration.addon('professional', 'vpn', vpn);
-        $rootScope.$emit('dashboard', { type: 'vpn.updated' });
+        dispatcher.dashboard('vpn.updated');
     };
 
     const removeVpn = () => {
@@ -52,7 +53,7 @@ function dashboardModel(
         dashboardConfiguration.addon('professional', 'vpnbasic', 0);
         dashboardConfiguration.addon('professional', 'vpnplus', 0);
         dashboardConfiguration.addon('professional', 'vpn', 0);
-        $rootScope.$emit('dashboard', { type: 'vpn.updated' });
+        dispatcher.dashboard('vpn.updated');
     };
 
     /**
@@ -70,14 +71,14 @@ function dashboardModel(
         dashboardConfiguration.addon('professional', 'vpnbasic', vpnbasic);
         dashboardConfiguration.addon('professional', 'vpnplus', vpnplus);
         dashboardConfiguration.addon('professional', 'vpn', vpn);
-        $rootScope.$emit('dashboard', { type: 'vpn.updated' });
+        dispatcher.dashboard('vpn.updated');
     };
 
     const initVpn = (plan = '') => {
         dashboardConfiguration.addon(plan, 'vpnbasic', +subscriptionModel.hasPaid('vpnbasic'));
         dashboardConfiguration.addon(plan, 'vpnplus', +subscriptionModel.hasPaid('vpnplus'));
         plan === 'professional' && dashboardConfiguration.addon(plan, 'vpn', subscriptionModel.count('vpn'));
-        $rootScope.$emit('dashboard', { type: 'vpn.updated', data: { plan } });
+        dispatcher.dashboard('vpn.updated', { plan });
     };
 
     const query = (currency = 'USD', cycle = YEARLY) => {
@@ -195,7 +196,7 @@ function dashboardModel(
     const changeCurrency = (currency) => {
         loadPlans(currency).then((data) => {
             dashboardConfiguration.set('currency', currency);
-            $rootScope.$emit('dashboard', { type: 'currency.updated', data: _.extend(data, { currency }) });
+            dispatcher.dashboard('currency.updated', _.extend(data, { currency }));
         });
     };
 
@@ -282,10 +283,10 @@ function dashboardModel(
 
     const changeCycle = (cycle) => {
         dashboardConfiguration.set('cycle', cycle);
-        $rootScope.$emit('dashboard', { type: 'cycle.updated', data: { cycle } });
+        dispatcher.dashboard('cycle.updated', { cycle });
     };
 
-    $rootScope.$on('subscription', (event, { type = '' }) => {
+    on('subscription', (event, { type = '' }) => {
         if (type === 'update') {
             updateVpn();
             changeCycle(subscriptionModel.cycle());
@@ -293,7 +294,7 @@ function dashboardModel(
         }
     });
 
-    $rootScope.$on('dashboard', (event, { type, data = {} }) => {
+    on('dashboard', (event, { type, data = {} }) => {
         type === 'change.cycle' && changeCycle(data.cycle);
         type === 'change.currency' && changeCurrency(data.currency);
         type === 'change.addon' && changeAddon(data.plan, data.addon, data.value);
@@ -303,7 +304,7 @@ function dashboardModel(
         type === 'init.vpn' && initVpn(data.plan);
     });
 
-    $rootScope.$on('modal.payment', (e, { type, data }) => {
+    on('modal.payment', (e, { type, data }) => {
         if (type === 'process.success') {
             const promise = Promise.all([subscriptionModel.fetch(), paymentModel.getMethods(true)]);
             networkActivityTracker.track(promise);

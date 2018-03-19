@@ -1,9 +1,8 @@
 import _ from 'lodash';
 
 /* @ngInject */
-function searchForm($rootScope, $state, $stateParams, authentication, searchModel, searchValue, dateUtils, mailSettingsModel) {
+function searchForm(dispatchers, $state, $stateParams, authentication, searchModel, searchValue, dateUtils, mailSettingsModel) {
     const CLASS_OPEN = 'searchForm-container-adv';
-    const dispatch = (type, data = {}) => $rootScope.$emit('advancedSearch', { type, data });
 
     /**
      * Format the date as a string because the lib is not able to parse a timestamp.
@@ -30,7 +29,10 @@ function searchForm($rootScope, $state, $stateParams, authentication, searchMode
             searchDate.attr('placeholder', dateUtils.I18N.localizedDatePlaceholder);
 
             return (scope, el) => {
-                const unsubscribe = [];
+                const { on, unsubscribe, dispatcher } = dispatchers(['advancedSearch']);
+
+                const dispatchHelper = (type, data = {}) => dispatcher.advancedSearch(type, data);
+
                 const { AutoWildcardSearch } = mailSettingsModel.get();
 
                 let folders = searchModel.getFolderList();
@@ -61,46 +63,36 @@ function searchForm($rootScope, $state, $stateParams, authentication, searchMode
                     scope.model.folder = _.find(folders, { value: parameters.label }) || folders[0];
                 };
 
-                unsubscribe.push(
-                    $rootScope.$on('updateUser', () => {
-                        scope.addresses = searchModel.getAddresses();
-                    })
-                );
+                on('updateUser', () => {
+                    scope.addresses = searchModel.getAddresses();
+                });
 
-                unsubscribe.push(
-                    $rootScope.$on('hotkeys', (e, { type }) => {
-                        type === 'slash' && $input.focus();
-                    })
-                );
+                on('hotkeys', (e, { type }) => {
+                    type === 'slash' && $input.focus();
+                });
 
-                unsubscribe.push(
-                    $rootScope.$on('$stateChangeSuccess', () => {
-                        scope.query = searchValue.generateSearchString(folders);
-                    })
-                );
+                on('$stateChangeSuccess', () => {
+                    scope.query = searchValue.generateSearchString(folders);
+                });
 
-                unsubscribe.push(
-                    $rootScope.$on('advancedSearch', (e, { type, data }) => {
-                        if (type === 'open') {
-                            el[0].classList[data.visible ? 'add' : 'remove'](CLASS_OPEN);
-                            scope.$applyAsync(() => {
-                                onOpen();
-                                scope.advancedSearch = data.visible;
-                            });
-                        }
-                    })
-                );
-                unsubscribe.push(
-                    $rootScope.$on('labelsModel', (e, { type }) => {
-                        if (type === 'cache.update' || type === 'cache.refresh') {
-                            folders = searchModel.getFolderList();
-                        }
-                    })
-                );
+                on('advancedSearch', (e, { type, data }) => {
+                    if (type === 'open') {
+                        el[0].classList[data.visible ? 'add' : 'remove'](CLASS_OPEN);
+                        scope.$applyAsync(() => {
+                            onOpen();
+                            scope.advancedSearch = data.visible;
+                        });
+                    }
+                });
+                on('labelsModel', (e, { type }) => {
+                    if (type === 'cache.update' || type === 'cache.refresh') {
+                        folders = searchModel.getFolderList();
+                    }
+                });
 
                 const go = (state, data) => {
                     $state.go(state, data);
-                    dispatch('open', { visible: false });
+                    dispatchHelper('open', { visible: false });
                 };
 
                 const onSubmit = () => {
@@ -120,8 +112,7 @@ function searchForm($rootScope, $state, $stateParams, authentication, searchMode
 
                 scope.$on('$destroy', () => {
                     el.off('submit', onSubmit);
-                    unsubscribe.forEach((cb) => cb());
-                    unsubscribe.length = 0;
+                    unsubscribe();
                 });
             };
         }

@@ -1,9 +1,11 @@
 /* @ngInject */
-const sidebarMobileHeader = ($rootScope, addressesModel, authentication) => ({
+const sidebarMobileHeader = (dispatchers, addressesModel, authentication) => ({
     scope: {},
     replace: true,
     templateUrl: require('../../../templates/sidebar/sidebarMobileHeader.tpl.html'),
     link(scope) {
+        const { on, unsubscribe } = dispatchers();
+
         const updateView = () => {
             const { Name = '' } = authentication.user;
             const [{ DisplayName = '', Email = '' } = {}] = addressesModel.get() || [];
@@ -13,13 +15,11 @@ const sidebarMobileHeader = ($rootScope, addressesModel, authentication) => ({
                 scope.email = Email;
             });
         };
-        const unsubscribe = $rootScope.$on('updateUser', () => updateView());
+        on('updateUser', () => updateView());
 
         updateView();
 
-        scope.$on('$destroy', () => {
-            unsubscribe();
-        });
+        scope.$on('$destroy', unsubscribe);
     }
 });
 export default sidebarMobileHeader;

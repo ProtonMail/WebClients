@@ -1,10 +1,9 @@
 import _ from 'lodash';
 
 /* @ngInject */
-function weekdayTimePicker(dateUtils, $rootScope, datetimeErrorCombiner, timepickerModel) {
+function weekdayTimePicker(dateUtils, dispatchers, datetimeErrorCombiner, timepickerModel) {
     const days = dateUtils.getSortedWeekdays();
 
-    const dispatch = (type, data) => $rootScope.$emit('timepicker', { type, data });
 
     const getWeekDay = (timestamp) => Math.floor(timestamp / (24 * 3600)) % 7;
     const getTime = (timestamp) => timestamp % (24 * 3600);
@@ -22,8 +21,10 @@ function weekdayTimePicker(dateUtils, $rootScope, datetimeErrorCombiner, timepic
             elem[0].querySelector('.timepicker').setAttribute('data-event-key', timePickerKey);
 
             return (scope, elem, { datePickerKey, timestamp, disableInput, labelId }) => {
+                const { on, unsubscribe, dispatcher } = dispatchers(['timepicker']);
+                const dispatchHelper = (type, data) => dispatcher.timepicker(type, data);
+
                 // definitions
-                const unsubscribe = [];
                 const weekDaySelector = elem.find('.week-day-selector');
 
                 timepickerModel.initTimePicker(timePickerKey, { disableInput, labelId: labelId + '_time' });
@@ -54,12 +55,12 @@ function weekdayTimePicker(dateUtils, $rootScope, datetimeErrorCombiner, timepic
                 function calcTimestamp() {
                     if (scope.model.time === null || scope.model.weekday === null) {
                         scope.timestamp = null;
-                        dispatch('update', { eventKey: scope.datePickerKey, timestamp: scope.timestamp });
+                        dispatchHelper('update', { eventKey: scope.datePickerKey, timestamp: scope.timestamp });
                         return;
                     }
                     // combine
                     scope.timestamp = scope.model.weekday.value * 24 * 3600 + scope.model.time;
-                    dispatch('update', { eventKey: scope.datePickerKey, timestamp: scope.timestamp });
+                    dispatchHelper('update', { eventKey: scope.datePickerKey, timestamp: scope.timestamp });
                 }
 
                 // initialization
@@ -72,26 +73,23 @@ function weekdayTimePicker(dateUtils, $rootScope, datetimeErrorCombiner, timepic
                 weekDaySelector.attr('id', scope.labelId);
                 calcInternalVariables();
 
-                // events
+
+                on('timepicker', (event, { type, data }) => {
+                    if (type === 'refresh' && data.eventKey === scope.datePickerKey) {
+                        scope.timestamp = data.timestamp;
+                        calcInternalVariables();
+                    }
+
+                    if (type === 'update' && data.eventKey === timePickerKey) {
+                        calcTimestamp();
+                    }
+                });
+
                 weekDaySelector.on('change', onWeekDayChange);
-                unsubscribe.push(() => weekDaySelector.off('change', onWeekDayChange));
-
-                unsubscribe.push(
-                    $rootScope.$on('timepicker', (event, { type, data }) => {
-                        if (type === 'refresh' && data.eventKey === scope.datePickerKey) {
-                            scope.timestamp = data.timestamp;
-                            calcInternalVariables();
-                        }
-
-                        if (type === 'update' && data.eventKey === timePickerKey) {
-                            calcTimestamp();
-                        }
-                    })
-                );
 
                 scope.$on('$destroy', () => {
-                    _.each(unsubscribe, (cb) => cb());
-                    unsubscribe.length = 0;
+                    unsubscribe();
+                    weekDaySelector.off('change', onWeekDayChange);
                 });
             };
         }

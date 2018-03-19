@@ -1,5 +1,5 @@
 /* @ngInject */
-function messageView($stateParams, $state, $rootScope, conversationListeners, cache, hotkeys, CONSTANTS) {
+function messageView($stateParams, $state, dispatchers, $rootScope, conversationListeners, cache, hotkeys, CONSTANTS) {
     function back() {
         const name = $state.$current.name;
         const route = name.replace('.element', '');
@@ -11,9 +11,10 @@ function messageView($stateParams, $state, $rootScope, conversationListeners, ca
         replace: true,
         templateUrl: require('../../../templates/message/messageView.tpl.html'),
         link(scope) {
+            const { on, unsubscribe } = dispatchers();
+
             const messageID = $stateParams.id;
             let unsubscribeActions = angular.noop;
-            let unsubscribe = angular.noop;
 
             cache.getMessage(messageID).then((message) => {
                 scope.$applyAsync(() => {
@@ -22,7 +23,7 @@ function messageView($stateParams, $state, $rootScope, conversationListeners, ca
                     $rootScope.numberElementSelected = 1;
 
                     unsubscribeActions = conversationListeners(scope.message);
-                    unsubscribe = $rootScope.$on('message.expiration', () => back());
+                    on('message.expiration', back);
                 });
 
                 hotkeys.unbind(['down', 'up']);
@@ -40,7 +41,7 @@ function messageView($stateParams, $state, $rootScope, conversationListeners, ca
                 }
 
                 $rootScope.$emit('messageActions', {
-                    action: 'move',
+                    type: 'move',
                     data: { ids: [scope.message.ID], labelID }
                 });
             });

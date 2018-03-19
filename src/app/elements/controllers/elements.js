@@ -6,6 +6,7 @@ function ElementsController(
     $log,
     $q,
     $rootScope,
+    dispatchers,
     $scope,
     $state,
     $stateParams,
@@ -33,12 +34,12 @@ function ElementsController(
     removeElement,
     tools
 ) {
-    const unsubscribes = [];
+    const { on, unsubscribe, dispatcher } = dispatchers(['elements', 'messageActions', 'message.open']);
     let unbindWatcherElements;
     const MINUTE = 60 * 1000;
     const { NumMessagePerPage, MessageButtons } = mailSettingsModel.get();
     const id = setInterval(() => {
-        $rootScope.$emit('elements', { type: 'refresh.time' });
+        dispatcher.elements('refresh.time');
     }, MINUTE);
 
     $scope.elementsLoaded = false;
@@ -175,45 +176,43 @@ function ElementsController(
             }
         };
 
-        unsubscribes.push(
-            $rootScope.$on('elements', (e, { type, data = {} }) => {
-                switch (type) {
-                    case 'mark': {
-                        const thisElement = _.find($scope.conversations, { ID: data.id });
+        on('elements', (e, { type, data = {} }) => {
+            switch (type) {
+                case 'mark': {
+                    const thisElement = _.find($scope.conversations, { ID: data.id });
 
-                        if (thisElement && $scope.markedElement !== thisElement) {
-                            $scope.$applyAsync(() => {
-                                $scope.markedElement = thisElement;
-                            });
-                        }
-                        break;
+                    if (thisElement && $scope.markedElement !== thisElement) {
+                        $scope.$applyAsync(() => {
+                            $scope.markedElement = thisElement;
+                        });
                     }
-                    case 'open':
-                        $scope.$applyAsync(() => openElement(data.element));
-                        break;
-                    case 'opened': {
-                        const thisElement = _.find($scope.conversations, { ID: data.id });
-
-                        if (thisElement) {
-                            isOpened = true;
-                        }
-                        break;
-                    }
-                    case 'close':
-                        isOpened = false;
-                        break;
-                    case 'refresh':
-                        $scope.refreshElements();
-                        break;
-                    case 'switchTo.next':
-                        nextElement();
-                        break;
-                    case 'switchTo.previous':
-                        previousElement();
-                        break;
+                    break;
                 }
-            })
-        );
+                case 'open':
+                    $scope.$applyAsync(() => openElement(data.element));
+                    break;
+                case 'opened': {
+                    const thisElement = _.find($scope.conversations, { ID: data.id });
+
+                    if (thisElement) {
+                        isOpened = true;
+                    }
+                    break;
+                }
+                case 'close':
+                    isOpened = false;
+                    break;
+                case 'refresh':
+                    $scope.refreshElements();
+                    break;
+                case 'switchTo.next':
+                    nextElement();
+                    break;
+                case 'switchTo.previous':
+                    previousElement();
+                    break;
+            }
+        });
 
         $scope.$on(
             'openMarked',
@@ -243,23 +242,19 @@ function ElementsController(
                 });
         });
 
-        unsubscribes.push(
-            $rootScope.$on('selectElements', (event, { value, isChecked }) => {
-                $scope.$applyAsync(() => {
-                    $scope.selectElements(value, isChecked);
-                });
-            })
-        );
+        on('selectElements', (event, { type: action, data: { isChecked } }) => {
+            $scope.$applyAsync(() => {
+                $scope.selectElements(action, isChecked);
+            });
+        });
 
-        unsubscribes.push(
-            $rootScope.$on('app.commands', (e, { type, data }) => {
-                const [, action, item] = type.match(/(add|remove)\.(folders|labels)$/) || [];
-                $scope.$applyAsync(() => {
-                    item === 'labels' && $scope.saveLabels(data.list);
-                    item === 'folders' && $scope.move(null, data.ID, action);
-                });
-            })
-        );
+        on('app.commands', (e, { type, data }) => {
+            const [, action, item] = type.match(/(add|remove)\.(folders|labels)$/) || [];
+            $scope.$applyAsync(() => {
+                item === 'labels' && $scope.saveLabels(data.list);
+                item === 'folders' && $scope.move(null, data.ID, action);
+            });
+        });
 
         $scope.$on('applyLabels', (event, LabelID) => {
             $scope.applyLabels(LabelID);
@@ -290,19 +285,14 @@ function ElementsController(
             $scope.unread();
         });
 
-        unsubscribes.push(
-            $rootScope.$on('toggleStar', () => {
-                !isOpened && toggleStar();
-            })
-        );
+        on('toggleStar', () => {
+            !isOpened && toggleStar();
+        });
 
         function toggleStar() {
             const type = getTypeSelected();
             getElementsSelected().forEach((model) => {
-                $rootScope.$emit('elements', {
-                    type: 'toggleStar',
-                    data: { type, model }
-                });
+                dispatcher.elements('toggleStar', { type, model });
             });
         }
 
@@ -358,11 +348,11 @@ function ElementsController(
                     const id = conversationMode ? element.ConversationID || element.ID : element.ID;
                     $state.go(current, { id });
                     $scope.markedElement = element;
-                    $rootScope.$emit('elements', { type: 'switchTo.next.success', data: element });
+                    dispatcher.elements('switchTo.next.success', element);
                     !isRowMode && markedScroll.follow();
                 })
                 .catch((data) => {
-                    $rootScope.$emit('elements', { type: 'switchTo.next.error', data });
+                    dispatcher.elements('switchTo.next.error', data);
                 });
         }
 
@@ -388,11 +378,11 @@ function ElementsController(
                     const id = conversationMode ? element.ConversationID || element.ID : element.ID;
                     $state.go(current, { id });
                     $scope.markedElement = element;
-                    $rootScope.$emit('elements', { type: 'switchTo.previous.success', data: element });
+                    dispatcher.elements('switchTo.previous.success', element);
                     !isRowMode && markedScroll.follow();
                 })
                 .catch((data) => {
-                    $rootScope.$emit('elements', { type: 'switchTo.previous.error', data });
+                    dispatcher.elements('switchTo.previous.error', data);
                 });
         }
 
@@ -408,8 +398,7 @@ function ElementsController(
         });
 
         $scope.$on('$destroy', () => {
-            unsubscribes.forEach((callback) => callback());
-            unsubscribes.length = 0;
+            unsubscribe();
             clearInterval(id);
             markedScroll.clear();
         });
@@ -677,7 +666,7 @@ function ElementsController(
         if (type === 'conversation') {
             actionConversation.read(ids);
         } else if (type === 'message') {
-            $rootScope.$emit('messageActions', { action: 'read', data: { ids } });
+            dispatcher.messageActions('read', { ids });
         }
     };
 
@@ -691,7 +680,7 @@ function ElementsController(
         if (type === 'conversation') {
             actionConversation.unread(ids);
         } else if (type === 'message') {
-            $rootScope.$emit('messageActions', { action: 'unread', data: { ids } });
+            dispatcher.messageActions('unread', { ids });
         }
 
         if (angular.isDefined($state.params.id)) {
@@ -729,7 +718,7 @@ function ElementsController(
         if (type === 'conversation') {
             actionConversation.move(ids, labelID);
         } else if (type === 'message') {
-            $rootScope.$emit('messageActions', { action: 'move', data: { ids, labelID } });
+            dispatcher.messageActions('move', { ids, labelID });
         }
     };
 
@@ -750,7 +739,7 @@ function ElementsController(
         } else if (type === 'message') {
             const messages = getElementsSelected();
 
-            $rootScope.$emit('messageActions', { action: 'label', data: { messages, labels, alsoArchive } });
+            dispatcher.messageActions('label', { messages, labels, alsoArchive });
         }
     };
 
@@ -857,12 +846,9 @@ function ElementsController(
         $scope.markedElement = element;
 
         if (sameView) {
-            return $rootScope.$emit('message.open', {
-                type: 'toggle',
-                data: {
-                    message: element,
-                    action: 'openElement'
-                }
+            return dispatcher['message.open']('toggle', {
+                message: element,
+                action: 'openElement'
             });
         }
         const route = $state.$current.name.replace('.element', '');

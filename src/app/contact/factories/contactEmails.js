@@ -1,19 +1,14 @@
 import _ from 'lodash';
 
 /* @ngInject */
-function contactEmails($rootScope, Contact) {
+function contactEmails(Contact, dispatchers) {
     const emails = [];
     const set = (data) => emails.push(...data);
     const fetch = () => emails;
     const clear = () => (emails.length = 0);
     const findIndex = (ID) => _.findIndex(emails, { ID });
-
-    const emit = (contact) => {
-        $rootScope.$emit('contacts', {
-            type: 'refreshContactEmails',
-            data: { ID: contact.ContactID }
-        });
-    };
+    const { dispatcher, on } = dispatchers(['contacts']);
+    const emit = (contact) => dispatcher.contacts('refreshContactEmails', { ID: contact.ContactID });
 
     /**
      * Load first 100 emails via the user auth process
@@ -30,7 +25,7 @@ function contactEmails($rootScope, Contact) {
         return loadCache();
     };
 
-    $rootScope.$on('updateContactEmail', (event, ID, contactEmail) => {
+    on('updateContactEmail', (event, ID, contactEmail) => {
         const index = findIndex(ID);
 
         if (index !== -1) {
@@ -42,19 +37,19 @@ function contactEmails($rootScope, Contact) {
         emit(contactEmail);
     });
 
-    $rootScope.$on('deleteContactEmail', (event, ID) => {
+    on('deleteContactEmail', (event, ID) => {
         const index = findIndex(ID);
         if (index !== -1) {
             emails.splice(index, 1);
-            $rootScope.$emit('contacts', { type: 'deletedContactEmail', data: { ID } });
+            dispatcher.contacts('deletedContactEmail', { ID });
         }
     });
 
-    $rootScope.$on('resetContactEmails', () => {
+    on('resetContactEmails', () => {
         reset();
     });
 
-    $rootScope.$on('logout', () => {
+    on('logout', () => {
         clear();
     });
 

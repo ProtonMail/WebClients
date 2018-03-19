@@ -1,7 +1,9 @@
 import _ from 'lodash';
 
 /* @ngInject */
-function vpnSettingsModel($rootScope) {
+function vpnSettingsModel(dispatchers) {
+    const { on, dispatcher } = dispatchers(['vpnSettings']);
+
     let CACHE = {};
     const get = (key = 'all') => angular.copy(key === 'all' ? CACHE : CACHE[key]);
     const clear = () => (CACHE = {});
@@ -12,10 +14,10 @@ function vpnSettingsModel($rootScope) {
             CACHE[key] = value;
         }
 
-        $rootScope.$emit('vpnSettings', { type: 'updated', data: get() });
+        dispatcher.vpnSettings('updated', get());
     };
 
-    $rootScope.$on('logout', () => clear());
+    on('logout', clear);
 
     return { get, set };
 }

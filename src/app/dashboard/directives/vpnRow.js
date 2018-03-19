@@ -1,5 +1,5 @@
 /* @ngInject */
-function vpnRow($rootScope, CONSTANTS, dashboardConfiguration, dashboardModel, gettextCatalog, subscriptionModel, customVpnModal) {
+function vpnRow(CONSTANTS, dashboardConfiguration, dashboardModel, dispatchers, gettextCatalog, subscriptionModel, customVpnModal) {
     const HAS_VPN_CLASS = 'vpnRow-has-vpn';
     const VPN_BASIC_CLASS = 'vpnRow-vpnbasic';
     const VPN_PLUS_CLASS = 'vpnRow-vpnplus';
@@ -7,7 +7,7 @@ function vpnRow($rootScope, CONSTANTS, dashboardConfiguration, dashboardModel, g
     const { VPN } = CONSTANTS.PLANS.ADDON;
     const getName = (config = {}) => (config.vpnplus ? 'ProtonVPN Plus' : 'ProtonVPN Basic');
     const getClass = (config = {}) => (config.vpnplus ? VPN_PLUS_CLASS : VPN_BASIC_CLASS);
-    const initVpn = (plan) => $rootScope.$emit('dashboard', { type: 'init.vpn', data: { plan } });
+
     const I18N = {
         with: gettextCatalog.getString('with', null, 'ProtonVPN with X connections'),
         connections: gettextCatalog.getString('connections', null, 'ProtonVPN with X connections')
@@ -30,6 +30,8 @@ function vpnRow($rootScope, CONSTANTS, dashboardConfiguration, dashboardModel, g
         scope: {},
         templateUrl: require('../../../templates/dashboard/vpnRow.tpl.html'),
         link(scope, element, { plan }) {
+            const { dispatcher, on, unsubscribe } = dispatchers(['dashboard']);
+            const initVpn = (plan) => dispatcher.dashboard('init.vpn', { plan });
             const getAmount = () => {
                 const vpnbasic = dashboardModel.amount({ plan, addon: 'vpnbasic' });
                 const vpnplus = dashboardModel.amount({ plan, addon: 'vpnplus' });
@@ -77,7 +79,7 @@ function vpnRow($rootScope, CONSTANTS, dashboardConfiguration, dashboardModel, g
                 action === 'open-vpn-modal' && openModal(plan);
             };
 
-            const unsubscribe = $rootScope.$on('dashboard', (event, { type }) => {
+            on('dashboard', (event, { type }) => {
                 if (type === 'currency.updated' || type === 'cycle.updated') {
                     update();
                 }

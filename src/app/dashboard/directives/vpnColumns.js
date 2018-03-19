@@ -1,5 +1,5 @@
 /* @ngInject */
-function vpnColumns($rootScope, CONSTANTS, dashboardConfiguration, dashboardModel, customVpnModel) {
+function vpnColumns(CONSTANTS, dashboardConfiguration, dashboardModel, dispatchers, customVpnModel) {
     const { VPN_BASIC, VPN_PLUS } = CONSTANTS.PLANS.PLAN;
     const VPN_BASIC_SELECTED_CLASS = 'vpnColumns-vpnbasic-selected';
     const VPN_PLUS_SELECTED_CLASS = 'vpnColumns-vpnplus-selected';
@@ -29,12 +29,14 @@ function vpnColumns($rootScope, CONSTANTS, dashboardConfiguration, dashboardMode
         templateUrl: require('../../../templates/dashboard/vpnColumns.tpl.html'),
         link(scope, element) {
             const amounts = dashboardModel.amounts();
+            const { on, unsubscribe } = dispatchers();
             const update = () => {
                 element.removeClass(`${VPN_BASIC_SELECTED_CLASS} ${VPN_PLUS_SELECTED_CLASS}`);
                 customVpnModel.get('vpnbasic') && element.addClass(VPN_BASIC_SELECTED_CLASS);
                 customVpnModel.get('vpnplus') && element.addClass(VPN_PLUS_SELECTED_CLASS);
             };
-            const unsubscribe = $rootScope.$on('dashboard', (event, { type }) => {
+
+            on('dashboard', (event, { type }) => {
                 type === 'vpn.modal.updated' && update();
             });
 

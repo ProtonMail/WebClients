@@ -1,14 +1,12 @@
 import { INVITE_MAIL } from '../../constants';
 
 /* @ngInject */
-function humanVerification(AppModel, User, $state, signupModel, networkActivityTracker, $rootScope) {
+function humanVerification(AppModel, User, $state, signupModel, networkActivityTracker, dispatchers) {
     const SELECTOR = {
         FORM_EMAIL: '.humanVerification-formEmail-container',
         FORM_SMS: '.humanVerification-formSms-container',
         BTN_COMPLETE_SETUP: '.humanVerification-completeSetup-create'
     };
-
-    const dispatch = (type, data = {}) => $rootScope.$emit('payments', { type, data });
 
     /**
      * Build Destination object config,
@@ -52,7 +50,10 @@ function humanVerification(AppModel, User, $state, signupModel, networkActivityT
         },
         templateUrl: require('../../../templates/user/humanVerification.tpl.html'),
         link(scope, el, { offerType = INVITE_MAIL }) {
-            const unsubscribe = [];
+            const { on, unsubscribe, dispatcher } = dispatchers(['payments']);
+
+            const dispatchHelper = (type, data) => dispatcher.payments(type, data);
+
             const $formSMS = el.find(SELECTOR.FORM_SMS);
             const $formEMAIL = el.find(SELECTOR.FORM_EMAIL);
             const $btnSetup = el.find(SELECTOR.BTN_COMPLETE_SETUP);
@@ -96,26 +97,23 @@ function humanVerification(AppModel, User, $state, signupModel, networkActivityT
 
             const onClickCompleteSetup = (e) => {
                 e.preventDefault();
-                dispatch('create.account');
+                dispatchHelper('create.account');
             };
 
-            unsubscribe.push(
-                $rootScope.$on('payments', (e, { type, data = {} }) => {
-                    if (type === 'donate.submit' && data.action === 'humanVerification') {
-                        dispatch('create.account', data);
-                    }
-                })
-            );
+            on('payments', (e, { type, data = {} }) => {
+                if (type === 'donate.submit' && data.action === 'humanVerification') {
+                    dispatchHelper('create.account', data);
+                }
+            });
 
-            unsubscribe.push(
-                $rootScope.$on('humanVerification', (e, { type, data = {} }) => {
-                    if (type === 'captcha') {
-                        scope.$applyAsync(() => {
-                            scope.model.captcha_token = data.token;
-                        });
-                    }
-                })
-            );
+            on('humanVerification', (e, { type, data = {} }) => {
+                if (type !== 'captcha') {
+                    return;
+                }
+                scope.$applyAsync(() => {
+                    scope.model.captcha_token = data.token;
+                });
+            });
 
             $btnSetup.on('click', onClickCompleteSetup);
             $formSMS.on('submit', onSubmitSMS);
@@ -125,8 +123,7 @@ function humanVerification(AppModel, User, $state, signupModel, networkActivityT
                 $btnSetup.off('click', onClickCompleteSetup);
                 $formSMS.off('submit', onSubmitSMS);
                 $formEMAIL.off('submit', onSubmitEmail);
-                unsubscribe.forEach((cb) => cb());
-                unsubscribe.length = 0;
+                unsubscribe();
             });
         }
     };

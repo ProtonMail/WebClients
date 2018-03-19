@@ -5,7 +5,7 @@ function encryptMessage($rootScope, pmcw, srp, ComposerRequestStatus, outsidersM
     const { SEND_TYPES } = CONSTANTS;
     const ERROR_REQUEST_KEYS = gettextCatalog.getString('Cannot get public keys', null, 'Encrypt message');
 
-    const dispatchMessageAction = (message) => $rootScope.$emit('actionMessage', message);
+    const dispatchMessageAction = (message) => $rootScope.$emit('actionMessage', { data: message });
 
     /**
      * Unencrypted for outside.

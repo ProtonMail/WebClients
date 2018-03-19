@@ -1,7 +1,7 @@
 import _ from 'lodash';
 
 /* @ngInject */
-function durationselect($rootScope, autoresponderModel, autoresponderLanguage) {
+function durationselect(autoresponderModel, autoresponderLanguage, dispatchers) {
     const frequencies = [
         { label: autoresponderLanguage.DURATION_FIXED, value: autoresponderModel.constants.FIXED_INTERVAL },
         { label: autoresponderLanguage.DURATION_DAILY, value: autoresponderModel.constants.DAILY },
@@ -16,7 +16,7 @@ function durationselect($rootScope, autoresponderModel, autoresponderLanguage) {
         templateUrl: require('../../../templates/autoresponder/durationselect.tpl.html'),
         scope: {},
         link(scope, elem, { disableInput, repeat }) {
-            const unsubscribe = [];
+            const { on, unsubscribe } = dispatchers();
             // don't directly use model.repeat this, we want to update the model before the scope.model is changed
             // this prevents race conditions where something else is initialized before the autoresponderModel is informed.
 
@@ -33,20 +33,17 @@ function durationselect($rootScope, autoresponderModel, autoresponderLanguage) {
                 });
             }
 
-            unsubscribe.push(
-                $rootScope.$on('autoresponder', (event, { type, data = {} }) => {
-                    if (type === 'update') {
-                        scope.repeat = _.find(scope.frequencies, { value: data.autoresponder.repeat });
-                    }
-                })
-            );
+            on('autoresponder', (event, { type, data = {} }) => {
+                if (type === 'update') {
+                    scope.repeat = _.find(scope.frequencies, { value: data.autoresponder.repeat });
+                }
+            });
 
             elem.on('change', onInput);
-            unsubscribe.push(() => elem.off('change', onInput));
 
             scope.$on('$destroy', () => {
-                _.each(unsubscribe, (cb) => cb());
-                unsubscribe.length = 0;
+                elem.off('change', onInput);
+                unsubscribe();
             });
         }
     };

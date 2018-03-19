@@ -1,12 +1,14 @@
 /* @ngInject */
-function firstLoadState($rootScope, tools) {
+function firstLoadState(dispatchers, tools) {
     let first = true;
 
     const get = () => first;
     const set = (state) => (first = state);
     const cleanState = tools.filteredState;
 
-    $rootScope.$on('$stateChangeStart', (e, toState, toParams, fromState) => {
+    const { on } = dispatchers();
+
+    on('$stateChangeStart', (e, toState, toParams, fromState) => {
         first = cleanState(fromState.name) !== cleanState(toState.name);
     });
 

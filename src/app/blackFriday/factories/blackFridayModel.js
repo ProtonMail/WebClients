@@ -2,10 +2,10 @@ import _ from 'lodash';
 
 /* @ngInject */
 function blackFridayModel(
-    $rootScope,
     authentication,
     CONSTANTS,
     dashboardModel,
+    dispatchers,
     networkActivityTracker,
     Payment,
     paymentModal,
@@ -18,6 +18,7 @@ function blackFridayModel(
     const CACHE = {};
     const BLACK_FRIDAY_ITEM = 'protonmail_black_friday';
     const inInterval = () => moment().isBetween('2017-11-24', '2017-11-28');
+    const { dispatcher, on } = dispatchers(['blackFriday']);
 
     function isBlackFridayPeriod(force = false) {
         const subscription = subscriptionModel.get();
@@ -114,14 +115,14 @@ function blackFridayModel(
     }
 
     function load() {
-        Promise.all([paymentModel.getMethods(), paymentModel.getStatus()]).then(() => $rootScope.$emit('blackFriday', { type: 'loaded' }));
+        Promise.all([paymentModel.getMethods(), paymentModel.getStatus()]).then(() => dispatcher.blackFriday('loaded'));
     }
 
     setInterval(() => {
-        $rootScope.$emit('blackFriday', { type: 'tictac' });
+        dispatcher.blackFriday('tictac');
     }, BLACK_FRIDAY_INTERVAL);
 
-    $rootScope.$on('blackFriday', (event, { type = '', data = {} }) => {
+    on('blackFriday', (event, { type = '', data = {} }) => {
         type === 'buy' && buy(data);
         type === 'load' && load();
     });

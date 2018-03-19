@@ -81,11 +81,8 @@ function conversation(
             let messagesCached = [];
             const { on, unsubscribe, dispatcher } = dispatchers([
                 'message.open',
-                'refreshConversation',
-                'message.expiration',
-                'unmarkMessages',
-                'toggleStar',
-                'elements'
+                'elements',
+                'composer.load'
             ]);
 
             const scrollToPosition = getScrollToPosition();
@@ -109,7 +106,7 @@ function conversation(
                 }
 
                 if (msg.Type === CONSTANTS.DRAFT) {
-                    return $rootScope.$emit('composer.load', msg);
+                    return dispatcher['composer.load']('', msg);
                 }
 
                 dispatcher['message.open']('toggle', {
@@ -163,7 +160,7 @@ function conversation(
 
                 if (scope.markedMessage) {
                     return $rootScope.$emit('messageActions', {
-                        action: 'move',
+                        type: 'move',
                         data: { ids: [scope.markedMessage.ID], labelID }
                     });
                 }

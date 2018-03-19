@@ -1,7 +1,9 @@
 import _ from 'lodash';
 
 /* @ngInject */
-function mailSettingsModel($rootScope) {
+function mailSettingsModel(dispatchers) {
+    const { on, dispatcher } = dispatchers(['mailSettings']);
+
     let CACHE = {};
     const get = (key = 'all') => angular.copy(key === 'all' ? CACHE : CACHE[key]);
     const clear = () => (CACHE = {});
@@ -12,10 +14,10 @@ function mailSettingsModel($rootScope) {
             CACHE[key] = value;
         }
 
-        $rootScope.$emit('mailSettings', { type: 'updated', data: { key, value } });
+        dispatcher.mailSettings('updated', { key, value });
     };
 
-    $rootScope.$on('logout', () => clear());
+    on('logout', clear);
 
     return { get, set };
 }

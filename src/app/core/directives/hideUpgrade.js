@@ -1,11 +1,12 @@
 /* @ngInject */
-function hideUpgrade(organizationModel, $rootScope) {
+function hideUpgrade(dispatchers, organizationModel) {
     const HIDE_UPGRADE_CLASS = 'hideUpgrade';
     return {
         restrict: 'A',
         link(scope, element) {
+            const { on, unsubscribe } = dispatchers();
             // NOTE the type is defined inside hide-upgrade attribute
-            const unsubscribe = $rootScope.$on('organizationChange', (event, newOrganization) => update(newOrganization));
+            on('organizationChange', (event, { data: newOrganization }) => update(newOrganization));
 
             function update({ PlanName }) {
                 if (PlanName === 'visionary') {
@@ -16,7 +17,7 @@ function hideUpgrade(organizationModel, $rootScope) {
 
             update(organizationModel.get());
 
-            scope.$on('$destroy', () => unsubscribe());
+            scope.$on('$destroy', unsubscribe);
         }
     };
 }

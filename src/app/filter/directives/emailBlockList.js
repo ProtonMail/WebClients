@@ -1,7 +1,7 @@
 import _ from 'lodash';
 
 /* @ngInject */
-function emailBlockList($rootScope, spamListModel, gettextCatalog) {
+function emailBlockList(dispatchers, gettextCatalog, spamListModel) {
     const I18N = {
         whitelist: gettextCatalog.getString('Whitelist', null, 'Info'),
         blacklist: gettextCatalog.getString('Blacklist', null, 'Info')
@@ -16,11 +16,6 @@ function emailBlockList($rootScope, spamListModel, gettextCatalog) {
         BTN_DELETE: 'emailBlockList-btn-delete'
     };
 
-    const onEvent = (element, type, callback) => {
-        element.addEventListener(type, callback);
-        return () => element.removeEventListener(type, callback);
-    };
-
     return {
         replace: true,
         restrict: 'E',
@@ -29,7 +24,7 @@ function emailBlockList($rootScope, spamListModel, gettextCatalog) {
             listType: '@'
         },
         link(scope, elem, { switchTo }) {
-            const unsubscribe = [];
+            const { on, unsubscribe } = dispatchers();
             const list = spamListModel.list(spamListModel.getType(scope.listType));
             const tbody = elem[0].querySelector(`.${CLASSNAMES.LIST}`);
 
@@ -39,16 +34,14 @@ function emailBlockList($rootScope, spamListModel, gettextCatalog) {
                 scope.$applyAsync(() => (scope.entries = list));
             });
 
-            unsubscribe.push(
-                $rootScope.$on('filters', () => {
-                    list.get().then((list) => {
-                        scope.$applyAsync(() => {
-                            scope.entries = _.uniqBy(list, 'ID');
-                            $('.tooltip').hide();
-                        });
+            on('filters', () => {
+                list.get().then((list) => {
+                    scope.$applyAsync(() => {
+                        scope.entries = _.uniqBy(list, 'ID');
+                        $('.tooltip').hide();
                     });
-                })
-            );
+                });
+            });
 
             const onScroll = _.throttle(() => {
                 if (list.isLoading() || list.isEnding()) {
@@ -83,12 +76,13 @@ function emailBlockList($rootScope, spamListModel, gettextCatalog) {
                 }
             };
 
-            unsubscribe.push(onEvent(tbody, 'scroll', onScroll));
-            unsubscribe.push(onEvent(elem[0], 'click', onClick));
+            tbody.addEventListener('scroll', onScroll);
+            elem[0].addEventListener('click', onClick);
 
             scope.$on('$destroy', () => {
-                _.each(unsubscribe, (cb) => cb());
-                unsubscribe.length = 0;
+                tbody.removeEventListener('scroll', onScroll);
+                elem[0].removeEventListener('click', onClick);
+                unsubscribe();
                 spamListModel.clear();
             });
         }

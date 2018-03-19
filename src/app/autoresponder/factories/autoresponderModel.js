@@ -2,9 +2,9 @@ import _ from 'lodash';
 
 /* @ngInject */
 function autoresponderModel(
-    $rootScope,
     autoresponderLanguage,
     eventManager,
+    dispatchers,
     gettextCatalog,
     mailSettingsModel,
     networkActivityTracker,
@@ -13,6 +13,7 @@ function autoresponderModel(
     settingsMailApi,
     signatureBuilder
 ) {
+    const { dispatcher, on } = dispatchers(['autoresponder']);
     const now = new Date();
     const momentNow = moment(now);
     const timezones = _.map(moment.tz.names(), (name) => {
@@ -61,7 +62,7 @@ function autoresponderModel(
 
     const get = () => _.extend({}, getBaseResponder(), getChangedAutoresponder());
 
-    const dispatch = (type, data) => $rootScope.$emit('autoresponder', { type, data });
+    const dispatch = (type, data) => dispatcher.autoresponder(type, data);
 
     function getDefaultAutoResponder() {
         const defaultAutoresponder = {
@@ -227,14 +228,14 @@ function autoresponderModel(
         networkActivityTracker.track(promise);
     }
 
-    $rootScope.$on('autoresponder', (event, { type, data = {} }) => {
+    on('autoresponder', (event, { type, data = {} }) => {
         if (type === 'save') {
             set(data.autoresponder);
             save();
         }
     });
 
-    $rootScope.$on('autoresponder.isEnabled', (event, { status }) => {
+    on('autoresponder.isEnabled', (event, { status }) => {
         set({ isEnabled: status });
     });
 

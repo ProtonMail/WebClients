@@ -10,7 +10,7 @@ function settingsMenu(authentication, backState, CONSTANTS, networkActivityTrack
         scope: {},
         templateUrl: require('../../../templates/directives/ui/settingsMenu.tpl.html'),
         link(scope, element) {
-            const { unsubscribe, on } = dispatchers(['$stateChangeStart', 'appearance', 'updateUser']);
+            const { on, unsubscribe } = dispatchers();
             const isMember = () => authentication.user.Role === CONSTANTS.PAID_MEMBER_ROLE;
             const $back = element.find(`.${BACK_BUTTON}`);
             const updateList = () => scope.listStates = Object.keys(sidebarSettingsModel.getStateConfig());

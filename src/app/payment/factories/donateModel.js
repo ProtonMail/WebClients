@@ -1,5 +1,5 @@
 /* @ngInject */
-function donateModel(Payment, networkActivityTracker, gettextCatalog, notification, $rootScope) {
+function donateModel(Payment, networkActivityTracker, gettextCatalog, notification, dispatchers) {
     const I18N = {
         credit: {
             error: gettextCatalog.getString('Error while processing credit.', null, 'Donation modal')
@@ -17,7 +17,8 @@ function donateModel(Payment, networkActivityTracker, gettextCatalog, notificati
         }
     };
 
-    const dispatch = (type, data = {}) => $rootScope.$emit('payments', { type, data });
+    const { on, dispatcher } = dispatchers(['payments']);
+    const dispatch = (type, data = {}) => dispatcher.payments(type, data);
 
     const donate = (options = {}) => {
         const promise = Payment.donate(options)
@@ -61,7 +62,7 @@ function donateModel(Payment, networkActivityTracker, gettextCatalog, notificati
             .catch((e) => dispatch(`${type}.request.error`, e));
     };
 
-    $rootScope.$on('payments', (e, { type, data = {} }) => {
+    on('payments', (e, { type, data = {} }) => {
         type === 'donate.submit' && allTheThings(data);
     });
 

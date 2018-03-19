@@ -1,6 +1,6 @@
 /* @ngInject */
 function SignaturesController(
-    $rootScope,
+    dispatchers,
     $scope,
     authentication,
     CONSTANTS,
@@ -12,8 +12,7 @@ function SignaturesController(
     addressesModel,
     $state
 ) {
-    const unsubscribes = [];
-    const unsubscribesAll = [];
+    const { on, unsubscribe } = dispatchers();
 
     $scope.isSubUser = authentication.user.subuser;
     const { active, disabled } = addressModel.getActive();
@@ -37,66 +36,56 @@ function SignaturesController(
     };
 
     const watcherAdmin = () => {
-        unsubscribes.push(
-            $rootScope.$on('organizationChange', (event, newOrganization) => {
-                $scope.organization = newOrganization;
-                organizationKeysModel.fetch().then(() => refreshOrgKeys(newOrganization));
-            })
-        );
+        on('organizationChange', (event, { data: newOrganization }) => {
+            $scope.organization = newOrganization;
+            organizationKeysModel.fetch().then(() => refreshOrgKeys(newOrganization));
+        });
 
-        unsubscribes.push(
-            $rootScope.$on('members', (e, { type, data = {} }) => {
-                if (type === 'update') {
-                    $scope.members = data.list;
-                }
-            })
-        );
+        on('members', (e, { type, data = {} }) => {
+            if (type === 'update') {
+                $scope.members = data.list;
+            }
+        });
 
-        unsubscribes.push(
-            $rootScope.$on('domainsChange', (event, newDomains) => {
-                $scope.domains = newDomains;
-            })
-        );
+        on('domainsChange', (e, { data: newDomains }) => {
+            $scope.domains = newDomains;
+        });
     };
 
     refreshOrgKeys();
     isPaidAdmin && watcherAdmin();
 
     // Clear previous listener if we revoke the admin
-    unsubscribesAll.push(
-        $rootScope.$on('updateUser', () => {
-            if ($scope.itemMoved === false) {
-                $scope.$applyAsync(() => {
-                    const { active, disabled } = addressModel.getActive();
-                    $scope.activeAddresses = active;
-                    $scope.disabledAddresses = disabled;
-                });
-            }
-
-            if (!isPaidAdmin && authentication.user.Role === CONSTANTS.PAID_ADMIN_ROLE) {
-                memberModel.clear();
-                organizationModel.clear();
-                organizationKeysModel.clear();
-                $state.reload();
-            }
-
+    on('updateUser', () => {
+        if ($scope.itemMoved === false) {
             $scope.$applyAsync(() => {
-                $scope.members = memberModel.getAll();
+                const { active, disabled } = addressModel.getActive();
+                $scope.activeAddresses = active;
+                $scope.disabledAddresses = disabled;
             });
-        })
-    );
+        }
 
-    unsubscribesAll.push(
-        $rootScope.$on('addressModel', (e, { type }) => {
-            if (type === 'generateKey.success') {
-                $scope.$applyAsync(() => {
-                    const { active, disabled } = addressModel.getActive();
-                    $scope.activeAddresses = active;
-                    $scope.disabledAddresses = disabled;
-                });
-            }
-        })
-    );
+        if (!isPaidAdmin && authentication.user.Role === CONSTANTS.PAID_ADMIN_ROLE) {
+            memberModel.clear();
+            organizationModel.clear();
+            organizationKeysModel.clear();
+            $state.reload();
+        }
+
+        $scope.$applyAsync(() => {
+            $scope.members = memberModel.getAll();
+        });
+    });
+
+    on('addressModel', (e, { type }) => {
+        if (type === 'generateKey.success') {
+            $scope.$applyAsync(() => {
+                const { active, disabled } = addressModel.getActive();
+                $scope.activeAddresses = active;
+                $scope.disabledAddresses = disabled;
+            });
+        }
+    });
 
     // Drag and Drop configuration
     $scope.aliasDragControlListeners = {
@@ -131,10 +120,6 @@ function SignaturesController(
         return email;
     };
 
-    $scope.$on('$destroy', () => {
-        unsubscribes.concat(unsubscribesAll).forEach((cb) => cb());
-        unsubscribesAll.length = 0;
-        unsubscribes.length = 0;
-    });
+    $scope.$on('$destroy', unsubscribe);
 }
 export default SignaturesController;

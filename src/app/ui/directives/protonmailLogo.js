@@ -1,5 +1,5 @@
 /* @ngInject */
-function protonmailLogo(authentication, CONSTANTS, organizationModel, subscriptionModel, $rootScope) {
+function protonmailLogo(authentication, CONSTANTS, organizationModel, subscriptionModel, dispatchers) {
     return {
         restrict: 'E',
         templateUrl: require('../../../templates/directives/ui/protonmailLogo.tpl.html'),
@@ -7,10 +7,11 @@ function protonmailLogo(authentication, CONSTANTS, organizationModel, subscripti
         link(scope, element) {
             const { PLUS, PROFESSIONAL, VISIONARY } = CONSTANTS.PLANS.PLAN;
             const PLANS = [PLUS, PROFESSIONAL, VISIONARY].join(' ');
-            const unsubscribes = [];
 
-            unsubscribes.push($rootScope.$on('organizationChange', () => updateLogo()));
-            unsubscribes.push($rootScope.$on('updateUser', () => updateLogo()));
+            const { on, unsubscribe } = dispatchers();
+
+            on('organizationChange', updateLogo);
+            on('updateUser', updateLogo);
 
             updateLogo();
 
@@ -32,10 +33,7 @@ function protonmailLogo(authentication, CONSTANTS, organizationModel, subscripti
                 element.attr('data-plan-name', planName);
             }
 
-            scope.$on('$destroy', () => {
-                unsubscribes.forEach((callback) => callback());
-                unsubscribes.length = 0;
-            });
+            scope.$on('$destroy', unsubscribe);
         }
     };
 }

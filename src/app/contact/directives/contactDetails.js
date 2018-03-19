@@ -58,7 +58,7 @@ function contactDetails(
         scope: { contact: '=', modal: '=' },
         templateUrl: require('../../../templates/contact/contactDetails.tpl.html'),
         link(scope, element) {
-            const { on, unsubscribe, dispatcher } = dispatchers(['contacts', '$stateChangeStart']);
+            const { on, unsubscribe, dispatcher } = dispatchers(['contacts']);
 
             const dispatch = (type, data = {}) => {
                 const opt = (MAP_EVENT[type] || _.noop)(data) || { type, data };

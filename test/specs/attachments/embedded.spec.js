@@ -1,5 +1,6 @@
 import '../../../src/app/attachments/index';
 import mailSettingsModelFactory from '../../../src/app/settings/factories/mailSettingsModel';
+import dispatchers from '../../../src/app/commons/services/dispatchers';
 
 const EMBEDDED_ATTACHMENTS = [
     {
@@ -56,6 +57,7 @@ describe('embedded service', () => {
                 }
             })
         );
+        $provide.service('dispatchers', dispatchers);
         $provide.service('mailSettingsModel', mailSettingsModelFactory);
     }));
 

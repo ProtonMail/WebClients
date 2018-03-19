@@ -15,7 +15,7 @@ function contactItem(contactTransformLabel, contactUI, dispatchers, messageModel
             type: '@type'
         },
         link(scope, element, attr, ngFormController) {
-            const { dispatcher, on, unsubscribe } = dispatchers(['contacts', 'composer.new']);
+            const { dispatcher, on, unsubscribe } = dispatchers(['composer.new']);
             const datas = scope.getDatas();
             const type = scope.type;
             const state = scope.state;

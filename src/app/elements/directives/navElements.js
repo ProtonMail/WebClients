@@ -1,11 +1,8 @@
 /* @ngInject */
-function navElements($rootScope, $state, mailSettingsModel, tools, CONSTANTS) {
+function navElements($state, dispatchers, mailSettingsModel, tools, CONSTANTS) {
     const CLASS_DISPLAY = 'navElements-displayed';
     const CLASS_ERROR = 'navElements-no-';
     const SPECIAL_BOXES = ['drafts', 'search', 'sent', 'allDrafts', 'allSent'];
-
-    const dispatch = (type, data = {}) => $rootScope.$emit('elements', { type, data });
-
     const showNextPrev = () => {
         const box = tools.currentMailbox();
         const rowMode = mailSettingsModel.get('ViewLayout') === CONSTANTS.ROW_MODE;
@@ -18,7 +15,8 @@ function navElements($rootScope, $state, mailSettingsModel, tools, CONSTANTS) {
         replace: true,
         templateUrl: require('../../../templates/elements/navElements.tpl.html'),
         link(scope, el) {
-            const unsubscribe = [];
+            const { dispatcher, on, unsubscribe } = dispatchers(['elements']);
+            const dispatch = (type, data = {}) => dispatcher.elements(type, data);
 
             const toggleClass = () => {
                 const action = showNextPrev() ? 'add' : 'remove';
@@ -37,20 +35,18 @@ function navElements($rootScope, $state, mailSettingsModel, tools, CONSTANTS) {
 
             toggleClass();
 
-            unsubscribe.push($rootScope.$on('$stateChangeSuccess', toggleClass));
-            unsubscribe.push(
-                $rootScope.$on('settings', (event, { type }) => {
-                    type === 'viewLayout.updated' && toggleClass();
-                })
-            );
-            unsubscribe.push(
-                $rootScope.$on('elements', (e, { type }) => {
-                    if (/(previous|next)\.(error|success)$/.test(type)) {
-                        const [, name, flag] = type.split('.');
-                        toggleClassError(name, flag);
-                    }
-                })
-            );
+            on('$stateChangeSuccess', toggleClass);
+
+            on('settings', (event, { type }) => {
+                type === 'viewLayout.updated' && toggleClass();
+            });
+
+            on('elements', (e, { type }) => {
+                if (/(previous|next)\.(error|success)$/.test(type)) {
+                    const [, name, flag] = type.split('.');
+                    toggleClassError(name, flag);
+                }
+            });
 
             const onClick = ({ target }) => {
                 dispatch(`switchTo.${target.getAttribute('data-dest')}`, {
@@ -58,12 +54,12 @@ function navElements($rootScope, $state, mailSettingsModel, tools, CONSTANTS) {
                     from: 'button'
                 });
             };
+
             el.on('click', onClick);
 
             scope.$on('$destroy', () => {
                 el.off('click', onClick);
-                unsubscribe.forEach((cb) => cb());
-                unsubscribe.length = 0;
+                unsubscribe();
             });
         }
     };

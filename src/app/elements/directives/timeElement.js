@@ -1,5 +1,5 @@
 /* @ngInject */
-function timeElement($rootScope, cache, tools) {
+function timeElement(cache, dispatchers, tools) {
     /**
      * Get time from element context
      * @return {String}
@@ -17,9 +17,12 @@ function timeElement($rootScope, cache, tools) {
         replace: true,
         template: '<time class="time"></time>',
         link(scope, element) {
-            const unsubscribe = $rootScope.$on('elements', (e, { type }) => {
+            const { on, unsubscribe } = dispatchers();
+
+            on('elements', (e, { type }) => {
                 type === 'refresh.time' && displayTime();
             });
+
             displayTime();
             /**
              * Insert new time value inside the element
@@ -27,7 +30,8 @@ function timeElement($rootScope, cache, tools) {
             function displayTime() {
                 element[0].textContent = getTime(scope.conversation);
             }
-            scope.$on('$destroy', () => unsubscribe());
+
+            scope.$on('$destroy', unsubscribe);
         }
     };
 }

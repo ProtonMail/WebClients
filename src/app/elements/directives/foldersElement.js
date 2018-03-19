@@ -1,7 +1,7 @@
 import _ from 'lodash';
 
 /* @ngInject */
-function foldersElement($rootScope, $state, gettextCatalog, $compile, mailboxIdentifersTemplate) {
+function foldersElement($state, dispatchers, gettextCatalog, $compile, mailboxIdentifersTemplate) {
     const allowedStates = [
         'secured.allSent.**',
         'secured.sent.**',
@@ -52,6 +52,7 @@ function foldersElement($rootScope, $state, gettextCatalog, $compile, mailboxIde
             conversation: '='
         },
         link(scope, el) {
+            const { on, unsubscribe } = dispatchers();
             const build = (event, { LabelIDs = [], Labels = [] }) => {
                 if ((LabelIDs.length || Labels.length) && isAllowedState()) {
                     const labelIDs = Labels.length ? _.map(Labels, ({ ID }) => ID) : LabelIDs;
@@ -60,7 +61,7 @@ function foldersElement($rootScope, $state, gettextCatalog, $compile, mailboxIde
                 }
             };
 
-            const unsubscribe = $rootScope.$on('foldersElement.' + scope.conversation.ID, build);
+            on('foldersElement.' + scope.conversation.ID, build);
 
             build(undefined, scope.conversation);
 

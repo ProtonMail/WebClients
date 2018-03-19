@@ -1,18 +1,19 @@
 import _ from 'lodash';
 
 /* @ngInject */
-function embeddedStore($rootScope, embeddedUtils) {
+function embeddedStore(dispatchers, embeddedUtils) {
     const Blobs = {};
     const MAP_BLOBS = {};
     const CIDList = {};
 
     const PREFIX_DRAFT = 'draft_';
     const urlCreator = () => window.URL || window.webkitURL;
+    const { on } = dispatchers();
 
     /**
      * When we close the composer we need to deallocate Blobs used by this composer
      */
-    $rootScope.$on('composer.update', (e, { type, data = {} }) => {
+    on('composer.update', (e, { type, data = {} }) => {
         if (type === 'close') {
             const { ID, ConversationID } = data.message;
             const key = `${PREFIX_DRAFT}${ConversationID || ID}`;

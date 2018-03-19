@@ -3,13 +3,13 @@ import _ from 'lodash';
 /* @ngInject */
 function filterModal(
     $timeout,
-    $rootScope,
     pmModal,
     gettextCatalog,
     Filter,
     networkActivityTracker,
     notification,
     CONSTANTS,
+    dispatchers,
     eventManager,
     labelModal,
     labelsModel,
@@ -186,6 +186,8 @@ function filterModal(
             ctrl.addFolder = () => openLabelModal(1);
 
             ctrl.initialization = () => {
+                const { on, unsubscribe } = dispatchers();
+
                 ctrl.filter = {
                     ID: prepareID(model),
                     Name: prepareName(model),
@@ -207,34 +209,30 @@ function filterModal(
                     ctrl.filter.Sieve = model ? model.Sieve : '';
                 }
 
-                const unsubscribe = [];
-
                 if (angular.isObject(ctrl.filter.Simple)) {
-                    unsubscribe.push(
-                        $rootScope.$on('labelsModel', (e, { type, data }) => {
-                            if (type === 'cache.update') {
-                                $scope.$applyAsync(() => {
-                                    ctrl.filter.Simple.Actions.Labels = ctrl.filter.Simple.Actions.Labels.concat(filterNewLabel(data));
-                                    ctrl.folders = ctrl.folders.concat(filterNewLabel(data, labelsModel.IS_FOLDER));
-                                });
-                            }
-                        })
-                    );
+                    on('labelsModel', (e, { type, data }) => {
+                        if (type === 'cache.update') {
+                            $scope.$applyAsync(() => {
+                                ctrl.filter.Simple.Actions.Labels = ctrl.filter.Simple.Actions.Labels.concat(filterNewLabel(data));
+                                ctrl.folders = ctrl.folders.concat(filterNewLabel(data, labelsModel.IS_FOLDER));
+                            });
+                        }
+                    });
 
-                    unsubscribe.push(
-                        $rootScope.$on('autocompleteEmail', (e, { type, data }) => {
-                            if (type === 'input.blur' && data.type === 'filter-modal-add-condition-input') {
-                                ctrl.addValue(ctrl.filter.Simple.Conditions[Number(data.eventData)]);
-                            }
-                        })
-                    );
+                    on('autocompleteEmail', (e, { type, data }) => {
+                        if (type === 'input.blur' && data.type === 'filter-modal-add-condition-input') {
+                            ctrl.addValue(ctrl.filter.Simple.Conditions[Number(data.eventData)]);
+                        }
+                    });
                 }
 
                 const onMouseOverCancel = () => angular.element('#filterName').blur();
 
                 $scope.$on('$destroy', () => {
-                    _.each(unsubscribe, (cb) => cb());
-                    unsubscribe.length = 0;
+                    const $close = angular.element('[ng-click="ctrl.cancel()"]');
+
+                    $close.off('mouseover', onMouseOverCancel);
+                    unsubscribe();
                 });
 
                 $timeout(
@@ -242,7 +240,6 @@ function filterModal(
                         angular.element('#filterName').focus();
                         const $close = angular.element('[ng-click="ctrl.cancel()"]');
                         $close.on('mouseover', onMouseOverCancel);
-                        unsubscribe.push(() => $close.off('mouseover', onMouseOverCancel));
                     },
                     100,
                     false

@@ -2,7 +2,7 @@ import _ from 'lodash';
 
 /* @ngInject */
 function DashboardController(
-    $rootScope,
+    dispatchers,
     $scope,
     $stateParams,
     blackFridayModel,
@@ -12,10 +12,12 @@ function DashboardController(
     subscriptionModel,
     blackFridayModal
 ) {
+    const { on, unsubscribe } = dispatchers();
+
     const scrollToPlans = () => $('.settings').animate({ scrollTop: $('#plans').offset().top }, 1000);
     const updateUser = () => ($scope.isPaidUser = authentication.user.Subscribed);
     const updateMethods = (methods) => ($scope.methods = methods);
-    const unsubscribe = $rootScope.$on('updateUser', () => {
+    on('updateUser', () => {
         $scope.$applyAsync(() => updateUser());
     });
 
@@ -39,6 +41,6 @@ function DashboardController(
         });
     }
 
-    $scope.$on('$destroy', () => unsubscribe());
+    $scope.$on('$destroy', unsubscribe);
 }
 export default DashboardController;

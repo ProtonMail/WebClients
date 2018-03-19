@@ -1,5 +1,5 @@
 /* @ngInject */
-function paymentModel(eventManager, Payment, networkActivityTracker, gettextCatalog, notification, $rootScope) {
+function paymentModel(eventManager, Payment, networkActivityTracker, gettextCatalog, notification, dispatchers) {
     let CACHE = {};
     const I18N = {
         SUBSCRIBE_ERROR: gettextCatalog.getString('Error subscribing', null, 'Error'),
@@ -8,6 +8,8 @@ function paymentModel(eventManager, Payment, networkActivityTracker, gettextCata
         COUPON_SUCCESS: gettextCatalog.getString('Coupon code accepted', null, 'Coupon code request'),
         GIFT_SUCCESS: gettextCatalog.getString('Gift code accepted', null, 'Gift code request')
     };
+
+    const { on } = dispatchers();
 
     const get = (key) => CACHE[key];
     const set = (key, value) => (CACHE[key] = value);
@@ -98,7 +100,7 @@ function paymentModel(eventManager, Payment, networkActivityTracker, gettextCata
         return promise;
     }
 
-    $rootScope.$on('logout', () => {
+    on('logout', () => {
         clear();
     });
 

@@ -1,9 +1,11 @@
 import _ from 'lodash';
 
 /* @ngInject */
-function vpnModel($rootScope, authentication, gettextCatalog, vpnApi) {
+function vpnModel(dispatchers, authentication, gettextCatalog, vpnApi) {
     let vpn = angular.copy(authentication.user.VPN);
     const errorMessage = gettextCatalog.getString('VPN request failed', null, 'Error');
+
+    const { on } = dispatchers();
 
     function get() {
         return vpn;
@@ -29,7 +31,7 @@ function vpnModel($rootScope, authentication, gettextCatalog, vpnApi) {
         vpn = {};
     }
 
-    $rootScope.$on('updateUser', () => {
+    on('updateUser', () => {
         set(authentication.user.VPN);
     });
 

@@ -14,7 +14,7 @@ function sendMessage(CONSTANTS, messageModel, gettextCatalog, encryptMessage, me
         )
     };
 
-    const dispatchMessageAction = (message) => $rootScope.$emit('actionMessage', message);
+    const dispatchMessageAction = (message) => $rootScope.$emit('actionMessage', { data: message });
 
     const prepare = (message, parameters) => {
         message.encrypting = true;

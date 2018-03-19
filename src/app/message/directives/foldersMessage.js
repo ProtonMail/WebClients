@@ -1,5 +1,5 @@
 /* @ngInject */
-function foldersMessage($rootScope, gettextCatalog, $compile, mailboxIdentifersTemplate) {
+function foldersMessage(dispatchers, gettextCatalog, $compile, mailboxIdentifersTemplate) {
     const MAP_LABELS = {
         archive: {
             className: 'fa-archive',
@@ -35,6 +35,8 @@ function foldersMessage($rootScope, gettextCatalog, $compile, mailboxIdentifersT
         templateUrl: require('../../../templates/message/foldersMessage.tpl.html'),
         replace: true,
         link(scope, el) {
+            const { on, unsubscribe } = dispatchers();
+
             const build = (event, { LabelIDs, Type }) => {
                 let template = '';
                 Array.isArray(LabelIDs) && (template += getTemplateLabels(LabelIDs));
@@ -44,7 +46,7 @@ function foldersMessage($rootScope, gettextCatalog, $compile, mailboxIdentifersT
                 el.empty().append($compile(template)(scope));
             };
 
-            const unsubscribe = $rootScope.$on('foldersMessage.' + scope.message.ID, build);
+            on('foldersMessage.' + scope.message.ID, build);
 
             build(undefined, scope.message);
 

@@ -1,12 +1,36 @@
+/**
+ * Get the event data to be dispatched.
+ * @param type
+ * @param data
+ * @returns {*}
+ */
+function getEvent(type, data) {
+    // The event format is always { type, data }
+    if (type || type === '' || data) {
+        return { type, data };
+    }
+    // Otherwise don't include any data in the dispatch event.
+}
+
+/**
+ * Create a dispatcher emitter function given a .
+ * @param {Object} $rootScope
+ * @param {String} key for the event.
+ * @returns {Function}
+ */
+function createDispatcher($rootScope, key) {
+    return function (type, data) {
+        $rootScope.$emit(key, getEvent(type, data));
+    };
+}
+
 /* @ngInject */
 function dispatchers($rootScope) {
     const createMap = (list = []) => {
         return list.reduce((acc, key) => {
             // Private events
             if (key.charAt(0) !== '$') {
-                acc[key] = (type, data = {}) => {
-                    $rootScope.$emit(key, { type, data });
-                };
+                acc[key] = createDispatcher($rootScope, key);
             }
             return acc;
         }, Object.create(null));
@@ -33,7 +57,11 @@ function dispatchers($rootScope) {
 
         const on = (type, cb) => {
             const callback = !verbose ? cb : log(type, cb);
-            listeners.push($rootScope.$on(type, callback));
+            const deregistration = $rootScope.$on(type, callback);
+
+            listeners.push(deregistration);
+
+            return deregistration;
         };
 
         const unsubscribe = () => {

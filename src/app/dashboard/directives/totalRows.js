@@ -1,5 +1,5 @@
 /* @ngInject */
-function totalRows($filter, $rootScope, blackFridayModel, CONSTANTS, dashboardConfiguration, dashboardModel, gettextCatalog, subscriptionModel) {
+function totalRows($filter, blackFridayModel, CONSTANTS, dashboardConfiguration, dashboardModel, dispatchers, gettextCatalog, subscriptionModel) {
     const { MONTHLY, YEARLY, TWO_YEARS } = CONSTANTS.CYCLE;
     const I18N = {
         billedAs(amount, cycle) {
@@ -25,14 +25,14 @@ function totalRows($filter, $rootScope, blackFridayModel, CONSTANTS, dashboardCo
         scope: {},
         templateUrl: require('../../../templates/dashboard/totalRows.tpl.html'),
         link(scope, element, { plan }) {
-            const unsubscribe = [];
+            const { dispatcher, on, unsubscribe } = dispatchers(['dashboard']);
             const monthly = element.find('.totalRows-monthly-price');
             const yearly = element.find('.totalRows-yearly-price');
             const yearlyBilled = element.find('.totalRows-yearly-billed-price');
             const twoYears = element.find('.totalRows-2-years-price');
             const twoYearsBilled = element.find('.totalRows-2-years-billed-price');
 
-            scope.onChange = () => $rootScope.$emit('dashboard', { type: 'change.cycle', data: { cycle: scope.cycle } });
+            scope.onChange = () => dispatcher.dashboard('change.cycle', { cycle: scope.cycle });
 
             function bindClass() {
                 const action = subscriptionModel.cycle() === TWO_YEARS || blackFridayModel.isBlackFridayPeriod(true) ? 'add' : 'remove';
@@ -51,25 +51,18 @@ function totalRows($filter, $rootScope, blackFridayModel, CONSTANTS, dashboardCo
                 });
             }
 
-            unsubscribe.push(
-                $rootScope.$on('dashboard', (event, { type = '' }) => {
-                    types.indexOf(type) > -1 && update();
-                })
-            );
+            on('dashboard', (event, { type = '' }) => {
+                types.indexOf(type) > -1 && update();
+            });
 
-            unsubscribe.push(
-                $rootScope.$on('blackFriday', (event, { type = '' }) => {
-                    type === 'tictac' && bindClass();
-                })
-            );
+            on('blackFriday', (event, { type = '' }) => {
+                type === 'tictac' && bindClass();
+            });
 
             update();
             bindClass();
 
-            scope.$on('$destroy', () => {
-                unsubscribe.forEach((cb) => cb());
-                unsubscribe.length = 0;
-            });
+            scope.$on('$destroy', unsubscribe);
         }
     };
 }

@@ -13,13 +13,14 @@ function SecuredController(
     CONSTANTS,
     contactCache,
     desktopNotifications,
+    dispatchers,
     eventManager,
     hotkeys,
     mailSettingsModel,
     resurrecter,
     userType
 ) {
-    const unsubscribe = [];
+    const { on, unsubscribe } = dispatchers();
     $scope.mobileMode = AppModel.is('mobile');
     $scope.tabletMode = AppModel.is('tablet');
     $scope.user = authentication.user;
@@ -35,12 +36,10 @@ function SecuredController(
     resurrecter.init();
     const bindAppValue = (key, { value }) => $scope.$applyAsync(() => ($scope[key] = value));
 
-    unsubscribe.push(
-        $rootScope.$on('AppModel', (e, { type, data = {} }) => {
-            type === 'mobile' && bindAppValue('mobileMode', data);
-            type === 'tablet' && bindAppValue('tabletMode', data);
-        })
-    );
+    on('AppModel', (e, { type, data = {} }) => {
+        type === 'mobile' && bindAppValue('mobileMode', data);
+        type === 'tablet' && bindAppValue('tabletMode', data);
+    });
 
     desktopNotifications.request();
 
@@ -59,21 +58,18 @@ function SecuredController(
     !$state.includes('secured.contacts') && contactCache.load();
     addressWithoutKeysManager.manage().catch(_.noop);
 
-    unsubscribe.push(
-        $rootScope.$on('updateUser', () => {
-            $scope.$applyAsync(() => {
-                $scope.user = authentication.user;
-                setUserType();
-            });
-        })
-    );
+    on('updateUser', () => {
+        $scope.$applyAsync(() => {
+            $scope.user = authentication.user;
+            setUserType();
+        });
+    });
 
     $scope.idDefined = () => $state.params.id && $state.params.id.length > 0;
     $scope.isMobile = () => AppModel.is('mobile');
     $scope.$on('$destroy', () => {
         hotkeys.unbind();
-        unsubscribe.forEach((cb) => cb());
-        unsubscribe.length = 0;
+        unsubscribe();
     });
 }
 export default SecuredController;

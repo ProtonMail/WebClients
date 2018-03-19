@@ -9,6 +9,7 @@ function addonRow(
     dashboardConfiguration,
     dashboardModel,
     dashboardOptions,
+    dispatchers,
     gettextCatalog,
     subscriptionModel,
     customProPlanModel
@@ -46,8 +47,9 @@ function addonRow(
         scope: {},
         templateUrl: require('../../../templates/dashboard/addonRow.tpl.html'),
         compile(element, { addon, plan }) {
+            const { dispatcher, on, unsubscribe } = dispatchers(['dashboard']);
             const initValue = subscriptionModel.count(addon);
-            const dispatch = (value) => $rootScope.$emit('dashboard', { type: 'change.addon', data: { addon, plan, value } });
+            const dispatch = (value) => dispatcher.dashboard('change.addon', { addon, plan, value });
             const $select = element.find(`.${SELECT_CLASS}`);
             const $placeholder = element.find(`.${PLACEHOLDER_CLASS}`);
             const $edit = element.find(`.${EDIT_CLASS}`);
@@ -93,7 +95,8 @@ function addonRow(
 
                     dispatch(+selectValue);
                 };
-                const unsubscribe = $rootScope.$on('dashboard', (event, { type, data = {} }) => {
+
+                on('dashboard', (event, { type, data = {} }) => {
                     if (type === 'addon.updated' && data.addon === addon && data.plan === plan) {
                         buildOptions();
                         set(data.value);

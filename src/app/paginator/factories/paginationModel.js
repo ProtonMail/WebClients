@@ -1,11 +1,13 @@
 import _ from 'lodash';
 
 /* @ngInject */
-function paginationModel(CONSTANTS, $injector, $rootScope, $state, $stateParams, mailSettingsModel, tools) {
+function paginationModel(CONSTANTS, $injector, dispatchers, $state, $stateParams, mailSettingsModel, tools) {
+    const { on } = dispatchers();
+
     const { ELEMENTS_PER_PAGE, MESSAGE_VIEW_MODE } = CONSTANTS;
     let currentState = '';
 
-    $rootScope.$on('$stateChangeSuccess', (e, state) => {
+    on('$stateChangeSuccess', (e, state) => {
         currentState = state.name.replace('.element', '');
     });
 

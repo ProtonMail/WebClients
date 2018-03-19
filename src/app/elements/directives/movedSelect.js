@@ -1,5 +1,5 @@
 /* @ngInject */
-function movedSelect($rootScope, authentication, gettextCatalog, networkActivityTracker, mailSettingsModel, settingsMailApi, notification) {
+function movedSelect(authentication, dispatchers, gettextCatalog, networkActivityTracker, mailSettingsModel, settingsMailApi, notification) {
     const I18N = {
         includeMoved: gettextCatalog.getString('Include Moved', null, 'Option'),
         hideMoved: gettextCatalog.getString('Hide Moved', null, 'Option'),
@@ -19,10 +19,12 @@ function movedSelect($rootScope, authentication, gettextCatalog, networkActivity
             </span>
             `,
         link(scope, element) {
+            const { on, unsubscribe } = dispatchers();
             const $select = element.find('select');
             const set = (moved) => $select.val(+moved);
             const get = () => ~~$select.val();
-            const unsubscribe = $rootScope.$on('mailSettings', () => {
+
+            on('mailSettings', () => {
                 set(mailSettingsModel.get('ShowMoved'));
             });
 

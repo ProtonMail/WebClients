@@ -1,7 +1,7 @@
 import dedentTpl from '../../../helpers/dedent';
 
 /* @ngInject */
-function navigationSettings($rootScope, $state, sidebarSettingsModel) {
+function navigationSettings(dispatchers, $state, sidebarSettingsModel) {
     const CLASS_ACTIVE = 'active';
     const template = (key, { label, icon = '', state }) => {
         const iconClassName = `sidebarApp-icon navigationSettings-icon fa ${icon}`.trim();
@@ -16,6 +16,8 @@ function navigationSettings($rootScope, $state, sidebarSettingsModel) {
         replace: true,
         template: '<li class="navigationSettings-container"></li>',
         link(scope, el, { key }) {
+            const { on, unsubscribe } = dispatchers();
+
             const STATES = sidebarSettingsModel.getStateConfig();
             const config = STATES[key];
             el[0].innerHTML = template(key, config);
@@ -25,7 +27,7 @@ function navigationSettings($rootScope, $state, sidebarSettingsModel) {
             $state.includes(config.state) && el[0].classList.add(CLASS_ACTIVE);
 
             // Check the current state to set the current one as active
-            const unsubscribe = $rootScope.$on('$stateChangeSuccess', (e, state) => {
+            on('$stateChangeSuccess', (e, state) => {
                 if (state.name === config.state) {
                     return el[0].classList.add(CLASS_ACTIVE);
                 }
@@ -33,9 +35,7 @@ function navigationSettings($rootScope, $state, sidebarSettingsModel) {
                 el[0].classList.remove(CLASS_ACTIVE);
             });
 
-            scope.$on('$destroy', () => {
-                unsubscribe();
-            });
+            scope.$on('$destroy', unsubscribe);
         }
     };
 }

@@ -1,7 +1,7 @@
 import _ from 'lodash';
 
 /* @ngInject */
-function composerOutside($rootScope, attachmentFileFormat) {
+function composerOutside(dispatchers, attachmentFileFormat) {
     const CLASS_DRAGGABLE = 'composer-draggable';
     const CLASS_DRAGGABLE_EDITOR = 'composer-draggable-editor';
 
@@ -45,6 +45,8 @@ function composerOutside($rootScope, attachmentFileFormat) {
         replace: true,
         templateUrl: require('../../../templates/directives/outside/composer.tpl.html'),
         link(scope, el) {
+            const { on, unsubscribe } = dispatchers();
+
             const onDragEnter = ({ originalEvent }) => {
                 if (attachmentFileFormat.isUploadAbleType(originalEvent)) {
                     addDragenterClassName(el[0]);
@@ -57,14 +59,13 @@ function composerOutside($rootScope, attachmentFileFormat) {
             el.on('dragenter', onDragEnter);
             el.on('dragleave', onDragLeave);
 
-            const unsubscribeEditor = $rootScope.$on('editor.draggable', onAction(scope, el[0]));
-            const unsubscribeAtt = $rootScope.$on('attachment.upload.outside', onAction(scope, el[0]));
+            on('editor.draggable', onAction(scope, el[0]));
+            on('attachment.upload.outside', onAction(scope, el[0]));
 
             scope.$on('$destroy', () => {
                 el.off('dragenter', onDragEnter);
                 el.off('dragleave', onDragLeave);
-                unsubscribeEditor();
-                unsubscribeAtt();
+                unsubscribe();
             });
         }
     };

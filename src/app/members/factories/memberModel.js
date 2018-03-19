@@ -1,8 +1,9 @@
 import _ from 'lodash';
 
 /* @ngInject */
-function memberModel($rootScope, addressesModel, memberApi, gettextCatalog, authentication, CONSTANTS) {
+function memberModel(dispatchers, addressesModel, memberApi, gettextCatalog, authentication, CONSTANTS) {
     let CACHE = [];
+    const { dispatcher, on } = dispatchers(['members']);
     const { FREE_USER_ROLE, PAID_ADMIN_ROLE, PAID_MEMBER_ROLE, STATUS } = CONSTANTS;
     const I18N = {
         ROLES: {
@@ -90,22 +91,19 @@ function memberModel($rootScope, addressesModel, memberApi, gettextCatalog, auth
 
         CACHE = _.sortBy(CACHE, 'Name');
 
-        $rootScope.$emit('members', {
-            type: 'update',
-            data: {
-                list: CACHE,
-                operations
-            }
+        dispatcher.members('update', {
+            list: CACHE,
+            operations
         });
     };
 
     const isMember = () => authentication.user.Role === PAID_MEMBER_ROLE;
 
-    $rootScope.$on('app.event', (e, { type, data = {} }) => {
+    on('app.event', (e, { type, data = {} }) => {
         type === 'members' && manageCache(data);
     });
 
-    $rootScope.$on('logout', () => {
+    on('logout', () => {
         clear();
     });
 

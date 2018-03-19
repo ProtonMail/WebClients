@@ -1,5 +1,5 @@
 /* @ngInject */
-function sidebarContact($rootScope, backState, contactCache, contactMerger, gettextCatalog) {
+function sidebarContact(dispatchers, backState, contactCache, contactMerger, gettextCatalog) {
     const SHOW_DELETE_CONTACTS = 'sidebarContact-show-delete-contacts';
     const SHOW_MERGE_BUTTON = 'sidebarContact-show-merge-button';
     const MERGE_TEXT = 'sidebarContact-merge-text';
@@ -13,8 +13,10 @@ function sidebarContact($rootScope, backState, contactCache, contactMerger, gett
         scope: {},
         templateUrl: require('../../../templates/sidebar/sidebarContact.tpl.html'),
         link(scope, element) {
+            const { on, unsubscribe, dispatcher } = dispatchers(['contacts']);
+
             const $mergeText = element.find(`.${MERGE_TEXT}`);
-            const unsubscribe = $rootScope.$on('contacts', (event, { type = '' }) => {
+            on('contacts', (event, { type = '' }) => {
                 type === 'contactsUpdated' && scope.$applyAsync(() => update());
             });
 
@@ -46,12 +48,12 @@ function sidebarContact($rootScope, backState, contactCache, contactMerger, gett
                         backState.back();
                         break;
                     case 'deleteContacts':
-                        $rootScope.$emit('contacts', { type: action, data: { contactIDs: 'all' } });
+                        dispatcher.contacts(action, { contactIDs: 'all' });
                         break;
                     case 'mergeContacts':
                     case 'exportContacts':
                     case 'importContacts':
-                        $rootScope.$emit('contacts', { type: action });
+                        dispatcher.contacts(action);
                         break;
                     default:
                         break;

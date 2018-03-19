@@ -1,7 +1,7 @@
 import _ from 'lodash';
 
 /* @ngInject */
-function activePlan($rootScope, CONSTANTS, subscriptionModel) {
+function activePlan(CONSTANTS, dispatchers, subscriptionModel) {
     const { PLUS, PROFESSIONAL, VISIONARY } = CONSTANTS.PLANS.PLAN;
     const PLANS = _.reduce(['free', PLUS, PROFESSIONAL, VISIONARY], (acc, plan) => `${acc} ${plan}-active`, '');
 
@@ -9,13 +9,15 @@ function activePlan($rootScope, CONSTANTS, subscriptionModel) {
         restrict: 'A',
         link(scope, element) {
             const update = () => element.removeClass(PLANS).addClass(subscriptionModel.name() + '-active');
-            const unsubscribe = $rootScope.$on('subscription', (event, { type }) => {
+            const { on, unsubscribe } = dispatchers();
+
+            on('subscription', (event, { type }) => {
                 type === 'update' && update();
             });
 
             update();
 
-            scope.$on('$destroy', () => unsubscribe());
+            scope.$on('$destroy', unsubscribe);
         }
     };
 }

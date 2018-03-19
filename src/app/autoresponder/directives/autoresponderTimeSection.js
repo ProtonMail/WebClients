@@ -1,7 +1,7 @@
 import _ from 'lodash';
 
 /* @ngInject */
-function autoresponderTimeSection(autoresponderModel, dateUtils, $rootScope) {
+function autoresponderTimeSection(autoresponderModel, dateUtils, dispatchers) {
     const days = _.map(dateUtils.getSortedWeekdays(), (day) => ({ value: day.value, label: day.shortLabel }));
     return {
         replace: true,
@@ -11,7 +11,7 @@ function autoresponderTimeSection(autoresponderModel, dateUtils, $rootScope) {
             form: '='
         },
         link(scope, elem, { mock }) {
-            const unsubscribe = [];
+            const { on, unsubscribe } = dispatchers();
 
             scope.days = days;
             scope.constants = autoresponderModel.constants;
@@ -20,26 +20,19 @@ function autoresponderTimeSection(autoresponderModel, dateUtils, $rootScope) {
             scope.mock = mock === 'true';
             scope.model = autoresponderModel.get();
 
-            unsubscribe.push(
-                $rootScope.$on('autoresponder', (event, { type, data = {} }) => {
-                    if (type === 'update') {
-                        scope.model = data.autoresponder;
-                    }
-                })
-            );
-
-            unsubscribe.push(
-                $rootScope.$on('multiselect', (event, { type, name, data = {} }) => {
-                    if (type === 'update' && name === 'autoresponder.daysSelected') {
-                        autoresponderModel.set({ daysSelected: data.value });
-                    }
-                })
-            );
-
-            scope.$on('$destroy', () => {
-                _.each(unsubscribe, (cb) => cb());
-                unsubscribe.length = 0;
+            on('autoresponder', (event, { type, data = {} }) => {
+                if (type === 'update') {
+                    scope.model = data.autoresponder;
+                }
             });
+
+            on('multiselect', (event, { type, name, data = {} }) => {
+                if (type === 'update' && name === 'autoresponder.daysSelected') {
+                    autoresponderModel.set({ daysSelected: data.value });
+                }
+            });
+
+            scope.$on('$destroy', unsubscribe);
         }
     };
 }

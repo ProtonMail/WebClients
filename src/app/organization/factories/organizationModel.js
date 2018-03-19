@@ -4,7 +4,7 @@ function organizationModel(
     organizationKeysModel,
     setupKeys,
     authentication,
-    $rootScope,
+    dispatchers,
     gettextCatalog,
     CONSTANTS,
     notification,
@@ -24,6 +24,8 @@ function organizationModel(
         UPDATE_PASSWORD_SUCCESS: gettextCatalog.getString('Password updated', null, 'Info')
     };
 
+    const { dispatcher, on } = dispatchers(['organizationChange']);
+
     const fakeOrganization = {
         PlanName: 'free',
         MaxMembers: 1,
@@ -41,7 +43,7 @@ function organizationModel(
     const set = (data = {}, key = 'organization') => {
         CACHE[key] = data;
         if (key === 'organization') {
-            $rootScope.$emit('organizationChange', data);
+            dispatcher.organizationChange('', data);
         }
     };
 
@@ -138,7 +140,7 @@ function organizationModel(
 
     const changeKeys = organizationKeysModel.changeKeys;
 
-    $rootScope.$on('logout', () => {
+    on('logout', () => {
         clear();
     });
 

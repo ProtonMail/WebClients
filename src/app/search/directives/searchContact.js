@@ -1,9 +1,8 @@
 import _ from 'lodash';
 
 /* @ngInject */
-function searchContact($rootScope, $state, $stateParams, contactCache, gettextCatalog) {
+function searchContact(dispatchers, $state, $stateParams, contactCache, gettextCatalog) {
     const I18N = gettextCatalog.getString('Search contacts');
-    const dispatch = (keyword = '') => $rootScope.$emit('contacts', { type: 'searchingContact', data: { keyword } });
 
     return {
         replace: true,
@@ -11,6 +10,10 @@ function searchContact($rootScope, $state, $stateParams, contactCache, gettextCa
         scope: {},
         templateUrl: require('../../../templates/search/searchContact.tpl.html'),
         link(scope, element) {
+            const { on, unsubscribe, dispatcher } = dispatchers(['contacts']);
+
+            const dispatch = (keyword = '') => dispatcher.contacts('searchingContact', { keyword });
+
             const $input = element[0].querySelector('.searchInput');
             scope.query = $stateParams.keyword || '';
 
@@ -29,7 +32,7 @@ function searchContact($rootScope, $state, $stateParams, contactCache, gettextCa
                 $input.placeholder = placeholder;
             };
 
-            const unsubscribe = $rootScope.$on('contacts', (event, { type }) => {
+            on('contacts', (event, { type }) => {
                 type === 'contactsUpdated' && update();
             });
 

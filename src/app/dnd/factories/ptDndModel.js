@@ -1,13 +1,14 @@
 import _ from 'lodash';
 
 /* @ngInject */
-function ptDndModel($rootScope) {
+function ptDndModel(dispatchers) {
     const CACHE = {};
     const reset = (type) => () => (CACHE[type] = {});
+    const { dispatcher, on } = dispatchers(['ptDnd']);
 
-    const dispatch = (type, data = {}) => $rootScope.$emit('ptDnd', { type, data });
+    const dispatch = (type, data = {}) => dispatcher.ptDnd(type, data);
 
-    $rootScope.$on('$stateChangeStart', () => {
+    on('$stateChangeStart', () => {
         reset('draggable');
     });
 

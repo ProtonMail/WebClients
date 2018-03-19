@@ -1,26 +1,26 @@
 /* @ngInject */
-function vpnTotal($rootScope, CONSTANTS, customVpnModel, dashboardConfiguration, dashboardModel) {
+function vpnTotal(CONSTANTS, customVpnModel, dashboardConfiguration, dashboardModel, dispatchers) {
     return {
         replace: true,
         restrict: 'E',
         scope: {},
         templateUrl: require('../../../templates/dashboard/vpnTotal.tpl.html'),
         link(scope, element) {
+            const { on, unsubscribe } = dispatchers();
             const $amount = element.find('.vpnTotal-amount');
             const updateAmount = () => {
                 const amount = customVpnModel.amount();
 
                 $amount.text(`${dashboardModel.filter(amount)}/mo`);
             };
-            const unsubscribe = $rootScope.$on('dashboard', (event, { type = '' }) => {
+
+            on('dashboard', (event, { type = '' }) => {
                 if (type === 'vpn.modal.updated') {
                     updateAmount();
                 }
             });
 
-            scope.$on('$destroy', () => {
-                unsubscribe();
-            });
+            scope.$on('$destroy', unsubscribe);
         }
     };
 }

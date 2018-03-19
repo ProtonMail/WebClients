@@ -1,7 +1,7 @@
 import _ from 'lodash';
 
 /* @ngInject */
-function ptSelectMultipleElements($rootScope) {
+function ptSelectMultipleElements($rootScope, dispatchers) {
     const CACHE = {};
     const countChecked = (conversations) => _.filter(conversations, { Selected: true }).length;
 
@@ -31,9 +31,10 @@ function ptSelectMultipleElements($rootScope) {
         link(scope, el) {
             let previous = null;
             const conversationsToSelect = selectConversations(scope);
+            const { on, unsubscribe } = dispatchers();
 
             // cache the previous selected items
-            const unsubscribe = $rootScope.$on('dnd', (e, { type, data }) => {
+            on('dnd', (e, { type, data }) => {
                 if (type === 'hook.dragstart') {
                     CACHE.number = data.before.number;
                     CACHE.ids = data.before.ids;

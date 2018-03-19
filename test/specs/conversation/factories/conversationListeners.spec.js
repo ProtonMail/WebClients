@@ -1,29 +1,36 @@
 import service from '../../../../src/app/conversation/factories/conversationListeners';
+import dispatchersService from '../../../../src/app/commons/services/dispatchers';
 import { CONSTANTS } from '../../../../src/app/constants';
 
 describe('conversationListeners factory', () => {
 
-    let factory, rootScope;
+    let factory;
+    let rootScope;
     let spy = angular.noop;
 
     beforeEach(angular.mock.module('ng', ($provide) => {
           $provide.decorator('$rootScope', ($delegate) => {
               const service = $delegate;
               service.$on = function (name, listener) {
-                  var namedListeners = this.$$listeners[name];
+                  let namedListeners = this.$$listeners[name];
+
                   if (!namedListeners) {
-                    this.$$listeners[name] = namedListeners = [];
+                    namedListeners = [];
+                    this.$$listeners[name] = namedListeners;
                   }
-                  namedListeners.push(listener)
-                  return spy
-              }
+
+                  namedListeners.push(listener);
+
+                  return spy;
+              };
               return service;
           });
     }));
 
     beforeEach(angular.mock.inject(($injector) => {
         rootScope = $injector.get('$rootScope');
-        factory = service(rootScope, CONSTANTS);
+        const dispatchers = dispatchersService(rootScope);
+        factory = service(rootScope, CONSTANTS, dispatchers);
     }));
 
     describe('Add subscriber with a draft', () => {
@@ -71,7 +78,7 @@ describe('conversationListeners factory', () => {
                     message,
                     type: 'reply'
                 });
-            })
+            });
         });
 
         describe('Emit replyAllConversation', () => {
@@ -87,7 +94,7 @@ describe('conversationListeners factory', () => {
                     message,
                     type: 'replyall'
                 });
-            })
+            });
         });
 
         describe('Emit forwardConversation', () => {
@@ -103,7 +110,7 @@ describe('conversationListeners factory', () => {
                     message,
                     type: 'forward'
                 });
-            })
+            });
         });
 
         it('should unsubscribe 3 spies', () => {
@@ -157,7 +164,7 @@ describe('conversationListeners factory', () => {
                     data: { message },
                     type: 'reply'
                 });
-            })
+            });
         });
 
         describe('Emit replyAllConversation', () => {
@@ -173,7 +180,7 @@ describe('conversationListeners factory', () => {
                     data: { message },
                     type: 'replyall'
                 });
-            })
+            });
         });
 
         describe('Emit forwardConversation', () => {
@@ -189,7 +196,7 @@ describe('conversationListeners factory', () => {
                     data: { message },
                     type: 'forward'
                 });
-            })
+            });
         });
 
         it('should unsubscribe 3 spies', () => {
@@ -243,7 +250,7 @@ describe('conversationListeners factory', () => {
                     message,
                     type: 'reply'
                 });
-            })
+            });
         });
 
         describe('Emit replyAllConversation', () => {
@@ -259,7 +266,7 @@ describe('conversationListeners factory', () => {
                     message,
                     type: 'replyall'
                 });
-            })
+            });
         });
 
         describe('Emit forwardConversation', () => {
@@ -275,7 +282,7 @@ describe('conversationListeners factory', () => {
                     message,
                     type: 'forward'
                 });
-            })
+            });
         });
 
         it('should unsubscribe 3 spies', () => {

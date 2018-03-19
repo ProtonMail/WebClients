@@ -3,7 +3,7 @@ import _ from 'lodash';
 import { flow, filter, reduce, each } from 'lodash/fp';
 
 /* @ngInject */
-function subscriptionSection($rootScope, CONSTANTS, subscriptionModel, gettextCatalog) {
+function subscriptionSection(CONSTANTS, dispatchers, subscriptionModel, gettextCatalog) {
     const { MONTHLY, YEARLY, TWO_YEARS } = CONSTANTS.CYCLE;
     const I18N = {
         vpn: gettextCatalog.getString('VPN connections', null),
@@ -88,8 +88,10 @@ function subscriptionSection($rootScope, CONSTANTS, subscriptionModel, gettextCa
         replace: true,
         templateUrl: require('../../../templates/dashboard/subscriptionSection.tpl.html'),
         link(scope) {
+            const { on, unsubscribe } = dispatchers();
             const subscription = subscriptionModel.get();
-            const unsubscribe = $rootScope.$on('subscription', (event, { type, data = {} }) => {
+
+            on('subscription', (event, { type, data = {} }) => {
                 if (type === 'update') {
                     scope.$applyAsync(() => {
                         scope.subscription = formatSubscription(data.subscription);
@@ -100,7 +102,7 @@ function subscriptionSection($rootScope, CONSTANTS, subscriptionModel, gettextCa
             scope.subscription = formatSubscription(subscription);
             scope.method = getFirstMethodType(scope.methods);
 
-            scope.$on('$destroy', () => unsubscribe());
+            scope.$on('$destroy', unsubscribe);
         }
     };
 }

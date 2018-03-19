@@ -1,5 +1,5 @@
 /* @ngInject */
-function composerAttachments($rootScope, gettextCatalog) {
+function composerAttachments(dispatchers, gettextCatalog) {
     const CLASS_CLOSED = 'composerAttachments-close';
     const CLASS_HIDDEN = 'composerAttachments-hidden';
     const labelHeader = {
@@ -137,6 +137,8 @@ function composerAttachments($rootScope, gettextCatalog) {
         },
         templateUrl: require('../../../templates/directives/composer/composerAttachments.tpl.html'),
         link(scope, el) {
+            const { on, unsubscribe } = dispatchers();
+
             scope.list = formatAttachments(scope, scope.message.Attachments);
             scope.labelHeader = labelHeader.show;
 
@@ -148,7 +150,7 @@ function composerAttachments($rootScope, gettextCatalog) {
             const onClick = () => actionsPanel.toggle();
             $header.on('click', onClick);
 
-            const unsubscribe = $rootScope.$on('attachment.upload', onAction(scope, el, actionsPanel));
+            on('attachment.upload', onAction(scope, el, actionsPanel));
 
             scope.$on('$destroy', () => {
                 $header.off('click', onClick);

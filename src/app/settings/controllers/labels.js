@@ -3,7 +3,7 @@ import createScrollHelper from '../../../helpers/dragScrollHelper';
 
 /* @ngInject */
 function LabelsController(
-    $rootScope,
+    dispatchers,
     $scope,
     gettextCatalog,
     $log,
@@ -16,7 +16,8 @@ function LabelsController(
     networkActivityTracker,
     notification
 ) {
-    const unsubscribe = [];
+    const { on, unsubscribe } = dispatchers();
+
     const I18N = {
         labelUpdated: gettextCatalog.getString('Label updated', null, 'Success'),
         folderUpdated: gettextCatalog.getString('Folder updated', null, 'Success')
@@ -52,19 +53,14 @@ function LabelsController(
     };
 
     // Listeners
-    unsubscribe.push($rootScope.$on('changeNotifyLabel', changeNotify));
-    unsubscribe.push(
-        $rootScope.$on('labelsModel', (e, { type }) => {
-            if (type === 'cache.update' || type === 'cache.refresh') {
-                $scope.$applyAsync(() => setLabels());
-            }
-        })
-    );
-
-    $scope.$on('$destroy', () => {
-        unsubscribe.forEach((cb) => cb());
-        unsubscribe.length = 0;
+    on('changeNotifyLabel', changeNotify);
+    on('labelsModel', (e, { type }) => {
+        if (type === 'cache.update' || type === 'cache.refresh') {
+            $scope.$applyAsync(() => setLabels());
+        }
     });
+
+    $scope.$on('$destroy', unsubscribe);
 
     function openLabelModal(label) {
         labelModal.activate({

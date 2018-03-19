@@ -1,5 +1,5 @@
 /* @ngInject */
-function commandPalette($rootScope, AppModel) {
+function commandPalette(AppModel, dispatchers) {
     return {
         replace: true,
         scope: {},
@@ -14,7 +14,9 @@ function commandPalette($rootScope, AppModel) {
                 });
             };
 
-            const unsubscribe = $rootScope.$on('hotkeys', (e, { type }) => {
+            const { on, unsubscribe } = dispatchers();
+
+            on('hotkeys', (e, { type }) => {
                 type === 'escape' && hide();
 
                 if (type === 'commandPalette') {

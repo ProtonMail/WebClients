@@ -2,7 +2,7 @@ import _ from 'lodash';
 import dedentTpl from '../../../helpers/dedent';
 
 /* @ngInject */
-function menuLabel($rootScope, labelsModel, $stateParams, $state, sidebarModel) {
+function menuLabel(dispatchers, labelsModel, $stateParams, $state, sidebarModel) {
     const CLEANER = document.createElement('div');
     const getClassName = (ID) => {
         const isActiveLabel = $stateParams.label === ID;
@@ -41,7 +41,8 @@ function menuLabel($rootScope, labelsModel, $stateParams, $state, sidebarModel) 
         replace: true,
         template: '<ul class="menuLabel-container"></ul>',
         link(scope, el) {
-            const unsubscribe = [];
+            const { on, unsubscribe } = dispatchers();
+
             const updateCache = () => {
                 el[0].innerHTML = _.sortBy(labelsModel.get(), 'Order').reduce((acc, label) => acc + template(label), '');
             };
@@ -61,38 +62,27 @@ function menuLabel($rootScope, labelsModel, $stateParams, $state, sidebarModel) 
             const refresh = () => (updateCache(), updateCounter());
 
             // Update the counter when we load then
-            unsubscribe.push(
-                $rootScope.$on('app.cacheCounters', (e, { type }) => {
-                    type === 'load' && updateCounter();
-                })
-            );
+            on('app.cacheCounters', (e, { type }) => {
+                type === 'load' && updateCounter();
+            });
 
             // Update the counter when we update it (too many updates if we update them via app.cacheCounters)
-            unsubscribe.push(
-                $rootScope.$on('elements', (e, { type }) => {
-                    type === 'refresh' && updateCounter();
-                })
-            );
+            on('elements', (e, { type }) => {
+                type === 'refresh' && updateCounter();
+            });
 
-            unsubscribe.push(
-                $rootScope.$on('labelsModel', (e, { type }) => {
-                    if (type === 'cache.refresh' || type === 'cache.update') {
-                        refresh();
-                    }
-                })
-            );
+            on('labelsModel', (e, { type }) => {
+                if (type === 'cache.refresh' || type === 'cache.update') {
+                    refresh();
+                }
+            });
 
             // Check the current state to set the current one as active
-            unsubscribe.push(
-                $rootScope.$on('$stateChangeSuccess', () => {
-                    _rAF(refresh);
-                })
-            );
-
-            scope.$on('$destroy', () => {
-                unsubscribe.forEach((cb) => cb());
-                unsubscribe.length = 0;
+            on('$stateChangeSuccess', () => {
+                _rAF(refresh);
             });
+
+            scope.$on('$destroy', unsubscribe);
         }
     };
 }

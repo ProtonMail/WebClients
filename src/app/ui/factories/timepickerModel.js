@@ -1,8 +1,10 @@
 /* @ngInject */
-function timepickerModel($rootScope, gettextCatalog) {
+function timepickerModel(dispatchers, gettextCatalog) {
+    const { on, unsubscribe, dispatcher } = dispatchers(['timepicker']);
+
     // sends an event to show the specified weekdaytimepicker that the timestamp has been changed programmatically
     function refresh(refreshKey, timestamp, zone) {
-        $rootScope.$emit('timepicker', { type: 'refresh', data: { eventKey: refreshKey, timestamp, zone } });
+        dispatcher.timepicker('refresh', { eventKey: refreshKey, timestamp, zone });
     }
 
     const daysInMonth = [
@@ -43,11 +45,11 @@ function timepickerModel($rootScope, gettextCatalog) {
 
     function initTimePicker(eventKey, config) {
         timePickerConfig[eventKey] = config;
-        $rootScope.$emit('timepicker', { type: 'initTimePicker', data: config });
+        dispatcher.timepicker('initTimePicker', config);
     }
 
     function onInitTimePicker(eventKey, func) {
-        const unsubscribe = $rootScope.$on('timepicker', ({ type, data }) => {
+        on('timepicker', ({ type, data }) => {
             if (type === 'initTimepicker') {
                 func(data);
             }

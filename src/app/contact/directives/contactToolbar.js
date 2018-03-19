@@ -1,7 +1,7 @@
 import _ from 'lodash';
 
 /* @ngInject */
-function contactToolbar($rootScope, $state, $stateParams, CONSTANTS, contactCache, gettextCatalog, messageModel, notification, dispatchers) {
+function contactToolbar($state, $stateParams, CONSTANTS, contactCache, gettextCatalog, messageModel, notification, dispatchers) {
     const getList = () => {
         const selected = contactCache.get('selected').filter(Boolean);
 
@@ -32,7 +32,7 @@ function contactToolbar($rootScope, $state, $stateParams, CONSTANTS, contactCach
         scope: {},
         templateUrl: require('../../../templates/contact/contactToolbar.tpl.html'),
         link(scope, element) {
-            const { on, unsubscribe, dispatcher } = dispatchers(['composer.new', 'contacts', 'selectElements', '$stateChangeSuccess']);
+            const { on, unsubscribe, dispatcher } = dispatchers(['composer.new', 'contacts']);
 
             const toggleSelectAll = (isChecked) => {
                 const contactIDs = _.map(contactCache.paginate(contactCache.get('filtered')), 'ID');
@@ -92,7 +92,7 @@ function contactToolbar($rootScope, $state, $stateParams, CONSTANTS, contactCach
                 state.name === 'secured.contacts.details' && scope.noSelection && update();
             });
 
-            on('selectElements', (e, { value }) => value === 'all' && toggleSelectAll(false));
+            on('selectElements', (e, { type }) => type === 'all' && toggleSelectAll(false));
 
             on('right', () => {
                 toggleSelectAll(false);

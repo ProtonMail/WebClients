@@ -192,7 +192,7 @@ describe('CreateLabel directive', () => {
 
             it('should emit an event', () => {
                 expect(rootScope.$emit).toHaveBeenCalledWith('messageActions', {
-                    action: 'label',
+                    type: 'label',
                     data: {
                         messages: ['message'],
                         labels: [{ Name: 'polo', Selected: true }]
