@@ -57,6 +57,11 @@ const lint = async () => {
     success('Lint application');
 };
 
+const checkDependencies = async () => {
+    await execVerbose(`./tasks/checkDependencies.js`);
+    success('Dependencies ok');
+};
+
 (async () => {
     try {
         title(`Deploy with API: ${CONFIG.apiUrl}`);
@@ -68,6 +73,7 @@ const lint = async () => {
         process.env.NODE_ENV_BRANCH = branch;
         process.env.NODE_ENV_API = CONFIG.apiUrl;
 
+        await checkDependencies();
         await lint();
         await setupConfig();
         await pullDist(branch);
