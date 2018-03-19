@@ -10,7 +10,6 @@ import SignaturesController from './controllers/signatures';
 import chooseComposerMode from './directives/chooseComposerMode';
 import chooseRightToLeft from './directives/chooseRightToLeft';
 import headerBlock from './directives/headerBlock';
-import labelsEditorModel from './factories/labelsEditorModel';
 import settingsApi from './factories/settingsApi';
 import settingsMailApi from './factories/settingsMailApi';
 import userSettingsModel from './factories/userSettingsModel';
@@ -35,7 +34,6 @@ export default angular
     .directive('chooseComposerMode', chooseComposerMode)
     .directive('chooseRightToLeft', chooseRightToLeft)
     .directive('headerBlock', headerBlock)
-    .factory('labelsEditorModel', labelsEditorModel)
     .factory('sharedSecretModal', sharedSecretModal)
     .factory('settingsApi', settingsApi)
     .factory('settingsMailApi', settingsMailApi)

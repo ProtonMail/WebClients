@@ -71,18 +71,15 @@ function PaymentsController(
     };
 
     $scope.default = function(method) {
-        const order = [];
-        const from = $scope.methods.indexOf(method);
-        const to = 0;
+        const methods = $scope.methods.slice();
+        const index = _.findIndex(methods, { ID: method.ID });
 
-        _.each($scope.methods, (method, index) => {
-            order.push(index + 1);
-        });
-        order.splice(to, 0, order.splice(from, 1)[0]);
+        methods.splice(index, 1);
+        methods.unshift(method);
 
-        const promise = Payment.order({ Order: order })
+        const promise = Payment.order({ PaymentMethodIDs: _.map(methods, 'ID') })
             .then(({ data = {} } = {}) => {
-                $scope.methods.splice(to, 0, $scope.methods.splice(from, 1)[0]);
+                $scope.methods = methods;
                 notification.success(gettextCatalog.getString('Payment method updated', null, 'Payment'));
                 return data;
             })

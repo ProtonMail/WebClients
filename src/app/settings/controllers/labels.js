@@ -12,8 +12,8 @@ function LabelsController(
     eventManager,
     Label,
     labelModal,
+    labelsModel,
     networkActivityTracker,
-    labelsEditorModel,
     notification
 ) {
     const unsubscribe = [];
@@ -31,7 +31,7 @@ function LabelsController(
         networkActivityTracker.track(promise);
     };
 
-    const setLabels = () => ($scope.labels = labelsEditorModel.load());
+    const setLabels = () => ($scope.labels = labelsModel.get());
 
     setLabels();
 
@@ -46,8 +46,7 @@ function LabelsController(
             return sourceItemHandleScope.itemScope.sortableScope.$id === destSortableScope.$id;
         },
         orderChanged() {
-            const order = labelsEditorModel.getOrder();
-            labelsEditorModel.update();
+            const order = _.map($scope.labels, 'ID');
             $scope.saveLabelOrder(order);
         }
     };
@@ -109,10 +108,8 @@ function LabelsController(
     };
 
     $scope.sortLabels = () => {
-        labelsEditorModel.sort();
-        const order = labelsEditorModel.getOrder();
-        labelsEditorModel.update();
-        $scope.saveLabelOrder(order);
+        $scope.labels = labelsModel.sort();
+        $scope.saveLabelOrder(_.map($scope.labels, 'ID'));
     };
 
     function getTitleDeleteLabel({ Exclusive }) {
@@ -165,8 +162,8 @@ function LabelsController(
         });
     };
 
-    $scope.saveLabelOrder = (labelOrder) => {
-        const promise = Label.order({ Order: labelOrder })
+    $scope.saveLabelOrder = (LabelIDs) => {
+        const promise = Label.order({ LabelIDs })
             .then(eventManager.call)
             .then(() => {
                 notification.success(gettextCatalog.getString('Label order saved', null));
@@ -174,9 +171,5 @@ function LabelsController(
 
         networkActivityTracker.track(promise);
     };
-
-    $scope.$on('$destroy', () => {
-        labelsEditorModel.clear();
-    });
 }
 export default LabelsController;

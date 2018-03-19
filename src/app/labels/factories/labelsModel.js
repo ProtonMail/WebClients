@@ -138,6 +138,13 @@ function labelsModel($rootScope, CONSTANTS, sanitize) {
         dispatch('cache.refresh');
     };
 
+    const sort = () => {
+        CACHE.all = _.sortBy(CACHE.all, ({ Name = '' }) => Name.toLowerCase());
+        dispatch('cache.update');
+
+        return CACHE.all;
+    };
+
     $rootScope.$on('AppModel', (e, { type, data = {} }) => {
         type === 'loggedIn' && !data.value && set();
     });
@@ -146,6 +153,7 @@ function labelsModel($rootScope, CONSTANTS, sanitize) {
         get,
         set,
         contains,
+        sort,
         sync,
         read,
         ids,
