@@ -537,6 +537,24 @@ Est-ce que tu vas bien ?
         })
     );
 
+    describe('Prepare sanitizes content with prepareContent', () => {
+        it('should use the signatureBuilder factory', () => {
+            const message = {
+                getDecryptedBody() {
+                    return 'body';
+                },
+                setDecryptedBody: jasmine.createSpy()
+            };
+            factory.prepare(message, 'reply');
+            expect(spyPrepareContent).toHaveBeenCalledTimes(1);
+            expect(spyPrepareContent).toHaveBeenCalledWith(message.getDecryptedBody(), message, {
+                action: 'reply',
+                blacklist: ['*']
+            });
+            expect(message.setDecryptedBody).toHaveBeenCalledTimes(1);
+        });
+    });
+
 
     describe('Update the signature', () => {
         it('should use the signatureBuilder factory', () => {

@@ -9,7 +9,7 @@ function transformEmbedded(embedded, $state, mailSettingsModel) {
         const images = [].slice.call(html.querySelectorAll('img[proton-src]'));
         const { ShowImages = 0 } = mailSettingsModel.get();
         const isReplyForward = /^reply|forward/.test(action);
-        const show = message.showEmbedded === true || ShowImages & EMBEDDED || isReplyForward;
+        const show = message.showEmbedded === true || ShowImages & EMBEDDED;
         const isEoReply = $state.is('eo.reply');
 
         images.forEach((image) => {
@@ -31,8 +31,7 @@ function transformEmbedded(embedded, $state, mailSettingsModel) {
 
                 // Auto load image inside a reply draft
                 if (isReplyForward) {
-                    const url = embedded.getUrl(image);
-                    image.src = url;
+                    image.src = embedded.getUrl(image);
                     return;
                 }
 

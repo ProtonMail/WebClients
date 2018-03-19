@@ -76,11 +76,9 @@ function transformRemote($state, $rootScope, mailSettingsModel) {
         }
 
         if (showImages) {
-            html.innerHTML = content.replace(new RegExp(REGEXP_FIXER, 'g'), (match, $1) => $1.substring(7));
-
             // If load:manual we use a custom directive to inject the content
             if (action === 'user.inject') {
-                const list = prepareInjection(html, content, action);
+                const list = prepareInjection(html);
                 const hasSVG = /svg/.test(html.innerHTML);
                 if (list.length || hasSVG) {
                     $rootScope.$emit('message.open', {
@@ -88,6 +86,8 @@ function transformRemote($state, $rootScope, mailSettingsModel) {
                         data: { action, list, message, hasSVG }
                     });
                 }
+            } else {
+                html.innerHTML = content.replace(new RegExp(REGEXP_FIXER, 'g'), (match, $1) => $1.substring(7));
             }
         }
         return html;

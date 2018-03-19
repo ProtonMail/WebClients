@@ -159,18 +159,26 @@ function ComposeMessageController(
     );
 
     unsubscribe.push(
-        $rootScope.$on('composer.load', (event, { ID }) => {
+        $rootScope.$on('composer.load', async (event, { ID }) => {
             const found = _.find($scope.messages, { ID });
             const limitReached = checkComposerNumber();
 
-            if (!found && !limitReached) {
-                cache.queryMessage(ID).then((message) => {
-                    message
-                        .clearTextBody()
-                        .then(() => initMessage(message))
-                        .then(() => commitComposer(message))
-                        .catch(notification.error);
-                });
+            if (found || limitReached) {
+                return;
+            }
+            try {
+                const message = await cache.queryMessage(ID);
+                await message.clearTextBody();
+                /**
+                 * Init and prepare the message as if we are replying or forwarding. i.e. try to load embedded content and blacklist all transformers.
+                 * This sanitizes and removes unwanted content, e.g. remote content if that is specified to not load by default.
+                 * Use 'reply' as the action to transformEmbedded in prepareContent.
+                 * See #6645
+                 */
+                await initMessage(messageBuilder.prepare(message, 'reply'));
+                await commitComposer(message);
+            } catch (e) {
+                notification.error(e);
             }
         })
     );

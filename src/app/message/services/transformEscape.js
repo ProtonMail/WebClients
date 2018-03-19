@@ -83,8 +83,10 @@ function transformEscape() {
     // The style attribute_value makes sure that there is at least a url( string inside the attribute, otherwise
     // it's no use to investigate it further.
     const ATTRIBUTE_VALUE = '((?:(?:[^"\\\\]|\\\\.)*))(")';
+    const VERIFY_UNIQUE = '([^-])';
 
-    const REGEXP_IS_BREAK = new RegExp(FORBIDDEN_HTML + VERIFY_ELEMENT_END, 'gi');
+    // Ensure that the forbidden attributes are not already escaped with proton- by checking that there is no '-' character in front of them.
+    const REGEXP_IS_BREAK = new RegExp(VERIFY_UNIQUE + FORBIDDEN_HTML + VERIFY_ELEMENT_END, 'gi');
     const REGEXP_IS_STYLE = new RegExp(STYLE_ATTRIBUTE + ATTRIBUTE_VALUE + VERIFY_ELEMENT_END, 'gi');
 
     /*
@@ -142,7 +144,7 @@ function transformEscape() {
      */
     return (html, message, { content = '', action, isDocument }) => {
         const input = isDocument ? content.querySelector('body').innerHTML : content;
-        const breakHtml = input.replace(REGEXP_IS_BREAK, 'proton-$1');
+        const breakHtml = input.replace(REGEXP_IS_BREAK, '$1proton-$2');
         html.innerHTML = escapeURL(breakHtml, action);
         return syntaxHighlighterFilter((isDocument ? transformBase : _.identity)(html, content));
     };
