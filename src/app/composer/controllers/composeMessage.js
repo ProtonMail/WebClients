@@ -174,9 +174,12 @@ function ComposeMessageController(
                  * This sanitizes and removes unwanted content, e.g. remote content if that is specified to not load by default.
                  * Use 'reply' as the action to transformEmbedded in prepareContent.
                  * See #6645
+                 * Don't prepare plaintext messages because they are converted to html when sanitized.
                  */
-                await initMessage(messageBuilder.prepare(message, 'reply'));
-                await commitComposer(message);
+                const isDraftPlainText = message.isPlainText() && message.IsEncrypted === 5;
+                const preparedMessage = isDraftPlainText ? message : messageBuilder.prepare(message, 'reply');
+                await initMessage(preparedMessage);
+                await commitComposer(preparedMessage);
             } catch (e) {
                 notification.error(e);
             }
