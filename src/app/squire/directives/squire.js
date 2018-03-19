@@ -29,7 +29,7 @@ function squire(squireEditor, embedded, editorListener, $rootScope, sanitize, to
         - Parse a new message
         - Don't parse when we open a draft already created.
      */
-    const loadPlainText = (scope, editor, bindTabIndex = _.noop) => () => {
+    const loadPlainText = (scope, editor, bindTabIndex = _.noop) => {
         const isPlainTextMode = scope.message.MIMEType === 'text/plain';
         const isDraftPlainText = scope.message.isPlainText() && scope.message.IsEncrypted === 5;
         const isNewDraft = !scope.message.isPlainText() || !scope.message.IsEncrypted;
