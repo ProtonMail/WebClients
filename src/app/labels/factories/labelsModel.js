@@ -122,7 +122,7 @@ function labelsModel($rootScope, CONSTANTS, sanitize) {
     const sync = (list = []) => {
         const { collection, todo } = updateCollection(CACHE.all, list, 'Label');
 
-        CACHE.all = cleanLabels(collection);
+        CACHE.all = cleanLabels(_.sortBy(collection, 'Order'));
 
         syncMap();
         syncLabels();
