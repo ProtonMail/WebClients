@@ -143,7 +143,7 @@
   },
   "license": "MIT",
   "scripts": {
-    "postinstall": "./tasks/privateDependencies.sh",
+    "postinstall": "./tasks/privateDependencies.sh && ./tasks/checkDependencies.js",
     "lint": "eslint $(find src/app -type f -name '*.js')  --quiet",
     "e2e": "protractor protractor_conf.js",
     "vendor": "cross-env NODE_ENV=dev tasks/buildVendor.js",
