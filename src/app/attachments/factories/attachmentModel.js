@@ -8,7 +8,7 @@ function attachmentModel(
     attachmentApi,
     AttachmentLoader,
     authentication,
-    $rootScope,
+    dispatchers,
     embedded,
     notification,
     networkActivityTracker,
@@ -24,13 +24,14 @@ function attachmentModel(
         ERROR_ENCRYPT: gettextCatalog.getString('Error encrypting attachment', null, 'Compose message')
     };
 
-    const dispatch = (type, data) => $rootScope.$emit(EVENT_NAME, { type, data });
+    const { on, dispatcher } = dispatchers([EVENT_NAME, 'actionMessage']);
+    const dispatch = (type, data) => dispatcher[EVENT_NAME](type, data);
 
     /**
      * Dispatch an event for the sending button
      * @param  {Message} message
      */
-    const dispatchMessageAction = (message) => $rootScope.$emit('actionMessage', message);
+    const dispatchMessageAction = (message) => dispatcher.actionMessage('', message);
 
     /**
      * Create a map [<REQUEST>] = <upload>
@@ -60,7 +61,7 @@ function attachmentModel(
         return _.find(message.Attachments, { ID: id });
     };
 
-    $rootScope.$on(EVENT_NAME, (e, { type, data }) => {
+    on(EVENT_NAME, (e, { type, data }) => {
         switch (type) {
             case 'close':
                 attachmentApi.killUpload(data);

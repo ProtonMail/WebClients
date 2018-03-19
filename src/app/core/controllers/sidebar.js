@@ -1,13 +1,14 @@
 /* @ngInject */
-function SidebarController($rootScope, $scope, AppModel) {
+function SidebarController($scope, AppModel, dispatchers) {
     const bindAppValue = (key, { value }) => $scope.$applyAsync(() => ($scope[key] = value));
+    const { on, unsubscribe } = dispatchers();
     $scope.inboxSidebar = AppModel.is('inboxSidebar');
     $scope.showSidebar = AppModel.is('showSidebar');
     $scope.settingsSidebar = AppModel.is('settingsSidebar');
     $scope.contactSidebar = AppModel.is('contactSidebar');
     $scope.mobileMode = AppModel.is('mobile');
 
-    const unsubscribe = $rootScope.$on('AppModel', (e, { type, data = {} }) => {
+    on('AppModel', (e, { type, data = {} }) => {
         type === 'mobile' && bindAppValue('mobileMode', data);
         type === 'showSidebar' && bindAppValue(type, data);
         type === 'inboxSidebar' && bindAppValue(type, data);

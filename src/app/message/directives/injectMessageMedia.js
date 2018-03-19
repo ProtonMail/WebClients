@@ -1,7 +1,7 @@
 import _ from 'lodash';
 
 /* @ngInject */
-function injectMessageMedia($rootScope, displayImages, displayEmbedded) {
+function injectMessageMedia(dispatchers, displayImages, displayEmbedded) {
     const wrapImage = (img) => {
         const hash = `${Math.random()
             .toString(32)
@@ -130,7 +130,9 @@ function injectMessageMedia($rootScope, displayImages, displayEmbedded) {
 
     return {
         link(scope, el) {
-            const unsubscribe = $rootScope.$on('message.open', (e, { type, data }) => {
+            const { on, unsubscribe } = dispatchers();
+
+            on('message.open', (e, { type, data }) => {
                 if (data.message.ID !== scope.message.ID) {
                     return;
                 }
@@ -163,9 +165,7 @@ function injectMessageMedia($rootScope, displayImages, displayEmbedded) {
                 }
             });
 
-            scope.$on('$destroy', () => {
-                unsubscribe();
-            });
+            scope.$on('$destroy', unsubscribe);
         }
     };
 }

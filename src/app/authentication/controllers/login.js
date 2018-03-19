@@ -12,6 +12,7 @@ function LoginController(
     $location,
     CONSTANTS,
     CONFIG,
+    dispatchers,
     gettextCatalog,
     authentication,
     networkActivityTracker,
@@ -22,11 +23,12 @@ function LoginController(
     tempStorage,
     srp
 ) {
+    const { on, unsubscribe } = dispatchers();
     $scope.twoFactor = 0;
     $scope.showOld = window.location.hostname !== 'old.protonmail.com';
     $scope.domoArigato = true;
 
-    const unsubscribe = $rootScope.$on('AppModel', (event, { type, data }) => {
+    on('AppModel', (event, { type, data }) => {
         switch (type) {
             case 'domoArigato':
                 $scope.domoArigato = data.value;
@@ -34,7 +36,7 @@ function LoginController(
         }
     });
 
-    $scope.$on('$destroy', () => unsubscribe());
+    $scope.$on('$destroy', unsubscribe);
 
     /**
      * Clean notifications

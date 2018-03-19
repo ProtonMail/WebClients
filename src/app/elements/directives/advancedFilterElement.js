@@ -2,9 +2,9 @@ import _ from 'lodash';
 
 /* @ngInject */
 function advancedFilterElement(
-    $rootScope,
     $stateParams,
     CONSTANTS,
+    dispatchers,
     gettextCatalog,
     messageApi,
     confirmModal,
@@ -119,6 +119,7 @@ function advancedFilterElement(
         replace: true,
         templateUrl: require('../../../templates/elements/advancedFilterElement.tpl.html'),
         link(scope, el) {
+            const { on, unsubscribe } = dispatchers();
             const $btns = el.find('button');
             const onClick = (e) => {
                 e.preventDefault();
@@ -138,7 +139,7 @@ function advancedFilterElement(
                 el[0].classList[action]('advancedFilterElement-state-folder');
             };
 
-            const unsubscribe = $rootScope.$on('$stateChangeSuccess', bindClass);
+            on('$stateChangeSuccess', bindClass);
 
             bindClass();
 

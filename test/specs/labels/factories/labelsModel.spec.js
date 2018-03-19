@@ -1,5 +1,6 @@
 import _ from 'lodash';
 import service from '../../../../src/app/labels/factories/labelsModel';
+import dispatchersService from '../../../../src/app/commons/services/dispatchers';
 import { CONSTANTS as constants } from '../../../../src/app/constants';
 
 const sanitize = { input: _.identity, message: _.identity };
@@ -62,7 +63,8 @@ describe('labelsModel factory', () => {
         rootScope = $injector.get('$rootScope');
         spyOn(rootScope, '$on').and.callThrough();
         spyOn(sanitize, 'input').and.callThrough();
-        factory = service(rootScope, constants, sanitize);
+        const dispatchers = dispatchersService(rootScope);
+        factory = service(constants, dispatchers, sanitize);
         TODO_IDS = [getID(), getID()];
 
         TODO_CREATE = [

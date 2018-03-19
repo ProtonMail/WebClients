@@ -1,5 +1,5 @@
 /* @ngInject */
-function atomLoader($rootScope, gettextCatalog) {
+function atomLoader(dispatchers, gettextCatalog) {
     const translations = {
         decrypting: gettextCatalog.getString('Decrypting', null, 'atom text loader'),
         upgradingKeys: gettextCatalog.getString(
@@ -17,6 +17,7 @@ function atomLoader($rootScope, gettextCatalog) {
         replace: true,
         templateUrl: require('../../../templates/ui/atomLoader.tpl.html'),
         link(scope, el, { translationKey, loaderTheme }) {
+            const { on, unsubscribe } = dispatchers();
             let currentContent;
             const $textLoader = el[0].querySelector('.atomLoader-text');
 
@@ -27,7 +28,7 @@ function atomLoader($rootScope, gettextCatalog) {
                 $textLoader.innerHTML = getTranslatedText(translationKey);
             }
 
-            const unsubscribe = $rootScope.$on('AppModel', (event, { type, data }) => {
+            on('AppModel', (event, { type, data }) => {
                 const key = type === 'upgradingKeys' && data.value ? 'upgradingKeys' : translationKey;
 
                 if (translationKey && currentContent !== key) {
@@ -36,7 +37,7 @@ function atomLoader($rootScope, gettextCatalog) {
                 }
             });
 
-            scope.$on('$destroy', () => unsubscribe());
+            scope.$on('$destroy', unsubscribe);
         }
     };
 }

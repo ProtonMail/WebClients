@@ -1,5 +1,5 @@
 /* @ngInject */
-function vpnSlider($rootScope, CONSTANTS, customVpnModel, dashboardConfiguration, dashboardModel) {
+function vpnSlider(CONSTANTS, customVpnModel, dashboardConfiguration, dashboardModel, dispatchers) {
     const { VPN_PLUS, VPN_BASIC } = CONSTANTS.PLANS.PLAN;
     const VPN_PLUS_SELECTED = 'vpnSlider-vpnplus-selected';
     const VPN_BASIC_SELECTED = 'vpnSlider-vpnbasic-selected';
@@ -21,6 +21,7 @@ function vpnSlider($rootScope, CONSTANTS, customVpnModel, dashboardConfiguration
         scope: {},
         templateUrl: require('../../../templates/dashboard/vpnSlider.tpl.html'),
         link(scope, element) {
+            const { on, unsubscribe } = dispatchers();
             const $count = element.find('.vpnSlider-count');
             const { addons } = dashboardModel.get(dashboardConfiguration.cycle());
             const vpnbasic = addons[VPN_BASIC];
@@ -44,7 +45,8 @@ function vpnSlider($rootScope, CONSTANTS, customVpnModel, dashboardConfiguration
                 element[0].classList.toggle(VPN_PLUS_SELECTED, customVpnModel.get('vpnplus'));
                 element[0].classList.toggle(VPN_BASIC_SELECTED, customVpnModel.get('vpnbasic'));
             };
-            const unsubscribe = $rootScope.$on('dashboard', (event, { type = '' }) => {
+
+            on('dashboard', (event, { type = '' }) => {
                 if (type === 'vpn.modal.updated') {
                     updateCount();
                     updateSlider();

@@ -8,7 +8,7 @@ function addressesSection(addressModel, addressesModel, dispatchers, userType) {
         restrict: 'E',
         templateUrl: require('../../../templates/user/addressesSection.tpl.html'),
         link(scope) {
-            const { on, unsubscribe } = dispatchers(['addressModel', 'updateUser']);
+            const { on, unsubscribe } = dispatchers();
             const updateAddresses = () => {
                 scope.$applyAsync(() => {
                     const { active, disabled } = addressModel.getActive();
@@ -70,9 +70,7 @@ function addressesSection(addressModel, addressesModel, dispatchers, userType) {
             updateAddresses();
             updateUserType();
 
-            scope.$on('$destroy', () => {
-                unsubscribe();
-            });
+            scope.$on('$destroy', unsubscribe);
         }
     };
 }

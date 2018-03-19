@@ -3,11 +3,11 @@ import _ from 'lodash';
 /* @ngInject */
 function SignupController(
     $location,
-    $rootScope,
     $scope,
     $state,
     $stateParams,
     authentication,
+    dispatchers,
     domains,
     gettextCatalog,
     networkActivityTracker,
@@ -17,10 +17,11 @@ function SignupController(
     signupModel,
     signupUserProcess
 ) {
-    const unsubscribe = [];
     const I18N = {
         success: gettextCatalog.getString('Gift code applied', null, 'Success')
     };
+
+    const { on, unsubscribe } = dispatchers();
 
     // NOTE I don't know where the "u" parameter is set
     const initUsername = () => $location.search().u || $stateParams.username || '';
@@ -96,43 +97,38 @@ function SignupController(
         });
     }
 
-    unsubscribe.push(
-        $rootScope.$on('payments', (e, { type, data = {} }) => {
-            if (type === 'create.account') {
-                data.action !== 'humanVerification' && createAccount();
+    on('payments', (e, { type, data = {} }) => {
+        if (type === 'create.account') {
+            data.action !== 'humanVerification' && createAccount();
 
-                if (data.action === 'humanVerification') {
-                    const { Payment, Amount, Currency } = data.options;
-                    verify({ Payment, Amount, Currency });
-                }
+            if (data.action === 'humanVerification') {
+                const { Payment, Amount, Currency } = data.options;
+                verify({ Payment, Amount, Currency });
             }
-        })
-    );
+        }
+    });
 
     const bindStep = (key, value) => $scope.$applyAsync(() => ($scope[key] = value));
 
-    unsubscribe.push(
-        $rootScope.$on('signup', (e, { type, data }) => {
-            type === 'chech.humanity' && bindStep('step', 3);
-            type === 'creating' && bindStep('step', 5);
-            type === 'signup.error' && bindStep('signupError', data.value);
-            type === 'goto.step' && bindStep('step', data.value);
+    on('signup', (e, { type, data }) => {
+        type === 'chech.humanity' && bindStep('step', 3);
+        type === 'creating' && bindStep('step', 5);
+        type === 'signup.error' && bindStep('signupError', data.value);
+        type === 'goto.step' && bindStep('step', data.value);
 
-            type === 'userform.submit' && generateUserKeys();
-            type === 'humanform.submit' && createAccount();
+        type === 'userform.submit' && generateUserKeys();
+        type === 'humanform.submit' && createAccount();
 
-            type === 'apply.gift' && applyGift(data);
+        type === 'apply.gift' && applyGift(data);
 
-            if (type === 'payform.submit') {
-                const { method, Amount, Currency, GiftCode, Credit } = data.payment;
-                verify({ Payment: method, Amount, Currency, GiftCode, Credit });
-            }
-        })
-    );
+        if (type === 'payform.submit') {
+            const { method, Amount, Currency, GiftCode, Credit } = data.payment;
+            verify({ Payment: method, Amount, Currency, GiftCode, Credit });
+        }
+    });
 
     $scope.$on('$destroy', () => {
-        unsubscribe.forEach((cb) => cb());
-        unsubscribe.length = 0;
+        unsubscribe();
     });
 }
 export default SignupController;

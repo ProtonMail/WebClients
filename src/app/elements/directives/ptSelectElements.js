@@ -3,7 +3,8 @@ const ptSelectElements = ($rootScope) => ({
     link(scope, el) {
         function onChange({ target }) {
             const isChecked = target.checked;
-            $rootScope.$emit('selectElements', { value: target.value, isChecked });
+            const action = target.value;
+            $rootScope.$emit('selectElements', { type: action, data: { isChecked } });
             // No keyX event if a checkbox is focused
             _rAF(() => target.blur());
         }

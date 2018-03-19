@@ -1,7 +1,7 @@
 import _ from 'lodash';
 
 /* @ngInject */
-function labelsElement($rootScope, labelsModel, authentication, $state) {
+function labelsElement(dispatchers, labelsModel, authentication, $state) {
     const HIDE_CLASSNAME = 'labelsElement-hidden';
 
     const toLabels = (list = []) => {
@@ -29,6 +29,7 @@ function labelsElement($rootScope, labelsModel, authentication, $state) {
             element: '='
         },
         link(scope, el, { limit = 4 }) {
+            const { dispatcher, on, unsubscribe } = dispatchers(['messageActions']);
             const moreToggle = moreVisibility(el[0].querySelector('.labelsElement-more'));
 
             const build = (e, { LabelIDs = [], Labels = [] }) => {
@@ -57,18 +58,15 @@ function labelsElement($rootScope, labelsModel, authentication, $state) {
                 }
 
                 if (e.target.classList.contains('labelsElement-btn-remove')) {
-                    $rootScope.$emit('messageActions', {
-                        action: 'unlabel',
-                        data: {
-                            messageID: scope.element.ID,
-                            conversationID: scope.element.ConversationID,
-                            labelID: e.target.getAttribute('data-label-id')
-                        }
+                    dispatcher.messageActions('unlabel', {
+                        messageID: scope.element.ID,
+                        conversationID: scope.element.ConversationID,
+                        labelID: e.target.getAttribute('data-label-id')
                     });
                 }
             };
 
-            const unsubscribe = $rootScope.$on('labelsElement.' + scope.element.ID, build);
+            on('labelsElement.' + scope.element.ID, build);
 
             build(undefined, scope.element);
             scope.color = ({ Color: color = 'inherit' } = {}) => ({ color });

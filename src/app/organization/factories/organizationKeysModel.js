@@ -1,6 +1,7 @@
 /* @ngInject */
 function organizationKeysModel(
     organizationApi,
+    dispatchers,
     $rootScope,
     authentication,
     CONSTANTS,
@@ -13,6 +14,8 @@ function organizationKeysModel(
     gettextCatalog,
     activateOrganizationModal
 ) {
+    const { on } = dispatchers();
+
     let CACHE = { keyStatus: 0 };
     const ALLOWED_STATES = ['signatures', 'domains', 'members'].map((n) => `secured.${n}`);
 
@@ -29,7 +32,7 @@ function organizationKeysModel(
     /**
      * Watcher for the state as we don't need the data everywhere
      */
-    $rootScope.$on('$stateChangeStart', (e, state) => {
+    on('$stateChangeStart', (e, state) => {
         ALLOWED_STATES.includes(state.name) && clear();
     });
 
@@ -133,7 +136,7 @@ function organizationKeysModel(
                     set('keyStatus', 0);
                     set('organizationKey', pkg);
                     activateOrganizationModal.deactivate();
-                    $rootScope.$emit('organizationChange', organization);
+                    $rootScope.$emit('organizationChange', { data: organization });
                 },
                 cancel() {
                     activateOrganizationModal.deactivate();
@@ -148,9 +151,7 @@ function organizationKeysModel(
         }
     }
 
-    $rootScope.$on('logout', () => {
-        clear();
-    });
+    on('logout', clear);
 
     return {
         fetch,

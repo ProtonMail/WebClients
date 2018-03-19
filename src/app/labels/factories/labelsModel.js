@@ -4,7 +4,8 @@ import { flow, filter, sortBy } from 'lodash/fp';
 import updateCollection from '../../utils/helpers/updateCollection';
 
 /* @ngInject */
-function labelsModel($rootScope, CONSTANTS, sanitize) {
+function labelsModel(CONSTANTS, dispatchers, sanitize) {
+    const { dispatcher, on } = dispatchers(['labelsModel']);
     const IS_LABEL = 0;
     const IS_FOLDER = 1;
 
@@ -19,7 +20,7 @@ function labelsModel($rootScope, CONSTANTS, sanitize) {
         }
     };
 
-    const dispatch = (type, data = {}) => $rootScope.$emit('labelsModel', { type, data });
+    const dispatch = (type, data = {}) => dispatcher.labelsModel(type, data);
 
     /**
      * Clean label datas received from the BE
@@ -145,7 +146,7 @@ function labelsModel($rootScope, CONSTANTS, sanitize) {
         return CACHE.all;
     };
 
-    $rootScope.$on('AppModel', (e, { type, data = {} }) => {
+    on('AppModel', (e, { type, data = {} }) => {
         type === 'loggedIn' && !data.value && set();
     });
 

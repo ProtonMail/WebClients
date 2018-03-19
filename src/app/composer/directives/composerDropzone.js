@@ -1,7 +1,7 @@
 import _ from 'lodash';
 
 /* @ngInject */
-function composerDropzone($rootScope, attachmentFileFormat, tools, attachmentModel, notification, gettextCatalog, CONSTANTS, $state) {
+function composerDropzone(attachmentFileFormat, tools, attachmentModel, dispatchers, notification, gettextCatalog, CONSTANTS, $state) {
     Dropzone.autoDiscover = false;
 
     const { BASE_SIZE, ATTACHMENT_SIZE_LIMIT, ATTACHMENT_NUMBER_LIMIT } = CONSTANTS;
@@ -154,6 +154,7 @@ function composerDropzone($rootScope, attachmentFileFormat, tools, attachmentMod
     return {
         link(scope, el, { action = '' }) {
             const key = ['attachment.upload', action].filter(Boolean).join('.');
+            const { dispatcher, on, unsubscribe } = dispatchers([key]);
 
             /**
              * Dispatch action for the model
@@ -161,19 +162,16 @@ function composerDropzone($rootScope, attachmentFileFormat, tools, attachmentMod
              * @param  {Array}  queue
              */
             const dispatchAction = (message, queue = [], type = 'drop') => {
-                $rootScope.$emit(key, {
-                    type,
-                    data: {
-                        messageID: message.ID,
-                        message,
-                        queue
-                    }
+                dispatcher[key](type, {
+                    messageID: message.ID,
+                    message,
+                    queue
                 });
             };
             const dropzone = new Dropzone(el[0], getConfig(scope.message, dispatchAction));
 
             // Adding a message from the toolbar
-            const unsubscribe = $rootScope.$on('addFile', (e, { asEmbedded, message }) => {
+            on('addFile', (e, { asEmbedded, message }) => {
                 if (message.ID === scope.message.ID) {
                     scope.message.asEmbedded = asEmbedded;
                     dropzone.element.click();

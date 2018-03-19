@@ -1,7 +1,9 @@
 /* @ngInject */
-function bugReportModel($rootScope, bugReportApi, bugModal) {
+function bugReportModel(bugReportApi, bugModal, dispatchers) {
 
-    $rootScope.$on('bugReport', (e, { type, data = {} }) => {
+    const { on } = dispatchers();
+
+    on('bugReport', (e, { type, data = {} }) => {
         type === 'new' && open(data);
     });
 

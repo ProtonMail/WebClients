@@ -1,17 +1,18 @@
 /* @ngInject */
-function btnAdvancedSearch($rootScope) {
+function btnAdvancedSearch(dispatchers) {
     const CLASSNAME = {
         down: 'fa-angle-down',
         up: 'fa-angle-up',
         close: 'fa-times'
     };
 
-    const dispatch = (type, data = {}) => $rootScope.$emit('advancedSearch', { type, data });
-
     return {
         replace: true,
         templateUrl: require('../../../templates/search/btnAdvancedSearch.tpl.html'),
         link(scope, el, { action = 'show' }) {
+            const { on, unsubscribe, dispatcher } = dispatchers(['advancedSearch']);
+            const dispatch = (type, data = {}) => dispatcher.advancedSearch(type, data);
+
             const $icon = el[0].querySelector('.btnAdvancedSearch-icon-desktop');
             let isOpen = false;
 
@@ -20,7 +21,7 @@ function btnAdvancedSearch($rootScope) {
                 $icon.classList.add(CLASSNAME.close);
             }
 
-            $rootScope.$on('advancedSearch', (e, { type, data }) => {
+            on('advancedSearch', (e, { type, data }) => {
                 if (type === 'open' && action === 'show') {
                     const add = data.visible ? CLASSNAME.up : CLASSNAME.down;
                     const remove = data.visible ? CLASSNAME.down : CLASSNAME.up;
@@ -41,6 +42,7 @@ function btnAdvancedSearch($rootScope) {
 
             scope.$on('$destroy', () => {
                 el.off('click', onClick);
+                unsubscribe();
             });
         }
     };

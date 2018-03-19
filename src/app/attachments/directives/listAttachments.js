@@ -1,7 +1,7 @@
 import _ from 'lodash';
 
 /* @ngInject */
-function listAttachments($state, $rootScope, attachmentDownloader) {
+function listAttachments($state, dispatchers, attachmentDownloader) {
     const DECRYPTING_CLASSNAME = 'listAttachments-item-decrypt';
     const DOWNLOADED_CLASSNAME = 'listAttachments-item-download';
     const HIDDEN_CLASSNAME = 'hidden';
@@ -16,7 +16,9 @@ function listAttachments($state, $rootScope, attachmentDownloader) {
             const $list = el[0].querySelector('.listAttachments-list');
             const hide = () => !scope.model.Attachments.length && el[0].classList.add(HIDDEN_CLASSNAME);
             const show = () => scope.model.Attachments.length && el[0].classList.remove(HIDDEN_CLASSNAME);
-            const unsubscribe = $rootScope.$on('attachmentAdded', show);
+            const { on, dispatcher, unsubscribe } = dispatchers(['attachment.upload.outside']);
+
+            on('attachmentAdded', show);
 
             hide();
 
@@ -51,14 +53,10 @@ function listAttachments($state, $rootScope, attachmentDownloader) {
                 if (target.nodeName === 'BUTTON') {
                     const ID = target.getAttribute('data-attachment-id');
 
-                    $state.is('eo.reply') &&
-                        $rootScope.$emit('attachment.upload.outside', {
-                            type: 'remove',
-                            data: {
-                                id: target.getAttribute('data-attachment-id'),
-                                message: scope.model
-                            }
-                        });
+                    $state.is('eo.reply') && dispatcher['attachment.upload.outside']('remove', {
+                        id: target.getAttribute('data-attachment-id'),
+                        message: scope.model
+                    });
 
                     scope.$applyAsync(() => {
                         const attachment = _.find(scope.model.Attachments, { ID });

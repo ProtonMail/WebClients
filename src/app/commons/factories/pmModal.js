@@ -1,5 +1,5 @@
 /* @ngInject */
-function pmModal($animate, $compile, $rootScope, $injector, $controller, $q, $http, AppModel, mailSettingsModel, $templateCache) {
+function pmModal($animate, $compile, $rootScope, dispatchers, $injector, $controller, $q, $http, AppModel, mailSettingsModel, $templateCache) {
     const $body = $('#body');
 
     function manageHotkeys(bind = true) {
@@ -20,8 +20,7 @@ function pmModal($animate, $compile, $rootScope, $injector, $controller, $q, $ht
         let element = null;
         let html;
         let scope;
-        let unsubscribeLogoutListener = angular.noop;
-
+        const { on, unsubscribe } = dispatchers();
         if (config.template) {
             html = $q.when(config.template);
         } else {
@@ -51,7 +50,7 @@ function pmModal($animate, $compile, $rootScope, $injector, $controller, $q, $ht
                     clearTimeout(id);
                 }, 100);
 
-                unsubscribeLogoutListener = $rootScope.$on('logout', () => {
+                on('logout', () => {
                     deactivate();
                 });
             });
@@ -88,7 +87,7 @@ function pmModal($animate, $compile, $rootScope, $injector, $controller, $q, $ht
                 return $q.when();
             }
 
-            unsubscribeLogoutListener();
+            unsubscribe();
 
             return $animate.leave(element).then(() => {
                 // We can have a concurrency issues ex: generateModal

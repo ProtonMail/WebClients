@@ -1,5 +1,6 @@
 import _ from 'lodash';
 import service from '../../../../src/app/composer/directives/btnSendMessage';
+import dispatchersService from '../../../../src/app/commons/services/dispatchers';
 import { generateModuleName } from '../../../utils/helpers';
 
 describe('btnSendMessage directive', () => {
@@ -13,6 +14,7 @@ describe('btnSendMessage directive', () => {
 
     angular.module(MODULE, ['templates-app'])
         .factory('gettextCatalog', () => gettextCatalog)
+        .factory('dispatchers', dispatchersService)
         .directive('btnSendMessage', service);
 
     beforeEach(angular.mock.module(MODULE));
@@ -71,7 +73,7 @@ describe('btnSendMessage directive', () => {
                 dom = compile('<btn-send-message data-message="message"></btn-send-message>')(scope);
                 scope.$digest();
                 iscope = dom.isolateScope();
-                rootScope.$emit('actionMessage', { ID: 2 });
+                rootScope.$emit('actionMessage', { data: { ID: 2 } });
             });
 
             it('should get a custom translation', () => {
@@ -114,7 +116,7 @@ describe('btnSendMessage directive', () => {
             describe('State: uploading', () => {
 
                 beforeEach(() => {
-                    rootScope.$emit('actionMessage', { ID: 1, uploading: 2 });
+                    rootScope.$emit('actionMessage', { data: { ID: 1, uploading: 2 }});
                 });
 
                 it('should load a new translation', () => {
@@ -134,7 +136,7 @@ describe('btnSendMessage directive', () => {
             describe('State: encrypting', () => {
 
                 beforeEach(() => {
-                    rootScope.$emit('actionMessage', { ID: 1, encrypting: true });
+                    rootScope.$emit('actionMessage', { data: { ID: 1, encrypting: true }});
                 });
 
                 it('should load a new translation', () => {
@@ -154,7 +156,7 @@ describe('btnSendMessage directive', () => {
             describe('State: sending', () => {
 
                 beforeEach(() => {
-                    rootScope.$emit('actionMessage', { ID: 1, sending: true });
+                    rootScope.$emit('actionMessage', { data: { ID: 1, sending: true } });
                 });
 
                 it('should load a new translation', () => {
@@ -174,7 +176,7 @@ describe('btnSendMessage directive', () => {
             describe('State: saving no autosaving', () => {
 
                 beforeEach(() => {
-                    rootScope.$emit('actionMessage', { ID: 1, saving: true });
+                    rootScope.$emit('actionMessage', { data: { ID: 1, saving: true }});
                 });
 
                 it('should not load a new translation', () => {
@@ -194,7 +196,7 @@ describe('btnSendMessage directive', () => {
             describe('State: autosaving no saving', () => {
 
                 beforeEach(() => {
-                    rootScope.$emit('actionMessage', { ID: 1, autosaving: true });
+                    rootScope.$emit('actionMessage', { data: { ID: 1, autosaving: true }});
                 });
 
                 it('should not load a new translation', () => {
@@ -214,7 +216,7 @@ describe('btnSendMessage directive', () => {
             describe('State: autosaving && saving', () => {
 
                 beforeEach(() => {
-                    rootScope.$emit('actionMessage', { ID: 1, saving: true, autosaving: true });
+                    rootScope.$emit('actionMessage', { data: { ID: 1, saving: true, autosaving: true }});
                 });
 
                 it('should load a new translation', () => {
@@ -234,7 +236,7 @@ describe('btnSendMessage directive', () => {
             describe('State: !autosaving && saving', () => {
 
                 beforeEach(() => {
-                    rootScope.$emit('actionMessage', { ID: 1, saving: true, autosaving: false });
+                    rootScope.$emit('actionMessage', { data: { ID: 1, saving: true, autosaving: false } });
                 });
 
                 it('should load a new translation', () => {
@@ -256,8 +258,11 @@ describe('btnSendMessage directive', () => {
 
                 beforeEach(() => {
                     rootScope.$emit('actionMessage', {
-                        ID: 1, disableSend() {
-                            return true;
+                        data: {
+                            ID: 1,
+                            disableSend() {
+                                return true;
+                            }
                         }
                     });
                 });

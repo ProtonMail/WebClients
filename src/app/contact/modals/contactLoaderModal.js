@@ -1,7 +1,5 @@
-import _ from 'lodash';
-
 /* @ngInject */
-function contactLoaderModal($rootScope, gettextCatalog, pmModal) {
+function contactLoaderModal(dispatchers, gettextCatalog, pmModal) {
     const LABEL_CLASS = 'contactLoaderModal-label';
     const SUCCESS_CLASS = 'contactLoaderModal-success';
     const CONTAINER_CLASS = 'contactLoaderModal-container';
@@ -101,51 +99,47 @@ function contactLoaderModal($rootScope, gettextCatalog, pmModal) {
         templateUrl: require('../../../templates/contact/contactLoaderModal.tpl.html'),
         /* @ngInject */
         controller: function (params) {
-            const unsubscribe = [];
+            const { on, unsubscribe } = dispatchers();
 
-            unsubscribe.push(
-                $rootScope.$on('contacts', (event, { type = '', data = {} }) => {
-                    if (type === 'contactCreated') {
-                        const { created = [], errors = [], total = 0 } = data;
-                        document.querySelector(`.${CONTAINER_CLASS}`).classList.add(IMPORTED_CLASS);
-                        document.querySelector(`.${SUCCESS_CLASS}`).innerHTML = getSuccess({
-                            count: created.length,
-                            total,
-                            complete: getModalI18n(params.mode, 'complete'),
-                            text: getModalI18n(params.mode, 'text'),
-                            error: getError(errors, total)
-                        });
-                    }
-                    if (type === 'contactsMerged') {
-                        const { updated = [], removed = [], errors = [], total = 0 } = data;
-                        document.querySelector(`.${CONTAINER_CLASS}`).classList.add(IMPORTED_CLASS);
-                        document.querySelector(`.${SUCCESS_CLASS}`).innerHTML = getSuccess({
-                            count: updated.length + removed.length,
-                            total,
-                            complete: getModalI18n(params.mode, 'complete'),
-                            text: getModalI18n(params.mode, 'text'),
-                            error: getMergeError(errors, total)
-                        });
-                    }
-                })
-            );
+            on('contacts', (event, { type = '', data = {} }) => {
+                if (type === 'contactCreated') {
+                    const { created = [], errors = [], total = 0 } = data;
+                    document.querySelector(`.${CONTAINER_CLASS}`).classList.add(IMPORTED_CLASS);
+                    document.querySelector(`.${SUCCESS_CLASS}`).innerHTML = getSuccess({
+                        count: created.length,
+                        total,
+                        complete: getModalI18n(params.mode, 'complete'),
+                        text: getModalI18n(params.mode, 'text'),
+                        error: getError(errors, total)
+                    });
+                }
 
-            unsubscribe.push(
-                $rootScope.$on('progressBar', (event, { type = '', data = {} }) => {
-                    const $label = document.querySelector(`.${LABEL_CLASS}`);
+                if (type === 'contactsMerged') {
+                    const { updated = [], removed = [], errors = [], total = 0 } = data;
+                    document.querySelector(`.${CONTAINER_CLASS}`).classList.add(IMPORTED_CLASS);
+                    document.querySelector(`.${SUCCESS_CLASS}`).innerHTML = getSuccess({
+                        count: updated.length + removed.length,
+                        total,
+                        complete: getModalI18n(params.mode, 'complete'),
+                        text: getModalI18n(params.mode, 'text'),
+                        error: getMergeError(errors, total)
+                    });
+                }
+            });
 
-                    if ($label && type === 'contactsProgressBar') {
-                        $label.textContent = getModalI18n(params.mode, 'progress')(data.progress);
-                    }
-                })
-            );
+            on('progressBar', (event, { type = '', data = {} }) => {
+                const $label = document.querySelector(`.${LABEL_CLASS}`);
+
+                if ($label && type === 'contactsProgressBar') {
+                    $label.textContent = getModalI18n(params.mode, 'progress')(data.progress);
+                }
+            });
 
             this.title = getModalI18n(params.mode, 'title');
             this.info = getModalI18n(params.mode, 'info');
             this.close = params.close;
             this.$onDestroy = () => {
-                _.each(unsubscribe, (cb) => cb());
-                unsubscribe.length = 0;
+                unsubscribe();
             };
         }
     });

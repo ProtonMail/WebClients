@@ -3,18 +3,21 @@ import _ from 'lodash';
 import { flow, map, reduce, filter } from 'lodash/fp';
 
 /* @ngInject */
-function attachmentModelOutside($log, AttachmentLoader, $rootScope, embedded, notification) {
+function attachmentModelOutside($log, AttachmentLoader, dispatchers, embedded, notification) {
     const EVENT_NAME = 'attachment.upload.outside';
+
+    const { on, dispatcher } = dispatchers([EVENT_NAME, 'actionMessage', 'attachmentAdded']);
+
     const QUEUE = [];
-    const dispatch = (type, data) => $rootScope.$emit(EVENT_NAME, { type, data });
+    const dispatch = (type, data) => dispatcher[EVENT_NAME](type, data);
 
     /**
      * Dispatch an event for the sending button
      * @param  {Message} message
      */
-    const dispatchMessageAction = (message) => $rootScope.$emit('actionMessage', message);
+    const dispatchMessageAction = (message) => dispatcher.actionMessage('', message);
 
-    $rootScope.$on(EVENT_NAME, (e, { type, data }) => {
+    on(EVENT_NAME, (e, { type, data }) => {
         switch (type) {
             case 'remove.all':
                 removeAll(data);
@@ -110,7 +113,7 @@ function attachmentModelOutside($log, AttachmentLoader, $rootScope, embedded, no
                 .then(packetToAttachment(message))
                 .then((list) => (message.addAttachments(list), list))
                 .then(() => {
-                    $rootScope.$emit('attachmentAdded');
+                    dispatcher.attachmentAdded();
                     dispatchMessageAction(message);
                     QUEUE.length = 0;
                 });

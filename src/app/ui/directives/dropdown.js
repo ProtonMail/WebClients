@@ -1,8 +1,9 @@
 /* @ngInject */
-function dropdown($document, $rootScope) {
+function dropdown($document, dispatchers) {
     const CLASS_OPEN = 'pm_dropdown-opened';
 
     return (scope, element) => {
+        const { dispatcher, on, unsubscribe } = dispatchers(['closeDropdown']);
         const parent = element.parent();
         const dropdown = parent.find('.pm_dropdown');
 
@@ -30,7 +31,7 @@ function dropdown($document, $rootScope) {
                 hideDropdown();
             } else {
                 // Close all dropdowns
-                $rootScope.$emit('closeDropdown');
+                dispatcher.closeDropdown();
                 // Open only this one
                 showDropdown();
             }
@@ -41,7 +42,7 @@ function dropdown($document, $rootScope) {
         // Listeners
         element.on('click', click);
 
-        const unsubscribe = $rootScope.$on('closeDropdown', () => {
+        on('closeDropdown', () => {
             hideDropdown();
         });
 

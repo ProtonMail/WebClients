@@ -1,8 +1,8 @@
 import { WIZARD_ENABLED } from '../../constants';
 
 /* @ngInject */
-function HeaderController($rootScope, $scope, $state, authentication, organizationModel, userType) {
-    const unsubscribes = [];
+function HeaderController($scope, $state, authentication, dispatchers, organizationModel, userType) {
+    const { on, unsubscribe } = dispatchers();
 
     const setUserType = () => {
         const { isAdmin, isFree } = userType();
@@ -17,17 +17,14 @@ function HeaderController($rootScope, $scope, $state, authentication, organizati
     $scope.ctrl = {};
     $scope.starred = 2;
 
-    unsubscribes.push(
-        $rootScope.$on('organizationChange', (event, newOrganization) => {
-            $scope.organization = newOrganization;
-        })
-    );
+    on('organizationChange', (event, { data: newOrganization }) => {
+        $scope.organization = newOrganization;
+    });
 
-    unsubscribes.push($rootScope.$on('updateUser', setUserType));
+    on('updateUser', setUserType);
 
     $scope.$on('$destroy', () => {
-        unsubscribes.forEach((cb) => cb());
-        unsubscribes.length = 0;
+        unsubscribe();
     });
 
     $scope.cancel = () => {

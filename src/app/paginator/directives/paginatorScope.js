@@ -1,5 +1,5 @@
 /* @ngInject */
-function paginatorScope($rootScope) {
+function paginatorScope(dispatchers) {
     return {
         restrict: 'E',
         replace: true,
@@ -11,6 +11,8 @@ function paginatorScope($rootScope) {
             change: '='
         },
         link(scope, el, attribute) {
+            const { on, unsubscribe } = dispatchers();
+
             scope.pages = [];
 
             const disable = () => {
@@ -49,14 +51,14 @@ function paginatorScope($rootScope) {
                 buildPages();
             });
 
-            const unsubscribe = $rootScope.$on('paginatorScope', (e, { type, page }) => {
+            on('paginatorScope', (e, { type, page }) => {
                 if (type === attribute.type) {
                     scope.page = page;
                     disable();
                 }
             });
 
-            scope.$on('$destroy', () => unsubscribe());
+            scope.$on('$destroy', unsubscribe);
         }
     };
 }

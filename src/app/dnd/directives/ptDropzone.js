@@ -1,5 +1,5 @@
 /* @ngInject */
-function ptDropzone($rootScope, ptDndUtils, ptDndModel, PTDNDCONSTANTS) {
+function ptDropzone(dispatchers, ptDndUtils, ptDndModel, PTDNDCONSTANTS) {
     const { CLASSNAME, DROPZONE_ATTR_ID } = PTDNDCONSTANTS;
 
     document.addEventListener('dragenter', ({ target }) => {
@@ -45,7 +45,7 @@ function ptDropzone($rootScope, ptDndUtils, ptDndModel, PTDNDCONSTANTS) {
     return {
         type: 'A',
         link(scope, el) {
-            const unsubscribe = [];
+            const { on, unsubscribe } = dispatchers();
 
             /**
              * There is a race-condition when a new menu label is added. It can happen that this function
@@ -68,25 +68,18 @@ function ptDropzone($rootScope, ptDndUtils, ptDndModel, PTDNDCONSTANTS) {
 
             const id = setTimeout(() => (refresh(), clearTimeout(id)), 1000);
 
-            unsubscribe.push(
-                $rootScope.$on('labelsModel', (e, { type }) => {
-                    if (type === 'cache.refresh' || type === 'cache.update') {
-                        refresh();
-                    }
-                })
-            );
+            on('labelsModel', (e, { type }) => {
+                if (type === 'cache.refresh' || type === 'cache.update') {
+                    refresh();
+                }
+            });
 
             // Check the current state to set the current one as active
-            unsubscribe.push(
-                $rootScope.$on('$stateChangeSuccess', () => {
-                    _rAF(refresh);
-                })
-            );
-
-            scope.$on('$destroy', () => {
-                unsubscribe.forEach((cb) => cb());
-                unsubscribe.length = 0;
+            on('$stateChangeSuccess', () => {
+                _rAF(refresh);
             });
+
+            scope.$on('$destroy', unsubscribe);
         }
     };
 }

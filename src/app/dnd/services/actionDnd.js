@@ -5,6 +5,7 @@ function actionDnd(
     $rootScope,
     $state,
     CONSTANTS,
+    dispatchers,
     ptDndModel,
     actionConversation,
     labelsModel,
@@ -29,16 +30,15 @@ function actionDnd(
         }
     };
 
+    const { dispatcher, on } = dispatchers(['elements', 'messageActions']);
+
     ptDndNotification.init();
 
     const move = (ids, type, labelID) => {
         if (type === 'conversation') {
             return actionConversation.move(ids, labelID);
         }
-        $rootScope.$emit('messageActions', {
-            action: 'move',
-            data: { ids, labelID }
-        });
+        dispatcher.messageActions('move', { ids, labelID });
     };
 
     const label = (list, type, labelID) => {
@@ -57,10 +57,7 @@ function actionDnd(
         if (type === 'conversation') {
             actionConversation.label(ids, labels);
         } else {
-            $rootScope.$emit('messageActions', {
-                action: 'label',
-                data: { messages: list, labels }
-            });
+            dispatcher.messageActions('label', { messages: list, labels });
         }
 
         notification.success(`${NOTIFS.APPLY_LABEL} ${label.Name}`);
@@ -68,17 +65,14 @@ function actionDnd(
 
     const star = (list = [], type) => {
         list.forEach((model) => {
-            $rootScope.$emit('elements', {
-                type: 'toggleStar',
-                data: { model, type }
-            });
+            dispatcher.elements('toggleStar', { model, type });
         });
         notification.success(NOTIFS.star(list.length, type));
     };
 
     let selectedList;
 
-    $rootScope.$on('ptDnd', (e, { type, data }) => {
+    on('ptDnd', (e, { type, data }) => {
         // Dirty but the data lives in the scope, not inside a model :/
         if (type === 'drop') {
             selectedList = data.selectedList;

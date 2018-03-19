@@ -1,8 +1,9 @@
 import _ from 'lodash';
 
 /* @ngInject */
-function domainModel($rootScope, domainApi, gettextCatalog) {
+function domainModel(dispatchers, domainApi, gettextCatalog) {
     let domains = [];
+    const { dispatcher, on } = dispatchers(['domainsChange']);
     const errorMessage = gettextCatalog.getString('Domain request failed', null, 'Error');
     const query = () => angular.copy(domains);
     const get = (ID) => _.find(query(), { ID });
@@ -37,15 +38,17 @@ function domainModel($rootScope, domainApi, gettextCatalog) {
     function clear() {
         domains.length = 0;
     }
-    $rootScope.$on('deleteDomain', (event, ID) => {
+
+    on('deleteDomain', (event, ID) => {
         const index = _.findIndex(domains, { ID });
 
         if (index > -1) {
             domains.splice(index, 1);
-            $rootScope.$emit('domainsChange', domains);
+            dispatcher.domainsChange('', domains);
         }
     });
-    $rootScope.$on('createDomain', (event, ID, domain) => {
+
+    on('createDomain', (event, ID, domain) => {
         const index = _.findIndex(domains, { ID });
 
         if (index === -1) {
@@ -53,9 +56,10 @@ function domainModel($rootScope, domainApi, gettextCatalog) {
         } else {
             _.extend(domains[index], domain);
         }
-        $rootScope.$emit('domainsChange', domains);
+        dispatcher.domainsChange('', domains);
     });
-    $rootScope.$on('updateDomain', (event, ID, domain) => {
+
+    on('updateDomain', (event, ID, domain) => {
         const index = _.findIndex(domains, { ID });
 
         if (index === -1) {
@@ -63,11 +67,13 @@ function domainModel($rootScope, domainApi, gettextCatalog) {
         } else {
             _.extend(domains[index], domain);
         }
-        $rootScope.$emit('domainsChange', domains);
+        dispatcher.domainsChange('', domains);
     });
-    $rootScope.$on('logout', () => {
+
+    on('logout', () => {
         clear();
     });
+
     return { query, get, set, fetch, clear, catchall };
 }
 export default domainModel;

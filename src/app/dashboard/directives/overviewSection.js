@@ -1,14 +1,12 @@
-import _ from 'lodash';
-
 /* @ngInject */
-function overviewSection($rootScope, authentication, organizationModel, subscriptionModel) {
+function overviewSection(authentication, dispatchers, organizationModel, subscriptionModel) {
     return {
         replace: true,
         restrict: 'E',
         scope: {},
         templateUrl: require('../../../templates/dashboard/overviewSection.tpl.html'),
         link(scope, element) {
-            const unsubscribe = [];
+            const { dispatcher, on, unsubscribe } = dispatchers(['progressBar']);
             const $buttons = element.find('.scroll');
 
             $buttons.on('click', onClick);
@@ -18,7 +16,7 @@ function overviewSection($rootScope, authentication, organizationModel, subscrip
                 const model = organization.PlanName === 'free' ? authentication.user : organization;
                 const progress = model.UsedSpace / model.MaxSpace * 100;
 
-                $rootScope.$emit('progressBar', { type: 'storageBar', data: { progress } });
+                dispatcher.progressBar('storageBar', { progress });
             }
 
             function updateUser() {
@@ -52,31 +50,23 @@ function overviewSection($rootScope, authentication, organizationModel, subscrip
                 authentication.fetchUserInfo().then((data) => (scope.user = data));
             };
 
-            unsubscribe.push(
-                $rootScope.$on('updateUser', () => {
-                    updateUser();
-                    updateStorageBar();
-                })
-            );
+            on('updateUser', () => {
+                updateUser();
+                updateStorageBar();
+            });
 
-            unsubscribe.push(
-                $rootScope.$on('organizationChange', (e, organization) => {
-                    updateOrganization(organization);
-                    updateStorageBar();
-                })
-            );
+            on('organizationChange', (e, { data: organization }) => {
+                updateOrganization(organization);
+                updateStorageBar();
+            });
 
-            unsubscribe.push(
-                $rootScope.$on('subscription', (e, { type, data = {} }) => {
-                    type === 'update' && updateSubscription(data.subscription);
-                })
-            );
+            on('subscription', (e, { type, data = {} }) => {
+                type === 'update' && updateSubscription(data.subscription);
+            });
 
-            unsubscribe.push(
-                $rootScope.$on('payments', (e, { type }) => {
-                    type === 'topUp.request.success' && refreshUser();
-                })
-            );
+            on('payments', (e, { type }) => {
+                type === 'topUp.request.success' && refreshUser();
+            });
 
             updateUser();
             updateOrganization(organizationModel.get());
@@ -85,8 +75,7 @@ function overviewSection($rootScope, authentication, organizationModel, subscrip
 
             scope.$on('$destroy', () => {
                 $buttons.off('click', onClick);
-                _.each(unsubscribe, (cb) => cb());
-                unsubscribe.length = 0;
+                unsubscribe();
             });
         }
     };

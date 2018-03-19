@@ -84,8 +84,8 @@ function hotkeys(hotkeyModal, $rootScope, $state, authentication, $injector, get
     const reply = action(emit('replyConversation'));
     const replyAll = action(emit('replyAllConversation'));
     const forward = action(emit('forwardConversation'));
-    const selectAll = action(emit('selectElements', { value: 'all', isChecked: true }));
-    const unselectAll = action(emit('selectElements', { value: 'all', isChecked: false }));
+    const selectAll = action(emit('selectElements', { type: 'all', data: { isChecked: true } }));
+    const unselectAll = action(emit('selectElements', { type: 'all', data: { isChecked: false } }));
     const slash = action(emit('hotkeys', { type: 'slash' }));
     const toggleStar = action(emit('toggleStar'));
 

@@ -1,7 +1,7 @@
 import _ from 'lodash';
 
 /* @ngInject */
-function zoneselect($rootScope, autoresponderModel) {
+function zoneselect(autoresponderModel, dispatchers) {
     return {
         replace: true,
         restrict: 'E',
@@ -9,7 +9,7 @@ function zoneselect($rootScope, autoresponderModel) {
             '<select id="time-zone" name="time-zone" ng-options="zone.label for zone in timezones track by zone.value" ng-model="zone"></select>',
         scope: {},
         link(scope, elem, { zone, disableInput }) {
-            const unsubscribe = [];
+            const { on, unsubscribe } = dispatchers();
 
             scope.timezones = autoresponderModel.timezones;
 
@@ -23,19 +23,17 @@ function zoneselect($rootScope, autoresponderModel) {
                 scope.$applyAsync(() => autoresponderModel.set({ zone: scope.zone.value }));
             };
 
-            unsubscribe.push(
-                $rootScope.$on('autoresponder', (event, { type, data = {} }) => {
-                    if (type === 'update') {
-                        scope.zone = _.find(scope.timezones, { value: data.autoresponder.zone });
-                    }
-                })
-            );
+            on('autoresponder', (event, { type, data = {} }) => {
+                if (type === 'update') {
+                    scope.zone = _.find(scope.timezones, { value: data.autoresponder.zone });
+                }
+            });
 
             elem.on('change', onChange);
 
             scope.$on('$destroy', () => {
-                _.each(unsubscribe, (cb) => cb());
-                unsubscribe.length = 0;
+                elem.off('change', onChange);
+                unsubscribe();
             });
         }
     };

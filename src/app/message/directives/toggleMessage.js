@@ -1,5 +1,5 @@
 /* @ngInject */
-function toggleMessage($rootScope, CONSTANTS) {
+function toggleMessage(dispatchers, CONSTANTS) {
     function selection() {
         if (window.getSelection) {
             return window.getSelection().toString().length === 0;
@@ -10,23 +10,22 @@ function toggleMessage($rootScope, CONSTANTS) {
     return {
         restrict: 'A',
         link(scope, element) {
+            const { dispatcher } = dispatchers(['composer.load', 'message.open']);
+
             function mouseup(event) {
                 if (selection() && event.target.nodeName !== 'A' && !event.target.classList.contains('labelsElement-btn-remove')) {
                     scope.$applyAsync(() => {
                         // Open the message in composer if it's a draft
                         if (scope.message.Type === CONSTANTS.DRAFT) {
-                            return $rootScope.$emit('composer.load', scope.message);
+                            return dispatcher['composer.load']('', scope.message);
                         }
 
                         scope.message.expand = !scope.message.expand;
                         // Force close toggle details
                         scope.message.toggleDetails && (scope.message.toggleDetails = false);
-                        $rootScope.$emit('message.open', {
-                            type: 'toggle',
-                            data: {
-                                message: scope.message,
-                                expand: scope.message.expand
-                            }
+                        dispatcher['message.open']('toggle', {
+                            message: scope.message,
+                            expand: scope.message.expand
                         });
                     });
                 }
@@ -42,4 +41,5 @@ function toggleMessage($rootScope, CONSTANTS) {
         }
     };
 }
+
 export default toggleMessage;

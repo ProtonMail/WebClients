@@ -1,14 +1,15 @@
 /* @ngInject */
-function limitElementsModel($rootScope) {
+function limitElementsModel(dispatchers) {
     const CACHE = {};
     const isReached = () => CACHE.total !== CACHE.limit;
+    const { on } = dispatchers();
 
     function set({ Limit = 0, Total = 0 }) {
         CACHE.limit = Limit;
         CACHE.total = Total;
     }
 
-    $rootScope.$on('elements', (event, { type, data = {} }) => {
+    on('elements', (event, { type, data = {} }) => {
         type === 'setLimit' && set(data);
     });
 

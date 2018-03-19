@@ -1,7 +1,7 @@
 import _ from 'lodash';
 
 /* @ngInject */
-function humanVerificationModal($http, $rootScope, pmModal, User, networkActivityTracker) {
+function humanVerificationModal($http, dispatchers, pmModal, User, networkActivityTracker) {
     function handleResult({ data = {} }) {
         return Promise.resolve(data);
     }
@@ -11,7 +11,7 @@ function humanVerificationModal($http, $rootScope, pmModal, User, networkActivit
         /* @ngInject */
         controller: function(params, $scope) {
             const self = this;
-            const unsubscribe = [];
+            const { on, unsubscribe } = dispatchers();
 
             self.tokens = { captcha: '' };
 
@@ -41,17 +41,14 @@ function humanVerificationModal($http, $rootScope, pmModal, User, networkActivit
 
             self.cancel = () => params.close(false);
 
-            unsubscribe.push(
-                $rootScope.$on('captcha.token', (event, token) => {
-                    $scope.$applyAsync(() => {
-                        self.tokens.captcha = token;
-                    });
-                })
-            );
+            on('captcha.token', (event, token) => {
+                $scope.$applyAsync(() => {
+                    self.tokens.captcha = token;
+                });
+            });
 
             self.$onDestroy = () => {
-                unsubscribe.forEach((cb) => cb());
-                unsubscribe.length = 0;
+                unsubscribe();
             };
         }
     });

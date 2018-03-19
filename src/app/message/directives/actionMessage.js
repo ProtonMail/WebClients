@@ -2,7 +2,7 @@
 function actionMessage($rootScope, CONSTANTS, downloadFile, openStatePostMessage) {
     const dispatcher = (message = {}) => (action = '', mailbox = '') => {
         $rootScope.$emit('messageActions', {
-            action,
+            type: action,
             data: { ids: [message.ID], labelID: CONSTANTS.MAILBOX_IDENTIFIERS[mailbox] }
         });
     };

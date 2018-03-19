@@ -1,5 +1,5 @@
 /* @ngInject */
-function chooseRightToLeft($rootScope, composerSettings, mailSettingsModel) {
+function chooseRightToLeft(dispatchers, composerSettings, mailSettingsModel) {
     const KEY = 'RightToLeft';
 
     return {
@@ -8,6 +8,8 @@ function chooseRightToLeft($rootScope, composerSettings, mailSettingsModel) {
         scope: {},
         templateUrl: 'templates/settings/chooseRightToLeft.tpl.html',
         link(scope, el) {
+            const { on, unsubscribe } = dispatchers();
+
             scope.model = '' + (mailSettingsModel.get(KEY) || 0);
 
             const onChange = ({ target }) => {
@@ -18,7 +20,7 @@ function chooseRightToLeft($rootScope, composerSettings, mailSettingsModel) {
 
             el.on('change', onChange);
 
-            const unsubscribe = $rootScope.$on('mailSettings', (event, { key, value = {} }) => {
+            on('mailSettings', (event, { key, value = {} }) => {
                 if (key === 'all') {
                     scope.model = '' + value[KEY];
                 }

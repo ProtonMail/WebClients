@@ -1,11 +1,12 @@
 import { flow, each, filter } from 'lodash/fp';
 
 /* @ngInject */
-function cacheCounters(messageApi, CONSTANTS, conversationApi, $q, $rootScope, authentication, labelsModel) {
+function cacheCounters(messageApi, CONSTANTS, conversationApi, $q, dispatchers, authentication, labelsModel) {
     const api = {};
     let counters = {};
+    const { dispatcher, on } = dispatchers(['app.cacheCounters']);
     const { inbox, allDrafts, drafts, allSent, sent, trash, spam, allmail, archive, starred } = CONSTANTS.MAILBOX_IDENTIFIERS;
-    const dispatch = (type, data = {}) => $rootScope.$emit('app.cacheCounters', { type, data });
+    const dispatch = (type, data = {}) => dispatcher['app.cacheCounters'](type, data);
 
     const exist = (loc) => {
         if (angular.isUndefined(counters[loc])) {
@@ -22,7 +23,7 @@ function cacheCounters(messageApi, CONSTANTS, conversationApi, $q, $rootScope, a
         }
     };
 
-    $rootScope.$on('labelsModel', (e, { type, data }) => {
+    on('labelsModel', (e, { type, data }) => {
         if (type === 'cache.update') {
             data.create.forEach(({ ID }) => exist(ID));
             Object.keys(data.remove).forEach((ID) => {

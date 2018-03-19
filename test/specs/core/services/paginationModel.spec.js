@@ -1,5 +1,6 @@
 import _ from 'lodash';
 import service from '../../../../src/app/paginator/factories/paginationModel';
+import dispatchersService from '../../../../src/app/commons/services/dispatchers';
 import { CONSTANTS } from '../../../../src/app/constants';
 import { generateModuleName } from '../../../utils/helpers';
 
@@ -22,7 +23,8 @@ describe('paginationModel factory', () => {
         cacheContext: _.noop
     };
 
-    let factory, rootScope;
+    let factory;
+    let rootScope;
 
     angular.module(MODULE, []);
 
@@ -32,7 +34,8 @@ describe('paginationModel factory', () => {
 
     beforeEach(angular.mock.inject(($injector) => {
         rootScope = $injector.get('$rootScope');
-        factory = service(CONSTANTS, $injector, rootScope, state, stateParamsMock, mailSettingsModel, tools);
+        const dispatchers = dispatchersService(rootScope);
+        factory = service(CONSTANTS, $injector, dispatchers, state, stateParamsMock, mailSettingsModel, tools);
     }));
 
     describe('Switch page', () => {
@@ -45,7 +48,7 @@ describe('paginationModel factory', () => {
             });
 
             it('should move to another state', () => {
-                expect(state.go).toHaveBeenCalledWith('', { id: null })
+                expect(state.go).toHaveBeenCalledWith('', { id: null });
             });
         });
 

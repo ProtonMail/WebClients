@@ -1,7 +1,7 @@
 /* @ngInject */
 function AppearanceController(
     $log,
-    $rootScope,
+    dispatchers,
     $scope,
     $state,
     $window,
@@ -14,7 +14,8 @@ function AppearanceController(
     mailSettingsModel,
     notification
 ) {
-    const unsubscribe = [];
+    const { on, unsubscribe, dispatcher } = dispatchers(['appearance']);
+
     const { Theme, ComposerMode, ViewLayout, MessageButtons, ViewMode } = mailSettingsModel.get();
     $scope.appearance = {
         cssTheme: Theme,
@@ -24,11 +25,8 @@ function AppearanceController(
         viewMode: !ViewMode // BE data is reversed
     };
 
-    unsubscribe.push($rootScope.$on('changeViewMode', changeViewMode));
-    $scope.$on('$destroy', () => {
-        unsubscribe.forEach((cb) => cb());
-        unsubscribe.length = 0;
-    });
+    on('changeViewMode', changeViewMode);
+    $scope.$on('$destroy', unsubscribe);
     $scope.loadThemeClassic = function() {
         $scope.appearance.cssTheme = 'CLASSIC';
         $scope.saveTheme();
@@ -96,14 +94,14 @@ function AppearanceController(
     function changeViewMode(event, { status }) {
         const ViewMode = status ? CONSTANTS.CONVERSATION_VIEW_MODE : CONSTANTS.MESSAGE_VIEW_MODE; // Be careful, BE is reversed
 
-        $rootScope.$emit('appearance', { type: 'changingViewMode' });
+        dispatcher.appearance('changingViewMode');
 
         const promise = settingsMailApi
             .updateViewMode({ ViewMode })
             .then(() => eventManager.call())
             .then(() => {
                 notification.success(gettextCatalog.getString('View mode saved', null, 'Info'));
-                $rootScope.$emit('appearance', { type: 'viewModeChanged' });
+                dispatcher.appearance('viewModeChanged');
             });
 
         networkActivityTracker.track(promise);

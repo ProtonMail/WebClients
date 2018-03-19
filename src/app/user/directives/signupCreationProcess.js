@@ -1,5 +1,5 @@
 /* @ngInject */
-function signupCreationProcess($rootScope) {
+function signupCreationProcess(dispatchers) {
     const ACTIONS = {
         'create.user': 'creation',
         loguserin: 'loggedin',
@@ -14,16 +14,16 @@ function signupCreationProcess($rootScope) {
         templateUrl: require('../../../templates/user/signupCreationProcess.tpl.html'),
         link(scope) {
             scope.flow = {};
-            const unsubscribe = $rootScope.$on('signup', (e, { type, data }) => {
+            const { on, unsubscribe } = dispatchers();
+
+            on('signup', (e, { type, data }) => {
                 if (ACTIONS[type]) {
                     return scope.$applyAsync(() => (scope.flow[ACTIONS[type]] = data.value));
                 }
                 type === 'signup.error' && scope.$applyAsync(() => (scope.signupError = data.value));
             });
 
-            scope.$on('$destroy', () => {
-                unsubscribe();
-            });
+            scope.$on('$destroy', unsubscribe);
         }
     };
 }

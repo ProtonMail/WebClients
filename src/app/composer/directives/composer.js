@@ -1,7 +1,7 @@
 import _ from 'lodash';
 
 /* @ngInject */
-function composer(AppModel, $rootScope, embedded, attachmentFileFormat, mailSettingsModel) {
+function composer(AppModel, embedded, attachmentFileFormat, dispatchers, mailSettingsModel) {
     const CLASS_DRAGGABLE = 'composer-draggable';
     const CLASS_DRAGGABLE_EDITOR = 'composer-draggable-editor';
 
@@ -15,52 +15,54 @@ function composer(AppModel, $rootScope, embedded, attachmentFileFormat, mailSett
         return ID === messageID || ID === message.ID;
     };
 
-    const focusComposer = (event, data = {}) => {
-        $rootScope.$emit('composer.update', { type: `focus.${event}`, data });
-    };
-
-    /**
-     * Parse actions for the message and trigger some actions
-     * @param  {$scope} scope
-     * @param  {Node} el)
-     * @return {Function}       (<event>, <data:Object>) callback from $rootScope
-     */
-    const onAction = (scope, el) => (e, { type, data }) => {
-        if (!isMessage(scope.message, data)) {
-            return;
-        }
-
-        switch (type) {
-            case 'dragenter':
-                if (attachmentFileFormat.isUploadAbleType(data.event)) {
-                    addDragenterClassName(el);
-                    focusComposer('dragenter', {
-                        message: scope.message,
-                        composer: angular.element(el),
-                        index: +el.getAttribute('data-index')
-                    });
-                }
-                break;
-            case 'drop':
-                // Same event as the one coming from squire
-                if (e.name === 'attachment.upload' && data.queue.files.length && data.queue.hasEmbedded) {
-                    return addDragenterClassName(el, CLASS_DRAGGABLE_EDITOR);
-                }
-                addDragleaveClassName(el);
-                break;
-            case 'upload':
-                addDragleaveClassName(el);
-                break;
-            case 'upload.success':
-                _rAF(() => addDragleaveClassName(el));
-                break;
-        }
-    };
-
     return {
         replace: true,
         templateUrl: require('../../../templates/directives/composer/composer.tpl.html'),
         link(scope, el) {
+            const { dispatcher, on, unsubscribe } = dispatchers(['composer.update']);
+
+            const focusComposer = (event, data = {}) => {
+                dispatcher['composer.update'](`focus.${event}`, data);
+            };
+
+            /**
+             * Parse actions for the message and trigger some actions
+             * @param  {$scope} scope
+             * @param  {Node} el)
+             * @return {Function}       (<event>, <data:Object>) callback from $rootScope
+             */
+            const onAction = (scope, el) => (e, { type, data }) => {
+                if (!isMessage(scope.message, data)) {
+                    return;
+                }
+
+                switch (type) {
+                    case 'dragenter':
+                        if (attachmentFileFormat.isUploadAbleType(data.event)) {
+                            addDragenterClassName(el);
+                            focusComposer('dragenter', {
+                                message: scope.message,
+                                composer: angular.element(el),
+                                index: +el.getAttribute('data-index')
+                            });
+                        }
+                        break;
+                    case 'drop':
+                        // Same event as the one coming from squire
+                        if (e.name === 'attachment.upload' && data.queue.files.length && data.queue.hasEmbedded) {
+                            return addDragenterClassName(el, CLASS_DRAGGABLE_EDITOR);
+                        }
+                        addDragleaveClassName(el);
+                        break;
+                    case 'upload':
+                        addDragleaveClassName(el);
+                        break;
+                    case 'upload.success':
+                        _rAF(() => addDragleaveClassName(el));
+                        break;
+                }
+            };
+
             const onClick = ({ target }) => {
                 if (!/composerHeader-btn/.test(target.classList.toString())) {
                     focusComposer('click', {
@@ -102,12 +104,9 @@ function composer(AppModel, $rootScope, embedded, attachmentFileFormat, mailSett
                         return;
                     }
                     if (mailSettingsModel.get('Hotkeys') === 1) {
-                        $rootScope.$emit('composer.update', {
-                            type: 'close.message',
-                            data: {
-                                message: scope.message,
-                                save: true
-                            }
+                        dispatcher['composer.update']('close.message', {
+                            message: scope.message,
+                            save: true
                         });
                     }
                 }
@@ -118,8 +117,8 @@ function composer(AppModel, $rootScope, embedded, attachmentFileFormat, mailSett
             el.on('click', onClick);
             el.on('keydown', onKeydown);
 
-            const unsubscribeEditor = $rootScope.$on('editor.draggable', onAction(scope, el[0]));
-            const unsubscribeAtt = $rootScope.$on('attachment.upload', onAction(scope, el[0]));
+            on('editor.draggable', onAction(scope, el[0]));
+            on('attachment.upload', onAction(scope, el[0]));
 
             scope.$on('$destroy', () => {
                 el.off('dragenter', onDragEnter);
@@ -127,8 +126,7 @@ function composer(AppModel, $rootScope, embedded, attachmentFileFormat, mailSett
                 el.off('click', onClick);
                 el.off('keydown', onKeydown);
 
-                unsubscribeEditor();
-                unsubscribeAtt();
+                unsubscribe();
 
                 AppModel.set('activeComposer', false);
                 AppModel.set('maximizedComposer', false);

@@ -1,5 +1,5 @@
 /* @ngInject */
-function contactView($rootScope, $stateParams, contactCache) {
+function contactView($stateParams, contactCache, dispatchers) {
     const CONTACTS_EMPTY = 'contacts-empty';
     const CONTACTS_NO_RESULT = 'contacts-no-result';
 
@@ -9,7 +9,9 @@ function contactView($rootScope, $stateParams, contactCache) {
         scope: {},
         templateUrl: require('../../../templates/views/contacts.tpl.html'),
         link(scope, element) {
-            const unsubscribe = $rootScope.$on('contacts', (event, { type = '' }) => {
+            const { on, unsubscribe } = dispatchers();
+
+            on('contacts', (event, { type = '' }) => {
                 type === 'contactsUpdated' && scope.$applyAsync(() => update());
             });
 
@@ -23,9 +25,7 @@ function contactView($rootScope, $stateParams, contactCache) {
 
             update();
 
-            scope.$on('$destroy', () => {
-                unsubscribe();
-            });
+            scope.$on('$destroy', unsubscribe);
         }
     };
 }

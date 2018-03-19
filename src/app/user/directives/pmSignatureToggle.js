@@ -1,7 +1,7 @@
 import { PM_SIGNATURE } from '../../constants';
 
 /* @ngInject */
-function pmSignatureToggle($rootScope, mailSettingsModel, signatureModel) {
+function pmSignatureToggle(dispatchers, mailSettingsModel, signatureModel) {
     const isSignatureMandatory = () => {
         const { PMSignature } = mailSettingsModel.get();
         return PMSignature === 2;
@@ -13,7 +13,9 @@ function pmSignatureToggle($rootScope, mailSettingsModel, signatureModel) {
         templateUrl: require('../../../templates/user/pmSignatureToggle.tpl.html'),
         link(scope) {
             const { PMSignature } = mailSettingsModel.get();
-            const unsubscribe = $rootScope.$on('changePMSignature', (e, data) => {
+            const { on, unsubscribe } = dispatchers();
+
+            on('changePMSignature', (e, data) => {
                 signatureModel.changeProtonStatus(data);
             });
 
@@ -23,9 +25,7 @@ function pmSignatureToggle($rootScope, mailSettingsModel, signatureModel) {
                 isActive: !!PMSignature
             };
 
-            scope.$on('$destroy', () => {
-                unsubscribe();
-            });
+            scope.$on('$destroy', unsubscribe);
         }
     };
 }

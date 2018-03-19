@@ -1,7 +1,8 @@
 import _ from 'lodash';
 
 /* @ngInject */
-function customProPlanModel($rootScope, CONSTANTS, dashboardConfiguration, dashboardModel) {
+function customProPlanModel(CONSTANTS, dashboardConfiguration, dashboardModel, dispatchers) {
+    const { dispatcher, on } = dispatchers(['refresh.slider', 'dashboard', 'update.slider.options']);
     const { PLANS, BASE_SIZE, MAX_MEMBER, HUGE_MEMBER } = CONSTANTS;
     const { PLAN, ADDON } = PLANS;
     const { MEMBER } = ADDON;
@@ -10,15 +11,12 @@ function customProPlanModel($rootScope, CONSTANTS, dashboardConfiguration, dashb
 
     const fromBase = (value) => value / BASE_SIZE ** 3;
     const CACHE = {};
-    const refreshSlider = (type) => $rootScope.$emit('refresh.slider', { type, data: { value: CACHE[type] } });
+    const refreshSlider = (type) => dispatcher['refresh.slider'](type, { value: CACHE[type] });
     const send = () => {
         const { plan } = dashboardModel.get(dashboardConfiguration.cycle());
         const professionalPlan = plan[PROFESSIONAL];
 
-        $rootScope.$emit('dashboard', {
-            type: 'change.addon',
-            data: { plan: 'professional', addon: 'member', value: CACHE.members - professionalPlan.MaxMembers }
-        });
+        dispatcher.dashboard('change.addon', { plan: 'professional', addon: 'member', value: CACHE.members - professionalPlan.MaxMembers });
     };
 
     function needMoreMember() {
@@ -137,21 +135,18 @@ function customProPlanModel($rootScope, CONSTANTS, dashboardConfiguration, dashb
         const max = _.last(options);
 
         SLIDER_TYPES.forEach((type) => {
-            $rootScope.$emit('update.slider.options', {
-                type,
-                data: {
-                    options: {
-                        range: {
-                            min: min[type],
-                            max: max[type]
-                        }
+            dispatcher['update.slider.options'](type, {
+                options: {
+                    range: {
+                        min: min[type],
+                        max: max[type]
                     }
                 }
             });
         });
     }
 
-    $rootScope.$on('slider.updated', (event, { type, data = {} }) => {
+    on('slider.updated', (event, { type, data = {} }) => {
         if (_.includes(['members', 'storage', 'addresses'], type)) {
             refreshSliders(type, data.value);
         }

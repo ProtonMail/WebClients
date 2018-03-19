@@ -107,8 +107,10 @@ angular
         $httpProvider.defaults.headers.get['Cache-Control'] = 'no-cache';
         $httpProvider.defaults.headers.get.Pragma = 'no-cache';
     })
-    .run(($rootScope, $location, $state, authentication, $log, networkActivityTracker, AppModel) => {
-        $rootScope.$on('$stateChangeStart', (event, toState) => {
+    .run(($rootScope, $location, $state, authentication, $log, dispatchers, networkActivityTracker, AppModel) => {
+        const { on } = dispatchers();
+
+        on('$stateChangeStart', (event, toState) => {
             networkActivityTracker.clear();
 
             const isLogin = toState.name === 'login';
@@ -147,7 +149,7 @@ angular
             }
         });
 
-        $rootScope.$on('$stateChangeSuccess', () => {
+        on('$stateChangeSuccess', () => {
             // Hide requestTimeout
             AppModel.set('requestTimeout', false);
 
@@ -161,8 +163,10 @@ angular
             $('#loading_pm, #pm_slow, #pm_slow2').remove();
         });
     })
-    .run(($rootScope, $state) => {
-        $rootScope.$on('$stateChangeError', (event, current, previous, rejection, ...arg) => {
+    .run(($state, dispatchers) => {
+        const { on } = dispatchers();
+
+        on('$stateChangeError', (event, current, previous, rejection, ...arg) => {
             $state.go('support.message');
             console.warn('stateChangeError', event, current, previous, rejection, arg);
             console.error(arg[1]);

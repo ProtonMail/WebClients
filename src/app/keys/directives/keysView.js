@@ -40,9 +40,7 @@ function keysView(dispatchers, addressesModel, authentication) {
             updateAddresses();
             updateUser();
 
-            scope.$on('$destroy', () => {
-                unsubscribe();
-            });
+            scope.$on('$destroy', unsubscribe);
         }
     };
 }

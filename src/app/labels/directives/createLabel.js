@@ -4,7 +4,7 @@ import _ from 'lodash';
 function createLabel($rootScope, labelModal) {
     const dispatch = (message, label = {}) => {
         $rootScope.$emit('messageActions', {
-            action: 'label',
+            type: 'label',
             data: {
                 messages: [message],
                 labels: [_.extend({}, label, { Selected: true })]

@@ -1,14 +1,15 @@
 import _ from 'lodash';
 
 /* @ngInject */
-function spamListModel($q, $rootScope, CONSTANTS, incomingModel) {
+function spamListModel($q, CONSTANTS, dispatchers, incomingModel) {
     const { MAILBOX_IDENTIFIERS } = CONSTANTS;
     const BLACKLIST_TYPE = +MAILBOX_IDENTIFIERS.spam;
     const WHITELIST_TYPE = +MAILBOX_IDENTIFIERS.inbox;
     const PAGE_SIZE = 100;
     let MAIN_CACHE = getDefault();
 
-    const dispatch = (type, data = {}) => $rootScope.$emit('filters', { type, data });
+    const { dispatcher, on } = dispatchers(['filters']);
+    const dispatch = (type, data = {}) => dispatcher.filters(type, data);
     const getType = (type) => (type === 'whitelist' ? WHITELIST_TYPE : BLACKLIST_TYPE);
     function getDefault() {
         return {
@@ -213,7 +214,7 @@ function spamListModel($q, $rootScope, CONSTANTS, incomingModel) {
 
     const clear = () => (MAIN_CACHE = getDefault());
 
-    $rootScope.$on('logout', () => {
+    on('logout', () => {
         clear();
     });
 

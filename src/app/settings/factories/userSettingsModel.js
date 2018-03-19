@@ -1,7 +1,9 @@
 import _ from 'lodash';
 
 /* @ngInject */
-function userSettingsModel($rootScope) {
+function userSettingsModel(dispatchers) {
+    const { on, dispatcher } = dispatchers(['userSettings']);
+
     let CACHE = {};
     const get = (key = 'all') => angular.copy(key === 'all' ? CACHE : CACHE[key]);
     const clear = () => (CACHE = {});
@@ -12,10 +14,10 @@ function userSettingsModel($rootScope) {
             CACHE[key] = value;
         }
 
-        $rootScope.$emit('userSettings', { type: 'updated', data: get() });
+        dispatcher.userSettings('updated', get());
     };
 
-    $rootScope.$on('logout', () => clear());
+    on('logout', clear);
 
     return { get, set };
 }

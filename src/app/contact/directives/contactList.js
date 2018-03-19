@@ -13,7 +13,7 @@ function contactList($filter, dispatchers, $state, $stateParams, contactCache, h
         scope: {},
         templateUrl: require('../../../templates/contact/contactList.tpl.html'),
         link(scope, element) {
-            const { dispatcher, on, unsubscribe } = dispatchers(['contacts', '$stateChangeSuccess']);
+            const { dispatcher, on, unsubscribe } = dispatchers(['contacts']);
             let lastChecked = null;
             let isLoadedContact = !!$stateParams.id;
             const MODEL = {

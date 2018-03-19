@@ -1,7 +1,7 @@
 import _ from 'lodash';
 
 /* @ngInject */
-function paginator($rootScope, $stateParams, paginationModel, CONSTANTS) {
+function paginator(dispatchers, $stateParams, paginationModel, CONSTANTS) {
     const { ELEMENTS_PER_PAGE } = CONSTANTS;
     const CLASS_PAGINATOR_DISABLED = 'paginator-disabled-';
 
@@ -57,6 +57,8 @@ function paginator($rootScope, $stateParams, paginationModel, CONSTANTS) {
             totalItems: '='
         },
         link(scope, el) {
+            const { on, unsubscribe } = dispatchers();
+
             scope.pages = buildPageList(paginationModel.getMaxPage());
             scope.page = ~~$stateParams.page || 1;
             const rawClassNames = el[0].className; // create a ghost as we need to update them later (onLoad)
@@ -81,7 +83,7 @@ function paginator($rootScope, $stateParams, paginationModel, CONSTANTS) {
             $previous.addEventListener('click', onPrevious, false);
             $dropdown.addEventListener('click', onSelect, false);
 
-            const unsubscribe = $rootScope.$on('app.cacheCounters', (event, { type, data }) => {
+            on('app.cacheCounters', (event, { type, data }) => {
                 if (type === 'refresh.currentState') {
                     scope.$applyAsync(() => {
                         scope.pages = buildPages(data.value);

@@ -1,9 +1,7 @@
 import _ from 'lodash';
 
 /* @ngInject */
-function monthdayTimePicker($rootScope, timepickerModel, datetimeErrorCombiner) {
-    const dispatch = (type, data) => $rootScope.$emit('timepicker', { type, data });
-
+function monthdayTimePicker(dispatchers, timepickerModel, datetimeErrorCombiner) {
     return {
         replace: true,
         restrict: 'E',
@@ -16,8 +14,10 @@ function monthdayTimePicker($rootScope, timepickerModel, datetimeErrorCombiner) 
             const timePickerKey = Math.floor(1e16 * Math.random()).toString(36);
             elem[0].querySelector('.timepicker').setAttribute('data-event-key', timePickerKey);
             return (scope, elem, { datePickerKey, timestamp, disableInput, labelId }) => {
+                const { on, unsubscribe, dispatcher } = dispatchers(['timepicker']);
+                const dispatchHelper = (type, data) => dispatcher.timepicker(type, data);
+
                 // definitions
-                const unsubscribe = [];
                 const daySelector = elem.find('.day-selector');
 
                 timepickerModel.initTimePicker(timePickerKey, { disableInput, labelId: labelId + '_time' });
@@ -48,11 +48,11 @@ function monthdayTimePicker($rootScope, timepickerModel, datetimeErrorCombiner) 
                 function calcTimestamp() {
                     if (scope.model.time === null || scope.model.day === null) {
                         scope.timestamp = null;
-                        dispatch('update', { eventKey: scope.datePickerKey, timestamp: scope.timestamp });
+                        dispatchHelper('update', { eventKey: scope.datePickerKey, timestamp: scope.timestamp });
                         return;
                     }
                     scope.timestamp = scope.model.day.value * 24 * 3600 + scope.model.time;
-                    dispatch('update', { eventKey: scope.datePickerKey, timestamp: scope.timestamp });
+                    dispatchHelper('update', { eventKey: scope.datePickerKey, timestamp: scope.timestamp });
                 }
 
                 // initialization
@@ -66,24 +66,21 @@ function monthdayTimePicker($rootScope, timepickerModel, datetimeErrorCombiner) 
 
                 // events
                 daySelector.on('change', onDayChange);
-                unsubscribe.push(() => daySelector.off('change', onDayChange));
 
-                unsubscribe.push(
-                    $rootScope.$on('timepicker', (event, { type, data }) => {
-                        if (type === 'refresh' && data.eventKey === scope.datePickerKey) {
-                            scope.timestamp = data.timestamp;
-                            calcInternalVariables();
-                        }
+                on('timepicker', (event, { type, data }) => {
+                    if (type === 'refresh' && data.eventKey === scope.datePickerKey) {
+                        scope.timestamp = data.timestamp;
+                        calcInternalVariables();
+                    }
 
-                        if (type === 'update' && data.eventKey === timePickerKey) {
-                            calcTimestamp();
-                        }
-                    })
-                );
+                    if (type === 'update' && data.eventKey === timePickerKey) {
+                        calcTimestamp();
+                    }
+                });
 
                 scope.$on('$destroy', () => {
-                    _.each(unsubscribe, (cb) => cb());
-                    unsubscribe.length = 0;
+                    unsubscribe();
+                    daySelector.off('change', onDayChange);
                 });
             };
         }

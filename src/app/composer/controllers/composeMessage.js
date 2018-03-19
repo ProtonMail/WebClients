@@ -3,7 +3,6 @@ import _ from 'lodash';
 /* @ngInject */
 function ComposeMessageController(
     $filter,
-    $rootScope,
     $scope,
     $state,
     $stateParams,
@@ -16,6 +15,8 @@ function ComposeMessageController(
     composerRequestModel,
     confirmModal,
     CONSTANTS,
+    dispatchers,
+    $rootScope,
     embedded,
     encryptMessage,
     eventManager,
@@ -34,7 +35,7 @@ function ComposeMessageController(
     sendMessage,
     validateMessage
 ) {
-    const unsubscribe = [];
+    const { dispatcher, on, unsubscribe } = dispatchers(['composer.update', 'messageActions']);
     const unicodeTagView = $filter('unicodeTagView');
 
     $scope.messages = [];
@@ -56,222 +57,190 @@ function ComposeMessageController(
     };
 
     // Listeners
-    unsubscribe.push(
-        $scope.$watch('messages.length', () => {
-            if ($scope.messages.length > 0) {
-                AppModel.set('activeComposer', true);
+    const unsubscribeWatcher = $scope.$watch('messages.length', () => {
+        if ($scope.messages.length > 0) {
+            AppModel.set('activeComposer', true);
 
-                window.onbeforeunload = () => {
-                    return gettextCatalog.getString(
-                        'By leaving now, you will lose what you have written in this email. You can save a draft if you want to come back to it later on.',
-                        null
-                    );
-                };
-                hotkeys.pause(); // Pause hotkeys
+            window.onbeforeunload = () => {
+                return gettextCatalog.getString(
+                    'By leaving now, you will lose what you have written in this email. You can save a draft if you want to come back to it later on.',
+                    null
+                );
+            };
+            hotkeys.pause(); // Pause hotkeys
+        } else {
+            AppModel.set('activeComposer', false);
+            window.onbeforeunload = undefined;
+
+            if (mailSettingsModel.get('Hotkeys') === 1) {
+                hotkeys.unpause();
             } else {
-                AppModel.set('activeComposer', false);
-                window.onbeforeunload = undefined;
-
-                if (mailSettingsModel.get('Hotkeys') === 1) {
-                    hotkeys.unpause();
-                } else {
-                    hotkeys.pause();
-                }
+                hotkeys.pause();
             }
-        })
-    );
+        }
+    });
 
-    unsubscribe.push(
-        $scope.$on('addressesModel', (e, { type }) => {
-            if (type === 'addresses.updated') {
-                $scope.addresses = addressesModel.get();
-            }
-        })
-    );
+    on('updateUser', () => {
+        $scope.addresses = addressesModel.get();
+    });
 
-    unsubscribe.push(
-        $scope.$on('onDrag', () => {
-            _.each($scope.messages, (message) => {
-                $scope.togglePanel(message, 'attachments');
-            });
-        })
-    );
+    on('onDrag', () => {
+        _.each($scope.messages, (message) => {
+            $scope.togglePanel(message, 'attachments');
+        });
+    });
 
     // When the user delete a conversation and a message is a part of this conversation
-    unsubscribe.push(
-        $scope.$on('deleteConversation', (event, ID) => {
-            _.each($scope.messages, (message) => {
-                if (ID === message.ID) {
-                    // Close the composer
-                    $scope.close(message, false, false);
-                }
-            });
-        })
-    );
+    on('deleteConversation', (event, ID) => {
+        _.each($scope.messages, (message) => {
+            if (ID === message.ID) {
+                // Close the composer
+                $scope.close(message, false, false);
+            }
+        });
+    });
 
     const isSent = ({ Type } = {}) => Type === CONSTANTS.INBOX_AND_SENT || Type === CONSTANTS.SENT;
-    unsubscribe.push(
-        $rootScope.$on('app.event', (event, { type, data }) => {
-            switch (type) {
-                case 'activeMessages': {
-                    // If you send the current draft from another tab/app we need to remove it from the composerList
-                    const removed = $scope.messages.filter(({ ID = '' }) => {
-                        const msg = _.find(data.messages, { ID });
-                        return msg && isSent(msg);
+
+    on('app.event', (event, { type, data }) => {
+        switch (type) {
+            case 'activeMessages': {
+                // If you send the current draft from another tab/app we need to remove it from the composerList
+                const removed = $scope.messages.filter(({ ID = '' }) => {
+                    const msg = _.find(data.messages, { ID });
+                    return msg && isSent(msg);
+                });
+
+                removed.length &&
+                    removed.forEach((message) => {
+                        closeComposer(message);
+                        !isSent(message) && notification.info(gettextCatalog.getString('Email was already sent', null, 'Info'));
                     });
 
-                    removed.length &&
-                        removed.forEach((message) => {
-                            closeComposer(message);
-                            !isSent(message) && notification.info(gettextCatalog.getString('Email was already sent', null, 'Info'));
-                        });
-
-                    break;
-                }
+                break;
             }
-        })
-    );
+        }
+    });
 
     // When a message is updated we try to update the message
-    unsubscribe.push(
-        $rootScope.$on('message.refresh', (event, messageIDs) => {
-            $scope.messages.forEach((message) => {
-                const { ID } = message;
-                if (messageIDs.indexOf(ID) > -1) {
-                    const messageCached = cache.getMessageCached(ID);
+    on('message.refresh', (event, messageIDs) => {
+        $scope.messages.forEach((message) => {
+            const { ID } = message;
+            if (messageIDs.indexOf(ID) > -1) {
+                const messageCached = cache.getMessageCached(ID);
 
-                    if (messageCached) {
-                        message.Time = messageCached.Time;
-                        message.ConversationID = messageCached.ConversationID;
-                    }
+                if (messageCached) {
+                    message.Time = messageCached.Time;
+                    message.ConversationID = messageCached.ConversationID;
+                }
+            }
+        });
+    });
+
+    on('composer.new', (e, { type, data = {} }) => {
+        const limitReached = checkComposerNumber();
+        if (!limitReached && AppModel.is('onLine')) {
+            validateMessage.canWrite() && initMessage(messageBuilder.create(type, data.message));
+        }
+    });
+
+    on('composer.load', async (e, { data: { ID } }) => {
+        const found = _.find($scope.messages, { ID });
+        const limitReached = checkComposerNumber();
+
+        if (found || limitReached) {
+            return;
+        }
+        try {
+            const message = await cache.queryMessage(ID);
+            await message.clearTextBody();
+            /**
+             * Init and prepare the message as if we are replying or forwarding. i.e. try to load embedded content and blacklist all transformers.
+             * This sanitizes and removes unwanted content, e.g. remote content if that is specified to not load by default.
+             * Use 'reply' as the action to transformEmbedded in prepareContent.
+             * See #6645
+             * Don't prepare plaintext messages because they are converted to html when sanitized.
+             */
+            const isDraftPlainText = message.isPlainText() && message.IsEncrypted === 5;
+            const preparedMessage = isDraftPlainText ? message : messageBuilder.prepare(message, 'reply');
+            await initMessage(preparedMessage);
+            await commitComposer(preparedMessage);
+        } catch (e) {
+            notification.error(e);
+        }
+    });
+
+    on('hotkeys', (e, { type }) => {
+        if (type === 'save') {
+            $scope.$applyAsync(() => {
+                const message = _.find($scope.messages, { focussed: true });
+
+                if (message) {
+                    postMessage(message, {
+                        autosaving: true,
+                        notification: true
+                    });
                 }
             });
-        })
-    );
+        }
+    });
 
-    unsubscribe.push(
-        $rootScope.$on('composer.new', (e, { type, data = {} }) => {
-            const limitReached = checkComposerNumber();
-            if (!limitReached && AppModel.is('onLine')) {
-                validateMessage.canWrite() && initMessage(messageBuilder.create(type, data.message));
+    on('composer.update', (e, { type, data }) => {
+        switch (type) {
+            case 'loaded':
+                commitComposer(data.message);
+                break;
+
+            case 'editor.focus': {
+                const { message, isMessage } = data;
+                isMessage &&
+                    $scope.$applyAsync(() => {
+                        message.autocompletesFocussed = false;
+                        message.attachmentsToggle = false;
+                        message.ccbcc = false;
+                    });
+                break;
             }
-        })
-    );
 
-    unsubscribe.push(
-        $rootScope.$on('composer.load', async (event, { ID }) => {
-            const found = _.find($scope.messages, { ID });
-            const limitReached = checkComposerNumber();
-
-            if (found || limitReached) {
-                return;
+            case 'send.message': {
+                $scope.send(data.message);
+                break;
             }
-            try {
-                const message = await cache.queryMessage(ID);
-                await message.clearTextBody();
-                /**
-                 * Init and prepare the message as if we are replying or forwarding. i.e. try to load embedded content and blacklist all transformers.
-                 * This sanitizes and removes unwanted content, e.g. remote content if that is specified to not load by default.
-                 * Use 'reply' as the action to transformEmbedded in prepareContent.
-                 * See #6645
-                 * Don't prepare plaintext messages because they are converted to html when sanitized.
-                 */
-                const isDraftPlainText = message.isPlainText() && message.IsEncrypted === 5;
-                const preparedMessage = isDraftPlainText ? message : messageBuilder.prepare(message, 'reply');
-                await initMessage(preparedMessage);
-                await commitComposer(preparedMessage);
-            } catch (e) {
-                notification.error(e);
+
+            case 'send.success':
+            case 'close.message': {
+                $scope.close(data.message, data.discard, data.save);
+                break;
             }
-        })
-    );
 
-    unsubscribe.push(
-        $rootScope.$on('hotkeys', (e, { type }) => {
-            if (type === 'save') {
-                $scope.$applyAsync(() => {
-                    const message = _.find($scope.messages, { focussed: true });
-
-                    if (message) {
-                        postMessage(message, {
-                            autosaving: true,
-                            notification: true
-                        });
-                    }
-                });
+            case 'close.panel': {
+                $scope.closePanel(data.message);
+                break;
             }
-        })
-    );
+        }
+    });
 
-    unsubscribe.push(
-        $rootScope.$on('composer.update', (e, { type, data }) => {
-            switch (type) {
-                case 'loaded':
-                    commitComposer(data.message);
-                    break;
+    on('message.updated', (e, { message }) => {
+        // save when DOM is updated
+        postMessage(message, { autosaving: true });
+    });
 
-                case 'editor.focus': {
-                    const { message, isMessage } = data;
-                    isMessage &&
-                        $scope.$applyAsync(() => {
-                            message.autocompletesFocussed = false;
-                            message.attachmentsToggle = false;
-                            message.ccbcc = false;
-                        });
-                    break;
-                }
+    on('plaintextarea', (e, { type, data }) => {
+        type === 'input' && $scope.saveLater(data.message);
+    });
 
-                case 'send.message': {
-                    $scope.send(data.message);
-                    break;
-                }
+    on('squire.editor', (e, { type, data }) => {
+        type === 'input' && $scope.saveLater(data.message);
+    });
 
-                case 'send.success':
-                case 'close.message': {
-                    $scope.close(data.message, data.discard, data.save);
-                    break;
-                }
-
-                case 'close.panel': {
-                    $scope.closePanel(data.message);
-                    break;
-                }
-            }
-        })
-    );
-
-    unsubscribe.push(
-        $rootScope.$on('message.updated', (e, { message }) => {
-            // save when DOM is updated
-            postMessage(message, { autosaving: true });
-        })
-    );
-
-    unsubscribe.push(
-        $rootScope.$on('plaintextarea', (e, { type, data }) => {
-            type === 'input' && $scope.saveLater(data.message);
-        })
-    );
-
-    unsubscribe.push(
-        $rootScope.$on('squire.editor', (e, { type, data }) => {
-            type === 'input' && $scope.saveLater(data.message);
-        })
-    );
-
-    unsubscribe.push(
-        $rootScope.$on('attachment.upload', (e, { type, data }) => {
-            if (type === 'remove.success' && data.message.MIMEType !== 'text/plain') {
-                postMessage(data.message, { autosaving: true });
-            }
-        })
-    );
+    on('attachment.upload', (e, { type, data }) => {
+        if (type === 'remove.success' && data.message.MIMEType !== 'text/plain') {
+            postMessage(data.message, { autosaving: true });
+        }
+    });
 
     const onResize = _.debounce(() => {
-        $rootScope.$emit('composer.update', {
-            type: 'refresh',
-            data: { size: $scope.messages.length }
-        });
+        dispatcher['composer.update']('refresh', { size: $scope.messages.length });
     }, 1000);
 
     /**
@@ -301,8 +270,8 @@ function ComposeMessageController(
 
         window.onbeforeunload = undefined;
 
-        unsubscribe.forEach((cb) => cb());
-        unsubscribe.length = 0;
+        unsubscribeWatcher();
+        unsubscribe();
     });
 
     $scope.slideDown = (message) => {
@@ -357,10 +326,7 @@ function ComposeMessageController(
 
             postMessage(message)
                 .then(() => {
-                    $rootScope.$emit('composer.update', {
-                        type: 'loaded',
-                        data: { size, message }
-                    });
+                    dispatcher['composer.update']('loaded', { size, message });
                 })
                 .catch(() => {
                     const [, ...list] = $scope.messages;
@@ -424,7 +390,7 @@ function ComposeMessageController(
     };
 
     function dispatchMessageAction(message) {
-        $rootScope.$emit('actionMessage', message);
+        $rootScope.$emit('actionMessage', { data: message });
     }
 
     /**
@@ -474,10 +440,7 @@ function ComposeMessageController(
      * @param {Object} message
      */
     $scope.focusFirstComposer = (message) => {
-        $rootScope.$emit('composer.update', {
-            type: 'focus.first',
-            data: { message }
-        });
+        dispatcher['composer.update']('focus.first', { message });
     };
 
     $scope.minimize = (message) => {
@@ -553,19 +516,16 @@ function ComposeMessageController(
                 .not(this)
                 .hide();
 
-            $rootScope.$emit('composer.update', {
-                type: 'close',
-                data: {
-                    size: $scope.messages.length,
-                    message
-                }
+            dispatcher['composer.update']('close', {
+                size: $scope.messages.length,
+                message
             });
         };
 
         if (discard === true) {
             const ids = [message.ID];
 
-            $rootScope.$emit('messageActions', { action: 'delete', data: { ids } });
+            dispatcher.messageActions('delete', { ids });
         }
 
         $timeout.cancel(message.defferredSaveLater);

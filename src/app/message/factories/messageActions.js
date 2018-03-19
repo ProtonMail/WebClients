@@ -5,11 +5,11 @@ import { flow, uniq, each, map, filter, reduce } from 'lodash/fp';
 /* @ngInject */
 function messageActions(
     $q,
-    $rootScope,
     tools,
     cache,
     eventManager,
     messageApi,
+    dispatchers,
     networkActivityTracker,
     CONSTANTS,
     notification,
@@ -19,6 +19,7 @@ function messageActions(
 ) {
     const REMOVE_ID = 0;
     const ADD_ID = 1;
+    const { on } = dispatchers();
 
     const ACTION_STATUS = CONSTANTS.STATUS;
 
@@ -50,8 +51,8 @@ function messageActions(
         return mailboxes[labelID] || Name;
     }
 
-    $rootScope.$on('messageActions', (event, { action = '', data = {} }) => {
-        switch (action) {
+    on('messageActions', (event, { type = '', data = {} }) => {
+        switch (type) {
             case 'move':
                 move(data);
                 break;

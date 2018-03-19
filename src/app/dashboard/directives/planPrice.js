@@ -1,5 +1,5 @@
 /* @ngInject */
-function planPrice($filter, $rootScope, dashboardConfiguration, dashboardModel, gettextCatalog) {
+function planPrice($filter, dashboardConfiguration, dashboardModel, dispatchers, gettextCatalog) {
     const types = ['cycle.updated', 'currency.updated'];
     const I18N = {
         user: gettextCatalog.getString('user', null, 'Label'),
@@ -19,19 +19,21 @@ function planPrice($filter, $rootScope, dashboardConfiguration, dashboardModel, 
         scope: {},
         template: '<strong class="planPrice"></strong>',
         link(scope, element, { plan }) {
+            const { on, unsubscribe } = dispatchers();
+
             function update() {
                 scope.$applyAsync(() => {
                     element.text(amount(plan, dashboardConfiguration.cycle(), dashboardConfiguration.currency()));
                 });
             }
 
-            const unsubscribe = $rootScope.$on('dashboard', (event, { type }) => {
+            on('dashboard', (event, { type }) => {
                 types.indexOf(type) > -1 && update();
             });
 
             update();
 
-            scope.$on('$destroy', () => unsubscribe());
+            scope.$on('$destroy', unsubscribe);
         }
     };
 }

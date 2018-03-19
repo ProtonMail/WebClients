@@ -1,14 +1,16 @@
 /* @ngInject */
-function donateModal($rootScope, pmModal) {
+function donateModal(dispatchers, pmModal) {
     return pmModal({
         controllerAs: 'ctrl',
         templateUrl: require('../../../templates/modals/donate.tpl.html'),
         /* @ngInject */
         controller: function(params) {
+            const { on, unsubscribe } = dispatchers();
+
             this.typeOfModal = params.type;
             this.close = params.close;
 
-            const unsubscribe = $rootScope.$on('payments', (e, { type }) => {
+            on('payments', (e, { type }) => {
                 if (/^(donation|topUp)\.request\.success/.test(type)) {
                     params.close();
                 }

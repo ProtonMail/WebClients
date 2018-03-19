@@ -1,5 +1,5 @@
 /* @ngInject */
-function freeColumn($rootScope, dashboardConfiguration) {
+function freeColumn(dashboardConfiguration, dispatchers) {
     const SHOW_VPN = 'freeColumn-show-vpn';
     return {
         restrict: 'E',
@@ -7,6 +7,7 @@ function freeColumn($rootScope, dashboardConfiguration) {
         scope: {},
         templateUrl: require('../../../templates/dashboard/freeColumn.tpl.html'),
         link(scope, element) {
+            const { on, unsubscribe } = dispatchers();
             const update = () => {
                 const { free } = dashboardConfiguration.get();
                 const action = free.vpnplus || free.vpnbasic ? 'add' : 'remove';
@@ -14,7 +15,7 @@ function freeColumn($rootScope, dashboardConfiguration) {
                 element[0].classList[action](SHOW_VPN);
             };
 
-            const unsubscribe = $rootScope.$on('dashboard', (event, { type }) => {
+            on('dashboard', (event, { type }) => {
                 if (type === 'vpn.updated') {
                     update();
                 }
@@ -22,7 +23,7 @@ function freeColumn($rootScope, dashboardConfiguration) {
 
             update();
 
-            scope.$on('$destroy', () => unsubscribe());
+            scope.$on('$destroy', unsubscribe);
         }
     };
 }

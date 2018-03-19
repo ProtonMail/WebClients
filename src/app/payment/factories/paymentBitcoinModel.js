@@ -1,11 +1,13 @@
 /* @ngInject */
-function paymentBitcoinModel($rootScope, Payment, networkActivityTracker, CONSTANTS) {
+function paymentBitcoinModel(dispatchers, Payment, networkActivityTracker, CONSTANTS) {
+    const { on, dispatcher } = dispatchers(['payment']);
+
     const load = angular.noop;
     const CACHE = {};
     const TYPE_DONATION = 'donation';
     const { MIN_BITCOIN_AMOUNT } = CONSTANTS;
 
-    const dispatch = (type, data = {}) => $rootScope.$emit('payment', { type, data });
+    const dispatch = (type, data = {}) => dispatcher.payment(type, data);
 
     const set = (key, value) => (CACHE[key] = value);
     const get = (key) => angular.copy(key ? CACHE[key] : CACHE);
@@ -40,7 +42,7 @@ function paymentBitcoinModel($rootScope, Payment, networkActivityTracker, CONSTA
 
     const isDonation = () => get('input').type === TYPE_DONATION;
 
-    $rootScope.$on('payment', (e, { type, data }) => {
+    on('payment', (e, { type, data }) => {
         type === 'bitcoin.submit' && generate(data);
     });
 

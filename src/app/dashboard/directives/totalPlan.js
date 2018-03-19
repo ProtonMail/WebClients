@@ -1,5 +1,5 @@
 /* @ngInject */
-function totalPlan($filter, $rootScope, dashboardConfiguration, dashboardModel, gettextCatalog) {
+function totalPlan($filter, dashboardConfiguration, dashboardModel, dispatchers, gettextCatalog) {
     const amount = (plan, cycle, currency) => $filter('currency')(dashboardModel.total(plan, cycle) / 100 / cycle, currency);
     const types = ['addon.updated', 'cycle.updated', 'currency.updated', 'vpn.updated'];
     const month = gettextCatalog.getString('month', null);
@@ -10,19 +10,21 @@ function totalPlan($filter, $rootScope, dashboardConfiguration, dashboardModel, 
         scope: {},
         template: '<strong class="totalPlan"></strong>',
         link(scope, element, { plan }) {
+            const { on, unsubscribe } = dispatchers();
+
             function update() {
                 scope.$applyAsync(() => {
                     element.text(`${amount(plan, dashboardConfiguration.cycle(), dashboardConfiguration.currency())}/${month}`);
                 });
             }
 
-            const unsubscribe = $rootScope.$on('dashboard', (event, { type }) => {
+            on('dashboard', (event, { type }) => {
                 types.indexOf(type) > -1 && update();
             });
 
             update();
 
-            scope.$on('$destroy', () => unsubscribe());
+            scope.$on('$destroy', unsubscribe);
         }
     };
 }

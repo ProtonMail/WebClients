@@ -1,7 +1,7 @@
 import _ from 'lodash';
 
 /* @ngInject */
-function currencySelector($rootScope, dashboardConfiguration) {
+function currencySelector(dashboardConfiguration, dispatchers) {
     const ACTIVE_BUTTON_CLASS = 'active';
 
     return {
@@ -11,11 +11,12 @@ function currencySelector($rootScope, dashboardConfiguration) {
         link(scope, element) {
             const currency = dashboardConfiguration.currency();
             const $buttons = element.find('.currencySelector-button');
+            const { dispatcher, on, unsubscribe } = dispatchers(['dashboard']);
 
             function onClick(event) {
                 const currency = event.target.getAttribute('value');
 
-                $rootScope.$emit('dashboard', { type: 'change.currency', data: { currency } });
+                dispatcher.dashboard('change.currency', { currency });
                 active(currency);
             }
 
@@ -31,7 +32,7 @@ function currencySelector($rootScope, dashboardConfiguration) {
 
             element.on('click', onClick);
 
-            const unsubscribe = $rootScope.$on('subscription', (event, { type, data }) => {
+            on('subscription', (event, { type, data }) => {
                 type === 'update' && active(data.subscription.Currency);
             });
 

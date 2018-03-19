@@ -1,5 +1,6 @@
 /* @ngInject */
-function onCurrentMessage($rootScope) {
+function onCurrentMessage(dispatchers) {
+    const { on } = dispatchers();
     /**
      * Check if this is the current instance of the editor
      * @param  {Message} options.message Current message
@@ -22,6 +23,6 @@ function onCurrentMessage($rootScope) {
      * @param  {Function} cb    Actions callback
      * @return {Function}         unsubscribe
      */
-    return (event, scope, cb) => $rootScope.$on(event, onCurrentMessage(scope, cb));
+    return (event, scope, cb) => on(event, onCurrentMessage(scope, cb));
 }
 export default onCurrentMessage;

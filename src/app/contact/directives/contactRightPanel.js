@@ -28,9 +28,7 @@ function contactRightPanel(dispatchers, contactCache, $stateParams) {
                 type === 'selectContacts' && selectContacts();
             });
 
-            scope.$on('$destroy', () => {
-                unsubscribe();
-            });
+            scope.$on('$destroy', unsubscribe);
         }
     };
 }

@@ -1,14 +1,15 @@
 /* @ngInject */
-function eventListener(CONSTANTS, CONFIG, $rootScope, analytics, pageTitlesModel) {
+function eventListener(CONSTANTS, CONFIG, analytics, dispatchers, pageTitlesModel) {
     const TRACKED_STATES = ['signup', 'secured.dashboard', 'login', 'secured.inbox'];
 
     const state = { lastLocation: document.referrer };
+    const { on } = dispatchers();
 
     function generateTitle(state) {
         return document.domain + '/' + pageTitlesModel.find(state, false);
     }
 
-    $rootScope.$on('$stateChangeSuccess', (event, toState) => {
+    on('$stateChangeSuccess', (event, toState) => {
         const referrer = state.lastLocation;
         state.lastLocation = location.href;
 
@@ -22,7 +23,7 @@ function eventListener(CONSTANTS, CONFIG, $rootScope, analytics, pageTitlesModel
         analytics.trackPage({ title, referrer, url: location.href });
     });
 
-    $rootScope.$on('signup', (event, { type, data }) => {
+    on('signup', (event, { type, data }) => {
         if (type === 'user.subscription.finished') {
             const plan = data.plan || { Name: 'free' };
 

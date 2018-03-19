@@ -1,5 +1,6 @@
 /* @ngInject */
-function conversationListeners($rootScope, CONSTANTS) {
+function conversationListeners($rootScope, CONSTANTS, dispatchers) {
+    const { dispatcher, on, unsubscribe } = dispatchers(['composer.new']);
     const composerMapActions = {
         replyConversation: 'reply',
         replyAllConversation: 'replyall',
@@ -12,7 +13,7 @@ function conversationListeners($rootScope, CONSTANTS) {
     const openComposer = (key, message = {}) => () => {
         if (!isDraft(message) && isDecrypted(message)) {
             const type = composerMapActions[key];
-            $rootScope.$emit('composer.new', { type, data: { message } });
+            dispatcher['composer.new'](type, { message });
         }
     };
 
@@ -25,11 +26,10 @@ function conversationListeners($rootScope, CONSTANTS) {
      * @return {Function}         unsubscribe
      */
     function watch(message) {
-        const listeners = Object.keys(composerMapActions).map((key) => $rootScope.$on(key, openComposer(key, message)));
+        Object.keys(composerMapActions).map((key) => on(key, openComposer(key, message)));
 
         return () => {
-            listeners.forEach((cb) => cb());
-            listeners.length = 0;
+            unsubscribe();
         };
     }
 

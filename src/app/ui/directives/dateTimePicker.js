@@ -1,10 +1,7 @@
-import _ from 'lodash';
-
 /* @ngInject */
-function dateTimePicker($rootScope, datetimeErrorCombiner, timepickerModel, dateUtils) {
+function dateTimePicker(dispatchers, datetimeErrorCombiner, timepickerModel, dateUtils) {
     const minDate = new Date(1970, 1, 1);
 
-    const dispatch = (type, data) => $rootScope.$emit('timepicker', { type, data });
 
     return {
         replace: true,
@@ -24,8 +21,9 @@ function dateTimePicker($rootScope, datetimeErrorCombiner, timepickerModel, date
             datepicker.setAttribute('placeholder', dateUtils.I18N.localizedDatePlaceholder);
 
             return (scope, elem, { datePickerKey, timestamp, disableInput, labelId, zone }) => {
-                // definitions
-                const unsubscribe = [];
+                const { on, unsubscribe, dispatcher } = dispatchers(['timepicker']);
+                const dispatchHelper = (type, data) => dispatcher.timepicker(type, data);
+
                 const datepicker = elem.find('.datepicker');
 
                 timepickerModel.initTimePicker(timePickerKey, { disableInput, labelId: labelId + '_time' });
@@ -77,14 +75,14 @@ function dateTimePicker($rootScope, datetimeErrorCombiner, timepickerModel, date
                         typeof scope.model.date === 'undefined'
                     ) {
                         scope.timestamp = null;
-                        dispatch('update', { eventKey: scope.datePickerKey, timestamp: scope.timestamp });
+                        dispatchHelper('update', { eventKey: scope.datePickerKey, timestamp: scope.timestamp });
                         return;
                     }
 
                     // Format the selected date in the hours -> load the hours together with the stamp and convert that
                     // to an unix timestamp.
                     scope.timestamp = Number(moment.tz(moment(scope.model.date).format('YYYY-MM-DD'), scope.zone).format('X')) + scope.model.time;
-                    dispatch('update', { eventKey: scope.datePickerKey, timestamp: scope.timestamp });
+                    dispatchHelper('update', { eventKey: scope.datePickerKey, timestamp: scope.timestamp });
                 }
 
                 // initialization
@@ -97,25 +95,22 @@ function dateTimePicker($rootScope, datetimeErrorCombiner, timepickerModel, date
                 calcInternalVariables();
 
                 datepicker.on('change', onDateChange);
-                unsubscribe.push(
-                    $rootScope.$on('timepicker', (event, { type, data }) => {
-                        if (type === 'refresh' && data.eventKey === scope.datePickerKey) {
-                            scope.timestamp = data.timestamp;
-                            scope.zone = data.zone;
-                            calcInternalVariables();
-                        }
 
-                        if (type === 'update' && data.eventKey === timePickerKey) {
-                            calcTimestamp();
-                        }
-                    })
-                );
+                on('timepicker', (event, { type, data }) => {
+                    if (type === 'refresh' && data.eventKey === scope.datePickerKey) {
+                        scope.timestamp = data.timestamp;
+                        scope.zone = data.zone;
+                        calcInternalVariables();
+                    }
 
-                unsubscribe.push(() => datepicker.off('change', onDateChange));
+                    if (type === 'update' && data.eventKey === timePickerKey) {
+                        calcTimestamp();
+                    }
+                });
 
                 scope.$on('$destroy', () => {
-                    _.each(unsubscribe, (cb) => cb());
-                    unsubscribe.length = 0;
+                    unsubscribe();
+                    datepicker.off('change', onDateChange);
                 });
             };
         }

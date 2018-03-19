@@ -1,8 +1,9 @@
 import _ from 'lodash';
 
 /* @ngInject */
-function elementsError($rootScope) {
+function elementsError(dispatchers) {
     const errors = [];
+    const { on } = dispatchers();
 
     function last() {
         if (errors.length) {
@@ -11,13 +12,13 @@ function elementsError($rootScope) {
         return {};
     }
 
-    $rootScope.$on('elements', (event, { type, data = {} }) => {
+    on('elements', (event, { type, data = {} }) => {
         if (type === 'error') {
             errors.push(data);
         }
     });
 
-    $rootScope.$on('$stateChangeSuccess', () => {
+    on('$stateChangeSuccess', () => {
         errors.length = 0;
     });
 

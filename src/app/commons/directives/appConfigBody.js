@@ -1,6 +1,6 @@
 import { CONSTANTS } from '../../constants';
 /* @ngInject */
-function appConfigBody($rootScope, AppModel, mailSettingsModel) {
+function appConfigBody(AppModel, dispatchers, mailSettingsModel) {
     const className = (key = '') => `appConfigBody-${key}`;
     const mapClassNames = {
         mobile: className('is-mobile'),
@@ -17,6 +17,8 @@ function appConfigBody($rootScope, AppModel, mailSettingsModel) {
 
     return {
         link(scope, el) {
+            const { on, unsubscribe } = dispatchers();
+
             AppModel.is('mobile') && el[0].classList.add(mapClassNames.mobile);
             AppModel.is('tablet') && el[0].classList.add(mapClassNames.tablet);
 
@@ -32,12 +34,12 @@ function appConfigBody($rootScope, AppModel, mailSettingsModel) {
                 _rAF(() => el[0].classList[method](className));
             };
 
-            $rootScope.$on('AppModel', (e, { type, data }) => {
+            on('AppModel', (e, { type, data }) => {
                 const className = mapClassNames[type];
                 className && toggleClass(className, data);
             });
 
-            $rootScope.$on('mailSettings', (event, { type = '' }) => {
+            on('mailSettings', (event, { type = '' }) => {
                 if (type === 'updated') {
                     updateRows();
                 }
@@ -45,9 +47,11 @@ function appConfigBody($rootScope, AppModel, mailSettingsModel) {
 
             updateRows();
 
-            $rootScope.$on('$stateChangeSuccess', (e, toState) => {
+            on('$stateChangeSuccess', (e, toState) => {
                 el[0].id = toState.name.replace(/[.]+/g, '-');
             });
+
+            scope.$on('$destroy', unsubscribe);
         }
     };
 }

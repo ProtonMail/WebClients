@@ -3,12 +3,12 @@ import duplicateExtractor from '../../../helpers/duplicateExtractor';
 
 /* @ngInject */
 function contactMerger(
-    $rootScope,
     contactMergerModal,
     contactDisplayModal,
     contactEditor,
     contactSchema,
     Contact,
+    dispatchers,
     gettextCatalog,
     networkActivityTracker,
     notification,
@@ -18,6 +18,8 @@ function contactMerger(
         mergeContacts: gettextCatalog.getString('Merge contacts', null, 'Title'),
         noDuplicate: gettextCatalog.getString('You have no duplicate contacts', null, 'Info')
     };
+
+    const { on } = dispatchers();
 
     /**
      * Extract emails from vCard contact
@@ -274,7 +276,7 @@ function contactMerger(
         return promise;
     }
 
-    $rootScope.$on('contacts', (event, { type, data = {} }) => {
+    on('contacts', (event, { type, data = {} }) => {
         type === 'mergeContacts' && mergeContacts(data.contactIDs);
     });
 

@@ -1,5 +1,5 @@
 /* @ngInject */
-function progressUpload($rootScope, CONSTANTS) {
+function progressUpload(dispatchers, CONSTANTS) {
     const { UPLOAD_GRADIENT_DARK, UPLOAD_GRADIENT_LIGHT } = CONSTANTS;
     const CLASS_UPLOADED = 'progressUpload-uploaded';
     const CLASS_UPLOADING = 'progressUpload-uploading';
@@ -34,6 +34,8 @@ function progressUpload($rootScope, CONSTANTS) {
         replace: true,
         templateUrl: require('../../../templates/directives/ui/progressUpload.tpl.html'),
         link(scope, el) {
+            const { on, unsubscribe } = dispatchers();
+
             const tester = isAttachementOfMessage(scope.model);
 
             /**
@@ -50,7 +52,7 @@ function progressUpload($rootScope, CONSTANTS) {
             // UX response, the user can see it's uploading even with a slow co
             el[0].style.background = getProgressStyle(1);
 
-            const unsubscribe = $rootScope.$on('attachment.upload', (e, { type, data = {} }) => {
+            on('attachment.upload', (e, { type, data = {} }) => {
                 if (!tester.isMessage(data) || !tester.isAttachment(data)) {
                     return;
                 }
@@ -75,7 +77,7 @@ function progressUpload($rootScope, CONSTANTS) {
                 }
             });
 
-            scope.$on('$destroy', () => unsubscribe());
+            scope.$on('$destroy', unsubscribe);
         }
     };
 }

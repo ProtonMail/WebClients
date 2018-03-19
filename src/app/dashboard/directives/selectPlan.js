@@ -1,5 +1,5 @@
 /* @ngInject */
-function selectPlan($rootScope, gettextCatalog, subscriptionModel) {
+function selectPlan(dispatchers, gettextCatalog, subscriptionModel) {
     const ACTIVE_BUTTON_CLASS = 'primary';
     const I18N = {
         downgradeToFree: gettextCatalog.getString('Downgrade to Free', null, 'Button to select plan on the dashboard'),
@@ -47,8 +47,10 @@ function selectPlan($rootScope, gettextCatalog, subscriptionModel) {
         scope: {},
         template: '<button class="selectPlan-button pm_button large" type="button"></button>',
         link(scope, element, { plan }) {
-            const onClick = () => $rootScope.$emit('dashboard', { type: 'select.plan', data: { plan } });
-            const unsubscribe = $rootScope.$on('subscription', (event, { type }) => {
+            const { dispatcher, on, unsubscribe } = dispatchers(['dashboard']);
+            const onClick = () => dispatcher.dashboard('select.plan', { plan });
+
+            on('subscription', (event, { type }) => {
                 type === 'update' && update();
             });
 

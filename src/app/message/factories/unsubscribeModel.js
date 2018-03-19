@@ -2,10 +2,12 @@ import _ from 'lodash';
 import { openWindow, parseURL } from '../../../helpers/browser';
 
 /* @ngInject */
-function unsubscribeModel($rootScope, addressesModel, authentication, gettextCatalog, messageModel, notification, simpleSend) {
+function unsubscribeModel(authentication, dispatchers, addressesModel, gettextCatalog, messageModel, notification, simpleSend) {
 
     const LIST = [];
     const UNSUBSCRIBE_REGEX = /<(.*?)>/g;
+
+    const { dispatcher, on } = dispatchers(['message']);
 
     const successMessage = gettextCatalog.getString('Unsubscribed', null, 'Success notification');
 
@@ -60,7 +62,7 @@ function unsubscribeModel($rootScope, addressesModel, authentication, gettextCat
         });
 
         LIST.push(list);
-        $rootScope.$emit('message', { type: 'unsubscribed', data: { message } });
+        dispatcher.message('unsubscribed', { message });
     }
 
     /**
@@ -76,7 +78,7 @@ function unsubscribeModel($rootScope, addressesModel, authentication, gettextCat
         return _.find(matches, (value = '') => value.startsWith(type));
     }
 
-    $rootScope.$on('message', (event, { type, data = {} }) => {
+    on('message', (event, { type, data = {} }) => {
         type === 'unsubscribe' && unsubscribe(data.message);
     });
 

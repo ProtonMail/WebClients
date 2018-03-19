@@ -1,5 +1,5 @@
 /* @ngInject */
-function btnSendMessage($rootScope, gettextCatalog) {
+function btnSendMessage(dispatchers, gettextCatalog) {
     /**
      * Find the label depending on the status of the message
      * @param  {Object} msg Message
@@ -43,17 +43,15 @@ function btnSendMessage($rootScope, gettextCatalog) {
         template: '<button class="btnSendMessage-btn-action"></button>',
         link(scope, el) {
             const isCurrentMsg = (msg) => msg.ID === scope.model.ID;
+            const { dispatcher, on, unsubscribe } = dispatchers(['composer.update']);
 
             el[0].textContent = getLabel(scope.model);
 
             const onClick = () => {
-                $rootScope.$emit('composer.update', {
-                    type: 'send.message',
-                    data: { message: scope.model }
-                });
+                dispatcher['composer.update']('send.message', { message: scope.model });
             };
 
-            const unsubscribe = $rootScope.$on('actionMessage', (e, message) => {
+            on('actionMessage', (e, { data: message }) => {
                 if (isCurrentMsg(message)) {
                     el[0].textContent = getLabel(message);
 

@@ -1,14 +1,15 @@
 import { CONSTANTS } from '../../constants';
 
 /* @ngInject */
-function attachmentApi($http, url, $q, $rootScope, authentication, pmcw, CONFIG, secureSessionStorage, gettextCatalog) {
+function attachmentApi($http, url, $q, dispatchers, authentication, pmcw, CONFIG, secureSessionStorage, gettextCatalog) {
     const MAP = {
         message: {},
         request: {}
     };
 
     const requestURL = url.build('attachments');
-    const dispatch = (type, data) => $rootScope.$emit('attachment.upload', { type, data });
+    const { dispatcher } = dispatchers(['attachment.upload']);
+    const dispatch = (type, data) => dispatcher['attachment.upload'](type, data);
     const dispatchUpload = (REQUEST_ID, message, packet) => (progress, status, isStart = false) => {
         dispatch('uploading', {
             id: REQUEST_ID,
@@ -85,9 +86,10 @@ function attachmentApi($http, url, $q, $rootScope, authentication, pmcw, CONFIG,
         const deferred = $q.defer();
         const xhr = new XMLHttpRequest();
         const keys = authentication.getPrivateKeys(message.AddressID);
+        const { on, unsubscribe } = dispatchers();
 
         // Check the network status of the app (XHR does not auto close)
-        const unsubscribe = $rootScope.$on('AppModel', (e, { type, data = {} }) => {
+        on('AppModel', (e, { type, data = {} }) => {
             if (type === 'onLine' && !data.value) {
                 xhr.abort();
             }

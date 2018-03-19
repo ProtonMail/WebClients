@@ -31,7 +31,7 @@ function AccountController(
     userSettingsModel
 ) {
     let promisePasswordModal;
-    const { unsubscribe, on } = dispatchers(['mailSettings', 'userSettings']);
+    const { on, unsubscribe } = dispatchers();
     $scope.emailing = { announcements: false, features: false, newsletter: false, beta: false };
     $scope.locales = [
         { label: 'Deutsch', key: 'de_DE' },

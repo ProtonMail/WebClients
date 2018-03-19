@@ -1,5 +1,5 @@
 /* @ngInject */
-function composerAskEmbedded($rootScope, gettextCatalog) {
+function composerAskEmbedded(dispatchers, gettextCatalog) {
     const buildTitle = (node, pending) => {
         node.textContent = gettextCatalog.getPlural(
             pending,
@@ -15,11 +15,12 @@ function composerAskEmbedded($rootScope, gettextCatalog) {
         templateUrl: require('../../../templates/directives/composer/composerAskEmbedded.tpl.html'),
         link(scope, el, { action = '' }) {
             const key = ['attachment.upload', action].filter(Boolean).join('.');
-            const dispatch = (data) => $rootScope.$emit(key, { type: 'upload', data });
+            const { dispatcher, on, unsubscribe } = dispatchers([key]);
+            const dispatch = (data) => dispatcher[key]('upload', data);
 
             const $title = el[0].querySelector('.composerAskEmbdded-title');
 
-            const unsubscribe = $rootScope.$on(key, (e, { type, data }) => {
+            on(key, (e, { type, data }) => {
                 if (type === 'drop') {
                     // Compute how many upload do we have and render it
                     buildTitle($title, data.queue.files.filter(({ isEmbedded }) => isEmbedded).length);

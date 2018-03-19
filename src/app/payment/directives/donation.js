@@ -1,7 +1,7 @@
 import _ from 'lodash';
 
 /* @ngInject */
-function donation(CONSTANTS, cardModel, gettextCatalog, $rootScope, paymentUtils, donateModel, authentication) {
+function donation(CONSTANTS, cardModel, gettextCatalog, dispatchers, paymentUtils, donateModel, authentication) {
     const SELECTOR = {
         BTN_AMOUNT: 'donationForm-btn-amount',
         BTN_SUBMIT: 'donationForm-btn-submit',
@@ -12,9 +12,6 @@ function donation(CONSTANTS, cardModel, gettextCatalog, $rootScope, paymentUtils
 
     donateModel.init();
     const CURRENCIES = CONSTANTS.CURRENCIES.map((value) => ({ label: value, value }));
-
-    const dispatch = (type, data = {}) => $rootScope.$emit('payments', { type, data });
-    const loadDonation = (type, action) => (options) => dispatch('donate.submit', { type, options, action });
 
     const getParameters = (scope) => (paypalConfig = {}) => {
         const Amount = (scope.model.otherAmount || scope.model.amount) * 100;
@@ -52,6 +49,11 @@ function donation(CONSTANTS, cardModel, gettextCatalog, $rootScope, paymentUtils
         },
         templateUrl: require('../../../templates/payment/donation.tpl.html'),
         link(scope, el, { action = '' }) {
+            const { on, unsubscribe, dispatcher } = dispatchers(['payments']);
+            const dispatch = (type, data = {}) => dispatcher.payments(type, data);
+            const loadDonation = (type, action) => (options) => dispatch('donate.submit', { type, options, action });
+
+
             const $items = el.find(SELECTOR.SELECT_CURRENCY);
             const $other = el.find(SELECTOR.INPUT_OTHER);
             const $methods = el.find(SELECTOR.SELECT_METHOD);
@@ -113,7 +115,7 @@ function donation(CONSTANTS, cardModel, gettextCatalog, $rootScope, paymentUtils
             $methods.on('change', onChangeMethod);
             $other.on('input', onInput);
 
-            const unsubscribe = $rootScope.$on('payments', (e, { type }) => {
+            on('payments', (e, { type }) => {
                 if (/^(donation|topUp)\.request\.load/.test(type)) {
                     scope.$applyAsync(() => (scope.processing = true));
                 }

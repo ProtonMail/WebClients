@@ -3,8 +3,8 @@ import createScrollHelper from '../../../helpers/dragScrollHelper';
 
 /* @ngInject */
 function customFilterList(
-    $rootScope,
     authentication,
+    dispatchers,
     networkActivityTracker,
     Filter,
     gettextCatalog,
@@ -20,7 +20,7 @@ function customFilterList(
         scope: {},
         link(scope) {
             // Variables
-            const unsubscribe = [];
+            const { on, unsubscribe } = dispatchers();
             scope.customFilters = null;
 
             const promise = Filter.query().then((data = {}) => {
@@ -29,15 +29,13 @@ function customFilterList(
 
             networkActivityTracker.track(promise);
 
-            unsubscribe.push(
-                $rootScope.$on('changeCustomFilterStatus', (event, { id, status }) => {
-                    const filter = _.find(scope.customFilters, { ID: id });
+            on('changeCustomFilterStatus', (event, { id, status }) => {
+                const filter = _.find(scope.customFilters, { ID: id });
 
-                    if (filter) {
-                        changeCustomFilterStatus(filter, status);
-                    }
-                })
-            );
+                if (filter) {
+                    changeCustomFilterStatus(filter, status);
+                }
+            });
 
             const { dragStart, dragMove, dragEnd } = createScrollHelper({ scrollableSelector: '#pm_settings .settings' });
             // Drag and Drop configuration
@@ -78,10 +76,7 @@ function customFilterList(
                 }
             };
 
-            scope.$on('$destroy', () => {
-                unsubscribe.forEach((cb) => cb());
-                unsubscribe.length = 0;
-            });
+            scope.$on('$destroy', unsubscribe);
 
             scope.$on('deleteFilter', (event, filterId) => {
                 if (!scope.itemMoved) {

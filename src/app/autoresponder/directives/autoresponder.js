@@ -1,7 +1,5 @@
-import _ from 'lodash';
-
 /* @ngInject */
-function autoresponder(autoresponderModel, timepickerModel, $rootScope, autoresponderLanguage) {
+function autoresponder(autoresponderModel, timepickerModel, autoresponderLanguage, dispatchers) {
     const frequencies = [
         { label: autoresponderLanguage.DURATION_FOREVER, value: autoresponderModel.constants.FOREVER },
         { label: autoresponderLanguage.DURATION_FIXED, value: autoresponderModel.constants.FIXED_INTERVAL },
@@ -16,7 +14,7 @@ function autoresponder(autoresponderModel, timepickerModel, $rootScope, autoresp
         templateUrl: require('../../../templates/autoresponder/autoresponder.tpl.html'),
         scope: {},
         link(scope, elem, { mock }) {
-            const unsubscribe = [];
+            const { dispatcher, unsubscribe, on } = dispatchers(['autoresponder']);
 
             /*
                  When the user is a free user we need to show a disabled interface that shows what can be done
@@ -57,9 +55,12 @@ function autoresponder(autoresponderModel, timepickerModel, $rootScope, autoresp
             };
 
             const onFormSubmit = () => {
+                if (scope.mock) {
+                    return;
+                }
                 scope.$applyAsync(() => {
                     scope.submitting = true;
-                    $rootScope.$emit('autoresponder', { type: 'save', data: { autoresponder: scope.model } });
+                    dispatcher.autoresponder('save', { autoresponder: scope.model });
                 });
             };
 
@@ -70,49 +71,42 @@ function autoresponder(autoresponderModel, timepickerModel, $rootScope, autoresp
                   if you would get a paid subscription: essentially a mock-up is shown.
                  */
             if (scope.mock) {
-                unsubscribe.push(
-                    $rootScope.$on('autoresponder', (event, { type, data = {} }) => {
-                        if (type === 'update') {
-                            scope.model = data.autoresponder;
-                        }
-                    })
-                );
+                on('autoresponder', (event, { type, data = {} }) => {
+                    if (type === 'update') {
+                        scope.model = data.autoresponder;
+                    }
+                });
 
                 autoresponderModel.mock();
             } else {
-                unsubscribe.push(
-                    $rootScope.$on('autoresponder', (event, { type, data = {} }) => {
-                        switch (type) {
-                            case 'update':
-                                scope.model = data.autoresponder;
-                                break;
-                            case 'saved_success':
-                            case 'saved_error':
-                                scope.submitting = false;
-                                break;
-                        }
-                    })
-                );
+                on('autoresponder', (event, { type, data = {} }) => {
+                    switch (type) {
+                        case 'update':
+                            scope.model = data.autoresponder;
+                            break;
+                        case 'saved_success':
+                        case 'saved_error':
+                            scope.submitting = false;
+                            break;
+                    }
+                });
 
-                unsubscribe.push(
-                    $rootScope.$on('autoresponder.toggle', (e, { status }) => {
-                        autoresponderModel.set({ isEnabled: status });
-                        if (!status) {
-                            onFormSubmit();
-                        }
-                    })
-                );
-
-                const form = elem.find('form');
-                form.on('submit', onFormSubmit);
-                unsubscribe.push(() => form.off('submit', onFormSubmit));
+                on('autoresponder.toggle', (e, { status }) => {
+                    autoresponderModel.set({ isEnabled: status });
+                    if (!status) {
+                        onFormSubmit();
+                    }
+                });
 
                 autoresponderModel.load();
             }
 
+            const form = elem.find('form');
+            form.on('submit', onFormSubmit);
+
             scope.$on('$destroy', () => {
-                _.each(unsubscribe, (cb) => cb());
-                unsubscribe.length = 0;
+                unsubscribe();
+                form.off('submit', onFormSubmit);
             });
         }
     };

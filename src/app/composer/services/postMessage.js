@@ -21,7 +21,7 @@ function postMessage(
         SAVE_MESSAGE_SUCCESS: gettextCatalog.getString('Message saved', null, 'Record message')
     };
     const unicodeTagView = $filter('unicodeTagView');
-    const dispatchMessageAction = (message) => $rootScope.$emit('actionMessage', message);
+    const dispatchMessageAction = (message) => $rootScope.$emit('actionMessage', { data: message });
 
     /**
      * Extend local attachements for a message with remote's

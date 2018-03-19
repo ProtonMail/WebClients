@@ -1,10 +1,11 @@
 /* @ngInject */
-const sidebarMobile = (sidebarModel, $rootScope, authentication, AppModel, userType) => ({
+const sidebarMobile = (sidebarModel, dispatchers, authentication, AppModel, userType) => ({
     replace: true,
     scope: {},
     templateUrl: require('../../../templates/partials/sidebar-responsive.tpl.html'),
     link(scope) {
-        const unsubscribes = [];
+        const { on, unsubscribe } = dispatchers();
+
         const setUserType = () => {
             const { isAdmin, isFree } = userType();
             scope.isAdmin = isAdmin;
@@ -21,18 +22,13 @@ const sidebarMobile = (sidebarModel, $rootScope, authentication, AppModel, userT
             }, 1000);
         };
 
-        unsubscribes.push(
-            $rootScope.$on('$stateChangeStart', () => {
-                AppModel.set('showSidebar', false);
-            })
-        );
-
-        unsubscribes.push($rootScope.$on('updateUser', setUserType));
-
-        scope.$on('$destroy', () => {
-            unsubscribes.forEach((cb) => cb());
-            unsubscribes.length = 0;
+        on('$stateChangeStart', () => {
+            AppModel.set('showSidebar', false);
         });
+
+        on('updateUser', setUserType);
+
+        scope.$on('$destroy', unsubscribe);
     }
 });
 export default sidebarMobile;

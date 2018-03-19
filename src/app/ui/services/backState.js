@@ -1,5 +1,5 @@
 /* @ngInject */
-function backState($rootScope, $state, CONSTANTS, tools, mailSettingsModel) {
+function backState(dispatchers, $state, CONSTANTS, tools, mailSettingsModel) {
     const { MAILBOX_IDENTIFIERS } = CONSTANTS;
 
     /**
@@ -9,7 +9,9 @@ function backState($rootScope, $state, CONSTANTS, tools, mailSettingsModel) {
     const CACHE = {};
     const cleanState = (state = '') => state.replace('.element', '');
 
-    $rootScope.$on('$stateChangeSuccess', (e, toState, toParams, fromState = {}, fromParams = {}) => {
+    const { on } = dispatchers();
+
+    on('$stateChangeSuccess', (e, toState, toParams, fromState = {}, fromParams = {}) => {
         if (fromState.name && MAILBOX_IDENTIFIERS[tools.filteredState(fromState.name)]) {
             const { ViewMode } = mailSettingsModel.get();
 

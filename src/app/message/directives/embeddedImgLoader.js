@@ -1,6 +1,7 @@
 /* @ngInject */
-function embeddedImgLoader($rootScope, $log, embedded) {
+function embeddedImgLoader($log, dispatchers, embedded) {
     const buildMapCid = (map = {}, img, src) => ((map[img.getAttribute('data-embedded-img')] = src), map);
+    const { dispatcher, on, unsubscribe } = dispatchers(['message.open']);
 
     const getPromiseImg = (img, src) => {
         const image = new Image();
@@ -59,14 +60,11 @@ function embeddedImgLoader($rootScope, $log, embedded) {
                     }
 
                     if (images.length) {
-                        $rootScope.$emit('message.open', {
-                            type: 'embedded.injected',
-                            data: {
-                                action,
-                                map,
-                                message,
-                                body: body.innerHTML
-                            }
+                        dispatcher['message.open']('embedded.injected', {
+                            action,
+                            map,
+                            message,
+                            body: body.innerHTML
                         });
                     }
                 });
@@ -76,14 +74,14 @@ function embeddedImgLoader($rootScope, $log, embedded) {
 
     return {
         link(scope) {
-            const unsubscribe = $rootScope.$on('message.embedded', (e, { type, data }) => {
+            on('message.embedded', (e, { type, data }) => {
                 if (type === 'loaded') {
                     // Need to build images after the $digest as we need the decrypted body to be already compiled
                     scope.$applyAsync(() => bindImagesUrl(data));
                 }
             });
 
-            scope.$on('$destroy', () => unsubscribe());
+            scope.$on('$destroy', unsubscribe);
         }
     };
 }

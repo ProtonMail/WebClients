@@ -1,9 +1,8 @@
 /* @ngInject */
-function signupPayForm(paymentUtils, $rootScope, $stateParams, cardModel, giftCodeModel, notification, gettextCatalog) {
+function signupPayForm(paymentUtils, dispatchers, $stateParams, cardModel, giftCodeModel, notification, gettextCatalog) {
     const I18N = {
         invalidGiftCode: gettextCatalog.getString('Invalid gift code', null, 'Error')
     };
-    const dispatch = (type, data) => $rootScope.$emit('signup', { type, data });
 
     return {
         replace: true,
@@ -13,6 +12,10 @@ function signupPayForm(paymentUtils, $rootScope, $stateParams, cardModel, giftCo
         },
         templateUrl: require('../../../templates/user/signupPayForm.tpl.html'),
         link(scope, el) {
+            const { on, unsubscribe, dispatcher } = dispatchers(['signup']);
+
+            const dispatchHelper = (type, data) => dispatcher.signup(type, data);
+
             const $btnFeatures = el.find('.signupPayForm-btn-features');
             const $btnApply = el.find('.signupPayForm-btn-apply');
             const { list, selected } = paymentUtils.generateMethods({
@@ -24,7 +27,7 @@ function signupPayForm(paymentUtils, $rootScope, $stateParams, cardModel, giftCo
             scope.giftModel = {};
 
             scope.onPaypalSuccess = (Details) => {
-                dispatch('payform.submit', {
+                dispatchHelper('payform.submit', {
                     form: scope.account,
                     source: scope.method.value,
                     payment: {
@@ -49,7 +52,7 @@ function signupPayForm(paymentUtils, $rootScope, $stateParams, cardModel, giftCo
                 }
             };
 
-            const unsubscribe = $rootScope.$on('signup', (e, { type = '', data = {} }) => {
+            on('signup', (e, { type = '', data = {} }) => {
                 if (type === 'payment.verify.error') {
                     scope.$applyAsync(() => (scope.errorPay = true));
                 }
@@ -80,7 +83,7 @@ function signupPayForm(paymentUtils, $rootScope, $stateParams, cardModel, giftCo
                     scope.errorPay = false;
 
                     const card = cardModel(scope.account.card);
-                    dispatch('payform.submit', {
+                    dispatchHelper('payform.submit', {
                         form: scope.account,
                         source: scope.method.value,
                         payment: {
@@ -101,7 +104,7 @@ function signupPayForm(paymentUtils, $rootScope, $stateParams, cardModel, giftCo
                     return notification.error(I18N.invalidGiftCode);
                 }
 
-                dispatch('apply.gift', {
+                dispatchHelper('apply.gift', {
                     Credit: scope.plan.Amount,
                     Currency: scope.plan.Currency,
                     GiftCode: scope.giftCode

@@ -1,5 +1,5 @@
 /* @ngInject */
-function giftCodeModal($rootScope, gettextCatalog, notification, paymentModel, pmModal) {
+function giftCodeModal(dispatchers, gettextCatalog, notification, paymentModel, pmModal) {
     const I18N = {
         success: gettextCatalog.getString('Code applied', null, 'Success')
     };
@@ -8,7 +8,9 @@ function giftCodeModal($rootScope, gettextCatalog, notification, paymentModel, p
         templateUrl: require('../../../templates/payment/giftCodeModal.tpl.html'),
         /* @ngInject */
         controller: function(params) {
-            const unsubscribe = $rootScope.$on('payments', (e, { type }) => {
+            const { on, unsubscribe } = dispatchers();
+
+            on('payments', (e, { type }) => {
                 if (type === 'giftCode.success') {
                     params.close();
                 }

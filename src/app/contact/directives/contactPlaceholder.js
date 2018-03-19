@@ -24,9 +24,7 @@ function contactPlaceholder(dispatchers, contactCache) {
                 }
             });
 
-            scope.$on('$destroy', () => {
-                unsubscribe();
-            });
+            scope.$on('$destroy', unsubscribe);
         }
     };
 }

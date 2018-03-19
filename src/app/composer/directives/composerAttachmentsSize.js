@@ -1,16 +1,17 @@
 /* @ngInject */
-const composerAttachmentsSize = ($rootScope, $filter) => ({
+const composerAttachmentsSize = ($filter, dispatchers) => ({
     replace: true,
     templateUrl: require('../../../templates/directives/composer/composerAttachmentsSize.tpl.html'),
     link(scope, el) {
         const humanSize = $filter('humanSize');
+        const { on, unsubscribe } = dispatchers();
         let attachmentsSize = 0;
 
         const updateTotalSize = (size) => {
             el[0].textContent = humanSize(size);
         };
 
-        const unsubscribe = $rootScope.$on('attachment.upload', (e, { type, data }) => {
+        on('attachment.upload', (e, { type, data }) => {
             if (type === 'uploaded.success') {
                 attachmentsSize += data.packet.Size;
                 updateTotalSize(attachmentsSize);

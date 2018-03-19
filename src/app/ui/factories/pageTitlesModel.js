@@ -3,9 +3,10 @@ import _ from 'lodash';
 import { flow, filter, sortBy, head } from 'lodash/fp';
 
 /* @ngInject */
-function pageTitlesModel(CONSTANTS, $injector, $rootScope, gettextCatalog, authentication, $state, tools) {
+function pageTitlesModel(CONSTANTS, $injector, dispatchers, gettextCatalog, authentication, $state, tools) {
     const { MAILBOX_IDENTIFIERS } = CONSTANTS;
     const DISPLAY_NUMBER = ['inbox', 'drafts', 'sent', 'starred', 'archive', 'spam', 'trash', 'allmail', 'allDrafts', 'allSent'];
+    const { on } = dispatchers();
 
     const loadI18N = () => ({
         'eo.message': gettextCatalog.getString('Encrypted Message', null, 'Title'),
@@ -114,7 +115,7 @@ function pageTitlesModel(CONSTANTS, $injector, $rootScope, gettextCatalog, authe
             .join(' | ');
     };
 
-    $rootScope.$on('i18n', (event, { type }) => {
+    on('i18n', (event, { type }) => {
         if (type === 'load') {
             MAP = loadI18N();
         }

@@ -2,7 +2,9 @@ import _ from 'lodash';
 import htmlToTextMail from '../helpers/htmlToTextMail';
 
 /* @ngInject */
-function toggleModeEditor($rootScope, embeddedUtils, attachmentModel, editorModel, textToHtmlMail) {
+function toggleModeEditor($rootScope, dispatchers, embeddedUtils, attachmentModel, editorModel, textToHtmlMail) {
+    const { on, dispatcher } = dispatchers(['squire.toggleMode', 'attachment.upload']);
+
     const MODE = {
         PLAINTEXT: 'text/plain',
         DEFAULT: 'text/html'
@@ -23,7 +25,7 @@ function toggleModeEditor($rootScope, embeddedUtils, attachmentModel, editorMode
         ATTACHMENTS_PROCESSING: {}
     };
 
-    const dispatch = (type, message) => $rootScope.$emit('squire.toggleMode', { type, data: { message } });
+    const dispatch = (type, message) => dispatcher['squire.toggleMode'](type, { message });
 
     const isUploadingInline = (message) => {
         return (
@@ -43,7 +45,7 @@ function toggleModeEditor($rootScope, embeddedUtils, attachmentModel, editorMode
         );
     };
 
-    $rootScope.$on('attachment.upload', (event, { type, data }) => {
+    on('attachment.upload', (event, { type, data }) => {
         if ((type === 'remove.success' || type === 'remove.error') && CACHE.ATTACHMENTS_PROCESSING[data.message.ID]) {
             delete CACHE.ATTACHMENTS_PROCESSING[data.message.ID][data.attachment.ID];
         }
@@ -101,10 +103,7 @@ function toggleModeEditor($rootScope, embeddedUtils, attachmentModel, editorMode
 
         // remove attachments
         const list = message.Attachments.filter(embeddedUtils.isEmbedded);
-        $rootScope.$emit('attachment.upload', {
-                type: 'remove.all',
-                data: { message, list }
-        });
+        dispatcher['attachment.upload']('remove.all', { message, list });
         CACHE.ATTACHMENTS_PROCESSING[message.ID] = CACHE.ATTACHMENTS_PROCESSING[message.ID] || {};
         const map = list.reduce((acc, { ID }) => ((acc[ID] = true), acc), {});
         _.extend(CACHE.ATTACHMENTS_PROCESSING[message.ID], map);
@@ -155,7 +154,7 @@ function toggleModeEditor($rootScope, embeddedUtils, attachmentModel, editorMode
         [MODE.DEFAULT]: actionFactory(toDefault)
     };
 
-    $rootScope.$on('squire.editor', (event, { type, data }) => {
+    on('squire.editor', (event, { type, data }) => {
         if (type === 'squireActions' && data.action === 'setEditorMode') {
             action[data.argument.value](data);
         }

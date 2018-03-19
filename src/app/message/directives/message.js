@@ -7,8 +7,7 @@ const getRecipients = ({ ToList = [], CCList = [], BCCList = [] } = {}) => ToLis
 const noRecipients = (message) => !getRecipients(message).length;
 
 /* @ngInject */
-function message($state, $rootScope, cache, displayContent, messageScroll, tools, unsubscribeModel, $exceptionHandler) {
-
+function message($state, dispatchers, cache, displayContent, messageScroll, tools, unsubscribeModel, $exceptionHandler) {
     /**
      * Back to element list
      */
@@ -41,7 +40,8 @@ function message($state, $rootScope, cache, displayContent, messageScroll, tools
             index: '='
         },
         link(scope, element) {
-            const unsubscribe = [];
+            const { on, dispatcher, unsubscribe } = dispatchers(['messageActions', 'composer.load']);
+
             const bindClasses = (message) => {
                 element[0].classList[noRecipients(message) ? 'add' : 'remove'](CLASSNAME.UNDISCLOSED);
             };
@@ -84,8 +84,7 @@ function message($state, $rootScope, cache, displayContent, messageScroll, tools
             scope.unsubscribed = unsubscribeModel.already(scope.message.getListUnsubscribe());
             (scope.message.openMe || scope.message.expand) && openMessage();
 
-            unsubscribe.push(
-                $rootScope.$on('message.open', (e, { type, data }) => {
+                on('message.open', (e, { type, data }) => {
                     if (data.message.ID !== scope.message.ID) {
                         return;
                     }
@@ -119,21 +118,17 @@ function message($state, $rootScope, cache, displayContent, messageScroll, tools
                             openMessage();
                             break;
                     }
-                })
-            );
+                });
 
-            unsubscribe.push(
-                $rootScope.$on('message', (event, { type = '', data = {} }) => {
+                on('message', (event, { type = '', data = {} }) => {
                     if (type === 'unsubscribed' && data.message.ID === scope.message.ID) {
                         scope.$applyAsync(() => {
                             scope.unsubscribed = unsubscribeModel.already(scope.message.getListUnsubscribe());
                         });
                     }
-                })
-            );
+                });
 
-            unsubscribe.push(
-                $rootScope.$on('message.refresh', (event, messageIDs) => {
+                on('message.refresh', (event, messageIDs) => {
                     if (messageIDs.indexOf(scope.message.ID) > -1) {
                         const message = cache.getMessageCached(scope.message.ID);
                         const type = tools.typeView();
@@ -145,13 +140,12 @@ function message($state, $rootScope, cache, displayContent, messageScroll, tools
                             back();
                         }
                     }
-                })
-            );
+                });
 
             function openMessage({ expand } = {}) {
                 if (scope.message.Type === 1) {
                     if ($state.includes('secured.drafts.**')) {
-                        $rootScope.$emit('composer.load', scope.message);
+                        dispatcher['composer.load']('', scope.message);
                     }
                     return;
                 }
@@ -204,13 +198,10 @@ function message($state, $rootScope, cache, displayContent, messageScroll, tools
              */
             scope.saveLabels = (labels, alsoArchive) => {
                 const messages = [scope.message];
-                $rootScope.$emit('messageActions', { action: 'label', data: { messages, labels, alsoArchive } });
+                dispatcher.messageActions('label', { messages, labels, alsoArchive });
             };
 
-            scope.$on('$destroy', () => {
-                unsubscribe.forEach((cb) => cb());
-                unsubscribe.length = 0;
-            });
+            scope.$on('$destroy', unsubscribe);
         }
     };
 }

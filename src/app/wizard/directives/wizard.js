@@ -1,9 +1,9 @@
 /* @ngInject */
 function wizard(
+    dispatchers,
     $stateParams,
     $timeout,
     $state,
-    dispatchers,
     welcomeModal,
     blackFridayModal,
     blackFridayModel,

@@ -1,9 +1,10 @@
 import _ from 'lodash';
 
 /* @ngInject */
-function composerContainer($rootScope, authentication, composerRender, composerLoader) {
+function composerContainer(authentication, composerRender, composerLoader, dispatchers) {
     return {
         link(scope, el) {
+            const { on, unsubscribe } = dispatchers();
             const focusMessage = composerLoader(scope);
             const renderList = (data) => {
                 const $list = [].slice.call(el[0].querySelectorAll('.composer-container'));
@@ -41,7 +42,7 @@ function composerContainer($rootScope, authentication, composerRender, composerL
             const onOrientationChange = () => openClose('close');
             window.addEventListener('orientationchange', onOrientationChange, false);
 
-            const unsubscribe = $rootScope.$on('composer.update', (e, { type, data }) => {
+            on('composer.update', (e, { type, data }) => {
                 switch (type) {
                     case 'focus.dragenter':
                     case 'focus.click':

@@ -1,6 +1,6 @@
 /* @ngInject */
 function windowModel(dispatchers) {
-    const { on } = dispatchers(['subscription']);
+    const { on } = dispatchers();
     const CACHE = {
         windows: []
     };
