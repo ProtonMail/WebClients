@@ -1,8 +1,0 @@
-#!/usr/bin/env bash
-
-# Runs bower
-#
-# USAGE
-#     bin/bower [command]
-
-exec ./node_modules/.bin/bower "$@"
