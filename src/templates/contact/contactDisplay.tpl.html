@@ -5,7 +5,7 @@
                 <i class="fa" ng-class="::value.icon"></i>{{ ::value.label }}
             </label>
             <span class="contactDisplay-item-value">{{ ::value.value }}</span>
-            <img ng-if="value.key === 'photo'" class="contactDisplay-item-image" src="{{ ::value.value }}" alt="Photo">
+            <img ng-if="value.key === 'photo'" class="contactDisplay-item-image" ng-src="{{ ::value.value }}" alt="Photo">
         </div>
     </div>
 </div>
