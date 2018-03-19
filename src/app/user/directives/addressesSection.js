@@ -44,9 +44,7 @@ function addressesSection(addressModel, addressesModel, dispatchers, userType) {
                 },
                 orderChanged() {
                     const addresses = scope.activeAddresses.concat(scope.disabledAddresses);
-                    const { active, disabled } = addressModel.getActive();
-                    const map = active.concat(disabled).reduce((acc, adr) => ((acc[adr.ID] = adr), acc), {});
-                    const newOrder = addresses.map(({ ID }) => map[ID].Order);
+                    const newOrder = addresses.map(({ ID }) => ID);
 
                     addresses.forEach((address, index) => {
                         address.Order = index + 1;

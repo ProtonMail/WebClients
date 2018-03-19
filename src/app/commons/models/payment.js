@@ -191,7 +191,7 @@ function Payment($http, authentication, url, brick, paymentPlansFormator) {
     /**
      * First will be charged for subscriptions
      */
-    const order = (opt) => $http.post(requestUrl('methods', 'order'), opt);
+    const order = (opt) => $http.put(requestUrl('methods', 'order'), opt);
 
     /**
      * Create a subscription

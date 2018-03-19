@@ -56,16 +56,15 @@ function customFilterList(
                     scope.itemMoved = false;
                 },
                 orderChanged() {
-                    const order = [];
+                    const FilterIDs = _.map(scope.customFilters, 'ID');
 
                     _.each(scope.customFilters, (filter, index) => {
-                        order[index] = filter.Priority;
                         filter.Priority = index + 1;
                     });
 
                     // Save priority order
                     networkActivityTracker.track(
-                        Filter.order({ Order: order })
+                        Filter.order({ FilterIDs })
                             .then(({ data = {} } = {}) => {
                                 notification.success(gettextCatalog.getString('Order saved', null, 'Info'));
                                 return data;
