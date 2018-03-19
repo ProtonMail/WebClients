@@ -55,7 +55,7 @@ function sidebarSettingsModel(gettextCatalog, memberModel) {
         },
         pmme: {
             state: 'secured.pmme',
-            label: 'pm.me (beta)',
+            label: 'pm.me',
             icon: 'fa-envelope'
         },
         payments: {
