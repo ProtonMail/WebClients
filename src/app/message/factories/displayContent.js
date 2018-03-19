@@ -21,7 +21,7 @@ function displayContent($rootScope, $q, $filter, prepareContent, sanitize) {
         }
 
         // Clear content with DOMPurify before anything happen!
-        content.body = sanitize.message(content.body, true);
+        content.body = sanitize.html(content.body);
         return content;
     }
 

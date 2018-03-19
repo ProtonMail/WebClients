@@ -16,7 +16,7 @@ function squireEditor($rootScope, editorModel, sanitize) {
             // eslint-disable-next-line no-underscore-dangle
             const doc = self._doc;
             // Use proton's instance of DOMPurify to allow proton-src attributes to be displayed in squire.
-            const frag = html ? sanitize.message(html, true) : null;
+            const frag = html ? sanitize.content(html) : null;
             return frag ? doc.importNode(frag, true) : doc.createDocumentFragment();
         }
     };
