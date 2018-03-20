@@ -86,7 +86,7 @@ function embeddedParser(embeddedStore, embeddedFinder, embeddedUtils, Attachment
         const show = message.showEmbedded === true || mailSettingsModel.get('ShowImages') & EMBEDDED;
         const isDraft = $state.includes('secured.drafts.**') || message.isDraft();
 
-        // For a draft if we close it before the end of the attachement upload, there are no keyPackets
+        // For a draft if we close it before the end of the attachment upload, there are no keyPackets
         const promise = flow(
             filter(({ attachment }) => attachment.KeyPackets),
             filter(({ cid }) => !embeddedStore.hasBlob(cid) && (show || isDraft)),

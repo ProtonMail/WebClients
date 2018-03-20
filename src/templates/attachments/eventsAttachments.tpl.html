@@ -32,13 +32,15 @@
                 </tr>
                 <tr ng-if="event.organizer">
                     <th translate translate-context="Info">Organizer</th>
-                    <td>{{ ::event.organizer }}</td>
+                    <td><attendee-item data-attendee="{{ ::event.organizer }}"></attendee-item></td>
                 </tr>
                 <tr ng-if="event.attendeesList.length">
                     <th translate translate-context="Info">Attendees</th>
                     <td>
                         <ul>
-                            <li ng-repeat="attendee in event.attendeesList track by $id(attendee)">{{ attendee }}</li>
+                            <li ng-repeat="attendee in event.attendeesList track by $id(attendee)">
+                                <attendee-item data-attendee="{{ ::attendee }}"></attendee-item>
+                            </li>
                         </ul>
                     </td>
                 </tr>
