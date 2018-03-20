@@ -5,7 +5,7 @@ import isPhone from 'phone-regex';
 function identitySection(addressesModel, authentication, editorModel, gettextCatalog, notification, signatureModel, tools, dispatchers) {
 
     const I18N = {
-        SUCCESS_SAVE: gettextCatalog.getString('Default Name / Signature saved', null, "User's signature")
+        SUCCESS_SAVE: gettextCatalog.getString('Name / Signature saved', null, "User's signature")
     };
     const EDITOR_ID = 'signature';
     const MULTIPLE_ADDRESS_CLASS = 'identitySection-has-multiple-address';
