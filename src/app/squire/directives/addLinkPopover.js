@@ -28,7 +28,11 @@ function addLinkPopover(editorModel, editorState, squireExecAction) {
                 .find('img')
                 .filter(function() {
                     /* eslint no-underscore-dangle: "off" */
-                    return editor._win.getSelection().containsNode(this);
+                    const range = editor._win.getSelection().getRangeAt(0);
+                    if (!range || !range.commonAncestorContainer) {
+                        return false;
+                    }
+                    return range.commonAncestorContainer.contains(this);
                 })[0];
         }
     };
