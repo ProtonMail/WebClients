@@ -46,7 +46,7 @@ function removeElement(gettextCatalog, AppModel, actionConversation, messageActi
         }, []);
 
         // Check if there is one opened composer in the selection
-        if ($state.includes('secured.drafts.**') && listOpenedDraft.length) {
+        if (($state.includes('secured.drafts.**') || $state.includes('secured.allDrafts.**')) && listOpenedDraft.length) {
             const selectedMap = getElementsSelected().reduce(
                 (acc, msg) => {
                     acc.ConversationID[msg.ConversationID] = msg;

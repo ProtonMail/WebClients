@@ -111,6 +111,10 @@ function message($state, dispatchers, cache, displayContent, messageScroll, tool
                             break;
 
                         case 'save.success':
+                            if ($state.includes('secured.allDrafts.**')) {
+                                return $state.go('secured.allDrafts');
+                            }
+
                             if ($state.includes('secured.drafts.**')) {
                                 return $state.go('secured.drafts');
                             }
@@ -144,7 +148,7 @@ function message($state, dispatchers, cache, displayContent, messageScroll, tool
 
             function openMessage({ expand } = {}) {
                 if (scope.message.Type === 1) {
-                    if ($state.includes('secured.drafts.**')) {
+                    if ($state.includes('secured.drafts.**') || $state.includes('secured.allDrafts.**')) {
                         dispatcher['composer.load']('', scope.message);
                     }
                     return;

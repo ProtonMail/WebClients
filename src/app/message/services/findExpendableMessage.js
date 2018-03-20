@@ -81,6 +81,7 @@ function findExpendableMessage(tools, CONSTANTS, $state, $stateParams) {
                 thisOne = getMessage(_.filter(messages, (m) => m.LabelIDs.indexOf(currentLocation) > -1 && m.Type !== CONSTANTS.DRAFT));
                 break;
 
+            case $state.includes('secured.allDrafts.**'):
             case $state.includes('secured.drafts.**'):
                 thisOne = filterCb(({ Type }) => Type === CONSTANTS.DRAFT);
                 break;
