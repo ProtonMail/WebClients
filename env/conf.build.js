@@ -59,7 +59,7 @@ module.exports = {
             'ng-scrollbars/dist/scrollbars.min.js',
             'sieve.js/sieve.js',
             'blob.js/Blob.js',
-            'file-saver/FileSaver.js',
+            'file-saver/dist/FileSaver.js',
             'qrcodejs2/qrcode.min.js',
             'pt.mailparser/mailparser.js',
             'markdown-it/dist/markdown-it.min.js',
