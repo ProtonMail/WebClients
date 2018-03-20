@@ -64,6 +64,10 @@ function AttachmentEvent(
                 icalEvent.attendeesList = attendees.reduce((acc, attendee) => acc.concat(attendee.getValues()), []);
             }
 
+            if (!icalEvent.summary && icalEvent.location) {
+                icalEvent.summary = icalEvent.location;
+            }
+
             // Keep the attachment data and filename
             icalEvent.attachment = {
                 filename: Name,

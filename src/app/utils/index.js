@@ -28,9 +28,13 @@ import strUtils from './services/strUtils';
 import firstLoadState from './services/firstLoadState';
 import lazyLoader from './services/lazyLoader';
 import sanitize from './services/sanitize';
+import mailtoHandler from './directives/mailtoHandler';
+import mailUtils from './services/mailUtils';
 
 export default angular
     .module('proton.utils', ['proton.constants'])
+    .factory('mailUtils', mailUtils)
+    .directive('mailtoHandler', mailtoHandler)
     .service('lazyLoader', lazyLoader)
     .directive('detectTimeWidth', detectTimeWidth)
     .directive('dropzone', dropzone)

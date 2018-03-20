@@ -13,9 +13,11 @@ import embedded from './services/embedded';
 import embeddedFinder from './services/embeddedFinder';
 import embeddedParser from './services/embeddedParser';
 import embeddedUtils from './services/embeddedUtils';
+import attendeeItem from './directives/attendeeItem';
 
 export default angular
     .module('proton.attachments', ['proton.authentication', 'proton.utils'])
+    .directive('attendeeItem', attendeeItem)
     .directive('btnDownloadAttachments', btnDownloadAttachments)
     .directive('iconAttachment', iconAttachment)
     .directive('eventsAttachments', eventsAttachments)
