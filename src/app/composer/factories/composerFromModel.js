@@ -6,8 +6,8 @@ import { flow, filter, sortBy } from 'lodash/fp';
 function composerFromModel(addressesModel, authentication, confirmModal, gettextCatalog, plusAliasModel) {
     const PM_ADDRESS_ITEM = 'protonmail_pm_address';
     const I18N = {
-        CONFIRM: gettextCatalog.getString("Don't remind me again", null, 'Action'),
-        TITLE: gettextCatalog.getString('Warning', null, 'Title'),
+        CONFIRM: gettextCatalog.getString('OK', null, 'Action'),
+        TITLE: gettextCatalog.getString('Notice', null, 'Title'),
         error(email) {
             return gettextCatalog.getString('Sending messages from @pm.me address is a paid feature. Your message will be sent from your default address {{email}}', { email }, 'Error');
         }
