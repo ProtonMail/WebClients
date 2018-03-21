@@ -16,7 +16,7 @@ function removeInlineWatcher($state, $rootScope) {
                     return false;
                 }
 
-                const cid = Headers['content-id'];
+                const cid = `${Headers['content-id'] || ''}`;
                 if (cid) {
                     return cids.indexOf(cid.replace(/[<>]+/g, '')) === -1;
                 }
