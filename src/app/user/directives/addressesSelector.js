@@ -10,8 +10,8 @@ function addressesSelector(addressesModel, dispatchers) {
         templateUrl: require('../../../templates/user/addressesSelector.tpl.html'),
         link(scope, el) {
             const $select = el.find('.addressesSelector-select');
-            const { dispatcher, on, unsubscribe } = dispatchers(['changeAddressSelection']);
-            const onChange = ({ target }) => dispatcher.changeAddressSelection({ ID: target.value });
+            const { dispatcher, on, unsubscribe } = dispatchers(['addressSelection']);
+            const onChange = ({ target }) => dispatcher.addressSelection('change', { ID: target.value });
 
             $select[0].innerHTML = buildOptions();
 
