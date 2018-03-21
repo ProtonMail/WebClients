@@ -46,10 +46,6 @@ function addressesSection(addressModel, addressesModel, dispatchers, userType) {
                     const addresses = scope.activeAddresses.concat(scope.disabledAddresses);
                     const newOrder = addresses.map(({ ID }) => ID);
 
-                    addresses.forEach((address, index) => {
-                        address.Order = index + 1;
-                    });
-
                     addressModel.saveOrder(newOrder);
                 }
             };

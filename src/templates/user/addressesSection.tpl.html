@@ -19,7 +19,7 @@
 
             <li
                 class="pm_sort-item"
-                ng-repeat="address in activeAddresses | orderBy: 'Order' track by address.ID"
+                ng-repeat="address in activeAddresses track by address.ID"
                 data-as-sortable-item
                 ng-class="{'unsortable': true}">
                 <div class="pm_sort-item-content" as-sortable-item-handle="">

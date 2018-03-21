@@ -274,7 +274,7 @@ function addressModel(
     };
 
     const getActive = () => {
-        const addresses = addressesModel.get();
+        const addresses = _.sortBy(addressesModel.get(), 'Order');
         const active = _.filter(addresses, { Status: 1, Receive: 1 });
         const disabled = _.difference(addresses, active);
 
