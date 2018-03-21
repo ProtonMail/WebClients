@@ -168,14 +168,18 @@ function addressModel(
     };
 
     /**
-     * Generate @pm.me address for the current account
+     * Setup a new address for the current account
+     * @param {Object}
+     * * @param {String} Domain
+     * * @param {String} DisplayName
+     * * @param {String} Signature
      * @return {Promise}
      */
-    const generatePmMe = () => {
+    const setup = ({ Domain, DisplayName, Signature }) => {
         const numBits = ENCRYPTION_DEFAULT;
         const passphrase = authentication.getPassword();
 
-        return Address.setup({ Domain: 'pm.me' })
+        return Address.setup({ Domain, DisplayName, Signature })
             .then(({ data = {} } = {}) => {
                 return generateKeyModel.generate({ numBits, passphrase, address: data.Address });
             })
@@ -295,7 +299,7 @@ function addressModel(
         disable,
         enable,
         generate,
-        generatePmMe,
+        setup,
         getActive,
         makeDefault,
         remove,

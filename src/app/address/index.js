@@ -7,6 +7,7 @@ import addressModel from './factories/addressModel';
 import addressWithoutKeys from './factories/addressWithoutKeys';
 import addressModal from './modals/addressModal';
 import addressesModal from './modals/addressesModal';
+import setupAddressModal from './modals/setupAddressModal';
 import addressWithoutKeysManager from './services/addressWithoutKeysManager';
 
 export default angular
@@ -20,4 +21,5 @@ export default angular
     .factory('addressWithoutKeys', addressWithoutKeys)
     .factory('addressModal', addressModal)
     .factory('addressesModal', addressesModal)
+    .factory('setupAddressModal', setupAddressModal)
     .factory('addressWithoutKeysManager', addressWithoutKeysManager).name;

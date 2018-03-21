@@ -7,14 +7,18 @@
                 </header-block>
                 <div ng-if="!hasPmMe">
                     <p class="alert" translate-context="Info" translate>ProtonMail now supports @pm.me email addresses (short for ProtonMail me or Private Message me).</p>
-                    <p class="alert alert-info" translate-context="Info" translate>Click on the button below to add the {{name}}@pm.me address to your account.</p>
                     <pm-me-btn class="pm_button primary"></pm-me-btn>
                     <a class="pm_button link" href="https://protonmail.com/support/knowledge-base/pm-me-addresses/" target="_blank" translate-context="Link" translate>More info</a>
+                    <p class="alert alert-info" translate-context="Info" translate>Paid users can add other @pm.me addresses from Settings --> Addresses/Users.</p>
                 </div>
                 <div ng-if="hasPmMe">
                     <p ng-show="hasPaidMail" class="alert" translate-context="Info" translate>You can now also receive and send messages from your @pm.me address (short for ProtonMail me or Private Message me).</p>
-                    <p ng-hide="hasPaidMail" class="alert" translate-context="Info" translate>You can now also receive messages at your @pm.me address (short for ProtonMail me or Private Message me). Upgrade to a paid accout to also send emails from your @pm.me address.</p>
-                    <p class="alert alert-success" translate-context="Info" translate>{{name}}@pm.me is activated on your account.</p>
+                    <p ng-hide="hasPaidMail" class="alert">
+                        <span translate-context="Info" translate>You can now also receive messages at your @pm.me address (short for ProtonMail me or Private Message me).</span> <b translate-context="Info" translate>Upgrade to a paid accout to also send emails from your @pm.me address.</b>
+                    </p>
+                    <p class="alert alert-success">
+                        <b>{{ ::email }}</b> <span translate-context="Info" translate>is activated on your account.</span>
+                    </p>
                     <a ng-show="hasPaidMail" class="pm_button" ui-sref="secured.members" translate-context="Link" translate>Add another address</a>
                     <a class="pm_button link" href="https://protonmail.com/support/knowledge-base/pm-me-addresses/" target="_blank" translate-context="Link" translate>More info</a>
                 </div>

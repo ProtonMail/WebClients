@@ -59,7 +59,8 @@ function addressWithoutKeys(memberModel, addressesModel, authentication, AppMode
      * @param  {Array}      Addresses
      * @return {Boolean}
      */
-    const allDirty = ({ Addresses = [] } = authentication.user) => {
+    const allDirty = (user) => {
+        const addresses = addressesModel.getByUser(user);
         /*
                 Default = undefined
                 As an user can have a lot of addresses we don't want to loop everytime
@@ -68,7 +69,7 @@ function addressWithoutKeys(memberModel, addressesModel, authentication, AppMode
             return false;
         }
 
-        const test = Addresses.filter(({ Status }) => Status).every(isDirtyAddress);
+        const test = addresses.filter(({ Status }) => Status).every(isDirtyAddress);
         AppModel.set('allDirtyAddresses', test);
         return test;
     };

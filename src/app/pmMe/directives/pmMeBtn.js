@@ -1,7 +1,9 @@
 /* @ngInject */
 function pmMeBtn(gettextCatalog, pmMeModel) {
     const I18N = {
-        ACTIVATE: gettextCatalog.getString('Activate @pm.me', null, 'Action')
+        activate(email) {
+            return gettextCatalog.getString('Activate {{email}}', { email }, 'Action');
+        }
     };
 
     const onClick = () => pmMeModel.activate();
@@ -9,7 +11,7 @@ function pmMeBtn(gettextCatalog, pmMeModel) {
     return {
         replace: true,
         restrict: 'E',
-        template: `<button type="button">${I18N.ACTIVATE}</button>`,
+        template: `<button type="button">${I18N.activate(pmMeModel.email())}</button>`,
         link(scope, el) {
             el.on('click', onClick);
             scope.$on('$destroy', () => {

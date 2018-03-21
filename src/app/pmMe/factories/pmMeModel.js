@@ -1,5 +1,5 @@
 /* @ngInject */
-function pmMeModel(addressModel, askPassword, authentication, gettextCatalog, networkActivityTracker, notification, User) {
+function pmMeModel(addressModel, askPassword, authentication, setupAddressModal, gettextCatalog, networkActivityTracker, notification, User) {
     const I18N = {
         PM_ME: {
             paid() {
@@ -19,23 +19,50 @@ function pmMeModel(addressModel, askPassword, authentication, gettextCatalog, ne
         }
     };
 
+    const confirmAddress = (callback) => {
+        setupAddressModal.activate({
+            params: {
+                submit(model) {
+                    setupAddressModal.deactivate();
+                    callback(model);
+                },
+                cancel() {
+                    setupAddressModal.deactivate();
+                }
+            }
+        });
+    };
+
     /**
      * Unlock the session to add the @pm.me address
      */
     const activate = () => {
-        const success = I18N.PM_ME[authentication.hasPaidMail() ? 'paid' : 'free']();
-
-        askPassword((Password, TwoFactorCode) => {
+        const hasPaidMail = authentication.hasPaidMail();
+        const success = I18N.PM_ME[hasPaidMail ? 'paid' : 'free']();
+        const process = ({ Password, TwoFactorCode, DisplayName, Signature }) => {
             const promise = User.unlock({ Password, TwoFactorCode })
-                .then(addressModel.generatePmMe)
+                .then(() => addressModel.setup({ Domain: 'pm.me', DisplayName, Signature }))
                 .then(User.lock)
                 .then(() => notification.success(success));
 
             networkActivityTracker.track(promise);
+        };
+
+        askPassword((Password, TwoFactorCode) => {
+            if (hasPaidMail) {
+                confirmAddress(({ DisplayName, Signature }) => {
+                    process({ Password, TwoFactorCode, DisplayName, Signature });
+                });
+                return;
+            }
+
+            process({ Password, TwoFactorCode });
         });
     };
 
-    return { activate };
+    const email = () => `${authentication.user.Name}@pm.me`;
+
+    return { activate, email };
 }
 
 export default pmMeModel;
