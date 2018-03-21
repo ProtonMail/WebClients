@@ -1,5 +1,5 @@
 /* @ngInject */
-function pmMeView(dispatchers, addressesModel, authentication) {
+function pmMeView(dispatchers, addressesModel, authentication, pmMeModel) {
     return {
         replace: true,
         restrict: 'E',
@@ -8,11 +8,11 @@ function pmMeView(dispatchers, addressesModel, authentication) {
         link(scope) {
             const { on, unsubscribe } = dispatchers();
 
-            scope.name = authentication.user.Name;
+            scope.email = pmMeModel.email();
             scope.hasPmMe = addressesModel.hasPmMe();
             scope.hasPaidMail = authentication.hasPaidMail();
 
-           on('updateUser', (e, { type = '' }) => {
+           on('addressesModel', (e, { type = '' }) => {
                if (type === 'addresses.updated') {
                    scope.$applyAsync(() => {
                        scope.hasPmMe = addressesModel.hasPmMe();

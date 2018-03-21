@@ -1,0 +1,18 @@
+<div class="pm_modal {{ctrl.class}}" role="dialog" style="display: block;">
+    <form class="modal-dialog" name="addressForm" ng-submit="ctrl.submit()" novalidate>
+        <button type="button" ng-click="ctrl.cancel()" aria-hidden="true" title-translate="Close" title-translate-context="Action" class="fa fa-times close"></button>
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" translate translate-context="Title">Confirm address</h4>
+            </div>
+            <div class="modal-body pm_form">
+                <display-name-signature data-model="ctrl.model"></display-name-signature>
+            </div>
+        </div>
+        <div class="modal-footer text-right">
+            <button type="button" class="pm_button" ng-click="ctrl.cancel()" translate translate-context="Action">Cancel</button>
+            <button class="pm_button primary" translate translate-context="Action">Add</button>
+        </div>
+    </form>
+    <div class="modal-overlay"></div>
+</div>
