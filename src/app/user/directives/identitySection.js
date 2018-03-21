@@ -71,13 +71,15 @@ function identitySection(addressesModel, authentication, editorModel, gettextCat
 
             $form.on('submit', onSubmit);
 
-            on('changeAddressSelection', (event, { ID }) => {
-                const address = _.find(CACHE.addresses, { ID });
+            on('addressSelection', (event, { type = '', data = {} }) => {
+                if (type === 'change') {
+                    const address = _.find(CACHE.addresses, { ID: data.ID });
 
-                if (address) {
-                    scope.$applyAsync(() => {
-                        updateAddress(address);
-                    });
+                    if (address) {
+                        scope.$applyAsync(() => {
+                            updateAddress(address);
+                        });
+                    }
                 }
             });
 
