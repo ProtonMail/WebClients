@@ -1,3 +1,9 @@
+# [3.12.43] - 2018-03-21
+## Fixed
+- 2FA section was missing when 2FA was not enabled
+- Display proper warning for pm.me address
+
+
 # [3.12.42] - 2018-03-21
 ## Added
 - Add an option to make image URL likns as well
