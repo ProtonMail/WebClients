@@ -1,3 +1,27 @@
+# [3.12.42] - 2018-03-21
+## Added
+- Add an option to make image URL likns as well
+
+## Fixed
+- Images in HTML signature are not loading when sending the message from draft
+- ICS attachment fixes
+- Drafts don't open the composer
+- Web content is loading in draft message
+- Insert link and insert image buttons don't work in mobile browsers on Android
+- Fixed form validation
+- General composer fixes
+- Fixed load plaintext message bug
+
+## Changed
+- Improvements with addresses handling
+- Improvements with payments handling
+- Review how we select the FROM address
+- Use ng-src to prevent browser fetching incorrect img in contacts
+- Sort labels collection by Order when receiving events
+- loading plaintext draft message converted to html
+- Wrong model called in some situations
+
+
 # [3.12.40] - 2018-03-14
 
 ## Added
