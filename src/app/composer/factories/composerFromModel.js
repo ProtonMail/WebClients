@@ -1,11 +1,10 @@
 import _ from 'lodash';
 
 import { flow, filter, sortBy } from 'lodash/fp';
-import { ADDRESS_TYPE } from '../../constants';
 
 /* @ngInject */
 function composerFromModel(addressesModel, authentication, confirmModal, gettextCatalog, plusAliasModel) {
-    const PREMIUM_ADDRESS_ITEM = 'protonmail_premium_address';
+    const PM_ADDRESS_ITEM = 'protonmail_pm_address';
     const I18N = {
         CONFIRM: gettextCatalog.getString("Don't remind me again", null, 'Action'),
         TITLE: gettextCatalog.getString('Warning', null, 'Title'),
@@ -38,7 +37,7 @@ function composerFromModel(addressesModel, authentication, confirmModal, gettext
                 confirmText: I18N.CONFIRM,
                 confirm() {
                     confirmModal.deactivate();
-                    localStorage.setItem(PREMIUM_ADDRESS_ITEM, 'dontRemind');
+                    localStorage.setItem(PM_ADDRESS_ITEM, 'dontShowAgain');
                 },
                 cancel() {
                     confirmModal.deactivate();
@@ -47,6 +46,9 @@ function composerFromModel(addressesModel, authentication, confirmModal, gettext
         });
     }
 
+    const isPmMeAddress = ({ Email = '' } = {}) => Email.endsWith('@pm.me');
+    const findOrFirst = (addresses = [], ID) => _.find(addresses, { ID }) || _.first(addresses);
+
     /**
      * Return the address selected in the FROM select
      * @param  {Array} addresses
@@ -54,25 +56,15 @@ function composerFromModel(addressesModel, authentication, confirmModal, gettext
      * @return {Object}
      */
     function find(addresses = [], ID) {
-        const isPmMeAddress = _.some(addresses, { ID, Type: ADDRESS_TYPE.PREMIUM });
+        const address = findOrFirst(addresses, ID);
 
-        if (!authentication.hasPaidMail()) {
-            const onlySend = _.filter(addresses, { Send: 1 });
-            const address = _.find(onlySend, { ID });
-
-            if (!address) {
-                isPmMeAddress && !localStorage.getItem(PREMIUM_ADDRESS_ITEM) && displayWarning(onlySend[0].Email);
-                return onlySend[0];
-            }
-
-            return address;
+        if (!authentication.hasPaidMail() && isPmMeAddress(address) && !localStorage.getItem(PM_ADDRESS_ITEM)) {
+            const onlySend = _.find(addresses, { Send: 1 });
+            displayWarning(onlySend.Email);
+            return onlySend;
         }
 
-        if (ID) {
-            return _.find(addresses, { ID }) || addresses[0];
-        }
-
-        return addresses[0];
+        return address;
     }
 
     return { get };
