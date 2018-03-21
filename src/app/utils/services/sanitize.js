@@ -2,7 +2,7 @@
 function sanitize() {
     const CONFIG = {
         default: {
-            ALLOWED_URI_REGEXP: /^(?:(?:(?:f|ht)tps?|mailto|tel|callto|cid|blob|xmpp):|[^a-z]|[a-z+.\-]+(?:[^a-z+.\-:]|$))/i, // eslint-disable-line no-useless-escape
+            ALLOWED_URI_REGEXP: /^(?:(?:(?:f|ht)tps?|mailto|tel|callto|cid|blob|xmpp|data):|[^a-z]|[a-z+.\-]+(?:[^a-z+.\-:]|$))/i, // eslint-disable-line no-useless-escape
             ADD_TAGS: ['proton-src', 'base'],
             ADD_ATTR: ['target', 'proton-src'],
             FORBID_TAGS: ['style', 'input', 'form']
