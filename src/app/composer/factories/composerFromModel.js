@@ -58,9 +58,13 @@ function composerFromModel(addressesModel, authentication, confirmModal, gettext
     function find(addresses = [], ID) {
         const address = findOrFirst(addresses, ID);
 
-        if (!authentication.hasPaidMail() && isPmMeAddress(address) && !localStorage.getItem(PM_ADDRESS_ITEM)) {
+        if (!authentication.hasPaidMail() && isPmMeAddress(address)) {
             const onlySend = _.find(addresses, { Send: 1 });
-            displayWarning(onlySend.Email);
+
+            if (!localStorage.getItem(PM_ADDRESS_ITEM)) {
+                displayWarning(onlySend.Email);
+            }
+
             return onlySend;
         }
 
