@@ -345,7 +345,7 @@ function attachmentModel(
                         }
 
                         // Extract content-id even if there are no headers
-                        const contentId = (attachment.Headers || {})['content-id'] || '';
+                        const contentId = `${(attachment.Headers || {})['content-id'] || ''}`;
                         const cid = contentId.replace(/[<>]+/g, '');
 
                         return { attachment, sessionKey, packets, cid, REQUEST_ID };
