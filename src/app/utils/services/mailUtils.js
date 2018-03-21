@@ -22,8 +22,6 @@ function mailUtils(sanitize) {
             return;
         }
 
-        event.preventDefault();
-
         let j = mailto.indexOf('?');
 
         // If no `?` detected
