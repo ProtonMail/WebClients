@@ -8,10 +8,11 @@ const { PREMIUM } = ADDRESS_TYPE;
 function addressesModel(Address, authentication, dispatchers) {
     const { dispatcher, on } = dispatchers(['addressesModel']);
     let CACHE = {};
-
+    const sortByOrder = (addresses = []) => _.sortBy(addresses, 'Order');
     const set = (addresses = [], user = authentication.user, noEvent = false) => {
-        CACHE[user.ID] = addresses;
-        !noEvent && dispatcher.addressesModel('addresses.updated', { addresses });
+        const adrs = sortByOrder(addresses);
+        CACHE[user.ID] = adrs;
+        !noEvent && dispatcher.addressesModel('addresses.updated', { addresses: adrs });
     };
 
     /**
