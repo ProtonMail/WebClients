@@ -1,3 +1,6 @@
+#!/bin/bash
+set -eo pipefail
+
 DEST_MAILPARSER='node_modules/pt.mailparser'
 
 # Remove previous version
