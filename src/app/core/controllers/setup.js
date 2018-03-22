@@ -11,7 +11,6 @@ function SetupController(
     $scope,
     $state,
     Address,
-    addressesModel,
     authentication,
     confirmModal,
     domains,
@@ -30,8 +29,6 @@ function SetupController(
     let passwordCopy;
 
     function initialization() {
-        const addresses = addressesModel.get();
-
         // Variables
         $scope.tools = tools;
         $scope.filling = true;
@@ -56,7 +53,7 @@ function SetupController(
         $scope.domain = $scope.domains[0];
 
         // Address creation needed?
-        $scope.chooseDomain = !addresses.length;
+        $scope.chooseDomain = !user.Addresses.length;
 
         // Passwords
         $scope.password = '';
@@ -104,7 +101,7 @@ function SetupController(
         $log.debug('generateKeys');
         $scope.genKeys = true;
 
-        return setupKeys.generate(addressesModel.getByUser(user), passwordCopy);
+        return setupKeys.generate(user.Addresses, passwordCopy);
     }
 
     function installKeys(data = {}) {

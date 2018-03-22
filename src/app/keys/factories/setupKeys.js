@@ -14,8 +14,7 @@ function setupKeys($log, $q, gettextCatalog, Key, MemberKey, notification, passw
 
         return passwordPromise.then((passphrase) => {
             const keyPromises = _.map(addresses, ({ Email, ID } = {}) => {
-                return pmcw
-                    .generateKey({
+                return pmcw.generateKey({
                         userIds: [{ name: Email, email: Email }],
                         passphrase,
                         numBits
