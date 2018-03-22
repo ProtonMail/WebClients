@@ -1,60 +1,53 @@
 .navigation {
-    flex:1;
     display: flex;
+    flex: 1;
     justify-content: flex-end;
-    margin: 0;
-    padding: 0 10px 0 0;
-    & > li {
-        display: block;
-        float: left;
-        position: relative;
-        height: $headerHeight;
-        &:hover {
-            box-shadow: 0 5px 0 0 $primary inset;
-            transition: all .15s ease-in-out;
-        }
-        &.active {
-            box-shadow: 0 5px 0 0 $primary inset;
-        }
-    }
+    margin: 0 10px 0 0;
+    padding: 0;
+    height: 100%;
 }
+
+.navigation > li {
+    box-sizing: border-box;
+    position: relative;
+    display: flex;
+    flex: 0 0 115px;
+    align-items: center;
+    justify-content: center;
+    list-style: none;
+    border-top: 5px solid transparent;
+    transition: border .15s ease-in-out;
+}
+
+.navigation > li.active,
+.navigation > li:hover { border-color: $primary }
 
 .navigation-link {
-    display: block;
-    box-sizing: border-box;
-    height: $headerHeight;
-    width: 115px;
-    padding: 12px 0 8px;
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    height: 100%;
     color: inherit;
     opacity: .9;
-    text-align: center;
-    text-decoration: none;
-    box-shadow: none;
 }
 
-.navigation-icons,
-.navigation-icon {
+.navigation-icons, .navigation-icon {
     display: inline-flex;
     align-items: center;
     width: 20px;
     height: 20px;
     font-size: 15px;
-}
 
-.navigation-icons i {
-    flex-grow: 1;
-    flex-shrink: 0;
-    display: inline-block;
-
-    &.fa-angle-down {
+    .fa-angle-down {
         font-size: 13px;
         margin-left: 2px;
     }
 }
 
 .navigation-title {
-    display: block;
-    height: 20px;
     line-height: 20px;
     font-weight: normal;
     text-transform: uppercase;
@@ -64,6 +57,5 @@
     white-space: nowrap;
 }
 
-// context
 .navigation:not(.navigation-is-black-friday) .navigationBlackFriday { display: none }
 .navigation.navigation-is-black-friday .navigation-upgrade-item { display: none }
