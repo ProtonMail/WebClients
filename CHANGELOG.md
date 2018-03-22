@@ -1,3 +1,8 @@
+# [3.12.45] - 2018-03-22
+## Fixed
+- The signature from the previous default address is showing if you change address priority
+- Fix account creation bug happening under certain conditions
+
 # [3.12.44] - 2018-03-22
 ## Added
 - Add a tooltip for daily notifications in Settings>Account
