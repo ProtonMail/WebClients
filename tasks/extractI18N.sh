@@ -1,4 +1,5 @@
 #!/bin/bash
+set -eo pipefail
 
 COMMAND=./node_modules/.bin/angular-gettext-cli;
 
