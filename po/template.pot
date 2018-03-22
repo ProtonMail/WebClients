@@ -486,8 +486,8 @@ msgid "Apply"
 msgstr ""
 
 #. form option
-#: ./src/templates/views/account.tpl.html:227
-#: ./src/templates/views/account.tpl.html:249
+#: ./src/templates/views/account.tpl.html:230
+#: ./src/templates/views/account.tpl.html:252
 msgctxt "Action"
 msgid "Auto"
 msgstr ""
@@ -576,12 +576,12 @@ msgctxt "Action"
 msgid "Change address priority"
 msgstr ""
 
-#: ./src/templates/views/account.tpl.html:121
+#: ./src/templates/views/account.tpl.html:124
 msgctxt "Action"
 msgid "Change login password"
 msgstr ""
 
-#: ./src/templates/views/account.tpl.html:139
+#: ./src/templates/views/account.tpl.html:142
 msgctxt "Action"
 msgid "Change mailbox password"
 msgstr ""
@@ -601,7 +601,7 @@ msgctxt "Action"
 msgid "Change organization password"
 msgstr ""
 
-#: ./src/templates/views/account.tpl.html:152
+#: ./src/templates/views/account.tpl.html:155
 msgctxt "Action"
 msgid "Change password"
 msgstr ""
@@ -772,7 +772,7 @@ msgctxt "Action"
 msgid "Delete"
 msgstr ""
 
-#: ./src/templates/views/account.tpl.html:351
+#: ./src/templates/views/account.tpl.html:354
 msgctxt "Action"
 msgid "Delete your account"
 msgstr ""
@@ -796,9 +796,9 @@ msgstr ""
 
 #. notification settings option
 #: ./src/app/settings/controllers/security.js:233
-#: ./src/templates/views/account.tpl.html:283
+#: ./src/templates/views/account.tpl.html:286
 #: ./src/templates/views/account.tpl.html:62
-#: ./src/templates/views/account.tpl.html:83
+#: ./src/templates/views/account.tpl.html:86
 msgctxt "Action"
 msgid "Disabled"
 msgstr ""
@@ -899,9 +899,9 @@ msgid "Enable multi-user support"
 msgstr ""
 
 #. notification settings option
-#: ./src/templates/views/account.tpl.html:277
+#: ./src/templates/views/account.tpl.html:280
 #: ./src/templates/views/account.tpl.html:56
-#: ./src/templates/views/account.tpl.html:77
+#: ./src/templates/views/account.tpl.html:80
 msgctxt "Action"
 msgid "Enabled"
 msgstr ""
@@ -1100,8 +1100,8 @@ msgid "Manage"
 msgstr ""
 
 #. form option
-#: ./src/templates/views/account.tpl.html:233
-#: ./src/templates/views/account.tpl.html:255
+#: ./src/templates/views/account.tpl.html:236
+#: ./src/templates/views/account.tpl.html:258
 msgctxt "Action"
 msgid "Manual"
 msgstr ""
@@ -1533,13 +1533,13 @@ msgctxt "Action"
 msgid "Switch current subscription to a 2-year plan"
 msgstr ""
 
-#: ./src/templates/views/account.tpl.html:124
+#: ./src/templates/views/account.tpl.html:127
 msgctxt "Action"
 msgid "Switch to one-password mode"
 msgstr ""
 
 #. switch to two-password mode
-#: ./src/templates/views/account.tpl.html:155
+#: ./src/templates/views/account.tpl.html:158
 msgctxt "Action"
 msgid "Switch to two-password mode"
 msgstr ""
@@ -1643,7 +1643,7 @@ msgctxt "Action"
 msgid "Verifying reset code"
 msgstr ""
 
-#: ./src/templates/views/account.tpl.html:291
+#: ./src/templates/views/account.tpl.html:294
 msgctxt "Action"
 msgid "View Keyboard Shortcuts"
 msgstr ""
@@ -1668,7 +1668,7 @@ msgctxt "Action"
 msgid "View source code"
 msgstr ""
 
-#: ./src/templates/views/account.tpl.html:101
+#: ./src/templates/views/account.tpl.html:104
 msgctxt "Action"
 msgid "What is this?"
 msgstr ""
@@ -5846,12 +5846,12 @@ msgctxt "Label"
 msgid "Key Strength"
 msgstr ""
 
-#: ./src/templates/views/account.tpl.html:316
+#: ./src/templates/views/account.tpl.html:319
 msgctxt "Label"
 msgid "Major Announcements (2-3 per year)"
 msgstr ""
 
-#: ./src/templates/views/account.tpl.html:320
+#: ./src/templates/views/account.tpl.html:323
 msgctxt "Label"
 msgid "Major New Features (3-4 per year)"
 msgstr ""
@@ -5925,12 +5925,12 @@ msgctxt "Label"
 msgid "Please tell us why you are leaving:"
 msgstr ""
 
-#: ./src/templates/views/account.tpl.html:328
+#: ./src/templates/views/account.tpl.html:331
 msgctxt "Label"
 msgid "Proton Beta (~ 10-12 per year)"
 msgstr ""
 
-#: ./src/templates/views/account.tpl.html:324
+#: ./src/templates/views/account.tpl.html:327
 msgctxt "Label"
 msgid "Proton Newsletter (5-6 per year)"
 msgstr ""
@@ -6228,11 +6228,11 @@ msgstr ""
 #: ./src/templates/dashboard/customVpnModal.tpl.html:10
 #: ./src/templates/directives/core/bugModalView.tpl.html:98
 #: ./src/templates/members/restoreAdministratorPanel.tpl.html:9
-#: ./src/templates/views/account.tpl.html:125
-#: ./src/templates/views/account.tpl.html:156
-#: ./src/templates/views/account.tpl.html:203
-#: ./src/templates/views/account.tpl.html:237
-#: ./src/templates/views/account.tpl.html:87
+#: ./src/templates/views/account.tpl.html:128
+#: ./src/templates/views/account.tpl.html:159
+#: ./src/templates/views/account.tpl.html:206
+#: ./src/templates/views/account.tpl.html:240
+#: ./src/templates/views/account.tpl.html:90
 #: ./src/templates/views/appearance.tpl.html:165
 #: ./src/templates/views/members.tpl.html:21
 #: ./src/templates/views/members.tpl.html:321
@@ -7323,7 +7323,7 @@ msgctxt "Title"
 msgid "Address"
 msgstr ""
 
-#: ./src/templates/views/account.tpl.html:300
+#: ./src/templates/views/account.tpl.html:303
 msgctxt "Title"
 msgid "Address Priority"
 msgstr ""
@@ -7373,13 +7373,9 @@ msgstr ""
 
 #: ./src/templates/modals/pay.tpl.html:36
 #: ./src/templates/payment/donation.tpl.html:15
-msgctxt "Title"
-msgid "Amount"
-msgstr ""
-
 #: ./src/templates/views/payments.tpl.html:73
 msgctxt "Title"
-msgid "Amount Paid / Due"
+msgid "Amount"
 msgstr ""
 
 #: ./src/templates/modals/pay.tpl.html:44
@@ -7442,8 +7438,8 @@ msgstr ""
 
 #. Section heading
 #. Settings/Account page form heading for enabling or disabling autosave contacts
-#: ./src/templates/views/account.tpl.html:179
-#: ./src/templates/views/account.tpl.html:187
+#: ./src/templates/views/account.tpl.html:182
+#: ./src/templates/views/account.tpl.html:190
 msgctxt "Title"
 msgid "Automatically save contacts"
 msgstr ""
@@ -7670,11 +7666,6 @@ msgctxt "Title"
 msgid "Creating account"
 msgstr ""
 
-#: ./src/templates/views/payments.tpl.html:77
-msgctxt "Title"
-msgid "Creation time"
-msgstr ""
-
 #: ./src/templates/dashboard/overviewSection.tpl.html:61
 #: ./src/templates/modals/pay.tpl.html:40
 #: ./src/templates/payment/tosubscribeOverview.tpl.html:110
@@ -7718,7 +7709,7 @@ msgid "DKIM"
 msgstr ""
 
 #. form heading for changing notification settings
-#: ./src/templates/views/account.tpl.html:71
+#: ./src/templates/views/account.tpl.html:72
 msgctxt "Title"
 msgid "Daily email notifications"
 msgstr ""
@@ -7732,6 +7723,7 @@ msgstr ""
 #. Table heading
 #: ./src/templates/views/invoices.tpl.html:17
 #: ./src/templates/views/invoices.tpl.html:47
+#: ./src/templates/views/payments.tpl.html:77
 msgctxt "Title"
 msgid "Date"
 msgstr ""
@@ -7752,7 +7744,7 @@ msgctxt "Title"
 msgid "Delete"
 msgstr ""
 
-#: ./src/templates/views/account.tpl.html:346
+#: ./src/templates/views/account.tpl.html:349
 msgctxt "Title"
 msgid "Delete Account"
 msgstr ""
@@ -7804,7 +7796,7 @@ msgid "Delete user"
 msgstr ""
 
 #. form heading for changing desktop notifications
-#: ./src/templates/views/account.tpl.html:94
+#: ./src/templates/views/account.tpl.html:97
 msgctxt "Title"
 msgid "Desktop notifications"
 msgstr ""
@@ -7897,12 +7889,12 @@ msgctxt "Title"
 msgid "Email Address"
 msgstr ""
 
-#: ./src/templates/views/account.tpl.html:213
+#: ./src/templates/views/account.tpl.html:216
 msgctxt "Title"
 msgid "Email Content"
 msgstr ""
 
-#: ./src/templates/views/account.tpl.html:309
+#: ./src/templates/views/account.tpl.html:312
 msgctxt "Title"
 msgid "Email Subscriptions"
 msgstr ""
@@ -8122,8 +8114,8 @@ msgctxt "Title"
 msgid "Key size"
 msgstr ""
 
-#: ./src/templates/views/account.tpl.html:263
-#: ./src/templates/views/account.tpl.html:271
+#: ./src/templates/views/account.tpl.html:266
+#: ./src/templates/views/account.tpl.html:274
 msgctxt "Title"
 msgid "Keyboard Shortcuts"
 msgstr ""
@@ -8144,7 +8136,7 @@ msgctxt "Title"
 msgid "Labels"
 msgstr ""
 
-#: ./src/templates/views/account.tpl.html:165
+#: ./src/templates/views/account.tpl.html:168
 msgctxt "Title"
 msgid "Language"
 msgstr ""
@@ -8154,12 +8146,12 @@ msgctxt "Title"
 msgid "Layout"
 msgstr ""
 
-#: ./src/templates/views/account.tpl.html:243
+#: ./src/templates/views/account.tpl.html:246
 msgctxt "Title"
 msgid "Load embedded images"
 msgstr ""
 
-#: ./src/templates/views/account.tpl.html:221
+#: ./src/templates/views/account.tpl.html:224
 msgctxt "Title"
 msgid "Load remote content"
 msgstr ""
@@ -8185,13 +8177,13 @@ msgid "Login"
 msgstr ""
 
 #. change login password heading
-#: ./src/templates/views/account.tpl.html:113
+#: ./src/templates/views/account.tpl.html:116
 msgctxt "Title"
 msgid "Login password"
 msgstr ""
 
 #. form heading for changing mailbox password
-#: ./src/templates/views/account.tpl.html:131
+#: ./src/templates/views/account.tpl.html:134
 msgctxt "Title"
 msgid "Mailbox password"
 msgstr ""
@@ -8345,7 +8337,7 @@ msgstr ""
 #. form heading for changing single password
 #: ./src/templates/modals/generate.tpl.html:15
 #: ./src/templates/user/usernamePassword.tpl.html:2
-#: ./src/templates/views/account.tpl.html:145
+#: ./src/templates/views/account.tpl.html:148
 #: ./src/templates/views/setup.tpl.html:36
 msgctxt "Title"
 msgid "Password"
@@ -8577,7 +8569,7 @@ msgstr ""
 
 #. Section heading
 #: ./src/app/ui/factories/pageTitlesModel.js:38
-#: ./src/templates/views/account.tpl.html:336
+#: ./src/templates/views/account.tpl.html:339
 msgctxt "Title"
 msgid "Search"
 msgstr ""
@@ -8972,7 +8964,7 @@ msgctxt "To continue, type DANGER below:"
 msgid "below:"
 msgstr ""
 
-#: ./src/templates/views/account.tpl.html:99
+#: ./src/templates/views/account.tpl.html:102
 msgctxt "To enable desktop notifications, click here"
 msgid "To enable desktop notifications,"
 msgstr ""
@@ -8985,6 +8977,11 @@ msgstr ""
 #: ./src/templates/elements/ptStar.tpl.html:2
 msgctxt "Toggle Star message/conversation"
 msgid "Unstar"
+msgstr ""
+
+#: ./src/templates/views/account.tpl.html:73
+msgctxt "Tooltip to explain daily email notifications"
+msgid "When notifications are enabled, we'll send an alert to your recovery/notification address if you have new messages in your ProtonMail account."
 msgstr ""
 
 #: ./src/templates/autoresponder/autoresponderView.tpl.html:10
@@ -9770,7 +9767,7 @@ msgid "Choose username"
 msgstr ""
 
 #. form option
-#: ./src/templates/views/account.tpl.html:170
+#: ./src/templates/views/account.tpl.html:173
 msgid "Choose your default language."
 msgstr ""
 
@@ -9858,11 +9855,11 @@ msgstr ""
 msgid "Delete"
 msgstr ""
 
-#: ./src/templates/views/account.tpl.html:98
+#: ./src/templates/views/account.tpl.html:101
 msgid "Desktop notifications are currently <strong>disabled</strong>. To enable them, you need to go to your browser settings."
 msgstr ""
 
-#: ./src/templates/views/account.tpl.html:97
+#: ./src/templates/views/account.tpl.html:100
 msgid "Desktop notifications are currently <strong>enabled</strong>."
 msgstr ""
 
@@ -9872,7 +9869,7 @@ msgstr ""
 
 #. address state badge
 #. form option
-#: ./src/templates/views/account.tpl.html:199
+#: ./src/templates/views/account.tpl.html:202
 #: ./src/templates/views/domains.tpl.html:212
 #: ./src/templates/views/members.tpl.html:253
 msgid "Disabled"
@@ -9930,7 +9927,7 @@ msgstr ""
 
 #. address state badge
 #. form option
-#: ./src/templates/views/account.tpl.html:193
+#: ./src/templates/views/account.tpl.html:196
 #: ./src/templates/views/domains.tpl.html:211
 #: ./src/templates/views/members.tpl.html:252
 msgid "Enabled"
@@ -10400,7 +10397,7 @@ msgstr ""
 msgid "Subject"
 msgstr ""
 
-#: ./src/templates/views/account.tpl.html:97
+#: ./src/templates/views/account.tpl.html:100
 msgid "Test notification"
 msgstr ""
 
@@ -10464,7 +10461,7 @@ msgstr ""
 msgid "auto"
 msgstr ""
 
-#: ./src/templates/views/account.tpl.html:99
+#: ./src/templates/views/account.tpl.html:102
 msgid "click here"
 msgstr ""
 
