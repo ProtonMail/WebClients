@@ -2,6 +2,7 @@
 ## Fixed
 - The signature from the previous default address is showing if you change address priority
 - Fix account creation bug happening under certain conditions
+- Fix setup process for private member
 
 # [3.12.44] - 2018-03-22
 ## Added
