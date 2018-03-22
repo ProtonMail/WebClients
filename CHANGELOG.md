@@ -1,3 +1,15 @@
+# [3.12.44] - 2018-03-22
+## Added
+- Add a tooltip for daily notifications in Settings>Account
+
+## Fixed
+- Payments tab was broken on mobile browsers
+- Properly update  the addresses selector
+- Fixed "Learn More" link in Settings>Addresses/Users
+
+## Changed
+- Review the navigation bar
+
 # [3.12.43] - 2018-03-21
 ## Fixed
 - 2FA section was missing when 2FA was not enabled
