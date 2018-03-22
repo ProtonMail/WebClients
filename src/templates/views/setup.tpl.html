@@ -20,10 +20,10 @@
                 </label>
                 <div class="usernameWrap">
                     <p class="help" translate-context="Info" translate>This will be your new ProtonMail email address.</p>
-                    <strong ng-bind="$parent.username"></strong>
+                    <strong ng-bind="username"></strong>
                     <em class="usernameDomain">@</em>
                     <span class="pm_select inline bigger">
-                        <select class="selectDomain" ng-model="$parent.domain" ng-options="domain.label for domain in domains"></select>
+                        <select class="selectDomain" ng-model="domain" ng-options="domain.label for domain in domains"></select>
                         <i class="fa fa-angle-down"></i>
                     </span>
                 </div>
@@ -43,7 +43,7 @@
                     class="loginSetup-field-password"
                     data-id="password"
                     data-name="password"
-                    data-value="$parent.password"
+                    data-value="password"
                     placeholder-translate="Choose a mailbox password"
                     data-form="setup"></password>
 
@@ -51,8 +51,8 @@
                     class="loginSetup-field-password"
                     data-id="passwordc"
                     data-name="passwordc"
-                    data-value="$parent.passwordConfirm"
-                    data-compare="$parent.password"
+                    data-value="passwordConfirm"
+                    data-compare="password"
                     placeholder-translate="Confirm mailbox password"
                     data-form="setup"></password>
 
