@@ -6,7 +6,7 @@
     &.visibleOverflow { overflow: visible }
     table {
         border-collapse: collapse;
-        table-layout: fixed;
+        table-layout: auto;
         width: 100%;
         margin-bottom: 1rem;
         thead {
