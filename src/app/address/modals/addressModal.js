@@ -28,7 +28,7 @@ function addressModal(
         controller: function(params) {
             const { domains = [], organizationKey = null, members = [] } = params;
             const organization = organizationModel.get();
-            const [{ DisplayName, Signature }] = addressesModel.get() || [];
+            const [{ DisplayName, Signature } = {}] = addressesModel.get() || [];
 
             // NOTE DisplayName and Signature can be set to null
             this.model = { DisplayName: DisplayName || '', Signature: tools.replaceLineBreaks(Signature || '') };
