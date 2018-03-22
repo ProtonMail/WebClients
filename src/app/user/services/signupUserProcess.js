@@ -90,7 +90,10 @@ function signupUserProcess(
             });
         } catch (err) {
             const { data = {} } = err;
-            throw new Error(data.Error || err);
+            if (data.Error) {
+                throw new Error(data.Error);
+            }
+            throw err;
         }
     }
 
@@ -116,7 +119,6 @@ function signupUserProcess(
             return await doLogUserIn().then(doAccountSetup);
         } catch (e) {
             const { data = {} } = e;
-
             if (data.Error) {
                 return Promise.reject({
                     error: new Error(data.Error || I18N.ERROR_ADDRESS_CREATION),
@@ -130,12 +132,16 @@ function signupUserProcess(
     };
 
     const create = async (model) => {
-        await doCreateUser(model);
-        await createAddress();
+        try {
+            await doCreateUser(model);
+            await createAddress();
 
-        setUserLanguage()
-            .then(doGetUserInfo)
-            .then(finishRedirect);
+            return setUserLanguage()
+                .then(doGetUserInfo)
+                .then(finishRedirect);
+        } catch (e) {
+            throw e;
+        }
     };
 
     function generateNewKeys() {
@@ -149,8 +155,7 @@ function signupUserProcess(
         create(model).catch((e) => {
             notification.error(e.error ? e.error.message : I18N.ERROR_PROCESS);
             dispatch('signup.error', { value: true });
-            delete CACHE.setupPayload;
-
+            console.error(e);
             e.redirect && $state.go(e.redirect);
         });
     };
