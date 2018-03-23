@@ -192,12 +192,10 @@ export default angular
                         return i18nLoader.translate();
                     },
                     plans($stateParams, Payment) {
-                        const isValid = (test, list = []) => list.indexOf(test) !== -1;
                         const { currency, billing: cycle, plan } = $stateParams;
-
-                        const isValidCurrency = isValid(currency, CURRENCIES);
-                        const isValidCycle = isValid(+cycle, BILLING_CYCLE);
-                        const isValidPlan = isValid(plan, ['free', 'plus', 'visionary', 'professional']);
+                        const isValidCurrency = _.includes(CURRENCIES, currency);
+                        const isValidCycle = _.includes(BILLING_CYCLE, +cycle);
+                        const isValidPlan = _.includes(['free', 'plus', 'visionary', 'professional'], plan);
 
                         if (isValidCycle && isValidCurrency && isValidPlan) {
                             if (plan === 'free') {
