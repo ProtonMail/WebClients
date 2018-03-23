@@ -12,6 +12,9 @@
         thead {
             border-top: 1px solid $border;
         }
+        &.fixedLayout {
+            table-layout: fixed;
+        }
         &.print {
             em {
                 font-style: normal;
