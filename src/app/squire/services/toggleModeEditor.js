@@ -2,7 +2,7 @@ import _ from 'lodash';
 import { MIME_TYPES } from '../../constants';
 import { toText } from '../../../helpers/parserHTML';
 
-const { PLAINTEXT } = MIME_TYPES;
+const { DEFAULT, PLAINTEXT } = MIME_TYPES;
 
 /* @ngInject */
 function toggleModeEditor($rootScope, dispatchers, embeddedUtils, attachmentModel, textToHtmlMail) {
@@ -77,7 +77,7 @@ function toggleModeEditor($rootScope, dispatchers, embeddedUtils, attachmentMode
     const toHtml = (message, plaintextValue) => {
         const html = textToHtmlMail.parse(plaintextValue);
 
-        message.MIMEType = PLAINTEXT;
+        message.MIMEType = DEFAULT;
         message.setDecryptedBody(html, false);
 
         return html;
