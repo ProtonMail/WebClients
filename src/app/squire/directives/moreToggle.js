@@ -1,10 +1,14 @@
+import { MIME_TYPES } from '../../constants';
+
+const { DEFAULT, PLAINTEXT } = MIME_TYPES;
+
 /* @ngInject */
 function moreToggle(gettextCatalog, onCurrentMessage, editorState) {
     const IS_OPEN = 'squireDropdown-is-open';
 
     const MAP_TEXT = {
-        'text/plain': gettextCatalog.getString('Plain Text', null, 'Composer Mode'),
-        'text/html': gettextCatalog.getString('Normal', null, 'Composer Mode')
+        [PLAINTEXT]: gettextCatalog.getString('Plain Text', null, 'Composer Mode'),
+        [DEFAULT]: gettextCatalog.getString('Normal', null, 'Composer Mode')
     };
 
     return {
@@ -17,7 +21,6 @@ function moreToggle(gettextCatalog, onCurrentMessage, editorState) {
 
             const onStateChange = ({ popover: oldPopover, editorMode: oldEditorMode }, { popover, editorMode }) => {
                 if (oldEditorMode !== editorMode) {
-                    el.setAttribute('data-editor-mode', editorMode);
                     button.textContent = MAP_TEXT[editorMode];
                 }
                 if (popover === 'moreToggle') {

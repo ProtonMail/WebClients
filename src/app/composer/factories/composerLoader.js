@@ -1,4 +1,8 @@
 import _ from 'lodash';
+import { MIME_TYPES } from '../../constants';
+import { setCursorStart } from '../../squire/helpers/textMode';
+
+const { PLAINTEXT } = MIME_TYPES;
 
 /* @ngInject */
 function composerLoader(dispatchers, editorModel) {
@@ -40,13 +44,14 @@ function composerLoader(dispatchers, editorModel) {
                 return el.find('.subject').focus();
             }
 
-            if (message.MIMEType === 'text/plain') {
-                return el.find('.plaintext-editor').focus();
+            if (message.MIMEType === PLAINTEXT) {
+                setCursorStart(el.find('.plaintext-editor')[0]);
+                return;
             }
 
             const { editor } = editorModel.find(message);
             if (editor) {
-                return _rAF(() => editor.focus());
+                return editor.focus();
             }
 
             const { on, unsubscribe } = dispatchers();

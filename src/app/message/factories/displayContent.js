@@ -1,3 +1,7 @@
+import { MIME_TYPES } from '../../constants';
+
+const { PLAINTEXT } = MIME_TYPES;
+
 /* @ngInject */
 function displayContent($rootScope, $q, $filter, prepareContent, sanitize) {
     const read = ({ ID }) => $rootScope.$emit('messageActions', { type: 'read', data: { ids: [ID] } });
@@ -10,7 +14,7 @@ function displayContent($rootScope, $q, $filter, prepareContent, sanitize) {
     }
 
     function withType(body, { MIMEType }) {
-        const type = MIMEType === 'text/plain' ? 'plain' : 'html';
+        const type = MIMEType === PLAINTEXT ? 'plain' : 'html';
         return { body, type };
     }
 

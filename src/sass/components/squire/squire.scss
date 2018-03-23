@@ -1,4 +1,21 @@
-.squire-container { position: relative }
+.squire-container {
+    position: relative;
+
+    &[data-editor-mode="text/plain"] .angular-squire-wrapper {
+        display: none !important;
+    }
+
+    &[data-editor-mode="text/html"] .plaintext-editor {
+        display: none !important;
+    }
+
+    &[data-type-content="signature"] .plaintext-editor {
+        display: none !important;
+    }
+}
+
+.squire-container:not(.squireEditor-loaded) .plaintext-editor {display: none}
+
 .squire-container:not(.editorDropzone-enter) .squire-dropzone {display: none}
 
 .editorDropzone-enter {box-sizing: border-box;}
@@ -37,16 +54,7 @@
     font-size: .9rem /* Use browser default settigns */
 }
 
-.composer[data-type="text/plain"] .angular-squire-wrapper {
-    opacity: 0;
-    pointer-events: none
-}
-
 .editor-container {
     position: relative;
 }
 
-// Hotfix adblock squire issue
-.angular-squire-wrapper iframe[src="about:blank"] {
-    display: flex !important;
-}

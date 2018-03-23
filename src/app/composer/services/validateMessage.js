@@ -1,4 +1,6 @@
-import { MAX_TITLE_LENGTH, UNPAID_STATE, REGEX_EMAIL } from '../../constants';
+import { MAX_TITLE_LENGTH, UNPAID_STATE, REGEX_EMAIL, MIME_TYPES } from '../../constants';
+
+const { PLAINTEXT } = MIME_TYPES;
 
 /* @ngInject */
 function validateMessage(gettextCatalog, tools, confirmModal, authentication, notification, addressWithoutKeys) {
@@ -30,7 +32,7 @@ function validateMessage(gettextCatalog, tools, confirmModal, authentication, no
     };
 
     async function validate(message) {
-        if (message.MIMEType !== 'text/plain') {
+        if (message.MIMEType !== PLAINTEXT) {
             message.setDecryptedBody(tools.fixImages(message.getDecryptedBody()));
         }
 

@@ -1,4 +1,7 @@
 import _ from 'lodash';
+import { MIME_TYPES } from '../../constants';
+
+const { PLAINTEXT } = MIME_TYPES;
 
 /* @ngInject */
 function composerDropzone(attachmentFileFormat, tools, attachmentModel, dispatchers, notification, gettextCatalog, CONSTANTS, $state) {
@@ -140,7 +143,7 @@ function composerDropzone(attachmentFileFormat, tools, attachmentModel, dispatch
                 });
 
                 this.removeAllFiles();
-                queue.hasEmbedded = queue.files.every(({ isEmbedded }) => isEmbedded && message.MIMEType !== 'text/plain');
+                queue.hasEmbedded = queue.files.every(({ isEmbedded }) => isEmbedded && message.MIMEType !== PLAINTEXT);
 
                 if (isEO && queue.files.length + message.Attachments.length > 10) {
                     dispatchAction(message, queue, 'attachments.limit.error');

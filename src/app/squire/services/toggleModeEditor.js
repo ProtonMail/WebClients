@@ -1,14 +1,12 @@
 import _ from 'lodash';
-import htmlToTextMail from '../helpers/htmlToTextMail';
+import { MIME_TYPES } from '../../constants';
+import { toText } from '../../../helpers/parserHTML';
+
+const { PLAINTEXT } = MIME_TYPES;
 
 /* @ngInject */
-function toggleModeEditor($rootScope, dispatchers, embeddedUtils, attachmentModel, editorModel, textToHtmlMail) {
+function toggleModeEditor($rootScope, dispatchers, embeddedUtils, attachmentModel, textToHtmlMail) {
     const { on, dispatcher } = dispatchers(['squire.toggleMode', 'attachment.upload']);
-
-    const MODE = {
-        PLAINTEXT: 'text/plain',
-        DEFAULT: 'text/html'
-    };
 
     const CACHE = {
         /*
@@ -40,7 +38,7 @@ function toggleModeEditor($rootScope, dispatchers, embeddedUtils, attachmentMode
     const canToggle = (message) => {
         return (
             !isUploadingInline(message) &&
-            (message.MIMEType !== MODE.PLAINTEXT || !hasInlineAttachments(message)) &&
+            (message.MIMEType !== PLAINTEXT || !hasInlineAttachments(message)) &&
             !_.keys(CACHE.ATTACHMENTS_PROCESSING[message.ID]).length
         );
     };
@@ -61,111 +59,41 @@ function toggleModeEditor($rootScope, dispatchers, embeddedUtils, attachmentMode
         }
     });
 
-    const initializeSelection = (editor) => {
-        // solve a bug where the selection is not intialized properly making it impossible to add ul/ol'
-
-        const orgSelection = editor.getSelection();
-        // check if the initialization is already correct.
-        if (orgSelection.startContainer.tagName !== 'BODY' && orgSelection.endContainer.tagName !== 'BODY') {
-            return;
-        }
-        editor.moveCursorToStart();
-    };
-
-    const toDefault = (message, editor) => {
-        const value = message.getDecryptedBody();
-        const txt = textToHtmlMail.parse(value, message);
-
-        $rootScope.$applyAsync(() => {
-            message.MIMEType = MODE.DEFAULT;
-            message.setDecryptedBody(txt, false);
-            editor.setHTML(message.getDecryptedBody());
-            initializeSelection(editor);
-            if (message.RightToLeft) {
-                editor.setTextDirectionRTL();
-            }
-        });
-    };
-
-    /**
-     * Convert a message to plaintext
-     * Allow use to load a message as plaintext
-     * @param  {Message}  message
-     * @param  {Squire}  editor
-     * @param  {Boolean} noParse Should we parse the HTML from the editor or use the plaintext saved ?
-     * @return {void}
-     */
-    const toPlainText = (message, editor, noParse = false) => {
-
-        // Remove focus from the editor to prevent inserting more text.
-        editor.blur();
-        const plaintext = !noParse ? htmlToTextMail(editor) : message.getDecryptedBody();
-
-        // remove attachments
+    const toPlainText = (message, htmlValue, parse = true) => {
         const list = message.Attachments.filter(embeddedUtils.isEmbedded);
         dispatcher['attachment.upload']('remove.all', { message, list });
         CACHE.ATTACHMENTS_PROCESSING[message.ID] = CACHE.ATTACHMENTS_PROCESSING[message.ID] || {};
         const map = list.reduce((acc, { ID }) => ((acc[ID] = true), acc), {});
         _.extend(CACHE.ATTACHMENTS_PROCESSING[message.ID], map);
 
-        $rootScope.$applyAsync(() => {
-            message.setDecryptedBody(plaintext, false);
-            message.MIMEType = MODE.PLAINTEXT;
-        });
+        const plaintext = parse ? toText(htmlValue) : htmlValue;
+
+        message.MIMEType = PLAINTEXT;
+        message.setDecryptedBody(plaintext, false);
+
+        return plaintext;
     };
 
-    const check = (message) => {
-        if (!canToggle(message)) {
-            return;
-        }
+    const toHtml = (message, plaintextValue) => {
+        const html = textToHtmlMail.parse(plaintextValue);
 
-        const { editor } = editorModel.find(message);
-        return editor;
+        message.MIMEType = PLAINTEXT;
+        message.setDecryptedBody(html, false);
+
+        return html;
     };
-
-    const toggle = (message) => {
-        const editor = check();
-
-        if (!editor) {
-            return;
-        }
-
-        if (message.MIMEType === MODE.PLAINTEXT) {
-            return toDefault(message, editor);
-        }
-
-        toPlainText(message, editor);
-
-        if (!canToggle(message)) {
-            dispatch('disableToggle', message);
-        }
-    };
-
-    const getMode = ({ MIMEType }) => MIMEType;
-    const isMode = (mode, message) => getMode(message) === mode;
-
-    const actionFactory = (cb) => ({ message, argument }) => {
-        const editor = !isMode(argument.value, message) && check(message);
-        editor && cb(message, editor);
-    };
-
-    const action = {
-        [MODE.PLAINTEXT]: actionFactory(toPlainText),
-        [MODE.DEFAULT]: actionFactory(toDefault)
-    };
-
-    on('squire.editor', (event, { type, data }) => {
-        if (type === 'squireActions' && data.action === 'setEditorMode') {
-            action[data.argument.value](data);
-        }
-    });
 
     const clear = ({ ID }) => {
         delete CACHE.CAN_TOGGLE[ID];
         delete CACHE.ATTACHMENTS_PROCESSING[ID];
     };
 
-    return { init: angular.noop, getMode, toggle, clear, toPlainText };
+    return {
+        canToggle,
+        clear,
+        toPlainText,
+        toHtml
+    };
 }
 
 export default toggleModeEditor;

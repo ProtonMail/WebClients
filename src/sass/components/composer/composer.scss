@@ -115,13 +115,6 @@
           flex-direction: column;
         }
 
-        /*
-         * Make the editor have a 0 height if plaintext editor is visible.
-         */
-        &[data-type="text/plain"] .angular-squire-wrapper {
-            display: none;
-        }
-
         &.composer-draggable-editor .composeEditor {
             position: relative; /* dropzone parent which is absolute */
         }

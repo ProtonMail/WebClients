@@ -1,5 +1,8 @@
 import _ from 'lodash';
 import { isSafari, isIE11 } from '../../../helpers/browser';
+import { MIME_TYPES } from '../../constants';
+
+const { DEFAULT, PLAINTEXT } = MIME_TYPES;
 
 /* @ngInject */
 function attachmentFileFormat() {
@@ -17,7 +20,7 @@ function attachmentFileFormat() {
         if (isIE11()) {
             return type !== 'Text';
         }
-        return type !== 'text/html' && type !== 'text/plain' && type !== 'text/uri-list';
+        return type !== DEFAULT && type !== PLAINTEXT && type !== 'text/uri-list';
     };
 
     /**

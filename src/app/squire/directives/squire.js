@@ -1,45 +1,31 @@
 import _ from 'lodash';
+import { MIME_TYPES } from '../../constants';
+import { setHtml, setPlaintext, setCursorStart, setSquireSelection } from '../helpers/textMode';
+
+const { PLAINTEXT } = MIME_TYPES;
+
+/**
+ * Check if this squire instance is for a message or not
+ * Ex: you can work with a string instead of the message model
+ *   => signature
+ * @return {Boolean}
+ */
+const isMessage = (typeContent) => typeContent === 'message';
+
+/**
+ * Disable focus via TAB key when we switch are in mode: plaintext
+ * @param  {Node} iframe
+ * @return {Function}         arg:<Boolean> isPlaintext
+ */
+const tabIndexAble = (iframe) => (isPlainText) => {
+    isPlainText && iframe.setAttribute('tabindex', '-1');
+    !isPlainText && iframe.removeAttribute('tabindex');
+};
 
 /* @ngInject */
 function squire(squireEditor, embedded, editorListener, $rootScope, sanitize, toggleModeEditor, mailSettingsModel, onCurrentMessage) {
     const CLASS_NAMES = {
         LOADED: 'squireEditor-loaded'
-    };
-
-    /**
-     * Check if this squire instance is for a message or not
-     * Ex: you can work with a string intead of the message model
-     *   => signature
-     * @return {Boolean}
-     */
-    const isMessage = (typeContent) => typeContent === 'message';
-
-    /**
-     * Disable focus via TAB key when we switch are in mode: plaintext
-     * @param  {Node} iframe
-     * @return {Function}         arg:<Boolean> isPlaintext
-     */
-    const tabIndexAble = (iframe) => (isPlainText) => {
-        isPlainText && iframe.setAttribute('tabindex', '-1');
-        !isPlainText && iframe.removeAttribute('tabindex');
-    };
-
-    /*
-        We need the editor to get a valid plain text message on Load
-        - Parse a new message
-        - Don't parse when we open a draft already created.
-     */
-    const loadPlainText = (scope, editor, bindTabIndex = _.noop) => {
-        const isPlainTextMode = scope.message.MIMEType === 'text/plain';
-        const isDraftPlainText = scope.message.isPlainText() && scope.message.IsEncrypted === 5;
-        const isNewDraft = !scope.message.isPlainText() || !scope.message.IsEncrypted;
-
-        bindTabIndex(isPlainTextMode);
-
-        if ((isPlainTextMode && isNewDraft) || isDraftPlainText) {
-            // We convert only for a new draft, as old ones contains already the plaintext
-            toggleModeEditor.toPlainText(scope.message, editor, isDraftPlainText);
-        }
     };
 
     return {
@@ -55,6 +41,14 @@ function squire(squireEditor, embedded, editorListener, $rootScope, sanitize, to
             scope.data = {};
             const $iframe = el.find('iframe.squireIframe');
             $iframe[0].id = `${id}${Date.now()}`;
+
+            const setEditorLoaded = () => {
+                el[0].classList.add(CLASS_NAMES.LOADED);
+                scope.$applyAsync(() => (scope.isLoaded = true));
+            };
+
+            // Set the editor mode type data attribute, hides the plaintext editor or squire editor in CSS while doing so.
+            const setEditorModeType = (mode) => el[0].dataset.editorMode = mode;
 
             if (!isMessage(typeContent)) {
                 scope.message = { ID: id, isPlainText: _.noop };
@@ -72,8 +66,8 @@ function squire(squireEditor, embedded, editorListener, $rootScope, sanitize, to
             function updateModel(val, dispatchAction = false, forceUpdate = false) {
                 // Sanitize the message with the DOMPurify config.
                 const value = sanitize.message(val || '');
-                scope.$applyAsync(() => {
-                    if (scope.message.MIMEType === 'text/plain') {
+                scope.$applyAsync(async () => {
+                    if (scope.message.MIMEType === PLAINTEXT) {
                         // disable all updates if in plain text mode
                         return (forceUpdate && scope.message.setDecryptedBody(val, false));
                     }
@@ -83,15 +77,15 @@ function squire(squireEditor, embedded, editorListener, $rootScope, sanitize, to
 
                     if (isMessage(typeContent)) {
                         // Replace the embedded images with CID to keep the model updated
-                        return embedded.parser(scope.message, { direction: 'cid', text: value }).then((body) => {
-                            scope.message.setDecryptedBody(body);
+                        const body = await embedded.parser(scope.message, { direction: 'cid', text: value });
+                        scope.message.setDecryptedBody(body);
 
-                            // Dispatch an event to update the message
-                            dispatchAction &&
-                                $rootScope.$emit('message.updated', {
-                                    message: scope.message
-                                });
+                        // Dispatch an event to update the message
+                        dispatchAction &&
+                        $rootScope.$emit('message.updated', {
+                            message: scope.message
                         });
+                        return;
                     }
 
                     // We can work onto a string too
@@ -101,47 +95,73 @@ function squire(squireEditor, embedded, editorListener, $rootScope, sanitize, to
 
             squireEditor.create($iframe, scope.message, typeContent).then(onLoadEditor);
 
-            function onLoadEditor(editor) {
+            async function onLoadEditor(editor) {
                 const unsubscribe = [];
                 const bindTabIndex = tabIndexAble($iframe[0]);
-
-                // Prevent tab focus when we switch to plaintext
-                unsubscribe.push(
-                    onCurrentMessage('squire.editor', scope, (type, { action, argument } = {}) => {
-                        if (type === 'squireActions' && action === 'setEditorMode' && action) {
-                            bindTabIndex(argument.value === 'text/plain');
-                        }
-                    })
-                );
-
-                const isLoaded = () => {
-                    el[0].classList.add(CLASS_NAMES.LOADED);
-                    scope.$applyAsync(() => (scope.isLoaded = true));
-                };
+                // Ugly but need to get the textarea from the child directive after the editor has loaded.
+                const textarea = el[0].querySelector('.plaintext-editor');
 
                 if (isMessage(typeContent)) {
                     // On load we parse the body of the message in order to load its embedded images
                     // Assume that the message has been sanitized in composer.load first
-                    embedded.parser(scope.message)
-                        .then((body) => {
-                            editor.setHTML(body);
-                            if (scope.message.RightToLeft) {
-                                editor.setTextDirectionWithoutFocus('rtl');
-                            }
-                            loadPlainText(scope, editor, bindTabIndex);
-                            isLoaded();
-                            unsubscribe.push(listen(updateModel, editor));
-                        });
+                    const body = await embedded.parser(scope.message);
+
+                    const isPlainText = scope.message.isPlainText();
+                    bindTabIndex(isPlainText);
+                    setEditorModeType(scope.message.MIMEType);
+
+                    if (isPlainText) {
+                        const isDraftPlainText = isPlainText && scope.message.IsEncrypted === 5;
+                        const plaintext = toggleModeEditor.toPlainText(scope.message, body, !isDraftPlainText);
+                        setPlaintext(textarea, plaintext);
+                    } else {
+                        setHtml(scope.message, editor, body);
+                    }
+
+                    setEditorLoaded();
+                    unsubscribe.push(listen(updateModel, editor));
                 } else {
                     editor.setHTML(scope.value || '');
 
                     // defer loading to prevent input event refresh (takes some time to perform the setHTML)
                     const timeoutId = setTimeout(() => {
                         unsubscribe.push(listen(updateModel, editor));
-                        isLoaded();
+                        setEditorLoaded();
                         clearTimeout(timeoutId);
                     }, 100);
                 }
+
+                const setEditorModeCallback = (type, { action, argument } = {}) => {
+                    if (!(type === 'squireActions' && action === 'setEditorMode' && action)) {
+                        return;
+                    }
+                    const mode = argument.value;
+                    if (!toggleModeEditor.canToggle(mode)) {
+                        return;
+                    }
+
+                    const isPlainText = mode === PLAINTEXT;
+                    bindTabIndex(isPlainText);
+
+                    // If converting to plaintext, read the value (before it's hidden) from the squire editor, otherwise from the textarea.
+                    const value = isPlainText ?
+                        editor.getHTML() :
+                        textarea.value;
+
+                    setEditorModeType(mode);
+
+                    if (isPlainText) {
+                        const plaintext = toggleModeEditor.toPlainText(scope.message, value);
+                        setPlaintext(textarea, plaintext);
+                        setCursorStart(textarea);
+                    } else {
+                        const html = toggleModeEditor.toHtml(scope.message, value);
+                        setHtml(scope.message, editor, html);
+                        setSquireSelection(editor);
+                    }
+                };
+
+                unsubscribe.push(onCurrentMessage('squire.editor', scope, setEditorModeCallback));
 
                 $rootScope.$emit('composer.update', {
                     type: 'editor.loaded',
@@ -164,4 +184,5 @@ function squire(squireEditor, embedded, editorListener, $rootScope, sanitize, to
         }
     };
 }
+
 export default squire;

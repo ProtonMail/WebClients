@@ -1,4 +1,7 @@
 import _ from 'lodash';
+import { MIME_TYPES } from '../../constants';
+
+const { PLAINTEXT } = MIME_TYPES;
 
 /* @ngInject */
 function messageModel($q, $timeout, pmcw, User, gettextCatalog, authentication, AttachmentLoader, sanitize) {
@@ -66,7 +69,7 @@ function messageModel($q, $timeout, pmcw, User, gettextCatalog, authentication, 
         }
 
         isPlainText() {
-            return this.MIMEType === 'text/plain';
+            return this.MIMEType === PLAINTEXT;
         }
 
         plainText() {
@@ -165,7 +168,7 @@ function messageModel($q, $timeout, pmcw, User, gettextCatalog, authentication, 
                 }
 
                 // If html is missing, display the rest of the cases like plain text.
-                this.MIMEType = 'text/plain';
+                this.MIMEType = PLAINTEXT;
 
                 if (text) {
                     return deferred.resolve(text);
@@ -307,12 +310,12 @@ function messageModel($q, $timeout, pmcw, User, gettextCatalog, authentication, 
                                 this.hasError = true;
 
                                 // We need to display the encrypted body to the user if it fails
-                                this.MIMEType = 'text/plain';
+                                this.MIMEType = PLAINTEXT;
                                 deferred.reject(err);
                             });
                     } catch (err) {
                         this.setDecryptedBody(this.Body, false);
-                        this.MIMEType = 'text/plain';
+                        this.MIMEType = PLAINTEXT;
                         this.failedDecryption = true;
                         this.hasError = true;
                         deferred.reject(err);

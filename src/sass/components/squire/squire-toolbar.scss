@@ -64,36 +64,33 @@
 
 }
 
-.composer {
-    [data-editor-text="text/plain"] {
-        .squireToolbar-row-2 { display: none }
-        .squireToolbar-row-1 > :not(.squireToolbar-text-mode) {
-            display: none;
-            pointer-events: none;
-        }
-
-        .squireToolbar-row-1 {
-            position: relative;
-            top: 0;
-            width: 100%;
-            border-radius: 0;
-            border-width: 0 0 1px 0;
-            box-shadow: none;
-            justify-content: flex-end;
-        }
-
-        .squireToolbar-text-mode {
-            margin-left: 0;
-        }
-
-        .squireToolbar-select-list {
-            left: auto;
-            right: 4px
-        }
-
+.squire-container[data-editor-mode="text/plain"] {
+    .squireToolbar-row-2 { display: none }
+    .squireToolbar-row-1 > :not(.squireToolbar-text-mode) {
+        display: none;
+        pointer-events: none;
     }
-}
 
+    .squireToolbar-row-1 {
+        position: relative;
+        top: 0;
+        width: 100%;
+        border-radius: 0;
+        border-width: 0 0 1px 0;
+        box-shadow: none;
+        justify-content: flex-end;
+    }
+
+    .squireToolbar-text-mode {
+        margin-left: 0;
+    }
+
+    .squireToolbar-select-list {
+        left: auto;
+        right: 4px
+    }
+
+}
 
 .squireToolbar-action-color {position: relative;}
 .squireToolbar-action-color > * { pointer-events: none; }
@@ -342,7 +339,7 @@
     border: 0
 }
 
-[data-editor-text="text/plain"] .squireToolbar-dropdown-divider {
+.squire-container[data-editor-mode="text/plain"] .squireToolbar-dropdown-divider {
     display: none;
 }
 
@@ -444,8 +441,8 @@ $list: georgia arial helvetica menlo tahoma verdana times trebuchet;
     width: auto;
 }
 
-[data-editor-text="text/html"] .squireToolbar-select-view .plain-text-icon,
-[data-editor-text="text/plain"] .squireToolbar-select-view .fa-file-text { display: none !important }
+.squire-container[data-editor-mode="text/html"] .squireToolbar-select-view .plain-text-icon,
+.squire-container[data-editor-mode="text/plain"] .squireToolbar-select-view .fa-file-text { display: none !important }
 /*To match with the other icon*/
 .squireToolbar-editor-mode .fa-file-text { margin-right: 3px }
 
@@ -456,14 +453,14 @@ $list: georgia arial helvetica menlo tahoma verdana times trebuchet;
 /* Active items in the more list */
 .squireToolbar-container.dir-ltr .squireToolbar-select-item[data-squire-actions="setTextDirectionLTR"],
 .squireToolbar-container.dir-rtl .squireToolbar-select-item[data-squire-actions="setTextDirectionRTL"],
-.composer [data-editor-text="text/plain"] .squireToolbar-select-item[data-value="text/plain"],
-.composer [data-editor-text="text/html"] .squireToolbar-select-item[data-value="text/html"] {
+.squire-container[data-editor-mode="text/plain"] .squireToolbar-select-item[data-value="text/plain"],
+.squire-container[data-editor-mode="text/html"] .squireToolbar-select-item[data-value="text/html"] {
     pointer-events: none;
     .fa-check { opacity: 1 }
 }
 
-.composer [data-editor-text="text/plain"] .squireToolbar-select-item[data-squire-actions="setTextDirectionRTL"],
-.composer [data-editor-text="text/plain"] .squireToolbar-select-item[data-squire-actions="setTextDirectionLTR"] {
+.squire-container[data-editor-mode="text/plain"] .squireToolbar-select-item[data-squire-actions="setTextDirectionRTL"],
+.squire-container[data-editor-mode="text/plain"] .squireToolbar-select-item[data-squire-actions="setTextDirectionLTR"] {
     display: none;
 }
 

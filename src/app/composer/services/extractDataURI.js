@@ -1,4 +1,7 @@
 import { flow, map, filter } from 'lodash/fp';
+import { MIME_TYPES } from '../../constants';
+
+const { PLAINTEXT } = MIME_TYPES;
 
 /* @ngInject */
 function extractDataURI(attachmentModel, embedded) {
@@ -32,7 +35,7 @@ function extractDataURI(attachmentModel, embedded) {
      * @return {Promise}
      */
     async function extractDataURI(message) {
-        if (message.MIMEType === 'text/plain') {
+        if (message.MIMEType === PLAINTEXT) {
             return message;
         }
 

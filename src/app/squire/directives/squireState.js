@@ -1,5 +1,5 @@
 /* @ngInject */
-function squireState(onCurrentMessage, editorModel, editorState, toggleModeEditor) {
+function squireState(onCurrentMessage, editorModel, editorState) {
     const KEY_ARROW_INPUT = [38, 39, 40, 37, 33, 34, 36, 35]; // URDL FastUP FastDown
 
     const parse = (ID, editor) => {
@@ -20,7 +20,7 @@ function squireState(onCurrentMessage, editorModel, editorState, toggleModeEdito
     };
 
     const setEditorMode = (ID, editorMode) => {
-        // Also close the popover when setting the editormode.
+        // Also close the popover when setting the editor mode.
         editorState.set(ID, { editorMode, popover: undefined });
     };
 
@@ -42,7 +42,7 @@ function squireState(onCurrentMessage, editorModel, editorState, toggleModeEdito
 
             // Set off the initial state
             parse(ID, editor);
-            setEditorMode(ID, toggleModeEditor.getMode(scope.message));
+            setEditorMode(ID, scope.message.MIMEType);
 
             const onClickEditor = () => parse(ID, editor);
             const onKeyup = (e) => KEY_ARROW_INPUT.includes(e.keyCode) && parse(ID, editor);
