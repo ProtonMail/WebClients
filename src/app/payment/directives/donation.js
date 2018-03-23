@@ -1,7 +1,9 @@
 import _ from 'lodash';
 
+import { CONSTANTS, CURRENCIES } from '../../constants';
+
 /* @ngInject */
-function donation(CONSTANTS, cardModel, gettextCatalog, dispatchers, paymentUtils, donateModel, authentication) {
+function donation(cardModel, gettextCatalog, dispatchers, paymentUtils, donateModel, authentication) {
     const SELECTOR = {
         BTN_AMOUNT: 'donationForm-btn-amount',
         BTN_SUBMIT: 'donationForm-btn-submit',
@@ -11,7 +13,7 @@ function donation(CONSTANTS, cardModel, gettextCatalog, dispatchers, paymentUtil
     };
 
     donateModel.init();
-    const CURRENCIES = CONSTANTS.CURRENCIES.map((value) => ({ label: value, value }));
+    const currencies = CURRENCIES.map((value) => ({ label: value, value }));
 
     const getParameters = (scope) => (paypalConfig = {}) => {
         const Amount = (scope.model.otherAmount || scope.model.amount) * 100;
@@ -65,10 +67,10 @@ function donation(CONSTANTS, cardModel, gettextCatalog, dispatchers, paymentUtil
                 card: {},
                 method: selected,
                 amount: 25,
-                currency: _.find(CURRENCIES, { value: authentication.user.Currency || CONSTANTS.DEFAULT_CURRENCY })
+                currency: _.find(currencies, { value: authentication.user.Currency || CONSTANTS.DEFAULT_CURRENCY })
             };
 
-            scope.currencies = CURRENCIES;
+            scope.currencies = currencies;
             scope.methods = list;
 
             const onSubmit = (e) => {
