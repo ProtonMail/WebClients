@@ -42,6 +42,11 @@ export const CONVERSATION_REQUEST_SIZE = 10;
 export const GIFT_CODE_LENGTH = 16;
 export const PM_SIGNATURE = 'Sent with <a href="https://protonmail.com" target="_blank">ProtonMail</a> Secure Email.';
 
+export const MIME_TYPES = {
+    PLAINTEXT: 'text/plain',
+    DEFAULT: 'text/html'
+};
+
 export const DEFAULT_SQUIRE_VALUE = {
     LINK: '',
     IMAGE: '',

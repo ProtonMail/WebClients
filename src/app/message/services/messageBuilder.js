@@ -1,6 +1,8 @@
 import _ from 'lodash';
 import { flow, filter, sortBy } from 'lodash/fp';
-import { CONSTANTS } from '../../constants';
+import { CONSTANTS, MIME_TYPES } from '../../constants';
+
+const { PLAINTEXT } = MIME_TYPES;
 
 /**
  * Format the subject to add the prefix only when the subject
@@ -166,7 +168,7 @@ function messageBuilder(
      * @return {String}
      */
     function convertContent(input = '', { MIMEType = '' } = {}) {
-        if (MIMEType === 'text/plain') {
+        if (MIMEType === PLAINTEXT) {
             return textToHtmlMail.parse(input);
         }
         return input;

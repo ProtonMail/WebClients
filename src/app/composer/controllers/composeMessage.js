@@ -1,4 +1,7 @@
 import _ from 'lodash';
+import { MIME_TYPES } from '../../constants';
+
+const { PLAINTEXT } = MIME_TYPES;
 
 /* @ngInject */
 function ComposeMessageController(
@@ -234,7 +237,7 @@ function ComposeMessageController(
     });
 
     on('attachment.upload', (e, { type, data }) => {
-        if (type === 'remove.success' && data.message.MIMEType !== 'text/plain') {
+        if (type === 'remove.success' && data.message.MIMEType !== PLAINTEXT) {
             postMessage(data.message, { autosaving: true });
         }
     });

@@ -1,4 +1,7 @@
 import _ from 'lodash';
+import { MIME_TYPES } from '../../constants';
+
+const { DEFAULT } = MIME_TYPES;
 
 /* @ngInject */
 function OutsideController(
@@ -53,7 +56,7 @@ function OutsideController(
         if ($state.is('eo.reply')) {
             message.showImages = true;
             message.showEmbedded = true;
-            message.MIMEType = 'text/html';
+            message.MIMEType = DEFAULT;
         }
 
         message.setDecryptedBody(clean(message.getDecryptedBody()));

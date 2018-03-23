@@ -1,6 +1,9 @@
 import _ from 'lodash';
 
 import { flow, filter, map, reduce } from 'lodash/fp';
+import { MIME_TYPES } from '../../constants';
+
+const { PLAINTEXT } = MIME_TYPES;
 
 /* @ngInject */
 function attachmentModel(
@@ -278,7 +281,7 @@ function attachmentModel(
                 const attConf = getConfigMapAttachment(id, attachment);
                 const state = _.extend({}, attConf || data, { message, attachment, id });
 
-                if (packet.Inline === 1 && message.MIMEType !== 'text/plain') {
+                if (packet.Inline === 1 && message.MIMEType !== PLAINTEXT) {
                     // Attachment removed, may remove embedded ref from the editor too
                     dispatch('remove.embedded', state);
                 }

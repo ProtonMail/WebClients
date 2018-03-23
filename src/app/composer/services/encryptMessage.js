@@ -1,4 +1,7 @@
 import _ from 'lodash';
+import { MIME_TYPES } from '../../constants';
+
+const { DEFAULT } = MIME_TYPES;
 
 /* @ngInject */
 function encryptMessage($rootScope, pmcw, srp, ComposerRequestStatus, outsidersMap, CONSTANTS, gettextCatalog) {
@@ -111,7 +114,7 @@ function encryptMessage($rootScope, pmcw, srp, ComposerRequestStatus, outsidersM
         const packageSet = {
             Type: 0,
             Addresses: {},
-            MIMEType: message.MIMEType || 'text/html',
+            MIMEType: message.MIMEType || DEFAULT,
             Body: pmcw.encode_base64(pmcw.arrayToBinaryString(dataPacket[0]))
         };
 

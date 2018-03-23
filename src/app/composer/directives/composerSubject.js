@@ -1,4 +1,7 @@
 import _ from 'lodash';
+import { MIME_TYPES } from '../../constants';
+
+const { PLAINTEXT } = MIME_TYPES;
 
 /* @ngInject */
 const composerSubject = (editorModel) => ({
@@ -20,7 +23,7 @@ const composerSubject = (editorModel) => ({
             if (e.which !== 9) {
                 return;
             }
-            if (scope.message.MIMEType === 'text/plain') {
+            if (scope.message.MIMEType === PLAINTEXT) {
                 // todo make this an event?
                 e.preventDefault();
                 return el
@@ -31,7 +34,7 @@ const composerSubject = (editorModel) => ({
 
             const { editor } = editorModel.find(scope.message);
 
-            if (editor && scope.message.MIMEType !== 'text/plain') {
+            if (editor && scope.message.MIMEType !== PLAINTEXT) {
                 e.preventDefault();
                 editor.focus();
             }

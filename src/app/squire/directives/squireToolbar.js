@@ -106,10 +106,7 @@ function squireToolbar(editorState, editorModel) {
                 closeAllPopups();
             };
 
-            const onStateChange = ({ popover: oldPopover, editorMode: oldEditorMode }, { popover, editorMode }) => {
-                if (oldEditorMode !== editorMode) {
-                    el.setAttribute('data-editor-text', editorMode);
-                }
+            const onStateChange = ({ popover: oldPopover }, { popover }) => {
                 if (oldPopover === 'makeLink' || oldPopover === 'insertImage') {
                     el.classList.remove(CLASSNAME[oldPopover]);
                 }
@@ -126,7 +123,7 @@ function squireToolbar(editorState, editorModel) {
 
             // Needs to be initialized with the default editor mode.
             onStateChange({}, editorState.get(ID));
-            editorState.on(ID, onStateChange, ['popover', 'editorMode']);
+            editorState.on(ID, onStateChange, ['popover']);
             // Initialize the current path for pre-defined states.
             onPathChange();
             editor.addEventListener('pathChange', onPathChange);
