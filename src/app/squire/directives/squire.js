@@ -136,7 +136,8 @@ function squire(squireEditor, embedded, editorListener, $rootScope, sanitize, to
                         return;
                     }
                     const mode = argument.value;
-                    if (!toggleModeEditor.canToggle(mode)) {
+                    if (!toggleModeEditor.canToggle(scope.message) ||
+                        mode === scope.message.MIMEType) {
                         return;
                     }
 
