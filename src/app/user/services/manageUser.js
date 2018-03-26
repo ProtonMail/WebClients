@@ -2,24 +2,25 @@ import _ from 'lodash';
 
 /* @ngInject */
 function manageUser(
-    CONSTANTS,
-    pmcw,
+    $exceptionHandler,
     $rootScope,
     addressesModel,
-    authentication,
-    setupKeys,
-    $exceptionHandler,
     addressWithoutKeysManager,
+    authentication,
+    CONSTANTS,
+    dispatchers,
     gettextCatalog,
-    notification
+    notification,
+    pmcw,
+    setupKeys
 ) {
+    const { on } = dispatchers();
     const I18N = {
         REVOKE_ADMIN_RELOAD: gettextCatalog.getString('Your admin privileges have been revoked.', null, 'Info'),
         REVOKE_ADMIN_RELOAD_INFO: gettextCatalog.getString('The app will now be reloaded in a few seconds', null, 'Info')
     };
 
-    let previousRole;
-
+    const CACHE = {};
     const getPromise = async ({ OrganizationPrivateKey } = {}, password) => {
         if (OrganizationPrivateKey) {
             return pmcw.decryptPrivateKey(OrganizationPrivateKey, password);
@@ -96,8 +97,8 @@ function manageUser(
 
     async function manageUser({ User = {}, Members = [] }) {
         // Init value on load
-        if (angular.isUndefined(previousRole)) {
-            previousRole = authentication.user.Role;
+        if (angular.isUndefined(CACHE.previousRole)) {
+            CACHE.previousRole = authentication.user.Role;
         }
 
         if (angular.isUndefined(User.Role)) {
@@ -110,13 +111,13 @@ function manageUser(
         }
 
         // Revoke admin, we reload the app to clear the context
-        if (previousRole === CONSTANTS.PAID_ADMIN_ROLE && User.Role !== CONSTANTS.PAID_ADMIN_ROLE) {
-            previousRole = User.Role;
+        if (CACHE.previousRole === CONSTANTS.PAID_ADMIN_ROLE && User.Role !== CONSTANTS.PAID_ADMIN_ROLE) {
+            CACHE.previousRole = User.Role;
             _rAF(() => notification.info(`${I18N.REVOKE_ADMIN_RELOAD}<br>${I18N.REVOKE_ADMIN_RELOAD_INFO}`));
             return _.delay(() => window.location.reload(), 5000);
         }
 
-        previousRole = User.Role;
+        CACHE.previousRole = User.Role;
         const password = authentication.getPassword();
 
         try {
@@ -129,6 +130,10 @@ function manageUser(
             e && $exceptionHandler(e);
         }
     }
+
+    on('logout', () => {
+        delete CACHE.previousRole;
+    });
 
     return manageUser;
 }
