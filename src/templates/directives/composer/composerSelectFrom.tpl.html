@@ -8,9 +8,7 @@
     id="fromMessage{{::message.ID}}"
     name="fromMessage{{::message.ID}}"
     ng-model="message.From"
-    ng-options="address.Email for address in addresses track by address.Email"
-    ng-disabled="message.Attachments.length"
-    ng-class="{'composerSelectFrom-select-disabled': message.Attachments.length}"></select>
+    ng-options="address.Email for address in addresses track by address.Email"></select>
   <button class="pm_button link" >
       <i class="fa fa-angle-down"></i>
   </button>

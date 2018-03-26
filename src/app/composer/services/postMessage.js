@@ -42,7 +42,7 @@ function postMessage(
         }, []);
     }
 
-    const makeParams = (message, autosaving) => {
+    const makeParams = async (message, autosaving) => {
         const parameters = {
             Message: _.pick(message, 'ToList', 'CCList', 'BCCList', 'Subject', 'IsRead', 'MIMEType')
         };
@@ -86,7 +86,13 @@ function postMessage(
             Address
         };
 
-        parameters.Message.AddressID = message.AddressID;
+        const [ { PublicKey } = {} ] = message.From.Keys || [];
+
+        parameters.AttachmentKeyPackets = await message.encryptAttachmentKeyPackets(PublicKey);
+
+        // NOTE we set the AddressID once AttachmentKeyPackets is done
+        message.AddressID = message.From.ID;
+        parameters.Message.AddressID = message.From.ID;
 
         return parameters;
     };
@@ -168,7 +174,7 @@ function postMessage(
 
     const save = async (message, { notification, autosaving }) => {
         try {
-            const parameters = makeParams(message, autosaving);
+            const parameters = await makeParams(message, autosaving);
 
             const [{ ID } = {}] = await composerRequestModel.chain(message);
 

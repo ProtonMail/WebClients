@@ -238,24 +238,24 @@ function messageModel($q, $timeout, pmcw, User, gettextCatalog, authentication, 
                 });
         }
 
-        encryptAttachmentKeyPackets(publicKeys = [], passwords = []) {
+        encryptAttachmentKeyPackets(publicKey = '', passwords = []) {
             const packets = {};
 
             return Promise.all(
                 this.Attachments.map((attachment) => {
-                    return AttachmentLoader.getSessionKey(this, attachment).then(({ sessionKey = {}, AttachmentID, ID } = {}) => {
-                        attachment.sessionKey = sessionKey; // Update the ref
-                        return pmcw
-                            .encryptSessionKey({
+                    return AttachmentLoader.getSessionKey(this, attachment)
+                        .then(({ sessionKey = {}, AttachmentID, ID } = {}) => {
+                            attachment.sessionKey = sessionKey; // Update the ref
+                            return pmcw.encryptSessionKey({
                                 data: sessionKey.data,
                                 algorithm: sessionKey.algorithm,
-                                publicKeys: publicKeys.length > 0 ? pmcw.getKeys(publicKeys) : [],
+                                publicKeys: publicKey.length ? pmcw.getKeys(publicKey) : [],
                                 passwords
                             })
-                            .then(({ message }) => {
-                                packets[AttachmentID || ID] = pmcw.encode_base64(pmcw.arrayToBinaryString(message.packets.write()));
-                            });
-                    });
+                                .then(({ message }) => {
+                                    packets[AttachmentID || ID] = pmcw.encode_base64(pmcw.arrayToBinaryString(message.packets.write()));
+                                });
+                        });
                 })
             ).then(() => packets);
         }

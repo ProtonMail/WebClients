@@ -39,6 +39,24 @@ export function injectInline({ Attachments = [] } = {}) {
 }
 
 /**
+ * Select attachements depending on action
+ * @param  {Object} message
+ * @param  {String} action
+ * @return {Array}
+ */
+export function pickAttachements(message = {}, action = 'new') {
+    if (/^(reply|replyall)$/.test(action)) {
+        return injectInline(message);
+    }
+
+    if (action === 'forward') {
+        return message.Attachments || [];
+    }
+
+    return [];
+}
+
+/**
  * Find the current sender for a message
  * @param  {Object} options.Addresses  From the user
  * @param  {String} options.AddressID
@@ -204,9 +222,7 @@ function messageBuilder(
 
         newMsg.AddressID = address.ID;
         newMsg.From = address;
-
-        /* add inline images as attachments */
-        newMsg.Attachments = injectInline(currentMsg);
+        newMsg.Attachments = pickAttachements(currentMsg, action);
         newMsg.NumEmbedded = 0;
 
         if (action !== 'new') {
