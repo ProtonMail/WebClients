@@ -59,14 +59,14 @@ function toggleModeEditor($rootScope, dispatchers, embeddedUtils, attachmentMode
         }
     });
 
-    const toPlainText = (message, htmlValue, parse = true) => {
+    const toPlainText = (message, htmlValue) => {
         const list = message.Attachments.filter(embeddedUtils.isEmbedded);
         dispatcher['attachment.upload']('remove.all', { message, list });
         CACHE.ATTACHMENTS_PROCESSING[message.ID] = CACHE.ATTACHMENTS_PROCESSING[message.ID] || {};
         const map = list.reduce((acc, { ID }) => ((acc[ID] = true), acc), {});
         _.extend(CACHE.ATTACHMENTS_PROCESSING[message.ID], map);
 
-        const plaintext = parse ? toText(htmlValue) : htmlValue;
+        const plaintext = toText(htmlValue);
 
         message.MIMEType = PLAINTEXT;
         message.setDecryptedBody(plaintext, false);

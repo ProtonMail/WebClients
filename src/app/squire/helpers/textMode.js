@@ -16,6 +16,7 @@ export const setCursorStart = (textarea) => {
     textarea.focus();
     textarea.selectionStart = 0;
     textarea.selectionEnd = 0;
+    textarea.scrollTop = 0;
 };
 
 /**

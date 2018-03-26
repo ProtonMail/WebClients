@@ -111,9 +111,16 @@ function squire(squireEditor, embedded, editorListener, $rootScope, sanitize, to
                     setEditorModeType(scope.message.MIMEType);
 
                     if (isPlainText) {
-                        const isDraftPlainText = isPlainText && scope.message.IsEncrypted === 5;
-                        const plaintext = toggleModeEditor.toPlainText(scope.message, body, !isDraftPlainText);
-                        setPlaintext(textarea, plaintext);
+                        if (scope.message.IsEncrypted === 5) {
+                            // If it is a draft plaintext, it does not need to be converted.
+                            setPlaintext(textarea, body);
+                        } else {
+                            // Even if it's a plaintext message, set the body in squire first because we are relying
+                            // on its broken handling of BRs in the html to text conversion.
+                            setHtml(scope.message, editor, body);
+                            const plaintext = toggleModeEditor.toPlainText(scope.message, editor.getHTML());
+                            setPlaintext(textarea, plaintext);
+                        }
                     } else {
                         setHtml(scope.message, editor, body);
                     }
