@@ -97,7 +97,6 @@ function squireEditor($rootScope, editorModel, sanitize) {
             .proton-embedded:not([src]) {
                 position: relative;
                 min-height: 38px;
-                display: inline-block;
                 border: 1px solid;
                 border-color: #444 #CCC #CCC #444;
                 background: url('/assets/img/icons/broken-img.png') no-repeat 0 50% white;
@@ -136,6 +135,11 @@ function squireEditor($rootScope, editorModel, sanitize) {
 
             li {
                 list-style-position: inside;
+            }
+
+            // Handle outlook https://github.com/ProtonMail/Angular/issues/6711
+            p.MsoNormal, li.MsoNormal, div.MsoNormal {
+                margin: 0;
             }
             `;
 

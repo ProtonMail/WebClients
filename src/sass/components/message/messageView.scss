@@ -393,6 +393,12 @@
     overflow: hidden;
 }
 
+// Replicated in squireEditor.js
+// Handle outlook https://github.com/ProtonMail/Angular/issues/6711
+p.MsoNormal, li.MsoNormal, div.MsoNormal {
+    margin: 0;
+}
+
 // MOBILE
 body.appConfigBody-is-mobile {
     #conversation-view {
