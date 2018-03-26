@@ -144,7 +144,7 @@
   "license": "MIT",
   "scripts": {
     "postinstall": "./tasks/privateDependencies.sh && ./tasks/checkDependencies.js",
-    "lint": "eslint $(find src/app -type f -name '*.js')  --quiet",
+    "lint": "./tasks/lint.js",
     "e2e": "protractor protractor_conf.js",
     "vendor": "cross-env NODE_ENV=dev tasks/buildVendor.js",
     "pretest": "del ./build && npm run vendor && cross-env NODE_ENV=test webpack --progress",
