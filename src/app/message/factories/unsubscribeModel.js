@@ -40,13 +40,8 @@ function unsubscribeModel(authentication, dispatchers, addressesModel, gettextCa
             message.ToList = to.split(',').map((email) => ({ Address: email, Name: email }));
         }
 
-        if (searchObject.subject) {
-            message.Subject = searchObject.subject;
-        }
-
-        if (searchObject.body) {
-            message.setDecryptedBody(searchObject.body);
-        }
+        message.Subject = searchObject.subject || 'Unsubscribe me';
+        message.setDecryptedBody(searchObject.body || 'Unsubscribe me please');
 
         return simpleSend(message).then(() => notification.success(successMessage));
     }
