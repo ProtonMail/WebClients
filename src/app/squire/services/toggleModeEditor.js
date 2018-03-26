@@ -5,8 +5,8 @@ import { toText } from '../../../helpers/parserHTML';
 const { DEFAULT, PLAINTEXT } = MIME_TYPES;
 
 /* @ngInject */
-function toggleModeEditor($rootScope, dispatchers, embeddedUtils, attachmentModel, textToHtmlMail) {
-    const { on, dispatcher } = dispatchers(['squire.toggleMode', 'attachment.upload']);
+function toggleModeEditor(dispatchers, embeddedUtils, attachmentModel, textToHtmlMail) {
+    const { on, dispatcher } = dispatchers(['squire.toggleMode', 'attachment.upload', 'message']);
 
     const CACHE = {
         /*
@@ -71,6 +71,9 @@ function toggleModeEditor($rootScope, dispatchers, embeddedUtils, attachmentMode
         message.MIMEType = PLAINTEXT;
         message.setDecryptedBody(plaintext, false);
 
+        // Save the message since it has changed.
+        dispatcher.message('updated', { message });
+
         return plaintext;
     };
 
@@ -79,6 +82,9 @@ function toggleModeEditor($rootScope, dispatchers, embeddedUtils, attachmentMode
 
         message.MIMEType = DEFAULT;
         message.setDecryptedBody(html, false);
+
+        // Save the message since it has changed.
+        dispatcher.message('updated', { message });
 
         return html;
     };

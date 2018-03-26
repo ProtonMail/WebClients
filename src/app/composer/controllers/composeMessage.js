@@ -223,9 +223,9 @@ function ComposeMessageController(
         }
     });
 
-    on('message.updated', (e, { message }) => {
+    on('message', (e, { type, data: { message } }) => {
         // save when DOM is updated
-        postMessage(message, { autosaving: true });
+        type === 'updated' && postMessage(message, { autosaving: true });
     });
 
     on('plaintextarea', (e, { type, data }) => {

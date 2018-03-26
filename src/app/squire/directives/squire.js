@@ -23,7 +23,7 @@ const tabIndexAble = (iframe) => (isPlainText) => {
 };
 
 /* @ngInject */
-function squire(squireEditor, embedded, editorListener, $rootScope, sanitize, toggleModeEditor, mailSettingsModel, onCurrentMessage) {
+function squire(squireEditor, embedded, editorListener, dispatchers, sanitize, toggleModeEditor, mailSettingsModel, onCurrentMessage) {
     const CLASS_NAMES = {
         LOADED: 'squireEditor-loaded'
     };
@@ -38,6 +38,8 @@ function squire(squireEditor, embedded, editorListener, $rootScope, sanitize, to
         replace: true,
         templateUrl: require('../../../templates/directives/squire.tpl.html'),
         link(scope, el, { typeContent = 'message', action = '', id = 'composer' }) {
+            const { dispatcher } = dispatchers(['message', 'composer.update']);
+
             scope.data = {};
             const $iframe = el.find('iframe.squireIframe');
             $iframe[0].id = `${id}${Date.now()}`;
@@ -81,10 +83,7 @@ function squire(squireEditor, embedded, editorListener, $rootScope, sanitize, to
                         scope.message.setDecryptedBody(body);
 
                         // Dispatch an event to update the message
-                        dispatchAction &&
-                        $rootScope.$emit('message.updated', {
-                            message: scope.message
-                        });
+                        dispatchAction && dispatcher.message('updated', { message: scope.message });
                         return;
                     }
 
@@ -171,14 +170,11 @@ function squire(squireEditor, embedded, editorListener, $rootScope, sanitize, to
 
                 unsubscribe.push(onCurrentMessage('squire.editor', scope, setEditorModeCallback));
 
-                $rootScope.$emit('composer.update', {
-                    type: 'editor.loaded',
-                    data: {
-                        element: el,
-                        editor,
-                        message: scope.message,
-                        isMessage: isMessage(typeContent)
-                    }
+                dispatcher['composer.update']('editor.loaded', {
+                    element: el,
+                    editor,
+                    message: scope.message,
+                    isMessage: isMessage(typeContent)
                 });
 
                 scope.$on('$destroy', () => {
