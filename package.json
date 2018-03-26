@@ -147,7 +147,7 @@
     "lint": "./tasks/lint.js",
     "e2e": "protractor protractor_conf.js",
     "vendor": "cross-env NODE_ENV=dev tasks/buildVendor.js",
-    "pretest": "del ./build && npm run vendor && cross-env NODE_ENV=test webpack --progress",
+    "pretest": "del ./build && npm run vendor && cross-env NODE_ENV=test npm run config",
     "test": "cross-env NODE_ENV=test karma start test/karma.conf.js",
     "testwatch": "npm test -- --auto-watch --no-single-run",
     "postbuild:i18n": "npm run i18n",
