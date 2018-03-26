@@ -187,8 +187,8 @@ function attachmentApi($http, url, $q, dispatchers, authentication, pmcw, CONFIG
             delete MAP.request[REQUEST_ID];
 
             const msg = pmcw.getMessage(packets.keys);
-            pmcw
-                .decryptSessionKey({ message: msg, privateKeys: keys })
+
+            pmcw.decryptSessionKey({ message: msg, privateKeys: keys })
                 .then((sessionKey) => ({
                     REQUEST_ID,
                     sessionKey,

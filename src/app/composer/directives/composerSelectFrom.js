@@ -3,11 +3,6 @@ import { isIE11 } from '../../../helpers/browser';
 /* @ngInject */
 function composerSelectFrom(notification, editorModel, gettextCatalog, composerFromModel, authentication) {
     const I18N = {
-        ATTACHMENT_SEND_CHANGE: gettextCatalog.getString(
-            'Attachments and inline images must be removed first before changing sender',
-            null,
-            'Compose message'
-        ),
         upgradeRequired() {
             return gettextCatalog.getString(
                 'Upgrade to a paid plan to send from your {{name}}@pm.me address',
@@ -30,13 +25,6 @@ function composerSelectFrom(notification, editorModel, gettextCatalog, composerF
 
             scope.addresses = addresses;
 
-            const onClick = (e) => {
-                if (scope.message.Attachments.length) {
-                    e.preventDefault();
-                    return notification.error(I18N.ATTACHMENT_SEND_CHANGE);
-                }
-            };
-
             const onChange = () => {
                 if (scope.message.From.Send === 0) {
                     scope.$applyAsync(() => {
@@ -47,7 +35,6 @@ function composerSelectFrom(notification, editorModel, gettextCatalog, composerF
 
                 scope.$applyAsync(() => {
                     previousAddress = scope.message.From;
-                    scope.message.AddressID = scope.message.From.ID;
                     const { editor } = editorModel.find(scope.message);
                     editor.fireEvent('refresh', { action: 'message.changeFrom' });
                 });
@@ -60,12 +47,10 @@ function composerSelectFrom(notification, editorModel, gettextCatalog, composerF
             const onMouseDown = () => $select.focus();
             isIE11() && $select.on('mousedown', onMouseDown);
 
-            el.on('click', onClick);
             $select.on('change', onChange);
 
             scope.$on('$destroy', () => {
                 isIE11() && $select.off('mousedown', onMouseDown);
-                el.off('click', onClick);
                 $select.off('change', onChange);
             });
         }
