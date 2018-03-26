@@ -3,7 +3,7 @@
         <h2
             class="openVpnSection-title-about"
             translate
-            translate-context="Title">OpenVPN Login</h2>
+            translate-context="Title">OpenVPN/IKEv2</h2>
     </header-block>
 
     <p class="alert alert-info">
@@ -14,7 +14,7 @@
     <div class="clearfix">
         <div class="col-4-8">
             <label>
-                <span translate-context="Label" translate>OpenVPN Login</span>
+                <span translate-context="Label" translate>Login</span>
             </label>
         </div>
         <div class="col-4-8">
@@ -25,10 +25,11 @@
     <div class="clearfix">
         <div class="col-4-8">
             <label>
-                <span translate-context="Label" translate>OpenVPN Password</span>
+                <span translate-context="Label" translate>Password</span>
             </label>
         </div>
         <div class="col-4-8">
+            <label class="bold">{{ VPNPassword }}</label>
             <button ng-click="changePassword()" type="button" class="pm_button">
                 <span ng-if="!VPNPassword" translate-context="Action" translate>Set OpenVPN Password</span>
                 <span ng-if="VPNPassword" translate-context="Action" translate>Change OpenVPN Password</span>
