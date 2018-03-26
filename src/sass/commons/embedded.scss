@@ -2,7 +2,6 @@
 .proton-embedded:not([src]) {
     position: relative;
     min-height: 38px; /* placeholder */
-    display: inline-block; /* firefox is not able to add ::after on inline elements */
     border: 1px solid;
     border-color: #444 #CCC #CCC #444;
     background: url(assets('img/icons/broken-img.png')) no-repeat 0 50% $white;
