@@ -320,7 +320,7 @@ function ComposeMessageController(
         message.uploading = 0;
         message.sending = false;
 
-        const { From, AddressID } = bindFrom(message);
+        const { From } = bindFrom(message);
         message.From = From;
 
         $scope.$applyAsync(() => {
