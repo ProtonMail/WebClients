@@ -12,8 +12,7 @@ function changeVPNPasswordModal(pmModal, notification, eventManager, gettextCata
             self.passwordDefined = params.password;
             self.submit = () => {
                 const { VPNPassword } = self;
-                const promise = vpnSettingsApi
-                    .updatePassword({ VPNPassword })
+                const promise = vpnSettingsApi.updatePassword({ VPNPassword })
                     .then(() => eventManager.call())
                     .then(() => (notification.success(successMessage), params.close(VPNPassword)));
 

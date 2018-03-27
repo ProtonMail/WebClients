@@ -1,15 +1,9 @@
 /* @ngInject */
-function vpnView(dispatchers, addressesModel, authentication, memberModel) {
-    const vpnStatus = () => {
-        const { Status = 0 } = authentication.user.VPN;
-        return Status;
-    };
-
+function vpnView(dispatchers, addressesModel, authentication, memberModel, vpnModel) {
     const getFirstEmail = () => {
         const addresses = addressesModel.get();
         return addresses.length ? addresses[0].Email : '';
     };
-
     return {
         restrict: 'E',
         replace: true,
@@ -19,12 +13,15 @@ function vpnView(dispatchers, addressesModel, authentication, memberModel) {
             const { on, unsubscribe } = dispatchers();
 
             const update = () => {
+                const { Status } = vpnModel.get();
+
                 scope.VPNLogin = memberModel.isMember() ? getFirstEmail() : authentication.user.Name;
-                scope.vpnEnabled = vpnStatus();
+                scope.vpnStatus = Status;
             };
 
-            update();
             on('updateUser', update);
+
+            update();
 
             scope.$on('$destroy', unsubscribe);
         }

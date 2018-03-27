@@ -6,10 +6,10 @@ function openVpnSection(vpnModel, changeVPNNameModal, changeVPNPasswordModal) {
         scope: {},
         templateUrl: require('../../../templates/vpn/openVpnSection.tpl.html'),
         link(scope) {
-            vpnModel.fetch().then(({ Name, Password }) => {
-                scope.VPNName = Name;
-                scope.VPNPassword = Password;
-            });
+            const { Name, Password } = vpnModel.get();
+
+            scope.VPNName = Name;
+            scope.VPNPassword = Password;
 
             scope.changeName = () => {
                 const params = {

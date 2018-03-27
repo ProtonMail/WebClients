@@ -746,6 +746,9 @@ export default angular
                     },
                     status(user, paymentModel, networkActivityTracker) {
                         return networkActivityTracker.track(paymentModel.getStatus());
+                    },
+                    vpn(user, vpnModel, networkActivityTracker) {
+                        return networkActivityTracker.track(vpnModel.fetch());
                     }
                 },
                 onEnter(AppModel) {

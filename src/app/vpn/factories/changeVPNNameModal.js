@@ -11,8 +11,7 @@ function changeVPNNameModal(pmModal, notification, eventManager, gettextCatalog,
             self.VPNName = params.name || '';
             self.submit = () => {
                 const { VPNName } = self;
-                const promise = vpnSettingsApi
-                    .updateName({ VPNName })
+                const promise = vpnSettingsApi.updateName({ VPNName })
                     .then(() => eventManager.call())
                     .then(() => (notification.success(successMessage), params.close(VPNName)));
 
