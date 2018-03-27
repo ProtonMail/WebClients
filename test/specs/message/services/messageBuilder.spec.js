@@ -1292,10 +1292,6 @@ Est-ce que tu vas bien ?
                     expect(item.ccbcc).toBe(DEFAULT_MESSAGE_COPY.ccbcc);
                 });
 
-                it('should set a value to AddressID', () => {
-                    expect(item.AddressID).toBe(DEFAULT_MESSAGE_COPY.AddressID);
-                });
-
                 it('should set a value to NumEmbedded', () => {
                     expect(item.NumEmbedded).toBe(DEFAULT_MESSAGE_COPY.NumEmbedded);
                 });
