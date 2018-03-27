@@ -8,7 +8,7 @@ function composerFromModel(addressesModel, authentication, confirmModal, gettext
     const I18N = {
         OK: gettextCatalog.getString('OK', null, 'Action'),
         DONT_SHOW_AGAIN: gettextCatalog.getString("Don't show this again", null, 'Action'),
-        TITLE: gettextCatalog.getString('Notice', null, 'Title'),
+        TITLE: gettextCatalog.getString('Sending notice', null, 'Title'),
         error(email) {
             return gettextCatalog.getString('Sending messages from @pm.me address is a paid feature. Your message will be sent from your default address {{email}}', { email }, 'Error');
         }
