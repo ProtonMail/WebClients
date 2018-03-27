@@ -220,7 +220,7 @@ function messageBuilder(
 
         const { address } = composerFromModel.get(currentMsg);
 
-        newMsg.AddressID = address.ID;
+        newMsg.AddressID = currentMsg.AddressID; // Set the AddressID from previous message to convert attachments on reply / replyAll / forward
         newMsg.From = address;
         newMsg.Attachments = pickAttachements(currentMsg, action);
         newMsg.NumEmbedded = 0;

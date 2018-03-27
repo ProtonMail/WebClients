@@ -322,7 +322,6 @@ function ComposeMessageController(
 
         const { From, AddressID } = bindFrom(message);
         message.From = From;
-        message.AddressID = AddressID;
 
         $scope.$applyAsync(() => {
             const size = $scope.messages.unshift(message);
