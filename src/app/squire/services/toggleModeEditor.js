@@ -78,7 +78,7 @@ function toggleModeEditor(dispatchers, embeddedUtils, attachmentModel, textToHtm
     };
 
     const toHtml = (message, plaintextValue) => {
-        const html = textToHtmlMail.parse(plaintextValue);
+        const html = textToHtmlMail.parse(plaintextValue, message);
 
         message.MIMEType = DEFAULT;
         message.setDecryptedBody(html, false);
