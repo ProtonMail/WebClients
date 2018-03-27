@@ -12,8 +12,7 @@ function vpnModel(dispatchers, authentication, gettextCatalog, vpnApi) {
     }
 
     function fetch() {
-        return vpnApi
-            .get()
+        return vpnApi.get()
             .then(({ data = {} } = {}) => {
                 set(data.VPN);
                 return Promise.resolve(data.VPN);

@@ -1,6 +1,6 @@
 <div id="pm_settings" class="vpn-container">
     <div class="settings">
-        <div ng-if="vpnEnabled !== 1" class="row">
+        <div ng-if="vpnStatus !== 1" class="row">
             <section class="pm_form">
                 <header-block class="settingsVpn-header-about">
                     <h2
@@ -8,17 +8,17 @@
                         translate
                         translate-context="Title">ProtonVPN</h2>
                 </header-block>
-                <p ng-if="vpnEnabled === 0" class="alert alert-info" translate-context="Info" translate>Your account is currently not eligible for ProtonVPN access. If you are part of an Organization, please contact your account administrator.</p>
-                <p ng-if="vpnEnabled === 2" class="alert alert-info" translate-context="Info" translate>Your VPN account has not yet been activated, go to <a href="https://account.protonvpn.com/signup" target="_blank">https://account.protonvpn.com/signup</a> to sign up and activate your account.</p>
-                <p ng-if="vpnEnabled === 3" class="alert alert-info" translate-context="Info" translate>Your ProtonVPN account request has been received. You're already on the waitlist, we'll contact you once capacity becomes available.</p>
+                <p ng-if="vpnStatus === 0" class="alert alert-info" translate-context="Info" translate>Your account is currently not eligible for ProtonVPN access. If you are part of an Organization, please contact your account administrator.</p>
+                <p ng-if="vpnStatus === 2" class="alert alert-info" translate-context="Info" translate>Your VPN account has not yet been activated, go to <a href="https://account.protonvpn.com/signup" target="_blank">https://account.protonvpn.com/signup</a> to sign up and activate your account.</p>
+                <p ng-if="vpnStatus === 3" class="alert alert-info" translate-context="Info" translate>Your ProtonVPN account request has been received. You're already on the waitlist, we'll contact you once capacity becomes available.</p>
             </section>
         </div>
-        <div ng-if="vpnEnabled === 1">
+        <div ng-if="vpnStatus === 1">
             <section class="vpn-ressourcesSection-container">
                 <header-block>
                     <h2 class="vpn-ressourcesSection-title" translate-context="Title" translate>Getting started with ProtonVPN</h2>
                 </header-block>
-                <div class="vpn-ressourcesSection-note alert alert-info" translate-context="Select your type of OS" translate>Select your client below to get started with ProtonVPN</div>
+                <p class="alert alert-info" translate-context="Select your type of OS" translate>Select your client below to get started with ProtonVPN</p>
                 <vpn-ressources></vpn-ressources>
             </section>
 
