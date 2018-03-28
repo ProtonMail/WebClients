@@ -1,3 +1,25 @@
+# [3.13.0] - 2018-03-28
+
+## Added
+
+- Improved display of messages received from Outlook
+
+## Fixed
+
+- HTML signature is not loading if you switch from Plain Text to Normal mode
+- Minimized composer cannot be restored if you close a second composer window
+- Refreshing a plain-text message shows HTML code
+- Cannot access save button in the contact details modal when window size is small
+- Line breaks are lost when forwarding or replying to a plaintext email
+- Changing the composer from normal to plaintext sets the cursor at the bottom on Edge browser
+
+## Changed
+
+- Changes to attachments handling
+- Add default Subject and Body when unsubscribing
+- Review contact list table
+- Review ProtonVPN page
+
 # [3.12.45] - 2018-03-22
 ## Fixed
 - The signature from the previous default address is showing if you change address priority
