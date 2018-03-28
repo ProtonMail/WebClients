@@ -183,11 +183,15 @@ function postMessage(
                 parameters.id = ID;
             }
 
-            const body = await embedded.parser(message, {
-                direction: 'cid',
-                isOutside: outsidersMap.get(message.ID)
-            });
-            message.setDecryptedBody(body, !message.isPlainText());
+            if (!message.isPlainText()) {
+                // Only parse embedded and reset the body IF it is not a plaintext message.
+                // Otherwise it won't contain any HTML, and it can escape things it shouldn't.
+                const body = await embedded.parser(message, {
+                    direction: 'cid',
+                    isOutside: outsidersMap.get(message.ID)
+                });
+                message.setDecryptedBody(body);
+            }
 
             const encryptedBody = await message.encryptBody(message.From.Keys[0].PublicKey);
             const actionType = message.ID ? STATUS.UPDATE : STATUS.CREATE;
