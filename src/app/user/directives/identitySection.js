@@ -1,5 +1,5 @@
 import _ from 'lodash';
-import isPhone from 'phone-regex';
+import autoLink from '../../../helpers/autoLink';
 
 /* @ngInject */
 function identitySection(addressesModel, authentication, editorModel, gettextCatalog, notification, signatureModel, tools, dispatchers) {
@@ -9,21 +9,6 @@ function identitySection(addressesModel, authentication, editorModel, gettextCat
     };
     const EDITOR_ID = 'signature';
     const MULTIPLE_ADDRESS_CLASS = 'identitySection-has-multiple-address';
-
-    /**
-     * Find if there is a phone number inside the signature and replace it with
-     * an anchor.
-     * @param  {String} input Signature
-     * @return {String}
-     */
-    const bindPhone = (input = '') => {
-        if (/tel:/.test(input)) {
-            return input;
-        }
-        return input.replace(isPhone(), (match) => {
-            return ` <a href="tel:${match.trim()}">${match.trim()}</a>`;
-        });
-    };
 
     return {
         scope: {},
@@ -62,7 +47,7 @@ function identitySection(addressesModel, authentication, editorModel, gettextCat
                 const config = {
                     ID: CACHE.ID,
                     DisplayName,
-                    Signature: bindPhone(Signature)
+                    Signature: autoLink(Signature)
                  };
                 await signatureModel.save(config);
                 notification.success(I18N.SUCCESS_SAVE);
