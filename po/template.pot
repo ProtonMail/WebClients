@@ -566,7 +566,7 @@ msgctxt "Action"
 msgid "Change OpenVPN Login"
 msgstr ""
 
-#: ./src/templates/vpn/openVpnSection.tpl.html:34
+#: ./src/templates/vpn/openVpnSection.tpl.html:35
 msgctxt "Action"
 msgid "Change OpenVPN Password"
 msgstr ""
@@ -813,6 +813,11 @@ msgstr ""
 #: ./src/templates/views/invoices.tpl.html:65
 msgctxt "Action"
 msgid "Display invoice"
+msgstr ""
+
+#: ./src/app/composer/factories/composerFromModel.js:10
+msgctxt "Action"
+msgid "Don't show this again"
 msgstr ""
 
 #: ./src/templates/modals/donate.tpl.html:55
@@ -1436,7 +1441,7 @@ msgctxt "Action"
 msgid "Set"
 msgstr ""
 
-#: ./src/templates/vpn/openVpnSection.tpl.html:33
+#: ./src/templates/vpn/openVpnSection.tpl.html:34
 msgctxt "Action"
 msgid "Set OpenVPN Password"
 msgstr ""
@@ -1973,54 +1978,49 @@ msgctxt "Command palette action"
 msgid "Remove label"
 msgstr ""
 
-#: ./src/app/composer/directives/composerSelectFrom.js:6
-msgctxt "Compose message"
-msgid "Attachments and inline images must be removed first before changing sender"
-msgstr ""
-
-#: ./src/app/attachments/factories/attachmentModel.js:23
+#: ./src/app/attachments/factories/attachmentModel.js:26
 msgctxt "Compose message"
 msgid "Error during file upload"
 msgstr ""
 
-#: ./src/app/attachments/factories/attachmentModel.js:24
+#: ./src/app/attachments/factories/attachmentModel.js:27
 msgctxt "Compose message"
 msgid "Error encrypting attachment"
 msgstr ""
 
-#: ./src/app/composer/directives/composerDropzone.js:17
+#: ./src/app/composer/directives/composerDropzone.js:20
 msgctxt "Composer"
 msgid "Attachments are limited to {{number}} MB."
 msgstr ""
 
-#: ./src/app/composer/directives/composerDropzone.js:20
+#: ./src/app/composer/directives/composerDropzone.js:23
 msgctxt "Composer"
 msgid "Attachments are limited to {{number}} MBB. Total attached would be: {{total}} MB."
 msgstr ""
 
-#: ./src/app/composer/directives/composerDropzone.js:15
+#: ./src/app/composer/directives/composerDropzone.js:18
 msgctxt "Composer"
 msgid "Empty attachment"
 msgstr ""
 
-#: ./src/app/composer/directives/composerDropzone.js:28
+#: ./src/app/composer/directives/composerDropzone.js:31
 msgctxt "Composer"
 msgid "Maximum number of attachments (10) exceeded."
 msgstr ""
 
-#: ./src/app/composer/directives/composerDropzone.js:16
+#: ./src/app/composer/directives/composerDropzone.js:19
 msgctxt "Composer"
 msgid "Messages are limited to {{number}} attachments"
 msgstr ""
 
-#: ./src/app/squire/directives/moreToggle.js:7
+#: ./src/app/squire/directives/moreToggle.js:11
 #: ./src/templates/settings/chooseComposerMode.tpl.html:3
 #: ./src/templates/squire/moreToggle.tpl.html:23
 msgctxt "Composer Mode"
 msgid "Normal"
 msgstr ""
 
-#: ./src/app/squire/directives/moreToggle.js:6
+#: ./src/app/squire/directives/moreToggle.js:10
 #: ./src/templates/settings/chooseComposerMode.tpl.html:4
 #: ./src/templates/squire/moreToggle.tpl.html:27
 msgctxt "Composer Mode"
@@ -2701,7 +2701,7 @@ msgctxt "Duration/repetition of autoresponder"
 msgid "Repeat weekly"
 msgstr ""
 
-#: ./src/app/composer/services/encryptMessage.js:6
+#: ./src/app/composer/services/encryptMessage.js:9
 msgctxt "Encrypt message"
 msgid "Cannot get public keys"
 msgstr ""
@@ -2773,7 +2773,7 @@ msgctxt "Error"
 msgid "Contact does not contain email address"
 msgstr ""
 
-#: ./src/app/composer/services/validateMessage.js:22
+#: ./src/app/composer/services/validateMessage.js:24
 msgctxt "Error"
 msgid "Contact your organization’s administrator to resolve this."
 msgstr ""
@@ -2868,7 +2868,7 @@ msgctxt "Error"
 msgid "Error during revoke request"
 msgstr ""
 
-#: ./src/app/outside/controllers/outside.js:158
+#: ./src/app/outside/controllers/outside.js:161
 msgctxt "Error"
 msgid "Error during the encryption"
 msgstr ""
@@ -2883,7 +2883,7 @@ msgctxt "Error"
 msgid "Error during the initialization of logs"
 msgstr ""
 
-#: ./src/app/outside/controllers/outside.js:153
+#: ./src/app/outside/controllers/outside.js:156
 msgctxt "Error"
 msgid "Error during the reply process"
 msgstr ""
@@ -3011,7 +3011,7 @@ msgctxt "Error"
 msgid "Invalid email"
 msgstr ""
 
-#: ./src/app/composer/services/validateMessage.js:9
+#: ./src/app/composer/services/validateMessage.js:11
 msgctxt "Error"
 msgid "Invalid email(s): {{total}}"
 msgstr ""
@@ -3090,7 +3090,7 @@ msgctxt "Error"
 msgid "No Internet connection found."
 msgstr ""
 
-#: ./src/app/composer/services/validateMessage.js:20
+#: ./src/app/composer/services/validateMessage.js:22
 msgctxt "Error"
 msgid "No address with keys available to compose a message."
 msgstr ""
@@ -3167,7 +3167,7 @@ msgctxt "Error"
 msgid "Please enter a password for this email."
 msgstr ""
 
-#: ./src/app/composer/services/validateMessage.js:12
+#: ./src/app/composer/services/validateMessage.js:14
 msgctxt "Error"
 msgid "Please enter at least one recipient."
 msgstr ""
@@ -3202,7 +3202,7 @@ msgctxt "Error"
 msgid "Saving draft failed, please  try again"
 msgstr ""
 
-#: ./src/app/composer/factories/composerFromModel.js:12
+#: ./src/app/composer/factories/composerFromModel.js:13
 msgctxt "Error"
 msgid "Sending messages from @pm.me address is a paid feature. Your message will be sent from your default address {{email}}"
 msgstr ""
@@ -3282,12 +3282,12 @@ msgctxt "Error"
 msgid "The maximum expiration is 4 weeks."
 msgstr ""
 
-#: ./src/app/composer/services/validateMessage.js:11
+#: ./src/app/composer/services/validateMessage.js:13
 msgctxt "Error"
 msgid "The maximum length of the message body is 16,000,000 characters."
 msgstr ""
 
-#: ./src/app/composer/services/validateMessage.js:13
+#: ./src/app/composer/services/validateMessage.js:15
 msgctxt "Error"
 msgid "The maximum length of the subject is {{size}}."
 msgstr ""
@@ -3341,7 +3341,7 @@ msgctxt "Error"
 msgid "Unsupported auth version"
 msgstr ""
 
-#: ./src/app/composer/directives/composerSelectFrom.js:12
+#: ./src/app/composer/directives/composerSelectFrom.js:7
 msgctxt "Error"
 msgid "Upgrade to a paid plan to send from your {{name}}@pm.me address"
 msgstr ""
@@ -3384,7 +3384,7 @@ msgctxt "Error"
 msgid "Verification did not succeed, please try again in an hour."
 msgstr ""
 
-#: ./src/app/composer/services/validateMessage.js:7
+#: ./src/app/composer/services/validateMessage.js:9
 msgctxt "Error"
 msgid "Wait for attachment to finish uploading or cancel upload."
 msgstr ""
@@ -3407,7 +3407,7 @@ msgid ""
 "<a href=\"https://protonmail.com/support/knowledge-base/enabling-cookies/\" target=\"_blank\">More information here</a>."
 msgstr ""
 
-#: ./src/app/composer/services/validateMessage.js:19
+#: ./src/app/composer/services/validateMessage.js:21
 msgctxt "Error"
 msgid "You can generate your keys here"
 msgstr ""
@@ -3427,7 +3427,7 @@ msgctxt "Error"
 msgid "You have used all users in your plan. Please upgrade your plan to add a new user."
 msgstr ""
 
-#: ./src/app/composer/services/validateMessage.js:15
+#: ./src/app/composer/services/validateMessage.js:17
 msgctxt "Error"
 msgid "You have {{total}} recipients. The maximum number is 25."
 msgstr ""
@@ -4514,7 +4514,7 @@ msgctxt "Info"
 msgid "Download your PGP Keys for use with other PGP compatible services. Only incoming messages in inline OpenPGP format are currently supported."
 msgstr ""
 
-#: ./src/app/composer/directives/composerDropzone.js:30
+#: ./src/app/composer/directives/composerDropzone.js:33
 msgctxt "Info"
 msgid "Drop a file here to upload"
 msgstr ""
@@ -4530,7 +4530,7 @@ msgctxt "Info"
 msgid "Drop file or click here"
 msgstr ""
 
-#: ./src/app/composer/controllers/composeMessage.js:117
+#: ./src/app/composer/controllers/composeMessage.js:120
 msgctxt "Info"
 msgid "Email was already sent"
 msgstr ""
@@ -4759,7 +4759,7 @@ msgctxt "Info"
 msgid "No logs yet"
 msgstr ""
 
-#: ./src/app/composer/services/validateMessage.js:18
+#: ./src/app/composer/services/validateMessage.js:20
 msgctxt "Info"
 msgid "No subject, send anyway?"
 msgstr ""
@@ -5026,7 +5026,7 @@ msgctxt "Info"
 msgid "Take back your privacy! Setting up your secure email account takes less than 2 minutes."
 msgstr ""
 
-#: ./src/app/user/services/manageUser.js:18
+#: ./src/app/user/services/manageUser.js:20
 msgctxt "Info"
 msgid "The app will now be reloaded in a few seconds"
 msgstr ""
@@ -5417,7 +5417,7 @@ msgctxt "Info"
 msgid "Your VPN account has not yet been activated, go to <a href=\"https://account.protonvpn.com/signup\" target=\"_blank\">https://account.protonvpn.com/signup</a> to sign up and activate your account."
 msgstr ""
 
-#: ./src/app/composer/services/validateMessage.js:23
+#: ./src/app/composer/services/validateMessage.js:25
 #: ./src/templates/views/payments.tpl.html:64
 msgctxt "Info"
 msgid "Your account currently has an overdue invoice. Please pay all unpaid invoices."
@@ -5438,7 +5438,7 @@ msgctxt "Info"
 msgid "Your account or organization currently has an overdue invoice. Please pay all unpaid invoices."
 msgstr ""
 
-#: ./src/app/user/services/manageUser.js:17
+#: ./src/app/user/services/manageUser.js:19
 msgctxt "Info"
 msgid "Your admin privileges have been revoked."
 msgstr ""
@@ -5846,6 +5846,11 @@ msgctxt "Label"
 msgid "Key Strength"
 msgstr ""
 
+#: ./src/templates/vpn/openVpnSection.tpl.html:17
+msgctxt "Label"
+msgid "Login"
+msgstr ""
+
 #: ./src/templates/views/account.tpl.html:319
 msgctxt "Label"
 msgid "Major Announcements (2-3 per year)"
@@ -5893,16 +5898,6 @@ msgctxt "Label"
 msgid "Notification"
 msgstr ""
 
-#: ./src/templates/vpn/openVpnSection.tpl.html:17
-msgctxt "Label"
-msgid "OpenVPN Login"
-msgstr ""
-
-#: ./src/templates/vpn/openVpnSection.tpl.html:28
-msgctxt "Label"
-msgid "OpenVPN Password"
-msgstr ""
-
 #: ./src/app/organization/modals/activateOrganizationModal.js:22
 #: ./src/app/organization/modals/activateOrganizationModal.js:6
 msgctxt "Label"
@@ -5911,6 +5906,8 @@ msgstr ""
 
 #: ./src/templates/modals/member.tpl.html:50
 #: ./src/templates/modals/switchPasswordMode.tpl.html:13
+#: ./src/templates/vpn/openVpnSection.tpl.html:28
+#: ./src/templates/vpn/vpnView.tpl.html:45
 msgctxt "Label"
 msgid "Password"
 msgstr ""
@@ -5933,6 +5930,11 @@ msgstr ""
 #: ./src/templates/views/account.tpl.html:327
 msgctxt "Label"
 msgid "Proton Newsletter (5-6 per year)"
+msgstr ""
+
+#: ./src/templates/vpn/vpnView.tpl.html:37
+msgctxt "Label"
+msgid "Proton Username"
 msgstr ""
 
 #: ./src/templates/user/identitySection.tpl.html:25
@@ -6018,16 +6020,6 @@ msgstr ""
 #: ./src/templates/modals/setupOrganization.tpl.html:68
 msgctxt "Label"
 msgid "VPN Connections for members:"
-msgstr ""
-
-#: ./src/templates/vpn/vpnView.tpl.html:37
-msgctxt "Label"
-msgid "VPN Login"
-msgstr ""
-
-#: ./src/templates/vpn/vpnView.tpl.html:45
-msgctxt "Label"
-msgid "VPN Password"
 msgstr ""
 
 #: ./src/templates/modals/deleteAccount.tpl.html:19
@@ -6333,22 +6325,22 @@ msgctxt "Merge contacts"
 msgid "Merge"
 msgstr ""
 
-#: ./src/app/message/services/messageBuilder.js:159
+#: ./src/app/message/services/messageBuilder.js:179
 msgctxt "Message"
 msgid "Fw:"
 msgstr ""
 
-#: ./src/app/message/services/messageBuilder.js:212
+#: ./src/app/message/services/messageBuilder.js:230
 msgctxt "Message"
 msgid "On {{date}}, {{name}} {{address}} wrote:"
 msgstr ""
 
-#: ./src/app/message/services/messageBuilder.js:158
+#: ./src/app/message/services/messageBuilder.js:178
 msgctxt "Message"
 msgid "Re:"
 msgstr ""
 
-#: ./src/app/message/factories/messageModel.js:42
+#: ./src/app/message/factories/messageModel.js:45
 msgctxt "Message content if empty"
 msgid "Message empty"
 msgstr ""
@@ -6363,48 +6355,48 @@ msgctxt "Message decryption error"
 msgid "Decryption of this message's encryption content failed."
 msgstr ""
 
-#: ./src/app/message/factories/messageModel.js:40
+#: ./src/app/message/factories/messageModel.js:43
 msgctxt "Message encryption status"
 msgid "End to end encrypted auto-reply"
 msgstr ""
 
-#: ./src/app/message/factories/messageModel.js:33
+#: ./src/app/message/factories/messageModel.js:36
 msgctxt "Message encryption status"
 msgid "End to end encrypted for outside"
 msgstr ""
 
-#: ./src/app/message/factories/messageModel.js:36
+#: ./src/app/message/factories/messageModel.js:39
 msgctxt "Message encryption status"
 msgid "End to end encrypted for outside reply"
 msgstr ""
 
-#: ./src/app/message/factories/messageModel.js:31
+#: ./src/app/message/factories/messageModel.js:34
 msgctxt "Message encryption status"
 msgid "End to end encrypted internal message"
 msgstr ""
 
-#: ./src/app/message/factories/messageModel.js:37
+#: ./src/app/message/factories/messageModel.js:40
 msgctxt "Message encryption status"
 msgid "End to end encrypted using PGP"
 msgstr ""
 
-#: ./src/app/message/factories/messageModel.js:38
+#: ./src/app/message/factories/messageModel.js:41
 msgctxt "Message encryption status"
 msgid "End to end encrypted using PGP/MIME"
 msgstr ""
 
-#: ./src/app/message/factories/messageModel.js:32
-#: ./src/app/message/factories/messageModel.js:34
+#: ./src/app/message/factories/messageModel.js:35
+#: ./src/app/message/factories/messageModel.js:37
 msgctxt "Message encryption status"
 msgid "External message stored encrypted"
 msgstr ""
 
-#: ./src/app/message/factories/messageModel.js:35
+#: ./src/app/message/factories/messageModel.js:38
 msgctxt "Message encryption status"
 msgid "Stored encrypted"
 msgstr ""
 
-#: ./src/app/message/factories/messageModel.js:30
+#: ./src/app/message/factories/messageModel.js:33
 msgctxt "Message encryption status"
 msgid "Unencrypted message"
 msgstr ""
@@ -6534,7 +6526,7 @@ msgctxt "Notification"
 msgid "Filter updated"
 msgstr ""
 
-#: ./src/app/outside/controllers/outside.js:109
+#: ./src/app/outside/controllers/outside.js:112
 msgctxt "Notification"
 msgid "ProtonMail's Encrypted Outside feature only allows replying 5 times. <a href=\"https://protonmail.com/signup\" target=\"_blank\">You can sign up for ProtonMail for seamless and unlimited end-to-end encryption</a>."
 msgstr ""
@@ -6549,7 +6541,7 @@ msgctxt "Notification user"
 msgid "New mail from {{sender}}"
 msgstr ""
 
-#: ./src/app/composer/controllers/composeMessage.js:255
+#: ./src/app/composer/controllers/composeMessage.js:258
 msgctxt "Notify the user when he try to open more than  composer"
 msgid "Maximum composer reached"
 msgstr ""
@@ -7169,14 +7161,14 @@ msgctxt "Success notification"
 msgid "Unsubscribed"
 msgstr ""
 
-#: ./src/app/pmMe/factories/pmMeModel.js:13
+#: ./src/app/pmMe/factories/pmMeModel.js:14
 msgctxt "Success notification for free user after @pm.me generation"
-msgid "You can now receive email from your new {{name}}@pm.me address! To send from it, please upgrade to a paid ProtonMail plan"
+msgid "You can now receive email to your new {{email}} address! To send from it, please upgrade to a paid ProtonMail plan"
 msgstr ""
 
-#: ./src/app/pmMe/factories/pmMeModel.js:6
+#: ./src/app/pmMe/factories/pmMeModel.js:7
 msgctxt "Success notification for paid user after @pm.me generation"
-msgid "You can now send and receive email from your new {{name}}@pm.me address!"
+msgid "You can now send and receive email from your new {{email}} address!"
 msgstr ""
 
 #: ./src/app/ui/directives/toggle.js:5
@@ -7337,7 +7329,7 @@ msgctxt "Title"
 msgid "Addresses"
 msgstr ""
 
-#: ./src/app/composer/services/validateMessage.js:21
+#: ./src/app/composer/services/validateMessage.js:23
 #: ./src/app/sidebar/factories/sidebarSettingsModel.js:43
 #: ./src/app/ui/factories/pageTitlesModel.js:35
 msgctxt "Title"
@@ -8239,7 +8231,7 @@ msgctxt "Title"
 msgid "Navigation"
 msgstr ""
 
-#: ./src/app/composer/controllers/composeMessage.js:389
+#: ./src/app/composer/controllers/composeMessage.js:391
 msgctxt "Title"
 msgid "New message"
 msgstr ""
@@ -8259,14 +8251,9 @@ msgctxt "Title"
 msgid "No messages"
 msgstr ""
 
-#: ./src/app/composer/services/validateMessage.js:17
+#: ./src/app/composer/services/validateMessage.js:19
 msgctxt "Title"
 msgid "No subject"
-msgstr ""
-
-#: ./src/app/composer/factories/composerFromModel.js:10
-msgctxt "Title"
-msgid "Notice"
 msgstr ""
 
 #. Desktop notification
@@ -8293,7 +8280,7 @@ msgstr ""
 
 #: ./src/templates/vpn/openVpnSection.tpl.html:3
 msgctxt "Title"
-msgid "OpenVPN Login"
+msgid "OpenVPN/IKEv2"
 msgstr ""
 
 #: ./src/templates/directives/core/bugModalView.tpl.html:7
@@ -8453,14 +8440,10 @@ msgctxt "Title"
 msgid "ProtonMail's Terms and Conditions"
 msgstr ""
 
+#: ./src/templates/vpn/vpnView.tpl.html:28
 #: ./src/templates/vpn/vpnView.tpl.html:6
 msgctxt "Title"
 msgid "ProtonVPN"
-msgstr ""
-
-#: ./src/templates/vpn/vpnView.tpl.html:28
-msgctxt "Title"
-msgid "ProtonVPN Login"
 msgstr ""
 
 #: ./src/templates/blackFriday/blackFridayFree.tpl.html:12
@@ -8590,6 +8573,11 @@ msgstr ""
 #: ./src/templates/search/searchForm.tpl.html:56
 msgctxt "Title"
 msgid "Sender"
+msgstr ""
+
+#: ./src/app/composer/factories/composerFromModel.js:11
+msgctxt "Title"
+msgid "Sending notice"
 msgstr ""
 
 #: ./src/app/sidebar/factories/sidebarModel.js:26
@@ -9745,8 +9733,8 @@ msgstr ""
 msgid "Browser"
 msgstr ""
 
-#: ./src/app/composer/controllers/composeMessage.js:65
-#: ./src/app/routes.js:410
+#: ./src/app/composer/controllers/composeMessage.js:68
+#: ./src/app/routes.js:408
 msgid "By leaving now, you will lose what you have written in this email. You can save a draft if you want to come back to it later on."
 msgstr ""
 
@@ -9850,7 +9838,7 @@ msgid "Default"
 msgstr ""
 
 #. contacts toolbar menu option
-#: ./src/app/composer/controllers/composeMessage.js:546
+#: ./src/app/composer/controllers/composeMessage.js:548
 #: ./src/templates/contact/contactToolbar.tpl.html:17
 msgid "Delete"
 msgstr ""
@@ -9958,7 +9946,7 @@ msgstr ""
 msgid "Enter your login password:"
 msgstr ""
 
-#: ./src/app/message/factories/messageModel.js:147
+#: ./src/app/message/factories/messageModel.js:150
 msgid "Error encrypting message"
 msgstr ""
 
@@ -10116,7 +10104,7 @@ msgstr ""
 msgid "Maximized"
 msgstr ""
 
-#: ./src/app/composer/controllers/composeMessage.js:564
+#: ./src/app/composer/controllers/composeMessage.js:566
 msgid "Message discarded"
 msgstr ""
 
@@ -10124,7 +10112,7 @@ msgstr ""
 msgid "Message password"
 msgstr ""
 
-#: ./src/app/outside/controllers/outside.js:149
+#: ./src/app/outside/controllers/outside.js:152
 msgid "Message sent"
 msgstr ""
 
@@ -10240,7 +10228,7 @@ msgstr ""
 msgid "Password updated"
 msgstr ""
 
-#: ./src/app/composer/controllers/composeMessage.js:547
+#: ./src/app/composer/controllers/composeMessage.js:549
 msgid "Permanently delete this draft?"
 msgstr ""
 
