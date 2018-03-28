@@ -40,6 +40,9 @@ function injectMessageMedia(dispatchers, displayImages, displayEmbedded) {
         $list.forEach((node) => {
             setLoader && wrapImage(node);
 
+            // First remove the attribute (in case it has already been displayed), to trigger everything properly.
+            node.removeAttribute(attribute);
+
             if (node.nodeName !== 'IMG') {
                 node.setAttribute(attribute, config.getValue(node));
                 removeLoader(container, node.dataset.hash);
