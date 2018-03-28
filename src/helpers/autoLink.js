@@ -4,13 +4,6 @@ const BODY = document.createElement('BODY');
 const PHONE_REGEX = new RegExp('(^|\\W)((?:\\+?\\d{1,3})?[-. (]*\\d{3}[-. )]*\\d{3}[-. ]*\\d{4}(?: *x\\d+)?)($|\\W)', 'g');
 
 /**
- * Get the text value from a text node. IE compliant.
- * @param {DOMNode} node
- * @returns {string}
- */
-const getTextValue = (node) => (node.textContent ? node.textContent : node.innerText);
-
-/**
  * Add telephone link anchor for an input string where it contains PHONE_REGEX.
  * @param {String} input
  * @returns {string}
@@ -36,19 +29,19 @@ const updateNodes = (node) => {
         return true;
     }
     // Get the text value from the text node.
-    const value = getTextValue(node) || '';
+    const textValue = node.textContent;
     // If it doesn't contain a number, ignore it.
-    if (!PHONE_REGEX.test(value)) {
+    if (!PHONE_REGEX.test(textValue)) {
         return false;
     }
     // Update the HTML of the parent to contain the text + link.
-    node.parentNode.innerHTML = addTelAnchor(getTextValue(node));
+    node.parentNode.innerHTML = addTelAnchor(textValue);
     return false;
 };
 
 /**
  * Traverse all children down and run the cb function.
- * @param {DOMNode} node
+ * @param {HTMLElement} node
  * @param {Function} cb
  */
 const loop = (node, cb) => {
