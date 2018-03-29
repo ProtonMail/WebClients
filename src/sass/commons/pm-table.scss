@@ -157,7 +157,6 @@
             }
         }
         td {
-            border-bottom: 1px solid rgba($border, .1);
             color: $default-color;
             .pm_select {
                 &.table_select {
@@ -180,6 +179,10 @@
                 td {
                     color: $default-color-medium;
                 }
+            }
+
+            &:not(:last-child) td {
+                border-bottom: 1px solid rgba($border, .1);
             }
         }
     }
