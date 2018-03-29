@@ -86,7 +86,7 @@
                                     </div>
                                 </div>
 
-                                <form class="filter-modal-add-condition-settings-item filter-modal-add-condition" ng-show="condition.Type.value === 'subject'" ng-submit="ctrl.addValue(condition)">
+                                <form class="filter-modal-add-condition-settings-item filter-modal-add-condition" ng-if="condition.Type.value === 'subject' || condition.Type.value === 'sender' || condition.Type.value === 'recipient'" ng-submit="ctrl.addValue(condition)">
                                     <input
                                         class="filter-modal-add-condition-input"
                                         type="text"
@@ -94,18 +94,6 @@
                                         placeholder-translate="Text or pattern"
                                         placeholder-translate-context="Filter modal condition"
                                         ng-blur="ctrl.addValue(condition)"  />
-                                    <button class="filter-modal-add-condition-button pm_button" ng-disabled="!condition.value" type="submit">
-                                        <i class="fa fa-check"></i>
-                                    </button>
-                                </form>
-
-                                <form class="filter-modal-add-condition-settings-item filter-modal-add-condition filter-modal-add-condition-autocomplete" ng-show="condition.Type.value === 'sender' || condition.Type.value === 'recipient'" ng-submit="ctrl.addValue(condition)">
-
-                                    <autocomplete-email
-                                        class="filter-modal-add-condition-input"
-                                        data-email="condition.value"
-                                        data-event-type="filter-modal-add-condition-input"
-                                        data-event-data="{{$index}}"></autocomplete-email>
                                     <button class="filter-modal-add-condition-button pm_button" ng-disabled="!condition.value" type="submit">
                                         <i class="fa fa-check"></i>
                                     </button>
