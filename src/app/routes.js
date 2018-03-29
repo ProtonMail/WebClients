@@ -75,7 +75,7 @@ export default angular
                         return pmDomainModel.fetch();
                     },
                     user(User) {
-                        return User.get().then(({ data }) => data.User);
+                        return User.get();
                     }
                 }
             })

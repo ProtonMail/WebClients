@@ -1,5 +1,5 @@
 <p>&nbsp;</p>
-<div class="pm_panel wide" ng-show="filling">
+<div class="pm_panel wide" ng-if="filling">
     <div class="text-center header">
         <div>
             <img src="/assets/img/logo-dark.png" height="20" />
@@ -35,6 +35,12 @@
                     <em class="num" ng-if="chooseDomain">2</em>
                     <span translate translate-context="Title">Password</span>
                 </label>
+
+                <p
+                    ng-if="vpnEnabled >= 1"
+                    class="alert alert-info"
+                    translate-context="Info"
+                    translate>The password you set here will also be your new ProtonVPN account password.</p>
 
                 <p class="help" translate-context="Info" translate>This is used to encrypt and decrypt
             your messages. Do not lose this password--we cannot recover it.</p>
