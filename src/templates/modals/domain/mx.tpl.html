@@ -7,10 +7,10 @@
                 <span ng-show="ctrl.domain.MxState === 0" class="pull-right pm_badge error" translate translate-comment="MX status badge">Not set</span>
                 <span ng-show="ctrl.domain.MxState === 1 || ctrl.domain.MxState === 2" class="pull-right pm_badge error" translate translate-comment="MX status badge">Not set properly</span>
                 <span ng-show="ctrl.domain.MxState === 3" class="pull-right pm_badge success" translate translate-comment="MX status badge">Good</span>
-                <h4 class="modal-title">4. <span>MX Record</span> <em translate>Required</em></h4>
+                <h4 class="modal-title">4. <span>MX Records</span> <em translate>Required</em></h4>
             </div>
             <div class="modal-body pm_form">
-                <p translate translate-context="Info">Before you can receive emails for your custom domain addresses at ProtonMail, you need to add the following MX record to your DNS. This can typically be done in the control panel of your domain name registrar.</p>
+                <p translate translate-context="Info">Before you can receive emails for your custom domain addresses at ProtonMail, you need to add the following MX records to your DNS. This can typically be done in the control panel of your domain name registrar.</p>
                 <p translate translate-context="Info">Please add the following MX record. Note, DNS records can take several hours to update.</p>
                 <p><a target='_blank' href='https://protonmail.com/support/knowledge-base/dns-records/' translate translate-context="Action">Learn more</a></p>
 
@@ -27,6 +27,12 @@
                             <td><code>@</code></td>
                             <td><code>mail.protonmail.ch</code></td>
                             <td><code>10</code></td>
+                        </tr>
+                        <tr>
+                            <td><code>MX</code></td>
+                            <td><code>@</code></td>
+                            <td><code>mailsec.protonmail.ch</code></td>
+                            <td><code>20</code></td>
                         </tr>
                     </table>
                 </div>
