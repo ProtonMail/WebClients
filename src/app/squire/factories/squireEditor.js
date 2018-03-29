@@ -3,8 +3,10 @@ import { DEFAULT_SQUIRE_VALUE } from '../../constants';
 const { IFRAME_CLASS } = DEFAULT_SQUIRE_VALUE;
 
 /* @ngInject */
-function squireEditor($rootScope, editorModel, sanitize) {
+function squireEditor(dispatchers, editorModel, sanitize) {
     const CACHE = {};
+
+    const { dispatcher } = dispatchers(['squire.editor']);
 
     /**
      * Override the default sanitizeToDOMFragment function in Squire.
@@ -205,11 +207,14 @@ function squireEditor($rootScope, editorModel, sanitize) {
                     updateStylesToMatch(iframeDoc);
                     const editor = editorModel.load({ ID }, extendApi(new Squire(iframeDoc, SQUIRE_CONFIG)), $iframe);
 
-                    $rootScope.$emit('squire.editor', {
-                        type: 'loaded',
-                        data: { editor, $iframe, message }
-                    });
                     resolve(editor, $iframe);
+
+                    // Defer the event to ensuire we register the listener
+                    _rAF(() => {
+                        dispatcher['squire.editor']('loaded', {
+                            editor, $iframe, message
+                        });
+                    });
                 });
             } catch (e) {
                 console.error(e);
