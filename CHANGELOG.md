@@ -1,3 +1,27 @@
+# [3.13.0] - 2018-03-29
+
+[![ProtonMail v3.13 has been released!](assets/img/v3-13.jpg)](https://protonmail.com/blog/protonmail-v3-13-release-notes/)
+
+[ProtonMail 3.13](https://protonmail.com/blog/protonmail-v3-13-release-notes/)
+
+# [3.12.48] - 2018-03-29
+
+## Added
+
+- Add full `@pm.me` support
+- Add `Insert File` in Settings -> Account -> Signature -> Insert image
+
+## Fixed
+
+- Blank message issue with going back in Safari while a composer is open
+- Cannot load web content in sent message
+- Adding link to one image that is added into the signature generates a weird code
+- URL link signature is not saved as a link
+
+## Changed
+
+- Addresses table in address domain modal
+
 # [3.12.47] - 2018-03-28
 
 ## Added

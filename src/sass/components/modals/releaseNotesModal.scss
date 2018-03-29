@@ -1,4 +1,7 @@
 .releaseNotesModal-container {
+    img {
+        max-width: 100%;
+    }
     .modal-header {
         display: flex;
         justify-content: space-between;

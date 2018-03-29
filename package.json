@@ -54,6 +54,7 @@
     "karma-webpack": "^2.0.11",
     "lint-staged": "^6.1.1",
     "markdown-it-attrs": "^1.2.1",
+    "markdown-it-link-attributes": "^2.0.0",
     "minimist": "^1.2.0",
     "my-local-ip": "^1.0.0",
     "ngtemplate-loader": "github:dhoko/ngtemplate-loader#feat/angularLoader",
@@ -178,5 +179,5 @@
   "engines": {
     "node": ">=8.0.0"
   },
-  "version": "3.12.47"
+  "version": "3.13.0"
 }
