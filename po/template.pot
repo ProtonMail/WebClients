@@ -342,7 +342,7 @@ msgctxt "Action"
 msgid "Add Address"
 msgstr ""
 
-#: ./src/templates/filter/modal.tpl.html:119
+#: ./src/templates/filter/modal.tpl.html:107
 msgctxt "Action"
 msgid "Add Condition"
 msgstr ""
@@ -400,13 +400,13 @@ msgctxt "Action"
 msgid "Add filters"
 msgstr ""
 
-#: ./src/templates/filter/modal.tpl.html:184
+#: ./src/templates/filter/modal.tpl.html:172
 #: ./src/templates/views/labels.tpl.html:13
 msgctxt "Action"
 msgid "Add folder"
 msgstr ""
 
-#: ./src/templates/filter/modal.tpl.html:137
+#: ./src/templates/filter/modal.tpl.html:125
 #: ./src/templates/views/labels.tpl.html:14
 msgctxt "Action"
 msgid "Add label"
@@ -528,7 +528,7 @@ msgstr ""
 #: ./src/templates/dashboard/customProPlanModal.tpl.html:41
 #: ./src/templates/dashboard/customVpnModal.tpl.html:19
 #: ./src/templates/filter/filterAddressModal.tpl.html:34
-#: ./src/templates/filter/modal.tpl.html:215
+#: ./src/templates/filter/modal.tpl.html:203
 #: ./src/templates/modals/activateOrganization.tpl.html:24
 #: ./src/templates/modals/addAddress.tpl.html:58
 #: ./src/templates/modals/bug.tpl.html:13
@@ -656,7 +656,7 @@ msgstr ""
 #: ./src/templates/modals/domain/domain.tpl.html:29
 #: ./src/templates/modals/domain/domain.tpl.html:3
 #: ./src/templates/modals/domain/mx.tpl.html:3
-#: ./src/templates/modals/domain/mx.tpl.html:41
+#: ./src/templates/modals/domain/mx.tpl.html:47
 #: ./src/templates/modals/domain/spf.tpl.html:3
 #: ./src/templates/modals/domain/spf.tpl.html:36
 #: ./src/templates/modals/domain/verification.tpl.html:3
@@ -1182,7 +1182,7 @@ msgstr ""
 #: ./src/templates/modals/domain/dkim.tpl.html:36
 #: ./src/templates/modals/domain/domain.tpl.html:30
 #: ./src/templates/modals/domain/domain.tpl.html:31
-#: ./src/templates/modals/domain/mx.tpl.html:40
+#: ./src/templates/modals/domain/mx.tpl.html:46
 #: ./src/templates/modals/domain/spf.tpl.html:35
 #: ./src/templates/modals/domain/verification.tpl.html:38
 #: ./src/templates/modals/setupOrganization.tpl.html:78
@@ -1369,7 +1369,7 @@ msgstr ""
 #: ./src/templates/dashboard/customVpnModal.tpl.html:20
 #: ./src/templates/directives/composer/composer.tpl.html:128
 #: ./src/templates/filter/filterAddressModal.tpl.html:40
-#: ./src/templates/filter/modal.tpl.html:216
+#: ./src/templates/filter/modal.tpl.html:204
 #: ./src/templates/modals/addAddress.tpl.html:59
 #: ./src/templates/modals/changeOrganizationPassword.tpl.html:23
 #: ./src/templates/modals/changePassword.tpl.html:40
@@ -1451,7 +1451,7 @@ msgctxt "Action"
 msgid "Settings"
 msgstr ""
 
-#: ./src/templates/views/setup.tpl.html:65
+#: ./src/templates/views/setup.tpl.html:71
 msgctxt "Action"
 msgid "Setup Account"
 msgstr ""
@@ -3105,7 +3105,7 @@ msgctxt "Error"
 msgid "No files were selected"
 msgstr ""
 
-#: ./src/app/keys/factories/changeMailboxPassword.js:101
+#: ./src/app/keys/factories/changeMailboxPassword.js:102
 #: ./src/app/keys/factories/upgradeKeys.js:108
 msgctxt "Error"
 msgid "No keys to update"
@@ -3207,7 +3207,7 @@ msgctxt "Error"
 msgid "Sending messages from @pm.me address is a paid feature. Your message will be sent from your default address {{email}}"
 msgstr ""
 
-#: ./src/templates/views/setup.tpl.html:86
+#: ./src/templates/views/setup.tpl.html:92
 msgctxt "Error"
 msgid "Setup failed"
 msgstr ""
@@ -3302,7 +3302,7 @@ msgctxt "Error"
 msgid "This PGP/MIME message contains attachments which currently are not supported by ProtonMail."
 msgstr ""
 
-#: ./src/app/keys/factories/changeMailboxPassword.js:43
+#: ./src/app/keys/factories/changeMailboxPassword.js:44
 #: ./src/app/keys/factories/upgradeKeys.js:25
 msgctxt "Error"
 msgid "Unable to get organization keys"
@@ -3315,7 +3315,7 @@ msgstr ""
 
 #: ./src/app/commons/models/address.js:5
 #: ./src/app/filter/directives/customFilterList.js:72
-#: ./src/app/keys/factories/changeMailboxPassword.js:17
+#: ./src/app/keys/factories/changeMailboxPassword.js:18
 #: ./src/app/settings/controllers/payments.js:87
 msgctxt "Error"
 msgid "Unable to save your changes, please try again."
@@ -3372,7 +3372,7 @@ msgctxt "Error"
 msgid "Username required"
 msgstr ""
 
-#: ./src/app/vpn/factories/vpnModel.js:6
+#: ./src/app/vpn/factories/vpnApi.js:5
 msgctxt "Error"
 msgid "VPN request failed"
 msgstr ""
@@ -3623,17 +3623,17 @@ msgctxt "Filter modal condition"
 msgid "Text or pattern"
 msgstr ""
 
-#: ./src/templates/filter/modal.tpl.html:125
+#: ./src/templates/filter/modal.tpl.html:113
 msgctxt "Filter modal label"
 msgid "Apply Labels"
 msgstr ""
 
-#: ./src/templates/filter/modal.tpl.html:190
+#: ./src/templates/filter/modal.tpl.html:178
 msgctxt "Filter modal label"
 msgid "Mark As"
 msgstr ""
 
-#: ./src/templates/filter/modal.tpl.html:143
+#: ./src/templates/filter/modal.tpl.html:131
 msgctxt "Filter modal label"
 msgid "Move To"
 msgstr ""
@@ -4336,7 +4336,7 @@ msgstr ""
 
 #: ./src/templates/modals/domain/mx.tpl.html:13
 msgctxt "Info"
-msgid "Before you can receive emails for your custom domain addresses at ProtonMail, you need to add the following MX record to your DNS. This can typically be done in the control panel of your domain name registrar."
+msgid "Before you can receive emails for your custom domain addresses at ProtonMail, you need to add the following MX records to your DNS. This can typically be done in the control panel of your domain name registrar."
 msgstr ""
 
 #: ./src/app/user/modals/generateModal.js:23
@@ -4379,7 +4379,7 @@ msgctxt "Info"
 msgid "By clicking Create Account, you agree to abide by"
 msgstr ""
 
-#: ./src/templates/views/setup.tpl.html:64
+#: ./src/templates/views/setup.tpl.html:70
 msgctxt "Info"
 msgid "By clicking Setup Account, you agree to abide by"
 msgstr ""
@@ -4483,7 +4483,7 @@ msgctxt "Info"
 msgid "Decryption of this content failed"
 msgstr ""
 
-#: ./src/templates/modals/domain/mx.tpl.html:34
+#: ./src/templates/modals/domain/mx.tpl.html:40
 msgctxt "Info"
 msgid "Delete any other MX records or make sure ProtonMail's Priority is the lowest number."
 msgstr ""
@@ -4613,7 +4613,7 @@ msgctxt "Info"
 msgid "If another administrator changed this password, you will need to ask them for the new Organization Password."
 msgstr ""
 
-#: ./src/templates/modals/domain/mx.tpl.html:35
+#: ./src/templates/modals/domain/mx.tpl.html:41
 msgctxt "Info"
 msgid "If this domain is currently actively receiving emails, create all used email addresses in Step 3 before changing MX record to ensure a smooth transition."
 msgstr ""
@@ -4629,7 +4629,7 @@ msgid "If you have set both SPF and DKIM, DMARC allows you to specify how other 
 msgstr ""
 
 #: ./src/templates/user/usernamePassword.tpl.html:27
-#: ./src/templates/views/setup.tpl.html:59
+#: ./src/templates/views/setup.tpl.html:65
 msgctxt "Info"
 msgid "If you lose your password, you will not be able to read your emails."
 msgstr ""
@@ -5031,6 +5031,11 @@ msgctxt "Info"
 msgid "The app will now be reloaded in a few seconds"
 msgstr ""
 
+#: ./src/templates/views/setup.tpl.html:39
+msgctxt "Info"
+msgid "The password you set here will also be your new ProtonVPN account password."
+msgstr ""
+
 #: ./src/templates/blackFriday/blackFridayFree.tpl.html:21
 msgctxt "Info"
 msgid "The ultimate internet privacy package, combining the most popular ProtonMail and ProtonVPN plans. By buying both together with our special 2-year plan, you can save 45% off of the regular monthly price."
@@ -5047,7 +5052,7 @@ msgid "Theme saved"
 msgstr ""
 
 #: ./src/templates/views/reset-login-password.tpl.html:162
-#: ./src/templates/views/setup.tpl.html:77
+#: ./src/templates/views/setup.tpl.html:83
 #: ./src/templates/views/signup.tpl.html:15
 msgctxt "Info"
 msgid "This can take a few seconds or a few minutes depending on your device."
@@ -5084,7 +5089,7 @@ msgctxt "Info"
 msgid "This is the 'From' name that people will see when you email them."
 msgstr ""
 
-#: ./src/templates/views/setup.tpl.html:39
+#: ./src/templates/views/setup.tpl.html:45
 msgctxt "Info"
 msgid ""
 "This is used to encrypt and decrypt\n"
@@ -5683,7 +5688,7 @@ msgctxt "Label"
 msgid "Admin VPN Connections:"
 msgstr ""
 
-#: ./src/templates/filter/modal.tpl.html:158
+#: ./src/templates/filter/modal.tpl.html:146
 msgctxt "Label"
 msgid "Archive"
 msgstr ""
@@ -5836,7 +5841,7 @@ msgctxt "Label"
 msgid "Highest security"
 msgstr ""
 
-#: ./src/templates/filter/modal.tpl.html:151
+#: ./src/templates/filter/modal.tpl.html:139
 msgctxt "Label"
 msgid "Inbox"
 msgstr ""
@@ -5947,7 +5952,7 @@ msgctxt "Label"
 msgid "ProtonVPN Homepage"
 msgstr ""
 
-#: ./src/templates/filter/modal.tpl.html:197
+#: ./src/templates/filter/modal.tpl.html:185
 msgctxt "Label"
 msgid "Read"
 msgstr ""
@@ -5972,12 +5977,12 @@ msgctxt "Label"
 msgid "Signature"
 msgstr ""
 
-#: ./src/templates/filter/modal.tpl.html:165
+#: ./src/templates/filter/modal.tpl.html:153
 msgctxt "Label"
 msgid "Spam"
 msgstr ""
 
-#: ./src/templates/filter/modal.tpl.html:204
+#: ./src/templates/filter/modal.tpl.html:192
 msgctxt "Label"
 msgid "Starred"
 msgstr ""
@@ -5997,7 +6002,7 @@ msgctxt "Label"
 msgid "Time zone"
 msgstr ""
 
-#: ./src/templates/filter/modal.tpl.html:172
+#: ./src/templates/filter/modal.tpl.html:160
 msgctxt "Label"
 msgid "Trash"
 msgstr ""
@@ -7265,7 +7270,7 @@ msgstr ""
 #. Table heading
 #. table heading
 #: ./src/templates/address/addressKeysView.tpl.html:40
-#: ./src/templates/filter/modal.tpl.html:122
+#: ./src/templates/filter/modal.tpl.html:110
 #: ./src/templates/modals/hotkey.tpl.html:73
 #: ./src/templates/views/domains.tpl.html:201
 #: ./src/templates/views/domains.tpl.html:52
@@ -8435,7 +8440,7 @@ msgid "ProtonMail Signature"
 msgstr ""
 
 #: ./src/templates/user/signupUserForm.tpl.html:61
-#: ./src/templates/views/setup.tpl.html:64
+#: ./src/templates/views/setup.tpl.html:70
 msgctxt "Title"
 msgid "ProtonMail's Terms and Conditions"
 msgstr ""
@@ -9742,7 +9747,7 @@ msgstr ""
 msgid "Catch-all address updated"
 msgstr ""
 
-#: ./src/templates/views/setup.tpl.html:42
+#: ./src/templates/views/setup.tpl.html:48
 msgid "Choose a mailbox password"
 msgstr ""
 
@@ -9781,7 +9786,7 @@ msgid "Confirm login password"
 msgstr ""
 
 #: ./src/templates/modals/switchPasswordMode.tpl.html:56
-#: ./src/templates/views/setup.tpl.html:50
+#: ./src/templates/views/setup.tpl.html:56
 msgid "Confirm mailbox password"
 msgstr ""
 
@@ -9880,7 +9885,7 @@ msgstr ""
 msgid "Domain verified"
 msgstr ""
 
-#: ./src/templates/views/setup.tpl.html:101
+#: ./src/templates/views/setup.tpl.html:107
 msgid "Done"
 msgstr ""
 
@@ -9988,11 +9993,11 @@ msgstr ""
 msgid "From"
 msgstr ""
 
-#: ./src/templates/views/setup.tpl.html:93
+#: ./src/templates/views/setup.tpl.html:99
 msgid "Generating keys"
 msgstr ""
 
-#: ./src/templates/views/setup.tpl.html:75
+#: ./src/templates/views/setup.tpl.html:81
 #: ./src/templates/views/signup.tpl.html:13
 msgid "Generating keys..."
 msgstr ""
@@ -10319,7 +10324,7 @@ msgstr ""
 msgid "Recovery/Notification email saved"
 msgstr ""
 
-#: ./src/templates/views/setup.tpl.html:105
+#: ./src/templates/views/setup.tpl.html:111
 msgid "Redirecting"
 msgstr ""
 
@@ -10364,8 +10369,8 @@ msgstr ""
 msgid "Set"
 msgstr ""
 
-#: ./src/templates/views/setup.tpl.html:85
-#: ./src/templates/views/setup.tpl.html:97
+#: ./src/templates/views/setup.tpl.html:103
+#: ./src/templates/views/setup.tpl.html:91
 msgid "Setting up account"
 msgstr ""
 
