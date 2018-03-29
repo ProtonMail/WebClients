@@ -48,7 +48,6 @@ function authentication(
 
         fetchUserInfo() {
             const promise = User.get()
-                .then(({ data = {} } = {}) => data.User)
                 .then((user) => {
                     // Redirect to setup if necessary
                     if (user.Keys.length === 0) {

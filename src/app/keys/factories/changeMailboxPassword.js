@@ -9,10 +9,11 @@ function changeMailboxPassword($log, addressesModel, authentication, gettextCata
      * @return {Promise}
      */
     function getUser(newMailPwd = '', keySalt = '') {
-        return Promise.all([passwords.computeKeyPassword(newMailPwd, keySalt), User.get()])
-            .then(([password, { data = {} } = {}]) => {
-                return Promise.resolve({ password, user: data.User });
-            })
+        return Promise.all([
+            passwords.computeKeyPassword(newMailPwd, keySalt),
+            User.get()
+        ])
+            .then(([ password, user = {} ]) => ({ password, user }))
             .catch(([, { data = {} } = {}]) => {
                 throw new Error(data.Error || gettextCatalog.getString('Unable to save your changes, please try again.', null, 'Error'));
             });
@@ -37,7 +38,7 @@ function changeMailboxPassword($log, addressesModel, authentication, gettextCata
                     // return 0 on failure to decrypt, other failures are fatal
                     return pmcw
                         .decryptPrivateKey(encryptPrivateKey, oldMailPwd)
-                        .then((pkg) => Promise.resolve(pmcw.encryptPrivateKey(pkg, password)), () => Promise.resolve(0));
+                        .then((pkg) => pmcw.encryptPrivateKey(pkg, password), () => 0);
                 })
                 .catch(({ data = {} } = {}) => {
                     throw new Error(data.Error || gettextCatalog.getString('Unable to get organization keys', null, 'Error'));

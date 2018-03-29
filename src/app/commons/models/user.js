@@ -1,47 +1,40 @@
 /* @ngInject */
 function User($http, url, srp) {
+
     const headersVersion3 = { 'x-pm-apiversion': 3 };
     const requestURL = url.build('users');
 
+    const toSRP = (type, scope, creds, data = {}) => {
+        return srp.performSRPRequest(type, `/users/${scope}`, data, creds);
+    };
+
+    const create = (params, password) => {
+        return srp.getPasswordParams(password, params)
+            .then((data) => $http.post(requestURL(), data));
+    };
+
+    const get = () => {
+        return $http.get(requestURL(), {
+            header: headersVersion3
+        })
+        .then(({ data = {} } = {}) => data.User);
+    };
+
+    const code = (params) => $http.post(requestURL('code'), params);
+    const human = () => $http.get(requestURL('human'));
+    const check = (params) => $http.post(requestURL('human'), params);
+    const pubkeys = (emails) => $http.get(requestURL('pubkeys', window.encodeURIComponent(emails)));
+    const available = (username) => $http.get(requestURL('available', username));
+    const direct = () => $http.get(requestURL('direct'));
+    const lock = () => $http.put(requestURL('lock'));
+    const unlock = (creds = {}) => toSRP('PUT', 'unlock', creds);
+    const password = (creds = {}) => toSRP('PUT', 'password', creds);
+    const remove = (creds = {}) => toSRP('PUT', 'delete', creds);
+
     return {
-        create(params, password) {
-            return srp.getPasswordParams(password, params).then((data) => $http.post(requestURL(), data));
-        },
-        code(params) {
-            return $http.post(requestURL('code'), params);
-        },
-        get() {
-            return $http.get(requestURL(), {
-                headers: headersVersion3
-            });
-        },
-        human() {
-            return $http.get(url.get() + '/users/human');
-        },
-        check(params) {
-            return $http.post(url.get() + '/users/human', params);
-        },
-        pubkeys(emails) {
-            return $http.get(requestURL('pubkeys', window.encodeURIComponent(emails)));
-        },
-        available(username) {
-            return $http.get(requestURL('available', username));
-        },
-        direct() {
-            return $http.get(requestURL('direct'));
-        },
-        lock() {
-            return $http.put(requestURL('lock'));
-        },
-        unlock(creds = {}) {
-            return srp.performSRPRequest('PUT', '/users/unlock', {}, creds);
-        },
-        password(creds = {}) {
-            return srp.performSRPRequest('PUT', '/users/password', {}, creds);
-        },
-        delete(creds = {}) {
-            return srp.performSRPRequest('PUT', '/users/delete', {}, creds);
-        }
+        create, get, code, human, check, available,
+        pubkeys, direct, lock, unlock, password,
+        delete: remove
     };
 }
 export default User;
