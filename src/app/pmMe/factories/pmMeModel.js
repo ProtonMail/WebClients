@@ -2,27 +2,27 @@
 function pmMeModel(addressModel, askPassword, authentication, setupAddressModal, gettextCatalog, networkActivityTracker, notification, User) {
     const email = () => `${authentication.user.Name}@pm.me`;
     const I18N = {
-        PM_ME: {
-            paid() {
-                return gettextCatalog.getString(
-                    'You can now send and receive email from your new {{email}} address!',
-                    { email: email() },
-                    'Success notification for paid user after @pm.me generation'
-                );
-            },
-            free() {
-                return gettextCatalog.getString(
-                    'You can now receive email to your new {{email}} address! To send from it, please upgrade to a paid ProtonMail plan',
-                    { email: email() },
-                    'Success notification for free user after @pm.me generation'
-                );
-            }
+        info: gettextCatalog.getString('Set a display name and signature for {{email}}', { email: email() }, 'Info to setup @pm.me address'),
+        paid() {
+            return gettextCatalog.getString(
+                'You can now send and receive email from your new {{email}} address!',
+                { email: email() },
+                'Success notification for paid user after @pm.me generation'
+            );
+        },
+        free() {
+            return gettextCatalog.getString(
+                'You can now receive email to your new {{email}} address! To send from it, please upgrade to a paid ProtonMail plan',
+                { email: email() },
+                'Success notification for free user after @pm.me generation'
+            );
         }
     };
 
     const confirmAddress = (callback) => {
         setupAddressModal.activate({
             params: {
+                info: I18N.info,
                 submit(model) {
                     setupAddressModal.deactivate();
                     callback(model);
@@ -39,7 +39,7 @@ function pmMeModel(addressModel, askPassword, authentication, setupAddressModal,
      */
     const activate = () => {
         const hasPaidMail = authentication.hasPaidMail();
-        const success = I18N.PM_ME[hasPaidMail ? 'paid' : 'free']();
+        const success = I18N[hasPaidMail ? 'paid' : 'free']();
         const process = ({ Password, TwoFactorCode, DisplayName, Signature }) => {
             const promise = User.unlock({ Password, TwoFactorCode })
                 .then(() => addressModel.setup({ Domain: 'pm.me', DisplayName, Signature }))
