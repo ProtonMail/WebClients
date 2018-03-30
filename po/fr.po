@@ -8,10 +8,10 @@ msgstr ""
 "X-Crowdin-Project: protonmail\n"
 "X-Crowdin-Language: fr\n"
 "X-Crowdin-File: ProtonMail Web Application.pot\n"
-"Last-Translator: PMtranslator <contact@protonmail.ch>\n"
+"Last-Translator: Samy Kacimi <samy.kacimi@protonmail.ch>\n"
 "Language-Team: French\n"
 "Language: fr_FR\n"
-"PO-Revision-Date: 2018-02-28 12:26-0500\n"
+"PO-Revision-Date: 2018-03-30 22:37-0500\n"
 
 #: ./src/app/contact/modals/contactLoaderModal.js:43
 msgctxt "1 of 2 contacts successfully imported."
@@ -10209,3 +10209,6 @@ msgstr "utilisateur"
 msgid "users"
 msgstr "utilisateurs"
 
+#: src/app/templates/search/searchForm.tpl.html:7
+msgid "Search messages"
+msgstr "Rechercher des messages"
