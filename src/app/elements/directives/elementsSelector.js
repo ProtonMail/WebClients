@@ -3,7 +3,7 @@ import dedentTpl from '../../../helpers/dedent';
 
 /* @ngInject */
 function elementsSelector(dispatchers, mailSettingsModel, gettextCatalog) {
-    const isChecked = true;
+
     const ORDER_FALSY = ['all', 'read', 'unread', 'star', 'unstar'];
     const ORDER_TRUTHY = ['all', 'unread', 'read', 'unstar', 'star'];
 
@@ -64,12 +64,16 @@ function elementsSelector(dispatchers, mailSettingsModel, gettextCatalog) {
         replace: true,
         templateUrl: require('../../../templates/elements/elementsSelector.tpl.html'),
         compile(element) {
+
             const dropdown = element[0].querySelector('.pm_dropdown');
             dropdown.insertAdjacentHTML('beforeEnd', getTemplate());
 
             return (scope, el) => {
                 const { dispatcher, on, unsubscribe } = dispatchers(['closeDropdown', 'selectElements']);
                 const $btn = el.find('.elementsSelector-btn-action');
+
+                const allSelected = () => _.every(scope.conversations, { Selected: true });
+
                 const updateView = () => {
                     scope.$applyAsync(() => {
                         scope.viewLayout = mailSettingsModel.get('ViewLayout');
@@ -85,11 +89,11 @@ function elementsSelector(dispatchers, mailSettingsModel, gettextCatalog) {
 
                 function onClick({ currentTarget }) {
                     const action = currentTarget.getAttribute('data-action');
-                    dispatcher.selectElements(action, { isChecked });
+                    dispatcher.selectElements(action, { isChecked: true });
                     dispatcher.closeDropdown();
                 }
 
-                scope.checkedSelectorState = () => _.every(scope.conversations, { Selected: true });
+                scope.checkedSelectorState = allSelected;
                 updateView();
                 scope.$on('$destroy', () => {
                     unsubscribe();

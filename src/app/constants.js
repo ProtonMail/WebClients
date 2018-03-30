@@ -15,6 +15,10 @@ export const INVITE_MAIL = 1;
 export const INVITE_VPN = 2;
 export const OAUTH_KEY = 'proton:oauth';
 export const CUSTOM_DOMAIN_ADDRESS = 3;
+export const MESSAGE_VIEW_MODE = 1;
+export const CONVERSATION_VIEW_MODE = 0;
+export const ROW_MODE = 1;
+export const COLUMN_MODE = 0;
 export const UNPAID_STATE = {
     NOT: 0,
     AVAILABLE: 1,
@@ -202,13 +206,9 @@ export const CONSTANTS = {
     REPLY_ALL: 1,
     FORWARD: 2,
     FILTER_VERSION: 1,
-    ROW_MODE: 1,
-    COLUMN_MODE: 0,
     ATTACHMENT_SIZE_LIMIT: 25, // MB
     ATTACHMENT_NUMBER_LIMIT: 100,
     MAX_NUMBER_COMPOSER: 3,
-    MESSAGE_VIEW_MODE: 1,
-    CONVERSATION_VIEW_MODE: 0,
     MESSAGE_LIMIT: 100,
     CONVERSATION_LIMIT: 100,
     ENCRYPTED_STATUS: {
@@ -302,7 +302,11 @@ export const CONSTANTS = {
     OAUTH_KEY,
     MAIN_KEY,
     MAX_OUTSIDE_REPLY,
-    MAILBOX_PASSWORD_KEY
+    MAILBOX_PASSWORD_KEY,
+    ROW_MODE,
+    COLUMN_MODE,
+    MESSAGE_VIEW_MODE,
+    CONVERSATION_VIEW_MODE
 };
 
 /* eslint  no-useless-escape: "off" */

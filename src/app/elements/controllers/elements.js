@@ -1,5 +1,5 @@
 import _ from 'lodash';
-
+import { MAILBOX_IDENTIFIERS, ROW_MODE, COLUMN_MODE, CONVERSATION_VIEW_MODE } from '../../constants';
 /* @ngInject */
 function ElementsController(
     $filter,
@@ -19,7 +19,6 @@ function ElementsController(
     cache,
     cacheCounters,
     confirmModal,
-    CONSTANTS,
     embedded,
     eventManager,
     firstLoadState,
@@ -124,8 +123,8 @@ function ElementsController(
     const displayType = (type) => {
         let test = false;
         const { ViewLayout } = mailSettingsModel.get();
-        const isColumnsMode = ViewLayout === CONSTANTS.COLUMN_MODE;
-        const isRowsMode = ViewLayout === CONSTANTS.ROW_MODE;
+        const isColumnsMode = ViewLayout === COLUMN_MODE;
+        const isRowsMode = ViewLayout === ROW_MODE;
 
         switch (type) {
             case 'rows': {
@@ -242,9 +241,9 @@ function ElementsController(
                 });
         });
 
-        on('selectElements', (event, { type: action, data: { isChecked } }) => {
+        on('selectElements', (event, { type, data: { isChecked } }) => {
             $scope.$applyAsync(() => {
-                $scope.selectElements(action, isChecked);
+                $scope.selectElements(type, isChecked);
             });
         });
 
@@ -337,10 +336,10 @@ function ElementsController(
             }
 
             const { ViewLayout, ViewMode } = mailSettingsModel.get();
-            const isRowMode = ViewLayout === CONSTANTS.ROW_MODE;
+            const isRowMode = ViewLayout === ROW_MODE;
             const current = $state.$current.name;
             const elementTime = $scope.markedElement.Time;
-            const conversationMode = ViewMode === CONSTANTS.CONVERSATION_VIEW_MODE;
+            const conversationMode = ViewMode === CONVERSATION_VIEW_MODE;
 
             cache
                 .more(elementID, elementTime, 'next')
@@ -367,10 +366,10 @@ function ElementsController(
             }
 
             const { ViewLayout, ViewMode } = mailSettingsModel.get();
-            const isRowMode = ViewLayout === CONSTANTS.ROW_MODE;
+            const isRowMode = ViewLayout === ROW_MODE;
             const current = $state.$current.name;
             const elementTime = $scope.markedElement.Time;
-            const conversationMode = ViewMode === CONSTANTS.CONVERSATION_VIEW_MODE;
+            const conversationMode = ViewMode === CONVERSATION_VIEW_MODE;
 
             cache
                 .more(elementID, elementTime, 'previous')
@@ -449,7 +448,7 @@ function ElementsController(
         } else if (mailbox === 'label') {
             params.Label = $stateParams.label;
         } else {
-            params.Label = CONSTANTS.MAILBOX_IDENTIFIERS[mailbox];
+            params.Label = MAILBOX_IDENTIFIERS[mailbox];
         }
 
         return params;
@@ -609,10 +608,10 @@ function ElementsController(
     };
 
     function isStarred({ LabelIDs = [], Labels = [] }) {
-        if (Labels.length) {
-            return _.includes(LabelIDs, CONSTANTS.MAILBOX_IDENTIFIERS.starred);
+        if (LabelIDs.length) {
+            return _.includes(LabelIDs, MAILBOX_IDENTIFIERS.starred);
         }
-        return !!_.find(Labels, { ID: CONSTANTS.MAILBOX_IDENTIFIERS.starred });
+        return _.some(Labels, { ID: MAILBOX_IDENTIFIERS.starred });
     }
 
     /**
@@ -624,7 +623,7 @@ function ElementsController(
         const { conversations = [] } = $scope; // conversations can contains message list or conversation list
         const elements = _.filter(conversations, { Selected: true });
 
-        if ($state.params.id && mailSettingsModel.get('ViewLayout') === CONSTANTS.ROW_MODE) {
+        if ($state.params.id && mailSettingsModel.get('ViewLayout') === ROW_MODE) {
             return _.filter(conversations, ({ ID, ConversationID }) => ID === $state.params.id || ConversationID === $state.params.id);
         }
 
@@ -707,7 +706,7 @@ function ElementsController(
     $scope.move = (mailbox, folderID) => {
         const type = getTypeSelected();
         const ids = idsSelected();
-        const labelID = folderID || CONSTANTS.MAILBOX_IDENTIFIERS[mailbox];
+        const labelID = folderID || MAILBOX_IDENTIFIERS[mailbox];
 
         if (ids.length === 0) {
             return;
@@ -770,7 +769,7 @@ function ElementsController(
         $('.pm_dropdown').removeClass('active');
     };
 
-    $scope.displayPaginator = () => !$state.params.id || mailSettingsModel.get('ViewLayout') === CONSTANTS.COLUMN_MODE;
+    $scope.displayPaginator = () => !$state.params.id || mailSettingsModel.get('ViewLayout') === COLUMN_MODE;
 
     /**
      * Emulate labels array for the drag and drop
