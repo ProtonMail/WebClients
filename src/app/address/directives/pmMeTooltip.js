@@ -1,15 +1,16 @@
 /* @ngInject */
-function pmMeTooltip(AppModel, authentication, gettextCatalog, tooltipModel) {
+function pmMeTooltip(AppModel, pmMeModel, gettextCatalog, tooltipModel) {
+    const I18N = {
+        getTitle() {
+            return gettextCatalog.getString('This will add the {{email}} address to your account', { email: pmMeModel.email() }, 'Info');
+        }
+    };
+
     return {
         restrict: 'A',
-        link(scope, element) {
+        link(scope, el) {
             if (!AppModel.is('mobile')) {
-                const title = gettextCatalog.getString(
-                    'This will add the {{name}}@pm.me address to your account',
-                    { name: authentication.user.Name },
-                    'Info'
-                );
-                tooltipModel.add(element, { title });
+                tooltipModel.add(el, { title: I18N.getTitle() });
             }
         }
     };
