@@ -38,7 +38,7 @@ function identitySection(addressesModel, authentication, editorModel, gettextCat
             };
 
             const updateAddresses = (addresses = addressesModel.get()) => {
-                CACHE.addresses = addresses.slice(0);
+                CACHE.addresses = addresses.slice();
                 el[0].classList[CACHE.addresses.length > 1 ? 'add' : 'remove'](MULTIPLE_ADDRESS_CLASS);
             };
 

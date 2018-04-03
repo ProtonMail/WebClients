@@ -22,7 +22,7 @@ function addressesModel(Address, authentication, dispatchers) {
     const fetch = (user = authentication.user) => {
         return Address.query()
             .then(({ Addresses = [] }) => {
-                const copy = Addresses.slice(0);
+                const copy = Addresses.slice();
 
                 set(copy, user);
 

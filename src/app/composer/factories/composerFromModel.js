@@ -3,7 +3,7 @@ import _ from 'lodash';
 import { flow, filter, sortBy } from 'lodash/fp';
 
 /* @ngInject */
-function composerFromModel(addressesModel, authentication, confirmModal, gettextCatalog, plusAliasModel) {
+function composerFromModel(addressesModel, authentication, confirmModal, gettextCatalog, plusAliasModel, premiumDomainModel) {
     const PM_ADDRESS_ITEM = 'protonmail_pm_address';
     const I18N = {
         OK: gettextCatalog.getString('OK', null, 'Action'),
@@ -48,7 +48,7 @@ function composerFromModel(addressesModel, authentication, confirmModal, gettext
         });
     }
 
-    const isPmMeAddress = ({ Email = '' } = {}) => Email.endsWith('@pm.me');
+    const isPmMeAddress = ({ Email = '' } = {}) => Email.endsWith(`@${premiumDomainModel.first()}`);
     const findOrFirst = (addresses = [], ID) => _.find(addresses, { ID }) || _.first(addresses);
 
     /**

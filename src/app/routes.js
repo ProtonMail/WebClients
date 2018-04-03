@@ -478,6 +478,9 @@ export default angular
                     },
                     organization(user, organizationModel) {
                         return organizationModel.fetch();
+                    },
+                    premiums(user, premiumDomainModel) {
+                        return premiumDomainModel.fetch();
                     }
                 },
                 onEnter($rootScope, authentication) {

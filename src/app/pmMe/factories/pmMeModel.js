@@ -1,19 +1,18 @@
 /* @ngInject */
-function pmMeModel(addressModel, askPassword, authentication, setupAddressModal, gettextCatalog, networkActivityTracker, notification, User) {
-    const email = () => `${authentication.user.Name}@pm.me`;
+function pmMeModel(addressModel, askPassword, authentication, setupAddressModal, gettextCatalog, networkActivityTracker, notification, User, premiumDomainModel) {
     const I18N = {
-        info: gettextCatalog.getString('Set a display name and signature for {{email}}', { email: email() }, 'Info to setup @pm.me address'),
+        info: gettextCatalog.getString('Set a display name and signature for {{email}}', { email: premiumDomainModel.email() }, 'Info to setup @pm.me address'),
         paid() {
             return gettextCatalog.getString(
                 'You can now send and receive email from your new {{email}} address!',
-                { email: email() },
+                { email: premiumDomainModel.email() },
                 'Success notification for paid user after @pm.me generation'
             );
         },
         free() {
             return gettextCatalog.getString(
                 'You can now receive email to your new {{email}} address! To send from it, please upgrade to a paid ProtonMail plan',
-                { email: email() },
+                { email: premiumDomainModel.email() },
                 'Success notification for free user after @pm.me generation'
             );
         }
@@ -61,7 +60,7 @@ function pmMeModel(addressModel, askPassword, authentication, setupAddressModal,
         });
     };
 
-    return { activate, email };
+    return { activate };
 }
 
 export default pmMeModel;
