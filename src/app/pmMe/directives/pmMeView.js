@@ -1,5 +1,5 @@
 /* @ngInject */
-function pmMeView(dispatchers, addressesModel, authentication, pmMeModel) {
+function pmMeView(dispatchers, addressesModel, authentication, premiumDomainModel) {
     return {
         replace: true,
         restrict: 'E',
@@ -8,7 +8,7 @@ function pmMeView(dispatchers, addressesModel, authentication, pmMeModel) {
         link(scope) {
             const { on, unsubscribe } = dispatchers();
 
-            scope.email = pmMeModel.email();
+            scope.email = premiumDomainModel.email();
             scope.hasPmMe = addressesModel.hasPmMe();
             scope.hasPaidMail = authentication.hasPaidMail();
 

@@ -25,8 +25,7 @@ function domainModel(dispatchers, domainApi, gettextCatalog) {
             });
     }
     function fetch() {
-        return domainApi
-            .query()
+        return domainApi.query()
             .then(({ data = {} } = {}) => {
                 domains = data.Domains;
                 return data.Domains;

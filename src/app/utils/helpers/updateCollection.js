@@ -16,7 +16,7 @@ const ACTIONS = {
  * @return {Array}
  */
 function updateCollection(all = [], events = [], type = '') {
-    const copy = all.slice(0);
+    const copy = all.slice();
     const todo = events.reduce(
         (acc, task) => {
             const { Action, ID } = task;

@@ -1,12 +1,12 @@
 import { isIE11 } from '../../../helpers/browser';
 
 /* @ngInject */
-function composerSelectFrom(notification, editorModel, gettextCatalog, composerFromModel, authentication) {
+function composerSelectFrom(notification, editorModel, gettextCatalog, composerFromModel, premiumDomainModel) {
     const I18N = {
         upgradeRequired() {
             return gettextCatalog.getString(
-                'Upgrade to a paid plan to send from your {{name}}@pm.me address',
-                { name: authentication.user.Name },
+                'Upgrade to a paid plan to send from your {{email}} address',
+                { email: premiumDomainModel.email() },
                 'Error'
             );
         }
