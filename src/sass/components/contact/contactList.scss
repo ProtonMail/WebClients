@@ -74,3 +74,5 @@
         float: right;
     }
 }
+
+.contactList-container:not(.contactList-loaded) .contactNoResult-container { display: none }
