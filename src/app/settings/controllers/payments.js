@@ -52,7 +52,12 @@ function PaymentsController(
             params: {
                 close({ methods, method } = {}) {
                     cardModal.deactivate();
-                    method && ($scope.methods = methods);
+
+                    if (method) {
+                        $scope.$applyAsync(() => {
+                            $scope.methods = methods;
+                        });
+                    }
                 }
             }
         });
@@ -64,7 +69,12 @@ function PaymentsController(
                 method,
                 close({ methods, method } = {}) {
                     cardModal.deactivate();
-                    method && ($scope.methods = methods);
+
+                    if (method) {
+                        $scope.$applyAsync(() => {
+                            $scope.methods = methods;
+                        });
+                    }
                 }
             }
         });
