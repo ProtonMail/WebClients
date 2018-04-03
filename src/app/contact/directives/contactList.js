@@ -6,6 +6,7 @@ function contactList($filter, dispatchers, $state, $stateParams, contactCache, h
     const ITEM_CLASS = 'contactList-item';
     const ACTIVE_CLASS = 'contactList-item-activeContact';
     const ACTIVE_CURSOR_CLASS = 'contactList-item-activeCursorContact';
+    const LOADED_CLASS = 'contactList-loaded';
 
     return {
         restrict: 'E',
@@ -45,6 +46,10 @@ function contactList($filter, dispatchers, $state, $stateParams, contactCache, h
 
                 scope.$applyAsync(() => {
                     scope.contacts = filteredContacts;
+
+                    if (!element[0].classList.contains(LOADED_CLASS)) {
+                        element[0].classList.add(LOADED_CLASS);
+                    }
 
                     _.defer(() => {
                         activeContact(isLoadedContact);
