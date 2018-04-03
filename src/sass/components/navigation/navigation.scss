@@ -55,6 +55,7 @@
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
+    max-width: 115px;
 }
 
 .navigation:not(.navigation-is-black-friday) .navigationBlackFriday { display: none }
