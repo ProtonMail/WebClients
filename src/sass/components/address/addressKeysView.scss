@@ -1,7 +1,23 @@
 .addressKeysView-container {
     th.finger-print { min-width: 360px }
-    th.key-size { min-width: 80px }
-    th.actions { width: 100px }
+    th.key-size { width: 80px }
+    th.actions { width: 200px }
+    th.status { width: 100px }
+
+    td.finger-print {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        max-width: 100%;
+        padding-right: 0px;
+
+        code {
+            margin-top: 7px;
+            overflow: hidden;
+            word-break: normal;
+            text-overflow: ellipsis;
+        }
+    }
 }
 
 .addressKeysView-email-container { }
@@ -11,11 +27,15 @@
     float: left;
 }
 
+.import-private-key-file {
+    display: none;
+}
+
 .addressKeysView-toggle { width: 30px }
 .addressKeysView-email { width: calc(100% - 30px) }
 
 
 .addressKeysView-container.user [data-display-mode="address"],
 .addressKeysView-container.address [data-display-mode="user"] {
-    display: none;
+    display: none !important;
 }

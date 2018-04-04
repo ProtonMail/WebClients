@@ -1,0 +1,41 @@
+<div class="message-address-dropdown-container">
+    <a class="message-address-trigger" dropdown></a>
+    <div class="pm_dropdown noPadding">
+        <button class="message-action-compose-to"
+            data-action="compose-to">
+            <div>
+                <i class="fa fa-envelope-o"></i>
+                <span translate translate-context="Action">Compose to</span>
+            </div>
+        </button>
+        <button class="message-action-add-contact address-no-contact-only"
+            data-action="add-contact">
+            <div>
+                <i class="fa fa-user-plus"></i>
+                <span translate translate-context="Action">Add to contacts</span>
+            </div>
+        </button>
+        <button class="message-action-copy-address"
+            data-action="contact-copy">
+            <div>
+                <i class="fa fa-copy"></i>
+                <span translate translate-context="Action">Copy address</span>
+            </div>
+        </button>
+        <button class="message-action-show-contact address-contact-only"
+                data-action="contact-details">
+            <div>
+                <i class="fa fa-address-card-o"></i>
+                <span translate translate-context="Action">See contact details</span>
+            </div>
+        </button>
+        <button ng-if="message.isInternal && message.Type !== 2 && message.Type !== 3"
+                class="message-action-pin-public"
+                data-action="advanced-settings">
+            <div>
+                <i class="fa fa-key"></i>
+                <span translate translate-context="Action">Pin Public Keys</span>
+            </div>
+        </button>
+    </div>
+</div>

@@ -12,6 +12,7 @@ function contactDetails(
     AppModel,
     contactDetailsModel,
     contactBeforeToLeaveModal,
+    contactEncryptionModal,
     gettextCatalog,
     notification,
     subscriptionModel,
@@ -193,9 +194,11 @@ function contactDetails(
             }
 
             scope.get = (type) => {
+                const vcard = scope.contact.vCard;
+
                 if (type) {
                     return contactDetailsModel.extract({
-                        vcard: scope.contact.vCard,
+                        vcard,
                         field: getFieldKey(type)
                     });
                 }
@@ -205,6 +208,12 @@ function contactDetails(
                 element.off('click', onClick);
                 element.off('submit', onSubmit);
                 unsubscribe();
+
+                /*
+                 * close the advanced modal on back
+                 * no need to check if it's active, the deactivate function does that for you
+                 */
+                contactEncryptionModal.deactivate();
             });
         }
     };

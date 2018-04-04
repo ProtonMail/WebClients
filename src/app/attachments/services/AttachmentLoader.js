@@ -1,8 +1,36 @@
+import _ from 'lodash';
+
 /* @ngInject */
-function AttachmentLoader($cacheFactory, $log, $q, pmcw, authentication, $state, $stateParams, Eo, secureSessionStorage, attachmentApi) {
+function AttachmentLoader(
+    dispatchers,
+    $cacheFactory,
+    $log,
+    $q,
+    pmcw,
+    authentication,
+    $state,
+    $stateParams,
+    Eo,
+    secureSessionStorage,
+    attachmentApi,
+    SignatureVerifier
+) {
+    const { dispatcher } = dispatchers(['attachmentLoader']);
     const cache = $cacheFactory('attachments');
     const getCacheKey = ({ ID }) => `attachment.${ID}`;
     const isOutside = () => $state.is('eo.message') || $state.is('eo.reply');
+
+    /**
+     * We need to expose this to be able to store PGP attachments inside the attachmentLoader cache.
+     * Otherwise we would have to store it inside the attachment itself or build another cache which could introduce
+     * memory leaks.
+     */
+    const put = (attachment, data, verified = null) => {
+        if (verified !== null) {
+            SignatureVerifier.put(attachment.ID, verified);
+        }
+        cache.put(getCacheKey(attachment), { data: data });
+    };
 
     /**
      * Get the source request for an attachment
@@ -26,18 +54,21 @@ function AttachmentLoader($cacheFactory, $log, $q, pmcw, authentication, $state,
      * @param  {String} options.algo
      * @return {Promise}
      */
-    const decrypt = (attachment, pubKey, sessionKey = {}) => {
+    const decrypt = (attachment, sessionKey = {}) => {
         // create new Uint8Array to store decrypted attachment
         const at = new Uint8Array(attachment);
         // decrypt the att
         return pmcw
             .decryptMessage({
                 message: pmcw.getMessage(at),
-                sessionKey,
-                format: 'binary',
-                publicKeys: pubKey ? pmcw.getKeys(pubKey) : []
+                sessionKeys: [ sessionKey ],
+                format: 'binary'
             })
-            .then(({ data }) => data)
+            .then(({ data, signatures }) => ({
+                data,
+                signatures,
+                fromCache: false
+            }))
             .catch((err) => ($log.error(err), err));
     };
 
@@ -48,17 +79,19 @@ function AttachmentLoader($cacheFactory, $log, $q, pmcw, authentication, $state,
                 passwords: [],
                 filename: name,
                 armor: false,
+                detached: true,
                 data,
                 publicKeys: pmcw.getKeys(publicKeys),
                 privateKeys
             })
-            .then(({ message }) => {
+            .then(({ message, signature }) => {
                 const { asymmetric, encrypted } = pmcw.splitMessage(message);
                 return {
                     Filename: name,
                     MIMEType: type,
                     FileSize: size,
                     Inline: inline,
+                    signature: signature.packets.write(),
                     Preview: data,
                     keys: asymmetric[0],
                     data: encrypted[0]
@@ -102,37 +135,21 @@ function AttachmentLoader($cacheFactory, $log, $q, pmcw, authentication, $state,
         const keyPackets = pmcw.binaryStringToArray(pmcw.decode_base64(attachment.KeyPackets));
         const options = { message: pmcw.getMessage(keyPackets) };
         if (isOutside()) {
-            options.password = pmcw.decode_utf8_base64(secureSessionStorage.getItem('proton:encrypted_password'));
+            options.passwords = [ pmcw.decode_utf8_base64(secureSessionStorage.getItem('proton:encrypted_password')) ];
         } else {
             options.privateKeys = authentication.getPrivateKeys(message.AddressID);
         }
         return pmcw.decryptSessionKey(options).then((sessionKey) => angular.extend({}, attachment, { sessionKey }));
     };
 
-    /**
-     * Find an attachment for a message
-     * @param  {Object} attachment
-     * @param  {Object} message
-     * @return {Promise}            Return decrypted attachment
-     */
-    const get = async (attachment = {}, message = {}) => {
-        if (cache.get(`attachment.${attachment.ID}`)) {
-            return cache.get(getCacheKey(attachment));
-        }
-
-        if (attachment.Preview) {
-            return attachment.Preview;
-        }
-
-        const pubKeys = null;
-
+    const getDecryptedAttachmentAPI = async (message, attachment) => {
         const { data } = await getRequest(attachment);
         try {
-            // Will crash if there is a decryption error
             const { sessionKey } = await getSessionKey(message, attachment);
-            const buffer = await decrypt(data, pubKeys, sessionKey);
-            cache.put(getCacheKey(attachment), buffer);
-            return buffer;
+
+            const decrypted = await decrypt(data, sessionKey);
+            cache.put(getCacheKey(attachment), decrypted);
+            return decrypted;
         } catch (error) {
             const blob = pmcw.concatArrays([pmcw.binaryStringToArray(pmcw.decode_base64(attachment.KeyPackets)), new Uint8Array(data)]);
             // Fallback download raw attachment
@@ -140,8 +157,42 @@ function AttachmentLoader($cacheFactory, $log, $q, pmcw, authentication, $state,
         }
     };
 
+    const getDecryptedAttachment = async (message, attachment) => {
+        const cadata = cache.get(getCacheKey(attachment));
+        if (cadata) {
+            return _.extend({ fromCache: true }, cadata);
+        }
+        return getDecryptedAttachmentAPI(message, attachment);
+    };
+
+    const has = (attachment = {}) => !!cache.get(getCacheKey(attachment));
+
+    /**
+     * Find an attachment for a message
+     * @param  {Object} attachment
+     * @param  {Object} message
+     * @return {Promise}            Return decrypted attachment
+     */
+    const getAndVerify = async (attachment = {}, message = {}, reverify = false) => {
+        if (attachment.Preview) {
+            return attachment.Preview;
+        }
+        const { data, signatures, fromCache } = await getDecryptedAttachment(message, attachment);
+        if (fromCache && !reverify) {
+            return data;
+        }
+
+        await SignatureVerifier.verify(attachment, data, message, signatures);
+        dispatcher.attachmentLoader('download', { message, attachment });
+        return data;
+    };
+
+    const get = (attachment = {}, message = {}) => getAndVerify(attachment, message, false);
+
+    const reverify = (attachment = {}, message = {}) => getAndVerify(attachment, message, true);
+
     const flushCache = () => cache.removeAll();
 
-    return { get, load, flushCache, getSessionKey };
+    return { put, get, reverify, load, has, flushCache, getSessionKey };
 }
 export default AttachmentLoader;

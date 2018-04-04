@@ -1,5 +1,8 @@
+import _ from 'lodash';
+import { CONSTANTS } from '../../constants';
+
 /* @ngInject */
-function composerAttachments(dispatchers, gettextCatalog) {
+function composerAttachments(gettextCatalog, dispatchers) {
     const CLASS_CLOSED = 'composerAttachments-close';
     const CLASS_HIDDEN = 'composerAttachments-hidden';
     const labelHeader = {
@@ -51,7 +54,7 @@ function composerAttachments(dispatchers, gettextCatalog) {
      * @return {Array}       Packets
      */
     const formatAttachments = (scope, list = []) => {
-        return list.map(({ ID, Headers = {}, Name, Size }) => {
+        return list.filter(({ Encrypted }) => Encrypted !== CONSTANTS.ENCRYPTED_STATUS.PGP_MIME).map(({ ID, Headers = {}, Name, Size }) => {
             const Inline = +(Headers['content-disposition'] === 'inline');
             return {
                 id: ID,
@@ -72,13 +75,20 @@ function composerAttachments(dispatchers, gettextCatalog) {
     };
 
     /**
+     * We are keeping track of the first upload event by storing the seen requests in the requestSet.
+     * This means that it basically contains all the request ids seen as keys
+     * (the values are always true, making the object more of a set than a map).
+     * The reason this is done, is because the postMessage process is run at the same time as the composer.
+     * In postMessage we upload PGP attachments as normal ProtonMail attachments.
+     * But the composer is not necessarily initialized yet at that point, so it misses the first start event.
+     *
      * Custom action for the event attachment.upload
      * @param  {$scope} scope
      * @param  {Object} actionsPanel  Manager for the panel
      * @return {Function}             Callback event
      */
-    const onAction = (scope, el, actionsPanel) => (e, { type, data }) => {
-        const { status, packet, id, messageID, REQUEST_ID, isStart } = data;
+    const onAction = (scope, el, actionsPanel, requestSet) => (e, { type, data }) => {
+        const { status, packet, id, messageID, REQUEST_ID } = data;
 
         if (!isMessage(scope.message, data)) {
             return;
@@ -108,8 +118,11 @@ function composerAttachments(dispatchers, gettextCatalog) {
                 break;
 
             case 'uploading':
-                if (status && isStart) {
+                // isStart is not used as PGP uploads can start before the composer is loaded but finish after
+                // the composer is loaded.
+                if (status && !_.has(requestSet, id)) {
                     actionsPanel.open();
+                    requestSet[id] = true;
                     scope.$applyAsync(() => {
                         scope.list.push({ id, packet, messageID, message: scope.message });
                     });
@@ -125,6 +138,12 @@ function composerAttachments(dispatchers, gettextCatalog) {
                 break;
 
             case 'upload.success':
+                if (status && !_.has(requestSet, id)) {
+                    requestSet[id] = true;
+                    scope.$applyAsync(() => {
+                        scope.list.push({ id, packet, messageID, message: scope.message });
+                    });
+                }
                 actionsPanel.close();
                 break;
         }
@@ -142,6 +161,8 @@ function composerAttachments(dispatchers, gettextCatalog) {
             scope.list = formatAttachments(scope, scope.message.Attachments);
             scope.labelHeader = labelHeader.show;
 
+            const requestSet = {};
+
             const actionsPanel = togglePanel(scope, el[0]);
             const $header = angular.element(el[0].querySelector('.composerAttachments-header'));
 
@@ -150,7 +171,7 @@ function composerAttachments(dispatchers, gettextCatalog) {
             const onClick = () => actionsPanel.toggle();
             $header.on('click', onClick);
 
-            on('attachment.upload', onAction(scope, el, actionsPanel));
+            on('attachment.upload', onAction(scope, el, actionsPanel, requestSet));
 
             scope.$on('$destroy', () => {
                 $header.off('click', onClick);

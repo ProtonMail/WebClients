@@ -15,6 +15,7 @@ function tooltipModel() {
         if (title) {
             element.attr('title', title);
             element.attr('aria-label', title);
+            element.attr('data-original-title', title);
         }
     }
 

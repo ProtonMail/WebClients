@@ -2,6 +2,11 @@ import keysView from './directives/keysView';
 import changeMailboxPassword from './factories/changeMailboxPassword';
 import changePasswordModal from './factories/changePasswordModal';
 import checkKeysFormat from './factories/checkKeysFormat';
+import exportKeyModal from './factories/exportKeyModal';
+import decryptImportKeyModal from './factories/decryptImportKeyModal';
+import importPrivateKey from './factories/importPrivateKey';
+import reactivateKeyModal from './factories/reactivateKeyModal';
+import exportPrivateKeyModal from './factories/exportPrivateKeyModal';
 import setupKeys from './factories/setupKeys';
 import upgradeKeys from './factories/upgradeKeys';
 import decryptUser from './services/decryptUser';
@@ -13,5 +18,10 @@ export default angular
     .factory('changeMailboxPassword', changeMailboxPassword)
     .factory('changePasswordModal', changePasswordModal)
     .factory('checkKeysFormat', checkKeysFormat)
+    .factory('importPrivateKey', importPrivateKey)
+    .factory('reactivateKeyModal', reactivateKeyModal)
+    .factory('decryptImportKeyModal', decryptImportKeyModal)
+    .factory('exportKeyModal', exportKeyModal)
+    .factory('exportPrivateKeyModal', exportPrivateKeyModal)
     .factory('setupKeys', setupKeys)
     .factory('upgradeKeys', upgradeKeys).name;

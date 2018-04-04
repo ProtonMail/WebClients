@@ -3,10 +3,21 @@ import _ from 'lodash';
 /* @ngInject */
 function contactEmails(Contact, dispatchers) {
     const emails = [];
+
     const set = (data) => emails.push(...data);
     const fetch = () => emails;
     const clear = () => (emails.length = 0);
     const findIndex = (ID) => _.findIndex(emails, { ID });
+    const findEmail = (email, normalizer = null) => {
+        const norm = normalizer || _.identity;
+        const normEmail = norm(email);
+        const nonDefault = _.find(emails, (contactEmail) => !contactEmail.Defaults && norm(contactEmail.Email) === normEmail);
+        if (nonDefault) {
+            return nonDefault;
+        }
+        return _.find(emails, (contactEmail) => norm(contactEmail.Email) === normEmail);
+    };
+
     const { dispatcher, on } = dispatchers(['contacts']);
     const emit = (contact) => dispatcher.contacts('refreshContactEmails', { ID: contact.ContactID });
 
@@ -53,6 +64,6 @@ function contactEmails(Contact, dispatchers) {
         clear();
     });
 
-    return { set, fetch, clear, findIndex, load: loadCache };
+    return { set, fetch, clear, findIndex, findEmail, load: loadCache };
 }
 export default contactEmails;

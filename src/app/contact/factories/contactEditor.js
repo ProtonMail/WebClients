@@ -14,23 +14,24 @@ function contactEditor(
     dispatchers,
     gettextCatalog,
     networkActivityTracker,
-    notification
+    notification,
+    contactImportEncryption
 ) {
     const { dispatcher, on } = dispatchers(['contacts', 'progressBar']);
     /*
-        * Add contacts
-        * @param {Array} contacts
-        * @return {Promise}
-        */
+    * Add contacts
+    * @param {Array} contacts
+    * @return {Promise}
+    */
     function create({ contacts = [], mode }) {
-        const promise = Contact.add(contacts)
-            .then((data) => {
-                const { created, errors, total } = data;
-                eventManager.call().then(() => {
-                    dispatcher.contacts('contactCreated', { created, errors, total, mode });
-                });
+        const preCreation = mode === 'import' ? contactImportEncryption.process(contacts) : Promise.resolve(contacts);
+        const promise = preCreation.then(Contact.add).then((data) => {
+            const { created, errors, total } = data;
+            return eventManager.call().then(() => {
+                dispatcher.contacts('contactCreated', { created, total, errors, mode });
                 return data;
             });
+        });
 
         if (mode === 'import') {
             contactLoaderModal.activate({
@@ -183,6 +184,21 @@ function contactEditor(
     }
 
     /*
+        * Edit the unencrypted part of a contact
+        * @param {Object} contact
+        * @return {Promise}
+        */
+    function updateUnencrypted({ contact = {} }) {
+        const promise = Contact.updateUnencrypted(contact).then(({ Contact, cards }) => {
+            dispatcher.contacts('contactUpdated', { contact: Contact, cards });
+            notification.success(gettextCatalog.getString('Contact edited', null, 'Success message'));
+            return eventManager.call();
+        });
+
+        networkActivityTracker.track(promise);
+        return promise;
+    }
+    /*
         * Delete contact(s)
         * @param {Array} selectContacts
         */
@@ -273,7 +289,7 @@ function contactEditor(
         type === 'addContact' && add(data);
     });
 
-    return { init: angular.noop, create, update, remove, merge };
+    return { init: angular.noop, create, update, updateUnencrypted, remove, merge };
 }
 
 export default contactEditor;

@@ -48,12 +48,17 @@ function composerInputMeta() {
         compile(element, { label, key }) {
             const $label = element[0].querySelector('.composerInputMeta-label');
             const $input = element[0].querySelector('.composerInputMeta-autocomplete');
+            const $recipients = element[0].querySelectorAll('composer-input-recipient');
             $label && ($label.textContent = label);
 
             // Bind the model to the autocomplete
             if ($input) {
                 $input.setAttribute('data-name', getNameAutocomplete(label));
                 $input.setAttribute('data-emails', `message.${key}`);
+            }
+
+            if (key !== 'ToList') {
+                $recipients.forEach((node) => node.remove());
             }
 
             return (scope, el) => {

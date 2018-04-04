@@ -1,11 +1,21 @@
 import { REGEX_EMAIL } from '../../constants';
 
 /* @ngInject */
-function autocompleteEmails($rootScope, autocompleteEmailsModel, autocompleteBuilder) {
+function autocompleteEmails(
+    $rootScope,
+    dispatchers,
+    autocompleteEmailsModel,
+    autocompleteSyncModel,
+    autocompleteBuilder,
+    gettextCatalog,
+    notification
+) {
     const TAB_KEY = 9;
     const BACKSPACE_KEY = 8;
     const COMMA_KEY = 188;
     const ESCAPE_KEY = 27;
+    const RECIPIENT_LIMIT = 25;
+    const LANG_RECIPIENT_LIMIT = gettextCatalog.getString('The maximum number (%1) of Recipients is %2.', null, 'Error');
 
     /**
      * Get the selected input value configuration
@@ -69,24 +79,59 @@ function autocompleteEmails($rootScope, autocompleteEmailsModel, autocompleteBui
             .map((txt) => txt.trim());
 
     const link = (scope, el, { awesomplete }) => {
+        const { on, unsubscribe } = dispatchers();
         scope.emails = [];
         const $list = el[0].querySelector('.autocompleteEmails-admin');
 
         // Model for this autocomplete
         const model = autocompleteEmailsModel(scope.list);
 
+        // Auto scroll to the end of the list
+        const onUpdate = () => _rAF(() => $list.scrollTop = $list.scrollHeight + 32);
         /**
          * Sync the model, bind emails selected
          * @return {void}
          */
-        const syncModel = () =>
-            scope.$applyAsync(() => {
-                scope.emails = model.all();
-                scope.list = model.all();
-                // Auto scroll to the end of the list
-                _rAF(() => ($list.scrollTop = $list.scrollHeight + 32));
-            });
+        const syncModel = autocompleteSyncModel.generate(scope, model, onUpdate);
         syncModel();
+
+        on('contacts', (event, { type }) => {
+            if (type !== 'contactEvents' && type !== 'contactUpdated') {
+                return;
+            }
+            syncModel(true);
+        });
+
+        on('mailSettings', (event, { data: { key } }) => {
+            if (key !== 'Sign' && key !== 'all') {
+                return;
+            }
+            syncModel(true);
+        });
+
+        on('composer.update', (event, { type, data: { message = { ID: null } } }) => {
+            if (type !== 'close.panel' || message.ID !== scope.message.ID) {
+                return;
+            }
+            syncModel(true);
+        });
+
+        /**
+         * We need to check the limit here. Otherwise autocompleteEmails can overflow the API (for PGP status testing).
+         */
+        const checkMessageLimit = (numberToAdd = 1) => {
+            const { ToList, CCList, BCCList } = scope.message;
+            const total = ToList.length + CCList.length + BCCList.length + numberToAdd;
+            if (total > RECIPIENT_LIMIT) {
+                notification.error(LANG_RECIPIENT_LIMIT.replace('%1', total).replace('%2', RECIPIENT_LIMIT));
+                return false;
+            }
+            return true;
+        };
+
+        const resetValue = (target, emails) => {
+            target.value = emails.length ? emails[0] : '';
+        };
 
         const onInput = ({ target }) => {
             // Only way to clear the input if you add a comma.
@@ -97,7 +142,12 @@ function autocompleteEmails($rootScope, autocompleteEmailsModel, autocompleteBui
              * Then clear the input, and set the focus onto the input
              */
             if (target.value && isSplitable(target.value)) {
-                splitEmails(target.value).forEach((value) => model.add({ label: value, value }));
+                const emails = splitEmails(target.value);
+                if (!checkMessageLimit(emails.length)) {
+                    resetValue(target, emails);
+                    return;
+                }
+                emails.forEach((value) => model.add({ label: value, value }));
                 syncModel();
                 return _rAF(() => ((awesomplete.input.value = ''), awesomplete.input.focus()));
             }
@@ -151,6 +201,9 @@ function autocompleteEmails($rootScope, autocompleteEmailsModel, autocompleteBui
             const { value, clear } = getFormValue(e.target);
 
             if (value) {
+                if (!checkMessageLimit()) {
+                    return;
+                }
                 model.add(getConfigEmailInput(model, value));
                 clear();
                 syncModel();
@@ -207,6 +260,9 @@ function autocompleteEmails($rootScope, autocompleteEmailsModel, autocompleteBui
          * Update the model when an user select an option
          */
         awesomplete.replace = function replace(opt) {
+            if (!checkMessageLimit()) {
+                return;
+            }
             model.add(opt);
             this.input.value = '';
             syncModel();
@@ -229,11 +285,13 @@ function autocompleteEmails($rootScope, autocompleteEmailsModel, autocompleteBui
             el.off('submit', onSubmit);
             awesomplete.input.removeEventListener('blur', onSubmit);
             model.clear();
+            unsubscribe();
         });
     };
     return {
         scope: {
-            list: '=emails'
+            list: '=emails',
+            message: '='
         },
         replace: true,
         templateUrl: require('../../../templates/ui/autocompleteEmails.tpl.html'),

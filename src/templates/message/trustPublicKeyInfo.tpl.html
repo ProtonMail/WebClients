@@ -1,0 +1,33 @@
+<div class="pm_table">
+    <table class="trust-public-key-info">
+        <thead>
+        <tr>
+            <th translate>Fingerprint</th>
+            <th class="created" translate>Created</th>
+            <th class="expires" translate>Expires</th>
+            <th class="bits" translate>Bits</th>
+        </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>
+                        <span class="publickey-info">
+                            <code pt-tooltip
+                                  data-original-title="{{ ::keyInfo.fingerprint }}">
+                                {{ ::keyInfo.fingerprint }}
+                            </code>
+                        </span>
+                </td>
+                <td class="created">
+                    {{ ::keyInfo.created.toLocaleDateString() }}
+                </td>
+                <td class="expires">
+                    {{ ::keyInfo.expires ? keyInfo.expires.toLocaleDateString() : '-' }}
+                </td>
+                <td class="bits">
+                    {{ ::keyInfo.algType }}
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

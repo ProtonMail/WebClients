@@ -1,26 +1,35 @@
 import _ from 'lodash';
+import keyAlgorithm from '../../keys/helper/keyAlgorithm';
 
 /**
  * From a group of addresses, massage the data in the way that the address keys view directive expects
  * with it's keys and main key as the first key.
  * @param {Object} addresses
+ * @param {pmcrypto} pmcw
  * @return {Array}
  */
-export const getAddressKeys = (addresses = {}) => {
+export const getAddressKeys = (addresses = {}, pmcw) => {
     return addresses.reduce((acc, { Keys = [], ID = '', Email = '', Order }) => {
         if (!Keys.length) {
             return acc;
         }
-        const { fingerprint, created, bitSize, PublicKey } = Keys[0];
+
+        const { fingerprint, created, bitSize, PrivateKey } = Keys[0];
+        const [ keyObject = null ] = pmcw.getKeys(PrivateKey);
+        if (!keyObject) {
+            return acc;
+        }
+        const algType = keyAlgorithm.describe(Keys[0]);
         const address = {
             order: Order,
             addressID: ID,
             email: Email,
             fingerprint,
+            algType,
             created,
             bitSize,
-            publicKey: PublicKey,
-            keys: Keys
+            publicKey: keyObject.toPublic().armor(),
+            keys: Keys.map((key) => _.extend({ algType: keyAlgorithm.describe(key) }, key))
         };
         acc.push(address);
         return acc;
@@ -30,35 +39,16 @@ export const getAddressKeys = (addresses = {}) => {
 /**
  * From a user, get the contact keys, group them by display name, and get them in the address keys format.
  * @param {User} user
+ * @param {pmcrypto} pmcw
  * @returns {Array}
  */
-export const getUserKeys = (user, addresses) => {
-    const getAddressFromFingerprint = (addresses, wantedFingerprint) => _.find(addresses, ({ Keys = [] }) =>
-        _.find(Keys, ({ fingerprint }) => fingerprint === wantedFingerprint));
+export const getUserKeys = (user, pmcw) => {
+    const contactAddress = {
+        ID: 'contact-keys',
+        Email: user.Name,
+        Order: 1,
+        Keys: user.Keys
+    };
 
-    const groupedByDisplayName = user.Keys.reduce((acc, key) => {
-        const address = getAddressFromFingerprint(addresses, key.fingerprint);
-
-        // Should never happen, but just to be safe.
-        if (!address) {
-            return acc;
-        }
-
-        const { ID, DisplayName, Order } = address;
-
-        if (!acc[DisplayName]) {
-            acc[DisplayName] = {
-                ID,
-                Email: DisplayName,
-                Order,
-                Keys: []
-            };
-        }
-
-        acc[DisplayName].Keys.push(key);
-
-        return acc;
-    }, {});
-    const mapped = Object.keys(groupedByDisplayName).map((key) => groupedByDisplayName[key]);
-    return getAddressKeys(mapped);
+    return getAddressKeys([contactAddress], pmcw);
 };

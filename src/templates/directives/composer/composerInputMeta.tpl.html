@@ -5,7 +5,33 @@
             class="composerInputMeta-overlay-label"
             translate
             translate-context="Title">Recipients</label>
-        <div class="composerInputMeta-overlay-list">{{ message | recipients }}</div>
+        <div class="composerInputMeta-overlay-list">
+            <span class="svg-ellipsis-clipper"></span>
+            <span ng-if="message.ToList.length">
+                To:
+            </span>
+            <composer-input-recipient
+                ng-repeat="recipient in message.ToList"
+                data-address="{{ ::recipient.Address }}"
+                data-name="{{ ::recipient.Name}}">
+            </composer-input-recipient>
+            <span ng-if="message.CCList.length">
+                CC:
+            </span>
+            <composer-input-recipient
+                ng-repeat="recipient in message.CCList"
+                data-address="{{ ::recipient.Address }}"
+                data-name="{{ ::recipient.Name}}">
+            </composer-input-recipient>
+            <span ng-if="message.BCCList.length">
+                BCC:
+            </span>
+            <composer-input-recipient
+                ng-repeat="recipient in message.BCCList"
+                data-address="{{ ::recipient.Address }}"
+                data-name="{{ ::recipient.Name}}">
+            </composer-input-recipient>
+        </div>
     </div>
 
     <label
@@ -16,6 +42,7 @@
     <autocomplete-emails
         class="composerInputMeta-autocomplete"
         data-name="composerAutocompleteTo"
+        data-message="message"
         data-emails="message.ToList"></autocomplete-emails>
 
     <button

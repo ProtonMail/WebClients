@@ -1,5 +1,16 @@
+import _ from 'lodash';
+
 /* @ngInject */
-function contactItem(contactTransformLabel, contactUI, dispatchers, messageModel) {
+function contactItem(
+    dispatchers,
+    contactTransformLabel,
+    contactUI,
+    messageModel,
+    authentication,
+    contactEncryptionModal,
+    keyCache,
+    networkActivityTracker
+) {
     const AS_SORTABLE_DISABLED = 'as-sortable-disabled';
     const addX = (value = '') => (value.startsWith('x') ? value : `X-${value}`);
 
@@ -15,12 +26,11 @@ function contactItem(contactTransformLabel, contactUI, dispatchers, messageModel
             type: '@type'
         },
         link(scope, element, attr, ngFormController) {
-            const { dispatcher, on, unsubscribe } = dispatchers(['composer.new']);
+            const { on, unsubscribe, dispatcher } = dispatchers(['contacts', 'contact.item', 'composer.new']);
             const datas = scope.getDatas();
             const type = scope.type;
             const state = scope.state;
             const list = element.find('.contactItem-container');
-            const dispatch = (type, data = {}) => dispatcher['composer.new'](type, data);
 
             scope.config = { isFocusedAddress: false };
 
@@ -32,6 +42,9 @@ function contactItem(contactTransformLabel, contactUI, dispatchers, messageModel
                 const action = e.target.getAttribute('data-action');
                 const index = parseInt(e.target.getAttribute('data-index'), 10);
                 switch (action) {
+                    case 'advanced':
+                        advanced(index);
+                        break;
                     case 'add':
                         add();
                         break;
@@ -50,6 +63,31 @@ function contactItem(contactTransformLabel, contactUI, dispatchers, messageModel
                     default:
                         break;
                 }
+            }
+
+            function advanced(index) {
+                const promise = keyCache
+                    .get([scope.UI.items[index].value])
+                    .then(({ [scope.UI.items[index].value]: result }) => result)
+                    .then((internalKeys) =>
+                        contactEncryptionModal.activate({
+                            params: {
+                                email: scope.UI.items[index].value,
+                                model: scope.UI.items[index].settings,
+                                save: (model) => {
+                                    scope.$applyAsync(() => {
+                                        scope.UI.items[index].settings = model;
+                                        contactEncryptionModal.deactivate();
+                                        scope.form.$setDirty();
+                                    });
+                                },
+                                close: () => contactEncryptionModal.deactivate(),
+                                internalKeys,
+                                form: scope.form
+                            }
+                        })
+                    );
+                networkActivityTracker.track(promise);
             }
 
             function add() {
@@ -74,7 +112,7 @@ function contactItem(contactTransformLabel, contactUI, dispatchers, messageModel
             function composeTo(Address) {
                 const message = messageModel();
                 message.ToList = [{ Address, Name: Address }];
-                dispatch('new', { message });
+                dispatcher['composer.new']('new', { message });
             }
 
             // Drag and Drop configuration
@@ -96,6 +134,13 @@ function contactItem(contactTransformLabel, contactUI, dispatchers, messageModel
             };
 
             scope.UI = contactUI.initialize(datas, type, state);
+            if (scope.UI.mode === 'toggle') {
+                on(scope.UI.inputName + '.toggle', (target, { status: value }) => {
+                    scope.model[type][0].value = value;
+                    ngFormController.$setDirty();
+                    scope.change();
+                });
+            }
 
             scope.getAddressValue = (item) => {
                 const itemValue = item.value;
@@ -111,7 +156,13 @@ function contactItem(contactTransformLabel, contactUI, dispatchers, messageModel
                 return '';
             };
 
-            scope.change = () => scope.$applyAsync(() => (scope.model[type] = scope.UI.items));
+            scope.isOwnAddress = (email) => _.map(authentication.user.Addresses, 'Email').includes(email.toLowerCase().replace(/\+[^@]*@/, ''));
+
+            scope.change = () =>
+                scope.$applyAsync(() => {
+                    scope.model[type] = scope.UI.items;
+                    dispatcher['contact.item']('change', { items: scope.UI.items, type: scope.type });
+                });
             scope.visibleItems = () => scope.UI.items.filter(({ hide }) => !hide);
             scope.onFocus = (item) => (item.displaySelector = true);
             scope.onBlur = (item) => (item.displaySelector = false);

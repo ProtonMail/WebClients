@@ -88,13 +88,15 @@
     text-align: center;
 }
 
-.contactEncrypted-encrypted-and-signed-icon {
-    background: url(assets('img/lock-signed.svg')) no-repeat center;
-    content: " ";
+.contactDetails-fields-ico > svg {
     display: block;
     height: 17px;
     width: 17px;
     margin-left: 3px;
+
+    fill: $primary;
+    // darken the checkmark for more contrast
+    color: darken($primary, 10);
 }
 
 /* Context */

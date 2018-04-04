@@ -17,8 +17,11 @@ function attachmentModel(
     networkActivityTracker,
     composerRequestModel,
     attachmentDownloader,
-    gettextCatalog
+    gettextCatalog,
+    pmcw,
+    SignatureVerifier
 ) {
+    const MAX_KEY_SIZE = 50 * 1024;
     const queueMessage = {};
     let MAP_ATTACHMENTS = {};
     const EVENT_NAME = 'attachment.upload';
@@ -94,6 +97,30 @@ function attachmentModel(
         }
     });
 
+    const readFile = (file) => {
+        const reader = new FileReader();
+        return new Promise((resolve, reject) => {
+            reader.addEventListener('load', () => resolve(reader.result), false);
+            reader.addEventListener('error', () => reject(reader), false);
+
+            reader.readAsBinaryString(file);
+        });
+    };
+
+    const fillInMimeType = async (queueEntry) => {
+        if (queueEntry.file.name.match(/\.asc$/i) && queueEntry.file.size < MAX_KEY_SIZE && queueEntry.file.type !== 'application/pgp-keys') {
+            try {
+                const data = await readFile(queueEntry.file);
+                // check if it's valid key data
+                pmcw.getKeys(data);
+                // add new mimetype
+                queueEntry.file = _.extend(new Blob([data], { type: 'application/pgp-keys' }), queueEntry.file);
+            } catch (e) {
+                // the attachment is not a valid key
+            }
+        }
+    };
+
     /**
      * Create a queue of files for one message
      * if there is no embedded inside auto upload them
@@ -102,10 +129,12 @@ function attachmentModel(
      * @param  {Object} options.queue     List of files to upload
      * @return {void}
      */
-    function buildQueue({ messageID, message, queue }) {
+    async function buildQueue({ messageID, message, queue }) {
         if (!queue.files.length) {
             return;
         }
+
+        await Promise.all(queue.files.map(fillInMimeType));
 
         queueMessage[messageID] = queue;
 
@@ -169,7 +198,6 @@ function attachmentModel(
      * @return {Promise}
      */
     function upload(queue = [], message = {}, action = 'attachment', triggerEvent = true, cid = '') {
-        const deferred = $q.defer();
         const promises = _.map(queue, ({ file, isEmbedded }, i, list) => {
             // required for BE to get a cid-header
             file.inline = +(isEmbedded && action === 'inline');
@@ -180,10 +208,7 @@ function attachmentModel(
         message.encryptingAttachment = true;
         dispatchMessageAction(message);
 
-        composerRequestModel.save(message, deferred);
-        networkActivityTracker.track(deferred.promise);
-
-        return Promise.all(promises)
+        const promise = Promise.all(promises)
             .then((upload) => upload.filter(Boolean)) // will be undefined for aborted request
             .then((upload) => {
                 message.uploading = 0;
@@ -203,14 +228,16 @@ function attachmentModel(
                 if (triggerEvent && upload.length) {
                     dispatch('upload.success', { upload, message, messageID: message.ID });
                 }
-
-                deferred.resolve();
                 return upload;
             })
             .catch((err) => {
                 dispatchMessageAction(message);
-                deferred.reject(err);
+                throw err;
             });
+
+        composerRequestModel.save(message, promise);
+        networkActivityTracker.track(promise);
+        return promise;
     }
 
     /**
@@ -314,9 +341,34 @@ function attachmentModel(
     }
 
     /**
+     * Sign an attachment: it sends the signature to the BE and sets the signature field. Also it stored
+     * in our signature cache, so one can use SignatureVerifier.get.
+     * @param {Object} attachment
+     * @param {Object} message
+     * @returns {Promise.<*>}
+     */
+    async function sign(attachment, message) {
+        // async because we need to use data twice :-)
+        const privateKeys = authentication.getPrivateKeys(message.AddressID);
+
+        const data = await AttachmentLoader.get(attachment, message);
+        const { signature } = await pmcw.signMessage({ data, privateKeys, armor: true, detached: true });
+        attachment.Signature = signature;
+        await attachmentApi.updateSignature(attachment);
+        /*
+             ensure that we store the attachment as correctly signed it the signature store (needed to keep the
+             show the symbols in the attachments after sending the message, as the attachments will be inside the cache)
+             Otherwise you will send the message and the send message doesn't show the attachments as correctly signed.
+            */
+        await SignatureVerifier.verify(attachment, data, message);
+
+        return attachment;
+    }
+
+    /**
      * Add a new attachment, upload it to the server
      * @param {File} file
-     * @param {Message} message
+     * @param {Object} message
      * @param {Number} total Total of attachments
      * @param {String} cid Content ID
      */
@@ -336,9 +388,10 @@ function attachmentModel(
             tempPacket.ContentID = cid || embedded.generateCid(file.name, message.From.Email);
         }
 
+        const privateKeys = authentication.getPrivateKeys(message.AddressID);
         message.attachmentsToggle = true;
 
-        return AttachmentLoader.load(file, message.From.Keys[0].PublicKey)
+        return AttachmentLoader.load(file, message.From.Keys[0].PublicKey, privateKeys)
             .then((packets) => {
                 return attachmentApi
                     .upload(packets, message, tempPacket, total)
@@ -382,6 +435,6 @@ function attachmentModel(
         }
     }
 
-    return { create, getCurrentQueue };
+    return { create, getCurrentQueue, sign };
 }
 export default attachmentModel;

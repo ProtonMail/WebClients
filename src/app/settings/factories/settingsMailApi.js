@@ -39,6 +39,10 @@ function settingsMailApi($http, gettextCatalog, mailSettingsModel, url) {
     const updateRightToLeft = (data) => handleResponse($http.put(requestURL('righttoleft'), data));
     const updateAttachPublicKey = (data) => handleResponse($http.put(requestURL('attachpublic'), data));
     const updateAutoresponder = (data) => handleResponse($http.put(requestURL('autoresponder'), data));
+    const updateAttachPublic = (data) => handleResponse($http.put(requestURL('attachpublic'), data));
+    const updateSign = (data) => handleResponse($http.put(requestURL('sign'), data));
+    const updatePgpScheme = (data) => handleResponse($http.put(requestURL('pgpscheme'), data));
+    const updatePromptPin = (data) => handleResponse($http.put(requestURL('promptpin'), data));
 
     return {
         fetch,
@@ -63,7 +67,11 @@ function settingsMailApi($http, gettextCatalog, mailSettingsModel, url) {
         updateTLS,
         updateRightToLeft,
         updateAttachPublicKey,
-        updateAutoresponder
+        updateAutoresponder,
+        updateAttachPublic,
+        updateSign,
+        updatePgpScheme,
+        updatePromptPin
     };
 }
 export default settingsMailApi;

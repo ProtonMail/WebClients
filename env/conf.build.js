@@ -67,6 +67,7 @@ module.exports = {
             'angular-vs-repeat/dist/angular-vs-repeat.js',
             'vcf/dist/vcard.js',
             'jszip/dist/jszip.min.js',
+            'mimemessage/dist/mimemessage.js',
             'ical.js/build/ical.min.js'
         ].map(bindPrefix),
         jsLazy2: [

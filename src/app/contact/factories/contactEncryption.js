@@ -1,21 +1,43 @@
 import _ from 'lodash';
 
 /* @ngInject */
-function contactEncryption($injector, $rootScope, CONSTANTS, chunk, gettextCatalog, pmcw, vcard) {
+function contactEncryption($injector, $rootScope, CONSTANTS, chunk, gettextCatalog, pmcw, vcard, contactKeyAssigner) {
     const KEY_FIELDS = ['key', 'x-pm-mimetype', 'x-pm-encrypt', 'x-pm-sign', 'x-pm-scheme', 'x-pm-tls', 'x-pm-dane'];
     const CLEAR_FIELDS = ['version', 'prodid', 'x-pm-label', 'x-pm-group'];
     const SIGNED_FIELDS = ['version', 'prodid', 'fn', 'uid', 'email'].concat(KEY_FIELDS);
-    const GROUP_FIELDS = ['email'];
+    const GROUP_FIELDS = ['email'].concat(KEY_FIELDS);
     const { CONTACT_MODE, CONTACTS_LIMIT_ENCRYPTION, MAIN_KEY, VCARD_VERSION, CONTACT_ERROR } = CONSTANTS;
     const { CLEAR_TEXT, ENCRYPTED_AND_SIGNED, ENCRYPTED, SIGNED } = CONTACT_MODE;
     const { TYPE3_CONTACT_VERIFICATION, TYPE3_CONTACT_DECRYPTION, TYPE2_CONTACT_VERIFICATION, TYPE1_CONTACT } = CONTACT_ERROR;
     const getErrors = (data = []) => _.map(data, 'error').filter(Boolean);
-    const buildContact = (ID, data = [], cards) => ({
-        ID,
-        vCard: mergeContactData(data),
-        errors: getErrors(data),
-        types: cards.map(({ Type }) => Type)
-    });
+
+
+    /**
+     * Order properties by preference parameter
+     * @param {Array} properties
+     * @return {Array}
+     */
+    function orderByPref(properties = []) {
+        return _.sortBy(properties, (property) => {
+            const { pref = 0 } = property.getParams() || {};
+            return pref;
+        });
+    }
+
+    const buildContact = (ID, data = [], cards) => {
+        const contact = ({
+            ID,
+            vCard: mergeContactData(data),
+            errors: getErrors(data),
+            types: cards.map(({ Type }) => Type)
+        });
+        Object.keys(contact.vCard.data).forEach((key) => {
+            if (Array.isArray(contact.vCard.data[key])) {
+                contact.vCard.data[key] = orderByPref(contact.vCard.data[key]);
+            }
+        });
+        return contact;
+    };
 
     /**
      * Generates a contact UID of the form 'proton-web-uuid'
@@ -37,10 +59,13 @@ function contactEncryption($injector, $rootScope, CONSTANTS, chunk, gettextCatal
         return vcard.merge(vcards);
     }
 
-    function prepareCards({ data, publicKeys, privateKeys }) {
+    const assignKeyToGroup = contactKeyAssigner.reassign;
+
+    async function prepareCards({ data, publicKeys, privateKeys }) {
         const armor = true;
         const detached = true;
         const promises = [];
+        await assignKeyToGroup(data);
         let itemCounter = 0;
         const properties = vcard.extractProperties(data);
         const groups = _.reduce(

@@ -1,8 +1,18 @@
 import _ from 'lodash';
+import { VERIFICATION_STATUS } from '../../constants';
 import { isFileSaverSupported } from '../../../helpers/browser';
 
 /* @ngInject */
-function attachmentDownloader(gettextCatalog, AttachmentLoader, embeddedUtils, notification, AppModel, confirmModal, pmcw) {
+function attachmentDownloader(
+    gettextCatalog,
+    AttachmentLoader,
+    embeddedUtils,
+    notification,
+    invalidSignature,
+    SignatureVerifier,
+    confirmModal,
+    pmcw
+) {
 
     const hasFileSaverSupported = isFileSaverSupported();
 
@@ -67,12 +77,52 @@ function attachmentDownloader(gettextCatalog, AttachmentLoader, embeddedUtils, n
         }
     };
 
+    const getZipAttachmentName = (message) => `Attachments-${message.Subject}.zip`;
+
+    const checkAllSignatures = async (message, attachments) => {
+        const toSingleAttachment = (attachments) => {
+            if (attachments.length === 1) {
+                return attachments[0];
+            }
+            return {
+                Name: getZipAttachmentName(message),
+                MIMEType: 'application/zip',
+                ID: 'ZIP_' + message.ID
+            };
+        };
+
+        if (!isFileSaverSupported) {
+            return;
+        }
+        // SIGNED_AND_NO_KEYS passes right through here: no warning or confirmation given!
+        const invalid = _.map(attachments,
+            (attachment) => SignatureVerifier.getVerificationStatus(attachment)
+        ).some((status) => status === VERIFICATION_STATUS.SIGNED_AND_INVALID);
+
+        if (!invalid) {
+            return;
+        }
+
+        const attachment = toSingleAttachment(attachments);
+
+        await invalidSignature.confirm(message, attachment);
+        // we accept the signature, so don't ask again
+        attachments.forEach((attachment) => invalidSignature.askAgain(message, attachment, false));
+    };
+
     /**
      * Generate a download for an attachment
      * @param  {Object} attachment
      * @return {void}
      */
-    const generateDownload = (attachment) => {
+    const generateDownload = async (message, attachment) => {
+        try {
+            await checkAllSignatures(message, [attachment]);
+        } catch (e) {
+            // swallow as the user is informed already by a confirmation and actually caused this error
+            return;
+        }
+
         downloadFile(new Blob([attachment.data], { type: attachment.MIMEType }), attachment.Name, attachment.el);
     };
 
@@ -119,7 +169,8 @@ function attachmentDownloader(gettextCatalog, AttachmentLoader, embeddedUtils, n
                 el,
                 data,
                 Name: attachment.Name,
-                MIMEType: attachment.MIMEType
+                MIMEType: attachment.MIMEType,
+                ID: attachment.ID
             };
         } catch (e) {
             // If the decryption fails we download the encrypted version
@@ -129,7 +180,8 @@ function attachmentDownloader(gettextCatalog, AttachmentLoader, embeddedUtils, n
                     data: e.data,
                     Name: `${attachment.Name}.pgp`,
                     MIMEType: 'application/pgp',
-                    isError: true
+                    isError: true,
+                    ID: attachment.ID
                 };
             }
             throw e;
@@ -150,7 +202,7 @@ function attachmentDownloader(gettextCatalog, AttachmentLoader, embeddedUtils, n
                 return; // We don't want to download it
             }
         }
-        return generateDownload(att);
+        return generateDownload(message, att);
     };
 
     /**
@@ -165,6 +217,13 @@ function attachmentDownloader(gettextCatalog, AttachmentLoader, embeddedUtils, n
 
             const list = await Promise.all(promises);
 
+            try {
+                await checkAllSignatures(message, list);
+            } catch (e) {
+                // swallow as the user is informed already by a confirmation and actually caused this error
+                return;
+            }
+
             // Detect if we have at least one error
             if (list.some(({ isError }) => isError)) {
                 if (!await allowDownloadBrokenAtt()) {
@@ -174,7 +233,7 @@ function attachmentDownloader(gettextCatalog, AttachmentLoader, embeddedUtils, n
             const zip = new window.JSZip();
             list.forEach(({ Name, data }) => zip.file(Name, data));
             const content = await zip.generateAsync({ type: 'blob' });
-            downloadFile(content, `Attachments-${message.Subject}.zip`, el);
+            downloadFile(content, getZipAttachmentName(message), el);
         } catch (e) {
             console.error(e);
             notification.error(I18N.ERROR_ZIP);

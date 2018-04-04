@@ -108,7 +108,7 @@ function textToHtmlMail(signatureBuilder) {
         const text = replaceSignature(input, message);
 
         // We want empty new lines to behave as if they were not empty (this is non-standard markdown behaviour)
-        // It's more logical though, for users that don't know about markdown.
+        // It's more logical though for users that don't know about markdown.
         const placeholder = generatePlaceHolder(text);
         const html = removeNewLinePlaceholder(md.render(addNewLinePlaceholders(text, placeholder)), placeholder);
 

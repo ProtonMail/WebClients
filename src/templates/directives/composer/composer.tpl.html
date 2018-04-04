@@ -76,20 +76,6 @@
         </button>
 
         <button
-            class="pm_button composer-btn-encryption"
-            ng-class="{
-                'active': message.displayPanel && message.panelName == 'encrypt',
-                'primary': message.IsEncrypted === 1
-            }"
-            ng-disabled="message.disableOthers() || message !== selected"
-            pt-placement="top"
-            pt-tooltip-context="Action"
-            pt-tooltip-translate="Encryption"
-            ng-click="togglePanel(message, 'encrypt')">
-                <i class="fa fa-lock"></i>
-        </button>
-
-        <button
             class="pm_button composer-btn-expiration"
             ng-class="{
                 'active': message.displayPanel && message.panelName == 'expiration',
@@ -101,6 +87,20 @@
             pt-tooltip-translate-context="Action"
             ng-click="togglePanel(message, 'expiration')">
             <i class="fa fa-hourglass-end"></i>
+        </button>
+
+        <button
+            class="pm_button composer-btn-encryption"
+            ng-class="{
+                'active': message.displayPanel && message.panelName == 'encrypt',
+                'primary': message.IsEncrypted === 1
+            }"
+            ng-disabled="message.disableOthers() || message !== selected"
+            pt-placement="top"
+            pt-tooltip-context="Action"
+            pt-tooltip-translate="Encryption"
+            ng-click="togglePanel(message, 'encrypt')">
+            <i class="fa fa-lock"></i>
         </button>
 
         <div class="pull-right">

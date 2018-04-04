@@ -47,6 +47,24 @@ export const REMOTE = 1;
 export const EMBEDDED = 2;
 export const CONVERSATION_REQUEST_SIZE = 10;
 export const GIFT_CODE_LENGTH = 16;
+export const VERIFICATION_STATUS = {
+    NOT_VERIFIED: -1,
+    NOT_SIGNED: 0,
+    SIGNED_AND_VALID: 1,
+    SIGNED_AND_INVALID: 2,
+    SIGNED_NO_PUB_KEY: 3
+};
+export const TIME = {
+    MILLISECOND: 1,
+    SECOND: 1000,
+    MINUTE: 60000,
+    HOUR: 3600000,
+    DAY: 3600000 * 24
+};
+export const KNOWLEDGE_BASE = {
+    DIGITAL_SIGNATURE: 'https://protonmail.com/support/knowledge-base/digital-signature/',
+    PGP_MIME_INLINE: 'https://protonmail.com/support/knowledge-base/pgp-mime-pgp-inline/'
+};
 export const PM_SIGNATURE = 'Sent with <a href="https://protonmail.com" target="_blank">ProtonMail</a> Secure Email.';
 
 export const MIME_TYPES = {
@@ -100,6 +118,13 @@ export const CONSTANTS = {
             SPACE: '1gb',
             VPN: '1vpn'
         }
+    },
+    PACKAGE_TYPE: {
+        SEND_PM: 1,
+        SEND_EO: 2,
+        SEND_CLEAR: 4,
+        SEND_PGP_INLINE: 8,
+        SEND_PGP_MIME: 16
     },
     PLANS_TYPE: {
         PLAN: 1,
@@ -219,6 +244,8 @@ export const CONSTANTS = {
         OUT_ENC: 3,
         OUT_PLAIN: 4,
         STORED_ENC: 5,
+        PGP_INLINE: 7,
+        PGP_MIME: 8,
         AUTOREPLY: 10
     },
     INTERVAL_EVENT_TIMER: 30 * 1000, // time between querying the event log (every 30 seconds)
@@ -264,6 +291,11 @@ export const CONSTANTS = {
         SIGNUP_PAID: 3,
         SIGNUP_PLUS: 6,
         SIGNUP_VISIONARY: 5
+    },
+    RECIPIENT_TYPE: {
+        TYPE_INTERNAL: 1,
+        TYPE_EXTERNAL: 2,
+        TYPE_NO_RECEIVE: 3
     },
     SEND_TYPES: {
         SEND_PM: 1,

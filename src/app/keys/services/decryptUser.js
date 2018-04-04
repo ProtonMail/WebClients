@@ -18,8 +18,9 @@ function decryptUser(pmcw, notification, Key, setupKeys, gettextCatalog) {
     const keyInfo = (key) => {
         return pmcw.keyInfo(key.PrivateKey).then((info) => {
             key.created = info.created; // Creation date
-            key.bitSize = info.bitSize; // We don't use this data currently
+            key.bitSize = info.bitSize;
             key.fingerprint = info.fingerprint; // Fingerprint
+            key.algorithmName = info.algorithmName;
         });
     };
 

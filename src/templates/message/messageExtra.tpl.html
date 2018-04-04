@@ -3,11 +3,6 @@
         class="messageExtra-container-error"
         ng-if="message.SpamScore === 100 || message.SpamScore === 101"
         data-score="{{ ::message.SpamScore }}"></message-spam-score>
-
-    <message-pgp-attachments
-        class="messageExtra-container-error"
-        ng-if="message.PgpMimeWithAttachments"></message-pgp-attachments>
-
     <div class="messageExtra-container-error" ng-if="message.MIMEParsingFailed">
         <div class="messageMimeParsing-container">
             <div class="messageMimeParsing-notice">
@@ -15,9 +10,11 @@
             </div>
         </div>
     </div>
-
     <unsubscribe-panel ng-if="!unsubscribed && message.getListUnsubscribe()"></unsubscribe-panel>
     <message-auto-generated ng-if="message.isAutoReply"></message-auto-generated>
+    <message-public-key-found ng-if="message.attachedPublicKey && !(message.askResign && message.Verified !== 0)"></message-public-key-found>
+    <message-public-key-pinning ng-if="message.promptKeyPinning && !(message.askResign && message.Verified !== 0)"></message-public-key-pinning>
+    <message-resign ng-if="message.askResign && message.Verified !== 0"></message-resign>
 
     <display-content-btn data-action="remote"></display-content-btn>
     <display-content-btn data-action="embedded"></display-content-btn>

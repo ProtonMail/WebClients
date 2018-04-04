@@ -11,7 +11,7 @@
     font-size: .9em;
 }
 
-.messageExtra-container > [class*='-container'] [class$='-notice-text'] { font-weight: bold }
+.messageExtra-container > [class*='-container'] [class*='-notice-text'] { font-weight: bold }
 .messageExtra-container > [class*='-container'] [class$='-notice-sub'] { opacity: .8 }
 .messageExtra-container > [class*='-container'] > [class$='-notice'] {
     position: relative;
@@ -31,10 +31,12 @@
     font-size: 1.1em;
 }
 
-.messageExtra-container > [class*='-container'] > [class*='-button'] {
+.messageExtra-container > [class*='-container'] [class*='-button'] {
+    white-space: nowrap;
     height: 32px;
     line-height: 32px;
     background: $white;
+    flex-shrink: 0;
 }
 
 .messageExtra-container >  [class*='-container'] a { color: $primary }
@@ -66,6 +68,13 @@
 
 /* unsubscribePanel */
 .messageExtra-container > .unsubscribePanel-container > [class*='-notice']::before { content: "\f1ea" }
+.messageExtra-container > .public-key-found-container > [class*='-notice']::before { content: "\f084" }
+.messageExtra-container > .message-pinning-container > [class*='-notice']::before { content: "\f08d" }
+.messageExtra-container > .message-resign-container > [class*='-notice']::before { content: "\f071" }
+.messageExtra-container > .message-pinning-container .pm_button.link {
+    height: auto;
+    line-height: normal;
+}
 
 .messageMimeParsing-container {
     padding: 0 0 0 10px;

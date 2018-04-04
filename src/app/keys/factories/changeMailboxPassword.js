@@ -64,7 +64,7 @@ function changeMailboxPassword($log, addressesModel, authentication, gettextCata
             promises = inputKeys.map(({ PrivateKey, ID, Token }) => {
                 // Decrypt private key with organization key and token
                 return organizationKey
-                    .then((key) => pmcw.decryptMessage({ message: pmcw.getMessage(Token), privateKey: key }))
+                    .then((key) => pmcw.decryptMessage({ message: pmcw.getMessage(Token), privateKeys: [ key ] }))
                     .then(({ data }) => pmcw.decryptPrivateKey(PrivateKey, data))
                     .then((pkg) => ({ ID, pkg }));
             });
@@ -106,7 +106,7 @@ function changeMailboxPassword($log, addressesModel, authentication, gettextCata
             payload.OrganizationKey = organizationKey;
         }
 
-        return Key.private(payload, newLoginPassword);
+        return Key.updatePrivate(payload, newLoginPassword);
     }
 
     return ({ newPassword = '', onePassword = false }) => {

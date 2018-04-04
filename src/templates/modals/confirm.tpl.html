@@ -1,12 +1,16 @@
 <div class="pm_modal small {{ctrl.class}}" role="dialog" style="display: block;">
     <form name="confirmForm" class="modal-dialog" ng-submit="ctrl.confirm()" novalidate>
-        <button type="button" ng-click="ctrl.cancel()" aria-hidden="true" title-translate="Close" title-translate-context="Action" class="fa fa-times close"></button>
+        <button type="button" ng-if="hideClose" ng-click="ctrl.cancel()" aria-hidden="true" title-translate="Close" title-translate-context="Action" class="fa fa-times close"></button>
         <div class="modal-content">
             <div class="modal-header" ng-show="ctrl.title">
-                <h4 class="modal-title">{{ ctrl.title }}</h4>
+                <h4 class="modal-title">
+                    <i ng-if="ctrl.icon" class="{{ ::ctrl.icon }}"></i>
+                    {{ ctrl.title }}
+                </h4>
             </div>
             <div class="modal-body">
                 <div class="no-margin-bottom {{::ctrl.classNameMessage}}" ng-bind-html="::ctrl.message"></div>
+                <a href="{{ ::ctrl.learnMore }}" ng-if="ctrl.learnMore" target="_blank" class="pm_button link" translate-context="Link" translate>Learn more</a>
             </div>
         </div>
         <div class="modal-footer">

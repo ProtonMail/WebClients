@@ -10,7 +10,8 @@ function messageContacts(gettextCatalog) {
         templateUrl: require('../../../templates/message/messageContacts.tpl.html'),
         replace: true,
         scope: {
-            model: '='
+            model: '=',
+            messageId: '='
         },
         link(scope, el, { list = 'To' }) {
             const $label = el[0].querySelector('.messageContacts-where');

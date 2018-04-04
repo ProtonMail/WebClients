@@ -6,6 +6,7 @@ import atomLoader from './directives/atomLoader';
 import autocompleteEmail from './directives/autocompleteEmail';
 import autocompleteEmails from './directives/autocompleteEmails';
 import autocompleteEmailsItem from './directives/autocompleteEmailsItem';
+import autocompleteEmailsIcon from './directives/autocompleteEmailsIcon';
 import chooseLayoutBtns from './directives/chooseLayoutBtns';
 import customCheckbox from './directives/customCheckbox';
 import customRadio from './directives/customRadio';
@@ -24,6 +25,7 @@ import progressUpload from './directives/progressUpload';
 import progressionBtn from './directives/progressionBtn';
 import protonLoader from './directives/protonLoader';
 import protonmailLogo from './directives/protonmailLogo';
+import protonSvgs from './directives/protonSvgs';
 import ptTooltip from './directives/ptTooltip';
 import readUnread from './directives/readUnread';
 import requestTimeout from './directives/requestTimeout';
@@ -42,6 +44,7 @@ import chevrons from './filters/chevrons';
 import labelAutocomplete from './filters/labelAutocomplete';
 import unescape from './filters/unescape';
 import autocompleteBuilder from './services/autocompleteBuilder';
+import autocompleteSyncModel from './services/autocompleteSyncModel';
 import backState from './services/backState';
 import consoleMessage from './services/consoleMessage';
 import customInputCreator from './services/customInputCreator';
@@ -66,6 +69,7 @@ export default angular
     .directive('autocompleteEmail', autocompleteEmail)
     .directive('autocompleteEmails', autocompleteEmails)
     .directive('autocompleteEmailsItem', autocompleteEmailsItem)
+    .directive('autocompleteEmailsIcon', autocompleteEmailsIcon)
     .directive('chooseLayoutBtns', chooseLayoutBtns)
     .directive('customCheckbox', customCheckbox)
     .directive('customRadio', customRadio)
@@ -84,6 +88,7 @@ export default angular
     .directive('progressionBtn', progressionBtn)
     .directive('protonLoader', protonLoader)
     .directive('protonmailLogo', protonmailLogo)
+    .directive('protonSvgs', protonSvgs)
     .directive('ptTooltip', ptTooltip)
     .directive('readUnread', readUnread)
     .directive('requestTimeout', requestTimeout)
@@ -102,6 +107,7 @@ export default angular
     .filter('labelAutocomplete', labelAutocomplete)
     .filter('unescape', unescape)
     .factory('autocompleteBuilder', autocompleteBuilder)
+    .factory('autocompleteSyncModel', autocompleteSyncModel)
     .factory('backState', backState)
     .factory('consoleMessage', consoleMessage)
     .factory('customInputCreator', customInputCreator)

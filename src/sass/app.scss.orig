@@ -193,12 +193,8 @@
 @import "components/sale/index";
 
 //=== 📄 Pages =============================//
-<<<<<<< HEAD
 @import "pages/autoresponder";
-@import "pages/dashboard";
-=======
 @import "pages/dashboard/_dashboard";
->>>>>>> v3
 @import "pages/login";
 @import "pages/pgp";
 @import "pages/identities";

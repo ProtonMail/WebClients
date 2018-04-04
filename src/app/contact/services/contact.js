@@ -5,6 +5,7 @@ import { ContactUpdateError } from '../../../helpers/errors';
 function Contact($http, $rootScope, CONSTANTS, url, chunk, contactEncryption, sanitize) {
     const requestURL = url.build('contacts');
     const { CONTACTS_LIMIT_UPLOAD, EXPORT_CONTACTS_LIMIT } = CONSTANTS;
+    const ENCRYPTED_MODES = [CONSTANTS.CONTACT_MODE.ENCRYPTED, CONSTANTS.CONTACT_MODE.ENCRYPTED_AND_SIGNED];
 
     /**
      * Clean contact datas
@@ -151,6 +152,31 @@ function Contact($http, $rootScope, CONSTANTS, url, chunk, contactEncryption, sa
     }
 
     /**
+     * Update a contact without touching the encrypted part: allows you to keep the encrypted part intact if the encryption
+     * becomes broken (e.g. password reset)
+     * @param {Object} contact
+     * @return {Promise}
+     */
+    function updateUnencrypted(contact) {
+        const encryptPromise = contactEncryption.encrypt([contact]);
+        const oldContactPromise = request(requestURL(contact.ID));
+
+        return Promise.all([encryptPromise, oldContactPromise]).then(([[newContact], { Contact: oldContact }]) => {
+            newContact.Cards = newContact.Cards.filter(({ Type }) => !ENCRYPTED_MODES.includes(Type)).concat(
+                oldContact.Cards.filter(({ Type }) => ENCRYPTED_MODES.includes(Type))
+            );
+            return $http.put(requestURL(contact.ID), newContact).then(({ data = {} } = {}) => {
+                if (data.Error) {
+                    throw new Error(data.Error);
+                }
+                // NOTE We need to pass the cards to update the encrypted icon in the contact view
+                data.cards = newContact.Cards;
+                return data;
+            });
+        });
+    }
+
+    /**
      * Update a contact
      * @param {Object} contact
      * @return {Promise}
@@ -229,7 +255,6 @@ function Contact($http, $rootScope, CONSTANTS, url, chunk, contactEncryption, sa
      */
     const groups = () => $http.get(requestURL('groups'));
 
-    return { hydrate, all, get, getMultiple, add, update, remove, clear, exportAll, groups, load };
+    return { hydrate, all, get, getMultiple, add, update, updateUnencrypted, remove, clear, exportAll, groups, load };
 }
-
 export default Contact;

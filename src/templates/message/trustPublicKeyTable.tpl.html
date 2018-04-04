@@ -1,0 +1,40 @@
+<form name="trustForm">
+    <div class="pm_table">
+        <table>
+            <thead>
+            <tr>
+                <th style="padding-left: 2rem;" translate>Address</th>
+                <th>
+                    <span translate>Use for encryption</span>
+                    <i class="fa fa-info-circle"
+                       pt-tooltip-translate="Using this key for encryption will encrypt outgoing messages
+                       to this address with this key and set this key as the primary PGP key for this address."
+                    ></i>
+                </th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr ng-repeat="row in addresses">
+                <td>
+                    <input
+                           type="email"
+                           ng-model="row.adr"
+                           id="publicKeyAddress{{$index}}"
+                           name="publicKeyAddress{{$index}}"
+                           ng-class="{ empty: !row.adr }"
+                    >
+                    <div class="trust-address-validation" ng-messages="trustForm['publicKeyAddress'+$index].$error" role="alert">
+                        <div class="ng-messages-errors">
+                            <p ng-message="email" class="text-red"  translate-context="Error" translate>Invalid email</p>
+                        </div>
+                    </div>
+                </td>
+                <td>
+                    <toggle ng-if="row.adr && !row.expired" class="small" data-on="ON" data-off="OFF" data-status="row.encrypt"></toggle>
+                    <toggle ng-if="row.adr && row.expired" class="disabled small" data-on="ON" data-off="OFF" data-status="row.encrypt"></toggle>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</form>

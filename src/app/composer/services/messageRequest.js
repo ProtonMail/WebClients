@@ -1,7 +1,7 @@
 import _ from 'lodash';
 
 /* @ngInject */
-function messageRequest($rootScope, messageApi, ComposerRequestStatus, CONSTANTS, gettextCatalog) {
+function messageRequest($rootScope, messageApi, ComposerRequestStatus, CONSTANTS, gettextCatalog, mailSettingsModel) {
     const { STATUS } = CONSTANTS;
     const I18N = {
         ERROR_REQUEST_DRAFT: gettextCatalog.getString('Saving draft failed, please  try again', null, 'Error'),
@@ -37,6 +37,10 @@ function messageRequest($rootScope, messageApi, ComposerRequestStatus, CONSTANTS
      */
     async function draft(parameters, message, type) {
         try {
+            if (type !== STATUS.UPDATE) {
+                message.primaryKeyAttached = mailSettingsModel.get('AttachPublicKey');
+            }
+
             const { data } = await getEditPromise(type, parameters);
 
             if (data.Code === ComposerRequestStatus.SUCCESS || data.Code === ComposerRequestStatus.DRAFT_NOT_EXIST) {

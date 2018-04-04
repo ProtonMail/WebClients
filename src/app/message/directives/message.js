@@ -7,7 +7,21 @@ const getRecipients = ({ ToList = [], CCList = [], BCCList = [] } = {}) => ToLis
 const noRecipients = (message) => !getRecipients(message).length;
 
 /* @ngInject */
-function message($state, dispatchers, cache, displayContent, messageScroll, tools, unsubscribeModel, $exceptionHandler) {
+function message(
+    $state,
+    dispatchers,
+    $rootScope,
+    mailSettingsModel,
+    cache,
+    displayContent,
+    messageScroll,
+    tools,
+    unsubscribeModel,
+    CONSTANTS,
+    sendPreferences,
+    $exceptionHandler,
+    tooltipModel
+) {
     /**
      * Back to element list
      */
@@ -52,7 +66,21 @@ function message($state, dispatchers, cache, displayContent, messageScroll, tool
                 return cache.getMessage(scope.message.ID).then((message) => _.extend(scope.message, message));
             };
 
+            const reloadEncryptionTooltip = () => {
+                const encryptionStatus = element.find('.encryptionStatus');
+                tooltipModel.update(encryptionStatus, { title: scope.message.encryptionType() });
+            };
+
             const updateMessage = async (promise) => {
+                // must be done when actually loading the message so we don't fetch this info for each message in the conversation
+                // (otherwise causes sendPreferences to fetch all keys from the keyapi.
+                sendPreferences.get([scope.message.SenderAddress]).then(({ [scope.message.SenderAddress]: { pinned, scheme, isVerified } }) =>
+                    scope.$applyAsync(() => {
+                        scope.message.isInternal = scheme === CONSTANTS.SEND_TYPES.SEND_PM;
+                        scope.message.promptKeyPinning = !pinned && mailSettingsModel.get('PromptPin') && scheme === CONSTANTS.SEND_TYPES.SEND_PM;
+                        scope.message.askResign = pinned && !isVerified;
+                    })
+                );
                 try {
                     const { type, body } = await promise;
                     scope.$applyAsync(() => {
@@ -62,6 +90,46 @@ function message($state, dispatchers, cache, displayContent, messageScroll, tool
                             scope.message.viewMode = 'html';
                             scope.body = body;
                         }
+                        reloadEncryptionTooltip();
+
+                        const allowed = [
+                            'none',
+                            'pgp-mime',
+                            'pgp-mime-pinned',
+                            'pgp-inline',
+                            'pgp-inline-pinned',
+                            'pgp-eo',
+                            'pgp-pm',
+                            'pgp-pm-pinned'
+                        ];
+                        const parseRecipientHeader = (header, recipients) => {
+                            const pairs = header.split(';').map((s) =>
+                                decodeURIComponent(s)
+                                    .trim()
+                                    .split('=')
+                            );
+                            const map = _.fromPairs(pairs);
+                            const defaults = _.zipObject(recipients, Array(recipients.length).fill('none'));
+                            return _.extend(defaults, _.mapValues(map, (val) => (allowed.includes(val) ? val : 'none')));
+                        };
+
+                        const recipients = _.map(scope.message.ToList, 'Address')
+                            .concat(_.map(scope.message.CCList, 'Address'))
+                            .concat(_.map(scope.message.BCCList, 'Address'));
+                        const parsedHeaders = scope.message.ParsedHeaders; // || { };
+                        const encryptionList = parseRecipientHeader(parsedHeaders['X-Pm-Recipient-Encryption'] || '', recipients);
+                        const authenticationList = parseRecipientHeader(parsedHeaders['X-Pm-Recipient-Authentication'] || '', recipients);
+
+                        const addCryptoInfo = ({ Address, Name }) => ({
+                            Address,
+                            Name,
+                            Authentication: authenticationList[Address],
+                            Encryption: encryptionList[Address]
+                        });
+
+                        scope.toList = scope.message.ToList.map(addCryptoInfo);
+                        scope.ccList = scope.message.CCList.map(addCryptoInfo);
+                        scope.bccList = scope.message.BCCList.map(addCryptoInfo);
                     });
                 } catch (e) {
                     console.error(e);
@@ -83,6 +151,13 @@ function message($state, dispatchers, cache, displayContent, messageScroll, tool
             scope.body = ''; // Here we put the content displayed inside the message content
             scope.unsubscribed = unsubscribeModel.already(scope.message.getListUnsubscribe());
             (scope.message.openMe || scope.message.expand) && openMessage();
+
+            const defaults = { Authentication: 'none', Encryption: 'none' };
+            scope.toList = scope.message.ToList.map((email) => _.extend(defaults, email));
+            scope.ccList = scope.message.CCList.map((email) => _.extend(defaults, email));
+            scope.bccList = scope.message.BCCList.map((email) => _.extend(defaults, email));
+
+            scope.message.promptKeyPinning = false;
 
                 on('message.open', (e, { type, data }) => {
                     if (data.message.ID !== scope.message.ID) {
@@ -130,14 +205,24 @@ function message($state, dispatchers, cache, displayContent, messageScroll, tool
                             scope.unsubscribed = unsubscribeModel.already(scope.message.getListUnsubscribe());
                         });
                     }
+                    if (type === 'decrypted' && data.message.ID === scope.message.ID) {
+                        reloadEncryptionTooltip();
+                    }
+                    if (type === 'reload' && scope.message.Body && data.conversationID === scope.message.ConversationID) {
+                        scope.message.clearTextBody(true).then(() => scope.$applyAsync());
+                    }
                 });
 
-                on('message.refresh', (event, messageIDs) => {
+                on('message.refresh', async (event, messageIDs) => {
                     if (messageIDs.indexOf(scope.message.ID) > -1) {
                         const message = cache.getMessageCached(scope.message.ID);
                         const type = tools.typeView();
 
                         if (message && canBeOpen(message)) {
+                            if (message.IsEncrypted === CONSTANTS.ENCRYPTED_STATUS.PGP_MIME) {
+                                // we need to reload the attachments too: otherwise the attachments disappear from the message
+                                await message.loadPGPAttachments();
+                            }
                             scope.message = _.extend(scope.message, message);
                             bindClasses(scope.message);
                         } else if (type === 'message') {

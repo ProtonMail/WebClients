@@ -1,14 +1,23 @@
 /* @ngInject */
 function Key($http, url, srp) {
-    const requestUrl = url.build('keys');
+    const requestURL = url.build('keys');
+
+    /**
+     * Get public keys of the given emails addresses
+     * @return {Promise}
+     */
+    const keys = (Email, Fingerprint = null) => {
+        return $http.get(requestURL(), { params: { Email, Fingerprint } });
+    };
 
     /**
      * Create a new key
      * @param {Object} params
      * @return {Promise}
      */
-    const create = (params = {}) => $http.post(requestUrl(), params);
-
+    const create = (params = {}) => {
+        return $http.post(requestURL(), params);
+    };
     /**
      * Install a new key for each address
      * @param {Object} params
@@ -16,12 +25,13 @@ function Key($http, url, srp) {
      */
     const setup = (params = {}, newPassword = '') => {
         if (newPassword.length) {
-            return srp.getPasswordParams(newPassword, params).then((authParams) => $http.post(requestUrl('setup'), authParams));
+            return srp
+                .getPasswordParams(newPassword, params)
+                .then((authParams) => $http.post(requestURL('setup'), authParams));
         }
 
-        return $http.post(requestUrl('setup'), params);
+        return $http.post(requestURL('setup'), params);
     };
-
     /**
      * Install a new key for each address
      * @param {Object} params
@@ -29,37 +39,32 @@ function Key($http, url, srp) {
      */
     const reset = (params = {}, newPassword = '') => {
         if (newPassword.length) {
-            return srp.getPasswordParams(newPassword, params).then((authParams) => $http.post(requestUrl('reset'), authParams));
+            return srp
+                .getPasswordParams(newPassword, params)
+                .then((authParams) => $http.post(requestURL('reset'), authParams));
         }
-        return $http.post(requestUrl('reset'), params);
+        return $http.post(requestURL('reset'), params);
     };
-    /**
-     * Update key priority
-     * @param {Object} params
-     * @return {Promise}
-     */
-    const order = (params = {}) => $http.post(requestUrl('order'), params);
-
     /**
      * Activate key
      * @param {String} keyID
      * @param {Object} params
      * @return {Promise}
      */
-    const activate = (keyID, params = {}) => $http.put(requestUrl(keyID, 'activate'), params);
-
+    const activate = (keyID, params = {}) => $http.put(requestURL(keyID, 'activate'), params);
     /**
      * Update private key only, use for password updates
      * @param {Object} params
      * @return {Promise}
      */
-    const privateKey = (params = {}, newPassword = '') => {
+    const updatePrivate = (params = {}, newPassword = '') => {
         if (newPassword.length) {
-            return srp.getPasswordParams(newPassword, params).then((authParams) => $http.put(requestUrl('private'), authParams));
+            return srp
+                .getPasswordParams(newPassword, params)
+                .then((authParams) => $http.put(requestURL('private'), authParams));
         }
-        return $http.put(requestUrl('private'), params);
+        return $http.put(requestURL('private'), params);
     };
-
     /**
      * Upgrade private key with incorrect metadata
      * @param {Object} params
@@ -67,42 +72,42 @@ function Key($http, url, srp) {
      */
     const upgrade = (params = {}, newPassword = '') => {
         if (newPassword.length) {
-            return srp.getPasswordParams(newPassword, params).then((authParams) => $http.put(requestUrl('private', 'upgrade'), authParams));
+            return srp
+                .getPasswordParams(newPassword, params)
+                .then((authParams) => $http.put(requestURL('private', 'upgrade'), authParams));
         }
-        return $http.put(requestUrl('private', 'upgrade'), params);
+        return $http.put(requestURL('private', 'upgrade'), params);
     };
-
+    /**
+     * Make a private key primary, only for activated keys
+     * @param {String} keyID
+     * @return {Promise}
+     */
+    const primary = (keyID) => {
+        return $http.put(requestURL(keyID, 'primary'));
+    };
     /**
      * Delete key
      * @param {String} keyID
      * @return {Promise}
      */
-    const deleteKey = (keyID) => $http.delete(requestUrl(keyID));
-
+    const remove = (keyID) => {
+        return $http.delete(requestURL(keyID));
+    };
     /**
      * Get salts
      * @return {Promise}
      */
-    const salts = () => $http.get(requestUrl('salts'));
-
+    const salts = () => {
+        return $http.get(requestURL('salts'));
+    };
     /**
-     * Delete key
+     * reactive key
      * @param {String} keyID
      * @return {Promise}
      */
-    const reactivate = (keyID, params) => $http.put(requestUrl(keyID), params);
+    const reactivate = (keyID, params) => $http.put(requestURL(keyID), params);
 
-    return {
-        create,
-        setup,
-        reset,
-        order,
-        activate,
-        upgrade,
-        private: privateKey,
-        delete: deleteKey,
-        salts,
-        reactivate
-    };
+    return { keys, create, setup, reset, primary, activate, updatePrivate, upgrade, remove, salts, reactivate };
 }
 export default Key;

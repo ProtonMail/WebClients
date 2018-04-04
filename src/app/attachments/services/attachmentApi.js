@@ -56,6 +56,9 @@ function attachmentApi($http, url, $q, dispatchers, authentication, pmcw, CONFIG
         data.append('Inline', packets.Inline);
         data.append('KeyPackets', new Blob([packets.keys]));
         data.append('DataPacket', new Blob([packets.data]));
+        if (packets.signature) {
+            data.append('Signature', new Blob([packets.signature]));
+        }
         return data;
     };
 
@@ -230,6 +233,8 @@ function attachmentApi($http, url, $q, dispatchers, authentication, pmcw, CONFIG
         }
     };
 
-    return { get, upload, killUpload, remove };
+    const updateSignature = ({ ID, Signature }) => $http.put(requestURL(ID, 'signature'), { Signature });
+
+    return { get, upload, updateSignature, killUpload, remove };
 }
 export default attachmentApi;

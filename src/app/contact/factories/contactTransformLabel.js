@@ -17,7 +17,7 @@ function contactTransformLabel(gettextCatalog) {
         geo: gettextCatalog.getString('Geolocation', null, 'VCard key name'),
         home: gettextCatalog.getString('Personal', null, 'VCard key name'),
         impp: gettextCatalog.getString('Impp', null, 'VCard key name'),
-        key: gettextCatalog.getString('Key', null, 'VCard key name'),
+        key: gettextCatalog.getString('Public Key', null, 'VCard key name'),
         lang: gettextCatalog.getString('Language', null, 'VCard key name'),
         logo: gettextCatalog.getString('Logo', null, 'VCard key name'),
         member: gettextCatalog.getString('Member', null, 'VCard key name'),
@@ -37,7 +37,12 @@ function contactTransformLabel(gettextCatalog) {
         tz: gettextCatalog.getString('Timezone', null, 'VCard key name'),
         uid: 'UID',
         url: 'URL',
-        work: gettextCatalog.getString('Work', null, 'VCard key name')
+        work: gettextCatalog.getString('Work', null, 'VCard key name'),
+        'pm-scheme': gettextCatalog.getString('Cryptographic scheme', null, 'VCard key name'),
+        'pm-mimetype': gettextCatalog.getString('Format', null, 'VCard key name'),
+        'pm-sign': gettextCatalog.getString('Sign', null, 'VCard key name'),
+        'pm-encrypt': gettextCatalog.getString('Encrypt', null, 'VCard key name'),
+        'pm-tls': gettextCatalog.getString('TLS', null, 'VCard key name')
     };
 
     /**

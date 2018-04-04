@@ -46,6 +46,10 @@ function attachmentFileFormat() {
         return list.every(isUploadMIMEType);
     };
 
-    return { isEmbedded, getEmbedded, isUploadAbleType };
+    const receivedUnencrypted = ({ Headers = {} }) => {
+        return Headers['x-pm-content-encryption'] === 'on-delivery';
+    };
+
+    return { isEmbedded, getEmbedded, isUploadAbleType, receivedUnencrypted };
 }
 export default attachmentFileFormat;

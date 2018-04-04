@@ -1,0 +1,23 @@
+<div class="pm_modal small important" role="dialog" style="display: block;">
+    <form name="beforeForm" class="modal-dialog" novalidate>
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" translate-context="Title for contact modal" translate>PGP Encryption</h4>
+            </div>
+            <div class="modal-body">
+                <div class="alert no-margin-bottom" translate-context="Message for encryption contact modal" translate>
+                    The email <span style="font-weight: bold;">{{ ::ctrl.email }}</span> has PGP keys set. Do you want to enable PGP encryption for this contact?
+                </div>
+                <label class="remember-choice">
+                    <custom-checkbox data-custom-ng-model="ctrl.applyToAll"></custom-checkbox>
+                    <span translate-context="Remember encryption choice encrypt" translate>Remember my choice</span>
+                </label>
+            </div>
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="pm_button" ng-click="ctrl.no()" translate-context="Action to not set PGP encryption on import contact" translate>No</button>
+            <button type="button" class="pm_button primary pull-right" ng-click="ctrl.yes()" translate-context="Action to not set PGP encryption on import contact" translate>Yes</button>
+        </div>
+    </form>
+    <div class="modal-overlay"></div>
+</div>

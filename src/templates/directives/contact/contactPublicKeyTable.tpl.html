@@ -1,0 +1,92 @@
+<div class="pm_table">
+    <table class="contactItem-container fixedLayout">
+        <thead>
+            <tr>
+                <td class="invalid-key-column"></td>
+                <td translate>Fingerprint</td>
+                <td class="download-action"></td>
+                <td class="primary" translate ng-if="enableDelete === 'true'">
+                    <i class="fa fa-info-circle" pt-tooltip-translate="The primary key is used to encrypt outgoing messages.">
+                    </i>
+                    Primary
+                </td>
+                <td class="primary" translate ng-if="enableDelete !== 'true'">
+                    <i class="fa fa-info-circle" pt-tooltip-translate="This contact currently has access to this key to decrypt and sign.">
+                    </i>
+                    Activated
+                </td>
+                <td class="created" translate>Created</td>
+                <td class="expires" ng-if="enableDelete === 'true'" translate>Expires</td>
+                <td class="bits" translate>Type</td>
+                <td class="actions" translate>Actions</td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="item in items"
+                ng-if="!item.hide && item.value">
+                <td class="invalid-key-column">
+                    <i class="fa fa-warning"
+                       ng-if="item.invalidMessage"
+                       pt-tooltip="{{ item.invalidMessage }}"></i>
+                </td>
+                <td>
+                    <span class="publickey-info">
+                        <code pt-tooltip
+                              data-original-title="{{ item.fingerprint }}">
+                            {{ item.fingerprint }}
+                        </code>
+                    </span>
+                </td>
+                <td class="download-action">
+                    <button
+                        class="fa fa-download"
+                        data-index="{{ $index }}"
+                        data-action="{{ enableDelete !== 'true' ? 'downloadUntrusted' : 'download'}}"
+                        pt-tooltip-translate="Download"
+                    ></button>
+                </td>
+                <td class="primary" ng-if="$index === 0 && !item.verificationOnly">
+                    <i class="fa fa-check" ng-if="!item.isExpired"></i>
+                </td>
+                <td class="primary" ng-if="$index > 0 || item.verificationOnly">
+                    <button
+                        data-action="makePrimary"
+                        data-index="{{ $index }}"
+                        ng-if="!item.verificationOnly && !item.isExpired && enableDelete === 'true'">
+                        Set Primary
+                    </button>
+                    <i class="fa fa-check"
+                       ng-if="!item.verificationOnly  && enableDelete !== 'true'"
+                    ></i>
+                </td>
+                <td class="created">
+                    {{ item.created }}
+                </td>
+                <td class="expires" ng-if="enableDelete === 'true'">
+                    {{ item.expires }}
+                </td>
+                <td class="bits">
+                    {{ item.algType }}
+                </td>
+                <td class="actions">
+                    <button ng-if="enableDelete === 'true'"
+                            class="pm_button link"
+                            data-action="remove"
+                            data-index="{{ $index }}"
+                    >Remove</button>
+                    <button ng-if="enableTrust === 'true'"
+                            class="pm_button link"
+                            data-action="addVirtual"
+                            data-index="{{ $index }}"
+                    >Trust</button>
+                </td>
+            </tr>
+            <tr class="empty-table">
+                <td colspan="7">
+                    <i class="fa fa-lg fa-thumbs-o-up"></i>
+                    <span translate>All available keys are trusted</span>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

@@ -9,7 +9,7 @@
     'hasSender': message.Sender.Address.length,
     'message-mode-plain': message.viewMode === 'plain'
 }">
-
+    <message-address-action-menu></message-address-action-menu>
     <div class="summary" toggle-message>
         <div class="pull-left">
             <div class="meta">
@@ -17,41 +17,49 @@
                 <i class="history fa fa-reply-all" ng-if="message.IsRepliedAll === 1"></i>
                 <i class="history fa fa-mail-forward" ng-if="message.IsForwarded === 1"></i>
                 <span class="contact message-contact">
-                    <span class="from message-contact-from"><span translate-context="Message sender label" translate>From</span>:</span> <strong>{{ ::message.Sender | contact:'Name' }}</strong> <em>{{ ::message.Sender | contact:'Address' }}<message-compose-to class="message-contact-sender" data-key="Sender"></message-compose-to></em>
+                    <span class="from message-contact-from"><span translate translate-context="Message sender label" translate>From</span>:</span>
+                    <encryption-status class="encryptionStatus"
+                                       pt-tooltip="{{ ::message.encryptionType() }}"></encryption-status>
+                    <strong>{{ ::message.Sender | contact:'Name' }}</strong>
+                    <em>{{ ::message.Sender | contact:'Address' }}
+                        <message-address-actions
+                            data-message-id="message.ID"
+                            data-address="{{ ::message.Sender | contact:'Address' }}"
+                            data-name="{{ ::message.Sender | contact:'Name' }}"
+                            ng-if="message.expand"></message-address-actions>
+                    </em>
                 </span>
             </div>
-            <div class="location message-summary-folder">
-                <folders-message></folders-message>
+            <div class="location message-summary-folder sent">
+                <i ng-if="message.Type === 1" class="pm_tag allMessageLabels-type-draft" translate>Draft</i>
+                <i ng-if="message.Type === 2 || message.Type === 3" class="pm_tag allMessageLabels-type-sent" translate>Sent</i>
             </div>
         </div>
-        <div class="labels message-summary-labels">
-            <labels-element
-                data-button="remove"
-                data-element="message"
-                class="message-summary-labels-list"></labels-element>
-        </div>
-        <div class="time">
-            <i class="fa fa-paperclip" ng-show="message.NumAttachments > 0"></i>
-            <time class="time-readable">{{ ::message.Time | localReadableTime }}</time>
-            <time
-                class="time-machine"
-                time-refreshed="{{ ::message.Time }}"
-                time-filter="messageTime"
-                time-interval="30000"></time>
-        </div>
-        <div class="status">
-            <pt-star
-                data-model="message"
-                class="singleStar"
-                data-pt-star-type="message"></pt-star>
-
-            <span class="fa locks" ng-class="{
-                'fa-lock': !!!(message.IsEncrypted == '0'),
-                'text-purple': !!(message.IsEncrypted == '1') || !!(message.IsEncrypted == '3') || !!(message.IsEncrypted == '5') || !!(message.IsEncrypted == '6'),
-                'fa-unlock-alt': !!(message.IsEncrypted == '0'),
-                'pgp': !!(message.IsEncrypted == '7') || !!(message.IsEncrypted == '8')
-            }" title="{{ ::message.encryptionType() }}">
-            </span>
+        <div class="keep-right">
+            <div class="labels message-summary-labels">
+                <labels-element
+                    data-button="remove"
+                    data-element="message"
+                    class="message-summary-labels-list"></labels-element>
+            </div>
+            <div class="location message-summary-folder folders">
+                <folders-message></folders-message>
+            </div>
+            <div class="time">
+                <i class="fa fa-paperclip" ng-show="message.NumAttachments > 0"></i>
+                <time class="time-readable">{{ ::message.Time | localReadableTime }}</time>
+                <time
+                    class="time-machine"
+                    time-refreshed="{{ ::message.Time }}"
+                    time-filter="messageTime"
+                    time-interval="30000"></time>
+            </div>
+            <div class="status">
+                <pt-star
+                    data-model="message"
+                    class="singleStar"
+                    data-pt-star-type="message"></pt-star>
+            </div>
         </div>
     </div>
 
@@ -75,20 +83,30 @@
                 <message-contacts
                     class="recipients-details-toGroup"
                     ng-if="message.ToList.length"
-                    data-model="::message.ToList"
-                    data-list="To"></message-contacts>
+                    data-model="toList"
+                    data-list="To"
+                    data-message-id="message.ID"
+                ></message-contacts>
 
                 <message-contacts
                     class="recipients-details-ccGroup"
                     ng-if="message.CCList.length"
-                    data-model="::message.CCList"
-                    data-list="CC"></message-contacts>
+                    data-model="ccList"
+                    data-list="CC"
+                    data-message-id="message.ID"
+                    ></message-contacts>
 
                 <message-contacts
                     class="recipients-details-bccGroup"
                     ng-if="message.BCCList.length"
-                    data-model="::message.BCCList"
-                    data-list="BCC"></message-contacts>
+                    data-model="bccList"
+                    data-list="BCC"
+                    data-message-id="message.ID"
+                ></message-contacts>
+                <div class="encrypted-subject" ng-if="message.encryptedSubject">
+                    <i class="fa fa-lock"></i><span translate class="header-name">Subject</span>
+                    <span> {{ ::message.encryptedSubject }}</span>
+                </div>
             </div>
 
             <all-message-labels ng-if="message.toggleDetails"></all-message-labels>

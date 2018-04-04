@@ -1,7 +1,18 @@
 import _ from 'lodash';
 
 /* @ngInject */
-function sendMessage(CONSTANTS, messageModel, gettextCatalog, encryptMessage, messageRequest, notification, cache, $rootScope) {
+function sendMessage(
+    CONSTANTS,
+    messageModel,
+    gettextCatalog,
+    encryptMessage,
+    messageRequest,
+    notification,
+    cache,
+    $rootScope,
+    attachmentApi,
+    SignatureVerifier
+) {
     const { STATUS } = CONSTANTS;
     const I18N = {
         SEND_SUCCESS: gettextCatalog.getString('Message sent', null, 'Send message'),
@@ -24,18 +35,44 @@ function sendMessage(CONSTANTS, messageModel, gettextCatalog, encryptMessage, me
         return message.emailsToString();
     };
 
+    /**
+     * Ensures that either all attachments have signatures or all have no signatures. The BE can only accept both,
+     * and we can leave them on a draft, but then the signatures that are send do not match the signatures that are
+     * received.
+     * @param {Message} message
+     * @returns {Promise.<boolean>}
+     */
+    const handleAttachmentSigs = (message) => {
+        if (message.Attachments.every(({ Signature }) => Signature)) {
+            return Promise.resolve(false);
+        }
+        /*
+             Not all attachments have signatures: remove the signature from the attachments, so they don't show up
+             in the send message.
+             */
+        const signedAttachments = _.filter(message.Attachments, ({ Signature }) => Signature);
+        const promises = _.map(signedAttachments, (attachment) => {
+            attachment.Signature = null;
+            return (
+                attachmentApi
+                    .updateSignature(attachment)
+                    // save the signature as unverified. the attachment data is always ignored in this case.
+                    .then(() => SignatureVerifier.verify(attachment, null, message))
+            );
+        });
+        return Promise.all(promises).then(() => true);
+    };
+
     const send = async (message, parameters) => {
         const emails = prepare(message, parameters);
-        const { encrypt, cleartext } = await encryptMessage(message, emails);
+        // we await later for parallel performance.
+        const attachmentUpdates = handleAttachmentSigs(message);
 
-        if (cleartext && !message.Password.length && message.ExpirationTime) {
-            const error = new Error(`${I18N.EXPIRE_ERROR}</a>.`);
-            error.raw = true;
-            throw error;
-        }
-
-        const packages = await encrypt();
+        const packages = await encryptMessage(message, emails);
         parameters.Packages = packages;
+        // wait on the signature promise after the encrypt, so it can be done in parallel with the encryption
+        // which is better for performance.
+        await attachmentUpdates;
         message.encrypting = false;
         dispatchMessageAction(message);
         return messageRequest.send(parameters);

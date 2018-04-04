@@ -58,7 +58,7 @@ function setupKeys(passwords, pmcw, webcrypto, Key, MemberKey) {
     async function decryptMemberToken({ Token, Activation, PrivateKey } = {}, orgPrivateKey = {}) {
         const { data: decryptedToken, verified } = await pmcw.decryptMessage({
             message: pmcw.getMessage(Token || Activation),
-            privateKey: orgPrivateKey,
+            privateKeys: [ orgPrivateKey ],
             publicKeys: orgPrivateKey.toPublic()
         });
 

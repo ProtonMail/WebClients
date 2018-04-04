@@ -1,10 +1,19 @@
 .messageContacts-container { display: flex }
 
-.messageContacts-where {
+.messageContacts-where,
+.encrypted-subject .header-name,
+.encrypted-subject i {
     margin-right: .5em;
     color: $default-color-medium
 }
-.messageContacts-where::after { content: ': '}
+
+
+.encrypted-subject .header-name {
+    margin-right: 0;
+}
+
+.messageContacts-where::after,
+.encrypted-subject .header-name:after { content: ':'}
 
 .messageContacts-list {
     margin: 0;
@@ -15,6 +24,32 @@
 .messageContacts-email {
     font-style: italic;
     color: $default-color-medium;
+}
+
+.messageContacts-container svg.pgp {
+    fill: $pgp;
+    color: darken($pgp, 10);
+}
+
+.messageContacts-icon .fa {
+    font-size: 14px;
+    width: 12px;
+}
+
+.messageContacts-icon .fa.pgp {
+    color: $pgp;
+}
+
+.messageContacts-icon .signed-lock {
+    height: 13px;
+    margin-bottom: -2px;
+    margin-left: -1px;
+    margin-right: -1px;
+}
+
+.messageContacts-icon .internal {
+    fill: $primary;
+    color: darken($primary, 10);
 }
 
 .messageContacts-btn-compose { color: $primary }

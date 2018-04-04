@@ -7,7 +7,7 @@ import _ from 'lodash';
  * @param  {Boolean} appendLines Append lines before the content if it starts with a Signature
  * @return {String}
  */
-export function toText(html, appendLines = true) {
+export function toText(html, appendLines = true, convertImages = false) {
 
     const turndownService = new TurndownService({
         bulletListMarker: '-',
@@ -42,7 +42,16 @@ export function toText(html, appendLines = true) {
     };
     const replaceImg = {
         filter: 'img',
-        replacement: () => ''
+        replacement: (e, image) => {
+            // needed for the automatic conversion done by pgp/inline, otherwise the conversion happens and people forget that they have selected this for some contacts
+            if (convertImages && image.alt) {
+                return '[ ' + image.alt + ' ]';
+            }
+            if (convertImages && image.src) {
+                return '[ ' + image.src + ' ]';
+            }
+            return '';
+        }
     };
 
     const replaceAnchor = {

@@ -1,5 +1,27 @@
 @import "../../node_modules/components-font-awesome/css/font-awesome.css";
 
+
+[class*="pt-fa-bg-"] {
+    position: relative;
+    &:before {
+        // display the before on top of the :after background
+        position:absolute;
+    }
+
+    &.fa-warning:after {
+        content: "▲";
+    }
+
+    &.fa-check-circle:after {
+        // fa-circle
+        content: "\f111";
+    }
+}
+
+.pt-fa-bg-white:after {
+    color: white;
+}
+
 .ico-protonvpn {
     background-image: url(assets('img/icons/protonvpn-ico.svg'));
     background-size: 100% 100%;

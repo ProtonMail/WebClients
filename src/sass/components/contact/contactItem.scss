@@ -156,8 +156,128 @@
     flex-grow: 1;
 }
 
+.contactItem-inputs .pm_toggle {
+    transform-origin: left center;
+    margin-top: 2px;
+}
 
-.contactItem-inputs input,
+contact-pgp contact-item ul.contactItem-container {
+    margin: 0;
+}
+
+.contactItem-inputs .pm_select {
+    width: 100%;
+    position: relative;
+    display: block;
+    box-shadow: inset 0 0 0 1px $border, 0 1px 2px rgba(0,0,0,.1);
+    border-radius: 2px;
+
+    select::-ms-expand {
+        display: none;
+    }
+    select {
+        margin: 0;
+        height: 35px;
+        line-height: 35px;
+        padding-left: 10px;
+        position: relative;
+        z-index: 3;
+        background: transparent;
+        border: none;
+        width: 100%;
+        max-width: 100%;
+        min-width: 3rem;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+        &[disabled] {
+            background: rgba(0,0,0,0);
+        }
+    }
+    .fa {
+        position: absolute;
+        right: 0;
+        display: block;
+        text-align: center;
+        top: 0;
+        bottom: 0;
+        height: 35px;
+        line-height: 35px;
+        z-index: 1;
+        width: 2rem;
+        color: $text;
+    }
+}
+
+.contactItem-inputs .publickey-info {
+    display: flex;
+    flex-grow: 1;
+    width: 200px;
+    background: #e3e4f2;
+    word-break: normal;
+    padding-left: 35px;
+
+    code {
+        flex-grow: 1;
+        background: none;
+        line-height: 36px;
+        word-break: normal;
+        overflow: hidden;
+        width: 180px;
+        display: block;
+        text-overflow: ellipsis;
+    }
+    + i {
+        position: absolute;
+        margin-left: 15px;
+        line-height: 36px;
+        // we need the on hover tooltip while reordering
+        pointer-events: all;
+    }
+}
+
+.contactItem-inputs.no-key-publickey-actions {
+    button:first-child {
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 0;
+    }
+    button:not(:last-child) {
+        flex-grow: 1;
+    }
+    button + button {
+        border-top-left-radius: 0;
+        border-bottom-left-radius: 0;
+        border-left: 0;
+        flex-grow: 1;
+    }
+}
+
+
+
+
+.contactItem-inputs .customCheckbox-container {
+    width: initial;
+}
+
+.fa-margin-top {
+    margin-top: 0.5em;
+}
+
+.fa-top {
+    top: -1em;
+}
+
+.contact-split {
+    margin: 0; width: 33%; display: inline-block;
+}
+
+.appConfigBody-is-mobile .contact-split{
+    margin-left: 0;
+    width: 100%;
+    display: inline-block;
+}
+
+.contactItem-inputs input:not([type=checkbox]),
 .contactItem-inputs textarea {
     -moz-appearance: none;
     -webkit-appearance: none;
@@ -182,18 +302,21 @@
     }
 }
 
-.contactItem-inputs input,
-.contactItem-inputs textarea {
-    &.contactItem-input-with-icon {
-        padding-right: 35px;
-    }
+.contactItem-inputs input.publickey-input-button {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+.contactItem-inputs input.contactItem-input-with-icon {
+    padding-right: 50px;
+    width: 0;
 }
 
 .contactItem-inputs textarea {
     font: inherit;
     min-height: 65px;
     /* autoExpand */
-    padding: 8px 10px;
+    padding: 8px 25px 8px 10px;
     line-height: 20px;
     transition: height 0.1s ease;
     resize: none;
@@ -213,7 +336,7 @@
 .contactItem-actions {
     position: relative;
     display: flex;
-    min-width: 45px;
+    min-width: 65px;
 }
 
 // When changing the order, don't show the action buttons.
@@ -235,9 +358,10 @@
 }
 
 .copy-button,
-.contactItem-compose {
+.contactItem-compose,
+.contactItem-row .fa-gear {
     position: absolute;
-    left: -35px;
+    left: -30px;
     top: 10px;
 }
 
@@ -249,6 +373,15 @@
     color: $primary;
     border: 0;
     box-shadow:  -10px 0px 20px -5px #FFF;
+}
+
+.contactItem-row .fa-gear {
+    top: 11px;
+    left: -50px;
+}
+
+.pm_modal .contactItem-row .fa-gear {
+    left: -30px;
 }
 
 .contactItem-compose:hover { color: $secondary }
@@ -275,7 +408,7 @@
     & > i { margin-right: 5px }
 }
 
-.contactItem-actions > button {
+.contactItem-actions > button:not(.pm_button) {
     background: transparent;
     border: 0;
     padding: 0;
@@ -285,9 +418,14 @@
 }
 
 .contactItem-add { display: none }
+.contact-item-info {
+    margin-top: 10px;
+    margin-left: 10px;
+}
 
 .contactItem-add,
-.contactItem-delete {
+.contactItem-delete,
+.contactItem-download {
     height: 36px;
     padding: 5px;
     text-align: center;
@@ -302,6 +440,33 @@
     background: url(assets('img/plus.svg')) no-repeat center;
 }
 
+.upload-helper {
+    display: none;
+}
+
+
+.contactItem-inputs input.fingerprint {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    border-left: 0;
+    box-shadow: none;
+}
+
+.contactItem-inputs input.fingerprint:focus {
+    border-color: $border;
+}
+
+.contactItem-inputs input.fingerprint:not(:placeholder-shown) {
+    color: gray;
+    font-family: monospace;
+    font-size: small;
+}
+
+.contactItem-inputs .publickey-input-button {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
 .contactItem-delete:before { background: url(assets('img/minus.svg')) no-repeat center;}
 
 .contactItem-row .as-sortable-item-handle::before { display: none }
@@ -311,7 +476,7 @@
     align-items: center;
     justify-content: flex-end;
     margin-top: 10px;
-    padding: 0 50px;
+    padding: 0 65px;
 }
 
 .contactItem-toggle-sort {
@@ -331,6 +496,10 @@
 /* Hide compose button in modal */
 .pm_modal .contactItem-compose { display: none }
 
+.pm_modal .contact-details-only { display: none; }
+.contact-add-only { display: none; }
+.pm_modal .contact-add-only { display: block; }
+
 .contactItem-container .contactItem-row:last-of-type .contactItem-add { display: flex }
 
 .contactItem-container:not(.as-sortable-disabled) .contactItem-toggle-sort .contactItem-toggle-sort-save,
@@ -344,7 +513,11 @@
 
 .contactItem-container:not(.as-sortable-disabled) .contactItem-row .fa-chevron-down,
 .contactItem-container:not(.as-sortable-disabled) .contactItem-row .contactItem-add,
-.contactItem-container:not(.as-sortable-disabled) .contactItem-row .contactItem-delete {
+.contactItem-container:not(.as-sortable-disabled) .contactItem-row .contactItem-delete,
+.contactItem-container:not(.as-sortable-disabled) .contactItem-row .contactItem-download,
+.contactItem-container:not(.as-sortable-disabled) .contactItem-row .fa-warning,
+.contactItem-container:not(.as-sortable-disabled) .contactItem-row .contactItem-compose,
+.contactItem-container:not(.as-sortable-disabled) .contactItem-row .fa-gear{
     display: none;
 }
 
@@ -378,6 +551,31 @@
     margin: 0;
     font-size: .8em;
     padding: .5em;
+}
+
+.contact-encryption-modal .modal-dialog {
+    width: 45rem;
+    margin-left: -20rem;
+    margin-top: 4rem;
+    margin-bottom: 0;
+
+    .contactItem-container {
+        margin-bottom: 10px;
+        margin-top: 10px;
+    }
+
+    .encryption-title {
+        margin-bottom: 10px;
+    }
+}
+
+.contact-encryption-modal {
+    z-index: 99999;
+}
+
+// to prevent bubbling
+.contact-email-dropdown div {
+    pointer-events: none
 }
 
 
