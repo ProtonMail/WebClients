@@ -1,0 +1,216 @@
+contact-public-keys .pm_table {
+
+    margin-top: 0px;
+    margin-left: 30px;
+
+    table {
+        min-width: 550px;
+    }
+
+    td {
+        padding-left: 8px;
+        padding-right: 8px;
+    }
+
+    .fingerprint {
+        padding-right: 0;
+    }
+
+    .actions {
+        width: 55px;
+        text-align: center;
+
+        .pm_button {
+            padding: 0;
+        }
+    }
+
+    .download-action {
+        width: 5px;
+        padding-left: 0;
+
+        button {
+            padding: 0;
+            border: 0;
+            -webkit-appearance: none;
+            background: none;
+        }
+    }
+
+    .created, .expires {
+        width: 70px;
+    }
+
+    .bits {
+        width: 65px;
+    }
+
+    tbody .bits {
+        font-size: 0.75em;
+    }
+
+    .primary {
+        width: 75px;
+        text-align: center;
+        button {
+            -webkit-appearance: none;
+            padding: 0;
+            border: 0;
+            text-decoration: underline;
+        }
+    }
+
+    code {
+        margin-top: 7px;
+        overflow: hidden;
+        display: block;
+        word-break: normal;
+        text-overflow: ellipsis;
+    }
+
+    .empty-table td {
+        text-align: center;
+        background-color: $primary-light;
+
+        i {
+            margin-right: 10px;
+        }
+    }
+
+    .invalid-key-column {
+        width: 10px;
+        padding-right: 0;
+        padding-left: 4px;
+    }
+
+    tr + .empty-table {
+        display: none;
+    }
+
+    .warning-message {
+        background-color: rgba(255, 165, 0, 0.4);
+    }
+}
+contact-public-keys .hide-actions {
+    .actions {
+        display: none;
+    }
+}
+
+.contact-pgp-container {
+    .alert, .item-no-keys {
+        display: none;
+    }
+
+    &.pgp-external.pgp-no-keys .item-no-keys {
+        display: block;
+    }
+
+    &.pgp-external.pgp-no-keys .item-has-keys {
+        display: none;
+    }
+
+    &.pgp-encrypt:not(.pgp-no-keys).pgp-expired .alert.expired-key-message {
+        display:block;
+    }
+
+    &.pgp-external.pgp-no-keys.pgp-encrypt .done-button {
+        pointer-events: none;
+        box-shadow: none;
+        box-shadow: inset 0 0 50rem 0 lighten($tertiary, 4%);
+        color: $button-color-disabled;
+    }
+
+    &:not(.pgp-encrypt):not(.pgp-internal) .primary {
+        display: none;
+    }
+
+    &.pgp-external.pgp-mime.pgp-sign .pgp-mime-message {
+        display: block;
+    }
+
+    &.pgp-external.pgp-inline.pgp-sign .pgp-inline-message {
+        display: block;
+    }
+
+    &.pgp-internal.pgp-no-primary:not(.pgp-no-keys) .primary-key-message {
+        display: block;
+    }
+
+    .encryption-title {
+        .main-title {
+            text-decoration: underline;
+        }
+        margin-bottom: 20px;
+    }
+
+}
+
+.pgp-internal {
+    .pgp-external-only {
+        display: none;
+    }
+}
+
+contact-public-keys .contactItem-input {
+    flex-grow: 1;
+}
+
+contact-public-keys .pm_toggle {
+    cursor: pointer;
+
+    span {
+        pointer-events: none;
+    }
+}
+
+.public-key-title label {
+    display: inline-block;
+    height: 36px;
+
+    i {
+        width: 22px;
+        padding-left: 10px;
+    }
+}
+
+.contact-pgp-container .contact-disabled ul {
+    opacity: 0.75;
+    pointer-events: none;
+
+    .contact-item-info {
+        pointer-events: all;
+    }
+}
+
+contact-public-key-label.no-upload-button .contactItem-input {
+    display: none;
+}
+
+.public-key-button {
+    margin-left: 7px;
+}
+
+.public-key-controls {
+    position: relative;
+    height: 20px;
+
+    button {
+        position: absolute;
+        -webkit-appearance: none;
+        border: 0;
+        text-decoration: underline;
+    }
+
+    button:last-child {
+        right: 0;
+    }
+}
+
+contact-public-keys .publicKeys-label {
+    margin-left: 10px;
+
+    i {
+        width: 20px;
+    }
+}

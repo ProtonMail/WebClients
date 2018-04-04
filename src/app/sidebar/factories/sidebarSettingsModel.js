@@ -31,7 +31,7 @@ function sidebarSettingsModel(gettextCatalog, memberModel) {
         security: {
             state: 'secured.security',
             label: gettextCatalog.getString('Security', null, 'Title'),
-            icon: 'fa-shield'
+            icon: 'fa-lock'
         },
         appearance: {
             state: 'secured.appearance',

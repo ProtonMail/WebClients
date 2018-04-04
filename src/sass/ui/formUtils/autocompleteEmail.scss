@@ -8,3 +8,30 @@
         padding: .6em .5em
     }
 }
+
+
+.autocompleteEmailsItem-icon {
+    .encryptionIcon {
+        margin: 3px 5px 3px 5px;
+        line-height: 100%;
+        vertical-align: middle;
+        color: $primary;
+    }
+
+    svg.encryptionIcon {
+        height: 1em;
+        fill: $primary;
+        // create more contrast on the checkmark (somewhat more than normal because default-color is already really black)
+        color: darken($primary, 20);
+    }
+
+    .pgp-encryption-icon {
+        color: $pgp;
+    }
+
+    svg.pgp-encryption-icon {
+        fill: $pgp;
+        // create more contrast on the checkmark
+        color: darken($pgp, 10);
+    }
+}

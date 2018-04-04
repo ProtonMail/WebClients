@@ -11,7 +11,7 @@ function listAttachments($state, dispatchers, attachmentDownloader) {
             model: '='
         },
         replace: true,
-        templateUrl: require('../../../templates/directives/attachments/listAttachments.tpl.html'),
+        templateUrl: require('../../../templates/attachments/listAttachments.tpl.html'),
         link(scope, el) {
             const $list = el[0].querySelector('.listAttachments-list');
             const hide = () => !scope.model.Attachments.length && el[0].classList.add(HIDDEN_CLASSNAME);

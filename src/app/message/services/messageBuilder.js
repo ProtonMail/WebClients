@@ -83,8 +83,12 @@ export function createMessage({ Addresses = [] } = {}, { RE_PREFIX, FW_PREFIX } 
      * @param  {String} options.Subject from the current message
      * @param  {String} options.ToList  from the current message
      */
-    function newCopy(newMsg, { Subject = '', ToList = [], CCList = [], BCCList = [], DecryptedBody = '' } = {}) {
-        newMsg.Subject = Subject;
+    function newCopy(
+        newMsg,
+        { Subject = '', ToList = [], CCList = [], BCCList = [], DecryptedBody = '', encryptedSubject = '' } = {},
+        useEncrypted = false
+    ) {
+        newMsg.Subject = useEncrypted ? encryptedSubject : Subject;
         newMsg.ToList = ToList;
         newMsg.CCList = CCList;
         newMsg.BCCList = BCCList;
@@ -99,9 +103,9 @@ export function createMessage({ Addresses = [] } = {}, { RE_PREFIX, FW_PREFIX } 
      * @param  {Array} ReplyTos          from the current message
      * @param  {Number} Type             from the current message
      */
-    function reply(newMsg, origin = {}) {
+    function reply(newMsg, origin = {}, useEncrypted = false) {
         newMsg.Action = REPLY;
-        newMsg.Subject = formatSubject(origin.Subject, RE_PREFIX);
+        newMsg.Subject = formatSubject(useEncrypted ? origin.encryptedSubject : origin.Subject, RE_PREFIX);
 
         if (origin.Type === 2 || origin.Type === 3) {
             newMsg.ToList = origin.ToList;
@@ -120,9 +124,9 @@ export function createMessage({ Addresses = [] } = {}, { RE_PREFIX, FW_PREFIX } 
      * @param  {Array} ReplyTos          from the current message
      * @param  {Number} Type             from the current message
      */
-    function replyAll(newMsg, { Subject, Type, ToList, ReplyTos, CCList, BCCList } = {}) {
+    function replyAll(newMsg, { Subject, Type, ToList, ReplyTos, CCList, BCCList, encryptedSubject = '' } = {}, useEncrypted = false) {
         newMsg.Action = REPLY_ALL;
-        newMsg.Subject = formatSubject(Subject, RE_PREFIX);
+        newMsg.Subject = formatSubject(useEncrypted ? encryptedSubject : Subject, RE_PREFIX);
 
         if (Type === 2 || Type === 3) {
             newMsg.ToList = ToList;
@@ -143,10 +147,10 @@ export function createMessage({ Addresses = [] } = {}, { RE_PREFIX, FW_PREFIX } 
      * @param  {Message} newMsg          New message to build
      * @param  {String} options.Subject from the current message
      */
-    function forward(newMsg, { Subject } = {}) {
+    function forward(newMsg, { Subject, encryptedSubject = '' } = {}, useEncrypted = false) {
         newMsg.Action = FORWARD;
         newMsg.ToList = [];
-        newMsg.Subject = formatSubject(Subject, FW_PREFIX);
+        newMsg.Subject = formatSubject(useEncrypted ? encryptedSubject : Subject, FW_PREFIX);
     }
 
     return { reply, replyAll, forward, newCopy };
@@ -170,7 +174,7 @@ function messageBuilder(
     mailSettingsModel,
     messageModel,
     prepareContent,
-    sanitize,
+    confirmModal,
     signatureBuilder,
     textToHtmlMail
 ) {
@@ -178,6 +182,22 @@ function messageBuilder(
         RE_PREFIX: gettextCatalog.getString('Re:', null, 'Message'),
         FW_PREFIX: gettextCatalog.getString('Fw:', null, 'Message')
     });
+
+    const I18N = {
+        TITLE_ENCRYPTED_SUBJECT: gettextCatalog.getString('Encrypted Subject', null, 'Subject'),
+        YES_CONFIRM: gettextCatalog.getString('Yes', null, 'Use encrypted subject as subject'),
+        NO_CONFIRM: gettextCatalog.getString('No', null, 'Use unencrypted subject as subject'),
+        encryptedSubjectMessage(msg) {
+            return gettextCatalog.getString(
+                `The selected message has an encrypted subject.
+                ProtonMail does not support sending an encrypted subject. 
+                Do you want to use "{{ encryptedSubject }}" instead of the original unencrypted subject
+                 "{{ Subject }}"?`,
+                msg,
+                'Ask user to use encrypted subject'
+            );
+        }
+    };
 
     /**
      * Convert string content to HTML
@@ -207,14 +227,42 @@ function messageBuilder(
         });
     }
 
-    function builder(action, currentMsg = {}, newMsg = {}) {
+    function promptEncryptedSubject(currentMsg) {
+        return new Promise((resolve) => {
+            confirmModal.activate({
+                params: {
+                    title: I18N.TITLE_ENCRYPTED_SUBJECT,
+                    message: I18N.encryptedSubjectMessage(currentMsg),
+                    confirmText: I18N.YES_CONFIRM,
+                    cancelText: I18N.NO_CONFIRM,
+                    hideClose: true,
+                    confirm() {
+                        confirmModal.deactivate();
+                        resolve(true);
+                    },
+                    cancel() {
+                        confirmModal.deactivate();
+                        resolve(false);
+                    }
+                }
+            });
+        });
+    }
+
+    async function handleAction(action, currentMsg = {}, newMsg = {}) {
+        const useEncrypted = !!currentMsg.encryptedSubject && (await promptEncryptedSubject(currentMsg));
+
+        action === 'new' && newCopy(newMsg, currentMsg, useEncrypted);
+        action === 'reply' && reply(newMsg, currentMsg, useEncrypted);
+        action === 'replyall' && replyAll(newMsg, currentMsg, useEncrypted);
+        action === 'forward' && forward(newMsg, currentMsg, useEncrypted);
+    }
+
+    async function builder(action, currentMsg = {}, newMsg = {}) {
         newMsg.MIMEType = loadMimeType(currentMsg, mailSettingsModel.get('DraftMIMEType'));
         newMsg.RightToLeft = mailSettingsModel.get('RightToLeft');
 
-        action === 'new' && newCopy(newMsg, currentMsg);
-        action === 'reply' && reply(newMsg, currentMsg);
-        action === 'replyall' && replyAll(newMsg, currentMsg);
-        action === 'forward' && forward(newMsg, currentMsg);
+        await handleAction(action, currentMsg, newMsg);
 
         newMsg.xOriginalTo = currentMsg.xOriginalTo;
 
@@ -222,6 +270,8 @@ function messageBuilder(
 
         newMsg.AddressID = currentMsg.AddressID; // Set the AddressID from previous message to convert attachments on reply / replyAll / forward
         newMsg.From = address;
+
+        /* add inline images as attachments */
         newMsg.Attachments = pickAttachements(currentMsg, action);
         newMsg.NumEmbedded = 0;
 
@@ -294,10 +344,10 @@ function messageBuilder(
      * @param  {Message} currentMsg Current message to reply etc.
      * @return {Message}    New message formated
      */
-    function create(action = '', currentMsg = {}) {
+    async function create(action = '', currentMsg = {}) {
         let newMsg = messageModel();
         setDefaultsParams(newMsg);
-        newMsg = builder(action, currentMsg, newMsg);
+        newMsg = await builder(action, currentMsg, newMsg);
         newMsg.setDecryptedBody(signatureBuilder.insert(newMsg, { action }));
         return newMsg;
     }

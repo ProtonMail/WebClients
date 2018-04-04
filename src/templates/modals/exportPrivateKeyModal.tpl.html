@@ -1,0 +1,29 @@
+<div class="pm_modal small very-important {{ctrl.class}}" role="dialog" style="display: block;">
+    <form method="post" class="modal-dialog" ng-submit="passwordModalForm.$valid && ctrl.submit()" name="passwordModalForm" novalidate>
+        <button type="button" ng-click="ctrl.cancel()" aria-hidden="true" title-translate="Close" title-translate-context="Action" class="fa fa-times close"></button>
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" translate translate-context="Title">Export private key</h4>
+            </div>
+
+            <div class="modal-body pm_form">
+                <p class="alert alert-danger" translate-context="Error" translate>IMPORTANT: Downloading your private keys and sending them over or storing them on insecure media can jeopardise the security of your account!</p>
+                <div class="multi-line-label">
+                    <label for="password" translate translate-context="Label in the modal which ask the user to enter a new password">Please enter a password to encrypt your private key with before exporting.</label>
+                </div>
+                <input type="password" autofocus ng-model="ctrl.password" id="password" placeholder-translate="Password" name="password" required/>
+                <div ng-messages="passwordModalForm.password.$error" class="text-red">
+                    <p ng-message="required" translate-context="Error" translate>Field required</p>
+                </div>
+                <div ng-hide="(passwordModalForm.password.$touched || passwordModalForm.$submitted) && passwordModalForm.password.$invalid">
+                    <p>&nbsp;</p>
+                </div>
+            </div>
+        </div>
+        <div class="modal-footer text-right">
+            <button type="button" class="pm_button pull-left" ng-click="ctrl.cancel()" translate translate-context="Action">Cancel</button>
+            <button type="submit" class="pm_button primary" translate translate-context="Action">Export</button>
+        </div>
+    </form>
+    <div class="modal-overlay"></div>
+</div>

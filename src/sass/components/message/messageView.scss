@@ -8,6 +8,85 @@
     to { opacity: 1; }
 }
 
+
+
+
+.clipboardInput {
+    position: absolute;
+    height: 0;
+    font-size: 0;
+    border: 0;
+    padding: 0;
+}
+
+.message-address-actions {
+    display: inline-block;
+
+    .message-address-action-button {
+        border: 0;
+        background: transparent;
+        cursor: pointer;
+        padding-left: 0;
+        line-height: 16px;
+        margin-right: 6px;
+
+        i.fa {
+            margin-left: 0 !important;
+        }
+    }
+
+}
+
+
+.message-address-dropdown-container {
+
+    .pm_dropdown {
+        width: 160px;
+
+        button {
+            overflow: hidden;
+
+            div {
+                width: 100%;
+                display: inline-flex;
+                align-items: center;
+                pointer-events: none;
+            }
+
+            div:before {
+                width: 8px;
+                height: 35px;
+                margin-left: 5px;
+                font-size: .8em;
+                display: block;
+                content: "";
+            }
+
+            div > span {
+                overflow: hidden;
+                text-overflow: ellipsis;
+                white-space: nowrap;
+            }
+        }
+    }
+
+    &.address-is-contact .address-no-contact-only {
+        display: none;
+    }
+
+    &:not(.address-is-contact) .address-contact-only {
+        display: none;
+    }
+
+    &:not(.show-advanced-settings) .message-action-pin-public {
+        display: none;
+    }
+}
+
+.details .contact .message-address-action-button {
+    padding-left: 6px;
+}
+
 #conversation-view {
     .fa-star {
         color: $yellow;
@@ -175,7 +254,9 @@
             }
             .time,
             .status,
-            .labels {
+            .labels,
+            .location.folders,
+            .keep-right {
                 background: $white !important;
             }
             .time::after {
@@ -195,6 +276,21 @@
             span i.fa {
                 margin-left: .5rem;
             }
+            span .signature-status i.fa {
+                margin: 0;
+            }
+            .signature-status {
+                color: $primary;
+                .fa-warning::before {
+                    background: radial-gradient(circle at 50% 55%, white, white 35%, transparent 36%, transparent);
+                }
+                .no-keys {
+                    color: orange;
+                }
+                .invalid-sig {
+                    color: indianred;
+                }
+            }
             .pull-left {
                 position: absolute;
                 left: 10px;
@@ -205,43 +301,42 @@
                 overflow: hidden;
 
                 .meta,
-                .location {
+                .location.sent {
                     float: left;
                 }
+                .location.sent {
+                    padding-left: 6px;
+
+                    .fa-folder {
+                        display: none;
+                    }
+                }
+            }
+            .keep-right {
+                position: relative;
+                background: $tertiary;
+                display: inline-block;
+                z-index:2;
+            }
+            .message-attachments {
+                margin-left: .45rem;
             }
             .labels,
             .time,
-            .status {
+            .status,
+            .location.folders,
+            .message-attachments {
                 display: inline-block;
-                margin-left: .85rem;
                 position: relative;
                 z-index: 2;
                 background: $tertiary;
             }
+            .location.folders .pm_tag {
+                display: none;
+            }
             .time {
                 position: relative;
-                padding-left: 1rem;
                 z-index: 1;
-                &::after {
-                    content: "";
-                    display: block;
-                    position: absolute;
-                    left: -1rem;
-                    width: 1rem;
-                    height: 34px;
-                    top: 0;
-                    background: linear-gradient(to right,  rgba($tertiary,0) 0%, $tertiary 100%);
-                }
-                .fa-paperclip {
-                    display: inline-block;
-                    width: 1rem;
-                    text-align: left;
-                    position: absolute;
-                    left: 0;
-                    top: 0;
-                    line-height: 40px;
-                    height: 40px;
-                }
             }
             .meta {
                 white-space: nowrap; /* single line for long from */
@@ -260,13 +355,57 @@
                     margin-left: .25rem;
                 }
             }
-            .status {
+
+            .encryptionStatus {
                 .fa {
+                    color: $default-color-medium;
                     display: inline-block;
                     text-align: right;
                     width: 1rem;
+                    font-size: 16px;
+                    margin-left: -3px;
+                    margin-right: 4px;
                     &.pgp {
                         color: $pgp;
+                    }
+                }
+
+                .signed-lock {
+                    fill: $default-color-medium;
+                    display: inline-block;
+                    height: 15px;
+                    margin-left: 2px;
+                    margin-right: -1px;
+                    margin-bottom: -1px;
+                    // correct for the checkmark so that the lock is on the same place as the fa-lock
+
+                    &.valid-sig {
+                        // darken the checkmark for more contrast
+                        color: $pgp; // signed with pgp but not encrypted with pgp
+
+                        &.internal {
+                            color: darken($primary, 10);
+                        }
+
+                        &.pgp {
+                            color: darken($pgp, 10);
+                        }
+                    }
+
+                    &.internal {
+                        fill: $primary;
+                    }
+
+                    &.pgp {
+                        fill: $pgp;
+                    }
+
+                    &.invalid-sig {
+                        color: indianred;
+                    }
+
+                    &.no-keys {
+                        color: orange;
                     }
                 }
             }
@@ -407,6 +546,9 @@ body.appConfigBody-is-mobile {
                 height: 60px;
                 line-height: 25px;
                 position: relative;
+                .keep-right {
+                    position: initial;
+                }
                 .meta {
                     position: absolute;
                     left: 0px;
@@ -427,11 +569,15 @@ body.appConfigBody-is-mobile {
                 }
                 .location {
                     position: absolute;
-                    left: 10px;
+                    left: 20px;
                     bottom: 5px;
                     z-index: 5;
                     .pm_tag {
+                        display: inline-block;
                         margin: 0;
+                    }
+                    &.sent {
+                        display: none;
                     }
                 }
                 .labels {
@@ -471,6 +617,10 @@ body.appConfigBody-is-mobile {
                         display: inline-block;
                         text-align: right;
                         width: 1rem;
+                    }
+                    .signed-lock {
+                        width: 17px;
+                        height: 17px;
                     }
                 }
             }

@@ -1,0 +1,89 @@
+.pm_modal.trust-public-key {
+    .modal-dialog {
+        width: 36rem;
+        margin-left: -18rem;
+    }
+
+    .pm_table button.add-address,
+    .pm_table button.delete-address {
+        display: inline-block;
+        background: none;
+        border: 0;
+        padding: 3px;
+
+        &:after {
+            display: block;
+            width: 17px;
+            height: 17px;
+            content: " ";
+        }
+    }
+
+    .pm_table button.add-address:after {
+        background: url("/assets/img/plus.svg") no-repeat center;
+    }
+
+    .pm_table button.delete-address:after {
+        background: url("/assets/img/minus.svg") no-repeat center;
+    }
+
+    .pm_table tr:not(:last-child) button.add-address {
+        display: none;
+
+    }
+
+    .pm_table .created,
+    .pm_table .expires,
+    .pm_table .bits {
+        width: 70px;
+    }
+
+    h4.modal-title code {
+        display: inline-block;
+
+        width: 15rem;
+        height: 26px;
+        line-height: 26px;
+        border: white 5px solid;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        vertical-align: bottom;
+    }
+
+    h5 {
+        margin: 14px 0;
+    }
+
+    input:not(.ng-invalid):not(:focus):not(.empty) {
+        border: 0;
+        -webkit-appearance: none;
+        background: none;
+        box-shadow: none;
+        padding: 0;
+        color: #555;
+
+        &:-webkit-autofill {
+            -webkit-box-shadow: 0 0 0px 1000px white inset;
+            -webkit-text-fill-color: #555;
+        }
+    }
+
+    .trust-public-key-info code {
+        margin-top: 7px;
+        overflow: hidden;
+        display: block;
+        word-break: normal;
+        text-overflow: ellipsis;
+    }
+
+    .trust-address-validation {
+        line-height: 18px;
+    }
+
+    .trust-address-validation p {
+        margin: 0;
+        font-size: .8em;
+        padding: .5em;
+    }
+}

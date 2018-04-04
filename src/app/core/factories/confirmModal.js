@@ -17,8 +17,11 @@ function confirmModal(pmModal, gettextCatalog) {
         controller: function(params, hotkeys) {
             hotkeys.unbind(['enter']);
             this.title = params.title;
+            this.icon = params.icon;
+            this.learnMore = params.learnMore;
             this.message = params.message;
             this.confirmText = params.confirmText || I18N.confirm;
+            this.hideClose = params.hideClose || false;
             this.classNameMessage = getClassName(params);
             this.cancelText = params.cancelText || I18N.cancel;
             this.confirm = () => (hotkeys.bind(['enter']), params.confirm());

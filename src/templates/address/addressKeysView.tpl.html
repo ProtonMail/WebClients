@@ -1,12 +1,17 @@
 <div class="pm_table addressKeysView-container" ng-class="displayMode">
+    <form>
+        <input type="file" class="import-private-key-file" multiple>
+        <input type="hidden" class="import-private-key-address">
+        <input type="hidden" class="import-private-key-id">
+    </form>
     <table class="bordered absorbing">
         <thead>
             <tr>
                 <th data-display-mode="address" class="key-size absorbing-column-half" translate-context="Title" translate-comment="table heading" translate>Email</th>
                 <th data-display-mode="user" class="key-size absorbing-column-half" translate-context="Title" translate-comment="table heading" translate>User</th>
                 <th class="finger-print absorbing-column-half" translate-context="Title" translate-comment="table heading" translate>Fingerprint</th>
-                <th translate-context="Title" translate-comment="table heading" translate>Key size</th>
-                <th class="actions text-center" translate-context="Title" translate-comment="table heading" translate>Download</th>
+                <th translate-context="Title" translate-comment="table heading" translate>Key type</th>
+                <th class="actions text-center" translate-context="Title" translate-comment="table heading" translate>Import</th>
             </tr>
         </thead>
         <tbody>
@@ -17,36 +22,44 @@
                     </span>
                     <span class="addressKeysView-email ellipsis" title="{{ address.email }}"><strong>{{ address.email }}</strong></span>
                 </td>
-                <td>
+                <td class="finger-print">
                     <code>{{ address.fingerprint }}</code>
                 </td>
                 <td>
-                    {{ address.bitSize }} Bit <i class="fa fa-info-circle cursor-pointer" pt-tooltip-translate-context="address key bit size tooltip" pt-tooltip-translate="The ability to change key strength will be coming in a future ProtonMail release"></i>
+                    {{ address.algType }} <i class="fa fa-info-circle cursor-pointer" pt-tooltip-translate-context="address key bit size tooltip" pt-tooltip-translate="The ability to change key type will be coming in a future ProtonMail release"></i>
                 </td>
                 <td class="text-center">
-                    <button data-display-mode="address" class="pm_button link" ng-click="download(address.publicKey, address.email, 'public')" translate-context="Action" translate>Public key</button>
-                    <span data-display-mode="user" translate translate-context="Action">None</span>
+                    <button class="pm_button link"
+                            data-display-mode="address"
+                            data-action="importKey"
+                            data-address-id="{{ ::address.addressID }}"
+                            translate-context="Action"
+                            translate>Private key</button>
+                    <span data-display-mode="user" translate translate-context="Action">-</span>
                 </td>
             </tr>
-            <tr class="hasTable" ng-repeat-end ng-show="address.toggle === true && address.keys.length > 0">
+            <tr class="hasTable"
+                ng-show="address.toggle === true && address.keys.length > 0"
+                ng-repeat-end>
                 <td colspan="5">
                     <div class="pm_table">
                         <table class="margin-top">
                             <thead>
                                 <tr>
                                     <th class="finger-print absorbing-column-half" translate-context="Title" translate-comment="table heading" translate>Fingerprint</th>
-                                    <th class="key-size" translate-context="Title" translate-comment="table heading" translate>Key size</th>
+                                    <th class="key-size" translate-context="Title" translate-comment="table heading" translate>Key type</th>
                                     <th class="status" translate-context="Title" translate-comment="table heading" translate>Status</th>
                                     <th class="actions text-center" translate-context="Title" translate-comment="table heading" translate>Actions</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr ng-repeat="key in address.keys">
-                                    <td>
+                                <tr class="key-row"
+                                    ng-repeat="key in address.keys">
+                                    <td class="finger-print">
                                         <code>{{ key.fingerprint }}</code>
                                     </td>
                                     <td>
-                                        {{ key.bitSize }} Bit
+                                        {{ key.algType }}
                                     </td>
                                     <td>
                                         <span class="pm_badge primary" ng-show="$first" translate translate-comment="key state badge">Primary</span>
@@ -54,8 +67,31 @@
                                         <span class="pm_badge error" ng-hide="key.decrypted" translate translate-comment="key state badge">Inactive</span>
                                     </td>
                                     <td class="text-center">
-                                        <button type="button" class="pm_button link" ng-hide="key.decrypted || isSubUser" ng-click="reactivate(key)" translate-context="Action" translate>Reactivate</button>
-                                        <span ng-show="key.decrypted || isSubUser" translate translate-context="Action">None</span>
+                                        <button type="button"
+                                                class="pm_button link"
+                                                ng-show="!isSubUser"
+                                                data-action="exportKey"
+                                                data-address-id="{{ ::address.addressID }}"
+                                                data-key-index="{{ ::$index }}"
+                                                translate-context="Action"
+                                                translate>Export</button>
+                                        <button type="button"
+                                                class="pm_button link"
+                                                ng-hide="key.decrypted && !isSubUser"
+                                                data-action="reactivateKey"
+                                                data-address-id="{{ ::address.addressID }}"
+                                                data-key-index="{{ ::$index }}"
+                                                translate-context="Action"
+                                                translate>Reactivate</button>
+                                        <button type="button"
+                                                class="pm_button link"
+                                                ng-show="!$first && key.decrypted && !isSubUser"
+                                                data-display-mode="address"
+                                                data-action="makePrimaryKey"
+                                                data-address-id="{{ ::address.addressID }}"
+                                                data-key-index="{{ ::$index }}"
+                                                translate-context="Action"
+                                                translate>Make primary</button>
                                     </td>
                                 </tr>
                             </tbody>

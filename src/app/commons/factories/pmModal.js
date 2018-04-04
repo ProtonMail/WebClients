@@ -90,6 +90,7 @@ function pmModal($animate, $compile, $rootScope, dispatchers, $injector, $contro
             unsubscribe();
 
             return $animate.leave(element).then(() => {
+                $('.tooltip').tooltip('hide');
                 // We can have a concurrency issues ex: generateModal
                 if (!element) {
                     return;

@@ -24,6 +24,7 @@ function ComposeMessageController(
     encryptMessage,
     eventManager,
     extractDataURI,
+    attachPublicKey,
     gettextCatalog,
     hotkeys,
     mailSettingsModel,
@@ -39,7 +40,6 @@ function ComposeMessageController(
     validateMessage
 ) {
     const { dispatcher, on, unsubscribe } = dispatchers(['composer.update', 'messageActions']);
-    const unicodeTagView = $filter('unicodeTagView');
 
     $scope.messages = [];
     $scope.uid = 1;
@@ -140,10 +140,10 @@ function ComposeMessageController(
         });
     });
 
-    on('composer.new', (e, { type, data = {} }) => {
+    on('composer.new', async (e, { type, data = {} }) => {
         const limitReached = checkComposerNumber();
         if (!limitReached && AppModel.is('onLine')) {
-            validateMessage.canWrite() && initMessage(messageBuilder.create(type, data.message));
+            validateMessage.canWrite() && initMessage(await messageBuilder.create(type, data.message));
         }
     });
 
@@ -431,19 +431,20 @@ function ComposeMessageController(
             .validate(message)
             .then(eventManager.stop)
             .then(() => extractDataURI(message))
+            .then(() => attachPublicKey.attach(message))
             .then(() => postMessage(message))
             .then((messageSaved) => ((message.ID = messageSaved.ID), message))
             .then((msg) => sendMessage(msg))
             .then(eventManager.start)
-            .catch((e) => {
-                setStateSending(false);
-                message.encrypting = false;
-                dispatchMessageAction(message);
-                eventManager.start();
-
-                throw !e.raw ? new Error(unicodeTagView(e.message)) : e;
-            });
-
+            .catch((e) =>
+                attachPublicKey.remove(message).then(() => {
+                    setStateSending(false);
+                    message.encrypting = false;
+                    dispatchMessageAction(message);
+                    eventManager.start();
+                    throw e;
+                })
+            );
         networkActivityTracker.track(promise);
     };
 

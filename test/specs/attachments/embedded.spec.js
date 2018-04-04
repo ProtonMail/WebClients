@@ -57,6 +57,7 @@ describe('embedded service', () => {
                 }
             })
         );
+        $provide.service('invalidSignature', () => ({ askAgain: () => {} }));
         $provide.service('dispatchers', dispatchers);
         $provide.service('mailSettingsModel', mailSettingsModelFactory);
     }));

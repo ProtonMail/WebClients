@@ -80,6 +80,9 @@ function squireState(onCurrentMessage, editorModel, editorState) {
                         case 'moreToggle':
                             setPopover(ID, data.action);
                             break;
+                        case 'addKey':
+                            scope.message.primaryKeyAttached = !scope.message.primaryKeyAttached;
+                            break;
                         // On any normal action (like make bold, italic, removeFormatting) close the popover
                         default:
                             setPopover(ID, undefined);

@@ -301,7 +301,7 @@ export default angular
                             $scope.unlock = () => {
                                 const message = pmcw.getMessage(encryptedToken);
                                 const promise = pmcw
-                                    .decryptMessage({ message, password: $scope.params.MessagePassword })
+                                    .decryptMessage({ message, passwords: [ $scope.params.MessagePassword ] })
                                     .then((decryptedToken) => {
                                         secureSessionStorage.setItem('proton:decrypted_token', decryptedToken.data);
                                         secureSessionStorage.setItem(
@@ -339,7 +339,7 @@ export default angular
                                     const promise = pmcw
                                         .decryptMessage({
                                             message: pmcw.getMessage(reply.Body),
-                                            password
+                                            passwords: [ password ]
                                         })
                                         .then(({ data }) => (reply.DecryptedBody = data));
                                     acc.push(promise);
@@ -349,7 +349,7 @@ export default angular
                                     pmcw
                                         .decryptMessage({
                                             message: pmcw.getMessage(message.Body),
-                                            password
+                                            passwords: [ password ]
                                         })
                                         .then(({ data } = {}) => (message.DecryptedBody = data))
                                 ]
@@ -382,7 +382,7 @@ export default angular
                             return pmcw
                                 .decryptMessage({
                                     message: pmcw.getMessage(message.Body),
-                                    password
+                                    passwords: [ password ]
                                 })
                                 .then((body) => {
                                     const attachments = _.filter(message.Attachments, (attachment) => {

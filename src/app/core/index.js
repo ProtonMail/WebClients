@@ -7,6 +7,7 @@ import hideUpgrade from './directives/hideUpgrade';
 import placeholderProgress from './directives/placeholderProgress';
 import bugModalView from './directives/bugModalView';
 import formatResponseInterceptor from './interceptors/formatResponseInterceptor';
+import serverTimeInterceptor from './interceptors/serverTimeInterceptor';
 import alertModal from './factories/alertModal';
 import browserFingerprint from './factories/browserFingerprint';
 import bugModal from './factories/bugModal';
@@ -46,6 +47,7 @@ export default angular
     .directive('placeholderProgress', placeholderProgress)
     .directive('bugModalView', bugModalView)
     .factory('formatResponseInterceptor', formatResponseInterceptor)
+    .factory('serverTimeInterceptor', serverTimeInterceptor)
     .factory('alertModal', alertModal)
     .factory('browserFingerprint', browserFingerprint)
     .factory('bugModal', bugModal)

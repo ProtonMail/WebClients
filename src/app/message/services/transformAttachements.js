@@ -1,5 +1,3 @@
-import _ from 'lodash';
-
 /* @ngInject */
 function transformAttachements(embedded, $rootScope) {
     return (body, message, { action }) => {
@@ -17,18 +15,22 @@ function transformAttachements(embedded, $rootScope) {
                 }
             });
 
-        embedded.parser(message, { direction: 'blob', text: body.innerHTML }).then(() => {
-            /**
-             * wait a little before loading it, if we have some cache it's faster than
-             * the $digest.
+        /*
+             * If all the attachments are cached (e.g. PGP/MIME messages) this can actually resolve instantly: which causes a problem
+             * because the message directive is not yet loaded to catch the message.embedded.
+             * Solution, apply it later using async.
+             * Tip: you can check this by stepping through the code of the whole parser: there will be no promises in this case.
+             * or the promises will just instantly resolve.
+             * I think this normally doesn't happen because we clear the cache after each conversation is closed.
              */
-            _.defer(() => {
+        $rootScope.$applyAsync(() =>
+            embedded.parser(message, { direction: 'blob', text: body.innerHTML }).then(() =>
                 $rootScope.$emit('message.embedded', {
                     type: 'loaded',
                     data: { message, body, action }
-                });
-            }, 32);
-        });
+                })
+            )
+        );
 
         return body;
     };

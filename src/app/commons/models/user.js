@@ -23,7 +23,6 @@ function User($http, url, srp) {
     const code = (params) => $http.post(requestURL('code'), params);
     const human = () => $http.get(requestURL('human'));
     const check = (params) => $http.post(requestURL('human'), params);
-    const pubkeys = (emails) => $http.get(requestURL('pubkeys', window.encodeURIComponent(emails)));
     const available = (username) => $http.get(requestURL('available', username));
     const direct = () => $http.get(requestURL('direct'));
     const lock = () => $http.put(requestURL('lock'));
@@ -33,7 +32,7 @@ function User($http, url, srp) {
 
     return {
         create, get, code, human, check, available,
-        pubkeys, direct, lock, unlock, password,
+        direct, lock, unlock, password,
         delete: remove
     };
 }

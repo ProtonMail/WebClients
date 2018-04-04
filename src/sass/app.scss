@@ -64,6 +64,8 @@
 @import "commons/pm-noscript";
 @import "commons/ptDnd";
 
+//=== 👉 SVG Icons =====================//
+@import "svg/locks";
 
 //=== 👉 UI Components =====================//
 @import "ui/appVersion";
@@ -170,6 +172,7 @@
 @import "components/message/filterButton";
 @import "components/message/messageView";
 @import "components/message/messageExtra";
+@import "components/message/trustPublicKeyModal.scss";
 
 //== Conversations
 @import "components/conversation/conversation";
@@ -198,9 +201,11 @@
 @import "components/contact/importCardDropzone";
 @import "components/contact/contactDetails";
 @import "components/contact/contactAddressInput";
+@import "components/contact/contactAskEncryption";
 @import "components/contact/contactPhotoRow";
 @import "components/contact/contactPhotoModal";
 @import "components/contact/contactItem";
+@import "components/contact/contactPgp";
 @import "components/contact/contactList";
 @import "components/contact/contactNoResult";
 @import "components/contact/contactsToolbar";

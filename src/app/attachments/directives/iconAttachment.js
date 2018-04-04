@@ -1,6 +1,6 @@
 /* @ngInject */
 function iconAttachment(embedded) {
-    const MAP_CLASSNAME = {
+    const OUTER_MAP_CLASSNAME = {
         zip: 'fa-archive-o',
         mp3: 'fa-audio-o',
         javascript: 'fa-code-o',
@@ -11,15 +11,19 @@ function iconAttachment(embedded) {
         word: 'fa-word-o'
     };
 
+    const INNER_MAP_CLASSNAME = {
+        'pgp-keys': 'fa-key'
+    };
+
     /**
      * Get list of classNames for a file
      * @param  {String} options.MIMEType
      * @return {Array}
      */
     const getFileIconsType = ({ MIMEType }) => {
-        return Object.keys(MAP_CLASSNAME)
+        return Object.keys(OUTER_MAP_CLASSNAME)
             .filter((key) => MIMEType.includes(key))
-            .reduce((acc, key) => (acc.push(MAP_CLASSNAME[key]), acc), []);
+            .reduce((acc, key) => (acc.push(OUTER_MAP_CLASSNAME[key]), acc), []);
     };
 
     /**
@@ -37,14 +41,30 @@ function iconAttachment(embedded) {
         return list;
     };
 
+    /**
+     * Get list of classNames for the inner icon: this allows us to make our icons, by combining fa-file-o with any
+     * fontawesome icon
+     * @param  {Object} attachment
+     * @return {Array}
+     */
+    const getInnerFileIconTypes = ({ MIMEType }) => {
+        return Object.keys(INNER_MAP_CLASSNAME)
+            .filter((key) => MIMEType.includes(key))
+            .reduce((acc, key) => (acc.push(INNER_MAP_CLASSNAME[key]), acc), []);
+    };
+
     return {
         replace: true,
-        template: '<i class="fa"></i>',
+        templateUrl: require('../../../templates/attachments/iconAttachment.tpl.html'),
         link(scope, el) {
-            const classNames = [].concat(getAttachmentType(scope.attachment)).concat(getFileIconsType(scope.attachment));
+            const outerClassNames = [].concat(getAttachmentType(scope.attachment)).concat(getFileIconsType(scope.attachment));
+            const innerClassNames = getInnerFileIconTypes(scope.attachment);
+            const fileOuterIcon = el[0].querySelector('.file-outer-icon');
+            const fileInnerIcon = el[0].querySelector('.file-inner-icon');
 
             _rAF(() => {
-                el[0].classList.add(...classNames);
+                outerClassNames.forEach((className) => fileOuterIcon.classList.add(className));
+                innerClassNames.forEach((className) => fileInnerIcon.classList.add(className));
             });
         }
     };

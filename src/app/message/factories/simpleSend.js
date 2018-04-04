@@ -22,15 +22,7 @@ function simpleSend(messageApi, User, ComposerRequestStatus, pmcw, srp, encryptM
 
     async function getSendParameters(message) {
         const { AutoSaveContacts } = message;
-        const { encrypt, cleartext } = await encryptMessage(message, message.emailsToString());
-        if (cleartext === true && message.Password.length === 0 && message.ExpirationTime) {
-            // Reject the error => to see the notification, and break the sending process
-            throw new Error(
-                'Expiring emails to non-ProtonMail recipients require a message password to be set. For more information, <a href="https://protonmail.com/support/knowledge-base/expiration/" target="_blank">click here</a>.'
-            );
-        }
-
-        const Packages = await encrypt();
+        const Packages = await encryptMessage(message, message.emailsToString());
         return {
             id: message.ID,
             AutoSaveContacts,

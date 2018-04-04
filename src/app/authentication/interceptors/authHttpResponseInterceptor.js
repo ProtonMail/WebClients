@@ -1,5 +1,5 @@
 /* @ngInject */
-function authHttpResponseInterceptor($q, $injector, $rootScope, AppModel, networkUtils) {
+function authHttpResponseInterceptor($q, $injector, AppModel, networkUtils) {
     let notification = false;
     let upgradeNotification = false;
     let NOTIFS;
@@ -71,8 +71,9 @@ function authHttpResponseInterceptor($q, $injector, $rootScope, AppModel, networ
                 const handle401 = $injector.get('handle401');
                 return handle401(rejection);
             } else if (rejection.status === 403) {
-                const handle403 = $injector.get('handle403');
-                return handle403(rejection.config);
+                const unlockUser = $injector.get('unlockUser');
+                const $http = $injector.get('$http');
+                return unlockUser().then(() => $http(rejection.config));
             } else if (rejection.status === 504) {
                 notification = notifyError(NOTIFS.timeout);
                 AppModel.set('requestTimeout', true);

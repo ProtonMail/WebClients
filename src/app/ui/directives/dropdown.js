@@ -3,7 +3,7 @@ function dropdown($document, dispatchers) {
     const CLASS_OPEN = 'pm_dropdown-opened';
 
     return (scope, element) => {
-        const { dispatcher, on, unsubscribe } = dispatchers(['closeDropdown']);
+        const { on, unsubscribe, dispatcher } = dispatchers(['closeDropdown']);
         const parent = element.parent();
         const dropdown = parent.find('.pm_dropdown');
 
@@ -22,16 +22,14 @@ function dropdown($document, dispatchers) {
 
         function outside(event) {
             if (!dropdown[0].contains(event.target)) {
-                hideDropdown();
+                dispatcher.closeDropdown('close');
             }
         }
 
         function click() {
-            if (element.hasClass('active')) {
-                hideDropdown();
-            } else {
-                // Close all dropdowns
-                dispatcher.closeDropdown();
+            // Close all dropdowns
+            dispatcher.closeDropdown('close');
+            if (!element.hasClass('active')) {
                 // Open only this one
                 showDropdown();
             }
@@ -42,9 +40,7 @@ function dropdown($document, dispatchers) {
         // Listeners
         element.on('click', click);
 
-        on('closeDropdown', () => {
-            hideDropdown();
-        });
+        on('closeDropdown', hideDropdown);
 
         scope.$on('$destroy', () => {
             element.off('click', click);

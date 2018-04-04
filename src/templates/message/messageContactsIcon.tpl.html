@@ -1,0 +1,25 @@
+<span class="messageContacts-icon">
+    <svg class="signed-lock"
+         ng-if="email.Encryption.substr(-6) === 'pinned'"
+         viewBox="0 0 374.8 337.1"
+         ng-class="{
+        'internal': email.Encryption === 'pgp-pm-pinned',
+        'pgp': email.Encryption === 'pgp-inline-pinned' || email.Encryption === 'pgp-mime-pinned'
+    }"
+         pt-tooltip="{{ ::email.tooltip }}">
+        <use xmlns:xlink="http://www.w3.org/1999/xlink"
+             xlink:href="#svg-lock-signed"></use>
+    </svg>
+    <i class="fa"
+       ng-if="(email.Encryption !== 'none' || email.Authentication !== 'none') && email.Encryption.substr(-6) !== 'pinned'"
+       ng-class="{
+        'text-purple': email.Authentication === 'pgp-pm' || email.Authentication === 'pgp-eo'
+            || email.Encryption === 'pgp-pm' || email.Encryption === 'pgp-eo',
+        'pgp': email.Authentication === 'pgp-inline' || email.Authentication === 'pgp-mime'
+            || email.Encryption === 'pgp-inline' || email.Encryption === 'pgp-mime',
+        'fa-pencil': email.Authentication !== 'none' &&  email.Encryption === 'none',
+        'fa-lock': email.Encryption !== 'none'
+       }"
+       pt-tooltip="{{ ::email.tooltip }}"
+    ></i>
+</span>

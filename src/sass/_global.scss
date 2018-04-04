@@ -90,27 +90,48 @@ html.protonmail {
 	.text-right {
 		text-align: right;
 	}
-	.text-gray {
-		color: $default-color;
-	}
-	.text-light-gray {
-		color: $default-color-light;
-	}
-	.text-green {
-		color: $green;
-	}
-	.text-yellow {
-		color: $yellow;
-	}
-	.text-red {
-		color: $red;
-	}
-	.text-purple {
-		color: $primary !important;
-	}
-	.text-blue-gray {
-		color: $blue-gray;
-	}
+    .text-gray {
+        color: $default-color;
+    }
+    .text-light-gray {
+        color: $default-color-light;
+    }
+    .text-green {
+        color: $green;
+    }
+    .text-yellow {
+        color: $yellow;
+    }
+    .text-red {
+        color: $red;
+    }
+    .text-purple {
+        color: $primary !important;
+    }
+    .text-blue-gray {
+        color: $blue-gray;
+    }
+    .fill-gray {
+        fill: $default-color;
+    }
+    .fill-light-gray {
+        fill: $default-color-light;
+    }
+    .fill-green {
+        fill: $green;
+    }
+    .fill-yellow {
+        fill: $yellow;
+    }
+    .fill-red {
+        fill: $red;
+    }
+    .fill-purple {
+        fill: $primary !important;
+    }
+    .fill-blue-gray {
+        fill: $blue-gray;
+    }
 	.border-panel {
 		padding: 15px;
 		border: 1px solid $border;

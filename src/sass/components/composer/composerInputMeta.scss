@@ -21,10 +21,30 @@
 
 .composerInputMeta-overlay-label {color: #ccc }
 .composerInputMeta-overlay-list {
-    padding-right: 20px;
+    padding-right: 25px;
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
+}
+
+.composerInputMeta-overlay-list {
+    position: relative;
+
+    .svg-ellipsis-clipper {
+        position: absolute;
+        background: white;
+        height: 100%;
+        width: 21px;
+        right: 17px;
+        z-index: -10;
+    }
+
+    .autocompleteEmailsItem-icon {
+        position: relative;
+        margin-right: 13px;
+        width: 0px;
+        z-index: -20;
+    }
 }
 
 .composerInputMeta-container .composerInputMeta-overlay-button {z-index: 2}
@@ -37,4 +57,28 @@
 .composerInputMeta-container.composerInputMeta-overlay-hidden {
     max-height: 100%;
     overflow: inherit;
+}
+
+.composerInputMeta-overlay-list .composer-input-recipient:last-child .composer-recipient-delim {
+    display: none;
+}
+
+.composerInputMeta-overlay-list .autocompleteEmailsItem-icon {
+    display: inline-block;
+
+    svg.encryptionIcon {
+        margin-right: 1px;
+        margin-top: -1px;
+        margin-left: 0px;
+    }
+
+    i.encryptionIcon {
+        margin-bottom: 4px;
+        margin-top: 2px;
+        margin-left: 3px;
+
+        &.fa-pulse {
+            margin-left: 0px;
+        }
+    }
 }

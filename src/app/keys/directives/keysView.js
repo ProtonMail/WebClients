@@ -1,7 +1,7 @@
 import { getAddressKeys, getUserKeys } from '../../address/helpers/addressKeysView';
 
 /* @ngInject */
-function keysView(dispatchers, addressesModel, authentication) {
+function keysView(dispatchers, addressesModel, authentication, pmcw) {
     const REQUIRE_CONTACT_CLASS = 'keysView-require-contact-keys-reactivation';
     const REQUIRE_ADDRESS_CLASS = 'keysView-require-address-keys-reactivation';
     return {
@@ -16,7 +16,7 @@ function keysView(dispatchers, addressesModel, authentication) {
                 const user = authentication.user;
                 const contactAction = user.Keys.some(({ decrypted }) => !decrypted) ? 'add' : 'remove';
 
-                scope.userKeys = getUserKeys(user, addressesModel.getByUser(user));
+                scope.userKeys = getUserKeys(user, pmcw);
                 scope.isSubUser = user.subuser;
 
                 el[0].classList[contactAction](REQUIRE_CONTACT_CLASS);
@@ -25,7 +25,7 @@ function keysView(dispatchers, addressesModel, authentication) {
             const updateAddresses = (addresses = addressesModel.get()) => {
                 const addressAction = addresses.some(({ Keys = [] }) => Keys.filter(({ decrypted }) => !decrypted).length) ? 'add' : 'remove';
 
-                scope.addressKeys = getAddressKeys(addresses);
+                scope.addressKeys = getAddressKeys(addresses, pmcw);
 
                 el[0].classList[addressAction](REQUIRE_ADDRESS_CLASS);
             };

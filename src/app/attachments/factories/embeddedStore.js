@@ -5,10 +5,10 @@ function embeddedStore(dispatchers, embeddedUtils) {
     const Blobs = {};
     const MAP_BLOBS = {};
     const CIDList = {};
+    const { on, dispatcher } = dispatchers(['embeddedStore']);
 
     const PREFIX_DRAFT = 'draft_';
     const urlCreator = () => window.URL || window.webkitURL;
-    const { on } = dispatchers();
 
     /**
      * When we close the composer we need to deallocate Blobs used by this composer
@@ -104,6 +104,7 @@ function embeddedStore(dispatchers, embeddedUtils) {
                 imageUrl = null;
 
                 MAP_BLOBS[key].push(cid);
+                dispatcher.embeddedStore('store', { cid });
             }
         };
     };
@@ -138,12 +139,24 @@ function embeddedStore(dispatchers, embeddedUtils) {
         return embeddedUtils.getBlobFromURL(url);
     };
 
+    const readBlobAsBuffer = (blob) => {
+        return new Promise((resolve, reject) => {
+            const reader = new FileReader();
+            reader.onload = () => resolve(new Uint8Array(reader.result));
+            reader.addEventListener('error', () => reject(reader), false);
+            reader.readAsArrayBuffer(blob);
+        });
+    };
+
+    const getBlobAsBuffer = (cid) => getBlobValue(cid).then(readBlobAsBuffer);
+
     return {
         store,
         deallocate,
         getBlob,
         hasBlob,
         getBlobValue,
+        getBlobAsBuffer,
         cid: {
             contains: containsMessageCIDs,
             exist: existMessageCID,

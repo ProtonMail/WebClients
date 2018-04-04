@@ -1125,7 +1125,7 @@ Est-ce que tu vas bien ?
                 let currentMsg;
                 let DEFAULT_MESSAGE_COPY;
 
-                beforeEach(() => {
+                beforeEach(async () => {
                     spyPrepareContent = jasmine.createSpy();
                     spyLocalReadableTime = jasmine.createSpy();
                     spyGetDecryptedBody = jasmine.createSpy();
@@ -1151,7 +1151,7 @@ Est-ce que tu vas bien ?
                     DEFAULT_MESSAGE_COPY = _.extend({}, DEFAULT_MESSAGE, defaultMessageExtension);
                     currentMsg = _.extend({}, message, currentMessageExtension);
 
-                    item = createMessage(currentMsg);
+                    item = await createMessage(currentMsg);
                 });
 
                 it('should build a new message', () => {

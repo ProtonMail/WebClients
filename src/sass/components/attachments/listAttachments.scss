@@ -10,7 +10,6 @@
 }
 
 [class*="listAttachments-icon"] {
-    color: $default-color;
     display: block;
     position: absolute;
     left: 0;
@@ -20,8 +19,13 @@
     height: 40px;
     line-height: 40px;
     text-align: center;
-    font-size: 22px;
     z-index: 2;
+    color: $default-color;
+    font-size: 22px;
+
+    &.file-inner-icon {
+        font-size: 12px;
+    }
     &.stuff {
         opacity: 0;
     }
@@ -40,6 +44,86 @@
 
 .listAttachments-item-decrypt .listAttachments-icon-loader { display: inline-block }
 .listAttachments-item-download .listAttachments-icon-download { display: inline-block }
+
+
+.listAttachments-signature-warning, .listAttachments-signature-ok, .listAttachments-unencrypted-warning {
+    display: none;
+    position: absolute;
+    line-height: 12px;
+    z-index: 2;
+
+    .fa-stack {
+        line-height: 1.6;
+    }
+
+    .listAttachments-modifier-shadow {
+        text-shadow: 1px 0px $light;
+        color: $light;
+        font-size: 2.5em;
+        left: -0.13em;
+        top: -0.2em;
+    }
+}
+
+.listAttachments-signature-warning, .listAttachments-signature-ok, .listAttachments-unencrypted-warning {
+    top: 21px;
+    font-size: 4.5px;
+    left: 25px;
+
+    .listAttachments-modifier-shadow {
+        font-size: 2.5em;
+        left: -0.13em;
+        top: -0.2em;
+    }
+}
+
+.listAttachments-unencrypted-warning {
+    top: 21px;
+    font-size: 4.5px;
+    left: 22px;
+
+    .listAttachments-modifier-shadow {
+        top: -0.2em;
+        font-size: 2.8em;
+        left: -0.1em;
+        overflow: hidden;
+    }
+}
+
+.listAttachments-signature-ok {
+    left: 23px;
+    font-size: 5.5px;
+    top: 18px;
+
+    .listAttachments-modifier-shadow {
+        font-size: 2.7em;
+        left: -0.05em;
+        top: -0.1em;
+    }
+}
+
+
+.listAttachments-signed-fail .listAttachments-signature-warning {
+    color: indianred;
+}
+
+.listAttachments-signature-ok {
+    color: green;
+}
+
+.listAttachments-unencrypted-warning {
+    color: orange;
+}
+
+.listAttachments-signed-fail .listAttachments-signature-warning,
+.listAttachments-signed-ok .listAttachments-signature-ok,
+.listAttachments-unencrypted .listAttachments-unencrypted-warning {
+    display: block;
+}
+
+.listAttachments-signed-fail .listAttachments-item .listAttachments-icon-modifier:before {
+    color: indianred;
+}
 
 .listAttachments-item-download .listAttachments-icon-loader,
 .listAttachments-item-decrypt .listAttachments-icon,

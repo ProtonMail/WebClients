@@ -22,7 +22,6 @@ function composerSelectFrom(notification, editorModel, gettextCatalog, composerF
             const $select = el.find('select');
             const { addresses } = composerFromModel.get(scope.message);
             let previousAddress = scope.message.From;
-
             scope.addresses = addresses;
 
             const onChange = () => {

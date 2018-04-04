@@ -26,6 +26,7 @@ function pageTitlesModel(CONSTANTS, $injector, dispatchers, gettextCatalog, auth
         dashboard: gettextCatalog.getString('Dashboard', null, 'Title'),
         domains: gettextCatalog.getString('Domains', null, 'Title'),
         drafts: gettextCatalog.getString('Drafts', null, 'Title'),
+        encryption: gettextCatalog.getString('Encryption', null, 'Title'),
         filters: gettextCatalog.getString('Filters', null, 'Title'),
         inbox: gettextCatalog.getString('Inbox', null, 'Title'),
         invoices: gettextCatalog.getString('Invoices', null, 'Title'),

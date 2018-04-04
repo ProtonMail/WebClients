@@ -1,0 +1,122 @@
+<div>
+    <header class="headerBlock-container">
+        <h2 class="encryption-title" translate-context="Title" translate="">Advanced Encryption Settings</h2>
+    </header>
+
+    <div class="row pm_grid">
+        <section class="pm_form col-1-2">
+            <header-block>
+                <h2
+                    class="encryption-pgp-title"
+                    translate
+                    translate-comment="PGP heading"
+                    translate-context="Title">Default PGP Settings</h2>
+            </header-block>
+            <div class="pm_grid">
+                <div class="row">
+                    <div class="col-1-2">
+                        <label>
+                            <span
+                                translate-context="Label"
+                                translate>
+                                Sign external messages
+                            </span>
+                            <i
+                                class="fa fa-info-circle"
+                                pt-tooltip-translate="Automatically sign all your outgoing messages so users can verify the authenticity of your messages. This is done in combination with the Default PGP Scheme that is selected down below."
+                            ></i>
+                        </label>
+                    </div>
+                    <div class="col-1-2">
+                        <toggle data-on="ON"
+                                data-off="OFF"
+                                data-status="sign"
+                                name="encryptSettings.sign"
+                        ></toggle>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-1-2">
+                        <label>
+                            <span translate-context="Label" translate>Default PGP Scheme</span>
+                            <a href="https://protonmail.com/support/knowledge-base/pgp-mime-pgp-inline/" target="_blank" class="text-purple">
+                                <i
+                                    class="fa fa-info-circle"
+                                    pt-tooltip-translate="Select the default PGP scheme to be used when signing or encrypting to an user. Note that PGP/Inline forces plain text messages. Click for more info.">
+                                </i>
+                            </a>
+                        </label>
+                    </div>
+                    <div class="col-1-2">
+                        <div class="pm_select">
+                            <i class="fa fa-angle-down"></i>
+                            <select class="pgp-scheme" name="pgp-scheme" ng-model="pgpscheme">
+                                <option value="pgp-mime">PGP/MIME</option>
+                                <option value="pgp-inline">Inline PGP</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <section class="pm_form col-1-2">
+            <header-block>
+                <h2
+                    class="encryption-misc-title"
+                    translate
+                    translate-context="Title">
+                    Miscellaneous
+                </h2>
+            </header-block>
+
+
+            <div class="pm_grid">
+                <div class="row">
+                    <div class="col-1-2">
+                        <label>
+                            <span translate-context="Label"
+                                  translate>
+                                Automatically attach public key
+                            </span>
+                            <i
+                                class="fa fa-info-circle"
+                                pt-tooltip-translate="This automatically adds your public key to each message you send. Recipients can use this to verify the authenticity of your messages and sent encrypted messages to you."></i>
+                        </label>
+                    </div>
+                    <div class="col-1-2">
+                        <toggle
+                            data-on="ON"
+                            data-off="OFF"
+                            data-status="attachPublic"
+                            name="encryptSettings.attachPublic"
+                        ></toggle>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-1-2">
+                        <label>
+                            <span
+                                translate-context="Label"
+                                translate>
+                                Prompt to pin keys
+                            </span>
+                            <i
+                                class="fa fa-info-circle"
+                                pt-tooltip-translate="When receiving an internal message from a sender that has no pinned keys in your contacts, show a banner asking if you want to enable key pinning."></i>
+                        </label>
+                    </div>
+                    <div class="col-1-2">
+                        <toggle data-on="ON"
+                                data-off="OFF"
+                                data-status="promptpin"
+                                name="encryptSettings.promptpin"
+                        ></toggle>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+    </div>
+</div>

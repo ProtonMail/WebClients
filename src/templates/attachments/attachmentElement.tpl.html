@@ -1,0 +1,36 @@
+<div class="listAttachments-att pm_button">
+    <a
+        data-attachment-id="{{::attachment.ID}}"
+        class=" listAttachments-item"
+        ng-class="{ 'dead': attachment.decrypting, 'remove': ('eo.reply' | includedByState) }"
+        data-download-text="{{ 'Download' | translate }}"
+        title="{{ ::attachment.Name }} ({{ ::attachment.Size | humanSize }})">
+            <em></em>
+            <icon-attachment></icon-attachment>
+            <i class="fa fa-cog fa-spin listAttachments-icon-loader"></i>
+            <i class="fa fa-download listAttachments-icon-download listAttachments-signature-icon"></i>
+            <div class="listAttachments-signature-warning">
+                <span class="fa-stack fa-lg">
+                    <i class="fa listAttachments-modifier-shadow fa-warning fa-stack-2x"></i>
+                    <i class="fa fa-warning pt-fa-bg-white fa-stack-2x"></i>
+                </span>
+            </div>
+            <div class="listAttachments-unencrypted-warning">
+                <span class="fa-stack fa-lg">
+                    <i class="fa listAttachments-modifier-shadow fa-unlock fa-stack-2x"></i>
+                    <i class="fa fa-unlock fa-stack-2x"></i>
+                </span>
+            </div>
+            <div class="listAttachments-signature-ok">
+                    <span class="fa-stack fa-lg">
+                        <i class="fa listAttachments-modifier-shadow fa-circle fa-stack-2x"></i>
+                        <i class="fa fa-check-circle pt-fa-bg-white fa-stack-2x"></i>
+                    </span>
+            </div>
+            <strong class="name">{{ ::attachment.Name }}</strong>
+            <span class="size">{{ ::attachment.Size | humanSize }}</span>
+    </a>
+    <button data-attachment-id="{{::attachment.ID}}" class="listAttachments-btn-action-remove removeButton">
+        <i class="fa fa-times"></i>
+    </button>
+</div>
