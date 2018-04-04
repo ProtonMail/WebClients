@@ -12,7 +12,7 @@ function manageUser(
     gettextCatalog,
     notification,
     pmcw,
-    setupKeys
+    decryptUser
 ) {
     const { on } = dispatchers();
     const I18N = {
@@ -122,7 +122,7 @@ function manageUser(
 
         try {
             const organizationKey = await getPromise(User, password);
-            const { dirtyAddresses, keys } = await setupKeys.decryptUser(User, addressesModel.get(), organizationKey, password);
+            const { dirtyAddresses, keys } = await decryptUser(User, addressesModel.get(), organizationKey, password);
             await generateKeys(User, Members, keys);
             storeKeys(keys);
             mergeUser(User, keys, dirtyAddresses);

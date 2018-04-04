@@ -19,6 +19,7 @@ export const MESSAGE_VIEW_MODE = 1;
 export const CONVERSATION_VIEW_MODE = 0;
 export const ROW_MODE = 1;
 export const COLUMN_MODE = 0;
+export const ENCRYPTION_DEFAULT = 2048;
 export const UNPAID_STATE = {
     NOT: 0,
     AVAILABLE: 1,
@@ -290,7 +291,6 @@ export const CONSTANTS = {
         yellow: ['#FFF2CD', '#FEE59C', '#FCD86F', '#FDF84E', '#F2C246', '#BE8F35', '#7F6124']
     },
     CANCEL_REQUEST: 'CANCEL_REQUEST',
-    ENCRYPTION_DEFAULT: 2048,
     ERROR_SILENT,
     FREE_USER_ROLE,
     PAID_MEMBER_ROLE,
@@ -306,7 +306,8 @@ export const CONSTANTS = {
     ROW_MODE,
     COLUMN_MODE,
     MESSAGE_VIEW_MODE,
-    CONVERSATION_VIEW_MODE
+    CONVERSATION_VIEW_MODE,
+    ENCRYPTION_DEFAULT
 };
 
 /* eslint  no-useless-escape: "off" */
