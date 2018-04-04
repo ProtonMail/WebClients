@@ -1,309 +1,245 @@
-import _ from 'lodash';
-import { MAIN_KEY } from '../../constants';
+import { ENCRYPTION_DEFAULT } from '../../constants';
 
 /* @ngInject */
-function setupKeys($log, $q, gettextCatalog, Key, MemberKey, notification, passwords, pmcw, webcrypto) {
+function setupKeys(passwords, pmcw, webcrypto, Key, MemberKey) {
 
-    function generate(addresses = [], password = '', numBits = 2048) {
+    /**
+     * Generates key pairs for a list of addresses
+     * @param  {Array}  addresses  array of addresses that require keys
+     * @param  {String} passphrase mailbox password to encrypt keys with
+     * @param  {Number} numBits    number of bits in each generated RSA key
+     * @return {Promise<Array<Object>>} array of objects {AddressID:String, PrivateKey:String}
+     */
+    async function generateAddresses(addresses = [], passphrase = '', numBits = ENCRYPTION_DEFAULT) {
+        const list = addresses.map(({ ID, Email: email } = {}) => {
+            return pmcw.generateKey({
+                userIds: [{ name: email, email }],
+                passphrase, numBits
+            }).then(({ privateKeyArmored: PrivateKey }) => ({
+                AddressID: ID,
+                PrivateKey
+            }));
+        });
+        return Promise.all(list);
+    }
+
+    async function generate(addresses = [], password = '', numBits = ENCRYPTION_DEFAULT) {
         const keySalt = passwords.generateKeySalt();
-        const passwordPromise = passwords.computeKeyPassword(password, keySalt);
-        const promises = {
-            mailboxPassword: passwordPromise,
-            keySalt: $q.resolve(keySalt)
+        const mailboxPassword = await passwords.computeKeyPassword(password, keySalt);
+
+        return {
+            mailboxPassword, keySalt,
+            keys: await generateAddresses(addresses, mailboxPassword, numBits)
         };
-
-        return passwordPromise.then((passphrase) => {
-            const keyPromises = _.map(addresses, ({ Email, ID } = {}) => {
-                return pmcw.generateKey({
-                        userIds: [{ name: Email, email: Email }],
-                        passphrase,
-                        numBits
-                    })
-                    .then(({ privateKeyArmored }) => ({
-                        AddressID: ID,
-                        PrivateKey: privateKeyArmored
-                    }));
-            });
-
-            promises.keys = $q.all(keyPromises);
-            return $q.all(promises);
-        });
     }
 
-    function generateAddresses(addresses = [], mailboxPassword = '', numBits = 2048) {
-        const promises = _.map(addresses, ({ Email, ID } = {}) => {
-            return pmcw
-                .generateKey({
-                    userIds: [{ name: Email, email: Email }],
-                    passphrase: mailboxPassword,
-                    numBits
-                })
-                .then(({ privateKeyArmored }) => ({
-                    AddressID: ID,
-                    PrivateKey: privateKeyArmored
-                }));
-        });
-
-        return $q.all(promises);
-    }
-
-    function generateOrganization(password, numBits) {
+    /**
+     * Generates an organization key
+     * @param  {String} passphrase mailbox password to encrypt keys with
+     * @param  {Number} numBits    number of bits in each generated RSA key
+     * @return {Promise<Object>}   { key:Key, privateKeyArmored:String, publicKeyArmored:String }
+     */
+    function generateOrganization(passphrase, numBits) {
         return pmcw.generateKey({
-            userIds: [{ name: 'not_for_email_use@domain.tld', email: 'not_for_email_use@domain.tld' }],
-            passphrase: password,
-            numBits
+            userIds: [{
+                name: 'not_for_email_use@domain.tld',
+                email: 'not_for_email_use@domain.tld'
+            }],
+            passphrase, numBits
         });
     }
 
-    function decryptMemberToken(key = {}, signingKey = {}) {
-        const token = key.Token || key.Activation;
+    /**
+     * Decrypts a member token with the organization private key
+     * @param  {String} Token or Activation  member key token
+     * @param  {Object} privateKey           organization private key
+     * @return {Object}                      {PrivateKey, decryptedToken}
+     */
+    async function decryptMemberToken({ Token, Activation, PrivateKey } = {}, orgPrivateKey = {}) {
+        const { data: decryptedToken, verified } = await pmcw.decryptMessage({
+            message: pmcw.getMessage(Token || Activation),
+            privateKey: orgPrivateKey,
+            publicKeys: orgPrivateKey.toPublic()
+        });
 
-        return pmcw
-            .decryptMessage({
-                message: pmcw.getMessage(token),
-                privateKey: signingKey,
-                publicKeys: signingKey.toPublic()
-            })
-            .then(({ data: decryptedToken, verified }) => {
-                if (verified !== 1) {
-                    return $q.reject({ message: 'Signature verification failed' });
-                }
-                return { PrivateKey: key.PrivateKey, decryptedToken };
-            });
+        if (verified !== 1) {
+            throw new Error('Signature verification failed');
+        }
+        return { PrivateKey, decryptedToken };
     }
 
-    function decryptMemberKey(key = {}, signingKey = {}) {
-        return decryptMemberToken(key, signingKey).then(({ PrivateKey, decryptedToken }) => pmcw.decryptPrivateKey(PrivateKey, decryptedToken));
+    /**
+     * Decrypts a member key using the decrypted member token
+     * @param  {String} Token or Activation  member key token
+     * @param  {Object} signingKey           organization private key
+     * @return {Object}                      decrypted member key object
+     */
+    async function decryptMemberKey(key = {}, signingKey = {}) {
+        const { PrivateKey, decryptedToken } = await decryptMemberToken(key, signingKey);
+        return pmcw.decryptPrivateKey(PrivateKey, decryptedToken);
     }
 
-    function getPrimaryKey(member = {}, organizationKey = {}) {
-        if (member.Keys.length === 0) {
-            return $q.reject({ message: 'User not set up' });
+    /**
+     * Returns a member's decrypted primary key
+     * @param  {Array<Key>} Keys             all of a member's keys
+     * @param  {Object} organizationKey      organization private key
+     * @return {Object}                      decrypted member's primary key
+     */
+    async function getPrimaryKey({ Keys = [] } = {}, organizationKey = {}) {
+
+        if (!Keys.length) {
+            throw new Error('User not set up');
         }
 
-        return decryptMemberKey(member.Keys[0], organizationKey);
+        return decryptMemberKey(Keys[0], organizationKey);
     }
 
-    function prepareSetupPayload(keySalt = '', keys = [], password = '') {
-        const payload = {
-            KeySalt: keySalt,
-            AddressKeys: keys
-        };
+    /**
+     * Set up the payload for an API call to setup new keys or reset old keys
+     * @param  {String} KeySalt              the key salt used when hashing the key password
+     * @param  {Array<Object>} AddressKeys   array of address-level keys encrypted with new password
+     * @param  {Object} organizationKey      organization private key
+     * @param  {String} newPassword          the new key password
+     * @return {Object}                      payload for API request
+     */
+    function prepareSetupPayload(KeySalt = '', AddressKeys = [], newPassword = '') {
+        const payload = { KeySalt, AddressKeys };
 
-        if (keys.length > 0) {
-            payload.PrimaryKey = keys[0].PrivateKey;
+        if (AddressKeys.length > 0) {
+            payload.PrimaryKey = AddressKeys[0].PrivateKey;
         }
 
-        let newPassword = '';
-        if (password.length) {
-            newPassword = password;
+        if (newPassword.length) {
+            return { payload, newPassword };
         }
 
         return {
             payload,
-            newPassword
+            newPassword: ''
         };
     }
 
-    function processMemberKey(mailboxPassword = '', key = '', organizationKey = {}) {
-        const randomString = pmcrypto.encode_base64(pmcrypto.arrayToBinaryString(webcrypto.getRandomValues(new Uint8Array(128))));
-        let memberKey;
+    /**
+     * Takes a member key and generates its encrypted token
+     * @param  {String} password             the key password
+     * @param  {Object} PrivateKey           member key
+     * @param  {Array<Object>} keys          array of keys encrypted with new password
+     * @param  {Object} privateKeys          organization private key
+     * @return {Object}
+     */
+    async function processMemberKey(password = '', { PrivateKey, AddressID } = {}, privateKeys = {}) {
 
-        return pmcw
-            .decryptPrivateKey(key.PrivateKey, mailboxPassword)
-            .then((result) => {
-                return pmcw.encryptPrivateKey(result, randomString);
-            })
-            .then((result) => {
-                memberKey = result;
-                return pmcw.encryptMessage({
-                    data: randomString,
-                    publicKeys: organizationKey.toPublic(),
-                    privateKeys: organizationKey
-                });
-            })
-            .then(({ data: token }) => {
-                return {
-                    AddressID: key.AddressID,
-                    UserKey: key.PrivateKey,
-                    MemberKey: memberKey,
-                    Token: token
-                };
-            });
-    }
+        const value = webcrypto.getRandomValues(new Uint8Array(128));
+        const randomString = pmcrypto.encode_base64(pmcrypto.arrayToBinaryString(value));
 
-    function processMemberKeys(mailboxPassword = '', keys = [], organizationKey = {}) {
-        const promises = [];
-        _.each(keys, (key) => {
-            promises.push(processMemberKey(mailboxPassword, key, organizationKey));
+        const result = await pmcw.decryptPrivateKey(PrivateKey, password);
+        const MemberKey = await pmcw.encryptPrivateKey(result, randomString);
+        const { data: Token } = await pmcw.encryptMessage({
+            data: randomString,
+            publicKeys: privateKeys.toPublic(),
+            privateKeys
         });
 
-        return $q.all(promises);
+        return {
+            AddressID: AddressID,
+            UserKey: PrivateKey,
+            MemberKey, Token
+        };
     }
 
-    function errorHandler({ data }) {
-        return $q.resolve(data.User || data.Member || data.MemberKey);
+    /**
+     * Takes member keys and generates their encrypted tokens
+     * @param  {String} mailboxPassword      the key password
+     * @param  {Array<Object>} keys          array of member keys
+     * @param  {Object} privateKeys          organization private key
+     * @return {Object}
+     */
+    function processMemberKeys(mailboxPassword = '', keys = [], organizationKey = {}) {
+        const promises = keys.map((key) => processMemberKey(mailboxPassword, key, organizationKey));
+        return Promise.all(promises);
     }
 
+    const response = async ({ data }) => data.User || data.Member || data.MemberKey;
+
+    /**
+     * Reset a user's keys
+     * @param  {String} keySalt              the key salt used when hashing the key password
+     * @param  {Array<Object>} keys          array of keys encrypted with new password
+     * @param  {String} password             the new key password
+     * @param  {Object} params               additional parameters to add to request (token, username)
+     * @return {Object}                      API response to key reset
+     */
     function reset({ keySalt, keys }, password = '', params = {}) {
         const rv = prepareSetupPayload(keySalt, keys, password);
-        rv.payload = _.extend(rv.payload, params);
-
-        return Key.reset(rv.payload, rv.newPassword).then(errorHandler);
+        const payload = { ...rv.payload, ...params };
+        return Key.reset(payload, rv.newPassword).then(response);
     }
 
+    /**
+     * Setup a new user's keys
+     * @param  {String} keySalt              the key salt used when hashing the key password
+     * @param  {Array<Object>} keys          array of keys encrypted with new password
+     * @param  {String} password             the new key password
+     * @return {Object}                      API response to key setup
+     */
     function setup({ keySalt, keys }, password = '') {
-        const rv = prepareSetupPayload(keySalt, keys, password);
-
-        return Key.setup(rv.payload, rv.newPassword).then(errorHandler);
+        const { payload, newPassword } = prepareSetupPayload(keySalt, keys, password);
+        return Key.setup(payload, newPassword).then(response);
     }
 
-    function memberSetup({ mailboxPassword, keySalt, keys }, password = '', memberID = '', organizationKey = {}) {
-        return processMemberKeys(mailboxPassword, keys, organizationKey)
-            .then((result) => {
-                return MemberKey.setup(
-                    {
-                        MemberID: memberID,
-                        KeySalt: keySalt,
-                        AddressKeys: result,
-                        PrimaryKey: result[0]
-                    },
-                    password
-                );
-            })
-            .then(errorHandler);
+    /**
+     * Setup a member's keys
+     * @param  {String} mailboxPassword      the new key password
+     * @param  {String} keySalt              the key salt used when hashing the key password
+     * @param  {Array<Object>} keys          array of keys encrypted with new password
+     * @param  {String} password             temporary password
+     * @param  {String} MemberID             ID for member
+     * @param  {Object} organizationKey      organization private key
+     * @return {Object}                      API response to member key setup
+     */
+    async function memberSetup({ mailboxPassword, keySalt, keys }, password = '', MemberID = '', organizationKey = {}) {
+        const AddressKeys = await processMemberKeys(mailboxPassword, keys, organizationKey);
+        return MemberKey.setup({
+                MemberID, AddressKeys,
+                KeySalt: keySalt,
+                PrimaryKey: AddressKeys[0]
+            },
+            password
+        ).then(response);
     }
 
-    function key(key) {
-        return Key.create(key).then(errorHandler);
-    }
+    /**
+     * Create a new member address key
+     * @param  {String} tempPassword         the new key password
+     * @param  {Object} key                  member key
+     * @param  {Object} member               member object
+     * @param  {Object} organizationKey      organization private key
+     * @return {Object}                      API response to member key create
+     */
+    async function memberKey(tempPassword = '', key = '', member = {}, organizationKey = {}) {
+        const primaryKey = await getPrimaryKey(member, organizationKey);
+        const [ user, org ] = await Promise.all([
+            processMemberKey(tempPassword, key, primaryKey),
+            processMemberKey(tempPassword, key, organizationKey)
+        ]);
 
-    function memberKey(tempPassword = '', key = '', member = {}, organizationKey = {}) {
-        return getPrimaryKey(member, organizationKey)
-            .then((primaryKey) => {
-                return $q.all({
-                    user: processMemberKey(tempPassword, key, primaryKey),
-                    org: processMemberKey(tempPassword, key, organizationKey)
-                });
-            })
-            .then(({ user, org }) => {
-                const payload = _.extend(org, {
-                    MemberID: member.ID,
-                    Activation: user.Token,
-                    UserKey: user.MemberKey
-                });
-
-                return MemberKey.create(payload);
-            })
-            .then(errorHandler);
-    }
-
-    function decryptUser(user = {}, addresses = [], organizationKey = {}, mailboxPassword) {
-        const privateUser = user.Private === 1;
-        const subuser = angular.isDefined(user.OrganizationPrivateKey);
-
-        const keyInfo = (key) => {
-            return pmcw.keyInfo(key.PrivateKey).then((info) => {
-                key.created = info.created; // Creation date
-                key.bitSize = info.bitSize; // We don't use this data currently
-                key.fingerprint = info.fingerprint; // Fingerprint
-            });
-        };
-
-        const activateKey = (key, pkg) => {
-            return pmcw
-                .encryptPrivateKey(pkg, mailboxPassword)
-                .then((PrivateKey) => Key.activate(key.ID, { PrivateKey }))
-                .then(() => pkg);
-        };
-
-        const storeKey = ({ key, pkg, address }) => {
-            key.decrypted = true; // We mark this key as decrypted
-            return keyInfo(key).then(() => ({ address, key, pkg }));
-        };
-
-        const skipKey = ({ key, address, index }) => {
-            key.decrypted = false; // This key is not decrypted
-            return keyInfo(key).then(() => {
-                // If the primary (first) key for address does not decrypt, display error.
-                if (index === 0) {
-                    address.disabled = true; // This address cannot be used
-                    notification.error(
-                        'Primary key for address ' +
-                            address.Email +
-                            ' cannot be decrypted. You will not be able to read or write any email from this address'
-                    );
-                }
-                return { address, key, pkg: null };
-            });
-        };
-
-        const promises = [];
-
-        // All user key are decrypted and stored
-        const address = { ID: MAIN_KEY };
-        _.each(user.Keys, (key, index) => {
-            if (subuser === true) {
-                promises.push(decryptMemberKey(key, organizationKey).then((pkg) => storeKey({ key, pkg, address })));
-            } else {
-                promises.push(
-                    pmcw
-                        .decryptPrivateKey(key.PrivateKey, mailboxPassword)
-                        .then((pkg) => storeKey({ key, pkg, address }), () => skipKey({ key, address, index }))
-                );
-            }
-        });
-
-        return $q.all(promises).then((primaryKeys) => {
-            const promises = [];
-            const dirtyAddresses = [];
-
-            // All address keys are decrypted and stored
-            _.each(addresses, (address) => {
-                if (address.Keys.length > 0) {
-                    let index = 0;
-                    _.each(address.Keys, (key) => {
-                        if (subuser === true) {
-                            promises.push(decryptMemberKey(key, organizationKey).then((pkg) => storeKey({ key, pkg, address })));
-                        } else if (key.Activation) {
-                            promises.push(
-                                decryptMemberKey(key, primaryKeys[0].pkg)
-                                    .then((pkg) => activateKey(key, pkg))
-                                    .then((pkg) => storeKey({ key, pkg, address }))
-                            );
-                        } else {
-                            promises.push(
-                                pmcw
-                                    .decryptPrivateKey(key.PrivateKey, mailboxPassword)
-                                    .then((pkg) => storeKey({ key, pkg, address }), () => skipKey({ key, address, index }))
-                            );
-                        }
-                        index++;
-                    });
-                } else if (address.Status === 1 && privateUser === true) {
-                    dirtyAddresses.push(address);
-                }
-            });
-
-            return $q.all(promises).then((addressKeys) => {
-                const keys = primaryKeys.concat(addressKeys).filter(({ key }) => key.decrypted);
-                return { keys, dirtyAddresses };
-            });
-        });
+        return MemberKey.create({
+            ...org,
+            MemberID: member.ID,
+            Activation: user.Token,
+            UserKey: user.MemberKey
+        }).then(response);
     }
 
     return {
-        decryptMemberToken,
-        decryptMemberKey,
-        generate,
-        generateAddresses,
         generateOrganization,
-        key,
+        generateAddresses,
+        generate,
+        decryptMemberKey,
         memberSetup,
         memberKey,
         setup,
-        reset,
-        decryptUser
+        reset
     };
 }
 

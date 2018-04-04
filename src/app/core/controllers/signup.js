@@ -67,20 +67,22 @@ function SignupController(
         $scope.step = 2;
 
         const promise = signupUserProcess.generateNewKeys().then(() => {
-            if (AppModel.is('preInvited')) {
-                return createAccount();
-            }
-
-            if (plans.length) {
-                if (signupModel.optionsHumanCheck('payment')) {
-                    return ($scope.step = 4);
+            $scope.$applyAsync(() => {
+                if (AppModel.is('preInvited')) {
+                    return createAccount();
                 }
-                $scope.step = 3;
-                const message = gettextCatalog.getString("It currently isn't possible to subscribe to a Paid ProtonMail plan.", null);
-                return notification.info(message);
-            }
 
-            $scope.step = 3;
+                if (plans.length) {
+                    if (signupModel.optionsHumanCheck('payment')) {
+                        return ($scope.step = 4);
+                    }
+                    $scope.step = 3;
+                    const message = gettextCatalog.getString("It currently isn't possible to subscribe to a Paid ProtonMail plan.", null);
+                    return notification.info(message);
+                }
+
+                $scope.step = 3;
+            });
         });
 
         networkActivityTracker.track(promise);

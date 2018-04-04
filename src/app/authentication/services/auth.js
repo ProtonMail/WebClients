@@ -29,7 +29,8 @@ function authentication(
     AppModel,
     tempStorage,
     sanitize,
-    upgradeKeys
+    upgradeKeys,
+    decryptUser
 ) {
     let keys = {}; // Store decrypted keys
     const { OAUTH_KEY, FREE_USER_ROLE, MAILBOX_PASSWORD_KEY } = CONSTANTS;
@@ -101,7 +102,7 @@ function authentication(
                                 });
                             };
 
-                            return setupKeys.decryptUser(user, addresses, organizationKey, api.getPassword())
+                            return decryptUser(user, addresses, organizationKey, api.getPassword())
                                 .then(({ keys }) => (storeKeys(keys), user))
                                 .catch((error) => {
                                     $exceptionHandler(error);

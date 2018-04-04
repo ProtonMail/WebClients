@@ -70,15 +70,19 @@ function SetupController(
     }
 
     function installKeys(data = {}) {
-        $scope.genKeys = false;
-        $scope.creating = true;
-        $scope.setupAccount = true;
+        $scope.$applyAsync(() => {
+            $scope.genKeys = false;
+            $scope.creating = true;
+            $scope.setupAccount = true;
+        });
 
         return setupKeys.setup(data, passwordCopy).then(() => {
-            authentication.savePassword(data.mailboxPassword);
-            $rootScope.isLoggedIn = authentication.isLoggedIn();
-            $rootScope.isLocked = authentication.isLocked();
-            $rootScope.isSecure = authentication.isSecured();
+            $scope.$applyAsync(() => {
+                authentication.savePassword(data.mailboxPassword);
+                $rootScope.isLoggedIn = authentication.isLoggedIn();
+                $rootScope.isLocked = authentication.isLocked();
+                $rootScope.isSecure = authentication.isSecured();
+            });
         });
     }
 
