@@ -30,6 +30,7 @@ import contactEmails from './factories/contactEmails';
 import contactImporter from './factories/contactImporter';
 import contactImportEncryption from './factories/contactImportEncryption';
 import contactKey from './factories/contactKey';
+import contactMerger from './directives/contactMerger';
 import contactMergerFactory from './factories/contactMerger';
 import contactSchema from './factories/contactSchema';
 import contactKeyAssigner from './factories/contactKeyAssigner';
@@ -68,6 +69,7 @@ export default angular
     .directive('contactNoResult', contactNoResult)
     .directive('contactPgp', contactPgp)
     .directive('contactPlaceholder', contactPlaceholder)
+    .directive('contactMerger', contactMerger)
     .directive('contactPublicKeys', contactPublicKeys)
     .directive('contactPublicKeyTable', contactPublicKeyTable)
     .directive('contactPublicKeyLabel', contactPublicKeyLabel)
