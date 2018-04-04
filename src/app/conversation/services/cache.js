@@ -1,6 +1,6 @@
 import _ from 'lodash';
 
-import { flow, filter, each, map, head } from 'lodash/fp';
+import { flow, filter, each, map, head, maxBy } from 'lodash/fp';
 
 /* @ngInject */
 function cache(
@@ -400,21 +400,23 @@ function cache(
      * @param {String} conversationID
      * @return {Promise}
      */
-    function getConversation(conversationID = '') {
-        const promise = conversationApi.get(conversationID).then(({ data = {} } = {}) => {
-            const { Conversation, Messages } = data;
-            const conversation = Conversation;
-            const messages = Messages;
-            const message = _.maxBy(messages, ({ Time }) => Time); // NOTE Seems wrong, we should check Time and LabelIDs
+    function getConversation(conversationID = '', labelID = tools.currentLocation()) {
+        const promise = conversationApi.get(conversationID)
+            .then(({ data = {} } = {}) => {
+                const { Conversation = {}, Messages = [] } = data;
+                const message = flow(
+                    filter(({ LabelIDs = [] }) => _.includes(LabelIDs, labelID)),
+                    maxBy('Time')
+                )(Messages);
 
-            messages.forEach((message) => (message.loaded = true));
-            conversation.loaded = true;
-            conversation.Time = message.Time;
-            storeConversations([conversation]);
-            storeMessages(messages);
+                Messages.forEach((message) => (message.loaded = true));
+                Conversation.loaded = true;
+                Conversation.Time = message.Time;
+                storeConversations([Conversation]);
+                storeMessages(Messages);
 
-            return angular.copy(conversation);
-        });
+                return angular.copy(Conversation);
+            });
 
         networkActivityTracker.track(promise);
 
