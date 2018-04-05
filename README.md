@@ -136,42 +136,16 @@ $ npm test
 
 ## End to end testing for AngularJS
 
-Installation:
+Based on [The Amazing Cypress](https://www.cypress.io).
 
-```shell
-$ npm install -g protractor
-$ webdriver-manager update
-```
+Dev:
+`$ npx cypress open` or `npm run cypress:open`
 
-Start up a Selenium Server:
-
-```shell
-$ webdriver-manager start
-```
-
-> To run selenium you can use docker if you don't want to install Java :
-```sh
-$ docker run -d -p 4444:4444 -v /dev/shm:/dev/shm selenium/standalone-chrome:2.53.0
-```
-cf [Selenium Docker](https://github.com/SeleniumHQ/docker-selenium)
-
-
-Run tests:
-```shell
-$ npm run e2e -- --params.password1 "XXX" --params.password2 "XXX"
-```
-> default account is qatest123, you can change that using `--params.login "xxxx"`
-
-
+CI:
 ```shell
 $ npm run e2e
 ```
 
-Run a scenario:
-
-```shell
-$ npm run e2e -- --suite=login
-```
 
 ## License
 

@@ -1,5 +1,10 @@
 <div class="pm_modal {{this.class}}" role="dialog" style="display: block;" id="welcomeModal">
-    <form class="modal-dialog modal-sm" method="post" ng-submit="ctrl.next()" novalidate>
+    <form
+        class="modal-dialog modal-sm"
+        name="welcomeModal"
+        method="post"
+        ng-submit="ctrl.next()"
+        novalidate>
         <div class="modal-content">
             <div class="modal-header">
                 <h3 class="modal-title" translate translate-context="Title">Welcome to ProtonMail</h3>
@@ -53,7 +58,7 @@
             </div>
         </div>
         <div class="modal-footer text-right">
-            <button type="submit" class="pm_button primary" translate translate-context="Action">Finish</a>
+            <button id="confirmModalBtn" type="submit" class="pm_button primary" translate translate-context="Action">Finish</a>
         </div>
     </form>
     <div class="modal-overlay"></div>

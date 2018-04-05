@@ -1,41 +1,56 @@
 <nav
     class="toolbarDesktop-container pm_toolbar pm_toolbar_withSelector">
+
     <span class="pm_buttons back" ng-if="idDefined() &&  viewLayout === 1">
         <a href="#" ng-click="back()" pt-tooltip-translate="Back to list" pt-tooltip-translate-context="Action">
             <i class="fa fa-long-arrow-left"></i>
         </a>
     </span>
-    <elements-selector ng-if="displayPaginator()" class="toolBar-select-all"></elements-selector>
+
+    <elements-selector
+        ng-if="displayPaginator()"
+        class="toolBar-select-all"></elements-selector>
+
     <read-unread></read-unread>
     <move-element></move-element>
-    <span class="pm_buttons">
+
+    <div class="pm_buttons">
         <div class="pm_buttons" ng-class="{disabled: isDisabled()}">
             <a
-            class="pm_trigger open-folder"
-            dropdown
-            ng-class="{disabled: isDisabled()}"
-            pt-tooltip-translate="Move to">
+                class="pm_trigger open-folder toolbarDesktop-select-folder"
+                data-dropdown
+                ng-class="{disabled: isDisabled()}"
+                pt-tooltip-translate="Move to"
+                pt-tooltip-translate-context="Action toolbar">
                 <i class="fa fa-folder"></i>
                 <i class="fa fa-angle-down"></i>
             </a>
             <div class="pm_dropdown wide">
-                <dropdown-folders data-elements="getElements"></dropdown-folders>
+                <dropdown-folders
+                    class="toolbarDesktop-dropdown-folders"
+                    data-elements="getElements"></dropdown-folders>
             </div>
         </div>
+
         <div id="tour-label-dropdown" class="pm_buttons" ng-class="{disabled: isDisabled()}">
             <a
-            class="pm_trigger open-label"
-            dropdown
-            ng-class="{disabled: isDisabled()}"
-            pt-tooltip-translate="Label as">
+                class="pm_trigger open-label toolbarDesktop-select-label"
+                data-dropdown
+                ng-class="{disabled: isDisabled()}"
+                pt-tooltip-translate="Label as"
+                pt-tooltip-translate-context="Action toolbar">
                 <i class="fa fa-tag"></i>
                 <i class="fa fa-angle-down"></i>
             </a>
             <div class="pm_dropdown wide">
-                <dropdown-labels messages="getElements" save="saveLabels"></dropdown-labels>
+                <dropdown-labels
+                    class="toolbarDesktop-dropdown-labels"
+                    data-messages="getElements"
+                    data-save="saveLabels"></dropdown-labels>
             </div>
         </div>
-    </span>
+    </div>
+
     <advanced-filter-element></advanced-filter-element>
 
     <div class="pull-right action toolbarDesktop-actions-right">
