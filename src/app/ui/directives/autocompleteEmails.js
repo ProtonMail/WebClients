@@ -1,15 +1,7 @@
 import { REGEX_EMAIL } from '../../constants';
 
 /* @ngInject */
-function autocompleteEmails(
-    $rootScope,
-    dispatchers,
-    autocompleteEmailsModel,
-    autocompleteSyncModel,
-    autocompleteBuilder,
-    gettextCatalog,
-    notification
-) {
+function autocompleteEmails(autocompleteEmailsModel, autocompleteBuilder, autocompleteSyncModel, dispatchers, gettextCatalog, notification) {
     const TAB_KEY = 9;
     const BACKSPACE_KEY = 8;
     const COMMA_KEY = 188;
@@ -79,7 +71,8 @@ function autocompleteEmails(
             .map((txt) => txt.trim());
 
     const link = (scope, el, { awesomplete }) => {
-        const { on, unsubscribe } = dispatchers();
+        const { dispatcher, on, unsubscribe } = dispatchers(['composer.update']);
+
         scope.emails = [];
         const $list = el[0].querySelector('.autocompleteEmails-admin');
 
@@ -235,9 +228,7 @@ function autocompleteEmails(
                 case ESCAPE_KEY:
                     // Close the composer if no autocompletion
                     if (!hasAutocompletion) {
-                        $rootScope.$emit('composer.update', {
-                            type: 'escape.autocomplete'
-                        });
+                        dispatcher['composer.update']('escape.autocomplete');
                     }
                     break;
 
@@ -249,6 +240,11 @@ function autocompleteEmails(
                     }
                     break;
             }
+        };
+
+        const refreshFromList = (list = []) => {
+            model.refresh(list);
+            syncModel();
         };
 
         /**
@@ -277,6 +273,12 @@ function autocompleteEmails(
         el.on('click', onClick);
         el.on('input', onInput);
         el.on('submit', onSubmit);
+
+        on('autocompleteEmails', (event, { type, data = {} }) => {
+            if (type === 'refresh' && data.name === el[0].getAttribute('data-name')) {
+                refreshFromList(data.list);
+            }
+        });
 
         scope.$on('$destroy', () => {
             el.off('keydown', onKeyDown);

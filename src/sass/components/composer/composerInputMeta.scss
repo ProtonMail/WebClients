@@ -19,7 +19,7 @@
     box-sizing: border-box;
 }
 
-.composerInputMeta-overlay-label {color: #ccc }
+.composerInputMeta-overlay-label { color: #ccc }
 .composerInputMeta-overlay-list {
     padding-right: 25px;
     overflow: hidden;
@@ -57,6 +57,14 @@
 .composerInputMeta-container.composerInputMeta-overlay-hidden {
     max-height: 100%;
     overflow: inherit;
+}
+
+.composerInputMeta-label {
+    cursor: pointer;
+}
+.composerInputMeta-label:hover {
+    color: $primary;
+    text-decoration: underline;
 }
 
 .composerInputMeta-overlay-list .composer-input-recipient:last-child .composer-recipient-delim {

@@ -1,7 +1,7 @@
 import _ from 'lodash';
 
 /* @ngInject */
-function composerInputMeta() {
+function composerInputMeta(contactSelectorModel, dispatchers) {
     /**
      * Check if there is at least one invalid mail inside the list
      * @param  {Array}  options.ToList
@@ -49,7 +49,9 @@ function composerInputMeta() {
             const $label = element[0].querySelector('.composerInputMeta-label');
             const $input = element[0].querySelector('.composerInputMeta-autocomplete');
             const $recipients = element[0].querySelectorAll('composer-input-recipient');
-            $label && ($label.textContent = label);
+            if ($label) {
+                $label.textContent = label;
+            }
 
             // Bind the model to the autocomplete
             if ($input) {
@@ -63,6 +65,8 @@ function composerInputMeta() {
 
             return (scope, el) => {
                 const isCurrentMsg = () => scope.message.ID === scope.selected.ID;
+                const { dispatcher, on, unsubscribe } = dispatchers(['autocompleteEmails']);
+                const getInputName = () => $input.getAttribute('data-name');
 
                 const $btn = el[0].querySelector('.composerInputMeta-overlay-button');
 
@@ -72,6 +76,13 @@ function composerInputMeta() {
                 const onClick = ({ target }) => {
                     // Allow the user to select the text inside the autocomplete box cf WebClient#41
                     if (target.classList.contains('autocompleteEmails-label')) {
+                        return;
+                    }
+
+                    const action = target.getAttribute('data-action');
+
+                    if (action === 'openModal') {
+                        contactSelectorModel.openModal(scope.message, { key, name: getInputName() });
                         return;
                     }
 
@@ -100,9 +111,17 @@ function composerInputMeta() {
                 $btn.addEventListener('click', onClickBtn, false);
                 el.on('click', onClick);
 
+                on('composer.update', (event, { type, data = {} }) => {
+                    if (type === 'add.recipients' && data.name === getInputName()) {
+                        const list = _.map(data.recipients, ({ Name, Email: Address }) => ({ Name, Address }));
+                        dispatcher.autocompleteEmails('refresh', { list, name: data.name });
+                    }
+                });
+
                 scope.$on('$destroy', () => {
                     $btn.removeEventListener('click', onClickBtn, false);
                     el.off('click', onClick);
+                    unsubscribe();
                 });
             };
         }

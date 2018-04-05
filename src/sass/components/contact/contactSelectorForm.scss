@@ -1,0 +1,74 @@
+.contactSelectorForm-search-row {
+    position: relative;
+}
+
+.contactSelectorForm-search-label {
+    position: absolute;
+    z-index: 1;
+    width: 40px;
+}
+
+.contactSelectorForm-search-icon {
+    margin: auto;
+}
+
+.pm_form input[type="search"].contactSelectorForm-search-input {
+    padding-left: 40px;
+    margin-bottom: 20px;
+}
+
+.contactSelectorForm-warning-message {
+    border-radius: $border-radius;
+    background: $warning;
+    color: darken($warning, 50);
+    padding: 10px;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: .8rem;
+}
+
+.contactSelectorForm-table-wrapper {
+    border-radius: $border-radius;
+    border: 1px solid $border;
+    max-height: 250px;
+    overflow-y: auto;
+}
+
+.contactSelectorForm-labels {
+    border-radius: $border-radius;
+    border: 1px solid $border;
+    padding: 10px;
+    list-style: none;
+    margin-bottom: 0;
+    max-height: 70px;
+    overflow-y: auto;
+}
+
+.contactSelectorForm-label {
+    display: inline-block;
+    background: $light;
+    border: 1px solid $border;
+    padding: 3px 5px;
+    margin-right: 7px;
+    margin-bottom: 5px;
+    border-radius: $border-radius;
+}
+
+.contactSelectorForm-remove-label-btn {
+    background: transparent;
+    border-radius: $border-radius;
+    border: none;
+}
+
+.contactSelectorForm-remove-label-btn:hover,
+.contactSelectorForm-remove-label-btn:focus {
+    background: lighten($light, 50);
+}
+
+.contactSelectorForm-remove-label-btn * {
+    pointer-events: none;
+}
+
+// Conditions
+.contactSelectorForm-container:not(.contactSelectorForm-limit-reached) .contactSelectorForm-warning-message { display: none }
+.contactSelectorForm-no-recipients .contactSelectorForm-labels { display: none }

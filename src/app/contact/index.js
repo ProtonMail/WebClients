@@ -6,6 +6,8 @@ import contactDetails from './directives/contactDetails';
 import contactDisplay from './directives/contactDisplay';
 import contactDisplayModal from './modals/contactDisplayModal';
 import contactPhotoModal from './modals/contactPhotoModal';
+import contactSelectorModal from './modals/contactSelectorModal';
+import contactSelectorForm from './directives/contactSelectorForm';
 import contactPhotoForm from './directives/contactPhotoForm';
 import contactEncrypted from './directives/contactEncrypted';
 import contactError from './directives/contactError';
@@ -37,6 +39,7 @@ import contactKeyAssigner from './factories/contactKeyAssigner';
 import contactEncryption from './factories/contactEncryption';
 import contactTransformLabel from './factories/contactTransformLabel';
 import contactUI from './factories/contactUI';
+import contactSelectorModel from './factories/contactSelectorModel';
 import contactFilter from './filters/contact';
 import spam from './filters/spam';
 import contactAskEncryption from './modals/contactAskEncryption';
@@ -77,11 +80,13 @@ export default angular
     .directive('contactView', contactView)
     .directive('contactRightPanel', contactRightPanel)
     .directive('contactPhotoForm', contactPhotoForm)
+    .directive('contactSelectorForm', contactSelectorForm)
     .factory('Contact', Contact)
     .factory('contactCache', contactCache)
     .factory('contactDetailsModel', contactDetailsModel)
     .factory('contactDisplayModal', contactDisplayModal)
     .factory('contactPhotoModal', contactPhotoModal)
+    .factory('contactSelectorModal', contactSelectorModal)
     .factory('contactDownloader', contactDownloader)
     .factory('contactEditor', contactEditor)
     .factory('contactEmails', contactEmails)
@@ -93,6 +98,7 @@ export default angular
     .factory('contactTransformLabel', contactTransformLabel)
     .factory('contactUI', contactUI)
     .factory('contactEncryption', contactEncryption)
+    .factory('contactSelectorModel', contactSelectorModel)
     .factory('contactKeyAssigner', contactKeyAssigner)
     .filter('contact', contactFilter)
     .filter('spam', spam)
