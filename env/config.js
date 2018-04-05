@@ -1,9 +1,19 @@
 const extend = require('lodash/extend');
+const { execSync } = require('child_process');
 const argv = require('minimist')(process.argv.slice(2));
 const CONFIG_DEFAULT = require('./configDefault');
 const i18nLoader = require('../tasks/translationsLoader');
 
 const { STATS_CONFIG, STATS_ID, NO_STAT_MACHINE, API_TARGETS, AUTOPREFIXER_CONFIG } = require('./config.constants');
+
+const isWebClient = () => {
+    try {
+        const origin = execSync('git remote get-url origin');
+        return !/ProtonMail\/A/.test((origin || '').toString());
+    } catch (e) {
+        return true;
+    }
+};
 
 const isProdBranch = (branch = process.env.NODE_ENV_BRANCH) => /-prod/.test(branch);
 
@@ -13,7 +23,7 @@ const getStatsConfig = (deployBranch = '') => {
 };
 
 const getDefaultApiTarget = () => {
-    if (/webclient/i.test(__dirname)) {
+    if (isWebClient()) {
         return 'prod';
     }
 
