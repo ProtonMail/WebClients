@@ -407,7 +407,7 @@ function cache(
                 const message = flow(
                     filter(({ LabelIDs = [] }) => _.includes(LabelIDs, labelID)),
                     maxBy('Time')
-                )(Messages);
+                )(Messages) || {};
 
                 Messages.forEach((message) => (message.loaded = true));
                 Conversation.loaded = true;
