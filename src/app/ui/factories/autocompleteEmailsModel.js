@@ -94,7 +94,7 @@ function autocompleteEmailsModel($injector, authentication, checkTypoEmails, $fi
             sortBy('label'),
             filter(({ label }) => label.toLowerCase().includes(input)),
             take(AWESOMEPLETE_MAX_ITEMS)
-        )($injector.get('contactEmails').fetch());
+        )($injector.get('contactEmails').get());
 
         // it creates a map <escaped>:<label> because the lib does not support more keys than label/value and we need the unescaped value #4901
         TEMP_LABELS = collection.reduce((acc, { label, Name }) => ((acc[label] = Name), acc), {});
@@ -154,6 +154,20 @@ function autocompleteEmailsModel($injector, authentication, checkTypoEmails, $fi
 
         const all = () => list;
         const clear = () => ((list.length = 0), (TEMP_LABELS = {}));
+        const exist = (value) => list.some(({ Address }) => Address === value);
+
+        /**
+         * Add new email to the list
+         * @param {Object} data email Object
+         */
+        const addEmail = (data = {}) => {
+            list.push(
+                _.extend({}, data, {
+                    $id: getID(),
+                    invalid: !REGEX_EMAIL.test(data.Address) || checkTypoEmails(data.Address)
+                })
+            );
+        };
 
         /**
          * Add a new contact to the list
@@ -165,13 +179,8 @@ function autocompleteEmailsModel($injector, authentication, checkTypoEmails, $fi
             const data = formatNewEmail(TEMP_LABELS[label] || label, value);
 
             // If the mail is not already inside the collection, add it
-            if (!list.some(({ Address }) => Address === data.Address)) {
-                list.push(
-                    _.extend({}, data, {
-                        $id: getID(),
-                        invalid: !REGEX_EMAIL.test(data.Address) || checkTypoEmails(data.Address)
-                    })
-                );
+            if (!exist(data.Address)) {
+                addEmail(data);
             }
         };
 
@@ -194,6 +203,24 @@ function autocompleteEmailsModel($injector, authentication, checkTypoEmails, $fi
          */
         const isEmpty = () => !list.length;
 
+        /**
+         * Refresh model list by comparing with an other list
+         * @param  {Array}  emails [ { Name, Address } ]
+         */
+        const refresh = (emails = []) => {
+            const removeMap = _.keyBy(emails, 'Address');
+            const addMap = _.keyBy(list, 'Address');
+
+            // Remove missing email first
+            list = list.filter(({ Address }) => removeMap[Address]);
+            // Then add new one
+            emails.forEach((email) => {
+                if (!addMap[email.Address]) {
+                    addEmail(email);
+                }
+            });
+        };
+
         return {
             filterContact,
             formatInput: unicodeTagView,
@@ -202,7 +229,9 @@ function autocompleteEmailsModel($injector, authentication, checkTypoEmails, $fi
             remove,
             removeLast,
             isEmpty,
-            clear
+            clear,
+            exist,
+            refresh
         };
     };
 }

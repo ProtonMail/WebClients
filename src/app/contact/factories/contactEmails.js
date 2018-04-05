@@ -5,7 +5,7 @@ function contactEmails(Contact, dispatchers) {
     const emails = [];
 
     const set = (data) => emails.push(...data);
-    const fetch = () => emails;
+    const get = () => angular.copy(emails);
     const clear = () => (emails.length = 0);
     const findIndex = (ID) => _.findIndex(emails, { ID });
     const findEmail = (email, normalizer = null) => {
@@ -28,7 +28,7 @@ function contactEmails(Contact, dispatchers) {
     const loadCache = async () => {
         const list = await Contact.hydrate();
         set(list);
-        return fetch();
+        return get();
     };
 
     const reset = () => {
@@ -64,6 +64,6 @@ function contactEmails(Contact, dispatchers) {
         clear();
     });
 
-    return { set, fetch, clear, findIndex, findEmail, load: loadCache };
+    return { set, get, clear, findIndex, findEmail, load: loadCache };
 }
 export default contactEmails;

@@ -87,6 +87,7 @@ export const EMAIL_FORMATING = {
 };
 
 export const AUTOCOMPLETE_DOMAINS = ['protonmail.com', 'protonmail.ch', 'gmail.com', 'hotmail.com', 'live.com', 'yahoo.com', 'outlook.com'];
+export const AUTOCOMPLETE_MAX_RECIPIENTS = 25;
 
 export const MAX_OUTSIDE_REPLY = 4;
 export const MAILBOX_PASSWORD_KEY = 'proton:mailbox_pwd';

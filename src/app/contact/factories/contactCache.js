@@ -132,7 +132,7 @@ function contactCache(
      * @param  {Object} [ { ID }
      */
     function sync([ { ID } = {} ] = []) {
-        const emails = contactEmails.fetch();
+        const emails = contactEmails.get();
 
         // Synchronise emails
         CACHE.contacts = _.map(get(), (contact) => {
