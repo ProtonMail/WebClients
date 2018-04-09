@@ -53,7 +53,7 @@ function encryptMessage(
         try {
             const uniqueEmails = _.uniq(emails);
             const sendPrefs = await sendPreferences.get(uniqueEmails, message);
-            checkPreconditions(message, emails, sendPrefs);
+            checkPreconditions(message, sendPrefs);
             // todo regression testing: https://github.com/ProtonMail/Angular/issues/5088
 
             return generatePackages(message, emails, sendPrefs);
