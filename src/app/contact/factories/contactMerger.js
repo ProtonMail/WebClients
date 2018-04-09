@@ -102,31 +102,35 @@ function contactMerger(
     }
 
     /**
-     * Get the contacts to delete and to create from the grouping in the way that the API expects.
+     * Get the contacts to update and delete from the grouping in the way that the API expects.
      * @param emails
      * @returns {object}
      */
     function prepareMerge(emails = {}) {
-        return Object.keys(emails).reduce((acc, key) => {
-            const { selected = [], deleted = [] } = emails[key];
-
+        const getContactToUpdate = (selected = []) => {
+            // When there are less than 2 selected contacts, don't update or merge any contact.
+            if (selected.length <= 1) {
+                return;
+            }
             // Merge the vCards together, and create the update contact in the way the API expects.
             const update = contactSchema.prepareContact(
                 getMergedContact(selected)
             );
-
-            // The first contact is the one that will be updated.
-            const updateId = selected[0].id;
-
+            // The first selected contact is the one that will be updated.
             // Set the ID on the "new" contact (the one to update).
-            update.ID = updateId;
+            update.ID = selected[0].id;
+            return update;
+        };
 
+        // Contacts to remove are the selected contacts (except the first one, because it is the target for the merge)
+        // + the contacts selected for deletion.
+        const getContactsToRemove = (selected = [], deleted = []) => selected.slice(1).concat(deleted).map(({ id }) => id);
+
+        return Object.keys(emails).reduce((acc, key) => {
+            const { selected, deleted } = emails[key];
             acc[key] = {
-                update,
-                remove: selected
-                    .concat(deleted) // Add the ids that were requested to be deleted.
-                    .map(({ id }) => id)
-                    .filter((id) => id !== updateId)
+                update: getContactToUpdate(selected),
+                remove: getContactsToRemove(selected, deleted)
             };
             return acc;
         }, {});
@@ -144,8 +148,8 @@ function contactMerger(
                 const selected = groups[key].filter(({ selected }) => selected);
                 const deleted = groups[key].filter(({ deleted }) => deleted);
 
-                // If less than 2 contacts were selected, then ignore this group.
-                if (selected.length <= 1) {
+                // If less than 2 contacts were selected, and there is nothing to delete, ignore this group.
+                if (selected.length <= 1 && deleted.length === 0) {
                     return acc;
                 }
                 acc[key] = { selected, deleted };
