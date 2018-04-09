@@ -339,10 +339,6 @@
     border: 0
 }
 
-.squire-container[data-editor-mode="text/plain"] .squireToolbar-dropdown-divider {
-    display: none;
-}
-
 .squireToolbar-dropdown-divider {
     height: 1px;
     margin: 4px 0;
@@ -457,6 +453,10 @@ $list: georgia arial helvetica menlo tahoma verdana times trebuchet;
 .squire-container[data-editor-mode="text/html"] .squireToolbar-select-item[data-value="text/html"] {
     pointer-events: none;
     .fa-check { opacity: 1 }
+}
+
+.squire-container[data-editor-mode="text/plain"] .squireToolbar-select-item[data-squire-actions="setTextDirectionRTL"] + .squireToolbar-dropdown-divider {
+    display: none;
 }
 
 .composer.publicKeyAttached .squireToolbar-select-item[data-squire-actions="addKey"] .fa-check {
