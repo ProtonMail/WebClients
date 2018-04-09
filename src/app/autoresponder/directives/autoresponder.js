@@ -92,6 +92,10 @@ function autoresponder(autoresponderModel, timepickerModel, autoresponderLanguag
                 });
 
                 on('autoresponder.toggle', (e, { status }) => {
+                    // First check that the autoresponder enabled will change.
+                    if (!autoresponderModel.willUpdate(status)) {
+                        return;
+                    }
                     autoresponderModel.set({ isEnabled: status });
                     if (!status) {
                         onFormSubmit();

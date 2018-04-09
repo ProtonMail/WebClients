@@ -210,6 +210,17 @@ function autoresponderModel(
         return newEnabled ? autoresponderLanguage.AUTORESPONDER_INSTALLED_MESSAGE : autoresponderLanguage.AUTORESPONDER_REMOVED_MESSAGE;
     }
 
+    /**
+     * Returns whether the "remote" autoresponder isEnabled flag would be toggled by the action.
+     * Needed because the intermittent value in this model is used before the network request has gone off.
+     * @param {boolean} isEnabled
+     * @returns {boolean}
+     */
+    function willUpdate(isEnabled) {
+        const { AutoResponder = {} } = mailSettingsModel.get();
+        return AutoResponder.isEnabled !== isEnabled;
+    }
+
     function save() {
         const autoresponder = getAutoresponderInAPIFormat();
         const { AutoResponder } = mailSettingsModel.get();
@@ -239,6 +250,6 @@ function autoresponderModel(
         set({ isEnabled: status });
     });
 
-    return { init: angular.noop, constants, load, mock, get, set, timezones };
+    return { init: angular.noop, constants, load, mock, get, set, timezones, willUpdate };
 }
 export default autoresponderModel;
