@@ -2,7 +2,7 @@ import _ from 'lodash';
 import { MIME_TYPES } from '../../constants';
 import { setHtml, setPlaintext, setCursorStart, setSquireSelection } from '../helpers/textMode';
 
-const { PLAINTEXT } = MIME_TYPES;
+const { PLAINTEXT, DEFAULT } = MIME_TYPES;
 
 /**
  * Check if this squire instance is for a message or not
@@ -93,6 +93,9 @@ function squire(squireEditor, embedded, editorListener, dispatchers, sanitize, t
             }
 
             squireEditor.create($iframe, scope.message, typeContent).then(onLoadEditor);
+
+            // Set default editor mode to html to prevent the plaintext area from showing.
+            setEditorModeType(DEFAULT);
 
             async function onLoadEditor(editor) {
                 const unsubscribe = [];

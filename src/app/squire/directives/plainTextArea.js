@@ -13,6 +13,11 @@ function plainTextArea($rootScope, mailSettingsModel) {
         replace: true,
         templateUrl: require('../../../templates/squire/plainTextArea.tpl.html'),
         link(scope, el) {
+            // Fix for the autoresponder which doesn't contain a message on initial load.
+            if (!scope.message) {
+                return;
+            }
+
             el[0].value = scope.message.DecryptedBody;
 
             scope.message.ccbcc = false;
