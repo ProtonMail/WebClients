@@ -80,10 +80,12 @@ function contactEditor(
      */
     async function updateAndRemove({ update, remove = [] }) {
         // Total is the contact to update + the ones to remove.
-        const total = 1 + remove.length;
+        const total = (update ? 1 : 0) + remove.length;
         try {
-            // Update the contact.
-            await Contact.update(update);
+            if (update) {
+                // Update the contact.
+                await Contact.update(update);
+            }
 
             // Remove the other contacts.
             const { removed = [], errors = [] } = await Contact.remove({ IDs: remove });
