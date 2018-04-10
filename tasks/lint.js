@@ -23,8 +23,8 @@ const toChunk = (col, size = 150) => {
   return chunks.concat([ tmp ]);
 };
 
-const lint = (files) => new Promise((resolve, reject) => {
-    const child = spawn(`./node_modules/.bin/eslint`, files.concat('--quiet'), { stdio: 'inherit' });
+const lint = (files, args = []) => new Promise((resolve, reject) => {
+    const child = spawn(`./node_modules/.bin/eslint`, files.concat('--quiet').concat(args), { stdio: 'inherit' });
     child.on('close', resolve);
     child.on('error', reject);
 });
@@ -33,7 +33,7 @@ const lint = (files) => new Promise((resolve, reject) => {
     try {
         const list = toChunk(await getListFiles());
         const output = await Promise.all(list.map((files, i) => {
-            return lint(files).then((code) => {
+            return lint(files, process.argv.slice(2)).then((code) => {
                 if (code !== 0) {
                     throw new Error('Error lint');
                 }
