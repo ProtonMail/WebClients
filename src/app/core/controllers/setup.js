@@ -33,23 +33,25 @@ function SetupController(
     $scope.chooseDomain = !user.Addresses.length;
 
     // Passwords
-    $scope.password = '';
-    $scope.passwordConfirm = '';
+    $scope.model = {
+        password: '',
+        passwordConfirm: ''
+    };
 
     $scope.submit = () => {
+        $scope.setupError = false;
         // Save password in separate variable to prevent extensions/etc
         // from modifying it during setup process
-        passwordCopy = $scope.password;
+        passwordCopy = $scope.model.password;
         const promise = setupAddress()
             .then(generateKeys)
             .then(installKeys)
             .then(doGetUserInfo)
             .then(finishRedirect);
 
-        return networkActivityTracker.track(promise)
-            .catch(() => {
-                $scope.setupError = true;
-            });
+        networkActivityTracker.track(promise).catch(() => {
+            $scope.setupError = true;
+        });
     };
 
     async function setupAddress() {
@@ -99,6 +101,5 @@ function SetupController(
         }
         $state.go('secured.dashboard');
     }
-
 }
 export default SetupController;

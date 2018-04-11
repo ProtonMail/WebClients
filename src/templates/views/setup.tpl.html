@@ -42,14 +42,13 @@
                     translate-context="Info"
                     translate>The password you set here will also be your new ProtonVPN account password.</p>
 
-                <p class="help" translate-context="Info" translate>This is used to encrypt and decrypt
-            your messages. Do not lose this password--we cannot recover it.</p>
+                <p class="help" translate-context="Info" translate>This is used to encrypt and decrypt your messages. Do not lose this password--we cannot recover it.</p>
 
                 <password
                     class="loginSetup-field-password"
                     data-id="password"
                     data-name="password"
-                    data-value="password"
+                    data-value="model.password"
                     placeholder-translate="Choose a mailbox password"
                     data-form="setup"></password>
 
@@ -57,7 +56,7 @@
                     class="loginSetup-field-password"
                     data-id="passwordc"
                     data-name="passwordc"
-                    data-value="passwordConfirm"
+                    data-value="model.passwordConfirm"
                     data-compare="password"
                     placeholder-translate="Confirm mailbox password"
                     data-form="setup"></password>
