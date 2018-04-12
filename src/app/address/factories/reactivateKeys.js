@@ -13,7 +13,12 @@ function reactivateKeys(authentication, Key, eventManager, gettextCatalog, passw
         errors: {
             [FAILED_DECRYPTION_PASSWORD]: {
                 one: gettextCatalog.getString('Incorrect decryption password', null, 'Error'),
-                many: (n) => gettextCatalog.getString('{{n}} keys failed to decrypt due to an incorrect password', { n }, 'Error')
+                many: (n) =>
+                    gettextCatalog.getString(
+                        '{{n}} keys failed to decrypt due to an incorrect password',
+                        { n },
+                        'Error'
+                    )
             },
             [FAILED_KEY_REACTIVATE]: {
                 one: gettextCatalog.getString('Failed to reactivate key', null, 'Error'),
@@ -60,15 +65,17 @@ function reactivateKeys(authentication, Key, eventManager, gettextCatalog, passw
      * @returns {{success: Array, failed: Array}}
      */
     const getSummary = (result = []) => {
-        return result
-            .reduce((acc, result = {}) => {
+        return result.reduce(
+            (acc, result = {}) => {
                 if (result.error) {
                     acc.failed.push(result);
                 } else {
                     acc.success.push(result);
                 }
                 return acc;
-            }, { success: [], failed: [] });
+            },
+            { success: [], failed: [] }
+        );
     };
 
     return async (keys = [], oldPassword) => {
@@ -99,7 +106,7 @@ function reactivateKeys(authentication, Key, eventManager, gettextCatalog, passw
                 const privateKey = await pmcw.encryptPrivateKey(decryptedKey, password);
 
                 // Update the key in the API.
-                const data = await Key.reactivate(key.ID, { PrivateKey: privateKey }) || {};
+                const data = (await Key.reactivate(key.ID, { PrivateKey: privateKey })) || {};
 
                 key.decrypted = true;
 

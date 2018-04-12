@@ -96,7 +96,9 @@ function embeddedStore(dispatchers, embeddedUtils) {
                 // Store the generated URL
                 Blobs[cid] = {
                     url: imageUrl,
-                    isContentLocation: typeof Headers['content-location'] !== 'undefined' && typeof Headers['content-id'] === 'undefined'
+                    isContentLocation:
+                        typeof Headers['content-location'] !== 'undefined' &&
+                        typeof Headers['content-id'] === 'undefined'
                 };
                 // this is supposed to remove the blob so it
                 // can be garbage collected. we dont save it (for now)

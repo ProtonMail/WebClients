@@ -1,5 +1,14 @@
 /* @ngInject */
-function totalRows($filter, blackFridayModel, CONSTANTS, dashboardConfiguration, dashboardModel, dispatchers, gettextCatalog, subscriptionModel) {
+function totalRows(
+    $filter,
+    blackFridayModel,
+    CONSTANTS,
+    dashboardConfiguration,
+    dashboardModel,
+    dispatchers,
+    gettextCatalog,
+    subscriptionModel
+) {
     const { MONTHLY, YEARLY, TWO_YEARS } = CONSTANTS.CYCLE;
     const I18N = {
         billedAs(amount, cycle) {
@@ -16,7 +25,8 @@ function totalRows($filter, blackFridayModel, CONSTANTS, dashboardConfiguration,
     };
 
     const types = ['addon.updated', 'cycle.updated', 'currency.updated', 'vpn.updated'];
-    const amount = (plan, cycle, currency, division) => $filter('currency')(dashboardModel.total(plan, cycle) / 100 / division, currency);
+    const amount = (plan, cycle, currency, division) =>
+        $filter('currency')(dashboardModel.total(plan, cycle) / 100 / division, currency);
     const HAS_TWO_YEARS_CLASS = 'totalRows-has-2-years';
 
     return {
@@ -35,7 +45,10 @@ function totalRows($filter, blackFridayModel, CONSTANTS, dashboardConfiguration,
             scope.onChange = () => dispatcher.dashboard('change.cycle', { cycle: scope.cycle });
 
             function bindClass() {
-                const action = subscriptionModel.cycle() === TWO_YEARS || blackFridayModel.isBlackFridayPeriod(true) ? 'add' : 'remove';
+                const action =
+                    subscriptionModel.cycle() === TWO_YEARS || blackFridayModel.isBlackFridayPeriod(true)
+                        ? 'add'
+                        : 'remove';
 
                 element[0].classList[action](HAS_TWO_YEARS_CLASS);
             }
@@ -45,8 +58,12 @@ function totalRows($filter, blackFridayModel, CONSTANTS, dashboardConfiguration,
                     monthly.text(amount(plan, MONTHLY, dashboardConfiguration.currency(), MONTHLY));
                     yearly.text(amount(plan, YEARLY, dashboardConfiguration.currency(), YEARLY));
                     twoYears.text(amount(plan, TWO_YEARS, dashboardConfiguration.currency(), TWO_YEARS));
-                    yearlyBilled.text(I18N.billedAs(amount(plan, YEARLY, dashboardConfiguration.currency(), MONTHLY), YEARLY));
-                    twoYearsBilled.text(I18N.billedAs(amount(plan, TWO_YEARS, dashboardConfiguration.currency(), MONTHLY), TWO_YEARS));
+                    yearlyBilled.text(
+                        I18N.billedAs(amount(plan, YEARLY, dashboardConfiguration.currency(), MONTHLY), YEARLY)
+                    );
+                    twoYearsBilled.text(
+                        I18N.billedAs(amount(plan, TWO_YEARS, dashboardConfiguration.currency(), MONTHLY), TWO_YEARS)
+                    );
                     scope.cycle = dashboardConfiguration.cycle();
                 });
             }

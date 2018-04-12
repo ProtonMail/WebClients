@@ -2,7 +2,6 @@ import { SEND_TYPES } from '../../constants';
 
 /* @ngInject */
 function composerInputRecipient(sendPreferences, dispatchers) {
-
     return {
         replace: true,
         templateUrl: require('../../../templates/directives/composer/composerInputRecipient.tpl.html'),
@@ -14,20 +13,22 @@ function composerInputRecipient(sendPreferences, dispatchers) {
             const { on, unsubscribe, dispatcher } = dispatchers(['composerInputRecipient']);
 
             const updateLock = () => {
-                sendPreferences.get([ scope.email.Address ])
-                    .then(({ [scope.email.Address]: sendPref }) =>
-                        scope.$applyAsync(() => {
-                            scope.email.encrypt = sendPref.encrypt;
-                            scope.email.sign = sendPref.sign;
-                            scope.email.encrypt = sendPref.encrypt;
-                            scope.email.sign = sendPref.sign;
-                            scope.email.isPgp = [SEND_TYPES.SEND_PGP_MIME, SEND_TYPES.SEND_PGP_INLINE].includes(sendPref.scheme);
-                            scope.email.isPgpMime = sendPref.scheme === SEND_TYPES.SEND_PGP_MIME;
-                            scope.email.isEO = sendPref.scheme === SEND_TYPES.SEND_EO;
-                            scope.email.isPinned = sendPref.pinned;
-                            scope.email.loadCryptInfo = false;
-                            dispatcher.composerInputRecipient('refresh', { email: scope.email });
-                    }));
+                sendPreferences.get([scope.email.Address]).then(({ [scope.email.Address]: sendPref }) =>
+                    scope.$applyAsync(() => {
+                        scope.email.encrypt = sendPref.encrypt;
+                        scope.email.sign = sendPref.sign;
+                        scope.email.encrypt = sendPref.encrypt;
+                        scope.email.sign = sendPref.sign;
+                        scope.email.isPgp = [SEND_TYPES.SEND_PGP_MIME, SEND_TYPES.SEND_PGP_INLINE].includes(
+                            sendPref.scheme
+                        );
+                        scope.email.isPgpMime = sendPref.scheme === SEND_TYPES.SEND_PGP_MIME;
+                        scope.email.isEO = sendPref.scheme === SEND_TYPES.SEND_EO;
+                        scope.email.isPinned = sendPref.pinned;
+                        scope.email.loadCryptInfo = false;
+                        dispatcher.composerInputRecipient('refresh', { email: scope.email });
+                    })
+                );
             };
             on('contacts', (event, { type }) => {
                 if (type !== 'contactEvents' && type !== 'contactUpdated') {

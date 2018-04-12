@@ -26,7 +26,6 @@ function messageActions(
     const unicodeTagView = $filter('unicodeTagView');
     const notifySuccess = (message) => notification.success(unicodeTagView(message));
 
-
     const basicFolders = [
         CONSTANTS.MAILBOX_IDENTIFIERS.inbox,
         CONSTANTS.MAILBOX_IDENTIFIERS.trash,
@@ -98,7 +97,11 @@ function messageActions(
                     return [CONSTANTS.MAILBOX_IDENTIFIERS.allSent, CONSTANTS.MAILBOX_IDENTIFIERS.sent];
                 // Type 3 is inbox and sent, (a message sent to yourself), if you move it from trash to inbox, it will acquire both the inbox and sent labels ( 0 and 2 ).
                 case CONSTANTS.INBOX_AND_SENT:
-                    return [CONSTANTS.MAILBOX_IDENTIFIERS.inbox, CONSTANTS.MAILBOX_IDENTIFIERS.allSent, CONSTANTS.MAILBOX_IDENTIFIERS.sent];
+                    return [
+                        CONSTANTS.MAILBOX_IDENTIFIERS.inbox,
+                        CONSTANTS.MAILBOX_IDENTIFIERS.allSent,
+                        CONSTANTS.MAILBOX_IDENTIFIERS.sent
+                    ];
             }
         }
 
@@ -111,7 +114,8 @@ function messageActions(
         const labels = labelsModel.ids('labels');
         const toTrash = labelID === CONSTANTS.MAILBOX_IDENTIFIERS.trash;
         const toSpam = labelID === CONSTANTS.MAILBOX_IDENTIFIERS.spam;
-        const folderIDs = toSpam || toTrash ? basicFolders.concat(folders).concat(labels) : basicFolders.concat(folders);
+        const folderIDs =
+            toSpam || toTrash ? basicFolders.concat(folders).concat(labels) : basicFolders.concat(folders);
         const eventList = flow(
             map((id) => {
                 const message = cache.getMessageCached(id) || {};
@@ -249,15 +253,18 @@ function messageActions(
     function addLabel(messages, labels, alsoArchive) {
         const context = tools.cacheContext();
         const currentLocation = tools.currentLocation();
-        const isStateAllowedRemove = _.includes(basicFolders, currentLocation) || labelsModel.contains(currentLocation, 'folders');
+        const isStateAllowedRemove =
+            _.includes(basicFolders, currentLocation) || labelsModel.contains(currentLocation, 'folders');
         const ids = _.map(messages, 'ID');
 
         const process = (events) => {
             cache.events(events).then(() => {
                 const getLabels = ({ ID }) => {
-                    return flow(reduce((acc, { LabelIDs = [] }) => acc.concat(LabelIDs), []), uniq, map((ID) => ({ ID })))(
-                        cache.queryMessagesCached(ID) || []
-                    );
+                    return flow(
+                        reduce((acc, { LabelIDs = [] }) => acc.concat(LabelIDs), []),
+                        uniq,
+                        map((ID) => ({ ID }))
+                    )(cache.queryMessagesCached(ID) || []);
                 };
 
                 const events2 = _.reduce(
@@ -300,8 +307,14 @@ function messageActions(
             (acc, message) => {
                 const msgLabels = (message.LabelIDs || []).filter((v) => isNaN(+v));
                 // Selected can equals to true / false / null
-                const toApply = filterLabelsID(labels, ({ ID, Selected }) => Selected === true && !_.includes(msgLabels, ID));
-                const toRemove = filterLabelsID(labels, ({ ID, Selected }) => Selected === false && _.includes(msgLabels, ID));
+                const toApply = filterLabelsID(
+                    labels,
+                    ({ ID, Selected }) => Selected === true && !_.includes(msgLabels, ID)
+                );
+                const toRemove = filterLabelsID(
+                    labels,
+                    ({ ID, Selected }) => Selected === false && _.includes(msgLabels, ID)
+                );
 
                 if (alsoArchive === true) {
                     toApply.push(CONSTANTS.MAILBOX_IDENTIFIERS.archive);
@@ -324,7 +337,9 @@ function messageActions(
                     }
                 });
 
-                acc.promises = acc.promises.concat(mapPromisesLabels(toApply, ADD_ID)).concat(mapPromisesLabels(toRemove, REMOVE_ID));
+                acc.promises = acc.promises
+                    .concat(mapPromisesLabels(toApply, ADD_ID))
+                    .concat(mapPromisesLabels(toRemove, REMOVE_ID));
 
                 return acc;
             },
@@ -411,7 +426,9 @@ function messageActions(
             reduce((acc, { ID, ConversationID, IsRead }) => {
                 const conversation = cache.getConversationCached(ConversationID);
                 const messages = cache.queryMessagesCached(ConversationID);
-                const stars = _.filter(messages, ({ LabelIDs = [] }) => _.includes(LabelIDs, CONSTANTS.MAILBOX_IDENTIFIERS.starred));
+                const stars = _.filter(messages, ({ LabelIDs = [] }) =>
+                    _.includes(LabelIDs, CONSTANTS.MAILBOX_IDENTIFIERS.starred)
+                );
 
                 // Messages
                 acc.push({
@@ -451,7 +468,11 @@ function messageActions(
                     Conversation: {
                         ID,
                         Labels: _.map(Labels, (label) => {
-                            label.ContextNumUnread += _.filter(messages, ({ ConversationID = '', LabelIDs = [] }) => ID === ConversationID && _.includes(LabelIDs, label.ID)).length;
+                            label.ContextNumUnread += _.filter(
+                                messages,
+                                ({ ConversationID = '', LabelIDs = [] }) =>
+                                    ID === ConversationID && _.includes(LabelIDs, label.ID)
+                            ).length;
                             return label;
                         })
                     }
@@ -459,7 +480,6 @@ function messageActions(
             })
         )(conversationIDs);
     };
-
 
     /**
      * Mark as read a list of messages

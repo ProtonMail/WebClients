@@ -20,8 +20,10 @@ function autoPinPrimaryKeys(Contact, keyCache, pmcw, contactEmails, confirmModal
                     'You must re-sign the contact in order to send a message to this address or edit the contact. This can also happen when ' +
                     ' you have recovered your password and reset your keys. ',
                 { emails: '<b>' + emails.join(', ') + '</b>' }
-            ) + '<a target=\'_blank\' href=\'https://protonmail.com/support/knowledge-base/anti-spoofing/\' translate translate-context="Action">'
-            + gettextCatalog.getString('Learn more') + '</a>'
+            ) +
+            "<a target='_blank' href='https://protonmail.com/support/knowledge-base/anti-spoofing/' translate translate-context=\"Action\">" +
+            gettextCatalog.getString('Learn more') +
+            '</a>'
     };
 
     const pinPrimaryKeys = (emails, keys) => {
@@ -42,7 +44,8 @@ function autoPinPrimaryKeys(Contact, keyCache, pmcw, contactEmails, confirmModal
                         const emailList = toList(contact.vCard.get('email'));
                         const group = getGroup(emailList, normalizedEmail);
                         const data = pmcw.stripArmor(keys[email].Keys[0].PublicKey);
-                        const base64 = 'data:application/pgp-keys;base64,' + pmcw.encode_base64(pmcw.arrayToBinaryString(data));
+                        const base64 =
+                            'data:application/pgp-keys;base64,' + pmcw.encode_base64(pmcw.arrayToBinaryString(data));
                         contact.vCard.add('key', base64, { group });
                     });
                     return Contact.update(contact);

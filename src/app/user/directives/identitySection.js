@@ -2,8 +2,16 @@ import _ from 'lodash';
 import autoLink from '../../../helpers/autoLink';
 
 /* @ngInject */
-function identitySection(addressesModel, authentication, editorModel, gettextCatalog, notification, signatureModel, tools, dispatchers) {
-
+function identitySection(
+    addressesModel,
+    authentication,
+    editorModel,
+    gettextCatalog,
+    notification,
+    signatureModel,
+    tools,
+    dispatchers
+) {
     const I18N = {
         SUCCESS_SAVE: gettextCatalog.getString('Name / Signature saved', null, "User's signature")
     };
@@ -48,7 +56,7 @@ function identitySection(addressesModel, authentication, editorModel, gettextCat
                     ID: CACHE.ID,
                     DisplayName,
                     Signature: autoLink(Signature)
-                 };
+                };
                 await signatureModel.save(config);
                 notification.success(I18N.SUCCESS_SAVE);
                 updateAddress(config);

@@ -6,7 +6,10 @@ function detectTimeWidth($filter) {
      * @return {void}
      */
     function computeWidth(id) {
-        document.body.insertAdjacentHTML('beforeEnd', '<div id="timeWidthTest" style="position:absolute;left:0;top:0;z-index:1;visibility:hidden">');
+        document.body.insertAdjacentHTML(
+            'beforeEnd',
+            '<div id="timeWidthTest" style="position:absolute;left:0;top:0;z-index:1;visibility:hidden">'
+        );
         const $div = document.getElementById('timeWidthTest');
 
         // Dec 28, 2888 - longest possible width

@@ -4,7 +4,6 @@ import { SEND_TYPES } from '../../constants';
 
 /* @ngInject */
 function generateTopPackages(editorModel, AttachmentLoader, mimeMessageBuilder) {
-
     /**
      * Removes any characters that are produced by the copying process (like zero width characters)
      * See: http://www.berklix.org/help/majordomo/#quoted we want to avoid sending unnecessary quoted printable encodings
@@ -17,7 +16,6 @@ function generateTopPackages(editorModel, AttachmentLoader, mimeMessageBuilder) 
         }
         return filterCharacters(htmlToTextMail(editor, true));
     };
-
 
     // We NEVER upconvert, if the user wants html: plaintext is actually fine as well
     const generateHTML = (message) => (message.MIMEType === 'text/html' ? message.getDecryptedBody() : false);
@@ -82,7 +80,10 @@ function generateTopPackages(editorModel, AttachmentLoader, mimeMessageBuilder) 
             sendPref,
             (packages, info) => ({
                 plaintext: packages.plaintext || info.mimetype === 'text/plain',
-                html: packages.html || info.mimetype === 'text/html' || (info.scheme === SEND_TYPES.SEND_PGP_MIME && !info.encrypt && !info.sign),
+                html:
+                    packages.html ||
+                    info.mimetype === 'text/html' ||
+                    (info.scheme === SEND_TYPES.SEND_PGP_MIME && !info.encrypt && !info.sign),
                 mime: packages.mime || (info.scheme === SEND_TYPES.SEND_PGP_MIME && (info.encrypt || info.sign))
             }),
             {

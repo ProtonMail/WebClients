@@ -68,7 +68,11 @@ function searchValue($stateParams) {
         }
 
         if (angular.isDefined($stateParams.keyword)) {
-            if (angular.isUndefined($stateParams.from) && angular.isUndefined($stateParams.to) && angular.isUndefined($stateParams.label)) {
+            if (
+                angular.isUndefined($stateParams.from) &&
+                angular.isUndefined($stateParams.to) &&
+                angular.isUndefined($stateParams.label)
+            ) {
                 result += $stateParams.keyword + ' ';
             } else {
                 result += `keyword:${$stateParams.keyword} `;

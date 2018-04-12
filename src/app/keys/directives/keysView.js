@@ -23,7 +23,11 @@ function keysView(dispatchers, addressesModel, authentication, pmcw) {
             };
 
             const updateAddresses = (addresses = addressesModel.get()) => {
-                const addressAction = addresses.some(({ Keys = [] }) => Keys.filter(({ decrypted }) => !decrypted).length) ? 'add' : 'remove';
+                const addressAction = addresses.some(
+                    ({ Keys = [] }) => Keys.filter(({ decrypted }) => !decrypted).length
+                )
+                    ? 'add'
+                    : 'remove';
 
                 scope.addressKeys = getAddressKeys(addresses, pmcw);
 

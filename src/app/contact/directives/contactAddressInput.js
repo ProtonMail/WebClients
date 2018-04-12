@@ -19,7 +19,8 @@ function contactAddressInput() {
         templateUrl: require('../../../templates/contact/contactAddressInput.tpl.html'),
         link(scope, element) {
             const defaultInput = element.find(`.${DEFAULT}`);
-            const defaultValue = Array.isArray(scope.value) && scope.value.length > 1 ? scope.value : ['', '', scope.value];
+            const defaultValue =
+                Array.isArray(scope.value) && scope.value.length > 1 ? scope.value : ['', '', scope.value];
 
             const [
                 postBoxValue = '',

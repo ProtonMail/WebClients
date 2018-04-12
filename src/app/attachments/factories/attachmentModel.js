@@ -99,7 +99,11 @@ function attachmentModel(
     });
 
     const fillInMimeType = async (queueEntry) => {
-        if (queueEntry.file.name.match(/\.asc$/i) && queueEntry.file.size < MAX_KEY_SIZE && queueEntry.file.type !== 'application/pgp-keys') {
+        if (
+            queueEntry.file.name.match(/\.asc$/i) &&
+            queueEntry.file.size < MAX_KEY_SIZE &&
+            queueEntry.file.type !== 'application/pgp-keys'
+        ) {
             try {
                 const data = await readFile(queueEntry.file);
                 // check if it's valid key data

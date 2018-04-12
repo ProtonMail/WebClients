@@ -28,7 +28,11 @@ function memberActions(
         CHANGE_ROLE: {
             default: {
                 title: gettextCatalog.getString('Change Role', null, 'Title'),
-                message: gettextCatalog.getString('Are you sure you want to remove administrative privileges from this user?', null, 'Info')
+                message: gettextCatalog.getString(
+                    'Are you sure you want to remove administrative privileges from this user?',
+                    null,
+                    'Info'
+                )
             },
             isPaidAdmin: {
                 message: gettextCatalog.getString(

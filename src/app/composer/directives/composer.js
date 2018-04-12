@@ -81,7 +81,10 @@ function composer(AppModel, embedded, attachmentFileFormat, dispatchers, mailSet
 
             const onDragLeave = _.debounce((e) => {
                 const { target } = e;
-                if (target.classList.contains('composer-dropzone') || target.classList.contains('composer-dropzone-wrapper')) {
+                if (
+                    target.classList.contains('composer-dropzone') ||
+                    target.classList.contains('composer-dropzone-wrapper')
+                ) {
                     if (AppModel.get('composerList').length > 1) {
                         !scope.message.focussed && addDragleaveClassName(el[0]);
                     } else {
@@ -100,7 +103,10 @@ function composer(AppModel, embedded, attachmentFileFormat, dispatchers, mailSet
                 // ESC
                 if (keyCode === 27) {
                     // Autocomplete input
-                    if (document.activeElement && document.activeElement.classList.contains('autocompleteEmails-input')) {
+                    if (
+                        document.activeElement &&
+                        document.activeElement.classList.contains('autocompleteEmails-input')
+                    ) {
                         return;
                     }
                     if (mailSettingsModel.get('Hotkeys') === 1) {

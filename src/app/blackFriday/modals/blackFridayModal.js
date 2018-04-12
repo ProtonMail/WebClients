@@ -1,5 +1,13 @@
 /* @ngInject */
-function blackFridayModal($state, authentication, CONSTANTS, dispatchers, pmModal, blackFridayModel, subscriptionModel) {
+function blackFridayModal(
+    $state,
+    authentication,
+    CONSTANTS,
+    dispatchers,
+    pmModal,
+    blackFridayModel,
+    subscriptionModel
+) {
     const { TWO_YEARS } = CONSTANTS.CYCLE;
     return pmModal({
         controllerAs: 'ctrl',

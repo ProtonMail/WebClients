@@ -66,7 +66,6 @@ function PaymentsController(
     $scope.add = () => openCardModal();
     $scope.edit = openCardModal;
 
-
     $scope.default = (method) => {
         const methods = $scope.methods.slice();
         const index = _.findIndex(methods, { ID: method.ID });
@@ -81,7 +80,10 @@ function PaymentsController(
                 return data;
             })
             .catch(({ data = {} } = {}) => {
-                throw new Error(data.Error || gettextCatalog.getString('Unable to save your changes, please try again.', null, 'Error'));
+                throw new Error(
+                    data.Error ||
+                        gettextCatalog.getString('Unable to save your changes, please try again.', null, 'Error')
+                );
             });
 
         networkActivityTracker.track(promise);

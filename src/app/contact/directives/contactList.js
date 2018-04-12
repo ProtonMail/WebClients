@@ -140,10 +140,13 @@ function contactList($filter, dispatchers, $state, $stateParams, contactCache, h
                         element[0].scrollTop -= $items.height();
                     }
                 } else {
-                    element.animate({ scrollTop: pos * $items.height() - HEADER_HEIGHT }, {
-                        duration: 500,
-                        complete: () => setContactCursor(ID)
-                    });
+                    element.animate(
+                        { scrollTop: pos * $items.height() - HEADER_HEIGHT },
+                        {
+                            duration: 500,
+                            complete: () => setContactCursor(ID)
+                        }
+                    );
                 }
             };
 
@@ -187,7 +190,7 @@ function contactList($filter, dispatchers, $state, $stateParams, contactCache, h
 
             on('contacts', (event, { type = '' }) => {
                 type === 'contactsUpdated' && scope.$applyAsync(() => updateContacts());
-                type === 'deletedContactEmail' && (delete MODEL.cursorID);
+                type === 'deletedContactEmail' && delete MODEL.cursorID;
             });
 
             on('$stateChangeSuccess', () => {

@@ -87,7 +87,11 @@ function actionConversation(
             const { Labels = [] } = cache.getConversationCached(ID) || {};
 
             if (messages.length) {
-                const { ID } = flow(filter(({ LabelIDs = [] }) => _.includes(LabelIDs, currentLocation)), sortBy(({ Time }) => Time), last)(messages);
+                const { ID } = flow(
+                    filter(({ LabelIDs = [] }) => _.includes(LabelIDs, currentLocation)),
+                    sortBy(({ Time }) => Time),
+                    last
+                )(messages);
 
                 acc.push({
                     ID,
@@ -248,7 +252,8 @@ function actionConversation(
      */
     function label(ids, labels, alsoArchive) {
         const currentLocation = tools.currentLocation();
-        const isStateAllowedRemove = _.includes(basicFolders, currentLocation) || labelsModel.contains(currentLocation, 'folders');
+        const isStateAllowedRemove =
+            _.includes(basicFolders, currentLocation) || labelsModel.contains(currentLocation, 'folders');
         const REMOVE = 0;
         const ADD = 1;
         const current = tools.currentLocation();
@@ -430,7 +435,9 @@ function actionConversation(
                 const conversation = cache.getConversationCached(ID);
 
                 if (conversation) {
-                    const labelIDsRemoved = flow(filter(({ ID }) => _.includes(folderIDs, ID)), map(({ ID }) => ID))(conversation.Labels);
+                    const labelIDsRemoved = flow(filter(({ ID }) => _.includes(folderIDs, ID)), map(({ ID }) => ID))(
+                        conversation.Labels
+                    );
 
                     acc.push({
                         Action: 3,

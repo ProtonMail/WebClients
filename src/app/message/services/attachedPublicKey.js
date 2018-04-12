@@ -24,7 +24,6 @@ function attachedPublicKey(
     Contact,
     networkActivityTracker
 ) {
-
     const asDataUri = (publicKey) => {
         const data = pmcw.stripArmor(publicKey);
         return 'data:application/pgp-keys;base64,' + pmcw.encode_base64(pmcw.arrayToBinaryString(data));
@@ -48,21 +47,23 @@ function attachedPublicKey(
         const trustedKeys = publicKeyStore.get(_.map(addresses, 'adr'));
 
         return Promise.all([sendInfo, trustedKeys]).then(([sendPref, publicKeys]) =>
-            addresses.filter(({ adr }) => publicKeys[adr].every((key) => key.primaryKey.fingerprint !== keyInfo.fingerprint)).map((address) => {
-                if (keyInfo.expires !== null && keyInfo.expires < Date.now()) {
-                    return _.extend({}, address, { encrypt: false, expired: true });
-                }
-                if (isInternal) {
-                    return _.extend({}, address, { encrypt: false });
-                }
-                if (sendPref[address.adr].publickeys.length === 0) {
-                    return _.extend({}, address, { encrypt: true });
-                }
-                if (sendPref[address.adr].publickeys[0].primaryKey.created > keyInfo.created) {
-                    return _.extend({}, address, { encrypt: false });
-                }
-                return _.extend({}, address, { encrypt: sendPref[address.adr].encrypt });
-            })
+            addresses
+                .filter(({ adr }) => publicKeys[adr].every((key) => key.primaryKey.fingerprint !== keyInfo.fingerprint))
+                .map((address) => {
+                    if (keyInfo.expires !== null && keyInfo.expires < Date.now()) {
+                        return _.extend({}, address, { encrypt: false, expired: true });
+                    }
+                    if (isInternal) {
+                        return _.extend({}, address, { encrypt: false });
+                    }
+                    if (sendPref[address.adr].publickeys.length === 0) {
+                        return _.extend({}, address, { encrypt: true });
+                    }
+                    if (sendPref[address.adr].publickeys[0].primaryKey.created > keyInfo.created) {
+                        return _.extend({}, address, { encrypt: false });
+                    }
+                    return _.extend({}, address, { encrypt: sendPref[address.adr].encrypt });
+                })
         );
     };
 
@@ -102,11 +103,15 @@ function attachedPublicKey(
         const autocrypt = toList(message.ParsedHeaders.Autocrypt);
         return _.filter(
             autocrypt.map((header) => {
-                const match = header.match(/^(\s*(_[^;\s]*|addr|prefer-encrypt)\s*=\s*[^;\s]*\s*;)*\s*keydata\s*=([^;]*)$/);
+                const match = header.match(
+                    /^(\s*(_[^;\s]*|addr|prefer-encrypt)\s*=\s*[^;\s]*\s*;)*\s*keydata\s*=([^;]*)$/
+                );
                 if (!match) {
                     return null;
                 }
-                const preferEncryptMutual = header.match(/^(\s*(_[^;\s]*|addr)\s*=\s*[^;\s]*\s*;)*\s*prefer-encrypt\s*=\s*mutual\s*;/);
+                const preferEncryptMutual = header.match(
+                    /^(\s*(_[^;\s]*|addr)\s*=\s*[^;\s]*\s*;)*\s*prefer-encrypt\s*=\s*mutual\s*;/
+                );
                 if (!preferEncryptMutual) {
                     return null;
                 }
@@ -123,21 +128,26 @@ function attachedPublicKey(
 
     const keySignsMessage = (message, keyInfos) => {
         const privateKeys = authentication.getPrivateKeys(message.AddressID);
-        return pmcw.decryptMessageLegacy({
-            message: message.Body,
-            privateKeys,
-            date: new Date(message.Time * 1000)
-        }).then(({ signatures }) => {
-            const signaturePackets = _.flatten(signatures.map(({ packets }) => Object.values(packets).filter((a) => typeof a === 'object')));
-            const signingKeyIds = signaturePackets.map(({ issuerKeyId: { bytes } }) => bytes);
-            return keyInfos.filter(({ publicKeyArmored }) => {
-                const keyList = pmcw.getKeys(publicKeyArmored);
-                const keyIds = _.flatten(keyList.map((key) => key.getKeyIds().map(({ bytes }) => bytes)));
-                return _.intersection(keyIds, signingKeyIds).length !== 0;
+        return pmcw
+            .decryptMessageLegacy({
+                message: message.Body,
+                privateKeys,
+                date: new Date(message.Time * 1000)
+            })
+            .then(({ signatures }) => {
+                const signaturePackets = _.flatten(
+                    signatures.map(({ packets }) => Object.values(packets).filter((a) => typeof a === 'object'))
+                );
+                const signingKeyIds = signaturePackets.map(({ issuerKeyId: { bytes } }) => bytes);
+                return keyInfos.filter(({ publicKeyArmored }) => {
+                    const keyList = pmcw.getKeys(publicKeyArmored);
+                    const keyIds = _.flatten(keyList.map((key) => key.getKeyIds().map(({ bytes }) => bytes)));
+                    return _.intersection(keyIds, signingKeyIds).length !== 0;
+                });
+            })
+            .catch(() => {
+                return [];
             });
-        }).catch(() => {
-            return [];
-        });
     };
 
     const getMatchingKeyInfo = async (keyInfos, message) => {
@@ -146,7 +156,9 @@ function attachedPublicKey(
             return uniqKeyInfos[0];
         }
         // only return keys that match with the current message;
-        const senderKeyInfos = uniqKeyInfos.filter(({ userIds }) => userIds.some((id) => id.search(`<${message.Sender.Address}>`) !== -1));
+        const senderKeyInfos = uniqKeyInfos.filter(({ userIds }) =>
+            userIds.some((id) => id.search(`<${message.Sender.Address}>`) !== -1)
+        );
         if (senderKeyInfos.length === 1) {
             return senderKeyInfos[0];
         }
@@ -160,7 +172,6 @@ function attachedPublicKey(
         }
         return false;
     };
-
 
     const extractFromEmail = async (message) => {
         if (message.IsEncrypted === SEND_TYPES.SEND_PM) {
@@ -251,7 +262,9 @@ function attachedPublicKey(
     };
 
     const attachPublicKeyToAddresses = (publicKey, addresses) => {
-        const promise = Promise.all(addresses.map((address) => attachPublicKeyToAddress(publicKey, address))).then(() => true);
+        const promise = Promise.all(addresses.map((address) => attachPublicKeyToAddress(publicKey, address))).then(
+            () => true
+        );
         networkActivityTracker.track(promise);
         return promise;
     };

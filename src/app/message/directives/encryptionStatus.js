@@ -1,6 +1,5 @@
 /* @ngInject */
 function encryptionStatus() {
-
     return {
         restrict: 'E',
         replace: true,

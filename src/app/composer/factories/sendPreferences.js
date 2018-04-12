@@ -5,7 +5,16 @@ import { toList } from '../../../helpers/arrayHelper';
 import { getGroup } from '../../../helpers/vcard';
 
 /* @ngInject */
-function sendPreferences(pmcw, $rootScope, contactEmails, Contact, contactKey, keyCache, authentication, mailSettingsModel) {
+function sendPreferences(
+    pmcw,
+    $rootScope,
+    contactEmails,
+    Contact,
+    contactKey,
+    keyCache,
+    authentication,
+    mailSettingsModel
+) {
     // We cache all the information coming from the Contacts, so we can avoid accessing the contacts multiple times.
     const CACHE = {};
 
@@ -91,15 +100,15 @@ function sendPreferences(pmcw, $rootScope, contactEmails, Contact, contactKey, k
             };
         }
         return {
-                  encrypt: false,
-                  sign: settingsSign,
-                  mimetype: settingsSign ? settingsMime : defaultMimeType,
-                  publickeys: [],
-                  primaryPinned: true,
-                  scheme: settingsSign ? settingsScheme : PACKAGE_TYPE.SEND_CLEAR,
-                  pinned: false,
-                  isVerified: true
-              };
+            encrypt: false,
+            sign: settingsSign,
+            mimetype: settingsSign ? settingsMime : defaultMimeType,
+            publickeys: [],
+            primaryPinned: true,
+            scheme: settingsSign ? settingsScheme : PACKAGE_TYPE.SEND_CLEAR,
+            pinned: false,
+            isVerified: true
+        };
     };
 
     const base64ToArray = _.flowRight(pmcw.binaryStringToArray, pmcw.decode_base64);
@@ -119,11 +128,14 @@ function sendPreferences(pmcw, $rootScope, contactEmails, Contact, contactKey, k
         }
 
         const sendKeys = _.map(Keys.filter(({ Send }) => Send), 'PublicKey');
-        const sendKeyObjects = sendKeys.map(pmcw.getKeys).filter(([ k = false ]) => !!k);
-        const [ pinnedKey ] = pmcw.getKeys(base64ToArray(base64Keys[0]));
+        const sendKeyObjects = sendKeys.map(pmcw.getKeys).filter(([k = false]) => !!k);
+        const [pinnedKey] = pmcw.getKeys(base64ToArray(base64Keys[0]));
         const pinnedFingerprint = pinnedKey.primaryKey.getFingerprint();
 
-        return sendKeyObjects.length === 0 || sendKeyObjects.map(([ k ]) => k.primaryKey.getFingerprint()).includes(pinnedFingerprint);
+        return (
+            sendKeyObjects.length === 0 ||
+            sendKeyObjects.map(([k]) => k.primaryKey.getFingerprint()).includes(pinnedFingerprint)
+        );
     };
 
     /**
@@ -141,17 +153,24 @@ function sendPreferences(pmcw, $rootScope, contactEmails, Contact, contactKey, k
      * @param eoEnabled
      * @returns {{}}
      */
-    const extractInfo = async ({ encryptFlag, signFlag, mimetype, emailKeys, scheme, isVerified }, keyData, defaultMimeType, eoEnabled) => {
+    const extractInfo = async (
+        { encryptFlag, signFlag, mimetype, emailKeys, scheme, isVerified },
+        keyData,
+        defaultMimeType,
+        eoEnabled
+    ) => {
         const info = {};
         const isInternal = keyData.RecipientType === RECIPIENT_TYPE.TYPE_INTERNAL;
         const primaryPinned = isInternal ? isPrimaryPinned(emailKeys, keyData) : true;
         const pmKey = isInternal ? pmcw.getKeys(keyData.Keys[0].PublicKey) : [];
         // In case the pgp packet list contains multiple keys, only the first one is taken.
-        const keyObjs = await Promise.all(emailKeys
-            .map(pmcw.decode_base64)
-            .map(pmcw.binaryStringToArray)
-            .map(pmcw.getKeys)
-            .map(([k]) => pmcw.isExpiredKey(k).then((isExpired) => (isExpired ? null : [ k ]))));
+        const keyObjs = await Promise.all(
+            emailKeys
+                .map(pmcw.decode_base64)
+                .map(pmcw.binaryStringToArray)
+                .map(pmcw.getKeys)
+                .map(([k]) => pmcw.isExpiredKey(k).then((isExpired) => (isExpired ? null : [k])))
+        );
         const keyObjects = keyObjs.filter((k) => k !== null);
 
         info.publickeys = keyObjects.length && primaryPinned ? keyObjects[0] : pmKey;
@@ -244,7 +263,9 @@ function sendPreferences(pmcw, $rootScope, contactEmails, Contact, contactKey, k
         const base64Keys = await reorderKeys(keyData, _.map(emailKeys, (prop) => contactKey.getBase64Value(prop)));
 
         const data = {
-            encryptFlag: isInternal || ((encryptFlag ? encryptFlag.valueOf().toLowerCase() !== 'false' : false) && emailKeys.length > 0),
+            encryptFlag:
+                isInternal ||
+                ((encryptFlag ? encryptFlag.valueOf().toLowerCase() !== 'false' : false) && emailKeys.length > 0),
             signFlag: isInternal || (signFlag ? signFlag.valueOf().toLowerCase() !== 'false' : null),
             emailKeys: base64Keys,
             mimetype: mimetype !== 'text/plain' && mimetype !== 'text/html' ? null : mimetype,
@@ -277,16 +298,27 @@ function sendPreferences(pmcw, $rootScope, contactEmails, Contact, contactKey, k
             return { [email]: await getDefaultInfo(email, keyData, defaultMimeType, eoEnabled) };
         }
 
-        if (!_.has(CACHE.EXTRACTED_INFO, contactEmail.ContactID) || !_.has(CACHE.EXTRACTED_INFO[contactEmail.ContactID], email)) {
+        if (
+            !_.has(CACHE.EXTRACTED_INFO, contactEmail.ContactID) ||
+            !_.has(CACHE.EXTRACTED_INFO[contactEmail.ContactID], email)
+        ) {
             return { [email]: null };
         }
-        return { [email]: await extractInfo(CACHE.EXTRACTED_INFO[contactEmail.ContactID][email], keyData, defaultMimeType, eoEnabled) };
+        return {
+            [email]: await extractInfo(
+                CACHE.EXTRACTED_INFO[contactEmail.ContactID][email],
+                keyData,
+                defaultMimeType,
+                eoEnabled
+            )
+        };
     };
 
     const emailInExtrInfo = (contactEmail) =>
         _.has(CACHE.EXTRACTED_INFO, contactEmail.ContactID) &&
         _.has(CACHE.EXTRACTED_INFO[contactEmail.ContactID], normalizeEmail(contactEmail.Email));
-    const inExtractedInfoCache = (contactEmailList) => _.every(contactEmailList, (e) => usesDefaults(e) || emailInExtrInfo(e));
+    const inExtractedInfoCache = (contactEmailList) =>
+        _.every(contactEmailList, (e) => usesDefaults(e) || emailInExtrInfo(e));
 
     const inCache = (emails) => {
         const normalizedEmails = _.map(emails, normalizeEmail);
@@ -339,7 +371,9 @@ function sendPreferences(pmcw, $rootScope, contactEmails, Contact, contactKey, k
 
         const keyData = await keyCache.get(normEmails);
 
-        const normInfos = await Promise.all(_.map(normEmails, (email) => getInfo(email, keyData[email], defaultMimeType, eoEnabled)));
+        const normInfos = await Promise.all(
+            _.map(normEmails, (email) => getInfo(email, keyData[email], defaultMimeType, eoEnabled))
+        );
         const normMap = _.extend(...normInfos);
         const infos = _.map(emails, (email) => ({ [email]: normMap[normalizeEmail(email)] }));
 

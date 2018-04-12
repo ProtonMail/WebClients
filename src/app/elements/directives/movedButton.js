@@ -25,7 +25,8 @@ function movedButton($state, gettextCatalog, tools) {
             `,
         link(scope, element) {
             const current = tools.filteredState();
-            const onClick = () => $state.go(MAP[current], _.extend({}, $state.params, { page: undefined, id: undefined }));
+            const onClick = () =>
+                $state.go(MAP[current], _.extend({}, $state.params, { page: undefined, id: undefined }));
 
             if (current === 'allSent' || current === 'allDrafts') {
                 element.addClass(ACTIVE_CLASS);

@@ -90,7 +90,9 @@ function autocompleteSyncModel(sendPreferences, autoPinPrimaryKeys, dispatchers)
                     .get(_.map(emails, 'Address'), scope.message)
                     .then((transList) => handleInvalidSigs(transList, model, scope))
                     .then((transList) => handleMissingPrimaryKeys(transList, model, scope))
-                    .then((result) => _.each(emails, (email) => result[email.Address] && extendPGP(email, result[email.Address])))
+                    .then((result) =>
+                        _.each(emails, (email) => result[email.Address] && extendPGP(email, result[email.Address]))
+                    )
                     .then(() => syncWithoutFetching(model, scope, _.noop, emails)),
             THROTTLING_DELAY
         );

@@ -76,7 +76,16 @@ function squireToolbar(editorState, editorModel) {
                     .toLowerCase()
                     .trim();
 
-                node.className = [CLASSNAME.CONTAINER, classNames, subRowClass, popoverImage, popoverLink, directionClass].filter(Boolean).join(' ');
+                node.className = [
+                    CLASSNAME.CONTAINER,
+                    classNames,
+                    subRowClass,
+                    popoverImage,
+                    popoverLink,
+                    directionClass
+                ]
+                    .filter(Boolean)
+                    .join(' ');
             }
         }, 100);
 
@@ -97,8 +106,13 @@ function squireToolbar(editorState, editorModel) {
                 closeAllPopups();
             };
 
-            const isInsidePopup = (node) => findParent(node, (parent) => parent.dataset &&
-                (parent.dataset.squirePopover !== undefined || parent.dataset.squireDropdown !== undefined));
+            const isInsidePopup = (node) =>
+                findParent(
+                    node,
+                    (parent) =>
+                        parent.dataset &&
+                        (parent.dataset.squirePopover !== undefined || parent.dataset.squireDropdown !== undefined)
+                );
             const clickAnywhereClose = ({ target }) => {
                 if (target.dataset.squireActions || isInsidePopup(target)) {
                     return;

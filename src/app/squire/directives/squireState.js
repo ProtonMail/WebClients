@@ -3,12 +3,8 @@ function squireState(onCurrentMessage, editorModel, editorState) {
     const KEY_ARROW_INPUT = [38, 39, 40, 37, 33, 34, 36, 35]; // URDL FastUP FastDown
 
     const parse = (ID, editor) => {
-        const {
-            size = '14px',
-            color = 'rgb(34, 34, 34)',
-            family = 'arial',
-            backgroundColor = 'rgb(255, 255, 255)'
-        } = editor.getFontInfo() || {};
+        const { size = '14px', color = 'rgb(34, 34, 34)', family = 'arial', backgroundColor = 'rgb(255, 255, 255)' } =
+            editor.getFontInfo() || {};
 
         editorState.set(ID, {
             size: parseInt(size, 10),

@@ -2,7 +2,6 @@
 function dateTimePicker(dispatchers, datetimeErrorCombiner, timepickerModel, dateUtils) {
     const minDate = new Date(1970, 1, 1);
 
-
     return {
         replace: true,
         restrict: 'E',
@@ -60,7 +59,10 @@ function dateTimePicker(dispatchers, datetimeErrorCombiner, timepickerModel, dat
                             }
                         }
 
-                        if (scope.model.date instanceof Date && datepicker.val() !== moment(scope.model.date).format(format)) {
+                        if (
+                            scope.model.date instanceof Date &&
+                            datepicker.val() !== moment(scope.model.date).format(format)
+                        ) {
                             datepicker.val(moment(scope.model.date).format(format));
                         }
                         calcTimestamp();
@@ -81,7 +83,9 @@ function dateTimePicker(dispatchers, datetimeErrorCombiner, timepickerModel, dat
 
                     // Format the selected date in the hours -> load the hours together with the stamp and convert that
                     // to an unix timestamp.
-                    scope.timestamp = Number(moment.tz(moment(scope.model.date).format('YYYY-MM-DD'), scope.zone).format('X')) + scope.model.time;
+                    scope.timestamp =
+                        Number(moment.tz(moment(scope.model.date).format('YYYY-MM-DD'), scope.zone).format('X')) +
+                        scope.model.time;
                     dispatchHelper('update', { eventKey: scope.datePickerKey, timestamp: scope.timestamp });
                 }
 

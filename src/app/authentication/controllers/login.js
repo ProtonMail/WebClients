@@ -224,7 +224,11 @@ function LoginController(
                 .then(
                     (result) => {
                         $log.debug('loginWithCredentials:result.data ', result);
-                        if (angular.isDefined(result.data) && angular.isDefined(result.data.Code) && result.data.Code === 401) {
+                        if (
+                            angular.isDefined(result.data) &&
+                            angular.isDefined(result.data.Code) &&
+                            result.data.Code === 401
+                        ) {
                             selectPassword();
                             notify({ message: result.data.ErrorDescription, classes: 'notification-danger' });
                         } else if (result.data && result.data.Code === 10002) {
@@ -272,7 +276,9 @@ function LoginController(
                         } else if (result.data && result.data.Code === 5003) {
                             // Nothing
                         } else if (result.data && result.data.Error) {
-                            const error = result.data.ErrorDescription ? result.data.ErrorDescription : result.data.Error;
+                            const error = result.data.ErrorDescription
+                                ? result.data.ErrorDescription
+                                : result.data.Error;
 
                             notify({ message: error, classes: 'notification-danger' });
                             resetLoginInputs();
@@ -343,7 +349,9 @@ function LoginController(
 
         try {
             if (!username || !password) {
-                throw new Error(gettextCatalog.getString('Please enter your username and password', null, 'Login error'));
+                throw new Error(
+                    gettextCatalog.getString('Please enter your username and password', null, 'Login error')
+                );
             }
 
             const usernameLowerCase = username.toLowerCase();
@@ -381,7 +389,10 @@ function LoginController(
         e.preventDefault();
 
         if (angular.isUndefined($scope.twoFactorCode) || $scope.twoFactorCode.length === 0) {
-            notify({ message: gettextCatalog.getString('Please enter your two-factor passcode', null, 'Error'), classes: 'notification-danger' });
+            notify({
+                message: gettextCatalog.getString('Please enter your two-factor passcode', null, 'Error'),
+                classes: 'notification-danger'
+            });
             return;
         }
         login($scope.username, $scope.password, $scope.twoFactorCode, $scope.initialInfoResponse);

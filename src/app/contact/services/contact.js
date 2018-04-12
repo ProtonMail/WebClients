@@ -132,8 +132,7 @@ function Contact($http, $rootScope, CONSTANTS, url, chunk, contactEncryption, sa
             });
         });
 
-        return Promise.all(promises)
-            .then(handleUpload(total));
+        return Promise.all(promises).then(handleUpload(total));
     }
 
     /**
@@ -182,19 +181,18 @@ function Contact($http, $rootScope, CONSTANTS, url, chunk, contactEncryption, sa
      * @return {Promise}
      */
     function update(contact) {
-        return contactEncryption.encrypt([contact])
-            .then((contacts) => {
-                return $http
-                    .put(requestURL(contact.ID), contacts[0])
-                    .then(({ data = {} } = {}) => {
-                        // NOTE We need to pass the cards to update the encrypted icon in the contact view
-                        data.cards = contacts[0].Cards;
-                        return data;
-                    })
-                    .catch(({ data = {} } = {}) => {
-                        throw new ContactUpdateError(data.Error);
-                    });
-            });
+        return contactEncryption.encrypt([contact]).then((contacts) => {
+            return $http
+                .put(requestURL(contact.ID), contacts[0])
+                .then(({ data = {} } = {}) => {
+                    // NOTE We need to pass the cards to update the encrypted icon in the contact view
+                    data.cards = contacts[0].Cards;
+                    return data;
+                })
+                .catch(({ data = {} } = {}) => {
+                    throw new ContactUpdateError(data.Error);
+                });
+        });
     }
 
     /**
@@ -203,17 +201,21 @@ function Contact($http, $rootScope, CONSTANTS, url, chunk, contactEncryption, sa
      * @return {Promise}
      */
     const remove = (contacts) => {
-        return $http.put(requestURL('delete'), contacts)
+        return $http
+            .put(requestURL('delete'), contacts)
             .then(({ data = {} } = {}) => data)
             .then(({ Responses = [] }) => {
-                return Responses.reduce((agg, { ID, Response = {} } = {}) => {
-                    if (Response.Error) {
-                        agg.errors.push({ ID, Error: Response.Error, Code: Response.Code });
-                    } else {
-                        agg.removed.push(ID);
-                    }
-                    return agg;
-                }, { removed: [], errors: [] });
+                return Responses.reduce(
+                    (agg, { ID, Response = {} } = {}) => {
+                        if (Response.Error) {
+                            agg.errors.push({ ID, Error: Response.Error, Code: Response.Code });
+                        } else {
+                            agg.removed.push(ID);
+                        }
+                        return agg;
+                    },
+                    { removed: [], errors: [] }
+                );
             });
     };
 

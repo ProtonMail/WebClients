@@ -76,7 +76,10 @@ function SupportController(
      */
     function resetLostPassword() {
         $scope.params.username = $scope.params.username;
-        const promise = Reset.requestResetToken({ Username: $scope.params.username, NotificationEmail: $scope.params.recoveryEmail }).then(() => {
+        const promise = Reset.requestResetToken({
+            Username: $scope.params.username,
+            NotificationEmail: $scope.params.recoveryEmail
+        }).then(() => {
             $scope.resetState = $scope.states.CODE;
         });
 

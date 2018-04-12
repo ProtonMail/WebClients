@@ -16,7 +16,11 @@ function customProPlanModel(CONSTANTS, dashboardConfiguration, dashboardModel, d
         const { plan } = dashboardModel.get(dashboardConfiguration.cycle());
         const professionalPlan = plan[PROFESSIONAL];
 
-        dispatcher.dashboard('change.addon', { plan: 'professional', addon: 'member', value: CACHE.members - professionalPlan.MaxMembers });
+        dispatcher.dashboard('change.addon', {
+            plan: 'professional',
+            addon: 'member',
+            value: CACHE.members - professionalPlan.MaxMembers
+        });
     };
 
     function needMoreMember() {

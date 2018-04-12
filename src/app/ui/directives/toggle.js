@@ -1,7 +1,11 @@
 /* @ngInject */
 function toggle(gettextCatalog, $rootScope) {
     const I18N = {
-        YES: gettextCatalog.getString('Yes', null, 'Text displays in the toggle component, make it shorter as possible'),
+        YES: gettextCatalog.getString(
+            'Yes',
+            null,
+            'Text displays in the toggle component, make it shorter as possible'
+        ),
         NO: gettextCatalog.getString('No', null, 'Text displays in the toggle component, make it shorter as possible'),
         ON: gettextCatalog.getString('ON', null, 'Text displays in the toggle component, make it shorter as possible'),
         OFF: gettextCatalog.getString('OFF', null, 'Text displays in the toggle component, make it shorter as possible')

@@ -134,10 +134,12 @@ function signupModel(User, $state, $stateParams, $location, Payment, networkActi
     }
 
     function applyGiftCode(opt) {
-        const promise = Payment.validateVerify(_.extend({}, opt, { Username: get('username') })).then(({ data = {} } = {}) => {
-            dispatch('gift.applied', data);
-            return data;
-        });
+        const promise = Payment.validateVerify(_.extend({}, opt, { Username: get('username') })).then(
+            ({ data = {} } = {}) => {
+                dispatch('gift.applied', data);
+                return data;
+            }
+        );
 
         networkActivityTracker.track(promise);
 

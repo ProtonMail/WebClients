@@ -4,7 +4,6 @@ import _ from 'lodash';
 function weekdayTimePicker(dateUtils, dispatchers, datetimeErrorCombiner, timepickerModel) {
     const days = dateUtils.getSortedWeekdays();
 
-
     const getWeekDay = (timestamp) => Math.floor(timestamp / (24 * 3600)) % 7;
     const getTime = (timestamp) => timestamp % (24 * 3600);
 
@@ -72,7 +71,6 @@ function weekdayTimePicker(dateUtils, dispatchers, datetimeErrorCombiner, timepi
                 scope.days = days;
                 weekDaySelector.attr('id', scope.labelId);
                 calcInternalVariables();
-
 
                 on('timepicker', (event, { type, data }) => {
                     if (type === 'refresh' && data.eventKey === scope.datePickerKey) {
