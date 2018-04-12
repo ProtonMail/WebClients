@@ -80,6 +80,13 @@ function textToHtmlMail(signatureBuilder) {
     const removeNewLinePlaceholder = (html, placeholder) => html.replace(new RegExp(placeholder, 'g'), '');
 
     /**
+     * Escapes backslashes from the input text with another backslash.
+     * @param {string} text
+     * @returns {string}
+     */
+    const escapeBackslash = (text = '') => text.replace(/\\/g, '\\\\');
+
+    /**
      * Replace the signature by a temp hash, we replace it only
      * if the content is the same.
      * @param  {String} input
@@ -110,7 +117,8 @@ function textToHtmlMail(signatureBuilder) {
         // We want empty new lines to behave as if they were not empty (this is non-standard markdown behaviour)
         // It's more logical though for users that don't know about markdown.
         const placeholder = generatePlaceHolder(text);
-        const html = removeNewLinePlaceholder(md.render(addNewLinePlaceholders(text, placeholder)), placeholder);
+        // We don't want to treat backslash as a markdown escape since it removes backslashes. So escape all backslashes with a backslash.
+        const html = removeNewLinePlaceholder(md.render(addNewLinePlaceholders(escapeBackslash(text), placeholder)), placeholder);
 
         FAKE_BODY.innerHTML = html;
         _.each(FAKE_BODY.querySelectorAll('p'), (node) => {
