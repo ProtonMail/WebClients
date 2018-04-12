@@ -13,7 +13,11 @@ function authHttpResponseInterceptor($q, $injector, AppModel, networkUtils) {
             noInternet: gettextCatalog.getString('No Internet connection found.', null, 'Error'),
             noServer: gettextCatalog.getString('Could not connect to server.', null, 'Error'),
             timeout: gettextCatalog.getString('Request timed out, please try again.', null, 'Error'),
-            noReachProton: gettextCatalog.getString('ProtonMail cannot be reached right now, please try again later.', null, 'Error')
+            noReachProton: gettextCatalog.getString(
+                'ProtonMail cannot be reached right now, please try again later.',
+                null,
+                'Error'
+            )
         };
     };
     const notifyError = (message) => {

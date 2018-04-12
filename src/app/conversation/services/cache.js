@@ -28,7 +28,18 @@ function cache(
     const timeCached = {};
     const INVALID_SEARCH_ERROR_CODE = 15225;
     const { DELETE, CREATE, UPDATE_DRAFT, UPDATE_FLAGS } = CONSTANTS.STATUS;
-    const { inbox, allDrafts, drafts, allSent, sent, trash, spam, allmail, archive, starred } = CONSTANTS.MAILBOX_IDENTIFIERS;
+    const {
+        inbox,
+        allDrafts,
+        drafts,
+        allSent,
+        sent,
+        trash,
+        spam,
+        allmail,
+        archive,
+        starred
+    } = CONSTANTS.MAILBOX_IDENTIFIERS;
     const I18N = {
         errorMessages: gettextCatalog.getString('No messages available', null, 'Error'),
         errorConversations: gettextCatalog.getString('No conversations available', null, 'Error')
@@ -167,7 +178,10 @@ function cache(
             _.extend(
                 current,
                 conversation,
-                { Labels: getLabels(current, conversation), Senders: filterSenderConversation(current.Senders, conversation.Senders) },
+                {
+                    Labels: getLabels(current, conversation),
+                    Senders: filterSenderConversation(current.Senders, conversation.Senders)
+                },
                 extractContextDatas(current, conversation)
             );
             delete current.LabelIDsAdded;
@@ -194,7 +208,9 @@ function cache(
      */
     function vector({ LabelIDs = [], Labels = [], IsRead }, unread, type) {
         const toInt = (value) => +!!value;
-        const locs = [inbox, allDrafts, drafts, allSent, sent, trash, spam, allmail, archive, starred].concat(labelsModel.ids());
+        const locs = [inbox, allDrafts, drafts, allSent, sent, trash, spam, allmail, archive, starred].concat(
+            labelsModel.ids()
+        );
 
         return _.reduce(
             locs,
@@ -248,7 +264,9 @@ function cache(
         const newUnreadVector = vector(newElement, true, type);
         const newTotalVector = vector(newElement, false, type);
         const oldTotalVector = vector(oldElement, false, type);
-        const locs = [inbox, allDrafts, drafts, allSent, sent, trash, spam, allmail, archive, starred].concat(labelsModel.ids());
+        const locs = [inbox, allDrafts, drafts, allSent, sent, trash, spam, allmail, archive, starred].concat(
+            labelsModel.ids()
+        );
 
         _.each(locs, (loc) => {
             const deltaUnread = newUnreadVector[loc] - oldUnreadVector[loc];
@@ -401,22 +419,19 @@ function cache(
      * @return {Promise}
      */
     function getConversation(conversationID = '', labelID = tools.currentLocation()) {
-        const promise = conversationApi.get(conversationID)
-            .then(({ data = {} } = {}) => {
-                const { Conversation = {}, Messages = [] } = data;
-                const message = flow(
-                    filter(({ LabelIDs = [] }) => _.includes(LabelIDs, labelID)),
-                    maxBy('Time')
-                )(Messages) || {};
+        const promise = conversationApi.get(conversationID).then(({ data = {} } = {}) => {
+            const { Conversation = {}, Messages = [] } = data;
+            const message =
+                flow(filter(({ LabelIDs = [] }) => _.includes(LabelIDs, labelID)), maxBy('Time'))(Messages) || {};
 
-                Messages.forEach((message) => (message.loaded = true));
-                Conversation.loaded = true;
-                Conversation.Time = message.Time;
-                storeConversations([Conversation]);
-                storeMessages(Messages);
+            Messages.forEach((message) => (message.loaded = true));
+            Conversation.loaded = true;
+            Conversation.Time = message.Time;
+            storeConversations([Conversation]);
+            storeMessages(Messages);
 
-                return angular.copy(Conversation);
-            });
+            return angular.copy(Conversation);
+        });
 
         networkActivityTracker.track(promise);
 
@@ -581,7 +596,10 @@ function cache(
             let total;
             let number;
             const mailbox = tools.currentMailbox();
-            let messages = flow(filter(({ LabelIDs = [] }) => LabelIDs.indexOf(loc) !== -1), map((message) => messageModel(message)))(messagesCached);
+            let messages = flow(
+                filter(({ LabelIDs = [] }) => LabelIDs.indexOf(loc) !== -1),
+                map((message) => messageModel(message))
+            )(messagesCached);
 
             messages = api.orderMessage(messages);
 
@@ -635,7 +653,10 @@ function cache(
             let total;
             let number;
             const mailbox = tools.currentMailbox();
-            let conversations = _.filter(conversationsCached, ({ Labels = [], ID }) => _.find(Labels, { ID: loc }) && api.getTime(ID, loc));
+            let conversations = _.filter(
+                conversationsCached,
+                ({ Labels = [], ID }) => _.find(Labels, { ID: loc }) && api.getTime(ID, loc)
+            );
 
             conversations = api.orderConversation(conversations, loc);
 
@@ -1038,7 +1059,10 @@ function cache(
                 request.End = elementTime;
             }
 
-            const promise = type === 'conversation' ? queryConversations(request, noCacheCounter) : queryMessages(request, noCacheCounter);
+            const promise =
+                type === 'conversation'
+                    ? queryConversations(request, noCacheCounter)
+                    : queryMessages(request, noCacheCounter);
 
             return promise.then((elements = []) => {
                 if (elements.length) {

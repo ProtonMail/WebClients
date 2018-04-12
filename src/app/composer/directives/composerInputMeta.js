@@ -9,7 +9,8 @@ function composerInputMeta(contactSelectorModel, dispatchers) {
      * @param  {Array}  options.BCCList
      * @return {Boolean}
      */
-    const containsInvalid = ({ ToList = [], CCList = [], BCCList = [] }) => _.some([...ToList, ...CCList, ...BCCList], { invalid: true });
+    const containsInvalid = ({ ToList = [], CCList = [], BCCList = [] }) =>
+        _.some([...ToList, ...CCList, ...BCCList], { invalid: true });
 
     /**
      * Check if the message contains some recipients (valid)

@@ -1,8 +1,14 @@
 import { PACKAGE_TYPE } from '../../constants';
 
 /* @ngInject */
-function encryptionView(gettextCatalog, mailSettingsModel, dispatchers, settingsMailApi, notification, networkActivityTracker) {
-
+function encryptionView(
+    gettextCatalog,
+    mailSettingsModel,
+    dispatchers,
+    settingsMailApi,
+    notification,
+    networkActivityTracker
+) {
     const I18N = {
         SUCCES_MESSAGE: gettextCatalog.getString('Encryption setting updated', null, 'Info'),
         ERROR_MESSAGE: gettextCatalog.getString('Error while updating setting', null, 'Error')
@@ -19,8 +25,8 @@ function encryptionView(gettextCatalog, mailSettingsModel, dispatchers, settings
             scope.attachPublic = mailSettingsModel.get('AttachPublicKey');
             scope.sign = mailSettingsModel.get('Sign');
             scope.promptpin = mailSettingsModel.get('PromptPin');
-            scope.pgpscheme = mailSettingsModel.get('PGPScheme') === PACKAGE_TYPE.SEND_PGP_INLINE ? 'pgp-inline' : 'pgp-mime';
-
+            scope.pgpscheme =
+                mailSettingsModel.get('PGPScheme') === PACKAGE_TYPE.SEND_PGP_INLINE ? 'pgp-inline' : 'pgp-mime';
 
             /**
              * Update the setting by Key:value

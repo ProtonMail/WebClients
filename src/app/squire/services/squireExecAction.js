@@ -27,7 +27,12 @@ function squireExecAction(editorModel, dispatchers) {
                 removeUnderline: editor.testPresenceinSelection('underline', action, 'U', />U\b/),
                 removeList: testOrderedList || testUnorderedList,
                 removeLink: editor.testPresenceinSelection('removeLink', action, 'A', />A\b/),
-                decreaseQuoteLevel: editor.testPresenceinSelection('increaseQuoteLevel', action, 'blockquote', />blockquote\b/)
+                decreaseQuoteLevel: editor.testPresenceinSelection(
+                    'increaseQuoteLevel',
+                    action,
+                    'blockquote',
+                    />blockquote\b/
+                )
             },
             isNotValue(a) {
                 return a === action && this.value !== '';

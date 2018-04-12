@@ -12,7 +12,8 @@ function Key($http, url, srp) {
      * @return {Promise}
      */
     const keys = (Email, Fingerprint = null) => {
-        return $http.get(requestURL(), { params: { Email, Fingerprint } })
+        return $http
+            .get(requestURL(), { params: { Email, Fingerprint } })
             .then(({ data = {} }) => data)
             .catch((e) => {
                 const { data } = e;

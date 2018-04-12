@@ -1,5 +1,15 @@
 /* @ngInject */
-function removeElement(gettextCatalog, AppModel, actionConversation, messageActions, confirmModal, $state, $rootScope, notification, tools) {
+function removeElement(
+    gettextCatalog,
+    AppModel,
+    actionConversation,
+    messageActions,
+    confirmModal,
+    $state,
+    $rootScope,
+    notification,
+    tools
+) {
     const I18N = {
         TITLE: gettextCatalog.getString('Delete', null, 'Title'),
         MESSAGE: gettextCatalog.getString('Are you sure? This cannot be undone.', null, 'Info'),
@@ -46,7 +56,10 @@ function removeElement(gettextCatalog, AppModel, actionConversation, messageActi
         }, []);
 
         // Check if there is one opened composer in the selection
-        if (($state.includes('secured.drafts.**') || $state.includes('secured.allDrafts.**')) && listOpenedDraft.length) {
+        if (
+            ($state.includes('secured.drafts.**') || $state.includes('secured.allDrafts.**')) &&
+            listOpenedDraft.length
+        ) {
             const selectedMap = getElementsSelected().reduce(
                 (acc, msg) => {
                     acc.ConversationID[msg.ConversationID] = msg;

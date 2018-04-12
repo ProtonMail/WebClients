@@ -1,13 +1,24 @@
 import { REGEX_EMAIL } from '../../constants';
 
 /* @ngInject */
-function autocompleteEmails(autocompleteEmailsModel, autocompleteBuilder, autocompleteSyncModel, dispatchers, gettextCatalog, notification) {
+function autocompleteEmails(
+    autocompleteEmailsModel,
+    autocompleteBuilder,
+    autocompleteSyncModel,
+    dispatchers,
+    gettextCatalog,
+    notification
+) {
     const TAB_KEY = 9;
     const BACKSPACE_KEY = 8;
     const COMMA_KEY = 188;
     const ESCAPE_KEY = 27;
     const RECIPIENT_LIMIT = 25;
-    const LANG_RECIPIENT_LIMIT = gettextCatalog.getString('The maximum number (%1) of Recipients is %2.', null, 'Error');
+    const LANG_RECIPIENT_LIMIT = gettextCatalog.getString(
+        'The maximum number (%1) of Recipients is %2.',
+        null,
+        'Error'
+    );
 
     /**
      * Get the selected input value configuration
@@ -80,7 +91,7 @@ function autocompleteEmails(autocompleteEmailsModel, autocompleteBuilder, autoco
         const model = autocompleteEmailsModel(scope.list);
 
         // Auto scroll to the end of the list
-        const onUpdate = () => _rAF(() => $list.scrollTop = $list.scrollHeight + 32);
+        const onUpdate = () => _rAF(() => ($list.scrollTop = $list.scrollHeight + 32));
         /**
          * Sync the model, bind emails selected
          * @return {void}

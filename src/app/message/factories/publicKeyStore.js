@@ -72,7 +72,8 @@ function publicKeyStore($rootScope, keyCache, pmcw, contactEmails, Contact, cont
         return [contactEmail.ContactID, publicKeys];
     };
 
-    const isOwnAddress = (email) => _.map(authentication.user.Addresses, 'Email').includes(email.toLowerCase().replace(/\+[^@]*@/, ''));
+    const isOwnAddress = (email) =>
+        _.map(authentication.user.Addresses, 'Email').includes(email.toLowerCase().replace(/\+[^@]*@/, ''));
 
     const fromApi = async (email) => {
         const normEmail = email.toLowerCase();
@@ -109,7 +110,9 @@ function publicKeyStore($rootScope, keyCache, pmcw, contactEmails, Contact, cont
         // Find by emails (e.g. create, update):
         events
             .filter(({ Contact }) => Contact)
-            .forEach(({ Contact: { ContactEmails } }) => ContactEmails.forEach(({ Email }) => delete CACHE.EMAIL_PUBLIC_KEY[Email]));
+            .forEach(({ Contact: { ContactEmails } }) =>
+                ContactEmails.forEach(({ Email }) => delete CACHE.EMAIL_PUBLIC_KEY[Email])
+            );
         // Find by ID (e.g. delete):
         events.forEach(({ ID }) => {
             _.keys(CACHE.EMAIL_PUBLIC_KEY)
@@ -118,7 +121,8 @@ function publicKeyStore($rootScope, keyCache, pmcw, contactEmails, Contact, cont
         });
     };
 
-    const contactUpdated = ({ ContactEmails }) => ContactEmails.forEach(({ Email }) => delete CACHE.EMAIL_PUBLIC_KEY[Email]);
+    const contactUpdated = ({ ContactEmails }) =>
+        ContactEmails.forEach(({ Email }) => delete CACHE.EMAIL_PUBLIC_KEY[Email]);
 
     $rootScope.$on('contacts', (event, { type, data: { events = [], contact = {} } = {} }) => {
         type === 'contactEvents' && contactEvents(events);

@@ -58,7 +58,9 @@ function mimeMessageBuilder(pmcw, embeddedUtils) {
             body: wraplines(pmcw.encode_utf8_base64(html || ' '))
         });
 
-        const inlineAttachments = _.filter(attachments, ({ attachment: { Headers } }) => embeddedUtils.isInline(Headers));
+        const inlineAttachments = _.filter(attachments, ({ attachment: { Headers } }) =>
+            embeddedUtils.isInline(Headers)
+        );
         const attachmentEntities = buildAttachments(inlineAttachments);
 
         // add the attachments
@@ -73,12 +75,22 @@ function mimeMessageBuilder(pmcw, embeddedUtils) {
     // Don't escape newlines, tabs, everything between space and ~ save the = sign.
     const MATCH_ESCAPE_CHARS = /[^\t\n\r\x20-\x3C\x3E-\x7E]/g;
     const encodeQPSequence = (char) =>
-        '=' + ('00' + char.charCodeAt(0).toString(16).toUpperCase()).substr(-2);
+        '=' +
+        (
+            '00' +
+            char
+                .charCodeAt(0)
+                .toString(16)
+                .toUpperCase()
+        ).substr(-2);
     const encodeQPSequences = (input) => input.replace(MATCH_ESCAPE_CHARS, encodeQPSequence);
     const normalLinebreaks = (input) => input.replace(/(\r\n|\n|\r)/g, '\n');
     // restore wrapping in escape sequences ==\r\n0D, =0\r\nD -> =0D=\r\n
     const restoreQPSequences = (input) =>
-        input.replace(/(?=.{0,2}=\r\n)(=(=\r\n)?[0-9A-F](=\r\n)?[0-9A-F])/g, (seq) => seq.replace(/=\r\n/, '') + '=\r\n');
+        input.replace(
+            /(?=.{0,2}=\r\n)(=(=\r\n)?[0-9A-F](=\r\n)?[0-9A-F])/g,
+            (seq) => seq.replace(/=\r\n/, '') + '=\r\n'
+        );
     const wrapQPLines = (input) => restoreQPSequences(wraplines(input, '=', RFC2045_LIMIT - 2));
     const encodeQPTrailingSpace = (input) => input.replace(/ $/gm, ' =\r\n\r\n');
     /**
@@ -96,7 +108,13 @@ function mimeMessageBuilder(pmcw, embeddedUtils) {
      * @param binarydata
      * @return 7-bit encoding of the input using QP encoding
      */
-    const quotedPrintableEncode = _.flowRight([encodeQPTrailingSpace, wrapQPLines, normalLinebreaks, encodeQPSequences, pmcw.encode_utf8]);
+    const quotedPrintableEncode = _.flowRight([
+        encodeQPTrailingSpace,
+        wrapQPLines,
+        normalLinebreaks,
+        encodeQPSequences,
+        pmcw.encode_utf8
+    ]);
 
     // quoted printable for compatibility with old clients
     const buildPlaintextEntity = (plaintext) => {
@@ -123,9 +141,12 @@ function mimeMessageBuilder(pmcw, embeddedUtils) {
      * @returns {string}
      */
     const build = (plaintext, html, attachments) => {
-        const alternateEntity = html === false ? buildPlaintextEntity(plaintext) : [buildAlternateEntity(plaintext, html, attachments)];
+        const alternateEntity =
+            html === false ? buildPlaintextEntity(plaintext) : [buildAlternateEntity(plaintext, html, attachments)];
         const normalAttachments =
-            html === false ? attachments : _.filter(attachments, ({ attachment: { Headers } }) => !embeddedUtils.isInline(Headers));
+            html === false
+                ? attachments
+                : _.filter(attachments, ({ attachment: { Headers } }) => !embeddedUtils.isInline(Headers));
         const attachmentEntities = buildAttachments(normalAttachments);
         const body = [alternateEntity].concat(attachmentEntities);
 

@@ -1,7 +1,18 @@
 import { PAID_ADMIN_ROLE } from '../../constants';
 
 /* @ngInject */
-function changeMailboxPassword($log, addressesModel, authentication, gettextCatalog, Key, networkActivityTracker, organizationApi, passwords, pmcw, User) {
+function changeMailboxPassword(
+    $log,
+    addressesModel,
+    authentication,
+    gettextCatalog,
+    Key,
+    networkActivityTracker,
+    organizationApi,
+    passwords,
+    pmcw,
+    User
+) {
     /**
      * Instead of grab keys from the cache, we call the back-end, just to make sure everything is up to date
      * @param {String} newMailPwd
@@ -9,13 +20,13 @@ function changeMailboxPassword($log, addressesModel, authentication, gettextCata
      * @return {Promise}
      */
     function getUser(newMailPwd = '', keySalt = '') {
-        return Promise.all([
-            passwords.computeKeyPassword(newMailPwd, keySalt),
-            User.get()
-        ])
-            .then(([ password, user = {} ]) => ({ password, user }))
+        return Promise.all([passwords.computeKeyPassword(newMailPwd, keySalt), User.get()])
+            .then(([password, user = {}]) => ({ password, user }))
             .catch(([, { data = {} } = {}]) => {
-                throw new Error(data.Error || gettextCatalog.getString('Unable to save your changes, please try again.', null, 'Error'));
+                throw new Error(
+                    data.Error ||
+                        gettextCatalog.getString('Unable to save your changes, please try again.', null, 'Error')
+                );
             });
     }
 
@@ -41,7 +52,9 @@ function changeMailboxPassword($log, addressesModel, authentication, gettextCata
                         .then((pkg) => pmcw.encryptPrivateKey(pkg, password), () => 0);
                 })
                 .catch(({ data = {} } = {}) => {
-                    throw new Error(data.Error || gettextCatalog.getString('Unable to get organization keys', null, 'Error'));
+                    throw new Error(
+                        data.Error || gettextCatalog.getString('Unable to get organization keys', null, 'Error')
+                    );
                 });
         }
         return Promise.resolve(0);
@@ -64,7 +77,7 @@ function changeMailboxPassword($log, addressesModel, authentication, gettextCata
             promises = inputKeys.map(({ PrivateKey, ID, Token }) => {
                 // Decrypt private key with organization key and token
                 return organizationKey
-                    .then((key) => pmcw.decryptMessage({ message: pmcw.getMessage(Token), privateKeys: [ key ] }))
+                    .then((key) => pmcw.decryptMessage({ message: pmcw.getMessage(Token), privateKeys: [key] }))
                     .then(({ data }) => pmcw.decryptPrivateKey(PrivateKey, data))
                     .then((pkg) => ({ ID, pkg }));
             });

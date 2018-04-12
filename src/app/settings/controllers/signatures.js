@@ -65,7 +65,7 @@ function SignaturesController(
 
     // Clear previous listener if we revoke the admin
     on('updateUser', () => {
-        ($scope.itemMoved === false) && updateAdresses();
+        $scope.itemMoved === false && updateAdresses();
 
         if (!isPaidAdmin && authentication.user.Role === CONSTANTS.PAID_ADMIN_ROLE) {
             memberModel.clear();
@@ -80,7 +80,7 @@ function SignaturesController(
     });
 
     on('addressModel', (e, { type }) => {
-        (type === 'generateKey.success') && updateAdresses();
+        type === 'generateKey.success' && updateAdresses();
     });
 
     // Drag and Drop configuration

@@ -53,7 +53,10 @@ function toggleModeEditor(dispatchers, embeddedUtils, attachmentModel, textToHtm
                 Doing !(data.message.ID in CACHE.CAN_TOGGLE) instead of doing !CACHE.CAN_TOGGLE[data.message.ID]
                 will make the dispatch trigger all the time when it is disabled. Because CAN_TOGGLE contains boolean values
              */
-        if (data.message && (!(data.message.ID in CACHE.CAN_TOGGLE) || CACHE.CAN_TOGGLE[data.message.ID] !== canToggle(data.message))) {
+        if (
+            data.message &&
+            (!(data.message.ID in CACHE.CAN_TOGGLE) || CACHE.CAN_TOGGLE[data.message.ID] !== canToggle(data.message))
+        ) {
             CACHE.CAN_TOGGLE[data.message.ID] = canToggle(data.message);
             dispatch(CACHE.CAN_TOGGLE[data.message.ID] ? 'enableToggle' : 'disableToggle', data.message);
         }

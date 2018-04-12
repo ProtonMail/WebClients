@@ -19,7 +19,7 @@ function getEvent(type, data) {
  * @returns {Function}
  */
 function createDispatcher($rootScope, key) {
-    return function (type, data) {
+    return function(type, data) {
         $rootScope.$emit(key, getEvent(type, data));
     };
 }

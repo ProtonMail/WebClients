@@ -55,21 +55,24 @@ function contactEditor(
      * @returns {{updated: Array, removed: Array, errors: Array}}
      */
     function summarizeMergeResults(results = []) {
-        return results.reduce((agg, result) => {
-            if (result.updated) {
-                agg.updated.push(result.updated);
-            }
-            if (result.removed) {
-                agg.removed = agg.removed.concat(result.removed);
-            }
-            if (result.errors) {
-                agg.errors = agg.errors.concat(result.errors);
-            }
-            if (result.total) {
-                agg.total += result.total;
-            }
-            return agg;
-        }, { updated: [], removed: [], errors: [], total: 0 });
+        return results.reduce(
+            (agg, result) => {
+                if (result.updated) {
+                    agg.updated.push(result.updated);
+                }
+                if (result.removed) {
+                    agg.removed = agg.removed.concat(result.removed);
+                }
+                if (result.errors) {
+                    agg.errors = agg.errors.concat(result.errors);
+                }
+                if (result.total) {
+                    agg.total += result.total;
+                }
+                return agg;
+            },
+            { updated: [], removed: [], errors: [], total: 0 }
+        );
     }
 
     const updateContact = (contact, type = '') => {
@@ -141,7 +144,7 @@ function contactEditor(
         actions.forEach((action) => {
             action.then((result) => {
                 // When a group has finished, update the progress.
-                progress += Math.floor((result.total * 100) / total);
+                progress += Math.floor(result.total * 100 / total);
 
                 // Emit the progress bar and that the contact has updated.
                 dispatcher.progressBar('contactsProgressBar', { progress });
@@ -246,7 +249,9 @@ function contactEditor(
                       'Info'
                   );
         const title =
-            contactIDs === 'all' ? gettextCatalog.getString('Delete all', null, 'Title') : gettextCatalog.getString('Delete', null, 'Title');
+            contactIDs === 'all'
+                ? gettextCatalog.getString('Delete all', null, 'Title')
+                : gettextCatalog.getString('Delete', null, 'Title');
 
         confirmModal.activate({
             params: {

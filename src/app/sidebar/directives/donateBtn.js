@@ -3,7 +3,11 @@ function donateBtn(gettextCatalog, notification, donateModal, paymentModel) {
     const I18N = {
         donation: gettextCatalog.getString('Donate', null, 'Title'),
         topUp: gettextCatalog.getString('Add credits', null, 'Title'),
-        notAvailable: gettextCatalog.getString('Donations are currently not available, please try again later', null, 'Info')
+        notAvailable: gettextCatalog.getString(
+            'Donations are currently not available, please try again later',
+            null,
+            'Info'
+        )
     };
 
     return {

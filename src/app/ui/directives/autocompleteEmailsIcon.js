@@ -26,13 +26,15 @@ function autocompleteEmailsIcon(dispatchers, tooltipModel, gettextCatalog) {
             const { on, unsubscribe } = dispatchers();
 
             const getStatusCode = () => {
-                return scope.email.loadCryptInfo * STATUS.LOADING_CRYPT_INFO +
+                return (
+                    scope.email.loadCryptInfo * STATUS.LOADING_CRYPT_INFO +
                     scope.email.encrypt * STATUS.ENCRYPTION_ENABLED +
                     scope.email.sign * STATUS.SIGNING_ENABLED +
                     (scope.email.isPgp && scope.email.isPgpMime) * STATUS.PGP_MIME +
                     (scope.email.isPgp && !scope.email.isPgpMime) * STATUS.PGP_INLINE +
-                    (scope.email.isEO) * STATUS.PM_EO +
-                    (scope.email.isPinned && !scope.email.isPgp) * STATUS.PINNING_ENABLED;
+                    scope.email.isEO * STATUS.PM_EO +
+                    (scope.email.isPinned && !scope.email.isPgp) * STATUS.PINNING_ENABLED
+                );
             };
 
             const getTooltip = () => {
@@ -64,19 +66,23 @@ function autocompleteEmailsIcon(dispatchers, tooltipModel, gettextCatalog) {
                 tooltipModel.update(icon, { title });
             };
 
-            on('composerInputRecipient', (event, { type, email }) => scope.$applyAsync(() => {
-                if (type !== 'refresh' && email.Address !== scope.email.Address) {
-                    return;
-                }
-                refreshTooltip();
-            }));
+            on('composerInputRecipient', (event, { type, email }) =>
+                scope.$applyAsync(() => {
+                    if (type !== 'refresh' && email.Address !== scope.email.Address) {
+                        return;
+                    }
+                    refreshTooltip();
+                })
+            );
 
-            on('autocompleteEmails', (event, { type, messageID }) => scope.$applyAsync(() => {
-                if (type !== 'refresh' && messageID !== scope.message.ID) {
-                    return;
-                }
-                refreshTooltip();
-            }));
+            on('autocompleteEmails', (event, { type, messageID }) =>
+                scope.$applyAsync(() => {
+                    if (type !== 'refresh' && messageID !== scope.message.ID) {
+                        return;
+                    }
+                    refreshTooltip();
+                })
+            );
 
             scope.$on('$destroy', () => {
                 unsubscribe();

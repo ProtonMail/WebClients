@@ -19,7 +19,11 @@ function messageModel(
 ) {
     const MAX_ENC_HEADER_LENGTH = 1024;
     const PGPMIME_TYPES = [CONSTANTS.ENCRYPTED_STATUS.PGP_MIME, CONSTANTS.ENCRYPTED_STATUS.PGP_MIME_SIGNED];
-    const ENCRYPTED_HEADERS_FILENAME = gettextCatalog.getString('Encrypted Headers', null, 'Encrypted Headers filename');
+    const ENCRYPTED_HEADERS_FILENAME = gettextCatalog.getString(
+        'Encrypted Headers',
+        null,
+        'Encrypted Headers filename'
+    );
     const defaultMessage = {
         ID: '',
         Order: 0,
@@ -44,38 +48,70 @@ function messageModel(
         LabelIDs: [],
         ExternalID: null
     };
-    const pmTypes = [ gettextCatalog.getString('End-to-end encrypted message', null, 'Message encryption status'),
-        gettextCatalog.getString('End-to-end encrypted message from verified ProtonMail User', null, 'Message encryption status'),
+    const pmTypes = [
+        gettextCatalog.getString('End-to-end encrypted message', null, 'Message encryption status'),
+        gettextCatalog.getString(
+            'End-to-end encrypted message from verified ProtonMail User',
+            null,
+            'Message encryption status'
+        ),
         gettextCatalog.getString('Incorrectly signed end-to-end encrypted message', null, 'Message encryption status')
     ];
-    const pgpTypes = [ gettextCatalog.getString('PGP-encrypted message', null, 'Message encryption status'),
+    const pgpTypes = [
+        gettextCatalog.getString('PGP-encrypted message', null, 'Message encryption status'),
         gettextCatalog.getString('PGP-encrypted message from verified sender', null, 'Message encryption status'),
         gettextCatalog.getString('Incorrectly signed PGP-encrypted message', null, 'Message encryption status')
     ];
-    const clearTypes = [ gettextCatalog.getString('Message stored with zero access encryption', null, 'Message encryption status'),
+    const clearTypes = [
+        gettextCatalog.getString('Message stored with zero access encryption', null, 'Message encryption status'),
         gettextCatalog.getString('PGP-signed message from verified sender', null, 'Message encryption status'),
         gettextCatalog.getString('Incorrectly signed PGP-signed message', null, 'Message encryption status')
     ];
     const encryptionTypes = [
         // 0 - None
-        [ gettextCatalog.getString('Unencrypted message', null, 'Message encryption status') ],
+        [gettextCatalog.getString('Unencrypted message', null, 'Message encryption status')],
         // 1 - Internal
         pmTypes,
         // 2 - External
         clearTypes,
         // 3 - Out enc
-        [ gettextCatalog.getString('Sent by ProtonMail user with end-to-end encryption', null, 'Message encryption status'),
-          gettextCatalog.getString('Sent by verified ProtonMail user with end-to-end encryption', null, 'Message encryption status'),
-          gettextCatalog.getString('Incorrectly signed end-to-end encrypted sent message', null, 'Message encryption status')
+        [
+            gettextCatalog.getString(
+                'Sent by ProtonMail user with end-to-end encryption',
+                null,
+                'Message encryption status'
+            ),
+            gettextCatalog.getString(
+                'Sent by verified ProtonMail user with end-to-end encryption',
+                null,
+                'Message encryption status'
+            ),
+            gettextCatalog.getString(
+                'Incorrectly signed end-to-end encrypted sent message',
+                null,
+                'Message encryption status'
+            )
         ],
         // 4 - Out plain
-        [ gettextCatalog.getString('Sent by ProtonMail user with zero access encryption', null, 'Message encryption status'),
-          gettextCatalog.getString('Sent by verified ProtonMail user with zero access encryption', null, 'Message encryption status'),
-          gettextCatalog.getString('Incorrectly signed sent message with zero access encryption', null, 'Message encryption status')
+        [
+            gettextCatalog.getString(
+                'Sent by ProtonMail user with zero access encryption',
+                null,
+                'Message encryption status'
+            ),
+            gettextCatalog.getString(
+                'Sent by verified ProtonMail user with zero access encryption',
+                null,
+                'Message encryption status'
+            ),
+            gettextCatalog.getString(
+                'Incorrectly signed sent message with zero access encryption',
+                null,
+                'Message encryption status'
+            )
         ],
         // 5 - Store enc
-        [ gettextCatalog.getString('Encrypted draft', null, 'Message encryption status')
-        ],
+        [gettextCatalog.getString('Encrypted draft', null, 'Message encryption status')],
         // 6 - EO
         pmTypes,
         // 7 - PGP/Inline
@@ -85,7 +121,7 @@ function messageModel(
         // 9 - Signed MIME
         clearTypes,
         // 10 - Auto response
-        [ gettextCatalog.getString('Sent by ProtonMail with zero access encryption', null, 'Message encryption status') ]
+        [gettextCatalog.getString('Sent by ProtonMail with zero access encryption', null, 'Message encryption status')]
     ];
 
     const emptyMessage = gettextCatalog.getString('Message empty', null, 'Message content if empty');
@@ -225,7 +261,11 @@ function messageModel(
                 attachments.map(async (att) => {
                     const { headers } = await parseMail(att.content);
                     // cf. https://github.com/autocrypt/memoryhole
-                    if (_.has(att, 'fileName') || att.contentType !== 'text/rfc822-headers' || att.content.length > MAX_ENC_HEADER_LENGTH) {
+                    if (
+                        _.has(att, 'fileName') ||
+                        att.contentType !== 'text/rfc822-headers' ||
+                        att.content.length > MAX_ENC_HEADER_LENGTH
+                    ) {
                         return;
                     }
                     // probably some encrypted headers, not sure about the subjects yet. We don't want to attach them on reply
@@ -289,18 +329,21 @@ function messageModel(
 
             return getPubKeys(sender)
                 .then((pubKeys) => {
-                    return pmcw.decryptMessageLegacy({
+                    return pmcw
+                        .decryptMessageLegacy({
                             message,
                             privateKeys,
                             publicKeys: pubKeys,
                             date: new Date(this.Time * 1000)
-                        }).then(({ data, verified: pmcryptoVerified = VERIFICATION_STATUS.NOT_SIGNED }) => {
+                        })
+                        .then(({ data, verified: pmcryptoVerified = VERIFICATION_STATUS.NOT_SIGNED }) => {
                             this.decrypting = false;
                             this.hasError = false;
 
                             const signedInvalid = VERIFICATION_STATUS.SIGNED_AND_INVALID;
                             const signedPubkey = VERIFICATION_STATUS.SIGNED_NO_PUB_KEY;
-                            const verified = !pubKeys.length && pmcryptoVerified === signedInvalid ? signedPubkey : pmcryptoVerified;
+                            const verified =
+                                !pubKeys.length && pmcryptoVerified === signedInvalid ? signedPubkey : pmcryptoVerified;
 
                             if (PGPMIME_TYPES.includes(this.IsEncrypted) || this.MIMEType === 'multipart/mixed') {
                                 return this.parse(data, verified);
@@ -321,22 +364,24 @@ function messageModel(
             const packets = {};
 
             return Promise.all(
-                this.Attachments
-                    .filter(({ ID }) => ID.indexOf('PGPAttachment'))
-                    .map((attachment) => {
-                    return AttachmentLoader.getSessionKey(this, attachment)
-                        .then(({ sessionKey = {}, AttachmentID, ID } = {}) => {
+                this.Attachments.filter(({ ID }) => ID.indexOf('PGPAttachment')).map((attachment) => {
+                    return AttachmentLoader.getSessionKey(this, attachment).then(
+                        ({ sessionKey = {}, AttachmentID, ID } = {}) => {
                             attachment.sessionKey = sessionKey; // Update the ref
-                            return pmcw.encryptSessionKey({
-                                data: sessionKey.data,
-                                algorithm: sessionKey.algorithm,
-                                publicKeys: publicKey.length ? pmcw.getKeys(publicKey) : [],
-                                passwords
-                            })
+                            return pmcw
+                                .encryptSessionKey({
+                                    data: sessionKey.data,
+                                    algorithm: sessionKey.algorithm,
+                                    publicKeys: publicKey.length ? pmcw.getKeys(publicKey) : [],
+                                    passwords
+                                })
                                 .then(({ message }) => {
-                                    packets[AttachmentID || ID] = pmcw.encode_base64(pmcw.arrayToBinaryString(message.packets.write()));
+                                    packets[AttachmentID || ID] = pmcw.encode_base64(
+                                        pmcw.arrayToBinaryString(message.packets.write())
+                                    );
                                 });
-                        });
+                        }
+                    );
                 })
             ).then(() => packets);
         }
@@ -346,10 +391,12 @@ function messageModel(
 
             return Promise.all(
                 this.Attachments.map((attachment) => {
-                    return AttachmentLoader.getSessionKey(this, attachment).then(({ sessionKey = {}, AttachmentID, ID } = {}) => {
-                        attachment.sessionKey = sessionKey; // Update the ref
-                        packets[AttachmentID || ID] = pmcw.encode_base64(pmcw.arrayToBinaryString(sessionKey.data));
-                    });
+                    return AttachmentLoader.getSessionKey(this, attachment).then(
+                        ({ sessionKey = {}, AttachmentID, ID } = {}) => {
+                            attachment.sessionKey = sessionKey; // Update the ref
+                            packets[AttachmentID || ID] = pmcw.encode_base64(pmcw.arrayToBinaryString(sessionKey.data));
+                        }
+                    );
                 })
             ).then(() => packets);
         }
@@ -359,7 +406,9 @@ function messageModel(
             const { asymmetric, encrypted } = pmcw.splitMessage(this.Body);
             const message = pmcw.getMessage(asymmetric[0]);
 
-            return pmcw.decryptSessionKey({ message, privateKeys }).then((sessionKey) => ({ sessionKey, dataPacket: encrypted }));
+            return pmcw
+                .decryptSessionKey({ message, privateKeys })
+                .then((sessionKey) => ({ sessionKey, dataPacket: encrypted }));
         }
 
         emailsToString() {
@@ -390,8 +439,8 @@ function messageModel(
                                     // don't reverify these attachments: they are checked
                                     return result;
                                 }
-                                const reverifyHandles = this.Attachments.filter(AttachmentLoader.has).map((attachment) =>
-                                    AttachmentLoader.reverify(attachment, this)
+                                const reverifyHandles = this.Attachments.filter(AttachmentLoader.has).map(
+                                    (attachment) => AttachmentLoader.reverify(attachment, this)
                                 );
                                 return Promise.all(reverifyHandles).then(() => result);
                             })

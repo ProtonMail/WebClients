@@ -93,7 +93,12 @@ function contactDetailsModel(contactTransformLabel, contactSchema, gettextCatalo
 
     const buildProperty = (property = {}, type = undefined) => {
         const key = property.getField();
-        return { value: cleanValue(property.valueOf(), key), type: getType(property) || type, key, params: property.getParams() };
+        return {
+            value: cleanValue(property.valueOf(), key),
+            type: getType(property) || type,
+            key,
+            params: property.getParams()
+        };
     };
 
     const checkProperty = (property) => {
@@ -193,7 +198,11 @@ function contactDetailsModel(contactTransformLabel, contactSchema, gettextCatalo
                                 if (entryValue === 'null') {
                                     return;
                                 }
-                                const encryptProperty = new vCard.Property(entry.type, escapeValue(entryValue), vCardArgs);
+                                const encryptProperty = new vCard.Property(
+                                    entry.type,
+                                    escapeValue(entryValue),
+                                    vCardArgs
+                                );
 
                                 encryptProperty.group = emailProperty.group;
                                 params.vCard.addProperty(encryptProperty);
@@ -205,7 +214,11 @@ function contactDetailsModel(contactTransformLabel, contactSchema, gettextCatalo
                 case 'Adrs':
                     child.forEach((item, index) => {
                         if (item.value) {
-                            params.vCard.add(item.type, escapeValue(item.value), getParams(item, child.length > 1 && index + 1));
+                            params.vCard.add(
+                                item.type,
+                                escapeValue(item.value),
+                                getParams(item, child.length > 1 && index + 1)
+                            );
                         }
                     });
                     break;
@@ -269,7 +282,10 @@ function contactDetailsModel(contactTransformLabel, contactSchema, gettextCatalo
             _.each(mimeList, (item) => (item.value = { value: item.value }));
             _.each(results, (email) => {
                 const filter = (entries) =>
-                    _.filter(entries, ({ params: { group = '' } }) => group.toLowerCase() === email.params.group.toLowerCase());
+                    _.filter(
+                        entries,
+                        ({ params: { group = '' } }) => group.toLowerCase() === email.params.group.toLowerCase()
+                    );
                 const schemeList = filter(extract({ vcard, field: 'X_PM_SCHEME', type: 'x-pm-scheme' }));
                 _.each(schemeList, (item) => (item.value = { value: item.value }));
 

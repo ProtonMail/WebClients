@@ -1,7 +1,18 @@
 import _ from 'lodash';
 
 /* @ngInject */
-function upgradeKeys($log, $injector, CONSTANTS, gettextCatalog, Key, networkActivityTracker, organizationApi, passwords, pmcw, secureSessionStorage) {
+function upgradeKeys(
+    $log,
+    $injector,
+    CONSTANTS,
+    gettextCatalog,
+    Key,
+    networkActivityTracker,
+    organizationApi,
+    passwords,
+    pmcw,
+    secureSessionStorage
+) {
     /**
      * Reformat organization keys
      * @param  {String} password
@@ -22,7 +33,9 @@ function upgradeKeys($log, $injector, CONSTANTS, gettextCatalog, Key, networkAct
                         .then((pkg) => pmcw.reformatKey(pkg, Email, password), () => 0);
                 })
                 .catch(({ data = {} } = {}) => {
-                    throw new Error(data.Error || gettextCatalog.getString('Unable to get organization keys', null, 'Error'));
+                    throw new Error(
+                        data.Error || gettextCatalog.getString('Unable to get organization keys', null, 'Error')
+                    );
                 });
         }
         return Promise.resolve(0);
@@ -86,7 +99,9 @@ function upgradeKeys($log, $injector, CONSTANTS, gettextCatalog, Key, networkAct
                 promise
                     // Encrypt the key with the new mailbox password
                     .then(({ ID, pkg }) => {
-                        return pmcw.reformatKey(pkg, emailAddresses[ID], password).then((PrivateKey) => ({ ID, PrivateKey }));
+                        return pmcw
+                            .reformatKey(pkg, emailAddresses[ID], password)
+                            .then((PrivateKey) => ({ ID, PrivateKey }));
                     })
                     // Cannot decrypt, return 0 (not an error)
                     .then(null, (error) => ($log.error(error), 0))
@@ -126,7 +141,10 @@ function upgradeKeys($log, $injector, CONSTANTS, gettextCatalog, Key, networkAct
             .then((password) => {
                 passwordComputed = password;
                 const collection = manageUserKeys(passwordComputed, oldSaltedPassword, user);
-                const promises = [].concat(manageOrganizationKeys(passwordComputed, oldSaltedPassword, user), collection);
+                const promises = [].concat(
+                    manageOrganizationKeys(passwordComputed, oldSaltedPassword, user),
+                    collection
+                );
                 return Promise.all(promises);
             })
             .then(([organizationKey, ...keys]) =>

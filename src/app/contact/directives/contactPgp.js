@@ -16,9 +16,11 @@ function contactPgp(dispatchers, pmcw, mailSettingsModel) {
         link(scope, ele) {
             const { on, unsubscribe } = dispatchers();
             const element = ele[0];
-            const defaultScheme = mailSettingsModel.get('PGPScheme') === PACKAGE_TYPE.SEND_PGP_INLINE ? 'pgp-inline' : 'pgp-mime';
+            const defaultScheme =
+                mailSettingsModel.get('PGPScheme') === PACKAGE_TYPE.SEND_PGP_INLINE ? 'pgp-inline' : 'pgp-mime';
 
-            const toggle = (elem, className, value) => elem.classList.contains(className) === value || elem.classList.toggle(className);
+            const toggle = (elem, className, value) =>
+                elem.classList.contains(className) === value || elem.classList.toggle(className);
 
             const internalUser = scope.internalKeys.RecipientType === RECIPIENT_TYPE.TYPE_INTERNAL;
             toggle(element, 'pgp-external', !internalUser);
@@ -43,8 +45,9 @@ function contactPgp(dispatchers, pmcw, mailSettingsModel) {
                     .filter((a) => a.length)
                     .map(pmcw.getKeys);
 
-                return Promise.all(keyObjects.map(([k]) => pmcw.isExpiredKey(k)))
-                    .then((isExpired) => isExpired.every((keyExpired) => keyExpired));
+                return Promise.all(keyObjects.map(([k]) => pmcw.isExpiredKey(k))).then((isExpired) =>
+                    isExpired.every((keyExpired) => keyExpired)
+                );
             };
 
             const getEncrypt = () => scope.model.Encrypt && scope.model.Encrypt.length && scope.model.Encrypt[0].value;
@@ -52,7 +55,8 @@ function contactPgp(dispatchers, pmcw, mailSettingsModel) {
 
             const hasScheme = () => scope.model.Scheme && scope.model.Scheme.length > 0;
             const schemeValue = () => scope.model.Scheme[0].value.value;
-            const isScheme = (scheme) => hasScheme() && (schemeValue() === scheme || (schemeValue() === 'null' && defaultScheme === scheme));
+            const isScheme = (scheme) =>
+                hasScheme() && (schemeValue() === scheme || (schemeValue() === 'null' && defaultScheme === scheme));
             const isPGPInline = () => isScheme('pgp-inline');
             const isPGPMime = () => isScheme('pgp-mime');
 
@@ -69,7 +73,9 @@ function contactPgp(dispatchers, pmcw, mailSettingsModel) {
                                 toggle(
                                     element,
                                     'pgp-no-primary',
-                                    !unarmoredKeys.some((k) => data.items.map(({ value }) => value.split('base64,')[1]).includes(k))
+                                    !unarmoredKeys.some((k) =>
+                                        data.items.map(({ value }) => value.split('base64,')[1]).includes(k)
+                                    )
                                 );
                             });
                             if (!_.some(data.items, ({ value }) => value)) {
@@ -105,9 +111,14 @@ function contactPgp(dispatchers, pmcw, mailSettingsModel) {
             });
 
             allKeysExpired(scope.model.Key).then((keysExpired) =>
-                toggle(element, 'pgp-expired', !scope.model.Key || keysExpired));
+                toggle(element, 'pgp-expired', !scope.model.Key || keysExpired)
+            );
             toggle(element, 'pgp-no-keys', !_.some(scope.model.Key, ({ value }) => value));
-            toggle(element, 'pgp-no-primary', !unarmoredKeys.some((k) => scope.model.Key.map(({ value }) => value.split('base64,')[1]).includes(k)));
+            toggle(
+                element,
+                'pgp-no-primary',
+                !unarmoredKeys.some((k) => scope.model.Key.map(({ value }) => value.split('base64,')[1]).includes(k))
+            );
             toggle(element, 'pgp-inline', isPGPInline());
             toggle(element, 'pgp-mime', isPGPMime());
             toggle(element, 'pgp-encrypt', getEncrypt());

@@ -55,7 +55,6 @@ function donation(cardModel, gettextCatalog, dispatchers, paymentUtils, donateMo
             const dispatch = (type, data = {}) => dispatcher.payments(type, data);
             const loadDonation = (type, action) => (options) => dispatch('donate.submit', { type, options, action });
 
-
             const $items = el.find(SELECTOR.SELECT_CURRENCY);
             const $other = el.find(SELECTOR.INPUT_OTHER);
             const $methods = el.find(SELECTOR.SELECT_METHOD);

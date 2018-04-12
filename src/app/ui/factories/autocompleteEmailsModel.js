@@ -6,7 +6,6 @@ const { OPEN_TAG_AUTOCOMPLETE, CLOSE_TAG_AUTOCOMPLETE } = EMAIL_FORMATING;
 
 /* @ngInject */
 function autocompleteEmailsModel($injector, authentication, checkTypoEmails, $filter) {
-
     let TEMP_LABELS = {};
     const unicodeTagView = $filter('unicodeTagView');
 

@@ -61,7 +61,7 @@ function AttachmentLoader(
         return pmcw
             .decryptMessage({
                 message: pmcw.getMessage(at),
-                sessionKeys: [ sessionKey ],
+                sessionKeys: [sessionKey],
                 format: 'binary'
             })
             .then(({ data, signatures }) => ({
@@ -135,7 +135,7 @@ function AttachmentLoader(
         const keyPackets = pmcw.binaryStringToArray(pmcw.decode_base64(attachment.KeyPackets));
         const options = { message: pmcw.getMessage(keyPackets) };
         if (isOutside()) {
-            options.passwords = [ pmcw.decode_utf8_base64(secureSessionStorage.getItem('proton:encrypted_password')) ];
+            options.passwords = [pmcw.decode_utf8_base64(secureSessionStorage.getItem('proton:encrypted_password'))];
         } else {
             options.privateKeys = authentication.getPrivateKeys(message.AddressID);
         }
@@ -151,7 +151,10 @@ function AttachmentLoader(
             cache.put(getCacheKey(attachment), decrypted);
             return decrypted;
         } catch (error) {
-            const blob = pmcw.concatArrays([pmcw.binaryStringToArray(pmcw.decode_base64(attachment.KeyPackets)), new Uint8Array(data)]);
+            const blob = pmcw.concatArrays([
+                pmcw.binaryStringToArray(pmcw.decode_base64(attachment.KeyPackets)),
+                new Uint8Array(data)
+            ]);
             // Fallback download raw attachment
             return Promise.reject({ data: blob, error });
         }

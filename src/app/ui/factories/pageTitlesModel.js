@@ -5,7 +5,18 @@ import { flow, filter, sortBy, head } from 'lodash/fp';
 /* @ngInject */
 function pageTitlesModel(CONSTANTS, $injector, dispatchers, gettextCatalog, authentication, $state, tools) {
     const { MAILBOX_IDENTIFIERS } = CONSTANTS;
-    const DISPLAY_NUMBER = ['inbox', 'drafts', 'sent', 'starred', 'archive', 'spam', 'trash', 'allmail', 'allDrafts', 'allSent'];
+    const DISPLAY_NUMBER = [
+        'inbox',
+        'drafts',
+        'sent',
+        'starred',
+        'archive',
+        'spam',
+        'trash',
+        'allmail',
+        'allDrafts',
+        'allSent'
+    ];
     const { on } = dispatchers();
 
     const loadI18N = () => ({
@@ -51,7 +62,9 @@ function pageTitlesModel(CONSTANTS, $injector, dispatchers, gettextCatalog, auth
     let MAP = loadI18N();
 
     function getFirstSortedAddresses() {
-        return flow(filter({ Status: 1, Receive: 1 }), sortBy('Order'), head)($injector.get('addressesModel').get()) || {};
+        return (
+            flow(filter({ Status: 1, Receive: 1 }), sortBy('Order'), head)($injector.get('addressesModel').get()) || {}
+        );
     }
 
     /**

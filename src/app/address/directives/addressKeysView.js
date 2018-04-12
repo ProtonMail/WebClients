@@ -23,7 +23,11 @@ function addressKeysView(
         ),
         IMPORT_TITLE: gettextCatalog.getString('Import private key', null, 'Confirm modal title'),
         DOWNLOAD_PUBLIC: gettextCatalog.getString('Download Public Key', null, ''),
-        DOWNLOAD_PUBLIC_MESSAGE: gettextCatalog.getString('This key has not been activated. It is only possible to export the public key. Do you want to export the public key?', null, ''),
+        DOWNLOAD_PUBLIC_MESSAGE: gettextCatalog.getString(
+            'This key has not been activated. It is only possible to export the public key. Do you want to export the public key?',
+            null,
+            ''
+        ),
         INVALID_PRIVATE_KEY: gettextCatalog.getString('Cannot read private key', null, 'Error'),
         PRIVATE_KEY_PRIMARY: gettextCatalog.getString('Primary key changed', null, 'Success'),
         ERROR: gettextCatalog.getString('Error reactivating key. Please try again', null, 'Error')
@@ -66,9 +70,9 @@ function addressKeysView(
                         exportPrivateKeyModal.deactivate();
                     }
                 }
-            }));
+            })
+        );
     };
-
 
     const exportKey = ({ email }, { PublicKey, PrivateKey, decrypted }) => {
         if (!decrypted) {
@@ -130,14 +134,23 @@ function addressKeysView(
                 }
                 reactivateKeyModal.deactivate();
                 const promise = Promise.all(_.map(importKeyFile.files, readFile))
-                    .then((file) => importPrivateKey.importKey(file.join('\n'), importKeyAddress.value, importKeyId.value))
+                    .then((file) =>
+                        importPrivateKey.importKey(file.join('\n'), importKeyAddress.value, importKeyId.value)
+                    )
                     .then((count) => eventManager.call().then(() => count))
                     .then((count) => {
                         if (count === 0) {
                             return;
                         }
                         if (importKeyAddress.value) {
-                            notification.success(gettextCatalog.getPlural(count, 'Private key imported', '{{$count}} Private keys imported', {}));
+                            notification.success(
+                                gettextCatalog.getPlural(
+                                    count,
+                                    'Private key imported',
+                                    '{{$count}} Private keys imported',
+                                    {}
+                                )
+                            );
                         } else {
                             notification.success(gettextCatalog.getString('Private key reactivated'));
                         }
@@ -149,7 +162,8 @@ function addressKeysView(
                         (err) => {
                             importKeyFile.value = '';
                             throw err;
-                    });
+                        }
+                    );
                 networkActivityTracker.track(promise);
             };
 
@@ -175,11 +189,10 @@ function addressKeysView(
                     params: {
                         submit(password) {
                             reactivateKeyModal.deactivate();
-                            const promise = reactivateKeys([key], password)
-                                .then(({ success, failed }) => {
-                                    success && notification.success(success);
-                                    failed && notification.error(failed);
-                                });
+                            const promise = reactivateKeys([key], password).then(({ success, failed }) => {
+                                success && notification.success(success);
+                                failed && notification.error(failed);
+                            });
 
                             networkActivityTracker.track(promise);
                         },

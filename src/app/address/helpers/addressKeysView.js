@@ -15,7 +15,7 @@ export const getAddressKeys = (addresses = {}, pmcw) => {
         }
 
         const { fingerprint, created, bitSize, PrivateKey } = Keys[0];
-        const [ keyObject = null ] = pmcw.getKeys(PrivateKey);
+        const [keyObject = null] = pmcw.getKeys(PrivateKey);
         if (!keyObject) {
             return acc;
         }

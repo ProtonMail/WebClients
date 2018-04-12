@@ -56,7 +56,9 @@ function textToHtmlMail(signatureBuilder) {
      * @param placeholder
      */
     const newLineIntoPlaceholder = (match, placeholder) => {
-        return match.replace(/(\r\n|\n)/g, (match) => match + placeholder).replace(new RegExp(placeholder + '$', 'g'), '');
+        return match
+            .replace(/(\r\n|\n)/g, (match) => match + placeholder)
+            .replace(new RegExp(placeholder + '$', 'g'), '');
     };
 
     /**
@@ -69,7 +71,9 @@ function textToHtmlMail(signatureBuilder) {
      */
     const addNewLinePlaceholders = (text, placeholder) => {
         const startingNewline = text.startsWith('\n') ? text : `\n${text}`;
-        const textWPlaceholder = startingNewline.replace(/((\r\n|\n)\s*(\r\n|\n))+/g, (match) => newLineIntoPlaceholder(match, placeholder));
+        const textWPlaceholder = startingNewline.replace(/((\r\n|\n)\s*(\r\n|\n))+/g, (match) =>
+            newLineIntoPlaceholder(match, placeholder)
+        );
         // don't remove empty new lines before '>'
         const noEmptyLines = textWPlaceholder.replace(/^\n/g, '');
 
@@ -111,14 +115,16 @@ function textToHtmlMail(signatureBuilder) {
     };
 
     const parse = (input, message = {}) => {
-
         const text = replaceSignature(input, message);
 
         // We want empty new lines to behave as if they were not empty (this is non-standard markdown behaviour)
         // It's more logical though for users that don't know about markdown.
         const placeholder = generatePlaceHolder(text);
         // We don't want to treat backslash as a markdown escape since it removes backslashes. So escape all backslashes with a backslash.
-        const html = removeNewLinePlaceholder(md.render(addNewLinePlaceholders(escapeBackslash(text), placeholder)), placeholder);
+        const html = removeNewLinePlaceholder(
+            md.render(addNewLinePlaceholders(escapeBackslash(text), placeholder)),
+            placeholder
+        );
 
         FAKE_BODY.innerHTML = html;
         _.each(FAKE_BODY.querySelectorAll('p'), (node) => {

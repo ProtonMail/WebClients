@@ -2,7 +2,6 @@ import { ENCRYPTION_DEFAULT } from '../../constants';
 
 /* @ngInject */
 function setupKeys(passwords, pmcw, webcrypto, Key, MemberKey) {
-
     /**
      * Generates key pairs for a list of addresses
      * @param  {Array}  addresses  array of addresses that require keys
@@ -12,13 +11,16 @@ function setupKeys(passwords, pmcw, webcrypto, Key, MemberKey) {
      */
     async function generateAddresses(addresses = [], passphrase = '', numBits = ENCRYPTION_DEFAULT) {
         const list = addresses.map(({ ID, Email: email } = {}) => {
-            return pmcw.generateKey({
-                userIds: [{ name: email, email }],
-                passphrase, numBits
-            }).then(({ privateKeyArmored: PrivateKey }) => ({
-                AddressID: ID,
-                PrivateKey
-            }));
+            return pmcw
+                .generateKey({
+                    userIds: [{ name: email, email }],
+                    passphrase,
+                    numBits
+                })
+                .then(({ privateKeyArmored: PrivateKey }) => ({
+                    AddressID: ID,
+                    PrivateKey
+                }));
         });
         return Promise.all(list);
     }
@@ -28,7 +30,8 @@ function setupKeys(passwords, pmcw, webcrypto, Key, MemberKey) {
         const mailboxPassword = await passwords.computeKeyPassword(password, keySalt);
 
         return {
-            mailboxPassword, keySalt,
+            mailboxPassword,
+            keySalt,
             keys: await generateAddresses(addresses, mailboxPassword, numBits)
         };
     }
@@ -41,11 +44,14 @@ function setupKeys(passwords, pmcw, webcrypto, Key, MemberKey) {
      */
     function generateOrganization(passphrase, numBits) {
         return pmcw.generateKey({
-            userIds: [{
-                name: 'not_for_email_use@domain.tld',
-                email: 'not_for_email_use@domain.tld'
-            }],
-            passphrase, numBits
+            userIds: [
+                {
+                    name: 'not_for_email_use@domain.tld',
+                    email: 'not_for_email_use@domain.tld'
+                }
+            ],
+            passphrase,
+            numBits
         });
     }
 
@@ -58,7 +64,7 @@ function setupKeys(passwords, pmcw, webcrypto, Key, MemberKey) {
     async function decryptMemberToken({ Token, Activation, PrivateKey } = {}, orgPrivateKey = {}) {
         const { data: decryptedToken, verified } = await pmcw.decryptMessage({
             message: pmcw.getMessage(Token || Activation),
-            privateKeys: [ orgPrivateKey ],
+            privateKeys: [orgPrivateKey],
             publicKeys: orgPrivateKey.toPublic()
         });
 
@@ -86,7 +92,6 @@ function setupKeys(passwords, pmcw, webcrypto, Key, MemberKey) {
      * @return {Object}                      decrypted member's primary key
      */
     async function getPrimaryKey({ Keys = [] } = {}, organizationKey = {}) {
-
         if (!Keys.length) {
             throw new Error('User not set up');
         }
@@ -128,7 +133,6 @@ function setupKeys(passwords, pmcw, webcrypto, Key, MemberKey) {
      * @return {Object}
      */
     async function processMemberKey(password = '', { PrivateKey, AddressID } = {}, privateKeys = {}) {
-
         const value = webcrypto.getRandomValues(new Uint8Array(128));
         const randomString = pmcrypto.encode_base64(pmcrypto.arrayToBinaryString(value));
 
@@ -143,7 +147,8 @@ function setupKeys(passwords, pmcw, webcrypto, Key, MemberKey) {
         return {
             AddressID: AddressID,
             UserKey: PrivateKey,
-            MemberKey, Token
+            MemberKey,
+            Token
         };
     }
 
@@ -199,8 +204,10 @@ function setupKeys(passwords, pmcw, webcrypto, Key, MemberKey) {
      */
     async function memberSetup({ mailboxPassword, keySalt, keys }, password = '', MemberID = '', organizationKey = {}) {
         const AddressKeys = await processMemberKeys(mailboxPassword, keys, organizationKey);
-        return MemberKey.setup({
-                MemberID, AddressKeys,
+        return MemberKey.setup(
+            {
+                MemberID,
+                AddressKeys,
                 KeySalt: keySalt,
                 PrimaryKey: AddressKeys[0]
             },
@@ -218,7 +225,7 @@ function setupKeys(passwords, pmcw, webcrypto, Key, MemberKey) {
      */
     async function memberKey(tempPassword = '', key = '', member = {}, organizationKey = {}) {
         const primaryKey = await getPrimaryKey(member, organizationKey);
-        const [ user, org ] = await Promise.all([
+        const [user, org] = await Promise.all([
             processMemberKey(tempPassword, key, primaryKey),
             processMemberKey(tempPassword, key, organizationKey)
         ]);

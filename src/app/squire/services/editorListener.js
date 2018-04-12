@@ -217,7 +217,9 @@ function editorListener(
                 }
             }
 
-            ['dragleave', 'dragenter', 'drop'].forEach((key) => editor.addEventListener(key, draggableCallback(key, scope.message, typeContent)));
+            ['dragleave', 'dragenter', 'drop'].forEach((key) =>
+                editor.addEventListener(key, draggableCallback(key, scope.message, typeContent))
+            );
 
             // Only update the model every 300ms or at least 2 times before saving a draft
             const onInput = _.throttle(() => updateModel(editor.getHTML()), timeout);

@@ -212,7 +212,9 @@ function squireEditor(dispatchers, editorModel, sanitize) {
                     // Defer the event to ensuire we register the listener
                     _rAF(() => {
                         dispatcher['squire.editor']('loaded', {
-                            editor, $iframe, message
+                            editor,
+                            $iframe,
+                            message
                         });
                     });
                 });

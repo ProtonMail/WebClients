@@ -2,7 +2,13 @@ import _ from 'lodash';
 
 /* @ngInject */
 function prepareContent($injector, transformAttachements, transformRemote, transformEscape, transformEmbedded) {
-    const filters = ['transformLinks', 'transformEmbedded', 'transformWelcome', 'transformBlockquotes', 'transformStylesheet'].map((name) => ({
+    const filters = [
+        'transformLinks',
+        'transformEmbedded',
+        'transformWelcome',
+        'transformBlockquotes',
+        'transformStylesheet'
+    ].map((name) => ({
         name,
         action: $injector.get(name)
     }));
@@ -50,7 +56,10 @@ function prepareContent($injector, transformAttachements, transformRemote, trans
             isBlacklisted: _.includes(blacklist, 'transformRemote')
         });
 
-        const body = transformers.reduceRight((html, transformer) => transformer.action(html, message, { action }), div);
+        const body = transformers.reduceRight(
+            (html, transformer) => transformer.action(html, message, { action }),
+            div
+        );
 
         if (!blacklist.includes('*') && !_.includes(blacklist, 'transformAttachements')) {
             transformAttachements(body, message, { action });

@@ -11,7 +11,10 @@ function contactEmails(Contact, dispatchers) {
     const findEmail = (email, normalizer = null) => {
         const norm = normalizer || _.identity;
         const normEmail = norm(email);
-        const nonDefault = _.find(emails, (contactEmail) => !contactEmail.Defaults && norm(contactEmail.Email) === normEmail);
+        const nonDefault = _.find(
+            emails,
+            (contactEmail) => !contactEmail.Defaults && norm(contactEmail.Email) === normEmail
+        );
         if (nonDefault) {
             return nonDefault;
         }

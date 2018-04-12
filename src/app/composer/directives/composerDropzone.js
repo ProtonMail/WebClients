@@ -4,7 +4,16 @@ import { MIME_TYPES } from '../../constants';
 const { PLAINTEXT } = MIME_TYPES;
 
 /* @ngInject */
-function composerDropzone(attachmentFileFormat, tools, attachmentModel, dispatchers, notification, gettextCatalog, CONSTANTS, $state) {
+function composerDropzone(
+    attachmentFileFormat,
+    tools,
+    attachmentModel,
+    dispatchers,
+    notification,
+    gettextCatalog,
+    CONSTANTS,
+    $state
+) {
     Dropzone.autoDiscover = false;
 
     const { BASE_SIZE, ATTACHMENT_SIZE_LIMIT, ATTACHMENT_NUMBER_LIMIT } = CONSTANTS;
@@ -16,8 +25,16 @@ function composerDropzone(attachmentFileFormat, tools, attachmentModel, dispatch
     const sizeLimit = { number: ATTACHMENT_SIZE_LIMIT };
     const dropMessages = {
         0: gettextCatalog.getString('Empty attachment', null, 'Composer'),
-        [ATTACHMENT_NUMBER_LIMIT]: gettextCatalog.getString('Messages are limited to {{number}} attachments', numberLimit, 'Composer'),
-        [ATTACHMENT_SIZE_LIMIT]: gettextCatalog.getString('Attachments are limited to {{number}} MB.', sizeLimit, 'Composer'),
+        [ATTACHMENT_NUMBER_LIMIT]: gettextCatalog.getString(
+            'Messages are limited to {{number}} attachments',
+            numberLimit,
+            'Composer'
+        ),
+        [ATTACHMENT_SIZE_LIMIT]: gettextCatalog.getString(
+            'Attachments are limited to {{number}} MB.',
+            sizeLimit,
+            'Composer'
+        ),
         [ATTACHMENT_MAX_SIZE](bytes) {
             const total = Math.round(10 * bytes / BASE_SIZE / BASE_SIZE) / 10;
             return gettextCatalog.getString(
@@ -28,7 +45,11 @@ function composerDropzone(attachmentFileFormat, tools, attachmentModel, dispatch
         }
     };
 
-    const ERROR_EO_NUMBER_ATT = gettextCatalog.getString('Maximum number of attachments (10) exceeded.', null, 'Composer');
+    const ERROR_EO_NUMBER_ATT = gettextCatalog.getString(
+        'Maximum number of attachments (10) exceeded.',
+        null,
+        'Composer'
+    );
 
     const dictDefaultMessage = gettextCatalog.getString('Drop a file here to upload', null, 'Info');
 
