@@ -1,9 +1,9 @@
-import { REGEX_EMAIL, EMAIL_FORMATING } from '../../constants';
+import { REGEX_EMAIL, EMAIL_FORMATING, SEND_TYPES } from '../../constants';
 
 const { OPEN_TAG_AUTOCOMPLETE_RAW, CLOSE_TAG_AUTOCOMPLETE_RAW } = EMAIL_FORMATING;
 
 /* @ngInject */
-function autocompleteEmailsItem(CONSTANTS, sanitize, sendPreferences, autoPinPrimaryKeys) {
+function autocompleteEmailsItem(sanitize, sendPreferences, autoPinPrimaryKeys) {
     const KEY_ENTER = 13;
 
     /**
@@ -26,8 +26,23 @@ function autocompleteEmailsItem(CONSTANTS, sanitize, sendPreferences, autoPinPri
      * @return {Object}        { name: String, adr:String }
      */
     const extractAddress = (target) => {
-        const [name = '', adr = ''] = target.textContent.replace(CLOSE_TAG_AUTOCOMPLETE_RAW, '').split(OPEN_TAG_AUTOCOMPLETE_RAW);
+        const [name = '', adr = ''] = target.textContent
+            .replace(CLOSE_TAG_AUTOCOMPLETE_RAW, '')
+            .split(OPEN_TAG_AUTOCOMPLETE_RAW);
         return { name: name.trim(), adr: adr.trim() };
+    };
+
+    // important: resign should go before repin: otherwise repin will do the resigning.
+    const resign = async ({ isVerified, primaryPinned } = {}, { scope, address }, updateEmail) => {
+        if (!isVerified) {
+            const resigned = await autoPinPrimaryKeys.resign(address);
+            return !resigned && updateEmail(scope);
+        }
+
+        if (!primaryPinned) {
+            const pinned = await autoPinPrimaryKeys.confirm(address);
+            return !pinned && updateEmail(scope);
+        }
     };
 
     return {
@@ -39,12 +54,37 @@ function autocompleteEmailsItem(CONSTANTS, sanitize, sendPreferences, autoPinPri
 
             const onClick = ({ target }) => target.setAttribute('contenteditable', true);
 
+            const checkEmail = async (address, { Name: oldName, Address: oldAdr }, target) => {
+                const { [address]: sendPref } = await sendPreferences.get([address]);
+
+                const updateEmail = (oldAdr, oldName, target) => (scope) => {
+                    scope.$applyAsync(() => {
+                        scope.email.Address = oldAdr;
+                        scope.email.Name = oldName;
+                        target.innerText = scope.email.Address;
+                        updateBtn(scope.email.Address);
+                    });
+                };
+
+                if (!sendPref.isVerified || !sendPref.primaryPinned) {
+                    return resign(sendPref, { address, scope }, updateEmail(oldName, oldAdr, target));
+                }
+
+                scope.$applyAsync(() => {
+                    scope.email.encrypt = sendPref.encrypt;
+                    scope.email.sign = sendPref.sign;
+                    scope.email.isPgp =
+                        sendPref.scheme !== SEND_TYPES.SEND_PM && (scope.email.encrypt || scope.email.sign);
+                    scope.email.isPinned = sendPref.pinned;
+                    scope.email.loadCryptInfo = false;
+                });
+            };
+
             const onBlur = ({ target }) => {
                 target.setAttribute('contenteditable', false);
 
                 scope.$applyAsync(() => {
                     const { name, adr } = extractAddress(target);
-                    const { Name: oldName, Address: oldAdr } = scope.email;
                     if (adr) {
                         scope.email.Address = adr;
                         scope.email.Name = sanitize.input(name);
@@ -55,55 +95,19 @@ function autocompleteEmailsItem(CONSTANTS, sanitize, sendPreferences, autoPinPri
                         scope.email.Address = name;
                     }
 
-                    scope.email.invalid = !REGEX_EMAIL.test(adr || name);
+                    const address = adr || name;
+                    scope.email.invalid = !REGEX_EMAIL.test(address);
                     updateBtn(scope.email.Address);
 
-                    if (scope.email.invalid) {
-                        return;
-                    }
-
-                    !scope.email.invalid &&
-                        sendPreferences.get([adr || name]).then(({ [adr || name]: sendPref }) => {
-                            scope.$applyAsync(() => {
-                                if (!sendPref.isVerified || !sendPref.primaryPinned) {
-                                    // important: resign should go before repin: otherwise repin will do the resigning.
-                                    const resign = sendPref.isVerified ? Promise.resolve(true) : autoPinPrimaryKeys.resign(adr || name);
-                                    resign.then((resigned) => {
-                                        if (!resigned) {
-                                            scope.email.Address = oldAdr;
-                                            scope.email.Name = oldName;
-                                            target.innerText = scope.email.Address;
-                                            updateBtn(scope.email.Address);
-                                            return;
-                                        }
-                                        const repin = sendPref.primaryPinned ? Promise.resolve(true) : autoPinPrimaryKeys.confirm(adr || name);
-                                        return repin.then((pinned) => {
-                                            if (!pinned) {
-                                                scope.email.Address = oldAdr;
-                                                scope.email.Name = oldName;
-                                                target.innerText = scope.email.Address;
-                                                updateBtn(scope.email.Address);
-                                            }
-                                        });
-                                    });
-
-                                    return resign;
-                                }
-                                scope.email.encrypt = sendPref.encrypt;
-                                scope.email.sign = sendPref.sign;
-                                scope.email.isPgp = sendPref.scheme !== CONSTANTS.SEND_TYPES.SEND_PM && (scope.email.encrypt || scope.email.sign);
-                                scope.email.isPinned = sendPref.pinned;
-                                scope.email.loadCryptInfo = false;
-                            });
-                        });
+                    !scope.email.invalid && checkEmail(address, scope.email, target);
                 });
             };
 
             /*
-                    Prevent event propagation for custom action by the main component.
-                    And reset invalid state
-                    ex: BACKSPACE
-                 */
+                Prevent event propagation for custom action by the main component.
+                And reset invalid state
+                ex: BACKSPACE
+             */
             const onInput = (e) => {
                 if (e.keyCode === KEY_ENTER) {
                     return onBlur(e);

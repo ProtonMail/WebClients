@@ -1,7 +1,8 @@
 import _ from 'lodash';
+import { RECIPIENT_TYPE, PACKAGE_TYPE } from '../../constants';
 
 /* @ngInject */
-function contactPgp(dispatchers, pmcw, CONSTANTS, mailSettingsModel) {
+function contactPgp(dispatchers, pmcw, mailSettingsModel) {
     return {
         replace: true,
         templateUrl: require('../../../templates/directives/contact/contactPgp.tpl.html'),
@@ -15,11 +16,11 @@ function contactPgp(dispatchers, pmcw, CONSTANTS, mailSettingsModel) {
         link(scope, ele) {
             const { on, unsubscribe } = dispatchers();
             const element = ele[0];
-            const defaultScheme = mailSettingsModel.get('PGPScheme') === CONSTANTS.PACKAGE_TYPE.SEND_PGP_INLINE ? 'pgp-inline' : 'pgp-mime';
+            const defaultScheme = mailSettingsModel.get('PGPScheme') === PACKAGE_TYPE.SEND_PGP_INLINE ? 'pgp-inline' : 'pgp-mime';
 
             const toggle = (elem, className, value) => elem.classList.contains(className) === value || elem.classList.toggle(className);
 
-            const internalUser = scope.internalKeys.RecipientType === CONSTANTS.RECIPIENT_TYPE.TYPE_INTERNAL;
+            const internalUser = scope.internalKeys.RecipientType === RECIPIENT_TYPE.TYPE_INTERNAL;
             toggle(element, 'pgp-external', !internalUser);
             toggle(element, 'pgp-internal', internalUser);
 

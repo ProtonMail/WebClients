@@ -1,8 +1,7 @@
 import _ from 'lodash';
 import { flow, values, reduce } from 'lodash/fp';
-import { CONSTANTS } from '../../constants';
+import { CONTACT_MODE, CONTACT_ERROR } from '../../constants';
 
-const { CONTACT_MODE, CONTACT_ERROR } = CONSTANTS;
 const { ENCRYPTED_AND_SIGNED, ENCRYPTED, SIGNED } = CONTACT_MODE;
 const { TYPE3_CONTACT_VERIFICATION, TYPE2_CONTACT_VERIFICATION, TYPE3_CONTACT_DECRYPTION } = CONTACT_ERROR;
 

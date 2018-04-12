@@ -1,4 +1,5 @@
 import _ from 'lodash';
+import { readFile } from '../../../helpers/fileHelper';
 
 /* @ngInject */
 function addressKeysView(
@@ -121,16 +122,6 @@ function addressKeysView(
             const importKeyAddress = element[0].querySelector('.import-private-key-address');
             const importKeyId = element[0].querySelector('.import-private-key-id');
             const importKeyFile = element[0].querySelector('.import-private-key-file');
-
-            const readFile = (file) => {
-                const reader = new FileReader();
-                return new Promise((resolve, reject) => {
-                    reader.addEventListener('load', () => resolve(reader.result), false);
-                    reader.addEventListener('error', () => reject(reader), false);
-
-                    reader.readAsBinaryString(file);
-                });
-            };
 
             const importKeyChange = () => {
                 if (importKeyFile.files.length === 0) {

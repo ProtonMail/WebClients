@@ -1,7 +1,8 @@
 import _ from 'lodash';
-
 import { flow, filter, map, reduce } from 'lodash/fp';
+
 import { MIME_TYPES } from '../../constants';
+import { readFile } from '../../../helpers/fileHelper';
 
 const { PLAINTEXT } = MIME_TYPES;
 
@@ -96,16 +97,6 @@ function attachmentModel(
                 break;
         }
     });
-
-    const readFile = (file) => {
-        const reader = new FileReader();
-        return new Promise((resolve, reject) => {
-            reader.addEventListener('load', () => resolve(reader.result), false);
-            reader.addEventListener('error', () => reject(reader), false);
-
-            reader.readAsBinaryString(file);
-        });
-    };
 
     const fillInMimeType = async (queueEntry) => {
         if (queueEntry.file.name.match(/\.asc$/i) && queueEntry.file.size < MAX_KEY_SIZE && queueEntry.file.type !== 'application/pgp-keys') {

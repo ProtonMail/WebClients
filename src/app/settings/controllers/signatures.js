@@ -55,15 +55,17 @@ function SignaturesController(
     refreshOrgKeys();
     isPaidAdmin && watcherAdmin();
 
+    const updateAdresses = () => {
+        $scope.$applyAsync(() => {
+            const { active, disabled } = addressModel.getActive();
+            $scope.activeAddresses = active;
+            $scope.disabledAddresses = disabled;
+        });
+    };
+
     // Clear previous listener if we revoke the admin
     on('updateUser', () => {
-        if ($scope.itemMoved === false) {
-            $scope.$applyAsync(() => {
-                const { active, disabled } = addressModel.getActive();
-                $scope.activeAddresses = active;
-                $scope.disabledAddresses = disabled;
-            });
-        }
+        ($scope.itemMoved === false) && updateAdresses();
 
         if (!isPaidAdmin && authentication.user.Role === CONSTANTS.PAID_ADMIN_ROLE) {
             memberModel.clear();
@@ -78,13 +80,7 @@ function SignaturesController(
     });
 
     on('addressModel', (e, { type }) => {
-        if (type === 'generateKey.success') {
-            $scope.$applyAsync(() => {
-                const { active, disabled } = addressModel.getActive();
-                $scope.activeAddresses = active;
-                $scope.disabledAddresses = disabled;
-            });
-        }
+        (type === 'generateKey.success') && updateAdresses();
     });
 
     // Drag and Drop configuration

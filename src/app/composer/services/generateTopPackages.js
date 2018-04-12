@@ -1,15 +1,9 @@
 import _ from 'lodash';
 import htmlToTextMail from '../../squire/helpers/htmlToTextMail';
+import { SEND_TYPES } from '../../constants';
 
 /* @ngInject */
-function generateTopPackages(
-    CONSTANTS,
-    editorModel,
-    AttachmentLoader,
-    mimeMessageBuilder
-) {
-
-    const { SEND_TYPES } = CONSTANTS;
+function generateTopPackages(editorModel, AttachmentLoader, mimeMessageBuilder) {
 
     /**
      * Removes any characters that are produced by the copying process (like zero width characters)
@@ -28,31 +22,31 @@ function generateTopPackages(
     // We NEVER upconvert, if the user wants html: plaintext is actually fine as well
     const generateHTML = (message) => (message.MIMEType === 'text/html' ? message.getDecryptedBody() : false);
 
-    const generatePlainTextPackage = async (message, composer) => {
-        return {
-            Type: 0,
-            Addresses: {},
-            MIMEType: 'text/plain',
-            Body: generatePlaintext(message, composer)
-        };
-    };
+    const generatePlainTextPackage = async (message, composer) => ({
+        Type: 0,
+        Addresses: {},
+        MIMEType: 'text/plain',
+        Body: generatePlaintext(message, composer)
+    });
 
-    const generateHTMLPackage = async (message) => {
-        return {
-            Type: 0,
-            Addresses: {},
-            MIMEType: 'text/html',
-            Body: generateHTML(message)
-        };
-    };
+    const generateHTMLPackage = async (message) => ({
+        Type: 0,
+        Addresses: {},
+        MIMEType: 'text/html',
+        Body: generateHTML(message)
+    });
 
-    const fetchMimeDependencies = (message, composer) =>
-        Promise.all([
+    const fetchMimeDependencies = (message, composer) => {
+        return Promise.all([
             Promise.all(
-                _.map(message.getAttachments(), async (attachment) => ({ attachment, data: await AttachmentLoader.get(attachment, message) }))
+                _.map(message.getAttachments(), async (attachment) => ({
+                    attachment,
+                    data: await AttachmentLoader.get(attachment, message)
+                }))
             ),
             generatePlaintext(message, composer)
         ]);
+    };
 
     /**
      * Generates the mime top-level packages, which include all attachments in the body.

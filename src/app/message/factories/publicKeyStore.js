@@ -1,13 +1,14 @@
 import _ from 'lodash';
 import { CONSTANTS, TIME } from '../../constants';
+import { toList } from '../../../helpers/arrayHelper';
+import { normalizeEmail } from '../../../helpers/string';
+import { getGroup } from '../../../helpers/vcard';
 
 /* @ngInject */
 function publicKeyStore($rootScope, keyCache, pmcw, contactEmails, Contact, contactKey, authentication) {
     const CACHE = {};
     const CACHE_TIMEOUT = TIME.HOUR;
     const usesDefaults = (contactEmail) => !contactEmail || contactEmail.Defaults;
-
-    const normalizeEmail = (email) => email.toLowerCase();
 
     /**
      * Retrieve the public keys of a email address from cache. This returns either a map from email -> public keys
@@ -31,19 +32,6 @@ function publicKeyStore($rootScope, keyCache, pmcw, contactEmails, Contact, cont
         return { [email]: pubKeys };
     };
 
-    const asList = (v = []) => (Array.isArray(v) ? v : [v]);
-
-    const getGroup = (emailList, email) => {
-        const normalizedEmail = normalizeEmail(email);
-        const prop = _.find(emailList, (prop) => normalizeEmail(prop.valueOf()) === normalizedEmail);
-
-        if (!prop) {
-            return;
-        }
-
-        return prop.getGroup();
-    };
-
     const fromContacts = async (email) => {
         const normEmail = normalizeEmail(email);
         const contactEmail = contactEmails.findEmail(normEmail, normalizeEmail);
@@ -55,8 +43,8 @@ function publicKeyStore($rootScope, keyCache, pmcw, contactEmails, Contact, cont
 
         const contact = await Contact.get(contactEmail.ContactID);
 
-        const keyList = asList(contact.vCard.get('key'));
-        const emailList = asList(contact.vCard.get('email'));
+        const keyList = toList(contact.vCard.get('key'));
+        const emailList = toList(contact.vCard.get('email'));
 
         const group = getGroup(emailList, normEmail);
         if (!group) {

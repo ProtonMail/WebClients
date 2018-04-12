@@ -1,7 +1,9 @@
 import _ from 'lodash';
 
+import { SEND_TYPES } from '../../constants';
+
 /* @ngInject */
-function autocompleteSyncModel(sendPreferences, CONSTANTS, autoPinPrimaryKeys, dispatchers) {
+function autocompleteSyncModel(sendPreferences, autoPinPrimaryKeys, dispatchers) {
     const { dispatcher } = dispatchers(['autocompleteEmails']);
 
     const THROTTLING_DELAY = 1000;
@@ -15,16 +17,16 @@ function autocompleteSyncModel(sendPreferences, CONSTANTS, autoPinPrimaryKeys, d
 
     const extendPGPFromOldData = (list, oldEmails) => {
         // create a map from address -> email object
-        const oldEmailsMap = _.zipObject(_.map(oldEmails, 'Address'), oldEmails);
+        const oldEmailsMap = _.keyBy(oldEmails, 'Address');
         return _.map(list, (email) => _.extend({}, oldEmailsMap[email.Address], email));
     };
 
     const extendPGP = (email, sendPref) => {
         email.encrypt = sendPref.encrypt;
         email.sign = sendPref.sign;
-        email.isPgp = [CONSTANTS.SEND_TYPES.SEND_PGP_MIME, CONSTANTS.SEND_TYPES.SEND_PGP_INLINE].includes(sendPref.scheme);
-        email.isPgpMime = sendPref.scheme === CONSTANTS.SEND_TYPES.SEND_PGP_MIME;
-        email.isEO = sendPref.scheme === CONSTANTS.SEND_TYPES.SEND_EO;
+        email.isPgp = [SEND_TYPES.SEND_PGP_MIME, SEND_TYPES.SEND_PGP_INLINE].includes(sendPref.scheme);
+        email.isPgpMime = sendPref.scheme === SEND_TYPES.SEND_PGP_MIME;
+        email.isEO = sendPref.scheme === SEND_TYPES.SEND_EO;
         email.isPinned = sendPref.pinned;
         email.loadCryptInfo = false;
     };

@@ -1,6 +1,7 @@
 import _ from 'lodash';
 
 import { CONSTANTS } from '../../constants';
+import { orderByPref } from '../../../helpers/vcard';
 
 /* @ngInject */
 function contactDetailsModel(contactTransformLabel, contactSchema, gettextCatalog) {
@@ -288,18 +289,6 @@ function contactDetailsModel(contactTransformLabel, contactSchema, gettextCatalo
         }
 
         return results;
-    }
-
-    /**
-     * Order properties by preference parameter
-     * @param {Array} properties
-     * @return {Array}
-     */
-    function orderByPref(properties = []) {
-        return _.sortBy(properties, (property) => {
-            const { pref = 0 } = property.getParams() || {};
-            return pref;
-        });
     }
 
     return { extract, prepare, unescapeValue, escapeValue };

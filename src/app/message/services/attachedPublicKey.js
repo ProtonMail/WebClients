@@ -1,5 +1,15 @@
 import _ from 'lodash';
-import { CONSTANTS, VERIFICATION_STATUS, EMAIL_FORMATING } from '../../constants';
+
+import { SEND_TYPES, VERIFICATION_STATUS, EMAIL_FORMATING } from '../../constants';
+import { toList } from '../../../helpers/arrayHelper';
+import { normalizeEmail } from '../../../helpers/string';
+import { getGroup } from '../../../helpers/vcard';
+
+const { OPEN_TAG_AUTOCOMPLETE_RAW, CLOSE_TAG_AUTOCOMPLETE_RAW } = EMAIL_FORMATING;
+const { SIGNED_AND_INVALID } = VERIFICATION_STATUS;
+const MAX_KEY_SIZE = 50 * 1024;
+const MAX_KEY_COUNTS = 5;
+
 /* @ngInject */
 function attachedPublicKey(
     contactDetailsModel,
@@ -14,19 +24,7 @@ function attachedPublicKey(
     Contact,
     networkActivityTracker
 ) {
-    const { OPEN_TAG_AUTOCOMPLETE_RAW, CLOSE_TAG_AUTOCOMPLETE_RAW } = EMAIL_FORMATING;
-    const { SIGNED_AND_INVALID } = VERIFICATION_STATUS;
-    const MAX_KEY_SIZE = 50 * 1024;
-    const MAX_KEY_COUNTS = 5;
-    const normalizeEmail = (email) => email.toLowerCase();
-    const asList = (v = []) => (Array.isArray(v) ? v : [v]);
-    const getGroup = (emailList, email) => {
-        const prop = _.find(emailList, (prop) => normalizeEmail(prop.valueOf()) === email);
-        if (!prop) {
-            return;
-        }
-        return prop.getGroup();
-    };
+
     const asDataUri = (publicKey) => {
         const data = pmcw.stripArmor(publicKey);
         return 'data:application/pgp-keys;base64,' + pmcw.encode_base64(pmcw.arrayToBinaryString(data));
@@ -73,7 +71,7 @@ function attachedPublicKey(
         if (!userids.length) {
             return [];
         }
-        return populateAddresses(keyInfo, userids, message.IsEncrypted === CONSTANTS.SEND_TYPES.SEND_PM);
+        return populateAddresses(keyInfo, userids, message.IsEncrypted === SEND_TYPES.SEND_PM);
     };
 
     const getPublicKeyFromSig = async (message) => {
@@ -101,7 +99,7 @@ function attachedPublicKey(
         if (!_.has(message.ParsedHeaders, 'Autocrypt')) {
             return [];
         }
-        const autocrypt = asList(message.ParsedHeaders.Autocrypt);
+        const autocrypt = toList(message.ParsedHeaders.Autocrypt);
         return _.filter(
             autocrypt.map((header) => {
                 const match = header.match(/^(\s*(_[^;\s]*|addr|prefer-encrypt)\s*=\s*[^;\s]*\s*;)*\s*keydata\s*=([^;]*)$/);
@@ -165,7 +163,7 @@ function attachedPublicKey(
 
 
     const extractFromEmail = async (message) => {
-        if (message.IsEncrypted === CONSTANTS.SEND_TYPES.SEND_PM) {
+        if (message.IsEncrypted === SEND_TYPES.SEND_PM) {
             return message.Verified === SIGNED_AND_INVALID ? getPublicKeyFromSig(message) : false;
         }
 
@@ -177,10 +175,7 @@ function attachedPublicKey(
             return false;
         }
 
-        const isKey = (key) =>
-            pmcw.keyInfo(key).catch(() => {
-                return false;
-            });
+        const isKey = (key) => pmcw.keyInfo(key).catch(() => false);
 
         const buffers = await Promise.all(candidates.map((c) => AttachmentLoader.get(c, message)));
         const armoredFiles = buffers.map(pmcw.arrayToBinaryString);
@@ -229,10 +224,10 @@ function attachedPublicKey(
         }
 
         const contact = await Contact.get(contactEmail.ContactID);
-        const emailList = asList(contact.vCard.get('email'));
+        const emailList = toList(contact.vCard.get('email'));
         const group = getGroup(emailList, normalizedEmail);
 
-        const keyList = asList(contact.vCard.data.key || []);
+        const keyList = toList(contact.vCard.data.key || []);
         if (address.encrypt) {
             contact.vCard.set('x-pm-encrypt', 'true', { group });
             contact.vCard.set('x-pm-sign', 'true', { group });
