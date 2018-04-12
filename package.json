@@ -168,14 +168,14 @@
     "i18n:compile": "tasks/compileI18n.js",
     "i18n:build": "npm run i18n:extract && npm run i18n:compile",
     "posti18n:build": "./tasks/createI18nCache.js && ./tasks/commitI18n.sh",
-    "pretty": "prettier --arrow-parens=always --single-quote --tab-width=4 --print-width=120 --no-prose-wrap --write $(find src/app -type f -name '*.js')",
+    "pretty": "prettier --write $(find src/app -type f -name '*.js')",
     "precommit": "lint-staged",
     "create": "appComponent",
     "cypress:open": "cypress open"
   },
   "lint-staged": {
     "*.js": [
-      "prettier --arrow-parens=always --single-quote --tab-width=4 --print-width=120 --no-prose-wrap --write",
+      "prettier --write",
       "git add"
     ]
   },
