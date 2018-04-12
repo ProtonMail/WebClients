@@ -1,36 +1,33 @@
 import _ from 'lodash';
 
+import { generateUID } from '../../../helpers/string';
+import { orderByPref, uniqGroups } from '../../../helpers/vcard';
+import { CONTACT_MODE, CONTACTS_LIMIT_ENCRYPTION, MAIN_KEY, VCARD_VERSION, CONTACT_ERROR } from '../../constants';
+
+const { CLEAR_TEXT, ENCRYPTED_AND_SIGNED, ENCRYPTED, SIGNED } = CONTACT_MODE;
+const {
+    TYPE3_CONTACT_VERIFICATION,
+    TYPE3_CONTACT_DECRYPTION,
+    TYPE2_CONTACT_VERIFICATION,
+    TYPE1_CONTACT
+} = CONTACT_ERROR;
+
 /* @ngInject */
-function contactEncryption($injector, $rootScope, CONSTANTS, chunk, gettextCatalog, pmcw, vcard, contactKeyAssigner) {
+function contactEncryption($injector, $rootScope, chunk, gettextCatalog, pmcw, vcard, contactKeyAssigner) {
     const KEY_FIELDS = ['key', 'x-pm-mimetype', 'x-pm-encrypt', 'x-pm-sign', 'x-pm-scheme', 'x-pm-tls', 'x-pm-dane'];
     const CLEAR_FIELDS = ['version', 'prodid', 'x-pm-label', 'x-pm-group'];
     const SIGNED_FIELDS = ['version', 'prodid', 'fn', 'uid', 'email'].concat(KEY_FIELDS);
     const GROUP_FIELDS = ['email'].concat(KEY_FIELDS);
-    const { CONTACT_MODE, CONTACTS_LIMIT_ENCRYPTION, MAIN_KEY, VCARD_VERSION, CONTACT_ERROR } = CONSTANTS;
-    const { CLEAR_TEXT, ENCRYPTED_AND_SIGNED, ENCRYPTED, SIGNED } = CONTACT_MODE;
-    const { TYPE3_CONTACT_VERIFICATION, TYPE3_CONTACT_DECRYPTION, TYPE2_CONTACT_VERIFICATION, TYPE1_CONTACT } = CONTACT_ERROR;
+
     const getErrors = (data = []) => _.map(data, 'error').filter(Boolean);
 
-
-    /**
-     * Order properties by preference parameter
-     * @param {Array} properties
-     * @return {Array}
-     */
-    function orderByPref(properties = []) {
-        return _.sortBy(properties, (property) => {
-            const { pref = 0 } = property.getParams() || {};
-            return pref;
-        });
-    }
-
     const buildContact = (ID, data = [], cards) => {
-        const contact = ({
+        const contact = {
             ID,
             vCard: mergeContactData(data),
             errors: getErrors(data),
             types: cards.map(({ Type }) => Type)
-        });
+        };
         Object.keys(contact.vCard.data).forEach((key) => {
             if (Array.isArray(contact.vCard.data[key])) {
                 contact.vCard.data[key] = orderByPref(contact.vCard.data[key]);
@@ -39,23 +36,9 @@ function contactEncryption($injector, $rootScope, CONSTANTS, chunk, gettextCatal
         return contact;
     };
 
-    /**
-     * Generates a contact UID of the form 'proton-web-uuid'
-     * @return {String}
-     */
-    function generateUID() {
-        const s4 = () =>
-            Math.floor((1 + Math.random()) * 0x10000)
-                .toString(16)
-                .substring(1);
-
-        return `proton-web-${s4()}${s4()}-${s4()}-${s4()}-${s4()}-${s4()}${s4()}${s4()}`;
-    }
-
     function mergeContactData(data = []) {
         const vcfString = _.reduce(data, (acc, { data }) => `${acc}${data}\r\n`, '');
         const vcards = vcard.from(vcfString);
-
         return vcard.merge(vcards);
     }
 
@@ -68,23 +51,10 @@ function contactEncryption($injector, $rootScope, CONSTANTS, chunk, gettextCatal
         await assignKeyToGroup(data);
         let itemCounter = 0;
         const properties = vcard.extractProperties(data);
-        const groups = _.reduce(
-            properties,
-            (acc, property) => {
-                const group = property.getGroup();
-
-                if (acc.indexOf(group) === -1) {
-                    acc.push(group);
-                }
-
-                return acc;
-            },
-            []
-        );
+        const groups = uniqGroups(properties);
 
         function getGroupName() {
             itemCounter++;
-
             const groupName = `item${itemCounter}`;
 
             if (_.includes(groups, groupName)) {
@@ -119,14 +89,14 @@ function contactEncryption($injector, $rootScope, CONSTANTS, chunk, gettextCatal
 
         if (toEncryptAndSign.length > 0) {
             const data = vcard.build(toEncryptAndSign).toString(VCARD_VERSION);
-
-            promises.push(
-                pmcw.encryptMessage({ data, publicKeys, privateKeys, armor, detached }).then(({ data, signature }) => ({
+            const promise = pmcw
+                .encryptMessage({ data, publicKeys, privateKeys, armor, detached })
+                .then(({ data, signature }) => ({
                     Type: ENCRYPTED_AND_SIGNED,
                     Data: data,
                     Signature: signature
-                }))
-            );
+                }));
+            promises.push(promise);
         }
 
         if (toSign.length > 0) {
@@ -188,7 +158,13 @@ function contactEncryption($injector, $rootScope, CONSTANTS, chunk, gettextCatal
             switch (Type) {
                 case ENCRYPTED_AND_SIGNED:
                     return pmcw
-                        .decryptMessage({ message: pmcw.getMessage(Data), privateKeys, publicKeys, armor, signature: pmcw.getSignature(Signature) })
+                        .decryptMessage({
+                            message: pmcw.getMessage(Data),
+                            privateKeys,
+                            publicKeys,
+                            armor,
+                            signature: pmcw.getSignature(Signature)
+                        })
                         .then(({ data, verified }) => {
                             if (verified !== 1) {
                                 return { error: TYPE3_CONTACT_VERIFICATION, data };
@@ -201,7 +177,11 @@ function contactEncryption($injector, $rootScope, CONSTANTS, chunk, gettextCatal
                         });
                 case SIGNED:
                     return pmcw
-                        .verifyMessage({ message: pmcw.getCleartextMessage(Data), publicKeys, signature: pmcw.getSignature(Signature) })
+                        .verifyMessage({
+                            message: pmcw.getCleartextMessage(Data),
+                            publicKeys,
+                            signature: pmcw.getSignature(Signature)
+                        })
                         .then(({ verified }) => {
                             if (verified !== 1) {
                                 return { error: TYPE2_CONTACT_VERIFICATION, data: Data };
@@ -221,6 +201,20 @@ function contactEncryption($injector, $rootScope, CONSTANTS, chunk, gettextCatal
         return Promise.all(promises);
     }
 
+    const flowContacts = (contacts, formatContact) => {
+        return _.reduce(
+            chunk(contacts, CONTACTS_LIMIT_ENCRYPTION),
+            (promise, chunk) => {
+                return promise.then((previousContacts = []) => {
+                    return Promise.all(chunk.map(formatContact)).then((newContacts) =>
+                        previousContacts.concat(newContacts)
+                    );
+                });
+            },
+            Promise.resolve()
+        );
+    };
+
     /**
      * Decrypt the custom datas
      * NOTE It's very important to chain the promises for the encryption to not overcharge pmcw
@@ -234,25 +228,15 @@ function contactEncryption($injector, $rootScope, CONSTANTS, chunk, gettextCatal
         const total = contacts.length;
         let count = 0;
 
-        return _.reduce(
-            chunk(contacts, CONTACTS_LIMIT_ENCRYPTION),
-            (promise, chunkedContacts) => {
-                return promise.then((previousContacts = []) => {
-                    return Promise.all(
-                        chunkedContacts.map(({ ID, Cards = [] }) => {
-                            return extractCards({ cards: Cards, privateKeys, publicKeys }).then((data) => {
-                                count++;
-                                const progress = Math.floor(count * 100 / total);
-                                $rootScope.$emit('progressBar', { type: 'contactsProgressBar', data: { progress } });
+        return flowContacts(contacts, ({ ID, Cards = [] }) => {
+            return extractCards({ cards: Cards, privateKeys, publicKeys }).then((data) => {
+                count++;
+                const progress = Math.floor(count * 100 / total);
+                $rootScope.$emit('progressBar', { type: 'contactsProgressBar', data: { progress } });
 
-                                return buildContact(ID, data, Cards);
-                            });
-                        })
-                    ).then((newContacts) => previousContacts.concat(newContacts));
-                }, []);
-            },
-            Promise.resolve()
-        );
+                return buildContact(ID, data, Cards);
+            });
+        });
     }
 
     /**
@@ -268,26 +252,16 @@ function contactEncryption($injector, $rootScope, CONSTANTS, chunk, gettextCatal
         const total = contacts.length;
         let count = 0;
 
-        return _.reduce(
-            chunk(contacts, CONTACTS_LIMIT_ENCRYPTION),
-            (promise, chunkedContacts) => {
-                return promise.then((previousContacts = []) => {
-                    return Promise.all(
-                        chunkedContacts.map((contact) => {
-                            return prepareCards({ data: contact.vCard, publicKeys, privateKeys }).then((Cards) => {
-                                count++;
-                                const progress = Math.floor(count * 50 / total);
+        return flowContacts(contacts, (contact) => {
+            return prepareCards({ data: contact.vCard, publicKeys, privateKeys }).then((Cards) => {
+                count++;
+                const progress = Math.floor(count * 50 / total);
 
-                                $rootScope.$emit('progressBar', { type: 'contactsProgressBar', data: { progress } });
+                $rootScope.$emit('progressBar', { type: 'contactsProgressBar', data: { progress } });
 
-                                return { Cards };
-                            });
-                        })
-                    ).then((newContacts) => previousContacts.concat(newContacts));
-                });
-            },
-            Promise.resolve()
-        );
+                return { Cards };
+            });
+        });
     }
 
     return { decrypt, encrypt };

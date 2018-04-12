@@ -1,8 +1,8 @@
 import keyAlgorithm from '../../keys/helper/keyAlgorithm';
+import { SEND_TYPES } from '../../constants';
 
 /* @ngInject */
 function messagePublicKeyFound(
-    CONSTANTS,
     trustPublicKeyModal,
     pmcw,
     networkActivityTracker,
@@ -14,8 +14,8 @@ function messagePublicKeyFound(
     $rootScope
 ) {
     const I18N = {
-        SUCCES_MESSAGE: gettextCatalog.getString('Public Key trusted'),
-        ERROR_MESSAGE: gettextCatalog.getString('Error while adding the public key to the contacts')
+        SUCCES_MESSAGE: gettextCatalog.getString('Public Key trusted', null, 'Info'),
+        ERROR_MESSAGE: gettextCatalog.getString('Error while adding the public key to the contacts', null, 'Error')
     };
 
     return {
@@ -36,7 +36,7 @@ function messagePublicKeyFound(
                         trustPublicKeyModal.activate({
                             params: {
                                 addresses,
-                                isInternal: scope.message.IsEncrypted === CONSTANTS.SEND_TYPES.SEND_PM,
+                                isInternal: scope.message.IsEncrypted === SEND_TYPES.SEND_PM,
                                 keyInfo,
                                 submit(addresses) {
                                     const promise = attachedPublicKey.attachPublicKey(scope.message.attachedPublicKey, addresses);

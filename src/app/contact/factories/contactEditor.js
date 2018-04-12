@@ -72,6 +72,32 @@ function contactEditor(
         }, { updated: [], removed: [], errors: [], total: 0 });
     }
 
+    const updateContact = (contact, type = '') => {
+        const method = `update${type}`.trim();
+        const promise = Contact[method](contact).then(({ Contact: contact, cards }) => {
+            dispatcher.contacts('contactUpdated', { contact, cards });
+            notification.success(gettextCatalog.getString('Contact edited', null, 'Success message'));
+            return eventManager.call();
+        });
+
+        networkActivityTracker.track(promise);
+        return promise;
+    };
+
+    /**
+     * Edit a contact
+     * @param {Object} contact
+     * @return {Promise}
+     */
+    const update = ({ contact = {} }) => updateContact(contact);
+
+    /*
+    * Edit the unencrypted part of a contact
+    * @param {Object} contact
+    * @return {Promise}
+    */
+    const updateUnencrypted = ({ contact = {} }) => updateContact(contact, 'Unencrypted');
+
     /**
      * Update and remove contacts.
      * @param {object} update Contact to update
@@ -94,7 +120,7 @@ function contactEditor(
                 total,
                 updated: update,
                 removed,
-                errors: errors.map(({ Error }) => Error)
+                errors: errors.map((item) => item.Error)
             };
         } catch (error) {
             return {
@@ -169,37 +195,6 @@ function contactEditor(
         return promise;
     }
 
-    /**
-     * Edit a contact
-     * @param {Object} contact
-     * @return {Promise}
-     */
-    function update({ contact = {} }) {
-        const promise = Contact.update(contact).then(({ Contact, cards }) => {
-            dispatcher.contacts('contactUpdated', { contact: Contact, cards });
-            notification.success(gettextCatalog.getString('Contact edited', null, 'Success message'));
-            return eventManager.call();
-        });
-
-        networkActivityTracker.track(promise);
-        return promise;
-    }
-
-    /*
-        * Edit the unencrypted part of a contact
-        * @param {Object} contact
-        * @return {Promise}
-        */
-    function updateUnencrypted({ contact = {} }) {
-        const promise = Contact.updateUnencrypted(contact).then(({ Contact, cards }) => {
-            dispatcher.contacts('contactUpdated', { contact: Contact, cards });
-            notification.success(gettextCatalog.getString('Contact edited', null, 'Success message'));
-            return eventManager.call();
-        });
-
-        networkActivityTracker.track(promise);
-        return promise;
-    }
     /*
         * Delete contact(s)
         * @param {Array} selectContacts

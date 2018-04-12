@@ -439,6 +439,28 @@ function messageActions(
         cache.events(events);
     }
 
+    const generateMessageEvent = (conversationIDs, events, messages) => {
+        flow(
+            uniq,
+            map((id) => cache.getConversationCached(id)),
+            filter(Boolean),
+            each(({ ID, Labels = [] }) => {
+                events.push({
+                    Action: 3,
+                    ID,
+                    Conversation: {
+                        ID,
+                        Labels: _.map(Labels, (label) => {
+                            label.ContextNumUnread += _.filter(messages, ({ ConversationID = '', LabelIDs = [] }) => ID === ConversationID && _.includes(LabelIDs, label.ID)).length;
+                            return label;
+                        })
+                    }
+                });
+            })
+        )(conversationIDs);
+    };
+
+
     /**
      * Mark as read a list of messages
      * @param {Array} ids
@@ -469,25 +491,7 @@ function messageActions(
             return;
         }
 
-        // Generate conversation event
-        flow(
-            uniq,
-            map((id) => cache.getConversationCached(id)),
-            filter(Boolean),
-            each(({ ID, Labels = [] }) => {
-                events.push({
-                    Action: 3,
-                    ID,
-                    Conversation: {
-                        ID,
-                        Labels: _.map(Labels, (label) => {
-                            label.ContextNumUnread -= _.filter(messages, ({ ConversationID = '', LabelIDs = [] }) => ID === ConversationID && _.includes(LabelIDs, label.ID)).length;
-                            return label;
-                        })
-                    }
-                });
-            })
-        )(conversationIDs);
+        generateMessageEvent(conversationIDs, events, messages);
 
         // Send request
         const promise = messageApi.read({ IDs: ids });
@@ -550,28 +554,7 @@ function messageActions(
             { messages: [], conversationIDs: [], events: [] }
         );
 
-        if (messages.length) {
-            // Generate conversation event
-            flow(
-                uniq,
-                map((id) => cache.getConversationCached(id)),
-                filter(Boolean),
-                each(({ ID, Labels = [] }) => {
-                    events.push({
-                        Action: 3,
-                        ID,
-                        Conversation: {
-                            ID,
-                            Labels: _.map(Labels, (label) => {
-                                label.ContextNumUnread += _.filter(messages, ({ ConversationID = '', LabelIDs = [] }) => ID === ConversationID && _.includes(LabelIDs, label.ID)).length;
-                                return label;
-                            })
-                        }
-                    });
-                })
-            )(conversationIDs);
-        }
-
+        messages.length && generateMessageEvent(conversationIDs, events);
         cache.events(events);
     }
 

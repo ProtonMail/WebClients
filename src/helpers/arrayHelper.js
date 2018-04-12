@@ -49,3 +49,10 @@ export const remove = (arr, item) => {
     result.splice(i, 1);
     return result;
 };
+
+/**
+ * Convert the item to an array if it's not
+ * @param  {Array}  v
+ * @return {Array}
+ */
+export const toList = (v = []) => (Array.isArray(v) ? v : [v]);

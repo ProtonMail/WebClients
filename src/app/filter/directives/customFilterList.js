@@ -19,7 +19,6 @@ function customFilterList(
         templateUrl: require('../../../templates/filter/customFilterList.tpl.html'),
         scope: {},
         link(scope) {
-            // Variables
             const { on, unsubscribe } = dispatchers();
             scope.customFilters = null;
 

@@ -15,8 +15,7 @@ function domainModel(dispatchers, domainApi, gettextCatalog) {
         return domainApi
             .catchall(ID, { AddressID })
             .then(({ data = {} } = {}) => {
-                const domain = _.find(domains, { ID });
-
+                const domain = _.find(domains, { ID }) || {};
                 domain.CatchAll = AddressID;
                 return data;
             })
@@ -47,27 +46,18 @@ function domainModel(dispatchers, domainApi, gettextCatalog) {
         }
     });
 
-    on('createDomain', (event, ID, domain) => {
+    const update = (e, ID, domain) => {
         const index = _.findIndex(domains, { ID });
-
         if (index === -1) {
             domains.push(domain);
         } else {
             _.extend(domains[index], domain);
         }
         dispatcher.domainsChange('', domains);
-    });
+    };
 
-    on('updateDomain', (event, ID, domain) => {
-        const index = _.findIndex(domains, { ID });
-
-        if (index === -1) {
-            domains.push(domain);
-        } else {
-            _.extend(domains[index], domain);
-        }
-        dispatcher.domainsChange('', domains);
-    });
+    on('createDomain', update);
+    on('updateDomain', update);
 
     on('logout', () => {
         clear();

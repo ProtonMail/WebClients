@@ -1,18 +1,21 @@
 import _ from 'lodash';
 
-/* @ngInject */
-function contactImportEncryption(pmcw, $injector, CONSTANTS, contactKey, contactAskEncryption, contactKeyAssigner, vcard) {
-    const asList = (v = []) => (Array.isArray(v) ? v : [v]);
+import { PACKAGE_TYPE } from '../../constants';
+import { toList } from '../../../helpers/arrayHelper';
+import { uniqGroups } from '../../../helpers/vcard';
 
-    const asyncSequentialMap = (list, asyncFunction) =>
-        list.reduce((lastProcess, element) => {
+/* @ngInject */
+function contactImportEncryption(pmcw, $injector, contactKey, contactAskEncryption, contactKeyAssigner, vcard) {
+    const asyncSequentialMap = (list, asyncFunction) => {
+        return list.reduce((lastProcess, element) => {
             return lastProcess.then((accumulator) => {
                 return asyncFunction(element).then((result) => accumulator.concat([result]));
             });
         }, Promise.resolve([]));
+    };
 
-    const encryptModal = (email) =>
-        new Promise((resolve) =>
+    const encryptModal = (email) => {
+        return new Promise((resolve) => {
             contactAskEncryption.activate({
                 params: {
                     email,
@@ -22,24 +25,13 @@ function contactImportEncryption(pmcw, $injector, CONSTANTS, contactKey, contact
                     },
                     onEscape: _.noop
                 }
-            })
-        );
+            });
+        });
+    };
 
     const groupGenerator = (contact) => {
         const properties = vcard.extractProperties(contact.vCard);
-        const groups = _.reduce(
-            properties,
-            (acc, property) => {
-                const group = property.getGroup();
-
-                if (acc.indexOf(group) === -1) {
-                    acc.push(group);
-                }
-
-                return acc;
-            },
-            []
-        );
+        const groups = uniqGroups(properties);
 
         let itemCounter = 0;
         const generate = () => {
@@ -56,7 +48,7 @@ function contactImportEncryption(pmcw, $injector, CONSTANTS, contactKey, contact
 
     const normalize = (contact) => {
         const generateGroup = groupGenerator(contact);
-        const emailList = asList(contact.vCard.get('email'));
+        const emailList = toList(contact.vCard.get('email'));
 
         emailList.forEach((emailProp) => (emailProp.group = emailProp.group || generateGroup()));
 
@@ -85,13 +77,13 @@ function contactImportEncryption(pmcw, $injector, CONSTANTS, contactKey, contact
 
         const processContact = (contact) =>
             normalize(contact).then(() => {
-                const emailList = asList(contact.vCard.get('email'));
-                const keyList = asList(contact.vCard.get('key'));
-                const encryptList = asList(contact.vCard.get('x-pm-encrypt'));
+                const emailList = toList(contact.vCard.get('email'));
+                const keyList = toList(contact.vCard.get('key'));
+                const encryptList = toList(contact.vCard.get('x-pm-encrypt'));
                 return asyncSequentialMap(emailList, async (emailProp) => {
                     const sendPreferences = $injector.get('sendPreferences');
                     const info = await sendPreferences.get(emailProp.valueOf());
-                    if (info.scheme === CONSTANTS.PACKAGE_TYPE.SEND_PM) {
+                    if (info.scheme === PACKAGE_TYPE.SEND_PM) {
                         // internal user: skip
                         return;
                     }
@@ -99,16 +91,18 @@ function contactImportEncryption(pmcw, $injector, CONSTANTS, contactKey, contact
                     const group = emailProp.getGroup();
                     const encrypts = encryptList.filter((prop) => prop.getGroup() === group);
                     const keys = keyList.filter((prop) => prop.getGroup() === group);
-                    const keyObjects = await Promise.all(keys
-                        .map(contactKey.parseKey)
-                        .filter((k) => k)
-                        .map(([k = false]) => k)
-                        .map((k) => {
-                            if (!k) {
-                                return Promise.resolve(k);
-                            }
-                            return pmcw.isExpiredKey(k).then((isExpired) => (isExpired ? false : k));
-                        }));
+                    const keyObjects = await Promise.all(
+                        keys
+                            .map(contactKey.parseKey)
+                            .filter((k) => k)
+                            .map(([k = false]) => k)
+                            .map((k) => {
+                                if (!k) {
+                                    return Promise.resolve(k);
+                                }
+                                return pmcw.isExpiredKey(k).then((isExpired) => (isExpired ? false : k));
+                            })
+                    );
 
                     if (keyObjects.filter((k) => k).length === 0 || encrypts.length > 0) {
                         return;

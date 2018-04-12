@@ -1,4 +1,7 @@
 import _ from 'lodash';
+import { toList } from '../../../helpers/arrayHelper';
+import { normalizeEmail } from '../../../helpers/string';
+import { getGroup } from '../../../helpers/vcard';
 
 /* @ngInject */
 function autoPinPrimaryKeys(Contact, keyCache, pmcw, contactEmails, confirmModal, gettextCatalog) {
@@ -20,16 +23,6 @@ function autoPinPrimaryKeys(Contact, keyCache, pmcw, contactEmails, confirmModal
             ) + '<a target=\'_blank\' href=\'https://protonmail.com/support/knowledge-base/anti-spoofing/\' translate translate-context="Action">'
             + gettextCatalog.getString('Learn more') + '</a>'
     };
-    const normalizeEmail = (email) => email.toLowerCase();
-    const asList = (v = []) => (Array.isArray(v) ? v : [v]);
-
-    const getGroup = (emailList, email) => {
-        const prop = _.find(emailList, (prop) => normalizeEmail(prop.valueOf()) === email);
-        if (!prop) {
-            return;
-        }
-        return prop.getGroup();
-    };
 
     const pinPrimaryKeys = (emails, keys) => {
         const contactIds = emails.reduce((acc, email) => {
@@ -46,7 +39,7 @@ function autoPinPrimaryKeys(Contact, keyCache, pmcw, contactEmails, confirmModal
                 return Contact.get(contactID).then((contact) => {
                     contactIds[contactID].forEach((email) => {
                         const normalizedEmail = normalizeEmail(email);
-                        const emailList = asList(contact.vCard.get('email'));
+                        const emailList = toList(contact.vCard.get('email'));
                         const group = getGroup(emailList, normalizedEmail);
                         const data = pmcw.stripArmor(keys[email].Keys[0].PublicKey);
                         const base64 = 'data:application/pgp-keys;base64,' + pmcw.encode_base64(pmcw.arrayToBinaryString(data));

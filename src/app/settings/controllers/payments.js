@@ -47,29 +47,12 @@ function PaymentsController(
         $scope.invoiceOwner = owner;
     };
 
-    $scope.add = () => {
-        cardModal.activate({
-            params: {
-                close({ methods, method } = {}) {
-                    cardModal.deactivate();
-
-                    if (method) {
-                        $scope.$applyAsync(() => {
-                            $scope.methods = methods;
-                        });
-                    }
-                }
-            }
-        });
-    };
-
-    $scope.edit = (method) => {
+    const openCardModal = (method) => {
         cardModal.activate({
             params: {
                 method,
                 close({ methods, method } = {}) {
                     cardModal.deactivate();
-
                     if (method) {
                         $scope.$applyAsync(() => {
                             $scope.methods = methods;
@@ -80,7 +63,11 @@ function PaymentsController(
         });
     };
 
-    $scope.default = function(method) {
+    $scope.add = () => openCardModal();
+    $scope.edit = openCardModal;
+
+
+    $scope.default = (method) => {
         const methods = $scope.methods.slice();
         const index = _.findIndex(methods, { ID: method.ID });
 
