@@ -1,17 +1,18 @@
 import _ from 'lodash';
 
 /* @ngInject */
-function messageAddressActionMenu(dispatchers,
-                                  messageModel,
-                                  $state,
-                                  contactEmails,
-                                  notification,
-                                  gettextCatalog,
-                                  messageSenderSettings
-                                  ) {
+function messageAddressActionMenu(
+    dispatchers,
+    messageModel,
+    $state,
+    contactEmails,
+    notification,
+    gettextCatalog,
+    messageSenderSettings
+) {
     const I18N = {
         copied: gettextCatalog.getString('Copied to clipboard', null),
-        error_copied: gettextCatalog.getString('Error while copying', null)
+        errorCopied: gettextCatalog.getString('Error while copying', null)
     };
 
     return {
@@ -22,7 +23,9 @@ function messageAddressActionMenu(dispatchers,
             const { dispatcher, unsubscribe, on } = dispatchers(['contacts', 'composer.new', 'closeDropdown']);
             const STATE = {};
 
-            const toggle = (elem, className, value) => elem.classList.contains(className) === value || elem.classList.toggle(className);
+            const toggle = (node, className, value) => {
+                return elem.classList.contains(className) === value || node.classList.toggle(className);
+            };
             const trigger = elem.find('.message-address-trigger');
             const menu = elem.find('.pm_dropdown');
             const copyButton = elem.find('.message-action-copy-address');
@@ -43,11 +46,11 @@ function messageAddressActionMenu(dispatchers,
                 }
             });
             clipboard.on('success', () => notification.success(I18N.copied));
-            clipboard.on('error', () => notification.error(I18N.error_copied));
+            clipboard.on('error', () => notification.error(I18N.errorCopied));
 
-            const getContact = (email) => _.find(contactEmails.fetch(), { Email: email });
+            const getContact = (email) => _.find(contactEmails.get(), { Email: email });
             const showContact = () => {
-                const contact = _.find(contactEmails.fetch(), { Email: STATE.address.address });
+                const contact = _.find(contactEmails.get(), { Email: STATE.address.address });
 
                 if (contact) {
                     $state.go('secured.contacts.details', { id: contact.ContactID });
