@@ -14,16 +14,6 @@ export default angular
     .module('proton.routes', ['ui.router', 'proton.authentication', 'proton.constants', 'proton.utils'])
 
     .config(($stateProvider, $urlRouterProvider, $locationProvider) => {
-        const resolver = (opt = {}) => ({
-            ...opt,
-            methods(user, paymentModel, networkActivityTracker) {
-                return networkActivityTracker.track(paymentModel.getMethods(null, user));
-            },
-            status(user, paymentModel, networkActivityTracker) {
-                return networkActivityTracker.track(paymentModel.getStatus());
-            }
-        });
-
         const conversationParameters = () => {
             const parameters = [
                 'email',
@@ -637,7 +627,14 @@ export default angular
                         controller: 'AccountController'
                     }
                 },
-                resolve: resolver(),
+                resolve: {
+                    methods(user, paymentModel, networkActivityTracker) {
+                        return networkActivityTracker.track(paymentModel.getMethods(null, user));
+                    },
+                    status(user, paymentModel, networkActivityTracker) {
+                        return networkActivityTracker.track(paymentModel.getStatus());
+                    }
+                },
                 onEnter(AppModel) {
                     AppModel.set('inboxSidebar', false);
                     AppModel.set('contactSidebar', false);
@@ -653,7 +650,14 @@ export default angular
                         controller: 'LabelsController'
                     }
                 },
-                resolve: resolver(),
+                resolve: {
+                    methods(user, paymentModel, networkActivityTracker) {
+                        return networkActivityTracker.track(paymentModel.getMethods(null, user));
+                    },
+                    status(user, paymentModel, networkActivityTracker) {
+                        return networkActivityTracker.track(paymentModel.getStatus());
+                    }
+                },
                 onEnter(AppModel) {
                     AppModel.set('inboxSidebar', false);
                     AppModel.set('contactSidebar', false);
@@ -669,7 +673,14 @@ export default angular
                         controller: 'SecurityController'
                     }
                 },
-                resolve: resolver(),
+                resolve: {
+                    methods(user, paymentModel, networkActivityTracker) {
+                        return networkActivityTracker.track(paymentModel.getMethods(null, user));
+                    },
+                    status(user, paymentModel, networkActivityTracker) {
+                        return networkActivityTracker.track(paymentModel.getStatus());
+                    }
+                },
                 onEnter(AppModel) {
                     AppModel.set('inboxSidebar', false);
                     AppModel.set('contactSidebar', false);
@@ -685,7 +696,14 @@ export default angular
                         controller: 'AppearanceController'
                     }
                 },
-                resolve: resolver(),
+                resolve: {
+                    methods(user, paymentModel, networkActivityTracker) {
+                        return networkActivityTracker.track(paymentModel.getMethods(null, user));
+                    },
+                    status(user, paymentModel, networkActivityTracker) {
+                        return networkActivityTracker.track(paymentModel.getStatus());
+                    }
+                },
                 onEnter(AppModel) {
                     AppModel.set('inboxSidebar', false);
                     AppModel.set('contactSidebar', false);
@@ -701,7 +719,13 @@ export default angular
                         controller: 'PaymentsController'
                     }
                 },
-                resolve: resolver({
+                resolve: {
+                    methods(user, paymentModel, networkActivityTracker) {
+                        return networkActivityTracker.track(paymentModel.getMethods(null, user));
+                    },
+                    status(user, paymentModel, networkActivityTracker) {
+                        return networkActivityTracker.track(paymentModel.getStatus());
+                    },
                     access(user, $state) {
                         if (user.subuser) {
                             $state.go('secured.account');
@@ -718,7 +742,7 @@ export default angular
                         }
                         return {};
                     }
-                }),
+                },
                 onEnter(AppModel) {
                     AppModel.set('inboxSidebar', false);
                     AppModel.set('contactSidebar', false);
@@ -733,7 +757,14 @@ export default angular
                         template: '<keys-view></keys-view>'
                     }
                 },
-                resolve: resolver(),
+                resolve: {
+                    methods(user, paymentModel, networkActivityTracker) {
+                        return networkActivityTracker.track(paymentModel.getMethods(null, user));
+                    },
+                    status(user, paymentModel, networkActivityTracker) {
+                        return networkActivityTracker.track(paymentModel.getStatus());
+                    }
+                },
                 onEnter(AppModel) {
                     AppModel.set('inboxSidebar', false);
                     AppModel.set('contactSidebar', false);
@@ -748,11 +779,18 @@ export default angular
                         template: '<vpn-view></vpn-view>'
                     }
                 },
-                resolve: resolver({
+                resolve: {
+                    methods(user, paymentModel, networkActivityTracker) {
+                        return networkActivityTracker.track(paymentModel.getMethods(null, user));
+                    },
+                    status(user, paymentModel, networkActivityTracker) {
+                        return networkActivityTracker.track(paymentModel.getStatus());
+                    },
+
                     vpn(user, vpnModel, networkActivityTracker) {
                         return networkActivityTracker.track(vpnModel.fetch());
                     }
-                }),
+                },
                 onEnter(AppModel) {
                     AppModel.set('inboxSidebar', false);
                     AppModel.set('contactSidebar', false);
@@ -763,7 +801,14 @@ export default angular
             .state('secured.dashboard', {
                 url: '/dashboard',
                 params: { scroll: null, noBlackFridayModal: null, cycle: null, currency: null },
-                resolve: resolver({
+                resolve: {
+                    methods(user, paymentModel, networkActivityTracker) {
+                        return networkActivityTracker.track(paymentModel.getMethods(null, user));
+                    },
+                    status(user, paymentModel, networkActivityTracker) {
+                        return networkActivityTracker.track(paymentModel.getStatus());
+                    },
+
                     access(user, $state) {
                         if (user.subuser || user.Role === PAID_MEMBER_ROLE) {
                             $state.go('secured.account');
@@ -774,7 +819,7 @@ export default angular
                     dashboardPlans(user, dashboardModel, subscriptionModel) {
                         return subscriptionModel.fetch().then(({ Currency }) => dashboardModel.loadPlans(Currency));
                     }
-                }),
+                },
                 views: {
                     'content@secured': {
                         templateUrl: require('../templates/views/dashboard.tpl.html'),
@@ -794,7 +839,13 @@ export default angular
                     action: null,
                     id: null
                 },
-                resolve: resolver({
+                resolve: {
+                    methods(user, paymentModel, networkActivityTracker) {
+                        return networkActivityTracker.track(paymentModel.getMethods(null, user));
+                    },
+                    status(user, paymentModel, networkActivityTracker) {
+                        return networkActivityTracker.track(paymentModel.getStatus());
+                    },
                     access(user, $state) {
                         if (!user.subuser && user.Role !== PAID_MEMBER_ROLE) {
                             return Promise.resolve();
@@ -826,7 +877,7 @@ export default angular
                         }
                         return Promise.resolve();
                     }
-                }),
+                },
                 views: {
                     'content@secured': {
                         templateUrl: require('../templates/views/members.tpl.html'),
@@ -842,7 +893,13 @@ export default angular
 
             .state('secured.domains', {
                 url: '/domains',
-                resolve: resolver({
+                resolve: {
+                    methods(user, paymentModel, networkActivityTracker) {
+                        return networkActivityTracker.track(paymentModel.getMethods(null, user));
+                    },
+                    status(user, paymentModel, networkActivityTracker) {
+                        return networkActivityTracker.track(paymentModel.getStatus());
+                    },
                     access(user, $state) {
                         if (user.subuser || user.Role === PAID_MEMBER_ROLE) {
                             $state.go('secured.account');
@@ -874,7 +931,7 @@ export default angular
                         }
                         return Promise.resolve();
                     }
-                }),
+                },
                 views: {
                     'content@secured': {
                         templateUrl: require('../templates/views/domains.tpl.html'),
@@ -918,14 +975,20 @@ export default angular
 
             .state('secured.filters', {
                 url: '/filters',
-                resolve: resolver({
+                resolve: {
+                    methods(user, paymentModel, networkActivityTracker) {
+                        return networkActivityTracker.track(paymentModel.getMethods(null, user));
+                    },
+                    status(user, paymentModel, networkActivityTracker) {
+                        return networkActivityTracker.track(paymentModel.getStatus());
+                    },
                     vendor(app, lazyLoader) {
                         return lazyLoader.extraVendor();
                     },
                     loadSpamLists(vendor, user, spamListModel, networkActivityTracker) {
                         return networkActivityTracker.track(spamListModel.load());
                     }
-                }),
+                },
                 views: {
                     'content@secured': {
                         template: '<filter-view></filter-view>'
