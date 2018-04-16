@@ -124,18 +124,16 @@ body {
                 border-style: solid;
                 border-width: 0 2.5rem 2.5rem 0;
                 border-color: transparent #ec6446 transparent transparent;
-                color: $white;
                 overflow: visible;
                 display: none;
-                .fa {
+                svg {
+                    fill: $white;
                     position: absolute;
-                    right: -2.5rem;
-                    top: 0;
+                    right: -2.2rem;
+                    top: .3rem;
                     display: block;
                     text-align: center;
                     line-height: 1.5rem;
-                    height: 1.5rem;
-                    width: 1.5rem;
                 }
             }
             &.expiring .expiration { display: inline-block }

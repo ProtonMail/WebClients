@@ -16,7 +16,11 @@
                 hasAttachments: hasAttachments(conversation),
                 expiring: (conversation.ExpirationTime > 0)
             }">
-            <span class="expiration"><i class="fa fa-hourglass-end"></i></span>
+            <span class="expiration">
+                <svg height="14" width="14" viewBox="0 0 14 14">
+                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#svg-expiration"></use>
+                </svg>
+            </span>
             <pt-select-element data-index="{{ $index }}"></pt-select-element>
             <pt-star
                 data-model="conversation"

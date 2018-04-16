@@ -227,7 +227,9 @@
         </div>
 
         <div ng-if="message.ExpirationTime > 0" class="expiration">
-            <i class="fa fa-hourglass-end"></i>
+            <svg height="14" width="14" viewBox="0 0 14 14">
+                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#svg-expiration"></use>
+            </svg>
             <span translate-context="Message expiration label" translate>This message will expire in</span>
             <time time-refreshed="{{ ::message.ExpirationTime }}"></time>
         </div>
