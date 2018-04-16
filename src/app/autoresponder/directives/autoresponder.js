@@ -1,5 +1,5 @@
 /* @ngInject */
-function autoresponder(autoresponderModel, timepickerModel, autoresponderLanguage, dispatchers) {
+function autoresponder(autoresponderModel, timepickerModel, autoresponderLanguage, dispatchers, mailSettingsModel) {
     const frequencies = [
         { label: autoresponderLanguage.DURATION_FOREVER, value: autoresponderModel.constants.FOREVER },
         { label: autoresponderLanguage.DURATION_FIXED, value: autoresponderModel.constants.FIXED_INTERVAL },
@@ -73,7 +73,9 @@ function autoresponder(autoresponderModel, timepickerModel, autoresponderLanguag
             if (scope.mock) {
                 on('autoresponder', (event, { type, data = {} }) => {
                     if (type === 'update') {
-                        scope.model = data.autoresponder;
+                        scope.$applyAsync(() => {
+                            scope.model = data.autoresponder;
+                        });
                     }
                 });
 
@@ -82,12 +84,24 @@ function autoresponder(autoresponderModel, timepickerModel, autoresponderLanguag
                 on('autoresponder', (event, { type, data = {} }) => {
                     switch (type) {
                         case 'update':
-                            scope.model = data.autoresponder;
+                            scope.$applyAsync(() => {
+                                scope.model = data.autoresponder;
+                            });
                             break;
                         case 'saved_success':
-                        case 'saved_error':
-                            scope.submitting = false;
+                            scope.$applyAsync(() => {
+                                scope.submitting = false;
+                            });
                             break;
+                        case 'saved_error': {
+                            const { isEnabled } = mailSettingsModel.get('AutoResponder') || {};
+
+                            scope.$applyAsync(() => {
+                                scope.model.isEnabled = isEnabled;
+                                scope.submitting = false;
+                            });
+                            break;
+                        }
                     }
                 });
 
@@ -106,6 +120,7 @@ function autoresponder(autoresponderModel, timepickerModel, autoresponderLanguag
             }
 
             const form = elem.find('form');
+
             form.on('submit', onFormSubmit);
 
             scope.$on('$destroy', () => {
