@@ -2,7 +2,18 @@ import _ from 'lodash';
 
 /* @ngInject */
 function searchContact(dispatchers, $state, $stateParams, contactCache, gettextCatalog) {
-    const I18N = gettextCatalog.getString('Search contacts');
+    const I18N = gettextCatalog.getString('Search contacts', null, 'Title');
+
+    const generatePlaceholder = () => {
+        const total = contactCache.total();
+
+        // Prevent false total if we have more than 100 contacts (pagination limit)
+        if (!total || !contactCache.isHydrated()) {
+            return I18N;
+        }
+
+        return `${I18N} (${total})`;
+    };
 
     return {
         replace: true,
@@ -28,11 +39,7 @@ function searchContact(dispatchers, $state, $stateParams, contactCache, gettextC
             const onSubmit = () => switchState(false, scope.query);
             const onReset = () => switchState(true);
             const onInput = _.debounce(onSubmit, 300);
-            const update = () => {
-                const total = contactCache.total();
-                const placeholder = total ? `${I18N} (${total})` : I18N;
-                $input.placeholder = placeholder;
-            };
+            const update = () => ($input.placeholder = generatePlaceholder());
 
             on('contacts', (event, { type }) => {
                 type === 'contactsUpdated' && update();
