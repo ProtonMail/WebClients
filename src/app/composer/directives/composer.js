@@ -26,6 +26,22 @@ function composer(AppModel, embedded, attachmentFileFormat, dispatchers, mailSet
             };
 
             /**
+             * On dragEnter, show the drop overlay and focus the composer if it is an uploadable file.
+             * @param {Event} e
+             */
+            const onDragEnter = (e) => {
+                if (!attachmentFileFormat.isUploadAbleType(e)) {
+                    return;
+                }
+                addDragenterClassName(el[0]);
+                focusComposer('dragenter', {
+                    message: scope.message,
+                    composer: el,
+                    index: +el[0].getAttribute('data-index')
+                });
+            };
+
+            /**
              * Parse actions for the message and trigger some actions
              * @param  {$scope} scope
              * @param  {Node} el)
@@ -38,14 +54,7 @@ function composer(AppModel, embedded, attachmentFileFormat, dispatchers, mailSet
 
                 switch (type) {
                     case 'dragenter':
-                        if (attachmentFileFormat.isUploadAbleType(data.event)) {
-                            addDragenterClassName(el);
-                            focusComposer('dragenter', {
-                                message: scope.message,
-                                composer: angular.element(el),
-                                index: +el.getAttribute('data-index')
-                            });
-                        }
+                        onDragEnter(data.event);
                         break;
                     case 'drop':
                         // Same event as the one coming from squire
@@ -83,21 +92,12 @@ function composer(AppModel, embedded, attachmentFileFormat, dispatchers, mailSet
                 const { target } = e;
                 if (
                     target.classList.contains('composer-dropzone') ||
-                    target.classList.contains('composer-dropzone-wrapper')
+                    target.classList.contains('composer-dropzone-wrapper') ||
+                    target.dataset.composerId === scope.message.ID // This can happen when the composers are overlapping
                 ) {
-                    if (AppModel.get('composerList').length > 1) {
-                        !scope.message.focussed && addDragleaveClassName(el[0]);
-                    } else {
-                        addDragleaveClassName(el[0]);
-                    }
+                    addDragleaveClassName(el[0]);
                 }
             }, 500);
-
-            const onDragEnter = ({ originalEvent }) => {
-                if (attachmentFileFormat.isUploadAbleType(originalEvent)) {
-                    addDragenterClassName(el[0]);
-                }
-            };
 
             const onKeydown = ({ keyCode }) => {
                 // ESC
@@ -118,19 +118,19 @@ function composer(AppModel, embedded, attachmentFileFormat, dispatchers, mailSet
                 }
             };
 
-            el.on('dragenter', onDragEnter);
-            el.on('dragleave', onDragLeave);
-            el.on('click', onClick);
-            el.on('keydown', onKeydown);
+            el[0].addEventListener('dragenter', onDragEnter);
+            el[0].addEventListener('dragleave', onDragLeave);
+            el[0].addEventListener('click', onClick);
+            el[0].addEventListener('keydown', onKeydown);
 
             on('editor.draggable', onAction(scope, el[0]));
             on('attachment.upload', onAction(scope, el[0]));
 
             scope.$on('$destroy', () => {
-                el.off('dragenter', onDragEnter);
-                el.off('dragleave', onDragLeave);
-                el.off('click', onClick);
-                el.off('keydown', onKeydown);
+                el[0].removeEventListener('dragenter', onDragEnter);
+                el[0].removeEventListener('dragleave', onDragLeave);
+                el[0].removeEventListener('click', onClick);
+                el[0].removeEventListener('keydown', onKeydown);
 
                 unsubscribe();
 
