@@ -1,7 +1,7 @@
 import _ from 'lodash';
 import { flow, filter, each } from 'lodash/fp';
 import { isMac } from '../../../helpers/browser';
-import { CONSTANTS } from '../../constants';
+import { SAVE_TIMEOUT_TIME } from '../../constants';
 
 /* @ngInject */
 function editorListener(
@@ -9,7 +9,7 @@ function editorListener(
     embedded,
     attachmentFileFormat,
     squireExecAction,
-    $rootScope,
+    dispatchers,
     editorDropzone,
     removeInlineWatcher,
     mailSettingsModel,
@@ -42,61 +42,70 @@ function editorListener(
 
     /**
      * Attach some hotkeys for the editor
-     * @param  {Squire} editor
-     * @param  {jQLite} element
+     * @param {Dispatcher} dispatcher
+     * @param {Squire} editor
+     * @param {jQLite} element
+     * @param {Message} message
      * @return {void}
      */
-    const bindHotKeys = (editor, element, scope) => {
-        editor.setKeyHandler('escape', () => {
-            const { Hotkeys } = mailSettingsModel.get();
+    const bindHotKeys = (dispatcher, editor, element, message) => {
+        /**
+         * Higher order function that calls cb if `Hotkeys` is enabled in settings.
+         * @param {Function} cb to call
+         * @returns {Function}
+         */
+        const hotkeysEnabled = (cb) => {
+            /**
+             * Function expecting the `setKeyHandler` arguments from Squire.
+             * @param {Squire} self Squire instance
+             * @param {Event} event DOM event
+             */
+            return (self, event) => {
+                const { Hotkeys } = mailSettingsModel.get();
+                Hotkeys === 1 && cb(self, event);
+            };
+        };
 
-            if (Hotkeys === 1) {
-                $rootScope.$emit('composer.update', {
-                    type: 'close.message',
-                    data: {
-                        message: scope.message,
-                        save: true
-                    }
-                });
-            }
-        });
+        editor.setKeyHandler('escape', hotkeysEnabled(() => {
+            dispatcher['composer.update']('close.message', { message, save: true });
+        }));
 
         const sendKey = `${testMac ? 'meta' : 'ctrl'}-enter`;
 
-        editor.setKeyHandler(sendKey, (self, event) => {
-            const { Hotkeys } = mailSettingsModel.get();
+        editor.setKeyHandler(sendKey, hotkeysEnabled((self, event) => {
+            event.preventDefault();
+            dispatcher['composer.update']('send.message', { message });
+        }));
 
-            if (Hotkeys === 1) {
-                event.preventDefault();
-                $rootScope.$emit('composer.update', {
-                    type: 'send.message',
-                    data: { message: scope.message }
-                });
-            }
-        });
+        const linkKey = `${testMac ? 'meta' : 'ctrl'}-k`;
+
+        editor.setKeyHandler(linkKey, hotkeysEnabled((self, event) => {
+            event.preventDefault();
+            dispatcher['squire.editor']('squireActions', { action: 'makeLink', message });
+        }));
     };
 
     /**
      * Generate an event listener based on the eventName
      * Debounce some events are they are triggered too many times
      * Dispatch an event editor.draggable
-     * @param  {String} type void
-     * @return {Function}      EventListener Callback
+     * @param {Dispatcher} dispatcher
+     * @param {String} type void
+     * @param {Message} message
+     * @param {String} typeContent
+     * @return {Function} EventListener Callback
      */
-    const draggableCallback = (type, message, typeContent) => {
+    const draggableCallback = (dispatcher, type, message, typeContent) => {
         if (typeContent !== 'message') {
             return angular.noop;
         }
 
         const isEnd = type === 'dragleave' || type === 'drop';
         const cb = (event) => {
-            $rootScope.$emit('editor.draggable', {
-                type,
-                data: {
-                    messageID: message.ID,
-                    message,
-                    event
-                }
+            dispatcher['editor.draggable'](type, {
+                messageID: message.ID,
+                message,
+                event
             });
         };
         return isEnd ? _.debounce(cb, 500) : cb;
@@ -105,14 +114,16 @@ function editorListener(
     /**
      * Listener for attachments inside the composer
      *     - Detect how and when we need to add or remove them
-     * @param  {Squire} editor
-     * @param  {String} action
-     * @return {Function}        Unsubscribe
+     * @param {Function} on
+     * @param {Squire} editor
+     * @param {String} action
+     * @param {Message} message
+     * @return {Function} Unsubscribe
      */
-    const listenerAttachment = (editor, action, message) => {
+    const listenerAttachment = (on, editor, action, message) => {
         const key = ['attachment.upload', action].filter(Boolean).join('.');
 
-        return $rootScope.$on(key, (e, { type, data }) => {
+        on(key, (e, { type, data }) => {
             if (!isSameMessage(message, data)) {
                 return;
             }
@@ -145,17 +156,13 @@ function editorListener(
         });
     };
 
-    const listenerSaveMessage = (editor, scope) => {
+    const listenerSaveMessage = (dispatcher, editor, message) => {
         let isEditorFocused = false;
         const onFocus = () => (isEditorFocused = true);
         const onBlur = () => (isEditorFocused = false);
         const onInput = _.debounce(() => {
-            isEditorFocused &&
-                $rootScope.$emit('squire.editor', {
-                    type: 'input',
-                    data: { message: scope.message }
-                });
-        }, CONSTANTS.SAVE_TIMEOUT_TIME);
+            isEditorFocused && dispatcher['squire.editor']('input', { message });
+        }, SAVE_TIMEOUT_TIME);
 
         // proxy for autosave as Mousetrap doesn't work with iframe
         const onKeyDown = (e) => {
@@ -194,32 +201,36 @@ function editorListener(
         const timeout = typeContent === 'message' ? TIMEOUTAPP : 32;
 
         return (updateModel, editor) => {
-            let unsubscribe = angular.noop;
-            let onRemoveEmbedded = angular.noop;
-            let unsubscribeAtt = angular.noop;
-            let unsubscribeEditor = angular.noop;
+            const message = scope.message;
+            const unsubscribe = [];
+            const { dispatcher, on, unsubscribe: unsubscribeRootScope } = dispatchers(['composer.update', 'squire.editor', 'editor.draggable']);
 
             // Custom dropzone to insert content into the editor if it's not a composer
             if (!isMessage(typeContent)) {
-                unsubscribe = editorDropzone(el, scope.message, editor);
+                unsubscribe.push(editorDropzone(el, message, editor));
             }
 
             // Watcher to detect when the user remove an embedded image
             if (isMessage(typeContent)) {
+                listenerAttachment(on, editor, action, message);
+
                 const watcherEmbedded = removeInlineWatcher(action);
-                onRemoveEmbedded = _.throttle(() => watcherEmbedded(scope.message, editor), 300);
-                unsubscribeAtt = listenerAttachment(editor, action, scope.message);
+                const onRemoveEmbedded = _.throttle(() => watcherEmbedded(message, editor), 300);
+
                 // Check if we need to remove embedded after a delay
                 editor.addEventListener('input', onRemoveEmbedded);
+                unsubscribe.push(() => editor.removeEventListener('input', onRemoveEmbedded));
 
                 if (!$state.is('eo.reply')) {
-                    unsubscribeEditor = listenerSaveMessage(editor, scope);
+                    unsubscribe.push(listenerSaveMessage(dispatcher, editor, message));
                 }
             }
 
-            ['dragleave', 'dragenter', 'drop'].forEach((key) =>
-                editor.addEventListener(key, draggableCallback(key, scope.message, typeContent))
-            );
+            ['dragleave', 'dragenter', 'drop'].forEach((key) => {
+                const cb = draggableCallback(dispatcher, key, message, typeContent);
+                editor.addEventListener(key, cb);
+                unsubscribe.push(() => editor.removeEventListener(key, cb));
+            });
 
             // Only update the model every 300ms or at least 2 times before saving a draft
             const onInput = _.throttle(() => updateModel(editor.getHTML()), timeout);
@@ -228,11 +239,11 @@ function editorListener(
 
             const onRefresh = ({ Body = '', action = '', data } = {}) => {
                 if (action === 'attachment.remove') {
-                    embedded.removeEmbedded(scope.message, data, editor.getHTML());
+                    embedded.removeEmbedded(message, data, editor.getHTML());
                 }
 
                 if (action === 'attachment.embedded') {
-                    return squireExecAction.insertImage(scope.message, {
+                    return squireExecAction.insertImage(message, {
                         url: data.url,
                         opt: {
                             'data-embedded-img': data.cid,
@@ -242,15 +253,15 @@ function editorListener(
                 }
 
                 if (action === 'message.changeFrom') {
-                    const html = signatureBuilder.update(scope.message, editor.getHTML());
-                    !scope.message.isPlainText() && editor.setHTML(html);
+                    const html = signatureBuilder.update(message, editor.getHTML());
+                    !message.isPlainText() && editor.setHTML(html);
                     return updateModel(html, true, true);
                 }
 
                 if (isMessage(typeContent)) {
                     // Replace the embedded images with CID to keep the model updated
                     return embedded
-                        .parser(scope.message)
+                        .parser(message)
                         .then((body) => (editor.setHTML(body), body))
                         .then(updateModel);
                 }
@@ -261,14 +272,11 @@ function editorListener(
 
             const onFocus = () => {
                 el.addClass('focus').triggerHandler('focus');
-                $rootScope.$emit('composer.update', {
-                    type: 'editor.focus',
-                    data: {
-                        editor,
-                        element: el,
-                        message: scope.message,
-                        isMessage: isMessage(typeContent)
-                    }
+                dispatcher['composer.update']('editor.focus', {
+                    editor,
+                    element: el,
+                    message,
+                    isMessage: isMessage(typeContent)
                 });
             };
 
@@ -279,11 +287,11 @@ function editorListener(
                 if (file && /image/.test(file.type || '')) {
                     // Prevent the default insert action from happening, since we are handling it (issue on edge (#6600).
                     e.preventDefault();
-                    squireExecAction.insertImage(scope.message, { url: '', file });
+                    squireExecAction.insertImage(message, { url: '', file });
                 }
             };
 
-            bindHotKeys(editor, el, scope);
+            bindHotKeys(dispatcher, editor, el, message);
 
             editor.addEventListener('drop', onDrop);
             editor.addEventListener('input', onInput);
@@ -294,16 +302,16 @@ function editorListener(
 
             // Unsubscribe
             return () => {
-                unsubscribe();
-                unsubscribeAtt();
-                unsubscribeEditor();
+                unsubscribe.forEach((cb) => cb());
+                unsubscribe.length = 0;
+                unsubscribeRootScope();
+
                 editor.removeEventListener('drop', onDrop);
                 editor.removeEventListener('input', onInput);
                 editor.removeEventListener('refresh', onRefresh);
                 editor.removeEventListener('focus', onFocus);
                 editor.removeEventListener('blur', onBlur);
                 editor.removeEventListener('mscontrolselect', onMsctrlSelect);
-                editor.removeEventListener('input', onRemoveEmbedded);
             };
         };
     };
