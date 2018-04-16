@@ -59,6 +59,8 @@ function squireExecAction(editorModel, dispatchers) {
             range.selectNodeContents(node);
             selection.removeAllRanges();
             selection.addRange(range);
+            // Set the range on the editor so that an update won't insert a link twice.
+            editor.setSelection(range);
         }
 
         editor.makeLink(link, {
