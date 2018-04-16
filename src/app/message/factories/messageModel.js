@@ -1,5 +1,6 @@
 import _ from 'lodash';
 import { CONSTANTS, VERIFICATION_STATUS, MIME_TYPES } from '../../constants';
+import { inlineCss } from '../../../helpers/domHelper';
 
 const { PLAINTEXT } = MIME_TYPES;
 
@@ -205,7 +206,7 @@ function messageModel(
         }
 
         setDecryptedBody(input = '', purify = true) {
-            this.DecryptedBody = !purify ? input : sanitize.message(input);
+            this.DecryptedBody = !purify ? input : sanitize.message(inlineCss(input));
         }
 
         getDecryptedBody() {
@@ -423,71 +424,56 @@ function messageModel(
             return attachedPublicKey.extractFromEmail(this);
         }
 
-        clearTextBody(forceDecrypt = false) {
-            const deferred = $q.defer();
-
-            if (this.isDraft() || this.IsEncrypted > 0) {
-                if (!this.getDecryptedBody() || forceDecrypt) {
-                    try {
-                        this.decryptBody()
-                            .then((result) => {
-                                // handle attachments + optionally reverifying them
-                                // prevent adding pgp attachments twice: (calling clearTextBody twice, it happens)
-                                // result.attachments should first: this ensures the latest Verified value is used.
-                                this.Attachments = result.attachments.length ? result.attachments : this.Attachments;
-                                if (PGPMIME_TYPES.includes(this.IsEncrypted) || this.MIMEType === 'multipart/mixed') {
-                                    // don't reverify these attachments: they are checked
-                                    return result;
-                                }
-                                const reverifyHandles = this.Attachments.filter(AttachmentLoader.has).map(
-                                    (attachment) => AttachmentLoader.reverify(attachment, this)
-                                );
-                                return Promise.all(reverifyHandles).then(() => result);
-                            })
-                            .then((result) => {
-                                this.setDecryptedBody(result.message, !this.isPlainText());
-                                this.Verified = result.verified;
-                                this.failedDecryption = false;
-
-                                if (result.encryptedSubject && this.Subject !== result.encryptedSubject) {
-                                    this.encryptedSubject = result.encryptedSubject;
-                                }
-                                this.NumAttachments = this.Attachments.length;
-                                this.NumEmbedded = this.countEmbedded();
-
-                                return this.getAttachedPublicKey()
-                                    .then((publicKey) => (this.attachedPublicKey = publicKey))
-                                    .then(() => {
-                                        this.hasError = false;
-                                        $rootScope.$emit('message', { type: 'decrypted', data: { message: this } });
-                                        deferred.resolve(result.message);
-                                    });
-                            })
-                            .catch((err) => {
-                                this.setDecryptedBody(this.Body, false);
-                                this.failedDecryption = true;
-                                this.hasError = true;
-
-                                // We need to display the encrypted body to the user if it fails
-                                this.MIMEType = PLAINTEXT;
-                                deferred.reject(err);
-                            });
-                    } catch (err) {
-                        this.setDecryptedBody(this.Body, false);
-                        this.MIMEType = PLAINTEXT;
-                        this.failedDecryption = true;
-                        this.hasError = true;
-                        deferred.reject(err);
-                    }
-                } else {
-                    deferred.resolve(this.getDecryptedBody());
-                }
-            } else {
+        async clearTextBody(forceDecrypt = false) {
+            if (!(this.isDraft() || this.IsEncrypted > 0)) {
                 this.setDecryptedBody(this.Body, false);
-                deferred.resolve(this.getDecryptedBody());
+                this.getDecryptedBody();
             }
 
-            return deferred.promise;
+            if (this.getDecryptedBody() && !forceDecrypt) {
+                return this.getDecryptedBody();
+            }
+
+            try {
+                const result = await this.decryptBody();
+
+                // handle attachments + optionally reverifying them
+                // prevent adding pgp attachments twice: (calling clearTextBody twice, it happens)
+                // result.attachments should first: this ensures the latest Verified value is used.
+                this.Attachments = result.attachments.length ? result.attachments : this.Attachments;
+
+                if (!(PGPMIME_TYPES.includes(this.IsEncrypted) || this.MIMEType === 'multipart/mixed')) {
+                    await Promise.all(
+                        this.Attachments.filter(AttachmentLoader.has).map((attachment) =>
+                            AttachmentLoader.reverify(attachment, this)
+                        )
+                    );
+                }
+
+                this.setDecryptedBody(result.message, !this.isPlainText());
+                this.Verified = result.verified;
+                this.failedDecryption = false;
+
+                if (result.encryptedSubject && this.Subject !== result.encryptedSubject) {
+                    this.encryptedSubject = result.encryptedSubject;
+                }
+                this.NumAttachments = this.Attachments.length;
+                this.NumEmbedded = this.countEmbedded();
+
+                this.attachedPublicKey = await this.getAttachedPublicKey();
+
+                this.hasError = false;
+
+                $rootScope.$emit('message', { type: 'decrypted', data: { message: this } });
+
+                return this.getDecryptedBody();
+            } catch (err) {
+                this.setDecryptedBody(this.Body, false);
+                this.MIMEType = PLAINTEXT;
+                this.failedDecryption = true;
+                this.hasError = true;
+                throw err;
+            }
         }
 
         loadPGPAttachments() {
