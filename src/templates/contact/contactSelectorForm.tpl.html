@@ -15,14 +15,24 @@
                 <i class="fa fa-warning"></i> <span translate-context="Error" translate>You have reached the max recipients (25) per message</span>
             </p>
             <div class="pm_table contactSelectorForm-table-wrapper">
-                <table>
-                    <tbody>
+                <table class="fixedLayout">
+                    <thead>
+                        <tr>
+                            <th class="checkbox"></th>
+                            <th translate-context="Header" translate>Name</th>
+                            <th translate-context="Header" translate>Email</th>
+                        </tr>
+                    </thead>
+                    <tbody data-vs-repeat="{scrollParent: '.contactSelectorForm-table-wrapper', offsetBefore: 5, offsetAfter: 5}">
                         <tr ng-repeat="email in ctrl.list | filter: { Email: searchValue } track by $id(email)">
-                            <td>
+                            <td class="checkbox">
                                 <custom-checkbox data-custom-ng-model="email.selected" data-custom-ng-change="onCheck()"></custom-checkbox>
                             </td>
-                            <td>{{ ::email.Name }}</td>
-                            <td>{{ ::email.Email }}</td>
+                            <td>
+                                <span class="contactSelectorForm-name">{{ ::email.Name }}</span></td>
+                            <td>
+                                <span class="contactSelectorForm-email">{{ ::email.Email }}</span>
+                            </td>
                         </tr>
                     </tbody>
                 </table>

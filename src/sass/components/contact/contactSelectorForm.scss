@@ -2,6 +2,11 @@
     position: relative;
 }
 
+.contactSelectorForm-name,
+.contactSelectorForm-email {
+    display: block;
+}
+
 .contactSelectorForm-search-label {
     position: absolute;
     z-index: 1;
@@ -72,3 +77,8 @@
 // Conditions
 .contactSelectorForm-container:not(.contactSelectorForm-limit-reached) .contactSelectorForm-warning-message { display: none }
 .contactSelectorForm-no-recipients .contactSelectorForm-labels { display: none }
+
+// Context
+.contactSelectorForm-container .pm_table table {
+    margin-bottom: 0;
+}
