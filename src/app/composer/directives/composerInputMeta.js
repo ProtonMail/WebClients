@@ -58,6 +58,7 @@ function composerInputMeta(contactSelectorModel, dispatchers) {
             if ($input) {
                 $input.setAttribute('data-name', getNameAutocomplete(label));
                 $input.setAttribute('data-emails', `message.${key}`);
+                $input.setAttribute('data-key', key);
             }
 
             if (key !== 'ToList') {

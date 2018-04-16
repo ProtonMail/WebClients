@@ -1,23 +1,23 @@
-<div class="autocompleteEmailsItem-icon">
+<div class="autocompleteEmailsItem-icon"
+     pt-tooltip-translate="Loading encryption info...">
     <i
         class="fa encryptionIcon"
-        ng-show="!(email.encrypt && email.isPinned) && (email.encrypt || email.sign || email.loadCryptInfo)"
+        ng-show="!(email.encrypt && email.isPinned && !email.isEO)
+          && (email.encrypt || email.sign || email.loadCryptInfo || email.isEO)"
         ng-class="{
-                'encryptionIcon fa-lock': email.encrypt,
+                'encryptionIcon fa-lock': email.encrypt || email.isEO,
                 'encryptionIcon fa-pencil': !email.encrypt && email.sign,
                 'encryptionIcon fa-spinner fa-pulse': email.loadCryptInfo,
                 'pgp-encryption-icon': email.isPgp
             }"
-        pt-tooltip-translate="Loading encryption info..."
     ></i>
 
     <svg viewBox="0 0 374.8 337.1"
-         ng-show="email.encrypt && email.isPinned"
+         ng-show="email.encrypt && email.isPinned && !email.isEO"
          class="encryptionIcon"
          ng-class="{
         'pgp-encryption-icon': email.isPgp
-    }"
-         pt-tooltip-translate="Loading encryption info...">
+    }">
         <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#svg-lock-signed"></use>
     </svg>
 </div>

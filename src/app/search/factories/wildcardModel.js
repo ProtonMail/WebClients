@@ -6,9 +6,7 @@ function wildcardModel(dispatchers, gettextCatalog, networkActivityTracker, noti
     const { on } = dispatchers();
 
     function updateAutowildcard({ AutoWildcardSearch }) {
-        const promise = settingsMailApi
-            .updateAutowildcard({ AutoWildcardSearch })
-            .then(() => notification.success(I18N.success));
+        const promise = settingsMailApi.updateAutowildcard({ AutoWildcardSearch }).then(() => notification.success(I18N.success));
 
         networkActivityTracker.track(promise);
     }

@@ -17,6 +17,7 @@ function paypalView(notification, Payment, gettextCatalog, CONSTANTS, $q, networ
             paypalCallback: '=callback'
         },
         link(scope, element, { type = 'payment' }) {
+
             let deferred;
 
             const resetWindow = () => {

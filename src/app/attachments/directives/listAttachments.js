@@ -53,11 +53,10 @@ function listAttachments($state, dispatchers, attachmentDownloader) {
                 if (target.nodeName === 'BUTTON') {
                     const ID = target.getAttribute('data-attachment-id');
 
-                    $state.is('eo.reply') &&
-                        dispatcher['attachment.upload.outside']('remove', {
-                            id: target.getAttribute('data-attachment-id'),
-                            message: scope.model
-                        });
+                    $state.is('eo.reply') && dispatcher['attachment.upload.outside']('remove', {
+                        id: target.getAttribute('data-attachment-id'),
+                        message: scope.model
+                    });
 
                     scope.$applyAsync(() => {
                         const attachment = _.find(scope.model.Attachments, { ID });

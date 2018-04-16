@@ -1,5 +1,5 @@
 import _ from 'lodash';
-import { PACKAGE_TYPE, KNOWLEDGE_BASE } from '../../constants';
+import { CONSTANTS, KNOWLEDGE_BASE } from '../../constants';
 /* @ngInject */
 function contactUI(gettextCatalog, contactTransformLabel, mailSettingsModel) {
     const EMAIL_TYPE = ['email', 'home', 'work', 'other'];
@@ -68,43 +68,30 @@ function contactUI(gettextCatalog, contactTransformLabel, mailSettingsModel) {
                 UI.placeholder = I18N.pgp;
                 UI.iconClass = 'fa-key';
                 break;
-            case 'Scheme':
-                {
-                    const defaultValue =
-                        mailSettingsModel.get('PGPScheme') === PACKAGE_TYPE.SEND_PGP_INLINE ? 'PGP/Inline' : 'PGP/MIME';
-                    UI.unique = true;
-                    UI.placeholder = I18N.scheme;
-                    UI.iconClass = 'fa-wrench';
-                    UI.mode = 'select';
-                    // Doesn't need to be translated: is universal.
-                    UI.options = [
-                        { value: 'null', name: I18N.noScheme + ` (${defaultValue})` },
-                        { value: 'pgp-mime', name: 'PGP/MIME' },
-                        { value: 'pgp-inline', name: 'PGP/Inline' }
-                    ];
-                    UI.defaultValue = UI.options[0];
-                    UI.infoTooltip = gettextCatalog.getString(
-                        'Select the PGP scheme to be used when signing or encrypting to an user. Note that PGP/Inline forces plain text messages. Click for more info.',
-                        null,
-                        ''
-                    );
-                    UI.infoLink = KNOWLEDGE_BASE.PGP_MIME_INLINE;
-                }
+            case 'Scheme': {
+                const defaultValue = mailSettingsModel.get('PGPScheme') === CONSTANTS.PACKAGE_TYPE.SEND_PGP_INLINE ? 'PGP/Inline' : 'PGP/MIME';
+                UI.unique = true;
+                UI.placeholder = I18N.scheme;
+                UI.iconClass = 'fa-wrench';
+                UI.mode = 'select';
+                // Doesn't need to be translated: is universal.
+                UI.options = [
+                    { value: 'null', name: I18N.noScheme + ` (${defaultValue})` },
+                    { value: 'pgp-mime', name: 'PGP/MIME' },
+                    { value: 'pgp-inline', name: 'PGP/Inline' }
+                ];
+                UI.defaultValue = UI.options[0];
+                UI.infoTooltip = gettextCatalog.getString('Select the PGP scheme to be used when signing or encrypting to an user. Note that PGP/Inline forces plain text messages. Click for more info.', null, '');
+                UI.infoLink = KNOWLEDGE_BASE.PGP_MIME_INLINE;
+            }
                 break;
             case 'MIMEType':
                 UI.unique = true;
                 UI.placeholder = I18N.mimetype;
                 UI.iconClass = 'fa-paint-brush';
                 UI.mode = 'select';
-                UI.options = [
-                    { value: 'null', name: I18N.htmlMimeType },
-                    { value: 'text/plain', name: I18N.plaintextMimeType }
-                ];
-                UI.infoTooltip = gettextCatalog.getString(
-                    'Composer format indicates that the format in the composer is used to send to this user. Plain Text indicates that the message will always be converted to plain text on send.',
-                    null,
-                    ''
-                );
+                UI.options = [{ value: 'null', name: I18N.htmlMimeType }, { value: 'text/plain', name: I18N.plaintextMimeType }];
+                UI.infoTooltip = gettextCatalog.getString('Composer format indicates that the format in the composer is used to send to this user. Plain Text indicates that the message will always be converted to plain text on send.', null, '');
                 UI.defaultValue = UI.options[0];
                 break;
             case 'Encrypt':
@@ -121,20 +108,19 @@ function contactUI(gettextCatalog, contactTransformLabel, mailSettingsModel) {
                 UI.mode = 'toggle';
                 UI.defaultValue = mailSettingsModel.get('Sign') === 1;
                 break;
-            case 'TLS':
-                {
-                    const defaultValue = mailSettingsModel.get('TLS') ? I18N.requireTLS : I18N.optionalTLS;
-                    UI.unique = true;
-                    UI.placeholder = I18N.tls;
-                    UI.iconClass = 'fa-shield';
-                    UI.mode = 'select';
-                    UI.options = [
-                        { value: 'null', name: I18N.default + ` (${defaultValue})` },
-                        { value: 'required', name: I18N.requireTLS },
-                        { value: 'opportunistic', name: I18N.optionalTLS }
-                    ];
-                    UI.defaultValue = UI.options[0];
-                }
+            case 'TLS': {
+                const defaultValue = mailSettingsModel.get('TLS') ? I18N.requireTLS : I18N.optionalTLS;
+                UI.unique = true;
+                UI.placeholder = I18N.tls;
+                UI.iconClass = 'fa-shield';
+                UI.mode = 'select';
+                UI.options = [
+                    { value: 'null', name: I18N.default + ` (${defaultValue})` },
+                    { value: 'required', name: I18N.requireTLS },
+                    { value: 'opportunistic', name: I18N.optionalTLS }
+                ];
+                UI.defaultValue = UI.options[0];
+            }
                 break;
             case 'Name':
                 UI.unique = true;

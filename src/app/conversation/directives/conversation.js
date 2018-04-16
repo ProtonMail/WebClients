@@ -79,7 +79,11 @@ function conversation(
         templateUrl: require('../../../templates/partials/conversation.tpl.html'),
         link(scope) {
             let messagesCached = [];
-            const { on, unsubscribe, dispatcher } = dispatchers(['message.open', 'elements', 'composer.load']);
+            const { on, unsubscribe, dispatcher } = dispatchers([
+                'message.open',
+                'elements',
+                'composer.load'
+            ]);
 
             const scrollToPosition = getScrollToPosition();
             let unsubscribeActions = angular.noop;
@@ -280,13 +284,8 @@ function conversation(
             function initialization() {
                 let messages = [];
                 messagesCached = cache.queryMessagesCached($stateParams.id);
-                scope.trashed = _.some(messagesCached, ({ LabelIDs }) =>
-                    _.includes(LabelIDs, CONSTANTS.MAILBOX_IDENTIFIERS.trash)
-                );
-                scope.nonTrashed = _.some(
-                    messagesCached,
-                    ({ LabelIDs }) => !_.includes(LabelIDs, CONSTANTS.MAILBOX_IDENTIFIERS.trash)
-                );
+                scope.trashed = _.some(messagesCached, ({ LabelIDs }) => _.includes(LabelIDs, CONSTANTS.MAILBOX_IDENTIFIERS.trash));
+                scope.nonTrashed = _.some(messagesCached, ({ LabelIDs }) => !_.includes(LabelIDs, CONSTANTS.MAILBOX_IDENTIFIERS.trash));
 
                 messages = $filter('filterMessages')(messagesCached, scope.showTrashed, scope.showNonTrashed);
 
@@ -321,12 +320,8 @@ function conversation(
                 const labelID = tools.currentLocation();
 
                 messagesCached = messages;
-                scope.trashed = messagesCached.some(({ LabelIDs = [] }) =>
-                    _.includes(LabelIDs, CONSTANTS.MAILBOX_IDENTIFIERS.trash)
-                );
-                scope.nonTrashed = messagesCached.some(
-                    ({ LabelIDs = [] }) => !_.includes(LabelIDs, CONSTANTS.MAILBOX_IDENTIFIERS.trash)
-                );
+                scope.trashed = messagesCached.some(({ LabelIDs = [] }) => _.includes(LabelIDs, CONSTANTS.MAILBOX_IDENTIFIERS.trash));
+                scope.nonTrashed = messagesCached.some(({ LabelIDs = [] }) => !_.includes(LabelIDs, CONSTANTS.MAILBOX_IDENTIFIERS.trash));
 
                 if (!conversation) {
                     return back();
@@ -343,10 +338,7 @@ function conversation(
                 if (Array.isArray(messages) && messages.length > 0) {
                     const toAdd = [];
                     const toRemove = [];
-                    const list = cache.orderMessage(
-                        $filter('filterMessages')(messages, scope.showTrashed, scope.showNonTrashed),
-                        false
-                    );
+                    const list = cache.orderMessage($filter('filterMessages')(messages, scope.showTrashed, scope.showNonTrashed), false);
 
                     for (let index = 0; index < list.length; index++) {
                         if (!scope.messages.some(({ ID }) => ID === list[index].ID)) {
@@ -384,9 +376,7 @@ function conversation(
              * @return {Boolean}
              */
             scope.showNotifier = (folder) => {
-                const filtered = _.filter(messagesCached, (message) =>
-                    _.includes(message.LabelIDs, CONSTANTS.MAILBOX_IDENTIFIERS[folder])
-                );
+                const filtered = _.filter(messagesCached, (message) => _.includes(message.LabelIDs, CONSTANTS.MAILBOX_IDENTIFIERS[folder]));
                 return filtered.length < messagesCached.length && filtered.length > 0;
             };
 

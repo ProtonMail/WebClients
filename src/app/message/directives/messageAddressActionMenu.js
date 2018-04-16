@@ -24,7 +24,7 @@ function messageAddressActionMenu(
             const STATE = {};
 
             const toggle = (node, className, value) => {
-                return elem.classList.contains(className) === value || node.classList.toggle(className);
+                return elem[0].classList.contains(className) === value || node.classList.toggle(className);
             };
             const trigger = elem.find('.message-address-trigger');
             const menu = elem.find('.pm_dropdown');

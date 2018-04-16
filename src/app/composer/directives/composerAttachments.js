@@ -54,22 +54,20 @@ function composerAttachments(gettextCatalog, dispatchers) {
      * @return {Array}       Packets
      */
     const formatAttachments = (scope, list = []) => {
-        return list
-            .filter(({ Encrypted }) => Encrypted !== CONSTANTS.ENCRYPTED_STATUS.PGP_MIME)
-            .map(({ ID, Headers = {}, Name, Size }) => {
-                const Inline = +(Headers['content-disposition'] === 'inline');
-                return {
-                    id: ID,
-                    packet: {
-                        filename: Name,
-                        uploading: false,
-                        Size,
-                        Inline
-                    },
-                    messageID: scope.message.ID,
-                    message: scope.message
-                };
-            });
+        return list.filter(({ Encrypted }) => Encrypted !== CONSTANTS.ENCRYPTED_STATUS.PGP_MIME).map(({ ID, Headers = {}, Name, Size }) => {
+            const Inline = +(Headers['content-disposition'] === 'inline');
+            return {
+                id: ID,
+                packet: {
+                    filename: Name,
+                    uploading: false,
+                    Size,
+                    Inline
+                },
+                messageID: scope.message.ID,
+                message: scope.message
+            };
+        });
     };
 
     const isMessage = ({ ID }, { message = {}, messageID }) => {

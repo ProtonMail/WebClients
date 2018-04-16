@@ -1,8 +1,3 @@
-import { RECIPIENT_TYPE } from '../../constants';
-
-const KEY_GET_ADDRESS_MISSING = 33102;
-const KEY_GET_ADDRESS_NO_RECEIVE = 33103;
-
 /* @ngInject */
 function Key($http, url, srp) {
     const requestURL = url.build('keys');
@@ -12,24 +7,7 @@ function Key($http, url, srp) {
      * @return {Promise}
      */
     const keys = (Email, Fingerprint = null) => {
-        return $http
-            .get(requestURL(), { params: { Email, Fingerprint } })
-            .then(({ data = {} }) => data)
-            .catch((e) => {
-                const { data } = e;
-
-                if (!data) {
-                    throw e;
-                }
-
-                if (data.Code === KEY_GET_ADDRESS_MISSING || data.Code === KEY_GET_ADDRESS_NO_RECEIVE) {
-                    return {
-                        RecipientType: RECIPIENT_TYPE.TYPE_NO_RECEIVE,
-                        MIMEType: null,
-                        Keys: []
-                    };
-                }
-            });
+        return $http.get(requestURL(), { params: { Email, Fingerprint } });
     };
 
     /**

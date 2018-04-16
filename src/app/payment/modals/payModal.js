@@ -1,14 +1,5 @@
 /* @ngInject */
-function payModal(
-    pmModal,
-    Payment,
-    notification,
-    eventManager,
-    gettextCatalog,
-    paymentUtils,
-    networkActivityTracker,
-    cardModel
-) {
+function payModal(pmModal, Payment, notification, eventManager, gettextCatalog, paymentUtils, networkActivityTracker, cardModel) {
     const I18N = {
         success: gettextCatalog.getString('Invoice paid', null, 'Info')
     };

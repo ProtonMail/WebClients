@@ -22,8 +22,7 @@ function addonRow(
     const PLACEHOLDER_CLASS = 'addonRow-placeholder';
     const EDIT_CLASS = 'addonRow-edit';
 
-    const filter = (amount) =>
-        $filter('currency')(amount / 100 / dashboardConfiguration.cycle(), dashboardConfiguration.currency());
+    const filter = (amount) => $filter('currency')(amount / 100 / dashboardConfiguration.cycle(), dashboardConfiguration.currency());
     const getPrice = ({ addon, value }) => {
         if (!value || value === 'none') {
             return '';
@@ -64,10 +63,7 @@ function addonRow(
 
                 element[0].classList.add(LIMIT_REACHED_CLASS);
                 $placeholder[0].setAttribute('data-value', value);
-                $placeholder[0].textContent = `${dashboardOptions.translate(addon, value + 1)} ${getPrice({
-                    addon,
-                    value
-                })}`;
+                $placeholder[0].textContent = `${dashboardOptions.translate(addon, value + 1)} ${getPrice({ addon, value })}`;
             };
 
             function buildOptions() {
@@ -107,9 +103,7 @@ function addonRow(
                     }
 
                     if (type === 'currency.updated' || type === 'cycle.updated') {
-                        const value = element[0].classList.contains(LIMIT_REACHED_CLASS)
-                            ? ~~$placeholder[0].getAttribute('data-value')
-                            : $select.val();
+                        const value = element[0].classList.contains(LIMIT_REACHED_CLASS) ? ~~$placeholder[0].getAttribute('data-value') : $select.val();
 
                         buildOptions();
                         set(value);

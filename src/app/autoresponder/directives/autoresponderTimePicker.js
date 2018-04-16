@@ -36,8 +36,7 @@ function autoresponderTimePicker(autoresponderModel, dispatchers, timepickerMode
 
             on('autoresponder', (event, { type, data = {} }) => {
                 if (type === 'update') {
-                    const refresh =
-                        data.autoresponder.repeat !== scope.repeat || scope.timestamp !== data.autoresponder[labelId];
+                    const refresh = data.autoresponder.repeat !== scope.repeat || scope.timestamp !== data.autoresponder[labelId];
 
                     scope.repeat = data.autoresponder.repeat;
                     scope.timestamp = data.autoresponder[labelId];

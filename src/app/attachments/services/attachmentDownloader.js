@@ -13,6 +13,7 @@ function attachmentDownloader(
     confirmModal,
     pmcw
 ) {
+
     const hasFileSaverSupported = isFileSaverSupported();
 
     const I18N = {
@@ -24,16 +25,11 @@ function attachmentDownloader(
         BROKEN_ATT: {
             title: gettextCatalog.getString('Error decrypting attachment', null, 'Title'),
             message: (() => {
-                const line1 = gettextCatalog.getString(
-                    'The attachment will be downloaded but it will still be encrypted.',
-                    null,
-                    'Error'
-                );
+                const line1 = gettextCatalog.getString('The attachment will be downloaded but it will still be encrypted.', null, 'Error');
                 const line2 = gettextCatalog.getString(
                     'You can decrypt the file with a program such as {{link}} if you have the corresponding private key.',
                     {
-                        link:
-                            '<a href="https://www.gnupg.org/" target="_blank" title="GnuPG is a free implementation of OpenPGP">GPG</a>'
+                        link: '<a href="https://www.gnupg.org/" target="_blank" title="GnuPG is a free implementation of OpenPGP">GPG</a>'
                     },
                     'Info'
                 );
@@ -99,9 +95,9 @@ function attachmentDownloader(
             return;
         }
         // SIGNED_AND_NO_KEYS passes right through here: no warning or confirmation given!
-        const invalid = _.map(attachments, (attachment) => SignatureVerifier.getVerificationStatus(attachment)).some(
-            (status) => status === VERIFICATION_STATUS.SIGNED_AND_INVALID
-        );
+        const invalid = _.map(attachments,
+            (attachment) => SignatureVerifier.getVerificationStatus(attachment)
+        ).some((status) => status === VERIFICATION_STATUS.SIGNED_AND_INVALID);
 
         if (!invalid) {
             return;
@@ -137,9 +133,7 @@ function attachmentDownloader(
      * @param {Node} message
      */
     const downloadString = (attachment, message) => {
-        return AttachmentLoader.get(attachment, message).then((buffer) =>
-            pmcw.decode_utf8(pmcw.arrayToBinaryString(buffer))
-        );
+        return AttachmentLoader.get(attachment, message).then((buffer) => pmcw.decode_utf8(pmcw.arrayToBinaryString(buffer)));
     };
 
     const allowDownloadBrokenAtt = () =>
@@ -219,9 +213,7 @@ function attachmentDownloader(
      */
     const all = async (message = {}, el) => {
         try {
-            const promises = (message.Attachments || [])
-                .filter((att) => !embeddedUtils.isEmbedded(att))
-                .map((att) => formatDownload(att, message));
+            const promises = (message.Attachments || []).filter((att) => !embeddedUtils.isEmbedded(att)).map((att) => formatDownload(att, message));
 
             const list = await Promise.all(promises);
 

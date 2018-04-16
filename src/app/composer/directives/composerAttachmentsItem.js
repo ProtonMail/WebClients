@@ -8,8 +8,7 @@ function composerAttachmentsItem($rootScope, gettextCatalog, attachmentDownloade
 
     return {
         replace: true,
-        template:
-            '<a class="composerAttachmentsItem-container"><progress-upload data-model="attachment"></progress-upload></a>',
+        template: '<a class="composerAttachmentsItem-container"><progress-upload data-model="attachment"></progress-upload></a>',
         link(scope, el, { isOutside = false }) {
             const dispatch = dispatcher(isOutside);
             el[0].title = getTitle(scope.attachment.packet.filename);

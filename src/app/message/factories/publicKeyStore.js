@@ -1,7 +1,6 @@
 import _ from 'lodash';
 import { CONSTANTS, TIME } from '../../constants';
 import { toList } from '../../../helpers/arrayHelper';
-import { normalizeEmail } from '../../../helpers/string';
 import { getGroup } from '../../../helpers/vcard';
 
 /* @ngInject */
@@ -9,6 +8,8 @@ function publicKeyStore($rootScope, keyCache, pmcw, contactEmails, Contact, cont
     const CACHE = {};
     const CACHE_TIMEOUT = TIME.HOUR;
     const usesDefaults = (contactEmail) => !contactEmail || contactEmail.Defaults;
+
+    const normalizeEmail = (email) => email.toLowerCase();
 
     /**
      * Retrieve the public keys of a email address from cache. This returns either a map from email -> public keys

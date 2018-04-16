@@ -12,8 +12,7 @@ function paymentPlansFormator(CONSTANTS, gettextCatalog) {
     };
 
     const msgPerDay = (total) => `${total} ${I18N.MSG_PER_DAY}`;
-    const numberLabels = (totalFolders, totalLabels) =>
-        `${totalFolders} ${I18N.FOLDERS} / ${totalLabels} ${I18N.LABELS}`;
+    const numberLabels = (totalFolders, totalLabels) => `${totalFolders} ${I18N.FOLDERS} / ${totalLabels} ${I18N.LABELS}`;
 
     return (Currency, Cycle) => ({ data = {} } = {}) => {
         // Add free plan

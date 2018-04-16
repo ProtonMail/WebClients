@@ -76,7 +76,8 @@ function contactMerger(
     function extractDuplicates(contacts = []) {
         // Flatten all emails and names from a contact into the format that duplicateExtractor expects.
         const items = contacts.reduce((acc, contact, i) => {
-            const emails = getEmails(contact).map((email) => ({ duplicate: email, unique: i, contact }));
+            const emails = getEmails(contact)
+                .map((email) => ({ duplicate: email, unique: i, contact }));
             const names = [{ duplicate: cleanName(getName(contact)), unique: i, contact }];
             return acc.concat(emails).concat(names);
         }, []);
@@ -95,7 +96,9 @@ function contactMerger(
      * @return {vCard} the new vCard instance
      */
     function getMergedContact(contacts = []) {
-        return vcard.merge(contacts.map(({ vCard }) => vCard));
+        return vcard.merge(
+            contacts.map(({ vCard }) => vCard)
+        );
     }
 
     /**
@@ -110,7 +113,9 @@ function contactMerger(
                 return;
             }
             // Merge the vCards together, and create the update contact in the way the API expects.
-            const update = contactSchema.prepareContact(getMergedContact(selected));
+            const update = contactSchema.prepareContact(
+                getMergedContact(selected)
+            );
             // The first selected contact is the one that will be updated.
             // Set the ID on the "new" contact (the one to update).
             update.ID = selected[0].id;
@@ -119,11 +124,7 @@ function contactMerger(
 
         // Contacts to remove are the selected contacts (except the first one, because it is the target for the merge)
         // + the contacts selected for deletion.
-        const getContactsToRemove = (selected = [], deleted = []) =>
-            selected
-                .slice(1)
-                .concat(deleted)
-                .map(({ id }) => id);
+        const getContactsToRemove = (selected = [], deleted = []) => selected.slice(1).concat(deleted).map(({ id }) => id);
 
         return Object.keys(emails).reduce((acc, key) => {
             const { selected, deleted } = emails[key];
@@ -141,18 +142,19 @@ function contactMerger(
      * @returns {{}}
      */
     function prepareGroups(groups) {
-        return Object.keys(groups).reduce((acc, key) => {
-            // Include contacts that were selected, or deleted.
-            const selected = groups[key].filter(({ selected }) => selected);
-            const deleted = groups[key].filter(({ deleted }) => deleted);
+        return Object.keys(groups)
+            .reduce((acc, key) => {
+                // Include contacts that were selected, or deleted.
+                const selected = groups[key].filter(({ selected }) => selected);
+                const deleted = groups[key].filter(({ deleted }) => deleted);
 
-            // If less than 2 contacts were selected, and there is nothing to delete, ignore this group.
-            if (selected.length <= 1 && deleted.length === 0) {
+                // If less than 2 contacts were selected, and there is nothing to delete, ignore this group.
+                if (selected.length <= 1 && deleted.length === 0) {
+                    return acc;
+                }
+                acc[key] = { selected, deleted };
                 return acc;
-            }
-            acc[key] = { selected, deleted };
-            return acc;
-        }, {});
+            }, {});
     }
 
     /**
@@ -262,10 +264,9 @@ function contactMerger(
      * @return {Promise}
      */
     function mergeContacts(ids = []) {
-        const promise =
-            ids.length >= 2
-                ? Contact.getMultiple(ids).then((data) => ({ group: data }))
-                : Contact.exportAll().then(extractDuplicates);
+        const promise = ids.length >= 2 ?
+            Contact.getMultiple(ids).then((data) => ({ group: data })) :
+            Contact.exportAll().then(extractDuplicates);
 
         promise.then((duplicates) => {
             if (Object.keys(duplicates).length) {

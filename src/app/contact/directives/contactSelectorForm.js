@@ -6,11 +6,7 @@ import { AUTOCOMPLETE_MAX_RECIPIENTS } from '../../constants';
 function contactSelectorForm(gettextCatalog, notification) {
     const I18N = {
         invalidForm: gettextCatalog.getString('Invalid form', null, 'Error'),
-        limitReached: gettextCatalog.getString(
-            'You have reached the max recipients ({{limit}}) per message',
-            { limit: AUTOCOMPLETE_MAX_RECIPIENTS },
-            'Error'
-        )
+        limitReached: gettextCatalog.getString('You have reached the max recipients ({{limit}}) per message', { limit: AUTOCOMPLETE_MAX_RECIPIENTS }, 'Error')
     };
     const LIMIT_REACHED_CLASS = 'contactSelectorForm-limit-reached';
     const NO_RECIPIENTS_CLASS = 'contactSelectorForm-no-recipients';
@@ -44,9 +40,7 @@ function contactSelectorForm(gettextCatalog, notification) {
             const updateView = () => {
                 const recipients = getRecipients();
 
-                el[0].classList[recipients.length > AUTOCOMPLETE_MAX_RECIPIENTS ? 'add' : 'remove'](
-                    LIMIT_REACHED_CLASS
-                );
+                el[0].classList[recipients.length > AUTOCOMPLETE_MAX_RECIPIENTS ? 'add' : 'remove'](LIMIT_REACHED_CLASS);
                 el[0].classList[!recipients.length ? 'add' : 'remove'](NO_RECIPIENTS_CLASS);
             };
 

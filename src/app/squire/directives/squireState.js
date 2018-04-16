@@ -1,5 +1,5 @@
 /* @ngInject */
-function squireState(onCurrentMessage, editorModel, editorState) {
+function squireState(onCurrentMessage, editorModel, editorState, dispatchers) {
     const KEY_ARROW_INPUT = [38, 39, 40, 37, 33, 34, 36, 35]; // URDL FastUP FastDown
 
     const parse = (ID, editor) => {
@@ -33,6 +33,8 @@ function squireState(onCurrentMessage, editorModel, editorState) {
 
     return {
         link(scope) {
+            const { dispatcher } = dispatchers(['squire.messageSign']);
+
             const ID = scope.message.ID;
             const { editor } = editorModel.find(scope.message);
 
@@ -78,6 +80,12 @@ function squireState(onCurrentMessage, editorModel, editorState) {
                             break;
                         case 'addKey':
                             scope.message.primaryKeyAttached = !scope.message.primaryKeyAttached;
+                            scope.message.sign = scope.message.sign || scope.message.primaryKeyAttached;
+                            dispatcher['squire.messageSign']('signed', { messageID: scope.message.ID });
+                            break;
+                        case 'sign':
+                            scope.message.sign = !scope.message.sign;
+                            dispatcher['squire.messageSign']('signed', { messageID: scope.message.ID });
                             break;
                         // On any normal action (like make bold, italic, removeFormatting) close the popover
                         default:

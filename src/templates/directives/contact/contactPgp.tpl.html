@@ -30,7 +30,23 @@
     <span class="main-title">Configure Key Pinning</span>
     (optional)
 </div>
-    <a href="https://protonmail.com/support/knowledge-base/key-pinning-advanced-contact-settings/" target="_blank" class="pm_button link" translate-context="Link" translate>Learn more</a>
+
+    <a ng-if="internalKeys.RecipientType === 1"
+       href="https://protonmail.com/support/knowledge-base/key-pinning/"
+       target="_blank"
+       class="pm_button link"
+       translate-context="Link"
+       translate>
+        Learn more
+   </a>
+    <a ng-if="internalKeys.RecipientType === 2"
+       href="https://protonmail.com/support/knowledge-base/how-to-use-pgp/"
+       target="_blank"
+       class="pm_button link"
+       translate-context="Link"
+       translate>
+        Learn more
+    </a>
     <contact-item
         class="pgp-external-only item-no-keys contact-disabled"
         data-form="form"

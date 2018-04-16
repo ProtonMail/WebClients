@@ -2,11 +2,7 @@ import _ from 'lodash';
 
 /* @ngInject */
 function addressesSelector(addressesModel, dispatchers) {
-    const buildOptions = () =>
-        _.map(
-            addressesModel.get(),
-            ({ ID = '', Email = '' }) => `<option class="addressesSelector-option" value="${ID}">${Email}</option>`
-        );
+    const buildOptions = () => _.map(addressesModel.get(), ({ ID = '', Email = '' }) => `<option class="addressesSelector-option" value="${ID}">${Email}</option>`);
     return {
         scope: {},
         replace: true,

@@ -37,16 +37,7 @@ function csvFormat() {
         title: ['Title', 'Job Title', 'JobTitle'],
         tz: ['Timezone', 'TimeZone'],
         uid: ['UID'],
-        url: [
-            'URL',
-            'Web Page',
-            'Personal Website',
-            'Business Website',
-            'Website',
-            'Web Page 1',
-            'Web Page 2',
-            'Personal Web Page'
-        ]
+        url: ['URL', 'Web Page', 'Personal Website', 'Business Website', 'Website', 'Web Page 1', 'Web Page 2', 'Personal Web Page']
     };
 
     const PHONES = {
@@ -67,9 +58,7 @@ function csvFormat() {
     };
 
     const getParameter = (key = '') => {
-        return flow(filter((param) => parameters[param].filter((value) => key.indexOf(value) > -1).length > 0), head)(
-            Object.keys(parameters)
-        );
+        return flow(filter((param) => parameters[param].filter((value) => key.indexOf(value) > -1).length > 0), head)(Object.keys(parameters));
     };
 
     const extractKeys = (keys = [], contact = {}) => {

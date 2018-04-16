@@ -28,10 +28,7 @@ function messageScroll() {
 
         let scrollTop = node ? node.getBoundingClientRect().top + amountScrolled - headerOffset - paddingTop : 0;
 
-        scrollTop -=
-            index === 1 || previous.classList.contains('open')
-                ? summaryHeight / 2 + messageMargin
-                : 1.5 * summaryHeight + 2 * messageMargin;
+        scrollTop -= index === 1 || previous.classList.contains('open') ? summaryHeight / 2 + messageMargin : 1.5 * summaryHeight + 2 * messageMargin;
 
         $($thread).animate({ scrollTop }, 200);
     }

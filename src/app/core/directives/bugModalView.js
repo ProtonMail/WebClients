@@ -4,11 +4,7 @@ import _ from 'lodash';
 function bugModalView(gettextCatalog, notification) {
     const UPLOADED_CLASS = 'bugModalView-files-uploaded';
     const I18N = {
-        noImageSelected: gettextCatalog.getString(
-            'No image selected',
-            null,
-            'Error notification in the bug report modal when the user upload file'
-        )
+        noImageSelected: gettextCatalog.getString('No image selected', null, 'Error notification in the bug report modal when the user upload file')
     };
     return {
         replace: true,
@@ -38,11 +34,7 @@ function bugModalView(gettextCatalog, notification) {
 
             const onClick = () => {
                 $input.val('');
-                $input
-                    .wrap('<form>')
-                    .closest('form')
-                    .get(0)
-                    .reset();
+                $input.wrap('<form>').closest('form').get(0).reset();
                 $input.unwrap();
                 element[0].classList.remove(UPLOADED_CLASS);
 

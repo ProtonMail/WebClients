@@ -1,14 +1,5 @@
 /* @ngInject */
-function downgrade(
-    $rootScope,
-    confirmModal,
-    eventManager,
-    gettextCatalog,
-    networkActivityTracker,
-    notification,
-    Payment,
-    subscriptionModel
-) {
+function downgrade($rootScope, confirmModal, eventManager, gettextCatalog, networkActivityTracker, notification, Payment, subscriptionModel) {
     const FREE_PLAN = { Type: 1, Name: 'free' };
     const I18N = {
         downgradeTitle: gettextCatalog.getString('Confirm downgrade', null, 'Title'),

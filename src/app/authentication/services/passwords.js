@@ -62,9 +62,7 @@ function passwords($q, gettextCatalog, webcrypto) {
         },
 
         1(password, userName, modulus) {
-            const salt = openpgp.crypto.hash.md5(
-                pmcrypto.binaryStringToArray(pmcrypto.encode_utf8(userName.toLowerCase()))
-            );
+            const salt = openpgp.crypto.hash.md5(pmcrypto.binaryStringToArray(pmcrypto.encode_utf8(userName.toLowerCase())));
             let encodedSalt = '';
             for (let i = 0; i < salt.length; i++) {
                 let byte = salt[i].toString(16);
@@ -82,9 +80,7 @@ function passwords($q, gettextCatalog, webcrypto) {
         0(password, userName, modulus) {
             const prehashed = pmcrypto.encode_base64(
                 pmcrypto.arrayToBinaryString(
-                    openpgp.crypto.hash.sha512(
-                        pmcrypto.binaryStringToArray(userName.toLowerCase() + pmcrypto.encode_utf8(password))
-                    )
+                    openpgp.crypto.hash.sha512(pmcrypto.binaryStringToArray(userName.toLowerCase() + pmcrypto.encode_utf8(password)))
                 )
             );
             return hashPasswordVersion[1](prehashed, userName, modulus);

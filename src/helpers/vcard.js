@@ -24,7 +24,7 @@ export function orderByPref(properties = []) {
 
 export const uniqGroups = (list) => {
     return _.reduce(
-        properties,
+        list,
         (acc, property) => {
             const group = property.getGroup();
             if (acc.indexOf(group) === -1) {

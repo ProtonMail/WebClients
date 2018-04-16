@@ -1,16 +1,7 @@
 import _ from 'lodash';
 
 /* @ngInject */
-function searchForm(
-    dispatchers,
-    $state,
-    $stateParams,
-    authentication,
-    searchModel,
-    searchValue,
-    dateUtils,
-    mailSettingsModel
-) {
+function searchForm(dispatchers, $state, $stateParams, authentication, searchModel, searchValue, dateUtils, mailSettingsModel) {
     const CLASS_OPEN = 'searchForm-container-adv';
 
     /**

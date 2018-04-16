@@ -1,17 +1,5 @@
 /* @ngInject */
-function pmModal(
-    $animate,
-    $compile,
-    $rootScope,
-    dispatchers,
-    $injector,
-    $controller,
-    $q,
-    $http,
-    AppModel,
-    mailSettingsModel,
-    $templateCache
-) {
+function pmModal($animate, $compile, $rootScope, dispatchers, $injector, $controller, $q, $http, AppModel, mailSettingsModel, $templateCache) {
     const $body = $('#body');
 
     function manageHotkeys(bind = true) {

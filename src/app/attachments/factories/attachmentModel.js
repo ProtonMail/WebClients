@@ -1,4 +1,5 @@
 import _ from 'lodash';
+
 import { flow, filter, map, reduce } from 'lodash/fp';
 
 import { MIME_TYPES } from '../../constants';

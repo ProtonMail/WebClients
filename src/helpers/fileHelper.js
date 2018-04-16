@@ -6,9 +6,13 @@
 export const toBase64 = (file) => {
     return new Promise((resolve, reject) => {
         const reader = new FileReader();
-        reader.onload = ({ target }) => resolve(target.result);
+
+        reader.onload = ({ target }) => {
+            resolve(target.result);
+        };
         reader.onerror = reject;
         reader.onabort = reject;
+
         reader.readAsDataURL(file);
     });
 };

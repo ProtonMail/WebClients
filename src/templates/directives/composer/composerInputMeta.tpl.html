@@ -12,24 +12,33 @@
             </span>
             <composer-input-recipient
                 ng-repeat="recipient in message.ToList"
-                data-address="{{ ::recipient.Address }}"
-                data-name="{{ ::recipient.Name}}">
+                data-address="{{ recipient.Address }}"
+                data-name="{{ recipient.Name}}"
+                data-list-key="ToList"
+                data-index="{{ $index }}"
+                data-message="message">
             </composer-input-recipient>
             <span ng-if="message.CCList.length">
                 CC:
             </span>
             <composer-input-recipient
                 ng-repeat="recipient in message.CCList"
-                data-address="{{ ::recipient.Address }}"
-                data-name="{{ ::recipient.Name}}">
+                data-address="{{ recipient.Address }}"
+                data-name="{{ recipient.Name}}"
+                data-list-key="CCList"
+                data-index="{{ $index }}"
+                data-message="message">
             </composer-input-recipient>
             <span ng-if="message.BCCList.length">
                 BCC:
             </span>
             <composer-input-recipient
                 ng-repeat="recipient in message.BCCList"
-                data-address="{{ ::recipient.Address }}"
-                data-name="{{ ::recipient.Name}}">
+                data-address="{{ recipient.Address }}"
+                data-name="{{ recipient.Name}}"
+                data-list-key="BCCList"
+                data-index="{{ $index }}"
+                data-message="message">
             </composer-input-recipient>
         </div>
     </div>
@@ -46,7 +55,8 @@
         class="composerInputMeta-autocomplete"
         data-name="composerAutocompleteTo"
         data-message="message"
-        data-emails="message.ToList"></autocomplete-emails>
+        data-emails="message.ToList"
+        data-key="ToList"></autocomplete-emails>
 
     <button
         class="pm_button link composerInputMeta-overlay-button"

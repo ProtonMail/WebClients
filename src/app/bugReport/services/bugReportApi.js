@@ -5,24 +5,8 @@ import { toBase64 } from '../../../helpers/fileHelper';
 import { downSize, toBlob } from '../../../helpers/imageHelper';
 
 /* @ngInject */
-function bugReportApi(
-    Report,
-    CONFIG,
-    $state,
-    addressesModel,
-    authentication,
-    gettextCatalog,
-    networkActivityTracker,
-    notification
-) {
-    const {
-        ROW_MODE,
-        COLUMN_MODE,
-        MESSAGE_VIEW_MODE,
-        CONVERSATION_VIEW_MODE,
-        CLIENT_TYPE,
-        MAX_SIZE_SCREENSHOT
-    } = CONSTANTS;
+function bugReportApi(Report, CONFIG, $state, addressesModel, authentication, gettextCatalog, networkActivityTracker, notification) {
+    const { ROW_MODE, COLUMN_MODE, MESSAGE_VIEW_MODE, CONVERSATION_VIEW_MODE, CLIENT_TYPE, MAX_SIZE_SCREENSHOT } = CONSTANTS;
     const MAP_MODE = {
         layout: {
             [ROW_MODE]: 'row',
@@ -74,33 +58,32 @@ function bugReportApi(
     };
 
     const resize = (file) => {
-        return toBase64(file).then((base64str) => downSize(base64str, MAX_SIZE_SCREENSHOT, file.type));
+        return toBase64(file)
+            .then((base64str) => downSize(base64str, MAX_SIZE_SCREENSHOT, file.type));
     };
 
     const toFormData = (parameters = {}) => {
-        const { promises, formData } = _.reduce(
-            parameters,
-            (acc, value, key) => {
-                // NOTE FileList instanceof Array => false
-                if (value instanceof FileList || value instanceof Array) {
-                    for (let i = 0; i < value.length; i++) {
-                        const file = value[i];
-                        const promise = resize(file).then((base64str) => {
+
+        const { promises, formData } = _.reduce(parameters, (acc, value, key) => {
+            // NOTE FileList instanceof Array => false
+            if (value instanceof FileList || value instanceof Array) {
+                for (let i = 0; i < value.length; i++) {
+                    const file = value[i];
+                    const promise = resize(file)
+                        .then((base64str) => {
                             acc.formData.append(file.name, toBlob(base64str), file.name);
                         });
 
-                        acc.promises.push(promise);
-                    }
-
-                    return acc;
+                    acc.promises.push(promise);
                 }
 
-                acc.formData.append(key, value);
-
                 return acc;
-            },
-            { promises: [], formData: new FormData() }
-        );
+            }
+
+            acc.formData.append(key, value);
+
+            return acc;
+        }, { promises: [], formData: new FormData() });
 
         return Promise.all(promises)
             .then(() => formData)

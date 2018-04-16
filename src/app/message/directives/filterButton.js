@@ -30,34 +30,19 @@ function filterButton(filterModal, lazyLoader) {
                     const conditions = [];
 
                     if (scope.model.subject) {
-                        conditions.push({
-                            Type: { value: 'subject' },
-                            Comparator: { value: 'contains' },
-                            Values: [scope.message.Subject]
-                        });
+                        conditions.push({ Type: { value: 'subject' }, Comparator: { value: 'contains' }, Values: [scope.message.Subject] });
                     }
 
                     if (scope.model.sender) {
-                        conditions.push({
-                            Type: { value: 'sender' },
-                            Comparator: { value: 'contains' },
-                            Values: [scope.message.Sender.Address]
-                        });
+                        conditions.push({ Type: { value: 'sender' }, Comparator: { value: 'contains' }, Values: [scope.message.Sender.Address] });
                     }
 
                     if (scope.model.recipient) {
-                        conditions.push({
-                            Type: { value: 'recipient' },
-                            Comparator: { value: 'contains' },
-                            Values: recipients(scope.message)
-                        });
+                        conditions.push({ Type: { value: 'recipient' }, Comparator: { value: 'contains' }, Values: recipients(scope.message) });
                     }
 
                     if (scope.model.attachments) {
-                        conditions.push({
-                            Type: { value: 'attachments' },
-                            Comparator: { value: attachments(scope.message) }
-                        });
+                        conditions.push({ Type: { value: 'attachments' }, Comparator: { value: attachments(scope.message) } });
                     }
 
                     const filter = {

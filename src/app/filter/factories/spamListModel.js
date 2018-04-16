@@ -136,10 +136,7 @@ function spamListModel($q, CONSTANTS, dispatchers, incomingModel) {
         whitelist.setLoader(true);
         blacklist.setLoader(true);
 
-        await Promise.all([
-            whitelist.loadList(_.extend({}, config, params)),
-            blacklist.loadList(_.extend({}, config, params))
-        ]);
+        await Promise.all([whitelist.loadList(_.extend({}, config, params)), blacklist.loadList(_.extend({}, config, params))]);
 
         whitelist.setLoader(false);
         blacklist.setLoader(false);

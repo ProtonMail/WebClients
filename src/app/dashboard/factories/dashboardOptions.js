@@ -8,25 +8,13 @@ function dashboardOptions(gettextCatalog, CONSTANTS) {
             return gettextCatalog.getString('{{value}} Addresses', { value }, 'dashboard options select');
         },
         space(value) {
-            return gettextCatalog.getPlural(
-                value,
-                '1 GB Storage',
-                '{{$count}} GB Storage',
-                {},
-                'dashboard options select'
-            );
+            return gettextCatalog.getPlural(value, '1 GB Storage', '{{$count}} GB Storage', {}, 'dashboard options select');
         },
         member(value) {
             return gettextCatalog.getPlural(value, '1 User', '{{$count}} Users', {}, 'dashboard options select');
         },
         domain(value) {
-            return gettextCatalog.getPlural(
-                value,
-                '1 Custom Domain',
-                '{{$count}} Custom Domains',
-                {},
-                'dashboard options select'
-            );
+            return gettextCatalog.getPlural(value, '1 Custom Domain', '{{$count}} Custom Domains', {}, 'dashboard options select');
         }
     };
 

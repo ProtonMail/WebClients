@@ -50,10 +50,7 @@ function SecurityController(
     function confirm2FAEnable(sharedSecret, qrURI) {
         function submit(loginPassword, twoFactorCode) {
             const promise = settingsApi
-                .enableTwoFactor(
-                    { TwoFactorSharedSecret: sharedSecret },
-                    { TwoFactorCode: twoFactorCode, Password: loginPassword }
-                )
+                .enableTwoFactor({ TwoFactorSharedSecret: sharedSecret }, { TwoFactorCode: twoFactorCode, Password: loginPassword })
                 .then((data = {}) => data.TwoFactorRecoveryCodes)
                 .then((codes) => {
                     $scope.twoFactor = 1;
@@ -71,15 +68,11 @@ function SecurityController(
 
     function confirm2FADisable() {
         function submit(loginPassword, twoFactorCode) {
-            const promise = settingsApi
-                .disableTwoFactor({ TwoFactorCode: twoFactorCode, Password: loginPassword })
-                .then(() => {
-                    $scope.twoFactor = 0;
-                    userSettingsModel.set('TwoFactor', 0);
-                    notification.success(
-                        gettextCatalog.getString('Two-factor authentication disabled', null, 'Disable 2FA')
-                    );
-                });
+            const promise = settingsApi.disableTwoFactor({ TwoFactorCode: twoFactorCode, Password: loginPassword }).then(() => {
+                $scope.twoFactor = 0;
+                userSettingsModel.set('TwoFactor', 0);
+                notification.success(gettextCatalog.getString('Two-factor authentication disabled', null, 'Disable 2FA'));
+            });
 
             networkActivityTracker.track(promise);
         }
@@ -133,11 +126,7 @@ function SecurityController(
 
     $scope.disableTwoFactor = () => {
         const title = gettextCatalog.getString('Disable Two-Factor Authentication', null, 'Title');
-        const message = gettextCatalog.getString(
-            'Are you sure you want to disable two-factor authentication?',
-            null,
-            'Info'
-        );
+        const message = gettextCatalog.getString('Are you sure you want to disable two-factor authentication?', null, 'Info');
         confirmModal.activate({
             params: {
                 title,
@@ -167,9 +156,7 @@ function SecurityController(
                     $scope.haveLogs = true;
                 },
                 (error) => {
-                    notification.error(
-                        gettextCatalog.getString('Error during the initialization of logs', null, 'Error')
-                    );
+                    notification.error(gettextCatalog.getString('Error during the initialization of logs', null, 'Error'));
                     $log.error(error);
                 }
             )
@@ -188,9 +175,7 @@ function SecurityController(
                     const promise = Logs.clear().then(() => {
                         $scope.logs = [];
                         $scope.logCount = 0;
-                        notification.success(
-                            gettextCatalog.getString('Logs cleared', null, "Clear user's logs (security)")
-                        );
+                        notification.success(gettextCatalog.getString('Logs cleared', null, "Clear user's logs (security)"));
                     });
 
                     networkActivityTracker.track(promise);
@@ -243,9 +228,7 @@ function SecurityController(
                     confirm() {
                         const promise = settingsApi.setLogging({ LogAuth: 0 }).then(() => {
                             $scope.doLogging = 0;
-                            notification.success(
-                                gettextCatalog.getString('Logging preference updated', null, 'Dashboard/security')
-                            );
+                            notification.success(gettextCatalog.getString('Logging preference updated', null, 'Dashboard/security'));
                             confirmModal.deactivate();
                             $scope.disabledText = gettextCatalog.getString('Disabled', null, 'Action');
                         });

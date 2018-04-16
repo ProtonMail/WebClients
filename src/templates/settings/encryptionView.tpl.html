@@ -1,8 +1,4 @@
 <div>
-    <header class="headerBlock-container">
-        <h2 class="encryption-title" translate-context="Title" translate="">Advanced Encryption Settings</h2>
-    </header>
-
     <div class="row pm_grid">
         <section class="pm_form col-1-2">
             <header-block>
@@ -10,8 +6,21 @@
                     class="encryption-pgp-title"
                     translate
                     translate-comment="PGP heading"
-                    translate-context="Title">Default PGP Settings</h2>
+                    translate-context="Title">External PGP Settings (optional)</h2>
             </header-block>
+            <p class="alert alert-info">
+                <span
+                    translate
+                    translate-context="settings warning">
+                    Only change these settings if you are using PGP with non-ProtonMail recipients.
+                </span>
+                <a href="https://protonmail.com/support/knowledge-base/how-to-use-pgp"
+                   target="_blank"
+                   translate-context="Link"
+                   translate>
+                    Learn More
+                </a>
+            </p>
             <div class="pm_grid">
                 <div class="row">
                     <div class="col-1-2">
@@ -21,10 +30,14 @@
                                 translate>
                                 Sign external messages
                             </span>
-                            <i
-                                class="fa fa-info-circle"
-                                pt-tooltip-translate="Automatically sign all your outgoing messages so users can verify the authenticity of your messages. This is done in combination with the Default PGP Scheme that is selected down below."
-                            ></i>
+                            <a href="https://protonmail.com/support/knowledge-base/what-is-a-digital-signature/"
+                               target="_blank"
+                               class="text-purple">
+                                <i
+                                    class="fa fa-info-circle"
+                                    pt-tooltip-translate="Automatically sign all your outgoing messages so users can verify the authenticity of your messages. This is done in combination with the Default PGP Scheme that is selected down below."
+                                ></i>
+                            </a>
                         </label>
                     </div>
                     <div class="col-1-2">
@@ -34,7 +47,30 @@
                                 name="encryptSettings.sign"
                         ></toggle>
                     </div>
+                </div><div class="row">
+                <div class="col-1-2">
+                    <label>
+                            <span translate-context="Label"
+                                  translate>
+                                Automatically attach public key
+                            </span>
+
+                        <a href="https://protonmail.com/support/knowledge-base/how-to-use-pgp" target="_blank" class="text-purple">
+                            <i
+                                class="fa fa-info-circle"
+                                pt-tooltip-translate="This automatically adds your public key to each message you send. Recipients can use this to verify the authenticity of your messages and sent encrypted messages to you."></i>
+                        </a>
+                    </label>
                 </div>
+                <div class="col-1-2">
+                    <toggle
+                        data-on="ON"
+                        data-off="OFF"
+                        data-status="attachPublic"
+                        name="encryptSettings.attachPublic"
+                    ></toggle>
+                </div>
+            </div>
                 <div class="row">
                     <div class="col-1-2">
                         <label>
@@ -67,33 +103,25 @@
                     class="encryption-misc-title"
                     translate
                     translate-context="Title">
-                    Miscellaneous
+                    Key Pinning (optional)
                 </h2>
             </header-block>
+            <p class="alert alert-info">
+                <span
+                    translate
+                    translate-context="settings warning">
+                Key Pinning is an advanced security feature. Only turn this on if you know what it does.
+                </span>
+                <a href="https://protonmail.com/support/knowledge-base/key-pinning"
+                   target="_blank"
+                   translate-context="Link"
+                   translate>
+                    Learn More
+                </a>
+            </p>
 
 
             <div class="pm_grid">
-                <div class="row">
-                    <div class="col-1-2">
-                        <label>
-                            <span translate-context="Label"
-                                  translate>
-                                Automatically attach public key
-                            </span>
-                            <i
-                                class="fa fa-info-circle"
-                                pt-tooltip-translate="This automatically adds your public key to each message you send. Recipients can use this to verify the authenticity of your messages and sent encrypted messages to you."></i>
-                        </label>
-                    </div>
-                    <div class="col-1-2">
-                        <toggle
-                            data-on="ON"
-                            data-off="OFF"
-                            data-status="attachPublic"
-                            name="encryptSettings.attachPublic"
-                        ></toggle>
-                    </div>
-                </div>
                 <div class="row">
                     <div class="col-1-2">
                         <label>
@@ -102,9 +130,11 @@
                                 translate>
                                 Prompt to pin keys
                             </span>
-                            <i
-                                class="fa fa-info-circle"
-                                pt-tooltip-translate="When receiving an internal message from a sender that has no pinned keys in your contacts, show a banner asking if you want to enable key pinning."></i>
+                            <a href="https://protonmail.com/support/knowledge-base/key-pinning/" target="_blank" class="text-purple">
+                                <i
+                                    class="fa fa-info-circle"
+                                    pt-tooltip-translate="When receiving an internal message from a sender that has no pinned keys in your contacts, show a banner asking if you want to enable key pinning."></i>
+                            </a>
                         </label>
                     </div>
                     <div class="col-1-2">

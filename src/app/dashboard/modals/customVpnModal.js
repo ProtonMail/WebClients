@@ -18,10 +18,7 @@ function customVpnModal($rootScope, dashboardConfiguration, pmModal, customVpnMo
                 const vpnplus = customVpnModel.get('vpnplus');
                 const vpn = customVpnModel.get('vpn');
 
-                $rootScope.$emit('dashboard', {
-                    type: 'select.vpn',
-                    data: { plan: vpnplus ? 'vpnplus' : 'vpnbasic', vpn }
-                });
+                $rootScope.$emit('dashboard', { type: 'select.vpn', data: { plan: vpnplus ? 'vpnplus' : 'vpnbasic', vpn } });
                 params.close();
             };
         }

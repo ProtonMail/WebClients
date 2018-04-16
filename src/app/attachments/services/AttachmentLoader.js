@@ -91,7 +91,7 @@ function AttachmentLoader(
                     MIMEType: type,
                     FileSize: size,
                     Inline: inline,
-                    signature: signature.packets.write(),
+                    signature: signature ? signature.packets.write() : undefined,
                     Preview: data,
                     keys: asymmetric[0],
                     data: encrypted[0]

@@ -27,13 +27,7 @@ function paymentUtils(gettextCatalog, paymentModel, $state) {
      * @param  {String} config.choice custom selected choice
      * @return {Object}         { selected, list }
      */
-    const generateMethods = ({
-        methods = paymentModel.get('methods'),
-        choice,
-        Cycle = YEARLY,
-        Amount,
-        modal = ''
-    } = {}) => {
+    const generateMethods = ({ methods = paymentModel.get('methods'), choice, Cycle = YEARLY, Amount, modal = '' } = {}) => {
         const list = [
             {
                 value: 'card',

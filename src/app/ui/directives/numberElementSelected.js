@@ -10,30 +10,12 @@ function numberElementSelected(gettextCatalog, tools, $state) {
                 const type = tools.getTypeList();
 
                 if ($state.includes('secured.contacts')) {
-                    return gettextCatalog.getPlural(
-                        number,
-                        '{{$count}} contact selected',
-                        '{{$count}} contacts selected',
-                        {},
-                        'Info'
-                    );
+                    return gettextCatalog.getPlural(number, '{{$count}} contact selected', '{{$count}} contacts selected', {}, 'Info');
                 } else if (type === 'conversation') {
-                    return gettextCatalog.getPlural(
-                        number,
-                        '{{$count}} conversation selected',
-                        '{{$count}} conversations selected',
-                        {},
-                        'Info'
-                    );
+                    return gettextCatalog.getPlural(number, '{{$count}} conversation selected', '{{$count}} conversations selected', {}, 'Info');
                 }
 
-                return gettextCatalog.getPlural(
-                    number,
-                    '{{$count}} message selected',
-                    '{{$count}} messages selected',
-                    {},
-                    'Info'
-                );
+                return gettextCatalog.getPlural(number, '{{$count}} message selected', '{{$count}} messages selected', {}, 'Info');
             };
         }
     };

@@ -83,9 +83,7 @@ function embeddedParser(
 
             const tempDOM = $(`<div>${content || message.getDecryptedBody()}</div>`);
             message.NumEmbedded--;
-            const nodes = tempDOM.find(
-                `img[src="cid:${cid}"], img[data-embedded-img="cid:${cid}"], img[data-embedded-img="${cid}"]`
-            );
+            const nodes = tempDOM.find(`img[src="cid:${cid}"], img[data-embedded-img="cid:${cid}"], img[data-embedded-img="${cid}"]`);
             nodes.length && nodes.remove();
             message.setDecryptedBody(tempDOM.html(), true);
         }
@@ -139,16 +137,11 @@ function embeddedParser(
         // For a draft if we close it before the end of the attachment upload, there are no keyPackets
         const promise = flow(
             // pgp attachments do not have keypackets.
-            filter(
-                ({ attachment }) =>
-                    attachment.KeyPackets || attachment.Encrypted === CONSTANTS.ENCRYPTED_STATUS.PGP_MIME
-            ),
+            filter(({ attachment }) => attachment.KeyPackets || attachment.Encrypted === CONSTANTS.ENCRYPTED_STATUS.PGP_MIME),
             filter(({ cid }) => !embeddedStore.hasBlob(cid) && show),
             map(({ cid, attachment }) => {
                 const storeAttachement = embeddedStore.store(message, cid);
-                return AttachmentLoader.get(attachment, message).then((buffer) =>
-                    storeAttachement(buffer, attachment.MIMEType)
-                );
+                return AttachmentLoader.get(attachment, message).then((buffer) => storeAttachement(buffer, attachment.MIMEType));
             })
         )(list);
 

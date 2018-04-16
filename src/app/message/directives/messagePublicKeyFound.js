@@ -1,8 +1,8 @@
 import keyAlgorithm from '../../keys/helper/keyAlgorithm';
-import { SEND_TYPES } from '../../constants';
 
 /* @ngInject */
 function messagePublicKeyFound(
+    CONSTANTS,
     trustPublicKeyModal,
     pmcw,
     networkActivityTracker,
@@ -14,8 +14,8 @@ function messagePublicKeyFound(
     $rootScope
 ) {
     const I18N = {
-        SUCCES_MESSAGE: gettextCatalog.getString('Public Key trusted', null, 'Info'),
-        ERROR_MESSAGE: gettextCatalog.getString('Error while adding the public key to the contacts', null, 'Error')
+        SUCCES_MESSAGE: gettextCatalog.getString('Public Key trusted'),
+        ERROR_MESSAGE: gettextCatalog.getString('Error while adding the public key to the contacts')
     };
 
     return {
@@ -27,54 +27,49 @@ function messagePublicKeyFound(
 
             const trust = () => {
                 const keyInfoPromise = pmcw.keyInfo(scope.message.attachedPublicKey);
-                const addressesPromise = keyInfoPromise.then((keyInfo) =>
-                    attachedPublicKey.extractAddresses(scope.message, keyInfo)
-                );
+                const addressesPromise = keyInfoPromise.then((keyInfo) => attachedPublicKey.extractAddresses(scope.message, keyInfo));
                 const promises = Promise.all([keyInfoPromise, addressesPromise]).then(([keyInfo, addresses]) => {
                     if (addresses.length === 0) {
                         return;
                     }
                     keyInfo.algType = keyAlgorithm.describe(keyInfo);
-                    trustPublicKeyModal.activate({
-                        params: {
-                            addresses,
-                            isInternal: scope.message.IsEncrypted === SEND_TYPES.SEND_PM,
-                            keyInfo,
-                            submit(addresses) {
-                                const promise = attachedPublicKey.attachPublicKey(
-                                    scope.message.attachedPublicKey,
-                                    addresses
-                                );
+                        trustPublicKeyModal.activate({
+                            params: {
+                                addresses,
+                                isInternal: scope.message.IsEncrypted === CONSTANTS.SEND_TYPES.SEND_PM,
+                                keyInfo,
+                                submit(addresses) {
+                                    const promise = attachedPublicKey.attachPublicKey(scope.message.attachedPublicKey, addresses);
 
-                                promise
-                                    .then((attached) => {
-                                        if (!attached) {
-                                            return;
-                                        }
+                                    promise
+                                        .then((attached) => {
+                                            if (!attached) {
+                                                return;
+                                            }
 
-                                        // makes sure the contactEmails are updated.
-                                        const refreshPromise = eventManager
-                                            .call()
-                                            // trigger re-verification, checking if the current banner should still be shown etcetera.
-                                            .then(() =>
-                                                $rootScope.$emit('message', {
-                                                    type: 'reload',
-                                                    data: { conversationID: scope.message.ConversationID }
-                                                })
-                                            )
-                                            .then(() => notification.success(I18N.SUCCES_MESSAGE));
-                                        networkActivityTracker.track(refreshPromise);
-                                        return refreshPromise;
-                                    })
-                                    .catch(() => notification.error(I18N.ERROR_MESSAGE));
-                                trustPublicKeyModal.deactivate();
-                            },
-                            cancel() {
-                                trustPublicKeyModal.deactivate();
+                                            // makes sure the contactEmails are updated.
+                                            const refreshPromise = eventManager
+                                                .call()
+                                                // trigger re-verification, checking if the current banner should still be shown etcetera.
+                                                .then(() => $rootScope.$emit('message',
+                                                    {
+                                                        type: 'reload',
+                                                        data: { conversationID: scope.message.ConversationID }
+                                                    }))
+                                                .then(() => notification.success(I18N.SUCCES_MESSAGE));
+                                            networkActivityTracker.track(refreshPromise);
+                                            return refreshPromise;
+                                        })
+                                        .catch(() => notification.error(I18N.ERROR_MESSAGE));
+                                    trustPublicKeyModal.deactivate();
+                                },
+                                cancel() {
+                                    trustPublicKeyModal.deactivate();
+                                }
                             }
-                        }
-                    });
-                });
+                        });
+                    }
+                );
                 networkActivityTracker.track(promises);
 
                 // no-keys && external user => confirm => ask for encryption

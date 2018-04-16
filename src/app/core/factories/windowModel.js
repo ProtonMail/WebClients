@@ -21,7 +21,7 @@ function windowModel(dispatchers) {
             return;
         }
 
-        CACHE.windows.forEach(({ win, type, unsubscribe }) => key === type && (win.close(), unsubscribe()));
+        CACHE.windows.forEach(({ win, type, unsubscribe }) => (key === type && (win.close(), unsubscribe())));
         CACHE.windows = CACHE.windows.filter(({ type }) => key !== type);
     };
 

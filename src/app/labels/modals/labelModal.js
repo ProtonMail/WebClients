@@ -1,17 +1,7 @@
 import _ from 'lodash';
 
 /* @ngInject */
-function labelModal(
-    pmModal,
-    tools,
-    hotkeys,
-    gettextCatalog,
-    networkActivityTracker,
-    eventManager,
-    Label,
-    notification,
-    sanitize
-) {
+function labelModal(pmModal, tools, hotkeys, gettextCatalog, networkActivityTracker, eventManager, Label, notification, sanitize) {
     const COLORS_LIST = tools.colors();
     const TRANSLATIONS = {
         EDIT_FOLDER: gettextCatalog.getString('Edit folder', null, 'Title'),
@@ -118,13 +108,13 @@ function labelModal(
             this.color = Color || COLORS_LIST[index];
 
             this.create = (form) => {
+
                 if (form.$invalid) {
                     return; // we display the information inside the form
                 }
 
                 const data = cleanInput({
-                    ID,
-                    Exclusive,
+                    ID, Exclusive,
                     Name: this.name,
                     Color: this.color,
                     Notify: +!!this.notify

@@ -7,8 +7,7 @@ function composerExpiration(notification, gettextCatalog, $rootScope, CONSTANTS)
         invalid: gettextCatalog.getString('Invalid expiration time.', null, 'Error')
     };
 
-    const dispatch = (type, message) =>
-        $rootScope.$emit('composer.update', { type, data: { message, type: 'expiration' } });
+    const dispatch = (type, message) => $rootScope.$emit('composer.update', { type, data: { message, type: 'expiration' } });
 
     const formatOption = (size) => _.range(size).map((value) => ({ label: `${value}`, value }));
 

@@ -12,11 +12,7 @@ function memberSubLogin(
     gettextCatalog
 ) {
     const I18N = {
-        ERROR: gettextCatalog.getString(
-            'Permission denied, administrator privileges have been restricted.',
-            null,
-            'Error'
-        )
+        ERROR: gettextCatalog.getString('Permission denied, administrator privileges have been restricted.', null, 'Error')
     };
 
     const SUBLOGIN_URL = $state.href('login.sub', { sub: true }, { absolute: true });

@@ -78,9 +78,7 @@ function findExpendableMessage(tools, CONSTANTS, $state, $stateParams) {
 
             case $state.includes('secured.starred.**'):
             case $state.includes('secured.label.**'):
-                thisOne = getMessage(
-                    _.filter(messages, (m) => m.LabelIDs.indexOf(currentLocation) > -1 && m.Type !== CONSTANTS.DRAFT)
-                );
+                thisOne = getMessage(_.filter(messages, (m) => m.LabelIDs.indexOf(currentLocation) > -1 && m.Type !== CONSTANTS.DRAFT));
                 break;
 
             case $state.includes('secured.allDrafts.**'):

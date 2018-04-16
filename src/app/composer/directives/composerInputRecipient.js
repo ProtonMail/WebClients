@@ -1,4 +1,4 @@
-import { SEND_TYPES } from '../../constants';
+import { CONSTANTS } from '../../constants';
 
 /* @ngInject */
 function composerInputRecipient(sendPreferences, dispatchers) {
@@ -7,23 +7,24 @@ function composerInputRecipient(sendPreferences, dispatchers) {
         templateUrl: require('../../../templates/directives/composer/composerInputRecipient.tpl.html'),
         scope: {
             address: '@',
-            name: '@'
+            name: '@',
+            index: '@',
+            message: '<'
         },
-        link(scope) {
+        link(scope, el, { listKey, index }) {
             const { on, unsubscribe, dispatcher } = dispatchers(['composerInputRecipient']);
 
             const updateLock = () => {
-                sendPreferences.get([scope.email.Address]).then(({ [scope.email.Address]: sendPref }) =>
+                sendPreferences.get([scope.email.Address], scope.message).then(({ [scope.email.Address]: sendPref }) =>
                     scope.$applyAsync(() => {
                         scope.email.encrypt = sendPref.encrypt;
                         scope.email.sign = sendPref.sign;
-                        scope.email.encrypt = sendPref.encrypt;
-                        scope.email.sign = sendPref.sign;
-                        scope.email.isPgp = [SEND_TYPES.SEND_PGP_MIME, SEND_TYPES.SEND_PGP_INLINE].includes(
-                            sendPref.scheme
-                        );
-                        scope.email.isPgpMime = sendPref.scheme === SEND_TYPES.SEND_PGP_MIME;
-                        scope.email.isEO = sendPref.scheme === SEND_TYPES.SEND_EO;
+                        scope.email.isPgp = [
+                            CONSTANTS.SEND_TYPES.SEND_PGP_MIME,
+                            CONSTANTS.SEND_TYPES.SEND_PGP_INLINE
+                        ].includes(sendPref.scheme);
+                        scope.email.isPgpMime = sendPref.scheme === CONSTANTS.SEND_TYPES.SEND_PGP_MIME;
+                        scope.email.isEO = sendPref.scheme === CONSTANTS.SEND_TYPES.SEND_EO;
                         scope.email.isPinned = sendPref.pinned;
                         scope.email.loadCryptInfo = false;
                         dispatcher.composerInputRecipient('refresh', { email: scope.email });
@@ -42,7 +43,31 @@ function composerInputRecipient(sendPreferences, dispatchers) {
                 }
                 updateLock();
             });
-
+            on('squire.messageSign', (event, { data: { messageID } }) => {
+                if (messageID !== scope.message.ID) {
+                    return;
+                }
+                updateLock();
+            });
+            on(
+                'composer.update',
+                (
+                    event,
+                    { type, data: { message = { ID: null }, list = null, listIndex = -1, address, name } = {} }
+                ) => {
+                    if ((type !== 'close.panel' && type !== 'recipients.modified') || message.ID !== scope.message.ID) {
+                        return;
+                    }
+                    if (type === 'recipients.modified' && listKey === list && index === listIndex.toString()) {
+                        scope.email = {
+                            Address: address,
+                            Name: name,
+                            loadCryptInfo: address !== scope.email.Address
+                        };
+                    }
+                    updateLock();
+                }
+            );
             scope.email = { Address: scope.address, Name: scope.name, loadCryptInfo: true };
             updateLock();
 

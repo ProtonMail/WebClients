@@ -1,5 +1,3 @@
-import { PACKAGE_TYPE } from '../../constants';
-
 /* @ngInject */
 function encryptionView(
     gettextCatalog,
@@ -7,49 +5,100 @@ function encryptionView(
     dispatchers,
     settingsMailApi,
     notification,
-    networkActivityTracker
+    networkActivityTracker,
+    CONSTANTS,
+    confirmModal
 ) {
     const I18N = {
-        SUCCES_MESSAGE: gettextCatalog.getString('Encryption setting updated', null, 'Info'),
-        ERROR_MESSAGE: gettextCatalog.getString('Error while updating setting', null, 'Error')
+        SUCCES_MESSAGE: gettextCatalog.getString('Encryption setting updated', null, 'Success'),
+        ERROR_MESSAGE: gettextCatalog.getString('Error while updating setting', null, 'Error'),
+        ENABLE_SIGNING_TITLE: gettextCatalog.getString(
+            'Automatic sign outgoing messages?',
+            null,
+            'Confirm modal title'
+        ),
+        ENABLE_SIGNING_MESSAGE: gettextCatalog.getString(
+            'PGP clients are more likely to automatically detect your PGP keys if outgoing messages are signed.'
+        ),
+        YES: gettextCatalog.getString('Yes', null, 'Confirm text'),
+        NO: gettextCatalog.getString('No', null, 'Confirm text')
     };
-
+    const askSign = (status) => {
+        if (!status || mailSettingsModel.get('Sign')) {
+            return Promise.resolve(false);
+        }
+        return new Promise((resolve) => {
+            confirmModal.activate({
+                params: {
+                    title: I18N.ENABLE_SIGNING_TITLE,
+                    message: I18N.ENABLE_SIGNING_MESSAGE,
+                    confirmText: I18N.YES,
+                    cancelText: I18N.NO,
+                    confirm() {
+                        resolve(true);
+                        confirmModal.deactivate();
+                    },
+                    cancel() {
+                        resolve(false);
+                        confirmModal.deactivate();
+                    }
+                }
+            });
+        });
+    };
     return {
         replace: true,
         scope: {},
         templateUrl: require('../../../templates/settings/encryptionView.tpl.html'),
         link(scope, elem) {
-            const { on, unsubscribe } = dispatchers();
-
             const pgpSelector = elem[0].querySelector('.pgp-scheme');
             scope.attachPublic = mailSettingsModel.get('AttachPublicKey');
             scope.sign = mailSettingsModel.get('Sign');
             scope.promptpin = mailSettingsModel.get('PromptPin');
             scope.pgpscheme =
-                mailSettingsModel.get('PGPScheme') === PACKAGE_TYPE.SEND_PGP_INLINE ? 'pgp-inline' : 'pgp-mime';
+                mailSettingsModel.get('PGPScheme') === CONSTANTS.PACKAGE_TYPE.SEND_PGP_INLINE
+                    ? 'pgp-inline'
+                    : 'pgp-mime';
 
-            /**
-             * Update the setting by Key:value
-             * @param {String} key Name of the key to update and suffix of the function
-             * @param {Boolean} value
-             */
-            const update = (key, value) => {
-                const promise = settingsMailApi[`update${key}`]({ [key]: value })
+            const { on, unsubscribe } = dispatchers();
+            on('encryptSettings.attachPublic', (event, { status }) => {
+                askSign(status).then((enableSign) => {
+                    const promises = [settingsMailApi.updateAttachPublic({ AttachPublicKey: status ? 1 : 0 })];
+                    if (enableSign) {
+                        promises.push(settingsMailApi.updateSign({ Sign: 1 }).then(() => (scope.sign = 1)));
+                    }
+                    const promise = Promise.all(promises)
+                        .then(() => notification.success(I18N.SUCCES_MESSAGE))
+                        .catch((error) => notification.error(error || I18N.ERROR_MESSAGE));
+                    networkActivityTracker.track(promise);
+                });
+            });
+            on('encryptSettings.sign', (event, { status }) => {
+                const promise = settingsMailApi
+                    .updateSign({ Sign: status ? 1 : 0 })
                     .then(() => notification.success(I18N.SUCCES_MESSAGE))
                     .catch((error) => notification.error(error || I18N.ERROR_MESSAGE));
                 networkActivityTracker.track(promise);
-            };
-
-            const onEvent = (key) => (e, { status }) => update(key, +!!status);
-
-            // The event comes from the template -> toggle compomnent
-            on('encryptSettings.attachPublic', onEvent('AttachPublicKey'));
-            on('encryptSettings.sign', onEvent('Sign'));
-            on('encryptSettings.promptpin', onEvent('PromptPin'));
+            });
+            on('encryptSettings.promptpin', (event, { status }) => {
+                const promise = settingsMailApi
+                    .updatePromptPin({ PromptPin: status ? 1 : 0 })
+                    .then(() => notification.success(I18N.SUCCES_MESSAGE))
+                    .catch((error) => notification.error(error || I18N.ERROR_MESSAGE));
+                networkActivityTracker.track(promise);
+            });
 
             const updatePgpScheme = ({ target: { value = 'pgp-mime' } }) => {
-                const state = value === 'pgp-mime' ? PACKAGE_TYPE.SEND_PGP_MIME : PACKAGE_TYPE.SEND_PGP_INLINE;
-                update('PGPScheme', state);
+                const promise = settingsMailApi
+                    .updatePgpScheme({
+                        PGPScheme:
+                            value === 'pgp-mime'
+                                ? CONSTANTS.PACKAGE_TYPE.SEND_PGP_MIME
+                                : CONSTANTS.PACKAGE_TYPE.SEND_PGP_INLINE
+                    })
+                    .then(() => notification.success(I18N.SUCCES_MESSAGE))
+                    .catch((error) => notification.error(error || I18N.ERROR_MESSAGE));
+                networkActivityTracker.track(promise);
             };
             pgpSelector.addEventListener('change', updatePgpScheme);
 

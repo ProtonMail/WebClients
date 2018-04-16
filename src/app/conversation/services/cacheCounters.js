@@ -5,18 +5,7 @@ function cacheCounters(messageApi, CONSTANTS, conversationApi, $q, dispatchers, 
     const api = {};
     let counters = {};
     const { dispatcher, on } = dispatchers(['app.cacheCounters']);
-    const {
-        inbox,
-        allDrafts,
-        drafts,
-        allSent,
-        sent,
-        trash,
-        spam,
-        allmail,
-        archive,
-        starred
-    } = CONSTANTS.MAILBOX_IDENTIFIERS;
+    const { inbox, allDrafts, drafts, allSent, sent, trash, spam, allmail, archive, starred } = CONSTANTS.MAILBOX_IDENTIFIERS;
     const dispatch = (type, data = {}) => dispatcher['app.cacheCounters'](type, data);
 
     const exist = (loc) => {
@@ -49,9 +38,7 @@ function cacheCounters(messageApi, CONSTANTS, conversationApi, $q, dispatchers, 
      * @return {Promise}
      */
     api.query = () => {
-        const locs = [inbox, allDrafts, drafts, allSent, sent, trash, spam, allmail, archive, starred].concat(
-            labelsModel.ids()
-        );
+        const locs = [inbox, allDrafts, drafts, allSent, sent, trash, spam, allmail, archive, starred].concat(labelsModel.ids());
 
         return $q
             .all({

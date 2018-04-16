@@ -30,13 +30,7 @@ function feedbackModal(pmModal, Report, notification, networkActivityTracker, ge
                 const feedbackPromise = Report.bug(data);
 
                 feedbackPromise.then(() => {
-                    notification.success(
-                        gettextCatalog.getString(
-                            'Thanks for your feedback!',
-                            null,
-                            'Success message when sending feedback'
-                        )
-                    );
+                    notification.success(gettextCatalog.getString('Thanks for your feedback!', null, 'Success message when sending feedback'));
                     params.close();
                 });
 

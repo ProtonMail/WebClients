@@ -46,12 +46,7 @@ function postMessage(
             if (cid) {
                 file.inline = Number(embeddedUtils.isEmbedded(attachment));
             }
-            const { attachment: nativeAttachment } = await attachmentModel.create(
-                file,
-                message,
-                file.inline === 1,
-                cid
-            );
+            const { attachment: nativeAttachment } = await attachmentModel.create(file, message, file.inline === 1, cid);
 
             return { [attachment.ID]: nativeAttachment };
         });
@@ -135,7 +130,7 @@ function postMessage(
             Address
         };
 
-        const [{ PublicKey } = {}] = message.From.Keys || [];
+        const [ { PublicKey } = {} ] = message.From.Keys || [];
 
         parameters.AttachmentKeyPackets = await message.encryptAttachmentKeyPackets(PublicKey);
 
@@ -172,10 +167,7 @@ function postMessage(
                 localMessage.Attachments = syncAttachmentsRemote(localMessage, remoteMessage);
             }
 
-            localMessage.Attachments = _.map(
-                localMessage.Attachments,
-                (attachment) => pgpAttachments[attachment.ID] || attachment
-            );
+            localMessage.Attachments = _.map(localMessage.Attachments, (attachment) => pgpAttachments[attachment.ID] || attachment);
             localMessage.Attachments = _.uniqBy(localMessage.Attachments, ({ ID }) => ID);
 
             // signs the attachments in place :-)
@@ -281,10 +273,7 @@ function postMessage(
      * @param {Boolean} loader
      * @param {Boolean} encryptBody an already pre-encrypted body, to prevent re-encrypting the body (for de-duplication).
      */
-    const recordMessage = async (
-        message,
-        { notification = false, autosaving = false, loader = true, encrypt = true } = {}
-    ) => {
+    const recordMessage = async (message, { notification = false, autosaving = false, loader = true, encrypt = true } = {}) => {
         try {
             const promise = save(message, { notification, autosaving, encrypt });
 

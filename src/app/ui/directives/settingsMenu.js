@@ -1,13 +1,5 @@
 /* @ngInject */
-function settingsMenu(
-    authentication,
-    backState,
-    CONSTANTS,
-    networkActivityTracker,
-    dispatchers,
-    sidebarSettingsModel,
-    AppModel
-) {
+function settingsMenu(authentication, backState, CONSTANTS, networkActivityTracker, dispatchers, sidebarSettingsModel, AppModel) {
     const IS_SUBUSER = 'settingsMenu-is-subuser';
     const IS_MEMBER = 'settingsMenu-is-member';
     const BACK_BUTTON = 'sidebar-btn-back';
@@ -21,7 +13,7 @@ function settingsMenu(
             const { on, unsubscribe } = dispatchers();
             const isMember = () => authentication.user.Role === CONSTANTS.PAID_MEMBER_ROLE;
             const $back = element.find(`.${BACK_BUTTON}`);
-            const updateList = () => (scope.listStates = Object.keys(sidebarSettingsModel.getStateConfig()));
+            const updateList = () => scope.listStates = Object.keys(sidebarSettingsModel.getStateConfig());
 
             updateList();
 

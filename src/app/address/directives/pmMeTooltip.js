@@ -2,11 +2,7 @@
 function pmMeTooltip(AppModel, premiumDomainModel, gettextCatalog, tooltipModel) {
     const I18N = {
         getTitle() {
-            return gettextCatalog.getString(
-                'This will add the {{email}} address to your account',
-                { email: premiumDomainModel.email() },
-                'Info'
-            );
+            return gettextCatalog.getString('This will add the {{email}} address to your account', { email: premiumDomainModel.email() }, 'Info');
         }
     };
 

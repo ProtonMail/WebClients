@@ -14,9 +14,7 @@ function title(dispatchers, pageTitlesModel, $state) {
 
             // Update the counter
             on('elements', (e, { type }) => {
-                type === 'refresh' &&
-                    !$state.is('secured.label.element') &&
-                    bindTitle(el, pageTitlesModel.find($state.current));
+                type === 'refresh' && !$state.is('secured.label.element') && bindTitle(el, pageTitlesModel.find($state.current));
             });
 
             scope.$on('$destroy', unsubscribe);

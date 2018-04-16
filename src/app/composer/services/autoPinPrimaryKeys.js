@@ -1,6 +1,5 @@
 import _ from 'lodash';
 import { toList } from '../../../helpers/arrayHelper';
-import { normalizeEmail } from '../../../helpers/string';
 import { getGroup } from '../../../helpers/vcard';
 
 /* @ngInject */
@@ -25,6 +24,7 @@ function autoPinPrimaryKeys(Contact, keyCache, pmcw, contactEmails, confirmModal
             gettextCatalog.getString('Learn more') +
             '</a>'
     };
+    const normalizeEmail = (email) => email.toLowerCase();
 
     const pinPrimaryKeys = (emails, keys) => {
         const contactIds = emails.reduce((acc, email) => {

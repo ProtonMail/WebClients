@@ -1,6 +1,5 @@
 import _ from 'lodash';
-import { RECIPIENT_TYPE, PACKAGE_TYPE, CONTACT_ERROR } from '../../constants';
-import { normalizeEmail } from '../../../helpers/string';
+import { CONSTANTS } from '../../constants';
 import { toList } from '../../../helpers/arrayHelper';
 import { getGroup } from '../../../helpers/vcard';
 
@@ -18,12 +17,13 @@ function sendPreferences(
     // We cache all the information coming from the Contacts, so we can avoid accessing the contacts multiple times.
     const CACHE = {};
 
+    const normalizeEmail = (email) => email.toLowerCase();
     const usesDefaults = (contactEmail) => !contactEmail || contactEmail.Defaults;
 
     const isInternalUser = async (email) => {
         const normalizedEmail = normalizeEmail(email);
         const { [normalizedEmail]: { RecipientType } } = await keyCache.get([normalizedEmail]);
-        return RecipientType === RECIPIENT_TYPE.TYPE_INTERNAL;
+        return RecipientType === CONSTANTS.RECIPIENT_TYPE.TYPE_INTERNAL;
     };
 
     const isOwnAddress = (email) => {
@@ -34,9 +34,9 @@ function sendPreferences(
     const toSchemeConstant = (value) => {
         switch (value) {
             case 'pgp-mime':
-                return PACKAGE_TYPE.SEND_PGP_MIME;
+                return CONSTANTS.PACKAGE_TYPE.SEND_PGP_MIME;
             case 'pgp-inline':
-                return PACKAGE_TYPE.SEND_PGP_INLINE;
+                return CONSTANTS.PACKAGE_TYPE.SEND_PGP_INLINE;
             default:
                 return null;
         }
@@ -47,10 +47,10 @@ function sendPreferences(
          * PGP/MIME can only send using the MIME encoding as it doesn't support separate attachments and we need to encode
          * them in the body
          */
-        if (info.scheme === PACKAGE_TYPE.SEND_PGP_MIME && (info.sign || info.encrypt)) {
+        if (info.scheme === CONSTANTS.PACKAGE_TYPE.SEND_PGP_MIME && (info.sign || info.encrypt)) {
             return 'multipart/mixed';
         }
-        if (info.scheme === PACKAGE_TYPE.SEND_PGP_INLINE && (info.sign || info.encrypt)) {
+        if (info.scheme === CONSTANTS.PACKAGE_TYPE.SEND_PGP_INLINE && (info.sign || info.encrypt)) {
             return 'text/plain';
         }
         if (defaultMimetype === 'text/plain' || mimetype === null) {
@@ -67,13 +67,13 @@ function sendPreferences(
      * @param Keys
      * @param defaultMimeType
      * @param eoEnabled
+     * @param globalSign
      * @returns {Promise.<*>}
      */
-    const getDefaultInfo = async (email, { Keys }, defaultMimeType, eoEnabled) => {
+    const getDefaultInfo = async (email, { Keys }, defaultMimeType, eoEnabled, globalSign) => {
         const isInternal = await isInternalUser(email);
-        const settingsSign = !!mailSettingsModel.get('Sign');
         const settingsScheme = mailSettingsModel.get('PGPScheme');
-        const settingsMime = settingsScheme === PACKAGE_TYPE.SEND_PGP_MIME ? 'multipart/mixed' : 'text/plain';
+        const settingsMime = settingsScheme === CONSTANTS.PACKAGE_TYPE.SEND_PGP_MIME ? 'multipart/mixed' : 'text/plain';
 
         if (isInternal && Keys.length) {
             return {
@@ -82,7 +82,7 @@ function sendPreferences(
                 mimetype: defaultMimeType,
                 publickeys: pmcw.getKeys(Keys[0].PublicKey),
                 primaryPinned: true,
-                scheme: PACKAGE_TYPE.SEND_PM,
+                scheme: CONSTANTS.PACKAGE_TYPE.SEND_PM,
                 pinned: isOwnAddress(email),
                 isVerified: true
             };
@@ -94,18 +94,18 @@ function sendPreferences(
                 mimetype: defaultMimeType,
                 publickeys: [],
                 primaryPinned: true,
-                scheme: PACKAGE_TYPE.SEND_EO,
+                scheme: CONSTANTS.PACKAGE_TYPE.SEND_EO,
                 pinned: false,
                 isVerified: true
             };
         }
         return {
             encrypt: false,
-            sign: settingsSign,
-            mimetype: settingsSign ? settingsMime : defaultMimeType,
+            sign: globalSign,
+            mimetype: globalSign ? settingsMime : defaultMimeType,
             publickeys: [],
             primaryPinned: true,
-            scheme: settingsSign ? settingsScheme : PACKAGE_TYPE.SEND_CLEAR,
+            scheme: globalSign ? settingsScheme : CONSTANTS.PACKAGE_TYPE.SEND_CLEAR,
             pinned: false,
             isVerified: true
         };
@@ -151,16 +151,18 @@ function sendPreferences(
      * @param keyData
      * @param defaultMimeType
      * @param eoEnabled
+     * @param globalSign
      * @returns {{}}
      */
     const extractInfo = async (
         { encryptFlag, signFlag, mimetype, emailKeys, scheme, isVerified },
         keyData,
         defaultMimeType,
-        eoEnabled
+        eoEnabled,
+        globalSign
     ) => {
         const info = {};
-        const isInternal = keyData.RecipientType === RECIPIENT_TYPE.TYPE_INTERNAL;
+        const isInternal = keyData.RecipientType === CONSTANTS.RECIPIENT_TYPE.TYPE_INTERNAL;
         const primaryPinned = isInternal ? isPrimaryPinned(emailKeys, keyData) : true;
         const pmKey = isInternal ? pmcw.getKeys(keyData.Keys[0].PublicKey) : [];
         // In case the pgp packet list contains multiple keys, only the first one is taken.
@@ -176,19 +178,19 @@ function sendPreferences(
         info.publickeys = keyObjects.length && primaryPinned ? keyObjects[0] : pmKey;
 
         info.encrypt = isInternal || (encryptFlag && !!keyObjects.length);
-        info.sign = isInternal || (signFlag === null ? !!mailSettingsModel.get('Sign') : signFlag);
+        info.sign = isInternal || (signFlag === null ? !!globalSign : signFlag);
         info.sign = info.sign || encryptFlag;
         if (isInternal) {
-            info.scheme = PACKAGE_TYPE.SEND_PM;
+            info.scheme = CONSTANTS.PACKAGE_TYPE.SEND_PM;
         } else {
-            info.scheme = info.sign || info.encrypt ? scheme : PACKAGE_TYPE.SEND_CLEAR;
+            info.scheme = info.sign || info.encrypt ? scheme : CONSTANTS.PACKAGE_TYPE.SEND_CLEAR;
         }
         info.scheme = info.scheme === null ? mailSettingsModel.get('PGPScheme') : info.scheme;
 
         if (eoEnabled && !info.encrypt) {
             info.sign = false;
             info.encrypt = true;
-            info.scheme = PACKAGE_TYPE.SEND_EO;
+            info.scheme = CONSTANTS.PACKAGE_TYPE.SEND_EO;
         }
         info.mimetype = mimetypeLogic(mimetype, defaultMimeType, info);
         info.primaryPinned = primaryPinned;
@@ -227,15 +229,16 @@ function sendPreferences(
      * @param keyData
      * @param defaultMimeType
      * @param eoEnabled
+     * @param globalSign
      * @returns {Promise.<{}>}
      */
-    const getApiInfo = async (email, keyData, defaultMimeType, eoEnabled) => {
+    const getApiInfo = async (email, keyData, defaultMimeType, eoEnabled, globalSign) => {
         const normalizedEmail = normalizeEmail(email);
-        const isInternal = keyData.RecipientType === RECIPIENT_TYPE.TYPE_INTERNAL;
+        const isInternal = keyData.RecipientType === CONSTANTS.RECIPIENT_TYPE.TYPE_INTERNAL;
 
         const contactEmail = contactEmails.findEmail(normalizedEmail, normalizeEmail);
         if (usesDefaults(contactEmail)) {
-            return { [email]: await getDefaultInfo(email, keyData, defaultMimeType, eoEnabled) };
+            return { [email]: await getDefaultInfo(email, keyData, defaultMimeType, eoEnabled, globalSign) };
         }
 
         const { vCard, errors } = await Contact.get(contactEmail.ContactID);
@@ -249,7 +252,7 @@ function sendPreferences(
 
         const group = getGroup(emailList, normalizedEmail);
         if (!group) {
-            return { [email]: await getDefaultInfo(email, keyData, defaultMimeType, eoEnabled) };
+            return { [email]: await getDefaultInfo(email, keyData, defaultMimeType, eoEnabled, globalSign) };
         }
 
         const matchesGroup = (prop) => prop.getGroup().toLowerCase() === group.toLowerCase();
@@ -269,8 +272,8 @@ function sendPreferences(
             signFlag: isInternal || (signFlag ? signFlag.valueOf().toLowerCase() !== 'false' : null),
             emailKeys: base64Keys,
             mimetype: mimetype !== 'text/plain' && mimetype !== 'text/html' ? null : mimetype,
-            scheme: isInternal ? PACKAGE_TYPE.SEND_PM : scheme,
-            isVerified: !errors.includes(CONTACT_ERROR.TYPE2_CONTACT_VERIFICATION)
+            scheme: isInternal ? CONSTANTS.PACKAGE_TYPE.SEND_PM : scheme,
+            isVerified: !errors.includes(CONSTANTS.CONTACT_ERROR.TYPE2_CONTACT_VERIFICATION)
         };
 
         // We don't support encryption without signing
@@ -279,7 +282,7 @@ function sendPreferences(
         CACHE.EXTRACTED_INFO[contactEmail.ContactID] = CACHE[contactEmail.ContactID] || {};
         CACHE.EXTRACTED_INFO[contactEmail.ContactID][normalizedEmail] = data;
 
-        return { [email]: await extractInfo(data, keyData, defaultMimeType, eoEnabled) };
+        return { [email]: await extractInfo(data, keyData, defaultMimeType, eoEnabled, globalSign) };
     };
 
     /**
@@ -288,14 +291,15 @@ function sendPreferences(
      * @param keyData
      * @param defaultMimeType
      * @param eoEnabled
+     * @param globalSign
      * @returns {Promise.<{}>}
      */
-    const getCacheInfo = async (email, keyData, defaultMimeType, eoEnabled) => {
+    const getCacheInfo = async (email, keyData, defaultMimeType, eoEnabled, globalSign) => {
         const normalizedEmail = normalizeEmail(email);
 
         const contactEmail = contactEmails.findEmail(normalizedEmail, normalizeEmail);
         if (usesDefaults(contactEmail)) {
-            return { [email]: await getDefaultInfo(email, keyData, defaultMimeType, eoEnabled) };
+            return { [email]: await getDefaultInfo(email, keyData, defaultMimeType, eoEnabled, globalSign) };
         }
 
         if (
@@ -309,7 +313,8 @@ function sendPreferences(
                 CACHE.EXTRACTED_INFO[contactEmail.ContactID][email],
                 keyData,
                 defaultMimeType,
-                eoEnabled
+                eoEnabled,
+                globalSign
             )
         };
     };
@@ -327,14 +332,16 @@ function sendPreferences(
         return inExtractedInfoCache(contactEmailList);
     };
 
-    const getInfo = (email, keyData, defaultMimeType, eoEnabled) => {
+    const getInfo = (email, keyData, defaultMimeType, eoEnabled, globalSign) => {
         if (isOwnAddress(email)) {
-            return getDefaultInfo(email, keyData, defaultMimeType, eoEnabled).then((info) => ({ [email]: info }));
+            return getDefaultInfo(email, keyData, defaultMimeType, eoEnabled, globalSign).then((info) => ({
+                [email]: info
+            }));
         }
         if (inCache([email])) {
-            return getCacheInfo(email, keyData, defaultMimeType, eoEnabled);
+            return getCacheInfo(email, keyData, defaultMimeType, eoEnabled, globalSign);
         }
-        return getApiInfo(email, keyData, defaultMimeType, eoEnabled);
+        return getApiInfo(email, keyData, defaultMimeType, eoEnabled, globalSign);
     };
 
     /**
@@ -367,12 +374,13 @@ function sendPreferences(
     const get = async (emails, message = null) => {
         const defaultMimeType = message ? message.MIMEType : null;
         const eoEnabled = message && message.IsEncrypted === 1;
+        const globalSign = message ? message.sign : mailSettingsModel.get('Sign');
         const normEmails = _.uniq(_.map(emails, normalizeEmail));
 
         const keyData = await keyCache.get(normEmails);
 
         const normInfos = await Promise.all(
-            _.map(normEmails, (email) => getInfo(email, keyData[email], defaultMimeType, eoEnabled))
+            _.map(normEmails, (email) => getInfo(email, keyData[email], defaultMimeType, eoEnabled, globalSign))
         );
         const normMap = _.extend(...normInfos);
         const infos = _.map(emails, (email) => ({ [email]: normMap[normalizeEmail(email)] }));

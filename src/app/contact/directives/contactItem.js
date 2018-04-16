@@ -156,8 +156,7 @@ function contactItem(
                 return '';
             };
 
-            scope.isOwnAddress = (email) =>
-                _.map(authentication.user.Addresses, 'Email').includes(email.toLowerCase().replace(/\+[^@]*@/, ''));
+            scope.isOwnAddress = (email) => _.map(authentication.user.Addresses, 'Email').includes(email.toLowerCase().replace(/\+[^@]*@/, ''));
 
             scope.change = () =>
                 scope.$applyAsync(() => {

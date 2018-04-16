@@ -1,16 +1,7 @@
 import _ from 'lodash';
 
 /* @ngInject */
-function dropdownLabels(
-    $rootScope,
-    $timeout,
-    labelsModel,
-    mailSettingsModel,
-    eventManager,
-    notification,
-    settingsMailApi,
-    gettextCatalog
-) {
+function dropdownLabels($rootScope, $timeout, labelsModel, mailSettingsModel, eventManager, notification, settingsMailApi, gettextCatalog) {
     const NOTIFS = {
         LABELS_SAVED: gettextCatalog.getString('Labels Saved', null, 'dropdown label'),
         LABEL_SAVED: gettextCatalog.getString('Label Saved', null, 'dropdown label')

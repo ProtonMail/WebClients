@@ -1,12 +1,5 @@
 /* @ngInject */
-function changeVPNNameModal(
-    pmModal,
-    notification,
-    eventManager,
-    gettextCatalog,
-    networkActivityTracker,
-    vpnSettingsApi
-) {
+function changeVPNNameModal(pmModal, notification, eventManager, gettextCatalog, networkActivityTracker, vpnSettingsApi) {
     const successMessage = gettextCatalog.getString('OpenVPN login updated', null, 'Info');
 
     return pmModal({
@@ -18,8 +11,7 @@ function changeVPNNameModal(
             self.VPNName = params.name || '';
             self.submit = () => {
                 const { VPNName } = self;
-                const promise = vpnSettingsApi
-                    .updateName({ VPNName })
+                const promise = vpnSettingsApi.updateName({ VPNName })
                     .then(() => eventManager.call())
                     .then(() => (notification.success(successMessage), params.close(VPNName)));
 

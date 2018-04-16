@@ -4,7 +4,7 @@ function trustPublicKeyModal(pmModal) {
         controllerAs: 'ctrl',
         templateUrl: require('../../../templates/modals/trustPublicKey.tpl.html'),
         /* @ngInject */
-        controller: function(params) {
+        controller: function (params) {
             this.keyInfo = params.keyInfo;
             this.addresses = params.addresses;
             this.isInternal = params.isInternal;

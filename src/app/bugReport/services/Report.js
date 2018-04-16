@@ -11,18 +11,14 @@ function Report($http, url, gettextCatalog) {
 
     const crash = (data) => $http.post(requestURL('crash'), data);
     const bug = (data) => {
-        const config =
-            data instanceof FormData
-                ? {
-                      transformRequest: angular.identity,
-                      headers: {
-                          'Content-Type': undefined
-                      }
-                  }
-                : undefined;
+        const config = data instanceof FormData ? {
+            transformRequest: angular.identity,
+            headers: {
+                'Content-Type': undefined
+            }
+        } : undefined;
 
-        return $http
-            .post(requestURL('bug'), data, config)
+        return $http.post(requestURL('bug'), data, config)
             .then(handleSuccess)
             .catch(handleError(ERROR_REPORT));
     };

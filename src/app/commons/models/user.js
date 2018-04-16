@@ -1,5 +1,6 @@
 /* @ngInject */
 function User($http, url, srp) {
+
     const headersVersion3 = { 'x-pm-apiversion': 3 };
     const requestURL = url.build('users');
 
@@ -8,15 +9,15 @@ function User($http, url, srp) {
     };
 
     const create = (params, password) => {
-        return srp.getPasswordParams(password, params).then((data) => $http.post(requestURL(), data));
+        return srp.getPasswordParams(password, params)
+            .then((data) => $http.post(requestURL(), data));
     };
 
     const get = () => {
-        return $http
-            .get(requestURL(), {
-                header: headersVersion3
-            })
-            .then(({ data = {} } = {}) => data.User);
+        return $http.get(requestURL(), {
+            header: headersVersion3
+        })
+        .then(({ data = {} } = {}) => data.User);
     };
 
     const code = (params) => $http.post(requestURL('code'), params);
@@ -30,16 +31,8 @@ function User($http, url, srp) {
     const remove = (creds = {}) => toSRP('PUT', 'delete', creds);
 
     return {
-        create,
-        get,
-        code,
-        human,
-        check,
-        available,
-        direct,
-        lock,
-        unlock,
-        password,
+        create, get, code, human, check, available,
+        direct, lock, unlock, password,
         delete: remove
     };
 }

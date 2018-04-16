@@ -2,6 +2,7 @@ import dedentTpl from '../../../helpers/dedent';
 
 /* @ngInject */
 function messageDisplayError($rootScope) {
+
     const CLASS_NAME = {
         REPORT: 'messageDisplayError-btn-report'
     };

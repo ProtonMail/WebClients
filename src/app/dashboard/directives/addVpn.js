@@ -16,10 +16,7 @@ function addVpn($rootScope, gettextCatalog) {
             const onClick = () => {
                 $rootScope.$emit('dashboard', { type: 'change.addon', data: { addon: 'vpn', plan: 'free', value } });
                 $rootScope.$emit('dashboard', { type: 'change.addon', data: { addon: 'vpn', plan: 'plus', value } });
-                $rootScope.$emit('dashboard', {
-                    type: 'change.addon',
-                    data: { addon: 'vpn', plan: 'professional', value }
-                });
+                $rootScope.$emit('dashboard', { type: 'change.addon', data: { addon: 'vpn', plan: 'professional', value } });
             };
 
             element.on('click', onClick);
