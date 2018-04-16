@@ -81,7 +81,7 @@ function autocompleteEmails(
             .filter(Boolean)
             .map((txt) => txt.trim());
 
-    const link = (scope, el, { awesomplete }) => {
+    const link = (scope, el, { awesomplete, attr: { key } }) => {
         const { dispatcher, on, unsubscribe } = dispatchers(['composer.update']);
 
         scope.emails = [];
@@ -113,11 +113,39 @@ function autocompleteEmails(
             syncModel(true);
         });
 
-        on('composer.update', (event, { type, data: { message = { ID: null } } }) => {
+        on('composer.update', (event, { type, data: { message = { ID: null } } = {} }) => {
             if (type !== 'close.panel' || message.ID !== scope.message.ID) {
                 return;
             }
             syncModel(true);
+        });
+        on('squire.messageSign', (event, { data: { messageID } }) => {
+            if (messageID !== scope.message.ID) {
+                return;
+            }
+            syncModel(true);
+        });
+        on('recipient.update', (event, { data: { messageID } }) => {
+            if (messageID !== scope.message.ID) {
+                return;
+            }
+            // the output of autocompleteSyncModel is modified so now we write the output into the input and rerun
+            scope.list = scope.emails.reduce((acc, email, index) => {
+                if (acc[index].Name !== email.Name || acc[index].Address !== email.Address) {
+                    acc[index].Name = email.Name;
+                    acc[index].Address = email.Address;
+                    // signal composer input recipient to update itself
+                    dispatcher['composer.update']('recipients.modified', {
+                        message: scope.message,
+                        listIndex: index,
+                        list: key,
+                        name: email.Name,
+                        address: email.Address
+                    });
+                }
+                return acc;
+            }, scope.list);
+            syncModel();
         });
 
         /**
@@ -239,7 +267,7 @@ function autocompleteEmails(
                 case ESCAPE_KEY:
                     // Close the composer if no autocompletion
                     if (!hasAutocompletion) {
-                        dispatcher['composer.update']('escape.autocomplete');
+                        dispatcher['composer.update']('escape.autocomplete', { message: scope.message });
                     }
                     break;
 

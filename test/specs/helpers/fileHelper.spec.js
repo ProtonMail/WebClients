@@ -42,7 +42,6 @@ describe('toBase64', async () => {
 });
 
 describe('readFile', async () => {
-    const type = 'image/png';
     const filename = 'image';
     let file;
 
@@ -58,9 +57,9 @@ describe('readFile', async () => {
 
     it('should throw an error if the file is not defined', async () => {
         try {
-            const output = await readFile(null);
+            await readFile(null);
         } catch (e) {
-            expect(typeof e.stack).toBe('string')
+            expect(typeof e.stack).toBe('string');
         }
     });
 

@@ -62,7 +62,9 @@
                         </div>
                         <div class="clear onlyActive">
                             <p class="alert alert-info onlyActive" ng-show="logs.length < 1" translate-context="Info" translate>No logs yet</p>
-                            <p class="alert alert-info onlyActive" ng-show="!haveLogs"><i class="fa fa-spin fa-spinner"></i translate-context="Info" translate>Fetching logs...</p>
+                            <p class="alert alert-info onlyActive" ng-show="!haveLogs"><i class="fa fa-spin fa-spinner"></i>
+                                <span translate-context="Info" translate>Fetching logs...</span>
+                            </p>
                             <div class="pm_table">
                                 <table id="accessLog" class="bordered" ng-init="initLogs()" ng-show="logs.length>0">
                                     <thead>

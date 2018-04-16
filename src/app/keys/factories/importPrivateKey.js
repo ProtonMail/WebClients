@@ -13,51 +13,45 @@ function importPrivateKey(pmcw, decryptImportKeyModal, authentication, Key, noti
 
         if (keyid) {
             const keyObj = getKeyObject(keyid);
-            const [serverKeyInfo, uploadedKeyInfos] = await Promise.all([
-                pmcw.keyInfo(keyObj.PublicKey),
+            const [serverKeyInfo, uploadedKeyInfos] = await Promise.all([pmcw.keyInfo(keyObj.PublicKey),
                 Promise.all(privateKeys.map(pmcw.keyInfo))
             ]);
             const index = uploadedKeyInfos.findIndex(({ fingerprint }) => serverKeyInfo.fingerprint === fingerprint);
 
             if (index < 0) {
-                throw new Error(
-                    gettextCatalog.getString('Uploaded key does match selected key.', null, 'Error message')
-                );
+                throw new Error(gettextCatalog.getString('Uploaded key does match selected key.', null, 'Error message'));
             }
-            return [privateKeys[index]];
+            return [ privateKeys[index] ];
         }
         return privateKeys;
     };
 
     const decrypt = (file) => {
-        return pmcw.keyInfo(file).then(
-            ({ decrypted = null, fingerprint }) => {
-                if (decrypted !== false) {
-                    return pmcw.getKeys(file);
-                }
-
-                return new Promise((resolve, reject) =>
-                    decryptImportKeyModal.activate({
-                        params: {
-                            privateKey: file,
-                            fingerprint,
-                            submit(decryptedKey) {
-                                decryptImportKeyModal.deactivate();
-                                resolve(decryptedKey);
-                            },
-                            cancel() {
-                                decryptImportKeyModal.deactivate();
-                                reject();
-                            }
-                        }
-                    })
-                );
-            },
-            (err) => {
-                notification.error(gettextCatalog.getString('Unsupported key'));
-                throw err;
+        return pmcw.keyInfo(file).then(({ decrypted = null, fingerprint }) => {
+            if (decrypted !== false) {
+                return pmcw.getKeys(file);
             }
-        );
+
+            return new Promise((resolve, reject) =>
+                decryptImportKeyModal.activate({
+                    params: {
+                        privateKey: file,
+                        fingerprint,
+                        submit(decryptedKey) {
+                            decryptImportKeyModal.deactivate();
+                            resolve(decryptedKey);
+                        },
+                        cancel() {
+                            decryptImportKeyModal.deactivate();
+                            reject();
+                        }
+                    }
+                })
+            );
+        }, (err) => {
+            notification.error(gettextCatalog.getString('Unsupported key'));
+            throw err;
+        });
     };
 
     const decryptAll = (privateKeys) =>
@@ -68,13 +62,14 @@ function importPrivateKey(pmcw, decryptImportKeyModal, authentication, Key, noti
         Promise.all(privateKeys.map((privKey) => pmcw.reformatKey(privKey, email, authentication.getPassword())));
 
     const createKey = (privateKey, addressID, keyid) => {
-        const promise = addressID
-            ? Key.create({ AddressID: addressID, PrivateKey: privateKey, Primary: 0 })
-            : Key.reactivate(keyid, { PrivateKey: privateKey });
-        return promise.then(() => 1).catch((error) => {
-            !error.noNotify && notification.error(error.data && error.data.Error ? error.data.Error : error.message);
-            return 0;
-        });
+        const promise = addressID ? Key.create({ AddressID: addressID, PrivateKey: privateKey, Primary: 0 }) :
+            Key.reactivate(keyid, { PrivateKey: privateKey });
+        return promise
+            .then(() => 1)
+            .catch((error) => {
+                !error.noNotify && notification.error(error.data && error.data.Error ? error.data.Error : error.message);
+                return 0;
+            });
     };
 
     const createKeys = (privateKeys, addressID, keyid) => {
@@ -88,7 +83,7 @@ function importPrivateKey(pmcw, decryptImportKeyModal, authentication, Key, noti
         if (!addressID) {
             const keyObj = getKeyObject(keyid);
             const pmKey = pmcw.getKeys(keyObj.PublicKey);
-            const [, , email] = pmKey[0].users[0].userId.userid.split(/(<|>)/g);
+            const [ , , email] = pmKey[0].users[0].userId.userid.split(/(<|>)/g);
             // fallback on keyid: happens when reactivating keys
             return reformat(decryptedKeys, email).then((formattedKeys) => createKeys(formattedKeys, addressID, keyid));
         }

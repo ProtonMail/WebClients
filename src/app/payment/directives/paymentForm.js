@@ -167,8 +167,7 @@ function paymentForm(
             ctrl.submit = () => {
                 ctrl.step = 'process';
 
-                paymentModel
-                    .subscribe(getParameters())
+                paymentModel.subscribe(getParameters())
                     .then(organizationModel.create)
                     .then(eventManager.call)
                     .then(finish)
@@ -197,8 +196,7 @@ function paymentForm(
             }
 
             ctrl.apply = (thing = 'coupon') => {
-                paymentModel
-                    .add(getAddParameters(thing))
+                paymentModel.add(getAddParameters(thing))
                     .then((data) => (ctrl.valid = data))
                     .then(() => {
                         // If the amount due is null we select the first choice to display the submit button

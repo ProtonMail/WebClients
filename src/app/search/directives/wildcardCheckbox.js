@@ -21,11 +21,7 @@ function wildcardCheckbox($rootScope, gettextCatalog, mailSettingsModel) {
         link(scope) {
             const { AutoWildcardSearch } = mailSettingsModel.get();
             scope.wildcard = Boolean(AutoWildcardSearch);
-            scope.onClick = () =>
-                $rootScope.$emit('settings', {
-                    type: 'autowildcard.update',
-                    data: { AutoWildcardSearch: scope.wildcard ? 1 : 0 }
-                });
+            scope.onClick = () => $rootScope.$emit('settings', { type: 'autowildcard.update', data: { AutoWildcardSearch: scope.wildcard ? 1 : 0 } });
         }
     };
 }

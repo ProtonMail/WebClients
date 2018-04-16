@@ -86,12 +86,7 @@ function blackFridayModel(
 
     function buy({ plan = 'current' }) {
         const promise = loadPlanIDs(plan).then((PlanIDs) => {
-            return Payment.valid({
-                Cycle: TWO_YEARS,
-                Currency: CACHE.currency,
-                PlanIDs,
-                CouponCode: subscriptionModel.coupon()
-            })
+            return Payment.valid({ Cycle: TWO_YEARS, Currency: CACHE.currency, PlanIDs, CouponCode: subscriptionModel.coupon() })
                 .then(({ data: valid = {} } = {}) => {
                     paymentModal.activate({
                         params: {

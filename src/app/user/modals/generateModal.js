@@ -59,9 +59,7 @@ function generateModal(
                         })
                     )
                 )
-                    .then((addresses = []) =>
-                        addresses.forEach(({ Email }) => notification.success(I18N.success(Email)))
-                    )
+                    .then((addresses = []) => addresses.forEach(({ Email }) => notification.success(I18N.success(Email))))
                     .then(params.onSuccess)
                     .catch((e) => {
                         params.close(this.addresses, this.password);

@@ -4,10 +4,13 @@
  * @return {Object}
  */
 export const toImage = (base64str) => {
-    return new Promise((resolve, reject) => {
+    return new Promise((resolve) => {
         const image = new Image();
-        image.onload = () => resolve(image);
-        image.onerror = reject;
+
+        image.onload = () => {
+            resolve(image);
+        };
+
         image.src = base64str;
     });
 };

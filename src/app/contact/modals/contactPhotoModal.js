@@ -1,5 +1,6 @@
 /* @ngInject */
 function contactPhotoModal(pmModal) {
+
     return pmModal({
         controllerAs: 'ctrl',
         templateUrl: require('../../../templates/contact/contactPhotoModal.tpl.html'),

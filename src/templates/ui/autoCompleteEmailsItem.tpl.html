@@ -2,10 +2,7 @@
     <autocomplete-emails-icon></autocomplete-emails-icon>
 
     <span class="autocompleteEmails-label">
-        {{ ::email.Name }}
-        <span class="autocomplete-address" ng-if="email.Name !== email.Address">
-            &lt;{{ ::email.Address }}&gt;
-        </span>
+        {{ ::email.Name }} &lt;{{ ::email.Address }}&gt;
     </span>
     <button
         class="autocompleteEmails-btn-remove fa fa-times"

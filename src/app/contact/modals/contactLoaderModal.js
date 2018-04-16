@@ -21,79 +21,42 @@ function contactLoaderModal(dispatchers, gettextCatalog, pmModal) {
             );
         },
         upload(progress) {
-            return gettextCatalog.getString(
-                'Upload: {{progress}}%',
-                { progress },
-                'Label for the progress bar displayed during the contact import'
-            );
+            return gettextCatalog.getString('Upload: {{progress}}%', { progress }, 'Label for the progress bar displayed during the contact import');
         },
         mergeFail(number) {
-            return gettextCatalog.getString(
-                '{{number}} failed to merge.',
-                { number },
-                'Number of failed contact during merge'
-            );
+            return gettextCatalog.getString('{{number}} failed to merge.', { number }, 'Number of failed contact during merge');
         },
         importFail(number) {
-            return gettextCatalog.getString(
-                '{{number}} failed to import.',
-                { number },
-                'Number of failed contact during the contact import'
-            );
+            return gettextCatalog.getString('{{number}} failed to import.', { number }, 'Number of failed contact during the contact import');
         },
-        totalFailure: gettextCatalog.getString(
-            'Import failed. Please check the import file or try again.',
-            null,
-            'Error during importation'
-        )
+        totalFailure: gettextCatalog.getString('Import failed. Please check the import file or try again.', null, 'Error during importation')
     };
 
     I18N.modal = {
         import: {
             title: gettextCatalog.getString('Importing Contacts', null, 'Title for the contacts exporter modal'),
-            info: gettextCatalog.getString(
-                'Importing contacts, this may take a few minutes.',
-                null,
-                'Information for the contacts importer modal'
-            ),
+            info: gettextCatalog.getString('Importing contacts, this may take a few minutes.', null, 'Information for the contacts importer modal'),
             progress: (progress) => (progress > 50 ? I18N.upload(progress) : I18N.encrypting(progress)),
             complete: gettextCatalog.getString('Importing contacts complete!', null, 'Import complete'),
-            text: gettextCatalog.getString(
-                'contacts successfully imported.',
-                null,
-                '1 of 2 contacts successfully imported.'
-            )
+            text: gettextCatalog.getString('contacts successfully imported.', null, '1 of 2 contacts successfully imported.')
         },
         export: {
             title: gettextCatalog.getString('Exporting Contacts', null, 'Title for the contacts exporter modal'),
-            info: gettextCatalog.getString(
-                'Exporting contacts, this may take a few minutes. When the progress is completed, this modal will close and let you download the file.',
-                null,
-                'Information for the contacts exporter modal'
-            ),
+            info: gettextCatalog.getString('Exporting contacts, this may take a few minutes. When the progress is completed, this modal will close and let you download the file.', null, 'Information for the contacts exporter modal'),
             progress: (progress) => I18N.decrypting(progress)
         },
         merge: {
             title: gettextCatalog.getString('Merging contacts', null, 'Title for the contacts merging modal'),
-            info: gettextCatalog.getString(
-                'Merging contacts, this may take a few minutes.',
-                null,
-                'Information for the contacts merging modal'
-            ),
+            info: gettextCatalog.getString('Merging contacts, this may take a few minutes.', null, 'Information for the contacts merging modal'),
             progress: (progress) => I18N.upload(progress),
             complete: gettextCatalog.getString('Merging contacts complete', null, 'Merge complete'),
-            text: gettextCatalog.getString(
-                'contacts successfully merged.',
-                null,
-                '1 of 2 contacts successfully merged.'
-            )
+            text: gettextCatalog.getString('contacts successfully merged.', null, '1 of 2 contacts successfully merged.')
         }
     };
 
     const getModalI18n = (key = '', type = '') => I18N.modal[key][type];
 
-    const getRows = (errors = []) =>
-        errors.map(({ error }) => `<li class="contactLoaderModal-log">- ${error}</li>`).join('');
+    const getRows = (errors = []) => errors.map(({ error }) => `<li class="contactLoaderModal-log">- ${error}</li>`).join('');
     const getError = (errors = [], total) => {
         if (!errors.length) {
             return '';
@@ -120,8 +83,7 @@ function contactLoaderModal(dispatchers, gettextCatalog, pmModal) {
             `;
     };
 
-    const getMergeRows = (errors = []) =>
-        errors.map((error) => `<li class="contactLoaderModal-log">- ${error}</li>`).join('');
+    const getMergeRows = (errors = []) => errors.map((error) => `<li class="contactLoaderModal-log">- ${error}</li>`).join('');
     const getMergeError = (errors = []) => {
         if (!errors.length) {
             return '';
@@ -136,7 +98,7 @@ function contactLoaderModal(dispatchers, gettextCatalog, pmModal) {
         controllerAs: 'ctrl',
         templateUrl: require('../../../templates/contact/contactLoaderModal.tpl.html'),
         /* @ngInject */
-        controller: function(params) {
+        controller: function (params) {
             const { on, unsubscribe } = dispatchers();
 
             on('contacts', (event, { type = '', data = {} }) => {

@@ -137,8 +137,7 @@ function AccountController(
         function submit(Password, TwoFactorCode) {
             loginPasswordModal.deactivate();
             const credentials = { Password, TwoFactorCode };
-            const promise = settingsApi
-                .passwordReset({ PasswordReset: $scope.passwordReset }, credentials)
+            const promise = settingsApi.passwordReset({ PasswordReset: $scope.passwordReset }, credentials)
                 .then(() => {
                     notification.success(gettextCatalog.getString('Preference saved', null));
                 })
@@ -157,8 +156,7 @@ function AccountController(
     };
 
     $scope.saveDailyNotifications = () => {
-        const promise = settingsApi
-            .notify({ Notify: $scope.dailyNotifications })
+        const promise = settingsApi.notify({ Notify: $scope.dailyNotifications })
             .then(() => {
                 notification.success(gettextCatalog.getString('Preference saved', null));
             })
@@ -177,10 +175,7 @@ function AccountController(
         promisePasswordModal = $timeout(
             () => {
                 if (changePasswordModal.active()) {
-                    const message = gettextCatalog.getString(
-                        'Operation timed out for security reasons, please try again',
-                        null
-                    );
+                    const message = gettextCatalog.getString('Operation timed out for security reasons, please try again', null);
                     changePasswordModal.deactivate();
                     notification.error(message);
                 }
@@ -247,11 +242,9 @@ function AccountController(
     }
 
     $scope.saveAutosaveContacts = () => {
-        const promise = settingsMailApi
-            .updateAutoSaveContacts({ AutoSaveContacts: $scope.autosaveContacts })
-            .then(() => {
-                notification.success(gettextCatalog.getString('Preference saved', null));
-            });
+        const promise = settingsMailApi.updateAutoSaveContacts({ AutoSaveContacts: $scope.autosaveContacts }).then(() => {
+            notification.success(gettextCatalog.getString('Preference saved', null));
+        });
 
         networkActivityTracker.track(promise);
     };

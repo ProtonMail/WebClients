@@ -9,6 +9,7 @@ function $exceptionHandler($injector) {
 
     const getError = (exception) => {
         if (exception instanceof Error) {
+
             // Prevent API rejection Input too large
             if ((exception.message || '').startsWith('[ngRepeat:dupes]')) {
                 return exception.message.slice(0, 2000);

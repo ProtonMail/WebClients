@@ -6,6 +6,7 @@ const CLASS_UPDATE = 'addLinkPopover-editable';
 
 /* @ngInject */
 function addLinkPopover(editorModel, editorState, squireExecAction) {
+
     const getSelectionEditor = (message) => {
         const { editor } = editorModel.find(message);
         return {
@@ -23,8 +24,7 @@ function addLinkPopover(editorModel, editorState, squireExecAction) {
         const { selection, editor } = getSelectionEditor(message);
 
         if (editor) {
-            return angular
-                .element(selection.commonAncestorContainer)
+            return angular.element(selection.commonAncestorContainer)
                 .find('img')
                 .filter(function() {
                     /* eslint no-underscore-dangle: "off" */
@@ -36,6 +36,7 @@ function addLinkPopover(editorModel, editorState, squireExecAction) {
                 })[0];
         }
     };
+
 
     /**
      * Get the current link at the cursor or the current selected item
@@ -51,7 +52,8 @@ function addLinkPopover(editorModel, editorState, squireExecAction) {
         }
 
         return (
-            angular.element(selection.commonAncestorContainer).closest('a')[0] || {
+            angular.element(selection.commonAncestorContainer).closest('a')[0] ||
+            {
                 ...config,
                 textContent: selection.toString()
             }
@@ -106,6 +108,7 @@ function addLinkPopover(editorModel, editorState, squireExecAction) {
             };
 
             const onClick = ({ target }) => {
+
                 if (/update|add/.test(target.name)) {
                     return squireExecAction.makeLink(scope.message, {
                         link: formatLink(el.urlLink.value),

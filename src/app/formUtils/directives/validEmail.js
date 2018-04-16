@@ -2,6 +2,7 @@ import { REGEX_EMAIL } from '../../constants';
 
 /* @ngInject */
 function validEmail() {
+
     /**
      * Default validator from Angular follows the RFC
      * cf https://github.com/angular/angular.js/issues/16379

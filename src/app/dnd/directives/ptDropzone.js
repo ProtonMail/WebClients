@@ -5,9 +5,7 @@ function ptDropzone(dispatchers, ptDndUtils, ptDndModel, PTDNDCONSTANTS) {
     document.addEventListener('dragenter', ({ target }) => {
         // Filter by type for Firefox
         if (target.nodeType === 1 && target.hasAttribute(DROPZONE_ATTR_ID)) {
-            angular
-                .element(document.querySelectorAll(`.${CLASSNAME.DROPZONE_HOVER}`))
-                .removeClass(CLASSNAME.DROPZONE_HOVER);
+            angular.element(document.querySelectorAll(`.${CLASSNAME.DROPZONE_HOVER}`)).removeClass(CLASSNAME.DROPZONE_HOVER);
 
             target.classList.add(CLASSNAME.DROPZONE_HOVER);
         }
@@ -38,9 +36,7 @@ function ptDropzone(dispatchers, ptDndUtils, ptDndModel, PTDNDCONSTANTS) {
             ptDndModel.dropzone.get(dragElmId).onDropSuccess(e, id);
             ptDndModel.draggable.get(id).onDropItem(e);
 
-            angular
-                .element(document.querySelectorAll(`.${CLASSNAME.DROPZONE_HOVER}`))
-                .removeClass(CLASSNAME.DROPZONE_HOVER);
+            angular.element(document.querySelectorAll(`.${CLASSNAME.DROPZONE_HOVER}`)).removeClass(CLASSNAME.DROPZONE_HOVER);
 
             angular.element(document.querySelectorAll(`.${CLASSNAME.DRAG_HOVER}`)).removeClass(CLASSNAME.DRAG_HOVER);
         }
@@ -57,19 +53,18 @@ function ptDropzone(dispatchers, ptDndUtils, ptDndModel, PTDNDCONSTANTS) {
              * the added label element exists in the list.
              * @returns {*}
              */
-            const refresh = () =>
-                _rAF(() => {
-                    ptDndModel.dropzone.reset();
-                    [].slice.call(el[0].querySelectorAll('[data-pt-dropzone-item]')).forEach((node) => {
-                        const id = ptDndUtils.generateUniqId('drop');
-                        node.classList.add('ptDnd-dropzone-container');
-                        node.setAttribute(DROPZONE_ATTR_ID, id);
-                        ptDndModel.dropzone.set(id, {
-                            value: node.dataset.ptDropzoneItem,
-                            type: node.dataset.ptDropzoneItemType
-                        });
+            const refresh = () => _rAF(() => {
+                ptDndModel.dropzone.reset();
+                [].slice.call(el[0].querySelectorAll('[data-pt-dropzone-item]')).forEach((node) => {
+                    const id = ptDndUtils.generateUniqId('drop');
+                    node.classList.add('ptDnd-dropzone-container');
+                    node.setAttribute(DROPZONE_ATTR_ID, id);
+                    ptDndModel.dropzone.set(id, {
+                        value: node.dataset.ptDropzoneItem,
+                        type: node.dataset.ptDropzoneItemType
                     });
                 });
+            });
 
             const id = setTimeout(() => (refresh(), clearTimeout(id)), 1000);
 

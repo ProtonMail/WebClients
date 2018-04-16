@@ -12,12 +12,12 @@ function pmMeView(dispatchers, addressesModel, authentication, premiumDomainMode
             scope.hasPmMe = addressesModel.hasPmMe();
             scope.hasPaidMail = authentication.hasPaidMail();
 
-            on('addressesModel', (e, { type = '' }) => {
-                if (type === 'addresses.updated') {
-                    scope.$applyAsync(() => {
-                        scope.hasPmMe = addressesModel.hasPmMe();
-                    });
-                }
+           on('addressesModel', (e, { type = '' }) => {
+               if (type === 'addresses.updated') {
+                   scope.$applyAsync(() => {
+                       scope.hasPmMe = addressesModel.hasPmMe();
+                   });
+               }
             });
 
             scope.$on('$destroy', unsubscribe);

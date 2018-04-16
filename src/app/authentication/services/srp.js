@@ -84,14 +84,10 @@ function srp($http, CONFIG, webcrypto, passwords, url, authApi, handle10003) {
             } while (clientSecret.compare(len * 2) <= 0); // Very unlikely
 
             clientEphemeral = modulus.power(generator, clientSecret);
-            scramblingParam = toBN(
-                hash(openpgp.util.concatUint8Array([fromBN(clientEphemeral), fromBN(serverEphemeral)]))
-            );
+            scramblingParam = toBN(hash(openpgp.util.concatUint8Array([fromBN(clientEphemeral), fromBN(serverEphemeral)])));
         } while (scramblingParam.compare(0) === 0); // Very unlikely
 
-        let subtracted = serverEphemeral.subtract(
-            modulus.reduce(modulus.power(generator, hashedPassword).multiply(multiplier))
-        );
+        let subtracted = serverEphemeral.subtract(modulus.reduce(modulus.power(generator, hashedPassword).multiply(multiplier)));
         if (subtracted.compare(0) < 0) {
             subtracted = subtracted.add(modulus);
         }
@@ -101,19 +97,10 @@ function srp($http, CONFIG, webcrypto, passwords, url, authApi, handle10003) {
             .divide(modulus.subtract(1)).remainder;
         const sharedSession = modulus.power(subtracted, exponent);
 
-        const clientProof = hash(
-            openpgp.util.concatUint8Array([fromBN(clientEphemeral), fromBN(serverEphemeral), fromBN(sharedSession)])
-        );
-        const serverProof = hash(
-            openpgp.util.concatUint8Array([fromBN(clientEphemeral), clientProof, fromBN(sharedSession)])
-        );
+        const clientProof = hash(openpgp.util.concatUint8Array([fromBN(clientEphemeral), fromBN(serverEphemeral), fromBN(sharedSession)]));
+        const serverProof = hash(openpgp.util.concatUint8Array([fromBN(clientEphemeral), clientProof, fromBN(sharedSession)]));
 
-        return {
-            Type: 'Success',
-            ClientEphemeral: fromBN(clientEphemeral),
-            ClientProof: clientProof,
-            ExpectedServerProof: serverProof
-        };
+        return { Type: 'Success', ClientEphemeral: fromBN(clientEphemeral), ClientProof: clientProof, ExpectedServerProof: serverProof };
     }
 
     function generateVerifier(len, hashedPassword, modulus) {
@@ -158,9 +145,7 @@ function srp($http, CONFIG, webcrypto, passwords, url, authApi, handle10003) {
         let useFallback;
 
         const session = infoResp.data.SRPSession;
-        const modulus = pmcrypto.binaryStringToArray(
-            pmcrypto.decode_base64(openpgp.cleartext.readArmored(infoResp.data.Modulus).getText())
-        );
+        const modulus = pmcrypto.binaryStringToArray(pmcrypto.decode_base64(openpgp.cleartext.readArmored(infoResp.data.Modulus).getText()));
         const serverEphemeral = pmcrypto.binaryStringToArray(pmcrypto.decode_base64(infoResp.data.ServerEphemeral));
 
         let authVersion = infoResp.data.Version;
@@ -176,13 +161,11 @@ function srp($http, CONFIG, webcrypto, passwords, url, authApi, handle10003) {
         }
 
         if (
-            (authVersion === 2 &&
-                passwords.cleanUsername(creds.Username) !== passwords.cleanUsername(infoResp.data.Username)) ||
+            (authVersion === 2 && passwords.cleanUsername(creds.Username) !== passwords.cleanUsername(infoResp.data.Username)) ||
             (authVersion <= 1 && creds.Username.toLowerCase() !== infoResp.data.Username.toLowerCase())
         ) {
             return Promise.reject({
-                error_description:
-                    'Please login with just your ProtonMail username (without @protonmail.com or @protonmail.ch).'
+                error_description: 'Please login with just your ProtonMail username (without @protonmail.com or @protonmail.ch).'
             });
         }
 
@@ -191,10 +174,8 @@ function srp($http, CONFIG, webcrypto, passwords, url, authApi, handle10003) {
             salt = pmcrypto.decode_base64(infoResp.data.Salt);
         }
 
-        return passwords
-            .hashPassword(authVersion, creds.Password, salt, creds.Username, modulus)
-            .then(
-                (hashed) => {
+        return passwords.hashPassword(authVersion, creds.Password, salt, creds.Username, modulus)
+            .then((hashed) => {
                     proofs = generateProofs(2048, srpHasher, modulus, hashed, serverEphemeral);
 
                     if (proofs.Type !== 'Success') {
@@ -208,9 +189,7 @@ function srp($http, CONFIG, webcrypto, passwords, url, authApi, handle10003) {
                         url: url.get() + endpoint,
                         data: _.extend(req, {
                             SRPSession: session,
-                            ClientEphemeral: pmcrypto.encode_base64(
-                                pmcrypto.arrayToBinaryString(proofs.ClientEphemeral)
-                            ),
+                            ClientEphemeral: pmcrypto.encode_base64(pmcrypto.arrayToBinaryString(proofs.ClientEphemeral)),
                             ClientProof: pmcrypto.encode_base64(pmcrypto.arrayToBinaryString(proofs.ClientProof)),
                             TwoFactorCode: creds.TwoFactorCode
                         })
@@ -229,10 +208,7 @@ function srp($http, CONFIG, webcrypto, passwords, url, authApi, handle10003) {
             )
             .then(
                 (resp) => {
-                    if (
-                        pmcrypto.encode_base64(pmcrypto.arrayToBinaryString(proofs.ExpectedServerProof)) ===
-                        resp.data.ServerProof
-                    ) {
+                    if (pmcrypto.encode_base64(pmcrypto.arrayToBinaryString(proofs.ExpectedServerProof)) === resp.data.ServerProof) {
                         return Promise.resolve(_.extend(resp, { authVersion }));
                     }
 
@@ -261,24 +237,20 @@ function srp($http, CONFIG, webcrypto, passwords, url, authApi, handle10003) {
         return authApi
             .modulus()
             .then(({ data = {} } = {}) => {
-                const modulus = pmcrypto.binaryStringToArray(
-                    pmcrypto.decode_base64(openpgp.cleartext.readArmored(data.Modulus).getText())
-                );
+                const modulus = pmcrypto.binaryStringToArray(pmcrypto.decode_base64(openpgp.cleartext.readArmored(data.Modulus).getText()));
                 const salt = pmcrypto.arrayToBinaryString(webcrypto.getRandomValues(new Uint8Array(10)));
-                return passwords
-                    .hashPassword(passwords.currentAuthVersion, password, salt, undefined, modulus)
-                    .then((hashedPassword) => {
-                        const verifier = generateVerifier(2048, hashedPassword, modulus);
+                return passwords.hashPassword(passwords.currentAuthVersion, password, salt, undefined, modulus).then((hashedPassword) => {
+                    const verifier = generateVerifier(2048, hashedPassword, modulus);
 
-                        return {
-                            Auth: {
-                                Version: passwords.currentAuthVersion,
-                                ModulusID: data.ModulusID,
-                                Salt: pmcrypto.encode_base64(salt),
-                                Verifier: pmcrypto.encode_base64(pmcrypto.arrayToBinaryString(verifier))
-                            }
-                        };
-                    });
+                    return {
+                        Auth: {
+                            Version: passwords.currentAuthVersion,
+                            ModulusID: data.ModulusID,
+                            Salt: pmcrypto.encode_base64(salt),
+                            Verifier: pmcrypto.encode_base64(pmcrypto.arrayToBinaryString(verifier))
+                        }
+                    };
+                });
             })
             .catch((err = {}) => {
                 const { data = {} } = err;
@@ -293,10 +265,10 @@ function srp($http, CONFIG, webcrypto, passwords, url, authApi, handle10003) {
 
     function authInfo(Username) {
         return authApi.info({
-            Username,
-            ClientID: CONFIG.clientID,
-            ClientSecret: CONFIG.clientSecret
-        });
+                Username,
+                ClientID: CONFIG.clientID,
+                ClientSecret: CONFIG.clientSecret
+            });
     }
 
     /**

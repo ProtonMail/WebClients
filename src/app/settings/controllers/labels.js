@@ -109,9 +109,7 @@ function LabelsController(
     };
 
     function getTitleDeleteLabel({ Exclusive }) {
-        return Exclusive
-            ? gettextCatalog.getString('Delete folder', null, 'Title')
-            : gettextCatalog.getString('Delete label', null, 'Title');
+        return Exclusive ? gettextCatalog.getString('Delete folder', null, 'Title') : gettextCatalog.getString('Delete label', null, 'Title');
     }
 
     function getMessageDeleteLabel({ Exclusive }) {

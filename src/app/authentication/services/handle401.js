@@ -3,7 +3,7 @@ import _ from 'lodash';
 /* @ngInject */
 function handle401($http, authentication) {
     let refreshPromise = null;
-    const clearPromise = () => (refreshPromise = null);
+    const clearPromise = () => refreshPromise = null;
     const logout = (err) => {
         authentication.logout(true, false);
 
@@ -16,6 +16,7 @@ function handle401($http, authentication) {
     };
 
     return (rejection) => {
+
         if (!authentication.existingSession()) {
             return logout(rejection);
         }
@@ -27,7 +28,9 @@ function handle401($http, authentication) {
                 .catch(logout);
         }
 
-        return refreshPromise.then(() => recall(rejection)).catch(() => Promise.reject(rejection));
+        return refreshPromise
+            .then(() => recall(rejection))
+            .catch(() => Promise.reject(rejection));
     };
 }
 export default handle401;

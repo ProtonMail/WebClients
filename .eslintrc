@@ -41,7 +41,7 @@
     "arrow-parens": ["error", "always"],
     "comma-dangle": ["error", "never"],
     "no-shadow": ["off", { "hoist": "never", "builtinGlobals": true  }],
-    "max-len": ["error", { "ignoreComments": true, code: 120, "ignoreStrings": true, "ignoreTemplateLiterals": true, "ignoreRegExpLiterals": true }],
+    "max-len": ["off", 120],
     "array-bracket-spacing": ["off", "never"],
     "object-property-newline": "off",
     "no-sequences": "off",

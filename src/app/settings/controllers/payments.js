@@ -47,12 +47,12 @@ function PaymentsController(
         $scope.invoiceOwner = owner;
     };
 
-    const openCardModal = (method) => {
+    $scope.add = () => {
         cardModal.activate({
             params: {
-                method,
                 close({ methods, method } = {}) {
                     cardModal.deactivate();
+
                     if (method) {
                         $scope.$applyAsync(() => {
                             $scope.methods = methods;
@@ -63,10 +63,24 @@ function PaymentsController(
         });
     };
 
-    $scope.add = () => openCardModal();
-    $scope.edit = openCardModal;
+    $scope.edit = (method) => {
+        cardModal.activate({
+            params: {
+                method,
+                close({ methods, method } = {}) {
+                    cardModal.deactivate();
 
-    $scope.default = (method) => {
+                    if (method) {
+                        $scope.$applyAsync(() => {
+                            $scope.methods = methods;
+                        });
+                    }
+                }
+            }
+        });
+    };
+
+    $scope.default = function(method) {
         const methods = $scope.methods.slice();
         const index = _.findIndex(methods, { ID: method.ID });
 
@@ -80,10 +94,7 @@ function PaymentsController(
                 return data;
             })
             .catch(({ data = {} } = {}) => {
-                throw new Error(
-                    data.Error ||
-                        gettextCatalog.getString('Unable to save your changes, please try again.', null, 'Error')
-                );
+                throw new Error(data.Error || gettextCatalog.getString('Unable to save your changes, please try again.', null, 'Error'));
             });
 
         networkActivityTracker.track(promise);

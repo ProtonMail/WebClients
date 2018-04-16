@@ -100,11 +100,9 @@ function autocompleteCommandModel(hotkeys, CONSTANTS, labelsModel, strUtils, $ro
         const value = val.trim();
         const input = value.toLowerCase();
 
-        const list = flow(
-            filter(stateScoped),
-            filter(({ label }) => label.toLowerCase().includes(input)),
-            take(CONSTANTS.AWESOMEPLETE_MAX_ITEMS)
-        )(getList(mode));
+        const list = flow(filter(stateScoped), filter(({ label }) => label.toLowerCase().includes(input)), take(CONSTANTS.AWESOMEPLETE_MAX_ITEMS))(
+            getList(mode)
+        );
 
         return { list, hasAutocompletion: !!list.length };
     };

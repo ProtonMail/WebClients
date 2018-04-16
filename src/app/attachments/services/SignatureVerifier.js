@@ -22,9 +22,7 @@ function SignatureVerifier(dispatchers, pmcw, authentication, publicKeyStore) {
      * @returns {*}
      */
     const addressIDtoEmail = (addressID) => {
-        const { Email } = flow(filter({ Status: 1, Receive: 1 }), find({ ID: addressID }))(
-            authentication.user.Addresses
-        );
+        const { Email } = flow(filter({ Status: 1, Receive: 1 }), find({ ID: addressID }))(authentication.user.Addresses);
 
         return Email;
     };
@@ -96,22 +94,9 @@ function SignatureVerifier(dispatchers, pmcw, authentication, publicKeyStore) {
         }
 
         const publicKeys = await getPublicKeys(message);
-        const statusPerSig = await verifyAllSignatures(
-            message,
-            publicKeys,
-            signatures,
-            attachment,
-            decryptedAttachment
-        );
-        const pmcryptoVerified = _.reduce(
-            statusPerSig,
-            (acc, status) => (acc === SIGNED_AND_VALID ? SIGNED_AND_VALID : status),
-            NOT_SIGNED
-        );
-        const verified =
-            (!publicKeys || !publicKeys.length) && pmcryptoVerified === SIGNED_AND_INVALID
-                ? SIGNED_NO_PUB_KEY
-                : pmcryptoVerified;
+        const statusPerSig = await verifyAllSignatures(message, publicKeys, signatures, attachment, decryptedAttachment);
+        const pmcryptoVerified = _.reduce(statusPerSig, (acc, status) => (acc === SIGNED_AND_VALID ? SIGNED_AND_VALID : status), NOT_SIGNED);
+        const verified = (!publicKeys || !publicKeys.length) && pmcryptoVerified === SIGNED_AND_INVALID ? SIGNED_NO_PUB_KEY : pmcryptoVerified;
         put(ID, verified);
         dispatcher.attachmentVerified('verified', { message, attachment, status: verified });
         return verified;

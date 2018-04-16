@@ -1,5 +1,6 @@
 /* @ngInject */
 function validLabel() {
+
     const CACHE = { index: 0 };
 
     /**
@@ -10,6 +11,7 @@ function validLabel() {
      * @return {Boolean}
      */
     const validator = (ngModel) => (input) => {
+
         if (!CACHE.index) {
             CACHE.index++;
             CACHE.value = ngModel.$modelValue;

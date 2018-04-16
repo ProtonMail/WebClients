@@ -2,11 +2,7 @@
 function payInvoiceBtn(gettextCatalog, Payment, paymentModel, payModal, networkActivityTracker, notification) {
     const I18N = {
         message: gettextCatalog.getString('Pay', null, 'Action'),
-        notAvailable: gettextCatalog.getString(
-            'Payments are currently not available, please try again later',
-            null,
-            'Info'
-        )
+        notAvailable: gettextCatalog.getString('Payments are currently not available, please try again later', null, 'Info')
     };
 
     const checkInvoice = ({ ID } = {}) => {

@@ -17,7 +17,7 @@ function pmcw() {
                     const message = pmcrypto.getMessage(accessToken);
                     // this is the private key, use this and decryptMessage to get the access token
                     pmcrypto
-                        .decryptMessage({ message, privateKeys: [privateKey] })
+                        .decryptMessage({ message, privateKeys: [ privateKey ] })
                         .then(({ data }) => resolve({ password: prKeyPassCode, token: data }))
                         .catch(() => reject(new Error('Unable to get Access Token.')));
                 })

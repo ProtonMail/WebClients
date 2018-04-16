@@ -22,8 +22,7 @@ export function formatSubject(subject = '', prefix = '') {
  * @param  {Array}  address UserAdresses
  * @return {Array}
  */
-export const omitUserAddresses = (list = [], address = []) =>
-    _.filter(list, ({ Address }) => address.indexOf(Address.toLowerCase()) === -1);
+export const omitUserAddresses = (list = [], address = []) => _.filter(list, ({ Address }) => address.indexOf(Address.toLowerCase()) === -1);
 
 /**
  * Inject the inline images as attachement for embedded xray()
@@ -125,11 +124,7 @@ export function createMessage({ Addresses = [] } = {}, { RE_PREFIX, FW_PREFIX } 
      * @param  {Array} ReplyTos          from the current message
      * @param  {Number} Type             from the current message
      */
-    function replyAll(
-        newMsg,
-        { Subject, Type, ToList, ReplyTos, CCList, BCCList, encryptedSubject = '' } = {},
-        useEncrypted = false
-    ) {
+    function replyAll(newMsg, { Subject, Type, ToList, ReplyTos, CCList, BCCList, encryptedSubject = '' } = {}, useEncrypted = false) {
         newMsg.Action = REPLY_ALL;
         newMsg.Subject = formatSubject(useEncrypted ? encryptedSubject : Subject, RE_PREFIX);
 

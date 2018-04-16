@@ -13,16 +13,8 @@ function attachSignupSubscription(
     const dispatch = (type, data = {}) => $rootScope.$emit('signup', { type, data });
 
     const I18N = {
-        ERROR_ORGA_KEY_GENERATION: gettextCatalog.getString(
-            'Error during the generation of new organization keys',
-            null,
-            'Error'
-        ),
-        ERROR_ORGA_REQUEST: gettextCatalog.getString(
-            'Error during organization request',
-            null,
-            'Error organization creation'
-        )
+        ERROR_ORGA_KEY_GENERATION: gettextCatalog.getString('Error during the generation of new organization keys', null, 'Error'),
+        ERROR_ORGA_REQUEST: gettextCatalog.getString('Error during organization request', null, 'Error organization creation')
     };
 
     const processPlan = async () => {
@@ -31,11 +23,9 @@ function attachSignupSubscription(
         // if the user subscribed to a plan during the signup process
         if (['plus', 'visionary'].includes(Name) && Amount === authentication.user.Credit) {
             const subscribe = () => {
-                return Payment.subscribe({ Amount: 0, Currency, Cycle, PlanIDs: { [ID]: 1 } }).catch(
-                    ({ data = {} }) => {
-                        throw Error(data.Error);
-                    }
-                );
+                return Payment.subscribe({ Amount: 0, Currency, Cycle, PlanIDs: { [ID]: 1 } }).catch(({ data = {} }) => {
+                    throw Error(data.Error);
+                });
             };
 
             const organizationKey = () => {

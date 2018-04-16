@@ -25,6 +25,7 @@ const getBaseURL = (base) => {
  * @return {Node}      Parser
  */
 function transformBase(html, doc) {
+
     const base = doc.querySelector('base');
 
     if (!base || !base.getAttribute('href')) {
@@ -41,6 +42,7 @@ function transformBase(html, doc) {
     };
 
     ELEMENTS.forEach(({ selector, attribute }) => {
+
         [].slice.call(html.querySelectorAll(selector)).forEach((el) => {
             const keyproton = `proton-${attribute}`;
             const value = el.getAttribute(attribute) || '';
@@ -54,6 +56,7 @@ function transformBase(html, doc) {
              */
             !ptValue && bindAttribute(el, attribute, url);
             ptValue && bindAttribute(el, keyproton, ptValue);
+
         });
     });
 

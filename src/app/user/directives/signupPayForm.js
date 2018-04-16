@@ -1,13 +1,5 @@
 /* @ngInject */
-function signupPayForm(
-    paymentUtils,
-    dispatchers,
-    $stateParams,
-    cardModel,
-    giftCodeModel,
-    notification,
-    gettextCatalog
-) {
+function signupPayForm(paymentUtils, dispatchers, $stateParams, cardModel, giftCodeModel, notification, gettextCatalog) {
     const I18N = {
         invalidGiftCode: gettextCatalog.getString('Invalid gift code', null, 'Error')
     };

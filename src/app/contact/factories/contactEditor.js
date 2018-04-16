@@ -55,51 +55,22 @@ function contactEditor(
      * @returns {{updated: Array, removed: Array, errors: Array}}
      */
     function summarizeMergeResults(results = []) {
-        return results.reduce(
-            (agg, result) => {
-                if (result.updated) {
-                    agg.updated.push(result.updated);
-                }
-                if (result.removed) {
-                    agg.removed = agg.removed.concat(result.removed);
-                }
-                if (result.errors) {
-                    agg.errors = agg.errors.concat(result.errors);
-                }
-                if (result.total) {
-                    agg.total += result.total;
-                }
-                return agg;
-            },
-            { updated: [], removed: [], errors: [], total: 0 }
-        );
+        return results.reduce((agg, result) => {
+            if (result.updated) {
+                agg.updated.push(result.updated);
+            }
+            if (result.removed) {
+                agg.removed = agg.removed.concat(result.removed);
+            }
+            if (result.errors) {
+                agg.errors = agg.errors.concat(result.errors);
+            }
+            if (result.total) {
+                agg.total += result.total;
+            }
+            return agg;
+        }, { updated: [], removed: [], errors: [], total: 0 });
     }
-
-    const updateContact = (contact, type = '') => {
-        const method = `update${type}`.trim();
-        const promise = Contact[method](contact).then(({ Contact: contact, cards }) => {
-            dispatcher.contacts('contactUpdated', { contact, cards });
-            notification.success(gettextCatalog.getString('Contact edited', null, 'Success message'));
-            return eventManager.call();
-        });
-
-        networkActivityTracker.track(promise);
-        return promise;
-    };
-
-    /**
-     * Edit a contact
-     * @param {Object} contact
-     * @return {Promise}
-     */
-    const update = ({ contact = {} }) => updateContact(contact);
-
-    /*
-    * Edit the unencrypted part of a contact
-    * @param {Object} contact
-    * @return {Promise}
-    */
-    const updateUnencrypted = ({ contact = {} }) => updateContact(contact, 'Unencrypted');
 
     /**
      * Update and remove contacts.
@@ -123,7 +94,7 @@ function contactEditor(
                 total,
                 updated: update,
                 removed,
-                errors: errors.map((item) => item.Error)
+                errors: errors.map(({ Error }) => Error)
             };
         } catch (error) {
             return {
@@ -144,7 +115,7 @@ function contactEditor(
         actions.forEach((action) => {
             action.then((result) => {
                 // When a group has finished, update the progress.
-                progress += Math.floor(result.total * 100 / total);
+                progress += Math.floor((result.total * 100) / total);
 
                 // Emit the progress bar and that the contact has updated.
                 dispatcher.progressBar('contactsProgressBar', { progress });
@@ -198,6 +169,37 @@ function contactEditor(
         return promise;
     }
 
+    /**
+     * Edit a contact
+     * @param {Object} contact
+     * @return {Promise}
+     */
+    function update({ contact = {} }) {
+        const promise = Contact.update(contact).then(({ Contact, cards }) => {
+            dispatcher.contacts('contactUpdated', { contact: Contact, cards });
+            notification.success(gettextCatalog.getString('Contact edited', null, 'Success message'));
+            return eventManager.call();
+        });
+
+        networkActivityTracker.track(promise);
+        return promise;
+    }
+
+    /*
+        * Edit the unencrypted part of a contact
+        * @param {Object} contact
+        * @return {Promise}
+        */
+    function updateUnencrypted({ contact = {} }) {
+        const promise = Contact.updateUnencrypted(contact).then(({ Contact, cards }) => {
+            dispatcher.contacts('contactUpdated', { contact: Contact, cards });
+            notification.success(gettextCatalog.getString('Contact edited', null, 'Success message'));
+            return eventManager.call();
+        });
+
+        networkActivityTracker.track(promise);
+        return promise;
+    }
     /*
         * Delete contact(s)
         * @param {Array} selectContacts
@@ -249,9 +251,7 @@ function contactEditor(
                       'Info'
                   );
         const title =
-            contactIDs === 'all'
-                ? gettextCatalog.getString('Delete all', null, 'Title')
-                : gettextCatalog.getString('Delete', null, 'Title');
+            contactIDs === 'all' ? gettextCatalog.getString('Delete all', null, 'Title') : gettextCatalog.getString('Delete', null, 'Title');
 
         confirmModal.activate({
             params: {

@@ -139,8 +139,7 @@ function ElementsController(
 
             case 'placeholder': {
                 const idDefined = $scope.idDefined();
-                const shouldDisplay =
-                    isColumnsMode && (!idDefined || (idDefined && $rootScope.numberElementChecked > 0));
+                const shouldDisplay = isColumnsMode && (!idDefined || (idDefined && $rootScope.numberElementChecked > 0));
                 test = shouldDisplay && !AppModel.is('mobile');
                 break;
             }
@@ -262,7 +261,7 @@ function ElementsController(
 
         $scope.$on('move', (e, mailbox) => {
             const idDefined = $scope.idDefined();
-            const isScope = !idDefined || (idDefined && $rootScope.numberElementChecked > 0);
+            const isScope = (!idDefined || (idDefined && $rootScope.numberElementChecked > 0));
             /**
              * Move item only when nothing is opened
              * and we have a selection
@@ -327,53 +326,75 @@ function ElementsController(
         }, false);
 
         /**
-         * Move to a selected item if it exists
-         * @param  {String} type previous/next
-         * @return {void}
+         * Go to the next conversation
          */
-        const actionMoveToElement = async (type) => {
+        function nextElement() {
+            const elementID = $state.params.id;
+
+            if (!elementID) {
+                return markNext();
+            }
+
             const { ViewLayout, ViewMode } = mailSettingsModel.get();
             const isRowMode = ViewLayout === ROW_MODE;
             const current = $state.$current.name;
             const elementTime = $scope.markedElement.Time;
             const conversationMode = ViewMode === CONVERSATION_VIEW_MODE;
 
-            try {
-                const element = await cache.more($state.params.id, elementTime, type);
-                const id = conversationMode ? element.ConversationID || element.ID : element.ID;
-                $state.go(current, { id });
-                $scope.markedElement = element;
-                dispatcher.elements(`switchTo.${type}.success`, element);
-                !isRowMode && markedScroll.follow();
-            } catch (e) {
-                dispatcher.elements(`switchTo.${type}.error`, e);
-            }
-        };
-
-        /**
-         * Go to the next conversation
-         */
-        function nextElement() {
-            if (!$state.params.id) {
-                return markNext();
-            }
-            actionMoveToElement('next');
+            cache
+                .more(elementID, elementTime, 'next')
+                .then((element) => {
+                    const id = conversationMode ? element.ConversationID || element.ID : element.ID;
+                    $state.go(current, { id });
+                    $scope.markedElement = element;
+                    dispatcher.elements('switchTo.next.success', element);
+                    !isRowMode && markedScroll.follow();
+                })
+                .catch((data) => {
+                    dispatcher.elements('switchTo.next.error', data);
+                });
         }
 
         /**
          * Go to the previous conversation
          */
         function previousElement() {
-            if (!$state.params.id) {
+            const elementID = $state.params.id;
+
+            if (!elementID) {
                 return markPrevious();
             }
-            actionMoveToElement('previous');
+
+            const { ViewLayout, ViewMode } = mailSettingsModel.get();
+            const isRowMode = ViewLayout === ROW_MODE;
+            const current = $state.$current.name;
+            const elementTime = $scope.markedElement.Time;
+            const conversationMode = ViewMode === CONVERSATION_VIEW_MODE;
+
+            cache
+                .more(elementID, elementTime, 'previous')
+                .then((element) => {
+                    const id = conversationMode ? element.ConversationID || element.ID : element.ID;
+                    $state.go(current, { id });
+                    $scope.markedElement = element;
+                    dispatcher.elements('switchTo.previous.success', element);
+                    !isRowMode && markedScroll.follow();
+                })
+                .catch((data) => {
+                    dispatcher.elements('switchTo.previous.error', data);
+                });
         }
 
         $scope.$on('markPrevious', markPrevious);
         $scope.$on('markNext', markNext);
-        $scope.$on('nextElement', nextElement);
-        $scope.$on('previousElement', previousElement);
+
+        $scope.$on('nextElement', () => {
+            nextElement();
+        });
+
+        $scope.$on('previousElement', () => {
+            previousElement();
+        });
 
         $scope.$on('$destroy', () => {
             unsubscribe();
@@ -475,8 +496,7 @@ function ElementsController(
                             if ($state.params.id) {
                                 element = _.find(
                                     $scope.conversations,
-                                    ({ ID, ConversationID }) =>
-                                        $state.params.id === ConversationID || $state.params.id === ID
+                                    ({ ID, ConversationID }) => $state.params.id === ConversationID || $state.params.id === ID
                                 );
                             } else {
                                 element = _.head($scope.conversations);
@@ -487,8 +507,7 @@ function ElementsController(
                             if (found) {
                                 element = found;
                             } else {
-                                const previousIndexMarked =
-                                    _.findIndex(previousConversations, { ID: $scope.markedElement.ID }) || 0;
+                                const previousIndexMarked = _.findIndex(previousConversations, { ID: $scope.markedElement.ID }) || 0;
                                 element = $scope.conversations[previousIndexMarked] || _.head($scope.conversations);
                             }
                         }
@@ -605,17 +624,11 @@ function ElementsController(
         const elements = _.filter(conversations, { Selected: true });
 
         if ($state.params.id && mailSettingsModel.get('ViewLayout') === ROW_MODE) {
-            return _.filter(
-                conversations,
-                ({ ID, ConversationID }) => ID === $state.params.id || ConversationID === $state.params.id
-            );
+            return _.filter(conversations, ({ ID, ConversationID }) => ID === $state.params.id || ConversationID === $state.params.id);
         }
 
         if (!elements.length && $scope.markedElement && includeMarked) {
-            return _.filter(
-                conversations,
-                ({ ID, ConversationID }) => ID === $scope.markedElement.ID || ConversationID === $scope.markedElement.ID
-            );
+            return _.filter(conversations, ({ ID, ConversationID }) => ID === $scope.markedElement.ID || ConversationID === $scope.markedElement.ID);
         }
 
         return elements;

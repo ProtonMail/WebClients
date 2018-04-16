@@ -1,7 +1,11 @@
 import ICAL from 'ical.js';
 
 /* @ngInject */
-function AttachmentEvent(attachmentDownloader, notification, AppModel) {
+function AttachmentEvent(
+    attachmentDownloader,
+    notification,
+    AppModel
+) {
     const REGEXP_EVENT_EXTENSIONS = /\.(?:ics|icalendar|ical|vcard|vcf)$/i;
 
     const filterAttachmentsForEvents = (attachments = []) =>
@@ -23,7 +27,7 @@ function AttachmentEvent(attachmentDownloader, notification, AppModel) {
             return '';
         }
 
-        const timezone = withTimezone && startDate.timezone ? `(${startDate.timezone})` : '';
+        const timezone = (withTimezone && startDate.timezone) ? `(${startDate.timezone})` : '';
 
         if (end.diff(start, 'days') < 1) {
             return `${start.format('ll')} ${start.format('LT')} – ${end.format('LT')} ${timezone}`;

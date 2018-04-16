@@ -1,21 +1,26 @@
 import _ from 'lodash';
-
-import { PACKAGE_TYPE } from '../../constants';
 import { toList } from '../../../helpers/arrayHelper';
 import { uniqGroups } from '../../../helpers/vcard';
 
 /* @ngInject */
-function contactImportEncryption(pmcw, $injector, contactKey, contactAskEncryption, contactKeyAssigner, vcard) {
-    const asyncSequentialMap = (list, asyncFunction) => {
-        return list.reduce((lastProcess, element) => {
+function contactImportEncryption(
+    pmcw,
+    $injector,
+    CONSTANTS,
+    contactKey,
+    contactAskEncryption,
+    contactKeyAssigner,
+    vcard
+) {
+    const asyncSequentialMap = (list, asyncFunction) =>
+        list.reduce((lastProcess, element) => {
             return lastProcess.then((accumulator) => {
                 return asyncFunction(element).then((result) => accumulator.concat([result]));
             });
         }, Promise.resolve([]));
-    };
 
-    const encryptModal = (email) => {
-        return new Promise((resolve) => {
+    const encryptModal = (email) =>
+        new Promise((resolve) =>
             contactAskEncryption.activate({
                 params: {
                     email,
@@ -25,9 +30,8 @@ function contactImportEncryption(pmcw, $injector, contactKey, contactAskEncrypti
                     },
                     onEscape: _.noop
                 }
-            });
-        });
-    };
+            })
+        );
 
     const groupGenerator = (contact) => {
         const properties = vcard.extractProperties(contact.vCard);
@@ -83,7 +87,7 @@ function contactImportEncryption(pmcw, $injector, contactKey, contactAskEncrypti
                 return asyncSequentialMap(emailList, async (emailProp) => {
                     const sendPreferences = $injector.get('sendPreferences');
                     const info = await sendPreferences.get(emailProp.valueOf());
-                    if (info.scheme === PACKAGE_TYPE.SEND_PM) {
+                    if (info.scheme === CONSTANTS.PACKAGE_TYPE.SEND_PM) {
                         // internal user: skip
                         return;
                     }

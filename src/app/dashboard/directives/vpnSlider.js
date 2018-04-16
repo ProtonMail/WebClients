@@ -38,9 +38,7 @@ function vpnSlider(CONSTANTS, customVpnModel, dashboardConfiguration, dashboardM
             };
             const updateSlider = () => {
                 if (customVpnModel.get('vpnplus')) {
-                    scope.$applyAsync(
-                        () => (scope.value = customVpnModel.get('vpnplus') * vpnplus.MaxVPN + customVpnModel.get('vpn'))
-                    );
+                    scope.$applyAsync(() => (scope.value = customVpnModel.get('vpnplus') * vpnplus.MaxVPN + customVpnModel.get('vpn')));
                 }
             };
             const updateClass = () => {

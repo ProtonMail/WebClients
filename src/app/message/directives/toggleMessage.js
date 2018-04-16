@@ -13,11 +13,7 @@ function toggleMessage(dispatchers, CONSTANTS) {
             const { dispatcher } = dispatchers(['composer.load', 'message.open']);
 
             function mouseup(event) {
-                if (
-                    selection() &&
-                    event.target.nodeName !== 'A' &&
-                    !event.target.classList.contains('labelsElement-btn-remove')
-                ) {
+                if (selection() && event.target.nodeName !== 'A' && !event.target.classList.contains('labelsElement-btn-remove')) {
                     scope.$applyAsync(() => {
                         // Open the message in composer if it's a draft
                         if (scope.message.Type === CONSTANTS.DRAFT) {

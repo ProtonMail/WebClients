@@ -3,21 +3,9 @@ import _ from 'lodash';
 /* @ngInject */
 function membersValidator(gettextCatalog, notification, $state, organizationModel, domainModel, memberModel) {
     const I18N = {
-        INVALID_PLAN: gettextCatalog.getString(
-            'Multi-user support requires either a Professional or Visionary plan.',
-            null,
-            'Info'
-        ),
-        INACTIVE_MULTI_USER: gettextCatalog.getString(
-            'Please enable multi-user support before adding users to your organization',
-            null,
-            'Info'
-        ),
-        NO_DOMAIN: gettextCatalog.getString(
-            'Please configure a custom domain before adding users to your organization.',
-            null,
-            'Info'
-        ),
+        INVALID_PLAN: gettextCatalog.getString('Multi-user support requires either a Professional or Visionary plan.', null, 'Info'),
+        INACTIVE_MULTI_USER: gettextCatalog.getString('Please enable multi-user support before adding users to your organization', null, 'Info'),
+        NO_DOMAIN: gettextCatalog.getString('Please configure a custom domain before adding users to your organization.', null, 'Info'),
         ERROR_NO_USERS_LEFT: gettextCatalog.getString(
             'You have used all users in your plan. Please upgrade your plan to add a new user.',
             null,
@@ -33,11 +21,7 @@ function membersValidator(gettextCatalog, notification, $state, organizationMode
             null,
             'Error'
         ),
-        ERROR_PERMISSION: gettextCatalog.getString(
-            'Permission denied, administrator privileges have been restricted.',
-            null,
-            'Error'
-        ),
+        ERROR_PERMISSION: gettextCatalog.getString('Permission denied, administrator privileges have been restricted.', null, 'Error'),
         INVALID_NAME: gettextCatalog.getString('Invalid name', null, 'Error'),
         INVALID_PASSWORD: gettextCatalog.getString('Invalid password', null, 'Error'),
         INVALID_ADDRESS: gettextCatalog.getString('Invalid address', null, 'Error'),

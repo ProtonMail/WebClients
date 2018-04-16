@@ -38,12 +38,9 @@ function eventManager(
         $timeout.cancel(MODEL.promiseCancel);
         delete MODEL.promiseCancel;
     };
-    const manageActiveMessage = ({ Messages = [] }) =>
-        Messages.length && dispatch('activeMessages', { messages: _.map(Messages, 'Message') });
-    const manageSubscription = ({ Subscription: subscription }) =>
-        subscription && dispatch('subscription.event', { subscription });
-    const manageAddresses = ({ Addresses = [] }) =>
-        Addresses.length && dispatch('addresses.event', { addresses: Addresses });
+    const manageActiveMessage = ({ Messages = [] }) => Messages.length && dispatch('activeMessages', { messages: _.map(Messages, 'Message') });
+    const manageSubscription = ({ Subscription: subscription }) => subscription && dispatch('subscription.event', { subscription });
+    const manageAddresses = ({ Addresses = [] }) => Addresses.length && dispatch('addresses.event', { addresses: Addresses });
 
     /**
      * Clean contact datas
@@ -73,8 +70,7 @@ function eventManager(
         return Events.getLatestID().catch(handleError);
     }
 
-    const manageContacts = (events = []) =>
-        events.length && $rootScope.$emit('contacts', { type: 'contactEvents', data: { events } });
+    const manageContacts = (events = []) => events.length && $rootScope.$emit('contacts', { type: 'contactEvents', data: { events } });
 
     function manageMailSettings(mailSettings) {
         if (angular.isDefined(mailSettings)) {
@@ -270,8 +266,7 @@ function eventManager(
 
             for (let i = 0; i < notices.length; i++) {
                 const message = notices[i];
-                const cookieName =
-                    'NOTICE-' + openpgp.util.hexidump(openpgp.crypto.hash.md5(openpgp.util.str2Uint8Array(message)));
+                const cookieName = 'NOTICE-' + openpgp.util.hexidump(openpgp.crypto.hash.md5(openpgp.util.str2Uint8Array(message)));
 
                 if (!$cookies.get(cookieName)) {
                     notify({
@@ -332,8 +327,7 @@ function eventManager(
         manageActiveMessage(data);
         manageAddresses(data);
 
-        return $injector
-            .get('manageUser')(data)
+        return $injector.get('manageUser')(data)
             .then(() => {
                 if (data.More === 1) {
                     return call();

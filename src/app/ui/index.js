@@ -50,6 +50,7 @@ import consoleMessage from './services/consoleMessage';
 import customInputCreator from './services/customInputCreator';
 import datetimeErrorCombiner from './services/datetimeErrorCombiner';
 import headerNoAuth from './directives/header/headerNoAuth';
+import encryptionStatus from './services/encryptionStatus';
 import headerSecuredDesktop from './directives/header/headerSecuredDesktop';
 import headerSecuredMobile from './directives/header/headerSecuredMobile';
 import arrowsToScroll from './directives/navigation/arrowsToScroll';
@@ -61,6 +62,7 @@ import navigationUser from './directives/navigation/navigationUser';
 export default angular
     .module('proton.ui', [])
     .run((backState) => backState.init())
+    .factory('encryptionStatus', encryptionStatus)
     .factory('autocompleteEmailsModel', autocompleteEmailsModel)
     .factory('pageTitlesModel', pageTitlesModel)
     .factory('timepickerModel', timepickerModel)

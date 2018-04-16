@@ -8,12 +8,7 @@ function safari() {
         () => {
             $(document).on('click.fixSafariDownloadBug', (e) => {
                 const target = e.target;
-                if (
-                    target &&
-                    target.tagName === 'A' &&
-                    target.getAttribute('target') === '_blank' &&
-                    target.hasAttribute('href')
-                ) {
+                if (target && target.tagName === 'A' && target.getAttribute('target') === '_blank' && target.hasAttribute('href')) {
                     e.preventDefault();
                     window.open(target.href);
                 }

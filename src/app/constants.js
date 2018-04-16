@@ -20,107 +20,6 @@ export const CONVERSATION_VIEW_MODE = 0;
 export const ROW_MODE = 1;
 export const COLUMN_MODE = 0;
 export const ENCRYPTION_DEFAULT = 2048;
-export const AUTOCOMPLETE_MAX_RECIPIENTS = 25;
-export const REMOTE = 1;
-export const EMBEDDED = 2;
-export const CONVERSATION_REQUEST_SIZE = 10;
-export const GIFT_CODE_LENGTH = 16;
-export const PM_SIGNATURE = 'Sent with <a href="https://protonmail.com" target="_blank">ProtonMail</a> Secure Email.';
-export const MAX_OUTSIDE_REPLY = 4;
-export const MAILBOX_PASSWORD_KEY = 'proton:mailbox_pwd';
-export const WHITELIST = ['notify@protonmail.com'];
-export const MAX_SIZE_SCREENSHOT = 500 * 1000;
-export const CLIENT_TYPE = 1;
-export const BLACK_FRIDAY_INTERVAL = 10 * 60 * 1000;
-export const CONTACTS_LIMIT_ENCRYPTION = 20;
-export const CONTACTS_LIMIT_UPLOAD = 50;
-export const VCARD_VERSION = '4.0';
-export const CONTACT_EMAILS_LIMIT = 1000;
-export const CONTACTS_LIMIT = 1000;
-export const EXPORT_CONTACTS_LIMIT = 50;
-export const MAX_VPN = 500;
-export const MAX_MEMBER = 100;
-export const HUGE_MEMBER = 5000;
-export const TIMEOUT = 30 * 1000; // timeout in milliseconds
-export const BASE_SIZE = 1024; // define the base used for byte
-export const KEY_VERSION = 3;
-export const INBOX = 0;
-export const DRAFT = 1;
-export const SENT = 2;
-export const INBOX_AND_SENT = 3;
-export const PM_ADDRESS = 1;
-export const PM_ALIAS = 2;
-export const REPLY = 0;
-export const REPLY_ALL = 1;
-export const FORWARD = 2;
-export const FILTER_VERSION = 1;
-export const ATTACHMENT_SIZE_LIMIT = 25; // MB
-export const ATTACHMENT_NUMBER_LIMIT = 100;
-export const MAX_NUMBER_COMPOSER = 3;
-export const MESSAGE_LIMIT = 100;
-export const CONVERSATION_LIMIT = 100;
-export const INTERVAL_EVENT_TIMER = 30 * 1000; // time between querying the event log (every 30 seconds)
-export const TIMEOUT_PRELOAD_MESSAGE = 500; // milliseconds
-export const UPLOAD_GRADIENT_DARK = '147, 145, 209'; // dark rgb color for upload progress bar
-export const UPLOAD_GRADIENT_LIGHT = '255, 255, 255'; // light rgb color for upload progress bar
-export const ENC_OUT_ENC_REPLY = 6; // encrypted for outside
-export const SAVE_TIMEOUT_TIME = 3000; // 3 seconds
-export const SAVE_THROTTLE_TIME = 10000; // 10 seconds
-export const MAX_EXPIRATION_TIME = 672; // hours
-export const ELEMENTS_PER_PAGE = 50;
-export const CONTACTS_PER_PAGE = 1000;
-export const HD_BREAKPOINT = 1920;
-export const DESKTOP_BREAKPOINT = 1200;
-export const ROW_BREAKPOINT = 960;
-export const MOBILE_BREAKPOINT = 800;
-export const URL_INFO = 'https://mail.protonmail.com/assets/host.png';
-export const MIN_PAYPAL_AMOUNT = 500;
-export const MAX_PAYPAL_AMOUNT = 99999900;
-export const MIN_BITCOIN_AMOUNT = 500;
-export const BTC_DONATION_ADDRESS = '1Q1nhq1NbxPYAbw1BppwKbCqg58ZqMb9A8';
-export const IFRAME_SECURE_ORIGIN = 'https://secure.protonmail.com';
-export const DEFAULT_CURRENCY = 'EUR';
-export const CHANGELOG_PATH = 'assets/changelog.tpl.html';
-export const DEFAULT_CYCLE = 12;
-export const TRACKER_ROUTE = 'proton.php';
-export const PIWIK_SCRIPT = 'proton.js';
-export const CANCEL_REQUEST = 'CANCEL_REQUEST';
-export const CYCLE = {
-    MONTHLY: 1,
-    YEARLY: 12,
-    TWO_YEARS: 24
-};
-export const STATUS = {
-    DELETE: 0,
-    CREATE: 1,
-    UPDATE: 2,
-    UPDATE_DRAFT: 2,
-    UPDATE_FLAGS: 3
-};
-export const METRIC_GOALS = {
-    SIGNUP_ALL: 2,
-    SIGNUP_FREE: 4,
-    SIGNUP_PAID: 3,
-    SIGNUP_PLUS: 6,
-    SIGNUP_VISIONARY: 5
-};
-export const FONT_SIZE = {
-    small: 8,
-    normal: 14,
-    large: 20,
-    huge: 26
-};
-export const COMPOSER_COLOR = {
-    COLOR: '#222222',
-    BACKGROUND: '#FFFFFF'
-};
-export const FONT_COLOR = {
-    white: ['#FFFFFF', '#DADADA', '#B5B5B5', '#909090', '#6B6B6B', '#464646', '#222222'],
-    magenta: ['#F6CBCB', '#EC9798', '#E36667', '#ED4139', '#CF3932', '#9A2B25', '#681D19'],
-    blue: ['#CDE1F2', '#9CC3E5', '#6CA6D9', '#3B83C2', '#2A47F6', '#145390', '#0F3A62'],
-    green: ['#D7EAD3', '#B3D6A9', '#8FC380', '#77F241', '#66A657', '#3A762B', '#29501F'],
-    yellow: ['#FFF2CD', '#FEE59C', '#FCD86F', '#FDF84E', '#F2C246', '#BE8F35', '#7F6124']
-};
 export const UNPAID_STATE = {
     NOT: 0,
     AVAILABLE: 1,
@@ -128,6 +27,7 @@ export const UNPAID_STATE = {
     DELINQUENT: 3,
     NO_RECEIVE: 4
 };
+
 export const MAILBOX_IDENTIFIERS = {
     inbox: '0',
     allDrafts: '1',
@@ -142,6 +42,11 @@ export const MAILBOX_IDENTIFIERS = {
     search: 'search',
     label: 'label'
 };
+
+export const REMOTE = 1;
+export const EMBEDDED = 2;
+export const CONVERSATION_REQUEST_SIZE = 10;
+export const GIFT_CODE_LENGTH = 16;
 export const VERIFICATION_STATUS = {
     NOT_VERIFIED: -1,
     NOT_SIGNED: 0,
@@ -160,6 +65,8 @@ export const KNOWLEDGE_BASE = {
     DIGITAL_SIGNATURE: 'https://protonmail.com/support/knowledge-base/digital-signature/',
     PGP_MIME_INLINE: 'https://protonmail.com/support/knowledge-base/pgp-mime-pgp-inline/'
 };
+export const PM_SIGNATURE = 'Sent with <a href="https://protonmail.com" target="_blank">ProtonMail</a> Secure Email.';
+
 export const MIME_TYPES = {
     PLAINTEXT: 'text/plain',
     DEFAULT: 'text/html'
@@ -188,261 +95,269 @@ export const AUTOCOMPLETE_DOMAINS = [
     'yahoo.com',
     'outlook.com'
 ];
+export const AUTOCOMPLETE_MAX_RECIPIENTS = 25;
 
+export const MAX_OUTSIDE_REPLY = 4;
+export const MAILBOX_PASSWORD_KEY = 'proton:mailbox_pwd';
+export const WHITELIST = ['notify@protonmail.com'];
 export const ADDRESS_TYPE = {
     ORIGINAL: 1,
     ALIAS: 2,
     CUSTOM_DOMAIN: 3,
     PREMIUM: 4
 };
-
-export const CONTACT_MODE = {
-    ENCRYPTED_AND_SIGNED: 3,
-    SIGNED: 2,
-    ENCRYPTED: 1,
-    CLEAR_TEXT: 0
-};
-export const CONTACT_ERROR = {
-    TYPE3_CONTACT_VERIFICATION: 3,
-    TYPE3_CONTACT_DECRYPTION: 2,
-    TYPE2_CONTACT_VERIFICATION: 1,
-    TYPE1_CONTACT: 0
-};
-export const SEND_TYPES = {
-    SEND_PM: 1,
-    SEND_EO: 2,
-    SEND_CLEAR: 4,
-    SEND_PGP_INLINE: 8,
-    SEND_PGP_MIME: 16,
-    SEND_MIME: 32
-};
-export const PACKAGE_TYPE = {
-    SEND_PM: 1,
-    SEND_EO: 2,
-    SEND_CLEAR: 4,
-    SEND_PGP_INLINE: 8,
-    SEND_PGP_MIME: 16
-};
-export const RECIPIENT_TYPE = {
-    TYPE_INTERNAL: 1,
-    TYPE_EXTERNAL: 2,
-    TYPE_NO_RECEIVE: 3
-};
-export const ENCRYPTED_STATUS = {
-    NONE: 0,
-    INTERNAL: 1,
-    EXTERNAL: 2,
-    OUT_ENC: 3,
-    OUT_PLAIN: 4,
-    STORED_ENC: 5,
-    PGP_INLINE: 7,
+export const SENDPREF_STATUS = {
+    ENCRYPTION_ENABLED: 1,
+    SIGNING_ENABLED: 2,
+    PINNING_ENABLED: 4,
     PGP_MIME: 8,
-    AUTOREPLY: 10
+    PGP_INLINE: 16,
+    PM_EO: 32,
+    LOADING_CRYPT_INFO: 64
 };
-export const PLANS = {
-    PLAN: {
-        PLUS: 'plus',
-        PROFESSIONAL: 'professional',
-        VISIONARY: 'visionary',
-        VPN_BASIC: 'vpnbasic',
-        VPN_PLUS: 'vpnplus'
-    },
-    ADDON: {
-        ADDRESS: '5address',
-        MEMBER: '1member',
-        DOMAIN: '1domain',
-        SPACE: '1gb',
-        VPN: '1vpn'
-    }
-};
-export const PLANS_TYPE = {
-    PLAN: 1,
-    ADDON: 0
-};
-
-export const VCARD_KEYS = [
-    'fn',
-    'email',
-    'adr',
-    'tel',
-    'note',
-    'kind',
-    'source',
-    'xml',
-    'nickname',
-    'photo',
-    'bday',
-    'anniversary',
-    'gender',
-    'impp',
-    'lang',
-    'tz',
-    'geo',
-    'title',
-    'role',
-    'logo',
-    'org',
-    'member',
-    'related',
-    'categories',
-    'rev',
-    'sound',
-    'uid',
-    'clientpidmap',
-    'url',
-    'key',
-    'fburl',
-    'caladruri',
-    'caluri'
-];
-export const VCARD_TYPES = [
-    'work',
-    'home',
-    'text',
-    'voice',
-    'fax',
-    'cell',
-    'video',
-    'pager',
-    'textphone',
-    'iana-token',
-    'x-name',
-    'contact',
-    'acquaintance',
-    'friend',
-    'met',
-    'co-worker',
-    'colleague',
-    'co-resident',
-    'neighbor',
-    'child',
-    'parent',
-    'sibling',
-    'spouse',
-    'kin',
-    'muse',
-    'crush',
-    'date',
-    'sweetheart',
-    'me',
-    'agent',
-    'emergency'
-];
 
 export const CONSTANTS = {
-    MAIN_KEY,
-    ERROR_AUTH_ACCOUNT_DISABLED,
-    MAX_TITLE_LENGTH,
-    AWESOMEPLETE_MAX_ITEMS,
+    MAX_SIZE_SCREENSHOT: 500 * 1000,
+    CLIENT_TYPE: 1,
+    BLACK_FRIDAY_INTERVAL: 10 * 60 * 1000,
+
+    PLANS: {
+        PLAN: {
+            PLUS: 'plus',
+            PROFESSIONAL: 'professional',
+            VISIONARY: 'visionary',
+            VPN_BASIC: 'vpnbasic',
+            VPN_PLUS: 'vpnplus'
+        },
+        ADDON: {
+            ADDRESS: '5address',
+            MEMBER: '1member',
+            DOMAIN: '1domain',
+            SPACE: '1gb',
+            VPN: '1vpn'
+        }
+    },
+    PACKAGE_TYPE: {
+        SEND_PM: 1,
+        SEND_EO: 2,
+        SEND_CLEAR: 4,
+        SEND_PGP_INLINE: 8,
+        SEND_PGP_MIME: 16
+    },
+    PLANS_TYPE: {
+        PLAN: 1,
+        ADDON: 0
+    },
+    CONTACTS_LIMIT_ENCRYPTION: 20,
+    CONTACTS_LIMIT_UPLOAD: 50,
+    VCARD_VERSION: '4.0',
+    VCARD_KEYS: [
+        'fn',
+        'email',
+        'adr',
+        'tel',
+        'note',
+        'kind',
+        'source',
+        'xml',
+        'nickname',
+        'photo',
+        'bday',
+        'anniversary',
+        'gender',
+        'impp',
+        'lang',
+        'tz',
+        'geo',
+        'title',
+        'role',
+        'logo',
+        'org',
+        'member',
+        'related',
+        'categories',
+        'rev',
+        'sound',
+        'uid',
+        'clientpidmap',
+        'url',
+        'key',
+        'fburl',
+        'caladruri',
+        'caluri'
+    ],
+    VCARD_TYPES: [
+        'work',
+        'home',
+        'text',
+        'voice',
+        'fax',
+        'cell',
+        'video',
+        'pager',
+        'textphone',
+        'iana-token',
+        'x-name',
+        'contact',
+        'acquaintance',
+        'friend',
+        'met',
+        'co-worker',
+        'colleague',
+        'co-resident',
+        'neighbor',
+        'child',
+        'parent',
+        'sibling',
+        'spouse',
+        'kin',
+        'muse',
+        'crush',
+        'date',
+        'sweetheart',
+        'me',
+        'agent',
+        'emergency'
+    ],
+    CONTACT_MODE: {
+        ENCRYPTED_AND_SIGNED: 3,
+        SIGNED: 2,
+        ENCRYPTED: 1,
+        CLEAR_TEXT: 0
+    },
+    CONTACT_ERROR: {
+        TYPE3_CONTACT_VERIFICATION: 3,
+        TYPE3_CONTACT_DECRYPTION: 2,
+        TYPE2_CONTACT_VERIFICATION: 1,
+        TYPE1_CONTACT: 0
+    },
+    CONTACT_EMAILS_LIMIT: 1000,
+    CONTACTS_LIMIT: 1000,
+    EXPORT_CONTACTS_LIMIT: 50,
+    MAX_VPN: 500,
+    MAX_MEMBER: 100,
+    HUGE_MEMBER: 5000,
+    TIMEOUT: 30 * 1000, // timeout in milliseconds
+    BASE_SIZE: 1024, // define the base used for byte
+    KEY_VERSION: 3,
+    INBOX: 0,
+    DRAFT: 1,
+    SENT: 2,
+    INBOX_AND_SENT: 3,
+    PM_ADDRESS: 1,
+    PM_ALIAS: 2,
+    REPLY: 0,
+    REPLY_ALL: 1,
+    FORWARD: 2,
+    FILTER_VERSION: 1,
+    ATTACHMENT_SIZE_LIMIT: 25, // MB
+    ATTACHMENT_NUMBER_LIMIT: 100,
+    MAX_NUMBER_COMPOSER: 3,
+    MESSAGE_LIMIT: 100,
+    CONVERSATION_LIMIT: 100,
+    ENCRYPTED_STATUS: {
+        NONE: 0,
+        INTERNAL: 1,
+        EXTERNAL: 2,
+        OUT_ENC: 3,
+        OUT_PLAIN: 4,
+        STORED_ENC: 5,
+        PGP_INLINE: 7,
+        PGP_MIME: 8,
+        AUTOREPLY: 10
+    },
+    INTERVAL_EVENT_TIMER: 30 * 1000, // time between querying the event log (every 30 seconds)
+    TIMEOUT_PRELOAD_MESSAGE: 500, // milliseconds
+    UPLOAD_GRADIENT_DARK: '147, 145, 209', // dark rgb color for upload progress bar
+    UPLOAD_GRADIENT_LIGHT: '255, 255, 255', // light rgb color for upload progress bar
+    ENC_OUT_ENC_REPLY: 6, // encrypted for outside
+    SAVE_TIMEOUT_TIME: 3000, // 3 seconds
+    SAVE_THROTTLE_TIME: 10000, // 10 seconds
+    MAX_EXPIRATION_TIME: 672, // hours
+    ELEMENTS_PER_PAGE: 50,
+    CONTACTS_PER_PAGE: 1000,
+    HD_BREAKPOINT: 1920,
+    DESKTOP_BREAKPOINT: 1200,
+    ROW_BREAKPOINT: 960,
+    MOBILE_BREAKPOINT: 800,
+    STATUS: {
+        DELETE: 0,
+        CREATE: 1,
+        UPDATE: 2,
+        UPDATE_DRAFT: 2,
+        UPDATE_FLAGS: 3
+    },
+    URL_INFO: 'https://mail.protonmail.com/assets/host.png',
+    MIN_PAYPAL_AMOUNT: 500,
+    MAX_PAYPAL_AMOUNT: 99999900,
+    MIN_BITCOIN_AMOUNT: 500,
+    BTC_DONATION_ADDRESS: '1Q1nhq1NbxPYAbw1BppwKbCqg58ZqMb9A8',
+    CYCLE: {
+        MONTHLY: 1,
+        YEARLY: 12,
+        TWO_YEARS: 24
+    },
+    IFRAME_SECURE_ORIGIN: 'https://secure.protonmail.com',
+    DEFAULT_CURRENCY: 'EUR',
+    CHANGELOG_PATH: 'assets/changelog.tpl.html',
+    DEFAULT_CYCLE: 12,
+    TRACKER_ROUTE: 'proton.php',
+    PIWIK_SCRIPT: 'proton.js',
+    METRIC_GOALS: {
+        SIGNUP_ALL: 2,
+        SIGNUP_FREE: 4,
+        SIGNUP_PAID: 3,
+        SIGNUP_PLUS: 6,
+        SIGNUP_VISIONARY: 5
+    },
+    RECIPIENT_TYPE: {
+        TYPE_INTERNAL: 1,
+        TYPE_EXTERNAL: 2,
+        TYPE_NO_RECEIVE: 3
+    },
+    SEND_TYPES: {
+        SEND_PM: 1,
+        SEND_EO: 2,
+        SEND_CLEAR: 4,
+        SEND_PGP_INLINE: 8,
+        SEND_PGP_MIME: 16,
+        SEND_MIME: 32
+    },
+    FONT_SIZE: {
+        small: 8,
+        normal: 14,
+        large: 20,
+        huge: 26
+    },
+    COMPOSER_COLOR: {
+        COLOR: '#222222',
+        BACKGROUND: '#FFFFFF'
+    },
+    FONT_COLOR: {
+        white: ['#FFFFFF', '#DADADA', '#B5B5B5', '#909090', '#6B6B6B', '#464646', '#222222'],
+        magenta: ['#F6CBCB', '#EC9798', '#E36667', '#ED4139', '#CF3932', '#9A2B25', '#681D19'],
+        blue: ['#CDE1F2', '#9CC3E5', '#6CA6D9', '#3B83C2', '#2A47F6', '#145390', '#0F3A62'],
+        green: ['#D7EAD3', '#B3D6A9', '#8FC380', '#77F241', '#66A657', '#3A762B', '#29501F'],
+        yellow: ['#FFF2CD', '#FEE59C', '#FCD86F', '#FDF84E', '#F2C246', '#BE8F35', '#7F6124']
+    },
+    CANCEL_REQUEST: 'CANCEL_REQUEST',
     ERROR_SILENT,
-    WIZARD_ENABLED,
     FREE_USER_ROLE,
     PAID_MEMBER_ROLE,
     PAID_ADMIN_ROLE,
-    CURRENCIES,
-    BILLING_CYCLE,
-    PHOTO_PLACEHOLDER_URL,
-    INVITE_URL,
-    INVITE_MAIL,
-    INVITE_VPN,
-    OAUTH_KEY,
-    CUSTOM_DOMAIN_ADDRESS,
-    MESSAGE_VIEW_MODE,
-    CONVERSATION_VIEW_MODE,
-    ROW_MODE,
-    COLUMN_MODE,
-    ENCRYPTION_DEFAULT,
-    AUTOCOMPLETE_MAX_RECIPIENTS,
-    REMOTE,
-    EMBEDDED,
-    CONVERSATION_REQUEST_SIZE,
-    GIFT_CODE_LENGTH,
+    UNPAID_STATE,
+    WIZARD_ENABLED,
+    MAILBOX_IDENTIFIERS,
     PM_SIGNATURE,
+    OAUTH_KEY,
+    MAIN_KEY,
     MAX_OUTSIDE_REPLY,
     MAILBOX_PASSWORD_KEY,
-    WHITELIST,
-    MAX_SIZE_SCREENSHOT,
-    CLIENT_TYPE,
-    BLACK_FRIDAY_INTERVAL,
-    CONTACTS_LIMIT_ENCRYPTION,
-    CONTACTS_LIMIT_UPLOAD,
-    VCARD_VERSION,
-    CONTACT_EMAILS_LIMIT,
-    CONTACTS_LIMIT,
-    EXPORT_CONTACTS_LIMIT,
-    MAX_VPN,
-    MAX_MEMBER,
-    HUGE_MEMBER,
-    TIMEOUT,
-    BASE_SIZE,
-    KEY_VERSION,
-    INBOX,
-    DRAFT,
-    SENT,
-    INBOX_AND_SENT,
-    PM_ADDRESS,
-    PM_ALIAS,
-    REPLY,
-    REPLY_ALL,
-    FORWARD,
-    FILTER_VERSION,
-    ATTACHMENT_SIZE_LIMIT,
-    ATTACHMENT_NUMBER_LIMIT,
-    MAX_NUMBER_COMPOSER,
-    MESSAGE_LIMIT,
-    CONVERSATION_LIMIT,
-    INTERVAL_EVENT_TIMER,
-    TIMEOUT_PRELOAD_MESSAGE,
-    UPLOAD_GRADIENT_DARK,
-    UPLOAD_GRADIENT_LIGHT,
-    ENC_OUT_ENC_REPLY,
-    SAVE_TIMEOUT_TIME,
-    SAVE_THROTTLE_TIME,
-    MAX_EXPIRATION_TIME,
-    ELEMENTS_PER_PAGE,
-    CONTACTS_PER_PAGE,
-    HD_BREAKPOINT,
-    DESKTOP_BREAKPOINT,
-    ROW_BREAKPOINT,
-    MOBILE_BREAKPOINT,
-    URL_INFO,
-    MIN_PAYPAL_AMOUNT,
-    MAX_PAYPAL_AMOUNT,
-    MIN_BITCOIN_AMOUNT,
-    BTC_DONATION_ADDRESS,
-    IFRAME_SECURE_ORIGIN,
-    DEFAULT_CURRENCY,
-    CHANGELOG_PATH,
-    DEFAULT_CYCLE,
-    TRACKER_ROUTE,
-    PIWIK_SCRIPT,
-    CANCEL_REQUEST,
-    CYCLE,
-    STATUS,
-    METRIC_GOALS,
-    FONT_SIZE,
-    COMPOSER_COLOR,
-    FONT_COLOR,
-    UNPAID_STATE,
-    MAILBOX_IDENTIFIERS,
-    VERIFICATION_STATUS,
-    TIME,
-    KNOWLEDGE_BASE,
-    MIME_TYPES,
-    DEFAULT_SQUIRE_VALUE,
-    EMAIL_FORMATING,
-    AUTOCOMPLETE_DOMAINS,
-    ADDRESS_TYPE,
-    CONTACT_MODE,
-    CONTACT_ERROR,
-    SEND_TYPES,
-    PACKAGE_TYPE,
-    RECIPIENT_TYPE,
-    ENCRYPTED_STATUS,
-    PLANS,
-    PLANS_TYPE,
-    VCARD_KEYS,
-    VCARD_TYPES
+    ROW_MODE,
+    COLUMN_MODE,
+    MESSAGE_VIEW_MODE,
+    CONVERSATION_VIEW_MODE,
+    ENCRYPTION_DEFAULT
 };
 
 /* eslint  no-useless-escape: "off" */

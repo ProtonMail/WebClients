@@ -4,30 +4,14 @@ function selectPlan(dispatchers, gettextCatalog, subscriptionModel) {
     const I18N = {
         downgradeToFree: gettextCatalog.getString('Downgrade to Free', null, 'Button to select plan on the dashboard'),
         downgradeToPlus: gettextCatalog.getString('Downgrade to Plus', null, 'Button to select plan on the dashboard'),
-        downgradeToProfessional: gettextCatalog.getString(
-            'Switch to Professional',
-            null,
-            'Button to select plan on the dashboard'
-        ),
+        downgradeToProfessional: gettextCatalog.getString('Switch to Professional', null, 'Button to select plan on the dashboard'),
         updateFree: gettextCatalog.getString('Update Free', null, 'Button to select plan on the dashboard'),
         updatePlus: gettextCatalog.getString('Update Plus', null, 'Button to select plan on the dashboard'),
-        updateProfessional: gettextCatalog.getString(
-            'Update Professional',
-            null,
-            'Button to select plan on the dashboard'
-        ),
+        updateProfessional: gettextCatalog.getString('Update Professional', null, 'Button to select plan on the dashboard'),
         updateVisionary: gettextCatalog.getString('Update Visionary', null, 'Button to select plan on the dashboard'),
         upgradeToPlus: gettextCatalog.getString('Upgrade to Plus', null, 'Button to select plan on the dashboard'),
-        upgradeToProfessional: gettextCatalog.getString(
-            'Upgrade to Professional',
-            null,
-            'Button to select plan on the dashboard'
-        ),
-        upgradeToVisionary: gettextCatalog.getString(
-            'Switch to Visionary',
-            null,
-            'Button to select plan on the dashboard'
-        )
+        upgradeToProfessional: gettextCatalog.getString('Upgrade to Professional', null, 'Button to select plan on the dashboard'),
+        upgradeToVisionary: gettextCatalog.getString('Switch to Visionary', null, 'Button to select plan on the dashboard')
     };
 
     const MAP = {

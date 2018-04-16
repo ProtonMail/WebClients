@@ -306,7 +306,6 @@ function contactDetailsModel(contactTransformLabel, contactSchema, gettextCatalo
 
         return results;
     }
-
     return { extract, prepare, unescapeValue, escapeValue };
 }
 export default contactDetailsModel;

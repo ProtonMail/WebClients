@@ -1,14 +1,5 @@
 import _ from 'lodash';
-import {
-    PAID_ADMIN_ROLE,
-    PAID_MEMBER_ROLE,
-    INVITE_MAIL,
-    INVITE_URL,
-    OAUTH_KEY,
-    MAILBOX_IDENTIFIERS,
-    CURRENCIES,
-    BILLING_CYCLE
-} from './constants';
+import { PAID_ADMIN_ROLE, PAID_MEMBER_ROLE, INVITE_MAIL, INVITE_URL, OAUTH_KEY, MAILBOX_IDENTIFIERS, CURRENCIES, BILLING_CYCLE } from './constants';
 
 export default angular
     .module('proton.routes', ['ui.router', 'proton.authentication', 'proton.constants', 'proton.utils'])
@@ -160,15 +151,7 @@ export default angular
             .state('secured.resetTheme', {
                 url: '/reset-theme',
                 resolve: {
-                    reset(
-                        user,
-                        networkActivityTracker,
-                        settingsMailApi,
-                        notification,
-                        eventManager,
-                        gettextCatalog,
-                        $state
-                    ) {
+                    reset(user, networkActivityTracker, settingsMailApi, notification, eventManager, gettextCatalog, $state) {
                         const I18N = {
                             SUCCESS: gettextCatalog.getString('Theme reset! Redirecting...', null, 'Info'),
                             ERROR: gettextCatalog.getString('Unable to reset theme', null, 'Error')
@@ -308,16 +291,7 @@ export default angular
                 views: {
                     content: {
                         templateUrl: require('../templates/views/outside.unlock.tpl.html'),
-                        controller(
-                            $scope,
-                            $state,
-                            $stateParams,
-                            pmcw,
-                            encryptedToken,
-                            networkActivityTracker,
-                            notification,
-                            secureSessionStorage
-                        ) {
+                        controller($scope, $state, $stateParams, pmcw, encryptedToken, networkActivityTracker, notification, secureSessionStorage) {
                             $scope.params = {
                                 MessagePassword: ''
                             };
@@ -327,7 +301,7 @@ export default angular
                             $scope.unlock = () => {
                                 const message = pmcw.getMessage(encryptedToken);
                                 const promise = pmcw
-                                    .decryptMessage({ message, passwords: [$scope.params.MessagePassword] })
+                                    .decryptMessage({ message, passwords: [ $scope.params.MessagePassword ] })
                                     .then((decryptedToken) => {
                                         secureSessionStorage.setItem('proton:decrypted_token', decryptedToken.data);
                                         secureSessionStorage.setItem(
@@ -355,14 +329,9 @@ export default angular
                         return lazyLoader.app().then(i18nLoader.localizeDate);
                     },
                     messageData(app, $stateParams, $q, Eo, messageModel, pmcw, secureSessionStorage) {
-                        const password = pmcw.decode_utf8_base64(
-                            secureSessionStorage.getItem('proton:encrypted_password')
-                        );
+                        const password = pmcw.decode_utf8_base64(secureSessionStorage.getItem('proton:encrypted_password'));
 
-                        return Eo.message(
-                            secureSessionStorage.getItem('proton:decrypted_token'),
-                            $stateParams.tag
-                        ).then(({ data = {} }) => {
+                        return Eo.message(secureSessionStorage.getItem('proton:decrypted_token'), $stateParams.tag).then(({ data = {} }) => {
                             const message = data.Message;
                             const promises = _.reduce(
                                 message.Replies,
@@ -370,7 +339,7 @@ export default angular
                                     const promise = pmcw
                                         .decryptMessage({
                                             message: pmcw.getMessage(reply.Body),
-                                            passwords: [password]
+                                            passwords: [ password ]
                                         })
                                         .then(({ data }) => (reply.DecryptedBody = data));
                                     acc.push(promise);
@@ -380,7 +349,7 @@ export default angular
                                     pmcw
                                         .decryptMessage({
                                             message: pmcw.getMessage(message.Body),
-                                            passwords: [password]
+                                            passwords: [ password ]
                                         })
                                         .then(({ data } = {}) => (message.DecryptedBody = data))
                                 ]
@@ -404,9 +373,7 @@ export default angular
                     messageData($stateParams, Eo, messageModel, pmcw, secureSessionStorage) {
                         const tokenId = $stateParams.tag;
                         const decryptedToken = secureSessionStorage.getItem('proton:decrypted_token');
-                        const password = pmcw.decode_utf8_base64(
-                            secureSessionStorage.getItem('proton:encrypted_password')
-                        );
+                        const password = pmcw.decode_utf8_base64(secureSessionStorage.getItem('proton:encrypted_password'));
 
                         return Eo.message(decryptedToken, tokenId).then((result) => {
                             const message = result.data.Message;
@@ -415,14 +382,11 @@ export default angular
                             return pmcw
                                 .decryptMessage({
                                     message: pmcw.getMessage(message.Body),
-                                    passwords: [password]
+                                    passwords: [ password ]
                                 })
                                 .then((body) => {
                                     const attachments = _.filter(message.Attachments, (attachment) => {
-                                        return (
-                                            attachment.Headers &&
-                                            (attachment.Headers['content-id'] || attachment.Headers['content-location'])
-                                        );
+                                        return attachment.Headers && (attachment.Headers['content-id'] || attachment.Headers['content-location']);
                                     });
 
                                     message.DecryptedBody = body.data;
@@ -720,12 +684,6 @@ export default angular
                     }
                 },
                 resolve: {
-                    methods(user, paymentModel, networkActivityTracker) {
-                        return networkActivityTracker.track(paymentModel.getMethods(null, user));
-                    },
-                    status(user, paymentModel, networkActivityTracker) {
-                        return networkActivityTracker.track(paymentModel.getStatus());
-                    },
                     access(user, $state) {
                         if (user.subuser) {
                             $state.go('secured.account');
@@ -741,6 +699,12 @@ export default angular
                             return networkActivityTracker.track(Payment.invoices({ Owner: 1 }));
                         }
                         return {};
+                    },
+                    methods(user, paymentModel, networkActivityTracker) {
+                        return networkActivityTracker.track(paymentModel.getMethods(null, user));
+                    },
+                    status(paymentModel, networkActivityTracker) {
+                        return networkActivityTracker.track(paymentModel.getStatus());
                     }
                 },
                 onEnter(AppModel) {
@@ -786,7 +750,6 @@ export default angular
                     status(user, paymentModel, networkActivityTracker) {
                         return networkActivityTracker.track(paymentModel.getStatus());
                     },
-
                     vpn(user, vpnModel, networkActivityTracker) {
                         return networkActivityTracker.track(vpnModel.fetch());
                     }
@@ -802,13 +765,6 @@ export default angular
                 url: '/dashboard',
                 params: { scroll: null, noBlackFridayModal: null, cycle: null, currency: null },
                 resolve: {
-                    methods(user, paymentModel, networkActivityTracker) {
-                        return networkActivityTracker.track(paymentModel.getMethods(null, user));
-                    },
-                    status(user, paymentModel, networkActivityTracker) {
-                        return networkActivityTracker.track(paymentModel.getStatus());
-                    },
-
                     access(user, $state) {
                         if (user.subuser || user.Role === PAID_MEMBER_ROLE) {
                             $state.go('secured.account');
@@ -818,6 +774,12 @@ export default angular
                     },
                     dashboardPlans(user, dashboardModel, subscriptionModel) {
                         return subscriptionModel.fetch().then(({ Currency }) => dashboardModel.loadPlans(Currency));
+                    },
+                    methods(user, paymentModel, networkActivityTracker) {
+                        return networkActivityTracker.track(paymentModel.getMethods(null, user));
+                    },
+                    status(user, paymentModel, networkActivityTracker) {
+                        return networkActivityTracker.track(paymentModel.getStatus());
                     }
                 },
                 views: {
@@ -840,12 +802,6 @@ export default angular
                     id: null
                 },
                 resolve: {
-                    methods(user, paymentModel, networkActivityTracker) {
-                        return networkActivityTracker.track(paymentModel.getMethods(null, user));
-                    },
-                    status(user, paymentModel, networkActivityTracker) {
-                        return networkActivityTracker.track(paymentModel.getStatus());
-                    },
                     access(user, $state) {
                         if (!user.subuser && user.Role !== PAID_MEMBER_ROLE) {
                             return Promise.resolve();
@@ -876,6 +832,12 @@ export default angular
                             return networkActivityTracker.track(organizationKeysModel.fetch());
                         }
                         return Promise.resolve();
+                    },
+                    methods(user, paymentModel, networkActivityTracker) {
+                        return networkActivityTracker.track(paymentModel.getMethods(null, user));
+                    },
+                    status(user, paymentModel, networkActivityTracker) {
+                        return networkActivityTracker.track(paymentModel.getStatus());
                     }
                 },
                 views: {
@@ -894,12 +856,6 @@ export default angular
             .state('secured.domains', {
                 url: '/domains',
                 resolve: {
-                    methods(user, paymentModel, networkActivityTracker) {
-                        return networkActivityTracker.track(paymentModel.getMethods(null, user));
-                    },
-                    status(user, paymentModel, networkActivityTracker) {
-                        return networkActivityTracker.track(paymentModel.getStatus());
-                    },
                     access(user, $state) {
                         if (user.subuser || user.Role === PAID_MEMBER_ROLE) {
                             $state.go('secured.account');
@@ -930,6 +886,12 @@ export default angular
                             return networkActivityTracker.track(organizationKeysModel.fetch());
                         }
                         return Promise.resolve();
+                    },
+                    methods(user, paymentModel, networkActivityTracker) {
+                        return networkActivityTracker.track(paymentModel.getMethods(null, user));
+                    },
+                    status(user, paymentModel, networkActivityTracker) {
+                        return networkActivityTracker.track(paymentModel.getStatus());
                     }
                 },
                 views: {
@@ -976,17 +938,17 @@ export default angular
             .state('secured.filters', {
                 url: '/filters',
                 resolve: {
-                    methods(user, paymentModel, networkActivityTracker) {
-                        return networkActivityTracker.track(paymentModel.getMethods(null, user));
-                    },
-                    status(user, paymentModel, networkActivityTracker) {
-                        return networkActivityTracker.track(paymentModel.getStatus());
-                    },
                     vendor(app, lazyLoader) {
                         return lazyLoader.extraVendor();
                     },
                     loadSpamLists(vendor, user, spamListModel, networkActivityTracker) {
                         return networkActivityTracker.track(spamListModel.load());
+                    },
+                    methods(user, paymentModel, networkActivityTracker) {
+                        return networkActivityTracker.track(paymentModel.getMethods(null, user));
+                    },
+                    status(user, paymentModel, networkActivityTracker) {
+                        return networkActivityTracker.track(paymentModel.getStatus());
                     }
                 },
                 views: {

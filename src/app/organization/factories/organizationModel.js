@@ -16,17 +16,9 @@ function organizationModel(
     let CACHE = {};
 
     const I18N = {
-        CREATE_ERROR: gettextCatalog.getString(
-            'Error during organization request',
-            null,
-            'Error organization creation'
-        ),
+        CREATE_ERROR: gettextCatalog.getString('Error during organization request', null, 'Error organization creation'),
         FETCH_ERROR: gettextCatalog.getString('Organization request failed', null, 'Error organization'),
-        KEYS_ERROR: gettextCatalog.getString(
-            'Error during the generation of new organization keys',
-            null,
-            'Error organization'
-        ),
+        KEYS_ERROR: gettextCatalog.getString('Error during the generation of new organization keys', null, 'Error organization'),
         UPDATING_NAME_ERROR: gettextCatalog.getString('Error updating organization name', null, 'Error'),
         UPDATING_NAME_SUCCESS: gettextCatalog.getString('Organization updated', null, 'Info'),
         UPDATE_PASSWORD_SUCCESS: gettextCatalog.getString('Password updated', null, 'Info')

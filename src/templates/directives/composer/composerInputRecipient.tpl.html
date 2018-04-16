@@ -1,4 +1,5 @@
 <span class="composer-input-recipient">
-    <autocomplete-emails-icon ng-if="email.encrypt || email.sign || email.loadCryptInfo"></autocomplete-emails-icon>
-    {{ ::email.Name }}<span class="composer-recipient-delim">,</span>
+    <autocomplete-emails-icon
+        ng-show="email.encrypt || email.sign || email.loadCryptInfo"></autocomplete-emails-icon>
+    {{ email.Name }}<span class="composer-recipient-delim">,</span>
 </span>

@@ -1,12 +1,5 @@
 /* @ngInject */
-function customizeInvoiceModal(
-    eventManager,
-    pmModal,
-    settingsApi,
-    notification,
-    userSettingsModel,
-    networkActivityTracker
-) {
+function customizeInvoiceModal(eventManager, pmModal, settingsApi, notification, userSettingsModel, networkActivityTracker) {
     return pmModal({
         controllerAs: 'ctrl',
         templateUrl: require('../../../templates/modals/customizeInvoice.tpl.html'),
@@ -16,6 +9,7 @@ function customizeInvoiceModal(
             this.cancel = params.cancel;
 
             this.submit = () => {
+
                 if ($scope.customizeInvoiceModalForm.$invalid) {
                     return;
                 }

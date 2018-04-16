@@ -1,5 +1,6 @@
 /* @ngInject */
 function vpnApi($http, url, gettextCatalog) {
+
     const requestUrl = url.build('vpn');
     const ERROR = gettextCatalog.getString('VPN request failed', null, 'Error');
 
@@ -8,11 +9,7 @@ function vpnApi($http, url, gettextCatalog) {
         throw new Error(data.Error || error);
     };
 
-    const get = () =>
-        $http
-            .get(requestUrl())
-            .then(onSuccess)
-            .catch(onError());
+    const get = () => $http.get(requestUrl()).then(onSuccess).catch(onError());
     const auth = (params) => $http.post(requestUrl('auth'), params);
     const accounting = (params) => $http.post(requestUrl('accounting'), params);
 

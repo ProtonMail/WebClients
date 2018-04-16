@@ -16,7 +16,8 @@ function messageModel(
     sanitize,
     attachmentConverter,
     publicKeyStore,
-    attachedPublicKey
+    attachedPublicKey,
+    mailSettingsModel
 ) {
     const MAX_ENC_HEADER_LENGTH = 1024;
     const PGPMIME_TYPES = [CONSTANTS.ENCRYPTED_STATUS.PGP_MIME, CONSTANTS.ENCRYPTED_STATUS.PGP_MIME_SIGNED];
@@ -130,6 +131,8 @@ function messageModel(
 
     class Message {
         constructor(msg) {
+            this.primaryKeyAttached = mailSettingsModel.get('AttachPublicKey');
+            this.sign = mailSettingsModel.get('Sign');
             _.extend(this, angular.copy(msg));
             const { ParsedHeaders = {}, xOriginalTo } = msg;
 
@@ -427,7 +430,7 @@ function messageModel(
         async clearTextBody(forceDecrypt = false) {
             if (!(this.isDraft() || this.IsEncrypted > 0)) {
                 this.setDecryptedBody(this.Body, false);
-                this.getDecryptedBody();
+                return this.getDecryptedBody();
             }
 
             if (this.getDecryptedBody() && !forceDecrypt) {

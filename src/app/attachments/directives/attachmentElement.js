@@ -40,13 +40,13 @@ function attachmentElement(SignatureVerifier, embeddedUtils, dispatchers, attach
                 });
             };
 
-            on('attachmentVerified', (e, { type, data: { message = {} } }) => {
+            on('attachmentVerified', (e, { type, data: { message = { } } }) => {
                 if (type === 'verified' && message.ID === scope.message.ID) {
                     updateSigStatus();
                 }
             });
 
-            on('attachmentLoader', (e, { type, data: { attachment = {} } }) => {
+            on('attachmentLoader', (e, { type, data: { attachment = { } } }) => {
                 if (type !== 'download' || !cid) {
                     return;
                 }

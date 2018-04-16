@@ -22,11 +22,7 @@ function transformEscape() {
             .join('|');
     }
 
-    const matchURLS = getPermutation([
-        ['&#117;', 'u'],
-        ['&#114;', 'r', '\\&#114;'],
-        ['&#108;', 'l', '\\&#108;', '\\l']
-    ]);
+    const matchURLS = getPermutation([['&#117;', 'u'], ['&#114;', 'r', '\\&#114;'], ['&#108;', 'l', '\\&#108;', '\\l']]);
 
     /**
      * Prevent escape url on the textContent if you display some code

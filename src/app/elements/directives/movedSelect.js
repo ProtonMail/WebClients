@@ -1,13 +1,5 @@
 /* @ngInject */
-function movedSelect(
-    authentication,
-    dispatchers,
-    gettextCatalog,
-    networkActivityTracker,
-    mailSettingsModel,
-    settingsMailApi,
-    notification
-) {
+function movedSelect(authentication, dispatchers, gettextCatalog, networkActivityTracker, mailSettingsModel, settingsMailApi, notification) {
     const I18N = {
         includeMoved: gettextCatalog.getString('Include Moved', null, 'Option'),
         hideMoved: gettextCatalog.getString('Hide Moved', null, 'Option'),

@@ -40,8 +40,7 @@ function autoresponderModel(
     let changedAutoresponder = {};
 
     const getChangedAutoresponder = () => changedAutoresponder;
-    const updateChangedAutoresponder = (autoresponder) =>
-        (changedAutoresponder = _.extend({}, changedAutoresponder, autoresponder));
+    const updateChangedAutoresponder = (autoresponder) => (changedAutoresponder = _.extend({}, changedAutoresponder, autoresponder));
     const clearChangedAutoresponder = () => (changedAutoresponder = {});
 
     function getBaseResponder() {
@@ -95,9 +94,7 @@ function autoresponderModel(
 
         const body = autoresponderLanguage.DEFAULT_BODY;
 
-        const bodyPlusSig = signatureBuilder
-            .insert({ getDecryptedBody: () => body }, { action: 'new', isAfter: true })
-            .replace(/<img[^>]*>/g, '');
+        const bodyPlusSig = signatureBuilder.insert({ getDecryptedBody: () => body }, { action: 'new', isAfter: true }).replace(/<img[^>]*>/g, '');
 
         if (bodyPlusSig.length > constants.MAX_MESSAGE_LENGTH) {
             defaultAutoresponder.message = body;
@@ -154,9 +151,7 @@ function autoresponderModel(
                 );
             }
             if (endTime !== null) {
-                newAutoresponder.endTime = Number(
-                    moment.tz(moment.tz(endTime * 1000, oldZone).format('YYYY-MM-DDTHH:mm:ss'), newZone).format('X')
-                );
+                newAutoresponder.endTime = Number(moment.tz(moment.tz(endTime * 1000, oldZone).format('YYYY-MM-DDTHH:mm:ss'), newZone).format('X'));
             }
         }
 
@@ -212,9 +207,7 @@ function autoresponderModel(
         if (oldEnabled === newEnabled) {
             return autoresponderLanguage.AUTORESPONDER_UPDATED_MESSAGE;
         }
-        return newEnabled
-            ? autoresponderLanguage.AUTORESPONDER_INSTALLED_MESSAGE
-            : autoresponderLanguage.AUTORESPONDER_REMOVED_MESSAGE;
+        return newEnabled ? autoresponderLanguage.AUTORESPONDER_INSTALLED_MESSAGE : autoresponderLanguage.AUTORESPONDER_REMOVED_MESSAGE;
     }
 
     /**

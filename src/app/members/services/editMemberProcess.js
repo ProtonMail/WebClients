@@ -1,16 +1,7 @@
 import _ from 'lodash';
 
 /* @ngInject */
-function editMemberProcess(
-    networkActivityTracker,
-    gettextCatalog,
-    memberApi,
-    Address,
-    setupKeys,
-    membersValidator,
-    notification,
-    eventManager
-) {
+function editMemberProcess(networkActivityTracker, gettextCatalog, memberApi, Address, setupKeys, membersValidator, notification, eventManager) {
     const I18N = {
         SUCCESS_UPDATE: gettextCatalog.getString('User updated', null, 'Info'),
         SUCCESS_CREATE: gettextCatalog.getString('User created', null, 'Info')

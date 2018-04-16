@@ -463,6 +463,10 @@ $list: georgia arial helvetica menlo tahoma verdana times trebuchet;
     opacity: 1
 }
 
+.composer.signed .squireToolbar-select-item[data-squire-actions="sign"] .fa-check {
+    opacity: 1
+}
+
 .squire-container[data-editor-mode="text/plain"] .squireToolbar-select-item[data-squire-actions="setTextDirectionRTL"],
 .squire-container[data-editor-mode="text/plain"] .squireToolbar-select-item[data-squire-actions="setTextDirectionLTR"] {
     display: none;

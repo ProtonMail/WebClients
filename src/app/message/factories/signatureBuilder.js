@@ -3,6 +3,7 @@ import dedentTpl from '../../../helpers/dedent';
 import { PM_SIGNATURE } from '../../constants';
 import { toText } from '../../../helpers/parserHTML';
 
+
 const CLASSNAME_SIGNATURE_CONTAINER = 'protonmail_signature_block';
 const CLASSNAME_SIGNATURE_USER = 'protonmail_signature_block-user';
 const CLASSNAME_SIGNATURE_PROTON = 'protonmail_signature_block-proton';
@@ -23,8 +24,7 @@ function createSpace(className = '') {
  * @param  {String} addressSignature
  * @return {Boolean}
  */
-const isEmptyUserSignature = (addressSignature) =>
-    !addressSignature || (addressSignature === '<div><br /></div>' || addressSignature === '<div><br></div>');
+const isEmptyUserSignature = (addressSignature) => !addressSignature || (addressSignature === '<div><br /></div>' || addressSignature === '<div><br></div>');
 
 /**
  * Extract the signature.
@@ -156,12 +156,8 @@ function signatureBuilder(authentication, tools, sanitize, AppModel, dispatchers
         const space = getSpaces(addressSignature, isReply);
 
         const template = dedentTpl`<div class="${CLASSNAME_SIGNATURE_CONTAINER} ${containerClass}">
-                <div class="${CLASSNAME_SIGNATURE_USER} ${userClass}">${tools.replaceLineBreaks(
-            addressSignature
-        )}</div>${space.between}
-                <div class="${CLASSNAME_SIGNATURE_PROTON} ${protonClass}">${tools.replaceLineBreaks(
-            PROTON_SIGNATURE.HTML
-        )}</div>
+                <div class="${CLASSNAME_SIGNATURE_USER} ${userClass}">${tools.replaceLineBreaks(addressSignature)}</div>${space.between}
+                <div class="${CLASSNAME_SIGNATURE_PROTON} ${protonClass}">${tools.replaceLineBreaks(PROTON_SIGNATURE.HTML)}</div>
             </div>`;
 
         if (!noSpace) {
@@ -208,6 +204,7 @@ function signatureBuilder(authentication, tools, sanitize, AppModel, dispatchers
      * @return {String}
      */
     function update(message = { getDecryptedBody: _.noop, isPlainText: _.noop }, body = '') {
+
         if (message.isPlainText()) {
             return replaceRaw(message.getDecryptedBody(), getTXT(message));
         }

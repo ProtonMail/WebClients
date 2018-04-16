@@ -1,8 +1,5 @@
 import _ from 'lodash';
-
-import { RECIPIENT_TYPE } from '../../constants';
 import keyAlgorithm from '../../keys/helper/keyAlgorithm';
-import { readFile } from '../../../helpers/fileHelper';
 import { removeEmailAlias } from '../../../helpers/string';
 
 /* @ngInject */
@@ -16,148 +13,15 @@ function contactPublicKeys(
     notification,
     dispatchers,
     keyCache,
-    networkActivityTracker
+    networkActivityTracker,
+    CONSTANTS
 ) {
     const AS_SORTABLE_DISABLED = 'as-sortable-disabled';
 
-    const I18N = {
-        invalidKeys(key) {
-            return gettextCatalog.getString('{{key}} is not a valid PGP key.', { key }, 'Error');
-        },
-        LANG_AND: gettextCatalog.getString('and', null, 'String separator'),
-        KEY_REVOKED: gettextCatalog.getString('This key is revoked.', null, 'Info'),
-        KEY_EXPIRED: gettextCatalog.getString('This key is expired.', null, 'Info'),
-        fingerprintReplaced(key) {
-            return gettextCatalog.getString(
-                'The public key with fingerprint {{key}} was replaced with a revoked key.',
-                {
-                    key: key.fingerprint.substring(0, 10)
-                },
-                'Info'
-            );
-        },
-        fingerprintUpdated(key) {
-            return gettextCatalog.getString(
-                'The public key with fingerprint {{key}} updated.',
-                {
-                    key: key.fingerprint.substring(0, 10)
-                },
-                'Info'
-            );
-        },
-        userMismatch(keyemails, emails) {
-            return gettextCatalog.getPlural(
-                keyemails.length,
-                'User IDs mismatch. This key is assigned to {{emails}}.',
-                'User IDs mismatch. The emails {{emails}} are assigned to this key.',
-                { emails },
-                'Warning'
-            );
-        }
-    };
-
-    const toggle = (elem, className, value) => {
-        return elem.classList.contains(className) === value || elem.classList.toggle(className);
-    };
-
-    const listToString = (list = [], separator = I18N.LANG_AND) => {
-        return list.slice(0, -2).join(', ') + list.slice(list.length - 2, list.length).join(` ${separator} `);
-    };
-
-    const moveToBottom = (list, key) => {
-        const { start, end } = list.reduce(
-            (acc, item) => {
-                const type = !item[key] ? 'start' : 'end';
-                acc[type].push(item);
-                return acc;
-            },
-            { start: [], end: [] }
-        );
-        return start.concat(end);
-    };
-
-    const invalidUserId = ([{ users }], scope) => {
-        // we don't normalize anything here because enigmail / pgp also doesn't normalize it.
-        const userids = _.map(users, ({ userId }) => userId.userid);
-        const keyemails = _.map(userids, (userid) => {
-            const [, match = userid] = /<([^>]*)>/.exec(userid) || [];
-            return match;
-        });
-
-        if (_.intersection(_.map(keyemails, removeEmailAlias), [removeEmailAlias(scope.email)]).length) {
-            return false;
-        }
-        return I18N.userMismatch(keyemails, listToString(keyemails));
-    };
-
-    const expiredKey = (keyInfo) => {
-        if (!keyInfo.isExpired) {
-            return false;
-        }
-        if (keyInfo.revocationSignatures.length) {
-            return I18N.KEY_REVOKED;
-        }
-        return I18N.KEY_EXPIRED;
-    };
-
-    const invalidMessage = (keyInfo, value, scope) => {
-        const keys = pmcw.getKeys(value);
-        const messages = [expiredKey(keyInfo), invalidUserId(keys, scope)].filter(Boolean);
-        return messages.length && messages.join(' ');
-    };
-
-    const getInfo = (scope) => async (key) => {
-        const [result, isExpired] = await Promise.all([pmcw.keyInfo(key), pmcw.isExpiredKey(pmcw.getKeys(key)[0])]);
-
-        const data = typeof key === 'string' ? pmcw.stripArmor(key) : key;
-        result.key = 'data:application/pgp-keys;base64,' + pmcw.encode_base64(pmcw.arrayToBinaryString(data));
-        result.isExpired = isExpired;
-        result.invalidMessage = invalidMessage(result, key, scope);
-        return result;
-    };
-
-    const getFileKeys = (scope) => (file) => {
-        return readFile(file)
-            .then(getInfo(scope))
-            .catch(() => ({ error: file.name }));
-    };
-
-    const getValidKeys = async (fileList, scope) => {
-        const keys = await Promise.all(_.map(fileList, getFileKeys(scope)));
-
-        const { invalid, valid } = keys.reduce(
-            (acc, key) => {
-                const type = key.error ? 'invalid' : 'valid';
-                acc[type].push(key);
-                return key;
-            },
-            { invalid: [], valid: [] }
-        );
-
-        if (invalid.length) {
-            notification.error(I18N.invalidKeys(listToString(invalid)));
-        }
-
-        return valid;
-    };
-
-    const getKeyStatus = (keys = [], items = []) => {
-        const MAP_FINGERPRINT = items.reduce((acc, item, index) => {
-            acc[item.fingerprint] = { item, index };
-            return acc;
-        }, {});
-
-        const config = keys.reduce(
-            (acc, key) => {
-                const type = MAP_FINGERPRINT[key.fingerprint] ? 'knows' : 'new';
-                acc[type].push(key);
-                return key;
-            },
-            { knows: [], news: [] }
-        );
-
-        return { ...config, MAP_FINGERPRINT };
-    };
+    const INVALID_KEY = gettextCatalog.getString('%s is not a valid PGP key.', null, 'Error message');
+    const LANG_AND = gettextCatalog.getString('and', null, 'String separator');
+    const toggle = (elem, className, value) =>
+        elem.classList.contains(className) === value || elem.classList.toggle(className);
 
     return {
         restrict: 'E',
@@ -178,7 +42,7 @@ function contactPublicKeys(
             const type = scope.type;
             const state = scope.state;
             const list = element.find('.contactItem-container');
-            const isInternal = scope.internalKeys.RecipientType === RECIPIENT_TYPE.TYPE_INTERNAL;
+            const isInternal = scope.internalKeys.RecipientType === CONSTANTS.RECIPIENT_TYPE.TYPE_INTERNAL;
 
             list.addClass(`contactItem-container-${scope.type}`);
             list.addClass(AS_SORTABLE_DISABLED);
@@ -311,10 +175,14 @@ function contactPublicKeys(
                             item.customKey = !scope.BE.items.some((bItem) => item.fingerprint === bItem.fingerprint);
                         });
                         // make sure the verification keys are at the bottom.
-                        scope.UI.items = moveToBottom(scope.UI.items, 'verificationOnly');
+                        scope.UI.items = scope.UI.items
+                            .filter(({ verificationOnly = false }) => !verificationOnly)
+                            .concat(scope.UI.items.filter(({ verificationOnly = false }) => verificationOnly));
                     } else {
                         // make sure the verification keys are at the bottom.
-                        scope.UI.items = moveToBottom(scope.UI.items, 'isExpired');
+                        scope.UI.items = scope.UI.items
+                            .filter(({ isExpired = false }) => !isExpired)
+                            .concat(scope.UI.items.filter(({ isExpired = false }) => isExpired));
                     }
                     scope.model[type] = scope.UI.items;
                     scope.keyPinningEnabled =
@@ -324,6 +192,72 @@ function contactPublicKeys(
                     toggle(element[0], 'all-keys-trusted', !scope.BE.hasUntrusted && scope.BE.items.length > 0);
                 });
             scope.visibleItems = () => scope.UI.items.filter(({ hide }) => !hide);
+
+            const readFile = async (file) => {
+                const reader = new FileReader();
+                return new Promise((resolve, reject) => {
+                    reader.addEventListener('load', () => resolve(reader.result), false);
+                    reader.addEventListener('error', () => reject(reader), false);
+
+                    reader.readAsBinaryString(file);
+                });
+            };
+
+            const listToString = (separator, list) =>
+                list.slice(0, -2).join(', ') + list.slice(list.length - 2, list.length).join(` ${separator} `);
+
+            const expiredKey = (keyInfo) => {
+                if (!keyInfo.isExpired) {
+                    return false;
+                }
+                if (keyInfo.revocationSignatures.length) {
+                    return gettextCatalog.getString('This key is revoked.');
+                }
+                return gettextCatalog.getString('This key is expired.');
+            };
+
+            const invalidUserId = ([{ users }]) => {
+                // we don't normalize anything here because enigmail / pgp also doesn't normalize it.
+                const userids = _.map(users, ({ userId }) => userId.userid);
+                const keyemails = _.map(userids, (userid) => {
+                    const match = /<([^>]*)>/.exec(userid);
+                    return match ? match[1] : userid;
+                });
+
+                if (_.intersection(_.map(keyemails, removeEmailAlias), [removeEmailAlias(scope.email)]).length) {
+                    return false;
+                }
+
+                const assigned = listToString(LANG_AND, keyemails);
+                const template = gettextCatalog.getPlural(
+                    keyemails.length,
+                    'User IDs mismatch. This key is assigned to %1.',
+                    'User IDs mismatch. The emails %1 are assigned to this key.'
+                );
+                return template.replace('%1', assigned);
+            };
+
+            const invalidMessage = (keyInfo, value) => {
+                const keys = pmcw.getKeys(value);
+                const messages = _.filter([expiredKey(keyInfo), invalidUserId(keys)]);
+                if (messages.length === 0) {
+                    return false;
+                }
+                return messages.join(' ');
+            };
+
+            const getInfo = (key) =>
+                Promise.all([pmcw.keyInfo(key), pmcw.isExpiredKey(pmcw.getKeys(key)[0])]).then(
+                    ([result, isExpired]) => {
+                        const data = typeof key === 'string' ? pmcw.stripArmor(key) : key;
+                        result.key =
+                            'data:application/pgp-keys;base64,' + pmcw.encode_base64(pmcw.arrayToBinaryString(data));
+                        result.isExpired = isExpired;
+                        result.invalidMessage = invalidMessage(result, key);
+
+                        return result;
+                    }
+                );
 
             const getDetails = (index, keyInfo) => {
                 const created = keyInfo.created.toLocaleDateString();
@@ -423,47 +357,81 @@ function contactPublicKeys(
                 scope.BE.hasUntrusted = _.some(scope.BE.items, ({ hide }) => !hide);
             }
 
-            const refresh = ({ keys = [], newKeys = [], MAP }, target) => {
-                scope.$applyAsync(() => {
-                    keys.forEach((key) => {
-                        const { index } = MAP[key.fingerprint];
-                        const isReplace = !scope.UI.items[index].isExpired && key.revocationSignatures.length;
-                        const action = isReplace ? 'fingerprintReplaced' : 'fingerprintUpdated';
-                        notification.info(I18N[action](key));
-                        setPublicKey(index, key);
-                    });
-
-                    if (newKeys.length && scope.UI.items.length === 1 && scope.UI.items[0].value === '') {
-                        setPublicKey(0, newKeys[0]);
-                        newKeys.splice(0, 1);
-                    }
-
-                    newKeys.forEach(newKeys, (keyInfo) => {
-                        addNewField();
-                        setPublicKey(scope.UI.items.length - 1, keyInfo);
-                    });
-                    scope.change();
-                    target.value = '';
-                });
-            };
-
-            const onChange = async ({ target }) => {
+            const onChange = ({ target }) => {
                 if (!$(target).is('input[type=file]') || !target.files || target.files.length === 0) {
                     return;
                 }
 
-                try {
-                    const keys = await getValidKeys(target.files, scope);
-                    const config = getKeyStatus(keys, scope.UI.items);
+                Promise.all(
+                    _.map(target.files, (file) =>
+                        readFile(file)
+                            .then(getInfo)
+                            .catch(() => {
+                                return { error: file.name };
+                            })
+                    )
+                )
+                    .then((keys) => {
+                        const invalidKeys = _.filter(_.map(keys, 'error'));
+                        if (invalidKeys.length) {
+                            notification.error(INVALID_KEY.replace('%s', listToString(LANG_AND, invalidKeys)));
+                        }
+                        return _.filter(keys, ({ error = false }) => !error);
+                    })
+                    .then((keys) => {
+                        const knownKeys = keys.filter(({ fingerprint }) =>
+                            scope.UI.items.map(({ fingerprint }) => fingerprint).includes(fingerprint)
+                        );
+                        const newKeys = keys.filter(
+                            ({ fingerprint }) =>
+                                !scope.UI.items.map(({ fingerprint }) => fingerprint).includes(fingerprint)
+                        );
+                        return [knownKeys, newKeys];
+                    })
+                    .then(([knownKeys, newKeys]) => {
+                        if (knownKeys.length === 0 && newKeys.length === 0) {
+                            target.value = '';
+                            return;
+                        }
+                        scope.$applyAsync(() => {
+                            knownKeys.forEach((key) => {
+                                const index = scope.UI.items.findIndex(
+                                    ({ fingerprint }) => key.fingerprint === fingerprint
+                                );
+                                if (index < 0) {
+                                    return;
+                                }
+                                if (!scope.UI.items[index].isExpired && key.revocationSignatures.length) {
+                                    notification.info(
+                                        gettextCatalog
+                                            .getString(
+                                                'The public key with fingerprint %s was replaced with a revoked key.'
+                                            )
+                                            .replace('%s', key.fingerprint.substring(0, 10))
+                                    );
+                                } else {
+                                    notification.info(
+                                        gettextCatalog
+                                            .getString('The public key with fingerprint %s updated.')
+                                            .replace('%s', key.fingerprint.substring(0, 10))
+                                    );
+                                }
+                                setPublicKey(index, key);
+                            });
+                            if (newKeys.length && scope.UI.items.length === 1 && scope.UI.items[0].value === '') {
+                                setPublicKey(0, newKeys[0]);
+                                newKeys.splice(0, 1);
+                            }
 
-                    if (!config.knows.length && !config.news.length) {
-                        return (target.value = '');
-                    }
-
-                    refresh(config, target);
-                } catch (e) {
-                    target.value = '';
-                }
+                            _.each(newKeys, (keyInfo) => {
+                                addNewField();
+                                setPublicKey(scope.UI.items.length - 1, keyInfo);
+                            });
+                            scope.change();
+                            target.value = '';
+                        });
+                    })
+                    .catch(() => (target.value = ''));
             };
 
             scope.change();

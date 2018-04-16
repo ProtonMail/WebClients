@@ -3,6 +3,7 @@ import { CONSTANTS } from '../../constants';
 
 /* @ngInject */
 function tools($state, $stateParams, mailSettingsModel, AppModel) {
+
     const MAILBOX_KEYS = Object.keys(CONSTANTS.MAILBOX_IDENTIFIERS);
 
     /**
@@ -16,11 +17,7 @@ function tools($state, $stateParams, mailSettingsModel, AppModel) {
 
     const mobileResponsive = () => {
         AppModel.set('mobile', document.body.offsetWidth < CONSTANTS.MOBILE_BREAKPOINT);
-        AppModel.set(
-            'tablet',
-            document.body.offsetWidth < CONSTANTS.DESKTOP_BREAKPOINT &&
-                document.body.offsetWidth > CONSTANTS.MOBILE_BREAKPOINT
-        );
+        AppModel.set('tablet', document.body.offsetWidth < CONSTANTS.DESKTOP_BREAKPOINT && document.body.offsetWidth > CONSTANTS.MOBILE_BREAKPOINT);
     };
 
     const colors = () => {

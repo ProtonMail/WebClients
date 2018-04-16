@@ -1,10 +1,10 @@
 /* @ngInject */
 function premiumDomainModel(authentication, domainApi) {
     const CACHE = {};
-    const set = (premiums = []) => (CACHE.premiums = premiums);
+    const set = (premiums = []) => CACHE.premiums = premiums;
     const get = () => CACHE.premiums.slice();
     const first = () => {
-        const [domain = 'pm.me'] = get() || [];
+        const [ domain = 'pm.me' ] = get() || [];
         return domain;
     };
     const fetch = () => domainApi.premium().then(({ Domains = [] }) => (set(Domains), get()));

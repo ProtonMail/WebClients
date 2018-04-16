@@ -1,21 +1,7 @@
 /* @ngInject */
-function pmMeModel(
-    addressModel,
-    askPassword,
-    authentication,
-    setupAddressModal,
-    gettextCatalog,
-    networkActivityTracker,
-    notification,
-    User,
-    premiumDomainModel
-) {
+function pmMeModel(addressModel, askPassword, authentication, setupAddressModal, gettextCatalog, networkActivityTracker, notification, User, premiumDomainModel) {
     const I18N = {
-        info: gettextCatalog.getString(
-            'Set a display name and signature for {{email}}',
-            { email: premiumDomainModel.email() },
-            'Info to setup @pm.me address'
-        ),
+        info: gettextCatalog.getString('Set a display name and signature for {{email}}', { email: premiumDomainModel.email() }, 'Info to setup @pm.me address'),
         paid() {
             return gettextCatalog.getString(
                 'You can now send and receive email from your new {{email}} address!',

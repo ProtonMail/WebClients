@@ -18,10 +18,7 @@ function arrowsToScroll() {
                 const $buttons = element.find(`.${BUTTON_CLASS}`);
                 const $left = element.find('[data-direction="left"]');
                 const $right = element.find('[data-direction="right"]');
-                const onResize = _.debounce(
-                    () => $buttons.prop('disabled', container.get(0).scrollWidth < container.get(0).clientWidth),
-                    300
-                );
+                const onResize = _.debounce(() => $buttons.prop('disabled', container.get(0).scrollWidth < container.get(0).clientWidth), 300);
                 const onScroll = _.debounce(() => {
                     const position = container.scrollLeft();
                     const maxScrollLeft = container.get(0).scrollWidth - container.get(0).clientWidth;

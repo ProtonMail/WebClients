@@ -57,9 +57,7 @@ function iconAttachment(embedded) {
         replace: true,
         templateUrl: require('../../../templates/attachments/iconAttachment.tpl.html'),
         link(scope, el) {
-            const outerClassNames = []
-                .concat(getAttachmentType(scope.attachment))
-                .concat(getFileIconsType(scope.attachment));
+            const outerClassNames = [].concat(getAttachmentType(scope.attachment)).concat(getFileIconsType(scope.attachment));
             const innerClassNames = getInnerFileIconTypes(scope.attachment);
             const fileOuterIcon = el[0].querySelector('.file-outer-icon');
             const fileInnerIcon = el[0].querySelector('.file-inner-icon');

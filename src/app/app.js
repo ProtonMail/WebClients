@@ -135,18 +135,7 @@ angular
                 event.preventDefault();
                 $state.go('secured.inbox');
                 return;
-            } else if (
-                isLogin ||
-                isSub ||
-                isSupport ||
-                isAccount ||
-                isSignup ||
-                isOutside ||
-                isUpgrade ||
-                isReset ||
-                isPrinter ||
-                isPgp
-            ) {
+            } else if (isLogin || isSub || isSupport || isAccount || isSignup || isOutside || isUpgrade || isReset || isPrinter || isPgp) {
                 // if on the login, support, account, or signup pages dont require authentication
                 $log.debug(
                     'appjs:(isLogin || isSub || isSupport || isAccount || isSignup || isOutside || isUpgrade || isReset || isPrinter || isPgp)'

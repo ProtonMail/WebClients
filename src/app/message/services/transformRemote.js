@@ -3,9 +3,7 @@ import { REMOTE, WHITELIST } from '../../constants';
 
 /* @ngInject */
 function transformRemote($state, $rootScope, mailSettingsModel) {
-    const ATTRIBUTES = ['url', 'xlink:href', 'srcset', 'src', 'svg', 'background', 'poster'].map(
-        (name) => `proton-${name}`
-    );
+    const ATTRIBUTES = ['url', 'xlink:href', 'srcset', 'src', 'svg', 'background', 'poster'].map((name) => `proton-${name}`);
 
     const REGEXP_FIXER = (() => {
         const str = ATTRIBUTES.map((key) => {
@@ -40,10 +38,9 @@ function transformRemote($state, $rootScope, mailSettingsModel) {
          * @return {Object}
          */
         const mapAttributes = (node) => {
-            return flow(
-                filter((attr) => ATTRIBUTES.indexOf(attr.name) !== -1),
-                reduce((acc, attr) => ((acc[`${attr.name}`] = attr.value), acc), {})
-            )(node.attributes);
+            return flow(filter((attr) => ATTRIBUTES.indexOf(attr.name) !== -1), reduce((acc, attr) => ((acc[`${attr.name}`] = attr.value), acc), {}))(
+                node.attributes
+            );
         };
 
         const $list = [].slice.call(html.querySelectorAll(selector));

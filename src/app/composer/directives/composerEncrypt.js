@@ -5,8 +5,7 @@ function composerEncrypt(notification, gettextCatalog, $rootScope) {
         noMatchPassword: gettextCatalog.getString('Message passwords do not match.', null, 'Error')
     };
 
-    const dispatch = (type, message) =>
-        $rootScope.$emit('composer.update', { type, data: { message, type: 'encryption' } });
+    const dispatch = (type, message) => $rootScope.$emit('composer.update', { type, data: { message, type: 'encryption' } });
 
     return {
         replace: true,

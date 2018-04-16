@@ -117,8 +117,7 @@ function ComposeMessageController(
                 removed.length &&
                     removed.forEach((message) => {
                         closeComposer(message);
-                        !isSent(message) &&
-                            notification.info(gettextCatalog.getString('Email was already sent', null, 'Info'));
+                        !isSent(message) && notification.info(gettextCatalog.getString('Email was already sent', null, 'Info'));
                     });
 
                 break;
@@ -252,9 +251,7 @@ function ComposeMessageController(
      * @return {Boolean}
      */
     function checkComposerNumber() {
-        const limit =
-            $scope.messages.length >= CONSTANTS.MAX_NUMBER_COMPOSER ||
-            ($scope.messages.length === 1 && AppModel.is('mobile'));
+        const limit = $scope.messages.length >= CONSTANTS.MAX_NUMBER_COMPOSER || ($scope.messages.length === 1 && AppModel.is('mobile'));
 
         if (limit) {
             notification.error(
@@ -312,8 +309,7 @@ function ComposeMessageController(
             AppModel.set('maximizedComposer', true);
         }
 
-        message.attachmentsToggle =
-            message.Attachments.length - message.NumEmbedded > 0 && message.Attachments.length > message.NumEmbedded;
+        message.attachmentsToggle = message.Attachments.length - message.NumEmbedded > 0 && message.Attachments.length > message.NumEmbedded;
         message.ccbcc = false;
         message.autocompletesFocussed = false;
 
