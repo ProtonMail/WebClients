@@ -178,18 +178,6 @@
             }
         }
 
-        .composer-btn-encryption {
-            padding-top: 1px;
-
-            .fa {
-                font-size: 15px;
-            }
-        }
-
-        .composer-btn-expiration .fa {
-            font-size: 12px;
-        }
-
         .plain-text-icon {
             display: inline-block;
             width: 17px;
@@ -466,6 +454,21 @@
                 &.disabled {
                     background: black;
                 }
+            }
+
+            .composer-btn-encryption {
+                padding-top: 1px;
+
+                .fa {
+                    font-size: 15px;
+                }
+            }
+
+            .composer-btn-expiration { padding-top: 2px }
+            .composer-btn-expiration svg { fill: $button-color }
+            .composer-btn-expiration:hover svg,
+            .composer-btn-expiration:focus svg {
+                fill: $button-color-focus;
             }
         }
 
