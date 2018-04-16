@@ -1,3 +1,5 @@
+import juice from 'juice/client';
+
 /**
  * Iterates through all parent nodes (including current), comparing against cb.
  * @param {DOMNode} node
@@ -17,3 +19,5 @@ export const findParent = (node, cb) => {
         }
     }
 };
+
+export const inlineCss = (html = '') => juice(html);
