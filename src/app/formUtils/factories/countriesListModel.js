@@ -56,6 +56,7 @@ function countriesListModel() {
         { value: 'CI', label: 'Cote d Ivoire (Ivory Coast)' },
         { value: 'HR', label: 'Croatia' },
         { value: 'CU', label: 'Cuba' },
+        { value: 'CW', label: 'Curaçao' },
         { value: 'CY', label: 'Cyprus' },
         { value: 'CZ', label: 'Czech Republic' },
         { value: 'DK', label: 'Denmark' },
