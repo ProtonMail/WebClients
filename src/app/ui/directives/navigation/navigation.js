@@ -8,7 +8,10 @@ function navigation(dispatchers, blackFridayModel) {
         templateUrl: require('../../../../templates/ui/navigation/navigation.tpl.html'),
         link(scope, element) {
             const { on, unsubscribe } = dispatchers();
-            const update = () => element[0].classList[blackFridayModel.isBlackFridayPeriod(true) ? 'add' : 'remove'](IS_BLACK_FRIDAY_CLASS);
+            const update = () =>
+                element[0].classList[blackFridayModel.isBlackFridayPeriod(true) ? 'add' : 'remove'](
+                    IS_BLACK_FRIDAY_CLASS
+                );
 
             on('subscription', (event, { type = '' }) => {
                 type === 'update' && update();

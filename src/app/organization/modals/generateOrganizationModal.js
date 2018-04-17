@@ -102,7 +102,11 @@ function generateOrganizationModal(
                                                     .replaceKeys(payload, creds)
                                                     .then(() => {
                                                         notification.success(
-                                                            gettextCatalog.getString('Organization keys change successful', null, 'Error')
+                                                            gettextCatalog.getString(
+                                                                'Organization keys change successful',
+                                                                null,
+                                                                'Error'
+                                                            )
                                                         );
                                                         return resolve(params.submit(decryptedKey));
                                                     })

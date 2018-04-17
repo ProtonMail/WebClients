@@ -1,7 +1,17 @@
 import { CONSTANTS } from '../../constants';
 
 /* @ngInject */
-function attachmentApi($http, url, $q, dispatchers, authentication, pmcw, CONFIG, secureSessionStorage, gettextCatalog) {
+function attachmentApi(
+    $http,
+    url,
+    $q,
+    dispatchers,
+    authentication,
+    pmcw,
+    CONFIG,
+    secureSessionStorage,
+    gettextCatalog
+) {
     const MAP = {
         message: {},
         request: {}
@@ -191,7 +201,8 @@ function attachmentApi($http, url, $q, dispatchers, authentication, pmcw, CONFIG
 
             const msg = pmcw.getMessage(packets.keys);
 
-            pmcw.decryptSessionKey({ message: msg, privateKeys: keys })
+            pmcw
+                .decryptSessionKey({ message: msg, privateKeys: keys })
                 .then((sessionKey) => ({
                     REQUEST_ID,
                     sessionKey,

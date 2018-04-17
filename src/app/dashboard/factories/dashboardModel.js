@@ -23,7 +23,8 @@ function dashboardModel(
     const { MONTHLY, YEARLY, TWO_YEARS } = CONSTANTS.CYCLE;
     const CACHE_PLAN = {};
     const CACHE_API = {};
-    const filter = (amount) => $filter('currency')(amount / 100 / dashboardConfiguration.cycle(), dashboardConfiguration.currency());
+    const filter = (amount) =>
+        $filter('currency')(amount / 100 / dashboardConfiguration.cycle(), dashboardConfiguration.currency());
     const get = (key) => {
         const cache = angular.copy(CACHE_PLAN);
         return key ? cache[key] : cache;
@@ -180,14 +181,16 @@ function dashboardModel(
      * @return {Promise}
      */
     const loadPlans = (Currency = dashboardConfiguration.currency()) => {
-        const promise = Promise.all([loadPlanCycle(Currency), loadPlanCycle(Currency, MONTHLY), loadPlanCycle(Currency, TWO_YEARS)]).then(
-            ([yearly, monthly, twoYears]) => {
-                CACHE_PLAN[YEARLY] = angular.copy(yearly);
-                CACHE_PLAN[MONTHLY] = angular.copy(monthly);
-                CACHE_PLAN[TWO_YEARS] = angular.copy(twoYears);
-                return angular.copy(CACHE_PLAN);
-            }
-        );
+        const promise = Promise.all([
+            loadPlanCycle(Currency),
+            loadPlanCycle(Currency, MONTHLY),
+            loadPlanCycle(Currency, TWO_YEARS)
+        ]).then(([yearly, monthly, twoYears]) => {
+            CACHE_PLAN[YEARLY] = angular.copy(yearly);
+            CACHE_PLAN[MONTHLY] = angular.copy(monthly);
+            CACHE_PLAN[TWO_YEARS] = angular.copy(twoYears);
+            return angular.copy(CACHE_PLAN);
+        });
 
         networkActivityTracker.track(promise);
         return promise;

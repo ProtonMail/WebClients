@@ -29,8 +29,7 @@ function sidebarContact(dispatchers, backState, contactCache, contactMerger, get
                     element.removeClass(SHOW_DELETE_CONTACTS);
                 }
                 const emails = contactMerger.extractDuplicates(contacts);
-                const duplicates = Object.keys(emails)
-                    .reduce((acc, key) => acc + emails[key].length, 0);
+                const duplicates = Object.keys(emails).reduce((acc, key) => acc + emails[key].length, 0);
 
                 if (duplicates > 0) {
                     element.addClass(SHOW_MERGE_BUTTON);

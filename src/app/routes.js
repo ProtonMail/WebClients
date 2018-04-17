@@ -1,5 +1,14 @@
 import _ from 'lodash';
-import { PAID_ADMIN_ROLE, PAID_MEMBER_ROLE, INVITE_MAIL, INVITE_URL, OAUTH_KEY, MAILBOX_IDENTIFIERS, CURRENCIES, BILLING_CYCLE } from './constants';
+import {
+    PAID_ADMIN_ROLE,
+    PAID_MEMBER_ROLE,
+    INVITE_MAIL,
+    INVITE_URL,
+    OAUTH_KEY,
+    MAILBOX_IDENTIFIERS,
+    CURRENCIES,
+    BILLING_CYCLE
+} from './constants';
 
 export default angular
     .module('proton.routes', ['ui.router', 'proton.authentication', 'proton.constants', 'proton.utils'])
@@ -151,7 +160,15 @@ export default angular
             .state('secured.resetTheme', {
                 url: '/reset-theme',
                 resolve: {
-                    reset(user, networkActivityTracker, settingsMailApi, notification, eventManager, gettextCatalog, $state) {
+                    reset(
+                        user,
+                        networkActivityTracker,
+                        settingsMailApi,
+                        notification,
+                        eventManager,
+                        gettextCatalog,
+                        $state
+                    ) {
                         const I18N = {
                             SUCCESS: gettextCatalog.getString('Theme reset! Redirecting...', null, 'Info'),
                             ERROR: gettextCatalog.getString('Unable to reset theme', null, 'Error')
@@ -291,7 +308,16 @@ export default angular
                 views: {
                     content: {
                         templateUrl: require('../templates/views/outside.unlock.tpl.html'),
-                        controller($scope, $state, $stateParams, pmcw, encryptedToken, networkActivityTracker, notification, secureSessionStorage) {
+                        controller(
+                            $scope,
+                            $state,
+                            $stateParams,
+                            pmcw,
+                            encryptedToken,
+                            networkActivityTracker,
+                            notification,
+                            secureSessionStorage
+                        ) {
                             $scope.params = {
                                 MessagePassword: ''
                             };
@@ -301,7 +327,7 @@ export default angular
                             $scope.unlock = () => {
                                 const message = pmcw.getMessage(encryptedToken);
                                 const promise = pmcw
-                                    .decryptMessage({ message, passwords: [ $scope.params.MessagePassword ] })
+                                    .decryptMessage({ message, passwords: [$scope.params.MessagePassword] })
                                     .then((decryptedToken) => {
                                         secureSessionStorage.setItem('proton:decrypted_token', decryptedToken.data);
                                         secureSessionStorage.setItem(
@@ -329,9 +355,14 @@ export default angular
                         return lazyLoader.app().then(i18nLoader.localizeDate);
                     },
                     messageData(app, $stateParams, $q, Eo, messageModel, pmcw, secureSessionStorage) {
-                        const password = pmcw.decode_utf8_base64(secureSessionStorage.getItem('proton:encrypted_password'));
+                        const password = pmcw.decode_utf8_base64(
+                            secureSessionStorage.getItem('proton:encrypted_password')
+                        );
 
-                        return Eo.message(secureSessionStorage.getItem('proton:decrypted_token'), $stateParams.tag).then(({ data = {} }) => {
+                        return Eo.message(
+                            secureSessionStorage.getItem('proton:decrypted_token'),
+                            $stateParams.tag
+                        ).then(({ data = {} }) => {
                             const message = data.Message;
                             const promises = _.reduce(
                                 message.Replies,
@@ -339,7 +370,7 @@ export default angular
                                     const promise = pmcw
                                         .decryptMessage({
                                             message: pmcw.getMessage(reply.Body),
-                                            passwords: [ password ]
+                                            passwords: [password]
                                         })
                                         .then(({ data }) => (reply.DecryptedBody = data));
                                     acc.push(promise);
@@ -349,7 +380,7 @@ export default angular
                                     pmcw
                                         .decryptMessage({
                                             message: pmcw.getMessage(message.Body),
-                                            passwords: [ password ]
+                                            passwords: [password]
                                         })
                                         .then(({ data } = {}) => (message.DecryptedBody = data))
                                 ]
@@ -373,7 +404,9 @@ export default angular
                     messageData($stateParams, Eo, messageModel, pmcw, secureSessionStorage) {
                         const tokenId = $stateParams.tag;
                         const decryptedToken = secureSessionStorage.getItem('proton:decrypted_token');
-                        const password = pmcw.decode_utf8_base64(secureSessionStorage.getItem('proton:encrypted_password'));
+                        const password = pmcw.decode_utf8_base64(
+                            secureSessionStorage.getItem('proton:encrypted_password')
+                        );
 
                         return Eo.message(decryptedToken, tokenId).then((result) => {
                             const message = result.data.Message;
@@ -382,11 +415,14 @@ export default angular
                             return pmcw
                                 .decryptMessage({
                                     message: pmcw.getMessage(message.Body),
-                                    passwords: [ password ]
+                                    passwords: [password]
                                 })
                                 .then((body) => {
                                     const attachments = _.filter(message.Attachments, (attachment) => {
-                                        return attachment.Headers && (attachment.Headers['content-id'] || attachment.Headers['content-location']);
+                                        return (
+                                            attachment.Headers &&
+                                            (attachment.Headers['content-id'] || attachment.Headers['content-location'])
+                                        );
                                     });
 
                                     message.DecryptedBody = body.data;

@@ -44,7 +44,10 @@ function menuLabel(dispatchers, labelsModel, $stateParams, $state, sidebarModel)
             const { on, unsubscribe } = dispatchers();
 
             const updateCache = () => {
-                el[0].innerHTML = _.sortBy(labelsModel.get(), 'Order').reduce((acc, label) => acc + template(label), '');
+                el[0].innerHTML = _.sortBy(labelsModel.get(), 'Order').reduce(
+                    (acc, label) => acc + template(label),
+                    ''
+                );
             };
 
             const updateCounter = () => {

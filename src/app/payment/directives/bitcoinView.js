@@ -17,14 +17,11 @@ function bitcoinView(paymentBitcoinModel, dispatchers, CONSTANTS) {
             el[0].classList.add(`bitcoinView-type-${type}`);
 
             const load = () => {
-                dispatcher.payment(
-                    'bitcoin.submit',
-                    {
-                        type,
-                        amount: scope.amount,
-                        currency: scope.currency
-                    }
-                );
+                dispatcher.payment('bitcoin.submit', {
+                    type,
+                    amount: scope.amount,
+                    currency: scope.currency
+                });
             };
 
             const onClickReload = ({ target }) => {

@@ -1,5 +1,14 @@
 /* @ngInject */
-function contactImporter($rootScope, contactSchema, importContactModal, notification, vcard, csv, gettextCatalog, networkActivityTracker) {
+function contactImporter(
+    $rootScope,
+    contactSchema,
+    importContactModal,
+    notification,
+    vcard,
+    csv,
+    gettextCatalog,
+    networkActivityTracker
+) {
     const I18N = {
         noFiles: gettextCatalog.getString('No files were selected', null, 'Error'),
         invalid: gettextCatalog.getString('Invalid file type', null, 'Error'),
@@ -7,7 +16,10 @@ function contactImporter($rootScope, contactSchema, importContactModal, notifica
     };
 
     const dispatch = (data = []) =>
-        $rootScope.$emit('contacts', { type: 'createContact', data: { contacts: contactSchema.prepareContacts(data), mode: 'import' } });
+        $rootScope.$emit('contacts', {
+            type: 'createContact',
+            data: { contacts: contactSchema.prepareContacts(data), mode: 'import' }
+        });
 
     const importVCF = async (reader) => dispatch(vcard.from(reader.result));
 

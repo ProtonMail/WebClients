@@ -37,7 +37,8 @@ function signatureModel(
         return eventManager.call();
     };
 
-    const save = ({ ID = getFirstID(), DisplayName, Signature }) => networkActivityTracker.track(saveIdentity(ID, DisplayName, Signature));
+    const save = ({ ID = getFirstID(), DisplayName, Signature }) =>
+        networkActivityTracker.track(saveIdentity(ID, DisplayName, Signature));
     const changeProtonStatus = ({ status }) => networkActivityTracker.track(changePMSignature(status));
 
     return {

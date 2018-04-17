@@ -32,7 +32,6 @@ function contactCache(
     const findIndex = (ID) => _.findIndex(CACHE.contacts, { ID });
     const emit = () => dispatcher.contacts('contactsUpdated', { all: get() });
     const orderBy = (contacts = []) => {
-
         if (!$state.includes('secured.contacts')) {
             return contacts;
         }
@@ -54,7 +53,8 @@ function contactCache(
         });
     };
     const lowerCase = (word = '') => word.toLowerCase();
-    const filterEmails = (emails = [], value = '') => _.filter(emails, ({ Email = '' }) => lowerCase(Email).indexOf(value) > -1);
+    const filterEmails = (emails = [], value = '') =>
+        _.filter(emails, ({ Email = '' }) => lowerCase(Email).indexOf(value) > -1);
     const total = () => ($stateParams.keyword ? CACHE.map.filtered.length : CACHE.contacts.length);
     const isHydrated = () => CACHE.hydrated;
 
@@ -62,7 +62,7 @@ function contactCache(
         const selected = flow(filter(({ selected }) => selected), map('ID'))(get());
 
         if (!selected.length && ID) {
-            return [ ID ];
+            return [ID];
         }
 
         return selected;
@@ -131,7 +131,7 @@ function contactCache(
      * added if it exists
      * @param  {Object} [ { ID }
      */
-    function sync([ { ID } = {} ] = []) {
+    function sync([{ ID } = {}] = []) {
         const emails = contactEmails.get();
 
         // Synchronise emails

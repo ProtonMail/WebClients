@@ -1,14 +1,7 @@
 import _ from 'lodash';
 
 /* @ngInject */
-function encryptPackages(
-    CONSTANTS,
-    pmcw,
-    authentication,
-    AttachmentLoader,
-    postMessage
-) {
-
+function encryptPackages(CONSTANTS, pmcw, authentication, AttachmentLoader, postMessage) {
     const { SEND_TYPES } = CONSTANTS;
     const arrayToBase64 = _.flowRight(pmcw.encode_base64, pmcw.arrayToBinaryString);
     const packToBase64 = ({ data }) => arrayToBase64(data);
@@ -51,7 +44,9 @@ function encryptPackages(
                     passwords: address.Type & SEND_TYPES.SEND_EO ? [message.Password] : undefined,
                     publicKeys: address.Type & SEND_TYPES.SEND_EO ? undefined : [address.PublicKey]
                 })
-                    .then((keys) => _.zipObject(_.map(attachmentKeys, ({ AttachmentID, ID }) => AttachmentID || ID), keys))
+                    .then((keys) =>
+                        _.zipObject(_.map(attachmentKeys, ({ AttachmentID, ID }) => AttachmentID || ID), keys)
+                    )
                     .then((AttachmentKeyPackets) => {
                         address.AttachmentKeyPackets = AttachmentKeyPackets;
                     });
@@ -59,7 +54,9 @@ function encryptPackages(
 
             if (pack.Type & SEND_TYPES.SEND_CLEAR) {
                 pack.AttachmentKeys = _.extend(
-                    ..._.map(attachmentKeys, ({ sessionKey = {}, AttachmentID, ID } = {}) => ({ [AttachmentID || ID]: packToBase64(sessionKey) }))
+                    ..._.map(attachmentKeys, ({ sessionKey = {}, AttachmentID, ID } = {}) => ({
+                        [AttachmentID || ID]: packToBase64(sessionKey)
+                    }))
                 );
             }
 
@@ -157,7 +154,13 @@ function encryptPackages(
          */
         const encryptPack = message.getDecryptedBody() === pack.Body ? encryptDraftBodyPackage : encryptBodyPackage;
 
-        const { keys, encrypted, sessionKey } = await encryptPack(pack, privateKeys, addressKeys, publicKeysList, message);
+        const { keys, encrypted, sessionKey } = await encryptPack(
+            pack,
+            privateKeys,
+            addressKeys,
+            publicKeysList,
+            message
+        );
 
         let counter = 0;
         _.each(publicKeysList, (publicKey, index) => {
@@ -173,9 +176,11 @@ function encryptPackages(
             if (subPack.Type !== SEND_TYPES.SEND_EO) {
                 return Promise.resolve();
             }
-            return encryptKeyPacket({ sessionKeys: [sessionKey], passwords: [message.Password] }).then(([BodyKeyPacket]) => {
-                subPack.BodyKeyPacket = BodyKeyPacket;
-            });
+            return encryptKeyPacket({ sessionKeys: [sessionKey], passwords: [message.Password] }).then(
+                ([BodyKeyPacket]) => {
+                    subPack.BodyKeyPacket = BodyKeyPacket;
+                }
+            );
         });
 
         await Promise.all(promises);
@@ -187,7 +192,10 @@ function encryptPackages(
     };
 
     const encryptPackage = (pack, message, privateKeys, attachmentKeys) => {
-        return Promise.all([encryptBody(pack, privateKeys, message), encryptAttachmentKeys(pack, message, attachmentKeys)])
+        return Promise.all([
+            encryptBody(pack, privateKeys, message),
+            encryptAttachmentKeys(pack, message, attachmentKeys)
+        ])
             .then(() => _.each(pack.Addresses, (address) => delete address.PublicKey))
             .then(() => pack);
     };

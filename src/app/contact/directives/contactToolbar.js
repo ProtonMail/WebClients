@@ -1,7 +1,16 @@
 import _ from 'lodash';
 
 /* @ngInject */
-function contactToolbar($state, $stateParams, CONSTANTS, contactCache, gettextCatalog, messageModel, notification, dispatchers) {
+function contactToolbar(
+    $state,
+    $stateParams,
+    CONSTANTS,
+    contactCache,
+    gettextCatalog,
+    messageModel,
+    notification,
+    dispatchers
+) {
     const getList = () => {
         const selected = contactCache.get('selected').filter(Boolean);
 

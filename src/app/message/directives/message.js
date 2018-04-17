@@ -74,13 +74,18 @@ function message(
             const updateMessage = async (promise) => {
                 // must be done when actually loading the message so we don't fetch this info for each message in the conversation
                 // (otherwise causes sendPreferences to fetch all keys from the keyapi.
-                sendPreferences.get([scope.message.SenderAddress]).then(({ [scope.message.SenderAddress]: { pinned, scheme, isVerified } }) =>
-                    scope.$applyAsync(() => {
-                        scope.message.isInternal = scheme === CONSTANTS.SEND_TYPES.SEND_PM;
-                        scope.message.promptKeyPinning = !pinned && mailSettingsModel.get('PromptPin') && scheme === CONSTANTS.SEND_TYPES.SEND_PM;
-                        scope.message.askResign = pinned && !isVerified;
-                    })
-                );
+                sendPreferences
+                    .get([scope.message.SenderAddress])
+                    .then(({ [scope.message.SenderAddress]: { pinned, scheme, isVerified } }) =>
+                        scope.$applyAsync(() => {
+                            scope.message.isInternal = scheme === CONSTANTS.SEND_TYPES.SEND_PM;
+                            scope.message.promptKeyPinning =
+                                !pinned &&
+                                mailSettingsModel.get('PromptPin') &&
+                                scheme === CONSTANTS.SEND_TYPES.SEND_PM;
+                            scope.message.askResign = pinned && !isVerified;
+                        })
+                    );
                 try {
                     const { type, body } = await promise;
                     scope.$applyAsync(() => {
@@ -110,15 +115,24 @@ function message(
                             );
                             const map = _.fromPairs(pairs);
                             const defaults = _.zipObject(recipients, Array(recipients.length).fill('none'));
-                            return _.extend(defaults, _.mapValues(map, (val) => (allowed.includes(val) ? val : 'none')));
+                            return _.extend(
+                                defaults,
+                                _.mapValues(map, (val) => (allowed.includes(val) ? val : 'none'))
+                            );
                         };
 
                         const recipients = _.map(scope.message.ToList, 'Address')
                             .concat(_.map(scope.message.CCList, 'Address'))
                             .concat(_.map(scope.message.BCCList, 'Address'));
                         const parsedHeaders = scope.message.ParsedHeaders; // || { };
-                        const encryptionList = parseRecipientHeader(parsedHeaders['X-Pm-Recipient-Encryption'] || '', recipients);
-                        const authenticationList = parseRecipientHeader(parsedHeaders['X-Pm-Recipient-Authentication'] || '', recipients);
+                        const encryptionList = parseRecipientHeader(
+                            parsedHeaders['X-Pm-Recipient-Encryption'] || '',
+                            recipients
+                        );
+                        const authenticationList = parseRecipientHeader(
+                            parsedHeaders['X-Pm-Recipient-Authentication'] || '',
+                            recipients
+                        );
 
                         const addCryptoInfo = ({ Address, Name }) => ({
                             Address,
@@ -159,77 +173,77 @@ function message(
 
             scope.message.promptKeyPinning = false;
 
-                on('message.open', (e, { type, data }) => {
-                    if (data.message.ID !== scope.message.ID) {
-                        return;
-                    }
+            on('message.open', (e, { type, data }) => {
+                if (data.message.ID !== scope.message.ID) {
+                    return;
+                }
 
-                    switch (type) {
-                        case 'toggle':
-                            openMessage(data);
+                switch (type) {
+                    case 'toggle':
+                        openMessage(data);
 
-                            // Coming from hotkeys or toggle
-                            if (data.action) {
-                                return messageScroll.to({
-                                    index: scope.index,
-                                    message: scope.message,
-                                    node: element[0]
-                                });
-                            }
-
-                            break;
-
-                        case 'embedded.injected':
-                            if (!data.action) {
-                                scope.$applyAsync(() => (scope.body = data.body));
-                            }
-                            break;
-
-                        case 'save.success':
-                            if ($state.includes('secured.allDrafts.**')) {
-                                return $state.go('secured.allDrafts');
-                            }
-
-                            if ($state.includes('secured.drafts.**')) {
-                                return $state.go('secured.drafts');
-                            }
-
-                            openMessage();
-                            break;
-                    }
-                });
-
-                on('message', (event, { type = '', data = {} }) => {
-                    if (type === 'unsubscribed' && data.message.ID === scope.message.ID) {
-                        scope.$applyAsync(() => {
-                            scope.unsubscribed = unsubscribeModel.already(scope.message.getListUnsubscribe());
-                        });
-                    }
-                    if (type === 'decrypted' && data.message.ID === scope.message.ID) {
-                        reloadEncryptionTooltip();
-                    }
-                    if (type === 'reload' && scope.message.Body && data.conversationID === scope.message.ConversationID) {
-                        scope.message.clearTextBody(true).then(() => scope.$applyAsync());
-                    }
-                });
-
-                on('message.refresh', async (event, messageIDs) => {
-                    if (messageIDs.indexOf(scope.message.ID) > -1) {
-                        const message = cache.getMessageCached(scope.message.ID);
-                        const type = tools.typeView();
-
-                        if (message && canBeOpen(message)) {
-                            if (message.IsEncrypted === CONSTANTS.ENCRYPTED_STATUS.PGP_MIME) {
-                                // we need to reload the attachments too: otherwise the attachments disappear from the message
-                                await message.loadPGPAttachments();
-                            }
-                            scope.message = _.extend(scope.message, message);
-                            bindClasses(scope.message);
-                        } else if (type === 'message') {
-                            back();
+                        // Coming from hotkeys or toggle
+                        if (data.action) {
+                            return messageScroll.to({
+                                index: scope.index,
+                                message: scope.message,
+                                node: element[0]
+                            });
                         }
+
+                        break;
+
+                    case 'embedded.injected':
+                        if (!data.action) {
+                            scope.$applyAsync(() => (scope.body = data.body));
+                        }
+                        break;
+
+                    case 'save.success':
+                        if ($state.includes('secured.allDrafts.**')) {
+                            return $state.go('secured.allDrafts');
+                        }
+
+                        if ($state.includes('secured.drafts.**')) {
+                            return $state.go('secured.drafts');
+                        }
+
+                        openMessage();
+                        break;
+                }
+            });
+
+            on('message', (event, { type = '', data = {} }) => {
+                if (type === 'unsubscribed' && data.message.ID === scope.message.ID) {
+                    scope.$applyAsync(() => {
+                        scope.unsubscribed = unsubscribeModel.already(scope.message.getListUnsubscribe());
+                    });
+                }
+                if (type === 'decrypted' && data.message.ID === scope.message.ID) {
+                    reloadEncryptionTooltip();
+                }
+                if (type === 'reload' && scope.message.Body && data.conversationID === scope.message.ConversationID) {
+                    scope.message.clearTextBody(true).then(() => scope.$applyAsync());
+                }
+            });
+
+            on('message.refresh', async (event, messageIDs) => {
+                if (messageIDs.indexOf(scope.message.ID) > -1) {
+                    const message = cache.getMessageCached(scope.message.ID);
+                    const type = tools.typeView();
+
+                    if (message && canBeOpen(message)) {
+                        if (message.IsEncrypted === CONSTANTS.ENCRYPTED_STATUS.PGP_MIME) {
+                            // we need to reload the attachments too: otherwise the attachments disappear from the message
+                            await message.loadPGPAttachments();
+                        }
+                        scope.message = _.extend(scope.message, message);
+                        bindClasses(scope.message);
+                    } else if (type === 'message') {
+                        back();
                     }
-                });
+                }
+            });
 
             function openMessage({ expand } = {}) {
                 if (scope.message.Type === 1) {
@@ -263,7 +277,6 @@ function message(
              * @return {Array}
              */
             scope.getElements = () => [scope.message];
-
 
             /**
              * Get all recipients

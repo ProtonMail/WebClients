@@ -29,11 +29,23 @@ function filterModal(
             { label: gettextCatalog.getString('begins with', null, 'Condition for custom filter'), value: 'starts' },
             { label: gettextCatalog.getString('ends with', null, 'Condition for custom filter'), value: 'ends' },
             { label: gettextCatalog.getString('matches', null, 'Condition for custom filter'), value: 'matches' },
-            { label: gettextCatalog.getString('does not contain', null, 'Condition for custom filter'), value: '!contains' },
+            {
+                label: gettextCatalog.getString('does not contain', null, 'Condition for custom filter'),
+                value: '!contains'
+            },
             { label: gettextCatalog.getString('is not', null, 'Condition for custom filter'), value: '!is' },
-            { label: gettextCatalog.getString('does not begin with', null, 'Condition for custom filter'), value: '!starts' },
-            { label: gettextCatalog.getString('does not end with', null, 'Condition for custom filter'), value: '!ends' },
-            { label: gettextCatalog.getString('does not match', null, 'Condition for custom filter'), value: '!matches' }
+            {
+                label: gettextCatalog.getString('does not begin with', null, 'Condition for custom filter'),
+                value: '!starts'
+            },
+            {
+                label: gettextCatalog.getString('does not end with', null, 'Condition for custom filter'),
+                value: '!ends'
+            },
+            {
+                label: gettextCatalog.getString('does not match', null, 'Condition for custom filter'),
+                value: '!matches'
+            }
         ],
         OPERATORS: [
             { label: gettextCatalog.getString('AND', null, 'Filter modal operators'), value: 'all' },
@@ -213,7 +225,9 @@ function filterModal(
                     on('labelsModel', (e, { type, data }) => {
                         if (type === 'cache.update') {
                             $scope.$applyAsync(() => {
-                                ctrl.filter.Simple.Actions.Labels = ctrl.filter.Simple.Actions.Labels.concat(filterNewLabel(data));
+                                ctrl.filter.Simple.Actions.Labels = ctrl.filter.Simple.Actions.Labels.concat(
+                                    filterNewLabel(data)
+                                );
                                 ctrl.folders = ctrl.folders.concat(filterNewLabel(data, labelsModel.IS_FOLDER));
                             });
                         }
@@ -280,7 +294,11 @@ function filterModal(
                     _.each(ctrl.filter.Simple.Conditions, (condition) => {
                         pass = pass && condition.Type.value !== 'select';
 
-                        if (condition.Type.value === 'subject' || condition.Type.value === 'sender' || condition.Type.value === 'recipient') {
+                        if (
+                            condition.Type.value === 'subject' ||
+                            condition.Type.value === 'sender' ||
+                            condition.Type.value === 'recipient'
+                        ) {
                             pass = pass && condition.Values.length > 0;
                         }
 
@@ -299,7 +317,8 @@ function filterModal(
                     }
 
                     if (ctrl.hasMark === true) {
-                        pass = pass && (ctrl.filter.Simple.Actions.Mark.Starred || ctrl.filter.Simple.Actions.Mark.Read);
+                        pass =
+                            pass && (ctrl.filter.Simple.Actions.Mark.Starred || ctrl.filter.Simple.Actions.Mark.Read);
                     }
 
                     if (ctrl.hasMove === true) {
@@ -405,7 +424,9 @@ function filterModal(
                     }
 
                     if (ctrl.hasLabels === true) {
-                        const labels = _.filter(clone.Simple.Actions.Labels, ({ Selected }) => Selected === true).map(({ Name }) => Name);
+                        const labels = _.filter(clone.Simple.Actions.Labels, ({ Selected }) => Selected === true).map(
+                            ({ Name }) => Name
+                        );
                         const fileInto = bindFileInto(clone.Simple.Actions, labels);
                         clone.Simple.Actions.FileInto = fileInto;
                         delete clone.Simple.Actions.Labels;

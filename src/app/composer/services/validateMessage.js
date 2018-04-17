@@ -4,25 +4,52 @@ const { PLAINTEXT } = MIME_TYPES;
 
 /* @ngInject */
 function validateMessage(gettextCatalog, tools, confirmModal, authentication, notification, addressWithoutKeys) {
-
     const I18N = {
-        STILL_UPLOADING: gettextCatalog.getString('Wait for attachment to finish uploading or cancel upload.', null, 'Error'),
+        STILL_UPLOADING: gettextCatalog.getString(
+            'Wait for attachment to finish uploading or cancel upload.',
+            null,
+            'Error'
+        ),
         invalidEmails(total) {
             return gettextCatalog.getString('Invalid email(s): {{total}}', { total }, 'Error');
         },
-        MAX_BODY_LENGTH: gettextCatalog.getString('The maximum length of the message body is 16,000,000 characters.', null, 'Error'),
+        MAX_BODY_LENGTH: gettextCatalog.getString(
+            'The maximum length of the message body is 16,000,000 characters.',
+            null,
+            'Error'
+        ),
         NO_RECIPIENT: gettextCatalog.getString('Please enter at least one recipient.', null, 'Error'),
-        MAX_SUBJECT_LENGTH: gettextCatalog.getString('The maximum length of the subject is {{size}}.', { size: MAX_TITLE_LENGTH }, 'Error'),
+        MAX_SUBJECT_LENGTH: gettextCatalog.getString(
+            'The maximum length of the subject is {{size}}.',
+            { size: MAX_TITLE_LENGTH },
+            'Error'
+        ),
         maxRecipients(total) {
-            return gettextCatalog.getString('You have {{total}} recipients. The maximum number is 25.', { total }, 'Error');
+            return gettextCatalog.getString(
+                'You have {{total}} recipients. The maximum number is 25.',
+                { total },
+                'Error'
+            );
         },
         NO_SUBJECT_TITLE: gettextCatalog.getString('No subject', null, 'Title'),
         NO_SUBJECT_MESSAGE: gettextCatalog.getString('No subject, send anyway?', null, 'Info'),
         ERROR_ADDRESSES_INFO_PRIVATE: gettextCatalog.getString('You can generate your keys here', null, 'Error'),
-        ERROR_ADDRESSES: gettextCatalog.getString('No address with keys available to compose a message.', null, 'Error'),
+        ERROR_ADDRESSES: gettextCatalog.getString(
+            'No address with keys available to compose a message.',
+            null,
+            'Error'
+        ),
         MEMBER: gettextCatalog.getString('Addresses / Users', null, 'Title'),
-        ERROR_ADDRESSES_INFO: gettextCatalog.getString('Contact your organization’s administrator to resolve this.', null, 'Error'),
-        ERROR_DELINQUENT: gettextCatalog.getString('Your account currently has an overdue invoice. Please pay all unpaid invoices.', null, 'Info')
+        ERROR_ADDRESSES_INFO: gettextCatalog.getString(
+            'Contact your organization’s administrator to resolve this.',
+            null,
+            'Error'
+        ),
+        ERROR_DELINQUENT: gettextCatalog.getString(
+            'Your account currently has an overdue invoice. Please pay all unpaid invoices.',
+            null,
+            'Info'
+        )
     };
 
     const cleanEmails = (message) => {

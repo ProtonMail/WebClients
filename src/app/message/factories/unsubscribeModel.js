@@ -2,8 +2,15 @@ import _ from 'lodash';
 import { openWindow, parseURL } from '../../../helpers/browser';
 
 /* @ngInject */
-function unsubscribeModel(authentication, dispatchers, addressesModel, gettextCatalog, messageModel, notification, simpleSend) {
-
+function unsubscribeModel(
+    authentication,
+    dispatchers,
+    addressesModel,
+    gettextCatalog,
+    messageModel,
+    notification,
+    simpleSend
+) {
     const LIST = [];
     const UNSUBSCRIBE_REGEX = /<(.*?)>/g;
 

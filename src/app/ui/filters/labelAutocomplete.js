@@ -4,7 +4,6 @@ const { OPEN_TAG_AUTOCOMPLETE_RAW, CLOSE_TAG_AUTOCOMPLETE_RAW } = EMAIL_FORMATIN
 
 /* @ngInject */
 function labelAutocomplete() {
-
     return ({ Name = '', Address = '' } = {}) => {
         if (Name === Address) {
             return Address;

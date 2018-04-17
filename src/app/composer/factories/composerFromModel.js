@@ -3,14 +3,25 @@ import _ from 'lodash';
 import { flow, filter, sortBy } from 'lodash/fp';
 
 /* @ngInject */
-function composerFromModel(addressesModel, authentication, confirmModal, gettextCatalog, plusAliasModel, premiumDomainModel) {
+function composerFromModel(
+    addressesModel,
+    authentication,
+    confirmModal,
+    gettextCatalog,
+    plusAliasModel,
+    premiumDomainModel
+) {
     const PM_ADDRESS_ITEM = 'protonmail_pm_address';
     const I18N = {
         OK: gettextCatalog.getString('OK', null, 'Action'),
         DONT_SHOW_AGAIN: gettextCatalog.getString("Don't show this again", null, 'Action'),
         TITLE: gettextCatalog.getString('Sending notice', null, 'Title'),
         error(email) {
-            return gettextCatalog.getString('Sending messages from @pm.me address is a paid feature. Your message will be sent from your default address {{email}}', { email }, 'Error');
+            return gettextCatalog.getString(
+                'Sending messages from @pm.me address is a paid feature. Your message will be sent from your default address {{email}}',
+                { email },
+                'Error'
+            );
         }
     };
     /**

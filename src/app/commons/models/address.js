@@ -23,7 +23,8 @@ function Address($http, url, gettextCatalog) {
      * @return {Promise}
      */
     const create = (address) => {
-        return $http.post(requestUrl(), address)
+        return $http
+            .post(requestUrl(), address)
             .then(handleResult)
             .catch(filterError(I18N.ERROR_CREATE));
     };
@@ -44,7 +45,8 @@ function Address($http, url, gettextCatalog) {
      * @return {Promise}
      */
     const edit = (addressID, params) => {
-        return $http.put(requestUrl(addressID), params)
+        return $http
+            .put(requestUrl(addressID), params)
             .then(handleResult)
             .catch(filterError(I18N.ERROR_UPDATE));
     };
@@ -55,7 +57,8 @@ function Address($http, url, gettextCatalog) {
      * @return {Promise}
      */
     const enable = (addressID) => {
-        return $http.put(requestUrl(addressID, 'enable'))
+        return $http
+            .put(requestUrl(addressID, 'enable'))
             .then(handleResult)
             .catch(filterError(I18N.ERROR_ENABLE));
     };
@@ -66,7 +69,8 @@ function Address($http, url, gettextCatalog) {
      * @return {Promise}
      */
     const disable = (addressID) => {
-        return $http.put(requestUrl(addressID, 'disable'))
+        return $http
+            .put(requestUrl(addressID, 'disable'))
             .then(handleResult)
             .catch(filterError(I18N.ERROR_DISABLE));
     };
@@ -77,19 +81,29 @@ function Address($http, url, gettextCatalog) {
      * @return {Promise}
      */
     const remove = (addressID) => {
-        return $http.delete(requestUrl(addressID))
+        return $http
+            .delete(requestUrl(addressID))
             .then(handleResult)
             .catch(filterError(I18N.ERROR_DELETE));
     };
 
     const order = (params) => {
-        return $http.put(requestUrl('order'), params)
+        return $http
+            .put(requestUrl('order'), params)
             .then(handleResult)
             .catch(filterError(I18N.ERROR_ORDER));
     };
 
-    const query = () => $http.get(requestUrl()).then(handleResult).catch(filterError(I18N.ERROR_QUERY));
-    const get = (addressID) => $http.get(requestUrl(addressID)).then(handleResult).catch(filterError(I18N.ERROR_GET));
+    const query = () =>
+        $http
+            .get(requestUrl())
+            .then(handleResult)
+            .catch(filterError(I18N.ERROR_QUERY));
+    const get = (addressID) =>
+        $http
+            .get(requestUrl(addressID))
+            .then(handleResult)
+            .catch(filterError(I18N.ERROR_GET));
 
     return { create, setup, edit, enable, disable, remove, order, query, get };
 }

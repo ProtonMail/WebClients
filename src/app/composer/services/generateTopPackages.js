@@ -2,13 +2,7 @@ import _ from 'lodash';
 import htmlToTextMail from '../../squire/helpers/htmlToTextMail';
 
 /* @ngInject */
-function generateTopPackages(
-    CONSTANTS,
-    editorModel,
-    AttachmentLoader,
-    mimeMessageBuilder
-) {
-
+function generateTopPackages(CONSTANTS, editorModel, AttachmentLoader, mimeMessageBuilder) {
     const { SEND_TYPES } = CONSTANTS;
 
     /**
@@ -23,7 +17,6 @@ function generateTopPackages(
         }
         return filterCharacters(htmlToTextMail(editor, true));
     };
-
 
     // We NEVER upconvert, if the user wants html: plaintext is actually fine as well
     const generateHTML = (message) => (message.MIMEType === 'text/html' ? message.getDecryptedBody() : false);
@@ -49,7 +42,10 @@ function generateTopPackages(
     const fetchMimeDependencies = (message, composer) =>
         Promise.all([
             Promise.all(
-                _.map(message.getAttachments(), async (attachment) => ({ attachment, data: await AttachmentLoader.get(attachment, message) }))
+                _.map(message.getAttachments(), async (attachment) => ({
+                    attachment,
+                    data: await AttachmentLoader.get(attachment, message)
+                }))
             ),
             generatePlaintext(message, composer)
         ]);
@@ -88,7 +84,10 @@ function generateTopPackages(
             sendPref,
             (packages, info) => ({
                 plaintext: packages.plaintext || info.mimetype === 'text/plain',
-                html: packages.html || info.mimetype === 'text/html' || (info.scheme === SEND_TYPES.SEND_PGP_MIME && !info.encrypt && !info.sign),
+                html:
+                    packages.html ||
+                    info.mimetype === 'text/html' ||
+                    (info.scheme === SEND_TYPES.SEND_PGP_MIME && !info.encrypt && !info.sign),
                 mime: packages.mime || (info.scheme === SEND_TYPES.SEND_PGP_MIME && (info.encrypt || info.sign))
             }),
             {

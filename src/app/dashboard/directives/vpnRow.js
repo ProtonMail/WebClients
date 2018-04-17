@@ -1,5 +1,13 @@
 /* @ngInject */
-function vpnRow(CONSTANTS, dashboardConfiguration, dashboardModel, dispatchers, gettextCatalog, subscriptionModel, customVpnModal) {
+function vpnRow(
+    CONSTANTS,
+    dashboardConfiguration,
+    dashboardModel,
+    dispatchers,
+    gettextCatalog,
+    subscriptionModel,
+    customVpnModal
+) {
     const HAS_VPN_CLASS = 'vpnRow-has-vpn';
     const VPN_BASIC_CLASS = 'vpnRow-vpnbasic';
     const VPN_PLUS_CLASS = 'vpnRow-vpnplus';
@@ -56,7 +64,9 @@ function vpnRow(CONSTANTS, dashboardConfiguration, dashboardModel, dispatchers, 
                     <div class="vpnRow-left">
                         <b class="${getClass(config)}">${getName(config)}</b> ${
                     I18N.with
-                } <button type="button" class="vpnRow-edit" data-action="open-vpn-modal">${getConnections(config)}</button>
+                } <button type="button" class="vpnRow-edit" data-action="open-vpn-modal">${getConnections(
+                    config
+                )}</button>
                     </div>
                     <div class="vpnRow-right">
                         <strong>${getAmount()}</strong>

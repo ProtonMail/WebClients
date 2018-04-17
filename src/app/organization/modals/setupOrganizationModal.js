@@ -38,8 +38,14 @@ function setupOrganizationModal(
             self.step = steps[index];
             self.size = 2048;
 
-            const allocatedLegend = { label: gettextCatalog.getString('Allocated to admin', null), classes: 'background-primary' };
-            const minPaddingLegend = { label: gettextCatalog.getString('Already used', null), classes: 'background-red-striped' };
+            const allocatedLegend = {
+                label: gettextCatalog.getString('Allocated to admin', null),
+                classes: 'background-primary'
+            };
+            const minPaddingLegend = {
+                label: gettextCatalog.getString('Already used', null),
+                classes: 'background-red-striped'
+            };
 
             // Quotas
             self.min = 0;
@@ -50,7 +56,10 @@ function setupOrganizationModal(
 
             self.sliderOptions = {
                 animate: false,
-                start: Math.min(Math.max(Math.round(authentication.user.UsedSpace / self.unit + 1), defaultStorage), self.max / self.unit),
+                start: Math.min(
+                    Math.max(Math.round(authentication.user.UsedSpace / self.unit + 1), defaultStorage),
+                    self.max / self.unit
+                ),
                 step: 0.1,
                 connect: [true, false],
                 tooltips: true,

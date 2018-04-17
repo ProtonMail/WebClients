@@ -4,7 +4,13 @@ function displayImages(prepareContent) {
         message.showImages = true;
 
         return prepareContent(decryptedBody, message, {
-            blacklist: ['transformLinks', 'transformEmbedded', 'transformWelcome', 'transformBlockquotes', 'transformAttachements'],
+            blacklist: [
+                'transformLinks',
+                'transformEmbedded',
+                'transformWelcome',
+                'transformBlockquotes',
+                'transformAttachements'
+            ],
             action
         });
     };

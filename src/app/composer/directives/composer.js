@@ -103,7 +103,10 @@ function composer(AppModel, embedded, attachmentFileFormat, dispatchers, mailSet
                 // ESC
                 if (keyCode === 27) {
                     // Autocomplete input
-                    if (document.activeElement && document.activeElement.classList.contains('autocompleteEmails-input')) {
+                    if (
+                        document.activeElement &&
+                        document.activeElement.classList.contains('autocompleteEmails-input')
+                    ) {
                         return;
                     }
                     if (mailSettingsModel.get('Hotkeys') === 1) {

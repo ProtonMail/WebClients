@@ -20,7 +20,11 @@ function organizationKeysModel(
     const ALLOWED_STATES = ['signatures', 'domains', 'members'].map((n) => `secured.${n}`);
 
     const I18N = {
-        MUST_PRIVATISE_ERROR: gettextCatalog.getString('You must privatize all sub-accounts before generating new organization keys', null, 'Error'),
+        MUST_PRIVATISE_ERROR: gettextCatalog.getString(
+            'You must privatize all sub-accounts before generating new organization keys',
+            null,
+            'Error'
+        ),
         ERROR_ALREADY_ACTIVE: gettextCatalog.getString('Organization keys already active', null, 'Error'),
         ERROR_DEFAULT: gettextCatalog.getString('Organization keys request failed', null, 'Error')
     };

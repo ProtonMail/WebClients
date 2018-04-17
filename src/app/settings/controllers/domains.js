@@ -178,7 +178,9 @@ function DomainsController(
         const { catchall, DomainID, ID, Type } = address;
 
         if (!catchallSupport(Type)) {
-            notification.info(gettextCatalog.getString('This feature is only available for ProtonMail Professional plans or higher'));
+            notification.info(
+                gettextCatalog.getString('This feature is only available for ProtonMail Professional plans or higher')
+            );
             address.catchall = !catchall;
             return;
         }
@@ -225,7 +227,8 @@ function DomainsController(
                 step: 1,
                 domain,
                 submit(Name) {
-                    const promise = domainApi.create({ Name })
+                    const promise = domainApi
+                        .create({ Name })
                         .then((data) => eventManager.call().then(() => data))
                         .then(({ data = {} } = {}) => {
                             notification.success(gettextCatalog.getString('Domain created', null, 'Success'));
@@ -265,7 +268,13 @@ function DomainsController(
             const { VerifyState } = data.Domain || {};
 
             if (VerifyState === 0) {
-                throw new Error(gettextCatalog.getString('Verification did not succeed, please try again in an hour.', null, 'Error'));
+                throw new Error(
+                    gettextCatalog.getString(
+                        'Verification did not succeed, please try again in an hour.',
+                        null,
+                        'Error'
+                    )
+                );
             }
 
             if (VerifyState === 1) {
@@ -288,7 +297,9 @@ function DomainsController(
             if (e.message) {
                 throw e;
             }
-            throw new Error(gettextCatalog.getString('Verification did not succeed, please try again in an hour.', null, 'Error'));
+            throw new Error(
+                gettextCatalog.getString('Verification did not succeed, please try again in an hour.', null, 'Error')
+            );
         }
     };
 
@@ -436,7 +447,12 @@ function DomainsController(
                         })
                         .catch(({ data = {} } = {}) => {
                             throw new Error(
-                                data.Error || gettextCatalog.getString('Verification did not succeed, please try again in an hour.', null, 'Error')
+                                data.Error ||
+                                    gettextCatalog.getString(
+                                        'Verification did not succeed, please try again in an hour.',
+                                        null,
+                                        'Error'
+                                    )
                             );
                         });
 
