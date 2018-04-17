@@ -82,6 +82,7 @@ function squireEditor(dispatchers, editorModel, sanitize) {
                 font-size: 14px;
                 line-height: 1.65em;
                 color: #222;
+                word-wrap: break-word;
             }
 
             blockquote {
