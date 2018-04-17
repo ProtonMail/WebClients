@@ -487,7 +487,7 @@ function messageModel(
                     this.NumAttachments = this.Attachments.length;
                     this.NumEmbedded = this.countEmbedded();
                 })
-                .then(this.getAttachedPublicKey)
+                .then(() => this.getAttachedPublicKey())
                 .then((publicKey) => (this.attachedPublicKey = publicKey));
         }
     }
