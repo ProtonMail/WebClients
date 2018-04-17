@@ -1,7 +1,7 @@
 import _ from 'lodash';
 import { flow, filter, each } from 'lodash/fp';
 import { isMac } from '../../../helpers/browser';
-import { SAVE_TIMEOUT_TIME } from '../../constants';
+import { CONSTANTS } from '../../constants';
 
 /* @ngInject */
 function editorListener(
@@ -171,7 +171,7 @@ function editorListener(
         const onBlur = () => (isEditorFocused = false);
         const onInput = _.debounce(() => {
             isEditorFocused && dispatcher['squire.editor']('input', { message });
-        }, SAVE_TIMEOUT_TIME);
+        }, CONSTANTS.SAVE_TIMEOUT_TIME);
 
         // proxy for autosave as Mousetrap doesn't work with iframe
         const onKeyDown = (e) => {
