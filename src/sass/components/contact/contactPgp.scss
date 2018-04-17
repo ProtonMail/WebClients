@@ -25,16 +25,13 @@ contact-public-keys .pm_table {
         }
     }
 
+    button {
+        padding: 0;
+    }
+
     .download-action {
         width: 5px;
         padding-left: 0;
-
-        button {
-            padding: 0;
-            border: 0;
-            -webkit-appearance: none;
-            background: none;
-        }
     }
 
     .created, .expires {
@@ -53,9 +50,6 @@ contact-public-keys .pm_table {
         width: 75px;
         text-align: center;
         button {
-            -webkit-appearance: none;
-            padding: 0;
-            border: 0;
             text-decoration: underline;
         }
     }
@@ -90,6 +84,13 @@ contact-public-keys .pm_table {
     .warning-message {
         background-color: rgba(255, 165, 0, 0.4);
     }
+}
+
+
+contact-public-keys button, .public-key-controls button {
+    border: 0;
+    -webkit-appearance: none;
+    background: none;
 }
 contact-public-keys .hide-actions {
     .actions {
@@ -197,8 +198,6 @@ contact-public-key-label.no-upload-button .contactItem-input {
 
     button {
         position: absolute;
-        -webkit-appearance: none;
-        border: 0;
         text-decoration: underline;
     }
 
