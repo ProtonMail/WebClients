@@ -20,20 +20,25 @@ function contactSelectorModel(contactEmails, contactSelectorModal, dispatchers) 
             return acc;
         }, {});
 
-        return _.reduce(recipients, (acc, { Name, Address: Email, invalid }) => {
-            const index = emailMap[Email];
+        return _.reduce(
+            recipients,
+            (acc, { Name, Address: Email, invalid }) => {
+                const index = emailMap[Email];
 
-            if (typeof index !== 'undefined') {
-                acc.list[index].selected = true;
+                if (typeof index !== 'undefined') {
+                    acc.list[index].selected = true;
+                    return acc;
+                }
+
+                if (!invalid) {
+                    // Coming from autocompleteEmailsModel
+                    acc.others.push({ Name, Email });
+                }
+
                 return acc;
-            }
-
-            if (!invalid) { // Coming from autocompleteEmailsModel
-                acc.others.push({ Name, Email });
-            }
-
-            return acc;
-        }, { list: emailList, others: [] });
+            },
+            { list: emailList, others: [] }
+        );
     };
 
     const openModal = (message, { key, name }) => {
@@ -41,7 +46,9 @@ function contactSelectorModel(contactEmails, contactSelectorModal, dispatchers) 
 
         contactSelectorModal.activate({
             params: {
-                close, list, others,
+                close,
+                list,
+                others,
                 submit(recipients) {
                     close();
                     dispatcher['composer.update']('add.recipients', { name, recipients });

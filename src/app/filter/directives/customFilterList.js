@@ -37,7 +37,9 @@ function customFilterList(
                 }
             });
 
-            const { dragStart, dragMove, dragEnd } = createScrollHelper({ scrollableSelector: '#pm_settings .settings' });
+            const { dragStart, dragMove, dragEnd } = createScrollHelper({
+                scrollableSelector: '#pm_settings .settings'
+            });
             // Drag and Drop configuration
             scope.filterDragControlListeners = {
                 containment: '.pm_sort',
@@ -69,7 +71,12 @@ function customFilterList(
                             })
                             .catch(({ data = {} } = {}) => {
                                 throw new Error(
-                                    data.Error || gettextCatalog.getString('Unable to save your changes, please try again.', null, 'Error')
+                                    data.Error ||
+                                        gettextCatalog.getString(
+                                            'Unable to save your changes, please try again.',
+                                            null,
+                                            'Error'
+                                        )
                                 );
                             })
                     );
@@ -186,7 +193,9 @@ function customFilterList(
                             const promise = Filter.delete(filter)
                                 .then(eventManager.call)
                                 .then(() => {
-                                    notification.success(gettextCatalog.getString('Custom filter deleted', null, 'Info'));
+                                    notification.success(
+                                        gettextCatalog.getString('Custom filter deleted', null, 'Info')
+                                    );
                                 });
 
                             networkActivityTracker.track(promise);

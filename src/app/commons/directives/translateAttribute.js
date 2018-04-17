@@ -77,7 +77,13 @@ function generateDirective(attrName) {
                                     /* eslint no-param-reassign: "off" */
                                     scope = pluralScope || (pluralScope = scope.$new());
                                     scope.$count = countFn(scope);
-                                    translated = gettextCatalog.getPlural(scope.$count, msgid, translatePlural, null, translateContext);
+                                    translated = gettextCatalog.getPlural(
+                                        scope.$count,
+                                        msgid,
+                                        translatePlural,
+                                        null,
+                                        translateContext
+                                    );
                                 } else {
                                     translated = gettextCatalog.getString(msgid, null, translateContext);
                                 }

@@ -1,6 +1,5 @@
 /* @ngInject */
 function attendeeItem() {
-
     /**
      * Create an anchor element
      * @param {String} attendee Email address with the mailto prefix (mailto:a@b.com)

@@ -34,7 +34,11 @@ function ptDraggable($rootScope, ptDndModel, ptDndUtils, PTDNDCONSTANTS, ptDndNo
 
     document.addEventListener('dragenter', ({ target }) => {
         // Filter by type for Firefox
-        if (target.nodeType !== 1 || target.classList.contains(CLASSNAME.DRAG_HOVER) || !target.hasAttribute(DROPZONE_ATTR_ID)) {
+        if (
+            target.nodeType !== 1 ||
+            target.classList.contains(CLASSNAME.DRAG_HOVER) ||
+            !target.hasAttribute(DROPZONE_ATTR_ID)
+        ) {
             return;
         }
 
@@ -52,7 +56,9 @@ function ptDraggable($rootScope, ptDndModel, ptDndUtils, PTDNDCONSTANTS, ptDndNo
     document.addEventListener('dragend', (e) => {
         e.target.classList.remove(CLASSNAME.DRAG_START);
         document.body.classList.remove(CLASSNAME.BODY);
-        angular.element(document.querySelectorAll(`.${CLASSNAME.DROPZONE_HOVER}`)).removeClass(CLASSNAME.DROPZONE_HOVER);
+        angular
+            .element(document.querySelectorAll(`.${CLASSNAME.DROPZONE_HOVER}`))
+            .removeClass(CLASSNAME.DROPZONE_HOVER);
 
         angular.element(document.querySelectorAll(`.${CLASSNAME.DRAG_HOVER}`)).removeClass(CLASSNAME.DRAG_HOVER);
         ptDndModel.draggable.set('currentId', null);

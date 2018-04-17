@@ -2,11 +2,7 @@ import _ from 'lodash';
 import { CONSTANTS } from '../../constants';
 
 /* @ngInject */
-function attachSubPackages(
-    $rootScope,
-    pmcw,
-    srp,
-) {
+function attachSubPackages($rootScope, pmcw, srp) {
     const dispatchMessageAction = (message) => $rootScope.$emit('actionMessage', message);
 
     const { SEND_TYPES } = CONSTANTS;

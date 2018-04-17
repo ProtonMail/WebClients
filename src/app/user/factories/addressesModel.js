@@ -20,14 +20,13 @@ function addressesModel(Address, authentication, dispatchers) {
      * @return {Promise}
      */
     const fetch = (user = authentication.user) => {
-        return Address.query()
-            .then(({ Addresses = [] }) => {
-                const copy = Addresses.slice();
+        return Address.query().then(({ Addresses = [] }) => {
+            const copy = Addresses.slice();
 
-                set(copy, user);
+            set(copy, user);
 
-                return copy;
-            });
+            return copy;
+        });
     };
 
     /**
@@ -80,7 +79,7 @@ function addressesModel(Address, authentication, dispatchers) {
     };
 
     const get = () => getByUser();
-    const clear = () => CACHE = {};
+    const clear = () => (CACHE = {});
     const hasPmMe = () => _.find(CACHE[authentication.user.ID], { Type: PREMIUM });
 
     on('app.event', (e, { type, data }) => {

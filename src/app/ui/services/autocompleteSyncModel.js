@@ -22,7 +22,9 @@ function autocompleteSyncModel(sendPreferences, CONSTANTS, autoPinPrimaryKeys, d
     const extendPGP = (email, sendPref) => {
         email.encrypt = sendPref.encrypt;
         email.sign = sendPref.sign;
-        email.isPgp = [CONSTANTS.SEND_TYPES.SEND_PGP_MIME, CONSTANTS.SEND_TYPES.SEND_PGP_INLINE].includes(sendPref.scheme);
+        email.isPgp = [CONSTANTS.SEND_TYPES.SEND_PGP_MIME, CONSTANTS.SEND_TYPES.SEND_PGP_INLINE].includes(
+            sendPref.scheme
+        );
         email.isPgpMime = sendPref.scheme === CONSTANTS.SEND_TYPES.SEND_PGP_MIME;
         email.isEO = sendPref.scheme === CONSTANTS.SEND_TYPES.SEND_EO;
         email.isPinned = sendPref.pinned;
@@ -88,7 +90,9 @@ function autocompleteSyncModel(sendPreferences, CONSTANTS, autoPinPrimaryKeys, d
                     .get(_.map(emails, 'Address'), scope.message)
                     .then((transList) => handleInvalidSigs(transList, model, scope))
                     .then((transList) => handleMissingPrimaryKeys(transList, model, scope))
-                    .then((result) => _.each(emails, (email) => result[email.Address] && extendPGP(email, result[email.Address])))
+                    .then((result) =>
+                        _.each(emails, (email) => result[email.Address] && extendPGP(email, result[email.Address]))
+                    )
                     .then(() => syncWithoutFetching(model, scope, _.noop, emails)),
             THROTTLING_DELAY
         );

@@ -1,5 +1,14 @@
 /* @ngInject */
-function chooseLayoutBtns($rootScope, CONSTANTS, networkActivityTracker, tools, settingsMailApi, notification, gettextCatalog, mailSettingsModel) {
+function chooseLayoutBtns(
+    $rootScope,
+    CONSTANTS,
+    networkActivityTracker,
+    tools,
+    settingsMailApi,
+    notification,
+    gettextCatalog,
+    mailSettingsModel
+) {
     const { COLUMN_MODE, ROW_MODE } = CONSTANTS;
     const getLayout = (mode) => {
         const { ViewLayout } = mailSettingsModel.get();

@@ -20,10 +20,14 @@ function composerSettings(authentication, settingsMailApi, networkActivityTracke
     };
 
     const updateComposerMode = (MIMEType, successMessage) =>
-        trackUpdate(settingsMailApi.updateDraftType({ MIMEType })).then(() => notification.success(I18N.successComposer(successMessage)));
+        trackUpdate(settingsMailApi.updateDraftType({ MIMEType })).then(() =>
+            notification.success(I18N.successComposer(successMessage))
+        );
 
     const updateRightToLeft = (RightToLeft, successMessage) =>
-        trackUpdate(settingsMailApi.updateRightToLeft({ RightToLeft })).then(() => notification.success(I18N.successTextDirection(successMessage)));
+        trackUpdate(settingsMailApi.updateRightToLeft({ RightToLeft })).then(() =>
+            notification.success(I18N.successTextDirection(successMessage))
+        );
 
     return {
         updateComposerMode,

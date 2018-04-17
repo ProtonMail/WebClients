@@ -25,22 +25,26 @@ function vcard(CONSTANTS, notification, sanitize) {
         let groupId = 0;
 
         // All new properties.
-        const properties = _.reduce(vCards, (acc, vcard = {}) => {
-            const groups = {};
-            const props = extractProperties(vcard);
-            _.each(props, (prop) => {
-                const group = prop.getGroup();
-                if (group) {
-                    // Rename group to prevent conflicts where properties from different vcards have the same group.
-                    groups[group] = groups[group] || `item${groupId++}`;
-                    prop.group = groups[group];
-                }
-                const field = prop.getField();
-                acc[field] = acc[field] || [];
-                acc[field].push(prop);
-            });
-            return acc;
-        }, {});
+        const properties = _.reduce(
+            vCards,
+            (acc, vcard = {}) => {
+                const groups = {};
+                const props = extractProperties(vcard);
+                _.each(props, (prop) => {
+                    const group = prop.getGroup();
+                    if (group) {
+                        // Rename group to prevent conflicts where properties from different vcards have the same group.
+                        groups[group] = groups[group] || `item${groupId++}`;
+                        prop.group = groups[group];
+                    }
+                    const field = prop.getField();
+                    acc[field] = acc[field] || [];
+                    acc[field].push(prop);
+                });
+                return acc;
+            },
+            {}
+        );
 
         /**
          * Build all the properties.
@@ -57,7 +61,8 @@ function vcard(CONSTANTS, notification, sanitize) {
         return newCard;
     };
 
-    const to = (vcards = []) => _.reduce(vcards, (acc, vCard) => acc + clean(vCard).toString(VCARD_VERSION) + '\r\n', '');
+    const to = (vcards = []) =>
+        _.reduce(vcards, (acc, vCard) => acc + clean(vCard).toString(VCARD_VERSION) + '\r\n', '');
     const from = (vcfString = '') => {
         try {
             return vCard.parse(vcfString).map((vcard) => clean(vcard));
@@ -92,7 +97,8 @@ function vcard(CONSTANTS, notification, sanitize) {
             properties,
             (acc, property) => {
                 const type = property.getType();
-                const typeValue = type && (Array.isArray(type) ? type.map((t) => cleanType(t)).filter((t) => t) : cleanType(type));
+                const typeValue =
+                    type && (Array.isArray(type) ? type.map((t) => cleanType(t)).filter((t) => t) : cleanType(type));
                 const key = property.getField();
                 const value = property.valueOf();
                 const params = property.getParams();
@@ -186,12 +192,15 @@ function vcard(CONSTANTS, notification, sanitize) {
      * @return {Array}
      */
     function extractProperties(vcard = new vCard()) {
-        return _.reduce(Object.keys(vcard.data), (acc, key) => {
+        return _.reduce(
+            Object.keys(vcard.data),
+            (acc, key) => {
                 const value = vcard.get(key);
                 const props = Array.isArray(value) ? value : [value];
 
                 return acc.concat(props);
-            }, []
+            },
+            []
         );
     }
 

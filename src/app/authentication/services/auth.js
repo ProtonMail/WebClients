@@ -48,68 +48,68 @@ function authentication(
         },
 
         fetchUserInfo() {
-            const promise = User.get()
-                .then((user) => {
-                    // Redirect to setup if necessary
-                    if (user.Keys.length === 0) {
-                        $state.go('login.setup');
-                        return Promise.resolve(user);
+            const promise = User.get().then((user) => {
+                // Redirect to setup if necessary
+                if (user.Keys.length === 0) {
+                    $state.go('login.setup');
+                    return Promise.resolve(user);
+                }
+
+                user.subuser = angular.isDefined(user.OrganizationPrivateKey);
+                // Required for subuser
+                const decryptOrganization = () => {
+                    if (user.subuser) {
+                        return pmcw.decryptPrivateKey(user.OrganizationPrivateKey, api.getPassword());
                     }
+                    return Promise.resolve();
+                };
 
-                    user.subuser = angular.isDefined(user.OrganizationPrivateKey);
-                    // Required for subuser
-                    const decryptOrganization = () => {
-                        if (user.subuser) {
-                            return pmcw.decryptPrivateKey(user.OrganizationPrivateKey, api.getPassword());
-                        }
-                        return Promise.resolve();
-                    };
+                // Hacky fix for missing organizations
+                const fixOrganization = () => {
+                    if (user.Role === FREE_USER_ROLE && user.Subscribed) {
+                        return setupKeys
+                            .generateOrganization(api.getPassword())
+                            .then((response) => {
+                                const privateKey = response.privateKeyArmored;
 
-                    // Hacky fix for missing organizations
-                    const fixOrganization = () => {
-                        if (user.Role === FREE_USER_ROLE && user.Subscribed) {
-                            return setupKeys
-                                .generateOrganization(api.getPassword())
-                                .then((response) => {
-                                    const privateKey = response.privateKeyArmored;
+                                return {
+                                    DisplayName: 'My Organization',
+                                    PrivateKey: privateKey
+                                };
+                            })
+                            .then((params) => {
+                                return organizationApi.create(params);
+                            });
+                    }
+                    return Promise.resolve();
+                };
 
-                                    return {
-                                        DisplayName: 'My Organization',
-                                        PrivateKey: privateKey
-                                    };
-                                })
-                                .then((params) => {
-                                    return organizationApi.create(params);
-                                });
-                        }
-                        return Promise.resolve();
-                    };
+                return $q
+                    .all({
+                        settings: $injector.get('settingsApi').fetch(),
+                        mailSettings: $injector.get('settingsMailApi').fetch(),
+                        contacts: $injector.get('contactEmails').load(),
+                        addresses: $injector.get('addressesModel').fetch(user),
+                        fix: fixOrganization(),
+                        organizationKey: decryptOrganization()
+                    })
+                    .then(({ organizationKey, addresses }) => ({ user, organizationKey, addresses }))
+                    .then(({ user, organizationKey, addresses }) => {
+                        const storeKeys = (keys) => {
+                            api.clearKeys();
+                            _.each(keys, ({ address, key, pkg }) => {
+                                api.storeKey(address.ID, key.ID, pkg);
+                            });
+                        };
 
-                    return $q.all({
-                            settings: $injector.get('settingsApi').fetch(),
-                            mailSettings: $injector.get('settingsMailApi').fetch(),
-                            contacts: $injector.get('contactEmails').load(),
-                            addresses: $injector.get('addressesModel').fetch(user),
-                            fix: fixOrganization(),
-                            organizationKey: decryptOrganization()
-                        })
-                        .then(({ organizationKey, addresses }) => ({ user, organizationKey, addresses }))
-                        .then(({ user, organizationKey, addresses }) => {
-                            const storeKeys = (keys) => {
-                                api.clearKeys();
-                                _.each(keys, ({ address, key, pkg }) => {
-                                    api.storeKey(address.ID, key.ID, pkg);
-                                });
-                            };
-
-                            return decryptUser(user, addresses, organizationKey, api.getPassword())
-                                .then(({ keys }) => (storeKeys(keys), user))
-                                .catch((error) => {
-                                    $exceptionHandler(error);
-                                    throw error;
-                                });
-                        });
-                });
+                        return decryptUser(user, addresses, organizationKey, api.getPassword())
+                            .then(({ keys }) => (storeKeys(keys), user))
+                            .catch((error) => {
+                                $exceptionHandler(error);
+                                throw error;
+                            });
+                    });
+            });
             return networkActivityTracker.track(promise);
         }
     };
@@ -141,7 +141,6 @@ function authentication(
         savePassword,
         receivedCredentials,
         detectAuthenticationState() {
-
             const uid = secureSessionStorage.getItem(OAUTH_KEY + ':UID');
             const session = secureSessionStorage.getItem(OAUTH_KEY + ':SessionToken');
 
@@ -269,7 +268,8 @@ function authentication(
         setAuthCookie(authResponse) {
             $log.debug('setAuthCookie');
 
-            return authApi.cookies({
+            return authApi
+                .cookies({
                     ResponseType: 'token',
                     ClientID: CONFIG.clientID,
                     GrantType: 'refresh_token',
@@ -408,7 +408,6 @@ function authentication(
          * @param {Boolean} redirect - Redirect at the end the user to the login page
          */
         logout(redirect, callApi = true) {
-
             const uid = secureSessionStorage.getItem(OAUTH_KEY + ':UID');
             const process = () => {
                 this.clearData();
@@ -461,7 +460,18 @@ function authentication(
 
         // Returns an async promise that will be successful only if the mailbox password
         // proves correct (we test this by decrypting a small blob)
-        unlockWithPassword(pwd, { PrivateKey = '', AccessToken = '', RefreshToken = '', Uid = '', ExpiresIn = 0, EventID = '', KeySalt = '' } = {}) {
+        unlockWithPassword(
+            pwd,
+            {
+                PrivateKey = '',
+                AccessToken = '',
+                RefreshToken = '',
+                Uid = '',
+                ExpiresIn = 0,
+                EventID = '',
+                KeySalt = ''
+            } = {}
+        ) {
             const req = $q.defer();
             if (pwd) {
                 tempStorage.setItem('plainMailboxPass', pwd);
@@ -515,9 +525,11 @@ function authentication(
                     if (plainMailboxPass && !user.OrganizationPrivateKey) {
                         if (!checkKeysFormat(user)) {
                             AppModel.set('upgradingKeys', true);
-                            return upgradeKeys({ mailboxPassword: plainMailboxPass, oldSaltedPassword: this.getPassword(), user }).then(() =>
-                                Promise.resolve(user)
-                            );
+                            return upgradeKeys({
+                                mailboxPassword: plainMailboxPass,
+                                oldSaltedPassword: this.getPassword(),
+                                user
+                            }).then(() => Promise.resolve(user));
                         }
                     }
 

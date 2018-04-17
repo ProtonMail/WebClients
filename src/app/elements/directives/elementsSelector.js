@@ -3,7 +3,6 @@ import dedentTpl from '../../../helpers/dedent';
 
 /* @ngInject */
 function elementsSelector(dispatchers, mailSettingsModel, gettextCatalog) {
-
     const ORDER_FALSY = ['all', 'read', 'unread', 'star', 'unstar'];
     const ORDER_TRUTHY = ['all', 'unread', 'read', 'unstar', 'star'];
 
@@ -64,7 +63,6 @@ function elementsSelector(dispatchers, mailSettingsModel, gettextCatalog) {
         replace: true,
         templateUrl: require('../../../templates/elements/elementsSelector.tpl.html'),
         compile(element) {
-
             const dropdown = element[0].querySelector('.pm_dropdown');
             dropdown.insertAdjacentHTML('beforeEnd', getTemplate());
 

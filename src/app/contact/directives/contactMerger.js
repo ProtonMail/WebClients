@@ -111,7 +111,6 @@ function contactMerger() {
         included: true
     });
 
-
     return {
         restrict: 'E',
         replace: true,
@@ -125,8 +124,10 @@ function contactMerger() {
             const element = $element[0];
 
             // Format the contacts to display for each group.
-            scope.groups = Object.keys(scope.groups)
-                .reduce((acc, key) => (acc[key] = scope.groups[key].map(formatContact), acc), {});
+            scope.groups = Object.keys(scope.groups).reduce(
+                (acc, key) => ((acc[key] = scope.groups[key].map(formatContact)), acc),
+                {}
+            );
 
             // Drag control listener for the DnD.
             scope.dragControlListener = {
@@ -196,11 +197,7 @@ function contactMerger() {
                     }
                     case 'preview': {
                         const { email } = getClickedContact(target);
-                        scope.preview(
-                            clickHandlers.preview(scope.groups[email]),
-                            email,
-                            onPreviewMerge
-                        );
+                        scope.preview(clickHandlers.preview(scope.groups[email]), email, onPreviewMerge);
                         break;
                     }
                     case 'undelete':

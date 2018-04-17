@@ -17,10 +17,14 @@ function addressModal(
     const I18N = {
         ERROR_DECRYPT_ORG_KEY: gettextCatalog.getString('Cannot decrypt organization key', null, 'Error'),
         errorPmMeSetup() {
-            return gettextCatalog.getString('{{username}} is your username. To create {{email}}, please go to Settings -> pm.me', {
-                username: authentication.user.Name,
-                email: premiumDomainModel.email()
-            }, 'Error');
+            return gettextCatalog.getString(
+                '{{username}} is your username. To create {{email}}, please go to Settings -> pm.me',
+                {
+                    username: authentication.user.Name,
+                    email: premiumDomainModel.email()
+                },
+                'Error'
+            );
         },
         SUCCESS_ADD: gettextCatalog.getString('Address added', null, 'Info')
     };
@@ -51,7 +55,10 @@ function addressModal(
                     return notification.error(I18N.ERROR_DECRYPT_ORG_KEY);
                 }
 
-                if (!addressesModel.hasPmMe() && premiumDomainModel.email() === `${this.address}@${this.domain.DomainName}`) {
+                if (
+                    !addressesModel.hasPmMe() &&
+                    premiumDomainModel.email() === `${this.address}@${this.domain.DomainName}`
+                ) {
                     return notification.error(I18N.errorPmMeSetup());
                 }
 
@@ -64,11 +71,10 @@ function addressModal(
                     MemberID: this.member.ID
                 };
 
-                const promise = Address.create(parameters)
-                    .then((data = {}) => {
-                        notification.success(I18N.SUCCESS_ADD);
-                        params.submit(data.Address, this.member);
-                    });
+                const promise = Address.create(parameters).then((data = {}) => {
+                    notification.success(I18N.SUCCESS_ADD);
+                    params.submit(data.Address, this.member);
+                });
 
                 networkActivityTracker.track(promise);
             };

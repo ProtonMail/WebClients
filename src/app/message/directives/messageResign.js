@@ -15,7 +15,9 @@ function messageResign(contactEmails, Contact, networkActivityTracker, gettextCa
                 const contactEmail = contactEmails.findEmail(normalizedEmail, normalizeEmail);
                 const promise = Contact.get(contactEmail.ContactID)
                     .then((contact) => Contact.updateUnencrypted(contact))
-                    .then(({ Contact, cards }) => $rootScope.$emit('contacts', { type: 'contactUpdated', data: { contact: Contact, cards } }))
+                    .then(({ Contact, cards }) =>
+                        $rootScope.$emit('contacts', { type: 'contactUpdated', data: { contact: Contact, cards } })
+                    )
                     .then(() => scope.message.clearTextBody(true))
                     .then(() => notification.success(I18N.SUCCES_MESSAGE))
                     .then(() => scope.$applyAsync(() => (scope.message.askResign = false)));

@@ -15,8 +15,12 @@ function i18nLoader(CONFIG, $rootScope, gettextCatalog, $injector) {
     const formatLocale = (locale) => {
         // in this case we want to try to get the fr-CA string instead of the fr-fr string
         // the way to get this is to try to retrieve it from the window.navigator.languages.
-        const firstLanguage = window.navigator.languages && window.navigator.languages.length ? window.navigator.languages[0] : null;
-        const value = (locale || firstLanguage || window.navigator.userLanguage || window.navigator.language).replace('-', '_');
+        const firstLanguage =
+            window.navigator.languages && window.navigator.languages.length ? window.navigator.languages[0] : null;
+        const value = (locale || firstLanguage || window.navigator.userLanguage || window.navigator.language).replace(
+            '-',
+            '_'
+        );
 
         // OS is in French (France) => navigator.language === fr
         if (value.length === 2) {
@@ -54,7 +58,10 @@ function i18nLoader(CONFIG, $rootScope, gettextCatalog, $injector) {
             const navigatorFirstDay = navigatorLocaleData.firstDayOfWeek();
 
             // first try to match the first day of week = most important
-            if (localeAfirstday !== localeBfirstday && (localeAfirstday === navigatorFirstDay || localeBfirstday === navigatorFirstDay)) {
+            if (
+                localeAfirstday !== localeBfirstday &&
+                (localeAfirstday === navigatorFirstDay || localeBfirstday === navigatorFirstDay)
+            ) {
                 return localeAfirstday === navigatorFirstDay ? -1 : 1;
             }
 

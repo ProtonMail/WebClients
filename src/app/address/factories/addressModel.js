@@ -51,7 +51,11 @@ function addressModel(
         EDIT_MODAL: {
             title: gettextCatalog.getString('Name / Signature', null, 'Title')
         },
-        FREE_ADD_ERROR: gettextCatalog.getString('Please <a href="/dashboard">upgrade</a> to a paid account to use this feature', null, 'Error')
+        FREE_ADD_ERROR: gettextCatalog.getString(
+            'Please <a href="/dashboard">upgrade</a> to a paid account to use this feature',
+            null,
+            'Error'
+        )
     };
 
     const canAdd = (member = {}, redirect = true) => {

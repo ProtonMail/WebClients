@@ -1,7 +1,15 @@
 /* @ngInject */
 function cvcTooltip(gettextCatalog) {
-    const line1 = gettextCatalog.getString('For Visa, MasterCard and Discover, the 3 digits on the back of your card.', null, 'Info');
-    const line2 = gettextCatalog.getString('For American Express, the 4 digits on the front of your card.', null, 'Info');
+    const line1 = gettextCatalog.getString(
+        'For Visa, MasterCard and Discover, the 3 digits on the back of your card.',
+        null,
+        'Info'
+    );
+    const line2 = gettextCatalog.getString(
+        'For American Express, the 4 digits on the front of your card.',
+        null,
+        'Info'
+    );
     const title = gettextCatalog.getString('Security Code', null, 'Credit card CVC');
 
     return {

@@ -23,7 +23,16 @@ const tabIndexAble = (iframe) => (isPlainText) => {
 };
 
 /* @ngInject */
-function squire(squireEditor, embedded, editorListener, dispatchers, sanitize, toggleModeEditor, mailSettingsModel, onCurrentMessage) {
+function squire(
+    squireEditor,
+    embedded,
+    editorListener,
+    dispatchers,
+    sanitize,
+    toggleModeEditor,
+    mailSettingsModel,
+    onCurrentMessage
+) {
     const CLASS_NAMES = {
         LOADED: 'squireEditor-loaded'
     };
@@ -50,7 +59,7 @@ function squire(squireEditor, embedded, editorListener, dispatchers, sanitize, t
             };
 
             // Set the editor mode type data attribute, hides the plaintext editor or squire editor in CSS while doing so.
-            const setEditorModeType = (mode) => el[0].dataset.editorMode = mode;
+            const setEditorModeType = (mode) => (el[0].dataset.editorMode = mode);
 
             if (!isMessage(typeContent)) {
                 scope.message = { ID: id, isPlainText: _.noop };
@@ -71,7 +80,7 @@ function squire(squireEditor, embedded, editorListener, dispatchers, sanitize, t
                 scope.$applyAsync(async () => {
                     if (scope.message.MIMEType === PLAINTEXT) {
                         // disable all updates if in plain text mode
-                        return (forceUpdate && scope.message.setDecryptedBody(val, false));
+                        return forceUpdate && scope.message.setDecryptedBody(val, false);
                     }
 
                     const isEmpty = !value.trim().length;
@@ -145,8 +154,7 @@ function squire(squireEditor, embedded, editorListener, dispatchers, sanitize, t
                         return;
                     }
                     const mode = argument.value;
-                    if (!toggleModeEditor.canToggle(scope.message) ||
-                        mode === scope.message.MIMEType) {
+                    if (!toggleModeEditor.canToggle(scope.message) || mode === scope.message.MIMEType) {
                         return;
                     }
 
@@ -154,9 +162,7 @@ function squire(squireEditor, embedded, editorListener, dispatchers, sanitize, t
                     bindTabIndex(isPlainText);
 
                     // If converting to plaintext, read the value (before it's hidden) from the squire editor, otherwise from the textarea.
-                    const value = isPlainText ?
-                        editor.getHTML() :
-                        textarea.value;
+                    const value = isPlainText ? editor.getHTML() : textarea.value;
 
                     setEditorModeType(mode);
 

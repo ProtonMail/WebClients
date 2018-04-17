@@ -1,6 +1,5 @@
 /* @ngInject */
 function bugReportModel(bugReportApi, bugModal, dispatchers) {
-
     const { on } = dispatchers();
 
     on('bugReport', (e, { type, data = {} }) => {
@@ -16,7 +15,7 @@ function bugReportModel(bugReportApi, bugModal, dispatchers) {
         params: {
             form: bugReportApi.getForm(),
             content,
-            submit: async function (data) {
+            submit: async function(data) {
                 bugModal.deactivate();
                 const formData = await bugReportApi.toFormData(data);
                 bugReportApi.report(formData);

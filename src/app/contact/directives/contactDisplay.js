@@ -42,9 +42,8 @@ function contactDisplay(gettextCatalog, contactDetailsModel, contactTransformLab
      * @param {string} type
      * @returns {string}
      */
-    const getLabel = (key = '', type = key) => contactTransformLabel.toLangExplicit(type) ||
-        contactTransformLabel.toLangExplicit(key) ||
-        key;
+    const getLabel = (key = '', type = key) =>
+        contactTransformLabel.toLangExplicit(type) || contactTransformLabel.toLangExplicit(key) || key;
 
     /**
      * Get the value to display. Special handling for the keys `n` and `adr` which show with newlines.
@@ -70,14 +69,13 @@ function contactDisplay(gettextCatalog, contactDetailsModel, contactTransformLab
      * @param {string} icon of the group
      */
     const getItems = (vcard = {}, field = '', icon) => {
-        return contactDetailsModel.extract({ vcard, field })
-            .map(({ type, key, value, params: { group } = {} }, i) => ({
-                key,
-                label: getLabel(key, type),
-                value: getValue(key, value),
-                group,
-                icon: i === 0 ? icon : undefined
-            }));
+        return contactDetailsModel.extract({ vcard, field }).map(({ type, key, value, params: { group } = {} }, i) => ({
+            key,
+            label: getLabel(key, type),
+            value: getValue(key, value),
+            group,
+            icon: i === 0 ? icon : undefined
+        }));
     };
 
     return {
@@ -88,8 +86,10 @@ function contactDisplay(gettextCatalog, contactDetailsModel, contactTransformLab
         },
         templateUrl: require('../../../templates/contact/contactDisplay.tpl.html'),
         link(scope) {
-            scope.properties = PROPERTIES
-                .map((property) => ({ ...property, items: getItems(scope.vcard, property.field, property.icon) }));
+            scope.properties = PROPERTIES.map((property) => ({
+                ...property,
+                items: getItems(scope.vcard, property.field, property.icon)
+            }));
         }
     };
 }

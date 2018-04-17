@@ -139,7 +139,8 @@ function ElementsController(
 
             case 'placeholder': {
                 const idDefined = $scope.idDefined();
-                const shouldDisplay = isColumnsMode && (!idDefined || (idDefined && $rootScope.numberElementChecked > 0));
+                const shouldDisplay =
+                    isColumnsMode && (!idDefined || (idDefined && $rootScope.numberElementChecked > 0));
                 test = shouldDisplay && !AppModel.is('mobile');
                 break;
             }
@@ -261,7 +262,7 @@ function ElementsController(
 
         $scope.$on('move', (e, mailbox) => {
             const idDefined = $scope.idDefined();
-            const isScope = (!idDefined || (idDefined && $rootScope.numberElementChecked > 0));
+            const isScope = !idDefined || (idDefined && $rootScope.numberElementChecked > 0);
             /**
              * Move item only when nothing is opened
              * and we have a selection
@@ -496,7 +497,8 @@ function ElementsController(
                             if ($state.params.id) {
                                 element = _.find(
                                     $scope.conversations,
-                                    ({ ID, ConversationID }) => $state.params.id === ConversationID || $state.params.id === ID
+                                    ({ ID, ConversationID }) =>
+                                        $state.params.id === ConversationID || $state.params.id === ID
                                 );
                             } else {
                                 element = _.head($scope.conversations);
@@ -507,7 +509,8 @@ function ElementsController(
                             if (found) {
                                 element = found;
                             } else {
-                                const previousIndexMarked = _.findIndex(previousConversations, { ID: $scope.markedElement.ID }) || 0;
+                                const previousIndexMarked =
+                                    _.findIndex(previousConversations, { ID: $scope.markedElement.ID }) || 0;
                                 element = $scope.conversations[previousIndexMarked] || _.head($scope.conversations);
                             }
                         }
@@ -624,11 +627,17 @@ function ElementsController(
         const elements = _.filter(conversations, { Selected: true });
 
         if ($state.params.id && mailSettingsModel.get('ViewLayout') === ROW_MODE) {
-            return _.filter(conversations, ({ ID, ConversationID }) => ID === $state.params.id || ConversationID === $state.params.id);
+            return _.filter(
+                conversations,
+                ({ ID, ConversationID }) => ID === $state.params.id || ConversationID === $state.params.id
+            );
         }
 
         if (!elements.length && $scope.markedElement && includeMarked) {
-            return _.filter(conversations, ({ ID, ConversationID }) => ID === $scope.markedElement.ID || ConversationID === $scope.markedElement.ID);
+            return _.filter(
+                conversations,
+                ({ ID, ConversationID }) => ID === $scope.markedElement.ID || ConversationID === $scope.markedElement.ID
+            );
         }
 
         return elements;

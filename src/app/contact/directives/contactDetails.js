@@ -117,9 +117,11 @@ function contactDetails(
             updateType(scope.contact.types);
 
             if (scope.contact.errors) {
-                scope.contact.errors.indexOf(TYPE3_CONTACT_VERIFICATION) !== -1 && element.addClass(HAS_ERROR_VERIFICATION_ENCRYPTED);
+                scope.contact.errors.indexOf(TYPE3_CONTACT_VERIFICATION) !== -1 &&
+                    element.addClass(HAS_ERROR_VERIFICATION_ENCRYPTED);
                 scope.contact.errors.indexOf(TYPE3_CONTACT_DECRYPTION) !== -1 && element.addClass(HAS_ERROR_ENCRYPTED);
-                scope.contact.errors.indexOf(TYPE2_CONTACT_VERIFICATION) !== -1 && element.addClass(HAS_ERROR_VERIFICATION);
+                scope.contact.errors.indexOf(TYPE2_CONTACT_VERIFICATION) !== -1 &&
+                    element.addClass(HAS_ERROR_VERIFICATION);
             }
 
             element.on('click', onClick);
@@ -164,7 +166,10 @@ function contactDetails(
                     return false;
                 }
 
-                const valuesArray = flow(values, reduce((acc, child = []) => acc.concat(child.filter(({ value = '' }) => value)), []))(scope.model);
+                const valuesArray = flow(
+                    values,
+                    reduce((acc, child = []) => acc.concat(child.filter(({ value = '' }) => value)), [])
+                )(scope.model);
 
                 return valuesArray.length;
             }

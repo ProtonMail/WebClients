@@ -66,23 +66,32 @@ function editorListener(
             };
         };
 
-        editor.setKeyHandler('escape', hotkeysEnabled(() => {
-            dispatcher['composer.update']('close.message', { message, save: true });
-        }));
+        editor.setKeyHandler(
+            'escape',
+            hotkeysEnabled(() => {
+                dispatcher['composer.update']('close.message', { message, save: true });
+            })
+        );
 
         const sendKey = `${testMac ? 'meta' : 'ctrl'}-enter`;
 
-        editor.setKeyHandler(sendKey, hotkeysEnabled((self, event) => {
-            event.preventDefault();
-            dispatcher['composer.update']('send.message', { message });
-        }));
+        editor.setKeyHandler(
+            sendKey,
+            hotkeysEnabled((self, event) => {
+                event.preventDefault();
+                dispatcher['composer.update']('send.message', { message });
+            })
+        );
 
         const linkKey = `${testMac ? 'meta' : 'ctrl'}-k`;
 
-        editor.setKeyHandler(linkKey, hotkeysEnabled((self, event) => {
-            event.preventDefault();
-            dispatcher['squire.editor']('squireActions', { action: 'makeLink', message });
-        }));
+        editor.setKeyHandler(
+            linkKey,
+            hotkeysEnabled((self, event) => {
+                event.preventDefault();
+                dispatcher['squire.editor']('squireActions', { action: 'makeLink', message });
+            })
+        );
     };
 
     /**
@@ -203,7 +212,11 @@ function editorListener(
         return (updateModel, editor) => {
             const message = scope.message;
             const unsubscribe = [];
-            const { dispatcher, on, unsubscribe: unsubscribeRootScope } = dispatchers(['composer.update', 'squire.editor', 'editor.draggable']);
+            const { dispatcher, on, unsubscribe: unsubscribeRootScope } = dispatchers([
+                'composer.update',
+                'squire.editor',
+                'editor.draggable'
+            ]);
 
             // Custom dropzone to insert content into the editor if it's not a composer
             if (!isMessage(typeContent)) {

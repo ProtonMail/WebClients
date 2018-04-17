@@ -18,7 +18,11 @@ function invalidSignature(gettextCatalog, confirmModal) {
                     icon: ICON,
                     learnMore: KNOWLEDGE_BASE.DIGITAL_SIGNATURE,
                     title: gettextCatalog.getString('Invalid attachment signature', null, 'Title'),
-                    message: gettextCatalog.getString('Do you still want to download <strong>{{name}}</strong>?', { name: attachment.Name }, 'Info'),
+                    message: gettextCatalog.getString(
+                        'Do you still want to download <strong>{{name}}</strong>?',
+                        { name: attachment.Name },
+                        'Info'
+                    ),
                     confirm() {
                         confirmModal.deactivate();
                         askAgain(message, attachment, false);
