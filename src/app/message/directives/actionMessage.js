@@ -1,9 +1,11 @@
+import { MAILBOX_IDENTIFIERS } from '../../constants';
+
 /* @ngInject */
-function actionMessage($rootScope, CONSTANTS, downloadFile, openStatePostMessage) {
+function actionMessage($rootScope, downloadFile, openStatePostMessage) {
     const dispatcher = (message = {}) => (action = '', mailbox = '') => {
         $rootScope.$emit('messageActions', {
             type: action,
-            data: { ids: [message.ID], labelID: CONSTANTS.MAILBOX_IDENTIFIERS[mailbox] }
+            data: { ids: [message.ID], labelID: MAILBOX_IDENTIFIERS[mailbox] }
         });
     };
 

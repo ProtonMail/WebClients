@@ -1,8 +1,9 @@
 import _ from 'lodash';
 
+import { ELEMENTS_PER_PAGE } from '../../constants';
+
 /* @ngInject */
-function paginator(dispatchers, $stateParams, paginationModel, CONSTANTS) {
-    const { ELEMENTS_PER_PAGE } = CONSTANTS;
+function paginator(dispatchers, $stateParams, paginationModel) {
     const CLASS_PAGINATOR_DISABLED = 'paginator-disabled-';
 
     /**

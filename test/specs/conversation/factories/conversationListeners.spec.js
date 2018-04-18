@@ -1,6 +1,6 @@
 import service from '../../../../src/app/conversation/factories/conversationListeners';
 import dispatchersService from '../../../../src/app/commons/services/dispatchers';
-import { CONSTANTS } from '../../../../src/app/constants';
+import { DRAFT, INBOX } from '../../../../src/app/constants';
 
 describe('conversationListeners factory', () => {
 
@@ -30,7 +30,7 @@ describe('conversationListeners factory', () => {
     beforeEach(angular.mock.inject(($injector) => {
         rootScope = $injector.get('$rootScope');
         const dispatchers = dispatchersService(rootScope);
-        factory = service(rootScope, CONSTANTS, dispatchers);
+        factory = service(rootScope, dispatchers);
     }));
 
     describe('Add subscriber with a draft', () => {
@@ -40,7 +40,7 @@ describe('conversationListeners factory', () => {
 
         beforeEach(() => {
             spy = jasmine.createSpy();
-            message = { Type: CONSTANTS.DRAFT };
+            message = { Type: DRAFT };
             spyOn(rootScope, '$on').and.callThrough();
             unsubscribe = factory(message);
         });
@@ -126,7 +126,7 @@ describe('conversationListeners factory', () => {
 
         beforeEach(() => {
             spy = jasmine.createSpy();
-            message = { Type: CONSTANTS.INBOX };
+            message = { Type: INBOX };
             spyOn(rootScope, '$on').and.callThrough();
             unsubscribe = factory(message);
         });
@@ -212,7 +212,7 @@ describe('conversationListeners factory', () => {
 
         beforeEach(() => {
             spy = jasmine.createSpy();
-            message = { Type: CONSTANTS.INBOX, failedDecryption: true };
+            message = { Type: INBOX, failedDecryption: true };
             spyOn(rootScope, '$on').and.callThrough();
             unsubscribe = factory(message);
         });

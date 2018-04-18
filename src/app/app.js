@@ -20,7 +20,6 @@ import user from './user/index';
 import utils from './utils/index';
 
 import CONFIG from './config';
-import constants from './constants';
 import routes from './routes';
 import '../sass/app.scss';
 
@@ -55,7 +54,6 @@ angular
         ui,
         user,
         utils,
-        constants,
         routes
     ])
     .constant('CONFIG', CONFIG)
@@ -69,7 +67,6 @@ angular
         logoutManager, // Keep the logoutManager here to lunch it
         authentication,
         networkActivityTracker,
-        CONSTANTS,
         tools,
         lazyLoader
     ) => {

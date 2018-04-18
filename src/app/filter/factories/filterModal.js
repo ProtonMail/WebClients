@@ -1,5 +1,7 @@
 import _ from 'lodash';
 
+import { MAILBOX_IDENTIFIERS, FILTER_VERSION } from '../../constants';
+
 /* @ngInject */
 function filterModal(
     $timeout,
@@ -8,7 +10,6 @@ function filterModal(
     Filter,
     networkActivityTracker,
     notification,
-    CONSTANTS,
     dispatchers,
     eventManager,
     labelModal,
@@ -129,7 +130,7 @@ function filterModal(
 
             const findCurrentMoveFolder = (list = []) => {
                 const map = labelsModel.get('folders').reduce((acc, label) => ((acc[label.Name] = label), acc), {});
-                const folder = _.find(list, (key) => CONSTANTS.MAILBOX_IDENTIFIERS[key] || map[key]);
+                const folder = _.find(list, (key) => MAILBOX_IDENTIFIERS[key] || map[key]);
                 return folder || '';
             };
 
@@ -204,7 +205,7 @@ function filterModal(
                     ID: prepareID(model),
                     Name: prepareName(model),
                     Status: prepareStatus(model),
-                    Version: CONSTANTS.FILTER_VERSION
+                    Version: FILTER_VERSION
                 };
 
                 sieveLint.resetLastCheck();

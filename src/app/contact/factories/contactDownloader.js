@@ -1,8 +1,7 @@
-import { CONSTANTS } from '../../constants';
+import { CANCEL_REQUEST, EXPORT_CONTACTS_LIMIT } from '../../constants';
 
 /* @ngInject */
 function contactDownloader(Contact, contactLoaderModal, contactDetailsModel, downloadFile, vcard, $q) {
-    const { CANCEL_REQUEST, EXPORT_CONTACTS_LIMIT } = CONSTANTS;
     const getFileName = (id, [card]) => {
         let nameProperty = card.get('fn');
 

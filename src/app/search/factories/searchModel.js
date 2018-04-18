@@ -1,7 +1,9 @@
 import _ from 'lodash';
 
+import { MAILBOX_IDENTIFIERS } from '../../constants';
+
 /* @ngInject */
-function searchModel(addressesModel, authentication, CONSTANTS, gettextCatalog, labelsModel) {
+function searchModel(addressesModel, authentication, gettextCatalog, labelsModel) {
     const FOLDER_TRANSLATIONS = {
         inbox: gettextCatalog.getString('Inbox', null, 'Option for search panel'),
         spam: gettextCatalog.getString('Spam', null, 'Option for search panel'),
@@ -15,10 +17,10 @@ function searchModel(addressesModel, authentication, CONSTANTS, gettextCatalog, 
         allmail: gettextCatalog.getString('All Mail', null, 'Option for search panel')
     };
     const LIST_LOCATIONS = _.reduce(
-        Object.keys(CONSTANTS.MAILBOX_IDENTIFIERS),
+        Object.keys(MAILBOX_IDENTIFIERS),
         (acc, label) => {
             if (label !== 'search' && label !== 'label') {
-                const value = CONSTANTS.MAILBOX_IDENTIFIERS[label];
+                const value = MAILBOX_IDENTIFIERS[label];
                 acc.push({ value, label: FOLDER_TRANSLATIONS[label], group: 'folder' });
             }
             return acc;

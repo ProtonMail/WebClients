@@ -1,10 +1,11 @@
+import { PAID_ADMIN_ROLE } from '../../constants';
+
 /* @ngInject */
 function organizationKeysModel(
     organizationApi,
     dispatchers,
     $rootScope,
     authentication,
-    CONSTANTS,
     pmcw,
     memberModel,
     notification,
@@ -65,7 +66,7 @@ function organizationKeysModel(
      * @return {Promise}
      */
     async function manage(organization) {
-        if (authentication.user.Role !== CONSTANTS.PAID_ADMIN_ROLE) {
+        if (authentication.user.Role !== PAID_ADMIN_ROLE) {
             return;
         }
         const { PublicKey, PrivateKey } = await loadkeys();

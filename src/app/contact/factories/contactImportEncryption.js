@@ -1,17 +1,11 @@
 import _ from 'lodash';
+
 import { toList } from '../../../helpers/arrayHelper';
 import { uniqGroups } from '../../../helpers/vcard';
+import { PACKAGE_TYPE } from '../../constants';
 
 /* @ngInject */
-function contactImportEncryption(
-    pmcw,
-    $injector,
-    CONSTANTS,
-    contactKey,
-    contactAskEncryption,
-    contactKeyAssigner,
-    vcard
-) {
+function contactImportEncryption(pmcw, $injector, contactKey, contactAskEncryption, contactKeyAssigner, vcard) {
     const asyncSequentialMap = (list, asyncFunction) =>
         list.reduce((lastProcess, element) => {
             return lastProcess.then((accumulator) => {
@@ -87,7 +81,7 @@ function contactImportEncryption(
                 return asyncSequentialMap(emailList, async (emailProp) => {
                     const sendPreferences = $injector.get('sendPreferences');
                     const info = await sendPreferences.get(emailProp.valueOf());
-                    if (info.scheme === CONSTANTS.PACKAGE_TYPE.SEND_PM) {
+                    if (info.scheme === PACKAGE_TYPE.SEND_PM) {
                         // internal user: skip
                         return;
                     }

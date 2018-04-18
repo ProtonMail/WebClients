@@ -1,6 +1,10 @@
 import _ from 'lodash';
-
 import { flow, filter, each, map, head, maxBy } from 'lodash/fp';
+
+import { STATUS, MAILBOX_IDENTIFIERS, CONVERSATION_LIMIT, ELEMENTS_PER_PAGE, MESSAGE_LIMIT } from '../../constants';
+
+const INVALID_SEARCH_ERROR_CODE = 15225;
+const { DELETE, CREATE, UPDATE_DRAFT, UPDATE_FLAGS } = STATUS;
 
 /* @ngInject */
 function cache(
@@ -9,7 +13,6 @@ function cache(
     $rootScope,
     $state,
     $stateParams,
-    CONSTANTS,
     conversationApi,
     firstLoadState,
     gettextCatalog,
@@ -26,20 +29,8 @@ function cache(
     let conversationsCached = []; // In this array we store the conversations cached
     const dispatcher = [];
     const timeCached = {};
-    const INVALID_SEARCH_ERROR_CODE = 15225;
-    const { DELETE, CREATE, UPDATE_DRAFT, UPDATE_FLAGS } = CONSTANTS.STATUS;
-    const {
-        inbox,
-        allDrafts,
-        drafts,
-        allSent,
-        sent,
-        trash,
-        spam,
-        allmail,
-        archive,
-        starred
-    } = CONSTANTS.MAILBOX_IDENTIFIERS;
+
+    const { inbox, allDrafts, drafts, allSent, sent, trash, spam, allmail, archive, starred } = MAILBOX_IDENTIFIERS;
     const I18N = {
         errorMessages: gettextCatalog.getString('No messages available', null, 'Error'),
         errorConversations: gettextCatalog.getString('No conversations available', null, 'Error')
@@ -67,8 +58,8 @@ function cache(
      * @param  {Number} Limit
      * @return {Array}
      */
-    function getPages({ Page = 0, Limit = CONSTANTS.CONVERSATION_LIMIT }) {
-        return _.range(Page, Page + Limit / CONSTANTS.ELEMENTS_PER_PAGE, 1);
+    function getPages({ Page = 0, Limit = CONVERSATION_LIMIT }) {
+        return _.range(Page, Page + Limit / ELEMENTS_PER_PAGE, 1);
     }
 
     /**
@@ -301,7 +292,7 @@ function cache(
     function queryConversations(request, noCacheCounter = false) {
         const loc = getLocation(request);
         const context = tools.cacheContext();
-        request.Limit = request.Limit || CONSTANTS.CONVERSATION_LIMIT; // We don't call 50 conversations but 100 to improve user experience when he delete message and display quickly the next conversations
+        request.Limit = request.Limit || CONVERSATION_LIMIT; // We don't call 50 conversations but 100 to improve user experience when he delete message and display quickly the next conversations
         const promise = api
             .getDispatcher()
             .then(() => conversationApi.query(request))
@@ -336,11 +327,11 @@ function cache(
 
                     api.clearDispatcher();
                     // Return conversations ordered
-                    return api.orderConversation(data.Conversations.slice(0, CONSTANTS.ELEMENTS_PER_PAGE), loc);
+                    return api.orderConversation(data.Conversations.slice(0, ELEMENTS_PER_PAGE), loc);
                 }
 
                 api.clearDispatcher();
-                return data.Conversations.slice(0, CONSTANTS.ELEMENTS_PER_PAGE);
+                return data.Conversations.slice(0, ELEMENTS_PER_PAGE);
             })
             .catch(({ data = {} } = {}) => {
                 api.clearDispatcher();
@@ -362,7 +353,7 @@ function cache(
         const loc = getLocation(request);
         const context = tools.cacheContext();
 
-        request.Limit = request.Limit || CONSTANTS.MESSAGE_LIMIT; // We don't call 50 messages but 100 to improve user experience when he delete message and display quickly the next messages
+        request.Limit = request.Limit || MESSAGE_LIMIT; // We don't call 50 messages but 100 to improve user experience when he delete message and display quickly the next messages
 
         const promise = api
             .getDispatcher()
@@ -396,11 +387,11 @@ function cache(
                     pages.forEach((page) => !cachePages.inside(page) && cachePages.add(page));
                     // Return messages ordered
                     api.clearDispatcher();
-                    return api.orderMessage(Messages.slice(0, CONSTANTS.ELEMENTS_PER_PAGE));
+                    return api.orderMessage(Messages.slice(0, ELEMENTS_PER_PAGE));
                 }
 
                 api.clearDispatcher();
-                return Messages.slice(0, CONSTANTS.ELEMENTS_PER_PAGE);
+                return Messages.slice(0, ELEMENTS_PER_PAGE);
             })
             .catch(({ data = {} } = {}) => {
                 api.clearDispatcher();
@@ -591,8 +582,8 @@ function cache(
 
         // In cache context?
         if (context && !firstLoadState.get() && cachePages.consecutive(page)) {
-            const start = page * CONSTANTS.ELEMENTS_PER_PAGE;
-            const end = start + CONSTANTS.ELEMENTS_PER_PAGE;
+            const start = page * ELEMENTS_PER_PAGE;
+            const end = start + ELEMENTS_PER_PAGE;
             let total;
             let number;
             const mailbox = tools.currentMailbox();
@@ -608,19 +599,19 @@ function cache(
                     total = cacheCounters.totalMessage($stateParams.label);
                     break;
                 default:
-                    total = cacheCounters.totalMessage(CONSTANTS.MAILBOX_IDENTIFIERS[mailbox]);
+                    total = cacheCounters.totalMessage(MAILBOX_IDENTIFIERS[mailbox]);
                     break;
             }
 
             if (angular.isDefined(total)) {
                 if (total === 0) {
                     number = 0;
-                } else if (total % CONSTANTS.ELEMENTS_PER_PAGE === 0) {
-                    number = CONSTANTS.ELEMENTS_PER_PAGE;
-                } else if (Math.ceil(total / CONSTANTS.ELEMENTS_PER_PAGE) - 1 === page) {
-                    number = total % CONSTANTS.ELEMENTS_PER_PAGE;
+                } else if (total % ELEMENTS_PER_PAGE === 0) {
+                    number = ELEMENTS_PER_PAGE;
+                } else if (Math.ceil(total / ELEMENTS_PER_PAGE) - 1 === page) {
+                    number = total % ELEMENTS_PER_PAGE;
                 } else {
-                    number = CONSTANTS.ELEMENTS_PER_PAGE;
+                    number = ELEMENTS_PER_PAGE;
                 }
 
                 cacheCounters.currentState(total);
@@ -648,8 +639,8 @@ function cache(
 
         // In cache context?
         if (context && !firstLoadState.get() && cachePages.consecutive(page)) {
-            const start = page * CONSTANTS.ELEMENTS_PER_PAGE;
-            const end = start + CONSTANTS.ELEMENTS_PER_PAGE;
+            const start = page * ELEMENTS_PER_PAGE;
+            const end = start + ELEMENTS_PER_PAGE;
             let total;
             let number;
             const mailbox = tools.currentMailbox();
@@ -665,19 +656,19 @@ function cache(
                     total = cacheCounters.totalConversation($stateParams.label);
                     break;
                 default:
-                    total = cacheCounters.totalConversation(CONSTANTS.MAILBOX_IDENTIFIERS[mailbox]);
+                    total = cacheCounters.totalConversation(MAILBOX_IDENTIFIERS[mailbox]);
                     break;
             }
 
             if (angular.isDefined(total)) {
                 if (total === 0) {
                     number = 0;
-                } else if (total % CONSTANTS.ELEMENTS_PER_PAGE === 0) {
-                    number = CONSTANTS.ELEMENTS_PER_PAGE;
-                } else if (Math.ceil(total / CONSTANTS.ELEMENTS_PER_PAGE) - 1 === page) {
-                    number = total % CONSTANTS.ELEMENTS_PER_PAGE;
+                } else if (total % ELEMENTS_PER_PAGE === 0) {
+                    number = ELEMENTS_PER_PAGE;
+                } else if (Math.ceil(total / ELEMENTS_PER_PAGE) - 1 === page) {
+                    number = total % ELEMENTS_PER_PAGE;
                 } else {
-                    number = CONSTANTS.ELEMENTS_PER_PAGE;
+                    number = ELEMENTS_PER_PAGE;
                 }
 
                 cacheCounters.currentState(total);

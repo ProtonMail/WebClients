@@ -1,8 +1,9 @@
 import _ from 'lodash';
 
+import { SEND_TYPES } from '../../constants';
+
 /* @ngInject */
-function encryptPackages(CONSTANTS, pmcw, authentication, AttachmentLoader) {
-    const { SEND_TYPES } = CONSTANTS;
+function encryptPackages(pmcw, authentication, AttachmentLoader) {
     const arrayToBase64 = _.flowRight(pmcw.encode_base64, pmcw.arrayToBinaryString);
     const packToBase64 = ({ data }) => arrayToBase64(data);
     const encryptKeyPacket = ({ sessionKeys = [], publicKeys = [], passwords = [] }) => {

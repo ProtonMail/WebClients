@@ -1,6 +1,7 @@
+import { UPLOAD_GRADIENT_DARK, UPLOAD_GRADIENT_LIGHT } from '../../constants';
+
 /* @ngInject */
-function progressUpload(dispatchers, CONSTANTS) {
-    const { UPLOAD_GRADIENT_DARK, UPLOAD_GRADIENT_LIGHT } = CONSTANTS;
+function progressUpload(dispatchers) {
     const CLASS_UPLOADED = 'progressUpload-uploaded';
     const CLASS_UPLOADING = 'progressUpload-uploading';
 

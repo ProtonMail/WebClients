@@ -1,7 +1,7 @@
-/* @ngInject */
-function bitcoinView(paymentBitcoinModel, dispatchers, CONSTANTS) {
-    const { MIN_BITCOIN_AMOUNT } = CONSTANTS;
+import { MIN_BITCOIN_AMOUNT } from '../../constants';
 
+/* @ngInject */
+function bitcoinView(paymentBitcoinModel, dispatchers) {
     paymentBitcoinModel.load();
 
     return {

@@ -1,5 +1,6 @@
 import _ from 'lodash';
-import { MIME_TYPES } from '../../constants';
+
+import { MIME_TYPES, INBOX_AND_SENT, SENT, MAX_NUMBER_COMPOSER } from '../../constants';
 
 const { PLAINTEXT } = MIME_TYPES;
 
@@ -17,7 +18,6 @@ function ComposeMessageController(
     composerFromModel,
     composerRequestModel,
     confirmModal,
-    CONSTANTS,
     dispatchers,
     $rootScope,
     embedded,
@@ -103,7 +103,7 @@ function ComposeMessageController(
         });
     });
 
-    const isSent = ({ Type } = {}) => Type === CONSTANTS.INBOX_AND_SENT || Type === CONSTANTS.SENT;
+    const isSent = ({ Type } = {}) => Type === INBOX_AND_SENT || Type === SENT;
 
     on('app.event', (event, { type, data }) => {
         switch (type) {
@@ -253,15 +253,14 @@ function ComposeMessageController(
      */
     function checkComposerNumber() {
         const limit =
-            $scope.messages.length >= CONSTANTS.MAX_NUMBER_COMPOSER ||
-            ($scope.messages.length === 1 && AppModel.is('mobile'));
+            $scope.messages.length >= MAX_NUMBER_COMPOSER || ($scope.messages.length === 1 && AppModel.is('mobile'));
 
         if (limit) {
             notification.error(
                 gettextCatalog.getString(
                     'Maximum composer reached',
                     null,
-                    `Notify the user when he try to open more than ${CONSTANTS.MAX_NUMBER_COMPOSER} composer`
+                    `Notify the user when he try to open more than ${MAX_NUMBER_COMPOSER} composer`
                 )
             );
         }

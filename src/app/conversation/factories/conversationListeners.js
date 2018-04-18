@@ -1,5 +1,7 @@
+import { DRAFT } from '../../constants';
+
 /* @ngInject */
-function conversationListeners($rootScope, CONSTANTS, dispatchers) {
+function conversationListeners($rootScope, dispatchers) {
     const { dispatcher, on, unsubscribe } = dispatchers(['composer.new']);
     const composerMapActions = {
         replyConversation: 'reply',
@@ -7,7 +9,7 @@ function conversationListeners($rootScope, CONSTANTS, dispatchers) {
         forwardConversation: 'forward'
     };
 
-    const isDraft = ({ Type }) => Type === CONSTANTS.DRAFT;
+    const isDraft = ({ Type }) => Type === DRAFT;
     const isDecrypted = ({ failedDecryption }) => !failedDecryption;
 
     const openComposer = (key, message = {}) => () => {

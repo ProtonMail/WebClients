@@ -1,16 +1,9 @@
 import _ from 'lodash';
 
+import { CONTACTS_PER_PAGE } from '../../constants';
+
 /* @ngInject */
-function contactToolbar(
-    $state,
-    $stateParams,
-    CONSTANTS,
-    contactCache,
-    gettextCatalog,
-    messageModel,
-    notification,
-    dispatchers
-) {
+function contactToolbar($state, $stateParams, contactCache, gettextCatalog, messageModel, notification, dispatchers) {
     const getList = () => {
         const selected = contactCache.get('selected').filter(Boolean);
 
@@ -52,7 +45,7 @@ function contactToolbar(
                 });
             };
 
-            scope.numPerPage = CONSTANTS.CONTACTS_PER_PAGE;
+            scope.numPerPage = CONTACTS_PER_PAGE;
             scope.selectPage = (page) => $state.go($state.$current.name, { page });
             scope.currentPage = +($stateParams.page || 1);
             scope.selectAll = (event) => toggleSelectAll(!!event.target.checked);

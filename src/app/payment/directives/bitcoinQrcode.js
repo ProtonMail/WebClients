@@ -1,7 +1,9 @@
+import { BTC_DONATION_ADDRESS } from '../../constants';
+
 /* @ngInject */
-function bitcoinQrcode(paymentBitcoinModel, CONSTANTS) {
+function bitcoinQrcode(paymentBitcoinModel) {
     const getURL = () => {
-        const { Address = CONSTANTS.BTC_DONATION_ADDRESS, AmountBitcoin } = paymentBitcoinModel.get('payment') || {};
+        const { Address = BTC_DONATION_ADDRESS, AmountBitcoin } = paymentBitcoinModel.get('payment') || {};
 
         if (paymentBitcoinModel.isDonation()) {
             return `bitcoin:${Address}`;

@@ -1,8 +1,8 @@
 import { parseURL } from '../../../helpers/browser';
+import { MIN_PAYPAL_AMOUNT, MAX_PAYPAL_AMOUNT, CANCEL_REQUEST } from '../../constants';
 
 /* @ngInject */
-function paypalView(notification, Payment, gettextCatalog, CONSTANTS, $q, networkUtils, windowModel) {
-    const { MIN_PAYPAL_AMOUNT, MAX_PAYPAL_AMOUNT, CANCEL_REQUEST } = CONSTANTS;
+function paypalView(notification, Payment, gettextCatalog, $q, networkUtils, windowModel) {
     const I18N = {
         down: gettextCatalog.getString('Error connecting to PayPal.', null, 'Paypal component')
     };

@@ -1,5 +1,7 @@
+import { TRACKER_ROUTE, PIWIK_SCRIPT } from '../../constants';
+
 /* @ngInject */
-function analytics(CONFIG, CONSTANTS) {
+function analytics(CONFIG) {
     const {
         isEnabled,
         cookieDomain = '',
@@ -20,7 +22,7 @@ function analytics(CONFIG, CONSTANTS) {
 
     // Load the piwik script tag
     window.piwikAsyncInit = () => {
-        state.tracker = window.Piwik.getTracker(`//${statsHost}/${CONSTANTS.TRACKER_ROUTE}`, siteId);
+        state.tracker = window.Piwik.getTracker(`//${statsHost}/${TRACKER_ROUTE}`, siteId);
         // init the tracker
         state.tracker.setCookieDomain(cookieDomain);
         state.tracker.setDomains(domains);
@@ -39,7 +41,7 @@ function analytics(CONFIG, CONSTANTS) {
     piwikScript.type = 'text/javascript';
     piwikScript.async = true;
     piwikScript.defer = true;
-    piwikScript.src = `https://${statsHost}/${CONSTANTS.PIWIK_SCRIPT}`;
+    piwikScript.src = `https://${statsHost}/${PIWIK_SCRIPT}`;
     document.head.appendChild(piwikScript);
 
     function getTrackerAsync() {

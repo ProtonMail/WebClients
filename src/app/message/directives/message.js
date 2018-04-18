@@ -1,5 +1,7 @@
 import _ from 'lodash';
 
+import { SEND_TYPES, ENCRYPTED_STATUS } from '../../constants';
+
 const CLASSNAME = {
     UNDISCLOSED: 'message-undisclosed'
 };
@@ -17,7 +19,6 @@ function message(
     messageScroll,
     tools,
     unsubscribeModel,
-    CONSTANTS,
     sendPreferences,
     $exceptionHandler,
     tooltipModel
@@ -78,11 +79,9 @@ function message(
                     .get([scope.message.SenderAddress])
                     .then(({ [scope.message.SenderAddress]: { pinned, scheme, isVerified } }) =>
                         scope.$applyAsync(() => {
-                            scope.message.isInternal = scheme === CONSTANTS.SEND_TYPES.SEND_PM;
+                            scope.message.isInternal = scheme === SEND_TYPES.SEND_PM;
                             scope.message.promptKeyPinning =
-                                !pinned &&
-                                mailSettingsModel.get('PromptPin') &&
-                                scheme === CONSTANTS.SEND_TYPES.SEND_PM;
+                                !pinned && mailSettingsModel.get('PromptPin') && scheme === SEND_TYPES.SEND_PM;
                             scope.message.askResign = pinned && !isVerified;
                         })
                     );
@@ -233,7 +232,7 @@ function message(
                     const type = tools.typeView();
 
                     if (message && canBeOpen(message)) {
-                        if (message.IsEncrypted === CONSTANTS.ENCRYPTED_STATUS.PGP_MIME) {
+                        if (message.IsEncrypted === ENCRYPTED_STATUS.PGP_MIME) {
                             // we need to reload the attachments too: otherwise the attachments disappear from the message
                             await message.loadPGPAttachments();
                         }

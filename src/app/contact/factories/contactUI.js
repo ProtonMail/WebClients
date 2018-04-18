@@ -1,5 +1,5 @@
 import _ from 'lodash';
-import { CONSTANTS, KNOWLEDGE_BASE } from '../../constants';
+import { PACKAGE_TYPE, KNOWLEDGE_BASE } from '../../constants';
 /* @ngInject */
 function contactUI(gettextCatalog, contactTransformLabel, mailSettingsModel) {
     const EMAIL_TYPE = ['email', 'home', 'work', 'other'];
@@ -71,9 +71,7 @@ function contactUI(gettextCatalog, contactTransformLabel, mailSettingsModel) {
             case 'Scheme':
                 {
                     const defaultValue =
-                        mailSettingsModel.get('PGPScheme') === CONSTANTS.PACKAGE_TYPE.SEND_PGP_INLINE
-                            ? 'PGP/Inline'
-                            : 'PGP/MIME';
+                        mailSettingsModel.get('PGPScheme') === PACKAGE_TYPE.SEND_PGP_INLINE ? 'PGP/Inline' : 'PGP/MIME';
                     UI.unique = true;
                     UI.placeholder = I18N.scheme;
                     UI.iconClass = 'fa-wrench';

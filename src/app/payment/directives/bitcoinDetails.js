@@ -1,5 +1,7 @@
+import { BTC_DONATION_ADDRESS } from '../../constants';
+
 /* @ngInject */
-function bitcoinDetails(paymentBitcoinModel, gettextCatalog, CONSTANTS) {
+function bitcoinDetails(paymentBitcoinModel, gettextCatalog) {
     const node = (type, value) => {
         const span = document.createElement('SPAN');
         const kbd = document.createElement('KBD');
@@ -25,8 +27,7 @@ function bitcoinDetails(paymentBitcoinModel, gettextCatalog, CONSTANTS) {
         replace: true,
         template: '<p class="bitcoinDetails-container"></p>',
         link(scope, el) {
-            const { Address = CONSTANTS.BTC_DONATION_ADDRESS, AmountBitcoin } =
-                paymentBitcoinModel.get('payment') || {};
+            const { Address = BTC_DONATION_ADDRESS, AmountBitcoin } = paymentBitcoinModel.get('payment') || {};
 
             // Null for donation because we don't need an amount
             const amount = node('amount', AmountBitcoin);

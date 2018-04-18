@@ -1,5 +1,7 @@
+import { MAILBOX_IDENTIFIERS } from '../../constants';
+
 /* @ngInject */
-function messageView($stateParams, $state, dispatchers, $rootScope, conversationListeners, cache, hotkeys, CONSTANTS) {
+function messageView($stateParams, $state, dispatchers, $rootScope, conversationListeners, cache, hotkeys) {
     function back() {
         const name = $state.$current.name;
         const route = name.replace('.element', '');
@@ -30,7 +32,7 @@ function messageView($stateParams, $state, dispatchers, $rootScope, conversation
             });
 
             scope.$on('move', (e, mailbox) => {
-                const labelID = CONSTANTS.MAILBOX_IDENTIFIERS[mailbox];
+                const labelID = MAILBOX_IDENTIFIERS[mailbox];
 
                 /**
                  * Move item only when we didn't select anything

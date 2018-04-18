@@ -1,8 +1,8 @@
 import _ from 'lodash';
+import { STATUS } from '../../constants';
 
 /* @ngInject */
-function messageRequest($rootScope, messageApi, ComposerRequestStatus, CONSTANTS, gettextCatalog) {
-    const { STATUS } = CONSTANTS;
+function messageRequest($rootScope, messageApi, ComposerRequestStatus, gettextCatalog) {
     const I18N = {
         ERROR_REQUEST_DRAFT: gettextCatalog.getString('Saving draft failed, please  try again', null, 'Error'),
         ERROR_SENDING: gettextCatalog.getString('Cannot send message', null, 'Error')

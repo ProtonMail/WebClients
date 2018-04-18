@@ -1,5 +1,7 @@
 import _ from 'lodash';
+
 import { toList } from '../../../helpers/arrayHelper';
+import { CONTACT_ERROR, SEND_TYPES } from '../../constants';
 
 /* @ngInject */
 function messageSenderSettings(
@@ -8,7 +10,6 @@ function messageSenderSettings(
     Contact,
     keyCache,
     networkActivityTracker,
-    CONSTANTS,
     autoPinPrimaryKeys,
     contactDetailsModel,
     contactEncryptionModal,
@@ -17,7 +18,7 @@ function messageSenderSettings(
 ) {
     const getContact = ({ ContactID, Email }) => {
         return Contact.get(ContactID).then((contact) => {
-            if (contact.errors.includes(CONSTANTS.CONTACT_ERROR.TYPE2_CONTACT_VERIFICATION)) {
+            if (contact.errors.includes(CONTACT_ERROR.TYPE2_CONTACT_VERIFICATION)) {
                 return autoPinPrimaryKeys.resign([Email]).then((pinned) => (pinned ? contact : false));
             }
             return contact;
@@ -85,9 +86,7 @@ function messageSenderSettings(
                             .then(() => sendPreferences.get([normalizedEmail]))
                             .then(({ [normalizedEmail]: { pinned, scheme } }) =>
                                 scope.$applyAsync(
-                                    () =>
-                                        (scope.message.promptKeyPinning =
-                                            !pinned && scheme === CONSTANTS.SEND_TYPES.SEND_PM)
+                                    () => (scope.message.promptKeyPinning = !pinned && scheme === SEND_TYPES.SEND_PM)
                                 )
                             )
                             .then(() => scope.message.clearTextBody(true));

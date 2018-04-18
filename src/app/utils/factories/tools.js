@@ -1,9 +1,9 @@
 import _ from 'lodash';
-import { CONSTANTS } from '../../constants';
+import { MOBILE_BREAKPOINT, DESKTOP_BREAKPOINT, MAILBOX_IDENTIFIERS, MESSAGE_VIEW_MODE } from '../../constants';
 
 /* @ngInject */
 function tools($state, $stateParams, mailSettingsModel, AppModel) {
-    const MAILBOX_KEYS = Object.keys(CONSTANTS.MAILBOX_IDENTIFIERS);
+    const MAILBOX_KEYS = Object.keys(MAILBOX_IDENTIFIERS);
 
     /**
      * Generate a hash
@@ -15,11 +15,10 @@ function tools($state, $stateParams, mailSettingsModel, AppModel) {
     };
 
     const mobileResponsive = () => {
-        AppModel.set('mobile', document.body.offsetWidth < CONSTANTS.MOBILE_BREAKPOINT);
+        AppModel.set('mobile', document.body.offsetWidth < MOBILE_BREAKPOINT);
         AppModel.set(
             'tablet',
-            document.body.offsetWidth < CONSTANTS.DESKTOP_BREAKPOINT &&
-                document.body.offsetWidth > CONSTANTS.MOBILE_BREAKPOINT
+            document.body.offsetWidth < DESKTOP_BREAKPOINT && document.body.offsetWidth > MOBILE_BREAKPOINT
         );
     };
 
@@ -72,7 +71,7 @@ function tools($state, $stateParams, mailSettingsModel, AppModel) {
 
     const currentLocation = () => {
         const mailbox = currentMailbox();
-        const loc = mailbox === 'label' ? $stateParams.label : CONSTANTS.MAILBOX_IDENTIFIERS[mailbox];
+        const loc = mailbox === 'label' ? $stateParams.label : MAILBOX_IDENTIFIERS[mailbox];
 
         return loc;
     };
@@ -93,7 +92,7 @@ function tools($state, $stateParams, mailSettingsModel, AppModel) {
         const specialBoxes = ['drafts', 'search', 'sent', 'allDrafts', 'allSent'];
         const box = name || currentMailbox();
         const { ViewMode } = mailSettingsModel.get();
-        const threadingIsOff = ViewMode === CONSTANTS.MESSAGE_VIEW_MODE;
+        const threadingIsOff = ViewMode === MESSAGE_VIEW_MODE;
 
         if (threadingIsOff || _.includes(specialBoxes, box)) {
             return 'message';
@@ -104,7 +103,7 @@ function tools($state, $stateParams, mailSettingsModel, AppModel) {
 
     const typeView = () => {
         const { ViewMode } = mailSettingsModel.get();
-        return ViewMode === CONSTANTS.MESSAGE_VIEW_MODE ? 'message' : 'conversation';
+        return ViewMode === MESSAGE_VIEW_MODE ? 'message' : 'conversation';
     };
 
     /**

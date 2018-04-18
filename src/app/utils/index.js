@@ -33,7 +33,7 @@ import mailtoHandler from './directives/mailtoHandler';
 import mailUtils from './services/mailUtils';
 
 export default angular
-    .module('proton.utils', ['proton.constants'])
+    .module('proton.utils', [])
     .factory('mailUtils', mailUtils)
     .directive('mailtoHandler', mailtoHandler)
     .service('lazyLoader', lazyLoader)

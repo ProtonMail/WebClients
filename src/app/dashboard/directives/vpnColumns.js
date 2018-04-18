@@ -1,6 +1,9 @@
+import { PLANS } from '../../constants';
+
+const { VPN_BASIC, VPN_PLUS } = PLANS.PLAN;
+
 /* @ngInject */
-function vpnColumns(CONSTANTS, dashboardConfiguration, dashboardModel, dispatchers, customVpnModel) {
-    const { VPN_BASIC, VPN_PLUS } = CONSTANTS.PLANS.PLAN;
+function vpnColumns(dashboardConfiguration, dashboardModel, dispatchers, customVpnModel) {
     const VPN_BASIC_SELECTED_CLASS = 'vpnColumns-vpnbasic-selected';
     const VPN_PLUS_SELECTED_CLASS = 'vpnColumns-vpnplus-selected';
 

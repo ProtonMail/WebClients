@@ -32,7 +32,7 @@ import windowModel from './factories/windowModel';
 import SidebarController from './controllers/sidebar';
 
 export default angular
-    .module('proton.core', ['proton.constants', 'proton.utils'])
+    .module('proton.core', ['proton.utils'])
     .run((paginationModel, cachePages) => {
         paginationModel.init();
         cachePages.init();

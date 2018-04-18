@@ -1,12 +1,12 @@
 import _ from 'lodash';
-import { CONSTANTS, TIME } from '../../constants';
+import { RECIPIENT_TYPE, TIME } from '../../constants';
+
+const KEY_GET_ADDRESS_MISSING = 33102;
+const KEY_GET_ADDRESS_NO_RECEIVE = 33103;
+const TIMEOUT = 10 * TIME.MINUTE;
 
 /* @ngInject */
 function keyCache(Key) {
-    const { RECIPIENT_TYPE } = CONSTANTS;
-    const KEY_GET_ADDRESS_MISSING = 33102;
-    const KEY_GET_ADDRESS_NO_RECEIVE = 33103;
-    const TIMEOUT = 10 * TIME.MINUTE;
     const CACHE = {};
 
     const getKeysFromApi = (email) => {

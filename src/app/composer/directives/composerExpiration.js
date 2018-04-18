@@ -1,7 +1,9 @@
 import _ from 'lodash';
 
+import { MAX_EXPIRATION_TIME } from '../../constants';
+
 /* @ngInject */
-function composerExpiration(notification, gettextCatalog, $rootScope, CONSTANTS) {
+function composerExpiration(notification, gettextCatalog, $rootScope) {
     const MESSAGES = {
         maxEpiration: gettextCatalog.getString('The maximum expiration is 4 weeks.', null, 'Error'),
         invalid: gettextCatalog.getString('Invalid expiration time.', null, 'Error')
@@ -57,7 +59,7 @@ function composerExpiration(notification, gettextCatalog, $rootScope, CONSTANTS)
                 const hours = computeHours(scope.model);
 
                 // How can we enter in this situation?
-                if (parseInt(hours, 10) > CONSTANTS.MAX_EXPIRATION_TIME) {
+                if (parseInt(hours, 10) > MAX_EXPIRATION_TIME) {
                     return notification.error(MESSAGES.maxEpiration);
                 }
 

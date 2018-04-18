@@ -40,7 +40,7 @@ import sendMessage from './services/sendMessage';
 import validateMessage from './services/validateMessage';
 
 export default angular
-    .module('proton.composer', ['proton.constants', 'proton.labels'])
+    .module('proton.composer', ['proton.labels'])
     .constant('ComposerRequestStatus', ComposerRequestStatus)
     .controller('ComposeMessageController', ComposeMessageController)
     .directive('actionCompose', actionCompose)

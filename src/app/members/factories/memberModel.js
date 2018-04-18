@@ -1,10 +1,11 @@
 import _ from 'lodash';
 
+import { FREE_USER_ROLE, PAID_ADMIN_ROLE, PAID_MEMBER_ROLE, STATUS } from '../../constants';
+
 /* @ngInject */
-function memberModel(dispatchers, addressesModel, memberApi, gettextCatalog, authentication, CONSTANTS) {
+function memberModel(dispatchers, addressesModel, memberApi, gettextCatalog, authentication) {
     let CACHE = [];
     const { dispatcher, on } = dispatchers(['members']);
-    const { FREE_USER_ROLE, PAID_ADMIN_ROLE, PAID_MEMBER_ROLE, STATUS } = CONSTANTS;
     const I18N = {
         ROLES: {
             [PAID_ADMIN_ROLE]: gettextCatalog.getString('Admin', null, 'User role'),

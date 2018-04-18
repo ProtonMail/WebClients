@@ -1,5 +1,7 @@
+import { MAILBOX_IDENTIFIERS } from '../../constants';
+
 /* @ngInject */
-function sidebarModel(CONSTANTS, tools, cacheCounters, gettextCatalog, mailSettingsModel) {
+function sidebarModel(tools, cacheCounters, gettextCatalog, mailSettingsModel) {
     const { ShowMoved } = mailSettingsModel.get();
     const draftsIncluded = () => ShowMoved & 1;
     const sentIncluded = () => ShowMoved & 2;
@@ -54,7 +56,7 @@ function sidebarModel(CONSTANTS, tools, cacheCounters, gettextCatalog, mailSetti
     };
 
     const getFolderID = (mailbox, id) => {
-        return mailbox === 'label' ? id : CONSTANTS.MAILBOX_IDENTIFIERS[mailbox];
+        return mailbox === 'label' ? id : MAILBOX_IDENTIFIERS[mailbox];
     };
 
     const getTotal = (mailbox, id) => {

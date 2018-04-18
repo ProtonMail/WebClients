@@ -1,3 +1,5 @@
+import { CONVERSATION_VIEW_MODE, MESSAGE_VIEW_MODE } from '../../constants';
+
 /* @ngInject */
 function AppearanceController(
     $log,
@@ -7,7 +9,6 @@ function AppearanceController(
     $window,
     gettextCatalog,
     $q,
-    CONSTANTS,
     networkActivityTracker,
     eventManager,
     settingsMailApi,
@@ -92,7 +93,7 @@ function AppearanceController(
     };
 
     function changeViewMode(event, { status }) {
-        const ViewMode = status ? CONSTANTS.CONVERSATION_VIEW_MODE : CONSTANTS.MESSAGE_VIEW_MODE; // Be careful, BE is reversed
+        const ViewMode = status ? CONVERSATION_VIEW_MODE : MESSAGE_VIEW_MODE; // Be careful, BE is reversed
 
         dispatcher.appearance('changingViewMode');
 

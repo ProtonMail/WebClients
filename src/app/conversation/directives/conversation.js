@@ -1,5 +1,7 @@
 import _ from 'lodash';
 
+import { DRAFT, MAILBOX_IDENTIFIERS, ROW_MODE } from '../../constants';
+
 /* @ngInject */
 function conversation(
     $filter,
@@ -12,7 +14,6 @@ function conversation(
     authentication,
     messageScroll,
     cache,
-    CONSTANTS,
     tools,
     hotkeys,
     labelsModel,
@@ -101,7 +102,7 @@ function conversation(
                     return;
                 }
 
-                if (msg.Type === CONSTANTS.DRAFT) {
+                if (msg.Type === DRAFT) {
                     return dispatcher['composer.load']('', msg);
                 }
 
@@ -144,7 +145,7 @@ function conversation(
             scope.$on('move', (e, mailbox) => {
                 unsubscribeActions();
 
-                const labelID = CONSTANTS.MAILBOX_IDENTIFIERS[mailbox];
+                const labelID = MAILBOX_IDENTIFIERS[mailbox];
 
                 /**
                  * Move item only when we didn't select anything
@@ -281,11 +282,11 @@ function conversation(
                 let messages = [];
                 messagesCached = cache.queryMessagesCached($stateParams.id);
                 scope.trashed = _.some(messagesCached, ({ LabelIDs }) =>
-                    _.includes(LabelIDs, CONSTANTS.MAILBOX_IDENTIFIERS.trash)
+                    _.includes(LabelIDs, MAILBOX_IDENTIFIERS.trash)
                 );
                 scope.nonTrashed = _.some(
                     messagesCached,
-                    ({ LabelIDs }) => !_.includes(LabelIDs, CONSTANTS.MAILBOX_IDENTIFIERS.trash)
+                    ({ LabelIDs }) => !_.includes(LabelIDs, MAILBOX_IDENTIFIERS.trash)
                 );
 
                 messages = $filter('filterMessages')(messagesCached, scope.showTrashed, scope.showNonTrashed);
@@ -301,7 +302,7 @@ function conversation(
                     scope.messages = expandMessage(list);
                     unsubscribeActions = conversationListeners(_.last(scope.messages));
 
-                    if (mailSettingsModel.get('ViewLayout') === CONSTANTS.ROW_MODE) {
+                    if (mailSettingsModel.get('ViewLayout') === ROW_MODE) {
                         scope.markedMessage = $rootScope.expandMessage;
                     }
 
@@ -322,10 +323,10 @@ function conversation(
 
                 messagesCached = messages;
                 scope.trashed = messagesCached.some(({ LabelIDs = [] }) =>
-                    _.includes(LabelIDs, CONSTANTS.MAILBOX_IDENTIFIERS.trash)
+                    _.includes(LabelIDs, MAILBOX_IDENTIFIERS.trash)
                 );
                 scope.nonTrashed = messagesCached.some(
-                    ({ LabelIDs = [] }) => !_.includes(LabelIDs, CONSTANTS.MAILBOX_IDENTIFIERS.trash)
+                    ({ LabelIDs = [] }) => !_.includes(LabelIDs, MAILBOX_IDENTIFIERS.trash)
                 );
 
                 if (!conversation) {
@@ -385,7 +386,7 @@ function conversation(
              */
             scope.showNotifier = (folder) => {
                 const filtered = _.filter(messagesCached, (message) =>
-                    _.includes(message.LabelIDs, CONSTANTS.MAILBOX_IDENTIFIERS[folder])
+                    _.includes(message.LabelIDs, MAILBOX_IDENTIFIERS[folder])
                 );
                 return filtered.length < messagesCached.length && filtered.length > 0;
             };

@@ -1,6 +1,10 @@
 import _ from 'lodash';
-
 import { flow, uniq, each, map, filter, reduce } from 'lodash/fp';
+
+import { STATUS, MAILBOX_IDENTIFIERS, DRAFT, SENT, INBOX_AND_SENT } from '../../constants';
+
+const REMOVE_ID = 0;
+const ADD_ID = 1;
 
 /* @ngInject */
 function messageActions(
@@ -11,41 +15,35 @@ function messageActions(
     messageApi,
     dispatchers,
     networkActivityTracker,
-    CONSTANTS,
     notification,
     gettextCatalog,
     labelsModel,
     $filter
 ) {
-    const REMOVE_ID = 0;
-    const ADD_ID = 1;
     const { on } = dispatchers();
-
-    const ACTION_STATUS = CONSTANTS.STATUS;
-
     const unicodeTagView = $filter('unicodeTagView');
     const notifySuccess = (message) => notification.success(unicodeTagView(message));
 
     const basicFolders = [
-        CONSTANTS.MAILBOX_IDENTIFIERS.inbox,
-        CONSTANTS.MAILBOX_IDENTIFIERS.trash,
-        CONSTANTS.MAILBOX_IDENTIFIERS.spam,
-        CONSTANTS.MAILBOX_IDENTIFIERS.archive,
-        CONSTANTS.MAILBOX_IDENTIFIERS.sent,
-        CONSTANTS.MAILBOX_IDENTIFIERS.drafts
+        MAILBOX_IDENTIFIERS.inbox,
+        MAILBOX_IDENTIFIERS.trash,
+        MAILBOX_IDENTIFIERS.spam,
+        MAILBOX_IDENTIFIERS.archive,
+        MAILBOX_IDENTIFIERS.sent,
+        MAILBOX_IDENTIFIERS.drafts
     ];
 
     function getFolderNameTranslated(labelID = '') {
         const { Name } = labelsModel.read(labelID, 'folders') || {};
         const mailboxes = {
-            [CONSTANTS.MAILBOX_IDENTIFIERS.inbox]: gettextCatalog.getString('Inbox', null, 'App folder'),
-            [CONSTANTS.MAILBOX_IDENTIFIERS.spam]: gettextCatalog.getString('Spam', null, 'App folder'),
-            [CONSTANTS.MAILBOX_IDENTIFIERS.drafts]: gettextCatalog.getString('Drafts', null, 'App folder'),
-            [CONSTANTS.MAILBOX_IDENTIFIERS.allDrafts]: gettextCatalog.getString('Drafts', null, 'App folder'),
-            [CONSTANTS.MAILBOX_IDENTIFIERS.sent]: gettextCatalog.getString('Sent', null, 'App folder'),
-            [CONSTANTS.MAILBOX_IDENTIFIERS.allSent]: gettextCatalog.getString('Sent', null, 'App folder'),
-            [CONSTANTS.MAILBOX_IDENTIFIERS.trash]: gettextCatalog.getString('Trash', null, 'App folder'),
-            [CONSTANTS.MAILBOX_IDENTIFIERS.archive]: gettextCatalog.getString('Archive', null, 'App folder')
+            [MAILBOX_IDENTIFIERS.inbox]: gettextCatalog.getString('Inbox', null, 'App folder'),
+            [MAILBOX_IDENTIFIERS.spam]: gettextCatalog.getString('Spam', null, 'App folder'),
+            [MAILBOX_IDENTIFIERS.drafts]: gettextCatalog.getString('Drafts', null, 'App folder'),
+            [MAILBOX_IDENTIFIERS.allDrafts]: gettextCatalog.getString('Drafts', null, 'App folder'),
+            [MAILBOX_IDENTIFIERS.sent]: gettextCatalog.getString('Sent', null, 'App folder'),
+            [MAILBOX_IDENTIFIERS.allSent]: gettextCatalog.getString('Sent', null, 'App folder'),
+            [MAILBOX_IDENTIFIERS.trash]: gettextCatalog.getString('Trash', null, 'App folder'),
+            [MAILBOX_IDENTIFIERS.archive]: gettextCatalog.getString('Archive', null, 'App folder')
         };
         return mailboxes[labelID] || Name;
     }
@@ -85,23 +83,19 @@ function messageActions(
     });
 
     function updateLabelsAdded(Type, labelID) {
-        const toInbox = labelID === CONSTANTS.MAILBOX_IDENTIFIERS.inbox;
+        const toInbox = labelID === MAILBOX_IDENTIFIERS.inbox;
 
         if (toInbox) {
             switch (Type) {
                 // This message is a draft, if you move it to trash and back to inbox, it will go to draft instead
-                case CONSTANTS.DRAFT:
-                    return [CONSTANTS.MAILBOX_IDENTIFIERS.allDrafts, CONSTANTS.MAILBOX_IDENTIFIERS.drafts];
+                case DRAFT:
+                    return [MAILBOX_IDENTIFIERS.allDrafts, MAILBOX_IDENTIFIERS.drafts];
                 // This message is sent, if you move it to trash and back, it will go back to sent
-                case CONSTANTS.SENT:
-                    return [CONSTANTS.MAILBOX_IDENTIFIERS.allSent, CONSTANTS.MAILBOX_IDENTIFIERS.sent];
+                case SENT:
+                    return [MAILBOX_IDENTIFIERS.allSent, MAILBOX_IDENTIFIERS.sent];
                 // Type 3 is inbox and sent, (a message sent to yourself), if you move it from trash to inbox, it will acquire both the inbox and sent labels ( 0 and 2 ).
-                case CONSTANTS.INBOX_AND_SENT:
-                    return [
-                        CONSTANTS.MAILBOX_IDENTIFIERS.inbox,
-                        CONSTANTS.MAILBOX_IDENTIFIERS.allSent,
-                        CONSTANTS.MAILBOX_IDENTIFIERS.sent
-                    ];
+                case INBOX_AND_SENT:
+                    return [MAILBOX_IDENTIFIERS.inbox, MAILBOX_IDENTIFIERS.allSent, MAILBOX_IDENTIFIERS.sent];
             }
         }
 
@@ -112,8 +106,8 @@ function messageActions(
     function move({ ids, labelID }) {
         const folders = labelsModel.ids('folders');
         const labels = labelsModel.ids('labels');
-        const toTrash = labelID === CONSTANTS.MAILBOX_IDENTIFIERS.trash;
-        const toSpam = labelID === CONSTANTS.MAILBOX_IDENTIFIERS.spam;
+        const toTrash = labelID === MAILBOX_IDENTIFIERS.trash;
+        const toSpam = labelID === MAILBOX_IDENTIFIERS.spam;
         const folderIDs =
             toSpam || toTrash ? basicFolders.concat(folders).concat(labels) : basicFolders.concat(folders);
         const eventList = flow(
@@ -317,7 +311,7 @@ function messageActions(
                 );
 
                 if (alsoArchive === true) {
-                    toApply.push(CONSTANTS.MAILBOX_IDENTIFIERS.archive);
+                    toApply.push(MAILBOX_IDENTIFIERS.archive);
 
                     if (isStateAllowedRemove) {
                         toRemove.push(currentLocation);
@@ -363,7 +357,7 @@ function messageActions(
      */
     function star(ids) {
         const promise = messageApi.star({ IDs: ids });
-        const LabelIDsAdded = [CONSTANTS.MAILBOX_IDENTIFIERS.starred];
+        const LabelIDsAdded = [MAILBOX_IDENTIFIERS.starred];
 
         cache.addToDispatcher(promise);
 
@@ -411,7 +405,7 @@ function messageActions(
      */
     function unstar(ids) {
         const promise = messageApi.unstar({ IDs: ids });
-        const LabelIDsRemoved = [CONSTANTS.MAILBOX_IDENTIFIERS.starred];
+        const LabelIDsRemoved = [MAILBOX_IDENTIFIERS.starred];
 
         cache.addToDispatcher(promise);
 
@@ -427,7 +421,7 @@ function messageActions(
                 const conversation = cache.getConversationCached(ConversationID);
                 const messages = cache.queryMessagesCached(ConversationID);
                 const stars = _.filter(messages, ({ LabelIDs = [] }) =>
-                    _.includes(LabelIDs, CONSTANTS.MAILBOX_IDENTIFIERS.starred)
+                    _.includes(LabelIDs, MAILBOX_IDENTIFIERS.starred)
                 );
 
                 // Messages
@@ -613,7 +607,7 @@ function messageActions(
 
                 if (conversation) {
                     if (conversation.NumMessages === 1) {
-                        acc.push({ Action: ACTION_STATUS.DELETE, ID: conversation.ID });
+                        acc.push({ Action: STATUS.DELETE, ID: conversation.ID });
                     }
 
                     if (conversation.NumMessages > 1) {
@@ -626,7 +620,7 @@ function messageActions(
                         )(messages);
 
                         acc.push({
-                            Action: ACTION_STATUS.UPDATE_FLAGS,
+                            Action: STATUS.UPDATE_FLAGS,
                             ID: conversation.ID,
                             Conversation: {
                                 ID: conversation.ID,
@@ -637,7 +631,7 @@ function messageActions(
                     }
                 }
 
-                acc.push({ Action: ACTION_STATUS.DELETE, ID: message.ID });
+                acc.push({ Action: STATUS.DELETE, ID: message.ID });
                 return acc;
             },
             []

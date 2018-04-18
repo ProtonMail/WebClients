@@ -1,10 +1,10 @@
 import _ from 'lodash';
+
 import htmlToTextMail from '../../squire/helpers/htmlToTextMail';
+import { SEND_TYPES } from '../../constants';
 
 /* @ngInject */
-function generateTopPackages(CONSTANTS, editorModel, AttachmentLoader, mimeMessageBuilder) {
-    const { SEND_TYPES } = CONSTANTS;
-
+function generateTopPackages(editorModel, AttachmentLoader, mimeMessageBuilder) {
     /**
      * Removes any characters that are produced by the copying process (like zero width characters)
      * See: http://www.berklix.org/help/majordomo/#quoted we want to avoid sending unnecessary quoted printable encodings

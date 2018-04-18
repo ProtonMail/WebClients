@@ -1,7 +1,7 @@
-/* @ngInject */
-function backState(dispatchers, $state, CONSTANTS, tools, mailSettingsModel) {
-    const { MAILBOX_IDENTIFIERS } = CONSTANTS;
+import { MAILBOX_IDENTIFIERS } from '../../constants';
 
+/* @ngInject */
+function backState(dispatchers, $state, tools, mailSettingsModel) {
     /**
      * Keep a trace of the previous box state to let the user back to mail
      * Action present in the settings and contact sidebar

@@ -1,9 +1,11 @@
 import _ from 'lodash';
 
-/* @ngInject */
-function planListGenerator(CONSTANTS, dashboardConfiguration) {
-    const { PLAN, ADDON } = CONSTANTS.PLANS;
+import { PLANS } from '../../constants';
 
+const { PLAN, ADDON } = PLANS;
+
+/* @ngInject */
+function planListGenerator(dashboardConfiguration) {
     const makeAddons = (plan, addons) => (key) => {
         const addon = ADDON[key.toUpperCase()];
         return _.times(plan[key], () => addons[addon]);

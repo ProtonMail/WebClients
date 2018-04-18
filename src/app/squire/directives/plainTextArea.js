@@ -1,12 +1,14 @@
 import _ from 'lodash';
-import { CONSTANTS } from '../../constants';
+
+import { SAVE_TIMEOUT_TIME } from '../../constants';
+
+const KEY = {
+    ENTER: 13,
+    S: 83
+};
 
 /* @ngInject */
 function plainTextArea($rootScope, mailSettingsModel) {
-    const KEY = {
-        ENTER: 13,
-        S: 83
-    };
     const isKey = (e, code) => !e.altKey && (e.ctrlKey || e.metaKey) && e.keyCode === code;
 
     return {
@@ -43,7 +45,7 @@ function plainTextArea($rootScope, mailSettingsModel) {
                     type: 'input',
                     data: { message: scope.message }
                 });
-            }, CONSTANTS.SAVE_TIMEOUT_TIME);
+            }, SAVE_TIMEOUT_TIME);
 
             const onClick = () => {
                 if (scope.message.ccbcc) {

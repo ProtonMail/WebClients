@@ -1,10 +1,11 @@
 import _ from 'lodash';
+
 import parseDate from '../../../helpers/vcardDateParser';
 import isUniqField from '../../../helpers/vcardUniqueFields';
+import { VCARD_VERSION, VCARD_TYPES } from '../../constants';
 
 /* @ngInject */
-function vcard(CONSTANTS, notification, sanitize) {
-    const { VCARD_VERSION, VCARD_TYPES } = CONSTANTS;
+function vcard(notification, sanitize) {
     const makeUniq = (properties = []) => _.uniqBy(properties, (property) => property.valueOf());
 
     /**

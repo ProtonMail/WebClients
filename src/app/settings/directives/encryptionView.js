@@ -1,3 +1,5 @@
+import { PACKAGE_TYPE } from '../../constants';
+
 /* @ngInject */
 function encryptionView(
     gettextCatalog,
@@ -6,7 +8,6 @@ function encryptionView(
     settingsMailApi,
     notification,
     networkActivityTracker,
-    CONSTANTS,
     confirmModal
 ) {
     const I18N = {
@@ -56,9 +57,7 @@ function encryptionView(
             scope.sign = mailSettingsModel.get('Sign');
             scope.promptpin = mailSettingsModel.get('PromptPin');
             scope.pgpscheme =
-                mailSettingsModel.get('PGPScheme') === CONSTANTS.PACKAGE_TYPE.SEND_PGP_INLINE
-                    ? 'pgp-inline'
-                    : 'pgp-mime';
+                mailSettingsModel.get('PGPScheme') === PACKAGE_TYPE.SEND_PGP_INLINE ? 'pgp-inline' : 'pgp-mime';
 
             const { on, unsubscribe } = dispatchers();
             on('encryptSettings.attachPublic', (event, { status }) => {
@@ -91,10 +90,7 @@ function encryptionView(
             const updatePgpScheme = ({ target: { value = 'pgp-mime' } }) => {
                 const promise = settingsMailApi
                     .updatePgpScheme({
-                        PGPScheme:
-                            value === 'pgp-mime'
-                                ? CONSTANTS.PACKAGE_TYPE.SEND_PGP_MIME
-                                : CONSTANTS.PACKAGE_TYPE.SEND_PGP_INLINE
+                        PGPScheme: value === 'pgp-mime' ? PACKAGE_TYPE.SEND_PGP_MIME : PACKAGE_TYPE.SEND_PGP_INLINE
                     })
                     .then(() => notification.success(I18N.SUCCES_MESSAGE))
                     .catch((error) => notification.error(error || I18N.ERROR_MESSAGE));

@@ -21,7 +21,7 @@ import limitElementsModel from './factories/limitElementsModel';
 import removeElement from './services/removeElement';
 
 export default angular
-    .module('proton.elements', ['proton.constants'])
+    .module('proton.elements', [])
     .controller('ElementsController', ElementsController)
     .directive('advancedFilterElement', advancedFilterElement)
     .directive('countElementsSelected', countElementsSelected)

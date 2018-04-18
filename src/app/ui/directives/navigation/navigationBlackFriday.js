@@ -1,6 +1,9 @@
+import { CYCLE } from '../../../constants';
+
+const { MONTHLY } = CYCLE;
+
 /* @ngInject */
-function navigationBlackFriday($stateParams, blackFridayModal, blackFridayModel, CONSTANTS, subscriptionModel) {
-    const { MONTHLY } = CONSTANTS.CYCLE;
+function navigationBlackFriday($stateParams, blackFridayModal, blackFridayModel, subscriptionModel) {
     const onClick = () => {
         blackFridayModal.activate({
             params: {

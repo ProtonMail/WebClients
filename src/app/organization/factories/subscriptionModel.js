@@ -1,28 +1,30 @@
 import _ from 'lodash';
 
+import { DEFAULT_CURRENCY, DEFAULT_CYCLE } from '../../constants';
+
+const PAID_TYPES = {
+    plus: ['plus'],
+    professional: ['professional'],
+    visionary: ['visionary'],
+    mail: ['plus', 'professional', 'visionary'],
+    vpn: ['vpnbasic', 'vpnplus', 'visionary'],
+    vpnbasic: ['vpnbasic'],
+    vpnplus: ['vpnplus']
+};
+
+const MAP_ADDONS = {
+    address: '5address',
+    storage: '1gb',
+    domain: '1domain',
+    member: '1member',
+    vpn: '1vpn'
+};
+
 /* @ngInject */
-function subscriptionModel(CONSTANTS, dispatchers, gettextCatalog, Payment) {
+function subscriptionModel(dispatchers, gettextCatalog, Payment) {
     const CACHE = {};
     const ERROR_SUBSCRIPTION = gettextCatalog.getString('Subscription request failed', null, 'Error');
     const { dispatcher, on } = dispatchers(['subscription']);
-
-    const PAID_TYPES = {
-        plus: ['plus'],
-        professional: ['professional'],
-        visionary: ['visionary'],
-        mail: ['plus', 'professional', 'visionary'],
-        vpn: ['vpnbasic', 'vpnplus', 'visionary'],
-        vpnbasic: ['vpnbasic'],
-        vpnplus: ['vpnplus']
-    };
-
-    const MAP_ADDONS = {
-        address: '5address',
-        storage: '1gb',
-        domain: '1domain',
-        member: '1member',
-        vpn: '1vpn'
-    };
 
     const get = () => angular.copy(CACHE.subscription || {});
     const count = (addon) => {
@@ -37,13 +39,13 @@ function subscriptionModel(CONSTANTS, dispatchers, gettextCatalog, Payment) {
 
     const currency = () => {
         const { Plans = [] } = CACHE.subscription || {};
-        const [{ Currency = CONSTANTS.DEFAULT_CURRENCY } = {}] = Plans;
+        const [{ Currency = DEFAULT_CURRENCY } = {}] = Plans;
         return Currency;
     };
 
     const cycle = () => {
         const { Plans = [] } = CACHE.subscription || {};
-        const [{ Cycle = CONSTANTS.DEFAULT_CYCLE } = {}] = Plans;
+        const [{ Cycle = DEFAULT_CYCLE } = {}] = Plans;
         return Cycle;
     };
 

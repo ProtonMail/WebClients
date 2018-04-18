@@ -1,7 +1,7 @@
 import _ from 'lodash';
 import service from '../../../../src/app/message/factories/signatureBuilder';
 import dispatchersService from '../../../../src/app/commons/services/dispatchers'
-import { CONSTANTS } from '../../../../src/app/constants';
+import { PM_SIGNATURE } from '../../../../src/app/constants';
 
 describe('signatureBuilder factory', () => {
 
@@ -122,7 +122,7 @@ describe('signatureBuilder factory', () => {
 
                     it('should not contains the proton signature', () => {
                         const text = $(string).find(`.${blockProtonSignature}`).text();
-                        const signature = $(`<p>${CONSTANTS.PM_SIGNATURE}</p>`).text();
+                        const signature = $(`<p>${PM_SIGNATURE}</p>`).text();
                         expect(text).not.toBe(signature);
                     });
 
@@ -202,7 +202,7 @@ describe('signatureBuilder factory', () => {
 
                     it('should not contains the proton signature', () => {
                         const text = $(string).find(`.${blockProtonSignature}`).text();
-                        const signature = $(`<p>${CONSTANTS.PM_SIGNATURE}</p>`).text();
+                        const signature = $(`<p>${PM_SIGNATURE}</p>`).text();
                         expect(text).not.toBe(signature);
                     });
 
@@ -234,7 +234,7 @@ describe('signatureBuilder factory', () => {
                     it('should remove line breaks', () => {
                         expect(tools.replaceLineBreaks).toHaveBeenCalledTimes(2);
                         expect(tools.replaceLineBreaks.calls.argsFor(0)).toEqual(['']);
-                        expect(tools.replaceLineBreaks.calls.argsFor(1)).toEqual([CONSTANTS.PM_SIGNATURE]);
+                        expect(tools.replaceLineBreaks.calls.argsFor(1)).toEqual([PM_SIGNATURE]);
                     });
 
                     it('should try to clean the signature', () => {
@@ -283,7 +283,7 @@ describe('signatureBuilder factory', () => {
 
                     it('should contains the proton signature', () => {
                         const text = $(string).find(`.${blockProtonSignature}`).text();
-                        const textConstant = $(`<p>${CONSTANTS.PM_SIGNATURE}</p>`).text();
+                        const textConstant = $(`<p>${PM_SIGNATURE}</p>`).text();
                         expect(text).toBe(textConstant);
                     });
 
@@ -313,7 +313,7 @@ describe('signatureBuilder factory', () => {
                     it('should remove line breaks', () => {
                         expect(tools.replaceLineBreaks).toHaveBeenCalledTimes(2);
                         expect(tools.replaceLineBreaks.calls.argsFor(0)).toEqual(['']);
-                        expect(tools.replaceLineBreaks.calls.argsFor(1)).toEqual([CONSTANTS.PM_SIGNATURE]);
+                        expect(tools.replaceLineBreaks.calls.argsFor(1)).toEqual([PM_SIGNATURE]);
                     });
 
 
@@ -364,7 +364,7 @@ describe('signatureBuilder factory', () => {
 
                     it('should contains the proton signature', () => {
                         const text = $(string).find(`.${blockProtonSignature}`).text();
-                        const textConstant = $(`<p>${CONSTANTS.PM_SIGNATURE}</p>`).text();
+                        const textConstant = $(`<p>${PM_SIGNATURE}</p>`).text();
                         expect(text).toBe(textConstant);
                     });
 
@@ -454,7 +454,7 @@ describe('signatureBuilder factory', () => {
 
                     it('should not contains the proton signature', () => {
                         const text = $(string).find(`.${blockProtonSignature}`).text();
-                        const textConstant = $(`<p>${CONSTANTS.PM_SIGNATURE}</p>`).text();
+                        const textConstant = $(`<p>${PM_SIGNATURE}</p>`).text();
                         expect(text).not.toBe(textConstant);
                     });
 
@@ -535,7 +535,7 @@ describe('signatureBuilder factory', () => {
 
                     it('should not contains the proton signature', () => {
                         const text = $(string).find(`.${blockProtonSignature}`).text();
-                        const textConstant = $(`<p>${CONSTANTS.PM_SIGNATURE}</p>`).text();
+                        const textConstant = $(`<p>${PM_SIGNATURE}</p>`).text();
                         expect(text).not.toBe(textConstant);
                     });
 
@@ -574,7 +574,7 @@ describe('signatureBuilder factory', () => {
                     it('should remove line breaks', () => {
                         expect(tools.replaceLineBreaks).toHaveBeenCalledTimes(2);
                         expect(tools.replaceLineBreaks.calls.argsFor(0)).toEqual([USER_SIGNATURE]);
-                        expect(tools.replaceLineBreaks.calls.argsFor(1)).toEqual([CONSTANTS.PM_SIGNATURE]);
+                        expect(tools.replaceLineBreaks.calls.argsFor(1)).toEqual([PM_SIGNATURE]);
                     });
 
                     it('should try to clean the signature', () => {
@@ -629,7 +629,7 @@ describe('signatureBuilder factory', () => {
 
                     it('should contains the proton signature', () => {
                         const text = $(string).find(`.${blockProtonSignature}`).text();
-                        const textConstant = $(`<p>${CONSTANTS.PM_SIGNATURE}</p>`).text();
+                        const textConstant = $(`<p>${PM_SIGNATURE}</p>`).text();
                         expect(text).toBe(textConstant);
                     });
 
@@ -661,7 +661,7 @@ describe('signatureBuilder factory', () => {
                     it('should remove line breaks', () => {
                         expect(tools.replaceLineBreaks).toHaveBeenCalledTimes(2);
                         expect(tools.replaceLineBreaks.calls.argsFor(0)).toEqual([USER_SIGNATURE]);
-                        expect(tools.replaceLineBreaks.calls.argsFor(1)).toEqual([CONSTANTS.PM_SIGNATURE]);
+                        expect(tools.replaceLineBreaks.calls.argsFor(1)).toEqual([PM_SIGNATURE]);
                     });
 
                     it('should try to clean the signature', () => {
@@ -715,7 +715,7 @@ describe('signatureBuilder factory', () => {
 
                     it('should contains the proton signature', () => {
                         const text = $(string).find(`.${blockProtonSignature}`).text();
-                        const textConstant = $(`<p>${CONSTANTS.PM_SIGNATURE}</p>`).text();
+                        const textConstant = $(`<p>${PM_SIGNATURE}</p>`).text();
                         expect(text).toBe(textConstant);
                     });
 
@@ -837,7 +837,7 @@ describe('signatureBuilder factory', () => {
 
             it('should not contains the proton signature', () => {
                 const text = $(string).find(`.${blockProtonSignature}`).text();
-                const signature = $(`<p>${CONSTANTS.PM_SIGNATURE}</p>`).text();
+                const signature = $(`<p>${PM_SIGNATURE}</p>`).text();
                 expect(text).not.toBe(signature);
             });
 
@@ -894,7 +894,7 @@ describe('signatureBuilder factory', () => {
 
             it('should not contains the proton signature', () => {
                 const text = $(string).find(`.${blockProtonSignature}`).text();
-                const signature = $(`<p>${CONSTANTS.PM_SIGNATURE}</p>`).text();
+                const signature = $(`<p>${PM_SIGNATURE}</p>`).text();
                 expect(text).not.toBe(signature);
             });
 
@@ -951,7 +951,7 @@ describe('signatureBuilder factory', () => {
 
             it('should not contains the proton signature', () => {
                 const text = $(string).find(`.${blockProtonSignature}`).text();
-                const signature = $(`<p>${CONSTANTS.PM_SIGNATURE}</p>`).text();
+                const signature = $(`<p>${PM_SIGNATURE}</p>`).text();
                 expect(text).not.toBe(signature);
             });
 
@@ -964,7 +964,7 @@ describe('signatureBuilder factory', () => {
 
         describe('No:body message new addressSignature and protonSignature', () => {
             let string;
-            const MESSAGE_BODY_UPDATE = getMessageUpdate(undefined, CONSTANTS.PM_SIGNATURE);
+            const MESSAGE_BODY_UPDATE = getMessageUpdate(undefined, PM_SIGNATURE);
 
             const message = loadEnv({ PMSignature: true }, { From: { Signature: USER_SIGNATURE } });
 
@@ -1009,7 +1009,7 @@ describe('signatureBuilder factory', () => {
 
             it('should contains the proton signature', () => {
                 const text = $(string).find(`.${blockProtonSignature}`).text();
-                const signature = $(`<p>${CONSTANTS.PM_SIGNATURE}</p>`).text();
+                const signature = $(`<p>${PM_SIGNATURE}</p>`).text();
                 expect(text).toBe(signature);
             });
 
@@ -1022,7 +1022,7 @@ describe('signatureBuilder factory', () => {
 
         describe('No:body message update addressSignature and protonSignature', () => {
             let string;
-            const MESSAGE_BODY_UPDATE = getMessageUpdate(USER_SIGNATURE, CONSTANTS.PM_SIGNATURE);
+            const MESSAGE_BODY_UPDATE = getMessageUpdate(USER_SIGNATURE, PM_SIGNATURE);
             const message = loadEnv({ PMSignature: true }, { From: { Signature: USER_SIGNATURE2 } });
 
             beforeEach(() => {
@@ -1066,7 +1066,7 @@ describe('signatureBuilder factory', () => {
 
             it('should contains the proton signature', () => {
                 const text = $(string).find(`.${blockProtonSignature}`).text();
-                const signature = $(`<p>${CONSTANTS.PM_SIGNATURE}</p>`).text();
+                const signature = $(`<p>${PM_SIGNATURE}</p>`).text();
                 expect(text).toBe(signature);
             });
 
@@ -1079,7 +1079,7 @@ describe('signatureBuilder factory', () => {
 
         describe('body message update addressSignature and protonSignature', () => {
             let string;
-            const MESSAGE_BODY_UPDATE = getMessageUpdate(USER_SIGNATURE, CONSTANTS.PM_SIGNATURE);
+            const MESSAGE_BODY_UPDATE = getMessageUpdate(USER_SIGNATURE, PM_SIGNATURE);
 
             const message = loadEnv({ PMSignature: true }, { From: { Signature: USER_SIGNATURE2 } });
 
@@ -1122,7 +1122,7 @@ describe('signatureBuilder factory', () => {
 
             it('should contains the proton signature', () => {
                 const text = $(string).find(`.${blockProtonSignature}`).text();
-                const signature = $(`<p>${CONSTANTS.PM_SIGNATURE}</p>`).text();
+                const signature = $(`<p>${PM_SIGNATURE}</p>`).text();
                 expect(text).toBe(signature);
             });
 
@@ -1299,7 +1299,7 @@ describe('signatureBuilder factory', () => {
 
         describe('No:body message new addressSignature and protonSignature', () => {
             let string;
-            const MESSAGE_BODY_UPDATE = getMessageUpdatePlain(undefined, CONSTANTS.PM_SIGNATURE);
+            const MESSAGE_BODY_UPDATE = getMessageUpdatePlain(undefined, PM_SIGNATURE);
 
             const message = loadEnv({ PMSignature: true }, { From: { Signature: USER_SIGNATURE } });
 
@@ -1333,19 +1333,19 @@ describe('signatureBuilder factory', () => {
                 expect(user.classList.contains('protonmail_signature_block-empty')).toBe(false);
                 expect(proton.classList.contains('protonmail_signature_block-empty')).toBe(false);
                 expect(user.innerHTML).toBe(USER_SIGNATURE);
-                expect(proton.innerHTML).toBe(CONSTANTS.PM_SIGNATURE);
+                expect(proton.innerHTML).toBe(PM_SIGNATURE);
             });
 
 
             it('should change nothing', () => {
-                const output = getMessageUpdatePlain(getTxt(USER_SIGNATURE), getTxt(CONSTANTS.PM_SIGNATURE));
+                const output = getMessageUpdatePlain(getTxt(USER_SIGNATURE), getTxt(PM_SIGNATURE));
                 expect(string).toEqual(output);
             });
         });
 
         describe('No:body message update addressSignature and protonSignature', () => {
             let string;
-            const MESSAGE_BODY_UPDATE = getMessageUpdatePlain(USER_SIGNATURE, CONSTANTS.PM_SIGNATURE);
+            const MESSAGE_BODY_UPDATE = getMessageUpdatePlain(USER_SIGNATURE, PM_SIGNATURE);
             const message = loadEnv({ PMSignature: true }, { From: { Signature: USER_SIGNATURE2 } });
 
             beforeEach(() => {
@@ -1382,14 +1382,14 @@ describe('signatureBuilder factory', () => {
 
 
             it('should change nothing', () => {
-                const output = getMessageUpdatePlain(getTxt(USER_SIGNATURE2), getTxt(CONSTANTS.PM_SIGNATURE));
+                const output = getMessageUpdatePlain(getTxt(USER_SIGNATURE2), getTxt(PM_SIGNATURE));
                 expect(string).toEqual(output);
             });
         });
 
         describe('body message update addressSignature and protonSignature', () => {
             let string;
-            const MESSAGE_BODY_UPDATE = getMessageUpdatePlain(USER_SIGNATURE, CONSTANTS.PM_SIGNATURE, true);
+            const MESSAGE_BODY_UPDATE = getMessageUpdatePlain(USER_SIGNATURE, PM_SIGNATURE, true);
             const message = loadEnv({ PMSignature: true }, { From: { Signature: USER_SIGNATURE2 } });
 
             beforeEach(() => {
@@ -1425,14 +1425,14 @@ describe('signatureBuilder factory', () => {
             });
 
             it('should change nothing', () => {
-                const output = getMessageUpdatePlain(getTxt(USER_SIGNATURE2), getTxt(CONSTANTS.PM_SIGNATURE), true);
+                const output = getMessageUpdatePlain(getTxt(USER_SIGNATURE2), getTxt(PM_SIGNATURE), true);
                 expect(string).toEqual(output);
             });
         });
 
         describe('body message update addressSignature and protonSignature multiple roww', () => {
             let string;
-            const MESSAGE_BODY_UPDATE = getMessageUpdatePlain(USER_SIGNATURE, CONSTANTS.PM_SIGNATURE, true);
+            const MESSAGE_BODY_UPDATE = getMessageUpdatePlain(USER_SIGNATURE, PM_SIGNATURE, true);
             const message = loadEnv({ PMSignature: true }, { From: { Signature: USER_SIGNATURE_MULTIPLE } });
 
             beforeEach(() => {
@@ -1468,7 +1468,7 @@ describe('signatureBuilder factory', () => {
             });
 
             it('should change nothing', () => {
-                const output = getMessageUpdatePlain(USER_SIGNATURE_MULTIPLE_TXT, getTxt(CONSTANTS.PM_SIGNATURE), true);
+                const output = getMessageUpdatePlain(USER_SIGNATURE_MULTIPLE_TXT, getTxt(PM_SIGNATURE), true);
                 expect(string).toEqual(output);
             });
         });

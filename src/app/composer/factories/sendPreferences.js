@@ -1,5 +1,5 @@
 import _ from 'lodash';
-import { CONSTANTS } from '../../constants';
+import { RECIPIENT_TYPE, PACKAGE_TYPE, CONTACT_ERROR } from '../../constants';
 import { toList } from '../../../helpers/arrayHelper';
 import { getGroup } from '../../../helpers/vcard';
 
@@ -23,7 +23,7 @@ function sendPreferences(
     const isInternalUser = async (email) => {
         const normalizedEmail = normalizeEmail(email);
         const { [normalizedEmail]: { RecipientType } } = await keyCache.get([normalizedEmail]);
-        return RecipientType === CONSTANTS.RECIPIENT_TYPE.TYPE_INTERNAL;
+        return RecipientType === RECIPIENT_TYPE.TYPE_INTERNAL;
     };
 
     const isOwnAddress = (email) => {
@@ -34,9 +34,9 @@ function sendPreferences(
     const toSchemeConstant = (value) => {
         switch (value) {
             case 'pgp-mime':
-                return CONSTANTS.PACKAGE_TYPE.SEND_PGP_MIME;
+                return PACKAGE_TYPE.SEND_PGP_MIME;
             case 'pgp-inline':
-                return CONSTANTS.PACKAGE_TYPE.SEND_PGP_INLINE;
+                return PACKAGE_TYPE.SEND_PGP_INLINE;
             default:
                 return null;
         }
@@ -47,10 +47,10 @@ function sendPreferences(
          * PGP/MIME can only send using the MIME encoding as it doesn't support separate attachments and we need to encode
          * them in the body
          */
-        if (info.scheme === CONSTANTS.PACKAGE_TYPE.SEND_PGP_MIME && (info.sign || info.encrypt)) {
+        if (info.scheme === PACKAGE_TYPE.SEND_PGP_MIME && (info.sign || info.encrypt)) {
             return 'multipart/mixed';
         }
-        if (info.scheme === CONSTANTS.PACKAGE_TYPE.SEND_PGP_INLINE && (info.sign || info.encrypt)) {
+        if (info.scheme === PACKAGE_TYPE.SEND_PGP_INLINE && (info.sign || info.encrypt)) {
             return 'text/plain';
         }
         if (defaultMimetype === 'text/plain' || mimetype === null) {
@@ -73,7 +73,7 @@ function sendPreferences(
     const getDefaultInfo = async (email, { Keys }, defaultMimeType, eoEnabled, globalSign) => {
         const isInternal = await isInternalUser(email);
         const settingsScheme = mailSettingsModel.get('PGPScheme');
-        const settingsMime = settingsScheme === CONSTANTS.PACKAGE_TYPE.SEND_PGP_MIME ? 'multipart/mixed' : 'text/plain';
+        const settingsMime = settingsScheme === PACKAGE_TYPE.SEND_PGP_MIME ? 'multipart/mixed' : 'text/plain';
 
         if (isInternal && Keys.length) {
             return {
@@ -82,7 +82,7 @@ function sendPreferences(
                 mimetype: defaultMimeType,
                 publickeys: pmcw.getKeys(Keys[0].PublicKey),
                 primaryPinned: true,
-                scheme: CONSTANTS.PACKAGE_TYPE.SEND_PM,
+                scheme: PACKAGE_TYPE.SEND_PM,
                 pinned: isOwnAddress(email),
                 isVerified: true
             };
@@ -94,7 +94,7 @@ function sendPreferences(
                 mimetype: defaultMimeType,
                 publickeys: [],
                 primaryPinned: true,
-                scheme: CONSTANTS.PACKAGE_TYPE.SEND_EO,
+                scheme: PACKAGE_TYPE.SEND_EO,
                 pinned: false,
                 isVerified: true
             };
@@ -105,7 +105,7 @@ function sendPreferences(
             mimetype: globalSign ? settingsMime : defaultMimeType,
             publickeys: [],
             primaryPinned: true,
-            scheme: globalSign ? settingsScheme : CONSTANTS.PACKAGE_TYPE.SEND_CLEAR,
+            scheme: globalSign ? settingsScheme : PACKAGE_TYPE.SEND_CLEAR,
             pinned: false,
             isVerified: true
         };
@@ -162,7 +162,7 @@ function sendPreferences(
         globalSign
     ) => {
         const info = {};
-        const isInternal = keyData.RecipientType === CONSTANTS.RECIPIENT_TYPE.TYPE_INTERNAL;
+        const isInternal = keyData.RecipientType === RECIPIENT_TYPE.TYPE_INTERNAL;
         const primaryPinned = isInternal ? isPrimaryPinned(emailKeys, keyData) : true;
         const pmKey = isInternal ? pmcw.getKeys(keyData.Keys[0].PublicKey) : [];
         // In case the pgp packet list contains multiple keys, only the first one is taken.
@@ -181,16 +181,16 @@ function sendPreferences(
         info.sign = isInternal || (signFlag === null ? !!globalSign : signFlag);
         info.sign = info.sign || encryptFlag;
         if (isInternal) {
-            info.scheme = CONSTANTS.PACKAGE_TYPE.SEND_PM;
+            info.scheme = PACKAGE_TYPE.SEND_PM;
         } else {
-            info.scheme = info.sign || info.encrypt ? scheme : CONSTANTS.PACKAGE_TYPE.SEND_CLEAR;
+            info.scheme = info.sign || info.encrypt ? scheme : PACKAGE_TYPE.SEND_CLEAR;
         }
         info.scheme = info.scheme === null ? mailSettingsModel.get('PGPScheme') : info.scheme;
 
         if (eoEnabled && !info.encrypt) {
             info.sign = false;
             info.encrypt = true;
-            info.scheme = CONSTANTS.PACKAGE_TYPE.SEND_EO;
+            info.scheme = PACKAGE_TYPE.SEND_EO;
         }
         info.mimetype = mimetypeLogic(mimetype, defaultMimeType, info);
         info.primaryPinned = primaryPinned;
@@ -234,7 +234,7 @@ function sendPreferences(
      */
     const getApiInfo = async (email, keyData, defaultMimeType, eoEnabled, globalSign) => {
         const normalizedEmail = normalizeEmail(email);
-        const isInternal = keyData.RecipientType === CONSTANTS.RECIPIENT_TYPE.TYPE_INTERNAL;
+        const isInternal = keyData.RecipientType === RECIPIENT_TYPE.TYPE_INTERNAL;
 
         const contactEmail = contactEmails.findEmail(normalizedEmail, normalizeEmail);
         if (usesDefaults(contactEmail)) {
@@ -272,8 +272,8 @@ function sendPreferences(
             signFlag: isInternal || (signFlag ? signFlag.valueOf().toLowerCase() !== 'false' : null),
             emailKeys: base64Keys,
             mimetype: mimetype !== 'text/plain' && mimetype !== 'text/html' ? null : mimetype,
-            scheme: isInternal ? CONSTANTS.PACKAGE_TYPE.SEND_PM : scheme,
-            isVerified: !errors.includes(CONSTANTS.CONTACT_ERROR.TYPE2_CONTACT_VERIFICATION)
+            scheme: isInternal ? PACKAGE_TYPE.SEND_PM : scheme,
+            isVerified: !errors.includes(CONTACT_ERROR.TYPE2_CONTACT_VERIFICATION)
         };
 
         // We don't support encryption without signing

@@ -1,14 +1,9 @@
+import { CYCLE } from '../../constants';
+
+const { TWO_YEARS } = CYCLE;
+
 /* @ngInject */
-function blackFridayModal(
-    $state,
-    authentication,
-    CONSTANTS,
-    dispatchers,
-    pmModal,
-    blackFridayModel,
-    subscriptionModel
-) {
-    const { TWO_YEARS } = CONSTANTS.CYCLE;
+function blackFridayModal($state, authentication, dispatchers, pmModal, blackFridayModel, subscriptionModel) {
     return pmModal({
         controllerAs: 'ctrl',
         templateUrl: require('../../../templates/blackFriday/blackFridayModal.tpl.html'),

@@ -1,7 +1,8 @@
 import _ from 'lodash';
-import { MIME_TYPES } from '../../constants';
+import { MIME_TYPES, BASE_SIZE, ATTACHMENT_SIZE_LIMIT, ATTACHMENT_NUMBER_LIMIT } from '../../constants';
 
 const { PLAINTEXT } = MIME_TYPES;
+const ATTACHMENT_MAX_SIZE = ATTACHMENT_SIZE_LIMIT * BASE_SIZE * BASE_SIZE;
 
 /* @ngInject */
 function composerDropzone(
@@ -11,13 +12,9 @@ function composerDropzone(
     dispatchers,
     notification,
     gettextCatalog,
-    CONSTANTS,
     $state
 ) {
     Dropzone.autoDiscover = false;
-
-    const { BASE_SIZE, ATTACHMENT_SIZE_LIMIT, ATTACHMENT_NUMBER_LIMIT } = CONSTANTS;
-    const ATTACHMENT_MAX_SIZE = ATTACHMENT_SIZE_LIMIT * BASE_SIZE * BASE_SIZE;
 
     const isEO = $state.includes('eo.*');
 

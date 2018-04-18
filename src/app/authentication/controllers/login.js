@@ -10,7 +10,6 @@ function LoginController(
     $timeout,
     $http,
     $location,
-    CONSTANTS,
     CONFIG,
     dispatchers,
     gettextCatalog,

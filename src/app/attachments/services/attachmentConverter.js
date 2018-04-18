@@ -1,5 +1,6 @@
 import _ from 'lodash';
-import { CONSTANTS } from '../../constants';
+
+import { ENCRYPTED_STATUS } from '../../constants';
 
 /* @ngInject */
 function attachmentConverter(AttachmentLoader, invalidSignature) {
@@ -58,7 +59,7 @@ function attachmentConverter(AttachmentLoader, invalidSignature) {
             MIMEType: parsedAttachment.contentType,
             Signature: null,
             Size: parsedAttachment.length,
-            Encrypted: CONSTANTS.ENCRYPTED_STATUS.PGP_MIME
+            Encrypted: ENCRYPTED_STATUS.PGP_MIME
         };
         AttachmentLoader.put(attachment, parsedAttachment.content, verified);
         invalidSignature.askAgain(message, attachment, false);

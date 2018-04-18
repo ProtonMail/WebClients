@@ -1,13 +1,15 @@
+import { PLANS, PAID_MEMBER_ROLE } from '../../constants';
+
+const { PLUS, PROFESSIONAL, VISIONARY } = PLANS.PLAN;
+const PLANS_LIST = [PLUS, PROFESSIONAL, VISIONARY].join(' ');
+
 /* @ngInject */
-function protonmailLogo(authentication, CONSTANTS, organizationModel, subscriptionModel, dispatchers) {
+function protonmailLogo(authentication, organizationModel, subscriptionModel, dispatchers) {
     return {
         restrict: 'E',
         templateUrl: require('../../../templates/directives/ui/protonmailLogo.tpl.html'),
         replace: true,
         link(scope, element) {
-            const { PLUS, PROFESSIONAL, VISIONARY } = CONSTANTS.PLANS.PLAN;
-            const PLANS = [PLUS, PROFESSIONAL, VISIONARY].join(' ');
-
             const { on, unsubscribe } = dispatchers();
 
             on('organizationChange', updateLogo);
@@ -20,7 +22,7 @@ function protonmailLogo(authentication, CONSTANTS, organizationModel, subscripti
                 const subscription = subscriptionModel.get();
                 const isLifetime = subscription.CouponCode === 'LIFETIME';
                 const isSubuser = authentication.user.subuser;
-                const isMember = authentication.user.Role === CONSTANTS.PAID_MEMBER_ROLE;
+                const isMember = authentication.user.Role === PAID_MEMBER_ROLE;
                 let planName = organization.PlanName;
 
                 if (isLifetime) {
@@ -29,7 +31,7 @@ function protonmailLogo(authentication, CONSTANTS, organizationModel, subscripti
                 if (isSubuser || isMember || planName === 'free') {
                     planName = '';
                 }
-                element.removeClass(PLANS).addClass(planName);
+                element.removeClass(PLANS_LIST).addClass(planName);
                 element.attr('data-plan-name', planName);
             }
 

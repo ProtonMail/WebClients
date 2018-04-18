@@ -1,9 +1,10 @@
 import _ from 'lodash';
 
+import { MAILBOX_IDENTIFIERS } from '../../constants';
+
 /* @ngInject */
 function advancedFilterElement(
     $stateParams,
-    CONSTANTS,
     dispatchers,
     gettextCatalog,
     messageApi,
@@ -16,7 +17,6 @@ function advancedFilterElement(
     $state
 ) {
     const getClass = (name) => `advancedFilterElement-${name}`;
-    const { MAILBOX_IDENTIFIERS } = CONSTANTS;
     const ACTIVE_CLASS = 'active';
     const BUTTONS_CLASS = {
         [getClass('btn-small-to-large')]: () => $stateParams.sort === 'size',

@@ -1,5 +1,7 @@
+import { DRAFT } from '../../constants';
+
 /* @ngInject */
-function toggleMessage(dispatchers, CONSTANTS) {
+function toggleMessage(dispatchers) {
     function selection() {
         if (window.getSelection) {
             return window.getSelection().toString().length === 0;
@@ -20,7 +22,7 @@ function toggleMessage(dispatchers, CONSTANTS) {
                 ) {
                     scope.$applyAsync(() => {
                         // Open the message in composer if it's a draft
-                        if (scope.message.Type === CONSTANTS.DRAFT) {
+                        if (scope.message.Type === DRAFT) {
                             return dispatcher['composer.load']('', scope.message);
                         }
 

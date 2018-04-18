@@ -1,14 +1,14 @@
+import { MIN_BITCOIN_AMOUNT } from '../../constants';
+
 /* @ngInject */
-function paymentBitcoinModel(dispatchers, Payment, networkActivityTracker, CONSTANTS) {
+function paymentBitcoinModel(dispatchers, Payment, networkActivityTracker) {
     const { on, dispatcher } = dispatchers(['payment']);
 
     const load = angular.noop;
     const CACHE = {};
     const TYPE_DONATION = 'donation';
-    const { MIN_BITCOIN_AMOUNT } = CONSTANTS;
 
     const dispatch = (type, data = {}) => dispatcher.payment(type, data);
-
     const set = (key, value) => (CACHE[key] = value);
     const get = (key) => angular.copy(key ? CACHE[key] : CACHE);
     const reset = () => {

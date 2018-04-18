@@ -1,5 +1,7 @@
 import _ from 'lodash';
 
+import { MAIN_KEY, FREE_USER_ROLE, PAID_ADMIN_ROLE } from '../../constants';
+
 /* @ngInject */
 function manageUser(
     $exceptionHandler,
@@ -7,7 +9,6 @@ function manageUser(
     addressesModel,
     addressWithoutKeysManager,
     authentication,
-    CONSTANTS,
     dispatchers,
     gettextCatalog,
     notification,
@@ -52,7 +53,7 @@ function manageUser(
         const { list } = keys.reduce(
             (acc, { address }) => {
                 // First item comming from setupKeys is empty
-                if (address.ID !== CONSTANTS.MAIN_KEY && !acc.map[address.ID]) {
+                if (address.ID !== MAIN_KEY && !acc.map[address.ID]) {
                     acc.map[address.ID] = true;
                     acc.list.push(address);
                 }
@@ -109,13 +110,13 @@ function manageUser(
             return;
         }
 
-        if (User.Role === CONSTANTS.FREE_USER_ROLE) {
+        if (User.Role === FREE_USER_ROLE) {
             // Necessary because there is no deletion event for organizations
             $rootScope.$emit('organizationChange', { data: { PlanName: 'free', HasKeys: 0 } });
         }
 
         // Revoke admin, we reload the app to clear the context
-        if (CACHE.previousRole === CONSTANTS.PAID_ADMIN_ROLE && User.Role !== CONSTANTS.PAID_ADMIN_ROLE) {
+        if (CACHE.previousRole === PAID_ADMIN_ROLE && User.Role !== PAID_ADMIN_ROLE) {
             CACHE.previousRole = User.Role;
             _rAF(() => notification.info(`${I18N.REVOKE_ADMIN_RELOAD}<br>${I18N.REVOKE_ADMIN_RELOAD_INFO}`));
             return _.delay(() => window.location.reload(), 5000);

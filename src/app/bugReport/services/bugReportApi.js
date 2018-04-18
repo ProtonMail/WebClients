@@ -1,5 +1,13 @@
 import _ from 'lodash';
-import { CONSTANTS } from '../../constants';
+
+import {
+    ROW_MODE,
+    COLUMN_MODE,
+    MESSAGE_VIEW_MODE,
+    CONVERSATION_VIEW_MODE,
+    CLIENT_TYPE,
+    MAX_SIZE_SCREENSHOT
+} from '../../constants';
 import { getOS, getBrowser, getDevice } from '../../../helpers/browser';
 import { toBase64 } from '../../../helpers/fileHelper';
 import { downSize, toBlob } from '../../../helpers/imageHelper';
@@ -15,14 +23,6 @@ function bugReportApi(
     networkActivityTracker,
     notification
 ) {
-    const {
-        ROW_MODE,
-        COLUMN_MODE,
-        MESSAGE_VIEW_MODE,
-        CONVERSATION_VIEW_MODE,
-        CLIENT_TYPE,
-        MAX_SIZE_SCREENSHOT
-    } = CONSTANTS;
     const MAP_MODE = {
         layout: {
             [ROW_MODE]: 'row',

@@ -1,27 +1,29 @@
+import { MAILBOX_IDENTIFIERS } from '../../constants';
+
 /* @ngInject */
-function dropdownFolders(labelsModel, $rootScope, actionConversation, labelModal, CONSTANTS, gettextCatalog) {
+function dropdownFolders(labelsModel, $rootScope, actionConversation, labelModal, gettextCatalog) {
     const mailboxes = [
         {
             Name: gettextCatalog.getString('Inbox', null),
-            ID: CONSTANTS.MAILBOX_IDENTIFIERS.inbox,
+            ID: MAILBOX_IDENTIFIERS.inbox,
             Order: 9999,
             className: 'fa-inbox'
         },
         {
             Name: gettextCatalog.getString('Archive', null),
-            ID: CONSTANTS.MAILBOX_IDENTIFIERS.archive,
+            ID: MAILBOX_IDENTIFIERS.archive,
             Order: 9999,
             className: 'fa-archive'
         },
         {
             Name: gettextCatalog.getString('Spam', null),
-            ID: CONSTANTS.MAILBOX_IDENTIFIERS.spam,
+            ID: MAILBOX_IDENTIFIERS.spam,
             Order: 9999,
             className: 'fa-ban'
         },
         {
             Name: gettextCatalog.getString('Trash', null),
-            ID: CONSTANTS.MAILBOX_IDENTIFIERS.trash,
+            ID: MAILBOX_IDENTIFIERS.trash,
             Order: 9999,
             className: 'fa-trash-o'
         }

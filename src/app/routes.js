@@ -11,7 +11,7 @@ import {
 } from './constants';
 
 export default angular
-    .module('proton.routes', ['ui.router', 'proton.authentication', 'proton.constants', 'proton.utils'])
+    .module('proton.routes', ['ui.router', 'proton.authentication', 'proton.utils'])
 
     .config(($stateProvider, $urlRouterProvider, $locationProvider) => {
         const conversationParameters = () => {

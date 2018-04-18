@@ -4,7 +4,7 @@ import { flow, filter, sortBy } from 'lodash/fp';
 import updateCollection from '../../utils/helpers/updateCollection';
 
 /* @ngInject */
-function labelsModel(CONSTANTS, dispatchers, sanitize) {
+function labelsModel(dispatchers, sanitize) {
     const { dispatcher, on } = dispatchers(['labelsModel']);
     const IS_LABEL = 0;
     const IS_FOLDER = 1;
