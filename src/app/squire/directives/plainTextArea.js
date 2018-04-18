@@ -8,7 +8,7 @@ const KEY = {
 };
 
 /* @ngInject */
-function plainTextArea($rootScope, mailSettingsModel) {
+function plainTextArea(dispatchers, mailSettingsModel) {
     const isKey = (e, code) => !e.altKey && (e.ctrlKey || e.metaKey) && e.keyCode === code;
 
     return {
@@ -20,12 +20,14 @@ function plainTextArea($rootScope, mailSettingsModel) {
                 return;
             }
 
+            const { dispatcher } = dispatchers(['composer.update', 'plaintextarea']);
+
             el[0].value = scope.message.DecryptedBody;
 
             scope.message.ccbcc = false;
 
             // proxy for saving as Mousetrap doesn't work with iframe
-            const onKeyDown = (e) => {
+            const onKeyDown = _.debounce((e) => {
                 // Check alt too cf Polis S #5476
                 if (isKey(e, KEY.S)) {
                     e.preventDefault();
@@ -33,18 +35,15 @@ function plainTextArea($rootScope, mailSettingsModel) {
                 }
 
                 if (isKey(e, KEY.ENTER) && mailSettingsModel.get('Hotkeys') === 1) {
-                    $rootScope.$emit('composer.update', {
-                        type: 'send.message',
-                        data: { message: scope.message }
-                    });
+                    dispatcher['composer.update']('send.message', { message: scope.message });
                 }
-            };
+            }, 300);
 
+            let isEditorFocused = false;
+            const onFocus = () => (isEditorFocused = true);
+            const onBlur = () => (isEditorFocused = false);
             const onInput = _.debounce(() => {
-                $rootScope.$emit('plaintextarea', {
-                    type: 'input',
-                    data: { message: scope.message }
-                });
+                isEditorFocused && dispatcher.plaintextarea('input', { message: scope.message });
             }, SAVE_TIMEOUT_TIME);
 
             const onClick = () => {
@@ -55,12 +54,16 @@ function plainTextArea($rootScope, mailSettingsModel) {
 
             el.on('click', onClick);
             el.on('input', onInput);
+            el.on('blur', onBlur);
+            el.on('focus', onFocus);
             el.on('keydown', onKeyDown);
 
             scope.$on('$destroy', () => {
                 el.off('click', onClick);
                 el.off('input', onInput);
                 el.off('keydown', onKeyDown);
+                el.off('blur', onBlur);
+                el.off('focus', onFocus);
             });
         }
     };
