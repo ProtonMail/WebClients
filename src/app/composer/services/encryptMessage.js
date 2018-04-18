@@ -5,6 +5,7 @@ function encryptMessage(
     CONSTANTS,
     $rootScope,
     gettextCatalog,
+    postMessage,
     sendPreferences,
     encryptPackages,
     attachSubPackages,
@@ -56,7 +57,17 @@ function encryptMessage(
             checkPreconditions(message, sendPrefs);
             // todo regression testing: https://github.com/ProtonMail/Angular/issues/5088
 
-            return generatePackages(message, emails, sendPrefs);
+            const packages = await generatePackages(message, emails, sendPrefs);
+
+            /*
+             * we do not re-encrypt the draft body if the packages contain the draft body: the generatePackages call will have
+             * generated the body correctly (otherwise it breaks deduplication)
+             */
+            const encrypt = !packages.map(({ MIMEType }) => MIMEType).includes(message.MIMEType);
+            // save the draft with the re-encrypted body
+            await postMessage(message, { loader: false, encrypt });
+
+            return packages;
         } catch (err) {
             console.error('Cannot encrypt message', err);
             message.encrypting = false;
