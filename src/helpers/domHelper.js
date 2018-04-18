@@ -1,5 +1,9 @@
 import juice from 'juice/client';
 
+const OPTIONS = {
+    applyAttributesTableElements: false
+};
+
 /**
  * Iterates through all parent nodes (including current), comparing against cb.
  * @param {DOMNode} node
@@ -20,4 +24,4 @@ export const findParent = (node, cb) => {
     }
 };
 
-export const inlineCss = (html = '') => juice(html);
+export const inlineCss = (html = '') => juice(html, OPTIONS);
