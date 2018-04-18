@@ -1,4 +1,4 @@
-<section class="pm_form col-1-2">
+<section class="openVpnSection-container pm_form col-1-2">
     <header-block class="openVpnSection-header-about">
         <h2
             class="openVpnSection-title-about"
@@ -12,28 +12,42 @@
         <a href="https://protonvpn.com/support/vpn-login/" target="_blank" translate-context="Link" translate>What is the difference between ProtonVPN and OpenVPN logins?</a>
     </p>
     <div class="clearfix">
-        <div class="col-4-8">
+        <div class="col-1-3">
             <label>
                 <span translate-context="Label" translate>Login</span>
             </label>
         </div>
-        <div class="col-4-8">
-            <label class="bold">{{ VPNName }}</label>
-            <button ng-click="changeName()" type="button" class="pm_button" translate-context="Action" translate>Change OpenVPN Login</button>
+        <div class="col-2-3 openVpnSection-flex">
+            <div>
+                <code>{{ VPNName }}</code>
+                <copy data-value="VPNName" pt-tooltip-translate="Copy login"></copy>
+            </div>
+            <div>
+                <button data-action="changeName" type="button" class="pm_button" translate-context="Action" translate>Edit</button>
+            </div>
         </div>
     </div>
     <div class="clearfix">
-        <div class="col-4-8">
+        <div class="col-1-3">
             <label>
                 <span translate-context="Label" translate>Password</span>
             </label>
         </div>
-        <div class="col-4-8">
-            <label class="bold">{{ VPNPassword }}</label>
-            <button ng-click="changePassword()" type="button" class="pm_button">
-                <span ng-if="!VPNPassword" translate-context="Action" translate>Set OpenVPN Password</span>
-                <span ng-if="VPNPassword" translate-context="Action" translate>Change OpenVPN Password</span>
-            </button>
+        <div class="col-2-3 openVpnSection-flex">
+            <div>
+                <code class="openVpnSection-password">{{ VPNPassword }}</code>
+                <code class="openVpnSection-hidden-password">•••••••••••••</code>
+                <copy data-value="VPNPassword" pt-tooltip-translate="Copy password"></copy>
+            </div>
+            <div>
+                <button type="button" class="pm_button openVpnSection-show-button" data-action="togglePassword" translate-context="Action" translate>Show</button>
+                <button type="button" class="pm_button openVpnSection-hide-button" data-action="togglePassword" translate-context="Action" translate>Hide</button>
+
+                <button data-action="changePassword" type="button" class="pm_button">
+                    <span ng-if="!VPNPassword" translate-context="Action" translate>Set</span>
+                    <span ng-if="VPNPassword" translate-context="Action" translate>Edit</span>
+                </button>
+            </div>
         </div>
     </div>
 </section>

@@ -1,0 +1,16 @@
+.openVpnSection-flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+// Context
+.pm_form label.openVpnSection-label {
+    display: inline-block;
+}
+
+// Condition
+.openVpnSection-container:not(.openVpnSection-show-password) .openVpnSection-hide-button,
+.openVpnSection-container:not(.openVpnSection-show-password) .openVpnSection-password,
+.openVpnSection-show-password .openVpnSection-show-button,
+.openVpnSection-show-password .openVpnSection-hidden-password { display: none }
