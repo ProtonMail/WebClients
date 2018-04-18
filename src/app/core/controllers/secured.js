@@ -10,7 +10,6 @@ function SecuredController(
     attachSignupSubscription,
     authentication,
     cacheCounters,
-    CONSTANTS,
     contactCache,
     desktopNotifications,
     dispatchers,

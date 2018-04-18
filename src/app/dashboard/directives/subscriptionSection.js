@@ -1,10 +1,12 @@
 import _ from 'lodash';
-
 import { flow, filter, reduce, each } from 'lodash/fp';
 
+import { CYCLE, PLANS_TYPE, BASE_SIZE } from '../../constants';
+
+const { MONTHLY, YEARLY, TWO_YEARS } = CYCLE;
+
 /* @ngInject */
-function subscriptionSection(CONSTANTS, dispatchers, subscriptionModel, gettextCatalog) {
-    const { MONTHLY, YEARLY, TWO_YEARS } = CONSTANTS.CYCLE;
+function subscriptionSection(dispatchers, subscriptionModel, gettextCatalog) {
     const I18N = {
         vpn: gettextCatalog.getString('VPN connections', null),
         addresses: gettextCatalog.getString('addresses', null),
@@ -28,7 +30,7 @@ function subscriptionSection(CONSTANTS, dispatchers, subscriptionModel, gettextC
         sub.plans = _.reduce(
             sub.Plans,
             (acc, plan) => {
-                if (plan.Type === CONSTANTS.PLANS_TYPE.PLAN) {
+                if (plan.Type === PLANS_TYPE.PLAN) {
                     plan.addons = extractAddons(sub.Plans, plan.Name.indexOf('vpn') > -1);
                     acc.push(plan);
                 }
@@ -40,7 +42,7 @@ function subscriptionSection(CONSTANTS, dispatchers, subscriptionModel, gettextC
     };
 
     const getFirstMethodType = (methods = []) => (methods.length ? I18N.methods[methods[0].Type] : 'None');
-    const fromBase = (value) => value / CONSTANTS.BASE_SIZE ** 3;
+    const fromBase = (value) => value / BASE_SIZE ** 3;
 
     function formatTitle(plan = {}) {
         switch (plan.Name) {

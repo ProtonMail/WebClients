@@ -1,4 +1,4 @@
-import { CONSTANTS } from '../../constants';
+import { CLIENT_TYPE } from '../../constants';
 
 /* @ngInject */
 function deleteAccountModal(
@@ -14,7 +14,6 @@ function deleteAccountModal(
     userSettingsModel,
     userType
 ) {
-    const { CLIENT_TYPE } = CONSTANTS;
     const I18N = {
         invalidForm: gettextCatalog.getString(
             'Invalid email address or password',

@@ -1,9 +1,11 @@
 import _ from 'lodash';
 
+import { MAILBOX_IDENTIFIERS } from '../../constants';
+
 /* @ngInject */
-function mailboxIdentifersTemplate($rootScope, CONSTANTS, labelsModel) {
+function mailboxIdentifersTemplate($rootScope, labelsModel) {
     const CLEANER = document.createElement('div');
-    const contains = (key, labels) => _.includes(labels, CONSTANTS.MAILBOX_IDENTIFIERS[key]);
+    const contains = (key, labels) => _.includes(labels, MAILBOX_IDENTIFIERS[key]);
 
     /**
      * Remove HTML inside a string, prevent XSS

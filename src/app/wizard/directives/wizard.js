@@ -1,3 +1,7 @@
+import { CYCLE } from '../../constants';
+
+const { MONTHLY } = CYCLE;
+
 /* @ngInject */
 function wizard(
     dispatchers,
@@ -9,10 +13,8 @@ function wizard(
     blackFridayModel,
     wizardBuilder,
     AppModel,
-    subscriptionModel,
-    CONSTANTS
+    subscriptionModel
 ) {
-    const { MONTHLY } = CONSTANTS.CYCLE;
     return {
         restrict: 'E',
         replace: true,

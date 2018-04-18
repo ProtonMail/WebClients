@@ -1,5 +1,7 @@
 import _ from 'lodash';
 
+import { ENCRYPTION_DEFAULT, PAID_ADMIN_ROLE, FREE_USER_ROLE } from '../../constants';
+
 /* @ngInject */
 function addressModel(
     $state,
@@ -22,10 +24,8 @@ function addressModel(
     Address,
     authentication,
     addressWithoutKeysManager,
-    CONSTANTS,
     dispatchers
 ) {
-    const { ENCRYPTION_DEFAULT, PAID_ADMIN_ROLE } = CONSTANTS;
     const { dispatcher } = dispatchers(['addressModel', 'memberActions']);
 
     const I18N = {
@@ -93,7 +93,7 @@ function addressModel(
     };
 
     const add = (domain = {}, member = {}) => {
-        if (authentication.user.Role === CONSTANTS.FREE_USER_ROLE) {
+        if (authentication.user.Role === FREE_USER_ROLE) {
             return notification.error(I18N.FREE_ADD_ERROR);
         }
 

@@ -19,7 +19,7 @@ import srp from './services/srp';
 import upgradePassword from './services/upgradePassword';
 
 export default angular
-    .module('proton.authentication', ['proton.constants', 'proton.utils', 'proton.keys'])
+    .module('proton.authentication', ['proton.utils', 'proton.keys'])
     // Global functions
     .run(($rootScope, authentication) => {
         authentication.detectAuthenticationState();

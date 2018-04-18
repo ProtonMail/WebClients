@@ -1,5 +1,7 @@
 import _ from 'lodash';
 
+import { PLANS_TYPE } from '../../constants';
+
 /* @ngInject */
 function paymentForm(
     notification,
@@ -11,11 +13,8 @@ function paymentForm(
     dashboardModel,
     organizationModel,
     paymentModalModel,
-    $rootScope,
-    CONSTANTS
+    $rootScope
 ) {
-    const { PLANS_TYPE } = CONSTANTS;
-
     const dispatcher = (plan) => (type, data = {}) => {
         $rootScope.$emit('modal.payment', {
             type,

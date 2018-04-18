@@ -1,8 +1,11 @@
 import _ from 'lodash';
 
+import { PLANS } from '../../constants';
+
+const { PLUS, PROFESSIONAL, VISIONARY } = PLANS.PLAN;
+
 /* @ngInject */
-function activePlan(CONSTANTS, dispatchers, subscriptionModel) {
-    const { PLUS, PROFESSIONAL, VISIONARY } = CONSTANTS.PLANS.PLAN;
+function activePlan(dispatchers, subscriptionModel) {
     const PLANS = _.reduce(['free', PLUS, PROFESSIONAL, VISIONARY], (acc, plan) => `${acc} ${plan}-active`, '');
 
     return {

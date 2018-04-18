@@ -1,7 +1,7 @@
 import _ from 'lodash';
 import service from '../../../../src/app/paginator/factories/paginationModel';
 import dispatchersService from '../../../../src/app/commons/services/dispatchers';
-import { CONSTANTS } from '../../../../src/app/constants';
+import { CONVERSATION_VIEW_MODE, ELEMENTS_PER_PAGE, MESSAGE_VIEW_MODE } from '../../../../src/app/constants';
 import { generateModuleName } from '../../../utils/helpers';
 
 describe('paginationModel factory', () => {
@@ -35,7 +35,7 @@ describe('paginationModel factory', () => {
     beforeEach(angular.mock.inject(($injector) => {
         rootScope = $injector.get('$rootScope');
         const dispatchers = dispatchersService(rootScope);
-        factory = service(CONSTANTS, $injector, dispatchers, state, stateParamsMock, mailSettingsModel, tools);
+        factory = service($injector, dispatchers, state, stateParamsMock, mailSettingsModel, tools);
     }));
 
     describe('Switch page', () => {
@@ -179,13 +179,13 @@ describe('paginationModel factory', () => {
             let total;
 
             beforeEach(() => {
-                mailSettingsMock.ViewMode = CONSTANTS.CONVERSATION_VIEW_MODE;
+                mailSettingsMock.ViewMode = CONVERSATION_VIEW_MODE;
                 spyOn(tools, 'cacheContext').and.returnValue(true);
                 spyOn(tools, 'currentLocation').and.returnValue('ici');
                 spyOn(cacheCounters, 'getCounter').and.returnValue({
                     conversation: {
-                        unread: CONSTANTS.ELEMENTS_PER_PAGE * 10,
-                        total: CONSTANTS.ELEMENTS_PER_PAGE * 15
+                        unread: ELEMENTS_PER_PAGE * 10,
+                        total: ELEMENTS_PER_PAGE * 15
                     }
                 });
                 spyOn(cacheCounters, 'getCurrentState').and.returnValue(10);
@@ -255,13 +255,13 @@ describe('paginationModel factory', () => {
             let total;
 
             beforeEach(() => {
-                mailSettingsMock.ViewMode = CONSTANTS.MESSAGE_VIEW_MODE;
+                mailSettingsMock.ViewMode = MESSAGE_VIEW_MODE;
                 spyOn(tools, 'cacheContext').and.returnValue(true);
                 spyOn(tools, 'currentLocation').and.returnValue('ici');
                 spyOn(cacheCounters, 'getCounter').and.returnValue({
                     message: {
-                        unread: CONSTANTS.ELEMENTS_PER_PAGE * 10,
-                        total: CONSTANTS.ELEMENTS_PER_PAGE * 15
+                        unread: ELEMENTS_PER_PAGE * 10,
+                        total: ELEMENTS_PER_PAGE * 15
                     }
                 });
                 spyOn(cacheCounters, 'getCurrentState').and.returnValue(10);
@@ -333,12 +333,12 @@ describe('paginationModel factory', () => {
                 let total;
 
                 beforeEach(() => {
-                    mailSettingsMock.ViewMode = CONSTANTS.MESSAGE_VIEW_MODE;
+                    mailSettingsMock.ViewMode = MESSAGE_VIEW_MODE;
                     spyOn(tools, 'cacheContext').and.returnValue(true);
                     spyOn(tools, 'currentLocation').and.returnValue('ici');
                     spyOn(cacheCounters, 'getCounter').and.returnValue({
                         message: {
-                            unread: CONSTANTS.ELEMENTS_PER_PAGE * 10,
+                            unread: ELEMENTS_PER_PAGE * 10,
                             total: 1337
                         }
                     });
@@ -348,7 +348,7 @@ describe('paginationModel factory', () => {
                 });
 
                 it('should return 27 pages', () => {
-                    expect(total).toBe(~~(1337 / CONSTANTS.ELEMENTS_PER_PAGE + 1));
+                    expect(total).toBe(~~(1337 / ELEMENTS_PER_PAGE + 1));
                 });
             });
 
@@ -364,7 +364,7 @@ describe('paginationModel factory', () => {
                 });
 
                 it('should return 27 pages', () => {
-                    expect(total).toBe(~~(1337 / CONSTANTS.ELEMENTS_PER_PAGE + 1));
+                    expect(total).toBe(~~(1337 / ELEMENTS_PER_PAGE + 1));
                 });
             });
         });
@@ -495,7 +495,7 @@ describe('paginationModel factory', () => {
         describe('default pageMax = 10', () => {
 
             beforeEach(() => {
-                spyOn(cacheCounters, 'getCurrentState').and.returnValue(CONSTANTS.ELEMENTS_PER_PAGE * 10);
+                spyOn(cacheCounters, 'getCurrentState').and.returnValue(ELEMENTS_PER_PAGE * 10);
                 delete stateParamsMock.page;
             });
 
@@ -614,7 +614,7 @@ describe('paginationModel factory', () => {
         describe('Custom page max 10', () => {
 
             beforeEach(() => {
-                spyOn(cacheCounters, 'getCurrentState').and.returnValue(CONSTANTS.ELEMENTS_PER_PAGE * 10);
+                spyOn(cacheCounters, 'getCurrentState').and.returnValue(ELEMENTS_PER_PAGE * 10);
                 delete stateParamsMock.page;
                 spyOn(state, 'go');
             });

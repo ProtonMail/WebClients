@@ -1,6 +1,9 @@
+import { PLANS } from '../../constants';
+
+const { VPN_PLUS, VPN_BASIC } = PLANS.PLAN;
+
 /* @ngInject */
-function vpnSlider(CONSTANTS, customVpnModel, dashboardConfiguration, dashboardModel, dispatchers) {
-    const { VPN_PLUS, VPN_BASIC } = CONSTANTS.PLANS.PLAN;
+function vpnSlider(customVpnModel, dashboardConfiguration, dashboardModel, dispatchers) {
     const VPN_PLUS_SELECTED = 'vpnSlider-vpnplus-selected';
     const VPN_BASIC_SELECTED = 'vpnSlider-vpnbasic-selected';
     const onClick = (event) => {

@@ -1,4 +1,4 @@
-import { CONSTANTS } from '../../constants';
+import { OAUTH_KEY } from '../../constants';
 
 /* @ngInject */
 function attachmentApi(
@@ -221,7 +221,7 @@ function attachmentApi(
         xhr.setRequestHeader('Accept', 'application/vnd.protonmail.v1+json');
         xhr.setRequestHeader('x-pm-appversion', 'Web_' + CONFIG.app_version);
         xhr.setRequestHeader('x-pm-apiversion', CONFIG.api_version);
-        xhr.setRequestHeader('x-pm-uid', secureSessionStorage.getItem(CONSTANTS.OAUTH_KEY + ':UID'));
+        xhr.setRequestHeader('x-pm-uid', secureSessionStorage.getItem(OAUTH_KEY + ':UID'));
 
         xhr.send(makeFormUpload(packets, message, tempPacket));
 

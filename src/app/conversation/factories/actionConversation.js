@@ -1,13 +1,13 @@
 import _ from 'lodash';
-
 import { flow, filter, reduce, sortBy, last, map } from 'lodash/fp';
+
+import { MAILBOX_IDENTIFIERS } from '../../constants';
 
 /* @ngInject */
 function actionConversation(
     $rootScope,
     authentication,
     cache,
-    CONSTANTS,
     conversationApi,
     eventManager,
     gettextCatalog,
@@ -18,7 +18,6 @@ function actionConversation(
     $filter
 ) {
     const unicodeTagView = $filter('unicodeTagView');
-    const { MAILBOX_IDENTIFIERS } = CONSTANTS;
     const basicFolders = [
         MAILBOX_IDENTIFIERS.inbox,
         MAILBOX_IDENTIFIERS.trash,

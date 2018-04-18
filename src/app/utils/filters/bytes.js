@@ -1,6 +1,8 @@
+import { BASE_SIZE } from '../../constants';
+
 /* @ngInject */
-function bytes(CONSTANTS) {
-    const KB = CONSTANTS.BASE_SIZE;
+function bytes() {
+    const KB = BASE_SIZE;
     const UNITS = ['bytes', 'KB', 'MB', 'GB', 'TB', 'PB'];
     return (bytes, precision = 1) => {
         if (isNaN(parseFloat(bytes)) || !isFinite(bytes) || bytes === 0) {

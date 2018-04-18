@@ -1,5 +1,7 @@
 import _ from 'lodash';
 
+import { BASE_SIZE } from '../../constants';
+
 /* @ngInject */
 function setupOrganizationModal(
     authentication,
@@ -9,7 +11,6 @@ function setupOrganizationModal(
     organizationApi,
     organizationModel,
     memberApi,
-    CONSTANTS,
     setupKeys,
     pmcw,
     gettextCatalog
@@ -20,7 +21,7 @@ function setupOrganizationModal(
         /* @ngInject */
         controller: function(params, $scope) {
             const self = this;
-            const base = CONSTANTS.BASE_SIZE;
+            const base = BASE_SIZE;
             const steps = ['name', 'keys', 'password', 'storage'];
             const methods = [name, keys, password, storage, vpn];
             const payload = {};

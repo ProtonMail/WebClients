@@ -1,7 +1,9 @@
 import _ from 'lodash';
 
+import { AWESOMEPLETE_MAX_ITEMS } from '../../constants';
+
 /* @ngInject */
-function autocompleteBuilder(CONSTANTS, customInputCreator) {
+function autocompleteBuilder(customInputCreator) {
     const generateID = () =>
         `${Math.random()
             .toString(32)
@@ -20,7 +22,7 @@ function autocompleteBuilder(CONSTANTS, customInputCreator) {
              */
             let awesomplete = new Awesomplete($input, {
                 minChars: 1,
-                maxItems: CONSTANTS.AWESOMEPLETE_MAX_ITEMS,
+                maxItems: AWESOMEPLETE_MAX_ITEMS,
                 autoFirst: true,
                 sort: false,
                 list: [],

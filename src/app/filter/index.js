@@ -12,7 +12,7 @@ import filterAddressModal from './modals/filterAddressModal';
 import sieveLint from './services/sieveLint';
 
 export default angular
-    .module('proton.filter', ['proton.constants', 'proton.utils'])
+    .module('proton.filter', ['proton.utils'])
     .directive('customFilterList', customFilterList)
     .directive('emailBlockButton', emailBlockButton)
     .directive('emailBlockList', emailBlockList)

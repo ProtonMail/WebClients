@@ -1,10 +1,12 @@
 import _ from 'lodash';
-import { CONSTANTS } from '../../constants';
+
+import { CYCLE } from '../../constants';
 import { isIE11 } from '../../../helpers/browser';
+
+const { MONTHLY, YEARLY, TWO_YEARS } = CYCLE;
 
 /* @ngInject */
 function paymentUtils(gettextCatalog, paymentModel, $state) {
-    const { MONTHLY, YEARLY, TWO_YEARS } = CONSTANTS.CYCLE;
     const I18N = {
         cash: gettextCatalog.getString('Cash', null, 'Payment method'),
         card: gettextCatalog.getString('Credit Card', null, 'Payment method')

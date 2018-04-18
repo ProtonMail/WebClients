@@ -1,7 +1,7 @@
 import _ from 'lodash';
 import service from '../../../../src/app/labels/factories/labelsModel';
 import dispatchersService from '../../../../src/app/commons/services/dispatchers';
-import { CONSTANTS as constants } from '../../../../src/app/constants';
+import { STATUS } from '../../../../src/app/constants';
 
 const sanitize = { input: _.identity, message: _.identity };
 
@@ -64,13 +64,13 @@ describe('labelsModel factory', () => {
         spyOn(rootScope, '$on').and.callThrough();
         spyOn(sanitize, 'input').and.callThrough();
         const dispatchers = dispatchersService(rootScope);
-        factory = service(constants, dispatchers, sanitize);
+        factory = service(dispatchers, sanitize);
         TODO_IDS = [getID(), getID()];
 
         TODO_CREATE = [
             {
                 ID: 1,
-                Action: constants.STATUS.CREATE,
+                Action: STATUS.CREATE,
                 Label: {
                     Order: 1,
                     Name: 'polo',
@@ -80,7 +80,7 @@ describe('labelsModel factory', () => {
             },
             {
                 ID: 2,
-                Action: constants.STATUS.CREATE,
+                Action: STATUS.CREATE,
                 Label: {
                     Order: 2,
                     Name: 'jeanne',
@@ -93,7 +93,7 @@ describe('labelsModel factory', () => {
         TODO_UPDATE = [
             {
                 ID: TODO_IDS[0],
-                Action: constants.STATUS.UPDATE,
+                Action: STATUS.UPDATE,
                 Label: {
                     Order: 1,
                     Name: 'robert',
@@ -106,7 +106,7 @@ describe('labelsModel factory', () => {
         TODO_DELETE = [
             {
                 ID: TODO_IDS[1],
-                Action: constants.STATUS.DELETE,
+                Action: STATUS.DELETE,
                 Label: {
                     Order: 1,
                     Name: 'robert',

@@ -1,7 +1,10 @@
 import _ from 'lodash';
-import { CONSTANTS, VERIFICATION_STATUS, MIME_TYPES } from '../../constants';
+
+import { ENCRYPTED_STATUS, VERIFICATION_STATUS, MIME_TYPES } from '../../constants';
 import { inlineCss } from '../../../helpers/domHelper';
 
+const MAX_ENC_HEADER_LENGTH = 1024;
+const PGPMIME_TYPES = [ENCRYPTED_STATUS.PGP_MIME, ENCRYPTED_STATUS.PGP_MIME_SIGNED];
 const { PLAINTEXT } = MIME_TYPES;
 
 /* @ngInject */
@@ -19,8 +22,6 @@ function messageModel(
     attachedPublicKey,
     mailSettingsModel
 ) {
-    const MAX_ENC_HEADER_LENGTH = 1024;
-    const PGPMIME_TYPES = [CONSTANTS.ENCRYPTED_STATUS.PGP_MIME, CONSTANTS.ENCRYPTED_STATUS.PGP_MIME_SIGNED];
     const ENCRYPTED_HEADERS_FILENAME = gettextCatalog.getString(
         'Encrypted Headers',
         null,
@@ -228,7 +229,7 @@ function messageModel(
         }
 
         isPGPInlineEncrypted() {
-            return this.IsEncrypted === CONSTANTS.ENCRYPTED_STATUS.PGP_INLINE;
+            return this.IsEncrypted === ENCRYPTED_STATUS.PGP_INLINE;
         }
 
         encryptBody(publicKeys) {

@@ -1,5 +1,6 @@
 import _ from 'lodash';
-import { CONSTANTS } from '../../constants';
+
+import { ENCRYPTED_STATUS } from '../../constants';
 
 /* @ngInject */
 function composerAttachments(gettextCatalog, dispatchers) {
@@ -55,7 +56,7 @@ function composerAttachments(gettextCatalog, dispatchers) {
      */
     const formatAttachments = (scope, list = []) => {
         return list
-            .filter(({ Encrypted }) => Encrypted !== CONSTANTS.ENCRYPTED_STATUS.PGP_MIME)
+            .filter(({ Encrypted }) => Encrypted !== ENCRYPTED_STATUS.PGP_MIME)
             .map(({ ID, Headers = {}, Name, Size }) => {
                 const Inline = +(Headers['content-disposition'] === 'inline');
                 return {

@@ -1,5 +1,6 @@
 import _ from 'lodash';
-import { CONSTANTS, TIME } from '../../constants';
+
+import { CONTACT_ERROR, TIME } from '../../constants';
 import { toList } from '../../../helpers/arrayHelper';
 import { getGroup } from '../../../helpers/vcard';
 
@@ -60,7 +61,7 @@ function publicKeyStore($rootScope, keyCache, pmcw, contactEmails, Contact, cont
             // fallback to api keys
             return;
         }
-        if (contact.errors.includes(CONSTANTS.CONTACT_ERROR.TYPE2_CONTACT_VERIFICATION)) {
+        if (contact.errors.includes(CONTACT_ERROR.TYPE2_CONTACT_VERIFICATION)) {
             // keys can't be trusted: the user has no keys. DO NOT fallback to api keys.
             return [contactEmail.ContactID, []];
         }

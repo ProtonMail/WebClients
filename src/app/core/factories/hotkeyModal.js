@@ -1,5 +1,7 @@
+import { ROW_MODE, COLUMN_MODE } from '../../constants';
+
 /* @ngInject */
-function hotkeyModal(pmModal, mailSettingsModel, CONSTANTS) {
+function hotkeyModal(pmModal, mailSettingsModel) {
     return pmModal({
         controllerAs: 'ctrl',
         templateUrl: require('../../../templates/modals/hotkey.tpl.html'),
@@ -9,9 +11,9 @@ function hotkeyModal(pmModal, mailSettingsModel, CONSTANTS) {
 
             this.isMac = navigator.userAgent.indexOf('Mac OS X') !== -1;
 
-            if (ViewLayout === CONSTANTS.ROW_MODE) {
+            if (ViewLayout === ROW_MODE) {
                 this.mode = 'row';
-            } else if (ViewLayout === CONSTANTS.COLUMN_MODE) {
+            } else if (ViewLayout === COLUMN_MODE) {
                 this.mode = 'column';
             }
 

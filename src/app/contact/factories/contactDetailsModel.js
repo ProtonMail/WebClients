@@ -1,6 +1,6 @@
 import _ from 'lodash';
 
-import { CONSTANTS } from '../../constants';
+import { VCARD_KEYS } from '../../constants';
 import { orderByPref } from '../../../helpers/vcard';
 
 /* @ngInject */
@@ -59,7 +59,7 @@ function contactDetailsModel(contactTransformLabel, contactSchema, gettextCatalo
     };
 
     const BOOL_FIELDS = ['x-pm-encrypt', 'x-pm-sign'];
-    const MAP_KEYS = CONSTANTS.VCARD_KEYS.reduce((acc, key) => {
+    const MAP_KEYS = VCARD_KEYS.reduce((acc, key) => {
         acc[key] = contactTransformLabel.toLang(key);
         return acc;
     }, {});

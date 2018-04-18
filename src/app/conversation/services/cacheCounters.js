@@ -1,22 +1,14 @@
 import { flow, each, filter } from 'lodash/fp';
 
+import { MAILBOX_IDENTIFIERS } from '../../constants';
+
+const { inbox, allDrafts, drafts, allSent, sent, trash, spam, allmail, archive, starred } = MAILBOX_IDENTIFIERS;
+
 /* @ngInject */
-function cacheCounters(messageApi, CONSTANTS, conversationApi, $q, dispatchers, authentication, labelsModel) {
+function cacheCounters(messageApi, conversationApi, $q, dispatchers, authentication, labelsModel) {
     const api = {};
     let counters = {};
     const { dispatcher, on } = dispatchers(['app.cacheCounters']);
-    const {
-        inbox,
-        allDrafts,
-        drafts,
-        allSent,
-        sent,
-        trash,
-        spam,
-        allmail,
-        archive,
-        starred
-    } = CONSTANTS.MAILBOX_IDENTIFIERS;
     const dispatch = (type, data = {}) => dispatcher['app.cacheCounters'](type, data);
 
     const exist = (loc) => {

@@ -1,8 +1,9 @@
+import { IFRAME_SECURE_ORIGIN } from '../../constants';
+
 /* @ngInject */
-function brick(CONSTANTS) {
+function brick() {
     let listener;
     const iframe = document.createElement('IFRAME');
-    const { IFRAME_SECURE_ORIGIN } = CONSTANTS;
 
     iframe.style.display = 'none';
     iframe.src = `${IFRAME_SECURE_ORIGIN}/paymentwall.html`;

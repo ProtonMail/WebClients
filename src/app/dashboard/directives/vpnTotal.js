@@ -1,5 +1,5 @@
 /* @ngInject */
-function vpnTotal(CONSTANTS, customVpnModel, dashboardConfiguration, dashboardModel, dispatchers) {
+function vpnTotal(customVpnModel, dashboardConfiguration, dashboardModel, dispatchers) {
     return {
         replace: true,
         restrict: 'E',

@@ -1,6 +1,6 @@
 import _ from 'lodash';
 import { flow, filter, sortBy } from 'lodash/fp';
-import { CONSTANTS, MIME_TYPES } from '../../constants';
+import { DRAFT, FORWARD, REPLY_ALL, REPLY, MIME_TYPES } from '../../constants';
 
 const { PLAINTEXT } = MIME_TYPES;
 
@@ -76,8 +76,6 @@ export function findSender({ Addresses = [] } = {}, { AddressID = '' } = {}) {
 }
 
 export function createMessage({ Addresses = [] } = {}, { RE_PREFIX, FW_PREFIX } = {}) {
-    const { FORWARD, REPLY_ALL, REPLY } = CONSTANTS;
-
     /**
      * Format and build a new message
      * @param  {Message} newMsg          New message to build
@@ -195,7 +193,7 @@ function messageBuilder(
         encryptedSubjectMessage(msg) {
             return gettextCatalog.getString(
                 `The selected message has an encrypted subject.
-                ProtonMail does not support sending an encrypted subject. 
+                ProtonMail does not support sending an encrypted subject.
                 Do you want to use "{{ encryptedSubject }}" instead of the original unencrypted subject
                  "{{ Subject }}"?`,
                 msg,
@@ -324,7 +322,7 @@ function messageBuilder(
         const sender = findSender(message);
 
         _.defaults(message, {
-            Type: CONSTANTS.DRAFT,
+            Type: DRAFT,
             ToList: [],
             CCList: [],
             BCCList: [],

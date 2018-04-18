@@ -1,9 +1,11 @@
+import { MAX_VPN, PLANS } from '../../constants';
+
+const { PLAN, ADDON } = PLANS;
+const { VPN } = ADDON;
+const { VPN_BASIC, VPN_PLUS } = PLAN;
+
 /* @ngInject */
-function customVpnModel(CONSTANTS, dashboardConfiguration, dashboardModel, dispatchers) {
-    const { MAX_VPN, PLANS } = CONSTANTS;
-    const { PLAN, ADDON } = PLANS;
-    const { VPN } = ADDON;
-    const { VPN_BASIC, VPN_PLUS } = PLAN;
+function customVpnModel(dashboardConfiguration, dashboardModel, dispatchers) {
     const CACHE = {};
     const { dispatcher, on } = dispatchers(['dashboard']);
     const dispatch = () => dispatcher.dashboard('vpn.modal.updated');

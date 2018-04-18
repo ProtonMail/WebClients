@@ -1,5 +1,7 @@
 import _ from 'lodash';
 
+import { OAUTH_KEY, FREE_USER_ROLE, MAILBOX_PASSWORD_KEY } from '../../constants';
+
 /* @ngInject */
 function authentication(
     $http,
@@ -13,7 +15,6 @@ function authentication(
     authApi,
     checkKeysFormat,
     CONFIG,
-    CONSTANTS,
     errorReporter,
     gettextCatalog,
     upgradePassword,
@@ -33,7 +34,6 @@ function authentication(
     decryptUser
 ) {
     let keys = {}; // Store decrypted keys
-    const { OAUTH_KEY, FREE_USER_ROLE, MAILBOX_PASSWORD_KEY } = CONSTANTS;
     const auth = {
         headersSet: false,
         // The Authorization header is used just once for the /cookies route, then we forget it and use cookies instead.

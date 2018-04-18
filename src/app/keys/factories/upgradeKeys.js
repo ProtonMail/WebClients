@@ -1,10 +1,11 @@
 import _ from 'lodash';
 
+import { PAID_ADMIN_ROLE, MAILBOX_PASSWORD_KEY } from '../../constants';
+
 /* @ngInject */
 function upgradeKeys(
     $log,
     $injector,
-    CONSTANTS,
     gettextCatalog,
     Key,
     networkActivityTracker,
@@ -21,7 +22,7 @@ function upgradeKeys(
      * @return {Promise}
      */
     function manageOrganizationKeys(password = '', oldSaltedPassword = '', user = {}) {
-        if (user.Role === CONSTANTS.PAID_ADMIN_ROLE) {
+        if (user.Role === PAID_ADMIN_ROLE) {
             // Get organization key
             return organizationApi
                 .getKeys()
@@ -156,7 +157,7 @@ function upgradeKeys(
                 })
             )
             .then(() => {
-                secureSessionStorage.setItem(CONSTANTS.MAILBOX_PASSWORD_KEY, pmcw.encode_utf8_base64(passwordComputed));
+                secureSessionStorage.setItem(MAILBOX_PASSWORD_KEY, pmcw.encode_utf8_base64(passwordComputed));
             });
     };
 }

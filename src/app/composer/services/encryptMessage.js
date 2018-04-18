@@ -1,8 +1,9 @@
 import _ from 'lodash';
 
+import { SEND_TYPES } from '../../constants';
+
 /* @ngInject */
 function encryptMessage(
-    CONSTANTS,
     $rootScope,
     gettextCatalog,
     postMessage,
@@ -12,8 +13,6 @@ function encryptMessage(
     generateTopPackages
 ) {
     const dispatchMessageAction = (message) => $rootScope.$emit('actionMessage', { data: message });
-
-    const { SEND_TYPES } = CONSTANTS;
 
     const EXPIRE_ERROR =
         gettextCatalog.getString(

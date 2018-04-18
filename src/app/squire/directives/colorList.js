@@ -1,9 +1,10 @@
 import { hexToRgbString } from '../../../helpers/colorHelper';
+import { FONT_COLOR } from '../../constants';
+
+const { white, magenta, blue, green, yellow } = FONT_COLOR;
 
 /* @ngInject */
-function colorList(editorState, CONSTANTS) {
-    const { FONT_COLOR } = CONSTANTS;
-    const { white, magenta, blue, green, yellow } = FONT_COLOR;
+function colorList(editorState) {
     const CLASSNAME_ACTIVE = 'active';
 
     /**

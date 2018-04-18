@@ -1,7 +1,9 @@
 import _ from 'lodash';
 
+import { MAILBOX_PASSWORD_KEY, OAUTH_KEY } from '../../constants';
+
 /* @ngInject */
-function secureSessionStorage(CONSTANTS, webcrypto) {
+function secureSessionStorage(webcrypto) {
     // Partially inspired by http://www.thomasfrank.se/sessionvars.html
 
     // This service implements essentially the sessionStorage API. However,
@@ -46,9 +48,9 @@ function secureSessionStorage(CONSTANTS, webcrypto) {
     let data = {};
 
     const whitelist = [
-        CONSTANTS.MAILBOX_PASSWORD_KEY,
-        CONSTANTS.OAUTH_KEY + ':SessionToken',
-        CONSTANTS.OAUTH_KEY + ':UID',
+        MAILBOX_PASSWORD_KEY,
+        OAUTH_KEY + ':SessionToken',
+        OAUTH_KEY + ':UID',
         'proton:decrypted_token',
         'proton:encrypted_password'
     ];

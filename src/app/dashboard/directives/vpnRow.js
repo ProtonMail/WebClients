@@ -1,6 +1,10 @@
+import { PLANS } from '../../constants';
+
+const { VPN_BASIC, VPN_PLUS } = PLANS.PLAN;
+const { VPN } = PLANS.ADDON;
+
 /* @ngInject */
 function vpnRow(
-    CONSTANTS,
     dashboardConfiguration,
     dashboardModel,
     dispatchers,
@@ -11,8 +15,7 @@ function vpnRow(
     const HAS_VPN_CLASS = 'vpnRow-has-vpn';
     const VPN_BASIC_CLASS = 'vpnRow-vpnbasic';
     const VPN_PLUS_CLASS = 'vpnRow-vpnplus';
-    const { VPN_BASIC, VPN_PLUS } = CONSTANTS.PLANS.PLAN;
-    const { VPN } = CONSTANTS.PLANS.ADDON;
+
     const getName = (config = {}) => (config.vpnplus ? 'ProtonVPN Plus' : 'ProtonVPN Basic');
     const getClass = (config = {}) => (config.vpnplus ? VPN_PLUS_CLASS : VPN_BASIC_CLASS);
 

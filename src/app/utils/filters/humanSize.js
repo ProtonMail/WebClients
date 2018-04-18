@@ -1,11 +1,13 @@
 import _ from 'lodash';
 
+import { BASE_SIZE } from '../../constants';
+
 /* @ngInject */
-function humanSize(CONSTANTS, gettextCatalog) {
+function humanSize(gettextCatalog) {
     const units = {
-        KB: CONSTANTS.BASE_SIZE,
-        MB: CONSTANTS.BASE_SIZE * CONSTANTS.BASE_SIZE,
-        GB: CONSTANTS.BASE_SIZE * CONSTANTS.BASE_SIZE * CONSTANTS.BASE_SIZE
+        KB: BASE_SIZE,
+        MB: BASE_SIZE * BASE_SIZE,
+        GB: BASE_SIZE * BASE_SIZE * BASE_SIZE
     };
 
     const i18nSuffix = (key) => {

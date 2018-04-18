@@ -1,20 +1,22 @@
 import _ from 'lodash';
+
 import { orderByPref, uniqGroups } from '../../../helpers/vcard';
+import { CONTACT_MODE, CONTACTS_LIMIT_ENCRYPTION, MAIN_KEY, VCARD_VERSION, CONTACT_ERROR } from '../../constants';
+
+const KEY_FIELDS = ['key', 'x-pm-mimetype', 'x-pm-encrypt', 'x-pm-sign', 'x-pm-scheme', 'x-pm-tls', 'x-pm-dane'];
+const CLEAR_FIELDS = ['version', 'prodid', 'x-pm-label', 'x-pm-group'];
+const SIGNED_FIELDS = ['version', 'prodid', 'fn', 'uid', 'email'].concat(KEY_FIELDS);
+const GROUP_FIELDS = ['email'].concat(KEY_FIELDS);
+const { CLEAR_TEXT, ENCRYPTED_AND_SIGNED, ENCRYPTED, SIGNED } = CONTACT_MODE;
+const {
+    TYPE3_CONTACT_VERIFICATION,
+    TYPE3_CONTACT_DECRYPTION,
+    TYPE2_CONTACT_VERIFICATION,
+    TYPE1_CONTACT
+} = CONTACT_ERROR;
 
 /* @ngInject */
-function contactEncryption($injector, $rootScope, CONSTANTS, chunk, gettextCatalog, pmcw, vcard, contactKeyAssigner) {
-    const KEY_FIELDS = ['key', 'x-pm-mimetype', 'x-pm-encrypt', 'x-pm-sign', 'x-pm-scheme', 'x-pm-tls', 'x-pm-dane'];
-    const CLEAR_FIELDS = ['version', 'prodid', 'x-pm-label', 'x-pm-group'];
-    const SIGNED_FIELDS = ['version', 'prodid', 'fn', 'uid', 'email'].concat(KEY_FIELDS);
-    const GROUP_FIELDS = ['email'].concat(KEY_FIELDS);
-    const { CONTACT_MODE, CONTACTS_LIMIT_ENCRYPTION, MAIN_KEY, VCARD_VERSION, CONTACT_ERROR } = CONSTANTS;
-    const { CLEAR_TEXT, ENCRYPTED_AND_SIGNED, ENCRYPTED, SIGNED } = CONTACT_MODE;
-    const {
-        TYPE3_CONTACT_VERIFICATION,
-        TYPE3_CONTACT_DECRYPTION,
-        TYPE2_CONTACT_VERIFICATION,
-        TYPE1_CONTACT
-    } = CONTACT_ERROR;
+function contactEncryption($injector, $rootScope, chunk, gettextCatalog, pmcw, vcard, contactKeyAssigner) {
     const getErrors = (data = []) => _.map(data, 'error').filter(Boolean);
 
     const buildContact = (ID, data = [], cards) => {

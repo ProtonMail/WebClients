@@ -1,10 +1,10 @@
 import _ from 'lodash';
-
 import { flow, filter, sortBy, head } from 'lodash/fp';
 
+import { MAILBOX_IDENTIFIERS } from '../../constants';
+
 /* @ngInject */
-function pageTitlesModel(CONSTANTS, $injector, dispatchers, gettextCatalog, authentication, $state, tools) {
-    const { MAILBOX_IDENTIFIERS } = CONSTANTS;
+function pageTitlesModel($injector, dispatchers, gettextCatalog, authentication, $state, tools) {
     const DISPLAY_NUMBER = [
         'inbox',
         'drafts',

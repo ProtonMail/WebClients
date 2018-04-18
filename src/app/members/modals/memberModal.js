@@ -1,9 +1,11 @@
 import _ from 'lodash';
 
-/* @ngInject */
-function memberModal(pmModal, CONSTANTS, gettextCatalog, organizationModel, subscriptionModel, editMemberProcess) {
-    const GIGA = CONSTANTS.BASE_SIZE ** 3;
+import { BASE_SIZE, ENCRYPTION_DEFAULT } from '../../constants';
 
+const GIGA = BASE_SIZE ** 3;
+
+/* @ngInject */
+function memberModal(pmModal, gettextCatalog, organizationModel, subscriptionModel, editMemberProcess) {
     const I18N = {
         USED: gettextCatalog.getString('Already used', null, 'Memory info'),
         ALLOCATED: gettextCatalog.getString('Allocated', null, 'Memory info'),
@@ -31,7 +33,7 @@ function memberModal(pmModal, CONSTANTS, gettextCatalog, organizationModel, subs
 
             this.ID = null;
             this.step = 'member';
-            this.size = CONSTANTS.ENCRYPTION_DEFAULT;
+            this.size = ENCRYPTION_DEFAULT;
             this.organization = params.organization;
             this.organizationKey = params.organizationKey;
             this.domains = _.filter(params.domains, ({ State }) => State);

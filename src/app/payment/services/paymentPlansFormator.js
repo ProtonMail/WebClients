@@ -1,5 +1,7 @@
+import { BASE_SIZE } from '../../constants';
+
 /* @ngInject */
-function paymentPlansFormator(CONSTANTS, gettextCatalog) {
+function paymentPlansFormator(gettextCatalog) {
     const I18N = {
         MSG_PER_DAY: gettextCatalog.getString('Messages per day', null, 'Plan feature'),
         LABELS: gettextCatalog.getString('Labels', null, 'Plan feature'),
@@ -26,7 +28,7 @@ function paymentPlansFormator(CONSTANTS, gettextCatalog) {
             Amount: 0,
             MaxDomains: 0,
             MaxAddresses: 1,
-            MaxSpace: 500 * CONSTANTS.BASE_SIZE * CONSTANTS.BASE_SIZE,
+            MaxSpace: 500 * BASE_SIZE * BASE_SIZE,
             MaxMembers: 1,
             TwoFactor: 0
         });

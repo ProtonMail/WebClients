@@ -1,4 +1,4 @@
-import { CONSTANTS } from '../../constants';
+import { SEND_TYPES } from '../../constants';
 
 /* @ngInject */
 function composerInputRecipient(sendPreferences, dispatchers) {
@@ -19,12 +19,11 @@ function composerInputRecipient(sendPreferences, dispatchers) {
                     scope.$applyAsync(() => {
                         scope.email.encrypt = sendPref.encrypt;
                         scope.email.sign = sendPref.sign;
-                        scope.email.isPgp = [
-                            CONSTANTS.SEND_TYPES.SEND_PGP_MIME,
-                            CONSTANTS.SEND_TYPES.SEND_PGP_INLINE
-                        ].includes(sendPref.scheme);
-                        scope.email.isPgpMime = sendPref.scheme === CONSTANTS.SEND_TYPES.SEND_PGP_MIME;
-                        scope.email.isEO = sendPref.scheme === CONSTANTS.SEND_TYPES.SEND_EO;
+                        scope.email.isPgp = [SEND_TYPES.SEND_PGP_MIME, SEND_TYPES.SEND_PGP_INLINE].includes(
+                            sendPref.scheme
+                        );
+                        scope.email.isPgpMime = sendPref.scheme === SEND_TYPES.SEND_PGP_MIME;
+                        scope.email.isEO = sendPref.scheme === SEND_TYPES.SEND_EO;
                         scope.email.isPinned = sendPref.pinned;
                         scope.email.loadCryptInfo = false;
                         dispatcher.composerInputRecipient('refresh', { email: scope.email });

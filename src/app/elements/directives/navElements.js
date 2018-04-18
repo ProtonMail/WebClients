@@ -1,11 +1,13 @@
+import { ROW_MODE } from '../../constants';
+
 /* @ngInject */
-function navElements($state, dispatchers, mailSettingsModel, tools, CONSTANTS) {
+function navElements($state, dispatchers, mailSettingsModel, tools) {
     const CLASS_DISPLAY = 'navElements-displayed';
     const CLASS_ERROR = 'navElements-no-';
     const SPECIAL_BOXES = ['drafts', 'search', 'sent', 'allDrafts', 'allSent'];
     const showNextPrev = () => {
         const box = tools.currentMailbox();
-        const rowMode = mailSettingsModel.get('ViewLayout') === CONSTANTS.ROW_MODE;
+        const rowMode = mailSettingsModel.get('ViewLayout') === ROW_MODE;
         const context = tools.cacheContext();
         const notSpecial = SPECIAL_BOXES.indexOf(box) === -1;
         return $state.params.id && rowMode && context && notSpecial;

@@ -1,15 +1,16 @@
 import _ from 'lodash';
-
 import { flow, filter, last } from 'lodash/fp';
 
+import { SENT, ENCRYPTED_STATUS, DRAFT } from '../../constants';
+
 /* @ngInject */
-function findExpendableMessage(tools, CONSTANTS, $state, $stateParams) {
+function findExpendableMessage(tools, $state, $stateParams) {
     const isSentAutoReply = ({ Type, IsEncrypted, ParsedHeaders = {} }) => {
-        if (!(Type & CONSTANTS.SENT)) {
+        if (!(Type & SENT)) {
             return false;
         }
 
-        if (IsEncrypted === CONSTANTS.ENCRYPTED_STATUS.AUTOREPLY) {
+        if (IsEncrypted === ENCRYPTED_STATUS.AUTOREPLY) {
             return true;
         }
 
@@ -79,24 +80,24 @@ function findExpendableMessage(tools, CONSTANTS, $state, $stateParams) {
             case $state.includes('secured.starred.**'):
             case $state.includes('secured.label.**'):
                 thisOne = getMessage(
-                    _.filter(messages, (m) => m.LabelIDs.indexOf(currentLocation) > -1 && m.Type !== CONSTANTS.DRAFT)
+                    _.filter(messages, (m) => m.LabelIDs.indexOf(currentLocation) > -1 && m.Type !== DRAFT)
                 );
                 break;
 
             case $state.includes('secured.allDrafts.**'):
             case $state.includes('secured.drafts.**'):
-                thisOne = filterCb(({ Type }) => Type === CONSTANTS.DRAFT);
+                thisOne = filterCb(({ Type }) => Type === DRAFT);
                 break;
 
             default: {
-                const latest = filterCb((m) => m.Type !== CONSTANTS.DRAFT && !isSentAutoReply(m));
+                const latest = filterCb((m) => m.Type !== DRAFT && !isSentAutoReply(m));
 
                 if (latest && latest.IsRead === 1) {
                     thisOne = latest;
                     break;
                 }
 
-                thisOne = getMessage(_.filter(messages, (m) => m.Type !== CONSTANTS.DRAFT && !isSentAutoReply(m)));
+                thisOne = getMessage(_.filter(messages, (m) => m.Type !== DRAFT && !isSentAutoReply(m)));
                 break;
             }
         }

@@ -1,5 +1,7 @@
 import _ from 'lodash';
 
+import { ENCRYPTION_DEFAULT } from '../../constants';
+
 /* @ngInject */
 function generateModal(
     pmModal,
@@ -8,7 +10,6 @@ function generateModal(
     Key,
     pmcw,
     notification,
-    CONSTANTS,
     generateKeyModel,
     gettextCatalog,
     setupKeys,
@@ -32,7 +33,7 @@ function generateModal(
         templateUrl: require('../../../templates/modals/generate.tpl.html'),
         /* @ngInject */
         controller: function(params, $scope) {
-            this.size = CONSTANTS.ENCRYPTION_DEFAULT; // To match the [radio] value
+            this.size = ENCRYPTION_DEFAULT; // To match the [radio] value
             this.process = false;
             this.title = params.title || I18N.title;
             this.message = params.message || I18N.message;

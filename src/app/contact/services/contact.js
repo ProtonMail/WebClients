@@ -1,11 +1,19 @@
 import _ from 'lodash';
+
 import { ContactUpdateError } from '../../../helpers/errors';
+import {
+    CONTACTS_LIMIT_UPLOAD,
+    EXPORT_CONTACTS_LIMIT,
+    CONTACT_MODE,
+    CONTACT_EMAILS_LIMIT,
+    CONTACTS_LIMIT
+} from '../../constants';
+
+const ENCRYPTED_MODES = [CONTACT_MODE.ENCRYPTED, CONTACT_MODE.ENCRYPTED_AND_SIGNED];
 
 /* @ngInject */
-function Contact($http, $rootScope, CONSTANTS, url, chunk, contactEncryption, sanitize) {
+function Contact($http, $rootScope, url, chunk, contactEncryption, sanitize) {
     const requestURL = url.build('contacts');
-    const { CONTACTS_LIMIT_UPLOAD, EXPORT_CONTACTS_LIMIT } = CONSTANTS;
-    const ENCRYPTED_MODES = [CONSTANTS.CONTACT_MODE.ENCRYPTED, CONSTANTS.CONTACT_MODE.ENCRYPTED_AND_SIGNED];
 
     /**
      * Clean contact datas
@@ -56,7 +64,7 @@ function Contact($http, $rootScope, CONSTANTS, url, chunk, contactEncryption, sa
      * Get a list of Contact Emails right after Login
      * @return {Promise}
      */
-    function hydrate(PageSize = CONSTANTS.CONTACT_EMAILS_LIMIT) {
+    function hydrate(PageSize = CONTACT_EMAILS_LIMIT) {
         return queryContacts(requestURL('emails'), {
             key: 'ContactEmails',
             PageSize
@@ -67,7 +75,7 @@ function Contact($http, $rootScope, CONSTANTS, url, chunk, contactEncryption, sa
      * Get a list of Contacts minus their Data
      * @return {Promise}
      */
-    const all = (PageSize = CONSTANTS.CONTACTS_LIMIT) => {
+    const all = (PageSize = CONTACTS_LIMIT) => {
         return queryContacts(requestURL(), {
             key: 'Contacts',
             PageSize
@@ -79,7 +87,7 @@ function Contact($http, $rootScope, CONSTANTS, url, chunk, contactEncryption, sa
      */
     const load = (type = '') => {
         const url = type ? requestURL(type) : requestURL();
-        const PageSize = type ? CONSTANTS.CONTACT_EMAILS_LIMIT : CONSTANTS.CONTACTS_LIMIT / 10;
+        const PageSize = type ? CONTACT_EMAILS_LIMIT : CONTACTS_LIMIT / 10;
         return request(url, { PageSize });
     };
 

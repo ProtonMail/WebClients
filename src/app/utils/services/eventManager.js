@@ -1,5 +1,7 @@
 import _ from 'lodash';
 
+import { CONVERSATION_VIEW_MODE, INTERVAL_EVENT_TIMER, MAILBOX_IDENTIFIERS, STATUS } from '../../constants';
+
 /* @ngInject */
 function eventManager(
     $cookies,
@@ -10,7 +12,6 @@ function eventManager(
     AppModel,
     authentication,
     cachePages,
-    CONSTANTS,
     desktopNotifications,
     Events,
     gettextCatalog,
@@ -21,7 +22,6 @@ function eventManager(
     userSettingsModel,
     vpnSettingsModel
 ) {
-    const { CONVERSATION_VIEW_MODE, INTERVAL_EVENT_TIMER, MAILBOX_IDENTIFIERS, STATUS } = CONSTANTS;
     const FIBONACCI = [1, 1, 2, 3, 5, 8];
     const { inbox, allDrafts, drafts, allSent, sent, trash, spam, allmail, archive, starred } = MAILBOX_IDENTIFIERS;
     const { DELETE, CREATE, UPDATE } = STATUS;

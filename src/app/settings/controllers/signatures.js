@@ -1,9 +1,10 @@
+import { PAID_ADMIN_ROLE } from '../../constants';
+
 /* @ngInject */
 function SignaturesController(
     dispatchers,
     $scope,
     authentication,
-    CONSTANTS,
     domainModel,
     memberModel,
     organizationModel,
@@ -22,7 +23,7 @@ function SignaturesController(
     $scope.members = memberModel.getAll();
 
     $scope.organization = organizationModel.get();
-    const isPaidAdmin = authentication.user.Role === CONSTANTS.PAID_ADMIN_ROLE;
+    const isPaidAdmin = authentication.user.Role === PAID_ADMIN_ROLE;
 
     $scope.domains = domainModel.query();
 
@@ -65,7 +66,7 @@ function SignaturesController(
             });
         }
 
-        if (!isPaidAdmin && authentication.user.Role === CONSTANTS.PAID_ADMIN_ROLE) {
+        if (!isPaidAdmin && authentication.user.Role === PAID_ADMIN_ROLE) {
             memberModel.clear();
             organizationModel.clear();
             organizationKeysModel.clear();

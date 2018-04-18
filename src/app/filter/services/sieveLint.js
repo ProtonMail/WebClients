@@ -1,5 +1,7 @@
+import { FILTER_VERSION } from '../../constants';
+
 /* @ngInject */
-function sieveLint(Filter, CONSTANTS) {
+function sieveLint(Filter) {
     let wasValid = true;
 
     /**
@@ -20,7 +22,7 @@ function sieveLint(Filter, CONSTANTS) {
             }
 
             return Filter.check({
-                Version: CONSTANTS.FILTER_VERSION,
+                Version: FILTER_VERSION,
                 Sieve: text
             }).then((response) => {
                 if (response.status !== 200) {

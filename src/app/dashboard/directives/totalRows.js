@@ -1,15 +1,17 @@
+import { CYCLE } from '../../constants';
+
+const { MONTHLY, YEARLY, TWO_YEARS } = CYCLE;
+
 /* @ngInject */
 function totalRows(
     $filter,
     blackFridayModel,
-    CONSTANTS,
     dashboardConfiguration,
     dashboardModel,
     dispatchers,
     gettextCatalog,
     subscriptionModel
 ) {
-    const { MONTHLY, YEARLY, TWO_YEARS } = CONSTANTS.CYCLE;
     const I18N = {
         billedAs(amount, cycle) {
             if (cycle === YEARLY) {

@@ -1,10 +1,11 @@
 import _ from 'lodash';
 
+import { MAILBOX_IDENTIFIERS } from '../../constants';
+
 /* @ngInject */
 function actionDnd(
     $rootScope,
     $state,
-    CONSTANTS,
     dispatchers,
     ptDndModel,
     actionConversation,
@@ -51,7 +52,7 @@ function actionDnd(
         }
 
         if (mailSettingsModel.get('AlsoArchive')) {
-            move(ids, type, CONSTANTS.MAILBOX_IDENTIFIERS.archive);
+            move(ids, type, MAILBOX_IDENTIFIERS.archive);
         }
 
         if (type === 'conversation') {
@@ -92,7 +93,7 @@ function actionDnd(
                 return star(list, type);
             }
 
-            move(ids, type, CONSTANTS.MAILBOX_IDENTIFIERS[data.value]);
+            move(ids, type, MAILBOX_IDENTIFIERS[data.value]);
         }
     });
 

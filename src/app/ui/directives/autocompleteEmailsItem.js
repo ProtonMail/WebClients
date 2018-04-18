@@ -1,9 +1,9 @@
-import { REGEX_EMAIL, EMAIL_FORMATING } from '../../constants';
+import { REGEX_EMAIL, EMAIL_FORMATING, SEND_TYPES } from '../../constants';
 
 const { OPEN_TAG_AUTOCOMPLETE_RAW, CLOSE_TAG_AUTOCOMPLETE_RAW } = EMAIL_FORMATING;
 
 /* @ngInject */
-function autocompleteEmailsItem(CONSTANTS, sanitize, sendPreferences, autoPinPrimaryKeys, dispatchers) {
+function autocompleteEmailsItem(sanitize, sendPreferences, autoPinPrimaryKeys, dispatchers) {
     const KEY_ENTER = 13;
 
     /**
@@ -100,8 +100,7 @@ function autocompleteEmailsItem(CONSTANTS, sanitize, sendPreferences, autoPinPri
                                 scope.email.encrypt = sendPref.encrypt;
                                 scope.email.sign = sendPref.sign;
                                 scope.email.isPgp =
-                                    sendPref.scheme !== CONSTANTS.SEND_TYPES.SEND_PM &&
-                                    (scope.email.encrypt || scope.email.sign);
+                                    sendPref.scheme !== SEND_TYPES.SEND_PM && (scope.email.encrypt || scope.email.sign);
                                 scope.email.isPinned = sendPref.pinned;
                                 scope.email.loadCryptInfo = false;
                             });

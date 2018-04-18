@@ -1,7 +1,9 @@
 import { flow, filter, take } from 'lodash/fp';
 
+import { AWESOMEPLETE_MAX_ITEMS } from '../../constants';
+
 /* @ngInject */
-function autocompleteCommandModel(hotkeys, CONSTANTS, labelsModel, strUtils, $rootScope, gettextCatalog, $stateParams) {
+function autocompleteCommandModel(hotkeys, labelsModel, strUtils, $rootScope, gettextCatalog, $stateParams) {
     let scopedList = [];
     const I18N = {
         'Add folder': gettextCatalog.getString('Add folder', null, 'Command palette action'),
@@ -103,7 +105,7 @@ function autocompleteCommandModel(hotkeys, CONSTANTS, labelsModel, strUtils, $ro
         const list = flow(
             filter(stateScoped),
             filter(({ label }) => label.toLowerCase().includes(input)),
-            take(CONSTANTS.AWESOMEPLETE_MAX_ITEMS)
+            take(AWESOMEPLETE_MAX_ITEMS)
         )(getList(mode));
 
         return { list, hasAutocompletion: !!list.length };

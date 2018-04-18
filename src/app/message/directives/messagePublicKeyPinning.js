@@ -1,4 +1,6 @@
 import _ from 'lodash';
+
+import { CONTACT_ERROR, SEND_TYPES } from '../../constants';
 import { toList } from '../../../helpers/arrayHelper';
 
 /* @ngInject */
@@ -8,7 +10,6 @@ function messagePublicKeyPinning(
     Contact,
     keyCache,
     networkActivityTracker,
-    CONSTANTS,
     autoPinPrimaryKeys,
     contactDetailsModel,
     contactEncryptionModal,
@@ -29,7 +30,7 @@ function messagePublicKeyPinning(
         link(scope, el) {
             const getContact = ({ ContactID, Email }) => {
                 return Contact.get(ContactID).then((contact) => {
-                    if (contact.errors.includes(CONSTANTS.CONTACT_ERROR.TYPE2_CONTACT_VERIFICATION)) {
+                    if (contact.errors.includes(CONTACT_ERROR.TYPE2_CONTACT_VERIFICATION)) {
                         return autoPinPrimaryKeys.resign([Email]).then((pinned) => (pinned ? contact : false));
                     }
                     return contact;
@@ -104,7 +105,7 @@ function messagePublicKeyPinning(
                                             scope.$applyAsync(
                                                 () =>
                                                     (scope.message.promptKeyPinning =
-                                                        !pinned && scheme === CONSTANTS.SEND_TYPES.SEND_PM)
+                                                        !pinned && scheme === SEND_TYPES.SEND_PM)
                                             )
                                         )
                                         .then(() => scope.message.clearTextBody(true));

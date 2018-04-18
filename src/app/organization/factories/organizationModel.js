@@ -1,3 +1,5 @@
+import { FREE_USER_ROLE } from '../../constants';
+
 /* @ngInject */
 function organizationModel(
     organizationApi,
@@ -6,7 +8,6 @@ function organizationModel(
     authentication,
     dispatchers,
     gettextCatalog,
-    CONSTANTS,
     notification,
     networkActivityTracker,
     changeOrganizationPasswordModal,
@@ -58,7 +59,7 @@ function organizationModel(
     const isFreePlan = () => (CACHE.organization || {}).PlanName === 'free';
 
     function fetch() {
-        if (authentication.user.Role === CONSTANTS.FREE_USER_ROLE) {
+        if (authentication.user.Role === FREE_USER_ROLE) {
             set(fakeOrganization);
             return Promise.resolve(fakeResult);
         }

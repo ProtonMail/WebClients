@@ -1,11 +1,13 @@
 import _ from 'lodash';
 
+import { MAILBOX_IDENTIFIERS } from '../../constants';
+
+const BLACKLIST_TYPE = +MAILBOX_IDENTIFIERS.spam;
+const WHITELIST_TYPE = +MAILBOX_IDENTIFIERS.inbox;
+const PAGE_SIZE = 100;
+
 /* @ngInject */
-function spamListModel($q, CONSTANTS, dispatchers, incomingModel) {
-    const { MAILBOX_IDENTIFIERS } = CONSTANTS;
-    const BLACKLIST_TYPE = +MAILBOX_IDENTIFIERS.spam;
-    const WHITELIST_TYPE = +MAILBOX_IDENTIFIERS.inbox;
-    const PAGE_SIZE = 100;
+function spamListModel($q, dispatchers, incomingModel) {
     let MAIN_CACHE = getDefault();
 
     const { dispatcher, on } = dispatchers(['filters']);

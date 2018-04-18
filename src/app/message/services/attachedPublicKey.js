@@ -1,7 +1,13 @@
 import _ from 'lodash';
-import { CONSTANTS, VERIFICATION_STATUS, EMAIL_FORMATING } from '../../constants';
+
+import { SEND_TYPES, VERIFICATION_STATUS, EMAIL_FORMATING } from '../../constants';
 import { toList } from '../../../helpers/arrayHelper';
 import { getGroup } from '../../../helpers/vcard';
+
+const { OPEN_TAG_AUTOCOMPLETE_RAW, CLOSE_TAG_AUTOCOMPLETE_RAW } = EMAIL_FORMATING;
+const { SIGNED_AND_INVALID } = VERIFICATION_STATUS;
+const MAX_KEY_SIZE = 50 * 1024;
+const MAX_KEY_COUNTS = 5;
 
 /* @ngInject */
 function attachedPublicKey(
@@ -17,10 +23,6 @@ function attachedPublicKey(
     Contact,
     networkActivityTracker
 ) {
-    const { OPEN_TAG_AUTOCOMPLETE_RAW, CLOSE_TAG_AUTOCOMPLETE_RAW } = EMAIL_FORMATING;
-    const { SIGNED_AND_INVALID } = VERIFICATION_STATUS;
-    const MAX_KEY_SIZE = 50 * 1024;
-    const MAX_KEY_COUNTS = 5;
     const normalizeEmail = (email) => email.toLowerCase();
     const asDataUri = (publicKey) => {
         const data = pmcw.stripArmor(publicKey);
@@ -70,7 +72,7 @@ function attachedPublicKey(
         if (!userids.length) {
             return [];
         }
-        return populateAddresses(keyInfo, userids, message.IsEncrypted === CONSTANTS.SEND_TYPES.SEND_PM);
+        return populateAddresses(keyInfo, userids, message.IsEncrypted === SEND_TYPES.SEND_PM);
     };
 
     const getPublicKeyFromSig = async (message) => {
@@ -172,7 +174,7 @@ function attachedPublicKey(
     };
 
     const extractFromEmail = async (message) => {
-        if (message.IsEncrypted === CONSTANTS.SEND_TYPES.SEND_PM) {
+        if (message.IsEncrypted === SEND_TYPES.SEND_PM) {
             return message.Verified === SIGNED_AND_INVALID ? getPublicKeyFromSig(message) : false;
         }
 

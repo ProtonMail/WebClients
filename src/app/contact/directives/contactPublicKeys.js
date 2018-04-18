@@ -1,4 +1,6 @@
 import _ from 'lodash';
+
+import { RECIPIENT_TYPE } from '../../constants';
 import keyAlgorithm from '../../keys/helper/keyAlgorithm';
 import { removeEmailAlias } from '../../../helpers/string';
 
@@ -13,8 +15,7 @@ function contactPublicKeys(
     notification,
     dispatchers,
     keyCache,
-    networkActivityTracker,
-    CONSTANTS
+    networkActivityTracker
 ) {
     const AS_SORTABLE_DISABLED = 'as-sortable-disabled';
 
@@ -42,7 +43,7 @@ function contactPublicKeys(
             const type = scope.type;
             const state = scope.state;
             const list = element.find('.contactItem-container');
-            const isInternal = scope.internalKeys.RecipientType === CONSTANTS.RECIPIENT_TYPE.TYPE_INTERNAL;
+            const isInternal = scope.internalKeys.RecipientType === RECIPIENT_TYPE.TYPE_INTERNAL;
 
             list.addClass(`contactItem-container-${scope.type}`);
             list.addClass(AS_SORTABLE_DISABLED);

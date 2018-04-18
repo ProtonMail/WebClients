@@ -1,6 +1,7 @@
 import _ from 'lodash';
 import { flow, filter, map } from 'lodash/fp';
-import { EMBEDDED, CONSTANTS } from '../../constants';
+
+import { EMBEDDED, ENCRYPTED_STATUS } from '../../constants';
 
 /* @ngInject */
 function embeddedParser(
@@ -139,10 +140,7 @@ function embeddedParser(
         // For a draft if we close it before the end of the attachment upload, there are no keyPackets
         const promise = flow(
             // pgp attachments do not have keypackets.
-            filter(
-                ({ attachment }) =>
-                    attachment.KeyPackets || attachment.Encrypted === CONSTANTS.ENCRYPTED_STATUS.PGP_MIME
-            ),
+            filter(({ attachment }) => attachment.KeyPackets || attachment.Encrypted === ENCRYPTED_STATUS.PGP_MIME),
             filter(({ cid }) => !embeddedStore.hasBlob(cid) && show),
             map(({ cid, attachment }) => {
                 const storeAttachement = embeddedStore.store(message, cid);

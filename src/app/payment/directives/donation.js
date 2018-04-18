@@ -1,6 +1,6 @@
 import _ from 'lodash';
 
-import { CONSTANTS, CURRENCIES } from '../../constants';
+import { DEFAULT_CURRENCY, CURRENCIES } from '../../constants';
 
 /* @ngInject */
 function donation(cardModel, gettextCatalog, dispatchers, paymentUtils, donateModel, authentication) {
@@ -66,7 +66,7 @@ function donation(cardModel, gettextCatalog, dispatchers, paymentUtils, donateMo
                 card: {},
                 method: selected,
                 amount: 25,
-                currency: _.find(currencies, { value: authentication.user.Currency || CONSTANTS.DEFAULT_CURRENCY })
+                currency: _.find(currencies, { value: authentication.user.Currency || DEFAULT_CURRENCY })
             };
 
             scope.currencies = currencies;

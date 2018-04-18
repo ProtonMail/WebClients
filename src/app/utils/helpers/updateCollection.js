@@ -1,11 +1,11 @@
 import _ from 'lodash';
 
-import { CONSTANTS } from '../../constants';
+import { STATUS } from '../../constants';
 
 const ACTIONS = {
-    [CONSTANTS.STATUS.DELETE]: 'remove',
-    [CONSTANTS.STATUS.CREATE]: 'create',
-    [CONSTANTS.STATUS.UPDATE]: 'update'
+    [STATUS.DELETE]: 'remove',
+    [STATUS.CREATE]: 'create',
+    [STATUS.UPDATE]: 'update'
 };
 
 /**

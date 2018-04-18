@@ -1,7 +1,8 @@
 import _ from 'lodash';
-
 import { flow, filter, map } from 'lodash/fp';
+
 import updateCollection from '../../utils/helpers/updateCollection';
+import { CONTACTS_PER_PAGE } from '../../constants';
 
 /* @ngInject */
 function contactCache(
@@ -9,7 +10,6 @@ function contactCache(
     $stateParams,
     dispatchers,
     networkActivityTracker,
-    CONSTANTS,
     Contact,
     contactDownloader,
     contactEmails,
@@ -27,7 +27,6 @@ function contactCache(
 
     const { dispatcher, on } = dispatchers(['contacts']);
     const CONTACT_STATES = ['secured.contacts'];
-    const { CONTACTS_PER_PAGE } = CONSTANTS;
     const getItem = (ID) => _.find(CACHE.contacts, { ID });
     const findIndex = (ID) => _.findIndex(CACHE.contacts, { ID });
     const emit = () => dispatcher.contacts('contactsUpdated', { all: get() });

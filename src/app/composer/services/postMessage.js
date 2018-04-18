@@ -1,8 +1,9 @@
 import _ from 'lodash';
 
+import { STATUS, ENCRYPTED_STATUS, MAILBOX_IDENTIFIERS } from '../../constants';
+
 /* @ngInject */
 function postMessage(
-    CONSTANTS,
     $rootScope,
     messageRequest,
     ComposerRequestStatus,
@@ -19,7 +20,6 @@ function postMessage(
     attachmentModel,
     embeddedUtils
 ) {
-    const { STATUS, ENCRYPTED_STATUS } = CONSTANTS;
     const I18N = {
         SAVE_MESSAGE_SUCCESS: gettextCatalog.getString('Message saved', null, 'Record message')
     };
@@ -207,7 +207,7 @@ function postMessage(
                         NumMessages: numMessages,
                         ContextNumUnread: contextNumUnread,
                         ID: remoteMessage.ConversationID,
-                        LabelIDsAdded: [CONSTANTS.MAILBOX_IDENTIFIERS.allDrafts, CONSTANTS.MAILBOX_IDENTIFIERS.drafts]
+                        LabelIDsAdded: [MAILBOX_IDENTIFIERS.allDrafts, MAILBOX_IDENTIFIERS.drafts]
                     },
                     numMessages === 1 ? firstConversation : {}
                 )

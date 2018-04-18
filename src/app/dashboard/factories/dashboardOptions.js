@@ -1,8 +1,9 @@
 import _ from 'lodash';
 
+import { MAX_MEMBER } from '../../constants';
+
 /* @ngInject */
-function dashboardOptions(gettextCatalog, CONSTANTS) {
-    const { MAX_MEMBER } = CONSTANTS;
+function dashboardOptions(gettextCatalog) {
     const TRANSLATE = {
         address(value) {
             return gettextCatalog.getString('{{value}} Addresses', { value }, 'dashboard options select');

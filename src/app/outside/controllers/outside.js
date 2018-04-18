@@ -1,5 +1,5 @@
 import _ from 'lodash';
-import { MIME_TYPES } from '../../constants';
+import { MIME_TYPES, MAX_OUTSIDE_REPLY } from '../../constants';
 
 const { DEFAULT } = MIME_TYPES;
 
@@ -11,7 +11,6 @@ function OutsideController(
     $state,
     $stateParams,
     gettextCatalog,
-    CONSTANTS,
     Eo,
     embedded,
     prepareContent,
@@ -108,7 +107,7 @@ function OutsideController(
     $scope.send = () => {
         const { Replies = [] } = $scope.message;
 
-        if (Replies.length >= CONSTANTS.MAX_OUTSIDE_REPLY) {
+        if (Replies.length >= MAX_OUTSIDE_REPLY) {
             const message = gettextCatalog.getString(
                 'ProtonMail\'s Encrypted Outside feature only allows replying 5 times. <a href="https://protonmail.com/signup" target="_blank">You can sign up for ProtonMail for seamless and unlimited end-to-end encryption</a>.',
                 null,

@@ -1,5 +1,7 @@
+import { METRIC_GOALS } from '../../constants';
+
 /* @ngInject */
-function eventListener(CONSTANTS, CONFIG, analytics, dispatchers, pageTitlesModel) {
+function eventListener(CONFIG, analytics, dispatchers, pageTitlesModel) {
     const TRACKED_STATES = ['signup', 'secured.dashboard', 'login', 'secured.inbox'];
 
     const state = { lastLocation: document.referrer };
@@ -27,20 +29,20 @@ function eventListener(CONSTANTS, CONFIG, analytics, dispatchers, pageTitlesMode
         if (type === 'user.subscription.finished') {
             const plan = data.plan || { Name: 'free' };
 
-            const goals = [CONSTANTS.METRIC_GOALS.SIGNUP_ALL];
+            const goals = [METRIC_GOALS.SIGNUP_ALL];
 
             if (plan.Name === 'free') {
-                goals.push(CONSTANTS.METRIC_GOALS.SIGNUP_FREE);
+                goals.push(METRIC_GOALS.SIGNUP_FREE);
             } else {
-                goals.push(CONSTANTS.METRIC_GOALS.SIGNUP_PAID);
+                goals.push(METRIC_GOALS.SIGNUP_PAID);
             }
 
             if (plan.Name === 'plus') {
-                goals.push(CONSTANTS.METRIC_GOALS.SIGNUP_PLUS);
+                goals.push(METRIC_GOALS.SIGNUP_PLUS);
             }
 
             if (plan.Name === 'visionary') {
-                goals.push(CONSTANTS.METRIC_GOALS.SIGNUP_VISIONARY);
+                goals.push(METRIC_GOALS.SIGNUP_VISIONARY);
             }
 
             analytics.trackGoals(goals);

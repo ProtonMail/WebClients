@@ -1,10 +1,16 @@
 import _ from 'lodash';
 
+import { PLANS, CYCLE } from '../../constants';
+
+const { PLUS, PROFESSIONAL, VISIONARY, VPN_BASIC, VPN_PLUS } = PLANS.PLAN;
+const MAIL_PLANS = ['free', PLUS, PROFESSIONAL, VISIONARY];
+const { ADDRESS, MEMBER, DOMAIN, SPACE, VPN } = PLANS.ADDON;
+const { MONTHLY, YEARLY, TWO_YEARS } = CYCLE;
+
 /* @ngInject */
 function dashboardModel(
     $filter,
     confirmModal,
-    CONSTANTS,
     dashboardConfiguration,
     dispatchers,
     downgrade,
@@ -17,10 +23,6 @@ function dashboardModel(
     planListGenerator
 ) {
     const { dispatcher, on } = dispatchers(['dashboard']);
-    const { PLUS, PROFESSIONAL, VISIONARY, VPN_BASIC, VPN_PLUS } = CONSTANTS.PLANS.PLAN;
-    const MAIL_PLANS = ['free', PLUS, PROFESSIONAL, VISIONARY];
-    const { ADDRESS, MEMBER, DOMAIN, SPACE, VPN } = CONSTANTS.PLANS.ADDON;
-    const { MONTHLY, YEARLY, TWO_YEARS } = CONSTANTS.CYCLE;
     const CACHE_PLAN = {};
     const CACHE_API = {};
     const filter = (amount) =>

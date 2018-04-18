@@ -1,12 +1,13 @@
 import _ from 'lodash';
 
+import { PAID_ADMIN_ROLE } from '../../constants';
+
 /* @ngInject */
 function memberActions(
     addressModel,
     askPassword,
     authentication,
     confirmModal,
-    CONSTANTS,
     domainModel,
     eventManager,
     gettextCatalog,
@@ -137,7 +138,7 @@ function memberActions(
 
     const getChangeRoleModalI18N = (member, role) => {
         const isSubscriber = member.Subscriber === 1 && 'isSubscriber';
-        const isPaidAdmin = role === CONSTANTS.PAID_ADMIN_ROLE && 'isPaidAdmin';
+        const isPaidAdmin = role === PAID_ADMIN_ROLE && 'isPaidAdmin';
         return _.extend({}, I18N.CHANGE_ROLE.default, I18N.CHANGE_ROLE[isPaidAdmin || isSubscriber]);
     };
 

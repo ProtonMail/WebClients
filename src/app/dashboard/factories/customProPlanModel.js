@@ -1,13 +1,15 @@
 import _ from 'lodash';
 
+import { PLANS, BASE_SIZE, MAX_MEMBER, HUGE_MEMBER } from '../../constants';
+
+const { PLAN, ADDON } = PLANS;
+const { MEMBER } = ADDON;
+const { PROFESSIONAL } = PLAN;
+const SLIDER_TYPES = ['members', 'storage', 'addresses'];
+
 /* @ngInject */
-function customProPlanModel(CONSTANTS, dashboardConfiguration, dashboardModel, dispatchers) {
+function customProPlanModel(dashboardConfiguration, dashboardModel, dispatchers) {
     const { dispatcher, on } = dispatchers(['refresh.slider', 'dashboard', 'update.slider.options']);
-    const { PLANS, BASE_SIZE, MAX_MEMBER, HUGE_MEMBER } = CONSTANTS;
-    const { PLAN, ADDON } = PLANS;
-    const { MEMBER } = ADDON;
-    const { PROFESSIONAL } = PLAN;
-    const SLIDER_TYPES = ['members', 'storage', 'addresses'];
 
     const fromBase = (value) => value / BASE_SIZE ** 3;
     const CACHE = {};

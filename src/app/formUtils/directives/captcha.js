@@ -1,6 +1,7 @@
+import { IFRAME_SECURE_ORIGIN } from '../../constants';
+
 /* @ngInject */
-function captcha($rootScope, CONSTANTS, url, $httpParamSerializer) {
-    const { IFRAME_SECURE_ORIGIN } = CONSTANTS;
+function captcha($rootScope, url, $httpParamSerializer) {
     const APP_HOST = url.host();
 
     // Change this to our captcha key, configurable in Angular?

@@ -6,7 +6,7 @@ import service, {
     injectInline,
     findSender
 } from '../../../../src/app/message/services/messageBuilder';
-import { CONSTANTS } from '../../../../src/app/constants';
+import { REPLY_ALL, REPLY, FORWARD, DRAFT } from '../../../../src/app/constants';
 
 const RE_PREFIX = 'Re:';
 const FW_PREFIX = 'Fw:';
@@ -205,7 +205,7 @@ describe('Create type of message', () => {
             it('should bind values', () => {
                 expect(newMsg.Subject).toEqual(`${RE_PREFIX} monique`);
                 expect(newMsg.ToList).toEqual(['jeanne@pt.com']);
-                expect(newMsg.Action).toEqual(CONSTANTS.REPLY);
+                expect(newMsg.Action).toEqual(REPLY);
             });
         });
 
@@ -221,7 +221,7 @@ describe('Create type of message', () => {
             it('should bind values', () => {
                 expect(newMsg.Subject).toEqual(`${RE_PREFIX} monique`);
                 expect(newMsg.ToList).toEqual(['yolo@pt.com']);
-                expect(newMsg.Action).toEqual(CONSTANTS.REPLY);
+                expect(newMsg.Action).toEqual(REPLY);
             });
         });
 
@@ -237,7 +237,7 @@ describe('Create type of message', () => {
             it('should bind values', () => {
                 expect(newMsg.Subject).toEqual(`${RE_PREFIX} monique`);
                 expect(newMsg.ToList).toEqual(['yolo@pt.com']);
-                expect(newMsg.Action).toEqual(CONSTANTS.REPLY);
+                expect(newMsg.Action).toEqual(REPLY);
             });
         });
     });
@@ -271,7 +271,7 @@ describe('Create type of message', () => {
                 expect(newMsg.ToList).toEqual(['jeanne@pt.com']);
                 expect(newMsg.CCList).toEqual([{ Address: 'yolo@pt.com' }]);
                 expect(newMsg.BCCList).toEqual(undefined);
-                expect(newMsg.Action).toEqual(CONSTANTS.REPLY_ALL);
+                expect(newMsg.Action).toEqual(REPLY_ALL);
             });
         });
 
@@ -289,7 +289,7 @@ describe('Create type of message', () => {
                 expect(newMsg.ToList).toEqual([{ Address: 'yolo@pt.com' }]);
                 expect(newMsg.CCList).toEqual([{ Address: 'yoloCC@pt.com' }]);
                 expect(newMsg.BCCList).toEqual(['yoloBCC@pt.com']);
-                expect(newMsg.Action).toEqual(CONSTANTS.REPLY_ALL);
+                expect(newMsg.Action).toEqual(REPLY_ALL);
             });
         });
 
@@ -307,7 +307,7 @@ describe('Create type of message', () => {
                 expect(newMsg.ToList).toEqual([{ Address: 'yolo@pt.com' }]);
                 expect(newMsg.CCList).toEqual([{ Address: 'yoloCC@pt.com' }]);
                 expect(newMsg.BCCList).toEqual(['yoloBCC@pt.com']);
-                expect(newMsg.Action).toEqual(CONSTANTS.REPLY_ALL);
+                expect(newMsg.Action).toEqual(REPLY_ALL);
             });
         });
     });
@@ -336,7 +336,7 @@ describe('Create type of message', () => {
                 expect(newMsg.ToList).toEqual([]);
                 expect(newMsg.CCList).toEqual(undefined);
                 expect(newMsg.BCCList).toEqual(undefined);
-                expect(newMsg.Action).toEqual(CONSTANTS.FORWARD);
+                expect(newMsg.Action).toEqual(FORWARD);
             });
         });
 
@@ -511,7 +511,7 @@ Est-ce que tu vas bien ?
                 textToHtmlMail);
 
             DEFAULT_MESSAGE = {
-                Type: CONSTANTS.DRAFT,
+                Type: DRAFT,
                 ToList: [],
                 CCList: [],
                 BCCList: [],
@@ -656,7 +656,7 @@ Est-ce que tu vas bien ?
                 CCList: ['bobby'],
                 BCCList: ['bobette']
             },
-            actionConstant: CONSTANTS.REPLY,
+            actionConstant: REPLY,
             toList: ['bob'],
             ccList: [],
             bccList: [],
@@ -690,7 +690,7 @@ Est-ce que tu vas bien ?
                 CCList: ['bobby'],
                 BCCList: ['bobette']
             },
-            actionConstant: CONSTANTS.REPLY,
+            actionConstant: REPLY,
             parseText: true,
             toList: ['bob'],
             ccList: [],
@@ -727,7 +727,7 @@ Est-ce que tu vas bien ?
                 CCList: ['bobby'],
                 BCCList: ['bobette']
             },
-            actionConstant: CONSTANTS.REPLY,
+            actionConstant: REPLY,
             parseText: true,
             toList: ['bob'],
             ccList: [],
@@ -764,7 +764,7 @@ Est-ce que tu vas bien ?
                 CCList: ['bobby'],
                 BCCList: ['bobette']
             },
-            actionConstant: CONSTANTS.REPLY,
+            actionConstant: REPLY,
             parseText: true,
             toList: ['monique'],
             ccList: [],
@@ -813,7 +813,7 @@ Est-ce que tu vas bien ?
                 From: VALID_MATCH
             },
             fromAddress: VALID_MATCH,
-            actionConstant: CONSTANTS.REPLY,
+            actionConstant: REPLY,
             parseText: false,
             toList: ['bob'],
             ccList: [],
@@ -863,7 +863,7 @@ Est-ce que tu vas bien ?
                 From: VALID_MATCH
             },
             fromAddress: VALID_MATCH,
-            actionConstant: CONSTANTS.REPLY,
+            actionConstant: REPLY,
             parseText: false,
             toList: ['bob'],
             ccList: [],
@@ -921,7 +921,7 @@ Est-ce que tu vas bien ?
                 From: VALID_MATCH
             },
             fromAddress: VALID_MATCH,
-            actionConstant: CONSTANTS.REPLY,
+            actionConstant: REPLY,
             parseText: false,
             toList: ['bob'],
             ccList: [],
@@ -975,7 +975,7 @@ Est-ce que tu vas bien ?
                 CCList: ['bobby'],
                 BCCList: ['bobette']
             },
-            actionConstant: CONSTANTS.REPLY_ALL,
+            actionConstant: REPLY_ALL,
             toList: ['bob'],
             ccList: ['bobby'],
             bccList: ['bobette'],
@@ -1009,7 +1009,7 @@ Est-ce que tu vas bien ?
                 CCList: ['bobby'],
                 BCCList: ['bobette']
             },
-            actionConstant: CONSTANTS.REPLY_ALL,
+            actionConstant: REPLY_ALL,
             toList: ['bob'],
             ccList: ['bobby'],
             bccList: ['bobette'],
@@ -1056,7 +1056,7 @@ Est-ce que tu vas bien ?
             bccList: [],
             subject: 'Re: ',
             action: 'replyall',
-            actionConstant: CONSTANTS.REPLY_ALL,
+            actionConstant: REPLY_ALL,
             body: defaultReply,
             currentMessageExtension: {
                 ID: Date.now(),
@@ -1093,7 +1093,7 @@ Est-ce que tu vas bien ?
                 CCList: ['bobby'],
                 BCCList: ['bobette']
             },
-            actionConstant: CONSTANTS.FORWARD,
+            actionConstant: FORWARD,
             toList: [],
             ccList: [],
             bccList: [],

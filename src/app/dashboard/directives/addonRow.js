@@ -1,10 +1,14 @@
 import _ from 'lodash';
 
+import { PLANS } from '../../constants';
+
+const { MEMBER, ADDRESS, DOMAIN, SPACE } = PLANS.ADDON;
+const MAP_ADDONS = { member: MEMBER, address: ADDRESS, domain: DOMAIN, space: SPACE };
+
 /* @ngInject */
 function addonRow(
     $filter,
     $rootScope,
-    CONSTANTS,
     customProPlanModal,
     dashboardConfiguration,
     dashboardModel,
@@ -15,8 +19,7 @@ function addonRow(
     customProPlanModel
 ) {
     customProPlanModel.init();
-    const { MEMBER, ADDRESS, DOMAIN, SPACE } = CONSTANTS.PLANS.ADDON;
-    const MAP_ADDONS = { member: MEMBER, address: ADDRESS, domain: DOMAIN, space: SPACE };
+
     const LIMIT_REACHED_CLASS = 'addonRow-limit-reached';
     const SELECT_CLASS = 'addonRow-select';
     const PLACEHOLDER_CLASS = 'addonRow-placeholder';

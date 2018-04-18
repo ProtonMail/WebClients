@@ -1,8 +1,9 @@
 import _ from 'lodash';
 
+import { STATUS, MAILBOX_IDENTIFIERS } from '../../constants';
+
 /* @ngInject */
 function sendMessage(
-    CONSTANTS,
     messageModel,
     gettextCatalog,
     encryptMessage,
@@ -13,7 +14,6 @@ function sendMessage(
     attachmentApi,
     SignatureVerifier
 ) {
-    const { STATUS } = CONSTANTS;
     const I18N = {
         SEND_SUCCESS: gettextCatalog.getString('Message sent', null, 'Send message'),
         EXPIRE_ERROR: gettextCatalog.getString(
@@ -115,8 +115,8 @@ function sendMessage(
                 Senders: Sent.Senders,
                 Subject: Sent.Subject,
                 ID: Sent.ConversationID,
-                LabelIDsAdded: [CONSTANTS.MAILBOX_IDENTIFIERS.allSent, CONSTANTS.MAILBOX_IDENTIFIERS.sent],
-                LabelIDsRemoved: [CONSTANTS.MAILBOX_IDENTIFIERS.allDrafts, CONSTANTS.MAILBOX_IDENTIFIERS.drafts]
+                LabelIDsAdded: [MAILBOX_IDENTIFIERS.allSent, MAILBOX_IDENTIFIERS.sent],
+                LabelIDsRemoved: [MAILBOX_IDENTIFIERS.allDrafts, MAILBOX_IDENTIFIERS.drafts]
             }
         });
 
