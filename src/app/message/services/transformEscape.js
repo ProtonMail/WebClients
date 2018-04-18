@@ -35,7 +35,7 @@ function transformEscape() {
      * @return {void}
      */
     const recursiveCleanerCode = (node) => {
-        _.each(node.querySelectorAll('*'), (node) => {
+        _.each(node.children, (node) => {
             if (node.childElementCount) {
                 return recursiveCleanerCode(node);
             }
