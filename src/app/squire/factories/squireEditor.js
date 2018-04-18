@@ -42,22 +42,11 @@ function squireEditor(dispatchers, editorModel, sanitize) {
         const iframe = $iframe[0];
         const iframeDoc = (iframe.contentDocument || iframe.contentWindow) && iframe.contentWindow.document;
 
-        // Check if browser is Webkit (Safari/Chrome) or Opera
-        if ($.ua.engine.name === 'WebKit') {
-            // Start timer when loaded.
-            $iframe.load(() => cb($iframe));
-
-            // Safari and Opera need a kick-start.
-            const source = iframe.getAttribute('src');
-            iframe.setAttribute('src', '');
-            return iframe.setAttribute('src', source);
-        }
-
         if (iframeDoc && iframeDoc.readyState === 'complete') {
             return cb($iframe);
         }
 
-        $iframe.load(() => cb($iframe));
+        $iframe.one('load', () => cb($iframe));
     };
 
     /**
