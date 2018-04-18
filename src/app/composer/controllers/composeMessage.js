@@ -436,9 +436,7 @@ function ComposeMessageController(
             .then(eventManager.stop)
             .then(() => extractDataURI(message))
             .then(() => attachPublicKey.attach(message))
-            .then(() => postMessage(message))
-            .then((messageSaved) => ((message.ID = messageSaved.ID), message))
-            .then((msg) => sendMessage(msg))
+            .then(() => sendMessage(message))
             .then(eventManager.start)
             .catch((e) =>
                 attachPublicKey.remove(message).then(() => {

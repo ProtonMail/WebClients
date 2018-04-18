@@ -1,7 +1,7 @@
 import _ from 'lodash';
 
 /* @ngInject */
-function encryptPackages(CONSTANTS, pmcw, authentication, AttachmentLoader, postMessage) {
+function encryptPackages(CONSTANTS, pmcw, authentication, AttachmentLoader) {
     const { SEND_TYPES } = CONSTANTS;
     const arrayToBase64 = _.flowRight(pmcw.encode_base64, pmcw.arrayToBinaryString);
     const packToBase64 = ({ data }) => arrayToBase64(data);
@@ -130,9 +130,6 @@ function encryptPackages(CONSTANTS, pmcw, authentication, AttachmentLoader, post
         const combineMessage = _.flowRight(pmcw.getMessage, pmcw.concatArrays, _.flatten, _.values);
         const bodyMessage = combineMessage(packets);
         message.Body = bodyMessage.armor();
-
-        // save the draft with the re-encrypted body
-        await postMessage(message, { loader: false, encrypt: false });
 
         return { keys: asymmetric.slice(ownPublicKeys.length), encrypted, sessionKey };
     };
