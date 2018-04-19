@@ -1,5 +1,3 @@
-import _ from 'lodash';
-
 /* @ngInject */
 function AttachmentLoader(
     dispatchers,
@@ -163,7 +161,7 @@ function AttachmentLoader(
     const getDecryptedAttachment = async (message, attachment) => {
         const cadata = cache.get(getCacheKey(attachment));
         if (cadata) {
-            return _.extend({ fromCache: true }, cadata);
+            return { ...cadata, fromCache: true };
         }
         return getDecryptedAttachmentAPI(message, attachment);
     };
