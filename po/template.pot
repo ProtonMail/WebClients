@@ -62,7 +62,7 @@ msgctxt "Action"
 msgid "-"
 msgstr ""
 
-#: ./src/app/message/factories/messageActions.js:185
+#: ./src/app/message/factories/messageActions.js:179
 msgctxt "Action"
 msgid "1 message moved to {{folder}}"
 msgid_plural "{{number}} messages moved to {{folder}}"
@@ -586,16 +586,6 @@ msgctxt "Action"
 msgid "Cancel"
 msgstr ""
 
-#: ./src/templates/vpn/openVpnSection.tpl.html:22
-msgctxt "Action"
-msgid "Change OpenVPN Login"
-msgstr ""
-
-#: ./src/templates/vpn/openVpnSection.tpl.html:35
-msgctxt "Action"
-msgid "Change OpenVPN Password"
-msgstr ""
-
 #: ./src/templates/user/identitySection.tpl.html:18
 msgctxt "Action"
 msgid "Change address priority"
@@ -877,6 +867,8 @@ msgstr ""
 #: ./src/app/members/directives/memberEditBtn.js:4
 #: ./src/templates/dashboard/addonRow.tpl.html:8
 #: ./src/templates/views/labels.tpl.html:58
+#: ./src/templates/vpn/openVpnSection.tpl.html:26
+#: ./src/templates/vpn/openVpnSection.tpl.html:48
 msgctxt "Action"
 msgid "Edit"
 msgstr ""
@@ -1027,7 +1019,8 @@ msgctxt "Action"
 msgid "Help &amp; answers"
 msgstr ""
 
-#: ./src/app/composer/directives/composerAttachments.js:10
+#: ./src/app/composer/directives/composerAttachments.js:11
+#: ./src/templates/vpn/openVpnSection.tpl.html:44
 msgctxt "Action"
 msgid "Hide"
 msgstr ""
@@ -1502,13 +1495,9 @@ msgstr ""
 
 #: ./src/templates/composer/composerEncrypt.tpl.html:72
 #: ./src/templates/composer/composerExpiration.tpl.html:58
+#: ./src/templates/vpn/openVpnSection.tpl.html:47
 msgctxt "Action"
 msgid "Set"
-msgstr ""
-
-#: ./src/templates/vpn/openVpnSection.tpl.html:34
-msgctxt "Action"
-msgid "Set OpenVPN Password"
 msgstr ""
 
 #: ./src/templates/ui/navigation/navigation.tpl.html:13
@@ -1521,7 +1510,8 @@ msgctxt "Action"
 msgid "Setup Account"
 msgstr ""
 
-#: ./src/app/composer/directives/composerAttachments.js:9
+#: ./src/app/composer/directives/composerAttachments.js:10
+#: ./src/templates/vpn/openVpnSection.tpl.html:43
 msgctxt "Action"
 msgid "Show"
 msgstr ""
@@ -1875,51 +1865,51 @@ msgctxt "Add a new domain label"
 msgid "Set"
 msgstr ""
 
-#: ./src/app/conversation/factories/actionConversation.js:41
-#: ./src/app/message/factories/messageActions.js:48
+#: ./src/app/conversation/factories/actionConversation.js:40
+#: ./src/app/message/factories/messageActions.js:46
 msgctxt "App folder"
 msgid "Archive"
 msgstr ""
 
+#: ./src/app/conversation/factories/actionConversation.js:35
 #: ./src/app/conversation/factories/actionConversation.js:36
-#: ./src/app/conversation/factories/actionConversation.js:37
-#: ./src/app/message/factories/messageActions.js:43
-#: ./src/app/message/factories/messageActions.js:44
+#: ./src/app/message/factories/messageActions.js:41
+#: ./src/app/message/factories/messageActions.js:42
 msgctxt "App folder"
 msgid "Drafts"
 msgstr ""
 
-#: ./src/app/conversation/factories/actionConversation.js:34
-#: ./src/app/message/factories/messageActions.js:41
+#: ./src/app/conversation/factories/actionConversation.js:33
+#: ./src/app/message/factories/messageActions.js:39
 msgctxt "App folder"
 msgid "Inbox"
 msgstr ""
 
+#: ./src/app/conversation/factories/actionConversation.js:37
 #: ./src/app/conversation/factories/actionConversation.js:38
-#: ./src/app/conversation/factories/actionConversation.js:39
-#: ./src/app/message/factories/messageActions.js:45
-#: ./src/app/message/factories/messageActions.js:46
+#: ./src/app/message/factories/messageActions.js:43
+#: ./src/app/message/factories/messageActions.js:44
 msgctxt "App folder"
 msgid "Sent"
 msgstr ""
 
-#: ./src/app/conversation/factories/actionConversation.js:35
-#: ./src/app/message/factories/messageActions.js:42
+#: ./src/app/conversation/factories/actionConversation.js:34
+#: ./src/app/message/factories/messageActions.js:40
 msgctxt "App folder"
 msgid "Spam"
 msgstr ""
 
-#: ./src/app/conversation/factories/actionConversation.js:40
-#: ./src/app/message/factories/messageActions.js:47
+#: ./src/app/conversation/factories/actionConversation.js:39
+#: ./src/app/message/factories/messageActions.js:45
 msgctxt "App folder"
 msgid "Trash"
 msgstr ""
 
-#: ./src/app/message/services/messageBuilder.js:196
+#: ./src/app/message/services/messageBuilder.js:194
 msgctxt "Ask user to use encrypted subject"
 msgid ""
 "The selected message has an encrypted subject.\n"
-"                ProtonMail does not support sending an encrypted subject. \n"
+"                ProtonMail does not support sending an encrypted subject.\n"
 "                Do you want to use \"{{ encryptedSubject }}\" instead of the original unencrypted subject\n"
 "                 \"{{ Subject }}\"?"
 msgstr ""
@@ -1978,12 +1968,12 @@ msgctxt "Billing cycle for the dashboard"
 msgid "Pay monthly"
 msgstr ""
 
-#: ./src/app/payment/directives/bitcoinDetails.js:14
+#: ./src/app/payment/directives/bitcoinDetails.js:16
 msgctxt "Bitcoin donation"
 msgid "Amount BTC"
 msgstr ""
 
-#: ./src/app/payment/directives/bitcoinDetails.js:19
+#: ./src/app/payment/directives/bitcoinDetails.js:21
 msgctxt "Bitcoin donation"
 msgid "BTC address"
 msgstr ""
@@ -2073,17 +2063,17 @@ msgctxt "Clear user's logs (security)"
 msgid "Logs cleared"
 msgstr ""
 
-#: ./src/app/command/factories/autocompleteCommandModel.js:7
+#: ./src/app/command/factories/autocompleteCommandModel.js:9
 msgctxt "Command palette action"
 msgid "Add folder"
 msgstr ""
 
-#: ./src/app/command/factories/autocompleteCommandModel.js:8
+#: ./src/app/command/factories/autocompleteCommandModel.js:10
 msgctxt "Command palette action"
 msgid "Add label"
 msgstr ""
 
-#: ./src/app/command/factories/autocompleteCommandModel.js:9
+#: ./src/app/command/factories/autocompleteCommandModel.js:11
 msgctxt "Command palette action"
 msgid "Remove label"
 msgstr ""
@@ -2098,27 +2088,27 @@ msgctxt "Compose message"
 msgid "Error encrypting attachment"
 msgstr ""
 
-#: ./src/app/composer/directives/composerDropzone.js:33
+#: ./src/app/composer/directives/composerDropzone.js:30
 msgctxt "Composer"
 msgid "Attachments are limited to {{number}} MB."
 msgstr ""
 
-#: ./src/app/composer/directives/composerDropzone.js:40
+#: ./src/app/composer/directives/composerDropzone.js:37
 msgctxt "Composer"
 msgid "Attachments are limited to {{number}} MBB. Total attached would be: {{total}} MB."
 msgstr ""
 
-#: ./src/app/composer/directives/composerDropzone.js:27
+#: ./src/app/composer/directives/composerDropzone.js:24
 msgctxt "Composer"
 msgid "Empty attachment"
 msgstr ""
 
-#: ./src/app/composer/directives/composerDropzone.js:48
+#: ./src/app/composer/directives/composerDropzone.js:45
 msgctxt "Composer"
 msgid "Maximum number of attachments (10) exceeded."
 msgstr ""
 
-#: ./src/app/composer/directives/composerDropzone.js:28
+#: ./src/app/composer/directives/composerDropzone.js:25
 msgctxt "Composer"
 msgid "Messages are limited to {{number}} attachments"
 msgstr ""
@@ -2179,57 +2169,57 @@ msgid_plural "{{$count}} images detected"
 msgstr[0] ""
 msgstr[1] ""
 
-#: ./src/app/filter/factories/filterModal.js:29
+#: ./src/app/filter/factories/filterModal.js:30
 msgctxt "Condition for custom filter"
 msgid "begins with"
 msgstr ""
 
-#: ./src/app/filter/factories/filterModal.js:27
+#: ./src/app/filter/factories/filterModal.js:28
 msgctxt "Condition for custom filter"
 msgid "contains"
 msgstr ""
 
-#: ./src/app/filter/factories/filterModal.js:38
+#: ./src/app/filter/factories/filterModal.js:39
 msgctxt "Condition for custom filter"
 msgid "does not begin with"
 msgstr ""
 
-#: ./src/app/filter/factories/filterModal.js:33
+#: ./src/app/filter/factories/filterModal.js:34
 msgctxt "Condition for custom filter"
 msgid "does not contain"
 msgstr ""
 
-#: ./src/app/filter/factories/filterModal.js:42
+#: ./src/app/filter/factories/filterModal.js:43
 msgctxt "Condition for custom filter"
 msgid "does not end with"
 msgstr ""
 
-#: ./src/app/filter/factories/filterModal.js:46
+#: ./src/app/filter/factories/filterModal.js:47
 msgctxt "Condition for custom filter"
 msgid "does not match"
 msgstr ""
 
-#: ./src/app/filter/factories/filterModal.js:30
+#: ./src/app/filter/factories/filterModal.js:31
 msgctxt "Condition for custom filter"
 msgid "ends with"
 msgstr ""
 
-#: ./src/app/filter/factories/filterModal.js:28
+#: ./src/app/filter/factories/filterModal.js:29
 msgctxt "Condition for custom filter"
 msgid "is exactly"
 msgstr ""
 
-#: ./src/app/filter/factories/filterModal.js:36
+#: ./src/app/filter/factories/filterModal.js:37
 msgctxt "Condition for custom filter"
 msgid "is not"
 msgstr ""
 
-#: ./src/app/filter/factories/filterModal.js:31
+#: ./src/app/filter/factories/filterModal.js:32
 msgctxt "Condition for custom filter"
 msgid "matches"
 msgstr ""
 
-#: ./src/app/settings/directives/encryptionView.js:15
+#: ./src/app/settings/directives/encryptionView.js:16
 msgctxt "Confirm modal title"
 msgid "Automatic sign outgoing messages?"
 msgstr ""
@@ -2239,12 +2229,12 @@ msgctxt "Confirm modal title"
 msgid "Import private key"
 msgstr ""
 
-#: ./src/app/settings/directives/encryptionView.js:24
+#: ./src/app/settings/directives/encryptionView.js:25
 msgctxt "Confirm text"
 msgid "No"
 msgstr ""
 
-#: ./src/app/settings/directives/encryptionView.js:23
+#: ./src/app/settings/directives/encryptionView.js:24
 msgctxt "Confirm text"
 msgid "Yes"
 msgstr ""
@@ -2686,7 +2676,7 @@ msgid "<div>I'm out of the office with limited access to my email.</div>"
 msgstr ""
 
 #: ./src/app/contact/factories/contactDetailsModel.js:14
-#: ./src/app/contact/factories/contactEncryption.js:121
+#: ./src/app/contact/factories/contactEncryption.js:123
 #: ./src/app/contact/factories/contactSchema.js:10
 msgctxt "Default display name vcard"
 msgid "Unknown"
@@ -2841,7 +2831,7 @@ msgctxt "Duration/repetition of autoresponder"
 msgid "Repeat weekly"
 msgstr ""
 
-#: ./src/app/message/factories/messageModel.js:24
+#: ./src/app/message/factories/messageModel.js:25
 msgctxt "Encrypted Headers filename"
 msgid "Encrypted Headers"
 msgstr ""
@@ -2913,7 +2903,7 @@ msgctxt "Error"
 msgid "Cannot send message"
 msgstr ""
 
-#: ./src/app/contact/directives/contactToolbar.js:35
+#: ./src/app/contact/directives/contactToolbar.js:28
 msgctxt "Error"
 msgid "Contact does not contain email address"
 msgstr ""
@@ -2923,7 +2913,7 @@ msgctxt "Error"
 msgid "Contact your organization’s administrator to resolve this."
 msgstr ""
 
-#: ./src/app/authentication/controllers/login.js:114
+#: ./src/app/authentication/controllers/login.js:113
 msgctxt "Error"
 msgid ""
 "Cookies are disabled.\n"
@@ -3013,7 +3003,7 @@ msgctxt "Error"
 msgid "Error during revoke request"
 msgstr ""
 
-#: ./src/app/outside/controllers/outside.js:161
+#: ./src/app/outside/controllers/outside.js:160
 msgctxt "Error"
 msgid "Error during the encryption"
 msgstr ""
@@ -3028,7 +3018,7 @@ msgctxt "Error"
 msgid "Error during the initialization of logs"
 msgstr ""
 
-#: ./src/app/outside/controllers/outside.js:156
+#: ./src/app/outside/controllers/outside.js:155
 msgctxt "Error"
 msgid "Error during the reply process"
 msgstr ""
@@ -3068,7 +3058,7 @@ msgctxt "Error"
 msgid "Error updating organization key recovery password"
 msgstr ""
 
-#: ./src/app/organization/factories/organizationModel.js:30
+#: ./src/app/organization/factories/organizationModel.js:31
 msgctxt "Error"
 msgid "Error updating organization name"
 msgstr ""
@@ -3093,7 +3083,7 @@ msgctxt "Error"
 msgid "Error updating the vpn option"
 msgstr ""
 
-#: ./src/app/settings/directives/encryptionView.js:14
+#: ./src/app/settings/directives/encryptionView.js:15
 msgctxt "Error"
 msgid "Error while updating setting"
 msgstr ""
@@ -3182,7 +3172,7 @@ msgctxt "Error"
 msgid "Invalid email(s): {{total}}"
 msgstr ""
 
-#: ./src/app/composer/directives/composerExpiration.js:7
+#: ./src/app/composer/directives/composerExpiration.js:9
 msgctxt "Error"
 msgid "Invalid expiration time."
 msgstr ""
@@ -3266,7 +3256,7 @@ msgctxt "Error"
 msgid "No address with keys available to compose a message."
 msgstr ""
 
-#: ./src/app/conversation/services/cache.js:45
+#: ./src/app/conversation/services/cache.js:36
 msgctxt "Error"
 msgid "No conversations available"
 msgstr ""
@@ -3277,12 +3267,12 @@ msgid "No files were selected"
 msgstr ""
 
 #: ./src/app/keys/factories/changeMailboxPassword.js:115
-#: ./src/app/keys/factories/upgradeKeys.js:123
+#: ./src/app/keys/factories/upgradeKeys.js:124
 msgctxt "Error"
 msgid "No keys to update"
 msgstr ""
 
-#: ./src/app/conversation/services/cache.js:44
+#: ./src/app/conversation/services/cache.js:35
 msgctxt "Error"
 msgid "No messages available"
 msgstr ""
@@ -3292,7 +3282,7 @@ msgctxt "Error"
 msgid "Non-integer API version requested."
 msgstr ""
 
-#: ./src/app/organization/factories/organizationKeysModel.js:28
+#: ./src/app/organization/factories/organizationKeysModel.js:29
 msgctxt "Error"
 msgid "Organization keys already active"
 msgstr ""
@@ -3302,7 +3292,7 @@ msgctxt "Error"
 msgid "Organization keys change successful"
 msgstr ""
 
-#: ./src/app/organization/factories/organizationKeysModel.js:29
+#: ./src/app/organization/factories/organizationKeysModel.js:30
 msgctxt "Error"
 msgid "Organization keys request failed"
 msgstr ""
@@ -3338,7 +3328,7 @@ msgctxt "Error"
 msgid "Please enter at least one recipient."
 msgstr ""
 
-#: ./src/app/authentication/controllers/login.js:393
+#: ./src/app/authentication/controllers/login.js:392
 msgctxt "Error"
 msgid "Please enter your two-factor passcode"
 msgstr ""
@@ -3403,12 +3393,12 @@ msgctxt "Error"
 msgid "Sorry, this message does not exist or has already expired"
 msgstr ""
 
-#: ./src/app/organization/factories/subscriptionModel.js:6
+#: ./src/app/organization/factories/subscriptionModel.js:26
 msgctxt "Error"
 msgid "Subscription request failed"
 msgstr ""
 
-#: ./src/app/filter/factories/filterModal.js:54
+#: ./src/app/filter/factories/filterModal.js:55
 msgctxt "Error"
 msgid "Text or pattern already included"
 msgstr ""
@@ -3448,7 +3438,7 @@ msgctxt "Error"
 msgid "The email body is not a valid MIME message."
 msgstr ""
 
-#: ./src/app/composer/directives/composerExpiration.js:6
+#: ./src/app/composer/directives/composerExpiration.js:8
 msgctxt "Error"
 msgid "The maximum expiration is 4 weeks."
 msgstr ""
@@ -3474,7 +3464,7 @@ msgid "The request failed"
 msgstr ""
 
 #: ./src/app/keys/factories/changeMailboxPassword.js:56
-#: ./src/app/keys/factories/upgradeKeys.js:37
+#: ./src/app/keys/factories/upgradeKeys.js:38
 msgctxt "Error"
 msgid "Unable to get organization keys"
 msgstr ""
@@ -3570,7 +3560,7 @@ msgctxt "Error"
 msgid "You are doing this too much, please try again later"
 msgstr ""
 
-#: ./src/app/authentication/controllers/login.js:95
+#: ./src/app/authentication/controllers/login.js:94
 msgctxt "Error"
 msgid ""
 "You are in Private Mode or have Session Storage disabled.\n"
@@ -3613,7 +3603,7 @@ msgctxt "Error"
 msgid "You have {{total}} recipients. The maximum number is 25."
 msgstr ""
 
-#: ./src/app/organization/factories/organizationKeysModel.js:23
+#: ./src/app/organization/factories/organizationKeysModel.js:24
 msgctxt "Error"
 msgid "You must privatize all sub-accounts before generating new organization keys"
 msgstr ""
@@ -3726,7 +3716,7 @@ msgctxt "Error label modal"
 msgid "Invalid label name"
 msgstr ""
 
-#: ./src/app/contact/directives/contactPublicKeys.js:21
+#: ./src/app/contact/directives/contactPublicKeys.js:22
 msgctxt "Error message"
 msgid "%s is not a valid PGP key."
 msgstr ""
@@ -3746,23 +3736,23 @@ msgctxt "Error notification in the bug report modal when the user upload file"
 msgid "No image selected"
 msgstr ""
 
-#: ./src/app/organization/factories/organizationModel.js:25
+#: ./src/app/organization/factories/organizationModel.js:26
 msgctxt "Error organization"
 msgid "Error during the generation of new organization keys"
 msgstr ""
 
-#: ./src/app/organization/factories/organizationModel.js:24
+#: ./src/app/organization/factories/organizationModel.js:25
 msgctxt "Error organization"
 msgid "Organization request failed"
 msgstr ""
 
-#: ./src/app/organization/factories/organizationModel.js:19
+#: ./src/app/organization/factories/organizationModel.js:20
 #: ./src/app/user/services/attachSignupSubscription.js:21
 msgctxt "Error organization creation"
 msgid "Error during organization request"
 msgstr ""
 
-#: ./src/app/user/modals/deleteAccountModal.js:19
+#: ./src/app/user/modals/deleteAccountModal.js:18
 msgctxt "Error reported when the delete account form is invalid"
 msgid "Invalid email address or password"
 msgstr ""
@@ -3834,12 +3824,12 @@ msgctxt "Filter modal label"
 msgid "Move To"
 msgstr ""
 
-#: ./src/app/filter/factories/filterModal.js:51
+#: ./src/app/filter/factories/filterModal.js:52
 msgctxt "Filter modal operators"
 msgid "AND"
 msgstr ""
 
-#: ./src/app/filter/factories/filterModal.js:52
+#: ./src/app/filter/factories/filterModal.js:53
 msgctxt "Filter modal operators"
 msgid "OR"
 msgstr ""
@@ -3849,27 +3839,27 @@ msgctxt "Filter modal title"
 msgid "Custom Filter"
 msgstr ""
 
-#: ./src/app/filter/factories/filterModal.js:20
+#: ./src/app/filter/factories/filterModal.js:21
 msgctxt "Filter modal type"
 msgid "Select"
 msgstr ""
 
-#: ./src/app/filter/factories/filterModal.js:24
+#: ./src/app/filter/factories/filterModal.js:25
 msgctxt "Filter modal type"
 msgid "the attachments"
 msgstr ""
 
-#: ./src/app/filter/factories/filterModal.js:23
+#: ./src/app/filter/factories/filterModal.js:24
 msgctxt "Filter modal type"
 msgid "the recipient"
 msgstr ""
 
-#: ./src/app/filter/factories/filterModal.js:22
+#: ./src/app/filter/factories/filterModal.js:23
 msgctxt "Filter modal type"
 msgid "the sender"
 msgstr ""
 
-#: ./src/app/filter/factories/filterModal.js:21
+#: ./src/app/filter/factories/filterModal.js:22
 msgctxt "Filter modal type"
 msgid "the subject"
 msgstr ""
@@ -3943,7 +3933,7 @@ msgctxt "Full day name"
 msgid "Wednesday"
 msgstr ""
 
-#: ./src/app/user/modals/generateModal.js:20
+#: ./src/app/user/modals/generateModal.js:21
 msgctxt "Generate key modal"
 msgid "Key created for {{email}}"
 msgstr ""
@@ -4126,7 +4116,7 @@ msgctxt "Info"
 msgid "* We recommend adding a recovery email address first. Otherwise, you cannot recover your account if something goes wrong."
 msgstr ""
 
-#: ./src/app/conversation/factories/actionConversation.js:361
+#: ./src/app/conversation/factories/actionConversation.js:360
 msgctxt "Info"
 msgid "1 conversation moved to {{folder}}"
 msgid_plural "{{number}} conversations moved to {{folder}}"
@@ -4518,17 +4508,17 @@ msgctxt "Info"
 msgid "Are you sure you want to disable two-factor authentication?"
 msgstr ""
 
-#: ./src/app/members/services/memberActions.js:70
+#: ./src/app/members/services/memberActions.js:71
 msgctxt "Info"
 msgid "Are you sure you want to permanently delete this user? The inbox and all addresses associated with this user will be deleted."
 msgstr ""
 
-#: ./src/app/members/services/memberActions.js:62
+#: ./src/app/members/services/memberActions.js:63
 msgctxt "Info"
 msgid "Are you sure you want to permanently remove this user from your organization? They will lose access to any addresses belonging to your organization."
 msgstr ""
 
-#: ./src/app/members/services/memberActions.js:31
+#: ./src/app/members/services/memberActions.js:32
 msgctxt "Info"
 msgid "Are you sure you want to remove administrative privileges from this user?"
 msgstr ""
@@ -4559,7 +4549,7 @@ msgctxt "Info"
 msgid "Before you can receive emails for your custom domain addresses at ProtonMail, you need to add the following MX records to your DNS. This can typically be done in the control panel of your domain name registrar."
 msgstr ""
 
-#: ./src/app/user/modals/generateModal.js:23
+#: ./src/app/user/modals/generateModal.js:24
 msgctxt "Info"
 msgid "Before you can start sending and receiving emails from your new addresses you need to create encryption keys for them. 4096-bit keys only work on high performance computers. For most users, we recommend using 2048-bit keys."
 msgstr ""
@@ -4569,12 +4559,12 @@ msgctxt "Info"
 msgid "Below are optional settings you can use to customize your account. You can always find these on your Settings page."
 msgstr ""
 
-#: ./src/app/dashboard/directives/totalRows.js:20
+#: ./src/app/dashboard/directives/totalRows.js:22
 msgctxt "Info"
 msgid "Billed as {{amount}} /2-yr"
 msgstr ""
 
-#: ./src/app/dashboard/directives/totalRows.js:16
+#: ./src/app/dashboard/directives/totalRows.js:18
 msgctxt "Info"
 msgid "Billed as {{amount}} /yr"
 msgstr ""
@@ -4589,7 +4579,7 @@ msgctxt "Info"
 msgid "Bug reports are not end-to-end encrypted, please do not send any sensitive information."
 msgstr ""
 
-#: ./src/app/settings/controllers/appearance.js:86
+#: ./src/app/settings/controllers/appearance.js:87
 msgctxt "Info"
 msgid "Buttons position saved"
 msgstr ""
@@ -4641,7 +4631,7 @@ msgctxt "Info"
 msgid "Click your attachment once to decrypt it. Once decryption finishes you will see a download arrow icon appear."
 msgstr ""
 
-#: ./src/app/settings/controllers/appearance.js:62
+#: ./src/app/settings/controllers/appearance.js:63
 msgctxt "Info"
 msgid "Compose mode saved"
 msgstr ""
@@ -4739,7 +4729,7 @@ msgctxt "Info"
 msgid "Download your PGP Keys for use with other PGP compatible services. Only incoming messages in inline OpenPGP format are currently supported."
 msgstr ""
 
-#: ./src/app/composer/directives/composerDropzone.js:54
+#: ./src/app/composer/directives/composerDropzone.js:51
 msgctxt "Info"
 msgid "Drop a file here to upload"
 msgstr ""
@@ -5010,7 +5000,7 @@ msgctxt "Info"
 msgid "Order saved"
 msgstr ""
 
-#: ./src/app/members/services/memberActions.js:54
+#: ./src/app/members/services/memberActions.js:55
 msgctxt "Info"
 msgid "Organization administrators will no longer be able to log in and control the user's account after privatization. This change is PERMANENT."
 msgstr ""
@@ -5025,7 +5015,7 @@ msgctxt "Info"
 msgid "Organization keys restored"
 msgstr ""
 
-#: ./src/app/organization/factories/organizationModel.js:31
+#: ./src/app/organization/factories/organizationModel.js:32
 msgctxt "Info"
 msgid "Organization updated"
 msgstr ""
@@ -5065,7 +5055,7 @@ msgctxt "Info"
 msgid "Paid users can add other @pm.me addresses from Settings --> Addresses/Users."
 msgstr ""
 
-#: ./src/app/organization/factories/organizationModel.js:32
+#: ./src/app/organization/factories/organizationModel.js:33
 msgctxt "Info"
 msgid "Password updated"
 msgstr ""
@@ -5115,7 +5105,7 @@ msgctxt "Info"
 msgid "Please enable multi-user support before adding users to your organization"
 msgstr ""
 
-#: ./src/app/members/services/memberActions.js:79
+#: ./src/app/members/services/memberActions.js:80
 msgctxt "Info"
 msgid "Please upgrade to a Professional plan with more than 1 user, or a Visionary account, to get multi-user support."
 msgstr ""
@@ -5194,7 +5184,7 @@ msgctxt "Info"
 msgid "Right-click on your attachment and choose 'Download linked file as...'"
 msgstr ""
 
-#: ./src/app/members/services/memberActions.js:77
+#: ./src/app/members/services/memberActions.js:78
 msgctxt "Info"
 msgid "Role updated"
 msgstr ""
@@ -5239,7 +5229,7 @@ msgctxt "Info"
 msgid "Signature updated"
 msgstr ""
 
-#: ./src/app/members/services/memberActions.js:78
+#: ./src/app/members/services/memberActions.js:79
 msgctxt "Info"
 msgid "Status Updated"
 msgstr ""
@@ -5270,7 +5260,7 @@ msgctxt "Info"
 msgid "Take back your privacy! Setting up your secure email account takes less than 2 minutes."
 msgstr ""
 
-#: ./src/app/user/services/manageUser.js:20
+#: ./src/app/user/services/manageUser.js:21
 msgctxt "Info"
 msgid "The app will now be reloaded in a few seconds"
 msgstr ""
@@ -5290,7 +5280,7 @@ msgctxt "Info"
 msgid "Theme reset! Redirecting..."
 msgstr ""
 
-#: ./src/app/settings/controllers/appearance.js:40
+#: ./src/app/settings/controllers/appearance.js:41
 msgctxt "Info"
 msgid "Theme saved"
 msgstr ""
@@ -5375,7 +5365,7 @@ msgctxt "Info"
 msgid "This short tutorial will show you the main features of your new ProtonMail account. For more information, you can also check out the Welcome email we have sent you. If you ever want to view this tutorial again, you can access it by clicking your username in the upper right corner."
 msgstr ""
 
-#: ./src/app/members/services/memberActions.js:45
+#: ./src/app/members/services/memberActions.js:46
 msgctxt "Info"
 msgid "This user is currently responsible for payments for your organization. By demoting this member, you will become responsible for payments for your organization."
 msgstr ""
@@ -5448,7 +5438,7 @@ msgctxt "Info"
 msgid "User created"
 msgstr ""
 
-#: ./src/app/members/services/memberActions.js:76
+#: ./src/app/members/services/memberActions.js:77
 msgctxt "Info"
 msgid "User removed"
 msgstr ""
@@ -5490,7 +5480,7 @@ msgctxt "Info"
 msgid "Verifying invite link..."
 msgstr ""
 
-#: ./src/app/settings/controllers/appearance.js:103
+#: ./src/app/settings/controllers/appearance.js:104
 msgctxt "Info"
 msgid "View mode saved"
 msgstr ""
@@ -5627,7 +5617,7 @@ msgctxt "Info"
 msgid "You must activate your organization private key with the backup organization key password provided to you by your organization administrator."
 msgstr ""
 
-#: ./src/app/members/services/memberActions.js:38
+#: ./src/app/members/services/memberActions.js:39
 msgctxt "Info"
 msgid "You must provide this user with the Organization Password in order to fully activate administrator privileges."
 msgstr ""
@@ -5685,7 +5675,7 @@ msgctxt "Info"
 msgid "Your account or organization currently has an overdue invoice. Please pay all unpaid invoices."
 msgstr ""
 
-#: ./src/app/user/services/manageUser.js:19
+#: ./src/app/user/services/manageUser.js:20
 msgctxt "Info"
 msgid "Your admin privileges have been revoked."
 msgstr ""
@@ -5902,12 +5892,12 @@ msgctxt "Invoice type display as badge"
 msgid "Subscription"
 msgstr ""
 
-#: ./src/app/contact/directives/contactPublicKeys.js:266
+#: ./src/app/contact/directives/contactPublicKeys.js:267
 msgctxt "Key details"
 msgid "Created on {{created}}, {{bits}} bits (can be used for sending and signature verification)"
 msgstr ""
 
-#: ./src/app/contact/directives/contactPublicKeys.js:272
+#: ./src/app/contact/directives/contactPublicKeys.js:273
 msgctxt "Key details"
 msgid "Created on {{created}}, {{bits}} bits (only used for signature verification)"
 msgstr ""
@@ -6178,7 +6168,7 @@ msgstr ""
 
 #: ./src/templates/modals/member.tpl.html:50
 #: ./src/templates/modals/switchPasswordMode.tpl.html:13
-#: ./src/templates/vpn/openVpnSection.tpl.html:28
+#: ./src/templates/vpn/openVpnSection.tpl.html:33
 #: ./src/templates/vpn/vpnView.tpl.html:45
 msgctxt "Label"
 msgid "Password"
@@ -6589,12 +6579,12 @@ msgctxt "List domains"
 msgid "Please add a custom domain before configuring addresses."
 msgstr ""
 
-#: ./src/app/authentication/controllers/login.js:353
+#: ./src/app/authentication/controllers/login.js:352
 msgctxt "Login error"
 msgid "Please enter your username and password"
 msgstr ""
 
-#: ./src/app/authentication/controllers/login.js:361
+#: ./src/app/authentication/controllers/login.js:360
 msgctxt "Login error"
 msgid "Your password is missing"
 msgstr ""
@@ -6614,17 +6604,17 @@ msgctxt "MIME type"
 msgid "Plain Text"
 msgstr ""
 
-#: ./src/app/members/modals/memberModal.js:9
+#: ./src/app/members/modals/memberModal.js:11
 msgctxt "Memory info"
 msgid "Allocated"
 msgstr ""
 
-#: ./src/app/members/modals/memberModal.js:10
+#: ./src/app/members/modals/memberModal.js:12
 msgctxt "Memory info"
 msgid "Already allocated"
 msgstr ""
 
-#: ./src/app/members/modals/memberModal.js:8
+#: ./src/app/members/modals/memberModal.js:10
 msgctxt "Memory info"
 msgid "Already used"
 msgstr ""
@@ -6639,22 +6629,22 @@ msgctxt "Merge contacts"
 msgid "Merge"
 msgstr ""
 
-#: ./src/app/message/services/messageBuilder.js:188
+#: ./src/app/message/services/messageBuilder.js:186
 msgctxt "Message"
 msgid "Fw:"
 msgstr ""
 
-#: ./src/app/message/services/messageBuilder.js:285
+#: ./src/app/message/services/messageBuilder.js:283
 msgctxt "Message"
 msgid "On {{date}}, {{name}} {{address}} wrote:"
 msgstr ""
 
-#: ./src/app/message/services/messageBuilder.js:187
+#: ./src/app/message/services/messageBuilder.js:185
 msgctxt "Message"
 msgid "Re:"
 msgstr ""
 
-#: ./src/app/message/factories/messageModel.js:129
+#: ./src/app/message/factories/messageModel.js:130
 msgctxt "Message content if empty"
 msgid "Message empty"
 msgstr ""
@@ -6669,92 +6659,92 @@ msgctxt "Message decryption error"
 msgid "Decryption of this message's encryption content failed."
 msgstr ""
 
-#: ./src/app/message/factories/messageModel.js:116
+#: ./src/app/message/factories/messageModel.js:117
 msgctxt "Message encryption status"
 msgid "Encrypted draft"
 msgstr ""
 
-#: ./src/app/message/factories/messageModel.js:54
+#: ./src/app/message/factories/messageModel.js:55
 msgctxt "Message encryption status"
 msgid "End-to-end encrypted message"
 msgstr ""
 
-#: ./src/app/message/factories/messageModel.js:55
+#: ./src/app/message/factories/messageModel.js:56
 msgctxt "Message encryption status"
 msgid "End-to-end encrypted message from verified ProtonMail User"
 msgstr ""
 
-#: ./src/app/message/factories/messageModel.js:65
+#: ./src/app/message/factories/messageModel.js:66
 msgctxt "Message encryption status"
 msgid "Incorrectly signed PGP-encrypted message"
 msgstr ""
 
-#: ./src/app/message/factories/messageModel.js:70
+#: ./src/app/message/factories/messageModel.js:71
 msgctxt "Message encryption status"
 msgid "Incorrectly signed PGP-signed message"
 msgstr ""
 
-#: ./src/app/message/factories/messageModel.js:60
+#: ./src/app/message/factories/messageModel.js:61
 msgctxt "Message encryption status"
 msgid "Incorrectly signed end-to-end encrypted message"
 msgstr ""
 
-#: ./src/app/message/factories/messageModel.js:91
+#: ./src/app/message/factories/messageModel.js:92
 msgctxt "Message encryption status"
 msgid "Incorrectly signed end-to-end encrypted sent message"
 msgstr ""
 
-#: ./src/app/message/factories/messageModel.js:109
+#: ./src/app/message/factories/messageModel.js:110
 msgctxt "Message encryption status"
 msgid "Incorrectly signed sent message with zero access encryption"
 msgstr ""
 
-#: ./src/app/message/factories/messageModel.js:68
+#: ./src/app/message/factories/messageModel.js:69
 msgctxt "Message encryption status"
 msgid "Message stored with zero access encryption"
 msgstr ""
 
-#: ./src/app/message/factories/messageModel.js:63
+#: ./src/app/message/factories/messageModel.js:64
 msgctxt "Message encryption status"
 msgid "PGP-encrypted message"
 msgstr ""
 
-#: ./src/app/message/factories/messageModel.js:64
+#: ./src/app/message/factories/messageModel.js:65
 msgctxt "Message encryption status"
 msgid "PGP-encrypted message from verified sender"
 msgstr ""
 
-#: ./src/app/message/factories/messageModel.js:69
+#: ./src/app/message/factories/messageModel.js:70
 msgctxt "Message encryption status"
 msgid "PGP-signed message from verified sender"
 msgstr ""
 
-#: ./src/app/message/factories/messageModel.js:81
+#: ./src/app/message/factories/messageModel.js:82
 msgctxt "Message encryption status"
 msgid "Sent by ProtonMail user with end-to-end encryption"
 msgstr ""
 
-#: ./src/app/message/factories/messageModel.js:99
+#: ./src/app/message/factories/messageModel.js:100
 msgctxt "Message encryption status"
 msgid "Sent by ProtonMail user with zero access encryption"
 msgstr ""
 
-#: ./src/app/message/factories/messageModel.js:126
+#: ./src/app/message/factories/messageModel.js:127
 msgctxt "Message encryption status"
 msgid "Sent by ProtonMail with zero access encryption"
 msgstr ""
 
-#: ./src/app/message/factories/messageModel.js:86
+#: ./src/app/message/factories/messageModel.js:87
 msgctxt "Message encryption status"
 msgid "Sent by verified ProtonMail user with end-to-end encryption"
 msgstr ""
 
-#: ./src/app/message/factories/messageModel.js:104
+#: ./src/app/message/factories/messageModel.js:105
 msgctxt "Message encryption status"
 msgid "Sent by verified ProtonMail user with zero access encryption"
 msgstr ""
 
-#: ./src/app/message/factories/messageModel.js:74
+#: ./src/app/message/factories/messageModel.js:75
 msgctxt "Message encryption status"
 msgid "Unencrypted message"
 msgstr ""
@@ -6889,17 +6879,17 @@ msgctxt "No results heading"
 msgid "Trash"
 msgstr ""
 
-#: ./src/app/filter/factories/filterModal.js:56
+#: ./src/app/filter/factories/filterModal.js:57
 msgctxt "Notification"
 msgid "Filter created"
 msgstr ""
 
-#: ./src/app/filter/factories/filterModal.js:55
+#: ./src/app/filter/factories/filterModal.js:56
 msgctxt "Notification"
 msgid "Filter updated"
 msgstr ""
 
-#: ./src/app/outside/controllers/outside.js:112
+#: ./src/app/outside/controllers/outside.js:111
 msgctxt "Notification"
 msgid "ProtonMail's Encrypted Outside feature only allows replying 5 times. <a href=\"https://protonmail.com/signup\" target=\"_blank\">You can sign up for ProtonMail for seamless and unlimited end-to-end encryption</a>."
 msgstr ""
@@ -6914,7 +6904,7 @@ msgctxt "Notification user"
 msgid "New mail from {{sender}}"
 msgstr ""
 
-#: ./src/app/composer/controllers/composeMessage.js:261
+#: ./src/app/composer/controllers/composeMessage.js:260
 msgctxt "Notify the user when he try to open more than  composer"
 msgid "Maximum composer reached"
 msgstr ""
@@ -6951,44 +6941,44 @@ msgctxt "Option"
 msgid "Right to Left"
 msgstr ""
 
-#: ./src/app/search/factories/searchModel.js:15
+#: ./src/app/search/factories/searchModel.js:17
 msgctxt "Option for search panel"
 msgid "All Mail"
 msgstr ""
 
-#: ./src/app/search/factories/searchModel.js:14
+#: ./src/app/search/factories/searchModel.js:16
 msgctxt "Option for search panel"
 msgid "Archive"
 msgstr ""
 
 #: ./src/app/search/factories/searchModel.js:10
-#: ./src/app/search/factories/searchModel.js:8
+#: ./src/app/search/factories/searchModel.js:12
 msgctxt "Option for search panel"
 msgid "Drafts"
 msgstr ""
 
-#: ./src/app/search/factories/searchModel.js:6
+#: ./src/app/search/factories/searchModel.js:8
 msgctxt "Option for search panel"
 msgid "Inbox"
 msgstr ""
 
-#: ./src/app/search/factories/searchModel.js:11
-#: ./src/app/search/factories/searchModel.js:12
+#: ./src/app/search/factories/searchModel.js:13
+#: ./src/app/search/factories/searchModel.js:14
 msgctxt "Option for search panel"
 msgid "Sent"
 msgstr ""
 
-#: ./src/app/search/factories/searchModel.js:7
+#: ./src/app/search/factories/searchModel.js:9
 msgctxt "Option for search panel"
 msgid "Spam"
 msgstr ""
 
-#: ./src/app/search/factories/searchModel.js:9
+#: ./src/app/search/factories/searchModel.js:11
 msgctxt "Option for search panel"
 msgid "Starred"
 msgstr ""
 
-#: ./src/app/search/factories/searchModel.js:13
+#: ./src/app/search/factories/searchModel.js:15
 msgctxt "Option for search panel"
 msgid "Trash"
 msgstr ""
@@ -7018,12 +7008,12 @@ msgctxt "Payment form input label"
 msgid "Coupon"
 msgstr ""
 
-#: ./src/app/payment/services/paymentUtils.js:9
+#: ./src/app/payment/services/paymentUtils.js:11
 msgctxt "Payment method"
 msgid "Cash"
 msgstr ""
 
-#: ./src/app/payment/services/paymentUtils.js:10
+#: ./src/app/payment/services/paymentUtils.js:12
 msgctxt "Payment method"
 msgid "Credit Card"
 msgstr ""
@@ -7193,42 +7183,42 @@ msgctxt "Placeholder for YYYY in YYYY-MM-DD"
 msgid "YYYY"
 msgstr ""
 
-#: ./src/app/payment/services/paymentPlansFormator.js:6
+#: ./src/app/payment/services/paymentPlansFormator.js:8
 msgctxt "Plan feature"
 msgid "Folders"
 msgstr ""
 
-#: ./src/app/payment/services/paymentPlansFormator.js:5
+#: ./src/app/payment/services/paymentPlansFormator.js:7
 msgctxt "Plan feature"
 msgid "Labels"
 msgstr ""
 
-#: ./src/app/payment/services/paymentPlansFormator.js:9
+#: ./src/app/payment/services/paymentPlansFormator.js:11
 msgctxt "Plan feature"
 msgid "Limited support"
 msgstr ""
 
-#: ./src/app/payment/services/paymentPlansFormator.js:4
+#: ./src/app/payment/services/paymentPlansFormator.js:6
 msgctxt "Plan feature"
 msgid "Messages per day"
 msgstr ""
 
-#: ./src/app/payment/services/paymentPlansFormator.js:10
+#: ./src/app/payment/services/paymentPlansFormator.js:12
 msgctxt "Plan feature"
 msgid "Priority support"
 msgstr ""
 
-#: ./src/app/payment/services/paymentPlansFormator.js:8
+#: ./src/app/payment/services/paymentPlansFormator.js:10
 msgctxt "Plan feature"
 msgid "Support"
 msgstr ""
 
-#: ./src/app/payment/services/paymentPlansFormator.js:7
+#: ./src/app/payment/services/paymentPlansFormator.js:9
 msgctxt "Plan feature"
 msgid "Unlimited Folders / Unlimited labels"
 msgstr ""
 
-#: ./src/app/payment/services/paymentPlansFormator.js:11
+#: ./src/app/payment/services/paymentPlansFormator.js:13
 msgctxt "Plan feature"
 msgid "Unlimited sending"
 msgstr ""
@@ -7242,12 +7232,12 @@ msgctxt "Price per month"
 msgid "/mo"
 msgstr ""
 
-#: ./src/app/dashboard/directives/vpnRow.js:21
+#: ./src/app/dashboard/directives/vpnRow.js:24
 msgctxt "ProtonVPN with X connections"
 msgid "connections"
 msgstr ""
 
-#: ./src/app/dashboard/directives/vpnRow.js:20
+#: ./src/app/dashboard/directives/vpnRow.js:23
 msgctxt "ProtonVPN with X connections"
 msgid "with"
 msgstr ""
@@ -7473,12 +7463,12 @@ msgctxt "Single letter code Wednesday"
 msgid "W"
 msgstr ""
 
-#: ./src/app/contact/directives/contactPublicKeys.js:22
+#: ./src/app/contact/directives/contactPublicKeys.js:23
 msgctxt "String separator"
 msgid "and"
 msgstr ""
 
-#: ./src/app/message/services/messageBuilder.js:192
+#: ./src/app/message/services/messageBuilder.js:190
 msgctxt "Subject"
 msgid "Encrypted Subject"
 msgstr ""
@@ -7525,7 +7515,7 @@ msgctxt "Success"
 msgid "Emailing preference updated"
 msgstr ""
 
-#: ./src/app/settings/directives/encryptionView.js:13
+#: ./src/app/settings/directives/encryptionView.js:14
 msgctxt "Success"
 msgid "Encryption setting updated"
 msgstr ""
@@ -7581,7 +7571,7 @@ msgctxt "Success message for the contact modal"
 msgid "Contact added"
 msgstr ""
 
-#: ./src/app/core/factories/feedbackModal.js:34
+#: ./src/app/core/factories/feedbackModal.js:33
 msgctxt "Success message when sending feedback"
 msgid "Thanks for your feedback!"
 msgstr ""
@@ -7781,7 +7771,7 @@ msgctxt "Title"
 msgid "Administrator Key Activation"
 msgstr ""
 
-#: ./src/app/sidebar/factories/sidebarModel.js:51
+#: ./src/app/sidebar/factories/sidebarModel.js:53
 #: ./src/app/ui/factories/pageTitlesModel.js:28
 msgctxt "Title"
 msgid "All Mail"
@@ -7827,7 +7817,7 @@ msgctxt "Title"
 msgid "Application"
 msgstr ""
 
-#: ./src/app/sidebar/factories/sidebarModel.js:36
+#: ./src/app/sidebar/factories/sidebarModel.js:38
 #: ./src/app/ui/factories/pageTitlesModel.js:31
 msgctxt "Title"
 msgid "Archive"
@@ -7961,7 +7951,7 @@ msgctxt "Title"
 msgid "Change Password"
 msgstr ""
 
-#: ./src/app/members/services/memberActions.js:30
+#: ./src/app/members/services/memberActions.js:31
 msgctxt "Title"
 msgid "Change Role"
 msgstr ""
@@ -8217,7 +8207,7 @@ msgctxt "Title"
 msgid "Delete payment method"
 msgstr ""
 
-#: ./src/app/members/services/memberActions.js:69
+#: ./src/app/members/services/memberActions.js:70
 msgctxt "Title"
 msgid "Delete user"
 msgstr ""
@@ -8280,7 +8270,7 @@ msgctxt "Title"
 msgid "Downloading"
 msgstr ""
 
-#: ./src/app/sidebar/factories/sidebarModel.js:20
+#: ./src/app/sidebar/factories/sidebarModel.js:22
 #: ./src/app/ui/factories/pageTitlesModel.js:27
 #: ./src/app/ui/factories/pageTitlesModel.js:39
 msgctxt "Title"
@@ -8518,7 +8508,7 @@ msgctxt "Title"
 msgid "Import"
 msgstr ""
 
-#: ./src/app/sidebar/factories/sidebarModel.js:14
+#: ./src/app/sidebar/factories/sidebarModel.js:16
 #: ./src/app/ui/factories/pageTitlesModel.js:42
 msgctxt "Title"
 msgid "Inbox"
@@ -8698,7 +8688,7 @@ msgctxt "Title"
 msgid "Navigation"
 msgstr ""
 
-#: ./src/app/composer/controllers/composeMessage.js:395
+#: ./src/app/composer/controllers/composeMessage.js:394
 msgctxt "Title"
 msgid "New message"
 msgstr ""
@@ -8886,7 +8876,7 @@ msgctxt "Title"
 msgid "Private Key password required"
 msgstr ""
 
-#: ./src/app/members/services/memberActions.js:53
+#: ./src/app/members/services/memberActions.js:54
 msgctxt "Title"
 msgid "Privatize User"
 msgstr ""
@@ -8968,7 +8958,7 @@ msgctxt "Title"
 msgid "Release notes"
 msgstr ""
 
-#: ./src/app/members/services/memberActions.js:61
+#: ./src/app/members/services/memberActions.js:62
 msgctxt "Title"
 msgid "Remove user"
 msgstr ""
@@ -9067,7 +9057,7 @@ msgctxt "Title"
 msgid "Sending notice"
 msgstr ""
 
-#: ./src/app/sidebar/factories/sidebarModel.js:26
+#: ./src/app/sidebar/factories/sidebarModel.js:28
 #: ./src/app/ui/factories/pageTitlesModel.js:29
 #: ./src/app/ui/factories/pageTitlesModel.js:52
 msgctxt "Title"
@@ -9111,7 +9101,7 @@ msgctxt "Title"
 msgid "Set up your account"
 msgstr ""
 
-#: ./src/app/user/modals/generateModal.js:22
+#: ./src/app/user/modals/generateModal.js:23
 msgctxt "Title"
 msgid "Setting up your Addresses"
 msgstr ""
@@ -9158,7 +9148,7 @@ msgctxt "Title"
 msgid "Signup"
 msgstr ""
 
-#: ./src/app/sidebar/factories/sidebarModel.js:41
+#: ./src/app/sidebar/factories/sidebarModel.js:43
 #: ./src/app/ui/factories/pageTitlesModel.js:55
 msgctxt "Title"
 msgid "Spam"
@@ -9169,7 +9159,7 @@ msgctxt "Title"
 msgid "Spam Filters"
 msgstr ""
 
-#: ./src/app/sidebar/factories/sidebarModel.js:31
+#: ./src/app/sidebar/factories/sidebarModel.js:33
 #: ./src/app/ui/factories/pageTitlesModel.js:56
 msgctxt "Title"
 msgid "Starred"
@@ -9264,7 +9254,7 @@ msgctxt "Title"
 msgid "Total (monthly billing)"
 msgstr ""
 
-#: ./src/app/sidebar/factories/sidebarModel.js:46
+#: ./src/app/sidebar/factories/sidebarModel.js:48
 #: ./src/app/ui/factories/pageTitlesModel.js:57
 msgctxt "Title"
 msgid "Trash"
@@ -9499,7 +9489,7 @@ msgstr[0] ""
 msgstr[1] ""
 
 #: ./src/app/dnd/factories/ptDndNotification.js:15
-#: ./src/app/dnd/services/actionDnd.js:21
+#: ./src/app/dnd/services/actionDnd.js:22
 msgctxt "Type of item"
 msgid "conversation"
 msgid_plural "conversations"
@@ -9507,7 +9497,7 @@ msgstr[0] ""
 msgstr[1] ""
 
 #: ./src/app/dnd/factories/ptDndNotification.js:14
-#: ./src/app/dnd/services/actionDnd.js:20
+#: ./src/app/dnd/services/actionDnd.js:21
 msgctxt "Type of item"
 msgid "message"
 msgid_plural "messages"
@@ -9544,22 +9534,22 @@ msgctxt "Type of label for a message/conversation"
 msgid "In trash"
 msgstr ""
 
-#: ./src/app/message/services/messageBuilder.js:193
+#: ./src/app/message/services/messageBuilder.js:191
 msgctxt "Use encrypted subject as subject"
 msgid "Yes"
 msgstr ""
 
-#: ./src/app/message/services/messageBuilder.js:194
+#: ./src/app/message/services/messageBuilder.js:192
 msgctxt "Use unencrypted subject as subject"
 msgid "No"
 msgstr ""
 
-#: ./src/app/members/factories/memberModel.js:10
+#: ./src/app/members/factories/memberModel.js:11
 msgctxt "User role"
 msgid "Admin"
 msgstr ""
 
-#: ./src/app/members/factories/memberModel.js:11
+#: ./src/app/members/factories/memberModel.js:12
 msgctxt "User role"
 msgid "Member"
 msgstr ""
@@ -9874,28 +9864,28 @@ msgctxt "copyright"
 msgid "ProtonMail.com - Made globally, hosted in Switzerland."
 msgstr ""
 
-#: ./src/app/dashboard/factories/dashboardOptions.js:23
+#: ./src/app/dashboard/factories/dashboardOptions.js:24
 msgctxt "dashboard options select"
 msgid "1 Custom Domain"
 msgid_plural "{{$count}} Custom Domains"
 msgstr[0] ""
 msgstr[1] ""
 
-#: ./src/app/dashboard/factories/dashboardOptions.js:11
+#: ./src/app/dashboard/factories/dashboardOptions.js:12
 msgctxt "dashboard options select"
 msgid "1 GB Storage"
 msgid_plural "{{$count}} GB Storage"
 msgstr[0] ""
 msgstr[1] ""
 
-#: ./src/app/dashboard/factories/dashboardOptions.js:20
+#: ./src/app/dashboard/factories/dashboardOptions.js:21
 msgctxt "dashboard options select"
 msgid "1 User"
 msgid_plural "{{$count}} Users"
 msgstr[0] ""
 msgstr[1] ""
 
-#: ./src/app/dashboard/factories/dashboardOptions.js:8
+#: ./src/app/dashboard/factories/dashboardOptions.js:9
 msgctxt "dashboard options select"
 msgid "{{value}} Addresses"
 msgstr ""
@@ -9950,17 +9940,17 @@ msgctxt "dropdown label"
 msgid "Labels Saved"
 msgstr ""
 
-#: ./src/app/utils/filters/humanSize.js:15
+#: ./src/app/utils/filters/humanSize.js:17
 msgctxt "fileSize format"
 msgid "GB"
 msgstr ""
 
-#: ./src/app/utils/filters/humanSize.js:13
+#: ./src/app/utils/filters/humanSize.js:15
 msgctxt "fileSize format"
 msgid "KB"
 msgstr ""
 
-#: ./src/app/utils/filters/humanSize.js:14
+#: ./src/app/utils/filters/humanSize.js:16
 msgctxt "fileSize format"
 msgid "MB"
 msgstr ""
@@ -10012,7 +10002,7 @@ msgctxt "month price"
 msgid "/mo"
 msgstr ""
 
-#: ./src/app/dnd/services/actionDnd.js:18
+#: ./src/app/dnd/services/actionDnd.js:19
 msgctxt "notification drag and drop"
 msgid "Apply label"
 msgstr ""
@@ -10022,7 +10012,7 @@ msgctxt "notification drag and drop"
 msgid "Move {{total}} {{type}}"
 msgstr ""
 
-#: ./src/app/dnd/services/actionDnd.js:22
+#: ./src/app/dnd/services/actionDnd.js:23
 msgctxt "notification drag and drop"
 msgid "Star {{total}} {{type}}"
 msgstr ""
@@ -10178,7 +10168,7 @@ msgstr ""
 msgid "-45%"
 msgstr ""
 
-#: ./src/app/dashboard/directives/subscriptionSection.js:18
+#: ./src/app/dashboard/directives/subscriptionSection.js:20
 msgid "2-years"
 msgstr ""
 
@@ -10275,8 +10265,8 @@ msgid "Advanced settings"
 msgstr ""
 
 #. form option
-#: ./src/app/search/factories/searchModel.js:29
-#: ./src/app/search/factories/searchModel.js:47
+#: ./src/app/search/factories/searchModel.js:31
+#: ./src/app/search/factories/searchModel.js:49
 #: ./src/templates/search/searchForm.tpl.html:124
 msgid "All"
 msgstr ""
@@ -10285,11 +10275,11 @@ msgstr ""
 msgid "All available keys are trusted"
 msgstr ""
 
-#: ./src/app/organization/modals/setupOrganizationModal.js:42
+#: ./src/app/organization/modals/setupOrganizationModal.js:43
 msgid "Allocated to admin"
 msgstr ""
 
-#: ./src/app/organization/modals/setupOrganizationModal.js:46
+#: ./src/app/organization/modals/setupOrganizationModal.js:47
 msgid "Already used"
 msgstr ""
 
@@ -10298,13 +10288,13 @@ msgstr ""
 msgid "Also Archive"
 msgstr ""
 
-#: ./src/app/dashboard/directives/subscriptionSection.js:17
+#: ./src/app/dashboard/directives/subscriptionSection.js:19
 #: ./src/templates/views/invoices.tpl.html:29
 #: ./src/templates/views/invoices.tpl.html:59
 msgid "Annually"
 msgstr ""
 
-#: ./src/app/labels/directives/dropdownFolders.js:11
+#: ./src/app/labels/directives/dropdownFolders.js:13
 msgid "Archive"
 msgstr ""
 
@@ -10328,7 +10318,7 @@ msgstr ""
 msgid "Available domains"
 msgstr ""
 
-#: ./src/app/message/directives/messagePublicKeyPinning.js:22
+#: ./src/app/message/directives/messagePublicKeyPinning.js:23
 msgid "Banner permanently hidden"
 msgstr ""
 
@@ -10383,7 +10373,7 @@ msgstr ""
 msgid "Column"
 msgstr ""
 
-#: ./src/app/contact/factories/contactUI.js:105
+#: ./src/app/contact/factories/contactUI.js:103
 msgid "Composer format indicates that the format in the composer is used to send to this user. Plain Text indicates that the message will always be converted to plain text on send."
 msgstr ""
 
@@ -10426,6 +10416,14 @@ msgstr ""
 msgid "Copy address"
 msgstr ""
 
+#: ./src/templates/vpn/openVpnSection.tpl.html:23
+msgid "Copy login"
+msgstr ""
+
+#: ./src/templates/vpn/openVpnSection.tpl.html:40
+msgid "Copy password"
+msgstr ""
+
 #: ./src/app/commons/directives/copy.js:4
 msgid "Copy to your clipboard"
 msgstr ""
@@ -10439,7 +10437,7 @@ msgstr ""
 msgid "Created"
 msgstr ""
 
-#: ./src/app/dashboard/directives/subscriptionSection.js:21
+#: ./src/app/dashboard/directives/subscriptionSection.js:23
 msgid "Credit card"
 msgstr ""
 
@@ -10467,7 +10465,7 @@ msgid "Default"
 msgstr ""
 
 #. contacts toolbar menu option
-#: ./src/app/composer/controllers/composeMessage.js:553
+#: ./src/app/composer/controllers/composeMessage.js:550
 #: ./src/templates/contact/contactToolbar.tpl.html:17
 msgid "Delete"
 msgstr ""
@@ -10603,7 +10601,7 @@ msgstr ""
 msgid "Enter your login password:"
 msgstr ""
 
-#: ./src/app/message/factories/messageModel.js:245
+#: ./src/app/message/factories/messageModel.js:246
 msgid "Error encrypting message"
 msgstr ""
 
@@ -10615,7 +10613,7 @@ msgstr ""
 msgid "Error while copying"
 msgstr ""
 
-#: ./src/app/message/directives/messagePublicKeyPinning.js:23
+#: ./src/app/message/directives/messagePublicKeyPinning.js:24
 msgid "Error while updating setting"
 msgstr ""
 
@@ -10719,7 +10717,7 @@ msgstr ""
 msgid "Inactive"
 msgstr ""
 
-#: ./src/app/labels/directives/dropdownFolders.js:5
+#: ./src/app/labels/directives/dropdownFolders.js:7
 msgid "Inbox"
 msgstr ""
 
@@ -10752,7 +10750,7 @@ msgstr ""
 msgid "Label order saved"
 msgstr ""
 
-#: ./src/app/settings/controllers/appearance.js:74
+#: ./src/app/settings/controllers/appearance.js:75
 #: ./src/app/ui/directives/chooseLayoutBtns.js:32
 msgid "Layout saved"
 msgstr ""
@@ -10789,7 +10787,7 @@ msgstr ""
 msgid "Maximized"
 msgstr ""
 
-#: ./src/app/composer/controllers/composeMessage.js:571
+#: ./src/app/composer/controllers/composeMessage.js:568
 msgid "Message discarded"
 msgstr ""
 
@@ -10797,7 +10795,7 @@ msgstr ""
 msgid "Message password"
 msgstr ""
 
-#: ./src/app/outside/controllers/outside.js:152
+#: ./src/app/outside/controllers/outside.js:151
 msgid "Message sent"
 msgstr ""
 
@@ -10807,7 +10805,7 @@ msgstr ""
 msgid "Missing keys"
 msgstr ""
 
-#: ./src/app/dashboard/directives/subscriptionSection.js:16
+#: ./src/app/dashboard/directives/subscriptionSection.js:18
 #: ./src/templates/views/invoices.tpl.html:29
 #: ./src/templates/views/invoices.tpl.html:59
 msgid "Monthly"
@@ -10898,7 +10896,7 @@ msgstr ""
 msgid "Orphan"
 msgstr ""
 
-#: ./src/app/settings/directives/encryptionView.js:20
+#: ./src/app/settings/directives/encryptionView.js:21
 msgid "PGP clients are more likely to automatically detect your PGP keys if outgoing messages are signed."
 msgstr ""
 
@@ -10942,7 +10940,7 @@ msgstr ""
 msgid "Password updated"
 msgstr ""
 
-#: ./src/app/composer/controllers/composeMessage.js:554
+#: ./src/app/composer/controllers/composeMessage.js:551
 msgid "Permanently delete this draft?"
 msgstr ""
 
@@ -11098,7 +11096,7 @@ msgstr ""
 msgid "Search parameter updated"
 msgstr ""
 
-#: ./src/app/contact/factories/contactUI.js:88
+#: ./src/app/contact/factories/contactUI.js:86
 msgid "Select the PGP scheme to be used when signing or encrypting to an user. Note that PGP/Inline forces plain text messages. Click for more info."
 msgstr ""
 
@@ -11126,7 +11124,7 @@ msgstr ""
 msgid "Setting up account"
 msgstr ""
 
-#: ./src/app/labels/directives/dropdownFolders.js:17
+#: ./src/app/labels/directives/dropdownFolders.js:19
 msgid "Spam"
 msgstr ""
 
@@ -11155,11 +11153,11 @@ msgstr ""
 msgid "The message was signed by an unpinned public key."
 msgstr ""
 
-#: ./src/app/contact/directives/contactPublicKeys.js:414
+#: ./src/app/contact/directives/contactPublicKeys.js:415
 msgid "The public key with fingerprint %s updated."
 msgstr ""
 
-#: ./src/app/contact/directives/contactPublicKeys.js:406
+#: ./src/app/contact/directives/contactPublicKeys.js:407
 msgid "The public key with fingerprint %s was replaced with a revoked key."
 msgstr ""
 
@@ -11179,11 +11177,11 @@ msgstr ""
 msgid "This key has not been activated. It is only possible to export the public key. Do you want to export the public key?"
 msgstr ""
 
-#: ./src/app/contact/directives/contactPublicKeys.js:216
+#: ./src/app/contact/directives/contactPublicKeys.js:217
 msgid "This key is expired."
 msgstr ""
 
-#: ./src/app/contact/directives/contactPublicKeys.js:214
+#: ./src/app/contact/directives/contactPublicKeys.js:215
 msgid "This key is revoked."
 msgstr ""
 
@@ -11201,7 +11199,7 @@ msgstr ""
 msgid "To download attachments in Safari:"
 msgstr ""
 
-#: ./src/app/labels/directives/dropdownFolders.js:23
+#: ./src/app/labels/directives/dropdownFolders.js:25
 msgid "Trash"
 msgstr ""
 
@@ -11226,7 +11224,7 @@ msgstr ""
 msgid "Use for encryption"
 msgstr ""
 
-#: ./src/app/contact/directives/contactPublicKeys.js:232
+#: ./src/app/contact/directives/contactPublicKeys.js:233
 msgid "User IDs mismatch. This key is assigned to %1."
 msgid_plural "User IDs mismatch. The emails %1 are assigned to this key."
 msgstr[0] ""
@@ -11238,7 +11236,7 @@ msgid ""
 "                       to this address with this key and set this key as the primary PGP key for this address."
 msgstr ""
 
-#: ./src/app/dashboard/directives/subscriptionSection.js:9
+#: ./src/app/dashboard/directives/subscriptionSection.js:11
 msgid "VPN connections"
 msgstr ""
 
@@ -11256,7 +11254,7 @@ msgstr ""
 msgid "You have enabled key pinning for {{ emails }}, but no active key is pinned. You must pin the key in order to send a message to this address."
 msgstr ""
 
-#: ./src/app/dashboard/directives/subscriptionSection.js:10
+#: ./src/app/dashboard/directives/subscriptionSection.js:12
 msgid "addresses"
 msgstr ""
 
@@ -11283,11 +11281,11 @@ msgstr ""
 msgid "click here"
 msgstr ""
 
-#: ./src/app/dashboard/directives/subscriptionSection.js:11
+#: ./src/app/dashboard/directives/subscriptionSection.js:13
 msgid "domain"
 msgstr ""
 
-#: ./src/app/dashboard/directives/subscriptionSection.js:12
+#: ./src/app/dashboard/directives/subscriptionSection.js:14
 msgid "domains"
 msgstr ""
 
@@ -11312,10 +11310,10 @@ msgstr ""
 msgid "month"
 msgstr ""
 
-#: ./src/app/dashboard/directives/subscriptionSection.js:13
+#: ./src/app/dashboard/directives/subscriptionSection.js:15
 msgid "user"
 msgstr ""
 
-#: ./src/app/dashboard/directives/subscriptionSection.js:14
+#: ./src/app/dashboard/directives/subscriptionSection.js:16
 msgid "users"
 msgstr ""
