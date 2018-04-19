@@ -165,10 +165,14 @@ function message(
             scope.unsubscribed = unsubscribeModel.already(scope.message.getListUnsubscribe());
             (scope.message.openMe || scope.message.expand) && openMessage();
 
-            const defaults = { Authentication: 'none', Encryption: 'none' };
-            scope.toList = scope.message.ToList.map((email) => _.extend(defaults, email));
-            scope.ccList = scope.message.CCList.map((email) => _.extend(defaults, email));
-            scope.bccList = scope.message.BCCList.map((email) => _.extend(defaults, email));
+            const addDefaults = (email) => ({
+                ...email,
+                Authentication: 'none',
+                Encryption: 'none'
+            });
+            scope.toList = scope.message.ToList.map(addDefaults);
+            scope.ccList = scope.message.CCList.map(addDefaults);
+            scope.bccList = scope.message.BCCList.map(addDefaults);
 
             scope.message.promptKeyPinning = false;
 
