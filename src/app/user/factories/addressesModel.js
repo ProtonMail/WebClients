@@ -5,14 +5,40 @@ import updateCollection from '../../utils/helpers/updateCollection';
 const { PREMIUM } = ADDRESS_TYPE;
 
 /* @ngInject */
-function addressesModel(Address, authentication, dispatchers) {
+function addressesModel(Address, authentication, dispatchers, keyInfo) {
     const { dispatcher, on } = dispatchers(['addressesModel']);
     let CACHE = {};
     const sortByOrder = (addresses = []) => _.sortBy(addresses, 'Order');
+    /**
+     * Prepare addresses to add information in each keys
+     * @param  {Array} addresses
+     * @return {Promise} addreses
+     */
+    const formatKeys = (addresses = []) => {
+        const promises = addresses.reduce((acc, address) => {
+            const { Keys = [] } = address;
+            const pKeys = Promise.all(Keys.map(keyInfo));
+
+            return acc.concat(pKeys.then((keys) => ({ ...address, Keys: keys })));
+        }, []);
+
+        return Promise.all(promises);
+    };
+
+    /**
+     * Save and formatted addresses in the cache
+     * @param {Array}   addresses
+     * @param {[type]}  user
+     * @param {Boolean} noEvent
+     * @return {Promise}
+     */
     const set = (addresses = [], user = authentication.user, noEvent = false) => {
-        const adrs = sortByOrder(addresses);
-        CACHE[user.ID] = adrs;
-        !noEvent && dispatcher.addressesModel('addresses.updated', { addresses: adrs });
+        const sortedAddresses = sortByOrder(addresses);
+
+        return formatKeys(sortedAddresses).then((formattedAddresses) => {
+            CACHE[user.ID] = formattedAddresses;
+            !noEvent && dispatcher.addressesModel('addresses.updated', { addresses: formattedAddresses });
+        });
     };
 
     /**

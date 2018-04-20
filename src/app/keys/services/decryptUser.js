@@ -2,7 +2,7 @@ import _ from 'lodash';
 import { MAIN_KEY } from '../../constants';
 
 /* @ngInject */
-function decryptUser(pmcw, notification, Key, setupKeys, gettextCatalog) {
+function decryptUser(pmcw, notification, Key, keyInfo, setupKeys, gettextCatalog) {
     const I18N = {
         errorPrimaryKey({ Email: email = '' }) {
             return gettextCatalog.getString(
@@ -11,20 +11,6 @@ function decryptUser(pmcw, notification, Key, setupKeys, gettextCatalog) {
                 'Error'
             );
         }
-    };
-
-    /**
-     * Get information about a key to add to the key object
-     * @param  {Object} key        the key object
-     * @return {Object}            key object enhanced with additional parameters
-     */
-    const keyInfo = (key) => {
-        return pmcw.keyInfo(key.PrivateKey).then((info) => {
-            key.created = info.created; // Creation date
-            key.bitSize = info.bitSize;
-            key.fingerprint = info.fingerprint; // Fingerprint
-            key.algorithmName = info.algorithmName;
-        });
     };
 
     /**
@@ -50,7 +36,7 @@ function decryptUser(pmcw, notification, Key, setupKeys, gettextCatalog) {
      */
     const storeKey = ({ key, pkg, address }) => {
         key.decrypted = true; // We mark this key as decrypted
-        return keyInfo(key).then(() => ({ address, key, pkg }));
+        return keyInfo(key).then((key) => ({ address, key, pkg }));
     };
 
     /**
@@ -62,7 +48,7 @@ function decryptUser(pmcw, notification, Key, setupKeys, gettextCatalog) {
      */
     const skipKey = ({ key, address, index }) => {
         key.decrypted = false; // This key is not decrypted
-        return keyInfo(key).then(() => {
+        return keyInfo(key).then((key) => {
             // If the primary (first) key for address does not decrypt, display error.
             if (index === 0) {
                 address.disabled = true; // This address cannot be used
