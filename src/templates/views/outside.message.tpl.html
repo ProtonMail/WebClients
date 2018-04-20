@@ -1,14 +1,4 @@
 <div id="outsideMessageWrap">
-    <div ng-if="message.ExpirationTime" id="expirationMessage">
-        <span  translate>Expiring in</span>
-        <time
-            time-refreshed="{{ ::message.ExpirationTime }}"
-            class="expirationMessage-expiration"
-            time-filter="delay"
-            time-interval="1000">
-            <i class="fa fa-spin fa-circle-o-notch"></i>
-        </time>.
-    </div>
     <div class="message-head">
         <a ng-click="reply()" class="pm_button pull-right">
             <i class="fa fa-reply"></i>
@@ -41,9 +31,8 @@
                 </span>
             </li>
         </ul>
+        <message-extra></message-extra>
     </div>
-    <message-extra></message-extra>
-
     <div id="outsideMessage">
         <div id="message-body" data-embedded-img-loader data-inject-message-media>
             <div

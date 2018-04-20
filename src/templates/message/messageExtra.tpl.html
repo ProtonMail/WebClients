@@ -1,4 +1,13 @@
 <section class="messageExtra-container">
+    <div ng-if="message.ExpirationTime > 0" class="expiration messageExtra-container-warning">
+        <div class="messageExtra-container-notice">
+            <svg height="14" width="14" viewBox="0 0 14 14">
+                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#svg-expiration"></use>
+            </svg>
+            <span translate-context="Message expiration label" translate>This message will expire in</span>
+            <time time-refreshed="{{ ::message.ExpirationTime }}"></time>
+        </div>
+    </div>
     <message-spam-score
         class="messageExtra-container-error"
         ng-if="message.SpamScore === 100 || message.SpamScore === 101"
@@ -10,6 +19,7 @@
             </div>
         </div>
     </div>
+    <message-display-error ng-if="message.hasError" class="messageExtra-container-error"></message-display-error>
     <unsubscribe-panel ng-if="!unsubscribed && message.getListUnsubscribe()"></unsubscribe-panel>
     <message-auto-generated ng-if="message.isAutoReply"></message-auto-generated>
     <message-public-key-found ng-if="message.attachedPublicKey && !(message.askResign && message.Verified !== 0)"></message-public-key-found>

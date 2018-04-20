@@ -224,23 +224,14 @@
                 </button>
 
             </div>
-        </div>
 
-        <div ng-if="message.ExpirationTime > 0" class="expiration">
-            <svg height="14" width="14" viewBox="0 0 14 14">
-                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#svg-expiration"></use>
-            </svg>
-            <span translate-context="Message expiration label" translate>This message will expire in</span>
-            <time time-refreshed="{{ ::message.ExpirationTime }}"></time>
+            <message-extra></message-extra>
         </div>
-
-        <message-extra></message-extra>
 
         <events-attachments data-model="message"></events-attachments>
 
         <div class="frame message-frame" data-embedded-img-loader data-inject-message-media>
             <loader-tag ng-if="message.decrypting === true"></loader-tag>
-            <message-display-error ng-if="message.hasError"></message-display-error>
             <div
                 class="bodyDecrypted email message-body-container"
                 ng-class="{'plain': message.isPlain}"
