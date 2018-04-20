@@ -147,19 +147,6 @@ body#eo-reply {
 	line-height: 1.6em;
 	overflow: auto;
 	height: calc(100% - 8rem);
-	#expirationMessage {
-		background-color: $exp;
-		height: 50px;
-		line-height: 50px;
-		text-align: center;
-		color: $white;
-		font-size: .9em;
-		margin: 0;
-	}
-
-    [id="expirationMessage"] .expirationMessage-expiration {
-        font-weight: bold
-    }
 	#outsideMessageWrap {
 		padding: 0;
         background-color: $white;

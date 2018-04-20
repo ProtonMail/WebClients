@@ -1,12 +1,12 @@
-<div class="messageDisplayError-container alert alert-danger">
-    <div ng-if="message.failedDecryption && !message.networkError">
+<div class="messageDisplayError-container">
+    <div ng-if="message.failedDecryption && !message.networkError" class="messageDisplayError-notice">
         <span class="pull-left fa fa-exclamation-triangle"></span>
         <strong translate translate-context="Message decryption error">Decryption error</strong>
         <div translate translate-context="Message decryption error">Decryption of this message's encryption content failed.</div>
         <a href="#" data-reload-state translate-context="Action to reload the current state" translate>Try again</a>
     </div>
 
-    <div ng-if="!message.failedDecryption && !message.networkError && message.errorInfo">
+    <div ng-if="!message.failedDecryption && !message.networkError && message.errorInfo" class="messageDisplayError-notice">
         <span class="pull-left fa fa-exclamation-triangle"></span>
         <strong translate translate-context="Message network error">Sanitization error</strong>
         <a
@@ -16,7 +16,7 @@
             translate>Report problem</a>
     </div>
 
-    <div ng-if="message.networkError">
+    <div ng-if="message.networkError" class="messageDisplayError-notice">
         <span class="pull-left fa fa-exclamation-triangle"></span>
         <strong translate translate-context="Message network error">Network error</strong>
         <div translate translate-context="Message network error">Please check your connection and try again.</div>
