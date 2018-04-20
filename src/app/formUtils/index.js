@@ -16,8 +16,10 @@ import validUsername from './directives/validUsername';
 import validatorTypoEmail from './directives/validatorTypoEmail';
 import cardModel from './factories/cardModel';
 import countriesListModel from './factories/countriesListModel';
+import humanVerificationModel from './factories/humanVerificationModel';
 import validEmail from './directives/validEmail';
 import isValidInvoiceText from './directives/isValidInvoiceText';
+import codeVerificator from './directives/codeVerificator';
 
 export default angular
     .module('proton.formUtils', ['ngIntlTelInput'])
@@ -38,6 +40,8 @@ export default angular
     .directive('validRecovery', validRecovery)
     .directive('validUsername', validUsername)
     .directive('validatorTypoEmail', validatorTypoEmail)
+    .directive('codeVerificator', codeVerificator)
     .factory('cardModel', cardModel)
     .factory('checkTypoEmails', checkTypoEmails)
+    .factory('humanVerificationModel', humanVerificationModel)
     .factory('countriesListModel', countriesListModel).name;

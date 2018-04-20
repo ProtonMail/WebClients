@@ -1,0 +1,10 @@
+
+// Conditions
+.codeVerificator-container:not(.codeVerificator-code-sent) .codeVerificator-code-section,
+.codeVerificator-container:not(.codeVerificator-sms-method) .codeVerificator-sms-input,
+.codeVerificator-container:not(.codeVerificator-sms-method) .intl-tel-input,
+.codeVerificator-container:not(.codeVerificator-email-method) .codeVerificator-email-input,
+.codeVerificator-container:not(.codeVerificator-email-method) .codeVerificator-email-instruction,
+.codeVerificator-container:not(.codeVerificator-sms-method) .codeVerificator-sms-instruction,
+.codeVerificator-container.codeVerificator-code-sent:not(.codeVerificator-new-code) .codeVerificator-contact-section,
+.codeVerificator-container.codeVerificator-new-code .codeVerificator-new-code-button { display: none }

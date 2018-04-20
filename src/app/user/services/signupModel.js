@@ -99,8 +99,8 @@ function signupModel(User, $state, $stateParams, $location, Payment, networkActi
         } else if (get('smsVerificationSent')) {
             params.Token = model.smsCodeVerification;
             params.TokenType = 'sms';
-        } else if (get('verificationSent')) {
-            params.Token = model.codeVerification;
+        } else if (get('emailVerificationSent')) {
+            params.Token = model.emailCodeVerification;
             params.TokenType = 'email';
         }
         return User.create(params, getPassword());
