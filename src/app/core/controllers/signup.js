@@ -41,10 +41,9 @@ function SignupController(
     $scope.account = {
         username: initUsername(), // Prepopulate the username if desired
         domain: $scope.domains[0], // Select the first domain
-        codeVerification: '', // Initialize verification code
+        emailCodeVerification: '', // Initialize verification code
         captcha_token: false, // Initialize captcha token
-        smsCodeVerification: '', // Initialize sms verification code
-        emailVerification: ''
+        smsCodeVerification: '' // Initialize sms verification code
     };
 
     authentication.logout(false, authentication.isLoggedIn());
