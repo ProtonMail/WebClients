@@ -1,6 +1,6 @@
 import _ from 'lodash';
 import { VERIFICATION_STATUS } from '../../constants';
-import { isFileSaverSupported } from '../../../helpers/browser';
+import { isFileSaverSupported, isMobile } from '../../../helpers/browser';
 
 /* @ngInject */
 function attachmentDownloader(
@@ -16,8 +16,18 @@ function attachmentDownloader(
     const hasFileSaverSupported = isFileSaverSupported();
 
     const I18N = {
+        OPEN_ATTACHMENT_ON_MOBILE: gettextCatalog.getString(
+            'Please tap and hold on the attachment and select Open in New Tab.',
+            null,
+            'Info'
+        ),
+        OPEN_ATTACHMENT_ON_DESKTOP: gettextCatalog.getString(
+            'Please right-click on the attachment and select Save/Download As.',
+            null,
+            'Info'
+        ),
         NOT_SUPPORTED: gettextCatalog.getString(
-            'Your browser lacks features needed to download encrypted attachments directly. Please right-click on the attachment and select Save/Download As.',
+            'Your browser lacks features needed to download encrypted attachments directly.',
             null,
             'Error'
         ),
@@ -47,7 +57,9 @@ function attachmentDownloader(
     const isNotSupported = (e) => {
         // Cf Safari
         if (e.target.href && e.target.href.search(/^data.*/) !== -1) {
-            alert(I18N.NOT_SUPPORTED);
+            alert(
+                `${I18N.NOT_SUPPORTED} ${isMobile() ? I18N.OPEN_ATTACHMENT_ON_MOBILE : I18N.OPEN_ATTACHMENT_ON_DESKTOP}`
+            );
             e.preventDefault();
             e.stopPropagation();
             return true;

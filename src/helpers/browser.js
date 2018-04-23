@@ -11,6 +11,10 @@ export const hasSessionStorage = () => {
 export const hasCookie = () => navigator.cookieEnabled;
 export const getBrowser = () => $.ua.browser;
 export const getDevice = () => $.ua.device;
+export const isMobile = () => {
+    const { type } = getDevice();
+    return type === 'mobile';
+};
 
 export const getOS = () => {
     const { name = 'other', version = '' } = $.ua.os;
@@ -23,14 +27,18 @@ export const isEdge = () => $.ua.browser.name === 'Edge';
 export const isFirefox = () => $.ua.browser.name === 'Firefox';
 export const isChrome = () => $.ua.browser.name === 'Chrome';
 export const isMac = () => getOS().name === 'Mac OS';
-export const hasTouch = ('ontouchstart' in document.documentElement);
+export const hasTouch = 'ontouchstart' in document.documentElement;
 
 export const isFileSaverSupported = () => 'download' in document.createElement('a') || navigator.msSaveOrOpenBlob;
 
 export const prngAvailable = () => {
     if (typeof window !== 'undefined' && window.crypto && window.crypto.getRandomValues) {
         return true;
-    } else if (typeof window !== 'undefined' && typeof window.msCrypto === 'object' && typeof window.msCrypto.getRandomValues === 'function') {
+    } else if (
+        typeof window !== 'undefined' &&
+        typeof window.msCrypto === 'object' &&
+        typeof window.msCrypto.getRandomValues === 'function'
+    ) {
         return true;
     }
 
@@ -38,7 +46,12 @@ export const prngAvailable = () => {
 };
 
 export const doNotTrack = () => {
-    return navigator.doNotTrack === '1' || navigator.doNotTrack === 'yes' || navigator.msDoNotTrack === '1' || window.doNotTrack === '1';
+    return (
+        navigator.doNotTrack === '1' ||
+        navigator.doNotTrack === 'yes' ||
+        navigator.msDoNotTrack === '1' ||
+        window.doNotTrack === '1'
+    );
 };
 
 /**
