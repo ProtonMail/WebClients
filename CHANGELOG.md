@@ -1,3 +1,10 @@
+# [3.13.1] - 2018-04-23
+
+## Fixed
+
+- Autoresponder page shows 2 editors instead of 1
+- Draft issue: we add a temporary delay to make sure we have the last version of the message body
+
 # [3.13.0] - 2018-03-29
 
 [![ProtonMail v3.13 has been released!](assets/img/v3-13.jpg)](https://protonmail.com/blog/protonmail-v3-13-release-notes/)
