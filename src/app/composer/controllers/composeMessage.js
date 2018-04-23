@@ -410,19 +410,21 @@ function ComposeMessageController(
         const message = messageModel(msg);
         const setStateSending = (is) => ((message.sending = is), (msg.sending = is));
 
+        setStateSending(true);
+
         message.Password = message.Password || '';
         message.PasswordHint = message.PasswordHint || '';
 
         try {
             await validateMessage.checkSubject(message);
         } catch (e) {
-            // No subject
+            setStateSending(false);
             return;
         }
 
         dispatchMessageAction(message);
 
-        await wait(500);
+        await wait(300);
         message.setDecryptedBody(msg.getDecryptedBody(), false);
 
         const promise = validateMessage
