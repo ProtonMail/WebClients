@@ -61,8 +61,7 @@ function embeddedParser(
         testDiv.innerHTML = body.replace(/src="cid/g, 'data-src="cid');
 
         Object.keys(embeddedStore.cid.get(message)).forEach((cid) => {
-            const current = embeddedStore.getBlob(cid);
-            const url = current ? current.url : '';
+            const { url = '' } = embeddedStore.getBlob(cid);
             const selector = `img[src="${cid}"], img[data-embedded-img="cid:${cid}"], img[data-embedded-img="${cid}"], img[data-src="cid:${cid}"]`;
             const nodes = [].slice.call(testDiv.querySelectorAll(selector));
 
