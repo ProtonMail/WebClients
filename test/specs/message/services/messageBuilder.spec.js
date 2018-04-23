@@ -186,7 +186,7 @@ describe('Create type of message', () => {
 
     describe('Create a reply', () => {
 
-        const { reply } = createMessage({}, { RE_PREFIX, FW_PREFIX });
+        const { reply } = createMessage([], { RE_PREFIX, FW_PREFIX });
         const message = {
             Subject: 'monique',
             ToList: ['yolo@pt.com'],
@@ -244,11 +244,9 @@ describe('Create type of message', () => {
 
     describe('Create a replyAll', () => {
 
-        const { replyAll } = createMessage({
-            Addresses: [{
-                Email: 'yoloCC@pt.com'
-            }]
-        }, { RE_PREFIX, FW_PREFIX });
+        const { replyAll } = createMessage([{
+            Email: 'yoloCC@pt.com'
+        }], { RE_PREFIX, FW_PREFIX });
         const message = {
             Subject: 'monique',
             ToList: [{ Address: 'yolo@pt.com' }],
@@ -314,7 +312,7 @@ describe('Create type of message', () => {
 
     describe('Create a forward', () => {
 
-        const { forward } = createMessage({}, { RE_PREFIX, FW_PREFIX });
+        const { forward } = createMessage([], { RE_PREFIX, FW_PREFIX });
         const message = {
             Subject: 'monique',
             ToList: ['yolo@pt.com'],
@@ -435,6 +433,8 @@ describe('messageBuilder factory', () => {
     const gettextCatalog = { getString: _.identity };
     const sanitize = { input: _.identity, message: _.identity };
     const textToHtmlMail = { parse: _.identity };
+    const addressesModel = { get() { return []; } };
+    const confirmModal = {};
     const authentication = { user: userMock };
     const prepareContent = (...args) => {
         spyPrepareContent(...args);
@@ -500,13 +500,13 @@ Est-ce que tu vas bien ?
 
             factory = service(
                 $filter,
-                authentication,
+                addressesModel,
                 composerFromModel,
+                confirmModal,
                 gettextCatalog,
                 mailSettingsModel,
                 messageModelMock,
                 prepareContent,
-                sanitize,
                 signatureBuilder,
                 textToHtmlMail);
 

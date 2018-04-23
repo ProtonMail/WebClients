@@ -75,7 +75,7 @@ export function findSender({ Addresses = [] } = {}, { AddressID = '' } = {}) {
     return sender || {};
 }
 
-export function createMessage(addresses, { RE_PREFIX, FW_PREFIX } = {}) {
+export function createMessage(addresses = [], { RE_PREFIX, FW_PREFIX } = {}) {
     /**
      * Format and build a new message
      * @param  {Message} newMsg          New message to build
