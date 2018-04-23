@@ -80,7 +80,7 @@ function editorListener(
             sendKey,
             hotkeysEnabled((self, event) => {
                 event.preventDefault();
-                dispatcher['composer.update']('send.message', { message });
+                dispatcher.editorListener('pre.send.message', { message });
             })
         );
 
@@ -216,7 +216,8 @@ function editorListener(
             const { dispatcher, on, unsubscribe: unsubscribeRootScope } = dispatchers([
                 'composer.update',
                 'squire.editor',
-                'editor.draggable'
+                'editor.draggable',
+                'editorListener'
             ]);
 
             // Custom dropzone to insert content into the editor if it's not a composer
@@ -238,6 +239,32 @@ function editorListener(
                 if (!$state.is('eo.reply')) {
                     unsubscribe.push(listenerSaveMessage(dispatcher, editor, message));
                 }
+
+                /**
+                 * Important to wait until updateModel has finished before sending or saving a message.
+                 */
+                on('editorListener', async (event, { type, data }) => {
+                    if (!isSameMessage(message, data)) {
+                        return;
+                    }
+                    switch (type) {
+                        case 'pre.send.message': {
+                            editor.disableInput();
+                            await updateModel(editor.getHTML());
+                            dispatcher['composer.update']('send.message', { message });
+                            break;
+                        }
+                        case 'send.failed': {
+                            editor.enableInput();
+                            break;
+                        }
+                        case 'pre.save.message': {
+                            await updateModel(editor.getHTML());
+                            dispatcher['composer.update']('save.message', { message });
+                            break;
+                        }
+                    }
+                });
             }
 
             ['dragleave', 'dragenter', 'drop'].forEach((key) => {

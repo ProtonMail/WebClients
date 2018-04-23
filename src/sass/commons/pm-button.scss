@@ -156,6 +156,12 @@
         font-size: 12px;
         text-transform: uppercase;
     }
+    // Disable pointer events on icons and svg. To disable the situation where you have
+    // <button><i class="fa"></i></button> or <button><svg></svg></button>
+    // where the onclick handler can receive the icon as target.
+    .fa, svg {
+        pointer-events: none;
+    }
 }
 
 .pull-right .pm_buttons {

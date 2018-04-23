@@ -74,31 +74,34 @@ function squire(
              * @param  {Boolean} forceUpdate    Force update the message for the mode plain-text (prevent issue 6530)
              * @return {void}
              */
-            function updateModel(val, dispatchAction = false, forceUpdate = false) {
+            async function updateMessageModel(val, dispatchAction = false, forceUpdate = false) {
+                if (scope.message.MIMEType === PLAINTEXT) {
+                    if (forceUpdate) {
+                        // The plaintext editor uses the message model so use $applyAsync
+                        scope.$applyAsync(() => scope.message.setDecryptedBody(val, false));
+                    }
+                    return;
+                }
                 // Sanitize the message with the DOMPurify config.
                 const value = sanitize.message(val || '');
-                scope.$applyAsync(async () => {
-                    if (scope.message.MIMEType === PLAINTEXT) {
-                        // disable all updates if in plain text mode
-                        return forceUpdate && scope.message.setDecryptedBody(val, false);
-                    }
+                // Replace the embedded images with CID to keep the model updated
+                const body = await embedded.parser(scope.message, { direction: 'cid', text: value });
+                // Update the model (note that this does not change anything in the squire editor so $applyAsync should not be needed)
+                scope.message.setDecryptedBody(body);
+                // Dispatch an event to update the message
+                dispatchAction && dispatcher.message('updated', { message: scope.message });
+            }
 
-                    const isEmpty = !value.trim().length;
-                    el[0].classList[`${isEmpty ? 'remove' : 'add'}`]('squire-has-value');
-
-                    if (isMessage(typeContent)) {
-                        // Replace the embedded images with CID to keep the model updated
-                        const body = await embedded.parser(scope.message, { direction: 'cid', text: value });
-                        scope.message.setDecryptedBody(body);
-
-                        // Dispatch an event to update the message
-                        dispatchAction && dispatcher.message('updated', { message: scope.message });
-                        return;
-                    }
-
-                    // We can work onto a string too
-                    scope.value = value;
-                });
+            /**
+             * Update the value of the message and send the state to the application
+             * @param  {String}  val            Body
+             * @return {void}
+             */
+            function updateValueModel(val) {
+                // Sanitize the message with the DOMPurify config.
+                const value = sanitize.message(val || '');
+                // Assume something might use scope.value so use $applyAsync
+                scope.$applyAsync(() => (scope.value = value));
             }
 
             squireEditor.create($iframe, scope.message, typeContent).then(onLoadEditor);
@@ -137,13 +140,13 @@ function squire(
                     }
 
                     setEditorLoaded();
-                    unsubscribe.push(listen(updateModel, editor));
+                    unsubscribe.push(listen(updateMessageModel, editor));
                 } else {
                     editor.setHTML(scope.value || '');
 
                     // defer loading to prevent input event refresh (takes some time to perform the setHTML)
                     const timeoutId = setTimeout(() => {
-                        unsubscribe.push(listen(updateModel, editor));
+                        unsubscribe.push(listen(updateValueModel, editor));
                         setEditorLoaded();
                         clearTimeout(timeoutId);
                     }, 100);

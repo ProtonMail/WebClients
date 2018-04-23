@@ -43,28 +43,21 @@ function btnSendMessage(dispatchers, gettextCatalog) {
         template: '<button class="btnSendMessage-btn-action"></button>',
         link(scope, el) {
             const isCurrentMsg = (msg) => msg.ID === scope.model.ID;
-            const { dispatcher, on, unsubscribe } = dispatchers(['composer.update']);
+            const { on, unsubscribe } = dispatchers();
 
             el[0].textContent = getLabel(scope.model);
 
-            const onClick = () => {
-                dispatcher['composer.update']('send.message', { message: scope.model });
-            };
-
             on('actionMessage', (e, { data: message }) => {
-                if (isCurrentMsg(message)) {
-                    el[0].textContent = getLabel(message);
-
-                    if (message.disableSend) {
-                        el[0].disabled = message.disableSend();
-                    }
+                if (!isCurrentMsg(message)) {
+                    return;
+                }
+                el[0].textContent = getLabel(message);
+                if (message.disableSend) {
+                    el[0].disabled = message.disableSend();
                 }
             });
 
-            el.on('click', onClick);
-
             scope.$on('$destroy', () => {
-                el.off('click', onClick);
                 unsubscribe();
             });
         }

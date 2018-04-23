@@ -51,10 +51,7 @@
             <squire
                 class="composer-editor"
                 data-message="message"
-                data-allow-embedded="true"
-                ng-click="attHide(message); message.autocompletesFocussed = false;"
-            ></squire>
-
+                data-allow-embedded="true"></squire>
         </div>
     </section>
 
@@ -84,8 +81,7 @@
             ng-disabled="message.disableOthers() || message !== selected"
             pt-placement="top"
             pt-tooltip-translate="Expiration time"
-            pt-tooltip-translate-context="Action"
-            ng-click="togglePanel(message, 'expiration')">
+            pt-tooltip-translate-context="Action">
             <svg height="14" width="14" viewBox="0 0 14 14">
                 <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#svg-expiration"></use>
             </svg>
@@ -100,8 +96,7 @@
             ng-disabled="message.disableOthers() || message !== selected"
             pt-placement="top"
             pt-tooltip-context="Action"
-            pt-tooltip-translate="Encryption"
-            ng-click="togglePanel(message, 'encrypt')">
+            pt-tooltip-translate="Encryption">
             <i class="fa fa-lock"></i>
         </button>
 
@@ -110,7 +105,6 @@
             <button
                 class="pm_button composer-btn-discard"
                 ng-disabled="message.disableDiscard()"
-                ng-click="discard(message)"
                 pt-tooltip-translate="Delete draft"
                 pt-tooltip-translate-context="Action"
                 pt-placement="top"
@@ -122,7 +116,6 @@
             <button
                 class="pm_button composer-btn-save"
                 ng-disabled="message.disableSave() || message !== selected"
-                ng-click="save(message, true, false)"
                 pt-tooltip-translate="Save"
                 pt-placement="top"
                 pt-tooltip-translate-context="Action">
