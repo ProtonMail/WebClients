@@ -285,29 +285,6 @@ describe('btnSendMessage directive', () => {
 
     });
 
-
-    describe('On Click', () => {
-
-        beforeEach(() => {
-            scope.message = 'message';
-            spyOn(rootScope, '$emit');
-            dom = compile('<btn-send-message data-message="message"></btn-send-message>')(scope);
-            scope.$digest();
-            iscope = dom.isolateScope();
-            dom.triggerHandler('click');
-        });
-
-        it('should emit an event', () => {
-            expect(rootScope.$emit).toHaveBeenCalledWith('composer.update', {
-                type: 'send.message',
-                data: {
-                    message: 'message'
-                }
-            });
-        });
-    });
-
-
     describe('On $destroy', () => {
 
         beforeEach(() => {

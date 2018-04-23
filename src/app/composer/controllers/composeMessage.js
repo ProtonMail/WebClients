@@ -39,10 +39,64 @@ function ComposeMessageController(
     sendMessage,
     validateMessage
 ) {
-    const { dispatcher, on, unsubscribe } = dispatchers(['composer.update', 'messageActions']);
+    const { dispatcher, on, unsubscribe } = dispatchers(['composer.update', 'messageActions', 'editorListener']);
 
     $scope.messages = [];
     $scope.uid = 1;
+
+    /**
+     * Try to save message specified
+     * @param message
+     * @param notification
+     * @param autosaving
+     */
+    const save = async (message, notification = false, autosaving = false) => {
+        const msg = messageModel(message);
+        msg.Body = await embedded.parser(msg, { direction: 'cid' });
+        return postMessage(msg, { notification, autosaving });
+    };
+
+    /**
+     * Try to send message specified
+     * @param {Object} message
+     */
+    const send = async (msg) => {
+        // Prevent mutability
+        const message = messageModel(msg);
+        const setStateSending = (is) => ((message.sending = is), (msg.sending = is));
+
+        message.Password = message.Password || '';
+        message.PasswordHint = message.PasswordHint || '';
+
+        try {
+            await validateMessage.checkSubject(message);
+        } catch (e) {
+            // No subject
+            return;
+        }
+
+        setStateSending(true);
+        dispatchMessageAction(message);
+
+        const promise = validateMessage
+            .validate(message)
+            .then(eventManager.stop)
+            .then(() => extractDataURI(message))
+            .then(() => attachPublicKey.attach(message))
+            .then(() => sendMessage(message))
+            .then(eventManager.start)
+            .catch((e) =>
+                attachPublicKey.remove(message).then(() => {
+                    setStateSending(false);
+                    message.encrypting = false;
+                    dispatchMessageAction(message);
+                    dispatcher.editorListener('send.failed', { message });
+                    eventManager.start();
+                    throw e;
+                })
+            );
+        networkActivityTracker.track(promise);
+    };
 
     /**
      * Store ids of current opened composer
@@ -206,8 +260,13 @@ function ComposeMessageController(
                 break;
             }
 
+            case 'save.message': {
+                save(data.message, true, false);
+                break;
+            }
+
             case 'send.message': {
-                $scope.send(data.message);
+                send(data.message);
                 break;
             }
 
@@ -379,14 +438,6 @@ function ComposeMessageController(
         postMessage(message, { autosaving: true, loader: false });
     };
 
-    $scope.save = (message, notification = false, autosaving = false) => {
-        const msg = messageModel(message);
-        return embedded.parser(msg, { direction: 'cid' }).then((result) => {
-            msg.Body = result;
-            return postMessage(msg, { notification, autosaving });
-        });
-    };
-
     /**
      * Return the subject title of the composer
      */
@@ -397,47 +448,6 @@ function ComposeMessageController(
     function dispatchMessageAction(message) {
         $rootScope.$emit('actionMessage', { data: message });
     }
-
-    /**
-     * Try to send message specified
-     * @param {Object} message
-     */
-    $scope.send = async (msg) => {
-        // Prevent mutability
-        const message = messageModel(msg);
-        const setStateSending = (is) => ((message.sending = is), (msg.sending = is));
-
-        message.Password = message.Password || '';
-        message.PasswordHint = message.PasswordHint || '';
-
-        try {
-            await validateMessage.checkSubject(message);
-        } catch (e) {
-            // No subject
-            return;
-        }
-
-        setStateSending(true);
-        dispatchMessageAction(message);
-
-        const promise = validateMessage
-            .validate(message)
-            .then(eventManager.stop)
-            .then(() => extractDataURI(message))
-            .then(() => attachPublicKey.attach(message))
-            .then(() => sendMessage(message))
-            .then(eventManager.start)
-            .catch((e) =>
-                attachPublicKey.remove(message).then(() => {
-                    setStateSending(false);
-                    message.encrypting = false;
-                    dispatchMessageAction(message);
-                    eventManager.start();
-                    throw e;
-                })
-            );
-        networkActivityTracker.track(promise);
-    };
 
     /**
      * Focus the first not minimized composer window

@@ -171,6 +171,10 @@ function squireEditor(dispatchers, editorModel, sanitize) {
         editor.alignCenter = () => editor.setTextAlignment('center');
         editor.alignLeft = () => editor.setTextAlignment('left');
         editor.alignJustify = () => editor.setTextAlignment('justify');
+        // eslint-disable-next-line no-underscore-dangle
+        const setContentEditable = (value) => () => (editor._root.contentEditable = value);
+        editor.disableInput = setContentEditable(false);
+        editor.enableInput = setContentEditable(true);
         editor.makeHeading = () => {
             editor.setFontSize('2em');
             return editor.bold();

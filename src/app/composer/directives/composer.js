@@ -19,7 +19,7 @@ function composer(AppModel, embedded, attachmentFileFormat, dispatchers, mailSet
         replace: true,
         templateUrl: require('../../../templates/directives/composer/composer.tpl.html'),
         link(scope, el) {
-            const { dispatcher, on, unsubscribe } = dispatchers(['composer.update']);
+            const { dispatcher, on, unsubscribe } = dispatchers(['composer.update', 'editorListener']);
 
             const focusComposer = (event, data = {}) => {
                 dispatcher['composer.update'](`focus.${event}`, data);
@@ -73,7 +73,9 @@ function composer(AppModel, embedded, attachmentFileFormat, dispatchers, mailSet
             };
 
             const onClick = ({ target }) => {
-                if (!/composerHeader-btn/.test(target.classList.toString())) {
+                const className = target.className;
+
+                if (!/composerHeader-btn/.test(className)) {
                     focusComposer('click', {
                         message: scope.message,
                         composer: el,
@@ -81,10 +83,34 @@ function composer(AppModel, embedded, attachmentFileFormat, dispatchers, mailSet
                     });
                 }
 
-                if (/squireToolbar/.test(target.classList.toString())) {
+                if (/squireToolbar/.test(className)) {
                     scope.$applyAsync(() => {
                         scope.message.ccbcc = false;
                     });
+                }
+
+                if (/composer-btn-save/.test(className)) {
+                    dispatcher.editorListener('pre.save.message', { message: scope.message });
+                    return;
+                }
+
+                if (/composer-btn-send/.test(className)) {
+                    dispatcher.editorListener('pre.send.message', { message: scope.message });
+                    return;
+                }
+
+                if (/composer-btn-discard/.test(className)) {
+                    scope.$applyAsync(() => scope.discard(scope.message));
+                    return;
+                }
+
+                if (/composer-btn-encryption/.test(className)) {
+                    scope.$applyAsync(() => scope.togglePanel(scope.message, 'encrypt'));
+                    return;
+                }
+
+                if (/composer-btn-expiration/.test(className)) {
+                    scope.$applyAsync(() => scope.togglePanel(scope.message, 'expiration'));
                 }
             };
 

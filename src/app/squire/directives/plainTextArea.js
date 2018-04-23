@@ -35,6 +35,7 @@ function plainTextArea(dispatchers, mailSettingsModel) {
                 }
 
                 if (isKey(e, KEY.ENTER) && mailSettingsModel.get('Hotkeys') === 1) {
+                    // The plaintext area can use the normal send because it directly updates the model
                     dispatcher['composer.update']('send.message', { message: scope.message });
                 }
             }, 300);
