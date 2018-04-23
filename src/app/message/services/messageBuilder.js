@@ -75,7 +75,7 @@ export function findSender({ Addresses = [] } = {}, { AddressID = '' } = {}) {
     return sender || {};
 }
 
-export function createMessage({ Addresses = [] } = {}, { RE_PREFIX, FW_PREFIX } = {}) {
+export function createMessage(addresses, { RE_PREFIX, FW_PREFIX } = {}) {
     /**
      * Format and build a new message
      * @param  {Message} newMsg          New message to build
@@ -140,7 +140,7 @@ export function createMessage({ Addresses = [] } = {}, { RE_PREFIX, FW_PREFIX } 
             newMsg.CCList = _.union(ToList, CCList);
 
             // Remove user address in CCList and ToList
-            const userAddresses = _.map(Addresses, ({ Email = '' }) => Email.toLowerCase());
+            const userAddresses = _.map(addresses, ({ Email = '' }) => Email.toLowerCase());
             newMsg.CCList = omitUserAddresses(newMsg.CCList, userAddresses);
         }
     }
@@ -171,17 +171,17 @@ export const loadMimeType = ({ MIMEType }, DraftMIMEType) => MIMEType || DraftMI
 /* @ngInject */
 function messageBuilder(
     $filter,
-    authentication,
+    addressesModel,
     composerFromModel,
+    confirmModal,
     gettextCatalog,
     mailSettingsModel,
     messageModel,
     prepareContent,
-    confirmModal,
     signatureBuilder,
     textToHtmlMail
 ) {
-    const { reply, replyAll, forward, newCopy } = createMessage(authentication.user, {
+    const { reply, replyAll, forward, newCopy } = createMessage(addressesModel.get(), {
         RE_PREFIX: gettextCatalog.getString('Re:', null, 'Message'),
         FW_PREFIX: gettextCatalog.getString('Fw:', null, 'Message')
     });
