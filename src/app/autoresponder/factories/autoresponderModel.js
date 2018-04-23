@@ -45,7 +45,7 @@ function autoresponderModel(
     const clearChangedAutoresponder = () => (changedAutoresponder = {});
 
     function getBaseResponder() {
-        const base = _.extend({}, mailSettingsModel.get('AutoResponder'));
+        const base = _.extend({}, mailSettingsModel.get('AutoResponder') || {});
 
         if (base === null || !base.isEnabled) {
             return getDefaultAutoResponder();
@@ -220,18 +220,17 @@ function autoresponderModel(
     /**
      * Returns whether the "remote" autoresponder isEnabled flag would be toggled by the action.
      * Needed because the intermittent value in this model is used before the network request has gone off.
-     * @param {boolean} isEnabled
+     * @param {boolean} state
      * @returns {boolean}
      */
-    function willUpdate(isEnabled) {
-        const { AutoResponder = {} } = mailSettingsModel.get();
-        return AutoResponder.isEnabled !== isEnabled;
+    function willUpdate(state) {
+        const { isEnabled } = mailSettingsModel.get('AutoResponder') || {};
+        return isEnabled !== state;
     }
 
     function save() {
         const autoresponder = getAutoresponderInAPIFormat();
-        const { AutoResponder } = mailSettingsModel.get();
-        const original = AutoResponder || getDefaultAutoResponder();
+        const original = mailSettingsModel.get('AutoResponder') || getDefaultAutoResponder();
         const responseMessage = getResponseMessage(original.isEnabled, autoresponder.isEnabled);
         const promise = settingsMailApi
             .updateAutoresponder({ Parameters: autoresponder })
