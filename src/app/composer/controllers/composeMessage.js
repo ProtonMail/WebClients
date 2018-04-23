@@ -395,6 +395,12 @@ function ComposeMessageController(
         $rootScope.$emit('actionMessage', { data: message });
     }
 
+    const wait = (delay) => {
+        return new Promise((resolve) => {
+            setTimeout(resolve, delay);
+        });
+    };
+
     /**
      * Try to send message specified
      * @param {Object} message
@@ -414,8 +420,10 @@ function ComposeMessageController(
             return;
         }
 
-        setStateSending(true);
         dispatchMessageAction(message);
+
+        await wait(500);
+        message.setDecryptedBody(msg.getDecryptedBody(), false);
 
         const promise = validateMessage
             .validate(message)
