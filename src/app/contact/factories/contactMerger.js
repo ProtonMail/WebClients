@@ -58,14 +58,19 @@ function contactMerger(
      * From GET /api/contacts/export Name is defined inside the vCard Object
      * @param Name
      * @param vCard
-     * @returns {*}
+     * @returns {String}
      */
     function getName({ Name, vCard }) {
         if (Name) {
             return Name;
         }
-        const name = vCard.get('fn');
-        return (Array.isArray(name) ? name[0] : name).valueOf();
+
+        if (vCard) {
+            const name = vCard.get('fn');
+            return (Array.isArray(name) ? name[0] : name).valueOf();
+        }
+
+        return '';
     }
 
     /**
