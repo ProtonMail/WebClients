@@ -36,7 +36,6 @@ echo " → Attach shasum to files"
 mv dist/index.html dist/app.html
 mv dist/app.js.map dist/app.$HASH_APP.js.map
 mv dist/appLazy.js.map dist/appLazy.$HASH_APP_LAZY.js.map
-mv dist/vendor.js dist/vendor.$HASH_VENDOR.js
 mv dist/vendorLazy.js dist/vendorLazy.$HASH_VENDOR_LAZY.js
 mv dist/vendorLazy2.js dist/vendorLazy2.$HASH_VENDOR_LAZY2.js
 mv dist/styles.css dist/styles.$HASH_STYLE.css
@@ -49,6 +48,9 @@ sed -e "s/vendorLazy.js/vendorLazy.$HASH_VENDOR_LAZY.js/g;s/vendorLazy2.js/vendo
 sed -e "s/appLazy.js.map/appLazy.$HASH_APP_LAZY.js.map/g;" < dist/appLazy.js > dist/appLazy.$HASH_APP_LAZY.js;
 sed -e "s/openpgp.min.js/openpgp.$HASH_OPENPGP.js/g;" < dist/openpgp.worker.min.js > dist/openpgp.worker.$HASH_WORKER.js
 sed -e "s/openpgp.worker.min.js/openpgp.worker.$HASH_WORKER.js/g;" < dist/vendor.js > dist/vendor.$HASH_VENDOR.js
+
+# if it doesn't find the ref inside vendor it won't create the file
+if [ -d dist/vendor.js ]; then mv dist/vendor.js dist/vendor.$HASH_VENDOR.js; fi
 
 rm dist/{app.html,app.js,appLazy.js,html.js,openpgp.worker.min.js};
 echo " ✓ Write shasum success"
