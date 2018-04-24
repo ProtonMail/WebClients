@@ -36,6 +36,7 @@ echo " → Attach shasum to files"
 mv dist/index.html dist/app.html
 mv dist/app.js.map dist/app.$HASH_APP.js.map
 mv dist/appLazy.js.map dist/appLazy.$HASH_APP_LAZY.js.map
+mv dist/vendor.js dist/vendor.$HASH_VENDOR.js
 mv dist/vendorLazy.js dist/vendorLazy.$HASH_VENDOR_LAZY.js
 mv dist/vendorLazy2.js dist/vendorLazy2.$HASH_VENDOR_LAZY2.js
 mv dist/styles.css dist/styles.$HASH_STYLE.css
