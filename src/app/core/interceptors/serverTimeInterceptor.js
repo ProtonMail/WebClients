@@ -1,5 +1,5 @@
 /* @ngInject */
-function serverTimeInterceptor(pmcw, $q) {
+function serverTimeInterceptor(pmcw) {
     const handleResponse = (result) => {
         const dateHeader = result.headers('date');
         const serverTime = new Date(dateHeader);
@@ -9,8 +9,7 @@ function serverTimeInterceptor(pmcw, $q) {
         return result;
     };
     return {
-        response: handleResponse,
-        responseError: (result) => $q.reject(handleResponse(result))
+        response: handleResponse
     };
 }
 export default serverTimeInterceptor;
