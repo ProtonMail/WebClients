@@ -5,7 +5,13 @@ jobs:
        - image: circleci/node:9.5.0-stretch-browsers
      steps:
        - checkout
+       - restore_cache:
+           key: npm-deps-{{ checksum "package.json" }}
        - run: npm i
+       - save_cache:
+           key: npm-deps-{{ checksum "package.json" }}
+           paths:
+             - node_modules
        - run: npm run config
        - run: npm run lint
        - run: npm test
