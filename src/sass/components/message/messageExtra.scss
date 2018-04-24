@@ -48,17 +48,23 @@
 .messageExtra-container > .messageExtra-container-error,
 .messageExtra-container > .messageExtra-container-warning {
     order: 0;
-    color: $white;
-    fill: $white;
     border: none;
     padding: 10px 10px 10px 0px;
 }
 
-.messageExtra-container > .messageExtra-container-error { background: $exp }
-.messageExtra-container > .messageExtra-container-warning { background: $orange }
+.messageExtra-container > .messageExtra-container-error {
+    background: $exp;
+    color: $white;
+    fill: $white;
+}
+.messageExtra-container > .messageExtra-container-warning {
+    background: $yellow;
+    color: $secondary;
+    fill: $secondary;
+}
 
-.messageExtra-container > .messageExtra-container-error a,
-.messageExtra-container > .messageExtra-container-warning a { color: $white }
+.messageExtra-container > .messageExtra-container-error a { color: $white }
+.messageExtra-container > .messageExtra-container-warning a { color: $secondary }
 
 /* displayContentBtn */
 .displayContentBtn-container:not(.displayContentBtn-type-embedded)[data-action="embedded"],
