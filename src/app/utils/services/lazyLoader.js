@@ -33,7 +33,7 @@ function lazyLoader($ocLazyLoad, networkActivityTracker, notification, gettextCa
         } catch (e) {
             console.error(e);
             // cf caching issue with when we deploy new assets #6888
-            notification.error(`${I18N.OUTDATED}<br><br><a>${I18N.ACTION}</a>`, {
+            notification.error(`${I18N.OUTDATED}<a>${I18N.ACTION}</a>`, {
                 duration: 0,
                 onClose() {
                     window.location.reload();
