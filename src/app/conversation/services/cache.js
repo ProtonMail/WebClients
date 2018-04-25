@@ -87,6 +87,8 @@ function cache(
      */
     function updateMessage(message, isSend) {
         const current = _.find(messagesCached, { ID: message.ID });
+        const { ConversationID } = message;
+        const type = tools.getTypeList();
 
         if (current) {
             messagesCached = _.map(messagesCached, (msg) => {
@@ -108,11 +110,21 @@ function cache(
             messagesCached.push(message);
         }
 
-        manageTimes(message.ConversationID);
+        manageTimes(ConversationID);
 
         $rootScope.$emit('labelsElement.' + message.ID, message);
         $rootScope.$emit('foldersMessage.' + message.ID, message);
         $rootScope.$emit('foldersElement.' + message.ID, message);
+
+        const { loaded } = _.find(conversationsCached, { ID: ConversationID }) || {};
+
+        // We load the conversation when we receive an create / update message event if
+        // the conversation is not cached and if the current state display a conversation list
+        if (!loaded && type === 'conversation') {
+            return getConversation(ConversationID);
+        }
+
+        return Promise.resolve();
     }
 
     /**
@@ -407,6 +419,7 @@ function cache(
     /**
      * Get conversation from back-end and store it in the cache
      * @param {String} conversationID
+     * @param {String} labelID
      * @return {Promise}
      */
     function getConversation(conversationID = '', labelID = tools.currentLocation()) {
@@ -766,7 +779,8 @@ function cache(
      * @param {Object} event
      * @return {Promise}
      */
-    api.createMessage = (event) => (updateMessage(event.Message), Promise.resolve());
+    api.createMessage = (event) => updateMessage(event.Message);
+
     api.updateMessage = updateMessage;
 
     /**
@@ -792,25 +806,21 @@ function cache(
      * @param {Object} event
      * @return {Promise}
      */
-    api.updateFlagMessage = (event, isSend) => {
+    api.updateFlagMessage = async (event, isSend) => {
         const current = _.find(messagesCached, { ID: event.ID });
 
-        // // We need to force the update if the update is coming from a Send (new message)
-        // if (!isSend && (!current || (current && event.Message.Time === current.Time))) {
-        //     return Promise.resolve();
-        // }
         if (!current) {
-            return Promise.resolve();
+            return api.createMessage(event);
         }
 
-        const message = _.extend({}, current, event.Message);
+        const message = { ...current, ...event.Message };
 
         // Manage labels
         message.LabelIDs = getLabelsId(current, event.Message);
         delete message.LabelIDsRemoved;
         delete message.LabelIDsAdded;
 
-        return Promise.resolve(updateMessage(message, isSend));
+        return updateMessage(message, isSend);
     };
 
     /**
@@ -821,14 +831,9 @@ function cache(
 
         if (loaded) {
             updateConversation(event.Conversation);
-            return Promise.resolve();
         }
 
-        return getConversation(event.ID).then((conversation) => {
-            conversation.LabelIDsAdded = event.Conversation.LabelIDsAdded;
-            conversation.LabelIDsRemoved = event.Conversation.LabelIDsRemoved;
-            updateConversation(conversation);
-        });
+        return Promise.resolve();
     };
 
     function getLabelsId(oldElement = {}, newElement = {}) {
@@ -1029,7 +1034,6 @@ function cache(
      * @param {String} elementID - can be a message ID or a conversation ID
      * @param {Integer} elementTime - UNIX timestamp of the current element
      * @param {String} action - 'next' or 'previous'
-     * @param {String} type - 'conversation' or 'message'
      * @return {Promise}
      */
     api.more = (elementID, elementTime, action) => {
