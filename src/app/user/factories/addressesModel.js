@@ -108,13 +108,15 @@ function addressesModel(Address, authentication, dispatchers, keyInfo) {
     const clear = () => (CACHE = {});
     const hasPmMe = () => _.find(CACHE[authentication.user.ID], { Type: PREMIUM });
 
-    on('app.event', (e, { type, data }) => {
-        if (type === 'addresses.event') {
-            const { collection } = updateCollection(CACHE[authentication.user.ID], data.addresses, 'Address');
-
-            set(collection);
-        }
-    });
+    /**
+     * Update addresses from events
+     * @param  {Array} events Address event
+     * @return {Promise}
+     */
+    const update = (events = []) => {
+        const { collection } = updateCollection(CACHE[authentication.user.ID], events, 'Address');
+        return set(collection);
+    };
 
     on('logout', () => clear());
 
@@ -125,6 +127,7 @@ function addressesModel(Address, authentication, dispatchers, keyInfo) {
         getByUser,
         getByID,
         set,
+        update,
         hasPmMe
     };
 }

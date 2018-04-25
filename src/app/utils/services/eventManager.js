@@ -42,8 +42,6 @@ function eventManager(
         Messages.length && dispatch('activeMessages', { messages: _.map(Messages, 'Message') });
     const manageSubscription = ({ Subscription: subscription }) =>
         subscription && dispatch('subscription.event', { subscription });
-    const manageAddresses = ({ Addresses = [] }) =>
-        Addresses.length && dispatch('addresses.event', { addresses: Addresses });
 
     /**
      * Clean contact datas
@@ -303,7 +301,7 @@ function eventManager(
         $rootScope.$emit('contacts', { type: 'resetContacts' });
     }
 
-    function manage(data) {
+    const manage = async (data) => {
         manageNotices(data.Notices);
         manageID(data.EventID);
 
@@ -330,16 +328,13 @@ function eventManager(
         manageOrganization(data.Organization);
         manageFilters(data.Filters);
         manageActiveMessage(data);
-        manageAddresses(data);
+        await $injector.get('addressesModel').update(data.Addresses);
+        await $injector.get('manageUser')(data);
 
-        return $injector
-            .get('manageUser')(data)
-            .then(() => {
-                if (data.More === 1) {
-                    return call();
-                }
-            });
-    }
+        if (data.More === 1) {
+            return call();
+        }
+    };
 
     function reset() {
         $timeout.cancel(MODEL.promiseCancel);
