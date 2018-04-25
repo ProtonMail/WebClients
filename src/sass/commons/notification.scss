@@ -18,7 +18,7 @@ body .cg-notify-message {
         background-color: $red;
     }
     &.notification-info {
-        background-color: $primary;
+        background-color: $secondary;
     }
     &.bottom-right {
         right: 2rem !important;
@@ -39,6 +39,7 @@ body .cg-notify-message {
     max-width: 100%;
     word-wrap: break-word;
 }
+
 
 @media (max-width: 800px) {
     html body .cg-notify-message {

@@ -1,5 +1,3 @@
-import _ from 'lodash';
-
 /* @ngInject */
 function notification() {
     const CONFIG = {
@@ -10,7 +8,7 @@ function notification() {
         }
     };
 
-    this.typeClasses = (config = {}) => _.extend(CONFIG.classNames, config);
+    this.typeClasses = (config = {}) => ({ ...CONFIG.classNames, ...config });
     this.duration = (value = 6000) => (CONFIG.duration = value);
     this.template = (value = '') => (CONFIG.template = value);
 
@@ -21,8 +19,7 @@ function notification() {
                 const message = input instanceof Error ? input.message : input;
                 options.classes = `${options.classes || ''} ${CONFIG.classNames[type]}`.trim();
                 type === 'error' && (options.duration = 10000);
-
-                notify(_.extend({ message }, options));
+                notify({ message, ...options });
             };
 
             const config = {
