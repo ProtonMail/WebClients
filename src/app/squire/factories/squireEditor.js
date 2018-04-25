@@ -201,7 +201,11 @@ function squireEditor(dispatchers, editorModel, sanitize) {
                     updateStylesToMatch(iframeDoc);
                     const editor = editorModel.load({ ID }, extendApi(new Squire(iframeDoc, SQUIRE_CONFIG)), $iframe);
 
-                    resolve(editor, $iframe);
+                    // Force disable the grammarly extension, cf https://github.com/ProtonMail/Angular/issues/6899
+                    // eslint-disable-next-line no-underscore-dangle
+                    editor._root.dataset.enableGrammarly = false;
+
+                    resolve(editor);
 
                     // Defer the event to ensuire we register the listener
                     _rAF(() => {
