@@ -6,7 +6,7 @@
 .listAttachments-item {
     padding-left: 3rem;
     padding-right: .5rem;
-    * { pointer-events: none }
+    > * * { pointer-events: none }
 }
 
 [class*="listAttachments-icon"] {
@@ -119,6 +119,10 @@
 .listAttachments-signed-ok .listAttachments-signature-ok,
 .listAttachments-unencrypted .listAttachments-unencrypted-warning {
     display: block;
+}
+
+.sent .listAttachments-signed-ok .listAttachments-signature-ok {
+    display: none;
 }
 
 .listAttachments-signed-fail .listAttachments-item .listAttachments-icon-modifier:before {

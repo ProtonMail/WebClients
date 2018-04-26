@@ -18,8 +18,6 @@
                 <i class="history fa fa-mail-forward" ng-if="message.IsForwarded === 1"></i>
                 <span class="contact message-contact">
                     <span class="from message-contact-from"><span translate translate-context="Message sender label" translate>From</span>:</span>
-                    <encryption-status class="encryptionStatus"
-                                       pt-tooltip="{{ ::message.encryptionType() }}"></encryption-status>
                     <strong>{{ ::message.Sender | contact:'Name' }}</strong>
                     <em>{{ ::message.Sender | contact:'Address' }}
                         <message-address-actions
@@ -27,6 +25,8 @@
                             data-address="{{ ::message.Sender | contact:'Address' }}"
                             data-name="{{ ::message.Sender | contact:'Name' }}"
                             ng-if="message.expand"></message-address-actions>
+                        <encryption-status class="encryptionStatus"
+                           pt-tooltip="{{ ::message.encryptionType() }}"></encryption-status>
                     </em>
                 </span>
             </div>

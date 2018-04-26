@@ -1,6 +1,6 @@
 import _ from 'lodash';
 
-import { SEND_TYPES } from '../../constants';
+import extendPGP from '../../../helpers/composerIconHelper';
 
 /* @ngInject */
 function autocompleteSyncModel(sendPreferences, autoPinPrimaryKeys, dispatchers) {
@@ -19,16 +19,6 @@ function autocompleteSyncModel(sendPreferences, autoPinPrimaryKeys, dispatchers)
         // create a map from address -> email object
         const oldEmailsMap = _.zipObject(_.map(oldEmails, 'Address'), oldEmails);
         return _.map(list, (email) => _.extend({}, oldEmailsMap[email.Address], email));
-    };
-
-    const extendPGP = (email, sendPref) => {
-        email.encrypt = sendPref.encrypt;
-        email.sign = sendPref.sign;
-        email.isPgp = [SEND_TYPES.SEND_PGP_MIME, SEND_TYPES.SEND_PGP_INLINE].includes(sendPref.scheme);
-        email.isPgpMime = sendPref.scheme === SEND_TYPES.SEND_PGP_MIME;
-        email.isEO = sendPref.scheme === SEND_TYPES.SEND_EO;
-        email.isPinned = sendPref.pinned;
-        email.loadCryptInfo = false;
     };
 
     const syncWithoutFetching = (model, scope, onUpdate, data = null) => {
@@ -90,10 +80,8 @@ function autocompleteSyncModel(sendPreferences, autoPinPrimaryKeys, dispatchers)
                     .get(_.map(emails, 'Address'), scope.message)
                     .then((transList) => handleInvalidSigs(transList, model, scope))
                     .then((transList) => handleMissingPrimaryKeys(transList, model, scope))
-                    .then((result) =>
-                        _.each(emails, (email) => result[email.Address] && extendPGP(email, result[email.Address]))
-                    )
-                    .then(() => syncWithoutFetching(model, scope, _.noop, emails)),
+                    .then((result) => emails.map((email) => extendPGP(email, result[email.Address])))
+                    .then((newEmails) => syncWithoutFetching(model, scope, _.noop, newEmails)),
             THROTTLING_DELAY
         );
 

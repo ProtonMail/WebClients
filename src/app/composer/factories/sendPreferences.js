@@ -74,6 +74,7 @@ function sendPreferences(
         const isInternal = await isInternalUser(email);
         const settingsScheme = mailSettingsModel.get('PGPScheme');
         const settingsMime = settingsScheme === PACKAGE_TYPE.SEND_PGP_MIME ? 'multipart/mixed' : 'text/plain';
+        const ownAddress = isOwnAddress(email);
 
         if (isInternal && Keys.length) {
             return {
@@ -83,7 +84,8 @@ function sendPreferences(
                 publickeys: pmcw.getKeys(Keys[0].PublicKey),
                 primaryPinned: true,
                 scheme: PACKAGE_TYPE.SEND_PM,
-                pinned: isOwnAddress(email),
+                pinned: ownAddress,
+                ownAddress,
                 isVerified: true
             };
         }
@@ -96,6 +98,7 @@ function sendPreferences(
                 primaryPinned: true,
                 scheme: PACKAGE_TYPE.SEND_EO,
                 pinned: false,
+                ownAddress,
                 isVerified: true
             };
         }
@@ -107,6 +110,7 @@ function sendPreferences(
             primaryPinned: true,
             scheme: globalSign ? settingsScheme : PACKAGE_TYPE.SEND_CLEAR,
             pinned: false,
+            ownAddress,
             isVerified: true
         };
     };
@@ -196,6 +200,7 @@ function sendPreferences(
         info.primaryPinned = primaryPinned;
         info.isVerified = isVerified;
         info.pinned = keyObjects.length > 0;
+        info.ownAddress = false;
 
         return info;
     };

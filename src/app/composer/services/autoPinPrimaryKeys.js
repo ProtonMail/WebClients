@@ -4,25 +4,27 @@ import { getGroup } from '../../../helpers/vcard';
 
 /* @ngInject */
 function autoPinPrimaryKeys(Contact, keyCache, pmcw, contactEmails, confirmModal, gettextCatalog) {
+    const LEARN_MORE = `<a target='_blank' href='https://protonmail.com/support/knowledge-base/key-pinning/'>
+            ${gettextCatalog.getString('Learn more', null, 'Link')}
+            </a>`;
     const I18N = {
-        PROMPT_TITLE: gettextCatalog.getString('Do you want to pin the primary key?'),
+        PROMPT_TITLE: gettextCatalog.getString('Do you want to trust the primary key?'),
         promptMessage: (emails) =>
             gettextCatalog.getString(
-                'You have enabled key pinning for {{ emails }}, but no active key is pinned. ' +
-                    'You must pin the key in order to send a message to this address. ',
-                { emails: '<b>' + emails.join(', ') + '</b>' }
-            ),
+                `You have enabled Address Verification with Trusted Keys for {{ emails }}, but no active encryption keys have been Trusted.
+                 You must Trust the primary key in order to send a message to this address.`,
+                { emails: '<b>' + emails.join(', ') + '</b>' },
+                'Error'
+            ) + LEARN_MORE,
         PROMPT_TITLE_RESIGN: gettextCatalog.getString('Do you want to re-sign the contact?'),
         promptResignMessage: (emails) =>
             gettextCatalog.getString(
-                'The verification of {{ emails }} has failed: the contact is not signed correctly. ' +
-                    'You must re-sign the contact in order to send a message to this address or edit the contact. This can also happen when ' +
-                    ' you have recovered your password and reset your keys. ',
-                { emails: '<b>' + emails.join(', ') + '</b>' }
-            ) +
-            "<a target='_blank' href='https://protonmail.com/support/knowledge-base/anti-spoofing/' translate translate-context=\"Action\">" +
-            gettextCatalog.getString('Learn more') +
-            '</a>'
+                `The verification of {{ emails }} has failed: the contact is not signed correctly.
+                    You must re-sign the contact in order to send a message to this address or edit the contact. This can also happen when
+                    you have recovered your password and reset your keys.`,
+                { emails: '<b>' + emails.join(', ') + '</b>' },
+                'Warning'
+            ) + LEARN_MORE
     };
     const normalizeEmail = (email) => email.toLowerCase();
 

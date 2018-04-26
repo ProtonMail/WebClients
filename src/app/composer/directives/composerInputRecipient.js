@@ -1,4 +1,4 @@
-import { SEND_TYPES } from '../../constants';
+import extendPGP from '../../../helpers/composerIconHelper';
 
 /* @ngInject */
 function composerInputRecipient(sendPreferences, dispatchers) {
@@ -17,15 +17,7 @@ function composerInputRecipient(sendPreferences, dispatchers) {
             const updateLock = () => {
                 sendPreferences.get([scope.email.Address], scope.message).then(({ [scope.email.Address]: sendPref }) =>
                     scope.$applyAsync(() => {
-                        scope.email.encrypt = sendPref.encrypt;
-                        scope.email.sign = sendPref.sign;
-                        scope.email.isPgp = [SEND_TYPES.SEND_PGP_MIME, SEND_TYPES.SEND_PGP_INLINE].includes(
-                            sendPref.scheme
-                        );
-                        scope.email.isPgpMime = sendPref.scheme === SEND_TYPES.SEND_PGP_MIME;
-                        scope.email.isEO = sendPref.scheme === SEND_TYPES.SEND_EO;
-                        scope.email.isPinned = sendPref.pinned;
-                        scope.email.loadCryptInfo = false;
+                        scope.email = extendPGP(scope.email, sendPref);
                         dispatcher.composerInputRecipient('refresh', { email: scope.email });
                     })
                 );

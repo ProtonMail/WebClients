@@ -20,7 +20,8 @@ function messageModel(
     attachmentConverter,
     publicKeyStore,
     attachedPublicKey,
-    mailSettingsModel
+    mailSettingsModel,
+    addressesModel
 ) {
     const ENCRYPTED_HEADERS_FILENAME = gettextCatalog.getString(
         'Encrypted Headers',
@@ -52,69 +53,45 @@ function messageModel(
         ExternalID: null
     };
     const pmTypes = [
-        gettextCatalog.getString('End-to-end encrypted message', null, 'Message encryption status'),
+        gettextCatalog.getString('End-to-end encrypted', null, 'Message encryption status'),
         gettextCatalog.getString(
-            'End-to-end encrypted message from verified ProtonMail User',
+            'End-to-end encrypted from verified ProtonMail User',
             null,
             'Message encryption status'
         ),
-        gettextCatalog.getString('Incorrectly signed end-to-end encrypted message', null, 'Message encryption status')
+        gettextCatalog.getString('Sender verification failed', null, 'Message encryption status')
     ];
     const pgpTypes = [
-        gettextCatalog.getString('PGP-encrypted message', null, 'Message encryption status'),
-        gettextCatalog.getString('PGP-encrypted message from verified sender', null, 'Message encryption status'),
-        gettextCatalog.getString('Incorrectly signed PGP-encrypted message', null, 'Message encryption status')
+        gettextCatalog.getString('PGP-encrypted', null, 'Message encryption status'),
+        gettextCatalog.getString('PGP-encrypted from verified sender', null, 'Message encryption status'),
+        gettextCatalog.getString('Sender verification failed', null, 'Message encryption status')
     ];
     const clearTypes = [
-        gettextCatalog.getString('Message stored with zero access encryption', null, 'Message encryption status'),
-        gettextCatalog.getString('PGP-signed message from verified sender', null, 'Message encryption status'),
-        gettextCatalog.getString('Incorrectly signed PGP-signed message', null, 'Message encryption status')
+        gettextCatalog.getString('Stored with zero access encryption', null, 'Message encryption status'),
+        gettextCatalog.getString('PGP-signed from verified sender', null, 'Message encryption status'),
+        gettextCatalog.getString('Sender verification failed', null, 'Message encryption status')
     ];
     const encryptionTypes = [
         // 0 - None
-        [gettextCatalog.getString('Unencrypted message', null, 'Message encryption status')],
+        [gettextCatalog.getString('Unencrypted', null, 'Message encryption status')],
         // 1 - Internal
         pmTypes,
         // 2 - External
         clearTypes,
         // 3 - Out enc
         [
-            gettextCatalog.getString(
-                'Sent by ProtonMail user with end-to-end encryption',
-                null,
-                'Message encryption status'
-            ),
-            gettextCatalog.getString(
-                'Sent by verified ProtonMail user with end-to-end encryption',
-                null,
-                'Message encryption status'
-            ),
-            gettextCatalog.getString(
-                'Incorrectly signed end-to-end encrypted sent message',
-                null,
-                'Message encryption status'
-            )
+            gettextCatalog.getString('Sent by you with end-to-end encryption', null, 'Message encryption status'),
+            gettextCatalog.getString('Sent by you with end-to-end encryption', null, 'Message encryption status'),
+            gettextCatalog.getString('Sender verification failed', null, 'Message encryption status')
         ],
         // 4 - Out plain
         [
-            gettextCatalog.getString(
-                'Sent by ProtonMail user with zero access encryption',
-                null,
-                'Message encryption status'
-            ),
-            gettextCatalog.getString(
-                'Sent by verified ProtonMail user with zero access encryption',
-                null,
-                'Message encryption status'
-            ),
-            gettextCatalog.getString(
-                'Incorrectly signed sent message with zero access encryption',
-                null,
-                'Message encryption status'
-            )
+            gettextCatalog.getString('Sent by you with zero access encryption', null, 'Message encryption status'),
+            gettextCatalog.getString('Sent by you with zero access encryption', null, 'Message encryption status'),
+            gettextCatalog.getString('Sender verification failed', null, 'Message encryption status')
         ],
         // 5 - Store enc
-        [gettextCatalog.getString('Encrypted draft', null, 'Message encryption status')],
+        [gettextCatalog.getString('Encrypted', null, 'Message encryption status')],
         // 6 - EO
         pmTypes,
         // 7 - PGP/Inline
@@ -162,6 +139,12 @@ function messageModel(
 
         isPlainText() {
             return this.MIMEType === PLAINTEXT;
+        }
+
+        isSentByMe() {
+            const { Address: senderAddress } = this.Sender;
+            const addresses = addressesModel.get();
+            return addresses.some(({ Email }) => Email === senderAddress);
         }
 
         plainText() {
@@ -319,7 +302,7 @@ function messageModel(
             // decryptMessageLegacy expects message to be a string!
             const message = this.Body;
             this.decrypting = true;
-            const sender = (this.Sender || {}).Address;
+            const { Address: sender } = this.Sender || {};
 
             const getPubKeys = (sender) => {
                 // Sender can be empty

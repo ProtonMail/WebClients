@@ -3,20 +3,26 @@
         <button type="button" ng-click="ctrl.cancel()" aria-hidden="true" title-translate-context="Action" class="fa fa-times close ng-scope" title="Close"></button>
         <div class="modal-content">
             <div class="modal-header">
-                <h4 class="modal-title" translate="" translate-context="Title">
-                    Pin Public Key
+                <h4 class="modal-title" translate translate-context="Title">
+                    Trust Public Key (Address Verification)
                 </h4>
             </div>
 
             <div class="modal-body pm_form">
                 <p>
-                    <span translate>
-                        Clicking "Pin Key" will associate this public key with this contact to be used to cryptographically verify emails from this contact.
+                    <span translate translate-context="Modal message">
+                        Clicking "Trust Key" will associate this public key with this sender and emails from this address will be automatically cryptographically verified.
                     </span>
                     <a href="https://protonmail.com/support/knowledge-base/key-pinning-advanced-contact-settings/" target="_blank" class="pm_button link">Learn more</a>
                 </p>
-                <h5 translate>
-                    Public Key Information:
+                <h5>
+                    <span translate
+                        translate-context="Header">
+                        Public Key Information:
+                    </span>
+                    <span class="header-email-address">
+                        {{ ::ctrl.addresses[0].adr }}
+                    </span>
                 </h5>
                 <trust-public-key-info
                     data-key-info="ctrl.keyInfo"></trust-public-key-info>
@@ -31,7 +37,7 @@
         <div class="modal-footer text-right">
             <button type="button" class="pm_button pull-left" ng-click="ctrl.cancel()" translate="" translate-context="Action">Cancel</button>
             <button type="button" class="pm_button primary" ng-click="ctrl.submit()">
-                <span translate translate="" translate-context="Action">Pin Key</span>
+                <span translate translate="" translate-context="Action">Trust Key</span>
             </button>
         </div>
     </div>

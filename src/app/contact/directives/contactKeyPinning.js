@@ -5,8 +5,8 @@ function contactKeyPinning(gettextCatalog) {
         restrict: 'E',
         templateUrl: require('../../../templates/directives/contact/contactKeyPinning.tpl.html'),
         compile(elem) {
-            elem[0].querySelector('.contactItem-label input').value = gettextCatalog.getString(
-                'Key Pinning',
+            elem[0].querySelector('.contactItem-label-input').value = gettextCatalog.getString(
+                'Trusted Keys',
                 null,
                 'Contact item label'
             );

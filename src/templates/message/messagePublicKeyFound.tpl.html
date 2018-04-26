@@ -1,10 +1,13 @@
-<div class="public-key-found-container">
+<div class="public-key-found-container"
+    ng-class="{ 'messageExtra-container-warning': message.Verified > 1 }">
     <div class="public-key-found-notice">
-        <span class="public-key-found-notice-text" ng-if="message.IsEncrypted !== 1" translate>This message has an unknown public key attached.</span>
-        <span class="public-key-found-notice-text" ng-if="message.IsEncrypted === 1" translate>The message was signed by an unpinned public key.</span>
+        <span class="public-key-found-notice-text" ng-if="message.Verified < 2 && message.IsEncrypted !== 1" translate>This message has an unknown public key attached.</span>
+        <span class="public-key-found-notice-text" ng-if="message.IsEncrypted === 1 || message.Verified > 1" translate>
+            This message is signed by a public key that has not been trusted yet.
+        </span>
         <a class="public-key-found-notice-link" href="https://protonmail.com/support/knowledge-base/sending-a-message-using-pgppgp/" target="_blank" translate>Learn more</a>
     </div>
     <button type="button" class="public-key-found-button pm_button" translate>
-        PIN KEY
+        TRUST KEY
     </button>
 </div>

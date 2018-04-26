@@ -2,23 +2,23 @@
     <table class="contactItem-container fixedLayout">
         <thead>
             <tr>
-                <td class="invalid-key-column"></td>
-                <td translate>Fingerprint</td>
-                <td class="download-action"></td>
-                <td class="primary" translate ng-if="enableDelete === 'true'">
+                <th class="invalid-key-column"></th>
+                <th translate>Fingerprint</th>
+                <th class="download-action"></th>
+                <th class="primary" translate ng-if="enableDelete === 'true'">
                     <i class="fa fa-info-circle" pt-tooltip-translate="The primary key is used to encrypt outgoing messages.">
                     </i>
                     Primary
-                </td>
-                <td class="primary" translate ng-if="enableDelete !== 'true'">
+                </th>
+                <th class="primary" translate ng-if="enableDelete !== 'true'">
                     <i class="fa fa-info-circle" pt-tooltip-translate="This contact currently has access to this key to decrypt and sign.">
                     </i>
                     Activated
-                </td>
-                <td class="created" translate>Created</td>
-                <td class="expires" ng-if="enableDelete === 'true'" translate>Expires</td>
-                <td class="bits" translate>Type</td>
-                <td class="actions" translate>Actions</td>
+                </th>
+                <th class="created" translate>Created</th>
+                <th class="expires" ng-if="enableDelete === 'true'" translate>Expires</th>
+                <th class="bits" translate>Type</th>
+                <th class="actions" translate>Actions</th>
             </tr>
         </thead>
         <tbody>

@@ -9,19 +9,25 @@
             <icon-attachment></icon-attachment>
             <i class="fa fa-cog fa-spin listAttachments-icon-loader"></i>
             <i class="fa fa-download listAttachments-icon-download listAttachments-signature-icon"></i>
-            <div class="listAttachments-signature-warning">
+            <div class="listAttachments-signature-warning"
+                pt-tooltip-translate="Sender verification failed"
+                pt-tooltip-translate-context="Attachment modifier tooltip">
                 <span class="fa-stack fa-lg">
                     <i class="fa listAttachments-modifier-shadow fa-warning fa-stack-2x"></i>
                     <i class="fa fa-warning pt-fa-bg-white fa-stack-2x"></i>
                 </span>
             </div>
-            <div class="listAttachments-unencrypted-warning">
+            <div class="listAttachments-unencrypted-warning"
+                pt-tooltip-translate="Unencrypted PGP/Inline attachments"
+                pt-tooltip-translate-context="Attachment modifier tooltip">
                 <span class="fa-stack fa-lg">
                     <i class="fa listAttachments-modifier-shadow fa-unlock fa-stack-2x"></i>
                     <i class="fa fa-unlock fa-stack-2x"></i>
                 </span>
             </div>
-            <div class="listAttachments-signature-ok">
+            <div class="listAttachments-signature-ok"
+                pt-tooltip="Digitally signed by sender"
+                pt-tooltip-translate-context="Attachment modifier tooltip">
                     <span class="fa-stack fa-lg">
                         <i class="fa listAttachments-modifier-shadow fa-circle fa-stack-2x"></i>
                         <i class="fa fa-check-circle pt-fa-bg-white fa-stack-2x"></i>
