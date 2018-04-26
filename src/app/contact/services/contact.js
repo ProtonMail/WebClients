@@ -130,7 +130,7 @@ function Contact($http, $rootScope, url, chunk, contactEncryption, sanitize) {
         let progress = 50; // NOTE We start at 50% because the first part (encryption) is already done
         const chunkCards = chunk(cards, CONTACTS_LIMIT_UPLOAD);
         const promises = _.map(chunkCards, (Contacts) => {
-            const params = { Contacts, Groups: 1, Overwrite: 1, Labels: 1 };
+            const params = { Contacts, Groups: 1, Overwrite: 1, Labels: 0 };
 
             return $http.post(requestURL(), params).then((data) => {
                 progress += Math.floor(Contacts.length * 50 / total);
