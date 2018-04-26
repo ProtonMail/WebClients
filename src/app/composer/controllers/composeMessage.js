@@ -1,6 +1,7 @@
 import _ from 'lodash';
 
 import { MIME_TYPES, INBOX_AND_SENT, SENT, MAX_NUMBER_COMPOSER } from '../../constants';
+import { MESSAGE_DOES_NOT_EXIST } from '../constants/index';
 
 const { PLAINTEXT } = MIME_TYPES;
 
@@ -227,7 +228,10 @@ function ComposeMessageController(
             await initMessage(preparedMessage);
             await commitComposer(preparedMessage);
         } catch (e) {
-            notification.error(e);
+            // Already a nerwork activity tracker
+            if (e.Code !== MESSAGE_DOES_NOT_EXIST) {
+                notification.error(e);
+            }
         }
     });
 

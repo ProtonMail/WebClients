@@ -1,5 +1,5 @@
 /* @ngInject */
-function simpleSend(messageApi, User, ComposerRequestStatus, pmcw, srp, encryptMessage) {
+function simpleSend(messageApi, User, pmcw, srp, encryptMessage) {
     const getDraftParameters = async (message) => {
         const { Subject = '', ToList = [], CCList = [], BCCList = [], AddressID, From = {} } = message;
         const { DisplayName, Email, Keys } = From;

@@ -1,4 +1,3 @@
-import ComposerRequestStatus from './constants/ComposerRequestStatus';
 import ComposeMessageController from './controllers/composeMessage';
 import actionCompose from './directives/actionCompose';
 import btnSendMessage from './directives/btnSendMessage';
@@ -41,7 +40,6 @@ import validateMessage from './services/validateMessage';
 
 export default angular
     .module('proton.composer', ['proton.labels'])
-    .constant('ComposerRequestStatus', ComposerRequestStatus)
     .controller('ComposeMessageController', ComposeMessageController)
     .directive('actionCompose', actionCompose)
     .directive('btnSendMessage', btnSendMessage)

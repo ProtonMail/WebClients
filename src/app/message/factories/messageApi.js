@@ -2,6 +2,15 @@
 function messageApi($http, url) {
     const requestURL = url.build('messages');
 
+    const handleError = (e) => {
+        if (e.data) {
+            const error = new Error(e.data.Error);
+            error.Code = e.data.Code;
+            throw error;
+        }
+        throw e;
+    };
+
     /**
      * Send a message
      * @param  {Object} params
@@ -23,7 +32,7 @@ function messageApi($http, url) {
      * @param {String} messageID
      * @return {Promise}
      */
-    const get = (messageID = '') => $http.get(requestURL(messageID));
+    const get = (messageID = '') => $http.get(requestURL(messageID)).catch(handleError);
 
     /**
      * Get a list of message metadata
