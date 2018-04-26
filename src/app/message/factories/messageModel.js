@@ -239,7 +239,8 @@ function messageModel(
                     data: this.getDecryptedBody(),
                     publicKeys: pmcw.getKeys(publicKeys),
                     privateKeys,
-                    format: 'utf8'
+                    format: 'utf8',
+                    compression: true
                 })
                 .then(({ data }) => ((this.Body = data), data))
                 .catch((error) => {
