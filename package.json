@@ -27,7 +27,6 @@
     "cross-env": "^5.1.1",
     "css-hot-loader": "^1.3.4",
     "css-loader": "^0.28.10",
-    "cypress": "^2.1.0",
     "dedent": "^0.7.0",
     "del-cli": "^1.1.0",
     "eslint": "^4.18.1",
@@ -44,15 +43,6 @@
     "husky": "^0.14.3",
     "imagemin-mozjpeg": "^6.0.0",
     "imagemin-webpack-plugin": "^1.5.2",
-    "jasmine-core": "^2.8.0",
-    "karma": "^1.7.1",
-    "karma-babel-preprocessor": "^7.0.0",
-    "karma-chrome-launcher": "^2.2.0",
-    "karma-cli": "^1.0.1",
-    "karma-coverage": "^1.1.1",
-    "karma-jasmine": "^1.1.1",
-    "karma-junit-reporter": "^1.2.0",
-    "karma-webpack": "^2.0.11",
     "lint-staged": "^6.1.1",
     "markdown-it-attrs": "^1.2.1",
     "markdown-it-link-attributes": "^2.0.0",
@@ -61,7 +51,6 @@
     "ngtemplate-loader": "github:dhoko/ngtemplate-loader#feat/angularLoader",
     "node-sass": "^4.7.2",
     "postcss-loader": "^2.1.3",
-    "puppeteer": "^0.13.0",
     "sass-loader": "^6.0.6",
     "script-loader": "^0.7.0",
     "serve-static": "^1.10.2",
@@ -147,9 +136,9 @@
   "scripts": {
     "postinstall": "./tasks/privateDependencies.sh && ./tasks/checkDependencies.js",
     "lint": "./tasks/lint.js",
-    "e2e": "cypress run",
+    "e2e": "./tasks/lazyInstallVendor e2e && cypress run",
     "vendor": "cross-env NODE_ENV=dev tasks/buildVendor.js",
-    "pretest": "del ./build && npm run vendor && cross-env NODE_ENV=test npm run config",
+    "pretest": "./tasks/lazyInstallVendor test && del ./build && npm run vendor && cross-env NODE_ENV=test npm run config",
     "test": "cross-env NODE_ENV=test karma start test/karma.conf.js",
     "testwatch": "npm test -- --auto-watch --no-single-run",
     "postbuild:i18n": "npm run i18n",
@@ -171,7 +160,7 @@
     "pretty": "prettier --write $(find src/app -type f -name '*.js')",
     "precommit": "lint-staged",
     "create": "appComponent",
-    "cypress:open": "cypress open"
+    "cypress:open": "./tasks/lazyInstallVendor e2e && cypress open"
   },
   "lint-staged": {
     "*.js": [

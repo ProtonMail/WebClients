@@ -1,0 +1,55 @@
+#!/bin/bash
+set -eo pipefail
+
+#  Install dependencies to run an action
+#   - e2e: cypress
+#   - unit test: karma + jasmine + puppeteer
+#
+#  We install them only if they are not inside the project
+#
+#  Usage:
+#       <command> : install for both e2e and test
+#       <command> e2e : install only for e2e
+#       <command> test : install only for test
+
+args=("$@")
+
+# Install vendors to run unit tests if we don't already have them
+function testVendor {
+    if [ -d "./node_modules/karma" ]; then
+        echo "✓ We have a cache."
+    else
+        npm i karma karma-babel-preprocessor karma-chrome-launcher karma-cli karma-coverage karma-jasmine karma-junit-reporter karma-webpack jasmine-core@2.8 puppeteer@1.3;
+    fi
+}
+
+# Install cypress for e2e if it's not
+function e2eVendor {
+    if [ -d "./node_modules/cypress" ]; then
+        echo "✓ We have a cache."
+    else
+        npm i cypress@2.1;
+    fi
+}
+
+# <command> e2e
+if [ $args ] && [ "$args" == "e2e" ]; then
+    echo '➙ Installing vendor for E2E'
+    e2eVendor
+fi
+
+
+# <command> test
+if [ $args ] && [ "$args" == "test" ]; then
+    echo '➙ Installing vendor for tests'
+    testVendor
+fi
+
+# <command>
+if [ ! $args ]; then
+    echo '➙ Installing vendor for tests && e2e'
+    e2eVendor
+    testVendor
+fi
+
+
