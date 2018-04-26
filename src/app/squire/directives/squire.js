@@ -78,7 +78,11 @@ function squire(
                 if (scope.message.MIMEType === PLAINTEXT) {
                     if (forceUpdate) {
                         // The plaintext editor uses the message model so use $applyAsync
-                        scope.$applyAsync(() => scope.message.setDecryptedBody(val, false));
+                        scope.$applyAsync(() => {
+                            scope.message.setDecryptedBody(val, false);
+                            // Dispatch an event to update the message
+                            dispatchAction && dispatcher.message('updated', { message: scope.message });
+                        });
                     }
                     return;
                 }
