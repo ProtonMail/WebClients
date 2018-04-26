@@ -25,12 +25,17 @@ function wizardBuilder() {
                     placement: 'bottom',
                     trigger: 'manual'
                 });
-                $('#tour-label-settings').tooltip({
+                $('#tour-folder-dropdown').tooltip({
                     title: '2',
+                    placement: 'bottom',
+                    trigger: 'manual'
+                });
+                $('#tour-label-settings').tooltip({
+                    title: '3',
                     placement: 'right',
                     trigger: 'manual'
                 });
-                tooltips = ['#tour-label-dropdown', '#tour-label-settings'];
+                tooltips = ['#tour-label-dropdown', '#tour-label-settings', '#tour-folder-dropdown'];
                 break;
             case 4:
                 $('#tour-support').tooltip({
