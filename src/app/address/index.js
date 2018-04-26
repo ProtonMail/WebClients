@@ -5,6 +5,7 @@ import reactivateKeysBtn from './directives/reactivateKeysBtn';
 import reactivateKeys from './factories/reactivateKeys';
 import addressModel from './factories/addressModel';
 import addressWithoutKeys from './factories/addressWithoutKeys';
+import addressKeysViewModel from './factories/addressKeysViewModel';
 import addressModal from './modals/addressModal';
 import addressesModal from './modals/addressesModal';
 import setupAddressModal from './modals/setupAddressModal';
@@ -19,6 +20,7 @@ export default angular
     .factory('reactivateKeys', reactivateKeys)
     .factory('addressModel', addressModel)
     .factory('addressWithoutKeys', addressWithoutKeys)
+    .factory('addressKeysViewModel', addressKeysViewModel)
     .factory('addressModal', addressModal)
     .factory('addressesModal', addressesModal)
     .factory('setupAddressModal', setupAddressModal)
