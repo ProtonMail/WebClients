@@ -72,6 +72,7 @@ export const MOBILE_BREAKPOINT = 800;
 export const URL_INFO = 'https://mail.protonmail.com/assets/host.png';
 export const MIN_PAYPAL_AMOUNT = 500;
 export const MAX_PAYPAL_AMOUNT = 99999900;
+export const SIGNATURE_START = Math.Infinity; // TODO: when the clients were force updated
 export const MIN_BITCOIN_AMOUNT = 500;
 export const BTC_DONATION_ADDRESS = '1Q1nhq1NbxPYAbw1BppwKbCqg58ZqMb9A8';
 export const IFRAME_SECURE_ORIGIN = 'https://secure.protonmail.com';

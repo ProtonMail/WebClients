@@ -3,7 +3,6 @@
     <ul class="messageContacts-list">
        <li class="messageContacts-list-item" ng-repeat="email in model track by $id(email)">
             <span title="{{ ::email | contact:'Address' }}">
-                <message-contacts-icon></message-contacts-icon>
                 {{ ::email | contact:'Name' }}
             </span>
             <em class="messageContacts-email">{{ ::email | contact:'Address' }}
@@ -12,6 +11,7 @@
                     data-name="{{ ::email | contact:'Name' }}"
                     data-message-id="messageId"></message-address-actions>
             </em>
+            <message-contacts-icon></message-contacts-icon>
         </li>
     </ul>
 </div>

@@ -1,6 +1,7 @@
 import _ from 'lodash';
 
 import { SEND_TYPES, ENCRYPTED_STATUS } from '../../constants';
+import displaySignatureStatus from '../../../helpers/displaySignatureStatus';
 
 const CLASSNAME = {
     UNDISCLOSED: 'message-undisclosed'
@@ -173,6 +174,8 @@ function message(
             scope.toList = scope.message.ToList.map(addDefaults);
             scope.ccList = scope.message.CCList.map(addDefaults);
             scope.bccList = scope.message.BCCList.map(addDefaults);
+
+            scope.displaySignatureStatus = displaySignatureStatus(scope.message);
 
             scope.message.promptKeyPinning = false;
 

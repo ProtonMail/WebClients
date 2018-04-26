@@ -27,12 +27,15 @@ function listAttachments($state, dispatchers, attachmentDownloader) {
 
             const onClick = (e) => {
                 const { target } = e;
+                // allow pointer events on children to enable tooltips.
+                const node = ['A', 'BUTTON'].includes(target.parentNode.nodeName) ? target.parentNode : target;
+
                 // download attachment
-                if (target.nodeName === 'A') {
+                if (node.nodeName === 'A') {
                     const ID = target.getAttribute('data-attachment-id');
                     const attachment = _.find(scope.model.Attachments, { ID });
 
-                    target.classList.add(DECRYPTING_CLASSNAME);
+                    node.classList.add(DECRYPTING_CLASSNAME);
 
                     // Cf Safari
                     if (attachmentDownloader.isNotSupported(e)) {
@@ -40,22 +43,22 @@ function listAttachments($state, dispatchers, attachmentDownloader) {
                     }
 
                     attachmentDownloader
-                        .download(attachment, scope.model, target)
+                        .download(attachment, scope.model, node)
                         .then(() => {
-                            target.classList.add(DOWNLOADED_CLASSNAME);
+                            node.classList.add(DOWNLOADED_CLASSNAME);
                         })
                         .catch(() => {
-                            target.classList.remove(DECRYPTING_CLASSNAME);
+                            node.classList.remove(DECRYPTING_CLASSNAME);
                         });
                 }
 
                 // Remove attachment
-                if (target.nodeName === 'BUTTON') {
-                    const ID = target.getAttribute('data-attachment-id');
+                if (node.nodeName === 'BUTTON') {
+                    const ID = node.getAttribute('data-attachment-id');
 
                     $state.is('eo.reply') &&
                         dispatcher['attachment.upload.outside']('remove', {
-                            id: target.getAttribute('data-attachment-id'),
+                            id: node.getAttribute('data-attachment-id'),
                             message: scope.model
                         });
 

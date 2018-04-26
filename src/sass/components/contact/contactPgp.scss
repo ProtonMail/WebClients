@@ -7,7 +7,7 @@ contact-public-keys .pm_table {
         min-width: 550px;
     }
 
-    td {
+    td, th {
         padding-left: 8px;
         padding-right: 8px;
     }
@@ -47,7 +47,7 @@ contact-public-keys .pm_table {
     }
 
     .primary {
-        width: 75px;
+        width: 80px;
         text-align: center;
         button {
             text-decoration: underline;
@@ -134,8 +134,19 @@ contact-public-keys .hide-actions {
         display: block;
     }
 
+    &.pgp-external:not(.pgp-sign) .pgp-message {
+        display: block;
+    }
+
     &.pgp-internal.pgp-no-primary:not(.pgp-no-keys) .primary-key-message {
         display: block;
+    }
+
+    &.pgp-internal .address-verification-message {
+        display: block;
+    }
+    &.pgp-internal.pgp-no-primary:not(.pgp-no-keys) .address-verification-message {
+        display: none;
     }
 
     .encryption-title {

@@ -22,7 +22,7 @@ function contactUI(gettextCatalog, contactTransformLabel, mailSettingsModel) {
         address: gettextCatalog.getString('Address', null, 'Placeholder'),
         custom: gettextCatalog.getString('Custom', null),
         customField: gettextCatalog.getString('Custom field', null, 'Placeholder'),
-        htmlMimeType: gettextCatalog.getString('Composer format', null, 'MIME type'),
+        htmlMimeType: gettextCatalog.getString('Automatic', null, 'MIME type'),
         plaintextMimeType: gettextCatalog.getString('Plain Text', null, 'MIME type'),
         requireTLS: gettextCatalog.getString('Require', null, 'TLS type'),
         optionalTLS: gettextCatalog.getString('Opportunistic', null, 'TLS type'),
@@ -101,7 +101,7 @@ function contactUI(gettextCatalog, contactTransformLabel, mailSettingsModel) {
                     { value: 'text/plain', name: I18N.plaintextMimeType }
                 ];
                 UI.infoTooltip = gettextCatalog.getString(
-                    'Composer format indicates that the format in the composer is used to send to this user. Plain Text indicates that the message will always be converted to plain text on send.',
+                    'Automatic indicates that the format in the composer is used to send to this user. Plain Text indicates that the message will always be converted to plain text on send.',
                     null,
                     ''
                 );

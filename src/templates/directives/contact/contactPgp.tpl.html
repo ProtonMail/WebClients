@@ -7,14 +7,6 @@
         PGP/MIME automatically sends the message using the current composer mode.
         Please note that ProtonMail always signs PGP/MIME messages.
     </p>
-    <p class="alert alert-danger expired-key-message" translate translate-context="Info">
-        <i class="fa fa-warning"></i>
-        All uploaded keys are expired or revoked! Encryption is automatically disabled.
-    </p>
-    <p class="primary-key-message alert alert-danger" translate-context="Info" translate>
-        <i class="fa fa-lg fa-warning"></i>You have not trusted the primary public key of this user.
-        To be able to send this contact emails, first trust the primary public key.
-    </p>
     <contact-item
         ng-class="{ 'contact-disabled': internalKeys.RecipientType === 2 && (model.Encrypt[0].value || model.Sign[0].value) }"
         data-form="contactForm"
@@ -22,31 +14,52 @@
         data-datas="model.MIMEType"
         data-type="MIMEType"></contact-item>
 <div ng-if="internalKeys.RecipientType === 2" class="encryption-title">
-    <span class="main-title">Configure External PGP</span>
-    (optional)
+    <span class="main-title" translate translate-context="Subtitle advanced settings">Configure External PGP (optional)</span>
 
 </div>
 <div ng-if="internalKeys.RecipientType === 1" class="encryption-title">
-    <span class="main-title">Configure Key Pinning</span>
-    (optional)
+    <span class="main-title" translate translate-context="Subtitle advanced settings">Address Verification with Trusted Keys (optional)</span>
 </div>
-
-    <a ng-if="internalKeys.RecipientType === 1"
-       href="https://protonmail.com/support/knowledge-base/key-pinning/"
-       target="_blank"
-       class="pm_button link"
-       translate-context="Link"
-       translate>
-        Learn more
-   </a>
-    <a ng-if="internalKeys.RecipientType === 2"
-       href="https://protonmail.com/support/knowledge-base/how-to-use-pgp/"
-       target="_blank"
-       class="pm_button link"
-       translate-context="Link"
-       translate>
-        Learn more
-    </a>
+    <p class="primary-key-message alert alert-danger" translate-context="Danger" translate>
+        Address Verification with Trusted Keys is enabled for this address.
+        To be able to send to this address, first trust the primary public key.
+    </p>
+    <p class="alert alert-info address-verification-message">
+        <span translate translate-context="Info">
+            To use Address Verification, you must enable Trusted Keys and trust one or more available public keys, including the primary key for this address. This prevents the encryption keys from being faked.
+        </span>
+        <a href="https://protonmail.com/support/knowledge-base/key-pinning/"
+           target="_blank"
+           class="link"
+           translate-context="Link"
+           translate>
+            Learn more
+        </a>
+    </p>
+    <p class="alert alert-info pgp-message">
+        <span translate translate-context="Info">
+            Only change these settings if you are using PGP with non-ProtonMail recipients.
+        </span>
+        <a href="https://protonmail.com/support/knowledge-base/how-to-use-pgp/"
+           target="_blank"
+           class="link"
+           translate-context="Link"
+           translate>
+            Learn more
+        </a>
+    </p>
+    <p class="alert alert-danger expired-key-message">
+        <span translate translate-context="Info">
+            All uploaded keys are expired or revoked! Encryption is automatically disabled.
+        </span>
+        <a href="https://protonmail.com/support/knowledge-base/how-to-use-pgp/"
+           target="_blank"
+           class="link"
+           translate-context="Link"
+           translate>
+            Learn more
+        </a>
+    </p>
     <contact-item
         class="pgp-external-only item-no-keys contact-disabled"
         data-form="form"
