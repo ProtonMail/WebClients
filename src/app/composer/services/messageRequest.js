@@ -1,8 +1,10 @@
 import _ from 'lodash';
+
 import { STATUS } from '../../constants';
+import { SUCCESS, DRAFT_NOT_EXIST, MESSAGE_ALREADY_SEND } from '../constants/index';
 
 /* @ngInject */
-function messageRequest($rootScope, messageApi, ComposerRequestStatus, gettextCatalog) {
+function messageRequest($rootScope, messageApi, gettextCatalog) {
     const I18N = {
         ERROR_REQUEST_DRAFT: gettextCatalog.getString('Saving draft failed, please  try again', null, 'Error'),
         ERROR_SENDING: gettextCatalog.getString('Cannot send message', null, 'Error')
@@ -39,11 +41,11 @@ function messageRequest($rootScope, messageApi, ComposerRequestStatus, gettextCa
         try {
             const { data } = await getEditPromise(type, parameters);
 
-            if (data.Code === ComposerRequestStatus.SUCCESS || data.Code === ComposerRequestStatus.DRAFT_NOT_EXIST) {
+            if (data.Code === SUCCESS || data.Code === DRAFT_NOT_EXIST) {
                 return data;
             }
 
-            if (data.Code === ComposerRequestStatus.MESSAGE_ALREADY_SEND) {
+            if (data.Code === MESSAGE_ALREADY_SEND) {
                 return dispatch('close.message', { message });
             }
         } catch (err) {

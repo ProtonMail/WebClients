@@ -1,12 +1,12 @@
 import _ from 'lodash';
 
 import { STATUS, ENCRYPTED_STATUS, MAILBOX_IDENTIFIERS } from '../../constants';
+import { SUCCESS, DRAFT_NOT_EXIST } from '../constants/index';
 
 /* @ngInject */
 function postMessage(
     $rootScope,
     messageRequest,
-    ComposerRequestStatus,
     cache,
     notify,
     gettextCatalog,
@@ -149,7 +149,7 @@ function postMessage(
     const saveDraft = async (localMessage, { actionType, parameters, notification }) => {
         const { Message: remoteMessage, Code } = await messageRequest.draft(parameters, localMessage, actionType);
 
-        if (Code === ComposerRequestStatus.SUCCESS) {
+        if (Code === SUCCESS) {
             const conversation = cache.getConversationCached(remoteMessage.ConversationID) || {};
             const contextNumUnread = conversation.ContextNumUnread || 0;
             let numMessages;
@@ -229,7 +229,7 @@ function postMessage(
             return localMessage;
         }
 
-        if (Code === ComposerRequestStatus.DRAFT_NOT_EXIST) {
+        if (Code === DRAFT_NOT_EXIST) {
             // Case where the user delete draft in an other terminal
             delete parameters.id;
             const { data = {} } = await messageApi.createDraft(parameters);
