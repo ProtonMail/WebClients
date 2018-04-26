@@ -53,7 +53,10 @@ function ComposeMessageController(
     const save = async (message, notification = false, autosaving = false) => {
         const msg = messageModel(message);
         msg.Body = await embedded.parser(msg, { direction: 'cid' });
-        return postMessage(msg, { notification, autosaving });
+        return postMessage(msg, { notification, autosaving }).then(() => {
+            // Update the new AddressID handle after changing message.From.ID
+            message.AddressID = msg.AddressID;
+        });
     };
 
     /**

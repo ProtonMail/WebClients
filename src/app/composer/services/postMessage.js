@@ -183,6 +183,7 @@ function postMessage(
 
             localMessage.NumAttachments = localMessage.Attachments.length;
             localMessage.NumEmbedded = localMessage.countEmbedded();
+            localMessage.AddressID = remoteMessage.AddressID;
 
             remoteMessage.Senders = [remoteMessage.Sender]; // The back-end doesn't return Senders so need a trick
             remoteMessage.Recipients = _.uniq(remoteMessage.ToList.concat(remoteMessage.CCList, remoteMessage.BCCList)); // The back-end doesn't return Recipients
