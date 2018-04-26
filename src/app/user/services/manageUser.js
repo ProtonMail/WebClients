@@ -46,7 +46,7 @@ function manageUser(
      * @param  {Object} user
      * @param  {Array} keys
      * @param  {Array} dirtyAddresses  Addresses without keys
-     * @return {void}
+     * @return {Promise}
      */
     const upgradeAddresses = (user, keys = [], dirtyAddresses = []) => {
         // Use what's coming from setupKeys (:warning: some key are duplicated)
@@ -74,17 +74,17 @@ function manageUser(
             }
         }
 
-        addressesModel.set(addresses);
+        return addressesModel.set(addresses);
     };
 
-    const mergeUser = (user = {}, keys, dirtyAddresses) => {
+    const mergeUser = async (user = {}, keys, dirtyAddresses) => {
         _.each(Object.keys(user), (key) => {
             if (key !== 'Addresses') {
                 authentication.user[key] = user[key];
             }
         });
 
-        upgradeAddresses(user, keys, dirtyAddresses);
+        await upgradeAddresses(user, keys, dirtyAddresses);
         _.extend($rootScope.user, authentication.user);
         $rootScope.$broadcast('updateUser');
     };
