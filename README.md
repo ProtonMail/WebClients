@@ -10,10 +10,8 @@ We are currently working with our community to localize ProtonMail from English 
 
 ## Basic Installation
 
-> :warning: You must have node.js >= v6
-
-- `$ npm install`
-- `$ npm start`
+- `npm install`
+- `npm start`
 
 ### dependencies
   - Node.js >= v8
@@ -49,14 +47,14 @@ We are very open to bug reports via Issues as well as Pull Requests.
 ### Custom command
 
 ```
-$ npx appComponent
-$ npm run create
+npx appComponent
+npm run create
 ```
 cf [Component Generator](https://github.com/ProtonMail/componentGenerator)
 
 ## Deploy
 
-1. Create a new version + tag => `$ npm version (patch|minor|major)`.
+1. Create a new version + tag => `npm version (patch|minor|major)`.
 2. Deploy via npm `npm run deploy -- --api=X --branch=Y`.
     - `X` is the API version available in `API_TARGETS` in the `env/config.js` file
     - `Y` can be `deploy-dev`, `deploy-beta`, `deploy-prod-a` or `deploy-prod-b`.
@@ -74,7 +72,7 @@ Each `deploy-<NAME>` will be available at `<NAME>.protonmail.com`.
 > We build i18n when we create a build for beta or prod
 
 ```sh
-$ npm run i18n:build
+npm run i18n:build
 ```
 
 It will do everything you need. Import new translations first for a better result ;)
@@ -86,19 +84,19 @@ It will do everything you need. Import new translations first for a better resul
 
 To generate release notes for the latest version (tag), run the following command:
 ```sh
-$ npm run releaser:extract
+npm run releaser:extract
 ```
 
 To generate release notes for a specific version (tag), run:
 ```sh
-$ npm run releaser:extract -- --tag v3.12.24
+npm run releaser:extract -- --tag v3.12.24
 ```
 
 The release notes are outputted to `stdout`. Those notes have to be manually inserted to `CHANGELOG.md`.
 
 It is also possible to run the following command to automatically unshift the output from releaser into `CHANGELOG.md`
 ```sh
-$ npm run releaser:unshift
+npm run releaser:unshift
 ```
 
 ### Generate HTML file
@@ -131,21 +129,21 @@ For a feature
 ## Tests
 
 ```shell
-$ npm test
+npm test
 ```
 
-> To edit test it's better to run `$ npm run testwatch` (_tests with a watcher_)
+> To edit test it's better to run `npm run testwatch` (_tests with a watcher_)
 
 ## End to end testing for AngularJS
 
 Based on [The Amazing Cypress](https://www.cypress.io).
 
 Dev:
-`$ npx cypress open` or `npm run cypress:open`
+`npx cypress open` or `npm run cypress:open`
 
 CI:
 ```shell
-$ npm run e2e
+npm run e2e
 ```
 
 
