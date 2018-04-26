@@ -45,18 +45,15 @@
                         pt-tooltip-translate="Download"
                     ></button>
                 </td>
-                <td class="primary" ng-if="$index === 0 && !item.verificationOnly">
-                    <i class="fa fa-check" ng-if="!item.isExpired"></i>
-                </td>
-                <td class="primary" ng-if="$index > 0 || item.verificationOnly">
+                <td class="primary">
                     <button
                         data-action="makePrimary"
                         data-index="{{ $index }}"
-                        ng-if="!item.verificationOnly && !item.isExpired && enableDelete === 'true'">
+                        ng-if="!item.verificationOnly && $index > 0 && !item.isExpired && enableDelete === 'true'">
                         Set Primary
                     </button>
                     <i class="fa fa-check"
-                       ng-if="!item.verificationOnly  && enableDelete !== 'true'"
+                       ng-if="!item.verificationOnly && !item.isExpired && (enableDelete !== 'true' || $index === 0)"
                     ></i>
                 </td>
                 <td class="created">

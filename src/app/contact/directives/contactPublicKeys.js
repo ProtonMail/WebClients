@@ -345,7 +345,7 @@ function contactPublicKeys(
                 .then((items) =>
                     scope.$applyAsync(() => {
                         scope.BE.items = items;
-                        updateBEKeys();
+                        scope.change();
                     })
                 );
 
