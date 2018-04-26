@@ -93,7 +93,8 @@ function encryptPackages(pmcw, authentication, AttachmentLoader) {
             publicKeys: publicKeys,
             sessionKey: publicKeys.length ? undefined : await generateSessionKey(),
             privateKeys,
-            returnSessionKey: true
+            returnSessionKey: true,
+            compression: true
         });
 
         const { asymmetric: keys, encrypted } = pmcw.splitMessage(data);
@@ -119,7 +120,8 @@ function encryptPackages(pmcw, authentication, AttachmentLoader) {
             data: pack.Body,
             publicKeys,
             privateKeys,
-            returnSessionKey: true
+            returnSessionKey: true,
+            compression: true
         });
 
         const packets = pmcw.splitMessage(data);
