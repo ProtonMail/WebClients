@@ -175,6 +175,7 @@ function squire(
 
                     if (isPlainText) {
                         const plaintext = toggleModeEditor.toPlainText(scope.message, value);
+                        textarea.focus();
                         setPlaintext(textarea, plaintext);
                         setCursorStart(textarea);
                     } else {
