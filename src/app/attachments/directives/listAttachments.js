@@ -32,7 +32,7 @@ function listAttachments($state, dispatchers, attachmentDownloader) {
 
                 // download attachment
                 if (node.nodeName === 'A') {
-                    const ID = target.getAttribute('data-attachment-id');
+                    const ID = node.getAttribute('data-attachment-id');
                     const attachment = _.find(scope.model.Attachments, { ID });
 
                     node.classList.add(DECRYPTING_CLASSNAME);
