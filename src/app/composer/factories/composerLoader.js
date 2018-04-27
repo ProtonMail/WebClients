@@ -25,6 +25,11 @@ function composerLoader(dispatchers, editorModel) {
         const id = setTimeout(() => {
             clearTimeout(id);
 
+            const textarea = el.find('.plaintext-editor')[0];
+            // Even if not in plaintext mode, set the cursor to start to make it set in case the user is using tab.
+            // https://github.com/ProtonMail/Angular/issues/6918
+            setCursorStart(textarea);
+
             const { ToList = [], CCList = [], BCCList = [] } = scope.selected;
 
             if (![].concat(ToList, CCList, BCCList).length) {
@@ -45,7 +50,7 @@ function composerLoader(dispatchers, editorModel) {
             }
 
             if (message.MIMEType === PLAINTEXT) {
-                setCursorStart(el.find('.plaintext-editor')[0]);
+                textarea.focus();
                 return;
             }
 

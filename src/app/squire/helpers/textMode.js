@@ -12,8 +12,6 @@ export const setPlaintext = (textarea, plaintext) => {
  * @param textarea
  */
 export const setCursorStart = (textarea) => {
-    // Edge needs to focus the textarea before we can set the selection to the beginning.
-    textarea.focus();
     textarea.selectionStart = 0;
     textarea.selectionEnd = 0;
     textarea.scrollTop = 0;
