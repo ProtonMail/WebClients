@@ -6,6 +6,7 @@ import authHttpResponseInterceptor from './interceptors/authHttpResponseIntercep
 import helpLoginModal from './modals/helpLoginModal';
 import oldPasswordModal from './modals/oldPasswordModal';
 import loginPasswordModal from './modals/loginPasswordModal';
+import loginPasswordInput from './directives/loginPasswordInput';
 import pmcw from './providers/pmcw';
 import auth from './services/auth';
 import authApi from './services/authApi';
@@ -29,6 +30,7 @@ export default angular
     })
     .controller('LoginController', LoginController)
     .directive('loginForm', loginForm)
+    .directive('loginPasswordInput', loginPasswordInput)
     .directive('loginTwoFactorForm', loginTwoFactorForm)
     .directive('twoFaField', twoFaField)
     .factory('authHttpResponseInterceptor', authHttpResponseInterceptor)

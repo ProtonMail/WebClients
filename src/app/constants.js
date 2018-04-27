@@ -154,6 +154,11 @@ export const VCARD_TYPES = [
     'emergency'
 ];
 
+export const PASSWORD_MODE = {
+    TWO_MODE: 2,
+    ONE_MODE: 1
+};
+
 export const CONTACT_MODE = {
     ENCRYPTED_AND_SIGNED: 3,
     SIGNED: 2,
