@@ -4,7 +4,14 @@ import _ from 'lodash';
 function emailBlockList(dispatchers, gettextCatalog, spamListModel) {
     const I18N = {
         whitelist: gettextCatalog.getString('Whitelist', null, 'Info'),
-        blacklist: gettextCatalog.getString('Blacklist', null, 'Info')
+        blacklist: gettextCatalog.getString('Blacklist', null, 'Info'),
+        add: gettextCatalog.getString('Add', null, 'Action')
+    };
+
+    const getI18NText = (type) => {
+        const filterName = I18N[type];
+        const add = `<b>${I18N.add}</b>`;
+        return gettextCatalog.getString('No emails in the {{ filterName }}, click {{ add }} to add addresses to the {{ filterName }}', { filterName, add }, 'Info');
     };
 
     const SCROLL_THROTTLE = 100;
@@ -26,9 +33,12 @@ function emailBlockList(dispatchers, gettextCatalog, spamListModel) {
         link(scope, elem, { switchTo }) {
             const { on, unsubscribe } = dispatchers();
             const list = spamListModel.list(spamListModel.getType(scope.listType));
-            const tbody = elem[0].querySelector(`.${CLASSNAMES.LIST}`);
+            const scroller = elem[0].querySelector(`.${CLASSNAMES.LIST}`);
+            const warning = elem[0].querySelector('.alert-info');
 
-            scope.filterName = I18N[scope.listType];
+            warning.innerHTML = getI18NText(scope.listType);
+
+            scope.entries = [];
 
             list.get().then((list) => {
                 scope.$applyAsync(() => (scope.entries = list));
@@ -50,10 +60,10 @@ function emailBlockList(dispatchers, gettextCatalog, spamListModel) {
 
                 const elementCount = scope.entries.length;
                 const triggerFetch = elementCount - TRIGGER_BOUNDARY;
-                const scrollBottom = tbody.scrollTop + tbody.clientHeight;
+                const scrollBottom = scroller.scrollTop + scroller.clientHeight;
 
                 // check if we have reached the last TRIGGER_BOUNDARY elements
-                if (scrollBottom / tbody.scrollHeight > triggerFetch / elementCount) {
+                if (scrollBottom / scroller.scrollHeight > triggerFetch / elementCount) {
                     list.get().then((list) => {
                         scope.$applyAsync(() => {
                             scope.entries = _.uniqBy(scope.entries.concat(list), 'ID');
@@ -76,11 +86,11 @@ function emailBlockList(dispatchers, gettextCatalog, spamListModel) {
                 }
             };
 
-            tbody.addEventListener('scroll', onScroll);
+            scroller.addEventListener('scroll', onScroll);
             elem[0].addEventListener('click', onClick);
 
             scope.$on('$destroy', () => {
-                tbody.removeEventListener('scroll', onScroll);
+                scroller.removeEventListener('scroll', onScroll);
                 elem[0].removeEventListener('click', onClick);
                 unsubscribe();
                 spamListModel.clear();
