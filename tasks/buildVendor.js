@@ -15,7 +15,7 @@ const VENDOR_GLOB = makeSRC(CONFIG.vendor_files.js);
 const VENDOR_LAZY_GLOB = makeSRC(CONFIG.vendor_files.jsLazy);
 const VENDOR_LAZY2_GLOB = makeSRC(CONFIG.vendor_files.jsLazy2);
 const VENDOR_LIB_GLOB = makeSRC(glob.sync('./src/libraries/{polyfill,tweetWebIntent,mailparser}.js'));
-const [, OPENPGP] = makeSRC(CONFIG.external_files.openpgp);
+const [, OPENPGP] = makeSRC(CONFIG.externalFiles.openpgp);
 
 [
     {

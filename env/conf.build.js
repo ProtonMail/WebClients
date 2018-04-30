@@ -1,9 +1,9 @@
 const bindPrefix = (name) => `node_modules/${name}`;
 
 module.exports = {
-    external_files: {
+    externalFiles: {
         openpgp: ['openpgp/dist/openpgp.worker.min.js', 'openpgp/dist/openpgp.min.js'].map(bindPrefix),
-        manifest: ['manifest.json']
+        list: ['.htaccess', 'manifest.json', 'robots.txt']
     },
     vendor_files: {
         js: [

@@ -13,7 +13,7 @@ const CONFIG = require('../env/conf.build');
 const env = require('../env/config');
 
 const makeSRC = (list) => list.map((file) => path.resolve(file));
-const [OPENPGP_WORKER] = makeSRC(CONFIG.external_files.openpgp);
+const [OPENPGP_WORKER] = makeSRC(CONFIG.externalFiles.openpgp);
 
 const minify = () => {
     if (!env.isDistRelease()) {
@@ -46,8 +46,6 @@ const list = [
     new webpack.NamedModulesPlugin(),
     // new WebpackNotifierPlugin(),
     new CopyWebpackPlugin([
-        { from: 'src/manifest.json' },
-        { from: 'src/.htaccess' },
         { from: CONFIG.vendor_files.fonts[0], to: 'assets/fonts/' },
         { from: 'src/i18n', to: 'i18n' },
         { from: OPENPGP_WORKER, to: 'openpgp.worker.min.js' }

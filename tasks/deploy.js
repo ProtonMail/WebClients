@@ -5,6 +5,7 @@ const { exec, execVerbose } = require('./helpers/command');
 const { title, success, error } = require('./helpers/log');
 
 const { CONFIG, branch } = require('../env/config').getConfig('dist');
+const { externalFiles } = require('../env/conf.build');
 
 const setupConfig = async () => {
     const args = process.argv.slice(2).join(' ');
@@ -46,6 +47,11 @@ const i18n = async (branch) => {
     success('Build I18N');
 };
 
+const copyFiles = async () => {
+    await exec(`cp src/{${externalFiles.list.join(',')}} dist/`);
+    success('Files copied');
+};
+
 const buildApp = async () => {
     const args = process.argv.slice(2).join(' ');
     await execVerbose(`npm run dist ${args}`);
@@ -58,7 +64,7 @@ const lint = async () => {
 };
 
 const checkDependencies = async () => {
-    await execVerbose(`./tasks/checkDependencies.js`);
+    await execVerbose('./tasks/checkDependencies.js');
     success('Dependencies ok');
 };
 
@@ -77,6 +83,7 @@ const checkDependencies = async () => {
         await lint();
         await setupConfig();
         await pullDist(branch);
+        await copyFiles();
         await buildApp();
         await push(branch);
         await i18n(branch);
