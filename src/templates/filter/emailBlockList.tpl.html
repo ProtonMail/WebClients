@@ -6,38 +6,28 @@
     </header-block>
 
     <div>
-        <p class="alert alert-info" translate translate-context="Info" ng-if="entries.length === 0">
-            No emails in the <span class="email-block-list-name">{{::filterName}}</span>, click <b>Add</b> to add addresses to the <span class="email-block-list-name">{{::filterName}}</span>.
-        </p>
+        <p class="alert alert-info" translate translate-context="Info" ng-show="entries.length === 0"></p>
 
-        <div class="pm_table block-list" ng-class="{ empty: entries.length === 0 }">
-            <table class="bordered limited">
-                <tbody class="emailBlockList-list">
-                    <tr
-                        ng-repeat="entry in entries track by entry.ID"
-                        class="emailBlockList-row">
-                        <td class="blocklist-email-value">{{ ::entry.Email }}</td>
-                        <td class="text-right">
-                            <button
-                                data-entry-id="{{ ::entry.ID }}"
-                                class="pm_button link emailBlockList-btn-switch"
-                                pt-tooltip-translate-translate="Move item to another list"
-                                pt-tooltip-translate="Switch">
-                                <i class="fa fa-arrows-h"></i>
-                            </button>
-                            <button
-                                data-entry-id="{{ ::entry.ID }}"
-                                class="pm_button link emailBlockList-btn-delete"
-                                pt-tooltip-translate-translate="Remove item from the list"
-                                pt-tooltip-translate="Delete">
-                                <i class="fa fa-times text-red"></i>
-                            </button>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-
-    </div>
+        <ul class="emailBlockList-list" ng-class="{ empty: entries.length === 0 }">
+            <li
+                ng-repeat="entry in entries track by entry.ID"
+                class="emailBlockList-row">
+                <div class="emailBlocklist-row-value">{{ ::entry.Email }}</div>
+                <div class="emailBlocklist-row-actions">
+                    <button
+                        data-entry-id="{{ ::entry.ID }}"
+                        class="pm_button link emailBlockList-btn-switch"
+                        pt-tooltip-translate="Move item to the other list">
+                        <i class="fa fa-arrows-h"></i>
+                    </button>
+                    <button
+                        data-entry-id="{{ ::entry.ID }}"
+                        class="pm_button link emailBlockList-btn-delete"
+                        pt-tooltip-translate="Remove item from the list">
+                        <i class="fa fa-times text-red"></i>
+                    </button>
+                </div>
+            </li>
+        </ul>
     </div>
 </div>

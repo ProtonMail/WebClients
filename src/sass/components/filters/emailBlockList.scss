@@ -1,3 +1,39 @@
+.emailBlockList-list {
+    max-height: 300px;
+    overflow: auto;
+    display: block;
+    list-style: none;
+    padding: 0;
+    border: 1px solid $border;
+
+    &.empty {
+        border: none;
+    }
+}
+
+.emailBlockList-row {
+    position: relative;
+    display: flex;
+    padding: 0 1rem;
+    border-bottom: 1px solid #eee;
+    color: $default-color;
+
+    &:not(:last-child) td {
+        border-bottom: 1px solid rgba($border, .1);
+    }
+}
+
+.emailBlocklist-row-value {
+    flex: 1;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    margin: auto 0;
+}
+
+.emailBlocklist-row-actions {
+    overflow: hidden;
+}
+
 .emailBlockList-row { pointer-events: none }
 [class*="emailBlockList-btn"] { pointer-events: all }
 [class*="emailBlockList-btn"] * { pointer-events: none }
