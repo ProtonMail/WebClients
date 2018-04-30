@@ -1,7 +1,19 @@
 import keyAlgorithm from '../../keys/helper/keyAlgorithm';
 
 /* @ngInject */
-function addressKeysViewModel(keyInfo, pmcw) {
+function addressKeysViewModel(keyInfo, pmcw, authentication) {
+    const getDecryptedKeys = (ID) => {
+        if (ID === 'contact-keys') {
+            return authentication.user.Keys.reduce((acc, { PrivateKey, decrypted }) => {
+                if (decrypted) {
+                    const [key] = pmcw.getKeys(PrivateKey);
+                    acc.push(key);
+                }
+                return acc;
+            }, []);
+        }
+        return authentication.getPrivateKeys(ID).filter(({ primaryKey }) => primaryKey.isDecrypted);
+    };
     /**
      * From a group of addresses, massage the data in the way that the address keys view directive expects
      * with it's keys and main key as the first key.
@@ -21,6 +33,9 @@ function addressKeysViewModel(keyInfo, pmcw) {
                 return acc;
             }
 
+            const decryptedKeys = getDecryptedKeys(ID);
+            const fingerprints = decryptedKeys.map((k) => k.primaryKey.getFingerprint());
+
             const algType = keyAlgorithm.describe(Keys[0]);
             const address = {
                 order: Order,
@@ -31,7 +46,11 @@ function addressKeysViewModel(keyInfo, pmcw) {
                 created,
                 bitSize,
                 publicKey: keyObject.toPublic().armor(),
-                keys: Keys.map((key) => ({ algType: keyAlgorithm.describe(key), ...key }))
+                keys: Keys.map((key) => ({
+                    decrypted: fingerprints.some((fingerprint) => fingerprint === key.fingerprint),
+                    algType: keyAlgorithm.describe(key),
+                    ...key
+                }))
             };
 
             acc.push(address);
