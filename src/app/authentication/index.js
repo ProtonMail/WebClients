@@ -14,10 +14,12 @@ import handle401 from './services/handle401';
 import unlockUser from './services/unlockUser';
 import handle9001 from './services/handle9001';
 import handle10003 from './services/handle10003';
+import handleTryAgain from './services/handleTryAgain';
 import logoutManager from './services/logoutManager';
 import passwords from './services/passwords';
 import srp from './services/srp';
 import upgradePassword from './services/upgradePassword';
+import tryAgainModel from './factories/tryAgainModel';
 
 export default angular
     .module('proton.authentication', ['proton.utils', 'proton.keys'])
@@ -45,6 +47,8 @@ export default angular
     .factory('unlockUser', unlockUser)
     .factory('handle9001', handle9001)
     .factory('handle10003', handle10003)
+    .factory('handleTryAgain', handleTryAgain)
     .factory('passwords', passwords)
     .factory('srp', srp)
+    .factory('tryAgainModel', tryAgainModel)
     .factory('upgradePassword', upgradePassword).name;

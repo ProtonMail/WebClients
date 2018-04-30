@@ -68,9 +68,19 @@ function authHttpResponseInterceptor($q, $injector, AppModel, networkUtils) {
         },
         responseError(rejection) {
             if ((rejection.status === 0 || rejection.status === -1) && !networkUtils.isCancelledRequest(rejection)) {
-                const key = navigator.onLine === true ? 'noServer' : 'noInternet';
-                notifyError(NOTIFS[key]);
-                AppModel.set('onLine', false);
+                const handleTryAgain = $injector.get('handleTryAgain');
+                const tryAgainModel = $injector.get('tryAgainModel');
+                const { url } = rejection.config;
+
+                // Did we retry again?
+                if (tryAgainModel.check(url)) {
+                    const key = navigator.onLine === true ? 'noServer' : 'noInternet';
+
+                    notifyError(NOTIFS[key]);
+                    AppModel.set('onLine', false);
+                }
+
+                return handleTryAgain(rejection);
             } else if (rejection.status === 401) {
                 const handle401 = $injector.get('handle401');
                 return handle401(rejection);
