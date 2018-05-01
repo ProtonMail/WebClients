@@ -152,7 +152,7 @@ function encryptPackages(pmcw, authentication, AttachmentLoader) {
          * Special case: reuse the encryption packet from the draft, this allows us to do deduplication on the back-end.
          * In fact, this will be the most common case.
          */
-        const encryptPack = message.getDecryptedBody() === pack.Body ? encryptDraftBodyPackage : encryptBodyPackage;
+        const encryptPack = message.MIMEType === pack.MIMEType ? encryptDraftBodyPackage : encryptBodyPackage;
 
         const { keys, encrypted, sessionKey } = await encryptPack(
             pack,
