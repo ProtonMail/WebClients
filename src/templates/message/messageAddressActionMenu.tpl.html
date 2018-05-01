@@ -29,7 +29,7 @@
                 <span translate translate-context="Action">See contact details</span>
             </div>
         </button>
-        <button ng-if="message.isInternal && message.Type !== 2 && message.Type !== 3"
+        <button ng-if="message.isInternal && !message.isSentByMe()"
                 class="message-action-pin-public"
                 data-action="advanced-settings">
             <div>
