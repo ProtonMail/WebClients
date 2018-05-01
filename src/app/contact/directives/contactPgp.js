@@ -1,6 +1,6 @@
 import _ from 'lodash';
 
-import { PACKAGE_TYPE, RECIPIENT_TYPE } from '../../constants';
+import { PACKAGE_TYPE, RECIPIENT_TYPE, MIME_TYPES } from '../../constants';
 
 /* @ngInject */
 function contactPgp(dispatchers, pmcw, mailSettingsModel) {
@@ -31,12 +31,6 @@ function contactPgp(dispatchers, pmcw, mailSettingsModel) {
                 _.flowRight(pmcw.encode_base64, pmcw.arrayToBinaryString, pmcw.stripArmor)
             );
 
-            const fixMimeType = (encrypt, sign) => {
-                if (((encrypt || sign) && !internalUser) || scope.model.MIMEType[0].value.value !== 'text/plain') {
-                    scope.model.MIMEType[0].value = { name: 'Normal', value: 'null' };
-                }
-            };
-
             const allKeysExpired = (keys) => {
                 const keyObjects = keys
                     .map(({ value }) => value.split(','))
@@ -60,6 +54,19 @@ function contactPgp(dispatchers, pmcw, mailSettingsModel) {
                 hasScheme() && (schemeValue() === scheme || (schemeValue() === 'null' && defaultScheme === scheme));
             const isPGPInline = () => isScheme('pgp-inline');
             const isPGPMime = () => isScheme('pgp-mime');
+
+            const fixMimeType = (encrypt, sign) => {
+                if (
+                    ((encrypt || sign) && !internalUser) ||
+                    (scope.model.MIMEType[0] && scope.model.MIMEType[0].value.value !== MIME_TYPES.PLAINTEXT)
+                ) {
+                    if (!isScheme('pgp-inline')) {
+                        scope.model.MIMEType[0].value = { name: 'Normal', value: 'null' };
+                    } else {
+                        scope.model.MIMEType[0].value = { name: 'Plain text', value: MIME_TYPES.PLAINTEXT };
+                    }
+                }
+            };
 
             on('contact.item', (event, { type, data = {} }) => {
                 if (type !== 'change') {
@@ -86,6 +93,7 @@ function contactPgp(dispatchers, pmcw, mailSettingsModel) {
                         case 'Scheme':
                             toggle(element, 'pgp-inline', isPGPInline());
                             toggle(element, 'pgp-mime', isPGPMime());
+                            fixMimeType(getEncrypt(), getSign());
                             break;
                         case 'Encrypt': {
                             const encrypt = data.items[0].value;
@@ -124,6 +132,7 @@ function contactPgp(dispatchers, pmcw, mailSettingsModel) {
             toggle(element, 'pgp-mime', isPGPMime());
             toggle(element, 'pgp-encrypt', getEncrypt());
             toggle(element, 'pgp-sign', getSign());
+            fixMimeType(getEncrypt(), getSign());
 
             scope.$on('$destroy', () => {
                 unsubscribe();
