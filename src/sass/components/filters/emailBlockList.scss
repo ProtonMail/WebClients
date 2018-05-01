@@ -15,10 +15,9 @@
     position: relative;
     display: flex;
     padding: 0 1rem;
-    border-bottom: 1px solid #eee;
     color: $default-color;
 
-    &:not(:last-child) td {
+    &:not(:last-child) {
         border-bottom: 1px solid rgba($border, .1);
     }
 }
