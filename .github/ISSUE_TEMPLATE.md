@@ -1,16 +1,17 @@
-* Browser + version? Chrome / Firefox / Safari / Opera
-* OS + version? Windows / Mac OS / Linux / iOS / Android
-* Can you reproduce the problem each time? Yes / No
-* URL?
+## Expected Behavior
 
-### What steps will reproduce the problem?
 
-* 1)
-* 2)
-* 3)
+## Actual Behavior
 
-### What is the expected result?
 
-### What happens instead?
+## Steps to Reproduce the Problem
 
-### Please provide any additional information below. Attach a screenshot if possible.
+  1.
+  2.
+  3.
+
+## Specifications
+
+  - Version:
+  - Platform:
+  - URL:
