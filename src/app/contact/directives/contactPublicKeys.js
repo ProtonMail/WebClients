@@ -247,18 +247,18 @@ function contactPublicKeys(
                 return messages.join(' ');
             };
 
-            const getInfo = (key) =>
-                Promise.all([pmcw.keyInfo(key), pmcw.isExpiredKey(pmcw.getKeys(key)[0])]).then(
-                    ([result, isExpired]) => {
-                        const data = typeof key === 'string' ? pmcw.stripArmor(key) : key;
-                        result.key =
-                            'data:application/pgp-keys;base64,' + pmcw.encode_base64(pmcw.arrayToBinaryString(data));
-                        result.isExpired = isExpired;
-                        result.invalidMessage = invalidMessage(result, key);
+            const getInfo = (key) => {
+                const promises = [pmcw.keyInfo(key), pmcw.isExpiredKey(pmcw.getKeys(key)[0])];
+                return Promise.all(promises).then(([result, isExpired]) => {
+                    const data = typeof key === 'string' ? pmcw.stripArmor(key) : key;
+                    result.key =
+                        'data:application/pgp-keys;base64,' + pmcw.encode_base64(pmcw.arrayToBinaryString(data));
+                    result.isExpired = isExpired;
+                    result.invalidMessage = invalidMessage(result, key);
 
-                        return result;
-                    }
-                );
+                    return result;
+                });
+            };
 
             const getDetails = (index, keyInfo) => {
                 const created = keyInfo.created.toLocaleDateString();
@@ -288,15 +288,17 @@ function contactPublicKeys(
                 scope.UI.items[index].invalidMessage = keyInfo.invalidMessage;
             };
 
-            _.each(
-                scope.UI.items,
-                ({ value }, index) =>
-                    value &&
-                    readDataUrl(value)
-                        .then(getInfo)
-                        .then((keyInfo) => setPublicKey(index, keyInfo))
-                        .then(scope.change)
-            );
+            const promises = scope.UI.items.reduce((acc, { value }, index) => {
+                if (value) {
+                    acc.push(
+                        readDataUrl(value)
+                            .then(getInfo)
+                            .then((keyInfo) => setPublicKey(index, keyInfo))
+                    );
+                }
+                return acc;
+            }, []);
+            Promise.all(promises).then(scope.change);
 
             function addVirtual(target, item) {
                 scope.$applyAsync(() => {
@@ -363,7 +365,7 @@ function contactPublicKeys(
                     return;
                 }
 
-                Promise.all(
+                const promise = Promise.all(
                     _.map(target.files, (file) =>
                         readFile(file)
                             .then(getInfo)
@@ -433,9 +435,9 @@ function contactPublicKeys(
                         });
                     })
                     .catch(() => (target.value = ''));
-            };
 
-            scope.change();
+                networkActivityTracker.track(promise);
+            };
 
             element.on('click', onClick);
             element.on('change', onChange);
