@@ -337,6 +337,7 @@ msgid "Activate {{email}}"
 msgstr ""
 
 #. contacts toolbar menu option
+#: ./src/app/filter/directives/emailBlockList.js:8
 #: ./src/templates/address/setupAddressModal.tpl.html:15
 #: ./src/templates/contact/contactSelectorForm.tpl.html:58
 #: ./src/templates/contact/contactToolbar.tpl.html:10
@@ -4990,9 +4991,9 @@ msgctxt "Info"
 msgid "No contact found"
 msgstr ""
 
-#: ./src/templates/filter/emailBlockList.tpl.html:9
+#: ./src/app/filter/directives/emailBlockList.js:14
 msgctxt "Info"
-msgid "No emails in the <span class=\"email-block-list-name\">{{::filterName}}</span>, click <b>Add</b> to add addresses to the <span class=\"email-block-list-name\">{{::filterName}}</span>."
+msgid "No emails in the {{ filterName }}, click {{ add }} to add addresses to the {{ filterName }}"
 msgstr ""
 
 #: ./src/templates/views/payments.tpl.html:66
@@ -10282,7 +10283,7 @@ msgid ""
 "    </svg>"
 msgstr ""
 
-#: ./src/templates/filter/emailBlockList.tpl.html:21
+#: ./src/templates/filter/emailBlockList.tpl.html:17
 msgid "<i class=\"fa fa-arrows-h\"></i>"
 msgstr ""
 
@@ -10314,7 +10315,7 @@ msgstr ""
 msgid "<i class=\"fa fa-paperclip\"></i>"
 msgstr ""
 
-#: ./src/templates/filter/emailBlockList.tpl.html:28
+#: ./src/templates/filter/emailBlockList.tpl.html:23
 msgid "<i class=\"fa fa-times text-red\"></i>"
 msgstr ""
 
@@ -11210,11 +11211,11 @@ msgstr ""
 msgid "The message signature could not be verified as the signature on the contact is invalid."
 msgstr ""
 
-#: ./src/app/contact/directives/contactPublicKeys.js:415
+#: ./src/app/contact/directives/contactPublicKeys.js:417
 msgid "The public key with fingerprint %s updated."
 msgstr ""
 
-#: ./src/app/contact/directives/contactPublicKeys.js:407
+#: ./src/app/contact/directives/contactPublicKeys.js:409
 msgid "The public key with fingerprint %s was replaced with a revoked key."
 msgstr ""
 
