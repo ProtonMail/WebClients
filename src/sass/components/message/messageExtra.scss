@@ -9,6 +9,7 @@
     color: $secondary;
     font-size: .9em;
     border-radius: $border-radius;
+    min-height: 40px;
 }
 
 .messageExtra-container > [class*='-container']:not(:last-child) {
@@ -49,7 +50,6 @@
 .messageExtra-container > .messageExtra-container-warning {
     order: 0;
     border: none;
-    padding: 10px 10px 10px 0px;
 }
 
 .messageExtra-container > .messageExtra-container-error {
@@ -88,9 +88,11 @@
     line-height: normal;
 }
 
-.messageMimeParsing-container {
-    padding: 0 0 0 10px;
-}
+/* messageMimeParsing-container */
+.messageExtra-container >  .messageMimeParsing-container > [class*='-notice']::before { content: "\f0f6" }
+
+/* messageExpiration-container */
+.messageExtra-container >  .messageExpiration-container > [class*='-notice']::before { content: "\f253" }
 
 /* EO */
 
