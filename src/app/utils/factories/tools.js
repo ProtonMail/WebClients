@@ -11,7 +11,8 @@ function tools($state, $stateParams, mailSettingsModel, AppModel) {
      * @return {Integer}
      */
     const hash = (str = '') => {
-        return str.split('').reduce((prevHash, currVal) => (prevHash << 5) - prevHash + currVal.charCodeAt(0), 0);
+        // bitwise or with 0 ( | 0) makes sure we are using integer arithmetic and not floating point arithmetic
+        return str.split('').reduce((prevHash, currVal) => (prevHash * 31 + currVal.charCodeAt(0)) | 0);
     };
 
     const mobileResponsive = () => {
