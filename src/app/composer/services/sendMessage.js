@@ -6,6 +6,8 @@ import { STATUS, MAILBOX_IDENTIFIERS } from '../../constants';
 function sendMessage(
     messageModel,
     gettextCatalog,
+    embedded,
+    outsidersMap,
     encryptMessage,
     messageRequest,
     notification,
@@ -27,11 +29,20 @@ function sendMessage(
 
     const dispatchMessageAction = (message) => $rootScope.$emit('actionMessage', { data: message });
 
-    const prepare = (message, parameters) => {
+    const prepare = async (message, parameters) => {
         message.encrypting = true;
         dispatchMessageAction(message);
         parameters.id = message.ID;
         parameters.ExpirationTime = message.ExpirationTime;
+
+        // remove all the data sources
+        if (!message.isPlainText()) {
+            const body = await embedded.parser(message, {
+                direction: 'cid',
+                isOutside: outsidersMap.get(message.ID)
+            });
+            message.setDecryptedBody(body);
+        }
         return message.emailsToString();
     };
 
@@ -64,7 +75,7 @@ function sendMessage(
     };
 
     const send = async (message, parameters) => {
-        const emails = prepare(message, parameters);
+        const emails = await prepare(message, parameters);
         // we await later for parallel performance.
         const attachmentUpdates = handleAttachmentSigs(message);
 

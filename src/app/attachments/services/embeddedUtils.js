@@ -1,3 +1,5 @@
+import { toUnsignedString } from '../../../helpers/string';
+
 /* @ngInject */
 function embeddedUtils(attachmentFileFormat, tools) {
     const DIV = document.createElement('DIV');
@@ -71,7 +73,7 @@ function embeddedUtils(attachmentFileFormat, tools) {
      * @return {String} cid
      */
     const generateCid = (input, email) => {
-        const hash = tools.hash(input).toString(16);
+        const hash = toUnsignedString(tools.hash(input), 4);
         const domain = email.split('@')[1];
         return `${hash}@${domain}`;
     };
