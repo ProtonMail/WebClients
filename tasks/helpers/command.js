@@ -14,6 +14,7 @@ const execVerbose = (command) => {
         const build = execRaw(
             command,
             {
+                shell: '/bin/bash',
                 maxBuffer: 1000 * 1000 * 10 // 10 MB
             },
             callback
@@ -23,4 +24,9 @@ const execVerbose = (command) => {
     });
 };
 
-module.exports = { execVerbose, exec };
+module.exports = {
+    execVerbose,
+    exec(cmd) {
+        return exec(cmd, { shell: '/bin/bash' });
+    }
+};
