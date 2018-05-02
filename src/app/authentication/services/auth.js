@@ -278,28 +278,27 @@ function authentication(
                     RedirectURI: 'https://protonmail.com',
                     State: this.randomString(24)
                 })
-                .then(
-                    (result) => {
-                        $log.debug(result);
-                        $log.debug('/auth/cookies:', result);
-                        $log.debug('/auth/cookies1: resolved');
-                        AppModel.set('domoArigato', true);
-                        // forget the old headers, set the new ones
-                        $log.debug('/auth/cookies2: resolved');
-                        $log.debug('headers change', $http.defaults.headers);
+                .then((result) => {
+                    $log.debug(result);
+                    $log.debug('/auth/cookies:', result);
+                    $log.debug('/auth/cookies1: resolved');
+                    AppModel.set('domoArigato', true);
+                    // forget the old headers, set the new ones
+                    $log.debug('/auth/cookies2: resolved');
+                    $log.debug('headers change', $http.defaults.headers);
 
-                        saveAuthData(result.data);
+                    saveAuthData(result.data);
+                    $rootScope.isLocked = false;
 
-                        $rootScope.isLocked = false;
-
-                        return result;
-                    },
-                    (error) => {
-                        const { data = {} } = error;
-                        $log.error('setAuthCookie2', error);
-                        throw new Error(data.Error || 'Error setting authentication cookies.');
-                    }
-                );
+                    return result;
+                })
+                .catch((error) => {
+                    const { data = {} } = error;
+                    $log.error('setAuthCookie2', error);
+                    // Report issue to Sentry
+                    $exceptionHandler(data.Error || error); // NOTE: remove this line once the "Invalid access token" issue is solved
+                    throw new Error(data.Error || 'Error setting authentication cookies.');
+                });
         },
 
         loginWithCredentials(creds, initialInfoResponse) {
