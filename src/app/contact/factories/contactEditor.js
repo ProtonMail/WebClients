@@ -83,11 +83,11 @@ function contactEditor(
      */
     async function updateAndRemove({ update, remove = [] }) {
         // Total is the contact to update + the ones to remove.
-        const total = (update ? 1 : 0) + remove.length;
+        const total = remove.length + (update ? 1 : 0);
         try {
             if (update) {
                 // Update the contact.
-                await Contact.update(update);
+                await updateContact(update);
             }
 
             // Remove the other contacts.
@@ -119,11 +119,7 @@ function contactEditor(
             action.then((result) => {
                 // When a group has finished, update the progress.
                 progress += Math.floor(result.total * 100 / total);
-
-                // Emit the progress bar and that the contact has updated.
                 dispatcher.progressBar('contactsProgressBar', { progress });
-                dispatcher.contacts('contactUpdated', { contact: update });
-
                 return result;
             });
         });
@@ -147,8 +143,11 @@ function contactEditor(
         const groups = Object.keys(contacts);
         // Update and/or remove for each group of contacts.
         const actions = groups.map((group) => updateAndRemove(contacts[group]));
-        // Total is contact to update + contacts to remove
-        const total = groups.reduce((sum, group) => sum + contacts[group].remove.length + 1, 0);
+        // Total is contact to update (if any) + contacts to remove
+        const total = groups.reduce((sum, group) => {
+            const { update, remove = [] } = contacts[group];
+            return sum + remove.length + (update ? 1 : 0);
+        }, 0);
 
         // Announce the progress of each group for the contact loader modal.
         mergeProgressAnnouncer({ actions, total });
@@ -163,6 +162,9 @@ function contactEditor(
                 // To finish the loading modal.
                 dispatcher.contacts('contactsMerged', summarizedResults);
 
+                // Remove any selected contacts.
+                dispatcher.contacts('selectContacts', { isChecked: false });
+
                 // To update for the deleted contacts.
                 return eventManager.call();
             });
@@ -173,13 +175,25 @@ function contactEditor(
     }
 
     /**
-     * Edit a contact
+     * Update a contact and emit the 'contactUpdated' event.
+     * @param {Object} contact
+     * @returns {Promise}
+     */
+    function updateContact(contact) {
+        return Contact.update(contact).then((result) => {
+            const { Contact, cards } = result;
+            dispatcher.contacts('contactUpdated', { contact: Contact, cards });
+            return result;
+        });
+    }
+
+    /**
+     * Update a contact, show the success dialog and call the event manager.
      * @param {Object} contact
      * @return {Promise}
      */
     function update({ contact = {} }) {
-        const promise = Contact.update(contact).then(({ Contact, cards }) => {
-            dispatcher.contacts('contactUpdated', { contact: Contact, cards });
+        const promise = updateContact(contact).then(() => {
             notification.success(gettextCatalog.getString('Contact edited', null, 'Success message'));
             return eventManager.call();
         });
@@ -217,6 +231,9 @@ function contactEditor(
             return requestDeletion(contactIDs).then(() => {
                 notification.success(success);
                 $state.go('secured.contacts');
+
+                // Remove all selected contacts after deleting a contact.
+                dispatcher.contacts('selectContacts', { isChecked: false });
             });
         };
 
