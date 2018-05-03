@@ -152,6 +152,7 @@
     "build": "cross-env NODE_ENV=dev tasks/setupConfig.js",
     "postbuild": "npm run vendor && cross-env NODE_ENV=dev && webpack --progress",
     "deploy": "del ./dist && cross-env NODE_ENV=dist tasks/deploy.js",
+    "build:ci": "del ./dist && cross-env NODE_ENV=dist NODE_ENV_DIST=ci tasks/deploy.js",
     "postdist": "tasks/vendorCheckSum.sh",
     "releaser:extract": "releaser --config releaser.config.js --token $RELEASER_GH_TOKEN",
     "releaser:unshift": "./tasks/unshiftReleaser.sh",

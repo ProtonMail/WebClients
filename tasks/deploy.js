@@ -70,9 +70,12 @@ const checkDependencies = async () => {
 
 (async () => {
     try {
-        title(`Deploy with API: ${CONFIG.apiUrl}`);
+        // Custom local deploy for the CI
+        const isCI = process.env.NODE_ENV_DIST === 'ci';
 
-        if (!branch) {
+        title(!isCI ? `Deploy with API: ${CONFIG.apiUrl}` : `Build with API: ${CONFIG.apiUrl}`);
+
+        if (!branch && !isCI) {
             throw new Error('You must define a branch name. --branch=XXX');
         }
 
@@ -82,12 +85,15 @@ const checkDependencies = async () => {
         await checkDependencies();
         await lint();
         await setupConfig();
-        await pullDist(branch);
+        !isCI && (await pullDist(branch));
         await copyFiles();
         await buildApp();
-        await push(branch);
-        await i18n(branch);
-        success(`App deployment to ${branch} done`);
+        if (!isCI) {
+            await push(branch);
+            await i18n(branch);
+        }
+        !isCI && success(`App deployment to ${branch} done`);
+        isCI && success('Build CI app to the directory: dist');
         process.exit(0);
     } catch (e) {
         error(e);

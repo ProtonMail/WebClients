@@ -45,11 +45,18 @@ We are still in Beta and will have a more refined build process, installation in
 We are very open to bug reports via Issues as well as Pull Requests.
 
 
-### CI build for e2e
+### CI build - no minify
 
 `npm run build`
 
 > Same as `npm start` use --api to change the default api
+
+### CI build for e2e 
+
+`npm run build:ci`
+
+> Same as `npm start` use --api to change the default api
+
 
 ### Custom command
 
