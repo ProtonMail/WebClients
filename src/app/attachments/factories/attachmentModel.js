@@ -381,7 +381,7 @@ function attachmentModel(
         if (tempPacket.Inline) {
             message.NumEmbedded++;
             // CID doesn't exist when the user add an attachment
-            tempPacket.ContentID = cid || embedded.generateCid(file.name, message.From.Email);
+            tempPacket.ContentID = cid || embedded.generateCid(file.upload.uuid, message.From.Email);
         }
 
         const privateKeys = authentication.getPrivateKeys(message.AddressID);
