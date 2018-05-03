@@ -83,8 +83,9 @@ const checkDependencies = async () => {
         process.env.NODE_ENV_API = CONFIG.apiUrl;
 
         await checkDependencies();
+        isCI && (await setupConfig());
         await lint();
-        await setupConfig();
+        !isCI && (await setupConfig());
         !isCI && (await pullDist(branch));
         await copyFiles();
         await buildApp();
