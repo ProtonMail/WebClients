@@ -2,23 +2,45 @@ import _ from 'lodash';
 
 /* @ngInject */
 function contactEmails(Contact, dispatchers) {
-    const emails = [];
+    const CACHE = {
+        emails: [],
+        map: Object.create(null)
+    };
 
-    const set = (data) => emails.push(...data);
-    const get = () => angular.copy(emails);
-    const clear = () => (emails.length = 0);
-    const findIndex = (ID) => _.findIndex(emails, { ID });
+    const syncMap = (diff = []) => {
+        CACHE.map = _.reduce(
+            diff,
+            (acc, item) => {
+                if (!acc[item.ContactID]) {
+                    acc[item.ContactID] = [];
+                }
+                acc[item.ContactID].push({ ...item });
+                return acc;
+            },
+            CACHE.map
+        );
+    };
+
+    const set = (data) => {
+        CACHE.emails.push(...data);
+        syncMap(data);
+    };
+    const get = () => angular.copy(CACHE.emails);
+    const getMap = () => CACHE.map;
+    const clear = () => ((CACHE.emails.length = 0), (CACHE.map = Object.create(null)));
+
+    const findIndex = (ID) => _.findIndex(CACHE.emails, { ID });
     const findEmail = (email, normalizer = null) => {
         const norm = normalizer || _.identity;
         const normEmail = norm(email);
         const nonDefault = _.find(
-            emails,
+            CACHE.emails,
             (contactEmail) => !contactEmail.Defaults && norm(contactEmail.Email) === normEmail
         );
         if (nonDefault) {
             return nonDefault;
         }
-        return _.find(emails, (contactEmail) => norm(contactEmail.Email) === normEmail);
+        return _.find(CACHE.emails, (contactEmail) => norm(contactEmail.Email) === normEmail);
     };
 
     const { dispatcher, on } = dispatchers(['contacts']);
@@ -43,9 +65,9 @@ function contactEmails(Contact, dispatchers) {
         const index = findIndex(ID);
 
         if (index !== -1) {
-            emails[index] = contactEmail;
+            CACHE.emails[index] = contactEmail;
         } else {
-            emails.push(contactEmail);
+            CACHE.emails.push(contactEmail);
         }
 
         emit(contactEmail);
@@ -54,7 +76,7 @@ function contactEmails(Contact, dispatchers) {
     on('deleteContactEmail', (event, ID) => {
         const index = findIndex(ID);
         if (index !== -1) {
-            emails.splice(index, 1);
+            CACHE.emails.splice(index, 1);
             dispatcher.contacts('deletedContactEmail', { ID });
         }
     });
@@ -67,6 +89,6 @@ function contactEmails(Contact, dispatchers) {
         clear();
     });
 
-    return { set, get, clear, findIndex, findEmail, load: loadCache };
+    return { set, get, getMap, clear, findIndex, findEmail, load: loadCache };
 }
 export default contactEmails;
