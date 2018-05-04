@@ -80,11 +80,17 @@ function contactMerger(
      */
     function extractDuplicates(contacts = []) {
         // Flatten all emails and names from a contact into the format that duplicateExtractor expects.
-        const items = contacts.reduce((acc, contact, i) => {
-            const emails = getEmails(contact).map((email) => ({ duplicate: email, unique: i, contact }));
-            const names = [{ duplicate: cleanName(getName(contact)), unique: i, contact }];
-            return acc.concat(emails).concat(names);
-        }, []);
+        const items = _.reduce(
+            contacts,
+            (acc, contact, i) => {
+                getEmails(contact).forEach((email) => {
+                    acc.push({ duplicate: email, unique: i, contact });
+                });
+                acc.push({ duplicate: cleanName(getName(contact)), unique: i, contact });
+                return acc;
+            },
+            []
+        );
         // Extract the duplicates.
         return duplicateExtractor({
             items,
@@ -269,7 +275,7 @@ function contactMerger(
     function mergeContacts(ids = []) {
         const promise =
             ids.length >= 2
-                ? Contact.getMultiple(ids).then((data) => ({ group: data }))
+                ? Contact.getMultiple(ids).then((group) => ({ group }))
                 : Contact.exportAll().then(extractDuplicates);
 
         promise.then((duplicates) => {

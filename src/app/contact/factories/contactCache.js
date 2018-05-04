@@ -52,8 +52,7 @@ function contactCache(
         });
     };
     const lowerCase = (word = '') => word.toLowerCase();
-    const filterEmails = (emails = [], value = '') =>
-        _.filter(emails, ({ Email = '' }) => lowerCase(Email).indexOf(value) > -1);
+
     const total = () => ($stateParams.keyword ? CACHE.map.filtered.length : CACHE.contacts.length);
     const isHydrated = () => CACHE.hydrated;
 
@@ -79,7 +78,7 @@ function contactCache(
 
     function get(key = 'all') {
         if (key === 'all') {
-            return angular.copy(CACHE.contacts);
+            return CACHE.contacts;
         }
         return _.map(CACHE.map[key], (contactID) => CACHE.map.all[contactID]);
     }
@@ -90,7 +89,9 @@ function contactCache(
      */
     function hydrate(force) {
         if (isHydrated() && !force) {
-            sync();
+            const key = $state.is('secured.contacts.details') && 'contact.details';
+            const key2 = $stateParams.sort && $state.is('secured.contacts') && 'contacts.sort';
+            sync([], key || key2);
             emit();
             return Promise.resolve();
         }
@@ -127,22 +128,42 @@ function contactCache(
 
     /**
      * Sync the collection and auto select the last contact
-     * added if it exists
+     * added if it exists.
+     * Warning: the sort is expensive.
+     *     - On load/update create a full refresh of the cache
+     *     - On select contact/open contact: refresh the selected list
+     *     - On sort: refresh only the filtered list
      * @param  {Object} [ { ID }
+     * @param  {String} type: type of sync to perform
      */
-    function sync([{ ID } = {}] = []) {
-        const emails = contactEmails.get();
+    function sync([{ ID } = {}] = [], type) {
+        const MAP_EMAILS = contactEmails.getMap();
 
-        // Synchronise emails
-        CACHE.contacts = _.map(get(), (contact) => {
-            contact.Emails = _.filter(emails, { ContactID: contact.ID });
-            contact.emails = contact.Emails.map(({ Email = '' }) => Email).join(', ');
-            return contact;
-        });
+        if (type === 'contact.details' || type === 'selected') {
+            CACHE.map.selected = selected(ID);
+            return;
+        }
 
-        // Create maps
+        if (type === 'contacts.sort') {
+            CACHE.map.filtered = filtered();
+            return;
+        }
+
+        const { list, all } = _.reduce(
+            get(),
+            (acc, contact) => {
+                contact.Emails = MAP_EMAILS[contact.ID] || [];
+                contact.emails = contact.Emails.map(({ Email = '' }) => Email).join(', ');
+                acc.all[contact.ID] = { ...contact };
+                acc.list.push(acc.all[contact.ID]);
+                return acc;
+            },
+            { list: [], all: Object.create(null) }
+        );
+
+        CACHE.contacts = list;
         CACHE.map = {
-            all: _.reduce(get(), (acc, contact) => ((acc[contact.ID] = contact), acc), {}),
+            all,
             selected: selected(ID),
             filtered: filtered()
         };
@@ -213,11 +234,14 @@ function contactCache(
         hydrate();
     }
 
+    const hasEmails = (emails = [], value = '') => {
+        return _.some(emails, ({ Email = '' }) => lowerCase(Email).includes(value));
+    };
     function search(keyword = '', contacts = []) {
         const value = lowerCase(keyword);
 
         return _.filter(contacts, ({ Name = '', Emails = [] }) => {
-            return lowerCase(Name).indexOf(value) > -1 || filterEmails(Emails, value).length;
+            return lowerCase(Name).indexOf(value) > -1 || hasEmails(Emails, value);
         });
     }
 
@@ -231,16 +255,18 @@ function contactCache(
      * @param  {Array} contactIDs by default contains all contact ID
      * @param  {Boolean} isChecked check / uncheck
      */
-    function selectContacts({ contactIDs = Object.keys(CACHE.map.all), isChecked }) {
-        CACHE.contacts = _.map(get(), (contact) => {
-            if (contactIDs.indexOf(contact.ID) > -1) {
+    function selectContacts({ contactIDs = [], isChecked }) {
+        if (!contactIDs.length) {
+            CACHE.contacts = _.map(get(), (contact) => {
                 contact.selected = isChecked;
-            }
-            return contact;
-        });
+                return contact;
+            });
+        }
 
-        sync();
-        emit();
+        contactIDs.forEach((id) => {
+            CACHE.map.all[id] && (CACHE.map.all[id].selected = isChecked);
+        });
+        sync([], 'selected');
     }
 
     function contactEvents({ events = [] }) {

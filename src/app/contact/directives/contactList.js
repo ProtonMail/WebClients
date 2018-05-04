@@ -28,17 +28,19 @@ function contactList($filter, dispatchers, $state, $stateParams, contactCache, h
 
             const paginatedContacts = () => contactCache.paginate(contactCache.get('filtered'));
 
-            const setContactCursor = (id) => {
+            const setContactCursor = (id, $items) => {
                 MODEL.cursorID = id;
 
-                const $items = element.find(`.${ITEM_CLASS}`);
-                $items.removeClass(ACTIVE_CURSOR_CLASS);
+                const $rows = $items || element.find(`.${ITEM_CLASS}`);
+                $rows.removeClass(ACTIVE_CURSOR_CLASS);
 
-                const $row = element.find(`.${ITEM_CLASS}[data-contact-id="${unescape(MODEL.cursorID)}"]`);
-                $row.addClass(ACTIVE_CURSOR_CLASS);
+                const $row = $rows.has(`[data-contact-id="${unescape(MODEL.cursorID)}"]`);
 
                 // Focus the checkbox to toggle it with the "space" key
-                $row.find('.customCheckbox-input').focus();
+                _rAF(() => {
+                    $row[0].classList.add(ACTIVE_CURSOR_CLASS);
+                    $row[0].querySelector('.customCheckbox-input').focus();
+                });
             };
 
             function updateContacts() {
@@ -128,10 +130,9 @@ function contactList($filter, dispatchers, $state, $stateParams, contactCache, h
                 }
 
                 const { ID } = scope.contacts[pos];
-                setContactCursor(ID);
-
                 const $items = element.find(`.${ITEM_CLASS}`);
-                const $row = element.find(`.${ITEM_CLASS}[data-contact-id="${unescape(MODEL.cursorID)}"]`);
+                const $row = $items.has(`[data-contact-id="${unescape(MODEL.cursorID)}"]`);
+                setContactCursor(ID, $items);
 
                 if ($row.offset()) {
                     if ($row.offset().top > element[0].clientHeight) {
