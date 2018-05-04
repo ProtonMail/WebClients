@@ -1,27 +1,38 @@
 <span>
-    <span class="fa locks"
-          ng-if="!displaySignatureStatus()"
+    <a class="fa locks"
+       href="https://protonmail.com/support/knowledge-base/what-is-encrypted/"
+       target="_blank"
+          ng-if="!displaySignatureStatus() && message.IsEncrypted != '7' && message.IsEncrypted != '8'"
           ng-class="{
         'fa-lock': !(message.IsEncrypted == '0'),
         'fa-unlock-alt': !!(message.IsEncrypted == '0'),
         'text-purple': !!(message.IsEncrypted == '1') || !!(message.IsEncrypted == '3') || !!(message.IsEncrypted == '4') || !!(message.IsEncrypted == '5') || !!(message.IsEncrypted == '6') || !!(message.IsEncrypted == '10'),
-        'pgp': !!(message.IsEncrypted == '7') || !!(message.IsEncrypted == '8')
     }">
-    </span>
+    </a>
 
-    <svg class="signed-lock" viewBox="0 0 374.8 337.1"
-         ng-if="displaySignatureStatus()"
-         ng-class="{
-        'valid-sig': message.Verified === 1,
-        'invalid-sig': message.Verified !== 1,
-        'internal': !!(message.IsEncrypted == '1') || !!(message.IsEncrypted == '3') || !!(message.IsEncrypted == '4') || !!(message.IsEncrypted == '5') || !!(message.IsEncrypted == '6') || !!(message.IsEncrypted == '10'),
-        'pgp': !!(message.IsEncrypted == '7') || !!(message.IsEncrypted == '8'),
-    }">
-        <use ng-if="message.Verified === 1"
-             xmlns:xlink="http://www.w3.org/1999/xlink"
-             xlink:href="#svg-lock-signed"></use>
-        <use ng-if="message.Verified !== 1"
-             xmlns:xlink="http://www.w3.org/1999/xlink"
-             xlink:href="#svg-lock-warning"></use>
-    </svg>
+    <a class="fa locks fa-lock pgp"
+       href="https://protonmail.com/support/knowledge-base/how-to-use-pgp"
+       target="_blank"
+          ng-if="!displaySignatureStatus() && (message.IsEncrypted == '7' || message.IsEncrypted == '8')">
+    </a>
+
+    <a href="https://protonmail.com/support/knowledge-base/digital-signature/"
+       target="_blank"
+       ng-if="displaySignatureStatus()"
+    >
+        <svg class="signed-lock" viewBox="0 0 374.8 337.1"
+             ng-class="{
+            'valid-sig': message.Verified === 1,
+            'invalid-sig': message.Verified !== 1,
+            'internal': !!(message.IsEncrypted == '1') || !!(message.IsEncrypted == '3') || !!(message.IsEncrypted == '4') || !!(message.IsEncrypted == '5') || !!(message.IsEncrypted == '6') || !!(message.IsEncrypted == '10'),
+            'pgp': !!(message.IsEncrypted == '7') || !!(message.IsEncrypted == '8'),
+        }">
+            <use ng-if="message.Verified === 1"
+                 xmlns:xlink="http://www.w3.org/1999/xlink"
+                 xlink:href="#svg-lock-signed"></use>
+            <use ng-if="message.Verified !== 1"
+                 xmlns:xlink="http://www.w3.org/1999/xlink"
+                 xlink:href="#svg-lock-warning"></use>
+        </svg>
+    </a>
 </span>

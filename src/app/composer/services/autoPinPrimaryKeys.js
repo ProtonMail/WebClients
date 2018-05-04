@@ -4,7 +4,7 @@ import { getGroup } from '../../../helpers/vcard';
 
 /* @ngInject */
 function autoPinPrimaryKeys(Contact, keyCache, pmcw, contactEmails, confirmModal, gettextCatalog) {
-    const LEARN_MORE = `<a target='_blank' href='https://protonmail.com/support/knowledge-base/key-pinning/'>
+    const LEARN_MORE = `<a target='_blank' href='https://protonmail.com/support/knowledge-base/address-verification/'>
             ${gettextCatalog.getString('Learn more', null, 'Link')}
             </a>`;
     const I18N = {

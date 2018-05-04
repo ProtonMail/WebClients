@@ -369,7 +369,13 @@
                         color: $pgp;
                     }
                 }
-
+                a {
+                    text-decoration: none;
+                }
+                svg {
+                    // Make click events trigger on the parent <a> so that it doesn't toggle the message
+                    pointer-events: none;
+                }
                 .signed-lock {
                     fill: $default-color-medium;
                     display: inline-block;
