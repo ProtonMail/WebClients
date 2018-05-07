@@ -31,7 +31,7 @@ function contactPgp(dispatchers, pmcw, mailSettingsModel) {
                 _.flowRight(pmcw.encode_base64, pmcw.arrayToBinaryString, pmcw.stripArmor)
             );
 
-            const allKeysExpired = (keys) => {
+            const allKeysExpired = (keys = []) => {
                 const keyObjects = keys
                     .map(({ value }) => value.split(','))
                     .map(([, base64 = '']) => base64)
@@ -48,7 +48,7 @@ function contactPgp(dispatchers, pmcw, mailSettingsModel) {
             const getEncrypt = () => scope.model.Encrypt && scope.model.Encrypt.length && scope.model.Encrypt[0].value;
             const getSign = () => scope.model.Sign && scope.model.Sign.length && scope.model.Sign[0].value;
 
-            const hasScheme = () => scope.model.Scheme && scope.model.Scheme.length > 0;
+            const hasScheme = () => scope.model.Scheme && scope.model.Scheme.length > 0 && !internalUser;
             const schemeValue = () => scope.model.Scheme[0].value.value;
             const isScheme = (scheme) =>
                 hasScheme() && (schemeValue() === scheme || (schemeValue() === 'null' && defaultScheme === scheme));
@@ -56,6 +56,9 @@ function contactPgp(dispatchers, pmcw, mailSettingsModel) {
             const isPGPMime = () => isScheme('pgp-mime');
 
             const fixMimeType = (encrypt, sign) => {
+                if (!scope.model || !scope.model.MIMEType) {
+                    return;
+                }
                 if (
                     ((encrypt || sign) && !internalUser) ||
                     (scope.model.MIMEType[0] && scope.model.MIMEType[0].value.value !== MIME_TYPES.PLAINTEXT)
@@ -119,14 +122,15 @@ function contactPgp(dispatchers, pmcw, mailSettingsModel) {
                 });
             });
 
-            allKeysExpired(scope.model.Key).then((keysExpired) =>
-                toggle(element, 'pgp-expired', !scope.model.Key || keysExpired)
-            );
-            toggle(element, 'pgp-no-keys', !_.some(scope.model.Key, ({ value }) => value));
+            // Get keys or [], can be undefined when advanced settings are toggled on a contact which you added an external email address
+            const keys = scope.model.Key || [];
+
+            allKeysExpired(keys).then((keysExpired) => toggle(element, 'pgp-expired', !scope.model.Key || keysExpired));
+            toggle(element, 'pgp-no-keys', !_.some(keys, ({ value }) => value));
             toggle(
                 element,
                 'pgp-no-primary',
-                !unarmoredKeys.some((k) => scope.model.Key.map(({ value }) => value.split('base64,')[1]).includes(k))
+                !unarmoredKeys.some((k) => keys.map(({ value }) => value.split('base64,')[1]).includes(k))
             );
             toggle(element, 'pgp-inline', isPGPInline());
             toggle(element, 'pgp-mime', isPGPMime());
