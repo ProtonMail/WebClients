@@ -15,6 +15,11 @@ const conversationView = ($state, $stateParams, cache, tools) => ({
             $state.go(route, { id: null });
         }
 
+        // Prevent coming from no where #6939
+        if (!ID) {
+            $state.go('secured.inbox');
+        }
+
         cache.getConversation(conversationID).then((conversation) => {
             const label = _.find(conversation.Labels, { ID });
 
