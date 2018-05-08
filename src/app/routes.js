@@ -257,7 +257,7 @@ export default angular
                 },
                 views: {
                     'panel@support': {
-                        templateUrl: require('../templates/views/support-message.tpl.html')
+                        template: '<support-message></support-message>'
                     }
                 }
             })
