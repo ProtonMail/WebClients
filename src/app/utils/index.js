@@ -9,6 +9,7 @@ import desktopNotifications from './factories/desktopNotifications';
 import readDataUrl from './factories/readDataUrl';
 import resurrecter from './factories/resurrecter';
 import tools from './factories/tools';
+import goAndReload from './factories/goAndReload';
 import bytes from './filters/bytes';
 import capitalize from './filters/capitalize';
 import currency from './filters/currency';
@@ -49,6 +50,7 @@ export default angular
     .factory('readDataUrl', readDataUrl)
     .factory('resurrecter', resurrecter)
     .factory('tools', tools)
+    .factory('goAndReload', goAndReload)
     .filter('bytes', bytes)
     .filter('capitalize', capitalize)
     .filter('currency', currency)
