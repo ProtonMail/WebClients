@@ -21,20 +21,24 @@ function autocompleteSyncModel(sendPreferences, autoPinPrimaryKeys, dispatchers)
         return _.map(list, (email) => _.extend({}, oldEmailsMap[email.Address], email));
     };
 
-    const syncWithoutFetching = (model, scope, onUpdate, data = null) => {
+    const syncWithoutFetching = (model, scope, data = null) => {
         const list = model.all();
         const emails = extendPGPFromOldData(list, data || scope.emails);
 
         addLoadingFlags(emails);
 
-        scope.$applyAsync(() => {
-            scope.emails = emails;
-            scope.list = list;
-            dispatcher.autocompleteEmails('refresh', { messageID: scope.message.ID });
-            onUpdate();
+        /*
+         * We want the autocompleteEmails event to resolve after the scope has been executed: otherwise the email
+         * change has not been fully propagate to the elements that are receiving this change and the tooltip will get stuck
+         * on "Loading encryption info...". Cf. 6953
+         */
+        return new Promise((resolve) => {
+            scope.$applyAsync(() => {
+                scope.emails = emails;
+                scope.list = list;
+                resolve(emails);
+            });
         });
-
-        return emails;
     };
 
     const handleMissingPrimaryKeys = async (transList, model) => {
@@ -81,13 +85,14 @@ function autocompleteSyncModel(sendPreferences, autoPinPrimaryKeys, dispatchers)
                     .then((transList) => handleInvalidSigs(transList, model, scope))
                     .then((transList) => handleMissingPrimaryKeys(transList, model, scope))
                     .then((result) => emails.map((email) => extendPGP(email, result[email.Address])))
-                    .then((newEmails) => syncWithoutFetching(model, scope, _.noop, newEmails)),
+                    .then((newEmails) => syncWithoutFetching(model, scope, newEmails))
+                    .then(() => dispatcher.autocompleteEmails('refresh', { messageID: scope.message.ID })),
             THROTTLING_DELAY
         );
 
-        return (forceRefresh = false) =>
-            scope.$applyAsync(() => {
-                const emails = syncWithoutFetching(model, scope, onUpdate);
+        return (forceRefresh = false) => {
+            syncWithoutFetching(model, scope).then((emails) => {
+                onUpdate();
 
                 if (!forceRefresh && !_.some(emails, ({ loadCryptInfo }) => loadCryptInfo)) {
                     return;
@@ -95,6 +100,7 @@ function autocompleteSyncModel(sendPreferences, autoPinPrimaryKeys, dispatchers)
 
                 throttleSync(scope, emails, model);
             });
+        };
     };
 
     return { generate };

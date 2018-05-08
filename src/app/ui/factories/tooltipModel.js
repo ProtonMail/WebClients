@@ -19,6 +19,10 @@ function tooltipModel() {
         }
     }
 
-    return { add, update };
+    const remove = (element) => element.tooltip('destroy');
+    const hide = (element) => element.tooltip('hide');
+    const hideAll = () => $('.tooltip').tooltip('hide');
+
+    return { add, update, remove, hide, hideAll };
 }
 export default tooltipModel;

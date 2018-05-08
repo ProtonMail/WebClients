@@ -3,7 +3,7 @@ import _ from 'lodash';
 import { MAILBOX_IDENTIFIERS } from '../../constants';
 
 /* @ngInject */
-function ptStar($rootScope, gettextCatalog, tools, actionConversation) {
+function ptStar($rootScope, tooltipModel, tools, actionConversation) {
     /**
      * Check in LabelIDs and Labels to see if the conversation or message is starred
      * @param {Object} item
@@ -61,7 +61,6 @@ function ptStar($rootScope, gettextCatalog, tools, actionConversation) {
 
             scope.$on('$destroy', () => {
                 el.off('click', onClick);
-                $('.tooltip').remove(); // Clear all tooltips when we destroy a conversation cf #3513
             });
         }
     };
