@@ -43,7 +43,8 @@ function SetupController(
         // Save password in separate variable to prevent extensions/etc
         // from modifying it during setup process
         passwordCopy = $scope.model.password;
-        const promise = setupAddress()
+        const promise = tryToLogin()
+            .then(setupAddress)
             .then(generateKeys)
             .then(installKeys)
             .then(doGetUserInfo)
@@ -53,6 +54,21 @@ function SetupController(
             $scope.setupError = true;
         });
     };
+
+    /**
+     * Try to login for ProtonVPN user to detect if the password entered is correct
+     * @return {Promise}
+     */
+    function tryToLogin() {
+        if (!$scope.vpnEnabled) {
+            return Promise.resolve();
+        }
+
+        return authentication.loginWithCredentials({
+            Username: user.Name,
+            Password: passwordCopy
+        });
+    }
 
     async function setupAddress() {
         $scope.filling = false;
