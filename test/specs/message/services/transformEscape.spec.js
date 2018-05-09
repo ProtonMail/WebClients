@@ -77,10 +77,26 @@ describe('transformEscape service', () => {
         <div style="width: 500px; height: 500px; content: &quot; ass &quot;; background:url(https://i.imgur.com/WScAnHr.jpg);">ddewdwed</div>
         <div style="width: 500px; height: 120px; content: &quot; ass &quot;; background:&#117;&#114;&#108;(https://i.imgur.com/WScAnHr.jpg);">ddewdwed</div>
         <div style="width: 500px; height: 120px; content: &quot; ass &quot;; background:&#117;r&#108;(https://i.imgur.com/WScAnHr.jpg);">ddewdwed</div>
+        <div style="width: 500px; height: 120px; content: &quot; ass &quot;; background: u&#114l(https://i.imgur.com/WScAnHr.jpg);">ddewdwed</div>
         <div style="width: 500px; height: 500px; content: &quot; ass &quot;; background:url&#x00028;https://i.imgur.com/WScAnHr.jpg);">ddewdwed</div>
         <div style="width: 500px; height: 500px; content: &quot; ass &quot;; background:url&lpar;https://i.imgur.com/WScAnHr.jpg);">ddewdwed</div>
         <div style="width: 500px; height: 456px; content: &quot; ass &quot;; background:url&#40;https://i.imgur.com/WScAnHr.jpg);">ddewdwed</div>
         `;
+
+    const BACKGROUND_URL_OCTAL_HEX_ENCODING = `
+        <div style="background: \\75&#114\\6C('https://TRACKING1/')">test1</div>
+        <div style="background: \\75&#114;\\6C('https://TRACKING2/')">test2</div>
+        <div style="background: \\75r&#108('https://TRACKING3/')">test3</div>
+        <div style="background: &#117r\\6c('https://TRACKING4/')">test4</div>
+        <div style="background: &#117r\\6c('https://TRACKING4/')">test4</div>
+        <div style="background: \\75 \\72 \\6C ('https://TRACKING5/')">test5</div>
+        <div style="background: \\75\\72\\6c ('https://TRACKING6/')">test6</div>
+        <div style="background: \\75\\72\\6C('https://TRACKING7/')">test7</div>
+        <div style="background: \\75\\72\\6c('https://TRACKING8/')">test8</div>
+        <div style="background: \x75\x72\x6C('https://TRACKING9/')">test9</div>
+        <div style="background: \u0075\u0072\u006c('https://TRACKING10/')">test10</div>
+        `;
+
     const BACKGROUND_URL_SAFE = `
         <span>url('dewd')</span>
         <span>style="dewdw" url('dewd')</span>
@@ -304,6 +320,17 @@ describe('transformEscape service', () => {
         it('should escape encoded url with escape standard wtf', () => {
             const html = factory(document.createElement('DIV'), null, {
                 content: BACKGROUND_URL_ESCAPED_WTF2
+            });
+            const list = getList(html);
+
+            list.forEach((key) => {
+                expect(key).toMatch(/proton-/);
+            });
+        });
+
+        it('should escape octal and hex encoded urls with escape', () => {
+            const html = factory(document.createElement('DIV'), null, {
+                content: BACKGROUND_URL_OCTAL_HEX_ENCODING
             });
             const list = getList(html);
 

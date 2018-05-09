@@ -27,3 +27,22 @@ export const toUnsignedString = (val, bits) => {
     const middleString = '0'.repeat(padLength);
     return topString + middleString + bottomString;
 };
+
+/**
+ * Unescape a string in hex or octal encoding. Taken from https://github.com/mathiasbynens/cssesc/issues/14
+ * because no node module exists yet.
+ * @param {String} str
+ * @returns {String} escaped string
+ */
+export const unescapeEncoding = (str) => {
+    // Regexp declared inside the function to reset its state (because of the global flag).
+    // cf https://stackoverflow.com/questions/1520800/why-does-a-regexp-with-global-flag-give-wrong-results
+    const HEX_ESC = /\\(?:([0-9a-fA-F]{6})|([0-9a-fA-F]{1,5})(?: |(?![0-9a-fA-F])))/g;
+    const OTHER_ESC = /\\(.)/g;
+    const strUnescapedHex = str.replace(HEX_ESC, (_, hex1, hex2) => {
+        const hex = hex1 || hex2;
+        const code = parseInt(hex, 16);
+        return String.fromCodePoint(code);
+    });
+    return strUnescapedHex.replace(OTHER_ESC, (_, char) => char);
+};
