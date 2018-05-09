@@ -1,6 +1,7 @@
 import _ from 'lodash';
 
 import transformBase from './transformBase';
+import { unescapeEncoding } from '../../../helpers/string';
 
 /* @ngInject */
 function transformEscape() {
@@ -23,9 +24,9 @@ function transformEscape() {
     }
 
     const matchURLS = getPermutation([
-        ['&#117;', 'u'],
-        ['&#114;', 'r', '\\&#114;'],
-        ['&#108;', 'l', '\\&#108;', '\\l']
+        ['&#117', '&#117;', 'u'],
+        ['&#114', '&#114;', 'r', '\\&#114;'],
+        ['&#108', '&#108;', 'l', '\\&#108;', '\\l']
     ]);
 
     /**
@@ -110,17 +111,19 @@ function transformEscape() {
     const escapeURLinStyle = (style) => {
         // handle the case where the value is html encoded, e.g.:
         // background:&#117;rl(&quot;https://i.imgur.com/WScAnHr.jpg&quot;)
-        const decodedStyle = _.unescape(style);
-        const encodeFlag = decodedStyle !== style;
+        const unescapedHtml = _.unescape(style);
+        const escapeFlag = unescapedHtml !== style;
 
-        const escapedStyle = decodedStyle.replace(/\\r/g, 'r').replace(REGEXP_URL_ATTR, 'proton-url(');
+        const unescapedEncoding = unescapeEncoding(unescapedHtml);
 
-        if (escapedStyle === decodedStyle) {
+        const escapedStyle = unescapedEncoding.replace(/\\r/g, 'r').replace(REGEXP_URL_ATTR, 'proton-url(');
+
+        if (escapedStyle === unescapedEncoding) {
             // nothing escaped: just return input
             return style;
         }
 
-        return encodeFlag ? _.escape(escapedStyle) : escapedStyle;
+        return escapeFlag ? _.escape(escapedStyle) : escapedStyle;
     };
 
     const escapeURL = (input, action) => {
