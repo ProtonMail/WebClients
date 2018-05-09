@@ -5,10 +5,21 @@ import updateCollection from '../../utils/helpers/updateCollection';
 const { PREMIUM } = ADDRESS_TYPE;
 
 /* @ngInject */
-function addressesModel(Address, authentication, dispatchers, keyInfo) {
+function addressesModel(Address, authentication, dispatchers, keyInfo, pmcw) {
     const { dispatcher, on } = dispatchers(['addressesModel']);
     let CACHE = {};
     const sortByOrder = (addresses = []) => _.sortBy(addresses, 'Order');
+
+    /**
+     * Prepare a key by adding information and generating the corresponding public key to the key object.
+     * @param {Object} key
+     */
+    const formatKey = (key) => {
+        return keyInfo(key).then((key) => {
+            const [k] = pmcw.getKeys(key.PrivateKey);
+            return { ...key, PublicKey: k.toPublic().armor() };
+        });
+    };
     /**
      * Prepare addresses to add information in each keys
      * @param  {Array} addresses
@@ -17,7 +28,7 @@ function addressesModel(Address, authentication, dispatchers, keyInfo) {
     const formatKeys = (addresses = []) => {
         const promises = addresses.reduce((acc, address) => {
             const { Keys = [] } = address;
-            const pKeys = Promise.all(Keys.map(keyInfo));
+            const pKeys = Promise.all(Keys.map(formatKey));
 
             return acc.concat(pKeys.then((keys) => ({ ...address, Keys: keys })));
         }, []);
