@@ -110,7 +110,7 @@
                     <legend translate-context="Title" translate translate-context="Title">Actions</legend>
                     <label>
                         <custom-checkbox data-custom-ng-model="ctrl.hasLabels"></custom-checkbox>
-                        <span translate-context="Filter modal label" translate>Apply Labels</span>
+                        <span translate-context="Filter modal label" translate>Apply labels</span>
                     </label>
 
                     <div class="alert pm_grid filter-modal-label-container" ng-show="ctrl.hasLabels">
@@ -128,7 +128,7 @@
 
                     <label>
                         <custom-checkbox data-custom-ng-model="ctrl.hasMove"></custom-checkbox>
-                        <span translate-context="Filter modal label" translate>Move To</span>
+                        <span translate-context="Filter modal label" translate>Move to</span>
                     </label>
 
                     <div class="alert pm_grid" ng-show="ctrl.hasMove">
@@ -175,7 +175,7 @@
 
                     <label>
                         <custom-checkbox data-custom-ng-model="ctrl.hasMark"></custom-checkbox>
-                        <span translate-context="Filter modal label" translate>Mark As</span>
+                        <span translate-context="Filter modal label" translate>Mark as</span>
                     </label>
 
                     <div class="alert pm_grid" ng-show="ctrl.hasMark">
@@ -195,6 +195,21 @@
 
                     </div>
 
+                    <div ng-show="::ctrl.isPaid">
+                        <label>
+                            <custom-checkbox data-custom-ng-model="ctrl.hasVacation"></custom-checkbox>
+                            <span translate-context="Filter modal label" translate>Send auto reply</span>
+                        </label>
+
+                        <div class="alert pm_grid" ng-show="ctrl.hasVacation">
+                            <squire id="vacationMessage"
+                                class="no-resize error_tooltip"
+                                allow-data-uri="true"
+                                data-value="ctrl.filter.Simple.Actions.Vacation"
+                                data-type-content="OOF-Message"
+                            ></squire>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

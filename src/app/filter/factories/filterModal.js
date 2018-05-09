@@ -14,7 +14,8 @@ function filterModal(
     eventManager,
     labelModal,
     labelsModel,
-    sieveLint
+    sieveLint,
+    userType
 ) {
     const TRANSLATIONS = {
         TYPES: [
@@ -79,9 +80,11 @@ function filterModal(
             const ctrl = this;
             const model = angular.copy(params.filter);
 
+            ctrl.isPaid = userType().isPaid;
             ctrl.hasLabels = false;
             ctrl.hasMove = false;
             ctrl.hasMark = false;
+            ctrl.hasVacation = false;
             ctrl.folders = foldersOrdered;
 
             ctrl.types = angular.copy(TRANSLATIONS.TYPES);
@@ -140,21 +143,23 @@ function filterModal(
              * @return {Object} actions
              */
             function prepareActions({ Simple = {} } = {}) {
-                const { FileInto = [], Mark = { Read: false, Starred: false } } = Simple.Actions || {};
+                const { FileInto = [], Mark = { Read: false, Starred: false }, Vacation = '' } = Simple.Actions || {};
                 const move = findCurrentMoveFolder(FileInto);
-                ctrl.hasMove = !!move;
-                ctrl.hasMark = Mark.Read || Mark.Starred;
-
                 const actions = {
                     Labels: labelsOrdered.map((label) => {
                         label.Selected = FileInto.indexOf(label.Name) !== -1;
                         return label;
                     }),
                     Move: move || 'inbox',
+                    Vacation,
                     Mark
                 };
 
+                ctrl.hasMove = !!move;
+                ctrl.hasVacation = !!Vacation;
+                ctrl.hasMark = Mark.Read || Mark.Starred;
                 ctrl.hasLabels = !!_.filter(actions.Labels, { Selected: true }).length;
+
                 return actions;
             }
 
@@ -311,7 +316,7 @@ function filterModal(
                     pass = pass && attachmentsCondition <= 1;
 
                     // Check actions
-                    pass = pass && (ctrl.hasLabels || ctrl.hasMove || ctrl.hasMark);
+                    pass = pass && (ctrl.hasLabels || ctrl.hasMove || ctrl.hasMark || ctrl.hasVacation);
 
                     if (ctrl.hasLabels === true) {
                         pass = pass && _.filter(ctrl.filter.Simple.Actions.Labels, { Selected: true }).length > 0;
@@ -324,6 +329,10 @@ function filterModal(
 
                     if (ctrl.hasMove === true) {
                         pass = pass && !!ctrl.filter.Simple.Actions.Move;
+                    }
+
+                    if (ctrl.hasVacation === true) {
+                        pass = pass && !!ctrl.filter.Simple.Actions.Vacation;
                     }
 
                     return pass;
@@ -424,6 +433,10 @@ function filterModal(
                         clone.Simple.Actions.Mark = { Read: false, Starred: false };
                     }
 
+                    if (ctrl.hasVacation === false) {
+                        clone.Simple.Actions.Vacation = '';
+                    }
+
                     if (ctrl.hasLabels === true) {
                         const labels = _.filter(clone.Simple.Actions.Labels, ({ Selected }) => Selected === true).map(
                             ({ Name }) => Name
@@ -437,6 +450,7 @@ function filterModal(
 
                     clone.Simple.Actions.FileInto = bindFileInto(clone.Simple.Actions);
                     delete clone.Simple.Actions.Move;
+                    delete clone.Simple.Actions.Vacation;
                 }
 
                 networkActivityTracker.track(requestUpdate(clone));
