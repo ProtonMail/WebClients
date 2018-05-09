@@ -36,12 +36,6 @@
                     <span translate translate-context="Title">Password</span>
                 </label>
 
-                <p
-                    ng-if="vpnEnabled >= 1"
-                    class="alert alert-info"
-                    translate-context="Info"
-                    translate>The password you set here will also be your new ProtonVPN account password.</p>
-
                 <p class="help" translate-context="Info" translate>This is used to encrypt and decrypt your messages. Do not lose this password--we cannot recover it.</p>
 
                 <password
@@ -49,15 +43,16 @@
                     data-id="password"
                     data-name="password"
                     data-value="model.password"
-                    placeholder-translate="Choose a mailbox password"
+                    placeholder-translate="Enter your existing Proton password"
                     data-form="setup"></password>
 
                 <password
+                    ng-if="!vpnEnabled"
                     class="loginSetup-field-password"
                     data-id="passwordc"
                     data-name="passwordc"
                     data-value="model.passwordConfirm"
-                    data-compare="password"
+                    data-compare="model.password"
                     placeholder-translate="Confirm mailbox password"
                     data-form="setup"></password>
 
