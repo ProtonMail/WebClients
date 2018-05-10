@@ -1,5 +1,5 @@
 import _ from 'lodash';
-import { flow, filter, each, map, head, maxBy } from 'lodash/fp';
+import { flow, filter, each, map, head, maxBy, uniq } from 'lodash/fp';
 
 import { STATUS, MAILBOX_IDENTIFIERS, CONVERSATION_LIMIT, ELEMENTS_PER_PAGE, MESSAGE_LIMIT } from '../../constants';
 
@@ -29,6 +29,7 @@ function cache(
     let conversationsCached = []; // In this array we store the conversations cached
     const dispatcher = [];
     const timeCached = {};
+    const missingConversations = [];
 
     const { inbox, allDrafts, drafts, allSent, sent, trash, spam, allmail, archive, starred } = MAILBOX_IDENTIFIERS;
     const I18N = {
@@ -121,7 +122,7 @@ function cache(
         // We load the conversation when we receive an create / update message event if
         // the conversation is not cached and if the current state display a conversation list
         if (!loaded && type === 'conversation') {
-            return getConversation(ConversationID);
+            missingConversations.push(ConversationID);
         }
 
         return Promise.resolve();
@@ -922,6 +923,16 @@ function cache(
     const formatDelete = (list = []) => Promise.all(list.map(api.delete));
 
     /**
+     * Load missing conversations detected from create / update message event
+     * @return {Promise}
+     */
+    const loadMissingConversations = async () => {
+        const promises = flow(uniq, map(getConversation))(missingConversations);
+        await Promise.all(promises);
+        missingConversations.length = 0;
+    };
+
+    /**
      * Manage the cache when a new event comes
      * @param {Array} events - Array of event managing interaction with messages and conversations stored
      * @param {Boolean} fromBackend - indicate if the events come from the back-end
@@ -982,6 +993,7 @@ function cache(
         // NOTE Message events must be treated before Conversation events to calculate the Time per Conversation (see manageTimes())
         return formatCreate(Flow.Message.create)
             .then(() => formatUpdate(Flow.Message.update))
+            .then(() => loadMissingConversations())
             .then(() => formatCreate(Flow.Conversation.create))
             .then(() => formatUpdate(Flow.Conversation.update))
             .then(() => formatDelete(Flow.delete))
