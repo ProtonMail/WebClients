@@ -8,10 +8,13 @@ function emailBlockList(dispatchers, gettextCatalog, spamListModel) {
         add: gettextCatalog.getString('Add', null, 'Action')
     };
 
-    const getI18NText = (type) => {
-        const filterName = I18N[type];
+    const getI18NText = (filterName) => {
         const add = `<b>${I18N.add}</b>`;
-        return gettextCatalog.getString('No emails in the {{ filterName }}, click {{ add }} to add addresses to the {{ filterName }}', { filterName, add }, 'Info');
+        return gettextCatalog.getString(
+            'No emails in the {{ filterName }}, click {{ add }} to add addresses to the {{ filterName }}',
+            { filterName, add },
+            'Info'
+        );
     };
 
     const SCROLL_THROTTLE = 100;
@@ -35,10 +38,12 @@ function emailBlockList(dispatchers, gettextCatalog, spamListModel) {
             const list = spamListModel.list(spamListModel.getType(scope.listType));
             const scroller = elem[0].querySelector(`.${CLASSNAMES.LIST}`);
             const warning = elem[0].querySelector('.alert-info');
+            const filterName = I18N[scope.listType];
 
-            warning.innerHTML = getI18NText(scope.listType);
+            warning.innerHTML = getI18NText(filterName);
 
             scope.entries = [];
+            scope.filterName = filterName;
 
             list.get().then((list) => {
                 scope.$applyAsync(() => (scope.entries = list));
