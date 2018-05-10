@@ -88,13 +88,15 @@ describe('transformEscape service', () => {
         <div style="background: \\75&#114;\\6C('https://TRACKING2/')">test2</div>
         <div style="background: \\75r&#108('https://TRACKING3/')">test3</div>
         <div style="background: &#117r\\6c('https://TRACKING4/')">test4</div>
-        <div style="background: &#117r\\6c('https://TRACKING4/')">test4</div>
         <div style="background: \\75 \\72 \\6C ('https://TRACKING5/')">test5</div>
         <div style="background: \\75\\72\\6c ('https://TRACKING6/')">test6</div>
         <div style="background: \\75\\72\\6C('https://TRACKING7/')">test7</div>
         <div style="background: \\75\\72\\6c('https://TRACKING8/')">test8</div>
         <div style="background: \x75\x72\x6C('https://TRACKING9/')">test9</div>
         <div style="background: \u0075\u0072\u006c('https://TRACKING10/')">test10</div>
+        <div style="background: &#x75r\\6c('https://TRACKING11/')">test11</div>
+        <div style="background: \\75&#x72;\\6C('https://TRACKING12/')">test12</div>
+        <div style="background: \\75r&#x6c;('https://TRACKING12/')">test13</div>
         `;
 
     const BACKGROUND_URL_SAFE = `

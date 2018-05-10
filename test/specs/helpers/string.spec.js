@@ -1,4 +1,4 @@
-import { removeEmailAlias, toUnsignedString } from '../../../src/helpers/string';
+import { removeEmailAlias, toUnsignedString, unescapeCSSEncoding } from '../../../src/helpers/string';
 
 const EMAILS = {
     'dew@foo.bar': 'dew@foo.bar',
@@ -28,6 +28,27 @@ const TEST_BINARY = {
     '-2147000000': '10000000000001110110000101000000'
 };
 
+const ESCAPE_MAP = {
+    // CSS hex escaping
+    '\\E9motion': 'émotion',
+    '\\E9 dition': 'édition',
+    '\\E9dition': 'ຝition',
+    '\\0000E9dition': 'édition',
+    '\\0000E9 dition': 'édition',
+    // Special case, make sure codepoints are dealt with correctly.
+    '&#x1f512; \\+ &#128477; = \\1f513': '🔒 + 🗝 = 🔓',
+    'background: \\75 \\72 \\6C (\'https://TRACKING1/\')': 'background: url(\'https://TRACKING1/\')',
+    'background:\\75\\72\\6C(\'https://TRACKING2/\\6CA\')': 'background:url(\'https://TRACKING2/ۊ\')',
+    'background: \\75\\72\\6C(\'https://TRACKING3/\\6C A\')': 'background: url(\'https://TRACKING3/lA\')',
+    'background:\\75\\72\\6C(\'https://TRACKING4/\\00006CA\')': 'background:url(\'https://TRACKING4/lA\')',
+    // html escaping
+    'background:&#117;rl(&quot;https://i.imgur.com/test1.jpg&quot;)': 'background:url("https://i.imgur.com/test1.jpg")',
+    // combined
+    '&#x20AC; &gt; &#65284;; \\0020AC  &gt; CHF; &#8364; &#x226B; &#165;!': '€ > ＄; € > CHF; € ≫ ¥!',
+    'Libert\\E9,&#xA0\\0000E9galit\\E9 ,&#160;fraternit\\E9&#xA0!': 'Liberté,\xA0égalité,\xA0fraternité\xA0!',
+    'background:&#117;\\72 \\6C(&quot;https://i.imgur.com/test2.jpg&quot;)': 'background:url("https://i.imgur.com/test2.jpg")'
+};
+
 describe('removeEmailAlias', () => {
 
     it('should remove the alias but keep the email', () => {
@@ -52,3 +73,11 @@ describe('toUnsignedString', () => {
     });
 
 });
+describe('unescapeCSSEncoding', () => {
+    it('should unescape all test data correctly', () => {
+        Object.keys(ESCAPE_MAP).forEach((style) => {
+            expect(unescapeCSSEncoding(style)).toBe(ESCAPE_MAP[style]);
+        });
+    });
+});
+

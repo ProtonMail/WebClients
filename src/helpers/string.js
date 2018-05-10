@@ -1,3 +1,5 @@
+import _ from 'lodash';
+
 export const normalizeEmail = (email) => email.toLowerCase();
 
 export const removeEmailAlias = (email = '') => {
@@ -29,20 +31,30 @@ export const toUnsignedString = (val, bits) => {
 };
 
 /**
- * Unescape a string in hex or octal encoding. Taken from https://github.com/mathiasbynens/cssesc/issues/14
- * because no node module exists yet.
+ * Unescape a string in hex or octal encoding.
+ * See https://www.w3.org/International/questions/qa-escapes#css_other for all possible cases.
  * @param {String} str
  * @returns {String} escaped string
  */
-export const unescapeEncoding = (str) => {
+export const unescapeCSSEncoding = (str) => {
     // Regexp declared inside the function to reset its state (because of the global flag).
     // cf https://stackoverflow.com/questions/1520800/why-does-a-regexp-with-global-flag-give-wrong-results
-    const HEX_ESC = /\\(?:([0-9a-fA-F]{6})|([0-9a-fA-F]{1,5})(?: |(?![0-9a-fA-F])))/g;
+    const UNESCAPE_CSS_ESCAPES_REGEX = /\\([0-9A-Fa-f]{1,6}) ?/g;
+    const UNESCAPE_HTML_DEC_REGEX = /&#(\d+)(;|(?=[^\d;]))/g;
+    const UNESCAPE_HTML_HEX_REGEX = /&#x([0-9A-Fa-f]+)(;|(?=[^\d;]))/g;
     const OTHER_ESC = /\\(.)/g;
-    const strUnescapedHex = str.replace(HEX_ESC, (_, hex1, hex2) => {
-        const hex = hex1 || hex2;
-        const code = parseInt(hex, 16);
-        return String.fromCodePoint(code);
-    });
+
+    const handleEscape = (radix) => (ignored, val) => String.fromCodePoint(Number.parseInt(val, radix));
+    /*
+     * basic unescaped named sequences: &amp; etcetera, lodash does not support a lot, but that is not a problem for our case.
+     * Actually handling all escaped sequences would mean keeping track of a very large and ever growing amount of named sequences
+     */
+    const namedUnescaped = _.unescape(str);
+    // lodash doesn't unescape &#160; or &#xA0; sequences, we have to do this manually:
+    const decUnescaped = namedUnescaped.replace(UNESCAPE_HTML_DEC_REGEX, handleEscape(10));
+    const hexUnescaped = decUnescaped.replace(UNESCAPE_HTML_HEX_REGEX, handleEscape(16));
+    // unescape css backslash sequences
+    const strUnescapedHex = hexUnescaped.replace(UNESCAPE_CSS_ESCAPES_REGEX, handleEscape(16));
+
     return strUnescapedHex.replace(OTHER_ESC, (_, char) => char);
 };

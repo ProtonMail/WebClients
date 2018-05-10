@@ -1,34 +1,9 @@
 import _ from 'lodash';
 
 import transformBase from './transformBase';
-import { unescapeEncoding } from '../../../helpers/string';
-
+import { unescapeCSSEncoding } from '../../../helpers/string';
 /* @ngInject */
 function transformEscape() {
-    /**
-     * Create all possibilities based on a collection
-     * @{@link  https://stackoverflow.com/questions/4331092/finding-all-combinations-of-javascript-array-values#answer-37276760}
-     * @param  {Array} arr Array of array
-     * @return {String}
-     */
-    function getPermutation(list, prefix = '') {
-        if (!list.length) {
-            return prefix;
-        }
-
-        return list[0]
-            .reduce((acc, value) => {
-                return acc.concat(getPermutation(list.slice(1), prefix + value));
-            }, [])
-            .join('|');
-    }
-
-    const matchURLS = getPermutation([
-        ['&#117', '&#117;', 'u'],
-        ['&#114', '&#114;', 'r', '\\&#114;'],
-        ['&#108', '&#108;', 'l', '\\&#108;', '\\l']
-    ]);
-
     /**
      * Prevent escape url on the textContent if you display some code
      * inside the message
@@ -100,7 +75,7 @@ function transformEscape() {
              - background:url&lpar;
              - etc.
          */
-    const CSS_URL = `((${matchURLS})(\\(|&(#40|#x00028|lpar);))`;
+    const CSS_URL = '((url)(\\(|&(#40|#x00028|lpar);))';
     const REGEXP_URL_ATTR = new RegExp(CSS_URL, 'gi');
 
     /**
@@ -111,10 +86,9 @@ function transformEscape() {
     const escapeURLinStyle = (style) => {
         // handle the case where the value is html encoded, e.g.:
         // background:&#117;rl(&quot;https://i.imgur.com/WScAnHr.jpg&quot;)
-        const unescapedHtml = _.unescape(style);
-        const escapeFlag = unescapedHtml !== style;
 
-        const unescapedEncoding = unescapeEncoding(unescapedHtml);
+        const unescapedEncoding = unescapeCSSEncoding(style);
+        const escapeFlag = unescapedEncoding !== style;
 
         const escapedStyle = unescapedEncoding.replace(/\\r/g, 'r').replace(REGEXP_URL_ATTR, 'proton-url(');
 
