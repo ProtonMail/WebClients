@@ -47,10 +47,10 @@
             </div>
             <div class="time">
                 <i class="fa fa-paperclip" ng-show="message.NumAttachments > 0"></i>
-                <time class="time-readable">{{ ::message.Time | localReadableTime }}</time>
+                <time class="time-readable">{{ message.Time | localReadableTime }}</time>
                 <time
                     class="time-machine"
-                    time-refreshed="{{ ::message.Time }}"
+                    time-refreshed="{{ message.Time }}"
                     time-filter="messageTime"
                     time-interval="30000"></time>
             </div>
