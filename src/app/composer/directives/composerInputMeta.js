@@ -49,7 +49,7 @@ function composerInputMeta(contactSelectorModel, dispatchers) {
         compile(element, { label, key }) {
             const $label = element[0].querySelector('.composerInputMeta-label');
             const $input = element[0].querySelector('.composerInputMeta-autocomplete');
-            const $recipients = element[0].querySelectorAll('composer-input-recipient');
+            const $recipients = [].slice.call(element[0].querySelectorAll('composer-input-recipient'));
             if ($label) {
                 $label.textContent = label;
             }
