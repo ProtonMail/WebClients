@@ -48,7 +48,9 @@ function attachedPublicKey(
 
         return Promise.all([sendInfo, trustedKeys]).then(([sendPref, publicKeys]) =>
             addresses
-                .filter(({ adr }) => publicKeys[adr].every((key) => key.primaryKey.fingerprint !== keyInfo.fingerprint))
+                .filter(({ adr }) =>
+                    publicKeys[adr].every((key) => key.primaryKey.getFingerprint() !== keyInfo.fingerprint)
+                )
                 .map((address) => {
                     if (keyInfo.expires !== null && keyInfo.expires < Date.now()) {
                         return _.extend({}, address, { encrypt: false, expired: true });
