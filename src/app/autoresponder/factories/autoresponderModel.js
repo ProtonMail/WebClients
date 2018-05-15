@@ -45,11 +45,7 @@ function autoresponderModel(
     const clearChangedAutoresponder = () => (changedAutoresponder = {});
 
     function getBaseResponder() {
-        const base = _.extend({}, mailSettingsModel.get('AutoResponder') || {});
-
-        if (base === null || !base.isEnabled) {
-            return getDefaultAutoResponder();
-        }
+        const base = _.extend({}, mailSettingsModel.get('AutoResponder') || getDefaultAutoResponder());
 
         const daysSelected = base.daysSelected;
 
@@ -186,19 +182,6 @@ function autoresponderModel(
         const autoresponder = get();
 
         autoresponder.daysSelected = Object.keys(_.pickBy(autoresponder.daysSelected, Boolean)).map(Number);
-
-        if (!autoresponder.isEnabled) {
-            // override the 'hidden' parameters for privacy reasons.
-            return _.extend(autoresponder, {
-                repeat: constants.FOREVER,
-                startTime: 0,
-                endTime: 0,
-                daysSelected: [0, 1, 2, 3, 4, 5, 6],
-                zone: 'utc',
-                message: '',
-                subject: null
-            });
-        }
 
         if (autoresponder.repeat === constants.FOREVER) {
             autoresponder.startTime = 0;
