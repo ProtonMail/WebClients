@@ -5,8 +5,8 @@ const { exec, execVerbose } = require('./helpers/command');
 const { title, success, error } = require('./helpers/log');
 const { spawn } = require('child_process');
 
-const getListFiles = async () =>{
-    const { stdout = '' } = await exec(`find src/app -type f -name '*.js'`);
+const getListFiles = async () => {
+    const { stdout = '' } = await exec(`find src/{app,helpers} -type f -name '*.js'`);
     return stripAnsi(stdout).split('\n').filter(Boolean);
 };
 
@@ -32,15 +32,12 @@ const lint = (files, args = []) => new Promise((resolve, reject) => {
 (async () => {
     try {
         const list = toChunk(await getListFiles());
-        const output = await Promise.all(list.map((files, i) => {
-            return lint(files, process.argv.slice(2)).then((code) => {
-                if (code !== 0) {
-                    throw new Error('Error lint');
-                }
-            });
+        const output = await Promise.all(list.map((files) => {
+            return lint(files, process.argv.slice(2))
+                .catch(() => 1);
         }));
 
-        if (!output.every((code) => code !== 0)) {
+        if (!output.every((code) => code === 0)) {
             process.exit(1);
         }
         process.exit(0);
