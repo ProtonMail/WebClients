@@ -1,3 +1,4 @@
+/* eslint-disable import/prefer-default-export */
 import TurndownService from 'turndown';
 import _ from 'lodash';
 

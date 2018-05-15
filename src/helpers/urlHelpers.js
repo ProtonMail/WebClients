@@ -1,3 +1,4 @@
+/* eslint-disable import/prefer-default-export */
 /**
  * Get the current sorting state from the URL (?sort=asc|desc)
  * @param {String} stateParams
