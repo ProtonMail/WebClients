@@ -17,7 +17,6 @@ function eventManager(
     gettextCatalog,
     mailSettingsModel,
     notify,
-    sanitize,
     subscriptionModel,
     userSettingsModel,
     vpnSettingsModel
@@ -42,17 +41,6 @@ function eventManager(
         Messages.length && dispatch('activeMessages', { messages: _.map(Messages, 'Message') });
     const manageSubscription = ({ Subscription: subscription }) =>
         subscription && dispatch('subscription.event', { subscription });
-
-    /**
-     * Clean contact datas
-     * @param  {Object} contact
-     * @return {Object}
-     */
-    function cleanContact(contact = {}) {
-        contact.Name = sanitize.input(contact.Name);
-        contact.Email = sanitize.input(contact.Email);
-        return contact;
-    }
 
     function handleError(error = {}) {
         const { data = {} } = error;
@@ -90,17 +78,6 @@ function eventManager(
         if (angular.isDefined(vpnSettings)) {
             vpnSettingsModel.set('all', vpnSettings);
         }
-    }
-
-    function manageContactEmails(contactEmails = []) {
-        contactEmails.forEach((contactEmail) => {
-            const contactCleaned = cleanContact(contactEmail.ContactEmail);
-            if (contactEmail.Action === DELETE) {
-                $rootScope.$emit('deleteContactEmail', contactEmail.ID);
-            } else if (contactEmail.Action === CREATE || contactEmail.Action === UPDATE) {
-                $rootScope.$emit('updateContactEmail', contactEmail.ID, contactCleaned);
-            }
-        });
     }
 
     function manageMessageCounts(counts) {
@@ -316,7 +293,7 @@ function eventManager(
         manageVpnSettings(data.VPNSettings);
         manageUserSettings(data.UserSettings);
         manageSubscription(data);
-        manageContactEmails(data.ContactEmails);
+        $injector.get('contactEmails').update(data.ContactEmails);
         manageContacts(data.Contacts);
         manageThreadings(data.Messages, data.Conversations);
         manageDesktopNotifications(data.Messages);
