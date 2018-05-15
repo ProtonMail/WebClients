@@ -9,7 +9,7 @@ function decryptImportKeyModal(pmModal, notification, pmcw, gettextCatalog) {
             self.password = '';
             const privateKey = params.privateKey;
             const [key] = pmcw.getKeys(params.privateKey);
-            self.fingerprint = key.primaryKey.fingerprint.substring(0, 8);
+            self.fingerprint = key.primaryKey.getFingerprint().substring(0, 8);
 
             setTimeout(() => document.getElementById('password').focus(), 100);
 
