@@ -148,14 +148,23 @@ function LoginController(
                     return;
                 }
 
+                // Parse the event data.
+                const { data = {} } = event;
+                const { UID, MailboxPassword } = data;
+
+                // Ensure this messages contains UID, otherwise it could be a message coming from somewhere else.
+                if (!UID) {
+                    return;
+                }
+
                 // Remove listener
                 window.removeEventListener('message', login);
 
                 // Save password
-                authentication.savePassword(event.data.MailboxPassword);
+                authentication.savePassword(MailboxPassword);
 
                 // Continues loading up the app
-                authentication.saveAuthData({ UID: event.data.UID });
+                authentication.saveAuthData({ UID });
 
                 $rootScope.isSecure = true;
                 $rootScope.isLoggedIn = true;
