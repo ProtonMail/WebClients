@@ -1,7 +1,12 @@
 import _ from 'lodash';
 
+import { STATUS } from '../../constants';
+import updateCollection from '../../utils/helpers/updateCollection';
+
+const { DELETE, CREATE, UPDATE } = STATUS;
+
 /* @ngInject */
-function contactEmails(Contact, dispatchers) {
+function contactEmails(Contact, dispatchers, sanitize) {
     const CACHE = {
         emails: [],
         map: Object.create(null)
@@ -61,25 +66,29 @@ function contactEmails(Contact, dispatchers) {
         return loadCache();
     };
 
-    on('updateContactEmail', (event, ID, contactEmail) => {
-        const index = findIndex(ID);
+    /**
+     * Clean contact datas
+     * @param  {Object} contact
+     * @return {Object}
+     */
+    function cleanContact(contact = {}) {
+        contact.Name = sanitize.input(contact.Name);
+        contact.Email = sanitize.input(contact.Email);
+        return contact;
+    }
 
-        if (index !== -1) {
-            CACHE.emails[index] = contactEmail;
-        } else {
-            CACHE.emails.push(contactEmail);
-        }
+    const update = (events = []) => {
+        const cleanEvents = events.map((event) => ({ ...event, ContactEmail: cleanContact(event.ContactEmail) }));
+        const { collection } = updateCollection(CACHE.emails, cleanEvents, 'ContactEmail');
 
-        emit(contactEmail);
-    });
+        clear();
+        set(collection);
 
-    on('deleteContactEmail', (event, ID) => {
-        const index = findIndex(ID);
-        if (index !== -1) {
-            CACHE.emails.splice(index, 1);
-            dispatcher.contacts('deletedContactEmail', { ID });
-        }
-    });
+        cleanEvents.forEach((event) => {
+            event.Action === DELETE && dispatcher.contacts('deletedContactEmail', { ID: event.ID });
+            (event.Action === CREATE || event.Action === UPDATE) && emit(event.ContactEmail);
+        });
+    };
 
     on('resetContactEmails', () => {
         reset();
@@ -89,6 +98,6 @@ function contactEmails(Contact, dispatchers) {
         clear();
     });
 
-    return { set, get, getMap, clear, findIndex, findEmail, load: loadCache };
+    return { set, get, getMap, clear, findIndex, findEmail, load: loadCache, update };
 }
 export default contactEmails;
