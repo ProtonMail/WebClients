@@ -34,7 +34,11 @@
     "base32": true,
     "$": true,
     "ICAL": true,
-    "Papa": true
+    "Papa": true,
+    "Cypress": true,
+    "cy": true,
+    "after": true,
+    "before": true
   },
   "rules": {
     "object-shorthand": "off",
