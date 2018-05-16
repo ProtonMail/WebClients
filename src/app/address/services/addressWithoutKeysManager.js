@@ -8,12 +8,11 @@ function addressWithoutKeysManager(addressWithoutKeys, authentication, generateM
      * @return {Promise}
      */
     const openModal = async ({ addresses, password, memberMap = {} }) => {
-        // Prevent circular injection
-        const organizationModel = $injector.get('organizationModel');
-        const organizationKeysModel = $injector.get('organizationKeysModel');
-        await organizationKeysModel.manage(organizationModel.get());
-
         if (addresses.length && !generateModal.active()) {
+            // Prevent circular injection
+            const organizationModel = $injector.get('organizationModel');
+            const organizationKeysModel = $injector.get('organizationKeysModel');
+            await organizationKeysModel.manage(organizationModel.get());
             return new Promise((resolve, reject) => {
                 generateModal.activate({
                     params: {
@@ -24,22 +23,18 @@ function addressWithoutKeysManager(addressWithoutKeys, authentication, generateM
                         onSuccess() {
                             $injector.get('eventManager').call();
                             resolve(addresses);
+                            organizationKeysModel.clear();
                             generateModal.deactivate();
                         },
                         close() {
                             reject(new Error('generateModal:close'));
+                            organizationKeysModel.clear();
                             generateModal.deactivate();
                         }
                     }
                 });
             });
         }
-
-        /*
-                We don't need it anymore prevent check activation orga
-                Ex: After check on securedContrller. Nothing found
-             */
-        organizationKeysModel.clear();
     };
 
     /**
