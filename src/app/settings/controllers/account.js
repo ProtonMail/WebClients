@@ -34,6 +34,7 @@ function AccountController(
     const { on, unsubscribe } = dispatchers();
     $scope.emailing = { announcements: false, features: false, newsletter: false, beta: false };
     $scope.locales = [
+        { label: 'Čeština', key: 'cs_CZ' },
         { label: 'Deutsch', key: 'de_DE' },
         { label: 'English', key: 'en_US' },
         { label: 'Español', key: 'es_ES' },
