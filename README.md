@@ -51,7 +51,7 @@ We are very open to bug reports via Issues as well as Pull Requests.
 
 > Same as `npm start` use --api to change the default api
 
-### CI build for e2e 
+### CI build for e2e
 
 `npm run build:ci`
 
@@ -82,6 +82,12 @@ Each `deploy-<NAME>` will be available at `<NAME>.protonmail.com`.
 - `--debug`: turn on debug mode for the command (default false)
 
 ## I18n à la demande
+
+> Extract translation keys
+
+```sh
+npm run i18n:extract
+```
 
 > We build i18n when we create a build for beta or prod
 

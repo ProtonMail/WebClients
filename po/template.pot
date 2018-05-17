@@ -514,7 +514,7 @@ msgstr ""
 
 #: ./src/templates/ui/header/headerNoAuth.tpl.html:16
 msgctxt "Action"
-msgid "Back to inbox"
+msgid "Back to login"
 msgstr ""
 
 #: ./src/templates/ui/header/headerNoAuth.tpl.html:10
@@ -550,7 +550,7 @@ msgstr ""
 #: ./src/templates/dashboard/customProPlanModal.tpl.html:41
 #: ./src/templates/dashboard/customVpnModal.tpl.html:19
 #: ./src/templates/filter/filterAddressModal.tpl.html:34
-#: ./src/templates/filter/modal.tpl.html:203
+#: ./src/templates/filter/modal.tpl.html:218
 #: ./src/templates/modals/activateOrganization.tpl.html:24
 #: ./src/templates/modals/addAddress.tpl.html:58
 #: ./src/templates/modals/bug.tpl.html:13
@@ -1418,7 +1418,7 @@ msgstr ""
 #: ./src/templates/dashboard/customVpnModal.tpl.html:20
 #: ./src/templates/directives/composer/composer.tpl.html:123
 #: ./src/templates/filter/filterAddressModal.tpl.html:40
-#: ./src/templates/filter/modal.tpl.html:204
+#: ./src/templates/filter/modal.tpl.html:219
 #: ./src/templates/modals/addAddress.tpl.html:59
 #: ./src/templates/modals/changeOrganizationPassword.tpl.html:23
 #: ./src/templates/modals/changePassword.tpl.html:40
@@ -1499,7 +1499,7 @@ msgctxt "Action"
 msgid "Settings"
 msgstr ""
 
-#: ./src/templates/views/setup.tpl.html:70
+#: ./src/templates/views/setup.tpl.html:65
 msgctxt "Action"
 msgid "Setup Account"
 msgstr ""
@@ -2191,52 +2191,52 @@ msgid_plural "{{$count}} images detected"
 msgstr[0] ""
 msgstr[1] ""
 
-#: ./src/app/filter/factories/filterModal.js:30
+#: ./src/app/filter/factories/filterModal.js:31
 msgctxt "Condition for custom filter"
 msgid "begins with"
 msgstr ""
 
-#: ./src/app/filter/factories/filterModal.js:28
+#: ./src/app/filter/factories/filterModal.js:29
 msgctxt "Condition for custom filter"
 msgid "contains"
 msgstr ""
 
-#: ./src/app/filter/factories/filterModal.js:39
+#: ./src/app/filter/factories/filterModal.js:40
 msgctxt "Condition for custom filter"
 msgid "does not begin with"
 msgstr ""
 
-#: ./src/app/filter/factories/filterModal.js:34
+#: ./src/app/filter/factories/filterModal.js:35
 msgctxt "Condition for custom filter"
 msgid "does not contain"
 msgstr ""
 
-#: ./src/app/filter/factories/filterModal.js:43
+#: ./src/app/filter/factories/filterModal.js:44
 msgctxt "Condition for custom filter"
 msgid "does not end with"
 msgstr ""
 
-#: ./src/app/filter/factories/filterModal.js:47
+#: ./src/app/filter/factories/filterModal.js:48
 msgctxt "Condition for custom filter"
 msgid "does not match"
 msgstr ""
 
-#: ./src/app/filter/factories/filterModal.js:31
+#: ./src/app/filter/factories/filterModal.js:32
 msgctxt "Condition for custom filter"
 msgid "ends with"
 msgstr ""
 
-#: ./src/app/filter/factories/filterModal.js:29
+#: ./src/app/filter/factories/filterModal.js:30
 msgctxt "Condition for custom filter"
 msgid "is exactly"
 msgstr ""
 
-#: ./src/app/filter/factories/filterModal.js:37
+#: ./src/app/filter/factories/filterModal.js:38
 msgctxt "Condition for custom filter"
 msgid "is not"
 msgstr ""
 
-#: ./src/app/filter/factories/filterModal.js:32
+#: ./src/app/filter/factories/filterModal.js:33
 msgctxt "Condition for custom filter"
 msgid "matches"
 msgstr ""
@@ -3285,7 +3285,7 @@ msgctxt "Error"
 msgid "No address with keys available to compose a message."
 msgstr ""
 
-#: ./src/app/conversation/services/cache.js:36
+#: ./src/app/conversation/services/cache.js:37
 msgctxt "Error"
 msgid "No conversations available"
 msgstr ""
@@ -3301,7 +3301,7 @@ msgctxt "Error"
 msgid "No keys to update"
 msgstr ""
 
-#: ./src/app/conversation/services/cache.js:35
+#: ./src/app/conversation/services/cache.js:36
 msgctxt "Error"
 msgid "No messages available"
 msgstr ""
@@ -3357,7 +3357,7 @@ msgctxt "Error"
 msgid "Please enter at least one recipient."
 msgstr ""
 
-#: ./src/app/authentication/controllers/login.js:392
+#: ./src/app/authentication/controllers/login.js:401
 msgctxt "Error"
 msgid "Please enter your two-factor passcode"
 msgstr ""
@@ -3397,7 +3397,7 @@ msgctxt "Error"
 msgid "Sending messages from @pm.me address is a paid feature. Your message will be sent from your default address {{email}}"
 msgstr ""
 
-#: ./src/templates/views/setup.tpl.html:91
+#: ./src/templates/views/setup.tpl.html:86
 msgctxt "Error"
 msgid "Setup failed"
 msgstr ""
@@ -3427,7 +3427,7 @@ msgctxt "Error"
 msgid "Subscription request failed"
 msgstr ""
 
-#: ./src/app/filter/factories/filterModal.js:55
+#: ./src/app/filter/factories/filterModal.js:56
 msgctxt "Error"
 msgid "Text or pattern already included"
 msgstr ""
@@ -3859,25 +3859,30 @@ msgstr ""
 
 #: ./src/templates/filter/modal.tpl.html:113
 msgctxt "Filter modal label"
-msgid "Apply Labels"
+msgid "Apply labels"
 msgstr ""
 
 #: ./src/templates/filter/modal.tpl.html:178
 msgctxt "Filter modal label"
-msgid "Mark As"
+msgid "Mark as"
 msgstr ""
 
 #: ./src/templates/filter/modal.tpl.html:131
 msgctxt "Filter modal label"
-msgid "Move To"
+msgid "Move to"
 msgstr ""
 
-#: ./src/app/filter/factories/filterModal.js:52
+#: ./src/templates/filter/modal.tpl.html:201
+msgctxt "Filter modal label"
+msgid "Send auto reply"
+msgstr ""
+
+#: ./src/app/filter/factories/filterModal.js:53
 msgctxt "Filter modal operators"
 msgid "AND"
 msgstr ""
 
-#: ./src/app/filter/factories/filterModal.js:53
+#: ./src/app/filter/factories/filterModal.js:54
 msgctxt "Filter modal operators"
 msgid "OR"
 msgstr ""
@@ -3887,27 +3892,27 @@ msgctxt "Filter modal title"
 msgid "Custom Filter"
 msgstr ""
 
-#: ./src/app/filter/factories/filterModal.js:21
+#: ./src/app/filter/factories/filterModal.js:22
 msgctxt "Filter modal type"
 msgid "Select"
 msgstr ""
 
-#: ./src/app/filter/factories/filterModal.js:25
+#: ./src/app/filter/factories/filterModal.js:26
 msgctxt "Filter modal type"
 msgid "the attachments"
 msgstr ""
 
-#: ./src/app/filter/factories/filterModal.js:24
+#: ./src/app/filter/factories/filterModal.js:25
 msgctxt "Filter modal type"
 msgid "the recipient"
 msgstr ""
 
-#: ./src/app/filter/factories/filterModal.js:23
+#: ./src/app/filter/factories/filterModal.js:24
 msgctxt "Filter modal type"
 msgid "the sender"
 msgstr ""
 
-#: ./src/app/filter/factories/filterModal.js:22
+#: ./src/app/filter/factories/filterModal.js:23
 msgctxt "Filter modal type"
 msgid "the subject"
 msgstr ""
@@ -4626,7 +4631,7 @@ msgctxt "Info"
 msgid "By clicking Create Account, you agree to abide by"
 msgstr ""
 
-#: ./src/templates/views/setup.tpl.html:69
+#: ./src/templates/views/setup.tpl.html:64
 msgctxt "Info"
 msgid "By clicking Setup Account, you agree to abide by"
 msgstr ""
@@ -4659,6 +4664,12 @@ msgstr ""
 #: ./src/templates/dashboard/professionalColumn.tpl.html:12
 msgctxt "Info"
 msgid "Click INFO to view total storage for your plan"
+msgstr ""
+
+#. Message displayed in the contact placeholder section
+#: ./src/templates/contact/contactPlaceholder.tpl.html:7
+msgctxt "Info"
+msgid "Click on a contact to view or edit details."
 msgstr ""
 
 #. safari attachment instructions
@@ -4891,7 +4902,7 @@ msgid "If you have set both SPF and DKIM, DMARC allows you to specify how other 
 msgstr ""
 
 #: ./src/templates/user/usernamePassword.tpl.html:27
-#: ./src/templates/views/setup.tpl.html:64
+#: ./src/templates/views/setup.tpl.html:59
 msgctxt "Info"
 msgid "If you lose your password, you will not be able to read your emails."
 msgstr ""
@@ -4996,7 +5007,7 @@ msgctxt "Info"
 msgid "No contact found"
 msgstr ""
 
-#: ./src/app/filter/directives/emailBlockList.js:14
+#: ./src/app/filter/directives/emailBlockList.js:13
 msgctxt "Info"
 msgid "No emails in the {{ filterName }}, click {{ add }} to add addresses to the {{ filterName }}"
 msgstr ""
@@ -5322,11 +5333,6 @@ msgctxt "Info"
 msgid "The app will now be reloaded in a few seconds"
 msgstr ""
 
-#: ./src/templates/views/setup.tpl.html:39
-msgctxt "Info"
-msgid "The password you set here will also be your new ProtonVPN account password."
-msgstr ""
-
 #: ./src/templates/blackFriday/blackFridayFree.tpl.html:21
 msgctxt "Info"
 msgid "The ultimate internet privacy package, combining the most popular ProtonMail and ProtonVPN plans. By buying both together with our special 2-year plan, you can save 45% off of the regular monthly price."
@@ -5343,7 +5349,7 @@ msgid "Theme saved"
 msgstr ""
 
 #: ./src/templates/views/reset-login-password.tpl.html:162
-#: ./src/templates/views/setup.tpl.html:82
+#: ./src/templates/views/setup.tpl.html:77
 #: ./src/templates/views/signup.tpl.html:15
 msgctxt "Info"
 msgid "This can take a few seconds or a few minutes depending on your device."
@@ -5380,7 +5386,7 @@ msgctxt "Info"
 msgid "This is the 'From' name that people will see when you email them."
 msgstr ""
 
-#: ./src/templates/views/setup.tpl.html:45
+#: ./src/templates/views/setup.tpl.html:39
 msgctxt "Info"
 msgid "This is used to encrypt and decrypt your messages. Do not lose this password--we cannot recover it."
 msgstr ""
@@ -6658,12 +6664,12 @@ msgctxt "List domains"
 msgid "Please add a custom domain before configuring addresses."
 msgstr ""
 
-#: ./src/app/authentication/controllers/login.js:352
+#: ./src/app/authentication/controllers/login.js:361
 msgctxt "Login error"
 msgid "Please enter your username and password"
 msgstr ""
 
-#: ./src/app/authentication/controllers/login.js:360
+#: ./src/app/authentication/controllers/login.js:369
 msgctxt "Login error"
 msgid "Your password is missing"
 msgstr ""
@@ -6831,7 +6837,7 @@ msgstr ""
 
 #: ./src/templates/contact/contactBeforeToLeaveModal.tpl.html:9
 msgctxt "Message for contact modal"
-msgid "There are unsaved changes to the contact you are editing. Do you want to save changes?'"
+msgid "There are unsaved changes to the contact you are editing. Do you want to save changes?"
 msgstr ""
 
 #: ./src/templates/contact/contactAskEncryption.tpl.html:8
@@ -6959,12 +6965,12 @@ msgctxt "No results heading"
 msgid "Trash"
 msgstr ""
 
-#: ./src/app/filter/factories/filterModal.js:57
+#: ./src/app/filter/factories/filterModal.js:58
 msgctxt "Notification"
 msgid "Filter created"
 msgstr ""
 
-#: ./src/app/filter/factories/filterModal.js:56
+#: ./src/app/filter/factories/filterModal.js:57
 msgctxt "Notification"
 msgid "Filter updated"
 msgstr ""
@@ -6979,7 +6985,7 @@ msgctxt "Notification error trying to connect to the API"
 msgid "Servers are unreachable."
 msgstr ""
 
-#: ./src/app/utils/services/eventManager.js:182
+#: ./src/app/utils/services/eventManager.js:159
 msgctxt "Notification user"
 msgid "New mail from {{sender}}"
 msgstr ""
@@ -8988,7 +8994,7 @@ msgid "ProtonMail Signature"
 msgstr ""
 
 #: ./src/templates/user/signupUserForm.tpl.html:61
-#: ./src/templates/views/setup.tpl.html:69
+#: ./src/templates/views/setup.tpl.html:64
 msgctxt "Title"
 msgid "ProtonMail's Terms and Conditions"
 msgstr ""
@@ -10288,7 +10294,7 @@ msgid ""
 "    </svg>"
 msgstr ""
 
-#: ./src/templates/filter/emailBlockList.tpl.html:17
+#: ./src/templates/filter/emailBlockList.tpl.html:16
 msgid "<i class=\"fa fa-arrows-h\"></i>"
 msgstr ""
 
@@ -10320,7 +10326,7 @@ msgstr ""
 msgid "<i class=\"fa fa-paperclip\"></i>"
 msgstr ""
 
-#: ./src/templates/filter/emailBlockList.tpl.html:23
+#: ./src/templates/filter/emailBlockList.tpl.html:22
 msgid "<i class=\"fa fa-times text-red\"></i>"
 msgstr ""
 
@@ -10442,10 +10448,6 @@ msgstr ""
 msgid "Catch-all address updated"
 msgstr ""
 
-#: ./src/templates/views/setup.tpl.html:47
-msgid "Choose a mailbox password"
-msgstr ""
-
 #: ./src/templates/user/usernamePassword.tpl.html:9
 msgid "Choose a password"
 msgstr ""
@@ -10477,7 +10479,7 @@ msgid "Confirm login password"
 msgstr ""
 
 #: ./src/templates/modals/switchPasswordMode.tpl.html:56
-#: ./src/templates/views/setup.tpl.html:55
+#: ./src/templates/views/setup.tpl.html:49
 msgid "Confirm mailbox password"
 msgstr ""
 
@@ -10610,7 +10612,7 @@ msgstr ""
 msgid "Domain verified"
 msgstr ""
 
-#: ./src/templates/views/setup.tpl.html:106
+#: ./src/templates/views/setup.tpl.html:101
 msgid "Done"
 msgstr ""
 
@@ -10679,6 +10681,10 @@ msgstr ""
 msgid "Enter the word 'DANGER' here."
 msgstr ""
 
+#: ./src/templates/views/setup.tpl.html:41
+msgid "Enter your existing Proton password"
+msgstr ""
+
 #: ./src/templates/modals/reactivate.tpl.html:9
 msgid "Enter your login password:"
 msgstr ""
@@ -10739,11 +10745,11 @@ msgstr ""
 msgid "From"
 msgstr ""
 
-#: ./src/templates/views/setup.tpl.html:98
+#: ./src/templates/views/setup.tpl.html:93
 msgid "Generating keys"
 msgstr ""
 
-#: ./src/templates/views/setup.tpl.html:80
+#: ./src/templates/views/setup.tpl.html:75
 #: ./src/templates/views/signup.tpl.html:13
 msgid "Generating keys..."
 msgstr ""
@@ -11124,7 +11130,7 @@ msgstr ""
 msgid "Recovery/Notification email saved"
 msgstr ""
 
-#: ./src/templates/views/setup.tpl.html:110
+#: ./src/templates/views/setup.tpl.html:105
 msgid "Redirecting"
 msgstr ""
 
@@ -11178,8 +11184,8 @@ msgstr ""
 msgid "Set"
 msgstr ""
 
-#: ./src/templates/views/setup.tpl.html:102
-#: ./src/templates/views/setup.tpl.html:90
+#: ./src/templates/views/setup.tpl.html:85
+#: ./src/templates/views/setup.tpl.html:97
 msgid "Setting up account"
 msgstr ""
 
