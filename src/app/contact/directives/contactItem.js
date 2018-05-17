@@ -165,8 +165,6 @@ function contactItem(
                     dispatcher['contact.item']('change', { items: scope.UI.items, type: scope.type });
                 });
             scope.visibleItems = () => scope.UI.items.filter(({ hide }) => !hide);
-            scope.onFocus = (item) => (item.displaySelector = true);
-            scope.onBlur = (item) => (item.displaySelector = false);
             scope.toggleSelector = (event, item) => {
                 item.displaySelector = !item.displaySelector;
                 event.preventDefault();
@@ -186,6 +184,7 @@ function contactItem(
 
                 ngFormController.$setDirty();
                 scope.change();
+                item.displaySelector = false;
             };
 
             scope.change();

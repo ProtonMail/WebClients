@@ -68,9 +68,9 @@
         padding: 0 30px;
         border: 0;
 
-
         & ~ i.itemIcon,
-        & ~ i.fa-chevron-down {
+        & ~ i.fa-chevron-down,
+        & ~ i.fa-chevron-up {
             position: absolute;
             line-height: 36px;
         }
@@ -81,8 +81,8 @@
             text-align: center;
         }
 
-
-        & ~ i.fa-chevron-down {
+        & ~ i.fa-chevron-down,
+        & ~ i.fa-chevron-up {
             right: 10px;
             font-size: 0.6rem;
             opacity: 0.8;
@@ -90,7 +90,8 @@
         }
 
         &.contactItem-label-selectable { cursor: pointer }
-        &.contactItem-label-selectable ~ i.fa-chevron-down { display: block }
+        &.contactItem-label-selectable ~ i.fa-chevron-down,
+        &.contactItem-label-selectable ~ i.fa-chevron-up { display: block }
 
         &.contactItem-label-editable {
             cursor: pointer;
@@ -107,7 +108,8 @@
 } /* contactItem-label */
 
 .contactItem-label-selectable  ~ i.itemIcon,
-.contactItem-label-selectable  ~ i.fa-chevron-down { cursor: pointer; }
+.contactItem-label-selectable  ~ i.fa-chevron-down,
+.contactItem-label-selectable  ~ i.fa-chevron-up { cursor: pointer; }
 
 .contactItem-selectType {
     position: absolute;
@@ -512,6 +514,7 @@ contact-pgp contact-item ul.contactItem-container {
 }
 
 .contactItem-container:not(.as-sortable-disabled) .contactItem-row .fa-chevron-down,
+.contactItem-container:not(.as-sortable-disabled) .contactItem-row .fa-chevron-up,
 .contactItem-container:not(.as-sortable-disabled) .contactItem-row .contactItem-add,
 .contactItem-container:not(.as-sortable-disabled) .contactItem-row .contactItem-delete,
 .contactItem-container:not(.as-sortable-disabled) .contactItem-row .contactItem-download,
