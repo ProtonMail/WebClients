@@ -6,9 +6,12 @@
     </div>
     <div class='editor-container fill'>
         <div ng-if="isLoaded">
+            <squire-modal-listener
+                data-allow-embedded="allowEmbedded"
+                data-allow-data-uri="allowDataUri"
+                message="message"
+            ></squire-modal-listener>
             <squire-toolbar class="squire-toolbar"></squire-toolbar>
-            <add-link-popover class="squire-popover"></add-link-popover>
-            <add-file-popover class="squire-popover"></add-file-popover>
         </div>
 
         <plain-text-area></plain-text-area>

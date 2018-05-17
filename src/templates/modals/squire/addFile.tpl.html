@@ -1,0 +1,50 @@
+<div class="pm_modal important small {{ctrl.class}}" role="dialog">
+    <form
+        method="post"
+        class="modal-dialog"
+        ng-submit="addFileModal.$valid && ctrl.submit()"
+        name="addFileModal"
+        data-squire-prevent-close
+        novalidate>
+        <button
+            type="button"
+            ng-click="ctrl.cancel()"
+            aria-hidden="true"
+            title-translate="Close"
+            title-translate-context="Action"
+            class="fa fa-times close"></button>
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">{{ ::ctrl.formTitle }}</h4>
+            </div>
+            <div class="modal-body pm_form pm_grid">
+                <add-file
+                    image="ctrl.image"
+                    form="addFileModal"></add-file>
+            </div>
+        </div>
+        <div class="modal-footer text-right">
+            <button
+                type="button"
+                class="pm_button pull-left addFile-cancel-button"
+                ng-click="ctrl.cancel()"
+                translate
+                translate-context="Action">Cancel
+            </button>
+            <button
+                type="button"
+                class="pm_button addFile-file-button"
+                ng-if="::ctrl.canAddFile"
+                ng-click="ctrl.addFile()">{{ ::ctrl.addFileTitle }}
+            </button>
+            <button
+                type="submit"
+                class="pm_button primary addFile-insert-button"
+                ng-disabled="addFileModal.$valid === false"
+                ng-click="ctrl.insert()">{{ ::ctrl.actionTitle }}
+            </button>
+        </div>
+    </form>
+    <div class="modal-overlay"></div>
+</div>
+

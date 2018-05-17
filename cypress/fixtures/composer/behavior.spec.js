@@ -6,6 +6,19 @@ const toListInput = autocompleteTest('.composer-field-ToList');
 const ccListInput = autocompleteTest('.composer-field-CCList');
 const bccListInput = autocompleteTest('.composer-field-BCCList');
 
+const SELECTOR = {
+    linkContainer: '.addLink-container',
+    openLinkModal: '.squireToolbar-action-link',
+    linkCancelButton: '.addLink-cancel-button',
+
+    fileContainer: '.addFile-container',
+    openFileModal: '.squireToolbar-action-image',
+    fileCancelButton: '.addFile-cancel-button',
+
+    secondRow: '.squireToolbar-row-2',
+    openSecondRowButton: '.squireToolbar-action-options'
+};
+
 // Doesn't work on the headless browser
 // it('should focus the composer To filed', () => {
 //     cy.wait(300);
@@ -13,12 +26,12 @@ const bccListInput = autocompleteTest('.composer-field-BCCList');
 // });
 
 it('should hide the 2sd toolbar', () => {
-    cy.get('.squireToolbar-row-2').should('not.be.visible');
+    cy.get(SELECTOR.secondRow).should('not.be.visible');
 });
 
 it('should toggle the 2sd toolbar', () => {
-    cy.get('.squireToolbar-action-options').click();
-    cy.get('.squireToolbar-row-2').should('be.visible');
+    cy.get(SELECTOR.openSecondRowButton).click();
+    cy.get(SELECTOR.secondRow).should('be.visible');
 });
 
 describe('Color popover', () => {
@@ -32,9 +45,9 @@ describe('Color popover', () => {
 
     it('should not close the 2sd toolbar', () => {
         cy.get('.squireToolbar-action-color').click();
-        cy.get('.squireToolbar-row-2').should('be.visible');
+        cy.get(SELECTOR.secondRow).should('be.visible');
         cy.get('.squireToolbar-action-color').click();
-        cy.get('.squireToolbar-row-2').should('be.visible');
+        cy.get(SELECTOR.secondRow).should('be.visible');
     });
 
     it('should update the selected color', () => {
@@ -110,10 +123,10 @@ describe('Color popover', () => {
         });
 
         it('should hide the popover if toggle toolbar', () => {
-            cy.get('.squireToolbar-action-options').click();
-            cy.get('.squireToolbar-row-2').should('not.be.visible');
-            cy.get('.squireToolbar-action-options').click();
-            cy.get('.squireToolbar-row-2').should('be.visible');
+            cy.get(SELECTOR.openSecondRowButton).click();
+            cy.get(SELECTOR.secondRow).should('not.be.visible');
+            cy.get(SELECTOR.openSecondRowButton).click();
+            cy.get(SELECTOR.secondRow).should('be.visible');
             cy.get('.squireSelectColor-popover').should('not.be.visible');
         });
     });
@@ -130,9 +143,9 @@ describe('Font size select', () => {
 
     it('should not close the 2sd toolbar', () => {
         cy.get('.squireToolbar-action-fontSize').click();
-        cy.get('.squireToolbar-row-2').should('be.visible');
+        cy.get(SELECTOR.secondRow).should('be.visible');
         cy.get('.squireToolbar-action-fontSize').click();
-        cy.get('.squireToolbar-row-2').should('be.visible');
+        cy.get(SELECTOR.secondRow).should('be.visible');
     });
 
     describe('Hide popover', () => {
@@ -162,10 +175,10 @@ describe('Font size select', () => {
         });
 
         it('should hide the popover if toggle toolbar', () => {
-            cy.get('.squireToolbar-action-options').click();
-            cy.get('.squireToolbar-row-2').should('not.be.visible');
-            cy.get('.squireToolbar-action-options').click();
-            cy.get('.squireToolbar-row-2').should('be.visible');
+            cy.get(SELECTOR.openSecondRowButton).click();
+            cy.get(SELECTOR.secondRow).should('not.be.visible');
+            cy.get(SELECTOR.openSecondRowButton).click();
+            cy.get(SELECTOR.secondRow).should('be.visible');
             cy.get('.squireToolbar-font-size').should('not.be.visible');
         });
     });
@@ -182,9 +195,9 @@ describe('Font family select', () => {
 
     it('should not close the 2sd toolbar', () => {
         cy.get('.squireToolbar-action-fontFamily').click();
-        cy.get('.squireToolbar-row-2').should('be.visible');
+        cy.get(SELECTOR.secondRow).should('be.visible');
         cy.get('.squireToolbar-action-fontFamily').click();
-        cy.get('.squireToolbar-row-2').should('be.visible');
+        cy.get(SELECTOR.secondRow).should('be.visible');
     });
 
     describe('Hide popover', () => {
@@ -214,10 +227,10 @@ describe('Font family select', () => {
         });
 
         it('should hide the popover if toggle toolbar', () => {
-            cy.get('.squireToolbar-action-options').click();
-            cy.get('.squireToolbar-row-2').should('not.be.visible');
-            cy.get('.squireToolbar-action-options').click();
-            cy.get('.squireToolbar-row-2').should('be.visible');
+            cy.get(SELECTOR.openSecondRowButton).click();
+            cy.get(SELECTOR.secondRow).should('not.be.visible');
+            cy.get(SELECTOR.openSecondRowButton).click();
+            cy.get(SELECTOR.secondRow).should('be.visible');
             cy.get('.squireToolbar-font-family').should('not.be.visible');
         });
     });
@@ -234,9 +247,9 @@ describe('Options select', () => {
 
     it('should not close the 2sd toolbar', () => {
         cy.get('.squireToolbar-action-modeEditor').click();
-        cy.get('.squireToolbar-row-2').should('be.visible');
+        cy.get(SELECTOR.secondRow).should('be.visible');
         cy.get('.squireToolbar-action-modeEditor').click();
-        cy.get('.squireToolbar-row-2').should('be.visible');
+        cy.get(SELECTOR.secondRow).should('be.visible');
     });
 
     describe('Hide popover', () => {
@@ -271,114 +284,60 @@ describe('Options select', () => {
         });
 
         it('should hide the popover if toggle toolbar', () => {
-            cy.get('.squireToolbar-action-options').click();
-            cy.get('.squireToolbar-row-2').should('not.be.visible');
-            cy.get('.squireToolbar-action-options').click();
-            cy.get('.squireToolbar-row-2').should('be.visible');
+            cy.get(SELECTOR.openSecondRowButton).click();
+            cy.get(SELECTOR.secondRow).should('not.be.visible');
+            cy.get(SELECTOR.openSecondRowButton).click();
+            cy.get(SELECTOR.secondRow).should('be.visible');
             cy.get('.squireToolbar-editor-mode').should('not.be.visible');
         });
     });
 });
 
-describe('popover link', () => {
-    it('should toggle the popover', () => {
-        cy.get('.addLinkPopover-container').should('not.be.visible');
-        cy.get('.squireToolbar-action-link').click();
-        cy.get('.addLinkPopover-container').should('be.visible');
-        cy.get('.squireToolbar-action-link').click();
-        cy.get('.addLinkPopover-container').should('not.be.visible');
+describe('modal link', () => {
+    it('should toggle the modal', () => {
+        cy.get(SELECTOR.linkContainer).should('not.be.visible');
+        cy.get(SELECTOR.openLinkModal).click();
+        cy.get(SELECTOR.linkContainer).should('be.visible');
+
+        cy.get(SELECTOR.linkCancelButton).click();
+        cy.get(SELECTOR.linkContainer).should('not.be.visible');
     });
 
     it('should close the 2sd row if open', () => {
-        cy.get('.squireToolbar-action-options').click();
-        cy.get('.squireToolbar-row-2').should('be.visible');
+        cy.get(SELECTOR.openSecondRowButton).click();
+        cy.get(SELECTOR.secondRow).should('be.visible');
 
-        cy.get('.squireToolbar-action-link').click();
-        cy.get('.addLinkPopover-container').should('be.visible');
-        cy.get('.squireToolbar-row-2').should('not.be.visible');
+        cy.get(SELECTOR.openLinkModal).click();
+        cy.get(SELECTOR.linkContainer).should('be.visible');
+        cy.get(SELECTOR.secondRow).should('not.be.visible');
 
-        cy.get('.squireToolbar-action-link').click();
-        cy.get('.addLinkPopover-container').should('not.be.visible');
-        cy.get('.squireToolbar-row-2').should('not.be.visible');
-    });
-
-    describe('Hide popover', () => {
-        beforeEach(() => {
-            cy.get('.squireToolbar-action-link').click();
-            cy.get('.addLinkPopover-container').should('be.visible');
-        });
-
-        it('should hide the popover if click select other button', () => {
-            cy.get('.squireToolbar-action-removeAllFormatting').click();
-            cy.get('.addLinkPopover-container').should('not.be.visible');
-        });
-
-        it('should hide the popover if click select other button', () => {
-            cy.get('.squireToolbar-action-image').click();
-            cy.get('.addLinkPopover-container').should('not.be.visible');
-            cy.get('.addFilePopover-container').should('be.visible');
-        });
-
-        it('should hide the popover if toggle toolbar', () => {
-            cy.get('.squireToolbar-action-options').click();
-            cy.get('.squireToolbar-row-2').should('be.visible');
-            cy.get('.addLinkPopover-container').should('not.be.visible');
-
-            cy.get('.squireToolbar-action-options').click();
-            cy.get('.squireToolbar-row-2').should('not.be.visible');
-            cy.get('.addLinkPopover-container').should('not.be.visible');
-        });
+        cy.get(SELECTOR.linkCancelButton).click();
+        cy.get(SELECTOR.linkContainer).should('not.be.visible');
+        cy.get(SELECTOR.secondRow).should('not.be.visible');
     });
 });
 
-describe('popover image', () => {
-    it('should toggle the popover', () => {
-        cy.get('.addFilePopover-container').should('not.be.visible');
-        cy.get('.squireToolbar-action-image').click();
-        cy.get('.addFilePopover-container').should('be.visible');
-        cy.get('.squireToolbar-action-image').click();
-        cy.get('.addFilePopover-container').should('not.be.visible');
+describe('modal image', () => {
+    it('should toggle the modal', () => {
+        cy.get(SELECTOR.fileContainer).should('not.be.visible');
+        cy.get(SELECTOR.openFileModal).click();
+        cy.get(SELECTOR.fileContainer).should('be.visible');
+
+        cy.get(SELECTOR.fileCancelButton).click();
+        cy.get(SELECTOR.fileContainer).should('not.be.visible');
     });
 
     it('should close the 2sd row if open', () => {
-        cy.get('.squireToolbar-action-options').click();
-        cy.get('.squireToolbar-row-2').should('be.visible');
+        cy.get(SELECTOR.openSecondRowButton).click();
+        cy.get(SELECTOR.secondRow).should('be.visible');
 
-        cy.get('.squireToolbar-action-image').click();
-        cy.get('.addFilePopover-container').should('be.visible');
-        cy.get('.squireToolbar-row-2').should('not.be.visible');
+        cy.get(SELECTOR.openFileModal).click();
+        cy.get(SELECTOR.fileContainer).should('be.visible');
+        cy.get(SELECTOR.secondRow).should('not.be.visible');
 
-        cy.get('.squireToolbar-action-image').click();
-        cy.get('.addFilePopover-container').should('not.be.visible');
-        cy.get('.squireToolbar-row-2').should('not.be.visible');
-    });
-
-    describe('Hide popover', () => {
-        beforeEach(() => {
-            cy.get('.squireToolbar-action-image').click();
-            cy.get('.addFilePopover-container').should('be.visible');
-        });
-
-        it('should hide the popover if click select other button', () => {
-            cy.get('.squireToolbar-action-removeAllFormatting').click();
-            cy.get('.addFilePopover-container').should('not.be.visible');
-        });
-
-        it('should hide the popover if click select other button', () => {
-            cy.get('.squireToolbar-action-link').click();
-            cy.get('.addFilePopover-container').should('not.be.visible');
-            cy.get('.addLinkPopover-container').should('be.visible');
-        });
-
-        it('should hide the popover if toggle toolbar', () => {
-            cy.get('.squireToolbar-action-options').click();
-            cy.get('.squireToolbar-row-2').should('be.visible');
-            cy.get('.addFilePopover-container').should('not.be.visible');
-
-            cy.get('.squireToolbar-action-options').click();
-            cy.get('.squireToolbar-row-2').should('not.be.visible');
-            cy.get('.addFilePopover-container').should('not.be.visible');
-        });
+        cy.get(SELECTOR.fileCancelButton).click();
+        cy.get(SELECTOR.fileContainer).should('not.be.visible');
+        cy.get(SELECTOR.secondRow).should('not.be.visible');
     });
 });
 

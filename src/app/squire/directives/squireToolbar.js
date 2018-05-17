@@ -111,7 +111,9 @@ function squireToolbar(editorState, editorModel) {
                     node,
                     (parent) =>
                         parent.dataset &&
-                        (parent.dataset.squirePopover !== undefined || parent.dataset.squireDropdown !== undefined)
+                        (parent.dataset.squirePopover !== undefined ||
+                            parent.dataset.squireDropdown !== undefined ||
+                            parent.dataset.squirePreventClose !== undefined)
                 );
             const clickAnywhereClose = ({ target }) => {
                 if (target.dataset.squireActions || isInsidePopup(target)) {

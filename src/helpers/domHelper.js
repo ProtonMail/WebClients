@@ -24,4 +24,18 @@ export const findParent = (node, cb) => {
     }
 };
 
+/**
+ * Inline css into an element.
+ * @param {String} html
+ * @returns {String}
+ */
 export const inlineCss = (html = '') => juice(html, OPTIONS);
+
+/**
+ * Set an element to be hidden.
+ * @param {DOMNode} el
+ * @param {Boolean} value Hidden or shown
+ */
+export const setHidden = (el, value = false) => {
+    el.style.display = value ? 'none' : '';
+};

@@ -1,5 +1,4 @@
 import _ from 'lodash';
-import autoLink from '../../../helpers/autoLink';
 
 /* @ngInject */
 function identitySection(
@@ -55,7 +54,7 @@ function identitySection(
                 const config = {
                     ID: CACHE.ID,
                     DisplayName,
-                    Signature: autoLink(Signature)
+                    Signature
                 };
                 await signatureModel.save(config);
                 notification.success(I18N.SUCCESS_SAVE);

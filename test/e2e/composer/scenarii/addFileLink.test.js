@@ -4,26 +4,26 @@ module.exports = ({ message, editor }) => {
 
     describe('Add an image', () => {
 
-        let popover, borodin;
+        let modal, borodin;
 
-        it('should display the popover', () => {
+        it('should display the modal', () => {
             borodin = editor.compose();
-            popover = borodin.addFilePopover();
-            popover.openForm()
-                .then(() => popover.isVisible())
+            modal = borodin.addFileModal();
+            modal.openModal()
+                .then(() => modal.isVisible())
                 .then(isTrue);
         });
 
-        it('should close the popover on submit', () => {
-            popover.bindLink(message.linkImage)
-                .then(() => popover.submit())
+        it('should close the modal on submit', () => {
+            modal.bindLink(message.linkImage)
+                .then(() => modal.submit())
                 .then(() => browser.sleep(300))
-                .then(() => popover.isVisible())
+                .then(() => modal.isVisible())
                 .then(isFalse);
         });
 
         it('should add an image', () => {
-            popover.matchIframe(message.linkImage)
+            modal.matchIframe(message.linkImage)
                 .then(isTrue);
         });
     });
