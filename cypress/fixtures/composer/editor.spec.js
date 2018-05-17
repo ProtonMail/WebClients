@@ -19,6 +19,13 @@ it('should toggle a button underline', () => {
     cy.get('.squireToolbar-container').should('have.class', 'u');
 });
 
+it('should toggle a button state blockquote', () => {
+    cy.get('.squireToolbar-container').should('not.have.class', 'blockquote');
+    cy.get('.squireToolbar-action-options').click();
+    cy.get('.squireToolbar-action-blockquote').click();
+    cy.get('.squireToolbar-container').should('have.class', 'blockquote');
+});
+
 it('should toggle a button underline', () => {
     cy.get('.composer iframe').then(($iframe) => {
         $iframe
