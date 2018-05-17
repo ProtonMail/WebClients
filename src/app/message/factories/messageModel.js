@@ -1,6 +1,8 @@
 import _ from 'lodash';
 
 import { ENCRYPTED_STATUS, VERIFICATION_STATUS, MIME_TYPES } from '../../constants';
+import { toText } from '../../../helpers/parserHTML';
+import { parseMail } from '../../../helpers/mail';
 import { inlineCss } from '../../../helpers/domHelper';
 
 const MAX_ENC_HEADER_LENGTH = 1024;
@@ -200,6 +202,17 @@ function messageModel(
             return this.DecryptedBody || '';
         }
 
+        exportPlainText() {
+            /*
+             * The replace removes any characters that are produced by the copying process (like zero width characters)
+             * See: http://www.berklix.org/help/majordomo/#quoted we want to avoid sending unnecessary quoted printable encodings
+             */
+            if (this.MIMEType !== 'text/html') {
+                return this.getDecryptedBody().replace(/\u200B/g, '');
+            }
+            return toText(this.getDecryptedBody(), true, true).replace(/\u200B/g, '');
+        }
+
         getListUnsubscribe() {
             const { ParsedHeaders = {} } = this;
             return ParsedHeaders['List-Unsubscribe'] || '';
@@ -233,15 +246,6 @@ function messageModel(
         }
 
         async parse(content = '', verified = VERIFICATION_STATUS.NOT_VERIFIED) {
-            const parseMail = (data) => {
-                const deferred = $q.defer();
-                const mailparser = new MailParser({ defaultCharset: 'UTF-8' });
-                mailparser.on('end', deferred.resolve);
-                mailparser.write(data);
-                mailparser.end();
-                return deferred.promise;
-            };
-
             const data = await parseMail(content);
             // cf. https://github.com/autocrypt/memoryhole subject can be in the MIME headers
             const { attachments = [], text = '', html = '', subject: mimeSubject = false } = data;
@@ -326,6 +330,7 @@ function messageModel(
                             date: new Date(this.Time * 1000)
                         })
                         .then(({ data, verified: pmcryptoVerified = VERIFICATION_STATUS.NOT_SIGNED }) => {
+                            this.decryptedMIME = data;
                             this.decrypting = false;
                             this.hasError = false;
 
@@ -412,6 +417,10 @@ function messageModel(
             return attachedPublicKey.extractFromEmail(this);
         }
 
+        isMIME() {
+            return PGPMIME_TYPES.includes(this.IsEncrypted) || this.MIMEType === 'multipart/mixed';
+        }
+
         async clearTextBody(forceDecrypt = false) {
             if (!(this.isDraft() || this.IsEncrypted > 0)) {
                 this.setDecryptedBody(this.Body, false);
@@ -430,7 +439,7 @@ function messageModel(
                 // result.attachments should first: this ensures the latest Verified value is used.
                 this.Attachments = result.attachments.length ? result.attachments : this.Attachments;
 
-                if (!(PGPMIME_TYPES.includes(this.IsEncrypted) || this.MIMEType === 'multipart/mixed')) {
+                if (!this.isMIME()) {
                     await Promise.all(
                         this.Attachments.filter(AttachmentLoader.has).map((attachment) =>
                             AttachmentLoader.reverify(attachment, this)

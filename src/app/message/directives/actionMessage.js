@@ -1,7 +1,8 @@
 import { MAILBOX_IDENTIFIERS } from '../../constants';
+import { combineHeaders, splitMail } from '../../../helpers/mail';
 
 /* @ngInject */
-function actionMessage($rootScope, downloadFile, openStatePostMessage) {
+function actionMessage($rootScope, downloadFile, openStatePostMessage, mimeMessageBuilder, networkActivityTracker) {
     const dispatcher = (message = {}) => (action = '', mailbox = '') => {
         $rootScope.$emit('messageActions', {
             type: action,
@@ -12,6 +13,30 @@ function actionMessage($rootScope, downloadFile, openStatePostMessage) {
     const toggleImages = ({ message }) => {
         message.showEmbedded === true && (message.showEmbedded = false);
         message.showImages === true && (message.showImages = false);
+    };
+
+    /**
+     * Exports the message to an EML file including attachments. Any encrypted headers in the body will overwrite the cleartext headers
+     * @param scope
+     */
+    const downloadEML = (scope) => {
+        const { Header = '', Subject = '', Time } = scope.message;
+        const promise = mimeMessageBuilder
+            .construct(scope.message, false)
+            .then((mime) => {
+                const { body, headers: mimeHeaders } = splitMail(mime);
+                return combineHeaders(Header, mimeHeaders).then((headers) => [headers, body]);
+            })
+            .then(([headers, body]) => {
+                const blob = new Blob([`${headers}\r\n${body}`], {
+                    type: 'data:text/plain;charset=utf-8;'
+                });
+                const filename = `${Subject} ${moment.unix(Time).format()}.eml`;
+
+                downloadFile(blob, filename);
+            });
+
+        networkActivityTracker.track(promise);
     };
 
     return {
@@ -73,14 +98,7 @@ function actionMessage($rootScope, downloadFile, openStatePostMessage) {
                     }
 
                     case 'downloadEml': {
-                        const { DecryptedBody = '', Header = '', Subject = '', Time } = scope.message;
-                        const blob = new Blob([`${Header}\n\r${DecryptedBody}`], {
-                            type: 'data:text/plain;charset=utf-8;'
-                        });
-                        const filename = `${Subject} ${moment.unix(Time).format()}.eml`;
-
-                        downloadFile(blob, filename);
-
+                        downloadEML(scope);
                         break;
                     }
 

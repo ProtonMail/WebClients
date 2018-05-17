@@ -2,7 +2,7 @@ import _ from 'lodash';
 import mimemessage from 'mimemessage';
 
 /* @ngInject */
-function mimeMessageBuilder(pmcw, embeddedUtils) {
+function mimeMessageBuilder(pmcw, embeddedUtils, AttachmentLoader) {
     const RFC2045_LIMIT = 76;
 
     const arrayToBase64 = _.flowRight(pmcw.encode_base64, pmcw.arrayToBinaryString);
@@ -132,23 +132,37 @@ function mimeMessageBuilder(pmcw, embeddedUtils) {
             body: [buildPlaintextEntity(plaintext), buildEmbeddedHtml(html, attachments)]
         });
     };
+
+    /**
+     * Builds a mime body given the plaintext, html source and a list of attachments to fetch embedded images from
+     * @param {String|false} plaintext The plaintext string or false if the generated body should not have a plaintext part
+     * @param {String|false} html The HTML string or false if the generated body should not have a plaintext part
+     * @param {Array} attachments A list of attachments from which we can fetch the embedded images.
+     * @return {mimemessage.entity}
+     */
+    const buildBodyEntity = (plaintext, html, attachments) => {
+        if (html !== false && plaintext !== false) {
+            return buildAlternateEntity(plaintext, html, attachments);
+        }
+        return html !== false ? buildEmbeddedHtml(html, attachments) : buildPlaintextEntity(plaintext);
+    };
+
     /**
      * Builds a multipart message from the given plaintext, html bodies and attachments.
      * The html body is not necessary to create a valid mime body
-     * @param plaintext
-     * @param html (optional, if not available should be false)
-     * @param attachments
-     * @returns {string}
+     * @param {String|false} plaintext if the body should not contain plaintext should be false
+     * @param {String|false} html if the body should not contain html should be false
+     * @param {Array} attachments
+     * @returns {String}
      */
     const build = (plaintext, html, attachments) => {
-        const alternateEntity =
-            html === false ? buildPlaintextEntity(plaintext) : [buildAlternateEntity(plaintext, html, attachments)];
+        const bodyEntity = buildBodyEntity(plaintext, html, attachments);
         const normalAttachments =
             html === false
                 ? attachments
                 : _.filter(attachments, ({ attachment: { Headers } }) => !embeddedUtils.isInline(Headers));
         const attachmentEntities = buildAttachments(normalAttachments);
-        const body = [alternateEntity].concat(attachmentEntities);
+        const body = [bodyEntity].concat(attachmentEntities);
 
         const msgentity = mimemessage.factory({
             contentType: `multipart/mixed; boundary="${generateBoundary()}"`,
@@ -158,6 +172,38 @@ function mimeMessageBuilder(pmcw, embeddedUtils) {
         return msgentity.toString() + '\r\n';
     };
 
-    return { build };
+    /**
+     * Generates/Gets the plaintext body from the message. If the message is not composed in plaintext, it will downconvert
+     * the html body to plaintext if downconvert is set. If downconvert is disabled it will return false.
+     * @param {Object} message
+     * @param {Boolean} downconvert
+     * @return {String}
+     */
+    const generatePlaintext = (message, downconvert) => {
+        if (!message.isPlainText() && !downconvert) {
+            return false;
+        }
+        return message.exportPlainText();
+    };
+
+    const fetchMimeDependencies = (message, downconvert) =>
+        Promise.all(
+            _.map(message.getAttachments(), async (attachment) => ({
+                attachment,
+                data: await AttachmentLoader.get(attachment, message)
+            }))
+        ).then((attachments) => [attachments, generatePlaintext(message, downconvert)]);
+
+    const construct = async (message, downconvert = true) => {
+        if (message.isMIME() && message.decryptedMIME) {
+            return message.decryptedMIME;
+        }
+        const [attachments, plaintext] = await fetchMimeDependencies(message, downconvert);
+        const html = message.MIMEType === 'text/html' ? message.getDecryptedBody() : false;
+
+        return build(plaintext, html, attachments);
+    };
+
+    return { construct, build };
 }
 export default mimeMessageBuilder;
