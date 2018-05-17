@@ -22,15 +22,14 @@
                     ng-change="setLabel(item)"
                     ng-readonly="!UI.allowCustom"
                     ng-required="UI.required"
-                    ng-focus="onFocus(item)"
-                    ng-blur="onBlur(item)">
+                    ng-click="toggleSelector($event, item)">
 
                 <i class="fa itemIcon" ng-class="UI.iconClass"></i>
-                <i class="fa fa-chevron-down" ng-mousedown="toggleSelector($event, item)"></i>
+                <i class="fa" ng-class="{'fa-chevron-down': !item.displaySelector, 'fa-chevron-up': item.displaySelector}" ng-click="toggleSelector($event, item)"></i>
 
                 <ul class="contactItem-selectType" ng-show="item.displaySelector && UI.labels.length > 1">
                     <li ng-repeat="label in UI.labels" ng-class="{ selected: item.label.toUpperCase() === label.toUpperCase() }">
-                        <a ng-mousedown="setLabel(item, label)">{{ label }}</a>
+                        <a ng-click="setLabel(item, label)">{{ label }}</a>
                     </li>
                 </ul>
 
