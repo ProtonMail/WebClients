@@ -28,8 +28,10 @@ function cacheCounters(messageApi, conversationApi, $q, dispatchers, authenticat
 
     on('labelsModel', (e, { type, data }) => {
         if (type === 'cache.update') {
-            data.create.forEach(({ ID }) => exist(ID));
-            Object.keys(data.remove).forEach((ID) => {
+            const { create = [], remove = {} } = data;
+
+            create.forEach(({ ID }) => exist(ID));
+            Object.keys(remove).forEach((ID) => {
                 delete counters[ID];
             });
         }
