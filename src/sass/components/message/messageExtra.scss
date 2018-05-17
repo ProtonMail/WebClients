@@ -17,12 +17,12 @@
 }
 
 .messageExtra-container > [class*='-container'] [class*='-notice-text'] { font-weight: bold }
-.messageExtra-container > [class*='-container'] > [class$='-notice'] {
+.messageExtra-container > [class*='-container'] > [class*='-notice'] {
     position: relative;
     padding-left: 2.2em;
 }
 
-.messageExtra-container > [class*='-container'] > [class$='-notice']::before {
+.messageExtra-container > [class*='-container'] > [class*='-notice']::before {
     position: absolute;
     left: 0;
     top: 0;
@@ -89,10 +89,13 @@
 }
 
 /* messageMimeParsing-container */
-.messageExtra-container >  .messageMimeParsing-container > [class*='-notice']::before { content: "\f0f6" }
+.messageExtra-container > .messageMimeParsing-container > [class*='-notice']::before { content: "\f0f6" }
 
 /* messageExpiration-container */
-.messageExtra-container >  .messageExpiration-container > [class*='-notice']::before { content: "\f253" }
+.messageExtra-container > .messageExpiration-container > [class*='-notice']::before { content: "\f253" }
+
+/* messageDisplayError-container */
+.messageExtra-container > .messageDisplayError-container > [class*='-notice']::before { content: "\f071" }
 
 /* EO */
 
