@@ -63,7 +63,7 @@ function squireToolbar(editorState, editorModel) {
                  * Ex: isBold etc.
                  */
                 const classNames = flow(
-                    filter((i) => i && /^i$|^u$|^b$|^ul$|^ol$|^li$|.align-(center|left|right)$/i.test(i)),
+                    filter((i) => i && /^blockquote$|^i$|^u$|^b$|^ul$|^ol$|^li$|.align-(center|left|right)$/i.test(i)),
                     reduce((acc, path) => acc.concat(path.split('.')), []),
                     filter((i) => i && !/div|html|body|span/i.test(i)),
                     reduce((acc, key) => {
