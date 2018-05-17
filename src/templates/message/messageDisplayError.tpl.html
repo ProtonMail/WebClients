@@ -1,25 +1,16 @@
-<div class="messageDisplayError-container">
+<section class="messageDisplayError-container">
     <div ng-if="message.failedDecryption && !message.networkError" class="messageDisplayError-notice">
-        <span class="pull-left fa fa-exclamation-triangle"></span>
-        <strong translate translate-context="Message decryption error">Decryption error</strong>
-        <div translate translate-context="Message decryption error">Decryption of this message's encryption content failed.</div>
+        <span class="messageDisplayError-notice-text" translate translate-context="Message decryption error">Decryption error: Decryption of this message's encryption content failed.</span>
         <a href="#" data-reload-state translate-context="Action to reload the current state" translate>Try again</a>
     </div>
 
     <div ng-if="!message.failedDecryption && !message.networkError && message.errorInfo" class="messageDisplayError-notice">
-        <span class="pull-left fa fa-exclamation-triangle"></span>
-        <strong translate translate-context="Message network error">Sanitization error</strong>
-        <a
-            href="#"
-            class="messageDisplayError-btn-report"
-            translate-context="Action to report an error for the message"
-            translate>Report problem</a>
+        <span class="messageDisplayError-notice-text" translate translate-context="Message network error">Sanitization error</span>
+        <a href="#" class="messageDisplayError-btn-report" translate-context="Action to report an error for the message" translate>Report problem</a>
     </div>
 
     <div ng-if="message.networkError" class="messageDisplayError-notice">
-        <span class="pull-left fa fa-exclamation-triangle"></span>
-        <strong translate translate-context="Message network error">Network error</strong>
-        <div translate translate-context="Message network error">Please check your connection and try again.</div>
+        <span class="messageDisplayError-notice-text" translate translate-context="Message network error">Network error: Please check your connection and try again.</span>
         <a href="#" reload-state translate-context="Action to reload the current state" translate>Try again</a>
     </div>
-</div>
+</section>
