@@ -6,10 +6,10 @@ module.exports = ({ editor, message }) => {
 
         let popover, borodin;
 
-        it('should display the popover', () => {
+        it('should display the modal', () => {
             borodin = editor.compose();
-            popover = borodin.addLinkPopover();
-            popover.openForm()
+            popover = borodin.addLinkModal();
+            popover.openModal()
                 .then(() => popover.isVisible())
                 .then(isTrue);
         });

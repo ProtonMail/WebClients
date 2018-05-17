@@ -1,0 +1,55 @@
+<div class="addFile-container clearfix">
+    <div class="row">
+        <label
+            for="address"
+            class="col-3-8"
+            translate-context="Composer, add File"
+            translate>Web address</label>
+        <div class="col-5-8">
+            <input
+                name="addressInput"
+                tabindex="1"
+                id="address"
+                required
+                type="text"
+                autocomplete="off"
+                class="addFile-addressInput"
+                placeholder-translate="Image URL"
+                placeholder-translate-context="Composer, add File"
+                ng-model="image.src">
+
+            <div ng-messages="form.addressInput.$error" class="text-red">
+                <p ng-message="required" translate-context="Error" translate>Field required</p>
+                <p ng-message="valid" translate-context="Error" translate>Not a valid URL</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <label
+            class="col-3-8"
+            translate-context="Composer, add File"
+            translate>Image preview</label>
+
+        <div class="col-5-8 addFile-previewContainer">
+            <img class="addFile-preview"/>
+
+            <div class="addFile-previewText">
+                <p class="alert alert-info" translate translate-context="Composer, add File">
+                    If your URL is correct, you'll see an image preview here. Large images may take a few minutes to
+                    appear.
+                </p>
+            </div>
+
+            <span class="addFile-previewText-loading">
+                <i class="fa fa-spin fa-spinner"></i>
+                <span translate translate-context="Composer, add File">Loading image</span>
+            </span>
+
+            <span class="addFile-previewText-error text-red" translate translate-context="Composer, add File">
+                Error loading image
+            </span>
+        </div>
+    </div>
+</div>
+

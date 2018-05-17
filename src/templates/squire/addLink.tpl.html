@@ -1,0 +1,84 @@
+<div class="addLink-container clearfix">
+    <p class="alert alert-info" translate translate-context="Composer, add Link">
+        In the first box, put the link/email/phone number the text
+        should go to. In the second box, put the text you want to appear.
+    </p>
+
+    <div class="row">
+        <label
+            for="urlLink"
+            class="col-3-8"
+            translate-context="Composer, add Link"
+            translate>URL link</label>
+
+        <div class="col-5-8">
+            <span class="addLink-urlLinkDescription"></span>
+            <input
+                tabindex="2"
+                id="urlLink"
+                class="addLink-urlLinkInput"
+                name="urlLink"
+                ng-model="link.url"
+                autocomplete="off"
+                required
+                type="text"
+                placeholder-translate="Link URL"
+                placeholder-translate-context="Composer, add Link">
+
+            <div ng-messages="form.urlLink.$error" class="text-red">
+                <p ng-message="required" translate-context="Error" translate>Field required</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-3-8">
+            <label
+                for="labelLink"
+                translate-context="Composer, add Link"
+                translate>Text to display</label>
+            <div class="addLink-linkTypes">
+                <label class="visual-label">
+                    <custom-radio
+                        data-custom-ng-model="link.type"
+                        data-custom-ng-value="linkTypes.WEB"></custom-radio>
+                    <span translate translate-context="Composer, add Link">Web address</span>
+                </label>
+                <label class="visual-label">
+                    <custom-radio
+                        data-custom-ng-model="link.type"
+                        data-custom-ng-value="linkTypes.EMAIL"></custom-radio>
+                    <span translate translate-context="Composer, add Link">Email address</span>
+                </label>
+                <label class="visual-label">
+                    <custom-radio
+                        data-custom-ng-model="link.type"
+                        data-custom-ng-value="linkTypes.PHONE"></custom-radio>
+                    <span translate translate-context="Composer, add Link">Phone number</span>
+                </label>
+            </div>
+        </div>
+
+        <div class="col-5-8">
+            <input
+                name="labelLink"
+                tabindex="1"
+                autocomplete="off"
+                type="text"
+                id="labelLink"
+                required
+                class="addLink-labelLinkInput"
+                placeholder-translate="Link label"
+                placeholder-translate-context="Composer, add Link"
+                ng-model="link.label">
+
+            <div ng-messages="form.labelLink.$error" class="text-red">
+                <p ng-message="required" translate-context="Error" translate>Field required</p>
+            </div>
+
+            <div class="addLink-linkTestContainer">
+                <a class="addLink-linkTest" rel="noopener noreferrer nofollow" target="_blank">Test link</a>
+            </div>
+        </div>
+    </div>
+</div>

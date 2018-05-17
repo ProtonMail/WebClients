@@ -192,7 +192,7 @@ function composerDropzone(
             const dropzone = new Dropzone(el[0], getConfig(scope.message, dispatchAction));
 
             // Adding a message from the toolbar
-            on('addFile', (e, { asEmbedded, message }) => {
+            on('addFile', (e, { data: { asEmbedded, message } }) => {
                 if (message.ID === scope.message.ID) {
                     scope.message.asEmbedded = asEmbedded;
                     dropzone.element.click();

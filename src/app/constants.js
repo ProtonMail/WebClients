@@ -327,6 +327,12 @@ export const DEFAULT_SQUIRE_VALUE = {
     IFRAME_CLASS: 'angular-squire-iframe'
 };
 
+export const LINK_TYPES = {
+    WEB: 'web',
+    EMAIL: 'email',
+    PHONE: 'phone'
+};
+
 export const EMAIL_FORMATING = {
     OPEN_TAG_AUTOCOMPLETE: '‹',
     CLOSE_TAG_AUTOCOMPLETE: '›',

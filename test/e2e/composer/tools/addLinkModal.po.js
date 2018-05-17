@@ -2,25 +2,25 @@ module.exports = () => {
 
     const SELECTOR = {
         toolbarBtn: '.squireToolbar-action-link',
-        popoverLabel: '#labelLink',
-        popoverInput: '#urlLink',
-        formAddPopover: '.addLinkPopover-container',
-        btnAddPopover: '.addLinkPopover-btn-new'
+        container: '.addLink-container',
+        labelInput: '.addLink-labelLinkInput',
+        urlInput: '.addLink-urlLinkInput',
+        btnInsert: '.addLink-insert-button'
     };
 
     const isVisible = () => {
         return browser.executeScript(`
-            return $('${SELECTOR.formAddPopover}').is(':visible')
+            return $('${SELECTOR.container}').is(':visible')
         `);
-    }
+    };
 
-    const openForm = () => {
+    const openModal = () => {
         return browser.executeScript(`$('${SELECTOR.toolbarBtn}').click();`);
     };
 
     const bindLink = (link) => {
         return browser.executeScript(`
-            const $input = $('${SELECTOR.formAddPopover}').find('${SELECTOR.popoverInput}');
+            const $input = $('${SELECTOR.urlInput}');
             $input.val('${link}');
             $input.triggerHandler('input');
         `);
@@ -28,7 +28,7 @@ module.exports = () => {
 
     const bindLabel = (label) => {
         return browser.executeScript(`
-            const $input = $('${SELECTOR.formAddPopover}').find('${SELECTOR.popoverLabel}');
+            const $input = $('${SELECTOR.labelInput}');
             $input.val('${label}');
             $input.triggerHandler('input');
         `);
@@ -37,14 +37,14 @@ module.exports = () => {
     const readInput = () => {
         return browser.executeScript(`
             return {
-                label: $('${SELECTOR.formAddPopover}').find('${SELECTOR.popoverLabel}').val(),
-                link: $('${SELECTOR.formAddPopover}').find('${SELECTOR.popoverInput}').val()
+                label: $('${SELECTOR.labelInput}').val(),
+                link: $('${SELECTOR.urlInput}').val()
             };
         `);
     };
 
     const submit = () => {
-        return browser.executeScript(`$('${SELECTOR.formAddPopover}').find('${SELECTOR.btnAddPopover}').click();`);
+        return browser.executeScript(`${SELECTOR.btnInsert}').click();`);
     };
 
     const matchIframe = (href, link = '') => {
@@ -63,9 +63,8 @@ module.exports = () => {
         `);
     };
 
-
     return {
-        openForm,
+        openModal,
         bindLink,
         bindLabel,
         submit,

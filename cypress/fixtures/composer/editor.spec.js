@@ -39,16 +39,23 @@ it('should toggle a button underline', () => {
 });
 
 describe('Links', () => {
-    const selector = (item = '') => `.composer .addLinkPopover-container ${item}`.trim();
+    const SELECTOR = {
+        container: '.addLink-container',
+        labelInput: '.addLink-labelLinkInput',
+        urlInput: '.addLink-urlLinkInput',
+        openButton: '.squireToolbar-action-link',
+        insertButton: '.addLink-insert-button',
+        removeButton: '.addLink-remove-button'
+    };
 
     it('should bind a link + label inside the editor', () => {
-        cy.get(selector()).should('not.be.visible');
-        cy.get('.squireToolbar-action-link').click();
-        cy.get(selector()).should('be.visible');
-        cy.get(selector('#labelLink')).type(message.linkLabel);
-        cy.get(selector('#urlLink')).type(message.linkImage);
-        cy.get(selector('.addLinkPopover-btn-new')).click();
-        cy.get(selector()).should('not.be.visible');
+        cy.get(SELECTOR.container).should('not.be.visible');
+        cy.get(SELECTOR.openButton).click();
+        cy.get(SELECTOR.container).should('be.visible');
+        cy.get(SELECTOR.labelInput).type(message.linkLabel);
+        cy.get(SELECTOR.urlInput).type(message.linkImage);
+        cy.get(SELECTOR.insertButton).click();
+        cy.get(SELECTOR.container).should('not.be.visible');
 
         cy
             .get('.composer iframe')
@@ -64,19 +71,19 @@ describe('Links', () => {
     });
 
     it('should bind a link inside the editor', () => {
-        cy.get(selector()).should('not.be.visible');
-        cy.get('.squireToolbar-action-link').click();
-        cy.get(selector()).should('be.visible');
+        cy.get(SELECTOR.container).should('not.be.visible');
+        cy.get(SELECTOR.openButton).click();
+        cy.get(SELECTOR.container).should('be.visible');
         cy
-            .get(selector('#labelLink'))
+            .get(SELECTOR.labelInput)
             .clear()
             .type(message.linkImage);
         cy
-            .get(selector('#urlLink'))
+            .get(SELECTOR.urlInput)
             .clear()
             .type(message.linkImage);
-        cy.get(selector('.addLinkPopover-btn-new')).click();
-        cy.get(selector()).should('not.be.visible');
+        cy.get(SELECTOR.insertButton).click();
+        cy.get(SELECTOR.container).should('not.be.visible');
 
         cy
             .get('.composer iframe')
@@ -92,15 +99,15 @@ describe('Links', () => {
     });
 
     it('should edit a link inside the editor', () => {
-        cy.get(selector()).should('not.be.visible');
-        cy.get('.squireToolbar-action-link').click();
-        cy.get(selector()).should('be.visible');
+        cy.get(SELECTOR.container).should('not.be.visible');
+        cy.get(SELECTOR.openButton).click();
+        cy.get(SELECTOR.container).should('be.visible');
         cy
-            .get(selector('#labelLink'))
+            .get(SELECTOR.labelInput)
             .clear()
             .type('POLO');
-        cy.get(selector('.addLinkPopover-btn-edit')).click();
-        cy.get(selector()).should('not.be.visible');
+        cy.get(SELECTOR.insertButton).click();
+        cy.get(SELECTOR.container).should('not.be.visible');
 
         cy
             .get('.composer iframe')
@@ -116,15 +123,15 @@ describe('Links', () => {
     });
 
     it('should edit a link inside the editor 2', () => {
-        cy.get(selector()).should('not.be.visible');
-        cy.get('.squireToolbar-action-link').click();
-        cy.get(selector()).should('be.visible');
+        cy.get(SELECTOR.container).should('not.be.visible');
+        cy.get(SELECTOR.openButton).click();
+        cy.get(SELECTOR.container).should('be.visible');
         cy
-            .get(selector('#urlLink'))
+            .get(SELECTOR.urlInput)
             .clear()
             .type(LINK_EDIT);
-        cy.get(selector('.addLinkPopover-btn-edit')).click();
-        cy.get(selector()).should('not.be.visible');
+        cy.get(SELECTOR.insertButton).click();
+        cy.get(SELECTOR.container).should('not.be.visible');
 
         cy
             .get('.composer iframe')
@@ -140,11 +147,11 @@ describe('Links', () => {
     });
 
     it('should delete a link inside the editor', () => {
-        cy.get(selector()).should('not.be.visible');
-        cy.get('.squireToolbar-action-link').click();
-        cy.get(selector()).should('be.visible');
-        cy.get(selector('.addLinkPopover-btn-remove')).click();
-        cy.get(selector()).should('not.be.visible');
+        cy.get(SELECTOR.container).should('not.be.visible');
+        cy.get(SELECTOR.openButton).click();
+        cy.get(SELECTOR.container).should('be.visible');
+        cy.get(SELECTOR.removeButton).click();
+        cy.get(SELECTOR.container).should('not.be.visible');
 
         cy
             .get('.composer iframe')
@@ -160,15 +167,21 @@ describe('Links', () => {
 });
 
 describe('Images', () => {
-    const selector = (item = '') => `.composer .addFilePopover-container ${item}`.trim();
+    const SELECTOR = {
+        container: '.addFile-container',
+        urlInput: '.addFile-addressInput',
+        openButton: '.squireToolbar-action-image',
+        insertButton: '.addFile-insert-button'
+    };
 
     it('should attach an external image', () => {
-        cy.get(selector()).should('not.be.visible');
-        cy.get('.squireToolbar-action-image').click();
-        cy.get(selector()).should('be.visible');
-        cy.get(selector('input[type="url"]')).type(message.linkImage);
-        cy.get(selector('.addFilePopover-btn-url')).click();
-        cy.get(selector()).should('not.be.visible');
+        cy.get(SELECTOR.container).should('not.be.visible');
+        cy.get(SELECTOR.openButton).click();
+        cy.wait(150);
+        cy.get(SELECTOR.container).should('be.visible');
+        cy.get(SELECTOR.urlInput).type(message.linkImage);
+        cy.get(SELECTOR.insertButton).click();
+        cy.get(SELECTOR.container).should('not.be.visible');
 
         cy
             .get('.composer iframe')

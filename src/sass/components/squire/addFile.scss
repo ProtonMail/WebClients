@@ -1,0 +1,73 @@
+.addFile-previewContainer {
+    position: relative;
+    height: 300px;
+}
+
+.addFile-preview {
+    max-height: 100%;
+    max-width: 100%;
+    display: none;
+}
+
+.addFile-previewText-error {
+    display: none;
+}
+
+.addFile-previewText-loading {
+    display: none;
+    color: $dark;
+}
+
+.addFile-previewText {
+    display: none;
+    margin-bottom: 10px;
+}
+
+.addFile-fileInput {
+    display: none;
+}
+
+/**
+LOADED STATE
+ */
+.addFile-image-loaded .addFile-preview {
+    display: block;
+}
+
+/**
+LOADING STATE
+ */
+.addFile-image-loading .addFile-previewText,
+.addFile-image-loading .addFile-previewText-loading {
+    display: block;
+}
+
+.addFile-image-loading .addFile-preview {
+    display: none;
+}
+
+/**
+SUCCESS STATE
+ */
+.addFile-image-success .addFile-previewText {
+    display: none;
+}
+
+/**
+ERROR STATE
+ */
+.addFile-image-error .addFile-previewText-error,
+.addFile-image-error .addFile-previewText {
+    display: block;
+}
+
+.addFile-image-error .addFile-preview {
+    display: none;
+}
+
+/**
+EMPTY STATE
+ */
+.addFile-image-empty .addFile-previewText {
+    display: block;
+}

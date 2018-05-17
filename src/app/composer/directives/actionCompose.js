@@ -1,25 +1,24 @@
 /* @ngInject */
-function actionCompose($rootScope) {
+function actionCompose(dispatchers) {
     return {
         scope: {
             model: '=actionCompose'
         },
         link(scope, element, { actionComposeType }) {
+            const { dispatcher } = dispatchers(['addFile', 'composer.new']);
+
             function onClick(e) {
                 e.preventDefault();
 
                 if (/addFile|addEmbedded/.test(actionComposeType)) {
-                    return $rootScope.$emit('addFile', {
+                    return dispatcher.addFile('', {
                         asEmbedded: actionComposeType === 'addEmbedded',
                         message: scope.model
                     });
                 }
 
-                $rootScope.$emit('composer.new', {
-                    type: actionComposeType,
-                    data: {
-                        message: scope.model
-                    }
+                return dispatcher['composer.new'](actionComposeType, {
+                    message: scope.model
                 });
             }
 
@@ -31,4 +30,5 @@ function actionCompose($rootScope) {
         }
     };
 }
+
 export default actionCompose;
