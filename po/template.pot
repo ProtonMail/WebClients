@@ -954,6 +954,7 @@ msgid "Enter key manually instead"
 msgstr ""
 
 #: ./src/templates/address/addressKeysView.tpl.html:70
+#: ./src/templates/message/message.tpl.html:211
 #: ./src/templates/modals/exportPrivateKeyModal.tpl.html:25
 msgctxt "Action"
 msgid "Export"
@@ -2860,7 +2861,7 @@ msgctxt "Duration/repetition of autoresponder"
 msgid "Repeat weekly"
 msgstr ""
 
-#: ./src/app/message/factories/messageModel.js:26
+#: ./src/app/message/factories/messageModel.js:28
 msgctxt "Encrypted Headers filename"
 msgid "Encrypted Headers"
 msgstr ""
@@ -6749,7 +6750,7 @@ msgctxt "Message"
 msgid "Re:"
 msgstr ""
 
-#: ./src/app/message/factories/messageModel.js:107
+#: ./src/app/message/factories/messageModel.js:109
 msgctxt "Message content if empty"
 msgid "Message empty"
 msgstr ""
@@ -6764,68 +6765,68 @@ msgctxt "Message decryption error"
 msgid "Decryption of this message's encryption content failed."
 msgstr ""
 
-#: ./src/app/message/factories/messageModel.js:94
+#: ./src/app/message/factories/messageModel.js:96
 msgctxt "Message encryption status"
 msgid "Encrypted"
 msgstr ""
 
-#: ./src/app/message/factories/messageModel.js:56
+#: ./src/app/message/factories/messageModel.js:58
 msgctxt "Message encryption status"
 msgid "End-to-end encrypted"
 msgstr ""
 
-#: ./src/app/message/factories/messageModel.js:57
+#: ./src/app/message/factories/messageModel.js:59
 msgctxt "Message encryption status"
 msgid "End-to-end encrypted from verified ProtonMail User"
 msgstr ""
 
-#: ./src/app/message/factories/messageModel.js:65
+#: ./src/app/message/factories/messageModel.js:67
 msgctxt "Message encryption status"
 msgid "PGP-encrypted"
 msgstr ""
 
-#: ./src/app/message/factories/messageModel.js:66
+#: ./src/app/message/factories/messageModel.js:68
 msgctxt "Message encryption status"
 msgid "PGP-encrypted from verified sender"
 msgstr ""
 
-#: ./src/app/message/factories/messageModel.js:71
+#: ./src/app/message/factories/messageModel.js:73
 msgctxt "Message encryption status"
 msgid "PGP-signed from verified sender"
 msgstr ""
 
-#: ./src/app/message/factories/messageModel.js:62
-#: ./src/app/message/factories/messageModel.js:67
-#: ./src/app/message/factories/messageModel.js:72
-#: ./src/app/message/factories/messageModel.js:85
-#: ./src/app/message/factories/messageModel.js:91
+#: ./src/app/message/factories/messageModel.js:64
+#: ./src/app/message/factories/messageModel.js:69
+#: ./src/app/message/factories/messageModel.js:74
+#: ./src/app/message/factories/messageModel.js:87
+#: ./src/app/message/factories/messageModel.js:93
 msgctxt "Message encryption status"
 msgid "Sender verification failed"
 msgstr ""
 
-#: ./src/app/message/factories/messageModel.js:104
+#: ./src/app/message/factories/messageModel.js:106
 msgctxt "Message encryption status"
 msgid "Sent by ProtonMail with zero access encryption"
 msgstr ""
 
-#: ./src/app/message/factories/messageModel.js:83
-#: ./src/app/message/factories/messageModel.js:84
+#: ./src/app/message/factories/messageModel.js:85
+#: ./src/app/message/factories/messageModel.js:86
 msgctxt "Message encryption status"
 msgid "Sent by you with end-to-end encryption"
 msgstr ""
 
-#: ./src/app/message/factories/messageModel.js:89
-#: ./src/app/message/factories/messageModel.js:90
+#: ./src/app/message/factories/messageModel.js:91
+#: ./src/app/message/factories/messageModel.js:92
 msgctxt "Message encryption status"
 msgid "Sent by you with zero access encryption"
 msgstr ""
 
-#: ./src/app/message/factories/messageModel.js:70
+#: ./src/app/message/factories/messageModel.js:72
 msgctxt "Message encryption status"
 msgid "Stored with zero access encryption"
 msgstr ""
 
-#: ./src/app/message/factories/messageModel.js:76
+#: ./src/app/message/factories/messageModel.js:78
 msgctxt "Message encryption status"
 msgid "Unencrypted"
 msgstr ""
@@ -10689,7 +10690,7 @@ msgstr ""
 msgid "Enter your login password:"
 msgstr ""
 
-#: ./src/app/message/factories/messageModel.js:230
+#: ./src/app/message/factories/messageModel.js:243
 msgid "Error encrypting message"
 msgstr ""
 
