@@ -59,7 +59,7 @@ function attachmentApi(
      */
     const makeFormUpload = (packets, message, tempPacket) => {
         const data = new FormData();
-        data.append('Filename', packets.Filename);
+        data.append('Filename', packets.Filename || tempPacket.filename);
         data.append('MessageID', message.ID);
         data.append('ContentID', tempPacket.ContentID);
         data.append('MIMEType', packets.MIMEType);

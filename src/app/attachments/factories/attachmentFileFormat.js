@@ -50,6 +50,6 @@ function attachmentFileFormat() {
         return Headers['x-pm-content-encryption'] === 'on-delivery';
     };
 
-    return { isEmbedded, getEmbedded, isUploadAbleType, receivedUnencrypted };
+    return { isEmbedded, getEmbedded, isUploadAbleType, receivedUnencrypted, isUploadMIMEType };
 }
 export default attachmentFileFormat;

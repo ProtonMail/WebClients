@@ -29,7 +29,8 @@ function attachmentModel(
     const EVENT_NAME = 'attachment.upload';
     const I18N = {
         ERROR_UPLOAD: gettextCatalog.getString('Error during file upload', null, 'Compose message'),
-        ERROR_ENCRYPT: gettextCatalog.getString('Error encrypting attachment', null, 'Compose message')
+        ERROR_ENCRYPT: gettextCatalog.getString('Error encrypting attachment', null, 'Compose message'),
+        IMAGE: gettextCatalog.getString('Image', null, 'Title')
     };
 
     const { on, dispatcher } = dispatchers([EVENT_NAME, 'actionMessage']);
@@ -370,7 +371,7 @@ function attachmentModel(
      */
     function addAttachment(file, message, total = 1, cid = '') {
         const tempPacket = {
-            filename: file.name,
+            filename: file.name || `${I18N.IMAGE} ${message.Attachments.length + 1}`,
             uploading: true,
             Size: file.size,
             ContentID: cid,

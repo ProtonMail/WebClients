@@ -14,7 +14,9 @@ function editorListener(
     editorDropzone,
     removeInlineWatcher,
     mailSettingsModel,
-    $state
+    gettextCatalog,
+    $state,
+    pasteImage
 ) {
     const testMac = isMac();
 
@@ -332,8 +334,13 @@ function editorListener(
                 }
             };
 
+            const onPaste = pasteImage(message);
+            const onPasteImage = pasteImage(message, 'paste.image');
+
             bindHotKeys(dispatcher, editor, el, message);
 
+            editor.addEventListener('paste', onPaste);
+            editor.addEventListener('paste.image', onPasteImage);
             editor.addEventListener('drop', onDrop);
             editor.addEventListener('input', onInput);
             editor.addEventListener('refresh', onRefresh);
@@ -346,7 +353,8 @@ function editorListener(
                 unsubscribe.forEach((cb) => cb());
                 unsubscribe.length = 0;
                 unsubscribeRootScope();
-
+                editor.removeEventListener('paste', onPaste);
+                editor.removeEventListener('paste.image', onPasteImage);
                 editor.removeEventListener('drop', onDrop);
                 editor.removeEventListener('input', onInput);
                 editor.removeEventListener('refresh', onRefresh);
