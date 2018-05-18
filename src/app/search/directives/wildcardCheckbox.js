@@ -11,7 +11,7 @@ function wildcardCheckbox($rootScope, gettextCatalog, mailSettingsModel) {
         scope: {},
         template: `
         <label class="wildcardCheckbox-container">
-            <custom-checkbox data-custom-ng-model="wildcard" data-custom-ng-click="onClick()"></custom-checkbox>
+            <custom-checkbox data-custom-ng-model="wildcard" data-custom-ng-change="onClick()"></custom-checkbox>
             <span class="wildcardCheckbox-info">${I18N.info}</span>
             <a href="https://protonmail.com/support/knowledge-base/search/" target="_blank" class="wildcardCheckbox-link pm_button link">${
                 I18N.learn

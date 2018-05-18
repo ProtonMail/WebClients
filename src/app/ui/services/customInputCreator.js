@@ -74,7 +74,7 @@ function customInputCreator() {
          *     - radio
          * Bind to the input every custom attribute you want, you need to prefix them by data-custom
          * Ex:
-         *     <custom-checkbox data-custom-name="bob" data-custom-ng-click="demo = true">
+         *     <custom-checkbox data-custom-name="bob" data-custom-ng-change="demo = true">
          *
          * It will attach to the input two attributes:
                 - data-ng-click

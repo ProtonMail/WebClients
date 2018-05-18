@@ -315,19 +315,19 @@
                         translate-context="Title">Email Subscriptions</h2>
                 </header-block>
                 <label>
-                    <custom-checkbox data-custom-ng-model="emailing.announcements" data-custom-ng-click="changeEmailing('announcements')"></custom-checkbox>
+                    <custom-checkbox data-custom-ng-model="emailing.announcements" data-custom-ng-change="changeEmailing()"></custom-checkbox>
                     <span translate-context="Label" translate>Major Announcements (2-3 per year)</span>
                 </label>
                 <label>
-                    <custom-checkbox data-custom-ng-model="emailing.features" data-custom-ng-click="changeEmailing('features')"></custom-checkbox>
+                    <custom-checkbox data-custom-ng-model="emailing.features" data-custom-ng-change="changeEmailing()"></custom-checkbox>
                     <span translate-context="Label" translate>Major New Features (3-4 per year)</span>
                 </label>
                 <label>
-                    <custom-checkbox data-custom-ng-model="emailing.newsletter" data-custom-ng-click="changeEmailing('newsletter')"></custom-checkbox>
+                    <custom-checkbox data-custom-ng-model="emailing.newsletter" data-custom-ng-change="changeEmailing()"></custom-checkbox>
                     <span translate-context="Label" translate>Proton Newsletter (5-6 per year)</span>
                 </label>
                 <label>
-                    <custom-checkbox data-custom-ng-model="emailing.beta" data-custom-ng-click="changeEmailing('beta')"></custom-checkbox>
+                    <custom-checkbox data-custom-ng-model="emailing.beta" data-custom-ng-change="changeEmailing()"></custom-checkbox>
                     <span translate-context="Label" translate>Proton Beta (~ 10-12 per year)</span>
                 </label>
             </section>
