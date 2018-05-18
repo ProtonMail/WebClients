@@ -48,7 +48,10 @@ const STATS_CONFIG = {
     host: HOST_STAT_MACHINE
 };
 
+const TOR_URL = 'https://protonirockerxow.onion/';
+
 module.exports = {
+    TOR_URL,
     AUTOPREFIXER_CONFIG,
     STATS_ID,
     API_TARGETS,

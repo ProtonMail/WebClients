@@ -4,7 +4,14 @@ const argv = require('minimist')(process.argv.slice(2));
 const CONFIG_DEFAULT = require('./configDefault');
 const i18nLoader = require('../tasks/translationsLoader');
 
-const { STATS_CONFIG, STATS_ID, NO_STAT_MACHINE, API_TARGETS, AUTOPREFIXER_CONFIG } = require('./config.constants');
+const {
+    STATS_CONFIG,
+    STATS_ID,
+    NO_STAT_MACHINE,
+    API_TARGETS,
+    AUTOPREFIXER_CONFIG,
+    TOR_URL
+} = require('./config.constants');
 
 const isWebClient = () => {
     try {
@@ -16,6 +23,7 @@ const isWebClient = () => {
 };
 
 const isProdBranch = (branch = process.env.NODE_ENV_BRANCH) => /-prod/.test(branch);
+const isTorBranch = (branch = process.env.NODE_ENV_BRANCH) => /-tor$/.test(branch);
 
 const getStatsConfig = (deployBranch = '') => {
     const [, host = 'dev', subhost = 'a'] = deployBranch.split('-');
@@ -56,15 +64,22 @@ const getEnv = () => {
 
 const apiUrl = (type = getDefaultApiTarget(), branch = '') => {
     // Cannot override the branch when you deploy to live
-    if (isProdBranch(branch)) {
+    if (isProdBranch(branch) || isTorBranch(branch)) {
         return API_TARGETS.build;
     }
     return API_TARGETS[type] || API_TARGETS.dev;
 };
 
+const buildHost = () => {
+    if (isTorBranch()) {
+        return TOR_URL;
+    }
+    const host = isProdBranch() ? API_TARGETS.prod : process.env.NODE_ENV_API || apiUrl();
+    return host.replace(/\api$/, '');
+};
 const getHostURL = (encoded) => {
     // on local env is undefined
-    const host = (isProdBranch() ? API_TARGETS.prod : process.env.NODE_ENV_API || apiUrl()).replace(/\api$/, '');
+    const host = buildHost();
     const url = `${host}assets/host.png`;
 
     if (encoded) {
