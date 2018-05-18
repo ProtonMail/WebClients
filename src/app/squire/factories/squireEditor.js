@@ -1,4 +1,5 @@
 import { DEFAULT_SQUIRE_VALUE } from '../../constants';
+import { blobURLtoBlob } from '../../../helpers/fileHelper';
 
 const { IFRAME_CLASS } = DEFAULT_SQUIRE_VALUE;
 
@@ -179,6 +180,25 @@ function squireEditor(dispatchers, editorModel, sanitize) {
             editor.setFontSize('2em');
             return editor.bold();
         };
+
+        /*
+            Extend default insert for paste mode. We need this for IE and Safari.
+            We want to create an attachment else, safari is broken
+         */
+        const ghost = editor.insertHTML;
+        editor.insertHTML = async (html, isPaste) => {
+            if (isPaste) {
+                const $img = angular.element(html);
+
+                if ($img.length === 1 && $img.is('IMG')) {
+                    const src = $img.attr('src');
+                    const file = await blobURLtoBlob(src);
+                    return editor.fireEvent('paste.image', { file });
+                }
+            }
+            ghost.call(editor, html, isPaste);
+        };
+
         return editor;
     };
 

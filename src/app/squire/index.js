@@ -23,6 +23,7 @@ import removeInlineWatcher from './services/removeInlineWatcher';
 import squireExecAction from './services/squireExecAction';
 import textToHtmlMail from './services/textToHtmlMail';
 import toggleModeEditor from './services/toggleModeEditor';
+import pasteImage from './services/pasteImage';
 
 export default angular
     .module('proton.squire', [])
@@ -40,6 +41,7 @@ export default angular
     .directive('squireSelectFontSize', squireSelectFontSize)
     .directive('squireToolbar', squireToolbar)
     .directive('squireState', squireState)
+    .factory('pasteImage', pasteImage)
     .factory('editorModel', editorModel)
     .factory('editorState', editorState)
     .factory('squireEditor', squireEditor)

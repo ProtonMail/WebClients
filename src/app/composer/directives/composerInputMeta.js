@@ -49,7 +49,7 @@ function composerInputMeta(contactSelectorModel, dispatchers) {
         compile(element, { label, key }) {
             const $label = element[0].querySelector('.composerInputMeta-label');
             const $input = element[0].querySelector('.composerInputMeta-autocomplete');
-            const $recipients = [].slice.call(element[0].querySelectorAll('composer-input-recipient'));
+            const $recipients = element.find('.composer-input-recipient');
             if ($label) {
                 $label.textContent = label;
             }
@@ -62,7 +62,7 @@ function composerInputMeta(contactSelectorModel, dispatchers) {
             }
 
             if (key !== 'ToList') {
-                $recipients.forEach((node) => node.remove());
+                $recipients.remove();
             }
 
             return (scope, el) => {

@@ -1,4 +1,4 @@
-import _ from 'lodash';
+import { toBase64 } from '../../../helpers/fileHelper';
 
 /* @ngInject */
 function squireExecAction(editorModel, dispatchers) {
@@ -89,17 +89,7 @@ function squireExecAction(editorModel, dispatchers) {
         dispatch('squire.native.action', { action: 'removeLink', message });
     };
 
-    const insertFile = (file) => {
-        const reader = new FileReader();
-        return new Promise((resolve, reject) => {
-            reader.addEventListener('load', () => resolve(reader.result), false);
-            reader.addEventListener('error', () => reject(reader), false);
-
-            if (file && file.type.match('image.*')) {
-                reader.readAsDataURL(file);
-            }
-        });
-    };
+    const insertFile = (file) => toBase64(file, (file) => /image.*/.test(file.type));
 
     const changeColor = (message, color, mode = 'color') => {
         const { editor } = editorModel.find(message);
@@ -121,11 +111,10 @@ function squireExecAction(editorModel, dispatchers) {
 
         const addImage = (url, opt) => {
             editor.focus();
-            url && editor.insertImage(url, _.extend({}, opt));
+            url && editor.insertImage(url, { ...opt });
         };
-
         if (file) {
-            const config = _.extend({}, opt, { alt: file.name || file.Name });
+            const config = { ...opt, alt: file.name || file.Name };
             insertFile(file).then((body) => addImage(body, config));
         } else {
             addImage(url, opt);
