@@ -50,46 +50,6 @@
         .ccRow .composerInputMeta-overlay-button,
         .bccRow .composerInputMeta-overlay-button { display: none }
 
-        .row {
-          display: -webkit-flex; /* ipad */
-          display: flex;
-
-          -webkit-flex-direction: row;  /* ipad */
-          flex-direction: row;
-
-          position: relative;
-          padding: 0px 10px;
-
-          label{
-            padding-right: 10px;
-          }
-
-          input,
-          select{
-            height: $composerRowHeight;
-            line-height: $composerRowHeight;
-          }
-
-          select {
-            z-index: 2;
-            background:transparent;
-          }
-
-          .pm_button.link {
-              position: absolute;
-              right: 7px;
-              top: 0;
-              line-height: $composerRowHeight;
-              cursor: pointer;
-          }
-
-          &.placeholder,
-          &.toRow {
-              cursor: text;
-          }
-
-        }
-
         .flex {
             -webkit-flex:1; /* ipad */
             flex:1;
@@ -425,53 +385,6 @@
 
         .fromRow { color: $default-color }
 
-        footer {
-          padding: 10px;
-          background: $tertiary;
-          border-top: 1px solid $border;
-
-             &.disabled {
-
-                .pm_button {
-                    pointer-events: none;
-                    opacity: .5;
-                }
-                .dead {
-                    pointer-events: none;
-                }
-            }
-
-            .pm_button {
-                line-height: $composerRowHeight;
-                height: $composerRowHeight;
-                padding: 0 1rem;
-                background: $white;
-                border: 1px solid $border;
-                box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
-                &.primary {
-                    background: $primary;
-                }
-                &.disabled {
-                    background: black;
-                }
-            }
-
-            .composer-btn-encryption {
-                padding-top: 1px;
-
-                .fa {
-                    font-size: 15px;
-                }
-            }
-
-            .composer-btn-expiration { padding-top: 2px }
-            .composer-btn-expiration svg { fill: $button-color }
-            .composer-btn-expiration:hover svg,
-            .composer-btn-expiration:focus svg {
-                fill: $button-color-focus;
-            }
-        }
-
         &.expandRecipients {
             overflow: hidden;
         }
@@ -503,6 +416,103 @@
 
     }
 
+}
+
+
+#pm_composer .composer, .squireEditor-loaded {
+
+    footer {
+        line-height: $composerRowHeight;
+        padding: 10px;
+        background: $tertiary;
+        border-top: 1px solid $border;
+
+        &.disabled {
+
+            .pm_button {
+                pointer-events: none;
+                opacity: .5;
+            }
+            .dead {
+                pointer-events: none;
+            }
+        }
+
+        .pm_button {
+            line-height: $composerRowHeight;
+            height: $composerRowHeight;
+            padding: 0 1rem;
+            background: $white;
+            border: 1px solid $border;
+            box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+            &.primary {
+                background: $primary;
+            }
+            &.disabled {
+                background: black;
+            }
+        }
+
+        .composer-btn-encryption {
+            padding-top: 1px;
+
+            .fa {
+                font-size: 15px;
+            }
+        }
+
+        .composer-btn-expiration {
+            padding-top: 2px
+        }
+        .composer-btn-expiration svg {
+            fill: $button-color
+        }
+        .composer-btn-expiration:hover svg,
+        .composer-btn-expiration:focus svg {
+            fill: $button-color-focus;
+        }
+    }
+
+
+    .row {
+        display: -webkit-flex; /* ipad */
+        display: flex;
+
+        -webkit-flex-direction: row;  /* ipad */
+        flex-direction: row;
+
+        position: relative;
+        padding: 0px 10px;
+
+        label{
+            padding-right: 10px;
+        }
+
+        input,
+        select{
+            height: $composerRowHeight;
+            line-height: $composerRowHeight;
+        }
+
+        select {
+            z-index: 2;
+            background:transparent;
+        }
+
+        .pm_button.link {
+            position: absolute;
+            right: 7px;
+            top: 0;
+            line-height: $composerRowHeight;
+            cursor: pointer;
+        }
+
+        &.placeholder,
+        &.toRow {
+            cursor: text;
+        }
+
+    }
 }
 
 /* RESPONSIVE */
