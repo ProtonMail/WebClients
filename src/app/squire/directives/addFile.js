@@ -26,7 +26,12 @@ function addFile() {
              */
             const setUrlValid = (valid) => {
                 scope.$applyAsync(() => {
-                    scope.form.addressInput.$setValidity('valid', valid);
+                    // Race condition: this can happen if the modal is closed, and the image loads after.
+                    const { form = {} } = scope || {};
+                    if (!form.addressInput) {
+                        return;
+                    }
+                    form.addressInput.$setValidity('valid', valid);
                 });
             };
 
