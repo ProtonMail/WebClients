@@ -217,9 +217,14 @@ function contactPublicKeys(
                 return gettextCatalog.getString('This key is expired.');
             };
 
-            const invalidUserId = ([{ users }]) => {
+            const invalidUserId = ([{ users = [] }]) => {
                 // we don't normalize anything here because enigmail / pgp also doesn't normalize it.
-                const userids = _.map(users, ({ userId }) => userId.userid);
+                const userids = users.reduce((acc, { userId = {} }) => {
+                    // userId can be set to null
+                    userId && acc.push(userId.userid);
+                    return acc;
+                }, []);
+
                 const keyemails = _.map(userids, (userid) => {
                     const match = /<([^>]*)>/.exec(userid);
                     return match ? match[1] : userid;
