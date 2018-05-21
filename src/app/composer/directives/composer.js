@@ -30,6 +30,9 @@ function composer(AppModel, embedded, attachmentFileFormat, dispatchers, mailSet
              * @param {Event} e
              */
             const onDragEnter = (e) => {
+                if (scope.message.minimized) {
+                    return;
+                }
                 if (!attachmentFileFormat.isUploadAbleType(e)) {
                     return;
                 }
