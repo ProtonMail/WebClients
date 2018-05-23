@@ -510,7 +510,7 @@
     /* Forbidden property on almost ALL clients IE add a space :) */
     [style*="position:absolute"],
     [style*="position: absolute"] {
-        position: static !important;
+        position: sticky !important;
     }
 }
 
