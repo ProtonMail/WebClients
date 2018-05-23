@@ -1,6 +1,8 @@
 import _ from 'lodash';
 import { MIME_TYPES } from '../../constants';
 import { setCursorStart } from '../../squire/helpers/textMode';
+import { isSafari } from '../../../helpers/browser';
+import { forceRedraw } from '../../../helpers/domHelper';
 
 const { PLAINTEXT } = MIME_TYPES;
 
@@ -23,6 +25,20 @@ function composerLoader(dispatchers, editorModel) {
 
         // Add a delay to ensure that the dom is ready onLoad
         const id = setTimeout(() => {
+            const { editor } = editorModel.find(message);
+
+            if (editor && isSafari()) {
+                // eslint-disable-next-line no-underscore-dangle
+                const editorBody = editor._doc.body;
+                /**
+                 * On Safari, there is an issue with Squire and scrolling because of the iframe.
+                 * See https://bugs.webkit.org/show_bug.cgi?id=169129
+                 * When the composer is loaded with a large message scrolling with the scroll wheel does not work.
+                 * See https://github.com/ProtonMail/Angular/issues/6874
+                 */
+                forceRedraw(editorBody);
+            }
+
             clearTimeout(id);
 
             const textarea = el.find('.plaintext-editor')[0];
@@ -54,7 +70,6 @@ function composerLoader(dispatchers, editorModel) {
                 return;
             }
 
-            const { editor } = editorModel.find(message);
             if (editor) {
                 return editor.focus();
             }
