@@ -20,12 +20,12 @@ function zoneselect(autoresponderModel, dispatchers) {
             scope.zone = _.find(scope.timezones, { value: zone });
 
             const onChange = () => {
-                scope.$applyAsync(() => autoresponderModel.set({ zone: scope.zone.value }));
+                scope.$applyAsync(() => autoresponderModel.set({ Zone: scope.zone.value }));
             };
 
             on('autoresponder', (event, { type, data = {} }) => {
                 if (type === 'update') {
-                    scope.zone = _.find(scope.timezones, { value: data.autoresponder.zone });
+                    scope.zone = _.find(scope.timezones, { value: data.autoresponder.Zone });
                 }
             });
 

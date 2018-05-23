@@ -29,13 +29,13 @@ function autoresponder(autoresponderModel, timepickerModel, autoresponderLanguag
             scope.submitting = false;
 
             scope.model = {
-                isEnabled: false,
-                message: null,
-                repeat: 0,
-                subject: null,
-                startTime: null,
-                endTime: null,
-                daysSelected: { 0: true, 1: true, 2: true, 3: true, 4: true, 5: true, 6: true }
+                IsEnabled: false,
+                Message: null,
+                Repeat: 0,
+                Subject: null,
+                StartTime: null,
+                EndTime: null,
+                DaysSelected: { 0: true, 1: true, 2: true, 3: true, 4: true, 5: true, 6: true }
             };
 
             const isEmpty = (message) =>
@@ -46,11 +46,11 @@ function autoresponder(autoresponderModel, timepickerModel, autoresponderLanguag
 
             scope.isValid = () => {
                 return (
-                    !scope.model.isEnabled ||
-                    (!isEmpty(scope.model.message) &&
-                        scope.model.message.length < autoresponderModel.constants.MAX_MESSAGE_LENGTH &&
-                        (scope.model.repeat === autoresponderModel.constants.FOREVER ||
-                            (scope.model.startTime !== null && scope.model.endTime !== null)))
+                    !scope.model.IsEnabled ||
+                    (!isEmpty(scope.model.Message) &&
+                        scope.model.Message.length < autoresponderModel.constants.MAX_MESSAGE_LENGTH &&
+                        (scope.model.Repeat === autoresponderModel.constants.FOREVER ||
+                            (scope.model.StartTime !== null && scope.model.EndTime !== null)))
                 );
             };
 
@@ -94,10 +94,10 @@ function autoresponder(autoresponderModel, timepickerModel, autoresponderLanguag
                             });
                             break;
                         case 'saved_error': {
-                            const { isEnabled } = mailSettingsModel.get('AutoResponder') || {};
+                            const { IsEnabled } = mailSettingsModel.get('AutoResponder') || {};
 
                             scope.$applyAsync(() => {
-                                scope.model.isEnabled = isEnabled;
+                                scope.model.IsEnabled = IsEnabled;
                                 scope.submitting = false;
                             });
                             break;
@@ -110,7 +110,7 @@ function autoresponder(autoresponderModel, timepickerModel, autoresponderLanguag
                     if (!autoresponderModel.willUpdate(status)) {
                         return;
                     }
-                    autoresponderModel.set({ isEnabled: status });
+                    autoresponderModel.set({ IsEnabled: status });
                     if (!status) {
                         onFormSubmit();
                     }

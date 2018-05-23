@@ -43,27 +43,27 @@ function autoresponderModel(
     const updateChangedAutoresponder = (autoresponder) =>
         (changedAutoresponder = _.extend({}, changedAutoresponder, autoresponder));
     const clearChangedAutoresponder = () => (changedAutoresponder = {});
+    const getBaseResponder = () => {
+        const base = _.extend({}, mailSettingsModel.get('AutoResponder'));
 
-    function getBaseResponder() {
-        const base = _.extend({}, mailSettingsModel.get('AutoResponder') || getDefaultAutoResponder());
+        if (!base.IsEnabled) {
+            const { DaysSelected, StartTime, EndTime, Message, Repeat } = getDefaultAutoResponder();
 
-        const daysSelected = base.daysSelected;
-
-        base.daysSelected = daysSelected.reduce((previous, value) => {
-            previous[value] = true;
-            return previous;
-        }, _.extend({}, [...new Array(7)].map(() => false)));
+            base.DaysSelected = DaysSelected;
+            base.StartTime = StartTime;
+            base.EndTime = EndTime;
+            base.Message = Message;
+            base.Repeat = Repeat;
+        }
 
         return base;
-    }
-
+    };
     const get = () => _.extend({}, getBaseResponder(), getChangedAutoresponder());
-
     const dispatch = (type, data) => dispatcher.autoresponder(type, data);
 
     function getDefaultAutoResponder() {
         const defaultAutoresponder = {
-            isEnabled: false,
+            IsEnabled: false,
             /*
                   startTime is an UTC timestamp: either since epoch,
                     since start of the day (in UTC),
@@ -71,22 +71,30 @@ function autoresponderModel(
                     since start of the month (in UTC)
                     By default it starts in an hour
                  */
-            startTime: Math.floor(Date.now() / 1000) + constants.HOUR,
+            StartTime: Math.floor(Date.now() / 1000) + constants.HOUR,
             /*
                   endTime is an UTC timestamp: either since epoch,
                     since start of the day (in UTC),
                     since start of the week (in UTC),
                     since start of the month (in UTC)
                  */
-            endTime: null,
+            EndTime: null,
             /*
-                    only applicable for daily. Day 0 means Sunday and so on
-                 */
-            daysSelected: _.extend({}, [...new Array(7)].map(() => true)),
-            repeat: constants.FIXED_INTERVAL,
-            subject: autoresponderLanguage.DEFAULT_SUBJECT_PREFIX,
-            message: null,
-            zone: moment.tz.guess()
+                only applicable for daily. Day 0 means Sunday and so on
+            */
+            DaysSelected: {
+                0: true,
+                1: true,
+                2: true,
+                3: true,
+                4: true,
+                5: true,
+                6: true
+            },
+            Repeat: constants.FIXED_INTERVAL,
+            Subject: autoresponderLanguage.DEFAULT_SUBJECT_PREFIX,
+            Message: null,
+            Zone: moment.tz.guess()
         };
 
         const body = autoresponderLanguage.DEFAULT_BODY;
@@ -96,17 +104,16 @@ function autoresponderModel(
             .replace(/<img[^>]*>/g, '');
 
         if (bodyPlusSig.length > constants.MAX_MESSAGE_LENGTH) {
-            defaultAutoresponder.message = body;
+            defaultAutoresponder.Message = body;
         } else {
-            defaultAutoresponder.message = bodyPlusSig;
+            defaultAutoresponder.Message = bodyPlusSig;
         }
         return defaultAutoresponder;
     }
 
     function load() {
         clearChangedAutoresponder();
-        const data = get();
-        dispatch('update', { autoresponder: data });
+        dispatch('update', { autoresponder: get() });
     }
 
     /*
@@ -116,11 +123,11 @@ function autoresponderModel(
          */
     function mock() {
         const data = getDefaultAutoResponder();
-        data.isEnabled = true;
-        data.repeat = 0;
-        data.startTime = Math.floor(Date.now() / 1000);
+        data.IsEnabled = true;
+        data.Repeat = 0;
+        data.StartTime = Math.floor(Date.now() / 1000);
         // just an example value. Don't worry about it.
-        data.endTime = data.startTime + 7 * constants.DAY + 8 * constants.HOUR;
+        data.EndTime = data.StartTime + 7 * constants.DAY + 8 * constants.HOUR;
         updateChangedAutoresponder(data);
 
         const outData = get();
@@ -136,38 +143,38 @@ function autoresponderModel(
         const tempAutoresponder = _.extend({}, oldAutoresponder, newAutoresponder);
 
         // switching timestamp should keep the timestring YYYY-MM-DDTHH:mm:ss the same.
-        if (tempAutoresponder.zone !== oldAutoresponder.zone && tempAutoresponder.repeat === constants.FIXED_INTERVAL) {
+        if (tempAutoresponder.Zone !== oldAutoresponder.Zone && tempAutoresponder.Repeat === constants.FIXED_INTERVAL) {
             // Let's convert the timestamp, so present the same YYYY-MM-DDTHH:mm:ss strings
             // this means that we format the old time and reinterpret as a being a string in the new timezone
-            const startTime = tempAutoresponder.startTime;
-            const endTime = tempAutoresponder.endTime;
-            const oldZone = oldAutoresponder.zone;
-            const newZone = newAutoresponder.zone;
+            const startTime = tempAutoresponder.StartTime;
+            const endTime = tempAutoresponder.EndTime;
+            const oldZone = oldAutoresponder.Zone;
+            const newZone = newAutoresponder.Zone;
 
             if (startTime !== null) {
-                newAutoresponder.startTime = Number(
+                newAutoresponder.StartTime = Number(
                     moment.tz(moment.tz(startTime * 1000, oldZone).format('YYYY-MM-DDTHH:mm:ss'), newZone).format('X')
                 );
             }
             if (endTime !== null) {
-                newAutoresponder.endTime = Number(
+                newAutoresponder.EndTime = Number(
                     moment.tz(moment.tz(endTime * 1000, oldZone).format('YYYY-MM-DDTHH:mm:ss'), newZone).format('X')
                 );
             }
         }
 
-        if (typeof newAutoresponder.repeat !== 'undefined' && oldAutoresponder.repeat !== newAutoresponder.repeat) {
-            const isForever = newAutoresponder.repeat === constants.FOREVER;
+        if (typeof newAutoresponder.Repeat !== 'undefined' && oldAutoresponder.Repeat !== newAutoresponder.Repeat) {
+            const isForever = newAutoresponder.Repeat === constants.FOREVER;
 
-            newAutoresponder.startTime = isForever ? 0 : null;
-            newAutoresponder.endTime = isForever ? 0 : null;
+            newAutoresponder.StartTime = isForever ? 0 : null;
+            newAutoresponder.EndTime = isForever ? 0 : null;
 
-            if (newAutoresponder.repeat === constants.FIXED_INTERVAL) {
-                newAutoresponder.startTime = Math.floor(Date.now() / 1000) + constants.HOUR;
+            if (newAutoresponder.Repeat === constants.FIXED_INTERVAL) {
+                newAutoresponder.StartTime = Math.floor(Date.now() / 1000) + constants.HOUR;
             }
 
-            if (typeof newAutoresponder.daysSelected === 'undefined') {
-                newAutoresponder.daysSelected = { 0: true, 1: true, 2: true, 3: true, 4: true, 5: true, 6: true };
+            if (typeof newAutoresponder.DaysSelected === 'undefined') {
+                newAutoresponder.DaysSelected = { 0: true, 1: true, 2: true, 3: true, 4: true, 5: true, 6: true };
             }
         }
 
@@ -181,11 +188,11 @@ function autoresponderModel(
     function getAutoresponderInAPIFormat() {
         const autoresponder = get();
 
-        autoresponder.daysSelected = Object.keys(_.pickBy(autoresponder.daysSelected, Boolean)).map(Number);
+        autoresponder.DaysSelected = Object.keys(_.pickBy(autoresponder.DaysSelected, Boolean)).map(Number);
 
-        if (autoresponder.repeat === constants.FOREVER) {
-            autoresponder.startTime = 0;
-            autoresponder.endTime = 0;
+        if (autoresponder.Repeat === constants.FOREVER) {
+            autoresponder.StartTime = 0;
+            autoresponder.EndTime = 0;
         }
 
         return autoresponder;
@@ -207,14 +214,14 @@ function autoresponderModel(
      * @returns {boolean}
      */
     function willUpdate(state) {
-        const { isEnabled } = mailSettingsModel.get('AutoResponder') || {};
-        return isEnabled !== state;
+        const { IsEnabled } = mailSettingsModel.get('AutoResponder') || {};
+        return IsEnabled !== state;
     }
 
     function save() {
         const autoresponder = getAutoresponderInAPIFormat();
-        const original = mailSettingsModel.get('AutoResponder') || getDefaultAutoResponder();
-        const responseMessage = getResponseMessage(original.isEnabled, autoresponder.isEnabled);
+        const original = getBaseResponder();
+        const responseMessage = getResponseMessage(original.IsEnabled, autoresponder.IsEnabled);
         const promise = settingsMailApi
             .updateAutoresponder({ Parameters: autoresponder })
             .then((data) => eventManager.call().then(() => data))
@@ -236,7 +243,7 @@ function autoresponderModel(
     });
 
     on('autoresponder.isEnabled', (event, { status }) => {
-        set({ isEnabled: status });
+        set({ IsEnabled: status });
     });
 
     return { init: angular.noop, constants, load, mock, get, set, timezones, willUpdate };

@@ -29,13 +29,13 @@ function durationselect(autoresponderModel, autoresponderLanguage, dispatchers) 
 
             function onInput() {
                 scope.$applyAsync(() => {
-                    autoresponderModel.set({ repeat: scope.repeat.value });
+                    autoresponderModel.set({ Repeat: scope.repeat.value });
                 });
             }
 
             on('autoresponder', (event, { type, data = {} }) => {
                 if (type === 'update') {
-                    scope.repeat = _.find(scope.frequencies, { value: data.autoresponder.repeat });
+                    scope.repeat = _.find(scope.frequencies, { value: data.autoresponder.Repeat });
                 }
             });
 
