@@ -216,11 +216,41 @@ function attachmentDownloader(
     const download = async (attachment, message, el) => {
         const att = await formatDownload(attachment, message, el);
         if (att.isError) {
-            if (!await allowDownloadBrokenAtt()) {
+            if (!(await allowDownloadBrokenAtt())) {
                 return; // We don't want to download it
             }
         }
         return generateDownload(message, att);
+    };
+
+    /**
+     * The attachment's Name is not uniq we need a uniq name in order
+     * to make the zip. The lib doesn't allow duplicates
+     * @param  {Message} message
+     * @return {Array}         Array of promises
+     */
+    const formatDownloadAll = (message) => {
+        const notEmbedded = (message.Attachments || []).filter((att) => !embeddedUtils.isEmbedded(att));
+
+        const { list } = notEmbedded.reduce(
+            (acc, att) => {
+                if (!acc.map[att.Name]) {
+                    acc.map[att.Name] = { index: 0 };
+                } else {
+                    acc.map[att.Name].index++;
+                    // We can have an extension
+                    const name = att.Name.split('.');
+                    const ext = name.pop();
+                    const newName = `${name.join('.')} (${acc.map[att.Name].index}).${ext}`;
+                    att.Name = newName;
+                }
+                acc.list.push(att);
+                return acc;
+            },
+            { list: [], map: {} }
+        );
+
+        return list.map((att) => formatDownload(att, message));
     };
 
     /**
@@ -231,10 +261,7 @@ function attachmentDownloader(
      */
     const all = async (message = {}, el) => {
         try {
-            const promises = (message.Attachments || [])
-                .filter((att) => !embeddedUtils.isEmbedded(att))
-                .map((att) => formatDownload(att, message));
-
+            const promises = formatDownloadAll(message);
             const list = await Promise.all(promises);
 
             try {
@@ -246,7 +273,7 @@ function attachmentDownloader(
 
             // Detect if we have at least one error
             if (list.some(({ isError }) => isError)) {
-                if (!await allowDownloadBrokenAtt()) {
+                if (!(await allowDownloadBrokenAtt())) {
                     return; // We don't want to download it
                 }
             }
