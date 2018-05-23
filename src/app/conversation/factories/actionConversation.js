@@ -8,6 +8,7 @@ function actionConversation(
     $rootScope,
     authentication,
     cache,
+    contactSpam,
     conversationApi,
     eventManager,
     gettextCatalog,
@@ -352,9 +353,7 @@ function actionConversation(
         const toTrash = labelID === MAILBOX_IDENTIFIERS.trash;
         const toSpam = labelID === MAILBOX_IDENTIFIERS.spam;
         const toInbox = labelID === MAILBOX_IDENTIFIERS.inbox;
-
         const promise = conversationApi.label(labelID, conversationIDs);
-
         const folderName = getFolderNameTranslated(labelID);
 
         const successMessage = gettextCatalog.getPlural(
@@ -434,6 +433,11 @@ function actionConversation(
                 const conversation = cache.getConversationCached(ID);
 
                 if (conversation) {
+                    if (toSpam) {
+                        const { Senders = [] } = conversation;
+                        contactSpam(Senders.map(({ Address = '' }) => Address).filter(Boolean));
+                    }
+
                     const labelIDsRemoved = flow(filter(({ ID }) => _.includes(folderIDs, ID)), map(({ ID }) => ID))(
                         conversation.Labels
                     );

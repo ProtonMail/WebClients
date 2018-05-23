@@ -40,6 +40,7 @@ import contactEncryption from './factories/contactEncryption';
 import contactTransformLabel from './factories/contactTransformLabel';
 import contactUI from './factories/contactUI';
 import contactSelectorModel from './factories/contactSelectorModel';
+import contactSpam from './factories/contactSpam';
 import contactFilter from './filters/contact';
 import spam from './filters/spam';
 import contactAskEncryption from './modals/contactAskEncryption';
@@ -99,6 +100,7 @@ export default angular
     .factory('contactUI', contactUI)
     .factory('contactEncryption', contactEncryption)
     .factory('contactSelectorModel', contactSelectorModel)
+    .factory('contactSpam', contactSpam)
     .factory('contactKeyAssigner', contactKeyAssigner)
     .filter('contact', contactFilter)
     .filter('spam', spam)
