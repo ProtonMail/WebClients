@@ -195,6 +195,8 @@ function editorListener(
             editor.removeEventListener('input', onInput);
             editor.removeEventListener('blur', onBlur);
             editor.removeEventListener('focus', onFocus);
+            // eslint-disable-next-line no-underscore-dangle
+            editor._doc.removeEventListener('keydown', onKeyDown);
         };
     };
 
