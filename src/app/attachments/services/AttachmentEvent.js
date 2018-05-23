@@ -1,7 +1,10 @@
 import ICAL from 'ical.js';
 
 /* @ngInject */
-function AttachmentEvent(attachmentDownloader, notification, AppModel) {
+function AttachmentEvent(attachmentDownloader, gettextCatalog, notification, AppModel) {
+    const I18N = {
+        ICS_PARSING_ERROR: gettextCatalog.getString('ICS parsing error:', null, 'Error')
+    };
     const REGEXP_EVENT_EXTENSIONS = /\.(?:ics|icalendar|ical|vcard|vcf)$/i;
 
     const filterAttachmentsForEvents = (attachments = []) =>
@@ -39,38 +42,42 @@ function AttachmentEvent(attachmentDownloader, notification, AppModel) {
      */
     function getIcalEvent({ Name }) {
         return (info) => {
-            const jcalData = ICAL.parse(info);
-            const vcalendar = new ICAL.Component(jcalData);
-            const vevent = vcalendar.getFirstSubcomponent('vevent');
-            const icalEvent = new ICAL.Event(vevent);
+            try {
+                const jcalData = ICAL.parse(info);
+                const vcalendar = new ICAL.Component(jcalData);
+                const vevent = vcalendar.getFirstSubcomponent('vevent');
+                const icalEvent = new ICAL.Event(vevent);
 
-            // Invalid event
-            if (!vevent) {
-                return false;
+                // Invalid event
+                if (!vevent) {
+                    return false;
+                }
+
+                const { attendees = [] } = icalEvent;
+
+                if (icalEvent.startDate && icalEvent.endDate) {
+                    icalEvent.startDateMoment = moment(icalEvent.startDate.toJSDate());
+                    icalEvent.endDateMoment = moment(icalEvent.endDate.toJSDate());
+                }
+
+                if (attendees.length) {
+                    icalEvent.attendeesList = attendees.reduce((acc, attendee) => acc.concat(attendee.getValues()), []);
+                }
+
+                if (!icalEvent.summary && icalEvent.location) {
+                    icalEvent.summary = icalEvent.location;
+                }
+
+                // Keep the attachment data and filename
+                icalEvent.attachment = {
+                    filename: Name,
+                    data: info
+                };
+
+                return icalEvent;
+            } catch (error) {
+                throw new Error(`${I18N.ICS_PARSING_ERROR} ${error.message}`);
             }
-
-            const { attendees = [] } = icalEvent;
-
-            if (icalEvent.startDate && icalEvent.endDate) {
-                icalEvent.startDateMoment = moment(icalEvent.startDate.toJSDate());
-                icalEvent.endDateMoment = moment(icalEvent.endDate.toJSDate());
-            }
-
-            if (attendees.length) {
-                icalEvent.attendeesList = attendees.reduce((acc, attendee) => acc.concat(attendee.getValues()), []);
-            }
-
-            if (!icalEvent.summary && icalEvent.location) {
-                icalEvent.summary = icalEvent.location;
-            }
-
-            // Keep the attachment data and filename
-            icalEvent.attachment = {
-                filename: Name,
-                data: info
-            };
-
-            return icalEvent;
         };
     }
 
