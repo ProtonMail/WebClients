@@ -7,13 +7,13 @@
         <autoresponder-time-section
             data-mock="{{ ::mock }}"
             data-form="autoresponderForm"></autoresponder-time-section>
-        <section class="pm_form col-1-2" ng-if="model.isEnabled">
+        <section class="pm_form col-1-2" ng-if="model.IsEnabled">
             <div class="clearfix">
                 <div class="col-1-4">
                     <label for="autoresponder-message" translate-context="Label" translate>Response</label>
                 </div>
                 <div class="col-3-4">
-                    <autoresponder-message data-message="model.message" data-disabled="{{ ::mock }}"></autoresponder-message>
+                    <autoresponder-message data-message="model.Message" data-disabled="{{ ::mock }}"></autoresponder-message>
                 </div>
             </div>
         </section>
@@ -22,7 +22,7 @@
     <div class="pm_grid no-padding no-margin">
         <div class="col-1-8 desktopOnly">&nbsp;</div>
         <div class="col-7-8">
-            <button class="pm_button primary" id="autoresponder-save" ng-if="model.isEnabled" translate-context="Action autoresponder" translate ng-disabled="!isValid() || mock || submitting" type="submit">Save</button>
+            <button class="pm_button primary" id="autoresponder-save" ng-if="model.IsEnabled" translate-context="Action autoresponder" translate ng-disabled="!isValid() || mock || submitting" type="submit">Save</button>
             <a href="https://protonmail.com/support/knowledge-base/autoresponder/" target="_blank" class="pm_button link" translate-context="Link" translate>Learn more</a>
         </div>
     </div>

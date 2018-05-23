@@ -20,7 +20,7 @@ function autoresponderTimePicker(autoresponderModel, dispatchers, timepickerMode
             scope.labelId = labelId;
             scope.datePickerKey = datePickerKey;
 
-            if (repeat === autoresponderModel.constants.DAILY) {
+            if (Number(repeat) === autoresponderModel.constants.DAILY) {
                 timepickerModel.initTimePicker(datePickerKey, { disableInput, labelId });
             }
 
@@ -37,13 +37,13 @@ function autoresponderTimePicker(autoresponderModel, dispatchers, timepickerMode
             on('autoresponder', (event, { type, data = {} }) => {
                 if (type === 'update') {
                     const refresh =
-                        data.autoresponder.repeat !== scope.repeat || scope.timestamp !== data.autoresponder[labelId];
+                        data.autoresponder.Repeat !== scope.repeat || scope.timestamp !== data.autoresponder[labelId];
 
-                    scope.repeat = data.autoresponder.repeat;
+                    scope.repeat = data.autoresponder.Repeat;
                     scope.timestamp = data.autoresponder[labelId];
-                    scope.zone = data.autoresponder.zone;
+                    scope.zone = data.autoresponder.Zone;
 
-                    if (data.autoresponder.repeat === autoresponderModel.constants.DAILY) {
+                    if (data.autoresponder.Repeat === autoresponderModel.constants.DAILY) {
                         timepickerModel.initTimePicker(datePickerKey, { disableInput, labelId });
                     }
 

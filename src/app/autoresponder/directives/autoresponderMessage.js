@@ -22,7 +22,7 @@ function autoresponderMessage(autoresponderModel, dispatchers) {
 
             on('autoresponder', (event, { type, data = {} }) => {
                 if (type === 'update') {
-                    scope.message = data.autoresponder.message;
+                    scope.message = data.autoresponder.Message;
                 }
             });
 
