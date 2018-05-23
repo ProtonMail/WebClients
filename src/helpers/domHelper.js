@@ -39,3 +39,15 @@ export const inlineCss = (html = '') => juice(html, OPTIONS);
 export const setHidden = (el, value = false) => {
     el.style.display = value ? 'none' : '';
 };
+
+/**
+ * Force redraw of an element.
+ * Copied from https://stackoverflow.com/a/3485654
+ * @param {HTMLElement} el
+ */
+export const forceRedraw = (el) => {
+    el.style.display = 'none';
+    // eslint-disable-next-line no-unused-expressions
+    el.offsetHeight;
+    el.style.display = '';
+};
