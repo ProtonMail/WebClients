@@ -11,6 +11,7 @@ function messageActions(
     $q,
     tools,
     cache,
+    contactSpam,
     eventManager,
     messageApi,
     dispatchers,
@@ -123,6 +124,11 @@ function messageActions(
 
                 if (Array.isArray(labelIDsAdded)) {
                     labelIDs = _.uniq(labelIDs.concat(labelIDsAdded));
+                }
+
+                if (toSpam) {
+                    const { Sender = {} } = message;
+                    contactSpam([Sender.Address]);
                 }
 
                 return {
