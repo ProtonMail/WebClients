@@ -77,7 +77,7 @@
                                                 translate>Export</button>
                                         <button type="button"
                                                 class="pm_button link"
-                                                ng-hide="key.decrypted && !isSubUser"
+                                                ng-hide="key.decrypted || isSubUser"
                                                 data-action="reactivateKey"
                                                 data-address-id="{{ ::address.addressID }}"
                                                 data-key-index="{{ ::$index }}"
