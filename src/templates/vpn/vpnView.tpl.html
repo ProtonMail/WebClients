@@ -8,6 +8,10 @@
                         translate
                         translate-context="Title">ProtonVPN</h2>
                 </header-block>
+                <p ng-if="!hasPaidVpn" class="alert alert-info alert-flex">
+                    <span translate-context="Info" translate>You are using ProtonVPN Free. Upgrade to ProtonVPN Plus to get faster speeds and better privacy.</span>
+                    <a ui-sref="secured.dashboard({scroll: true})" class="pm_button primary" translate-context="Action" translate>Upgrade plan now</a>
+                </p>
                 <p ng-if="vpnStatus === 0" class="alert alert-info" translate-context="Info" translate>Your account is currently not eligible for ProtonVPN access. If you are part of an Organization, please contact your account administrator.</p>
                 <p ng-if="vpnStatus === 2" class="alert alert-info" translate-context="Info" translate>Your VPN account has not yet been activated, go to <a href="https://account.protonvpn.com/signup" target="_blank">https://account.protonvpn.com/signup</a> to sign up and activate your account.</p>
                 <p ng-if="vpnStatus === 3" class="alert alert-info" translate-context="Info" translate>Your ProtonVPN account request has been received. You're already on the waitlist, we'll contact you once capacity becomes available.</p>

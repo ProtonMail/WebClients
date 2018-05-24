@@ -23,6 +23,11 @@
         background: $warning;
 		color: darken($warning, 50);
     }
+	&.alert-flex {
+		align-items: center;
+		display: flex;
+		justify-content: space-between;
+	}
 
     input[type="text"],
     input[type="number"],
