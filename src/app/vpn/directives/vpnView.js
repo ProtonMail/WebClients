@@ -17,9 +17,14 @@ function vpnView(dispatchers, addressesModel, authentication, memberModel, vpnMo
 
                 scope.VPNLogin = memberModel.isMember() ? getFirstEmail() : authentication.user.Name;
                 scope.vpnStatus = Status;
+                scope.hasPaidVpn = authentication.hasPaidVpn();
             };
 
-            on('updateUser', update);
+            on('updateUser', () => {
+                scope.$applyAsync(() => {
+                    update();
+                });
+            });
 
             update();
 
