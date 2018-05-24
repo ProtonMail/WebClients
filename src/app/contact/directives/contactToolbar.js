@@ -48,7 +48,7 @@ function contactToolbar($state, $stateParams, contactCache, gettextCatalog, mess
             scope.numPerPage = CONTACTS_PER_PAGE;
             scope.selectPage = (page) => $state.go($state.$current.name, { page });
             scope.currentPage = +($stateParams.page || 1);
-            scope.selectAll = (event) => toggleSelectAll(!!event.target.checked);
+            scope.selectAll = () => toggleSelectAll(scope.checkAll);
 
             function update() {
                 const paginatedContacts = contactCache.paginate(contactCache.get('filtered'));
