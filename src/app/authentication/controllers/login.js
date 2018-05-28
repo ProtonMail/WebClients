@@ -238,7 +238,7 @@ function LoginController(
                             result.data.Code === 401
                         ) {
                             selectPassword();
-                            notify({ message: result.data.ErrorDescription, classes: 'notification-danger' });
+                            notify({ message: result.data.Error, classes: 'notification-danger' });
                         } else if (result.data && result.data.Code === 10002) {
                             let message;
 
@@ -284,11 +284,7 @@ function LoginController(
                         } else if (result.data && result.data.Code === 5003) {
                             // Nothing
                         } else if (result.data && result.data.Error) {
-                            const error = result.data.ErrorDescription
-                                ? result.data.ErrorDescription
-                                : result.data.Error;
-
-                            notify({ message: error, classes: 'notification-danger' });
+                            notify({ message: result.data.Error, classes: 'notification-danger' });
                             resetLoginInputs();
                         } else {
                             notify({ message: 'Unable to log you in.', classes: 'notification-danger' });
