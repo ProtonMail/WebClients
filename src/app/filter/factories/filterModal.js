@@ -231,10 +231,16 @@ function filterModal(
                     on('labelsModel', (e, { type, data }) => {
                         if (type === 'cache.update') {
                             $scope.$applyAsync(() => {
-                                ctrl.filter.Simple.Actions.Labels = ctrl.filter.Simple.Actions.Labels.concat(
-                                    filterNewLabel(data)
-                                );
-                                ctrl.folders = ctrl.folders.concat(filterNewLabel(data, labelsModel.IS_FOLDER));
+                                const newLabels = filterNewLabel(data);
+                                const newFolders = filterNewLabel(data, labelsModel.IS_FOLDER);
+
+                                ctrl.filter.Simple.Actions.Labels = ctrl.filter.Simple.Actions.Labels.concat(newLabels);
+                                ctrl.folders = ctrl.folders.concat(newFolders);
+
+                                // Select the last new folder
+                                if (newFolders) {
+                                    ctrl.filter.Simple.Actions.Move = _.last(ctrl.folders).Name;
+                                }
                             });
                         }
                     });
