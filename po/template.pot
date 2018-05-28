@@ -62,7 +62,7 @@ msgctxt "Action"
 msgid "-"
 msgstr ""
 
-#: ./src/app/message/factories/messageActions.js:179
+#: ./src/app/message/factories/messageActions.js:185
 msgctxt "Action"
 msgid "1 message moved to {{folder}}"
 msgid_plural "{{number}} messages moved to {{folder}}"
@@ -224,6 +224,11 @@ msgctxt "Action"
 msgid "<i class=\"fa fa-minus composerHeader-btn-icon\"></i>"
 msgstr ""
 
+#: ./src/templates/squire/squireToolbar.tpl.html:132
+msgctxt "Action"
+msgid "<i class=\"fa fa-quote-right\"></i>"
+msgstr ""
+
 #: ./src/templates/directives/composer/composer-header.tpl.html:44
 msgctxt "Action"
 msgid "<i class=\"fa fa-times composerHeader-btn-icon\"></i>"
@@ -357,7 +362,7 @@ msgctxt "Action"
 msgid "Add Condition"
 msgstr ""
 
-#: ./src/templates/directives/contact/contactItem.tpl.html:111
+#: ./src/templates/directives/contact/contactItem.tpl.html:110
 msgctxt "Action"
 msgid "Add Entry"
 msgstr ""
@@ -540,7 +545,7 @@ msgstr ""
 #: ./src/templates/authentication/modals/loginPassword.tpl.html:26
 #: ./src/templates/authentication/modals/oldPasswordModal.tpl.html:20
 #: ./src/templates/composer/composerEncrypt.tpl.html:67
-#: ./src/templates/composer/composerExpiration.tpl.html:53
+#: ./src/templates/composer/composerExpiration.tpl.html:54
 #: ./src/templates/contact/contactEncryptionModal.tpl.html:19
 #: ./src/templates/contact/contactMergerModal.tpl.html:26
 #: ./src/templates/contact/contactModal.tpl.html:14
@@ -573,6 +578,8 @@ msgstr ""
 #: ./src/templates/modals/reactivate.tpl.html:16
 #: ./src/templates/modals/reactivateKeyModal.tpl.html:20
 #: ./src/templates/modals/setupOrganization.tpl.html:76
+#: ./src/templates/modals/squire/addFile.tpl.html:27
+#: ./src/templates/modals/squire/addLink.tpl.html:27
 #: ./src/templates/modals/switchPasswordMode.tpl.html:73
 #: ./src/templates/modals/trustPublicKey.tpl.html:38
 #: ./src/templates/modals/twofactor/sharedSecret.tpl.html:37
@@ -602,7 +609,7 @@ msgctxt "Action"
 msgid "Change mailbox password"
 msgstr ""
 
-#: ./src/templates/directives/contact/contactItem.tpl.html:162
+#: ./src/templates/directives/contact/contactItem.tpl.html:161
 msgctxt "Action"
 msgid "Change order"
 msgstr ""
@@ -703,6 +710,8 @@ msgstr ""
 #: ./src/templates/modals/releaseNotes.tpl.html:23
 #: ./src/templates/modals/releaseNotes.tpl.html:3
 #: ./src/templates/modals/setupOrganization.tpl.html:3
+#: ./src/templates/modals/squire/addFile.tpl.html:9
+#: ./src/templates/modals/squire/addLink.tpl.html:9
 #: ./src/templates/modals/support.tpl.html:14
 #: ./src/templates/modals/support.tpl.html:3
 #: ./src/templates/modals/switchPasswordMode.tpl.html:3
@@ -742,7 +751,7 @@ msgid "Compose"
 msgstr ""
 
 #: ./src/templates/directives/contact/contactEmailDropdown.tpl.html:11
-#: ./src/templates/directives/contact/contactItem.tpl.html:93
+#: ./src/templates/directives/contact/contactItem.tpl.html:92
 #: ./src/templates/message/messageAddressActionMenu.tpl.html:8
 msgctxt "Action"
 msgid "Compose to"
@@ -1058,17 +1067,6 @@ msgctxt "Action"
 msgid "Import contacts"
 msgstr ""
 
-#: ./src/templates/squire/addFilePopover.tpl.html:30
-#: ./src/templates/squire/addFilePopover.tpl.html:40
-msgctxt "Action"
-msgid "Insert File"
-msgstr ""
-
-#: ./src/templates/squire/addFilePopover.tpl.html:46
-msgctxt "Action"
-msgid "Insert URL"
-msgstr ""
-
 #. learn more link
 #: ./src/templates/modals/domain/dkim.tpl.html:16
 #: ./src/templates/modals/domain/dmarc.tpl.html:12
@@ -1242,6 +1240,7 @@ msgctxt "Action"
 msgid "Next tip"
 msgstr ""
 
+#: ./src/app/contact/factories/contactSpam.js:15
 #: ./src/app/user/directives/signupLink.js:8
 msgctxt "Action"
 msgid "No"
@@ -1333,14 +1332,9 @@ msgctxt "Action"
 msgid "Remove"
 msgstr ""
 
-#: ./src/templates/directives/contact/contactItem.tpl.html:102
+#: ./src/templates/directives/contact/contactItem.tpl.html:101
 msgctxt "Action"
 msgid "Remove Entry"
-msgstr ""
-
-#: ./src/templates/squire/addLinkPopover.tpl.html:30
-msgctxt "Action"
-msgid "Remove link"
 msgstr ""
 
 #: ./src/templates/views/outside.message.tpl.html:5
@@ -1434,7 +1428,7 @@ msgctxt "Action"
 msgid "Save"
 msgstr ""
 
-#: ./src/templates/directives/contact/contactItem.tpl.html:163
+#: ./src/templates/directives/contact/contactItem.tpl.html:162
 msgctxt "Action"
 msgid "Save order"
 msgstr ""
@@ -1489,7 +1483,7 @@ msgid "Sending"
 msgstr ""
 
 #: ./src/templates/composer/composerEncrypt.tpl.html:72
-#: ./src/templates/composer/composerExpiration.tpl.html:58
+#: ./src/templates/composer/composerExpiration.tpl.html:59
 #: ./src/templates/vpn/openVpnSection.tpl.html:47
 msgctxt "Action"
 msgid "Set"
@@ -1651,11 +1645,6 @@ msgctxt "Action"
 msgid "Update"
 msgstr ""
 
-#: ./src/templates/squire/addLinkPopover.tpl.html:37
-msgctxt "Action"
-msgid "Update link"
-msgstr ""
-
 #. link to dashboard
 #: ./src/templates/dashboard/overviewSection.tpl.html:23
 #: ./src/templates/dashboard/overviewSection.tpl.html:42
@@ -1675,6 +1664,11 @@ msgstr ""
 #: ./src/templates/contact/contactEncrypted.tpl.html:11
 msgctxt "Action"
 msgid "Upgrade now"
+msgstr ""
+
+#: ./src/templates/vpn/vpnView.tpl.html:13
+msgctxt "Action"
+msgid "Upgrade plan now"
 msgstr ""
 
 #: ./src/templates/directives/core/sidebarProgress.tpl.html:4
@@ -1750,6 +1744,7 @@ msgctxt "Action"
 msgid "Wipe"
 msgstr ""
 
+#: ./src/app/contact/factories/contactSpam.js:14
 #: ./src/app/user/directives/signupStepLink.js:4
 msgctxt "Action"
 msgid "Yes"
@@ -1830,13 +1825,13 @@ msgctxt "Action to not set PGP encryption on import contact"
 msgid "Yes"
 msgstr ""
 
-#: ./src/templates/message/messageDisplayError.tpl.html:23
-#: ./src/templates/message/messageDisplayError.tpl.html:6
+#: ./src/templates/message/messageDisplayError.tpl.html:14
+#: ./src/templates/message/messageDisplayError.tpl.html:4
 msgctxt "Action to reload the current state"
 msgid "Try again"
 msgstr ""
 
-#: ./src/templates/message/messageDisplayError.tpl.html:12
+#: ./src/templates/message/messageDisplayError.tpl.html:9
 msgctxt "Action to report an error for the message"
 msgid "Report problem"
 msgstr ""
@@ -1870,42 +1865,42 @@ msgctxt "Add a new domain label"
 msgid "Set"
 msgstr ""
 
-#: ./src/app/conversation/factories/actionConversation.js:40
-#: ./src/app/message/factories/messageActions.js:46
+#: ./src/app/conversation/factories/actionConversation.js:41
+#: ./src/app/message/factories/messageActions.js:47
 msgctxt "App folder"
 msgid "Archive"
 msgstr ""
 
-#: ./src/app/conversation/factories/actionConversation.js:35
 #: ./src/app/conversation/factories/actionConversation.js:36
-#: ./src/app/message/factories/messageActions.js:41
+#: ./src/app/conversation/factories/actionConversation.js:37
 #: ./src/app/message/factories/messageActions.js:42
+#: ./src/app/message/factories/messageActions.js:43
 msgctxt "App folder"
 msgid "Drafts"
-msgstr ""
-
-#: ./src/app/conversation/factories/actionConversation.js:33
-#: ./src/app/message/factories/messageActions.js:39
-msgctxt "App folder"
-msgid "Inbox"
-msgstr ""
-
-#: ./src/app/conversation/factories/actionConversation.js:37
-#: ./src/app/conversation/factories/actionConversation.js:38
-#: ./src/app/message/factories/messageActions.js:43
-#: ./src/app/message/factories/messageActions.js:44
-msgctxt "App folder"
-msgid "Sent"
 msgstr ""
 
 #: ./src/app/conversation/factories/actionConversation.js:34
 #: ./src/app/message/factories/messageActions.js:40
 msgctxt "App folder"
+msgid "Inbox"
+msgstr ""
+
+#: ./src/app/conversation/factories/actionConversation.js:38
+#: ./src/app/conversation/factories/actionConversation.js:39
+#: ./src/app/message/factories/messageActions.js:44
+#: ./src/app/message/factories/messageActions.js:45
+msgctxt "App folder"
+msgid "Sent"
+msgstr ""
+
+#: ./src/app/conversation/factories/actionConversation.js:35
+#: ./src/app/message/factories/messageActions.js:41
+msgctxt "App folder"
 msgid "Spam"
 msgstr ""
 
-#: ./src/app/conversation/factories/actionConversation.js:39
-#: ./src/app/message/factories/messageActions.js:45
+#: ./src/app/conversation/factories/actionConversation.js:40
+#: ./src/app/message/factories/messageActions.js:46
 msgctxt "App folder"
 msgid "Trash"
 msgstr ""
@@ -2150,39 +2145,154 @@ msgctxt "Composer Mode"
 msgid "Plain Text"
 msgstr ""
 
-#: ./src/templates/squire/addLinkPopover.tpl.html:11
-msgctxt "Composer, add Link popover"
-msgid "Edit the link"
+#: ./src/app/squire/modals/addFileModal.js:7
+msgctxt "Composer, add File"
+msgid "Add file"
 msgstr ""
 
-#: ./src/templates/squire/addLinkPopover.tpl.html:20
-msgctxt "Composer, add Link popover"
+#: ./src/app/squire/modals/addFileModal.js:8
+msgctxt "Composer, add File"
+msgid "Delete"
+msgstr ""
+
+#: ./src/templates/squire/addFile.tpl.html:49
+msgctxt "Composer, add File"
+msgid "Error loading image"
+msgstr ""
+
+#: ./src/templates/squire/addFile.tpl.html:38
+msgctxt "Composer, add File"
+msgid ""
+"If your URL is correct, you'll see an image preview here. Large images may take a few minutes to\n"
+"                    appear."
+msgstr ""
+
+#: ./src/templates/squire/addFile.tpl.html:9
+msgctxt "Composer, add File"
+msgid "Image URL"
+msgstr ""
+
+#: ./src/templates/squire/addFile.tpl.html:29
+msgctxt "Composer, add File"
+msgid "Image preview"
+msgstr ""
+
+#: ./src/app/squire/modals/addFileModal.js:6
+msgctxt "Composer, add File"
+msgid "Insert"
+msgstr ""
+
+#: ./src/app/squire/modals/addFileModal.js:5
+msgctxt "Composer, add File"
+msgid "Insert image"
+msgstr ""
+
+#: ./src/templates/squire/addFile.tpl.html:46
+msgctxt "Composer, add File"
+msgid "Loading image"
+msgstr ""
+
+#: ./src/templates/squire/addFile.tpl.html:3
+msgctxt "Composer, add File"
+msgid "Web address"
+msgstr ""
+
+#: ./src/app/squire/directives/addLink.js:24
+msgctxt "Composer, add Link"
+msgid "Add a phone number"
+msgstr ""
+
+#: ./src/app/squire/directives/addLink.js:22
+msgctxt "Composer, add Link"
+msgid "Add a web address"
+msgstr ""
+
+#: ./src/app/squire/directives/addLink.js:23
+msgctxt "Composer, add Link"
+msgid "Add an email address"
+msgstr ""
+
+#: ./src/app/squire/modals/addLinkModal.js:12
+#: ./src/app/squire/modals/addLinkModal.js:7
+msgctxt "Composer, add Link"
+msgid "Delete"
+msgstr ""
+
+#: ./src/app/squire/modals/addLinkModal.js:10
+msgctxt "Composer, add Link"
+msgid "Edit link"
+msgstr ""
+
+#: ./src/templates/squire/addLink.tpl.html:51
+msgctxt "Composer, add Link"
+msgid "Email address"
+msgstr ""
+
+#: ./src/templates/squire/addLink.tpl.html:2
+msgctxt "Composer, add Link"
+msgid ""
+"In the first box, put the link/email/phone number the text\n"
+"        should go to. In the second box, put the text you want to appear."
+msgstr ""
+
+#: ./src/app/squire/modals/addLinkModal.js:6
+msgctxt "Composer, add Link"
+msgid "Insert"
+msgstr ""
+
+#: ./src/app/squire/modals/addLinkModal.js:5
+msgctxt "Composer, add Link"
+msgid "Insert link"
+msgstr ""
+
+#: ./src/templates/squire/addLink.tpl.html:16
+msgctxt "Composer, add Link"
 msgid "Link URL"
 msgstr ""
 
-#: ./src/templates/squire/addLinkPopover.tpl.html:14
-msgctxt "Composer, add Link popover"
+#: ./src/templates/squire/addLink.tpl.html:63
+msgctxt "Composer, add Link"
+msgid "Link label"
+msgstr ""
+
+#: ./src/templates/squire/addLink.tpl.html:57
+msgctxt "Composer, add Link"
+msgid "Phone number"
+msgstr ""
+
+#: ./src/templates/squire/addLink.tpl.html:36
+msgctxt "Composer, add Link"
 msgid "Text to display"
 msgstr ""
 
-#: ./src/templates/squire/addLinkPopover.tpl.html:19
-msgctxt "Composer, add Link popover"
+#: ./src/app/squire/directives/addLink.js:9
+msgctxt "Composer, add Link"
+msgid "To what URL should this link go?"
+msgstr ""
+
+#: ./src/app/squire/directives/addLink.js:10
+msgctxt "Composer, add Link"
+msgid "To what email address should this link?"
+msgstr ""
+
+#: ./src/app/squire/directives/addLink.js:15
+msgctxt "Composer, add Link"
+msgid "To what phone number should this link?"
+msgstr ""
+
+#: ./src/templates/squire/addLink.tpl.html:8
+msgctxt "Composer, add Link"
 msgid "URL link"
 msgstr ""
 
-#: ./src/templates/squire/addFilePopover.tpl.html:10
-msgctxt "Composer, add file popover"
-msgid "Insert an image"
+#: ./src/app/squire/modals/addLinkModal.js:11
+msgctxt "Composer, add Link"
+msgid "Update"
 msgstr ""
 
-#: ./src/templates/squire/addFilePopover.tpl.html:13
-msgctxt "Composer, add file popover"
-msgid "URL image"
-msgstr ""
-
-#: ./src/templates/squire/addFilePopover.tpl.html:14
-msgctxt "Composer, add file popover"
-msgid "URL to image"
+#: ./src/templates/squire/addLink.tpl.html:45
+msgctxt "Composer, add Link"
+msgid "Web address"
 msgstr ""
 
 #: ./src/app/composer/directives/composerAskEmbedded.js:4
@@ -3138,8 +3248,16 @@ msgstr ""
 #: ./src/templates/modals/setupOrganization.tpl.html:17
 #: ./src/templates/organization/organizationFormName.tpl.html:21
 #: ./src/templates/payment/giftCodeInput.tpl.html:13
+#: ./src/templates/squire/addFile.tpl.html:22
+#: ./src/templates/squire/addLink.tpl.html:29
+#: ./src/templates/squire/addLink.tpl.html:76
 msgctxt "Error"
 msgid "Field required"
+msgstr ""
+
+#: ./src/app/attachments/services/AttachmentEvent.js:6
+msgctxt "Error"
+msgid "ICS parsing error:"
 msgstr ""
 
 #: ./src/templates/views/reset-login-password.tpl.html:48
@@ -3188,7 +3306,7 @@ msgctxt "Error"
 msgid "Invalid coupon code"
 msgstr ""
 
-#: ./src/templates/directives/contact/contactItem.tpl.html:149
+#: ./src/templates/directives/contact/contactItem.tpl.html:148
 #: ./src/templates/directives/contact/contactPinnedKeys.tpl.html:39
 #: ./src/templates/directives/core/bugModalView.tpl.html:62
 #: ./src/templates/filter/filterAddressModal.tpl.html:27
@@ -3312,6 +3430,11 @@ msgctxt "Error"
 msgid "Non-integer API version requested."
 msgstr ""
 
+#: ./src/templates/squire/addFile.tpl.html:23
+msgctxt "Error"
+msgid "Not a valid URL"
+msgstr ""
+
 #: ./src/app/organization/factories/organizationKeysModel.js:29
 msgctxt "Error"
 msgid "Organization keys already active"
@@ -3358,7 +3481,7 @@ msgctxt "Error"
 msgid "Please enter at least one recipient."
 msgstr ""
 
-#: ./src/app/authentication/controllers/login.js:401
+#: ./src/app/authentication/controllers/login.js:397
 msgctxt "Error"
 msgid "Please enter your two-factor passcode"
 msgstr ""
@@ -4168,7 +4291,7 @@ msgctxt "Info"
 msgid "* We recommend adding a recovery email address first. Otherwise, you cannot recover your account if something goes wrong."
 msgstr ""
 
-#: ./src/app/conversation/factories/actionConversation.js:360
+#: ./src/app/conversation/factories/actionConversation.js:359
 msgctxt "Info"
 msgid "1 conversation moved to {{folder}}"
 msgid_plural "{{number}} conversations moved to {{folder}}"
@@ -5269,7 +5392,7 @@ msgctxt "Info"
 msgid "Safari does not fully support downloading encrypted attachments."
 msgstr ""
 
-#: ./src/templates/vpn/vpnView.tpl.html:48
+#: ./src/templates/vpn/vpnView.tpl.html:52
 msgctxt "Info"
 msgid "Same as ProtonMail login password"
 msgstr ""
@@ -5492,7 +5615,7 @@ msgctxt "Info"
 msgid "Upgrade to a paid account to also send emails from your @pm.me address."
 msgstr ""
 
-#: ./src/templates/vpn/vpnView.tpl.html:34
+#: ./src/templates/vpn/vpnView.tpl.html:38
 msgctxt "Info"
 msgid "Use the following credentials to log into the <a href=\"https://protonvpn.com/download\" target=\"_blank\">ProtonVPN native clients</a>."
 msgstr ""
@@ -5621,6 +5744,11 @@ msgctxt "Info"
 msgid "Without activation you will not be able to create new users, add addresses to existing users, or access non-private user accounts."
 msgstr ""
 
+#: ./src/templates/vpn/vpnView.tpl.html:12
+msgctxt "Info"
+msgid "You are using ProtonVPN Free. Upgrade to ProtonVPN Plus to get faster speeds and better privacy."
+msgstr ""
+
 #: ./src/templates/partials/wizard.tpl.html:33
 msgctxt "Info"
 msgid "You can add and remove folders from selected emails by clicking the folders button <strong>(2)</strong>."
@@ -5728,12 +5856,12 @@ msgctxt "Info"
 msgid "You're upgrading your account. Once we successfully process payment, we'll immediately upgrade your account. Thanks for choosing to become a paying customer!"
 msgstr ""
 
-#: ./src/templates/vpn/vpnView.tpl.html:13
+#: ./src/templates/vpn/vpnView.tpl.html:17
 msgctxt "Info"
 msgid "Your ProtonVPN account request has been received. You're already on the waitlist, we'll contact you once capacity becomes available."
 msgstr ""
 
-#: ./src/templates/vpn/vpnView.tpl.html:12
+#: ./src/templates/vpn/vpnView.tpl.html:16
 msgctxt "Info"
 msgid "Your VPN account has not yet been activated, go to <a href=\"https://account.protonvpn.com/signup\" target=\"_blank\">https://account.protonvpn.com/signup</a> to sign up and activate your account."
 msgstr ""
@@ -5749,7 +5877,7 @@ msgctxt "Info"
 msgid "Your account is being updated, this may take up to 30 seconds."
 msgstr ""
 
-#: ./src/templates/vpn/vpnView.tpl.html:11
+#: ./src/templates/vpn/vpnView.tpl.html:15
 msgctxt "Info"
 msgid "Your account is currently not eligible for ProtonVPN access. If you are part of an Organization, please contact your account administrator."
 msgstr ""
@@ -5808,6 +5936,11 @@ msgstr ""
 #: ./src/templates/views/members.tpl.html:50
 msgctxt "Info"
 msgid "used"
+msgstr ""
+
+#: ./src/app/contact/factories/contactSpam.js:8
+msgctxt "Info"
+msgid "{{ name }} is also in your contacts. Remove them from your contacts?"
 msgstr ""
 
 #: ./src/templates/views/members.tpl.html:76
@@ -5976,12 +6109,12 @@ msgctxt "Invoice type display as badge"
 msgid "Subscription"
 msgstr ""
 
-#: ./src/app/contact/directives/contactPublicKeys.js:267
+#: ./src/app/contact/directives/contactPublicKeys.js:272
 msgctxt "Key details"
 msgid "Created on {{created}}, {{bits}} bits (can be used for sending and signature verification)"
 msgstr ""
 
-#: ./src/app/contact/directives/contactPublicKeys.js:273
+#: ./src/app/contact/directives/contactPublicKeys.js:278
 msgctxt "Key details"
 msgid "Created on {{created}}, {{bits}} bits (only used for signature verification)"
 msgstr ""
@@ -6095,7 +6228,7 @@ msgctxt "Label"
 msgid "Download App"
 msgstr ""
 
-#: ./src/templates/vpn/vpnView.tpl.html:66
+#: ./src/templates/vpn/vpnView.tpl.html:70
 msgctxt "Label"
 msgid "Download ProtonVPN"
 msgstr ""
@@ -6160,7 +6293,7 @@ msgctxt "Label"
 msgid "Follow us"
 msgstr ""
 
-#: ./src/templates/vpn/vpnView.tpl.html:82
+#: ./src/templates/vpn/vpnView.tpl.html:86
 msgctxt "Label"
 msgid "Get Support for ProtonVPN"
 msgstr ""
@@ -6253,7 +6386,7 @@ msgstr ""
 #: ./src/templates/modals/member.tpl.html:50
 #: ./src/templates/modals/switchPasswordMode.tpl.html:13
 #: ./src/templates/vpn/openVpnSection.tpl.html:33
-#: ./src/templates/vpn/vpnView.tpl.html:45
+#: ./src/templates/vpn/vpnView.tpl.html:49
 msgctxt "Label"
 msgid "Password"
 msgstr ""
@@ -6283,7 +6416,7 @@ msgctxt "Label"
 msgid "Proton Newsletter (5-6 per year)"
 msgstr ""
 
-#: ./src/templates/vpn/vpnView.tpl.html:37
+#: ./src/templates/vpn/vpnView.tpl.html:41
 msgctxt "Label"
 msgid "Proton Username"
 msgstr ""
@@ -6293,7 +6426,7 @@ msgctxt "Label"
 msgid "ProtonMail Signature"
 msgstr ""
 
-#: ./src/templates/vpn/vpnView.tpl.html:74
+#: ./src/templates/vpn/vpnView.tpl.html:78
 msgctxt "Label"
 msgid "ProtonVPN Homepage"
 msgstr ""
@@ -6555,7 +6688,7 @@ msgctxt "Link"
 msgid "Add another address"
 msgstr ""
 
-#: ./src/templates/vpn/vpnView.tpl.html:69
+#: ./src/templates/vpn/vpnView.tpl.html:73
 msgctxt "Link"
 msgid "Download Page"
 msgstr ""
@@ -6565,7 +6698,7 @@ msgctxt "Link"
 msgid "Download bridge"
 msgstr ""
 
-#: ./src/templates/vpn/vpnView.tpl.html:77
+#: ./src/templates/vpn/vpnView.tpl.html:81
 msgctxt "Link"
 msgid "Homepage"
 msgstr ""
@@ -6630,7 +6763,7 @@ msgctxt "Link"
 msgid "Reactivate keys"
 msgstr ""
 
-#: ./src/templates/vpn/vpnView.tpl.html:85
+#: ./src/templates/vpn/vpnView.tpl.html:89
 msgctxt "Link"
 msgid "Support Page"
 msgstr ""
@@ -6665,12 +6798,12 @@ msgctxt "List domains"
 msgid "Please add a custom domain before configuring addresses."
 msgstr ""
 
-#: ./src/app/authentication/controllers/login.js:361
+#: ./src/app/authentication/controllers/login.js:357
 msgctxt "Login error"
 msgid "Please enter your username and password"
 msgstr ""
 
-#: ./src/app/authentication/controllers/login.js:369
+#: ./src/app/authentication/controllers/login.js:365
 msgctxt "Login error"
 msgid "Your password is missing"
 msgstr ""
@@ -6755,14 +6888,9 @@ msgctxt "Message content if empty"
 msgid "Message empty"
 msgstr ""
 
-#: ./src/templates/message/messageDisplayError.tpl.html:4
+#: ./src/templates/message/messageDisplayError.tpl.html:3
 msgctxt "Message decryption error"
-msgid "Decryption error"
-msgstr ""
-
-#: ./src/templates/message/messageDisplayError.tpl.html:5
-msgctxt "Message decryption error"
-msgid "Decryption of this message's encryption content failed."
+msgid "Decryption error: Decryption of this message's encryption content failed."
 msgstr ""
 
 #: ./src/app/message/factories/messageModel.js:96
@@ -6815,13 +6943,9 @@ msgctxt "Message encryption status"
 msgid "Sent by you with end-to-end encryption"
 msgstr ""
 
+#: ./src/app/message/factories/messageModel.js:72
 #: ./src/app/message/factories/messageModel.js:91
 #: ./src/app/message/factories/messageModel.js:92
-msgctxt "Message encryption status"
-msgid "Sent by you with zero access encryption"
-msgstr ""
-
-#: ./src/app/message/factories/messageModel.js:72
 msgctxt "Message encryption status"
 msgid "Stored with zero access encryption"
 msgstr ""
@@ -6846,17 +6970,12 @@ msgctxt "Message for encryption contact modal"
 msgid "The email <span style=\"font-weight: bold;\">{{ ::ctrl.email }}</span> has PGP keys set. Do you want to enable PGP encryption for this contact?"
 msgstr ""
 
-#: ./src/templates/message/messageDisplayError.tpl.html:21
+#: ./src/templates/message/messageDisplayError.tpl.html:13
 msgctxt "Message network error"
-msgid "Network error"
+msgid "Network error: Please check your connection and try again."
 msgstr ""
 
-#: ./src/templates/message/messageDisplayError.tpl.html:22
-msgctxt "Message network error"
-msgid "Please check your connection and try again."
-msgstr ""
-
-#: ./src/templates/message/messageDisplayError.tpl.html:11
+#: ./src/templates/message/messageDisplayError.tpl.html:8
 msgctxt "Message network error"
 msgid "Sanitization error"
 msgstr ""
@@ -7394,7 +7513,7 @@ msgctxt "Restore administrator panel"
 msgid "Due to a password change, your organization administrator privileges have been restricted. The following actions are no longer permitted:"
 msgstr ""
 
-#: ./src/templates/vpn/vpnView.tpl.html:21
+#: ./src/templates/vpn/vpnView.tpl.html:25
 msgctxt "Select your type of OS"
 msgid "Select your client below to get started with ProtonVPN"
 msgstr ""
@@ -8087,6 +8206,11 @@ msgctxt "Title"
 msgid "Conditions"
 msgstr ""
 
+#: ./src/app/contact/factories/contactSpam.js:6
+msgctxt "Title"
+msgid "Confirm"
+msgstr ""
+
 #: ./src/templates/composer/composerEncrypt.tpl.html:28
 msgctxt "Title"
 msgid "Confirm Password"
@@ -8535,7 +8659,7 @@ msgctxt "Title"
 msgid "Generating keys..."
 msgstr ""
 
-#: ./src/templates/vpn/vpnView.tpl.html:19
+#: ./src/templates/vpn/vpnView.tpl.html:23
 msgctxt "Title"
 msgid "Getting started with ProtonVPN"
 msgstr ""
@@ -8602,6 +8726,11 @@ msgstr ""
 #: ./src/templates/views/account.tpl.html:8
 msgctxt "Title"
 msgid "Identity"
+msgstr ""
+
+#: ./src/app/attachments/factories/attachmentModel.js:33
+msgctxt "Title"
+msgid "Image"
 msgstr ""
 
 #. table heading
@@ -9000,7 +9129,7 @@ msgctxt "Title"
 msgid "ProtonMail's Terms and Conditions"
 msgstr ""
 
-#: ./src/templates/vpn/vpnView.tpl.html:28
+#: ./src/templates/vpn/vpnView.tpl.html:32
 #: ./src/templates/vpn/vpnView.tpl.html:6
 msgctxt "Title"
 msgid "ProtonVPN"
@@ -9011,7 +9140,7 @@ msgctxt "Title"
 msgid "ProtonVPN Plus 2-year plan"
 msgstr ""
 
-#: ./src/templates/vpn/vpnView.tpl.html:58
+#: ./src/templates/vpn/vpnView.tpl.html:62
 msgctxt "Title"
 msgid "ProtonVPN Resources"
 msgstr ""
@@ -9520,6 +9649,11 @@ msgctxt "Title for the vpn modal"
 msgid "ProtonVPN Plans"
 msgstr ""
 
+#: ./src/app/squire/services/pasteImage.js:6
+msgctxt "Title pasted image"
+msgid "Pasted-image"
+msgstr ""
+
 #. reset warning 3/3
 #: ./src/templates/views/reset-login-password.tpl.html:86
 msgctxt "To continue, type DANGER below:"
@@ -9652,7 +9786,7 @@ msgctxt "User role"
 msgid "Member"
 msgstr ""
 
-#: ./src/app/user/directives/identitySection.js:16
+#: ./src/app/user/directives/identitySection.js:15
 msgctxt "User's signature"
 msgid "Name / Signature saved"
 msgstr ""
@@ -9855,6 +9989,11 @@ msgstr ""
 #: ./src/app/contact/factories/contactTransformLabel.js:40
 msgctxt "VCard key name"
 msgid "Work"
+msgstr ""
+
+#: ./src/templates/composer/composerExpiration.tpl.html:51
+msgctxt "Warning"
+msgid "If you are sending this message to a non ProtonMail user, please be sure to set a password for your message."
 msgstr ""
 
 #: ./src/app/composer/services/autoPinPrimaryKeys.js:21
@@ -10366,7 +10505,7 @@ msgstr ""
 msgid "Address"
 msgstr ""
 
-#: ./src/templates/directives/contact/contactItem.tpl.html:119
+#: ./src/templates/directives/contact/contactItem.tpl.html:118
 msgid "Advanced settings"
 msgstr ""
 
@@ -10506,7 +10645,7 @@ msgstr ""
 msgid "Copied to clipboard"
 msgstr ""
 
-#: ./src/templates/directives/contact/contactItem.tpl.html:88
+#: ./src/templates/directives/contact/contactItem.tpl.html:87
 msgid "Copy address"
 msgstr ""
 
@@ -10809,10 +10948,6 @@ msgstr ""
 #: ./src/templates/dashboard/professionalColumn.tpl.html:13
 #: ./src/templates/dashboard/professionalColumn.tpl.html:18
 msgid "Info"
-msgstr ""
-
-#: ./src/templates/squire/addLinkPopover.tpl.html:42
-msgid "Insert link"
 msgstr ""
 
 #: ./src/app/core/controllers/signup.js:79
@@ -11223,11 +11358,11 @@ msgstr ""
 msgid "The message signature could not be verified as the signature on the contact is invalid."
 msgstr ""
 
-#: ./src/app/contact/directives/contactPublicKeys.js:417
+#: ./src/app/contact/directives/contactPublicKeys.js:422
 msgid "The public key with fingerprint %s updated."
 msgstr ""
 
-#: ./src/app/contact/directives/contactPublicKeys.js:409
+#: ./src/app/contact/directives/contactPublicKeys.js:414
 msgid "The public key with fingerprint %s was replaced with a revoked key."
 msgstr ""
 
@@ -11295,7 +11430,7 @@ msgstr ""
 msgid "Use for encryption"
 msgstr ""
 
-#: ./src/app/contact/directives/contactPublicKeys.js:233
+#: ./src/app/contact/directives/contactPublicKeys.js:238
 msgid "User IDs mismatch. This key is assigned to %1."
 msgid_plural "User IDs mismatch. The emails %1 are assigned to this key."
 msgstr[0] ""
