@@ -18,9 +18,6 @@ function messageRequest($rootScope, messageApi, gettextCatalog) {
             return getSendError(data.data);
         }
 
-        if (data.ErrorDescription) {
-            return new Error(`${data.Error}: ${data.ErrorDescription}`);
-        }
         return new Error(data.Error || I18N.ERROR_SENDING);
     }
 
