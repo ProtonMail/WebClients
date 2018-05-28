@@ -88,8 +88,8 @@ function messageModel(
         ],
         // 4 - Out plain
         [
-            gettextCatalog.getString('Sent by you with zero access encryption', null, 'Message encryption status'),
-            gettextCatalog.getString('Sent by you with zero access encryption', null, 'Message encryption status'),
+            gettextCatalog.getString('Stored with zero access encryption', null, 'Message encryption status'),
+            gettextCatalog.getString('Stored with zero access encryption', null, 'Message encryption status'),
             gettextCatalog.getString('Sender verification failed', null, 'Message encryption status')
         ],
         // 5 - Store enc
