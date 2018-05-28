@@ -2,7 +2,6 @@ import _ from 'lodash';
 import { MAILBOX_IDENTIFIERS, ROW_MODE, COLUMN_MODE, CONVERSATION_VIEW_MODE } from '../../constants';
 /* @ngInject */
 function ElementsController(
-    $filter,
     $log,
     $q,
     $rootScope,
@@ -30,6 +29,7 @@ function ElementsController(
     messageActions,
     AppModel,
     markedScroll,
+    forgeRequestParameters,
     removeElement,
     tools
 ) {
@@ -403,57 +403,6 @@ function ElementsController(
             markedScroll.clear();
         });
     };
-
-    function getWildCard() {
-        if (angular.isDefined($stateParams.wildcard)) {
-            return $stateParams.wildcard;
-        }
-
-        const { AutoWildcardSearch } = mailSettingsModel.get();
-
-        return AutoWildcardSearch;
-    }
-
-    function forgeRequestParameters(mailbox) {
-        const params = {
-            Page: (~~$stateParams.page || 1) - 1
-        };
-
-        if (angular.isDefined($stateParams.filter)) {
-            params.Unread = +($stateParams.filter === 'unread'); // Convert Boolean to Integer
-        }
-
-        if (angular.isDefined($stateParams.sort)) {
-            let sort = $stateParams.sort;
-            const desc = sort.charAt(0) === '-';
-
-            if (desc === true) {
-                sort = sort.slice(1);
-            }
-
-            params.Sort = $filter('capitalize')(sort);
-            params.Desc = +desc;
-        }
-
-        if (mailbox === 'search') {
-            params.Address = $stateParams.address;
-            params.Label = $stateParams.label;
-            params.Keyword = $stateParams.keyword;
-            params.To = $stateParams.to;
-            params.From = $stateParams.from;
-            params.Subject = $stateParams.subject;
-            params.Begin = $stateParams.begin;
-            params.End = $stateParams.end;
-            params.Attachments = $stateParams.attachments;
-            params.AutoWildcard = getWildCard();
-        } else if (mailbox === 'label') {
-            params.Label = $stateParams.label;
-        } else {
-            params.Label = MAILBOX_IDENTIFIERS[mailbox];
-        }
-
-        return params;
-    }
 
     $scope.refreshElements = () => {
         const request = forgeRequestParameters($scope.mailbox);

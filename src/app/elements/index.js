@@ -19,9 +19,11 @@ import timeElement from './directives/timeElement';
 import elementsError from './factories/elementsError';
 import limitElementsModel from './factories/limitElementsModel';
 import removeElement from './services/removeElement';
+import forgeRequestParameters from './services/forgeRequestParameters';
 
 export default angular
     .module('proton.elements', [])
+    .factory('forgeRequestParameters', forgeRequestParameters)
     .controller('ElementsController', ElementsController)
     .directive('advancedFilterElement', advancedFilterElement)
     .directive('countElementsSelected', countElementsSelected)
