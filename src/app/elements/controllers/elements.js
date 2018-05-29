@@ -206,10 +206,10 @@ function ElementsController(
                     $scope.refreshElements();
                     break;
                 case 'switchTo.next':
-                    nextElement();
+                    newElement();
                     break;
                 case 'switchTo.previous':
-                    previousElement();
+                    oldElement();
                     break;
             }
         });
@@ -327,13 +327,13 @@ function ElementsController(
         }, false);
 
         /**
-         * Go to the next conversation
+         * Go to the next element (newer)
          */
-        function nextElement() {
+        function newElement() {
             const elementID = $state.params.id;
 
             if (!elementID) {
-                return markNext();
+                return markPrevious();
             }
 
             const { ViewLayout, ViewMode } = mailSettingsModel.get();
@@ -357,13 +357,13 @@ function ElementsController(
         }
 
         /**
-         * Go to the previous conversation
+         * Go to the previous element (older)
          */
-        function previousElement() {
+        function oldElement() {
             const elementID = $state.params.id;
 
             if (!elementID) {
-                return markPrevious();
+                return markNext();
             }
 
             const { ViewLayout, ViewMode } = mailSettingsModel.get();
@@ -389,12 +389,12 @@ function ElementsController(
         $scope.$on('markPrevious', markPrevious);
         $scope.$on('markNext', markNext);
 
-        $scope.$on('nextElement', () => {
-            nextElement();
+        $scope.$on('newElement', () => {
+            newElement();
         });
 
-        $scope.$on('previousElement', () => {
-            previousElement();
+        $scope.$on('oldElement', () => {
+            oldElement();
         });
 
         $scope.$on('$destroy', () => {

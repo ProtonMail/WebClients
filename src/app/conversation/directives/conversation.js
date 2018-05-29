@@ -187,8 +187,8 @@ function conversation(
                 });
             };
 
-            scope.$on('nextElement', onNextPrevElement('DOWN'));
-            scope.$on('previousElement', onNextPrevElement('UP'));
+            scope.$on('newElement', onNextPrevElement('UP'));
+            scope.$on('oldElement', onNextPrevElement('DOWN'));
 
             scope.$on('markPrevious', () => {
                 unsubscribeActions();
