@@ -9,7 +9,6 @@ import _ from 'lodash';
  * @return {String}
  */
 export function toText(html, appendLines = true, convertImages = false) {
-
     const turndownService = new TurndownService({
         bulletListMarker: '-',
         strongDelimiter: '',
@@ -27,31 +26,30 @@ export function toText(html, appendLines = true, convertImages = false) {
     const replaceBreakLine = {
         filter: 'br',
         replacement(content, node) {
-
             // It matches the new line of a signature
             if (node.parentElement.nodeName === 'DIV' && node.parentElement.childElementCount === 1) {
-                return !node.parentElement.textContent ? '\n\n' : '';
+                return !node.parentElement.textContent ? '\n\n' : '\n';
             }
 
             // ex <li>monique<br></li>
             if (node.parentElement.lastElementChild.nodeName === 'BR' && node.parentElement.textContent) {
-                return '';
+                return node.parentElement.nodeName !== 'LI' ? '\n' : '';
             }
 
             return '\n\n';
         }
     };
+
     const replaceImg = {
         filter: 'img',
-        replacement: (e, image) => {
+        replacement(e, image) {
+            if (!convertImages) {
+                return '';
+            }
+
             // needed for the automatic conversion done by pgp/inline, otherwise the conversion happens and people forget that they have selected this for some contacts
-            if (convertImages && image.alt) {
-                return '[ ' + image.alt + ' ]';
-            }
-            if (convertImages && image.src) {
-                return '[ ' + image.src + ' ]';
-            }
-            return '';
+            const attribute = image.alt || image.src;
+            return attribute ? `[${attribute}]` : '';
         }
     };
 
@@ -62,8 +60,16 @@ export function toText(html, appendLines = true, convertImages = false) {
         }
     };
 
+    const replaceDiv = {
+        filter: ['div'],
+        replacement(content) {
+            return content;
+        }
+    };
+
     turndownService.use([
         () => turndownService.addRule('replaceAnchor', replaceAnchor),
+        () => turndownService.addRule('replaceDiv', replaceDiv),
         () => turndownService.addRule('replaceImg', replaceImg),
         () => turndownService.addRule('replaceBreakLine', replaceBreakLine),
         () => turndownService.addRule('protonSignature', protonSignature)
