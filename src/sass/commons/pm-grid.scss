@@ -172,6 +172,7 @@ $pad: 20px;
 		:not(.absorbing, .initialGrow) > [class*='col-'] {
 			-webkit-flex-grow: 1;
 		    flex-grow: 1;
+			flex-basis: 0;
 			width: auto;
 		}
 
