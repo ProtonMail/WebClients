@@ -102,8 +102,8 @@ function hotkeys(hotkeyModal, $rootScope, $state, authentication, $injector, get
     const trash = action(broadcast('move', 'trash'));
     const archive = action(broadcast('move', 'archive'));
     const spam = action(broadcast('move', 'spam'));
-    const nextElement = action(broadcast('nextElement'));
-    const previousElement = action(broadcast('previousElement'));
+    const newElement = action(broadcast('newElement'));
+    const oldElement = action(broadcast('oldElement'));
 
     const keys = [
         {
@@ -135,8 +135,8 @@ function hotkeys(hotkeyModal, $rootScope, $state, authentication, $injector, get
             callback: forward,
             description: I18N.FORWARD_MSG
         },
-        { keyboard: 'k', callback: previousElement },
-        { keyboard: 'j', callback: nextElement },
+        { keyboard: 'k', callback: newElement },
+        { keyboard: 'j', callback: oldElement },
         { keyboard: 'enter', callback: openMarked },
         {
             keyboard: 'r',
@@ -250,7 +250,10 @@ function hotkeys(hotkeyModal, $rootScope, $state, authentication, $injector, get
      * @return {void}
      */
     const filterBinding = (list = [], cb = angular.noop) => {
-        flow(filter(({ keyboard }) => _.includes(list, keyboard)), each(cb))(keys);
+        flow(
+            filter(({ keyboard }) => _.includes(list, keyboard)),
+            each(cb)
+        )(keys);
     };
 
     const hotkeys = {
