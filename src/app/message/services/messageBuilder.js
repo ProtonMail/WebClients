@@ -347,11 +347,11 @@ function messageBuilder(
      * @param  {Message} currentMsg Current message to reply etc.
      * @return {Message}    New message formated
      */
-    async function create(action = '', currentMsg = {}) {
+    async function create(action = '', currentMsg = {}, isAfter) {
         let newMsg = messageModel();
         setDefaultsParams(newMsg);
         newMsg = await builder(action, currentMsg, newMsg);
-        newMsg.setDecryptedBody(signatureBuilder.insert(newMsg, { action }));
+        newMsg.setDecryptedBody(signatureBuilder.insert(newMsg, { action, isAfter }));
         return newMsg;
     }
 

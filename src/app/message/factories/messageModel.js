@@ -486,6 +486,6 @@ function messageModel(
         }
     }
 
-    return (m = defaultMessage) => new Message(m);
+    return (m = {}) => new Message({ ...defaultMessage, ...m });
 }
 export default messageModel;
