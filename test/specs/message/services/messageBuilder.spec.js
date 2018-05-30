@@ -1078,15 +1078,17 @@ Est-ce que tu vas bien ?
                 },
                 DecryptedBody: USER_SIGNATURE2
             },
-            createMessage: (currentMsg) => {
+            signatureIsAfter: false,
+            createMessage(currentMsg) {
                 const match = { Status: 1, Send: 1, Email: 'jeanne@free.fr' };
                 mailSettingsMock.Addresses = [TESTABLE_ADDRESS_DEFAULT, { Status: 2, Email: 'robert@free.fr' }, match];
-                return factory.create('replyall', currentMsg);
+                return factory.create('replyall', currentMsg, false);
             }
         });
 
         createMessageTest({
             type: 'A forward message',
+            signatureIsAfter: true,
             defaultMessageExtension: {
                 Subject: 'polo',
                 ToList: ['bob'],
@@ -1112,14 +1114,14 @@ Est-ce que tu vas bien ?
                 },
                 DecryptedBody: USER_SIGNATURE2
             },
-            createMessage: (currentMsg) => {
+            createMessage(currentMsg) {
                 const match = { Status: 1, Send: 1, ID: 2 };
                 mailSettingsMock.Addresses = [TESTABLE_ADDRESS_DEFAULT, { Status: 2 }, match];
-                return factory.create('forward', currentMsg);
+                return factory.create('forward', currentMsg, true);
             }
         });
 
-        function createMessageTest({ type, createMessage, defaultMessageExtension, currentMessageExtension, action, toList, ccList, bccList, subject, actionConstant, parseText, fromAddress, body = USER_SIGNATURE2 }) {
+        function createMessageTest({ type, createMessage, defaultMessageExtension, currentMessageExtension, action, toList, ccList, bccList, subject, actionConstant, parseText, fromAddress, body = USER_SIGNATURE2, signatureIsAfter }) {
             describe(type, () => {
                 let item;
                 let currentMsg;
@@ -1209,7 +1211,7 @@ Est-ce que tu vas bien ?
 
                 it('should create a new signature', () => {
                     expect(signatureBuilder.insert).toHaveBeenCalled();
-                    expect(signatureBuilder.insert).toHaveBeenCalledWith(jasmine.any(Message), { action });
+                    expect(signatureBuilder.insert).toHaveBeenCalledWith(jasmine.any(Message), { action, isAfter: signatureIsAfter });
                 });
 
                 it('should load the sender', () => {

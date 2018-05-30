@@ -8,10 +8,13 @@ function mailtoHandler(dispatchers, sanitize, messageModel, mailUtils) {
         if (e.target.nodeName === 'A' && (e.target.getAttribute('href') || '').toLowerCase().startsWith('mailto:')) {
             e.preventDefault();
 
-            const message = { ...messageModel(), ...mailUtils.mailtoParser(e.target.getAttribute('href')) };
+            const message = messageModel(mailUtils.mailtoParser(e.target.getAttribute('href')));
 
-            // Open the composer with the given mailto address
-            dispatch('new', { message });
+            /*
+                Open the composer with the given mailto address
+                position isAfter true as the user can choose to set a body
+             */
+            dispatch('new', { message, isAfter: true });
         }
     };
 

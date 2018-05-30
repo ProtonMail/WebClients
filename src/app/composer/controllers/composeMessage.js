@@ -202,7 +202,7 @@ function ComposeMessageController(
     on('composer.new', async (e, { type, data = {} }) => {
         const limitReached = checkComposerNumber();
         if (!limitReached && AppModel.is('onLine')) {
-            validateMessage.canWrite() && initMessage(await messageBuilder.create(type, data.message));
+            validateMessage.canWrite() && initMessage(await messageBuilder.create(type, data.message, data.isAfter));
         }
     });
 
