@@ -296,7 +296,10 @@ function filterModal(
                 let pass = true;
 
                 // Check name
-                pass = ctrl.filter.Name.length > 0;
+                const { Name = '' } = ctrl.filter;
+                if (!Name.length) {
+                    return false;
+                }
 
                 if (Object.keys(ctrl.filter.Simple || {}).length > 0) {
                     // Simple mode

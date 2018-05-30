@@ -226,11 +226,13 @@
             margin: 0.6em 0 0.8em 0;
         }
         // Display the error messages with opacity to prevent reflow.
+        &.ng-invalid.ng-touched:not(:focus) + [ng-messages],
         &.ng-invalid.ng-dirty + [ng-messages] {
             opacity: 1
         }
         // Add a red border color to the input.
         &.ng-invalid.ng-dirty { border-color: $red; }
+        &.ng-invalid.ng-touched:not(:focus) { border-color: $red; }
         &.ng-invalid.always-show-ng-invalid { border-color: $red; }
 
         &.inline {

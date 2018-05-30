@@ -1,12 +1,3 @@
-.filter-modal-input-name + .filter-modal-alert {
-    visibility: hidden;
-    margin-bottom: 0;
-}
-
-.filter-modal-input-name.ng-empty:not(:focus) ~ .filter-modal-alert {
-    visibility: visible;
-}
-
 .filter-modal-conditions {
     @include flexInline();
     @include flexWrap();
