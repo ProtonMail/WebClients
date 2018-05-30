@@ -1,36 +1,25 @@
 /* @ngInject */
-function copy(gettextCatalog, notification) {
+function copy(gettextCatalog, ptClipboard) {
     const I18N = {
-        copy: gettextCatalog.getString('Copy to your clipboard', null),
-        copied: gettextCatalog.getString('Copied to clipboard', null)
+        copy: gettextCatalog.getString('Copy to your clipboard', null, 'Info')
     };
 
     return {
         restrict: 'E',
         replace: true,
         scope: { value: '=' },
-        template: `
-                <button class="copy-button" type="button" data-tooltip="${I18N.copy}">
-                    <span class="copy-icon"></span>
-                </button>
-            `,
-        link(scope, element) {
-            const clipboard = new Clipboard(element[0], {
-                text() {
-                    return scope.value;
-                }
+        template: `<button class="copy-button" type="button" data-tooltip="${
+            I18N.copy
+        }"><span class="copy-icon"></span></button>`,
+        link(scope, el) {
+            const { promise, destroy, I18N: clipboardI18N } = ptClipboard(el[0], () => {
+                return scope.value;
             });
 
-            clipboard.on('success', () => {
-                element.attr('data-tooltip', I18N.copied); // NOTE doesn't work until we have CSS tooltip support
-                notification.success(I18N.copied);
-            });
+            // NOTE doesn't work until we have CSS tooltip support
+            promise.then(() => el.attr('data-tooltip', clipboardI18N.SUCCESS)).catch(() => el.addClass('error'));
 
-            clipboard.on('error', () => {
-                element.addClass('error');
-            });
-
-            scope.$on('$destroy', () => clipboard.destroy());
+            scope.$on('$destroy', () => destroy());
         }
     };
 }
