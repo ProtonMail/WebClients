@@ -6,15 +6,9 @@ function messageAddressActionMenu(
     messageModel,
     $state,
     contactEmails,
-    notification,
-    gettextCatalog,
-    messageSenderSettings
+    messageSenderSettings,
+    ptClipboard
 ) {
-    const I18N = {
-        copied: gettextCatalog.getString('Copied to clipboard', null),
-        errorCopied: gettextCatalog.getString('Error while copying', null)
-    };
-
     return {
         restrict: 'E',
         templateUrl: require('../../../templates/message/messageAddressActionMenu.tpl.html'),
@@ -40,13 +34,7 @@ function messageAddressActionMenu(
                 dispatcher.contacts('addContact', { email: STATE.address.address, name: STATE.address.name });
             };
 
-            const clipboard = new Clipboard(copyButton[0], {
-                text() {
-                    return STATE.address.address;
-                }
-            });
-            clipboard.on('success', () => notification.success(I18N.copied));
-            clipboard.on('error', () => notification.error(I18N.errorCopied));
+            const { destroy } = ptClipboard(copyButton[0], () => STATE.address.address);
 
             const getContact = (email) => _.find(contactEmails.get(), { Email: email });
             const showContact = () => {
@@ -101,7 +89,7 @@ function messageAddressActionMenu(
             });
 
             scope.$on('$destroy', () => {
-                clipboard.destroy();
+                destroy();
                 unsubscribe();
             });
         }
