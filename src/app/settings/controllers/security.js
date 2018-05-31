@@ -20,6 +20,35 @@ function SecurityController(
     sharedSecretModal,
     twoFAIntroModal
 ) {
+    const I18N = {
+        clear: {
+            title: gettextCatalog.getString('Clear', null, 'Title'),
+            message: gettextCatalog.getString('Are you sure you want to clear all your logs?', null, 'Info'),
+            updated: gettextCatalog.getString('Logging preference updated', null, 'Dashboard/security'),
+            disable: gettextCatalog.getString('Disable', null, 'Action'),
+            disabled: gettextCatalog.getString('Disabled', null, 'Action'),
+            success: gettextCatalog.getString('Logs cleared', null, "Clear user's logs (security)")
+        },
+        twofa: {
+            title: gettextCatalog.getString('Disable Two-Factor Authentication', null, 'Title'),
+            message: gettextCatalog.getString(
+                'Are you sure you want to disable two-factor authentication?',
+                null,
+                'Info'
+            ),
+            disabled: gettextCatalog.getString('Two-factor authentication disabled', null, 'Disable 2FA')
+        },
+        revoke: {
+            success: gettextCatalog.getString('Other sessions revoked', null, 'Success'),
+            error: gettextCatalog.getString('Error during revoke request', null, 'Error')
+        },
+        logging: {
+            success: gettextCatalog.getString('Logging preference updated', null, 'Dashboard/security'),
+            error: gettextCatalog.getString('Error during the initialization of logs', null, 'Error'),
+            disable: gettextCatalog.getString('Disable', null, 'Action')
+        }
+    };
+
     const { LogAuth, TwoFactor } = userSettingsModel.get();
 
     $scope.logs = [];
@@ -28,7 +57,7 @@ function SecurityController(
     $scope.twoFactor = TwoFactor;
 
     // / logging page
-    $scope.disabledText = gettextCatalog.getString('Disable', null, 'Action');
+    $scope.disabledText = I18N.clear.disable;
     $scope.haveLogs = false;
 
     const setCurrentPage = (p) => {
@@ -76,9 +105,7 @@ function SecurityController(
                 .then(() => {
                     $scope.twoFactor = 0;
                     userSettingsModel.set('TwoFactor', 0);
-                    notification.success(
-                        gettextCatalog.getString('Two-factor authentication disabled', null, 'Disable 2FA')
-                    );
+                    notification.success(I18N.twofa.disabled);
                 });
 
             networkActivityTracker.track(promise);
@@ -132,16 +159,10 @@ function SecurityController(
     };
 
     $scope.disableTwoFactor = () => {
-        const title = gettextCatalog.getString('Disable Two-Factor Authentication', null, 'Title');
-        const message = gettextCatalog.getString(
-            'Are you sure you want to disable two-factor authentication?',
-            null,
-            'Info'
-        );
         confirmModal.activate({
             params: {
-                title,
-                message,
+                title: I18N.twofa.title,
+                message: I18N.twofa.message,
                 confirm() {
                     confirmModal.deactivate();
                     confirm2FADisable();
@@ -167,9 +188,7 @@ function SecurityController(
                     $scope.haveLogs = true;
                 },
                 (error) => {
-                    notification.error(
-                        gettextCatalog.getString('Error during the initialization of logs', null, 'Error')
-                    );
+                    notification.error(I18N.logging.error);
                     $log.error(error);
                 }
             )
@@ -177,20 +196,15 @@ function SecurityController(
     };
 
     $scope.clearLogs = () => {
-        const title = gettextCatalog.getString('Clear', null, 'Title');
-        const message = gettextCatalog.getString('Are you sure you want to clear all your logs?', null, 'Info');
-
         confirmModal.activate({
             params: {
-                title,
-                message,
+                title: I18N.clear.title,
+                message: I18N.clear.message,
                 confirm() {
                     const promise = Logs.clear().then(() => {
                         $scope.logs = [];
                         $scope.logCount = 0;
-                        notification.success(
-                            gettextCatalog.getString('Logs cleared', null, "Clear user's logs (security)")
-                        );
+                        notification.success(I18N.clear.success);
                     });
 
                     networkActivityTracker.track(promise);
@@ -223,13 +237,11 @@ function SecurityController(
     };
 
     $scope.revokeOthers = () => {
-        const errorMessage = gettextCatalog.getString('Error during revoke request', null, 'Error');
-        const successMessage = gettextCatalog.getString('Other sessions revoked', null, 'Success');
         const promise = authApi
             .revokeOthers()
-            .then(() => notification.success(successMessage))
+            .then(() => notification.success(I18N.revoke.success))
             .catch(({ data = {} } = {}) => {
-                throw new Error(data.Error || errorMessage);
+                throw new Error(data.Error || I18N.revoke.error);
             });
 
         networkActivityTracker.track(promise);
@@ -239,15 +251,14 @@ function SecurityController(
         if (value === 0) {
             return confirmModal.activate({
                 params: {
-                    message: gettextCatalog.getString('Are you sure you want to clear all your logs?', null, 'Info'),
+                    title: I18N.clear.title,
+                    message: I18N.clear.message,
                     confirm() {
                         const promise = settingsApi.setLogging({ LogAuth: 0 }).then(() => {
                             $scope.doLogging = 0;
-                            notification.success(
-                                gettextCatalog.getString('Logging preference updated', null, 'Dashboard/security')
-                            );
+                            notification.success(I18N.clear.updated);
                             confirmModal.deactivate();
-                            $scope.disabledText = gettextCatalog.getString('Disabled', null, 'Action');
+                            $scope.disabledText = I18N.clear.disabled;
                         });
                         networkActivityTracker.track(promise);
                     },
@@ -260,8 +271,8 @@ function SecurityController(
 
         const promise = settingsApi.setLogging({ LogAuth: value }).then(() => {
             $scope.doLogging = value;
-            notification.success(gettextCatalog.getString('Logging preference updated', null, 'Dashboard/security'));
-            $scope.disabledText = gettextCatalog.getString('Disable', null, 'Action');
+            notification.success(I18N.logging.success);
+            $scope.disabledText = I18N.logging.disable;
         });
 
         networkActivityTracker.track(promise);
