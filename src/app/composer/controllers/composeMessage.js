@@ -40,7 +40,12 @@ function ComposeMessageController(
     sendMessage,
     validateMessage
 ) {
-    const { dispatcher, on, unsubscribe } = dispatchers(['composer.update', 'messageActions', 'editorListener']);
+    const { dispatcher, on, unsubscribe } = dispatchers([
+        'composer.update',
+        'messageActions',
+        'editorListener',
+        'elements'
+    ]);
 
     $scope.messages = [];
     $scope.uid = 1;
@@ -547,16 +552,22 @@ function ComposeMessageController(
                 size: $scope.messages.length,
                 message
             });
+
+            /*
+                Refresh conversations to remove old drafts.
+             */
+            dispatcher.elements('refresh');
+            if (message.ConversationID === $stateParams.id || message.ID === $stateParams.id) {
+                $state.go('secured.drafts');
+            }
         };
 
         if (discard === true) {
             const ids = [message.ID];
-
             dispatcher.messageActions('delete', { ids });
         }
 
         $timeout.cancel(message.defferredSaveLater);
-
         if (save === true) {
             postMessage(message, { autosaving: true }).then(process);
         } else {
@@ -570,8 +581,8 @@ function ComposeMessageController(
      * @return {Promise}
      */
     $scope.discard = (message) => {
-        const title = gettextCatalog.getString('Delete', null);
-        const question = gettextCatalog.getString('Permanently delete this draft?', null);
+        const title = gettextCatalog.getString('Delete', null, 'Title');
+        const question = gettextCatalog.getString('Permanently delete this draft?', null, 'Info');
 
         /**
          * When the confirm modal is opened, a draft can still be saved.
@@ -588,7 +599,7 @@ function ComposeMessageController(
                     $scope.openCloseModal(message, true);
                     // Delete it after the close message has run to be sure the save is not triggered.
                     delete message.discardDontAutoSave;
-                    notification.success(gettextCatalog.getString('Message discarded', null));
+                    notification.success(gettextCatalog.getString('Message discarded', null, 'Info'));
                     confirmModal.deactivate();
                 },
                 cancel() {
