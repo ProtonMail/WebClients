@@ -5,7 +5,8 @@ function sanitize() {
             ALLOWED_URI_REGEXP: /^(?:(?:(?:f|ht)tps?|mailto|tel|callto|cid|blob|xmpp|data):|[^a-z]|[a-z+.\-]+(?:[^a-z+.\-:]|$))/i, // eslint-disable-line no-useless-escape
             ADD_TAGS: ['proton-src', 'base'],
             ADD_ATTR: ['target', 'proton-src'],
-            FORBID_TAGS: ['style', 'input', 'form']
+            FORBID_TAGS: ['style', 'input', 'form'],
+            FORBID_ATTR: ['srcset']
         },
         // When we display a message we need to be global and return more informations
         raw: { WHOLE_DOCUMENT: true, RETURN_DOM: true },

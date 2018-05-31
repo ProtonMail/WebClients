@@ -2,13 +2,33 @@ import _ from 'lodash';
 
 /* @ngInject */
 function injectMessageMedia(dispatchers, displayImages, displayEmbedded) {
+    const LOADING_CLASS = 'proton-loading';
+
+    /**
+     * Check if a node is wrapped.
+     * @param {HTMLElement} node
+     * @returns {boolean}
+     */
+    const isWrapped = (node) => {
+        const parent = node.parentNode;
+        if (!parent) {
+            return false;
+        }
+        return parent.classList.contains(LOADING_CLASS);
+    };
+
     const wrapImage = (img) => {
+        // Ensure that the node is not already wrapped. Can happen if an IMG has src and srcset set.
+        if (isWrapped(img)) {
+            return;
+        }
         const hash = `${Math.random()
             .toString(32)
             .slice(2, 12)}-${Date.now()}`;
         img.setAttribute('data-hash', hash);
-        angular.element(img).wrap(`<div class="image loading" data-hash="${hash}"></div>`);
+        angular.element(img).wrap(`<div class="image loading ${LOADING_CLASS}" data-hash="${hash}"></div>`);
     };
+
     const wrapImages = (list) => list.forEach(wrapImage);
 
     /**
