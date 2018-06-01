@@ -315,7 +315,7 @@ function messageModel(
                     return Promise.resolve(null);
                 }
 
-                return this.getPublicKeys([sender]).then((keys) => {
+                return publicKeyStore.get([sender], true).then((keys) => {
                     return [].concat(..._.values(keys));
                 });
             };
@@ -407,10 +407,6 @@ function messageModel(
 
         emailsToString() {
             return _.map(this.ToList.concat(this.CCList, this.BCCList), 'Address');
-        }
-
-        getPublicKeys(emails = []) {
-            return publicKeyStore.get(emails);
         }
 
         getAttachedPublicKey() {

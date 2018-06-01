@@ -1,7 +1,7 @@
 .addressKeysView-container {
     th.finger-print { min-width: 360px }
     th.key-size { width: 80px }
-    th.actions { width: 200px }
+    th.actions { width: 100px }
     th.status { width: 100px }
 
     td.finger-print {
@@ -17,6 +17,9 @@
             word-break: normal;
             text-overflow: ellipsis;
         }
+    }
+    .hasTable .pm_table {
+        overflow: visible;
     }
 }
 

@@ -365,5 +365,13 @@ export const SENDPREF_STATUS = {
     LOADING_CRYPT_INFO: 64
 };
 
+export const KEY_FLAGS = {
+    DISABLED: 0,
+    ENABLE_VERIFICATION: 1,
+    ENABLE_ENCRYPTION: 2
+};
+
+export const KEY_FILE_EXTENSION = '.asc';
+
 /* eslint  no-useless-escape: "off" */
 export const REGEX_EMAIL = /(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))/i;

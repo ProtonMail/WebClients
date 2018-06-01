@@ -1,5 +1,5 @@
 import _ from 'lodash';
-import { RECIPIENT_TYPE, PACKAGE_TYPE, CONTACT_ERROR } from '../../constants';
+import { RECIPIENT_TYPE, PACKAGE_TYPE, CONTACT_ERROR, KEY_FLAGS } from '../../constants';
 import { toList } from '../../../helpers/arrayHelper';
 import { getGroup } from '../../../helpers/vcard';
 
@@ -41,6 +41,11 @@ function sendPreferences(
                 return null;
         }
     };
+    /**
+     * Determines if a certain key object is allowed to be used for encryption
+     * @param {Object} A key object
+     */
+    const encryptionEnabled = ({ Flags }) => Flags & KEY_FLAGS.ENABLE_ENCRYPTION;
 
     const mimetypeLogic = (mimetype, defaultMimetype, info) => {
         /*
@@ -131,7 +136,7 @@ function sendPreferences(
             return true;
         }
 
-        const sendKeys = _.map(Keys.filter(({ Send }) => Send), 'PublicKey');
+        const sendKeys = _.map(Keys.filter(encryptionEnabled), 'PublicKey');
         const sendKeyObjects = sendKeys.map(pmcw.getKeys).filter(([k = false]) => !!k);
         const [pinnedKey] = pmcw.getKeys(base64ToArray(base64Keys[0]));
         const pinnedFingerprint = pinnedKey.primaryKey.getFingerprint();
@@ -212,7 +217,7 @@ function sendPreferences(
      * @returns {Promise.<void>}
      */
     const reorderKeys = async (keyData, base64Keys) => {
-        const sendKeys = _.map(keyData.Keys.filter(({ Send }) => Send), 'PublicKey');
+        const sendKeys = _.map(keyData.Keys.filter(encryptionEnabled), 'PublicKey');
         const sendKeyPromise = Promise.all(sendKeys.map(pmcw.keyInfo));
         const pinnedKeyPromise = Promise.all(base64Keys.map(keyInfoBase64));
         const [pinnedKeyInfo, sendKeyInfo] = await Promise.all([pinnedKeyPromise, sendKeyPromise]);

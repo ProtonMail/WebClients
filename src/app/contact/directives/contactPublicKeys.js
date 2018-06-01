@@ -1,6 +1,6 @@
 import _ from 'lodash';
 
-import { RECIPIENT_TYPE } from '../../constants';
+import { RECIPIENT_TYPE, KEY_FLAGS } from '../../constants';
 import keyAlgorithm from '../../keys/helper/keyAlgorithm';
 import { removeEmailAlias } from '../../../helpers/string';
 
@@ -331,8 +331,11 @@ function contactPublicKeys(
                 .get([scope.email])
                 .then(({ [scope.email]: { Keys } }) =>
                     Promise.all(
-                        Keys.map(({ PublicKey, Send }) =>
-                            getInfo(PublicKey).then((info) => _.extend(info, { verificationOnly: !Send }))
+                        Keys.map(({ PublicKey, Flags }) =>
+                            getInfo(PublicKey).then((info) => ({
+                                ...info,
+                                verificationOnly: !(Flags & KEY_FLAGS.ENABLE_ENCRYPTION)
+                            }))
                         )
                     )
                 )

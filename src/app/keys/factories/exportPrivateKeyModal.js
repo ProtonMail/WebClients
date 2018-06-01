@@ -1,5 +1,5 @@
 /* @ngInject */
-function exportKeyModal(pmModal, pmcw, authentication) {
+function exportPrivateKeyModal(pmModal, pmcw, authentication) {
     return pmModal({
         controllerAs: 'ctrl',
         templateUrl: require('../../../templates/modals/exportPrivateKeyModal.tpl.html'),
@@ -24,4 +24,4 @@ function exportKeyModal(pmModal, pmcw, authentication) {
         }
     });
 }
-export default exportKeyModal;
+export default exportPrivateKeyModal;

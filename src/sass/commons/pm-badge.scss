@@ -28,6 +28,16 @@
         background-color: $red;
     }
     &.warning {
-        background-color: $yellow;
+        background-color: $warning;
+        color: darken($warning, 50);
+    }
+
+    button.pm_button {
+        color: $white;
+        height: 1rem !important;
+        line-height: 1.1rem !important;
+        vertical-align: text-bottom;
+        font-size: 150% !important;
+        padding: 0;
     }
 }

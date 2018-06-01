@@ -2,6 +2,10 @@
     .generateModal-process-about { display: none }
 }
 
+.generateNewKey .pm_table {
+    display: none;
+}
+
 .generateModal-process {
     [class*="generateModal-key-"] { display: none }
 }
