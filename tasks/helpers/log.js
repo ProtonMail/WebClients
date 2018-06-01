@@ -1,5 +1,10 @@
 const chalk = require('chalk');
 
+const warn = (msg) => {
+    console.log();
+    console.log(`${chalk.magenta('⚠')} ${chalk.magenta(msg)}.`);
+    console.log();
+};
 const success = (msg) => console.log(`${chalk.green('✓')} ${msg}.`);
 
 const title = (msg) => console.log('~', chalk.bgYellow(chalk.black(msg)), '~');
@@ -16,5 +21,9 @@ const error = (e) => {
 };
 
 module.exports = {
-    success, title, error, json
+    success,
+    title,
+    error,
+    json,
+    warn
 };
