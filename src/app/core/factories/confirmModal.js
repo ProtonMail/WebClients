@@ -23,6 +23,7 @@ function confirmModal(pmModal, gettextCatalog) {
             this.confirmText = params.confirmText || I18N.confirm;
             this.hideClose = params.hideClose;
             this.classNameMessage = getClassName(params);
+            this.class = params.class;
             this.cancelText = params.cancelText || I18N.cancel;
             this.confirm = () => (hotkeys.bind(['enter']), params.confirm());
             this.cancel = () => (hotkeys.bind(['enter']), params.cancel());

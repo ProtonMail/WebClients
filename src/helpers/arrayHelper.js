@@ -56,3 +56,20 @@ export const remove = (arr, item) => {
  * @return {Array}
  */
 export const toList = (v = []) => (Array.isArray(v) ? v : [v]);
+
+/**
+ * Sync the list by reusing the objects in oldList
+ * @param String id
+ * @param {Array} oldList
+ * @param {Array} newList
+ * @return {Array} A new list ordered according to newList with objects out of oldList that have been assigned the values out of newList
+ */
+export const syncObjectList = (id, oldList = [], newList = []) => {
+    return newList.map((newObj) => {
+        const oldObj = oldList.find((obj) => obj[id] === newObj[id]);
+        if (oldObj) {
+            return Object.assign(oldObj, newObj);
+        }
+        return newObj;
+    });
+};

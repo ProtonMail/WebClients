@@ -49,7 +49,7 @@
                         <thead>
                             <tr>
                                 <th translate translate-context="Title" translate-comment="table heading">Address</th>
-                                <th style="width: 6rem" class="text-right" translate translate-context="Title" translate-comment="table heading">Status</th>
+                                <th style="width: 6rem" class="text-right generate-status" translate translate-context="Title" translate-comment="table heading">Status</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -58,7 +58,7 @@
                                 data-state="{{address.state}}"
                                 ng-repeat="address in ctrl.addresses | orderBy: 'Order' track by address.ID">
                                 <td>{{ ::address.Email }}</td>
-                                <td class="text-right">
+                                <td class="generate-status text-right">
                                     <span class="pm_badge generateModal-state-queued" translate translate-context="key generation progrss">Queued</span>
                                     <span class="generateModal-state-generating pm_badge"><i class="fa fa-spinner fa-spin"></i> <span translate translate-context="key generation progrss">Generating</span></span>
                                     <span class="generateModal-state-done pm_badge success" translate translate-context="key generation progrss">Done</span>
@@ -75,6 +75,7 @@
         <div class="modal-footer">
             <button type="button" class="pm_button" ng-click="ctrl.cancel()" ng-disabled="ctrl.process === true" translate translate-context="Action">Cancel</button>
             <button type="submit" class="pm_button primary pull-right" ng-disabled="ctrl.process === true" translate translate-context="Action">Generate Keys</button>
+            <button ng-if="ctrl.import" type="submit" class="pm_button link pull-right" ng-disabled="ctrl.process === true" translate translate-context="Action" ng-click="ctrl.import()">Import</button>
         </div>
     </form>
     <div class="modal-overlay"></div>

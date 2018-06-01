@@ -41,6 +41,9 @@
 		display: block;
 	}
 	&.noPadding { padding: 0 }
+    &.default-padding {
+        padding: 5px 15px;
+    }
 
 	> button {
 		background: transparent;

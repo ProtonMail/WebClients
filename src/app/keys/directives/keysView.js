@@ -1,3 +1,5 @@
+import { syncObjectList } from '../../../helpers/arrayHelper';
+
 /* @ngInject */
 function keysView(dispatchers, addressKeysViewModel, addressesModel, authentication) {
     const REQUIRE_CONTACT_CLASS = 'keysView-require-contact-keys-reactivation';
@@ -23,14 +25,13 @@ function keysView(dispatchers, addressKeysViewModel, addressesModel, authenticat
             };
 
             const updateAddresses = (addresses = addressesModel.get()) => {
-                const addressAction = addresses.some(
-                    ({ Keys = [] }) => Keys.filter(({ decrypted }) => !decrypted).length
-                )
-                    ? 'add'
-                    : 'remove';
+                const addressKeys = addressKeysViewModel.getAddressKeys(addresses);
+                const allDecrypted = addressKeys.some(({ keys = [] }) => keys.some(({ decrypted }) => !decrypted));
+                const addressAction = allDecrypted ? 'add' : 'remove';
 
                 scope.$applyAsync(() => {
-                    scope.addressKeys = addressKeysViewModel.getAddressKeys(addresses);
+                    // syncObjectList to prevent a total redraw, which closes the keys tables
+                    scope.addressKeys = syncObjectList('addressID', scope.addressKeys, addressKeys);
                     el[0].classList[addressAction](REQUIRE_ADDRESS_CLASS);
                 });
             };

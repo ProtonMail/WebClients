@@ -102,12 +102,20 @@ function Key($http, url, srp) {
         return $http.get(requestURL('salts'));
     };
     /**
+     * Update the key flags
+     * @param {String} keyID
+     * @param {Integer} Flags (bitmask: bit 0 enables verification, bit 1 enables encryption)
+     */
+    const flags = (keyID, Flags) => {
+        return $http.put(requestURL(keyID, 'flags'), { Flags });
+    };
+    /**
      * reactive key
      * @param {String} keyID
      * @return {Promise}
      */
     const reactivate = (keyID, params) => $http.put(requestURL(keyID), params);
 
-    return { keys, create, setup, reset, primary, activate, updatePrivate, upgrade, remove, salts, reactivate };
+    return { keys, create, setup, reset, primary, activate, updatePrivate, upgrade, remove, salts, reactivate, flags };
 }
 export default Key;

@@ -21,7 +21,7 @@ function addressKeysViewModel(keyInfo, pmcw, authentication) {
      * @return {Array}
      */
     const getAddressKeys = (addresses = []) => {
-        return addresses.reduce((acc, { Keys = [], ID = '', Email = '', Order }) => {
+        return addresses.reduce((acc, { Keys = [], ID = '', Email = '', Order, Status }) => {
             if (!Keys.length) {
                 return acc;
             }
@@ -41,6 +41,7 @@ function addressKeysViewModel(keyInfo, pmcw, authentication) {
                 order: Order,
                 addressID: ID,
                 email: Email,
+                status: Status,
                 fingerprint,
                 algType,
                 created,

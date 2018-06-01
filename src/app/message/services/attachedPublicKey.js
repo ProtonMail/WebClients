@@ -1,6 +1,6 @@
 import _ from 'lodash';
 
-import { SEND_TYPES, VERIFICATION_STATUS, EMAIL_FORMATING } from '../../constants';
+import { SEND_TYPES, VERIFICATION_STATUS, EMAIL_FORMATING, KEY_FLAGS } from '../../constants';
 import { toList } from '../../../helpers/arrayHelper';
 import { getGroup } from '../../../helpers/vcard';
 
@@ -80,9 +80,24 @@ function attachedPublicKey(
     const getPublicKeyFromSig = async (message) => {
         const privateKeys = authentication.getPrivateKeys(message.AddressID);
 
-        const { [message.SenderAddress]: { Keys: keys } } = await keyCache.get([message.SenderAddress]);
-        const publicKeys = _.flatten(_.map(keys, 'PublicKey').map(pmcw.getKeys));
-        const { signatures: [signature = false] } = await pmcw.decryptMessageLegacy({
+        const {
+            [message.SenderAddress]: { Keys: keys }
+        } = await keyCache.get([message.SenderAddress]);
+        const publicKeys = keys.reduce((acc, { PublicKey, Flags }) => {
+            if (Flags & KEY_FLAGS.ENABLE_VERIFICATION) {
+                const [k] = pmcw.getKeys(PublicKey);
+                acc.push(k);
+            }
+            return acc;
+        }, []);
+
+        if (publicKeys.length === 0) {
+            return false;
+        }
+
+        const {
+            signatures: [signature = false]
+        } = await pmcw.decryptMessageLegacy({
             message: message.Body,
             privateKeys,
             date: new Date(message.Time * 1000),
@@ -94,7 +109,13 @@ function attachedPublicKey(
         }
 
         const packetKeyId = signature.packets[0].issuerKeyId.bytes;
-        const publicKey = publicKeys.find(({ primaryKey: { keyid: { bytes } } }) => bytes === packetKeyId);
+        const publicKey = publicKeys.find(
+            ({
+                primaryKey: {
+                    keyid: { bytes }
+                }
+            }) => bytes === packetKeyId
+        );
         return publicKey.armor();
     };
 

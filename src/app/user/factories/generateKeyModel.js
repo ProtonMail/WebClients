@@ -1,11 +1,27 @@
+import { KEY_FLAGS } from '../../constants';
+
 /* @ngInject */
-function generateKeyModel(Key, pmcw, setupKeys) {
+function generateKeyModel(Key, pmcw, setupKeys, authentication, confirmModal, gettextCatalog, addressesModel) {
     const STATE = {
         QUEUED: 0,
         GENERATING: 1,
         DONE: 2,
         SAVED: 3,
         ERROR: 4
+    };
+
+    const I18N = {
+        TITLE: gettextCatalog.getString('Similar Key Already Active!', null, 'Title'),
+        warningMessage(bits) {
+            return gettextCatalog.getString(
+                `An RSA key with bit size {{ bits }} is already active for this address.
+Generating another key will cause slower account loading and deletion of this key can cause issues.
+If you are generating a new key because your old key is compromised, please mark that key as compromised first.
+Are you sure you want to continue?`,
+                { bits },
+                'Message'
+            );
+        }
     };
 
     const onSuccess = (address, key) => {
@@ -18,7 +34,58 @@ function generateKeyModel(Key, pmcw, setupKeys) {
 
     const getStates = () => STATE;
 
-    const generate = async ({ numBits, passphrase, organizationKey, memberMap = {}, address }) => {
+    /**
+     * Warns the user that such a key already exists and discourages the user from generating a new key.
+     * @param {Integer} numBits
+     */
+    const warn = (numBits) =>
+        new Promise((resolve, reject) => {
+            confirmModal.activate({
+                params: {
+                    icon: 'fa fa-exclamation-triangle',
+                    isDanger: true,
+                    title: I18N.TITLE,
+                    message: I18N.warningMessage(numBits),
+                    class: 'very-important',
+                    confirm() {
+                        confirmModal.deactivate();
+                        resolve();
+                    },
+                    cancel() {
+                        confirmModal.deactivate();
+                        reject();
+                    }
+                }
+            });
+        });
+
+    /**
+     * Triggers the generate key process
+     * @param {Integer} numBits
+     * @param {String} passphrase
+     * @param {String} organizationKey
+     * @param {Object} memberMap
+     * @param {Object} address
+     * @param {Boolean} primary
+     * @returns {Promise}
+     */
+    const generate = async ({ numBits, passphrase, organizationKey, memberMap = {}, address, primary = true }) => {
+        const { Keys } = addressesModel.getByID(address.ID);
+        const algorithms = Keys.reduce((acc, { PublicKey, Flags }) => {
+            if (Flags !== KEY_FLAGS.DISABLED) {
+                const [k] = pmcw.getKeys(PublicKey);
+                acc.push(k.primaryKey.getAlgorithmInfo());
+            }
+            return acc;
+        }, []);
+        if (algorithms.find(({ bits }) => bits === numBits)) {
+            // An active key with the requested amount of bits already exists: discourage the user from generating a new key
+            try {
+                await warn(numBits);
+            } catch (canceled) {
+                return null;
+            }
+        }
         try {
             address.state = STATE.GENERATING;
             const { privateKeyArmored: PrivateKey } = await pmcw.generateKey({
@@ -36,7 +103,7 @@ function generateKeyModel(Key, pmcw, setupKeys) {
                 return onSuccess(address, key);
             }
 
-            const { data } = await Key.create({ AddressID: address.ID, PrivateKey });
+            const { data } = await Key.create({ AddressID: address.ID, PrivateKey, Primary: primary });
             return onSuccess(address, data.Key);
         } catch (err) {
             const { data = {} } = err || {};

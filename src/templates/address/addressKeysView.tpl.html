@@ -11,7 +11,7 @@
                 <th data-display-mode="user" class="key-size absorbing-column-half" translate-context="Title" translate-comment="table heading" translate>User</th>
                 <th class="finger-print absorbing-column-half" translate-context="Title" translate-comment="table heading" translate>Fingerprint</th>
                 <th translate-context="Title" translate-comment="table heading" translate>Key type</th>
-                <th class="actions text-center" translate-context="Title" translate-comment="table heading" translate>Import</th>
+                <th class="actions text-center" translate-context="Title" translate-comment="table heading" translate>Actions</th>
             </tr>
         </thead>
         <tbody>
@@ -26,15 +26,15 @@
                     <code>{{ address.fingerprint }}</code>
                 </td>
                 <td>
-                    {{ address.algType }} <i class="fa fa-info-circle cursor-pointer" pt-tooltip-translate-context="address key bit size tooltip" pt-tooltip-translate="The ability to change key type will be coming in a future ProtonMail release"></i>
+                    {{ address.algType }}
                 </td>
                 <td class="text-center">
                     <button class="pm_button link"
                             data-display-mode="address"
-                            data-action="importKey"
+                            data-action="newKey"
                             data-address-id="{{ ::address.addressID }}"
                             translate-context="Action"
-                            translate>Private key</button>
+                            translate>New Key<Kbutton>
                     <span data-display-mode="user" translate translate-context="Action">-</span>
                 </td>
             </tr>
@@ -54,7 +54,7 @@
                             </thead>
                             <tbody>
                                 <tr class="key-row"
-                                    ng-repeat="key in address.keys">
+                                    ng-repeat="key in address.keys track by key.ID">
                                     <td class="finger-print">
                                         <code>{{ key.fingerprint }}</code>
                                     </td>
@@ -62,36 +62,143 @@
                                         {{ key.algType }}
                                     </td>
                                     <td>
-                                        <span class="pm_badge primary" ng-show="$first" translate translate-comment="key state badge">Primary</span>
-                                        <span class="pm_badge success" ng-show="key.decrypted" translate translate-comment="key state badge">Active</span>
-                                        <span class="pm_badge error" ng-hide="key.decrypted" translate translate-comment="key state badge">Inactive</span>
+                                        <span class="pm_badge primary"
+                                              ng-show="$first"
+                                              pt-tooltip-translate="ProtonMail users will use this key by default for sending"
+                                              pt-tooltip-translate-context="Tooltip"
+                                              translate-comment="key state badge"
+                                              translate>Primary</span>
+                                        <span class="pm_badge success"
+                                              ng-show="key.decrypted"
+                                              pt-tooltip-translate="You have locally decrypted this key allowing it be used to decrypt messages"
+                                              pt-tooltip-translate-context="Tooltip"
+                                              translate-comment="key state badge"
+                                              translate>Active</span>
+                                        <span class="pm_badge error"
+                                              ng-hide="key.decrypted"
+                                              pt-tooltip-translate="This key is encrypted with an old password and cannot be used to decrypt messages"
+                                              pt-tooltip-translate-context=""
+                                              translate-comment="key state badge"
+                                              translate>Inactive</span>
+                                        <span class="pm_badge default" ng-show="address.status === 0"
+                                              pt-tooltip-translate="This address has been disabled"
+                                              pt-tooltip-translate-context="key flag info"
+                                              translate-comment="key state badge"
+                                              translate>Disabled</span>
+                                        <span class="pm_badge warning"
+                                              ng-show="key.decrypted && key.Flags > 0 && key.Flags < 3 && address.status !== 0"
+                                              data-display-mode="address">
+                                            <span
+                                                pt-tooltip-translate-context="key flag info"
+                                                pt-tooltip-translate="This key cannot be used for encryption"
+                                                pt-placement="top"
+                                                translate-context="Key state badge"
+                                                translate>
+                                                Obsolete
+                                            </span>
+                                            <button
+                                                type="button"
+                                                class="pm_button link"
+                                                data-action="markValid"
+                                                data-address-id="{{ ::address.addressID }}"
+                                                data-key-index="{{ ::$index }}"
+                                                pt-tooltip-translate-context="Action"
+                                                pt-tooltip-translate="Enable encryption"
+                                                pt-placement="top">
+                                                <i class="fa fa-times"></i>
+                                            </button>
+                                        </span>
+                                        <span class="pm_badge warning"
+                                              ng-show="key.Flags == 0"
+                                              data-display-mode="address">
+                                            <span
+                                                pt-tooltip-translate-context="key flag info"
+                                                pt-tooltip-translate="Signatures produced by this key are treated as invalid and this key cannot be used for encryption"
+                                                pt-placement="top"
+                                                translate-context="Key state badge"
+                                                translate>
+                                                Compromised
+                                            </span>
+                                            <button
+                                                type="button"
+                                                class="pm_button link"
+                                                data-action="markObsolete"
+                                                data-address-id="{{ ::address.addressID }}"
+                                                data-key-index="{{ ::$index }}"
+                                                pt-tooltip-translate-context="Action"
+                                                pt-tooltip-translate="Enable signature verification"
+                                                pt-placement="top">
+                                                <i class="fa fa-times"></i>
+                                            </button>
+                                        </span>
                                     </td>
                                     <td class="text-center">
-                                        <button type="button"
-                                                class="pm_button link"
-                                                ng-show="!isSubUser"
-                                                data-action="exportKey"
-                                                data-address-id="{{ ::address.addressID }}"
-                                                data-key-index="{{ ::$index }}"
-                                                translate-context="Action"
-                                                translate>Export</button>
-                                        <button type="button"
-                                                class="pm_button link"
-                                                ng-hide="key.decrypted || isSubUser"
-                                                data-action="reactivateKey"
-                                                data-address-id="{{ ::address.addressID }}"
-                                                data-key-index="{{ ::$index }}"
-                                                translate-context="Action"
-                                                translate>Reactivate</button>
-                                        <button type="button"
-                                                class="pm_button link"
-                                                ng-show="!$first && key.decrypted && !isSubUser"
-                                                data-display-mode="address"
-                                                data-action="makePrimaryKey"
-                                                data-address-id="{{ ::address.addressID }}"
-                                                data-key-index="{{ ::$index }}"
-                                                translate-context="Action"
-                                                translate>Make primary</button>
+                                        <div class="pm_buttons link">
+                                            <button type="button"
+                                                    class="pm_buttons pm_button"
+                                                    ng-show="!isSubUser"
+                                                    data-action="exportKey"
+                                                    data-address-id="{{ ::address.addressID }}"
+                                                    data-key-index="{{ ::$index }}"
+                                                    translate-context="Action">
+                                                Export
+                                            </button><a
+                                                class="pm_buttons pm_button pm_trigger fa fa-angle-down"
+                                                ng-class="{ disabled: !isSubUser && $first || (displayMode == 'user' && key.decrypted) }"
+                                                dropdown></a>
+                                            <div class="pm_dropdown wide right default-padding">
+                                                <button type="button"
+                                                        class="pm_button link"
+                                                        ng-hide="key.decrypted"
+                                                        data-action="reactivateKey"
+                                                        data-address-id="{{ ::address.addressID }}"
+                                                        data-key-index="{{ ::$index }}"
+                                                        translate-context="Action"
+                                                        translate>Reactivate</button>
+                                                <button type="button"
+                                                        class="pm_button link"
+                                                        ng-show="!$first && key.decrypted && key.Flags === 3 && address.status !== 0"
+                                                        data-display-mode="address"
+                                                        data-action="makePrimaryKey"
+                                                        data-address-id="{{ ::address.addressID }}"
+                                                        data-key-index="{{ ::$index }}"
+                                                        translate-context="Action"
+                                                        translate>Make Primary</button>
+                                                <button type="button"
+                                                        class="pm_button link"
+                                                        pt-tooltip-translate-context="key flag info"
+                                                        pt-tooltip-translate="Disables encryption with this key"
+                                                        data-action="markObsolete"
+                                                        data-display-mode="address"
+                                                        data-address-id="{{ ::address.addressID }}"
+                                                        ng-if="!$first && key.Flags > 1 && address.status !== 0"
+                                                        data-key-index="{{ ::$index }}"
+                                                        translate-context="Action" translate>
+                                                    Mark obsolete
+                                                </button>
+                                                <button type="button"
+                                                        class="pm_button link"
+                                                        pt-tooltip-translate-context="key flag info"
+                                                        pt-tooltip-translate="Disables signature verification and encryption with this key"
+                                                        data-action="markCompromised"
+                                                        data-display-mode="address"
+                                                        data-address-id="{{ ::address.addressID }}"
+                                                        data-key-index="{{ ::$index }}"
+                                                        ng-if="!$first && key.Flags !== 0"
+                                                        translate-context="Action" translate>
+                                                    Mark compromised
+                                                </button>
+                                                <button type="button"
+                                                        class="pm_button link"
+                                                        data-action="deleteKey"
+                                                        data-display-mode="address"
+                                                        data-address-id="{{ ::address.addressID }}"
+                                                        data-key-index="{{ ::$index }}"
+                                                        translate-context="Action"
+                                                        translate>Delete</button>
+
+                                            </div>
+                                        </div>
                                     </td>
                                 </tr>
                             </tbody>

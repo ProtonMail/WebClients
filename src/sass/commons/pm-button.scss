@@ -258,6 +258,25 @@
         }
 
     }
+
+    &.link {
+        border: none;
+        .pm_button {
+            padding: 0;
+            background-color: transparent;
+            border-color: transparent;
+            color: $primary;
+            box-shadow: none;
+            &:active,
+            &:focus,
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+        .disabled {
+            visibility: hidden;
+        }
+    }
     strong {
         font-size: 12px;
         text-transform: uppercase;

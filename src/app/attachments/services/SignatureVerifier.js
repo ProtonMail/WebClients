@@ -37,7 +37,7 @@ function SignatureVerifier(dispatchers, pmcw, authentication, publicKeyStore) {
         // The Sender object is empty for drafts
         const email = message.Sender.Address || addressIDtoEmail(message.AddressID);
 
-        return publicKeyStore.get([email]).then((keys) => _.flatten(_.values(keys), true));
+        return publicKeyStore.get([email], true).then((keys) => _.flatten(_.values(keys), true));
     };
 
     /**

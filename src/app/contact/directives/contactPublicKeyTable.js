@@ -4,9 +4,11 @@ function contactPublicKeyTable() {
         restrict: 'E',
         templateUrl: require('../../../templates/directives/contact/contactPublicKeyTable.tpl.html'),
         scope: {
-            items: '=',
-            enableTrust: '@',
-            enableDelete: '@'
+            items: '='
+        },
+        link(scope, elem, { enableDelete, enableTrust }) {
+            scope.enableDelete = enableDelete === 'true';
+            scope.enableTrust = enableTrust === 'true';
         }
     };
 }

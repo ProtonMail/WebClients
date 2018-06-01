@@ -3,22 +3,35 @@
         <thead>
             <tr>
                 <th class="invalid-key-column"></th>
-                <th translate>Fingerprint</th>
+                <th translate-context="Table Header" translate>Fingerprint</th>
                 <th class="download-action"></th>
-                <th class="primary" translate ng-if="enableDelete === 'true'">
-                    <i class="fa fa-info-circle" pt-tooltip-translate="The primary key is used to encrypt outgoing messages.">
+                <th class="primary" ng-if="enableDelete">
+                    <i class="fa fa-info-circle"
+                       pt-tooltip-translate="The primary key is used to encrypt outgoing messages."
+                       pt-tooltip-translate-context="Tooltip">
                     </i>
-                    Primary
+                    <span translate-context="Table Header" translate>Primary</span>
                 </th>
-                <th class="primary" translate ng-if="enableDelete !== 'true'">
-                    <i class="fa fa-info-circle" pt-tooltip-translate="This contact currently has access to this key to decrypt and sign.">
+                <th class="primary" ng-if="!enableDelete">
+                    <i class="fa fa-info-circle"
+                       pt-tooltip-translate="It is allowed to encrypt with this key"
+                        pt-tooltip-context="Tooltip">
                     </i>
-                    Activated
+                    <span translate-context="Table Header" translate>Encryption</span>
                 </th>
-                <th class="created" translate>Created</th>
-                <th class="expires" ng-if="enableDelete === 'true'" translate>Expires</th>
-                <th class="bits" translate>Type</th>
-                <th class="actions" translate>Actions</th>
+                <th class="created"
+                    translate-context="Table Header"
+                    translate>Created</th>
+                <th class="expires"
+                    ng-if="enableDelete"
+                    translate-context="Table Header"
+                    translate>Expires</th>
+                <th class="bits"
+                    translate-context="Table Header"
+                    translate>Type</th>
+                <th class="actions"
+                    translate-context="Table Header"
+                    translate>Actions</th>
             </tr>
         </thead>
         <tbody>
@@ -41,47 +54,56 @@
                     <button
                         class="fa fa-download"
                         data-index="{{ $index }}"
-                        data-action="{{ enableDelete !== 'true' ? 'downloadUntrusted' : 'download'}}"
+                        data-action="{{ enableDelete ? 'download' : 'downloadUntrusted' }}"
                         pt-tooltip-translate="Download"
+                        pt-tooltip-translate-context="Tooltip"
                     ></button>
                 </td>
                 <td class="primary">
                     <button
                         data-action="makePrimary"
                         data-index="{{ $index }}"
-                        ng-if="!item.verificationOnly && $index > 0 && !item.isExpired && enableDelete === 'true'">
+                        ng-if="!item.verificationOnly && $index > 0 && !item.isExpired && enableDelete"
+                        translate-context="Button"
+                        translate>
                         Set Primary
                     </button>
                     <i class="fa fa-check"
-                       ng-if="!item.verificationOnly && !item.isExpired && (enableDelete !== 'true' || $index === 0)"
+                       ng-if="!item.verificationOnly && !item.isExpired && (!enableDelete || $index === 0)"
                     ></i>
                 </td>
                 <td class="created">
                     {{ item.created }}
                 </td>
-                <td class="expires" ng-if="enableDelete === 'true'">
+                <td class="expires" ng-if="enableDelete">
                     {{ item.expires }}
                 </td>
                 <td class="bits">
                     {{ item.algType }}
                 </td>
                 <td class="actions">
-                    <button ng-if="enableDelete === 'true'"
+                    <button ng-if="enableDelete"
                             class="pm_button link"
                             data-action="remove"
                             data-index="{{ $index }}"
+                            translate-context="Button"
+                            translate
                     >Remove</button>
-                    <button ng-if="enableTrust === 'true'"
+                    <button ng-if="enableTrust"
                             class="pm_button link"
                             data-action="addVirtual"
                             data-index="{{ $index }}"
+                            translate-context="Button"
+                            translate
                     >Trust</button>
                 </td>
             </tr>
             <tr class="empty-table">
                 <td colspan="7">
                     <i class="fa fa-lg fa-thumbs-o-up"></i>
-                    <span translate>All available keys are trusted</span>
+                    <span
+                        translate-context="Empty table message"
+                        translate>All available keys are trusted</span>
                 </td>
             </tr>
         </tbody>
