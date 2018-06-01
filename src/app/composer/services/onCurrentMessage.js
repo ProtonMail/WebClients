@@ -1,19 +1,22 @@
 /* @ngInject */
 function onCurrentMessage(dispatchers) {
+    const DEFAULT_ID = 'editor';
+
     const { on } = dispatchers();
     /**
      * Check if this is the current instance of the editor
-     * @param  {Message} options.message Current message
-     * @param  {String} options.ID      ID of the message loaded
+     * @param  {Message} options.ID ID of the current message
+     * @param  {String} options.ID  ID of the message loaded
      * @return {Boolean}
      */
-    const isCurrent = ({ message = {} }, { ID = 'editor' } = {}) => {
-        const currentID = message.ID || 'editor';
-        return ID === currentID;
+    const isCurrent = (currentMessage = {}, otherMessage = {}) => {
+        const currentID = currentMessage.ID || DEFAULT_ID;
+        const otherID = otherMessage.ID || DEFAULT_ID;
+        return otherID === currentID;
     };
 
     const onCurrentMessage = (scope, cb) => (e, { type, data = {} }) => {
-        isCurrent(scope, data.message) && cb(type, data);
+        isCurrent(scope.message, data.message) && cb(type, data);
     };
 
     /**
