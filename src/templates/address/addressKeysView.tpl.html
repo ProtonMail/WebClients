@@ -29,12 +29,21 @@
                     {{ address.algType }}
                 </td>
                 <td class="text-center">
-                    <button class="pm_button link"
-                            data-display-mode="address"
-                            data-action="newKey"
-                            data-address-id="{{ ::address.addressID }}"
-                            translate-context="Action"
-                            translate>New Key<Kbutton>
+                    <div class="pm_buttons link" data-display-mode="address">
+                        <button class="pm_button link"
+                                data-action="newKey"
+                                data-address-id="{{ ::address.addressID }}"
+                                translate-context="Action"
+                                translate>New Key</button>
+                            <a class="pm_buttons pm_button pm_trigger fa fa-angle-down" dropdown></a>
+                        <div class="pm_dropdown wide right default-padding">
+                            <button class="pm_button link"
+                                    data-action="importKey"
+                                    data-address-id="{{ ::address.addressID }}"
+                                    translate-context="Action"
+                                    translate>Import Key</button>
+                        </div>
+                    </div>
                     <span data-display-mode="user" translate translate-context="Action">-</span>
                 </td>
             </tr>

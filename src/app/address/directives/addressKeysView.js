@@ -36,7 +36,7 @@ function addressKeysView(
         ),
         INVALID_PRIVATE_KEY: gettextCatalog.getString('Cannot read private key', null, 'Error'),
         GENERATE_KEY_MESSAGE: gettextCatalog.getString(
-            'You can upgrade your security by generating new keys. Alternatively it is possible to import new keys. 4096-bit keys only work on high performance computers. For most users, we recommend using 2048-bit keys.',
+            'You can generate a new encryption key if you think your previous key has been compromised. 4096-bit keys only work on high performance computers. For most users, we recommend using 2048-bit keys.',
             null,
             'Title'
         ),
@@ -272,10 +272,6 @@ function addressKeysView(
                         class: 'generateNewKey',
                         password: authentication.getPassword(),
                         primary: false,
-                        import() {
-                            generateModal.deactivate();
-                            importKey({ email });
-                        },
                         onSuccess() {
                             generateModal.deactivate();
                         },
@@ -314,6 +310,7 @@ function addressKeysView(
             const ACTIONS = {
                 downloadPublic,
                 newKey,
+                importKey,
                 reactivateKey,
                 exportKey,
                 makePrimaryKey,
