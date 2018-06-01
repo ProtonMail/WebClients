@@ -2,9 +2,10 @@
 
 const os = require('os');
 const { exec, execVerbose } = require('./helpers/command');
-const { title, success, error } = require('./helpers/log');
+const { title, success, error, warn } = require('./helpers/log');
 
-const { CONFIG, branch } = require('../env/config').getConfig('dist');
+const env = require('../env/config');
+const { CONFIG, branch } = env.getConfig('dist');
 const { externalFiles } = require('../env/conf.build');
 
 const setupConfig = async () => {
@@ -77,6 +78,12 @@ const checkDependencies = async () => {
 
         if (!branch && !isCI) {
             throw new Error('You must define a branch name. --branch=XXX');
+        }
+
+        if (/cobalt/.test(branch) && !env.argv.qaforce) {
+            warn('QA Branch do not update cf wiki server dev');
+            console.log('To force update use the flag --qaforce');
+            process.exit(0);
         }
 
         process.env.NODE_ENV_BRANCH = branch;
