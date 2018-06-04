@@ -551,7 +551,11 @@ function ComposeMessageController(
                 Refresh conversations to remove old drafts.
              */
             dispatcher.elements('refresh');
-            if (message.ConversationID === $stateParams.id || message.ID === $stateParams.id) {
+
+            if (
+                (message.ConversationID === $stateParams.id || message.ID === $stateParams.id) &&
+                $state.includes('secured.drafts')
+            ) {
                 $state.go('secured.drafts');
             }
         };
