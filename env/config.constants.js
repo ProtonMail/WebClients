@@ -18,8 +18,8 @@ const API_TARGETS = {
     beta: 'https://beta.protonmail.com/api',
     prod: 'https://mail.protonmail.com/api',
     dev: 'https://dev.protonmail.com/api',
-    v2: 'https://v2.protonmail.com/api',
     local: 'https://protonmail.dev/api',
+    localhost: 'http://localhost/api',
     host: 'https://mail.protonmail.host/api',
     vagrant: 'https://172.28.128.3/api',
     build: '/api'
