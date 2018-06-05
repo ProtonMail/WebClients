@@ -6,6 +6,7 @@ const { OPEN_TAG_AUTOCOMPLETE_RAW, CLOSE_TAG_AUTOCOMPLETE_RAW } = EMAIL_FORMATIN
 /* @ngInject */
 function autocompleteEmailsItem(sanitize, sendPreferences, autoPinPrimaryKeys, dispatchers) {
     const KEY_ENTER = 13;
+    const { dispatcher } = dispatchers(['recipient.update']);
 
     /**
      * Change button [data-address] to delete the item
@@ -33,11 +34,48 @@ function autocompleteEmailsItem(sanitize, sendPreferences, autoPinPrimaryKeys, d
         return { name: name.trim(), adr: adr.trim() };
     };
 
+    const updateState = async (scope, updateBtn, { name, adr, oldAdr, oldName, target }) => {
+        const { [adr || name]: sendPref } = await sendPreferences.get([adr || name], scope.message);
+
+        const refresh = (oldAdr, oldName) => {
+            scope.$applyAsync(() => {
+                scope.email.Address = oldAdr;
+                scope.email.Name = oldName;
+                target.innerText = scope.email.Address;
+                updateBtn(scope.email.Address);
+            });
+        };
+
+        // important: resign should go before repin: otherwise repin will do the resigning.
+        const doResign = async () => {
+            if (!sendPref.isVerified) {
+                const resigned = await autoPinPrimaryKeys.resign(adr || name);
+                if (!resigned) {
+                    return refresh(oldAdr, oldName);
+                }
+            }
+
+            if (!sendPref.primaryPinned) {
+                const pinned = await autoPinPrimaryKeys.confirm(adr || name);
+                if (!pinned) {
+                    return refresh(oldAdr, oldName);
+                }
+            }
+        };
+
+        if (!sendPref.isVerified || !sendPref.primaryPinned) {
+            await doResign();
+        }
+        dispatcher['recipient.update']('update', { messageID: scope.message.ID });
+        scope.$applyAsync(() => {
+            scope.email = extendPGP(scope.email, sendPref);
+        });
+    };
+
     return {
         replace: true,
         templateUrl: require('../../../templates/ui/autoCompleteEmailsItem.tpl.html'),
         link(scope, el) {
-            const { dispatcher } = dispatchers(['recipient.update']);
             const $span = el.find('span');
             const updateBtn = buttonState(el[0]);
 
@@ -67,48 +105,21 @@ function autocompleteEmailsItem(sanitize, sendPreferences, autoPinPrimaryKeys, d
                     }
 
                     !scope.email.invalid &&
-                        sendPreferences.get([adr || name], scope.message).then(({ [adr || name]: sendPref }) => {
-                            scope.$applyAsync(() => {
-                                if (!sendPref.isVerified || !sendPref.primaryPinned) {
-                                    // important: resign should go before repin: otherwise repin will do the resigning.
-                                    const resign = sendPref.isVerified
-                                        ? Promise.resolve(true)
-                                        : autoPinPrimaryKeys.resign(adr || name);
-                                    resign.then((resigned) => {
-                                        if (!resigned) {
-                                            scope.email.Address = oldAdr;
-                                            scope.email.Name = oldName;
-                                            target.innerText = scope.email.Address;
-                                            updateBtn(scope.email.Address);
-                                            return;
-                                        }
-                                        const repin = sendPref.primaryPinned
-                                            ? Promise.resolve(true)
-                                            : autoPinPrimaryKeys.confirm(adr || name);
-                                        return repin.then((pinned) => {
-                                            if (!pinned) {
-                                                scope.email.Address = oldAdr;
-                                                scope.email.Name = oldName;
-                                                target.innerText = scope.email.Address;
-                                                updateBtn(scope.email.Address);
-                                            }
-                                        });
-                                    });
-
-                                    return resign;
-                                }
-                                dispatcher['recipient.update']('update', { messageID: scope.message.ID });
-                                scope.email = extendPGP(scope.email, sendPref);
-                            });
+                        updateState(scope, updateBtn, {
+                            target,
+                            name,
+                            adr,
+                            oldName,
+                            oldAdr
                         });
                 });
             };
 
             /*
-                    Prevent event propagation for custom action by the main component.
-                    And reset invalid state
-                    ex: BACKSPACE
-                 */
+                Prevent event propagation for custom action by the main component.
+                And reset invalid state
+                ex: BACKSPACE
+             */
             const onInput = (e) => {
                 if (e.keyCode === KEY_ENTER) {
                     return onBlur(e);

@@ -14,11 +14,16 @@ function autocompleteEmails(
     const COMMA_KEY = 188;
     const ESCAPE_KEY = 27;
     const RECIPIENT_LIMIT = 25;
-    const LANG_RECIPIENT_LIMIT = gettextCatalog.getString(
-        'The maximum number (%1) of Recipients is %2.',
-        null,
-        'Error'
-    );
+
+    const I18N = {
+        langRecipientLimit(total) {
+            return gettextCatalog.getString(
+                'The maximum number ({{total}}) of Recipients is {{limit}}.',
+                { total, limit: RECIPIENT_LIMIT },
+                'Error'
+            );
+        }
+    };
 
     /**
      * Get the selected input value configuration
@@ -28,7 +33,7 @@ function autocompleteEmails(
      */
     const getConfigEmailInput = (model, value = '') => {
         if (REGEX_EMAIL.test(value)) {
-            const config = model.filterContact(value, true).list[0];
+            const [config] = model.filterContact(value, true).list;
             // Can be undefined if there is no match
             if (config) {
                 return config;
@@ -155,7 +160,7 @@ function autocompleteEmails(
             const { ToList, CCList, BCCList } = scope.message;
             const total = ToList.length + CCList.length + BCCList.length + numberToAdd;
             if (total > RECIPIENT_LIMIT) {
-                notification.error(LANG_RECIPIENT_LIMIT.replace('%1', total).replace('%2', RECIPIENT_LIMIT));
+                notification.error(I18N.langRecipientLimit(total));
                 return false;
             }
             return true;
