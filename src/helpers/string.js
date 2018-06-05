@@ -1,6 +1,6 @@
 import _ from 'lodash';
 
-export const normalizeEmail = (email) => email.toLowerCase();
+export const normalizeEmail = (email = '') => email.toLowerCase();
 
 export const removeEmailAlias = (email = '') => {
     return normalizeEmail(email)

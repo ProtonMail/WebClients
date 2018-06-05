@@ -471,6 +471,11 @@
         .composer-btn-expiration:focus svg {
             fill: $button-color-focus;
         }
+        .composer-btn-expiration.primary:hover svg,
+        .composer-btn-expiration.primary:focus svg,
+        .composer-btn-expiration.primary svg {
+            fill: $white;
+        }
     }
 
 
