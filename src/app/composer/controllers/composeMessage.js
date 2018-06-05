@@ -79,8 +79,8 @@ function ComposeMessageController(
 
         try {
             await validateMessage.checkSubject(message);
+            await validateMessage.checkExpiration(message);
         } catch (e) {
-            // No subject
             return;
         }
 
