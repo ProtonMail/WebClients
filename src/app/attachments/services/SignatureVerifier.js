@@ -3,7 +3,7 @@ import { flow, filter, find } from 'lodash/fp';
 import { VERIFICATION_STATUS } from '../../constants';
 
 /* @ngInject */
-function SignatureVerifier(dispatchers, pmcw, authentication, publicKeyStore) {
+function SignatureVerifier(dispatchers, pmcw, addressesModel, publicKeyStore) {
     const { NOT_VERIFIED, NOT_SIGNED, SIGNED_AND_INVALID, SIGNED_NO_PUB_KEY, SIGNED_AND_VALID } = VERIFICATION_STATUS;
     const { dispatcher } = dispatchers(['attachmentVerified']);
 
@@ -22,9 +22,7 @@ function SignatureVerifier(dispatchers, pmcw, authentication, publicKeyStore) {
      * @returns {*}
      */
     const addressIDtoEmail = (addressID) => {
-        const { Email } = flow(filter({ Status: 1, Receive: 1 }), find({ ID: addressID }))(
-            authentication.user.Addresses
-        );
+        const { Email } = flow(filter({ Status: 1, Receive: 1 }), find({ ID: addressID }))(addressesModel.get());
 
         return Email;
     };

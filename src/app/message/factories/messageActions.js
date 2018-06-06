@@ -139,7 +139,7 @@ function messageActions(
                         ConversationID: message.ConversationID,
                         Selected: false,
                         LabelIDs: labelIDs,
-                        IsRead: toTrash ? 1 : message.IsRead
+                        Unread: toTrash ? 0 : message.Unread
                     }
                 };
             }),
@@ -179,7 +179,7 @@ function messageActions(
         );
 
         // Send request
-        const promise = messageApi.label(labelID, 1, ids);
+        const promise = messageApi.label({ LabelID: labelID, IDs: ids });
         cache.addToDispatcher(promise);
 
         const notification = gettextCatalog.getPlural(
@@ -241,7 +241,7 @@ function messageActions(
         cache.events(events);
 
         // Send request to detach the label
-        messageApi.label(labelID, REMOVE_ID, [messageID]);
+        messageApi.unlabel({ LabelID: labelID, IDs: [messageID] });
     }
 
     /**
@@ -299,7 +299,7 @@ function messageActions(
         };
 
         const mapPromisesLabels = (list = [], Action) => {
-            return _.map(list, (id) => messageApi.label(id, Action, ids));
+            return _.map(list, (LabelID) => messageApi[Action === ADD_ID ? 'label' : 'unlabel']({ LabelID, IDs: ids }));
         };
 
         const { events, promises } = _.reduce(
@@ -329,7 +329,7 @@ function messageActions(
                     ID: message.ID,
                     Message: {
                         ID: message.ID,
-                        IsRead: message.IsRead,
+                        Unread: message.Unread,
                         ConversationID: message.ConversationID,
                         Selected: false,
                         LabelIDsAdded: toApply,
@@ -375,14 +375,14 @@ function messageActions(
         const events = flow(
             map((id) => cache.getMessageCached(id)),
             filter(Boolean),
-            reduce((acc, { ID, ConversationID, IsRead }) => {
+            reduce((acc, { ID, ConversationID, Unread }) => {
                 const conversation = cache.getConversationCached(ConversationID);
 
                 // Messages
                 acc.push({
                     Action: 3,
                     ID,
-                    Message: { ID, IsRead, LabelIDsAdded }
+                    Message: { ID, Unread, LabelIDsAdded }
                 });
 
                 // Conversation
@@ -423,7 +423,7 @@ function messageActions(
         const events = flow(
             map((id) => cache.getMessageCached(id)),
             filter(Boolean),
-            reduce((acc, { ID, ConversationID, IsRead }) => {
+            reduce((acc, { ID, ConversationID, Unread }) => {
                 const conversation = cache.getConversationCached(ConversationID);
                 const messages = cache.queryMessagesCached(ConversationID);
                 const stars = _.filter(messages, ({ LabelIDs = [] }) =>
@@ -434,7 +434,7 @@ function messageActions(
                 acc.push({
                     Action: 3,
                     ID,
-                    Message: { ID, IsRead, LabelIDsRemoved }
+                    Message: { ID, Unread, LabelIDsRemoved }
                 });
 
                 // Conversation
@@ -465,14 +465,14 @@ function messageActions(
         const { messages, conversationIDs, events } = _.reduce(
             ids,
             (acc, ID) => {
-                const { IsRead, ConversationID, LabelIDs } = cache.getMessageCached(ID) || {};
+                const { Unread, ConversationID, LabelIDs } = cache.getMessageCached(ID) || {};
 
-                if (IsRead === 0) {
+                if (Unread === 1) {
                     acc.conversationIDs.push(ConversationID);
                     acc.events.push({
                         Action: 3,
                         ID,
-                        Message: { ID, ConversationID, IsRead: 1 }
+                        Message: { ID, ConversationID, Unread: 0 }
                     });
                     acc.messages.push({ LabelIDs, ConversationID });
                 }
@@ -539,7 +539,7 @@ function messageActions(
                     // Update the cache to trigger an update (UI)
                     _.each(ids, (id) => {
                         const msg = cache.getMessageCached(id) || {};
-                        msg.IsRead = 0;
+                        msg.Unread = 1;
                         cache.updateMessage(msg);
                     });
                 })
@@ -550,9 +550,9 @@ function messageActions(
         const { messages, conversationIDs, events } = _.reduce(
             ids,
             (acc, ID) => {
-                const { IsRead, ConversationID, LabelIDs } = cache.getMessageCached(ID) || {};
+                const { Unread, ConversationID, LabelIDs } = cache.getMessageCached(ID) || {};
 
-                if (IsRead === 1) {
+                if (Unread === 0) {
                     acc.conversationIDs.push(ConversationID);
                     acc.events.push({
                         Action: 3,
@@ -560,7 +560,7 @@ function messageActions(
                         Message: {
                             ID,
                             ConversationID,
-                            IsRead: 0
+                            Unread: 1
                         }
                     });
                     acc.messages.push({ LabelIDs, ConversationID });

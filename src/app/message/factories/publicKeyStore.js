@@ -5,7 +5,7 @@ import { toList } from '../../../helpers/arrayHelper';
 import { getGroup } from '../../../helpers/vcard';
 
 /* @ngInject */
-function publicKeyStore($rootScope, keyCache, pmcw, contactEmails, Contact, contactKey, authentication) {
+function publicKeyStore($rootScope, addressesModel, keyCache, pmcw, contactEmails, Contact, contactKey) {
     const CACHE = {};
     const CACHE_TIMEOUT = TIME.HOUR;
     const usesDefaults = (contactEmail) => !contactEmail || contactEmail.Defaults;
@@ -102,7 +102,8 @@ function publicKeyStore($rootScope, keyCache, pmcw, contactEmails, Contact, cont
     };
 
     const isOwnAddress = (email) =>
-        _.map(authentication.user.Addresses, 'Email').includes(email.toLowerCase().replace(/\+[^@]*@/, ''));
+        _.map(addressesModel.get(), 'Email').includes(email.toLowerCase().replace(/\+[^@]*@/, ''));
+
     /**
      * Retrieves the pinned keys from the ProtonMail API
      * @param email The mail for which to return the pinned keys
@@ -110,6 +111,7 @@ function publicKeyStore($rootScope, keyCache, pmcw, contactEmails, Contact, cont
      * @return {Promise} A promise returning a map from email to a list of armored keys.
      */
     const fromApi = async (email, verificationOnly) => {
+        _.map(addressesModel.get(), 'Email').includes(email.toLowerCase().replace(/\+[^@]*@/, ''));
         const normEmail = email.toLowerCase();
         // fetch keys from contacts and from api
         // we don't support key pinning on own addresses.
@@ -131,7 +133,7 @@ function publicKeyStore($rootScope, keyCache, pmcw, contactEmails, Contact, cont
             // only verify with pinned keys.
             return { [email]: [] };
         }
-        const { Keys } = authentication.user.Addresses.find(({ Email }) => Email === email);
+        const { Keys } = addressesModel.get().find(({ Email }) => Email === email);
 
         const { pubKeys, compromisedKeys } = Keys.reduce(
             (acc, { PrivateKey, Flags }) => {

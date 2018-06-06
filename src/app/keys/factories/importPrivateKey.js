@@ -1,10 +1,19 @@
 import _ from 'lodash';
 
 /* @ngInject */
-function importPrivateKey(pmcw, decryptImportKeyModal, authentication, Key, notification, unlockUser, gettextCatalog) {
+function importPrivateKey(
+    pmcw,
+    decryptImportKeyModal,
+    addressesModel,
+    authentication,
+    Key,
+    notification,
+    unlockUser,
+    gettextCatalog
+) {
     const PRIVATE_KEY_EXPR = /-----BEGIN PGP PRIVATE KEY BLOCK-----[^-]*-----END PGP PRIVATE KEY BLOCK-----/g;
     const getKeyObject = (keyid) => {
-        const keys = authentication.user.Keys.concat(_.flatten(_.map(authentication.user.Addresses, 'Keys')));
+        const keys = authentication.user.Keys.concat(_.flatten(_.map(addressesModel.get(), 'Keys')));
         return keys.find(({ ID }) => ID === keyid);
     };
 
@@ -84,7 +93,7 @@ function importPrivateKey(pmcw, decryptImportKeyModal, authentication, Key, noti
     };
 
     const importDecryptedKeys = async (decryptedKeys, email, keyid) => {
-        const { ID: addressID = false } = authentication.user.Addresses.find(({ Email }) => Email === email) || {};
+        const { ID: addressID = false } = addressesModel.get().find(({ Email }) => Email === email) || {};
         if (!addressID) {
             const keyObj = getKeyObject(keyid);
             const pmKey = pmcw.getKeys(keyObj.PublicKey);

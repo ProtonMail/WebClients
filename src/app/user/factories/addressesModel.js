@@ -5,36 +5,10 @@ import updateCollection from '../../utils/helpers/updateCollection';
 const { PREMIUM } = ADDRESS_TYPE;
 
 /* @ngInject */
-function addressesModel(Address, authentication, dispatchers, keyInfo, pmcw) {
+function addressesModel(Address, authentication, dispatchers, formatKeys) {
     const { dispatcher, on } = dispatchers(['addressesModel']);
     let CACHE = {};
     const sortByOrder = (addresses = []) => _.sortBy(addresses, 'Order');
-
-    /**
-     * Prepare a key by adding information and generating the corresponding public key to the key object.
-     * @param {Object} key
-     */
-    const formatKey = (key) => {
-        return keyInfo(key).then((key) => {
-            const [k] = pmcw.getKeys(key.PrivateKey);
-            return { ...key, PublicKey: k.toPublic().armor() };
-        });
-    };
-    /**
-     * Prepare addresses to add information in each keys
-     * @param  {Array} addresses
-     * @return {Promise} addreses
-     */
-    const formatKeys = (addresses = []) => {
-        const promises = addresses.reduce((acc, address) => {
-            const { Keys = [] } = address;
-            const pKeys = Promise.all(Keys.map(formatKey));
-
-            return acc.concat(pKeys.then((keys) => ({ ...address, Keys: keys })));
-        }, []);
-
-        return Promise.all(promises);
-    };
 
     /**
      * Save and formatted addresses in the cache

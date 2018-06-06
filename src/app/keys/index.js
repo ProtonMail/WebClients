@@ -10,6 +10,8 @@ import exportPrivateKeyModal from './factories/exportPrivateKeyModal';
 import setupKeys from './factories/setupKeys';
 import upgradeKeys from './factories/upgradeKeys';
 import keyInfo from './factories/keyInfo';
+import formatKey from './factories/formatKey';
+import formatKeys from './factories/formatKeys';
 import decryptUser from './services/decryptUser';
 
 export default angular
@@ -26,4 +28,6 @@ export default angular
     .factory('exportPrivateKeyModal', exportPrivateKeyModal)
     .factory('setupKeys', setupKeys)
     .factory('keyInfo', keyInfo)
+    .factory('formatKey', formatKey)
+    .factory('formatKeys', formatKeys)
     .factory('upgradeKeys', upgradeKeys).name;

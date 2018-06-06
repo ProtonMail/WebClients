@@ -96,7 +96,7 @@ function actionConversation(
                 acc.push({
                     ID,
                     Action: 3,
-                    Message: { ID, IsRead: 0 }
+                    Message: { ID, Unread: 1 }
                 });
             }
 
@@ -140,7 +140,7 @@ function actionConversation(
                 acc.push({
                     ID,
                     Action: 3,
-                    Message: { ID, IsRead: 1 }
+                    Message: { ID, Unread: 0 }
                 });
             });
 
@@ -188,7 +188,7 @@ function actionConversation(
                     acc.push({
                         Action: 3,
                         ID: message.ID,
-                        Message: { ID: message.ID, IsRead: message.IsRead, LabelIDsRemoved }
+                        Message: { ID: message.ID, Unread: message.Unread, LabelIDsRemoved }
                     });
                 });
 
@@ -228,7 +228,7 @@ function actionConversation(
                     acc.push({
                         Action: 3,
                         ID: message.ID,
-                        Message: { ID: message.ID, IsRead: message.IsRead, LabelIDsAdded }
+                        Message: { ID: message.ID, Unread: message.Unread, LabelIDsAdded }
                     });
                 });
 
@@ -298,7 +298,7 @@ function actionConversation(
                         ID: message.ID,
                         Message: {
                             ID: message.ID,
-                            IsRead: message.IsRead,
+                            Unread: message.Unread,
                             LabelIDsAdded: toApply,
                             LabelIDsRemoved: toRemove
                         }
@@ -385,7 +385,7 @@ function actionConversation(
             (acc, ID) => {
                 const messages = cache.queryMessagesCached(ID);
 
-                _.each(messages, ({ Type, LabelIDs = [], ID, IsRead }) => {
+                _.each(messages, ({ Type, LabelIDs = [], ID, Unread }) => {
                     const copyLabelIDsAdded = labelIDsAdded.slice(); // Copy
                     const copyLabelIDsRemoved = _.filter(LabelIDs, (labelID) => _.includes(folderIDs, labelID));
 
@@ -423,7 +423,7 @@ function actionConversation(
                         Action: 3,
                         Message: {
                             ID,
-                            IsRead: toTrash ? 1 : IsRead,
+                            Unread: toTrash ? 0 : Unread,
                             LabelIDsRemoved: copyLabelIDsRemoved, // Remove current location
                             LabelIDsAdded: copyLabelIDsAdded // Add new location
                         }

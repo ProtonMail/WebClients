@@ -24,20 +24,38 @@ function domainModel(dispatchers, domainApi, gettextCatalog) {
                 throw new Error(data.Error || errorMessage);
             });
     }
-    function fetch() {
-        return domainApi
-            .query()
-            .then(({ data = {} } = {}) => {
-                domains = data.Domains;
-                return data.Domains;
-            })
-            .catch(({ data = {} } = {}) => {
-                throw new Error(data.Error || errorMessage);
-            });
+
+    async function fetchAddresses(domain = {}) {
+        try {
+            const { data = {} } = await domainApi.addresses(domain.ID);
+            const { Addresses = [] } = data;
+
+            domain.Addresses = Addresses;
+
+            return domain;
+        } catch (err) {
+            const { data = {} } = err || {};
+
+            throw new Error(data.Error || errorMessage);
+        }
     }
-    function clear() {
-        domains.length = 0;
+
+    async function fetch() {
+        try {
+            const { data = {} } = await domainApi.query();
+            const { Domains = [] } = data;
+
+            set(await Promise.all(Domains.map(fetchAddresses)));
+
+            return query();
+        } catch (err) {
+            const { data = {} } = err || {};
+
+            throw new Error(data.Error || errorMessage);
+        }
     }
+
+    const clear = () => (domains.length = 0);
 
     on('deleteDomain', (event, ID) => {
         const index = _.findIndex(domains, { ID });

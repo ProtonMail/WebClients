@@ -1,7 +1,7 @@
 import { ENCRYPTION_DEFAULT } from '../../constants';
 
 /* @ngInject */
-function setupKeys(passwords, pmcw, webcrypto, Key, MemberKey) {
+function setupKeys(passwords, pmcw, webcrypto, Key, memberApi) {
     /**
      * Generates key pairs for a list of addresses
      * @param  {Array}  addresses  array of addresses that require keys
@@ -204,15 +204,13 @@ function setupKeys(passwords, pmcw, webcrypto, Key, MemberKey) {
      */
     async function memberSetup({ mailboxPassword, keySalt, keys }, password = '', MemberID = '', organizationKey = {}) {
         const AddressKeys = await processMemberKeys(mailboxPassword, keys, organizationKey);
-        return MemberKey.setup(
-            {
-                MemberID,
+        return memberApi
+            .setupKey(MemberID, password, {
                 AddressKeys,
                 KeySalt: keySalt,
                 PrimaryKey: AddressKeys[0]
-            },
-            password
-        ).then(response);
+            })
+            .then(response);
     }
 
     /**
@@ -230,12 +228,13 @@ function setupKeys(passwords, pmcw, webcrypto, Key, MemberKey) {
             processMemberKey(tempPassword, key, organizationKey)
         ]);
 
-        return MemberKey.create({
-            ...org,
-            MemberID: member.ID,
-            Activation: user.Token,
-            UserKey: user.MemberKey
-        }).then(response);
+        return memberApi
+            .createKey(member.ID, {
+                ...org,
+                Activation: user.Token,
+                UserKey: user.MemberKey
+            })
+            .then(response);
     }
 
     return {

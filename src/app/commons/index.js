@@ -13,7 +13,6 @@ import invite from './models/invite';
 import key from './models/key';
 import label from './models/label';
 import logs from './models/logs';
-import memberKey from './models/memberKey';
 import payment from './models/payment';
 import reset from './models/reset';
 import user from './models/user';
@@ -48,7 +47,6 @@ export default angular
     .factory('Key', key)
     .factory('Label', label)
     .factory('Logs', logs)
-    .factory('MemberKey', memberKey)
     .factory('Payment', payment)
     .factory('Reset', reset)
     .factory('User', user)

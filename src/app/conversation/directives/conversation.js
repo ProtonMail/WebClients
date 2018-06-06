@@ -18,7 +18,7 @@ function conversation(
     hotkeys,
     labelsModel,
     mailSettingsModel,
-    findExpendableMessage,
+    findExpandableMessage,
     dispatchers
 ) {
     /**
@@ -270,7 +270,7 @@ function conversation(
              * @return {Array} messages
              */
             function expandMessage(messages = []) {
-                const message = findExpendableMessage.find(messages);
+                const message = findExpandableMessage.find(messages);
                 messages.length && (message.openMe = true);
                 return messages;
             }

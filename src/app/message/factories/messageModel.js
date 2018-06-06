@@ -35,7 +35,7 @@ function messageModel(
         Order: 0,
         Subject: '',
         PasswordHint: '',
-        IsRead: 0,
+        Unread: 1,
         Type: 0,
         Sender: {},
         ToList: [],
