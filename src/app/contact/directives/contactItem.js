@@ -1,4 +1,5 @@
 import _ from 'lodash';
+import { normalizeEmail } from '../../../helpers/string';
 
 /* @ngInject */
 function contactItem(
@@ -66,16 +67,27 @@ function contactItem(
             }
 
             function advanced(index) {
+                const itemObject = scope.UI.items[index];
+                const emailAddress = itemObject.value;
                 const promise = keyCache
-                    .get([scope.UI.items[index].value])
-                    .then(({ [scope.UI.items[index].value]: result }) => result)
-                    .then((internalKeys) =>
+                    .get([emailAddress])
+                    .then(({ [emailAddress]: result }) => result)
+                    .then((internalKeys) => {
+                        const { settings = {} } = itemObject;
+                        const {
+                            Email: { value: oldEmail = '' }
+                        } = settings;
+                        const hasChangedEmail = !oldEmail || normalizeEmail(emailAddress) !== normalizeEmail(oldEmail);
+                        const model = hasChangedEmail ? {} : { ...settings };
+                        delete model.Email;
+
                         contactEncryptionModal.activate({
                             params: {
                                 email: scope.UI.items[index].value,
-                                model: scope.UI.items[index].settings,
+                                model,
                                 save: (model) => {
                                     scope.$applyAsync(() => {
+                                        model.Email = { ...scope.UI.items[index], settings: undefined };
                                         scope.UI.items[index].settings = model;
                                         contactEncryptionModal.deactivate();
                                         scope.form.$setDirty();
@@ -85,8 +97,8 @@ function contactItem(
                                 internalKeys,
                                 form: scope.form
                             }
-                        })
-                    );
+                        });
+                    });
                 networkActivityTracker.track(promise);
             }
 

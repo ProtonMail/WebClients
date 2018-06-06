@@ -1,6 +1,6 @@
 import _ from 'lodash';
 
-import { PACKAGE_TYPE, RECIPIENT_TYPE, MIME_TYPES } from '../../constants';
+import { PACKAGE_TYPE, RECIPIENT_TYPE, MIME_TYPES, KEY_FLAGS } from '../../constants';
 
 /* @ngInject */
 function contactPgp(dispatchers, pmcw, mailSettingsModel) {
@@ -27,8 +27,16 @@ function contactPgp(dispatchers, pmcw, mailSettingsModel) {
             toggle(element, 'pgp-external', !internalUser);
             toggle(element, 'pgp-internal', internalUser);
 
+            const disabledUser =
+                internalUser && scope.internalKeys.Keys.every(({ Flags }) => !(Flags & KEY_FLAGS.ENABLE_ENCRYPTION));
+            toggle(element, 'pgp-address-disabled', disabledUser);
+
             const unarmoredKeys = _.map(scope.internalKeys.Keys.filter(({ Send }) => Send), 'PublicKey').map(
-                _.flowRight(pmcw.encode_base64, pmcw.arrayToBinaryString, pmcw.stripArmor)
+                _.flowRight(
+                    pmcw.encode_base64,
+                    pmcw.arrayToBinaryString,
+                    pmcw.stripArmor
+                )
             );
 
             const allKeysExpired = (keys = []) => {

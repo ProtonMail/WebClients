@@ -2,6 +2,7 @@ import _ from 'lodash';
 
 import { VCARD_KEYS } from '../../constants';
 import { orderByPref } from '../../../helpers/vcard';
+import { normalizeEmail } from '../../../helpers/string';
 
 /* @ngInject */
 function contactDetailsModel(contactTransformLabel, contactSchema, gettextCatalog) {
@@ -190,7 +191,13 @@ function contactDetailsModel(contactTransformLabel, contactSchema, gettextCatalo
                         emailProperty.group = `item${index + 1}`;
                         params.vCard.addProperty(emailProperty);
 
-                        _.each(item.settings, (setting) => {
+                        const email = item.value;
+                        const { value: settingsEmail = '' } = item.settings.Email || {};
+                        const settings =
+                            normalizeEmail(settingsEmail) === normalizeEmail(email) ? { ...item.settings } : {};
+                        delete settings.Email;
+
+                        _.each(settings, (setting) => {
                             setting.forEach((entry, index) => {
                                 const vCardArgs = getParams(entry, setting.length > 1 && index + 1);
                                 delete vCardArgs.type;
@@ -297,6 +304,8 @@ function contactDetailsModel(contactTransformLabel, contactSchema, gettextCatalo
                     Encrypt: filter(extract({ vcard, field: 'X_PM_ENCRYPT', type: 'x-pm-encrypt' })),
                     Sign: filter(extract({ vcard, field: 'X_PM_SIGN', type: 'x-pm-sign' })),
                     TLS: filter(extract({ vcard, field: 'X_PM_TLS', type: 'x-pm-tls' })),
+                    // Include the original email to detect changes
+                    Email: { ...email },
                     Scheme: schemeList,
                     MIMEType: mimeList
                 };
