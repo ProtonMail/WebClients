@@ -99,53 +99,73 @@ contact-public-keys .hide-actions {
 }
 
 .contact-pgp-container {
-    .alert, .item-no-keys {
+    /*
+     * Hide .item-no-keys if we have keys
+     */
+    &:not(.pgp-no-keys) .item-no-keys {
         display: none;
     }
-
-    &.pgp-external.pgp-no-keys .item-no-keys {
-        display: block;
-    }
-
-    &.pgp-external.pgp-no-keys .item-has-keys {
+    /*
+     * Hide .item-has-keys if we don't have keys
+     */
+    &.pgp-no-keys .item-has-keys {
         display: none;
     }
-
-    &.pgp-encrypt:not(.pgp-no-keys).pgp-expired .alert.expired-key-message {
-        display:block;
+    /*
+     * Hide when not all keys are expired, there are no keys, or encryption is not enabled.
+     */
+    &:not(.pgp-expired), &.pgp-no-keys, &:not(pgp-encrypt)  {
+        .expired-key-message {
+            display: none;
+        }
     }
-
-    &.pgp-external.pgp-no-keys.pgp-encrypt .done-button {
-        pointer-events: none;
-        box-shadow: none;
-        box-shadow: inset 0 0 50rem 0 lighten($tertiary, 4%);
-        color: $button-color-disabled;
-    }
-
-    &:not(.pgp-encrypt):not(.pgp-internal) .primary {
+    /*
+     * Hide the primary public key column if we are not encrypting and the advanced settings is in external mode
+     */
+    &.pgp-external:not(.pgp-encrypt) .primary {
         display: none;
     }
-
-    &.pgp-external.pgp-mime.pgp-sign .pgp-mime-message {
-        display: block;
+    /*
+     * Hide the pgp messages when not signing: the selected scheme is not actually used in that case
+     */
+    &:not(.pgp-sign) .pgp-mime-only,
+    &:not(.pgp-sign) .pgp-inline-only {
+        display: none;
     }
-
-    &.pgp-external.pgp-inline.pgp-sign .pgp-inline-message {
-        display: block;
+    /*
+     * Hide the pgp mime message when that scheme is not selected
+     */
+    &:not(.pgp-mime) .pgp-mime-only {
+        display: none;
     }
-
-    &.pgp-external:not(.pgp-sign) .pgp-message {
-        display: block;
+    /*
+     * Hide the pgp inline message when that scheme is not selected
+     */
+    &:not(.pgp-inline) .pgp-inline-only {
+        display:none;
     }
-
-    &.pgp-internal.pgp-no-primary:not(.pgp-no-keys) .primary-key-message {
-        display: block;
+    /*
+     * Hide pgp not signed if signed
+     */
+    &.pgp-sign .pgp-not-signed {
+        display: none;
     }
-
-    &.pgp-internal .address-verification-message {
-        display: block;
+    /*
+     * Hide enabled address only if the address is disabled
+     */
+    &.pgp-address-disabled .enabled-address-only {
+        display: none;
     }
-    &.pgp-internal.pgp-no-primary:not(.pgp-no-keys) .address-verification-message {
+    /*
+     * Hide primary missing elements when we have primary keys
+     */
+    &:not(.pgp-no-primary) .pgp-missing-primary {
+        display: none;
+    }
+    /*
+     * Hide any message targeting disabled addresses when not the address is not disabled
+     */
+    &:not(.pgp-address-disabled) .disabled-address {
         display: none;
     }
 
@@ -157,6 +177,12 @@ contact-public-keys .hide-actions {
 
 .pgp-internal {
     .pgp-external-only {
+        display: none;
+    }
+}
+
+.pgp-external {
+    .pgp-internal-only {
         display: none;
     }
 }
