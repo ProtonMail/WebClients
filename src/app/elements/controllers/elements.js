@@ -505,7 +505,7 @@ function ElementsController(
     $scope.isRead = (element) => {
         if (element.ConversationID) {
             // is a message
-            return element.IsRead === 1;
+            return element.Unread === 0;
         }
         // is a conversation
         return element.ContextNumUnread === 0;
@@ -541,10 +541,10 @@ function ElementsController(
                 element.Selected = isChecked;
             },
             read(element) {
-                element.Selected = (element.ContextNumUnread === 0 || element.IsRead === 1) && isChecked;
+                element.Selected = (element.ContextNumUnread === 0 || element.Unread === 0) && isChecked;
             },
             unread(element) {
-                element.Selected = (element.ContextNumUnread > 0 || element.IsRead === 0) && isChecked;
+                element.Selected = (element.ContextNumUnread > 0 || element.Unread === 1) && isChecked;
             },
             starred(element) {
                 element.Selected = isStarred(element) && isChecked;

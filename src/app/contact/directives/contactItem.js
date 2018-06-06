@@ -6,7 +6,7 @@ function contactItem(
     contactTransformLabel,
     contactUI,
     messageModel,
-    authentication,
+    addressesModel,
     contactEncryptionModal,
     keyCache,
     networkActivityTracker
@@ -157,7 +157,7 @@ function contactItem(
             };
 
             scope.isOwnAddress = (email) =>
-                _.map(authentication.user.Addresses, 'Email').includes(email.toLowerCase().replace(/\+[^@]*@/, ''));
+                _.map(addressesModel.get(), 'Email').includes(email.toLowerCase().replace(/\+[^@]*@/, ''));
 
             scope.change = () =>
                 scope.$applyAsync(() => {

@@ -3,7 +3,7 @@ import _ from 'lodash';
 import { FREE_USER_ROLE, PAID_ADMIN_ROLE, PAID_MEMBER_ROLE, STATUS } from '../../constants';
 
 /* @ngInject */
-function memberModel(dispatchers, addressesModel, memberApi, gettextCatalog, authentication) {
+function memberModel(dispatchers, addressesModel, memberApi, gettextCatalog, authentication, formatKeys) {
     let CACHE = [];
     const { dispatcher, on } = dispatchers(['members']);
     const I18N = {
@@ -32,9 +32,23 @@ function memberModel(dispatchers, addressesModel, memberApi, gettextCatalog, aut
         });
     };
 
-    const fetch = () => {
+    const fetchAddresses = async (member) => {
+        const { data = {} } = await memberApi.addresses(member.ID);
+        const { Addresses = [] } = data;
+
+        member.Addresses = await formatKeys(Addresses);
+
+        return member;
+    };
+
+    const fetch = async () => {
         formatUserMember();
-        return memberApi.query().then((data = {}) => set(expandSelfMember(data.Members)));
+        const { Members = [] } = await memberApi.query();
+        const members = await Promise.all(Members.map(fetchAddresses));
+
+        set(expandSelfMember(members));
+
+        return get();
     };
 
     function expandSelfMember(members = []) {

@@ -14,7 +14,7 @@ function simpleSend(messageApi, User, pmcw, srp, encryptMessage) {
                 ToList,
                 CCList,
                 BCCList,
-                IsRead: 1,
+                Unread: 0,
                 Sender: { Name: DisplayName || '', Address: Email } // Default empty display name is null
             }
         };

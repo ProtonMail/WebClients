@@ -215,7 +215,7 @@ function attachmentApi(
                 .catch(deferred.reject);
         };
 
-        xhr.open('post', requestURL('upload'), true);
+        xhr.open('post', requestURL(), true);
         xhr.withCredentials = true;
         xhr.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
         xhr.setRequestHeader('Accept', 'application/vnd.protonmail.v1+json');

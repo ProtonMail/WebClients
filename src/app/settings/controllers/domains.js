@@ -255,11 +255,11 @@ function DomainsController(
      * @param {Object} domain
      */
     $scope.refreshStatus = () => {
-        networkActivityTracker.track(
-            domainModel.fetch().then((domains) => {
-                $scope.domains = domains;
-            })
-        );
+        const promise = domainModel.fetch().then((domains) => {
+            $scope.domains = domains;
+        });
+
+        networkActivityTracker.track(promise);
     };
 
     const verifyDomain = async ({ ID }) => {

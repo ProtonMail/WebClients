@@ -93,7 +93,7 @@ function postMessage(
 
     const makeParams = async (message, autosaving) => {
         const parameters = {
-            Message: _.pick(message, 'ToList', 'CCList', 'BCCList', 'Subject', 'IsRead', 'MIMEType')
+            Message: _.pick(message, 'ToList', 'CCList', 'BCCList', 'Subject', 'Unread', 'MIMEType')
         };
         parameters.Message.Subject = parameters.Message.Subject || '';
 
@@ -121,11 +121,11 @@ function postMessage(
         if (angular.isDefined(message.ID)) {
             parameters.id = message.ID;
         } else {
-            parameters.Message.IsRead = 1;
+            parameters.Message.Unread = 0;
         }
 
         if (autosaving === false) {
-            parameters.Message.IsRead = 1;
+            parameters.Message.Unread = 0;
         }
 
         const { DisplayName: Name, Email: Address } = message.From || {};
@@ -161,7 +161,7 @@ function postMessage(
                 numMessages = conversation.NumMessages || 0;
             }
 
-            localMessage.IsRead = remoteMessage.IsRead;
+            localMessage.Unread = remoteMessage.Unread;
             localMessage.Time = remoteMessage.Time;
             localMessage.Type = remoteMessage.Type;
             localMessage.LabelIDs = remoteMessage.LabelIDs;

@@ -168,7 +168,6 @@ function paymentForm(
 
                 paymentModel
                     .subscribe(getParameters())
-                    .then(organizationModel.create)
                     .then(eventManager.call)
                     .then(finish)
                     .catch((error) => {

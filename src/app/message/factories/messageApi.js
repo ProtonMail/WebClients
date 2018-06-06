@@ -1,3 +1,5 @@
+import { MAILBOX_IDENTIFIERS } from '../../constants';
+
 /* @ngInject */
 function messageApi($http, url) {
     const requestURL = url.build('messages');
@@ -16,16 +18,16 @@ function messageApi($http, url) {
      * @param  {Object} params
      * @return {Promise}
      */
-    const send = (params = {}) => {
-        return $http.post(requestURL('send', params.id), params);
-    };
+    const send = (params = {}) => $http.post(requestURL(params.id), params);
+    const label = (params) => $http.put(requestURL('label'), params);
+    const unlabel = (params) => $http.put(requestURL('unlabel'), params);
 
     /**
      * Create a new draft message
      * @param  {Object} params
      * @return {Promise}
      */
-    const createDraft = (params = {}) => $http.post(requestURL('draft'), params);
+    const createDraft = (params = {}) => $http.post(requestURL(), params);
 
     /**
      * Get message
@@ -54,7 +56,7 @@ function messageApi($http, url) {
      */
     const updateDraft = (params = {}) => {
         const messageID = params.ID || params.id;
-        return $http.put(requestURL('draft', messageID), params);
+        return $http.put(requestURL(messageID), params);
     };
 
     /**
@@ -62,14 +64,14 @@ function messageApi($http, url) {
      * @param {Object}
      * @return {Promise}
      */
-    const star = (params = {}) => $http.put(requestURL('star'), params);
+    const star = (params = {}) => label({ LabelID: MAILBOX_IDENTIFIERS.starred, ...params });
 
     /**
      * Mark an array of messages as unstarred
      * @param {Object}
      * @return {Promise}
      */
-    const unstar = (params = {}) => $http.put(requestURL('unstar'), params);
+    const unstar = (params = {}) => unlabel({ LabelID: MAILBOX_IDENTIFIERS.starred, ...params });
 
     /**
      * Mark an array of messages as read
@@ -90,28 +92,28 @@ function messageApi($http, url) {
      * @param {Object}
      * @return {Promise}
      */
-    const trash = (params = {}) => $http.put(requestURL('trash'), params);
+    const trash = (params = {}) => label({ LabelID: MAILBOX_IDENTIFIERS.trash, ...params });
 
     /**
      * Move an array of messages to inbox
      * @param {Object}
      * @return {Promise}
      */
-    const inbox = (params = {}) => $http.put(requestURL('inbox'), params);
+    const inbox = (params = {}) => label({ LabelID: MAILBOX_IDENTIFIERS.inbox, ...params });
 
     /**
      * Move an array of messages to spam
      * @param {Object}
      * @return {Promise}
      */
-    const spam = (params = {}) => $http.put(requestURL('spam'), params);
+    const spam = (params = {}) => label({ LabelID: MAILBOX_IDENTIFIERS.spam, ...params });
 
     /**
      * Move an array of messages to archive
      * @param {Object} params
      * @return {Promise}
      */
-    const archive = (params = {}) => $http.put(requestURL('archive'), params);
+    const archive = (params = {}) => label({ LabelID: MAILBOX_IDENTIFIERS.archive, ...params });
 
     /**
      * Delete an array of messages
@@ -126,15 +128,6 @@ function messageApi($http, url) {
      * @return {Promise}
      */
     const undelete = (params = {}) => $http.put(requestURL('undelete'), params);
-
-    /**
-     * Label/unlabel an array of messages
-     * @param {String} LabelID
-     * @param {Integer} Action
-     * @param {Array} MessageIDs
-     * @return {Promise}
-     */
-    const label = (LabelID, Action, MessageIDs) => $http.put(requestURL('label'), { LabelID, Action, MessageIDs });
 
     /**
      * Delete all messages in the draft folder
@@ -182,7 +175,8 @@ function messageApi($http, url) {
         emptyDraft,
         emptySpam,
         emptyTrash,
-        emptyLabel
+        emptyLabel,
+        unlabel
     };
 }
 export default messageApi;

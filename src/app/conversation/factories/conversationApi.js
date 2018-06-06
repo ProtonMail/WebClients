@@ -3,7 +3,7 @@ import { CONVERSATION_REQUEST_SIZE, MAILBOX_IDENTIFIERS } from '../../constants'
 
 /* @ngInject */
 function conversationApi($http, chunk, url) {
-    const { archive, trash, inbox, spam } = MAILBOX_IDENTIFIERS;
+    const { archive, trash, inbox, spam, starred } = MAILBOX_IDENTIFIERS;
     const requestURL = url.build('conversations');
 
     /**
@@ -45,8 +45,8 @@ function conversationApi($http, chunk, url) {
          * @param {String} ConversationID
          * @return {Promise}
          */
-        get(ConversationID = '') {
-            return $http.get(requestURL(ConversationID));
+        get(ConversationID = '', params) {
+            return $http.get(requestURL(ConversationID), { params });
         },
         /**
          * Get grouped conversation count
@@ -61,7 +61,7 @@ function conversationApi($http, chunk, url) {
          * @return {Promise}
          */
         star(IDs = []) {
-            return chunkRequest(requestURL('star'), 'PUT', { IDs });
+            return this.label(starred, IDs);
         },
         /**
          * Mark an array of conversations as unstarred
@@ -69,7 +69,7 @@ function conversationApi($http, chunk, url) {
          * @return {Promise}
          */
         unstar(IDs = []) {
-            return chunkRequest(requestURL('unstar'), 'PUT', { IDs });
+            return this.unlabel(starred, IDs);
         },
         /**
          * Mark an array of conversations as read

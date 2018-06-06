@@ -79,9 +79,7 @@ function manageUser(
 
     const mergeUser = async (user = {}, keys, dirtyAddresses) => {
         _.each(Object.keys(user), (key) => {
-            if (key !== 'Addresses') {
-                authentication.user[key] = user[key];
-            }
+            authentication.user[key] = user[key];
         });
 
         await upgradeAddresses(user, keys, dirtyAddresses);
@@ -101,6 +99,9 @@ function manageUser(
     };
 
     async function manageUser({ User = {}, Members = [] }) {
+        // Remove useless keys
+        delete User.Addresses;
+        delete User.MailSettings;
         // Init value on load
         if (angular.isUndefined(CACHE.previousRole)) {
             CACHE.previousRole = authentication.user.Role;

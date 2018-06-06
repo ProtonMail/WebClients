@@ -47,7 +47,7 @@ import messageTime from './filters/messageTime';
 import nameRecipient from './filters/nameRecipient';
 import recipients from './filters/recipients';
 import attachedPublicKey from './services/attachedPublicKey';
-import findExpendableMessage from './services/findExpendableMessage';
+import findExpandableMessage from './services/findExpandableMessage';
 import messageBuilder from './services/messageBuilder';
 import prepareContent from './services/prepareContent';
 import transformAttachements from './services/transformAttachements';
@@ -113,7 +113,7 @@ export default angular
     .filter('nameRecipient', nameRecipient)
     .filter('recipients', recipients)
     .factory('attachedPublicKey', attachedPublicKey)
-    .factory('findExpendableMessage', findExpendableMessage)
+    .factory('findExpandableMessage', findExpandableMessage)
     .factory('messageBuilder', messageBuilder)
     .factory('prepareContent', prepareContent)
     .factory('transformAttachements', transformAttachements)

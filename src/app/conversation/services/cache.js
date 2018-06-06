@@ -210,7 +210,7 @@ function cache(
      * @param {String} type = conversation or message
      * @return {Object}
      */
-    function vector({ LabelIDs = [], Labels = [], IsRead }, unread, type) {
+    function vector({ LabelIDs = [], Labels = [], Unread }, unread, type) {
         const toInt = (value) => +!!value;
         const locs = [inbox, allDrafts, drafts, allSent, sent, trash, spam, allmail, archive, starred].concat(
             labelsModel.ids()
@@ -221,7 +221,7 @@ function cache(
             (acc, loc) => {
                 if (type === 'message') {
                     const test = _.includes(LabelIDs, loc);
-                    acc[loc] = toInt(unread ? test && IsRead === 0 : test);
+                    acc[loc] = toInt(unread ? test && Unread === 1 : test);
                 }
 
                 if (type === 'conversation') {
@@ -295,7 +295,7 @@ function cache(
      * @param {Object} request
      * @return {String} loc
      */
-    const getLocation = ({ Label } = {}) => Label;
+    const getLocation = ({ LabelID } = {}) => LabelID;
 
     /**
      * Call API to get the list of conversations
@@ -1058,8 +1058,7 @@ function cache(
         const noCacheCounter = true;
 
         const callApi = () => {
-            const Label = loc;
-            const request = { Label };
+            const request = { LabelID: loc };
 
             if (action === 'next') {
                 request.BeginID = elementID;

@@ -7,11 +7,11 @@ import { getGroup } from '../../../helpers/vcard';
 function sendPreferences(
     pmcw,
     $rootScope,
+    addressesModel,
     contactEmails,
     Contact,
     contactKey,
     keyCache,
-    authentication,
     mailSettingsModel
 ) {
     // We cache all the information coming from the Contacts, so we can avoid accessing the contacts multiple times.
@@ -22,13 +22,15 @@ function sendPreferences(
 
     const isInternalUser = async (email) => {
         const normalizedEmail = normalizeEmail(email);
-        const { [normalizedEmail]: { RecipientType } } = await keyCache.get([normalizedEmail]);
+        const {
+            [normalizedEmail]: { RecipientType }
+        } = await keyCache.get([normalizedEmail]);
         return RecipientType === RECIPIENT_TYPE.TYPE_INTERNAL;
     };
 
     const isOwnAddress = (email) => {
         const normalizedEmail = normalizeEmail(email);
-        return authentication.user.Addresses.some(({ Email }) => Email === normalizedEmail);
+        return addressesModel.get().some(({ Email }) => Email === normalizedEmail);
     };
 
     const toSchemeConstant = (value) => {

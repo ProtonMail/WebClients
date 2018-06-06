@@ -144,20 +144,36 @@ function memberApi($http, url, srp, gettextCatalog) {
      * Revoke token.
      */
     const revoke = () => $http.delete(requestUrl('auth'));
+    const addresses = (memberID) => $http.get(requestUrl(memberID, 'addresses'));
+    const createKey = (memberID, params) => $http.post(requestUrl(memberID, 'keys'), params);
+    const updateKey = (memberID, keyID, params) => $http.put(requestUrl(memberID, 'keys', keyID), params);
+    const primaryKey = (memberID, keyID) => $http.put(requestUrl(memberID, 'keys', keyID, 'primary'));
+    const deleteKey = (memberID, keyID) => $http.delete(requestUrl(memberID, 'keys', keyID));
+    const setupKey = (memberID, passParams, params) => {
+        return srp.randomVerifier(password).then((passParams) => {
+            return $http.post(requestUrl(memberID, 'keys', 'setup'), { ...params, ...passParams });
+        });
+    };
 
     return {
-        create,
+        addresses,
         authenticate,
-        query,
+        create,
+        createKey,
+        deleteKey,
         get,
         name,
-        quota,
-        vpn,
-        role,
         password,
+        primaryKey,
         privatize,
+        query,
+        quota,
         remove,
-        revoke
+        revoke,
+        role,
+        setupKey,
+        updateKey,
+        vpn
     };
 }
 export default memberApi;

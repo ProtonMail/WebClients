@@ -152,7 +152,7 @@ function eventManager(
             _.each(messages, ({ Action, Message = {} }) => {
                 const onlyNotify = filterNotify(Message);
 
-                if (Action === 1 && Message.IsRead === 0 && onlyNotify.length) {
+                if (Action === 1 && Message.Unread === 1 && onlyNotify.length) {
                     const [{ ID }] = onlyNotify;
                     const route = `secured.${MAILBOX_IDENTIFIERS[ID] || 'label'}.element`;
                     const label = MAILBOX_IDENTIFIERS[ID] ? null : ID;

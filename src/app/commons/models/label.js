@@ -1,30 +1,13 @@
 /* @ngInject */
 function Label($http, url) {
+    const requestUrl = url.build('labels');
     const api = {
         /**
          * Get labels
          * @return {Promise}
          */
-        query() {
-            return $http.get(url.get() + '/labels');
-        },
-        /**
-         *  Apply labels
-         * @param {String} labelID
-         * @param {Array} messageIDs
-         * @return {Promise}
-         */
-        apply(labelID, messageIDs) {
-            return $http.put(url.get() + '/labels/apply/' + labelID, messageIDs);
-        },
-        /**
-         * Remove label from list of message ids
-         * @param {String} labelID
-         * @param {Array} messageIDs
-         * @return {Promise}
-         */
-        remove(labelID, messageIDs) {
-            return $http.put(url.get() + '/labels/remove/' + labelID, messageIDs);
+        query(params) {
+            return $http.get(requestUrl(), { params });
         },
         /**
          * Re-order labels
@@ -32,7 +15,7 @@ function Label($http, url) {
          * @return {Promise}
          */
         order(newOrder) {
-            return $http.put(url.get() + '/labels/order', newOrder);
+            return $http.put(requestUrl('order'), newOrder);
         },
         /**
          * Update label
@@ -40,7 +23,7 @@ function Label($http, url) {
          * @return {Promise}
          */
         update(label) {
-            return $http.put(url.get() + '/labels/' + label.ID, label);
+            return $http.put(requestUrl(label.ID), label);
         },
         /**
          * Create a new label
@@ -48,7 +31,7 @@ function Label($http, url) {
          * @return {Promise}
          */
         create(label) {
-            return $http.post(url.get() + '/labels', label);
+            return $http.post(requestUrl(), label);
         },
         /**
          * Delete label
@@ -56,7 +39,7 @@ function Label($http, url) {
          * @return {Promise}
          */
         delete(labelID) {
-            return $http.delete(url.get() + '/labels/' + labelID);
+            return $http.delete(requestUrl(labelID));
         }
     };
 

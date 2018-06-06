@@ -19,7 +19,7 @@ function settingsApi($http, url, srp, userSettingsModel) {
 
     const passwordReset = (params, creds) => {
         return srp
-            .performSRPRequest('PUT', '/settings/reset', params, creds)
+            .performSRPRequest('PUT', '/settings/email/reset', params, creds)
             .then(handleResult)
             .catch(errorSRP);
     };
@@ -48,7 +48,7 @@ function settingsApi($http, url, srp, userSettingsModel) {
     const passwordUpgrade = (data) => $http.put(requestURL('password', 'upgrade'), data);
     const fetch = () => $http.get(requestURL()).then(handleResult);
     const setLogging = (params) => $http.put(requestURL('logauth'), params).then(handleResult);
-    const notify = (data) => $http.put(requestURL('notify'), data).then(handleResult);
+    const notify = (data) => $http.put(requestURL('email', 'notify'), data).then(handleResult);
     const updateLocale = (data) => $http.put(requestURL('locale'), data).then(handleResult);
     const setNews = (data) => $http.put(requestURL('news'), data).then(handleResult);
     const invoiceText = (data) => $http.put(requestURL('invoicetext'), data).then(handleResult);

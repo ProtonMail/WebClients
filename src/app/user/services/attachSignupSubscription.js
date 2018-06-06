@@ -11,20 +11,6 @@ function attachSignupSubscription(
     Payment
 ) {
     const dispatch = (type, data = {}) => $rootScope.$emit('signup', { type, data });
-
-    const I18N = {
-        ERROR_ORGA_KEY_GENERATION: gettextCatalog.getString(
-            'Error during the generation of new organization keys',
-            null,
-            'Error'
-        ),
-        ERROR_ORGA_REQUEST: gettextCatalog.getString(
-            'Error during organization request',
-            null,
-            'Error organization creation'
-        )
-    };
-
     const processPlan = async () => {
         const { Name, Amount, Currency, Cycle, ID } = signupModel.get('temp.plan') || {};
 
@@ -38,28 +24,7 @@ function attachSignupSubscription(
                 );
             };
 
-            const organizationKey = () => {
-                return setupKeys
-                    .generateOrganization(authentication.getPassword())
-                    .then(({ privateKeyArmored: PrivateKey }) => ({ PrivateKey }))
-                    .catch(() => {
-                        throw new Error(I18N.ERROR_ORGA_KEY_GENERATION);
-                    });
-            };
-
-            const createOrganization = (parameters) => {
-                return organizationApi
-                    .create(parameters)
-                    .then(({ data = {} } = {}) => data)
-                    .catch(({ data = {} } = {}) => {
-                        throw new Error(data.Error || I18N.ERROR_ORGA_REQUEST);
-                    });
-            };
-
-            return subscribe()
-                .then(organizationKey)
-                .then(createOrganization)
-                .then(eventManager.call);
+            return subscribe().then(eventManager.call);
         }
     };
 

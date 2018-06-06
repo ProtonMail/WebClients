@@ -22,7 +22,6 @@ function authentication(
     networkActivityTracker,
     pmcw,
     secureSessionStorage,
-    organizationApi,
     User,
     passwords,
     srp,
@@ -64,33 +63,12 @@ function authentication(
                     return Promise.resolve();
                 };
 
-                // Hacky fix for missing organizations
-                const fixOrganization = () => {
-                    if (user.Role === FREE_USER_ROLE && user.Subscribed) {
-                        return setupKeys
-                            .generateOrganization(api.getPassword())
-                            .then((response) => {
-                                const privateKey = response.privateKeyArmored;
-
-                                return {
-                                    DisplayName: 'My Organization',
-                                    PrivateKey: privateKey
-                                };
-                            })
-                            .then((params) => {
-                                return organizationApi.create(params);
-                            });
-                    }
-                    return Promise.resolve();
-                };
-
                 return $q
                     .all({
                         settings: $injector.get('settingsApi').fetch(),
                         mailSettings: $injector.get('settingsMailApi').fetch(),
                         contacts: $injector.get('contactEmails').load(),
                         addresses: $injector.get('addressesModel').fetch(user),
-                        fix: fixOrganization(),
                         organizationKey: decryptOrganization()
                     })
                     .then(({ organizationKey, addresses }) => ({ user, organizationKey, addresses }))

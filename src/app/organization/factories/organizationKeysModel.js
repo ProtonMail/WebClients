@@ -6,6 +6,7 @@ function organizationKeysModel(
     dispatchers,
     $rootScope,
     authentication,
+    formatKey,
     pmcw,
     memberModel,
     notification,
@@ -31,7 +32,14 @@ function organizationKeysModel(
     };
 
     const get = (key = 'keys') => angular.copy(CACHE[key]);
-    const set = (key, value) => (CACHE[key] = value);
+    const set = async (key, value) => {
+        if (key === 'organizationKey') {
+            CACHE.organizationKey = await formatKey(value);
+            return;
+        }
+
+        CACHE[key] = value;
+    };
     const clear = () => (CACHE = { keyStatus: 0 });
 
     /**

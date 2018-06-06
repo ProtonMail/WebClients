@@ -47,7 +47,7 @@ function actionMessage($rootScope, downloadFile, openStatePostMessage, mimeMessa
                     case 'unread':
                         scope.$applyAsync(() => {
                             scope.message.expand = false;
-                            scope.message.IsRead = 0;
+                            scope.message.Unread = 1;
                         });
                         dispatch(actionMessage, actionMessageType);
                         break;

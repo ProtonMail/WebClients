@@ -22,14 +22,16 @@ function domainApi($http, url) {
      * Set a catch-all address for a domain
      * This allowed users on appropriate plans to designate a single address on a custom domain as their 'catch-all' address, which will receive all mail sent to their domain which does not correspond to another address they have set up.
      */
-    const catchall = (domainID, params) => $http.put(requestURL(domainID, 'catchall'), params);
+    const catchall = (id, params) => $http.put(requestURL(id, 'catchall'), params);
     /**
      * Get domain info: domain name, list of addresses and associated users (AddressID, Email, DisplayName, UserID, User.DisplayName), verification status for MX, SPF, DKIM
      */
     const get = (id) => $http.get(requestURL(id));
     const destroy = (id) => $http.delete(requestURL(id));
+    const addresses = (id) => $http.get(requestURL(id, 'addresses'));
 
     return {
+        addresses,
         delete: destroy,
         create,
         query,

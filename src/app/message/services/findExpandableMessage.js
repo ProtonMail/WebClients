@@ -4,7 +4,7 @@ import { flow, filter, last } from 'lodash/fp';
 import { SENT, ENCRYPTED_STATUS, DRAFT } from '../../constants';
 
 /* @ngInject */
-function findExpendableMessage(tools, $state, $stateParams) {
+function findExpandableMessage(tools, $state, $stateParams) {
     const isSentAutoReply = ({ Type, IsEncrypted, ParsedHeaders = {} }) => {
         if (!(Type & SENT)) {
             return false;
@@ -43,7 +43,7 @@ function findExpendableMessage(tools, $state, $stateParams) {
         let contains = false;
 
         while (--index > 0) {
-            if (list[index - 1].IsRead === 1) {
+            if (list[index - 1].Unread === 0) {
                 // Is read
                 contains = true;
                 break;
@@ -92,7 +92,7 @@ function findExpendableMessage(tools, $state, $stateParams) {
             default: {
                 const latest = filterCb((m) => m.Type !== DRAFT && !isSentAutoReply(m));
 
-                if (latest && latest.IsRead === 1) {
+                if (latest && latest.Unread === 0) {
                     thisOne = latest;
                     break;
                 }
@@ -106,4 +106,4 @@ function findExpendableMessage(tools, $state, $stateParams) {
     }
     return { find };
 }
-export default findExpendableMessage;
+export default findExpandableMessage;
