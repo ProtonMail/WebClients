@@ -1,0 +1,84 @@
+#!/usr/bin/env bash
+############################
+# This is a simple to use shell script that ensures:
+# - we always have a fresh base image matching our Dockerfile/do magic that gets rebuilt only if necessary
+# - we always have a container started for that image, with our source mounted, that get restarted only if the image changed
+# - we transparently pass any command to be exec-ed inside this container
+############################
+
+# The port were we want to expose the server (on localhost - use DCKR_PORT in the env to override the default)
+ENV_EXTERNAL_PORT=${DCKR_PORT:-8080}
+
+# Name of the image we are building
+CONST_IMAGE_NAME=proton-mail-webclient-dev
+# Label used to flag our containers
+CONST_LABEL=com.proton.scape
+
+# Check that we have docker
+if [ -z "$(which docker)" ]; then
+    echo $(date) "[FATAL] You need to install docker."
+    exit 1
+fi
+
+# Get the last git commit that changed the image or script, and whether they are dirty, to compute the tagname
+TAG_NAME=$(git log -1 --pretty=%H dckr)
+IS_DIRTY=$(git status --porcelain dckr)
+
+# No tag name? This folder hasn't been committed yet...
+if [ -z "$TAG_NAME" ]; then
+    echo $(date) "[WARNING] Your dckr folder in un-tracked."
+    TAG_NAME=untracked
+fi
+
+# Dirty? Changes in there that haven't been committed. We are going to force a rebuild and restart every time.
+if [ ! -z "$IS_DIRTY" ]; then
+    echo $(date) "[WARNING] Your dckr folder is dirty. The image will be rebuilt and the container restarted."
+    TAG_NAME=${TAG_NAME}-dirty
+fi
+
+# List all existing containers with our label
+ALL_EXISTING_CONTAINERS=$(docker ps -aq --filter "label=${CONST_LABEL}")
+
+# Build if the image for that git commit does not exist, or if the file is dirty
+if [ -z "$(docker images ${CONST_IMAGE_NAME}:${TAG_NAME} -aq)" ] || [ ! -z "${IS_DIRTY}" ]; then
+    echo $(date) "[INFO] Building a new image."
+    docker build --target dckr-prtn-dev-runner -t ${CONST_IMAGE_NAME}:${TAG_NAME} -f dckr/Dockerfile . # > /dev/null
+    # XXX in case the lightweight container would be preferable
+    # echo $(date) "[INFO] Building the light runner as well"
+    # docker build --target dckr-prtn-light-runner -t ${CONST_IMAGE_NAME}-light:${TAG_NAME} -f dckr/Dockerfile . > /dev/null
+    # Since we know we rebuilt, let's get rid of every container in there
+    if [ ! -z "${ALL_EXISTING_CONTAINERS}" ]; then
+        echo $(date) "[INFO] Removing existing out of date containers."
+        docker rm -f ${ALL_EXISTING_CONTAINERS} > /dev/null
+    fi
+    ALL_EXISTING_CONTAINERS=
+fi
+
+# If we don't already have a running container for our image, with the desired PORT, cleanup all (including stopped, just to be sure) then start one
+RUNNING_CONTAINER=$(docker ps -q --filter label=${CONST_LABEL}=${ENV_EXTERNAL_PORT})
+if [ -z "${RUNNING_CONTAINER}" ]; then
+    echo $(date) "[INFO] No currently running container for our image."
+    if [ ! -z "${ALL_EXISTING_CONTAINERS}" ]; then
+        echo $(date) "[INFO] Removing existing out of date containers."
+        docker rm -f ${ALL_EXISTING_CONTAINERS} > /dev/null
+    fi
+    echo $(date) "[INFO] Starting new container from our image."
+    # XXX --read-only prevents binary dependencies from being built (need /tmp access)
+    RUNNING_CONTAINER=$(docker run --detach --tty --restart always \
+        --mount source=tricknode,target=/build/node_modules \
+        --volume $(pwd):/pm \
+        --mount source=tricknode,target=/pm/node_modules \
+        --publish ${ENV_EXTERNAL_PORT}:8080/tcp \
+        --label=${CONST_LABEL}=${ENV_EXTERNAL_PORT} \
+        ${CONST_IMAGE_NAME}:${TAG_NAME})
+fi
+
+# Now, we know we have a running container from an up to date image, for sure
+# We can now exec the command we were asked to perform
+# Caveat: shell expansion happens on the host, unless you get your escaping right...
+echo $(date) "[INFO] Running command '$@' inside our running container '${RUNNING_CONTAINER}'."
+echo
+docker exec -ti ${RUNNING_CONTAINER} $@
+
+
+
