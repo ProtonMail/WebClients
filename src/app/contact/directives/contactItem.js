@@ -74,9 +74,7 @@ function contactItem(
                     .then(({ [emailAddress]: result }) => result)
                     .then((internalKeys) => {
                         const { settings = {} } = itemObject;
-                        const {
-                            Email: { value: oldEmail = '' }
-                        } = settings;
+                        const { Email: { value: oldEmail = '' } = {} } = settings;
                         const hasChangedEmail = !oldEmail || normalizeEmail(emailAddress) !== normalizeEmail(oldEmail);
                         const model = hasChangedEmail ? {} : { ...settings };
                         delete model.Email;
