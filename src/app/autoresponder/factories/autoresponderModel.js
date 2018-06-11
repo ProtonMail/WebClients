@@ -44,19 +44,16 @@ function autoresponderModel(
         (changedAutoresponder = _.extend({}, changedAutoresponder, autoresponder));
     const clearChangedAutoresponder = () => (changedAutoresponder = {});
     const getBaseResponder = () => {
-        const base = _.extend({}, mailSettingsModel.get('AutoResponder'));
-
-        if (!base.IsEnabled) {
-            const { DaysSelected, StartTime, EndTime, Message, Repeat } = getDefaultAutoResponder();
-
-            base.DaysSelected = DaysSelected;
-            base.StartTime = StartTime;
-            base.EndTime = EndTime;
-            base.Message = Message;
-            base.Repeat = Repeat;
+        // NOTE: Extracting these variables to solve the camelCase deprecation in the BE.
+        const { IsEnabled, StartTime, EndTime, DaysSelected, Repeat, Subject, Message, Zone } = _.extend(
+            {},
+            mailSettingsModel.get('AutoResponder')
+        );
+        if (!IsEnabled) {
+            // To ensure a new object.
+            return { ...getDefaultAutoResponder() };
         }
-
-        return base;
+        return { IsEnabled, StartTime, EndTime, DaysSelected, Repeat, Subject, Message, Zone };
     };
     const get = () => _.extend({}, getBaseResponder(), getChangedAutoresponder());
     const dispatch = (type, data) => dispatcher.autoresponder(type, data);
