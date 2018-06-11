@@ -45,7 +45,7 @@ function forgeRequestParameters($stateParams, $filter, mailSettingsModel) {
 
         if (mailbox === 'search') {
             params.Address = $stateParams.address;
-            params.Label = $stateParams.label;
+            params.LabelID = $stateParams.label;
             params.Keyword = getKeyBoard();
             params.To = $stateParams.to;
             params.From = $stateParams.from;
@@ -58,11 +58,11 @@ function forgeRequestParameters($stateParams, $filter, mailSettingsModel) {
         }
 
         if (mailbox === 'label') {
-            params.Label = $stateParams.label;
+            params.LabelID = $stateParams.label;
             return params;
         }
 
-        params.Label = MAILBOX_IDENTIFIERS[mailbox];
+        params.LabelID = MAILBOX_IDENTIFIERS[mailbox];
         return params;
     }
 

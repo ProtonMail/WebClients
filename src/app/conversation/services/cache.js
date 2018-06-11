@@ -250,8 +250,11 @@ function cache(
         if (messages.length) {
             Labels.forEach(({ ID }) => {
                 // Get the most recent message for a specific label
-                const { Time } = flow(filter(({ LabelIDs = [] }) => _.includes(LabelIDs, ID)), head)(messages) || {};
-
+                const { Time } =
+                    flow(
+                        filter(({ LabelIDs = [] }) => _.includes(LabelIDs, ID)),
+                        head
+                    )(messages) || {};
                 Time && storeTime(conversationID, ID, Time);
             });
         }
@@ -304,6 +307,7 @@ function cache(
      */
     function queryConversations(request, noCacheCounter = false) {
         const loc = getLocation(request);
+
         const context = tools.cacheContext();
         request.Limit = request.Limit || CONVERSATION_LIMIT; // We don't call 50 conversations but 100 to improve user experience when he delete message and display quickly the next conversations
         const promise = api
@@ -427,7 +431,10 @@ function cache(
         const promise = conversationApi.get(conversationID).then(({ data = {} } = {}) => {
             const { Conversation = {}, Messages = [] } = data;
             const message =
-                flow(filter(({ LabelIDs = [] }) => _.includes(LabelIDs, labelID)), maxBy('Time'))(Messages) || {};
+                flow(
+                    filter(({ LabelIDs = [] }) => _.includes(LabelIDs, labelID)),
+                    maxBy('Time')
+                )(Messages) || {};
 
             Messages.forEach((message) => (message.loaded = true));
             Conversation.loaded = true;
@@ -927,7 +934,10 @@ function cache(
      * @return {Promise}
      */
     const loadMissingConversations = async () => {
-        const promises = flow(uniq, map(getConversation))(missingConversations);
+        const promises = flow(
+            uniq,
+            map(getConversation)
+        )(missingConversations);
         await Promise.all(promises);
         missingConversations.length = 0;
     };
