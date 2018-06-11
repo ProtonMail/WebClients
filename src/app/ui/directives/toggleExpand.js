@@ -14,8 +14,8 @@ function toggleExpand() {
             toggleClass();
 
             function toggleClass() {
-                const toAdd = scope.model ? EXPAND_CLASS : COLLAPSE_CLASS;
-                const toRemove = scope.model ? COLLAPSE_CLASS : EXPAND_CLASS;
+                const toAdd = scope.model.toggle ? EXPAND_CLASS : COLLAPSE_CLASS;
+                const toRemove = scope.model.toggle ? COLLAPSE_CLASS : EXPAND_CLASS;
                 $i.classList.remove(toRemove);
                 $i.classList.add(toAdd);
             }

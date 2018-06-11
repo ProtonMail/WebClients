@@ -1,0 +1,64 @@
+<div class="pm_modal small {{ctrl.class}}" role="dialog" style="display: block;">
+    <div class="modal-dialog">
+        <button type="button"
+                ng-click="ctrl.cancel()"
+                aria-hidden="true"
+                title-translate="Close"
+                title-translate-context="Action" class="fa fa-times close"></button>
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title"
+                    translate
+                    translate-context="Title">Not all recipients support message expiration</h4>
+            </div>
+            <div class="modal-body">
+                <div ng-if="ctrl.recipients.clear.length" class="expiration-group">
+                    <label
+                        class="expiration-label"
+                        for="clearToggle"
+                        translate
+                        translate-context="Warning">Please add a password for the following recipients</label>
+                    <toggle-expand id="clearToggle" data-model="ctrl.toggles.clear"></toggle-expand>
+                    <ul class="expiration-list" ng-if="ctrl.toggles.clear.toggle">
+                        <li ng-repeat="recipient in ctrl.recipients.clear track by recipient" class="expiration-list-item">
+                            {{ ::recipient }}
+                        </li>
+                    </ul>
+                </div>
+                <div ng-if="ctrl.recipients.pgp.length" class="expiration-group">
+                    <label
+                        class="expiration-label"
+                        for="pgpToggle"
+                        translate
+                        translate-context="Warning">Please disable PGP Sending for the following recipients</label>
+                    <toggle-expand id="pgpToggle" data-model="ctrl.toggles.pgp"></toggle-expand>
+                    <ul class="expiration-list" ng-if="ctrl.toggles.pgp.toggle">
+                        <li ng-repeat="recipient in ctrl.recipients.pgp track by recipient" class="expiration-list-item">
+                            {{ ::recipient }}
+                        </li>
+                    </ul>
+                </div>
+                <p class="alert alert-warning">
+                    <span translate translate-context="Warning">You can also send anyway without expiration to these recipients.</span>
+                    <a href="https://protonmail.com/support/knowledge-base/encrypt-for-outside-users/" target="_blank"
+                       translate translate-context="Link">Learn more</a>.
+                </p>
+            </div>
+        </div>
+        <div class="modal-footer text-right">
+            <button type="button"
+                    class="pm_button pull-left"
+                    ng-click="ctrl.cancel()"
+                    translate
+                    translate-context="Action">Cancel
+            </button>
+            <button type="button"
+                    class="pm_button primary"
+                    ng-click="ctrl.confirm()"
+                    translate
+                    translate-context="Action">Send anyway
+            </button>
+        </div>
+    </div>
+    <div class="modal-overlay"></div>
+</div>

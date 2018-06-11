@@ -5,27 +5,20 @@ import { normalizeEmail } from '../../../helpers/string';
 const { PLAINTEXT } = MIME_TYPES;
 const { SEND_CLEAR, SEND_PGP_INLINE, SEND_PGP_MIME } = PACKAGE_TYPE;
 
+const EXTERNAL_SCHEMES = [SEND_CLEAR, SEND_PGP_INLINE, SEND_PGP_MIME];
+
 /* @ngInject */
 function validateMessage(
     gettextCatalog,
     tools,
     confirmModal,
+    expirationModal,
     authentication,
     notification,
     addressWithoutKeys,
     sendPreferences
 ) {
     const I18N = {
-        EXPIRATION_WARNING_TITLE: gettextCatalog.getString('Expiration Unsupported', null, 'Title'),
-        EXPIRATION_WARNING_MESSAGE: gettextCatalog.getString(
-            'You enabled message expiration, but not all recipients support this. Please add a password and/or disable PGP sending to use expiration for all recipients. {{ start }}Learn more{{ end }}',
-            {
-                start:
-                    '<a href="https://protonmail.com/support/knowledge-base/encrypt-for-outside-users/" target="_blank">',
-                end: '</a>'
-            },
-            'Warning'
-        ),
         SEND_ANYWAY: gettextCatalog.getString('Send anyway', null, 'Action'),
         STILL_UPLOADING: gettextCatalog.getString(
             'Wait for attachment to finish uploading or cancel upload.',
@@ -151,20 +144,17 @@ function validateMessage(
         });
     }
 
-    function confirmExpiration() {
+    function confirmExpiration(recipients = {}) {
         return new Promise((resolve, reject) => {
-            confirmModal.activate({
+            expirationModal.activate({
                 params: {
-                    title: I18N.EXPIRATION_WARNING_TITLE,
-                    message: I18N.EXPIRATION_WARNING_MESSAGE,
-                    confirmText: I18N.SEND_ANYWAY,
-                    isWarning: true,
+                    recipients,
                     confirm() {
-                        confirmModal.deactivate();
+                        expirationModal.deactivate();
                         resolve();
                     },
                     cancel() {
-                        confirmModal.deactivate();
+                        expirationModal.deactivate();
                         reject();
                     }
                 }
@@ -180,12 +170,21 @@ function validateMessage(
     async function checkExpiration(message) {
         const normEmails = message.emailsToString().map(normalizeEmail);
         const sendPrefs = await sendPreferences.get(normEmails, message);
-        const expirationUnsupported = normEmails.some((email) => {
-            const { scheme } = sendPrefs[email];
-            return [SEND_CLEAR, SEND_PGP_INLINE, SEND_PGP_MIME].includes(scheme);
-        });
-        if (message.ExpirationTime && expirationUnsupported) {
-            return confirmExpiration();
+
+        // Filter the emails with the preferences which include this type
+        const filterTypes = (types = [], shouldEncrypt = false) =>
+            normEmails.filter((email) => {
+                const { scheme, encrypt } = sendPrefs[email];
+                return shouldEncrypt === encrypt && types.includes(scheme);
+            });
+
+        // Contacts for which to send with password.
+        const clear = filterTypes(EXTERNAL_SCHEMES, false);
+        // Contacts which include encrypted PGP sending.
+        const pgp = filterTypes(EXTERNAL_SCHEMES, true);
+
+        if (message.ExpirationTime && (pgp.length || clear.length)) {
+            return confirmExpiration({ pgp, clear });
         }
     }
 

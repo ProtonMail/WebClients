@@ -37,6 +37,7 @@ import onCurrentMessage from './services/onCurrentMessage';
 import postMessage from './services/postMessage';
 import sendMessage from './services/sendMessage';
 import validateMessage from './services/validateMessage';
+import expirationModal from './modals/expirationModal';
 
 export default angular
     .module('proton.composer', ['proton.labels'])
@@ -78,4 +79,5 @@ export default angular
     .factory('onCurrentMessage', onCurrentMessage)
     .factory('sendMessage', sendMessage)
     .factory('sendPreferences', sendPreferences)
+    .factory('expirationModal', expirationModal)
     .factory('validateMessage', validateMessage).name;
