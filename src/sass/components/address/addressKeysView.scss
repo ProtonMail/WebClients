@@ -21,6 +21,11 @@
     .hasTable .pm_table {
         overflow: visible;
     }
+    .pm_dropdown {
+        bottom: 10px;
+        right: 20px;
+        top: auto !important;
+    }
 }
 
 .addressKeysView-email-container { }
