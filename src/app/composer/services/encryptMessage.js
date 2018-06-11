@@ -1,7 +1,5 @@
 import _ from 'lodash';
 
-import { SEND_TYPES } from '../../constants';
-
 /* @ngInject */
 function encryptMessage(
     $rootScope,
@@ -13,29 +11,6 @@ function encryptMessage(
     generateTopPackages
 ) {
     const dispatchMessageAction = (message) => $rootScope.$emit('actionMessage', { data: message });
-
-    const EXPIRE_ERROR =
-        gettextCatalog.getString(
-            'Expiring emails to non-ProtonMail recipients require a message password to be set. For more information, {{link}}click here',
-            {
-                link: '<a href="https://protonmail.com/support/knowledge-base/expiration/" target="_blank">'
-            },
-            'Send message'
-        ) + '</a>';
-
-    const checkPreconditions = (message, sendPref) => {
-        const supportsExpiration = _.every(sendPref, (info) => {
-            const isPMRecipient = info.scheme === SEND_TYPES.SEND_PM;
-            const hasPasswordSet = message.Password.length > 0 && message.IsEncrypted === 1;
-            return isPMRecipient || hasPasswordSet;
-        });
-
-        if (message.ExpirationTime && !supportsExpiration) {
-            const error = new Error(EXPIRE_ERROR);
-            error.raw = true;
-            throw error;
-        }
-    };
 
     const generatePackages = (message, emails, sendPref) => {
         return generateTopPackages(message, sendPref)
@@ -53,7 +28,6 @@ function encryptMessage(
         try {
             const uniqueEmails = _.uniq(emails);
             const sendPrefs = await sendPreferences.get(uniqueEmails, message);
-            checkPreconditions(message, sendPrefs);
             // todo regression testing: https://github.com/ProtonMail/Angular/issues/5088
 
             const packages = await generatePackages(message, emails, sendPrefs);

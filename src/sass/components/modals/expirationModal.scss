@@ -1,0 +1,20 @@
+.expiration-label {
+    cursor: pointer;
+}
+.expiration-group {
+    margin-bottom: 0.5em;
+}
+
+.expiration-list {
+    border-radius: 3px;
+    border: 1px solid $toolbar-border;
+    background: $toolbar-background;
+    margin: 0;
+    padding: 0;
+}
+
+.expiration-list-item {
+    padding: 0.5em 1em;
+    list-style: none;
+}
+.expiration-list-item + .expiration-list-item { border-top: 1px solid $toolbar-border }
