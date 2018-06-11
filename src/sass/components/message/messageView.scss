@@ -8,9 +8,6 @@
     to { opacity: 1; }
 }
 
-
-
-
 .clipboardInput {
     position: absolute;
     height: 0;
@@ -21,6 +18,7 @@
 
 .message-address-actions {
     display: inline-block;
+    padding-left: 0.25em; // width of 1 space
 
     .message-address-action-button {
         border: 0;
@@ -28,7 +26,7 @@
         cursor: pointer;
         padding-left: 0;
         line-height: 16px;
-        margin-right: 6px;
+        font-size: 1rem;
 
         i.fa {
             margin-left: 0 !important;
@@ -187,8 +185,8 @@
         &.errorDecryption .pm_trigger { border-left: 0 }
         &:not(.hasSender) .message-contact {display: none}
 
-        & .summary,
-        & .details {
+        .summary,
+        .details {
             float: left;
             width: 100%;
             clear: both;
@@ -202,7 +200,7 @@
         }
         &.open {
             box-shadow: 0 1px 2px rgba(0,0,0,0.1);
-            & .summary {
+            .summary {
                 .meta {
                     .contact {
                         strong {
@@ -213,7 +211,7 @@
             }
         }
         &.details.open {
-            & .summary {
+            .summary {
                 height: 50px;
                 .meta {
 
@@ -225,8 +223,7 @@
                         line-height: 40px;
                     }
                     .contact {
-                        span.from {
-                            width: 3rem;
+                        div.from {
                             text-align: left;
                         }
                         em {
@@ -256,14 +253,15 @@
             .status,
             .labels,
             .location.folders,
-            .keep-right {
+            .summary-right {
                 background: $white !important;
             }
             .time::after {
                 background: linear-gradient(to right,  rgba($white,0) 0%, $white 100%);
             }
         }
-        & .summary {
+        .summary {
+            display: flex;
             height: 40px;
             line-height: 40px;
             background: $tertiary;
@@ -291,18 +289,24 @@
                     color: indianred;
                 }
             }
-            .pull-left {
-                position: absolute;
-                left: 10px;
-                top: 0;
-                z-index: 1;
-                height: 100%;
-                width: 80%;
+            .summary-left {
+                display: flex;
+                flex: 1;
                 overflow: hidden;
 
-                .meta,
+                .meta {
+                    display: flex;
+                    flex: 1;
+                    overflow: hidden;
+                    .history {
+                        display: block;
+                        flex-shrink: 0;
+                        padding-right: 0.25em;
+                        line-height: 40px;
+                    }
+                }
                 .location.sent {
-                    float: left;
+                    flex: initial;
                 }
                 .location.sent {
                     padding-left: 6px;
@@ -312,8 +316,8 @@
                     }
                 }
             }
-            .keep-right {
-                position: relative;
+            .summary-right {
+                flex: initial;
                 background: $tertiary;
                 display: inline-block;
                 z-index:2;
@@ -341,6 +345,8 @@
             .meta {
                 white-space: nowrap; /* single line for long from */
                 .contact {
+                    display: flex;
+                    min-width: 0; // to allow the contact box to shrink
                     strong {
                         font-weight: normal;
                     }
@@ -357,6 +363,8 @@
             }
 
             .encryptionStatus {
+                padding-left: 0.25em;
+
                 .fa {
                     color: $default-color-medium;
                     display: inline-block;
@@ -415,8 +423,18 @@
                     }
                 }
             }
+
+            .from-value {
+                display: inline-block;
+                overflow-y: hidden;
+                overflow-x: hidden;
+                text-overflow: ellipsis;
+                vertical-align: middle;
+                text-align: left;
+                padding-left: 0.25em; // width of a space
+            }
         }
-        & .details {
+        .details {
             border-bottom: 1px solid $border;
             background: $tertiary;
             padding: 0 10px 10px;
@@ -537,41 +555,37 @@ p.MsoNormal, li.MsoNormal, div.MsoNormal {
 
 // MOBILE
 body.appConfigBody-is-mobile {
+    #conversation-view .message .from {
+            display: none;
+    }
+}
+@media (max-width: 1350px) {
     #conversation-view {
         .message {
-            & .summary {
+            .summary {
                 height: 60px;
-                line-height: 25px;
                 position: relative;
-                .keep-right {
+                .summary-right {
                     position: initial;
+                    line-height: 25px;
+                    min-width: 175px;
                 }
-                .meta {
-                    position: absolute;
-                    left: 0px;
-                    top: 5px;
-                    max-width: initial;
-                    white-space: nowrap;
-                    overflow: hidden;
-                    text-overflow: ellipsis;
-                    text-align: left;
-                    .contact {
-                        strong {
-                            font-weight: normal;
-                        }
-                        .from {
-                            display: none;
-                        }
+                .summary-left {
+                    line-height: 35px;
+                    .meta .history {
+                        line-height: 35px;
                     }
                 }
                 .location {
-                    position: absolute;
-                    left: 20px;
-                    bottom: 5px;
-                    z-index: 5;
-                    .pm_tag {
-                        display: inline-block;
-                        margin: 0;
+                    &.folders {
+                        position: absolute;
+                        left: 20px;
+                        bottom: 5px;
+                        z-index: 5;
+                        .pm_tag {
+                            display: inline-block;
+                            margin: 0;
+                        }
                     }
                     &.sent {
                         display: none;
@@ -600,10 +614,6 @@ body.appConfigBody-is-mobile {
                         display: inline-block;
                         float: right;
                         width: 100%;
-                    }
-                    .fa.fa-paperclip {
-                        height: 25px;
-                        line-height: 25px;
                     }
                 }
                 .status {
@@ -635,7 +645,7 @@ body.appConfigBody-is-mobile {
                 }
             }
             &.details {
-                & .summary {
+                .summary {
                     margin-bottom: 0;
                     .meta {
                         position: static;
@@ -670,8 +680,8 @@ body.appConfigBody-is-mobile {
             &.sent,
             &.draft {
                 .details {
-                    & .recipients-summary {
-                        padding-left: 2.25rem;
+                    .recipients-summary {
+                        padding-left: 12px;
                         box-sizing: border-box;
                     }
                 }

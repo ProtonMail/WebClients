@@ -71,9 +71,10 @@ function messageAddressActionMenu(
             });
 
             const openDropdown = (element) => {
+                dispatcher.closeDropdown('close');
                 trigger.click();
                 const { top: buttonTop, left: buttonLeft } = element.offset();
-                menu.offset({ top: buttonTop + 5, left: buttonLeft + 10 });
+                menu.offset({ top: buttonTop + 5, left: buttonLeft + 15 });
             };
 
             on('messageAddressActions', (e, { type, data: { messageID, address, element } }) => {
@@ -85,6 +86,10 @@ function messageAddressActionMenu(
                     toggle(elem[0], 'show-advanced-settings', scope.message.Sender.Address === address.address);
 
                     openDropdown(element);
+                }
+
+                if (type === 'hide' && scope.message.ID === messageID) {
+                    dispatcher.closeDropdown('close');
                 }
             });
 
