@@ -22,7 +22,12 @@ function tooltipModel() {
     const remove = (element) => element.tooltip('destroy');
     const hide = (element) => element.tooltip('hide');
     const hideAll = () => $('.tooltip').tooltip('hide');
+    const enable = (element) => element.tooltip('enable');
+    const disable = (element) => {
+        element.tooltip('hide');
+        element.tooltip('disable');
+    };
 
-    return { add, update, remove, hide, hideAll };
+    return { add, update, remove, hide, hideAll, enable, disable };
 }
 export default tooltipModel;
