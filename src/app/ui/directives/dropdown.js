@@ -27,9 +27,10 @@ function dropdown($document, dispatchers) {
         }
 
         function click() {
+            const wasOpen = element.hasClass('active');
             // Close all dropdowns
             dispatcher.closeDropdown('close');
-            if (!element.hasClass('active')) {
+            if (!wasOpen) {
                 // Open only this one
                 showDropdown();
             }

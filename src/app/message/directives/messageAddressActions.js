@@ -36,11 +36,15 @@ function messageAddressActions(dispatchers) {
                 icon.classList.add(BUTTON_DROPDOWN_COLLAPSED);
             };
 
-            const onClick = (e) => {
+            const onClick = () => {
+                if (icon.classList.contains(BUTTON_DROPDOWN_OPENED)) {
+                    dispatcher.messageAddressActions('hide', { messageID: scope.messageId });
+                    hideDropdown();
+                    return;
+                }
                 openDropdown();
                 icon.classList.remove(BUTTON_DROPDOWN_COLLAPSED);
                 icon.classList.add(BUTTON_DROPDOWN_OPENED);
-                e.stopPropagation();
             };
 
             const stopPropagation = (e) => e.stopPropagation();
