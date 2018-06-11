@@ -64,18 +64,12 @@
         </a>
     </p>
     <contact-item
-        class="pgp-external-only item-no-keys contact-disabled"
+        class="pgp-external-only encrypt-toggle"
         data-form="form"
         data-model="model"
         data-datas="model.Encrypt"
         data-type="Encrypt"
         pt-tooltip-translate="Please upload a valid encryption key first before enabling encryption"></contact-item>
-    <contact-item
-        class="pgp-external-only item-has-keys"
-        data-form="form"
-        data-model="model"
-        data-datas="model.Encrypt"
-        data-type="Encrypt"></contact-item>
     <contact-item
         ng-class="{ 'contact-disabled': (model.Encrypt[0].value) }"
         class="pgp-external-only"

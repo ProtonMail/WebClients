@@ -3,7 +3,7 @@ import _ from 'lodash';
 import { PACKAGE_TYPE, RECIPIENT_TYPE, MIME_TYPES, KEY_FLAGS } from '../../constants';
 
 /* @ngInject */
-function contactPgp(dispatchers, pmcw, mailSettingsModel) {
+function contactPgp(dispatchers, pmcw, mailSettingsModel, tooltipModel) {
     return {
         replace: true,
         templateUrl: require('../../../templates/directives/contact/contactPgp.tpl.html'),
@@ -85,7 +85,7 @@ function contactPgp(dispatchers, pmcw, mailSettingsModel) {
                 }
                 scope.$applyAsync(() => {
                     switch (data.type) {
-                        case 'Key':
+                        case 'Key': {
                             allKeysExpired(data.items).then((keysExpired) => {
                                 toggle(element, 'pgp-expired', !data.items || keysExpired);
                                 toggle(element, 'pgp-no-keys', !_.some(data.items, ({ value }) => value));
@@ -97,10 +97,18 @@ function contactPgp(dispatchers, pmcw, mailSettingsModel) {
                                     )
                                 );
                             });
+
+                            const encryptToggle = ele.find('.encrypt-toggle');
                             if (!_.some(data.items, ({ value }) => value)) {
                                 scope.model.Encrypt[0].value = false;
+                                encryptToggle.addClass('contact-disabled');
+                                tooltipModel.enable(encryptToggle);
+                            } else {
+                                encryptToggle.removeClass('contact-disabled');
+                                tooltipModel.disable(encryptToggle);
                             }
                             break;
+                        }
                         case 'Scheme':
                             toggle(element, 'pgp-inline', isPGPInline());
                             toggle(element, 'pgp-mime', isPGPMime());
