@@ -18,6 +18,7 @@
     }
 
     svg.encryptionIcon {
+        margin-top: calc((20px - 1em) / 2);
         height: 1em;
         fill: $primary;
         // create more contrast on the checkmark (somewhat more than normal because default-color is already really black)
