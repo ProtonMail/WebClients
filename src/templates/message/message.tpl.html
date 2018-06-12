@@ -2,7 +2,7 @@
     'open': message.expand,
     'errorDecryption': message.failedDecryption,
     'marked': message.ID === marked.ID,
-    'unread': message.IsRead === 0,
+    'unread': message.Unread === 1,
     'details': message.toggleDetails === true,
     'draft': message.Type === 1,
     'sent': message.Type === 2 || message.Type === 3,
