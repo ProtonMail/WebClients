@@ -32,14 +32,7 @@ function organizationKeysModel(
     };
 
     const get = (key = 'keys') => angular.copy(CACHE[key]);
-    const set = async (key, value) => {
-        if (key === 'organizationKey') {
-            CACHE.organizationKey = await formatKey(value);
-            return;
-        }
-
-        CACHE[key] = value;
-    };
+    const set = (key, value) => (CACHE[key] = value);
     const clear = () => (CACHE = { keyStatus: 0 });
 
     /**
@@ -80,7 +73,7 @@ function organizationKeysModel(
         const { PublicKey, PrivateKey } = await loadkeys();
         if (PublicKey) {
             set('keyStatus', 0);
-            const info = await pmcw.keyInfo(PublicKey);
+            const info = await pmcw.keyInfo(PrivateKey || PublicKey);
             set('organizationKeyInfo', info);
         }
 

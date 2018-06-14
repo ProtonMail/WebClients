@@ -150,7 +150,7 @@ function memberApi($http, url, srp, gettextCatalog) {
     const primaryKey = (memberID, keyID) => $http.put(requestUrl(memberID, 'keys', keyID, 'primary'));
     const deleteKey = (memberID, keyID) => $http.delete(requestUrl(memberID, 'keys', keyID));
     const setupKey = (memberID, passParams, params) => {
-        return srp.randomVerifier(password).then((passParams) => {
+        return srp.randomVerifier(passParams).then((passParams) => {
             return $http.post(requestUrl(memberID, 'keys', 'setup'), { ...params, ...passParams });
         });
     };
