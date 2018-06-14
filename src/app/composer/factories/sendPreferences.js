@@ -122,8 +122,14 @@ function sendPreferences(
         };
     };
 
-    const base64ToArray = _.flowRight(pmcw.binaryStringToArray, pmcw.decode_base64);
-    const keyInfoBase64 = _.flowRight(pmcw.keyInfo, base64ToArray);
+    const base64ToArray = _.flowRight(
+        pmcw.binaryStringToArray,
+        pmcw.decode_base64
+    );
+    const keyInfoBase64 = _.flowRight(
+        pmcw.keyInfo,
+        base64ToArray
+    );
 
     /**
      * Checks if one of the allowed sending keys is pinned. This function returns true if key pinning is disabled
@@ -187,7 +193,6 @@ function sendPreferences(
         const keyObjects = keyObjs.filter((k) => k !== null);
 
         info.publickeys = keyObjects.length && primaryPinned ? keyObjects[0] : pmKey;
-
         info.encrypt = isInternal || (encryptFlag && !!keyObjects.length);
         info.sign = isInternal || (signFlag === null ? !!globalSign : signFlag);
         info.sign = info.sign || encryptFlag;
@@ -379,25 +384,39 @@ function sendPreferences(
      * primaryPinned basically just says if the primary key is available for sending (so either pinned or key pinning is disabled
      * It differs from pinned as pinned just says is key pinning is enabled.
      * primaryPinned is a flag that tells the FE that we first need to fix the sendPreference before sending.
-     * @param emails
-     * @param message
+     * @param {Array} emails
+     * @param {Message} message
+     * @param {Boolean} catchErrors Boolean whether errors should be catched. The addresses that failed will silently be ignored in the return object.
      * @returns {Promise.<void>}
      */
-    const get = async (emails, message = null) => {
+    const get = async (emails = [], message, catchErrors = false) => {
         const defaultMimeType = message ? message.MIMEType : null;
         const eoEnabled = message && message.IsEncrypted === 1;
         const globalSign = message ? message.sign : mailSettingsModel.get('Sign');
         const normEmails = _.uniq(_.map(emails, normalizeEmail));
 
-        const keyData = await keyCache.get(normEmails);
-
         const normInfos = await Promise.all(
-            _.map(normEmails, (email) => getInfo(email, keyData[email], defaultMimeType, eoEnabled, globalSign))
+            normEmails.map(async (email) => {
+                try {
+                    const keyData = await keyCache.getKeysPerEmail(email);
+                    return getInfo(email, keyData, defaultMimeType, eoEnabled, globalSign);
+                } catch (e) {
+                    if (!catchErrors) {
+                        throw e;
+                    }
+                }
+            })
         );
         const normMap = _.extend(...normInfos);
-        const infos = _.map(emails, (email) => ({ [email]: normMap[normalizeEmail(email)] }));
 
-        return _.extend(...infos);
+        return emails.reduce((acc, cur) => {
+            const result = normMap[normalizeEmail(cur)];
+            if (!result) {
+                return acc;
+            }
+            acc[cur] = result;
+            return acc;
+        }, {});
     };
 
     const contactEvents = (events) => events.forEach(({ ID }) => delete CACHE.EXTRACTED_INFO[ID]);

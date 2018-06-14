@@ -1,13 +1,13 @@
 <div class="autocompleteEmailsItem-container">
-    <autocomplete-emails-icon></autocomplete-emails-icon>
+    <autocomplete-emails-icon data-email="email" data-message="message"></autocomplete-emails-icon>
 
     <span class="autocompleteEmails-label" tabindex="0">
-        {{ ::email.Name }} &lt;{{ ::email.Address }}&gt;
+        {{ email.Name }} &lt;{{ email.Address }}&gt;
     </span>
     <button
         class="autocompleteEmails-btn-remove fa fa-times"
         type="button"
         aria-label="Remove"
-        data-address="{{ ::email.Address }}">
+        data-address="{{ email.Address }}">
     </button>
 </div>

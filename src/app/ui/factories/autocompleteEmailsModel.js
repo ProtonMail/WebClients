@@ -9,11 +9,6 @@ function autocompleteEmailsModel($injector, authentication, checkTypoEmails, $fi
     let TEMP_LABELS = {};
     const unicodeTagView = $filter('unicodeTagView');
 
-    const getID = () =>
-        `${Math.random()
-            .toString(32)
-            .slice(2, 12)}-${Date.now()}`;
-
     /**
      * @{link https://css-tricks.com/snippets/javascript/htmlentities-for-javascript/}
      */
@@ -145,11 +140,7 @@ function autocompleteEmailsModel($injector, authentication, checkTypoEmails, $fi
 
     return (previousList = []) => {
         // Prevent empty names if we only have the address (new email, no contact yet for this one)
-        let list = angular.copy(previousList).map(({ Address = '', Name = '' }) => ({
-            $id: getID(),
-            Name: Name || Address,
-            Address
-        }));
+        let list = [];
 
         const all = () => list;
         const clear = () => ((list.length = 0), (TEMP_LABELS = {}));
@@ -160,12 +151,10 @@ function autocompleteEmailsModel($injector, authentication, checkTypoEmails, $fi
          * @param {Object} data email Object
          */
         const addEmail = (data = {}) => {
-            list.push(
-                _.extend({}, data, {
-                    $id: getID(),
-                    invalid: !REGEX_EMAIL.test(data.Address) || checkTypoEmails(data.Address)
-                })
-            );
+            // If the mail is not already inside the collection, add it
+            if (!exist(data.Address)) {
+                list.push(data);
+            }
         };
 
         /**
@@ -176,11 +165,7 @@ function autocompleteEmailsModel($injector, authentication, checkTypoEmails, $fi
          */
         const add = ({ label, value } = {}) => {
             const data = formatNewEmail(TEMP_LABELS[label] || label, value);
-
-            // If the mail is not already inside the collection, add it
-            if (!exist(data.Address)) {
-                addEmail(data);
-            }
+            addEmail(data);
         };
 
         /**
@@ -188,7 +173,34 @@ function autocompleteEmailsModel($injector, authentication, checkTypoEmails, $fi
          * @param  {String} options.Address
          * @return {Array}
          */
-        const remove = ({ Address }) => (list = list.filter((item) => item.Address !== Address));
+        const remove = (cb) => ((list = list.filter(cb)), list);
+        const removeByAddress = (Address) => remove(({ Address: otherAddress }) => otherAddress !== Address);
+
+        /**
+         * Update an address. Ensures that the list is still unique. If new address already exists, the old address will be removed.
+         * @param {String} oldAddress
+         * @param {String} newAddress
+         * @param {String} newName
+         */
+        const updateEmail = (oldAddress, newAddress, newName) => {
+            // If the address has been updated, ensure that it is unique. If it already exists,
+            // delete the old address.
+            if (oldAddress !== newAddress && list.some((email) => email.Address === newAddress)) {
+                removeByAddress(oldAddress);
+                return;
+            }
+            // Update the old Address with the new information.
+            list = list.map((email) => {
+                if (email.Address === oldAddress) {
+                    return {
+                        ...email,
+                        Address: newAddress,
+                        Name: newName
+                    };
+                }
+                return email;
+            });
+        };
 
         /**
          * Remove the last contact from the list
@@ -220,13 +232,20 @@ function autocompleteEmailsModel($injector, authentication, checkTypoEmails, $fi
             });
         };
 
+        previousList.forEach(({ Address = '', Name = '' }) => addEmail({
+            Name: Name || Address,
+            Address
+        }));
+
         return {
             filterContact,
             formatInput: unicodeTagView,
             all,
             add,
             remove,
+            removeByAddress,
             removeLast,
+            updateEmail,
             isEmpty,
             clear,
             exist,

@@ -1,32 +1,33 @@
 /* @ngInject */
-function autocompleteEmailsIcon(dispatchers, tooltipModel, encryptionStatus) {
+function autocompleteEmailsIcon(tooltipModel, encryptionStatus, dispatchers) {
     return {
         replace: true,
+        scope: {
+            email: '<',
+            message: '<'
+        },
         templateUrl: require('../../../templates/ui/autoCompleteEmailsIcon.tpl.html'),
         link(scope, el) {
             const { on, unsubscribe } = dispatchers();
 
-            const refreshTooltip = () => {
-                const title = encryptionStatus.getTooltip(scope.email);
+            const refreshTooltip = (email) => {
+                const title = encryptionStatus.getTooltip(email);
                 tooltipModel.update(el, { title });
             };
 
-            on('composerInputRecipient', (event, { type, data: { email } }) => {
-                if (type !== 'refresh' && email.Address !== scope.email.Address) {
-                    return;
-                }
-                scope.$applyAsync(() => {
-                    refreshTooltip();
-                });
-            });
+            const setTooltip = (email) => {
+                const title = encryptionStatus.getTooltip(email);
+                tooltipModel.add(el, { title });
+            };
 
+            setTooltip(scope.email);
+
+            // Ensure the tooltip is updated once the model updates.
             on('autocompleteEmails', (event, { type, data: { messageID } }) => {
                 if (type !== 'refresh' && messageID !== scope.message.ID) {
                     return;
                 }
-                scope.$applyAsync(() => {
-                    refreshTooltip();
-                });
+                refreshTooltip(scope.email);
             });
 
             scope.$on('$destroy', () => {
@@ -35,4 +36,5 @@ function autocompleteEmailsIcon(dispatchers, tooltipModel, encryptionStatus) {
         }
     };
 }
+
 export default autocompleteEmailsIcon;
