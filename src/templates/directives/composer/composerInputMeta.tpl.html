@@ -1,4 +1,5 @@
-<div class="composerInputMeta-container" ng-class="{'composerInputMeta-recipients': containsRecipient(), 'composerInputMeta-overlay-hidden': message.autocompletesFocussed || containsInvalid(message) }">
+<div class="composerInputMeta-container"
+     ng-class="{'composerInputMeta-recipients': containsRecipient(), 'composerInputMeta-overlay-hidden': message.autocompletesFocussed || containsInvalid(message) }">
 
     <div class="composerInputMeta-overlay">
         <label
@@ -11,35 +12,23 @@
                 To:
             </span>
             <composer-input-recipient
-                ng-repeat="recipient in message.ToList"
-                data-address="{{ recipient.Address }}"
-                data-name="{{ recipient.Name}}"
-                data-list-key="ToList"
-                data-index="{{ $index }}"
-                data-message="message">
-            </composer-input-recipient>
+                ng-repeat="email in message.ToList track by email.Address"
+                data-email="email"
+                data-message="message"></composer-input-recipient>
             <span ng-if="message.CCList.length">
                 CC:
             </span>
             <composer-input-recipient
-                ng-repeat="recipient in message.CCList"
-                data-address="{{ recipient.Address }}"
-                data-name="{{ recipient.Name}}"
-                data-list-key="CCList"
-                data-index="{{ $index }}"
-                data-message="message">
-            </composer-input-recipient>
+                ng-repeat="email in message.CCList track by email.Address"
+                data-email="email"
+                data-message="message"></composer-input-recipient>
             <span ng-if="message.BCCList.length">
                 BCC:
             </span>
             <composer-input-recipient
-                ng-repeat="recipient in message.BCCList"
-                data-address="{{ recipient.Address }}"
-                data-name="{{ recipient.Name}}"
-                data-list-key="BCCList"
-                data-index="{{ $index }}"
-                data-message="message">
-            </composer-input-recipient>
+                ng-repeat="email in message.BCCList track by email.Address"
+                data-email="email"
+                data-message="message"></composer-input-recipient>
         </div>
     </div>
 

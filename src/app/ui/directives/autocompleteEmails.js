@@ -1,3 +1,4 @@
+import _ from 'lodash';
 import { REGEX_EMAIL } from '../../constants';
 
 /* @ngInject */
@@ -14,12 +15,20 @@ function autocompleteEmails(
     const COMMA_KEY = 188;
     const ESCAPE_KEY = 27;
     const RECIPIENT_LIMIT = 25;
+    const THROTTLE_TIMEOUT = 300;
 
     const I18N = {
         langRecipientLimit(total) {
             return gettextCatalog.getString(
                 'The maximum number ({{total}}) of Recipients is {{limit}}.',
                 { total, limit: RECIPIENT_LIMIT },
+                'Error'
+            );
+        },
+        failedToFetch(list = []) {
+            return gettextCatalog.getString(
+                'Failed to get key information for {{emails}}. Removing from recipient list. Please try again.',
+                { emails: list.join(', ') },
                 'Error'
             );
         }
@@ -86,70 +95,120 @@ function autocompleteEmails(
             .filter(Boolean)
             .map((txt) => txt.trim());
 
-    const link = (scope, el, { awesomplete, attr: { key } }) => {
-        const { dispatcher, on, unsubscribe } = dispatchers(['composer.update']);
+    const link = (scope, el, { awesomplete }) => {
+        const { dispatcher, on, unsubscribe } = dispatchers(['composer.update', 'autocompleteEmails']);
 
         scope.emails = [];
         const $list = el[0].querySelector('.autocompleteEmails-admin');
 
         // Model for this autocomplete
         const model = autocompleteEmailsModel(scope.list);
+        const modelExtender = autocompleteSyncModel(scope.message);
 
         // Auto scroll to the end of the list
-        const onUpdate = () => _rAF(() => ($list.scrollTop = $list.scrollHeight + 32));
+        const updateScroll = () => _rAF(() => ($list.scrollTop = $list.scrollHeight + 32));
+
         /**
-         * Sync the model, bind emails selected
-         * @return {void}
+         * Set emails on the scope.
+         * NOTE: This will update the {To,CC,BCC}List in the message model.
+         * @param {Array} emails
          */
-        const syncModel = autocompleteSyncModel.generate(scope, model, onUpdate);
+        const setEmails = (emails = []) => {
+            scope.$applyAsync(() => {
+                scope.emails = emails;
+                scope.list = emails;
+                updateScroll();
+                // NOTE: the main purpose of this is to update the tooltip in the lock directive since we don't use $watch.
+                // Needs to be done in a rAF because otherwise when '$on' is triggered the scope has not been fully updated yet.
+                _rAF(() => dispatcher.autocompleteEmails('refresh', { messageID: scope.message.ID, emails }));
+            });
+        };
+
+        /**
+         * Update the list. Get the emails from the model, and extend them with the PGP and loading data.
+         * @returns {Promise<void>}
+         */
+        const updateModel = async () => {
+            /**
+             * Extend the emails from the email model with information about PGP and loading.
+             * Always get the latest array from the model. This is to ensure the list is always up to date.
+             * Set them on the scope.
+             */
+            const extendAndSet = () => {
+                // Get the latest array from the model.
+                const emails = model.all().slice();
+
+                // Extend the emails with any cached information, or with loading in case it's a new address.
+                const extendedEmails = modelExtender.extendFromCache(emails);
+
+                // Set the new emails on the scope.
+                setEmails(extendedEmails);
+            };
+
+            /**
+             * Sync the emails to the cache.
+             */
+            const sync = async () => {
+                // Get the latest array from the model.
+                const emails = model.all().slice();
+
+                // Sync the emails to cache.
+                const { addressesToRemove = [], failedAddresses = [] } = await modelExtender.sync(emails);
+
+                // Display an error message that these addresses failed to fetch.
+                if (failedAddresses.length) {
+                    notification.error(I18N.failedToFetch(failedAddresses));
+                }
+
+                // Need to remove the addresses that were invalid from the real model.
+                addressesToRemove.forEach(model.removeByAddress);
+            };
+
+            // Extend and set the addresses. Primarily to show the loading spinner for new addresses.
+            extendAndSet();
+
+            // Handle invalid addresses and update the cache.
+            await sync();
+
+            // Extend and set the addresses. Gets the latest information from the cache.
+            extendAndSet();
+        };
+
+        // Throttle the update because it can be called multiple times.
+        const syncModel = _.throttle(updateModel, THROTTLE_TIMEOUT);
         syncModel();
 
         on('contacts', (event, { type }) => {
             if (type !== 'contactEvents' && type !== 'contactUpdated') {
                 return;
             }
-            syncModel(true);
+            syncModel();
         });
 
         on('mailSettings', (event, { data: { key } }) => {
             if (key !== 'Sign' && key !== 'all') {
                 return;
             }
-            syncModel(true);
+            syncModel();
         });
 
         on('composer.update', (event, { type, data: { message = { ID: null } } = {} }) => {
             if (type !== 'close.panel' || message.ID !== scope.message.ID) {
                 return;
             }
-            syncModel(true);
+            syncModel();
         });
         on('squire.messageSign', (event, { data: { messageID } }) => {
             if (messageID !== scope.message.ID) {
                 return;
             }
-            syncModel(true);
+            syncModel();
         });
-        on('recipient.update', (event, { data: { messageID } }) => {
+        on('recipient.update', (event, { data: { messageID, oldAddress, Address, Name } }) => {
             if (messageID !== scope.message.ID) {
                 return;
             }
-            // the output of autocompleteSyncModel is modified so now we write the output into the input and rerun
-            scope.list = scope.emails.reduce((acc, email, index) => {
-                if (acc[index].Name !== email.Name || acc[index].Address !== email.Address) {
-                    acc[index].Name = email.Name;
-                    acc[index].Address = email.Address;
-                    // signal composer input recipient to update itself
-                    dispatcher['composer.update']('recipients.modified', {
-                        message: scope.message,
-                        listIndex: index,
-                        list: key,
-                        name: email.Name,
-                        address: email.Address
-                    });
-                }
-                return acc;
-            }, scope.list);
+            model.updateEmail(oldAddress, Address, Name);
             syncModel();
         });
 
@@ -211,7 +270,7 @@ function autocompleteEmails(
             // Click onto a remove button
             if (target.classList.contains('autocompleteEmails-btn-remove')) {
                 const { address } = target.dataset;
-                model.remove({ Address: address });
+                model.removeByAddress(address);
                 return syncModel();
             }
 
@@ -344,4 +403,5 @@ function autocompleteEmails(
         compile: autocompleteBuilder(link)
     };
 }
+
 export default autocompleteEmails;

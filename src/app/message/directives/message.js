@@ -121,9 +121,7 @@ function message(
                             );
                         };
 
-                        const recipients = _.map(scope.message.ToList, 'Address')
-                            .concat(_.map(scope.message.CCList, 'Address'))
-                            .concat(_.map(scope.message.BCCList, 'Address'));
+                        const recipients = _.map(scope.message.ToList.concat(scope.message.CCList, scope.message.BCCList), 'Address');
                         const parsedHeaders = scope.message.ParsedHeaders; // || { };
                         const encryptionList = parseRecipientHeader(
                             parsedHeaders['X-Pm-Recipient-Encryption'] || '',

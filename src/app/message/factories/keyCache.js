@@ -39,55 +39,96 @@ function keyCache(Key, addressesModel, mailSettingsModel) {
         };
     };
 
+    /**
+     * Get the keys for an email address from the API.
+     * @param {String} email
+     * @returns {Promise<{RecipientType, MIMEType, Keys}>}
+     */
     const getKeysFromApi = (email) => {
         return Key.keys(email)
             .then(({ data }) => {
-                CACHE[email] = { time: Date.now(), data: _.pick(data, 'RecipientType', 'MIMEType', 'Keys') };
-                return CACHE[email].data;
+                return _.pick(data, 'RecipientType', 'MIMEType', 'Keys');
             })
             .catch((err) => {
-                if (err.data && err.data.Code === KEY_GET_ADDRESS_MISSING) {
-                    CACHE[email] = {
-                        time: Date.now(),
-                        data: {
-                            RecipientType: RECIPIENT_TYPE.TYPE_NO_RECEIVE,
-                            MIMEType: null,
-                            Keys: []
-                        }
+                if (
+                    err.data &&
+                    (err.data.Code === KEY_GET_ADDRESS_MISSING || err.data.Code === KEY_GET_ADDRESS_NO_RECEIVE)
+                ) {
+                    return {
+                        RecipientType: RECIPIENT_TYPE.TYPE_NO_RECEIVE,
+                        MIMEType: null,
+                        Keys: []
                     };
-                    return CACHE[email].data;
-                }
-
-                if (err.data && err.data.Code === KEY_GET_ADDRESS_NO_RECEIVE) {
-                    CACHE[email] = {
-                        time: Date.now(),
-                        data: {
-                            RecipientType: RECIPIENT_TYPE.TYPE_NO_RECEIVE,
-                            MIMEType: null,
-                            Keys: []
-                        }
-                    };
-                    return CACHE[email].data;
                 }
                 throw err;
             });
     };
 
+    /**
+     * Get keys for an email address.
+     * Either use the cached data, cached http request, or make a new http request.
+     * @param {String} email
+     * @returns {Promise<{RecipientType, MIMEType, Keys}>}
+     */
     const getKeysPerEmail = async (email) => {
         const keys = getUserAddressesKeys(email);
         if (keys) {
             return keys;
         }
-        const inCache = _.has(CACHE, email) && CACHE[email].time + TIMEOUT > Date.now();
-        if (!inCache) {
-            CACHE[email] = { time: Date.now(), data: getKeysFromApi(email) };
+
+        const { data: cachedData, time: cachedTime = 0, promise: cachedPromise } = CACHE[email] || {};
+        if (cachedData && cachedTime + TIMEOUT > Date.now()) {
+            return cachedData;
         }
-        return CACHE[email].data;
+
+        // If a cached promise exist, wait for it to finish.
+        if (cachedPromise) {
+            return cachedPromise;
+        }
+
+        // Call the API to get the keys.
+        const promise = getKeysFromApi(email);
+
+        // Ensure this promise is cached.
+        CACHE[email] = {
+            promise
+        };
+
+        try {
+            const data = await promise;
+            // If it succeeds, set the cached data.
+            CACHE[email] = {
+                time: Date.now(),
+                data
+            };
+            return data;
+        } catch (e) {
+            // Otherwise clear the cache.
+            delete CACHE[email];
+            throw e;
+        }
     };
 
-    const get = (emails) => {
+    /**
+     * Get all keys for all emails.
+     * @param {Array} emails
+     * @returns {Promise<[any]>}
+     */
+    const get = (emails = []) => {
         return Promise.all(emails.map((email) => getKeysPerEmail(email))).then((keys) => _.zipObject(emails, keys));
     };
-    return { get };
+
+    /**
+     * Check if an email address is invalid.
+     * @param {String} email
+     * @returns {Promise<boolean>}
+     */
+    const isInvalid = async (email = '') => {
+        const result = await getKeysPerEmail(email);
+        return result.RecipientType === RECIPIENT_TYPE.TYPE_NO_RECEIVE;
+    };
+
+    return { get, getKeysPerEmail, isInvalid };
 }
+
 export default keyCache;

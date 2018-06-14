@@ -1,10 +1,9 @@
-import { REGEX_EMAIL, EMAIL_FORMATING } from '../../constants';
-import extendPGP from '../../../helpers/composerIconHelper';
+import { EMAIL_FORMATING } from '../../constants';
 
 const { OPEN_TAG_AUTOCOMPLETE_RAW, CLOSE_TAG_AUTOCOMPLETE_RAW } = EMAIL_FORMATING;
 
 /* @ngInject */
-function autocompleteEmailsItem(sanitize, sendPreferences, autoPinPrimaryKeys, dispatchers) {
+function autocompleteEmailsItem(sanitize, sendPreferences, autoPinPrimaryKeys, checkTypoEmails, keyCache, dispatchers) {
     const KEY_ENTER = 13;
     const { dispatcher } = dispatchers(['recipient.update']);
 
@@ -34,44 +33,6 @@ function autocompleteEmailsItem(sanitize, sendPreferences, autoPinPrimaryKeys, d
         return { name: name.trim(), adr: adr.trim() };
     };
 
-    const updateState = async (scope, updateBtn, { name, adr, oldAdr, oldName, target }) => {
-        const { [adr || name]: sendPref } = await sendPreferences.get([adr || name], scope.message);
-
-        const refresh = (oldAdr, oldName) => {
-            scope.$applyAsync(() => {
-                scope.email.Address = oldAdr;
-                scope.email.Name = oldName;
-                target.innerText = scope.email.Address;
-                updateBtn(scope.email.Address);
-            });
-        };
-
-        // important: resign should go before repin: otherwise repin will do the resigning.
-        const doResign = async () => {
-            if (!sendPref.isVerified) {
-                const resigned = await autoPinPrimaryKeys.resign(adr || name);
-                if (!resigned) {
-                    return refresh(oldAdr, oldName);
-                }
-            }
-
-            if (!sendPref.primaryPinned) {
-                const pinned = await autoPinPrimaryKeys.confirm(adr || name);
-                if (!pinned) {
-                    return refresh(oldAdr, oldName);
-                }
-            }
-        };
-
-        if (!sendPref.isVerified || !sendPref.primaryPinned) {
-            await doResign();
-        }
-        dispatcher['recipient.update']('update', { messageID: scope.message.ID });
-        scope.$applyAsync(() => {
-            scope.email = extendPGP(scope.email, sendPref);
-        });
-    };
-
     return {
         replace: true,
         templateUrl: require('../../../templates/ui/autoCompleteEmailsItem.tpl.html'),
@@ -84,35 +45,16 @@ function autocompleteEmailsItem(sanitize, sendPreferences, autoPinPrimaryKeys, d
             const onBlur = ({ target }) => {
                 target.setAttribute('contenteditable', false);
 
-                scope.$applyAsync(() => {
+                const getAddress = (target) => {
                     const { name, adr } = extractAddress(target);
-                    const { Name: oldName, Address: oldAdr } = scope.email;
-                    if (adr) {
-                        scope.email.Address = adr;
-                        scope.email.Name = sanitize.input(name);
-                    }
+                    return { Address: adr || name, Name: sanitize.input(name) };
+                };
 
-                    if (name && !adr) {
-                        scope.email.Name = name;
-                        scope.email.Address = name;
-                    }
+                const { Address: oldAddress } = scope.email;
+                const { Address, Name } = getAddress(target);
+                updateBtn(Address);
 
-                    scope.email.invalid = !REGEX_EMAIL.test(adr || name);
-                    updateBtn(scope.email.Address);
-
-                    if (scope.email.invalid) {
-                        return;
-                    }
-
-                    !scope.email.invalid &&
-                        updateState(scope, updateBtn, {
-                            target,
-                            name,
-                            adr,
-                            oldName,
-                            oldAdr
-                        });
-                });
+                dispatcher['recipient.update']('update', { messageID: scope.message.ID, oldAddress, Address, Name });
             };
 
             /*
