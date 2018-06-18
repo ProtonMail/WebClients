@@ -37,6 +37,11 @@
         padding: 0 2rem;
         font-size: 16px;
     }
+    &.small {
+        font-size: 10px;
+        height: 30px;
+        line-height: 30px;
+    }
     &.primary {
         background-color: $primary;
         border-color: $primary;
