@@ -23,6 +23,15 @@ function transformEmbedded(embedded, $state, mailSettingsModel) {
 
             // check if the attachment exist before processing
             if (!(attachment && Object.keys(attachment).length > 0)) {
+                /**
+                 * If the attachment does not exist and the proton-src attribute
+                 * starts with cid:, it's an embedded image that does not exist in the list of attachments,
+                 * or is not a valid image.
+                 * So remove the element from the DOM because it will not display anything useful anyway.
+                 */
+                if (src.startsWith('cid:')) {
+                    image.parentElement.removeChild(image);
+                }
                 return;
             }
 
