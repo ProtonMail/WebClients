@@ -2,8 +2,8 @@
 function selectPlan(dispatchers, gettextCatalog, subscriptionModel) {
     const ACTIVE_BUTTON_CLASS = 'primary';
     const I18N = {
-        downgradeToFree: gettextCatalog.getString('Downgrade to Free', null, 'Button to select plan on the dashboard'),
-        downgradeToPlus: gettextCatalog.getString('Downgrade to Plus', null, 'Button to select plan on the dashboard'),
+        downgradeToFree: gettextCatalog.getString('Switch to Free', null, 'Button to select plan on the dashboard'),
+        downgradeToPlus: gettextCatalog.getString('Switch to Plus', null, 'Button to select plan on the dashboard'),
         downgradeToProfessional: gettextCatalog.getString(
             'Switch to Professional',
             null,
@@ -24,7 +24,7 @@ function selectPlan(dispatchers, gettextCatalog, subscriptionModel) {
             'Button to select plan on the dashboard'
         ),
         upgradeToVisionary: gettextCatalog.getString(
-            'Switch to Visionary',
+            'Upgrade to Visionary',
             null,
             'Button to select plan on the dashboard'
         )
