@@ -5,11 +5,7 @@ import { MAILBOX_IDENTIFIERS } from '../../constants';
 /* @ngInject */
 function filterMessages($state) {
     return (messages = [], showTrashed, showNonTrashed) => {
-        if (
-            !$state.includes('secured.search.**') &&
-            !$state.includes('secured.label.**') &&
-            !$state.includes('secured.starred.**')
-        ) {
+        if (!$state.includes('secured.search.**')) {
             const nonTrashed = messages.filter((message) => !_.includes(message.LabelIDs, MAILBOX_IDENTIFIERS.trash));
 
             if ($state.includes('secured.trash.**') === true) {

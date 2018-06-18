@@ -5,7 +5,7 @@
             <span>{{ conversation.Subject | unescape }}</span>
             <pt-star data-model="conversation" data-pt-star-type="conversation" class="pm_buttons"></pt-star>
         </h1>
-        <div ng-hide="('secured.search.**' | includedByState) || ('secured.label.**' | includedByState)" class="containsMessage">
+        <div ng-hide="'secured.search.**' | includedByState" class="containsMessage">
             <p ng-if="showNotifier('trash')" class="alert">
                 <span ng-show="inTrash === false" translate translate-context="Info">This conversation contains trashed messages.</span>
                 <span ng-show="inTrash === true" translate translate-context="Info">This conversation contains non-trashed messages.</span>
