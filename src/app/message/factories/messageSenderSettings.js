@@ -14,8 +14,12 @@ function messageSenderSettings(
     contactDetailsModel,
     contactEncryptionModal,
     sendPreferences,
-    contactEditor
+    contactEditor,
+    mailSettingsModel,
+    dispatchers
 ) {
+    const { dispatcher } = dispatchers(['message']);
+
     const getContact = ({ ContactID, Email }) => {
         return Contact.get(ContactID).then((contact) => {
             if (contact.errors.includes(CONTACT_ERROR.TYPE2_CONTACT_VERIFICATION)) {
@@ -65,14 +69,17 @@ function messageSenderSettings(
                 return;
             }
 
-            const model = contactDetailsModel.extract({ vcard: contact.vCard, field: 'EMAIL' });
-            const item = model.find(({ value }) => value === normalizedEmail);
+            const contactDetails = contactDetailsModel.extract({ vcard: contact.vCard, field: 'EMAIL' });
+            const item = contactDetails.find(({ value }) => value === normalizedEmail);
+            const model = { ...item.settings };
+            delete model.Email;
 
             contactEncryptionModal.activate({
                 params: {
                     email: normalizedEmail,
-                    model: item.settings,
+                    model,
                     save: (model) => {
+                        model.Email = item.settings.Email;
                         item.settings = model;
                         item.type = 'email';
                         const { vCard: newvcard } = contactDetailsModel.prepare({ model: { Emails: [item] } });
@@ -84,12 +91,12 @@ function messageSenderSettings(
                             : contactEditor.create({ contacts: [contact] });
                         const updatePromise = partialUpdate
                             .then(() => sendPreferences.get([normalizedEmail]))
-                            .then(({ [normalizedEmail]: { pinned, scheme } }) =>
-                                scope.$applyAsync(
-                                    () => (scope.message.promptKeyPinning = !pinned && scheme === SEND_TYPES.SEND_PM)
-                                )
-                            )
-                            .then(() => scope.message.clearTextBody(true));
+                            .then(({ [normalizedEmail]: { pinned, scheme } }) => {
+                                scope.message.promptKeyPinning =
+                                    !pinned && mailSettingsModel.get('PromptPin') && scheme === SEND_TYPES.SEND_PM;
+
+                                dispatcher.message('reload', { conversationID: scope.message.ConversationID });
+                            });
                         networkActivityTracker.track(updatePromise);
                     },
                     close: () => contactEncryptionModal.deactivate(),
