@@ -2,7 +2,7 @@
     <autocomplete-emails-icon data-email="email" data-message="message"></autocomplete-emails-icon>
 
     <span class="autocompleteEmails-label" tabindex="0">
-        {{ email.Name }} &lt;{{ email.Address }}&gt;
+        {{ email | labelAutocomplete }}
     </span>
     <button
         class="autocompleteEmails-btn-remove fa fa-times"
