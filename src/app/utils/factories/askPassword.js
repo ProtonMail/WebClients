@@ -2,15 +2,16 @@
 function askPassword(loginPasswordModal) {
     /**
      * Open the password modal to unlock the next process
-     * @param  {submit} {Function}
+     * @param {Boolean} showTwoFactor
+     * @return {Promise}
      */
-    return (cb = angular.noop) =>
+    return (showTwoFactor) =>
         new Promise((resolve, reject) => {
             loginPasswordModal.activate({
                 params: {
+                    hasTwoFactor: showTwoFactor,
                     submit(password, twoFactorCode) {
                         loginPasswordModal.deactivate();
-                        cb(password, twoFactorCode);
                         resolve({ password, twoFactorCode });
                     },
                     cancel() {

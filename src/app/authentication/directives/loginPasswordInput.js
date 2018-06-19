@@ -49,7 +49,7 @@ const loginPasswordInput = (userSettingsModel, srp, networkActivityTracker, gett
             };
 
             // If two factor isn't forced, make a request to info to see if we must enable it.
-            if (!scope.hasTwoFactor) {
+            if (typeof scope.hasTwoFactor === 'undefined') {
                 const promise = srp.info().then(({ data = {} } = {}) => {
                     setTwoFactorVisible(data.TwoFactor === 1);
                 });

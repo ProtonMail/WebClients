@@ -50,11 +50,11 @@ function pmMeModel(
     /**
      * Unlock the session to add the @pm.me address
      */
-    const activate = () => {
+    const activate = async () => {
         const hasPaidMail = authentication.hasPaidMail();
         const success = I18N[hasPaidMail ? 'paid' : 'free']();
-        const process = ({ Password, TwoFactorCode, DisplayName, Signature }) => {
-            const promise = User.unlock({ Password, TwoFactorCode })
+        const process = ({ Password, DisplayName, Signature }) => {
+            const promise = User.unlock({ Password })
                 .then(() => addressModel.setup({ Domain: 'pm.me', DisplayName, Signature }))
                 .then(User.lock)
                 .then(() => notification.success(success));
@@ -62,16 +62,16 @@ function pmMeModel(
             networkActivityTracker.track(promise);
         };
 
-        askPassword((Password, TwoFactorCode) => {
-            if (hasPaidMail) {
-                confirmAddress(({ DisplayName, Signature }) => {
-                    process({ Password, TwoFactorCode, DisplayName, Signature });
-                });
-                return;
-            }
+        const { password: Password } = await askPassword(false);
 
-            process({ Password, TwoFactorCode });
-        });
+        if (hasPaidMail) {
+            confirmAddress(({ DisplayName, Signature }) => {
+                process({ Password, DisplayName, Signature });
+            });
+            return;
+        }
+
+        process({ Password });
     };
 
     return { activate };
