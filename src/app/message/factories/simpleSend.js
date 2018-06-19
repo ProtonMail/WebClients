@@ -56,8 +56,9 @@ function simpleSend(messageApi, User, pmcw, srp, encryptMessage) {
     };
 
     return async (message) => {
-        const { ID } = await createDraft(message);
+        const { ID, MIMEType } = await createDraft(message);
         message.ID = ID;
+        message.MIMEType = MIMEType;
         return send(message);
     };
 }
