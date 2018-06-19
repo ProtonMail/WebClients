@@ -209,20 +209,19 @@ function memberActions(
     /**
      * Enable multi-user support for Visionary or Business account
      */
-    const enableSupport = () => {
+    const enableSupport = async () => {
         const { MaxMembers } = organizationModel.get() || {};
 
         if (MaxMembers === 1) {
             return notification.info(I18N.PLEASE_UPGRADE);
         }
 
-        askPassword((Password, TwoFactorCode) => {
-            const promise = User.password({ Password, TwoFactorCode })
-                .then(({ data = {} }) => data)
-                .then(modalSetupOrga);
+        const { password: Password, twoFactorCode: TwoFactorCode } = await askPassword();
+        const promise = User.password({ Password, TwoFactorCode })
+            .then(({ data = {} }) => data)
+            .then(modalSetupOrga);
 
-            networkActivityTracker.track(promise);
-        });
+        networkActivityTracker.track(promise);
     };
 
     const login = memberSubLogin.login;
