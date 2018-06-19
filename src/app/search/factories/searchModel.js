@@ -81,7 +81,10 @@ function searchModel(addressesModel, authentication, gettextCatalog, labelsModel
         if (!model) {
             return;
         }
-        return Math.abs(+model / 1000);
+        if (model instanceof Date) {
+            return Math.abs(+model / 1000);
+        }
+        return Math.abs(+model);
     };
 
     const getLabel = (folder) => {
