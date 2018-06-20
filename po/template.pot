@@ -804,7 +804,7 @@ msgstr ""
 
 #: ./src/app/address/directives/addressBtnActions.js:8
 #: ./src/app/members/directives/memberEditBtn.js:6
-#: ./src/templates/address/addressKeysView.tpl.html:200
+#: ./src/templates/address/addressKeysView.tpl.html:209
 #: ./src/templates/elements/moveElement.tpl.html:26
 #: ./src/templates/message/message.tpl.html:194
 #: ./src/templates/modals/deleteAccount.tpl.html:38
@@ -1144,7 +1144,7 @@ msgctxt "Action"
 msgid "Make Admin"
 msgstr ""
 
-#: ./src/templates/address/addressKeysView.tpl.html:167
+#: ./src/templates/address/addressKeysView.tpl.html:176
 msgctxt "Action"
 msgid "Make Primary"
 msgstr ""
@@ -1193,12 +1193,12 @@ msgctxt "Action"
 msgid "Mark as unread"
 msgstr ""
 
-#: ./src/templates/address/addressKeysView.tpl.html:188
+#: ./src/templates/address/addressKeysView.tpl.html:197
 msgctxt "Action"
 msgid "Mark compromised"
 msgstr ""
 
-#: ./src/templates/address/addressKeysView.tpl.html:176
+#: ./src/templates/address/addressKeysView.tpl.html:185
 msgctxt "Action"
 msgid "Mark obsolete"
 msgstr ""
@@ -1338,7 +1338,7 @@ msgctxt "Action"
 msgid "Public key"
 msgstr ""
 
-#: ./src/templates/address/addressKeysView.tpl.html:159
+#: ./src/templates/address/addressKeysView.tpl.html:146
 msgctxt "Action"
 msgid "Reactivate"
 msgstr ""
@@ -10504,12 +10504,12 @@ msgctxt "key flag info"
 msgid "Disabled"
 msgstr ""
 
-#: ./src/templates/address/addressKeysView.tpl.html:188
+#: ./src/templates/address/addressKeysView.tpl.html:197
 msgctxt "key flag info"
 msgid "Mark compromised"
 msgstr ""
 
-#: ./src/templates/address/addressKeysView.tpl.html:176
+#: ./src/templates/address/addressKeysView.tpl.html:185
 msgctxt "key flag info"
 msgid "Mark obsolete"
 msgstr ""
