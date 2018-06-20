@@ -145,7 +145,15 @@
                                         <div class="pm_buttons link">
                                             <button type="button"
                                                     class="pm_buttons pm_button"
-                                                    ng-show="!isSubUser"
+                                                    ng-if="!key.decrypted"
+                                                    data-action="reactivateKey"
+                                                    data-address-id="{{ ::address.addressID }}"
+                                                    data-key-index="{{ ::$index }}"
+                                                    translate-context="Action"
+                                                    translate>Reactivate</button>
+                                            <button type="button"
+                                                    class="pm_buttons pm_button"
+                                                    ng-if="!isSubUser && key.decrypted"
                                                     data-action="exportKey"
                                                     data-address-id="{{ ::address.addressID }}"
                                                     data-key-index="{{ ::$index }}"
@@ -158,12 +166,13 @@
                                             <div class="pm_dropdown wide right default-padding">
                                                 <button type="button"
                                                         class="pm_button link"
-                                                        ng-hide="key.decrypted"
-                                                        data-action="reactivateKey"
+                                                        ng-show="!isSubUser && !key.decrypted"
+                                                        data-action="exportKey"
                                                         data-address-id="{{ ::address.addressID }}"
                                                         data-key-index="{{ ::$index }}"
-                                                        translate-context="Action"
-                                                        translate>Reactivate</button>
+                                                        translate-context="Action">
+                                                    Export
+                                                </button>
                                                 <button type="button"
                                                         class="pm_button link"
                                                         ng-show="!$first && key.decrypted && key.Flags === 3 && address.status !== 0"
