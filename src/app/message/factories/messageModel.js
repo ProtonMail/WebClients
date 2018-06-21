@@ -55,27 +55,27 @@ function messageModel(
         ExternalID: null
     };
     const pmTypes = [
-        gettextCatalog.getString('End-to-end encrypted', null, 'Message encryption status'),
+        gettextCatalog.getString('End-to-end encrypted message', null, 'Message encryption status'),
         gettextCatalog.getString(
-            'End-to-end encrypted from verified ProtonMail User',
+            'End-to-end encrypted message from verified ProtonMail User',
             null,
             'Message encryption status'
         ),
         gettextCatalog.getString('Sender verification failed', null, 'Message encryption status')
     ];
     const pgpTypes = [
-        gettextCatalog.getString('PGP-encrypted', null, 'Message encryption status'),
-        gettextCatalog.getString('PGP-encrypted from verified sender', null, 'Message encryption status'),
+        gettextCatalog.getString('PGP-encrypted message', null, 'Message encryption status'),
+        gettextCatalog.getString('PGP-encrypted message from verified sender', null, 'Message encryption status'),
         gettextCatalog.getString('Sender verification failed', null, 'Message encryption status')
     ];
     const clearTypes = [
         gettextCatalog.getString('Stored with zero access encryption', null, 'Message encryption status'),
-        gettextCatalog.getString('PGP-signed from verified sender', null, 'Message encryption status'),
+        gettextCatalog.getString('PGP-signed message from verified sender', null, 'Message encryption status'),
         gettextCatalog.getString('Sender verification failed', null, 'Message encryption status')
     ];
     const encryptionTypes = [
         // 0 - None
-        [gettextCatalog.getString('Unencrypted', null, 'Message encryption status')],
+        [gettextCatalog.getString('Unencrypted message', null, 'Message encryption status')],
         // 1 - Internal
         pmTypes,
         // 2 - External
@@ -93,7 +93,7 @@ function messageModel(
             gettextCatalog.getString('Sender verification failed', null, 'Message encryption status')
         ],
         // 5 - Store enc
-        [gettextCatalog.getString('Encrypted', null, 'Message encryption status')],
+        [gettextCatalog.getString('Encrypted message', null, 'Message encryption status')],
         // 6 - EO
         pmTypes,
         // 7 - PGP/Inline
