@@ -135,7 +135,10 @@ function messageModel(
         }
 
         encryptionType() {
-            const encType = encryptionTypes[this.IsEncrypted];
+            const IsEncVal = this.IsEncrypted;
+            const IsSent = this.isSentByMe();
+            const encTypeVal = IsEncVal === ENCRYPTED_STATUS.INTERNAL && IsSent ? ENCRYPTED_STATUS.OUT_ENC : IsEncVal;
+            const encType = encryptionTypes[encTypeVal];
             return encType.length > this.Verified ? encType[this.Verified] : encType[0];
         }
 
