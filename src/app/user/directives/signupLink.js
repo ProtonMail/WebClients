@@ -3,7 +3,7 @@ function signupLink(gettextCatalog) {
     const getURL = (lang = '') => ['https://protonmail.com', lang, 'signup'].filter(Boolean).join('/');
 
     const getI18n = () => ({
-        forFree: gettextCatalog.getString('Sign up for free', null, 'Action'),
+        forFree: gettextCatalog.getString('Sign up', null, 'Action'),
         default: gettextCatalog.getString('Create Account', null, 'Action'),
         no: gettextCatalog.getString('No', null, 'Action')
     });
