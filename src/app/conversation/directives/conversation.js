@@ -279,7 +279,6 @@ function conversation(
              * Method call at the initialization of this directive
              */
             function initialization() {
-                let messages = [];
                 messagesCached = cache.queryMessagesCached($stateParams.id);
                 scope.trashed = _.some(messagesCached, ({ LabelIDs }) =>
                     _.includes(LabelIDs, MAILBOX_IDENTIFIERS.trash)
@@ -289,7 +288,7 @@ function conversation(
                     ({ LabelIDs }) => !_.includes(LabelIDs, MAILBOX_IDENTIFIERS.trash)
                 );
 
-                messages = $filter('filterMessages')(messagesCached, scope.showTrashed, scope.showNonTrashed);
+                const messages = $filter('filterMessages')(messagesCached, scope.showTrashed, scope.showNonTrashed);
 
                 if (messages.length > 0) {
                     // Reset status
@@ -370,6 +369,10 @@ function conversation(
                     for (let index = toRemove.length - 1; index >= 0; index--) {
                         // Remove message deleted
                         scope.messages.splice(toRemove[index].index, 1);
+                    }
+
+                    if (!scope.messages.length) {
+                        back();
                     }
                 } else {
                     back();

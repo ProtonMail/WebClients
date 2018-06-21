@@ -435,8 +435,8 @@ function ElementsController(
                     /**
                      * Redirect the user if there are no elements to display for the current state
                      */
-                    if ($scope.conversations.length === 0 && page > 0) {
-                        return $scope.back();
+                    if (!$scope.conversations.length && page > 0) {
+                        return $scope.back(false, page - 1);
                     }
 
                     if ($scope.conversations.length > 0) {
@@ -705,7 +705,7 @@ function ElementsController(
      * Or to the previous page.
      * @param refresh Boolean refresh the current state without it's id if true
      */
-    $scope.back = (refresh = false) => {
+    $scope.back = (refresh = false, page) => {
         const route = $state.$current.name.replace('.element', '');
 
         if (refresh) {
@@ -715,7 +715,7 @@ function ElementsController(
 
         $state.go(route, {
             id: null,
-            page: ~~$stateParams.page || 1,
+            page: page || ~~$stateParams.page || 1,
             label: $stateParams.label
         });
     };
