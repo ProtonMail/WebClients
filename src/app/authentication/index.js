@@ -20,6 +20,7 @@ import passwords from './services/passwords';
 import srp from './services/srp';
 import upgradePassword from './services/upgradePassword';
 import tryAgainModel from './factories/tryAgainModel';
+import activeSessionsModel from './factories/activeSessionsModel';
 
 export default angular
     .module('proton.authentication', ['proton.utils', 'proton.keys'])
@@ -51,4 +52,5 @@ export default angular
     .factory('passwords', passwords)
     .factory('srp', srp)
     .factory('tryAgainModel', tryAgainModel)
+    .factory('activeSessionsModel', activeSessionsModel)
     .factory('upgradePassword', upgradePassword).name;

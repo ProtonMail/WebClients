@@ -5,9 +5,11 @@ function SecurityController(
     $log,
     $rootScope,
     $scope,
+    activeSessionsModel,
     authApi,
     authentication,
     confirmModal,
+    dispatchers,
     downloadFile,
     gettextCatalog,
     loginPasswordModal,
@@ -20,6 +22,7 @@ function SecurityController(
     sharedSecretModal,
     twoFAIntroModal
 ) {
+    const { on, unsubscribe } = dispatchers();
     const I18N = {
         clear: {
             title: gettextCatalog.getString('Clear', null, 'Title'),
@@ -39,7 +42,8 @@ function SecurityController(
             disabled: gettextCatalog.getString('Two-factor authentication disabled', null, 'Disable 2FA')
         },
         revoke: {
-            success: gettextCatalog.getString('Other sessions revoked', null, 'Success'),
+            successOthers: gettextCatalog.getString('Other sessions revoked', null, 'Success'),
+            success: gettextCatalog.getString('Session revoked', null, 'Success'),
             error: gettextCatalog.getString('Error during revoke request', null, 'Error')
         },
         logging: {
@@ -51,6 +55,7 @@ function SecurityController(
 
     const { LogAuth, TwoFactor } = userSettingsModel.get();
 
+    $scope.activeSessions = activeSessionsModel.get();
     $scope.logs = [];
     $scope.logItemsPerPage = 20;
     $scope.doLogging = LogAuth;
@@ -239,7 +244,7 @@ function SecurityController(
     $scope.revokeOthers = () => {
         const promise = authApi
             .revokeOthers()
-            .then(() => notification.success(I18N.revoke.success))
+            .then(() => notification.success(I18N.revoke.successOthers))
             .catch(({ data = {} } = {}) => {
                 throw new Error(data.Error || I18N.revoke.error);
             });
@@ -277,5 +282,26 @@ function SecurityController(
 
         networkActivityTracker.track(promise);
     };
+
+    $scope.revoke = (uid) => {
+        const promise = activeSessionsModel
+            .revoke(uid)
+            .then(() => notification.success(I18N.revoke.success))
+            .catch(({ data = {} } = {}) => {
+                throw new Error(data.Error || I18N.revoke.error);
+            });
+
+        networkActivityTracker.track(promise);
+    };
+
+    on('activeSessions', (e, { type, data }) => {
+        if (type === 'update') {
+            $scope.activeSessions = data.sessions;
+        }
+    });
+
+    $scope.$on('$destroy', () => {
+        unsubscribe();
+    });
 }
 export default SecurityController;
