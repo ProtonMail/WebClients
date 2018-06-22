@@ -3,23 +3,23 @@ function activeSessionsModel($filter, authApi, authentication, dispatchers, gett
     const { on, dispatcher } = dispatchers(['activeSessions']);
     const I18N = {
         createTime(date) {
-            return gettextCatalog.getString('Created since {{ date }}', { date }, 'Tooltip display per session');
+            return gettextCatalog.getString('Created on {{ date }}', { date }, 'Tooltip display per session');
         }
     };
     const sessions = [];
     const get = () => sessions;
     const clear = () => (sessions.length = 0);
     const clients = {
-        Web: 'ProtonMail Web App',
-        iOS: 'ProtonMail iOS',
-        Android: 'ProtonMail Android',
+        Web: 'ProtonMail for web',
+        iOS: 'ProtonMail for iOS',
+        Android: 'ProtonMail for Android',
         ImportExport: 'ProtonMail Import-Export',
         Bridge: 'ProtonMail Bridge',
-        WebVPN: 'ProtonVPN Web App',
-        VPN: 'ProtonVPN',
-        macOSVPN: 'ProtonVPN macOS',
-        iOSVPN: 'ProtonVPN iOS',
-        AndroidVPN: 'ProtonVPN Android',
+        WebVPN: 'ProtonVPN for web',
+        VPN: 'ProtonVPN for Windows',
+        macOSVPN: 'ProtonVPN for macOS',
+        iOSVPN: 'ProtonVPN for iOS',
+        AndroidVPN: 'ProtonVPN for Android',
         Admin: 'Admin'
     };
     const format = (newSessions = []) => {
