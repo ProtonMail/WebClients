@@ -6,7 +6,6 @@ function SecurityController(
     $rootScope,
     $scope,
     activeSessionsModel,
-    authApi,
     authentication,
     confirmModal,
     dispatchers,
@@ -242,7 +241,7 @@ function SecurityController(
     };
 
     $scope.revokeOthers = () => {
-        const promise = authApi
+        const promise = activeSessionsModel
             .revokeOthers()
             .then(() => notification.success(I18N.revoke.successOthers))
             .catch(({ data = {} } = {}) => {
