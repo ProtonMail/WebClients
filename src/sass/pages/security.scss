@@ -20,7 +20,13 @@
 }
 
 .securtiyLogActions > .pm_button { margin: 0 0 0 5px }
-.actionSessions-table {
-    max-height: 150px;
+.activeSessions-table {
+    max-height: 200px;
     overflow-y: auto;
+}
+
+.pm_table.activeSessions-table table td {
+    vertical-align: middle;
+    line-height: 25px;
+    padding: 0.7rem 1.5rem;
 }

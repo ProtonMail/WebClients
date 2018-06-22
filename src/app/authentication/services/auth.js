@@ -118,6 +118,9 @@ function authentication(
         saveAuthData,
         savePassword,
         receivedCredentials,
+        getUID() {
+            return secureSessionStorage.getItem(OAUTH_KEY + ':UID');
+        },
         detectAuthenticationState() {
             const uid = secureSessionStorage.getItem(OAUTH_KEY + ':UID');
             const session = secureSessionStorage.getItem(OAUTH_KEY + ':SessionToken');
@@ -288,39 +291,37 @@ function authentication(
                 });
             } else {
                 delete $http.defaults.headers.common.Accept;
-                srp
-                    .performSRPRequest(
-                        'POST',
-                        '/auth',
-                        {
-                            Username: creds.Username,
-                            ClientID: CONFIG.clientID,
-                            ClientSecret: CONFIG.clientSecret
-                        },
-                        creds,
-                        initialInfoResponse
-                    )
-                    .then(
-                        (resp) => {
-                            // Upgrade users to the newest auth version
-                            if (resp.authVersion < passwords.currentAuthVersion) {
-                                srp.getPasswordParams(creds.Password).then((data) => {
-                                    upgradePassword.store(data);
-                                    deferred.resolve(resp);
-                                });
-                            } else {
+                srp.performSRPRequest(
+                    'POST',
+                    '/auth',
+                    {
+                        Username: creds.Username,
+                        ClientID: CONFIG.clientID,
+                        ClientSecret: CONFIG.clientSecret
+                    },
+                    creds,
+                    initialInfoResponse
+                ).then(
+                    (resp) => {
+                        // Upgrade users to the newest auth version
+                        if (resp.authVersion < passwords.currentAuthVersion) {
+                            srp.getPasswordParams(creds.Password).then((data) => {
+                                upgradePassword.store(data);
                                 deferred.resolve(resp);
-                            }
-                            // this is a trick! we dont know if we should go to unlock or step2 because we dont have user's data yet. so we redirect to the login page (current page), and this is determined in the resolve: promise on that state in the route. this is because we dont want to do another fetch info here.
-                        },
-                        (error) => {
-                            // TODO: This is almost certainly broken, not sure it needs to work though?
-                            console.error(error);
-                            deferred.reject({
-                                message: error.error_description
                             });
+                        } else {
+                            deferred.resolve(resp);
                         }
-                    );
+                        // this is a trick! we dont know if we should go to unlock or step2 because we dont have user's data yet. so we redirect to the login page (current page), and this is determined in the resolve: promise on that state in the route. this is because we dont want to do another fetch info here.
+                    },
+                    (error) => {
+                        // TODO: This is almost certainly broken, not sure it needs to work though?
+                        console.error(error);
+                        deferred.reject({
+                            message: error.error_description
+                        });
+                    }
+                );
             }
 
             return deferred.promise;
