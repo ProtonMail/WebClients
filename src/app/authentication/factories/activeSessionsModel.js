@@ -4,6 +4,19 @@ function activeSessionsModel(authApi, authentication, dispatchers, memberModel, 
     const sessions = [];
     const get = () => sessions;
     const clear = () => (sessions.length = 0);
+    const clients = {
+        Web: 'ProtonMail Web App',
+        iOS: 'ProtonMail iOS',
+        Android: 'ProtonMail Android',
+        ImportExport: 'ProtonMail Import-Export',
+        Bridge: 'ProtonMail Bridge',
+        WebVPN: 'ProtonVPN Web App',
+        VPN: 'ProtonVPN',
+        macOSVPN: 'ProtonVPN macOS',
+        iOSVPN: 'ProtonVPN iOS',
+        AndroidVPN: 'ProtonVPN Android',
+        Admin: 'Admin'
+    };
     const format = (newSessions = []) => {
         const { isAdmin } = userType();
         const members = memberModel.get().reduce((acc, member) => {
@@ -12,6 +25,7 @@ function activeSessionsModel(authApi, authentication, dispatchers, memberModel, 
         }, {});
 
         return newSessions.map((session) => {
+            session.client = clients[session.ClientID];
             session.username = isAdmin ? members[session.MemberID].Name : authentication.user.Name;
             return session;
         });

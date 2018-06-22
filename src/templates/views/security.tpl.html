@@ -34,7 +34,7 @@
                     <table class="bordered">
                         <thead>
                             <tr>
-                                <th title-translate="Which client the session belongs to" translate-context="Title in the active sessions table" translate>Client ID</th>
+                                <th title-translate="Which client the session belongs to" translate-context="Title in the active sessions table" translate>Client</th>
                                 <th title-translate="When the session was created" translate-context="Title in the active sessions table" translate>Create time</th>
                                 <th translate-context="Title in the active sessions table" translate>User</th>
                                 <th translate-context="Title in the active sessions table" translate>Actions</th>
@@ -43,7 +43,7 @@
                         <tbody>
                             <tr ng-repeat="session in activeSessions track by $id(session)">
                                 <td>
-                                    <span class="pm_badge default">{{ ::session.ClientID }}</span>
+                                    <span class="pm_badge default">{{ ::session.client }}</span>
                                 </td>
                                 <td>{{ ::session.CreateTime | readableTime }}</td>
                                 <td>
