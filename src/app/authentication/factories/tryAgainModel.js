@@ -1,3 +1,4 @@
+/* @ngInject */
 function tryAgainModel() {
     const CACHE = {};
     const remove = (url) => delete CACHE[url];

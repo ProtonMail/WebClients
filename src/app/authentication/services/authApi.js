@@ -47,11 +47,26 @@ function authApi($http, url) {
             return $http.delete(requestURL());
         },
         /**
+         * Get active sessions
+         * @return {Promise}
+         */
+        sessions() {
+            return $http.get(requestURL('sessions'));
+        },
+        /**
+         * Revoke a session by UID, locked
+         * @param  {String} uid Token
+         * @return {Promise}
+         */
+        revokeSession(uid) {
+            return $http.delete(requestURL('sessions', uid));
+        },
+        /**
          * Revoke all other access tokens, locked
          * @return {Promise}
          */
         revokeOthers() {
-            return $http.delete(requestURL('others'));
+            return $http.delete(requestURL('sessions'));
         }
     };
 }

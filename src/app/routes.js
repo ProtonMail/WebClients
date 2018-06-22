@@ -674,6 +674,19 @@ export default angular
                     }
                 },
                 resolve: {
+                    members(user, memberModel, networkActivityTracker) {
+                        if (user.Role === PAID_ADMIN_ROLE) {
+                            const promise = memberModel.fetch();
+                            networkActivityTracker.track(promise);
+                            return promise;
+                        }
+                        return Promise.resolve();
+                    },
+                    sessions(members, activeSessionsModel, networkActivityTracker) {
+                        const promise = activeSessionsModel.fetch();
+                        networkActivityTracker.track(promise);
+                        return promise;
+                    },
                     methods(user, paymentModel, networkActivityTracker) {
                         return networkActivityTracker.track(paymentModel.getMethods(null, user));
                     },
