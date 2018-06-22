@@ -27,30 +27,22 @@
                         translate-context="Title">Session Management</h2>
                 </header-block>
                 <p>
-                    <button type="button" class="pm_button" ng-click="revokeOthers()" translate-context="Action" translate>Log out all other sessions</button>
+                    <button type="button" class="pm_button" ng-click="revokeOthers()" translate-context="Action" translate>Revoke all other sessions</button>
                     <a href="https://protonmail.com/support/knowledge-base/log-out-all-other-sessions/" target="_blank" class="pm_button link" translate translate-context="Link">Learn more</a>
                 </p>
-                <div class="pm_table actionSessions-table">
+                <div class="pm_table activeSessions-table">
                     <table class="bordered">
-                        <thead>
-                            <tr>
-                                <th title-translate="Which client the session belongs to" translate-context="Title in the active sessions table" translate>Client</th>
-                                <th title-translate="When the session was created" translate-context="Title in the active sessions table" translate>Create time</th>
-                                <th translate-context="Title in the active sessions table" translate>User</th>
-                                <th translate-context="Title in the active sessions table" translate>Actions</th>
-                            </tr>
-                        </thead>
                         <tbody>
                             <tr ng-repeat="session in activeSessions track by $id(session)">
                                 <td>
-                                    <span class="pm_badge default">{{ ::session.client }}</span>
-                                </td>
-                                <td>{{ ::session.CreateTime | readableTime }}</td>
-                                <td>
+                                    <strong>{{ ::session.client }}</strong>
+                                    <br />
                                     <code>{{ ::session.username }}</code>
+                                    <time>{{ ::session.createTime }}</time>
                                 </td>
-                                <td>
-                                    <button ng-if="session.Revocable" ng-click="revoke(session.UID)" type="button" class="pm_button link" translate-context="Action in the active sessions table" translate>Revoke</button>
+                                <td class="text-right">
+                                    <span ng-if="session.isCurrentSession" class="pm_badge primary" translate-context="Badge in the active sessions table" translate>Current session</span>
+                                    <button ng-if="session.Revocable && !session.isCurrentSession" ng-click="revoke(session.UID)" type="button" class="pm_button link" translate-context="Action in the active sessions table" translate>Revoke</button>
                                 </td>
                             </tr>
                         </tbody>
