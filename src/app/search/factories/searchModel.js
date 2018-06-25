@@ -3,32 +3,34 @@ import _ from 'lodash';
 import { MAILBOX_IDENTIFIERS } from '../../constants';
 
 /* @ngInject */
-function searchModel(addressesModel, authentication, gettextCatalog, labelsModel) {
-    const FOLDER_TRANSLATIONS = {
-        inbox: gettextCatalog.getString('Inbox', null, 'Option for search panel'),
-        spam: gettextCatalog.getString('Spam', null, 'Option for search panel'),
-        drafts: gettextCatalog.getString('Drafts', null, 'Option for search panel'),
-        starred: gettextCatalog.getString('Starred', null, 'Option for search panel'),
-        allDrafts: gettextCatalog.getString('Drafts', null, 'Option for search panel'),
-        sent: gettextCatalog.getString('Sent', null, 'Option for search panel'),
-        allSent: gettextCatalog.getString('Sent', null, 'Option for search panel'),
-        trash: gettextCatalog.getString('Trash', null, 'Option for search panel'),
-        archive: gettextCatalog.getString('Archive', null, 'Option for search panel'),
-        allmail: gettextCatalog.getString('All Mail', null, 'Option for search panel')
+function searchModel(addressesModel, gettextCatalog, labelsModel) {
+    const I18N = {
+        ALL: gettextCatalog.getString('All', null, 'Option for search panel'),
+        FOLDER: {
+            inbox: gettextCatalog.getString('Inbox', null, 'Option for search panel'),
+            spam: gettextCatalog.getString('Spam', null, 'Option for search panel'),
+            drafts: gettextCatalog.getString('Drafts', null, 'Option for search panel'),
+            starred: gettextCatalog.getString('Starred', null, 'Option for search panel'),
+            allDrafts: gettextCatalog.getString('Drafts', null, 'Option for search panel'),
+            sent: gettextCatalog.getString('Sent', null, 'Option for search panel'),
+            allSent: gettextCatalog.getString('Sent', null, 'Option for search panel'),
+            trash: gettextCatalog.getString('Trash', null, 'Option for search panel'),
+            archive: gettextCatalog.getString('Archive', null, 'Option for search panel'),
+            allmail: gettextCatalog.getString('All Mail', null, 'Option for search panel')
+        }
     };
-    const LIST_LOCATIONS = _.reduce(
-        Object.keys(MAILBOX_IDENTIFIERS),
+    const LIST_LOCATIONS = Object.keys(MAILBOX_IDENTIFIERS).reduce(
         (acc, label) => {
             if (label !== 'search' && label !== 'label') {
                 const value = MAILBOX_IDENTIFIERS[label];
-                acc.push({ value, label: FOLDER_TRANSLATIONS[label], group: 'folder' });
+                acc.push({ value, label: I18N.FOLDER[label], group: 'folder' });
             }
             return acc;
         },
         [
             {
                 value: -1,
-                label: gettextCatalog.getString('All', null),
+                label: I18N.ALL,
                 group: 'default'
             }
         ]
@@ -46,7 +48,7 @@ function searchModel(addressesModel, authentication, gettextCatalog, labelsModel
     const getAddresses = () => {
         return [
             {
-                Email: gettextCatalog.getString('All', null),
+                Email: I18N.ALL,
                 ID: undefined,
                 Order: 0,
                 Receive: 1,
@@ -119,19 +121,17 @@ function searchModel(addressesModel, authentication, gettextCatalog, labelsModel
             end: extractDate(model.end)
         });
 
-        return _.extend(
-            resetParameters(),
-            {
-                to: model.to,
-                from: model.from,
-                keyword: model.keyword,
-                wildcard: isNaN(wildcard) ? undefined : wildcard,
-                attachments: isNaN(attachments) ? undefined : attachments,
-                address: (model.address || {}).ID,
-                label: model.label || getLabel(model.folder)
-            },
-            date
-        );
+        return {
+            ...resetParameters(),
+            to: model.to,
+            from: model.from,
+            keyword: model.keyword,
+            wildcard: isNaN(wildcard) ? undefined : wildcard,
+            attachments: isNaN(attachments) ? undefined : attachments,
+            address: (model.address || {}).ID,
+            label: model.label || getLabel(model.folder),
+            ...date
+        };
     };
 
     return { getFolderList, getAddresses, resetParameters, build };

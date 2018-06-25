@@ -6,51 +6,48 @@ function searchValue($stateParams) {
     const formatDate = (value) => moment.unix(value).format('YYYYMMDD');
 
     /**
+     * Convert search string into an array [key,value,key,value etc.]
+     * @param  {String} input
+     * @return {Array}
+     */
+    const getList = (input = '') => {
+        // must start with the keyword or having a space as prefix
+        const list = input.split(/(?: |^)(keyword|from|to|in|begin|end):/g);
+        !list[0] && list.shift();
+        return list;
+    };
+
+    /**
      * Return parameters from String
      * @return {Object}
      */
     const extractParameters = (value = '', folders = []) => {
-        const parameters = {};
-        const separators = [
-            { value: 'keyword:', key: 'keyword' },
-            { value: 'from:', key: 'from' },
-            { value: 'to:', key: 'to' },
-            { value: 'in:', key: 'label' },
-            { value: 'begin:', key: 'begin' },
-            { value: 'end:', key: 'end' }
-        ];
+        /*
+            Build object based on the previous key and the current value
+            ex: keyword: from:robert@pm.me => { from: robert@pm.me }
+         */
+        const config = getList(value).reduce((acc, value, i, arr) => {
+            const modulo = i % 2; // [key, value, key, value...]
+            const prevKey = arr[i - 1];
+            const key = prevKey === 'in' ? 'label' : prevKey;
+            modulo === 1 && value && (acc[key] = value);
+            return acc;
+        }, {});
 
-        _.each(separators, (separator) => {
-            const tmp = value.split(separator.value);
-
-            _.each(separators, (sep) => {
-                if (tmp[1] && tmp[1].indexOf(sep.value) !== -1) {
-                    tmp[1] = tmp[1].split(sep.value)[0];
-                }
-            });
-
-            if (tmp[1]) {
-                const tmp1 = tmp[1].trim();
-
-                if (separator.key === 'label') {
-                    const folder = _.find(folders, { label: tmp1 });
-
-                    if (angular.isDefined(folder)) {
-                        parameters.label = folder.value;
-                    }
-                } else if (separator.key === 'begin' || separator.key === 'end') {
-                    parameters[separator.key] = toUnixTimestamp(tmp1);
-                } else {
-                    parameters[separator.key] = tmp1;
-                }
-            }
-        });
-
-        if (Object.keys(parameters).length === 0 && value.length > 0) {
-            parameters.keyword = value;
+        if (config.label) {
+            const folder = _.find(folders, { label: config.label });
+            folder && (config.label = folder.value);
+            !folder && delete config.label;
         }
 
-        return parameters;
+        config.end && (config.end = toUnixTimestamp(config.end));
+        config.begin && (config.begin = toUnixTimestamp(config.begin));
+
+        if (!Object.keys(config).length && value.length > 0) {
+            config.keyword = value;
+        }
+
+        return config;
     };
 
     /**
