@@ -38,7 +38,7 @@
                                     <strong>{{ ::session.client }}</strong>
                                     <br />
                                     <code>{{ ::session.username }}</code>
-                                    <time>{{ ::session.createTime }}</time>
+                                    <time pt-tooltip="{{ ::session.CreateTime * 1000 | date : 'medium' }}">{{ ::session.createTime }}</time>
                                 </td>
                                 <td class="text-right">
                                     <span ng-if="session.isCurrentSession" class="pm_badge primary" translate-context="Badge in the active sessions table" translate>Current session</span>
@@ -48,6 +48,7 @@
                         </tbody>
                     </table>
                 </div>
+                <p class="help" translate-context="Info about active sessions" translate>Unless you explicitly logout or change your password, sessions can last for up to 6 months. Sessions expire after 2 weeks of inactivity.</p>
             </section>
         </div>
         <div class="row">

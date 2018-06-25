@@ -35,6 +35,7 @@ function activeSessionsModel($filter, authApi, authentication, dispatchers, gett
             session.client = clients[session.ClientID];
             session.createTime = I18N.createTime($filter('readableTime')(session.CreateTime));
             session.username = isAdmin ? members[session.MemberID].Name : authentication.user.Name;
+
             return session;
         });
     };
