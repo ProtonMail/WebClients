@@ -1,4 +1,4 @@
-import { isSafari, isIE11, isEdge } from '../../../helpers/browser';
+import { isIE11, isEdge } from '../../../helpers/browser';
 
 /* @ngInject */
 function pasteImage(attachmentFileFormat, attachmentModel, squireExecAction, gettextCatalog) {
@@ -39,31 +39,24 @@ function pasteImage(attachmentFileFormat, attachmentModel, squireExecAction, get
             return;
         }
 
-        const isSafariBrowser = isSafari();
         const file = getFile(raw);
 
-        /*
-            Safari paste image as tiff which is not supported by others
-            The lib to convert it to another format is libtiff (seikichi/tiff.js), we won't use it as it only for safari.
-            Loading 1.5Mb is not worth it.
-         */
-        file.inline = +!isSafariBrowser;
+        file.inline = 1;
         file.upload = {
             uuid: `${Math.random()
                 .toString(32)
                 .slice(2, 12)}-${Date.now()}`
         };
 
-        const { url, cid } = (await attachmentModel.create(file, message, !isSafariBrowser)) || {};
+        const { url, cid } = (await attachmentModel.create(file, message)) || {};
 
-        !isSafariBrowser &&
-            squireExecAction.insertImage(message, {
-                url,
-                opt: {
-                    'data-embedded-img': cid,
-                    alt: file.title
-                }
-            });
+        squireExecAction.insertImage(message, {
+            url,
+            opt: {
+                'data-embedded-img': cid,
+                alt: file.title
+            }
+        });
     };
 
     return (message, type) => (e) => {
