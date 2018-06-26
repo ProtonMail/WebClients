@@ -1,5 +1,6 @@
 import { DEFAULT_SQUIRE_VALUE } from '../../constants';
 import { blobURLtoBlob } from '../../../helpers/fileHelper';
+import { isIE11 } from '../../../helpers/browser';
 
 const { IFRAME_CLASS } = DEFAULT_SQUIRE_VALUE;
 
@@ -182,15 +183,25 @@ function squireEditor(dispatchers, editorModel, sanitize) {
         };
 
         /*
-            Extend default insert for paste mode. We need this for IE and Safari.
-            We want to create an attachment else, safari is broken
+            Extend default insert for paste mode. We need this for IE.
+            We want to create an attachment
          */
+        const isWeirdBrowsers = isIE11();
         const ghost = editor.insertHTML;
         editor.insertHTML = async (html, isPaste) => {
             if (isPaste) {
-                const $img = angular.element(html);
+                const $img = angular.element(html).filter('IMG');
 
                 if ($img.length === 1 && $img.is('IMG')) {
+                    /*
+                        Interceptor for Chrome/FF/Safari etc. as they work as we want.
+                        we need this when you copy an image from an URL -> (option copy image) and paste it here.
+                        We already deal with it via another way (paste event)
+                     */
+                    if (!isWeirdBrowsers) {
+                        return;
+                    }
+
                     const src = $img.attr('src');
                     const file = await blobURLtoBlob(src);
                     return editor.fireEvent('paste.image', { file });
