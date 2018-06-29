@@ -41,6 +41,8 @@ function signupPayForm(
                     payment: {
                         Amount: scope.giftModel.AmountDue || scope.plan.Amount,
                         Currency: scope.plan.Currency,
+                        GiftCode: scope.giftCode,
+                        Credit: scope.giftModel.Credit,
                         method: { Type: 'paypal', Details }
                     }
                 });
