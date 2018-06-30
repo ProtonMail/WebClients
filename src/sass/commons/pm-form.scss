@@ -367,6 +367,12 @@
             border-bottom-left-radius: 0;
         }
     }
+
+    //This field exists solely so that password managers does not get confused.
+    .pm_ghost_field{
+        opacity: 0;
+        max-height: 0px;
+    }
 }
 
 // ng-submitted is not always with .pm-form, so need to lift it out.
