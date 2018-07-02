@@ -29,6 +29,10 @@
         color: $pgp;
     }
 
+    svg.big-encryption-icon {
+        height: 1.1em;
+    }
+
     svg.pgp-encryption-icon {
         fill: $pgp;
         // create more contrast on the checkmark
