@@ -57,7 +57,7 @@ function messageModel(
     const pmTypes = [
         gettextCatalog.getString('End-to-end encrypted message', null, 'Message encryption status'),
         gettextCatalog.getString(
-            'End-to-end encrypted message from verified ProtonMail User',
+            'End-to-end encrypted message from verified address',
             null,
             'Message encryption status'
         ),
@@ -65,12 +65,12 @@ function messageModel(
     ];
     const pgpTypes = [
         gettextCatalog.getString('PGP-encrypted message', null, 'Message encryption status'),
-        gettextCatalog.getString('PGP-encrypted message from verified sender', null, 'Message encryption status'),
+        gettextCatalog.getString('PGP-encrypted message from verified address', null, 'Message encryption status'),
         gettextCatalog.getString('Sender verification failed', null, 'Message encryption status')
     ];
     const clearTypes = [
         gettextCatalog.getString('Stored with zero access encryption', null, 'Message encryption status'),
-        gettextCatalog.getString('PGP-signed message from verified sender', null, 'Message encryption status'),
+        gettextCatalog.getString('PGP-signed message from verified address', null, 'Message encryption status'),
         gettextCatalog.getString('Sender verification failed', null, 'Message encryption status')
     ];
     const encryptionTypes = [
