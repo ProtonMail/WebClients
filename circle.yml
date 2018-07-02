@@ -2,14 +2,15 @@ version: 2
 jobs:
    build:
      docker:
-       - image: circleci/node:9.5.0-stretch-browsers
+       - image: circleci/node:10.3.0-stretch-browsers
      steps:
        - checkout
        - restore_cache:
-           key: npm-deps-{{ checksum "package.json" }}
+           key: npm-deps-{{ checksum "package.json" }}-{{ checksum "tasks/lazyInstallVendor" }}
        - run: npm i
+       - run: ./tasks/lazyInstallVendor test
        - save_cache:
-           key: npm-deps-{{ checksum "package.json" }}
+           key: npm-deps-{{ checksum "package.json" }}-{{ checksum "tasks/lazyInstallVendor" }}
            paths:
              - node_modules
        - run: npm run config

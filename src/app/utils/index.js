@@ -26,7 +26,6 @@ import utcReadableTime from './filters/utcReadableTime';
 import eventManager from './services/eventManager';
 import hotkeys from './services/hotkeys';
 import openStatePostMessage from './services/openStatePostMessage';
-import strUtils from './services/strUtils';
 import firstLoadState from './services/firstLoadState';
 import lazyLoader from './services/lazyLoader';
 import sanitize from './services/sanitize';
@@ -67,5 +66,4 @@ export default angular
     .factory('eventManager', eventManager)
     .factory('hotkeys', hotkeys)
     .factory('openStatePostMessage', openStatePostMessage)
-    .factory('strUtils', strUtils)
     .factory('sanitize', sanitize).name;

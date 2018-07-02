@@ -1,4 +1,4 @@
-import { removeEmailAlias, toUnsignedString, unescapeCSSEncoding } from '../../../src/helpers/string';
+import { removeEmailAlias, toUnsignedString, unescapeCSSEncoding, ucFirst } from '../../../src/helpers/string';
 
 const EMAILS = {
     'dew@foo.bar': 'dew@foo.bar',
@@ -77,6 +77,34 @@ describe('unescapeCSSEncoding', () => {
     it('should unescape all test data correctly', () => {
         Object.keys(ESCAPE_MAP).forEach((style) => {
             expect(unescapeCSSEncoding(style)).toBe(ESCAPE_MAP[style]);
+        });
+    });
+});
+
+describe('ucFirst', () => {
+    [
+        {
+            name: 'no value',
+            output: ''
+        },
+        {
+            name: 'empty string',
+            input: '',
+            output: ''
+        },
+        {
+            name: 'simple string',
+            input: 'jeanne',
+            output: 'Jeanne'
+        },
+        {
+            name: 'already uppercase',
+            input: 'JEANNE',
+            output: 'JEANNE'
+        }
+    ].forEach(({ name, input, output }) => {
+        it(`should convert the string when ${name}`, () => {
+            expect(ucFirst(input)).toBe(output);
         });
     });
 });

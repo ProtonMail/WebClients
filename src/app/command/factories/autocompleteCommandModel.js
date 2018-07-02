@@ -1,9 +1,10 @@
 import { flow, filter, take } from 'lodash/fp';
 
 import { AWESOMEPLETE_MAX_ITEMS } from '../../constants';
+import { ucFirst } from '../../../helpers/string';
 
 /* @ngInject */
-function autocompleteCommandModel(hotkeys, labelsModel, strUtils, $rootScope, gettextCatalog, $stateParams) {
+function autocompleteCommandModel(hotkeys, labelsModel, $rootScope, gettextCatalog, $stateParams) {
     let scopedList = [];
     const I18N = {
         'Add folder': gettextCatalog.getString('Add folder', null, 'Command palette action'),
@@ -27,7 +28,7 @@ function autocompleteCommandModel(hotkeys, labelsModel, strUtils, $rootScope, ge
      */
     function toggleAction(key, value) {
         return {
-            label: I18N[`${strUtils.ucFirst(key)} ${value}`],
+            label: I18N[`${ucFirst(key)} ${value}`],
             value: `${key}.${value}`,
             key: 'action'
         };
