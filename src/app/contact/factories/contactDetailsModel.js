@@ -183,21 +183,21 @@ function contactDetailsModel(contactTransformLabel, contactSchema, gettextCatalo
             switch (key) {
                 case 'Emails':
                     child.forEach((item, index) => {
-                        if (!item.value) {
+                        const { value: email = '', settings = {}, type } = item;
+                        if (!email) {
                             return;
                         }
                         const vCardArgs = getParams(item, child.length > 1 && index + 1);
-                        const emailProperty = new vCard.Property(item.type, escapeValue(item.value), vCardArgs);
+                        const emailProperty = new vCard.Property(type, escapeValue(email), vCardArgs);
                         emailProperty.group = `item${index + 1}`;
                         params.vCard.addProperty(emailProperty);
 
-                        const email = item.value;
-                        const { value: settingsEmail = '' } = item.settings.Email || {};
-                        const settings =
-                            normalizeEmail(settingsEmail) === normalizeEmail(email) ? { ...item.settings } : {};
-                        delete settings.Email;
+                        const { value: settingsEmail = '' } = settings.Email || {};
+                        const settingsToSave =
+                            normalizeEmail(settingsEmail) === normalizeEmail(email) ? { ...settings } : {};
+                        delete settingsToSave.Email;
 
-                        _.each(settings, (setting) => {
+                        _.each(settingsToSave, (setting) => {
                             setting.forEach((entry, index) => {
                                 const vCardArgs = getParams(entry, setting.length > 1 && index + 1);
                                 delete vCardArgs.type;
