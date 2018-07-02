@@ -466,7 +466,7 @@ msgctxt "Action"
 msgid "Addresses"
 msgstr ""
 
-#: ./src/templates/views/security.tpl.html:54
+#: ./src/templates/views/security.tpl.html:74
 msgctxt "Action"
 msgid "Advanced"
 msgstr ""
@@ -533,7 +533,7 @@ msgctxt "Action"
 msgid "Back to protonmail.com"
 msgstr ""
 
-#: ./src/templates/views/security.tpl.html:53
+#: ./src/templates/views/security.tpl.html:73
 msgctxt "Action"
 msgid "Basic"
 msgstr ""
@@ -826,8 +826,8 @@ msgid "Deselect all"
 msgstr ""
 
 #: ./src/app/address/directives/addressBtnActions.js:6
-#: ./src/app/settings/controllers/security.js:28
-#: ./src/app/settings/controllers/security.js:48
+#: ./src/app/settings/controllers/security.js:30
+#: ./src/app/settings/controllers/security.js:51
 msgctxt "Action"
 msgid "Disable"
 msgstr ""
@@ -838,7 +838,7 @@ msgid "Disable Two-Factor Authentication"
 msgstr ""
 
 #. notification settings option
-#: ./src/app/settings/controllers/security.js:29
+#: ./src/app/settings/controllers/security.js:31
 #: ./src/templates/views/account.tpl.html:286
 #: ./src/templates/views/account.tpl.html:62
 #: ./src/templates/views/account.tpl.html:86
@@ -879,7 +879,7 @@ msgstr ""
 #: ./src/templates/modals/twofactor/recoveryCode.tpl.html:28
 #: ./src/templates/views/payments.tpl.html:90
 #: ./src/templates/views/pgp.tpl.html:9
-#: ./src/templates/views/security.tpl.html:46
+#: ./src/templates/views/security.tpl.html:66
 msgctxt "Action"
 msgid "Download"
 msgstr ""
@@ -1120,11 +1120,6 @@ msgstr ""
 #: ./src/templates/ui/header/headerNoAuth.tpl.html:32
 msgctxt "Action"
 msgid "Log out"
-msgstr ""
-
-#: ./src/templates/views/security.tpl.html:30
-msgctxt "Action"
-msgid "Log out all other sessions"
 msgstr ""
 
 #: ./src/app/members/directives/memberEditBtn.js:8
@@ -1440,6 +1435,11 @@ msgctxt "Action"
 msgid "Revoke Admin"
 msgstr ""
 
+#: ./src/templates/views/security.tpl.html:30
+msgctxt "Action"
+msgid "Revoke all other sessions"
+msgstr ""
+
 #. Save button for updating default identity on account page
 #. contact details
 #: ./src/templates/contact/contactDetails.tpl.html:6
@@ -1584,7 +1584,7 @@ msgstr ""
 
 #: ./src/app/user/directives/signupLink.js:6
 msgctxt "Action"
-msgid "Sign up for free"
+msgid "Sign up"
 msgstr ""
 
 #: ./src/templates/elements/advancedFilterElement.tpl.html:62
@@ -1781,7 +1781,7 @@ msgctxt "Action"
 msgid "What is this?"
 msgstr ""
 
-#: ./src/templates/views/security.tpl.html:45
+#: ./src/templates/views/security.tpl.html:65
 msgctxt "Action"
 msgid "Wipe"
 msgstr ""
@@ -1845,6 +1845,11 @@ msgstr ""
 #: ./src/app/contact/directives/contactEncrypted.js:6
 msgctxt "Action in contact details"
 msgid "Show custom fields"
+msgstr ""
+
+#: ./src/templates/views/security.tpl.html:45
+msgctxt "Action in the active sessions table"
+msgid "Revoke"
 msgstr ""
 
 #: ./src/templates/notifications/retry.tpl.html:8
@@ -2010,6 +2015,11 @@ msgctxt "Back button in the contact sidebar"
 msgid "Back to mail"
 msgstr ""
 
+#: ./src/templates/views/security.tpl.html:44
+msgctxt "Badge in the active sessions table"
+msgid "Current session"
+msgstr ""
+
 #. Make sure this string is short please
 #: ./src/templates/dashboard/totalRows.tpl.html:33
 msgctxt "Billing cycle for the dashboard"
@@ -2133,22 +2143,22 @@ msgctxt "Button to select plan on the dashboard"
 msgid "Upgrade to Visionary"
 msgstr ""
 
-#: ./src/app/settings/controllers/security.js:30
+#: ./src/app/settings/controllers/security.js:32
 msgctxt "Clear user's logs (security)"
 msgid "Logs cleared"
 msgstr ""
 
-#: ./src/app/command/factories/autocompleteCommandModel.js:9
+#: ./src/app/command/factories/autocompleteCommandModel.js:10
 msgctxt "Command palette action"
 msgid "Add folder"
 msgstr ""
 
-#: ./src/app/command/factories/autocompleteCommandModel.js:10
+#: ./src/app/command/factories/autocompleteCommandModel.js:11
 msgctxt "Command palette action"
 msgid "Add label"
 msgstr ""
 
-#: ./src/app/command/factories/autocompleteCommandModel.js:11
+#: ./src/app/command/factories/autocompleteCommandModel.js:12
 msgctxt "Command palette action"
 msgid "Remove label"
 msgstr ""
@@ -2747,8 +2757,8 @@ msgctxt "Dashboard, custom theme input"
 msgid "Paste your CSS code here (limited to 200,000 characters)"
 msgstr ""
 
-#: ./src/app/settings/controllers/security.js:27
-#: ./src/app/settings/controllers/security.js:46
+#: ./src/app/settings/controllers/security.js:29
+#: ./src/app/settings/controllers/security.js:49
 msgctxt "Dashboard/security"
 msgid "Logging preference updated"
 msgstr ""
@@ -2977,7 +2987,7 @@ msgctxt "Delete all contacts button in the sidebar"
 msgid "Delete All"
 msgstr ""
 
-#: ./src/app/settings/controllers/security.js:39
+#: ./src/app/settings/controllers/security.js:41
 msgctxt "Disable 2FA"
 msgid "Two-factor authentication disabled"
 msgstr ""
@@ -3241,7 +3251,7 @@ msgctxt "Error"
 msgid "Error during query addresses"
 msgstr ""
 
-#: ./src/app/settings/controllers/security.js:43
+#: ./src/app/settings/controllers/security.js:46
 msgctxt "Error"
 msgid "Error during revoke request"
 msgstr ""
@@ -3251,7 +3261,7 @@ msgctxt "Error"
 msgid "Error during the encryption"
 msgstr ""
 
-#: ./src/app/settings/controllers/security.js:47
+#: ./src/app/settings/controllers/security.js:50
 msgctxt "Error"
 msgid "Error during the initialization of logs"
 msgstr ""
@@ -4728,7 +4738,7 @@ msgctxt "Info"
 msgid "Annually"
 msgstr ""
 
-#: ./src/app/settings/controllers/security.js:26
+#: ./src/app/settings/controllers/security.js:28
 msgctxt "Info"
 msgid "Are you sure you want to clear all your logs?"
 msgstr ""
@@ -4776,7 +4786,7 @@ msgctxt "Info"
 msgid "Are you sure you want to disable this address?"
 msgstr ""
 
-#: ./src/app/settings/controllers/security.js:34
+#: ./src/app/settings/controllers/security.js:36
 msgctxt "Info"
 msgid "Are you sure you want to disable two-factor authentication?"
 msgstr ""
@@ -5054,7 +5064,7 @@ msgctxt "Info"
 msgid "Enter the Organization Password to restore administrator privileges. <a href=\"https://protonmail.com/support/knowledge-base/restore-administrator/\" target=\"_blank\">Learn more</a>"
 msgstr ""
 
-#: ./src/templates/views/security.tpl.html:66
+#: ./src/templates/views/security.tpl.html:86
 msgctxt "Info"
 msgid "Fetching logs..."
 msgstr ""
@@ -5216,12 +5226,12 @@ msgid "Location"
 msgstr ""
 
 #. authentication log record
-#: ./src/templates/views/security.tpl.html:81
+#: ./src/templates/views/security.tpl.html:101
 msgctxt "Info"
 msgid "Login failure (password)"
 msgstr ""
 
-#: ./src/templates/views/security.tpl.html:61
+#: ./src/templates/views/security.tpl.html:81
 msgctxt "Info"
 msgid "Logs include authentication attempts for all Proton services that use your ProtonMail credentials."
 msgstr ""
@@ -5268,7 +5278,7 @@ msgctxt "Info"
 msgid "No labels"
 msgstr ""
 
-#: ./src/templates/views/security.tpl.html:64
+#: ./src/templates/views/security.tpl.html:84
 msgctxt "Info"
 msgid "No logs yet"
 msgstr ""
@@ -5896,7 +5906,7 @@ msgctxt "Info"
 msgid "You can decrypt the file with a program such as {{link}} if you have the corresponding private key."
 msgstr ""
 
-#: ./src/templates/views/security.tpl.html:60
+#: ./src/templates/views/security.tpl.html:80
 msgctxt "Info"
 msgid "You can enable authentication logging to see when your account is accessed, and from which IP. We will record the IP address that accesses the account and the time, as well as failed attempts."
 msgstr ""
@@ -6099,6 +6109,11 @@ msgstr[1] ""
 #: ./src/app/address/factories/reactivateKeys.js:11
 msgctxt "Info"
 msgid "{{n}} keys reactivated"
+msgstr ""
+
+#: ./src/templates/views/security.tpl.html:51
+msgctxt "Info about active sessions"
+msgid "Unless you explicitly logout or change your password, sessions can last for up to 6 months. Sessions expire after 2 weeks of inactivity."
 msgstr ""
 
 #: ./src/app/composer/directives/composerTime.js:5
@@ -7042,32 +7057,32 @@ msgstr ""
 
 #: ./src/app/message/factories/messageModel.js:96
 msgctxt "Message encryption status"
-msgid "Encrypted"
+msgid "Encrypted message"
 msgstr ""
 
 #: ./src/app/message/factories/messageModel.js:58
 msgctxt "Message encryption status"
-msgid "End-to-end encrypted"
+msgid "End-to-end encrypted message"
 msgstr ""
 
 #: ./src/app/message/factories/messageModel.js:59
 msgctxt "Message encryption status"
-msgid "End-to-end encrypted from verified ProtonMail User"
+msgid "End-to-end encrypted message from verified address"
 msgstr ""
 
 #: ./src/app/message/factories/messageModel.js:67
 msgctxt "Message encryption status"
-msgid "PGP-encrypted"
+msgid "PGP-encrypted message"
 msgstr ""
 
 #: ./src/app/message/factories/messageModel.js:68
 msgctxt "Message encryption status"
-msgid "PGP-encrypted from verified sender"
+msgid "PGP-encrypted message from verified address"
 msgstr ""
 
 #: ./src/app/message/factories/messageModel.js:73
 msgctxt "Message encryption status"
-msgid "PGP-signed from verified sender"
+msgid "PGP-signed message from verified address"
 msgstr ""
 
 #: ./src/app/message/factories/messageModel.js:64
@@ -7099,7 +7114,7 @@ msgstr ""
 
 #: ./src/app/message/factories/messageModel.js:78
 msgctxt "Message encryption status"
-msgid "Unencrypted"
+msgid "Unencrypted message"
 msgstr ""
 
 #: ./src/templates/message/messageExpiration.tpl.html:4
@@ -7294,44 +7309,49 @@ msgctxt "Option"
 msgid "Right to Left"
 msgstr ""
 
-#: ./src/app/search/factories/searchModel.js:17
+#: ./src/app/search/factories/searchModel.js:8
+msgctxt "Option for search panel"
+msgid "All"
+msgstr ""
+
+#: ./src/app/search/factories/searchModel.js:19
 msgctxt "Option for search panel"
 msgid "All Mail"
 msgstr ""
 
-#: ./src/app/search/factories/searchModel.js:16
+#: ./src/app/search/factories/searchModel.js:18
 msgctxt "Option for search panel"
 msgid "Archive"
 msgstr ""
 
-#: ./src/app/search/factories/searchModel.js:10
 #: ./src/app/search/factories/searchModel.js:12
+#: ./src/app/search/factories/searchModel.js:14
 msgctxt "Option for search panel"
 msgid "Drafts"
 msgstr ""
 
-#: ./src/app/search/factories/searchModel.js:8
+#: ./src/app/search/factories/searchModel.js:10
 msgctxt "Option for search panel"
 msgid "Inbox"
 msgstr ""
 
-#: ./src/app/search/factories/searchModel.js:13
-#: ./src/app/search/factories/searchModel.js:14
+#: ./src/app/search/factories/searchModel.js:15
+#: ./src/app/search/factories/searchModel.js:16
 msgctxt "Option for search panel"
 msgid "Sent"
 msgstr ""
 
-#: ./src/app/search/factories/searchModel.js:9
+#: ./src/app/search/factories/searchModel.js:11
 msgctxt "Option for search panel"
 msgid "Spam"
 msgstr ""
 
-#: ./src/app/search/factories/searchModel.js:11
+#: ./src/app/search/factories/searchModel.js:13
 msgctxt "Option for search panel"
 msgid "Starred"
 msgstr ""
 
-#: ./src/app/search/factories/searchModel.js:15
+#: ./src/app/search/factories/searchModel.js:17
 msgctxt "Option for search panel"
 msgid "Trash"
 msgstr ""
@@ -7922,7 +7942,7 @@ msgctxt "Success"
 msgid "Label updated"
 msgstr ""
 
-#: ./src/app/settings/controllers/security.js:42
+#: ./src/app/settings/controllers/security.js:44
 msgctxt "Success"
 msgid "Other sessions revoked"
 msgstr ""
@@ -7930,6 +7950,11 @@ msgstr ""
 #: ./src/app/address/directives/addressKeysView.js:48
 msgctxt "Success"
 msgid "Primary key changed"
+msgstr ""
+
+#: ./src/app/settings/controllers/security.js:45
+msgctxt "Success"
+msgid "Session revoked"
 msgstr ""
 
 #: ./src/app/elements/directives/movedSelect.js:14
@@ -8271,7 +8296,7 @@ msgid "Attachments"
 msgstr ""
 
 #. logs page heading
-#: ./src/templates/views/security.tpl.html:38
+#: ./src/templates/views/security.tpl.html:58
 msgctxt "Title"
 msgid "Authentication Logs"
 msgstr ""
@@ -8385,7 +8410,7 @@ msgctxt "Title"
 msgid "Change Role"
 msgstr ""
 
-#: ./src/app/settings/controllers/security.js:25
+#: ./src/app/settings/controllers/security.js:27
 msgctxt "Title"
 msgid "Clear"
 msgstr ""
@@ -8653,7 +8678,7 @@ msgctxt "Title"
 msgid "Desktop notifications"
 msgstr ""
 
-#: ./src/app/settings/controllers/security.js:33
+#: ./src/app/settings/controllers/security.js:35
 msgctxt "Title"
 msgid "Disable Two-Factor Authentication"
 msgstr ""
@@ -8793,7 +8818,7 @@ msgstr ""
 #. Table heading
 #: ./src/templates/views/invoices.tpl.html:18
 #: ./src/templates/views/invoices.tpl.html:48
-#: ./src/templates/views/security.tpl.html:72
+#: ./src/templates/views/security.tpl.html:92
 msgctxt "Title"
 msgid "Event"
 msgstr ""
@@ -9666,7 +9691,7 @@ msgctxt "Title"
 msgid "Threadlist"
 msgstr ""
 
-#: ./src/templates/views/security.tpl.html:74
+#: ./src/templates/views/security.tpl.html:94
 msgctxt "Title"
 msgid "Time"
 msgstr ""
@@ -9936,6 +9961,11 @@ msgstr ""
 #: ./src/templates/settings/encryptionView.tpl.html:60
 msgctxt "Tooltip automatically attach public key"
 msgid "This automatically adds your public key to each message you send. Recipients can use this to verify the authenticity of your messages and sent encrypted messages to you."
+msgstr ""
+
+#: ./src/app/authentication/factories/activeSessionsModel.js:6
+msgctxt "Tooltip display per session"
+msgid "Created on {{ date }}"
 msgstr ""
 
 #: ./src/templates/settings/encryptionView.tpl.html:137
@@ -10328,17 +10358,17 @@ msgctxt "atom text loader"
 msgid "Enabling IMAP (coming soon).<br />This may take a few minutes, please wait."
 msgstr ""
 
-#: ./src/templates/views/security.tpl.html:90
+#: ./src/templates/views/security.tpl.html:110
 msgctxt "auth log entry"
 msgid "Login failure (two-factor)"
 msgstr ""
 
-#: ./src/templates/views/security.tpl.html:84
+#: ./src/templates/views/security.tpl.html:104
 msgctxt "auth log entry"
 msgid "Login success"
 msgstr ""
 
-#: ./src/templates/views/security.tpl.html:87
+#: ./src/templates/views/security.tpl.html:107
 msgctxt "auth log entry"
 msgid "Logout"
 msgstr ""
@@ -10784,8 +10814,6 @@ msgid "Advanced settings"
 msgstr ""
 
 #. form option
-#: ./src/app/search/factories/searchModel.js:31
-#: ./src/app/search/factories/searchModel.js:49
 #: ./src/templates/search/searchForm.tpl.html:124
 msgid "All"
 msgstr ""
@@ -11077,7 +11105,7 @@ msgstr ""
 msgid "Enter your login password:"
 msgstr ""
 
-#: ./src/app/message/factories/messageModel.js:243
+#: ./src/app/message/factories/messageModel.js:246
 msgid "Error encrypting message"
 msgstr ""
 
