@@ -58,3 +58,7 @@ export const unescapeCSSEncoding = (str) => {
 
     return strUnescapedHex.replace(OTHER_ESC, (_, char) => char);
 };
+
+export const ucFirst = (input = '') => {
+    return input.charAt(0).toUpperCase() + input.slice(1);
+};
