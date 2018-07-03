@@ -1,9 +1,11 @@
+import _ from 'lodash';
+
 /* @ngInject */
 function elementsContainer($rootScope) {
     return {
         restrict: 'A',
         link(scope, el) {
-            const onClick = ({ target }) => {
+            const onClick = _.debounce(({ target }) => {
                 // Prevent click onto the select checkbox
                 if (target && !/ptSelectConversation|customMaskInput/.test(target.className)) {
                     $rootScope.$emit('elements', {
@@ -13,7 +15,7 @@ function elementsContainer($rootScope) {
                         }
                     });
                 }
-            };
+            }, 300);
 
             el.on('click', onClick);
 
