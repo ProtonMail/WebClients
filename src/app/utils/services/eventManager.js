@@ -154,8 +154,9 @@ function eventManager(
             all[starred] = { Notify: 1, ID: starred };
 
             _.each(messages, ({ Action, Message = {} }) => {
+                const { ParsedHeaders = {} } = Message;
                 const onlyNotify = filterNotify(Message);
-                const isImport = Message.ParsedHeaders['X-Pm-Origin'] === 'import';
+                const isImport = ParsedHeaders['X-Pm-Origin'] === 'import';
 
                 if (Action === 1 && Message.Unread === 1 && onlyNotify.length && !isImport) {
                     const [{ ID }] = onlyNotify;
