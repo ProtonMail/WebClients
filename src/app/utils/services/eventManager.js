@@ -139,6 +139,10 @@ function eventManager(
             const { ViewMode } = mailSettingsModel.get();
             const threadingIsOn = ViewMode === CONVERSATION_VIEW_MODE;
             const { all } = $injector.get('labelsModel').get('map');
+            const states = Object.keys(MAILBOX_IDENTIFIERS).reduce((acc, state) => {
+                acc[MAILBOX_IDENTIFIERS[state]] = state;
+                return acc;
+            }, {});
 
             const filterNotify = ({ LabelIDs = [] }) => {
                 return LabelIDs.map((ID) => all[ID] || {}).filter(({ Notify }) => Notify);
@@ -154,8 +158,8 @@ function eventManager(
 
                 if (Action === 1 && Message.Unread === 1 && onlyNotify.length) {
                     const [{ ID }] = onlyNotify;
-                    const route = `secured.${MAILBOX_IDENTIFIERS[ID] || 'label'}.element`;
-                    const label = MAILBOX_IDENTIFIERS[ID] ? null : ID;
+                    const route = `secured.${states[ID] || 'label'}.element`;
+                    const label = states[ID] ? null : ID;
                     const title = gettextCatalog.getString(
                         'New mail from {{sender}}',
                         {
