@@ -80,7 +80,7 @@ function contactImportEncryption(pmcw, $injector, contactKey, contactAskEncrypti
                 const encryptList = toList(contact.vCard.get('x-pm-encrypt'));
                 return asyncSequentialMap(emailList, async (emailProp) => {
                     const sendPreferences = $injector.get('sendPreferences');
-                    const info = await sendPreferences.get(emailProp.valueOf());
+                    const info = await sendPreferences.get([emailProp.valueOf()]);
                     if (info.scheme === PACKAGE_TYPE.SEND_PM) {
                         // internal user: skip
                         return;
