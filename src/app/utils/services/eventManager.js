@@ -155,8 +155,9 @@ function eventManager(
 
             _.each(messages, ({ Action, Message = {} }) => {
                 const onlyNotify = filterNotify(Message);
+                const isImport = Message.ParsedHeaders['X-Pm-Origin'] === 'import';
 
-                if (Action === 1 && Message.Unread === 1 && onlyNotify.length) {
+                if (Action === 1 && Message.Unread === 1 && onlyNotify.length && !isImport) {
                     const [{ ID }] = onlyNotify;
                     const route = `secured.${states[ID] || 'label'}.element`;
                     const label = states[ID] ? null : ID;
