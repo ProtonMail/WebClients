@@ -153,12 +153,13 @@ function eventManager(
             all[inbox] = { Notify: 1, ID: inbox };
             all[starred] = { Notify: 1, ID: starred };
 
-            _.each(messages, ({ Action, Message = {} }) => {
-                const { ParsedHeaders = {} } = Message;
-                const onlyNotify = filterNotify(Message);
-                const isImport = ParsedHeaders['X-Pm-Origin'] === 'import';
+            const now = moment();
 
-                if (Action === 1 && Message.Unread === 1 && onlyNotify.length && !isImport) {
+            _.each(messages, ({ Action, Message = {} }) => {
+                const mTime = moment.unix(Message.Time);
+                const onlyNotify = filterNotify(Message);
+
+                if (Action === 1 && Message.Unread === 1 && onlyNotify.length && mTime.isSame(now, 'day')) {
                     const [{ ID }] = onlyNotify;
                     const route = `secured.${states[ID] || 'label'}.element`;
                     const label = states[ID] ? null : ID;
