@@ -49,6 +49,7 @@ function paginationModel($injector, dispatchers, $state, $stateParams, mailSetti
      */
     const previous = () => {
         const pos = ~~$stateParams.page || 0;
+
         if (pos) {
             const page = pos - 1;
             // If page = 1 remove it from the url
@@ -61,9 +62,9 @@ function paginationModel($injector, dispatchers, $state, $stateParams, mailSetti
      * @return {void}
      */
     const next = () => {
-        const pos = ~~$stateParams.page || 1;
+        const pos = ~~$stateParams.page || 0;
         const page = pos + 1;
-        page <= getMaxPage() && switchPage({ page });
+        page <= getMaxPage() + 1 && switchPage({ page });
     };
 
     /**
@@ -72,8 +73,8 @@ function paginationModel($injector, dispatchers, $state, $stateParams, mailSetti
      * @return {Boolean}
      */
     const isMax = () => {
-        const page = ~~$stateParams.page || 1;
-        return page >= getMaxPage();
+        const pos = ~~$stateParams.page || 0;
+        return pos >= getMaxPage() + 1;
     };
 
     const init = angular.noop;
