@@ -1,22 +1,13 @@
-import _ from 'lodash';
-
-import { ELEMENTS_PER_PAGE, MESSAGE_VIEW_MODE } from '../../constants';
+import { ELEMENTS_PER_PAGE } from '../../constants';
 
 /* @ngInject */
-function paginationModel($injector, dispatchers, $state, $stateParams, mailSettingsModel, tools) {
+function paginationModel($injector, dispatchers, $state, $stateParams, tools) {
     const { on } = dispatchers();
     let currentState = '';
 
     on('$stateChangeSuccess', (e, state) => {
         currentState = state.name.replace('.element', '');
     });
-
-    const getLayout = () => {
-        if (mailSettingsModel.get('ViewMode') === MESSAGE_VIEW_MODE) {
-            return 'message';
-        }
-        return 'conversation';
-    };
 
     /**
      * Get the max page where an user can go
@@ -27,9 +18,11 @@ function paginationModel($injector, dispatchers, $state, $stateParams, mailSetti
     const getMaxPage = () => {
         const cacheCounters = $injector.get('cacheCounters');
         const counter = cacheCounters.getCounter(tools.currentLocation());
+
         if (tools.cacheContext() && counter) {
             const key = $stateParams.filter === 'unread' ? 'unread' : 'total';
-            return Math.ceil(counter[getLayout()][key] / ELEMENTS_PER_PAGE);
+            const type = tools.getTypeList();
+            return Math.ceil(counter[type][key] / ELEMENTS_PER_PAGE);
         }
 
         return Math.ceil(cacheCounters.getCurrentState() / ELEMENTS_PER_PAGE);
@@ -40,7 +33,7 @@ function paginationModel($injector, dispatchers, $state, $stateParams, mailSetti
      * @param  {Object} opts    Custom options
      */
     const switchPage = (opts = {}) => {
-        $state.go(currentState, _.extend({ id: null }, opts));
+        $state.go(currentState, { id: null, ...opts });
     };
 
     /**
@@ -49,7 +42,6 @@ function paginationModel($injector, dispatchers, $state, $stateParams, mailSetti
      */
     const previous = () => {
         const pos = ~~$stateParams.page || 0;
-
         if (pos) {
             const page = pos - 1;
             // If page = 1 remove it from the url
@@ -62,9 +54,9 @@ function paginationModel($injector, dispatchers, $state, $stateParams, mailSetti
      * @return {void}
      */
     const next = () => {
-        const pos = ~~$stateParams.page || 0;
+        const pos = ~~$stateParams.page || 1;
         const page = pos + 1;
-        page <= getMaxPage() + 1 && switchPage({ page });
+        page <= getMaxPage() && switchPage({ page });
     };
 
     /**
@@ -73,8 +65,8 @@ function paginationModel($injector, dispatchers, $state, $stateParams, mailSetti
      * @return {Boolean}
      */
     const isMax = () => {
-        const pos = ~~$stateParams.page || 0;
-        return pos >= getMaxPage() + 1;
+        const page = ~~$stateParams.page || 1;
+        return page >= getMaxPage();
     };
 
     const init = angular.noop;

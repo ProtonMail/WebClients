@@ -9,18 +9,17 @@ describe('paginationModel factory', () => {
     const MODULE = generateModuleName();
     const stateParamsMock = {};
 
-    const mailSettingsMock = { ViewMode: 0 };
-    const mailSettingsModel = { get: (k) => mailSettingsMock[k] };
-
-    const state = { go: _.noop };
+    const state = { go: _.noop, is: _.noop };
     const cacheCounters = {
         getCurrentState: _.noop,
-        getCounter: _.noop
+        getCounter: _.noop,
+        getTypeList: _.noop
     };
 
     const tools = {
         currentLocation: _.noop,
-        cacheContext: _.noop
+        cacheContext: _.noop,
+        getTypeList: _.noop
     };
 
     let factory;
@@ -35,7 +34,7 @@ describe('paginationModel factory', () => {
     beforeEach(angular.mock.inject(($injector) => {
         rootScope = $injector.get('$rootScope');
         const dispatchers = dispatchersService(rootScope);
-        factory = service($injector, dispatchers, state, stateParamsMock, mailSettingsModel, tools);
+        factory = service($injector, dispatchers, state, stateParamsMock, tools);
     }));
 
     describe('Switch page', () => {
@@ -83,11 +82,16 @@ describe('paginationModel factory', () => {
         describe('No counters, not a cache context', () => {
             let total;
             beforeEach(() => {
+                spyOn(tools, 'getTypeList');
                 spyOn(tools, 'cacheContext').and.returnValue(false);
                 spyOn(tools, 'currentLocation').and.returnValue('ici');
                 spyOn(cacheCounters, 'getCounter').and.returnValue(0);
                 spyOn(cacheCounters, 'getCurrentState').and.returnValue(10);
                 total = factory.getMaxPage();
+            });
+
+            it('should not check the type of messages', () => {
+                expect(tools.getTypeList).not.toHaveBeenCalled();
             });
 
             it('should get check the cache context', () => {
@@ -114,12 +118,19 @@ describe('paginationModel factory', () => {
         describe('No counters, and a cache context', () => {
             let total;
             beforeEach(() => {
+                spyOn(tools, 'getTypeList');
                 spyOn(tools, 'cacheContext').and.returnValue(true);
                 spyOn(tools, 'currentLocation').and.returnValue('ici');
                 spyOn(cacheCounters, 'getCounter').and.returnValue(0);
                 spyOn(cacheCounters, 'getCurrentState').and.returnValue(10);
                 total = factory.getMaxPage();
             });
+
+
+            it('should not check the type of messages', () => {
+                expect(tools.getTypeList).not.toHaveBeenCalled();
+            });
+
 
             it('should check the cache context', () => {
                 expect(tools.cacheContext).toHaveBeenCalledTimes(1);
@@ -146,12 +157,18 @@ describe('paginationModel factory', () => {
         describe('Counters, and not a cache context', () => {
             let total;
             beforeEach(() => {
+                spyOn(tools, 'getTypeList');
                 spyOn(tools, 'cacheContext').and.returnValue(false);
                 spyOn(tools, 'currentLocation').and.returnValue('ici');
                 spyOn(cacheCounters, 'getCounter').and.returnValue(100);
                 spyOn(cacheCounters, 'getCurrentState').and.returnValue(10);
                 total = factory.getMaxPage();
             });
+
+            it('should not check the type of messages', () => {
+                expect(tools.getTypeList).not.toHaveBeenCalled();
+            });
+
 
             it('should check the cache context', () => {
                 expect(tools.cacheContext).toHaveBeenCalledTimes(1);
@@ -179,7 +196,7 @@ describe('paginationModel factory', () => {
             let total;
 
             beforeEach(() => {
-                mailSettingsMock.ViewMode = CONVERSATION_VIEW_MODE;
+                spyOn(tools, 'getTypeList').and.returnValue('conversation');
                 spyOn(tools, 'cacheContext').and.returnValue(true);
                 spyOn(tools, 'currentLocation').and.returnValue('ici');
                 spyOn(cacheCounters, 'getCounter').and.returnValue({
@@ -197,6 +214,10 @@ describe('paginationModel factory', () => {
                 beforeEach(() => {
                     stateParamsMock.filter = 'unread';
                     total = factory.getMaxPage();
+                });
+
+                it('should not check the type of list', () => {
+                    expect(tools.getTypeList).toHaveBeenCalledTimes(1);
                 });
 
                 it('should check the cache context', () => {
@@ -226,6 +247,11 @@ describe('paginationModel factory', () => {
                 beforeEach(() => {
                     stateParamsMock.filter = 'total';
                     total = factory.getMaxPage();
+                });
+
+
+                it('should not check the type of list', () => {
+                    expect(tools.getTypeList).toHaveBeenCalledTimes(1);
                 });
 
                 it('should check the cache context', () => {
@@ -255,7 +281,8 @@ describe('paginationModel factory', () => {
             let total;
 
             beforeEach(() => {
-                mailSettingsMock.ViewMode = MESSAGE_VIEW_MODE;
+                spyOn(tools, 'getTypeList').and.returnValue('message');
+
                 spyOn(tools, 'cacheContext').and.returnValue(true);
                 spyOn(tools, 'currentLocation').and.returnValue('ici');
                 spyOn(cacheCounters, 'getCounter').and.returnValue({
@@ -275,6 +302,9 @@ describe('paginationModel factory', () => {
                     total = factory.getMaxPage();
                 });
 
+                it('should not check the type of list', () => {
+                    expect(tools.getTypeList).toHaveBeenCalledTimes(1);
+                });
                 it('should check the cache context', () => {
                     expect(tools.cacheContext).toHaveBeenCalledTimes(1);
                 });
@@ -302,6 +332,10 @@ describe('paginationModel factory', () => {
                 beforeEach(() => {
                     stateParamsMock.filter = 'total';
                     total = factory.getMaxPage();
+                });
+
+                it('should not check the type of list', () => {
+                    expect(tools.getTypeList).toHaveBeenCalledTimes(1);
                 });
 
                 it('should check the cache context', () => {
@@ -333,7 +367,7 @@ describe('paginationModel factory', () => {
                 let total;
 
                 beforeEach(() => {
-                    mailSettingsMock.ViewMode = MESSAGE_VIEW_MODE;
+                    spyOn(tools, 'getTypeList').and.returnValue('message');
                     spyOn(tools, 'cacheContext').and.returnValue(true);
                     spyOn(tools, 'currentLocation').and.returnValue('ici');
                     spyOn(cacheCounters, 'getCounter').and.returnValue({
