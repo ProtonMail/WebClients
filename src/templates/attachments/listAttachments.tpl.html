@@ -6,7 +6,13 @@
                 <i class="fa fa-paperclip"></i> {{ model.Attachments.length -  model.NumEmbedded }} <span translate translate-n="model.Attachments.length - model.NumEmbedded" translate-plural="files attached">file attached</span>
             </span>
             <span ng-if="model.NumEmbedded > 0" class="listAttachments-title-embedded">
-                <i class="fa fa-image embedded"></i> {{ model.NumEmbedded }} <span translate-n="model.NumEmbedded" translate-plural="embedded images">embedded image</span>
+                <i class="fa fa-image embedded"></i>
+                {{ model.NumEmbedded }}
+                <span
+                    translate
+                    translate-context="Info"
+                    translate-n="model.NumEmbedded"
+                    translate-plural="embedded images">embedded image</span>
             </span>
 
             <span ng-if="model.Attachments.length - model.NumEmbedded > 1" class="listAttachments-title-download">
