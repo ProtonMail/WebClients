@@ -407,6 +407,7 @@ function ElementsController(
     $scope.refreshElements = () => {
         const request = forgeRequestParameters($scope.mailbox);
         const type = tools.getTypeList();
+
         const promise = type === 'message' ? cache.queryMessages(request) : cache.queryConversations(request);
 
         return promise.then(

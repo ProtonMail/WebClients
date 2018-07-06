@@ -317,8 +317,6 @@ function cache(
                 if (data.Code === INVALID_SEARCH_ERROR_CODE) {
                     return [];
                 }
-                cacheCounters.currentState(data.Limit);
-                $rootScope.$emit('elements', { type: 'setLimit', data: { limit: data.Limit, total: data.Total } });
 
                 _.each(data.Conversations, (conversation) => {
                     conversation.loaded = true; // Mark these conversations as loaded
@@ -341,7 +339,7 @@ function cache(
 
                     // Store conversations
                     storeConversations(data.Conversations);
-
+                    refreshStateLimit(data);
                     api.clearDispatcher();
                     // Return conversations ordered
                     return api.orderConversation(data.Conversations.slice(0, ELEMENTS_PER_PAGE), loc);
@@ -359,6 +357,11 @@ function cache(
         networkActivityTracker.track(promise);
 
         return promise;
+    }
+
+    function refreshStateLimit({ Limit: limit, Total: total }) {
+        cacheCounters.currentState(limit);
+        $rootScope.$emit('elements', { type: 'setLimit', data: { limit, total } });
     }
 
     /**
@@ -379,9 +382,7 @@ function cache(
                 if (data.Code === INVALID_SEARCH_ERROR_CODE) {
                     return [];
                 }
-                const { Messages = [], Total = 0, Limit = 0 } = data;
-                cacheCounters.currentState(Limit);
-                $rootScope.$emit('elements', { type: 'setLimit', data: { limit: Limit, total: Total } });
+                const { Messages = [], Limit = 0 } = data;
 
                 _.each(Messages, (message) => {
                     const { ToList = [], CCList = [], BCCList = [] } = message;
@@ -390,7 +391,6 @@ function cache(
                     message.Recipients = _.uniq([].concat(ToList, CCList, BCCList));
                 });
 
-                // Store messages
                 storeMessages(Messages);
 
                 // Only for cache context
@@ -404,9 +404,10 @@ function cache(
                     pages.forEach((page) => !cachePages.inside(page) && cachePages.add(page));
                     // Return messages ordered
                     api.clearDispatcher();
+                    refreshStateLimit(data);
                     return api.orderMessage(Messages.slice(0, ELEMENTS_PER_PAGE));
                 }
-
+                refreshStateLimit(data);
                 api.clearDispatcher();
                 return Messages.slice(0, ELEMENTS_PER_PAGE);
             })
@@ -635,11 +636,11 @@ function cache(
                     number = ELEMENTS_PER_PAGE;
                 }
 
-                cacheCounters.currentState(total);
                 messages = messages.slice(start, end);
 
                 // Supposed total equal to the total cache?
                 if (messages.length === number) {
+                    cacheCounters.currentState(total);
                     return Promise.resolve(messages);
                 }
             }
@@ -692,10 +693,10 @@ function cache(
                     number = ELEMENTS_PER_PAGE;
                 }
 
-                cacheCounters.currentState(total);
                 conversations = conversations.slice(start, end);
                 // Supposed total equal to the total cache?
                 if (conversations.length === number) {
+                    cacheCounters.currentState(total);
                     return Promise.resolve(conversations);
                 }
             }
