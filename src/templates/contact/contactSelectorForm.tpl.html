@@ -23,7 +23,7 @@
                             <th translate-context="Header" translate>Email</th>
                         </tr>
                     </thead>
-                    <tbody data-vs-repeat="{scrollParent: '.contactSelectorForm-table-wrapper', offsetBefore: 5, offsetAfter: 5}">
+                    <tbody data-vs-repeat="{scrollParent: '.contactSelectorForm-table-wrapper'}">
                         <tr ng-repeat="email in ctrl.list | filter: { Email: searchValue } track by $id(email)">
                             <td class="checkbox">
                                 <custom-checkbox data-custom-ng-model="email.selected" data-custom-ng-change="onCheck()"></custom-checkbox>
