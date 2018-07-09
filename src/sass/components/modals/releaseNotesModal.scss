@@ -2,6 +2,11 @@
     img {
         max-width: 100%;
     }
+    h1 {
+        color: $gray !important;
+        border-bottom: 1px dashed $gray;
+        margin-bottom: 10px;
+    }
     .modal-header {
         display: flex;
         justify-content: space-between;
