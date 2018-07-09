@@ -43,12 +43,10 @@ function deleteKeyProcess(
                     title: I18N.WARNING_TITLE,
                     message: I18N.WARNING_MESSAGE,
                     confirm() {
-                        confirmModal.deactivate();
-                        resolve();
+                        confirmModal.deactivate().then(resolve);
                     },
                     cancel() {
-                        confirmModal.deactivate();
-                        reject();
+                        confirmModal.deactivate().then(reject);
                     }
                 }
             });
@@ -70,12 +68,10 @@ function deleteKeyProcess(
                                 const filename = 'privatekey.' + email + KEY_FILE_EXTENSION;
 
                                 downloadFile(blob, filename);
-                                exportPrivateKeyModal.deactivate();
-                                resolve();
+                                exportPrivateKeyModal.deactivate().then(resolve);
                             },
                             cancel() {
-                                exportPrivateKeyModal.deactivate();
-                                reject();
+                                exportPrivateKeyModal.deactivate().then(reject);
                             }
                         }
                     })
@@ -126,10 +122,10 @@ function deleteKeyProcess(
      * @param {Object} Key The key object describing the key we want to delete
      * @return {Promise}
      */
-    const start = ({ email }, keyInfo) => {
-        return warnUser()
-            .then(() => keyInfo.decrypted && exportKey(email, keyInfo))
-            .then(() => deleteKey(keyInfo));
+    const start = async ({ email }, keyInfo) => {
+        await warnUser();
+        keyInfo.decrypted && (await exportKey(email, keyInfo));
+        return deleteKey(keyInfo);
     };
     return { start };
 }
